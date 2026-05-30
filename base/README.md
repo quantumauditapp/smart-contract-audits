@@ -1,0 +1,19 @@
+# Base Smart Contract Security Reports | Quantum Audit
+
+Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
+
+**3 reports** · Updated daily · [← All Networks](../README.md)
+
+---
+
+## Reports
+
+| Token | Ticker | Risk Score | Date | Full Audit |
+|-------|--------|------------|------|------------|
+| [XMAQUINA](./xmaquina.md) | DEUS | 🟠 69/100 High Risk | 2026-05-29 | [↗](https://quantumaudit.app/token/xmaquina-base) |
+| [Venice Token](./venice-token.md) | VVV | 🔴 93/100 Critical Risk | 2026-05-29 | [↗](https://quantumaudit.app/token/venice-token-base) |
+| [BitVault Signal](./bitvault-signal.md) | BV7X | 🟡 21/100 Medium Risk | 2026-05-26 | [↗](https://quantumaudit.app/token/bitvault-signal-base) |
+
+---
+
+*Powered by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security analysis*
