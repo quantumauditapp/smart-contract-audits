@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**5 reports** · Updated daily · [← All Networks](../README.md)
+**6 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Lighter](./lighter.md) | LIT | 🟡 42/100 Medium Risk | 2026-05-30 | [↗](https://quantumaudit.app/token/lighter-eth) |
 | [Gensyn](./gensyn.md) | AI | 🟠 49/100 High Risk | 2026-05-29 | [↗](https://quantumaudit.app/token/gensyn-eth) |
 | [Injective](./injective.md) | INJ | 🟡 36/100 Medium Risk | 2026-05-29 | [↗](https://quantumaudit.app/token/injective-eth) |
 | [Allora](./allora.md) | ALLO | 🟠 50/100 High Risk | 2026-05-29 | [↗](https://quantumaudit.app/token/allora-eth) |

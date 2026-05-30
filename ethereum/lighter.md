@@ -1,0 +1,80 @@
+---
+token: Lighter
+ticker: LIT
+network: ethereum
+risk_score: 42
+status: medium
+date: 2026-05-30
+---
+
+# Lighter (LIT) — Smart Contract Security Analysis | Ethereum
+
+> **Risk Score: 42/100 — 🟡 Medium Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lighter-eth)
+
+---
+
+## Security Analysis
+
+Lighter (LIT) on Ethereum presents a mixed security profile with a current Risk Score of 42/100, indicating medium risk for investors. Positively, the contract is verified, ensuring transparency as its code matches the deployed version. Ownership has been renounced, which significantly reduces the potential for a malicious developer to alter critical contract functions or drain funds. Furthermore, the absence of a mint function prevents the arbitrary creation of new tokens, safeguarding against inflationary dilution. However, significant concerns arise from holder concentration, with the top 10 holders controlling 70.9% of the total supply, posing a substantial risk of market manipulation or significant sell-offs. Additionally, the liquidity, currently at $293,846 against a 24-hour volume of $528,635, is not locked, introducing a potential vulnerability for a liquidity rug pull.
+
+The most critical risk factor for LIT is the high concentration of tokens among the top 10 holders, controlling 70.9% of the supply. This centralization exposes the token to significant price volatility and potential manipulation by a small group of large holders. A concentrated sell-off could dramatically impact market stability and investor confidence. Another notable risk is the unlocked liquidity. While ownership renunciation mitigates developer-initiated rug pulls, the absence of locked liquidity means it could still be withdrawn, especially if significant liquidity pool ownership rests with the concentrated holders. On the positive side, the renounced ownership and lack of a mint function are strong safety signals, removing common attack vectors like developer control over the contract or inflationary token supply.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`0x232c...4ee2`](https://etherscan.io/address/0x232ce3bd40fcd6f80f3d55a522d03f25df784ee2) |
+| **Network** | Ethereum |
+| **Price** | $1.3700 |
+| **24h Volume** | $528.6K |
+| **Liquidity** | $293.8K |
+| **Volume / Liquidity** | 1.8× |
+| **Token Age** | 4mo |
+| **Top-10 Holders** | 70.9% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 244 buys / 267 sells |
+
+## Security Flags (4/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Findings Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Frequently Asked Questions
+
+### Is Lighter a scam?
+
+Based on the provided data, Lighter doesn't exhibit immediate red flags commonly associated with scams, such as unverified contracts or retained ownership. Its contract is verified, and ownership is renounced, preventing direct developer manipulation or hidden minting. However, high holder concentration and unlocked liquidity introduce substantial risks that investors should carefully consider. It's categorized as a medium-risk asset.
+
+### Is Lighter safe to buy?
+
+Lighter is categorized as a medium-risk asset (42/100). While it has positive attributes like a verified contract and renounced ownership, significant risks persist. The top 10 holders control over 70% of the supply, creating centralization risks. Additionally, the liquidity is not locked, which could expose funds to withdrawal. Investors should be aware of these factors and conduct thorough due diligence before considering an investment.
+
+### Has Lighter been audited?
+
+The provided information states that Lighter's contract is 'verified,' meaning the source code is publicly available and matches the deployed contract. This is a crucial step for transparency, allowing anyone to review the code. However, 'verified' is distinct from a formal security audit conducted by a professional firm, which would involve in-depth analysis for vulnerabilities, exploits, and best practices. An independent audit status is not indicated here.
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/ethereum/0xcd4abaf39691dcbb877165b7ba6d04ec6436c22a)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/lighter-eth)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-30*
