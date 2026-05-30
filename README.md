@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-44-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-45-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,7 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Nockchain](./base/nockchain.md) | NOCK | Base | 🟠 51/100 | 2026-05-30 | [↗](https://quantumaudit.app/token/nockchain-base) |
 | [Lighter](./ethereum/lighter.md) | LIT | Ethereum | 🟡 42/100 | 2026-05-30 | [↗](https://quantumaudit.app/token/lighter-eth) |
 | [Hog McCrankerson](./solana/hog-mccrankerson.md) | HOG | Solana | 🟠 69/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/hog-mccrankerson-sol) |
 | [penispoop420](./solana/penispoop420.md) | PP420 | Solana | 🔴 76/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/penispoop420-sol) |
@@ -41,13 +42,12 @@
 | [Catcoin](./solana/catcoin.md) | CATCOIN | Solana | 🟠 65/100 | 2026-05-14 | [↗](https://quantumaudit.app/token/catcoin-sol) |
 | [Bullish Degen](./solana/bullish-degen.md) | BULLISH | Solana | 🟠 65/100 | 2026-05-14 | [↗](https://quantumaudit.app/token/bullish-degen-sol) |
 | [Traderclaw](./solana/traderclaw.md) | TCLAW | Solana | 🔴 75/100 | 2026-05-13 | [↗](https://quantumaudit.app/token/traderclaw-sol) |
-| [America Is Back](./solana/america-is-back.md) | AMERICA | Solana | 🟠 65/100 | 2026-05-12 | [↗](https://quantumaudit.app/token/america-is-back-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (33)](./solana/README.md) · [Ethereum (6)](./ethereum/README.md) · [Base (3)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (33)](./solana/README.md) · [Ethereum (6)](./ethereum/README.md) · [Base (4)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 
