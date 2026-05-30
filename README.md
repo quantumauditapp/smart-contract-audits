@@ -61,7 +61,7 @@ Each report contains:
 - **Security Flags**: contract verification, ownership, mint function, liquidity lock, proxy detection — each explained in plain English
 - **FAQ**: is it a scam, is it safe, has it been audited
 
-The full interactive AI analysis — detailed vulnerability findings and recommendations — is available at [quantumaudit.app/token/{slug}](https://quantumaudit.app).
+The full interactive AI analysis — detailed vulnerability findings and recommendations — is available for each token at [quantumaudit.app/token/](https://quantumaudit.app/token/). Open any token above for its full report.
 
 ---
 
