@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-45-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-49-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,10 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Artificial Superintelligence Alliance](./ethereum/artificial-superintelligence-alliance.md) | FET | Ethereum | 🟠 65/100 | 2026-05-31 | [↗](https://quantumaudit.app/token/artificial-superintelligence-alliance-eth) |
+| [Kite](./ethereum/kite.md) | KITE | Ethereum | 🔴 75/100 | 2026-05-31 | [↗](https://quantumaudit.app/token/kite-eth) |
+| [BankrCoin](./base/bankrcoin.md) | BNKR | Base | 🟢 18/100 | 2026-05-31 | [↗](https://quantumaudit.app/token/bankrcoin-base) |
+| [Octra](./ethereum/octra.md) | OCT | Ethereum | 🟢 18/100 | 2026-05-31 | [↗](https://quantumaudit.app/token/octra-eth) |
 | [Nockchain](./base/nockchain.md) | NOCK | Base | 🟠 51/100 | 2026-05-30 | [↗](https://quantumaudit.app/token/nockchain-base) |
 | [Lighter](./ethereum/lighter.md) | LIT | Ethereum | 🟡 42/100 | 2026-05-30 | [↗](https://quantumaudit.app/token/lighter-eth) |
 | [Hog McCrankerson](./solana/hog-mccrankerson.md) | HOG | Solana | 🟠 69/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/hog-mccrankerson-sol) |
@@ -38,16 +42,12 @@
 | [World Cup Coin](./solana/world-cup-coin.md) | WORLDCUP | Solana | 🔴 75/100 | 2026-05-15 | [↗](https://quantumaudit.app/token/world-cup-coin-sol) |
 | [LOL](./solana/lol.md) | LOL | Solana | 🟠 65/100 | 2026-05-15 | [↗](https://quantumaudit.app/token/lol-sol) |
 | [Strategic American Oil Supply](./solana/strategic-american-oil-supply.md) | SAOS | Solana | 🔴 75/100 | 2026-05-14 | [↗](https://quantumaudit.app/token/strategic-american-oil-supply-sol) |
-| [Andes Virus](./solana/andes-virus.md) | ANDV | Solana | 🟠 65/100 | 2026-05-14 | [↗](https://quantumaudit.app/token/andes-virus-sol) |
-| [Catcoin](./solana/catcoin.md) | CATCOIN | Solana | 🟠 65/100 | 2026-05-14 | [↗](https://quantumaudit.app/token/catcoin-sol) |
-| [Bullish Degen](./solana/bullish-degen.md) | BULLISH | Solana | 🟠 65/100 | 2026-05-14 | [↗](https://quantumaudit.app/token/bullish-degen-sol) |
-| [Traderclaw](./solana/traderclaw.md) | TCLAW | Solana | 🔴 75/100 | 2026-05-13 | [↗](https://quantumaudit.app/token/traderclaw-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (33)](./solana/README.md) · [Ethereum (6)](./ethereum/README.md) · [Base (4)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (33)](./solana/README.md) · [Ethereum (9)](./ethereum/README.md) · [Base (5)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 

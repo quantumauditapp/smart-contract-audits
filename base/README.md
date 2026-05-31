@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**4 reports** · Updated daily · [← All Networks](../README.md)
+**5 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [BankrCoin](./bankrcoin.md) | BNKR | 🟢 18/100 Low Risk | 2026-05-31 | [↗](https://quantumaudit.app/token/bankrcoin-base) |
 | [Nockchain](./nockchain.md) | NOCK | 🟠 51/100 High Risk | 2026-05-30 | [↗](https://quantumaudit.app/token/nockchain-base) |
 | [XMAQUINA](./xmaquina.md) | DEUS | 🟠 69/100 High Risk | 2026-05-29 | [↗](https://quantumaudit.app/token/xmaquina-base) |
 | [Venice Token](./venice-token.md) | VVV | 🔴 93/100 Critical Risk | 2026-05-29 | [↗](https://quantumaudit.app/token/venice-token-base) |

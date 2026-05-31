@@ -1,0 +1,80 @@
+---
+token: Kite
+ticker: KITE
+network: ethereum
+risk_score: 75
+status: critical
+date: 2026-05-31
+---
+
+# Kite (KITE) — Smart Contract Security Analysis | Ethereum
+
+> **Risk Score: 75/100 — 🔴 Critical Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kite-eth)
+
+---
+
+## Security Analysis
+
+Kite (KITE) on Ethereum presents a mixed security profile, reflected in its critical risk score of 75/100. The underlying contract is verified, allowing for public code inspection, and importantly, no mint function exists, preventing arbitrary token creation by the developer. Current market activity shows a 24-hour trading volume of $551,116 against $1,226,628 in total liquidity. However, significant concerns arise from the token's distribution and control structure. A substantial 68.5% of the total supply is concentrated in the top 10 addresses, indicating high centralization. Furthermore, ownership of the contract has not been renounced, meaning the original deployer retains potential control, and the critical lack of locked liquidity exposes investors to considerable risk, as funds supporting the token’s value could be withdrawn without notice. This combination necessitates careful consideration for potential investors.
+
+The most critical signals for KITE are the high centralization, unrenounced ownership, and unlocked liquidity. With 68.5% of the supply concentrated in the top 10 wallets, there's significant potential for market manipulation or price volatility if these large holders decide to sell. Unrenounced ownership means the contract deployer could still modify aspects of the token, which introduces further uncertainty. Crucially, the absence of locked liquidity creates a substantial 'rug pull' risk, where liquidity providers could withdraw funds, severely impacting the token's value. These factors collectively contribute to KITE's critical risk score, demanding extreme caution for investors.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`0x9045...16be`](https://etherscan.io/address/0x904567252d8f48555b7447c67dca23f0372e16be) |
+| **Network** | Ethereum |
+| **Price** | $0.2118 |
+| **24h Volume** | $551.1K |
+| **Liquidity** | $1.23M |
+| **Volume / Liquidity** | 0.4× |
+| **Token Age** | 6mo |
+| **Top-10 Holders** | 68.5% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 769 buys / 680 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Findings Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Frequently Asked Questions
+
+### Is Kite a scam?
+
+Based solely on the provided data, we cannot definitively label Kite as a scam. However, its critical risk score of 75/100 is attributed to several significant red flags. Key concerns include a high concentration of tokens among the top 10 holders (68.5%), ownership of the contract not being renounced, and, critically, liquidity not being locked. These characteristics are often associated with high-risk projects and potential for adverse events.
+
+### Is Kite safe to buy?
+
+Kite's current security profile indicates significant risks, making it unsafe to buy without extreme caution. The unrenounced ownership allows the contract deployer potential control, while the fact that 68.5% of the supply is concentrated in the top 10 wallets raises concerns about centralization and market manipulation. Most importantly, the liquidity for KITE is not locked, presenting a considerable 'rug pull' risk where funds could be withdrawn, impacting value.
+
+### Has Kite been audited?
+
+The KITE contract is verified, meaning its code is publicly available and matches what's deployed on the blockchain. This transparency allows for community review. However, contract verification is not equivalent to a formal security audit. An audit involves an independent third-party expert review to identify vulnerabilities and confirm smart contract integrity. The provided data does not indicate that KITE has undergone such an audit.
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/ethereum/0x3cff303d771452876849de7f0e6a21060886a74ae29fb27d5f3388197c249b19)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/kite-eth)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-31*
