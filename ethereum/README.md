@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**9 reports** · Updated daily · [← All Networks](../README.md)
+**10 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Portal](./portal.md) | PORTAL | 🟠 67/100 High Risk | 2026-06-01 | [↗](https://quantumaudit.app/token/portal-eth) |
 | [Artificial Superintelligence Alliance](./artificial-superintelligence-alliance.md) | FET | 🟠 65/100 High Risk | 2026-05-31 | [↗](https://quantumaudit.app/token/artificial-superintelligence-alliance-eth) |
 | [Kite](./kite.md) | KITE | 🔴 75/100 Critical Risk | 2026-05-31 | [↗](https://quantumaudit.app/token/kite-eth) |
 | [Octra](./octra.md) | OCT | 🟢 18/100 Low Risk | 2026-05-31 | [↗](https://quantumaudit.app/token/octra-eth) |

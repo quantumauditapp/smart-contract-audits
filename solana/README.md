@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**33 reports** · Updated daily · [← All Networks](../README.md)
+**35 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Solstice](./solstice.md) | SLX | 🔴 72/100 Critical Risk | 2026-06-01 | [↗](https://quantumaudit.app/token/solstice-sol) |
+| [Collector Crypt](./collector-crypt.md) | CARDS | 🟠 63/100 High Risk | 2026-06-01 | [↗](https://quantumaudit.app/token/collector-crypt-sol) |
 | [Hog McCrankerson](./hog-mccrankerson.md) | HOG | 🟠 69/100 High Risk | 2026-05-29 | [↗](https://quantumaudit.app/token/hog-mccrankerson-sol) |
 | [penispoop420](./penispoop420.md) | PP420 | 🔴 76/100 Critical Risk | 2026-05-29 | [↗](https://quantumaudit.app/token/penispoop420-sol) |
 | [Staked Bank](./staked-bank.md) | STAKE | 🔴 73/100 Critical Risk | 2026-05-29 | [↗](https://quantumaudit.app/token/staked-bank-sol) |
