@@ -1,0 +1,80 @@
+---
+token: Worldcoin
+ticker: WLD
+network: ethereum
+risk_score: 75
+status: critical
+date: 2026-06-02
+---
+
+# Worldcoin (WLD) — Smart Contract Security Analysis | Ethereum
+
+> **Risk Score: 75/100 — 🔴 Critical Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/worldcoin-eth)
+
+---
+
+## Security Analysis
+
+Worldcoin (WLD) on Ethereum presents a mixed security profile based on available contract data. The token's contract is verified, which is a positive signal as it allows for public inspection of the underlying code, enhancing transparency. There is no mint function, preventing the arbitrary creation of new tokens by the contract owner, which is a common concern for investors. However, critical vulnerabilities exist. Ownership of the contract has not been renounced, meaning the original deployer retains significant control over the contract's parameters. Furthermore, a substantial 69.7% of the total supply is concentrated within the top 10 holders, indicating extreme centralization. Liquidity for WLD, currently at $277,107 with a 24-hour volume of $283,004, is not locked, posing an additional risk regarding liquidity withdrawal. Overall, these factors contribute to a critical risk score of 75/100.
+
+The most critical risks for Worldcoin (WLD) stem from its concentrated token distribution and the control retained by the contract owner. With 69.7% of the supply held by the top 10 wallets, there's a significant centralization risk, potentially enabling large-scale market manipulation or detrimental actions against smaller holders. Compounding this, ownership of the contract has not been renounced. This means the contract deployer could still possess capabilities to alter contract functionalities or even introduce malicious code, depending on the contract's design. Additionally, the lack of locked liquidity presents a notable "rug pull" risk, where substantial funds could be withdrawn, severely impacting WLD's market stability and investor confidence.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`0x163f...8753`](https://etherscan.io/address/0x163f8c2467924be0ae7b5347228cabf260318753) |
+| **Network** | Ethereum |
+| **Price** | $0.4144 |
+| **24h Volume** | $283.0K |
+| **Liquidity** | $277.1K |
+| **Volume / Liquidity** | 1.0× |
+| **Token Age** | 2y |
+| **Top-10 Holders** | 69.7% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 293 buys / 263 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Findings Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Frequently Asked Questions
+
+### Is Worldcoin a scam?
+
+Based on the provided data, Worldcoin (WLD) exhibits several risk factors commonly associated with potential scams, though this analysis doesn't definitively label it one. The critical concerns include ownership not being renounced, extreme token centralization with 69.7% in top 10 holders, and unlocked liquidity. These factors create significant avenues for malicious action or market instability, warranting extreme caution from investors.
+
+### Is Worldcoin safe to buy?
+
+Investing in Worldcoin (WLD) carries a critical risk, indicated by its 75/100 risk score, making it unsafe for risk-averse investors. Key safety concerns include the unrenounced contract ownership, allowing the deployer control. The vast majority of tokens (69.7%) are concentrated in the top 10 wallets, posing a high centralization risk. Furthermore, unlocked liquidity means funds could be withdrawn, impacting market stability significantly.
+
+### Has Worldcoin been audited?
+
+The provided data confirms that the Worldcoin (WLD) contract is verified on Ethereum, meaning its code is publicly available for inspection. However, contract verification is not the same as a comprehensive security audit by an independent third party. The data provided does not explicitly state whether Worldcoin has undergone a formal security audit. Investors should seek audit reports if available.
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/ethereum/0x841820459769cd629b10a36fd12e603938cc2679)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/worldcoin-eth)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-02*

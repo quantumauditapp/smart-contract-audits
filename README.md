@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-52-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-53-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,7 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Worldcoin](./ethereum/worldcoin.md) | WLD | Ethereum | 🔴 75/100 | 2026-06-02 | [↗](https://quantumaudit.app/token/worldcoin-eth) |
 | [Portal](./ethereum/portal.md) | PORTAL | Ethereum | 🟠 67/100 | 2026-06-01 | [↗](https://quantumaudit.app/token/portal-eth) |
 | [Solstice](./solana/solstice.md) | SLX | Solana | 🔴 72/100 | 2026-06-01 | [↗](https://quantumaudit.app/token/solstice-sol) |
 | [Collector Crypt](./solana/collector-crypt.md) | CARDS | Solana | 🟠 63/100 | 2026-06-01 | [↗](https://quantumaudit.app/token/collector-crypt-sol) |
@@ -41,13 +42,12 @@
 | [Baby Troll](./solana/baby-troll.md) | BABYTROLL | Solana | 🟠 65/100 | 2026-05-19 | [↗](https://quantumaudit.app/token/baby-troll-sol) |
 | [吉祥马](./bsc/吉祥马.md) | 吉祥马 | BNB Chain | 🟢 20/100 | 2026-05-19 | [↗](https://quantumaudit.app/token/吉祥马-bsc) |
 | [had to take profits sir](./solana/had-to-take-profits-sir.md) | HTTPS | Solana | 🟠 65/100 | 2026-05-17 | [↗](https://quantumaudit.app/token/had-to-take-profits-sir-sol) |
-| [Federal Economic Department](./solana/federal-economic-department.md) | FED | Solana | 🔴 75/100 | 2026-05-16 | [↗](https://quantumaudit.app/token/federal-economic-department-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (35)](./solana/README.md) · [Ethereum (10)](./ethereum/README.md) · [Base (5)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (35)](./solana/README.md) · [Ethereum (11)](./ethereum/README.md) · [Base (5)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 
