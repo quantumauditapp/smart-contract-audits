@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**11 reports** · Updated daily · [← All Networks](../README.md)
+**12 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Ondo](./ondo.md) | ONDO | 🟡 43/100 Medium Risk | 2026-06-05 | [↗](https://quantumaudit.app/token/ondo-eth) |
 | [Worldcoin](./worldcoin.md) | WLD | 🔴 75/100 Critical Risk | 2026-06-02 | [↗](https://quantumaudit.app/token/worldcoin-eth) |
 | [Portal](./portal.md) | PORTAL | 🟠 67/100 High Risk | 2026-06-01 | [↗](https://quantumaudit.app/token/portal-eth) |
 | [Artificial Superintelligence Alliance](./artificial-superintelligence-alliance.md) | FET | 🟠 65/100 High Risk | 2026-05-31 | [↗](https://quantumaudit.app/token/artificial-superintelligence-alliance-eth) |

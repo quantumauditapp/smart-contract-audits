@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-53-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-57-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,10 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Law Of Attraction](./solana/law-of-attraction.md) | LOA | Solana | 🟠 62/100 | 2026-06-06 | [↗](https://quantumaudit.app/token/law-of-attraction-sol) |
+| [mogging](./solana/mogging.md) | MOGGING | Solana | 🟠 61/100 | 2026-06-06 | [↗](https://quantumaudit.app/token/mogging-sol) |
+| [Cup Markets](./solana/cup-markets.md) | CUP | Solana | 🟠 65/100 | 2026-06-06 | [↗](https://quantumaudit.app/token/cup-markets-sol) |
+| [Ondo](./ethereum/ondo.md) | ONDO | Ethereum | 🟡 43/100 | 2026-06-05 | [↗](https://quantumaudit.app/token/ondo-eth) |
 | [Worldcoin](./ethereum/worldcoin.md) | WLD | Ethereum | 🔴 75/100 | 2026-06-02 | [↗](https://quantumaudit.app/token/worldcoin-eth) |
 | [Portal](./ethereum/portal.md) | PORTAL | Ethereum | 🟠 67/100 | 2026-06-01 | [↗](https://quantumaudit.app/token/portal-eth) |
 | [Solstice](./solana/solstice.md) | SLX | Solana | 🔴 72/100 | 2026-06-01 | [↗](https://quantumaudit.app/token/solstice-sol) |
@@ -38,16 +42,12 @@
 | [SpaceX](./solana/spacex.md) | SPCX | Solana | 🟠 65/100 | 2026-05-23 | [↗](https://quantumaudit.app/token/spacex-sol) |
 | [FIFA WORLD CUP](./solana/fifa-world-cup.md) | FWC | Solana | 🟠 65/100 | 2026-05-23 | [↗](https://quantumaudit.app/token/fifa-world-cup-sol) |
 | [ttt](./solana/ttt.md) | TTTT | Solana | 🔴 75/100 | 2026-05-22 | [↗](https://quantumaudit.app/token/ttt-sol) |
-| [AnitaMaxWynn](./solana/anitamaxwynn.md) | WYNN | Solana | 🔴 75/100 | 2026-05-21 | [↗](https://quantumaudit.app/token/anitamaxwynn-sol) |
-| [Baby Troll](./solana/baby-troll.md) | BABYTROLL | Solana | 🟠 65/100 | 2026-05-19 | [↗](https://quantumaudit.app/token/baby-troll-sol) |
-| [吉祥马](./bsc/吉祥马.md) | 吉祥马 | BNB Chain | 🟢 20/100 | 2026-05-19 | [↗](https://quantumaudit.app/token/吉祥马-bsc) |
-| [had to take profits sir](./solana/had-to-take-profits-sir.md) | HTTPS | Solana | 🟠 65/100 | 2026-05-17 | [↗](https://quantumaudit.app/token/had-to-take-profits-sir-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (35)](./solana/README.md) · [Ethereum (11)](./ethereum/README.md) · [Base (5)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (38)](./solana/README.md) · [Ethereum (12)](./ethereum/README.md) · [Base (5)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 

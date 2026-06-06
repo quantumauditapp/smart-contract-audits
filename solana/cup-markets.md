@@ -1,0 +1,80 @@
+---
+token: Cup Markets
+ticker: CUP
+network: solana
+risk_score: 65
+status: high
+date: 2026-06-06
+---
+
+# Cup Markets (CUP) — Smart Contract Security Analysis | Solana
+
+> **Risk Score: 65/100 — 🟠 High Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cup-markets-sol)
+
+---
+
+## Security Analysis
+
+Cup Markets (CUP) on Solana presents several security considerations for investors. The contract code has not been verified, hindering public transparency and independent review of its underlying logic. Ownership of the contract has not been renounced, meaning the deployer retains control over potential functions. A positive signal is the absence of a mint function, preventing the creation of new tokens by the team and protecting against inflationary dilution. Liquidity for CUP is not locked, posing a potential risk of a rug pull if liquidity providers decide to remove funds. Holder distribution appears highly decentralized, with the top 10 holders collectively owning 0.0% of the supply, an unusual but potentially positive sign of broad community ownership. With a current 24h volume of $30,475 and $55,629 in liquidity, it operates with modest trading activity. The overall risk score for CUP is assessed as 65/100, indicating a high-risk investment.
+
+The most critical security concerns for Cup Markets (CUP) stem from its unverified contract and unrenounced ownership. Without contract verification, investors cannot independently scrutinize the code for hidden functionalities or vulnerabilities, relying solely on developer trust. The retention of contract ownership by the deployer means they could potentially modify contract parameters or even enable malicious functions if any exist, introducing significant centralized control risk. Furthermore, the absence of locked liquidity exposes the token to a "rug pull" scenario, where liquidity providers could withdraw funds, severely impacting trading ability and token value. These factors contribute significantly to the assigned high-risk score.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`bgaed7...9cup`](https://solscan.io/account/bgaed7f6ecbbwpamiwxcpgxqpkgm7zpyoxmx29jh9cup) |
+| **Network** | Solana |
+| **Price** | $0.0003248 |
+| **24h Volume** | $30.5K |
+| **Liquidity** | $55.6K |
+| **Volume / Liquidity** | 0.5× |
+| **Token Age** | 13d |
+| **Top-10 Holders** | N/A of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 296 buys / 225 sells |
+
+## Security Flags (2/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ❌ Fail |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Findings Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Frequently Asked Questions
+
+### Is Cup Markets a scam?
+
+The provided data points for Cup Markets (CUP) indicate several high-risk factors that are commonly associated with potential scams, though it does not definitively label it as such. Key concerns include an unverified contract, unrenounced ownership, and unlocked liquidity. However, the absence of a mint function is a positive signal. Investors should be aware of these fundamental risks when evaluating CUP and conduct thorough due diligence.
+
+### Is Cup Markets safe to buy?
+
+Investing in Cup Markets (CUP) carries significant risks, highlighted by its high-risk score of 65/100. Key safety concerns include the contract not being verified, making its underlying code opaque. Furthermore, ownership of the contract has not been renounced, leaving significant control with the deployer. The liquidity also remains unlocked, posing a risk of removal. These factors suggest a high-risk environment that investors should carefully consider.
+
+### Has Cup Markets been audited?
+
+The provided information indicates that the Cup Markets (CUP) contract has not been verified. Contract verification is a foundational step, making the code publicly visible and available for review by security analysts and the community. Without verification, a formal audit by a reputable third-party security firm is highly unlikely, as the auditor would first require access to the verifiable source code.
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/solana/fudyhyjby1u7u1tbsacfpf5wc65m17uqpzups2okrsqe)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/cup-markets-sol)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-06*

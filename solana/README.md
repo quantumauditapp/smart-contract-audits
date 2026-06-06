@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**35 reports** · Updated daily · [← All Networks](../README.md)
+**38 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Law Of Attraction](./law-of-attraction.md) | LOA | 🟠 62/100 High Risk | 2026-06-06 | [↗](https://quantumaudit.app/token/law-of-attraction-sol) |
+| [mogging](./mogging.md) | MOGGING | 🟠 61/100 High Risk | 2026-06-06 | [↗](https://quantumaudit.app/token/mogging-sol) |
+| [Cup Markets](./cup-markets.md) | CUP | 🟠 65/100 High Risk | 2026-06-06 | [↗](https://quantumaudit.app/token/cup-markets-sol) |
 | [Solstice](./solstice.md) | SLX | 🔴 72/100 Critical Risk | 2026-06-01 | [↗](https://quantumaudit.app/token/solstice-sol) |
 | [Collector Crypt](./collector-crypt.md) | CARDS | 🟠 63/100 High Risk | 2026-06-01 | [↗](https://quantumaudit.app/token/collector-crypt-sol) |
 | [Hog McCrankerson](./hog-mccrankerson.md) | HOG | 🟠 69/100 High Risk | 2026-05-29 | [↗](https://quantumaudit.app/token/hog-mccrankerson-sol) |

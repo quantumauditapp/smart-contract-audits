@@ -1,0 +1,80 @@
+---
+token: Ondo
+ticker: ONDO
+network: ethereum
+risk_score: 43
+status: medium
+date: 2026-06-05
+---
+
+# Ondo (ONDO) — Smart Contract Security Analysis | Ethereum
+
+> **Risk Score: 43/100 — 🟡 Medium Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ondo-eth)
+
+---
+
+## Security Analysis
+
+Ondo (ONDO) on Ethereum presents a mixed security profile, reflecting its medium risk score of 43/100. Key positive indicators include a verified contract, which enhances transparency and allows for public scrutiny of its code. Furthermore, ownership of the contract has been renounced, eliminating the risk of a malicious owner making changes, and the absence of a mint function prevents arbitrary supply inflation. These elements contribute to a robust foundational security posture. However, the token's distribution raises concerns, with the top 10 holders controlling 71.1% of the total supply. While the current liquidity stands at $669,362 against a 24-hour volume of $514,069, the fact that liquidity is not locked introduces a potential vulnerability for long-term stability and investor protection, despite strong underlying contract safeguards.
+
+The most significant risk factor for ONDO investors is the highly centralized token distribution, with 71.1% of the supply held by the top 10 addresses. This concentration creates a substantial risk of market manipulation or large sell-offs that could significantly impact price stability. Another notable concern is the lack of locked liquidity, which, while supported by a reasonable volume-to-liquidity ratio, generally offers less investor protection against sudden withdrawals compared to locked pools. Conversely, strong safety signals are evident in the renounced ownership and the absence of a mint function, both crucial safeguards against common malicious actions by the contract creator, such as arbitrary token creation or unauthorized contract modifications.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`0xfaba...9be3`](https://etherscan.io/address/0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3) |
+| **Network** | Ethereum |
+| **Price** | $0.3553 |
+| **24h Volume** | $514.1K |
+| **Liquidity** | $669.4K |
+| **Volume / Liquidity** | 0.8× |
+| **Token Age** | 2y |
+| **Top-10 Holders** | 71.1% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 409 buys / 359 sells |
+
+## Security Flags (4/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Findings Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Frequently Asked Questions
+
+### Is Ondo a scam?
+
+Based on the provided data, Ondo does not exhibit typical scam characteristics. The contract is verified, ownership has been renounced, and there is no function to mint new tokens, all of which are strong positive indicators of legitimate intent and foundational security. While a medium risk score of 43/100 exists due to other factors like holder concentration, these technical safeguards suggest it's not designed as a rug-pull or scam project.
+
+### Is Ondo safe to buy?
+
+Investing in Ondo carries a medium risk profile, as indicated by its 43/100 score. Key safety aspects include a verified contract, renounced ownership, and no mint function, which mitigate several common smart contract risks. However, significant risk factors remain, primarily the high concentration of 71.1% of tokens among the top 10 holders and the lack of locked liquidity. Investors should weigh these risks against the project's overall transparency and technical safeguards.
+
+### Has Ondo been audited?
+
+The provided data confirms that the Ondo contract is 'Verified: True'. This means its code is publicly available and transparent on the blockchain, allowing for anyone, including auditors, to review it. While contract verification is a crucial step for security and transparency, the data does not explicitly state that a formal third-party security audit has been completed and published. Investors typically seek full audit reports for comprehensive assurance beyond verification.
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/ethereum/0x7b1e5d984a43ee732de195628d20d05cfabc3cc7)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/ondo-eth)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-05*
