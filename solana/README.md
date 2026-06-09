@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**38 reports** · Updated daily · [← All Networks](../README.md)
+**45 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [UFC Freedom 250](./ufc-freedom-250.md) | UFC250 | 🔴 75/100 Critical Risk | 2026-06-09 | [↗](https://quantumaudit.app/token/ufc-freedom-250-sol) |
+| [Son Goku](./son-goku.md) | GOKU | 🔴 74/100 Critical Risk | 2026-06-09 | [↗](https://quantumaudit.app/token/son-goku-sol) |
+| [Dogeus Maximus](./dogeus-maximus.md) | DOGEUS | 🟠 68/100 High Risk | 2026-06-09 | [↗](https://quantumaudit.app/token/dogeus-maximus-sol) |
+| [three.ws](./threews.md) | THREE | 🟠 65/100 High Risk | 2026-06-08 | [↗](https://quantumaudit.app/token/threews-sol) |
+| [The Solana Mascot](./the-solana-mascot.md) | SOLY | 🔴 75/100 Critical Risk | 2026-06-08 | [↗](https://quantumaudit.app/token/the-solana-mascot-sol) |
+| [Football Capital Markets](./football-capital-markets.md) | FCM | 🟠 61/100 High Risk | 2026-06-08 | [↗](https://quantumaudit.app/token/football-capital-markets-sol) |
+| [Bitcoin Bank](./bitcoin-bank.md) | BTCBANK | 🟠 70/100 High Risk | 2026-06-07 | [↗](https://quantumaudit.app/token/bitcoin-bank-sol) |
 | [Law Of Attraction](./law-of-attraction.md) | LOA | 🟠 62/100 High Risk | 2026-06-06 | [↗](https://quantumaudit.app/token/law-of-attraction-sol) |
 | [mogging](./mogging.md) | MOGGING | 🟠 61/100 High Risk | 2026-06-06 | [↗](https://quantumaudit.app/token/mogging-sol) |
 | [Cup Markets](./cup-markets.md) | CUP | 🟠 65/100 High Risk | 2026-06-06 | [↗](https://quantumaudit.app/token/cup-markets-sol) |

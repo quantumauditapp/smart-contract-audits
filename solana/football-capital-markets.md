@@ -1,0 +1,80 @@
+---
+token: Football Capital Markets
+ticker: FCM
+network: solana
+risk_score: 61
+status: high
+date: 2026-06-08
+---
+
+# Football Capital Markets (FCM) — Smart Contract Security Analysis | Solana
+
+> **Risk Score: 61/100 — 🟠 High Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/football-capital-markets-sol)
+
+---
+
+## Security Analysis
+
+Football Capital Markets (FCM) on Solana presents a high-risk profile, reflected in its 61/100 risk score. A key positive security signal is the absence of a mint function, ensuring no additional tokens can be created beyond the initial supply, which protects against inflationary dilution. Furthermore, the exceptionally decentralized holder distribution, with the top 10 holders possessing 0.0% of the supply, suggests robust community distribution rather than significant whale concentration. However, these positives are overshadowed by substantial vulnerabilities. The contract remains unverified, preventing public scrutiny and independent code review. Ownership has not been renounced, meaning the original deployer retains control over the contract's parameters. Crucially, the project's liquidity is not locked, posing a significant risk of removal. These factors collectively contribute to a volatile and less transparent investment landscape.
+
+The most critical security concerns for Football Capital Markets revolve around its unverified contract, unrenounced ownership, and unlocked liquidity. An unverified contract means the deployed code is not publicly visible or confirmable, creating a black box scenario where malicious functionalities could exist undetected. Compounding this, the unrenounced ownership grants the original deployer continued administrative control, allowing potential modifications or even a "rug pull" by altering contract parameters or withdrawing funds. Finally, with liquidity unlocked, the substantial $174,951 liquidity pool could be withdrawn by its providers at any moment, leaving investors with illiquid tokens. These three points form a significant interconnected risk framework.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`hkpi2s...pump`](https://solscan.io/account/hkpi2sknwm5logyy1bz4zytq5revvco2aywd1typpump) |
+| **Network** | Solana |
+| **Price** | $0.004738 |
+| **24h Volume** | $222.9K |
+| **Liquidity** | $175.0K |
+| **Volume / Liquidity** | 1.3× |
+| **Token Age** | 12d |
+| **Top-10 Holders** | N/A of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 7986 buys / 3573 sells |
+
+## Security Flags (2/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ❌ Fail |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Findings Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Frequently Asked Questions
+
+### Is Football Capital Markets a scam?
+
+While the data does not definitively label Football Capital Markets as a scam, it exhibits several high-risk characteristics. The unverified contract, unrenounced ownership, and unlocked liquidity create conditions where malicious actions are possible. These factors contribute to its 61/100 high-risk score, warranting extreme caution from potential investors regarding the project's long-term viability and integrity.
+
+### Is Football Capital Markets safe to buy?
+
+Football Capital Markets is currently assessed as having a high-risk profile (61/100), suggesting it is not safe for typical investment. Key safety concerns include the contract not being verified, ownership not being renounced, and the project's liquidity not being locked. These elements mean the project's integrity is heavily reliant on the developer's trustworthiness, which carries inherent risks for investors.
+
+### Has Football Capital Markets been audited?
+
+The Football Capital Markets contract is reported as "unverified." This means its source code has not been publicly provided or confirmed to match the deployed code on the blockchain. Without contract verification, a thorough and verifiable security audit is practically impossible for external parties. This lack of transparency prevents independent review of its functionalities and security.
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/solana/rxfkdunvinpubdzdyn68rtm3bh2t9s5jytpai8e4zbi)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/football-capital-markets-sol)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-08*

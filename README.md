@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-57-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-64-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,13 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [UFC Freedom 250](./solana/ufc-freedom-250.md) | UFC250 | Solana | 🔴 75/100 | 2026-06-09 | [↗](https://quantumaudit.app/token/ufc-freedom-250-sol) |
+| [Son Goku](./solana/son-goku.md) | GOKU | Solana | 🔴 74/100 | 2026-06-09 | [↗](https://quantumaudit.app/token/son-goku-sol) |
+| [Dogeus Maximus](./solana/dogeus-maximus.md) | DOGEUS | Solana | 🟠 68/100 | 2026-06-09 | [↗](https://quantumaudit.app/token/dogeus-maximus-sol) |
+| [three.ws](./solana/threews.md) | THREE | Solana | 🟠 65/100 | 2026-06-08 | [↗](https://quantumaudit.app/token/threews-sol) |
+| [The Solana Mascot](./solana/the-solana-mascot.md) | SOLY | Solana | 🔴 75/100 | 2026-06-08 | [↗](https://quantumaudit.app/token/the-solana-mascot-sol) |
+| [Football Capital Markets](./solana/football-capital-markets.md) | FCM | Solana | 🟠 61/100 | 2026-06-08 | [↗](https://quantumaudit.app/token/football-capital-markets-sol) |
+| [Bitcoin Bank](./solana/bitcoin-bank.md) | BTCBANK | Solana | 🟠 70/100 | 2026-06-07 | [↗](https://quantumaudit.app/token/bitcoin-bank-sol) |
 | [Law Of Attraction](./solana/law-of-attraction.md) | LOA | Solana | 🟠 62/100 | 2026-06-06 | [↗](https://quantumaudit.app/token/law-of-attraction-sol) |
 | [mogging](./solana/mogging.md) | MOGGING | Solana | 🟠 61/100 | 2026-06-06 | [↗](https://quantumaudit.app/token/mogging-sol) |
 | [Cup Markets](./solana/cup-markets.md) | CUP | Solana | 🟠 65/100 | 2026-06-06 | [↗](https://quantumaudit.app/token/cup-markets-sol) |
@@ -35,19 +42,12 @@
 | [TOES](./solana/toes.md) | TOESCOIN | Solana | 🟠 67/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/toes-sol) |
 | [Injective](./ethereum/injective.md) | INJ | Ethereum | 🟡 36/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/injective-eth) |
 | [Venice Token](./base/venice-token.md) | VVV | Base | 🔴 93/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/venice-token-base) |
-| [Allora](./ethereum/allora.md) | ALLO | Ethereum | 🟠 50/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/allora-eth) |
-| [Chainlink](./ethereum/chainlink.md) | LINK | Ethereum | 🟡 21/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/chainlink-eth) |
-| [Pudgy Penguins](./solana/pudgy-penguins.md) | PENGU | Solana | 🟠 64/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/pudgy-penguins-sol) |
-| [BitVault Signal](./base/bitvault-signal.md) | BV7X | Base | 🟡 21/100 | 2026-05-26 | [↗](https://quantumaudit.app/token/bitvault-signal-base) |
-| [SpaceX](./solana/spacex.md) | SPCX | Solana | 🟠 65/100 | 2026-05-23 | [↗](https://quantumaudit.app/token/spacex-sol) |
-| [FIFA WORLD CUP](./solana/fifa-world-cup.md) | FWC | Solana | 🟠 65/100 | 2026-05-23 | [↗](https://quantumaudit.app/token/fifa-world-cup-sol) |
-| [ttt](./solana/ttt.md) | TTTT | Solana | 🔴 75/100 | 2026-05-22 | [↗](https://quantumaudit.app/token/ttt-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (38)](./solana/README.md) · [Ethereum (12)](./ethereum/README.md) · [Base (5)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (45)](./solana/README.md) · [Ethereum (12)](./ethereum/README.md) · [Base (5)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 
