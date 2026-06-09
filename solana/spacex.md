@@ -2,14 +2,14 @@
 token: SpaceX
 ticker: SPCX
 network: solana
-risk_score: 72
+risk_score: 90
 status: critical
 date: 2026-05-23
 ---
 
 # SpaceX (SPCX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spacex-sol)
 
@@ -17,75 +17,47 @@ date: 2026-05-23
 
 ## Audit Summary
 
-This report provides a hypothetical security audit for a Solana program, specifically an SPL Token Mint account, as no source code was provided for analysis. The findings are based on common vulnerability patterns observed in Solana programs and best practices for secure development. A detailed assessment would require access to the program's Rust and Anchor source code. The overall risk is assessed as Medium, reflecting the general complexity and potential attack surface of Solana programs without specific code to review.
+The audit of the SpaceX (SPCX) SPL Token Mint reveals a critical issue: the mint account is reported as 'Initialized: False' despite having significant liquidity and trading volume. This state means the token's fundamental properties (like supply and decimals) are unset, and it is not functional for token operations. Both mint and freeze authorities have been revoked, which, combined with the uninitialized state, creates an irreversible non-functional token. Users are trading a token that is technically not properly configured on-chain, posing a severe risk of loss of funds.
 
-> **Final Recommendation:** While a definitive security posture cannot be determined without source code, general recommendations for Solana programs include rigorous testing, comprehensive account validation, and secure management of upgrade authorities. Developers should prioritize robust access control and adhere to Anchor's best practices for account constraints and error handling. Consider engaging in a full audit once the code is available.
+> **Final Recommendation:** Given the critical uninitialized state of the SPL Token Mint account and the irreversible revocation of its authorities, this token is fundamentally flawed and poses a severe risk to holders. It is strongly recommended that users exercise extreme caution and avoid trading or holding this token until its on-chain state is corrected and verified as fully initialized and functional. The current configuration suggests a high potential for loss of funds due to misrepresentation or an unrecoverable error in token deployment. For future token deployments, it is crucial to ensure proper initialization and configuration of all token properties before any liquidity is provided or trading commences. A 'Premium Deploy' option would involve a thorough pre-deployment audit to prevent such critical misconfigurations, ensuring all SPL token properties are correctly set and verified on-chain before publ…
 
 ## Security Analysis
 
-This report provides a hypothetical security audit for a Solana program, specifically an SPL Token Mint account, as no source code was provided for analysis. The findings are based on common vulnerability patterns observed in Solana programs and best practices for secure development. A detailed assessment would require access to the program's Rust and Anchor source code. The overall risk is assessed as Medium, reflecting the general complexity and potential attack surface of Solana programs without specific code to review.
+The audit of the SpaceX (SPCX) SPL Token Mint reveals a critical issue: the mint account is reported as 'Initialized: False' despite having significant liquidity and trading volume. This state means the token's fundamental properties (like supply and decimals) are unset, and it is not functional for token operations. Both mint and freeze authorities have been revoked, which, combined with the uninitialized state, creates an irreversible non-functional token. Users are trading a token that is technically not properly configured on-chain, posing a severe risk of loss of funds.
 
-While a definitive security posture cannot be determined without source code, general recommendations for Solana programs include rigorous testing, comprehensive account validation, and secure management of upgrade authorities. Developers should prioritize robust access control and adhere to Anchor's best practices for account constraints and error handling. Consider engaging in a full audit once the code is available.
+Given the critical uninitialized state of the SPL Token Mint account and the irreversible revocation of its authorities, this token is fundamentally flawed and poses a severe risk to holders. It is strongly recommended that users exercise extreme caution and avoid trading or holding this token until its on-chain state is corrected and verified as fully initialized and functional. The current configuration suggests a high potential for loss of funds due to misrepresentation or an unrecoverable error in token deployment. For future token deployments, it is crucial to ensure proper initialization and configuration of all token properties before any liquidity is provided or trading commences. A 'Premium Deploy' option would involve a thorough pre-deployment audit to prevent such critical misconfigurations, ensuring all SPL token properties are correctly set and verified on-chain before publ…
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture: Solana programs typically follow a stateless architecture, relying on accounts for data storage. This design inherently promotes modularity but requires robust account validation. 7. |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic: For an SPL Token Mint, economic risks typically involve potential for unauthorized minting or burning, which directly impacts token supply and value. Robust access control over minting a |
-| **Upgrades** | 6/10 | Medium | 7.7 Upgrades: Solana programs are typically upgradeable, allowing for bug fixes and feature enhancements. The upgrade authority must be secured, ideally behind a multi-signature wallet or a time-locke |
+| **Technical** | 6/10 | High | The technical state of the SPL Token Mint account is critically flawed (7.2 Code Security). The account is marked as 'Initialized: False', meaning its core properties are unset and it cannot perform t |
+| **Governance / Economics** | 6/10 | High | The economic implications are severe (7.4 Economic). Users are trading a token with significant liquidity and volume that is fundamentally non-functional due to its uninitialized state. This creates a |
+| **Upgrades** | 6/10 | Low | The SPL Token Program itself is a core Solana program and is not subject to frequent upgrades that would impact individual mint accounts in this manner (7.7 Upgrades). The mint account's state is immu |
 
 ## Security Findings
 
-_🟠 2 High · 🟡 2 Medium · 🟢 2 Low · ⚪ 1 Informational_
+_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium_
 
-### `H-01` — Missing Signer Checks for Critical Instructions  *(Severity: High · Status: Unresolved)*
+### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
 
-Critical instructions, such as those modifying program state or transferring assets, may lack proper `#[account(signer)]` constraints or manual `account.is_signer` checks. This allows any caller to execute privileged operations without authorization, leading to unauthorized state changes or asset manipulation. For an SPL Token Mint, this could mean unauthorized minting or changing the mint authority.
+The SPL Token Mint account `e6ifp2mjy8cyqehugutfvrxrirkxruonlmrvtfypump` is reported as `Initialized: False`. This means the token's core properties (like supply, decimals) have not been set, and the mint account is not functional for token operations. Despite this critical state, the token has significant liquidity ($261,151 USD) and trading volume ($636,198 USD), indicating that users are actively trading a non-functional asset.
 
-**Recommendation:** Ensure all instructions that modify sensitive program state or transfer assets explicitly check that the required authority account is a signer. Use Anchor's `#[account(signer)]` attribute for clarity and safety, or manually verify `account.is_signer` for non-Anchor contexts.
-
-
-### `H-02` — Insufficient Account Validation  *(Severity: High · Status: Unresolved)*
-
-Programs often fail to adequately validate all incoming accounts, leading to potential 'type cosplay' attacks or manipulation of unowned accounts. This includes missing checks for account ownership (`account.owner`), discriminator bytes (for Anchor accounts), and expected account types (e.g., `spl_token::ID` for token accounts). An attacker could pass a malicious account that appears valid but is controlled by them.
-
-**Recommendation:** Implement comprehensive validation for all accounts passed into an instruction. Verify `account.owner` against expected program IDs, check Anchor discriminators, and ensure account data lengths and types match expectations. Use Anchor's `constraint` attribute and `has_one` for linked accounts.
+**Recommendation:** A token mint account must be properly initialized before any tokens are issued or traded. Users should be aware that trading an uninitialized token carries extreme risk, as the token's properties could be set arbitrarily later (if authorities were not revoked) or it may never become functional. Immediate action is required to cease trading and inform holders.
 
 
-### `M-01` — PDA Bump Seed Canonicalization Vulnerability  *(Severity: Medium · Status: Unresolved)*
+### `H-01` — Irreversible Revocation of Authorities on Uninitialized Mint  *(Severity: High · Status: Unresolved)*
 
-If a Program Derived Address (PDA) is initialized without strictly enforcing canonical bump seeds, an attacker could potentially initialize duplicate PDAs with non-canonical bumps. This can lead to state confusion, resource exhaustion, or bypass unique constraints if the program logic relies on a single, unique PDA for a given set of seeds.
+Both the Mint Authority and Freeze Authority for the `SPCX` token have been revoked (`None`), while the mint account itself is `Initialized: False`. This combination creates an irreversible state where the token cannot be properly initialized, its properties cannot be set, and no tokens can ever be minted or frozen. This effectively renders the token permanently non-functional and unmanageable.
 
-**Recommendation:** Always use the canonical bump seed returned by `Pubkey::find_program_address` when initializing or interacting with PDAs. For Anchor programs, ensure `#[account(seeds = [...], bump)]` is correctly used, and avoid manual bump seed management that could allow non-canonical bumps.
-
-
-### `M-02` — Reinitialization Attack Vector  *(Severity: Medium · Status: Unresolved)*
-
-Programs that manage their own state initialization might be vulnerable to reinitialization attacks if the initialization instruction does not check if the account has already been initialized. An attacker could re-initialize an already active program account, potentially resetting critical parameters or seizing control.
-
-**Recommendation:** Implement a clear 'initialized' flag or check the account's discriminator/data length at the beginning of any initialization instruction. If the account is already initialized, the instruction should error out. Anchor's `init` constraint typically handles this, but custom initialization logic requires explicit checks.
+**Recommendation:** Authorities should only be revoked *after* a token mint has been fully initialized and its properties (like decimals and supply) are correctly set and immutable. Revoking authorities on an uninitialized mint creates an irreversible state of non-functionality, making the token unusable.
 
 
-### `L-01` — Arithmetic Overflow/Underflow Potential  *(Severity: Low · Status: Unresolved)*
+### `M-01` — Lack of Transparency for Key Token Properties  *(Severity: Medium · Status: Unresolved)*
 
-Arithmetic operations (addition, subtraction, multiplication) on integer types in Rust can overflow or underflow without explicit `checked_` operations. While Rust in debug mode panics on overflow, release builds wrap around, leading to unexpected and potentially exploitable behavior, especially in calculations involving token amounts or balances.
+Due to the `Initialized: False` state of the mint account, crucial token properties such as `Supply (raw)` and `Decimals` are `unknown`. This lack of on-chain transparency prevents users from understanding the token's fundamental economic characteristics, such as its total supply or divisibility, which are essential for informed trading decisions.
 
-**Recommendation:** Always use Rust's `checked_add`, `checked_sub`, `checked_mul`, etc., methods for all arithmetic operations involving sensitive values like token amounts or balances. Handle `None` results appropriately to prevent overflows/underflows. Alternatively, use safe math libraries if available and suitable.
-
-
-### `L-02` — Close Account Draining Risk  *(Severity: Low · Status: Unresolved)*
-
-When an account is closed, its remaining lamports are transferred to a designated recipient. If the program allows closing accounts without proper checks (e.g., ensuring the account is empty or has served its purpose), an attacker might be able to close accounts prematurely, draining their lamport balance or disrupting program functionality.
-
-**Recommendation:** Ensure that accounts can only be closed under specific, secure conditions. For example, token accounts should only be closed if their token balance is zero. Implement strict signer checks for the close authority and validate the state of the account before allowing closure.
-
-
-### `I-01` — Lack of Rent Exemption Checks  *(Severity: Informational · Status: Unresolved)*
-
-While not a direct vulnerability, programs that create new accounts or resize existing ones without ensuring they are rent-exempt can lead to accounts being eventually reaped by the Solana runtime if their lamport balance falls below the rent-exempt threshold. This can result in data loss or unexpected program behavior.
-
-**Recommendation:** When creating or resizing accounts, always ensure they hold enough lamports to be rent-exempt. Use `Rent::get().minimum_balance(data_len)` to calculate the required lamports and transfer them during account initialization. For Anchor, `init` and `realloc` constraints often handle this automatically, but custom CPIs require manual checks.
+**Recommendation:** For any token intended for public trading, all essential properties, including total supply and decimals, must be clearly defined and verifiable on-chain. This requires proper initialization of the mint account before any public engagement or liquidity provision.
 
 ## Token Metrics
 

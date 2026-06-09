@@ -2,14 +2,14 @@
 token: Bullish Degen
 ticker: BULLISH
 network: solana
-risk_score: 90
+risk_score: 95
 status: critical
 date: 2026-05-14
 ---
 
 # Bullish Degen (BULLISH) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 95/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bullish-degen-sol)
 
@@ -17,58 +17,58 @@ date: 2026-05-14
 
 ## Audit Summary
 
-This report details a security audit of the Bullish Degen (BULLISH) SPL Token Mint account on Solana, based solely on on-chain metadata. The primary finding is that the token mint is uninitialized, rendering the token non-functional. Compounding this, the mint authority has been revoked, preventing any future initialization. While the freeze authority is also revoked, which is generally a positive security practice for decentralization, it is currently irrelevant given the token's unusable state. Information regarding holder distribution and external security signals (GoPlus, RugCheck) was unavailable for this analysis.
+This report provides a security analysis of the Bullish Degen (BULLISH) SPL Token Mint account based on on-chain metadata. The analysis reveals critical issues, primarily that the token mint is uninitialized and associated with an unknown token program, rendering it non-functional and highly risky. While liquidity is reported, the underlying technical state makes any economic activity impossible or highly precarious. The audit is limited to available on-chain data and does not include source code review.
 
-> **Final Recommendation:** The Bullish Degen (BULLISH) SPL Token Mint is in a critical, non-functional state due to being uninitialized with a revoked mint authority. This combination means the token cannot be used as intended, and its state cannot be rectified. Any reported liquidity or trading volume is associated with a fundamentally broken asset.
+> **Final Recommendation:** The Bullish Degen (BULLISH) SPL Token Mint presents critical security and functionality risks due to its uninitialized state and association with an unknown token program. Any interaction with this token is strongly discouraged as it is fundamentally non-functional and potentially malicious. Users should exercise extreme caution and avoid purchasing or holding this token.
 
-It is strongly recommended that users exercise extreme caution. For any future token deployments, ensure the mint is fully initialized with appropriate decimals and supply *before* revoking the mint authority. For projects requiring robust security and operational integrity, consider a Premium Deploy option, which includes pre-deployment verification and continuous monitoring to prevent such critical configuration errors.
+For projects aiming for robust and secure token deployments, a 'Premium Deploy' option is recommended. This includes a comprehensive pre-deployment audit of the token program's source code, rigorous on-chain validation post-deployment, and continuous monitoring. Such a service ensures all critical parameters, like initialization and program association, are correctly configured and verified, mitigating the severe issues observed in this token.
 
 ## Security Analysis
 
-This report details a security audit of the Bullish Degen (BULLISH) SPL Token Mint account on Solana, based solely on on-chain metadata. The primary finding is that the token mint is uninitialized, rendering the token non-functional. Compounding this, the mint authority has been revoked, preventing any future initialization. While the freeze authority is also revoked, which is generally a positive security practice for decentralization, it is currently irrelevant given the token's unusable state. Information regarding holder distribution and external security signals (GoPlus, RugCheck) was unavailable for this analysis.
+This report provides a security analysis of the Bullish Degen (BULLISH) SPL Token Mint account based on on-chain metadata. The analysis reveals critical issues, primarily that the token mint is uninitialized and associated with an unknown token program, rendering it non-functional and highly risky. While liquidity is reported, the underlying technical state makes any economic activity impossible or highly precarious. The audit is limited to available on-chain data and does not include source code review.
 
-The Bullish Degen (BULLISH) SPL Token Mint is in a critical, non-functional state due to being uninitialized with a revoked mint authority. This combination means the token cannot be used as intended, and its state cannot be rectified. Any reported liquidity or trading volume is associated with a fundamentally broken asset.
+The Bullish Degen (BULLISH) SPL Token Mint presents critical security and functionality risks due to its uninitialized state and association with an unknown token program. Any interaction with this token is strongly discouraged as it is fundamentally non-functional and potentially malicious. Users should exercise extreme caution and avoid purchasing or holding this token.
 
-It is strongly recommended that users exercise extreme caution. For any future token deployments, ensure the mint is fully initialized with appropriate decimals and supply *before* revoking the mint authority. For projects requiring robust security and operational integrity, consider a Premium Deploy option, which includes pre-deployment verification and continuous monitoring to prevent such critical configuration errors.
+For projects aiming for robust and secure token deployments, a 'Premium Deploy' option is recommended. This includes a comprehensive pre-deployment audit of the token program's source code, rigorous on-chain validation post-deployment, and continuous monitoring. Such a service ensures all critical parameters, like initialization and program association, are correctly configured and verified, mitigating the severe issues observed in this token.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | 7.1 Architecture & 7.2 Code Security: The core technical issue is the uninitialized state of the SPL Token Mint, which prevents any token operations. This is a critical flaw, as the token cannot be mi |
-| **Governance / Economics** | 6/10 | Low | 7.4 Economic & 7.5 Governance: The mint authority and freeze authority for the Bullish Degen token have both been revoked. While this typically enhances decentralization by preventing further token is |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: SPL Token Mint accounts are data accounts managed by the immutable SPL Token Program. As such, the mint account itself is not upgradable. Any changes to token functionality would require |
+| **Technical** | 6/10 | High | The technical analysis (7.2 Code Security, 7.3 Access Control) reveals critical flaws: the SPL Token Mint is marked as 'Initialized: False', meaning it cannot function to mint or manage tokens, and it |
+| **Governance / Economics** | 6/10 | High | Despite reported liquidity of $64,398 and a 24h volume of $62,074 (7.4 Economic), these metrics are highly misleading given the token's uninitialized state. An uninitialized token cannot be properly t |
+| **Upgrades** | 6/10 | Low | SPL Token Mint accounts are not directly upgradeable (7.7 Upgrades). The underlying SPL Token Program is managed and upgradeable by Solana Labs, ensuring its core functionality is maintained by the So |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · ⚪ 2 Informational_
+_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · ⚪ 1 Informational_
 
-### `C-01` — Uninitialized SPL Token Mint  *(Severity: Critical · Status: Unresolved)*
+### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
 
-The SPL Token Mint account at `c2omvhcvt3ddy77s2kzzawfjqeetzofgz4enwwkxpump` is reported as `Initialized: False`. An uninitialized mint cannot be used to create or manage tokens, rendering the token non-functional. This also means its supply and decimals are undefined.
+The SPL Token Mint account at `c2omvhcvt3ddy77s2kzzawfjqeetzofgz4enwwkxpump` is reported as 'Initialized: False'. An uninitialized mint account cannot be used to create, transfer, or manage tokens. This means no tokens can be minted, the supply and decimals are unknown, and the token is effectively non-functional. Any reported liquidity or trading volume for an uninitialized token is highly misleading and represents a significant risk to users attempting to interact with it.
 
-**Recommendation:** The mint account must be properly initialized using the `initialize_mint` instruction of the SPL Token Program. This requires a mint authority and specifying decimals and supply. However, given the revoked mint authority (H-01), this action is currently impossible.
-
-
-### `H-01` — Revoked Mint Authority on Uninitialized Mint  *(Severity: High · Status: Unresolved)*
-
-The mint authority for the token `Bullish Degen (BULLISH)` has been revoked (`None`). While typically a security strength preventing arbitrary minting, this is problematic given the mint's `Initialized: False` status (C-01). Without a mint authority, the token cannot be initialized, making it permanently non-functional and unusable.
-
-**Recommendation:** If the intention was to create a functional token, the mint should have been initialized *before* revoking the mint authority. As it stands, this token cannot be made functional. A new, properly initialized mint would be required for a usable token.
+**Recommendation:** The token mint account must be properly initialized using the SPL Token Program's `initialize_mint` instruction. Without proper initialization, the token is unusable. If this was an intentional state for a specific purpose, it should be clearly communicated; otherwise, it represents a critical failure in deployment.
 
 
-### `I-01` — Revoked Freeze Authority  *(Severity: Informational · Status: Resolved)*
+### `H-01` — Unknown Token Program Association  *(Severity: High · Status: Unresolved)*
 
-The freeze authority for the `Bullish Degen (BULLISH)` token mint has been revoked. This prevents any entity from freezing token accounts, enhancing decentralization and user control over their assets.
+The 'Token Program' associated with the mint account is listed as 'unknown'. Standard SPL tokens are managed by the official `TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA` program. An unknown program implies that this account might not be a standard SPL token mint, or it is associated with a custom, potentially unaudited, or malicious program. This introduces significant uncertainty regarding the account's true nature and functionality, posing a high security risk.
 
-**Recommendation:** This is a positive security practice for a decentralized token. No action required.
+**Recommendation:** Verify the program ID associated with this mint account. If it is not the official SPL Token Program, a thorough audit of the custom program's source code is essential to understand its behavior and security implications. Users should avoid interacting with tokens managed by unknown or unverified programs.
 
 
-### `I-02` — Undetermined Token Program  *(Severity: Informational · Status: Unresolved)*
+### `M-01` — Absence of External Security Signals  *(Severity: Medium · Status: Unresolved)*
 
-The specific token program governing the `Bullish Degen (BULLISH)` mint is reported as 'unknown'. While typically the standard SPL Token Program, an undetermined program could imply a custom implementation, which would require source code verification for security assessment.
+Data from external security signals such as GoPlus Solana and RugCheck is unavailable. The absence of these independent security assessments means there is no third-party validation regarding potential risks like honeypots, mutable metadata, or other common token scams. This lack of external scrutiny increases the overall risk profile, especially for a token with fundamental technical issues.
 
-**Recommendation:** Verify the program ID associated with this mint account to confirm it is the official SPL Token Program. If it's a custom program, a full code audit would be necessary to assess its security posture.
+**Recommendation:** Engage with reputable security auditing firms and integrate with external security signal providers (e.g., GoPlus, RugCheck) to provide transparency and independent validation of the token's safety and integrity. This helps build trust within the community.
+
+
+### `I-01` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Resolved)*
+
+Both the Mint Authority and Freeze Authority for the token have been revoked (set to 'None'). If the token were properly initialized and functional, this would be a positive security feature, preventing any single entity from minting new tokens or freezing existing token accounts. This decentralizes control over the token's supply and transferability.
+
+**Recommendation:** Maintain revoked authorities for production tokens to enhance decentralization and prevent centralized control over token supply and transfer mechanisms. This is a good practice for community-owned or fixed-supply tokens.
 
 ## Token Metrics
 

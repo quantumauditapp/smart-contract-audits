@@ -2,14 +2,14 @@
 token: Dogeus Maximus
 ticker: DOGEUS
 network: solana
-risk_score: 72
+risk_score: 85
 status: critical
 date: 2026-06-09
 ---
 
 # Dogeus Maximus (DOGEUS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 85/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dogeus-maximus-sol)
 
@@ -17,68 +17,58 @@ date: 2026-06-09
 
 ## Audit Summary
 
-This report provides a security assessment for a Solana program. Due to the absence of specific program code for review, this audit is based on general Solana security best practices, common vulnerability patterns, and assumptions derived from the provided `account_type: spl_mint` hint. The findings highlight potential areas of concern typical for Solana programs, emphasizing the importance of robust account validation, access control, and secure arithmetic operations. The overall risk is assessed as Medium, reflecting the potential for critical vulnerabilities if standard security practices are not rigorously applied.
+This report provides a security assessment of the Dogeus Maximus (DOGEUS) SPL Token Mint based on on-chain metadata and publicly available information. Source code for SPL Token Mints is not directly auditable, and the analysis is metadata-driven. The assessment reveals critical operational and security concerns, primarily due to the mint account being uninitialized and its controlling program being unidentified. While mint and freeze authorities are reported as revoked, the fundamental uninitialized state renders the token non-functional and highly risky for any interaction.
 
-> **Final Recommendation:** Given the absence of program code, this audit highlights general areas of concern for Solana programs. It is strongly recommended that a comprehensive code audit be performed once the program's source code is available. This should include detailed checks for all Solana-specific vulnerabilities, such as missing signer checks, account validation, PDA canonicalization, and reinitialization protection. Thorough testing, including unit, integration, and stress tests, is also crucial.
+> **Final Recommendation:** The Dogeus Maximus (DOGEUS) SPL Token Mint is in a critical state due to being uninitialized and having an unknown controlling program. This renders the token non-functional and highly risky. Users should exercise extreme caution and avoid any interaction with this token until its mint account is properly initialized by a trusted entity, its decimals and supply are clearly defined, and the controlling Token Program is verified to be a standard, audited SPL Token Program. The current state poses a significant risk of loss of funds or unexpected behavior.
+
+For projects aiming for robust security and transparency, a 'Premium Deploy' option involves a full pre-deployment audit of any custom token programs, verification of standard SPL program usage, and a post-deployment verification of all account states and authorities. This ensures all parameters are correctly set and immutable authoriti…
 
 ## Security Analysis
 
-This report provides a security assessment for a Solana program. Due to the absence of specific program code for review, this audit is based on general Solana security best practices, common vulnerability patterns, and assumptions derived from the provided `account_type: spl_mint` hint. The findings highlight potential areas of concern typical for Solana programs, emphasizing the importance of robust account validation, access control, and secure arithmetic operations. The overall risk is assessed as Medium, reflecting the potential for critical vulnerabilities if standard security practices are not rigorously applied.
+This report provides a security assessment of the Dogeus Maximus (DOGEUS) SPL Token Mint based on on-chain metadata and publicly available information. Source code for SPL Token Mints is not directly auditable, and the analysis is metadata-driven. The assessment reveals critical operational and security concerns, primarily due to the mint account being uninitialized and its controlling program being unidentified. While mint and freeze authorities are reported as revoked, the fundamental uninitialized state renders the token non-functional and highly risky for any interaction.
 
-Given the absence of program code, this audit highlights general areas of concern for Solana programs. It is strongly recommended that a comprehensive code audit be performed once the program's source code is available. This should include detailed checks for all Solana-specific vulnerabilities, such as missing signer checks, account validation, PDA canonicalization, and reinitialization protection. Thorough testing, including unit, integration, and stress tests, is also crucial.
+The Dogeus Maximus (DOGEUS) SPL Token Mint is in a critical state due to being uninitialized and having an unknown controlling program. This renders the token non-functional and highly risky. Users should exercise extreme caution and avoid any interaction with this token until its mint account is properly initialized by a trusted entity, its decimals and supply are clearly defined, and the controlling Token Program is verified to be a standard, audited SPL Token Program. The current state poses a significant risk of loss of funds or unexpected behavior.
+
+For projects aiming for robust security and transparency, a 'Premium Deploy' option involves a full pre-deployment audit of any custom token programs, verification of standard SPL program usage, and a post-deployment verification of all account states and authorities. This ensures all parameters are correctly set and immutable authoriti…
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture and 7.2 Code Security are paramount for Solana programs. Robust account validation, including owner and discriminator checks, is crucial to prevent type cosplay and unauthorized acces |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic and 7.5 Governance aspects are critical for any Solana program, especially those involving tokens. Economic stability relies on well-defined tokenomics and supply mechanisms, preventing i |
-| **Upgrades** | 6/10 | Medium | 7.7 Upgrades are managed via Solana's BPF upgradeable loader, allowing programs to be updated. This offers flexibility for bug fixes and feature enhancements but introduces the risk of malicious upgra |
+| **Technical** | 6/10 | High | The technical architecture (7.1 Architecture) of this SPL Token Mint presents significant issues. Most critically, the mint account is uninitialized, meaning its core properties are not set, and it ca |
+| **Governance / Economics** | 6/10 | High | The economic aspects (7.4 Economic) of the Dogeus Maximus token are highly uncertain due to the uninitialized state of the mint. Key properties such as total supply and decimals are unknown, preventin |
+| **Upgrades** | 6/10 | Low | The upgradeability (7.7 Upgrades) of this SPL Token Mint is minimal, which is generally a security strength for a token. Both the Mint Authority and Freeze Authority are reported as revoked. This mean |
 
 ## Security Findings
 
-_🟠 2 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · ⚪ 1 Informational_
 
-### `H-01` — Missing Signer Checks  *(Severity: High · Status: Unresolved)*
+### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
 
-Many Solana program instructions require specific accounts to sign to authorize an action. A common vulnerability is failing to check if a required account (e.g., an owner, admin, or user initiating a transfer) has actually signed the transaction. This can lead to unauthorized instruction execution, allowing any caller to perform privileged actions.
+The SPL Token Mint account `femrhdedduvuzo25rzrizd6te8xy3tdykllxbheepump` is reported as `Initialized: False`. An uninitialized mint account cannot be used to create tokens, and its properties (like decimals, mint authority, freeze authority) are not yet set. This state makes the token unusable and potentially vulnerable to malicious initialization by any party, leading to an unpredictable token supply or behavior.
 
-**Recommendation:** Ensure all instructions that require authorization explicitly check the `is_signer` field for all necessary accounts. For Anchor programs, use `#[account(signer)]` or `Constraint::Signer` where appropriate.
-
-
-### `H-02` — Reinitialization Vulnerability  *(Severity: High · Status: Unresolved)*
-
-Programs that manage state accounts often have an `initialize` instruction. If this instruction does not properly check if the target state account has already been initialized (e.g., by checking a discriminator or a boolean flag), it could be called multiple times. This allows an attacker to reset critical program state, reassign ownership, or drain funds.
-
-**Recommendation:** Implement robust checks within the `initialize` instruction to ensure that the target state account is uninitialized before proceeding. For Anchor, this is often handled by `init` constraints and discriminator checks, but custom logic might still be vulnerable if not carefully implemented.
+**Recommendation:** The token mint must be properly initialized by a trusted entity to define its properties and enable token issuance. Until initialization, the token is non-functional and poses a significant risk. All associated liquidity and trading activity is based on a non-functional token.
 
 
-### `M-01` — Inadequate Account Ownership/Discriminator Validation  *(Severity: Medium · Status: Unresolved)*
+### `H-01` — Unknown Token Program Controlling Mint  *(Severity: High · Status: Unresolved)*
 
-Solana programs interact with various accounts. Failing to validate the `owner` of an account (to ensure it belongs to the expected program) or the `discriminator` (for Anchor accounts, to ensure it's the correct type) can lead to 'type cosplay' attacks. An attacker could pass a malicious account that appears valid but is actually controlled by another program or is of an unexpected type, leading to logic errors or unauthorized access.
+The underlying Token Program for the `Dogeus Maximus (DOGEUS)` mint is reported as `unknown`. Standard SPL tokens are managed by the official `TokenkegQfeZyiNwAJbNbGKPFXAbZf5vWPvGHFN` program. An unknown program could imply a custom implementation with unaudited or malicious logic, or simply a data retrieval issue. This introduces uncertainty about the token's behavior, security, and adherence to SPL standards.
 
-**Recommendation:** Always validate the `owner` of all accounts passed into an instruction to ensure they belong to the expected program. For Anchor accounts, ensure the discriminator is checked, which Anchor typically handles automatically but should be confirmed for custom deserialization logic.
-
-
-### `M-02` — PDA Non-Canonical Bump Seed Usage  *(Severity: Medium · Status: Unresolved)*
-
-Program Derived Addresses (PDAs) are created with a 'bump' seed. If a program allows PDAs to be created or referenced using non-canonical bump seeds (i.e., not the smallest valid bump seed), it could enable an attacker to create multiple PDAs for the same set of seeds. This can lead to state confusion, resource exhaustion, or bypass unique constraints.
-
-**Recommendation:** Ensure that all PDA creation and validation logic strictly enforces the use of canonical bump seeds. Anchor's `find_program_address` and `init` constraints typically handle this correctly, but custom PDA logic requires explicit canonical bump validation.
+**Recommendation:** Verify the exact program ID controlling this mint. If it's a custom program, a thorough security audit of that program's source code is essential before any interaction. If it's a standard SPL program but the data source failed to identify it, this finding's severity would decrease, but verification is still crucial.
 
 
-### `L-01` — Potential for Arithmetic Overflow/Underflow  *(Severity: Low · Status: Unresolved)*
+### `M-01` — Undefined Token Properties (Supply & Decimals)  *(Severity: Medium · Status: Unresolved)*
 
-Arithmetic operations (addition, subtraction, multiplication, division) on integer types, especially when dealing with token amounts or balances, can be susceptible to overflow or underflow vulnerabilities. If not handled with checked math, these operations can wrap around, leading to incorrect calculations and potential loss of funds or incorrect state.
+The `Supply (raw)` and `Decimals` for the `Dogeus Maximus (DOGEUS)` token are reported as `unknown`. These fundamental properties are crucial for understanding a token's economics and usability. Their absence prevents accurate valuation, display, and interaction with the token. This is a direct consequence of the mint being uninitialized (C-01).
 
-**Recommendation:** Always use Rust's `checked_*` arithmetic methods (e.g., `checked_add`, `checked_sub`, `checked_mul`) for all operations involving sensitive values like token amounts or balances. Handle `None` results appropriately, typically by returning an error.
+**Recommendation:** Ensure the token mint is initialized, which will define its decimals and allow for the tracking of supply. Users should avoid interacting with tokens where basic properties like decimals and supply are not clearly defined, as this can lead to miscalculations and potential financial loss.
 
 
-### `I-01` — Missing Rent Exemption Checks  *(Severity: Informational · Status: Unresolved)*
+### `I-01` — Lack of External Security Signals  *(Severity: Informational · Status: Unresolved)*
 
-While not a direct security vulnerability, failing to ensure that newly created accounts are rent-exempt can lead to unexpected account closure by the Solana runtime if their balance falls below the rent-exempt threshold. This can result in loss of data or funds for users if not properly communicated or handled.
+Data from external security analysis platforms such as GoPlus and RugCheck is unavailable for `Dogeus Maximus (DOGEUS)`. These platforms provide automated risk assessments and red flags, which are valuable for quick due diligence. The absence of this data means users lack an additional layer of automated security vetting.
 
-**Recommendation:** When creating new accounts, ensure they are funded with enough lamports to meet the rent-exemption threshold. This can be done by transferring sufficient SOL or by using `system_program::create_account` with the appropriate rent-exempt amount.
+**Recommendation:** Users should exercise increased caution and conduct thorough manual due diligence when external security signals are unavailable. Project teams should aim to integrate with and be recognized by reputable security analysis platforms to provide greater transparency and trust.
 
 ## Token Metrics
 

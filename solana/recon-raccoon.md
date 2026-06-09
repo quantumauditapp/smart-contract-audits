@@ -17,65 +17,51 @@ date: 2026-05-12
 
 ## Audit Summary
 
-This audit of the RECON RACCOON (RCON) SPL Token Mint at address `7nzuyzyznof9gf3zr9qhdnxpq1mtm8ln3vajuhrgbonk` reveals critical inconsistencies. The mint account is reported as `Initialized: False`, which means it is non-functional and cannot issue tokens. This directly contradicts the presence of reported liquidity and trading volume. This fundamental discrepancy indicates either severe data integrity issues or that the token is not operational as a standard SPL token. Further investigation is urgently required.
+This audit report focuses on the RECON RACCOON (RCON) SPL Token Mint account on Solana. The primary finding is that the mint account is marked as 'Initialized: False', which means it is not a functional token mint. Despite this, liquidity and trading volume data are present, creating a significant inconsistency and potential for user confusion. Key authorities (Mint and Freeze) are revoked, which is a positive security practice for a fully deployed token, but this is overshadowed by the uninitialized state. A comprehensive assessment is hindered by the lack of complete on-chain data regarding supply, decimals, and holder distribution.
 
-> **Final Recommendation:** Immediate and thorough investigation is required to clarify the `Initialized: False` status of the RECON RACCOON (RCON) SPL Token Mint. If the mint is indeed uninitialized, the token is non-functional, and any associated liquidity or trading volume is based on erroneous data, posing a severe risk to users. It is crucial to determine if the reported market data pertains to a different, functional token, or if the mint's on-chain state has been misinterpreted.
+> **Final Recommendation:** The RECON RACCOON (RCON) SPL Token Mint account presents significant risks primarily due to its uninitialized state. Users should exercise extreme caution, as an uninitialized mint cannot function as a token. The presence of liquidity data for such an account is a critical red flag that could lead to financial loss if users attempt to interact with it as a functional token. It is imperative to clarify the status of this mint account and reconcile the conflicting data.
 
-For any future token deployments, consider a Premium Deploy option that includes a pre-launch audit of the mint's configuration and a verification of its on-chain state to prevent such critical discrepancies. This ensures all fundamental parameters are correctly set and verified before public listing and liquidity provision.
+For future SPL Token deployments, we recommend a Premium Deploy option that includes a comprehensive pre-deployment audit to ensure all accounts are correctly initialized and configured, and that all on-chain data accurately reflects the intended state of the token. This would prevent critical issues like an uninitialized mint from reaching production and misleading users.
 
 ## Security Analysis
 
-This audit of the RECON RACCOON (RCON) SPL Token Mint at address `7nzuyzyznof9gf3zr9qhdnxpq1mtm8ln3vajuhrgbonk` reveals critical inconsistencies. The mint account is reported as `Initialized: False`, which means it is non-functional and cannot issue tokens. This directly contradicts the presence of reported liquidity and trading volume. This fundamental discrepancy indicates either severe data integrity issues or that the token is not operational as a standard SPL token. Further investigation is urgently required.
+This audit report focuses on the RECON RACCOON (RCON) SPL Token Mint account on Solana. The primary finding is that the mint account is marked as 'Initialized: False', which means it is not a functional token mint. Despite this, liquidity and trading volume data are present, creating a significant inconsistency and potential for user confusion. Key authorities (Mint and Freeze) are revoked, which is a positive security practice for a fully deployed token, but this is overshadowed by the uninitialized state. A comprehensive assessment is hindered by the lack of complete on-chain data regarding supply, decimals, and holder distribution.
 
-Immediate and thorough investigation is required to clarify the `Initialized: False` status of the RECON RACCOON (RCON) SPL Token Mint. If the mint is indeed uninitialized, the token is non-functional, and any associated liquidity or trading volume is based on erroneous data, posing a severe risk to users. It is crucial to determine if the reported market data pertains to a different, functional token, or if the mint's on-chain state has been misinterpreted.
+The RECON RACCOON (RCON) SPL Token Mint account presents significant risks primarily due to its uninitialized state. Users should exercise extreme caution, as an uninitialized mint cannot function as a token. The presence of liquidity data for such an account is a critical red flag that could lead to financial loss if users attempt to interact with it as a functional token. It is imperative to clarify the status of this mint account and reconcile the conflicting data.
 
-For any future token deployments, consider a Premium Deploy option that includes a pre-launch audit of the mint's configuration and a verification of its on-chain state to prevent such critical discrepancies. This ensures all fundamental parameters are correctly set and verified before public listing and liquidity provision.
+For future SPL Token deployments, we recommend a Premium Deploy option that includes a comprehensive pre-deployment audit to ensure all accounts are correctly initialized and configured, and that all on-chain data accurately reflects the intended state of the token. This would prevent critical issues like an uninitialized mint from reaching production and misleading users.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The technical assessment reveals a critical issue: the SPL Token Mint is reported as `Initialized: False` (7.2 Code Security). This state renders the token non-functional, preventing any minting or tr |
-| **Governance / Economics** | 6/10 | Low | The economic viability of the RECON RACCOON token is critically compromised by its `Initialized: False` status (7.4 Economic). An uninitialized mint cannot support any economic activity, making report |
-| **Upgrades** | 6/10 | Low | As an SPL Token Mint, the RECON RACCOON token is managed by the core SPL Token Program, which is not subject to custom upgradeability by the token creator (7.7 Upgrades). This eliminates risks associa |
+| **Technical** | 6/10 | High | The technical analysis (7.1 Architecture, 7.2 Code Security, 7.3 Access Control) reveals a critical issue: the SPL Token Mint account is uninitialized. While the Mint Authority and Freeze Authority ar |
+| **Governance / Economics** | 6/10 | Medium | From an economic and governance perspective (7.4 Economic, 7.5 Governance), the revocation of both Mint and Freeze Authorities is a strong positive, indicating no single entity can inflate the supply  |
+| **Upgrades** | 6/10 | Low | Regarding upgrades (7.7 Upgrades), SPL Token Mint accounts themselves are not directly upgradeable in the traditional sense. The underlying SPL Token Program is maintained by Solana Labs. The revocati |
 
 ## Security Findings
 
-_🔴 2 Critical · 🟠 1 High · ⚪ 2 Informational_
+_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium_
 
 ### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
 
-The SPL Token Mint account at `7nzuyzyznof9gf3zr9qhdnxpq1mtm8ln3vajuhrgbonk` is explicitly reported as `Initialized: False`. An uninitialized mint account cannot be used to mint new tokens, nor can it be associated with token accounts for transfers. This renders the token non-functional and unusable within the Solana ecosystem.
+The SPL Token Mint account at 7nzuyzyznof9gf3zr9qhdnxpq1mtm8ln3vajuhrgbonk is explicitly marked as 'Initialized: False'. An uninitialized mint account is not a functional token. It lacks defined supply, decimals, and cannot be used for token transfers or other SPL Token operations. This state renders the token unusable and any associated liquidity or trading data highly suspicious.
 
-**Recommendation:** Verify the on-chain state of the mint account. If it is indeed uninitialized, it cannot function as a token. Any associated market data is misleading. The token creator must initialize the mint account using the `InitializeMint` instruction of the SPL Token Program for it to become functional.
-
-
-### `C-02` — Critical Data Inconsistency: Uninitialized Mint with Active Liquidity  *(Severity: Critical · Status: Unresolved)*
-
-The audit data presents a critical contradiction: the mint account is reported as `Initialized: False`, yet there is reported `Liquidity (USD): $51,139` and `24h Volume (USD): $626`. An uninitialized SPL token mint cannot facilitate any form of liquidity or trading volume. This indicates a severe data integrity issue, either in the reported state of the mint account or in the market data being attributed to this specific, non-functional mint address.
-
-**Recommendation:** Investigate the source of the market data (Dexscreener) and cross-reference it with the actual on-chain state of the mint account. Determine if the liquidity and volume are associated with a different token or if the `Initialized: False` status is erroneous. Rectify the data discrepancy immediately to prevent user confusion and potential financial loss.
+**Recommendation:** Investigate why the mint account is uninitialized. If this is intended to be a functional token, the account must be properly initialized using the `initialize_mint` instruction of the SPL Token Program. If it's not intended to be a functional token, any associated liquidity should be removed to prevent user confusion.
 
 
-### `H-01` — Unknown Token Program Association  *(Severity: High · Status: Unresolved)*
+### `H-01` — Inconsistent Liquidity and Trading Data for Uninitialized Mint  *(Severity: High · Status: Unresolved)*
 
-The "Token Program" associated with the mint is listed as `unknown`. While the context implies it should be the standard SPL Token Program, an explicit "unknown" raises concerns. If a custom or non-standard token program is used, it could contain un-audited logic or vulnerabilities not present in the well-vetted SPL Token Program, potentially exposing users to unforeseen risks.
+Despite the mint account being 'Initialized: False', external data sources report significant liquidity ($50,426 USD) and 24h trading volume ($608 USD). This is a severe inconsistency, as an uninitialized mint cannot facilitate actual token trading. This discrepancy could mislead users into believing a non-functional token is active and tradable, potentially leading to financial losses if they attempt to acquire or trade it.
 
-**Recommendation:** Clarify and verify the exact program ID that manages this SPL Token Mint. If it is not the official SPL Token Program, a comprehensive security audit of the custom token program's source code is essential to identify and mitigate potential vulnerabilities.
-
-
-### `I-01` — Missing Fundamental Token Information  *(Severity: Informational · Status: Unresolved)*
-
-Key token parameters such as `Supply (raw)` and `Decimals` are reported as `unknown`. This lack of fundamental information hinders a complete assessment of the token's economic design, its divisibility, and potential for supply manipulation or misinterpretation by users and platforms.
-
-**Recommendation:** Ensure that all essential token metadata, including total supply and decimal precision, is accurately retrievable and publicly available. This transparency is crucial for user trust and proper integration with ecosystem tools.
+**Recommendation:** Clarify the source and validity of the reported liquidity and trading data. If the data pertains to a different token or is erroneous, it should be corrected or disclaimed. Users should be explicitly warned about the uninitialized state of the mint account and the implications for any reported market activity.
 
 
-### `I-02` — Incomplete External Security Signal Coverage  *(Severity: Informational · Status: Unresolved)*
+### `M-01` — Lack of Comprehensive On-Chain Data  *(Severity: Medium · Status: Unresolved)*
 
-External security signals from GoPlus Solana data and RugCheck are reported as `unavailable`. These services provide additional layers of automated security analysis and risk assessment. The absence of this data means that potential red flags or known scam indicators from these sources could not be factored into this audit.
+Critical on-chain data points such as 'Supply (raw)', 'Decimals', and 'Holder Distribution' are reported as 'unknown'. Additionally, external security signals from GoPlus Solana and RugCheck are unavailable. This lack of transparency and data completeness prevents a thorough security and economic assessment of the token and increases the risk for potential users.
 
-**Recommendation:** Integrate with and monitor external security analysis platforms like GoPlus and RugCheck to gain a broader perspective on potential risks and enhance the overall security posture and transparency of the token.
+**Recommendation:** Ensure all relevant on-chain data for the token mint, including supply, decimals, and holder distribution, is accessible and verifiable. Integrate with or provide links to reputable external security analysis platforms (e.g., GoPlus, RugCheck) to enhance transparency and user confidence.
 
 ## Token Metrics
 

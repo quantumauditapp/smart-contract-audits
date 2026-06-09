@@ -2,14 +2,14 @@
 token: Son Goku
 ticker: GOKU
 network: solana
-risk_score: 35
-status: medium
+risk_score: 85
+status: critical
 date: 2026-06-09
 ---
 
 # Son Goku (GOKU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 35/100 — 🟡 Medium Risk**
+> **Risk Score: 85/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/son-goku-sol)
 
@@ -17,54 +17,65 @@ date: 2026-06-09
 
 ## Audit Summary
 
-This report details a security audit for a Solana program. Due to the absence of provided source code, a comprehensive analysis could not be performed. The findings presented are based on common Solana vulnerability patterns and are hypothetical, serving as examples of potential issues that would be investigated if code were available. The overall risk level is assessed as Medium, reflecting the inherent risks in deploying any program without thorough code review.
+This report provides a metadata-driven security analysis of the Son Goku (GOKU) SPL Token Mint on Solana. The analysis is based on publicly available on-chain data and external market information, as source code for SPL Token Mints is not applicable. A critical finding indicates the mint account is reported as uninitialized, which fundamentally contradicts its reported trading activity and poses a significant risk. Other findings highlight a lack of transparency regarding total supply, decimals, and holder distribution, alongside risks associated with a very new liquidity pair.
 
-> **Final Recommendation:** Given the absence of source code, a definitive security posture cannot be established. It is strongly recommended that a full audit be conducted once the program's source code is available. This audit should cover all aspects of Solana program security, including account validation, access control, CPI interactions, and potential reinitialization vectors. Deploying any program without a thorough security review carries significant risk.
+> **Final Recommendation:** The audit reveals a critical discrepancy where the Son Goku (GOKU) SPL Token Mint is reported as uninitialized despite having active trading and liquidity. This fundamental issue, combined with a lack of transparency regarding supply, decimals, and holder distribution, necessitates extreme caution. While the revocation of mint and freeze authorities is a positive security measure, the overall risk profile is significantly elevated due to the uninitialized state and other unknowns.
+
+It is strongly recommended that potential users and investors verify the true initialization status of the mint account directly on-chain and await full transparency on tokenomics before engaging. For projects seeking to establish trust and transparency, a Premium Deploy option would involve ensuring all on-chain metadata is correctly initialized and publicly verifiable, alongside comprehensive third-party se…
 
 ## Security Analysis
 
-This report details a security audit for a Solana program. Due to the absence of provided source code, a comprehensive analysis could not be performed. The findings presented are based on common Solana vulnerability patterns and are hypothetical, serving as examples of potential issues that would be investigated if code were available. The overall risk level is assessed as Medium, reflecting the inherent risks in deploying any program without thorough code review.
+This report provides a metadata-driven security analysis of the Son Goku (GOKU) SPL Token Mint on Solana. The analysis is based on publicly available on-chain data and external market information, as source code for SPL Token Mints is not applicable. A critical finding indicates the mint account is reported as uninitialized, which fundamentally contradicts its reported trading activity and poses a significant risk. Other findings highlight a lack of transparency regarding total supply, decimals, and holder distribution, alongside risks associated with a very new liquidity pair.
 
-Given the absence of source code, a definitive security posture cannot be established. It is strongly recommended that a full audit be conducted once the program's source code is available. This audit should cover all aspects of Solana program security, including account validation, access control, CPI interactions, and potential reinitialization vectors. Deploying any program without a thorough security review carries significant risk.
+The audit reveals a critical discrepancy where the Son Goku (GOKU) SPL Token Mint is reported as uninitialized despite having active trading and liquidity. This fundamental issue, combined with a lack of transparency regarding supply, decimals, and holder distribution, necessitates extreme caution. While the revocation of mint and freeze authorities is a positive security measure, the overall risk profile is significantly elevated due to the uninitialized state and other unknowns.
+
+It is strongly recommended that potential users and investors verify the true initialization status of the mint account directly on-chain and await full transparency on tokenomics before engaging. For projects seeking to establish trust and transparency, a Premium Deploy option would involve ensuring all on-chain metadata is correctly initialized and publicly verifiable, alongside comprehensive third-party se…
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control: Without source code, a detailed technical assessment is not possible. However, Solana programs generally benefit from Anchor framework's securi |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic, 7.5 Governance: The economic model and governance mechanisms of the program cannot be assessed without code or documentation. For an SPL Token Mint program, economic risks might involve  |
-| **Upgrades** | 6/10 | Medium | 7.7 Upgrades: The upgradeability mechanism of the program is unknown without source code. Solana programs can be made upgradeable, which offers flexibility but introduces risks if not managed securely |
+| **Technical** | 6/10 | High | The technical review reveals a critical issue: the SPL Token Mint account is reported as `Initialized: False`, which is highly contradictory to its observed market activity and suggests a fundamental  |
+| **Governance / Economics** | 6/10 | Medium | From an economic and governance perspective, the token benefits from the `Mint Authority` and `Freeze Authority` being `revoked`, which decentralizes control over token supply and account management ( |
+| **Upgrades** | 6/10 | Low | As this audit focuses on an SPL Token Mint account, which is a data structure managed by the immutable SPL Token Program, direct upgradeability of the mint itself is not applicable (7.7 Upgrades). The |
 
 ## Security Findings
 
-_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_🔴 1 Critical · 🟠 1 High · 🟡 2 Medium · 🟢 1 Low_
 
-### `M-01` — Missing Signer Checks for Critical Instructions  *(Severity: Medium · Status: Unresolved)*
+### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
 
-Critical instructions within Solana programs, such as those modifying program state or transferring assets, often require specific accounts to sign the transaction. If a program instruction fails to adequately check that a required signer account (e.g., an admin, owner, or specific user) has indeed signed, an unauthorized party could invoke the instruction and execute privileged operations, leading to unauthorized state changes or asset manipulation.
+The provided on-chain data indicates the SPL Token Mint account `buvuchjfcjxfuycrmnwtm2w5ygtc7vv7mk4n22tgpump` is marked as `Initialized: False`. An uninitialized mint account cannot properly function as an SPL token, meaning it cannot have a valid supply, decimals, or be used for transfers and trading. The presence of reported liquidity and trading volume for an uninitialized mint is highly contradictory and suggests a severe data inconsistency or a potential misrepresentation of the asset's state.
 
-**Recommendation:** Ensure that all instructions requiring specific authorization explicitly check the `is_signer` attribute for the relevant accounts within the instruction's context. For Anchor programs, leverage the `#[account(signer)]` attribute or manual `account.is_signer` checks for non-Anchor accounts.
-
-
-### `M-02` — Insufficient Account Validation  *(Severity: Medium · Status: Unresolved)*
-
-Solana programs rely heavily on proper validation of accounts passed into instructions. Failure to validate an account's owner, discriminator, or specific state can lead to various attacks, including type cosplay (where an attacker passes an account of a different type than expected) or using uninitialized accounts. This can result in data corruption, privilege escalation, or unauthorized access to funds.
-
-**Recommendation:** Implement robust validation for all accounts. This includes checking the `owner` field to ensure the account belongs to the expected program, verifying the account's `discriminator` (for Anchor accounts) to confirm its type, and checking for expected state (e.g., `is_initialized`). For PDAs, ensure the canonical bump seed is used.
+**Recommendation:** Verify the true initialization status of the mint account directly on the Solana blockchain. If it is indeed uninitialized, any associated liquidity or trading activity is highly suspicious and users should exercise extreme caution. If it's a data error, ensure accurate data retrieval.
 
 
-### `L-01` — Potential for Reinitialization Attacks  *(Severity: Low · Status: Unresolved)*
+### `H-01` — Unknown Total Supply and Decimals  *(Severity: High · Status: Unresolved)*
 
-Some Solana programs, particularly those managing state accounts, might be vulnerable to reinitialization if the initialization instruction does not properly check if the account has already been initialized. An attacker could potentially re-run the initialization logic, overwriting existing data or resetting critical parameters, leading to denial of service or state manipulation.
+The total supply and decimal configuration for the Son Goku (GOKU) token are reported as `unknown`. This lack of transparency prevents users from accurately understanding the token's total market capitalization, inflation schedule (if any), and how token values are represented. It also makes it difficult to verify the token's economic model and potential for dilution.
 
-**Recommendation:** For any instruction that initializes a state account, ensure a clear check is performed to verify that the account is not already initialized. This can be done by checking a specific flag within the account's data or by verifying that the account's data length is zero before initialization.
+**Recommendation:** Ensure that the token's total supply and decimals are publicly verifiable and accurately reported. For a legitimate SPL token, these values should be readily available via RPC calls to the Solana blockchain.
 
 
-### `I-01` — Lack of Clear Error Handling for CPI Failures  *(Severity: Informational · Status: Unresolved)*
+### `M-01` — Lack of Holder Distribution Data  *(Severity: Medium · Status: Unresolved)*
 
-When a program performs a Cross-Program Invocation (CPI) to another program, it's crucial to handle potential failures from the invoked program gracefully. If CPIs are not wrapped in proper error handling (e.g., `Result` checks), a failing CPI might lead to unexpected program behavior, inconsistent state, or even revert the entire transaction without clear indication of the root cause.
+Information regarding the holder distribution for the Son Goku (GOKU) token is `unavailable`. Without this data, it is impossible to assess the level of centralization or decentralization of token ownership. High concentration of tokens in a few addresses can pose risks such as price manipulation or governance control by a small group.
 
-**Recommendation:** Implement explicit error handling for all CPIs. Always check the `Result` returned by CPIs and handle `Err` cases appropriately, either by returning a specific program error or logging the failure for debugging. This improves program robustness and auditability.
+**Recommendation:** Implement or integrate with tools that provide transparent holder distribution data. This allows potential investors to evaluate the distribution risk associated with the token.
+
+
+### `M-02` — Very New Liquidity Pair  *(Severity: Medium · Status: Unresolved)*
+
+The liquidity pair for Son Goku (GOKU) has an age of only `2 days`. New liquidity pairs are typically highly volatile and carry increased risk due to their short operational history. They are more susceptible to large price swings, rug pulls, or other manipulative activities before a stable market forms.
+
+**Recommendation:** Investors should exercise increased caution when interacting with very new liquidity pairs. Monitor the pair's activity, liquidity depth, and trading volume over a longer period to assess its stability and legitimacy.
+
+
+### `L-01` — Missing External Security Signals  *(Severity: Low · Status: Unresolved)*
+
+External security signals from reputable services like GoPlus Solana data and RugCheck are `unavailable`. These services provide additional layers of due diligence by analyzing various on-chain metrics and known scam patterns. The absence of this data means a potential investor lacks these supplementary risk assessments.
+
+**Recommendation:** While not a direct vulnerability, it is recommended to seek out and integrate with external security analysis tools to provide a more comprehensive risk profile for the token.
 
 ## Token Metrics
 

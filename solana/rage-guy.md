@@ -17,58 +17,58 @@ date: 2026-05-11
 
 ## Audit Summary
 
-This audit report for the RAGE GUY (RAGE) SPL Token Mint account identifies a critical vulnerability: the mint account is reported as uninitialized despite having active liquidity and trading volume. This fundamental inconsistency poses a severe risk to the token's functionality and the recoverability of associated assets. While mint and freeze authorities are appropriately revoked, the lack of transparency regarding supply, decimals, and holder distribution further complicates risk assessment. Immediate verification of the mint's initialization status is crucial.
+This audit report assesses the RAGE GUY (RAGE) SPL Token Mint based on publicly available on-chain metadata, as source code was not provided. A critical finding identifies the mint as uninitialized, rendering it non-functional. This state also creates a contradiction with reported revoked authorities. Essential token metadata and external security signals are unavailable, limiting a full risk assessment.
 
-> **Final Recommendation:** The RAGE GUY (RAGE) SPL Token Mint presents a critical security concern due to its reported uninitialized status while simultaneously exhibiting active liquidity and trading. This fundamental contradiction must be immediately investigated and resolved, as it implies the token cannot function correctly under the standard SPL Token Program, or the data is severely misleading. Users are strongly advised to verify the on-chain initialization status and exercise extreme caution before interacting with this token.
+> **Final Recommendation:** The RAGE GUY (RAGE) SPL Token Mint currently suffers from a critical uninitialized state, preventing any token functionality. This fundamental flaw is compounded by an inconsistency with reported revoked authorities, indicating a significant issue with the mint's setup or data reporting. The absence of complete metadata and external security signals further limits transparency and comprehensive risk assessment.
 
-For future deployments, consider a Premium Deploy option that includes comprehensive pre-launch verification of all on-chain configurations, including mint initialization, authority settings, and metadata integrity. This ensures that all token properties are correctly established and verifiable from inception, preventing critical operational failures and enhancing investor confiden…
+It is imperative to correctly initialize the mint to enable token operations and provide full transparency on supply and decimals. For projects requiring enhanced security and operational assurance, a Premium Deploy option is recommended. This service includes pre-deployment security checks, continuous monitoring, and expert support to ensure robust and compliant program execution on the Solana network.
 
 ## Security Analysis
 
-This audit report for the RAGE GUY (RAGE) SPL Token Mint account identifies a critical vulnerability: the mint account is reported as uninitialized despite having active liquidity and trading volume. This fundamental inconsistency poses a severe risk to the token's functionality and the recoverability of associated assets. While mint and freeze authorities are appropriately revoked, the lack of transparency regarding supply, decimals, and holder distribution further complicates risk assessment. Immediate verification of the mint's initialization status is crucial.
+This audit report assesses the RAGE GUY (RAGE) SPL Token Mint based on publicly available on-chain metadata, as source code was not provided. A critical finding identifies the mint as uninitialized, rendering it non-functional. This state also creates a contradiction with reported revoked authorities. Essential token metadata and external security signals are unavailable, limiting a full risk assessment.
 
-The RAGE GUY (RAGE) SPL Token Mint presents a critical security concern due to its reported uninitialized status while simultaneously exhibiting active liquidity and trading. This fundamental contradiction must be immediately investigated and resolved, as it implies the token cannot function correctly under the standard SPL Token Program, or the data is severely misleading. Users are strongly advised to verify the on-chain initialization status and exercise extreme caution before interacting with this token.
+The RAGE GUY (RAGE) SPL Token Mint currently suffers from a critical uninitialized state, preventing any token functionality. This fundamental flaw is compounded by an inconsistency with reported revoked authorities, indicating a significant issue with the mint's setup or data reporting. The absence of complete metadata and external security signals further limits transparency and comprehensive risk assessment.
 
-For future deployments, consider a Premium Deploy option that includes comprehensive pre-launch verification of all on-chain configurations, including mint initialization, authority settings, and metadata integrity. This ensures that all token properties are correctly established and verifiable from inception, preventing critical operational failures and enhancing investor confiden…
+It is imperative to correctly initialize the mint to enable token operations and provide full transparency on supply and decimals. For projects requiring enhanced security and operational assurance, a Premium Deploy option is recommended. This service includes pre-deployment security checks, continuous monitoring, and expert support to ensure robust and compliant program execution on the Solana network.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | 7.1 Architecture & 7.2 Code Security: The most critical technical issue is the reported uninitialized state of the SPL Token Mint account, which fundamentally contradicts its observed liquidity and tr |
-| **Governance / Economics** | 6/10 | Low | 7.4 Economic & 7.5 Governance: The revocation of the Mint Authority implies a fixed supply, which is a positive economic characteristic for preventing inflation. However, the 'unknown' status of the t |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: SPL Token Mint accounts are not directly upgradeable in the same manner as custom Solana programs. The underlying SPL Token Program itself is upgradeable by Solana governance, but this s |
+| **Technical** | 6/10 | High | The technical architecture (7.1 Architecture) relies on the standard SPL Token Program v3, which is generally robust. However, a critical issue (7.2 Code Security) is that the mint is reported as 'Ini |
+| **Governance / Economics** | 6/10 | Medium | Economically (7.4 Economic), the token exhibits a normal Volume/Liquidity Ratio of 0.04 over 277 days, with $51,542 in liquidity. However, critical data points such as total supply, decimals, and hold |
+| **Upgrades** | 6/10 | Low | As an SPL Token Mint, the core logic is governed by the immutable SPL Token Program. The reported 'revoked' status for mint and freeze authorities, if the mint were initialized, would imply that the t |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟢 2 Low · ⚪ 1 Informational_
+_🔴 1 Critical · ⚪ 3 Informational_
 
-### `C-01` — Uninitialized SPL Token Mint Account with Active Liquidity  *(Severity: Critical · Status: Unresolved)*
+### `C-01` — Uninitialized SPL Token Mint and Data Inconsistency  *(Severity: Critical · Status: Unresolved)*
 
-The provided data indicates that the SPL Token Mint account `g3foxhoqdugkeg8zqqd7ric9ub1n51bg7juxjepnpump` is `Initialized: False`. For a standard SPL Token Program mint, this means the `InitializeMint` instruction has not been executed. An uninitialized mint cannot issue new tokens, and its existing supply and decimals would be undefined or zero, making it non-functional for standard token operations. The presence of reported liquidity ($52,895) and trading volume ($2,148) for an uninitialized mint is a severe contradiction, suggesting either a critical misconfiguration, data inconsistency, or a non-standard token implementation that deviates significantly from the SPL Token Program. If tr…
+The SPL Token Mint is reported as 'Initialized: False'. This critical state means the mint cannot be used for any token operations (e.g., minting, transferring), rendering the token non-functional. This directly contradicts the reported 'Mint Authority: revoked (None)' and 'Freeze Authority: revoked (None)', as authorities cannot be revoked if the mint has never been initialized. This inconsistency suggests a fundamental issue with the mint's state or the data reporting.
 
-**Recommendation:** Immediately verify the initialization status of the mint account directly on-chain using Solana RPC tools. If it is indeed uninitialized, any existing liquidity is likely unmanageable or irrecoverable through standard SPL token operations. Users should exercise extreme caution and avoid interacting with this token. If the token is intended to be a standard SPL token, it must be properly initialized. If it's a custom implementation, its program ID and source code should be thoroughly audited.
-
-
-### `L-01` — Lack of Transparency on Token Supply and Decimals  *(Severity: Low · Status: Unresolved)*
-
-The total supply and decimal precision for the RAGE GUY (RAGE) token are reported as `unknown`. This lack of fundamental information hinders a complete understanding of the token's economics, potential for inflation/deflation, and accurate valuation. It also makes it difficult for users to verify the token's properties.
-
-**Recommendation:** Ensure that all essential token metadata, including total supply and decimals, is publicly accessible and verifiable on-chain. This improves transparency and allows users to make informed decisions regarding the token's economic model and scarcity.
+**Recommendation:** The mint must be correctly initialized to become functional. This involves setting the supply, decimals, and initial authorities. The reported 'revoked' status for authorities should only be possible after a successful initialization and subsequent revocation.
 
 
-### `L-02` — Incomplete External Security Data and Holder Distribution  *(Severity: Low · Status: Unresolved)*
+### `I-01` — Incomplete Token Metadata  *(Severity: Informational · Status: Unresolved)*
 
-Data from external security analysis tools like GoPlus Solana and RugCheck, as well as holder distribution information, is unavailable. This limits the ability to assess potential risks such as rug pulls, concentrated ownership, or other malicious patterns commonly identified by these services. The absence of this data reduces the overall transparency and auditability of the token's ecosystem.
+The 'Supply (raw)' and 'Decimals' are reported as 'unknown'. This lack of fundamental token metadata, likely due to the uninitialized state, prevents users and platforms from understanding the token's basic parameters.
 
-**Recommendation:** Integrate with reputable third-party security analysis tools and ensure their data is accessible for a comprehensive risk assessment. Publicly available holder distribution data enhances transparency and community trust, allowing for better evaluation of centralization risks.
+**Recommendation:** Upon initialization, ensure all essential token metadata is publicly accessible and correctly configured.
 
 
-### `I-01` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Resolved)*
+### `I-02` — Lack of Holder Distribution Data  *(Severity: Informational · Status: Unresolved)*
 
-The Mint Authority and Freeze Authority for the RAGE GUY (RAGE) token have both been revoked. This is a positive security practice for tokens intended to have a fixed supply and to prevent a single entity from unilaterally freezing token accounts. It reduces the risk of centralized control over token issuance and transferability, enhancing the token's decentralization and immutability.
+Holder concentration data is 'unavailable'. This prevents a comprehensive assessment of token distribution centralization, which is crucial for evaluating potential market manipulation risks or governance vulnerabilities.
 
-**Recommendation:** Maintain revoked authorities for tokens intended to be immutable in supply and unfreezable. This enhances decentralization and trust in the token's long-term stability.
+**Recommendation:** Implement or integrate with services that provide transparent holder distribution data for better community and market analysis.
+
+
+### `I-03` — Unavailable External Security Signals  *(Severity: Informational · Status: Unresolved)*
+
+Data from GoPlus Solana and RugCheck is 'unavailable'. These external security signals provide additional layers of trust and risk assessment for token projects. Their absence means a reliance solely on on-chain data, without third-party validation.
+
+**Recommendation:** Seek integration with reputable third-party security auditors and data providers to enhance transparency and trust.
 
 ## Token Metrics
 

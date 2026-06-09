@@ -2,14 +2,14 @@
 token: LOL
 ticker: LOL
 network: solana
-risk_score: 34
-status: medium
+risk_score: 90
+status: critical
 date: 2026-05-15
 ---
 
 # LOL (LOL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lol-sol)
 
@@ -17,65 +17,65 @@ date: 2026-05-15
 
 ## Audit Summary
 
-This report provides a security assessment for a Solana program identified as an SPL Token Mint. Due to the absence of provided source code, this audit is based on general Solana program security best practices and common vulnerability patterns applicable to such programs. The findings highlight potential areas of concern that would require detailed code review for verification. The overall risk level is assessed as Medium, reflecting the inherent complexity of Solana development and the critical importance of secure coding practices.
+This report details a security audit of the LOL SPL Token Mint on the Solana network. The analysis was conducted based on on-chain metadata and publicly available market data, as source code for SPL Token Mints is not applicable. A critical finding indicates the token mint account is reported as uninitialized, which is highly unusual for an asset with active trading volume and liquidity. Other findings include unknown token properties (decimals, supply) and a lack of external security signals and holder distribution data. Strengths include the revocation of both mint and freeze authorities, enhancing decentralization.
 
-> **Final Recommendation:** Given the absence of source code, this report highlights general security considerations for Solana programs. It is strongly recommended that a full source code audit be conducted to verify the implementation against these potential vulnerabilities and ensure adherence to best practices. This would involve a detailed review of all program instructions, account validations, and error handling mechanisms. 
+> **Final Recommendation:** The LOL SPL Token Mint presents a critical discrepancy: it is reported as uninitialized despite having active liquidity and trading. This fundamental issue must be thoroughly investigated and resolved to ensure the token's integrity and functionality. While the revocation of mint and freeze authorities is a positive security measure, the lack of transparency regarding core token properties and external security signals poses additional risks.
 
-For enhanced security and peace of mind, consider a Premium Deploy option, which includes a pre-deployment audit, real-time monitoring integration, and a dedicated incident response plan. This ensures continuous security posture management and rapid response capabilities for your Solana program.
+It is strongly recommended to address the initialization status immediately. For enhanced security and transparency, consider a Premium Deploy option that includes a comprehensive on-chain verification process, integration with leading security analytics platforms, and continuous monitoring to ensure all token properties are correctly reflected and verifiable.
 
 ## Security Analysis
 
-This report provides a security assessment for a Solana program identified as an SPL Token Mint. Due to the absence of provided source code, this audit is based on general Solana program security best practices and common vulnerability patterns applicable to such programs. The findings highlight potential areas of concern that would require detailed code review for verification. The overall risk level is assessed as Medium, reflecting the inherent complexity of Solana development and the critical importance of secure coding practices.
+This report details a security audit of the LOL SPL Token Mint on the Solana network. The analysis was conducted based on on-chain metadata and publicly available market data, as source code for SPL Token Mints is not applicable. A critical finding indicates the token mint account is reported as uninitialized, which is highly unusual for an asset with active trading volume and liquidity. Other findings include unknown token properties (decimals, supply) and a lack of external security signals and holder distribution data. Strengths include the revocation of both mint and freeze authorities, enhancing decentralization.
 
-Given the absence of source code, this report highlights general security considerations for Solana programs. It is strongly recommended that a full source code audit be conducted to verify the implementation against these potential vulnerabilities and ensure adherence to best practices. This would involve a detailed review of all program instructions, account validations, and error handling mechanisms. 
+The LOL SPL Token Mint presents a critical discrepancy: it is reported as uninitialized despite having active liquidity and trading. This fundamental issue must be thoroughly investigated and resolved to ensure the token's integrity and functionality. While the revocation of mint and freeze authorities is a positive security measure, the lack of transparency regarding core token properties and external security signals poses additional risks.
 
-For enhanced security and peace of mind, consider a Premium Deploy option, which includes a pre-deployment audit, real-time monitoring integration, and a dedicated incident response plan. This ensures continuous security posture management and rapid response capabilities for your Solana program.
+It is strongly recommended to address the initialization status immediately. For enhanced security and transparency, consider a Premium Deploy option that includes a comprehensive on-chain verification process, integration with leading security analytics platforms, and continuous monitoring to ensure all token properties are correctly reflected and verifiable.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture and 7.2 Code Security could not be thoroughly assessed without source code. However, Solana programs generally benefit from Anchor's secure framework, which often handles common check |
-| **Governance / Economics** | 6/10 | Low | 7.4 Economic and 7.5 Governance aspects are not applicable without specific program logic. For a standard SPL Token Mint program, economic risks are typically limited to the token's distribution and u |
-| **Upgrades** | 6/10 | Medium | 7.7 Upgrades are a standard feature for Solana programs, allowing for bug fixes and feature enhancements. While beneficial, upgradeability introduces a risk if the upgrade authority is compromised or  |
+| **Technical** | 6/10 | High | The technical architecture of the LOL token mint benefits from the robust SPL Token Program v3. A significant strength is the revocation of both mint and freeze authorities, preventing further token i |
+| **Governance / Economics** | 6/10 | Medium | Economically, the LOL token exhibits a normal Volume/Liquidity Ratio of 0.17, indicating healthy trading activity relative to its market depth (7.4 Economic). However, the absence of holder distributi |
+| **Upgrades** | 6/10 | Low | The LOL token mint, being an SPL Token, is not directly upgradeable in the traditional sense; its functionality is governed by the immutable SPL Token Program. A key strength regarding future changes  |
 
 ## Security Findings
 
-_⚪ 5 Informational_
+_🔴 1 Critical · 🟠 1 High · 🟢 2 Low · ⚪ 1 Informational_
 
-### `I-01` — Potential Missing Signer Checks  *(Severity: Informational · Status: Unresolved)*
+### `C-01` — SPL Token Mint Uninitialized  *(Severity: Critical · Status: Unresolved)*
 
-Solana programs frequently encounter vulnerabilities due to missing or insufficient signer checks. If an instruction requires a specific account to sign, but this check is omitted, an unauthorized party could execute the instruction, leading to unauthorized state changes or asset manipulation. For an SPL Token Mint, this could allow unauthorized minting or freezing.
+The SPL Token Mint account for LOL is reported as 'Initialized: False'. An uninitialized mint account cannot function correctly, meaning tokens cannot be minted, and fundamental properties like decimals and total supply are not set. This status is highly unusual and contradictory for a token that reportedly has active liquidity and trading volume.
 
-**Recommendation:** Ensure all instructions that modify program state or transfer assets explicitly check for the required signers using `#[account(signer)]` in Anchor or manual `is_signer` checks in native Rust. Verify that the correct accounts are marked as signers for each instruction.
-
-
-### `I-02` — Potential Account Validation Failures  *(Severity: Informational · Status: Unresolved)*
-
-Improper validation of accounts passed to instructions can lead to critical vulnerabilities. This includes missing owner checks, incorrect discriminator checks for Anchor accounts, or failure to verify account types. An attacker could substitute a malicious account, leading to type cosplay attacks or unintended interactions with other programs. For an SPL Token Mint, this could involve swapping out the mint account or token account.
-
-**Recommendation:** Implement robust account validation for all accounts. Verify account owners, check Anchor discriminators for `#[account]` structs, and ensure account types (e.g., `TokenAccount`, `Mint`) are correct. Use `constraint` expressions in Anchor for complex validation logic.
+**Recommendation:** Immediately investigate the discrepancy between the 'Initialized: False' status and the reported market activity. Ensure the mint account is properly initialized for the token to function as expected. If the token is indeed uninitialized, any existing liquidity or trading is based on a non-functional asset, posing significant risk to users.
 
 
-### `I-03` — Potential Reinitialization Attack Vector  *(Severity: Informational · Status: Unresolved)*
+### `H-01` — Unknown Decimals and Supply  *(Severity: High · Status: Unresolved)*
 
-Programs with an `initialize` instruction that lacks proper checks can be vulnerable to reinitialization attacks. If an account can be re-initialized after its initial setup, an attacker could reset its state, potentially gaining control or draining funds. This is particularly critical for global state accounts or critical configuration accounts.
+The number of decimals and the total supply of the LOL token are reported as unknown. For a functional SPL token, these are fundamental properties required for proper interaction, valuation, and display in wallets and exchanges. This lack of information hinders accurate assessment and user interaction, and is a direct consequence of the mint being uninitialized.
 
-**Recommendation:** Ensure that `initialize` instructions include a check to prevent reinitialization. This can be done by checking a flag on the account, verifying that the account's data length is zero, or using Anchor's `init` constraint which handles this automatically for new accounts.
-
-
-### `I-04` — Potential Arithmetic Overflow/Underflow  *(Severity: Informational · Status: Unresolved)*
-
-Arithmetic operations on integer types without proper overflow/underflow checks can lead to unexpected behavior, incorrect calculations, or even denial-of-service. While Rust's `checked_*` methods provide safety, developers might inadvertently use unchecked operations or forget to handle `None` results. This is critical in calculations involving token amounts or balances.
-
-**Recommendation:** Always use Rust's `checked_add`, `checked_sub`, `checked_mul`, `checked_div` methods for arithmetic operations in Solana programs. Handle potential overflow/underflow errors gracefully, typically by returning a program-specific error. Avoid direct arithmetic operators where overflow is possible.
+**Recommendation:** Ensure that the token mint account is correctly initialized and that its decimals and supply are publicly accessible and verifiable on-chain. This is crucial for the token's usability and transparency.
 
 
-### `I-05` — Potential Non-Canonical PDA Bump Seed Issues  *(Severity: Informational · Status: Unresolved)*
+### `L-01` — Lack of Holder Distribution Data  *(Severity: Low · Status: Unresolved)*
 
-When creating or deriving Program Derived Addresses (PDAs), it's crucial to use the canonical bump seed. If a program allows non-canonical bump seeds to be used for PDA creation or validation, it could enable an attacker to create multiple PDAs for the same set of seeds, leading to state confusion or resource exhaustion. This is a common issue in programs that manually derive PDAs without proper canonicalization checks.
+Information regarding the distribution of LOL token holders is unavailable. This lack of transparency prevents an assessment of potential whale concentration, which could impact market stability and decentralization. High concentration can lead to price manipulation or governance risks.
 
-**Recommendation:** Always use the `find_program_address` function to derive PDAs and their canonical bump seeds. When creating PDAs, ensure that the bump seed used is the canonical one. When validating PDAs, verify that the provided bump seed matches the canonical one for the given seeds and program ID.
+**Recommendation:** Implement or integrate with tools that provide on-chain holder distribution analysis to enhance transparency for users and investors. This allows for a better understanding of the token's decentralization and potential market risks.
+
+
+### `L-02` — External Security Signal Gaps  *(Severity: Low · Status: Unresolved)*
+
+Critical external security signals from GoPlus Solana and RugCheck are unavailable. These services typically provide automated risk assessments and red flags for potential scams or vulnerabilities. Their absence means a key layer of external due diligence cannot be performed, increasing informational risk for potential investors.
+
+**Recommendation:** Engage with external security analysis platforms like GoPlus and RugCheck to ensure the token is scanned and its security posture is publicly verifiable. This provides an additional layer of trust and transparency for the community.
+
+
+### `I-01` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Resolved)*
+
+Both the Mint Authority and Freeze Authority for the LOL token have been revoked. This means no new tokens can be minted, and no existing tokens can be frozen by a central authority. This configuration enhances decentralization and reduces central point of control risks for the token.
+
+**Recommendation:** No action required. This configuration is a security strength, promoting immutability and reducing potential for malicious control over the token supply or individual token accounts.
 
 ## Token Metrics
 

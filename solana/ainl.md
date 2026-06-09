@@ -2,14 +2,14 @@
 token: AINL
 ticker: AINL
 network: solana
-risk_score: 95
+risk_score: 90
 status: critical
 date: 2026-05-11
 ---
 
 # AINL (AINL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 95/100 — 🔴 Critical Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ainl-sol)
 
@@ -17,51 +17,51 @@ date: 2026-05-11
 
 ## Audit Summary
 
-The AINL (AINL) token is an SPL Token Mint on the Solana blockchain. While it exhibits positive security characteristics such as revoked mint authority and immutable parameters, two critical on-chain facts indicate severe functional issues. The mint account is reported as 'uninitialized', and new token accounts are configured to be 'frozen by default' with no active 'Freeze Authority' to unfreeze them. These conditions fundamentally prevent the token from functioning correctly, despite reported liquidity and trading volume, and require immediate investigation.
+This audit report focuses on the AINL SPL Token Mint account. The primary critical finding is that the token mint is reported as 'Initialized: False' despite having active liquidity and trading volume. This fundamental misconfiguration renders the token non-functional and poses a significant risk to users. While positive security signals such as revoked mint/freeze authorities and standard token properties are observed, the uninitialized state overrides these benefits, making any interaction with this token highly risky.
 
-> **Final Recommendation:** The AINL (AINL) token mint presents critical and immediate concerns due to its reported 'uninitialized' state and the configuration of new token accounts to be 'frozen by default' with no active 'Freeze Authority'. While other security aspects, such as revoked mint authority and immutable parameters, are positive, these fundamental flaws render the token non-functional and highly risky. It is imperative to investigate this discrepancy between the reported on-chain state and the observed trading activity, as the token is currently unusable for its intended purpose.
+> **Final Recommendation:** Given the critical finding of an uninitialized token mint with active liquidity, it is strongly recommended that all users exercise extreme caution and refrain from interacting with the AINL token. The fundamental misconfiguration means the token is not fully functional, and any associated liquidity or trading carries a high risk of loss of funds. The token issuer must address the uninitialized state immediately.
 
-For any future token deployments or critical program accounts, we recommend a Premium Deploy option. This service includes pre-deployment verification of all critical account states and configurations, ensuring that all parameters are correctly set and initialized before public launch, mitigating risks like the ones identifie…
+For future token deployments, consider a 'Premium Deploy' option which includes pre-deployment verification of all critical on-chain configurations, such as proper initialization, authority settings, and metadata, ensuring the token is fully functional and secure before public launch.
 
 ## Security Analysis
 
-The AINL (AINL) token is an SPL Token Mint on the Solana blockchain. While it exhibits positive security characteristics such as revoked mint authority and immutable parameters, two critical on-chain facts indicate severe functional issues. The mint account is reported as 'uninitialized', and new token accounts are configured to be 'frozen by default' with no active 'Freeze Authority' to unfreeze them. These conditions fundamentally prevent the token from functioning correctly, despite reported liquidity and trading volume, and require immediate investigation.
+This audit report focuses on the AINL SPL Token Mint account. The primary critical finding is that the token mint is reported as 'Initialized: False' despite having active liquidity and trading volume. This fundamental misconfiguration renders the token non-functional and poses a significant risk to users. While positive security signals such as revoked mint/freeze authorities and standard token properties are observed, the uninitialized state overrides these benefits, making any interaction with this token highly risky.
 
-The AINL (AINL) token mint presents critical and immediate concerns due to its reported 'uninitialized' state and the configuration of new token accounts to be 'frozen by default' with no active 'Freeze Authority'. While other security aspects, such as revoked mint authority and immutable parameters, are positive, these fundamental flaws render the token non-functional and highly risky. It is imperative to investigate this discrepancy between the reported on-chain state and the observed trading activity, as the token is currently unusable for its intended purpose.
+Given the critical finding of an uninitialized token mint with active liquidity, it is strongly recommended that all users exercise extreme caution and refrain from interacting with the AINL token. The fundamental misconfiguration means the token is not fully functional, and any associated liquidity or trading carries a high risk of loss of funds. The token issuer must address the uninitialized state immediately.
 
-For any future token deployments or critical program accounts, we recommend a Premium Deploy option. This service includes pre-deployment verification of all critical account states and configurations, ensuring that all parameters are correctly set and initialized before public launch, mitigating risks like the ones identifie…
+For future token deployments, consider a 'Premium Deploy' option which includes pre-deployment verification of all critical on-chain configurations, such as proper initialization, authority settings, and metadata, ensuring the token is fully functional and secure before public launch.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | (7.2 Code Security, 7.3 Access Control) The token mint benefits from strong access control regarding its core authorities, with Mint Authority being revoked, preventing arbitrary supply inflation. Ext |
-| **Governance / Economics** | 6/10 | High | (7.4 Economic, 7.5 Governance) The token's economic model initially benefits from the revocation of Mint Authority, which significantly reduces governance and economic risks associated with centralize |
-| **Upgrades** | 6/10 | Low | (7.7 Upgrades) As a standard SPL Token Mint, the token itself is not upgradable in terms of its core logic; its behavior is governed by the immutable SPL Token Program. The provided GoPlus data confir |
+| **Technical** | 6/10 | High | 7.1 Architecture & 7.2 Code Security: The AINL token mint exhibits a critical technical flaw: it is uninitialized. This means fundamental properties like supply and decimals are not set, rendering the |
+| **Governance / Economics** | 6/10 | High | 7.4 Economic: The economic risk is High due to the token's uninitialized state. Users trading or providing liquidity for AINL are interacting with a fundamentally misconfigured asset, which could lead |
+| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The specific AINL token mint account itself is not directly upgradeable in terms of its core properties (like authorities, decimals, supply) once initialized and authorities are revoked. |
 
 ## Security Findings
 
-_🔴 2 Critical · ⚪ 1 Informational_
+_🔴 1 Critical · ⚪ 2 Informational_
 
-### `C-01` — SPL Token Mint Account Uninitialized  *(Severity: Critical · Status: Unresolved)*
+### `C-01` — Uninitialized Token Mint with Active Liquidity  *(Severity: Critical · Status: Unresolved)*
 
-The on-chain facts explicitly state 'Initialized: False' for the AINL (AINL) token mint account (56hrcr3n7danhhnjwau4veuhpe1ere9vrbwphrpkpump). An SPL Token Mint account must be initialized to define its supply, decimals, and authorities, and to enable token transfers. An uninitialized mint cannot function correctly, making any associated token supply or trading activity highly suspect or impossible. This directly contradicts the reported liquidity and trading volume from Dexscreener.
+The SPL Token Mint account `56hrcr3n7danhhnjwau4veuhpe1ere9vrbwphrpkpump` is reported as `Initialized: False`. Despite this critical state, the token has active liquidity of $7,419 USD and a 24h trading volume of $889 USD. An uninitialized mint cannot properly function as an SPL token, meaning its supply and decimals are not set, and standard operations like `mint_to` or `burn` cannot be executed. Users interacting with this token risk loss of funds due to its non-functional state.
 
-**Recommendation:** Immediately investigate the true initialization status of the mint account. If it is indeed uninitialized, the token is fundamentally broken and should not be traded. If the 'Initialized: False' data is erroneous, verify the correct on-chain state and ensure data sources accurately reflect it. If the token is intended to be functional, it must be properly initialized.
-
-
-### `C-02` — Default Token Account State Frozen with Revoked Freeze Authority  *(Severity: Critical · Status: Unresolved)*
-
-GoPlus security signals indicate 'default_account_state: 1', meaning new token accounts created for this mint are set to a frozen state by default. Concurrently, the on-chain facts show 'Freeze Authority: revoked (None)' and GoPlus confirms 'freezable: False'. This combination means that while new token accounts are created frozen, there is no authority capable of unfreezing them. Consequently, any tokens held in newly created accounts would be permanently inaccessible, rendering the token unusable for new participants.
-
-**Recommendation:** Verify the actual 'default_account_state' configuration for the mint. If it is indeed set to '1' (frozen) with no active Freeze Authority, the token is fundamentally flawed for new users. The mint's configuration should be updated to set 'default_account_state' to '0' (unfrozen) if the intention is for the token to be transferable and usable.
+**Recommendation:** Users should exercise extreme caution and avoid interacting with this token until its initialization status is confirmed and resolved. The token issuer should ensure the mint account is properly initialized before any public trading or liquidity provision.
 
 
-### `I-01` — Undetermined Token Supply, Decimals, and Holder Distribution  *(Severity: Informational · Status: Unresolved)*
+### `I-01` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Resolved)*
 
-The audit data indicates that the raw supply, decimals, and holder distribution for the AINL (AINL) token are 'unknown'. While not a direct vulnerability, the lack of transparency regarding these fundamental token metrics can hinder comprehensive risk assessment, market analysis, and user confidence. For a functional token, these details are typically readily available. This also ties into the 'Initialized: False' issue, as an uninitialized mint would not have defined supply or decimals.
+The Mint Authority and Freeze Authority for the AINL token have both been revoked (set to `None`). This is a positive security measure, as it prevents any single entity from arbitrarily minting new tokens or freezing token accounts, thereby protecting token holders from inflationary attacks or censorship.
 
-**Recommendation:** Ensure that the token mint is properly initialized and that its supply and decimals are publicly accessible. Implement robust data indexing and reporting to provide full transparency on token metrics, including holder distribution, which is crucial for understanding decentralization and potential concentration risks.
+**Recommendation:** No action required. This configuration enhances the security and decentralization of the token.
+
+
+### `I-02` — Standard Token Properties (GoPlus Signals)  *(Severity: Informational · Status: Resolved)*
+
+External security signals from GoPlus indicate that the token exhibits standard, non-malicious properties. Specifically, `balance_mutable`, `closable`, `freezable`, `non_transferable`, `transfer_fee_upgradable`, `transfer_hook_upgradable`, `metadata_mutable`, and `is_honeypot` are all reported as `False`. This suggests the token does not possess common rug-pull or malicious features, *assuming it were properly initialized*.
+
+**Recommendation:** No action required. These signals are generally positive indicators of a standard token implementation. However, the uninitialized state of the mint overrides these positive signals regarding overall safety.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: 🦎
 ticker: LIZARD
 network: solana
-risk_score: 85
+risk_score: 90
 status: critical
 date: 2026-05-12
 ---
 
 # 🦎 (LIZARD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 85/100 — 🔴 Critical Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/token-sol)
 
@@ -17,58 +17,54 @@ date: 2026-05-12
 
 ## Audit Summary
 
-This audit of the 🦎 (LIZARD) SPL Token Mint reveals a critical inconsistency: the mint account is reported as uninitialized, yet external data indicates active trading and liquidity. This fundamental discrepancy poses a severe risk to users, as an uninitialized token cannot be traded or hold value. Key token metrics like supply and decimals are also unknown, further hindering a reliable assessment. While mint and freeze authorities are appropriately revoked, the overall lack of verifiable on-chain data and conflicting information necessitates extreme caution.
+This audit report analyzes the metadata of the 🦎 (LIZARD) SPL Token Mint account. A critical finding is that the mint account is reported as uninitialized, which fundamentally compromises its functionality and contradicts the presence of reported liquidity. While both mint and freeze authorities have been revoked, which is a strong security positive, the uninitialized state presents a severe risk. Key token economic data and external security signals are also unavailable, limiting a comprehensive risk assessment.
 
-> **Final Recommendation:** The critical finding regarding the uninitialized state of the mint account, coupled with reported liquidity, presents a significant and immediate risk to potential users. This fundamental contradiction suggests either a severe data integrity issue or a deliberate attempt to mislead. Users are strongly advised to verify the token's initialization status directly on the Solana blockchain before any interaction. 
-
-Given the high-risk profile, we recommend extreme caution. For projects seeking to establish trust and transparency, a Premium Deploy option would include a full audit of the token's smart contract, comprehensive on-chain data verification, and continuous monitoring to ensure all reported metrics align with the token's actual state.
+> **Final Recommendation:** The 🦎 (LIZARD) SPL Token Mint presents a critical inconsistency: it is reported as uninitialized despite having associated liquidity and trading volume. This state fundamentally compromises the token's integrity and functionality. While the revocation of mint and freeze authorities is a positive security measure, the uninitialized status overrides these benefits, making the token highly suspicious. Users should exercise extreme caution and verify the on-chain initialization status independently before any interaction. For projects seeking to launch a secure and transparent token, a Premium Deploy option ensures all critical parameters are correctly configured and verified on-chain from inception, avoiding such fundamental issues.
 
 ## Security Analysis
 
-This audit of the 🦎 (LIZARD) SPL Token Mint reveals a critical inconsistency: the mint account is reported as uninitialized, yet external data indicates active trading and liquidity. This fundamental discrepancy poses a severe risk to users, as an uninitialized token cannot be traded or hold value. Key token metrics like supply and decimals are also unknown, further hindering a reliable assessment. While mint and freeze authorities are appropriately revoked, the overall lack of verifiable on-chain data and conflicting information necessitates extreme caution.
+This audit report analyzes the metadata of the 🦎 (LIZARD) SPL Token Mint account. A critical finding is that the mint account is reported as uninitialized, which fundamentally compromises its functionality and contradicts the presence of reported liquidity. While both mint and freeze authorities have been revoked, which is a strong security positive, the uninitialized state presents a severe risk. Key token economic data and external security signals are also unavailable, limiting a comprehensive risk assessment.
 
-The critical finding regarding the uninitialized state of the mint account, coupled with reported liquidity, presents a significant and immediate risk to potential users. This fundamental contradiction suggests either a severe data integrity issue or a deliberate attempt to mislead. Users are strongly advised to verify the token's initialization status directly on the Solana blockchain before any interaction. 
-
-Given the high-risk profile, we recommend extreme caution. For projects seeking to establish trust and transparency, a Premium Deploy option would include a full audit of the token's smart contract, comprehensive on-chain data verification, and continuous monitoring to ensure all reported metrics align with the token's actual state.
+The 🦎 (LIZARD) SPL Token Mint presents a critical inconsistency: it is reported as uninitialized despite having associated liquidity and trading volume. This state fundamentally compromises the token's integrity and functionality. While the revocation of mint and freeze authorities is a positive security measure, the uninitialized status overrides these benefits, making the token highly suspicious. Users should exercise extreme caution and verify the on-chain initialization status independently before any interaction. For projects seeking to launch a secure and transparent token, a Premium Deploy option ensures all critical parameters are correctly configured and verified on-chain from inception, avoiding such fundamental issues.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The technical assessment reveals a critical inconsistency: the token mint account is reported as uninitialized (`Initialized: False`), yet external data sources indicate active trading and significant |
-| **Governance / Economics** | 6/10 | Medium | From a governance and economic perspective, the token exhibits a mixed profile. A significant strength is the revocation of both Mint Authority and Freeze Authority, which prevents further token issua |
-| **Upgrades** | 6/10 | Low | The token mint account itself is a data structure governed by the SPL Token Program, which is maintained by Solana Labs. As such, the mint account is not directly upgradable by the token's creators, p |
+| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.2 Code Security: The underlying SPL Token Program is a robust and well-audited Solana program. However, the specific 🦎 (LIZARD) mint account is reported as uninitialized, which is |
+| **Governance / Economics** | 6/10 | Low | 7.4 Economic & 7.5 Governance: The revocation of both mint and freeze authorities significantly reduces economic and governance risks associated with centralized control. This prevents inflationary at |
+| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The SPL Token Mint account itself is a data account and not subject to direct upgrades. The underlying SPL Token Program is maintained and upgraded by Solana governance, a well-establish |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · ⚪ 2 Informational_
+_🔴 1 Critical · ⚪ 3 Informational_
 
-### `C-01` — Uninitialized Mint Account with Reported Liquidity  *(Severity: Critical · Status: Unresolved)*
+### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
 
-The SPL Token Mint account is reported as `Initialized: False`. However, external data from dexscreener indicates significant liquidity ($34,460) and trading volume ($7,377) associated with this address. An uninitialized SPL Token Mint cannot be traded, hold value, or have a defined supply/decimals. This severe data inconsistency suggests a potential scam or a critical misrepresentation of the token's operational status, posing an immediate threat to user funds.
+The SPL Token Mint account `347k5f1wlrye81rorclbwdr6k3ecrunaqetqpw6pbonk` is reported as `Initialized: False`. An uninitialized mint account cannot properly function, meaning its supply, decimals, and ability to facilitate transfers are compromised. This directly contradicts the presence of reported liquidity and trading volume, indicating a severe inconsistency in the token's state or the data reporting.
 
-**Recommendation:** Users should exercise extreme caution and verify the actual initialization status of the mint account directly on-chain using Solana explorers or RPC calls. Do not interact with this token if it is indeed uninitialized, as any reported liquidity or trading activity would be misleading or fraudulent.
-
-
-### `H-01` — Lack of Transparency on Core Token Metrics  *(Severity: High · Status: Unresolved)*
-
-Key token metrics such as `Supply (raw)`, `Decimals`, and `Holder distribution` are reported as `unknown`. This lack of fundamental transparency prevents users from accurately assessing the token's economic properties, including total dilution, potential inflation, or concentration risks. This issue is exacerbated by the `Initialized: False` status, which inherently means these details would be undefined.
-
-**Recommendation:** For any legitimate token, all critical metadata should be publicly verifiable and accessible on-chain. Users should avoid tokens where such fundamental economic data is unavailable or obscured, as it hinders informed decision-making and increases investment risk.
+**Recommendation:** Verify the true initialization status of the mint account directly on-chain. If it is indeed uninitialized, any associated liquidity or trading activity is highly suspicious and potentially fraudulent. Users should exercise extreme caution and avoid interacting with this token until its initialization status is confirmed and resolved.
 
 
-### `I-01` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Unresolved)*
+### `I-01` — Unknown Supply and Decimals  *(Severity: Informational · Status: Unresolved)*
 
-Both the `Mint Authority` and `Freeze Authority` for the token have been `revoked (None)`. This means no new tokens can be minted into circulation, and no individual token accounts can be frozen by a central authority.
+The total supply and decimal precision for the 🦎 (LIZARD) token are reported as unknown. This information is fundamental for understanding token economics, valuation, and user interface display. This state is consistent with an uninitialized mint account, further highlighting the critical issue.
 
-**Recommendation:** This is generally considered a positive security practice for established tokens, as it removes central control over token supply and user assets, enhancing decentralization and reducing the risk of arbitrary inflation or censorship. However, it also means there is no mechanism for the project team to mint tokens for ecosystem growth or to freeze malicious accounts in case of an exploit.
+**Recommendation:** Users should be aware that critical token economic data is unavailable. This lack of transparency hinders proper risk assessment and makes it difficult to understand the token's true value or potential for dilution.
 
 
-### `I-02` — Absence of External Security Signals  *(Severity: Informational · Status: Unresolved)*
+### `I-02` — Unavailable Holder Distribution Data  *(Severity: Informational · Status: Unresolved)*
 
-Data from external security auditors and risk assessment platforms, specifically GoPlus Solana and RugCheck, is `unavailable`. This means there is no independent third-party assessment or automated red-flag analysis available for this token.
+Data regarding the distribution of 🦎 (LIZARD) tokens among holders is unavailable. This prevents an assessment of token centralization, which is crucial for understanding potential market manipulation risks or governance influence by a small number of large holders.
 
-**Recommendation:** While not a direct vulnerability, the absence of external security signals means users must rely solely on available on-chain data and their own due diligence. This is particularly challenging given the other identified data inconsistencies and lack of transparency, increasing the burden on individual users to assess risk.
+**Recommendation:** Without holder distribution data, it is impossible to determine if a small number of addresses control a significant portion of the token supply, posing a risk of concentrated ownership and potential market manipulation. Users should proceed with caution.
+
+
+### `I-03` — Unavailable External Security Signals  *(Severity: Informational · Status: Unresolved)*
+
+External security signals from GoPlus Solana and RugCheck are unavailable for the 🦎 (LIZARD) token. These services provide additional layers of automated security analysis and red flag identification, which can help users assess token legitimacy and safety.
+
+**Recommendation:** The absence of these external checks means that potential red flags or known scam indicators might not have been identified by third-party services. Users are advised to conduct more thorough independent due diligence.
 
 ## Token Metrics
 

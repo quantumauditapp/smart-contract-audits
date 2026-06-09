@@ -2,14 +2,14 @@
 token: Purple Bitcoin
 ticker: PBTC
 network: solana
-risk_score: 90
+risk_score: 85
 status: critical
 date: 2026-05-09
 ---
 
 # Purple Bitcoin (PBTC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 85/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/purple-bitcoin-sol)
 
@@ -17,54 +17,72 @@ date: 2026-05-09
 
 ## Audit Summary
 
-The audit of the Purple Bitcoin (PBTC) SPL Token Mint reveals a critical issue: the token mint account is marked as 'Initialized: False' despite having significant liquidity and active trading for over 550 days. This fundamental misconfiguration poses a severe risk to token holders and the integrity of the token's operations. While mint and freeze authorities are appropriately revoked, the uninitialized state could lead to unpredictable behavior, an inability to determine core token properties, or potential loss of funds. Information regarding holder distribution and external security signals was unavailable.
+The audit of the Purple Bitcoin (PBTC) SPL Token Mint account revealed critical inconsistencies. The mint account is reported as uninitialized, yet significant liquidity and trading volume are present. This fundamental misconfiguration means the token cannot function correctly, and its core properties like supply and decimals are undefined. While authorities are revoked (a positive for decentralization), the uninitialized state with active market activity poses an extreme risk to users.
 
-> **Final Recommendation:** For future token deployments, it is crucial to ensure all SPL Token Mint accounts are correctly initialized before any liquidity is added or trading begins. A Premium Deploy option would include a comprehensive pre-deployment checklist and automated validation to prevent such critical misconfigurations, ensuring the token's integrity from inception.
+> **Final Recommendation:** The Purple Bitcoin (PBTC) SPL Token Mint account exhibits critical issues, primarily its uninitialized state despite active market trading. This fundamental inconsistency poses an extreme risk to users. We strongly recommend immediate and thorough investigation into the true status of this mint account and its associated market activity. Users should exercise maximum caution and avoid interacting with this token until these critical issues are fully resolved and verified.
+
+For future token deployments, we recommend a Premium Deploy option, which includes pre-deployment verification of all account states, comprehensive security checks, and continuous monitoring to ensure all token properties are correctly configured and maintained from inception, preventing such critical misconfigurations.
 
 ## Security Analysis
 
-The audit of the Purple Bitcoin (PBTC) SPL Token Mint reveals a critical issue: the token mint account is marked as 'Initialized: False' despite having significant liquidity and active trading for over 550 days. This fundamental misconfiguration poses a severe risk to token holders and the integrity of the token's operations. While mint and freeze authorities are appropriately revoked, the uninitialized state could lead to unpredictable behavior, an inability to determine core token properties, or potential loss of funds. Information regarding holder distribution and external security signals was unavailable.
+The audit of the Purple Bitcoin (PBTC) SPL Token Mint account revealed critical inconsistencies. The mint account is reported as uninitialized, yet significant liquidity and trading volume are present. This fundamental misconfiguration means the token cannot function correctly, and its core properties like supply and decimals are undefined. While authorities are revoked (a positive for decentralization), the uninitialized state with active market activity poses an extreme risk to users.
 
-For future token deployments, it is crucial to ensure all SPL Token Mint accounts are correctly initialized before any liquidity is added or trading begins. A Premium Deploy option would include a comprehensive pre-deployment checklist and automated validation to prevent such critical misconfigurations, ensuring the token's integrity from inception.
+The Purple Bitcoin (PBTC) SPL Token Mint account exhibits critical issues, primarily its uninitialized state despite active market trading. This fundamental inconsistency poses an extreme risk to users. We strongly recommend immediate and thorough investigation into the true status of this mint account and its associated market activity. Users should exercise maximum caution and avoid interacting with this token until these critical issues are fully resolved and verified.
+
+For future token deployments, we recommend a Premium Deploy option, which includes pre-deployment verification of all account states, comprehensive security checks, and continuous monitoring to ensure all token properties are correctly configured and maintained from inception, preventing such critical misconfigurations.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The token's architecture (7.1 Architecture) exhibits a critical flaw: the mint account is 'Initialized: False', which is a fundamental misconfiguration for an active token. Despite this, both mint and |
-| **Governance / Economics** | 6/10 | Medium | The economic stability of PBTC is severely compromised by its uninitialized state, creating uncertainty regarding its true supply and decimal configuration (7.4 Economic). While governance controls li |
-| **Upgrades** | 6/10 | Low | SPL Token Mints are data accounts managed by the SPL Token Program, which is upgradable by Solana Labs. This specific mint account itself is not directly upgradable by its deployer (7.7 Upgrades). The |
+| **Technical** | 6/10 | Low | The technical analysis (7.1 Architecture, 7.2 Code Security, 7.3 Access Control) identified a critical architectural flaw: the SPL Token Mint account is uninitialized despite having active liquidity.  |
+| **Governance / Economics** | 6/10 | High | From an economic perspective (7.4 Economic), the presence of significant liquidity and trading volume for an uninitialized token (C-02) presents an extremely high economic risk, as the underlying asse |
+| **Upgrades** | 6/10 | Low | SPL Token Mints are typically immutable once initialized and configured. As this mint is uninitialized, the concept of upgrades is not directly applicable to the mint account itself. The underlying SP |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 2 High · 🟡 1 Medium_
+_🔴 2 Critical · 🟠 1 High · 🟡 1 Medium · ⚪ 2 Informational_
 
 ### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
 
-The Purple Bitcoin (PBTC) SPL Token Mint account (hfmbpyddzh6qmadduokjyckhxzjogbmpgauvplwgbf5p) is marked as 'Initialized: False'. Despite this critical state, the token has significant liquidity ($330,327 USD) and active trading volume ($92,787 USD) over a period of 551 days. An uninitialized mint account means that core properties are not properly set, and the token program may not process transactions involving this mint as expected. This fundamental misconfiguration can lead to unpredictable behavior, potential loss of funds for users, or the inability to interact with the token as a standard SPL asset.
+The SPL Token Mint account `hfmbpyddzh6qmadduokjyckhxzjogbmpgauvplwgbf5p` is reported as `Initialized: False`. An uninitialized mint account cannot function correctly, meaning it cannot mint new tokens, and its `supply` and `decimals` fields are not set. This fundamental misconfiguration prevents the token from operating as a standard SPL token.
 
-**Recommendation:** Immediately investigate why the mint account is uninitialized. If the intention was for this to be a fully functional token, it must be properly initialized according to the SPL Token Program specifications. However, given that mint authority is revoked, it may be impossible to initialize it now. Users should be warned about the risks associated with trading an uninitialized token. It is strongly advised to cease all trading and liquidity provision for this token until its state is rectified or…
-
-
-### `H-01` — Undetermined Token Supply and Decimals  *(Severity: High · Status: Unresolved)*
-
-Due to the mint account being 'Initialized: False', the 'supply' and 'decimals' fields are reported as 'unknown'. This lack of fundamental token metadata means that external systems, wallets, and users cannot reliably determine the total circulating supply or the correct precision for the token. This can lead to incorrect calculations, display errors, and potential misinterpretations of token value or scarcity, directly stemming from the uninitialized state.
-
-**Recommendation:** As a direct consequence of the uninitialized state (C-01), resolving this requires proper initialization of the mint account. Until then, users should be aware that the token's supply and decimal information is not officially set or verifiable on-chain, and any displayed values by third-party services might be speculative or incorrect.
+**Recommendation:** The mint account must be properly initialized to enable its intended functionality and define its core properties. Until initialization, the token is non-functional and poses extreme risk.
 
 
-### `H-02` — Risk of Unpredictable Token Behavior and Usability Issues  *(Severity: High · Status: Unresolved)*
+### `C-02` — Critical Inconsistency: Uninitialized Mint with Active Liquidity and Trading  *(Severity: Critical · Status: Unresolved)*
 
-An SPL Token Mint account in an 'Initialized: False' state may not function as expected by the SPL Token Program. While it currently has liquidity and trading, future interactions (e.g., transfers, staking, or integration with other DeFi protocols) could encounter errors, unexpected reverts, or lead to tokens becoming unusable. The program's internal logic might treat uninitialized accounts differently, potentially causing funds to be locked or lost, posing a significant operational risk.
+Despite the mint account being reported as `Initialized: False`, the token exhibits significant liquidity ($318,337 USD) and trading volume ($93,810 USD in 24 hours). This is a severe inconsistency. An uninitialized SPL Token Mint cannot properly function or have a defined supply, making the existence of active trading highly suspicious. This discrepancy strongly suggests that the reported market activity might be associated with a different token, a misidentified account, or part of a sophisticated scam where users are trading a non-functional or misleading token representation.
 
-**Recommendation:** Users should be advised that interacting with this token carries a significant risk of encountering unexpected behavior or usability limitations. Protocols integrating with PBTC should perform thorough due diligence on its initialized state. The primary recommendation is to resolve the underlying uninitialized state (C-01) to ensure standard SPL token functionality.
+**Recommendation:** Urgent investigation is required to reconcile the uninitialized state of the mint account with the reported market activity. Users should exercise extreme caution and verify the token's authenticity and functionality independently before engaging in any transactions.
 
 
-### `M-01` — Misleading Liquidity and Economic Risk  *(Severity: Medium · Status: Unresolved)*
+### `H-01` — Undefined Token Supply and Decimals  *(Severity: High · Status: Unresolved)*
 
-Despite the critical 'Initialized: False' state, the token exhibits substantial liquidity ($330,327 USD) and active trading volume ($92,787 USD). This creates a misleading perception of a fully functional and legitimate token, potentially luring users into trading an asset with fundamental technical flaws. The economic value derived from this liquidity is built upon an unstable foundation, posing a significant economic risk to holders if the underlying issue leads to a loss of trust or functionality.
+The total supply and decimal precision of the token are reported as unknown. This is a direct consequence of the mint account being uninitialized. Without knowing the supply and decimals, it is impossible to accurately assess the token's market capitalization, dilution risk, or display its value correctly in user interfaces. This lack of fundamental information poses a significant risk to users attempting to trade or hold the token.
 
-**Recommendation:** Market participants, including liquidity providers and traders, should be made aware of the 'Initialized: False' status and its implications. Education is crucial to prevent further economic exposure to this technically compromised asset. The ultimate resolution lies in addressing the uninitialized state (C-01) to align market perception with the token's actual technical integrity.
+**Recommendation:** The mint account must be properly initialized to populate these critical fields. Until then, the token's fundamental properties remain undefined and risky.
+
+
+### `M-01` — Unknown Token Program  *(Severity: Medium · Status: Unresolved)*
+
+The specific token program governing the Purple Bitcoin (PBTC) mint account is reported as 'unknown'. While most tokens on Solana utilize the standard SPL Token Program, the inability to confirm this introduces uncertainty. If a custom or non-standard token program is in use, it could contain unique vulnerabilities, backdoors, or non-standard behaviors not present in the audited SPL Token Program.
+
+**Recommendation:** Identify the exact program ID associated with this token mint. If it is not the official SPL Token Program, a thorough security audit of the custom program's source code is essential to identify any potential risks.
+
+
+### `I-01` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Unresolved)*
+
+Both the Mint Authority and Freeze Authority for the token have been revoked. This configuration prevents new tokens from being minted and existing tokens from being frozen by a central authority. This is generally a positive security measure for decentralization, reducing the risk of arbitrary supply manipulation or asset freezing by a single entity.
+
+**Recommendation:** No action required. This configuration enhances decentralization, assuming the token was intended to be immutable post-initialization.
+
+
+### `I-02` — Absence of External Security Signals  *(Severity: Informational · Status: Unresolved)*
+
+External security signals from GoPlus Solana and RugCheck are unavailable. These services typically provide automated risk assessments and identify common scam patterns or red flags. The absence of this data means that standard automated checks for potential risks could not be performed, leaving a gap in the overall security posture assessment.
+
+**Recommendation:** While not a direct vulnerability, the absence of these external checks means users and auditors must rely more heavily on manual verification and on-chain data. It is recommended to monitor for the availability of such data in the future.
 
 ## Token Metrics
 

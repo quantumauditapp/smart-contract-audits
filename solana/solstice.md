@@ -2,14 +2,14 @@
 token: Solstice
 ticker: SLX
 network: solana
-risk_score: 34
-status: medium
+risk_score: 90
+status: critical
 date: 2026-06-01
 ---
 
 # Solstice (SLX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solstice-sol)
 
@@ -17,51 +17,65 @@ date: 2026-06-01
 
 ## Audit Summary
 
-Automated review assessed the protocol architecture, upgrade controls, and external dependencies based on available inputs. Core flows look consistent and follow common patterns, but some edge cases and monitoring gaps remain. This report balances strengths with concrete remediation steps to reduce risk before deployment.
+This report provides a security assessment of the Solstice (SLX) SPL Token Mint account based on available on-chain metadata. Critical functional issues were identified, including the mint being uninitialized and its owning token program being unknown. While mint and freeze authorities are revoked, these controls are moot given the uninitialized state. Economic data shows moderate liquidity and volume, but crucial information regarding holder distribution and external security signals is unavailable, limiting a comprehensive risk assessment.
 
-> **Final Recommendation:** Proceed with deployment after addressing high-severity findings and adding timelock protections for admin actions. A short remediation sprint for medium issues will materially reduce upgrade and oracle risk.
+> **Final Recommendation:** The Solstice (SLX) SPL Token Mint account is currently in a non-functional state due to being uninitialized and having an unknown owning token program. These are critical issues that prevent the token from being used as a standard SPL token. It is imperative to address these foundational problems before any further development or deployment. Without resolution, the token cannot be minted, transferred, or utilized within the Solana ecosystem. 
 
-For teams seeking stronger assurance, the Premium Deploy track adds upgrade rehearsals, monitoring baselines, and post-deploy verification of oracle and admin flows. Premium Deploy also includes a rollback drill and sign-off checklist before production launch.
+For future deployments, consider a Premium Deploy option that includes a pre-deployment audit of the token's configuration and initialization process to ensure all critical parameters are correctly set and verified on-chain, mitigating such fundamental risks.
 
 ## Security Analysis
 
-Automated review assessed the protocol architecture, upgrade controls, and external dependencies based on available inputs. Core flows look consistent and follow common patterns, but some edge cases and monitoring gaps remain. This report balances strengths with concrete remediation steps to reduce risk before deployment.
+This report provides a security assessment of the Solstice (SLX) SPL Token Mint account based on available on-chain metadata. Critical functional issues were identified, including the mint being uninitialized and its owning token program being unknown. While mint and freeze authorities are revoked, these controls are moot given the uninitialized state. Economic data shows moderate liquidity and volume, but crucial information regarding holder distribution and external security signals is unavailable, limiting a comprehensive risk assessment.
 
-Proceed with deployment after addressing high-severity findings and adding timelock protections for admin actions. A short remediation sprint for medium issues will materially reduce upgrade and oracle risk.
+The Solstice (SLX) SPL Token Mint account is currently in a non-functional state due to being uninitialized and having an unknown owning token program. These are critical issues that prevent the token from being used as a standard SPL token. It is imperative to address these foundational problems before any further development or deployment. Without resolution, the token cannot be minted, transferred, or utilized within the Solana ecosystem. 
 
-For teams seeking stronger assurance, the Premium Deploy track adds upgrade rehearsals, monitoring baselines, and post-deploy verification of oracle and admin flows. Premium Deploy also includes a rollback drill and sign-off checklist before production launch.
+For future deployments, consider a Premium Deploy option that includes a pre-deployment audit of the token's configuration and initialization process to ensure all critical parameters are correctly set and verified on-chain, mitigating such fundamental risks.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | Architecture (7.1) is modular, separating storage, strategy, and interface layers to contain faults and align with standards like ERC-20. Code security (7.2) is mostly solid with input validation and  |
-| **Governance / Economics** | 6/10 | Medium | Economic design (7.4) uses capped emissions and fee ceilings, and rate limits reduce flash-loan sensitivity. However, reward curves still depend on liquidity timing, and unbounded parameter changes co |
-| **Upgrades** | 6/10 | Medium | Upgrade lifecycle (7.7) follows proxy standards and initializer versioning, which reduces accidental state resets. Still, upgrades can be executed without delay and rollback testing is limited, increa |
+| **Technical** | 6/10 | High | 7.1 Architecture and 7.2 Code Security reveal significant technical deficiencies. The SPL Token Mint is marked as 'Initialized: False', rendering it non-functional and preventing any token operations. |
+| **Governance / Economics** | 6/10 | Medium | 7.4 Economic and 7.5 Governance aspects present a mixed picture. The token exhibits a healthy Volume/Liquidity Ratio of 0.08 over its 15-day pair age, with $100,281 in liquidity and $8,011 in 24h volu |
+| **Upgrades** | 6/10 | Low | 7.7 Upgrades are not directly applicable to an SPL Token Mint account, which is a data structure managed by the SPL Token Program. The underlying SPL Token Program itself is upgradeable, but the mint  |
 
 ## Security Findings
 
-_⚪ 3 Informational_
+_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 2 Low_
 
-### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+### `C-01` — Uninitialized SPL Token Mint  *(Severity: Critical · Status: Unresolved)*
 
-Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+The SPL Token Mint account for Solstice (SLX) is marked as 'Initialized: False'. An uninitialized mint cannot be used to create or manage tokens, rendering the token completely non-functional. This prevents any minting, burning, or transfer operations, making the token unusable.
 
-**Recommendation:** Provide verified source code or ABI to enable a full review.
-
-
-### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
-
-Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
-
-**Recommendation:** Provide verified source code or ABI to enable a full review.
+**Recommendation:** The token mint must be properly initialized using the SPL Token Program's `initialize_mint` instruction. This will set the supply, decimals, and other critical parameters, enabling the token to function as intended.
 
 
-### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+### `H-01` — Unknown Token Program Ownership  *(Severity: High · Status: Unresolved)*
 
-Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+The 'Token Program' associated with this mint is listed as 'unknown'. For a standard SPL token, this should be the well-known SPL Token Program (TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA). An unknown program owner raises significant concerns about the token's legitimacy, security, and adherence to Solana's token standards, potentially indicating a custom or misconfigured implementation without transparency.
 
-**Recommendation:** Provide verified source code or ABI to enable a full review.
+**Recommendation:** Verify and confirm that the mint account is owned by the official SPL Token Program or a known, audited custom token program. If it's a custom program, its source code must be made available for a thorough security review.
+
+
+### `M-01` — Missing Core Token Metadata  *(Severity: Medium · Status: Unresolved)*
+
+Fundamental token metadata, specifically 'Supply (raw): unknown' and 'Decimals: unknown', is not available. This is a direct consequence of the mint being uninitialized and/or the unknown token program. Without these details, users and applications cannot correctly interact with or display information about the token.
+
+**Recommendation:** Ensure the token mint is correctly initialized, which will populate the supply and decimals fields. This information is crucial for token usability and integration across the Solana ecosystem.
+
+
+### `L-01` — Lack of Holder Distribution Data  *(Severity: Low · Status: Unresolved)*
+
+Information regarding holder concentration is 'unavailable'. The absence of this data prevents an assessment of potential centralization risks, such as a few large holders controlling a significant portion of the supply, which could lead to market manipulation or governance issues if the token were functional and had governance implications.
+
+**Recommendation:** Implement or integrate with tools that provide transparent holder distribution data. This information is vital for community trust and assessing the decentralization of token ownership.
+
+
+### `L-02` — Absence of External Security Signals  *(Severity: Low · Status: Unresolved)*
+
+External security signals from reputable services like GoPlus Solana and RugCheck are 'unavailable'. These services provide valuable insights into potential scam indicators, contract risks, and liquidity health. Their absence means that potential red flags or security assurances cannot be independently verified.
+
+**Recommendation:** Ensure integration with and reporting from established security auditing and monitoring services. This provides an additional layer of trust and transparency for the token and its ecosystem.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: World Cup Coin
 ticker: WORLDCUP
 network: solana
-risk_score: 72
+risk_score: 85
 status: critical
 date: 2026-05-15
 ---
 
 # World Cup Coin (WORLDCUP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 85/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-cup-coin-sol)
 
@@ -17,61 +17,54 @@ date: 2026-05-15
 
 ## Audit Summary
 
-This report provides a security audit of a Solana program, specifically focusing on a hypothetical custom program interacting with an SPL Token Mint. Due to the absence of specific program code, the analysis is based on general Solana security best practices and common vulnerability patterns observed in programs managing SPL tokens. The identified risks are theoretical, highlighting areas that would require rigorous verification if code were available. The overall risk level is assessed as Medium, reflecting the inherent complexity of Solana development and the potential for critical vulnerabilities if best practices are not strictly followed.
+The World Cup Coin (WORLDCUP) SPL Token Mint at address 33eum82laahtv5ykuq1bdweviserh5cnfxqvnlt5pump presents critical risks due to its reported uninitialized state. Despite showing significant liquidity and trading volume, the 'Initialized: False' flag indicates a fundamental misconfiguration or data discrepancy that severely impacts the token's integrity and functionality. Strengths include the revocation of both mint and freeze authorities, preventing further supply manipulation or asset freezing. However, the lack of crucial token details like decimals and supply, alongside unavailable external security signals, further compounds the risk profile.
 
-> **Final Recommendation:** While no specific code was provided for this audit, the general principles of Solana program security highlight the importance of meticulous account validation, robust access control, and secure handling of program upgrades. Any custom program interacting with an SPL Token Mint must prioritize these areas to mitigate common attack vectors. Developers should adhere to established best practices, conduct thorough testing, and consider formal verification for critical components.
+> **Final Recommendation:** Given the critical finding of an uninitialized SPL Token Mint, extreme caution is advised. Users and investors should independently verify the token's actual on-chain state and functionality, as the reported 'Initialized: False' status fundamentally contradicts the existence of liquidity and trading volume. It is imperative to understand how a token in this state can be traded and what implications this has for its long-term viability and security. For any future token deployments, ensure all critical parameters are correctly initialized and verified post-deployment. A Premium Deploy option would involve a comprehensive pre-deployment audit to prevent such fundamental configuration errors and ensure all on-chain metadata accurately reflects the intended token state.
 
 ## Security Analysis
 
-This report provides a security audit of a Solana program, specifically focusing on a hypothetical custom program interacting with an SPL Token Mint. Due to the absence of specific program code, the analysis is based on general Solana security best practices and common vulnerability patterns observed in programs managing SPL tokens. The identified risks are theoretical, highlighting areas that would require rigorous verification if code were available. The overall risk level is assessed as Medium, reflecting the inherent complexity of Solana development and the potential for critical vulnerabilities if best practices are not strictly followed.
+The World Cup Coin (WORLDCUP) SPL Token Mint at address 33eum82laahtv5ykuq1bdweviserh5cnfxqvnlt5pump presents critical risks due to its reported uninitialized state. Despite showing significant liquidity and trading volume, the 'Initialized: False' flag indicates a fundamental misconfiguration or data discrepancy that severely impacts the token's integrity and functionality. Strengths include the revocation of both mint and freeze authorities, preventing further supply manipulation or asset freezing. However, the lack of crucial token details like decimals and supply, alongside unavailable external security signals, further compounds the risk profile.
 
-While no specific code was provided for this audit, the general principles of Solana program security highlight the importance of meticulous account validation, robust access control, and secure handling of program upgrades. Any custom program interacting with an SPL Token Mint must prioritize these areas to mitigate common attack vectors. Developers should adhere to established best practices, conduct thorough testing, and consider formal verification for critical components.
+Given the critical finding of an uninitialized SPL Token Mint, extreme caution is advised. Users and investors should independently verify the token's actual on-chain state and functionality, as the reported 'Initialized: False' status fundamentally contradicts the existence of liquidity and trading volume. It is imperative to understand how a token in this state can be traded and what implications this has for its long-term viability and security. For any future token deployments, ensure all critical parameters are correctly initialized and verified post-deployment. A Premium Deploy option would involve a comprehensive pre-deployment audit to prevent such fundamental configuration errors and ensure all on-chain metadata accurately reflects the intended token state.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture and 7.2 Code Security were assessed based on general Solana program design principles, as no specific code was provided. Strengths typically include Solana's robust runtime and the us |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic considerations for an SPL Token Mint primarily revolve around the control of minting and burning capabilities, which directly impact token supply and value. Strong access control over the |
-| **Upgrades** | 6/10 | Medium | 7.7 Upgrades are a critical aspect of Solana programs. By default, programs are upgradeable, allowing for bug fixes and feature enhancements. This flexibility is a strength, but it introduces a risk i |
+| **Technical** | 6/10 | Low | The technical assessment reveals a critical issue: the SPL Token Mint is reported as 'Initialized: False' (7.2 Code Security). This state is highly unusual and problematic for a token with active trad |
+| **Governance / Economics** | 6/10 | Medium | Economically, the token shows active trading with $357,410 in liquidity and $697,357 in 24h volume, indicating market interest (7.4 Economic). The volume/liquidity ratio is normal, suggesting healthy  |
+| **Upgrades** | 6/10 | Low | The token's upgradeability and control mechanisms are robustly secured by the revocation of both Mint Authority and Freeze Authority (7.7 Upgrades). This means no new tokens can be minted, and existin |
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low_
 
-### `H-01` — Missing Signer Checks for Critical Instructions  *(Severity: High · Status: Unresolved)*
+### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
 
-Instructions that modify the state of the SPL Token Mint, such as `set_authority` (for mint or freeze authority) or `freeze_account`, must rigorously verify that the designated authority account is a signer. Failure to do so would allow any caller to execute these critical operations, leading to unauthorized control over the token supply or freezing capabilities.
+The SPL Token Mint account is reported as 'Initialized: False'. For an SPL token to be fully functional and usable, its mint account must be properly initialized. An uninitialized state implies that critical parameters like decimals, supply, and authorities have not been set, or the account is not ready for token operations. This directly contradicts the presence of reported liquidity and trading volume, indicating a severe discrepancy or a non-standard, potentially problematic, token implementation.
 
-**Recommendation:** Implement explicit `#[account(signer)]` constraints for all authority accounts involved in state-changing instructions. For CPIs, ensure the `signer_seeds` are correctly provided for the authority account.
-
-
-### `M-01` — Inadequate Account Validation for SPL Mint Account  *(Severity: Medium · Status: Unresolved)*
-
-The program must perform comprehensive validation of the SPL Token Mint account passed into instructions. This includes checking the account's owner (must be the SPL Token Program), its discriminator (if applicable for custom wrappers), and its initialized state. Insufficient validation could allow an attacker to pass a malicious or uninitialized account, leading to unexpected behavior or program crashes.
-
-**Recommendation:** Utilize Anchor's `constraint` attributes to verify the `owner` of the mint account and its `initialized` status. For custom logic, manually check `account.owner == spl_token::id()` and `account.data_len() == spl_token::state::Mint::LEN`.
+**Recommendation:** Immediately investigate the on-chain state of the token mint account to confirm its initialization status. If it is indeed uninitialized, all associated liquidity and trading should be considered highly risky, as the token's fundamental properties are undefined. If this is a new deployment, ensure the `initialize_mint` instruction is correctly executed and confirmed.
 
 
-### `M-02` — Reinitialization Vulnerability in Program Setup  *(Severity: Medium · Status: Unresolved)*
+### `H-01` — Unknown Decimals and Supply  *(Severity: High · Status: Unresolved)*
 
-If the custom program includes an `initialize` instruction to set up the SPL Token Mint or its associated control accounts, there is a risk of reinitialization. An attacker could call this instruction multiple times, potentially resetting critical parameters, reassigning authorities, or draining lamports from the program's accounts.
+The `Decimals: unknown` and `Supply (raw): unknown` fields indicate a lack of crucial information regarding the token's fundamental properties. Without knowing the number of decimals, the token's display value and divisibility are ambiguous. Without the total supply, it's impossible to assess market capitalization, dilution, or the overall economic model. This issue is exacerbated by the 'Initialized: False' status, suggesting these core properties may not be properly defined or accessible.
 
-**Recommendation:** Implement a clear mechanism to prevent reinitialization. This can be achieved by setting a flag in a dedicated state account upon first initialization, or by using a PDA as the state account and ensuring its canonical bump is only initialized once.
-
-
-### `L-01` — Missing Rent-Exemption Checks for New Accounts  *(Severity: Low · Status: Unresolved)*
-
-If the program creates new accounts (e.g., associated token accounts, custom state accounts) as part of its operations, it must ensure these accounts are rent-exempt. Failure to transfer sufficient lamports to cover rent could lead to accounts being eventually reaped by the Solana runtime, resulting in loss of data or funds.
-
-**Recommendation:** When creating new accounts, always calculate and transfer the required rent-exempt amount using `Rent::get().minimum_balance(size)`. Anchor's `init` constraint typically handles this, but manual CPIs require explicit checks.
+**Recommendation:** Verify the token's decimals and total supply directly on-chain. This information is critical for any financial assessment or interaction with the token. If these values are genuinely undefined due to the uninitialized state, the token should be considered non-functional and highly risky.
 
 
-### `I-01` — PDA Bump Seed Canonicalization Best Practice  *(Severity: Informational · Status: Unresolved)*
+### `M-01` — Undetermined Token Program  *(Severity: Medium · Status: Unresolved)*
 
-If the program uses Program Derived Addresses (PDAs) as authorities for the SPL Token Mint (e.g., mint authority, freeze authority), it is crucial to ensure that the PDA's bump seed is canonical. Non-canonical bumps can lead to the creation of multiple PDAs for the same set of seeds, potentially allowing an attacker to create a 'shadow' authority or confuse program logic.
+The `Token Program: unknown` status for an SPL token mint is unusual. While the mint address itself implies it's an SPL token, the explicit 'unknown' flag suggests a data retrieval issue or an unexpected configuration. This could potentially mask a non-standard token implementation or an issue with how the token program is associated with the mint account, leading to unexpected behavior or security concerns.
 
-**Recommendation:** Always use `find_program_address` to derive PDAs and their canonical bumps. Anchor's `init` and `seeds` constraints handle this automatically, but manual PDA derivation in CPIs or custom logic requires careful implementation to ensure canonical bump usage.
+**Recommendation:** Confirm the program ID associated with the token mint account. It should explicitly be the official Solana SPL Token Program ID. Any deviation or inability to determine this ID warrants further investigation into the token's origin and implementation.
+
+
+### `L-01` — Lack of External Security Signals  *(Severity: Low · Status: Unresolved)*
+
+Data from external security analysis platforms like GoPlus Solana and RugCheck is unavailable. This absence means there is no independent, automated assessment of potential risks such as rug pulls, honeypot characteristics, or other common malicious patterns associated with new tokens. This reduces the overall confidence in the token's safety and legitimacy from a third-party perspective.
+
+**Recommendation:** While not a direct vulnerability, the absence of these signals means users must rely solely on their own due diligence. Encourage the project to integrate with such services or provide transparent information that addresses common security concerns.
 
 ## Token Metrics
 

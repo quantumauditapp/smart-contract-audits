@@ -2,14 +2,14 @@
 token: Make Aliens Great Again 
 ticker: MAGA
 network: solana
-risk_score: 72
+risk_score: 90
 status: critical
 date: 2026-05-11
 ---
 
 # Make Aliens Great Again  (MAGA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/make-aliens-great-again-sol)
 
@@ -17,58 +17,47 @@ date: 2026-05-11
 
 ## Audit Summary
 
-The audit of the Make Aliens Great Again (MAGA) SPL Token Mint account reveals a critical inconsistency regarding its initialization state, despite active trading and liquidity. Key metadata such as total supply and decimals are unavailable, hindering a comprehensive economic assessment. The mint and freeze authorities are appropriately revoked, enhancing security against inflationary or freezing attacks.
+The SPL Token Mint account at `hon2rhaiqkcdtuzl5ga2vjxpr7t1mpck2ut2ahkcpump` is reported as uninitialized, rendering it non-functional. Despite this critical state, significant liquidity and trading volume are observed, indicating a severe discrepancy that poses a high risk to users. Mint and Freeze authorities are revoked, which would be positive for a functional token, but currently means the token cannot be properly managed or issued.
 
-> **Final Recommendation:** The Make Aliens Great Again (MAGA) SPL Token Mint presents a puzzling state where it is reported as uninitialized despite having active liquidity and trading volume. This fundamental inconsistency requires immediate clarification to ensure the integrity and reliability of the token. While mint and freeze authorities are appropriately revoked, the lack of complete token metadata and an identified token program prevents a full security and economic assessment.
-
-For enhanced assurance, it is recommended to verify the true initialization status of the mint account and identify the specific token program governing it. A Premium Deploy option would involve a deeper, on-chain forensic analysis to reconcile the contradictory data points and confirm the token's operational integrity and adherence to SPL token standards.
+> **Final Recommendation:** Extreme caution is advised for any interaction with the 'Make Aliens Great Again' token. The reported uninitialized state of the mint account at `hon2rhaiqkcdtuzl5ga2vjxpr7t1mpck2ut2ahkcpump` means the token cannot function as intended. Users should verify the actual token being traded and its associated mint account's initialization status before engaging. A Premium Deploy option would involve a thorough on-chain verification of the token's true operational status and associated program IDs to ensure functional integrity and prevent potential scams.
 
 ## Security Analysis
 
-The audit of the Make Aliens Great Again (MAGA) SPL Token Mint account reveals a critical inconsistency regarding its initialization state, despite active trading and liquidity. Key metadata such as total supply and decimals are unavailable, hindering a comprehensive economic assessment. The mint and freeze authorities are appropriately revoked, enhancing security against inflationary or freezing attacks.
+The SPL Token Mint account at `hon2rhaiqkcdtuzl5ga2vjxpr7t1mpck2ut2ahkcpump` is reported as uninitialized, rendering it non-functional. Despite this critical state, significant liquidity and trading volume are observed, indicating a severe discrepancy that poses a high risk to users. Mint and Freeze authorities are revoked, which would be positive for a functional token, but currently means the token cannot be properly managed or issued.
 
-The Make Aliens Great Again (MAGA) SPL Token Mint presents a puzzling state where it is reported as uninitialized despite having active liquidity and trading volume. This fundamental inconsistency requires immediate clarification to ensure the integrity and reliability of the token. While mint and freeze authorities are appropriately revoked, the lack of complete token metadata and an identified token program prevents a full security and economic assessment.
-
-For enhanced assurance, it is recommended to verify the true initialization status of the mint account and identify the specific token program governing it. A Premium Deploy option would involve a deeper, on-chain forensic analysis to reconcile the contradictory data points and confirm the token's operational integrity and adherence to SPL token standards.
+Extreme caution is advised for any interaction with the 'Make Aliens Great Again' token. The reported uninitialized state of the mint account at `hon2rhaiqkcdtuzl5ga2vjxpr7t1mpck2ut2ahkcpump` means the token cannot function as intended. Users should verify the actual token being traded and its associated mint account's initialization status before engaging. A Premium Deploy option would involve a thorough on-chain verification of the token's true operational status and associated program IDs to ensure functional integrity and prevent potential scams.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical state of the MAGA token mint shows a critical inconsistency: it is reported as uninitialized (`Initialized: False`) yet exhibits active trading and significant liquidity. This contradict |
-| **Governance / Economics** | 6/10 | Medium | The economic assessment is hampered by unavailable data for total supply, decimals, and holder distribution, preventing a clear understanding of tokenomics and potential concentration risks (7.4 Econo |
-| **Upgrades** | 6/10 | Low | As an SPL Token Mint account, there are no direct upgrade mechanisms for the token's core properties once its authorities are revoked. The current state with revoked mint and freeze authorities ensure |
+| **Technical** | 6/10 | High | The primary technical concern is the uninitialized state of the SPL Token Mint account (7.2 Code Security). This prevents any token operations, including minting or burning. While Mint and Freeze auth |
+| **Governance / Economics** | 6/10 | High | The economic stability of the 'Make Aliens Great Again' token is severely compromised by the uninitialized state of its mint account (7.4 Economic). Users engaging with this token face a high risk of  |
+| **Upgrades** | 6/10 | Low | Not applicable for an SPL Token Mint account, which is a data account managed by the immutable SPL Token Program. The SPL Token Program itself is upgradeable by Solana governance, but individual mint  |
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · ⚪ 2 Informational_
+_🔴 1 Critical · 🟠 1 High · ⚪ 1 Informational_
 
-### `H-01` — Inconsistent Initialization State  *(Severity: High · Status: Unresolved)*
+### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
 
-The SPL Token Mint account is reported as `Initialized: False`. However, the token has significant reported liquidity ($155,019 USD) and active trading volume ($59,933 USD in 24h). An uninitialized SPL token mint should not be capable of holding supply or facilitating transfers, making these two facts contradictory. This inconsistency raises serious concerns about the actual state and functionality of the token, or the accuracy of the reported data.
+The SPL Token Mint account at `hon2rhaiqkcdtuzl5ga2vjxpr7t1mpck2ut2ahkcpump` is reported as 'Initialized: False'. An uninitialized mint account cannot be used to mint new tokens, manage existing supply, or perform any standard SPL token operations. This renders the token effectively non-functional from a protocol perspective.
 
-**Recommendation:** Investigate the true initialization status of the mint account directly on-chain. Reconcile the reported `Initialized: False` state with the observed trading activity and liquidity. If the account is indeed uninitialized, its current functionality is anomalous and potentially unstable. If the data source is incorrect, update the information.
-
-
-### `M-01` — Unknown Token Program  *(Severity: Medium · Status: Unresolved)*
-
-The specific "Token Program" associated with this mint account is reported as `unknown`. Standard SPL tokens are governed by the `TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA` program. An unknown or custom token program prevents a comprehensive security assessment of the underlying logic that governs token operations (minting, transfers, burning, etc.). Without knowing the program, its security posture, potential vulnerabilities, or adherence to SPL standards cannot be verified.
-
-**Recommendation:** Identify the precise program ID that owns this mint account. If it's a custom program, its source code should be made available for audit. If it's a standard SPL program, ensure its version is up-to-date and widely recognized.
+**Recommendation:** Verify the initialization status of the mint account via a direct RPC call. If confirmed uninitialized, the token cannot be used. Any associated liquidity or trading activity is highly suspicious and likely linked to a different, potentially fraudulent, token.
 
 
-### `I-01` — Incomplete Token Metadata  *(Severity: Informational · Status: Unresolved)*
+### `H-01` — Discrepancy: Uninitialized Mint with Active Liquidity  *(Severity: High · Status: Unresolved)*
 
-Critical token metadata such as `Supply (raw)`, `Decimals`, and `[UNKNOWN] holder concentration` are unavailable. This lack of information prevents a complete economic analysis of the token, including total market capitalization, potential for inflation (though mint authority is revoked), and distribution risks (e.g., whale concentration).
+Despite the mint account being reported as 'Initialized: False', the token 'Make Aliens Great Again (MAGA)' shows significant liquidity ($152,962 USD) and active 24h trading volume ($53,576 USD). This is a severe discrepancy, as an uninitialized mint cannot issue tokens that would typically be traded. This suggests either a data inconsistency, or that the liquidity is for a different token, or that the token is part of a scheme to mislead users.
 
-**Recommendation:** Ensure all essential token metadata is publicly accessible and verifiable on-chain. This transparency is crucial for investor confidence and a thorough economic assessment.
+**Recommendation:** Users must independently verify the actual token mint address associated with the traded liquidity and confirm its initialization status. Do not rely solely on reported liquidity figures without confirming the underlying asset's validity and functionality.
 
 
-### `I-02` — Missing External Security Signals  *(Severity: Informational · Status: Unresolved)*
+### `I-01` — Incomplete On-Chain Metadata  *(Severity: Informational · Status: Unresolved)*
 
-External security signals from GoPlus Solana data and RugCheck are reported as `[UNKNOWN]`. These services provide independent risk assessments and red flags, which are valuable for a holistic security overview. The absence of this data means the token lacks an additional layer of external validation.
+Key on-chain metadata for the token mint, such as the specific Token Program ID, raw supply, decimals, and holder distribution, are reported as 'unknown' or 'unavailable'. This lack of transparency hinders a complete security assessment and makes it difficult to verify the token's properties and distribution.
 
-**Recommendation:** Integrate with or ensure data availability from reputable external security analysis platforms like GoPlus and RugCheck to provide additional layers of trust and risk assessment for users.
+**Recommendation:** While not a direct vulnerability, the absence of complete metadata increases the overall risk profile. Users should exercise caution when interacting with tokens lacking transparent on-chain data. For future deployments, ensure all relevant metadata is publicly accessible and verifiable.
 
 ## Token Metrics
 

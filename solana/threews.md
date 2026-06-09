@@ -2,14 +2,14 @@
 token: three.ws
 ticker: THREE
 network: solana
-risk_score: 72
+risk_score: 90
 status: critical
 date: 2026-06-08
 ---
 
 # three.ws (THREE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/threews-sol)
 
@@ -17,82 +17,58 @@ date: 2026-06-08
 
 ## Audit Summary
 
-This report provides a security audit for a Solana program. Due to the absence of specific program code, the analysis is based on common Solana program security patterns and best practices. The findings highlight potential vulnerabilities frequently observed in Solana programs, offering general recommendations for robust development. The overall risk is assessed as Medium, reflecting the inherent complexities and common pitfalls in Solana program development.
+The audit of the `three.ws` SPL Token Mint account reveals critical functional and technical deficiencies. The mint account is reported as uninitialized, rendering it non-functional for token operations, and its associated token program is unknown. While mint and freeze authorities are appropriately revoked, these fundamental issues pose significant risks to the token's integrity and usability. The presence of reported liquidity for an uninitialized token suggests a critical data discrepancy or potential misrepresentation.
 
-> **Final Recommendation:** To ensure the highest level of security for your Solana program, a thorough code audit by experienced Solana security professionals is strongly recommended once the program code is available. This will allow for a detailed, line-by-line analysis to identify and mitigate specific vulnerabilities. Implementing robust testing frameworks, including unit, integration, and fuzz testing, is also crucial.
+> **Final Recommendation:** The audit of the `three.ws` SPL Token Mint reveals critical functional and technical issues, primarily the uninitialized state of the mint account and the unknown associated token program. These factors severely impact the token's operational viability and security posture. While the revocation of mint and freeze authorities is a positive security measure, the fundamental issues require immediate attention.
+
+We strongly recommend verifying and rectifying the initialization status and identifying the controlling program. For projects seeking to launch robust and secure tokens, a comprehensive audit including source code review of any custom token programs is essential. Consider a Premium Deploy option for future token launches, which includes pre-deployment security checks, real-time monitoring, and expert guidance to ensure all critical parameters are correctly configured and verified b…
 
 ## Security Analysis
 
-This report provides a security audit for a Solana program. Due to the absence of specific program code, the analysis is based on common Solana program security patterns and best practices. The findings highlight potential vulnerabilities frequently observed in Solana programs, offering general recommendations for robust development. The overall risk is assessed as Medium, reflecting the inherent complexities and common pitfalls in Solana program development.
+The audit of the `three.ws` SPL Token Mint account reveals critical functional and technical deficiencies. The mint account is reported as uninitialized, rendering it non-functional for token operations, and its associated token program is unknown. While mint and freeze authorities are appropriately revoked, these fundamental issues pose significant risks to the token's integrity and usability. The presence of reported liquidity for an uninitialized token suggests a critical data discrepancy or potential misrepresentation.
 
-To ensure the highest level of security for your Solana program, a thorough code audit by experienced Solana security professionals is strongly recommended once the program code is available. This will allow for a detailed, line-by-line analysis to identify and mitigate specific vulnerabilities. Implementing robust testing frameworks, including unit, integration, and fuzz testing, is also crucial.
+The audit of the `three.ws` SPL Token Mint reveals critical functional and technical issues, primarily the uninitialized state of the mint account and the unknown associated token program. These factors severely impact the token's operational viability and security posture. While the revocation of mint and freeze authorities is a positive security measure, the fundamental issues require immediate attention.
+
+We strongly recommend verifying and rectifying the initialization status and identifying the controlling program. For projects seeking to launch robust and secure tokens, a comprehensive audit including source code review of any custom token programs is essential. Consider a Premium Deploy option for future token launches, which includes pre-deployment security checks, real-time monitoring, and expert guidance to ensure all critical parameters are correctly configured and verified b…
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture and 7.2 Code Security are critical for Solana programs, requiring careful design to prevent common issues like missing signer checks and improper account validation. For instance, ens |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic models in Solana programs must account for lamport management, rent exemption, and potential tokenomics, ensuring stability and preventing draining attacks. 7.5 Governance mechanisms, if  |
-| **Upgrades** | 6/10 | Medium | 7.7 Upgrades on Solana are managed through the BPF Loader, allowing program logic to be updated. This process introduces risks if not handled securely, such as ensuring the upgrade authority is proper |
+| **Technical** | 6/10 | Low | The technical review (7.1 Architecture, 7.2 Code Security, 7.3 Access Control) reveals critical functional issues. The SPL Token Mint account is reported as `Initialized: False`, rendering it non-func |
+| **Governance / Economics** | 6/10 | Medium | From an economic and governance perspective (7.4 Economic, 7.5 Governance), the token exhibits a high Volume/Liquidity Ratio of 6.27, indicating potential for high price volatility and slippage (M-01) |
+| **Upgrades** | 6/10 | Low | As an SPL Token Mint account, this is a data account managed by the SPL Token Program, not an upgradeable program itself. Therefore, direct upgradeability risks (7.7 Upgrades) are not applicable to th |
 
 ## Security Findings
 
-_🟠 2 High · 🟡 3 Medium · 🟢 2 Low · ⚪ 1 Informational_
+_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · ⚪ 1 Informational_
 
-### `H-01` — Missing Signer Checks for Critical Instructions  *(Severity: High · Status: Unresolved)*
+### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
 
-Instructions that modify program state or transfer assets often require specific accounts to be signers. A common vulnerability is failing to check if a required account (e.g., an owner, admin, or the account being modified) has signed the transaction. This can lead to unauthorized instruction execution, allowing any caller to invoke privileged operations.
+The SPL Token Mint account at `fembdox7r1psc4gecvjdsbnbza3bfztcydcatjvjpump` is reported as `Initialized: False`. An uninitialized mint account cannot be used to mint new tokens, transfer existing tokens, or perform any standard token operations. This renders the token non-functional for its intended purpose. If liquidity is reported for this token, it suggests a discrepancy in data or a potential misrepresentation, as a non-functional token cannot genuinely participate in trading.
 
-**Recommendation:** Ensure all accounts that are intended to authorize an instruction, especially those modifying state or transferring value, are explicitly checked for `is_signer = true` within the instruction handler. Use Anchor's `#[account(signer)]` attribute or manual `account.is_signer` checks.
-
-
-### `H-02` — Inadequate Account Validation (Owner/Discriminator)  *(Severity: High · Status: Unresolved)*
-
-Programs must rigorously validate all accounts passed into an instruction to ensure they are of the expected type and owned by the correct program. Failure to check `account.owner` can allow an attacker to pass in arbitrary accounts, potentially leading to type cosplay attacks or manipulation of unintended data. Missing Anchor discriminator checks can allow one account type to be mistaken for another.
-
-**Recommendation:** For every account passed into an instruction, verify its `owner` matches the expected program ID. For Anchor programs, ensure `#[account(has_one = ...)]` and `#[account(owner = ...)]` are used where appropriate, and that discriminators are checked for all deserialized accounts. Manual checks for `account.data_is_empty()` and `account.data_len()` can also prevent issues.
+**Recommendation:** Verify the initialization status of the mint account. If the intention is for this token to be tradable, the mint account must be properly initialized. If this account is indeed uninitialized, any associated liquidity or trading activity is highly suspicious and warrants immediate investigation.
 
 
-### `M-01` — PDA Bump Seed Canonicalization Vulnerability  *(Severity: Medium · Status: Unresolved)*
+### `H-01` — Unknown Token Program Association  *(Severity: High · Status: Unresolved)*
 
-When creating or deriving Program Derived Addresses (PDAs), it's crucial to use the canonical bump seed. If a program allows PDAs to be initialized with non-canonical bump seeds, an attacker could create multiple PDAs for the same set of seeds, potentially leading to state confusion, resource exhaustion, or bypassing unique account constraints.
+The "Token Program" associated with the mint account is listed as `unknown`. For a standard SPL Token, this should typically be `TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA`. An unknown program could indicate a custom token implementation, which would require a full source code audit to assess its security, or it could signify an error in data retrieval. Without knowing the controlling program, the security and functionality of the token cannot be reliably assessed.
 
-**Recommendation:** Always use `find_program_address` to derive the canonical bump seed when creating or interacting with PDAs. Ensure that PDA initialization logic strictly enforces the use of the canonical bump, typically by comparing the provided bump with the one returned by `find_program_address`.
-
-
-### `M-02` — Reinitialization Attacks  *(Severity: Medium · Status: Unresolved)*
-
-If a program's initialization instruction does not properly check if an account has already been initialized, an attacker could re-initialize an existing account, overwriting its data or resetting its state. This can lead to loss of funds, privilege escalation, or denial of service.
-
-**Recommendation:** Implement a clear state variable (e.g., `is_initialized: bool`) within the account's data structure. During initialization, check if `is_initialized` is false before proceeding, and set it to true upon successful initialization. For Anchor, `#[account(init)]` and `#[account(zero_copy)]` with proper checks can help, but manual checks are often safer.
+**Recommendation:** Identify the precise program controlling this mint account. If it is a custom program, its source code must be made available for a comprehensive security review. If it is intended to be a standard SPL token, ensure it is correctly associated with the official SPL Token Program.
 
 
-### `M-03` — Arithmetic Overflow/Underflow Without Checked Math  *(Severity: Medium · Status: Unresolved)*
+### `M-01` — High Volume-to-Liquidity Ratio  *(Severity: Medium · Status: Unresolved)*
 
-Solana programs written in Rust do not automatically perform checked arithmetic in release builds. Operations like addition, subtraction, or multiplication on integer types can overflow or underflow, leading to unexpected values and potential exploits, such as incorrect balance calculations or logic bypasses.
+The token exhibits a high Volume/Liquidity Ratio of `6.27` (where >5 is considered high). This indicates that trading volume significantly exceeds the available liquidity. While not a direct security vulnerability, a high ratio can lead to increased price volatility, significant slippage for larger trades, and potential for market manipulation due to shallow liquidity.
 
-**Recommendation:** Always use Rust's checked arithmetic methods (e.g., `checked_add()`, `checked_sub()`, `checked_mul()`) for all critical calculations involving token amounts, balances, or indices. Handle `None` results appropriately, typically by returning an error.
-
-
-### `L-01` — Missing Rent-Exemption Checks for New Accounts  *(Severity: Low · Status: Unresolved)*
-
-When creating new accounts, the program or the user is responsible for ensuring they are rent-exempt. If an account is initialized with insufficient lamports to cover its rent for two years, it risks being reaped by the Solana runtime, leading to data loss. While often a user responsibility, programs should ideally enforce or warn about this.
-
-**Recommendation:** When creating new accounts, ensure sufficient lamports are transferred to make them rent-exempt. Use `Rent::get().minimum_balance(data_len)` to calculate the required lamports. Consider adding checks or clear documentation for users regarding rent exemption.
+**Recommendation:** Users should exercise caution when trading this token, especially with large orders, due to potential high slippage and price impact. Project teams should consider strategies to increase liquidity to stabilize market dynamics.
 
 
-### `L-02` — Potential for Close Account Draining  *(Severity: Low · Status: Unresolved)*
+### `I-01` — Missing Basic Mint Information  *(Severity: Informational · Status: Unresolved)*
 
-When an account is closed, its remaining lamports are transferred to a specified recipient. If the program allows an attacker to manipulate the recipient account or close an account prematurely, it could lead to unintended lamport transfers or denial of service for legitimate users.
+Key details such as `Supply (raw)` and `Decimals` are reported as `unknown`. While this is consistent with an uninitialized mint account (C-01), for a functional token, these are fundamental properties. Their absence further confirms the non-operational state of this specific mint account.
 
-**Recommendation:** Ensure that account closure logic is strictly controlled. Only allow the legitimate owner or a designated authority to close an account. Verify the recipient account is the intended one. For Anchor, `#[account(close = recipient)]` should be used carefully, ensuring `recipient` is properly validated.
-
-
-### `I-01` — Lack of Comprehensive Error Handling  *(Severity: Informational · Status: Unresolved)*
-
-While Rust's `Result` type encourages explicit error handling, some programs might not cover all possible failure scenarios with specific error codes or messages. Generic error handling can make debugging and understanding program failures difficult for users and integrators.
-
-**Recommendation:** Implement a comprehensive set of custom error codes for all expected failure conditions. Provide clear, descriptive error messages to aid debugging and user experience. Ensure all `Result` types are properly handled, converting system errors or CPI errors into program-specific errors where appropriate.
+**Recommendation:** Ensure all fundamental token properties are correctly set and retrievable once the mint account is properly initialized and operational.
 
 ## Token Metrics
 

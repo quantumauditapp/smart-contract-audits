@@ -2,14 +2,14 @@
 token: Andes Virus
 ticker: ANDV
 network: solana
-risk_score: 90
-status: critical
+risk_score: 35
+status: medium
 date: 2026-05-14
 ---
 
 # Andes Virus (ANDV) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/andes-virus-sol)
 
@@ -17,54 +17,54 @@ date: 2026-05-14
 
 ## Audit Summary
 
-This report details a security audit of the Andes Virus (ANDV) SPL Token Mint account on the Solana blockchain. The analysis is based on on-chain metadata and publicly available liquidity data, as source code for SPL Token Mints is not applicable. Key findings include the critical issue of the mint account being uninitialized, rendering the token non-functional, and a lack of transparency regarding holder distribution and external security signals. While the mint and freeze authorities are revoked, which is a positive security measure, the fundamental uninitialized state poses a significant barrier to usability. Due to the metadata-driven nature of this audit, certain deeper technical and economic analyses were limited by data availability.
+The Andes Virus (ANDV) SPL Token Mint is currently uninitialized, preventing any token operations. While Mint and Freeze Authorities are revoked, indicating a secure configuration post-initialization, the token cannot function until it is properly initialized. Key details like decimals and total supply are unknown due to this uninitialized state. The token exhibits normal liquidity and volume ratios for its age.
 
-> **Final Recommendation:** The Andes Virus (ANDV) token mint account is currently in a non-functional state due to being uninitialized. This critical issue must be addressed immediately for the token to become usable. While the revocation of mint and freeze authorities is a positive security practice, it is overshadowed by the fundamental setup error. Addressing the initialization, improving transparency around holder distribution, and seeking external security signal integration are crucial next steps.
+> **Final Recommendation:** The Andes Virus (ANDV) SPL Token Mint is currently in an uninitialized state, rendering it non-functional. While the revocation of Mint and Freeze Authorities indicates a strong security posture against centralized control post-initialization, this state prevents any token operations, including issuance or trading. It is imperative to properly initialize the mint to define its decimals and supply, enabling its intended use. Users should exercise caution until the mint is fully initialized and its parameters are confirmed.
 
 ## Security Analysis
 
-This report details a security audit of the Andes Virus (ANDV) SPL Token Mint account on the Solana blockchain. The analysis is based on on-chain metadata and publicly available liquidity data, as source code for SPL Token Mints is not applicable. Key findings include the critical issue of the mint account being uninitialized, rendering the token non-functional, and a lack of transparency regarding holder distribution and external security signals. While the mint and freeze authorities are revoked, which is a positive security measure, the fundamental uninitialized state poses a significant barrier to usability. Due to the metadata-driven nature of this audit, certain deeper technical and economic analyses were limited by data availability.
+The Andes Virus (ANDV) SPL Token Mint is currently uninitialized, preventing any token operations. While Mint and Freeze Authorities are revoked, indicating a secure configuration post-initialization, the token cannot function until it is properly initialized. Key details like decimals and total supply are unknown due to this uninitialized state. The token exhibits normal liquidity and volume ratios for its age.
 
-The Andes Virus (ANDV) token mint account is currently in a non-functional state due to being uninitialized. This critical issue must be addressed immediately for the token to become usable. While the revocation of mint and freeze authorities is a positive security practice, it is overshadowed by the fundamental setup error. Addressing the initialization, improving transparency around holder distribution, and seeking external security signal integration are crucial next steps.
+The Andes Virus (ANDV) SPL Token Mint is currently in an uninitialized state, rendering it non-functional. While the revocation of Mint and Freeze Authorities indicates a strong security posture against centralized control post-initialization, this state prevents any token operations, including issuance or trading. It is imperative to properly initialize the mint to define its decimals and supply, enabling its intended use. Users should exercise caution until the mint is fully initialized and its parameters are confirmed.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | 7.1 Architecture & 7.2 Code Security: The primary technical concern is that the SPL Token Mint account is reported as 'Initialized: False'. This critical state means the token cannot function as inten |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic & 7.5 Governance: The token exhibits a normal Volume/Liquidity Ratio of 0.05, indicating healthy trading activity relative to its liquidity of $28,885 over its 34-day pair age. However, a |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The mint authority for the Andes Virus (ANDV) token has been revoked. This is a strong security measure that prevents any further changes to the token's core properties, such as minting  |
+| **Technical** | 6/10 | Medium | The token mint has both its Mint Authority and Freeze Authority revoked, which is a strong security posture against unauthorized token creation or asset freezing (7.3 Access Control). This prevents po |
+| **Governance / Economics** | 6/10 | Low | The token exhibits a normal Volume/Liquidity Ratio of 0.10, suggesting healthy trading activity relative to its liquidity (7.4 Economic). With revoked authorities, there is no centralized governance o |
+| **Upgrades** | 6/10 | Low | As an SPL Token Mint with revoked authorities, the core parameters are immutable once initialized, providing predictability and preventing unauthorized changes (7.7 Upgrades). This design choice enhan |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
-### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Uninitialized SPL Token Mint  *(Severity: Medium · Status: Unresolved)*
 
-The SPL Token Mint account `jvktlflnngpm7eds9kepyqpxuy8hpgtzohlfm4spump` is reported as `Initialized: False`. An uninitialized mint account cannot be used to mint tokens, set decimals, or track supply, rendering the token completely non-functional and unusable within the Solana ecosystem.
+The SPL Token Mint is reported as `Initialized: False`. An uninitialized mint cannot be used to create tokens or perform any token operations. This state prevents the token from functioning as intended and could indicate an incomplete deployment or an error in the initialization process.
 
-**Recommendation:** The mint account must be properly initialized using the `initialize_mint` instruction of the SPL Token Program. This instruction requires specifying the number of decimals, the mint authority, and optionally the freeze authority. Until initialized, the token cannot be utilized.
-
-
-### `H-01` — Unknown Decimals and Supply  *(Severity: High · Status: Unresolved)*
-
-As a direct consequence of the mint account being uninitialized, the number of decimals and the total supply of the token are reported as `unknown`. This lack of fundamental token information prevents users from understanding the token's divisibility and total issuance, which is critical for its utility, market valuation, and trust.
-
-**Recommendation:** Ensure the mint account is correctly initialized. Once initialized, the decimals will be defined, and the supply will be accurately tracked by the SPL Token Program as tokens are minted or burned, providing essential transparency to users.
+**Recommendation:** The mint must be properly initialized by calling the `InitializeMint` instruction of the SPL Token Program. This will set the supply, decimals, and assign authorities (or confirm their revocation).
 
 
-### `M-01` — Lack of Transparency in Holder Distribution  *(Severity: Medium · Status: Unresolved)*
+### `L-01` — Unknown Decimals  *(Severity: Low · Status: Unresolved)*
 
-Information regarding the holder concentration for the Andes Virus (ANDV) token is unavailable. This lack of transparency makes it impossible for potential investors and users to assess the distribution of the token, identify potential whale concentrations, or evaluate the risk of price manipulation by a few large holders.
+The number of decimals for the token is reported as `unknown`. While this is a direct consequence of the mint being uninitialized, it means users cannot accurately determine the token's divisibility. This lack of information is crucial for correct display and interaction with the token in wallets and exchanges.
 
-**Recommendation:** While not a direct program vulnerability, the project should integrate with or provide data to services that offer on-chain holder distribution analytics. This would enhance transparency and allow for better-informed decisions by the community.
+**Recommendation:** Ensure the mint is initialized with a clearly defined number of decimals. This information should be readily available to users post-initialization.
 
 
-### `L-01` — Absence of External Security Signal Integration  *(Severity: Low · Status: Unresolved)*
+### `I-01` — Unknown Supply  *(Severity: Informational · Status: Unresolved)*
 
-External security signals from reputable services like GoPlus Solana and RugCheck are unavailable for the Andes Virus (ANDV) token. These services provide automated risk assessments and flag common scam indicators or vulnerabilities, and their absence means that standard external due diligence checks cannot be performed, potentially leaving users unaware of common market risks.
+The total supply of the token is reported as `unknown`. This is an expected state for an uninitialized mint. Once initialized, the supply will be set, and if a mint authority were present and not revoked, it could potentially be changed.
 
-**Recommendation:** The project should aim to be listed and evaluated by reputable third-party security signal providers. This would build trust within the community and provide more comprehensive risk information to potential participants, aiding in their due diligence process.
+**Recommendation:** After initialization, the total supply will be established. If the intention is for a fixed-supply token, ensure the mint authority remains revoked.
+
+
+### `I-02` — Revoked Authorities  *(Severity: Informational · Status: Unresolved)*
+
+Both Mint Authority and Freeze Authority are reported as `revoked (None)`. This indicates that no new tokens can be minted (unless re-enabled by a new authority, which is unlikely for a revoked state) and no tokens can be frozen. This is generally a positive security feature for a fixed-supply token, preventing malicious inflation or arbitrary freezing of user funds. However, given the mint is uninitialized, these revocations are currently moot as the token cannot function.
+
+**Recommendation:** If the intention is for a fixed-supply, non-freezable token, maintaining revoked authorities post-initialization is a good practice to enhance trust and security.
 
 ## Token Metrics
 

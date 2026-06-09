@@ -2,14 +2,14 @@
 token: penispoop420
 ticker: PP420
 network: solana
-risk_score: 72
-status: critical
+risk_score: 35
+status: medium
 date: 2026-05-29
 ---
 
 # penispoop420 (PP420) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/penispoop420-sol)
 
@@ -17,70 +17,58 @@ date: 2026-05-29
 
 ## Audit Summary
 
-This report presents a security audit of a Solana program. Due to the absence of specific program code, this audit focuses on general security best practices and common vulnerability patterns observed in Solana programs. The findings are based on theoretical considerations rather than direct code analysis, highlighting potential areas of concern that would require detailed review upon code availability.
+This report provides a security analysis of the penispoop420 (PP420) SPL Token Mint account on Solana. The analysis is based on on-chain metadata and external security signals, as source code for SPL Token Mints is not available. Key findings include the mint's uninitialized state, which prevents token operations, and the unknown supply and decimals. Positively, both Mint and Freeze authorities have been revoked, indicating a fixed supply and immutability regarding account freezing. Data on holder distribution and certain RPC details were unavailable, limiting a full economic assessment.
 
-> **Final Recommendation:** Given the absence of program code, this audit provides a theoretical overview of potential security considerations for a Solana program. It is crucial to conduct a thorough code-level audit once the program's source code is available, focusing on the specific vulnerabilities outlined in the findings section, particularly regarding account validation and signer checks. 
-For enhanced security and peace of mind, consider our Premium Deploy option, which includes a pre-deployment security review, real-time monitoring integration, and an incident response plan tailored to your program's specific architecture.
+> **Final Recommendation:** The penispoop420 (PP420) SPL Token Mint is in an uninitialized state, rendering it non-functional for token operations. While the revocation of Mint and Freeze authorities is a positive security characteristic, the uninitialized state is a critical impediment to its intended use. It is imperative to initialize the mint if the token is meant to be active, which will also define its supply and decimals.
+
+For projects requiring robust security and operational integrity, a 'Premium Deploy' option is recommended. This includes a pre-deployment audit of any associated custom programs, continuous monitoring of the token's on-chain state, and expert guidance on best practices for SPL Token management and initialization to prevent such issues.
 
 ## Security Analysis
 
-This report presents a security audit of a Solana program. Due to the absence of specific program code, this audit focuses on general security best practices and common vulnerability patterns observed in Solana programs. The findings are based on theoretical considerations rather than direct code analysis, highlighting potential areas of concern that would require detailed review upon code availability.
+This report provides a security analysis of the penispoop420 (PP420) SPL Token Mint account on Solana. The analysis is based on on-chain metadata and external security signals, as source code for SPL Token Mints is not available. Key findings include the mint's uninitialized state, which prevents token operations, and the unknown supply and decimals. Positively, both Mint and Freeze authorities have been revoked, indicating a fixed supply and immutability regarding account freezing. Data on holder distribution and certain RPC details were unavailable, limiting a full economic assessment.
 
-Given the absence of program code, this audit provides a theoretical overview of potential security considerations for a Solana program. It is crucial to conduct a thorough code-level audit once the program's source code is available, focusing on the specific vulnerabilities outlined in the findings section, particularly regarding account validation and signer checks. 
-For enhanced security and peace of mind, consider our Premium Deploy option, which includes a pre-deployment security review, real-time monitoring integration, and an incident response plan tailored to your program's specific architecture.
+The penispoop420 (PP420) SPL Token Mint is in an uninitialized state, rendering it non-functional for token operations. While the revocation of Mint and Freeze authorities is a positive security characteristic, the uninitialized state is a critical impediment to its intended use. It is imperative to initialize the mint if the token is meant to be active, which will also define its supply and decimals.
+
+For projects requiring robust security and operational integrity, a 'Premium Deploy' option is recommended. This includes a pre-deployment audit of any associated custom programs, continuous monitoring of the token's on-chain state, and expert guidance on best practices for SPL Token management and initialization to prevent such issues.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | Without specific code, a detailed technical assessment is not possible. General Solana program security emphasizes robust account validation (7.2 Code Security), proper signer checks (7.3 Access Contr |
-| **Governance / Economics** | 6/10 | Low | Economic and governance aspects (7.4 Economic, 7.5 Governance) are not directly applicable without program logic. For typical Solana programs, economic risks often relate to tokenomics or fee structur |
-| **Upgrades** | 6/10 | Low | Solana programs are inherently upgradeable via the BPF loader (7.7 Upgrades). This provides flexibility but also introduces a risk if the upgrade authority is compromised. Best practices include using |
+| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.2 Code Security: The SPL Token Mint `ac8escj4ufro8pifkun7diurcccktg4jvarb3mpmpump` is currently uninitialized, preventing any token operations like minting or transfers. This stat |
+| **Governance / Economics** | 6/10 | Low | 7.4 Economic & 7.5 Governance: The token exhibits a normal Volume/Liquidity Ratio of 0.17, indicating healthy trading activity relative to its liquidity. However, holder concentration data is unavaila |
+| **Upgrades** | 6/10 | Low | 7.7 Upgrades: With both Mint and Freeze authorities revoked, the SPL Token Mint's configuration is immutable. This means no further changes can be made to the token's minting capabilities or freezing  |
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 2 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
-### `H-01` — Missing Signer Checks  *(Severity: High · Status: Unresolved)*
+### `M-01` — Uninitialized Mint Account  *(Severity: Medium · Status: Unresolved)*
 
-Instructions that modify program state or transfer assets must ensure that the initiating account holds the necessary signing authority. Failure to check `is_signer` on critical accounts can allow unauthorized users to execute privileged operations, leading to potential asset loss or state manipulation.
+The SPL Token Mint account `ac8escj4ufro8pifkun7diurcccktg4jvarb3mpmpump` is reported as `Initialized: False`. An uninitialized mint account cannot be used for token operations (minting, transferring) until it is properly initialized. This state could indicate an incomplete deployment or an abandoned token, preventing any utility.
 
-**Recommendation:** Implement explicit `account.is_signer` checks for all accounts that are expected to authorize an instruction. For example, an `admin` account modifying global settings must be a signer to prevent unauthorized changes.
-
-
-### `M-01` — Insufficient Account Validation  *(Severity: Medium · Status: Unresolved)*
-
-Programs must rigorously validate all accounts passed into an instruction. This includes checking `owner` (program ID), `discriminator` (for Anchor accounts), `rent_epoch`, and potentially specific data values. Lack of proper validation can lead to type cosplay attacks or manipulation of unrelated accounts, compromising program integrity.
-
-**Recommendation:** For every account, verify its `owner` matches the expected program ID. For Anchor accounts, ensure the `discriminator` matches the expected struct. Additionally, check any specific state conditions required for the instruction to prevent misuse.
+**Recommendation:** Verify the intended state of the mint. If the token is meant to be active, the mint account must be initialized using the `initialize_mint` instruction. This will set the supply, decimals, and mint/freeze authorities, making the token functional.
 
 
-### `M-02` — Program Reinitialization Vulnerability  *(Severity: Medium · Status: Unresolved)*
+### `L-01` — Unknown Supply and Decimals  *(Severity: Low · Status: Unresolved)*
 
-If an `initialize` instruction does not properly check if the target account's state is already initialized, an attacker could re-execute the initialization logic, resetting critical program parameters or ownership. This can lead to a complete compromise of the program's intended state and control.
+The total supply and decimal precision for the token are reported as `unknown`. This is a direct consequence of the mint being uninitialized. Without these fundamental parameters, the token's economic properties and usability are undefined, making it impossible to interact with it correctly.
 
-**Recommendation:** Implement a clear `is_initialized` flag within the program's state struct. The `initialize` instruction must check this flag and error if the account is already initialized, preventing any attempts to reset the program's state.
-
-
-### `L-01` — Non-Canonical PDA Bump Seed Usage  *(Severity: Low · Status: Unresolved)*
-
-When deriving Program Derived Addresses (PDAs), it's crucial to use the canonical bump seed. If a program allows non-canonical bumps, it could potentially create multiple PDAs for the same set of seeds, leading to state confusion, unexpected behavior, or even denial of service if canonical PDAs cannot be found.
-
-**Recommendation:** Always use the canonical bump seed returned by `Pubkey::find_program_address` when creating or verifying PDAs. Ensure that the program only accepts and stores the canonical bump to maintain deterministic address generation.
+**Recommendation:** Ensure the mint is properly initialized to establish the token's supply and decimal precision. This information is crucial for any integration or interaction with the token and will be set during the `initialize_mint` instruction.
 
 
-### `L-02` — Insufficient Rent-Exemption Handling  *(Severity: Low · Status: Unresolved)*
+### `I-01` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Resolved)*
 
-Accounts on Solana must maintain a minimum balance to be rent-exempt. If a program creates new accounts or reduces an account's balance below the rent-exempt threshold without topping it up, the account could be eventually closed by the Solana runtime, leading to data loss or unexpected program behavior.
+The Mint Authority and Freeze Authority for the token have been revoked (set to `None`). This means no new tokens can be minted, and no accounts can be frozen. This configuration makes the token supply fixed and prevents any centralized control over freezing token accounts, enhancing decentralization.
 
-**Recommendation:** When creating new accounts or transferring lamports out of existing accounts, ensure the final balance meets or exceeds the rent-exempt minimum. Use `Rent::get().minimum_balance(data_len)` to calculate the required amount and prevent account closure.
+**Recommendation:** This is generally a positive security characteristic for a decentralized token, as it removes potential points of centralized control and ensures supply immutability. No action is required if this is the intended design.
 
 
-### `I-01` — CPI Privilege Escalation Design Consideration  *(Severity: Informational · Status: Unresolved)*
+### `I-02` — Unavailable Holder Distribution Data  *(Severity: Informational · Status: Unresolved)*
 
-Cross-Program Invocations (CPIs) allow a program to call other programs. If not carefully designed, a program could inadvertently grant more privileges to a called program than intended, or a malicious called program could exploit the caller's privileges, leading to unintended actions or asset manipulation.
+Data regarding holder concentration is unavailable. This prevents a comprehensive assessment of token distribution and potential whale risks or centralization of ownership, which could impact market stability.
 
-**Recommendation:** Thoroughly review all CPIs to ensure that only necessary accounts are passed and with the minimum required privileges. Avoid passing mutable accounts or signer privileges to untrusted or poorly validated target programs to mitigate privilege escalation risks.
+**Recommendation:** While not a direct vulnerability, understanding holder distribution is important for assessing market stability and potential manipulation risks. If possible, monitor on-chain data for holder distribution once the token is active and initialized.
 
 ## Token Metrics
 

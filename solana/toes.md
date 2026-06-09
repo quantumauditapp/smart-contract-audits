@@ -2,14 +2,14 @@
 token: TOES
 ticker: TOESCOIN
 network: solana
-risk_score: 34
-status: medium
+risk_score: 90
+status: critical
 date: 2026-05-29
 ---
 
 # TOES (TOESCOIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/toes-sol)
 
@@ -17,61 +17,51 @@ date: 2026-05-29
 
 ## Audit Summary
 
-This report outlines a security audit for a Solana program. Due to the absence of provided program code, a comprehensive analysis of specific vulnerabilities was not possible. The report structure details common Solana security considerations and potential areas of risk that would typically be assessed. The findings section lists general Solana-specific vulnerability patterns as informational items, emphasizing the need for code review to identify concrete issues.
+This report details the security audit of the TOES (TOESCOIN) SPL token mint on Solana. A critical finding is that the mint account is reported as uninitialized, which fundamentally prevents it from functioning as a standard token, despite significant reported liquidity and trading volume. This state poses an immediate and severe risk to any associated funds. Key details such as supply, decimals, and the exact token program ID are also unavailable or inconsistent with a functional mint. External security signals from GoPlus and RugCheck were unavailable for this analysis.
 
-> **Final Recommendation:** A comprehensive security audit requires access to the full program code. Without it, this report can only provide a structural overview and highlight general areas of concern in Solana program development. It is strongly recommended to submit the complete Rust and Anchor source code for a detailed and actionable security assessment.
+> **Final Recommendation:** Given the critical finding of an uninitialized SPL token mint account, it is strongly recommended that all users and liquidity providers immediately cease interaction with this token. The reported liquidity and trading volume are highly misleading and represent a significant risk of total capital loss. Further investigation is required to understand why an uninitialized mint is associated with active trading.
+
+For future token deployments, consider a Premium Deploy option that includes a comprehensive pre-launch audit of the token program and associated accounts, ensuring proper initialization, authority configuration, and adherence to best security practices before any liquidity is added or public trading commences.
 
 ## Security Analysis
 
-This report outlines a security audit for a Solana program. Due to the absence of provided program code, a comprehensive analysis of specific vulnerabilities was not possible. The report structure details common Solana security considerations and potential areas of risk that would typically be assessed. The findings section lists general Solana-specific vulnerability patterns as informational items, emphasizing the need for code review to identify concrete issues.
+This report details the security audit of the TOES (TOESCOIN) SPL token mint on Solana. A critical finding is that the mint account is reported as uninitialized, which fundamentally prevents it from functioning as a standard token, despite significant reported liquidity and trading volume. This state poses an immediate and severe risk to any associated funds. Key details such as supply, decimals, and the exact token program ID are also unavailable or inconsistent with a functional mint. External security signals from GoPlus and RugCheck were unavailable for this analysis.
 
-A comprehensive security audit requires access to the full program code. Without it, this report can only provide a structural overview and highlight general areas of concern in Solana program development. It is strongly recommended to submit the complete Rust and Anchor source code for a detailed and actionable security assessment.
+Given the critical finding of an uninitialized SPL token mint account, it is strongly recommended that all users and liquidity providers immediately cease interaction with this token. The reported liquidity and trading volume are highly misleading and represent a significant risk of total capital loss. Further investigation is required to understand why an uninitialized mint is associated with active trading.
+
+For future token deployments, consider a Premium Deploy option that includes a comprehensive pre-launch audit of the token program and associated accounts, ensuring proper initialization, authority configuration, and adherence to best security practices before any liquidity is added or public trading commences.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture and 7.2 Code Security were not assessable due to the absence of program code. Typically, this section would evaluate the program's design patterns, data structures, and implementation |
-| **Governance / Economics** | 6/10 | Low | 7.4 Economic and 7.5 Governance aspects were not applicable as no program logic was provided. For a typical Solana program, this section would analyze tokenomics, fee structures, and any governance me |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades were not assessable without program code. Solana programs can be upgradeable, which introduces specific security considerations such as proper upgrade authority management and data migrat |
+| **Technical** | 6/10 | High | The analysis of the TOES token mint (7.1 Architecture, 7.2 Code Security) reveals a critical uninitialized state, preventing basic token operations like minting or supply tracking. While the mint auth |
+| **Governance / Economics** | 6/10 | Low | From an economic and governance perspective (7.4 Economic, 7.5 Governance), the reported liquidity of $271,294 and significant trading volume for an uninitialized token mint presents a severe economic |
+| **Upgrades** | 6/10 | Low | SPL token mint accounts are data structures managed by the SPL Token Program, not standalone upgradable programs. Therefore, upgradeability (7.7 Upgrades) is not applicable to this specific account. C |
 
 ## Security Findings
 
-_⚪ 5 Informational_
+_🔴 1 Critical · 🟡 1 Medium · ⚪ 1 Informational_
 
-### `I-01` — Missing Signer Checks  *(Severity: Informational · Status: Unresolved)*
+### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
 
-Many Solana programs are vulnerable to unauthorized instruction execution if critical accounts are not properly checked for signer status. This allows any caller to invoke sensitive instructions without proper authorization, leading to potential asset manipulation or program state corruption.
+The SPL token mint account at address 6ehectmcc85anf4x9cwx8huvwghxqtvkdhkvf2hdpump is reported as 'Initialized: False'. An uninitialized mint account cannot perform core token functions such as minting, burning, or tracking supply. Despite this, the token has reported liquidity of $271,294 and significant trading volume, indicating a severe discrepancy where users are trading a non-functional token. This poses an immediate and complete loss risk to all associated capital.
 
-**Recommendation:** Ensure all instructions requiring authorization (e.g., initialization, transfers, state modifications) explicitly check that the necessary authority accounts are marked as signers within the instruction context. Use `#[account(mut, signer)]` in Anchor or manual `is_signer` checks in native Rust.
-
-
-### `I-02` — Account Validation Failures  *(Severity: Informational · Status: Unresolved)*
-
-Improper validation of accounts passed into an instruction can lead to various attacks, including type cosplay, where a malicious actor substitutes an account of a different type or owner. This can bypass security checks and manipulate unintended program state or assets.
-
-**Recommendation:** Implement robust account validation for all accounts. This includes checking `owner` (program ID), `discriminator` (for Anchor accounts), and any specific state conditions. For PDAs, ensure the address derived matches the expected seeds and program ID.
+**Recommendation:** Immediately cease all trading and liquidity provision for this token. Verify the true state of the mint account using Solana RPC calls. If confirmed uninitialized, any associated liquidity is at risk. If a functional token is intended, a new, properly initialized mint account must be created and used.
 
 
-### `I-03` — PDA Bump Seed Canonicalization  *(Severity: Informational · Status: Unresolved)*
+### `M-01` — Unknown Token Program ID  *(Severity: Medium · Status: Unresolved)*
 
-Programs that do not enforce canonical bump seeds for PDAs can allow the creation of multiple PDAs for the same set of seeds, differing only by their bump. This can lead to state confusion, resource exhaustion, or bypass unique identifier assumptions.
+The 'Token Program' associated with this mint is reported as 'unknown'. While the pre-filled data suggests it's an 'SPL Token v3' mint, the inability to identify the specific program ID from the provided data sources introduces uncertainty. For a standard SPL token, the program ID should be `TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5zt`. An unknown or custom program ID, especially for an uninitialized mint, adds to the overall risk and makes verification of its intended behavior difficult.
 
-**Recommendation:** Always use the canonical bump seed when creating or deriving PDAs. Anchor's `find_program_address` typically handles this, but manual PDA creation or derivation logic should explicitly verify the bump is canonical (e.g., by checking if `find_program_address` returns the same bump).
-
-
-### `I-04` — Reinitialization Attacks  *(Severity: Informational · Status: Unresolved)*
-
-If an account's initialization logic does not properly check if it has already been initialized, a malicious actor could re-initialize an already active account. This can reset critical state, reassign ownership, or drain funds.
-
-**Recommendation:** Implement a clear initialization flag or state check for all accounts that are meant to be initialized only once. For Anchor, this is often handled by checking the account's `discriminator` or a custom `initialized` field. Ensure the initialization instruction can only be called on an uninitialized account.
+**Recommendation:** Verify the exact program ID that owns and governs this mint account. If it is not the standard SPL Token Program, a thorough audit of the custom program is essential to understand its functionality and security implications. If it is intended to be a standard SPL token, ensure the correct program ID is associated and that the mint is properly initialized by it.
 
 
-### `I-05` — Arithmetic Overflow/Underflow  *(Severity: Informational · Status: Unresolved)*
+### `I-01` — Revoked Mint and Freeze Authorities (Informational)  *(Severity: Informational · Status: Unresolved)*
 
-Arithmetic operations (addition, subtraction, multiplication) on integer types without proper overflow/underflow checks can lead to unexpected behavior, incorrect calculations, or even critical vulnerabilities if used in balance or amount calculations.
+The mint authority and freeze authority for the TOES token mint are reported as 'revoked (None)'. For a properly initialized and functional token, this is generally considered a positive security practice as it prevents further token issuance or freezing by a central authority, promoting decentralization and immutability of supply. However, in the context of an uninitialized mint, these revocations are currently moot as the mint cannot perform these operations regardless.
 
-**Recommendation:** Always use Rust's `checked_add`, `checked_sub`, `checked_mul`, etc., for all arithmetic operations involving sensitive values like token amounts, balances, or indices. Handle `None` results appropriately, typically by returning an error. Anchor's `checked_math` feature can also be enabled.
+**Recommendation:** If a new, functional token mint is deployed, maintaining revoked mint and freeze authorities is recommended for tokens intended to have a fixed supply and no centralized control over transfers.
 
 ## Token Metrics
 

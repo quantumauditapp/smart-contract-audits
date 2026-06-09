@@ -17,58 +17,58 @@ date: 2026-05-11
 
 ## Audit Summary
 
-The audit of the Bull (BULL) SPL Token Mint reveals critical data inconsistencies. The mint account is reported as uninitialized, yet significant liquidity and trading volume are present, indicating a severe discrepancy. The underlying token program is unknown, and essential metadata like supply and decimals are missing. These issues prevent a comprehensive security assessment and pose significant risks to users.
+The audit of the Bull (BULL) SPL Token Mint (address 3tygkwke2y3rxdw9oslrspxpxmsc1c1oo19w9khspump) reveals a critical inconsistency: the mint account is reported as 'Initialized: False' despite having significant liquidity and trading volume on DEXs. If accurate, this status implies the token is fundamentally non-functional, posing an extreme risk to holders and liquidity providers. Further investigation is required to reconcile this contradiction, as this issue severely impacts the token's validity and usability.
 
-> **Final Recommendation:** Due to the critical inconsistencies and missing information, interaction with the Bull (BULL) token at the provided mint address is strongly discouraged. Users should exercise extreme caution and verify the token's legitimacy and operational status independently. A thorough investigation into the discrepancy between the uninitialized mint status and reported liquidity is essential before any engagement.
+> **Final Recommendation:** Immediate and thorough investigation is required to clarify the 'Initialized: False' status of the Bull (BULL) SPL Token Mint. If the mint is genuinely uninitialized, all associated liquidity and trading are based on a non-functional asset, posing a critical risk to all participants. Users are strongly advised to exercise extreme caution and avoid interacting with this token until this fundamental issue is resolved and verified.
 
-For projects seeking to deploy a new token, it is recommended to ensure all on-chain metadata is correctly initialized and verifiable. Consider a Premium Deploy option that includes comprehensive pre-deployment checks and a full audit of the token program (if custom) or a verification of standard SPL Token Program usage, ensuring all critical parameters like supply, decimals, and authorities are correctly configured and transparently reported.
+For future token deployments, consider a Premium Deploy option that includes comprehensive pre-launch verification of all on-chain parameters, including mint initialization, authority configurations, and metadata completeness, to prevent such critical discrepancies. This ensures the token is correctly configured and functional before any liquidity is added or trading commences.
 
 ## Security Analysis
 
-The audit of the Bull (BULL) SPL Token Mint reveals critical data inconsistencies. The mint account is reported as uninitialized, yet significant liquidity and trading volume are present, indicating a severe discrepancy. The underlying token program is unknown, and essential metadata like supply and decimals are missing. These issues prevent a comprehensive security assessment and pose significant risks to users.
+The audit of the Bull (BULL) SPL Token Mint (address 3tygkwke2y3rxdw9oslrspxpxmsc1c1oo19w9khspump) reveals a critical inconsistency: the mint account is reported as 'Initialized: False' despite having significant liquidity and trading volume on DEXs. If accurate, this status implies the token is fundamentally non-functional, posing an extreme risk to holders and liquidity providers. Further investigation is required to reconcile this contradiction, as this issue severely impacts the token's validity and usability.
 
-Due to the critical inconsistencies and missing information, interaction with the Bull (BULL) token at the provided mint address is strongly discouraged. Users should exercise extreme caution and verify the token's legitimacy and operational status independently. A thorough investigation into the discrepancy between the uninitialized mint status and reported liquidity is essential before any engagement.
+Immediate and thorough investigation is required to clarify the 'Initialized: False' status of the Bull (BULL) SPL Token Mint. If the mint is genuinely uninitialized, all associated liquidity and trading are based on a non-functional asset, posing a critical risk to all participants. Users are strongly advised to exercise extreme caution and avoid interacting with this token until this fundamental issue is resolved and verified.
 
-For projects seeking to deploy a new token, it is recommended to ensure all on-chain metadata is correctly initialized and verifiable. Consider a Premium Deploy option that includes comprehensive pre-deployment checks and a full audit of the token program (if custom) or a verification of standard SPL Token Program usage, ensuring all critical parameters like supply, decimals, and authorities are correctly configured and transparently reported.
+For future token deployments, consider a Premium Deploy option that includes comprehensive pre-launch verification of all on-chain parameters, including mint initialization, authority configurations, and metadata completeness, to prevent such critical discrepancies. This ensures the token is correctly configured and functional before any liquidity is added or trading commences.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The technical assessment is severely hampered by critical data gaps and inconsistencies. While the mint authority and freeze authority are revoked (7.3 Access Control), which is generally a good secur |
-| **Governance / Economics** | 6/10 | High | The economic and governance assessment is severely limited by the lack of fundamental data. The unknown supply and decimals (7.4 Economic) prevent any analysis of tokenomics or potential inflation/def |
-| **Upgrades** | 6/10 | Low | N/A - Upgradeability is not applicable for an SPL Token Mint account itself. The underlying SPL Token Program is managed by Solana Labs and is not subject to project-specific upgrade risks. Therefore, |
+| **Technical** | 6/10 | High | The technical architecture (7.1 Architecture) of the Bull (BULL) SPL Token Mint presents a critical inconsistency: the mint account is reported as 'Initialized: False' despite having significant on-ch |
+| **Governance / Economics** | 6/10 | High | The economic viability (7.4 Economic) and governance (7.5 Governance) of the Bull (BULL) token are severely impacted by the reported 'Initialized: False' status of its SPL Token Mint. Despite active t |
+| **Upgrades** | 6/10 | Low | SPL Token Mints, as part of the standard SPL Token Program (7.1 Architecture), are not directly upgradeable in the same manner as custom Solana programs (7.7 Upgrades). The 'SOLC_VERSION' indicates 'S |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low_
+_🔴 1 Critical · ⚪ 3 Informational_
 
-### `C-01` — Uninitialized SPL Token Mint Account with Active Trading Data  *(Severity: Critical · Status: Unresolved)*
+### `C-01` — Uninitialized SPL Token Mint with Active Trading  *(Severity: Critical · Status: Unresolved)*
 
-The provided on-chain facts state the SPL Token Mint account (`3tygkwke2y3rxdw9oslrspxpxmsc1c1oo19w9khspump`) is `Initialized: False`. However, external data indicates significant liquidity ($186,166 USD) and 24h trading volume ($277,786 USD) associated with this token. An uninitialized SPL mint cannot have a supply, decimals, or be traded, creating a direct and severe contradiction in the reported data. This inconsistency poses a critical risk of misleading users into interacting with a non-functional or non-existent token.
+The SPL Token Mint for Bull (BULL) is reported as 'Initialized: False'. However, the token has significant on-chain liquidity ($179,613) and active trading volume ($243,820 in 24h). An uninitialized SPL Token Mint account cannot issue valid tokens, making any associated tokens non-functional and potentially worthless. This contradiction indicates a severe underlying issue, either with the token's fundamental state or the accuracy of the reported data, posing an extreme risk to token holders and liquidity providers.
 
-**Recommendation:** Investigate the discrepancy between the mint's uninitialized status and the reported trading activity. Verify if the provided mint address is indeed the correct address for the token being traded, or if the `Initialized` status is incorrectly reported. Users should avoid interacting with this token until this critical inconsistency is resolved and verified.
-
-
-### `H-01` — Token Program for SPL Mint is Unknown  *(Severity: High · Status: Unresolved)*
-
-The 'Token Program' responsible for managing the SPL Token Mint is listed as `unknown`. For a standard SPL Token, this should be the official Solana Program Library Token Program (e.g., `TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA`). An unknown token program introduces significant uncertainty regarding the token's underlying logic, security, and adherence to standard SPL functionalities. If it's a custom program, its security cannot be assessed without source code.
-
-**Recommendation:** Identify and verify the exact token program governing this mint. If it is a custom program, a full security audit of its source code is essential. If it is intended to be a standard SPL token, ensure the correct program ID is associated and reported.
+**Recommendation:** Verify the true initialization status of the mint account. If it is indeed uninitialized, all liquidity should be withdrawn, and trading should cease immediately. If the data source is incorrect, ensure accurate on-chain data is reflected and publicly verifiable.
 
 
-### `M-01` — Critical Token Metadata (Supply, Decimals) is Unknown  *(Severity: Medium · Status: Unresolved)*
+### `I-01` — Unknown Token Program  *(Severity: Informational · Status: Unresolved)*
 
-Essential token metadata, specifically `Supply (raw)` and `Decimals`, are reported as `unknown`. These are fundamental properties required to understand the token's total issuance, divisibility, and economic characteristics. The absence of this information prevents a comprehensive assessment of the token's design and potential economic risks.
+The 'Token Program' responsible for managing the Bull (BULL) mint is listed as 'unknown'. While the prefilled 'SOLC_VERSION' suggests 'SPL Token (Token Program v3)', the explicit 'unknown' in the raw data could indicate a non-standard or custom token program. Without knowing the specific program address, a full security assessment of its underlying logic is impossible, though it is likely the standard SPL Token Program.
 
-**Recommendation:** Ensure all critical token metadata, including total supply and decimals, is correctly initialized and publicly verifiable on-chain. This transparency is crucial for user trust and informed decision-making.
+**Recommendation:** Explicitly identify the SPL Token Program address responsible for managing this mint. If it's a custom program, its source code would require a dedicated audit.
 
 
-### `L-01` — Holder Distribution Data Unavailable  *(Severity: Low · Status: Unresolved)*
+### `I-02` — Missing Basic Token Metadata (Supply & Decimals)  *(Severity: Informational · Status: Unresolved)*
 
-Information regarding the `holder concentration` for the Bull (BULL) token is `unavailable`. The absence of holder distribution data prevents an assessment of centralization risks, potential for whale manipulation, or the overall distribution fairness of the token. This limits the ability to evaluate the token's economic health and decentralization.
+Essential token metadata, specifically 'Supply (raw)' and 'Decimals', are reported as 'unknown'. This lack of information prevents a comprehensive understanding of the token's total issuance, divisibility, and overall tokenomics, which are crucial for assessing its economic model and potential for manipulation.
 
-**Recommendation:** Implement or utilize tools to track and publicly report token holder distribution. Transparent holder data allows for better community assessment of decentralization and potential market risks.
+**Recommendation:** Ensure all fundamental token metadata, including total supply and decimals, is accurately retrievable and publicly available for transparency and proper analysis.
+
+
+### `I-03` — Lack of External Security Signal Coverage  *(Severity: Informational · Status: Unresolved)*
+
+External security signals from GoPlus Solana and RugCheck are unavailable. While not a direct vulnerability, the absence of these third-party assessments means there is no independent validation or flagging of potential risks (e.g., rug pull indicators, suspicious token configurations) that these services typically provide.
+
+**Recommendation:** Encourage integration with and reporting from reputable third-party security analysis tools to provide additional layers of assurance and risk assessment for token holders.
 
 ## Token Metrics
 

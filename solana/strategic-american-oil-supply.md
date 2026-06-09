@@ -2,14 +2,14 @@
 token: Strategic American Oil Supply
 ticker: SAOS
 network: solana
-risk_score: 72
+risk_score: 90
 status: critical
 date: 2026-05-14
 ---
 
 # Strategic American Oil Supply (SAOS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/strategic-american-oil-supply-sol)
 
@@ -17,68 +17,70 @@ date: 2026-05-14
 
 ## Audit Summary
 
-This report provides a security audit for a Solana program. Due to the absence of provided source code, the analysis is based on common Solana program security patterns, best practices, and potential vulnerabilities frequently observed in similar programs. The findings highlight general areas of concern that would typically require thorough review in a real audit scenario. The overall risk level is assessed as Medium, reflecting the inherent complexity of Solana program development and the potential for critical issues if best practices are not strictly followed.
+This report analyzes the Strategic American Oil Supply (SAOS) SPL Token Mint account. Key details regarding token supply, decimals, and holder distribution are currently unavailable, as the mint account is reported as uninitialized. While mint and freeze authorities are revoked, the uninitialized state presents significant uncertainty regarding the token's final configuration and operational readiness. External security signals from GoPlus and RugCheck were also unavailable for this analysis.
 
-> **Final Recommendation:** Given the potential complexities and security implications inherent in Solana program development, a thorough code audit is essential. We recommend a full audit engagement once the source code is available, focusing on the identified risk areas such as account validation, signer checks, and upgradeability mechanisms. This will ensure the program adheres to the highest security standards before deployment.
+> **Final Recommendation:** It is strongly recommended that the Strategic American Oil Supply (SAOS) token mint account be properly initialized to define its fundamental properties such as total supply and decimals. Until initialization is complete, the token remains in an undefined state, posing significant risks to any users or liquidity providers. The current revocation of mint and freeze authorities, while a good practice for a finalized token, is premature and ineffective given the uninitialized status.
+For projects requiring robust security and clear operational readiness, a Premium Deploy option would involve a comprehensive pre-launch audit of the token's full lifecycle, including initialization, distribution, and any associated programs, ensuring all parameters are correctly configured and verified before public interaction.
 
 ## Security Analysis
 
-This report provides a security audit for a Solana program. Due to the absence of provided source code, the analysis is based on common Solana program security patterns, best practices, and potential vulnerabilities frequently observed in similar programs. The findings highlight general areas of concern that would typically require thorough review in a real audit scenario. The overall risk level is assessed as Medium, reflecting the inherent complexity of Solana program development and the potential for critical issues if best practices are not strictly followed.
+This report analyzes the Strategic American Oil Supply (SAOS) SPL Token Mint account. Key details regarding token supply, decimals, and holder distribution are currently unavailable, as the mint account is reported as uninitialized. While mint and freeze authorities are revoked, the uninitialized state presents significant uncertainty regarding the token's final configuration and operational readiness. External security signals from GoPlus and RugCheck were also unavailable for this analysis.
 
-Given the potential complexities and security implications inherent in Solana program development, a thorough code audit is essential. We recommend a full audit engagement once the source code is available, focusing on the identified risk areas such as account validation, signer checks, and upgradeability mechanisms. This will ensure the program adheres to the highest security standards before deployment.
+It is strongly recommended that the Strategic American Oil Supply (SAOS) token mint account be properly initialized to define its fundamental properties such as total supply and decimals. Until initialization is complete, the token remains in an undefined state, posing significant risks to any users or liquidity providers. The current revocation of mint and freeze authorities, while a good practice for a finalized token, is premature and ineffective given the uninitialized status.
+For projects requiring robust security and clear operational readiness, a Premium Deploy option would involve a comprehensive pre-launch audit of the token's full lifecycle, including initialization, distribution, and any associated programs, ensuring all parameters are correctly configured and verified before public interaction.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture and 7.2 Code Security are critical for Solana programs. Strong points typically include modular design and adherence to Anchor framework conventions for robust account handling. Howev |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic and 7.5 Governance aspects are crucial for long-term program stability. Well-designed programs often feature transparent fee structures and clear governance mechanisms, such as multi-sign |
-| **Upgrades** | 6/10 | Medium | 7.7 Upgrades are a significant risk vector for Solana programs. While upgradeability offers flexibility for bug fixes and feature enhancements, it introduces the risk of malicious upgrades or unintend |
+| **Technical** | 6/10 | High | The technical configuration of the SAOS SPL Token Mint account presents significant risks due to its uninitialized state (7.2 Code Security). This means fundamental properties like total supply and de |
+| **Governance / Economics** | 6/10 | High | The economic stability and governance structure for the SAOS token are currently indeterminable (7.4 Economic, 7.5 Governance). The uninitialized state of the mint account means critical economic para |
+| **Upgrades** | 6/10 | Low | The SAOS token mint account itself is a data account managed by the SPL Token Program and is not directly upgradable (7.7 Upgrades). Once initialized, its core properties (like decimals and supply if  |
 
 ## Security Findings
 
-_🟠 2 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_🔴 1 Critical · 🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Missing Signer Checks  *(Severity: High · Status: Unresolved)*
+### `C-01` — Uninitialized Token Mint Account  *(Severity: Critical · Status: Unresolved)*
 
-Many instructions within Solana programs require specific accounts to sign to authorize an action. If a program fails to explicitly check that a required account (e.g., an admin, owner, or user initiating a transfer) has signed the transaction, an unauthorized party could invoke the instruction. This could lead to unauthorized state changes, asset transfers, or program reconfigurations.
+The SPL Token Mint account for SAOS is reported as 'Initialized: False'. This means the token's fundamental properties, such as total supply and decimals, have not been set. An uninitialized mint account cannot be used to create tokens, and its final configuration is unknown.
 
-**Recommendation:** Ensure all instructions that modify program state or transfer assets explicitly check that the necessary accounts are signers using `account.is_signer` or Anchor's `#[account(signer)]` attribute. Review all instruction handlers to confirm signer requirements are correctly enforced.
-
-
-### `H-02` — Account Validation Failure (Owner/Discriminator)  *(Severity: High · Status: Unresolved)*
-
-Solana programs must rigorously validate all accounts passed into an instruction. Failure to check the correct `owner` of an account (e.g., ensuring a token account is owned by the SPL Token program) or the `discriminator` for Anchor-derived accounts can lead to type cosplay attacks or manipulation of unintended accounts. This allows an attacker to pass in a malicious or incorrect account, leading to privilege escalation or data corruption.
-
-**Recommendation:** Implement comprehensive account validation for all input accounts. For Anchor programs, leverage `#[account(has_one = ...)]`, `#[account(owner = ...)]`, and `#[account(constraint = ...)]` attributes. Manually check `account.owner` for non-Anchor accounts and `account.data_is_empty()` for initialization where appropriate.
+**Recommendation:** The token mint account must be initialized by calling the 'initialize_mint' instruction of the SPL Token Program, specifying the desired decimals, mint authority, and freeze authority.
 
 
-### `M-01` — PDA Bump Seed Canonicalization  *(Severity: Medium · Status: Unresolved)*
+### `H-01` — Unknown Token Supply and Decimals  *(Severity: High · Status: Unresolved)*
 
-When deriving Program Derived Addresses (PDAs), it's crucial to use canonical bump seeds. If a program allows non-canonical bump seeds to be used for PDA creation or validation, an attacker could create multiple PDAs for the same set of seeds, potentially leading to state confusion, resource exhaustion, or bypassing unique constraints. This can occur if the program doesn't strictly enforce the smallest valid bump seed.
+Due to the uninitialized state of the mint account, the 'Supply (raw)' and 'Decimals' properties are unknown. This lack of information prevents any assessment of the token's total issuance, divisibility, and potential for inflationary or deflationary mechanics. Users cannot make informed decisions without these critical parameters.
 
-**Recommendation:** Always use `Pubkey::find_program_address` to derive PDAs and their canonical bump seeds. When creating or validating PDAs, ensure that the bump seed used is the canonical one returned by this function. Anchor's `#[account(seeds = ..., bump)]` macro typically handles this correctly, but manual PDA logic requires careful implementation.
-
-
-### `M-02` — Reinitialization Attack  *(Severity: Medium · Status: Unresolved)*
-
-If a program's state account can be reinitialized after its initial setup, an attacker could reset critical parameters, seize ownership, or drain funds. This typically happens when the initialization instruction lacks a check to ensure the account's state is uninitialized (e.g., `account.data_is_empty()` or checking a specific flag) before proceeding with initialization logic.
-
-**Recommendation:** Implement robust checks in initialization instructions to prevent reinitialization. For Anchor accounts, the `init` keyword automatically handles this by checking the account discriminator. For custom accounts, ensure a flag or a check for an empty data buffer (`account.data_is_empty()`) is performed before allowing initialization.
+**Recommendation:** Ensure the token mint is initialized with clearly defined and publicly verifiable supply and decimal values. Communicate these parameters transparently to the community.
 
 
-### `L-01` — Arithmetic Overflow/Underflow  *(Severity: Low · Status: Unresolved)*
+### `H-02` — Premature Authority Revocation  *(Severity: High · Status: Unresolved)*
 
-Arithmetic operations (addition, subtraction, multiplication) on integer types can lead to overflow or underflow if the result exceeds the maximum or falls below the minimum value representable by the type. While Rust's `checked_*` methods or debug-mode panics help, release builds might wrap, leading to incorrect calculations that could impact balances or logic.
+Both 'Mint Authority' and 'Freeze Authority' are reported as 'revoked (None)'. While revoking authorities is a strong security practice for a finalized, immutable token, this action is premature and problematic given the 'Initialized: False' state. Without a mint authority, the token cannot be initialized, and its supply cannot be minted. Without a freeze authority, no accounts can be frozen, which might be a desired feature during initial setup or in specific scenarios.
 
-**Recommendation:** Utilize Rust's `checked_add`, `checked_sub`, `checked_mul`, `checked_div` methods for all arithmetic operations involving sensitive values like token amounts or balances. Alternatively, use the `spl_math` crate for safe arithmetic operations in Solana programs. Ensure all calculations are bounded and validated.
+**Recommendation:** Re-evaluate the timing of authority revocations. If the intention is to initialize the token, a mint authority must be temporarily assigned for initialization, and then revoked. If the token is intended to be immutable from creation, it should be initialized first, then authorities revoked.
 
 
-### `I-01` — Missing Rent-Exemption Checks  *(Severity: Informational · Status: Unresolved)*
+### `M-01` — Unavailable Holder Distribution Data  *(Severity: Medium · Status: Unresolved)*
 
-While not a direct security vulnerability, failing to ensure newly created or resized accounts are rent-exempt can lead to unexpected account closure by the Solana runtime. This can result in loss of data or funds if the program relies on the persistence of these accounts without sufficient lamports.
+The '[UNKNOWN] holder concentration unavailable' status indicates that data regarding token distribution among holders could not be retrieved. This prevents an assessment of centralization risks, potential for whale manipulation, or fair distribution practices.
 
-**Recommendation:** When creating new accounts or resizing existing ones, always ensure they hold enough lamports to be rent-exempt for their current data size. Use `Rent::get().minimum_balance(data_len)` to calculate the required lamports and transfer them accordingly. Anchor's `init` keyword often handles this for new accounts, but manual CPIs or custom account creation require explicit checks.
+**Recommendation:** Once the token is initialized and supply is minted, monitor and disclose holder distribution data to provide transparency and allow for community assessment of decentralization.
+
+
+### `L-01` — Lack of External Security Signals  *(Severity: Low · Status: Unresolved)*
+
+External security signals from 'GoPlus Solana data' and 'RugCheck data' were unavailable for this token. These services often provide automated risk assessments, liquidity pool checks, and other red flags that can help users identify potential scams or high-risk assets.
+
+**Recommendation:** While not a direct vulnerability, the absence of these signals means potential investors lack an additional layer of automated due diligence. Projects should aim to be listed and analyzed by reputable security signal providers once fully operational.
+
+
+### `I-01` — Token Program Information Discrepancy  *(Severity: Informational · Status: Unresolved)*
+
+The provided 'Contract text' lists the 'Token Program' as 'unknown', while the pre-filled data indicates 'SPL Token (Token Program v3)'. For a standard SPL token, the program ID should be 'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA'. This discrepancy could cause confusion regarding the underlying program governing the token.
+
+**Recommendation:** Ensure consistent and accurate reporting of the controlling program ID. Confirm that the token mint account is indeed managed by the official SPL Token Program.
 
 ## Token Metrics
 

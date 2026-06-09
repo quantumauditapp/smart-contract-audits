@@ -2,14 +2,14 @@
 token: Bitcoin Bank
 ticker: BTCBANK
 network: solana
-risk_score: 72
+risk_score: 90
 status: critical
 date: 2026-06-07
 ---
 
 # Bitcoin Bank (BTCBANK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bitcoin-bank-sol)
 
@@ -17,61 +17,54 @@ date: 2026-06-07
 
 ## Audit Summary
 
-This report provides a security audit for a Solana program. Due to the absence of provided source code, this audit is based on general Solana program security best practices and common vulnerability patterns. The risk assessment reflects potential issues that could exist in a typical Solana program, particularly one managing SPL tokens, without specific code review. Key areas of concern include account validation, access control, and potential reinitialization vectors. A full code review is essential for a definitive security posture.
+The Bitcoin Bank (BTCBANK) SPL Token Mint exhibits a critical vulnerability: it is currently uninitialized despite having active trading and liquidity. This state allows any malicious actor to initialize the mint, define its properties (decimals, supply, authorities), and potentially mint tokens to themselves, leading to a complete loss of value for current holders. While mint and freeze authorities are reported as revoked, this status is irrelevant for an uninitialized account. Immediate action is required to address this fundamental flaw.
 
-> **Final Recommendation:** Given the absence of source code, a definitive security assessment is not possible. This report highlights general areas of concern for Solana programs. It is strongly recommended to conduct a full, in-depth audit with complete access to the program's source code and any associated off-chain components. This would allow for a precise identification and remediation of specific vulnerabilities. For enhanced security and peace of mind, consider a Premium Deploy option, which includes continuous monitoring and incident response planning post-deployment.
+> **Final Recommendation:** The Bitcoin Bank (BTCBANK) SPL Token Mint is in a critically vulnerable state due to being uninitialized while having active trading. This poses an immediate and severe risk to all holders and liquidity providers. It is imperative that the legitimate project team immediately initializes the mint with correct parameters and then revokes all authorities to prevent malicious exploitation. Failure to do so will result in a complete loss of value for token holders. For future token deployments, consider using a 'Premium Deploy' service to ensure all token accounts are correctly initialized and configured from inception, preventing such fundamental vulnerabilities.
 
 ## Security Analysis
 
-This report provides a security audit for a Solana program. Due to the absence of provided source code, this audit is based on general Solana program security best practices and common vulnerability patterns. The risk assessment reflects potential issues that could exist in a typical Solana program, particularly one managing SPL tokens, without specific code review. Key areas of concern include account validation, access control, and potential reinitialization vectors. A full code review is essential for a definitive security posture.
+The Bitcoin Bank (BTCBANK) SPL Token Mint exhibits a critical vulnerability: it is currently uninitialized despite having active trading and liquidity. This state allows any malicious actor to initialize the mint, define its properties (decimals, supply, authorities), and potentially mint tokens to themselves, leading to a complete loss of value for current holders. While mint and freeze authorities are reported as revoked, this status is irrelevant for an uninitialized account. Immediate action is required to address this fundamental flaw.
 
-Given the absence of source code, a definitive security assessment is not possible. This report highlights general areas of concern for Solana programs. It is strongly recommended to conduct a full, in-depth audit with complete access to the program's source code and any associated off-chain components. This would allow for a precise identification and remediation of specific vulnerabilities. For enhanced security and peace of mind, consider a Premium Deploy option, which includes continuous monitoring and incident response planning post-deployment.
+The Bitcoin Bank (BTCBANK) SPL Token Mint is in a critically vulnerable state due to being uninitialized while having active trading. This poses an immediate and severe risk to all holders and liquidity providers. It is imperative that the legitimate project team immediately initializes the mint with correct parameters and then revokes all authorities to prevent malicious exploitation. Failure to do so will result in a complete loss of value for token holders. For future token deployments, consider using a 'Premium Deploy' service to ensure all token accounts are correctly initialized and configured from inception, preventing such fundamental vulnerabilities.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical review, without access to source code, focuses on potential architectural and code security weaknesses common in Solana programs (7.1 Architecture, 7.2 Code Security, 7.3 Access Control) |
-| **Governance / Economics** | 6/10 | Medium | The economic and governance aspects (7.4 Economic, 7.5 Governance) are assessed generally for a Solana token program. Strengths often include clear tokenomics and a well-defined instruction set. Howev |
-| **Upgrades** | 6/10 | Medium | Upgradeability (7.7 Upgrades) in Solana programs is a critical feature, often managed via the Upgradeable BPF Loader. Strengths include the ability to fix bugs and introduce new features without redep |
+| **Technical** | 6/10 | High | 7.1 Architecture & 7.2 Code Security: The SPL Token Mint for Bitcoin Bank (BTCBANK) is in an uninitialized state, which is a critical architectural flaw. This means core properties like decimals and s |
+| **Governance / Economics** | 6/10 | High | 7.4 Economic: The token exhibits active trading with $29,272 in liquidity and $72,557 in 24h volume over 17 days. However, the uninitialized state of the mint introduces extreme economic risk, as the  |
+| **Upgrades** | 6/10 | Low | 7.7 Upgrades: SPL Token Mint accounts are data structures managed by the SPL Token Program and do not possess direct upgradeability. Changes to the token's fundamental properties (like decimals or sup |
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · ⚪ 1 Informational_
 
-### `H-01` — Missing Signer Checks  *(Severity: High · Status: Unresolved)*
+### `C-01` — Uninitialized SPL Token Mint with Active Trading  *(Severity: Critical · Status: Unresolved)*
 
-Many Solana program instructions require specific accounts to be signers to authorize state changes. A common vulnerability is the omission of `#[account(signer)]` or manual `account.is_signer` checks for critical accounts, allowing unauthorized users to invoke privileged instructions. For example, an instruction intended to be callable only by an administrator might not verify the administrator's signature, enabling any user to execute it.
+The SPL Token Mint account for Bitcoin Bank (BTCBANK) is currently uninitialized (`Initialized: False`) despite having active liquidity ($29,272) and trading volume ($72,557). An uninitialized mint account means its core properties, such as decimals, total supply, and mint/freeze authorities, have not been set. Any actor can send an `InitializeMint` instruction to this account, defining these critical parameters. This allows a malicious actor to initialize the mint with arbitrary decimals (e.g., 0 decimals to make all tokens indivisible), set a new mint authority to themselves, and then mint an unlimited supply of tokens, effectively draining liquidity pools and rendering existing tokens wo…
 
-**Recommendation:** Ensure all accounts that are intended to authorize state changes are explicitly marked with `#[account(signer)]` in Anchor or manually checked using `account.is_signer` in native Rust programs. Review all instructions to confirm that appropriate signer checks are in place for all sensitive operations.
-
-
-### `M-01` — Account Validation Failures (Owner/Discriminator)  *(Severity: Medium · Status: Unresolved)*
-
-Solana programs rely heavily on proper validation of passed accounts. Failure to check an account's owner, discriminator (for Anchor accounts), or type can lead to critical vulnerabilities such as type cosplay attacks or unauthorized modification of unrelated accounts. For instance, if a program expects a specific `MyData` account but only checks its length, an attacker could pass a different program's account with the same length, leading to unexpected behavior or data corruption.
-
-**Recommendation:** Implement robust account validation for all accounts passed into instructions. This includes checking `account.owner` against the expected program ID, verifying Anchor discriminators (`account.try_deserialize_discriminator()`), and ensuring the account's data length matches the expected type. Use Anchor's `has_one` and `constraint` attributes for linked accounts.
+**Recommendation:** The legitimate project team must immediately initialize the SPL Token Mint with the intended decimals and supply. After initialization, it is strongly recommended to revoke both the mint and freeze authorities to prevent any further token issuance or freezing, ensuring a fixed supply and decentralized control.
 
 
-### `M-02` — Reinitialization Attack Vector  *(Severity: Medium · Status: Unresolved)*
+### `H-01` — Undefined Token Properties (Supply and Decimals)  *(Severity: High · Status: Unresolved)*
 
-Programs, especially those managing state, must prevent reinitialization of already initialized accounts. If an instruction allows an attacker to re-run an initialization logic on an already active account, it could reset critical state variables, reassign ownership, or drain funds. This is particularly dangerous for global state accounts or token mints.
+Due to the uninitialized state of the SPL Token Mint, the token's total supply and decimal precision are currently undefined (`Supply (raw): unknown`, `Decimals: unknown`). This creates significant uncertainty and risk for token holders and liquidity providers, as the fundamental characteristics of the token can be arbitrarily set by the first entity to initialize the mint. This directly impacts the token's divisibility and potential for dilution.
 
-**Recommendation:** Implement a clear initialization flag or state variable within the account data. Ensure that initialization instructions explicitly check this flag and only proceed if the account is uninitialized. For Anchor programs, use `#[account(init)]` and `#[account(zero_copy)]` with a `_initialized` field, and ensure the `init` instruction cannot be called on an already initialized account.
-
-
-### `L-01` — PDA Bump Seed Canonicalization  *(Severity: Low · Status: Unresolved)*
-
-When deriving Program Derived Addresses (PDAs), it's crucial to use canonical bump seeds. If a program allows non-canonical bump seeds to be used for PDA creation or validation, it could enable an attacker to create multiple PDAs for the same set of seeds, potentially leading to state confusion or resource exhaustion. While not directly exploitable for fund theft in all cases, it can complicate program logic and lead to unexpected behavior.
-
-**Recommendation:** Always use `find_program_address` to derive the canonical bump seed when creating or validating PDAs. Ensure that the program explicitly checks that the provided bump seed is canonical, especially when creating new PDAs. Anchor's `#[account(seeds = [...], bump)]` macro handles this automatically, but manual implementations require careful attention.
+**Recommendation:** As part of the mint initialization process, ensure that the token's decimals are set to an appropriate value (e.g., 6 or 9 for standard tokens) and that the initial supply is clearly defined and understood by the community. Transparency regarding these properties is crucial for investor confidence.
 
 
-### `I-01` — Lack of Checked Arithmetic  *(Severity: Informational · Status: Unresolved)*
+### `M-01` — Misleading Authority Revocation Status for Uninitialized Mint  *(Severity: Medium · Status: Unresolved)*
 
-Arithmetic operations in Rust, by default, panic on overflow in debug mode but wrap around in release mode. Without explicit `checked_add`, `checked_sub`, `checked_mul`, or `checked_div` operations, programs are susceptible to integer overflow/underflow vulnerabilities, which can lead to incorrect calculations, unexpected state, or even fund manipulation in financial contexts.
+The audit reports indicate that both the Mint Authority and Freeze Authority are `revoked (None)`. While revocation is generally a positive security measure for established tokens, this status is misleading and provides a false sense of security for an uninitialized mint. Since the mint is uninitialized, these authorities have not yet been set, and therefore cannot be truly 'revoked.' Any actor initializing the mint can assign these authorities to an address of their choosing, negating the perceived security benefit.
 
-**Recommendation:** Always use checked arithmetic operations (e.g., `checked_add`, `checked_sub`) for all calculations involving token amounts, balances, or other critical numerical values. Implement appropriate error handling for `None` results from these operations. Anchor's `safe_arithmetic` feature can help mitigate this.
+**Recommendation:** Understand that authority revocation is only meaningful *after* a mint has been properly initialized and the authorities have been explicitly set and then revoked. Prioritize the immediate initialization of the mint. Once initialized, if a fixed supply and immutable state are desired, ensure authorities are explicitly set to `None` (revoked) as a separate step.
+
+
+### `I-01` — Incomplete External Security Signal Data  *(Severity: Informational · Status: Unresolved)*
+
+External security signals from GoPlus Solana data and RugCheck are unavailable. This limits the comprehensive assessment of the token's broader ecosystem risk, such as potential rug pull indicators or contract security scores provided by these third-party services.
+
+**Recommendation:** While not a direct vulnerability of the token itself, it is recommended to monitor these external security platforms if data becomes available in the future. For projects, ensuring visibility and data availability on such platforms can enhance transparency and trust.
 
 ## Token Metrics
 

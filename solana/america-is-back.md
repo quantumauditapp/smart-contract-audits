@@ -17,58 +17,47 @@ date: 2026-05-12
 
 ## Audit Summary
 
-This report details a metadata-driven security audit of the America Is Back (AMERICA) SPL token mint account. The analysis reveals a critical vulnerability where the mint account is uninitialized despite active trading, posing a severe risk to token integrity and user funds. Several data completeness issues also contribute to elevated economic risk.
+The audit of the America Is Back (AMERICA) SPL Token Mint reveals a critical functional inconsistency. The mint is reported as uninitialized, which should prevent any token operations, yet significant liquidity and trading volume are observed. While mint and freeze authorities are revoked, the uninitialized state poses a severe risk to users. Further investigation is required to reconcile this fundamental discrepancy.
 
-> **Final Recommendation:** The America Is Back (AMERICA) SPL token mint account exhibits critical security vulnerabilities due to its uninitialized state, despite having active liquidity and trading. This fundamental flaw poses an immediate and severe risk to the integrity of the token and user funds. It is imperative that this issue be addressed immediately, likely requiring a migration to a properly initialized mint account or a complete re-evaluation of the token's viability.
-
-For future deployments, it is strongly recommended to ensure all SPL token mint accounts are correctly initialized before any liquidity is added or trading commences. A Premium Deploy option would involve a thorough pre-deployment audit of the entire token launch process, including mint account creation and initialization, to prevent such critical misconfigurations.
+> **Final Recommendation:** The America Is Back (AMERICA) token mint presents a critical and highly unusual risk profile. The reported uninitialized state, directly contradicting observed market activity, indicates either a severe data inconsistency or a fundamental flaw making the token unusable. Users are strongly advised to exercise extreme caution and verify the token's actual operational status independently before engaging in any transactions. A Premium Deploy option is not applicable for an existing SPL token mint; however, for future token launches, ensuring proper initialization and transparent metadata is paramount.
 
 ## Security Analysis
 
-This report details a metadata-driven security audit of the America Is Back (AMERICA) SPL token mint account. The analysis reveals a critical vulnerability where the mint account is uninitialized despite active trading, posing a severe risk to token integrity and user funds. Several data completeness issues also contribute to elevated economic risk.
+The audit of the America Is Back (AMERICA) SPL Token Mint reveals a critical functional inconsistency. The mint is reported as uninitialized, which should prevent any token operations, yet significant liquidity and trading volume are observed. While mint and freeze authorities are revoked, the uninitialized state poses a severe risk to users. Further investigation is required to reconcile this fundamental discrepancy.
 
-The America Is Back (AMERICA) SPL token mint account exhibits critical security vulnerabilities due to its uninitialized state, despite having active liquidity and trading. This fundamental flaw poses an immediate and severe risk to the integrity of the token and user funds. It is imperative that this issue be addressed immediately, likely requiring a migration to a properly initialized mint account or a complete re-evaluation of the token's viability.
-
-For future deployments, it is strongly recommended to ensure all SPL token mint accounts are correctly initialized before any liquidity is added or trading commences. A Premium Deploy option would involve a thorough pre-deployment audit of the entire token launch process, including mint account creation and initialization, to prevent such critical misconfigurations.
+The America Is Back (AMERICA) token mint presents a critical and highly unusual risk profile. The reported uninitialized state, directly contradicting observed market activity, indicates either a severe data inconsistency or a fundamental flaw making the token unusable. Users are strongly advised to exercise extreme caution and verify the token's actual operational status independently before engaging in any transactions. A Premium Deploy option is not applicable for an existing SPL token mint; however, for future token launches, ensuring proper initialization and transparent metadata is paramount.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The technical review (7.1 Architecture, 7.2 Code Security, 7.3 Access Control) identified a critical flaw: the SPL token mint account is uninitialized, which means its core properties like supply and  |
-| **Governance / Economics** | 6/10 | High | The economic and governance aspects (7.4 Economic, 7.5 Governance) present significant risks primarily due to a lack of transparency. Holder distribution data is unavailable, making it impossible to a |
-| **Upgrades** | 6/10 | Low | As an SPL token mint account, the core functionality is governed by the immutable SPL Token Program. Therefore, direct upgradeability of the mint account itself is not applicable (7.7 Upgrades). The s |
+| **Technical** | 6/10 | High | The token mint exhibits a critical architectural flaw (7.1 Architecture): it is reported as uninitialized, which fundamentally prevents token operations. This directly contradicts the presence of $99k |
+| **Governance / Economics** | 6/10 | High | The economic viability (7.4 Economic) and integrity of the AMERICA token are severely compromised by its uninitialized state. Despite reported liquidity, the token's fundamental inability to function  |
+| **Upgrades** | 6/10 | Low | SPL Token Mints are data accounts managed by the immutable SPL Token Program. There are no upgrade mechanisms specific to the mint account itself (7.7 Upgrades), meaning its core parameters are fixed  |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🔴 1 Critical · ⚪ 2 Informational_
 
-### `C-01` — Critical: SPL Token Mint Account is Uninitialized Despite Active Trading  *(Severity: Critical · Status: Unresolved)*
+### `C-01` — Critical Functional Inconsistency: Uninitialized Mint with Active Trading  *(Severity: Critical · Status: Unresolved)*
 
-The SPL token mint account `ava8yucsd2yguspdv3hb2cjpdf8xahgwyxmchxwopump` is reported as `Initialized: False`. This is a critical vulnerability for a token that has active liquidity ($104,532) and trading volume. An uninitialized mint account means its core properties, such as `supply`, `decimals`, `mint authority`, and `freeze authority`, have not been properly set. Anyone could potentially initialize this account, setting arbitrary values for these critical parameters, leading to complete compromise of the token's integrity, potential infinite minting, or alteration of decimals, thereby draining liquidity pools or rendering existing tokens worthless. This contradicts the reported 'revoked…
+The SPL Token Mint `ava8yucsd2yguspdv3hb2cjpdf8xahgwyxmchxwopump` is reported as `Initialized: False`. An uninitialized SPL token mint cannot issue tokens, define decimals, or facilitate transfers. This directly contradicts the presence of reported liquidity ($99,292 USD) and 24-hour trading volume ($187,945 USD). This inconsistency indicates either a severe data reporting error, a non-standard token implementation, or a potential scam where users are trading a non-functional token.
 
-**Recommendation:** Immediately investigate why the mint account is uninitialized. If the token is intended to be legitimate, it must be migrated to a properly initialized SPL token mint account. This would typically involve creating a new, correctly initialized mint, migrating all liquidity and holders, and deprecating the compromised mint. All trading should be halted until this critical issue is resolved.
-
-
-### `H-01` — High: Underlying SPL Token Program is Unknown  *(Severity: High · Status: Unresolved)*
-
-The 'Token Program' associated with the mint account is reported as 'unknown'. While the `SOLC_VERSION` suggests it adheres to the SPL Token Program v3 standard, the inability to identify the specific program ID for this instance prevents verification that it is indeed using a standard, audited, and secure SPL Token Program. If a custom or non-standard token program is in use, or if the program ID is genuinely missing, it introduces significant security risks as its code has not been reviewed for vulnerabilities specific to Solana programs (e.g., missing signer checks, account validation failures, CPI privilege escalation).
-
-**Recommendation:** The specific program ID governing the mint account must be identified and verified. If it is a standard SPL Token Program, this information should be made transparent. If it is a custom program, its source code must undergo a comprehensive security audit to ensure it adheres to Solana security best practices and does not contain critical vulnerabilities.
+**Recommendation:** Investigate the discrepancy between the reported uninitialized state and active trading. If the mint is indeed uninitialized, all associated liquidity and trading activity are based on a non-functional asset, posing an extreme risk to users. If the data is incorrect, ensure accurate on-chain state is reflected.
 
 
-### `L-01` — Low: Insufficient Transparency for Economic Risk Assessment  *(Severity: Low · Status: Unresolved)*
+### `I-01` — Unknown Supply and Decimals  *(Severity: Informational · Status: Unresolved)*
 
-Critical economic data points, such as holder distribution, GoPlus security signals, and RugCheck data, are unavailable. This lack of transparency significantly hinders the ability of users and auditors to assess the token's economic health, potential for whale manipulation, or common rug pull indicators. While not a direct technical vulnerability, it elevates the overall economic risk for participants.
+The raw supply and decimal count for the AMERICA token are reported as `unknown`. While this is expected given the `Initialized: False` status, it limits transparency regarding the token's total issuance and divisibility.
 
-**Recommendation:** Efforts should be made to provide comprehensive economic data, including detailed holder distribution, to allow for proper assessment of centralization risks. Integration with reputable third-party security scanners like GoPlus and RugCheck should be pursued to provide additional layers of trust and transparency for the community.
+**Recommendation:** Ensure that once the token mint is properly initialized (if intended), these fundamental parameters are publicly verifiable to provide full transparency to holders and traders.
 
 
-### `I-01` — Informational: Inconsistency in Mint Authority and Initialization State  *(Severity: Informational · Status: Unresolved)*
+### `I-02` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Resolved)*
 
-The report states that the mint account is `Initialized: False`, yet also indicates that `Mint Authority: revoked (None)` and `Freeze Authority: revoked (None)`. An uninitialized SPL token mint account does not have authorities to revoke, as these are set during the initialization process. This contradiction suggests either a data reporting inconsistency, or a highly unusual and potentially problematic state where the account might have been partially initialized or corrupted. This reinforces the critical nature of the `Initialized: False` finding.
+Both the Mint Authority and Freeze Authority for the AMERICA token have been `revoked (None)`. This is a strong security positive, as it prevents any single entity from minting new tokens arbitrarily (preventing inflationary attacks) or freezing user token accounts (preventing censorship or fund locking).
 
-**Recommendation:** While the primary concern is the uninitialized state (C-01), this inconsistency should be clarified. If the account was somehow partially initialized or its state corrupted, understanding the root cause is crucial to prevent similar issues in the future. Ensure data reporting accurately reflects the true state of the mint account.
+**Recommendation:** Maintain the revoked status of these authorities to ensure the long-term security and decentralization of the token.
 
 ## Token Metrics
 

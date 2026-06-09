@@ -17,72 +17,72 @@ date: 2026-05-11
 
 ## Audit Summary
 
-The audit of the World Collective Oil Reserve (WCOR) SPL Token Mint reveals critical issues. The mint account is currently uninitialized, meaning no tokens can be minted, and its supply and decimals are undefined. Despite this, significant liquidity ($55,230) exists for this token, posing a severe risk to investors trading a non-functional asset. Additionally, the owning Token Program is reported as unknown, which introduces further uncertainty regarding its behavior and authenticity.
+This audit report for the World Collective Oil Reserve (WCOR) SPL Token Mint identifies a critical data inconsistency: the token is reported as uninitialized, yet it exhibits active trading and liquidity. This fundamental contradiction raises severe concerns about the token's operational integrity and the reliability of the provided information. Additional risks include a lack of transparency regarding supply, decimals, and holder distribution, as well as the absence of external security signals. While mint and freeze authorities are appropriately revoked, the overall risk profile is elevated due to these significant uncertainties.
 
-> **Final Recommendation:** The World Collective Oil Reserve (WCOR) SPL Token Mint presents critical risks primarily due to its uninitialized state and the unknown owning Token Program. Investors are currently exposed to significant risk by trading a non-functional asset. It is strongly recommended that the project team addresses the uninitialized mint status and clarifies the owning program. Until these fundamental issues are resolved, the token should be considered highly speculative and risky.
+> **Final Recommendation:** The World Collective Oil Reserve (WCOR) token exhibits a critical data inconsistency regarding its initialization status, which fundamentally questions its validity as a tradable asset. This issue, combined with a lack of transparency on key tokenomics and external security validations, suggests a high-risk profile. While the revocation of mint and freeze authorities is a positive security measure, it does not mitigate the core concerns about the token's foundational state. Investors should exercise extreme caution and seek immediate clarification on the token's initialization status before engaging with this asset.
 
-For projects aiming for high security and transparency, a Premium Deploy option is available. This includes a comprehensive pre-deployment audit, verification of all on-chain configurations, and continuous monitoring to ensure the integrity and expected behavior of the token program and its associated accounts.
+For projects seeking to establish a robust and transparent presence on Solana, a Premium Deploy option is recommended. This service includes comprehensive pre-deployment verification, enhanced on-chain data integrity checks, and integration with leading security analytics p…
 
 ## Security Analysis
 
-The audit of the World Collective Oil Reserve (WCOR) SPL Token Mint reveals critical issues. The mint account is currently uninitialized, meaning no tokens can be minted, and its supply and decimals are undefined. Despite this, significant liquidity ($55,230) exists for this token, posing a severe risk to investors trading a non-functional asset. Additionally, the owning Token Program is reported as unknown, which introduces further uncertainty regarding its behavior and authenticity.
+This audit report for the World Collective Oil Reserve (WCOR) SPL Token Mint identifies a critical data inconsistency: the token is reported as uninitialized, yet it exhibits active trading and liquidity. This fundamental contradiction raises severe concerns about the token's operational integrity and the reliability of the provided information. Additional risks include a lack of transparency regarding supply, decimals, and holder distribution, as well as the absence of external security signals. While mint and freeze authorities are appropriately revoked, the overall risk profile is elevated due to these significant uncertainties.
 
-The World Collective Oil Reserve (WCOR) SPL Token Mint presents critical risks primarily due to its uninitialized state and the unknown owning Token Program. Investors are currently exposed to significant risk by trading a non-functional asset. It is strongly recommended that the project team addresses the uninitialized mint status and clarifies the owning program. Until these fundamental issues are resolved, the token should be considered highly speculative and risky.
+The World Collective Oil Reserve (WCOR) token exhibits a critical data inconsistency regarding its initialization status, which fundamentally questions its validity as a tradable asset. This issue, combined with a lack of transparency on key tokenomics and external security validations, suggests a high-risk profile. While the revocation of mint and freeze authorities is a positive security measure, it does not mitigate the core concerns about the token's foundational state. Investors should exercise extreme caution and seek immediate clarification on the token's initialization status before engaging with this asset.
 
-For projects aiming for high security and transparency, a Premium Deploy option is available. This includes a comprehensive pre-deployment audit, verification of all on-chain configurations, and continuous monitoring to ensure the integrity and expected behavior of the token program and its associated accounts.
+For projects seeking to establish a robust and transparent presence on Solana, a Premium Deploy option is recommended. This service includes comprehensive pre-deployment verification, enhanced on-chain data integrity checks, and integration with leading security analytics p…
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The technical analysis highlights a critical finding: the SPL Token Mint is uninitialized (7.2 Code Security), rendering it non-functional for token issuance. This state is inconsistent with the prese |
-| **Governance / Economics** | 6/10 | High | The primary economic risk stems from the uninitialized state of the WCOR token mint (7.4 Economic). Despite being non-functional, the token has accumulated $55,230 in liquidity, exposing investors to  |
-| **Upgrades** | 6/10 | Low | The WCOR token mint has both Mint and Freeze authorities revoked (7.7 Upgrades), indicating that no further tokens can be minted or account states frozen by a central authority once the token is initi |
+| **Technical** | 6/10 | High | The technical analysis reveals a critical inconsistency: the token mint is reported as uninitialized, yet it exhibits active trading and liquidity on Dexscreener (7.2 Code Security). This fundamental  |
+| **Governance / Economics** | 6/10 | Medium | Economically, the World Collective Oil Reserve token presents several risks. With a liquidity of $45,006 and a pair age of 50 days, the token is relatively new and has limited market depth, potentiall |
+| **Upgrades** | 6/10 | Low | As an SPL Token, the core program logic is managed by the Solana Program Library and is not subject to project-specific upgrades (7.7 Upgrades). The revocation of mint and freeze authorities ensures t |
 
 ## Security Findings
 
-_🔴 2 Critical · 🟠 1 High · ⚪ 3 Informational_
+_🔴 1 Critical · 🟡 2 Medium · 🟢 2 Low · ⚪ 1 Informational_
 
-### `C-01` — Uninitialized SPL Token Mint  *(Severity: Critical · Status: Unresolved)*
+### `C-01` — Critical Data Inconsistency Regarding Token Initialization  *(Severity: Critical · Status: Unresolved)*
 
-The SPL Token Mint account for WCOR is reported as `Initialized: False`. An uninitialized mint cannot issue tokens, and its supply and decimals are undefined. This means the token is not yet functional, despite having active trading liquidity.
+The provided on-chain facts state the token mint is 'Initialized: False'. However, the token has reported liquidity ($45,006) and 24h trading volume ($11,845) from Dexscreener. An uninitialized SPL token mint cannot have supply, decimals, or be traded. This fundamental contradiction raises severe concerns about the token's operational status or the reliability of the provided data, making the token's integrity highly questionable.
 
-**Recommendation:** The project team must initialize the SPL Token Mint account to enable token functionality. This involves setting the supply, decimals, and initial authorities. Clear communication to the community regarding the initialization process and timeline is essential.
-
-
-### `C-02` — Liquidity for Non-Functional Token  *(Severity: Critical · Status: Unresolved)*
-
-Despite the SPL Token Mint being uninitialized and non-functional, there is reported liquidity of $55,230 and active 24h trading volume of $4,050. Investors are currently trading a token that technically does not exist in a functional state, exposing them to severe economic risk.
-
-**Recommendation:** The project team should immediately halt trading or issue a clear warning to investors about the uninitialized state of the token. Trading should only resume once the mint is properly initialized and fully functional.
+**Recommendation:** Clarify the true initialization status of the token mint. If it is indeed uninitialized, all reported trading activity is highly suspicious and indicative of potential fraud. If the token is initialized, the data source for 'Initialized: False' should be corrected to reflect the actual on-chain state.
 
 
-### `H-01` — Unknown Token Program Owner  *(Severity: High · Status: Unresolved)*
+### `M-01` — Absence of External Security Signals  *(Severity: Medium · Status: Unresolved)*
 
-The owning Token Program for the WCOR mint account is reported as `unknown`. For standard SPL Tokens, this should be the official SPL Token Program. An unknown or non-standard owning program introduces significant trust and security risks, as its behavior cannot be guaranteed or easily audited.
+There is no available data from external security signal providers such as GoPlus Solana or RugCheck. The absence of these independent validations means that common red flags, such as potential rug pulls, honeypots, or other malicious configurations, have not been assessed by specialized third-party tools, increasing the due diligence burden on users.
 
-**Recommendation:** The project team should clarify and confirm the legitimate owning Token Program for the WCOR mint. If it is not the standard SPL Token Program, a detailed explanation of the custom program's functionality and security implications is required.
-
-
-### `I-01` — Inconsistent Authority Revocation with Uninitialized State  *(Severity: Informational · Status: Unresolved)*
-
-Both Mint Authority and Freeze Authority are reported as `revoked (None)`. While this is generally a positive security measure for a launched token, it is inconsistent with the `Initialized: False` status of the mint. Authorities cannot truly be revoked if the mint itself has not been fully set up.
-
-**Recommendation:** This observation should be re-evaluated once the mint is initialized. If authorities remain revoked after initialization, it indicates an immutable token supply and freeze status, which is a strong security posture.
+**Recommendation:** Engage with reputable security signal providers to obtain an independent assessment of the token's safety profile. This would provide an additional layer of trust and transparency for potential holders.
 
 
-### `I-02` — Undefined Supply and Decimals  *(Severity: Informational · Status: Unresolved)*
+### `M-02` — Low Liquidity and Relatively New Pair Age  *(Severity: Medium · Status: Unresolved)*
 
-The `Supply (raw)` and `Decimals` for the WCOR token are reported as `unknown`. This is a direct consequence of the mint being uninitialized. These critical parameters are essential for understanding the token's economics and divisibility.
+The token has a relatively low liquidity of $45,006 and a pair age of only 50 days. Low liquidity can lead to significant price impact for trades, making it difficult for users to enter or exit positions without substantial slippage. A new pair age indicates limited time for market stability and community establishment, which can contribute to higher volatility and uncertainty.
 
-**Recommendation:** Upon initialization of the SPL Token Mint, the supply and decimal values will be defined and should be clearly communicated to the community.
+**Recommendation:** Projects should aim to increase liquidity over time to support healthier trading and reduce price impact. A longer operational history and sustained liquidity build market confidence.
 
 
-### `I-03` — GoPlus Default Account State Inconsistency  *(Severity: Informational · Status: Unresolved)*
+### `L-01` — Lack of Transparency on Token Supply and Decimals  *(Severity: Low · Status: Unresolved)*
 
-GoPlus reports `default_account_state: 1` (implying frozen) for the token. This is an unusual default for an uninitialized mint. If the token were initialized, a default frozen state would significantly impact usability.
+The raw supply and decimal information for the token are reported as 'unknown'. While this is directly linked to the 'Initialized: False' status, even if initialized, the lack of readily available and verifiable data on these fundamental token parameters hinders a comprehensive understanding of the token's economics and potential for inflation or scarcity.
 
-**Recommendation:** The project team should clarify the intended default account state upon initialization. If a default frozen state is intended, users should be made aware of the process to thaw their accounts.
+**Recommendation:** Ensure that all fundamental token parameters, including total supply and decimals, are accurately recorded and publicly accessible once the token mint is properly initialized. This is crucial for transparency and investor confidence.
+
+
+### `L-02` — Lack of Holder Distribution Data  *(Severity: Low · Status: Unresolved)*
+
+Information regarding holder concentration is unavailable. Without this data, it is impossible to assess the distribution of the token among holders, which is critical for understanding potential centralization risks. High concentration in a few wallets could indicate susceptibility to market manipulation or governance control by a small group.
+
+**Recommendation:** Provide access to holder distribution data to allow for proper assessment of token centralization and potential risks associated with concentrated holdings.
+
+
+### `I-01` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Resolved)*
+
+Both the Mint Authority and Freeze Authority for the token have been revoked (set to None). This is a positive security measure, as it prevents any entity from minting new tokens (inflation) or freezing existing token accounts (restricting transfers) after deployment. This enhances the immutability and predictability of the token's supply and transferability.
+
+**Recommendation:** Maintain the revoked status of these authorities to ensure the token's immutability and prevent unauthorized control over its supply and transfer functions.
 
 ## Token Metrics
 

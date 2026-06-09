@@ -2,14 +2,14 @@
 token: UFC Freedom 250
 ticker: UFC250
 network: solana
-risk_score: 72
+risk_score: 90
 status: critical
 date: 2026-06-09
 ---
 
 # UFC Freedom 250 (UFC250) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ufc-freedom-250-sol)
 
@@ -17,72 +17,65 @@ date: 2026-06-09
 
 ## Audit Summary
 
-This report provides a security audit for a Solana program. Due to the absence of specific program code for analysis, the findings and recommendations are based on common vulnerability patterns observed in Solana programs and general best practices. The overall risk level is assessed as Medium, reflecting the inherent complexities of Solana program development and the potential for critical issues if best practices are not rigorously followed.
+This audit reviews the on-chain state of the UFC Freedom 250 (UFC250) SPL Token Mint. A critical inconsistency was identified: the mint account is reported as 'Uninitialized' while simultaneously showing active trading volume and liquidity on decentralized exchanges. This fundamental discrepancy raises significant concerns about the token's legitimacy and potential for user loss. Additionally, the token is very new, exhibits a high volume-to-liquidity ratio, and lacks external security assessments, indicating elevated market and operational risks.
 
-> **Final Recommendation:** Given the inherent complexities of Solana program development and the potential for critical vulnerabilities, a thorough and continuous security review process is essential. Developers should prioritize comprehensive testing, adhere to secure coding practices, and consider formal verification for critical components.
+> **Final Recommendation:** Users are strongly advised to exercise extreme caution when interacting with the UFC Freedom 250 (UFC250) token. The critical finding regarding the 'Uninitialized' state of the mint account, despite reported trading activity, presents a fundamental and unresolved risk that could lead to complete loss of funds. The token's nascent age, high trading volatility, and lack of external security validation further amplify these risks. It is recommended to avoid engagement until the 'Uninitialized' status is definitively clarified and resolved.
 
-For enhanced security and peace of mind, consider the 'Premium Deploy' option. This service includes continuous monitoring, incident response planning, and a dedicated security liaison to proactively address emerging threats and ensure the long-term integrity of your Solana program.
+For projects seeking to launch new SPL tokens, a Premium Deploy option is available. This service includes a comprehensive pre-launch audit of the token mint configuration, ensuring all parameters are correctly set, authorities are managed securely, and the token is properly initialized before public release, mitigating critical setup errors and enhanci…
 
 ## Security Analysis
 
-This report provides a security audit for a Solana program. Due to the absence of specific program code for analysis, the findings and recommendations are based on common vulnerability patterns observed in Solana programs and general best practices. The overall risk level is assessed as Medium, reflecting the inherent complexities of Solana program development and the potential for critical issues if best practices are not rigorously followed.
+This audit reviews the on-chain state of the UFC Freedom 250 (UFC250) SPL Token Mint. A critical inconsistency was identified: the mint account is reported as 'Uninitialized' while simultaneously showing active trading volume and liquidity on decentralized exchanges. This fundamental discrepancy raises significant concerns about the token's legitimacy and potential for user loss. Additionally, the token is very new, exhibits a high volume-to-liquidity ratio, and lacks external security assessments, indicating elevated market and operational risks.
 
-Given the inherent complexities of Solana program development and the potential for critical vulnerabilities, a thorough and continuous security review process is essential. Developers should prioritize comprehensive testing, adhere to secure coding practices, and consider formal verification for critical components.
+Users are strongly advised to exercise extreme caution when interacting with the UFC Freedom 250 (UFC250) token. The critical finding regarding the 'Uninitialized' state of the mint account, despite reported trading activity, presents a fundamental and unresolved risk that could lead to complete loss of funds. The token's nascent age, high trading volatility, and lack of external security validation further amplify these risks. It is recommended to avoid engagement until the 'Uninitialized' status is definitively clarified and resolved.
 
-For enhanced security and peace of mind, consider the 'Premium Deploy' option. This service includes continuous monitoring, incident response planning, and a dedicated security liaison to proactively address emerging threats and ensure the long-term integrity of your Solana program.
+For projects seeking to launch new SPL tokens, a Premium Deploy option is available. This service includes a comprehensive pre-launch audit of the token mint configuration, ensuring all parameters are correctly set, authorities are managed securely, and the token is properly initialized before public release, mitigating critical setup errors and enhanci…
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture of Solana programs often leverages the Anchor framework, which provides robust abstractions for common patterns like account validation and CPIs, enhancing security (7.1 Arc |
-| **Governance / Economics** | 6/10 | Medium | Economic models in Solana programs must carefully consider tokenomics, fee structures, and incentive mechanisms to ensure long-term sustainability and prevent manipulation (7.4 Economic). Governance m |
-| **Upgrades** | 6/10 | Medium | Solana programs are typically upgradeable via buffer accounts, allowing for bug fixes and feature enhancements (7.7 Upgrades). This flexibility introduces a risk if the upgrade authority is compromise |
+| **Technical** | 6/10 | High | (7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.8 Operations) The SPL Token Mint exhibits a critical technical flaw: it is reported as 'Uninitialized' (`Initialized: False`), which fundame |
+| **Governance / Economics** | 6/10 | High | (7.4 Economic, 7.5 Governance, 7.6 External) The token is extremely new, with a pair age of only 1 day, contributing to high market volatility and uncertainty. A high Volume/Liquidity Ratio of 5.27 su |
+| **Upgrades** | 6/10 | Low | (7.7 Upgrades) As an SPL Token Mint account, there is no custom program logic to upgrade. The underlying SPL Token Program is managed by Solana Labs and is not subject to project-specific upgrade risk |
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 2 Low · ⚪ 1 Informational_
+_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Missing Signer Checks for Critical Instructions  *(Severity: High · Status: Unresolved)*
+### `C-01` — SPL Token Mint Reported as Uninitialized Despite Trading Activity  *(Severity: Critical · Status: Unresolved)*
 
-Critical instructions that modify program state or transfer assets must verify that the `signer` account is authorized to perform the action. Failure to check `is_signer` on required accounts can allow any caller to execute privileged operations, leading to unauthorized state changes or asset theft. This is a fundamental access control vulnerability (7.3 Access Control).
+The on-chain data for the SPL Token Mint `cwbirhpu2jqyjybidtb7fncfr9xwmmpxzgspirc3pump` indicates that its `Initialized` status is `False`. According to the SPL Token Program specification, an uninitialized mint account cannot have a supply, decimals, or participate in token transfers or trading. However, the provided data from dexscreener shows active liquidity ($17,355 USD) and significant 24-hour trading volume ($91,493 USD) for this token. This represents a critical inconsistency, as a truly uninitialized mint should not be tradable. This discrepancy suggests either a fundamental data retrieval error, a non-standard token implementation (not SPL), or a potential exploit where an invalid…
 
-**Recommendation:** Ensure all instructions requiring authorization explicitly check `account.is_signer` for the appropriate `signer` accounts. For Anchor programs, use the `#[account(signer)]` attribute or manually check `ctx.accounts.authority.is_signer` within the instruction logic.
-
-
-### `M-01` — Insufficient Account Validation (Owner/Discriminator)  *(Severity: Medium · Status: Unresolved)*
-
-Programs must rigorously validate all accounts passed into an instruction to prevent type cosplay attacks or unauthorized access to data. This includes checking the `owner` of the account to ensure it belongs to the expected program and, for Anchor accounts, verifying the `discriminator` to confirm the correct account type (7.2 Code Security). Without these checks, a malicious actor could pass an arbitrary account, leading to unexpected behavior or data corruption.
-
-**Recommendation:** Implement comprehensive account validation. For non-Anchor accounts, always check `account.owner == expected_program_id`. For Anchor accounts, ensure `#[account(has_one = ...)]` or `#[account(owner = ...)]` attributes are used where appropriate, and that the `discriminator` is implicitly or explicitly checked by Anchor's framework. Manual checks might be needed for specific cross-program interactions.
+**Recommendation:** Investigate the root cause of the 'Uninitialized' status. If the mint is indeed uninitialized, all reported trading activity is illegitimate, and users should be immediately warned. If the data source for 'Initialized: False' is incorrect, verify the actual state of the mint account and update the information. Users should refrain from interacting with this token until this critical inconsistency is resolved and verified.
 
 
-### `M-02` — PDA Bump Seed Canonicalization Vulnerability  *(Severity: Medium · Status: Unresolved)*
+### `H-01` — Elevated Volume-to-Liquidity Ratio for a Newly Launched Token  *(Severity: High · Status: Unresolved)*
 
-When deriving Program Derived Addresses (PDAs), it is crucial to use the canonical `bump` seed. If a program allows non-canonical `bump` seeds to be used for PDA creation or validation, it could enable the creation of multiple PDAs for the same set of seeds, leading to potential state confusion, resource exhaustion, or bypassing unique constraints (7.2 Code Security).
+The token has a high Volume/Liquidity Ratio of 5.27, which is particularly concerning given its extremely short pair age of only 1 day. For new tokens, a high ratio can indicate wash trading, artificial volume generation, or a pump-and-dump scheme designed to attract unsuspecting investors. This pattern suggests potential market manipulation and high volatility, posing a significant risk to liquidity providers and traders.
 
-**Recommendation:** Always use the canonical `bump` seed when deriving and validating PDAs. Anchor's `#[account(seeds = [...], bump)]` attribute handles this automatically. When manually deriving PDAs, ensure `Pubkey::find_program_address` is used and its returned `bump` is strictly enforced.
-
-
-### `L-01` — Reinitialization Attack Vector  *(Severity: Low · Status: Unresolved)*
-
-Programs that manage mutable state accounts, especially those initialized once, are vulnerable if they do not prevent reinitialization. If an `initialize` instruction can be called multiple times on the same account, it could reset critical configuration, overwrite existing data, or drain funds (7.2 Code Security).
-
-**Recommendation:** Implement a clear initialization guard for all state accounts. For Anchor programs, the `#[account(init)]` attribute automatically adds a discriminator check to prevent reinitialization. For manual implementations, ensure a flag or a non-zero value is set upon first initialization and checked in subsequent calls.
+**Recommendation:** Investors should exercise extreme caution and conduct thorough due diligence before engaging with tokens exhibiting such high Volume/Liquidity ratios, especially when they are newly launched. Monitor trading patterns closely for signs of manipulation.
 
 
-### `L-02` — Potential Arithmetic Overflow/Underflow  *(Severity: Low · Status: Unresolved)*
+### `M-01` — Absence of External Security Audit and Trust Signals  *(Severity: Medium · Status: Unresolved)*
 
-Arithmetic operations (addition, subtraction, multiplication) on integer types without explicit overflow/underflow checks can lead to unexpected behavior or incorrect calculations if values exceed the maximum or fall below the minimum representable value for the type. While Rust's `debug_assertions` catch this in debug builds, release builds wrap by default, which can be a security risk in financial calculations (7.2 Code Security).
+No data from reputable external security analysis platforms such as GoPlus Solana or RugCheck is available for the UFC Freedom 250 token. The absence of these independent security signals makes it difficult to assess the token's legitimacy, potential for rug pulls, or other common scam indicators. This lack of external validation increases the inherent risk for users.
 
-**Recommendation:** Use Rust's `checked_*` methods (e.g., `checked_add`, `checked_sub`, `checked_mul`) for all arithmetic operations involving sensitive values, especially those related to token amounts or balances. Handle `None` results appropriately, typically by returning an error.
+**Recommendation:** Projects should strive to obtain and display security audit results and integrate with reputable security analysis platforms to build trust and transparency within the community. Users should be wary of tokens lacking such external validation.
 
 
-### `I-01` — Missing Rent-Exemption Checks for New Accounts  *(Severity: Informational · Status: Unresolved)*
+### `L-01` — Token is Extremely New  *(Severity: Low · Status: Unresolved)*
 
-When creating new accounts, it is crucial to ensure they are initialized with enough lamports to be rent-exempt. If an account is not rent-exempt, it can be eventually reaped by the Solana runtime, leading to data loss. While Anchor's `#[account(init)]` handles this for new PDAs, custom account creations or CPIs might miss this check (7.2 Code Security).
+The token pair has only been active for 1 day. Newly launched tokens inherently carry higher risks due to unproven market stability, potential for early price volatility, and the lack of a track record for the project team. This short operational history provides limited data for assessing long-term viability or community support.
 
-**Recommendation:** For any custom account creation logic, explicitly calculate and transfer the required lamports to make the account rent-exempt using `Rent::get().minimum_balance(size)`. Ensure this is done before the account is used or stored.
+**Recommendation:** Investors should approach very new tokens with increased skepticism and allocate only risk-tolerant capital. It is advisable to observe the token's performance and project development over a longer period before making significant investments.
+
+
+### `I-01` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Resolved)*
+
+The Mint Authority and Freeze Authority for the UFC Freedom 250 token have both been revoked (set to `None`). This is a positive security measure. Revoking the Mint Authority prevents the creation of new tokens, ensuring a fixed supply and protecting against inflationary attacks. Revoking the Freeze Authority prevents any entity from freezing token balances in user accounts, enhancing decentralization and user control over their assets.
+
+**Recommendation:** This configuration is generally recommended for established, decentralized tokens to enhance trust and reduce central points of control.
 
 ## Token Metrics
 

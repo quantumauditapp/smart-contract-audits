@@ -2,14 +2,14 @@
 token: Traderclaw
 ticker: TCLAW
 network: solana
-risk_score: 90
+risk_score: 72
 status: critical
 date: 2026-05-13
 ---
 
 # Traderclaw (TCLAW) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 72/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/traderclaw-sol)
 
@@ -17,51 +17,54 @@ date: 2026-05-13
 
 ## Audit Summary
 
-This report details the security posture of the Traderclaw (TCLAW) SPL Token Mint account based on on-chain metadata. A critical vulnerability has been identified: the mint account is uninitialized, rendering the token non-functional. While positive security attributes such as revoked mint and freeze authorities and immutable token configurations are present, the uninitialized state prevents any practical use of the token. Immediate action is required to initialize the mint or address its erroneous creation.
+This audit report analyzes the Traderclaw (TCLAW) SPL Token Mint based on available on-chain metadata and security signals, as source code for the mint configuration itself is not applicable. The token exhibits strong immutability properties with revoked mint and freeze authorities, indicating a decentralized control structure. GoPlus security signals confirm non-mutable balances, non-closable accounts, and non-upgradable transfer parameters. However, the analysis identified significant data inconsistencies and missing information regarding the token's initialization state, supply, and decimals, which introduce a medium level of risk due to potential misinterpretation and lack of transparency.
 
-> **Final Recommendation:** The Traderclaw (TCLAW) SPL Token Mint account is currently in an uninitialized state, rendering the token completely non-functional. This is a critical issue that must be addressed immediately. The project team should either proceed with the proper initialization of the mint account to define its supply and decimals, or if this account was created in error, it should be closed to reclaim rent and prevent confusion. 
-
-For future token deployments, consider a 'Premium Deploy' option which includes a pre-audit of the token's configuration and initialization process to ensure all parameters are correctly set and verified before public launch, preventing critical functional errors like this.
+> **Final Recommendation:** The Traderclaw (TCLAW) SPL Token Mint demonstrates strong security characteristics regarding immutability and decentralized control, primarily due to the revocation of mint and freeze authorities. This significantly reduces governance and economic risks associated with centralized power. However, critical data inconsistencies and missing metadata, particularly concerning the token's initialization status and supply, present transparency challenges that should be addressed for full investor confidence. These data issues do not reflect vulnerabilities in the SPL Token Program itself but rather in the reporting or retrieval of its state.
 
 ## Security Analysis
 
-This report details the security posture of the Traderclaw (TCLAW) SPL Token Mint account based on on-chain metadata. A critical vulnerability has been identified: the mint account is uninitialized, rendering the token non-functional. While positive security attributes such as revoked mint and freeze authorities and immutable token configurations are present, the uninitialized state prevents any practical use of the token. Immediate action is required to initialize the mint or address its erroneous creation.
+This audit report analyzes the Traderclaw (TCLAW) SPL Token Mint based on available on-chain metadata and security signals, as source code for the mint configuration itself is not applicable. The token exhibits strong immutability properties with revoked mint and freeze authorities, indicating a decentralized control structure. GoPlus security signals confirm non-mutable balances, non-closable accounts, and non-upgradable transfer parameters. However, the analysis identified significant data inconsistencies and missing information regarding the token's initialization state, supply, and decimals, which introduce a medium level of risk due to potential misinterpretation and lack of transparency.
 
-The Traderclaw (TCLAW) SPL Token Mint account is currently in an uninitialized state, rendering the token completely non-functional. This is a critical issue that must be addressed immediately. The project team should either proceed with the proper initialization of the mint account to define its supply and decimals, or if this account was created in error, it should be closed to reclaim rent and prevent confusion. 
-
-For future token deployments, consider a 'Premium Deploy' option which includes a pre-audit of the token's configuration and initialization process to ensure all parameters are correctly set and verified before public launch, preventing critical functional errors like this.
+The Traderclaw (TCLAW) SPL Token Mint demonstrates strong security characteristics regarding immutability and decentralized control, primarily due to the revocation of mint and freeze authorities. This significantly reduces governance and economic risks associated with centralized power. However, critical data inconsistencies and missing metadata, particularly concerning the token's initialization status and supply, present transparency challenges that should be addressed for full investor confidence. These data issues do not reflect vulnerabilities in the SPL Token Program itself but rather in the reporting or retrieval of its state.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | 7.1 Architecture & 7.2 Code Security: The primary technical issue is the uninitialized state of the SPL Token Mint account, which prevents the token from being functional. This is a fundamental setup  |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic & 7.5 Governance: The economic viability of the Traderclaw token is severely impacted by its uninitialized state, making it unusable for trading or value transfer despite reported liquidi |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The Traderclaw SPL Token Mint exhibits strong immutability characteristics. GoPlus signals indicate that features such as transfer fees, transfer hooks, and metadata are not upgradable.  |
+| **Technical** | 6/10 | Medium | The technical assessment (7.2 Code Security, 7.3 Access Control) reveals robust immutability for the Traderclaw token. Both Mint Authority and Freeze Authority are revoked, preventing any central enti |
+| **Governance / Economics** | 6/10 | Low | The governance and economic risk (7.4 Economic, 7.5 Governance) for Traderclaw is low due to the complete revocation of critical authorities. The absence of a Mint Authority prevents inflationary atta |
+| **Upgrades** | 6/10 | Low | The upgradeability risk (7.7 Upgrades) for the Traderclaw SPL Token Mint is low. Key parameters such as transfer fees (`transfer_fee_upgradable: False`) and transfer hooks (`transfer_hook_upgradable:  |
 
 ## Security Findings
 
-_🔴 1 Critical · ⚪ 2 Informational_
+_🟠 1 High · 🟡 1 Medium · ⚪ 2 Informational_
 
-### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
+### `H-01` — Data Inconsistency: Token Initialized State  *(Severity: High · Status: Unresolved)*
 
-The SPL Token Mint account at address 4bccwhaanr5dntjqmmzvqre6kxggchiujryiybbvpump is reported as 'Initialized: False'. This critical state means the token's supply, decimals, and other essential parameters have not been set. Consequently, the token cannot be minted, transferred, or used in any SPL Token operations, rendering it completely non-functional.
+The on-chain data reports the token mint as `Initialized: False`. However, the presence of active liquidity ($3,532 USD) and trading volume ($154 USD) on Dexscreener strongly indicates that the token is, in fact, initialized and functional. This discrepancy suggests a critical data retrieval or reporting error, which can lead to misinterpretation of the token's operational status.
 
-**Recommendation:** The mint account must be properly initialized using the `initialize_mint` instruction of the SPL Token Program. This operation will define the token's total supply, number of decimals, and assign a mint authority (which can then be revoked if desired). If this account was created in error, it should be closed to reclaim rent and avoid misleading users.
-
-
-### `I-01` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Resolved)*
-
-The mint authority and freeze authority for the Traderclaw (TCLAW) token have both been revoked. This configuration prevents any single entity from minting new tokens (inflating supply) or freezing existing token accounts, enhancing decentralization and reducing central points of control.
-
-**Recommendation:** This is a strong security practice that promotes decentralization and reduces governance risk. It is recommended to maintain this state unless a specific, well-justified need for these authorities arises, which would introduce new risks.
+**Recommendation:** Verify the token's initialization status directly via Solana RPC. If the token is indeed initialized and tradable, update data sources to reflect the correct state. If it is truly uninitialized, investigate how liquidity and trading volume were established.
 
 
-### `I-02` — Immutable Token Configuration  *(Severity: Informational · Status: Resolved)*
+### `M-01` — Missing Core Token Metadata  *(Severity: Medium · Status: Unresolved)*
 
-GoPlus security signals indicate that several core token parameters, including balance mutability, closability, freezability, transfer fees, transfer hooks, and metadata, are non-upgradable or immutable. This provides a high degree of predictability and stability for token holders, as these critical features cannot be altered post-deployment.
+Critical token parameters such as `Supply (raw)` and `Decimals` are reported as `unknown`. This lack of information prevents a comprehensive assessment of the token's total supply, market capitalization, and precise tokenomics, hindering a full understanding of its economic model.
 
-**Recommendation:** This immutability is a robust security feature, preventing malicious or unexpected changes to the token's fundamental behavior. This configuration should be maintained to ensure long-term trust and stability.
+**Recommendation:** Ensure all essential token metadata, including total supply and decimals, is accurately retrieved and displayed. This information is crucial for investor due diligence and transparent market analysis.
+
+
+### `I-01` — Unknown Token Program Identifier  *(Severity: Informational · Status: Unresolved)*
+
+The `Token Program` associated with the mint is listed as `unknown`. While this is an SPL Token Mint and implicitly uses the standard SPL Token Program, the explicit 'unknown' indicates a data retrieval gap. For clarity and completeness, the controlling program should be identified.
+
+**Recommendation:** Confirm and explicitly state that the token is controlled by the official Solana Program Library (SPL) Token Program, along with its specific version if available.
+
+
+### `I-02` — GoPlus Default Account State Signal  *(Severity: Informational · Status: Unresolved)*
+
+GoPlus reports `default_account_state: 1`. While the `Freeze Authority` is revoked and `GoPlus.freezable` is `False`, this signal might indicate a specific default state for newly created token accounts that could be unexpected. Further clarification on the exact meaning of this state in conjunction with other immutability signals would be beneficial.
+
+**Recommendation:** Investigate the precise implications of `GoPlus.default_account_state: 1` in the context of a non-freezable token with revoked freeze authority to ensure there are no unintended side effects for new token account creations.
 
 ## Token Metrics
 
