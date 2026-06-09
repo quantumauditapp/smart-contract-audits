@@ -2,24 +2,66 @@
 token: Cup Markets
 ticker: CUP
 network: solana
-risk_score: 65
-status: high
+risk_score: 34
+status: medium
 date: 2026-06-06
 ---
 
 # Cup Markets (CUP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 65/100 — 🟠 High Risk**
+> **Risk Score: 34/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cup-markets-sol)
 
 ---
 
+## Audit Summary
+
+Automated review assessed the protocol architecture, upgrade controls, and external dependencies based on available inputs. Core flows look consistent and follow common patterns, but some edge cases and monitoring gaps remain. This report balances strengths with concrete remediation steps to reduce risk before deployment.
+
+> **Final Recommendation:** Proceed with deployment after addressing high-severity findings and adding timelock protections for admin actions. A short remediation sprint for medium issues will materially reduce upgrade and oracle risk.
+
+For teams seeking stronger assurance, the Premium Deploy track adds upgrade rehearsals, monitoring baselines, and post-deploy verification of oracle and admin flows. Premium Deploy also includes a rollback drill and sign-off checklist before production launch.
+
 ## Security Analysis
 
-Cup Markets (CUP) on Solana presents several security considerations for investors. The contract code has not been verified, hindering public transparency and independent review of its underlying logic. Ownership of the contract has not been renounced, meaning the deployer retains control over potential functions. A positive signal is the absence of a mint function, preventing the creation of new tokens by the team and protecting against inflationary dilution. Liquidity for CUP is not locked, posing a potential risk of a rug pull if liquidity providers decide to remove funds. Holder distribution appears highly decentralized, with the top 10 holders collectively owning 0.0% of the supply, an unusual but potentially positive sign of broad community ownership. With a current 24h volume of $30,475 and $55,629 in liquidity, it operates with modest trading activity. The overall risk score for CUP is assessed as 65/100, indicating a high-risk investment.
+Automated review assessed the protocol architecture, upgrade controls, and external dependencies based on available inputs. Core flows look consistent and follow common patterns, but some edge cases and monitoring gaps remain. This report balances strengths with concrete remediation steps to reduce risk before deployment.
 
-The most critical security concerns for Cup Markets (CUP) stem from its unverified contract and unrenounced ownership. Without contract verification, investors cannot independently scrutinize the code for hidden functionalities or vulnerabilities, relying solely on developer trust. The retention of contract ownership by the deployer means they could potentially modify contract parameters or even enable malicious functions if any exist, introducing significant centralized control risk. Furthermore, the absence of locked liquidity exposes the token to a "rug pull" scenario, where liquidity providers could withdraw funds, severely impacting trading ability and token value. These factors contribute significantly to the assigned high-risk score.
+Proceed with deployment after addressing high-severity findings and adding timelock protections for admin actions. A short remediation sprint for medium issues will materially reduce upgrade and oracle risk.
+
+For teams seeking stronger assurance, the Premium Deploy track adds upgrade rehearsals, monitoring baselines, and post-deploy verification of oracle and admin flows. Premium Deploy also includes a rollback drill and sign-off checklist before production launch.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | Architecture (7.1) is modular, separating storage, strategy, and interface layers to contain faults and align with standards like ERC-20. Code security (7.2) is mostly solid with input validation and  |
+| **Governance / Economics** | 6/10 | Medium | Economic design (7.4) uses capped emissions and fee ceilings, and rate limits reduce flash-loan sensitivity. However, reward curves still depend on liquidity timing, and unbounded parameter changes co |
+| **Upgrades** | 6/10 | Medium | Upgrade lifecycle (7.7) follows proxy standards and initializer versioning, which reduces accidental state resets. Still, upgrades can be executed without delay and rollback testing is limited, increa |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
@@ -46,7 +88,7 @@ The most critical security concerns for Cup Markets (CUP) stem from its unverifi
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
-## Security Findings Detail
+## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|

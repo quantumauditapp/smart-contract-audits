@@ -2,24 +2,87 @@
 token: Octra
 ticker: OCT
 network: ethereum
-risk_score: 18
-status: low
+risk_score: 90
+status: critical
 date: 2026-05-31
 ---
 
 # Octra (OCT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 18/100 — 🟢 Low Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/octra-eth)
 
 ---
 
+## Audit Summary
+
+The WrappedOCT token contract is an ERC20 implementation leveraging OpenZeppelin's battle-tested libraries for core token functionality, access control, and pausing. The contract introduces specific roles for bridging (mint/burn) and pausing. While the code base is robust due to OpenZeppelin's foundation, the highly centralized control over token supply and pausing mechanisms by specific roles introduces significant economic and operational risks. The contract is not upgradeable, which simplifies its architecture but limits future adaptability.
+
+> **Final Recommendation:** The WrappedOCT token contract is built on a solid foundation of OpenZeppelin contracts, ensuring a high level of code quality and security for standard ERC20 operations. However, the centralized nature of the `BRIDGE_ROLE` and `PAUSER_ROLE` introduces critical and high-severity risks related to token supply control and operational halts. It is strongly recommended to implement robust multi-signature wallets and potentially time-locks for these critical roles to mitigate single points of failure and enhance security.
+
+For future deployments or critical infrastructure, consider a Premium Deploy option that includes a comprehensive pre-deployment security review, real-time monitoring, and incident response planning to ensure the highest level of protection against evolving threats.
+
 ## Security Analysis
 
-Octra (OCT) operates on the Ethereum blockchain, presenting a security profile with several positive attributes and areas for investor consideration. The contract has been verified, ensuring transparency and public accessibility for code review. Crucially, ownership of the contract has been renounced, which removes the ability for original developers to alter critical contract parameters post-deployment. Furthermore, the absence of a mint function prevents the arbitrary creation of new tokens, safeguarding against inflationary dilution by the contract owner. Liquidity stands at $1,452,973 with a 24-hour volume of $577,621, indicating active trading. However, a notable point for investors is the distribution: the top 10 holders collectively control 46.3% of the total supply, representing a degree of centralization. The provided risk score is 18/100, categorized as Low Risk. This overview aims to provide a factual basis for security assessment without offering investment advice.
+The WrappedOCT token contract is an ERC20 implementation leveraging OpenZeppelin's battle-tested libraries for core token functionality, access control, and pausing. The contract introduces specific roles for bridging (mint/burn) and pausing. While the code base is robust due to OpenZeppelin's foundation, the highly centralized control over token supply and pausing mechanisms by specific roles introduces significant economic and operational risks. The contract is not upgradeable, which simplifies its architecture but limits future adaptability.
 
-Among Octra's security signals, the lack of locked liquidity presents the most significant potential risk. Unlocked liquidity allows providers to withdraw funds at any time, potentially impacting market stability and depth. While the contract's verified status, renounced ownership, and absence of a mint function greatly reduce common developer-led rug pull vectors, the liquidity status requires careful attention. Additionally, the concentration of 46.3% of the supply among the top 10 holders is a significant signal. This level of whale concentration could lead to market volatility if large holders decide to sell substantial portions of their holdings. Investors should weigh these factors, even with the overall low risk score of 18/100.
+The WrappedOCT token contract is built on a solid foundation of OpenZeppelin contracts, ensuring a high level of code quality and security for standard ERC20 operations. However, the centralized nature of the `BRIDGE_ROLE` and `PAUSER_ROLE` introduces critical and high-severity risks related to token supply control and operational halts. It is strongly recommended to implement robust multi-signature wallets and potentially time-locks for these critical roles to mitigate single points of failure and enhance security.
+
+For future deployments or critical infrastructure, consider a Premium Deploy option that includes a comprehensive pre-deployment security review, real-time monitoring, and incident response planning to ensure the highest level of protection against evolving threats.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for ERC20, AccessControl, and Pausable functionalities, contributing to a solid code foundation (7.2 Code Security). The `decimals` override |
+| **Governance / Economics** | 6/10 | High | The economic model is highly centralized, with the `BRIDGE_ROLE` having direct control over token supply via `bridgeMint` and `bridgeBurn` functions, posing a critical risk if compromised (7.4 Economi |
+| **Upgrades** | 6/10 | Low | The `WrappedOCT` contract is not designed to be upgradeable, meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates upgrade-specific risks like proxy misconfigurations or storage |
+
+## Security Findings
+
+_🔴 1 Critical · 🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
+
+### `C-01` — Centralized Control of Token Supply (Bridge Role)  *(Severity: Critical · Status: Unresolved)*
+
+The `BRIDGE_ROLE` has the exclusive ability to `bridgeMint` and `bridgeBurn` tokens. This means a single entity or a small group of entities controls the entire supply mechanism of the wOCT token, up to `MAX_SUPPLY`. A compromise of the `BRIDGE_ROLE` address would allow an attacker to mint an arbitrary amount of tokens (up to `MAX_SUPPLY`) or burn tokens from any user, leading to severe economic manipulation and loss of user funds. (7.3 Access Control, 7.4 Economic)
+
+**Recommendation:** Implement a multi-signature wallet or a robust governance mechanism for the `BRIDGE_ROLE` to ensure multiple approvals are required for minting/burning operations. Consider time-locks for significant supply changes.
+
+
+### `H-01` — Centralized Pause Functionality (Pauser Role)  *(Severity: High · Status: Unresolved)*
+
+The `PAUSER_ROLE` can unilaterally call `pause()`, which halts all token transfers and bridge operations (`bridgeMint`, `bridgeBurn`) due to the `whenNotPaused` modifier. While pausing can be a safety mechanism, a malicious or compromised `PAUSER_ROLE` could indefinitely freeze all token activity, causing significant disruption, loss of liquidity, and potential economic damage to users. (7.3 Access Control, 7.8 Operations)
+
+**Recommendation:** Implement a multi-signature wallet for the `PAUSER_ROLE`. Consider adding a time-lock or a community-driven unpause mechanism (e.g., via governance) to prevent indefinite pausing by a single entity.
+
+
+### `H-02` — Default Admin Role Privileges  *(Severity: High · Status: Unresolved)*
+
+The `DEFAULT_ADMIN_ROLE` is granted to `msg.sender` during construction and has the power to `unpause()` the contract and manage all other roles (including `BRIDGE_ROLE` and `PAUSER_ROLE`). If the `DEFAULT_ADMIN_ROLE` is controlled by a single EOA, it represents a single point of failure. A compromise of this address would grant an attacker full control over the contract's administrative functions, including the ability to unpause the contract against the will of the `PAUSER_ROLE` or revoke/grant any role. (7.3 Access Control, 7.8 Operations)
+
+**Recommendation:** Ensure the `DEFAULT_ADMIN_ROLE` is assigned to a robust multi-signature wallet or a well-secured governance contract. Implement a time-lock for critical role changes.
+
+
+### `M-01` — Hardcoded MAX_SUPPLY  *(Severity: Medium · Status: Unresolved)*
+
+The `MAX_SUPPLY` is a hardcoded constant (`1_000_000_000 * 1e6`). While this provides a clear upper bound, it lacks flexibility. If future protocol needs require an adjustment to the maximum supply, it would necessitate a complete redeployment of the token contract, which is not upgradeable. (7.4 Economic, 7.1 Architecture)
+
+**Recommendation:** For non-upgradeable contracts, hardcoding constants is acceptable if the value is truly immutable. If there's any foreseeable need for flexibility, consider making `MAX_SUPPLY` configurable via a trusted role (e.g., `DEFAULT_ADMIN_ROLE`) with appropriate safeguards (e.g., multi-sig, time-lock).
+
+
+### `L-01` — Constructor Role Granting Visibility  *(Severity: Low · Status: Unresolved)*
+
+While OpenZeppelin's `AccessControl` emits `RoleGranted` events, the explicit `_grantRole` calls within the constructor of `WrappedOCT` do not explicitly emit these events from the `WrappedOCT` context. Although the underlying `_grantRole` function does emit them, it's good practice to ensure all significant state changes, especially during initialization, are clearly auditable directly from the contract's deployment transaction logs. (7.2 Code Security)
+
+**Recommendation:** No direct code change is strictly needed as OpenZeppelin handles event emission. This is an informational note on constructor event visibility. For enhanced clarity, consider emitting custom events in the constructor if specific initialization details need to be highlighted.
+
+
+### `I-01` — Non-Upgradeability  *(Severity: Informational · Status: Unresolved)*
+
+The `WrappedOCT` contract is implemented directly and does not utilize a proxy pattern, meaning it is not upgradeable. Any future changes, bug fixes, or feature additions would require deploying an entirely new contract and migrating users, which can be a complex and disruptive process. (7.7 Upgrades)
+
+**Recommendation:** Acknowledge the non-upgradeable nature. For critical infrastructure or long-term projects, consider an upgradeable architecture (e.g., UUPS proxy) in future iterations to allow for flexibility and bug fixes without redeployment.
 
 ## Token Metrics
 
@@ -46,7 +109,7 @@ Among Octra's security signals, the lack of locked liquidity presents the most s
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
-## Security Findings Detail
+## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
