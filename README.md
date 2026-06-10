@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-64-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-70-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,12 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Mumu the Bull](./solana/mumu-the-bull.md) | MUMU | Solana | 🔴 85/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/mumu-the-bull-sol) |
+| [Vibesterz](./solana/vibesterz.md) | VSTR | Solana | 🔴 90/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/vibesterz-sol) |
+| [NO](./solana/no.md) | NO | Solana | 🔴 90/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/no-sol) |
+| [Chinese Digital Oil Fund](./solana/chinese-digital-oil-fund.md) | CDOF | Solana | 🔴 90/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/chinese-digital-oil-fund-sol) |
+| [Stargate Finance](./ethereum/stargate-finance.md) | STG | Ethereum | 🔴 72/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/stargate-finance-eth) |
+| [Morpho](./ethereum/morpho.md) | MORPHO | Ethereum | 🟠 70/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/morpho-eth) |
 | [UFC Freedom 250](./solana/ufc-freedom-250.md) | UFC250 | Solana | 🔴 90/100 | 2026-06-09 | [↗](https://quantumaudit.app/token/ufc-freedom-250-sol) |
 | [Son Goku](./solana/son-goku.md) | GOKU | Solana | 🔴 85/100 | 2026-06-09 | [↗](https://quantumaudit.app/token/son-goku-sol) |
 | [Dogeus Maximus](./solana/dogeus-maximus.md) | DOGEUS | Solana | 🔴 85/100 | 2026-06-09 | [↗](https://quantumaudit.app/token/dogeus-maximus-sol) |
@@ -36,18 +42,12 @@
 | [Hog McCrankerson](./solana/hog-mccrankerson.md) | HOG | Solana | 🔴 85/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/hog-mccrankerson-sol) |
 | [penispoop420](./solana/penispoop420.md) | PP420 | Solana | 🟡 35/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/penispoop420-sol) |
 | [Staked Bank](./solana/staked-bank.md) | STAKE | Solana | 🔴 90/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/staked-bank-sol) |
-| [Gensyn](./ethereum/gensyn.md) | AI | Ethereum | 🔴 72/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/gensyn-eth) |
-| [XMAQUINA](./base/xmaquina.md) | DEUS | Base | 🟢 20/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/xmaquina-base) |
-| [assface](./solana/assface.md) | ASSFACE | Solana | 🔴 95/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/assface-sol) |
-| [TOES](./solana/toes.md) | TOESCOIN | Solana | 🔴 90/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/toes-sol) |
-| [Injective](./ethereum/injective.md) | INJ | Ethereum | 🔴 90/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/injective-eth) |
-| [Venice Token](./base/venice-token.md) | VVV | Base | 🔴 85/100 | 2026-05-29 | [↗](https://quantumaudit.app/token/venice-token-base) |
 
 ---
 
 ## Browse by Network
 
-[Solana (45)](./solana/README.md) · [Ethereum (12)](./ethereum/README.md) · [Base (5)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (49)](./solana/README.md) · [Ethereum (14)](./ethereum/README.md) · [Base (5)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 

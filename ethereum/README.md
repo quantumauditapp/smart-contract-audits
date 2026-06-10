@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**12 reports** · Updated daily · [← All Networks](../README.md)
+**14 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Stargate Finance](./stargate-finance.md) | STG | 🔴 72/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/stargate-finance-eth) |
+| [Morpho](./morpho.md) | MORPHO | 🟠 70/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/morpho-eth) |
 | [Ondo](./ondo.md) | ONDO | 🔴 72/100 Critical Risk | 2026-06-05 | [↗](https://quantumaudit.app/token/ondo-eth) |
 | [Worldcoin](./worldcoin.md) | WLD | 🔴 75/100 Critical Risk | 2026-06-02 | [↗](https://quantumaudit.app/token/worldcoin-eth) |
 | [Portal](./portal.md) | PORTAL | 🟡 45/100 Medium Risk | 2026-06-01 | [↗](https://quantumaudit.app/token/portal-eth) |

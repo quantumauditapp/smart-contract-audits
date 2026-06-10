@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**45 reports** · Updated daily · [← All Networks](../README.md)
+**49 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Mumu the Bull](./mumu-the-bull.md) | MUMU | 🔴 85/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/mumu-the-bull-sol) |
+| [Vibesterz](./vibesterz.md) | VSTR | 🔴 90/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/vibesterz-sol) |
+| [NO](./no.md) | NO | 🔴 90/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/no-sol) |
+| [Chinese Digital Oil Fund](./chinese-digital-oil-fund.md) | CDOF | 🔴 90/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/chinese-digital-oil-fund-sol) |
 | [UFC Freedom 250](./ufc-freedom-250.md) | UFC250 | 🔴 90/100 Critical Risk | 2026-06-09 | [↗](https://quantumaudit.app/token/ufc-freedom-250-sol) |
 | [Son Goku](./son-goku.md) | GOKU | 🔴 85/100 Critical Risk | 2026-06-09 | [↗](https://quantumaudit.app/token/son-goku-sol) |
 | [Dogeus Maximus](./dogeus-maximus.md) | DOGEUS | 🔴 85/100 Critical Risk | 2026-06-09 | [↗](https://quantumaudit.app/token/dogeus-maximus-sol) |
