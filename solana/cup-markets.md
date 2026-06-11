@@ -2,14 +2,14 @@
 token: Cup Markets
 ticker: CUP
 network: solana
-risk_score: 72
-status: critical
+risk_score: 61
+status: high
 date: 2026-06-10
 ---
 
 # Cup Markets (CUP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 61/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cup-markets-sol)
 

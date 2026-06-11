@@ -2,14 +2,14 @@
 token: Purple Bitcoin
 ticker: PBTC
 network: solana
-risk_score: 72
-status: critical
+risk_score: 59
+status: high
 date: 2026-06-10
 ---
 
 # Purple Bitcoin (PBTC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 59/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/purple-bitcoin-sol)
 

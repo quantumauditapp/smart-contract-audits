@@ -2,14 +2,14 @@
 token: Staked Bank
 ticker: STAKE
 network: solana
-risk_score: 90
+risk_score: 71
 status: critical
 date: 2026-06-10
 ---
 
 # Staked Bank (STAKE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 71/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/staked-bank-sol)
 
@@ -17,23 +17,23 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Staked Bank (Stake) token mint audit reveals a well-configured SPL Token-2022 mint with no active mint or freeze authorities, ensuring a fixed supply and preventing account freezing. No transfer hooks or permanent delegates are configured, and metadata is immutable. Holder concentration data was unavailable from direct RPC queries, but RugCheck.xyz flagged high ownership by top holders.
+This audit of the Staked Bank (Stake) SPL token mint found no critical or high-severity issues based on the available on-chain data and external security signals. The mint and freeze authorities are revoked, and no Token-2022 extensions that introduce centralisation risks (like transfer hooks or permanent delegates) are active. Holder concentration data was unavailable from Solana RPC.
 
-> **Final Recommendation:** The Staked Bank (Stake) token mint appears to be well-configured with critical authorities revoked, offering a fixed supply and preventing account freezing. While direct holder concentration data was unavailable, RugCheck.xyz's 'high ownership' flag warrants caution regarding potential market manipulation. Users should consider this centralization risk and the moderate liquidity when making investment decisions. For enhanced due diligence, consider a Premium Deploy option to investigate the RugCheck findings further and potentially analyze off-chain team information.
+> **Final Recommendation:** Based on the available data, the Staked Bank (Stake) token appears to have a robust security posture regarding its core mint properties, with both mint and freeze authorities revoked. Holders should be aware that direct holder concentration percentages were unavailable, so while RugCheck flagged 'high ownership', the exact distribution could not be verified. Investors should monitor liquidity and trading volume for any significant changes. For enhanced due diligence, consider a Premium Deploy audit to include deeper off-chain analysis and real-time monitoring of holder distribution.
 
 ## Security Analysis
 
-The Staked Bank (Stake) token mint audit reveals a well-configured SPL Token-2022 mint with no active mint or freeze authorities, ensuring a fixed supply and preventing account freezing. No transfer hooks or permanent delegates are configured, and metadata is immutable. Holder concentration data was unavailable from direct RPC queries, but RugCheck.xyz flagged high ownership by top holders.
+This audit of the Staked Bank (Stake) SPL token mint found no critical or high-severity issues based on the available on-chain data and external security signals. The mint and freeze authorities are revoked, and no Token-2022 extensions that introduce centralisation risks (like transfer hooks or permanent delegates) are active. Holder concentration data was unavailable from Solana RPC.
 
-The Staked Bank (Stake) token mint appears to be well-configured with critical authorities revoked, offering a fixed supply and preventing account freezing. While direct holder concentration data was unavailable, RugCheck.xyz's 'high ownership' flag warrants caution regarding potential market manipulation. Users should consider this centralization risk and the moderate liquidity when making investment decisions. For enhanced due diligence, consider a Premium Deploy option to investigate the RugCheck findings further and potentially analyze off-chain team information.
+Based on the available data, the Staked Bank (Stake) token appears to have a robust security posture regarding its core mint properties, with both mint and freeze authorities revoked. Holders should be aware that direct holder concentration percentages were unavailable, so while RugCheck flagged 'high ownership', the exact distribution could not be verified. Investors should monitor liquidity and trading volume for any significant changes. For enhanced due diligence, consider a Premium Deploy audit to include deeper off-chain analysis and real-time monitoring of holder distribution.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The Staked Bank (Stake) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and preventing any accounts from being frozen. No Tok |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $15,856 USD available on DEXs, and a healthy 24-hour volume of $4,652, resulting in a normal Volume/Liquidity Ratio of 0.29. The DEX pair has been active for |
-| **Upgrades** | 6/10 | Low | The token mint's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning the token's supply cannot be increased and accounts cannot be frozen. No Token-2022 extensions that wo |
+| **Technical** | 6/10 | Low | The Staked Bank (Stake) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked (None), indicating that no new tokens can be minted and no existing token accoun |
+| **Governance / Economics** | 6/10 | Low | The token exhibits moderate liquidity with $15,571 USD available on DEXs. The 24-hour trading volume of $5,081 results in a healthy volume/liquidity ratio of 0.33, suggesting organic trading activity  |
+| **Upgrades** | 6/10 | Low | The Staked Bank (Stake) token mint has both its mint and freeze authorities revoked (None), meaning its supply and transferability parameters are immutable. The token is an SPL Token-2022, but no muta |
 
 ## Security Findings
 
@@ -70,7 +70,7 @@ Input did not include enough context to reliably evaluate contract behavior or u
 | **Liquidity** | $36.3K |
 | **Volume / Liquidity** | 3.9× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 64.6% of supply |
+| **Top-10 Holders** | 65.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
 ## Security Flags (3/5 passed)

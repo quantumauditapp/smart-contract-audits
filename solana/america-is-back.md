@@ -2,14 +2,14 @@
 token: America Is Back
 ticker: AMERICA
 network: solana
-risk_score: 90
-status: critical
+risk_score: 39
+status: medium
 date: 2026-06-10
 ---
 
 # America Is Back (AMERICA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/america-is-back-sol)
 
@@ -17,23 +17,23 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The America Is Back (AMERICA) token mint exhibits no critical or high-severity risks based on available on-chain data and external security signals. Mint and freeze authorities are revoked, and no Token-2022 extensions that introduce centralisation risks are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+The America Is Back (AMERICA) token mint on Solana exhibits a robust security configuration with both mint and freeze authorities revoked. No Token-2022 extensions that introduce centralisation risks, such as transfer hooks or permanent delegates, are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-> **Final Recommendation:** Based on the available data, the America Is Back (AMERICA) token mint appears to have a robust security posture with critical authorities revoked. Holders should be aware that holder concentration data was unavailable, which could indicate potential market manipulation risks if a few addresses control a large portion of the supply. For a premium deployment, consider integrating real-time holder distribution monitoring to provide a complete risk profile.
+> **Final Recommendation:** The America Is Back (AMERICA) token presents a strong technical security posture with critical authorities revoked and no centralizing Token-2022 extensions active. However, the absence of holder concentration data means that potential risks from concentrated supply cannot be assessed. Users should be aware of this information gap and consider the implications for price stability. For a comprehensive risk assessment, obtaining holder distribution data is crucial. A Premium Deploy option is not applicable as this is an existing SPL token mint.
 
 ## Security Analysis
 
-The America Is Back (AMERICA) token mint exhibits no critical or high-severity risks based on available on-chain data and external security signals. Mint and freeze authorities are revoked, and no Token-2022 extensions that introduce centralisation risks are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+The America Is Back (AMERICA) token mint on Solana exhibits a robust security configuration with both mint and freeze authorities revoked. No Token-2022 extensions that introduce centralisation risks, such as transfer hooks or permanent delegates, are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-Based on the available data, the America Is Back (AMERICA) token mint appears to have a robust security posture with critical authorities revoked. Holders should be aware that holder concentration data was unavailable, which could indicate potential market manipulation risks if a few addresses control a large portion of the supply. For a premium deployment, consider integrating real-time holder distribution monitoring to provide a complete risk profile.
+The America Is Back (AMERICA) token presents a strong technical security posture with critical authorities revoked and no centralizing Token-2022 extensions active. However, the absence of holder concentration data means that potential risks from concentrated supply cannot be assessed. Users should be aware of this information gap and consider the implications for price stability. For a comprehensive risk assessment, obtaining holder distribution data is crucial. A Premium Deploy option is not applicable as this is an existing SPL token mint.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The America Is Back (AMERICA) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no accounts can be frozen |
-| **Governance / Economics** | 6/10 | Low | The token exhibits moderate liquidity with $105,218 USD available on DEXs, and a 24-hour volume of $153,579. The Volume/Liquidity Ratio is 1.46, which is considered normal and does not suggest wash tr |
-| **Upgrades** | 6/10 | Low | The mint authority and freeze authority are both revoked, meaning the core parameters of the token cannot be altered by any single entity. The token uses the spl-token-2022 program but does not have a |
+| **Technical** | 6/10 | Low | 7.1 Architecture & 7.3 Access Control: The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be  |
+| **Governance / Economics** | 6/10 | Low | 7.4 Economic: The token has a liquidity of $104,250 USD and a 24-hour volume of $111,215, indicating moderate trading activity. The volume/liquidity ratio of 1.07 is normal, suggesting organic trading |
+| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The token's mint and freeze authorities are revoked, meaning its core parameters cannot be altered post-launch. GoPlus data confirms that metadata is not mutable, ensuring the token's na |
 
 ## Security Findings
 
@@ -70,7 +70,7 @@ Input did not include enough context to reliably evaluate contract behavior or u
 | **Liquidity** | $125.5K |
 | **Volume / Liquidity** | 8.7× |
 | **Token Age** | 15d |
-| **Top-10 Holders** | 15.3% of supply |
+| **Top-10 Holders** | 15.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
 ## Security Flags (3/5 passed)

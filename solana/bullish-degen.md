@@ -2,14 +2,14 @@
 token: Bullish Degen
 ticker: BULLISH
 network: solana
-risk_score: 72
-status: critical
+risk_score: 60
+status: high
 date: 2026-06-10
 ---
 
 # Bullish Degen (BULLISH) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 60/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bullish-degen-sol)
 

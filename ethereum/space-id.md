@@ -2,14 +2,14 @@
 token: SPACE ID
 ticker: ID
 network: ethereum
-risk_score: 14
-status: low
+risk_score: 71
+status: critical
 date: 2026-06-11
 ---
 
 # SPACE ID (ID) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 14/100 — 🟢 Low Risk**
+> **Risk Score: 71/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/space-id-eth)
 

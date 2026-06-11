@@ -2,14 +2,14 @@
 token: FIFA WORLD CUP
 ticker: FWC
 network: solana
-risk_score: 90
-status: critical
+risk_score: 41
+status: medium
 date: 2026-06-10
 ---
 
 # FIFA WORLD CUP (FWC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fifa-world-cup-sol)
 
@@ -17,23 +17,23 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This audit of the FIFA WORLD CUP (FWC) SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and external security signals. The mint authority and freeze authority are both revoked, indicating a fixed supply and immutability of account states. Holder concentration data was unavailable, preventing an assessment of supply distribution risk.
+The FIFA WORLD CUP (FWC) SPL Token Mint audit found no critical or high-severity issues based on the available on-chain data and external security signals. The mint and freeze authorities are revoked, indicating a fixed supply and immutability of account states. Holder concentration data was unavailable, preventing an assessment of supply distribution risk.
 
-> **Final Recommendation:** Based on the available data, the FIFA WORLD CUP (FWC) token presents a low-risk profile regarding its on-chain configuration and authorities. The revocation of mint and freeze authorities provides strong assurances against supply dilution and account confiscation. However, the absence of holder concentration data means that potential risks related to whale holdings and market manipulation cannot be assessed. Users should consider this data gap and monitor liquidity and trading patterns. For a premium deployment, ensure all relevant data points, including holder distribution, are available for a comprehensive risk assessment.
+> **Final Recommendation:** Based on the available data, the FIFA WORLD CUP (FWC) token appears to have a robust security posture regarding its core mint properties, with both mint and freeze authorities revoked. Users should be aware that holder concentration data was not available, which could indicate potential market manipulation risks if a few addresses control a large portion of the supply. It is recommended to monitor liquidity and trading volume for any significant changes. For a premium deployment, consider integrating advanced Token-2022 extensions like confidential transfers if privacy is a concern, or a transfer fee for sustainable protocol funding, ensuring all authorities are properly managed or revoked post-setup.
 
 ## Security Analysis
 
-This audit of the FIFA WORLD CUP (FWC) SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and external security signals. The mint authority and freeze authority are both revoked, indicating a fixed supply and immutability of account states. Holder concentration data was unavailable, preventing an assessment of supply distribution risk.
+The FIFA WORLD CUP (FWC) SPL Token Mint audit found no critical or high-severity issues based on the available on-chain data and external security signals. The mint and freeze authorities are revoked, indicating a fixed supply and immutability of account states. Holder concentration data was unavailable, preventing an assessment of supply distribution risk.
 
-Based on the available data, the FIFA WORLD CUP (FWC) token presents a low-risk profile regarding its on-chain configuration and authorities. The revocation of mint and freeze authorities provides strong assurances against supply dilution and account confiscation. However, the absence of holder concentration data means that potential risks related to whale holdings and market manipulation cannot be assessed. Users should consider this data gap and monitor liquidity and trading patterns. For a premium deployment, ensure all relevant data points, including holder distribution, are available for a comprehensive risk assessment.
+Based on the available data, the FIFA WORLD CUP (FWC) token appears to have a robust security posture regarding its core mint properties, with both mint and freeze authorities revoked. Users should be aware that holder concentration data was not available, which could indicate potential market manipulation risks if a few addresses control a large portion of the supply. It is recommended to monitor liquidity and trading volume for any significant changes. For a premium deployment, consider integrating advanced Token-2022 extensions like confidential transfers if privacy is a concern, or a transfer fee for sustainable protocol funding, ensuring all authorities are properly managed or revoked post-setup.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The FWC token is an SPL Token-2022 mint with a total supply of 999,981,213.932627 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be m |
-| **Governance / Economics** | 6/10 | Low | The token has a DEX liquidity of $39,605, with a 24-hour volume of $115,586. The volume/liquidity ratio is 2.92, which is considered normal and does not indicate wash trading. The DEX pair has been ac |
-| **Upgrades** | 6/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and account freezing capabilities are immutable. The token uses the spl-token-2022 program, but no specific upgrada |
+| **Technical** | 5/10 | Low | The FWC token is an SPL Token-2022 mint on Solana. Key authorities, including mint authority and freeze authority, have been revoked, ensuring no new tokens can be minted and no existing accounts can  |
+| **Governance / Economics** | 4/10 | Low | The token exhibits a total DEX liquidity of $42,106 USD, with a 24-hour trading volume of $256,792. The volume-to-liquidity ratio is 6.10, which is not high enough to trigger a wash trading signal (th |
+| **Upgrades** | 5/10 | Low | The FWC token mint has revoked its mint and freeze authorities, meaning its supply and the ability to freeze accounts are immutable. The token is an SPL Token-2022, but it does not implement extension |
 
 ## Security Findings
 
@@ -70,7 +70,7 @@ Input did not include enough context to reliably evaluate contract behavior or u
 | **Liquidity** | $102.7K |
 | **Volume / Liquidity** | 4.5× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 20.8% of supply |
+| **Top-10 Holders** | 27.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
 ## Security Flags (3/5 passed)

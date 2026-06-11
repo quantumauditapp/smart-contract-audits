@@ -2,14 +2,14 @@
 token: Ethena
 ticker: ENA
 network: ethereum
-risk_score: 72
+risk_score: 100
 status: critical
 date: 2026-06-11
 ---
 
 # Ethena (ENA) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 100/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ethena-eth)
 

@@ -2,14 +2,14 @@
 token: Baby Troll
 ticker: BABYTROLL
 network: solana
-risk_score: 85
-status: critical
+risk_score: 45
+status: medium
 date: 2026-06-10
 ---
 
 # Baby Troll (BABYTROLL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 85/100 — 🔴 Critical Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/baby-troll-sol)
 
@@ -17,27 +17,23 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Baby Troll (BABYTROLL) SPL Token Mint on Solana exhibits a robust security configuration with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No Token-2022 extensions like transfer hooks or permanent delegates are active. Holder concentration data was unavailable, and RugCheck.xyz provided a score of 1/100, but no explicit 'RUGGED' verdict was given.
+The Baby Troll (BABYTROLL) SPL token mint demonstrates a secure configuration with both mint and freeze authorities revoked, ensuring a fixed supply and unfreezable accounts. No critical Token-2022 extensions like permanent delegates or transfer hooks are active. Holder concentration data was unavailable, and while no deterministic findings were triggered, a very low RugCheck score (1/100) is noted, which typically suggests caution.
 
-> **Final Recommendation:** The Baby Troll (BABYTROLL) SPL Token Mint demonstrates strong security practices by having both mint and freeze authorities revoked, ensuring a fixed supply and preventing arbitrary account freezing. No potentially risky Token-2022 extensions like permanent delegates or transfer hooks are active, and metadata is immutable.
-
-However, potential holders should note that holder concentration data was unavailable, which prevents a full assessment of distribution risk. While the RugCheck score is very low (1/100), the specific 'RUGGED' verdict was not provided. For a Premium Deploy option, consider a token with fully transparent holder distribution and a higher RugCheck score to mitigate potential market manipulation risks.
+> **Final Recommendation:** Based on the available on-chain data and deterministic audit rules, the Baby Troll (BABYTROLL) token mint presents a low technical risk profile due to the revocation of critical authorities. This configuration ensures a fixed supply and prevents arbitrary freezing of user accounts. However, holder concentration data was unavailable, which limits the assessment of potential market manipulation risks. Additionally, the extremely low RugCheck score (1/100) suggests that while no specific deterministic vulnerabilities were found, broader caution is warranted regarding the project's overall trustworthiness. Investors should consider this external signal and conduct further due diligence beyond the scope of this technical audit.
 
 ## Security Analysis
 
-The Baby Troll (BABYTROLL) SPL Token Mint on Solana exhibits a robust security configuration with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No Token-2022 extensions like transfer hooks or permanent delegates are active. Holder concentration data was unavailable, and RugCheck.xyz provided a score of 1/100, but no explicit 'RUGGED' verdict was given.
+The Baby Troll (BABYTROLL) SPL token mint demonstrates a secure configuration with both mint and freeze authorities revoked, ensuring a fixed supply and unfreezable accounts. No critical Token-2022 extensions like permanent delegates or transfer hooks are active. Holder concentration data was unavailable, and while no deterministic findings were triggered, a very low RugCheck score (1/100) is noted, which typically suggests caution.
 
-The Baby Troll (BABYTROLL) SPL Token Mint demonstrates strong security practices by having both mint and freeze authorities revoked, ensuring a fixed supply and preventing arbitrary account freezing. No potentially risky Token-2022 extensions like permanent delegates or transfer hooks are active, and metadata is immutable.
-
-However, potential holders should note that holder concentration data was unavailable, which prevents a full assessment of distribution risk. While the RugCheck score is very low (1/100), the specific 'RUGGED' verdict was not provided. For a Premium Deploy option, consider a token with fully transparent holder distribution and a higher RugCheck score to mitigate potential market manipulation risks.
+Based on the available on-chain data and deterministic audit rules, the Baby Troll (BABYTROLL) token mint presents a low technical risk profile due to the revocation of critical authorities. This configuration ensures a fixed supply and prevents arbitrary freezing of user accounts. However, holder concentration data was unavailable, which limits the assessment of potential market manipulation risks. Additionally, the extremely low RugCheck score (1/100) suggests that while no specific deterministic vulnerabilities were found, broader caution is warranted regarding the project's overall trustworthiness. Investors should consider this external signal and conduct further due diligence beyond the scope of this technical audit.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | 7.1 Architecture: The Baby Troll (BABYTROLL) token is implemented using the spl-token-2022 program, indicating support for advanced features. 7.2 Code Security: As an SPL Token Mint, there is no custo |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic: The token exhibits a liquidity of $82,651 USD and a 24-hour trading volume of $98,956 USD. The volume/liquidity ratio is 1.20, which is considered normal and does not suggest wash tradin |
-| **Upgrades** | 6/10 | Low | 7.3 Access Control: The mint authority and freeze authority are both revoked, meaning no further administrative actions can be taken to alter the token's supply or freeze accounts. 7.7 Upgrades: As an |
+| **Technical** | 1/10 | Low | The Baby Troll (BABYTROLL) token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked (None), which is a strong positive indicator for fixed supply and unfreezable accou |
+| **Governance / Economics** | 1/10 | Low | The token exhibits moderate liquidity at $79,171 USD, with a 24-hour volume of $79,491 USD, resulting in a normal Volume/Liquidity Ratio of 1.00 (7.4 Economic). The DEX pair is 31 days old, providing  |
+| **Upgrades** | 1/10 | Low | The mint authority and freeze authority are both revoked (None), preventing future changes to supply or account freeze status (7.7 Upgrades). The token utilizes the spl-token-2022 program without acti |
 
 ## Security Findings
 
@@ -74,7 +70,7 @@ Input did not include enough context to reliably evaluate contract behavior or u
 | **Liquidity** | $136.1K |
 | **Volume / Liquidity** | 5.6× |
 | **Token Age** | 8d |
-| **Top-10 Holders** | 28.2% of supply |
+| **Top-10 Holders** | 27.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
 ## Security Flags (3/5 passed)

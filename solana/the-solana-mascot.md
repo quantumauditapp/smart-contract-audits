@@ -2,14 +2,14 @@
 token: The Solana Mascot
 ticker: SOLY
 network: solana
-risk_score: 90
-status: critical
+risk_score: 59
+status: high
 date: 2026-06-10
 ---
 
 # The Solana Mascot (SOLY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 59/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-solana-mascot-sol)
 
@@ -17,23 +17,23 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This audit of The Solana Mascot (SOLY) SPL Token Mint found no critical or high-severity issues based on the available on-chain data and external security signals. The mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Holder concentration data was unavailable, and no transfer hook or permanent delegate is configured. RugCheck.xyz assigned a score of 16/100 with a 'Low amount of LP Providers' label.
+This audit of The Solana Mascot (SOLY) SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and external security signals. The mint and freeze authorities have been revoked, and no Token-2022 extensions posing significant risks (like permanent delegate or transfer hook) are active. Holder concentration data was unavailable, which represents an unassessed risk.
 
-> **Final Recommendation:** For potential holders, it is recommended to verify the revocation status of the mint and freeze authorities on-chain to confirm the fixed supply and unfreezable nature of the token. While no critical or high-severity issues were identified, the unavailability of holder concentration data means the distribution risk remains unassessed. The 'Low amount of LP Providers' flag from RugCheck.xyz suggests monitoring liquidity depth. Consider a Premium Deploy option for a deeper, manual review of the token's ecosystem and any associated programs if significant investment is planned.
+> **Final Recommendation:** This token presents a low technical risk profile due to the revocation of critical authorities and the absence of risky Token-2022 extensions. Holders can be confident that the supply is fixed and their tokens cannot be frozen. However, the lack of holder concentration data means the risk of market manipulation by large holders remains unknown. Before making significant investments, it is advisable to monitor on-chain holder distribution if that data becomes available. For enhanced security and monitoring, consider a Premium Deploy option with continuous on-chain analysis.
 
 ## Security Analysis
 
-This audit of The Solana Mascot (SOLY) SPL Token Mint found no critical or high-severity issues based on the available on-chain data and external security signals. The mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Holder concentration data was unavailable, and no transfer hook or permanent delegate is configured. RugCheck.xyz assigned a score of 16/100 with a 'Low amount of LP Providers' label.
+This audit of The Solana Mascot (SOLY) SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and external security signals. The mint and freeze authorities have been revoked, and no Token-2022 extensions posing significant risks (like permanent delegate or transfer hook) are active. Holder concentration data was unavailable, which represents an unassessed risk.
 
-For potential holders, it is recommended to verify the revocation status of the mint and freeze authorities on-chain to confirm the fixed supply and unfreezable nature of the token. While no critical or high-severity issues were identified, the unavailability of holder concentration data means the distribution risk remains unassessed. The 'Low amount of LP Providers' flag from RugCheck.xyz suggests monitoring liquidity depth. Consider a Premium Deploy option for a deeper, manual review of the token's ecosystem and any associated programs if significant investment is planned.
+This token presents a low technical risk profile due to the revocation of critical authorities and the absence of risky Token-2022 extensions. Holders can be confident that the supply is fixed and their tokens cannot be frozen. However, the lack of holder concentration data means the risk of market manipulation by large holders remains unknown. Before making significant investments, it is advisable to monitor on-chain holder distribution if that data becomes available. For enhanced security and monitoring, consider a Premium Deploy option with continuous on-chain analysis.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | Regarding 7.1 Architecture and 7.3 Access Control, The Solana Mascot (SOLY) is an SPL Token-2022 mint with both the mint authority and freeze authority revoked, indicating a fixed supply and unfreezab |
-| **Governance / Economics** | 6/10 | Medium | For 7.4 Economic aspects, the token has a total DEX liquidity of $22,990, which is moderate. The 24-hour volume is $43,434, resulting in a normal Volume/Liquidity Ratio of 1.89, not indicating wash tr |
-| **Upgrades** | 6/10 | Low | Concerning 7.7 Upgrades and 7.8 Operations, the mint authority and freeze authority for this SPL Token-2022 mint are both revoked, meaning the token's supply is fixed and accounts cannot be frozen. Th |
+| **Technical** | 6/10 | Low | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.8 Operations: The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, prev |
+| **Governance / Economics** | 6/10 | Medium | 7.4 Economic: The token exhibits moderate liquidity with $21,076 USD available on DEXs, which is sufficient for small trades but may lead to slippage for larger positions. The 24-hour volume to liquid |
+| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The token's configuration is highly immutable, with both mint and freeze authorities revoked. This means no further tokens can be minted, and no accounts can be frozen. Furthermore, GoPl |
 
 ## Security Findings
 
@@ -70,7 +70,7 @@ Input did not include enough context to reliably evaluate contract behavior or u
 | **Liquidity** | $25.8K |
 | **Volume / Liquidity** | 2.4× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | 27.3% of supply |
+| **Top-10 Holders** | 28.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 25092 buys / 56753 sells |
 

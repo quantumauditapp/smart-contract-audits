@@ -2,14 +2,14 @@
 token: ttt
 ticker: TTTT
 network: solana
-risk_score: 72
+risk_score: 100
 status: critical
 date: 2026-06-10
 ---
 
 # ttt (TTTT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 100/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ttt-sol)
 

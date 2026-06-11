@@ -2,14 +2,14 @@
 token: Pudgy Penguins
 ticker: PENGU
 network: solana
-risk_score: 72
-status: critical
+risk_score: 62
+status: high
 date: 2026-06-10
 ---
 
 # Pudgy Penguins (PENGU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 62/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pudgy-penguins-sol)
 

@@ -2,14 +2,14 @@
 token: Law Of Attraction
 ticker: LOA
 network: solana
-risk_score: 90
-status: critical
+risk_score: 56
+status: high
 date: 2026-06-10
 ---
 
 # Law Of Attraction (LOA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 56/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/law-of-attraction-sol)
 
@@ -17,27 +17,23 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Law Of Attraction (LOA) token mint shows no critical or high-severity risks based on available on-chain data and external security signals. Key authorities like mint and freeze are revoked, and no Token-2022 extensions posing immediate risks are active. Holder concentration data was unavailable, and RugCheck flagged "Top 10 holders high ownership" without a "RUGGED" verdict.
+This Solana SPL Token Mint, Law Of Attraction (LOA), demonstrates strong security configurations with both mint and freeze authorities revoked, and no active transfer hooks or mutable metadata. Holder concentration data was unavailable, though RugCheck.xyz flagged 'Top 10 holders high ownership' and 'High holder correlation' as risk labels. No critical or high-severity vulnerabilities were identified based on the provided on-chain facts.
 
-> **Final Recommendation:** Based on the available on-chain data, the Law Of Attraction (LOA) token mint appears to have a low-risk profile regarding its core token mechanics. Both mint and freeze authorities are revoked, which is a strong positive indicator for supply and account security. No concerning Token-2022 extensions are active, and metadata is immutable. Users can verify these authority revocations on-chain before interacting with the token. 
-
-However, holder concentration data was unavailable from direct RPC queries, and RugCheck flagged "Top 10 holders high ownership" and "High holder correlation." While not triggering a critical finding in this audit, this suggests a potential for market manipulation or significant price impact from large holders. Users should consider this aspect and the general market dynamics before engaging with the token. For a premium deployment, ensure comprehensive liquidity p…
+> **Final Recommendation:** Based on the available on-chain data, the Law Of Attraction (LOA) token mint appears to be securely configured with critical authorities revoked and no active malicious Token-2022 extensions. Holders should be aware that specific holder concentration percentages were unavailable, and while RugCheck.xyz flagged high ownership by top holders, the exact impact on market stability cannot be fully assessed without this data. It is recommended to monitor holder distribution independently if this is a concern. For enhanced security, consider a Premium Deploy option for future token launches, which includes comprehensive pre-deployment checks and real-time monitoring.
 
 ## Security Analysis
 
-The Law Of Attraction (LOA) token mint shows no critical or high-severity risks based on available on-chain data and external security signals. Key authorities like mint and freeze are revoked, and no Token-2022 extensions posing immediate risks are active. Holder concentration data was unavailable, and RugCheck flagged "Top 10 holders high ownership" without a "RUGGED" verdict.
+This Solana SPL Token Mint, Law Of Attraction (LOA), demonstrates strong security configurations with both mint and freeze authorities revoked, and no active transfer hooks or mutable metadata. Holder concentration data was unavailable, though RugCheck.xyz flagged 'Top 10 holders high ownership' and 'High holder correlation' as risk labels. No critical or high-severity vulnerabilities were identified based on the provided on-chain facts.
 
-Based on the available on-chain data, the Law Of Attraction (LOA) token mint appears to have a low-risk profile regarding its core token mechanics. Both mint and freeze authorities are revoked, which is a strong positive indicator for supply and account security. No concerning Token-2022 extensions are active, and metadata is immutable. Users can verify these authority revocations on-chain before interacting with the token. 
-
-However, holder concentration data was unavailable from direct RPC queries, and RugCheck flagged "Top 10 holders high ownership" and "High holder correlation." While not triggering a critical finding in this audit, this suggests a potential for market manipulation or significant price impact from large holders. Users should consider this aspect and the general market dynamics before engaging with the token. For a premium deployment, ensure comprehensive liquidity p…
+Based on the available on-chain data, the Law Of Attraction (LOA) token mint appears to be securely configured with critical authorities revoked and no active malicious Token-2022 extensions. Holders should be aware that specific holder concentration percentages were unavailable, and while RugCheck.xyz flagged high ownership by top holders, the exact impact on market stability cannot be fully assessed without this data. It is recommended to monitor holder distribution independently if this is a concern. For enhanced security, consider a Premium Deploy option for future token launches, which includes comprehensive pre-deployment checks and real-time monitoring.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint (7.1 Architecture). Its mint authority is revoked (7.3 Access Control), preventing further token creation and supply dilution. The freeze authority is also revoked  |
-| **Governance / Economics** | 10/10 | Low | The token has a liquidity of $155,548 USD and a 24-hour volume of $222,714 USD, resulting in a normal Volume/Liquidity Ratio of 1.43 (7.4 Economic). The DEX pair is 18 days old, providing some track r |
-| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both revoked, meaning the core parameters of the token supply and account control cannot be changed (7.7 Upgrades). The token is an SPL Token-2022, but no u |
+| **Technical** | 6/10 | Low | The Law Of Attraction (LOA) token is an SPL Token-2022 mint on Solana. It exhibits robust security configurations with both the mint authority and freeze authority explicitly revoked, preventing furth |
+| **Governance / Economics** | 6/10 | Medium | The token's economic profile shows a healthy liquidity of $152,023 USD and a normal 24-hour volume to liquidity ratio of 1.41, indicating organic trading activity. The DEX pair has been active for 19  |
+| **Upgrades** | 6/10 | Low | The Law Of Attraction (LOA) token mint has a strong immutability posture. Both the mint and freeze authorities have been permanently revoked, ensuring no further changes to supply or account states ca |
 
 ## Security Findings
 

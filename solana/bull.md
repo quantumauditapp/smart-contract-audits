@@ -2,14 +2,14 @@
 token: Bull
 ticker: BULL
 network: solana
-risk_score: 70
+risk_score: 59
 status: high
 date: 2026-06-10
 ---
 
 # Bull (BULL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 59/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bull-sol)
 

@@ -2,14 +2,14 @@
 token: Bitcoin Bank
 ticker: BTCBANK
 network: solana
-risk_score: 90
-status: critical
+risk_score: 49
+status: high
 date: 2026-06-10
 ---
 
 # Bitcoin Bank (BTCBANK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 49/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bitcoin-bank-sol)
 
@@ -17,27 +17,23 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This audit of the Bitcoin Bank (BTCBANK) SPL Token Mint found no critical or high-severity risks. The mint and freeze authorities are revoked, indicating a fixed supply and no ability to freeze user funds. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
+The Bitcoin Bank (BTCBANK) SPL Token Mint on Solana demonstrates a strong technical configuration with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No Token-2022 extensions like transfer hooks or permanent delegates are active, and metadata is immutable. Holder concentration data was unavailable for this audit, which is a key factor for assessing market manipulation risk.
 
-> **Final Recommendation:** The Bitcoin Bank (BTCBANK) token presents a low-risk profile based on available on-chain data. Both mint and freeze authorities are revoked, which are critical security features for preventing supply dilution and fund confiscation. The token also lacks active transfer hooks or mutable metadata, contributing to predictable behavior.
-
-However, holder concentration data was unavailable, which is a key metric for assessing potential market manipulation risks. Users should consider this information gap and verify holder distribution independently if this is a concern. For enhanced security, consider a Premium Deploy option that includes continuous monitoring of on-chain metrics and alerts for any unexpected changes in token state or market dynamics.
+> **Final Recommendation:** This token presents a low technical risk profile due to the revocation of critical authorities and the absence of mutable features or active Token-2022 extensions that could alter token behavior. Holders should be aware that holder concentration data was not available for this audit, which is an important factor for assessing potential market manipulation. It is recommended to monitor on-chain holder distribution independently before making significant investments. No further technical audit is required for the mint configuration itself.
 
 ## Security Analysis
 
-This audit of the Bitcoin Bank (BTCBANK) SPL Token Mint found no critical or high-severity risks. The mint and freeze authorities are revoked, indicating a fixed supply and no ability to freeze user funds. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
+The Bitcoin Bank (BTCBANK) SPL Token Mint on Solana demonstrates a strong technical configuration with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No Token-2022 extensions like transfer hooks or permanent delegates are active, and metadata is immutable. Holder concentration data was unavailable for this audit, which is a key factor for assessing market manipulation risk.
 
-The Bitcoin Bank (BTCBANK) token presents a low-risk profile based on available on-chain data. Both mint and freeze authorities are revoked, which are critical security features for preventing supply dilution and fund confiscation. The token also lacks active transfer hooks or mutable metadata, contributing to predictable behavior.
-
-However, holder concentration data was unavailable, which is a key metric for assessing potential market manipulation risks. Users should consider this information gap and verify holder distribution independently if this is a concern. For enhanced security, consider a Premium Deploy option that includes continuous monitoring of on-chain metrics and alerts for any unexpected changes in token state or market dynamics.
+This token presents a low technical risk profile due to the revocation of critical authorities and the absence of mutable features or active Token-2022 extensions that could alter token behavior. Holders should be aware that holder concentration data was not available for this audit, which is an important factor for assessing potential market manipulation. It is recommended to monitor on-chain holder distribution independently before making significant investments. No further technical audit is required for the mint configuration itself.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | 7.1 Architecture: The Bitcoin Bank (BTCBANK) token is an SPL Token-2022 mint. 7.2 Code Security: As an SPL token mint, there is no custom source code on-chain to review; its behavior is governed by th |
-| **Governance / Economics** | 6/10 | Low | 7.4 Economic: The token exhibits healthy liquidity with $2,047,084 USD available on DEXs, and a 24-hour volume of $102,643 USD, resulting in a normal Volume/Liquidity Ratio of 0.05. The DEX pair has b |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The mint authority and freeze authority have both been revoked, indicating that the token's supply is fixed and no accounts can be frozen post-launch. GoPlus data confirms that metadata  |
+| **Technical** | 6/10 | Low | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.6 External: The SPL Token Mint is configured using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked |
+| **Governance / Economics** | 6/10 | Low | 7.4 Economic: The token has a total DEX liquidity of $35,597, with a 24-hour volume of $27,761. The Volume/Liquidity Ratio is 0.78, indicating normal trading activity without signs of wash trading. Th |
+| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, indicating that the token's supply and account freezing capabilities are fixed. GoPlus data confirms that metadata is immutable, |
 
 ## Security Findings
 
@@ -74,7 +70,7 @@ Input did not include enough context to reliably evaluate contract behavior or u
 | **Liquidity** | $56.8K |
 | **Volume / Liquidity** | 3.9× |
 | **Token Age** | 15d |
-| **Top-10 Holders** | 36.8% of supply |
+| **Top-10 Holders** | 37.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2817 buys / 1914 sells |
 

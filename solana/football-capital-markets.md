@@ -2,14 +2,14 @@
 token: Football Capital Markets
 ticker: FCM
 network: solana
-risk_score: 35
-status: medium
+risk_score: 59
+status: high
 date: 2026-06-10
 ---
 
 # Football Capital Markets (FCM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 35/100 — 🟡 Medium Risk**
+> **Risk Score: 59/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/football-capital-markets-sol)
 
@@ -17,23 +17,23 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Football Capital Markets (FCM) SPL token mint exhibits strong security configurations with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No Token-2022 extensions that grant administrative control, such as Transfer Hook or Permanent Delegate, are active, and metadata is immutable. Holder concentration data was unavailable, which is a key missing piece for a complete risk assessment.
+The Football Capital Markets (FCM) SPL Token Mint exhibits strong security configurations with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No critical Token-2022 extensions like permanent delegates or transfer hooks are active. However, holder concentration data is unavailable, which prevents a full assessment of potential market manipulation risks.
 
-> **Final Recommendation:** Based on the available on-chain data, the FCM token mint appears to be securely configured with no active administrative authorities that could manipulate supply, freeze accounts, or alter token metadata. The absence of a transfer hook or permanent delegate also reduces operational risks. However, a complete assessment of market manipulation risk is hindered by the unavailability of holder concentration data. Prospective holders should consider the unknown distribution of tokens and monitor for any future changes in liquidity or trading patterns. For a premium deployment, ensuring all relevant market data, including holder distribution, is available for analysis would provide a more comprehensive risk profile.
+> **Final Recommendation:** Given the revoked mint and freeze authorities, the token's supply is fixed, and user accounts cannot be frozen. The absence of active Token-2022 extensions like transfer hooks and permanent delegates reduces operational risks. However, the lack of holder concentration data means the distribution of tokens among top accounts remains unknown, which could indicate potential for price volatility from large holders. Users should consider this data gap and monitor on-chain holder distribution if possible.
 
 ## Security Analysis
 
-The Football Capital Markets (FCM) SPL token mint exhibits strong security configurations with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No Token-2022 extensions that grant administrative control, such as Transfer Hook or Permanent Delegate, are active, and metadata is immutable. Holder concentration data was unavailable, which is a key missing piece for a complete risk assessment.
+The Football Capital Markets (FCM) SPL Token Mint exhibits strong security configurations with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No critical Token-2022 extensions like permanent delegates or transfer hooks are active. However, holder concentration data is unavailable, which prevents a full assessment of potential market manipulation risks.
 
-Based on the available on-chain data, the FCM token mint appears to be securely configured with no active administrative authorities that could manipulate supply, freeze accounts, or alter token metadata. The absence of a transfer hook or permanent delegate also reduces operational risks. However, a complete assessment of market manipulation risk is hindered by the unavailability of holder concentration data. Prospective holders should consider the unknown distribution of tokens and monitor for any future changes in liquidity or trading patterns. For a premium deployment, ensuring all relevant market data, including holder distribution, is available for analysis would provide a more comprehensive risk profile.
+Given the revoked mint and freeze authorities, the token's supply is fixed, and user accounts cannot be frozen. The absence of active Token-2022 extensions like transfer hooks and permanent delegates reduces operational risks. However, the lack of holder concentration data means the distribution of tokens among top accounts remains unknown, which could indicate potential for price volatility from large holders. Users should consider this data gap and monitor on-chain holder distribution if possible.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | 7.1 Architecture & 7.2 Code Security: The FCM token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority are revoked (None), indicating that no entity can mint new tokens or freeze  |
-| **Governance / Economics** | 6/10 | Low | 7.4 Economic: The token has a healthy liquidity of $172,411 USD on DEXs. The 24-hour volume of $511,644 USD results in a Volume/Liquidity Ratio of 2.97, which is considered normal and does not signal  |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The token's Mint and Freeze authorities are revoked, meaning no further administrative control can be exercised over the token's supply or account states. As an SPL Token-2022, it suppor |
+| **Technical** | 6/10 | Low | The Football Capital Markets (FCM) token is implemented using the `spl-token-2022` program, indicating modern Solana token standards. Access control is robust, with both the mint authority and freeze  |
+| **Governance / Economics** | 6/10 | Low | Economically, the token exhibits moderate liquidity of $193,546 USD with a 24-hour trading volume of $1,069,454 USD, suggesting active trading (7.4 Economic). The pair is relatively new, at 16 days ol |
+| **Upgrades** | 6/10 | Low | The token's upgradeability posture is secure, as both mint and freeze authorities are revoked, preventing any unilateral changes to token supply or account status (7.7 Upgrades). Furthermore, GoPlus d |
 
 ## Security Findings
 

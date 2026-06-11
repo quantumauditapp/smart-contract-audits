@@ -2,14 +2,14 @@
 token: Velvet
 ticker: VELVET
 network: base
-risk_score: 90
+risk_score: 100
 status: critical
 date: 2026-06-11
 ---
 
 # Velvet (VELVET) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 100/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/velvet-base)
 

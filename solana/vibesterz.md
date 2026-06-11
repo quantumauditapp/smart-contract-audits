@@ -2,14 +2,14 @@
 token: Vibesterz
 ticker: VSTR
 network: solana
-risk_score: 90
-status: critical
+risk_score: 62
+status: high
 date: 2026-06-10
 ---
 
 # Vibesterz (VSTR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 62/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vibesterz-sol)
 
@@ -17,23 +17,23 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Vibesterz (VSTR) SPL Token Mint exhibits a low-risk profile based on the available on-chain data. Both mint and freeze authorities have been revoked, indicating a fixed supply and immutability of account states. No Token-2022 extensions posing significant risks, such as transfer hooks or permanent delegates, are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+This SPL Token Mint, Vibesterz (VSTR), demonstrates a strong security posture with both mint and freeze authorities revoked, ensuring a fixed supply and preventing account freezing. No critical or high-severity issues were identified based on the available on-chain data and external security signals. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-> **Final Recommendation:** Based on the available on-chain data, the Vibesterz (VSTR) token presents a low-risk profile. The revocation of mint and freeze authorities, along with immutable metadata and the absence of risky Token-2022 extensions, are positive indicators. However, potential holders should be aware that holder concentration data was unavailable, which could hide significant whale risk. It is recommended to monitor the token's liquidity and trading volume for stability and to verify the project's off-chain reputation and roadmap before making significant investments. For projects requiring enhanced security, consider a Premium Deploy option with continuous monitoring and real-time threat intelligence.
+> **Final Recommendation:** Based on the audit findings, the Vibesterz (VSTR) token appears to be well-configured from a security perspective, with key authorities revoked and no active malicious extensions. Users should be aware that holder concentration data was not available, so a full assessment of potential market manipulation risks from large holders could not be made. For a Premium Deploy, consider monitoring the token's liquidity and trading volume over a longer period to establish a more robust track record.
 
 ## Security Analysis
 
-The Vibesterz (VSTR) SPL Token Mint exhibits a low-risk profile based on the available on-chain data. Both mint and freeze authorities have been revoked, indicating a fixed supply and immutability of account states. No Token-2022 extensions posing significant risks, such as transfer hooks or permanent delegates, are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+This SPL Token Mint, Vibesterz (VSTR), demonstrates a strong security posture with both mint and freeze authorities revoked, ensuring a fixed supply and preventing account freezing. No critical or high-severity issues were identified based on the available on-chain data and external security signals. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-Based on the available on-chain data, the Vibesterz (VSTR) token presents a low-risk profile. The revocation of mint and freeze authorities, along with immutable metadata and the absence of risky Token-2022 extensions, are positive indicators. However, potential holders should be aware that holder concentration data was unavailable, which could hide significant whale risk. It is recommended to monitor the token's liquidity and trading volume for stability and to verify the project's off-chain reputation and roadmap before making significant investments. For projects requiring enhanced security, consider a Premium Deploy option with continuous monitoring and real-time threat intelligence.
+Based on the audit findings, the Vibesterz (VSTR) token appears to be well-configured from a security perspective, with key authorities revoked and no active malicious extensions. Users should be aware that holder concentration data was not available, so a full assessment of potential market manipulation risks from large holders could not be made. For a Premium Deploy, consider monitoring the token's liquidity and trading volume over a longer period to establish a more robust track record.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 10/10 | Low | The Vibesterz (VSTR) token is an SPL Token-2022 mint. A key security strength is the revocation of both the Mint Authority and Freeze Authority, meaning no new tokens can be minted and no existing acc |
-| **Governance / Economics** | 10/10 | Low | The token's economic profile shows moderate liquidity with $20,373 USD available on DEXs (Fact: Liquidity (USD): $20,373). The 24-hour trading volume of $20,459 USD is consistent with the liquidity, r |
-| **Upgrades** | 10/10 | Low | The token's immutability is a strong point, as both mint and freeze authorities have been revoked, preventing future changes to supply or account states (Fact: Mint Authority: revoked (None), Freeze A |
+| **Technical** | 6/10 | Low | The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability regarding account freezing. No Transfer Hook is active,  |
+| **Governance / Economics** | 6/10 | Low | The token exhibits moderate liquidity with $18,817 USD available on DEXs. The 24-hour volume of $39,027 results in a normal Volume/Liquidity Ratio of 2.07, not indicating wash trading. The DEX pair is |
+| **Upgrades** | 6/10 | Low | The token's core parameters, including minting and freezing capabilities, are immutable as both the mint and freeze authorities have been revoked. It utilizes the spl-token-2022 program but does not i |
 
 ## Security Findings
 
@@ -70,7 +70,7 @@ Input did not include enough context to reliably evaluate contract behavior or u
 | **Liquidity** | $23.6K |
 | **Volume / Liquidity** | 3.0× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | 43.2% of supply |
+| **Top-10 Holders** | 43.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 840 buys / 750 sells |
 

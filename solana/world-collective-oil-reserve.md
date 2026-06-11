@@ -2,14 +2,14 @@
 token: World Collective Oil Reserve
 ticker: WCOR
 network: solana
-risk_score: 90
-status: critical
+risk_score: 57
+status: high
 date: 2026-06-10
 ---
 
 # World Collective Oil Reserve (WCOR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 57/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-collective-oil-reserve-sol)
 
@@ -17,33 +17,33 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The World Collective Oil Reserve (WCOR) SPL token mint appears to be securely configured with both mint and freeze authorities revoked, preventing further supply inflation or account freezing. No critical or high-severity vulnerabilities were identified based on the available on-chain metadata and external security signals. Holder concentration data was unavailable, which prevents a full assessment of market manipulation risk.
+This audit of the World Collective Oil Reserve (WCOR) SPL token mint identified a High-severity risk due to the default frozen state for new holder accounts, requiring explicit unfreezing by an authority. While mint and freeze authorities are revoked, the lack of holder distribution data prevents a full assessment of supply centralization risk. RugCheck.xyz provides a very low score of 1/100, indicating potential underlying issues not directly covered by our deterministic rules.
 
-> **Final Recommendation:** Based on the available data, the WCOR token mint exhibits a robust security configuration with no active mutable authorities. Holders should be aware that holder concentration data was not available for this audit, which is crucial for assessing potential market manipulation risks from concentrated holdings. It is recommended to monitor on-chain holder distribution if this data becomes available. No further specific actions are required regarding the token's mint configuration.
+> **Final Recommendation:** Holders should be aware of the 'Default Frozen State' for new accounts, which means an active issuer is required to unfreeze any newly created token accounts before they can be used. This introduces a dependency and potential point of failure if the issuer becomes unresponsive. Given the 'RugCheck Score' of 1/100, further due diligence into the project's background and team is strongly recommended. Consider the implications of unavailable holder concentration data, as this prevents a full assessment of supply centralization risk. For enhanced security and transparency, consider a Premium Deploy option that includes a comprehensive review of the issuer's operational procedures for unfreezing accounts and a deeper analysis of the project's reputation.
 
 ## Security Analysis
 
-The World Collective Oil Reserve (WCOR) SPL token mint appears to be securely configured with both mint and freeze authorities revoked, preventing further supply inflation or account freezing. No critical or high-severity vulnerabilities were identified based on the available on-chain metadata and external security signals. Holder concentration data was unavailable, which prevents a full assessment of market manipulation risk.
+This audit of the World Collective Oil Reserve (WCOR) SPL token mint identified a High-severity risk due to the default frozen state for new holder accounts, requiring explicit unfreezing by an authority. While mint and freeze authorities are revoked, the lack of holder distribution data prevents a full assessment of supply centralization risk. RugCheck.xyz provides a very low score of 1/100, indicating potential underlying issues not directly covered by our deterministic rules.
 
-Based on the available data, the WCOR token mint exhibits a robust security configuration with no active mutable authorities. Holders should be aware that holder concentration data was not available for this audit, which is crucial for assessing potential market manipulation risks from concentrated holdings. It is recommended to monitor on-chain holder distribution if this data becomes available. No further specific actions are required regarding the token's mint configuration.
+Holders should be aware of the 'Default Frozen State' for new accounts, which means an active issuer is required to unfreeze any newly created token accounts before they can be used. This introduces a dependency and potential point of failure if the issuer becomes unresponsive. Given the 'RugCheck Score' of 1/100, further due diligence into the project's background and team is strongly recommended. Consider the implications of unavailable holder concentration data, as this prevents a full assessment of supply centralization risk. For enhanced security and transparency, consider a Premium Deploy option that includes a comprehensive review of the issuer's operational procedures for unfreezing accounts and a deeper analysis of the project's reputation.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The token is implemented using the standard spl-token program (Token Program v3). Both the Mint Authority and Freeze Authority are revoked (None), ensuring no new tokens can be minted and no existing  |
-| **Governance / Economics** | 6/10 | Low | The token exhibits a healthy liquidity profile with $56,851 USD in total DEX liquidity. The 24-hour volume of $6,997 USD results in a normal Volume/Liquidity Ratio of 0.12, indicating organic trading  |
-| **Upgrades** | 6/10 | Low | The token's mint and freeze authorities are permanently revoked, meaning no further changes can be made to the token's supply or account freeze status. The token uses the standard spl-token program (v |
+| **Technical** | 3/10 | High | 7.1 Architecture & 7.2 Code Security: The WCOR token is an SPL token mint operating under the `spl-token` program. The mint authority is revoked, meaning no new tokens can be minted, and the freeze au |
+| **Governance / Economics** | 3/10 | High | 7.4 Economic: The token has a liquidity of $55,296 USD and a 24-hour volume of $7,276 USD. The volume/liquidity ratio is 0.13, which is considered normal and does not indicate wash trading. The DEX pa |
+| **Upgrades** | 2/10 | Medium | 7.7 Upgrades: The mint authority and freeze authority have both been revoked, indicating that the token's supply is fixed and existing accounts cannot be frozen by an issuer. GoPlus data confirms that |
 
 ## Security Findings
 
-_⚪ 3 Informational_
+_🟠 1 High · ⚪ 2 Informational_
 
-### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
 
-Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+New holder accounts are created in a frozen state and require explicit unfreezing by an authority. This is indicated by `GoPlus.default_account_state: 1`.
 
-**Recommendation:** Provide verified source code or ABI to enable a full review.
+**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
 
 
 ### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*

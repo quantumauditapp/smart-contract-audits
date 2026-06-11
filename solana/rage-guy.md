@@ -2,14 +2,14 @@
 token: RAGE GUY
 ticker: RAGE
 network: solana
-risk_score: 70
+risk_score: 65
 status: high
 date: 2026-06-10
 ---
 
 # RAGE GUY (RAGE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 65/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rage-guy-sol)
 

@@ -2,14 +2,14 @@
 token: penispoop420
 ticker: PP420
 network: solana
-risk_score: 72
+risk_score: 98
 status: critical
 date: 2026-06-10
 ---
 
 # penispoop420 (PP420) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 98/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/penispoop420-sol)
 

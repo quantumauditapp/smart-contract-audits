@@ -2,14 +2,14 @@
 token: Aliens are real
 ticker: ALIENS
 network: solana
-risk_score: 90
-status: critical
+risk_score: 39
+status: medium
 date: 2026-06-10
 ---
 
 # Aliens are real (ALIENS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aliens-are-real-sol)
 
@@ -17,23 +17,23 @@ date: 2026-06-10
 
 ## Audit Summary
 
-No critical or high-severity vulnerabilities were identified based on the provided on-chain data and external security signals. Holder concentration data was unavailable, preventing a full assessment of supply distribution risk.
+This Solana SPL Token Mint, 'Aliens are real', demonstrates a strong security posture regarding its core mint configurations. Both mint and freeze authorities have been revoked, preventing further token issuance or account freezing. Key information regarding holder concentration and DEX liquidity was unavailable, limiting a full economic assessment.
 
-> **Final Recommendation:** The Aliens SPL token mint appears to have a secure on-chain configuration with revoked mint and freeze authorities. However, the absence of holder concentration data means that potential risks from concentrated supply cannot be assessed. It is recommended to monitor the token's holder distribution if this data becomes available. For any token, always verify the status of mint and freeze authorities on-chain before considering it for investment. If you are considering deploying a token, ensure all authorities are revoked post-launch and consider a Premium Deploy option to integrate robust pre-launch checks and ongoing monitoring.
+> **Final Recommendation:** Given the revocation of mint and freeze authorities, this token's supply is fixed and user accounts cannot be frozen by an authority. However, due to the unavailability of holder distribution and DEX liquidity data, potential investors should exercise caution. It is recommended to verify on-chain liquidity and holder concentration independently before making investment decisions. For a premium deployment, ensure all relevant Token-2022 extensions are configured as intended and audited.
 
 ## Security Analysis
 
-No critical or high-severity vulnerabilities were identified based on the provided on-chain data and external security signals. Holder concentration data was unavailable, preventing a full assessment of supply distribution risk.
+This Solana SPL Token Mint, 'Aliens are real', demonstrates a strong security posture regarding its core mint configurations. Both mint and freeze authorities have been revoked, preventing further token issuance or account freezing. Key information regarding holder concentration and DEX liquidity was unavailable, limiting a full economic assessment.
 
-The Aliens SPL token mint appears to have a secure on-chain configuration with revoked mint and freeze authorities. However, the absence of holder concentration data means that potential risks from concentrated supply cannot be assessed. It is recommended to monitor the token's holder distribution if this data becomes available. For any token, always verify the status of mint and freeze authorities on-chain before considering it for investment. If you are considering deploying a token, ensure all authorities are revoked post-launch and consider a Premium Deploy option to integrate robust pre-launch checks and ongoing monitoring.
+Given the revocation of mint and freeze authorities, this token's supply is fixed and user accounts cannot be frozen by an authority. However, due to the unavailability of holder distribution and DEX liquidity data, potential investors should exercise caution. It is recommended to verify on-chain liquidity and holder concentration independently before making investment decisions. For a premium deployment, ensure all relevant Token-2022 extensions are configured as intended and audited.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 10/10 | Low | The token is an `spl-token-2022` mint with a total supply of 995,377,903,620,994 units and 6 decimals. Both the Mint Authority and Freeze Authority have been revoked, preventing further token issuance |
-| **Governance / Economics** | 10/10 | Medium | The token exhibits moderate liquidity at $121,579 USD, with a healthy 24-hour volume to liquidity ratio of 0.26, indicating normal trading patterns. The DEX pair has been active for 116 days, providin |
-| **Upgrades** | 10/10 | Low | The mint's core authorities, Mint Authority and Freeze Authority, are both revoked, ensuring that the token supply cannot be arbitrarily increased and holder accounts cannot be frozen. The token is an |
+| **Technical** | 6/10 | Low | 7.1 Architecture & 7.3 Access Control: The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked (None), which is a strong security practice as it prevents fu |
+| **Governance / Economics** | 6/10 | Low | 7.4 Economic & 7.5 Governance: Information regarding holder concentration was unavailable, preventing an assessment of supply distribution. Similarly, no DEX pair data was available, meaning liquidity |
+| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The revocation of both mint and freeze authorities ensures that the token's supply and account freeze status cannot be altered post-launch. GoPlus data indicates `metadata_mutable: False |
 
 ## Security Findings
 
@@ -70,7 +70,7 @@ Input did not include enough context to reliably evaluate contract behavior or u
 | **Liquidity** | $158.6K |
 | **Volume / Liquidity** | 4.1× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 25.0% of supply |
+| **Top-10 Holders** | 24.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
 ## Security Flags (3/5 passed)

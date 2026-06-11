@@ -2,14 +2,14 @@
 token: UFC Freedom 250
 ticker: UFC250
 network: solana
-risk_score: 70
-status: high
+risk_score: 97
+status: critical
 date: 2026-06-10
 ---
 
 # UFC Freedom 250 (UFC250) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 97/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ufc-freedom-250-sol)
 

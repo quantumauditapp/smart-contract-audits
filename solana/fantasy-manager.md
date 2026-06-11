@@ -2,14 +2,14 @@
 token: Fantasy Manager
 ticker: FANTASY
 network: solana
-risk_score: 35
-status: medium
+risk_score: 59
+status: high
 date: 2026-06-11
 ---
 
 # Fantasy Manager (FANTASY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 35/100 — 🟡 Medium Risk**
+> **Risk Score: 59/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fantasy-manager-sol)
 
@@ -17,23 +17,27 @@ date: 2026-06-11
 
 ## Audit Summary
 
-This audit of the Fantasy Manager (FANTASY) SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and external security signals. Key authorities like Mint and Freeze are revoked, and metadata is immutable. Holder concentration data was unavailable, and RugCheck.xyz flagged a low amount of LP providers, but did not classify the token as rugged.
+Based on the available on-chain data and external security signals, no critical or high-severity risks were identified for the Fantasy Manager (FANTASY) SPL token mint. Key authorities such as mint and freeze are revoked, and no permanent delegate or transfer hook is active. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
 
-> **Final Recommendation:** Based on the available data, the Fantasy Manager (FANTASY) token presents a low technical risk profile due to revoked mint and freeze authorities and immutable metadata. Holders should be aware that holder concentration data was unavailable, which prevents a full assessment of potential market manipulation risks from large holders. The RugCheck.xyz flag regarding 'Low amount of LP Providers' suggests a potential centralization risk in liquidity, which could impact market stability. For a Premium Deploy, consider monitoring holder distribution once data becomes available and reviewing the implications of the 'Low amount of LP Providers' flag.
+> **Final Recommendation:** Based on the available data, the Fantasy Manager (FANTASY) token mint appears to have a robust security posture regarding its on-chain authorities, with both mint and freeze authorities revoked. However, the absence of holder concentration data prevents a complete assessment of potential market manipulation risks from large holders.
+
+Users considering this token should continue to monitor market dynamics, especially given the relatively high volume-to-liquidity ratio, and be aware of the unknown holder distribution. A Premium Deploy option would involve deeper off-chain analysis of the project team and community, which is beyond the scope of this on-chain and external signal audit.
 
 ## Security Analysis
 
-This audit of the Fantasy Manager (FANTASY) SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and external security signals. Key authorities like Mint and Freeze are revoked, and metadata is immutable. Holder concentration data was unavailable, and RugCheck.xyz flagged a low amount of LP providers, but did not classify the token as rugged.
+Based on the available on-chain data and external security signals, no critical or high-severity risks were identified for the Fantasy Manager (FANTASY) SPL token mint. Key authorities such as mint and freeze are revoked, and no permanent delegate or transfer hook is active. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
 
-Based on the available data, the Fantasy Manager (FANTASY) token presents a low technical risk profile due to revoked mint and freeze authorities and immutable metadata. Holders should be aware that holder concentration data was unavailable, which prevents a full assessment of potential market manipulation risks from large holders. The RugCheck.xyz flag regarding 'Low amount of LP Providers' suggests a potential centralization risk in liquidity, which could impact market stability. For a Premium Deploy, consider monitoring holder distribution once data becomes available and reviewing the implications of the 'Low amount of LP Providers' flag.
+Based on the available data, the Fantasy Manager (FANTASY) token mint appears to have a robust security posture regarding its on-chain authorities, with both mint and freeze authorities revoked. However, the absence of holder concentration data prevents a complete assessment of potential market manipulation risks from large holders.
+
+Users considering this token should continue to monitor market dynamics, especially given the relatively high volume-to-liquidity ratio, and be aware of the unknown holder distribution. A Premium Deploy option would involve deeper off-chain analysis of the project team and community, which is beyond the scope of this on-chain and external signal audit.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | 7.1 Architecture & 7.3 Access Control: The Fantasy Manager (FANTASY) token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked (None), indicating that no single e |
-| **Governance / Economics** | 6/10 | Low | 7.4 Economic: The token has a liquidity of $37,593 USD and a 24-hour volume of $408,716 USD. The Volume/Liquidity Ratio is 10.87, which is noted as high (>5) but does not trigger a wash trading signal |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The Mint Authority and Freeze Authority are both revoked, preventing any future changes to the token's supply or the ability to freeze accounts. Metadata is immutable (GoPlus.metadata_mu |
+| **Technical** | 6/10 | Low | The Fantasy Manager (FANTASY) token is an SPL Token-2022 mint on Solana. Its mint authority is revoked, preventing the creation of new tokens, and the freeze authority is also revoked, meaning no acco |
+| **Governance / Economics** | 6/10 | Low | The token exhibits a 24-hour volume of $475,114 against a liquidity of $35,134, resulting in a Volume/Liquidity Ratio of 13.52 (Fact: "24h Volume (USD): $475,114", "Liquidity (USD): $35,134"). The DEX |
+| **Upgrades** | 6/10 | Low | The mint authority and freeze authority are both revoked, indicating that the core parameters of the token, such as total supply and account freeze status, cannot be altered (Fact: "Mint Authority: re |
 
 ## Security Findings
 
@@ -70,7 +74,7 @@ Input did not include enough context to reliably evaluate contract behavior or u
 | **Liquidity** | $37.5K |
 | **Volume / Liquidity** | 10.9× |
 | **Token Age** | 8d |
-| **Top-10 Holders** | 28.8% of supply |
+| **Top-10 Holders** | 28.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3427 buys / 2673 sells |
 

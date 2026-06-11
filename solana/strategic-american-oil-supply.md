@@ -2,14 +2,14 @@
 token: Strategic American Oil Supply
 ticker: SAOS
 network: solana
-risk_score: 90
-status: critical
+risk_score: 44
+status: medium
 date: 2026-06-10
 ---
 
 # Strategic American Oil Supply (SAOS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/strategic-american-oil-supply-sol)
 
@@ -17,23 +17,23 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Strategic American Oil Supply (SAOS) token presents a low-risk profile based on available on-chain data and external security signals. Both mint and freeze authorities are revoked, ensuring a fixed supply and preventing arbitrary account freezing. While liquidity is moderate at $67,906, holder concentration data was unavailable, which limits a complete assessment of distribution risk. RugCheck data indicates a score of 1/100, but no explicit 'RUGGED' verdict was found.
+This audit of the Strategic American Oil Supply (SAOS) SPL Token Mint found no critical or high-severity risks based on the available on-chain data and external security signals. Both mint and freeze authorities are revoked, and no Token-2022 extensions posing significant risks are active. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
 
-> **Final Recommendation:** Based on the current audit, the Strategic American Oil Supply (SAOS) token appears to have a robust security posture with critical authorities revoked and no active high-risk Token-2022 extensions. Holders should be aware that holder concentration data was not available for analysis, which is a common limitation for new tokens. It is always recommended to conduct further due diligence on the project's team and roadmap, and to monitor on-chain activity for any unexpected patterns. For enhanced security and continuous monitoring, consider a Premium Deploy option with ongoing real-time threat detection.
+> **Final Recommendation:** The Strategic American Oil Supply (SAOS) token presents a low-risk profile based on the available on-chain data. The revocation of mint and freeze authorities is a strong positive signal, indicating that the token supply is fixed and user funds cannot be frozen. Holders should, however, remain aware that holder concentration data was unavailable, which is a common limitation for newer tokens. It is advisable to monitor holder distribution once this data becomes available to assess potential market manipulation risks from large holders. No immediate security concerns were identified that would prevent interaction with this token based on the provided facts.
 
 ## Security Analysis
 
-The Strategic American Oil Supply (SAOS) token presents a low-risk profile based on available on-chain data and external security signals. Both mint and freeze authorities are revoked, ensuring a fixed supply and preventing arbitrary account freezing. While liquidity is moderate at $67,906, holder concentration data was unavailable, which limits a complete assessment of distribution risk. RugCheck data indicates a score of 1/100, but no explicit 'RUGGED' verdict was found.
+This audit of the Strategic American Oil Supply (SAOS) SPL Token Mint found no critical or high-severity risks based on the available on-chain data and external security signals. Both mint and freeze authorities are revoked, and no Token-2022 extensions posing significant risks are active. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
 
-Based on the current audit, the Strategic American Oil Supply (SAOS) token appears to have a robust security posture with critical authorities revoked and no active high-risk Token-2022 extensions. Holders should be aware that holder concentration data was not available for analysis, which is a common limitation for new tokens. It is always recommended to conduct further due diligence on the project's team and roadmap, and to monitor on-chain activity for any unexpected patterns. For enhanced security and continuous monitoring, consider a Premium Deploy option with ongoing real-time threat detection.
+The Strategic American Oil Supply (SAOS) token presents a low-risk profile based on the available on-chain data. The revocation of mint and freeze authorities is a strong positive signal, indicating that the token supply is fixed and user funds cannot be frozen. Holders should, however, remain aware that holder concentration data was unavailable, which is a common limitation for newer tokens. It is advisable to monitor holder distribution once this data becomes available to assess potential market manipulation risks from large holders. No immediate security concerns were identified that would prevent interaction with this token based on the provided facts.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Low | The Strategic American Oil Supply (SAOS) token is implemented using the spl-token-2022 program. Key administrative authorities, including the Mint Authority and Freeze Authority, have been revoked, in |
-| **Governance / Economics** | 4/10 | Low | The token exhibits a healthy trading profile with a 24-hour volume of $3,977 against a total DEX liquidity of $67,906, resulting in a normal Volume/Liquidity Ratio of 0.06. The DEX pair has been activ |
-| **Upgrades** | 5/10 | Low | The token's core parameters are immutable due to the revocation of both Mint and Freeze authorities. Metadata mutability is also confirmed as false by GoPlus, meaning the token's name, symbol, and ima |
+| **Technical** | 6/10 | Low | The Strategic American Oil Supply (SAOS) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing to |
+| **Governance / Economics** | 6/10 | Low | The token exhibits moderate liquidity with $66,957 USD available on DEXs. The 24-hour trading volume is $2,228 USD, resulting in a low volume/liquidity ratio of 0.03, which does not suggest wash tradi |
+| **Upgrades** | 6/10 | Low | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. There are no active Token-2022 extensions like a Transfer Hook or Default Account State Frozen that |
 
 ## Security Findings
 

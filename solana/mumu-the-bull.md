@@ -2,14 +2,14 @@
 token: Mumu the Bull
 ticker: MUMU
 network: solana
-risk_score: 75
+risk_score: 89
 status: critical
 date: 2026-06-10
 ---
 
 # Mumu the Bull (MUMU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 75/100 — 🔴 Critical Risk**
+> **Risk Score: 89/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mumu-the-bull-sol)
 

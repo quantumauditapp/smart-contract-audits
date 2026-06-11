@@ -2,14 +2,14 @@
 token: Solstice
 ticker: SLX
 network: solana
-risk_score: 70
-status: high
+risk_score: 90
+status: critical
 date: 2026-06-10
 ---
 
 # Solstice (SLX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solstice-sol)
 

@@ -2,14 +2,14 @@
 token: ALTSEASON
 ticker: ALTSZN
 network: solana
-risk_score: 90
-status: critical
+risk_score: 38
+status: medium
 date: 2026-06-10
 ---
 
 # ALTSEASON (ALTSZN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/altseason-sol)
 
@@ -17,23 +17,23 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The ALTSEASON (ALTSZN) SPL token mint exhibits strong security configurations with both mint and freeze authorities revoked, preventing further supply inflation or asset freezing. No transfer hook or default frozen state is active, enhancing user control. However, holder concentration data was unavailable, and RugCheck noted 'High holder correlation', suggesting potential centralization risks that could not be fully assessed.
+The ALTSEASON (ALTSZN) SPL token mint exhibits a strong security posture with both mint and freeze authorities revoked. No Token-2022 extensions posing significant risks, such as transfer hooks or permanent delegates, are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk, though RugCheck.xyz flagged 'High holder correlation'.
 
-> **Final Recommendation:** Based on the available on-chain data and external security signals, the ALTSEASON (ALTSZN) token mint exhibits a robust security configuration with critical authorities revoked, minimizing common SPL token risks. Holders should be aware that holder concentration data was unavailable, and RugCheck noted 'High holder correlation', which could imply centralization risks not fully assessed in this report. For a comprehensive understanding, further off-chain due diligence on the project team and community is recommended.
+> **Final Recommendation:** The ALTSEASON (ALTSZN) token mint demonstrates a strong security posture with critical authorities revoked and no risky Token-2022 extensions active. However, the lack of holder concentration data means a full assessment of potential market manipulation risks from large holders is not possible. The RugCheck 'High holder correlation' label, while not a direct finding based on our deterministic rules, suggests caution regarding holder distribution. Users should consider the implications of this potential concentration before engaging with the token. A Premium Deploy option is not applicable as this is an existing SPL token mint.
 
 ## Security Analysis
 
-The ALTSEASON (ALTSZN) SPL token mint exhibits strong security configurations with both mint and freeze authorities revoked, preventing further supply inflation or asset freezing. No transfer hook or default frozen state is active, enhancing user control. However, holder concentration data was unavailable, and RugCheck noted 'High holder correlation', suggesting potential centralization risks that could not be fully assessed.
+The ALTSEASON (ALTSZN) SPL token mint exhibits a strong security posture with both mint and freeze authorities revoked. No Token-2022 extensions posing significant risks, such as transfer hooks or permanent delegates, are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk, though RugCheck.xyz flagged 'High holder correlation'.
 
-Based on the available on-chain data and external security signals, the ALTSEASON (ALTSZN) token mint exhibits a robust security configuration with critical authorities revoked, minimizing common SPL token risks. Holders should be aware that holder concentration data was unavailable, and RugCheck noted 'High holder correlation', which could imply centralization risks not fully assessed in this report. For a comprehensive understanding, further off-chain due diligence on the project team and community is recommended.
+The ALTSEASON (ALTSZN) token mint demonstrates a strong security posture with critical authorities revoked and no risky Token-2022 extensions active. However, the lack of holder concentration data means a full assessment of potential market manipulation risks from large holders is not possible. The RugCheck 'High holder correlation' label, while not a direct finding based on our deterministic rules, suggests caution regarding holder distribution. Users should consider the implications of this potential concentration before engaging with the token. A Premium Deploy option is not applicable as this is an existing SPL token mint.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Low | The ALTSEASON (ALTSZN) token is implemented using the spl-token-2022 program. Key administrative controls, including the mint authority and freeze authority, have been permanently revoked, ensuring no |
-| **Governance / Economics** | 4/10 | Low | The token's liquidity stands at $166,886 USD, with a 24-hour trading volume of $76,378 USD. The volume-to-liquidity ratio is 0.46, indicating normal trading activity without signs of wash trading. The |
-| **Upgrades** | 5/10 | Low | The ALTSEASON (ALTSZN) token mint demonstrates a high degree of immutability post-launch. Both the mint authority and freeze authority have been revoked, meaning the token's supply cannot be increased |
+| **Technical** | 6/10 | Low | 7.1 Architecture & 7.3 Access Control: The token is an SPL Token-2022 mint with both mint and freeze authorities revoked (None), indicating a fixed supply and no ability to freeze user accounts. 7.2 C |
+| **Governance / Economics** | 6/10 | Medium | 7.4 Economic: The token has a healthy liquidity of $165,571 and a 24-hour volume of $80,174, resulting in a normal volume/liquidity ratio of 0.48. The DEX pair is 54 days old, providing some track rec |
+| **Upgrades** | 6/10 | Low | 7.7 Upgrades: Both mint and freeze authorities have been revoked (None), preventing any future changes to the token's supply or account freezing capabilities. No Token-2022 extensions like transfer ho |
 
 ## Security Findings
 

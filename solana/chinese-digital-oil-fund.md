@@ -2,14 +2,14 @@
 token: Chinese Digital Oil Fund
 ticker: CDOF
 network: solana
-risk_score: 72
-status: critical
+risk_score: 56
+status: high
 date: 2026-06-10
 ---
 
 # Chinese Digital Oil Fund (CDOF) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 56/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chinese-digital-oil-fund-sol)
 

@@ -2,14 +2,14 @@
 token: LOL
 ticker: LOL
 network: solana
-risk_score: 90
-status: critical
+risk_score: 39
+status: medium
 date: 2026-06-10
 ---
 
 # LOL (LOL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lol-sol)
 
@@ -17,23 +17,23 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This Solana SPL Token Mint for LOL exhibits strong security properties with all critical authorities revoked. No high-severity issues were identified based on the provided data. Holder concentration data was unavailable for analysis, which limits the assessment of potential market manipulation risks.
+The LOL token mint appears to be securely configured with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No Token-2022 extensions that introduce mutable behavior, such as transfer hooks or permanent delegates, are active. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
 
-> **Final Recommendation:** The LOL token exhibits strong security characteristics for an SPL token mint, with critical authorities such as mint and freeze revoked. This significantly reduces the risk of rug pulls related to infinite minting or asset freezing. Holders should be aware that holder concentration data was not available for this analysis, which could indicate potential market manipulation risks if a few addresses control a large portion of the supply. For a premium deployment, ensuring all relevant data sources are available for a comprehensive audit is recommended.
+> **Final Recommendation:** Based on the available on-chain facts, the LOL token mint exhibits a robust security configuration with critical authorities (mint and freeze) permanently revoked. This prevents the issuer from minting new tokens or freezing user accounts. No concerning Token-2022 extensions like transfer hooks or permanent delegates are active, and metadata is immutable. Users can verify these facts on-chain to confirm the fixed supply and unfreezable nature of the token. However, holder concentration data was unavailable, so a full assessment of potential market manipulation risks from large holders cannot be made. Users should be aware of this data gap when considering the token.
 
 ## Security Analysis
 
-This Solana SPL Token Mint for LOL exhibits strong security properties with all critical authorities revoked. No high-severity issues were identified based on the provided data. Holder concentration data was unavailable for analysis, which limits the assessment of potential market manipulation risks.
+The LOL token mint appears to be securely configured with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No Token-2022 extensions that introduce mutable behavior, such as transfer hooks or permanent delegates, are active. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
 
-The LOL token exhibits strong security characteristics for an SPL token mint, with critical authorities such as mint and freeze revoked. This significantly reduces the risk of rug pulls related to infinite minting or asset freezing. Holders should be aware that holder concentration data was not available for this analysis, which could indicate potential market manipulation risks if a few addresses control a large portion of the supply. For a premium deployment, ensuring all relevant data sources are available for a comprehensive audit is recommended.
+Based on the available on-chain facts, the LOL token mint exhibits a robust security configuration with critical authorities (mint and freeze) permanently revoked. This prevents the issuer from minting new tokens or freezing user accounts. No concerning Token-2022 extensions like transfer hooks or permanent delegates are active, and metadata is immutable. Users can verify these facts on-chain to confirm the fixed supply and unfreezable nature of the token. However, holder concentration data was unavailable, so a full assessment of potential market manipulation risks from large holders cannot be made. Users should be aware of this data gap when considering the token.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The LOL token is an SPL Token-2022 mint with a total supply of 989,430,496.723356 tokens and 6 decimals. Crucially, both the mint authority and freeze authority have been revoked, preventing further t |
-| **Governance / Economics** | 6/10 | Low | The token has a healthy liquidity of $160,541 USD and a 24-hour volume of $40,209 USD, with a normal volume/liquidity ratio of 0.25. The DEX pair has been active for 84 days, indicating a reasonable t |
-| **Upgrades** | 6/10 | Low | The mint authority and freeze authority are both revoked, ensuring that the token's supply and transferability parameters cannot be altered by a central entity. The token utilizes the spl-token-2022 p |
+| **Technical** | 5/10 | Low | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control: The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, as confirmed by the 'Mint Authority: revok |
+| **Governance / Economics** | 4/10 | Low | 7.4 Economic: The token has a total DEX liquidity of $160,744, which is sufficient to avoid 'Very Low Liquidity' concerns. The 24-hour volume is $41,123, resulting in a Volume/Liquidity Ratio of 0.26, |
+| **Upgrades** | 5/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, meaning the token's core parameters related to supply and account control cannot be changed. The token utilizes the spl-token-20 |
 
 ## Security Findings
 
@@ -70,7 +70,7 @@ Input did not include enough context to reliably evaluate contract behavior or u
 | **Liquidity** | $249.4K |
 | **Volume / Liquidity** | 1.2× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 22.2% of supply |
+| **Top-10 Holders** | 21.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
 ## Security Flags (3/5 passed)

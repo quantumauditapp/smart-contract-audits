@@ -12,36 +12,36 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
-| [Fantasy Manager](./solana/fantasy-manager.md) | FANTASY | Solana | 🟡 35/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/fantasy-manager-sol) |
-| [SPACE ID](./ethereum/space-id.md) | ID | Ethereum | 🟢 14/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/space-id-eth) |
-| [Velvet](./base/velvet.md) | VELVET | Base | 🔴 90/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/velvet-base) |
-| [Ethena](./ethereum/ethena.md) | ENA | Ethereum | 🔴 72/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/ethena-eth) |
-| [Purple Bitcoin](./solana/purple-bitcoin.md) | PBTC | Solana | 🔴 72/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/purple-bitcoin-sol) |
-| [Bull](./solana/bull.md) | BULL | Solana | 🟠 70/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/bull-sol) |
-| [LMAO!](./solana/lmao.md) | LMAO! | Solana | 🟠 70/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/lmao-sol) |
-| [AINL](./solana/ainl.md) | AINL | Solana | 🔴 72/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/ainl-sol) |
-| [World Collective Oil Reserve](./solana/world-collective-oil-reserve.md) | WCOR | Solana | 🔴 90/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/world-collective-oil-reserve-sol) |
-| [ZygoSwap](./bsc/zygoswap.md) | ZSWAP | BNB Chain | 🔴 90/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/zygoswap-bsc) |
-| [Make Aliens Great Again ](./solana/make-aliens-great-again.md) | MAGA | Solana | 🔴 90/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/make-aliens-great-again-sol) |
-| [RAGE GUY](./solana/rage-guy.md) | RAGE | Solana | 🟠 70/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/rage-guy-sol) |
-| [wojak](./ethereum/wojak.md) | WOJAK | Ethereum | 🟢 0/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/wojak-eth) |
-| [🦎](./solana/token.md) | LIZARD | Solana | 🟠 70/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/token-sol) |
-| [Aliens are real](./solana/aliens-are-real.md) | ALIENS | Solana | 🔴 90/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/aliens-are-real-sol) |
-| [ALTSEASON](./solana/altseason.md) | ALTSZN | Solana | 🔴 90/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/altseason-sol) |
-| [RECON RACCOON](./solana/recon-raccoon.md) | RCON | Solana | 🔴 72/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/recon-raccoon-sol) |
-| [Official Bridge Currency](./solana/official-bridge-currency.md) | OBC | Solana | 🔴 72/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/official-bridge-currency-sol) |
-| [America Is Back](./solana/america-is-back.md) | AMERICA | Solana | 🔴 90/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/america-is-back-sol) |
-| [Traderclaw](./solana/traderclaw.md) | TCLAW | Solana | 🔴 72/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/traderclaw-sol) |
-| [Bullish Degen](./solana/bullish-degen.md) | BULLISH | Solana | 🔴 72/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/bullish-degen-sol) |
-| [Catcoin](./solana/catcoin.md) | CATCOIN | Solana | 🔴 85/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/catcoin-sol) |
-| [Andes Virus](./solana/andes-virus.md) | ANDV | Solana | 🟡 35/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/andes-virus-sol) |
-| [Strategic American Oil Supply](./solana/strategic-american-oil-supply.md) | SAOS | Solana | 🔴 90/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/strategic-american-oil-supply-sol) |
-| [LOL](./solana/lol.md) | LOL | Solana | 🔴 90/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/lol-sol) |
-| [World Cup Coin](./solana/world-cup-coin.md) | WORLDCUP | Solana | 🔴 85/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/world-cup-coin-sol) |
-| [Federal Economic Department](./solana/federal-economic-department.md) | FED | Solana | 🔴 90/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/federal-economic-department-sol) |
-| [had to take profits sir](./solana/had-to-take-profits-sir.md) | HTTPS | Solana | 🟡 34/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/had-to-take-profits-sir-sol) |
-| [吉祥马](./bsc/吉祥马.md) | 吉祥马 | BNB Chain | 🔴 75/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/吉祥马-bsc) |
-| [Baby Troll](./solana/baby-troll.md) | BABYTROLL | Solana | 🔴 85/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/baby-troll-sol) |
+| [Fantasy Manager](./solana/fantasy-manager.md) | FANTASY | Solana | 🟠 59/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/fantasy-manager-sol) |
+| [SPACE ID](./ethereum/space-id.md) | ID | Ethereum | 🔴 71/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/space-id-eth) |
+| [Velvet](./base/velvet.md) | VELVET | Base | 🔴 100/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/velvet-base) |
+| [Ethena](./ethereum/ethena.md) | ENA | Ethereum | 🔴 100/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/ethena-eth) |
+| [Purple Bitcoin](./solana/purple-bitcoin.md) | PBTC | Solana | 🟠 59/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/purple-bitcoin-sol) |
+| [Bull](./solana/bull.md) | BULL | Solana | 🟠 59/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/bull-sol) |
+| [LMAO!](./solana/lmao.md) | LMAO! | Solana | 🟠 59/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/lmao-sol) |
+| [AINL](./solana/ainl.md) | AINL | Solana | 🟠 49/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/ainl-sol) |
+| [World Collective Oil Reserve](./solana/world-collective-oil-reserve.md) | WCOR | Solana | 🟠 57/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/world-collective-oil-reserve-sol) |
+| [ZygoSwap](./bsc/zygoswap.md) | ZSWAP | BNB Chain | 🟠 65/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/zygoswap-bsc) |
+| [Make Aliens Great Again ](./solana/make-aliens-great-again.md) | MAGA | Solana | 🟡 36/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/make-aliens-great-again-sol) |
+| [RAGE GUY](./solana/rage-guy.md) | RAGE | Solana | 🟠 65/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/rage-guy-sol) |
+| [wojak](./ethereum/wojak.md) | WOJAK | Ethereum | 🟢 9/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/wojak-eth) |
+| [🦎](./solana/token.md) | LIZARD | Solana | 🟠 51/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/token-sol) |
+| [Aliens are real](./solana/aliens-are-real.md) | ALIENS | Solana | 🟡 39/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/aliens-are-real-sol) |
+| [ALTSEASON](./solana/altseason.md) | ALTSZN | Solana | 🟡 38/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/altseason-sol) |
+| [RECON RACCOON](./solana/recon-raccoon.md) | RCON | Solana | 🟠 50/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/recon-raccoon-sol) |
+| [Official Bridge Currency](./solana/official-bridge-currency.md) | OBC | Solana | 🔴 73/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/official-bridge-currency-sol) |
+| [America Is Back](./solana/america-is-back.md) | AMERICA | Solana | 🟡 39/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/america-is-back-sol) |
+| [Traderclaw](./solana/traderclaw.md) | TCLAW | Solana | 🔴 88/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/traderclaw-sol) |
+| [Bullish Degen](./solana/bullish-degen.md) | BULLISH | Solana | 🟠 60/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/bullish-degen-sol) |
+| [Catcoin](./solana/catcoin.md) | CATCOIN | Solana | 🟡 44/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/catcoin-sol) |
+| [Andes Virus](./solana/andes-virus.md) | ANDV | Solana | 🟠 50/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/andes-virus-sol) |
+| [Strategic American Oil Supply](./solana/strategic-american-oil-supply.md) | SAOS | Solana | 🟡 44/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/strategic-american-oil-supply-sol) |
+| [LOL](./solana/lol.md) | LOL | Solana | 🟡 39/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/lol-sol) |
+| [World Cup Coin](./solana/world-cup-coin.md) | WORLDCUP | Solana | 🟠 48/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/world-cup-coin-sol) |
+| [Federal Economic Department](./solana/federal-economic-department.md) | FED | Solana | 🔴 100/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/federal-economic-department-sol) |
+| [had to take profits sir](./solana/had-to-take-profits-sir.md) | HTTPS | Solana | 🟠 46/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/had-to-take-profits-sir-sol) |
+| [吉祥马](./bsc/吉祥马.md) | 吉祥马 | BNB Chain | 🔴 78/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/吉祥马-bsc) |
+| [Baby Troll](./solana/baby-troll.md) | BABYTROLL | Solana | 🟡 45/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/baby-troll-sol) |
 
 ---
 

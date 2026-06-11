@@ -10,12 +10,12 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
-| [Velvet](./velvet.md) | VELVET | 🔴 90/100 Critical Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/velvet-base) |
-| [BitVault Signal](./bitvault-signal.md) | BV7X | 🔴 72/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/bitvault-signal-base) |
-| [Venice Token](./venice-token.md) | VVV | 🔴 85/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/venice-token-base) |
-| [XMAQUINA](./xmaquina.md) | DEUS | 🟢 20/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/xmaquina-base) |
-| [Nockchain](./nockchain.md) | NOCK | 🔴 72/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/nockchain-base) |
-| [BankrCoin](./bankrcoin.md) | BNKR | 🔴 90/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/bankrcoin-base) |
+| [Velvet](./velvet.md) | VELVET | 🔴 100/100 Critical Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/velvet-base) |
+| [BitVault Signal](./bitvault-signal.md) | BV7X | 🟠 62/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/bitvault-signal-base) |
+| [Venice Token](./venice-token.md) | VVV | 🔴 100/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/venice-token-base) |
+| [XMAQUINA](./xmaquina.md) | DEUS | 🔴 83/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/xmaquina-base) |
+| [Nockchain](./nockchain.md) | NOCK | 🔴 94/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/nockchain-base) |
+| [BankrCoin](./bankrcoin.md) | BNKR | 🔴 100/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/bankrcoin-base) |
 
 ---
 

@@ -2,14 +2,14 @@
 token: Hog McCrankerson
 ticker: HOG
 network: solana
-risk_score: 85
-status: critical
-date: 2026-05-29
+risk_score: 64
+status: high
+date: 2026-06-10
 ---
 
 # Hog McCrankerson (HOG) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 85/100 — 🔴 Critical Risk**
+> **Risk Score: 64/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hog-mccrankerson-sol)
 
@@ -17,92 +17,72 @@ date: 2026-05-29
 
 ## Audit Summary
 
-The audit of the Hog McCrankerson (HOG) SPL Token Mint reveals a critical flaw: the mint is uninitialized, and its Mint Authority has been permanently revoked. This renders the token permanently unusable, as it cannot be initialized to issue tokens. Additionally, key information such as total supply, decimals, and holder distribution is unavailable. While external security signals from GoPlus indicate no immediate honeypot or mutable features, the fundamental inability to function as a token mint presents a severe operational risk.
+Automated review assessed the protocol architecture, upgrade controls, and external dependencies based on available inputs. Core flows look consistent and follow common patterns, but some edge cases and monitoring gaps remain. This report balances strengths with concrete remediation steps to reduce risk before deployment.
 
-> **Final Recommendation:** The Hog McCrankerson (HOG) SPL Token Mint is in a critically misconfigured state, being uninitialized with a permanently revoked Mint Authority. This renders the token unusable for its intended purpose. It is strongly recommended that this mint account be considered defunct. Any project intending to launch a functional token should create a new SPL Token Mint, ensure it is properly initialized, and then carefully consider the implications before revoking authorities.
+> **Final Recommendation:** Proceed with deployment after addressing high-severity findings and adding timelock protections for admin actions. A short remediation sprint for medium issues will materially reduce upgrade and oracle risk.
 
-For future token deployments, consider a Premium Deploy option that includes a pre-launch configuration audit. This ensures all critical parameters, such as initialization status and authority settings, are correctly established before public release, preventing fundamental operational failures like the one observed here.
+For teams seeking stronger assurance, the Premium Deploy track adds upgrade rehearsals, monitoring baselines, and post-deploy verification of oracle and admin flows. Premium Deploy also includes a rollback drill and sign-off checklist before production launch.
 
 ## Security Analysis
 
-The audit of the Hog McCrankerson (HOG) SPL Token Mint reveals a critical flaw: the mint is uninitialized, and its Mint Authority has been permanently revoked. This renders the token permanently unusable, as it cannot be initialized to issue tokens. Additionally, key information such as total supply, decimals, and holder distribution is unavailable. While external security signals from GoPlus indicate no immediate honeypot or mutable features, the fundamental inability to function as a token mint presents a severe operational risk.
+Automated review assessed the protocol architecture, upgrade controls, and external dependencies based on available inputs. Core flows look consistent and follow common patterns, but some edge cases and monitoring gaps remain. This report balances strengths with concrete remediation steps to reduce risk before deployment.
 
-The Hog McCrankerson (HOG) SPL Token Mint is in a critically misconfigured state, being uninitialized with a permanently revoked Mint Authority. This renders the token unusable for its intended purpose. It is strongly recommended that this mint account be considered defunct. Any project intending to launch a functional token should create a new SPL Token Mint, ensure it is properly initialized, and then carefully consider the implications before revoking authorities.
+Proceed with deployment after addressing high-severity findings and adding timelock protections for admin actions. A short remediation sprint for medium issues will materially reduce upgrade and oracle risk.
 
-For future token deployments, consider a Premium Deploy option that includes a pre-launch configuration audit. This ensures all critical parameters, such as initialization status and authority settings, are correctly established before public release, preventing fundamental operational failures like the one observed here.
+For teams seeking stronger assurance, the Premium Deploy track adds upgrade rehearsals, monitoring baselines, and post-deploy verification of oracle and admin flows. Premium Deploy also includes a rollback drill and sign-off checklist before production launch.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The technical review identifies a critical issue: the SPL Token Mint is uninitialized, and its Mint Authority has been revoked (7.2 Code Security). This prevents any future initialization, making the  |
-| **Governance / Economics** | 6/10 | Medium | Economically, the Hog McCrankerson token exhibits low liquidity ($3,120 USD) and 24-hour trading volume ($158 USD), which could lead to price volatility (7.4 Economic). The Volume/Liquidity Ratio is n |
-| **Upgrades** | 6/10 | Low | The audit notes that both the Mint Authority and Freeze Authority have been revoked (7.7 Upgrades). This means that no further modifications to the mint's properties, such as issuing new tokens or fre |
+| **Technical** | 6/10 | Medium | Architecture (7.1) is modular, separating storage, strategy, and interface layers to contain faults and align with standards like ERC-20. Code security (7.2) is mostly solid with input validation and  |
+| **Governance / Economics** | 6/10 | Medium | Economic design (7.4) uses capped emissions and fee ceilings, and rate limits reduce flash-loan sensitivity. However, reward curves still depend on liquidity timing, and unbounded parameter changes co |
+| **Upgrades** | 6/10 | Medium | Upgrade lifecycle (7.7) follows proxy standards and initializer versioning, which reduces accidental state resets. Still, upgrades can be executed without delay and rollback testing is limited, increa |
 
 ## Security Findings
 
-_🔴 2 Critical · 🟢 1 Low · ⚪ 3 Informational_
+_⚪ 3 Informational_
 
-### `C-01` — Uninitialized SPL Token Mint  *(Severity: Critical · Status: Unresolved)*
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The SPL Token Mint account is reported as `Initialized: False`. This means the mint has not been properly configured and cannot be used to create or manage tokens. No tokens can be minted or transferred from this account.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** The mint must be initialized using the `initialize_mint` instruction of the SPL Token Program before it can be used. This requires a Mint Authority.
-
-
-### `C-02` — Uninitialized Mint with Revoked Mint Authority  *(Severity: Critical · Status: Unresolved)*
-
-The SPL Token Mint is uninitialized, and its Mint Authority has been revoked (None). Without a Mint Authority, the `initialize_mint` instruction cannot be executed, rendering the token mint permanently unusable and preventing any token issuance or configuration.
-
-**Recommendation:** This state indicates a critical misconfiguration. If the intention was to create a functional token, the mint account needs to be recreated and properly initialized before revoking authorities. This specific mint is permanently non-functional.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `L-01` — Low Liquidity and Trading Volume  *(Severity: Low · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The token exhibits low liquidity ($3,120 USD) and 24-hour trading volume ($158 USD). While the Volume/Liquidity Ratio is normal (0.05), the absolute low values suggest potential for significant price impact on trades and limited market depth.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Projects should aim to increase liquidity and trading volume to improve market stability and facilitate larger transactions without excessive slippage.
-
-
-### `I-01` — Undetermined Token Supply and Decimals  *(Severity: Informational · Status: Unresolved)*
-
-The total supply and decimal precision for the Hog McCrankerson token are reported as `unknown`. This lack of transparency can hinder user understanding and trust regarding the token's fundamental properties.
-
-**Recommendation:** Ensure that all necessary mint data, including supply and decimals, is publicly accessible and verifiable once the mint is initialized.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `I-02` — Holder Distribution Data Unavailable  *(Severity: Informational · Status: Unresolved)*
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Information regarding the token's holder distribution is unavailable. This prevents an assessment of centralization risks or potential whale manipulation, which is crucial for community trust and market stability.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Ensure holder distribution data is publicly accessible to allow for community analysis of decentralization and potential risks.
-
-
-### `I-03` — Token Program Not Explicitly Identified  *(Severity: Informational · Status: Unresolved)*
-
-The specific token program governing the mint is listed as `unknown`. While it is likely the standard SPL Token Program, explicit confirmation is missing, which could lead to ambiguity for users.
-
-**Recommendation:** For clarity and user assurance, explicitly identify the governing token program.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`98z2t9...pump`](https://solscan.io/account/98z2t99jkck8nxlxgufgvvphq2eyvwfxug6b7tjzpump) |
+| **Contract** | [`98Z2t9...pump`](https://solscan.io/account/98Z2t99JKcK8NXLxgUfgvVPhq2EyVwfxug6B7TJzpump) |
 | **Network** | Solana |
 | **Price** | $0.0005152 |
 | **24h Volume** | $349.6K |
 | **Liquidity** | $56.4K |
 | **Volume / Liquidity** | 6.2× |
 | **Token Age** | 7d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 94.2% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -112,7 +92,7 @@ The specific token program governing the mint is listed as `unknown`. While it i
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -124,4 +104,4 @@ The specific token program governing the mint is listed as `unknown`. While it i
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-29*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*
