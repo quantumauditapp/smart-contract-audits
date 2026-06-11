@@ -4,7 +4,7 @@ ticker: AMERICA
 network: solana
 risk_score: 90
 status: critical
-date: 2026-05-12
+date: 2026-06-10
 ---
 
 # America Is Back (AMERICA) — Smart Contract Security Analysis | Solana
@@ -17,67 +17,68 @@ date: 2026-05-12
 
 ## Audit Summary
 
-The audit of the America Is Back (AMERICA) SPL Token Mint reveals a critical functional inconsistency. The mint is reported as uninitialized, which should prevent any token operations, yet significant liquidity and trading volume are observed. While mint and freeze authorities are revoked, the uninitialized state poses a severe risk to users. Further investigation is required to reconcile this fundamental discrepancy.
+The America Is Back (AMERICA) token mint exhibits no critical or high-severity risks based on available on-chain data and external security signals. Mint and freeze authorities are revoked, and no Token-2022 extensions that introduce centralisation risks are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-> **Final Recommendation:** The America Is Back (AMERICA) token mint presents a critical and highly unusual risk profile. The reported uninitialized state, directly contradicting observed market activity, indicates either a severe data inconsistency or a fundamental flaw making the token unusable. Users are strongly advised to exercise extreme caution and verify the token's actual operational status independently before engaging in any transactions. A Premium Deploy option is not applicable for an existing SPL token mint; however, for future token launches, ensuring proper initialization and transparent metadata is paramount.
+> **Final Recommendation:** Based on the available data, the America Is Back (AMERICA) token mint appears to have a robust security posture with critical authorities revoked. Holders should be aware that holder concentration data was unavailable, which could indicate potential market manipulation risks if a few addresses control a large portion of the supply. For a premium deployment, consider integrating real-time holder distribution monitoring to provide a complete risk profile.
 
 ## Security Analysis
 
-The audit of the America Is Back (AMERICA) SPL Token Mint reveals a critical functional inconsistency. The mint is reported as uninitialized, which should prevent any token operations, yet significant liquidity and trading volume are observed. While mint and freeze authorities are revoked, the uninitialized state poses a severe risk to users. Further investigation is required to reconcile this fundamental discrepancy.
+The America Is Back (AMERICA) token mint exhibits no critical or high-severity risks based on available on-chain data and external security signals. Mint and freeze authorities are revoked, and no Token-2022 extensions that introduce centralisation risks are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-The America Is Back (AMERICA) token mint presents a critical and highly unusual risk profile. The reported uninitialized state, directly contradicting observed market activity, indicates either a severe data inconsistency or a fundamental flaw making the token unusable. Users are strongly advised to exercise extreme caution and verify the token's actual operational status independently before engaging in any transactions. A Premium Deploy option is not applicable for an existing SPL token mint; however, for future token launches, ensuring proper initialization and transparent metadata is paramount.
+Based on the available data, the America Is Back (AMERICA) token mint appears to have a robust security posture with critical authorities revoked. Holders should be aware that holder concentration data was unavailable, which could indicate potential market manipulation risks if a few addresses control a large portion of the supply. For a premium deployment, consider integrating real-time holder distribution monitoring to provide a complete risk profile.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The token mint exhibits a critical architectural flaw (7.1 Architecture): it is reported as uninitialized, which fundamentally prevents token operations. This directly contradicts the presence of $99k |
-| **Governance / Economics** | 6/10 | High | The economic viability (7.4 Economic) and integrity of the AMERICA token are severely compromised by its uninitialized state. Despite reported liquidity, the token's fundamental inability to function  |
-| **Upgrades** | 6/10 | Low | SPL Token Mints are data accounts managed by the immutable SPL Token Program. There are no upgrade mechanisms specific to the mint account itself (7.7 Upgrades), meaning its core parameters are fixed  |
+| **Technical** | 6/10 | Low | The America Is Back (AMERICA) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no accounts can be frozen |
+| **Governance / Economics** | 6/10 | Low | The token exhibits moderate liquidity with $105,218 USD available on DEXs, and a 24-hour volume of $153,579. The Volume/Liquidity Ratio is 1.46, which is considered normal and does not suggest wash tr |
+| **Upgrades** | 6/10 | Low | The mint authority and freeze authority are both revoked, meaning the core parameters of the token cannot be altered by any single entity. The token uses the spl-token-2022 program but does not have a |
 
 ## Security Findings
 
-_🔴 1 Critical · ⚪ 2 Informational_
+_⚪ 3 Informational_
 
-### `C-01` — Critical Functional Inconsistency: Uninitialized Mint with Active Trading  *(Severity: Critical · Status: Unresolved)*
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The SPL Token Mint `ava8yucsd2yguspdv3hb2cjpdf8xahgwyxmchxwopump` is reported as `Initialized: False`. An uninitialized SPL token mint cannot issue tokens, define decimals, or facilitate transfers. This directly contradicts the presence of reported liquidity ($99,292 USD) and 24-hour trading volume ($187,945 USD). This inconsistency indicates either a severe data reporting error, a non-standard token implementation, or a potential scam where users are trading a non-functional token.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Investigate the discrepancy between the reported uninitialized state and active trading. If the mint is indeed uninitialized, all associated liquidity and trading activity are based on a non-functional asset, posing an extreme risk to users. If the data is incorrect, ensure accurate on-chain state is reflected.
-
-
-### `I-01` — Unknown Supply and Decimals  *(Severity: Informational · Status: Unresolved)*
-
-The raw supply and decimal count for the AMERICA token are reported as `unknown`. While this is expected given the `Initialized: False` status, it limits transparency regarding the token's total issuance and divisibility.
-
-**Recommendation:** Ensure that once the token mint is properly initialized (if intended), these fundamental parameters are publicly verifiable to provide full transparency to holders and traders.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `I-02` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Resolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Both the Mint Authority and Freeze Authority for the AMERICA token have been `revoked (None)`. This is a strong security positive, as it prevents any single entity from minting new tokens arbitrarily (preventing inflationary attacks) or freezing user token accounts (preventing censorship or fund locking).
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Maintain the revoked status of these authorities to ensure the long-term security and decentralization of the token.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`ava8yu...pump`](https://solscan.io/account/ava8yucsd2yguspdv3hb2cjpdf8xahgwyxmchxwopump) |
+| **Contract** | [`AVA8Yu...pump`](https://solscan.io/account/AVA8YuCsD2YgUSpdv3Hb2cjpdf8XAhGwyXmchxwopump) |
 | **Network** | Solana |
 | **Price** | $0.001653 |
 | **24h Volume** | $1.09M |
 | **Liquidity** | $125.5K |
 | **Volume / Liquidity** | 8.7× |
 | **Token Age** | 15d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 15.3% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -87,7 +88,7 @@ Both the Mint Authority and Freeze Authority for the AMERICA token have been `re
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -99,4 +100,4 @@ Both the Mint Authority and Freeze Authority for the AMERICA token have been `re
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-12*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

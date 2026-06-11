@@ -4,7 +4,7 @@ ticker: BTCBANK
 network: solana
 risk_score: 90
 status: critical
-date: 2026-06-07
+date: 2026-06-10
 ---
 
 # Bitcoin Bank (BTCBANK) — Smart Contract Security Analysis | Solana
@@ -17,76 +17,73 @@ date: 2026-06-07
 
 ## Audit Summary
 
-The Bitcoin Bank (BTCBANK) SPL Token Mint exhibits a critical vulnerability: it is currently uninitialized despite having active trading and liquidity. This state allows any malicious actor to initialize the mint, define its properties (decimals, supply, authorities), and potentially mint tokens to themselves, leading to a complete loss of value for current holders. While mint and freeze authorities are reported as revoked, this status is irrelevant for an uninitialized account. Immediate action is required to address this fundamental flaw.
+This audit of the Bitcoin Bank (BTCBANK) SPL Token Mint found no critical or high-severity risks. The mint and freeze authorities are revoked, indicating a fixed supply and no ability to freeze user funds. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
 
-> **Final Recommendation:** The Bitcoin Bank (BTCBANK) SPL Token Mint is in a critically vulnerable state due to being uninitialized while having active trading. This poses an immediate and severe risk to all holders and liquidity providers. It is imperative that the legitimate project team immediately initializes the mint with correct parameters and then revokes all authorities to prevent malicious exploitation. Failure to do so will result in a complete loss of value for token holders. For future token deployments, consider using a 'Premium Deploy' service to ensure all token accounts are correctly initialized and configured from inception, preventing such fundamental vulnerabilities.
+> **Final Recommendation:** The Bitcoin Bank (BTCBANK) token presents a low-risk profile based on available on-chain data. Both mint and freeze authorities are revoked, which are critical security features for preventing supply dilution and fund confiscation. The token also lacks active transfer hooks or mutable metadata, contributing to predictable behavior.
+
+However, holder concentration data was unavailable, which is a key metric for assessing potential market manipulation risks. Users should consider this information gap and verify holder distribution independently if this is a concern. For enhanced security, consider a Premium Deploy option that includes continuous monitoring of on-chain metrics and alerts for any unexpected changes in token state or market dynamics.
 
 ## Security Analysis
 
-The Bitcoin Bank (BTCBANK) SPL Token Mint exhibits a critical vulnerability: it is currently uninitialized despite having active trading and liquidity. This state allows any malicious actor to initialize the mint, define its properties (decimals, supply, authorities), and potentially mint tokens to themselves, leading to a complete loss of value for current holders. While mint and freeze authorities are reported as revoked, this status is irrelevant for an uninitialized account. Immediate action is required to address this fundamental flaw.
+This audit of the Bitcoin Bank (BTCBANK) SPL Token Mint found no critical or high-severity risks. The mint and freeze authorities are revoked, indicating a fixed supply and no ability to freeze user funds. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
 
-The Bitcoin Bank (BTCBANK) SPL Token Mint is in a critically vulnerable state due to being uninitialized while having active trading. This poses an immediate and severe risk to all holders and liquidity providers. It is imperative that the legitimate project team immediately initializes the mint with correct parameters and then revokes all authorities to prevent malicious exploitation. Failure to do so will result in a complete loss of value for token holders. For future token deployments, consider using a 'Premium Deploy' service to ensure all token accounts are correctly initialized and configured from inception, preventing such fundamental vulnerabilities.
+The Bitcoin Bank (BTCBANK) token presents a low-risk profile based on available on-chain data. Both mint and freeze authorities are revoked, which are critical security features for preventing supply dilution and fund confiscation. The token also lacks active transfer hooks or mutable metadata, contributing to predictable behavior.
+
+However, holder concentration data was unavailable, which is a key metric for assessing potential market manipulation risks. Users should consider this information gap and verify holder distribution independently if this is a concern. For enhanced security, consider a Premium Deploy option that includes continuous monitoring of on-chain metrics and alerts for any unexpected changes in token state or market dynamics.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | 7.1 Architecture & 7.2 Code Security: The SPL Token Mint for Bitcoin Bank (BTCBANK) is in an uninitialized state, which is a critical architectural flaw. This means core properties like decimals and s |
-| **Governance / Economics** | 6/10 | High | 7.4 Economic: The token exhibits active trading with $29,272 in liquidity and $72,557 in 24h volume over 17 days. However, the uninitialized state of the mint introduces extreme economic risk, as the  |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: SPL Token Mint accounts are data structures managed by the SPL Token Program and do not possess direct upgradeability. Changes to the token's fundamental properties (like decimals or sup |
+| **Technical** | 6/10 | Low | 7.1 Architecture: The Bitcoin Bank (BTCBANK) token is an SPL Token-2022 mint. 7.2 Code Security: As an SPL token mint, there is no custom source code on-chain to review; its behavior is governed by th |
+| **Governance / Economics** | 6/10 | Low | 7.4 Economic: The token exhibits healthy liquidity with $2,047,084 USD available on DEXs, and a 24-hour volume of $102,643 USD, resulting in a normal Volume/Liquidity Ratio of 0.05. The DEX pair has b |
+| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The mint authority and freeze authority have both been revoked, indicating that the token's supply is fixed and no accounts can be frozen post-launch. GoPlus data confirms that metadata  |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · ⚪ 1 Informational_
+_⚪ 3 Informational_
 
-### `C-01` — Uninitialized SPL Token Mint with Active Trading  *(Severity: Critical · Status: Unresolved)*
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The SPL Token Mint account for Bitcoin Bank (BTCBANK) is currently uninitialized (`Initialized: False`) despite having active liquidity ($29,272) and trading volume ($72,557). An uninitialized mint account means its core properties, such as decimals, total supply, and mint/freeze authorities, have not been set. Any actor can send an `InitializeMint` instruction to this account, defining these critical parameters. This allows a malicious actor to initialize the mint with arbitrary decimals (e.g., 0 decimals to make all tokens indivisible), set a new mint authority to themselves, and then mint an unlimited supply of tokens, effectively draining liquidity pools and rendering existing tokens wo…
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** The legitimate project team must immediately initialize the SPL Token Mint with the intended decimals and supply. After initialization, it is strongly recommended to revoke both the mint and freeze authorities to prevent any further token issuance or freezing, ensuring a fixed supply and decentralized control.
-
-
-### `H-01` — Undefined Token Properties (Supply and Decimals)  *(Severity: High · Status: Unresolved)*
-
-Due to the uninitialized state of the SPL Token Mint, the token's total supply and decimal precision are currently undefined (`Supply (raw): unknown`, `Decimals: unknown`). This creates significant uncertainty and risk for token holders and liquidity providers, as the fundamental characteristics of the token can be arbitrarily set by the first entity to initialize the mint. This directly impacts the token's divisibility and potential for dilution.
-
-**Recommendation:** As part of the mint initialization process, ensure that the token's decimals are set to an appropriate value (e.g., 6 or 9 for standard tokens) and that the initial supply is clearly defined and understood by the community. Transparency regarding these properties is crucial for investor confidence.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `M-01` — Misleading Authority Revocation Status for Uninitialized Mint  *(Severity: Medium · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The audit reports indicate that both the Mint Authority and Freeze Authority are `revoked (None)`. While revocation is generally a positive security measure for established tokens, this status is misleading and provides a false sense of security for an uninitialized mint. Since the mint is uninitialized, these authorities have not yet been set, and therefore cannot be truly 'revoked.' Any actor initializing the mint can assign these authorities to an address of their choosing, negating the perceived security benefit.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Understand that authority revocation is only meaningful *after* a mint has been properly initialized and the authorities have been explicitly set and then revoked. Prioritize the immediate initialization of the mint. Once initialized, if a fixed supply and immutable state are desired, ensure authorities are explicitly set to `None` (revoked) as a separate step.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `I-01` — Incomplete External Security Signal Data  *(Severity: Informational · Status: Unresolved)*
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-External security signals from GoPlus Solana data and RugCheck are unavailable. This limits the comprehensive assessment of the token's broader ecosystem risk, such as potential rug pull indicators or contract security scores provided by these third-party services.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** While not a direct vulnerability of the token itself, it is recommended to monitor these external security platforms if data becomes available in the future. For projects, ensuring visibility and data availability on such platforms can enhance transparency and trust.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`9s96g1...pump`](https://solscan.io/account/9s96g11xgshczudfjqkqzqxzvubqgjxsysj1wrgxpump) |
+| **Contract** | [`9s96G1...pump`](https://solscan.io/account/9s96G11xGsHczudfJqKQzQxzvubQgJXSySJ1wRgxpump) |
 | **Network** | Solana |
 | **Price** | $0.0004337 |
 | **24h Volume** | $220.2K |
 | **Liquidity** | $56.8K |
 | **Volume / Liquidity** | 3.9× |
 | **Token Age** | 15d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 36.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2817 buys / 1914 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -96,7 +93,7 @@ External security signals from GoPlus Solana data and RugCheck are unavailable. 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -122,4 +119,4 @@ There is no indication that Bitcoin Bank (BTCBANK) has undergone a formal securi
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-07*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

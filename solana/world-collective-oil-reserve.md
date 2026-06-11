@@ -4,7 +4,7 @@ ticker: WCOR
 network: solana
 risk_score: 90
 status: critical
-date: 2026-05-11
+date: 2026-06-10
 ---
 
 # World Collective Oil Reserve (WCOR) — Smart Contract Security Analysis | Solana
@@ -17,92 +17,68 @@ date: 2026-05-11
 
 ## Audit Summary
 
-This audit report for the World Collective Oil Reserve (WCOR) SPL Token Mint identifies a critical data inconsistency: the token is reported as uninitialized, yet it exhibits active trading and liquidity. This fundamental contradiction raises severe concerns about the token's operational integrity and the reliability of the provided information. Additional risks include a lack of transparency regarding supply, decimals, and holder distribution, as well as the absence of external security signals. While mint and freeze authorities are appropriately revoked, the overall risk profile is elevated due to these significant uncertainties.
+The World Collective Oil Reserve (WCOR) SPL token mint appears to be securely configured with both mint and freeze authorities revoked, preventing further supply inflation or account freezing. No critical or high-severity vulnerabilities were identified based on the available on-chain metadata and external security signals. Holder concentration data was unavailable, which prevents a full assessment of market manipulation risk.
 
-> **Final Recommendation:** The World Collective Oil Reserve (WCOR) token exhibits a critical data inconsistency regarding its initialization status, which fundamentally questions its validity as a tradable asset. This issue, combined with a lack of transparency on key tokenomics and external security validations, suggests a high-risk profile. While the revocation of mint and freeze authorities is a positive security measure, it does not mitigate the core concerns about the token's foundational state. Investors should exercise extreme caution and seek immediate clarification on the token's initialization status before engaging with this asset.
-
-For projects seeking to establish a robust and transparent presence on Solana, a Premium Deploy option is recommended. This service includes comprehensive pre-deployment verification, enhanced on-chain data integrity checks, and integration with leading security analytics p…
+> **Final Recommendation:** Based on the available data, the WCOR token mint exhibits a robust security configuration with no active mutable authorities. Holders should be aware that holder concentration data was not available for this audit, which is crucial for assessing potential market manipulation risks from concentrated holdings. It is recommended to monitor on-chain holder distribution if this data becomes available. No further specific actions are required regarding the token's mint configuration.
 
 ## Security Analysis
 
-This audit report for the World Collective Oil Reserve (WCOR) SPL Token Mint identifies a critical data inconsistency: the token is reported as uninitialized, yet it exhibits active trading and liquidity. This fundamental contradiction raises severe concerns about the token's operational integrity and the reliability of the provided information. Additional risks include a lack of transparency regarding supply, decimals, and holder distribution, as well as the absence of external security signals. While mint and freeze authorities are appropriately revoked, the overall risk profile is elevated due to these significant uncertainties.
+The World Collective Oil Reserve (WCOR) SPL token mint appears to be securely configured with both mint and freeze authorities revoked, preventing further supply inflation or account freezing. No critical or high-severity vulnerabilities were identified based on the available on-chain metadata and external security signals. Holder concentration data was unavailable, which prevents a full assessment of market manipulation risk.
 
-The World Collective Oil Reserve (WCOR) token exhibits a critical data inconsistency regarding its initialization status, which fundamentally questions its validity as a tradable asset. This issue, combined with a lack of transparency on key tokenomics and external security validations, suggests a high-risk profile. While the revocation of mint and freeze authorities is a positive security measure, it does not mitigate the core concerns about the token's foundational state. Investors should exercise extreme caution and seek immediate clarification on the token's initialization status before engaging with this asset.
-
-For projects seeking to establish a robust and transparent presence on Solana, a Premium Deploy option is recommended. This service includes comprehensive pre-deployment verification, enhanced on-chain data integrity checks, and integration with leading security analytics p…
+Based on the available data, the WCOR token mint exhibits a robust security configuration with no active mutable authorities. Holders should be aware that holder concentration data was not available for this audit, which is crucial for assessing potential market manipulation risks from concentrated holdings. It is recommended to monitor on-chain holder distribution if this data becomes available. No further specific actions are required regarding the token's mint configuration.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The technical analysis reveals a critical inconsistency: the token mint is reported as uninitialized, yet it exhibits active trading and liquidity on Dexscreener (7.2 Code Security). This fundamental  |
-| **Governance / Economics** | 6/10 | Medium | Economically, the World Collective Oil Reserve token presents several risks. With a liquidity of $45,006 and a pair age of 50 days, the token is relatively new and has limited market depth, potentiall |
-| **Upgrades** | 6/10 | Low | As an SPL Token, the core program logic is managed by the Solana Program Library and is not subject to project-specific upgrades (7.7 Upgrades). The revocation of mint and freeze authorities ensures t |
+| **Technical** | 6/10 | Low | The token is implemented using the standard spl-token program (Token Program v3). Both the Mint Authority and Freeze Authority are revoked (None), ensuring no new tokens can be minted and no existing  |
+| **Governance / Economics** | 6/10 | Low | The token exhibits a healthy liquidity profile with $56,851 USD in total DEX liquidity. The 24-hour volume of $6,997 USD results in a normal Volume/Liquidity Ratio of 0.12, indicating organic trading  |
+| **Upgrades** | 6/10 | Low | The token's mint and freeze authorities are permanently revoked, meaning no further changes can be made to the token's supply or account freeze status. The token uses the standard spl-token program (v |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟡 2 Medium · 🟢 2 Low · ⚪ 1 Informational_
+_⚪ 3 Informational_
 
-### `C-01` — Critical Data Inconsistency Regarding Token Initialization  *(Severity: Critical · Status: Unresolved)*
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The provided on-chain facts state the token mint is 'Initialized: False'. However, the token has reported liquidity ($45,006) and 24h trading volume ($11,845) from Dexscreener. An uninitialized SPL token mint cannot have supply, decimals, or be traded. This fundamental contradiction raises severe concerns about the token's operational status or the reliability of the provided data, making the token's integrity highly questionable.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Clarify the true initialization status of the token mint. If it is indeed uninitialized, all reported trading activity is highly suspicious and indicative of potential fraud. If the token is initialized, the data source for 'Initialized: False' should be corrected to reflect the actual on-chain state.
-
-
-### `M-01` — Absence of External Security Signals  *(Severity: Medium · Status: Unresolved)*
-
-There is no available data from external security signal providers such as GoPlus Solana or RugCheck. The absence of these independent validations means that common red flags, such as potential rug pulls, honeypots, or other malicious configurations, have not been assessed by specialized third-party tools, increasing the due diligence burden on users.
-
-**Recommendation:** Engage with reputable security signal providers to obtain an independent assessment of the token's safety profile. This would provide an additional layer of trust and transparency for potential holders.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `M-02` — Low Liquidity and Relatively New Pair Age  *(Severity: Medium · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The token has a relatively low liquidity of $45,006 and a pair age of only 50 days. Low liquidity can lead to significant price impact for trades, making it difficult for users to enter or exit positions without substantial slippage. A new pair age indicates limited time for market stability and community establishment, which can contribute to higher volatility and uncertainty.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Projects should aim to increase liquidity over time to support healthier trading and reduce price impact. A longer operational history and sustained liquidity build market confidence.
-
-
-### `L-01` — Lack of Transparency on Token Supply and Decimals  *(Severity: Low · Status: Unresolved)*
-
-The raw supply and decimal information for the token are reported as 'unknown'. While this is directly linked to the 'Initialized: False' status, even if initialized, the lack of readily available and verifiable data on these fundamental token parameters hinders a comprehensive understanding of the token's economics and potential for inflation or scarcity.
-
-**Recommendation:** Ensure that all fundamental token parameters, including total supply and decimals, are accurately recorded and publicly accessible once the token mint is properly initialized. This is crucial for transparency and investor confidence.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `L-02` — Lack of Holder Distribution Data  *(Severity: Low · Status: Unresolved)*
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Information regarding holder concentration is unavailable. Without this data, it is impossible to assess the distribution of the token among holders, which is critical for understanding potential centralization risks. High concentration in a few wallets could indicate susceptibility to market manipulation or governance control by a small group.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Provide access to holder distribution data to allow for proper assessment of token centralization and potential risks associated with concentrated holdings.
-
-
-### `I-01` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Resolved)*
-
-Both the Mint Authority and Freeze Authority for the token have been revoked (set to None). This is a positive security measure, as it prevents any entity from minting new tokens (inflation) or freezing existing token accounts (restricting transfers) after deployment. This enhances the immutability and predictability of the token's supply and transferability.
-
-**Recommendation:** Maintain the revoked status of these authorities to ensure the token's immutability and prevent unauthorized control over its supply and transfer functions.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`wcorvx...nazm`](https://solscan.io/account/wcorvxgcpiwe6evtdjxhjq6kcn4nwt9ubt1prjhnazm) |
+| **Contract** | [`WCoRVx...NAzM`](https://solscan.io/account/WCoRVxGcpiwE6EvtDjXHJq6Kcn4nWT9Ubt1PrJHNAzM) |
 | **Network** | Solana |
 | **Price** | $0.01186 |
 | **24h Volume** | $479.4K |
 | **Liquidity** | $318.2K |
 | **Volume / Liquidity** | 1.5× |
 | **Token Age** | 21d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 19.2% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -112,7 +88,7 @@ Both the Mint Authority and Freeze Authority for the token have been revoked (se
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -124,4 +100,4 @@ Both the Mint Authority and Freeze Authority for the token have been revoked (se
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-11*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

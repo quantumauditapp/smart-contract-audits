@@ -4,7 +4,7 @@ ticker: MOGGING
 network: solana
 risk_score: 90
 status: critical
-date: 2026-06-06
+date: 2026-06-10
 ---
 
 # mogging (MOGGING) — Smart Contract Security Analysis | Solana
@@ -17,76 +17,69 @@ date: 2026-06-06
 
 ## Audit Summary
 
-The audit of the 'mogging' SPL Token Mint at `5oq4zketrkummrftkwh7r1q6hzjmstjgceu6isgypump` reveals a critical security flaw: the mint account is reported as `Initialized: False`. This fundamental misconfiguration renders the token non-functional, yet it paradoxically shows active liquidity and trading volume. This severe discrepancy poses an immediate and high risk of total loss of funds for users interacting with this token. Additionally, the specific Token Program governing the mint is unknown, further increasing uncertainty.
+This audit of the mogging SPL token mint (5oq4zKetRkUMMrFtkWH7r1Q6HZJMsTjgCeU6isgYpump) found no critical or high-severity issues based on the provided on-chain facts and external security signals. Both mint and freeze authorities are revoked, indicating a fixed supply and no ability to freeze user funds. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-> **Final Recommendation:** Users are strongly advised to exercise extreme caution and immediately cease all interactions with the 'mogging' token. The critical finding of an `Initialized: False` mint account, despite active trading, indicates a severe and fundamental flaw that could lead to total loss of funds for liquidity providers and traders. It is imperative to verify the legitimacy and functional status of any token before engaging in transactions. For projects launching new tokens, a Premium Deploy option, involving a comprehensive pre-launch audit and verification of all associated accounts and programs, is highly recommended to prevent such critical misconfigurations and ensure a secure and functional deployment from the outset.
+> **Final Recommendation:** Based on the available data, the mogging token mint appears to have a robust security posture regarding its core SPL token configuration, with key authorities revoked and no active malicious Token-2022 extensions. Users should be aware that holder concentration data was not available, which could hide potential market risks. Always conduct independent due diligence, especially regarding the project's team and roadmap, which are beyond the scope of this technical audit.
 
 ## Security Analysis
 
-The audit of the 'mogging' SPL Token Mint at `5oq4zketrkummrftkwh7r1q6hzjmstjgceu6isgypump` reveals a critical security flaw: the mint account is reported as `Initialized: False`. This fundamental misconfiguration renders the token non-functional, yet it paradoxically shows active liquidity and trading volume. This severe discrepancy poses an immediate and high risk of total loss of funds for users interacting with this token. Additionally, the specific Token Program governing the mint is unknown, further increasing uncertainty.
+This audit of the mogging SPL token mint (5oq4zKetRkUMMrFtkWH7r1Q6HZJMsTjgCeU6isgYpump) found no critical or high-severity issues based on the provided on-chain facts and external security signals. Both mint and freeze authorities are revoked, indicating a fixed supply and no ability to freeze user funds. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-Users are strongly advised to exercise extreme caution and immediately cease all interactions with the 'mogging' token. The critical finding of an `Initialized: False` mint account, despite active trading, indicates a severe and fundamental flaw that could lead to total loss of funds for liquidity providers and traders. It is imperative to verify the legitimacy and functional status of any token before engaging in transactions. For projects launching new tokens, a Premium Deploy option, involving a comprehensive pre-launch audit and verification of all associated accounts and programs, is highly recommended to prevent such critical misconfigurations and ensure a secure and functional deployment from the outset.
+Based on the available data, the mogging token mint appears to have a robust security posture regarding its core SPL token configuration, with key authorities revoked and no active malicious Token-2022 extensions. Users should be aware that holder concentration data was not available, which could hide potential market risks. Always conduct independent due diligence, especially regarding the project's team and roadmap, which are beyond the scope of this technical audit.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control: The SPL Token Mint exhibits a critical architectural flaw as it is reported as `Initialized: False`, preventing any token operations. This fund |
-| **Governance / Economics** | 6/10 | High | 7.4 Economic, 7.5 Governance: The economic risk is critically high due to the `Initialized: False` state of the token mint, which fundamentally undermines its functionality. Despite this, the token sh |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: SPL Token Mints are data accounts managed by the immutable SPL Token Program. As such, the mint account itself does not have an upgrade mechanism, eliminating upgrade-related risks. The  |
+| **Technical** | 6/10 | Low | The mogging token is an SPL Token-2022 mint. Key authorities, including the mint authority and freeze authority, are both revoked, ensuring that no new tokens can be minted and no user accounts can be |
+| **Governance / Economics** | 6/10 | Low | The token exhibits a liquidity of $49,894 USD, with a 24-hour volume of $10,918 USD, resulting in a normal volume/liquidity ratio of 0.22. The DEX pair has been active for 91 days, providing some trac |
+| **Upgrades** | 6/10 | Low | The mogging token mint has both its mint and freeze authorities revoked, meaning no further changes can be made to the token's supply or the ability to freeze accounts. The token does not utilize any  |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_⚪ 3 Informational_
 
-### `C-01` — Uninitialized Mint Account with Active Liquidity  *(Severity: Critical · Status: Unresolved)*
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The SPL Token Mint account at `5oq4zketrkummrftkwh7r1q6hzjmstjgceu6isgypump` is reported as `Initialized: False`. Despite this critical state, the token has significant reported liquidity ($51,087 USD) and trading volume ($34,479 USD) over 89 days. An uninitialized mint account cannot function as a token, meaning no tokens can be minted, transferred, or held. This creates a severe discrepancy where users are trading a non-functional asset, posing an immediate risk of total loss of funds.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Users should immediately cease all interactions with this token and withdraw any provided liquidity. The program owner (if any) should investigate why an uninitialized mint account has active trading and address the underlying issue, or explicitly warn users. This state strongly suggests a misconfiguration or a potential scam.
-
-
-### `H-01` — Unknown Token Program  *(Severity: High · Status: Unresolved)*
-
-The 'Token Program' associated with this mint is reported as 'unknown'. For a standard SPL Token, this should be the well-known SPL Token Program ID (`TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA`). An unknown or non-standard token program introduces uncertainty regarding the token's behavior, security, and adherence to SPL standards. This issue is compounded by the `Initialized: False` state, making it unclear which program, if any, is intended to govern this mint.
-
-**Recommendation:** The specific program ID governing this mint should be identified and verified against known, audited SPL Token Program versions. If it's a custom program, its source code would require a full audit. Given the `Initialized: False` state, this mint should not be trusted.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `L-01` — Lack of External Security Signals  *(Severity: Low · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-External security signals from GoPlus Solana and RugCheck are unavailable. While not a direct vulnerability, the absence of these independent assessments means there is less third-party verification of the token's safety and legitimacy, increasing reliance on manual due diligence.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Users should exercise increased caution due to the lack of independent security assessments. The project team should aim to integrate with and obtain ratings from reputable security analysis platforms to enhance transparency and trust.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `I-01` — Revoked Authorities (Positive Security Feature)  *(Severity: Informational · Status: Unresolved)*
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Both the Mint Authority and Freeze Authority for this SPL Token Mint are reported as 'revoked (None)'. This means no entity can mint new tokens or freeze existing token accounts, preventing inflationary attacks and censorship of user funds.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** This configuration is generally considered a positive security feature for fixed-supply, permissionless tokens. However, this positive aspect is severely overshadowed by the critical `Initialized: False` state of the mint, which renders the token non-functional.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`5oq4zk...pump`](https://solscan.io/account/5oq4zketrkummrftkwh7r1q6hzjmstjgceu6isgypump) |
+| **Contract** | [`5oq4zK...pump`](https://solscan.io/account/5oq4zKetRkUMMrFtkWH7r1Q6HZJMsTjgCeU6isgYpump) |
 | **Network** | Solana |
 | **Price** | $0.0003518 |
 | **24h Volume** | $165.5K |
 | **Liquidity** | $57.3K |
 | **Volume / Liquidity** | 2.9× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 28.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 860 buys / 750 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -96,7 +89,7 @@ Both the Mint Authority and Freeze Authority for this SPL Token Mint are reporte
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -122,4 +115,4 @@ The mogging contract is reported as 'not verified.' This means its code has not 
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-06*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

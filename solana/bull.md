@@ -2,14 +2,14 @@
 token: Bull
 ticker: BULL
 network: solana
-risk_score: 90
-status: critical
-date: 2026-05-11
+risk_score: 70
+status: high
+date: 2026-06-10
 ---
 
 # Bull (BULL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 70/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bull-sol)
 
@@ -17,78 +17,72 @@ date: 2026-05-11
 
 ## Audit Summary
 
-The audit of the Bull (BULL) SPL Token Mint (address 3tygkwke2y3rxdw9oslrspxpxmsc1c1oo19w9khspump) reveals a critical inconsistency: the mint account is reported as 'Initialized: False' despite having significant liquidity and trading volume on DEXs. If accurate, this status implies the token is fundamentally non-functional, posing an extreme risk to holders and liquidity providers. Further investigation is required to reconcile this contradiction, as this issue severely impacts the token's validity and usability.
+The Bull (BULL) SPL token presents a significant operational risk due to its default frozen account state, which requires manual unfreezing for new holders to interact with their tokens. While mint and freeze authorities are revoked, ensuring fixed supply and preventing arbitrary freezes, the default frozen state could hinder usability. Holder concentration data was unavailable, preventing a full assessment of market manipulation risk.
 
-> **Final Recommendation:** Immediate and thorough investigation is required to clarify the 'Initialized: False' status of the Bull (BULL) SPL Token Mint. If the mint is genuinely uninitialized, all associated liquidity and trading are based on a non-functional asset, posing a critical risk to all participants. Users are strongly advised to exercise extreme caution and avoid interacting with this token until this fundamental issue is resolved and verified.
+> **Final Recommendation:** Holders should be aware that new accounts for the Bull (BULL) token will be created in a frozen state, requiring an active issuer or authority to unfreeze them before transfers can occur. It is crucial to confirm the availability and responsiveness of such an entity to avoid unspendable tokens. While the token's core authorities are revoked and metadata is immutable, the operational hurdle of default frozen accounts should be carefully considered.
 
-For future token deployments, consider a Premium Deploy option that includes comprehensive pre-launch verification of all on-chain parameters, including mint initialization, authority configurations, and metadata completeness, to prevent such critical discrepancies. This ensures the token is correctly configured and functional before any liquidity is added or trading commences.
+For a premium deployment, ensure that the default account state is set to unfrozen unless a specific, regulated use case explicitly requires accounts to be frozen by default.
 
 ## Security Analysis
 
-The audit of the Bull (BULL) SPL Token Mint (address 3tygkwke2y3rxdw9oslrspxpxmsc1c1oo19w9khspump) reveals a critical inconsistency: the mint account is reported as 'Initialized: False' despite having significant liquidity and trading volume on DEXs. If accurate, this status implies the token is fundamentally non-functional, posing an extreme risk to holders and liquidity providers. Further investigation is required to reconcile this contradiction, as this issue severely impacts the token's validity and usability.
+The Bull (BULL) SPL token presents a significant operational risk due to its default frozen account state, which requires manual unfreezing for new holders to interact with their tokens. While mint and freeze authorities are revoked, ensuring fixed supply and preventing arbitrary freezes, the default frozen state could hinder usability. Holder concentration data was unavailable, preventing a full assessment of market manipulation risk.
 
-Immediate and thorough investigation is required to clarify the 'Initialized: False' status of the Bull (BULL) SPL Token Mint. If the mint is genuinely uninitialized, all associated liquidity and trading are based on a non-functional asset, posing a critical risk to all participants. Users are strongly advised to exercise extreme caution and avoid interacting with this token until this fundamental issue is resolved and verified.
+Holders should be aware that new accounts for the Bull (BULL) token will be created in a frozen state, requiring an active issuer or authority to unfreeze them before transfers can occur. It is crucial to confirm the availability and responsiveness of such an entity to avoid unspendable tokens. While the token's core authorities are revoked and metadata is immutable, the operational hurdle of default frozen accounts should be carefully considered.
 
-For future token deployments, consider a Premium Deploy option that includes comprehensive pre-launch verification of all on-chain parameters, including mint initialization, authority configurations, and metadata completeness, to prevent such critical discrepancies. This ensures the token is correctly configured and functional before any liquidity is added or trading commences.
+For a premium deployment, ensure that the default account state is set to unfrozen unless a specific, regulated use case explicitly requires accounts to be frozen by default.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The technical architecture (7.1 Architecture) of the Bull (BULL) SPL Token Mint presents a critical inconsistency: the mint account is reported as 'Initialized: False' despite having significant on-ch |
-| **Governance / Economics** | 6/10 | High | The economic viability (7.4 Economic) and governance (7.5 Governance) of the Bull (BULL) token are severely impacted by the reported 'Initialized: False' status of its SPL Token Mint. Despite active t |
-| **Upgrades** | 6/10 | Low | SPL Token Mints, as part of the standard SPL Token Program (7.1 Architecture), are not directly upgradeable in the same manner as custom Solana programs (7.7 Upgrades). The 'SOLC_VERSION' indicates 'S |
+| **Technical** | 6/10 | High | The Bull (BULL) token is an SPL token operating on the Solana blockchain using the standard `spl-token` program. Its mint authority has been revoked, preventing further token issuance and ensuring a f |
+| **Governance / Economics** | 6/10 | Low | The token exhibits healthy liquidity with $191,731 USD available on DEXs, and a 24-hour volume of $327,127, indicating active trading (7.4 Economic). The volume/liquidity ratio of 1.71 is normal, sugg |
+| **Upgrades** | 6/10 | Low | The token's mint and freeze authorities are both revoked, meaning no further changes can be made to the token's supply or the ability to freeze accounts (7.7 Upgrades). Metadata mutability is set to ` |
 
 ## Security Findings
 
-_🔴 1 Critical · ⚪ 3 Informational_
+_🟠 1 High · ⚪ 2 Informational_
 
-### `C-01` — Uninitialized SPL Token Mint with Active Trading  *(Severity: Critical · Status: Unresolved)*
+### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
 
-The SPL Token Mint for Bull (BULL) is reported as 'Initialized: False'. However, the token has significant on-chain liquidity ($179,613) and active trading volume ($243,820 in 24h). An uninitialized SPL Token Mint account cannot issue valid tokens, making any associated tokens non-functional and potentially worthless. This contradiction indicates a severe underlying issue, either with the token's fundamental state or the accuracy of the reported data, posing an extreme risk to token holders and liquidity providers.
+New holder accounts are created in a frozen state (GoPlus.default_account_state: 1) and require explicit unfreezing by an authority. This can block transfers and make tokens unspendable until unfrozen.
 
-**Recommendation:** Verify the true initialization status of the mint account. If it is indeed uninitialized, all liquidity should be withdrawn, and trading should cease immediately. If the data source is incorrect, ensure accurate on-chain data is reflected and publicly verifiable.
-
-
-### `I-01` — Unknown Token Program  *(Severity: Informational · Status: Unresolved)*
-
-The 'Token Program' responsible for managing the Bull (BULL) mint is listed as 'unknown'. While the prefilled 'SOLC_VERSION' suggests 'SPL Token (Token Program v3)', the explicit 'unknown' in the raw data could indicate a non-standard or custom token program. Without knowing the specific program address, a full security assessment of its underlying logic is impossible, though it is likely the standard SPL Token Program.
-
-**Recommendation:** Explicitly identify the SPL Token Program address responsible for managing this mint. If it's a custom program, its source code would require a dedicated audit.
+**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
 
 
-### `I-02` — Missing Basic Token Metadata (Supply & Decimals)  *(Severity: Informational · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Essential token metadata, specifically 'Supply (raw)' and 'Decimals', are reported as 'unknown'. This lack of information prevents a comprehensive understanding of the token's total issuance, divisibility, and overall tokenomics, which are crucial for assessing its economic model and potential for manipulation.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Ensure all fundamental token metadata, including total supply and decimals, is accurately retrievable and publicly available for transparency and proper analysis.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `I-03` — Lack of External Security Signal Coverage  *(Severity: Informational · Status: Unresolved)*
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-External security signals from GoPlus Solana and RugCheck are unavailable. While not a direct vulnerability, the absence of these third-party assessments means there is no independent validation or flagging of potential risks (e.g., rug pull indicators, suspicious token configurations) that these services typically provide.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Encourage integration with and reporting from reputable third-party security analysis tools to provide additional layers of assurance and risk assessment for token holders.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`3tygkw...pump`](https://solscan.io/account/3tygkwke2y3rxdw9oslrspxpxmsc1c1oo19w9khspump) |
+| **Contract** | [`3TYgKw...pump`](https://solscan.io/account/3TYgKwkE2Y3rxdw9osLRSpxpXmSC1C1oo19W9KHspump) |
 | **Network** | Solana |
 | **Price** | $0.004915 |
 | **24h Volume** | $735.4K |
 | **Liquidity** | $324.5K |
 | **Volume / Liquidity** | 2.3× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 23.6% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -98,7 +92,7 @@ External security signals from GoPlus Solana and RugCheck are unavailable. While
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -110,4 +104,4 @@ External security signals from GoPlus Solana and RugCheck are unavailable. While
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-11*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

@@ -4,7 +4,7 @@ ticker: ALTSZN
 network: solana
 risk_score: 90
 status: critical
-date: 2026-05-12
+date: 2026-06-10
 ---
 
 # ALTSEASON (ALTSZN) — Smart Contract Security Analysis | Solana
@@ -17,85 +17,68 @@ date: 2026-05-12
 
 ## Audit Summary
 
-The ALTSEASON (ALTSZN) token mint presents critical inconsistencies, primarily its reported uninitialized status despite active trading and significant liquidity. This fundamental discrepancy, coupled with a lack of transparency regarding key tokenomics data such as total supply, decimals, and holder distribution, introduces substantial risk for participants. While positive security features like revoked mint and freeze authorities are present, they are overshadowed by the core initialization issue and data gaps.
+The ALTSEASON (ALTSZN) SPL token mint exhibits strong security configurations with both mint and freeze authorities revoked, preventing further supply inflation or asset freezing. No transfer hook or default frozen state is active, enhancing user control. However, holder concentration data was unavailable, and RugCheck noted 'High holder correlation', suggesting potential centralization risks that could not be fully assessed.
 
-> **Final Recommendation:** The ALTSEASON (ALTSZN) token mint presents critical inconsistencies, primarily its reported uninitialized status despite active trading. This fundamental flaw, combined with a lack of transparency regarding key tokenomics data (supply, decimals, holder distribution), introduces substantial risk for participants. While mint and freeze authorities are appropriately revoked, these positives are overshadowed by the core initialization issue.
-
-It is strongly recommended that all potential investors exercise extreme caution and conduct thorough due diligence to verify the true initialization status and full tokenomics before engaging with this token. A Premium Deploy option would involve a comprehensive on-chain verification of the mint's state and a detailed analysis of its associated liquidity pools to confirm legitimacy.
+> **Final Recommendation:** Based on the available on-chain data and external security signals, the ALTSEASON (ALTSZN) token mint exhibits a robust security configuration with critical authorities revoked, minimizing common SPL token risks. Holders should be aware that holder concentration data was unavailable, and RugCheck noted 'High holder correlation', which could imply centralization risks not fully assessed in this report. For a comprehensive understanding, further off-chain due diligence on the project team and community is recommended.
 
 ## Security Analysis
 
-The ALTSEASON (ALTSZN) token mint presents critical inconsistencies, primarily its reported uninitialized status despite active trading and significant liquidity. This fundamental discrepancy, coupled with a lack of transparency regarding key tokenomics data such as total supply, decimals, and holder distribution, introduces substantial risk for participants. While positive security features like revoked mint and freeze authorities are present, they are overshadowed by the core initialization issue and data gaps.
+The ALTSEASON (ALTSZN) SPL token mint exhibits strong security configurations with both mint and freeze authorities revoked, preventing further supply inflation or asset freezing. No transfer hook or default frozen state is active, enhancing user control. However, holder concentration data was unavailable, and RugCheck noted 'High holder correlation', suggesting potential centralization risks that could not be fully assessed.
 
-The ALTSEASON (ALTSZN) token mint presents critical inconsistencies, primarily its reported uninitialized status despite active trading. This fundamental flaw, combined with a lack of transparency regarding key tokenomics data (supply, decimals, holder distribution), introduces substantial risk for participants. While mint and freeze authorities are appropriately revoked, these positives are overshadowed by the core initialization issue.
-
-It is strongly recommended that all potential investors exercise extreme caution and conduct thorough due diligence to verify the true initialization status and full tokenomics before engaging with this token. A Premium Deploy option would involve a comprehensive on-chain verification of the mint's state and a detailed analysis of its associated liquidity pools to confirm legitimacy.
+Based on the available on-chain data and external security signals, the ALTSEASON (ALTSZN) token mint exhibits a robust security configuration with critical authorities revoked, minimizing common SPL token risks. Holders should be aware that holder concentration data was unavailable, and RugCheck noted 'High holder correlation', which could imply centralization risks not fully assessed in this report. For a comprehensive understanding, further off-chain due diligence on the project team and community is recommended.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control. Strengths: The token's architecture benefits from revoked Mint and Freeze authorities (7.3 Access Control), preventing further token issuance o |
-| **Governance / Economics** | 6/10 | High | 7.4 Economic, 7.5 Governance. Strengths: The token exhibits a healthy Volume/Liquidity Ratio of 1.00 (7.4 Economic), indicating balanced trading activity. Issues: Significant economic risks (7.4 Econo |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades. N/A for SPL Token mint accounts, as they represent data structures managed by the immutable SPL Token Program. The mint account itself is not upgradable in the context of custom program  |
+| **Technical** | 5/10 | Low | The ALTSEASON (ALTSZN) token is implemented using the spl-token-2022 program. Key administrative controls, including the mint authority and freeze authority, have been permanently revoked, ensuring no |
+| **Governance / Economics** | 4/10 | Low | The token's liquidity stands at $166,886 USD, with a 24-hour trading volume of $76,378 USD. The volume-to-liquidity ratio is 0.46, indicating normal trading activity without signs of wash trading. The |
+| **Upgrades** | 5/10 | Low | The ALTSEASON (ALTSZN) token mint demonstrates a high degree of immutability post-launch. Both the mint authority and freeze authority have been revoked, meaning the token's supply cannot be increased |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟡 3 Medium · 🟢 1 Low_
+_⚪ 3 Informational_
 
-### `C-01` — Uninitialized Mint Account with Active Trading  *(Severity: Critical · Status: Unresolved)*
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The SPL Token Mint account for ALTSEASON (ALTSZN) is reported as 'Initialized: False'. This status is a critical inconsistency, as the token simultaneously shows active trading with significant liquidity ($167,783 USD) and 24h volume ($167,822 USD). An uninitialized mint account cannot legitimately function as an SPL token, hold a supply, or be traded. This discrepancy suggests either a severe data reporting error, a fundamental misconfiguration of the token, or a potential rug pull scenario where users are trading a non-functional asset.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Immediately verify the true initialization status of the mint account using a reliable Solana RPC endpoint. If the account is indeed uninitialized, all trading should cease, and users should be warned of the critical risk. If the data is erroneous, ensure accurate on-chain data is available and verifiable.
-
-
-### `M-01` — Unknown Token Supply and Decimals  *(Severity: Medium · Status: Unresolved)*
-
-The total supply (raw) and decimals for the ALTSEASON (ALTSZN) token are reported as 'unknown'. This lack of transparency prevents users and auditors from understanding the token's fundamental tokenomics, including its inflation model, maximum supply, and divisibility. Without this information, it is impossible to accurately assess market capitalization, dilution risk, or fair value.
-
-**Recommendation:** Ensure that the token's total supply and decimals are publicly available and verifiable on-chain. This information is crucial for investor confidence and proper market analysis.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `M-02` — Undetermined Holder Distribution  *(Severity: Medium · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Information regarding the holder distribution and concentration for ALTSEASON (ALTSZN) is unavailable. This prevents an assessment of centralization risk, potential for price manipulation by large holders, or the overall health of the token's community. High concentration in a few wallets can pose a significant risk to price stability and governance (if applicable).
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Provide access to holder distribution data to allow for community and investor analysis of token concentration and decentralization. Tools like Solana explorers typically offer this information.
-
-
-### `M-03` — Unknown Token Program ID  *(Severity: Medium · Status: Unresolved)*
-
-The specific Token Program ID managing the ALTSEASON (ALTSZN) mint is reported as 'unknown'. While the context implies it's an SPL Token, the exact program ID is crucial for verifying that the mint is indeed managed by the official, audited SPL Token Program (e.g., Token Program v3) and not a custom, potentially malicious, or unaudited program.
-
-**Recommendation:** Explicitly state and verify the Token Program ID that manages the ALTSEASON (ALTSZN) mint account. This ensures that the token adheres to the expected security standards of the official SPL Token Program.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `L-01` — Lack of External Security Signal Data  *(Severity: Low · Status: Unresolved)*
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-External security signals from services like GoPlus Solana data and RugCheck are unavailable. These services provide additional layers of security analysis, including contract audits, liquidity pool checks, and scam detection. The absence of this data means that potential red flags or endorsements from these third-party tools cannot be considered in the overall risk assessment.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Seek integration or analysis from reputable third-party security signal providers like GoPlus and RugCheck to enhance transparency and provide additional layers of security validation for the token.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`ccld8h...pump`](https://solscan.io/account/ccld8htaklwtqhatqpwbqjtuca72fnb9e1ckrtezpump) |
+| **Contract** | [`CcLd8H...pump`](https://solscan.io/account/CcLd8HTAKLWtQHatqPwBQjtuCA72FNB9E1ckRTEzpump) |
 | **Network** | Solana |
 | **Price** | $0.005181 |
 | **24h Volume** | $432.9K |
 | **Liquidity** | $206.8K |
 | **Volume / Liquidity** | 2.1× |
 | **Token Age** | 24d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 16.7% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -105,7 +88,7 @@ External security signals from services like GoPlus Solana data and RugCheck are
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -117,4 +100,4 @@ External security signals from services like GoPlus Solana data and RugCheck are
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-12*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

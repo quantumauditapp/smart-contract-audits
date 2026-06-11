@@ -4,7 +4,7 @@ ticker: SOLY
 network: solana
 risk_score: 90
 status: critical
-date: 2026-06-08
+date: 2026-06-10
 ---
 
 # The Solana Mascot (SOLY) — Smart Contract Security Analysis | Solana
@@ -17,73 +17,69 @@ date: 2026-06-08
 
 ## Audit Summary
 
-This audit report focuses on the SPL Token Mint account for 'The Solana Mascot (SOLY)'. A critical finding reveals that the mint account is uninitialized, rendering the token non-functional. Despite this, external data sources report active trading and liquidity, creating a significant discrepancy and posing a high economic risk to users. The mint and freeze authorities have also been prematurely revoked, preventing any future initialization of the token.
+This audit of The Solana Mascot (SOLY) SPL Token Mint found no critical or high-severity issues based on the available on-chain data and external security signals. The mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Holder concentration data was unavailable, and no transfer hook or permanent delegate is configured. RugCheck.xyz assigned a score of 16/100 with a 'Low amount of LP Providers' label.
 
-> **Final Recommendation:** Given the critical uninitialized state of the SPL Token Mint account and the premature revocation of its authorities, this token is currently non-functional and cannot be used for transfers or any intended purpose. The reported trading activity for an uninitialized asset presents a severe economic risk to users. It is strongly recommended that all users avoid interacting with this token until its on-chain state is verified and confirmed to be properly initialized and functional. 
-
-For projects facing similar issues or requiring robust token deployment, a Premium Audit and Consultation service can provide comprehensive on-chain verification, secure deployment strategies, and best practices for SPL token management, ensuring all critical parameters are correctly configured before public launch.
+> **Final Recommendation:** For potential holders, it is recommended to verify the revocation status of the mint and freeze authorities on-chain to confirm the fixed supply and unfreezable nature of the token. While no critical or high-severity issues were identified, the unavailability of holder concentration data means the distribution risk remains unassessed. The 'Low amount of LP Providers' flag from RugCheck.xyz suggests monitoring liquidity depth. Consider a Premium Deploy option for a deeper, manual review of the token's ecosystem and any associated programs if significant investment is planned.
 
 ## Security Analysis
 
-This audit report focuses on the SPL Token Mint account for 'The Solana Mascot (SOLY)'. A critical finding reveals that the mint account is uninitialized, rendering the token non-functional. Despite this, external data sources report active trading and liquidity, creating a significant discrepancy and posing a high economic risk to users. The mint and freeze authorities have also been prematurely revoked, preventing any future initialization of the token.
+This audit of The Solana Mascot (SOLY) SPL Token Mint found no critical or high-severity issues based on the available on-chain data and external security signals. The mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Holder concentration data was unavailable, and no transfer hook or permanent delegate is configured. RugCheck.xyz assigned a score of 16/100 with a 'Low amount of LP Providers' label.
 
-Given the critical uninitialized state of the SPL Token Mint account and the premature revocation of its authorities, this token is currently non-functional and cannot be used for transfers or any intended purpose. The reported trading activity for an uninitialized asset presents a severe economic risk to users. It is strongly recommended that all users avoid interacting with this token until its on-chain state is verified and confirmed to be properly initialized and functional. 
-
-For projects facing similar issues or requiring robust token deployment, a Premium Audit and Consultation service can provide comprehensive on-chain verification, secure deployment strategies, and best practices for SPL token management, ensuring all critical parameters are correctly configured before public launch.
+For potential holders, it is recommended to verify the revocation status of the mint and freeze authorities on-chain to confirm the fixed supply and unfreezable nature of the token. While no critical or high-severity issues were identified, the unavailability of holder concentration data means the distribution risk remains unassessed. The 'Low amount of LP Providers' flag from RugCheck.xyz suggests monitoring liquidity depth. Consider a Premium Deploy option for a deeper, manual review of the token's ecosystem and any associated programs if significant investment is planned.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The underlying SPL Token Program (v3) is a well-audited and robust framework (7.2 Code Security). The revocation of mint and freeze authorities (7.3 Access Control) would typically be a strength for a |
-| **Governance / Economics** | 6/10 | High | The absence of a central minting authority (7.5 Governance) is generally a positive for decentralization, preventing arbitrary supply inflation. However, the primary economic risk (7.4 Economic) stems |
-| **Upgrades** | 6/10 | Low | As an SPL Token Mint account, it represents data managed by the SPL Token Program, not an upgradable program itself. The underlying SPL Token Program is a highly stable and well-maintained program (7. |
+| **Technical** | 6/10 | Low | Regarding 7.1 Architecture and 7.3 Access Control, The Solana Mascot (SOLY) is an SPL Token-2022 mint with both the mint authority and freeze authority revoked, indicating a fixed supply and unfreezab |
+| **Governance / Economics** | 6/10 | Medium | For 7.4 Economic aspects, the token has a total DEX liquidity of $22,990, which is moderate. The 24-hour volume is $43,434, resulting in a normal Volume/Liquidity Ratio of 1.89, not indicating wash tr |
+| **Upgrades** | 6/10 | Low | Concerning 7.7 Upgrades and 7.8 Operations, the mint authority and freeze authority for this SPL Token-2022 mint are both revoked, meaning the token's supply is fixed and accounts cannot be frozen. Th |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium_
+_⚪ 3 Informational_
 
-### `C-01` — SPL Token Mint Uninitialized  *(Severity: Critical · Status: Unresolved)*
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The SPL Token Mint account `dqbjjeh6nppacx8fvuxvywx8aqddpd5na7k2lcfwpump` is reported as `Initialized: False`. An uninitialized SPL Token Mint cannot have a supply, decimals, or be used for token transfers. This renders the token non-functional and unusable for its intended purpose.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** The mint must be properly initialized by calling the `initialize_mint` instruction of the SPL Token Program. Without initialization, the token cannot function as intended. If authorities are revoked, this initialization cannot occur, making the token permanently non-functional.
-
-
-### `H-01` — Active Trading for Uninitialized Token  *(Severity: High · Status: Unresolved)*
-
-Despite the mint account being uninitialized, external data sources (dexscreener) report significant liquidity ($22,563 USD) and 24-hour trading volume ($70,778 USD) for 'The Solana Mascot (SOLY)'. This creates a critical discrepancy, as an uninitialized token cannot be traded. This suggests either a severe data misattribution, or users are trading a phantom token, potentially indicating a scam or significant user confusion.
-
-**Recommendation:** Users and protocols should verify the on-chain state of the mint account directly using Solana RPC calls. Do not rely solely on external liquidity aggregators for token functionality. Avoid trading this token until its initialized status is confirmed on-chain to prevent potential financial loss.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `M-01` — Premature Revocation of Mint and Freeze Authorities  *(Severity: Medium · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Both the Mint Authority and Freeze Authority for the token are reported as `revoked (None)`. While revocation is a common security practice for fixed-supply tokens post-initialization to enhance decentralization, revoking these authorities *before* the mint is initialized prevents the necessary `initialize_mint` instruction from being executed. This makes the token permanently non-functional unless a new mint account is created.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** If the intention was to create a functional, fixed-supply token, the mint should have been initialized *before* revoking the authorities. Given the current state, the token cannot be made functional, and a new, properly configured mint account would be required for a functional token.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`dqbjje...pump`](https://solscan.io/account/dqbjjeh6nppacx8fvuxvywx8aqddpd5na7k2lcfwpump) |
+| **Contract** | [`DqBjJE...pump`](https://solscan.io/account/DqBjJEh6nppACX8fvuXvyWx8AQddPd5na7k2LCFWpump) |
 | **Network** | Solana |
 | **Price** | $0.0001358 |
 | **24h Volume** | $61.0K |
 | **Liquidity** | $25.8K |
 | **Volume / Liquidity** | 2.4× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 27.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 25092 buys / 56753 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -93,7 +89,7 @@ Both the Mint Authority and Freeze Authority for the token are reported as `revo
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -119,4 +115,4 @@ The contract for The Solana Mascot (SOLY) is reported as unverified. This status
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-08*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

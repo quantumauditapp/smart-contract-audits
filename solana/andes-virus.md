@@ -4,7 +4,7 @@ ticker: ANDV
 network: solana
 risk_score: 35
 status: medium
-date: 2026-05-14
+date: 2026-06-10
 ---
 
 # Andes Virus (ANDV) — Smart Contract Security Analysis | Solana
@@ -17,74 +17,68 @@ date: 2026-05-14
 
 ## Audit Summary
 
-The Andes Virus (ANDV) SPL Token Mint is currently uninitialized, preventing any token operations. While Mint and Freeze Authorities are revoked, indicating a secure configuration post-initialization, the token cannot function until it is properly initialized. Key details like decimals and total supply are unknown due to this uninitialized state. The token exhibits normal liquidity and volume ratios for its age.
+This audit of the Andes Virus (ANDV) SPL Token Mint found no critical or high-severity issues based on the provided on-chain data and external security signals. Both the mint and freeze authorities have been revoked, indicating a fixed supply and no ability to freeze user accounts. Holder concentration data was unavailable, which is a common limitation for new tokens.
 
-> **Final Recommendation:** The Andes Virus (ANDV) SPL Token Mint is currently in an uninitialized state, rendering it non-functional. While the revocation of Mint and Freeze Authorities indicates a strong security posture against centralized control post-initialization, this state prevents any token operations, including issuance or trading. It is imperative to properly initialize the mint to define its decimals and supply, enabling its intended use. Users should exercise caution until the mint is fully initialized and its parameters are confirmed.
+> **Final Recommendation:** Based on the available data, the Andes Virus (ANDV) token mint appears to be well-configured with critical authorities revoked, indicating a fixed supply and no ability to freeze user funds. Investors should be aware that holder concentration data was unavailable, which can be a risk factor for price volatility. Before making any investment decisions, consider the implications of the current liquidity and pair age. For a Premium Deploy option, ensure continuous monitoring of on-chain activity and any future changes to the token's ecosystem.
 
 ## Security Analysis
 
-The Andes Virus (ANDV) SPL Token Mint is currently uninitialized, preventing any token operations. While Mint and Freeze Authorities are revoked, indicating a secure configuration post-initialization, the token cannot function until it is properly initialized. Key details like decimals and total supply are unknown due to this uninitialized state. The token exhibits normal liquidity and volume ratios for its age.
+This audit of the Andes Virus (ANDV) SPL Token Mint found no critical or high-severity issues based on the provided on-chain data and external security signals. Both the mint and freeze authorities have been revoked, indicating a fixed supply and no ability to freeze user accounts. Holder concentration data was unavailable, which is a common limitation for new tokens.
 
-The Andes Virus (ANDV) SPL Token Mint is currently in an uninitialized state, rendering it non-functional. While the revocation of Mint and Freeze Authorities indicates a strong security posture against centralized control post-initialization, this state prevents any token operations, including issuance or trading. It is imperative to properly initialize the mint to define its decimals and supply, enabling its intended use. Users should exercise caution until the mint is fully initialized and its parameters are confirmed.
+Based on the available data, the Andes Virus (ANDV) token mint appears to be well-configured with critical authorities revoked, indicating a fixed supply and no ability to freeze user funds. Investors should be aware that holder concentration data was unavailable, which can be a risk factor for price volatility. Before making any investment decisions, consider the implications of the current liquidity and pair age. For a Premium Deploy option, ensure continuous monitoring of on-chain activity and any future changes to the token's ecosystem.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token mint has both its Mint Authority and Freeze Authority revoked, which is a strong security posture against unauthorized token creation or asset freezing (7.3 Access Control). This prevents po |
-| **Governance / Economics** | 6/10 | Low | The token exhibits a normal Volume/Liquidity Ratio of 0.10, suggesting healthy trading activity relative to its liquidity (7.4 Economic). With revoked authorities, there is no centralized governance o |
-| **Upgrades** | 6/10 | Low | As an SPL Token Mint with revoked authorities, the core parameters are immutable once initialized, providing predictability and preventing unauthorized changes (7.7 Upgrades). This design choice enhan |
+| **Technical** | 6/10 | Low | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.8 Operations: The Andes Virus (ANDV) token is an SPL Token-2022 mint on Solana. A key security strength is that both the Mint Authority and F |
+| **Governance / Economics** | 6/10 | Low | 7.4 Economic: The token exhibits moderate liquidity with $26,762 USD available on DEXs. The 24-hour trading volume is $8,996, resulting in a healthy Volume/Liquidity Ratio of 0.34, which does not sugg |
+| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The token's core parameters, such as total supply and freeze capability, are immutable due to the revocation of both Mint and Freeze Authorities. No Token-2022 extensions like Transfer H |
 
 ## Security Findings
 
-_🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
+_⚪ 3 Informational_
 
-### `M-01` — Uninitialized SPL Token Mint  *(Severity: Medium · Status: Unresolved)*
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The SPL Token Mint is reported as `Initialized: False`. An uninitialized mint cannot be used to create tokens or perform any token operations. This state prevents the token from functioning as intended and could indicate an incomplete deployment or an error in the initialization process.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** The mint must be properly initialized by calling the `InitializeMint` instruction of the SPL Token Program. This will set the supply, decimals, and assign authorities (or confirm their revocation).
-
-
-### `L-01` — Unknown Decimals  *(Severity: Low · Status: Unresolved)*
-
-The number of decimals for the token is reported as `unknown`. While this is a direct consequence of the mint being uninitialized, it means users cannot accurately determine the token's divisibility. This lack of information is crucial for correct display and interaction with the token in wallets and exchanges.
-
-**Recommendation:** Ensure the mint is initialized with a clearly defined number of decimals. This information should be readily available to users post-initialization.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `I-01` — Unknown Supply  *(Severity: Informational · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The total supply of the token is reported as `unknown`. This is an expected state for an uninitialized mint. Once initialized, the supply will be set, and if a mint authority were present and not revoked, it could potentially be changed.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** After initialization, the total supply will be established. If the intention is for a fixed-supply token, ensure the mint authority remains revoked.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `I-02` — Revoked Authorities  *(Severity: Informational · Status: Unresolved)*
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Both Mint Authority and Freeze Authority are reported as `revoked (None)`. This indicates that no new tokens can be minted (unless re-enabled by a new authority, which is unlikely for a revoked state) and no tokens can be frozen. This is generally a positive security feature for a fixed-supply token, preventing malicious inflation or arbitrary freezing of user funds. However, given the mint is uninitialized, these revocations are currently moot as the token cannot function.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** If the intention is for a fixed-supply, non-freezable token, maintaining revoked authorities post-initialization is a good practice to enhance trust and security.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`jvktlf...pump`](https://solscan.io/account/jvktlflnngpm7eds9kepyqpxuy8hpgtzohlfm4spump) |
+| **Contract** | [`jvKtLF...pump`](https://solscan.io/account/jvKtLFLnNGPM7edS9KEpYqPxuY8HPGTZohLFM4Spump) |
 | **Network** | Solana |
 | **Price** | $0.0004631 |
 | **24h Volume** | $189.8K |
 | **Liquidity** | $67.6K |
 | **Volume / Liquidity** | 2.8× |
 | **Token Age** | 7d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 42.0% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -94,7 +88,7 @@ Both Mint Authority and Freeze Authority are reported as `revoked (None)`. This 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -106,4 +100,4 @@ Both Mint Authority and Freeze Authority are reported as `revoked (None)`. This 
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-14*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

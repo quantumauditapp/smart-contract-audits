@@ -2,14 +2,14 @@
 token: Solstice
 ticker: SLX
 network: solana
-risk_score: 90
-status: critical
-date: 2026-06-01
+risk_score: 70
+status: high
+date: 2026-06-10
 ---
 
 # Solstice (SLX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 70/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solstice-sol)
 
@@ -17,87 +17,73 @@ date: 2026-06-01
 
 ## Audit Summary
 
-This report provides a security assessment of the Solstice (SLX) SPL Token Mint account based on available on-chain metadata. Critical functional issues were identified, including the mint being uninitialized and its owning token program being unknown. While mint and freeze authorities are revoked, these controls are moot given the uninitialized state. Economic data shows moderate liquidity and volume, but crucial information regarding holder distribution and external security signals is unavailable, limiting a comprehensive risk assessment.
+This audit of the Solstice (SLX) SPL token mint identified a high-severity risk due to the default frozen state of new holder accounts, which necessitates manual unfreezing by an authority. While mint and freeze authorities are revoked, enhancing security, holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-> **Final Recommendation:** The Solstice (SLX) SPL Token Mint account is currently in a non-functional state due to being uninitialized and having an unknown owning token program. These are critical issues that prevent the token from being used as a standard SPL token. It is imperative to address these foundational problems before any further development or deployment. Without resolution, the token cannot be minted, transferred, or utilized within the Solana ecosystem. 
+> **Final Recommendation:** Prospective holders should be aware that new token accounts for Solstice (SLX) are created in a frozen state. This means that after acquiring tokens, an explicit unfreezing action by an authorized party is required before the tokens can be transferred or used. It is crucial to confirm the availability and responsiveness of the issuer or designated authority to perform this unfreezing. Without this, tokens may become unspendable.
 
-For future deployments, consider a Premium Deploy option that includes a pre-deployment audit of the token's configuration and initialization process to ensure all critical parameters are correctly set and verified on-chain, mitigating such fundamental risks.
+Given the revoked mint and freeze authorities, the token's supply is fixed, and existing accounts cannot be frozen by a central entity. However, the default frozen state for *new* accounts introduces an operational hurdle. Verify the process for unfreezing accounts before committing significant capital. For a Premium Deploy, consider tokens where the default account state is unfrozen to ensure immediate transferability.
 
 ## Security Analysis
 
-This report provides a security assessment of the Solstice (SLX) SPL Token Mint account based on available on-chain metadata. Critical functional issues were identified, including the mint being uninitialized and its owning token program being unknown. While mint and freeze authorities are revoked, these controls are moot given the uninitialized state. Economic data shows moderate liquidity and volume, but crucial information regarding holder distribution and external security signals is unavailable, limiting a comprehensive risk assessment.
+This audit of the Solstice (SLX) SPL token mint identified a high-severity risk due to the default frozen state of new holder accounts, which necessitates manual unfreezing by an authority. While mint and freeze authorities are revoked, enhancing security, holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-The Solstice (SLX) SPL Token Mint account is currently in a non-functional state due to being uninitialized and having an unknown owning token program. These are critical issues that prevent the token from being used as a standard SPL token. It is imperative to address these foundational problems before any further development or deployment. Without resolution, the token cannot be minted, transferred, or utilized within the Solana ecosystem. 
+Prospective holders should be aware that new token accounts for Solstice (SLX) are created in a frozen state. This means that after acquiring tokens, an explicit unfreezing action by an authorized party is required before the tokens can be transferred or used. It is crucial to confirm the availability and responsiveness of the issuer or designated authority to perform this unfreezing. Without this, tokens may become unspendable.
 
-For future deployments, consider a Premium Deploy option that includes a pre-deployment audit of the token's configuration and initialization process to ensure all critical parameters are correctly set and verified on-chain, mitigating such fundamental risks.
+Given the revoked mint and freeze authorities, the token's supply is fixed, and existing accounts cannot be frozen by a central entity. However, the default frozen state for *new* accounts introduces an operational hurdle. Verify the process for unfreezing accounts before committing significant capital. For a Premium Deploy, consider tokens where the default account state is unfrozen to ensure immediate transferability.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | 7.1 Architecture and 7.2 Code Security reveal significant technical deficiencies. The SPL Token Mint is marked as 'Initialized: False', rendering it non-functional and preventing any token operations. |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic and 7.5 Governance aspects present a mixed picture. The token exhibits a healthy Volume/Liquidity Ratio of 0.08 over its 15-day pair age, with $100,281 in liquidity and $8,011 in 24h volu |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades are not directly applicable to an SPL Token Mint account, which is a data structure managed by the SPL Token Program. The underlying SPL Token Program itself is upgradeable, but the mint  |
+| **Technical** | 6/10 | High | 7.1 Architecture & 7.2 Code Security: The Solstice (SLX) token is an SPL token operating on the `spl-token` program. While the mint authority and freeze authority have been revoked, preventing further |
+| **Governance / Economics** | 6/10 | Medium | 7.4 Economic: The token exhibits a healthy liquidity of $100,237 USD on DEXs, with a normal 24-hour volume of $1,709 and a low Volume/Liquidity Ratio of 0.02, indicating organic trading. The DEX pair  |
+| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, indicating that the token's supply and transferability parameters are fixed and cannot be altered by a central party. The token' |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 2 Low_
+_🟠 1 High · ⚪ 2 Informational_
 
-### `C-01` — Uninitialized SPL Token Mint  *(Severity: Critical · Status: Unresolved)*
+### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
 
-The SPL Token Mint account for Solstice (SLX) is marked as 'Initialized: False'. An uninitialized mint cannot be used to create or manage tokens, rendering the token completely non-functional. This prevents any minting, burning, or transfer operations, making the token unusable.
+New holder accounts are created in a frozen state, as indicated by `GoPlus.default_account_state: 1`. This requires explicit unfreezing by an authority before tokens can be transferred or used.
 
-**Recommendation:** The token mint must be properly initialized using the SPL Token Program's `initialize_mint` instruction. This will set the supply, decimals, and other critical parameters, enabling the token to function as intended.
-
-
-### `H-01` — Unknown Token Program Ownership  *(Severity: High · Status: Unresolved)*
-
-The 'Token Program' associated with this mint is listed as 'unknown'. For a standard SPL token, this should be the well-known SPL Token Program (TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA). An unknown program owner raises significant concerns about the token's legitimacy, security, and adherence to Solana's token standards, potentially indicating a custom or misconfigured implementation without transparency.
-
-**Recommendation:** Verify and confirm that the mint account is owned by the official SPL Token Program or a known, audited custom token program. If it's a custom program, its source code must be made available for a thorough security review.
+**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token may be unspendable. This introduces an operational dependency on a central entity.
 
 
-### `M-01` — Missing Core Token Metadata  *(Severity: Medium · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Fundamental token metadata, specifically 'Supply (raw): unknown' and 'Decimals: unknown', is not available. This is a direct consequence of the mint being uninitialized and/or the unknown token program. Without these details, users and applications cannot correctly interact with or display information about the token.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Ensure the token mint is correctly initialized, which will populate the supply and decimals fields. This information is crucial for token usability and integration across the Solana ecosystem.
-
-
-### `L-01` — Lack of Holder Distribution Data  *(Severity: Low · Status: Unresolved)*
-
-Information regarding holder concentration is 'unavailable'. The absence of this data prevents an assessment of potential centralization risks, such as a few large holders controlling a significant portion of the supply, which could lead to market manipulation or governance issues if the token were functional and had governance implications.
-
-**Recommendation:** Implement or integrate with tools that provide transparent holder distribution data. This information is vital for community trust and assessing the decentralization of token ownership.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `L-02` — Absence of External Security Signals  *(Severity: Low · Status: Unresolved)*
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-External security signals from reputable services like GoPlus Solana and RugCheck are 'unavailable'. These services provide valuable insights into potential scam indicators, contract risks, and liquidity health. Their absence means that potential red flags or security assurances cannot be independently verified.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Ensure integration with and reporting from established security auditing and monitoring services. This provides an additional layer of trust and transparency for the token and its ecosystem.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`slxdx4...rfgq`](https://solscan.io/account/slxdx4but2v9ujqnzwqsfztj9ukludsvxhfmeedrfgq) |
+| **Contract** | [`SLXdx4...rfgq`](https://solscan.io/account/SLXdx4BUt2v9uJQNzWqSfzTJ9UKLUDsvxHFMEEdrfgq) |
 | **Network** | Solana |
 | **Price** | $0.4214 |
 | **24h Volume** | $521.6K |
 | **Liquidity** | $203.3K |
 | **Volume / Liquidity** | 2.6× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 90.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2275 buys / 2192 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -107,7 +93,7 @@ External security signals from reputable services like GoPlus Solana and RugChec
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -133,4 +119,4 @@ There is no indication of a security audit for Solstice (SLX). Furthermore, the 
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-01*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

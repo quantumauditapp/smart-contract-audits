@@ -2,14 +2,14 @@
 token: Official Bridge Currency
 ticker: OBC
 network: solana
-risk_score: 85
+risk_score: 72
 status: critical
-date: 2026-05-12
+date: 2026-06-10
 ---
 
 # Official Bridge Currency (OBC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 85/100 — 🔴 Critical Risk**
+> **Risk Score: 72/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/official-bridge-currency-sol)
 
@@ -17,67 +17,68 @@ date: 2026-05-12
 
 ## Audit Summary
 
-The audit of the Official Bridge Currency (OBC) SPL Token Mint reveals a critical issue: the token mint is uninitialized. This fundamental flaw prevents the token from functioning correctly, despite positive indicators regarding revoked authorities and immutable configurations. Any liquidity associated with this token is at significant risk due to its non-functional state.
+The Official Bridge Currency (OBC) token mint has revoked both mint and freeze authorities, indicating a fixed supply and no ability to freeze user funds. However, the token suffers from very low liquidity, with only $4,442 available on DEXs, making large trades highly susceptible to slippage. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-> **Final Recommendation:** It is critically important to address the uninitialized state of the Official Bridge Currency (OBC) SPL Token Mint. If the intention is for this token to be functional, it must be properly initialized to define its supply, decimals, and enable minting. Failure to do so means any existing liquidity is paired with a non-functional asset, posing a significant risk to all participants. If the token cannot be initialized, all associated liquidity should be withdrawn, and the token considered defunct. For future token deployments, consider a Premium Deploy option that includes pre-deployment verification of all critical parameters, ensuring the token is fully functional and secure from inception.
+> **Final Recommendation:** Prospective holders should be aware of the extremely low liquidity ($4,442) for OBC, which will lead to high slippage for any significant trade. While the mint and freeze authorities are revoked, providing security against supply dilution and account freezing, the lack of holder concentration data means whale risk cannot be assessed. It is recommended to proceed with extreme caution due to the liquidity constraints.
 
 ## Security Analysis
 
-The audit of the Official Bridge Currency (OBC) SPL Token Mint reveals a critical issue: the token mint is uninitialized. This fundamental flaw prevents the token from functioning correctly, despite positive indicators regarding revoked authorities and immutable configurations. Any liquidity associated with this token is at significant risk due to its non-functional state.
+The Official Bridge Currency (OBC) token mint has revoked both mint and freeze authorities, indicating a fixed supply and no ability to freeze user funds. However, the token suffers from very low liquidity, with only $4,442 available on DEXs, making large trades highly susceptible to slippage. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-It is critically important to address the uninitialized state of the Official Bridge Currency (OBC) SPL Token Mint. If the intention is for this token to be functional, it must be properly initialized to define its supply, decimals, and enable minting. Failure to do so means any existing liquidity is paired with a non-functional asset, posing a significant risk to all participants. If the token cannot be initialized, all associated liquidity should be withdrawn, and the token considered defunct. For future token deployments, consider a Premium Deploy option that includes pre-deployment verification of all critical parameters, ensuring the token is fully functional and secure from inception.
+Prospective holders should be aware of the extremely low liquidity ($4,442) for OBC, which will lead to high slippage for any significant trade. While the mint and freeze authorities are revoked, providing security against supply dilution and account freezing, the lack of holder concentration data means whale risk cannot be assessed. It is recommended to proceed with extreme caution due to the liquidity constraints.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The primary technical concern (7.2 Code Security) is the uninitialized state of the SPL Token Mint, rendering it non-functional. While positive aspects include revoked Mint and Freeze Authorities (7.3 |
-| **Governance / Economics** | 6/10 | High | The economic viability (7.4 Economic) of the Official Bridge Currency is severely compromised by its uninitialized state. Despite having $4,603 in liquidity, this capital is effectively tied to a non- |
-| **Upgrades** | 6/10 | Low | SPL Token Mints are not directly upgradeable in the context of their specific parameters once initialized. The underlying SPL Token Program (7.7 Upgrades) is managed by Solana governance, but this aud |
+| **Technical** | 6/10 | Low | The Official Bridge Currency (OBC) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen ( |
+| **Governance / Economics** | 6/10 | High | The token exhibits very low liquidity, with only $4,442 USD available on DEXs, posing a significant risk for slippage and large position exits (7.4 Economic). The 24-hour volume to liquidity ratio is  |
+| **Upgrades** | 6/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and freeze capabilities cannot be altered post-launch (7.7 Upgrades). The token does not utilize any Token-2022 ext |
 
 ## Security Findings
 
-_🔴 1 Critical · ⚪ 2 Informational_
+_🟠 1 High · ⚪ 2 Informational_
 
-### `C-01` — Uninitialized SPL Token Mint  *(Severity: Critical · Status: Unresolved)*
+### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
 
-The SPL Token Mint for 'Official Bridge Currency (OBC)' at address `2necwdgejstlv2yrfmsjtindwyvj7snnucqjwgc5ydk1` is reported as `Initialized: False`. An uninitialized token mint cannot function correctly; it lacks defined supply, decimals, and the ability to mint new tokens. This renders the token non-functional and any associated liquidity effectively tied to a non-existent asset.
+Total DEX liquidity is $4,442. Slippage will be severe; large positions cannot be exited without significant loss.
 
-**Recommendation:** The token mint must be properly initialized to become functional. This involves setting the supply, decimals, and potentially the mint authority. If initialization is not possible or intended, all associated liquidity should be withdrawn, and the token considered non-viable to prevent further economic loss.
-
-
-### `I-01` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Unresolved)*
-
-The Mint Authority and Freeze Authority for the Official Bridge Currency (OBC) token have both been revoked (`None`). This is a positive security practice, as it prevents further token minting or freezing of token accounts by a central authority, enhancing decentralization and reducing potential for malicious control. However, this positive aspect is currently overshadowed by the uninitialized state of the mint.
-
-**Recommendation:** Maintain revoked authorities once the token is properly initialized and fully deployed. This configuration is generally recommended for fully decentralized tokens.
+**Recommendation:** Account for the severe slippage in any swap calculation and consider the difficulty of exiting large positions.
 
 
-### `I-02` — Immutable Token Configuration  *(Severity: Informational · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-External security signals indicate that several key token properties are immutable, including `balance_mutable: False`, `closable: False`, `freezable: False`, `non_transferable: False`, `transfer_fee_upgradable: False`, `transfer_hook_upgradable: False`, and `metadata_mutable: False`. These settings prevent unauthorized modifications to token behavior, fees, or metadata post-deployment, contributing to predictable and secure token operations. This is a strong security posture for a token, assuming it becomes functional.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Ensure these immutable configurations remain in place. This design choice enhances trust and predictability for token holders. This is a good practice for token deployments.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`2necwd...ydk1`](https://solscan.io/account/2necwdgejstlv2yrfmsjtindwyvj7snnucqjwgc5ydk1) |
+| **Contract** | [`2NECWd...ydk1`](https://solscan.io/account/2NECWdgEjSTLv2yRFmSJtiNdwyVj7sNNUcqjWGc5ydk1) |
 | **Network** | Solana |
 | **Price** | $0.002121 |
 | **24h Volume** | $332.5K |
 | **Liquidity** | $69.0K |
 | **Volume / Liquidity** | 4.8× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 44.7% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -87,7 +88,7 @@ External security signals indicate that several key token properties are immutab
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -99,4 +100,4 @@ External security signals indicate that several key token properties are immutab
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-12*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

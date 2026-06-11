@@ -2,14 +2,14 @@
 token: SpaceX
 ticker: SPCX
 network: solana
-risk_score: 90
-status: critical
-date: 2026-05-23
+risk_score: 70
+status: high
+date: 2026-06-10
 ---
 
 # SpaceX (SPCX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 70/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spacex-sol)
 
@@ -17,67 +17,68 @@ date: 2026-05-23
 
 ## Audit Summary
 
-The audit of the SpaceX (SPCX) SPL Token Mint reveals a critical issue: the mint account is reported as 'Initialized: False' despite having significant liquidity and trading volume. This state means the token's fundamental properties (like supply and decimals) are unset, and it is not functional for token operations. Both mint and freeze authorities have been revoked, which, combined with the uninitialized state, creates an irreversible non-functional token. Users are trading a token that is technically not properly configured on-chain, posing a severe risk of loss of funds.
+This SPL token mint audit for SpaceX (SPCX) identified a High risk due to the default frozen state for new accounts, requiring explicit unfreezing by an authority. Mint and freeze authorities are revoked, indicating a fixed supply and unalterable freeze status for existing accounts. Holder concentration data was unavailable, preventing an assessment of supply distribution risk.
 
-> **Final Recommendation:** Given the critical uninitialized state of the SPL Token Mint account and the irreversible revocation of its authorities, this token is fundamentally flawed and poses a severe risk to holders. It is strongly recommended that users exercise extreme caution and avoid trading or holding this token until its on-chain state is corrected and verified as fully initialized and functional. The current configuration suggests a high potential for loss of funds due to misrepresentation or an unrecoverable error in token deployment. For future token deployments, it is crucial to ensure proper initialization and configuration of all token properties before any liquidity is provided or trading commences. A 'Premium Deploy' option would involve a thorough pre-deployment audit to prevent such critical misconfigurations, ensuring all SPL token properties are correctly set and verified on-chain before publ…
+> **Final Recommendation:** Prospective holders should be aware of the 'Default Frozen State' for new accounts. Before acquiring this token, verify that an active and responsive issuer or authority is available to unfreeze new accounts, as otherwise, acquired tokens may be unspendable. Due to the unavailability of holder concentration data, it is advisable to monitor on-chain distribution if this information becomes available.
 
 ## Security Analysis
 
-The audit of the SpaceX (SPCX) SPL Token Mint reveals a critical issue: the mint account is reported as 'Initialized: False' despite having significant liquidity and trading volume. This state means the token's fundamental properties (like supply and decimals) are unset, and it is not functional for token operations. Both mint and freeze authorities have been revoked, which, combined with the uninitialized state, creates an irreversible non-functional token. Users are trading a token that is technically not properly configured on-chain, posing a severe risk of loss of funds.
+This SPL token mint audit for SpaceX (SPCX) identified a High risk due to the default frozen state for new accounts, requiring explicit unfreezing by an authority. Mint and freeze authorities are revoked, indicating a fixed supply and unalterable freeze status for existing accounts. Holder concentration data was unavailable, preventing an assessment of supply distribution risk.
 
-Given the critical uninitialized state of the SPL Token Mint account and the irreversible revocation of its authorities, this token is fundamentally flawed and poses a severe risk to holders. It is strongly recommended that users exercise extreme caution and avoid trading or holding this token until its on-chain state is corrected and verified as fully initialized and functional. The current configuration suggests a high potential for loss of funds due to misrepresentation or an unrecoverable error in token deployment. For future token deployments, it is crucial to ensure proper initialization and configuration of all token properties before any liquidity is provided or trading commences. A 'Premium Deploy' option would involve a thorough pre-deployment audit to prevent such critical misconfigurations, ensuring all SPL token properties are correctly set and verified on-chain before publ…
+Prospective holders should be aware of the 'Default Frozen State' for new accounts. Before acquiring this token, verify that an active and responsive issuer or authority is available to unfreeze new accounts, as otherwise, acquired tokens may be unspendable. Due to the unavailability of holder concentration data, it is advisable to monitor on-chain distribution if this information becomes available.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The technical state of the SPL Token Mint account is critically flawed (7.2 Code Security). The account is marked as 'Initialized: False', meaning its core properties are unset and it cannot perform t |
-| **Governance / Economics** | 6/10 | High | The economic implications are severe (7.4 Economic). Users are trading a token with significant liquidity and volume that is fundamentally non-functional due to its uninitialized state. This creates a |
-| **Upgrades** | 6/10 | Low | The SPL Token Program itself is a core Solana program and is not subject to frequent upgrades that would impact individual mint accounts in this manner (7.7 Upgrades). The mint account's state is immu |
+| **Technical** | 10/10 | High | 7.1 Architecture & 7.2 Code Security: The token is an SPL token mint on Solana, utilizing the standard `spl-token` program. Mint and Freeze authorities are both revoked (None), ensuring no new tokens  |
+| **Governance / Economics** | 10/10 | Low | 7.4 Economic: The token exhibits healthy liquidity with $239,314 USD available on DEXs, and a normal 24-hour volume to liquidity ratio of 2.98, suggesting organic trading activity. The DEX pair has be |
+| **Upgrades** | 10/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, meaning the token's supply is fixed and the ability to freeze accounts has been permanently disabled. GoPlus data indicates that |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium_
+_🟠 1 High · ⚪ 2 Informational_
 
-### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
+### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
 
-The SPL Token Mint account `e6ifp2mjy8cyqehugutfvrxrirkxruonlmrvtfypump` is reported as `Initialized: False`. This means the token's core properties (like supply, decimals) have not been set, and the mint account is not functional for token operations. Despite this critical state, the token has significant liquidity ($261,151 USD) and trading volume ($636,198 USD), indicating that users are actively trading a non-functional asset.
+New holder accounts are created in a frozen state and require explicit unfreezing by an authority. This is indicated by `GoPlus.default_account_state: 1`.
 
-**Recommendation:** A token mint account must be properly initialized before any tokens are issued or traded. Users should be aware that trading an uninitialized token carries extreme risk, as the token's properties could be set arbitrarily later (if authorities were not revoked) or it may never become functional. Immediate action is required to cease trading and inform holders.
-
-
-### `H-01` — Irreversible Revocation of Authorities on Uninitialized Mint  *(Severity: High · Status: Unresolved)*
-
-Both the Mint Authority and Freeze Authority for the `SPCX` token have been revoked (`None`), while the mint account itself is `Initialized: False`. This combination creates an irreversible state where the token cannot be properly initialized, its properties cannot be set, and no tokens can ever be minted or frozen. This effectively renders the token permanently non-functional and unmanageable.
-
-**Recommendation:** Authorities should only be revoked *after* a token mint has been fully initialized and its properties (like decimals and supply) are correctly set and immutable. Revoking authorities on an uninitialized mint creates an irreversible state of non-functionality, making the token unusable.
+**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
 
 
-### `M-01` — Lack of Transparency for Key Token Properties  *(Severity: Medium · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Due to the `Initialized: False` state of the mint account, crucial token properties such as `Supply (raw)` and `Decimals` are `unknown`. This lack of on-chain transparency prevents users from understanding the token's fundamental economic characteristics, such as its total supply or divisibility, which are essential for informed trading decisions.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** For any token intended for public trading, all essential properties, including total supply and decimals, must be clearly defined and verifiable on-chain. This requires proper initialization of the mint account before any public engagement or liquidity provision.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`e6ifp2...pump`](https://solscan.io/account/e6ifp2mjy8cyqehugutfvrxrirkxruonlmrvtfypump) |
+| **Contract** | [`E6ifp2...pump`](https://solscan.io/account/E6ifp2mJy8cYQehUGUtFvrXriRKxRuonLmrvTFypump) |
 | **Network** | Solana |
 | **Price** | $0.001361 |
 | **24h Volume** | $383.0K |
 | **Liquidity** | $129.8K |
 | **Volume / Liquidity** | 3.0× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 17.6% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -87,7 +88,7 @@ Due to the `Initialized: False` state of the mint account, crucial token propert
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -99,4 +100,4 @@ Due to the `Initialized: False` state of the mint account, crucial token propert
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-23*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

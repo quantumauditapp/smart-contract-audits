@@ -2,14 +2,14 @@
 token: Bullish Degen
 ticker: BULLISH
 network: solana
-risk_score: 95
+risk_score: 72
 status: critical
-date: 2026-05-14
+date: 2026-06-10
 ---
 
 # Bullish Degen (BULLISH) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 95/100 — 🔴 Critical Risk**
+> **Risk Score: 72/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bullish-degen-sol)
 
@@ -17,78 +17,68 @@ date: 2026-05-14
 
 ## Audit Summary
 
-This report provides a security analysis of the Bullish Degen (BULLISH) SPL Token Mint account based on on-chain metadata. The analysis reveals critical issues, primarily that the token mint is uninitialized and associated with an unknown token program, rendering it non-functional and highly risky. While liquidity is reported, the underlying technical state makes any economic activity impossible or highly precarious. The audit is limited to available on-chain data and does not include source code review.
+The Bullish Degen token mint has its mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. However, new holder accounts are created in a frozen state, requiring an authority to unfreeze them before use. Holder concentration data was unavailable from RPC, but RugCheck flagged high ownership by top holders, indicating potential centralization risks.
 
-> **Final Recommendation:** The Bullish Degen (BULLISH) SPL Token Mint presents critical security and functionality risks due to its uninitialized state and association with an unknown token program. Any interaction with this token is strongly discouraged as it is fundamentally non-functional and potentially malicious. Users should exercise extreme caution and avoid purchasing or holding this token.
-
-For projects aiming for robust and secure token deployments, a 'Premium Deploy' option is recommended. This includes a comprehensive pre-deployment audit of the token program's source code, rigorous on-chain validation post-deployment, and continuous monitoring. Such a service ensures all critical parameters, like initialization and program association, are correctly configured and verified, mitigating the severe issues observed in this token.
+> **Final Recommendation:** Holders should be aware that new token accounts for Bullish Degen are created in a frozen state. This means that upon receiving tokens, users may need an issuer or designated authority to unfreeze their account before they can transfer or use the tokens. Verify the availability and responsiveness of such an authority. Due to unavailable holder concentration data and RugCheck's "high ownership" flags, consider the potential for price manipulation from large holders.
 
 ## Security Analysis
 
-This report provides a security analysis of the Bullish Degen (BULLISH) SPL Token Mint account based on on-chain metadata. The analysis reveals critical issues, primarily that the token mint is uninitialized and associated with an unknown token program, rendering it non-functional and highly risky. While liquidity is reported, the underlying technical state makes any economic activity impossible or highly precarious. The audit is limited to available on-chain data and does not include source code review.
+The Bullish Degen token mint has its mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. However, new holder accounts are created in a frozen state, requiring an authority to unfreeze them before use. Holder concentration data was unavailable from RPC, but RugCheck flagged high ownership by top holders, indicating potential centralization risks.
 
-The Bullish Degen (BULLISH) SPL Token Mint presents critical security and functionality risks due to its uninitialized state and association with an unknown token program. Any interaction with this token is strongly discouraged as it is fundamentally non-functional and potentially malicious. Users should exercise extreme caution and avoid purchasing or holding this token.
-
-For projects aiming for robust and secure token deployments, a 'Premium Deploy' option is recommended. This includes a comprehensive pre-deployment audit of the token program's source code, rigorous on-chain validation post-deployment, and continuous monitoring. Such a service ensures all critical parameters, like initialization and program association, are correctly configured and verified, mitigating the severe issues observed in this token.
+Holders should be aware that new token accounts for Bullish Degen are created in a frozen state. This means that upon receiving tokens, users may need an issuer or designated authority to unfreeze their account before they can transfer or use the tokens. Verify the availability and responsiveness of such an authority. Due to unavailable holder concentration data and RugCheck's "high ownership" flags, consider the potential for price manipulation from large holders.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The technical analysis (7.2 Code Security, 7.3 Access Control) reveals critical flaws: the SPL Token Mint is marked as 'Initialized: False', meaning it cannot function to mint or manage tokens, and it |
-| **Governance / Economics** | 6/10 | High | Despite reported liquidity of $64,398 and a 24h volume of $62,074 (7.4 Economic), these metrics are highly misleading given the token's uninitialized state. An uninitialized token cannot be properly t |
-| **Upgrades** | 6/10 | Low | SPL Token Mint accounts are not directly upgradeable (7.7 Upgrades). The underlying SPL Token Program is managed and upgradeable by Solana Labs, ensuring its core functionality is maintained by the So |
+| **Technical** | 3/10 | High | The token is an SPL token using the standard `spl-token` program. Both mint and freeze authorities are revoked, ensuring no new tokens can be minted and no existing accounts can be frozen by an author |
+| **Governance / Economics** | 3/10 | Medium | The token has a liquidity of $68,889 USD, with a 24-hour volume of $50,879, resulting in a normal volume/liquidity ratio of 0.74. The DEX pair is 251 days old, indicating a reasonable track record. Ho |
+| **Upgrades** | 4/10 | Low | The mint authority and freeze authority for the token have both been revoked, meaning the token supply is fixed and no accounts can be frozen by an external authority. The token uses the standard `spl |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · ⚪ 1 Informational_
+_🟠 1 High · ⚪ 2 Informational_
 
-### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
+### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
 
-The SPL Token Mint account at `c2omvhcvt3ddy77s2kzzawfjqeetzofgz4enwwkxpump` is reported as 'Initialized: False'. An uninitialized mint account cannot be used to create, transfer, or manage tokens. This means no tokens can be minted, the supply and decimals are unknown, and the token is effectively non-functional. Any reported liquidity or trading volume for an uninitialized token is highly misleading and represents a significant risk to users attempting to interact with it.
+New holder accounts are created in a frozen state and require explicit unfreezing by an authority. (Fact: GoPlus.default_account_state: 1)
 
-**Recommendation:** The token mint account must be properly initialized using the SPL Token Program's `initialize_mint` instruction. Without proper initialization, the token is unusable. If this was an intentional state for a specific purpose, it should be clearly communicated; otherwise, it represents a critical failure in deployment.
-
-
-### `H-01` — Unknown Token Program Association  *(Severity: High · Status: Unresolved)*
-
-The 'Token Program' associated with the mint account is listed as 'unknown'. Standard SPL tokens are managed by the official `TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA` program. An unknown program implies that this account might not be a standard SPL token mint, or it is associated with a custom, potentially unaudited, or malicious program. This introduces significant uncertainty regarding the account's true nature and functionality, posing a high security risk.
-
-**Recommendation:** Verify the program ID associated with this mint account. If it is not the official SPL Token Program, a thorough audit of the custom program's source code is essential to understand its behavior and security implications. Users should avoid interacting with tokens managed by unknown or unverified programs.
+**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
 
 
-### `M-01` — Absence of External Security Signals  *(Severity: Medium · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Data from external security signals such as GoPlus Solana and RugCheck is unavailable. The absence of these independent security assessments means there is no third-party validation regarding potential risks like honeypots, mutable metadata, or other common token scams. This lack of external scrutiny increases the overall risk profile, especially for a token with fundamental technical issues.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Engage with reputable security auditing firms and integrate with external security signal providers (e.g., GoPlus, RugCheck) to provide transparency and independent validation of the token's safety and integrity. This helps build trust within the community.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `I-01` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Resolved)*
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Both the Mint Authority and Freeze Authority for the token have been revoked (set to 'None'). If the token were properly initialized and functional, this would be a positive security feature, preventing any single entity from minting new tokens or freezing existing token accounts. This decentralizes control over the token's supply and transferability.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Maintain revoked authorities for production tokens to enhance decentralization and prevent centralized control over token supply and transfer mechanisms. This is a good practice for community-owned or fixed-supply tokens.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`c2omvh...pump`](https://solscan.io/account/c2omvhcvt3ddy77s2kzzawfjqeetzofgz4enwwkxpump) |
+| **Contract** | [`C2omVh...pump`](https://solscan.io/account/C2omVhcvt3DDY77S2KZzawFJQeETZofgZ4eNWWkXpump) |
 | **Network** | Solana |
 | **Price** | $0.00169 |
 | **24h Volume** | $308.8K |
 | **Liquidity** | $150.3K |
 | **Volume / Liquidity** | 2.1× |
 | **Token Age** | 7mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 28.6% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -98,7 +88,7 @@ Both the Mint Authority and Freeze Authority for the token have been revoked (se
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -110,4 +100,4 @@ Both the Mint Authority and Freeze Authority for the token have been revoked (se
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-14*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

@@ -4,7 +4,7 @@ ticker: FCM
 network: solana
 risk_score: 35
 status: medium
-date: 2026-06-08
+date: 2026-06-10
 ---
 
 # Football Capital Markets (FCM) — Smart Contract Security Analysis | Solana
@@ -17,83 +17,69 @@ date: 2026-06-08
 
 ## Audit Summary
 
-This report provides a security audit for a Solana program, identified as an SPL Token Mint. Due to the absence of specific program code for analysis, this audit is based on general Solana program security best practices and common vulnerability patterns observed in similar programs. The risk assessment reflects potential issues that could arise in a typical Solana program interacting with an SPL mint, rather than specific findings from code review. The overall risk is assessed as Medium, primarily due to the inherent complexities of Solana program development and the potential for common pitfalls such as improper account validation or missing signer checks.
+The Football Capital Markets (FCM) SPL token mint exhibits strong security configurations with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No Token-2022 extensions that grant administrative control, such as Transfer Hook or Permanent Delegate, are active, and metadata is immutable. Holder concentration data was unavailable, which is a key missing piece for a complete risk assessment.
 
-> **Final Recommendation:** Given the absence of program code for a detailed audit, this report highlights general security considerations for Solana programs, particularly those interacting with SPL token mints. It is crucial to conduct a thorough code review to identify and mitigate specific vulnerabilities. We recommend implementing robust account validation, comprehensive signer checks, and secure management of program authorities. For enhanced security and peace of mind, consider our Premium Deploy option, which includes a full code audit, formal verification, and continuous monitoring services to ensure the long-term integrity and security of your Solana program.
+> **Final Recommendation:** Based on the available on-chain data, the FCM token mint appears to be securely configured with no active administrative authorities that could manipulate supply, freeze accounts, or alter token metadata. The absence of a transfer hook or permanent delegate also reduces operational risks. However, a complete assessment of market manipulation risk is hindered by the unavailability of holder concentration data. Prospective holders should consider the unknown distribution of tokens and monitor for any future changes in liquidity or trading patterns. For a premium deployment, ensuring all relevant market data, including holder distribution, is available for analysis would provide a more comprehensive risk profile.
 
 ## Security Analysis
 
-This report provides a security audit for a Solana program, identified as an SPL Token Mint. Due to the absence of specific program code for analysis, this audit is based on general Solana program security best practices and common vulnerability patterns observed in similar programs. The risk assessment reflects potential issues that could arise in a typical Solana program interacting with an SPL mint, rather than specific findings from code review. The overall risk is assessed as Medium, primarily due to the inherent complexities of Solana program development and the potential for common pitfalls such as improper account validation or missing signer checks.
+The Football Capital Markets (FCM) SPL token mint exhibits strong security configurations with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No Token-2022 extensions that grant administrative control, such as Transfer Hook or Permanent Delegate, are active, and metadata is immutable. Holder concentration data was unavailable, which is a key missing piece for a complete risk assessment.
 
-Given the absence of program code for a detailed audit, this report highlights general security considerations for Solana programs, particularly those interacting with SPL token mints. It is crucial to conduct a thorough code review to identify and mitigate specific vulnerabilities. We recommend implementing robust account validation, comprehensive signer checks, and secure management of program authorities. For enhanced security and peace of mind, consider our Premium Deploy option, which includes a full code audit, formal verification, and continuous monitoring services to ensure the long-term integrity and security of your Solana program.
+Based on the available on-chain data, the FCM token mint appears to be securely configured with no active administrative authorities that could manipulate supply, freeze accounts, or alter token metadata. The absence of a transfer hook or permanent delegate also reduces operational risks. However, a complete assessment of market manipulation risk is hindered by the unavailability of holder concentration data. Prospective holders should consider the unknown distribution of tokens and monitor for any future changes in liquidity or trading patterns. For a premium deployment, ensuring all relevant market data, including holder distribution, is available for analysis would provide a more comprehensive risk profile.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture and 7.2 Code Security: Without specific program code, a detailed architectural review is not possible. However, a well-structured Solana program typically leverages Anchor for secure  |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic and 7.5 Governance: For an SPL Token Mint, economic aspects primarily revolve around mint supply, freeze authority, and potential fees if the program implements custom token logic. Govern |
-| **Upgrades** | 6/10 | Medium | 7.7 Upgrades: The upgradeability of a Solana program introduces both flexibility and risk. While the SPL Token Program itself is generally not user-upgradeable, any custom program interacting with it  |
+| **Technical** | 6/10 | Low | 7.1 Architecture & 7.2 Code Security: The FCM token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority are revoked (None), indicating that no entity can mint new tokens or freeze  |
+| **Governance / Economics** | 6/10 | Low | 7.4 Economic: The token has a healthy liquidity of $172,411 USD on DEXs. The 24-hour volume of $511,644 USD results in a Volume/Liquidity Ratio of 2.97, which is considered normal and does not signal  |
+| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The token's Mint and Freeze authorities are revoked, meaning no further administrative control can be exercised over the token's supply or account states. As an SPL Token-2022, it suppor |
 
 ## Security Findings
 
-_🟡 3 Medium · 🟢 2 Low_
+_⚪ 3 Informational_
 
-### `M-01` — Missing Signer Checks for Critical Instructions  *(Severity: Medium · Status: Unresolved)*
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Solana programs often fail to properly validate that required accounts are signers for critical instructions. This can lead to unauthorized execution of instructions, such as transferring ownership, minting tokens, or modifying program state, by non-privileged accounts. For an SPL Token Mint, this could manifest if a program's instruction intended to be called only by the mint authority does not verify the authority's signature.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Ensure all instructions requiring specific authorization (e.g., administrative actions, state modifications) explicitly check that the necessary authority accounts are signers using `#[account(signer)]` in Anchor or manual `is_signer` checks in raw Rust. Implement robust role-based access control.
-
-
-### `M-02` — Account Validation Failures (Owner/Discriminator Checks)  *(Severity: Medium · Status: Unresolved)*
-
-Improper validation of account ownership or discriminator values can allow attackers to substitute malicious or unintended accounts. This could enable type cosplay attacks where an attacker provides an account of a different type, or allows a program to operate on an account not owned by the expected program, leading to unexpected behavior or asset manipulation. For an SPL Token Mint, this could involve a program incorrectly validating a token account's owner or type.
-
-**Recommendation:** Always validate the `owner` field of all passed accounts to ensure they belong to the expected program (e.g., `spl_token_program::ID` for token accounts, or the program's own ID for custom accounts). For Anchor accounts, ensure `#[account(has_one = owner_field)]` and `#[account(owner = program_id)]` are used, and that discriminators are correctly checked for zero-copy accounts.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `M-03` — Reinitialization Attack Vulnerability  *(Severity: Medium · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Programs with an `initialize` instruction that does not prevent re-execution can be vulnerable to reinitialization attacks. An attacker could re-initialize an already initialized account, resetting its state, changing authorities, or draining funds. This is particularly critical for programs managing core configurations or asset pools.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Implement a clear state check within the `initialize` instruction to ensure the account is uninitialized before proceeding. For Anchor, use `#[account(init)]` and ensure the `init` constraint is only applied to accounts that should be initialized once. For manual implementations, check a boolean flag or a specific state enum value.
-
-
-### `L-01` — Arithmetic Overflow/Underflow without Checked Math  *(Severity: Low · Status: Unresolved)*
-
-Arithmetic operations (addition, subtraction, multiplication) performed without explicit overflow/underflow checks can lead to unexpected behavior or incorrect calculations. While Rust's default `debug_assertions` catch these in debug mode, they wrap in release mode. This could affect token balances, fee calculations, or supply updates, potentially leading to economic exploits.
-
-**Recommendation:** Always use Rust's checked arithmetic methods (e.g., `checked_add()`, `checked_sub()`, `checked_mul()`) for all sensitive calculations involving token amounts, balances, or other numerical state variables. Handle `None` results appropriately, typically by returning an error.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `L-02` — PDA Bump Seed Canonicalization Issues  *(Severity: Low · Status: Unresolved)*
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-When deriving Program Derived Addresses (PDAs), it's crucial to ensure that only the canonical bump seed is accepted. If a program allows non-canonical bump seeds, an attacker could create multiple PDAs for the same set of seeds, potentially leading to state confusion, resource exhaustion, or bypassing unique account constraints. This is relevant if the program derives token accounts or other state accounts using PDAs.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Always verify that the provided bump seed for a PDA is the canonical one. Anchor's `#[account(seeds = [...], bump)]` macro handles this automatically. For manual PDA derivations, ensure `Pubkey::find_program_address` is used to derive the canonical bump and compare it with the provided one.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`hkpi2s...pump`](https://solscan.io/account/hkpi2sknwm5logyy1bz4zytq5revvco2aywd1typpump) |
+| **Contract** | [`Hkpi2S...pump`](https://solscan.io/account/Hkpi2SkNWm5LogyY1Bz4zYTq5REVvco2aYWd1tYppump) |
 | **Network** | Solana |
 | **Price** | $0.004738 |
 | **24h Volume** | $222.9K |
 | **Liquidity** | $175.0K |
 | **Volume / Liquidity** | 1.3× |
 | **Token Age** | 12d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 61.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 7986 buys / 3573 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -103,7 +89,7 @@ When deriving Program Derived Addresses (PDAs), it's crucial to ensure that only
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -129,4 +115,4 @@ The Football Capital Markets contract is reported as "unverified." This means it
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-08*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

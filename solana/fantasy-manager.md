@@ -1,0 +1,104 @@
+---
+token: Fantasy Manager
+ticker: FANTASY
+network: solana
+risk_score: 35
+status: medium
+date: 2026-06-11
+---
+
+# Fantasy Manager (FANTASY) — Smart Contract Security Analysis | Solana
+
+> **Risk Score: 35/100 — 🟡 Medium Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fantasy-manager-sol)
+
+---
+
+## Audit Summary
+
+This audit of the Fantasy Manager (FANTASY) SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and external security signals. Key authorities like Mint and Freeze are revoked, and metadata is immutable. Holder concentration data was unavailable, and RugCheck.xyz flagged a low amount of LP providers, but did not classify the token as rugged.
+
+> **Final Recommendation:** Based on the available data, the Fantasy Manager (FANTASY) token presents a low technical risk profile due to revoked mint and freeze authorities and immutable metadata. Holders should be aware that holder concentration data was unavailable, which prevents a full assessment of potential market manipulation risks from large holders. The RugCheck.xyz flag regarding 'Low amount of LP Providers' suggests a potential centralization risk in liquidity, which could impact market stability. For a Premium Deploy, consider monitoring holder distribution once data becomes available and reviewing the implications of the 'Low amount of LP Providers' flag.
+
+## Security Analysis
+
+This audit of the Fantasy Manager (FANTASY) SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and external security signals. Key authorities like Mint and Freeze are revoked, and metadata is immutable. Holder concentration data was unavailable, and RugCheck.xyz flagged a low amount of LP providers, but did not classify the token as rugged.
+
+Based on the available data, the Fantasy Manager (FANTASY) token presents a low technical risk profile due to revoked mint and freeze authorities and immutable metadata. Holders should be aware that holder concentration data was unavailable, which prevents a full assessment of potential market manipulation risks from large holders. The RugCheck.xyz flag regarding 'Low amount of LP Providers' suggests a potential centralization risk in liquidity, which could impact market stability. For a Premium Deploy, consider monitoring holder distribution once data becomes available and reviewing the implications of the 'Low amount of LP Providers' flag.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Low | 7.1 Architecture & 7.3 Access Control: The Fantasy Manager (FANTASY) token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked (None), indicating that no single e |
+| **Governance / Economics** | 6/10 | Low | 7.4 Economic: The token has a liquidity of $37,593 USD and a 24-hour volume of $408,716 USD. The Volume/Liquidity Ratio is 10.87, which is noted as high (>5) but does not trigger a wash trading signal |
+| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The Mint Authority and Freeze Authority are both revoked, preventing any future changes to the token's supply or the ability to freeze accounts. Metadata is immutable (GoPlus.metadata_mu |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`HbzU4Z...pump`](https://solscan.io/account/HbzU4ZmDECvfSxQHcFa8a54ewaNsVvMW2bgvdeawpump) |
+| **Network** | Solana |
+| **Price** | $0.0002532 |
+| **24h Volume** | $407.6K |
+| **Liquidity** | $37.5K |
+| **Volume / Liquidity** | 10.9× |
+| **Token Age** | 8d |
+| **Top-10 Holders** | 28.8% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 3427 buys / 2673 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/solana/1325buz2akzpbknyjdacw9rzginqyyfiitbwjbucak7p)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/fantasy-manager-sol)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-11*

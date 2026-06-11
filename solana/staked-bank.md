@@ -4,7 +4,7 @@ ticker: STAKE
 network: solana
 risk_score: 90
 status: critical
-date: 2026-05-29
+date: 2026-06-10
 ---
 
 # Staked Bank (STAKE) — Smart Contract Security Analysis | Solana
@@ -17,78 +17,68 @@ date: 2026-05-29
 
 ## Audit Summary
 
-The audit of the Staked Bank (Stake) SPL Token Mint at `5s7tf6ih2cezf7zpnkjatcknaq9dl5gswhmmt3jdpump` reveals a critical inconsistency: the mint account is reported as uninitialized, yet significant liquidity and trading volume are observed. While mint and freeze authorities are revoked, the uninitialized state fundamentally prevents the token from functioning correctly, posing a severe risk to users engaging with this asset. This contradiction suggests a high potential for user losses.
+The Staked Bank (Stake) token mint audit reveals a well-configured SPL Token-2022 mint with no active mint or freeze authorities, ensuring a fixed supply and preventing account freezing. No transfer hooks or permanent delegates are configured, and metadata is immutable. Holder concentration data was unavailable from direct RPC queries, but RugCheck.xyz flagged high ownership by top holders.
 
-> **Final Recommendation:** The Staked Bank (Stake) token mint presents critical risks due to its uninitialized state despite reported trading activity. Users are strongly advised to exercise extreme caution and verify the true functional status of the token before any interaction. The contradiction between the uninitialized state and active trading suggests a high potential for loss of funds.
-
-For projects seeking to deploy functional and secure SPL tokens, a Premium Deploy option is recommended. This service includes a comprehensive pre-deployment audit of the token mint configuration, ensuring all parameters are correctly set and authorities are managed securely, preventing fundamental issues like uninitialized states.
+> **Final Recommendation:** The Staked Bank (Stake) token mint appears to be well-configured with critical authorities revoked, offering a fixed supply and preventing account freezing. While direct holder concentration data was unavailable, RugCheck.xyz's 'high ownership' flag warrants caution regarding potential market manipulation. Users should consider this centralization risk and the moderate liquidity when making investment decisions. For enhanced due diligence, consider a Premium Deploy option to investigate the RugCheck findings further and potentially analyze off-chain team information.
 
 ## Security Analysis
 
-The audit of the Staked Bank (Stake) SPL Token Mint at `5s7tf6ih2cezf7zpnkjatcknaq9dl5gswhmmt3jdpump` reveals a critical inconsistency: the mint account is reported as uninitialized, yet significant liquidity and trading volume are observed. While mint and freeze authorities are revoked, the uninitialized state fundamentally prevents the token from functioning correctly, posing a severe risk to users engaging with this asset. This contradiction suggests a high potential for user losses.
+The Staked Bank (Stake) token mint audit reveals a well-configured SPL Token-2022 mint with no active mint or freeze authorities, ensuring a fixed supply and preventing account freezing. No transfer hooks or permanent delegates are configured, and metadata is immutable. Holder concentration data was unavailable from direct RPC queries, but RugCheck.xyz flagged high ownership by top holders.
 
-The Staked Bank (Stake) token mint presents critical risks due to its uninitialized state despite reported trading activity. Users are strongly advised to exercise extreme caution and verify the true functional status of the token before any interaction. The contradiction between the uninitialized state and active trading suggests a high potential for loss of funds.
-
-For projects seeking to deploy functional and secure SPL tokens, a Premium Deploy option is recommended. This service includes a comprehensive pre-deployment audit of the token mint configuration, ensuring all parameters are correctly set and authorities are managed securely, preventing fundamental issues like uninitialized states.
+The Staked Bank (Stake) token mint appears to be well-configured with critical authorities revoked, offering a fixed supply and preventing account freezing. While direct holder concentration data was unavailable, RugCheck.xyz's 'high ownership' flag warrants caution regarding potential market manipulation. Users should consider this centralization risk and the moderate liquidity when making investment decisions. For enhanced due diligence, consider a Premium Deploy option to investigate the RugCheck findings further and potentially analyze off-chain team information.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The technical analysis of the SPL Token Mint reveals a critical issue: the mint account is uninitialized (`Initialized: False`), which means the token cannot be minted, transferred, or have its supply |
-| **Governance / Economics** | 6/10 | High | The economic risk is critically high due to the uninitialized state of the token mint (7.4 Economic). Users interacting with this token, despite its reported liquidity, may be engaging with an asset t |
-| **Upgrades** | 6/10 | Low | N/A - This is an SPL Token Mint account, not an upgradeable program. The state of the mint is fixed once initialized (or uninitialized in this case), and there are no upgrade mechanisms applicable to  |
+| **Technical** | 6/10 | Low | The Staked Bank (Stake) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and preventing any accounts from being frozen. No Tok |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $15,856 USD available on DEXs, and a healthy 24-hour volume of $4,652, resulting in a normal Volume/Liquidity Ratio of 0.29. The DEX pair has been active for |
+| **Upgrades** | 6/10 | Low | The token mint's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning the token's supply cannot be increased and accounts cannot be frozen. No Token-2022 extensions that wo |
 
 ## Security Findings
 
-_🔴 2 Critical · ⚪ 2 Informational_
+_⚪ 3 Informational_
 
-### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The SPL Token Mint account `5s7tf6ih2cezf7zpnkjatcknaq9dl5gswhmmt3jdpump` is reported as `Initialized: False`. An uninitialized mint account cannot have a defined supply or decimals, and tokens cannot be minted or transferred from it. This state fundamentally prevents the token from functioning as a standard SPL token.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** The mint account must be properly initialized using the SPL Token Program's `InitializeMint` instruction. This involves setting the supply, decimals, and assigning initial authorities. Without proper initialization, the token is non-functional.
-
-
-### `C-02` — Inconsistent State: Uninitialized Mint with Active Trading  *(Severity: Critical · Status: Unresolved)*
-
-Despite the mint account being reported as `Initialized: False`, external data indicates significant liquidity ($16,077 USD) and 24-hour trading volume ($4,933 USD) associated with this specific token address. This is a critical inconsistency, as an uninitialized mint cannot legitimately support trading. Users attempting to acquire or trade this token may find themselves holding non-transferable assets or assets with no real underlying supply, leading to a total loss of funds.
-
-**Recommendation:** Investigate the discrepancy between the on-chain `Initialized: False` status and the reported trading activity. If the mint is indeed uninitialized, all associated trading pairs should be delisted immediately to prevent user losses. If the `Initialized` status is incorrect, provide evidence of proper initialization.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `I-01` — Missing Supply and Decimals Information  *(Severity: Informational · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The supply (raw) and decimals for the token are reported as `unknown`. This is a direct consequence of the mint account being uninitialized. Without these fundamental parameters, the token's value and divisibility cannot be determined, further hindering its usability.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Ensure the mint is properly initialized, which will populate the supply and decimals fields. Once initialized, this information should be readily available via RPC queries.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `I-02` — Lack of Comprehensive External Security Signals  *(Severity: Informational · Status: Unresolved)*
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Data from external security analysis platforms such as GoPlus Solana and RugCheck is unavailable. These platforms provide valuable insights into potential risks, scam indicators, and community trust signals for tokens. The absence of this data limits the holistic security assessment.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Integrate with and monitor external security platforms for comprehensive risk assessment. While not a direct vulnerability, this information gap can impact investor confidence and early detection of potential issues.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`5s7tf6...pump`](https://solscan.io/account/5s7tf6ih2cezf7zpnkjatcknaq9dl5gswhmmt3jdpump) |
+| **Contract** | [`5s7tf6...pump`](https://solscan.io/account/5s7tf6ih2CEZf7ZPNkJAtcknAq9DL5GsWHMMT3Jdpump) |
 | **Network** | Solana |
 | **Price** | $0.0001349 |
 | **24h Volume** | $140.7K |
 | **Liquidity** | $36.3K |
 | **Volume / Liquidity** | 3.9× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 64.6% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -98,7 +88,7 @@ Data from external security analysis platforms such as GoPlus Solana and RugChec
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -110,4 +100,4 @@ Data from external security analysis platforms such as GoPlus Solana and RugChec
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-29*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

@@ -4,7 +4,7 @@ ticker: WYNN
 network: solana
 risk_score: 90
 status: critical
-date: 2026-05-21
+date: 2026-06-10
 ---
 
 # AnitaMaxWynn (WYNN) — Smart Contract Security Analysis | Solana
@@ -17,92 +17,68 @@ date: 2026-05-21
 
 ## Audit Summary
 
-This audit report assesses the AnitaMaxWynn (WYNN) SPL Token Mint based on available on-chain metadata. The analysis reveals critical data inconsistencies, such as the mint account being reported as uninitialized despite active trading, and an 'unknown' token program. While mint and freeze authorities are appropriately revoked, significant transparency gaps exist regarding token supply, decimals, and holder distribution. Users are advised to exercise extreme caution due to these fundamental data discrepancies and lack of critical information.
+This SPL Token-2022 mint, AnitaMaxWynn (WYNN), exhibits strong security characteristics with both mint and freeze authorities revoked, and immutable metadata. No critical or high-severity vulnerabilities were identified based on the available on-chain data and external security signals. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
 
-> **Final Recommendation:** The AnitaMaxWynn (WYNN) SPL Token Mint presents significant risks primarily due to fundamental data inconsistencies and a lack of transparency regarding critical token parameters. The reported 'uninitialized' state combined with active trading is a major red flag that warrants immediate investigation. Users should exercise extreme caution and verify all token details independently before engaging with this asset. It is strongly recommended that the project team clarify the status of the mint account, the associated token program, and provide full transparency on supply, decimals, and holder distribution. 
-
-For future projects, consider a Premium Deploy option that includes a comprehensive pre-launch audit to identify and mitigate such critical issues, ensuring data integrity and transparency from inception.
+> **Final Recommendation:** Based on the available data, the AnitaMaxWynn (WYNN) token appears to have a robust setup with key administrative authorities revoked, limiting potential for malicious actions by an issuer. Holders should be aware that holder concentration data was not available, so the distribution risk could not be fully assessed. For a comprehensive understanding, monitor the token's liquidity and trading patterns over time.
 
 ## Security Analysis
 
-This audit report assesses the AnitaMaxWynn (WYNN) SPL Token Mint based on available on-chain metadata. The analysis reveals critical data inconsistencies, such as the mint account being reported as uninitialized despite active trading, and an 'unknown' token program. While mint and freeze authorities are appropriately revoked, significant transparency gaps exist regarding token supply, decimals, and holder distribution. Users are advised to exercise extreme caution due to these fundamental data discrepancies and lack of critical information.
+This SPL Token-2022 mint, AnitaMaxWynn (WYNN), exhibits strong security characteristics with both mint and freeze authorities revoked, and immutable metadata. No critical or high-severity vulnerabilities were identified based on the available on-chain data and external security signals. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
 
-The AnitaMaxWynn (WYNN) SPL Token Mint presents significant risks primarily due to fundamental data inconsistencies and a lack of transparency regarding critical token parameters. The reported 'uninitialized' state combined with active trading is a major red flag that warrants immediate investigation. Users should exercise extreme caution and verify all token details independently before engaging with this asset. It is strongly recommended that the project team clarify the status of the mint account, the associated token program, and provide full transparency on supply, decimals, and holder distribution. 
-
-For future projects, consider a Premium Deploy option that includes a comprehensive pre-launch audit to identify and mitigate such critical issues, ensuring data integrity and transparency from inception.
+Based on the available data, the AnitaMaxWynn (WYNN) token appears to have a robust setup with key administrative authorities revoked, limiting potential for malicious actions by an issuer. Holders should be aware that holder concentration data was not available, so the distribution risk could not be fully assessed. For a comprehensive understanding, monitor the token's liquidity and trading patterns over time.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | 7.1 Architecture & 7.2 Code Security: The mint account is reported as 'Initialized: False' despite having active liquidity and trading volume, indicating a critical data inconsistency or fundamental m |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic & 7.5 Governance: The token exhibits active trading with a normal volume/liquidity ratio over 25 days. However, critical economic parameters such as total supply and decimals are 'unknown |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: As an SPL Token Mint, the underlying program logic is managed by the Solana Program Library and is not directly upgradeable by the token creator. This provides a stable and immutable fou |
+| **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint, indicating it utilizes the latest Solana token program features. Both the mint authority and freeze authority have been revoked (None), ensuring no single entity c |
+| **Governance / Economics** | 10/10 | Low | The token has a liquidity of $40,342 USD, with a 24-hour volume of $19,625 USD. The volume/liquidity ratio is 0.49, which is considered normal and does not suggest wash trading. The DEX pair has been  |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's core parameters cannot be altered by an administrative key. The token's metadata is immutable, preventing changes to its n |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_⚪ 3 Informational_
 
-### `C-01` — Uninitialized Mint Account with Active Trading  *(Severity: Critical · Status: Unresolved)*
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The SPL Token Mint account is reported as 'Initialized: False'. However, the token (WYNN) has active liquidity ($47,789) and trading volume ($73,618) on decentralized exchanges. An uninitialized mint account should not be functional or tradable. This fundamental inconsistency indicates either a critical data reporting error or a severe misconfiguration of the token, which could lead to unpredictable behavior, loss of funds, or an inability to interact with the token as expected.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** The project team must immediately clarify the true initialization status of the mint account. If the account is indeed uninitialized, all trading should cease, and the token should be re-evaluated. If the data source is incorrect, the project should provide verifiable on-chain proof of proper initialization.
-
-
-### `H-01` — Unknown Token Program  *(Severity: High · Status: Unresolved)*
-
-The 'Token Program' associated with the mint address is reported as 'unknown'. While the 'SOLC_VERSION' indicates 'SPL Token (Token Program v3)', the 'unknown' status in the on-chain facts is concerning. If the token is not governed by the standard, audited SPL Token Program (TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA), it implies a custom or non-standard token program. Custom token programs introduce significant security risks as they may contain unaudited vulnerabilities, backdoors, or unexpected behaviors.
-
-**Recommendation:** The project team should explicitly state and verify the exact program ID governing this token mint. If it is a custom program, a full security audit of its source code is essential to ensure its integrity and security. If it is the standard SPL Token Program, the data source should be corrected to reflect this.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `M-01` — Undisclosed Token Supply and Decimals  *(Severity: Medium · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Critical token parameters, including the total supply (raw) and decimals, are reported as 'unknown'. This lack of transparency prevents users and investors from understanding the token's fundamental economic model, such as its total issuance, potential for inflation/deflation, and how token values are calculated. This opacity hinders proper risk assessment and can lead to misinformed decisions.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** The project team should ensure that the total supply and decimals are publicly verifiable and clearly communicated. This information is crucial for market participants to accurately assess the token's value and economic viability.
-
-
-### `M-02` — Lack of Holder Distribution Data  *(Severity: Medium · Status: Unresolved)*
-
-Information regarding the token's holder concentration and distribution is unavailable. Without this data, it is impossible to assess the level of centralization within the token's ownership. High concentration among a few holders could pose risks such as market manipulation, significant price volatility, or potential 'rug pull' scenarios if large holders decide to liquidate their positions simultaneously.
-
-**Recommendation:** The project should provide access to verifiable token holder distribution data. This transparency allows the community to assess centralization risks and make informed decisions about participating in the token's ecosystem.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `L-01` — Absence of External Security Signals  *(Severity: Low · Status: Unresolved)*
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-External security signals from reputable services like GoPlus Solana data and RugCheck are reported as unavailable. The absence of these independent assessments reduces the overall confidence in the token's security posture and legitimacy, as there is no third-party validation of potential risks or red flags.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** The project team should aim to obtain and publish security assessments from recognized third-party services. This can significantly enhance trust and provide an additional layer of due diligence for potential users and investors.
-
-
-### `I-01` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Resolved)*
-
-Both the Mint Authority and Freeze Authority for the token have been revoked. This is a positive security measure. Revoking the Mint Authority prevents any further issuance of tokens, ensuring a fixed supply (once known). Revoking the Freeze Authority prevents any entity from freezing token accounts, enhancing decentralization and user control over their assets.
-
-**Recommendation:** Maintain the revoked status of these authorities to uphold the token's immutability and decentralization properties.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`cvxywj...pump`](https://solscan.io/account/cvxywjrq3zxqifmzauyuomdvj8pf8nitxx8hxrlgpump) |
+| **Contract** | [`CvXyWJ...pump`](https://solscan.io/account/CvXyWJRq3ZxqifMzAuyUomDvJ8PF8NitXx8HxRLGpump) |
 | **Network** | Solana |
 | **Price** | $0.001043 |
 | **24h Volume** | $183.8K |
 | **Liquidity** | $89.7K |
 | **Volume / Liquidity** | 2.0× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 33.2% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -112,7 +88,7 @@ Both the Mint Authority and Freeze Authority for the token have been revoked. Th
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -124,4 +100,4 @@ Both the Mint Authority and Freeze Authority for the token have been revoked. Th
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-21*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

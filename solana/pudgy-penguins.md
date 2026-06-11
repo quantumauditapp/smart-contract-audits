@@ -2,14 +2,14 @@
 token: Pudgy Penguins
 ticker: PENGU
 network: solana
-risk_score: 90
+risk_score: 72
 status: critical
-date: 2026-05-29
+date: 2026-06-10
 ---
 
 # Pudgy Penguins (PENGU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 72/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pudgy-penguins-sol)
 
@@ -17,74 +17,72 @@ date: 2026-05-29
 
 ## Audit Summary
 
-This audit report focuses on the metadata of the Pudgy Penguins (PENGU) SPL Token Mint. A critical finding is that the token mint is reported as 'Initialized: False' despite having over $3.2 million in active liquidity. This fundamental contradiction poses a severe risk, as an uninitialized mint cannot function, suggesting a data discrepancy or a non-standard/broken token. Strengths include the revocation of Mint and Freeze authorities, enhancing decentralization. However, key economic data such as total supply and decimals are unknown, hindering a complete risk assessment.
+The audit of the Pudgy Penguins (PENGU) SPL token mint identified a high-severity risk: new holder accounts are created in a frozen state, requiring manual unfreezing by an authority. While mint and freeze authorities are revoked, which is positive for supply control and general account security, the default frozen state introduces operational friction. Holder concentration data was unavailable from RPC, though RugCheck flagged high concentration as a risk label.
 
-> **Final Recommendation:** Immediate investigation is required to clarify the 'Initialized: False' status of the SPL Token Mint, as this is a critical contradiction with its reported liquidity. Users should exercise extreme caution until this discrepancy is resolved and the token's functional status is confirmed. It is also recommended to verify the exact SPL Token Program ID and obtain full token supply and decimal information for transparency. For projects seeking to launch new tokens, a Premium Deploy option is available, offering comprehensive pre-deployment checks and verification to ensure all token parameters are correctly configured and publicly verifiable, mitigating such fundamental risks.
+> **Final Recommendation:** Holders should be aware that new accounts for Pudgy Penguins (PENGU) tokens are created in a frozen state. This means that upon receiving tokens, users may need an active issuer or authority to unfreeze their accounts before they can transfer or spend the tokens. It is crucial to confirm the availability and responsiveness of such an entity. While mint and freeze authorities are revoked, which is positive for supply control and general account security, the default frozen state introduces operational friction and potential for funds to be unspendable if the unfreezing mechanism is not accessible.
+
+Consider the operational implications of the default frozen state before acquiring or holding this token. Verify the process for unfreezing accounts and the reliability of the entity responsible for this action. For a premium deployment, ensure that any future token launches explicitly set the…
 
 ## Security Analysis
 
-This audit report focuses on the metadata of the Pudgy Penguins (PENGU) SPL Token Mint. A critical finding is that the token mint is reported as 'Initialized: False' despite having over $3.2 million in active liquidity. This fundamental contradiction poses a severe risk, as an uninitialized mint cannot function, suggesting a data discrepancy or a non-standard/broken token. Strengths include the revocation of Mint and Freeze authorities, enhancing decentralization. However, key economic data such as total supply and decimals are unknown, hindering a complete risk assessment.
+The audit of the Pudgy Penguins (PENGU) SPL token mint identified a high-severity risk: new holder accounts are created in a frozen state, requiring manual unfreezing by an authority. While mint and freeze authorities are revoked, which is positive for supply control and general account security, the default frozen state introduces operational friction. Holder concentration data was unavailable from RPC, though RugCheck flagged high concentration as a risk label.
 
-Immediate investigation is required to clarify the 'Initialized: False' status of the SPL Token Mint, as this is a critical contradiction with its reported liquidity. Users should exercise extreme caution until this discrepancy is resolved and the token's functional status is confirmed. It is also recommended to verify the exact SPL Token Program ID and obtain full token supply and decimal information for transparency. For projects seeking to launch new tokens, a Premium Deploy option is available, offering comprehensive pre-deployment checks and verification to ensure all token parameters are correctly configured and publicly verifiable, mitigating such fundamental risks.
+Holders should be aware that new accounts for Pudgy Penguins (PENGU) tokens are created in a frozen state. This means that upon receiving tokens, users may need an active issuer or authority to unfreeze their accounts before they can transfer or spend the tokens. It is crucial to confirm the availability and responsiveness of such an entity. While mint and freeze authorities are revoked, which is positive for supply control and general account security, the default frozen state introduces operational friction and potential for funds to be unspendable if the unfreezing mechanism is not accessible.
+
+Consider the operational implications of the default frozen state before acquiring or holding this token. Verify the process for unfreezing accounts and the reliability of the entity responsible for this action. For a premium deployment, ensure that any future token launches explicitly set the…
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The token mint demonstrates strong security posture regarding access control, with both Mint and Freeze authorities successfully revoked, preventing further token issuance or freezing (7.3 Access Cont |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy market activity with over $3.2 million in liquidity and a normal 24-hour volume/liquidity ratio of 0.11, indicating active trading and market interest (7.4 Economic). The pa |
-| **Upgrades** | 6/10 | Low | The SPL Token Mint's configuration is highly secure against unauthorized changes, as both Mint and Freeze authorities have been permanently revoked. This ensures that the token's core parameters canno |
+| **Technical** | 6/10 | High | The Pudgy Penguins (PENGU) token is an SPL token mint operating on the Solana blockchain using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, indicat |
+| **Governance / Economics** | 6/10 | Medium | The token has substantial liquidity, with $3,289,871 USD available on DEXs, and a healthy 24-hour volume of $505,667 USD. The volume/liquidity ratio is 0.15, which is considered normal and does not su |
+| **Upgrades** | 6/10 | Low | The token's mint authority and freeze authority are both revoked, meaning no further tokens can be minted and no accounts can be frozen by an external authority. The metadata for the token is immutabl |
 
 ## Security Findings
 
-_🔴 1 Critical · ⚪ 3 Informational_
+_🟠 1 High · ⚪ 2 Informational_
 
-### `C-01` — Uninitialized SPL Token Mint with Active Liquidity  *(Severity: Critical · Status: Unresolved)*
+### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
 
-The SPL Token Mint is reported as 'Initialized: False' in its on-chain metadata. However, external data sources (Dexscreener) indicate over $3.2 million in liquidity and active trading for a token with the same name/symbol. An uninitialized SPL Token Mint cannot be used for minting, transferring, or any standard token operations. This represents a severe contradiction, suggesting either a critical data discrepancy, a non-standard token implementation, or a fundamentally broken token that could lead to loss of funds for users interacting with its liquidity pools.
+New holder accounts are created in a frozen state and require explicit unfreezing by an authority (GoPlus.default_account_state: 1).
 
-**Recommendation:** Immediately investigate the discrepancy between the reported 'Initialized: False' state and the active liquidity. Confirm if the token mint at address 2zmmhcvqexdtde6vsfs7s7d6ouodfjhe8vd1gnbouauv is indeed uninitialized. If so, determine why liquidity exists and alert users to potential risks. If the 'Initialized' status is incorrect, verify the data source and correct it. If it's a non-standard token, provide full details of its implementation.
-
-
-### `I-01` — Unknown Total Supply  *(Severity: Informational · Status: Unresolved)*
-
-The total supply of the PENGU token is reported as 'unknown'. Without this crucial piece of information, it is impossible to accurately calculate the token's market capitalization, assess potential dilution risks, or understand the overall tokenomics. This lack of transparency hinders a comprehensive economic evaluation.
-
-**Recommendation:** Ensure that the total supply of the token is publicly available and verifiable on-chain. If the token is intended to have a fixed supply, this should be clearly stated and reflected in its metadata. If it's a dynamic supply, the mechanism should be transparent.
+**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
 
 
-### `I-02` — Unknown Decimals  *(Severity: Informational · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The number of decimals for the PENGU token is reported as 'unknown'. Decimals are essential for correctly displaying token balances and ensuring accurate calculations in user interfaces and smart contracts. An unknown decimal count can lead to misinterpretations of token values and potential operational errors.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Ensure that the number of decimals for the token is publicly available and verifiable on-chain. This is a standard parameter for SPL Tokens and should be readily accessible.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `I-03` — Unconfirmed Token Program ID  *(Severity: Informational · Status: Unresolved)*
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The specific Token Program ID controlling the PENGU mint is reported as 'unknown'. While the token is identified as an SPL Token Mint, confirming that it is controlled by the official Solana Program Library (SPL) Token Program (TokenkegQfeZgYXGtf7CVDMWSS9JNoBNtt45CvsTq) is crucial for security. If it's a custom or unofficial program, it would require a full source code audit to verify its security and adherence to expected SPL token behavior.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Confirm and publicly disclose the exact Token Program ID associated with this mint. If it is not the official SPL Token Program, provide the source code and documentation for the custom program for security review.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`2zmmhc...uauv`](https://solscan.io/account/2zmmhcvqexdtde6vsfs7s7d5ouodfjhe8vd1gnbouauv) |
+| **Contract** | [`2zMMhc...uauv`](https://solscan.io/account/2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv) |
 | **Network** | Solana |
 | **Price** | $0.00772 |
 | **24h Volume** | $358.5K |
 | **Liquidity** | $3.67M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 47.5% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -94,7 +92,7 @@ The specific Token Program ID controlling the PENGU mint is reported as 'unknown
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -106,4 +104,4 @@ The specific Token Program ID controlling the PENGU mint is reported as 'unknown
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-29*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

@@ -4,7 +4,7 @@ ticker: WORLDCUP
 network: solana
 risk_score: 85
 status: critical
-date: 2026-05-15
+date: 2026-06-10
 ---
 
 # World Cup Coin (WORLDCUP) — Smart Contract Security Analysis | Solana
@@ -17,74 +17,72 @@ date: 2026-05-15
 
 ## Audit Summary
 
-The World Cup Coin (WORLDCUP) SPL Token Mint at address 33eum82laahtv5ykuq1bdweviserh5cnfxqvnlt5pump presents critical risks due to its reported uninitialized state. Despite showing significant liquidity and trading volume, the 'Initialized: False' flag indicates a fundamental misconfiguration or data discrepancy that severely impacts the token's integrity and functionality. Strengths include the revocation of both mint and freeze authorities, preventing further supply manipulation or asset freezing. However, the lack of crucial token details like decimals and supply, alongside unavailable external security signals, further compounds the risk profile.
+The World Cup Coin (WORLDCUP) token mint exhibits a low-risk profile based on available on-chain data. Both mint and freeze authorities are revoked, indicating a fixed supply and no ability to freeze user funds. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-> **Final Recommendation:** Given the critical finding of an uninitialized SPL Token Mint, extreme caution is advised. Users and investors should independently verify the token's actual on-chain state and functionality, as the reported 'Initialized: False' status fundamentally contradicts the existence of liquidity and trading volume. It is imperative to understand how a token in this state can be traded and what implications this has for its long-term viability and security. For any future token deployments, ensure all critical parameters are correctly initialized and verified post-deployment. A Premium Deploy option would involve a comprehensive pre-deployment audit to prevent such fundamental configuration errors and ensure all on-chain metadata accurately reflects the intended token state.
+> **Final Recommendation:** Based on the available on-chain data, World Cup Coin (WORLDCUP) presents a low-risk profile regarding its token mint configuration. The revocation of both mint and freeze authorities is a strong positive indicator, ensuring a fixed supply and preventing arbitrary freezing of user funds. Holders should be aware that holder concentration data was not available, so a full assessment of distribution risk could not be performed.
+
+For a Premium Deploy option, consider integrating real-time holder distribution monitoring to provide continuous insights into whale activity and potential market impact. Additionally, if future Token-2022 extensions are considered, ensure thorough review and community communication.
 
 ## Security Analysis
 
-The World Cup Coin (WORLDCUP) SPL Token Mint at address 33eum82laahtv5ykuq1bdweviserh5cnfxqvnlt5pump presents critical risks due to its reported uninitialized state. Despite showing significant liquidity and trading volume, the 'Initialized: False' flag indicates a fundamental misconfiguration or data discrepancy that severely impacts the token's integrity and functionality. Strengths include the revocation of both mint and freeze authorities, preventing further supply manipulation or asset freezing. However, the lack of crucial token details like decimals and supply, alongside unavailable external security signals, further compounds the risk profile.
+The World Cup Coin (WORLDCUP) token mint exhibits a low-risk profile based on available on-chain data. Both mint and freeze authorities are revoked, indicating a fixed supply and no ability to freeze user funds. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-Given the critical finding of an uninitialized SPL Token Mint, extreme caution is advised. Users and investors should independently verify the token's actual on-chain state and functionality, as the reported 'Initialized: False' status fundamentally contradicts the existence of liquidity and trading volume. It is imperative to understand how a token in this state can be traded and what implications this has for its long-term viability and security. For any future token deployments, ensure all critical parameters are correctly initialized and verified post-deployment. A Premium Deploy option would involve a comprehensive pre-deployment audit to prevent such fundamental configuration errors and ensure all on-chain metadata accurately reflects the intended token state.
+Based on the available on-chain data, World Cup Coin (WORLDCUP) presents a low-risk profile regarding its token mint configuration. The revocation of both mint and freeze authorities is a strong positive indicator, ensuring a fixed supply and preventing arbitrary freezing of user funds. Holders should be aware that holder concentration data was not available, so a full assessment of distribution risk could not be performed.
+
+For a Premium Deploy option, consider integrating real-time holder distribution monitoring to provide continuous insights into whale activity and potential market impact. Additionally, if future Token-2022 extensions are considered, ensure thorough review and community communication.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The technical assessment reveals a critical issue: the SPL Token Mint is reported as 'Initialized: False' (7.2 Code Security). This state is highly unusual and problematic for a token with active trad |
-| **Governance / Economics** | 6/10 | Medium | Economically, the token shows active trading with $357,410 in liquidity and $697,357 in 24h volume, indicating market interest (7.4 Economic). The volume/liquidity ratio is normal, suggesting healthy  |
-| **Upgrades** | 6/10 | Low | The token's upgradeability and control mechanisms are robustly secured by the revocation of both Mint Authority and Freeze Authority (7.7 Upgrades). This means no new tokens can be minted, and existin |
+| **Technical** | 6/10 | Low | The World Cup Coin (WORLDCUP) token is an SPL Token-2022 mint. Crucially, both the mint authority and freeze authority have been revoked, ensuring no new tokens can be created and no existing tokens c |
+| **Governance / Economics** | 6/10 | Low | The token exhibits healthy trading metrics with a liquidity of $332,489 and a 24-hour volume of $437,617. The volume/liquidity ratio is 1.32, which is considered normal and does not suggest wash tradi |
+| **Upgrades** | 6/10 | Low | The token's mint and freeze authorities are permanently revoked, meaning the core parameters of supply and transfer control cannot be altered. The token utilizes the spl-token-2022 program but does no |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low_
+_⚪ 3 Informational_
 
-### `C-01` — Uninitialized SPL Token Mint Account  *(Severity: Critical · Status: Unresolved)*
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The SPL Token Mint account is reported as 'Initialized: False'. For an SPL token to be fully functional and usable, its mint account must be properly initialized. An uninitialized state implies that critical parameters like decimals, supply, and authorities have not been set, or the account is not ready for token operations. This directly contradicts the presence of reported liquidity and trading volume, indicating a severe discrepancy or a non-standard, potentially problematic, token implementation.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Immediately investigate the on-chain state of the token mint account to confirm its initialization status. If it is indeed uninitialized, all associated liquidity and trading should be considered highly risky, as the token's fundamental properties are undefined. If this is a new deployment, ensure the `initialize_mint` instruction is correctly executed and confirmed.
-
-
-### `H-01` — Unknown Decimals and Supply  *(Severity: High · Status: Unresolved)*
-
-The `Decimals: unknown` and `Supply (raw): unknown` fields indicate a lack of crucial information regarding the token's fundamental properties. Without knowing the number of decimals, the token's display value and divisibility are ambiguous. Without the total supply, it's impossible to assess market capitalization, dilution, or the overall economic model. This issue is exacerbated by the 'Initialized: False' status, suggesting these core properties may not be properly defined or accessible.
-
-**Recommendation:** Verify the token's decimals and total supply directly on-chain. This information is critical for any financial assessment or interaction with the token. If these values are genuinely undefined due to the uninitialized state, the token should be considered non-functional and highly risky.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `M-01` — Undetermined Token Program  *(Severity: Medium · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The `Token Program: unknown` status for an SPL token mint is unusual. While the mint address itself implies it's an SPL token, the explicit 'unknown' flag suggests a data retrieval issue or an unexpected configuration. This could potentially mask a non-standard token implementation or an issue with how the token program is associated with the mint account, leading to unexpected behavior or security concerns.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Confirm the program ID associated with the token mint account. It should explicitly be the official Solana SPL Token Program ID. Any deviation or inability to determine this ID warrants further investigation into the token's origin and implementation.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `L-01` — Lack of External Security Signals  *(Severity: Low · Status: Unresolved)*
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-Data from external security analysis platforms like GoPlus Solana and RugCheck is unavailable. This absence means there is no independent, automated assessment of potential risks such as rug pulls, honeypot characteristics, or other common malicious patterns associated with new tokens. This reduces the overall confidence in the token's safety and legitimacy from a third-party perspective.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** While not a direct vulnerability, the absence of these signals means users must rely solely on their own due diligence. Encourage the project to integrate with such services or provide transparent information that addresses common security concerns.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`33eum8...pump`](https://solscan.io/account/33eum82laahtv5ykuq1bdweviserh5cnfxqvnlt5pump) |
+| **Contract** | [`33eum8...pump`](https://solscan.io/account/33eum82LaAhtv5YkUq1BdwEviSErH5CnFxqVNLT5pump) |
 | **Network** | Solana |
 | **Price** | $0.002513 |
 | **24h Volume** | $669.0K |
 | **Liquidity** | $159.1K |
 | **Volume / Liquidity** | 4.2× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 24.4% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -94,7 +92,7 @@ Data from external security analysis platforms like GoPlus Solana and RugCheck i
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -106,4 +104,4 @@ Data from external security analysis platforms like GoPlus Solana and RugCheck i
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-15*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

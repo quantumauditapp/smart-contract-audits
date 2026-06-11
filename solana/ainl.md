@@ -2,14 +2,14 @@
 token: AINL
 ticker: AINL
 network: solana
-risk_score: 90
+risk_score: 72
 status: critical
-date: 2026-05-11
+date: 2026-06-10
 ---
 
 # AINL (AINL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 72/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ainl-sol)
 
@@ -17,73 +17,72 @@ date: 2026-05-11
 
 ## Audit Summary
 
-This audit report focuses on the AINL SPL Token Mint account. The primary critical finding is that the token mint is reported as 'Initialized: False' despite having active liquidity and trading volume. This fundamental misconfiguration renders the token non-functional and poses a significant risk to users. While positive security signals such as revoked mint/freeze authorities and standard token properties are observed, the uninitialized state overrides these benefits, making any interaction with this token highly risky.
+The AINL token mint exhibits very low liquidity on DEXs, with only $7,400 available, posing significant slippage risk for any substantial trades. Key authorities like Mint and Freeze are revoked, enhancing security against issuer-side manipulation. Holder concentration data was unavailable, preventing assessment of whale risk.
 
-> **Final Recommendation:** Given the critical finding of an uninitialized token mint with active liquidity, it is strongly recommended that all users exercise extreme caution and refrain from interacting with the AINL token. The fundamental misconfiguration means the token is not fully functional, and any associated liquidity or trading carries a high risk of loss of funds. The token issuer must address the uninitialized state immediately.
-
-For future token deployments, consider a 'Premium Deploy' option which includes pre-deployment verification of all critical on-chain configurations, such as proper initialization, authority settings, and metadata, ensuring the token is fully functional and secure before public launch.
+> **Final Recommendation:** Potential holders should be aware of the extremely low liquidity ($7,400 USD) which makes large trades impractical and exiting positions difficult without significant price impact. While the token benefits from revoked mint and freeze authorities, which prevents issuer manipulation of supply or account freezing, the economic viability is severely hampered by liquidity constraints.
+For enhanced security and functionality, consider tokens with higher liquidity and a more robust ecosystem. For projects requiring custom logic or advanced features, a Premium Deploy option with audited Token-2022 extensions and sufficient initial liquidity is recommended.
 
 ## Security Analysis
 
-This audit report focuses on the AINL SPL Token Mint account. The primary critical finding is that the token mint is reported as 'Initialized: False' despite having active liquidity and trading volume. This fundamental misconfiguration renders the token non-functional and poses a significant risk to users. While positive security signals such as revoked mint/freeze authorities and standard token properties are observed, the uninitialized state overrides these benefits, making any interaction with this token highly risky.
+The AINL token mint exhibits very low liquidity on DEXs, with only $7,400 available, posing significant slippage risk for any substantial trades. Key authorities like Mint and Freeze are revoked, enhancing security against issuer-side manipulation. Holder concentration data was unavailable, preventing assessment of whale risk.
 
-Given the critical finding of an uninitialized token mint with active liquidity, it is strongly recommended that all users exercise extreme caution and refrain from interacting with the AINL token. The fundamental misconfiguration means the token is not fully functional, and any associated liquidity or trading carries a high risk of loss of funds. The token issuer must address the uninitialized state immediately.
-
-For future token deployments, consider a 'Premium Deploy' option which includes pre-deployment verification of all critical on-chain configurations, such as proper initialization, authority settings, and metadata, ensuring the token is fully functional and secure before public launch.
+Potential holders should be aware of the extremely low liquidity ($7,400 USD) which makes large trades impractical and exiting positions difficult without significant price impact. While the token benefits from revoked mint and freeze authorities, which prevents issuer manipulation of supply or account freezing, the economic viability is severely hampered by liquidity constraints.
+For enhanced security and functionality, consider tokens with higher liquidity and a more robust ecosystem. For projects requiring custom logic or advanced features, a Premium Deploy option with audited Token-2022 extensions and sufficient initial liquidity is recommended.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | 7.1 Architecture & 7.2 Code Security: The AINL token mint exhibits a critical technical flaw: it is uninitialized. This means fundamental properties like supply and decimals are not set, rendering the |
-| **Governance / Economics** | 6/10 | High | 7.4 Economic: The economic risk is High due to the token's uninitialized state. Users trading or providing liquidity for AINL are interacting with a fundamentally misconfigured asset, which could lead |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The specific AINL token mint account itself is not directly upgradeable in terms of its core properties (like authorities, decimals, supply) once initialized and authorities are revoked. |
+| **Technical** | 8/10 | Low | The AINL token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority are revoked, which is a strong positive as it prevents the issuer from minting new tokens or freezing existing ho |
+| **Governance / Economics** | 4/10 | High | The token exhibits very low liquidity, with only $7,400 USD available on DEXs, which will lead to severe slippage for trades. The 24-hour volume of $195 is low relative to liquidity, resulting in a no |
+| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked, indicating that the token's supply and transferability parameters are fixed and cannot be altered by an issuer. The token's metadata (name, sy |
 
 ## Security Findings
 
-_🔴 1 Critical · ⚪ 2 Informational_
+_🟠 1 High · ⚪ 2 Informational_
 
-### `C-01` — Uninitialized Token Mint with Active Liquidity  *(Severity: Critical · Status: Unresolved)*
+### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
 
-The SPL Token Mint account `56hrcr3n7danhhnjwau4veuhpe1ere9vrbwphrpkpump` is reported as `Initialized: False`. Despite this critical state, the token has active liquidity of $7,419 USD and a 24h trading volume of $889 USD. An uninitialized mint cannot properly function as an SPL token, meaning its supply and decimals are not set, and standard operations like `mint_to` or `burn` cannot be executed. Users interacting with this token risk loss of funds due to its non-functional state.
+Total DEX liquidity is $7,400. Slippage will be severe; large positions cannot be exited without significant loss.
 
-**Recommendation:** Users should exercise extreme caution and avoid interacting with this token until its initialization status is confirmed and resolved. The token issuer should ensure the mint account is properly initialized before any public trading or liquidity provision.
-
-
-### `I-01` — Revoked Mint and Freeze Authorities  *(Severity: Informational · Status: Resolved)*
-
-The Mint Authority and Freeze Authority for the AINL token have both been revoked (set to `None`). This is a positive security measure, as it prevents any single entity from arbitrarily minting new tokens or freezing token accounts, thereby protecting token holders from inflationary attacks or censorship.
-
-**Recommendation:** No action required. This configuration enhances the security and decentralization of the token.
+**Recommendation:** Be aware that large positions cannot be exited without significant loss due to high slippage. Consider the impact on any trading strategy.
 
 
-### `I-02` — Standard Token Properties (GoPlus Signals)  *(Severity: Informational · Status: Resolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-External security signals from GoPlus indicate that the token exhibits standard, non-malicious properties. Specifically, `balance_mutable`, `closable`, `freezable`, `non_transferable`, `transfer_fee_upgradable`, `transfer_hook_upgradable`, `metadata_mutable`, and `is_honeypot` are all reported as `False`. This suggests the token does not possess common rug-pull or malicious features, *assuming it were properly initialized*.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** No action required. These signals are generally positive indicators of a standard token implementation. However, the uninitialized state of the mint overrides these positive signals regarding overall safety.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`56hrcr...pump`](https://solscan.io/account/56hrcr3n7danhhnjwau4veuhpe1ere9vrbwphrpkpump) |
+| **Contract** | [`56hrCR...pump`](https://solscan.io/account/56hrCR3n7danhHNjWaU4VeUHpE1eRE9VRBWpHRPKpump) |
 | **Network** | Solana |
 | **Price** | $0.005038 |
 | **24h Volume** | $722.9K |
 | **Liquidity** | $201.4K |
 | **Volume / Liquidity** | 3.6× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 65.4% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (2/5 passed)
+## Security Flags (4/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -91,9 +90,9 @@ External security signals from GoPlus indicate that the token exhibits standard,
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources
@@ -103,4 +102,4 @@ External security signals from GoPlus indicate that the token exhibits standard,
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-11*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*

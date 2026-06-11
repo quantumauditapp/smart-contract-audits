@@ -4,7 +4,7 @@ ticker: TCLAW
 network: solana
 risk_score: 72
 status: critical
-date: 2026-05-13
+date: 2026-06-10
 ---
 
 # Traderclaw (TCLAW) — Smart Contract Security Analysis | Solana
@@ -17,74 +17,72 @@ date: 2026-05-13
 
 ## Audit Summary
 
-This audit report analyzes the Traderclaw (TCLAW) SPL Token Mint based on available on-chain metadata and security signals, as source code for the mint configuration itself is not applicable. The token exhibits strong immutability properties with revoked mint and freeze authorities, indicating a decentralized control structure. GoPlus security signals confirm non-mutable balances, non-closable accounts, and non-upgradable transfer parameters. However, the analysis identified significant data inconsistencies and missing information regarding the token's initialization state, supply, and decimals, which introduce a medium level of risk due to potential misinterpretation and lack of transparency.
+The Traderclaw (TCLAW) SPL Token Mint audit identified a High risk due to very low liquidity, which can lead to severe slippage for traders. Key security authorities like mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Holder concentration data was unavailable from RPC, but RugCheck.xyz flagged high ownership by top holders, suggesting centralization risk.
 
-> **Final Recommendation:** The Traderclaw (TCLAW) SPL Token Mint demonstrates strong security characteristics regarding immutability and decentralized control, primarily due to the revocation of mint and freeze authorities. This significantly reduces governance and economic risks associated with centralized power. However, critical data inconsistencies and missing metadata, particularly concerning the token's initialization status and supply, present transparency challenges that should be addressed for full investor confidence. These data issues do not reflect vulnerabilities in the SPL Token Program itself but rather in the reporting or retrieval of its state.
+> **Final Recommendation:** Potential holders should be aware of the extremely low liquidity ($3,247 USD) which makes large trades impractical due to high slippage. While core authorities (mint, freeze) are revoked, indicating a fixed supply and unfreezable accounts, the high holder concentration flagged by RugCheck.xyz suggests significant centralization risk. It is recommended to proceed with extreme caution and only with funds you are prepared to lose.
+
+For enhanced security, consider engaging Quantum Audit for a Premium Deploy service, which includes pre-deployment contract analysis and real-time monitoring to identify and mitigate risks before and after launch.
 
 ## Security Analysis
 
-This audit report analyzes the Traderclaw (TCLAW) SPL Token Mint based on available on-chain metadata and security signals, as source code for the mint configuration itself is not applicable. The token exhibits strong immutability properties with revoked mint and freeze authorities, indicating a decentralized control structure. GoPlus security signals confirm non-mutable balances, non-closable accounts, and non-upgradable transfer parameters. However, the analysis identified significant data inconsistencies and missing information regarding the token's initialization state, supply, and decimals, which introduce a medium level of risk due to potential misinterpretation and lack of transparency.
+The Traderclaw (TCLAW) SPL Token Mint audit identified a High risk due to very low liquidity, which can lead to severe slippage for traders. Key security authorities like mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Holder concentration data was unavailable from RPC, but RugCheck.xyz flagged high ownership by top holders, suggesting centralization risk.
 
-The Traderclaw (TCLAW) SPL Token Mint demonstrates strong security characteristics regarding immutability and decentralized control, primarily due to the revocation of mint and freeze authorities. This significantly reduces governance and economic risks associated with centralized power. However, critical data inconsistencies and missing metadata, particularly concerning the token's initialization status and supply, present transparency challenges that should be addressed for full investor confidence. These data issues do not reflect vulnerabilities in the SPL Token Program itself but rather in the reporting or retrieval of its state.
+Potential holders should be aware of the extremely low liquidity ($3,247 USD) which makes large trades impractical due to high slippage. While core authorities (mint, freeze) are revoked, indicating a fixed supply and unfreezable accounts, the high holder concentration flagged by RugCheck.xyz suggests significant centralization risk. It is recommended to proceed with extreme caution and only with funds you are prepared to lose.
+
+For enhanced security, consider engaging Quantum Audit for a Premium Deploy service, which includes pre-deployment contract analysis and real-time monitoring to identify and mitigate risks before and after launch.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical assessment (7.2 Code Security, 7.3 Access Control) reveals robust immutability for the Traderclaw token. Both Mint Authority and Freeze Authority are revoked, preventing any central enti |
-| **Governance / Economics** | 6/10 | Low | The governance and economic risk (7.4 Economic, 7.5 Governance) for Traderclaw is low due to the complete revocation of critical authorities. The absence of a Mint Authority prevents inflationary atta |
-| **Upgrades** | 6/10 | Low | The upgradeability risk (7.7 Upgrades) for the Traderclaw SPL Token Mint is low. Key parameters such as transfer fees (`transfer_fee_upgradable: False`) and transfer hooks (`transfer_hook_upgradable:  |
+| **Technical** | 6/10 | Low | The Traderclaw (TCLAW) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked (None), which means no new tokens can be minted and no existing accounts can be f |
+| **Governance / Economics** | 6/10 | High | The token exhibits very low liquidity, with only $3,247 USD available on DEXs, which will result in significant slippage for any substantial trades. The 24-hour volume to liquidity ratio is 0.04, whic |
+| **Upgrades** | 6/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply cannot be increased and accounts cannot be frozen. The token is an SPL Token-2022, but it does not have any active  |
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · ⚪ 2 Informational_
+_🟠 1 High · ⚪ 2 Informational_
 
-### `H-01` — Data Inconsistency: Token Initialized State  *(Severity: High · Status: Unresolved)*
+### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
 
-The on-chain data reports the token mint as `Initialized: False`. However, the presence of active liquidity ($3,532 USD) and trading volume ($154 USD) on Dexscreener strongly indicates that the token is, in fact, initialized and functional. This discrepancy suggests a critical data retrieval or reporting error, which can lead to misinterpretation of the token's operational status.
+Total DEX liquidity is $3,247. Slippage will be severe; large positions cannot be exited without significant loss. (Fact: Liquidity (USD): $3,247)
 
-**Recommendation:** Verify the token's initialization status directly via Solana RPC. If the token is indeed initialized and tradable, update data sources to reflect the correct state. If it is truly uninitialized, investigate how liquidity and trading volume were established.
-
-
-### `M-01` — Missing Core Token Metadata  *(Severity: Medium · Status: Unresolved)*
-
-Critical token parameters such as `Supply (raw)` and `Decimals` are reported as `unknown`. This lack of information prevents a comprehensive assessment of the token's total supply, market capitalization, and precise tokenomics, hindering a full understanding of its economic model.
-
-**Recommendation:** Ensure all essential token metadata, including total supply and decimals, is accurately retrieved and displayed. This information is crucial for investor due diligence and transparent market analysis.
+**Recommendation:** Be aware that large positions cannot be exited without significant loss due to severe slippage.
 
 
-### `I-01` — Unknown Token Program Identifier  *(Severity: Informational · Status: Unresolved)*
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-The `Token Program` associated with the mint is listed as `unknown`. While this is an SPL Token Mint and implicitly uses the standard SPL Token Program, the explicit 'unknown' indicates a data retrieval gap. For clarity and completeness, the controlling program should be identified.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Confirm and explicitly state that the token is controlled by the official Solana Program Library (SPL) Token Program, along with its specific version if available.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 
-### `I-02` — GoPlus Default Account State Signal  *(Severity: Informational · Status: Unresolved)*
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
 
-GoPlus reports `default_account_state: 1`. While the `Freeze Authority` is revoked and `GoPlus.freezable` is `False`, this signal might indicate a specific default state for newly created token accounts that could be unexpected. Further clarification on the exact meaning of this state in conjunction with other immutability signals would be beneficial.
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
 
-**Recommendation:** Investigate the precise implications of `GoPlus.default_account_state: 1` in the context of a non-freezable token with revoked freeze authority to ensure there are no unintended side effects for new token account creations.
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
-| **Contract** | [`4bccwh...pump`](https://solscan.io/account/4bccwhaanr5dntjqmmzvqre6kxggchiujryiybbvpump) |
+| **Contract** | [`4bCcwH...pump`](https://solscan.io/account/4bCcwHAANr5dntJQmmZVqre6kxggchiuJRYiybBVpump) |
 | **Network** | Solana |
 | **Price** | $0.003623 |
 | **24h Volume** | $456.2K |
 | **Liquidity** | $161.2K |
 | **Volume / Liquidity** | 2.8× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 88.5% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -94,7 +92,7 @@ GoPlus reports `default_account_state: 1`. While the `Freeze Authority` is revok
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
@@ -106,4 +104,4 @@ GoPlus reports `default_account_state: 1`. While the `Freeze Authority` is revok
 - Security data: [GoPlus Labs](https://gopluslabs.io)
 
 ---
-*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-05-13*
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-10*
