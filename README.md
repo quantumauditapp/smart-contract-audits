@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-74-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-77-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,9 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [NVDA4200](./solana/nvda4200.md) | 英伟达 | Solana | 🟠 55/100 | 2026-06-12 | [↗](https://quantumaudit.app/token/nvda4200-sol) |
+| [SPACEX IPO](./solana/spacex-ipo.md) | SPCX | Solana | 🟠 59/100 | 2026-06-12 | [↗](https://quantumaudit.app/token/spacex-ipo-sol) |
+| [XRP SUPERCYCLE](./solana/xrp-supercycle.md) | XRPS | Solana | 🟠 49/100 | 2026-06-12 | [↗](https://quantumaudit.app/token/xrp-supercycle-sol) |
 | [Fantasy Manager](./solana/fantasy-manager.md) | FANTASY | Solana | 🟠 59/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/fantasy-manager-sol) |
 | [SPACE ID](./ethereum/space-id.md) | ID | Ethereum | 🔴 71/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/space-id-eth) |
 | [Velvet](./base/velvet.md) | VELVET | Base | 🔴 100/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/velvet-base) |
@@ -39,15 +42,12 @@
 | [LOL](./solana/lol.md) | LOL | Solana | 🟡 39/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/lol-sol) |
 | [World Cup Coin](./solana/world-cup-coin.md) | WORLDCUP | Solana | 🟠 48/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/world-cup-coin-sol) |
 | [Federal Economic Department](./solana/federal-economic-department.md) | FED | Solana | 🔴 100/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/federal-economic-department-sol) |
-| [had to take profits sir](./solana/had-to-take-profits-sir.md) | HTTPS | Solana | 🟠 46/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/had-to-take-profits-sir-sol) |
-| [吉祥马](./bsc/吉祥马.md) | 吉祥马 | BNB Chain | 🔴 78/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/吉祥马-bsc) |
-| [Baby Troll](./solana/baby-troll.md) | BABYTROLL | Solana | 🟡 45/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/baby-troll-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (50)](./solana/README.md) · [Ethereum (16)](./ethereum/README.md) · [Base (6)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (53)](./solana/README.md) · [Ethereum (16)](./ethereum/README.md) · [Base (6)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 

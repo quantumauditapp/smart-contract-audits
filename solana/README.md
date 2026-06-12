@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**50 reports** · Updated daily · [← All Networks](../README.md)
+**53 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [NVDA4200](./nvda4200.md) | 英伟达 | 🟠 55/100 High Risk | 2026-06-12 | [↗](https://quantumaudit.app/token/nvda4200-sol) |
+| [SPACEX IPO](./spacex-ipo.md) | SPCX | 🟠 59/100 High Risk | 2026-06-12 | [↗](https://quantumaudit.app/token/spacex-ipo-sol) |
+| [XRP SUPERCYCLE](./xrp-supercycle.md) | XRPS | 🟠 49/100 High Risk | 2026-06-12 | [↗](https://quantumaudit.app/token/xrp-supercycle-sol) |
 | [Fantasy Manager](./fantasy-manager.md) | FANTASY | 🟠 59/100 High Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/fantasy-manager-sol) |
 | [Purple Bitcoin](./purple-bitcoin.md) | PBTC | 🟠 59/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/purple-bitcoin-sol) |
 | [Bull](./bull.md) | BULL | 🟠 59/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/bull-sol) |
