@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**53 reports** · Updated daily · [← All Networks](../README.md)
+**57 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Peanut the Squirrel](./peanut-the-squirrel.md) | PNUT | 🔴 73/100 Critical Risk | 2026-06-13 | [↗](https://quantumaudit.app/token/peanut-the-squirrel-sol) |
+| [Sherbert The Tree](./sherbert-the-tree.md) | SHERBERT | 🟠 60/100 High Risk | 2026-06-13 | [↗](https://quantumaudit.app/token/sherbert-the-tree-sol) |
+| [Geodnet](./geodnet.md) | GEOD | 🔴 100/100 Critical Risk | 2026-06-13 | [↗](https://quantumaudit.app/token/geodnet-sol) |
+| [Official Trump](./official-trump.md) | TRUMP | 🔴 79/100 Critical Risk | 2026-06-13 | [↗](https://quantumaudit.app/token/official-trump-sol) |
 | [NVDA4200](./nvda4200.md) | 英伟达 | 🟠 55/100 High Risk | 2026-06-12 | [↗](https://quantumaudit.app/token/nvda4200-sol) |
 | [SPACEX IPO](./spacex-ipo.md) | SPCX | 🟠 59/100 High Risk | 2026-06-12 | [↗](https://quantumaudit.app/token/spacex-ipo-sol) |
 | [XRP SUPERCYCLE](./xrp-supercycle.md) | XRPS | 🟠 49/100 High Risk | 2026-06-12 | [↗](https://quantumaudit.app/token/xrp-supercycle-sol) |

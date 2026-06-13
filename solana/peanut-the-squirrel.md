@@ -1,0 +1,104 @@
+---
+token: Peanut the Squirrel
+ticker: PNUT
+network: solana
+risk_score: 73
+status: critical
+date: 2026-06-13
+---
+
+# Peanut the Squirrel (PNUT) — Smart Contract Security Analysis | Solana
+
+> **Risk Score: 73/100 — 🔴 Critical Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/peanut-the-squirrel-sol)
+
+---
+
+## Audit Summary
+
+This Solana SPL Token mint, 'Peanut the Squirrel (Pnut)', has revoked both mint and freeze authorities, indicating a fixed supply and no ability to freeze user funds. However, the DEX pair is very new, having been created only 3 days ago, which means there is insufficient track record for the token. Holder concentration data was unavailable, and RugCheck.xyz flagged it as a 'Copycat token' with a low score.
+
+> **Final Recommendation:** Given the very new DEX pair (3 days old), potential holders should exercise caution and monitor the token's activity and community development closely. While core authorities like mint and freeze are revoked, which is positive, the 'Copycat token' label from RugCheck.xyz and the low RugCheck score warrant further investigation into the project's legitimacy and originality. Consider waiting for a more established track record before making significant investments. For premium deployments, ensure thorough due diligence on the project's background and team.
+
+## Security Analysis
+
+This Solana SPL Token mint, 'Peanut the Squirrel (Pnut)', has revoked both mint and freeze authorities, indicating a fixed supply and no ability to freeze user funds. However, the DEX pair is very new, having been created only 3 days ago, which means there is insufficient track record for the token. Holder concentration data was unavailable, and RugCheck.xyz flagged it as a 'Copycat token' with a low score.
+
+Given the very new DEX pair (3 days old), potential holders should exercise caution and monitor the token's activity and community development closely. While core authorities like mint and freeze are revoked, which is positive, the 'Copycat token' label from RugCheck.xyz and the low RugCheck score warrant further investigation into the project's legitimacy and originality. Consider waiting for a more established track record before making significant investments. For premium deployments, ensure thorough due diligence on the project's background and team.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Low | The 'Peanut the Squirrel' token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no holder accounts can be frozen. No |
+| **Governance / Economics** | 6/10 | Medium | The token's DEX pair is very new, established only 3 days ago, which introduces uncertainty regarding its long-term viability and community behavior. Current liquidity is $37,328, with a 24-hour volum |
+| **Upgrades** | 6/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's core parameters (supply, freeze capability) cannot be altered. The token uses the spl-token-2022 program, but no mutable e |
+
+## Security Findings
+
+_🟡 1 Medium · ⚪ 2 Informational_
+
+### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
+
+DEX pair was created 3 days ago. Insufficient track record to assess team or holder behaviour. (Fact: Pair Age (days): 3)
+
+**Recommendation:** Account for the lack of historical data and monitor the token's performance and community engagement over a longer period before making significant investments.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`6p3Y3W...pump`](https://solscan.io/account/6p3Y3WBXcVwMbYNoVsU4EuVb3gdMmzSKhkEfo8Vcpump) |
+| **Network** | Solana |
+| **Price** | $0.0001126 |
+| **24h Volume** | $208.3K |
+| **Liquidity** | $37.2K |
+| **Volume / Liquidity** | 5.6× |
+| **Token Age** | 3d |
+| **Top-10 Holders** | 34.5% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 1977 buys / 1591 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/solana/eevnp3nvim5vtwpviask1jzjmhtewxhg897dkwcr5fhk)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/peanut-the-squirrel-sol)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-13*

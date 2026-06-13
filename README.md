@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-77-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-82-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,11 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Peanut the Squirrel](./solana/peanut-the-squirrel.md) | PNUT | Solana | 🔴 73/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/peanut-the-squirrel-sol) |
+| [Sherbert The Tree](./solana/sherbert-the-tree.md) | SHERBERT | Solana | 🟠 60/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/sherbert-the-tree-sol) |
+| [SAIRI](./base/sairi.md) | SAIRI | Base | 🟠 63/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/sairi-base) |
+| [Geodnet](./solana/geodnet.md) | GEOD | Solana | 🔴 100/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/geodnet-sol) |
+| [Official Trump](./solana/official-trump.md) | TRUMP | Solana | 🔴 79/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/official-trump-sol) |
 | [NVDA4200](./solana/nvda4200.md) | 英伟达 | Solana | 🟠 55/100 | 2026-06-12 | [↗](https://quantumaudit.app/token/nvda4200-sol) |
 | [SPACEX IPO](./solana/spacex-ipo.md) | SPCX | Solana | 🟠 59/100 | 2026-06-12 | [↗](https://quantumaudit.app/token/spacex-ipo-sol) |
 | [XRP SUPERCYCLE](./solana/xrp-supercycle.md) | XRPS | Solana | 🟠 49/100 | 2026-06-12 | [↗](https://quantumaudit.app/token/xrp-supercycle-sol) |
@@ -37,17 +42,12 @@
 | [Traderclaw](./solana/traderclaw.md) | TCLAW | Solana | 🔴 88/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/traderclaw-sol) |
 | [Bullish Degen](./solana/bullish-degen.md) | BULLISH | Solana | 🟠 60/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/bullish-degen-sol) |
 | [Catcoin](./solana/catcoin.md) | CATCOIN | Solana | 🟡 44/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/catcoin-sol) |
-| [Andes Virus](./solana/andes-virus.md) | ANDV | Solana | 🟠 50/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/andes-virus-sol) |
-| [Strategic American Oil Supply](./solana/strategic-american-oil-supply.md) | SAOS | Solana | 🟡 44/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/strategic-american-oil-supply-sol) |
-| [LOL](./solana/lol.md) | LOL | Solana | 🟡 39/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/lol-sol) |
-| [World Cup Coin](./solana/world-cup-coin.md) | WORLDCUP | Solana | 🟠 48/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/world-cup-coin-sol) |
-| [Federal Economic Department](./solana/federal-economic-department.md) | FED | Solana | 🔴 100/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/federal-economic-department-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (53)](./solana/README.md) · [Ethereum (16)](./ethereum/README.md) · [Base (6)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (57)](./solana/README.md) · [Ethereum (16)](./ethereum/README.md) · [Base (7)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 
