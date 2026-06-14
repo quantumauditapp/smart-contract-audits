@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-82-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-84-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,8 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Kiyomasa](./solana/kiyomasa.md) | 清正 | Solana | 🟡 34/100 | 2026-06-14 | [↗](https://quantumaudit.app/token/kiyomasa-sol) |
+| [Backpack](./solana/backpack.md) | BP | Solana | 🟠 58/100 | 2026-06-14 | [↗](https://quantumaudit.app/token/backpack-sol) |
 | [Peanut the Squirrel](./solana/peanut-the-squirrel.md) | PNUT | Solana | 🔴 73/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/peanut-the-squirrel-sol) |
 | [Sherbert The Tree](./solana/sherbert-the-tree.md) | SHERBERT | Solana | 🟠 60/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/sherbert-the-tree-sol) |
 | [SAIRI](./base/sairi.md) | SAIRI | Base | 🟠 63/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/sairi-base) |
@@ -40,14 +42,12 @@
 | [Official Bridge Currency](./solana/official-bridge-currency.md) | OBC | Solana | 🔴 73/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/official-bridge-currency-sol) |
 | [America Is Back](./solana/america-is-back.md) | AMERICA | Solana | 🟡 39/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/america-is-back-sol) |
 | [Traderclaw](./solana/traderclaw.md) | TCLAW | Solana | 🔴 88/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/traderclaw-sol) |
-| [Bullish Degen](./solana/bullish-degen.md) | BULLISH | Solana | 🟠 60/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/bullish-degen-sol) |
-| [Catcoin](./solana/catcoin.md) | CATCOIN | Solana | 🟡 44/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/catcoin-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (57)](./solana/README.md) · [Ethereum (16)](./ethereum/README.md) · [Base (7)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (59)](./solana/README.md) · [Ethereum (16)](./ethereum/README.md) · [Base (7)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 

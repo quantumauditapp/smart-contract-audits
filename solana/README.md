@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**57 reports** · Updated daily · [← All Networks](../README.md)
+**59 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Kiyomasa](./kiyomasa.md) | 清正 | 🟡 34/100 Medium Risk | 2026-06-14 | [↗](https://quantumaudit.app/token/kiyomasa-sol) |
+| [Backpack](./backpack.md) | BP | 🟠 58/100 High Risk | 2026-06-14 | [↗](https://quantumaudit.app/token/backpack-sol) |
 | [Peanut the Squirrel](./peanut-the-squirrel.md) | PNUT | 🔴 73/100 Critical Risk | 2026-06-13 | [↗](https://quantumaudit.app/token/peanut-the-squirrel-sol) |
 | [Sherbert The Tree](./sherbert-the-tree.md) | SHERBERT | 🟠 60/100 High Risk | 2026-06-13 | [↗](https://quantumaudit.app/token/sherbert-the-tree-sol) |
 | [Geodnet](./geodnet.md) | GEOD | 🔴 100/100 Critical Risk | 2026-06-13 | [↗](https://quantumaudit.app/token/geodnet-sol) |
