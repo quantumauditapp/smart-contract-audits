@@ -1,0 +1,80 @@
+---
+token: World Peace 
+ticker: PEACE 
+network: solana
+risk_score: 33
+status: medium
+date: 2026-06-15
+---
+
+# World Peace  (PEACE ) — Smart Contract Security Analysis | Solana
+
+> **Risk Score: 33/100 — 🟡 Medium Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-peace-sol)
+
+---
+
+## Security Analysis
+
+The World Peace (PEACE) token on Solana currently holds a Medium Risk score of 33/100, indicating a blend of inherent factors for investors to consider. On the positive side, the token's ownership has been renounced, which means the original creator can no longer modify contract parameters, fostering a degree of decentralization. Furthermore, the absence of a mint function prevents the arbitrary creation of new tokens, safeguarding against inflationary exploits by a developer. However, significant security concerns arise from the contract not being verified, which limits transparency and makes independent security analysis challenging without full code visibility. The current liquidity of $61,711 is also not locked, posing a potential vulnerability for liquidity providers to withdraw funds. With 31.4% of the supply held by the top 10 holders, there's a notable concentration of tokens, which could influence market stability.
+
+Two critical areas warrant immediate investor attention: the unverified contract and the unlocked liquidity. The lack of contract verification means the underlying code is not publicly visible or auditable, introducing a significant trust factor and potential for hidden vulnerabilities or malicious functions. This makes it impossible for independent security analysts to fully assess its integrity. Compounding this, the liquidity of $61,711 is not locked. This is a primary concern for investors as it means the funds providing market depth could be removed at any time, potentially leading to a sharp devaluation or a 'rug pull' scenario. Additionally, the concentration of 31.4% of the supply among the top 10 holders presents a centralization risk.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`atVjZ7...pump`](https://solscan.io/account/atVjZ7uM8sVrLFi5Xe1JiLGW6mW9pvQdTCWzhNFpump) |
+| **Network** | Solana |
+| **Price** | $0.0002094 |
+| **24h Volume** | $656.8K |
+| **Liquidity** | $61.7K |
+| **Volume / Liquidity** | 10.6× |
+| **Token Age** | 3mo |
+| **Top-10 Holders** | 31.4% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 6504 buys / 4654 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Frequently Asked Questions
+
+### Is World Peace a scam?
+
+The provided data does not definitively confirm World Peace as a scam, nor does it guarantee its legitimacy. While ownership is renounced and no mint function exists, key risks like an unverified contract and unlocked liquidity raise significant red flags. An unverified contract means the code isn't transparent, and unlocked liquidity means funds can be withdrawn by providers, posing a risk of value loss. Investors should proceed with extreme caution.
+
+### Is World Peace safe to buy?
+
+Investing in World Peace carries notable risks, earning it a Medium Risk score of 33/100. The contract remains unverified, preventing full security assessment and transparency. Critically, the liquidity is not locked, exposing investors to potential 'rug pull' scenarios if providers withdraw funds. Furthermore, the significant concentration of tokens among the top 10 holders introduces market stability concerns. These factors suggest it is not inherently 'safe' without further due diligence.
+
+### Has World Peace been audited?
+
+Based on the provided information, the World Peace contract has not been verified. Contract verification is a prerequisite for a formal audit, as it makes the code publicly accessible and reviewable by security experts. Without verification, a comprehensive third-party audit is not feasible, making it challenging to ascertain the contract's security and integrity.
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/solana/elx7qwm43xvqkjrz8dkupdfju8zmy6xbmjpjyxcx3j9u)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/world-peace-sol)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-15*

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**59 reports** · Updated daily · [← All Networks](../README.md)
+**65 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Pomni](./pomni.md) | POMNI | 🟡 37/100 Medium Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/pomni-sol) |
+| [US BLACKWHALE COIN](./us-blackwhale-coin.md) | USBC | 🟠 46/100 High Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/us-blackwhale-coin-sol) |
+| [World Peace ](./world-peace.md) | PEACE  | 🟡 33/100 Medium Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/world-peace-sol) |
+| [Ultimate Solana World Cup](./ultimate-solana-world-cup.md) | USWC | 🟠 46/100 High Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/ultimate-solana-world-cup-sol) |
+| [EMBER](./ember.md) | EMBER | 🟡 45/100 Medium Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/ember-sol) |
+| [Kintara](./kintara.md) | KINS | 🟡 36/100 Medium Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/kintara-sol) |
 | [Kiyomasa](./kiyomasa.md) | 清正 | 🟡 34/100 Medium Risk | 2026-06-14 | [↗](https://quantumaudit.app/token/kiyomasa-sol) |
 | [Backpack](./backpack.md) | BP | 🟠 58/100 High Risk | 2026-06-14 | [↗](https://quantumaudit.app/token/backpack-sol) |
 | [Peanut the Squirrel](./peanut-the-squirrel.md) | PNUT | 🔴 73/100 Critical Risk | 2026-06-13 | [↗](https://quantumaudit.app/token/peanut-the-squirrel-sol) |

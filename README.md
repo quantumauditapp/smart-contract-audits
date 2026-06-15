@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-84-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-90-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,12 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Pomni](./solana/pomni.md) | POMNI | Solana | 🟡 37/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/pomni-sol) |
+| [US BLACKWHALE COIN](./solana/us-blackwhale-coin.md) | USBC | Solana | 🟠 46/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/us-blackwhale-coin-sol) |
+| [World Peace ](./solana/world-peace.md) | PEACE  | Solana | 🟡 33/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/world-peace-sol) |
+| [Ultimate Solana World Cup](./solana/ultimate-solana-world-cup.md) | USWC | Solana | 🟠 46/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/ultimate-solana-world-cup-sol) |
+| [EMBER](./solana/ember.md) | EMBER | Solana | 🟡 45/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/ember-sol) |
+| [Kintara](./solana/kintara.md) | KINS | Solana | 🟡 36/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/kintara-sol) |
 | [Kiyomasa](./solana/kiyomasa.md) | 清正 | Solana | 🟡 34/100 | 2026-06-14 | [↗](https://quantumaudit.app/token/kiyomasa-sol) |
 | [Backpack](./solana/backpack.md) | BP | Solana | 🟠 58/100 | 2026-06-14 | [↗](https://quantumaudit.app/token/backpack-sol) |
 | [Peanut the Squirrel](./solana/peanut-the-squirrel.md) | PNUT | Solana | 🔴 73/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/peanut-the-squirrel-sol) |
@@ -36,18 +42,12 @@
 | [RAGE GUY](./solana/rage-guy.md) | RAGE | Solana | 🟠 65/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/rage-guy-sol) |
 | [wojak](./ethereum/wojak.md) | WOJAK | Ethereum | 🟢 9/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/wojak-eth) |
 | [🦎](./solana/token.md) | LIZARD | Solana | 🟠 51/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/token-sol) |
-| [Aliens are real](./solana/aliens-are-real.md) | ALIENS | Solana | 🟡 39/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/aliens-are-real-sol) |
-| [ALTSEASON](./solana/altseason.md) | ALTSZN | Solana | 🟡 38/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/altseason-sol) |
-| [RECON RACCOON](./solana/recon-raccoon.md) | RCON | Solana | 🟠 50/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/recon-raccoon-sol) |
-| [Official Bridge Currency](./solana/official-bridge-currency.md) | OBC | Solana | 🔴 73/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/official-bridge-currency-sol) |
-| [America Is Back](./solana/america-is-back.md) | AMERICA | Solana | 🟡 39/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/america-is-back-sol) |
-| [Traderclaw](./solana/traderclaw.md) | TCLAW | Solana | 🔴 88/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/traderclaw-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (59)](./solana/README.md) · [Ethereum (16)](./ethereum/README.md) · [Base (7)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (65)](./solana/README.md) · [Ethereum (16)](./ethereum/README.md) · [Base (7)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 
