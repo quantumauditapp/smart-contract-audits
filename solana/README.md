@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**65 reports** · Updated daily · [← All Networks](../README.md)
+**68 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [spucex](./spucex.md) | SPCX | 🟠 46/100 High Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/spucex-sol) |
+| [TAPE](./tape.md) | TAPE | 🟡 33/100 Medium Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/tape-sol) |
+| [Retard Coin](./retard-coin.md) | RETARD | 🟡 36/100 Medium Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/retard-coin-sol) |
 | [Pomni](./pomni.md) | POMNI | 🟡 37/100 Medium Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/pomni-sol) |
 | [US BLACKWHALE COIN](./us-blackwhale-coin.md) | USBC | 🟠 46/100 High Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/us-blackwhale-coin-sol) |
 | [World Peace ](./world-peace.md) | PEACE  | 🟡 33/100 Medium Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/world-peace-sol) |

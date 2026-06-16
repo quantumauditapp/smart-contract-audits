@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**16 reports** · Updated daily · [← All Networks](../README.md)
+**18 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [SpaceX xStock](./spacex-xstock.md) | SPCXX | 🟠 60/100 High Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/spacex-xstock-eth) |
+| [Uniswap](./uniswap.md) | UNI | 🟠 68/100 High Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/uniswap-eth) |
 | [SPACE ID](./space-id.md) | ID | 🔴 71/100 Critical Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/space-id-eth) |
 | [Ethena](./ethena.md) | ENA | 🔴 100/100 Critical Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/ethena-eth) |
 | [wojak](./wojak.md) | WOJAK | 🟢 9/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/wojak-eth) |

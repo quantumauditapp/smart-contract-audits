@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-90-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-95-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,11 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [spucex](./solana/spucex.md) | SPCX | Solana | 🟠 46/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/spucex-sol) |
+| [TAPE](./solana/tape.md) | TAPE | Solana | 🟡 33/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/tape-sol) |
+| [SpaceX xStock](./ethereum/spacex-xstock.md) | SPCXX | Ethereum | 🟠 60/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/spacex-xstock-eth) |
+| [Retard Coin](./solana/retard-coin.md) | RETARD | Solana | 🟡 36/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/retard-coin-sol) |
+| [Uniswap](./ethereum/uniswap.md) | UNI | Ethereum | 🟠 68/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/uniswap-eth) |
 | [Pomni](./solana/pomni.md) | POMNI | Solana | 🟡 37/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/pomni-sol) |
 | [US BLACKWHALE COIN](./solana/us-blackwhale-coin.md) | USBC | Solana | 🟠 46/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/us-blackwhale-coin-sol) |
 | [World Peace ](./solana/world-peace.md) | PEACE  | Solana | 🟡 33/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/world-peace-sol) |
@@ -37,17 +42,12 @@
 | [LMAO!](./solana/lmao.md) | LMAO! | Solana | 🟠 59/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/lmao-sol) |
 | [AINL](./solana/ainl.md) | AINL | Solana | 🟠 49/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/ainl-sol) |
 | [World Collective Oil Reserve](./solana/world-collective-oil-reserve.md) | WCOR | Solana | 🟠 57/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/world-collective-oil-reserve-sol) |
-| [ZygoSwap](./bsc/zygoswap.md) | ZSWAP | BNB Chain | 🟠 65/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/zygoswap-bsc) |
-| [Make Aliens Great Again ](./solana/make-aliens-great-again.md) | MAGA | Solana | 🟡 36/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/make-aliens-great-again-sol) |
-| [RAGE GUY](./solana/rage-guy.md) | RAGE | Solana | 🟠 65/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/rage-guy-sol) |
-| [wojak](./ethereum/wojak.md) | WOJAK | Ethereum | 🟢 9/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/wojak-eth) |
-| [🦎](./solana/token.md) | LIZARD | Solana | 🟠 51/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/token-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (65)](./solana/README.md) · [Ethereum (16)](./ethereum/README.md) · [Base (7)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (68)](./solana/README.md) · [Ethereum (18)](./ethereum/README.md) · [Base (7)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 
