@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**68 reports** · Updated daily · [← All Networks](../README.md)
+**69 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [SPCX69](./spcx69.md) | SPCX69 | 🟡 44/100 Medium Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/spcx69-sol) |
 | [spucex](./spucex.md) | SPCX | 🟠 46/100 High Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/spucex-sol) |
 | [TAPE](./tape.md) | TAPE | 🟡 33/100 Medium Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/tape-sol) |
 | [Retard Coin](./retard-coin.md) | RETARD | 🟡 36/100 Medium Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/retard-coin-sol) |

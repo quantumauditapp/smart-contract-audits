@@ -1,0 +1,80 @@
+---
+token: Aave
+ticker: AAVE
+network: ethereum
+risk_score: 28
+status: medium
+date: 2026-06-17
+---
+
+# Aave (AAVE) — Smart Contract Security Analysis | Ethereum
+
+> **Risk Score: 28/100 — 🟡 Medium Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aave-eth)
+
+---
+
+## Security Analysis
+
+Aave (AAVE) on Ethereum presents a nuanced security profile for investors, scoring 28/100, indicating a Medium Risk. Positively, the token's contract is verified, meaning its code is transparent and publicly inspectable, enhancing trust and auditability. Ownership has been renounced, which is a strong safety signal as it prevents a central entity from unilaterally altering critical contract parameters. Furthermore, the absence of a mint function mitigates inflation risk by preventing arbitrary token creation. However, certain aspects warrant investor consideration. A significant concentration exists, with the top 10 holders controlling 40.9% of the supply, which could influence market dynamics or governance if applicable. While Aave maintains substantial liquidity at $11,369,789 with a 24-hour volume of $210,335, the liquidity is not locked, a factor typically scrutinized in new projects, but less critical for established protocols like Aave.
+
+The most important safety signals for AAVE stem from its foundational contract security: the contract is verified, ownership renounced, and no mint function exists. These combined features provide transparency, immutability, and protection against centralized control or inflationary supply manipulation, offering a solid base of trust for investors. Conversely, a significant risk signal is the high concentration of 40.9% of the supply among the top 10 holders. This could lead to concentrated influence over market price or protocol governance decisions. Additionally, the lack of locked liquidity, while common for a mature token like AAVE, technically means liquidity providers could withdraw funds, potentially impacting market stability, contributing to its Medium Risk score.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`0x7fc6...dae9`](https://etherscan.io/address/0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9) |
+| **Network** | Ethereum |
+| **Price** | $76.4300 |
+| **24h Volume** | $210.3K |
+| **Liquidity** | $11.37M |
+| **Volume / Liquidity** | 0.0× |
+| **Token Age** | 1y |
+| **Top-10 Holders** | 40.9% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 97 buys / 78 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ❌ Fail |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
+
+## Frequently Asked Questions
+
+### Is Aave a scam?
+
+Based on the provided data, Aave does not exhibit typical scam characteristics. Its token contract is verified, ownership is renounced, and no mint function exists, indicating a high level of transparency and immutability. These fundamental security features contradict the hallmarks of a scam, supporting Aave's standing as a prominent decentralized finance protocol, despite its Medium Risk score of 28/100.
+
+### Is Aave safe to buy?
+
+Aave demonstrates robust foundational security, including a verified contract, renounced ownership, and no mint function, enhancing its structural integrity. However, investors should be aware of factors contributing to its 28/100 Medium Risk score. Notably, 40.9% of the supply is concentrated among the top 10 holders, and liquidity is not locked. These elements require careful consideration regarding market stability and potential influence.
+
+### Has Aave been audited?
+
+The Aave token contract is verified on Ethereum, ensuring its code is publicly visible for inspection. This transparency is a key safety signal, enabling community and expert review. While verification is crucial for security and facilitates audits, it confirms code visibility. It doesn't inherently confirm a formal, independent security audit of the token contract has been completed based on this data.
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/ethereum/0x3de27efa2f1aa663ae5d458857e731c129069f29)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/aave-eth)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-17*

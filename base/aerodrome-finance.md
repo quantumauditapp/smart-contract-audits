@@ -1,0 +1,80 @@
+---
+token: Aerodrome Finance
+ticker: AERO
+network: base
+risk_score: 64
+status: high
+date: 2026-06-17
+---
+
+# Aerodrome Finance (AERO) — Smart Contract Security Analysis | Base
+
+> **Risk Score: 64/100 — 🟠 High Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aerodrome-finance-base)
+
+---
+
+## Security Analysis
+
+Aerodrome Finance (AERO), operating on the Base blockchain, presents a mixed security profile for investors. The contract is verified, affirming that the deployed code matches the publicly available source, enhancing transparency. Additionally, ownership has been renounced, which generally reduces the risk of malicious owner-initiated changes to the contract. However, several factors contribute to its high-risk classification of 64/100. A critical concern is the existence of a mint function, allowing for new tokens to be created, potentially diluting existing holdings. Furthermore, significant supply centralization is evident, with the top 10 holders controlling 67.6% of the total supply, raising concerns about potential market manipulation or large-scale selling pressure. Liquidity is substantial at over $25 million, supported by a healthy $11.2 million 24-hour volume, but the fact that this liquidity is not locked presents an additional, albeit lesser, risk.
+
+The most significant security considerations for Aerodrome Finance revolve around its tokenomics and distribution. The presence of a mint function is a primary concern, as it introduces an inflationary risk that could dilute the value of existing tokens without specific community or governance oversight. Equally important is the highly concentrated token distribution, with the top 10 holders possessing 67.6% of the supply. This level of centralization creates potential vulnerabilities, including the risk of large market movements if these key holders decide to sell substantial amounts. While the contract is verified and ownership renounced, the unlocked liquidity also adds to the overall risk profile, contributing to the high-risk score of 64/100.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`0x9401...8631`](https://basescan.org/address/0x940181a94a35a4569e4529a3cdfb74e38fd98631) |
+| **Network** | Base |
+| **Price** | $0.4994 |
+| **24h Volume** | $11.23M |
+| **Liquidity** | $25.12M |
+| **Volume / Liquidity** | 0.4× |
+| **Token Age** | 2y |
+| **Top-10 Holders** | 67.6% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 3451 buys / 4713 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ❌ Fail |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Frequently Asked Questions
+
+### Is Aerodrome Finance a scam?
+
+Aerodrome Finance has verifiable attributes like a verified contract and renounced ownership, which suggest a degree of transparency and reduced immediate scam risks often associated with unverified or owner-controlled projects. However, its overall risk score of 64/100 is high, indicating significant inherent vulnerabilities. Investors should acknowledge these structural risks rather than solely focusing on general scam indicators.
+
+### Is Aerodrome Finance safe to buy?
+
+Investing in Aerodrome Finance carries notable risks. Key concerns include the existence of a mint function, which could increase token supply, and the high concentration of 67.6% of tokens held by the top 10 addresses, posing potential market impact. Additionally, the project's liquidity is not locked, adding another layer of risk. These factors contribute to its high-risk score, advising caution for potential buyers.
+
+### Has Aerodrome Finance been audited?
+
+The Aerodrome Finance contract is confirmed as verified, ensuring its deployed code matches the public source. This offers transparency but differs from a formal security audit. An audit is an independent review by experts to identify vulnerabilities and flaws. The provided information does not specify if such a comprehensive audit has been performed on Aerodrome Finance.
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/base/0x6cdcb1c4a4d1c3c6d054b27ac5b77e89eafb971d)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/aerodrome-finance-base)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-17*

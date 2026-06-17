@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-95-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-99-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,10 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [SPCX69](./solana/spcx69.md) | SPCX69 | Solana | 🟡 44/100 | 2026-06-17 | [↗](https://quantumaudit.app/token/spcx69-sol) |
+| [Aerodrome Finance](./base/aerodrome-finance.md) | AERO | Base | 🟠 64/100 | 2026-06-17 | [↗](https://quantumaudit.app/token/aerodrome-finance-base) |
+| [Aave](./ethereum/aave.md) | AAVE | Ethereum | 🟡 28/100 | 2026-06-17 | [↗](https://quantumaudit.app/token/aave-eth) |
+| [SPX6900](./ethereum/spx6900.md) | SPX | Ethereum | 🟢 0/100 | 2026-06-17 | [↗](https://quantumaudit.app/token/spx6900-eth) |
 | [spucex](./solana/spucex.md) | SPCX | Solana | 🟠 46/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/spucex-sol) |
 | [TAPE](./solana/tape.md) | TAPE | Solana | 🟡 33/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/tape-sol) |
 | [SpaceX xStock](./ethereum/spacex-xstock.md) | SPCXX | Ethereum | 🟠 60/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/spacex-xstock-eth) |
@@ -38,16 +42,12 @@
 | [Velvet](./base/velvet.md) | VELVET | Base | 🔴 100/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/velvet-base) |
 | [Ethena](./ethereum/ethena.md) | ENA | Ethereum | 🔴 100/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/ethena-eth) |
 | [Purple Bitcoin](./solana/purple-bitcoin.md) | PBTC | Solana | 🟠 59/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/purple-bitcoin-sol) |
-| [Bull](./solana/bull.md) | BULL | Solana | 🟠 59/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/bull-sol) |
-| [LMAO!](./solana/lmao.md) | LMAO! | Solana | 🟠 59/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/lmao-sol) |
-| [AINL](./solana/ainl.md) | AINL | Solana | 🟠 49/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/ainl-sol) |
-| [World Collective Oil Reserve](./solana/world-collective-oil-reserve.md) | WCOR | Solana | 🟠 57/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/world-collective-oil-reserve-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (68)](./solana/README.md) · [Ethereum (18)](./ethereum/README.md) · [Base (7)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (69)](./solana/README.md) · [Ethereum (20)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 

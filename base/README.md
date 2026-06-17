@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**7 reports** · Updated daily · [← All Networks](../README.md)
+**8 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Aerodrome Finance](./aerodrome-finance.md) | AERO | 🟠 64/100 High Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/aerodrome-finance-base) |
 | [SAIRI](./sairi.md) | SAIRI | 🟠 63/100 High Risk | 2026-06-13 | [↗](https://quantumaudit.app/token/sairi-base) |
 | [Velvet](./velvet.md) | VELVET | 🔴 100/100 Critical Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/velvet-base) |
 | [BitVault Signal](./bitvault-signal.md) | BV7X | 🟠 62/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/bitvault-signal-base) |
