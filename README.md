@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-99-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-102-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,9 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Religion](./solana/religion.md) | RELIGION | Solana | 🟠 48/100 | 2026-06-18 | [↗](https://quantumaudit.app/token/religion-sol) |
+| [drooling cat](./solana/drooling-cat.md) | DROOLING | Solana | 🟡 32/100 | 2026-06-18 | [↗](https://quantumaudit.app/token/drooling-cat-sol) |
+| [The Fearless Guardian](./solana/the-fearless-guardian.md) | GUARDIAN | Solana | 🟠 47/100 | 2026-06-18 | [↗](https://quantumaudit.app/token/the-fearless-guardian-sol) |
 | [SPCX69](./solana/spcx69.md) | SPCX69 | Solana | 🟡 44/100 | 2026-06-17 | [↗](https://quantumaudit.app/token/spcx69-sol) |
 | [Aerodrome Finance](./base/aerodrome-finance.md) | AERO | Base | 🟠 64/100 | 2026-06-17 | [↗](https://quantumaudit.app/token/aerodrome-finance-base) |
 | [Aave](./ethereum/aave.md) | AAVE | Ethereum | 🟡 28/100 | 2026-06-17 | [↗](https://quantumaudit.app/token/aave-eth) |
@@ -39,15 +42,12 @@
 | [XRP SUPERCYCLE](./solana/xrp-supercycle.md) | XRPS | Solana | 🟠 49/100 | 2026-06-12 | [↗](https://quantumaudit.app/token/xrp-supercycle-sol) |
 | [Fantasy Manager](./solana/fantasy-manager.md) | FANTASY | Solana | 🟠 59/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/fantasy-manager-sol) |
 | [SPACE ID](./ethereum/space-id.md) | ID | Ethereum | 🔴 71/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/space-id-eth) |
-| [Velvet](./base/velvet.md) | VELVET | Base | 🔴 100/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/velvet-base) |
-| [Ethena](./ethereum/ethena.md) | ENA | Ethereum | 🔴 100/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/ethena-eth) |
-| [Purple Bitcoin](./solana/purple-bitcoin.md) | PBTC | Solana | 🟠 59/100 | 2026-06-10 | [↗](https://quantumaudit.app/token/purple-bitcoin-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (69)](./solana/README.md) · [Ethereum (20)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (72)](./solana/README.md) · [Ethereum (20)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 

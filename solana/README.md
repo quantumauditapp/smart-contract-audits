@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**69 reports** · Updated daily · [← All Networks](../README.md)
+**72 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Religion](./religion.md) | RELIGION | 🟠 48/100 High Risk | 2026-06-18 | [↗](https://quantumaudit.app/token/religion-sol) |
+| [drooling cat](./drooling-cat.md) | DROOLING | 🟡 32/100 Medium Risk | 2026-06-18 | [↗](https://quantumaudit.app/token/drooling-cat-sol) |
+| [The Fearless Guardian](./the-fearless-guardian.md) | GUARDIAN | 🟠 47/100 High Risk | 2026-06-18 | [↗](https://quantumaudit.app/token/the-fearless-guardian-sol) |
 | [SPCX69](./spcx69.md) | SPCX69 | 🟡 44/100 Medium Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/spcx69-sol) |
 | [spucex](./spucex.md) | SPCX | 🟠 46/100 High Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/spucex-sol) |
 | [TAPE](./tape.md) | TAPE | 🟡 33/100 Medium Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/tape-sol) |
