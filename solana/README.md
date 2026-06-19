@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**72 reports** · Updated daily · [← All Networks](../README.md)
+**74 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [MEEP CAT](./meep-cat.md) | MEEP | 🟡 33/100 Medium Risk | 2026-06-19 | [↗](https://quantumaudit.app/token/meep-cat-sol) |
+| [Mad Coin](./mad-coin.md) | $MAD | 🟠 54/100 High Risk | 2026-06-19 | [↗](https://quantumaudit.app/token/mad-coin-sol) |
 | [Religion](./religion.md) | RELIGION | 🟠 48/100 High Risk | 2026-06-18 | [↗](https://quantumaudit.app/token/religion-sol) |
 | [drooling cat](./drooling-cat.md) | DROOLING | 🟡 32/100 Medium Risk | 2026-06-18 | [↗](https://quantumaudit.app/token/drooling-cat-sol) |
 | [The Fearless Guardian](./the-fearless-guardian.md) | GUARDIAN | 🟠 47/100 High Risk | 2026-06-18 | [↗](https://quantumaudit.app/token/the-fearless-guardian-sol) |

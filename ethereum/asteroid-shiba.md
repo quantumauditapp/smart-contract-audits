@@ -1,0 +1,80 @@
+---
+token: Asteroid Shiba
+ticker: ASTEROID
+network: ethereum
+risk_score: 0
+status: low
+date: 2026-06-19
+---
+
+# Asteroid Shiba (ASTEROID) — Smart Contract Security Analysis | Ethereum
+
+> **Risk Score: 0/100 — 🟢 Low Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/asteroid-shiba-eth)
+
+---
+
+## Security Analysis
+
+Asteroid Shiba (ASTEROID) on Ethereum presents a profile with several foundational security elements. The smart contract has been successfully verified, meaning its code is publicly auditable and matches the deployed version on the blockchain, enhancing transparency for investors. A crucial safety signal is the renounced ownership, which prevents the original deployer from modifying critical contract parameters, such as minting new tokens or altering transaction fees. Furthermore, the absence of a mint function ensures that no new ASTEROID tokens can be created, maintaining a fixed supply and preventing inflationary surprises. All liquidity has been locked, significantly mitigating rug pull risks by preventing large withdrawals from the liquidity pool. The project shows substantial recent trading activity, with a 24-hour volume of over $18 million and a liquidity pool exceeding $2.5 million. The assessed risk score stands at 0/100, indicating a low-risk classification based on these on-chain metrics.
+
+The most significant safety signals for Asteroid Shiba are the renounced ownership and the locked liquidity, which collectively offer strong protection against common scam tactics like rug pulls and malicious contract alterations. The immutable token supply, due to the absence of a mint function, is another key positive, ensuring predictability for investors regarding tokenomics. The overall risk score of 0/100 reinforces these findings, classifying ASTEROID as low risk from a technical contract security perspective. However, investors should note that the top 10 holders collectively control 13.7% of the supply. While not excessively concentrated, this still represents a notable portion, and understanding potential market impact from large holders is always a prudent consideration for investors navigating volatile crypto markets.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`0xf280...4126`](https://etherscan.io/address/0xf280b16ef293d8e534e370794ef26bf312694126) |
+| **Network** | Ethereum |
+| **Price** | $0.0001635 |
+| **24h Volume** | $18.72M |
+| **Liquidity** | $2.55M |
+| **Volume / Liquidity** | 7.3× |
+| **Token Age** | 1y |
+| **Top-10 Holders** | 13.7% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 5742 buys / 4731 sells |
+
+## Security Flags (5/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ✅ Pass |
+| Not a Proxy | ✅ Pass |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Frequently Asked Questions
+
+### Is Asteroid Shiba a scam?
+
+Based on available on-chain data, Asteroid Shiba exhibits characteristics that typically differentiate it from common scam projects. The contract is verified, ownership has been renounced, and no mint function exists, which collectively reduce the risk of rug pulls or unauthorized token creation by the deployer. These factors suggest a degree of technical robustness and transparency.
+
+### Is Asteroid Shiba safe to buy?
+
+Asteroid Shiba features several safety measures, including locked liquidity and renounced ownership, which contribute to its low-risk score of 0/100 from a contract security standpoint. However, no cryptocurrency investment is entirely without risk. Investors should be aware of the 13.7% token concentration among the top 10 holders and the inherent volatility of the crypto market.
+
+### Has Asteroid Shiba been audited?
+
+The provided data indicates the Asteroid Shiba contract is 'verified,' meaning its source code is publicly available and matches the deployed bytecode on the Ethereum blockchain. While this promotes transparency, it is distinct from a formal security audit conducted by an independent third party, which would typically involve a deeper code review for vulnerabilities.
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/ethereum/0x76a411f14a704099ba476ce8dffc288a53295218)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/asteroid-shiba-eth)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-19*

@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-102-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-105-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,9 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [MEEP CAT](./solana/meep-cat.md) | MEEP | Solana | 🟡 33/100 | 2026-06-19 | [↗](https://quantumaudit.app/token/meep-cat-sol) |
+| [Mad Coin](./solana/mad-coin.md) | $MAD | Solana | 🟠 54/100 | 2026-06-19 | [↗](https://quantumaudit.app/token/mad-coin-sol) |
+| [Asteroid Shiba](./ethereum/asteroid-shiba.md) | ASTEROID | Ethereum | 🟢 0/100 | 2026-06-19 | [↗](https://quantumaudit.app/token/asteroid-shiba-eth) |
 | [Religion](./solana/religion.md) | RELIGION | Solana | 🟠 48/100 | 2026-06-18 | [↗](https://quantumaudit.app/token/religion-sol) |
 | [drooling cat](./solana/drooling-cat.md) | DROOLING | Solana | 🟡 32/100 | 2026-06-18 | [↗](https://quantumaudit.app/token/drooling-cat-sol) |
 | [The Fearless Guardian](./solana/the-fearless-guardian.md) | GUARDIAN | Solana | 🟠 47/100 | 2026-06-18 | [↗](https://quantumaudit.app/token/the-fearless-guardian-sol) |
@@ -39,15 +42,12 @@
 | [Official Trump](./solana/official-trump.md) | TRUMP | Solana | 🔴 79/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/official-trump-sol) |
 | [NVDA4200](./solana/nvda4200.md) | 英伟达 | Solana | 🟠 55/100 | 2026-06-12 | [↗](https://quantumaudit.app/token/nvda4200-sol) |
 | [SPACEX IPO](./solana/spacex-ipo.md) | SPCX | Solana | 🟠 59/100 | 2026-06-12 | [↗](https://quantumaudit.app/token/spacex-ipo-sol) |
-| [XRP SUPERCYCLE](./solana/xrp-supercycle.md) | XRPS | Solana | 🟠 49/100 | 2026-06-12 | [↗](https://quantumaudit.app/token/xrp-supercycle-sol) |
-| [Fantasy Manager](./solana/fantasy-manager.md) | FANTASY | Solana | 🟠 59/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/fantasy-manager-sol) |
-| [SPACE ID](./ethereum/space-id.md) | ID | Ethereum | 🔴 71/100 | 2026-06-11 | [↗](https://quantumaudit.app/token/space-id-eth) |
 
 ---
 
 ## Browse by Network
 
-[Solana (72)](./solana/README.md) · [Ethereum (20)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (74)](./solana/README.md) · [Ethereum (21)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 
