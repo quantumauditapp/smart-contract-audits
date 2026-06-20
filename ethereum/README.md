@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**21 reports** · Updated daily · [← All Networks](../README.md)
+**24 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Re Protocol reUSD](./re-protocol-reusd.md) | REUSD | 🟠 51/100 High Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/re-protocol-reusd-eth) |
+| [Clawd](./clawd.md) | CLAWD | 🟢 0/100 Low Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/clawd-eth) |
+| [EigenCloud (prev. EigenLayer)](./eigencloud-prev-eigenlayer.md) | EIGEN | 🟡 28/100 Medium Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/eigencloud-prev-eigenlayer-eth) |
 | [Asteroid Shiba](./asteroid-shiba.md) | ASTEROID | 🟢 0/100 Low Risk | 2026-06-19 | [↗](https://quantumaudit.app/token/asteroid-shiba-eth) |
 | [Aave](./aave.md) | AAVE | 🟡 28/100 Medium Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/aave-eth) |
 | [SPX6900](./spx6900.md) | SPX | 🟢 0/100 Low Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/spx6900-eth) |

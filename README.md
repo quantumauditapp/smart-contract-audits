@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-105-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-110-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,11 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Tiny Humans AI](./solana/tiny-humans-ai.md) | TINY | Solana | 🟡 38/100 | 2026-06-20 | [↗](https://quantumaudit.app/token/tiny-humans-ai-sol) |
+| [Re Protocol reUSD](./ethereum/re-protocol-reusd.md) | REUSD | Ethereum | 🟠 51/100 | 2026-06-20 | [↗](https://quantumaudit.app/token/re-protocol-reusd-eth) |
+| [Clawd](./ethereum/clawd.md) | CLAWD | Ethereum | 🟢 0/100 | 2026-06-20 | [↗](https://quantumaudit.app/token/clawd-eth) |
+| [Make Britain Great Again](./solana/make-britain-great-again.md) | MBGA | Solana | 🟡 36/100 | 2026-06-20 | [↗](https://quantumaudit.app/token/make-britain-great-again-sol) |
+| [EigenCloud (prev. EigenLayer)](./ethereum/eigencloud-prev-eigenlayer.md) | EIGEN | Ethereum | 🟡 28/100 | 2026-06-20 | [↗](https://quantumaudit.app/token/eigencloud-prev-eigenlayer-eth) |
 | [MEEP CAT](./solana/meep-cat.md) | MEEP | Solana | 🟡 33/100 | 2026-06-19 | [↗](https://quantumaudit.app/token/meep-cat-sol) |
 | [Mad Coin](./solana/mad-coin.md) | $MAD | Solana | 🟠 54/100 | 2026-06-19 | [↗](https://quantumaudit.app/token/mad-coin-sol) |
 | [Asteroid Shiba](./ethereum/asteroid-shiba.md) | ASTEROID | Ethereum | 🟢 0/100 | 2026-06-19 | [↗](https://quantumaudit.app/token/asteroid-shiba-eth) |
@@ -37,17 +42,12 @@
 | [Backpack](./solana/backpack.md) | BP | Solana | 🟠 58/100 | 2026-06-14 | [↗](https://quantumaudit.app/token/backpack-sol) |
 | [Peanut the Squirrel](./solana/peanut-the-squirrel.md) | PNUT | Solana | 🔴 73/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/peanut-the-squirrel-sol) |
 | [Sherbert The Tree](./solana/sherbert-the-tree.md) | SHERBERT | Solana | 🟠 60/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/sherbert-the-tree-sol) |
-| [SAIRI](./base/sairi.md) | SAIRI | Base | 🟠 63/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/sairi-base) |
-| [Geodnet](./solana/geodnet.md) | GEOD | Solana | 🔴 100/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/geodnet-sol) |
-| [Official Trump](./solana/official-trump.md) | TRUMP | Solana | 🔴 79/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/official-trump-sol) |
-| [NVDA4200](./solana/nvda4200.md) | 英伟达 | Solana | 🟠 55/100 | 2026-06-12 | [↗](https://quantumaudit.app/token/nvda4200-sol) |
-| [SPACEX IPO](./solana/spacex-ipo.md) | SPCX | Solana | 🟠 59/100 | 2026-06-12 | [↗](https://quantumaudit.app/token/spacex-ipo-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (74)](./solana/README.md) · [Ethereum (21)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (76)](./solana/README.md) · [Ethereum (24)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 

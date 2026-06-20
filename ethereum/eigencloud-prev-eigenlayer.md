@@ -1,0 +1,80 @@
+---
+token: EigenCloud (prev. EigenLayer)
+ticker: EIGEN
+network: ethereum
+risk_score: 28
+status: medium
+date: 2026-06-20
+---
+
+# EigenCloud (prev. EigenLayer) (EIGEN) — Smart Contract Security Analysis | Ethereum
+
+> **Risk Score: 28/100 — 🟡 Medium Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/eigencloud-prev-eigenlayer-eth)
+
+---
+
+## Security Analysis
+
+EigenCloud's (EIGEN) token on Ethereum demonstrates several foundational security attributes. The contract is verified, meaning its code matches the deployed bytecode on the blockchain, enhancing transparency. Ownership has been renounced, which removes the creator's ability to modify core token parameters post-deployment, such as minting new tokens or altering transaction fees. Further reinforcing this, no mint function exists, preventing arbitrary inflation of the token supply. However, areas warranting investor attention include the significant concentration of 37.4% of the supply among the top 10 holders, which could influence market dynamics. Additionally, liquidity for the token is not locked. With a 24-hour volume of $157,533 against $3,371,310 in liquidity, it has been assigned a Medium Risk score of 28/100.
+
+A critical risk factor for EIGEN is the substantial concentration, with 37.4% of the token supply held by the top 10 addresses. Such centralization can lead to significant market impact from large holder actions, potentially affecting price stability and liquidity. Furthermore, the absence of locked liquidity is a notable concern. While ownership renunciation mitigates developer-initiated rug pulls via code changes, unlocked liquidity means the liquidity providers could withdraw funds, potentially impacting trading stability and accessibility. Conversely, the renounced ownership and lack of a mint function are strong safety signals, significantly reducing risks associated with developer manipulation of supply or contract parameters.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`0xec53...1f83`](https://etherscan.io/address/0xec53bf9167f50cdeb3ae105f56099aaab9061f83) |
+| **Network** | Ethereum |
+| **Price** | $0.2657 |
+| **24h Volume** | $157.5K |
+| **Liquidity** | $3.37M |
+| **Volume / Liquidity** | 0.0× |
+| **Token Age** | 2y |
+| **Top-10 Holders** | 37.4% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 573 buys / 547 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ❌ Fail |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
+
+## Frequently Asked Questions
+
+### Is EigenCloud (prev. EigenLayer) a scam?
+
+Based on the provided data, several factors reduce the typical indicators of a scam. The contract is verified, offering transparency. Ownership has been renounced, preventing the developer from making malicious contract changes. Crucially, no mint function exists, eliminating arbitrary supply inflation. While the token is categorized as "Medium Risk" (28/100), these technical safeguards significantly mitigate common scam vectors.
+
+### Is EigenCloud (prev. EigenLayer) safe to buy?
+
+Buying EIGEN carries both mitigating factors and specific risks. While the contract is verified and ownership renounced, reducing direct developer manipulation, key risk factors exist. A significant 37.4% of the supply is concentrated among the top 10 holders, which could lead to market volatility. Additionally, liquidity is not locked, potentially impacting trading stability if withdrawn. This contributes to its Medium Risk score of 28/100.
+
+### Has EigenCloud (prev. EigenLayer) been audited?
+
+The EigenCloud contract is "verified," meaning its public source code matches the deployed bytecode, enhancing transparency. This allows for public inspection. However, "contract verified" differs from a formal, independent security audit. Such an audit, conducted by specialized firms, proactively identifies vulnerabilities. The provided data does not confirm if a comprehensive third-party audit has occurred.
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/ethereum/0xc2c390c6cd3c4e6c2b70727d35a45e8a072f18ca)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/eigencloud-prev-eigenlayer-eth)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-20*

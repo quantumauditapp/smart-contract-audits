@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**74 reports** · Updated daily · [← All Networks](../README.md)
+**76 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Tiny Humans AI](./tiny-humans-ai.md) | TINY | 🟡 38/100 Medium Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/tiny-humans-ai-sol) |
+| [Make Britain Great Again](./make-britain-great-again.md) | MBGA | 🟡 36/100 Medium Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/make-britain-great-again-sol) |
 | [MEEP CAT](./meep-cat.md) | MEEP | 🟡 33/100 Medium Risk | 2026-06-19 | [↗](https://quantumaudit.app/token/meep-cat-sol) |
 | [Mad Coin](./mad-coin.md) | $MAD | 🟠 54/100 High Risk | 2026-06-19 | [↗](https://quantumaudit.app/token/mad-coin-sol) |
 | [Religion](./religion.md) | RELIGION | 🟠 48/100 High Risk | 2026-06-18 | [↗](https://quantumaudit.app/token/religion-sol) |
