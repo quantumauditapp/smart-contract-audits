@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**76 reports** · Updated daily · [← All Networks](../README.md)
+**82 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [chicken shrimp](./chicken-shrimp.md) | CS | 🟠 47/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/chicken-shrimp-sol) |
+| [WSOP Fantasy Poker](./wsop-fantasy-poker.md) | WSOLP | 🟠 47/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/wsop-fantasy-poker-sol) |
+| [Hope This Moons Later](./hope-this-moons-later.md) | HTML | 🟠 51/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/hope-this-moons-later-sol) |
+| [Tensor](./tensor.md) | TNSR | 🟠 55/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/tensor-sol) |
+| [Jupiter](./jupiter.md) | JUP | 🟠 58/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/jupiter-sol) |
+| [Meteora](./meteora.md) | MET | 🟠 56/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/meteora-sol) |
 | [Tiny Humans AI](./tiny-humans-ai.md) | TINY | 🟡 38/100 Medium Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/tiny-humans-ai-sol) |
 | [Make Britain Great Again](./make-britain-great-again.md) | MBGA | 🟡 36/100 Medium Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/make-britain-great-again-sol) |
 | [MEEP CAT](./meep-cat.md) | MEEP | 🟡 33/100 Medium Risk | 2026-06-19 | [↗](https://quantumaudit.app/token/meep-cat-sol) |

@@ -1,0 +1,80 @@
+---
+token: Jupiter
+ticker: JUP
+network: solana
+risk_score: 58
+status: high
+date: 2026-06-21
+---
+
+# Jupiter (JUP) — Smart Contract Security Analysis | Solana
+
+> **Risk Score: 58/100 — 🟠 High Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jupiter-sol)
+
+---
+
+## Security Analysis
+
+Jupiter (JUP) on Solana presents a complex security profile for investors. On the positive side, the token's ownership has been renounced, which removes the risk of the original deployer making malicious contract changes post-launch. Furthermore, the absence of a mint function ensures no new tokens can be arbitrarily created, protecting against inflationary dilution. The token also demonstrates substantial market activity with a 24-hour volume exceeding $249 million and considerable liquidity at $88 million, indicating strong trading interest. However, several critical red flags are present. The contract is not verified, which significantly impedes transparency and makes it impossible for the public to independently confirm its intended behavior or identify vulnerabilities without direct access to the code. This lack of verification, combined with an overall risk score of 58/100, categorizes JUP as a high-risk asset. Investors should approach with caution due to these unaddressed issues.
+
+The most critical risk factors for Jupiter (JUP) are the unverified contract and the highly concentrated token distribution. An unverified contract means its underlying code is not publicly auditable or transparent, leaving investors blind to potential hidden functions or exploitable vulnerabilities. This lack of transparency is a major concern. Compounding this, the top 10 holders collectively control 68.3% of the total supply. Such high concentration suggests significant whale influence, potentially enabling large-scale selling events that could drastically impact market stability and price. Additionally, with liquidity not locked, a theoretical risk of liquidity withdrawal leading to a rug pull exists. These combined factors warrant significant investor vigilance.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`JUPyiw...DvCN`](https://solscan.io/account/JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN) |
+| **Network** | Solana |
+| **Price** | $1,077.4400 |
+| **24h Volume** | $249.87M |
+| **Liquidity** | $88.97M |
+| **Volume / Liquidity** | 2.8× |
+| **Token Age** | 7mo |
+| **Top-10 Holders** | 68.3% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 503 buys / 641 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Frequently Asked Questions
+
+### Is Jupiter a scam?
+
+Characterizing Jupiter (JUP) as a "scam" requires direct evidence of malicious intent, which isn't provided by the data alone. However, significant red flags exist, including an unverified contract and high token centralization (top 10 holders owning 68.3% of supply). While ownership is renounced and no mint function exists, these risks contribute to its 58/100 "High Risk" score, indicating serious concerns.
+
+### Is Jupiter safe to buy?
+
+Investing in Jupiter (JUP) carries notable risks, making it difficult to deem "safe" based on current data. The primary concerns include the unverified contract, which prevents public code scrutiny, and the lack of locked liquidity, raising potential rug pull scenarios. Furthermore, 68.3% of the supply is held by the top 10 wallets, indicating significant centralization risk. These factors contribute to its "High Risk" classification.
+
+### Has Jupiter been audited?
+
+The provided data indicates the Jupiter (JUP) contract is "not verified." This means its code has not been publicly published on the blockchain explorer. Without verification, an independent audit of the contract's logic for security vulnerabilities or unintended functions is extremely difficult, if not impossible, for external parties. This lack of transparency is a significant risk.
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/solana/3xngdc58axytrj64stqz5trdqwvtwhlr888irbbwznee)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/jupiter-sol)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-21*

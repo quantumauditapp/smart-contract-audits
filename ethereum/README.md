@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**24 reports** · Updated daily · [← All Networks](../README.md)
+**25 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Main Street USD](./main-street-usd.md) | MSUSD | 🟠 50/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/main-street-usd-eth) |
 | [Re Protocol reUSD](./re-protocol-reusd.md) | REUSD | 🟠 51/100 High Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/re-protocol-reusd-eth) |
 | [Clawd](./clawd.md) | CLAWD | 🟢 0/100 Low Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/clawd-eth) |
 | [EigenCloud (prev. EigenLayer)](./eigencloud-prev-eigenlayer.md) | EIGEN | 🟡 28/100 Medium Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/eigencloud-prev-eigenlayer-eth) |

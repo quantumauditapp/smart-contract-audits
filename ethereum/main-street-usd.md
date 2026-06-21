@@ -1,0 +1,80 @@
+---
+token: Main Street USD
+ticker: MSUSD
+network: ethereum
+risk_score: 50
+status: high
+date: 2026-06-21
+---
+
+# Main Street USD (MSUSD) — Smart Contract Security Analysis | Ethereum
+
+> **Risk Score: 50/100 — 🟠 High Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/main-street-usd-eth)
+
+---
+
+## Security Analysis
+
+Main Street USD (MSUSD) on Ethereum presents a mixed security profile. Positively, its contract is verified, enhancing transparency, and ownership has been renounced, meaning the original deployer cannot alter the contract's core functions. The absence of a mint function prevents arbitrary supply inflation, offering some protection against token dilution. However, significant red flags exist. A critical concern is the extreme centralization of token supply, with the top 10 holders controlling 99.2%. This concentration poses a substantial risk of market manipulation and potential large-scale sell-offs. Furthermore, the absence of locked liquidity increases the vulnerability to a rug pull, where liquidity providers could withdraw funds, rendering the token illiquid. Despite a notable 24-hour trading volume of over $5 million, the relatively low liquidity of $253,949 suggests potential for high slippage and price volatility, particularly for larger transactions. This combination contributes to its assessed high-risk score of 50/100.
+
+The most critical security concerns for MSUSD are the extreme token centralization and unlocked liquidity. With 99.2% of the supply held by the top 10 wallets, there's a significant risk of coordinated selling or manipulation, potentially causing severe price impact. The lack of locked liquidity means the current providers could withdraw their funds at any time, leaving investors unable to sell their tokens and exposing them to a rug pull scenario. While the contract's renounced ownership and absence of a mint function offer some foundational security against developer-initiated contract changes or supply inflation, these are heavily outweighed by the significant risks associated with concentrated holdings and unprotected liquidity, warranting a high-risk assessment.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`0x4ba0...7c00`](https://etherscan.io/address/0x4ba01f22827018b4772cd326c7627fb4956a7c00) |
+| **Network** | Ethereum |
+| **Price** | $0.2725 |
+| **24h Volume** | $5.15M |
+| **Liquidity** | $253.9K |
+| **Volume / Liquidity** | 20.3× |
+| **Token Age** | 1y |
+| **Top-10 Holders** | 99.2% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 1155 buys / 990 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ❌ Fail |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
+
+## Frequently Asked Questions
+
+### Is Main Street USD a scam?
+
+Based on available data, Main Street USD exhibits high-risk characteristics, especially its highly concentrated token distribution where 99.2% is held by the top 10 wallets, and unlocked liquidity. While the contract is verified and ownership renounced, these don't mitigate the direct market manipulation or rug pull potential from concentrated holders and unprotected liquidity. It requires careful consideration.
+
+### Is Main Street USD safe to buy?
+
+Investing in Main Street USD carries significant risks. The extreme centralization, with 99.2% of tokens held by the top 10 addresses, makes it vulnerable to price manipulation. Additionally, liquidity is not locked, posing a risk of liquidity withdrawal (rug pull) that could leave investors unable to sell. These factors contribute to its high-risk score.
+
+### Has Main Street USD been audited?
+
+The Main Street USD contract has been verified on Ethereum, meaning its code is publicly visible and matches the deployed bytecode. However, "contract verified" is not the same as a comprehensive security audit by an independent third party. An audit typically involves deeper code analysis for vulnerabilities beyond just transparency.
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/ethereum/0x111ce2a60c30f6058a57d0dbae1a39a42d998826-0x4ba01f22827018b4772cd326c7627fb4956a7c00-0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/main-street-usd-eth)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-21*

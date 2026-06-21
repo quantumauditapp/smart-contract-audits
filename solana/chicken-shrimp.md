@@ -1,0 +1,80 @@
+---
+token: chicken shrimp
+ticker: CS
+network: solana
+risk_score: 47
+status: high
+date: 2026-06-21
+---
+
+# chicken shrimp (CS) — Smart Contract Security Analysis | Solana
+
+> **Risk Score: 47/100 — 🟠 High Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chicken-shrimp-sol)
+
+---
+
+## Security Analysis
+
+The chicken shrimp (CS) token on Solana presents a mixed security profile for potential investors, categorized with a High Risk score of 47/100. On the positive side, ownership of the token's smart contract has been renounced, which generally prevents the original developer from making malicious changes like introducing new taxes or revoking token transferability. Furthermore, the absence of a mint function prevents the arbitrary creation of new tokens, thus mitigating inflationary supply shock by the developer. However, significant red flags exist. The contract is not verified, meaning its source code is not publicly available or confirmed to match the deployed bytecode, severely hindering transparency and independent security analysis. Liquidity is also not locked, posing a direct 'rug pull' risk where providers could withdraw funds.
+
+The most critical security concerns for chicken shrimp revolve around the unverified contract and unlocked liquidity. An unverified contract makes it impossible for investors or third-party auditors to review the code for backdoors, vulnerabilities, or hidden malicious functions, demanding a high degree of blind trust. Coupled with this, the absence of locked liquidity means that the $50,162 in liquidity can be removed at any time by its providers, potentially leading to a complete loss of value for holders. While ownership renounced is a positive signal, these core structural risks significantly overshadow it, making CS a highly speculative and risky asset.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`9qwxah...pump`](https://solscan.io/account/9qwxahBxcgKyn5X7kZvkN7qxKZg6pkVD8Lo4URtopump) |
+| **Network** | Solana |
+| **Price** | $0.0003573 |
+| **24h Volume** | $407.5K |
+| **Liquidity** | $50.2K |
+| **Volume / Liquidity** | 8.1× |
+| **Token Age** | 3d |
+| **Top-10 Holders** | 28.7% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 16276 buys / 10700 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Frequently Asked Questions
+
+### Is chicken shrimp a scam?
+
+Based on the provided data, CS exhibits high-risk characteristics, notably an unverified contract and unlocked liquidity, which are common traits in fraudulent schemes. While ownership is renounced and there's no mint function, these do not fully mitigate the 'rug pull' risk or the lack of transparency from the unverified code. The project is tagged with a High Risk score of 47/100, suggesting significant speculative danger rather than outright confirming it as a scam without further investigation.
+
+### Is chicken shrimp safe to buy?
+
+No, chicken shrimp is not considered safe to buy based on the available security data. Key risk factors include an unverified contract, meaning its code cannot be transparently reviewed for exploits or malicious functions. Additionally, the liquidity is not locked, exposing investors to a potential 'rug pull' where liquidity can be withdrawn, crashing the token's value. The High Risk score of 47/100 underscores these significant vulnerabilities, indicating substantial speculative risk.
+
+### Has chicken shrimp been audited?
+
+The chicken shrimp contract is explicitly noted as 'Contract verified: False.' This means the source code has not been published or confirmed on the blockchain. Without a verified contract, conducting a reliable and transparent security audit is extremely challenging, if not impossible, for independent parties. Therefore, there is no public assurance of a formal audit or code review, leaving investors reliant on unverified claims or facing significant transparency issues.
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/solana/c3hajo5hfxwcgsoxzeqsqzbtfhcdxujb4qna4aqpq6xg)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/chicken-shrimp-sol)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-21*

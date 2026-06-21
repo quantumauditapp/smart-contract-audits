@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-110-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-117-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,13 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [chicken shrimp](./solana/chicken-shrimp.md) | CS | Solana | 🟠 47/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/chicken-shrimp-sol) |
+| [WSOP Fantasy Poker](./solana/wsop-fantasy-poker.md) | WSOLP | Solana | 🟠 47/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/wsop-fantasy-poker-sol) |
+| [Hope This Moons Later](./solana/hope-this-moons-later.md) | HTML | Solana | 🟠 51/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/hope-this-moons-later-sol) |
+| [Main Street USD](./ethereum/main-street-usd.md) | MSUSD | Ethereum | 🟠 50/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/main-street-usd-eth) |
+| [Tensor](./solana/tensor.md) | TNSR | Solana | 🟠 55/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/tensor-sol) |
+| [Jupiter](./solana/jupiter.md) | JUP | Solana | 🟠 58/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/jupiter-sol) |
+| [Meteora](./solana/meteora.md) | MET | Solana | 🟠 56/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/meteora-sol) |
 | [Tiny Humans AI](./solana/tiny-humans-ai.md) | TINY | Solana | 🟡 38/100 | 2026-06-20 | [↗](https://quantumaudit.app/token/tiny-humans-ai-sol) |
 | [Re Protocol reUSD](./ethereum/re-protocol-reusd.md) | REUSD | Ethereum | 🟠 51/100 | 2026-06-20 | [↗](https://quantumaudit.app/token/re-protocol-reusd-eth) |
 | [Clawd](./ethereum/clawd.md) | CLAWD | Ethereum | 🟢 0/100 | 2026-06-20 | [↗](https://quantumaudit.app/token/clawd-eth) |
@@ -35,19 +42,12 @@
 | [Pomni](./solana/pomni.md) | POMNI | Solana | 🟡 37/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/pomni-sol) |
 | [US BLACKWHALE COIN](./solana/us-blackwhale-coin.md) | USBC | Solana | 🟠 46/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/us-blackwhale-coin-sol) |
 | [World Peace ](./solana/world-peace.md) | PEACE  | Solana | 🟡 33/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/world-peace-sol) |
-| [Ultimate Solana World Cup](./solana/ultimate-solana-world-cup.md) | USWC | Solana | 🟠 46/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/ultimate-solana-world-cup-sol) |
-| [EMBER](./solana/ember.md) | EMBER | Solana | 🟡 45/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/ember-sol) |
-| [Kintara](./solana/kintara.md) | KINS | Solana | 🟡 36/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/kintara-sol) |
-| [Kiyomasa](./solana/kiyomasa.md) | 清正 | Solana | 🟡 34/100 | 2026-06-14 | [↗](https://quantumaudit.app/token/kiyomasa-sol) |
-| [Backpack](./solana/backpack.md) | BP | Solana | 🟠 58/100 | 2026-06-14 | [↗](https://quantumaudit.app/token/backpack-sol) |
-| [Peanut the Squirrel](./solana/peanut-the-squirrel.md) | PNUT | Solana | 🔴 73/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/peanut-the-squirrel-sol) |
-| [Sherbert The Tree](./solana/sherbert-the-tree.md) | SHERBERT | Solana | 🟠 60/100 | 2026-06-13 | [↗](https://quantumaudit.app/token/sherbert-the-tree-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (76)](./solana/README.md) · [Ethereum (24)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (82)](./solana/README.md) · [Ethereum (25)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 
