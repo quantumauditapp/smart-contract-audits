@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**25 reports** · Updated daily · [← All Networks](../README.md)
+**28 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Humanity](./humanity.md) | H | 🟠 59/100 High Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/humanity-eth) |
+| [RE](./re.md) | RE | 🟠 59/100 High Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/re-eth) |
+| [Synapse](./synapse.md) | SYN | 🟠 66/100 High Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/synapse-eth) |
 | [Main Street USD](./main-street-usd.md) | MSUSD | 🟠 50/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/main-street-usd-eth) |
 | [Re Protocol reUSD](./re-protocol-reusd.md) | REUSD | 🟠 51/100 High Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/re-protocol-reusd-eth) |
 | [Clawd](./clawd.md) | CLAWD | 🟢 0/100 Low Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/clawd-eth) |

@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-117-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-121-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,10 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [FarmTown](./solana/farmtown.md) | FARM | Solana | 🟡 43/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/farmtown-sol) |
+| [Humanity](./ethereum/humanity.md) | H | Ethereum | 🟠 59/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/humanity-eth) |
+| [RE](./ethereum/re.md) | RE | Ethereum | 🟠 59/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/re-eth) |
+| [Synapse](./ethereum/synapse.md) | SYN | Ethereum | 🟠 66/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/synapse-eth) |
 | [chicken shrimp](./solana/chicken-shrimp.md) | CS | Solana | 🟠 47/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/chicken-shrimp-sol) |
 | [WSOP Fantasy Poker](./solana/wsop-fantasy-poker.md) | WSOLP | Solana | 🟠 47/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/wsop-fantasy-poker-sol) |
 | [Hope This Moons Later](./solana/hope-this-moons-later.md) | HTML | Solana | 🟠 51/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/hope-this-moons-later-sol) |
@@ -38,16 +42,12 @@
 | [TAPE](./solana/tape.md) | TAPE | Solana | 🟡 33/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/tape-sol) |
 | [SpaceX xStock](./ethereum/spacex-xstock.md) | SPCXX | Ethereum | 🟠 60/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/spacex-xstock-eth) |
 | [Retard Coin](./solana/retard-coin.md) | RETARD | Solana | 🟡 36/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/retard-coin-sol) |
-| [Uniswap](./ethereum/uniswap.md) | UNI | Ethereum | 🟠 68/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/uniswap-eth) |
-| [Pomni](./solana/pomni.md) | POMNI | Solana | 🟡 37/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/pomni-sol) |
-| [US BLACKWHALE COIN](./solana/us-blackwhale-coin.md) | USBC | Solana | 🟠 46/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/us-blackwhale-coin-sol) |
-| [World Peace ](./solana/world-peace.md) | PEACE  | Solana | 🟡 33/100 | 2026-06-15 | [↗](https://quantumaudit.app/token/world-peace-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (82)](./solana/README.md) · [Ethereum (25)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (83)](./solana/README.md) · [Ethereum (28)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 
