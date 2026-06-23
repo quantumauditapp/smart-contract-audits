@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**83 reports** · Updated daily · [← All Networks](../README.md)
+**85 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Grand Theft Auto VI](./grand-theft-auto-vi.md) | GTAVI | 🟠 46/100 High Risk | 2026-06-23 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-sol) |
+| [Arcium](./arcium.md) | ARX | 🟠 63/100 High Risk | 2026-06-23 | [↗](https://quantumaudit.app/token/arcium-sol) |
 | [FarmTown](./farmtown.md) | FARM | 🟡 43/100 Medium Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/farmtown-sol) |
 | [chicken shrimp](./chicken-shrimp.md) | CS | 🟠 47/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/chicken-shrimp-sol) |
 | [WSOP Fantasy Poker](./wsop-fantasy-poker.md) | WSOLP | 🟠 47/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/wsop-fantasy-poker-sol) |

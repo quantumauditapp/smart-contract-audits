@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-121-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-123-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,8 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Grand Theft Auto VI](./solana/grand-theft-auto-vi.md) | GTAVI | Solana | 🟠 46/100 | 2026-06-23 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-sol) |
+| [Arcium](./solana/arcium.md) | ARX | Solana | 🟠 63/100 | 2026-06-23 | [↗](https://quantumaudit.app/token/arcium-sol) |
 | [FarmTown](./solana/farmtown.md) | FARM | Solana | 🟡 43/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/farmtown-sol) |
 | [Humanity](./ethereum/humanity.md) | H | Ethereum | 🟠 59/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/humanity-eth) |
 | [RE](./ethereum/re.md) | RE | Ethereum | 🟠 59/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/re-eth) |
@@ -40,14 +42,12 @@
 | [SPX6900](./ethereum/spx6900.md) | SPX | Ethereum | 🟢 0/100 | 2026-06-17 | [↗](https://quantumaudit.app/token/spx6900-eth) |
 | [spucex](./solana/spucex.md) | SPCX | Solana | 🟠 46/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/spucex-sol) |
 | [TAPE](./solana/tape.md) | TAPE | Solana | 🟡 33/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/tape-sol) |
-| [SpaceX xStock](./ethereum/spacex-xstock.md) | SPCXX | Ethereum | 🟠 60/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/spacex-xstock-eth) |
-| [Retard Coin](./solana/retard-coin.md) | RETARD | Solana | 🟡 36/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/retard-coin-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (83)](./solana/README.md) · [Ethereum (28)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (85)](./solana/README.md) · [Ethereum (28)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 
@@ -62,6 +62,19 @@ Each report contains:
 - **FAQ**: is it a scam, is it safe, has it been audited
 
 The full interactive AI analysis — detailed vulnerability findings and recommendations — is available for each token at [quantumaudit.app/token/](https://quantumaudit.app/token/). Open any token above for its full report.
+
+---
+
+## Methodology
+
+Every report in this repository is produced by the same deterministic, fact-weighted methodology. Each risk score is reproducible across runs and the contributing factors are recorded per-token in a published breakdown.
+
+Full methodology: **[quantumaudit.app/methodology](https://quantumaudit.app/methodology)**
+
+- Five-plus independent on-chain data sources cross-validated per audit
+- Severity-graded findings (Critical / High / Medium / Low / Informational)
+- Solana-native factor set (mint authority, freeze authority, LP lock)
+- Source-code-aware analysis on verified contracts
 
 ---
 
