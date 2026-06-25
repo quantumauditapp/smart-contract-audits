@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**86 reports** · Updated daily · [← All Networks](../README.md)
+**87 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [WORLD BET](./world-bet.md) | WBET | 🟠 47/100 High Risk | 2026-06-25 | [↗](https://quantumaudit.app/token/world-bet-sol) |
 | [Grass](./grass.md) | GRASS | 🟠 54/100 High Risk | 2026-06-24 | [↗](https://quantumaudit.app/token/grass-sol) |
 | [Grand Theft Auto VI](./grand-theft-auto-vi.md) | GTAVI | 🟠 46/100 High Risk | 2026-06-23 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-sol) |
 | [Arcium](./arcium.md) | ARX | 🟠 63/100 High Risk | 2026-06-23 | [↗](https://quantumaudit.app/token/arcium-sol) |

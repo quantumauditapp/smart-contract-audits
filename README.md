@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-124-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-125-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,7 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [WORLD BET](./solana/world-bet.md) | WBET | Solana | 🟠 47/100 | 2026-06-25 | [↗](https://quantumaudit.app/token/world-bet-sol) |
 | [Grass](./solana/grass.md) | GRASS | Solana | 🟠 54/100 | 2026-06-24 | [↗](https://quantumaudit.app/token/grass-sol) |
 | [Grand Theft Auto VI](./solana/grand-theft-auto-vi.md) | GTAVI | Solana | 🟠 46/100 | 2026-06-23 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-sol) |
 | [Arcium](./solana/arcium.md) | ARX | Solana | 🟠 63/100 | 2026-06-23 | [↗](https://quantumaudit.app/token/arcium-sol) |
@@ -41,13 +42,12 @@
 | [Aerodrome Finance](./base/aerodrome-finance.md) | AERO | Base | 🟠 64/100 | 2026-06-17 | [↗](https://quantumaudit.app/token/aerodrome-finance-base) |
 | [Aave](./ethereum/aave.md) | AAVE | Ethereum | 🟡 28/100 | 2026-06-17 | [↗](https://quantumaudit.app/token/aave-eth) |
 | [SPX6900](./ethereum/spx6900.md) | SPX | Ethereum | 🟢 0/100 | 2026-06-17 | [↗](https://quantumaudit.app/token/spx6900-eth) |
-| [spucex](./solana/spucex.md) | SPCX | Solana | 🟠 46/100 | 2026-06-16 | [↗](https://quantumaudit.app/token/spucex-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (86)](./solana/README.md) · [Ethereum (28)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (87)](./solana/README.md) · [Ethereum (28)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 
