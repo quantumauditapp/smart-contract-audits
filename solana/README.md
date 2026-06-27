@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**88 reports** · Updated daily · [← All Networks](../README.md)
+**91 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [catwifhat](./catwifhat.md) | CATWIF | 🟡 45/100 Medium Risk | 2026-06-27 | [↗](https://quantumaudit.app/token/catwifhat-sol) |
+| [Miu](./miu.md) | MIU | 🟠 48/100 High Risk | 2026-06-27 | [↗](https://quantumaudit.app/token/miu-sol) |
+| [Kled AI](./kled-ai.md) | KLED | 🟡 34/100 Medium Risk | 2026-06-27 | [↗](https://quantumaudit.app/token/kled-ai-sol) |
 | [Buttcoin](./buttcoin.md) | BUTTCOIN | 🟡 34/100 Medium Risk | 2026-06-26 | [↗](https://quantumaudit.app/token/buttcoin-sol) |
 | [WORLD BET](./world-bet.md) | WBET | 🟠 47/100 High Risk | 2026-06-25 | [↗](https://quantumaudit.app/token/world-bet-sol) |
 | [Grass](./grass.md) | GRASS | 🟠 54/100 High Risk | 2026-06-24 | [↗](https://quantumaudit.app/token/grass-sol) |

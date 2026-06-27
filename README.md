@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-126-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-129-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,9 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [catwifhat](./solana/catwifhat.md) | CATWIF | Solana | 🟡 45/100 | 2026-06-27 | [↗](https://quantumaudit.app/token/catwifhat-sol) |
+| [Miu](./solana/miu.md) | MIU | Solana | 🟠 48/100 | 2026-06-27 | [↗](https://quantumaudit.app/token/miu-sol) |
+| [Kled AI](./solana/kled-ai.md) | KLED | Solana | 🟡 34/100 | 2026-06-27 | [↗](https://quantumaudit.app/token/kled-ai-sol) |
 | [Buttcoin](./solana/buttcoin.md) | BUTTCOIN | Solana | 🟡 34/100 | 2026-06-26 | [↗](https://quantumaudit.app/token/buttcoin-sol) |
 | [WORLD BET](./solana/world-bet.md) | WBET | Solana | 🟠 47/100 | 2026-06-25 | [↗](https://quantumaudit.app/token/world-bet-sol) |
 | [Grass](./solana/grass.md) | GRASS | Solana | 🟠 54/100 | 2026-06-24 | [↗](https://quantumaudit.app/token/grass-sol) |
@@ -39,15 +42,12 @@
 | [Religion](./solana/religion.md) | RELIGION | Solana | 🟠 48/100 | 2026-06-18 | [↗](https://quantumaudit.app/token/religion-sol) |
 | [drooling cat](./solana/drooling-cat.md) | DROOLING | Solana | 🟡 32/100 | 2026-06-18 | [↗](https://quantumaudit.app/token/drooling-cat-sol) |
 | [The Fearless Guardian](./solana/the-fearless-guardian.md) | GUARDIAN | Solana | 🟠 47/100 | 2026-06-18 | [↗](https://quantumaudit.app/token/the-fearless-guardian-sol) |
-| [SPCX69](./solana/spcx69.md) | SPCX69 | Solana | 🟡 44/100 | 2026-06-17 | [↗](https://quantumaudit.app/token/spcx69-sol) |
-| [Aerodrome Finance](./base/aerodrome-finance.md) | AERO | Base | 🟠 64/100 | 2026-06-17 | [↗](https://quantumaudit.app/token/aerodrome-finance-base) |
-| [Aave](./ethereum/aave.md) | AAVE | Ethereum | 🟡 28/100 | 2026-06-17 | [↗](https://quantumaudit.app/token/aave-eth) |
 
 ---
 
 ## Browse by Network
 
-[Solana (88)](./solana/README.md) · [Ethereum (28)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (91)](./solana/README.md) · [Ethereum (28)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 
