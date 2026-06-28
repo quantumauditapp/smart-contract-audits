@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-129-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-132-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,9 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [infinity](./solana/infinity.md) | INFINITY | Solana | 🟠 47/100 | 2026-06-28 | [↗](https://quantumaudit.app/token/infinity-sol) |
+| [The Movement](./solana/the-movement.md) | MOVEMENT | Solana | 🟡 44/100 | 2026-06-28 | [↗](https://quantumaudit.app/token/the-movement-sol) |
+| [Pump.fun](./solana/pumpfun.md) | PUMP | Solana | 🟠 52/100 | 2026-06-28 | [↗](https://quantumaudit.app/token/pumpfun-sol) |
 | [catwifhat](./solana/catwifhat.md) | CATWIF | Solana | 🟡 45/100 | 2026-06-27 | [↗](https://quantumaudit.app/token/catwifhat-sol) |
 | [Miu](./solana/miu.md) | MIU | Solana | 🟠 48/100 | 2026-06-27 | [↗](https://quantumaudit.app/token/miu-sol) |
 | [Kled AI](./solana/kled-ai.md) | KLED | Solana | 🟡 34/100 | 2026-06-27 | [↗](https://quantumaudit.app/token/kled-ai-sol) |
@@ -39,15 +42,12 @@
 | [MEEP CAT](./solana/meep-cat.md) | MEEP | Solana | 🟡 33/100 | 2026-06-19 | [↗](https://quantumaudit.app/token/meep-cat-sol) |
 | [Mad Coin](./solana/mad-coin.md) | $MAD | Solana | 🟠 54/100 | 2026-06-19 | [↗](https://quantumaudit.app/token/mad-coin-sol) |
 | [Asteroid Shiba](./ethereum/asteroid-shiba.md) | ASTEROID | Ethereum | 🟢 0/100 | 2026-06-19 | [↗](https://quantumaudit.app/token/asteroid-shiba-eth) |
-| [Religion](./solana/religion.md) | RELIGION | Solana | 🟠 48/100 | 2026-06-18 | [↗](https://quantumaudit.app/token/religion-sol) |
-| [drooling cat](./solana/drooling-cat.md) | DROOLING | Solana | 🟡 32/100 | 2026-06-18 | [↗](https://quantumaudit.app/token/drooling-cat-sol) |
-| [The Fearless Guardian](./solana/the-fearless-guardian.md) | GUARDIAN | Solana | 🟠 47/100 | 2026-06-18 | [↗](https://quantumaudit.app/token/the-fearless-guardian-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (91)](./solana/README.md) · [Ethereum (28)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (94)](./solana/README.md) · [Ethereum (28)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
 
 ---
 

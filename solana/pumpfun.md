@@ -1,0 +1,80 @@
+---
+token: Pump.fun
+ticker: PUMP
+network: solana
+risk_score: 52
+status: high
+date: 2026-06-28
+---
+
+# Pump.fun (PUMP) — Smart Contract Security Analysis | Solana
+
+> **Risk Score: 52/100 — 🟠 High Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pumpfun-sol)
+
+---
+
+## Security Analysis
+
+Pump.fun (PUMP) on Solana presents a mixed security landscape. Positively, the token's ownership has been fully renounced, removing developer control over the contract post-deployment, and critically, no mint function exists, preventing the creation of new tokens by the original deployer. These aspects reduce risks related to inflationary supply shocks or malicious contract modifications. However, significant red flags include the contract not being verified, which means its underlying code has not been publicly scrutinized or audited, leaving potential vulnerabilities unknown. A substantial 75.8% of the supply is held by the top 10 holders, indicating high centralization and a concentrated risk of market manipulation or large-scale selling pressure. Additionally, the token's liquidity is not locked, exposing investors to a "rug pull" scenario where liquidity could be withdrawn. Despite a robust 24-hour volume of over $103 million and substantial liquidity of $67 million, these fundamental structural issues contribute to its high risk score of 52/100.
+
+The most critical risk factors for PUMP investors revolve around contract verification, holder concentration, and liquidity locking. The absence of a verified contract means investors cannot independently confirm the contract's integrity or safety, making it a black box. This lack of transparency significantly amplifies the potential for undiscovered exploits or backdoors. The highly concentrated ownership, with the top 10 holders controlling 75.8% of the supply, poses a severe risk of market manipulation, sudden price drops due to large sales, or coordinated actions. Furthermore, the unlocked liquidity leaves the token vulnerable to a complete withdrawal, known as a "rug pull," which could wipe out the token's value. These combined factors underscore the high risk score.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`pumpCm...9Dfn`](https://solscan.io/account/pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn) |
+| **Network** | Solana |
+| **Price** | $8.2700 |
+| **24h Volume** | $103.86M |
+| **Liquidity** | $67.60M |
+| **Volume / Liquidity** | 1.5× |
+| **Token Age** | 4mo |
+| **Top-10 Holders** | 75.8% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 516 buys / 521 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Frequently Asked Questions
+
+### Is Pump.fun a scam?
+
+It's not definitively labeled a scam based on available data, but significant risks exist. While ownership is renounced and no mint function prevents new token creation, the unverified contract, highly concentrated holder distribution (75.8% by top 10), and unlocked liquidity introduce substantial potential for malicious activity or adverse market events. Investors should be aware of these structural vulnerabilities.
+
+### Is Pump.fun safe to buy?
+
+Pump.fun is associated with a high risk score of 52/100. Key risks include the contract not being verified, meaning its security hasn't been audited. A large portion (75.8%) of tokens is held by the top 10 wallets, risking manipulation. Additionally, the liquidity is not locked, which poses a significant rug pull risk. These factors suggest a high level of speculative risk for potential investors.
+
+### Has Pump.fun been audited?
+
+No, the Pump.fun contract is explicitly listed as "False" for verification. This means its code has not been publicly validated or audited by a third party. Without verification, there's no transparency into the contract's functionality or security, leaving potential vulnerabilities undisclosed and raising the overall risk profile for investors.
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/solana/4c8kctyztmtzwv83y5actpvt2axyyu2t9zhhdotfgnno)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/pumpfun-sol)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-28*

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**91 reports** · Updated daily · [← All Networks](../README.md)
+**94 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [infinity](./infinity.md) | INFINITY | 🟠 47/100 High Risk | 2026-06-28 | [↗](https://quantumaudit.app/token/infinity-sol) |
+| [The Movement](./the-movement.md) | MOVEMENT | 🟡 44/100 Medium Risk | 2026-06-28 | [↗](https://quantumaudit.app/token/the-movement-sol) |
+| [Pump.fun](./pumpfun.md) | PUMP | 🟠 52/100 High Risk | 2026-06-28 | [↗](https://quantumaudit.app/token/pumpfun-sol) |
 | [catwifhat](./catwifhat.md) | CATWIF | 🟡 45/100 Medium Risk | 2026-06-27 | [↗](https://quantumaudit.app/token/catwifhat-sol) |
 | [Miu](./miu.md) | MIU | 🟠 48/100 High Risk | 2026-06-27 | [↗](https://quantumaudit.app/token/miu-sol) |
 | [Kled AI](./kled-ai.md) | KLED | 🟡 34/100 Medium Risk | 2026-06-27 | [↗](https://quantumaudit.app/token/kled-ai-sol) |
