@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**28 reports** · Updated daily · [← All Networks](../README.md)
+**30 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Cap](./cap.md) | CAP | 🟠 57/100 High Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/cap-eth) |
+| [RaveDAO](./ravedao.md) | RAVE | 🔴 71/100 Critical Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/ravedao-eth) |
 | [Humanity](./humanity.md) | H | 🟠 59/100 High Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/humanity-eth) |
 | [RE](./re.md) | RE | 🟠 59/100 High Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/re-eth) |
 | [Synapse](./synapse.md) | SYN | 🟠 66/100 High Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/synapse-eth) |

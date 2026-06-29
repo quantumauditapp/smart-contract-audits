@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**94 reports** · Updated daily · [← All Networks](../README.md)
+**96 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Are Ya Winning, Son?](./are-ya-winning-son.md) | SON | 🟡 35/100 Medium Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/are-ya-winning-son-sol) |
+| [The Black Bull](./the-black-bull.md) | ANSEM | 🟠 55/100 High Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/the-black-bull-sol) |
 | [infinity](./infinity.md) | INFINITY | 🟠 47/100 High Risk | 2026-06-28 | [↗](https://quantumaudit.app/token/infinity-sol) |
 | [The Movement](./the-movement.md) | MOVEMENT | 🟡 44/100 Medium Risk | 2026-06-28 | [↗](https://quantumaudit.app/token/the-movement-sol) |
 | [Pump.fun](./pumpfun.md) | PUMP | 🟠 52/100 High Risk | 2026-06-28 | [↗](https://quantumaudit.app/token/pumpfun-sol) |

@@ -1,0 +1,80 @@
+---
+token: Are Ya Winning, Son?
+ticker: SON
+network: solana
+risk_score: 35
+status: medium
+date: 2026-06-29
+---
+
+# Are Ya Winning, Son? (SON) — Smart Contract Security Analysis | Solana
+
+> **Risk Score: 35/100 — 🟡 Medium Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/are-ya-winning-son-sol)
+
+---
+
+## Security Analysis
+
+The Are Ya Winning, Son? (SON) token on Solana presents a mixed security profile, currently assessed with a Medium Risk score of 35/100. Key safety indicators include the renounced ownership, which prevents the original deployer from modifying crucial contract parameters or minting new tokens. Additionally, the absence of a mint function mitigates concerns about potential supply inflation. Holder concentration appears moderate, with the top 10 wallets holding 11.8% of the total supply, suggesting a reasonably distributed ownership structure. However, significant concerns remain regarding the project's transparency and stability. The contract remains unverified, making independent security analysis challenging for potential investors. Furthermore, the absence of locked liquidity introduces a vulnerability where liquidity providers could withdraw funds, potentially impacting market stability. Investors should consider these factors when evaluating SON.
+
+The most critical security signals for SON include the lack of contract verification and the absence of locked liquidity. An unverified contract significantly hinders community and professional scrutiny, making it difficult to confirm the code's intended functionality and absence of malicious features. This opacity increases the risk of unforeseen vulnerabilities or hidden exploits. Furthermore, with liquidity not locked, there's an inherent risk of a 'rug pull,' where liquidity providers could withdraw all funds, severely impacting the token's market and value. On the positive side, the renounced ownership and absence of a mint function offer a crucial layer of protection against developer-initiated supply inflation or malicious contract changes.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`ACpzkG...pump`](https://solscan.io/account/ACpzkGJV3DDU8HXy8yjab7RL9qNmDGym2GwLkzNppump) |
+| **Network** | Solana |
+| **Price** | $0.001875 |
+| **24h Volume** | $1.31M |
+| **Liquidity** | $136.0K |
+| **Volume / Liquidity** | 9.6× |
+| **Token Age** | 1mo |
+| **Top-10 Holders** | 11.8% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 35624 buys / 19693 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Frequently Asked Questions
+
+### Is Are Ya Winning, Son? a scam?
+
+Characterizing SON as a definitive 'scam' based solely on available data is not possible. While it carries a Medium Risk score of 35/100 due to factors like an unverified contract and unlocked liquidity, the renounced ownership and absence of a mint function indicate some degree of developer commitment to preventing certain malicious actions, such as supply inflation. Investors should assess the inherent risks.
+
+### Is Are Ya Winning, Son? safe to buy?
+
+Investing in Are Ya Winning, Son? (SON) involves notable risks, contributing to its Medium Risk score of 35/100. Key concerns include the unverified contract, which obscures code transparency, and the unlocked liquidity, posing a potential 'rug pull' risk. While ownership is renounced, these significant vulnerabilities suggest a cautious approach is warranted. Investors should conduct thorough due diligence.
+
+### Has Are Ya Winning, Son? been audited?
+
+There is no information provided to suggest that Are Ya Winning, Son? (SON) has undergone a formal security audit. Crucially, its contract is unverified, meaning the source code is not publicly available or confirmed to match the deployed bytecode on the Solana blockchain. This lack of transparency makes independent security assessments and audits significantly more challenging or impossible.
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/solana/ec9rk1gqmn4d7tjp2efx6m1on1rmxxr5gh4pkswjqskx)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/are-ya-winning-son-sol)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-06-29*
