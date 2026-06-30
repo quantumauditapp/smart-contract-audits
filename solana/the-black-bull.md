@@ -2,24 +2,62 @@
 token: The Black Bull
 ticker: ANSEM
 network: solana
-risk_score: 55
-status: high
+risk_score: 76
+status: critical
 date: 2026-06-29
 ---
 
 # The Black Bull (ANSEM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 76/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-black-bull-sol)
 
 ---
 
+## Audit Summary
+
+The Black Bull (ANSEM) is an SPL Token-2022 mint on Solana. The mint authority and freeze authority have both been revoked, indicating a fixed supply and no ability to freeze user accounts by the issuer. Holder concentration data was unavailable from RPC, but RugCheck.xyz flagged high ownership by top holders, which could indicate potential for price volatility. No critical or high-severity issues were identified based on the provided facts and deterministic rules.
+
+> **Final Recommendation:** This token presents a relatively secure technical configuration with revoked mint and freeze authorities, indicating a fixed supply and no ability for an issuer to freeze user funds. However, the high Volume/Liquidity ratio suggests potential wash trading, and while direct holder concentration data was unavailable, RugCheck's flags for high ownership by top holders warrant caution regarding potential price volatility from large sell-offs. Investors should be aware of these economic factors (7.4 Economic, 7.6 External).
+
 ## Security Analysis
 
-The Black Bull (ANSEM) on Solana presents a mixed security profile, reflected in its 'High Risk' score of 55/100. Positively, the token's ownership has been renounced, which generally limits the original deployer's ability to modify core contract parameters post-deployment. Additionally, the absence of a mint function prevents the arbitrary creation of new tokens, safeguarding against inflationary surprises by the contract owner. However, several critical risk factors warrant close attention. The contract's unverified status means its underlying code has not been publicly confirmed to match the deployed bytecode, introducing a transparency gap for investors to properly audit its functions. Furthermore, a highly centralized distribution is evident, with the top 10 holders controlling 82.4% of the total supply, posing potential market manipulation and sell-off risks. Critically, the liquidity, currently standing at $1,153,636 with a 24-hour volume of over $36 million, is not locked, creating a significant potential for a rug pull scenario where liquidity providers could withdraw funds, severely impacting trading.
+The Black Bull (ANSEM) is an SPL Token-2022 mint on Solana. The mint authority and freeze authority have both been revoked, indicating a fixed supply and no ability to freeze user accounts by the issuer. Holder concentration data was unavailable from RPC, but RugCheck.xyz flagged high ownership by top holders, which could indicate potential for price volatility. No critical or high-severity issues were identified based on the provided facts and deterministic rules.
 
-For ANSEM, the most significant risk indicators revolve around liquidity and decentralization. The fact that the substantial liquidity of $1,153,636 is not locked represents a critical vulnerability. This allows liquidity providers, potentially including the project's developers or large holders, to withdraw these funds at any time, which could lead to a sudden and severe loss of value for investors (a 'rug pull'). Coupled with this, the highly concentrated ownership, where the top 10 holders control 82.4% of the supply, exacerbates market manipulation risks and potential coordinated large-scale sell-offs. Finally, the unverified contract status prevents independent security analysis, leaving investors unable to confirm the code's safety and functionality.
+This token presents a relatively secure technical configuration with revoked mint and freeze authorities, indicating a fixed supply and no ability for an issuer to freeze user funds. However, the high Volume/Liquidity ratio suggests potential wash trading, and while direct holder concentration data was unavailable, RugCheck's flags for high ownership by top holders warrant caution regarding potential price volatility from large sell-offs. Investors should be aware of these economic factors (7.4 Economic, 7.6 External).
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint, leveraging the latest Solana token program features. Both the mint authority and freeze authority have been revoked, which is a positive security indicator as it p |
+| **Governance / Economics** | 1/10 | High | The token has substantial liquidity, with $1,222,784 USD available on DEXs. However, the 24-hour volume of $22,628,549 is significantly higher than liquidity, resulting in a Volume/Liquidity Ratio of  |
+| **Upgrades** | 6/10 | Medium | The token's mint authority and freeze authority have been revoked, meaning no further tokens can be minted and no accounts can be frozen by an administrative key. It utilizes the spl-token-2022 progra |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

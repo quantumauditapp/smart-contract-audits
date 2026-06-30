@@ -2,24 +2,81 @@
 token: Cap
 ticker: CAP
 network: ethereum
-risk_score: 57
-status: high
+risk_score: 100
+status: critical
 date: 2026-06-29
 ---
 
 # Cap (CAP) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 100/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cap-eth)
 
 ---
 
+## Audit Summary
+
+The audit covers an OpenZeppelin `ERC1967Proxy` contract. The proxy itself is a standard, well-audited component. However, its security and functionality are highly dependent on the associated implementation contract and the chosen upgrade mechanism, which were not provided for review.
+
+> **Final Recommendation:** The `ERC1967Proxy` contract itself is a standard and generally secure component from OpenZeppelin. However, its overall security and functionality are critically dependent on the associated implementation contract and the chosen upgrade management strategy (UUPS or Transparent with `ProxyAdmin`), which were not part of this audit. It is imperative that the implementation contract adheres to best practices for upgradeable contracts, including proper initializer patterns, storage slot management, and robust upgrade authorization.
+
+For enhanced security and operational resilience, consider a Premium Deploy option. This service includes a comprehensive pre-deployment review of the full system (proxy + implementation + admin contracts), a dry run of the deployment process on a testnet, and real-time monitoring post-launch. This ensures all components interact securely and as intended in a pr…
+
 ## Security Analysis
 
-Cap (CAP) on Ethereum presents a mixed security profile for investors. Positively, its smart contract is verified, ownership has been renounced, and no mint function exists. These foundational elements ensure the supply cannot be arbitrarily inflated by developers and the contract’s logic is immutable post-renunciation. However, significant red flags emerge concerning market structure and liquidity. A critical concern is that the top 10 holders collectively control 100.0% of the entire supply, indicating extreme centralization and a substantial risk of market manipulation or large-scale selling pressure. Furthermore, the project's liquidity, currently at $20,988 with a 24-hour volume of $50,139, is not locked. This absence of locked liquidity introduces a rug-pull potential, as liquidity providers could withdraw funds, severely impacting trading. The overall risk score of 57/100 classifies Cap as a high-risk asset.
+The audit covers an OpenZeppelin `ERC1967Proxy` contract. The proxy itself is a standard, well-audited component. However, its security and functionality are highly dependent on the associated implementation contract and the chosen upgrade mechanism, which were not provided for review.
 
-The two most critical risk signals for Cap are its highly centralized token distribution and the lack of locked liquidity. The fact that the top 10 holders control 100% of the entire token supply presents an extreme vulnerability. This concentration means a small number of entities could unilaterally impact the token's price through coordinated selling, leading to severe volatility and potential losses for smaller investors. Compounding this, the absence of locked liquidity for the $20,988 pool means that liquidity providers can withdraw their funds at any time. This directly exposes investors to a "rug pull" scenario, where sudden liquidity removal could render the token untradable and worthless on decentralized exchanges. These factors contribute significantly to the high 57/100 risk score.
+The `ERC1967Proxy` contract itself is a standard and generally secure component from OpenZeppelin. However, its overall security and functionality are critically dependent on the associated implementation contract and the chosen upgrade management strategy (UUPS or Transparent with `ProxyAdmin`), which were not part of this audit. It is imperative that the implementation contract adheres to best practices for upgradeable contracts, including proper initializer patterns, storage slot management, and robust upgrade authorization.
+
+For enhanced security and operational resilience, consider a Premium Deploy option. This service includes a comprehensive pre-deployment review of the full system (proxy + implementation + admin contracts), a dry run of the deployment process on a testnet, and real-time monitoring post-launch. This ensures all components interact securely and as intended in a pr…
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 4/10 | Medium | The contract utilizes OpenZeppelin's `ERC1967Proxy` and its dependencies, which are robust and widely audited components (7.2 Code Security). It correctly implements the `delegatecall` mechanism for p |
+| **Governance / Economics** | 1/10 | High | The `ERC1967Proxy` itself does not contain specific governance or economic logic, as it acts as a transparent layer for an underlying implementation. Its economic security relies on the implementation |
+| **Upgrades** | 3/10 | High | The contract is an upgradeable proxy based on the ERC-1967 standard, allowing its logic to be updated by changing the implementation address (7.7 Upgrades). It leverages `ERC1967Utils.upgradeToAndCall |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Uups |
+| **Implementation** | ⚠️ Unverified source |
+| **Upgrades (30d)** | 0 (stable) |
+
+## Security Findings
+
+_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
+
+### `H-01` — Undefined Upgrade Authorization Mechanism  *(Severity: High · Status: Unresolved)*
+
+The `ERC1967Proxy` contract itself does not implement any authorization logic for upgrades. It relies on `ERC1967Utils.upgradeToAndCall` which simply sets the new implementation address. The actual authorization mechanism (e.g., `_authorizeUpgrade` in a UUPS implementation or a separate `ProxyAdmin` contract) is external to this contract and cannot be assessed. This leaves the upgrade path's security entirely dependent on external components, which, if compromised or poorly designed, could lead to unauthorized upgrades and potential loss of funds or control.
+
+**Recommendation:** Ensure that the implementation contract, if following the UUPS pattern, correctly implements `_authorizeUpgrade` with robust access control. If using a Transparent Proxy pattern, ensure a dedicated `ProxyAdmin` contract is deployed and secured with appropriate multi-signature or governance controls. The full upgrade system (proxy, implementation, and admin/authorization) must be audited together.
+
+
+### `M-01` — Potential Ether Loss in Initializer  *(Severity: Medium · Status: Unresolved)*
+
+The `ERC1967Proxy` constructor allows `msg.value` to be sent if an initializer `_data` is provided. This `msg.value` is then passed to the `functionDelegateCall` to the implementation. If the target implementation's initializer function is not `payable` or does not explicitly handle incoming Ether, any `msg.value` sent during deployment could be locked in the proxy contract, becoming irrecoverable.
+
+**Recommendation:** Ensure that any initializer function called via `_data` in the proxy constructor is explicitly `payable` if it is intended to receive Ether, or that the deployment process ensures `msg.value` is zero if the initializer is not designed to handle Ether. Implement a mechanism in the implementation to recover accidentally sent Ether if applicable.
+
+
+### `L-01` — Storage Collision Risk (Implementation Dependent)  *(Severity: Low · Status: Unresolved)*
+
+While `ERC1967Proxy` uses well-defined storage slots for its internal state (e.g., implementation address at `0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc`), the implementation contract must be carefully designed to avoid storage collisions with these slots or other proxy-related state. Incorrect storage layout in the implementation could lead to unexpected behavior or critical vulnerabilities.
+
+**Recommendation:** Ensure the implementation contract uses OpenZeppelin's `Initializable` or `UUPSUpgradeable` base contracts and follows their recommended storage layout practices. Avoid declaring state variables at the same storage slots used by the proxy or other upgradeability-related components. Conduct thorough storage slot mapping analysis.
+
+
+### `I-01` — Missing `ProxyAdmin` or UUPS `_authorizeUpgrade` in Proxy  *(Severity: Informational · Status: Unresolved)*
+
+The provided `ERC1967Proxy` contract does not include direct management of the `ADMIN_SLOT` or an `_authorizeUpgrade` function. This indicates it's intended to be used either with a separate `ProxyAdmin` contract (for Transparent Proxy pattern) or as a UUPS proxy where the implementation contract itself contains the upgrade authorization logic. The specific upgrade pattern and its security depend entirely on external components.
+
+**Recommendation:** Clearly document the intended upgrade pattern (UUPS or Transparent) and ensure all necessary external components (e.g., `ProxyAdmin` contract or `UUPSUpgradeable` in the implementation) are correctly implemented and secured according to best practices. This is not a vulnerability in the `ERC1967Proxy` itself but a crucial design consideration for the overall system.
 
 ## Token Metrics
 

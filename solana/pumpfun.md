@@ -2,24 +2,62 @@
 token: Pump.fun
 ticker: PUMP
 network: solana
-risk_score: 52
+risk_score: 59
 status: high
 date: 2026-06-28
 ---
 
 # Pump.fun (PUMP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 52/100 — 🟠 High Risk**
+> **Risk Score: 59/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pumpfun-sol)
 
 ---
 
+## Audit Summary
+
+This audit of the Pump (PUMP) SPL Token Mint found no critical or high-severity issues based on the available on-chain data and external security signals. The mint authority and freeze authority are both revoked, indicating a fixed supply and immutability of account states. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+
+> **Final Recommendation:** Based on the available data, the Pump (PUMP) SPL Token Mint appears to have a robust security posture with key authorities revoked, indicating a fixed supply and immutable account states. Holders should be aware that holder concentration data was unavailable, which is a common limitation for new or rapidly growing tokens. For a comprehensive risk assessment, it is recommended to monitor holder distribution as this data becomes available. Consider using Quantum Audit's Premium Deploy option for future token launches to ensure all best practices are implemented from inception.
+
 ## Security Analysis
 
-Pump.fun (PUMP) on Solana presents a mixed security landscape. Positively, the token's ownership has been fully renounced, removing developer control over the contract post-deployment, and critically, no mint function exists, preventing the creation of new tokens by the original deployer. These aspects reduce risks related to inflationary supply shocks or malicious contract modifications. However, significant red flags include the contract not being verified, which means its underlying code has not been publicly scrutinized or audited, leaving potential vulnerabilities unknown. A substantial 75.8% of the supply is held by the top 10 holders, indicating high centralization and a concentrated risk of market manipulation or large-scale selling pressure. Additionally, the token's liquidity is not locked, exposing investors to a "rug pull" scenario where liquidity could be withdrawn. Despite a robust 24-hour volume of over $103 million and substantial liquidity of $67 million, these fundamental structural issues contribute to its high risk score of 52/100.
+This audit of the Pump (PUMP) SPL Token Mint found no critical or high-severity issues based on the available on-chain data and external security signals. The mint authority and freeze authority are both revoked, indicating a fixed supply and immutability of account states. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-The most critical risk factors for PUMP investors revolve around contract verification, holder concentration, and liquidity locking. The absence of a verified contract means investors cannot independently confirm the contract's integrity or safety, making it a black box. This lack of transparency significantly amplifies the potential for undiscovered exploits or backdoors. The highly concentrated ownership, with the top 10 holders controlling 75.8% of the supply, poses a severe risk of market manipulation, sudden price drops due to large sales, or coordinated actions. Furthermore, the unlocked liquidity leaves the token vulnerable to a complete withdrawal, known as a "rug pull," which could wipe out the token's value. These combined factors underscore the high risk score.
+Based on the available data, the Pump (PUMP) SPL Token Mint appears to have a robust security posture with key authorities revoked, indicating a fixed supply and immutable account states. Holders should be aware that holder concentration data was unavailable, which is a common limitation for new or rapidly growing tokens. For a comprehensive risk assessment, it is recommended to monitor holder distribution as this data becomes available. Consider using Quantum Audit's Premium Deploy option for future token launches to ensure all best practices are implemented from inception.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The Pump (PUMP) token is an SPL Token-2022 mint on Solana. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing token accounts can  |
+| **Governance / Economics** | 3/10 | High | The token exhibits healthy liquidity with $66,125,267 USD and a 24-hour volume of $167,723,545, indicating active trading. The Volume/Liquidity Ratio is 2.54, which is considered normal and does not s |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and account freezing capabilities are immutable post-launch. The token is an SPL Token-2022, but it does not have a |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

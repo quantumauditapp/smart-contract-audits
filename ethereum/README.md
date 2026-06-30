@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**30 reports** · Updated daily · [← All Networks](../README.md)
+**31 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,27 +10,28 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
-| [Cap](./cap.md) | CAP | 🟠 57/100 High Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/cap-eth) |
-| [RaveDAO](./ravedao.md) | RAVE | 🔴 71/100 Critical Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/ravedao-eth) |
-| [Humanity](./humanity.md) | H | 🟠 59/100 High Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/humanity-eth) |
-| [RE](./re.md) | RE | 🟠 59/100 High Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/re-eth) |
-| [Synapse](./synapse.md) | SYN | 🟠 66/100 High Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/synapse-eth) |
-| [Main Street USD](./main-street-usd.md) | MSUSD | 🟠 50/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/main-street-usd-eth) |
-| [Re Protocol reUSD](./re-protocol-reusd.md) | REUSD | 🟠 51/100 High Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/re-protocol-reusd-eth) |
-| [Clawd](./clawd.md) | CLAWD | 🟢 0/100 Low Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/clawd-eth) |
-| [EigenCloud (prev. EigenLayer)](./eigencloud-prev-eigenlayer.md) | EIGEN | 🟡 28/100 Medium Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/eigencloud-prev-eigenlayer-eth) |
-| [Asteroid Shiba](./asteroid-shiba.md) | ASTEROID | 🟢 0/100 Low Risk | 2026-06-19 | [↗](https://quantumaudit.app/token/asteroid-shiba-eth) |
-| [Aave](./aave.md) | AAVE | 🟡 28/100 Medium Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/aave-eth) |
-| [SPX6900](./spx6900.md) | SPX | 🟢 0/100 Low Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/spx6900-eth) |
-| [SpaceX xStock](./spacex-xstock.md) | SPCXX | 🟠 60/100 High Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/spacex-xstock-eth) |
-| [Uniswap](./uniswap.md) | UNI | 🟠 68/100 High Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/uniswap-eth) |
+| [Gram (prev. Toncoin)](./gram-prev-toncoin.md) | GRAM | 🔴 85/100 Critical Risk | 2026-06-30 | [↗](https://quantumaudit.app/token/gram-prev-toncoin-eth) |
+| [Cap](./cap.md) | CAP | 🔴 100/100 Critical Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/cap-eth) |
+| [RaveDAO](./ravedao.md) | RAVE | 🔴 99/100 Critical Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/ravedao-eth) |
+| [Humanity](./humanity.md) | H | 🔴 98/100 Critical Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/humanity-eth) |
+| [RE](./re.md) | RE | 🟠 69/100 High Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/re-eth) |
+| [Synapse](./synapse.md) | SYN | 🔴 84/100 Critical Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/synapse-eth) |
+| [Main Street USD](./main-street-usd.md) | MSUSD | 🔴 78/100 Critical Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/main-street-usd-eth) |
+| [Re Protocol reUSD](./re-protocol-reusd.md) | REUSD | 🔴 100/100 Critical Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/re-protocol-reusd-eth) |
+| [Clawd](./clawd.md) | CLAWD | 🔴 100/100 Critical Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/clawd-eth) |
+| [EigenCloud (prev. EigenLayer)](./eigencloud-prev-eigenlayer.md) | EIGEN | 🟠 66/100 High Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/eigencloud-prev-eigenlayer-eth) |
+| [Asteroid Shiba](./asteroid-shiba.md) | ASTEROID | 🔴 100/100 Critical Risk | 2026-06-19 | [↗](https://quantumaudit.app/token/asteroid-shiba-eth) |
+| [Aave](./aave.md) | AAVE | 🟠 49/100 High Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/aave-eth) |
+| [SPX6900](./spx6900.md) | SPX | 🔴 100/100 Critical Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/spx6900-eth) |
+| [SpaceX xStock](./spacex-xstock.md) | SPCXX | 🔴 100/100 Critical Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/spacex-xstock-eth) |
+| [Uniswap](./uniswap.md) | UNI | 🔴 100/100 Critical Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/uniswap-eth) |
 | [SPACE ID](./space-id.md) | ID | 🔴 71/100 Critical Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/space-id-eth) |
 | [Ethena](./ethena.md) | ENA | 🔴 100/100 Critical Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/ethena-eth) |
-| [wojak](./wojak.md) | WOJAK | 🟢 9/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/wojak-eth) |
+| [wojak](./wojak.md) | WOJAK | 🟠 70/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/wojak-eth) |
 | [Chainlink](./chainlink.md) | LINK | 🔴 91/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/chainlink-eth) |
-| [Allora](./allora.md) | ALLO | 🔴 87/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/allora-eth) |
+| [Allora](./allora.md) | ALLO | 🔴 86/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/allora-eth) |
 | [Injective](./injective.md) | INJ | 🔴 97/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/injective-eth) |
-| [Gensyn](./gensyn.md) | AI | 🔴 86/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/gensyn-eth) |
+| [Gensyn](./gensyn.md) | AI | 🔴 89/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/gensyn-eth) |
 | [Lighter](./lighter.md) | LIT | 🟠 53/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/lighter-eth) |
 | [Octra](./octra.md) | OCT | 🔴 100/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/octra-eth) |
 | [Kite](./kite.md) | KITE | 🔴 98/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/kite-eth) |
@@ -38,7 +39,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [Portal](./portal.md) | PORTAL | 🔴 100/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/portal-eth) |
 | [Worldcoin](./worldcoin.md) | WLD | 🔴 100/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/worldcoin-eth) |
 | [Ondo](./ondo.md) | ONDO | 🔴 85/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/ondo-eth) |
-| [Morpho](./morpho.md) | MORPHO | 🔴 90/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/morpho-eth) |
+| [Morpho](./morpho.md) | MORPHO | 🔴 93/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/morpho-eth) |
 | [Stargate Finance](./stargate-finance.md) | STG | 🔴 100/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/stargate-finance-eth) |
 
 ---

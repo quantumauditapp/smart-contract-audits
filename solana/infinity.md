@@ -2,24 +2,66 @@
 token: infinity
 ticker: INFINITY
 network: solana
-risk_score: 47
-status: high
+risk_score: 93
+status: critical
 date: 2026-06-28
 ---
 
 # infinity (INFINITY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 93/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/infinity-sol)
 
 ---
 
+## Audit Summary
+
+This audit of the infinity (infinity) SPL token mint reveals a critical risk: RugCheck.xyz assigns a score of 1/100, strongly indicating a rugged project. While mint and freeze authorities are revoked, and metadata is immutable, the extreme negative signal from RugCheck.xyz overshadows these positive attributes. Holder concentration data was unavailable.
+
+> **Final Recommendation:** Given the critical 'RugCheck Flagged as Rugged' finding, it is strongly recommended to avoid any interaction with this token. While some technical aspects like revoked authorities and immutable metadata are positive, the severe negative signal from RugCheck.xyz indicates a high probability of malicious intent or project failure. Do not purchase, hold, or trade this token.
+
+For future token considerations, always prioritize tokens with a clean RugCheck score, sufficient liquidity, and transparent holder distribution. A Premium Deploy option would involve a comprehensive review of the project's off-chain documentation, team background, and community sentiment, which is beyond the scope of this on-chain data audit.
+
 ## Security Analysis
 
-The Solana-based token 'infinity' (INFINITY) presents a mixed security profile for potential investors. A notable positive signal is the renounced ownership, which prevents the original deployer from altering key contract parameters post-deployment. Furthermore, the absence of a mint function mitigates the risk of new tokens being arbitrarily created, protecting against inflationary supply shocks. However, several critical risk factors are apparent. The contract has not been verified, making independent security audits and transparent code review challenging for the community. Liquidity is also not locked, introducing the potential for a rug pull if the liquidity providers remove their assets. Wallet concentration shows the top 10 holders control 37.4% of the total supply, indicating a significant centralization risk. With a relatively low liquidity of $15,155 against a 24-hour volume of $112,500, volatility concerns are heightened. This combination contributes to a high-risk score of 47/100.
+This audit of the infinity (infinity) SPL token mint reveals a critical risk: RugCheck.xyz assigns a score of 1/100, strongly indicating a rugged project. While mint and freeze authorities are revoked, and metadata is immutable, the extreme negative signal from RugCheck.xyz overshadows these positive attributes. Holder concentration data was unavailable.
 
-Among the most critical signals for INFINITY, the unverified contract stands out. Without verification, investors cannot readily confirm the published code matches the deployed contract, hindering transparency and making it difficult to assess for malicious functions or vulnerabilities. Another significant concern is the unlocked liquidity. This condition means liquidity providers can withdraw their funds at any time, potentially leading to a sharp price drop and rendering the token illiquid, a scenario often associated with 'rug pulls.' Additionally, the concentrated holdings of 37.4% among the top 10 wallets pose a substantial centralization risk, as these large holders could collectively influence market dynamics or execute large sales, impacting price stability.
+Given the critical 'RugCheck Flagged as Rugged' finding, it is strongly recommended to avoid any interaction with this token. While some technical aspects like revoked authorities and immutable metadata are positive, the severe negative signal from RugCheck.xyz indicates a high probability of malicious intent or project failure. Do not purchase, hold, or trade this token.
+
+For future token considerations, always prioritize tokens with a clean RugCheck score, sufficient liquidity, and transparent holder distribution. A Premium Deploy option would involve a comprehensive review of the project's off-chain documentation, team background, and community sentiment, which is beyond the scope of this on-chain data audit.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 4/10 | Medium | 7.1 Architecture & 7.3 Access Control: The infinity token is an SPL Token-2022 mint on Solana. Both the mint authority and freeze authority have been revoked, which prevents the creation of new tokens |
+| **Governance / Economics** | 3/10 | High | 7.4 Economic: The token has a total DEX liquidity of $15,866 USD, with a 24-hour volume of $7,752 USD. The volume/liquidity ratio is 0.49, which is considered normal and does not suggest wash trading. |
+| **Upgrades** | 4/10 | Medium | 7.7 Upgrades: The token's core parameters, such as minting and freezing capabilities, are fixed due to the revocation of both mint and freeze authorities. The token utilizes the spl-token-2022 program |
+
+## Security Findings
+
+_🔴 1 Critical · ⚪ 2 Informational_
+
+### `C-01` — RugCheck Flagged as Rugged  *(Severity: Critical · Status: Unresolved)*
+
+RugCheck.xyz classifies this token as rugged based on its own dataset (developer history, LP movements). The RugCheck Score is 1 / 100, indicating an extremely high risk.
+
+**Recommendation:** Do not interact with this token.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

@@ -2,24 +2,64 @@
 token: The Movement
 ticker: MOVEMENT
 network: solana
-risk_score: 44
-status: medium
+risk_score: 62
+status: high
 date: 2026-06-28
 ---
 
 # The Movement (MOVEMENT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 62/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-movement-sol)
 
 ---
 
+## Audit Summary
+
+The token "The Movement" has its mint and freeze authorities revoked, indicating a fixed supply and no ability to freeze accounts. However, the DEX pair is very new, lacking sufficient track record to assess its stability. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+
+> **Final Recommendation:** Given the very new DEX pair (2 days old), it is recommended to exercise caution and monitor the token's activity and community engagement over a longer period before making significant investments. While core authorities are revoked, the lack of holder concentration data means distribution risk cannot be fully assessed.
+For enhanced security and a deeper dive into the token's ecosystem, consider a Premium Deploy audit. This would include a comprehensive review of any associated programs or off-chain governance mechanisms, if applicable, to provide a more holistic security posture assessment.
+
 ## Security Analysis
 
-The Movement (MOVEMENT) on Solana presents a mixed security profile for investors, registering a Medium Risk score of 44/100. Key positive signals include the permanent renunciation of contract ownership, which prevents the original deployer from altering token parameters, and the absence of a mint function, ensuring no new tokens can be arbitrarily created to dilute supply. Furthermore, the token exhibits a highly decentralized distribution, with the top 10 holders collectively possessing 0.0% of the total supply, mitigating concentration risks. However, significant concerns remain regarding the unverified contract, making public security review challenging, and the fact that liquidity is not locked. The current liquidity stands at $21,548 with a 24-hour trading volume of $60,857, suggesting reasonable trading activity but also highlighting the potential for liquidity removal. Investors should weigh these factors carefully.
+The token "The Movement" has its mint and freeze authorities revoked, indicating a fixed supply and no ability to freeze accounts. However, the DEX pair is very new, lacking sufficient track record to assess its stability. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-For The Movement, two crucial safety signals stand out. First, ownership of the token contract has been renounced, meaning the original developer can no longer modify its parameters or introduce malicious changes. Second, the absence of a mint function prevents the arbitrary creation of new tokens, thus safeguarding against inflationary dilution. Conversely, the most significant risk is the unverified contract. Without a publicly verified contract, the actual code executing on the blockchain cannot be easily reviewed or audited by the community or security professionals, introducing a layer of opacity and potential unknown vulnerabilities. Additionally, the unlocked liquidity carries the inherent risk of a rug pull, where liquidity providers could withdraw funds, impacting market stability.
+Given the very new DEX pair (2 days old), it is recommended to exercise caution and monitor the token's activity and community engagement over a longer period before making significant investments. While core authorities are revoked, the lack of holder concentration data means distribution risk cannot be fully assessed.
+For enhanced security and a deeper dive into the token's ecosystem, consider a Premium Deploy audit. This would include a comprehensive review of any associated programs or off-chain governance mechanisms, if applicable, to provide a more holistic security posture assessment.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The token mint for The Movement (MOVEMENT) is an SPL Token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be fro |
+| **Governance / Economics** | 5/10 | Medium | The token's DEX pair is very new, having been created only 2 days ago, which means there is insufficient track record to assess team or holder behavior (Fact: Pair Age (days): 2). Current liquidity st |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, have been permanently revoked, which prevents any future changes to the token's supply or the ability to freeze holder accounts (Fact |
+
+## Security Findings
+
+_🟡 1 Medium · ⚪ 2 Informational_
+
+### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
+
+The DEX pair for The Movement was created 2 days ago. This indicates an insufficient track record to assess team or holder behaviour.
+
+**Recommendation:** Exercise caution and monitor the token's activity and community engagement over a longer period before making significant investments.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

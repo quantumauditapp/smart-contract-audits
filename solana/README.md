@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**96 reports** · Updated daily · [← All Networks](../README.md)
+**97 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,45 +10,46 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
-| [Are Ya Winning, Son?](./are-ya-winning-son.md) | SON | 🟡 35/100 Medium Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/are-ya-winning-son-sol) |
-| [The Black Bull](./the-black-bull.md) | ANSEM | 🟠 55/100 High Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/the-black-bull-sol) |
-| [infinity](./infinity.md) | INFINITY | 🟠 47/100 High Risk | 2026-06-28 | [↗](https://quantumaudit.app/token/infinity-sol) |
-| [The Movement](./the-movement.md) | MOVEMENT | 🟡 44/100 Medium Risk | 2026-06-28 | [↗](https://quantumaudit.app/token/the-movement-sol) |
-| [Pump.fun](./pumpfun.md) | PUMP | 🟠 52/100 High Risk | 2026-06-28 | [↗](https://quantumaudit.app/token/pumpfun-sol) |
-| [catwifhat](./catwifhat.md) | CATWIF | 🟡 45/100 Medium Risk | 2026-06-27 | [↗](https://quantumaudit.app/token/catwifhat-sol) |
-| [Miu](./miu.md) | MIU | 🟠 48/100 High Risk | 2026-06-27 | [↗](https://quantumaudit.app/token/miu-sol) |
-| [Kled AI](./kled-ai.md) | KLED | 🟡 34/100 Medium Risk | 2026-06-27 | [↗](https://quantumaudit.app/token/kled-ai-sol) |
-| [Buttcoin](./buttcoin.md) | BUTTCOIN | 🟡 34/100 Medium Risk | 2026-06-26 | [↗](https://quantumaudit.app/token/buttcoin-sol) |
-| [WORLD BET](./world-bet.md) | WBET | 🟠 47/100 High Risk | 2026-06-25 | [↗](https://quantumaudit.app/token/world-bet-sol) |
-| [Grass](./grass.md) | GRASS | 🟠 54/100 High Risk | 2026-06-24 | [↗](https://quantumaudit.app/token/grass-sol) |
-| [Grand Theft Auto VI](./grand-theft-auto-vi.md) | GTAVI | 🟠 46/100 High Risk | 2026-06-23 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-sol) |
-| [Arcium](./arcium.md) | ARX | 🟠 63/100 High Risk | 2026-06-23 | [↗](https://quantumaudit.app/token/arcium-sol) |
-| [FarmTown](./farmtown.md) | FARM | 🟡 43/100 Medium Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/farmtown-sol) |
-| [chicken shrimp](./chicken-shrimp.md) | CS | 🟠 47/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/chicken-shrimp-sol) |
-| [WSOP Fantasy Poker](./wsop-fantasy-poker.md) | WSOLP | 🟠 47/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/wsop-fantasy-poker-sol) |
-| [Hope This Moons Later](./hope-this-moons-later.md) | HTML | 🟠 51/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/hope-this-moons-later-sol) |
-| [Tensor](./tensor.md) | TNSR | 🟠 55/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/tensor-sol) |
-| [Jupiter](./jupiter.md) | JUP | 🟠 58/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/jupiter-sol) |
-| [Meteora](./meteora.md) | MET | 🟠 56/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/meteora-sol) |
-| [Tiny Humans AI](./tiny-humans-ai.md) | TINY | 🟡 38/100 Medium Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/tiny-humans-ai-sol) |
-| [Make Britain Great Again](./make-britain-great-again.md) | MBGA | 🟡 36/100 Medium Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/make-britain-great-again-sol) |
-| [MEEP CAT](./meep-cat.md) | MEEP | 🟡 33/100 Medium Risk | 2026-06-19 | [↗](https://quantumaudit.app/token/meep-cat-sol) |
-| [Mad Coin](./mad-coin.md) | $MAD | 🟠 54/100 High Risk | 2026-06-19 | [↗](https://quantumaudit.app/token/mad-coin-sol) |
-| [Religion](./religion.md) | RELIGION | 🟠 48/100 High Risk | 2026-06-18 | [↗](https://quantumaudit.app/token/religion-sol) |
-| [drooling cat](./drooling-cat.md) | DROOLING | 🟡 32/100 Medium Risk | 2026-06-18 | [↗](https://quantumaudit.app/token/drooling-cat-sol) |
-| [The Fearless Guardian](./the-fearless-guardian.md) | GUARDIAN | 🟠 47/100 High Risk | 2026-06-18 | [↗](https://quantumaudit.app/token/the-fearless-guardian-sol) |
-| [SPCX69](./spcx69.md) | SPCX69 | 🟡 44/100 Medium Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/spcx69-sol) |
-| [spucex](./spucex.md) | SPCX | 🟠 46/100 High Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/spucex-sol) |
-| [TAPE](./tape.md) | TAPE | 🟡 33/100 Medium Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/tape-sol) |
-| [Retard Coin](./retard-coin.md) | RETARD | 🟡 36/100 Medium Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/retard-coin-sol) |
-| [Pomni](./pomni.md) | POMNI | 🟡 37/100 Medium Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/pomni-sol) |
-| [US BLACKWHALE COIN](./us-blackwhale-coin.md) | USBC | 🟠 46/100 High Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/us-blackwhale-coin-sol) |
-| [World Peace ](./world-peace.md) | PEACE  | 🟡 33/100 Medium Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/world-peace-sol) |
-| [Ultimate Solana World Cup](./ultimate-solana-world-cup.md) | USWC | 🟠 46/100 High Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/ultimate-solana-world-cup-sol) |
-| [EMBER](./ember.md) | EMBER | 🟡 45/100 Medium Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/ember-sol) |
-| [Kintara](./kintara.md) | KINS | 🟡 36/100 Medium Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/kintara-sol) |
-| [Kiyomasa](./kiyomasa.md) | 清正 | 🟡 34/100 Medium Risk | 2026-06-14 | [↗](https://quantumaudit.app/token/kiyomasa-sol) |
-| [Backpack](./backpack.md) | BP | 🟠 58/100 High Risk | 2026-06-14 | [↗](https://quantumaudit.app/token/backpack-sol) |
+| [DIAMOND HANDS](./diamond-hands.md) | DIAMOND | 🟠 64/100 High Risk | 2026-06-30 | [↗](https://quantumaudit.app/token/diamond-hands-sol) |
+| [Are Ya Winning, Son?](./are-ya-winning-son.md) | SON | 🟡 34/100 Medium Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/are-ya-winning-son-sol) |
+| [The Black Bull](./the-black-bull.md) | ANSEM | 🔴 76/100 Critical Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/the-black-bull-sol) |
+| [infinity](./infinity.md) | INFINITY | 🔴 93/100 Critical Risk | 2026-06-28 | [↗](https://quantumaudit.app/token/infinity-sol) |
+| [The Movement](./the-movement.md) | MOVEMENT | 🟠 62/100 High Risk | 2026-06-28 | [↗](https://quantumaudit.app/token/the-movement-sol) |
+| [Pump.fun](./pumpfun.md) | PUMP | 🟠 59/100 High Risk | 2026-06-28 | [↗](https://quantumaudit.app/token/pumpfun-sol) |
+| [catwifhat](./catwifhat.md) | CATWIF | 🟠 46/100 High Risk | 2026-06-27 | [↗](https://quantumaudit.app/token/catwifhat-sol) |
+| [Miu](./miu.md) | MIU | 🟠 63/100 High Risk | 2026-06-27 | [↗](https://quantumaudit.app/token/miu-sol) |
+| [Kled AI](./kled-ai.md) | KLED | 🟡 41/100 Medium Risk | 2026-06-27 | [↗](https://quantumaudit.app/token/kled-ai-sol) |
+| [Buttcoin](./buttcoin.md) | BUTTCOIN | 🟡 37/100 Medium Risk | 2026-06-26 | [↗](https://quantumaudit.app/token/buttcoin-sol) |
+| [WORLD BET](./world-bet.md) | WBET | 🟠 52/100 High Risk | 2026-06-25 | [↗](https://quantumaudit.app/token/world-bet-sol) |
+| [Grass](./grass.md) | GRASS | 🔴 100/100 Critical Risk | 2026-06-24 | [↗](https://quantumaudit.app/token/grass-sol) |
+| [Grand Theft Auto VI](./grand-theft-auto-vi.md) | GTAVI | 🟠 52/100 High Risk | 2026-06-23 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-sol) |
+| [Arcium](./arcium.md) | ARX | 🔴 76/100 Critical Risk | 2026-06-23 | [↗](https://quantumaudit.app/token/arcium-sol) |
+| [FarmTown](./farmtown.md) | FARM | 🟠 49/100 High Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/farmtown-sol) |
+| [chicken shrimp](./chicken-shrimp.md) | CS | 🟠 52/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/chicken-shrimp-sol) |
+| [WSOP Fantasy Poker](./wsop-fantasy-poker.md) | WSOLP | 🟠 50/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/wsop-fantasy-poker-sol) |
+| [Hope This Moons Later](./hope-this-moons-later.md) | HTML | 🟠 61/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/hope-this-moons-later-sol) |
+| [Tensor](./tensor.md) | TNSR | 🔴 100/100 Critical Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/tensor-sol) |
+| [Jupiter](./jupiter.md) | JUP | 🟠 53/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/jupiter-sol) |
+| [Meteora](./meteora.md) | MET | 🟠 70/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/meteora-sol) |
+| [Tiny Humans AI](./tiny-humans-ai.md) | TINY | 🟠 59/100 High Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/tiny-humans-ai-sol) |
+| [Make Britain Great Again](./make-britain-great-again.md) | MBGA | 🟠 58/100 High Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/make-britain-great-again-sol) |
+| [MEEP CAT](./meep-cat.md) | MEEP | 🟠 47/100 High Risk | 2026-06-19 | [↗](https://quantumaudit.app/token/meep-cat-sol) |
+| [Mad Coin](./mad-coin.md) | $MAD | 🟠 55/100 High Risk | 2026-06-19 | [↗](https://quantumaudit.app/token/mad-coin-sol) |
+| [Religion](./religion.md) | RELIGION | 🟠 65/100 High Risk | 2026-06-18 | [↗](https://quantumaudit.app/token/religion-sol) |
+| [drooling cat](./drooling-cat.md) | DROOLING | 🟠 50/100 High Risk | 2026-06-18 | [↗](https://quantumaudit.app/token/drooling-cat-sol) |
+| [The Fearless Guardian](./the-fearless-guardian.md) | GUARDIAN | 🔴 78/100 Critical Risk | 2026-06-18 | [↗](https://quantumaudit.app/token/the-fearless-guardian-sol) |
+| [SPCX69](./spcx69.md) | SPCX69 | 🟡 43/100 Medium Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/spcx69-sol) |
+| [spucex](./spucex.md) | SPCX | 🟠 54/100 High Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/spucex-sol) |
+| [TAPE](./tape.md) | TAPE | 🟠 59/100 High Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/tape-sol) |
+| [Retard Coin](./retard-coin.md) | RETARD | 🟠 59/100 High Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/retard-coin-sol) |
+| [Pomni](./pomni.md) | POMNI | 🟠 59/100 High Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/pomni-sol) |
+| [US BLACKWHALE COIN](./us-blackwhale-coin.md) | USBC | 🟠 57/100 High Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/us-blackwhale-coin-sol) |
+| [World Peace ](./world-peace.md) | PEACE  | 🟠 51/100 High Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/world-peace-sol) |
+| [Ultimate Solana World Cup](./ultimate-solana-world-cup.md) | USWC | 🟠 65/100 High Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/ultimate-solana-world-cup-sol) |
+| [EMBER](./ember.md) | EMBER | 🔴 83/100 Critical Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/ember-sol) |
+| [Kintara](./kintara.md) | KINS | 🟡 42/100 Medium Risk | 2026-06-15 | [↗](https://quantumaudit.app/token/kintara-sol) |
+| [Kiyomasa](./kiyomasa.md) | 清正 | 🟡 40/100 Medium Risk | 2026-06-14 | [↗](https://quantumaudit.app/token/kiyomasa-sol) |
+| [Backpack](./backpack.md) | BP | 🔴 100/100 Critical Risk | 2026-06-14 | [↗](https://quantumaudit.app/token/backpack-sol) |
 | [Peanut the Squirrel](./peanut-the-squirrel.md) | PNUT | 🔴 73/100 Critical Risk | 2026-06-13 | [↗](https://quantumaudit.app/token/peanut-the-squirrel-sol) |
 | [Sherbert The Tree](./sherbert-the-tree.md) | SHERBERT | 🟠 60/100 High Risk | 2026-06-13 | [↗](https://quantumaudit.app/token/sherbert-the-tree-sol) |
 | [Geodnet](./geodnet.md) | GEOD | 🔴 100/100 Critical Risk | 2026-06-13 | [↗](https://quantumaudit.app/token/geodnet-sol) |
