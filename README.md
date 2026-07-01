@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-138-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-140-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,12 +12,14 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Baby Ansem](./bsc/baby-ansem.md) | BABYANSEM | BNB Chain | 🔴 100/100 | 2026-07-01 | [↗](https://quantumaudit.app/token/baby-ansem-bsc) |
+| [Solana Supercycle](./solana/solana-supercycle.md) | SOLS | Solana | 🟠 61/100 | 2026-07-01 | [↗](https://quantumaudit.app/token/solana-supercycle-sol) |
 | [DIAMOND HANDS](./solana/diamond-hands.md) | DIAMOND | Solana | 🟠 64/100 | 2026-06-30 | [↗](https://quantumaudit.app/token/diamond-hands-sol) |
-| [Gram (prev. Toncoin)](./ethereum/gram-prev-toncoin.md) | GRAM | Ethereum | 🔴 85/100 | 2026-06-30 | [↗](https://quantumaudit.app/token/gram-prev-toncoin-eth) |
+| [Gram (prev. Toncoin)](./ethereum/gram-prev-toncoin.md) | GRAM | Ethereum | 🔴 100/100 | 2026-06-30 | [↗](https://quantumaudit.app/token/gram-prev-toncoin-eth) |
 | [Cap](./ethereum/cap.md) | CAP | Ethereum | 🔴 100/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/cap-eth) |
 | [Are Ya Winning, Son?](./solana/are-ya-winning-son.md) | SON | Solana | 🟡 34/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/are-ya-winning-son-sol) |
 | [The Black Bull](./solana/the-black-bull.md) | ANSEM | Solana | 🔴 76/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/the-black-bull-sol) |
-| [RaveDAO](./ethereum/ravedao.md) | RAVE | Ethereum | 🔴 99/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/ravedao-eth) |
+| [RaveDAO](./ethereum/ravedao.md) | RAVE | Ethereum | 🔴 100/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/ravedao-eth) |
 | [infinity](./solana/infinity.md) | INFINITY | Solana | 🔴 93/100 | 2026-06-28 | [↗](https://quantumaudit.app/token/infinity-sol) |
 | [The Movement](./solana/the-movement.md) | MOVEMENT | Solana | 🟠 62/100 | 2026-06-28 | [↗](https://quantumaudit.app/token/the-movement-sol) |
 | [Pump.fun](./solana/pumpfun.md) | PUMP | Solana | 🟠 59/100 | 2026-06-28 | [↗](https://quantumaudit.app/token/pumpfun-sol) |
@@ -30,24 +32,22 @@
 | [Grand Theft Auto VI](./solana/grand-theft-auto-vi.md) | GTAVI | Solana | 🟠 52/100 | 2026-06-23 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-sol) |
 | [Arcium](./solana/arcium.md) | ARX | Solana | 🔴 76/100 | 2026-06-23 | [↗](https://quantumaudit.app/token/arcium-sol) |
 | [FarmTown](./solana/farmtown.md) | FARM | Solana | 🟠 49/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/farmtown-sol) |
-| [Humanity](./ethereum/humanity.md) | H | Ethereum | 🔴 98/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/humanity-eth) |
-| [RE](./ethereum/re.md) | RE | Ethereum | 🟠 69/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/re-eth) |
-| [Synapse](./ethereum/synapse.md) | SYN | Ethereum | 🔴 84/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/synapse-eth) |
+| [Humanity](./ethereum/humanity.md) | H | Ethereum | 🔴 100/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/humanity-eth) |
+| [RE](./ethereum/re.md) | RE | Ethereum | 🔴 100/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/re-eth) |
+| [Synapse](./ethereum/synapse.md) | SYN | Ethereum | 🔴 99/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/synapse-eth) |
 | [chicken shrimp](./solana/chicken-shrimp.md) | CS | Solana | 🟠 52/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/chicken-shrimp-sol) |
 | [WSOP Fantasy Poker](./solana/wsop-fantasy-poker.md) | WSOLP | Solana | 🟠 50/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/wsop-fantasy-poker-sol) |
 | [Hope This Moons Later](./solana/hope-this-moons-later.md) | HTML | Solana | 🟠 61/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/hope-this-moons-later-sol) |
-| [Main Street USD](./ethereum/main-street-usd.md) | MSUSD | Ethereum | 🔴 78/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/main-street-usd-eth) |
+| [Main Street USD](./ethereum/main-street-usd.md) | MSUSD | Ethereum | 🔴 100/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/main-street-usd-eth) |
 | [Tensor](./solana/tensor.md) | TNSR | Solana | 🔴 100/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/tensor-sol) |
 | [Jupiter](./solana/jupiter.md) | JUP | Solana | 🟠 53/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/jupiter-sol) |
 | [Meteora](./solana/meteora.md) | MET | Solana | 🟠 70/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/meteora-sol) |
-| [Tiny Humans AI](./solana/tiny-humans-ai.md) | TINY | Solana | 🟠 59/100 | 2026-06-20 | [↗](https://quantumaudit.app/token/tiny-humans-ai-sol) |
-| [Re Protocol reUSD](./ethereum/re-protocol-reusd.md) | REUSD | Ethereum | 🔴 100/100 | 2026-06-20 | [↗](https://quantumaudit.app/token/re-protocol-reusd-eth) |
 
 ---
 
 ## Browse by Network
 
-[Solana (97)](./solana/README.md) · [Ethereum (31)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (2)](./bsc/README.md)
+[Solana (98)](./solana/README.md) · [Ethereum (31)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
 
 ---
 
@@ -55,8 +55,13 @@
 
 Each report contains:
 
-- **Risk Score** (0–100) based on on-chain security flags
+- **Risk Score** (0–100) computed by a deterministic, factor-weighted function — each contributing factor recorded in a per-token breakdown
+- **Category Ratings** (Technical / Governance / Upgrades), each on a 1–10 scale with Low / Medium / High level
 - **AI Security Analysis**: in-depth risk narrative for the token
+- **Severity-Graded Findings**: Critical / High / Medium / Low / Informational, each with title, description, recommendation, status
+- **Proxy Upgrade Controls** (for upgradeable contracts): proxy pattern, admin classification (multi-signer / timelock / single-key), implementation verification, recent upgrade activity
+- **Token-2022 Extensions** (for SPL Token-2022 mints): Transfer Hook, Permanent Delegate, Default Account State, Transfer Fee, upgradeability flags
+- **LP Distribution** (for tokens with a primary DEX pair): burned-to-dead-address fraction, locked-via-known-lockers fraction, top-1/top-3 unlocked-holder concentration, and — when the LP is locked at a supported on-chain locker — the actual lock-expiry timestamp queried from the locker contract
 - **Token Metrics**: price, 24h volume, liquidity, V/L ratio, age, buy/sell tax, 24h transactions, top-10 holder concentration
 - **Security Flags**: contract verification, ownership, mint function, liquidity lock, proxy detection — each explained in plain English
 - **FAQ**: is it a scam, is it safe, has it been audited
@@ -73,6 +78,10 @@ Full methodology: **[quantumaudit.app/methodology](https://quantumaudit.app/meth
 
 - Five-plus independent on-chain data sources cross-validated per audit
 - Severity-graded findings (Critical / High / Medium / Low / Informational)
+- Per-category ratings (Technical / Governance / Upgrades) on a 1–10 scale, derived from the same fact set with category-specific weighting
+- Deep proxy analysis for upgradeable EVM contracts: admin classification, timelock awareness, implementation verification, upgrade history
+- SPL Token-2022 extension scoring: Transfer Hook, Permanent Delegate, Default Account State, Transfer Fee, with mutability awareness
+- LP holder distribution analysis: burn-fraction refund, locked-fraction verification, top-1/top-3 unlocked-concentration surcharges, and on-chain lock-expiry verification against supported lockers
 - Solana-native factor set (mint authority, freeze authority, LP lock)
 - Source-code-aware analysis on verified contracts
 

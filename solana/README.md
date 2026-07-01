@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**97 reports** · Updated daily · [← All Networks](../README.md)
+**98 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Solana Supercycle](./solana-supercycle.md) | SOLS | 🟠 61/100 High Risk | 2026-07-01 | [↗](https://quantumaudit.app/token/solana-supercycle-sol) |
 | [DIAMOND HANDS](./diamond-hands.md) | DIAMOND | 🟠 64/100 High Risk | 2026-06-30 | [↗](https://quantumaudit.app/token/diamond-hands-sol) |
 | [Are Ya Winning, Son?](./are-ya-winning-son.md) | SON | 🟡 34/100 Medium Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/are-ya-winning-son-sol) |
 | [The Black Bull](./the-black-bull.md) | ANSEM | 🔴 76/100 Critical Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/the-black-bull-sol) |
@@ -58,17 +59,17 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [SPACEX IPO](./spacex-ipo.md) | SPCX | 🟠 59/100 High Risk | 2026-06-12 | [↗](https://quantumaudit.app/token/spacex-ipo-sol) |
 | [XRP SUPERCYCLE](./xrp-supercycle.md) | XRPS | 🟠 49/100 High Risk | 2026-06-12 | [↗](https://quantumaudit.app/token/xrp-supercycle-sol) |
 | [Fantasy Manager](./fantasy-manager.md) | FANTASY | 🟠 59/100 High Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/fantasy-manager-sol) |
-| [Purple Bitcoin](./purple-bitcoin.md) | PBTC | 🟠 59/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/purple-bitcoin-sol) |
+| [Purple Bitcoin](./purple-bitcoin.md) | PBTC | 🟡 44/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/purple-bitcoin-sol) |
 | [Bull](./bull.md) | BULL | 🟠 59/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/bull-sol) |
 | [LMAO!](./lmao.md) | LMAO! | 🟠 59/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/lmao-sol) |
-| [AINL](./ainl.md) | AINL | 🟠 49/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/ainl-sol) |
+| [AINL](./ainl.md) | AINL | 🟡 34/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/ainl-sol) |
 | [World Collective Oil Reserve](./world-collective-oil-reserve.md) | WCOR | 🟠 57/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/world-collective-oil-reserve-sol) |
 | [Make Aliens Great Again ](./make-aliens-great-again.md) | MAGA | 🟡 36/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/make-aliens-great-again-sol) |
 | [RAGE GUY](./rage-guy.md) | RAGE | 🟠 65/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/rage-guy-sol) |
-| [🦎](./token.md) | LIZARD | 🟠 51/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/token-sol) |
+| [🦎](./token.md) | LIZARD | 🟡 36/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/token-sol) |
 | [Aliens are real](./aliens-are-real.md) | ALIENS | 🟡 39/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/aliens-are-real-sol) |
 | [ALTSEASON](./altseason.md) | ALTSZN | 🟡 38/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/altseason-sol) |
-| [RECON RACCOON](./recon-raccoon.md) | RCON | 🟠 50/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/recon-raccoon-sol) |
+| [RECON RACCOON](./recon-raccoon.md) | RCON | 🟡 35/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/recon-raccoon-sol) |
 | [Official Bridge Currency](./official-bridge-currency.md) | OBC | 🔴 73/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/official-bridge-currency-sol) |
 | [America Is Back](./america-is-back.md) | AMERICA | 🟡 39/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/america-is-back-sol) |
 | [Traderclaw](./traderclaw.md) | TCLAW | 🔴 88/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/traderclaw-sol) |
@@ -79,7 +80,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [LOL](./lol.md) | LOL | 🟡 39/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/lol-sol) |
 | [World Cup Coin](./world-cup-coin.md) | WORLDCUP | 🟠 48/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/world-cup-coin-sol) |
 | [Federal Economic Department](./federal-economic-department.md) | FED | 🔴 100/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/federal-economic-department-sol) |
-| [had to take profits sir](./had-to-take-profits-sir.md) | HTTPS | 🟠 46/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/had-to-take-profits-sir-sol) |
+| [had to take profits sir](./had-to-take-profits-sir.md) | HTTPS | 🔴 81/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/had-to-take-profits-sir-sol) |
 | [Baby Troll](./baby-troll.md) | BABYTROLL | 🟡 45/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/baby-troll-sol) |
 | [AnitaMaxWynn](./anitamaxwynn.md) | WYNN | 🟠 57/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/anitamaxwynn-sol) |
 | [ttt](./ttt.md) | TTTT | 🔴 100/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/ttt-sol) |

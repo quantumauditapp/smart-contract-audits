@@ -2,14 +2,14 @@
 token: RaveDAO
 ticker: RAVE
 network: ethereum
-risk_score: 99
+risk_score: 100
 status: critical
 date: 2026-06-29
 ---
 
 # RaveDAO (RAVE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 99/100 — 🔴 Critical Risk**
+> **Risk Score: 100/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ravedao-eth)
 
@@ -34,6 +34,13 @@ The RaveToken contract is generally well-implemented, leveraging robust external
 | **Technical** | 4/10 | Medium | The contract utilizes well-audited OpenZeppelin and LayerZero libraries, contributing to a solid foundation (7.2 Code Security). The `burn` function is correctly implemented, allowing users to burn th |
 | **Governance / Economics** | 1/10 | High | The economic model is straightforward, with `totalSupply` minted to the owner at deployment, which is a common initial distribution strategy (7.4 Economic). The primary governance risk stems from the  |
 | **Upgrades** | 4/10 | Medium | The RaveToken contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). This design choice eliminates the complexities and potential risks associated with proxy upgrade patterns. |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 

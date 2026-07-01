@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**2 reports** · Updated daily · [← All Networks](../README.md)
+**3 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,7 +10,8 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
-| [ZygoSwap](./zygoswap.md) | ZSWAP | 🟠 65/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/zygoswap-bsc) |
+| [Baby Ansem](./baby-ansem.md) | BABYANSEM | 🔴 100/100 Critical Risk | 2026-07-01 | [↗](https://quantumaudit.app/token/baby-ansem-bsc) |
+| [ZygoSwap](./zygoswap.md) | ZSWAP | 🟠 50/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/zygoswap-bsc) |
 | [吉祥马](./吉祥马.md) | 吉祥马 | 🔴 78/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/吉祥马-bsc) |
 
 ---
