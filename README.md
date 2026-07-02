@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-140-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-141-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,42 +12,42 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
-| [Baby Ansem](./bsc/baby-ansem.md) | BABYANSEM | BNB Chain | 🔴 100/100 | 2026-07-01 | [↗](https://quantumaudit.app/token/baby-ansem-bsc) |
-| [Solana Supercycle](./solana/solana-supercycle.md) | SOLS | Solana | 🟠 61/100 | 2026-07-01 | [↗](https://quantumaudit.app/token/solana-supercycle-sol) |
-| [DIAMOND HANDS](./solana/diamond-hands.md) | DIAMOND | Solana | 🟠 64/100 | 2026-06-30 | [↗](https://quantumaudit.app/token/diamond-hands-sol) |
-| [Gram (prev. Toncoin)](./ethereum/gram-prev-toncoin.md) | GRAM | Ethereum | 🔴 100/100 | 2026-06-30 | [↗](https://quantumaudit.app/token/gram-prev-toncoin-eth) |
-| [Cap](./ethereum/cap.md) | CAP | Ethereum | 🔴 100/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/cap-eth) |
-| [Are Ya Winning, Son?](./solana/are-ya-winning-son.md) | SON | Solana | 🟡 34/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/are-ya-winning-son-sol) |
-| [The Black Bull](./solana/the-black-bull.md) | ANSEM | Solana | 🔴 76/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/the-black-bull-sol) |
-| [RaveDAO](./ethereum/ravedao.md) | RAVE | Ethereum | 🔴 100/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/ravedao-eth) |
-| [infinity](./solana/infinity.md) | INFINITY | Solana | 🔴 93/100 | 2026-06-28 | [↗](https://quantumaudit.app/token/infinity-sol) |
-| [The Movement](./solana/the-movement.md) | MOVEMENT | Solana | 🟠 62/100 | 2026-06-28 | [↗](https://quantumaudit.app/token/the-movement-sol) |
-| [Pump.fun](./solana/pumpfun.md) | PUMP | Solana | 🟠 59/100 | 2026-06-28 | [↗](https://quantumaudit.app/token/pumpfun-sol) |
-| [catwifhat](./solana/catwifhat.md) | CATWIF | Solana | 🟠 46/100 | 2026-06-27 | [↗](https://quantumaudit.app/token/catwifhat-sol) |
-| [Miu](./solana/miu.md) | MIU | Solana | 🟠 63/100 | 2026-06-27 | [↗](https://quantumaudit.app/token/miu-sol) |
-| [Kled AI](./solana/kled-ai.md) | KLED | Solana | 🟡 41/100 | 2026-06-27 | [↗](https://quantumaudit.app/token/kled-ai-sol) |
-| [Buttcoin](./solana/buttcoin.md) | BUTTCOIN | Solana | 🟡 37/100 | 2026-06-26 | [↗](https://quantumaudit.app/token/buttcoin-sol) |
-| [WORLD BET](./solana/world-bet.md) | WBET | Solana | 🟠 52/100 | 2026-06-25 | [↗](https://quantumaudit.app/token/world-bet-sol) |
-| [Grass](./solana/grass.md) | GRASS | Solana | 🔴 100/100 | 2026-06-24 | [↗](https://quantumaudit.app/token/grass-sol) |
-| [Grand Theft Auto VI](./solana/grand-theft-auto-vi.md) | GTAVI | Solana | 🟠 52/100 | 2026-06-23 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-sol) |
-| [Arcium](./solana/arcium.md) | ARX | Solana | 🔴 76/100 | 2026-06-23 | [↗](https://quantumaudit.app/token/arcium-sol) |
-| [FarmTown](./solana/farmtown.md) | FARM | Solana | 🟠 49/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/farmtown-sol) |
-| [Humanity](./ethereum/humanity.md) | H | Ethereum | 🔴 100/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/humanity-eth) |
-| [RE](./ethereum/re.md) | RE | Ethereum | 🔴 100/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/re-eth) |
-| [Synapse](./ethereum/synapse.md) | SYN | Ethereum | 🔴 99/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/synapse-eth) |
-| [chicken shrimp](./solana/chicken-shrimp.md) | CS | Solana | 🟠 52/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/chicken-shrimp-sol) |
-| [WSOP Fantasy Poker](./solana/wsop-fantasy-poker.md) | WSOLP | Solana | 🟠 50/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/wsop-fantasy-poker-sol) |
-| [Hope This Moons Later](./solana/hope-this-moons-later.md) | HTML | Solana | 🟠 61/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/hope-this-moons-later-sol) |
-| [Main Street USD](./ethereum/main-street-usd.md) | MSUSD | Ethereum | 🔴 100/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/main-street-usd-eth) |
-| [Tensor](./solana/tensor.md) | TNSR | Solana | 🔴 100/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/tensor-sol) |
-| [Jupiter](./solana/jupiter.md) | JUP | Solana | 🟠 53/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/jupiter-sol) |
-| [Meteora](./solana/meteora.md) | MET | Solana | 🟠 70/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/meteora-sol) |
+| [Moonbirds](./solana/moonbirds.md) | BIRB | Solana | 🟠 55/100 | 2026-07-02 | [↗](https://quantumaudit.app/token/moonbirds-sol) |
+| [Baby Ansem](./bsc/baby-ansem.md) | BABYANSEM | BNB Chain | 🟠 67/100 | 2026-07-01 | [↗](https://quantumaudit.app/token/baby-ansem-bsc) |
+| [Solana Supercycle](./solana/solana-supercycle.md) | SOLS | Solana | 🟡 38/100 | 2026-07-01 | [↗](https://quantumaudit.app/token/solana-supercycle-sol) |
+| [DIAMOND HANDS](./solana/diamond-hands.md) | DIAMOND | Solana | 🟡 41/100 | 2026-06-30 | [↗](https://quantumaudit.app/token/diamond-hands-sol) |
+| [Gram (prev. Toncoin)](./ethereum/gram-prev-toncoin.md) | GRAM | Ethereum | 🟠 63/100 | 2026-06-30 | [↗](https://quantumaudit.app/token/gram-prev-toncoin-eth) |
+| [Cap](./ethereum/cap.md) | CAP | Ethereum | 🔴 76/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/cap-eth) |
+| [Are Ya Winning, Son?](./solana/are-ya-winning-son.md) | SON | Solana | 🟢 17/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/are-ya-winning-son-sol) |
+| [The Black Bull](./solana/the-black-bull.md) | ANSEM | Solana | 🟠 55/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/the-black-bull-sol) |
+| [RaveDAO](./ethereum/ravedao.md) | RAVE | Ethereum | 🔴 98/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/ravedao-eth) |
+| [infinity](./solana/infinity.md) | INFINITY | Solana | 🟠 63/100 | 2026-06-28 | [↗](https://quantumaudit.app/token/infinity-sol) |
+| [The Movement](./solana/the-movement.md) | MOVEMENT | Solana | 🟡 39/100 | 2026-06-28 | [↗](https://quantumaudit.app/token/the-movement-sol) |
+| [Pump.fun](./solana/pumpfun.md) | PUMP | Solana | 🟡 42/100 | 2026-06-28 | [↗](https://quantumaudit.app/token/pumpfun-sol) |
+| [catwifhat](./solana/catwifhat.md) | CATWIF | Solana | 🟡 30/100 | 2026-06-27 | [↗](https://quantumaudit.app/token/catwifhat-sol) |
+| [Miu](./solana/miu.md) | MIU | Solana | 🟡 40/100 | 2026-06-27 | [↗](https://quantumaudit.app/token/miu-sol) |
+| [Kled AI](./solana/kled-ai.md) | KLED | Solana | 🟡 21/100 | 2026-06-27 | [↗](https://quantumaudit.app/token/kled-ai-sol) |
+| [Buttcoin](./solana/buttcoin.md) | BUTTCOIN | Solana | 🟢 19/100 | 2026-06-26 | [↗](https://quantumaudit.app/token/buttcoin-sol) |
+| [WORLD BET](./solana/world-bet.md) | WBET | Solana | 🟡 34/100 | 2026-06-25 | [↗](https://quantumaudit.app/token/world-bet-sol) |
+| [Grass](./solana/grass.md) | GRASS | Solana | 🟠 65/100 | 2026-06-24 | [↗](https://quantumaudit.app/token/grass-sol) |
+| [Grand Theft Auto VI](./solana/grand-theft-auto-vi.md) | GTAVI | Solana | 🟡 35/100 | 2026-06-23 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-sol) |
+| [Arcium](./solana/arcium.md) | ARX | Solana | 🟠 57/100 | 2026-06-23 | [↗](https://quantumaudit.app/token/arcium-sol) |
+| [FarmTown](./solana/farmtown.md) | FARM | Solana | 🟡 32/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/farmtown-sol) |
+| [Humanity](./ethereum/humanity.md) | H | Ethereum | 🔴 87/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/humanity-eth) |
+| [RE](./ethereum/re.md) | RE | Ethereum | 🔴 78/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/re-eth) |
+| [Synapse](./ethereum/synapse.md) | SYN | Ethereum | 🟠 70/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/synapse-eth) |
+| [chicken shrimp](./solana/chicken-shrimp.md) | CS | Solana | 🟡 36/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/chicken-shrimp-sol) |
+| [WSOP Fantasy Poker](./solana/wsop-fantasy-poker.md) | WSOLP | Solana | 🟡 34/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/wsop-fantasy-poker-sol) |
+| [Hope This Moons Later](./solana/hope-this-moons-later.md) | HTML | Solana | 🟡 45/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/hope-this-moons-later-sol) |
+| [Main Street USD](./ethereum/main-street-usd.md) | MSUSD | Ethereum | 🔴 84/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/main-street-usd-eth) |
+| [Tensor](./solana/tensor.md) | TNSR | Solana | 🟠 70/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/tensor-sol) |
+| [Jupiter](./solana/jupiter.md) | JUP | Solana | 🟡 34/100 | 2026-06-21 | [↗](https://quantumaudit.app/token/jupiter-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (98)](./solana/README.md) · [Ethereum (31)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
+[Solana (99)](./solana/README.md) · [Ethereum (31)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
 
 ---
 

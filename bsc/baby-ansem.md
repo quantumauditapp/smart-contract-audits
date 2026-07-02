@@ -2,14 +2,14 @@
 token: Baby Ansem
 ticker: BABYANSEM
 network: bsc
-risk_score: 100
-status: critical
+risk_score: 67
+status: high
 date: 2026-07-01
 ---
 
 # Baby Ansem (BABYANSEM) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 67/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/baby-ansem-bsc)
 
@@ -35,9 +35,9 @@ Once the complete source code is available, a Premium Deploy option is recommend
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The technical architecture follows the well-established ERC20 standard, providing basic token functionalities like transfer and allowance management (7.1 Architecture). The code utilizes Solidity 0.8. |
+| **Technical** | 6/10 | Medium | The technical architecture follows the well-established ERC20 standard, providing basic token functionalities like transfer and allowance management (7.1 Architecture). The code utilizes Solidity 0.8. |
 | **Governance / Economics** | 1/10 | High | As a base ERC20 contract, the provided code does not include specific governance mechanisms or complex economic models (7.5 Governance, 7.4 Economic). The token's economic stability and utility would  |
-| **Upgrades** | 4/10 | Medium | The contract is not deployed as a proxy, as indicated by the `is_proxy: false` flag in the prefill data. Therefore, it is not designed to be upgradeable (7.7 Upgrades). This simplifies the upgrade saf |
+| **Upgrades** | 6/10 | Medium | The contract is not deployed as a proxy, as indicated by the `is_proxy: false` flag in the prefill data. Therefore, it is not designed to be upgradeable (7.7 Upgrades). This simplifies the upgrade saf |
 
 ## LP Distribution
 

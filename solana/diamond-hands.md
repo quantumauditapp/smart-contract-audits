@@ -2,14 +2,14 @@
 token: DIAMOND HANDS
 ticker: DIAMOND
 network: solana
-risk_score: 64
-status: high
+risk_score: 41
+status: medium
 date: 2026-06-30
 ---
 
 # DIAMOND HANDS (DIAMOND) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 64/100 — 🟠 High Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/diamond-hands-sol)
 

@@ -2,14 +2,14 @@
 token: Gram (prev. Toncoin)
 ticker: GRAM
 network: ethereum
-risk_score: 100
-status: critical
+risk_score: 63
+status: high
 date: 2026-06-30
 ---
 
 # Gram (prev. Toncoin) (GRAM) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 63/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gram-prev-toncoin-eth)
 
@@ -35,9 +35,9 @@ For enhanced security and ongoing monitoring, consider a Premium Deploy option. 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract demonstrates a robust multi-signature architecture (7.1) for critical operations, requiring a 2/3 majority of oracles for actions like minting and oracle set updates. Code security (7.2)  |
+| **Technical** | 7/10 | Low | The contract demonstrates a robust multi-signature architecture (7.1) for critical operations, requiring a 2/3 majority of oracles for actions like minting and oracle set updates. Code security (7.2)  |
 | **Governance / Economics** | 3/10 | High | The governance model (7.5) is based on a centralized oracle set, where a 2/3 majority controls all critical functions, including token minting and the ability to update the oracle set itself. This des |
-| **Upgrades** | 4/10 | Medium | The `Bridge` contract is implemented as a standard contract without an explicit upgrade mechanism (7.7). This design choice eliminates upgrade-related risks such as proxy misconfigurations or maliciou |
+| **Upgrades** | 5/10 | Medium | The `Bridge` contract is implemented as a standard contract without an explicit upgrade mechanism (7.7). This design choice eliminates upgrade-related risks such as proxy misconfigurations or maliciou |
 
 ## LP Distribution
 

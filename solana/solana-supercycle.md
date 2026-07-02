@@ -2,14 +2,14 @@
 token: Solana Supercycle
 ticker: SOLS
 network: solana
-risk_score: 61
-status: high
+risk_score: 38
+status: medium
 date: 2026-07-01
 ---
 
 # Solana Supercycle (SOLS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solana-supercycle-sol)
 

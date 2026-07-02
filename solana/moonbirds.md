@@ -1,0 +1,104 @@
+---
+token: Moonbirds
+ticker: BIRB
+network: solana
+risk_score: 55
+status: high
+date: 2026-07-02
+---
+
+# Moonbirds (BIRB) — Smart Contract Security Analysis | Solana
+
+> **Risk Score: 55/100 — 🟠 High Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/moonbirds-sol)
+
+---
+
+## Audit Summary
+
+This SPL token mint has a critical operational risk due to its default frozen account state, meaning new holder accounts require manual unfreezing by an authority to enable transfers. While mint and freeze authorities are revoked, holder concentration data was unavailable from RPC, though RugCheck.xyz indicates high ownership by top holders. The token exhibits healthy liquidity and trading patterns.
+
+> **Final Recommendation:** Holders should be aware of the 'Default Frozen State' issue, which requires an active issuer to unfreeze new accounts. Verify the process and availability of such an authority before acquiring the token. The revoked mint and freeze authorities, along with immutable metadata, are positive security aspects. However, the RugCheck.xyz warnings regarding high holder concentration should be considered, as this can lead to price volatility from large sell-offs. For enhanced security, consider a Premium Deploy option that includes continuous monitoring for any changes in token authorities or on-chain parameters.
+
+## Security Analysis
+
+This SPL token mint has a critical operational risk due to its default frozen account state, meaning new holder accounts require manual unfreezing by an authority to enable transfers. While mint and freeze authorities are revoked, holder concentration data was unavailable from RPC, though RugCheck.xyz indicates high ownership by top holders. The token exhibits healthy liquidity and trading patterns.
+
+Holders should be aware of the 'Default Frozen State' issue, which requires an active issuer to unfreeze new accounts. Verify the process and availability of such an authority before acquiring the token. The revoked mint and freeze authorities, along with immutable metadata, are positive security aspects. However, the RugCheck.xyz warnings regarding high holder concentration should be considered, as this can lead to price volatility from large sell-offs. For enhanced security, consider a Premium Deploy option that includes continuous monitoring for any changes in token authorities or on-chain parameters.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 5/10 | Medium | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.8 Operations: The token is an SPL token mint operating under the `spl-token` program with 6 decimals and a total supply of 999,999,616,516,61 |
+| **Governance / Economics** | 2/10 | High | 7.4 Economic, 7.5 Governance: The token exhibits strong liquidity with $1,691,889 USD available on DEXs, supported by a 24-hour trading volume of $6,360,236 USD. The volume/liquidity ratio is 3.76, wh |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The token's mint and freeze authorities are both revoked (`Mint Authority: revoked (None)`, `Freeze Authority: revoked (None)`), meaning no further tokens can be minted and no existing a |
+
+## Security Findings
+
+_🟠 1 High · ⚪ 2 Informational_
+
+### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
+
+New holder accounts are created in a frozen state and require explicit unfreezing by an authority. This is indicated by `GoPlus.default_account_state: 1`.
+
+**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`G7vQWu...KNwG`](https://solscan.io/account/G7vQWurMkMMm2dU3iZpXYFTHT9Biio4F4gZCrwFpKNwG) |
+| **Network** | Solana |
+| **Price** | $0.08489 |
+| **24h Volume** | $6.35M |
+| **Liquidity** | $1.69M |
+| **Volume / Liquidity** | 3.7× |
+| **Token Age** | 5mo |
+| **Top-10 Holders** | 94.3% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 28114 buys / 24620 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/solana/guwft7bblphgrcpapnnenbbe1uerv9e6llc2qpx2wzy1)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/moonbirds-sol)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-07-02*
