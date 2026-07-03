@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**31 reports** · Updated daily · [← All Networks](../README.md)
+**32 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [NEXO](./nexo.md) | NEXO | 🔴 100/100 Critical Risk | 2026-07-03 | [↗](https://quantumaudit.app/token/nexo-eth) |
 | [Gram (prev. Toncoin)](./gram-prev-toncoin.md) | GRAM | 🟠 63/100 High Risk | 2026-06-30 | [↗](https://quantumaudit.app/token/gram-prev-toncoin-eth) |
 | [Cap](./cap.md) | CAP | 🔴 76/100 Critical Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/cap-eth) |
 | [RaveDAO](./ravedao.md) | RAVE | 🔴 98/100 Critical Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/ravedao-eth) |

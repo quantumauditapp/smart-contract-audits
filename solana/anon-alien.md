@@ -1,0 +1,104 @@
+---
+token: Anon Alien
+ticker: AALIEN
+network: solana
+risk_score: 72
+status: critical
+date: 2026-07-03
+---
+
+# Anon Alien (AALIEN) — Smart Contract Security Analysis | Solana
+
+> **Risk Score: 72/100 — 🔴 Critical Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/anon-alien-sol)
+
+---
+
+## Audit Summary
+
+This audit of the Anon Alien (AALIEN) SPL token mint reveals critical risks. RugCheck.xyz has flagged the token as 'rugged' with a score of 1/100, indicating severe trust issues. Additionally, new holder accounts are created in a frozen state, requiring an external authority to unfreeze them. Holder concentration data was unavailable for analysis.
+
+> **Final Recommendation:** Given the critical 'rugged' flag from RugCheck.xyz and the default frozen state for new accounts, it is strongly recommended to avoid any interaction with this token. The low liquidity and high volume/liquidity ratio also suggest potential market manipulation. Users should confirm the availability of an active issuer to unfreeze accounts if they choose to proceed, though the overall risk profile is extremely high. There is no Premium Deploy option for SPL token mints.
+
+## Security Analysis
+
+This audit of the Anon Alien (AALIEN) SPL token mint reveals critical risks. RugCheck.xyz has flagged the token as 'rugged' with a score of 1/100, indicating severe trust issues. Additionally, new holder accounts are created in a frozen state, requiring an external authority to unfreeze them. Holder concentration data was unavailable for analysis.
+
+Given the critical 'rugged' flag from RugCheck.xyz and the default frozen state for new accounts, it is strongly recommended to avoid any interaction with this token. The low liquidity and high volume/liquidity ratio also suggest potential market manipulation. Users should confirm the availability of an active issuer to unfreeze accounts if they choose to proceed, though the overall risk profile is extremely high. There is no Premium Deploy option for SPL token mints.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 3/10 | High | The token is an SPL token using the `spl-token` program with 6 decimals (7.1 Architecture). Mint and Freeze authorities are both revoked, indicating a fixed supply and no ability to freeze existing ac |
+| **Governance / Economics** | 3/10 | High | The token has very low liquidity at $37,179, with a high 24-hour volume of $421,864, resulting in a volume/liquidity ratio of 11.35x (7.4 Economic). This ratio suggests potential wash trading. Holder  |
+| **Upgrades** | 6/10 | Medium | The mint and freeze authorities are permanently revoked, meaning no further tokens can be minted and no accounts can be frozen by an authority. The token's metadata is also immutable (GoPlus.metadata_ |
+
+## Security Findings
+
+_🔴 1 Critical · 🟠 1 High · ⚪ 1 Informational_
+
+### `C-01` — RugCheck Flagged as Rugged  *(Severity: Critical · Status: Unresolved)*
+
+RugCheck.xyz classifies this token as rugged based on its own dataset (developer history, LP movements). (Fact: RugCheck Score: 1 / 100)
+
+**Recommendation:** Do not interact with this token.
+
+
+### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
+
+New holder accounts are created in a frozen state and require explicit unfreezing by an authority. (Fact: GoPlus.default_account_state: 1)
+
+**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`ARea51...eeV1`](https://solscan.io/account/ARea51UmRfn22Ds7KwFZirSMEEn1gtBdrhW4zLeveeV1) |
+| **Network** | Solana |
+| **Price** | $0.0001416 |
+| **24h Volume** | $421.6K |
+| **Liquidity** | $36.7K |
+| **Volume / Liquidity** | 11.5× |
+| **Token Age** | 2mo |
+| **Top-10 Holders** | 33.8% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 19799 buys / 3424 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/solana/4prwf2thuksaqwfmmz53mtatqtc18gzbrddw9empwsnp)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/anon-alien-sol)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-07-03*

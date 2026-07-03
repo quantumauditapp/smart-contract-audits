@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**99 reports** · Updated daily · [← All Networks](../README.md)
+**102 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [The Top Bull ](./the-top-bull.md) | TATE | 🟡 39/100 Medium Risk | 2026-07-03 | [↗](https://quantumaudit.app/token/the-top-bull-sol) |
+| [Anon Alien](./anon-alien.md) | AALIEN | 🔴 72/100 Critical Risk | 2026-07-03 | [↗](https://quantumaudit.app/token/anon-alien-sol) |
+| [Metaplex](./metaplex.md) | MPLX | 🟠 60/100 High Risk | 2026-07-03 | [↗](https://quantumaudit.app/token/metaplex-sol) |
 | [Moonbirds](./moonbirds.md) | BIRB | 🟠 55/100 High Risk | 2026-07-02 | [↗](https://quantumaudit.app/token/moonbirds-sol) |
 | [Solana Supercycle](./solana-supercycle.md) | SOLS | 🟡 38/100 Medium Risk | 2026-07-01 | [↗](https://quantumaudit.app/token/solana-supercycle-sol) |
 | [DIAMOND HANDS](./diamond-hands.md) | DIAMOND | 🟡 41/100 Medium Risk | 2026-06-30 | [↗](https://quantumaudit.app/token/diamond-hands-sol) |
