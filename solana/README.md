@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**102 reports** · Updated daily · [← All Networks](../README.md)
+**105 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [The Black Baby Bull](./the-black-baby-bull.md) | BABYANSEM | 🟡 38/100 Medium Risk | 2026-07-04 | [↗](https://quantumaudit.app/token/the-black-baby-bull-sol) |
+| [The IQ Bull](./the-iq-bull.md) | AMEN | 🟡 40/100 Medium Risk | 2026-07-04 | [↗](https://quantumaudit.app/token/the-iq-bull-sol) |
+| [manlet](./manlet.md) | MANLET | 🟡 33/100 Medium Risk | 2026-07-04 | [↗](https://quantumaudit.app/token/manlet-sol) |
 | [The Top Bull ](./the-top-bull.md) | TATE | 🟡 39/100 Medium Risk | 2026-07-03 | [↗](https://quantumaudit.app/token/the-top-bull-sol) |
 | [Anon Alien](./anon-alien.md) | AALIEN | 🔴 72/100 Critical Risk | 2026-07-03 | [↗](https://quantumaudit.app/token/anon-alien-sol) |
 | [Metaplex](./metaplex.md) | MPLX | 🟠 60/100 High Risk | 2026-07-03 | [↗](https://quantumaudit.app/token/metaplex-sol) |
