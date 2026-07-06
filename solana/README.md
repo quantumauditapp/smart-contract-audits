@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**105 reports** · Updated daily · [← All Networks](../README.md)
+**106 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [The White Bull](./the-white-bull.md) | DAVID | 🟡 28/100 Medium Risk | 2026-07-06 | [↗](https://quantumaudit.app/token/the-white-bull-sol) |
 | [The Black Baby Bull](./the-black-baby-bull.md) | BABYANSEM | 🟡 38/100 Medium Risk | 2026-07-04 | [↗](https://quantumaudit.app/token/the-black-baby-bull-sol) |
 | [The IQ Bull](./the-iq-bull.md) | AMEN | 🟡 40/100 Medium Risk | 2026-07-04 | [↗](https://quantumaudit.app/token/the-iq-bull-sol) |
 | [manlet](./manlet.md) | MANLET | 🟡 33/100 Medium Risk | 2026-07-04 | [↗](https://quantumaudit.app/token/manlet-sol) |

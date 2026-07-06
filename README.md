@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-148-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-149-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,7 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [The White Bull](./solana/the-white-bull.md) | DAVID | Solana | 🟡 28/100 | 2026-07-06 | [↗](https://quantumaudit.app/token/the-white-bull-sol) |
 | [The Black Baby Bull](./solana/the-black-baby-bull.md) | BABYANSEM | Solana | 🟡 38/100 | 2026-07-04 | [↗](https://quantumaudit.app/token/the-black-baby-bull-sol) |
 | [The IQ Bull](./solana/the-iq-bull.md) | AMEN | Solana | 🟡 40/100 | 2026-07-04 | [↗](https://quantumaudit.app/token/the-iq-bull-sol) |
 | [manlet](./solana/manlet.md) | MANLET | Solana | 🟡 33/100 | 2026-07-04 | [↗](https://quantumaudit.app/token/manlet-sol) |
@@ -41,13 +42,12 @@
 | [Arcium](./solana/arcium.md) | ARX | Solana | 🟠 57/100 | 2026-06-23 | [↗](https://quantumaudit.app/token/arcium-sol) |
 | [FarmTown](./solana/farmtown.md) | FARM | Solana | 🟡 32/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/farmtown-sol) |
 | [Humanity](./ethereum/humanity.md) | H | Ethereum | 🔴 87/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/humanity-eth) |
-| [RE](./ethereum/re.md) | RE | Ethereum | 🔴 78/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/re-eth) |
 
 ---
 
 ## Browse by Network
 
-[Solana (105)](./solana/README.md) · [Ethereum (32)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
+[Solana (106)](./solana/README.md) · [Ethereum (32)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
 
 ---
 

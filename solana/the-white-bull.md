@@ -1,0 +1,104 @@
+---
+token: The White Bull
+ticker: DAVID
+network: solana
+risk_score: 28
+status: medium
+date: 2026-07-06
+---
+
+# The White Bull (DAVID) — Smart Contract Security Analysis | Solana
+
+> **Risk Score: 28/100 — 🟡 Medium Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-white-bull-sol)
+
+---
+
+## Audit Summary
+
+The SPL Token Mint for The White Bull (DAVID) has its mint and freeze authorities revoked, indicating a fixed supply and no ability to freeze accounts. No critical Token-2022 extensions like transfer hooks or permanent delegates are active. Holder concentration data was unavailable, and RugCheck.xyz provides a score of 70/100 with some risk labels, but no explicit 'RUGGED' verdict was found.
+
+> **Final Recommendation:** The White Bull (DAVID) token exhibits strong security characteristics regarding its mint and freeze authorities, which are both revoked. This indicates a fixed supply and no ability for an issuer to freeze user funds. No critical Token-2022 extensions are active. However, holder concentration data was unavailable, which is a key metric for assessing market manipulation risk. Investors should be aware of the RugCheck.xyz risk labels, particularly 'Top 10 holders high ownership' and 'Large Amount of LP Unlocked', and consider these factors when evaluating the token's long-term viability and potential for price volatility. A Premium Deploy option would involve further off-chain due diligence on the project team and community engagement.
+
+## Security Analysis
+
+The SPL Token Mint for The White Bull (DAVID) has its mint and freeze authorities revoked, indicating a fixed supply and no ability to freeze accounts. No critical Token-2022 extensions like transfer hooks or permanent delegates are active. Holder concentration data was unavailable, and RugCheck.xyz provides a score of 70/100 with some risk labels, but no explicit 'RUGGED' verdict was found.
+
+The White Bull (DAVID) token exhibits strong security characteristics regarding its mint and freeze authorities, which are both revoked. This indicates a fixed supply and no ability for an issuer to freeze user funds. No critical Token-2022 extensions are active. However, holder concentration data was unavailable, which is a key metric for assessing market manipulation risk. Investors should be aware of the RugCheck.xyz risk labels, particularly 'Top 10 holders high ownership' and 'Large Amount of LP Unlocked', and consider these factors when evaluating the token's long-term viability and potential for price volatility. A Premium Deploy option would involve further off-chain due diligence on the project team and community engagement.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The token mint operates under the spl-token-2022 program. Both the mint authority and freeze authority have been revoked (None), ensuring no new tokens can be minted and no existing tokens can be froz |
+| **Governance / Economics** | 7/10 | Low | The token has a liquidity of $94,879 USD and a 24-hour volume of $220,788 USD. The Volume/Liquidity Ratio is 2.33, which is considered normal and does not suggest wash trading. The pair age is 7 days, |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's core parameters cannot be altered by an external key. GoPlus data indicates that metadata is not mutable, preventing chang |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`HULaBK...pump`](https://solscan.io/account/HULaBKR1eK3SA18FpfEav8Z2t7TJ1qEC775YHTLNpump) |
+| **Network** | Solana |
+| **Price** | $0.001314 |
+| **24h Volume** | $220.8K |
+| **Liquidity** | $94.9K |
+| **Volume / Liquidity** | 2.3× |
+| **Token Age** | 7d |
+| **Top-10 Holders** | N/A of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 1096 buys / 931 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/solana/5fl9afwwbhwyrngmoaadvr3ch3rjfqugnkwywglihwsa)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/the-white-bull-sol)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-07-06*
