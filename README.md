@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-149-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-152-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,9 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [The Red Dragon](./solana/the-red-dragon.md) | ZION | Solana | 🟡 36/100 | 2026-07-07 | [↗](https://quantumaudit.app/token/the-red-dragon-sol) |
+| [OpenGradient](./base/opengradient.md) | OPG | Base | 🟠 55/100 | 2026-07-07 | [↗](https://quantumaudit.app/token/opengradient-base) |
+| [Bonk](./solana/bonk.md) | BONK | Solana | 🟡 36/100 | 2026-07-07 | [↗](https://quantumaudit.app/token/bonk-sol) |
 | [The White Bull](./solana/the-white-bull.md) | DAVID | Solana | 🟡 28/100 | 2026-07-06 | [↗](https://quantumaudit.app/token/the-white-bull-sol) |
 | [The Black Baby Bull](./solana/the-black-baby-bull.md) | BABYANSEM | Solana | 🟡 38/100 | 2026-07-04 | [↗](https://quantumaudit.app/token/the-black-baby-bull-sol) |
 | [The IQ Bull](./solana/the-iq-bull.md) | AMEN | Solana | 🟡 40/100 | 2026-07-04 | [↗](https://quantumaudit.app/token/the-iq-bull-sol) |
@@ -39,15 +42,12 @@
 | [WORLD BET](./solana/world-bet.md) | WBET | Solana | 🟡 34/100 | 2026-06-25 | [↗](https://quantumaudit.app/token/world-bet-sol) |
 | [Grass](./solana/grass.md) | GRASS | Solana | 🟠 65/100 | 2026-06-24 | [↗](https://quantumaudit.app/token/grass-sol) |
 | [Grand Theft Auto VI](./solana/grand-theft-auto-vi.md) | GTAVI | Solana | 🟡 35/100 | 2026-06-23 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-sol) |
-| [Arcium](./solana/arcium.md) | ARX | Solana | 🟠 57/100 | 2026-06-23 | [↗](https://quantumaudit.app/token/arcium-sol) |
-| [FarmTown](./solana/farmtown.md) | FARM | Solana | 🟡 32/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/farmtown-sol) |
-| [Humanity](./ethereum/humanity.md) | H | Ethereum | 🔴 87/100 | 2026-06-22 | [↗](https://quantumaudit.app/token/humanity-eth) |
 
 ---
 
 ## Browse by Network
 
-[Solana (106)](./solana/README.md) · [Ethereum (32)](./ethereum/README.md) · [Base (8)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
+[Solana (108)](./solana/README.md) · [Ethereum (32)](./ethereum/README.md) · [Base (9)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
 
 ---
 

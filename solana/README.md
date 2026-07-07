@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**106 reports** · Updated daily · [← All Networks](../README.md)
+**108 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [The Red Dragon](./the-red-dragon.md) | ZION | 🟡 36/100 Medium Risk | 2026-07-07 | [↗](https://quantumaudit.app/token/the-red-dragon-sol) |
+| [Bonk](./bonk.md) | BONK | 🟡 36/100 Medium Risk | 2026-07-07 | [↗](https://quantumaudit.app/token/bonk-sol) |
 | [The White Bull](./the-white-bull.md) | DAVID | 🟡 28/100 Medium Risk | 2026-07-06 | [↗](https://quantumaudit.app/token/the-white-bull-sol) |
 | [The Black Baby Bull](./the-black-baby-bull.md) | BABYANSEM | 🟡 38/100 Medium Risk | 2026-07-04 | [↗](https://quantumaudit.app/token/the-black-baby-bull-sol) |
 | [The IQ Bull](./the-iq-bull.md) | AMEN | 🟡 40/100 Medium Risk | 2026-07-04 | [↗](https://quantumaudit.app/token/the-iq-bull-sol) |
