@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**109 reports** · Updated daily · [← All Networks](../README.md)
+**111 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [the bleck bull](./the-bleck-bull.md) | ANSUM | 🟡 35/100 Medium Risk | 2026-07-09 | [↗](https://quantumaudit.app/token/the-bleck-bull-sol) |
+| [Free Joby](./free-joby.md) | JOBY | 🟡 21/100 Medium Risk | 2026-07-09 | [↗](https://quantumaudit.app/token/free-joby-sol) |
 | [The Orange Bull](./the-orange-bull.md) | SAYLOR | 🟡 23/100 Medium Risk | 2026-07-08 | [↗](https://quantumaudit.app/token/the-orange-bull-sol) |
 | [The Red Dragon](./the-red-dragon.md) | ZION | 🟡 36/100 Medium Risk | 2026-07-07 | [↗](https://quantumaudit.app/token/the-red-dragon-sol) |
 | [Bonk](./bonk.md) | BONK | 🟡 36/100 Medium Risk | 2026-07-07 | [↗](https://quantumaudit.app/token/bonk-sol) |

@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-153-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-155-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,8 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [the bleck bull](./solana/the-bleck-bull.md) | ANSUM | Solana | 🟡 35/100 | 2026-07-09 | [↗](https://quantumaudit.app/token/the-bleck-bull-sol) |
+| [Free Joby](./solana/free-joby.md) | JOBY | Solana | 🟡 21/100 | 2026-07-09 | [↗](https://quantumaudit.app/token/free-joby-sol) |
 | [The Orange Bull](./solana/the-orange-bull.md) | SAYLOR | Solana | 🟡 23/100 | 2026-07-08 | [↗](https://quantumaudit.app/token/the-orange-bull-sol) |
 | [The Red Dragon](./solana/the-red-dragon.md) | ZION | Solana | 🟡 36/100 | 2026-07-07 | [↗](https://quantumaudit.app/token/the-red-dragon-sol) |
 | [OpenGradient](./base/opengradient.md) | OPG | Base | 🟠 55/100 | 2026-07-07 | [↗](https://quantumaudit.app/token/opengradient-base) |
@@ -40,14 +42,12 @@
 | [Miu](./solana/miu.md) | MIU | Solana | 🟡 40/100 | 2026-06-27 | [↗](https://quantumaudit.app/token/miu-sol) |
 | [Kled AI](./solana/kled-ai.md) | KLED | Solana | 🟡 21/100 | 2026-06-27 | [↗](https://quantumaudit.app/token/kled-ai-sol) |
 | [Buttcoin](./solana/buttcoin.md) | BUTTCOIN | Solana | 🟢 19/100 | 2026-06-26 | [↗](https://quantumaudit.app/token/buttcoin-sol) |
-| [WORLD BET](./solana/world-bet.md) | WBET | Solana | 🟡 34/100 | 2026-06-25 | [↗](https://quantumaudit.app/token/world-bet-sol) |
-| [Grass](./solana/grass.md) | GRASS | Solana | 🟠 65/100 | 2026-06-24 | [↗](https://quantumaudit.app/token/grass-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (109)](./solana/README.md) · [Ethereum (32)](./ethereum/README.md) · [Base (9)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
+[Solana (111)](./solana/README.md) · [Ethereum (32)](./ethereum/README.md) · [Base (9)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
 
 ---
 
