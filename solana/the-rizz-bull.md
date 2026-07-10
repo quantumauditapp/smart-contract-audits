@@ -1,0 +1,104 @@
+---
+token: The Rizz Bull
+ticker: RIZZLER
+network: solana
+risk_score: 49
+status: high
+date: 2026-07-10
+---
+
+# The Rizz Bull (RIZZLER) — Smart Contract Security Analysis | Solana
+
+> **Risk Score: 49/100 — 🟠 High Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-rizz-bull-sol)
+
+---
+
+## Audit Summary
+
+The Rizz Bull (Rizzler) is a Solana SPL Token-2022 mint with its mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. However, the DEX pair is very new, having been created only 2 days ago, which means there is insufficient track record to assess team or holder behavior. Holder concentration data was unavailable, preventing a full assessment of supply distribution risk.
+
+> **Final Recommendation:** Given the revoked mint and freeze authorities, the token's core parameters are secure against issuer-initiated supply dilution or asset confiscation. However, the very recent creation of the DEX pair (2 days old) introduces significant market risk due to an unproven track record. Potential holders should exercise caution and monitor the project's development and market activity closely over a longer period. It is recommended to wait for more established trading history and, if possible, to obtain holder distribution data to assess concentration risk before making significant investments. For projects seeking to establish long-term trust, ensuring all relevant data, such as holder distribution, is publicly available and verifiable is crucial.
+
+## Security Analysis
+
+The Rizz Bull (Rizzler) is a Solana SPL Token-2022 mint with its mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. However, the DEX pair is very new, having been created only 2 days ago, which means there is insufficient track record to assess team or holder behavior. Holder concentration data was unavailable, preventing a full assessment of supply distribution risk.
+
+Given the revoked mint and freeze authorities, the token's core parameters are secure against issuer-initiated supply dilution or asset confiscation. However, the very recent creation of the DEX pair (2 days old) introduces significant market risk due to an unproven track record. Potential holders should exercise caution and monitor the project's development and market activity closely over a longer period. It is recommended to wait for more established trading history and, if possible, to obtain holder distribution data to assess concentration risk before making significant investments. For projects seeking to establish long-term trust, ensuring all relevant data, such as holder distribution, is publicly available and verifiable is crucial.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The Rizz Bull (Rizzler) is implemented using the spl-token-2022 program. Its core security features are robust, with both the mint authority and freeze authority explicitly revoked (None), ensuring no |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a liquidity of $25,502 USD, which is moderate but sufficient for smaller trades. The 24-hour volume of $111,304 USD results in a healthy Volume/Liquidity Ratio of 4.36, which does n |
+| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable, as both the mint and freeze authorities have been revoked. This means the token supply cannot be increased, and user accounts cannot be frozen. Furth |
+
+## Security Findings
+
+_🟡 1 Medium · ⚪ 2 Informational_
+
+### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
+
+DEX pair was created 2 days ago. Insufficient track record to assess team or holder behaviour.
+
+**Recommendation:** Account for the limited history when assessing the token's stability and team's reliability. Consider waiting for a more established track record before significant investment.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`7AJ9sd...pump`](https://solscan.io/account/7AJ9sdZW6Sodb8ajnEkESeWtQVVHyZ4Gg85H3c1Ypump) |
+| **Network** | Solana |
+| **Price** | $0.00009696 |
+| **24h Volume** | $111.4K |
+| **Liquidity** | $25.5K |
+| **Volume / Liquidity** | 4.4× |
+| **Token Age** | 2d |
+| **Top-10 Holders** | 33.1% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 40024 buys / 61534 sells |
+
+## Security Flags (3/5 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ❌ Fail |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/solana/7h9bf3syrhnpruccbnjyftchclifnb9i87sgxeznvtpd)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/the-rizz-bull-sol)
+- Security data: [GoPlus Labs](https://gopluslabs.io)
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-07-10*
