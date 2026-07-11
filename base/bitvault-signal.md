@@ -17,19 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The ClankerToken contract is an ERC20 token with extensions for burning, permits, and voting, designed for cross-chain functionality. It leverages battle-tested OpenZeppelin libraries, contributing to a strong technical foundation. The primary risks identified are related to centralized administrative control over critical token parameters and the inherent reliance on the security of the external Superchain Token Bridge for cross-chain supply management.
+The ClankerToken contract implements an ERC20 token with extensions for burning, permits, and voting, leveraging battle-tested OpenZeppelin libraries. It includes custom logic for cross-chain minting/burning via a Superchain Token Bridge and administrative control over metadata. Key findings include centralized administrative control, a critical dependency on the external Superchain Token Bridge for supply management, and a potentially misleading `maxSupply_` parameter.
 
-> **Final Recommendation:** The ClankerToken contract is generally well-designed and utilizes robust, audited libraries. The primary areas of concern revolve around the centralized control of the `_admin` role and the critical dependency on the `SuperchainTokenBridge`. It is recommended to implement robust operational security measures for the `_admin` key and thoroughly audit the `SuperchainTokenBridge` if it falls within the scope of the overall system. 
-
-For enhanced security and continuous monitoring, consider a Premium Deploy option. This service provides ongoing vigilance, real-time threat detection, and rapid response capabilities, ensuring the long-term integrity and resilience of your deployed contracts.
+> **Final Recommendation:** It is recommended to implement robust security measures for the `_admin` address, such as a multi-signature wallet, to mitigate the risks associated with centralized control. Thoroughly audit and monitor the `SUPERCHAIN_TOKEN_BRIDGE` contract, as its security is paramount to the integrity of the token's cross-chain supply. Additionally, enhance documentation to clearly articulate the role of `maxSupply_` and the overall token supply mechanism across chains, ensuring transparency for users and integrators.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract demonstrates strong technical security (7.2 Code Security) by inheriting from well-audited OpenZeppelin ERC20, ERC20Permit, ERC20Votes, and ERC20Burnable contracts, minimizing common… |
-| **Governance / Economics** | 1/10 | High | The contract exhibits a medium governance and economic risk profile (7.4 Economic, 7.5 Governance) due to its centralized administrative structure. The `_admin` role holds significant power… |
-| **Upgrades** | 8/10 | Low | The ClankerToken contract is not designed to be upgradeable (7.7 Upgrades), which inherently eliminates risks associated with proxy patterns, upgradeability logic, and potential upgrade path… |
+| **Technical** | 8/10 | Low | The contract demonstrates strong technical foundations by inheriting from well-audited OpenZeppelin ERC20 extensions (ERC20Burnable, ERC20Permit, ERC20Votes), which minimizes common code-level… |
+| **Governance / Economics** | 1/10 | High | The contract's economic model relies on a fixed initial supply on a specific chain, with subsequent supply adjustments managed by the `SUPERCHAIN_TOKEN_BRIDGE` for cross-chain transfers (7.4… |
+| **Upgrades** | 8/10 | Low | The ClankerToken contract is implemented as a standard, non-upgradeable ERC20 token (7.7 Upgrades). It does not utilize any proxy patterns, meaning its logic cannot be modified post-deployment. This… |
 
 ## LP Distribution
 
@@ -42,32 +40,32 @@ For enhanced security and continuous monitoring, consider a Premium Deploy optio
 
 _🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Centralized Administrative Control  *(Severity: High · Status: Unresolved)*
+### `H-01` — Centralized Control of Metadata and Admin Role  *(Severity: High · Status: Unresolved)*
 
-The `_admin` address has significant control over the contract, including the ability to transfer the admin role via `updateAdmin()`, and to update token metadata (`updateMetadata()`) and image (`updateImage()`). A compromise of this single address could lead to unauthorized changes to the token's administrative control and its public-facing information, potentially causing reputational damage or manipulation of token data. This represents a single point of failure (7.3 Access Control).
+The `_admin` address has significant control over the token's mutable properties. It can update the `_image`, `_metadata`, and `_context` strings, which are critical for how the token is represented in interfaces and external systems. Furthermore, the `_admin` can transfer its own role to any other address via `updateAdmin()`. A compromise of this single `_admin` address could lead to unauthorized changes to the token's public representation and a complete loss of administrative control.
 
-**Recommendation:** Implement a multi-signature wallet or a time-locked governance mechanism for the `_admin` role to reduce the risk of a single point of failure. For critical operations like `updateAdmin()`, consider adding a timelock or requiring multiple approvals. Clearly document the responsibilities and security procedures for managing the `_admin` key.
-
-
-### `M-01` — Reliance on External Superchain Token Bridge  *(Severity: Medium · Status: Unresolved)*
-
-The `crosschainMint` and `crosschainBurn` functions, which control the token's supply adjustments for cross-chain transfers, are exclusively callable by `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`. The security and integrity of this external bridge are critical for the token's supply management across chains. Any vulnerability or misconfiguration in the `SUPERCHAIN_TOKEN_BRIDGE` could lead to unauthorized minting or burning of tokens, impacting the token's total supply and value (7.6 External, 7.4 Economic).
-
-**Recommendation:** Ensure that the `SUPERCHAIN_TOKEN_BRIDGE` itself has undergone rigorous security audits and maintains robust operational security. Implement monitoring systems to detect unusual minting or burning activity originating from the bridge. While this contract cannot directly control the bridge's security, understanding and mitigating risks associated with this dependency is crucial.
+**Recommendation:** Consider implementing a multi-signature wallet for the `_admin` role to require multiple approvals for sensitive operations like `updateAdmin()`, `updateImage()`, and `updateMetadata()`. Alternatively, introduce a time-lock mechanism for such critical changes to provide a window for detection and intervention.
 
 
-### `L-01` — Lack of Zero Address Validation for Admin in Constructor  *(Severity: Low · Status: Unresolved)*
+### `M-01` — Critical Reliance on External Superchain Token Bridge for Supply Management  *(Severity: Medium · Status: Unresolved)*
 
-The constructor does not explicitly validate if the `admin_` parameter is the zero address (`address(0)`). While unlikely to be deployed with a zero address in a production environment, if this were to occur, the `_admin` role would be unmanageable, effectively locking out all administrative functions such as `updateAdmin()`, `updateImage()`, and `updateMetadata()` (7.3 Access Control).
+The `crosschainMint()` and `crosschainBurn()` functions are essential for managing the token's supply across different chains. These functions are exclusively callable by the `Predeploys.SUPERCHAIN_TOKEN_BRIDGE` address. The security and integrity of the token's total supply are therefore entirely dependent on the security, correct configuration, and operational robustness of this external bridge contract. Any vulnerability or compromise within the `SUPERCHAIN_TOKEN_BRIDGE` could directly lead to unauthorized minting or burning of ClankerToken, severely impacting its economic stability.
 
-**Recommendation:** Add a require statement in the constructor to ensure that `admin_` is not the zero address: `require(admin_ != address(0), "Admin cannot be zero address");`.
+**Recommendation:** Ensure that the `SUPERCHAIN_TOKEN_BRIDGE` contract is subject to rigorous security audits, continuous monitoring, and robust operational security practices. Document the critical dependency on this bridge and its implications for the token's supply model. Consider establishing clear emergency procedures in case of a bridge compromise.
 
 
-### `I-01` — Immutability of `_originalAdmin` and One-Time `verify()` Function  *(Severity: Informational · Status: Unresolved)*
+### `L-01` — Misleading `maxSupply_` Parameter in Constructor  *(Severity: Low · Status: Unresolved)*
 
-The `_originalAdmin` address is set as immutable in the constructor and is the only address capable of calling the `verify()` function. This function can only be called once. This design choice provides a single, non-transferable authority for a one-time verification event, which is a strong security practice for this specific function (7.1 Architecture, 7.3 Access Control). However, if the `_originalAdmin` key is lost before `verify()` is called, the function can never be executed.
+The `maxSupply_` parameter in the constructor is used to mint the initial supply only if `block.chainid == initialSupplyChainId_`. However, the `crosschainMint()` function allows the `SUPERCHAIN_TOKEN_BRIDGE` to mint additional tokens at any time. This means that `maxSupply_` does not represent a global maximum supply for the token across all chains, but rather the initial supply on a specific chain. This could be misleading to users, exchanges, or protocols that might interpret `maxSupply_` as a hard cap on the total token supply.
 
-**Recommendation:** No direct recommendation for a code change, as this is a design choice. Ensure the `_originalAdmin` key is securely managed and backed up, and that the `verify()` function is called at the appropriate time in the project's lifecycle.
+**Recommendation:** Clarify in the contract's NatSpec documentation and external project documentation that `maxSupply_` refers specifically to the initial supply minted on the designated chain, and that the total supply can increase through cross-chain minting operations. Consider renaming the parameter to `initialChainSupply_` or similar for better clarity.
+
+
+### `I-01` — Single-Use `verify()` Function  *(Severity: Informational · Status: Unresolved)*
+
+The `verify()` function can only be called once by the `_originalAdmin` to set the `_verified` flag to `true`. Once set, it cannot be changed. While this is the intended design, the specific purpose and implications of this `_verified` flag for the token's functionality, ecosystem integration, or future operations are not explicitly detailed within the contract's code comments.
+
+**Recommendation:** Add comprehensive NatSpec documentation to the `verify()` function and the `_verified` state variable, explaining its purpose, what 'verified' status signifies, and any external systems or processes that rely on this flag. This will improve clarity for future developers and integrators.
 
 ## Token Metrics
 

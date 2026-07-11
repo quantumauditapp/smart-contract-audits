@@ -17,17 +17,17 @@ date: 2026-06-27
 
 ## Audit Summary
 
-The catwifhat (CATWIF) SPL Token Mint has revoked both mint and freeze authorities, indicating a fixed supply and no ability to freeze user accounts. No Token-2022 extensions that introduce centralisation risks, such as permanent delegates or transfer hooks, are active. Holder concentration data was unavailable, preventing an assessment of distribution risk. Overall, the token exhibits a low-risk profile based on available on-chain data.
+This audit of the catwifhat (CATWIF) SPL Token Mint found no critical or high-severity risks based on the provided on-chain facts and deterministic rules. Both mint and freeze authorities have been revoked, indicating a fixed supply and unfreezable accounts. No Token-2022 extensions that introduce significant risk, such as transfer hooks or default frozen states, are active. Holder concentration data was unavailable, preventing an assessment of supply distribution risk.
 
-> **Final Recommendation:** Based on the available on-chain data, the catwifhat (CATWIF) token presents a low-risk profile. Both mint and freeze authorities are revoked, ensuring a fixed supply and preventing arbitrary freezing of funds. No concerning Token-2022 extensions are active, and metadata is immutable. Investors should note that holder concentration data was unavailable, which is a common limitation for new tokens. It is always recommended to perform independent due diligence and understand the project's fundamentals before investing. For a Premium Deploy, ensure all relevant authorities are permanently revoked and consider a time-locked liquidity pool.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to confirm the fixed supply and unfreezable nature of the token. Monitor for any future changes in liquidity and trading volume patterns. As holder concentration data was unavailable, users should be aware of potential market volatility if large portions of the supply are held by a few entities, and consider checking this data independently if it becomes available.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The catwifhat (CATWIF) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, as confirmed by `Mint Authority: revoked (None)` and `Freeze Authority: revoked… |
-| **Governance / Economics** | 6/10 | Medium | The token's liquidity on DEXs is $105,582, which is sufficient to avoid the 'Very Low Liquidity' flag. The 24-hour volume is $1,068,051, resulting in a Volume/Liquidity Ratio of 10.12, which does not… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's core parameters related to supply and account control cannot be changed. The token uses the spl-token-2022 program but… |
+| **Technical** | 6/10 | Medium | The catwifhat (CATWIF) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a total DEX liquidity of $151,785, with a 24-hour trading volume of $1,128,329. The Volume/Liquidity Ratio is 7.43, which does not trigger the wash trading signal threshold (7.4… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the catwifhat (CATWIF) token have both been revoked, meaning the token's supply is fixed and no accounts can be frozen post-launch (7.7 Upgrades). The… |
 
 ## Token Metrics
 

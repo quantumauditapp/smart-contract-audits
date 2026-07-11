@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This Solana SPL Token Mint, 'Aliens are real', demonstrates a strong security posture regarding its core mint configurations. Both mint and freeze authorities have been revoked, preventing further token issuance or account freezing. Key information regarding holder concentration and DEX liquidity was unavailable, limiting a full economic assessment.
+This audit of the Aliens SPL Token Mint found no critical or high-severity issues based on available on-chain data and third-party risk registries. The mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Holder distribution data was unavailable, preventing an assessment of concentration risk.
 
-> **Final Recommendation:** Given the revocation of mint and freeze authorities, this token's supply is fixed and user accounts cannot be frozen by an authority. However, due to the unavailability of holder distribution and DEX liquidity data, potential investors should exercise caution. It is recommended to verify on-chain liquidity and holder concentration independently before making investment decisions. For a premium deployment, ensure all relevant Token-2022 extensions are configured as intended and audited.
+> **Final Recommendation:** Prospective holders should monitor the token's liquidity and trading volume for any significant changes that could impact market depth. Given the unavailability of holder distribution data, it is advisable to observe on-chain holder patterns if possible, to understand potential concentration risks. Always verify the current state of the token's authorities directly on-chain before making any investment decisions, especially regarding the mint and freeze authorities.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.3 Access Control: The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked (None), which is a strong security practice as it prevents… |
-| **Governance / Economics** | 7/10 | Low | 7.4 Economic & 7.5 Governance: Information regarding holder concentration was unavailable, preventing an assessment of supply distribution. Similarly, no DEX pair data was available, meaning… |
-| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The revocation of both mint and freeze authorities ensures that the token's supply and account freeze status cannot be altered post-launch. GoPlus data indicates `metadata_mutable… |
+| **Technical** | 6/10 | Medium | The Aliens token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing token… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a total DEX liquidity of $94,820, with a 24-hour trading volume of $72,217. The volume-to-liquidity ratio is 0.76, which is considered normal and does not suggest wash trading. The… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and account freeze status are immutable. The token does not have a transfer hook, and the… |
 
 ## Token Metrics
 

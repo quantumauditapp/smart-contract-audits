@@ -2,14 +2,14 @@
 token: Purple Bitcoin
 ticker: PBTC
 network: solana
-risk_score: 18
+risk_score: 8
 status: low
 date: 2026-06-10
 ---
 
 # Purple Bitcoin (PBTC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 18/100 — 🟢 Low Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/purple-bitcoin-sol)
 
@@ -17,33 +17,23 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Purple Bitcoin (PBTC) SPL token mint has its mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts by an issuer. However, new holder accounts are created in a frozen state, requiring an authority to unfreeze them before use. Holder concentration data was unavailable, preventing a full assessment of distribution risk, and RugCheck.xyz flagged the token as a "Copycat token" with a low score of 29/100.
+The Purple Bitcoin (PBTC) SPL token mint demonstrates a strong security posture with both mint and freeze authorities revoked, ensuring a fixed supply and preventing account freezing. No mutable authorities or active Token-2022 extensions that could alter token behavior were identified. A third-party risk registry flags this token as a 'Copycat token', and holder distribution data was unavailable from chain-native RPC.
 
-> **Final Recommendation:** For holders considering interaction with Purple Bitcoin (PBTC), it is crucial to understand the implications of the default frozen account state. New token accounts will be unusable until an authorized party unfreezes them. Verify the availability and responsiveness of the issuer or a designated authority to perform this unfreezing operation. The "Copycat token" label from RugCheck.xyz also warrants caution regarding the project's legitimacy and long-term viability.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to confirm the immutability of the token's supply and transferability. Monitor for any future changes in the token's status or associated programs. Given the 'Copycat token' signal from a third-party risk registry, conduct thorough independent due diligence on the token's origin, branding, and project legitimacy before any significant interaction.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The PBTC token is an SPL token operating under the `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and existing accounts… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $334,574 USD available on DEXs, and a healthy 24-hour volume of $74,524, resulting in a normal volume/liquidity ratio of 0.22. The DEX pair has been active… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, which means the token's supply is fixed and no accounts can be frozen by an issuer, indicating a high degree of immutability for core token… |
+| **Technical** | 6/10 | Medium | The token is implemented using the standard spl-token program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account freezing. No… |
+| **Governance / Economics** | 7/10 | Low | DEX market data indicates a healthy liquidity of $235,645 USD and a 24-hour volume of $242,805 USD. The Volume/Liquidity Ratio is 1.03, which is normal and does not suggest wash trading. The DEX pair… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or the ability to freeze holder accounts. Metadata is immutable (`metadata_mutable… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
 | **LP Burned** | ✅ 100.0% (≈ permanent lock) |
-
-## Security Findings
-
-_🟠 1 High_
-
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
-
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority. (Fact: `GoPlus.default_account_state: 1`)
-
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: OpenGradient
 ticker: OPG
 network: base
-risk_score: 55
+risk_score: 57
 status: high
 date: 2026-07-07
 ---
 
 # OpenGradient (OPG) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 57/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/opengradient-base)
 
@@ -17,19 +17,17 @@ date: 2026-07-07
 
 ## Audit Summary
 
-The OpenGradientToken contract is a straightforward ERC20 token implementation, leveraging battle-tested OpenZeppelin libraries for its core functionality and ERC20Permit extension. It features a fixed total supply minted entirely to a single recipient during deployment and includes a basic burn function. The contract is designed to be immutable and decentralized, with no administrative roles or upgrade mechanisms. The overall risk is assessed as Low due to its simplicity, reliance on audited libraries, and lack of complex custom logic.
+The OpenGradientToken contract is a standard ERC20 token with a fixed supply, built upon battle-tested OpenZeppelin libraries. It explicitly lacks administrative functions and is immutable, ensuring a high degree of decentralization and predictability. The custom `burn` function is correctly implemented. The audit identified no critical or high-severity vulnerabilities. Informational findings relate to the inherent trade-offs of its immutable and decentralized design.
 
-> **Final Recommendation:** The OpenGradientToken contract is well-implemented, simple, and relies on battle-tested libraries, resulting in a Low overall risk profile. The identified informational findings relate to design choices rather than vulnerabilities. The project is suitable for deployment as-is, provided the design choices regarding immutability, initial distribution, and lack of emergency controls align with the project's long-term vision.
-
-For enhanced security and operational oversight, consider a Premium Deploy option. This service offers continuous monitoring, incident response planning, and expert support post-deployment, ensuring ongoing protection against emerging threats and operational challenges.
+> **Final Recommendation:** The OpenGradientToken contract is robust and secure due to its simplicity and reliance on OpenZeppelin's audited libraries. Users should be aware of the token's immutable nature and the absence of administrative control, which means no future changes or emergency interventions are possible. Projects integrating with this token should account for its fixed supply and decentralized design in their long-term planning.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The technical architecture (7.1) is robust, utilizing standard ERC20 and ERC20Permit implementations from OpenZeppelin Contracts, which are extensively audited and widely adopted. Code security (7.2)… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4) is simple and transparent: a fixed total supply of 1 billion tokens is minted once at deployment. There are no minting capabilities post-deployment, ensuring a predictable… |
-| **Upgrades** | 8/10 | Low | The contract is explicitly designed to be immutable and is not upgradeable (7.7). This eliminates all risks associated with upgrade mechanisms, such as proxy implementation bugs or administrative key… |
+| **Technical** | 8/10 | Low | The contract leverages battle-tested OpenZeppelin ERC20 and ERC20Permit implementations, ensuring robust and standard token functionality (7.2 Code Security). Solidity 0.8.26 provides default… |
+| **Governance / Economics** | 1/10 | High | The contract is designed for complete decentralization, with a fixed total supply of 1 billion tokens minted at deployment (7.4 Economic, 7.5 Governance). There are no administrative functions, owner… |
+| **Upgrades** | 8/10 | Low | The OpenGradientToken contract is explicitly designed as an immutable, non-upgradeable token, eliminating all risks associated with proxy patterns, upgradeability bugs, or malicious upgrade paths… |
 
 ## LP Distribution
 
@@ -40,27 +38,27 @@ For enhanced security and operational oversight, consider a Premium Deploy optio
 
 ## Security Findings
 
-_⚪ 3 Informational_
+_🟢 1 Low · ⚪ 2 Informational_
 
-### `I-01` — Centralized Initial Token Distribution  *(Severity: Informational · Status: Unresolved)*
+### `L-01` — Irreversible Burn Function  *(Severity: Low · Status: Unresolved)*
 
-The entire `TOTAL_SUPPLY` of 1 billion tokens is minted to a single `recipient` address during the contract's constructor. This design choice centralizes the initial distribution of all tokens to one address, which then holds the sole responsibility for subsequent distribution. While intended for a fixed-supply token, it represents a single point of control at genesis (7.4 Economic, 7.3 Access Control).
+The contract includes a `burn` function that allows any token holder to permanently destroy their own tokens. While this function is correctly implemented using OpenZeppelin's `_burn` and adheres to ERC20 standards, the action is irreversible. If a user accidentally burns tokens, there is no mechanism to recover them.
 
-**Recommendation:** Acknowledge this design choice. Ensure the designated `recipient` address is secured with robust multi-signature controls or a time-locked vault if the project intends to distribute tokens over time. This is a design decision, not a vulnerability, but its implications should be fully understood.
-
-
-### `I-02` — Immutability and Lack of Upgradeability  *(Severity: Informational · Status: Unresolved)*
-
-The contract is not upgradeable, meaning its logic cannot be modified post-deployment. While this enhances decentralization and eliminates upgrade-related risks (7.7 Upgrades), it also means that any discovered bugs, security vulnerabilities, or desired feature enhancements would necessitate a new contract deployment and a potentially complex token migration process (7.8 Operations).
-
-**Recommendation:** Confirm that the project's long-term strategy accounts for the immutability of this contract. If future flexibility is desired, consider a proxy-based upgradeable architecture for future contracts, understanding the trade-offs in terms of complexity and trust assumptions.
+**Recommendation:** Educate users about the irreversible nature of the `burn` function. Implement clear UI/UX warnings in any front-end interfaces that interact with this function to prevent accidental token loss. Consider adding a multi-step confirmation process for burning tokens.
 
 
-### `I-03` — Absence of Emergency Pause Mechanism  *(Severity: Informational · Status: Unresolved)*
+### `I-01` — Immutability and Lack of Upgradeability  *(Severity: Informational · Status: Unresolved)*
 
-The contract lacks any functionality to pause token transfers or other critical operations. While this aligns with the goal of decentralization and minimal administrative control, it removes a potential safety mechanism to mitigate severe vulnerabilities or widespread exploits in an emergency scenario (7.8 Operations).
+The OpenGradientToken contract is designed to be immutable and non-upgradeable. This design choice eliminates risks associated with proxy patterns and malicious upgrades, providing certainty about the contract's behavior over time (7.7 Upgrades). However, it also means that no bug fixes, feature enhancements, or adjustments can be made to the contract logic post-deployment. Any future changes would require deploying a new token contract and migrating users.
 
-**Recommendation:** Acknowledge the trade-off between decentralization and emergency response capabilities. For projects where a safety net is deemed critical, consider implementing a pause mechanism, ideally controlled by a robust governance or multi-signature system, to be used only in extreme circumstances. Given the contract's simplicity, this risk is low, but it's a common design consideration.
+**Recommendation:** Acknowledge this design choice and its implications. Ensure all initial requirements are thoroughly met, as no on-chain modifications are possible. Communicate clearly to the community that the token contract is immutable.
+
+
+### `I-02` — Fixed Supply and Absence of Administrative Control  *(Severity: Informational · Status: Unresolved)*
+
+The contract is designed with a fixed total supply of 1 billion tokens, all minted to a recipient during deployment, and explicitly states 'No centralized admin functions - completely decentralized' (7.4 Economic, 7.5 Governance). This design choice ensures decentralization and prevents arbitrary supply manipulation or centralized control. However, it also means there are no on-chain mechanisms for future tokenomics adjustments (e.g., adding staking rewards, adjusting supply for ecosystem growth) or emergency actions (e.g., pausing transfers in case of a critical vulnerability in an integrated protocol).
+
+**Recommendation:** Ensure that the project's long-term vision and tokenomics are fully compatible with a fixed supply and lack of administrative control. If future flexibility is desired, consider off-chain governance mechanisms or separate contracts for ecosystem incentives that interact with this token.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: Arcium
 ticker: ARX
 network: solana
-risk_score: 57
+risk_score: 59
 status: high
 date: 2026-06-23
 ---
 
 # Arcium (ARX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 59/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/arcium-sol)
 
@@ -17,19 +17,27 @@ date: 2026-06-23
 
 ## Audit Summary
 
-This audit of the Arcium (ARX) SPL token mint found no critical or high-severity issues based on the available on-chain data and external security signals. Both mint and freeze authorities have been revoked, indicating a fixed supply and immutable freeze status. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
+The Arcium (ARX) SPL token mint has its mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. However, its metadata is mutable, allowing changes to the token's name, symbol, or image post-launch. Holder distribution data was unavailable from chain-native RPC.
 
-> **Final Recommendation:** The Arcium (ARX) token mint appears to be well-configured with critical authorities revoked, offering a fixed supply and immutable freeze status. Investors should note the absence of holder concentration data, which is crucial for assessing potential market manipulation risks. It is recommended to monitor for this data if it becomes available.
-
-For a Premium Deploy, consider implementing a robust monitoring solution for holder distribution and liquidity metrics, and conduct ongoing due diligence on the project's ecosystem and team, especially given the relatively new pair age.
+> **Final Recommendation:** Before interacting with this token, verify on-chain that the metadata (name, symbol, image) aligns with current expectations, as it can be changed by an authority. Monitor the token's official communication channels for any announcements regarding metadata updates. Be aware that while direct holder distribution percentages were unavailable, third-party signals suggest high ownership concentration, which could impact market stability.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.2 Code Security: The Arcium (ARX) token is an SPL token mint operating on the Solana blockchain using the standard `spl-token` program. This token mint has robust security… |
-| **Governance / Economics** | 1/10 | High | 7.4 Economic: The token exhibits moderate liquidity with $306,291 USD in total DEX liquidity. The 24-hour trading volume is $3,984 USD, resulting in a healthy Volume/Liquidity Ratio of 0.01, which… |
-| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The token mint's critical authorities, Mint Authority and Freeze Authority, have been revoked, indicating that the token's supply and freeze capabilities are immutable. GoPlus data… |
+| **Technical** | 6/10 | Medium | The Arcium (ARX) token is an SPL token operating under the `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a healthy liquidity of $300,907 USD, with a very low 24-hour volume of $98 USD, resulting in a normal Volume/Liquidity Ratio of 0.00. The DEX pair has been active for 18 days… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply is fixed and accounts cannot be frozen. The token does not utilize Token-2022 extensions that introduce… |
+
+## Security Findings
+
+_🟢 1 Low_
+
+### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
+
+The token's metadata is mutable, meaning its name, symbol, or image can be changed post-launch. This introduces a risk of misrepresentation or rebranding without explicit holder consent.
+
+**Recommendation:** Verify metadata against off-chain expectations before trusting branding.
 
 ## Token Metrics
 

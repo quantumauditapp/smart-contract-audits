@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Baby Troll (BABYTROLL) SPL token mint demonstrates a secure configuration with both mint and freeze authorities revoked, ensuring a fixed supply and unfreezable accounts. No critical Token-2022 extensions like permanent delegates or transfer hooks are active. Holder concentration data was unavailable, and while no deterministic findings were triggered, a very low RugCheck score (1/100) is noted, which typically suggests caution.
+This audit of the Baby Troll (BABYTROLL) SPL Token Mint found no critical or high-severity issues based on the available on-chain data and third-party risk assessments. Both the mint and freeze authorities are revoked, indicating a fixed supply and no ability to freeze accounts. Holder concentration data was unavailable, and liquidity is moderate. No adverse flags were reported by a third-party risk registry.
 
-> **Final Recommendation:** Based on the available on-chain data and deterministic audit rules, the Baby Troll (BABYTROLL) token mint presents a low technical risk profile due to the revocation of critical authorities. This configuration ensures a fixed supply and prevents arbitrary freezing of user accounts. However, holder concentration data was unavailable, which limits the assessment of potential market manipulation risks. Additionally, the extremely low RugCheck score (1/100) suggests that while no specific deterministic vulnerabilities were found, broader caution is warranted regarding the project's overall trustworthiness. Investors should consider this external signal and conduct further due diligence beyond the scope of this technical audit.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to ensure the supply is fixed and accounts cannot be frozen. Monitor DEX liquidity and trading volume for any significant changes that could impact price stability and exit liquidity. As holder concentration data was unavailable, consider using alternative on-chain explorers to assess the distribution of tokens among top holders before committing to large positions.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Baby Troll (BABYTROLL) token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked (None), which is a strong positive indicator for fixed supply and unfreezable… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits moderate liquidity at $79,171 USD, with a 24-hour volume of $79,491 USD, resulting in a normal Volume/Liquidity Ratio of 1.00 (7.4 Economic). The DEX pair is 31 days old, providing… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked (None), preventing future changes to supply or account freeze status (7.7 Upgrades). The token utilizes the spl-token-2022 program without… |
+| **Technical** | 6/10 | Medium | The Baby Troll (BABYTROLL) token operates on the spl-token-2022 program, indicating modern SPL token standards. Both the mint authority and freeze authority are revoked, which is a strong positive… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits moderate liquidity with $59,675 in total DEX liquidity, which is sufficient for smaller trades without severe slippage. The 24-hour volume is $37,952, resulting in a healthy… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities. The metadata is also not mutable, ensuring that the token name, symbol, or image cannot be… |
 
 ## Token Metrics
 

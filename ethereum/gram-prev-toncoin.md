@@ -2,14 +2,14 @@
 token: Gram (prev. Toncoin)
 ticker: GRAM
 network: ethereum
-risk_score: 63
-status: high
+risk_score: 94
+status: critical
 date: 2026-06-30
 ---
 
 # Gram (prev. Toncoin) (GRAM) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 94/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gram-prev-toncoin-eth)
 
@@ -17,19 +17,17 @@ date: 2026-06-30
 
 ## Audit Summary
 
-The TON Bridge contract implements a multi-signature oracle system for cross-chain operations, including token minting and oracle set management. The architecture relies on a 2/3 majority of designated oracles for critical decisions. While the core voting mechanism is robust against replay attacks, significant centralization risk exists due to the oracle-based governance model. Potential Denial of Service (DoS) in oracle set updates and the use of an older Solidity version are also noted. The contract is not upgradeable, ensuring immutability but limiting future flexibility.
+The TONBridge Bridge contract implements a multi-signature oracle system for minting wrapped TON tokens, updating the oracle set, and controlling burn functionality. The system relies on a 2/3 majority vote from a dynamic set of oracles. A critical vulnerability was identified in the quorum calculation, significantly lowering the required number of signatures for a vote to pass. High risks are associated with the inherent centralization of the oracle system and potential for vote execution failures. Several medium and low-severity issues were also found, including the use of an outdated Solidity compiler version and a potential for vote finalization before action execution.
 
-> **Final Recommendation:** The TON Bridge contract provides a functional multi-signature bridge, but its security is heavily dependent on the integrity of the oracle set. Addressing the potential Denial of Service in oracle set updates and considering an upgrade to a more recent Solidity version are recommended to enhance robustness. The project should also clearly communicate the inherent centralization risks associated with its oracle-based governance model to its users.
-
-For enhanced security and ongoing monitoring, consider a Premium Deploy option. This includes continuous threat monitoring, real-time anomaly detection, and rapid incident response, providing an additional layer of protection for the deployed contract.
+> **Final Recommendation:** It is strongly recommended to immediately address the critical quorum calculation vulnerability to ensure the integrity of the multi-signature scheme. All arithmetic operations involving sensitive thresholds should be thoroughly reviewed and tested. Consider upgrading to a newer Solidity compiler version (0.8.x) to benefit from automatic overflow/underflow checks and other security enhancements. Implement a more robust error handling mechanism for vote execution to prevent votes from being marked as finished if the subsequent action fails.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract demonstrates a robust multi-signature architecture (7.1) for critical operations, requiring a 2/3 majority of oracles for actions like minting and oracle set updates. Code security (7.2)… |
-| **Governance / Economics** | 3/10 | High | The governance model (7.5) is based on a centralized oracle set, where a 2/3 majority controls all critical functions, including token minting and the ability to update the oracle set itself. This… |
-| **Upgrades** | 5/10 | Medium | The `Bridge` contract is implemented as a standard contract without an explicit upgrade mechanism (7.7). This design choice eliminates upgrade-related risks such as proxy misconfigurations or… |
+| **Technical** | 4/10 | Medium | The contract demonstrates a clear architecture for a multi-signature bridge, leveraging inherited ERC20 and signature verification functionalities (7.1). However, a critical flaw exists in the quorum… |
+| **Governance / Economics** | 1/10 | High | The economic model centers around the minting and burning of a wrapped token, controlled by a set of oracles. The primary economic risk stems from the centralization inherent in the oracle system; a… |
+| **Upgrades** | 4/10 | Medium | The contract is not designed as an upgradeable proxy, therefore, no upgrade-specific risks or safety issues are present (7.7). |
 
 ## LP Distribution
 
@@ -40,41 +38,55 @@ For enhanced security and ongoing monitoring, consider a Premium Deploy option. 
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 2 Low · ⚪ 1 Informational_
+_🔴 1 Critical · 🟠 2 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Centralization Risk / Oracle Collusion  *(Severity: High · Status: Unresolved)*
+### `C-01` — Incorrect Quorum Calculation for 2/3 Majority  *(Severity: Critical · Status: Unresolved)*
 
-The system's security and integrity are entirely dependent on a 2/3 majority of the `oraclesSet`. If 2/3 or more of the designated oracles collude, they can perform unauthorized actions such as minting arbitrary amounts of tokens via `voteForMinting`, changing the oracle set to include malicious actors via `voteForNewOracleSet`, or disabling burning via `voteForSwitchBurn`. This represents a significant centralization risk (7.4, 7.5).
+The `generalVote` function calculates the required number of signatures for a 2/3 majority using integer division: `signatures.length >= 2 * oraclesSet.length / 3`. This calculation incorrectly truncates the result, leading to a lower-than-intended quorum for many `oraclesSet.length` values. For example, with 2 oracles, it requires 1 signature instead of 2; with 4 oracles, it requires 2 signatures instead of 3. This significantly weakens the security of the multi-signature scheme, making it easier for a minority of oracles to pass votes.
 
-**Recommendation:** While this is a fundamental design choice for a multi-signature bridge, it is crucial to acknowledge and mitigate this risk through robust oracle selection processes, transparent governance, and potentially diversifying oracle responsibilities. Consider implementing a timelock for critical operations like `updateOracleSet` to allow for community review and reaction time.
-
-
-### `M-01` — Potential Denial of Service (DoS) in `updateOracleSet`  *(Severity: Medium · Status: Unresolved)*
-
-The `updateOracleSet` function iterates through the `oraclesSet` twice using `for` loops. If the number of oracles in `oraclesSet` (both `oldSetLen` and `newSetLen`) grows excessively large, the gas cost of these loops could exceed the block gas limit. This would prevent the oracle set from being updated, effectively leading to a Denial of Service (DoS) for a critical governance function (7.2).
-
-**Recommendation:** Implement a mechanism to handle large oracle sets more efficiently. This could involve paginated updates, a Merkle tree approach to verify membership, or limiting the maximum size of the oracle set. For the current design, ensure that the maximum expected number of oracles does not lead to gas limit issues.
+**Recommendation:** Modify the quorum calculation to correctly implement ceiling division for 2/3 of the oracle set. The formula `(2 * oraclesSet.length + 2) / 3` should be used to ensure the correct number of signatures is required. Thoroughly test this change with various oracle set sizes.
 
 
-### `L-01` — Use of `pragma experimental ABIEncoderV2`  *(Severity: Low · Status: Unresolved)*
+### `H-01` — Centralization Risk and Oracle Compromise  *(Severity: High · Status: Unresolved)*
 
-The contract uses `pragma experimental ABIEncoderV2`. While `ABIEncoderV2` has been stable and non-experimental since Solidity 0.8.0, its use in older compiler versions (0.7.x) can sometimes indicate less mature code or potential for unexpected behavior, although it is generally considered safe (7.2).
+The entire security and integrity of the Bridge contract, including token minting, oracle set updates, and burn status control, relies on the honesty and security of the oracle set. A compromise or collusion of 1/3 + 1 oracles (e.g., 2 out of 3, or 3 out of 4 with the current bug) can lead to unauthorized minting of tokens, disabling of the burn mechanism, or taking full control of the oracle set. This represents a significant centralization risk inherent to the design.
 
-**Recommendation:** Consider upgrading the Solidity compiler version to 0.8.x or higher, where `ABIEncoderV2` is no longer experimental and is the default. This would remove the need for the experimental pragma and allow the contract to benefit from newer compiler features and optimizations.
-
-
-### `L-02` — Older Solidity Version (0.7.0)  *(Severity: Low · Status: Unresolved)*
-
-The contract is compiled with Solidity version `^0.7.0`. This version is older and lacks several security features and optimizations present in newer versions (e.g., 0.8.x), such as default checked arithmetic for `uint` operations (preventing overflow/underflow by default) and more robust error handling mechanisms (7.2).
-
-**Recommendation:** Upgrade the Solidity compiler version to 0.8.x or higher. This will automatically enable checked arithmetic for `uint` types, reducing the risk of integer overflow/underflow vulnerabilities, and provide access to other compiler improvements and security enhancements. Ensure thorough testing after any compiler upgrade.
+**Recommendation:** While this is a fundamental design choice, it is crucial to acknowledge and mitigate the risks associated with oracle centralization. Implement robust off-chain security practices for oracle key management, multi-factor authentication, and continuous monitoring. Consider mechanisms for emergency pauses or community-driven overrides if a supermajority of oracles is compromised, though this would require significant architectural changes.
 
 
-### `I-01` — Lack of Event Emission for `allowBurn` Status Change  *(Severity: Informational · Status: Unresolved)*
+### `H-02` — Vote Finalization Before Action Execution  *(Severity: High · Status: Unresolved)*
 
-The `voteForSwitchBurn` function updates the `allowBurn` state variable but does not emit an event to signal this change. While the state is updated on-chain, the absence of an event makes it harder for off-chain systems, such as frontends, indexers, or monitoring tools, to efficiently track and react to changes in the burning status (7.8 Operations).
+In the `generalVote` function, the `finishedVotings[digest] = true` flag is set *before* the actual action (e.g., `executeMinting`, `updateOracleSet`, `allowBurn = newBurnStatus`) is performed. If the subsequent action reverts due to an unexpected condition (e.g., an internal error in `mint`, or a `require` statement failure in `updateOracleSet`), the vote will still be marked as finished. This prevents any retry for that specific digest, potentially leaving a valid vote in a 'stuck' state where the action was intended but never completed.
 
-**Recommendation:** Emit an event, such as `BurnStatusChanged(bool newBurnStatus, int nonce)`, whenever the `allowBurn` state variable is modified. This improves transparency and allows for easier off-chain monitoring and integration.
+**Recommendation:** Refactor the `generalVote` function to set `finishedVotings[digest] = true` *after* the successful execution of the associated action. This ensures that a vote is only marked as complete if its intended effect has been successfully applied to the contract state. Alternatively, implement a mechanism to allow a failed vote to be retried or explicitly cancelled by a supermajority.
+
+
+### `M-01` — Outdated Solidity Compiler Version  *(Severity: Medium · Status: Unresolved)*
+
+The contract uses Solidity `^0.7.0` and `^0.7.4`. These versions do not include automatic overflow and underflow checks for unsigned integers, which are standard in Solidity 0.8.0 and later. While no direct overflow/underflow vulnerabilities were identified in critical arithmetic beyond the quorum calculation, relying on older compiler versions increases the risk of subtle arithmetic bugs and misses out on other security improvements and optimizations present in newer versions.
+
+**Recommendation:** Consider upgrading the contract to Solidity 0.8.x. This would provide automatic overflow/underflow checks, reducing the need for manual `SafeMath` implementations or extensive manual checks. A thorough review and testing process would be required to ensure compatibility and address any breaking changes introduced by the newer compiler version.
+
+
+### `M-02` — `oracleSetHash` Parameter Unused in `updateOracleSet`  *(Severity: Medium · Status: Unresolved)*
+
+The `voteForNewOracleSet` function takes an `int oracleSetHash` parameter, which is used to generate the digest for the vote. However, the `updateOracleSet` function, which is called after a successful vote, receives this `oracleSetHash` but does not use it to verify the `newSet` array. While the `newSet` itself is part of the digest and directly applied, the `oracleSetHash` parameter could be misleading if it implies a verification that does not occur within the `updateOracleSet` function.
+
+**Recommendation:** Clarify the purpose of `oracleSetHash`. If it's purely an identifier for the vote, consider renaming it to avoid confusion. If it's intended to be a hash of the `newSet` for verification, implement the corresponding check within `updateOracleSet`. Ensure documentation clearly explains its role.
+
+
+### `L-01` — Initial Oracle Set Not Subject to Vote  *(Severity: Low · Status: Unresolved)*
+
+The `constructor` of the Bridge contract directly calls `updateOracleSet` with the `initialSet` provided during deployment. This means the initial set of oracles is established without any multi-signature vote. While this is a standard practice for contract initialization, it places full trust in the deployer to correctly and securely configure the initial oracle set.
+
+**Recommendation:** Ensure that the deployment process is highly secure and that the `initialSet` of oracles is carefully chosen and verified. Document this trust assumption clearly for users and stakeholders. This is generally acceptable for bootstrapping a system.
+
+
+### `I-01` — `experimental ABIEncoderV2` Pragma Used  *(Severity: Informational · Status: Unresolved)*
+
+The contract uses `pragma experimental ABIEncoderV2;`. While ABIEncoderV2 has been widely adopted and is considered stable in practice, it was an experimental feature in Solidity 0.7.x. In Solidity 0.8.0 and later, it is enabled by default and the pragma is no longer necessary.
+
+**Recommendation:** This is an informational note. If upgrading to Solidity 0.8.x, this pragma can be removed. No immediate action is required for functionality or security in 0.7.x, but it's a reminder of the compiler version's experimental features.
 
 ## Token Metrics
 

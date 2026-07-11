@@ -2,14 +2,14 @@
 token: Pudgy Penguins
 ticker: PENGU
 network: solana
-risk_score: 35
+risk_score: 25
 status: medium
 date: 2026-06-10
 ---
 
 # Pudgy Penguins (PENGU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 35/100 — 🟡 Medium Risk**
+> **Risk Score: 25/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pudgy-penguins-sol)
 
@@ -17,29 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The audit of the Pudgy Penguins (PENGU) SPL token mint identified a high-severity risk: new holder accounts are created in a frozen state, requiring manual unfreezing by an authority. While mint and freeze authorities are revoked, which is positive for supply control and general account security, the default frozen state introduces operational friction. Holder concentration data was unavailable from RPC, though RugCheck flagged high concentration as a risk label.
+This audit of the Pudgy Penguins (PENGU) SPL token mint found no critical or high-severity issues based on available on-chain data and market analysis. The mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Holder distribution data was unavailable from chain-native RPC, preventing a full assessment of supply concentration.
 
-> **Final Recommendation:** Holders should be aware that new accounts for Pudgy Penguins (PENGU) tokens are created in a frozen state. This means that upon receiving tokens, users may need an active issuer or authority to unfreeze their accounts before they can transfer or spend the tokens. It is crucial to confirm the availability and responsiveness of such an entity. While mint and freeze authorities are revoked, which is positive for supply control and general account security, the default frozen state introduces operational friction and potential for funds to be unspendable if the unfreezing mechanism is not accessible.
-
-Consider the operational implications of the default frozen state before acquiring or holding this token. Verify the process for unfreezing accounts and the reliability of the entity responsible for this action. For a premium deployment, ensure that any future token launches explicitly set the…
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to ensure the token's fixed supply and unfreezable nature. Monitor for any future changes in liquidity or trading patterns, although current metrics appear stable. Be aware that holder distribution data was not available for this assessment, so a full understanding of supply concentration is not possible without further on-chain analysis.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Pudgy Penguins (PENGU) token is an SPL token mint operating on the Solana blockchain using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked… |
-| **Governance / Economics** | 5/10 | Medium | The token has substantial liquidity, with $3,289,871 USD available on DEXs, and a healthy 24-hour volume of $505,667 USD. The volume/liquidity ratio is 0.15, which is considered normal and does not… |
-| **Upgrades** | 8/10 | Low | The token's mint authority and freeze authority are both revoked, meaning no further tokens can be minted and no accounts can be frozen by an external authority. The metadata for the token is… |
-
-## Security Findings
-
-_🟠 1 High_
-
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
-
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority (GoPlus.default_account_state: 1).
-
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+| **Technical** | 6/10 | Medium | The Pudgy Penguins (PENGU) token operates under the `spl-token` program. Both the Mint Authority and Freeze Authority are revoked, which means no new tokens can be minted and no existing holder… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy liquidity, with $3,023,040 USD available on DEXs. Trading volume over 24 hours is $150,118, resulting in a low Volume/Liquidity Ratio of 0.05, which does not suggest wash… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any changes to the token's supply or account freeze status. Metadata for the token is immutable, as… |
 
 ## Token Metrics
 

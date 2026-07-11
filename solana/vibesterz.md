@@ -2,14 +2,14 @@
 token: Vibesterz
 ticker: VSTR
 network: solana
-risk_score: 44
-status: medium
+risk_score: 54
+status: high
 date: 2026-06-10
 ---
 
 # Vibesterz (VSTR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 54/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vibesterz-sol)
 
@@ -17,17 +17,27 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This SPL Token Mint, Vibesterz (VSTR), demonstrates a strong security posture with both mint and freeze authorities revoked, ensuring a fixed supply and preventing account freezing. No critical or high-severity issues were identified based on the available on-chain data and external security signals. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+The Vibesterz (VSTR) token mint is technically sound, with both mint and freeze authorities revoked, indicating a fixed supply and immutable account states. However, the token exhibits very low DEX liquidity, posing a significant risk for exiting positions without substantial price impact. Holder distribution data was unavailable from chain-native RPC, preventing an assessment of supply concentration.
 
-> **Final Recommendation:** Based on the audit findings, the Vibesterz (VSTR) token appears to be well-configured from a security perspective, with key authorities revoked and no active malicious extensions. Users should be aware that holder concentration data was not available, so a full assessment of potential market manipulation risks from large holders could not be made. For a Premium Deploy, consider monitoring the token's liquidity and trading volume over a longer period to establish a more robust track record.
+> **Final Recommendation:** Prospective holders should exercise extreme caution due to the very low liquidity, which will result in significant slippage for any substantial trade. Verify the current liquidity on a decentralized exchange before attempting any large transactions. Monitor for any changes in liquidity or trading volume, as these are critical for assessing market viability.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability regarding account freezing. No Transfer Hook is active… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate liquidity with $18,817 USD available on DEXs. The 24-hour volume of $39,027 results in a normal Volume/Liquidity Ratio of 2.07, not indicating wash trading. The DEX pair… |
-| **Upgrades** | 8/10 | Low | The token's core parameters, including minting and freezing capabilities, are immutable as both the mint and freeze authorities have been revoked. It utilizes the spl-token-2022 program but does not… |
+| **Technical** | 5/10 | Medium | The Vibesterz (VSTR) token is an SPL Token-2022 mint with its mint authority and freeze authority both revoked, ensuring a fixed supply and preventing arbitrary freezing of holder accounts. No… |
+| **Governance / Economics** | 3/10 | High | The token's economic profile shows very low DEX liquidity at $5,153, which presents a high risk for price impact on trades. The 24-hour volume is $34, resulting in a normal Volume/Liquidity Ratio of… |
+| **Upgrades** | 8/10 | Low | The token mint has both its mint and freeze authorities revoked, meaning its supply and account freeze status cannot be altered. No Token-2022 extensions that allow for future upgradability of… |
+
+## Security Findings
+
+_🟠 1 High_
+
+### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
+
+Total DEX liquidity is $5,153. Slippage will be severe; large positions cannot be exited without significant loss.
+
+**Recommendation:** Be aware that large positions cannot be exited without significant price impact.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: Cup Markets
 ticker: CUP
 network: solana
-risk_score: 39
+risk_score: 41
 status: medium
 date: 2026-06-10
 ---
 
 # Cup Markets (CUP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cup-markets-sol)
 
@@ -17,29 +17,34 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Cup Markets (CUP) token mint is based on the Solana `spl-token` program. A significant finding is that new holder accounts are created in a frozen state, requiring an authority to unfreeze them before use. Holder concentration data was unavailable, preventing assessment of supply distribution risk. RugCheck.xyz assigned a low score of 7/100, indicating high risk, and flagged "Mutable metadata" as a concern, though GoPlus reports `metadata_mutable: False`.
+The Cup Markets (CUP) token exhibits a high economic risk due to very low DEX liquidity ($8,051), which can lead to severe slippage. Additionally, the token's metadata is mutable, allowing for changes to its name, symbol, or image post-launch. Key authorities like Mint and Freeze are revoked, which is a positive security aspect. Holder distribution data was unavailable from chain-native RPC.
 
-> **Final Recommendation:** Holders should be aware that new token accounts for CUP are created in a frozen state, requiring an unfreeze operation by an authority before tokens can be used. It is crucial to confirm the availability and responsiveness of the entity responsible for unfreezing accounts to ensure usability. While mint and freeze authorities are revoked, the operational dependency for new accounts remains. Due to unavailable holder concentration data, the risk of whale manipulation cannot be assessed.
-
-For a Premium Deploy, consider tokens with a default account state that is unfrozen to avoid operational dependencies. Additionally, ensure comprehensive holder distribution analysis is available to mitigate risks associated with concentrated supply.
+> **Final Recommendation:** Prospective holders should exercise caution due to the token's very low liquidity, which poses a significant risk for exiting positions without substantial loss. It is crucial to monitor DEX liquidity levels closely and account for potential slippage in any transaction. Additionally, verify the token's name, symbol, and image against trusted sources before relying on its branding, as the metadata can be changed by an authority. The revoked Mint and Freeze authorities are positive security attributes, ensuring supply stability and preventing account freezing.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The token is an SPL token using the standard `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked, which is a positive security measure as it prevents further token… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy liquidity of $81,112 USD and a normal 24-hour volume to liquidity ratio of 1.06, suggesting organic trading activity. The DEX pair has been active for 18 days, providing… |
-| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority for the token have been successfully revoked, indicating that the token supply is fixed and no existing accounts can be frozen by a central party. GoPlus… |
+| **Technical** | 5/10 | Medium | The Cup Markets (CUP) token operates on the standard `spl-token` program. Both the Mint Authority and Freeze Authority are revoked, indicating that no new tokens can be minted and no existing… |
+| **Governance / Economics** | 6/10 | Medium | The economic profile of the Cup Markets (CUP) token presents a high risk due to its very low DEX liquidity, currently at $8,051. This level of liquidity makes large trades highly susceptible to… |
+| **Upgrades** | 8/10 | Low | The Cup Markets (CUP) token has a fixed supply model as its Mint Authority is revoked, preventing further token issuance. Similarly, the Freeze Authority is also revoked, meaning no accounts can be… |
 
 ## Security Findings
 
-_🟠 1 High_
+_🟠 1 High · 🟢 1 Low_
 
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
+### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
 
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority. This is indicated by `GoPlus.default_account_state: 1`.
+Total DEX liquidity is $8,051. Slippage will be severe; large positions cannot be exited without significant loss.
 
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token will be unspendable for new holders.
+**Recommendation:** Account for the fee in any swap calculation.
+
+
+### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
+
+Token name, symbol, or image can be changed post-launch.
+
+**Recommendation:** Verify metadata against off-chain expectations before trusting branding.
 
 ## Token Metrics
 

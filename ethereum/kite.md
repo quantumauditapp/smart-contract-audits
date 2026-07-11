@@ -2,14 +2,14 @@
 token: Kite
 ticker: KITE
 network: ethereum
-risk_score: 90
+risk_score: 88
 status: critical
 date: 2026-06-10
 ---
 
 # Kite (KITE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 88/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kite-eth)
 
@@ -17,19 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Kite token contract implements an ERC20 token with LayerZero OFT capabilities, allowing for cross-chain transfers. It incorporates OpenZeppelin's Pausable and Ownable patterns for administrative control. The contract features a fixed total supply minted once on a designated native chain. While the code adheres to established standards and best practices, the audit identified a high degree of centralized control by the owner, a critical dependency on correct constructor parameters for initialization, and inherent reliance on the LayerZero protocol's security.
+The Kite token contract is an ERC-20 token with LayerZero Omnichain Fungible Token (OFT) capabilities and pausable functionality, inheriting from OpenZeppelin and LayerZero standard libraries. The contract exhibits a high degree of centralization, with the owner having control over initial minting, pausing transfers, and LayerZero configurations. While the code quality is good and standard libraries are used, the centralized control points introduce significant governance and economic risks. The contract is not upgradeable, which simplifies its architecture but removes flexibility for future changes or bug fixes.
 
-> **Final Recommendation:** The Kite token contract is well-engineered, leveraging established libraries and patterns. The primary risks stem from the centralized control inherent in the Ownable pattern and the critical importance of correct deployment parameters. It is strongly recommended to implement a multi-signature wallet for the owner address to mitigate the single point of failure risk. Additionally, thorough testing of the deployment process, especially the `isNativeChain` parameter, is crucial.
-
-For enhanced security and operational resilience, consider a Premium Deploy option that includes a formal deployment plan, multi-signature setup, and post-deployment monitoring services.
+> **Final Recommendation:** To mitigate the identified risks, it is strongly recommended to secure the `owner` address with a robust multi-signature wallet. This will distribute control and significantly reduce the single point of failure risk associated with centralized administrative privileges, especially concerning token pausing and LayerZero configurations. Thoroughly review and secure the operational procedures (7.8 Operations) for the multi-sig wallet, including key management and transaction signing policies.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract architecture (7.1) is well-structured, combining ERC20, LayerZero OFT, Pausable, and Ownable functionalities using standard inheritance patterns. Code security (7.2) is generally robust… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4) defines a fixed `TOTAL_SUPPLY` of 10 billion tokens, minted only once on the native chain, preventing inflationary risks from further minting. However, governance (7.5) is… |
-| **Upgrades** | 4/10 | Medium | The Kite contract is not designed as an upgradeable proxy (7.7). It is a standard implementation contract, meaning its logic cannot be changed post-deployment. Any future modifications would require… |
+| **Technical** | 4/10 | Medium | The contract leverages well-audited OpenZeppelin (ERC20, Pausable, Ownable) and LayerZero (OFT) libraries, contributing to robust code security (7.2 Code Security). The architecture (7.1… |
+| **Governance / Economics** | 1/10 | High | The contract design exhibits high centralization (7.3 Access Control, 7.5 Governance), with a single `owner` address controlling critical functions. The owner can mint the entire `TOTAL_SUPPLY` (10… |
+| **Upgrades** | 4/10 | Medium | The Kite contract is not designed as an upgradeable proxy (7.7 Upgrades). This eliminates the specific risks associated with upgrade mechanisms, such as proxy implementation bugs or insecure upgrade… |
 
 ## LP Distribution
 
@@ -40,34 +38,41 @@ For enhanced security and operational resilience, consider a Premium Deploy opti
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_🟠 1 High · 🟡 1 Medium · ⚪ 3 Informational_
 
 ### `H-01` — Centralized Control by Owner  *(Severity: High · Status: Unresolved)*
 
-The contract owner, defined by the `Ownable` pattern, possesses significant centralized control over the token's functionality. The owner can call `pause()` to halt all token transfers, `unpause()` to resume them, and `initialize()` to mint the entire `TOTAL_SUPPLY`. A compromise of the owner's private key could lead to a denial of service for token holders or unintended token distribution.
+The `Ownable` pattern grants significant control to a single `owner` address. This includes the ability to `initialize` the token supply (minting all tokens to themselves), `pause` and `unpause` all token transfers, and `transferOwnership`. This centralization introduces a single point of failure; compromise of the owner's private key could lead to a complete loss of control over the token's functionality and potentially its economic stability.
 
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the contract owner address. This requires multiple independent approvals for critical operations, significantly reducing the risk associated with a single point of failure or a compromised private key.
-
-
-### `M-01` — Critical Initialization Dependency on Constructor Parameter  *(Severity: Medium · Status: Unresolved)*
-
-The `initialize()` function, responsible for minting the entire `TOTAL_SUPPLY` of tokens, can only be called if the `isNativeChain` flag is set to `true` in the constructor. If the `_isNativeChain` parameter is incorrectly set to `false` during deployment on the intended native chain, the `initialize()` function will permanently revert, preventing the token supply from ever being minted. This would render the contract unusable for its primary purpose.
-
-**Recommendation:** Ensure rigorous testing and verification of constructor parameters, especially `_isNativeChain`, during deployment. Implement a robust deployment checklist and consider a dry run on a testnet to confirm correct parameterization before deploying to the mainnet.
+**Recommendation:** Consider implementing a multi-signature wallet for the `owner` address to distribute control and reduce the risk associated with a single point of failure. For critical operations, explore time-locks or a more decentralized governance mechanism.
 
 
-### `L-01` — Lack of Multi-signature for Critical Operations  *(Severity: Low · Status: Unresolved)*
+### `M-01` — Single Point of Failure for LayerZero Configuration  *(Severity: Medium · Status: Unresolved)*
 
-While the `Ownable` pattern provides basic access control, critical administrative functions such as `pause()`, `unpause()`, `initialize()`, and `transferOwnership()` are executable by a single owner address. This increases the operational risk, as a single compromised key or a malicious owner could unilaterally execute these actions without additional oversight.
+The `OFT` constructor sets the `_delegate` for LayerZero configurations to the `_owner` address. This means the same single owner address is responsible for managing critical cross-chain parameters and security settings within the LayerZero endpoint. A compromise of this owner key could allow an attacker to manipulate cross-chain message passing, potentially leading to unauthorized token transfers or denial of service for cross-chain operations.
 
-**Recommendation:** As recommended in H-01, migrate ownership to a multi-signature wallet. This provides a higher level of security and decentralization for critical administrative actions, requiring consensus from multiple trusted parties.
+**Recommendation:** While the `OFT` contract itself doesn't expose delegate management functions, ensure the `owner` address (which acts as the LayerZero delegate) is secured with a robust multi-signature setup. Regularly review LayerZero configurations and permissions.
 
 
-### `I-01` — Reliance on LayerZero Protocol Security  *(Severity: Informational · Status: Unresolved)*
+### `I-01` — Irreversible `isNativeChain` Flag  *(Severity: Informational · Status: Unresolved)*
 
-The Kite token utilizes LayerZero's OFT (Omnichain Fungible Token) functionality for cross-chain transfers. This means the contract's ability to facilitate secure and reliable cross-chain operations is directly dependent on the security, liveness, and integrity of the underlying LayerZero protocol and its endpoint. Any vulnerabilities or operational failures within LayerZero could impact the token's cross-chain capabilities.
+The `isNativeChain` boolean variable, which determines if the `initialize()` function can be called and where the total supply is minted, is set in the constructor and cannot be modified thereafter. This design ensures that the native chain designation is immutable, preventing accidental or malicious changes post-deployment.
 
-**Recommendation:** While this is an inherent dependency, it is important to stay informed about LayerZero's security audits, operational status, and any reported vulnerabilities. Projects should have contingency plans for potential LayerZero disruptions, if feasible.
+**Recommendation:** No direct recommendation, as this is an intentional design choice. Ensure the initial deployment parameter for `_isNativeChain` is correctly set for each deployed instance.
+
+
+### `I-02` — Initial Token Distribution to Owner  *(Severity: Informational · Status: Unresolved)*
+
+The `initialize()` function, callable only once by the `owner` on the native chain, mints the entire `TOTAL_SUPPLY` (10 billion KITE tokens) directly to the `msg.sender` (the owner). This design places the entire initial token supply under the control of the owner, who is then responsible for its distribution.
+
+**Recommendation:** This is a common initial distribution strategy. Ensure the owner has a clear and secure plan for distributing the tokens to avoid centralization concerns post-minting.
+
+
+### `I-03` — Non-Upgradeable Contract  *(Severity: Informational · Status: Unresolved)*
+
+The `Kite` contract is implemented as a standard, non-proxy contract. This means it is not designed to be upgradeable. While this eliminates risks associated with upgrade mechanisms (e.g., proxy implementation bugs, upgrade path vulnerabilities), it also means that any discovered bugs or desired feature enhancements cannot be implemented without a complete redeployment and migration of assets.
+
+**Recommendation:** No direct recommendation, as this is a design choice. Acknowledge the immutability and ensure thorough testing before deployment, as the contract cannot be modified once deployed.
 
 ## Token Metrics
 

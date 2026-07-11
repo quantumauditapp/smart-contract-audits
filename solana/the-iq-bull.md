@@ -2,14 +2,14 @@
 token: The IQ Bull
 ticker: AMEN
 network: solana
-risk_score: 40
+risk_score: 35
 status: medium
 date: 2026-07-04
 ---
 
 # The IQ Bull (AMEN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-iq-bull-sol)
 
@@ -17,27 +17,17 @@ date: 2026-07-04
 
 ## Audit Summary
 
-The audit of The IQ Bull (AMEN) token mint identified a medium risk related to the very recent creation of its DEX trading pair. Key authorities such as mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Holder concentration data was unavailable, and RugCheck.xyz provided a score of 43/100 with risk labels, but not an explicit 'RUGGED' verdict.
+This SPL Token Mint, "The IQ Bull (AMEN)", demonstrates strong security configurations with both mint and freeze authorities revoked, preventing further supply dilution or account freezing. No potentially malicious Token-2022 extensions like transfer hooks or default frozen accounts are active, and metadata is immutable. However, holder concentration data was unavailable, and liquidity is very low.
 
-> **Final Recommendation:** Given the very new DEX pair (1 day old), potential holders should exercise extreme caution. While core authorities like mint and freeze are revoked, the lack of historical data and unavailable holder concentration information present significant risks. It is recommended to monitor the token's trading activity and holder distribution for a longer period before making any substantial investment. Verify on-chain that the mint authority and freeze authority remain revoked. For a Premium Deploy, consider implementing additional on-chain checks for liquidity depth and age before allowing trading.
+> **Final Recommendation:** Holders should monitor on-chain data for holder concentration once it becomes available to assess potential whale manipulation risks. Given the very low liquidity of $10,223, large trades will experience significant slippage, and positions may be difficult to exit without substantial price impact. Exercise caution when interacting with this token due to the limited market depth.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Crucially, the mint authority and freeze authority are both revoked, ensuring that no new tokens can be minted and no holder accounts can be… |
-| **Governance / Economics** | 5/10 | Medium | The token's DEX pair is very new, having been created only 1 day ago, which provides insufficient track record for assessing market behavior. Total DEX liquidity stands at $22,348, with a 24-hour… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply is fixed and no accounts can be frozen by an external party. The token does not utilize any Token-2022 extensions… |
-
-## Security Findings
-
-_🟡 1 Medium_
-
-### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
-
-DEX pair was created 1 days ago. Insufficient track record to assess team or holder behaviour.
-
-**Recommendation:** Monitor the token's trading activity and holder distribution for a longer period before making any substantial investment.
+| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program, indicating modern SPL features. Both the mint authority and freeze authority have been revoked, ensuring no further tokens can be minted and… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits very low liquidity, with total DEX liquidity at $10,223. The 24-hour trading volume is $11,300, resulting in a normal Volume/Liquidity Ratio of 1.11. The pair is relatively new… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any post-launch changes to supply or account freeze status. Key Token-2022 extensions such as permanent… |
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: Peanut the Squirrel
 ticker: PNUT
 network: solana
-risk_score: 50
+risk_score: 55
 status: high
 date: 2026-06-13
 ---
 
 # Peanut the Squirrel (PNUT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 55/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/peanut-the-squirrel-sol)
 
@@ -17,27 +17,27 @@ date: 2026-06-13
 
 ## Audit Summary
 
-This Solana SPL Token mint, 'Peanut the Squirrel (Pnut)', has revoked both mint and freeze authorities, indicating a fixed supply and no ability to freeze user funds. However, the DEX pair is very new, having been created only 3 days ago, which means there is insufficient track record for the token. Holder concentration data was unavailable, and RugCheck.xyz flagged it as a 'Copycat token' with a low score.
+The Peanut the Squirrel (Pnut) SPL Token Mint presents a High overall risk, primarily due to its very low DEX liquidity of $8,032, which makes large positions difficult to exit without significant slippage. While the mint and freeze authorities are appropriately revoked, holder concentration data was unavailable from chain-native RPC. A third-party risk registry has flagged this token as a 'Copycat token', indicating potential risks beyond technical parameters.
 
-> **Final Recommendation:** Given the very new DEX pair (3 days old), potential holders should exercise caution and monitor the token's activity and community development closely. While core authorities like mint and freeze are revoked, which is positive, the 'Copycat token' label from RugCheck.xyz and the low RugCheck score warrant further investigation into the project's legitimacy and originality. Consider waiting for a more established track record before making significant investments. For premium deployments, ensure thorough due diligence on the project's background and team.
+> **Final Recommendation:** Prospective holders should exercise extreme caution due to the token's very low liquidity. Before acquiring or trading, verify the current DEX liquidity on-chain to understand potential slippage. Be aware of the 'Copycat token' signal from third-party registries, which suggests non-technical risks. Monitor market conditions closely, especially liquidity and trading volume, as these can fluctuate rapidly and impact exit opportunities.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The 'Peanut the Squirrel' token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no holder accounts can be frozen.… |
-| **Governance / Economics** | 4/10 | Medium | The token's DEX pair is very new, established only 3 days ago, which introduces uncertainty regarding its long-term viability and community behavior. Current liquidity is $37,328, with a 24-hour… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's core parameters (supply, freeze capability) cannot be altered. The token uses the spl-token-2022 program, but no mutable… |
+| **Technical** | 5/10 | Medium | The Peanut the Squirrel (Pnut) token is implemented using the `spl-token-2022` program. A key security strength is that both the Mint Authority and Freeze Authority have been permanently revoked… |
+| **Governance / Economics** | 3/10 | High | The economic stability of the Peanut the Squirrel (Pnut) token is significantly impacted by its very low DEX liquidity, currently at $8,032. This level of liquidity suggests that even moderate sell… |
+| **Upgrades** | 8/10 | Low | The Peanut the Squirrel (Pnut) token exhibits a low upgrade risk profile. Both the Mint Authority and Freeze Authority have been revoked (None), ensuring that no single entity can unilaterally alter… |
 
 ## Security Findings
 
-_🟡 1 Medium_
+_🟠 1 High_
 
-### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
+### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
 
-DEX pair was created 3 days ago. Insufficient track record to assess team or holder behaviour. (Fact: Pair Age (days): 3)
+Total DEX liquidity is $8,032. Slippage will be severe; large positions cannot be exited without significant loss.
 
-**Recommendation:** Account for the lack of historical data and monitor the token's performance and community engagement over a longer period before making significant investments.
+**Recommendation:** Account for the fee in any swap calculation.
 
 ## Token Metrics
 

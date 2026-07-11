@@ -17,17 +17,17 @@ date: 2026-06-15
 
 ## Audit Summary
 
-No critical or high-severity issues were identified based on the available on-chain data and external security signals. The token's mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. However, holder concentration data was unavailable, preventing a full assessment of distribution risk, though RugCheck.xyz noted 'Single holder ownership'.
+The Pomni SPL Token-2022 mint exhibits a secure configuration with both mint and freeze authorities permanently revoked, ensuring a fixed supply and unfreezable accounts. No adverse flags were reported by a third-party risk registry, and market data indicates moderate liquidity. Holder distribution data was unavailable for analysis.
 
-> **Final Recommendation:** The Pomni token demonstrates a strong security posture regarding its core authorities, with both mint and freeze authorities revoked. This ensures a fixed supply and prevents arbitrary freezing of user funds. However, the absence of detailed holder concentration data means that potential risks from whale holdings cannot be fully assessed. Users should consider the 'Single holder ownership' label from RugCheck.xyz, which suggests a concentrated ownership structure, and understand its implications for market stability before interacting with the token. For enhanced due diligence, a Premium Deploy option could include deeper off-chain analysis of the project team and community.
+> **Final Recommendation:** Holders should independently verify the on-chain status of the mint and freeze authorities to confirm their revoked state. While current liquidity is moderate, continuous monitoring of DEX liquidity and trading volume is advised, especially for large positions. Future audits should prioritize obtaining holder distribution data to assess potential concentration risks.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Pomni token is implemented using the spl-token-2022 program. A key security strength is that both the mint authority and freeze authority have been revoked, meaning no new tokens can be created… |
-| **Governance / Economics** | 5/10 | Medium | The token has a total DEX liquidity of $25,919 with a 24-hour volume of $22,940, resulting in a normal Volume/Liquidity Ratio of 0.89. The DEX pair is 94 days old, indicating some track record. While… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. There are no active Token-2022 extensions like transfer hooks or default frozen accounts that… |
+| **Technical** | 6/10 | Medium | The Pomni token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been permanently revoked, which prevents further token issuance and ensures that no… |
+| **Governance / Economics** | 5/10 | Medium | The token's market presence shows a liquidity of $17,207 USD, which is moderate. The 24-hour volume to liquidity ratio is 0.44, suggesting healthy trading activity without signs of wash trading. The… |
+| **Upgrades** | 8/10 | Low | The Pomni token mint has a fixed configuration due to the revocation of both mint and freeze authorities, preventing any future changes to supply or account freeze status. The token's metadata is… |
 
 ## Token Metrics
 

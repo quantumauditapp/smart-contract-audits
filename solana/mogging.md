@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This audit of the mogging SPL Token Mint found no critical or high-severity risks based on the provided on-chain data and external security signals. Key authorities such as mint and freeze are revoked, and no Token-2022 extensions posing significant risks are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+This audit of the mogging SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and external security signals. Both mint and freeze authorities are revoked, and no Token-2022 extensions posing significant risks are active. Holder distribution data was unavailable, preventing an assessment of supply concentration.
 
-> **Final Recommendation:** Based on the available data, the mogging token mint appears to have a robust security posture with no identified critical or high-severity vulnerabilities. The revocation of mint and freeze authorities significantly reduces centralisation risk. Holders should note that holder concentration data was not available, so a manual check of top holders might be prudent if this is a concern. For enhanced due diligence, consider a Premium Deploy option to conduct deeper analysis into the token's ecosystem and community.
+> **Final Recommendation:** Prospective holders should monitor the token's liquidity and trading volume for any significant changes. It is also recommended to regularly check for the availability of holder distribution data to assess potential concentration risks. Verify on-chain that the mint and freeze authorities remain revoked before making any investment decisions.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, as confirmed by RPC data, indicating that no single entity can mint new tokens or freeze existing… |
-| **Governance / Economics** | 7/10 | Low | DEX liquidity for the token is $52,842, which is above the very low liquidity threshold. The 24-hour volume is $8,484, resulting in a healthy Volume/Liquidity Ratio of 0.16, not indicative of wash… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's core parameters cannot be altered by an external key. The token utilizes the spl-token-2022 program, but no specific… |
+| **Technical** | 6/10 | Medium | The mogging token is implemented using the spl-token-2022 program. Crucially, both the mint authority and freeze authority have been revoked, preventing further token issuance or freezing of holder… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits moderate liquidity at $41,670, with a healthy 24-hour volume of $6,238, resulting in a normal Volume/Liquidity Ratio of 0.15. The DEX pair has been active for 121 days, providing a… |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are permanently revoked, meaning no further tokens can be minted and no accounts can be frozen. Metadata is immutable, preventing changes to the token's name… |
 
 ## Token Metrics
 

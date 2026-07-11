@@ -2,14 +2,14 @@
 token: manlet
 ticker: MANLET
 network: solana
-risk_score: 33
+risk_score: 28
 status: medium
 date: 2026-07-04
 ---
 
 # manlet (MANLET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 33/100 — 🟡 Medium Risk**
+> **Risk Score: 28/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/manlet-sol)
 
@@ -17,27 +17,17 @@ date: 2026-07-04
 
 ## Audit Summary
 
-The manlet token mint exhibits a very new DEX pair, having been created only 1 day ago, which limits the track record for assessing market behavior. While specific holder concentration data was unavailable, RugCheck.xyz flags the token with 'Single holder ownership' and 'High holder concentration' risk labels. The mint authority and freeze authority are both revoked, indicating a fixed supply and immutability of account states.
+The manlet token mint on Solana exhibits a strong security posture with both mint and freeze authorities revoked, preventing further supply changes or account freezing. No transfer hooks or default frozen states are active, and metadata is immutable. Holder concentration data was unavailable, and a third-party registry flagged "Single holder ownership" as a signal, which warrants monitoring.
 
-> **Final Recommendation:** Prospective holders should exercise caution due to the very recent launch of the DEX pair, which offers limited historical data for market behavior analysis. While core authorities are revoked, the RugCheck.xyz labels regarding holder concentration suggest potential risks from large holders. It is recommended to monitor the token's market activity and holder distribution over a longer period before making significant investments. For enhanced security, consider using a Premium Deploy option for any future token launches to ensure comprehensive pre-deployment audits and continuous monitoring.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to ensure the stability of the token's supply and transfer mechanisms. Monitor the token's holder distribution over time, especially given the "Single holder ownership" signal from a third-party registry, to assess potential centralization risks. Confirm that no new Token-2022 extensions are enabled that could alter token behavior.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.3 Access Control: The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing token… |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic: The token's DEX pair is very new, established only 1 day ago, which provides an insufficient track record for assessing team or holder behavior. Current liquidity stands at $517,250… |
-| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, meaning the token's supply is fixed and no accounts can be frozen. The token utilizes the spl-token-2022 program without active… |
-
-## Security Findings
-
-_🟡 1 Medium_
-
-### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
-
-The DEX pair for this token was created 1 day ago. This provides an insufficient track record to assess team or holder behaviour, making it difficult to predict market stability or potential price manipulation.
-
-**Recommendation:** Exercise caution and monitor the token's performance and community engagement over a longer period (e.g., at least 7 days) to establish a more reliable track record before making significant investments.
+| **Technical** | 6/10 | Medium | The manlet token is an SPL Token-2022 mint with its core authorities, Mint Authority and Freeze Authority, both revoked. This configuration prevents further token creation or freezing of holder… |
+| **Governance / Economics** | 6/10 | Medium | The token demonstrates healthy liquidity at $180,141 USD, with a normal 24-hour volume to liquidity ratio of 3.69, suggesting organic trading activity. The DEX pair has been active for 11 days… |
+| **Upgrades** | 8/10 | Low | The token mint's critical authorities, Mint Authority and Freeze Authority, are both revoked, ensuring that the token's supply and account states cannot be altered by an administrative key. As an SPL… |
 
 ## Token Metrics
 

@@ -17,17 +17,17 @@ date: 2026-06-28
 
 ## Audit Summary
 
-This audit of the Pump (PUMP) SPL Token Mint found no critical or high-severity issues based on the available on-chain data and external security signals. The mint authority and freeze authority are both revoked, indicating a fixed supply and immutability of account states. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+The Pump (PUMP) token mint on Solana demonstrates a strong security posture with all critical authorities, including Mint and Freeze authorities, permanently revoked. The token utilizes the spl-token-2022 program without active transfer hooks or default frozen accounts. Holder distribution data was unavailable from chain-native RPC, preventing an assessment of supply concentration.
 
-> **Final Recommendation:** Based on the available data, the Pump (PUMP) SPL Token Mint appears to have a robust security posture with key authorities revoked, indicating a fixed supply and immutable account states. Holders should be aware that holder concentration data was unavailable, which is a common limitation for new or rapidly growing tokens. For a comprehensive risk assessment, it is recommended to monitor holder distribution as this data becomes available. Consider using Quantum Audit's Premium Deploy option for future token launches to ensure all best practices are implemented from inception.
+> **Final Recommendation:** Holders should regularly verify the on-chain status of the token mint, particularly confirming that the Mint and Freeze authorities remain revoked. Monitor for any changes in the `transfer_hook_upgradable` status and the potential introduction of a transfer hook, which would require a separate review. Due to the unavailability of holder distribution data, users should exercise caution regarding potential whale activity and monitor on-chain distribution if this data becomes available.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Pump (PUMP) token is an SPL Token-2022 mint on Solana. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing token accounts can… |
-| **Governance / Economics** | 3/10 | High | The token exhibits healthy liquidity with $66,125,267 USD and a 24-hour volume of $167,723,545, indicating active trading. The Volume/Liquidity Ratio is 2.54, which is considered normal and does not… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and account freezing capabilities are immutable post-launch. The token is an SPL Token-2022, but it does not have… |
+| **Technical** | 6/10 | Medium | The Pump (PUMP) token is implemented using the spl-token-2022 program. Its supply is fixed at 850,388,805.799315888 tokens due to the Mint Authority being revoked. No Transfer Hook is active, and new… |
+| **Governance / Economics** | 3/10 | High | The token exhibits healthy liquidity with $63,317,940 USD available on DEXs. The 24-hour volume of $21,543,259 USD results in a normal Volume/Liquidity Ratio of 0.34, not indicating wash trading. The… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as both Mint and Freeze authorities are revoked. Metadata is also immutable ("metadata_mutable: False"), ensuring the token's name, symbol, and image cannot… |
 
 ## Token Metrics
 

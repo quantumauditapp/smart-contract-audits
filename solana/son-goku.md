@@ -2,14 +2,14 @@
 token: Son Goku
 ticker: GOKU
 network: solana
-risk_score: 51
+risk_score: 56
 status: high
 date: 2026-06-10
 ---
 
 # Son Goku (GOKU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 56/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/son-goku-sol)
 
@@ -17,27 +17,27 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This audit of the Son Goku (GOKU) SPL Token Mint reveals a medium risk profile primarily due to the very recent creation of its DEX trading pair. While core authorities like mint and freeze are revoked, and metadata is immutable, the token's short trading history (4 days) means there is insufficient data to assess long-term stability or team behavior. Holder concentration data was unavailable from RPC, but RugCheck.xyz indicates potential high holder concentration and single holder ownership risks.
+This audit of the Son Goku (GOKU) SPL token mint identifies a critical risk due to very low DEX liquidity, currently at $4,344. While mint and freeze authorities are revoked, preventing supply manipulation or account freezing, the low liquidity makes large position exits highly problematic. Holder distribution data was unavailable from chain-native RPC, preventing assessment of whale risk.
 
-> **Final Recommendation:** Given the 'Very New Pair' status, it is recommended to exercise caution and monitor the token's performance and holder behavior over a longer period. While core authorities are revoked, the lack of historical data and RugCheck's warnings about holder concentration warrant a conservative approach. Investors should consider the implications of potential price volatility from concentrated holdings. For enhanced security and ongoing monitoring, consider a Premium Deploy option with continuous on-chain analysis.
+> **Final Recommendation:** Prospective holders should exercise extreme caution due to the very low liquidity, which will result in severe slippage for any significant trades. Before acquiring or trading this token, verify the current DEX liquidity on-chain to ensure it has materially increased. Continuously monitor liquidity and trading volume for any signs of improvement or further deterioration.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Son Goku (GOKU) token is implemented using the spl-token-2022 program (7.1 Architecture). Both the mint authority and freeze authority have been revoked (7.3 Access Control), indicating that no… |
-| **Governance / Economics** | 4/10 | Medium | The token's DEX pair is very new, having been created only 4 days ago (7.4 Economic), which presents an elevated risk due to insufficient track record. Total DEX liquidity stands at $88,262, with a… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, have both been permanently revoked (7.7 Upgrades), preventing any future changes to the token's supply or the ability to freeze… |
+| **Technical** | 5/10 | Medium | The Son Goku (GOKU) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, which prevents the creation of new tokens or the freezing of… |
+| **Governance / Economics** | 3/10 | High | The token exhibits very low liquidity, with total DEX liquidity at only $4,344. This indicates that large positions cannot be exited without significant price impact. The 24-hour volume to liquidity… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are fixed due to the revocation of both Mint and Freeze authorities. This means no new tokens can be minted and no accounts can be frozen. The token does not utilize any… |
 
 ## Security Findings
 
-_🟡 1 Medium_
+_🟠 1 High_
 
-### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
+### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
 
-DEX pair was created 4 days ago. Insufficient track record to assess team or holder behaviour. (Fact: Pair Age (days): 4)
+Total DEX liquidity is $4,344. Slippage will be severe; large positions cannot be exited without significant loss.
 
-**Recommendation:** Account for the short history and monitor the token's performance and holder behavior over a longer period before making significant investments.
+**Recommendation:** Account for the fee in any swap calculation.
 
 ## Token Metrics
 

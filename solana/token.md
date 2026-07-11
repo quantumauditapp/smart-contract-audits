@@ -2,14 +2,14 @@
 token: 🦎
 ticker: LIZARD
 network: solana
-risk_score: 22
-status: medium
+risk_score: 12
+status: low
 date: 2026-06-10
 ---
 
 # 🦎 (LIZARD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 22/100 — 🟡 Medium Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/token-sol)
 
@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The 🦎 (LIZARD) SPL token mint has a critical configuration where new holder accounts are created in a frozen state, requiring an authority to unfreeze them before use. This introduces a central point of control and potential for funds to be unspendable if the authority is inactive. Holder concentration data was unavailable, preventing assessment of supply distribution risk.
+This audit of the 🦎 (LIZARD) SPL token mint found no critical or high-risk vulnerabilities based on the available on-chain data and market information. Both the mint and freeze authorities have been revoked, indicating a fixed supply and immutable account states. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-> **Final Recommendation:** Given the 'Default Frozen State' configuration, prospective holders should verify the identity and responsiveness of the authority responsible for unfreezing new accounts. Without an active and reliable unfreezing mechanism, newly acquired tokens may become unspendable. It is also recommended to monitor for any updates regarding holder concentration once that data becomes available, as high concentration can pose significant market risks. For enhanced security and operational control, consider a Premium Deploy option that allows for custom token configurations and ensures all authorities are managed or revoked as intended from inception.
+> **Final Recommendation:** Holders should monitor for any future changes in market dynamics, particularly if holder concentration data becomes available. While the current state indicates a secure and immutable token, continuous vigilance regarding liquidity and trading volume is advisable. Verify on-chain that the mint and freeze authorities remain revoked before making any significant investment decisions.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The 🦎 (LIZARD) token is an SPL token operating on the `spl-token` program. Both the Mint Authority and Freeze Authority have been successfully revoked, indicating that no new tokens can be minted and… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits moderate liquidity with $33,554 USD available on DEXs, and a healthy 24-hour volume to liquidity ratio of 0.02, suggesting organic trading activity. The pair has been active for… |
-| **Upgrades** | 10/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, have been revoked, preventing any further changes to the token's supply or the ability to freeze accounts. Metadata mutability is… |
+| **Technical** | 6/10 | Medium | The 🦎 (LIZARD) token is a standard SPL token mint operating under the `spl-token` program. Its supply is fixed at 999,777,379.812728 tokens, as the mint authority has been revoked. Similarly, the… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits healthy trading metrics with a 24-hour volume of $1,499 against a liquidity of $32,609, resulting in a normal Volume/Liquidity Ratio of 0.05. The DEX pair has been active for 346… |
+| **Upgrades** | 10/10 | Low | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. This means the supply cannot be increased, and no accounts can be frozen. Furthermore, the token's… |
 
 ## LP Distribution
 
@@ -35,16 +35,6 @@ The 🦎 (LIZARD) SPL token mint has a critical configuration where new holder a
 |--------|-------|
 | **LP Burned** | ✅ 100.0% (≈ permanent lock) |
 | **LP Locked** | 100.0% — Raydium Lock |
-
-## Security Findings
-
-_🟠 1 High_
-
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
-
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority. This is indicated by `GoPlus.default_account_state: 1`.
-
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
 
 ## Token Metrics
 

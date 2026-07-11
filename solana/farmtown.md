@@ -17,17 +17,17 @@ date: 2026-06-22
 
 ## Audit Summary
 
-This audit of the FarmTown (FARM) SPL token mint found no critical or high-severity issues based on the provided on-chain facts and external security signals. The mint and freeze authorities are revoked, and no Token-2022 extensions posing significant risks are active. Holder concentration data was unavailable from RPC, but RugCheck.xyz indicated high ownership by top holders, which is a market risk to consider.
+The FarmTown (FARM) SPL Token Mint exhibits a robust security posture with both mint and freeze authorities revoked, indicating a fixed supply and immutable account states. No high-severity risks were identified by the deterministic rules. Holder distribution data was unavailable for analysis, preventing an assessment of supply concentration.
 
-> **Final Recommendation:** Based on the available data and deterministic rules, the FarmTown (FARM) token mint presents a low-risk profile regarding its on-chain configuration and authorities. Key administrative powers like minting and freezing have been revoked, and no high-risk Token-2022 extensions are active. However, holder concentration data was unavailable from RPC, and RugCheck.xyz indicated high ownership by top holders, which could still pose a market risk. Users should consider this external signal and the relatively new pair age (12 days) when evaluating investment decisions. No Premium Deploy option is applicable for SPL token mints as there is no source code to deploy.
+> **Final Recommendation:** Holders should regularly monitor the token's market data, particularly liquidity and trading volume, to ensure continued health. While current on-chain facts indicate a secure and immutable token, it is prudent to verify the revocation status of mint and freeze authorities directly on-chain before making significant investments. Be aware that holder distribution data was not available for this assessment, so monitor on-chain distribution if possible.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The FarmTown (FARM) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing accounts can be… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $39,311 USD in total DEX liquidity, which is above the very low liquidity threshold. The 24-hour volume of $119,821 results in a Volume/Liquidity Ratio of… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the token have been revoked, meaning no further administrative changes can be made to the token's supply or account freezing capabilities. The token uses… |
+| **Technical** | 6/10 | Medium | The FarmTown (FARM) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity at $36,785 USD, with a healthy 24-hour volume of $13,003 USD. The Volume/Liquidity Ratio is 0.35, which is considered normal and does not indicate wash trading.… |
+| **Upgrades** | 8/10 | Low | The FarmTown (FARM) token mint has fully revoked its mint and freeze authorities, meaning its core parameters are immutable. It uses the spl-token-2022 program but does not have a transfer hook or… |
 
 ## Token Metrics
 

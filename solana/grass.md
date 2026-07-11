@@ -2,14 +2,14 @@
 token: Grass
 ticker: GRASS
 network: solana
-risk_score: 65
+risk_score: 57
 status: high
 date: 2026-06-24
 ---
 
 # Grass (GRASS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 65/100 — 🟠 High Risk**
+> **Risk Score: 57/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/grass-sol)
 
@@ -17,34 +17,34 @@ date: 2026-06-24
 
 ## Audit Summary
 
-The Grass (GRASS) token mint presents critical risks due to an active mint authority, enabling the issuer to create unlimited new tokens and dilute existing holders. Additionally, new holder accounts are created in a frozen state, requiring an authority to unfreeze them before use. Holder concentration data was unavailable, preventing an assessment of distribution risk.
+The Grass (GRASS) SPL token mint presents a critical risk due to an active mint authority, which allows for unlimited token creation and potential dilution of holders. Additionally, the token's metadata is mutable, meaning its name, symbol, or image can be altered post-launch. Holder distribution data was unavailable from chain-native RPC, preventing an assessment of supply concentration risk.
 
-> **Final Recommendation:** Holders should exercise extreme caution due to the active mint authority, which enables the issuer to dilute the token supply at any time. Verify on-chain that the mint authority is set to null before considering the supply fixed. Be aware that new token accounts will be frozen by default, requiring an active issuer to unfreeze them for transfers. If considering a Premium Deploy option, ensure all mutable authorities are revoked and default account states are unfrozen to mitigate centralisation risks.
+> **Final Recommendation:** Before holding GRASS tokens, verify on-chain that the mint authority (31rYartQwHeBMjAe2MgGpffGV57fQy3kug4BDN8tLGqQ) has been set to null to ensure a fixed supply. Continuously monitor the token's metadata for any changes to its branding, as it is mutable. If holder distribution data becomes available, assess the concentration of tokens among the top accounts to understand potential market manipulation risks.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The token is an SPL token mint operating under the `spl-token` program. A significant risk is the active mint authority (`31rYartQwHeBMjAe2MgGpffGV57fQY3kug4BDN8tLGqQ`), which allows for unlimited… |
-| **Governance / Economics** | 3/10 | High | The token exhibits normal trading patterns with a 24-hour volume of $7,120 against a liquidity of $366,751, resulting in a low Volume/Liquidity Ratio of 0.02 (7.4 Economic). The DEX pair has been… |
-| **Upgrades** | 6/10 | Medium | The mint authority remains active, posing a risk of supply inflation (7.7 Upgrades). The freeze authority has been revoked, which is a positive security measure. The token's metadata is immutable… |
+| **Technical** | 4/10 | Medium | The token is implemented using the classic SPL Token Program (spl-token). A critical finding is the active mint authority, held by 31rYartQwHeBMjAe2MgGpffGV57fQY3kug4BDN8tLGqQ, which enables the… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate liquidity at $320,381 USD, with a healthy 24-hour volume of $7,110 USD. The Volume/Liquidity Ratio is 0.02, which does not indicate wash trading. The DEX pair has been… |
+| **Upgrades** | 7/10 | Low | The mint authority remains active, allowing for potential changes to the token's total supply. The freeze authority has been revoked, which is a positive for the immutability of account states.… |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High_
+_🔴 1 Critical · 🟢 1 Low_
 
 ### `C-01` — Mint Authority Not Revoked  *(Severity: Critical · Status: Unresolved)*
 
-The mint authority is `31rYartQwHeBMjAe2MgGpffGV57fQY3kug4BDN8tLGqQ`. The holder of this key can mint unlimited new tokens, diluting all current holders to zero value. (Fact: Mint Authority is NOT null/revoked)
+The mint authority is 31rYartQwHeBMjAe2MgGpffGV57fQy3kug4BDN8tLGqQ. The holder of this key can mint unlimited new tokens, diluting all current holders to zero value. This fact is also flagged by a third-party risk registry.
 
 **Recommendation:** Verify on-chain that the mint authority is set to null before treating supply as fixed.
 
 
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
+### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
 
-New holder accounts are created in a frozen state (`GoPlus.default_account_state: 1`) and require explicit unfreezing by an authority. (Fact: Default Account State is "frozen")
+Token name, symbol, or image can be changed post-launch, as indicated by `metadata_mutable: True`. This fact is also noted by a third-party risk registry.
 
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+**Recommendation:** Verify metadata against off-chain expectations before trusting branding.
 
 ## Token Metrics
 

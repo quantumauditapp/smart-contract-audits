@@ -2,14 +2,14 @@
 token: RaveDAO
 ticker: RAVE
 network: ethereum
-risk_score: 98
+risk_score: 90
 status: critical
 date: 2026-06-29
 ---
 
 # RaveDAO (RAVE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 98/100 — 🔴 Critical Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ravedao-eth)
 
@@ -17,17 +17,17 @@ date: 2026-06-29
 
 ## Audit Summary
 
-The RaveToken contract is an ERC-20 token implementing LayerZero's Omnichain Fungible Token (OFT) standard, inheriting from OpenZeppelin's Ownable. The contract provides basic ERC-20 functionality, cross-chain transfers via LayerZero, and a burn function. Key strengths include the use of battle-tested OpenZeppelin and LayerZero libraries. Identified risks primarily revolve around centralized control over critical cross-chain configurations and inherent dependencies on the LayerZero protocol.
+The RaveToken contract is an ERC-20 token built upon OpenZeppelin's Ownable and LayerZero's OFT (Omnichain Fungible Token) standards. The contract facilitates cross-chain transfers via LayerZero and includes a basic burn function. The codebase is concise and leverages well-audited external libraries, contributing to high technical security. However, the system exhibits centralized control by the owner over critical LayerZero configurations and lacks an emergency pause mechanism, which introduces medium-level governance and operational risks. The overall security is heavily reliant on the integrity of the LayerZero protocol.
 
-> **Final Recommendation:** The RaveToken contract is generally well-implemented, leveraging robust external libraries. The primary areas for improvement involve decentralizing critical access control mechanisms and enhancing operational resilience. We recommend considering a multi-signature wallet or a time-locked governance for sensitive LayerZero configurations and implementing a pause mechanism for emergencies. For enhanced security and operational robustness, consider a Premium Deploy option, which includes continuous monitoring and incident response planning.
+> **Final Recommendation:** It is recommended to implement an emergency pause mechanism to allow the owner or a designated multisig to halt critical operations in case of an exploit or vulnerability. Consider deploying the contract with a robust multisig wallet as the owner to enhance security and decentralize control over critical LayerZero configurations. Additionally, establish clear operational procedures for managing LayerZero parameters and for handling potential incidents.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract utilizes well-audited OpenZeppelin and LayerZero libraries, contributing to a solid foundation (7.2 Code Security). The `burn` function is correctly implemented, allowing users to burn… |
-| **Governance / Economics** | 1/10 | High | The economic model is straightforward, with `totalSupply` minted to the owner at deployment, which is a common initial distribution strategy (7.4 Economic). The primary governance risk stems from the… |
-| **Upgrades** | 4/10 | Medium | The RaveToken contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). This design choice eliminates the complexities and potential risks associated with proxy upgrade… |
+| **Technical** | 4/10 | Medium | The technical architecture (7.1 Architecture) of RaveToken is straightforward, extending battle-tested ERC-20, Ownable, and LayerZero OFT contracts. The custom code (7.2 Code Security) is minimal… |
+| **Governance / Economics** | 1/10 | High | The economic model (7.4 Economic) is simple, based on an ERC-20 token with cross-chain capabilities. Governance (7.5 Governance) is centralized, with a single owner address controlling critical… |
+| **Upgrades** | 4/10 | Medium | The RaveToken contract is not designed with upgradeability (7.7 Upgrades) in mind. It is a standard implementation contract, meaning there are no proxy-related risks or complexities associated with… |
 
 ## LP Distribution
 
@@ -38,41 +38,34 @@ The RaveToken contract is an ERC-20 token implementing LayerZero's Omnichain Fun
 
 ## Security Findings
 
-_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
+_🟢 2 Low · ⚪ 2 Informational_
 
-### `M-01` — Centralized Control Over LayerZero Configurations  *(Severity: Medium · Status: Unresolved)*
+### `L-01` — Lack of Emergency Pause Mechanism  *(Severity: Low · Status: Unresolved)*
 
-The `RaveToken` contract inherits `Ownable` and `OFT`. The `owner` address, set at deployment, has significant control over the `OFT`'s configuration parameters, such as `setTrustedRemote`, `setEnforcedOptions`, and `setDelegate`. This centralization means the owner can unilaterally change critical cross-chain parameters, potentially impacting token transfers or security. This poses a single point of failure and trust assumption.
+The contract lacks an emergency pause mechanism. In the event of a critical vulnerability, an exploit, or a severe issue with the LayerZero protocol, there is no function available to the owner or any authorized entity to temporarily halt token transfers or cross-chain operations. This could prevent the project from mitigating ongoing losses or preventing further damage.
 
-**Recommendation:** Consider implementing a multi-signature wallet or a time-locked governance mechanism for critical `OFT` configuration changes to reduce single-point-of-failure risk and enhance decentralization. This would require multiple approvals or a delay before sensitive changes take effect.
-
-
-### `M-02` — Dependency on LayerZero Protocol  *(Severity: Medium · Status: Unresolved)*
-
-The `RaveToken` contract heavily relies on the LayerZero protocol for its omnichain functionality. Any vulnerabilities, exploits, or operational issues within the LayerZero endpoint, its messaging system, or its security model (e.g., oracles, relayer network) could directly impact the security and functionality of `RaveToken`'s cross-chain transfers. This introduces an external dependency risk.
-
-**Recommendation:** Project teams should closely monitor LayerZero's security updates, audits, and operational status. Implement robust monitoring for LayerZero-related events and potential anomalies. Maintain contingency plans for potential LayerZero service disruptions or security incidents.
+**Recommendation:** Implement a `Pausable` mechanism (e.g., from OpenZeppelin) that allows the owner or a designated governance entity to pause and unpause critical functions, such as `transfer`, `transferFrom`, `sendFrom`, and `_debit` (for cross-chain transfers). This provides a crucial safety switch for incident response.
 
 
-### `L-01` — Lack of Pause Mechanism  *(Severity: Low · Status: Unresolved)*
+### `L-02` — No Mechanism for Recovering Accidentally Sent Tokens  *(Severity: Low · Status: Unresolved)*
 
-The `RaveToken` contract, being an ERC-20 with cross-chain capabilities, does not include a pause mechanism. In the event of a critical vulnerability, exploit, or emergency (e.g., a LayerZero exploit or a bug in the token logic), there is no way for the owner or a governance body to temporarily halt transfers or cross-chain operations to mitigate damage.
+The contract does not include a function to recover accidentally sent ERC-20 tokens (other than RaveToken itself) or native currency (ETH/MATIC/BNB) that might be mistakenly sent to the contract address. Any such assets sent to the contract would become permanently locked and inaccessible.
 
-**Recommendation:** Consider integrating a `Pausable` mechanism (e.g., from OpenZeppelin) that allows the owner or a designated role to pause and unpause critical functions like `transfer`, `transferFrom`, `burn`, and potentially `_debit` (for cross-chain sends) in emergencies. This should be carefully designed to avoid centralization of power.
-
-
-### `I-01` — Initial Total Supply Minted to Owner  *(Severity: Informational · Status: Unresolved)*
-
-In the constructor, the entire `totalSupply` of `RaveToken` is minted directly to the `owner` address. While this is a common pattern for initial token distribution, it means the owner holds 100% of the initial token supply, giving them significant control over the token's immediate liquidity and market dynamics.
-
-**Recommendation:** Ensure transparency regarding the initial token distribution plan. If the intention is for broader distribution, consider implementing a vesting schedule, airdrop mechanism, or liquidity provision strategy to decentralize token holdings post-deployment.
+**Recommendation:** Add an `onlyOwner` function to allow the recovery of arbitrary ERC-20 tokens and native currency. This function should enable the owner to transfer specified tokens or native currency from the contract to a designated address. Care should be taken to prevent the recovery of the contract's own RaveTokens if they are intended to be held by the contract for specific purposes.
 
 
-### `I-02` — Use of Floating Pragma Version  *(Severity: Informational · Status: Unresolved)*
+### `I-01` — Centralized Control by Owner  *(Severity: Informational · Status: Unresolved)*
 
-The contract uses `pragma solidity ^0.8.28;`. A floating pragma allows the contract to be compiled with any future 0.8.x version. While this can leverage newer compiler features, it introduces the risk of unexpected behavior if a future compiler version introduces breaking changes or new bugs that affect the contract's logic.
+The contract utilizes the OpenZeppelin `Ownable` pattern, granting a single address (the owner) exclusive control over critical functions. Specifically, the owner can configure LayerZero parameters such as `setDelegate`, `setTrustedRemote`, and `setEnforcedOptions`. This centralization introduces a single point of failure, where a compromise of the owner's private key could lead to unauthorized control over the token's cross-chain functionality.
 
-**Recommendation:** Pin the Solidity compiler version to a specific, tested version (e.g., `pragma solidity 0.8.28;`) to ensure deterministic compilation and prevent unexpected behavior from future compiler updates. This practice enhances reproducibility and reduces potential risks.
+**Recommendation:** Consider using a robust multisig wallet (e.g., Gnosis Safe) as the owner to distribute control and reduce the risk associated with a single point of failure. For highly sensitive operations, explore integrating a more decentralized governance mechanism if feasible for the project's scope.
+
+
+### `I-02` — Reliance on LayerZero Security  *(Severity: Informational · Status: Unresolved)*
+
+The RaveToken contract's core functionality for cross-chain transfers is entirely dependent on the LayerZero protocol and its endpoint. The security and operational integrity of the token across different chains are directly tied to the security of LayerZero's infrastructure, including its relayer network and oracle services. Any vulnerability or compromise within LayerZero could directly impact the RaveToken's cross-chain value transfer and integrity.
+
+**Recommendation:** Acknowledge and monitor the security posture of the LayerZero protocol. Stay updated on LayerZero's security announcements, audits, and any reported vulnerabilities. Implement robust monitoring for LayerZero-related events and potential anomalies in cross-chain transfers.
 
 ## Token Metrics
 

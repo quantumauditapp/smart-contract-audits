@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The TOES token mint is configured with robust security settings, including revoked mint and freeze authorities, preventing further token issuance or account freezing. No Token-2022 extensions like transfer hooks or permanent delegates are active, and metadata is immutable. Holder concentration data was unavailable, and RugCheck identified a "High holder correlation" risk, which could impact price stability.
+This audit of the TOES (TOESCOIN) SPL Token Mint found no critical or high-severity issues based on the available on-chain data and external security signals. The mint and freeze authorities are revoked, and no Token-2022 extensions like transfer hooks or permanent delegates are active. Holder distribution data was unavailable, preventing a full assessment of supply centralization.
 
-> **Final Recommendation:** The token exhibits strong on-chain security configurations with no active administrative authorities that could unilaterally alter token supply or freeze user funds. The metadata is also immutable. However, potential holders should be aware of the "High holder correlation" flagged by RugCheck, which suggests a concentrated ownership that could lead to price volatility. Due to the unavailability of detailed holder distribution data, it is recommended to monitor on-chain holder analytics independently to assess concentration risks before making significant investments.
+> **Final Recommendation:** Holders should monitor on-chain activity for any unexpected large transfers or liquidity movements. While current data indicates a secure configuration, the absence of holder distribution data means potential centralization risks cannot be fully assessed. Users should verify the token's current state on-chain, especially the revoked authorities, before making investment decisions.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The TOES token is an SPL Token-2022 mint with robust foundational security (7.1 Architecture, 7.2 Code Security). Both the mint authority and freeze authority have been permanently revoked (7.3… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits a healthy volume-to-liquidity ratio of 4.50, suggesting organic trading activity without signs of wash trading (7.4 Economic). Current DEX liquidity stands at $281,362, which is… |
-| **Upgrades** | 8/10 | Low | The TOES token mint has a strong immutability profile (7.7 Upgrades), with both the mint and freeze authorities permanently revoked. This ensures that the token supply cannot be increased and user… |
+| **Technical** | 6/10 | Medium | The TOES token is implemented using the spl-token-2022 program. Key administrative controls, specifically the mint authority and freeze authority, have been revoked, indicating a fixed supply and… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits healthy liquidity with $167,236 USD available on DEXs, and a normal 24-hour volume to liquidity ratio of 0.97, suggesting organic trading activity. The DEX pair has been active for… |
+| **Upgrades** | 8/10 | Low | The SPL Token Mint for TOES has a robust configuration regarding administrative control. Both the mint and freeze authorities are permanently revoked, meaning no further tokens can be minted and no… |
 
 ## Token Metrics
 

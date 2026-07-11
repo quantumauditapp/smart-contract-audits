@@ -2,14 +2,14 @@
 token: Anon Alien
 ticker: AALIEN
 network: solana
-risk_score: 72
-status: critical
+risk_score: 44
+status: medium
 date: 2026-07-03
 ---
 
 # Anon Alien (AALIEN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/anon-alien-sol)
 
@@ -17,34 +17,17 @@ date: 2026-07-03
 
 ## Audit Summary
 
-This audit of the Anon Alien (AALIEN) SPL token mint reveals critical risks. RugCheck.xyz has flagged the token as 'rugged' with a score of 1/100, indicating severe trust issues. Additionally, new holder accounts are created in a frozen state, requiring an external authority to unfreeze them. Holder concentration data was unavailable for analysis.
+This audit of the Anon Alien (AALIEN) SPL token mint found no critical or high-risk vulnerabilities based on the provided on-chain facts and market data. Key authorities such as Mint Authority and Freeze Authority are revoked, indicating a fixed supply and immutable token accounts. Holder distribution data was unavailable, preventing an assessment of supply concentration risk.
 
-> **Final Recommendation:** Given the critical 'rugged' flag from RugCheck.xyz and the default frozen state for new accounts, it is strongly recommended to avoid any interaction with this token. The low liquidity and high volume/liquidity ratio also suggest potential market manipulation. Users should confirm the availability of an active issuer to unfreeze accounts if they choose to proceed, though the overall risk profile is extremely high. There is no Premium Deploy option for SPL token mints.
+> **Final Recommendation:** Given the revoked mint and freeze authorities, the token's supply and account transferability are fixed. Holders should monitor for any future changes in market dynamics, particularly if holder distribution data becomes available, to assess potential concentration risks. Always verify the current state of authorities directly on-chain before making investment decisions, as off-chain data can be stale.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The token is an SPL token using the `spl-token` program with 6 decimals (7.1 Architecture). Mint and Freeze authorities are both revoked, indicating a fixed supply and no ability to freeze existing… |
-| **Governance / Economics** | 3/10 | High | The token has very low liquidity at $37,179, with a high 24-hour volume of $421,864, resulting in a volume/liquidity ratio of 11.35x (7.4 Economic). This ratio suggests potential wash trading. Holder… |
-| **Upgrades** | 6/10 | Medium | The mint and freeze authorities are permanently revoked, meaning no further tokens can be minted and no accounts can be frozen by an authority. The token's metadata is also immutable… |
-
-## Security Findings
-
-_🔴 1 Critical · 🟠 1 High_
-
-### `C-01` — RugCheck Flagged as Rugged  *(Severity: Critical · Status: Unresolved)*
-
-RugCheck.xyz classifies this token as rugged based on its own dataset (developer history, LP movements). (Fact: RugCheck Score: 1 / 100)
-
-**Recommendation:** Do not interact with this token.
-
-
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
-
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority. (Fact: GoPlus.default_account_state: 1)
-
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+| **Technical** | 6/10 | Medium | The Anon Alien (AALIEN) token is an SPL token operating under the `spl-token` program. Its Mint Authority is revoked, ensuring no new tokens can be minted beyond the current supply of… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits moderate liquidity with $31,593 USD in total DEX liquidity. Trading activity shows a normal Volume/Liquidity Ratio of 0.05 over 24 hours, suggesting no signs of wash trading. The… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both Mint Authority and Freeze Authority. Metadata, including name and symbol, is also immutable as `metadata_mutable` is `False`.… |
 
 ## Token Metrics
 

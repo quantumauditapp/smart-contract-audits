@@ -2,14 +2,14 @@
 token: Tensor
 ticker: TNSR
 network: solana
-risk_score: 70
+risk_score: 62
 status: high
 date: 2026-06-21
 ---
 
 # Tensor (TNSR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 62/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tensor-sol)
 
@@ -17,34 +17,34 @@ date: 2026-06-21
 
 ## Audit Summary
 
-This SPL token mint presents critical risks primarily due to an active mint authority, 7rtye8syTEK4W8omFkUiyUcj2MPFRUTq7yuczc7jNZZS, which can mint unlimited new tokens, diluting all current holders. Additionally, new holder accounts are created in a frozen state, requiring manual unfreezing by an authority. Holder concentration data was unavailable, preventing a full assessment of whale risk.
+The Tensor (TNSR) token mint presents a critical risk due to an unrevoked mint authority, allowing the issuer to mint unlimited new tokens and dilute existing holders. Additionally, the token's metadata is mutable, introducing a low risk of branding changes post-launch. Third-party risk registry data on holder concentration was unavailable from chain-native RPC, but other third-party signals indicate potential risks related to concentrated ownership.
 
-> **Final Recommendation:** Holders should exercise extreme caution due to the active mint authority, which allows for arbitrary supply inflation. Verify on-chain that the mint authority is set to null before considering the supply fixed. Be aware that new accounts will be frozen by default, requiring an active issuer to unfreeze them for transfers to occur. Due to the critical risks identified, interaction with this token is not recommended unless the issuer's intentions and operational procedures for unfreezing accounts are fully understood and trusted. For a Premium Deploy option, consider tokens with fully revoked mint and freeze authorities and no default frozen state.
+> **Final Recommendation:** Before engaging with the Tensor (TNSR) token, verify on-chain that the mint authority has been permanently revoked to ensure a fixed supply. Monitor the token's metadata for any unexpected changes to its branding. Be aware of the potential for concentrated ownership, as indicated by third-party signals, which could lead to significant price volatility.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The token is an SPL token mint operating on the `spl-token` program with a total supply of 783,790,895.968785602 tokens and 9 decimals. A critical risk is present as the mint authority… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a liquidity of $65,859 USD, which is moderate but could lead to slippage for large trades. The 24-hour volume is $45,029, resulting in a healthy volume/liquidity ratio of 0.68… |
-| **Upgrades** | 6/10 | Medium | The mint authority remains active, posing a significant risk of supply inflation (7.3 Access Control). Conversely, the freeze authority has been revoked, preventing arbitrary freezing of user… |
+| **Technical** | 4/10 | Medium | The Tensor (TNSR) token is a standard SPL token operating under the `spl-token` program (v3), indicating a well-established token standard. A significant risk exists as the mint authority… |
+| **Governance / Economics** | 2/10 | High | The token exhibits moderate liquidity at $64,617 USD, with a healthy 24-hour volume to liquidity ratio of 0.12, suggesting organic trading activity. The DEX pair has been active for 470 days… |
+| **Upgrades** | 7/10 | Low | The mint authority for TNSR is currently active, allowing for potential future supply changes by the authority holder. While the freeze authority has been revoked, enhancing user control over funds… |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High_
+_🔴 1 Critical · 🟢 1 Low_
 
 ### `C-01` — Mint Authority Not Revoked  *(Severity: Critical · Status: Unresolved)*
 
-The mint authority is `7rtye8syTEK4W8omFkUiyUcj2MPFRUTq7yuczc7jNZZS`. The holder of this key can mint unlimited new tokens, diluting all current holders to zero value. (Fact: Mint Authority: 7rtye8syTEK4W8omFkUiyUcj2MPFRUTq7yuczc7jNZZS)
+The mint authority is 7rtye8syTEK4W8omFkUiyUcj2MPFRUTq7yuczc7jNZZS. The holder of this key can mint unlimited new tokens, diluting all current holders to zero value.
 
 **Recommendation:** Verify on-chain that the mint authority is set to null before treating supply as fixed.
 
 
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
+### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
 
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority. This means users cannot transfer tokens immediately after receiving them without an additional action from the issuer. (Fact: GoPlus.default_account_state: 1)
+Token name, symbol, or image can be changed post-launch.
 
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+**Recommendation:** Verify metadata against off-chain expectations before trusting branding.
 
 ## Token Metrics
 

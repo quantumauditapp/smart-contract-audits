@@ -2,14 +2,14 @@
 token: Jupiter
 ticker: JUP
 network: solana
-risk_score: 34
+risk_score: 36
 status: medium
 date: 2026-06-21
 ---
 
 # Jupiter (JUP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jupiter-sol)
 
@@ -17,17 +17,27 @@ date: 2026-06-21
 
 ## Audit Summary
 
-The Jupiter (JUP) token mint exhibits strong security configurations with both mint and freeze authorities revoked, ensuring a fixed supply and preventing account freezing. Liquidity is robust, and trading volume appears healthy. However, holder concentration data was unavailable, preventing a full assessment of distribution risk. A discrepancy exists regarding metadata mutability, with RugCheck flagging it as mutable while GoPlus reports it as immutable.
+This audit of the Jupiter (JUP) SPL token mint identifies a low-severity risk related to mutable metadata, meaning the token's name, symbol, or image can be altered post-launch. Key authorities like mint and freeze are appropriately revoked, indicating a fixed supply and unfreezable accounts. Holder distribution data was unavailable, preventing an assessment of concentration risk.
 
-> **Final Recommendation:** Based on the available on-chain data and external signals, the Jupiter (JUP) token mint appears to be robustly configured with critical authorities revoked, ensuring a fixed supply and preventing arbitrary freezing of funds. Liquidity is high, and trading patterns are normal, suggesting a healthy market. However, the absence of holder concentration data means that potential risks associated with concentrated supply cannot be assessed. Investors should also note the conflicting information regarding metadata mutability from GoPlus and RugCheck. It is recommended to verify the metadata immutability on-chain if this is a critical concern, and to monitor holder distribution if such data becomes available. For enhanced security, consider utilizing a Premium Deploy option for future token launches to ensure comprehensive pre-deployment audits and continuous monitoring.
+> **Final Recommendation:** Holders should verify the token's metadata against official sources to ensure branding consistency, especially given its mutability. Monitor for any changes to the token's name, symbol, or image that could indicate a change in project identity or intent. While key authorities are revoked, the absence of holder distribution data means investors should be aware of potential concentration risks that could impact price stability.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.2 Code Security: The token is an SPL token mint utilizing the standard `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked (None), indicating that… |
-| **Governance / Economics** | 5/10 | Medium | 7.4 Economic: The token exhibits substantial liquidity with $167,376,320 USD available on DEXs. The 24-hour volume of $281,072,047 USD results in a healthy Volume/Liquidity Ratio of 1.68, which is… |
-| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, meaning the token's supply and account freezing capabilities cannot be altered post-launch. The token is not using Token-2022… |
+| **Technical** | 6/10 | Medium | The Jupiter (JUP) token operates on the standard `spl-token` program (v3). Both the Mint Authority and Freeze Authority are revoked, ensuring no new tokens can be minted and no existing accounts can… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits strong market health with over $216 million in DEX liquidity and $82 million in 24-hour trading volume. The Volume/Liquidity Ratio of 0.38 is normal, not indicating wash trading.… |
+| **Upgrades** | 8/10 | Low | The token's core functionalities are immutable, as both the mint and freeze authorities have been revoked. There are no indications of upgradable transfer fees or transfer hooks. The only mutable… |
+
+## Security Findings
+
+_🟢 1 Low_
+
+### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
+
+The token's metadata is mutable, meaning its name, symbol, or image can be changed post-launch. This was identified by the `metadata_mutable: True` flag.
+
+**Recommendation:** Verify metadata against off-chain expectations before trusting branding. Monitor for any changes to the token's branding elements.
 
 ## Token Metrics
 

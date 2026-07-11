@@ -17,19 +17,17 @@ date: 2026-07-08
 
 ## Audit Summary
 
-This audit of The Orange Bull (SAYLOR) SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and deterministic rules. The mint and freeze authorities are revoked, and no Token-2022 extensions posing immediate risks are active. Holder concentration data was unavailable from RPC, though RugCheck.xyz flagged high ownership by top holders.
+The token mint for The Orange Bull (SAYLOR) is an SPL Token-2022. Both mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Third-party risk registry data indicates concerns regarding LP unlocking and holder concentration, though specific holder distribution data was unavailable.
 
-> **Final Recommendation:** Based on the available on-chain facts and deterministic audit rules, The Orange Bull (SAYLOR) token presents a low technical risk profile. The revocation of mint and freeze authorities is a strong positive, ensuring supply immutability and preventing asset confiscation. No high-risk Token-2022 extensions are active, and metadata is immutable.
-
-However, potential holders should be aware that holder concentration data was unavailable from RPC, and RugCheck.xyz indicated 'Top 10 holders high ownership' and 'Single holder ownership'. While not triggering a specific deterministic finding due to lack of percentage data, this qualitative flag suggests a need for caution regarding potential market manipulation. Investors should conduct further due diligence on holder distribution if this is a concern. For premium deployments, consider integrating real-time holder analytics to monitor concentrat…
+> **Final Recommendation:** Prospective holders should independently verify the current state of the mint and freeze authorities on-chain to confirm they remain revoked. Given the third-party risk registry signals regarding LP unlocking and holder concentration, it is crucial to monitor liquidity pool movements and holder distribution for any significant changes that could impact price stability. Always exercise caution with tokens exhibiting such signals.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.8 Operations: The token is an SPL Token-2022 mint with the address BGwYnDVe18aj9cozWcKNhiTUwayELULg5rHLGPPdpump. Crucially, both the Mint… |
-| **Governance / Economics** | 7/10 | Low | 7.4 Economic, 7.5 Governance: The token exhibits a healthy liquidity of $114,701 USD and a normal 24-hour volume to liquidity ratio of 1.67, indicating no immediate wash trading signals. The DEX pair… |
-| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority has been revoked, meaning no further tokens can be minted, fixing the supply. The token utilizes the spl-token-2022 program but does not have any active extensions… |
+| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 with mint address BGwYnDVe18aj9cozWcKNhiTUwayELULg5rHLGPPdpump. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and… |
+| **Governance / Economics** | 7/10 | Low | The token has a total DEX liquidity of $170,361 with a 24-hour volume of $542,869, resulting in a normal Volume/Liquidity Ratio of 3.19. The DEX pair is 12 days old, indicating it is past the 'very… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and account freeze status are immutable. The token is an SPL Token-2022, but no specific upgradable extensions… |
 
 ## Token Metrics
 

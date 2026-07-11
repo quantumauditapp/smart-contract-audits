@@ -2,14 +2,14 @@
 token: Bullish Degen
 ticker: BULLISH
 network: solana
-risk_score: 37
+risk_score: 27
 status: medium
 date: 2026-06-10
 ---
 
 # Bullish Degen (BULLISH) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 27/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bullish-degen-sol)
 
@@ -17,27 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Bullish Degen token mint has its mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. However, new holder accounts are created in a frozen state, requiring an authority to unfreeze them before use. Holder concentration data was unavailable from RPC, but RugCheck flagged high ownership by top holders, indicating potential centralization risks.
+The Bullish Degen (BULLISH) SPL token mint has no critical or high-severity risks identified based on available on-chain data and market information. Both mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Holder distribution data was unavailable, preventing an assessment of supply concentration.
 
-> **Final Recommendation:** Holders should be aware that new token accounts for Bullish Degen are created in a frozen state. This means that upon receiving tokens, users may need an issuer or designated authority to unfreeze their account before they can transfer or use the tokens. Verify the availability and responsiveness of such an authority. Due to unavailable holder concentration data and RugCheck's "high ownership" flags, consider the potential for price manipulation from large holders.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to ensure the token's fixed supply and unfreezable nature. Monitor for any future changes in market liquidity and trading volume patterns. While no immediate risks were identified, the absence of holder distribution data means potential supply concentration cannot be ruled out, and users should consider this when assessing market depth for large trades.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The token is an SPL token using the standard `spl-token` program. Both mint and freeze authorities are revoked, ensuring no new tokens can be minted and no existing accounts can be frozen by an… |
-| **Governance / Economics** | 6/10 | Medium | The token has a liquidity of $68,889 USD, with a 24-hour volume of $50,879, resulting in a normal volume/liquidity ratio of 0.74. The DEX pair is 251 days old, indicating a reasonable track record.… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the token have both been revoked, meaning the token supply is fixed and no accounts can be frozen by an external authority. The token uses the standard… |
-
-## Security Findings
-
-_🟠 1 High_
-
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
-
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority. (Fact: GoPlus.default_account_state: 1)
-
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+| **Technical** | 6/10 | Medium | The Bullish Degen (BULLISH) token is an SPL token operating on the `spl-token` program. Its mint authority is revoked (None), ensuring no new tokens can be minted, fixing the total supply at… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a healthy liquidity profile with $64,917 USD in total DEX liquidity, which is sufficient for moderate trading activity. The 24-hour volume of $5,788 USD results in a normal… |
+| **Upgrades** | 8/10 | Low | The Bullish Degen (BULLISH) token mint has both its mint and freeze authorities revoked, which means its core parameters related to supply and account freezing are immutable. The token's metadata is… |
 
 ## Token Metrics
 

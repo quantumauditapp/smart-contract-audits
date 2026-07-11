@@ -2,14 +2,14 @@
 token: ZygoSwap
 ticker: ZSWAP
 network: bsc
-risk_score: 16
-status: low
+risk_score: 21
+status: medium
 date: 2026-06-10
 ---
 
 # ZygoSwap (ZSWAP) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 16/100 — 🟢 Low Risk**
+> **Risk Score: 21/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zygoswap-bsc)
 
@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The `FourERC20` contract, intended as an ERC20 token, is critically flawed. It lacks any mechanism to mint or burn tokens, resulting in a permanent zero `totalSupply`. Additionally, its name and symbol metadata are uninitialized. These issues render the token completely non-functional and unusable, making it unsuitable for deployment.
+The FourERC20 contract implements a standard ERC-20 token using OpenZeppelin's battle-tested patterns. While the core token logic for transfers and allowances is robust, the contract suffers from critical architectural flaws. It lacks a public constructor to initialize its name and symbol, and crucially, it provides no public mechanism for minting tokens. These omissions render the token non-functional and unusable as a standalone ERC-20 asset, as its total supply will remain zero and its metadata uninitialized.
 
-> **Final Recommendation:** The `FourERC20` contract, in its current form, is not suitable for deployment. It suffers from critical functional flaws, including the complete absence of token minting/burning capabilities and uninitialized metadata. A comprehensive redesign and re-implementation are required to make it a functional ERC20 token. We recommend engaging for a Premium Deploy option, which includes a full re-audit of the corrected and completed token contract, along with deployment assistance and post-deployment monitoring.
+> **Final Recommendation:** To make the FourERC20 token functional, a public constructor must be added to properly initialize the token's name and symbol. Furthermore, public functions with appropriate access control should be implemented to allow for the minting and burning of tokens, enabling supply management. Consider integrating an access control mechanism like OpenZeppelin's Ownable for administrative functions.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical analysis of the `FourERC20` contract reveals severe functional deficiencies (7.2 Code Security). The contract, as provided, does not implement any public or external functions to mint… |
-| **Governance / Economics** | 8/10 | Low | The economic model of the `FourERC20` token is non-existent due to the inability to mint or burn tokens (7.4 Economic). This means no supply can ever be created, and thus no economic value can be… |
-| **Upgrades** | 8/10 | Low | The contract does not implement any upgradeability pattern (7.7 Upgrades). This means that once deployed, its logic cannot be modified. While this eliminates upgrade-related risks like proxy… |
+| **Technical** | 6/10 | Medium | The contract leverages battle-tested OpenZeppelin ERC-20 implementations for core functionalities like `transfer` and `approve`, which inherently reduces common code security risks (7.2 Code… |
+| **Governance / Economics** | 8/10 | Low | The contract implements a basic ERC-20 token with no complex economic model or governance mechanisms (7.4 Economic, 7.5 Governance). This simplicity reduces the attack surface related to economic… |
+| **Upgrades** | 8/10 | Low | The contract is not designed as an upgradeable proxy (7.7 Upgrades), which eliminates risks associated with proxy implementation, storage collisions, or upgrade path vulnerabilities. This design… |
 
 ## LP Distribution
 
@@ -38,27 +38,34 @@ The `FourERC20` contract, intended as an ERC20 token, is critically flawed. It l
 
 ## Security Findings
 
-_🔴 2 Critical · ⚪ 1 Informational_
+_🔴 2 Critical · 🟡 1 Medium · ⚪ 1 Informational_
 
-### `C-01` — Non-functional ERC20 Token (No Supply Mechanism)  *(Severity: Critical · Status: Unresolved)*
+### `C-01` — Missing Constructor for Initialization  *(Severity: Critical · Status: Unresolved)*
 
-The `FourERC20` contract, despite inheriting from `IERC20`, does not provide any public or external functions to mint or burn tokens. The `_mint` and `_burn` functions are declared as `internal virtual`, requiring a derived contract to implement and expose them. As a standalone deployment, the `_totalSupply` will always remain zero, making the token completely non-functional and unusable (7.2 Code Security, 7.4 Economic).
+The `FourERC20` contract includes an internal `_init` function for setting the token's name and symbol, but it lacks a public constructor to call this function. Consequently, upon deployment, the `_name` and `_symbol` state variables will remain uninitialized (empty strings), making the token non-compliant with standard ERC-20 metadata expectations and difficult to identify on block explorers. (7.1 Architecture, 7.8 Operations)
 
-**Recommendation:** Implement a constructor or a controlled public function in `FourERC20` or a derived contract that calls `_mint` to initialize the token supply. Ensure appropriate access control (e.g., `Ownable`) is applied to any minting/burning functions.
-
-
-### `C-02` — Uninitialized Token Metadata  *(Severity: Critical · Status: Unresolved)*
-
-The `_init` function, responsible for setting the token's `_name` and `_symbol`, is declared as `internal` but is not called by any constructor within the `FourERC20` contract. If `FourERC20` is deployed directly, the `name()` and `symbol()` functions will return empty strings, severely impacting the token's usability and display across wallets and exchanges (7.2 Code Security).
-
-**Recommendation:** Add a constructor to the `FourERC20` contract that takes `name_` and `symbol_` as arguments and calls `_init(name_, symbol_)` to ensure proper initialization upon deployment.
+**Recommendation:** Implement a public constructor in `FourERC20` that calls `_init(name_, symbol_)` to properly set the token's metadata at deployment. For example: `constructor(string memory name_, string memory symbol_) { _init(name_, symbol_); }`
 
 
-### `I-01` — Broad OpenZeppelin Version and Pragma  *(Severity: Informational · Status: Unresolved)*
+### `C-02` — No Public Minting Mechanism  *(Severity: Critical · Status: Unresolved)*
 
-The `Context.sol` contract indicates `(last updated v4.9.4)` while the `pragma solidity ^0.8.0;` is broad. While `^0.8.0` allows for minor version updates, it's generally recommended to pin the Solidity compiler version to a specific one (e.g., `0.8.20`) to ensure consistent compilation behavior and avoid potential issues with future compiler changes (7.2 Code Security).
+The contract provides an internal `_mint` function but does not expose any public or external function to invoke it. As a result, the `_totalSupply` will always remain zero, and no tokens can ever be created or distributed. This renders the ERC-20 token completely non-functional and unusable for its intended purpose. (7.1 Architecture, 7.4 Economic, 7.8 Operations)
 
-**Recommendation:** Pin the Solidity compiler version to the specific version used for testing and deployment (e.g., `pragma solidity 0.8.20;`). Consider upgrading OpenZeppelin contracts to the latest stable version if not already using it.
+**Recommendation:** Implement a public function (e.g., `mint(address to, uint256 amount)`) that calls the internal `_mint` function. This function should include appropriate access control (e.g., `onlyOwner`) to restrict who can mint new tokens.
+
+
+### `M-01` — Lack of Administrative Control Functions  *(Severity: Medium · Status: Unresolved)*
+
+The `FourERC20` contract does not inherit from `Ownable` or implement any custom access control mechanisms. This means there are no administrative functions to manage critical aspects such as pausing transfers, setting a minter role, or upgrading the contract (if it were part of a proxy system). This limits operational flexibility and the ability to respond to emergencies or evolving protocol needs. (7.3 Access Control, 7.8 Operations)
+
+**Recommendation:** Consider inheriting from OpenZeppelin's `Ownable` or `AccessControl` to implement administrative roles. This would allow for controlled execution of sensitive functions, such as a `pause` mechanism or a designated minter role, if such functionalities are desired.
+
+
+### `I-01` — Missing Events for Initialization  *(Severity: Informational · Status: Unresolved)*
+
+The internal `_init` function, which sets the token's name and symbol, does not emit any event. While not a direct vulnerability, emitting an event (e.g., `Initialized(string name, string symbol)`) upon successful initialization would provide a clear on-chain record of these critical parameters, aiding off-chain monitoring and indexing services. (7.8 Operations)
+
+**Recommendation:** Add an event emission within the `_init` function to log the token's name and symbol upon initialization.
 
 ## Token Metrics
 

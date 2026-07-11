@@ -2,14 +2,14 @@
 token: Traderclaw
 ticker: TCLAW
 network: solana
-risk_score: 63
+risk_score: 53
 status: high
 date: 2026-06-10
 ---
 
 # Traderclaw (TCLAW) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 53/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/traderclaw-sol)
 
@@ -17,29 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Traderclaw (TCLAW) SPL Token Mint audit identified a High risk due to very low liquidity, which can lead to severe slippage for traders. Key security authorities like mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Holder concentration data was unavailable from RPC, but RugCheck.xyz flagged high ownership by top holders, suggesting centralization risk.
+This Solana SPL Token Mint has both mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. However, critical information regarding holder distribution and DEX market data was unavailable, preventing a full assessment of market risks. A third-party risk registry flagged the token for low liquidity.
 
-> **Final Recommendation:** Potential holders should be aware of the extremely low liquidity ($3,247 USD) which makes large trades impractical due to high slippage. While core authorities (mint, freeze) are revoked, indicating a fixed supply and unfreezable accounts, the high holder concentration flagged by RugCheck.xyz suggests significant centralization risk. It is recommended to proceed with extreme caution and only with funds you are prepared to lose.
-
-For enhanced security, consider engaging Quantum Audit for a Premium Deploy service, which includes pre-deployment contract analysis and real-time monitoring to identify and mitigate risks before and after launch.
+> **Final Recommendation:** Prospective holders should monitor on-chain activity for any updates to holder distribution once data becomes available. Before engaging in significant trades, verify current DEX liquidity and trading volume to understand potential slippage. Confirm that the token remains untraded or that any new DEX pairs are legitimate.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Traderclaw (TCLAW) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked (None), which means no new tokens can be minted and no existing accounts can be… |
-| **Governance / Economics** | 1/10 | High | The token exhibits very low liquidity, with only $3,247 USD available on DEXs, which will result in significant slippage for any substantial trades. The 24-hour volume to liquidity ratio is 0.04… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply cannot be increased and accounts cannot be frozen. The token is an SPL Token-2022, but it does not have any active… |
-
-## Security Findings
-
-_🟠 1 High_
-
-### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
-
-Total DEX liquidity is $3,247. Slippage will be severe; large positions cannot be exited without significant loss. (Fact: Liquidity (USD): $3,247)
-
-**Recommendation:** Be aware that large positions cannot be exited without significant loss due to severe slippage.
+| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, meaning no new tokens can be minted and no existing token accounts can be… |
+| **Governance / Economics** | 2/10 | High | Information on holder concentration and DEX market data, including liquidity and trading volume, was unavailable. This prevents a comprehensive assessment of potential market manipulation risks or… |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are revoked, preventing any further changes to its supply or account freeze status. Key Token-2022 extensions like transfer hook and transfer fee are not… |
 
 ## Token Metrics
 

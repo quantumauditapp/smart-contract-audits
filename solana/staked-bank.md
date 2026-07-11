@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This audit of the Staked Bank (Stake) SPL token mint found no critical or high-severity issues based on the available on-chain data and external security signals. The mint and freeze authorities are revoked, and no Token-2022 extensions that introduce centralisation risks (like transfer hooks or permanent delegates) are active. Holder concentration data was unavailable from Solana RPC.
+This audit of the Staked Bank (Stake) SPL Token Mint found no critical or high-severity risks based on the available on-chain data and third-party security signals. Both mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Holder distribution data was unavailable, preventing an assessment of concentration risk.
 
-> **Final Recommendation:** Based on the available data, the Staked Bank (Stake) token appears to have a robust security posture regarding its core mint properties, with both mint and freeze authorities revoked. Holders should be aware that direct holder concentration percentages were unavailable, so while RugCheck flagged 'high ownership', the exact distribution could not be verified. Investors should monitor liquidity and trading volume for any significant changes. For enhanced due diligence, consider a Premium Deploy audit to include deeper off-chain analysis and real-time monitoring of holder distribution.
+> **Final Recommendation:** Holders should continue to monitor the token's liquidity and trading volume for any significant changes. While current authority revocations are positive, it is always prudent to verify the mint and freeze authority status on-chain periodically. Be aware that holder distribution data was not available for this assessment, so monitor on-chain distribution if this is a concern.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Staked Bank (Stake) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked (None), indicating that no new tokens can be minted and no existing token… |
-| **Governance / Economics** | 3/10 | High | The token exhibits moderate liquidity with $15,571 USD available on DEXs. The 24-hour trading volume of $5,081 results in a healthy volume/liquidity ratio of 0.33, suggesting organic trading activity… |
-| **Upgrades** | 8/10 | Low | The Staked Bank (Stake) token mint has both its mint and freeze authorities revoked (None), meaning its supply and transferability parameters are immutable. The token is an SPL Token-2022, but no… |
+| **Technical** | 6/10 | Medium | The Staked Bank (Stake) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked (None), which means no new tokens can be minted and no existing token accounts… |
+| **Governance / Economics** | 3/10 | High | The token exhibits a healthy Volume/Liquidity Ratio of 0.02, suggesting normal trading activity without signs of wash trading. The DEX pair has been active for 48 days, providing a reasonable track… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, fixing the token's supply and preventing any future freezing of accounts. The token's metadata is immutable, meaning its name, symbol, or… |
 
 ## Token Metrics
 

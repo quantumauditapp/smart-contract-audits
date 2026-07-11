@@ -2,14 +2,14 @@
 token: Hog McCrankerson
 ticker: HOG
 network: solana
-risk_score: 50
+risk_score: 60
 status: high
 date: 2026-06-10
 ---
 
 # Hog McCrankerson (HOG) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 60/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hog-mccrankerson-sol)
 
@@ -17,19 +17,27 @@ date: 2026-06-10
 
 ## Audit Summary
 
-Automated review assessed the protocol architecture, upgrade controls, and external dependencies based on available inputs. Core flows look consistent and follow common patterns, but some edge cases and monitoring gaps remain. This report balances strengths with concrete remediation steps to reduce risk before deployment.
+The token mint at 98Z2t99JKcK8NXLxgUfgvVPhq2EyVwfxug6B7TJzpump is an SPL Token-2022 asset with both mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. However, a significant risk is identified due to very low liquidity, as flagged by a third-party risk registry, which could lead to severe slippage. Holder distribution and detailed DEX market data were unavailable for this assessment.
 
-> **Final Recommendation:** Proceed with deployment after addressing high-severity findings and adding timelock protections for admin actions. A short remediation sprint for medium issues will materially reduce upgrade and oracle risk.
-
-For teams seeking stronger assurance, the Premium Deploy track adds upgrade rehearsals, monitoring baselines, and post-deploy verification of oracle and admin flows. Premium Deploy also includes a rollback drill and sign-off checklist before production launch.
+> **Final Recommendation:** Before interacting with this token, verify the current liquidity on decentralized exchanges to understand potential slippage. Given the third-party flag for low liquidity, consider the impact on any intended trade size. Monitor on-chain activity for any new DEX pair creations or significant liquidity additions that could alter the market dynamics.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | Architecture (7.1) is modular, separating storage, strategy, and interface layers to contain faults and align with standards like ERC-20. Code security (7.2) is mostly solid with input validation and… |
-| **Governance / Economics** | 3/10 | High | Economic design (7.4) uses capped emissions and fee ceilings, and rate limits reduce flash-loan sensitivity. However, reward curves still depend on liquidity timing, and unbounded parameter changes… |
-| **Upgrades** | 8/10 | Low | Upgrade lifecycle (7.7) follows proxy standards and initializer versioning, which reduces accidental state resets. Still, upgrades can be executed without delay and rollback testing is limited… |
+| **Technical** | 5/10 | Medium | The token is implemented using the spl-token-2022 program, indicating modern SPL features. Key technical controls are well-managed: the mint authority is revoked, preventing further token issuance… |
+| **Governance / Economics** | 2/10 | High | Economic analysis is constrained by unavailable DEX market data and holder concentration information. However, a third-party risk registry explicitly flags the token for 'Low Liquidity.' This… |
+| **Upgrades** | 8/10 | Low | The token's upgradeability and administrative control posture are robust. Both the mint authority and freeze authority have been permanently revoked, meaning the token's supply cannot be increased… |
+
+## Security Findings
+
+_🟠 1 High_
+
+### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
+
+Total DEX liquidity is unknown, but a third-party risk registry flags it as having low liquidity. Slippage will be severe; large positions cannot be exited without significant loss. (Fact: Third-party risk registry signals: Low Liquidity)
+
+**Recommendation:** Exercise extreme caution when trading due to potential for high slippage.
 
 ## Token Metrics
 

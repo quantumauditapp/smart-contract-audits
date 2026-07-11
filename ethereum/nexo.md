@@ -17,19 +17,17 @@ date: 2026-07-03
 
 ## Audit Summary
 
-The NexoToken contract implements the ERC-20 standard with additional features like a two-step ownership transfer and a mechanism for the owner to recover accidentally sent ERC20 tokens. It utilizes SafeMath for arithmetic safety. However, the contract is compiled with an outdated Solidity version (0.4.23), which introduces inherent risks. Key allocation addresses are hardcoded, and a significant portion of the vesting logic was truncated in the provided source, preventing a full security assessment of that critical component.
+The audit of the NexoToken contract revealed several areas for improvement, primarily concerning inconsistent application of SafeMath, the use of an outdated Solidity compiler, and centralized control by the contract owner. While the contract implements basic ERC-20 functionality and a two-step ownership transfer, critical arithmetic operations bypass SafeMath, posing a risk of integer underflow. The vesting logic, though defined, is incomplete in the provided source, limiting a full assessment.
 
-> **Final Recommendation:** The NexoToken contract provides a functional ERC-20 implementation with basic access control and arithmetic safety. However, the use of an outdated Solidity compiler version is a significant concern that should be addressed. The hardcoded allocation addresses limit future flexibility, and the incomplete vesting logic prevents a full audit of the token's distribution mechanics. 
-
-It is recommended to migrate to a newer Solidity version, review the hardcoded addresses for potential future flexibility, and provide the complete vesting logic for a thorough security assessment. For critical deployments, consider a Premium Deploy option, which includes a comprehensive post-audit review and continuous monitoring to ensure ongoing security and address any emerging threats.
+> **Final Recommendation:** It is strongly recommended to update the Solidity compiler to a more recent, stable version (e.g., 0.8.x) to benefit from modern security features and bug fixes. Crucially, all arithmetic operations involving user balances and allowances must consistently utilize the `SafeMath` library to prevent potential integer underflow vulnerabilities. A thorough review of the owner's privileges and the complete vesting logic is also advised to ensure alignment with the project's security and economic requirements.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract utilizes the `SafeMath` library for arithmetic operations, preventing common integer overflow/underflow vulnerabilities in `add`, `sub`, `mul`, and `pow`. The `_transfer` function… |
-| **Governance / Economics** | 1/10 | High | The token adheres to the ERC-20 standard, ensuring broad compatibility within the ecosystem. The `transferERC20Token` function allows the owner to recover accidentally sent ERC20 tokens, protecting… |
-| **Upgrades** | 4/10 | Medium | The contract is not designed with an upgrade mechanism, which eliminates the complexities and potential risks associated with proxy-based upgrades (7.7 Upgrades). This lack of upgradeability means… |
+| **Technical** | 4/10 | Medium | The technical architecture (7.1) is a standard ERC-20 token inheriting from `Owned` and `SafeMath`. Code security (7.2) is a primary concern due to inconsistent SafeMath usage in `_transfer` and… |
+| **Governance / Economics** | 1/10 | High | The contract's economic model (7.4) involves fixed allocations for investors, overdraft, and team, with defined vesting parameters, though the full vesting implementation is not provided. Governance… |
+| **Upgrades** | 4/10 | Medium | The contract is not designed with any upgradeability mechanism (7.7). It is a standard, non-proxy implementation, meaning its logic cannot be modified after deployment. This eliminates… |
 
 ## LP Distribution
 
@@ -40,41 +38,48 @@ It is recommended to migrate to a newer Solidity version, review the hardcoded a
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · ⚪ 2 Informational_
+_🟠 1 High · 🟡 2 Medium · 🟢 2 Low · ⚪ 1 Informational_
 
-### `H-01` — Outdated Solidity Compiler Version  *(Severity: High · Status: Unresolved)*
+### `H-01` — Inconsistent SafeMath Usage Leading to Potential Underflow  *(Severity: High · Status: Unresolved)*
 
-The contract is compiled with Solidity version 0.4.23. This version is significantly outdated and lacks many security features, optimizations, and bug fixes present in newer compiler versions. Using an old compiler can expose the contract to known or undiscovered compiler bugs and makes it harder to integrate with modern tooling and best practices. For example, newer versions include features like `revert()` for gas refunds, improved optimizer, and more robust type checking.
+The `StandardToken._transfer` function directly uses `balances[_from] -= _value;` and the `StandardToken.transferFrom` function directly uses `allowed[_from][msg.sender] -= _value;` without utilizing the `SafeMath.sub` function. This bypasses the intended underflow protection provided by the `SafeMath` library, making these operations vulnerable to integer underflow if `_value` exceeds the current balance or allowance.
 
-**Recommendation:** It is strongly recommended to upgrade the Solidity compiler version to a recent stable release (e.8. 0.8.x). This would require a thorough review and potential refactoring of the code to adapt to syntax changes and new best practices. A full re-audit would be necessary after such an upgrade.
-
-
-### `M-01` — ERC-20 `approve` Race Condition  *(Severity: Medium · Status: Unresolved)*
-
-The standard ERC-20 `approve` function is susceptible to a known race condition. If a user calls `approve(spender, newAmount)` while `spender` is simultaneously trying to `transferFrom` an `oldAmount`, the `spender` might be able to spend both `oldAmount` and `newAmount` if the `newAmount` transaction is mined before the `transferFrom` transaction, but after the `approve` transaction has been broadcast. While `increaseApproval` and `decreaseApproval` functions are provided, the base `approve` function remains vulnerable.
-
-**Recommendation:** While `increaseApproval` and `decreaseApproval` mitigate this for new approvals, users should be advised to use these functions instead of directly calling `approve` when modifying an existing allowance. For `approve` itself, consider implementing the 'approve and call' pattern or requiring the allowance to be zero before setting a new one, though this adds complexity.
+**Recommendation:** Ensure all subtraction operations on `uint256` variables, especially those involving user balances or allowances, consistently use `SafeMath.sub`. For example, change `balances[_from] -= _value;` to `balances[_from] = sub(balances[_from], _value);` and `allowed[_from][msg.sender] -= _value;` to `allowed[_from][msg.sender] = sub(allowed[_from][msg.sender], _value);`.
 
 
-### `M-02` — Hardcoded Allocation Addresses  *(Severity: Medium · Status: Unresolved)*
+### `M-01` — Outdated Solidity Compiler Version  *(Severity: Medium · Status: Unresolved)*
 
-The allocation addresses (`investorsAllocation`, `overdraftAllocation`, `teamAllocation`) are hardcoded as `constant` variables. This design choice means these addresses cannot be changed after contract deployment. If any of these addresses become compromised, or if there's a need to update the recipient for legitimate reasons (e.g., multi-sig upgrade, change in team structure), it would be impossible without deploying a new contract.
+The contract is compiled with Solidity version `0.4.23`. This version is significantly outdated and lacks many security improvements, bug fixes, and best practices introduced in later versions (e.g., 0.5.x, 0.6.x, 0.8.x). Using an old compiler version can expose the contract to known compiler-specific vulnerabilities or less efficient gas usage patterns.
 
-**Recommendation:** Consider making critical allocation addresses configurable by the `owner` through setter functions. This would provide flexibility to adapt to future operational changes or security requirements. Any such setter functions should implement robust access control (e.g., `onlyOwner`) and potentially a multi-step confirmation process.
-
-
-### `I-01` — Incomplete Vesting Logic Provided  *(Severity: Informational · Status: Unresolved)*
-
-The provided source code for the `NexoToken` contract is truncated, specifically cutting off in the middle of the vesting logic for 'Tokens reserved for Founders and Team'. This prevents a comprehensive security analysis of the vesting mechanisms, including how tokens are unlocked, distributed, and if there are any potential vulnerabilities related to timing, calculations, or access control within these critical functions.
-
-**Recommendation:** Provide the complete and unabridged source code for all contracts, especially for critical components like vesting logic, to enable a thorough and accurate security audit.
+**Recommendation:** Upgrade the Solidity compiler version to a recent, stable release (e.g., `^0.8.0`). This will provide access to modern security features, improved error handling (e.g., `require` for revert reasons), and better gas optimization. Thoroughly test the contract after upgrading the compiler to ensure compatibility and correct behavior.
 
 
-### `I-02` — Use of `now` for `creationTime`  *(Severity: Informational · Status: Unresolved)*
+### `M-02` — Use of `now` for `creationTime`  *(Severity: Medium · Status: Unresolved)*
 
-The `creationTime` variable is set using `now` (an alias for `block.timestamp`). While generally acceptable for non-critical timestamps, `block.timestamp` can be manipulated by miners to a small extent (within a few seconds of the actual time). For `creationTime`, this is unlikely to be a critical issue as it's a one-time assignment.
+The `creationTime` variable is set using `now` (an alias for `block.timestamp`). While common, `block.timestamp` can be manipulated by miners within a certain range (up to 900 seconds on Ethereum). If `creationTime` is used in any time-sensitive logic that requires precise, unmanipulable timing, this could be a concern.
 
-**Recommendation:** For critical time-dependent operations, consider using a more robust time source if precise, unmanipulable timestamps are required, or acknowledge the minor manipulability of `block.timestamp`. In this specific context, the impact is minimal.
+**Recommendation:** Evaluate if the `creationTime` variable is used in any critical, time-sensitive operations. If so, consider alternative, more robust time sources or acknowledge the potential for miner manipulation. For simple informational purposes, `block.timestamp` is generally acceptable.
+
+
+### `L-01` — Missing Division by Zero Check in SafeMath.div  *(Severity: Low · Status: Unresolved)*
+
+The `SafeMath.div` function does not explicitly check if the divisor `b` is zero. While Solidity's default behavior for division by zero is to revert, an explicit `require(b != 0, 'SafeMath: division by zero');` would provide clearer error messaging and adhere to a more robust defensive programming style.
+
+**Recommendation:** Add an explicit check for division by zero at the beginning of the `div` function: `require(b != 0, 'SafeMath: division by zero');`.
+
+
+### `L-02` — Centralized Control by Owner  *(Severity: Low · Status: Unresolved)*
+
+The `Owned` pattern grants significant control to a single `owner` address. This owner can recover any ERC20 tokens accidentally sent to the contract via `transferERC20Token`. While the `setOwner` and `confirmOwnership` functions provide a two-step transfer mechanism, the owner remains a single point of failure and trust, which could pose a risk if the owner's private key is compromised.
+
+**Recommendation:** Consider implementing a multi-signature wallet (e.g., Gnosis Safe) for the `owner` address to distribute control and reduce the risk associated with a single point of failure. This enhances security by requiring multiple approvals for critical operations.
+
+
+### `I-01` — Truncated Vesting Logic  *(Severity: Informational · Status: Unresolved)*
+
+The provided source code for the `NexoToken` contract includes definitions for vesting parameters (e.g., `overdraftCliff`, `overdraftPeriodLength`, `teamPeriodAmount`) but the actual functions responsible for implementing the vesting schedule, such as claiming or distributing vested tokens, are truncated or missing from the provided snippet. This prevents a full security assessment of the vesting mechanism.
+
+**Recommendation:** Provide the complete source code for all relevant contracts, especially those implementing critical economic logic like vesting, to enable a comprehensive security review.
 
 ## Token Metrics
 

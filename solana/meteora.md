@@ -2,14 +2,14 @@
 token: Meteora
 ticker: MET
 network: solana
-risk_score: 46
-status: high
+risk_score: 38
+status: medium
 date: 2026-06-21
 ---
 
 # Meteora (MET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 46/100 — 🟠 High Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/meteora-sol)
 
@@ -17,27 +17,27 @@ date: 2026-06-21
 
 ## Audit Summary
 
-The Meteora (MET) token has its mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. However, new holder accounts are created in a frozen state, requiring an issuer to unfreeze them before transfers are possible. Holder concentration data was unavailable, and RugCheck provided a low score of 7/100.
+The Meteora (MET) SPL token mint exhibits a low-risk profile with both mint and freeze authorities revoked, ensuring a fixed supply and unfreezable accounts. The primary concern identified is the mutability of its metadata, which allows for changes to branding post-launch. Holder distribution data was unavailable, preventing a full assessment of supply concentration.
 
-> **Final Recommendation:** Holders should be aware that new token accounts for Meteora (MET) are created in a frozen state, requiring an explicit unfreeze operation by an authority. It is crucial to confirm the availability and responsiveness of the issuer to perform this action, as otherwise, newly received tokens may be unspendable. While mint and freeze authorities are revoked, the default frozen state introduces a significant operational dependency.
+> **Final Recommendation:** Before engaging with the Meteora (MET) token, holders should verify the current metadata (name, symbol, image) directly on-chain to ensure it aligns with their expectations and any off-chain branding. Monitor for any unexpected changes to the token's metadata, as this is the only identified mutable aspect. Continue to monitor market data for holder concentration if it becomes available, as this could impact price stability.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Meteora (MET) token is an SPL token operating on the `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and existing… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits healthy economic indicators with a liquidity of $2,133,784 and a normal 24-hour volume/liquidity ratio of 0.19. The DEX pair has been active for 228 days, providing a reasonable… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable, with both mint and freeze authorities revoked. GoPlus indicates that metadata is not mutable (`GoPlus.metadata_mutable: False`), and transfer fee… |
+| **Technical** | 6/10 | Medium | The token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, which means no new tokens can be minted and no holder accounts can be… |
+| **Governance / Economics** | 5/10 | Medium | The token demonstrates healthy market activity with over $51 million in DEX liquidity and a 24-hour volume of $157,839, resulting in a normal Volume/Liquidity Ratio of 0.00. The DEX pair has been… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or account freeze status. The underlying `spl-token` program is not subject to… |
 
 ## Security Findings
 
-_🟠 1 High_
+_🟢 1 Low_
 
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
+### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
 
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority. (Fact: `GoPlus.default_account_state: 1`)
+The token's metadata is mutable, as indicated by `metadata_mutable: True`. This means the token name, symbol, or image can be changed post-launch by an authorized party.
 
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+**Recommendation:** Verify metadata against off-chain expectations before trusting branding.
 
 ## Token Metrics
 

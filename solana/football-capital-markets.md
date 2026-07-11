@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Football Capital Markets (FCM) SPL Token Mint exhibits strong security configurations with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No critical Token-2022 extensions like permanent delegates or transfer hooks are active. However, holder concentration data is unavailable, which prevents a full assessment of potential market manipulation risks.
+The Football Capital Markets (FCM) SPL Token Mint audit found no critical or high-severity issues based on available on-chain data and external security registries. The mint and freeze authorities are revoked, and no Token-2022 extensions that introduce centralisation risks (like transfer hooks or permanent delegates) are active. Holder distribution data was unavailable for analysis, preventing an assessment of supply concentration.
 
-> **Final Recommendation:** Given the revoked mint and freeze authorities, the token's supply is fixed, and user accounts cannot be frozen. The absence of active Token-2022 extensions like transfer hooks and permanent delegates reduces operational risks. However, the lack of holder concentration data means the distribution of tokens among top accounts remains unknown, which could indicate potential for price volatility from large holders. Users should consider this data gap and monitor on-chain holder distribution if possible.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to ensure the supply is fixed and accounts cannot be frozen. Monitor for any future changes in the token's on-chain configuration, although current settings indicate immutability for key parameters. If holder distribution data becomes available, assess concentration risk before making significant investments.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Football Capital Markets (FCM) token is implemented using the `spl-token-2022` program, indicating modern Solana token standards. Access control is robust, with both the mint authority and freeze… |
-| **Governance / Economics** | 5/10 | Medium | Economically, the token exhibits moderate liquidity of $193,546 USD with a 24-hour trading volume of $1,069,454 USD, suggesting active trading (7.4 Economic). The pair is relatively new, at 16 days… |
-| **Upgrades** | 8/10 | Low | The token's upgradeability posture is secure, as both mint and freeze authorities are revoked, preventing any unilateral changes to token supply or account status (7.7 Upgrades). Furthermore, GoPlus… |
+| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked (None), indicating that no new tokens can be minted and no holder accounts can be… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits moderate liquidity with $35,970 in total DEX liquidity, which is sufficient for small to medium trades without severe slippage. The 24-hour volume of $4,461 results in a healthy… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as both the Mint Authority and Freeze Authority have been revoked. The metadata is also immutable, with 'metadata_mutable: False', ensuring the token's… |
 
 ## Token Metrics
 

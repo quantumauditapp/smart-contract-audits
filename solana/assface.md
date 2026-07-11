@@ -2,14 +2,14 @@
 token: assface
 ticker: ASSFACE
 network: solana
-risk_score: 35
-status: medium
+risk_score: 53
+status: high
 date: 2026-06-10
 ---
 
 # assface (ASSFACE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 35/100 — 🟡 Medium Risk**
+> **Risk Score: 53/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/assface-sol)
 
@@ -17,17 +17,27 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This audit of the assface SPL Token Mint found that critical authorities like Mint and Freeze are revoked, ensuring a fixed supply and unfreezable accounts. No Token-2022 extensions posing significant risks, such as permanent delegates or transfer hooks, are active. Holder concentration data was unavailable from RPC, though RugCheck flagged potential single holder ownership and high concentration, which could pose an economic risk.
+This audit of the assface SPL Token Mint identifies a critical risk flagged by an independent third-party registry, indicating a creator history of rugged tokens. While the token's on-chain configuration shows revoked mint and freeze authorities, ensuring fixed supply and unfreezable accounts, this external warning suggests significant caution. Holder concentration data was unavailable, preventing a full assessment of supply distribution risk.
 
-> **Final Recommendation:** Given the revoked mint and freeze authorities, the token's core supply and transfer mechanisms are secure from central control. However, the lack of detailed holder concentration data from RPC, coupled with RugCheck's flags for 'Single holder ownership' and 'High holder concentration', suggests a potential for market manipulation or significant price impact from large holders. Users should exercise caution and consider the implications of concentrated ownership before acquiring this token. A Premium Deploy option would involve deeper off-chain due diligence on the project team and a more granular analysis of on-chain holder movements if RPC data becomes available.
+> **Final Recommendation:** Given the critical warning from an independent third-party risk registry regarding the creator's history, it is strongly recommended to avoid any interaction with this token. If interaction is unavoidable, conduct thorough independent due diligence on the token's ecosystem and developer background beyond the on-chain facts. Monitor for any new information from security registries or community reports that might alter the risk assessment.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The assface token is an SPL Token-2022 mint with 6 decimals and a total supply of 999,828,017.212586 tokens. Crucially, both the Mint Authority and Freeze Authority have been revoked, preventing… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a liquidity of $34,223 on DEXs, with a healthy 24-hour volume to liquidity ratio of 0.50, suggesting organic trading activity. The DEX pair has been active for 53 days, providing… |
-| **Upgrades** | 8/10 | Low | The token's immutability is strong, with both Mint and Freeze authorities permanently revoked, ensuring no new tokens can be minted and no accounts can be frozen. Furthermore, the token metadata is… |
+| **Technical** | 4/10 | Medium | The token mint operates on the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen. The… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a liquidity of $26,072 USD, supported by a 24-hour trading volume of $6,460 USD, resulting in a normal Volume/Liquidity Ratio of 0.25. The DEX pair has been active for 83 days… |
+| **Upgrades** | 7/10 | Low | The token's metadata is immutable, meaning its name, symbol, or image cannot be changed post-launch. Key Token-2022 extensions, such as transfer fee and transfer hook, are not upgradable, ensuring… |
+
+## Security Findings
+
+_🔴 1 Critical_
+
+### `C-01` — Flagged High-Risk by Third-Party Registry  *(Severity: Critical · Status: Unresolved)*
+
+An independent third-party risk registry classifies this token as high-risk based on its own dataset, specifically noting a creator history of rugged tokens.
+
+**Recommendation:** Do not interact with this token.
 
 ## Token Metrics
 

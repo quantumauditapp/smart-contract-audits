@@ -2,14 +2,14 @@
 token: Uniswap
 ticker: UNI
 network: ethereum
-risk_score: 72
-status: critical
+risk_score: 57
+status: high
 date: 2026-06-16
 ---
 
 # Uniswap (UNI) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 57/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/uniswap-eth)
 
@@ -17,57 +17,41 @@ date: 2026-06-16
 
 ## Audit Summary
 
-The audit of the Uni token contract revealed a robust implementation of ERC-20 standards with added governance features. Strengths include the use of OpenZeppelin's SafeMath library and EIP-712 for gasless transactions. However, significant centralization risk exists with the 'minter' role, which can control token supply and bypass minting cooldowns. The contract's non-upgradeable nature and use of an older Solidity compiler version also contribute to the overall risk profile.
+The Uni contract implements an ERC-20 token with governance delegation and a controlled minting mechanism. The contract correctly utilizes OpenZeppelin's SafeMath library to prevent integer overflows/underflows, which is appropriate for its Solidity version. A key centralization risk exists with the `minter` role, which has significant control over token supply, albeit with defined limits. The contract is not upgradeable, ensuring immutability.
 
-> **Final Recommendation:** The Uni contract demonstrates a solid foundation for an ERC-20 token with governance capabilities. Addressing the identified high-severity centralization risks, particularly around the 'minter' role's ability to bypass cooldowns, is paramount. While non-upgradeability is a design choice, the project should be aware of its implications for long-term maintenance and bug fixes. Consider implementing a multi-signature wallet or a time-locked contract for critical administrative functions like `setMinter` and `setMintingAllowedAfter` to mitigate centralization risks.
-
-For enhanced security and ongoing monitoring, a Premium Deploy option is recommended. This service provides continuous threat monitoring, incident response planning, and regular security reviews post-deployment, ensuring the protocol remains resilient against evolving threats and operational challenges.
+> **Final Recommendation:** It is recommended to consider migrating to a newer Solidity compiler version (e.g., 0.8.x) in future iterations to leverage built-in overflow checks and other language improvements. The `minter` role, which currently holds significant power, should ideally be controlled by a robust multi-signature wallet or a decentralized governance mechanism to mitigate centralization risks and enhance security. Regular security reviews of the `minter`'s operational procedures are also advised.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture (7.1 Architecture) is well-structured, leveraging established patterns for ERC-20 and governance delegation. Code security (7.2 Code Security) is enhanced by the use of… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4 Economic) incorporates a minting cap and a minimum time between mints, providing some control over supply inflation. The governance mechanism (7.5 Governance) uses a standard… |
-| **Upgrades** | 5/10 | Medium | The contract is designed as non-upgradeable (7.7 Upgrades), which simplifies its architecture by avoiding proxy complexities. However, this design choice introduces a high operational risk (7.8… |
+| **Technical** | 8/10 | Low | The contract demonstrates good code security practices by using OpenZeppelin's `SafeMath` library to prevent arithmetic overflows/underflows (7.2 Code Security). The implementation of ERC-20, EIP-712… |
+| **Governance / Economics** | 1/10 | High | The contract incorporates a robust governance delegation system, allowing token holders to delegate their voting power, which is a strength for decentralized decision-making (7.5 Governance).… |
+| **Upgrades** | 5/10 | Medium | The contract is not designed with an upgrade mechanism (e.g., proxy pattern), meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates upgrade-related risks such as proxy… |
 
 ## Security Findings
 
-_🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Centralized Minter Role with Significant Power  *(Severity: High · Status: Unresolved)*
+### `H-01` — Centralized Minter Role  *(Severity: High · Status: Unresolved)*
 
-The `minter` address has extensive control over the token supply, including the ability to mint new tokens and transfer the `minter` role to any address. While there are `mintCap` and `minimumTimeBetweenMints` restrictions, a compromised or malicious `minter` could still significantly impact the token's economic stability by inflating the supply up to the cap. This represents a single point of failure for token supply management.
+The `minter` address has the sole authority to mint new tokens, subject to `mintCap` and time constraints. This represents a significant centralization risk (7.3 Access Control, 7.4 Economic). If the `minter`'s private key is compromised, an attacker could inflate the token supply up to the `mintCap` per year, devaluing existing tokens. The `setMinter` function allows the current minter to transfer this critical role, which is also a high-privilege operation.
 
-**Recommendation:** Implement a multi-signature wallet or a time-locked contract for the `minter` role. For critical functions like `setMinter`, consider a governance-controlled mechanism or a multi-step transfer process with a delay to allow community oversight and intervention.
-
-
-### `H-02` — Minter Can Bypass Minting Cooldown  *(Severity: High · Status: Unresolved)*
-
-The `setMintingAllowedAfter` function allows the `minter` to set an arbitrary timestamp for when minting is allowed. A malicious `minter` could call `mint`, then immediately call `setMintingAllowedAfter` with a past timestamp (e.g., `block.timestamp - minimumTimeBetweenMints`), effectively resetting the cooldown period and allowing subsequent mints to occur without respecting the `minimumTimeBetweenMints` constraint. This bypasses a critical economic control.
-
-**Recommendation:** Modify the `setMintingAllowedAfter` function to only allow setting a future timestamp that is greater than the current `mintingAllowedAfter` value, or remove the function entirely and rely solely on the `mint` function to update `mintingAllowedAfter` sequentially. Alternatively, ensure that `setMintingAllowedAfter` can only be called by a robust governance mechanism with appropriate time delays.
+**Recommendation:** Consider decentralizing the `minter` role by assigning it to a robust multi-signature wallet (e.g., Gnosis Safe) or a community-governed smart contract. This would require multiple approvals for minting operations or role transfers, significantly reducing the risk of a single point of failure.
 
 
-### `M-01` — Outdated Solidity Compiler Version  *(Severity: Medium · Status: Unresolved)*
+### `L-01` — Potential High Gas Costs for Checkpoints  *(Severity: Low · Status: Unresolved)*
 
-The contract is compiled with Solidity version `^0.5.16`. Newer versions (e.g., `0.8.x`) include built-in overflow/underflow checks by default, reducing reliance on libraries like `SafeMath` and potentially offering gas optimizations and improved security features. Using an older compiler version might expose the contract to known compiler-level bugs or prevent it from benefiting from recent security enhancements.
+The `_writeCheckpoint` function stores historical vote data for each account. While necessary for the governance delegation mechanism, if an account frequently delegates or transfers tokens, the `numCheckpoints` for that address could grow very large. This could lead to increased gas costs for subsequent `_writeCheckpoint` operations or for reading historical vote data (7.8 Operations).
 
-**Recommendation:** Consider upgrading the contract to a more recent and stable Solidity compiler version (e.g., `0.8.x`). This would involve a thorough review and testing of the code to ensure compatibility and correct behavior with the new compiler.
-
-
-### `L-01` — Non-Upgradeability of Contract  *(Severity: Low · Status: Unresolved)*
-
-The contract is deployed as an immutable, non-upgradeable contract. While this simplifies the architecture and removes proxy-related risks, it means that any bugs discovered post-deployment cannot be fixed on-chain, nor can new features be added without deploying an entirely new contract and migrating all users and assets. This poses a long-term operational and maintenance challenge.
-
-**Recommendation:** While a design choice, the project should be fully aware of the implications. For future contracts, consider using an upgradeable proxy pattern (e.g., UUPS) if the ability to fix bugs or add features post-deployment is desired. For this contract, ensure comprehensive testing and auditing to minimize the risk of immutable flaws.
+**Recommendation:** While this is an inherent design choice for Compound-style governance, consider monitoring the growth of `numCheckpoints` for highly active addresses. For future iterations, explore alternative checkpointing strategies or gas optimization techniques if this becomes a significant operational burden.
 
 
-### `I-01` — Use of Experimental ABIEncoderV2 Pragma  *(Severity: Informational · Status: Unresolved)*
+### `I-01` — Older Solidity Compiler Version  *(Severity: Informational · Status: Unresolved)*
 
-The contract uses `pragma experimental ABIEncoderV2;`. While `ABIEncoderV2` has been stable since Solidity 0.6.0, its use in an older compiler version (`0.5.16`) where it was still marked as experimental could theoretically introduce unforeseen edge cases or vulnerabilities. Although widely adopted, relying on experimental features always carries a slight, albeit diminishing, risk.
+The contract is compiled with Solidity version `^0.5.16`. While `SafeMath` is correctly used to prevent integer overflows/underflows, newer Solidity versions (e.g., 0.8.x) include built-in overflow/underflow checks by default, making external libraries like `SafeMath` largely redundant and potentially saving gas (7.2 Code Security). Newer compilers also offer additional language features and security improvements.
 
-**Recommendation:** If upgrading to a newer Solidity version (e.g., `0.8.x`), the `experimental` keyword for `ABIEncoderV2` can be removed as it is stable by default. For the current version, ensure thorough testing of all functions that rely on complex data types or nested arrays/structs to confirm correct ABI encoding/decoding behavior.
+**Recommendation:** For future contract deployments or upgrades, consider migrating to a more recent Solidity compiler version (e.g., 0.8.x). This would allow for the removal of `SafeMath` library calls, simplifying the code and potentially reducing gas costs, while benefiting from the latest compiler optimizations and security features.
 
 ## Token Metrics
 

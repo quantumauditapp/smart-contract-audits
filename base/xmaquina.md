@@ -2,14 +2,14 @@
 token: XMAQUINA
 ticker: DEUS
 network: base
-risk_score: 88
+risk_score: 100
 status: critical
 date: 2026-06-10
 ---
 
 # XMAQUINA (DEUS) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 88/100 — 🔴 Critical Risk**
+> **Risk Score: 100/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/xmaquina-base)
 
@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This audit focused on the provided Solidity source code, which includes standard `Ownable` access control and interfaces for an Omnichain Fungible Token (OFT) and LayerZero receiver. The core implementation of the OFT token was not provided, significantly limiting the scope of a comprehensive security review. The `Ownable` contract is a robust, standard implementation. The primary risks identified are related to the inherent centralization of the `Ownable` pattern and the unknown security posture of the unprovided OFT implementation.
+This audit covers the provided Solidity interfaces for an Omnichain Fungible Token (OFT) and the abstract Ownable contract. A comprehensive security assessment of the full OFT implementation is not possible as the core logic for token transfers, LayerZero integration, and fee handling was not provided. The existing `Ownable` contract is robust, but its application in a cross-chain context introduces significant centralization risks. The inherent complexity of cross-chain operations necessitates rigorous security practices for the unseen implementation.
 
-> **Final Recommendation:** The provided `Ownable` contract is well-implemented and follows established security patterns. However, the absence of the core OFT token implementation significantly limits the scope of this audit. A comprehensive security assessment requires the full codebase to evaluate specific business logic, tokenomics, and cross-chain interactions. We recommend providing the complete source code for all relevant contracts for a full audit. For critical deployments, consider our Premium Deploy option, which includes continuous monitoring, incident response planning, and a dedicated security engineer to ensure ongoing protocol integrity.
+> **Final Recommendation:** Prioritize a full security audit of the complete OFT implementation, including all LayerZero integration logic, token minting/burning mechanisms, and fee calculations. Implement robust emergency controls such as a pause mechanism or circuit breaker to mitigate risks during unforeseen events or attacks. Consider decentralizing critical administrative functions currently controlled by the single `Ownable` address, potentially through a multi-signature wallet or a more decentralized governance model, to reduce the single point of failure risk inherent in cross-chain systems.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The technical review (7.1 Architecture, 7.2 Code Security, 7.3 Access Control) found the provided `Ownable` contract to be a standard and robust implementation, inheriting from `Context` for secure… |
-| **Governance / Economics** | 1/10 | High | The governance and economic aspects (7.4 Economic, 7.5 Governance) are primarily influenced by the `Ownable` pattern, which centralizes control in a single address. This introduces a single point of… |
-| **Upgrades** | 4/10 | Medium | Based on the provided source code (7.7 Upgrades), no explicit upgrade mechanism (e.g., proxy pattern like UUPS or Transparent) was identified. This implies the contract is not designed to be… |
+| **Technical** | 4/10 | Medium | The provided code includes standard OpenZeppelin `Context` and `Ownable` abstract contracts, which are well-tested and robust for basic access control (7.3 Access Control). The `IOFT`… |
+| **Governance / Economics** | 1/10 | High | The `Ownable` pattern centralizes control to a single address, which can manage critical functions like `transferOwnership` and potentially other administrative actions in the OFT implementation (7.5… |
+| **Upgrades** | 4/10 | Medium | The provided `Ownable` contract and interfaces do not inherently include upgradeability mechanisms (7.7 Upgrades). This means the contract itself is not designed to be upgradeable. If the full OFT… |
 
 ## LP Distribution
 
@@ -38,34 +38,48 @@ This audit focused on the provided Solidity source code, which includes standard
 
 ## Security Findings
 
-_🟢 1 Low · ⚪ 3 Informational_
+_🔴 1 Critical · 🟠 2 High · 🟡 1 Medium · ⚪ 2 Informational_
 
-### `L-01` — Centralized Control via Ownable Pattern  *(Severity: Low · Status: Unresolved)*
+### `C-01` — Incomplete Audit Scope Due to Missing Implementation  *(Severity: Critical · Status: Unresolved)*
 
-The `Ownable` contract grants exclusive administrative control over certain functions (e.g., `transferOwnership`, `renounceOwnership`) to a single address. While this is a standard and widely accepted pattern (7.3 Access Control, 7.5 Governance), it introduces a single point of failure. A compromise of the owner's private key or a malicious owner could lead to unauthorized actions, including transferring ownership to an attacker, disabling critical contract functionality, or manipulating parameters if such functions were present in the unprovided OFT implementation.
+The provided code consists of abstract contracts (`Context`, `Ownable`) and interfaces (`IOFT`, `ILayerZeroReceiver`, `IOAppReceiver`). The core implementation logic for the Omnichain Fungible Token (OFT), including how tokens are minted, burned, transferred across chains via LayerZero, and how fees are handled, is entirely missing. Without this crucial implementation, a comprehensive security assessment of the actual token functionality and cross-chain bridge logic is impossible. This leaves the most critical components of the system unaudited.
 
-**Recommendation:** To mitigate the risk associated with a single point of failure, consider implementing a multi-signature wallet (e.g., Gnosis Safe) for the owner address. For critical administrative actions, incorporating a timelock mechanism could provide an additional layer of security, allowing time for community review or intervention before changes take effect.
-
-
-### `I-01` — Incomplete Codebase for Full Audit  *(Severity: Informational · Status: Unresolved)*
-
-The provided source code primarily consists of interfaces (`IOFT`, `ILayerZeroReceiver`) and a standard `Ownable` abstract contract. The concrete implementation of the Omnichain Fungible Token (OFT) and its associated logic, which would contain the core business rules, token transfer mechanisms, and cross-chain handling, is missing. This significantly limits the scope of this audit, preventing a comprehensive review of potential vulnerabilities such as reentrancy, arithmetic issues, specific OFT logic flaws, or economic exploits.
-
-**Recommendation:** To conduct a comprehensive security audit, please provide the complete source code for all relevant contracts, especially the concrete implementation of the OFT token and any other contracts that interact with it or manage its functionality. This will enable a thorough analysis of the entire system's security posture.
+**Recommendation:** Provide the complete source code for the OFT implementation, including all contracts that inherit from or implement the provided interfaces. A full audit of the entire system is essential to identify and mitigate vulnerabilities in the core cross-chain logic.
 
 
-### `I-02` — Renounce Ownership Functionality Present  *(Severity: Informational · Status: Unresolved)*
+### `H-01` — Centralized Control via Ownable Pattern  *(Severity: High · Status: Unresolved)*
 
-The `renounceOwnership()` function allows the current owner to permanently relinquish ownership of the contract by setting the owner to `address(0)`. If this function is called inadvertently or maliciously, it would leave the contract without an owner, making any functions protected by the `onlyOwner` modifier permanently inaccessible. This could lead to a loss of administrative control over the contract, potentially rendering certain functionalities unmanageable.
+The system relies on the `Ownable` pattern, granting a single address exclusive control over critical administrative functions, such as `transferOwnership` and potentially other sensitive operations within the OFT implementation (e.g., setting LayerZero configurations, pausing transfers, or upgrading the contract if a proxy is used). In a complex cross-chain environment, this centralization creates a single point of failure. A compromise of the owner's private key or malicious intent could lead to catastrophic loss of funds or system manipulation.
 
-**Recommendation:** Ensure that the implications of `renounceOwnership()` are fully understood by all authorized personnel. If ownership is intended to be permanent, managed by a multi-signature wallet, or never to be renounced, consider removing or restricting this function to prevent accidental or malicious use. If the intention is to decentralize control, a more robust governance mechanism should be implemented.
+**Recommendation:** For critical administrative functions, consider implementing a multi-signature wallet (e.g., Gnosis Safe) as the owner. For highly sensitive operations, explore a more decentralized governance model or time-locked execution to introduce delays and community oversight, reducing the risk associated with a single point of control.
 
 
-### `I-03` — Use of Latest Solidity Version (0.8.28)  *(Severity: Informational · Status: Unresolved)*
+### `H-02` — Inherent Complexity of Cross-Chain Operations  *(Severity: High · Status: Unresolved)*
 
-The contract utilizes Solidity version 0.8.28, which is the latest stable release at the time of this audit. While using the newest compiler version provides access to the latest language features, optimizations, and bug fixes, it also means it has undergone less extensive battle-testing in production environments compared to slightly older, widely adopted versions (e.g., 0.8.19-0.8.20).
+The `IOFT` and LayerZero receiver interfaces indicate a highly complex cross-chain token system. Cross-chain bridges and omnichain tokens are inherently high-risk due to the intricate logic involved in message passing, state synchronization, nonce management, fee handling, and token burning/minting across disparate blockchain environments. Even without the implementation, the design space itself is prone to subtle vulnerabilities that can lead to significant exploits, as demonstrated by numerous past bridge hacks.
 
-**Recommendation:** While generally positive, ensure thorough and extensive testing of the deployed contract, especially given the recency of the compiler version. Monitor for any newly discovered compiler-specific issues or unexpected behaviors that might arise from its less mature adoption in the broader ecosystem.
+**Recommendation:** Ensure the implementation adheres strictly to LayerZero's security best practices and thoroughly validates all incoming cross-chain messages. Implement robust error handling, comprehensive testing (unit, integration, and fuzzing), and formal verification for the core cross-chain logic. Consider external security reviews specifically focused on LayerZero integration patterns.
+
+
+### `M-01` — Lack of Emergency Control Mechanisms  *(Severity: Medium · Status: Unresolved)*
+
+The provided interfaces and `Ownable` contract do not expose any emergency control mechanisms such as a pause function or circuit breaker. In a cross-chain system, the ability to temporarily halt operations in response to a detected vulnerability, exploit, or critical bug is crucial to prevent further damage or loss of funds. Without such controls, any ongoing attack would continue unchecked until a patch is deployed and potentially all funds are drained.
+
+**Recommendation:** Implement a robust pause mechanism (e.g., using OpenZeppelin's `Pausable` contract) that can be triggered by the owner or a designated emergency multisig. This mechanism should allow for pausing critical functions like `send` and `lzReceive` to mitigate risks during incidents. Clearly define the conditions under which the system can be paused and unpaused.
+
+
+### `I-01` — Use of Solidity 0.8.28  *(Severity: Informational · Status: Resolved)*
+
+The contract is compiled with Solidity version 0.8.28. This version includes automatic overflow and underflow checks for all arithmetic operations, which significantly reduces the risk of integer manipulation vulnerabilities.
+
+**Recommendation:** Continue to use the latest stable and audited Solidity compiler versions. Regularly review compiler release notes for new features, bug fixes, and security improvements.
+
+
+### `I-02` — Use of Custom Errors  *(Severity: Informational · Status: Resolved)*
+
+The `Ownable` contract and `IOFT` interface utilize custom errors (e.g., `OwnableUnauthorizedAccount`, `InvalidLocalDecimals`, `SlippageExceeded`). This is a good practice as it provides more gas-efficient error handling compared to `require()` statements with string messages, and offers clearer, structured error information for off-chain applications.
+
+**Recommendation:** Maintain the use of custom errors throughout the full OFT implementation for all relevant error conditions, ensuring consistent and gas-efficient error reporting.
 
 ## Token Metrics
 

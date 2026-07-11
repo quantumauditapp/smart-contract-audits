@@ -2,14 +2,14 @@
 token: RAGE GUY
 ticker: RAGE
 network: solana
-risk_score: 42
+risk_score: 32
 status: medium
 date: 2026-06-10
 ---
 
 # RAGE GUY (RAGE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 32/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rage-guy-sol)
 
@@ -17,27 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The RAGE GUY (RAGE) token mint has its mint and freeze authorities revoked, indicating a fixed supply and unfreezable existing accounts. However, new holder accounts are created in a frozen state, requiring an active issuer to unfreeze them for usability. Holder concentration data was unavailable, and RugCheck.xyz assigned a very low score of 1/100, suggesting potential underlying risks.
+The RAGE GUY (RAGE) SPL token mint demonstrates a robust security posture with both mint and freeze authorities permanently revoked, preventing further token issuance or asset freezing. Key parameters such as metadata, transfer fees, and transfer hooks are immutable. However, holder distribution data was unavailable, precluding an assessment of supply concentration risk.
 
-> **Final Recommendation:** Prospective holders should be aware that new token accounts for RAGE GUY (RAGE) will be created in a frozen state, necessitating an active issuer to unfreeze them before tokens can be transferred. Verify the availability and responsiveness of such an issuer. Given the very low RugCheck score of 1/100, further due diligence into the project's history and team is strongly recommended, despite the revoked mint and freeze authorities. Consider the implications of unavailable holder concentration data for market stability.
+> **Final Recommendation:** Holders should continue to monitor the token's market performance and liquidity. While current on-chain data indicates a secure configuration with no active mutable authorities, it is advisable to periodically check for any changes in the token's on-chain state or external risk flags. If holder distribution data becomes available, review it to understand potential concentration risks.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The RAGE GUY (RAGE) token is an SPL token operating under the `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits moderate liquidity at $51,137 USD, with a healthy 24-hour volume to liquidity ratio of 0.06, suggesting organic trading activity. The DEX pair has been active for 279 days… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are revoked, preventing any further changes to supply or account freeze status. Metadata mutability is set to `False`, ensuring that the token's name, symbol… |
-
-## Security Findings
-
-_🟠 1 High_
-
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
-
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority, as indicated by `GoPlus.default_account_state: 1`.
-
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+| **Technical** | 6/10 | Medium | The RAGE GUY (RAGE) token operates on the `spl-token` program, indicating a standard SPL token implementation. A significant strength is the permanent revocation of both the mint authority and the… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $33,855 USD available on DEXs, supported by a 24-hour trading volume of $20,223 USD. The Volume/Liquidity Ratio of 0.60 is normal, suggesting organic… |
+| **Upgrades** | 8/10 | Low | The RAGE GUY (RAGE) token mint is configured with a high degree of immutability, as both the mint and freeze authorities have been permanently revoked. This prevents any future changes to the token's… |
 
 ## Token Metrics
 

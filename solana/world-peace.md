@@ -17,17 +17,17 @@ date: 2026-06-15
 
 ## Audit Summary
 
-This SPL Token-2022 mint, "World Peace" (Peace), demonstrates a strong security posture regarding its core minting and freezing authorities, both of which are revoked. The token does not utilize any potentially risky Token-2022 extensions like transfer hooks or default frozen states, and its metadata is immutable. Holder concentration data was unavailable, preventing a full assessment of supply distribution risk.
+This audit of the World Peace (Peace) SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and deterministic rules. Both the mint and freeze authorities are revoked, indicating a fixed supply and immutability of account states. Holder distribution data was unavailable, preventing an assessment of concentration risk.
 
-> **Final Recommendation:** Based on the available facts, the "World Peace" token appears to have a robust security configuration with critical authorities revoked and no active mutable extensions. Users should be aware that holder concentration data was unavailable, which is a common factor in price volatility. Before making significant investments, consider waiting for holder distribution data to become available to assess potential whale risks.
+> **Final Recommendation:** The token appears to be well-configured with no immediate red flags based on the available on-chain data. Holders should continue to monitor the token's market behavior, particularly if holder distribution data becomes available, to assess any potential concentration risks. Verify on-chain that the mint and freeze authorities remain revoked before making significant investments.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked, which prevents further token minting or freezing of user accounts (Fact: Mint Authority: revoked… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $32,041 USD available on DEXs (Fact: Liquidity (USD): $32,041). The 24-hour volume is $3,391, resulting in a normal Volume/Liquidity Ratio of 0.11, which… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both Mint and Freeze authorities (Fact: Mint Authority: revoked (None), Freeze Authority: revoked (None)). It is an SPL Token-2022… |
+| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint with a fixed supply of 995,303,116.495398 tokens, as the mint authority has been revoked. The freeze authority is also revoked, meaning no accounts can be frozen.… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy trading patterns with a 24-hour volume of $1,513 against a liquidity of $30,518, resulting in a normal Volume/Liquidity Ratio of 0.05. The DEX pair has been active for 133… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as both the mint and freeze authorities have been revoked. This prevents any further issuance of tokens or freezing of holder accounts. Key Token-2022… |
 
 ## Token Metrics
 

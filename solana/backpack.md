@@ -2,14 +2,14 @@
 token: Backpack
 ticker: BP
 network: solana
-risk_score: 92
+risk_score: 84
 status: critical
 date: 2026-06-14
 ---
 
 # Backpack (BP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 92/100 — 🔴 Critical Risk**
+> **Risk Score: 84/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/backpack-sol)
 
@@ -17,41 +17,41 @@ date: 2026-06-14
 
 ## Audit Summary
 
-The Backpack (BP) token mint presents critical centralization risks due to unrevoked mint and freeze authorities. The issuer retains the ability to mint unlimited new tokens and freeze any holder's funds. Additionally, new holder accounts are created in a frozen state by default, requiring explicit unfreezing. Holder concentration data was unavailable, preventing a full assessment of supply distribution risk.
+This audit identifies critical risks due to active Mint and Freeze authorities, both held by `GySFHFS5ZiN4Z5YnyPZcjjxpYcGvD7qHZYVjE9QzMHVH`, allowing for unlimited token minting and account freezing. Additionally, token metadata is mutable, enabling post-launch changes to branding. Holder distribution data was unavailable from chain-native RPC for a complete assessment of concentration risk.
 
-> **Final Recommendation:** Users considering holding Backpack (BP) tokens should be aware of the significant centralized risks. The unrevoked mint and freeze authorities grant the issuer complete control over the token supply and the ability to freeze any holder's assets. It is strongly recommended to verify on-chain that these authorities are revoked before considering the token supply fixed or your holdings secure. Additionally, new accounts being frozen by default requires an active issuer to unfreeze them, which could lead to funds being inaccessible if the issuer becomes unresponsive.
+> **Final Recommendation:** Before engaging with this token, holders should verify on-chain that the Mint Authority has been permanently revoked to ensure the token supply is fixed. Similarly, confirm the Freeze Authority is nullified to prevent any potential confiscation of funds. It is also advisable to monitor the token's metadata for any unexpected alterations to its name, symbol, or image.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 1/10 | High | The token is an SPL token using the `spl-token` program, with a total supply of 999,999,846.945724009 tokens and 9 decimals. Critical access controls remain active: the mint authority… |
-| **Governance / Economics** | 1/10 | High | The token exhibits healthy liquidity with $1,942,306 USD available on DEXs and a 24-hour volume of $1,046,962 USD. The volume/liquidity ratio is 0.54, indicating normal trading patterns without signs… |
-| **Upgrades** | 4/10 | Medium | The token's core authorities, including mint and freeze, are not revoked, meaning the issuer retains full control over token supply and holder accounts. The token uses the standard `spl-token`… |
+| **Technical** | 2/10 | High | The token is implemented using the classic `spl-token` program (v3). A critical concern is the active Mint Authority, `GySFHFS5ZiN4Z5YnyPZcjjxpYcGvD7qHZYVjE9QzMHVH`, which allows for arbitrary… |
+| **Governance / Economics** | 1/10 | High | The token exhibits healthy market activity with a total DEX liquidity of $2,161,273 and a 24-hour volume of $813,689. The Volume/Liquidity Ratio is 0.38, indicating normal trading patterns, and the… |
+| **Upgrades** | 6/10 | Medium | The Mint Authority and Freeze Authority remain active, allowing for potential future changes to the token's supply and the state of holder accounts. Additionally, the token's metadata is mutable… |
 
 ## Security Findings
 
-_🔴 2 Critical · 🟠 1 High_
+_🔴 2 Critical · 🟢 1 Low_
 
 ### `C-01` — Mint Authority Not Revoked  *(Severity: Critical · Status: Unresolved)*
 
-The mint authority is GySFHFS5ZiN4Z5YnyPZcjjxpYcGvD7qHZYVjE9QzMHVH. The holder of this key can mint unlimited new tokens, diluting all current holders to zero value.
+The mint authority is GySFHFS5ZiN4Z5YnyPZcjjxpYcGvD7qHZYVjE9QzMHVH. The holder of this key can mint unlimited new tokens, diluting all current holders to zero value. (Fact: Mint Authority: GySFHFS5ZiN4Z5YnyPZcjjxpYcGvD7qHZYVjE9QzMHVH)
 
 **Recommendation:** Verify on-chain that the mint authority is set to null before treating supply as fixed.
 
 
 ### `C-02` — Freeze Authority Not Revoked  *(Severity: Critical · Status: Unresolved)*
 
-The freeze authority is GySFHFS5ZiN4Z5YnyPZcjjxpYcGvD7qHZYVjE9QzMHVH. The holder can freeze any holder's account, blocking transfers and effectively confiscating funds.
+The freeze authority is GySFHFS5ZiN4Z5YnyPZcjjxpYcGvD7qHZYVjE9QzMHVH. The holder can freeze any holder's account, blocking transfers and effectively confiscating funds. (Fact: Freeze Authority: GySFHFS5ZiN4Z5YnyPZcjjxpYcGvD7qHZYVjE9QzMHVH)
 
 **Recommendation:** Avoid tokens whose freeze authority is not revoked unless the issuer is a regulated stablecoin operator.
 
 
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
+### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
 
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority, as indicated by `GoPlus.default_account_state: 1`.
+Token name, symbol, or image can be changed post-launch. (Fact: metadata_mutable: True)
 
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+**Recommendation:** Verify metadata against off-chain expectations before trusting branding.
 
 ## Token Metrics
 

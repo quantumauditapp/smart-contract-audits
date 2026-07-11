@@ -2,14 +2,14 @@
 token: Ultimate Solana World Cup
 ticker: USWC
 network: solana
-risk_score: 47
+risk_score: 57
 status: high
 date: 2026-06-15
 ---
 
 # Ultimate Solana World Cup (USWC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 57/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ultimate-solana-world-cup-sol)
 
@@ -17,17 +17,27 @@ date: 2026-06-15
 
 ## Audit Summary
 
-The SPL Token Mint at CqFJhmzTVCdULq4KdfwKqsBf7ABaaZarWCrarazupump exhibits a strong technical configuration with both mint and freeze authorities revoked, indicating a fixed supply and no ability to freeze user accounts. No Token-2022 transfer hook or permanent delegate is active. However, quantitative data regarding holder concentration and DEX liquidity is unavailable, preventing a full economic assessment. RugCheck.xyz qualitatively flags potential risks such as 'Single holder ownership', 'High holder concentration', and 'Low Liquidity'.
+The Ultimate Solana World Cup (USWC) token mint is configured with revoked mint and freeze authorities, indicating a fixed supply and unfreezable accounts. However, the token suffers from very low DEX liquidity, currently at $5,192, which poses a significant risk for large trades. Holder distribution data was unavailable for analysis.
 
-> **Final Recommendation:** The token exhibits a robust technical configuration with critical authorities revoked, ensuring a fixed supply and no ability to freeze accounts. However, the absence of quantitative data for holder concentration and DEX liquidity, coupled with RugCheck.xyz's qualitative warnings of 'High holder concentration' and 'Low Liquidity', indicates significant economic risks. Users should exercise extreme caution due to the potential for high slippage and price volatility. It is recommended to await the availability of comprehensive market data before making investment decisions. For a Premium Deploy option, consider tokens with transparent and verifiable liquidity and holder distribution metrics.
+> **Final Recommendation:** Potential holders should exercise extreme caution due to the very low liquidity. Verify the current DEX liquidity immediately before any transaction, as it can fluctuate rapidly. Consider the impact of high slippage on any intended trade size. Monitor for any significant changes in liquidity or trading volume before committing substantial capital.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.2 Code Security: The token is an SPL Token-2022 mint. 7.3 Access Control: Both the Mint Authority and Freeze Authority have been revoked, as confirmed by 'Mint Authority: revoked… |
-| **Governance / Economics** | 4/10 | Medium | 7.4 Economic: Quantitative data for holder concentration and DEX liquidity is unavailable ('[UNKNOWN] holder concentration unavailable', '[UNKNOWN] no DEX pair data available'). This lack of data… |
-| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The token's configuration demonstrates strong immutability. The revocation of both Mint Authority and Freeze Authority prevents any future changes to the token supply or the ability to… |
+| **Technical** | 5/10 | Medium | The Ultimate Solana World Cup (USWC) token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked, meaning no new tokens can be minted and no accounts can be frozen.… |
+| **Governance / Economics** | 3/10 | High | The token exhibits very low liquidity, with total DEX liquidity at only $5,192. This makes large trades highly susceptible to severe slippage and prevents significant positions from being exited… |
+| **Upgrades** | 8/10 | Low | The token mint has a robust upgrade posture, with both the mint authority and freeze authority permanently revoked. This ensures that the token supply is fixed and no accounts can be frozen… |
+
+## Security Findings
+
+_🟠 1 High_
+
+### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
+
+Total DEX liquidity is $5,192. Slippage will be severe; large positions cannot be exited without significant loss.
+
+**Recommendation:** Verify current liquidity levels before any trade, as low liquidity can lead to significant price impact and make large positions difficult to exit.
 
 ## Token Metrics
 

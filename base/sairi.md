@@ -2,14 +2,14 @@
 token: SAIRI
 ticker: SAIRI
 network: base
-risk_score: 56
+risk_score: 46
 status: high
 date: 2026-06-13
 ---
 
 # SAIRI (SAIRI) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 56/100 — 🟠 High Risk**
+> **Risk Score: 46/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sairi-base)
 
@@ -17,19 +17,17 @@ date: 2026-06-13
 
 ## Audit Summary
 
-The ClankerToken contract implements an ERC20 token with cross-chain capabilities and administrative controls. The contract leverages well-audited OpenZeppelin standards for core token functionality. Key areas of concern include a potentially misleading parameter name for token supply, centralized administrative control over metadata, and the inherent dependency on an external bridge for cross-chain operations.
+The ClankerToken contract is an ERC20 token with extensions for burning, permits, and voting, leveraging OpenZeppelin's battle-tested libraries. It includes custom functionality for cross-chain minting/burning, restricted to a Superchain Token Bridge, and administrative control over metadata and the admin role itself. While the core ERC20 implementation is robust, the centralized control held by the `_admin` role for critical parameters and the admin transfer mechanism introduces a medium-level risk. The token's initial supply distribution and the nature of its `maxSupply_` parameter also warrant clear understanding.
 
-> **Final Recommendation:** The ClankerToken contract is generally well-written and leverages robust OpenZeppelin components. Addressing the misleading `maxSupply_` parameter and considering a multi-sig or time-lock for the `_admin` role would significantly enhance the contract's transparency and security posture. For long-term sustainability, the lack of upgradeability should be carefully considered against future needs.
-
-For enhanced security and operational flexibility, we recommend a Premium Deploy option. This includes a comprehensive pre-deployment review, gas optimization analysis, and continuous monitoring post-deployment to identify and mitigate potential risks in real-time.
+> **Final Recommendation:** To enhance the security posture, consider implementing a multi-signature wallet for the `_admin` role to manage critical functions like `updateAdmin` and metadata changes. This would distribute control and reduce the risk associated with a single point of failure. Additionally, ensure comprehensive documentation clearly outlines the token's economic model, particularly regarding the initial supply distribution and the dynamic nature of the total supply due to cross-chain operations.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract demonstrates good technical practices by inheriting from battle-tested OpenZeppelin ERC20 extensions (ERC20Permit, ERC20Votes, ERC20Burnable), which enhances code security (7.2). It also… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4) initially mints a specified `maxSupply_` on a single chain, but the `crosschainMint` function allows the `SUPERCHAIN_TOKEN_BRIDGE` to mint additional tokens without a global… |
-| **Upgrades** | 8/10 | Low | The ClankerToken contract is deployed as a standard, non-upgradeable implementation (7.7). This design choice means that once deployed, the contract's logic cannot be modified. Any future bug fixes… |
+| **Technical** | 8/10 | Low | The technical architecture (7.1) of ClankerToken is sound, building upon well-audited OpenZeppelin ERC20 standards, including ERC20Burnable, ERC20Permit, and ERC20Votes. Code security (7.2) is… |
+| **Governance / Economics** | 1/10 | High | Economically (7.4), the token's initial supply is minted entirely to the deployer on a specific chain, which is a design choice that centralizes initial distribution. The `maxSupply_` parameter is… |
+| **Upgrades** | 8/10 | Low | The ClankerToken contract is not designed as an upgradeable proxy (7.7). This means that its logic cannot be modified post-deployment. While this eliminates upgrade-related risks, any future feature… |
 
 ## LP Distribution
 
@@ -40,41 +38,34 @@ For enhanced security and operational flexibility, we recommend a Premium Deploy
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
-### `H-01` — Misleading `maxSupply_` Parameter and Uncapped Supply  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Control of Admin Role and Metadata  *(Severity: Medium · Status: Unresolved)*
 
-The constructor parameter `maxSupply_` implies a maximum token supply, but it only dictates the initial supply on a specific chain (`initialSupplyChainId_`). The `crosschainMint` function allows the `SUPERCHAIN_TOKEN_BRIDGE` to mint an arbitrary amount of new tokens without any explicit global supply cap. This design choice, combined with the misleading parameter name, could lead to user confusion, unexpected inflation, and a loss of confidence in the token's economic model (7.4).
+The `_admin` role has the sole authority to transfer the admin role (`updateAdmin`) and modify token metadata (`updateImage`, `updateMetadata`). A compromise of the `_admin` key could lead to unauthorized changes to the token's administrative control and public-facing information. This centralizes significant power in a single address, increasing the impact of a private key compromise. (7.3 Access Control, 7.8 Operations)
 
-**Recommendation:** Rename `maxSupply_` to `initialSupply_` or `initialChainSupply_` to accurately reflect its purpose. Implement a global maximum supply mechanism if the intention is to have a capped token, or clearly document that the token has an uncapped supply managed by the bridge.
-
-
-### `M-01` — Centralized Control of Token Parameters and Admin Role  *(Severity: Medium · Status: Unresolved)*
-
-The `_admin` role has extensive control, including the ability to update the token's `_image`, `_metadata`, and crucially, to transfer the `_admin` role itself via `updateAdmin`. While `_originalAdmin` is immutable for the one-time `verify()` call, the mutable `_admin` represents a single point of failure. If the `_admin` key is compromised, an attacker could alter token metadata or transfer the admin role to themselves, potentially impacting user trust and the token's representation (7.3).
-
-**Recommendation:** Consider implementing a multi-signature wallet for the `_admin` role or introducing a time-lock for critical administrative actions, especially for `updateAdmin`, to mitigate the risk of a single key compromise. This enhances access control and operational security (7.8).
+**Recommendation:** Consider implementing a multi-signature wallet for the `_admin` role or introducing a time-lock for critical administrative actions like `updateAdmin` to provide a window for community review or emergency intervention. This would distribute control and enhance security.
 
 
-### `L-01` — Dependency on External Bridge Security  *(Severity: Low · Status: Unresolved)*
+### `L-01` — Initial Supply Distribution to Deployer  *(Severity: Low · Status: Unresolved)*
 
-The `crosschainMint` and `crosschainBurn` functions grant exclusive minting and burning privileges to the `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`. The security and integrity of the token's supply are therefore directly dependent on the security of this external bridge contract. Any vulnerability or compromise within the `SUPERCHAIN_TOKEN_BRIDGE` could lead to unauthorized minting or burning of ClankerTokens (7.6).
+The constructor mints the entire `maxSupply_` to `msg.sender` (the deployer) if `block.chainid` matches `initialSupplyChainId_`. This design centralizes the initial token supply entirely with the deployer, which might not align with desired distribution strategies for a public token. While not a direct vulnerability, it's a significant design choice for token distribution. (7.4 Economic)
 
-**Recommendation:** Ensure the `SUPERCHAIN_TOKEN_BRIDGE` contract undergoes rigorous security audits and maintains robust operational security. Implement monitoring for unusual activity originating from the bridge address to detect potential compromises (7.8).
-
-
-### `I-01` — No Upgradeability  *(Severity: Informational · Status: Unresolved)*
-
-The `ClankerToken` contract is deployed as a standard, non-upgradeable implementation. This means that once deployed, its logic cannot be modified. Any future bug fixes, feature enhancements, or changes to the token's economic model would necessitate deploying a new contract and migrating users, which can be a complex and disruptive process (7.7).
-
-**Recommendation:** For long-term projects, consider using an upgradeable proxy pattern (e.g., UUPS or Transparent Proxies) to allow for future contract modifications without requiring redeployment and migration. This provides flexibility for future protocol evolution.
+**Recommendation:** Ensure that this distribution model is intentional and clearly communicated to stakeholders. For future deployments, consider alternative initial distribution mechanisms, such as vesting contracts or a controlled release, if a broader initial distribution is desired.
 
 
-### `I-02` — `ERC20Votes` Without On-Chain Governance  *(Severity: Informational · Status: Unresolved)*
+### `I-01` — `maxSupply_` is not a Global Hard Cap  *(Severity: Informational · Status: Unresolved)*
 
-The contract inherits `ERC20Votes`, which enables tracking of voting power based on token holdings. However, the contract itself does not implement any on-chain governance mechanisms (e.g., a Governor contract). While this is a common pattern for tokens intended for future governance integration, it means that currently, voting power is only usable off-chain or requires a separate governance contract to be deployed and integrated (7.5).
+The `maxSupply_` parameter in the constructor only dictates the initial supply minted on a specific chain. The `crosschainMint` function, callable by `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`, allows for additional tokens to be minted, meaning the total supply across all chains can exceed the initial `maxSupply_`. This is a standard pattern for cross-chain tokens but should be explicitly understood by users and stakeholders. (7.4 Economic, 7.1 Architecture)
 
-**Recommendation:** Clearly communicate the intended use of `ERC20Votes` and outline the roadmap for any future on-chain governance integration. If on-chain governance is planned, ensure the governance contract is properly integrated and secured.
+**Recommendation:** Clearly document that `maxSupply_` refers to the initial supply on a specific chain and that the total supply can increase through legitimate cross-chain bridging operations. This helps manage expectations regarding tokenomics and supply dynamics.
+
+
+### `I-02` — Unused `_context` Variable  *(Severity: Informational · Status: Unresolved)*
+
+The `_context` state variable is set in the constructor and exposed via the `context()` and `allData()` view functions, but there is no function to update its value after deployment. This makes it a static piece of metadata. If it's intended to be dynamic, its current implementation limits flexibility. (7.2 Code Security)
+
+**Recommendation:** If `_context` is intended to be dynamic, add an `updateContext` function with appropriate access control. If it's meant to be static, ensure this is clearly documented. If it serves no purpose, consider removing it to reduce contract size and complexity.
 
 ## Token Metrics
 

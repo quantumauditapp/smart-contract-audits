@@ -2,14 +2,14 @@
 token: World Collective Oil Reserve
 ticker: WCOR
 network: solana
-risk_score: 31
+risk_score: 21
 status: medium
 date: 2026-06-10
 ---
 
 # World Collective Oil Reserve (WCOR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 31/100 — 🟡 Medium Risk**
+> **Risk Score: 21/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-collective-oil-reserve-sol)
 
@@ -17,27 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This audit of the World Collective Oil Reserve (WCOR) SPL token mint identified a High-severity risk due to the default frozen state for new holder accounts, requiring explicit unfreezing by an authority. While mint and freeze authorities are revoked, the lack of holder distribution data prevents a full assessment of supply centralization risk. RugCheck.xyz provides a very low score of 1/100, indicating potential underlying issues not directly covered by our deterministic rules.
+This audit of the World Collective Oil Reserve (WCOR) SPL token mint found no critical or high-severity risks based on the available on-chain data and deterministic rules. Both the mint and freeze authorities are revoked, preventing further supply inflation or account freezing. Liquidity is moderate, and trading patterns appear normal. Holder distribution data was unavailable for analysis.
 
-> **Final Recommendation:** Holders should be aware of the 'Default Frozen State' for new accounts, which means an active issuer is required to unfreeze any newly created token accounts before they can be used. This introduces a dependency and potential point of failure if the issuer becomes unresponsive. Given the 'RugCheck Score' of 1/100, further due diligence into the project's background and team is strongly recommended. Consider the implications of unavailable holder concentration data, as this prevents a full assessment of supply centralization risk. For enhanced security and transparency, consider a Premium Deploy option that includes a comprehensive review of the issuer's operational procedures for unfreezing accounts and a deeper analysis of the project's reputation.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to confirm the immutability of supply and account status. While current liquidity is moderate, continuous monitoring of DEX liquidity and trading volume is advisable, especially for large positions. If holder distribution data becomes available in the future, it should be reviewed to assess potential concentration risks.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | 7.1 Architecture & 7.2 Code Security: The WCOR token is an SPL token mint operating under the `spl-token` program. The mint authority is revoked, meaning no new tokens can be minted, and the freeze… |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic: The token has a liquidity of $55,296 USD and a 24-hour volume of $7,276 USD. The volume/liquidity ratio is 0.13, which is considered normal and does not indicate wash trading. The DEX… |
-| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority and freeze authority have both been revoked, indicating that the token's supply is fixed and existing accounts cannot be frozen by an issuer. GoPlus data confirms… |
-
-## Security Findings
-
-_🟠 1 High_
-
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
-
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority. This is indicated by `GoPlus.default_account_state: 1`.
-
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+| **Technical** | 6/10 | Medium | The WCOR token operates on the classic `spl-token` program. A key security strength is that both the Mint Authority and Freeze Authority are revoked, meaning no new tokens can be minted and no holder… |
+| **Governance / Economics** | 7/10 | Low | DEX market data indicates a total liquidity of $33,429, which is above the threshold for very low liquidity. The 24-hour trading volume is $322, resulting in a normal Volume/Liquidity Ratio of 0.01… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both Mint and Freeze authorities. This means the token supply cannot be increased, and the ability to freeze accounts is permanently… |
 
 ## Token Metrics
 

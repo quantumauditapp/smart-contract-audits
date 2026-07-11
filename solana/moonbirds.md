@@ -2,14 +2,14 @@
 token: Moonbirds
 ticker: BIRB
 network: solana
-risk_score: 55
+risk_score: 47
 status: high
 date: 2026-07-02
 ---
 
 # Moonbirds (BIRB) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 47/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/moonbirds-sol)
 
@@ -17,27 +17,27 @@ date: 2026-07-02
 
 ## Audit Summary
 
-This SPL token mint has a critical operational risk due to its default frozen account state, meaning new holder accounts require manual unfreezing by an authority to enable transfers. While mint and freeze authorities are revoked, holder concentration data was unavailable from RPC, though RugCheck.xyz indicates high ownership by top holders. The token exhibits healthy liquidity and trading patterns.
+The Moonbirds (BIRB) SPL token mint has revoked both mint and freeze authorities, ensuring a fixed supply and preventing account freezing. However, its metadata is mutable, allowing for potential changes to its branding. Holder distribution data was unavailable from chain-native RPC, though third-party risk registry signals indicate high ownership concentration.
 
-> **Final Recommendation:** Holders should be aware of the 'Default Frozen State' issue, which requires an active issuer to unfreeze new accounts. Verify the process and availability of such an authority before acquiring the token. The revoked mint and freeze authorities, along with immutable metadata, are positive security aspects. However, the RugCheck.xyz warnings regarding high holder concentration should be considered, as this can lead to price volatility from large sell-offs. For enhanced security, consider a Premium Deploy option that includes continuous monitoring for any changes in token authorities or on-chain parameters.
+> **Final Recommendation:** Before relying on the token's branding, verify its current name, symbol, and image against official sources due to the mutable metadata. Continuously monitor the token's liquidity and trading volume for any significant changes. While direct holder distribution data was unavailable, be aware that third-party risk registries have flagged high ownership concentration, which could impact price stability.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.8 Operations: The token is an SPL token mint operating under the `spl-token` program with 6 decimals and a total supply of… |
-| **Governance / Economics** | 2/10 | High | 7.4 Economic, 7.5 Governance: The token exhibits strong liquidity with $1,691,889 USD available on DEXs, supported by a 24-hour trading volume of $6,360,236 USD. The volume/liquidity ratio is 3.76… |
-| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The token's mint and freeze authorities are both revoked (`Mint Authority: revoked (None)`, `Freeze Authority: revoked (None)`), meaning no further tokens can be minted and no existing… |
+| **Technical** | 6/10 | Medium | The Moonbirds (BIRB) token is implemented using the classic SPL Token Program (v3). Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no… |
+| **Governance / Economics** | 3/10 | High | The token exhibits healthy liquidity of $1,582,428 USD and a 24-hour trading volume of $501,603 USD, with a normal volume/liquidity ratio of 0.32. The DEX pair has been active for 163 days, providing… |
+| **Upgrades** | 8/10 | Low | The mint and freeze authorities for the token have been permanently revoked, preventing any future changes to the token's supply or account freeze status. However, the token's metadata remains… |
 
 ## Security Findings
 
-_🟠 1 High_
+_🟢 1 Low_
 
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
+### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
 
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority. This is indicated by `GoPlus.default_account_state: 1`.
+Token name, symbol, or image can be changed post-launch. This is indicated by the `metadata_mutable: True` flag.
 
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+**Recommendation:** Verify metadata against off-chain expectations before trusting branding.
 
 ## Token Metrics
 

@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The StargateToken contract, an Omnichain Fungible Token (OFT) built on LayerZero, facilitates cross-chain token transfers using a lock/burn and unlock/mint mechanism. The contract leverages OpenZeppelin's ERC20 and Ownable for core functionality and access control. A critical vulnerability was identified in the `lzReceive` function's assembly-based address decoding, which could lead to tokens being minted or unlocked to unintended addresses. Additionally, the contract exhibits a high degree of centralized control by the owner and uses an older Solidity compiler version. The contract is immutable, lacking upgradeability.
+The StargateToken contract is an ERC20 token with omnichain capabilities powered by LayerZero. It implements a standard lock/burn and mint/unlock mechanism for cross-chain transfers. The contract utilizes OpenZeppelin's battle-tested libraries for ERC20 and access control. Key findings include significant centralized control by the owner, inherent reliance on the LayerZero endpoint's security, and a minor concern regarding inline assembly for address decoding. The contract is not upgradeable, simplifying its security profile in that regard.
 
-> **Final Recommendation:** The Stargate Omnichain Fungible Token contract presents a robust cross-chain architecture but contains a critical vulnerability in its `lzReceive` function's address decoding. Immediate attention is required to address this high-severity issue to prevent potential loss or misdirection of funds. Additionally, the centralized control by the owner should be mitigated, ideally through a multi-signature setup. We recommend a comprehensive review of the LayerZero integration and a potential upgrade to a newer Solidity compiler version. For projects requiring the highest level of security and ongoing support, consider our Premium Deploy option, which includes continuous monitoring, incident response planning, and advanced security features.
+> **Final Recommendation:** Strengthen the operational security around the contract owner's private key, ideally by implementing a multi-signature wallet with robust access controls and potentially a time-lock for critical administrative actions. Thoroughly review and test the LayerZero endpoint configurations and maintain awareness of LayerZero's security updates. While the assembly for address decoding is functional, consider refactoring it for improved readability and safety using `abi.decode` if compatible with LayerZero's payload structure.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The technical architecture (7.1) of the Omnichain Fungible Token (OFT) is well-structured, utilizing a standard lock/burn and mint/unlock mechanism for cross-chain transfers via LayerZero. The… |
-| **Governance / Economics** | 1/10 | High | The contract's economic model (7.4) is based on a standard OFT design, ensuring token supply consistency across chains through locking/burning and minting/unlocking. Governance (7.5) is highly… |
-| **Upgrades** | 2/10 | High | The contract is deployed as an immutable implementation, meaning its logic cannot be changed post-deployment (7.7 Upgrades). This design choice eliminates upgrade-related risks but also prevents bug… |
+| **Technical** | 4/10 | Medium | The contract leverages OpenZeppelin's battle-tested ERC20 and SafeMath for token operations, enhancing code security (7.2). It implements a standard lock/burn and mint/unlock mechanism for… |
+| **Governance / Economics** | 1/10 | High | The contract employs an `Ownable` access control pattern, granting the owner significant power over critical functions such as pausing token transfers and setting destination contracts (7.3). This… |
+| **Upgrades** | 2/10 | High | The contract is deployed as a standard, non-upgradeable implementation (7.7). This design choice eliminates the complexities and risks associated with proxy upgrade mechanisms, such as storage… |
 
 ## LP Distribution
 
@@ -40,39 +40,39 @@ The StargateToken contract, an Omnichain Fungible Token (OFT) built on LayerZero
 
 _🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
-### `H-01` — Unsafe `_to` Address Decoding in `lzReceive`  *(Severity: High · Status: Unresolved)*
+### `H-01` — Centralized Control by Owner  *(Severity: High · Status: Unresolved)*
 
-The `lzReceive` function uses inline assembly (`mload(add(_to, 20))`) to decode the `_to` address from the `_payload`. This assembly code assumes that `_to` is a `bytes` type representing a 20-byte address. If a malicious or malformed `_payload` provides a `_to` value that is not exactly 20 bytes, the assembly code could extract an incorrect or arbitrary `toAddress`. This could lead to tokens being minted or unlocked to an unintended address, potentially resulting in loss of funds or unauthorized token distribution.
+The `Ownable` pattern grants the contract owner extensive control over critical functions, including `pauseSendTokens`, `setDestination`, and various LayerZero endpoint configurations (`setConfig`, `setSendVersion`, `setReceiveVersion`, `forceResumeReceive`). A compromise of the owner's private key could lead to the pausing of cross-chain transfers, misdirection of funds by setting malicious destination contracts, or manipulation of LayerZero configurations. (7.3 Access Control, 7.4 Economic, 7.8 Operations)
 
-**Recommendation:** Replace the inline assembly with a safer Solidity-native conversion for `bytes` to `address`. Ensure `_to.length == 20` before attempting conversion. A robust approach would be `require(_to.length == 20, 'OFT: invalid to address length'); address toAddress = address(uint160(bytes20(_to)));`.
-
-
-### `M-01` — Centralized Control by Owner  *(Severity: Medium · Status: Unresolved)*
-
-The `OmnichainFungibleToken` contract inherits `Ownable`, granting significant control to a single `owner` address. The owner can `pauseSendTokens`, effectively halting all cross-chain token transfers. Furthermore, the owner can `setDestination` for LayerZero routing and configure LayerZero endpoint parameters (`setConfig`, `setSendVersion`, `setReceiveVersion`, `forceResumeReceive`). A compromised or malicious owner could disrupt operations, redirect funds, or misconfigure the LayerZero integration, posing a significant risk to the protocol's integrity and user funds.
-
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the `owner` address to distribute control and require multiple approvals for critical operations. For highly sensitive functions, consider introducing a time-lock mechanism to allow for community review or emergency intervention periods.
+**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for ownership of the contract to distribute control and reduce the single point of failure risk. Consider time-locks for critical administrative actions to allow for community review or emergency response.
 
 
-### `L-01` — Older Solidity Compiler Version  *(Severity: Low · Status: Unresolved)*
+### `M-01` — Reliance on External LayerZero Endpoint Security  *(Severity: Medium · Status: Unresolved)*
 
-The contract is compiled with Solidity version `0.7.6`. While `SafeMath` from OpenZeppelin is used to prevent integer overflows/underflows, newer Solidity versions (e.g., `0.8.x` and above) include native overflow/underflow checks by default. Using an older compiler version means foregoing these built-in safety features and potentially missing out on other compiler improvements and optimizations.
+The contract's core cross-chain functionality relies entirely on the security and correct operation of the LayerZero endpoint. Any vulnerabilities, misconfigurations, or compromises within the LayerZero protocol or its specific endpoint implementation could directly impact the integrity of token transfers, potentially leading to loss of funds or incorrect token supply across chains. (7.6 External)
 
-**Recommendation:** Consider upgrading the Solidity compiler version to `0.8.x` or higher. This would allow for the removal of `SafeMath` (as native checks are enabled) and benefit from other compiler enhancements. This upgrade would require careful testing and potentially minor code adjustments to ensure compatibility.
-
-
-### `I-01` — Immutability and Lack of Upgradeability  *(Severity: Informational · Status: Unresolved)*
-
-The `StargateToken` contract is deployed as a standard implementation without any proxy or upgradeability pattern. This means its logic is immutable once deployed and cannot be modified or patched in case of future vulnerabilities or feature requirements. The `renounceOwnership` function is also overridden to be empty, preventing the owner from relinquishing control. While immutability can be a security feature by guaranteeing unchanging behavior, it also means any discovered critical bug cannot be fixed without a redeployment and migration.
-
-**Recommendation:** If future modifications, bug fixes, or feature enhancements are anticipated, consider adopting a well-audited upgradeability pattern (e.g., UUPS proxy) for future deployments. If immutability is a deliberate design choice, ensure extremely thorough testing and auditing to minimize the risk of unfixable issues.
+**Recommendation:** While direct mitigation within this contract is limited, it is crucial to maintain a strong understanding of LayerZero's security posture, monitor their announcements, and have contingency plans in place for potential LayerZero-related incidents. Ensure the LayerZero endpoint address used is the official and correct one.
 
 
-### `I-02` — Reliance on LayerZero Endpoint Security  *(Severity: Informational · Status: Unresolved)*
+### `L-01` — Assembly for Address Decoding  *(Severity: Low · Status: Unresolved)*
 
-The security and functionality of the `OmnichainFungibleToken` are heavily dependent on the underlying LayerZero protocol and its `ILayerZeroEndpoint` implementation. The contract trusts the LayerZero endpoint for message authenticity (`msg.sender == address(endpoint)`) and relies on its correct operation for cross-chain communication. Any vulnerabilities, misconfigurations, or operational issues within the LayerZero endpoint could directly impact the safety and availability of cross-chain token transfers for this OFT.
+The `lzReceive` function uses an inline assembly block (`assembly { toAddress := mload(add(_to, 20)) }`) to extract an `address` from a `bytes` variable `_to`. While this pattern can be efficient, it relies on specific knowledge of how `bytes` are encoded in memory and assumes `_to` will always contain a 20-byte address at the expected offset. If the encoding of `_to` were to change or if `_to` were not exactly 20 bytes, this could lead to incorrect address extraction or unexpected behavior. (7.2 Code Security)
 
-**Recommendation:** Maintain continuous monitoring of the LayerZero protocol's security posture, updates, and operational status. Ensure the configured LayerZero endpoint address is correct, trusted, and regularly audited. Implement robust off-chain monitoring for LayerZero message failures or anomalies.
+**Recommendation:** Consider using `abi.decode` directly if the `_to` parameter is consistently an `address` type encoded as `bytes`. For example, if `_to` is always `abi.encodePacked(address_value)`, then `(address toAddress, uint256 qty) = abi.decode(_payload, (address, uint256));` would be safer and more readable. If the current assembly is strictly necessary due to LayerZero's specific payload structure, ensure thorough testing covers edge cases for `_to`'s length and content.
+
+
+### `I-01` — Renounce Ownership Disabled  *(Severity: Informational · Status: Unresolved)*
+
+The `renounceOwnership()` function is overridden to be a no-op (`function renounceOwnership() public override onlyOwner {}`). This prevents the owner from accidentally or intentionally renouncing ownership, which can be a security feature to avoid leaving the contract unmanaged. However, it also means that ownership cannot be permanently removed without transferring it to another address. (7.3 Access Control, 7.8 Operations)
+
+**Recommendation:** This is a design choice. If the intention is to always have an owner, this implementation is acceptable. Ensure that the owner address is securely managed and that there are clear operational procedures for ownership transfers.
+
+
+### `I-02` — BUSL-1.1 License  *(Severity: Informational · Status: Unresolved)*
+
+The contract uses the Business Source License 1.1 (BUSL-1.1). This is a non-open source license that typically restricts usage for a certain period or until specific conditions are met, after which it may convert to an open-source license like MIT. While not a security vulnerability, it's important for users and integrators to be aware of the licensing terms and their implications for usage and modification.
+
+**Recommendation:** Ensure all parties interacting with or building upon this contract understand the terms and conditions of the BUSL-1.1 license.
 
 ## Token Metrics
 

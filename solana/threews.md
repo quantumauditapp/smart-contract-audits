@@ -17,18 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The three.ws (three) SPL Token Mint on Solana exhibits a robust security posture with all critical authorities, including Mint and Freeze authorities, being revoked. This ensures a fixed supply and prevents arbitrary freezing of user funds. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+This SPL Token-2022 mint, three.ws (three), presents a low-risk profile based on available on-chain data. Both mint and freeze authorities are revoked, preventing supply manipulation or asset freezing. Liquidity is substantial, and trading patterns appear normal. Holder distribution data was unavailable from chain-native RPC.
 
-> **Final Recommendation:** Based on the available on-chain facts and external security signals, the three.ws (three) SPL Token Mint appears to be well-configured with critical authorities revoked, indicating a fixed supply and no ability to freeze user funds. The token's metadata is also immutable.
-However, holder concentration data was unavailable, which is a key metric for assessing potential market manipulation risks from large holders. Users should consider this information gap when evaluating the token. For a Premium Deploy, further off-chain due diligence on the project team and community engagement is recommended.
+> **Final Recommendation:** Holders should monitor the token's liquidity and trading volume for any significant changes. While current on-chain data indicates a secure configuration with revoked authorities and immutable metadata, ongoing market dynamics can impact value. If holder distribution data becomes available, verify that concentration levels do not pose a significant risk of market manipulation.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked (None), indicating a fixed supply and preventing the issuer from freezing user… |
-| **Governance / Economics** | 7/10 | Low | The token has a healthy liquidity of $258,109 USD on DEXs. The 24-hour volume of $1,266,452 USD results in a Volume/Liquidity Ratio of 4.91, which is considered normal and does not suggest wash… |
-| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked, ensuring that the core parameters of the token (supply and transferability) cannot be altered post-launch. The token uses the spl-token-2022… |
+| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint, indicating it leverages the latest Solana token program features. Both the mint authority and freeze authority are revoked, meaning no new tokens can be minted… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits healthy liquidity with $182,992 USD available on DEXs. The 24-hour volume of $336,729 results in a normal Volume/Liquidity Ratio of 1.84, not indicating wash trading. The DEX pair… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token does not utilize a transfer hook, and its metadata… |
 
 ## Token Metrics
 

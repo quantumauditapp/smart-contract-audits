@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Official Bridge Currency (OBC) token mint has revoked both mint and freeze authorities, indicating a fixed supply and no ability to freeze user funds. However, the token suffers from very low liquidity, with only $4,442 available on DEXs, making large trades highly susceptible to slippage. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+The Official Bridge Currency (OBC) token presents a high risk primarily due to its very low DEX liquidity, which stands at only $4,141. This makes large trades highly susceptible to slippage and price impact. A third-party risk registry also notes "Large Amount of LP Unlocked," indicating potential for further liquidity withdrawal. While core authorities like mint and freeze have been revoked, and metadata is immutable, the lack of holder distribution data prevents a full assessment of supply concentration risk.
 
-> **Final Recommendation:** Prospective holders should be aware of the extremely low liquidity ($4,442) for OBC, which will lead to high slippage for any significant trade. While the mint and freeze authorities are revoked, providing security against supply dilution and account freezing, the lack of holder concentration data means whale risk cannot be assessed. It is recommended to proceed with extreme caution due to the liquidity constraints.
+> **Final Recommendation:** Prospective holders should exercise extreme caution due to the token's very low liquidity; any significant buy or sell order will incur substantial slippage. Before acquiring this token, verify on-chain that the reported liquidity figures have materially increased to a level that supports your intended transaction size. Monitor DEX market data for sustained increases in liquidity and trading volume to ensure market depth.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Official Bridge Currency (OBC) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits very low liquidity, with only $4,442 USD available on DEXs, posing a significant risk for slippage and large position exits (7.4 Economic). The 24-hour volume to liquidity ratio is… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and freeze capabilities cannot be altered post-launch (7.7 Upgrades). The token does not utilize any Token-2022… |
+| **Technical** | 5/10 | Medium | The Official Bridge Currency (OBC) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits very low liquidity, with only $4,141 in total DEX liquidity. This low liquidity means that even small trades could experience significant slippage, making it difficult to enter or… |
+| **Upgrades** | 8/10 | Low | The token's configuration is largely immutable, as both the mint and freeze authorities have been revoked. This means the token supply cannot be increased, and no accounts can be frozen post-launch.… |
 
 ## Security Findings
 
@@ -35,9 +35,9 @@ _🟠 1 High_
 
 ### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
 
-Total DEX liquidity is $4,442. Slippage will be severe; large positions cannot be exited without significant loss.
+Total DEX liquidity is $4,141. Slippage will be severe; large positions cannot be exited without significant loss.
 
-**Recommendation:** Account for the severe slippage in any swap calculation and consider the difficulty of exiting large positions.
+**Recommendation:** Avoid large trades; verify liquidity before any transaction.
 
 ## Token Metrics
 

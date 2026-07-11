@@ -17,19 +17,17 @@ date: 2026-06-15
 
 ## Audit Summary
 
-The Kintara (KINS) SPL Token Mint exhibits a robust security posture with critical authorities, including mint and freeze authorities, being revoked. This indicates a fixed supply and immutability of account states. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+The Kintara (KINS) SPL Token Mint exhibits a robust security configuration with both mint and freeze authorities revoked, indicating a fixed supply and immutable account states. No critical or high-severity risks were identified based on the available on-chain data and external security signals. Holder distribution data was unavailable, preventing an assessment of supply concentration.
 
-> **Final Recommendation:** Based on the available on-chain data and external security signals, the Kintara (KINS) token appears to be well-configured with critical administrative authorities revoked, indicating a fixed supply and immutable account states. Holders should be aware that holder concentration data was unavailable, which could impact price stability if a significant portion of the supply is held by a few entities.
-
-It is recommended to monitor the token's liquidity and trading volume for any significant changes. For a Premium Deploy option, consider integrating real-time holder distribution analysis to gain a complete understanding of market dynamics.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to ensure the token's supply and transferability are fixed. While current liquidity is adequate, monitor DEX liquidity and trading volume for any significant changes that could impact market depth. Future assessments should prioritize obtaining holder distribution data to evaluate potential concentration risks.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Kintara (KINS) token is implemented using the spl-token-2022 program. Key administrative authorities, including the mint authority and freeze authority, have been revoked, ensuring no new tokens… |
-| **Governance / Economics** | 7/10 | Low | The token has a healthy liquidity of $409,038 USD and a 24-hour volume of $893,958 USD, with a normal volume/liquidity ratio of 2.19. The DEX pair has been active for 38 days, providing some track… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as both mint and freeze authorities are revoked. It utilizes the spl-token-2022 program without extensions like Transfer Hook or Default Account State… |
+| **Technical** | 6/10 | Medium | The Kintara (KINS) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits healthy liquidity with $361,778 in total DEX liquidity and a 24-hour volume of $851,514. The Volume/Liquidity Ratio is 2.35, which is within normal parameters and does not suggest… |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are revoked, preventing any future changes to supply or account freeze status. External security signals confirm that balance mutability, transfer fee… |
 
 ## Token Metrics
 

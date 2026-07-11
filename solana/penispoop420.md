@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This SPL Token Mint audit identified a significant risk due to very low liquidity, which can lead to severe slippage for traders. The token's core authorities (Mint and Freeze) are revoked, and metadata is immutable, indicating a degree of immutability. However, holder concentration data was unavailable, and the low liquidity makes large trades impractical. RugCheck data indicates a low risk score of 1/100.
+The token mint for penispoop420 (PP420) has revoked both mint and freeze authorities, indicating a fixed supply and unfreezable accounts. However, the token exhibits very low DEX liquidity at $8,836, posing significant slippage risk for trades. Holder distribution data was unavailable from chain-native RPC.
 
-> **Final Recommendation:** Given the very low liquidity of $8,897, it is strongly recommended to exercise extreme caution. Large buy or sell orders will incur severe slippage and may not be executable without significant price impact. While core authorities are revoked, the lack of holder concentration data prevents a full assessment of whale risk. Consider the token unspendable for significant amounts due to liquidity constraints. For a premium deployment, ensure sufficient liquidity is provided to support intended trading volumes.
+> **Final Recommendation:** Before engaging with this token, verify on-chain that the mint and freeze authorities remain revoked to confirm the fixed supply and unfreezable nature. Be aware of the extremely low DEX liquidity ($8,836) and anticipate high slippage for any significant trades. Monitor the liquidity pool size and holder distribution over time, if data becomes available, to assess market depth and potential whale impact.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The SPL Token Mint at Ac8EScJ4ufRo8PiFkun7diUrcCCktg4JvArb3mPmpump operates under the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, indicating that no single… |
-| **Governance / Economics** | 1/10 | High | The token exhibits very low liquidity, with only $8,897 USD available on DEXs, which can lead to significant slippage for trades. The 24-hour trading volume is $2,000, resulting in a normal… |
-| **Upgrades** | 6/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, have been revoked, preventing future changes to the token supply or account freeze status. The token metadata is immutable, meaning… |
+| **Technical** | 5/10 | Medium | The SPL Token Mint (Ac8EScJ4ufRo8PiFkun7diUrcCCktg4JvArb3mPmpump) is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new… |
+| **Governance / Economics** | 1/10 | High | The token's economic profile shows very low liquidity, with total DEX liquidity at $8,836. This level of liquidity suggests that even small trades could experience significant price impact. The… |
+| **Upgrades** | 6/10 | Medium | The token mint has no active upgrade authorities. Both mint and freeze authorities are revoked, meaning the token's supply and account freeze status are immutable. No Token-2022 extensions like… |
 
 ## Security Findings
 
@@ -35,9 +35,9 @@ _🟠 1 High_
 
 ### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
 
-Total DEX liquidity is $8,897. Slippage will be severe; large positions cannot be exited without significant loss. (Fact: Liquidity (USD): $8,897)
+Total DEX liquidity is $8,836. Slippage will be severe; large positions cannot be exited without significant loss.
 
-**Recommendation:** Account for the severe slippage in any swap calculation and be aware that large positions may be difficult to exit without significant loss.
+**Recommendation:** Account for the low liquidity in any swap calculation.
 
 ## Token Metrics
 

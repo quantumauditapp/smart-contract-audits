@@ -2,14 +2,14 @@
 token: Sherbert The Tree
 ticker: SHERBERT
 network: solana
-risk_score: 44
-status: medium
+risk_score: 54
+status: high
 date: 2026-06-13
 ---
 
 # Sherbert The Tree (SHERBERT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 54/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sherbert-the-tree-sol)
 
@@ -17,17 +17,27 @@ date: 2026-06-13
 
 ## Audit Summary
 
-This audit of the Sherbert The Tree (SHERBERT) SPL Token Mint found no critical or high-severity issues based on the provided deterministic rules. The mint and freeze authorities are revoked, indicating a fixed supply and no ability to freeze user accounts. However, holder concentration data was unavailable, preventing a full assessment of distribution risk. The extremely low RugCheck score of 1/100 suggests potential off-chain risks not covered by the on-chain technical analysis.
+This audit of the Sherbert The Tree (SHERBERT) SPL Token Mint identifies a high risk due to very low liquidity, making large positions difficult to exit without significant slippage. Key authorities like mint and freeze are revoked, indicating a fixed supply and unfreezable accounts. Holder concentration data was unavailable from chain-native RPC.
 
-> **Final Recommendation:** Based on the on-chain technical analysis and deterministic rules, the Sherbert The Tree (SHERBERT) token mint presents a secure configuration with revoked mint and freeze authorities. However, the unavailability of holder concentration data means that distribution risk cannot be fully assessed. Furthermore, the extremely low RugCheck score of 1/100 signals significant potential off-chain risks that are not captured by this technical audit. Users should proceed with extreme caution, conduct thorough due diligence on the project's team and community, and understand the implications of the low RugCheck score before engaging with this token. A Premium Deploy option is not applicable for SPL token mint audits.
+> **Final Recommendation:** Exercise extreme caution when interacting with this token due to its very low liquidity. Any attempt to acquire or divest a significant position may result in severe price impact. Verify on-chain that the mint and freeze authorities remain revoked to confirm the fixed supply and unfreezable nature of accounts. Monitor DEX liquidity and trading volume closely for any material improvements before considering larger investments.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.8 Operations: The token is configured under the spl-token-2022 program. Both the mint authority and freeze authority are revoked (None)… |
-| **Governance / Economics** | 5/10 | Medium | 7.4 Economic, 7.5 Governance: The token exhibits moderate liquidity with $16,309 USD available on DEXs. The 24-hour volume is $42,088, resulting in a normal Volume/Liquidity Ratio of 2.58. The DEX… |
-| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The token mint has a robust configuration with both mint and freeze authorities revoked, meaning its core supply and account control parameters are immutable. GoPlus data confirms that… |
+| **Technical** | 5/10 | Medium | The Sherbert The Tree (SHERBERT) token is an SPL Token-2022 mint. Its technical configuration is robust, with both the mint authority and freeze authority successfully revoked, ensuring no new tokens… |
+| **Governance / Economics** | 4/10 | Medium | The primary economic risk for SHERBERT is its very low liquidity, currently at $4,134 USD, which a third-party risk registry also flagged. This makes it challenging to trade significant amounts… |
+| **Upgrades** | 8/10 | Low | The token's upgradeability posture is favorable, as both the mint and freeze authorities have been revoked, preventing any future changes to supply or account freeze status. The token does not have a… |
+
+## Security Findings
+
+_🟠 1 High_
+
+### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
+
+Total DEX liquidity for SHERBERT is $4,134. Slippage will be severe; large positions cannot be exited without significant loss.
+
+**Recommendation:** Account for the extremely low liquidity in any swap calculation and be prepared for significant price impact on trades. Avoid large positions unless liquidity materially improves.
 
 ## Token Metrics
 

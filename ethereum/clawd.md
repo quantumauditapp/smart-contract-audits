@@ -2,14 +2,14 @@
 token: Clawd
 ticker: CLAWD
 network: ethereum
-risk_score: 57
-status: high
+risk_score: 29
+status: medium
 date: 2026-06-20
 ---
 
 # Clawd (CLAWD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 29/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/clawd-eth)
 
@@ -17,17 +17,17 @@ date: 2026-06-20
 
 ## Audit Summary
 
-The Clawd token contract implements standard ERC-20 functionality with custom tax mechanisms, transaction limits, and anti-bot features. A critical issue identified is the truncation of the `_transfer` function in the provided source code, which prevents a complete and accurate security assessment of the token's core logic. Furthermore, the contract exhibits extreme centralization, granting the owner extensive control over critical parameters, posing significant honeypot and manipulation risks. The economic model includes high initial transaction taxes and dynamic tax adjustments, which add complexity and potential for unexpected behavior.
+The Clawd token contract implements a standard ERC-20 token with advanced tax, anti-bot, and automated liquidity features. While it incorporates some security best practices like SafeMath and reentrancy guards, it exhibits significant centralization risks due to extensive owner privileges. Critical issues include the potential for honeypot scenarios and the risk of permanently locking accidentally sent ETH. The complexity of the tax logic also introduces potential for unintended behavior.
 
-> **Final Recommendation:** The audit reveals critical concerns primarily due to the provided `_transfer` function being truncated, rendering a full security assessment impossible. Beyond this, the contract design exhibits extreme centralization, granting the owner extensive control over tokenomics and user access, which poses significant honeypot and manipulation risks. A complete and verifiable source code is essential for any meaningful audit. We recommend a comprehensive re-evaluation with the full source code and a redesign of the access control and economic parameters to reduce centralization. For projects prioritizing security and long-term viability, a Premium Deploy option offers continuous monitoring and expert support to mitigate evolving threats.
+> **Final Recommendation:** To mitigate the identified risks, it is strongly recommended to implement a timelock for all sensitive owner-controlled functions, or transfer ownership to a multi-signature wallet, to reduce centralization and prevent malicious or accidental actions. A `receive()` or `fallback()` function should be added to prevent ETH from being permanently locked if sent directly to the contract. The tax calculation logic should be simplified and thoroughly documented to enhance clarity and reduce the potential for errors. Additionally, ensure all critical state changes emit appropriate events for transparency and off-chain monitoring.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract implements an ERC-20 token with custom tax mechanisms, max transaction/wallet limits, and anti-bot features. It utilizes `SafeMath` (redundant in Solidity 0.8.23) and integrates with… |
-| **Governance / Economics** | 4/10 | Medium | The contract exhibits extreme centralization, with the `owner` possessing extensive control over critical parameters such as tax rates, transaction limits, and the ability to block users (7.3 Access… |
-| **Upgrades** | 8/10 | Low | The contract is not designed with an upgradeability pattern, meaning its logic is immutable post-deployment. While this eliminates risks associated with proxy implementations or upgrade mechanisms… |
+| **Technical** | 7/10 | Low | 7.1 Architecture: The contract follows a standard ERC-20 token architecture with added tax and anti-bot mechanisms. 7.2 Code Security: It utilizes SafeMath for arithmetic operations and a… |
+| **Governance / Economics** | 6/10 | Medium | 7.4 Economic: The token's economic model includes dynamic buy/sell taxes, max transaction limits, and anti-whale measures. These features are highly configurable by the owner. 7.5 Governance: The… |
+| **Upgrades** | 9/10 | Low | 7.7 Upgrades: The contract is not designed with upgradeability in mind, meaning its logic is immutable once deployed. This eliminates risks associated with proxy patterns or upgrade mechanisms… |
 
 ## LP Distribution
 
@@ -38,55 +38,41 @@ The Clawd token contract implements standard ERC-20 functionality with custom ta
 
 ## Security Findings
 
-_🔴 2 Critical · 🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `C-01` — Incomplete `_transfer` Function Logic  *(Severity: Critical · Status: Unresolved)*
+### `C-01` — Extreme Centralization and Potential Honeypot Vector  *(Severity: Critical · Status: Unresolved)*
 
-The provided `_transfer` function is truncated, specifically ending mid-calculation for `taxAmount` in the sell-side block. This prevents a complete analysis of the token's core transfer and tax mechanisms, making it impossible to verify correct functionality, especially for sell taxes, and introduces a high risk of contract malfunction or unexpected behavior. Without the full implementation, the contract's fundamental operations cannot be guaranteed secure or correct.
+The contract owner possesses extensive control over critical parameters and functionalities, including the ability to: set all tax rates (buy, sell, transfer), enable/disable trading, enable/disable automatic liquidity swaps, set max transaction and wallet size limits, and add/remove addresses from the `bots` mapping (effectively blacklisting them). This level of control allows the owner to manipulate trading conditions, potentially creating a honeypot scenario where users can buy but are prevented from selling (e.g., by setting sell tax to 100% or blacklisting specific addresses). This poses a severe risk to user funds and trust in the protocol.
 
-**Recommendation:** Provide the complete and untruncated source code for the `_transfer` function to allow for a thorough security audit. Ensure all branches of the transfer logic, including buy, sell, and peer-to-peer transfers, are fully implemented and correctly handle tax calculations and other tokenomics.
-
-
-### `C-02` — Extreme Owner Centralization & Honeypot Potential  *(Severity: Critical · Status: Unresolved)*
-
-The `owner` has extensive control over critical contract parameters, including the ability to set buy/sell taxes (potentially to 100%), modify max transaction/wallet sizes, enable/disable trading, and arbitrarily block users via the `bots` mapping. This centralization (7.3 Access Control) creates a significant risk of rug pull, honeypot, or malicious manipulation, as the owner can unilaterally alter the contract's economic rules or prevent users from selling their tokens (7.4 Economic).
-
-**Recommendation:** Implement a multi-signature wallet for critical administrative functions or introduce a time-locked mechanism for sensitive parameter changes. Consider decentralizing control through a governance module or by transferring ownership to a community-controlled DAO. Clearly document the owner's capabilities and their impact on token holders.
+**Recommendation:** Implement a timelock for all sensitive owner-controlled functions (e.g., setting taxes, modifying trading status, updating bot list) to introduce a delay before changes take effect. Consider transferring ownership to a multi-signature wallet to distribute control and require consensus for critical operations. Clearly communicate the extent of owner privileges to users.
 
 
-### `H-01` — Arbitrary User Blocking via `bots` Mapping  *(Severity: High · Status: Unresolved)*
+### `H-01` — Missing `receive()` or `fallback()` Function - Stuck ETH  *(Severity: High · Status: Unresolved)*
 
-The `addBot` and `delBot` functions allow the owner to arbitrarily prevent any address from participating in transfers. This mechanism, while potentially intended for bot prevention, can be abused to blacklist legitimate users, censor transactions, or prevent specific holders from selling their tokens, leading to a denial of service for affected users (7.3 Access Control, 7.4 Economic).
+The contract does not implement a `receive()` or `fallback()` payable function. This means that if any Ether is sent directly to the contract address without calling a specific payable function (e.g., `addLiquidityETH`), it will be permanently locked within the contract and become irrecoverable. While the contract is designed to handle ETH through specific functions, accidental direct transfers are a common occurrence.
 
-**Recommendation:** Re-evaluate the necessity of an arbitrary user blocking mechanism. If deemed essential, implement a more transparent and auditable process for adding/removing addresses, potentially involving a multi-sig approval or a community governance vote. Clearly define the criteria for an address to be considered a 'bot' and ensure these criteria are publicly verifiable.
-
-
-### `H-02` — Complex and Dynamic Tax System  *(Severity: High · Status: Unresolved)*
-
-The contract implements a multi-layered and dynamic tax system with `_initialBuyTax`, `_finalBuyTax`, `_transferTax`, and reduction mechanisms based on `_buyCount`. The interaction between these variables and their application in different transfer scenarios (buy from LP, sell to LP, peer-to-peer transfer) is complex and prone to misinterpretation or unexpected behavior, potentially leading to incorrect tax calculations or user confusion (7.4 Economic, 7.2 Code Security).
-
-**Recommendation:** Simplify the tax structure to improve clarity and predictability. Provide comprehensive documentation and flowcharts explaining how taxes are calculated and applied in all scenarios. Conduct extensive testing to ensure the tax logic behaves as intended under various conditions. Consider using a fixed tax rate or a more straightforward dynamic model.
+**Recommendation:** Add a `receive() external payable {}` function to the contract to allow it to accept direct Ether transfers. If direct ETH transfers are not intended, consider adding a `fallback() external payable { revert("ETH not accepted"); }` to explicitly prevent them and inform users.
 
 
-### `M-01` — High Initial Transaction Taxes  *(Severity: Medium · Status: Unresolved)*
+### `M-01` — Complex and Potentially Ambiguous Tax Logic  *(Severity: Medium · Status: Unresolved)*
 
-The initial buy and sell taxes are set at 18%. Such high transaction fees can significantly deter legitimate trading activity, reduce liquidity, and make the token unattractive for long-term holding or use, impacting the token's overall economic viability (7.4 Economic).
+The `_transfer` function contains multiple conditional blocks for calculating `taxAmount` based on `_buyCount`, `from`, and `to` addresses. The interaction between the general `if(_buyCount==0)` / `if(_buyCount>0)` blocks and the specific `if (from == uniswapV2Pair)` (buy) / `if(to == uniswapV2Pair)` (sell) blocks is complex and could lead to unintended tax applications or make the logic difficult to reason about. For instance, the `_buyCount==0` and `_buyCount>0` conditions might be overridden by the buy/sell specific conditions, leading to confusion.
 
-**Recommendation:** Reconsider the initial tax rates. High taxes often discourage participation and can lead to a 'dead' token. Evaluate the impact of high taxes on trading volume and liquidity provision. Consider starting with lower taxes and gradually adjusting them based on community feedback or a well-defined economic model.
-
-
-### `L-01` — Redundant `SafeMath` Library  *(Severity: Low · Status: Unresolved)*
-
-The contract uses the `SafeMath` library for arithmetic operations. While `SafeMath` is beneficial for older Solidity versions, Solidity 0.8.x and later include native overflow and underflow checks, rendering the explicit use of `SafeMath` redundant. This adds unnecessary code complexity without providing additional security benefits in this compiler version (7.2 Code Security).
-
-**Recommendation:** Remove the `SafeMath` library and its `using` directive. Rely on Solidity's native overflow/underflow protection for arithmetic operations, which simplifies the codebase and reduces gas costs slightly.
+**Recommendation:** Refactor the `_transfer` function's tax calculation logic to be clearer and more modular. Use a single, well-defined flow for determining the applicable tax based on the transaction type (buy, sell, general transfer). Add comprehensive inline comments and external documentation to explain the exact tax application rules under different scenarios.
 
 
-### `I-01` — Lack of Upgradeability  *(Severity: Informational · Status: Unresolved)*
+### `L-01` — Lack of Event Emission for Critical State Changes  *(Severity: Low · Status: Unresolved)*
 
-The contract is not designed with an upgradeability pattern (e.g., proxy). This means that once deployed, its logic cannot be modified or updated. Any discovered vulnerabilities, bugs, or desired feature enhancements would necessitate a complete redeployment of the contract, losing its history and requiring users to migrate (7.7 Upgrades).
+The contract defines events such as `MaxTxAmountUpdated` and `TransferTaxUpdated`, but these events are not emitted when the corresponding state variables (`_maxTxAmount`, `_transferTax`) are modified by the owner. This lack of event emission hinders off-chain monitoring, transparency, and the ability for external applications or users to track critical changes to the token's parameters.
 
-**Recommendation:** Consider implementing an upgradeable proxy pattern (e.g., UUPS or Transparent) if future modifications or bug fixes are anticipated. This allows for contract logic updates without changing the contract address, preserving user balances and history. However, upgradeability also introduces its own set of risks that must be carefully managed.
+**Recommendation:** Ensure that all functions that modify critical state variables (e.g., `setMaxTxAmount`, `setTransferTax`, `setInitialBuyTax`, `setFinalBuyTax`, etc.) emit appropriate events to signal these changes. This improves transparency and allows for better off-chain tracking and auditing.
+
+
+### `I-01` — Unused State Variables  *(Severity: Informational · Status: Unresolved)*
+
+The state variables `sellCount` and `lastSellBlock` are declared within the contract but are not utilized anywhere in the provided source code. This suggests either incomplete functionality, vestigial code from a previous iteration, or a potential oversight.
+
+**Recommendation:** Review the purpose of `sellCount` and `lastSellBlock`. If they are intended for future functionality, ensure they are properly implemented. If they are no longer needed, remove them to reduce contract size and improve code clarity.
 
 ## Token Metrics
 

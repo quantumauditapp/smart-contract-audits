@@ -2,14 +2,14 @@
 token: Morpho
 ticker: MORPHO
 network: ethereum
-risk_score: 67
-status: high
+risk_score: 75
+status: critical
 date: 2026-06-10
 ---
 
 # Morpho (MORPHO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 75/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/morpho-eth)
 
@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This audit covers a standard ERC-1967 compliant upgradeable proxy contract, utilizing battle-tested OpenZeppelin libraries. While the proxy's core logic is robust, the overall security of the system is critically dependent on the implementation contract, which was not provided for this audit. Key risks include the security of the implementation, centralized upgrade control, and potential storage collisions if the implementation is not correctly designed.
+This audit covers an ERC-1967 (UUPS) proxy contract, which is a standard OpenZeppelin implementation. The proxy itself is robust and adheres to established upgradeability patterns. However, the critical finding is that the implementation contract, to which all calls are delegated, is not source verified. This introduces significant security risks as its functionality, upgrade authorization, and potential vulnerabilities are unknown. The overall risk is High due to this lack of transparency and verifiability of the underlying logic.
 
-> **Final Recommendation:** The ERC1967Proxy contract, being a standard OpenZeppelin implementation, is inherently robust. However, its security is entirely contingent on the implementation contract it points to. It is imperative to conduct a comprehensive audit of the implementation contract to ensure the overall system's integrity and security. Particular attention should be paid to storage layout, access control, and potential attack vectors within the implementation's business logic. Consider implementing a timelock for upgrade operations to enhance security and provide a window for community review.
+> **Final Recommendation:** The most critical recommendation is to immediately verify the source code of the implementation contract (0x4364fd2371b6318159366abfa51f190df5c24852) on Etherscan or a similar block explorer. Once verified, a thorough security audit of the implementation contract should be conducted to identify and mitigate any vulnerabilities, especially concerning access control for critical functions and the upgrade authorization mechanism. Ensure that the upgrade path is secured by a robust, multi-signature or time-locked governance process.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract implements a standard ERC-1967 proxy using OpenZeppelin's battle-tested libraries (7.1 Architecture). The code quality is high, leveraging efficient inline assembly for delegatecall (7.2… |
-| **Governance / Economics** | 2/10 | High | The proxy contract itself does not contain direct economic or governance mechanisms (7.4 Economic, 7.5 Governance). All economic and governance logic resides within the implementation contract.… |
-| **Upgrades** | 3/10 | High | The contract utilizes the ERC-1967 standard for upgradeability, a well-understood and secure pattern (7.7 Upgrades). The `upgradeToAndCall` function allows for safe upgrades with optional… |
+| **Technical** | 3/10 | High | The technical architecture (7.1) utilizes the battle-tested OpenZeppelin ERC-1967 (UUPS) proxy pattern, which is a strong foundation for upgradeability. The code security (7.2) of the proxy contracts… |
+| **Governance / Economics** | 1/10 | High | The governance (7.5) and economic (7.4) security of the system are heavily dependent on the implementation contract. While the ERC-1967 standard provides a framework for upgrade control, the specific… |
+| **Upgrades** | 2/10 | High | The contract implements the ERC-1967 (UUPS) upgrade pattern (7.7), which is a secure and widely adopted standard for upgradeability. This pattern delegates upgrade authorization to the implementation… |
 
 ## Proxy Upgrade Controls
 
@@ -46,48 +46,41 @@ This audit covers a standard ERC-1967 compliant upgradeable proxy contract, util
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
+_🔴 1 Critical · 🟠 1 High · 🟢 1 Low · ⚪ 2 Informational_
 
-### `H-01` — Critical Dependency on Implementation Contract Security  *(Severity: High · Status: Unresolved)*
+### `C-01` — Unverified Implementation Contract  *(Severity: Critical · Status: Unresolved)*
 
-The proxy contract's primary function is to delegate calls to an implementation contract. Consequently, the security of the entire system, including user funds and protocol integrity, is critically dependent on the security and correctness of the underlying implementation contract. Any vulnerability (e.g., reentrancy, logic errors, access control flaws) in the implementation will directly affect the proxy and its users.
+The proxy contract (0x58d97b57bb95320f9a05dc918aef65434969c2b2) delegates all calls to an implementation contract at 0x4364fd2371b6318159366abfa51f190df5c24852. The source code for this implementation contract is not verified on the blockchain explorer. This means the actual logic executed by the proxy is unknown and cannot be publicly audited or verified, posing an extreme risk to users and the protocol's integrity (7.2 Code Security, 7.6 External).
 
-**Recommendation:** A thorough and independent security audit of the implementation contract is mandatory. This audit should cover all aspects of the implementation's logic, storage, and interactions to ensure it is free from vulnerabilities before deployment or upgrade.
-
-
-### `M-01` — Centralized Upgrade Authority  *(Severity: Medium · Status: Unresolved)*
-
-The upgrade mechanism is controlled by a single admin address. If this admin key is compromised, an attacker could deploy a malicious implementation contract, leading to a complete takeover of the protocol, including potential loss of all user funds or unauthorized operations.
-
-**Recommendation:** Consider implementing a multi-signature wallet (e.g., Gnosis Safe) for the admin address to require multiple approvals for critical operations like upgrades. Additionally, explore integrating a timelock to introduce a delay for upgrade execution, allowing for community review and emergency response.
+**Recommendation:** Immediately verify the source code of the implementation contract on Etherscan. Once verified, conduct a comprehensive security audit of the implementation to ensure it is free from vulnerabilities, backdoors, or malicious logic. Public transparency is crucial for user trust and security.
 
 
-### `M-02` — Risk of Storage Collisions in Implementation  *(Severity: Medium · Status: Unresolved)*
+### `H-01` — Undetermined Upgrade Authorization Logic  *(Severity: High · Status: Unresolved)*
 
-While the ERC-1967 proxy uses dedicated storage slots, the implementation contract must be carefully designed to avoid storage collisions with the proxy's slots (e.g., `IMPLEMENTATION_SLOT`, `ADMIN_SLOT`) or with future versions of itself. Incorrect storage layout in the implementation, especially when not inheriting from `UUPSUpgradeable` or similar storage-aware base contracts, can lead to data corruption or loss during upgrades.
+As an ERC-1967 (UUPS) proxy, the authorization for upgrading the implementation contract resides within the implementation itself, typically via an `_authorizeUpgrade` function. Since the implementation contract (0x4364fd2371b6318159366abfa51f190df5c24852) is unverified, the specific access control (7.3) and governance (7.5) mechanisms for authorizing upgrades are unknown. This could lead to unauthorized upgrades, single points of failure, or a compromised upgrade path (7.7 Upgrades).
 
-**Recommendation:** Ensure the implementation contract strictly adheres to the UUPS proxy pattern, typically by inheriting from `UUPSUpgradeable` or by meticulously managing storage slot allocation. Conduct thorough testing of upgrade scenarios, including storage variable preservation, before deploying new implementations to production.
-
-
-### `L-01` — Lack of Upgrade Timelock  *(Severity: Low · Status: Unresolved)*
-
-The current upgrade process allows immediate execution by the admin. While this offers agility, it means there is no built-in delay for users or governance to react to potentially malicious or erroneous upgrades. This reduces the time available for detection and mitigation of issues.
-
-**Recommendation:** Integrate a timelock mechanism for upgrade operations. This would introduce a mandatory delay between the initiation of an upgrade and its execution, providing a window for review by the community, security researchers, or a governance body. This enhances security and transparency.
+**Recommendation:** After verifying the implementation contract, thoroughly review its `_authorizeUpgrade` function and any associated access control mechanisms. Ensure that upgrade permissions are restricted to a secure, multi-signature wallet or a robust governance system with appropriate time-locks to prevent malicious or hasty upgrades.
 
 
-### `I-01` — Standard OpenZeppelin Proxy Implementation  *(Severity: Informational · Status: Unresolved)*
+### `L-01` — Potential for Storage Collisions with Custom Implementations  *(Severity: Low · Status: Unresolved)*
 
-The contract utilizes battle-tested OpenZeppelin libraries for its proxy implementation, adhering to the ERC-1967 standard. This significantly reduces the risk of vulnerabilities within the proxy's core logic, as these libraries are widely used and have undergone extensive audits.
+While OpenZeppelin's `ERC1967Proxy` correctly isolates its storage slots for `implementation`, `admin`, and `beacon` using ERC-1967 standard hashes, custom implementation contracts must be designed carefully to avoid storage collisions with these proxy-specific slots. If the unverified implementation contract (0x4364fd2371b6318159366abfa51f190df5c24852) does not adhere to best practices for upgradeable contract storage, it could lead to critical state corruption (7.1 Architecture, 7.2 Code Security).
 
-**Recommendation:** Continue to rely on well-maintained and audited libraries like OpenZeppelin. Ensure that the specific versions used are up-to-date and free from known vulnerabilities.
+**Recommendation:** When designing or auditing implementation contracts for UUPS proxies, always ensure that the storage layout is compatible with the proxy pattern. Use OpenZeppelin's `UUPSUpgradeable` base contract or manually ensure that the first storage slots of the implementation do not overlap with the proxy's reserved slots. A storage collision analysis should be performed once the implementation source is available.
 
 
-### `I-02` — Use of Inline Assembly for Delegatecall  *(Severity: Informational · Status: Unresolved)*
+### `I-01` — Adherence to ERC-1967 Standard for Upgradeability  *(Severity: Informational · Status: Resolved)*
 
-The `_delegate` function employs inline assembly for efficient and direct `delegatecall` execution. This is a standard and optimized approach for proxy contracts, ensuring minimal gas overhead and precise control over the call context.
+The contract correctly implements the ERC-1967 (UUPS) proxy standard, utilizing OpenZeppelin's battle-tested libraries. This provides a robust and widely accepted mechanism for contract upgradeability, separating the proxy's logic from its implementation and ensuring storage compatibility (7.1 Architecture, 7.7 Upgrades).
 
-**Recommendation:** While standard, any modifications to the assembly code should be approached with extreme caution and thoroughly reviewed by experienced Solidity developers, as errors in assembly can lead to critical vulnerabilities.
+**Recommendation:** Continue to leverage well-audited and standard libraries like OpenZeppelin for core infrastructure components. Ensure that any custom modifications or integrations maintain the integrity and security principles of the ERC-1967 standard.
+
+
+### `I-02` — Constructor `msg.value` Handling in `upgradeToAndCall`  *(Severity: Informational · Status: Resolved)*
+
+The `ERC1967Proxy` constructor is `payable` and calls `ERC1967Utils.upgradeToAndCall`. If `_data` is empty in this call, `_checkNonPayable()` is invoked, which reverts if `msg.value > 0`. This is a safety mechanism to prevent accidental loss of funds if no initialization call is made. Deployers should be aware that sending Ether with an empty `_data` parameter during proxy deployment will cause a revert (7.8 Operations).
+
+**Recommendation:** When deploying the proxy, ensure that if `msg.value` is greater than zero, the `_data` parameter for the constructor is also non-empty, typically containing an encoded function call to an `initialize` function in the implementation. If no initialization data is required, ensure `msg.value` is zero.
 
 ## Token Metrics
 

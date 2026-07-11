@@ -2,14 +2,14 @@
 token: Aave
 ticker: AAVE
 network: ethereum
-risk_score: 22
+risk_score: 32
 status: medium
 date: 2026-06-17
 ---
 
 # Aave (AAVE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 22/100 — 🟡 Medium Risk**
+> **Risk Score: 32/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aave-eth)
 
@@ -17,17 +17,17 @@ date: 2026-06-17
 
 ## Audit Summary
 
-The audit covers the `InitializableAdminUpgradeabilityProxy` contract at `0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9`. This contract implements a standard OpenZeppelin upgradeable proxy pattern, allowing for future logic upgrades while maintaining state. The contract is well-structured and utilizes established security patterns for proxy management and initialization. Key risks revolve around the centralized control of the `admin` role over upgrades and administrative functions, which, while a design choice, introduces significant governance and operational considerations.
+This audit covers the AaveTokenV3 contract, which functions as an ERC20 token, deployed via an OpenZeppelin Transparent Upgradeable Proxy. The contract incorporates standard features such as burnability, pausability, and a transfer hook mechanism. The implementation leverages well-vetted OpenZeppelin libraries, contributing to a robust technical foundation. Key security considerations include the centralized control inherent in the pausable and upgradeability mechanisms, and the potential risks associated with external calls via the ITransferHook interface. The overall risk is assessed as Medium, primarily due to the significant economic value managed by the token and the inherent risks of centralized governance and external dependencies.
 
-> **Final Recommendation:** The `InitializableAdminUpgradeabilityProxy` provides a solid foundation for an upgradeable contract, benefiting from OpenZeppelin's battle-tested patterns. However, the inherent centralization of power in the `admin` role presents significant governance and operational risks. It is strongly recommended to implement a robust multi-signature wallet or a decentralized autonomous organization (DAO) with a timelock for managing the `admin` key and critical upgrade operations. For enhanced security and operational resilience, consider a Premium Deploy option that includes continuous monitoring and incident response planning for the admin key and upgrade process.
+> **Final Recommendation:** Ensure that the private keys or governance mechanisms controlling the `ProxyAdmin` and the `AaveTokenV3` owner are secured with the highest possible standards, ideally through a robust multisig or decentralized governance process. Thoroughly audit any external contracts integrated via the `ITransferHook` interface for reentrancy and other vulnerabilities before deployment, and consider implementing circuit breakers or rate limits for such interactions. For future upgrades, perform comprehensive storage slot collision analysis and testing to prevent unexpected behavior or loss of data.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract leverages OpenZeppelin's robust `InitializableAdminUpgradeabilityProxy` for secure upgradeability (7.1 Architecture). It correctly implements EIP-1967 for storage slot management and… |
-| **Governance / Economics** | 6/10 | Medium | The `admin` role holds significant power, including the ability to unilaterally upgrade the contract logic and transfer administrative control (7.3 Access Control). This centralized control… |
-| **Upgrades** | 3/10 | High | The contract is designed for upgradeability via the `upgradeTo` and `upgradeToAndCall` functions, controlled exclusively by the `admin` (7.7 Upgrades). This pattern allows for bug fixes and feature… |
+| **Technical** | 9/10 | Low | The technical architecture (7.1) utilizes OpenZeppelin's Transparent Proxy pattern and well-established ERC20 standards, enhancing code security (7.2). The implementation includes `ReentrancyGuard`… |
+| **Governance / Economics** | 6/10 | Medium | The economic model (7.4) is based on a standard ERC20 token, which is a core asset for the Aave ecosystem with high TVL. Governance (7.5) is centralized through an `Ownable` pattern for the… |
+| **Upgrades** | 3/10 | High | The contract employs the OpenZeppelin Transparent Upgradeability Proxy pattern (7.7), allowing for future logic upgrades without changing the contract address. The `Initializable` pattern is… |
 
 ## Proxy Upgrade Controls
 
@@ -47,41 +47,48 @@ The audit covers the `InitializableAdminUpgradeabilityProxy` contract at `0x7fc6
 
 ## Security Findings
 
-_🟡 1 Medium · 🟢 1 Low · ⚪ 3 Informational_
+_🟡 3 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
-### `M-01` — Centralized Upgrade Control without Timelock  *(Severity: Medium · Status: Unresolved)*
+### `M-01` — Centralized Control over Pausability and Upgrades  *(Severity: Medium · Status: Unresolved)*
 
-The `admin` role has immediate, unilateral control over contract upgrades via `upgradeTo` and `upgradeToAndCall`, and can also change the admin address. This poses a significant centralization risk (7.3 Access Control, 7.5 Governance). A compromised admin key could lead to malicious code deployment without warning, and the lack of a timelock for these critical operations prevents any community review or intervention period (7.8 Operations).
+The `AaveTokenV3` contract includes `Pausable` functionality, allowing an authorized address (owner) to halt all token transfers. Additionally, the Transparent Proxy pattern grants the `ProxyAdmin` owner the ability to upgrade the contract logic. While these features are common for emergency response and flexibility, they introduce a significant degree of centralized control over the token's operation and future evolution. (7.3 Access Control, 7.5 Governance)
 
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) to control the `admin` key. Additionally, integrate a timelock mechanism for all critical administrative functions, especially `changeAdmin` and `upgradeTo`, to introduce a delay before execution. This allows for public scrutiny and emergency response in case of a malicious or erroneous transaction.
-
-
-### `L-01` — Outdated Solidity Compiler Version  *(Severity: Low · Status: Unresolved)*
-
-The contract uses Solidity 0.6.10. Newer versions (e.g., 0.8.x) include built-in overflow/underflow checks, reducing the risk of common integer manipulation vulnerabilities and offering other compiler optimizations and security features (7.2 Code Security). While OpenZeppelin contracts often include their own safe math libraries, leveraging compiler-native checks is a best practice.
-
-**Recommendation:** Consider upgrading the Solidity compiler version to 0.8.x or higher for new deployments or future upgrades. Ensure thorough testing is conducted to verify compatibility and functionality with the newer compiler version.
+**Recommendation:** Ensure that the owner addresses for both the `AaveTokenV3` implementation and the `ProxyAdmin` are controlled by a robust, multi-signature wallet or a well-established decentralized governance mechanism with appropriate time-locks for critical operations. Clearly document the process and conditions under which these controls can be exercised.
 
 
-### `I-01` — `extcodehash` Limitations in `Address.isContract`  *(Severity: Informational · Status: Unresolved)*
+### `M-02` — Potential Reentrancy and External Dependency via ITransferHook  *(Severity: Medium · Status: Unresolved)*
 
-The `Address.isContract` function relies on `extcodehash`, which has known limitations. It may return `false` for contracts during construction, destroyed contracts, or pre-computed addresses (7.2 Code Security). While the comments acknowledge this, it's important to be aware that strict contract verification based solely on this function might not always be accurate.
+The `ITransferHook` interface allows for external calls during token transfers. While `AaveTokenV3` itself uses `ReentrancyGuard` for its own state-changing functions, the `onTransfer` hook introduces an external call context. A malicious or vulnerable contract hooked into this mechanism could potentially re-enter the token contract or other sensitive contracts, leading to unexpected behavior or asset manipulation. This also creates a dependency on the security and availability of the hooked contract. (7.2 Code Security, 7.6 External)
 
-**Recommendation:** No direct action is required for this specific contract as the limitation is acknowledged. However, any logic in the implementation contract that relies on `isContract` should be aware of these edge cases and design accordingly, if strict contract verification is critical.
-
-
-### `I-02` — ERC20 `approve` Race Condition Warning  *(Severity: Informational · Status: Unresolved)*
-
-The `IERC20` interface includes a comment warning about the `approve` race condition, where an attacker might exploit a change in allowance to spend both the old and new allowance (7.2 Code Security). While this is a general ERC20 design consideration and not a vulnerability in the proxy itself, any implementation interacting with ERC20 tokens via `approve` should implement mitigations.
-
-**Recommendation:** Any implementation contract that uses `approve` should follow the recommended mitigation strategy: first reduce the spender's allowance to 0, then set the desired value. Alternatively, use `increaseAllowance` and `decreaseAllowance` if available in the ERC20 token.
+**Recommendation:** Implement strict checks on the address of the `ITransferHook` contract, ensuring it is a trusted and thoroughly audited entity. Consider adding reentrancy guards around the `onTransfer` call if the hook interacts with critical state or external contracts. Evaluate the necessity and potential risks of the hook's functionality, and ensure it adheres to the checks-effects-interactions pattern.
 
 
-### `I-03` — Robust Proxy Architecture and Initialization Guards  *(Severity: Informational · Status: Resolved)*
+### `M-03` — Upgradeability Storage Collision Risk  *(Severity: Medium · Status: Unresolved)*
 
-The contract utilizes OpenZeppelin's `InitializableAdminUpgradeabilityProxy`, which correctly implements EIP-1967 for storage slot management, preventing storage collisions between the proxy and its implementation (7.1 Architecture). Furthermore, it includes `_initialized` and `_is_initializing` flags to effectively prevent re-initialization attacks, demonstrating a strong architectural foundation for secure upgradeability (7.2 Code Security).
+The contract utilizes an upgradeable proxy pattern. While this provides flexibility, any future upgrades to the `AaveTokenV3` implementation must carefully manage storage layout. Incompatible storage variable declarations between different implementation versions can lead to storage collisions, where new variables overwrite existing data, potentially corrupting contract state or leading to loss of funds. (7.7 Upgrades)
 
-**Recommendation:** This is a positive security feature. Continue to adhere to these established patterns for any future proxy deployments or upgrades.
+**Recommendation:** Adhere strictly to OpenZeppelin's upgrade safety guidelines, especially regarding storage layout. Use tools like `hardhat-upgrades` or `truffle-upgrades` to detect potential storage collisions during development and deployment. Conduct thorough testing and formal verification of new implementation versions before any upgrade to ensure storage compatibility.
+
+
+### `L-01` — ERC20 `approve` Race Condition Warning  *(Severity: Low · Status: Unresolved)*
+
+The `IERC20` interface, and by extension `AaveTokenV3`, implements the standard `approve` function. The ERC20 standard itself has a known race condition vulnerability where a user changing an allowance from a non-zero value to another non-zero value can be exploited by a malicious spender to spend both the old and new allowances. This is a characteristic of the ERC20 standard, not a bug in the implementation. (7.2 Code Security)
+
+**Recommendation:** Educate users and integrated protocols about this known ERC20 vulnerability. Recommend that users first set the allowance to zero with `approve(spender, 0)` and then to the desired non-zero amount, or use `increaseAllowance`/`decreaseAllowance` if available in the token implementation to mitigate this risk.
+
+
+### `I-01` — Proxy Contracts Compiled with Older Solidity Version  *(Severity: Informational · Status: Unresolved)*
+
+The proxy contracts (`BaseAdminUpgradeabilityProxy`, `InitializableAdminUpgradeabilityProxy`, etc.) are compiled with Solidity versions `^0.6.0` or `0.6.10`, while the `AaveTokenV3` implementation uses `0.8.20`. While this is common for older deployments and the proxy's logic is minimal, the proxy itself does not benefit from the native overflow/underflow checks and other compiler optimizations introduced in Solidity 0.8.x. (7.1 Architecture)
+
+**Recommendation:** This is generally acceptable for established proxy deployments. For new deployments, consider using proxy patterns that are fully compatible with the latest stable Solidity versions to leverage all compiler safety features. For existing deployments, ensure the proxy's minimal logic is thoroughly tested and verified against its specific compiler version.
+
+
+### `I-02` — Use of `SafeMath` in 0.8.x Context  *(Severity: Informational · Status: Unresolved)*
+
+The `AaveTokenV3` implementation is compiled with Solidity 0.8.20, which includes native overflow and underflow checks for all arithmetic operations. However, the provided source code includes `SafeMath.sol` from OpenZeppelin. While `SafeMath` is crucial for older Solidity versions (pre-0.8.0), its explicit use in 0.8.x is redundant and can slightly increase gas costs without adding further security benefits. (7.2 Code Security)
+
+**Recommendation:** For contracts compiled with Solidity 0.8.0 or higher, `SafeMath` is generally not required. Consider removing explicit `SafeMath` usage in the `AaveTokenV3` implementation to optimize gas costs and simplify the code, relying on the compiler's native checks. Ensure that any custom arithmetic operations are still handled safely.
 
 ## Token Metrics
 

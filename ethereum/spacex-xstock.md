@@ -17,19 +17,17 @@ date: 2026-06-16
 
 ## Audit Summary
 
-This audit was conducted on a contract identified as a proxy for an ERC20 token. The primary and most critical finding is the complete lack of verified source code for both the proxy and its implementation contract. While snippets of OpenZeppelin upgradeable libraries were provided, the custom logic and the full deployment configuration remain unknown. This severely limits the scope and effectiveness of the audit, rendering a comprehensive security assessment impossible. The unverified nature of the deployed code introduces critical trust and security risks.
+The audit of the Backed Auto Fee Token project reveals a critical concern: the implementation contract's source code is not publicly verified. This significantly hinders the ability to assess the core business logic and introduces substantial trust requirements. While the project utilizes a standard OpenZeppelin Transparent Proxy pattern with a multisig admin, the lack of transparency for the underlying token logic poses a severe risk to users.
 
-> **Final Recommendation:** Given the critical finding of unverified and missing source code for both the proxy and its implementation, a comprehensive security assessment is impossible. It is strongly recommended that the project team immediately verify the full source code on the blockchain for both contracts. Without this, users should exercise extreme caution as the deployed code's functionality and security cannot be confirmed. 
-
-For future deployments, consider using a Premium Deploy service to ensure all contracts are verified, immutable, and follow best practices for transparency and security from the outset, allowing for full auditability.
+> **Final Recommendation:** The paramount recommendation is to immediately verify the source code of the `BackedAutoFeeTokenImplementation` contract on Etherscan or a similar block explorer. This is crucial for transparency, user trust, and enabling proper security analysis. Additionally, consider implementing a timelock mechanism for all critical administrative operations, especially contract upgrades, to provide a delay period for community review and reaction. Ensure that all future implementation upgrades also have their source code publicly verified.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 1/10 | High | The contract appears to utilize well-audited OpenZeppelin upgradeable libraries for ERC20 and Ownable functionalities, which generally provide robust and secure foundations (7.2 Code Security). These… |
-| **Governance / Economics** | 1/10 | High | The `OwnableUpgradeable` pattern provides a clear, single point of administrative control, allowing for efficient management of critical functions (7.3 Access Control). This centralized control… |
-| **Upgrades** | 1/10 | High | The use of OpenZeppelin's `Initializable` and `__gap` patterns suggests an intention for proper upgradeability, which is a strong architectural choice (7.7 Upgrades). Despite this, the proxy contract… |
+| **Technical** | 3/10 | High | The technical architecture leverages OpenZeppelin's upgradeable contracts (ERC20Upgradeable, OwnableUpgradeable, Initializable), which are well-audited and robust (7.1 Architecture). However, the… |
+| **Governance / Economics** | 1/10 | High | The proxy administration is secured by a 2-of-3 Gnosis Safe multisig, which is a strong access control mechanism for upgrades (7.3 Access Control). However, the economic parameters and core… |
+| **Upgrades** | 1/10 | High | The contract utilizes the EIP-1967 Transparent Proxy pattern with an OpenZeppelin ProxyAdmin, which is a standard and well-understood upgrade mechanism (7.7 Upgrades). The proxy admin is controlled… |
 
 ## Proxy Upgrade Controls
 
@@ -49,48 +47,41 @@ For future deployments, consider using a Premium Deploy service to ensure all co
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 3 High · 🟡 1 Medium · ⚪ 1 Informational_
+_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `C-01` — Unverified Contract & Missing Source Code  *(Severity: Critical · Status: Unresolved)*
+### `C-01` — Unverified Implementation Contract Source Code  *(Severity: Critical · Status: Unresolved)*
 
-The contract at the provided address (0x68fa48b1c2fe52b3d776e1953e0e782b5044ce28) is identified as a proxy, and its implementation (0xd865ce1b07540b5ede20e8298f48da69770fe22e) is also unverified. Only snippets of OpenZeppelin library code were provided for analysis. This means the actual deployed bytecode for both the proxy and its implementation cannot be correlated with any public source code. Without verified source code, it is impossible to conduct a meaningful security audit, understand the contract's true functionality, or confirm its safety. This poses an existential risk to users as the contract could contain malicious logic, backdoors, or critical vulnerabilities that are entirely…
+The source code for the `BackedAutoFeeTokenImplementation` contract (0x65c40d624af3b18c109fbf87b7deff34cdc5f19b), which contains the core logic of the token, is not publicly verified on the blockchain explorer. This means that users, auditors, and the community cannot independently verify what code is actually running on-chain, making it impossible to assess its security, functionality, or adherence to stated specifications. This introduces a fundamental trust issue and prevents any meaningful security analysis of the token's behavior (7.2 Code Security).
 
-**Recommendation:** Immediately verify the full and accurate source code for both the proxy contract and its implementation contract on the blockchain (e.g., Etherscan). This is a fundamental requirement for transparency and trust in smart contracts. Until verification is complete, users should be warned about the unverified nature of the contract.
-
-
-### `H-01` — Centralized Control (Owner Privileges)  *(Severity: High · Status: Unresolved)*
-
-The contract utilizes the `OwnableUpgradeable` pattern, granting a single external address (the owner) exclusive control over critical functions. While this allows for efficient administration, it introduces a single point of failure. If the owner's private key is compromised, or if the owner acts maliciously, the entire system could be jeopardized, leading to potential loss of funds or unauthorized modifications.
-
-**Recommendation:** Consider implementing a multi-signature wallet (e.g., Gnosis Safe) for the owner address to enhance security and distribute control. For long-term decentralization, explore transitioning to a community-governed model or time-locked functions for highly sensitive operations.
+**Recommendation:** Immediately verify the source code of the `BackedAutoFeeTokenImplementation` contract on Etherscan (or the relevant block explorer). This is a critical step for transparency and establishing trust with users. Ensure that the verified code matches the deployed bytecode exactly.
 
 
-### `H-02` — Unknown Implementation Logic and Tokenomics  *(Severity: High · Status: Unresolved)*
+### `H-01` — Lack of Transparency for Core Token Logic and Economic Parameters  *(Severity: High · Status: Unresolved)*
 
-Only standard OpenZeppelin ERC20 and Ownable library snippets were provided. The specific custom logic of the ERC20 token's implementation (e.g., minting, burning mechanisms, pausing, fee structures, special transfer conditions) and its overall economic model (tokenomics) are entirely unknown. This lack of visibility means potential vulnerabilities such as reentrancy, integer overflows/underflows in custom calculations, or economic exploits (e.g., inflation attacks, unfair distribution) cannot be assessed.
+Due to the unverified implementation source code (C-01), the specific functionalities of the 'Auto Fee Token' (e.g., how fees are calculated, collected, and distributed; minting/burning capabilities; pausing mechanisms; blacklisting features) remain entirely opaque. This lack of transparency extends to critical economic parameters that could significantly impact token holders (7.4 Economic). Without visibility into the code, there is no way to confirm that the token operates as expected or that it doesn't contain hidden backdoors or malicious logic (7.5 Governance).
 
-**Recommendation:** Provide the complete and verified source code for the ERC20 implementation contract. A full audit of the custom logic and a detailed review of the tokenomics are essential to identify and mitigate potential vulnerabilities.
-
-
-### `H-03` — Upgradeability Risks Due to Unverified Proxy and Implementation  *(Severity: High · Status: Unresolved)*
-
-While the use of OpenZeppelin's `Initializable` and `__gap` patterns suggests an intention for proper upgradeability, the proxy contract itself and its implementation are unverified. This means the specific proxy pattern (e.g., UUPS, Transparent) and the mechanisms for authorizing and executing upgrades cannot be confirmed. An unverified proxy could have a flawed upgrade mechanism, or the implementation could be swapped to malicious code without public scrutiny, leading to a complete compromise of the token.
-
-**Recommendation:** Verify the full source code for both the proxy contract and its implementation. Clearly document the chosen proxy pattern and the upgrade process, including any `_authorizeUpgrade` logic for UUPS proxies. Ensure that upgrade permissions are secured, ideally via a multi-sig wallet.
+**Recommendation:** Beyond verifying the source code, provide comprehensive documentation detailing the token's economic model, fee mechanisms, and all administrative functionalities. Clearly outline the roles and permissions of any privileged addresses within the token contract. Regular audits of the verified code should be conducted and published.
 
 
-### `M-01` — Potential for Re-initialization of Implementation Contract  *(Severity: Medium · Status: Unresolved)*
+### `M-01` — Potential Centralized Control over Token Functionality  *(Severity: Medium · Status: Unresolved)*
 
-The `Initializable` pattern is used to protect initializer functions from being called multiple times. However, if the implementation contract's `initialize` function is not properly protected (e.g., by a constructor marking it initialized) and is directly callable on the implementation contract itself (not through the proxy), an attacker could call `initialize` on the implementation directly. This could potentially seize ownership or reconfigure the implementation, which might affect future upgrades or even the proxy if storage slots are manipulated.
+While the proxy admin is controlled by a multisig, the `BackedAutoFeeTokenImplementation` contract likely inherits `OwnableUpgradeable` (as indicated by the provided snippets). Without the implementation source, it is unknown whether the owner of the token's core functionalities (e.g., minting, burning, pausing, modifying fee parameters) is a single EOA, a multisig, or a timelock-controlled address (7.3 Access Control). If controlled by a single EOA, it presents a single point of failure and a significant centralization risk for critical token operations (7.8 Operations).
 
-**Recommendation:** Ensure that the implementation contract's `initialize` function is either called once during deployment (e.g., via `ERC1967Proxy` constructor `_data`) or that the implementation contract's constructor explicitly calls `initializer()` to mark it as initialized, preventing direct calls to `initialize` on the implementation itself. Verify this protection is in place once the full source code is available.
+**Recommendation:** If the token's core functionalities are controlled by a single EOA, consider migrating ownership to a robust multisig wallet or a timelock-controlled address. Clearly document all privileged roles and their associated addresses, along with the rationale for their access levels.
 
 
-### `I-01` — Dependency on OpenZeppelin Libraries  *(Severity: Informational · Status: Unresolved)*
+### `L-01` — Absence of Timelock for Proxy Upgrades  *(Severity: Low · Status: Unresolved)*
 
-The contract relies heavily on OpenZeppelin Contracts Upgradeable libraries (OwnableUpgradeable, Initializable, ERC20Upgradeable). While these libraries are widely used and well-audited, any future vulnerabilities discovered within these external dependencies could potentially affect this contract.
+The proxy upgrade mechanism, while controlled by a 2-of-3 Gnosis Safe multisig, does not incorporate a timelock (7.7 Upgrades). This means that once the required multisig confirmations are met, an upgrade can be executed immediately. While a multisig provides a layer of security by requiring multiple approvals, a timelock would introduce a mandatory delay, allowing users and external monitors to review proposed changes and react if a malicious or erroneous upgrade is initiated.
 
-**Recommendation:** Stay informed about security updates and advisories from OpenZeppelin. Regularly review the versions of the libraries used and consider upgrading to newer, patched versions if critical vulnerabilities are identified.
+**Recommendation:** Consider integrating a timelock mechanism into the upgrade process. This would involve the multisig proposing an upgrade, which then enters a predefined delay period before it can be executed. This provides an additional safety net for users and the protocol.
+
+
+### `I-01` — Utilization of Standard OpenZeppelin Upgradeable Libraries  *(Severity: Informational · Status: Unresolved)*
+
+The project leverages well-audited and widely adopted OpenZeppelin Contracts Upgradeable libraries, including `ERC20Upgradeable`, `OwnableUpgradeable`, and `Initializable`. This foundation provides a strong baseline for security and adherence to established standards for upgradeable contracts and token implementations (7.1 Architecture, 7.2 Code Security). The use of these battle-tested components reduces the risk of common vulnerabilities inherent in custom implementations of these primitives.
+
+**Recommendation:** Continue to rely on reputable and audited libraries for core functionalities. Ensure that all OpenZeppelin components are used correctly, especially regarding initialization patterns in upgradeable contracts, to avoid common proxy-related pitfalls.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: Velvet
 ticker: VELVET
 network: base
-risk_score: 100
+risk_score: 93
 status: critical
 date: 2026-06-11
 ---
 
 # Velvet (VELVET) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 93/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/velvet-base)
 
@@ -17,19 +17,17 @@ date: 2026-06-11
 
 ## Audit Summary
 
-This audit covers the `BridgeToken` contract, which is an OpenZeppelin `BeaconProxy`. The provided source code only includes the proxy wrapper, not the underlying implementation contract that defines the token's core logic. This significantly limits the scope of the audit, as critical vulnerabilities related to the token's functionality, economic model, and specific access controls cannot be assessed. The proxy itself utilizes a well-vetted OpenZeppelin pattern, but its security is highly dependent on the beacon contract and its controlled implementation.
+This audit covers the `BridgeToken` proxy contract, which utilizes the OpenZeppelin BeaconProxy pattern. The core logic resides in an unprovided implementation contract (0x5537857664b0f9efe38c9f320f75fef23234d904), making this a partial audit. The primary risks identified relate to the centralized control over upgrades via the associated Beacon contract, whose governance and security mechanisms are unknown.
 
-> **Final Recommendation:** The `BridgeToken` contract, as an OpenZeppelin `BeaconProxy`, benefits from a well-established and audited proxy pattern. However, the absence of the implementation contract's source code prevents a full security assessment of the token's core functionality, economic model, and specific access controls. It is critical to obtain and audit the implementation contract to ensure the overall security of the system.
-
-We recommend a Premium Deploy option for a comprehensive audit that includes the implementation contract, the beacon contract, and any associated governance or administrative contracts. This will provide a complete security posture assessment, identify potential vulnerabilities across the entire system, and offer tailored recommendations for hardening and operational best practices.
+> **Final Recommendation:** To ensure the overall security of the `BridgeToken` system, it is crucial to conduct a full audit of the implementation contract and the Beacon contract. Special attention should be paid to the access control mechanisms governing the Beacon's ability to update the implementation address. Implement robust security measures, such as multi-signature wallets or time-locks, for any administrative roles with upgrade privileges to mitigate centralized control risks.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The `BridgeToken` contract leverages the robust and audited OpenZeppelin `BeaconProxy` pattern (7.1 Architecture, 7.2 Code Security), which is a strong foundation for secure proxy deployments. The… |
-| **Governance / Economics** | 1/10 | High | The `BridgeToken` contract itself contains no economic logic (7.4 Economic) or direct governance mechanisms (7.5 Governance); these would reside within the implementation contract. The primary… |
-| **Upgrades** | 2/10 | High | The `BeaconProxy` pattern provides a robust and efficient mechanism for upgradeability (7.7 Upgrades), allowing multiple proxy instances to share a single implementation managed by a beacon. This… |
+| **Technical** | 4/10 | Medium | The `BridgeToken` contract is a minimal proxy leveraging OpenZeppelin's `BeaconProxy` (7.1 Architecture). This pattern delegates all calls to an implementation contract specified by a `Beacon`… |
+| **Governance / Economics** | 1/10 | High | The economic model (7.4 Economic) and governance mechanisms (7.5 Governance) of the `BridgeToken` system are primarily determined by the implementation contract and the `Beacon` contract. Without… |
+| **Upgrades** | 3/10 | High | The `BridgeToken` contract uses the `BeaconProxy` pattern, meaning its implementation can be upgraded by changing the address stored in the associated `Beacon` contract (7.7 Upgrades). This provides… |
 
 ## Proxy Upgrade Controls
 
@@ -46,41 +44,34 @@ We recommend a Premium Deploy option for a comprehensive audit that includes the
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `C-01` — Missing Implementation Contract Source Code  *(Severity: Critical · Status: Unresolved)*
+### `H-01` — Incomplete Audit Scope - Missing Implementation Code  *(Severity: High · Status: Unresolved)*
 
-The provided source code for `BridgeToken` is solely the `BeaconProxy` wrapper. The actual business logic, including token standards (e.g., ERC-20), transfer mechanisms, access control for core functions, and any specific economic parameters, resides within the implementation contract (0x5537857664b0f9efe38c9f320f75fef23234d904). Without this code, a comprehensive security audit of the token's functionality is impossible, leaving critical vulnerabilities potentially undiscovered.
+The provided source code only includes the `BridgeToken` proxy contract, which delegates its logic to an implementation contract via a Beacon. The source code for the actual implementation contract (0x5537857664b0f9efe38c9f320f75fef23234d904) was not provided for review. This prevents a comprehensive security assessment of the core business logic, state management, and potential vulnerabilities such as reentrancy, access control flaws, or economic exploits within the token's functionality.
 
-**Recommendation:** Provide the complete source code for the implementation contract (0x5537857664b0f9efe38c9f320f75fef23234d904) for a thorough security review. This is essential to assess all aspects of the token's security, including reentrancy, integer overflows, access control, and business logic flaws.
-
-
-### `H-01` — Centralized Control of Implementation via Beacon  *(Severity: High · Status: Unresolved)*
-
-The `BridgeToken` contract delegates all calls to an implementation address managed by a beacon contract. The entity or multisig controlling this beacon contract has the sole authority to update the implementation logic for all associated `BeaconProxy` instances. A compromise of this controlling entity or a malicious upgrade could lead to a complete loss of funds, arbitrary code execution, or a change in token properties (7.3 Access Control, 7.5 Governance).
-
-**Recommendation:** Implement robust access control mechanisms for the beacon controller, preferably a well-tested multisig wallet (e.g., Gnosis Safe) with a high threshold of signers. Consider a time-lock mechanism for upgrades to provide a window for users to react to potentially malicious changes. Clearly document the beacon's ownership and upgrade procedures.
+**Recommendation:** Provide the full source code for the implementation contract and the Beacon contract to enable a complete security audit of the entire system.
 
 
-### `M-01` — Potential for Storage Collisions in Upgrades  *(Severity: Medium · Status: Unresolved)*
+### `M-01` — Centralized Upgrade Control via Beacon  *(Severity: Medium · Status: Unresolved)*
 
-While `BeaconProxy` is designed for upgradeability, improper management of storage layouts between different versions of the implementation contract can lead to storage collisions. If a new implementation contract modifies the order or type of state variables, it could overwrite critical data from previous versions, leading to unexpected behavior, loss of funds, or contract bricking (7.7 Upgrades).
+The `BridgeToken` contract is a `BeaconProxy`, meaning its logic is entirely controlled by the implementation address set in an external `Beacon` contract. The administrative control over this `Beacon` contract determines who can upgrade the `BridgeToken`'s logic. If the `Beacon` contract is controlled by a single entity or an inadequately secured address, it introduces a significant centralization risk, allowing unilateral changes to the token's behavior without community oversight.
 
-**Recommendation:** Strictly adhere to OpenZeppelin's upgrade safety guidelines, particularly regarding storage layout. Use tools like `hardhat-upgrades` or `truffle-upgrades` to detect potential storage collisions during development and deployment of new implementation versions. Thoroughly test all upgrade paths in a staging environment before deploying to production.
-
-
-### `L-01` — Unverified Beacon Contract  *(Severity: Low · Status: Unresolved)*
-
-The `BridgeToken` contract relies on an external beacon contract (address not provided in prefill, but passed in constructor) to determine its implementation. The verification status and source code of this beacon contract are unknown. An unverified or unaudited beacon contract introduces an additional layer of trust and potential risk, as its logic for managing implementation addresses is critical (7.6 External).
-
-**Recommendation:** Ensure the beacon contract's source code is publicly verified on block explorers and has undergone a security audit. This transparency is crucial for users to understand the upgrade mechanism and the security guarantees of the `BridgeToken`.
+**Recommendation:** Implement robust access control mechanisms for the `Beacon` contract, such as a multi-signature wallet with a high threshold or a time-locked governance contract, to manage implementation upgrades. This decentralizes control and introduces a delay for critical changes.
 
 
-### `I-01` — Initialization Data Vulnerability  *(Severity: Informational · Status: Unresolved)*
+### `L-01` — Reliance on External Beacon Contract Security  *(Severity: Low · Status: Unresolved)*
 
-The `BeaconProxy` constructor takes `bytes memory data` which is used to call the `initialize` function on the implementation contract. If this `data` is incorrectly formatted, points to a non-existent function, or attempts to re-initialize an already initialized contract (if the implementation doesn't properly guard against it), it could lead to deployment failures or unexpected state (7.8 Operations).
+The security and integrity of the `BridgeToken` system are directly dependent on the security of the external `Beacon` contract. Any vulnerability or compromise in the `Beacon` contract could directly impact all `BeaconProxy` instances, including `BridgeToken`, by allowing unauthorized or malicious upgrades to the implementation.
 
-**Recommendation:** Ensure the `data` parameter passed to the `BeaconProxy` constructor is correctly encoded for the intended `initialize` function of the implementation. The implementation contract should include a `_disableInitializers()` call in its constructor or use `initializer` modifier to prevent re-initialization, which OpenZeppelin's `Initializable` pattern typically handles.
+**Recommendation:** Conduct a thorough security audit of the `Beacon` contract itself, focusing on its access control, upgrade logic, and potential attack vectors. Ensure the `Beacon` contract is immutable or upgradeable only through secure, transparent, and decentralized governance processes.
+
+
+### `I-01` — Standard OpenZeppelin BeaconProxy Usage  *(Severity: Informational · Status: Unresolved)*
+
+The `BridgeToken` contract correctly utilizes the `BeaconProxy` pattern from OpenZeppelin contracts. This pattern is a well-established and audited solution for upgradeable contracts, allowing multiple proxy instances to share the same implementation logic via a central `Beacon` contract. This approach saves gas and simplifies management for a set of identical upgradeable contracts.
+
+**Recommendation:** Continue to follow best practices for upgradeable contracts, including careful management of storage slots in the implementation to prevent storage collisions and thorough testing of all upgrade paths.
 
 ## Token Metrics
 

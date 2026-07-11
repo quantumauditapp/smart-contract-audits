@@ -17,17 +17,17 @@ date: 2026-06-29
 
 ## Audit Summary
 
-The Black Bull (ANSEM) is an SPL Token-2022 mint on Solana. The mint authority and freeze authority have both been revoked, indicating a fixed supply and no ability to freeze user accounts by the issuer. Holder concentration data was unavailable from RPC, but RugCheck.xyz flagged high ownership by top holders, which could indicate potential for price volatility. No critical or high-severity issues were identified based on the provided facts and deterministic rules.
+This Solana SPL Token Mint (ANSEM) exhibits a robust security configuration with both mint and freeze authorities permanently revoked. No critical Token-2022 extensions such as transfer hooks or default frozen account states are active. While chain-native holder distribution data was unavailable, a third-party risk registry signals potential high holder concentration. The token has substantial DEX liquidity and active trading volume.
 
-> **Final Recommendation:** This token presents a relatively secure technical configuration with revoked mint and freeze authorities, indicating a fixed supply and no ability for an issuer to freeze user funds. However, the high Volume/Liquidity ratio suggests potential wash trading, and while direct holder concentration data was unavailable, RugCheck's flags for high ownership by top holders warrant caution regarding potential price volatility from large sell-offs. Investors should be aware of these economic factors (7.4 Economic, 7.6 External).
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to confirm the fixed supply and unfreezable nature of accounts. Given the third-party signals regarding holder concentration, it is advisable to monitor the token's distribution over time for any significant changes. While the volume/liquidity ratio is high, users should account for potential slippage in large trades and understand the implications of active trading patterns.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint, leveraging the latest Solana token program features. Both the mint authority and freeze authority have been revoked, which is a positive security indicator as it… |
-| **Governance / Economics** | 1/10 | High | The token has substantial liquidity, with $1,222,784 USD available on DEXs. However, the 24-hour volume of $22,628,549 is significantly higher than liquidity, resulting in a Volume/Liquidity Ratio of… |
-| **Upgrades** | 8/10 | Low | The token's mint authority and freeze authority have been revoked, meaning no further tokens can be minted and no accounts can be frozen by an administrative key. It utilizes the spl-token-2022… |
+| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program, leveraging its advanced features. Both the Mint Authority and Freeze Authority have been revoked, ensuring that no new tokens can be minted… |
+| **Governance / Economics** | 1/10 | High | The token benefits from significant DEX liquidity, reported at $2,194,837, which supports trading and reduces slippage for typical transactions (7.4 Economic). The 24-hour trading volume is high at… |
+| **Upgrades** | 8/10 | Low | The token's configuration demonstrates a strong commitment to immutability post-launch. The revocation of both Mint and Freeze authorities means that the token supply and the ability to freeze… |
 
 ## Token Metrics
 

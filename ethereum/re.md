@@ -2,14 +2,14 @@
 token: RE
 ticker: RE
 network: ethereum
-risk_score: 78
+risk_score: 95
 status: critical
 date: 2026-06-22
 ---
 
 # RE (RE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 78/100 — 🔴 Critical Risk**
+> **Risk Score: 95/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/re-eth)
 
@@ -17,17 +17,19 @@ date: 2026-06-22
 
 ## Audit Summary
 
-This audit covers the OpenZeppelin ERC1967Proxy contract, a standard and widely-used upgradeable proxy implementation. The contract itself is robust and well-tested, providing a secure foundation for upgradeable systems. The primary risks are associated with the management of the admin key and the security of the implementation contracts it points to.
+This audit focused on the `ERC1967Proxy` contract, which utilizes the UUPS upgradeable proxy pattern. A critical finding is the unverified source code for the implementation contract, preventing a full security assessment of the system's core logic. This significantly elevates the overall risk, as the actual behavior and security of the protocol's functionality cannot be confirmed. Further review of the implementation is essential.
 
-> **Final Recommendation:** The OpenZeppelin ERC1967Proxy contract provides a secure and well-audited foundation for upgradeable smart contract systems. The core contract code is robust. The primary considerations for security lie in the careful management of the admin key, which controls all upgrades, and the thorough auditing of any implementation contracts deployed behind this proxy. Ensure that implementation contracts are designed with upgradeability in mind, particularly regarding storage layout and initializer patterns. For enhanced security and operational peace of mind, consider a Premium Deploy option that includes multi-signature wallet integration for the admin key and continuous monitoring of the proxy's implementation address.
+> **Final Recommendation:** Prioritize verifying and publishing the source code for the implementation contract (`0x4d24b40e5b1103b3ce071192fce91ef39abc0273`). This is crucial for transparency and to enable a comprehensive security audit of the system's core logic and upgrade authorization mechanisms. Without this, the entire system remains unauditable and carries significant inherent risk.
+
+Implement robust access control, ideally with a multi-signature wallet and/or a timelock, for all critical administrative functions, especially contract upgrades. Ensure that the implementation's initializer function correctly handles any Ether forwarded during proxy deployment to prevent stuck funds.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture (7.1) is based on the well-established ERC-1967 proxy standard, utilizing `delegatecall` for logic execution. Code security (7.2) is excellent, leveraging OpenZeppelin's… |
-| **Governance / Economics** | 1/10 | High | The proxy itself does not contain economic logic (7.4). Governance (7.5) is centralized around the admin address, which holds the sole power to upgrade the implementation. This design choice, while… |
-| **Upgrades** | 3/10 | High | The contract is designed specifically for upgrades (7.7) following the ERC-1967 standard, providing a robust and widely adopted mechanism. The `upgradeToAndCall` function allows for seamless logic… |
+| **Technical** | 4/10 | Medium | The `ERC1967Proxy` contract leverages battle-tested OpenZeppelin libraries, providing a robust and secure proxy architecture (7.1 Architecture, 7.2 Code Security). The proxy correctly implements the… |
+| **Governance / Economics** | 1/10 | High | The proxy itself does not contain governance or economic logic; these aspects reside entirely within the unverified implementation contract (7.4 Economic, 7.5 Governance). Without visibility into the… |
+| **Upgrades** | 3/10 | High | The contract utilizes the UUPS proxy pattern, which is a well-established and secure upgrade mechanism (7.7 Upgrades). The `ERC1967Utils` library correctly handles implementation slot updates and… |
 
 ## Proxy Upgrade Controls
 
@@ -46,34 +48,34 @@ This audit covers the OpenZeppelin ERC1967Proxy contract, a standard and widely-
 
 ## Security Findings
 
-_⚪ 4 Informational_
+_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `I-01` — Centralized Upgrade Control  *(Severity: Informational · Status: Unresolved)*
+### `H-01` — Unverified Implementation Contract Source Code  *(Severity: High · Status: Unresolved)*
 
-The ERC1967Proxy design centralizes upgrade authority to a single admin address. While this is standard for this proxy type, it means the security of the entire system is dependent on the security of this single admin key. A compromise of this key would allow an attacker to deploy a malicious implementation contract, leading to potential loss of funds or system control.
+The implementation contract at address `0x4d24b40e5b1103b3ce071192fce91ef39abc0273`, which contains the core logic for the `ERC1967Proxy`, does not have its source code verified on Etherscan or provided for audit. This prevents a thorough security analysis of the actual business logic, access control, economic mechanisms, and upgrade authorization. Without visibility into the implementation, critical vulnerabilities such as reentrancy, integer overflows, or logic flaws cannot be identified, rendering the entire system's security unknown.
 
-**Recommendation:** Implement robust security measures for the admin key, such as using a hardware wallet, a multi-signature wallet (e.g., Gnosis Safe), or a time-locked governance mechanism. Regularly review and audit the admin address's access controls.
-
-
-### `I-02` — Criticality of Implementation Contract Security  *(Severity: Informational · Status: Unresolved)*
-
-The security of the entire system is directly dependent on the security and correctness of the underlying implementation contract. The proxy merely delegates calls; any vulnerability (e.g., reentrancy, access control flaws) in the implementation will be exploitable through the proxy, affecting all users.
-
-**Recommendation:** Thoroughly audit all implementation contracts before deployment. Ensure they adhere to best security practices, are well-tested, and are compatible with the proxy's upgradeability pattern. Consider independent security audits for each new implementation version.
+**Recommendation:** Immediately verify and publish the source code for the implementation contract (`0x4d24b40e5b1103b3ce071192fce91ef39abc0273`) on Etherscan. Once verified, a full security audit of the implementation contract should be conducted to identify and mitigate any potential vulnerabilities.
 
 
-### `I-03` — Storage Collision Awareness  *(Severity: Informational · Status: Unresolved)*
+### `M-01` — Lack of Transparent Upgrade Authorization  *(Severity: Medium · Status: Unresolved)*
 
-ERC-1967 proxies reserve specific storage slots for proxy-related data (e.g., implementation address, admin address). Developers of implementation contracts must ensure their storage layout does not inadvertently overlap with these reserved slots. Accidental collision could lead to critical state corruption, making the proxy or implementation unusable or exploitable.
+While the `ERC1967Proxy` implements the UUPS upgrade pattern, the authorization mechanism for performing upgrades (i.e., who can call `upgradeToAndCall` or `_authorizeUpgrade` in the implementation) is unknown due to the unverified implementation contract. This lack of transparency means it's impossible to assess if robust access control (e.g., multi-signature wallet, timelock) is in place to prevent unauthorized or malicious upgrades, which could lead to a complete compromise of the protocol.
 
-**Recommendation:** Follow the 'storage gap' pattern in implementation contracts to explicitly reserve storage slots, preventing collisions when new variables are added to the proxy or implementation. Use tools like 'hardhat-upgrades' or 'openzeppelin-upgrades' to assist with upgrade-safe contract development and deployment.
+**Recommendation:** After verifying the implementation contract's source code, ensure that the upgrade authorization logic is robust. Implement a multi-signature wallet and/or a timelock for controlling upgrades to the implementation contract. This adds a layer of security and decentralization, preventing a single point of compromise from enabling malicious upgrades.
 
 
-### `I-04` — Proper Initialization of Implementation  *(Severity: Informational · Status: Unresolved)*
+### `L-01` — Potential for Unintended Ether Reception in Proxy  *(Severity: Low · Status: Unresolved)*
 
-The proxy's constructor uses `upgradeToAndCall` to initialize the implementation. It is crucial that the implementation contract uses an initializer function (e.g., `initialize()`) instead of a Solidity constructor to set up its state. If an implementation contract relies on its constructor for state setup, that constructor will only run once when the implementation contract is deployed, not when the proxy is initialized or upgraded, leading to uninitialized or incorrect state.
+The `ERC1967Proxy` constructor is `payable` and delegates to `ERC1967Utils.upgradeToAndCall`. If `_data` is provided, `msg.value` is forwarded via `Address.functionDelegateCall`. If the implementation's initializer function is not designed to handle or consume this `msg.value`, any Ether sent during the proxy deployment (initialization) could become permanently locked in the proxy contract. While `ERC1967Utils` includes a check (`_checkNonPayable()`) to revert if `msg.value > 0` and `_data` is empty, this does not cover the case where `_data` is non-empty but the implementation's initializer does not consume the Ether.
 
-**Recommendation:** Ensure all implementation contracts intended for use with this proxy pattern utilize initializer functions (e.g., from OpenZeppelin's `Initializable` contract) instead of constructors for state setup. The `_data` parameter in the proxy's constructor should be an encoded call to this initializer function.
+**Recommendation:** Ensure that the initializer function of the implementation contract is either `payable` and explicitly handles any forwarded `msg.value`, or that the deployment process strictly ensures `msg.value` is zero when `_data` is non-empty and the initializer is not designed to receive Ether.
+
+
+### `I-01` — Reliance on OpenZeppelin Libraries  *(Severity: Informational · Status: Resolved)*
+
+The contract heavily relies on OpenZeppelin's battle-tested `ERC1967Proxy`, `Proxy`, and `ERC1967Utils` libraries. These libraries are widely used and have undergone extensive audits and community review, significantly reducing the risk of vulnerabilities within the proxy's core delegation and storage management logic.
+
+**Recommendation:** Continue to monitor OpenZeppelin's security advisories and updates for any potential issues in the utilized library versions. Ensure that any custom logic built upon these libraries adheres to similar high security standards.
 
 ## Token Metrics
 

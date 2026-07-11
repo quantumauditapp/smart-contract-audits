@@ -2,14 +2,14 @@
 token: Solstice
 ticker: SLX
 network: solana
-risk_score: 65
+risk_score: 62
 status: high
 date: 2026-06-10
 ---
 
 # Solstice (SLX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 65/100 — 🟠 High Risk**
+> **Risk Score: 62/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solstice-sol)
 
@@ -17,29 +17,34 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This audit of the Solstice (SLX) SPL token mint identified a high-severity risk due to the default frozen state of new holder accounts, which necessitates manual unfreezing by an authority. While mint and freeze authorities are revoked, enhancing security, holder concentration data was unavailable, preventing a full assessment of distribution risk.
+The Solstice (SLX) token mint has revoked both its mint and freeze authorities, indicating a fixed supply and immutability of account states. However, the token's metadata is mutable, allowing changes to its name, symbol, or image post-launch. The DEX trading pair is very new, having been created only 3 days ago, which limits the track record for assessing market behavior. Holder concentration data from chain-native RPC was unavailable, though a third-party registry signals high ownership by top holders.
 
-> **Final Recommendation:** Prospective holders should be aware that new token accounts for Solstice (SLX) are created in a frozen state. This means that after acquiring tokens, an explicit unfreezing action by an authorized party is required before the tokens can be transferred or used. It is crucial to confirm the availability and responsiveness of the issuer or designated authority to perform this unfreezing. Without this, tokens may become unspendable.
-
-Given the revoked mint and freeze authorities, the token's supply is fixed, and existing accounts cannot be frozen by a central entity. However, the default frozen state for *new* accounts introduces an operational hurdle. Verify the process for unfreezing accounts before committing significant capital. For a Premium Deploy, consider tokens where the default account state is unfrozen to ensure immediate transferability.
+> **Final Recommendation:** Before engaging with this token, verify on-chain that the metadata has not been altered from its current branding. Monitor the token's market behavior closely due to its very recent DEX listing. If holder concentration data becomes available, assess the distribution to understand potential market manipulation risks.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | 7.1 Architecture & 7.2 Code Security: The Solstice (SLX) token is an SPL token operating on the `spl-token` program. While the mint authority and freeze authority have been revoked, preventing… |
-| **Governance / Economics** | 1/10 | High | 7.4 Economic: The token exhibits a healthy liquidity of $100,237 USD on DEXs, with a normal 24-hour volume of $1,709 and a low Volume/Liquidity Ratio of 0.02, indicating organic trading. The DEX pair… |
-| **Upgrades** | 6/10 | Medium | 7.7 Upgrades: The mint authority and freeze authority are both revoked, indicating that the token's supply and transferability parameters are fixed and cannot be altered by a central party. The… |
+| **Technical** | 6/10 | Medium | The Solstice (SLX) token is implemented using the standard spl-token program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing… |
+| **Governance / Economics** | 2/10 | High | The token's DEX pair is very new, having been created only 3 days ago, which provides insufficient track record for assessing market stability or team behavior. Current DEX liquidity stands at… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority have both been revoked, preventing any further changes to the token's supply or the ability to freeze accounts. However, the token's metadata is mutable… |
 
 ## Security Findings
 
-_🟠 1 High_
+_🟡 1 Medium · 🟢 1 Low_
 
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
+### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
 
-New holder accounts are created in a frozen state, as indicated by `GoPlus.default_account_state: 1`. This requires explicit unfreezing by an authority before tokens can be transferred or used.
+DEX pair was created 3 days ago. Insufficient track record to assess team or holder behaviour.
 
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token may be unspendable. This introduces an operational dependency on a central entity.
+**Recommendation:** Monitor the token's market activity and development over a longer period to establish a track record.
+
+
+### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
+
+Token name, symbol, or image can be changed post-launch.
+
+**Recommendation:** Verify metadata against off-chain expectations before trusting branding.
 
 ## Token Metrics
 

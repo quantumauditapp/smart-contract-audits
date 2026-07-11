@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This audit covers the OpenZeppelin ERC1967Proxy contract, a standard UUPS (Universal Upgradeable Proxy Standard) proxy. The contract itself is highly robust and battle-tested, inheriting security from OpenZeppelin's extensive audits and community review. Key strengths include its adherence to ERC-1967 for storage slot management and a secure delegation mechanism. The primary risks are associated with the centralized control over upgrades and potential vulnerabilities in the implementation contract, which is not part of this scope. Recommendations focus on securing the admin key, implementing upgrade best practices, and careful development of the logic contract.
+This audit focuses on an ERC1967Proxy contract, which is a standard UUPS proxy implementation from OpenZeppelin. While the proxy contract itself is well-audited and robust, the associated implementation contract (0x81cfa8f011a137ec93039694eeea40d4c5b56cbe) is not source-verified. This lack of transparency for the underlying logic introduces significant technical, governance, and upgradeability risks, as the actual behavior and security of the system cannot be fully assessed.
 
-> **Final Recommendation:** The OpenZeppelin ERC1967Proxy contract is a secure and reliable foundation for upgradeable systems. The primary focus for overall system security must be on the security of the admin key, which controls all upgrades, and the rigorous auditing of the implementation contract. Implement a robust multi-signature wallet or a DAO for admin control and consider adding a timelock for upgrade operations to mitigate centralization risks. Thoroughly audit all implementation contract changes for storage collisions and logic errors before deployment.
+> **Final Recommendation:** The most critical recommendation is to immediately verify the source code of the implementation contract (0x81cfa8f011a137ec93039694eeea40d4c5b56cbe). A comprehensive audit of the implementation contract is essential to understand its functionality, identify potential vulnerabilities, and ensure the integrity of the upgrade mechanism. Implement robust access control for upgrade functions within the implementation, ideally using a multi-signature wallet and a timelock for critical operations.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The ERC1967Proxy contract (7.1 Architecture) is a well-established and secure UUPS proxy implementation from OpenZeppelin, utilizing `delegatecall` for logic execution. Its code (7.2 Code Security)… |
-| **Governance / Economics** | 1/10 | High | The governance model (7.5 Governance) for this proxy is highly centralized, with a single admin address (or a multisig) having full control over upgrades (H-01). This admin can instantly change the… |
-| **Upgrades** | 3/10 | High | The contract implements the ERC-1967 UUPS upgrade pattern (7.7 Upgrades), allowing the logic contract to be changed by the admin. This mechanism is standard and well-understood. However, the security… |
+| **Technical** | 4/10 | Medium | The provided contract is a standard OpenZeppelin ERC1967Proxy, which is a battle-tested and secure proxy pattern (7.1 Architecture, 7.2 Code Security). It correctly implements delegatecall logic and… |
+| **Governance / Economics** | 1/10 | High | The UUPS proxy pattern delegates upgrade authorization to the implementation contract, meaning the governance and economic control over upgrades reside within the unverified implementation (7.5… |
+| **Upgrades** | 3/10 | High | The contract utilizes the UUPS (ERC-1967) proxy pattern, which is a robust and widely adopted upgrade mechanism (7.7 Upgrades). The proxy itself correctly handles the upgradeToAndCall logic. However… |
 
 ## Proxy Upgrade Controls
 
@@ -48,39 +48,39 @@ This audit covers the OpenZeppelin ERC1967Proxy contract, a standard UUPS (Unive
 
 _🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
-### `H-01` — Centralized Upgrade Control  *(Severity: High · Status: Unresolved)*
+### `H-01` — Unverified Implementation Contract  *(Severity: High · Status: Unresolved)*
 
-The ERC1967Proxy contract relies on a single admin address (or a multisig) to perform upgrades. This centralized control means that if the admin key is compromised, a malicious actor could upgrade the implementation contract to drain funds, introduce backdoors, or otherwise compromise the entire system. This is a fundamental characteristic of UUPS proxies but represents a significant single point of failure and centralization risk (7.3 Access Control, 7.5 Governance).
+The proxy contract (0x4d7078ddd6ccfed2f85db5b7d3ff16828d378d48) delegates all calls to an implementation contract (0x81cfa8f011a137ec93039694eeea40d4c5b56cbe) for which the source code is not publicly verified. This makes it impossible to audit the actual business logic, security, and behavior of the system, introducing an opaque trust assumption. Any vulnerabilities in the unverified implementation could directly impact the funds or functionality controlled by the proxy.
 
-**Recommendation:** Implement robust security measures for the admin key. For critical systems, a multi-signature wallet with a high threshold of signers or a decentralized autonomous organization (DAO) should control the admin address. Ensure all signers follow best practices for key management and security.
-
-
-### `M-01` — Potential Storage Collisions in Implementation  *(Severity: Medium · Status: Unresolved)*
-
-While the ERC1967Proxy itself uses ERC-1967 compliant storage slots to prevent collisions with the implementation, the implementation contract must carefully manage its own storage layout. If the implementation contract's storage variables overlap with those of the proxy (e.g., `_initialized` from `Initializable` or other proxy-related slots if not using UUPS correctly), or if an upgrade introduces a new implementation with a conflicting storage layout, it could lead to critical state corruption, loss of funds, or unexpected behavior (7.1 Architecture, 7.2 Code Security, 7.7 Upgrades).
-
-**Recommendation:** Thoroughly audit the storage layout of all implementation contracts, especially during upgrades. Use tools like `hardhat-upgrades` or `openzeppelin-upgrades` to detect storage layout incompatibilities. Ensure that new versions of the implementation contract maintain a compatible storage layout with previous versions to prevent data corruption.
+**Recommendation:** Immediately verify and publish the source code for the implementation contract (0x81cfa8f011a137ec93039694eeea40d4c5b56cbe) on block explorers. Conduct a thorough security audit of the implementation contract to identify and mitigate any potential vulnerabilities.
 
 
-### `L-01` — Lack of Upgrade Timelock  *(Severity: Low · Status: Unresolved)*
+### `M-01` — Reliance on Unverified Implementation for Upgrade Authorization  *(Severity: Medium · Status: Unresolved)*
 
-The proxy allows immediate upgrades by the admin without any delay. For critical systems managing significant value, introducing a timelock for upgrade operations is a common security best practice. A timelock provides a grace period during which users can be notified of an impending upgrade, allowing them to withdraw funds or react to potentially malicious or erroneous changes, thereby enhancing security and decentralization (7.5 Governance, 7.7 Upgrades).
+As a UUPS proxy, the authorization logic for upgrades resides within the implementation contract. Since the implementation contract's source code is unverified, the mechanism by which upgrades are authorized and executed is unknown. This could lead to unauthorized upgrades if the implementation's `_authorizeUpgrade` function is missing, flawed, or controlled by a single, unsecure entity, potentially allowing a malicious actor to deploy arbitrary code.
 
-**Recommendation:** Consider implementing a timelock mechanism for upgrade operations. This would involve the admin initiating an upgrade, which then becomes effective only after a predefined delay (e.g., 24-72 hours). This provides a window for community review and reaction, reducing the impact of a compromised admin key or an accidental malicious upgrade.
-
-
-### `I-01` — Dependency on OpenZeppelin Contracts  *(Severity: Informational · Status: Unresolved)*
-
-The contract heavily relies on battle-tested OpenZeppelin libraries for its core proxy functionality. While this significantly reduces the risk of vulnerabilities within the proxy itself due to the high quality and extensive auditing of these libraries, it introduces a dependency on the security and maintenance of these external components (7.6 External).
-
-**Recommendation:** Regularly monitor OpenZeppelin's security advisories and updates. Ensure that the deployed OpenZeppelin library versions are up-to-date and free from known vulnerabilities. This is a standard practice for projects leveraging external libraries.
+**Recommendation:** Ensure the implementation contract implements a secure and robust `_authorizeUpgrade` function. This function should enforce strict access control, ideally requiring a multi-signature wallet and/or a timelock for upgrade approvals. Once implemented, verify the source code and audit this logic.
 
 
-### `I-02` — msg.value Handling in upgradeToAndCall  *(Severity: Informational · Status: Unresolved)*
+### `L-01` — Payable Constructor with Potential for Stuck Funds  *(Severity: Low · Status: Unresolved)*
 
-The `upgradeToAndCall` function in `ERC1967Utils` includes a check (`_checkNonPayable()`) to revert if `msg.value > 0` when `data` is empty. This prevents Ether from being accidentally sent and stuck in the proxy contract during an upgrade without an initialization call. This is a good security practice (7.2 Code Security).
+The `ERC1967Proxy` constructor is `payable`. While `ERC1967Utils.upgradeToAndCall` includes a check (`_checkNonPayable()`) to revert if `msg.value > 0` when `data` is empty, if `data` is provided and `msg.value > 0`, the funds are delegated to the implementation. If the implementation's constructor or initialization function does not explicitly handle or consume `msg.value`, these funds could become permanently stuck in the proxy contract.
 
-**Recommendation:** Developers should be aware of this behavior and ensure that if `msg.value` is intended to be sent during an upgrade, it must be accompanied by non-empty `data` for an initialization call. Otherwise, the transaction will revert, preventing unintended Ether transfers.
+**Recommendation:** Ensure that any initialization logic called via `data` in the constructor of the implementation contract explicitly handles or consumes any `msg.value` sent. Alternatively, avoid sending `msg.value` to the proxy constructor unless it is explicitly required and consumed by the implementation's initialization.
+
+
+### `I-01` — Use of Standard OpenZeppelin UUPS Proxy  *(Severity: Informational · Status: Resolved)*
+
+The contract utilizes the ERC1967Proxy from OpenZeppelin, implementing the UUPS (Universal Upgradeable Proxy Standard) pattern. This is a widely adopted and well-audited proxy standard, providing a secure and flexible mechanism for contract upgradeability while maintaining a consistent address.
+
+**Recommendation:** No specific recommendation, as this is a best practice. Continue to leverage well-vetted libraries like OpenZeppelin for core infrastructure components.
+
+
+### `I-02` — Solidity Compiler Version Compatibility  *(Severity: Informational · Status: Unresolved)*
+
+The provided source code uses `pragma solidity ^0.8.22;` while the prefill data indicates a compiler version of `0.8.30`. This is compatible as `^0.8.22` allows compilation with any version from `0.8.22` up to (but not including) `0.9.0`. Using a specific, fixed compiler version (e.g., `pragma solidity 0.8.30;`) can help ensure deterministic bytecode generation and avoid potential issues with future compiler versions.
+
+**Recommendation:** Consider pinning the Solidity compiler version to the exact version used for deployment (e.g., `pragma solidity 0.8.30;`) to ensure consistent compilation results across different environments and prevent unexpected behavior from future compiler updates.
 
 ## Token Metrics
 

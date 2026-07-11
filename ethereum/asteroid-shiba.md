@@ -2,14 +2,14 @@
 token: Asteroid Shiba
 ticker: ASTEROID
 network: ethereum
-risk_score: 59
-status: high
+risk_score: 18
+status: low
 date: 2026-06-19
 ---
 
 # Asteroid Shiba (ASTEROID) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 18/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/asteroid-shiba-eth)
 
@@ -17,17 +17,17 @@ date: 2026-06-19
 
 ## Audit Summary
 
-The Asteroid Shiba (AS) token contract exhibits critical vulnerabilities, including truncated code that prevents compilation, severe logic flaws in its tax and anti-bot mechanisms, and highly centralized control. The contract's core transfer logic is fundamentally broken, leading to incorrect tax application and a permanent halt of selling. These issues pose an extreme risk to users and the protocol's integrity. The provided source code is incomplete and contains critical syntax errors.
+The Asteroid Shiba (AS) token contract is an ERC-20 token with significant owner privileges, including the ability to modify tax rates, transaction limits, and wallet size limits. This high degree of centralization introduces critical risks, including the potential for a honeypot scenario where the owner could prevent users from selling or impose prohibitive taxes. While the contract implements anti-bot and anti-whale measures, these can be bypassed by the owner. The use of SafeMath is redundant in Solidity 0.8.25, and a lack of event emissions for critical state changes reduces transparency.
 
-> **Final Recommendation:** The Asteroid Shiba contract, as provided, is critically flawed and should not be deployed or used in its current state. The truncated code and severe logic errors make it non-functional and highly vulnerable to abuse. A complete rewrite and re-architecture are necessary, followed by a comprehensive audit. All critical and high-severity findings must be addressed before any deployment. For future projects, consider a Premium Deploy option, which includes a full audit, formal verification, and ongoing monitoring to ensure robust security from inception.
+> **Final Recommendation:** Given the critical centralization risks and potential for a honeypot, users should exercise extreme caution. It is strongly recommended to decentralize control over critical parameters by implementing a multi-signature wallet or a time-locked governance mechanism for sensitive functions. All critical state changes should emit events to ensure transparency and allow for off-chain monitoring. Consider removing the redundant SafeMath library to optimize gas usage. Thoroughly review and test all anti-bot and anti-whale mechanisms to ensure they function as intended and cannot be easily bypassed, especially by the owner.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 1/10 | High | The contract's architecture (7.1) is a standard ERC-20 with added tax and anti-bot features. However, the code security (7.2) is critically flawed due to truncated code in the `_transfer` function… |
-| **Governance / Economics** | 4/10 | Medium | The economic model (7.4) is highly susceptible to owner manipulation. The owner has complete control over all tax percentages, transaction limits, wallet size limits, and the ability to… |
-| **Upgrades** | 6/10 | Medium | The contract is not designed with an upgrade mechanism (7.7), meaning its code is immutable once deployed. This eliminates upgrade-related risks but also prevents fixing any discovered… |
+| **Technical** | 5/10 | Medium | The contract's technical architecture (7.1) is a standard ERC-20 implementation with added tax and anti-bot/anti-whale mechanisms. Code security (7.2) benefits from Solidity 0.8.25's built-in… |
+| **Governance / Economics** | 7/10 | Low | The economic model (7.4) is highly centralized, granting the owner extensive control over all critical parameters, including buy/sell taxes, transaction limits, wallet size limits, and the ability to… |
+| **Upgrades** | 8/10 | Low | The contract is not designed to be upgradeable (7.7). There are no proxy patterns or upgrade interfaces implemented, meaning the contract's logic is immutable once deployed. This eliminates… |
 
 ## LP Distribution
 
@@ -38,62 +38,62 @@ The Asteroid Shiba (AS) token contract exhibits critical vulnerabilities, includ
 
 ## Security Findings
 
-_🔴 4 Critical · 🟠 2 High · 🟡 1 Medium · 🟢 1 Low_
+_🔴 2 Critical · 🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
-### `C-01` — Truncated Code in `_transfer` Function  *(Severity: Critical · Status: Unresolved)*
+### `C-01` — Extreme Centralization and Owner Privileges  *(Severity: Critical · Status: Unresolved)*
 
-The provided source code for the `_transfer` function is incomplete. Specifically, a conditional block checking `_maxWalletSize` is truncated (`require(balanceOf(to) + amoun...`). This syntax error prevents the contract from compiling successfully and indicates a fundamental flaw in the provided code, making it undeployable or critically broken if deployed with an incomplete version.
+The contract owner possesses extensive control over nearly all critical parameters, including tax rates (_initialBuyTax, _initialSellTax, _finalBuyTax, _finalSellTax), transaction limits (_maxTxAmount), wallet size limits (_maxWalletSize), swap thresholds (_taxSwapThreshold, _maxTaxSwap), anti-bot measures (sellsPerBlock, buysFirstBlock), and the ability to enable/disable trading (tradingOpen, swapEnabled). The owner can also whitelist addresses via the `isExile` mapping to bypass all restrictions. This level of centralization allows the owner to unilaterally alter the token's economic model and operational behavior, posing a severe risk to token holders.
 
-**Recommendation:** Complete the `_transfer` function's logic, ensuring all statements are syntactically correct and fully implemented. Thoroughly review the entire codebase for any other incomplete or malformed sections.
-
-
-### `C-02` — Incorrect Tax Application Logic  *(Severity: Critical · Status: Unresolved)*
-
-The `_transfer` function applies tax based solely on `_buyCount` and the `_initialBuyTax`/`_finalBuyTax` variables for *all* transfers, regardless of whether the transaction is a buy (from LP to user) or a sell (from user to LP). The `_initialSellTax`, `_finalSellTax`, and `_reduceSellTaxAt` variables are defined but never utilized in the tax calculation. This results in an incorrect and inconsistent tax model where sell transactions are taxed as buys, and sell tax reduction logic is ignored.
-
-**Recommendation:** Implement distinct tax calculation logic for buy and sell transactions. Differentiate between transfers originating from the Uniswap pair (buys) and transfers to the Uniswap pair (sells), applying the respective buy or sell tax rates and reduction thresholds.
+**Recommendation:** Decentralize control over critical parameters. Implement a multi-signature wallet for sensitive operations or introduce a time-locked governance mechanism for changes to tax rates, limits, and trading status. Remove the `isExile` mapping or restrict its use to only essential protocol addresses, not arbitrary user addresses.
 
 
-### `C-03` — Flawed Global Sell Count Mechanism  *(Severity: Critical · Status: Unresolved)*
+### `C-02` — Honeypot Potential  *(Severity: Critical · Status: Unresolved)*
 
-The `sellCount` variable is a global counter that increments with each sell transaction and is checked against `sellsPerBlock`. This counter is never reset per block or over time. Consequently, once the total number of sell transactions reaches `sellsPerBlock` (e.g., 3 sells), no further sell transactions will ever be possible, permanently halting all selling activity for the token. This renders the token illiquid and unusable.
+Due to the extreme centralization (C-01), the contract has significant honeypot potential. The owner can, at any time, set the sell tax to 100%, set the maximum transaction amount for sells to zero, or set the maximum wallet size to a value that prevents existing holders from selling. This would effectively trap user funds within the contract, making them unsellable and leading to total loss for investors.
 
-**Recommendation:** Implement a block-based sell counter similar to `perBuyCount`. Use a mapping `mapping(uint256 => uint256) private perSellCount;` to track sells per block and reset the count for each new block, ensuring `sellsPerBlock` applies to a rolling window or per block, not globally.
-
-
-### `C-04` — Liquidity Pool Address Exiled by Default  *(Severity: Critical · Status: Unresolved)*
-
-The constructor explicitly sets `isExile[address(uniswapV2Pair)] = true;`. The `isExile` mapping is used in the `_transfer` function to bypass `_maxTxAmount` and `_maxWalletSize` checks for `to` addresses. Depending on the full (untruncated) logic, exiling the liquidity pool address could prevent the contract from sending tokens to the LP for liquidity provision or tax collection, or could lead to unexpected behavior in the token's interaction with the DEX.
-
-**Recommendation:** Review the intended purpose of the `isExile` mapping and its interaction with the Uniswap pair. If the LP is intended to receive tokens for liquidity or tax swaps, it should not be exiled. Adjust the `isExile` initialization or the logic that checks `isExile` to ensure proper functionality of the liquidity pool.
+**Recommendation:** Implement immutable tax rates and transaction limits, or subject any changes to a decentralized governance process with a time-lock. Ensure that minimum sell transaction amounts and maximum wallet sizes cannot be set to values that would prevent legitimate users from selling their tokens.
 
 
-### `H-01` — Excessive Centralized Control by Owner  *(Severity: High · Status: Unresolved)*
+### `H-01` — Anti-Bot/Anti-Whale Mechanisms Bypass  *(Severity: High · Status: Unresolved)*
 
-The contract owner possesses extensive control over critical parameters and functions, including the ability to modify all tax percentages, transaction limits (`_maxTxAmount`), wallet size limits (`_maxWalletSize`), swap thresholds, anti-bot parameters (`sellsPerBlock`, `buysFirstBlock`), and the `_taxWallet` address. The owner can also arbitrarily blacklist/whitelist addresses using `setIsExile` and `removeLimits`. This level of centralization allows the owner to effectively halt trading, set taxes to 100% (draining funds), or redirect all collected taxes to an arbitrary address, posing a significant rug pull risk or potential for malicious manipulation.
+The contract implements anti-bot (e.g., `sellsPerBlock`, `buysFirstBlock`) and anti-whale (`_maxTxAmount`, `_maxWalletSize`) mechanisms. However, the `isExile` mapping, controlled by the owner, allows any address to bypass these restrictions. This means the owner can whitelist their own addresses or those of favored parties, rendering the anti-bot/anti-whale measures ineffective for those addresses and creating an unfair advantage or potential for manipulation.
 
-**Recommendation:** Consider decentralizing control where appropriate. Implement multi-signature wallets for critical operations, introduce time-locks for parameter changes, or establish a community governance mechanism. Clearly document the owner's capabilities and the associated risks. Limit the ability to set taxes to extreme values or to halt trading without a clear, time-locked process.
-
-
-### `H-02` — Misleading `swapAndLiquify` Function Name  *(Severity: High · Status: Unresolved)*
-
-The function named `swapAndLiquify` only performs a token swap for ETH and then sends the acquired ETH to the `_taxWallet`. It does not execute any logic to add liquidity to the Uniswap pair. This misleading name can create a false impression of the contract's liquidity management strategy, potentially leading to a misunderstanding of the token's economic model and liquidity health.
-
-**Recommendation:** Rename the function to accurately reflect its functionality, e.g., `swapAndSendTaxToWallet` or `swapForEthAndDistribute`. If the intention was to add liquidity, implement the `addLiquidityETH` call to the Uniswap router within this function.
+**Recommendation:** Re-evaluate the necessity and scope of the `isExile` mapping. If critical for protocol operations, restrict its use to only contract-internal addresses (e.g., router, treasury) and remove the owner's ability to add arbitrary user addresses. Ensure all users are subject to the same rules.
 
 
-### `M-01` — Inconsistent and Misnamed Variables  *(Severity: Medium · Status: Unresolved)*
+### `M-01` — Lack of Event Emission for Critical State Changes  *(Severity: Medium · Status: Unresolved)*
 
-Several variables exhibit inconsistent naming or usage: 1) `_preventSwapBefore` is used as a `_buyCount` threshold, not a block number as its name implies. 2) `_buyCount` is used as the threshold for reducing both buy and sell taxes (`_reduceBuyTaxAt`, `_reduceSellTaxAt`), which is inconsistent with distinct buy/sell tax logic. 3) `perBuyCount` is used for block-based buy limits, but `sellCount` is a global counter, not a `perSellCount[block.number]`, indicating inconsistent design for anti-bot measures.
+Many critical owner-controlled parameters, such as `_maxTxAmount`, `_maxWalletSize`, various tax rates, `swapEnabled`, `tradingOpen`, `sellsPerBlock`, `buysFirstBlock`, and `isExile` status, can be modified without emitting corresponding events. This lack of transparency makes it difficult for users and off-chain monitoring tools to track changes to the contract's behavior and economic model, increasing trust requirements.
 
-**Recommendation:** Refactor variable names to accurately reflect their purpose (e.g., `_buyCountThresholdForSwapPrevention`). Ensure consistent logic for buy and sell tax reductions, potentially using separate counters or conditions. Standardize anti-bot mechanisms, either using block-based counters for both buys and sells or a global counter with appropriate reset logic.
+**Recommendation:** Emit explicit events for every function that modifies a critical state variable. For example, `MaxTxAmountUpdated(uint256 newAmount)`, `TaxRatesUpdated(uint256 newBuyTax, uint256 newSellTax)`, `SwapEnabledToggled(bool status)`, `ExileStatusUpdated(address indexed account, bool isExiled)`. This improves transparency and auditability.
 
 
-### `L-01` — Redundant SafeMath Usage  *(Severity: Low · Status: Unresolved)*
+### `M-02` — Potential for Stuck ETH in Swap Mechanism  *(Severity: Medium · Status: Unresolved)*
 
-The contract explicitly uses the `SafeMath` library for arithmetic operations. While this is a good security practice in older Solidity versions (prior to 0.8.0), Solidity 0.8.x and later versions include built-in overflow and underflow checks by default. Explicit `SafeMath` usage in Solidity 0.8.25 is redundant and adds unnecessary gas overhead without providing additional security benefits.
+The `swapAndLiquify` function transfers ETH to the `_taxWallet` after swapping tokens. If the `_taxWallet` address is a contract that does not have a `receive()` or `fallback()` function capable of accepting ETH, or if it reverts during the transfer, the entire swap operation could fail. This could lead to a denial of service for the automatic liquidity/tax collection mechanism, potentially accumulating tokens in the contract without being able to process them.
 
-**Recommendation:** Remove the `SafeMath` library and its `using SafeMath for uint256;` directive. Rely on Solidity's native overflow/underflow protection for `uint256` operations. This will reduce gas costs and simplify the codebase.
+**Recommendation:** Implement robust error handling for external ETH transfers. Consider adding a mechanism for the owner to recover stuck ETH from the contract if the `_taxWallet` becomes problematic. Ensure the `_taxWallet` is a reliable address or a contract designed to accept ETH.
+
+
+### `L-01` — Unchecked Return Values for External Calls  *(Severity: Low · Status: Unresolved)*
+
+The contract makes external calls to `IUniswapV2Factory.createPair` and `IUniswapV2Router02.swapExactTokensForETHSupportingFeeOnTransferTokens` without explicitly checking their boolean return values. While Uniswap functions typically revert on failure, explicitly checking return values is a best practice to ensure expected behavior and prevent unexpected state. The `_approve` function is internal, but its usage in `transferFrom` relies on `SafeMath` for allowance checks.
+
+**Recommendation:** Explicitly check the return values of external calls where applicable, especially for functions that return a boolean indicating success or failure. Although Uniswap functions often revert, defensive programming suggests checking for unexpected behavior.
+
+
+### `I-01` — Redundant SafeMath Library  *(Severity: Informational · Status: Unresolved)*
+
+The contract uses the `SafeMath` library for arithmetic operations. However, the contract is compiled with Solidity 0.8.25, which includes built-in overflow and underflow checks by default. The use of `SafeMath` in this context is redundant and adds unnecessary gas overhead for each arithmetic operation.
+
+**Recommendation:** Remove the `SafeMath` library and directly use native arithmetic operators. Solidity 0.8.0 and later versions automatically handle overflow/underflow, making `SafeMath` obsolete for basic arithmetic.
+
+
+### `I-02` — Hardcoded Uniswap Router Address  *(Severity: Informational · Status: Unresolved)*
+
+The Uniswap V2 Router address (0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D) is hardcoded in the constructor. While this is common for mainnet deployments, it reduces flexibility. If the Uniswap router address changes in the future or if the contract were to be deployed on a different network with a different router address, the contract would need to be redeployed.
+
+**Recommendation:** Consider making the Uniswap router address configurable by the owner through a setter function, or pass it as a constructor argument. This would allow for greater flexibility and adaptability to future changes or multi-chain deployments.
 
 ## Token Metrics
 

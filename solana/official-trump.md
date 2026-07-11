@@ -2,14 +2,14 @@
 token: Official Trump
 ticker: TRUMP
 network: solana
-risk_score: 49
-status: high
+risk_score: 39
+status: medium
 date: 2026-06-13
 ---
 
 # Official Trump (TRUMP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/official-trump-sol)
 
@@ -17,29 +17,17 @@ date: 2026-06-13
 
 ## Audit Summary
 
-The OFFICIAL TRUMP (TRUMP) SPL token mint has its mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts by the issuer. However, new holder accounts are created in a frozen state, requiring an authority to unfreeze them before use. Holder concentration data was unavailable from RPC, but RugCheck.xyz flags high ownership by top holders, indicating potential centralization risks.
+This SPL token mint exhibits strong security posture with both mint and freeze authorities permanently revoked, preventing further token issuance or account freezing. While DEX liquidity is high and trading patterns appear normal, chain-native holder distribution data was unavailable, and a third-party risk registry indicates high holder concentration.
 
-> **Final Recommendation:** Prospective holders should be aware that new token accounts for OFFICIAL TRUMP (TRUMP) are created in a frozen state, necessitating an unfreeze operation by an authority before tokens can be transferred. It is crucial to confirm the availability and responsiveness of the entity responsible for unfreezing accounts. While direct holder concentration data was unavailable, external signals from RugCheck.xyz suggest high ownership by top holders, which could pose a risk of price volatility from large sell-offs.
-
-For enhanced security and functionality, consider a Premium Deploy option for future SPL tokens. This service ensures all critical authorities (mint, freeze) are irrevocably revoked at launch, and provides comprehensive configuration to avoid default frozen states, ensuring tokens are immediately usable upon receipt.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to ensure the fixed supply and unfreezable nature of the token. Although direct holder distribution data was not available from chain-native RPC, it is advisable to monitor for any future availability of this data to assess potential centralization risks highlighted by third-party signals.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The OFFICIAL TRUMP (TRUMP) token is an SPL token operating on the Solana blockchain, utilizing the `spl-token` program. The mint authority has been revoked, ensuring no new tokens can be minted, and… |
-| **Governance / Economics** | 2/10 | High | The token exhibits substantial liquidity with $37,319,778 USD on DEXs and a healthy 24-hour volume of $10,058,326 USD, indicating active trading. The Volume/Liquidity Ratio is 0.27, which is… |
-| **Upgrades** | 8/10 | Low | The mint authority for the token has been revoked, meaning the total supply is fixed and cannot be increased by the original issuer. Similarly, the freeze authority has been revoked, preventing the… |
-
-## Security Findings
-
-_🟠 1 High_
-
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
-
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority. (Fact: GoPlus.default_account_state: 1)
-
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+| **Technical** | 6/10 | Medium | The token is implemented using the classic SPL Token Program (spl-token), not the newer Token-2022 standard. Both the Mint Authority and Freeze Authority have been revoked (None), indicating that no… |
+| **Governance / Economics** | 3/10 | High | DEX liquidity for the token is robust at $28,228,829, with a healthy 24-hour volume of $375,738 and a low Volume/Liquidity Ratio of 0.01, suggesting organic trading activity. The DEX pair has been… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are permanently revoked (None), preventing any future changes to the token supply or the ability to freeze accounts. The metadata… |
 
 ## Token Metrics
 

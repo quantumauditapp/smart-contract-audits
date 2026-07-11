@@ -17,17 +17,17 @@ date: 2026-06-14
 
 ## Audit Summary
 
-This SPL Token Mint, Kiyomasa (清正), demonstrates a robust security posture with both mint and freeze authorities revoked, and immutable metadata. No high-risk Token-2022 extensions like transfer hooks or permanent delegates are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+The Kiyomasa SPL Token Mint is configured with no active mint or freeze authorities, indicating a fixed supply and immutable account states. No high-risk flags were reported by third-party registries, and the token does not utilize potentially risky Token-2022 extensions like transfer hooks or default frozen accounts. Holder distribution data was unavailable, preventing a full assessment of supply concentration.
 
-> **Final Recommendation:** Based on the available on-chain data, the Kiyomasa (清正) token appears to be well-configured from a security perspective, with critical authorities revoked and no active high-risk Token-2022 extensions. Holders should be aware that holder concentration data was not available, so a full assessment of potential market manipulation from large holders cannot be made. For a comprehensive understanding, monitor on-chain holder distribution if data becomes available.
+> **Final Recommendation:** Holders should monitor on-chain for any changes to the token's configuration, although current settings indicate immutability. Verify the token's liquidity and trading volume on DEXs before making significant trades, especially given the lack of holder distribution data. Confirm that the mint and freeze authorities remain revoked to ensure the token's fixed supply and unfreezable nature.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token (7.1 Architecture) is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked (7.3 Access Control), indicating that no single entity can mint new tokens or… |
-| **Governance / Economics** | 7/10 | Low | The token has a liquidity of $18,245 USD (7.4 Economic), which is moderate. The 24-hour volume is $8,361, resulting in a healthy Volume/Liquidity Ratio of 0.46, not indicating wash trading. The DEX… |
-| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked (7.7 Upgrades), meaning the token's core parameters (supply, freeze capability) cannot be altered. The token's metadata is immutable… |
+| **Technical** | 6/10 | Medium | The Kiyomasa token operates on the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring no new tokens can be minted and no accounts can be frozen. The token does… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits moderate liquidity at $18,423 USD, with a 24-hour volume of $5,481 USD. The pair has been active for 111 days, providing a reasonable track record. The Volume/Liquidity Ratio is… |
+| **Upgrades** | 8/10 | Low | The token's configuration is highly immutable, as both the mint and freeze authorities have been revoked. No Token-2022 extensions that would allow for future modifications, such as transfer hook… |
 
 ## Token Metrics
 

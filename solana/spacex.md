@@ -2,14 +2,14 @@
 token: SpaceX
 ticker: SPCX
 network: solana
-risk_score: 31
+risk_score: 21
 status: medium
 date: 2026-06-10
 ---
 
 # SpaceX (SPCX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 31/100 — 🟡 Medium Risk**
+> **Risk Score: 21/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spacex-sol)
 
@@ -17,27 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This SPL token mint audit for SpaceX (SPCX) identified a High risk due to the default frozen state for new accounts, requiring explicit unfreezing by an authority. Mint and freeze authorities are revoked, indicating a fixed supply and unalterable freeze status for existing accounts. Holder concentration data was unavailable, preventing an assessment of supply distribution risk.
+The SpaceX (SPCX) token mint exhibits a secure configuration with both mint and freeze authorities revoked, ensuring a fixed supply and immutable account states. Liquidity is moderate at $46,531, and trading patterns appear normal. Holder distribution data was unavailable from chain-native RPC, preventing an assessment of concentration risk. No critical or high-severity findings were identified based on the provided on-chain facts and deterministic rules.
 
-> **Final Recommendation:** Prospective holders should be aware of the 'Default Frozen State' for new accounts. Before acquiring this token, verify that an active and responsive issuer or authority is available to unfreeze new accounts, as otherwise, acquired tokens may be unspendable. Due to the unavailability of holder concentration data, it is advisable to monitor on-chain distribution if this information becomes available.
+> **Final Recommendation:** Given the revoked mint and freeze authorities, the token's supply is fixed and accounts cannot be frozen. Holders should monitor for any future changes in liquidity or trading volume that could impact price stability. Verify on-chain that the mint and freeze authorities remain null if any doubt arises.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | 7.1 Architecture & 7.2 Code Security: The token is an SPL token mint on Solana, utilizing the standard `spl-token` program. Mint and Freeze authorities are both revoked (None), ensuring no new tokens… |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic: The token exhibits healthy liquidity with $239,314 USD available on DEXs, and a normal 24-hour volume to liquidity ratio of 2.98, suggesting organic trading activity. The DEX pair has… |
-| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, meaning the token's supply is fixed and the ability to freeze accounts has been permanently disabled. GoPlus data indicates… |
-
-## Security Findings
-
-_🟠 1 High_
-
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
-
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority. This is indicated by `GoPlus.default_account_state: 1`.
-
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+| **Technical** | 6/10 | Medium | The token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority are permanently revoked (None), ensuring no new tokens can be minted and no existing… |
+| **Governance / Economics** | 7/10 | Low | The token has a moderate liquidity of $46,531 USD, with a 24-hour volume of $9,180 USD, resulting in a normal Volume/Liquidity Ratio of 0.20. The DEX pair has been active for 100 days, indicating a… |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are both revoked, meaning no further changes can be made to the token's supply or account freeze status. The metadata is also immutable (`metadata_mutable… |
 
 ## Token Metrics
 

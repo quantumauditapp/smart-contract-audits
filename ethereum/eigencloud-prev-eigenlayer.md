@@ -2,14 +2,14 @@
 token: EigenCloud (prev. EigenLayer)
 ticker: EIGEN
 network: ethereum
-risk_score: 49
+risk_score: 67
 status: high
 date: 2026-06-20
 ---
 
 # EigenCloud (prev. EigenLayer) (EIGEN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 67/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/eigencloud-prev-eigenlayer-eth)
 
@@ -17,17 +17,18 @@ date: 2026-06-20
 
 ## Audit Summary
 
-The audit of the TransparentUpgradeableProxy contract reveals a robust and well-established proxy pattern from OpenZeppelin. The primary risk identified is the centralized control over upgrades by the admin address, which requires careful management to prevent single points of failure.
+This report details the security audit of a TransparentUpgradeableProxy contract. The proxy utilizes the OpenZeppelin Transparent Proxy pattern, managed by a ProxyAdmin contract which is controlled by a 1-of-2 Gnosis Safe multisig. A critical finding is that the implementation contract (0x2c4a81e257381f87f5a5c4bd525116466d972e50) is not source code verified, posing a significant risk as its actual logic and potential vulnerabilities are unknown.
 
-> **Final Recommendation:** The `TransparentUpgradeableProxy` contract provides a solid foundation for an upgradeable system, leveraging OpenZeppelin's audited codebase. The paramount recommendation is to implement robust security measures for the `admin` address, ideally utilizing a multi-signature wallet or a DAO-governed `ProxyAdmin` contract to mitigate the inherent centralization risk. A comprehensive audit of the implementation contract(s) that this proxy will point to is also essential, as the proxy's security is only as strong as its implementation. For enhanced security and operational resilience, consider a Premium Deploy option that includes continuous monitoring and incident response planning for both the proxy and its implementation.
+> **Final Recommendation:** It is critically important to verify the source code of the current implementation contract to ensure transparency and allow for proper security assessment. Without this, the system's integrity remains unconfirmed. For future upgrades, ensure all implementation contracts are thoroughly audited and their source code is publicly verified on-chain.
+Consider strengthening the administrative controls for upgrades by increasing the multisig threshold (e.g., 2-of-3 or higher) or implementing a timelock for critical operations to provide a delay for review and potential intervention.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract leverages OpenZeppelin's battle-tested `TransparentUpgradeableProxy` implementation, ensuring a robust and secure proxy architecture (7.1 Architecture). The code adheres to high security… |
-| **Governance / Economics** | 3/10 | High | The governance model is highly centralized, with a single `admin` address possessing full control over contract upgrades and admin changes (7.5 Governance). This introduces a significant single point… |
-| **Upgrades** | 3/10 | High | The contract is designed for upgradeability using the transparent proxy pattern, which is a well-understood and secure mechanism (7.7 Upgrades). This allows for future enhancements and bug fixes… |
+| **Technical** | 3/10 | High | The contract implements the well-audited OpenZeppelin TransparentUpgradeableProxy pattern (7.1 Architecture). This design separates proxy logic from implementation logic, preventing selector clashes.… |
+| **Governance / Economics** | 2/10 | High | The proxy's administrative functions (e.g., `upgradeTo`, `changeAdmin`) are controlled by a ProxyAdmin contract, which is in turn owned by a 1-of-2 Gnosis Safe multisig (7.3 Access Control, 7.5… |
+| **Upgrades** | 2/10 | High | The contract uses the Transparent Proxy pattern, allowing for upgrades via `upgradeTo` and `upgradeToAndCall` functions, which are restricted to the admin (7.7 Upgrades). This standard and… |
 
 ## Proxy Upgrade Controls
 
@@ -47,34 +48,34 @@ The audit of the TransparentUpgradeableProxy contract reveals a robust and well-
 
 ## Security Findings
 
-_🟠 1 High · ⚪ 3 Informational_
+_🔴 1 Critical · 🟠 1 High · ⚪ 2 Informational_
 
-### `H-01` — Centralized Control of Upgrade Mechanism  *(Severity: High · Status: Unresolved)*
+### `C-01` — Unverified Implementation Contract  *(Severity: Critical · Status: Unresolved)*
 
-The `TransparentUpgradeableProxy` contract grants the `admin` address sole authority to upgrade the underlying implementation contract and to change the admin itself. This centralization introduces a single point of failure. If the `admin` key is compromised, a malicious actor could upgrade the contract to a harmful implementation, potentially leading to loss of funds or control over the protocol. The security of the entire system heavily relies on the security of this `admin` address.
+The contract at 0xec53bf9167f50cdeb3ae105f56099aaab9061f83 is a TransparentUpgradeableProxy pointing to an implementation contract at 0x2c4a81e257381f87f5a5c4bd525116466d972e50. The source code for this implementation contract is not verified on Etherscan or similar block explorers. This means the actual logic being executed when users interact with the proxy is unknown and cannot be publicly audited or verified. This poses an extreme risk, as the implementation could contain malicious code, critical vulnerabilities, or unexpected behavior. (7.2 Code Security, 7.6 External)
 
-**Recommendation:** It is strongly recommended to secure the `admin` role with a robust multi-signature wallet (e.g., Gnosis Safe) or a dedicated `ProxyAdmin` contract governed by a DAO or a multi-signature setup. This distributes control and significantly reduces the risk associated with a single compromised key.
-
-
-### `I-01` — Reliance on OpenZeppelin Standard Library  *(Severity: Informational · Status: Unresolved)*
-
-The contract utilizes the `TransparentUpgradeableProxy` pattern from OpenZeppelin Contracts. This is a widely adopted, battle-tested, and community-audited library, which generally enhances the security and reliability of the proxy mechanism.
-
-**Recommendation:** Ensure that the OpenZeppelin library version used is up-to-date and that no modifications have been made to the core library code. Regularly monitor OpenZeppelin security advisories.
+**Recommendation:** Immediately verify the source code of the implementation contract (0x2c4a81e257381f87f5a5c4bd525116466d972e50) on the blockchain explorer. Without this, the security and integrity of the entire system are compromised. All future implementation contracts should also be fully verified.
 
 
-### `I-02` — Transparent Proxy Admin Interaction Behavior  *(Severity: Informational · Status: Unresolved)*
+### `H-01` — Low Multisig Threshold for Upgrade Control  *(Severity: High · Status: Unresolved)*
 
-The Transparent Proxy pattern dictates that if the `admin` address calls the proxy, the call is directed to the proxy's internal admin functions (e.g., `upgradeTo`, `changeAdmin`), and *not* forwarded to the implementation. Conversely, if any other address calls the proxy, the call is always forwarded to the implementation. This design prevents selector clashes but means the admin cannot directly interact with the implementation through the proxy.
+The administrative control over the proxy, including the ability to upgrade the implementation or change the admin, is managed by a ProxyAdmin contract owned by a 1-of-2 Gnosis Safe multisig. While a multisig is generally a good security practice, a 1-of-2 threshold means that compromise of a single private key among the two owners is sufficient to gain full control over the proxy's upgradeability and administrative functions. This presents a significant centralization risk and a single point of failure for critical operations. (7.3 Access Control, 7.5 Governance)
 
-**Recommendation:** Developers and integrators should be fully aware of this specific interaction behavior to avoid unexpected errors when the admin attempts to call implementation functions directly through the proxy. Admin actions should be limited to proxy management.
+**Recommendation:** Consider increasing the multisig threshold to at least 2-of-3 or higher, depending on the number of trusted signers available. This would require a compromise of multiple keys to execute unauthorized actions, significantly enhancing security. Additionally, evaluate the possibility of adding a timelock to upgrade operations to provide a delay for community review and potential emergency intervention.
 
 
-### `I-03` — No Direct Economic Logic in Proxy  *(Severity: Informational · Status: Unresolved)*
+### `I-01` — Standard OpenZeppelin TransparentUpgradeableProxy Usage  *(Severity: Informational · Status: Unresolved)*
 
-The `TransparentUpgradeableProxy` contract itself is a minimal forwarding contract and does not contain any complex business logic or direct economic mechanisms (e.g., token transfers, staking, lending). Its primary function is to delegate calls to an implementation contract.
+The contract utilizes the TransparentUpgradeableProxy from OpenZeppelin Contracts. This is a widely adopted, well-audited, and robust proxy pattern (EIP-1967) that effectively prevents selector clashes between the proxy and its implementation. The use of standard, battle-tested libraries reduces the likelihood of novel vulnerabilities in the proxy's core logic. (7.1 Architecture, 7.2 Code Security)
 
-**Recommendation:** While the proxy itself has minimal direct economic risk, the security of the overall system's economic model is entirely dependent on the security and correctness of the underlying implementation contract(s) that the proxy points to. A thorough audit of the implementation contract(s) is crucial.
+**Recommendation:** Continue to rely on well-vetted and audited libraries like OpenZeppelin for core infrastructure components. Ensure that any custom logic built on top of these components is thoroughly tested and audited.
+
+
+### `I-02` — Admin Function `_requireZeroValue()` Check  *(Severity: Informational · Status: Unresolved)*
+
+The `_requireZeroValue()` function is used internally by admin-only functions (`_dispatchAdmin`, `_dispatchImplementation`, `_dispatchChangeAdmin`, `_dispatchUpgradeTo`, `_dispatchUpgradeToAndCall`) to ensure that no Ether is sent along with these calls. This is a good practice to prevent accidental loss of funds or unexpected behavior, as these administrative functions are not intended to receive value. (7.2 Code Security)
+
+**Recommendation:** Maintain this practice for administrative functions that do not require Ether transfers.
 
 ## Token Metrics
 

@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The America Is Back (AMERICA) token mint on Solana exhibits a robust security configuration with both mint and freeze authorities revoked. No Token-2022 extensions that introduce centralisation risks, such as transfer hooks or permanent delegates, are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+The America Is Back (AMERICA) SPL Token Mint has revoked its Mint and Freeze authorities, indicating a fixed supply and no ability to freeze holder accounts. The token operates under the Token-2022 program with no active transfer hooks or default frozen account states. Holder distribution data was unavailable from chain-native RPC, which prevents a full assessment of supply concentration.
 
-> **Final Recommendation:** The America Is Back (AMERICA) token presents a strong technical security posture with critical authorities revoked and no centralizing Token-2022 extensions active. However, the absence of holder concentration data means that potential risks from concentrated supply cannot be assessed. Users should be aware of this information gap and consider the implications for price stability. For a comprehensive risk assessment, obtaining holder distribution data is crucial. A Premium Deploy option is not applicable as this is an existing SPL token mint.
+> **Final Recommendation:** Holders should verify on-chain that the mint authority and freeze authority remain null/revoked before considering the token's supply fixed and accounts unfreezable. Monitor the token's liquidity and trading volume for any significant changes, especially given the unavailability of holder distribution data. While current configurations are robust, continuous monitoring of market dynamics is prudent.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.3 Access Control: The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be… |
-| **Governance / Economics** | 7/10 | Low | 7.4 Economic: The token has a liquidity of $104,250 USD and a 24-hour volume of $111,215, indicating moderate trading activity. The volume/liquidity ratio of 1.07 is normal, suggesting organic… |
-| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The token's mint and freeze authorities are revoked, meaning its core parameters cannot be altered post-launch. GoPlus data confirms that metadata is not mutable, ensuring the token's… |
+| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens can be minted and no holder accounts can be frozen.… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits moderate liquidity at $32,931 USD, with a 24-hour trading volume of $1,859 USD. The Volume/Liquidity Ratio is 0.06, indicating normal trading patterns without signs of wash… |
+| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked, meaning the token's core parameters cannot be altered by an administrative key. Metadata is immutable, preventing changes to the token's… |
 
 ## Token Metrics
 

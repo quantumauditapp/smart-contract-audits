@@ -17,19 +17,17 @@ date: 2026-06-11
 
 ## Audit Summary
 
-This audit report covers the SpaceIDToken contract. Due to the provided source code being heavily truncated, a comprehensive security analysis of the custom SpaceIDToken logic was not possible. The audit primarily relies on the visible OpenZeppelin AccessControl contract and general assumptions about ERC-20 token implementations. The identified risks are based on these assumptions and the inherent characteristics of role-based access control.
+This audit focused solely on the OpenZeppelin `AccessControl.sol` library contract, which is a dependency for the `SpaceIDToken` contract. No custom logic for `SpaceIDToken` was provided for review, thus a comprehensive security assessment of the entire protocol cannot be performed. The `AccessControl` library itself is well-tested and widely used.
 
-> **Final Recommendation:** The SpaceIDToken contract, based on the visible OpenZeppelin AccessControl component, appears to leverage robust access control mechanisms. However, the inability to review the full SpaceIDToken source code significantly limits the scope and depth of this audit. It is strongly recommended to conduct a full audit once the complete and final source code for the SpaceIDToken contract is available to ensure all custom logic is thoroughly vetted for vulnerabilities.
-
-For future deployments, consider a Premium Deploy option that includes a comprehensive pre-deployment audit, real-time monitoring, and incident response planning to mitigate risks effectively.
+> **Final Recommendation:** Ensure that the `DEFAULT_ADMIN_ROLE` and other critical roles in the `SpaceIDToken` contract are secured with multi-signature wallets and, ideally, time-locks for sensitive operations. Implement the principle of least privilege when assigning roles to prevent over-permissioning. Conduct a full security audit of the `SpaceIDToken` contract's custom logic to identify specific vulnerabilities related to its business logic, tokenomics, and interactions with other protocols.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The visible code snippet indicates the use of OpenZeppelin's AccessControl, a well-audited and robust library (7.2 Code Security). This provides a strong foundation for role-based access control (7.3… |
-| **Governance / Economics** | 1/10 | High | The use of AccessControl implies a centralized governance model where specific roles control critical functions (7.5 Governance). The DEFAULT_ADMIN_ROLE, which is its own administrator, requires… |
-| **Upgrades** | 5/10 | Medium | Based on the provided information, the contract is not identified as a proxy (is_proxy: false), indicating it is not upgradeable (7.7 Upgrades). This eliminates upgrade-related risks such as proxy… |
+| **Technical** | 6/10 | Medium | The provided code is the OpenZeppelin `AccessControl` library, which implements a robust role-based access control system (7.3 Access Control). It is a well-audited and widely adopted standard… |
+| **Governance / Economics** | 1/10 | High | A comprehensive assessment of economic (7.4 Economic) and governance (7.5 Governance) risks is not possible as the core `SpaceIDToken` contract logic was not provided. The `AccessControl` contract… |
+| **Upgrades** | 5/10 | Medium | The provided `AccessControl` contract is not designed as an upgradeable proxy (7.7 Upgrades). The prefill indicates `is_proxy: false` for the main contract. If the `SpaceIDToken` were to be… |
 
 ## LP Distribution
 
@@ -40,41 +38,34 @@ For future deployments, consider a Premium Deploy option that includes a compreh
 
 ## Security Findings
 
-_🟢 1 Low · ⚪ 4 Informational_
+_🟢 1 Low · ⚪ 3 Informational_
 
-### `L-01` — Centralized Control via AccessControl Roles  *(Severity: Low · Status: Unresolved)*
+### `L-01` — Lack of Time-Lock for Critical Operations  *(Severity: Low · Status: Unresolved)*
 
-The contract utilizes OpenZeppelin's AccessControl, which establishes a role-based access control system. While robust, this pattern inherently centralizes control over critical functions (e.g., minting, pausing, administrative changes) to accounts holding specific roles, particularly the DEFAULT_ADMIN_ROLE. If these privileged accounts are compromised or mismanaged, it could lead to unauthorized operations or a single point of failure.
+The `AccessControl` contract itself does not inherently include time-lock mechanisms for sensitive operations like `grantRole` or `revokeRole`. Without a time-lock, critical changes can be executed immediately, leaving no window for community or governance intervention in case of a compromised key or malicious action (7.5 Governance, 7.8 Operations).
 
-**Recommendation:** Implement robust operational security measures for all accounts holding administrative roles. Consider multi-signature wallets for critical roles (e.g., DEFAULT_ADMIN_ROLE). Regularly review and revoke unnecessary role grants. Implement a timelock for sensitive administrative actions to provide a window for detection and mitigation of malicious activity.
-
-
-### `I-01` — Incomplete Source Code Provided for Audit  *(Severity: Informational · Status: Unresolved)*
-
-The provided source code for the SpaceIDToken contract was heavily truncated, with only the OpenZeppelin AccessControl.sol library and partial imports visible. The core logic and custom functions of the SpaceIDToken contract were not available for review. This limitation prevents a comprehensive security analysis of the contract's specific implementation details, potential vulnerabilities, and adherence to best practices.
-
-**Recommendation:** Provide the complete and final source code for the SpaceIDToken contract, including all custom logic and inherited contracts, for a full and accurate security audit. Without the full code, any assessment of the contract's security posture is inherently incomplete.
+**Recommendation:** For critical roles, especially the `DEFAULT_ADMIN_ROLE`, consider implementing a separate time-lock contract that acts as an intermediary for executing sensitive `AccessControl` functions. This introduces a delay, allowing for review and potential cancellation of malicious or erroneous operations.
 
 
-### `I-02` — Assumed Standard ERC-20 Implementation  *(Severity: Informational · Status: Unresolved)*
+### `I-01` — Default Admin Role Security  *(Severity: Informational · Status: Unresolved)*
 
-Given the contract name 'SpaceIDToken' and common blockchain patterns, it is assumed to be an ERC-20 compliant token. Without the full source code, the audit could not verify full compliance with the ERC-20 standard or identify any non-standard behaviors or extensions that might introduce unexpected interactions or vulnerabilities.
+The `DEFAULT_ADMIN_ROLE` in `AccessControl` has the power to grant and revoke any other role, including itself. Compromise of an account holding this role would grant an attacker full control over the contract's access control mechanisms, potentially leading to critical system compromise (7.3 Access Control, 7.8 Operations).
 
-**Recommendation:** Ensure the SpaceIDToken contract strictly adheres to the ERC-20 standard for basic functionalities (transfer, approve, balanceOf, totalSupply, etc.) unless specific deviations are intentionally designed and thoroughly documented. Any custom logic should be clearly separated and rigorously tested.
-
-
-### `I-03` — Pausability/Emergency Stop Mechanism (Unverified)  *(Severity: Informational · Status: Unresolved)*
-
-Many token contracts include a pausable mechanism (e.g., OpenZeppelin's Pausable) to halt critical operations in emergencies (e.g., major exploit, critical bug discovery). Without the full source code, it's unclear if such a mechanism is implemented in SpaceIDToken. If absent, the protocol lacks a critical safety feature. If present, it introduces another point of centralized control.
-
-**Recommendation:** If a pausable mechanism is intended, ensure it is implemented correctly, ideally using OpenZeppelin's Pausable contract. Define clear conditions under which pausing can occur and which roles have the authority to pause/unpause. If not intended, acknowledge the lack of an emergency stop and its implications for incident response.
+**Recommendation:** The address assigned to `DEFAULT_ADMIN_ROLE` should be a highly secured multi-signature wallet. Consider implementing a time-lock for critical operations performed by this role to provide a window for intervention.
 
 
-### `I-04` — Token Supply Management (Unverified)  *(Severity: Informational · Status: Unresolved)*
+### `I-02` — Role Granularity and Least Privilege  *(Severity: Informational · Status: Unresolved)*
 
-The audit could not verify the token's supply management mechanisms (e.g., fixed supply, mintable, burnable). If the token is mintable, the roles controlling minting are critical. If it's burnable, the conditions and permissions for burning need to be clear. Improperly managed supply can lead to inflation, deflation, or unauthorized token creation/destruction, impacting the token's economic stability.
+While `AccessControl` provides a robust framework, the security of the system heavily depends on how roles are defined and assigned in the inheriting `SpaceIDToken` contract. Over-permissioning accounts can lead to unintended access to sensitive functions (7.3 Access Control).
 
-**Recommendation:** Clearly define and document the token's supply model. If minting or burning capabilities exist, ensure they are controlled by appropriate roles with multi-signature protection and/or timelocks. Implement robust checks to prevent accidental or malicious over-minting or unauthorized burning.
+**Recommendation:** Adhere strictly to the principle of least privilege. Each role should have only the minimum permissions necessary to perform its designated tasks. Regularly review role assignments and revoke unnecessary permissions.
+
+
+### `I-03` — Event Monitoring for Role Changes  *(Severity: Informational · Status: Unresolved)*
+
+The `AccessControl` contract explicitly states that it does not allow enumerating role members except through off-chain means by accessing contract event logs. This means that active monitoring of `RoleGranted`, `RoleRevoked`, and `RoleAdminChanged` events is crucial for maintaining an accurate understanding of current permissions (7.8 Operations).
+
+**Recommendation:** Implement robust off-chain monitoring systems to track all role-related events. This allows for timely detection of unauthorized role changes or misconfigurations, enhancing operational security.
 
 ## Token Metrics
 

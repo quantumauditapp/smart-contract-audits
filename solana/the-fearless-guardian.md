@@ -17,17 +17,17 @@ date: 2026-06-18
 
 ## Audit Summary
 
-The token "The Fearless Guardian (GUARDIAN)" exhibits a High risk primarily due to very low DEX liquidity ($5,555), making large positions difficult to exit without significant slippage. Key authorities like mint and freeze are appropriately revoked, and metadata is immutable, indicating a robust technical configuration. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+This SPL Token-2022 mint, "The Fearless Guardian (GUARDIAN)", has revoked mint and freeze authorities, indicating a fixed supply and immutable account states. However, it suffers from very low DEX liquidity ($5,187), posing a significant risk of high slippage for any trades. Holder distribution data was unavailable, preventing a full assessment of whale risk.
 
-> **Final Recommendation:** Given the very low liquidity of $5,555, users should exercise extreme caution. Exiting even moderate positions may incur significant slippage and loss. While the technical configuration is robust with revoked mint and freeze authorities and immutable metadata, the economic viability is severely hampered by the lack of market depth. It is recommended to avoid significant investment in this token until liquidity materially improves. For a Premium Deploy option, consider tokens with substantially higher liquidity and a longer track record.
+> **Final Recommendation:** Prospective holders should exercise extreme caution due to the very low liquidity, which makes large positions difficult to exit without substantial price impact. Before any significant interaction, verify the current DEX liquidity on-chain to ensure it has improved. Monitor the token's trading volume and liquidity over time to assess market depth and stability.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | 7.1 Architecture & 7.3 Access Control: The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority are revoked (None), preventing the creation of new tokens or freezing of… |
-| **Governance / Economics** | 4/10 | Medium | 7.4 Economic: The token exhibits very low liquidity, with only $5,555 USD available on DEXs. This poses a significant risk for large positions due to high slippage. The 24-hour volume is $114… |
-| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The Mint Authority and Freeze Authority are both revoked, meaning the token's supply and account freeze status cannot be altered by any single entity. GoPlus data confirms that… |
+| **Technical** | 5/10 | Medium | The token is an SPL Token-2022 mint with a fixed supply of 999,740,438.348484 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits very low liquidity, with only $5,187 available on DEXs, which can lead to severe slippage for trades. Holder concentration data was unavailable, preventing an assessment of supply… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and account freezing capabilities are immutable. The token is an SPL Token-2022, but no upgradable extensions like… |
 
 ## Security Findings
 
@@ -35,9 +35,9 @@ _🟠 1 High_
 
 ### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
 
-Total DEX liquidity is $5,555. Slippage will be severe; large positions cannot be exited without significant loss. (Fact: Liquidity (USD): $5,555)
+Total DEX liquidity is $5,187. Slippage will be severe; large positions cannot be exited without significant loss.
 
-**Recommendation:** Account for the fee in any swap calculation.
+**Recommendation:** Account for the low liquidity in any swap calculation and consider the difficulty of exiting large positions. Verify current liquidity before trading.
 
 ## Token Metrics
 

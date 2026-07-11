@@ -2,14 +2,14 @@
 token: Allora
 ticker: ALLO
 network: ethereum
-risk_score: 85
+risk_score: 100
 status: critical
 date: 2026-06-10
 ---
 
 # Allora (ALLO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 85/100 — 🔴 Critical Risk**
+> **Risk Score: 100/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/allora-eth)
 
@@ -17,19 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This audit covers an OpenZeppelin ERC1967 Transparent Proxy contract. The contract utilizes battle-tested OpenZeppelin libraries for upgradeability, providing a robust foundation. The primary risks identified relate to the centralized control of upgrades by a single admin address and potential vulnerabilities in the implementation contract's initialization logic and storage management during upgrades.
+This audit focuses on the provided OpenZeppelin ERC1967 Transparent Proxy contract. The proxy itself utilizes well-audited and standard components. However, the critical finding is that the source code for the underlying implementation contract (AlloOFTUpgradeable) is unverified, preventing a comprehensive security assessment of the system's core logic. Additionally, while upgrade control is managed by a multisig, the absence of a timelock for upgrades introduces a higher operational risk.
 
-> **Final Recommendation:** The OpenZeppelin ERC1967Proxy provides a solid and secure foundation for upgradeable contracts. The most critical aspect to secure is the admin key responsible for upgrades. Implementing a robust multi-signature wallet or a timelock for this role is paramount to mitigate the high risk of centralized control. Additionally, diligent development practices for implementation contracts, particularly regarding initialization and storage layout, are essential to prevent common upgrade-related vulnerabilities.
-
-For enhanced security and peace of mind, consider a Premium Deploy option. This service includes a pre-deployment security review of the specific implementation contract, a dry run of the upgrade process on a testnet, and continuous monitoring post-deployment for potential vulnerabilities or anomalous behavior.
+> **Final Recommendation:** Prioritize verifying and thoroughly auditing the source code for the `AlloOFTUpgradeable` implementation contract to ensure its security and integrity. Implement a timelock mechanism for all critical administrative operations, especially contract upgrades, to provide a delay period for public scrutiny and emergency response. Regularly review and update multisig signers and their security practices to maintain robust access control over the system's upgradeability.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract leverages OpenZeppelin's battle-tested `ERC1967Proxy` and `ERC1967Upgrade` contracts, providing a robust and secure foundation for upgradeability (7.1 Architecture, 7.2 Code Security).… |
-| **Governance / Economics** | 1/10 | High | The primary governance risk stems from the centralized control of the proxy's upgrade mechanism (7.5 Governance). A single admin address holds the power to upgrade the implementation, posing a… |
-| **Upgrades** | 4/10 | Medium | The contract utilizes the EIP-1967 Transparent Proxy pattern, allowing for seamless upgrades of the underlying implementation logic (7.7 Upgrades). The `_upgradeToAndCall` function facilitates both… |
+| **Technical** | 3/10 | High | The proxy contract (ERC1967Proxy) is built upon battle-tested OpenZeppelin libraries, ensuring a robust foundation for its core functionality (7.2 Code Security). The architecture correctly… |
+| **Governance / Economics** | 1/10 | High | The governance model for upgrades employs a 2-of-3 multisig for the `ProxyAdmin` (7.5 Governance), which is a strong access control mechanism, reducing the risk of a single point of failure (7.3… |
+| **Upgrades** | 3/10 | High | The system utilizes the EIP-1967 Transparent Proxy pattern, a well-established and secure method for upgradeability (7.7 Upgrades). This pattern correctly separates the admin interface from the… |
 
 ## Proxy Upgrade Controls
 
@@ -49,27 +47,34 @@ For enhanced security and peace of mind, consider a Premium Deploy option. This 
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low_
+_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low_
 
-### `H-01` — Centralized Upgrade Control  *(Severity: High · Status: Unresolved)*
+### `C-01` — Unverified Implementation Contract Source Code  *(Severity: Critical · Status: Unresolved)*
 
-The proxy's upgradeability is solely controlled by a single admin address. If this address is compromised, an attacker could upgrade the proxy to a malicious implementation, leading to a complete loss of funds or system control. This represents a significant single point of failure for the entire protocol (7.3 Access Control, 7.5 Governance).
+The core logic of the system resides in the implementation contract (AlloOFTUpgradeable at 0xb21c7c5a7be430ea3517892e63f905c109b06278), but its source code is not publicly verified. This prevents any security assessment of the actual business logic, making it impossible to identify vulnerabilities such as reentrancy, access control flaws, or economic exploits. Users and auditors cannot independently verify the contract's behavior or safety.
 
-**Recommendation:** Implement a robust access control mechanism for the admin role, such as a multi-signature wallet (e.g., Gnosis Safe) or a timelock contract. This introduces a delay and requires multiple approvals for critical upgrade operations, significantly reducing the risk associated with a single point of failure.
-
-
-### `M-01` — Re-initialization Vulnerability in Implementation  *(Severity: Medium · Status: Unresolved)*
-
-The `_upgradeToAndCall` function allows an arbitrary `_data` payload to be executed on the new implementation. If the implementation contract's `initialize` function is not properly protected against multiple calls (e.g., using OpenZeppelin's `Initializable` and `initializer` modifier), an attacker could re-initialize the implementation, potentially gaining unauthorized control or altering critical parameters (7.2 Code Security, 7.7 Upgrades).
-
-**Recommendation:** Ensure all upgradeable implementation contracts use OpenZeppelin's `Initializable` base contract and its `initializer` modifier to prevent multiple calls to initialization functions. Thoroughly test the upgrade process, including the `_data` payload, to confirm correct initialization and prevent re-initialization attacks.
+**Recommendation:** Immediately verify and publish the source code for the `AlloOFTUpgradeable` implementation contract on block explorers. Conduct a thorough security audit of this implementation contract to identify and remediate any vulnerabilities. Ensure that all future implementation upgrades also have their source code verified.
 
 
-### `L-01` — Potential for Storage Collisions in Implementation  *(Severity: Low · Status: Unresolved)*
+### `H-01` — Lack of Timelock for Critical Operations (Upgrades)  *(Severity: High · Status: Unresolved)*
 
-While EIP-1967 proxies use specific storage slots for proxy-related data, developers must ensure that the implementation contract's storage layout does not inadvertently collide with these slots or with previous implementation versions during upgrades. Incorrect storage variable ordering or type changes can lead to data corruption or unexpected behavior (7.1 Architecture, 7.7 Upgrades).
+While the upgrade mechanism is controlled by a 2-of-3 multisig, there is no timelock in place for executing upgrades. This means that once the required multisig approvals are obtained, an upgrade can be deployed instantly. This lack of a delay period prevents users, the community, or automated monitoring systems from reacting to a potentially malicious or erroneous upgrade before it takes effect, increasing the risk of irreversible damage or fund loss.
 
-**Recommendation:** Adhere strictly to OpenZeppelin's upgradeable contract guidelines, particularly regarding storage layout. Avoid changing the order or type of state variables in upgradeable contracts. Use tools like OpenZeppelin Upgrades Plugins to detect potential storage collisions during development and deployment.
+**Recommendation:** Integrate a timelock contract into the upgrade process. The `ProxyAdmin` should be owned by a timelock, which in turn is controlled by the multisig. This ensures that any proposed upgrade has a mandatory delay period (e.g., 24-72 hours) before it can be executed, allowing for review and potential intervention.
+
+
+### `M-01` — Reliance on External Contracts for Core Logic  *(Severity: Medium · Status: Unresolved)*
+
+The security and functionality of the entire system are entirely dependent on the `AlloOFTUpgradeable` implementation contract. Any vulnerability within this external contract, whether due to design flaws, coding errors, or malicious intent, will directly impact the proxy and its users. This risk is exacerbated by the unverified source code of the implementation.
+
+**Recommendation:** Ensure rigorous security practices for the development, testing, and auditing of the implementation contract. Implement robust monitoring for the implementation contract's behavior and state. Consider formal verification or extensive fuzzing for critical components of the implementation.
+
+
+### `L-01` — Centralized Upgrade Authority  *(Severity: Low · Status: Unresolved)*
+
+Although the upgrade authority is managed by a 2-of-3 multisig, this still represents a centralized point of control. If a majority of the multisig signers are compromised, collude, or act maliciously, they could unilaterally upgrade the contract to a harmful implementation, potentially leading to loss of funds or system compromise.
+
+**Recommendation:** While a multisig is a strong control, consider further decentralizing the upgrade authority over time, possibly by integrating a more distributed governance mechanism or a larger, more diverse set of signers. Implement strict operational security procedures for all multisig signers, including hardware wallets, secure key management, and multi-factor authentication.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: Worldcoin
 ticker: WLD
 network: ethereum
-risk_score: 71
-status: critical
+risk_score: 66
+status: high
 date: 2026-06-10
 ---
 
 # Worldcoin (WLD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 71/100 — 🔴 Critical Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/worldcoin-eth)
 
@@ -17,50 +17,48 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The WLD token contract implements an ERC20 token with an initial supply cap and a controlled inflation mechanism. The contract utilizes OpenZeppelin's Ownable2Step for robust ownership management and includes explicit checks for input validation and supply caps. Key findings include the complexity and potential for higher-than-stated effective inflation rates in certain scenarios, and the significant centralized control over token supply by the owner and minter roles. While the code quality is high, these economic and governance risks warrant careful consideration.
+The WLD token contract implements a standard ERC20 token with additional logic for initial supply distribution and a controlled inflation mechanism. It leverages OpenZeppelin's Ownable2Step for robust ownership management. While the core token functionality and access controls are well-implemented, the centralized nature of the owner and minter roles, coupled with the complexity of the inflation logic, introduces notable risks. The contract is not upgradeable via proxy, simplifying its architecture but requiring new deployments for any future changes.
 
-> **Final Recommendation:** The WLD contract is technically sound, leveraging established libraries and adhering to good coding practices. However, the high degree of centralized control over token supply and the complex inflation mechanics introduce significant economic and governance risks. It is strongly recommended to implement multi-signature wallets for critical roles (owner, minter) and ensure transparent communication regarding the inflation model's nuances.
-
-For enhanced security and operational resilience, consider a Premium Deploy option. This would involve deploying the contract through a battle-tested multi-signature wallet (e.g., Gnosis Safe) for the owner role, and potentially integrating with a robust monitoring solution to track supply changes and minter activities in real-time.
+> **Final Recommendation:** To enhance the security and decentralization of the WLD token, consider implementing a multi-signature wallet or a robust governance system for the `owner` and `minter` roles. This would distribute control and require multiple approvals for critical operations, mitigating the risks associated with centralized power. Additionally, ensure all stakeholders have a clear and comprehensive understanding of the inflation mechanism's nuances to prevent misinterpretations regarding token supply dynamics.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The WLD contract demonstrates strong technical foundations (7.1 Architecture, 7.2 Code Security). It inherits from battle-tested OpenZeppelin contracts (ERC20, Ownable2Step), ensuring standard… |
-| **Governance / Economics** | 1/10 | High | The contract design presents significant governance and economic considerations (7.4 Economic, 7.5 Governance). The owner has substantial power, including a one-time initial mint up to 10 billion… |
-| **Upgrades** | 5/10 | Medium | The WLD contract is not designed as an upgradeable proxy (7.7 Upgrades). Its logic is immutable once deployed, meaning no upgrade safety issues are present. Any future changes to the token's core… |
+| **Technical** | 6/10 | Medium | The WLD token contract demonstrates good technical quality, utilizing battle-tested OpenZeppelin libraries for ERC20 and Ownable2Step functionalities, which enhances code security (7.2 Code… |
+| **Governance / Economics** | 1/10 | High | The contract exhibits a high degree of centralization, primarily through the `owner` and `minter` roles (7.3 Access Control, 7.5 Governance). The owner can perform a one-time mint up to… |
+| **Upgrades** | 5/10 | Medium | The WLD contract is implemented as a standard, non-upgradeable token contract. It does not utilize proxy patterns (e.g., UUPS, Transparent) for upgradeability (7.7 Upgrades). This design choice… |
 
 ## Security Findings
 
-_🟠 2 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Inflation Rate Exceeds Stated Cap in Edge Cases  *(Severity: High · Status: Unresolved)*
+### `H-01` — Centralization Risk with Owner and Minter Roles  *(Severity: High · Status: Unresolved)*
 
-The `mintInflation` function's logic, as acknowledged in the contract's own documentation, allows for the effective inflation rate over certain periods to exceed the `inflationCapWad` (up to `(1 + inflation cap)^2 - 1`). This means that while a nominal inflation cap is defined, the actual token supply dilution experienced by holders could be higher than a simple interpretation of the `inflationCapWad` might suggest, potentially leading to unexpected economic outcomes.
+The `owner` role, secured by `Ownable2Step`, holds significant power, including a one-time mint of up to `INITIAL_SUPPLY_CAP` and the ability to set/change the `minter` address. The `minter` then controls all subsequent inflation minting. If these roles are controlled by a single EOA, it introduces a high degree of centralization and a single point of failure, potentially leading to unauthorized supply manipulation or governance issues. (7.3 Access Control, 7.4 Economic, 7.5 Governance)
 
-**Recommendation:** Ensure all public-facing documentation, whitepapers, and communications clearly explain this nuanced behavior of the inflation mechanism, providing concrete examples of how the effective inflation rate can vary. Consider adding monitoring tools to track actual inflation rates and compare them against expected values. If possible, explore alternative inflation mechanisms that provide a stricter, more predictable cap over any given period.
-
-
-### `H-02` — Centralized Control over Token Supply  *(Severity: High · Status: Unresolved)*
-
-The contract grants significant power to the `owner` and subsequently to the `minter` address. The `owner` can perform a one-time mint up to `INITIAL_SUPPLY_CAP` (10 billion tokens) and then designate an arbitrary `minter`. The `minter` can then continuously mint new tokens, subject only to the inflation rules. This high degree of centralized control over the token supply introduces a significant trust assumption and potential single point of failure if the owner or minter keys are compromised or misused, or if the roles are maliciously exercised.
-
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for both the `owner` and `minter` roles to distribute control and reduce the risk of a single point of compromise. Consider a time-locked mechanism for critical actions like `setMinter` to allow for community review or emergency intervention, enhancing transparency and security.
+**Recommendation:** Consider implementing a multi-signature wallet or a robust governance mechanism (e.g., a DAO) to control the `owner` and `minter` roles. This would distribute control and require multiple approvals for critical operations, enhancing security and decentralization.
 
 
-### `L-01` — Immutability of Inflation Unlock Time  *(Severity: Low · Status: Unresolved)*
+### `M-01` — Complex Inflation Logic and Potential for Misinterpretation  *(Severity: Medium · Status: Unresolved)*
 
-The `inflationUnlockTime` is set once in the constructor based on `inflationLockPeriod_ + block.timestamp` and cannot be modified thereafter. While this provides predictability, it removes flexibility to adjust the inflation start time in response to unforeseen market conditions, regulatory changes, or governance decisions. This immutability could become a limitation if the project requires adaptive economic parameters in the future.
+The `mintInflation` function implements a detailed inflation mechanism with `inflationUnlockTime`, `inflationCapPeriod`, and `inflationCapWad`. The NatSpec explicitly notes that 'it is possible for period over period inflation to reach up to (1 + inflation cap)^2 - 1' under certain conditions. While documented, this complexity could lead to misinterpretation by stakeholders regarding the actual maximum inflation rate over arbitrary periods, potentially causing unexpected token supply increases. (7.2 Code Security, 7.4 Economic)
 
-**Recommendation:** If future flexibility is desired, consider adding a governance-controlled mechanism (e.g., via a DAO or a multi-sig) to adjust the `inflationUnlockTime` within predefined bounds, or to pause/unpause inflation. If immutability is a strict design choice, ensure this is clearly communicated to all stakeholders as a core property of the token's economic model.
+**Recommendation:** Ensure comprehensive documentation and clear communication to all stakeholders about the nuances of the inflation mechanism, especially the potential for slightly higher-than-expected inflation over certain intervals. Consider adding internal helper functions or clearer comments if the logic can be further modularized for readability.
 
 
-### `I-01` — Non-Renounceable Ownership  *(Severity: Informational · Status: Unresolved)*
+### `L-01` — Immutability of Critical Constructor Parameters  *(Severity: Low · Status: Unresolved)*
 
-The `renounceOwnership` function is explicitly overridden to revert, preventing the owner from ever relinquishing control of the contract. This is a deliberate design choice to ensure continuous oversight and prevent accidental or malicious renunciation of the owner role, which is critical given the owner's extensive powers.
+Several critical parameters, including `inflationCapPeriod`, `inflationCapWad`, and `inflationUnlockTime`, are set as `immutable` during contract deployment via the constructor. Additionally, the initial `existingHolders` and `existingAmounts` are processed only at deployment. Any error or misconfiguration in these parameters during deployment cannot be corrected post-deployment, requiring a new contract deployment and migration if a mistake occurs. (7.1 Architecture, 7.8 Operations)
 
-**Recommendation:** This is a design decision. No action is required unless the project's long-term decentralization strategy changes. Ensure this design choice is well-documented and understood by all stakeholders, highlighting that ownership will always reside with the designated address(es).
+**Recommendation:** Thoroughly review and test all constructor parameters in a controlled environment before mainnet deployment. Implement robust deployment scripts and verification processes to minimize the risk of misconfiguration. While immutability provides certainty, ensure the initial setup is flawless.
+
+
+### `I-01` — Lack of Event for Minter Address Update  *(Severity: Informational · Status: Unresolved)*
+
+The `setMinter` function allows the contract owner to update the `minter` address, which is a critical role responsible for inflation minting. However, this function does not emit an event upon a successful update. This lack of an event makes it challenging for off-chain monitoring systems, block explorers, and users to track changes to the `minter` address, reducing transparency and auditability. (7.2 Code Security, 7.8 Operations)
+
+**Recommendation:** Add an event to the `setMinter` function, such as `event MinterUpdated(address indexed oldMinter, address indexed newMinter);`, to log changes to the `minter` address. This will improve transparency and allow for easier tracking and auditing of this critical role.
 
 ## Token Metrics
 

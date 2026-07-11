@@ -2,14 +2,14 @@
 token: EMBER
 ticker: EMBER
 network: solana
-risk_score: 57
+risk_score: 47
 status: high
 date: 2026-06-15
 ---
 
 # EMBER (EMBER) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 47/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ember-sol)
 
@@ -17,27 +17,17 @@ date: 2026-06-15
 
 ## Audit Summary
 
-The EMBER token mint audit reveals a significant risk due to very low liquidity, with only $4,905 available on DEXs, which can lead to severe slippage. Key authorities such as Mint Authority and Freeze Authority are revoked, indicating a fixed supply and unfreezable accounts. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+The EMBER SPL Token Mint (7RHxQQUWG9fCskqocSV9zPkWPLJqcceWTcUCjnwMpump) exhibits strong security configurations with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No transfer hooks or default frozen states are active. However, critical data regarding holder concentration and DEX liquidity is unavailable, and a third-party risk registry flags low liquidity, indicating potential trading challenges. This audit is based solely on on-chain metadata and third-party registry data; no source code was analyzed.
 
-> **Final Recommendation:** Holders should be aware of the extremely low liquidity ($4,905) which will result in severe slippage for any significant trade. While the mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts, the lack of holder concentration data prevents a full assessment of market manipulation risk. Proceed with extreme caution due to liquidity constraints.
+> **Final Recommendation:** Before engaging with this token, users should monitor for the establishment of DEX liquidity and verify its depth to ensure reasonable trading conditions. It is also crucial to await the availability of holder distribution data to assess potential concentration risks. Confirm that the mint and freeze authorities remain revoked on-chain, as this is a fundamental security assurance for the token's fixed supply and transferability.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The EMBER token is an SPL Token-2022 mint with a total supply of 910,982,636.140874 tokens and 6 decimals. Crucially, both the Mint Authority and Freeze Authority have been revoked, meaning no new… |
-| **Governance / Economics** | 3/10 | High | The token exhibits very low liquidity, with only $4,905 USD available on DEXs, which poses a high risk for significant slippage during trades. The 24-hour trading volume is $107, resulting in a… |
-| **Upgrades** | 8/10 | Low | The token's Mint Authority and Freeze Authority are both revoked, ensuring that the token's supply cannot be increased and accounts cannot be frozen by any central entity. The token's metadata is… |
-
-## Security Findings
-
-_🟠 1 High_
-
-### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
-
-Total DEX liquidity is $4,905. Slippage will be severe; large positions cannot be exited without significant loss. (Fact: Liquidity (USD): $4,905)
-
-**Recommendation:** Account for the severe slippage in any swap calculation and consider the difficulty of exiting large positions.
+| **Technical** | 6/10 | Medium | The EMBER token is implemented using the spl-token-2022 program. Key administrative authorities, including the Mint Authority and Freeze Authority, have been permanently revoked, preventing further… |
+| **Governance / Economics** | 4/10 | Medium | Assessment of the token's economic stability is limited due to unavailable DEX market data and holder concentration information. A third-party risk registry indicates 'Low Liquidity', suggesting… |
+| **Upgrades** | 8/10 | Low | The token's configuration is highly immutable, with both Mint Authority and Freeze Authority permanently revoked. Key Token-2022 extensions such as transfer hooks and transfer fees are not active… |
 
 ## Token Metrics
 

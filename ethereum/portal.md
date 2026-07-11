@@ -17,17 +17,18 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The PortalToken contract is an ERC20 token implementation with extensions for permit, pausable, and burnable functionalities, leveraging OpenZeppelin's battle-tested libraries. The contract features a fixed total supply and a custom `totalSupply()` override to reflect circulating supply based on a designated proxy address. Key administrative functions are controlled by a single owner, introducing centralization risks. The overall risk level is assessed as Medium due to these centralized controls and the non-standard interpretation of `totalSupply`.
+The PortalToken contract is an ERC20 token leveraging OpenZeppelin extensions for permit, pausable, and burnable functionalities. It introduces a custom mechanism to calculate circulating supply by subtracting tokens held by a designated proxy address. The audit identified significant centralization risks due to the owner's extensive control over critical functions, and a high dependency on an external proxy contract for accurate circulating supply reporting, which could impact the token's economic stability and market perception.
 
-> **Final Recommendation:** The PortalToken contract provides a solid foundation for an ERC20 token with standard extensions. The primary areas for improvement involve mitigating the risks associated with centralized ownership and ensuring clear communication regarding the custom `totalSupply` logic. We recommend implementing a multi-signature wallet for the contract owner to enhance security and decentralize control over critical administrative functions. Additionally, thorough documentation and communication with integrators are crucial to ensure they understand the custom `totalSupply` calculation.
+> **Final Recommendation:** To mitigate the identified risks, it is strongly recommended to implement a multi-signature wallet or a time-locked contract for the `owner` role to decentralize control over critical functions like pausing, disabling permit, and setting the proxy address. This will reduce the single point of failure risk and introduce a necessary delay for sensitive operations.
+Furthermore, a comprehensive security audit of the external `proxy` contract is crucial, along with clear documentation of its operational procedures and security model. For future flexibility, consider adopting an upgradeable proxy pattern for core contracts to allow for seamless bug fixes and feature enhancements without requiring disruptive token migrations.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract demonstrates good technical security by inheriting from well-audited OpenZeppelin libraries and using Solidity 0.8.20, which mitigates common integer overflow/underflow issues (7.2 Code… |
-| **Governance / Economics** | 1/10 | High | The token's economic model benefits from a fixed total supply, preventing inflationary attacks post-deployment (7.4 Economic). However, the `Ownable` pattern grants significant centralized control to… |
-| **Upgrades** | 4/10 | Medium | The PortalToken contract is implemented as a standard, non-upgradeable token (7.7 Upgrades). This simplifies its architecture by avoiding the complexities and potential risks associated with proxy… |
+| **Technical** | 4/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for its core ERC20, Ownable, Permit, Pausable, and Burnable functionalities, ensuring a solid foundation (7.2 Code Security). The custom… |
+| **Governance / Economics** | 1/10 | High | The token's economic model is a straightforward ERC20 with a fixed total supply and initial distribution to vesting addresses and a treasury. However, the `owner` role holds highly centralized… |
+| **Upgrades** | 4/10 | Medium | The `PortalToken` contract is deployed as a standard, non-upgradeable implementation (7.7 Upgrades). This design choice means that any future bug fixes, security patches, or feature enhancements… |
 
 ## LP Distribution
 
@@ -38,34 +39,41 @@ The PortalToken contract is an ERC20 token implementation with extensions for pe
 
 ## Security Findings
 
-_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `M-01` — Centralized Control by Owner  *(Severity: Medium · Status: Unresolved)*
+### `H-01` — Centralized Control by Owner  *(Severity: High · Status: Unresolved)*
 
-The contract utilizes the OpenZeppelin `Ownable` pattern, granting a single owner exclusive control over critical administrative functions. These include `pause()`, `disablePermit()`, and `setProxyAddress()`. A compromise of the owner's private key or a malicious owner could lead to a denial of service (e.g., pausing all transfers indefinitely) or misconfiguration of the token's cross-chain functionality by setting an incorrect proxy address. This introduces a single point of failure for the token's operation (7.3 Access Control, 7.5 Governance).
+The `owner` role has extensive control over critical token functions, including pausing transfers (`pause`), enabling/disabling permit functionality (`disablePermit`), and setting the `proxy` address (`setProxyAddress`) which directly impacts the reported `totalSupply`. A compromise of the owner's private key could lead to a complete halt of token operations, manipulation of circulating supply, or disruption of user interactions.
 
-**Recommendation:** Consider implementing a multi-signature wallet (e.g., Gnosis Safe) as the contract owner to distribute control and require multiple approvals for critical operations. This significantly reduces the risk associated with a single point of failure. Alternatively, implement a time-locked governance mechanism for sensitive actions.
-
-
-### `M-02` — Non-Standard `totalSupply` Calculation  *(Severity: Medium · Status: Unresolved)*
-
-The `totalSupply()` function is overridden to subtract the balance of a designated `proxy` address from the total minted supply. The contract comments state that tokens transferred to this proxy are 'considered as burned on a given chain' for 'X-chain functionality'. While documented, this deviates from the standard ERC20 definition of `totalSupply`, which typically represents the total number of tokens in existence. External integrations expecting standard ERC20 behavior might misinterpret the token's true supply, and the accuracy of 'circulating supply' relies entirely on the correct configuration and integrity of the `proxy` address (7.1 Architecture, 7.4 Economic).
-
-**Recommendation:** Clearly document this custom `totalSupply` behavior in all external-facing documentation, including API specifications and integration guides. Consider renaming the function to `circulatingSupply()` and keeping `totalSupply()` as the standard OpenZeppelin implementation, or provide a separate `getCirculatingSupply()` function to avoid ambiguity for integrators. Ensure the `proxy` address is set securely and correctly reflects its intended role.
+**Recommendation:** Implement a multi-signature wallet or a time-locked contract for the `owner` role to introduce a delay and require multiple approvals for critical operations. This decentralizes control and reduces the risk associated with a single point of failure.
 
 
-### `L-01` — Dependency on External Deployment Scripts for Initial Minting  *(Severity: Low · Status: Unresolved)*
+### `H-02` — Critical Dependency on External Proxy for Circulating Supply  *(Severity: High · Status: Unresolved)*
 
-The constructor takes an array of `InitialDeposits` for vesting. The comment states, 'potential address duplication is mitigated by the deployment scripts'. While the contract logic itself would simply mint to an address multiple times if duplicated, this implies a reliance on external scripts to ensure the uniqueness or correctness of initial distributions. An error in the deployment script could lead to unintended or incorrect initial token allocations (7.6 External, 7.8 Operations).
+The `totalSupply()` function is overridden to subtract the balance held by a `proxy` address, intended for cross-chain functionality. The security and integrity of the `PortalToken`'s reported circulating supply are critically dependent on the correct functioning and security of this external `proxy` contract. A malicious or compromised `proxy` could manipulate the perceived circulating supply, leading to economic instability or misrepresentation.
 
-**Recommendation:** Ensure robust testing and verification of deployment scripts. Implement pre-deployment checks to validate the `vestingDeposits` array for uniqueness or expected behavior. While the contract handles duplicates by minting, explicit validation in the deployment process adds a layer of safety.
+**Recommendation:** Thoroughly audit the external `proxy` contract to ensure its robustness and security. Implement strong access controls and monitoring for the `proxy` address. Clearly document the operational procedures and security model of the `proxy` and consider mechanisms to revoke or update the `proxy` address in a secure, multi-party controlled manner.
 
 
-### `I-01` — Owner Can Renounce Ownership  *(Severity: Informational · Status: Unresolved)*
+### `M-01` — Lack of Upgradeability  *(Severity: Medium · Status: Unresolved)*
 
-The `Ownable` contract allows the owner to call `renounceOwnership()`. If executed, this action permanently removes the owner, disabling all functions protected by the `onlyOwner` modifier. This includes critical administrative controls such as `pause()`, `disablePermit()`, and `setProxyAddress()`. While a standard feature of `Ownable`, accidental or malicious renouncement would lead to a permanent denial of service for these administrative capabilities (7.3 Access Control).
+The `PortalToken` contract is deployed as a standard implementation without any built-in upgradeability mechanism (e.g., UUPS, Transparent proxies). This means that any future bug fixes, security patches, or feature enhancements would necessitate deploying an entirely new token contract and migrating all existing token holders, which is a complex, costly, and disruptive process.
 
-**Recommendation:** Ensure that the owner address is managed securely and that the implications of `renounceOwnership()` are fully understood. If administrative control is intended to be permanent, consider removing the `renounceOwnership()` function or implementing a more controlled transfer of ownership to a governance contract.
+**Recommendation:** For long-term projects, consider implementing an upgradeable proxy pattern (e.g., UUPS) to allow for future contract modifications without requiring a full token migration. If upgradeability is not desired, ensure the current implementation is extremely robust and thoroughly tested.
+
+
+### `L-01` — Owner Can Disable Permit Functionality  *(Severity: Low · Status: Unresolved)*
+
+The `disablePermit` function allows the owner to enable or disable the ERC20 Permit functionality. While this is an intended feature, disabling `permit` could disrupt user experience or integrations that rely on gasless approvals. This power is centralized with the owner.
+
+**Recommendation:** Clearly communicate the operational policy regarding the `permitEnabled` state. Consider if this control needs to be managed by a multi-sig or a more decentralized mechanism if the project aims for progressive decentralization.
+
+
+### `I-01` — Reliance on Off-Chain Mitigation for Vesting Deposits  *(Severity: Informational · Status: Unresolved)*
+
+The constructor's comment states that "potential address duplication is mitigated by the deployment scripts" for `vestingDeposits`. This indicates a reliance on off-chain processes to ensure correct initial token distribution. While not a direct contract vulnerability, a failure in the deployment script could lead to unintended initial token allocations.
+
+**Recommendation:** Implement on-chain validation or a more robust deployment process to prevent potential issues with `vestingDeposits` duplication or errors, if possible. Ensure deployment scripts are thoroughly tested and reviewed.
 
 ## Token Metrics
 

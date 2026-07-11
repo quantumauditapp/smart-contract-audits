@@ -2,14 +2,14 @@
 token: The Movement
 ticker: MOVEMENT
 network: solana
-risk_score: 39
+risk_score: 34
 status: medium
 date: 2026-06-28
 ---
 
 # The Movement (MOVEMENT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-movement-sol)
 
@@ -17,28 +17,17 @@ date: 2026-06-28
 
 ## Audit Summary
 
-The token "The Movement" has its mint and freeze authorities revoked, indicating a fixed supply and no ability to freeze accounts. However, the DEX pair is very new, lacking sufficient track record to assess its stability. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
+The Movement (MOVEMENT) token mint on Solana exhibits a low-risk profile based on available on-chain data and third-party security registries. Both mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Holder concentration data was unavailable from chain-native RPC, and third-party risk registry signals were noted but did not trigger any deterministic high-severity findings.
 
-> **Final Recommendation:** Given the very new DEX pair (2 days old), it is recommended to exercise caution and monitor the token's activity and community engagement over a longer period before making significant investments. While core authorities are revoked, the lack of holder concentration data means distribution risk cannot be fully assessed.
-For enhanced security and a deeper dive into the token's ecosystem, consider a Premium Deploy audit. This would include a comprehensive review of any associated programs or off-chain governance mechanisms, if applicable, to provide a more holistic security posture assessment.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to ensure the token's supply is fixed and accounts cannot be frozen. While no critical issues were identified by deterministic rules, the third-party risk registry signals (e.g., 'Single holder ownership', 'High holder concentration') should be monitored if chain-native holder distribution data becomes available. Always exercise caution with new tokens and consider the liquidity depth for any significant transactions.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token mint for The Movement (MOVEMENT) is an SPL Token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be… |
-| **Governance / Economics** | 5/10 | Medium | The token's DEX pair is very new, having been created only 2 days ago, which means there is insufficient track record to assess team or holder behavior (Fact: Pair Age (days): 2). Current liquidity… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, have been permanently revoked, which prevents any future changes to the token's supply or the ability to freeze holder accounts… |
-
-## Security Findings
-
-_🟡 1 Medium_
-
-### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
-
-The DEX pair for The Movement was created 2 days ago. This indicates an insufficient track record to assess team or holder behaviour.
-
-**Recommendation:** Exercise caution and monitor the token's activity and community engagement over a longer period before making significant investments.
+| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, which means no new tokens can be minted and no existing token accounts can… |
+| **Governance / Economics** | 5/10 | Medium | The token's liquidity stands at $11,681 USD, which is above the very low liquidity threshold. The 24-hour volume is $2,129, resulting in a Volume/Liquidity Ratio of 0.18, which is considered normal… |
+| **Upgrades** | 8/10 | Low | The token mint's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any future changes to the token's supply or account freeze status. The token does not have a… |
 
 ## Token Metrics
 

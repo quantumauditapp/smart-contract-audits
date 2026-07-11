@@ -2,14 +2,14 @@
 token: Bonk
 ticker: BONK
 network: solana
-risk_score: 36
+risk_score: 28
 status: medium
 date: 2026-07-07
 ---
 
 # Bonk (BONK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 28/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bonk-sol)
 
@@ -17,27 +17,27 @@ date: 2026-07-07
 
 ## Audit Summary
 
-This audit of the Bonk SPL token mint reveals a high-risk finding: new holder accounts are created in a frozen state, requiring an authority to unfreeze them before use. The mint and freeze authorities are revoked, which is a positive security measure, but holder concentration data was unavailable. While GoPlus indicates metadata is immutable, RugCheck.xyz flags 'Mutable metadata' as a risk label, presenting a discrepancy.
+The Bonk SPL token mint exhibits a robust security posture regarding core minting and freezing capabilities, with both authorities permanently revoked. However, the token's metadata remains mutable, allowing for potential changes to its name, symbol, or image post-launch. Holder distribution data was unavailable for this assessment.
 
-> **Final Recommendation:** Holders should be aware that new Bonk token accounts will be created in a frozen state and require an unfreezing action before tokens can be transferred. Verify the process and availability of an unfreezing authority before acquiring or holding this token. While the mint and freeze authorities are revoked, the discrepancy regarding metadata mutability between GoPlus and RugCheck.xyz should be investigated to confirm the immutability of token branding. For a Premium Deploy, consider a token standard that does not default new accounts to a frozen state, or ensure a robust, decentralized unfreezing mechanism is in place.
+> **Final Recommendation:** Holders should verify the token's metadata directly on-chain if its branding, name, or symbol are critical to their investment thesis, as these attributes can be altered. Monitor for any changes to the token's metadata that could impact its perceived identity or legitimacy.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | 7.1 Architecture & 7.3 Access Control: The Bonk token is an SPL token mint operating under the `spl-token` program. Both the mint authority and freeze authority have been revoked, which is a strong… |
-| **Governance / Economics** | 5/10 | Medium | 7.4 Economic: The token exhibits healthy liquidity with $243,178 USD available on DEXs, and a normal 24-hour volume to liquidity ratio of 1.04, indicating organic trading activity rather than wash… |
-| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, ensuring that the token's supply and account freeze status cannot be altered post-launch by a central party. GoPlus indicates… |
+| **Technical** | 6/10 | Medium | The Bonk token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, preventing the creation of new tokens or the freezing of existing… |
+| **Governance / Economics** | 6/10 | Medium | The token demonstrates healthy market dynamics with over $101 million in DEX liquidity and a normal 24-hour volume to liquidity ratio of 0.01, indicating organic trading activity. The DEX pair has… |
+| **Upgrades** | 8/10 | Low | The Bonk token mint has a fixed supply and unfreezable accounts due to the revocation of both mint and freeze authorities. This provides a high degree of immutability for core token properties.… |
 
 ## Security Findings
 
-_🟠 1 High_
+_🟢 1 Low_
 
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
+### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
 
-New holder accounts are created in a frozen state, as indicated by `GoPlus.default_account_state: 1`. This means that any new account receiving Bonk tokens will be unable to transfer them until an authority explicitly unfreezes the account.
+The token's metadata is mutable, as indicated by the `metadata_mutable: True` flag and a third-party risk registry signal. This means the token name, symbol, or image can be changed post-launch.
 
-**Recommendation:** Confirm an active issuer or designated authority is available and responsive to unfreeze accounts. Without such an authority, newly created token accounts will be unspendable. Users should understand this operational requirement before holding the token.
+**Recommendation:** Verify metadata against off-chain expectations before trusting branding.
 
 ## Token Metrics
 

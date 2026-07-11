@@ -2,14 +2,14 @@
 token: SPACEX IPO
 ticker: SPCX
 network: solana
-risk_score: 43
-status: medium
+risk_score: 53
+status: high
 date: 2026-06-12
 ---
 
 # SPACEX IPO (SPCX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 53/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spacex-ipo-sol)
 
@@ -17,19 +17,27 @@ date: 2026-06-12
 
 ## Audit Summary
 
-This audit of the SPACEX IPO (SPCX) SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and external security signals. The mint and freeze authorities are revoked, and no Token-2022 extensions like transfer hooks or permanent delegates are active. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
+The SPACEX IPO (SPCX) token mint has revoked mint and freeze authorities, indicating a fixed supply and no ability to freeze holder accounts. However, the token exhibits very low liquidity, with only $7,437 USD available on DEXs, posing a significant risk for trading. Holder distribution data was unavailable for analysis, and no adverse flags were reported by a third-party risk registry.
 
-> **Final Recommendation:** Based on the available data, the SPACEX IPO (SPCX) token exhibits strong security properties regarding its mint and freeze authorities, which are both revoked. This significantly reduces central party risk. The absence of active Token-2022 extensions like transfer hooks or permanent delegates also contributes to predictable token behavior.
-
-However, a complete assessment of market risk is hindered by the unavailability of holder concentration data. Potential investors should consider this information gap and the low RugCheck score (1/100) as potential indicators of underlying market risks not covered by the deterministic rules. For a Premium Deploy, consider using a token standard that allows for transparent on-chain governance or multi-signature control over any remaining administrative functions, if applicable, although for this token, most critical authorities are already revoked.
+> **Final Recommendation:** Prospective holders should exercise extreme caution due to the very low DEX liquidity. Any significant buy or sell orders will experience severe slippage, making it challenging to enter or exit positions efficiently. Before interacting with this token, verify the current liquidity on relevant DEXs and consider the potential impact of slippage on your investment strategy. Monitor the token's trading volume and liquidity for any improvements that might mitigate this risk.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The SPACEX IPO (SPCX) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, preventing further token creation or freezing of user accounts (7.3 Access… |
-| **Governance / Economics** | 5/10 | Medium | The token has a total DEX liquidity of $32,721, which is sufficient to avoid the 'Very Low Liquidity' flag (7.4 Economic). The 24-hour volume is $219,388, resulting in a Volume/Liquidity Ratio of… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the core properties of the token supply and transferability cannot be altered by a central entity (7.7 Upgrades). The token's… |
+| **Technical** | 5/10 | Medium | The token is an SPL Token-2022 mint with a total supply of 999,640,060,628,602 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
+| **Governance / Economics** | 4/10 | Medium | The token's economic viability is severely impacted by very low liquidity, with only $7,437 USD available on DEXs. This makes large positions difficult to exit without significant loss due to… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are highly immutable, as both the mint authority and freeze authority have been permanently revoked. Metadata is also immutable, preventing changes to the token's name… |
+
+## Security Findings
+
+_🟠 1 High_
+
+### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
+
+Total DEX liquidity is $7,437. Slippage will be severe; large positions cannot be exited without significant loss.
+
+**Recommendation:** Account for the low liquidity in any swap calculation and be aware that large positions may be difficult to exit without substantial price impact.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: Collector Crypt
 ticker: CARDS
 network: solana
-risk_score: 53
-status: high
+risk_score: 45
+status: medium
 date: 2026-06-10
 ---
 
 # Collector Crypt (CARDS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/collector-crypt-sol)
 
@@ -17,29 +17,27 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Collector Crypt (CARDS) SPL token mint demonstrates strong security regarding its core authorities, with both mint and freeze authorities successfully revoked. However, a significant operational risk is present due to the default frozen state of new token accounts, which necessitates manual unfreezing by an authority. Holder concentration data was unavailable, preventing a comprehensive assessment of distribution risk.
+The Collector Crypt (CARDS) token mint exhibits a low overall risk profile. The mint and freeze authorities have been revoked, indicating a fixed supply and unfreezable accounts. However, the token's metadata is mutable, allowing for potential changes to its name, symbol, or image post-launch. Holder concentration data was unavailable from chain-native RPC, though a third-party risk registry flagged high ownership concentration.
 
-> **Final Recommendation:** Holders should be aware that new token accounts for CARDS are created in a frozen state. This means that upon receiving CARDS tokens for the first time, users may find their tokens untransferable until an authorized party unfreezes their account. It is crucial to confirm the availability and responsiveness of an issuer or designated authority to perform this unfreezing operation. Without such an active entity, newly received tokens may become unspendable.
-
-For users considering a Premium Deploy option, ensure that the default account state is set to 'unfrozen' during mint creation to avoid operational hurdles for future token holders. Additionally, while holder concentration data was unavailable from RPC, RugCheck indicated 'high ownership' by top holders, which warrants caution regarding potential market impact from large sell-offs.
+> **Final Recommendation:** Before engaging with the Collector Crypt (CARDS) token, verify the current token metadata (name, symbol, image) on-chain to ensure it aligns with expectations, as this information can be changed. Monitor the token's holder distribution if data becomes available, especially given the third-party registry's signals of high ownership concentration. Confirm that the mint and freeze authorities remain revoked to ensure supply stability and unfreezable accounts.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The token is implemented using the standard `spl-token` program. Core security features are well-configured: the mint authority is revoked, preventing further token issuance, and the freeze authority… |
-| **Governance / Economics** | 2/10 | High | The economic profile shows healthy liquidity and trading activity, with a total DEX liquidity of $2,901,340 and a 24-hour volume of $1,646,571. The volume-to-liquidity ratio is 0.57, indicating… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are fixed, as both the mint authority and freeze authority have been revoked, preventing any future changes to supply or account freezing capabilities. The metadata is… |
+| **Technical** | 6/10 | Medium | The Collector Crypt (CARDS) token is implemented using the classic spl-token program. Both the mint authority and freeze authority have been revoked (None), ensuring that no new tokens can be minted… |
+| **Governance / Economics** | 3/10 | High | The token has substantial liquidity with $2,673,056 USD, and its 24-hour volume of $1,288,101 USD results in a normal Volume/Liquidity Ratio of 0.48, suggesting organic trading activity. The DEX pair… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the core parameters of token supply and account freezing cannot be altered. The token does not utilize Token-2022 extensions that… |
 
 ## Security Findings
 
-_🟠 1 High_
+_🟢 1 Low_
 
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
+### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
 
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority. This is indicated by `GoPlus.default_account_state: 1`.
+The token's metadata is mutable (metadata_mutable: True), meaning its name, symbol, or image can be changed post-launch. This introduces a risk of misrepresentation if the metadata is altered without notice.
 
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+**Recommendation:** Verify the token's metadata against off-chain expectations before trusting its branding. Regularly check on-chain metadata for any unexpected changes.
 
 ## Token Metrics
 

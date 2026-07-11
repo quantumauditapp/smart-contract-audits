@@ -2,14 +2,14 @@
 token: Geodnet
 ticker: GEOD
 network: solana
-risk_score: 63
+risk_score: 55
 status: high
 date: 2026-06-13
 ---
 
 # Geodnet (GEOD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 55/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/geodnet-sol)
 
@@ -17,34 +17,34 @@ date: 2026-06-13
 
 ## Audit Summary
 
-The Geodnet Token (GEOD) presents critical risks due to an unrevoked mint authority, allowing for unlimited token minting and potential dilution. Additionally, new holder accounts are created in a frozen state, which could hinder usability without an active issuer. Holder concentration data was unavailable, preventing a full assessment of market manipulation risks.
+The Geodnet Token (GEOD) mint has a critical security concern: the mint authority (AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F) is not revoked, allowing for unlimited new token creation. Additionally, the token's metadata is mutable, enabling changes to its branding. Holder distribution data was unavailable from chain-native RPC.
 
-> **Final Recommendation:** Given the critical unrevoked mint authority, it is strongly recommended to verify on-chain that this authority is set to null before considering the token supply fixed or stable. Furthermore, the default frozen state for new accounts requires confirmation of an active issuer to unfreeze accounts; otherwise, tokens may become unspendable. Investors should proceed with extreme caution and understand the implications of these centralized controls.
+> **Final Recommendation:** Before interacting with this token, verify on-chain that the mint authority has been permanently revoked to prevent arbitrary supply inflation. Monitor the token's metadata for any unexpected changes to its name, symbol, or image. If the mint authority remains active, consider the token's supply to be subject to arbitrary dilution and exercise extreme caution.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The token is an SPL token using the `spl-token` program. A critical risk exists as the mint authority (`AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F`) is not revoked, allowing for arbitrary supply… |
-| **Governance / Economics** | 3/10 | High | The token has a total DEX liquidity of $330,693, with a 24-hour volume of $1,923,417, resulting in a Volume/Liquidity ratio of 5.82. The DEX pair has been active for 605 days, indicating a relatively… |
-| **Upgrades** | 7/10 | Low | The mint authority for the token is currently held by `AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F`, posing a significant risk of supply manipulation. In contrast, the freeze authority has been… |
+| **Technical** | 4/10 | Medium | The Geodnet Token (GEOD) is an SPL token operating under the spl-token program. A significant risk is present as the mint authority (AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F) remains active… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate liquidity with $330,508 in total DEX liquidity and a 24-hour volume of $88,288. The Volume/Liquidity Ratio is 0.27, which is considered normal and does not suggest wash… |
+| **Upgrades** | 7/10 | Low | The mint authority (AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F) is not revoked, posing a risk of future supply changes. In contrast, the freeze authority has been revoked, ensuring existing token… |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High_
+_🔴 1 Critical · 🟢 1 Low_
 
 ### `C-01` — Mint Authority Not Revoked  *(Severity: Critical · Status: Unresolved)*
 
-The mint authority is AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F. The holder of this key can mint unlimited new tokens, diluting all current holders to zero value. (Fact: Mint Authority: AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F)
+The mint authority is AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F. The holder of this key can mint unlimited new tokens, diluting all current holders to zero value.
 
 **Recommendation:** Verify on-chain that the mint authority is set to null before treating supply as fixed.
 
 
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
+### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
 
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority. (Fact: GoPlus.default_account_state: 1)
+Token name, symbol, or image can be changed post-launch.
 
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+**Recommendation:** Verify metadata against off-chain expectations before trusting branding.
 
 ## Token Metrics
 

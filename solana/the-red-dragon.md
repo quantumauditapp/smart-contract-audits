@@ -2,14 +2,14 @@
 token: The Red Dragon
 ticker: ZION
 network: solana
-risk_score: 36
-status: medium
+risk_score: 46
+status: high
 date: 2026-07-07
 ---
 
 # The Red Dragon (ZION) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 46/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-red-dragon-sol)
 
@@ -17,29 +17,34 @@ date: 2026-07-07
 
 ## Audit Summary
 
-The Red Dragon (ZION) is a new SPL Token-2022 mint on Solana. The mint and freeze authorities have been revoked, indicating a fixed supply and no ability to freeze accounts. However, the DEX pair is very new, having been created only 1 day ago, which provides insufficient track record for assessing market behavior. Holder concentration data was unavailable from RPC, though RugCheck.xyz flagged "Top 10 holders high ownership" as a risk.
+The token mint for The Red Dragon (ZION) is based on the spl-token-2022 program with mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. However, the token exhibits very low DEX liquidity at $9,362, making large trades subject to severe slippage. The DEX pair is also very new, having been created only 5 days ago, limiting the track record for assessing market behavior. Third-party registry data on holder concentration was unavailable via direct RPC.
 
-> **Final Recommendation:** Holders should be aware of the very recent launch of this token's DEX pair, as it lacks a sufficient track record for assessing long-term stability or issuer intent. While the mint and freeze authorities are revoked, which is a positive security indicator, the unavailability of detailed holder concentration data from RPC means potential whale risks cannot be fully quantified. Investors should exercise caution and monitor the token's market behavior and holder distribution as it matures.
-
-For enhanced due diligence, consider a Premium Deploy audit which includes deeper off-chain analysis of the issuer's history and community sentiment, beyond the on-chain facts.
+> **Final Recommendation:** Potential holders should exercise extreme caution due to the very low liquidity, which will result in substantial price impact for even modest trades. It is critical to monitor the token's market activity and liquidity growth over an extended period. Verify on-chain that the mint and freeze authorities remain revoked to ensure the token's fixed supply and unfreezable nature.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, which is a positive security measure as it prevents further token minting and account freezing by… |
-| **Governance / Economics** | 6/10 | Medium | The token's DEX pair is very new, established only 1 day ago, which means there is insufficient historical data to assess market stability or team behavior. Current liquidity is $64,767, with a… |
-| **Upgrades** | 8/10 | Low | The mint authority has been revoked, meaning the token supply cannot be increased. The freeze authority is also revoked, preventing any future freezing of token accounts. GoPlus data indicates that… |
+| **Technical** | 5/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing token accounts can… |
+| **Governance / Economics** | 5/10 | Medium | The token's economic profile shows very low liquidity, with total DEX liquidity at $9,362, which will lead to significant slippage for trades. The DEX pair is also very new, established only 5 days… |
+| **Upgrades** | 8/10 | Low | The token mint has a robust configuration regarding mutability and control. Both the mint and freeze authorities are permanently revoked, preventing any future changes to the token supply or account… |
 
 ## Security Findings
 
-_🟡 1 Medium_
+_🟠 1 High · 🟡 1 Medium_
+
+### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
+
+Total DEX liquidity is $9,362. Slippage will be severe; large positions cannot be exited without significant loss.
+
+**Recommendation:** Exercise caution when trading, as significant slippage is likely for any substantial transaction.
+
 
 ### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
 
-DEX pair was created 1 days ago. Insufficient track record to assess team or holder behaviour.
+DEX pair was created 5 days ago. Insufficient track record to assess team or holder behaviour.
 
-**Recommendation:** Exercise caution due to the lack of historical data. Monitor the token's performance and team activity closely over a longer period before making significant investments.
+**Recommendation:** Monitor the token's performance and community activity closely over a longer period before making significant investments.
 
 ## Token Metrics
 

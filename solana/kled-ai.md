@@ -2,14 +2,14 @@
 token: Kled AI
 ticker: KLED
 network: solana
-risk_score: 21
+risk_score: 23
 status: medium
 date: 2026-06-27
 ---
 
 # Kled AI (KLED) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 21/100 — 🟡 Medium Risk**
+> **Risk Score: 23/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kled-ai-sol)
 
@@ -17,17 +17,27 @@ date: 2026-06-27
 
 ## Audit Summary
 
-The KLEDAI (KLED) SPL token mint has its mint and freeze authorities revoked, indicating a fixed supply and no ability to freeze holder accounts. Liquidity is substantial at $654,638, and the trading volume is normal relative to liquidity. However, holder concentration data was unavailable, preventing a full assessment of distribution risk. No critical or high-severity risks were identified based on the available on-chain facts and external security signals.
+This audit of the KLEDAI (KLED) SPL token mint found that both the mint and freeze authorities have been revoked, indicating a fixed supply and unfreezable accounts. However, the token's metadata remains mutable, allowing for potential changes to its name, symbol, or image. Holder concentration data was unavailable from chain-native RPC sources, preventing an assessment of supply distribution risk.
 
-> **Final Recommendation:** The KLEDAI (KLED) token presents a low technical risk profile due to the revocation of critical administrative authorities (mint and freeze). Holders can be confident in a fixed supply and unfreezable accounts. The token also demonstrates good liquidity and a mature DEX pair. However, the absence of holder concentration data means that potential risks from whale holdings cannot be assessed. Prospective holders should monitor on-chain distribution if this data becomes available. No immediate red flags were identified that would prevent interaction with this token.
+> **Final Recommendation:** Holders should verify the token's metadata (name, symbol, image) against official sources and monitor for any changes, as the metadata is mutable. Due to the unavailability of holder distribution data, it is advisable to exercise caution regarding potential market manipulation from concentrated holdings. The revocation of mint and freeze authorities provides a degree of security against supply dilution and account freezing.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.2 Code Security: The token is an SPL token mint operating under the `spl-token` program. Mint and freeze authorities are both revoked, which is a strong security posture as it… |
-| **Governance / Economics** | 7/10 | Low | 7.4 Economic: The token exhibits healthy liquidity with $654,638 in total DEX liquidity and a 24-hour volume of $121,714. The Volume/Liquidity ratio is 0.19, which is considered normal and does not… |
-| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority and freeze authority have both been revoked, meaning no further tokens can be minted and no accounts can be frozen. This effectively makes the token's supply and core… |
+| **Technical** | 6/10 | Medium | The KLEDAI (KLED) token is an SPL token operating under the spl-token program. Both the mint authority and freeze authority have been revoked (None), ensuring that no new tokens can be minted and no… |
+| **Governance / Economics** | 7/10 | Low | DEX market data indicates a liquidity of $496,380 USD and a 24-hour trading volume of $16,198 USD. The volume/liquidity ratio is 0.03, which is considered normal and does not suggest wash trading.… |
+| **Upgrades** | 8/10 | Low | The mint and freeze authorities are both revoked, meaning these core parameters cannot be changed. The token's metadata, including its name, symbol, or image, is mutable. This allows for post-launch… |
+
+## Security Findings
+
+_🟢 1 Low_
+
+### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
+
+The token's metadata is mutable, as indicated by 'metadata_mutable: True'. This means the token name, symbol, or image can be changed post-launch by an authorized party.
+
+**Recommendation:** Verify metadata against off-chain expectations before trusting branding. Monitor for any changes to the token's name, symbol, or image.
 
 ## Token Metrics
 

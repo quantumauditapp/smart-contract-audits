@@ -2,14 +2,14 @@
 token: Octra
 ticker: OCT
 network: ethereum
-risk_score: 81
-status: critical
+risk_score: 43
+status: medium
 date: 2026-06-10
 ---
 
 # Octra (OCT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 81/100 — 🔴 Critical Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/octra-eth)
 
@@ -17,19 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The WrappedOCT token contract is an ERC20 implementation leveraging OpenZeppelin's battle-tested libraries for core token functionality, access control, and pausing. The contract introduces specific roles for bridging (mint/burn) and pausing. While the code base is robust due to OpenZeppelin's foundation, the highly centralized control over token supply and pausing mechanisms by specific roles introduces significant economic and operational risks. The contract is not upgradeable, which simplifies its architecture but limits future adaptability.
+The WrappedOCT contract is an ERC20 token with bridging and pausing capabilities, built upon battle-tested OpenZeppelin libraries. The audit identified a Medium risk related to centralized control over critical functions, where a single compromised address could impact token supply and operations. Minor issues include non-standard decimal precision and immutable supply cap. The contract's architecture is straightforward and does not employ upgradeability patterns.
 
-> **Final Recommendation:** The WrappedOCT token contract is built on a solid foundation of OpenZeppelin contracts, ensuring a high level of code quality and security for standard ERC20 operations. However, the centralized nature of the `BRIDGE_ROLE` and `PAUSER_ROLE` introduces critical and high-severity risks related to token supply control and operational halts. It is strongly recommended to implement robust multi-signature wallets and potentially time-locks for these critical roles to mitigate single points of failure and enhance security.
-
-For future deployments or critical infrastructure, consider a Premium Deploy option that includes a comprehensive pre-deployment security review, real-time monitoring, and incident response planning to ensure the highest level of protection against evolving threats.
+> **Final Recommendation:** To mitigate the identified risks, it is strongly recommended to implement multi-signature wallets for all critical roles, including `DEFAULT_ADMIN_ROLE`, `BRIDGE_ROLE`, and `PAUSER_ROLE`. This distributes control and significantly reduces the impact of a single private key compromise. Additionally, ensure all external systems interacting with WrappedOCT are fully aware of and correctly handle its 6-decimal precision to prevent integration issues.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for ERC20, AccessControl, and Pausable functionalities, contributing to a solid code foundation (7.2 Code Security). The `decimals`… |
-| **Governance / Economics** | 1/10 | High | The economic model is highly centralized, with the `BRIDGE_ROLE` having direct control over token supply via `bridgeMint` and `bridgeBurn` functions, posing a critical risk if compromised (7.4… |
-| **Upgrades** | 6/10 | Medium | The `WrappedOCT` contract is not designed to be upgradeable, meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates upgrade-specific risks like proxy misconfigurations or… |
+| **Technical** | 8/10 | Low | The contract leverages well-audited OpenZeppelin libraries for ERC20, AccessControl, and Pausable functionalities (7.2 Code Security). It implements clear checks for zero addresses and amounts in… |
+| **Governance / Economics** | 1/10 | High | The contract exhibits centralized control over key functions (7.3 Access Control, 7.5 Governance). The `DEFAULT_ADMIN_ROLE` (deployer) can manage all roles, including the `BRIDGE_ROLE` which controls… |
+| **Upgrades** | 8/10 | Low | The WrappedOCT contract is not designed with an upgradeability pattern (7.7 Upgrades). It is a standard, immutable contract deployment. This eliminates risks associated with upgrade proxies, such as… |
 
 ## LP Distribution
 
@@ -40,48 +38,27 @@ For future deployments or critical infrastructure, consider a Premium Deploy opt
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `C-01` — Centralized Control of Token Supply (Bridge Role)  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Centralized Control Over Token Supply and Operations  *(Severity: Medium · Status: Unresolved)*
 
-The `BRIDGE_ROLE` has the exclusive ability to `bridgeMint` and `bridgeBurn` tokens. This means a single entity or a small group of entities controls the entire supply mechanism of the wOCT token, up to `MAX_SUPPLY`. A compromise of the `BRIDGE_ROLE` address would allow an attacker to mint an arbitrary amount of tokens (up to `MAX_SUPPLY`) or burn tokens from any user, leading to severe economic manipulation and loss of user funds. (7.3 Access Control, 7.4 Economic)
+The `WrappedOCT` contract grants significant power to specific roles, particularly the `DEFAULT_ADMIN_ROLE`, `BRIDGE_ROLE`, and `PAUSER_ROLE`. The `DEFAULT_ADMIN_ROLE` (initially the deployer) has the ability to grant and revoke any role, effectively controlling all administrative functions. The `BRIDGE_ROLE` can mint new tokens up to the `MAX_SUPPLY` and burn existing tokens, directly impacting the token's supply. The `PAUSER_ROLE` can unilaterally pause all token transfers. This high degree of centralization means that a compromise of any of these key addresses could lead to unauthorized minting, burning, or a complete halt of token operations, posing a significant risk to the protocol's…
 
-**Recommendation:** Implement a multi-signature wallet or a robust governance mechanism for the `BRIDGE_ROLE` to ensure multiple approvals are required for minting/burning operations. Consider time-locks for significant supply changes.
-
-
-### `H-01` — Centralized Pause Functionality (Pauser Role)  *(Severity: High · Status: Unresolved)*
-
-The `PAUSER_ROLE` can unilaterally call `pause()`, which halts all token transfers and bridge operations (`bridgeMint`, `bridgeBurn`) due to the `whenNotPaused` modifier. While pausing can be a safety mechanism, a malicious or compromised `PAUSER_ROLE` could indefinitely freeze all token activity, causing significant disruption, loss of liquidity, and potential economic damage to users. (7.3 Access Control, 7.8 Operations)
-
-**Recommendation:** Implement a multi-signature wallet for the `PAUSER_ROLE`. Consider adding a time-lock or a community-driven unpause mechanism (e.g., via governance) to prevent indefinite pausing by a single entity.
+**Recommendation:** Implement multi-signature wallets (e.g., Gnosis Safe) for the `DEFAULT_ADMIN_ROLE`, `BRIDGE_ROLE`, and `PAUSER_ROLE`. This requires multiple independent approvals for critical actions, distributing control and significantly reducing the risk associated with a single point of failure. Consider adding time-locks for highly sensitive operations to allow for community review or emergency intervention.
 
 
-### `H-02` — Default Admin Role Privileges  *(Severity: High · Status: Unresolved)*
+### `L-01` — Non-Standard ERC20 Decimals  *(Severity: Low · Status: Unresolved)*
 
-The `DEFAULT_ADMIN_ROLE` is granted to `msg.sender` during construction and has the power to `unpause()` the contract and manage all other roles (including `BRIDGE_ROLE` and `PAUSER_ROLE`). If the `DEFAULT_ADMIN_ROLE` is controlled by a single EOA, it represents a single point of failure. A compromise of this address would grant an attacker full control over the contract's administrative functions, including the ability to unpause the contract against the will of the `PAUSER_ROLE` or revoke/grant any role. (7.3 Access Control, 7.8 Operations)
+The `WrappedOCT` contract overrides the default ERC20 `decimals()` function to return 6, instead of the commonly used 18. While this is an explicit design choice and not a vulnerability in itself, it deviates from the widely adopted ERC20 standard. This non-standard decimal precision can lead to compatibility issues, incorrect display of token balances, or miscalculations when integrating with exchanges, wallets, or DeFi protocols that implicitly assume 18 decimals without proper handling.
 
-**Recommendation:** Ensure the `DEFAULT_ADMIN_ROLE` is assigned to a robust multi-signature wallet or a well-secured governance contract. Implement a time-lock for critical role changes.
-
-
-### `M-01` — Hardcoded MAX_SUPPLY  *(Severity: Medium · Status: Unresolved)*
-
-The `MAX_SUPPLY` is a hardcoded constant (`1_000_000_000 * 1e6`). While this provides a clear upper bound, it lacks flexibility. If future protocol needs require an adjustment to the maximum supply, it would necessitate a complete redeployment of the token contract, which is not upgradeable. (7.4 Economic, 7.1 Architecture)
-
-**Recommendation:** For non-upgradeable contracts, hardcoding constants is acceptable if the value is truly immutable. If there's any foreseeable need for flexibility, consider making `MAX_SUPPLY` configurable via a trusted role (e.g., `DEFAULT_ADMIN_ROLE`) with appropriate safeguards (e.g., multi-sig, time-lock).
+**Recommendation:** Ensure all off-chain systems, front-end applications, and integrated smart contracts are explicitly aware of and correctly handle the 6-decimal precision of the `WrappedOCT` token. Thoroughly test all integrations to confirm that token values are displayed and processed accurately to prevent user confusion or financial discrepancies.
 
 
-### `L-01` — Constructor Role Granting Visibility  *(Severity: Low · Status: Unresolved)*
+### `I-01` — Immutable MAX_SUPPLY Constant  *(Severity: Informational · Status: Unresolved)*
 
-While OpenZeppelin's `AccessControl` emits `RoleGranted` events, the explicit `_grantRole` calls within the constructor of `WrappedOCT` do not explicitly emit these events from the `WrappedOCT` context. Although the underlying `_grantRole` function does emit them, it's good practice to ensure all significant state changes, especially during initialization, are clearly auditable directly from the contract's deployment transaction logs. (7.2 Code Security)
+The `MAX_SUPPLY` for the `WrappedOCT` token is defined as a `public constant` with a value of `1_000_000_000 * 1e6`. This means the maximum total supply of the token is hardcoded into the contract and cannot be altered after deployment. While providing predictability and transparency regarding the token's supply cap, this design choice removes any flexibility to adjust the maximum supply in the future, even if unforeseen circumstances or protocol evolution might warrant such a change.
 
-**Recommendation:** No direct code change is strictly needed as OpenZeppelin handles event emission. This is an informational note on constructor event visibility. For enhanced clarity, consider emitting custom events in the constructor if specific initialization details need to be highlighted.
-
-
-### `I-01` — Non-Upgradeability  *(Severity: Informational · Status: Unresolved)*
-
-The `WrappedOCT` contract is implemented directly and does not utilize a proxy pattern, meaning it is not upgradeable. Any future changes, bug fixes, or feature additions would require deploying an entirely new contract and migrating users, which can be a complex and disruptive process. (7.7 Upgrades)
-
-**Recommendation:** Acknowledge the non-upgradeable nature. For critical infrastructure or long-term projects, consider an upgradeable architecture (e.g., UUPS proxy) in future iterations to allow for flexibility and bug fixes without redeployment.
+**Recommendation:** Acknowledge that the `MAX_SUPPLY` is immutable. If future flexibility for supply cap adjustments is ever considered necessary, a different design pattern involving a state variable managed by a governance or admin role would be required. However, such a change would introduce its own set of governance and security considerations.
 
 ## Token Metrics
 

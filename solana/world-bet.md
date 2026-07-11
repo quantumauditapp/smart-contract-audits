@@ -2,14 +2,14 @@
 token: WORLD BET
 ticker: WBET
 network: solana
-risk_score: 34
+risk_score: 44
 status: medium
 date: 2026-06-25
 ---
 
 # WORLD BET (WBET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-bet-sol)
 
@@ -17,17 +17,27 @@ date: 2026-06-25
 
 ## Audit Summary
 
-The WORLD BET (WBET) token exhibits strong security posture regarding core authorities, with both Mint and Freeze authorities revoked. It utilizes the modern spl-token-2022 program without active transfer hooks or mutable metadata. Holder concentration data was unavailable, preventing a full assessment of distribution risk. RugCheck.xyz provided a score of 1/100, which is a strong negative signal, but no explicit "RUGGED" verdict was provided in the facts, thus no deterministic finding was triggered.
+The WORLD BET (WBET) token mint on Solana has revoked both its Mint and Freeze authorities, which is a positive security characteristic as it prevents further token dilution or account freezing. However, the token exhibits very low liquidity, with only $4,086 in total DEX liquidity, making large positions difficult to exit without significant slippage. Holder distribution data was unavailable from chain-native RPC.
 
-> **Final Recommendation:** The WORLD BET (WBET) token demonstrates good security practices by having its Mint and Freeze authorities revoked, preventing further token issuance or account freezing by the issuer. The token also lacks active transfer hooks and has immutable metadata. However, the RugCheck score of 1/100 is a significant red flag that warrants extreme caution. While not explicitly classified as "RUGGED" by the provided facts, such a low score typically indicates severe underlying issues. It is recommended to investigate the reasons behind this low RugCheck score before considering any interaction with this token. Additionally, holder concentration data was unavailable, which is crucial for assessing market manipulation risks.
+> **Final Recommendation:** Prospective holders should be aware of the extremely low liquidity, which poses a significant risk for exiting positions. Verify on-chain that the Mint and Freeze authorities remain revoked to ensure the supply is fixed and accounts cannot be frozen. Monitor DEX liquidity and trading volume closely, as these metrics are critical for assessing market viability and price stability.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | Regarding 7.1 Architecture and 7.2 Code Security, the token is an SPL Token-2022 mint, indicating modern Solana token standards. For 7.3 Access Control, both the Mint Authority and Freeze Authority… |
-| **Governance / Economics** | 5/10 | Medium | For 7.4 Economic and 7.5 Governance, holder concentration data was unavailable, preventing an assessment of supply distribution risk. The token has a liquidity of $12,239 USD, which is moderate. The… |
-| **Upgrades** | 8/10 | Low | For 7.7 Upgrades and 7.8 Operations, the token mint has no active Mint Authority or Freeze Authority, meaning its supply and freeze capabilities cannot be altered by an external key. It utilizes the… |
+| **Technical** | 5/10 | Medium | The WORLD BET (WBET) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no holder… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits very low liquidity, with only $4,086 in total DEX liquidity, which can lead to severe slippage for any significant trade. The 24-hour volume is $13, and the Volume/Liquidity Ratio… |
+| **Upgrades** | 8/10 | Low | The token's Mint Authority and Freeze Authority are both revoked, meaning core parameters related to supply and account control cannot be changed. The token does not have upgradable transfer fees or… |
+
+## Security Findings
+
+_🟠 1 High_
+
+### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
+
+Total DEX liquidity is $4,086. Slippage will be severe; large positions cannot be exited without significant loss.
+
+**Recommendation:** Account for the low liquidity in any swap calculation and be aware of the potential for significant price impact on trades.
 
 ## Token Metrics
 

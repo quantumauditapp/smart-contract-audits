@@ -2,14 +2,14 @@
 token: Mumu the Bull
 ticker: MUMU
 network: solana
-risk_score: 59
-status: high
+risk_score: 44
+status: medium
 date: 2026-06-10
 ---
 
 # Mumu the Bull (MUMU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mumu-the-bull-sol)
 
@@ -17,34 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Mumu the Bull (MUMU) token presents a High overall risk primarily due to its default frozen account state, which requires manual unfreezing by an authority for new holders to transact. Additionally, the DEX pair is very new, with only 2 days of trading history, limiting the ability to assess long-term stability. Holder concentration data was unavailable, preventing a full assessment of supply distribution risk.
+The Mumu the Bull (MUMU) SPL token mint exhibits a strong security posture with both mint and freeze authorities revoked. No critical or high-severity issues were identified based on the provided on-chain facts and deterministic rules. Holder distribution data was unavailable from chain-native RPC, though a third-party registry signals high holder concentration.
 
-> **Final Recommendation:** Prospective holders should be aware of the default frozen account state, which necessitates an active issuer to unfreeze new accounts before they can be used. It is crucial to verify the availability and responsiveness of this unfreezing authority. Given the very new DEX pair, caution is advised, and a longer track record should be observed before making significant investments. Due to the lack of holder concentration data, it is recommended to monitor on-chain distribution if possible.
+> **Final Recommendation:** Holders should regularly monitor the token's liquidity and trading volume to ensure market health. While direct holder distribution data was unavailable, the third-party signal of high holder concentration warrants caution; observe on-chain transfers from large holders for any significant movements. Verify on-chain that the mint and freeze authorities remain revoked to confirm the fixed supply and unfreezable nature of accounts.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Mumu the Bull (MUMU) token is an SPL token operating under the `spl-token` program. Both the mint authority and freeze authority have been revoked, which is a positive security measure as it… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a liquidity of $126,366 USD and a 24-hour trading volume of $283,027 USD, resulting in a normal Volume/Liquidity Ratio of 2.24. The DEX pair is very new, having been created only 2… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the Mumu the Bull (MUMU) token have been revoked, indicating that the token's supply and freeze capabilities are immutable. The token uses the standard… |
-
-## Security Findings
-
-_🟠 1 High · 🟡 1 Medium_
-
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
-
-New holder accounts are created in a frozen state (GoPlus.default_account_state: 1) and require explicit unfreezing by an authority.
-
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
-
-
-### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
-
-DEX pair was created 2 days ago. Insufficient track record to assess team or holder behaviour.
-
-**Recommendation:** Observe the token's performance and team activity for a longer period to establish a sufficient track record.
+| **Technical** | 6/10 | Medium | The Mumu the Bull (MUMU) token is implemented using the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, as confirmed by on-chain facts, preventing further… |
+| **Governance / Economics** | 4/10 | Medium | The token's economic profile shows a healthy liquidity of $80,790 USD and a normal 24-hour volume to liquidity ratio of 0.63, indicating no signs of wash trading. The DEX pair has been active for 32… |
+| **Upgrades** | 8/10 | Low | The Mumu the Bull token mint has a robust upgrade and mutability profile. Both the mint and freeze authorities are revoked, meaning no further changes can be made to the token's supply or account… |
 
 ## Token Metrics
 

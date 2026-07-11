@@ -2,14 +2,14 @@
 token: Metaplex
 ticker: MPLX
 network: solana
-risk_score: 60
+risk_score: 52
 status: high
 date: 2026-07-03
 ---
 
 # Metaplex (MPLX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 60/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/metaplex-sol)
 
@@ -17,34 +17,34 @@ date: 2026-07-03
 
 ## Audit Summary
 
-This audit of the Metaplex Token (MPLX) mint identifies critical risks primarily due to an unrevoked mint authority, allowing the holder of key BHkk3RTd4Ue6JnqXpa9QHTXbn575ycR8hxVmYx4E254k to mint unlimited tokens. Additionally, new holder accounts are created in a frozen state, requiring manual unfreezing. Holder concentration data was unavailable, preventing assessment of whale risk.
+The Metaplex Token (MPLX) mint retains an active mint authority, allowing for unlimited new token creation and potential dilution of existing holders. Additionally, the token's metadata is mutable, enabling changes to its name, symbol, or image post-launch. Holder distribution data was unavailable from chain-native RPC, preventing a full assessment of supply concentration risk.
 
-> **Final Recommendation:** Holders should exercise extreme caution due to the active mint authority (BHkk3RTd4Ue6JnqXpa9QHTXbn575ycR8hxVmYx4E254k), which can dilute all token holders at any time. It is strongly recommended to verify on-chain that the mint authority is set to null before considering the supply fixed. Additionally, be aware that new token accounts will be created in a frozen state, requiring an active issuer to unfreeze them for transfers to occur. If the issuer becomes unresponsive, tokens in new accounts could become unspendable.
+> **Final Recommendation:** Before engaging with this token, verify on-chain that the mint authority has been permanently revoked to prevent future supply dilution. Monitor the token's metadata for any unexpected changes to its branding. Due to the unavailability of holder distribution data, exercise caution regarding potential market manipulation from concentrated holdings. Consider the implications of the mutable metadata for long-term trust in the token's identity.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | 7.1 Architecture & 7.2 Code Security: The Metaplex Token (MPLX) is a standard SPL token operating under the `spl-token` program. The mint authority, held by… |
-| **Governance / Economics** | 3/10 | High | 7.4 Economic: The token exhibits substantial liquidity with $1,945,247 USD on DEXs and a 24-hour trading volume of $2,749,225 USD. The volume/liquidity ratio is 1.41, which is within normal… |
-| **Upgrades** | 7/10 | Low | 7.7 Upgrades: The mint authority remains active, allowing for potential future supply changes. However, the freeze authority has been revoked, preventing future freezing of accounts by a central… |
+| **Technical** | 4/10 | Medium | The Metaplex Token (MPLX) is an SPL token operating under the `spl-token` program. A critical risk is present as the mint authority, `BHkk3RTd4Ue6JnqXpa9QHTXbn575ycR8hxVmYx4E254k`, remains active… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a healthy liquidity of $1,705,177 USD and a normal 24-hour volume to liquidity ratio of 0.05, suggesting organic trading activity rather than wash trading. The DEX pair has been… |
+| **Upgrades** | 7/10 | Low | The mint authority for MPLX is still active, which allows for potential future changes to the token's total supply. In contrast, the freeze authority has been permanently revoked, ensuring that no… |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High_
+_🔴 1 Critical · 🟢 1 Low_
 
 ### `C-01` — Mint Authority Not Revoked  *(Severity: Critical · Status: Unresolved)*
 
-The mint authority is BHkk3RTd4Ue6JnqXpa9QHTXbn575ycR8hxVmYx4E254k. The holder of this key can mint unlimited new tokens, diluting all current holders to zero value. (Fact: Mint Authority: BHkk3RTd4Ue6JnqXpa9QHTXbn575ycR8hxVmYx4E254k)
+The mint authority is BHkk3RTd4Ue6JnqXpa9QHTXbn575ycR8hxVmYx4E254k. The holder of this key can mint unlimited new tokens, diluting all current holders to zero value.
 
 **Recommendation:** Verify on-chain that the mint authority is set to null before treating supply as fixed.
 
 
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
+### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
 
-New holder accounts are created in a frozen state and require explicit unfreezing by an authority. (Fact: GoPlus.default_account_state: 1)
+Token name, symbol, or image can be changed post-launch, as indicated by `metadata_mutable: True`.
 
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+**Recommendation:** Verify metadata against off-chain expectations before trusting branding.
 
 ## Token Metrics
 

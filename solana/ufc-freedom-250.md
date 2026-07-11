@@ -2,14 +2,14 @@
 token: UFC Freedom 250
 ticker: UFC250
 network: solana
-risk_score: 66
+risk_score: 51
 status: high
 date: 2026-06-10
 ---
 
 # UFC Freedom 250 (UFC250) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ufc-freedom-250-sol)
 
@@ -17,34 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This audit of the UFC Freedom 250 (UFC250) SPL token mint identifies significant risks primarily due to very low liquidity and the nascent age of its DEX trading pair. While core mint authorities are appropriately revoked and metadata is immutable, the token's market stability is highly uncertain. Holder concentration data was unavailable for analysis.
+This SPL Token-2022 mint exhibits strong security configurations with both Mint and Freeze authorities permanently revoked, ensuring a fixed supply and unfreezable accounts. No transfer hooks or default frozen account states are active, and metadata is immutable. However, critical market data such as holder concentration and DEX liquidity were unavailable, preventing a comprehensive economic risk assessment. A third-party registry flagged low liquidity.
 
-> **Final Recommendation:** Potential holders should exercise extreme caution due to the very low liquidity ($7,871) and the extremely young age of the DEX pair (3 days). These factors indicate high volatility and difficulty in exiting positions without significant loss. It is recommended to wait for the token to establish a more substantial liquidity pool and a longer trading history before considering any significant investment. Verify the token's market stability and growth over a longer period.
+> **Final Recommendation:** Prospective holders should verify on-chain that the mint and freeze authorities remain revoked to confirm the immutability of supply and account states. Due to the absence of DEX market data and holder distribution information, it is crucial to monitor the token's market activity closely for the establishment of liquidity and to assess holder concentration once data becomes available. Exercise caution, as a third-party registry has indicated low liquidity, which could impact trade execution.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The UFC Freedom 250 token is implemented using the spl-token-2022 program. Critically, both the Mint Authority and Freeze Authority have been revoked, preventing the creation of new tokens or the… |
-| **Governance / Economics** | 2/10 | High | The token exhibits high economic risk due to its market characteristics. Total DEX liquidity stands at a very low $7,871, indicating that even small trades could experience severe slippage. The… |
-| **Upgrades** | 6/10 | Medium | The UFC Freedom 250 token mint has a strong security posture regarding potential post-launch modifications. Both the Mint Authority and Freeze Authority have been permanently revoked, ensuring that… |
-
-## Security Findings
-
-_🟠 1 High · 🟡 1 Medium_
-
-### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
-
-Total DEX liquidity is $7,871. Slippage will be severe; large positions cannot be exited without significant loss. (Fact: Liquidity (USD): $7,871)
-
-**Recommendation:** Account for the severe slippage in any swap calculation and consider the difficulty of exiting large positions. Avoid significant investments until liquidity materially improves.
-
-
-### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
-
-DEX pair was created 3 days ago. Insufficient track record to assess team or holder behaviour. (Fact: Pair Age (days): 3)
-
-**Recommendation:** Exercise caution due to the lack of historical data. Monitor the token's performance, team activity, and community engagement over a longer period before making investment decisions.
+| **Technical** | 6/10 | Medium | This is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority are revoked (None), indicating a fixed supply and that no accounts can be frozen post-issuance. The token has a supply of… |
+| **Governance / Economics** | 3/10 | High | Holder concentration data is unavailable, preventing an assessment of supply distribution. Similarly, no DEX pair data is available, meaning liquidity and trading volume cannot be determined. A… |
+| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked, meaning the token's supply cannot be altered and no accounts can be frozen. The token program is spl-token-2022, and no Transfer Hook is… |
 
 ## Token Metrics
 

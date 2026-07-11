@@ -2,14 +2,14 @@
 token: Ondo
 ticker: ONDO
 network: ethereum
-risk_score: 41
+risk_score: 28
 status: medium
 date: 2026-06-10
 ---
 
 # Ondo (ONDO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 28/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ondo-eth)
 
@@ -17,62 +17,55 @@ date: 2026-06-10
 
 ## Audit Summary
 
-This audit focuses on the provided Solidity code, which primarily consists of OpenZeppelin's AccessControl contract and its dependencies, presumably used by the Ondo token. The core AccessControl implementation is robust and widely used. However, the security posture heavily relies on the proper management and decentralization of the `DEFAULT_ADMIN_ROLE` and other defined roles. Without the full Ondo token contract, specific token-related vulnerabilities cannot be assessed. The primary risks identified relate to centralized control and the potential for single points of failure if administrative roles are not securely managed.
+This audit covers a truncated Solidity contract identified as a component of the Ondo project, specifically implementing OpenZeppelin's AccessControl module. The provided code is a standard, well-vetted library component, which generally implies high code quality. However, the truncation limits a comprehensive assessment of its full implementation and integration within the broader protocol. Key risks identified relate to the inherent centralization of the `DEFAULT_ADMIN_ROLE` and the critical importance of secure key management for all administrative roles.
 
-> **Final Recommendation:** The core AccessControl component is well-engineered and provides a solid foundation for managing permissions. The primary recommendation is to establish and enforce a robust, decentralized governance strategy for the `DEFAULT_ADMIN_ROLE` and other critical roles. This should involve multi-signature wallets, time-locks, or DAO-based decision-making to mitigate centralization risks and enhance the overall security posture. Regular audits of the full system, including any token logic and external integrations, are also crucial.
+> **Final Recommendation:** Prioritize the secure management of private keys associated with all administrative roles, especially the `DEFAULT_ADMIN_ROLE`. Implement robust multi-signature wallets or time-locked contracts for critical administrative functions to mitigate centralization risks. Conduct a thorough review of the complete 'Ondo' contract, including its integration with this AccessControl module, to identify any potential vulnerabilities arising from custom logic or interactions with external components.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The provided code implements OpenZeppelin's AccessControl, Context, ERC165, and IERC165 contracts. This foundational code (7.1 Architecture, 7.2 Code Security) is well-tested and widely adopted… |
-| **Governance / Economics** | 2/10 | High | The AccessControl mechanism (7.5 Governance) inherently introduces centralization risks if administrative roles, particularly the `DEFAULT_ADMIN_ROLE`, are controlled by a single entity or a small… |
-| **Upgrades** | 8/10 | Low | The provided contract code does not include any explicit proxy or upgradeability patterns (7.7 Upgrades). Therefore, no specific upgrade safety issues can be identified or assessed from the given… |
+| **Technical** | 10/10 | Low | The provided code snippet is a standard implementation of OpenZeppelin's AccessControl, demonstrating robust architecture (7.1) and adherence to secure coding practices (7.2). The use of… |
+| **Governance / Economics** | 3/10 | High | The contract establishes a role-based access control system (7.3), which is a fundamental governance mechanism. The `DEFAULT_ADMIN_ROLE` holds significant power, capable of managing all other roles… |
+| **Upgrades** | 8/10 | Low | The provided contract is a base AccessControl module and does not inherently include upgradeability mechanisms (7.7). Its role in an upgradeable system would depend on how it's integrated (e.g., as a… |
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
+_🟡 1 Medium · 🟢 2 Low · ⚪ 2 Informational_
 
-### `H-01` — Centralization Risk via DEFAULT_ADMIN_ROLE  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralization Risk with DEFAULT_ADMIN_ROLE  *(Severity: Medium · Status: Unresolved)*
 
-The `DEFAULT_ADMIN_ROLE` (0x00) in the AccessControl contract is self-administering, meaning an account holding this role can grant and revoke itself and any other role. If this role is controlled by a single external owned account (EOA) or a small, easily compromised group, it represents a significant centralization risk (7.3 Access Control, 7.5 Governance). A compromise of this key would allow an attacker to gain full control over all access-controlled functions within the system.
+The `DEFAULT_ADMIN_ROLE` in the AccessControl contract possesses extensive power, including the ability to grant and revoke all other roles, and it is its own admin. A compromise of the private key associated with an account holding this role could lead to a complete takeover of all access-controlled functions within the protocol (7.3, 7.5). This represents a single point of failure.
 
-**Recommendation:** Implement a robust, decentralized governance mechanism for the `DEFAULT_ADMIN_ROLE`. This should ideally involve a multi-signature wallet with a high threshold, a time-lock contract, or a DAO-controlled contract. Ensure that the initial assignment of this role is to a highly secure entity.
-
-
-### `M-01` — Missing Ondo Token Logic for Comprehensive Audit  *(Severity: Medium · Status: Unresolved)*
-
-The provided source code only contains OpenZeppelin's AccessControl and its dependencies. The specific implementation of the 'Ondo' token contract, which presumably utilizes this AccessControl, is missing. This prevents a comprehensive audit of the token's core functionalities, such as transfer mechanisms, fee structures, minting/burning logic, and potential interactions with other protocols (7.1 Architecture, 7.2 Code Security). Without this, reentrancy, economic exploits, or other token-specific vulnerabilities cannot be assessed.
-
-**Recommendation:** Provide the complete source code for the 'Ondo' token contract and any other relevant contracts (e.g., proxy, treasury, staking) for a full security assessment. This will allow for a thorough review of all interactions and business logic.
+**Recommendation:** Implement robust security measures for accounts holding the `DEFAULT_ADMIN_ROLE`. Consider using a multi-signature wallet (e.g., Gnosis Safe) for this role, or a time-locked contract for critical administrative actions. Distribute the control of the multi-sig among trusted, independent parties. Regularly review and rotate administrative keys if feasible.
 
 
-### `M-02` — Lack of Role Documentation and Clarity  *(Severity: Medium · Status: Unresolved)*
+### `L-01` — Reliance on OpenZeppelin Standard Library  *(Severity: Low · Status: Resolved)*
 
-While AccessControl provides a flexible framework, the specific roles (beyond `DEFAULT_ADMIN_ROLE`) that the Ondo token contract will define and their associated permissions are not evident from the provided code. A lack of clear, explicit documentation for each role's purpose, the functions it controls, and the addresses assigned to it can lead to operational errors or misconfigurations (7.8 Operations, 7.5 Governance).
+The contract utilizes OpenZeppelin's `AccessControl` module, which is a widely adopted, well-audited, and community-vetted standard library. This significantly reduces the likelihood of fundamental vulnerabilities within the access control mechanism itself (7.2).
 
-**Recommendation:** Create comprehensive documentation outlining all defined roles, their `bytes32` identifiers, the specific functions they are authorized to call, and the rationale behind their existence. Maintain an up-to-date record of addresses assigned to each role and the process for role changes.
-
-
-### `L-01` — Older Compiler Version (0.8.3)  *(Severity: Low · Status: Unresolved)*
-
-The contract is compiled with Solidity version 0.8.3. While this version is generally stable and includes important safety features like default checked arithmetic, newer versions (e.g., 0.8.20+) offer additional optimizations, bug fixes, and sometimes new security features (7.2 Code Security).
-
-**Recommendation:** Consider upgrading the Solidity compiler version to the latest stable release (e.g., 0.8.20 or newer) to benefit from the latest improvements and security patches. Thoroughly test the contract after any compiler upgrade.
+**Recommendation:** Continue to leverage well-established and audited libraries like OpenZeppelin. Ensure that the specific version used is free from known vulnerabilities and that any custom modifications or integrations are thoroughly reviewed.
 
 
-### `I-01` — AGPL-3.0 License Choice  *(Severity: Informational · Status: Unresolved)*
+### `L-02` — Lack of On-Chain Role Enumerability  *(Severity: Low · Status: Unresolved)*
 
-The contract uses the AGPL-3.0 license. This is a strong copyleft license that requires anyone distributing modified versions of the software over a network to make the source code available. While legally valid, it is less common for smart contracts compared to more permissive licenses like MIT or Apache 2.0, and its implications should be fully understood by all users and integrators (7.6 External).
+The `AccessControl` contract, as implemented, does not provide functions to enumerate all members of a given role on-chain. While this design choice reduces gas costs, it can make it more challenging to perform on-chain audits or verify current permissions without relying on off-chain event log parsing (7.3).
 
-**Recommendation:** Ensure that the implications of the AGPL-3.0 license are fully understood by the project team and any third-party integrators. If a less restrictive license is desired for broader adoption or integration, consider alternatives like MIT or Apache 2.0.
+**Recommendation:** If on-chain enumerability is desired for transparency or specific protocol needs, consider using OpenZeppelin's `AccessControlEnumerable` variant. Otherwise, ensure robust off-chain monitoring and tooling are in place to track role assignments and revocations effectively.
 
 
-### `I-02` — Unused `this` in _msgData()  *(Severity: Informational · Status: Unresolved)*
+### `I-01` — Incomplete Code Provided for Audit  *(Severity: Informational · Status: Unresolved)*
 
-The `_msgData()` function in `Context.sol` includes `this;` to silence a state mutability warning. This is a known pattern in OpenZeppelin contracts and does not affect functionality or security (7.2 Code Security).
+The provided source code for the 'Ondo.sol' contract is truncated, specifically cutting off in the middle of the `renounceRole` function. This limitation prevents a complete and comprehensive security assessment of the entire contract, its full functionality, and its interactions with other potential components of the Ondo protocol.
 
-**Recommendation:** No action required. This is a standard OpenZeppelin practice.
+**Recommendation:** Provide the complete and untruncated source code for all relevant contracts to enable a thorough security audit. This includes all inherited contracts, libraries, and any custom logic specific to the Ondo protocol.
+
+
+### `I-02` — Critical Importance of Secure Key Management  *(Severity: Informational · Status: Unresolved)*
+
+The overall security and integrity of the access control system, and by extension the entire protocol, are fundamentally dependent on the secure management of private keys associated with accounts holding administrative roles. Any compromise of these keys could lead to unauthorized control and potential loss of funds (7.8).
+
+**Recommendation:** Educate all role holders on best practices for private key security, including hardware wallets, secure storage, and phishing awareness. Implement strict operational procedures for managing and accessing these keys. Consider emergency procedures in case of key compromise.
 
 ## Token Metrics
 

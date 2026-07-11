@@ -2,14 +2,14 @@
 token: Bull
 ticker: BULL
 network: solana
-risk_score: 39
+risk_score: 29
 status: medium
 date: 2026-06-10
 ---
 
 # Bull (BULL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 29/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bull-sol)
 
@@ -17,29 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Bull (BULL) SPL token presents a significant operational risk due to its default frozen account state, which requires manual unfreezing for new holders to interact with their tokens. While mint and freeze authorities are revoked, ensuring fixed supply and preventing arbitrary freezes, the default frozen state could hinder usability. Holder concentration data was unavailable, preventing a full assessment of market manipulation risk.
+This audit of the Bull SPL token mint found no critical or high-risk vulnerabilities based on the provided on-chain facts and third-party security registry data. Both mint and freeze authorities are revoked, indicating a fixed supply and immutable account states. Holder distribution data was unavailable, preventing a full assessment of market concentration risks.
 
-> **Final Recommendation:** Holders should be aware that new accounts for the Bull (BULL) token will be created in a frozen state, requiring an active issuer or authority to unfreeze them before transfers can occur. It is crucial to confirm the availability and responsiveness of such an entity to avoid unspendable tokens. While the token's core authorities are revoked and metadata is immutable, the operational hurdle of default frozen accounts should be carefully considered.
-
-For a premium deployment, ensure that the default account state is set to unfrozen unless a specific, regulated use case explicitly requires accounts to be frozen by default.
+> **Final Recommendation:** Holders should confirm on-chain that the mint and freeze authorities remain revoked to ensure supply and account immutability. Monitor for any future changes in holder distribution once data becomes available, as high concentration could introduce market volatility. No further immediate actions are required based on current findings.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Bull (BULL) token is an SPL token operating on the Solana blockchain using the standard `spl-token` program. Its mint authority has been revoked, preventing further token issuance and ensuring a… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy liquidity with $191,731 USD available on DEXs, and a 24-hour volume of $327,127, indicating active trading (7.4 Economic). The volume/liquidity ratio of 1.71 is normal… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are both revoked, meaning no further changes can be made to the token's supply or the ability to freeze accounts (7.7 Upgrades). Metadata mutability is set to… |
-
-## Security Findings
-
-_🟠 1 High_
-
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
-
-New holder accounts are created in a frozen state (GoPlus.default_account_state: 1) and require explicit unfreezing by an authority. This can block transfers and make tokens unspendable until unfrozen.
-
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+| **Technical** | 6/10 | Medium | The Bull token operates under the `spl-token` program. Both the mint authority and freeze authority have been revoked (None), ensuring a fixed supply and immutability of account states. The token… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits healthy liquidity at $69,308 USD and a normal 24-hour volume to liquidity ratio of 1.47, suggesting organic trading activity. The pair has been active for 109 days, providing a… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked (None), meaning the token's supply and account freeze capabilities are immutable. Metadata is also not mutable (`metadata_mutable: False`)… |
 
 ## Token Metrics
 

@@ -17,19 +17,17 @@ date: 2026-06-11
 
 ## Audit Summary
 
-The ENA token contract implements a standard ERC20 token with burnable and permit functionalities, leveraging OpenZeppelin's battle-tested libraries. It features a controlled inflationary minting mechanism, restricted to the owner, with a fixed annual rate and a one-year cooldown. The primary risk lies in the centralized control over token supply through the owner's minting capabilities, which requires robust off-chain governance.
+This report details the security audit of the ENA token contract, which serves as the governance token for the Ethena protocol. The contract is an ERC20 token with burnable and permit functionalities, inheriting from OpenZeppelin's Ownable2Step for robust access control. Key features include a controlled annual minting mechanism and a significant initial token distribution. The audit identified a High-severity issue related to centralized minting authority, two Medium-severity issues concerning initial supply distribution and reliance on block.timestamp, and several Low/Informational findings. The overall risk level is assessed as Medium, primarily due to the centralized control over token supply inflation.
 
-> **Final Recommendation:** The ENA token contract is well-structured and utilizes audited OpenZeppelin components, providing a solid foundation for an ERC20 token. The primary area for consideration is the centralized control over token minting. It is crucial that the `owner` address is secured by a robust multi-signature wallet or a decentralized autonomous organization (DAO) to mitigate the risks associated with a single point of failure and ensure transparent governance over the token supply. The contract does not interact with external protocols (7.6 External) and its operational aspects (7.8 Operations) are straightforward, relying on the owner for minting. 
-
-For enhanced security and operational resilience, consider a Premium Deploy option that includes continuous monitoring, incident response planning, and regular security reviews, especially for the entity controlling the owner address. This proactive app…
+> **Final Recommendation:** It is recommended to implement robust multi-signature or time-locked controls for the contract owner address, especially given its centralized minting authority. This would significantly mitigate the risk associated with a single point of failure. Additionally, ensure that the `_treasury` and `_foundation` addresses receiving the initial token supply are secured with strong operational controls, preferably multi-signature wallets, to protect the substantial token holdings. While `block.timestamp` is generally acceptable for yearly cooldowns, consider the implications for any future time-sensitive operations.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The ENA token contract (7.1 Architecture) is a straightforward ERC20 implementation, inheriting from OpenZeppelin's `ERC20`, `ERC20Burnable`, `ERC20Permit`, and `Ownable2Step` contracts. This robust… |
-| **Governance / Economics** | 1/10 | High | The contract's economic model (7.4 Economic) features a hardcoded maximum annual inflation rate of 10% and a mandatory one-year wait period between minting operations, providing predictability for… |
-| **Upgrades** | 2/10 | High | The ENA token contract (7.7 Upgrades) is not designed as an upgradeable proxy. This means that any future modifications to the contract logic would necessitate the deployment of an entirely new… |
+| **Technical** | 4/10 | Medium | The ENA contract demonstrates good technical architecture (7.1) by extending well-audited OpenZeppelin libraries for ERC20, burnable, permit, and two-step ownership functionalities. Code security… |
+| **Governance / Economics** | 1/10 | High | The economic model (7.4) features a controlled inflation mechanism where the contract owner can mint new tokens annually, capped at 10% of the total supply. This centralized minting authority (7.5)… |
+| **Upgrades** | 2/10 | High | The ENA token contract is not designed to be upgradeable (7.7). This means its logic is immutable once deployed, eliminating upgrade-related risks such as proxy implementation vulnerabilities or… |
 
 ## LP Distribution
 
@@ -40,34 +38,55 @@ For enhanced security and operational resilience, consider a Premium Deploy opti
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 3 Informational_
 
-### `H-01` — Centralized Control of Token Supply  *(Severity: High · Status: Unresolved)*
+### `H-01` — Centralized Minting Authority  *(Severity: High · Status: Unresolved)*
 
-The `mint` function, which allows for the creation of new tokens up to 10% of the total supply annually, is exclusively controlled by the contract owner. This grants significant power to a single entity (or a small group if a multisig) to influence the token's economics and potentially impact market dynamics and token holder value. While bounded by `MAX_INFLATION` and `MINT_WAIT_PERIOD`, the centralization of this power is a key risk.
+The `mint` function is restricted to the contract owner via the `onlyOwner` modifier. This allows the owner to inflate the token supply annually up to `MAX_INFLATION` (10% of total supply). While limits are in place, this centralizes significant control over the token's economic policy in a single entity. A compromise of the owner's private key or malicious action by the owner could lead to uncontrolled inflation, devaluing the token.
 
-**Recommendation:** Implement a more decentralized governance mechanism for the `mint` function, such as requiring a DAO vote or a timelock for minting operations. This would provide transparency and allow community oversight before new tokens are minted, reducing the risk associated with a single point of control.
-
-
-### `M-01` — Hardcoded Inflation Parameters  *(Severity: Medium · Status: Unresolved)*
-
-The `MAX_INFLATION` (10%) and `MINT_WAIT_PERIOD` (365 days) are hardcoded constants within the contract. While this provides predictability for the token's economic model, it removes flexibility for the protocol to adapt to unforeseen economic conditions or future governance decisions without a full contract redeployment, which can be a complex and costly process.
-
-**Recommendation:** Consider making these parameters configurable by a trusted entity (e.g., owner, multisig, or DAO) through setter functions. Implementing a timelock for any changes to these parameters would provide an additional layer of security and transparency.
+**Recommendation:** Implement a robust multi-signature wallet or a decentralized autonomous organization (DAO) for the contract owner address. This would distribute control and require multiple approvals for critical operations like minting, significantly reducing the risk of a single point of failure or malicious unilateral action.
 
 
-### `L-01` — Potential for `block.timestamp` Truncation  *(Severity: Low · Status: Unresolved)*
+### `M-01` — Reliance on `block.timestamp` for Critical Cooldown  *(Severity: Medium · Status: Unresolved)*
 
-The `lastMintTimestamp` variable is declared as `uint40`. While `block.timestamp` is `uint256`, casting it to `uint40` could theoretically lead to truncation if `block.timestamp` exceeds `2^40 - 1`. Although this is highly unlikely to occur for many decades (approximately 34,865 years from the Unix epoch), it represents a minor type mismatch and a potential, albeit distant, edge case.
+The `MINT_WAIT_PERIOD` (365 days) relies on `block.timestamp` to enforce the yearly minting cooldown. While miner manipulation of `block.timestamp` is typically limited to small deviations to avoid network rejection, it is not entirely immune to manipulation. For a yearly cooldown, the impact is generally low, but it's a general pattern to be aware of for time-sensitive operations.
 
-**Recommendation:** Use `uint256` for the `lastMintTimestamp` variable to match the type of `block.timestamp` and avoid any potential truncation issues, even if they are in the very distant future.
+**Recommendation:** For a yearly cooldown, `block.timestamp` is often considered acceptable. However, for future critical time-sensitive operations, consider using a decentralized oracle service (e.g., Chainlink Keepers or a dedicated time oracle) to provide a more robust and less manipulable time source.
 
 
-### `I-01` — Non-Upgradeable Contract  *(Severity: Informational · Status: Unresolved)*
+### `M-02` — Significant Initial Supply Distribution to Specific Addresses  *(Severity: Medium · Status: Unresolved)*
 
-The ENA token contract is not implemented using a proxy pattern, meaning it is not upgradeable. Any future changes to the contract logic, such as modifying inflation parameters or adding new features, will require deploying an entirely new contract and migrating existing token holders. This process can be complex, costly, and disruptive to the ecosystem.
+The constructor mints a substantial initial supply of 15 billion tokens to `_treasury` and `_foundation` addresses. The security and operational controls around these addresses are critical. If these are externally owned accounts (EOAs), they represent a single point of failure. If they are multi-signature wallets, their security depends on the configuration and key management practices.
 
-**Recommendation:** Acknowledge the implications of non-upgradeability. If future flexibility and adaptability are desired, consider implementing a proxy pattern for new deployments. This would allow for logic upgrades without changing the contract address, but introduces its own set of complexities and security considerations that must be carefully managed.
+**Recommendation:** Ensure that the `_treasury` and `_foundation` addresses are secured with robust operational controls, ideally multi-signature wallets with a sufficient number of signers and proper key management procedures. Regularly audit the security practices surrounding these critical addresses.
+
+
+### `L-01` — Inflexible Inflation Rate  *(Severity: Low · Status: Unresolved)*
+
+The `MAX_INFLATION` is defined as a `constant` (10%), meaning it cannot be modified after contract deployment. While this provides predictability for token holders, it removes the flexibility to adjust the inflation rate in response to future economic conditions or evolving protocol needs. This is a design choice that trades adaptability for certainty.
+
+**Recommendation:** This is a design decision. If future flexibility is desired, consider making `MAX_INFLATION` a state variable that can be updated by the owner or a governance mechanism, potentially with a time-lock or multi-signature approval for changes.
+
+
+### `I-01` — Efficient `uint40` Usage for Timestamp  *(Severity: Informational · Status: Resolved)*
+
+The `lastMintTimestamp` variable is declared as `uint40`. This is an efficient use of storage compared to `uint256` for storing timestamps, as `uint40` is sufficient to store Unix timestamps for many centuries, leading to gas savings.
+
+**Recommendation:** No action required. This is a good practice for gas optimization.
+
+
+### `I-02` — Robust Ownership Transfer Mechanism  *(Severity: Informational · Status: Resolved)*
+
+The contract utilizes OpenZeppelin's `Ownable2Step` for ownership transfers. This mechanism requires a two-step process (propose and accept), significantly reducing the risk of accidental ownership loss during transfer, which is a common vulnerability in `Ownable` contracts.
+
+**Recommendation:** No action required. This is a good security practice.
+
+
+### `I-03` — Prevention of Ownership Renunciation  *(Severity: Informational · Status: Resolved)*
+
+The `renounceOwnership` function is explicitly overridden to revert, preventing the owner from accidentally or maliciously relinquishing control of the contract. This is a good security practice for contracts with critical owner-controlled functions.
+
+**Recommendation:** No action required. This is a good security practice.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: infinity
 ticker: INFINITY
 network: solana
-risk_score: 63
-status: high
+risk_score: 45
+status: medium
 date: 2026-06-28
 ---
 
 # infinity (INFINITY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/infinity-sol)
 
@@ -17,29 +17,17 @@ date: 2026-06-28
 
 ## Audit Summary
 
-This audit of the infinity (infinity) SPL token mint reveals a critical risk: RugCheck.xyz assigns a score of 1/100, strongly indicating a rugged project. While mint and freeze authorities are revoked, and metadata is immutable, the extreme negative signal from RugCheck.xyz overshadows these positive attributes. Holder concentration data was unavailable.
+The infinity SPL Token Mint presents a low-risk profile based on available on-chain data and market analysis. Key administrative authorities, including mint and freeze, are revoked, and no high-risk Token-2022 extensions like transfer hooks or default frozen states are active. Liquidity is adequate, and trading patterns do not suggest manipulation, though holder distribution data was unavailable.
 
-> **Final Recommendation:** Given the critical 'RugCheck Flagged as Rugged' finding, it is strongly recommended to avoid any interaction with this token. While some technical aspects like revoked authorities and immutable metadata are positive, the severe negative signal from RugCheck.xyz indicates a high probability of malicious intent or project failure. Do not purchase, hold, or trade this token.
-
-For future token considerations, always prioritize tokens with a clean RugCheck score, sufficient liquidity, and transparent holder distribution. A Premium Deploy option would involve a comprehensive review of the project's off-chain documentation, team background, and community sentiment, which is beyond the scope of this on-chain data audit.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to ensure the token's supply and transferability are fixed. Monitor DEX liquidity and trading volume for any significant changes that could impact price stability or exit opportunities. If holder distribution data becomes available, assess it for potential concentration risks that could lead to price volatility.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | 7.1 Architecture & 7.3 Access Control: The infinity token is an SPL Token-2022 mint on Solana. Both the mint authority and freeze authority have been revoked, which prevents the creation of new… |
-| **Governance / Economics** | 3/10 | High | 7.4 Economic: The token has a total DEX liquidity of $15,866 USD, with a 24-hour volume of $7,752 USD. The volume/liquidity ratio is 0.49, which is considered normal and does not suggest wash… |
-| **Upgrades** | 7/10 | Low | 7.7 Upgrades: The token's core parameters, such as minting and freezing capabilities, are fixed due to the revocation of both mint and freeze authorities. The token utilizes the spl-token-2022… |
-
-## Security Findings
-
-_🔴 1 Critical_
-
-### `C-01` — RugCheck Flagged as Rugged  *(Severity: Critical · Status: Unresolved)*
-
-RugCheck.xyz classifies this token as rugged based on its own dataset (developer history, LP movements). The RugCheck Score is 1 / 100, indicating an extremely high risk.
-
-**Recommendation:** Do not interact with this token.
+| **Technical** | 6/10 | Medium | The infinity token is implemented using the spl-token-2022 program. Key administrative authorities, including the Mint Authority and Freeze Authority, have been revoked, indicating a fixed supply and… |
+| **Governance / Economics** | 4/10 | Medium | DEX market data indicates a liquidity of $21,873, which is above the very low liquidity threshold, supporting reasonable trading activity. The 24-hour volume is $5,045, with a healthy… |
+| **Upgrades** | 8/10 | Low | The token's core administrative functions are immutable, as both the Mint Authority and Freeze Authority have been revoked. This prevents any future changes to the token's supply or the ability to… |
 
 ## Token Metrics
 

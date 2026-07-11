@@ -17,17 +17,17 @@ date: 2026-06-21
 
 ## Audit Summary
 
-This SPL Token Mint for Hope This Moons Later (HTML) shows no critical or high-severity risks based on available on-chain data. Both mint and freeze authorities are revoked, and no problematic Token-2022 extensions are active. Holder concentration data was unavailable, preventing assessment of distribution risk.
+This SPL Token-2022 mint, "Hope This Moons Later (HTML)", presents a low-risk profile based on available on-chain data. Key authorities, including mint and freeze, are revoked, ensuring a fixed supply and preventing account freezing. No critical vulnerabilities or high-risk flags were identified by third-party registries. Holder concentration data was unavailable, precluding a full assessment of distribution risk.
 
-> **Final Recommendation:** This token presents a low technical risk profile due to the revocation of critical authorities (mint and freeze) and the absence of problematic Token-2022 extensions. The fixed supply and immutable metadata provide a high degree of certainty regarding the token's core properties. However, the lack of holder concentration data means that potential market manipulation risks from large holders cannot be fully assessed. Users should also be mindful of the relatively low liquidity, which could lead to significant slippage for larger trades.
+> **Final Recommendation:** Verify on-chain that the mint and freeze authorities remain revoked to confirm the fixed supply and immutability of account states. Monitor for any future changes in liquidity or trading patterns, especially if holder distribution data becomes available, to assess potential market manipulation risks. Confirm the token's metadata (name, symbol) aligns with expectations, although it is currently immutable.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint with a supply of 986,983,577.197428 HTML (6 decimals). Crucially, both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
-| **Governance / Economics** | 4/10 | Medium | The token has a total DEX liquidity of $23,868 USD, with a 24-hour trading volume of $11,866 USD. The volume/liquidity ratio is 0.50, which is considered normal and does not indicate wash trading.… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply is fixed and existing tokens cannot be frozen by any central entity. The token's metadata (name, symbol, image) is… |
+| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint with both the mint authority and freeze authority revoked, indicating a fixed supply and immutability of account states. No transfer hook is active, and the… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a healthy liquidity of $13,211 USD, with a normal 24-hour volume to liquidity ratio of 0.48, suggesting organic trading activity. The DEX pair has been active for 205 days… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any further changes to the token's supply or account freezing capabilities. The metadata is immutable… |
 
 ## Token Metrics
 

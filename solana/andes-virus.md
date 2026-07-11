@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Andes Virus (ANDV) SPL token mint has been audited based on on-chain data and external security signals. No critical or high-severity vulnerabilities were identified based on the provided deterministic rules. The mint authority and freeze authority are both revoked, indicating a fixed supply and no ability to freeze user accounts. Holder concentration data was unavailable, and the RugCheck score was very low (1/100), which could indicate potential risks not covered by the deterministic rules.
+This audit of the Andes Virus (ANDV) SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and market data. Both mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Holder distribution data was unavailable, preventing an assessment of concentration risk.
 
-> **Final Recommendation:** Based on the available on-chain facts and external security signals, the Andes Virus (ANDV) token exhibits a secure configuration with revoked mint and freeze authorities, and immutable metadata. However, the unavailability of holder concentration data prevents a full assessment of supply distribution risk. Furthermore, the extremely low RugCheck score of 1/100 is a significant red flag, suggesting potential risks not captured by the deterministic rules. Users should exercise extreme caution, consider the implications of the low RugCheck score, and acknowledge the lack of holder distribution transparency before interacting with this token. For premium deployments, consider a full on-chain analysis of the RugCheck findings and a deeper dive into the project's history.
+> **Final Recommendation:** Given the absence of critical findings, this token appears to be a standard SPL token with fixed supply and no freeze capabilities. Holders should continue to monitor DEX liquidity and trading volume for any significant changes. Verify on-chain that the mint and freeze authorities remain revoked to ensure the token's fixed supply and unfreezable nature are maintained. If holder distribution data becomes available, assess it for concentration risk.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Andes Virus (ANDV) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen.… |
-| **Governance / Economics** | 6/10 | Medium | The token has a liquidity of $26,023 USD, with a 24-hour volume of $6,174 USD, resulting in a normal Volume/Liquidity Ratio of 0.24. The DEX pair has been active for 36 days, providing some track… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the Andes Virus (ANDV) token have been revoked, meaning the token's supply and freeze capabilities are immutable. The token does not have a transfer hook… |
+| **Technical** | 6/10 | Medium | The Andes Virus (ANDV) token is implemented using the spl-token-2022 program, offering enhanced features. A key strength is the revocation of both the mint authority and freeze authority, ensuring no… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $12,082 in total DEX liquidity, which is sufficient for small trades without severe slippage. Trading activity shows a 24-hour volume of $327, resulting in… |
+| **Upgrades** | 8/10 | Low | The token's immutability is a significant strength, as both the mint and freeze authorities have been revoked. This means the token supply is fixed and no accounts can be frozen post-launch. The… |
 
 ## Token Metrics
 

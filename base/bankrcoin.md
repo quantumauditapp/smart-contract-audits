@@ -2,14 +2,14 @@
 token: BankrCoin
 ticker: BNKR
 network: base
-risk_score: 80
-status: critical
+risk_score: 51
+status: high
 date: 2026-06-10
 ---
 
 # BankrCoin (BNKR) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 80/100 — 🔴 Critical Risk**
+> **Risk Score: 51/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bankrcoin-base)
 
@@ -17,19 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Clanker protocol facilitates the deployment of new ERC20 tokens, creation of Uniswap V3 liquidity pools, and locking of initial LP positions. The audit identified a critical bug in the Uniswap V3 pool initialization process, which will prevent the core functionality of the `deployToken` function from working correctly. Additionally, several high and medium severity issues related to economic risks, centralization, and potential deployment failures were found. The contract relies heavily on external Uniswap V3 components and a custom liquidity locker.
+The Clanker protocol consists of a factory contract (`Clanker`) for deploying new ERC20 `Token` contracts, creating Uniswap V3 liquidity pools, and locking LP tokens. The audit identified a High-severity centralization risk due to the `onlyOwner` restriction on token deployment, a Medium-severity technical design flaw related to an arbitrary `weth` address requirement, and several Low-severity issues concerning parameter immutability and external call handling. The contract leverages established libraries like OpenZeppelin and Uniswap V3, contributing to its foundational security. Recommendations focus on decentralizing control, improving parameter flexibility, and enhancing robustness.
 
-> **Final Recommendation:** The Clanker contract contains a critical bug that prevents its primary function from operating as intended. Immediate remediation of the Uniswap V3 pool initialization error (C-01) and the `maxUsableTick` issue (M-02) is essential. Furthermore, addressing the high centralization of control (H-02) and the `amountOutMinimum: 0` risk (H-01) is crucial for the protocol's long-term security and user confidence. A comprehensive review of all external interactions and parameter settings is recommended.
-
-For enhanced security and a more robust deployment, consider a Premium Deploy option. This service includes a dedicated security engineer to assist with contract deployment, post-deployment monitoring, and immediate incident response, ensuring a secure launch and ongoing operational integrity.
+> **Final Recommendation:** To enhance the security and decentralization of the Clanker protocol, it is strongly recommended to address the identified centralization risks. Consider implementing a more decentralized token deployment mechanism, such as a permissionless factory or a multi-signature governance system for critical operations. Review and introduce flexibility for key economic parameters like `defaultLockingPeriod` and fee rates, allowing them to be adjusted through a secure, controlled process. Additionally, evaluate the necessity and implications of the `address(token) < weth` requirement, as it introduces unnecessary complexity and potential friction for users.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture leverages established standards like ERC20 and integrates with Uniswap V3, demonstrating a foundational understanding of DeFi primitives (7.1 Architecture). However, a… |
-| **Governance / Economics** | 1/10 | High | The contract exhibits high centralization, with the `owner` having sole control over critical parameters such as `taxRate`, `lpFeesCut`, `protocolCut`, `defaultLockingPeriod`, and the ability to… |
-| **Upgrades** | 6/10 | Medium | The Clanker contract is not designed with an upgrade mechanism (7.7 Upgrades). Any future modifications or bug fixes would necessitate deploying an entirely new contract and migrating existing assets… |
+| **Technical** | 8/10 | Low | The technical architecture (7.1) utilizes a factory pattern with `create2` for predictable token addresses and integrates with Uniswap V3 for liquidity. Code security (7.2) benefits from Solidity… |
+| **Governance / Economics** | 1/10 | High | Access control (7.3) is heavily centralized, with the `deployToken` function restricted to `onlyOwner` (H-01), giving the contract owner sole control over new token creation and liquidity… |
+| **Upgrades** | 8/10 | Low | The `Clanker` contract is not designed as an upgradeable proxy, meaning its logic is immutable once deployed. The `Token` contracts are deployed via `create2` and are also immutable. Therefore, there… |
 
 ## LP Distribution
 
@@ -40,55 +38,48 @@ For enhanced security and a more robust deployment, consider a Premium Deploy op
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 2 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_🟠 1 High · 🟡 1 Medium · 🟢 3 Low · ⚪ 1 Informational_
 
-### `C-01` — Critical Bug: Incorrect Uniswap V3 Pool Initialization  *(Severity: Critical · Status: Unresolved)*
+### `H-01` — Centralized Control over Token Deployment  *(Severity: High · Status: Unresolved)*
 
-The `deployToken` function attempts to initialize the newly created Uniswap V3 pool by calling `IUniswapV3Factory(pool).initialize(sqrtPriceX96);`. However, `pool` is the address of the newly created Uniswap V3 pool, which implements the `IUniswapV3Pool` interface, not `IUniswapV3Factory`. Calling `initialize` on the `IUniswapV3Factory` interface at the pool's address will either revert or call a non-existent function, leaving the actual Uniswap V3 pool uninitialized and unusable for liquidity provision or swaps. This prevents the core functionality of the `deployToken` function from succeeding.
+The `deployToken` function, which is responsible for creating new `Token` contracts, establishing Uniswap V3 liquidity pools, and locking LP tokens, is restricted to `onlyOwner`. This means that only the contract owner can initiate the creation of new tokens and their associated liquidity. This centralization introduces a single point of failure, limits the protocol's decentralization, and could lead to censorship or bottlenecks in token creation.
 
-**Recommendation:** Cast the `pool` address to the correct interface, `IUniswapV3Pool`, before calling `initialize`. Ensure `IUniswapV3Pool` is imported and available. The corrected line should be `IUniswapV3Pool(pool).initialize(sqrtPriceX96);`.
-
-
-### `H-01` — High Risk: `amountOutMinimum: 0` in Uniswap V3 Swaps  *(Severity: High · Status: Unresolved)*
-
-Both the `deployToken` and `initialSwapTokens` functions perform Uniswap V3 swaps using `amountOutMinimum: 0`. This parameter specifies the minimum amount of `tokenOut` that must be received for the swap to succeed. Setting it to zero means the transaction will succeed regardless of the actual amount received, exposing the caller (the protocol in `deployToken` and `msg.sender` in `initialSwapTokens`) to significant slippage, sandwich attacks, and potential loss of funds, especially in volatile markets or with low liquidity.
-
-**Recommendation:** Implement a mechanism to calculate and enforce a reasonable `amountOutMinimum` based on current market conditions, expected slippage, and a user-defined tolerance. This could involve an oracle call, a calculation based on the current price, or allowing the caller to specify a minimum amount. For `deployToken`, a protocol-defined minimum slippage tolerance should be enforced.
+**Recommendation:** Consider decentralizing the token deployment process. Options include: 1) Removing the `onlyOwner` modifier to allow anyone to deploy tokens (if appropriate for the protocol's design). 2) Implementing a multi-signature wallet or a decentralized autonomous organization (DAO) for approving token deployments. 3) Introducing a whitelisting mechanism for trusted deployers, managed by a multi-sig or DAO.
 
 
-### `H-02` — High Risk: Excessive Centralization of Control  *(Severity: High · Status: Unresolved)*
+### `M-01` — Arbitrary `weth` Address Requirement for Token Deployment  *(Severity: Medium · Status: Unresolved)*
 
-The `Clanker` contract is `Ownable`, granting the contract owner sole control over critical parameters and operations. The owner can modify `taxRate`, `lpFeesCut`, `protocolCut`, `defaultLockingPeriod`, `taxCollector`, and toggle `bundleFeeSwitch` and `deprecated`. This high degree of centralization creates a single point of failure, where a compromised owner key could lead to significant financial loss, manipulation of fees, or complete shutdown of the protocol's core functionality.
+The `deployToken` function includes a `require(address(token) < weth, "Invalid salt");` condition. This forces the deployed token's address (determined by `create2` with a user-provided `_salt`) to be numerically less than the `weth` address. This arbitrary requirement can significantly increase the computational burden and gas costs for users attempting to find a valid `_salt` that satisfies this condition. In some scenarios, it might even make it practically impossible to deploy a token if `weth` has a very low address, hindering legitimate token creation.
 
-**Recommendation:** Consider implementing a multi-signature wallet (e.g., Gnosis Safe) for ownership of the contract to distribute control and require multiple approvals for critical operations. For less sensitive parameters, consider time-locked changes or a decentralized governance mechanism if the protocol intends to evolve towards decentralization.
-
-
-### `M-01` — Medium Risk: Arbitrary `create2` Salt Constraint  *(Severity: Medium · Status: Unresolved)*
-
-The `deployToken` function includes a `require(address(token) < weth, "Invalid salt")` condition. This constraint forces the `create2` deployment of the new `Token` contract to result in an address numerically smaller than the WETH address. This arbitrary requirement can significantly increase the computational cost and time required to find a suitable `_salt` value, potentially leading to deployment failures if a valid salt cannot be found efficiently. It also introduces an unnecessary complexity that could be exploited by front-runners trying to find a valid salt before the legitimate deployer.
-
-**Recommendation:** Re-evaluate the necessity of the `address(token) < weth` constraint. If it's purely for aesthetic or ordering purposes, consider removing it to simplify deployments and reduce potential issues. If there's a critical technical reason, document it clearly and explore alternative, more robust methods to achieve the desired outcome without relying on brute-forcing salt values.
+**Recommendation:** Re-evaluate the necessity of the `address(token) < weth` requirement. If it serves no critical security or functional purpose, it should be removed to improve usability and reduce deployment costs. If there is a specific architectural reason, consider alternative, less restrictive methods to achieve the desired consistency, or provide tools to assist users in generating valid salts efficiently.
 
 
-### `M-02` — Medium Risk: Missing `maxUsableTick` Definition/Usage in `MintParams`  *(Severity: Medium · Status: Unresolved)*
+### `L-01` — Immutability of Key Economic Parameters  *(Severity: Low · Status: Unresolved)*
 
-In the `deployToken` function, the `INonfungiblePositionManager.MintParams` struct is initialized with `maxUsableTick(tickSpacing)` for the `tickUpper` parameter. This appears to be a placeholder or a missing function call. `maxUsableTick` is not defined in the provided contract or interfaces, and it's not a standard Uniswap V3 `MintParams` field. This will likely result in a compilation error or a runtime error if it's interpreted as an undeclared variable, preventing successful LP position minting.
+The `defaultLockingPeriod` and `lpFeesCut` variables are set during the constructor and are not provided with setter functions. This makes them immutable after deployment. While immutability can offer predictability, the lack of flexibility might become an issue if market conditions, regulatory requirements, or protocol strategies necessitate adjustments to these parameters in the future. This could lead to the protocol becoming rigid or requiring a full redeployment to adapt.
 
-**Recommendation:** Clarify the intended value for `tickUpper`. If it's meant to be a calculated value, ensure the `maxUsableTick` function or constant is correctly defined and imported, or replace it with a valid calculation (e.g., `TickMath.MAX_TICK` or a calculated upper bound based on `tickSpacing`). If it's a typo, correct it to the appropriate `tickUpper` value.
-
-
-### `L-01` — Low Risk: Restrictive `deadline` for LP Position Minting  *(Severity: Low · Status: Unresolved)*
-
-The `deadline` parameter for `positionManager.mint` is set to `block.timestamp`. This means the transaction must be mined within the exact block it was created to be valid. If the transaction is delayed even by one block, it will revert. This creates a very narrow window for transaction inclusion and can lead to unnecessary transaction failures, especially during network congestion.
-
-**Recommendation:** Set the `deadline` to `block.timestamp + X`, where `X` is a reasonable time duration (e.g., 10-20 minutes or `1200` seconds). This provides a sufficient window for the transaction to be mined without being overly permissive.
+**Recommendation:** Consider adding owner-controlled setter functions for `defaultLockingPeriod` and `lpFeesCut`. These setters should include appropriate access control (e.g., `onlyOwner`) and potentially a timelock or a multi-signature approval mechanism for sensitive changes to ensure security and provide a grace period for users to react.
 
 
-### `I-01` — Informational: Unchecked Return Value of Low-Level `call` for `taxCollector`  *(Severity: Informational · Status: Unresolved)*
+### `L-02` — Immutability of `taxCollector` and `bundleFeeSwitch`  *(Severity: Low · Status: Unresolved)*
 
-The low-level `call` to `payable(taxCollector).call{value: protocolFees}("")` checks the `success` boolean but does not check the `returndata`. While for a simple ETH transfer, checking `success` is often sufficient, in more complex scenarios or if the `taxCollector` address could be a contract with a fallback function that reverts with a specific message, checking `returndata` could provide more detailed error information. In this specific case, the `if (!success) { revert("Failed to send protocol fees"); }` is adequate for a simple ETH transfer.
+The `taxCollector` address is set in the constructor and is immutable. If this address is initially set incorrectly (e.g., to a non-existent address, a contract that cannot receive ETH, or a malicious address), the fee collection mechanism (`bundleFeeSwitch`) could be permanently broken or funds could be misdirected. Similarly, the `bundleFeeSwitch` itself is a public variable without a setter, making its state (whether fees are collected or not) immutable after deployment. This lack of configurability for a critical economic parameter limits the protocol's adaptability.
 
-**Recommendation:** For simple ETH transfers, the current check is generally acceptable. However, as a best practice for future development or more complex interactions, consider checking `returndata` for more comprehensive error handling, especially if the recipient is a contract that might revert with specific messages.
+**Recommendation:** Implement owner-controlled setter functions for both `taxCollector` and `bundleFeeSwitch`. For `taxCollector`, ensure the setter includes input validation (e.g., `require(newTaxCollector != address(0))`). For both, consider adding a timelock or multi-signature approval for changes to enhance security and provide transparency.
+
+
+### `L-03` — Unchecked Return Values of External Calls  *(Severity: Low · Status: Unresolved)*
+
+While the `call` to `taxCollector` explicitly checks its success, some other external calls to Uniswap V3 components (e.g., `uniswapV3Factory.createPool`, `positionManager.mint`, `liquidityLocker.deploy`, `ILocker(lockerAddress).initializer`) and `ISwapRouter.exactInputSingle` do not explicitly check their return values. Although these are typically interface calls that revert on failure, explicit checks or `try/catch` blocks can provide additional robustness and clearer error handling, especially for calls to external, potentially less trusted, contracts.
+
+**Recommendation:** For critical external calls, consider adding explicit checks for return values or wrapping them in `try/catch` blocks to handle potential failures gracefully. This can improve the contract's resilience against unexpected behavior from external dependencies.
+
+
+### `I-01` — `deprecated` Flag Lifecycle Management  *(Severity: Informational · Status: Unresolved)*
+
+The `deprecated` flag, controllable by the owner, prevents new token deployments when set to `true`. However, there is no mechanism to un-deprecate the contract. While this might be an intentional design choice for a final shutdown, it means that once deprecated, the factory cannot resume its primary function without a new deployment. The contract also does not specify how existing tokens or liquidity pools are affected or managed after deprecation.
+
+**Recommendation:** Clarify the intended lifecycle of the `deprecated` flag. If temporary deprecation is desired, implement a function to revert the flag. If permanent, ensure documentation clearly states this. Additionally, consider adding logic or documentation regarding the implications of deprecation on existing deployed tokens and their liquidity.
 
 ## Token Metrics
 
