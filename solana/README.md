@@ -11,7 +11,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
 | [The Rizz Bull](./the-rizz-bull.md) | RIZZLER | 🟠 49/100 High Risk | 2026-07-10 | [↗](https://quantumaudit.app/token/the-rizz-bull-sol) |
-| [Fartcoin](./fartcoin.md) | FARTCOIN | 🟢 16/100 Low Risk | 2026-07-10 | [↗](https://quantumaudit.app/token/fartcoin-sol) |
+| [Fartcoin](./fartcoin.md) | FARTCOIN | 🟢 6/100 Low Risk | 2026-07-10 | [↗](https://quantumaudit.app/token/fartcoin-sol) |
 | [the bleck bull](./the-bleck-bull.md) | ANSUM | 🟡 35/100 Medium Risk | 2026-07-09 | [↗](https://quantumaudit.app/token/the-bleck-bull-sol) |
 | [Free Joby](./free-joby.md) | JOBY | 🟡 21/100 Medium Risk | 2026-07-09 | [↗](https://quantumaudit.app/token/free-joby-sol) |
 | [The Orange Bull](./the-orange-bull.md) | SAYLOR | 🟡 23/100 Medium Risk | 2026-07-08 | [↗](https://quantumaudit.app/token/the-orange-bull-sol) |

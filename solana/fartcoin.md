@@ -2,14 +2,14 @@
 token: Fartcoin
 ticker: FARTCOIN
 network: solana
-risk_score: 16
+risk_score: 6
 status: low
 date: 2026-07-10
 ---
 
 # Fartcoin (FARTCOIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 16/100 — 🟢 Low Risk**
+> **Risk Score: 6/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fartcoin-sol)
 
@@ -17,33 +17,23 @@ date: 2026-07-10
 
 ## Audit Summary
 
-This SPL Token Mint audit for Fartcoin (Fartcoin) identified a High-severity risk: new holder accounts are created in a frozen state, requiring manual unfreezing by an authority. Holder distribution data was unavailable, preventing an assessment of supply concentration. All critical mint and freeze authorities are revoked, and metadata is immutable.
+The Fartcoin SPL token mint exhibits a low-risk profile based on available on-chain data. Both the mint and freeze authorities have been revoked, indicating a fixed supply and immutability of account states. No high-risk flags were reported by a third-party risk registry, and DEX liquidity is substantial. Holder distribution data was unavailable for analysis.
 
-> **Final Recommendation:** Holders considering Fartcoin should be aware that new token accounts are created in a frozen state. This means that upon receiving tokens, users may not be able to transfer them until their account is explicitly unfrozen by an active authority. It is crucial to confirm the availability and responsiveness of an issuer or designated authority to unfreeze accounts to ensure token spendability. Without this, tokens may become unspendable.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to confirm the fixed supply and immutability of account states. Monitor for any future availability of holder distribution data to assess potential concentration risks. While current data indicates a low-risk profile, ongoing vigilance regarding market dynamics and any new information is always prudent.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Fartcoin token is implemented using the standard `spl-token` program. Its mint authority and freeze authority are both revoked, indicating a fixed supply and immutability of account freeze status… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits healthy liquidity with $6,359,567 in total DEX liquidity and a 24-hour trading volume of $516,813. The volume-to-liquidity ratio is 0.08, which is normal and does not suggest wash… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the Fartcoin token have both been permanently revoked, ensuring that no new tokens can be minted and no existing accounts can be frozen by an issuer. The… |
+| **Technical** | 6/10 | Medium | The Fartcoin token is an SPL token operating under the `spl-token` program. It has a fixed supply of 999,975,021,189,274 tokens with 6 decimals, as the mint authority has been revoked. The freeze… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy liquidity with $6,354,417 in total DEX liquidity, suggesting reasonable market depth. The 24-hour volume of $530,666 results in a normal Volume/Liquidity Ratio of 0.08… |
+| **Upgrades** | 8/10 | Low | The Fartcoin SPL token mint has a robust immutability profile, as both the mint and freeze authorities have been permanently revoked. This means the token supply cannot be increased, and no holder… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
 | **LP Burned** | ✅ 99.8% (≈ permanent lock) |
-
-## Security Findings
-
-_🟠 1 High_
-
-### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
-
-New holder accounts are created in a frozen state (default_account_state: 1) and require explicit unfreezing by an authority.
-
-**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
 
 ## Token Metrics
 

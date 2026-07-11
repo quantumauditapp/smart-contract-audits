@@ -13,7 +13,7 @@
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
 | [The Rizz Bull](./solana/the-rizz-bull.md) | RIZZLER | Solana | 🟠 49/100 | 2026-07-10 | [↗](https://quantumaudit.app/token/the-rizz-bull-sol) |
-| [Fartcoin](./solana/fartcoin.md) | FARTCOIN | Solana | 🟢 16/100 | 2026-07-10 | [↗](https://quantumaudit.app/token/fartcoin-sol) |
+| [Fartcoin](./solana/fartcoin.md) | FARTCOIN | Solana | 🟢 6/100 | 2026-07-10 | [↗](https://quantumaudit.app/token/fartcoin-sol) |
 | [the bleck bull](./solana/the-bleck-bull.md) | ANSUM | Solana | 🟡 35/100 | 2026-07-09 | [↗](https://quantumaudit.app/token/the-bleck-bull-sol) |
 | [Free Joby](./solana/free-joby.md) | JOBY | Solana | 🟡 21/100 | 2026-07-09 | [↗](https://quantumaudit.app/token/free-joby-sol) |
 | [The Orange Bull](./solana/the-orange-bull.md) | SAYLOR | Solana | 🟡 23/100 | 2026-07-08 | [↗](https://quantumaudit.app/token/the-orange-bull-sol) |
