@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**32 reports** · Updated daily · [← All Networks](../README.md)
+**33 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,17 +10,18 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Virtuals Protocol](./virtuals-protocol.md) | VIRTUAL | 🔴 85/100 Critical Risk | 2026-07-11 | [↗](https://quantumaudit.app/token/virtuals-protocol-eth) |
 | [NEXO](./nexo.md) | NEXO | 🔴 100/100 Critical Risk | 2026-07-03 | [↗](https://quantumaudit.app/token/nexo-eth) |
-| [Gram (prev. Toncoin)](./gram-prev-toncoin.md) | GRAM | 🟠 63/100 High Risk | 2026-06-30 | [↗](https://quantumaudit.app/token/gram-prev-toncoin-eth) |
-| [Cap](./cap.md) | CAP | 🔴 76/100 Critical Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/cap-eth) |
-| [RaveDAO](./ravedao.md) | RAVE | 🔴 98/100 Critical Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/ravedao-eth) |
-| [Humanity](./humanity.md) | H | 🔴 87/100 Critical Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/humanity-eth) |
-| [RE](./re.md) | RE | 🔴 78/100 Critical Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/re-eth) |
-| [Synapse](./synapse.md) | SYN | 🟠 70/100 High Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/synapse-eth) |
-| [Main Street USD](./main-street-usd.md) | MSUSD | 🔴 84/100 Critical Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/main-street-usd-eth) |
-| [Re Protocol reUSD](./re-protocol-reusd.md) | REUSD | 🔴 98/100 Critical Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/re-protocol-reusd-eth) |
-| [Clawd](./clawd.md) | CLAWD | 🟠 57/100 High Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/clawd-eth) |
-| [EigenCloud (prev. EigenLayer)](./eigencloud-prev-eigenlayer.md) | EIGEN | 🟠 49/100 High Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/eigencloud-prev-eigenlayer-eth) |
+| [Gram (prev. Toncoin)](./gram-prev-toncoin.md) | GRAM | 🔴 94/100 Critical Risk | 2026-06-30 | [↗](https://quantumaudit.app/token/gram-prev-toncoin-eth) |
+| [Cap](./cap.md) | CAP | 🟠 61/100 High Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/cap-eth) |
+| [RaveDAO](./ravedao.md) | RAVE | 🔴 90/100 Critical Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/ravedao-eth) |
+| [Humanity](./humanity.md) | H | 🔴 85/100 Critical Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/humanity-eth) |
+| [RE](./re.md) | RE | 🔴 95/100 Critical Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/re-eth) |
+| [Synapse](./synapse.md) | SYN | 🔴 80/100 Critical Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/synapse-eth) |
+| [Main Street USD](./main-street-usd.md) | MSUSD | 🔴 100/100 Critical Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/main-street-usd-eth) |
+| [Re Protocol reUSD](./re-protocol-reusd.md) | REUSD | 🔴 96/100 Critical Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/re-protocol-reusd-eth) |
+| [Clawd](./clawd.md) | CLAWD | 🟡 29/100 Medium Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/clawd-eth) |
+| [EigenCloud (prev. EigenLayer)](./eigencloud-prev-eigenlayer.md) | EIGEN | 🟠 67/100 High Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/eigencloud-prev-eigenlayer-eth) |
 | [Asteroid Shiba](./asteroid-shiba.md) | ASTEROID | 🟠 59/100 High Risk | 2026-06-19 | [↗](https://quantumaudit.app/token/asteroid-shiba-eth) |
 | [Aave](./aave.md) | AAVE | 🟡 22/100 Medium Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/aave-eth) |
 | [SPX6900](./spx6900.md) | SPX | 🟡 28/100 Medium Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/spx6900-eth) |

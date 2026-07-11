@@ -17,17 +17,17 @@ date: 2026-07-09
 
 ## Audit Summary
 
-The Free Joby (Joby) token mint is configured with revoked mint and freeze authorities, indicating a fixed supply and no ability to freeze user funds. No Token-2022 extensions like transfer hooks or permanent delegates are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk. Overall, the token exhibits a low-risk profile based on available on-chain facts and external security signals.
+This audit of the Free Joby (Joby) SPL Token Mint found no critical or high-severity vulnerabilities based on the provided on-chain facts. The mint and freeze authorities are revoked, and no high-risk Token-2022 extensions like transfer hooks or default frozen accounts are active. Third-party risk registries report no adverse flags. Holder distribution data was unavailable, which prevents a full assessment of supply centralization risk.
 
-> **Final Recommendation:** The Free Joby (Joby) token appears to be well-configured from a security perspective, with critical authorities revoked and no concerning Token-2022 extensions active. The liquidity and trading volume are reasonable for a token of its age. However, the absence of holder concentration data means that potential risks from concentrated ownership cannot be assessed. Investors should consider this data gap when evaluating the token's market stability. For a Premium Deploy, ensure comprehensive monitoring of liquidity and holder distribution post-launch.
+> **Final Recommendation:** Holders should verify the token's identity and branding against official project channels, as metadata is immutable. While key authorities are revoked, it is recommended to monitor the availability of holder distribution data to assess potential centralization risks. Always ensure the token's utility and community support align with investment expectations.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.3 Access Control: The Free Joby (Joby) token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked (Mint Authority: revoked (None), Freeze… |
-| **Governance / Economics** | 7/10 | Low | 7.4 Economic: The token exhibits healthy trading metrics with $166,373 in liquidity (Liquidity (USD): $166,373) and a 24-hour volume of $272,553 (24h Volume (USD): $272,553), resulting in a normal… |
-| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked (Mint Authority: revoked (None), Freeze Authority: revoked (None)), meaning the token's core parameters (supply, freeze… |
+| **Technical** | 6/10 | Medium | The SPL Token Mint for 'Free Joby' is configured using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits moderate liquidity at $158,299 USD, with a normal 24-hour volume to liquidity ratio of 1.31. The DEX pair has been active for 29 days, providing some track record. However, holder… |
+| **Upgrades** | 8/10 | Low | The mint and freeze authorities are permanently revoked, ensuring no future changes to token supply or account freeze status. Metadata is immutable, preventing post-launch changes to the token's… |
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: the bleck bull
 ticker: ANSUM
 network: solana
-risk_score: 35
+risk_score: 30
 status: medium
 date: 2026-07-09
 ---
 
 # the bleck bull (ANSUM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 35/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-bleck-bull-sol)
 
@@ -17,29 +17,17 @@ date: 2026-07-09
 
 ## Audit Summary
 
-The 'the bleck bull' (ANSUM) SPL Token Mint audit identified a medium risk due to the very new age of its DEX pair, which has been active for only 5 days. This short operational history provides insufficient data to assess long-term team or holder behavior. Holder concentration data was unavailable from RPC, though RugCheck.xyz flagged 'High holder concentration' and 'Single holder ownership' as risks.
+The token mint for 'the bleck bull (ANSUM)' is an SPL Token-2022. Both mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. The token does not utilize transfer hooks or default frozen accounts. DEX liquidity is moderate at $41,196, with a 24-hour volume of $212,228. Holder distribution data was unavailable, and a third-party risk registry signals 'Single holder ownership'.
 
-> **Final Recommendation:** Potential holders should be aware of the token's very recent launch, as the DEX pair is only 5 days old. This short history means there is limited data to assess the long-term behavior of the team or holders. While core authorities are revoked, the RugCheck.xyz warnings about 'High holder concentration' and 'Single holder ownership' should be considered, despite the lack of specific top 10 holder data from RPC.
-
-For enhanced security and transparency, consider a Premium Deploy option that includes continuous monitoring of holder distribution and liquidity metrics. This would provide real-time alerts on significant changes in whale activity or liquidity pools, offering a more dynamic risk assessment beyond initial static checks.
+> **Final Recommendation:** Before interacting with this token, verify the current state of the mint and freeze authorities on-chain to confirm they remain revoked. Monitor DEX liquidity and trading volume for any significant changes, as the current liquidity is moderate. Due to the 'Single holder ownership' signal from a third-party registry, investigate the distribution of tokens once holder concentration data becomes available to assess potential market manipulation risks.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The 'the bleck bull' (ANSUM) token is an SPL Token-2022 mint. Its core technical configuration is robust, with both the Mint Authority and Freeze Authority successfully revoked, as confirmed by `Mint… |
-| **Governance / Economics** | 6/10 | Medium | The token's economic profile shows a DEX pair age of only 5 days, which is a very new pair, indicating insufficient track record. Total DEX liquidity stands at $73,584, with a 24-hour volume of… |
-| **Upgrades** | 8/10 | Low | The token's upgradeability posture is strong, as the critical Mint Authority and Freeze Authority have both been revoked. This means the token's supply and transferability parameters cannot be… |
-
-## Security Findings
-
-_🟡 1 Medium_
-
-### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
-
-DEX pair was created 5 days ago. Insufficient track record to assess team or holder behaviour. (Fact: `Pair Age (days): 5`)
-
-**Recommendation:** Account for the limited operational history when evaluating the token's stability and community engagement. Monitor the pair's performance and holder activity closely over a longer period.
+| **Technical** | 6/10 | Medium | The token is an SPL Token-2022, indicating modern Solana token standards. Both the mint authority and freeze authority have been revoked, ensuring a fixed supply and preventing any account freezing… |
+| **Governance / Economics** | 6/10 | Medium | The token has a moderate DEX liquidity of $41,196, with a 24-hour trading volume of $212,228, resulting in a Volume/Liquidity Ratio of 5.15. The DEX pair has been active for 7 days, providing a… |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are permanently revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not utilize upgradable features such as a… |
 
 ## Token Metrics
 

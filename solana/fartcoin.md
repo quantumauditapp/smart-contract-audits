@@ -17,17 +17,17 @@ date: 2026-07-10
 
 ## Audit Summary
 
-The Fartcoin SPL token mint exhibits a low-risk profile based on available on-chain data. Both the mint and freeze authorities have been revoked, indicating a fixed supply and immutability of account states. No high-risk flags were reported by a third-party risk registry, and DEX liquidity is substantial. Holder distribution data was unavailable for analysis.
+The Fartcoin SPL token mint exhibits a low-risk profile based on available on-chain data. Both mint and freeze authorities are revoked, ensuring a fixed supply and preventing account freezing. Liquidity is substantial, and trading patterns appear normal, though holder distribution data was unavailable.
 
-> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to confirm the fixed supply and immutability of account states. Monitor for any future availability of holder distribution data to assess potential concentration risks. While current data indicates a low-risk profile, ongoing vigilance regarding market dynamics and any new information is always prudent.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to confirm the fixed supply and unfreezable nature of the token. While current data indicates a low-risk profile, users should be aware that holder distribution data was not available, which could hide potential concentration risks. Monitor the token's market activity for any unusual patterns or significant shifts in liquidity.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Fartcoin token is an SPL token operating under the `spl-token` program. It has a fixed supply of 999,975,021,189,274 tokens with 6 decimals, as the mint authority has been revoked. The freeze… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy liquidity with $6,354,417 in total DEX liquidity, suggesting reasonable market depth. The 24-hour volume of $530,666 results in a normal Volume/Liquidity Ratio of 0.08… |
-| **Upgrades** | 8/10 | Low | The Fartcoin SPL token mint has a robust immutability profile, as both the mint and freeze authorities have been permanently revoked. This means the token supply cannot be increased, and no holder… |
+| **Technical** | 6/10 | Medium | The token is implemented using the standard `spl-token` program (v3) with 6 decimals. Both the mint authority and freeze authority are revoked, ensuring that no new tokens can be minted and no holder… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy liquidity with $6,354,417 in total DEX liquidity, supporting efficient trading. The 24-hour volume of $530,366 results in a normal Volume/Liquidity Ratio of 0.08… |
+| **Upgrades** | 8/10 | Low | The mint authority is revoked, meaning the token's supply is fixed and cannot be increased. Similarly, the freeze authority is revoked, preventing any entity from freezing token holder accounts. The… |
 
 ## LP Distribution
 
