@@ -2,14 +2,14 @@
 token: wojak
 ticker: WOJAK
 network: ethereum
-risk_score: 15
-status: low
+risk_score: 30
+status: medium
 date: 2026-06-10
 ---
 
 # wojak (WOJAK) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 15/100 — 🟢 Low Risk**
+> **Risk Score: 30/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wojak-eth)
 
@@ -17,17 +17,17 @@ date: 2026-06-10
 
 ## Audit Summary
 
-The Wojak token contract is an ERC-20 implementation with custom tokenomics including transaction fees, liquidity fees, buyback fees, and transaction/wallet size limits. It utilizes OpenZeppelin's Ownable contract, granting significant control to a single owner address. While leveraging well-audited OpenZeppelin libraries, the custom logic introduces complexity and critical centralization risks.
+The Wojak Token contract is an ERC-20 token implementation with extensive owner-controlled features, including configurable transaction fees, maximum transaction/wallet limits, minting capabilities, and a liquidity generation mechanism. While leveraging OpenZeppelin's secure base contracts, the high degree of centralization introduces significant economic and operational risks. The owner possesses the ability to drastically alter tokenomics, potentially leading to a honeypot scenario or liquidity rug-pull. Technical aspects like unchecked external call return values and lack of slippage protection in swaps also present vulnerabilities.
 
-> **Final Recommendation:** The Wojak token contract presents significant centralization risks due to the extensive privileges granted to the owner. While leveraging standard ERC-20 functionality, the custom tokenomics, particularly the owner's ability to manipulate fees and exclude addresses, introduces critical economic vulnerabilities. It is strongly recommended that potential users understand and accept these inherent risks. For enhanced security and decentralization, consider implementing a multi-signature wallet or a decentralized autonomous organization (DAO) for critical administrative functions, along with timelocks for sensitive parameter changes. A Premium Deploy option could include a comprehensive review of the owner's operational security practices and a formal verification of the complex `_transfer` logic.
+> **Final Recommendation:** Given the extreme centralization, it is crucial for the project to clearly communicate the extent of owner privileges to all potential users and investors. Consider implementing a multi-signature wallet for ownership and introducing time-locks for critical parameter changes to reduce single-point-of-failure risks and increase transparency. For all swap operations, implement a `minAmountOut` parameter to protect against slippage and front-running. Ensure that all external ERC20 calls check their return values to prevent unexpected failures. For enhanced transparency and off-chain monitoring, emit events for all state-changing functions, especially those modifying critical token parameters.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract leverages battle-tested OpenZeppelin libraries for its ERC-20 and access control functionalities (7.2 Code Security). The `_swapAndLiquify` mechanism includes a reentrancy guard… |
-| **Governance / Economics** | 7/10 | Low | The contract exhibits a high degree of centralization, with the owner possessing extensive control over critical economic parameters (7.5 Governance). The owner can unilaterally adjust all fee… |
-| **Upgrades** | 9/10 | Low | The contract is not designed with an upgrade mechanism (7.7 Upgrades). This means its logic is immutable once deployed, providing certainty regarding its behavior. However, any discovered… |
+| **Technical** | 6/10 | Medium | The contract utilizes OpenZeppelin's battle-tested ERC20 and Ownable implementations, providing a solid foundation (7.1 Architecture, 7.2 Code Security). A reentrancy guard (`inSwapAndLiquify`) is… |
+| **Governance / Economics** | 6/10 | Medium | The contract exhibits extreme centralization, with the owner having unilateral control over critical token parameters (7.3 Access Control, 7.5 Governance). The owner can set arbitrary transaction… |
+| **Upgrades** | 9/10 | Low | The contract is not designed with an upgrade mechanism (7.7 Upgrades). This means its logic is immutable after deployment, eliminating upgrade-related risks but also preventing future bug fixes or… |
 
 ## LP Distribution
 
@@ -38,41 +38,48 @@ The Wojak token contract is an ERC-20 implementation with custom tokenomics incl
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_🔴 1 Critical · 🟠 2 High · 🟡 2 Medium · 🟢 1 Low_
 
-### `C-01` — Centralized Control and Potential Rug Pull Vector  *(Severity: Critical · Status: Unresolved)*
+### `C-01` — Extreme Centralization and Honeypot Risk  *(Severity: Critical · Status: Unresolved)*
 
-The contract owner has the ability to set transfer fees (tax, liquidity, buyback) up to 100% and can exclude any address from these fees and transaction limits. This allows the owner to effectively halt all trading, drain all tokens from users by setting a 100% fee to their own wallet, or grant themselves privileged trading capabilities, representing a critical rug-pull vector and an unfair advantage.
+The contract grants the owner extensive control over critical token parameters, including the ability to set arbitrary transaction and wallet limits, adjust transfer fees (tax and liquidity fees) up to 100%, mint new tokens, pause trading, and exclude specific addresses from all tokenomics. This level of control allows the owner to manipulate the token's economy at will, potentially creating a honeypot scenario where users can buy but are prevented from selling or face prohibitive fees. This impacts 7.3 Access Control, 7.4 Economic, 7.5 Governance, and 7.8 Operations.
 
-**Recommendation:** Implement a maximum cap for all fee percentages (e.g., 10-20%) that cannot be exceeded. Remove or significantly restrict the `excludeFromFee` and `excludeFromMaxTransaction` functionalities, or subject them to a multi-signature wallet and timelock. Clearly communicate these capabilities to users.
-
-
-### `H-01` — Extensive Owner Privileges and Single Point of Failure  *(Severity: High · Status: Unresolved)*
-
-The `Ownable` pattern grants a single external account significant control over critical contract parameters, including all fee percentages, transaction limits, fee recipient wallets, and the ability to enable/disable the swap mechanism. This high degree of centralization creates a single point of failure and introduces substantial trust assumptions on the owner's benevolence and operational security.
-
-**Recommendation:** Consider migrating ownership to a multi-signature wallet (e.g., Gnosis Safe) or a decentralized autonomous organization (DAO) to distribute control and reduce the risk associated with a single point of failure. Implement a timelock for sensitive administrative actions.
+**Recommendation:** Implement a multi-signature wallet for ownership, introduce time-locks for critical parameter changes, or decentralize control through a governance mechanism. Clearly communicate the extent of owner privileges to users and consider capping fees and limits at reasonable, non-exploitable levels.
 
 
-### `M-01` — Complex Transfer Logic  *(Severity: Medium · Status: Unresolved)*
+### `H-01` — Lack of Minimum Amount Out in Swaps  *(Severity: High · Status: Unresolved)*
 
-The `_transfer` function incorporates intricate logic for applying multiple fee types, enforcing transaction and wallet size limits, and triggering an automated token swap. This complexity increases the attack surface and the likelihood of subtle bugs or unexpected interactions, making the code harder to audit and maintain.
+The `_swapAndLiquify` function, as well as `swapTokensForEth` and `addLiquidity`, use Uniswap's `swapExactTokensForETHSupportingFeeOnTransferTokens` without specifying a `minAmountOut` parameter. This omission exposes the swap operation to sandwich attacks and significant slippage, especially during periods of high volatility or low liquidity, potentially leading to a loss of value for the tokens being swapped. This impacts 7.2 Code Security and 7.4 Economic.
 
-**Recommendation:** Thoroughly test all possible execution paths within the `_transfer` function, especially edge cases related to fee calculations, limit enforcement, and the `_swapAndLiquify` trigger. Consider breaking down complex conditional logic into smaller, more manageable internal functions for improved readability and testability. Formal verification could be beneficial for this critical function.
-
-
-### `L-01` — Lack of Timelock for Critical Operations  *(Severity: Low · Status: Unresolved)*
-
-Critical owner-controlled functions, such as `setTaxFeePercent`, `setLiquidityFeePercent`, `setBuybackFeePercent`, `setTaxWallet`, `setLiquidityWallet`, `setBuybackWallet`, `setMaxTxPercent`, `setMaxWalletSize`, `excludeFromFee`, and `excludeFromMaxTransaction`, lack a timelock mechanism. This allows the owner to enact sensitive changes immediately without any delay for community review or intervention, increasing the risk of malicious or erroneous actions.
-
-**Recommendation:** Implement a timelock for all sensitive owner-controlled functions. This would introduce a delay between the owner initiating a change and its actual execution, providing a window for community scrutiny and potential mitigation of malicious or erroneous actions.
+**Recommendation:** Implement a `minAmountOut` parameter in all swap functions to protect against excessive slippage and front-running. This value should ideally be calculated based on current market conditions or a user-defined tolerance.
 
 
-### `I-01` — Reliance on External DEX Router  *(Severity: Informational · Status: Unresolved)*
+### `H-02` — Owner Can Drain Liquidity Pool Tokens  *(Severity: High · Status: Unresolved)*
 
-The `_swapAndLiquify` function depends on an external Uniswap V2 router for token swaps. While Uniswap V2 is a widely used and generally trusted protocol, the contract's functionality is reliant on the continuous availability and correct operation of this external dependency. Any issues with the router could impact the token's fee collection and liquidity generation mechanisms.
+The `_swapAndLiquify` function adds liquidity to the Uniswap pair, and the resulting LP tokens are sent to the contract itself. The `rescueERC20` function, callable by the owner, allows the owner to withdraw any ERC20 tokens held by the contract. This means the owner can withdraw the LP tokens, effectively removing liquidity from the pool and potentially rug-pulling investors. This impacts 7.3 Access Control and 7.4 Economic.
 
-**Recommendation:** Acknowledge the dependency on the external DEX router. While direct mitigation within this contract is limited, ensure that the chosen router address is correct and corresponds to a well-established and audited DEX. Consider monitoring the health and availability of the external router.
+**Recommendation:** Implement a mechanism to burn LP tokens or send them to a locked, unspendable address (e.g., the zero address) to ensure liquidity remains permanently locked. If LP tokens are intended to be managed, a transparent and secure governance or time-lock mechanism should be in place for their withdrawal.
+
+
+### `M-01` — Configurable Router and Pair Addresses  *(Severity: Medium · Status: Unresolved)*
+
+The owner can update the `uniswapV2Router` and `uniswapV2Pair` addresses via `updateUniswapV2Router` and `updateUniswapV2Pair` functions. While this offers flexibility, a malicious or compromised owner could redirect token swaps and liquidity additions to a fraudulent router or pair contract, leading to loss of funds or manipulation of the token's market. This impacts 7.3 Access Control and 7.6 External.
+
+**Recommendation:** Consider making these addresses immutable after deployment or implementing a time-lock for changes to critical external contract addresses. If flexibility is required, ensure robust monitoring and transparency around such changes.
+
+
+### `M-02` — Unchecked Return Values of External Calls  *(Severity: Medium · Status: Unresolved)*
+
+The `_swapAndLiquify` and `swapTokensForEth` functions call `IERC20(token).approve(address(this), type(uint256).max)` without checking the boolean return value. While many ERC20 tokens revert on failure, some older or non-standard implementations might return `false` instead. Ignoring this return value could lead to a false assumption that the approval succeeded, potentially causing subsequent operations to fail unexpectedly. This impacts 7.2 Code Security.
+
+**Recommendation:** Always check the boolean return value of external ERC20 calls, especially `transfer`, `transferFrom`, and `approve`, to ensure the operation was successful. For example, `require(IERC20(token).approve(...), "ERC20: approve failed");`.
+
+
+### `L-01` — Lack of Events for Critical Parameter Changes  *(Severity: Low · Status: Unresolved)*
+
+Several owner-controlled functions that modify critical parameters, such as `setMaxTxAmount`, `setMaxWalletAmount`, `setSwapAndLiquifyThreshold`, `setNumTokensSellToAddToLiquidity`, `setRouterAddress`, `setPairAddress`, `setTradingOpen`, `excludeFromMaxTx`, `includeInMaxTx`, `excludeFromMaxWallet`, `includeInMaxWallet`, `excludeFromSwap`, `includeInSwap`, do not emit events. This makes it difficult for off-chain monitoring tools and users to track changes to the token's behavior and parameters, reducing transparency. This impacts 7.8 Operations.
+
+**Recommendation:** Emit explicit events for all functions that modify critical contract state variables. This enhances transparency and allows for easier monitoring and auditing of contract behavior.
 
 ## Token Metrics
 

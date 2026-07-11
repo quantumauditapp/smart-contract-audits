@@ -29,7 +29,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [Uniswap](./uniswap.md) | UNI | 🟠 57/100 High Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/uniswap-eth) |
 | [SPACE ID](./space-id.md) | ID | 🔴 78/100 Critical Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/space-id-eth) |
 | [Ethena](./ethena.md) | ENA | 🔴 100/100 Critical Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/ethena-eth) |
-| [wojak](./wojak.md) | WOJAK | 🟢 15/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/wojak-eth) |
+| [wojak](./wojak.md) | WOJAK | 🟡 30/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/wojak-eth) |
 | [Chainlink](./chainlink.md) | LINK | 🟠 58/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/chainlink-eth) |
 | [Allora](./allora.md) | ALLO | 🔴 100/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/allora-eth) |
 | [Injective](./injective.md) | INJ | 🟠 56/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/injective-eth) |
