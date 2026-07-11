@@ -2,24 +2,56 @@
 token: Buttcoin
 ticker: BUTTCOIN
 network: solana
-risk_score: 34
-status: medium
+risk_score: 19
+status: low
 date: 2026-06-26
 ---
 
 # Buttcoin (BUTTCOIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 19/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/buttcoin-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Buttcoin (BUTTCOIN) on Solana presents a mixed security profile for investors. On the positive side, the contract ownership has been renounced, eliminating the risk of a single entity altering crucial contract parameters post-deployment. Furthermore, the absence of a mint function ensures that no new tokens can be arbitrarily created, protecting against inflationary supply shocks. Holder distribution appears relatively healthy, with the top 10 holders collectively owning 15.5% of the total supply, indicating a degree of decentralization. The token also exhibits significant market activity, evidenced by a 24-hour volume of $495,208 and current liquidity of $740,408. However, critical security concerns remain, contributing to its medium risk score of 34/100. The contract not being verified on-chain poses a significant transparency issue.
+The Buttcoin SPL Token Mint (Cm6fNnMk7NfzStP9CZpsQA2v3jjzbcYGAxdJySmHpump) demonstrates a robust configuration with both mint and freeze authorities revoked, limiting central control. Liquidity is substantial, and trading volume appears normal. However, a very low RugCheck score of 1/100 indicates significant external risk, despite no specific deterministic findings being triggered by the audit rules. Holder concentration data was unavailable.
 
-While Buttcoin benefits from renounced ownership and the absence of a mint function, two critical signals demand investor attention. The most significant concern is that the contract is not verified, severely hindering independent security audits and transparency. Without verification, it's impossible to confirm the deployed code matches the intended functionality or contains malicious logic. Secondly, the liquidity for Buttcoin is not locked. This presents a substantial risk, as liquidity providers could remove funds at any time, potentially leading to a 'rug pull' scenario where the token's value collapses. These factors collectively contribute to the token's medium risk assessment, emphasizing the importance of caution.
+> **Final Recommendation:** Based on the on-chain facts and deterministic rules, the Buttcoin token mint appears to have a secure configuration with no active central authorities. However, the extremely low RugCheck score of 1/100 is a critical external signal (7.6 External) that warrants immediate and thorough investigation. Holders should understand the implications of this score, which often points to developer history or LP movements, before engaging with the token. A Premium Deploy option would involve a deeper dive into the RugCheck data and any associated off-chain information to fully understand the flagged risks.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The Buttcoin SPL Token Mint (Cm6fNnMk7NfzStP9CZpsQA2v3jjzbcYGAxdJySmHpump) is configured using the spl-token-2022 program (7.1 Architecture). Both the mint authority and freeze authority have been rev |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a healthy liquidity of $737,207 USD with a 24-hour volume of $564,674 USD, resulting in a normal volume/liquidity ratio of 0.77 (7.4 Economic). The DEX pair has been active for 171  |
+| **Upgrades** | 8/10 | Low | The token's core authorities, including mint and freeze, have been permanently revoked (7.7 Upgrades), ensuring no further changes to supply or account status by a central party. Key Token-2022 extens |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

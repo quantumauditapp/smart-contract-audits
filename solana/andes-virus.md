@@ -2,14 +2,14 @@
 token: Andes Virus
 ticker: ANDV
 network: solana
-risk_score: 50
-status: high
+risk_score: 36
+status: medium
 date: 2026-06-10
 ---
 
 # Andes Virus (ANDV) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/andes-virus-sol)
 
@@ -21,19 +21,13 @@ The Andes Virus (ANDV) SPL token mint has been audited based on on-chain data an
 
 > **Final Recommendation:** Based on the available on-chain facts and external security signals, the Andes Virus (ANDV) token exhibits a secure configuration with revoked mint and freeze authorities, and immutable metadata. However, the unavailability of holder concentration data prevents a full assessment of supply distribution risk. Furthermore, the extremely low RugCheck score of 1/100 is a significant red flag, suggesting potential risks not captured by the deterministic rules. Users should exercise extreme caution, consider the implications of the low RugCheck score, and acknowledge the lack of holder distribution transparency before interacting with this token. For premium deployments, consider a full on-chain analysis of the RugCheck findings and a deeper dive into the project's history.
 
-## Security Analysis
-
-The Andes Virus (ANDV) SPL token mint has been audited based on on-chain data and external security signals. No critical or high-severity vulnerabilities were identified based on the provided deterministic rules. The mint authority and freeze authority are both revoked, indicating a fixed supply and no ability to freeze user accounts. Holder concentration data was unavailable, and the RugCheck score was very low (1/100), which could indicate potential risks not covered by the deterministic rules.
-
-Based on the available on-chain facts and external security signals, the Andes Virus (ANDV) token exhibits a secure configuration with revoked mint and freeze authorities, and immutable metadata. However, the unavailability of holder concentration data prevents a full assessment of supply distribution risk. Furthermore, the extremely low RugCheck score of 1/100 is a significant red flag, suggesting potential risks not captured by the deterministic rules. Users should exercise extreme caution, consider the implications of the low RugCheck score, and acknowledge the lack of holder distribution transparency before interacting with this token. For premium deployments, consider a full on-chain analysis of the RugCheck findings and a deeper dive into the project's history.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The Andes Virus (ANDV) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen.  |
-| **Governance / Economics** | 6/10 | Low | The token has a liquidity of $26,023 USD, with a 24-hour volume of $6,174 USD, resulting in a normal Volume/Liquidity Ratio of 0.24. The DEX pair has been active for 36 days, providing some track reco |
-| **Upgrades** | 6/10 | Low | The mint authority and freeze authority for the Andes Virus (ANDV) token have been revoked, meaning the token's supply and freeze capabilities are immutable. The token does not have a transfer hook en |
+| **Technical** | 6/10 | Medium | The Andes Virus (ANDV) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen.  |
+| **Governance / Economics** | 6/10 | Medium | The token has a liquidity of $26,023 USD, with a 24-hour volume of $6,174 USD, resulting in a normal Volume/Liquidity Ratio of 0.24. The DEX pair has been active for 36 days, providing some track reco |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the Andes Virus (ANDV) token have been revoked, meaning the token's supply and freeze capabilities are immutable. The token does not have a transfer hook en |
 
 ## Security Findings
 

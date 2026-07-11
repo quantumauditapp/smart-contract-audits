@@ -2,14 +2,14 @@
 token: RaveDAO
 ticker: RAVE
 network: ethereum
-risk_score: 100
+risk_score: 98
 status: critical
 date: 2026-06-29
 ---
 
 # RaveDAO (RAVE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 98/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ravedao-eth)
 
@@ -20,12 +20,6 @@ date: 2026-06-29
 The RaveToken contract is an ERC-20 token implementing LayerZero's Omnichain Fungible Token (OFT) standard, inheriting from OpenZeppelin's Ownable. The contract provides basic ERC-20 functionality, cross-chain transfers via LayerZero, and a burn function. Key strengths include the use of battle-tested OpenZeppelin and LayerZero libraries. Identified risks primarily revolve around centralized control over critical cross-chain configurations and inherent dependencies on the LayerZero protocol.
 
 > **Final Recommendation:** The RaveToken contract is generally well-implemented, leveraging robust external libraries. The primary areas for improvement involve decentralizing critical access control mechanisms and enhancing operational resilience. We recommend considering a multi-signature wallet or a time-locked governance for sensitive LayerZero configurations and implementing a pause mechanism for emergencies. For enhanced security and operational robustness, consider a Premium Deploy option, which includes continuous monitoring and incident response planning.
-
-## Security Analysis
-
-The RaveToken contract is an ERC-20 token implementing LayerZero's Omnichain Fungible Token (OFT) standard, inheriting from OpenZeppelin's Ownable. The contract provides basic ERC-20 functionality, cross-chain transfers via LayerZero, and a burn function. Key strengths include the use of battle-tested OpenZeppelin and LayerZero libraries. Identified risks primarily revolve around centralized control over critical cross-chain configurations and inherent dependencies on the LayerZero protocol.
-
-The RaveToken contract is generally well-implemented, leveraging robust external libraries. The primary areas for improvement involve decentralizing critical access control mechanisms and enhancing operational resilience. We recommend considering a multi-signature wallet or a time-locked governance for sensitive LayerZero configurations and implementing a pause mechanism for emergencies. For enhanced security and operational robustness, consider a Premium Deploy option, which includes continuous monitoring and incident response planning.
 
 ## Category Ratings
 

@@ -2,24 +2,56 @@
 token: Miu
 ticker: MIU
 network: solana
-risk_score: 48
-status: high
+risk_score: 40
+status: medium
 date: 2026-06-27
 ---
 
 # Miu (MIU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/miu-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-The Miu (MIU) token on Solana presents a high-risk profile for investors, marked by a Risk Score of 48/100. A primary concern is the unverified contract, which significantly hinders independent security analysis and transparency, making it impossible to confirm the true nature of its code. While ownership of the contract has been renounced and no mint function exists, typically positive signs, their impact is diminished without a verifiable contract. The token exhibits a 24-hour trading volume of $153,681 against a liquidity pool of $38,259. Furthermore, liquidity remains unlocked, posing a substantial risk of a rug pull. The reported 0.0% of supply held by the top 10 holders suggests a highly distributed token, though this data point is difficult to fully assess without contract verification. Investors should approach MIU with extreme caution given these fundamental security ambiguities.
+This audit of the Miu SPL Token Mint identified a Medium risk due to the very recent creation of its DEX trading pair, which offers an insufficient track record for evaluation. Key authorities, including Mint and Freeze, are revoked, and metadata is immutable, indicating a fixed token configuration. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-The most critical security signals for Miu (MIU) revolve around its unverified contract and unlocked liquidity. The absence of a verified contract prevents any meaningful security audit or due diligence, leaving investors blind to potential malicious functions or vulnerabilities within the code. This lack of transparency is a foundational risk. Coupled with this, the liquidity pool is not locked, meaning the project's developers or liquidity providers could remove all funds at any time, resulting in a sudden and complete loss for holders (a 'rug pull'). While ownership renunciation and no mint function are generally positive, they offer limited assurance when the core contract code cannot be publicly scrutinized, contributing to the overall high-risk assessment.
+> **Final Recommendation:** Given the very new DEX pair (6 days old), it is recommended to exercise caution and monitor the token's activity and holder behavior for a longer period before making significant investments. While critical authorities are revoked, the lack of historical data and unavailable holder concentration information present unquantified risks. For a premium deployment, consider engaging in a deeper due diligence process, including community engagement and team background checks, to mitigate risks associated with new projects.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint with address 7LNFZcNigZay5U9e2sq6n2Z4iM8BC2Dd53L14pwvpump. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be mint |
+| **Governance / Economics** | 5/10 | Medium | The token has a moderate liquidity of $38,329 USD with a 24-hour volume of $97,339, resulting in a normal Volume/Liquidity Ratio of 2.54. However, the DEX pair is very new, having been created only 6  |
+| **Upgrades** | 8/10 | Low | The token's core parameters, such as minting and freezing capabilities, are immutable as both the Mint Authority and Freeze Authority have been revoked. The token does not have a Transfer Hook, and it |
+
+## Security Findings
+
+_🟡 1 Medium · ⚪ 2 Informational_
+
+### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
+
+DEX pair was created 6 days ago. Insufficient track record to assess team or holder behaviour. (Fact: Pair Age (days): 6)
+
+**Recommendation:** Monitor the token's activity and holder behavior for a longer period before making significant investments.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

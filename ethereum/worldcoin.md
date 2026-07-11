@@ -2,14 +2,14 @@
 token: Worldcoin
 ticker: WLD
 network: ethereum
-risk_score: 100
+risk_score: 71
 status: critical
 date: 2026-06-10
 ---
 
 # Worldcoin (WLD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 71/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/worldcoin-eth)
 
@@ -23,21 +23,13 @@ The WLD token contract implements an ERC20 token with an initial supply cap and 
 
 For enhanced security and operational resilience, consider a Premium Deploy option. This would involve deploying the contract through a battle-tested multi-signature wallet (e.g., Gnosis Safe) for the owner role, and potentially integrating with a robust monitoring solution to track supply changes and minter activities in real-time.
 
-## Security Analysis
-
-The WLD token contract implements an ERC20 token with an initial supply cap and a controlled inflation mechanism. The contract utilizes OpenZeppelin's Ownable2Step for robust ownership management and includes explicit checks for input validation and supply caps. Key findings include the complexity and potential for higher-than-stated effective inflation rates in certain scenarios, and the significant centralized control over token supply by the owner and minter roles. While the code quality is high, these economic and governance risks warrant careful consideration.
-
-The WLD contract is technically sound, leveraging established libraries and adhering to good coding practices. However, the high degree of centralized control over token supply and the complex inflation mechanics introduce significant economic and governance risks. It is strongly recommended to implement multi-signature wallets for critical roles (owner, minter) and ensure transparent communication regarding the inflation model's nuances.
-
-For enhanced security and operational resilience, consider a Premium Deploy option. This would involve deploying the contract through a battle-tested multi-signature wallet (e.g., Gnosis Safe) for the owner role, and potentially integrating with a robust monitoring solution to track supply changes and minter activities in real-time.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The WLD contract demonstrates strong technical foundations (7.1 Architecture, 7.2 Code Security). It inherits from battle-tested OpenZeppelin contracts (ERC20, Ownable2Step), ensuring standard complia |
-| **Governance / Economics** | 6/10 | High | The contract design presents significant governance and economic considerations (7.4 Economic, 7.5 Governance). The owner has substantial power, including a one-time initial mint up to 10 billion toke |
-| **Upgrades** | 6/10 | Low | The WLD contract is not designed as an upgradeable proxy (7.7 Upgrades). Its logic is immutable once deployed, meaning no upgrade safety issues are present. Any future changes to the token's core logi |
+| **Technical** | 6/10 | Medium | The WLD contract demonstrates strong technical foundations (7.1 Architecture, 7.2 Code Security). It inherits from battle-tested OpenZeppelin contracts (ERC20, Ownable2Step), ensuring standard complia |
+| **Governance / Economics** | 1/10 | High | The contract design presents significant governance and economic considerations (7.4 Economic, 7.5 Governance). The owner has substantial power, including a one-time initial mint up to 10 billion toke |
+| **Upgrades** | 5/10 | Medium | The WLD contract is not designed as an upgradeable proxy (7.7 Upgrades). Its logic is immutable once deployed, meaning no upgrade safety issues are present. Any future changes to the token's core logi |
 
 ## Security Findings
 

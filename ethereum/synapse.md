@@ -2,24 +2,79 @@
 token: Synapse
 ticker: SYN
 network: ethereum
-risk_score: 66
+risk_score: 70
 status: high
 date: 2026-06-22
 ---
 
 # Synapse (SYN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 70/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/synapse-eth)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Synapse (SYN) on Ethereum presents a mixed security profile for investors. Positively, the contract is verified on-chain, offering transparency into its code, and ownership has been renounced, eliminating the risk of malicious changes by the original deployer. However, the presence of a mint function is a significant concern, as it allows for the potential creation of new tokens, which could dilute existing holders' value if misused. Furthermore, a substantial 74.8% of the total supply is held by the top 10 addresses, indicating high centralization and potential for market manipulation. The project also exhibits a lack of locked liquidity, increasing vulnerability to rug pulls, especially given the current liquidity of $143,985 against a 24-hour volume of $411,664. Overall, the token receives a high-risk score of 66/100, advising caution for potential investors.
+This audit report is based on limited information, as the full source code for the SynapseERC20 contract was not provided. The analysis primarily covers the OpenZeppelin `AccessControlUpgradeable` dependency and general considerations for an ERC20 token. A comprehensive security assessment of the core SynapseERC20 logic, tokenomics, and specific upgrade mechanisms could not be performed.
 
-The primary security concerns for Synapse (SYN) revolve around three key areas. Firstly, the existence of a mint function poses an inherent risk; while ownership is renounced, a vulnerability or compromise could still lead to inflationary supply increases, impacting token value. Secondly, the highly concentrated distribution, with the top 10 holders controlling 74.8% of the supply, creates significant centralization risk, potentially allowing large holders to influence market dynamics. Lastly, the absence of locked liquidity is a critical red flag, making the project susceptible to liquidity removal, especially given its relatively low total liquidity of $143,985 compared to daily trading volume. These factors collectively contribute to its high-risk assessment.
+> **Final Recommendation:** While the use of OpenZeppelin's `AccessControlUpgradeable` provides a solid foundation for access control, the absence of the full SynapseERC20 contract code prevents a comprehensive security assessment. Critical aspects such as core token logic, economic model, governance, and the specific upgradeability implementation remain unaudited. It is strongly recommended to provide the complete source code for a full audit. 
+
+For future deployments, consider a Premium Deploy option which includes a pre-deployment security review, gas optimization analysis, and a formal verification of critical functions to ensure the highest level of security and efficiency.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The contract utilizes OpenZeppelin's `AccessControlUpgradeable` library, which is a well-audited and robust solution for role-based access control (7.3). This provides a strong foundation for managing |
+| **Governance / Economics** | 1/10 | High | Without the full SynapseERC20 contract code, the economic model (7.4) and governance structure (7.5) of the token remain unaudited. This includes critical aspects such as token supply management, fee  |
+| **Upgrades** | 5/10 | Medium | The use of `Initializable` from OpenZeppelin indicates an upgradeable contract architecture (7.1, 7.7). This pattern, when correctly implemented with a proxy, allows for future contract modifications  |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | 42.5% |
+| **Top-3 Unlocked** | ⚠️ 88.8% |
+
+## Security Findings
+
+_🟡 1 Medium · 🟢 1 Low · ⚪ 3 Informational_
+
+### `M-01` — Access Control Configuration Risk  *(Severity: Medium · Status: Unresolved)*
+
+While `AccessControlUpgradeable` provides a secure framework, the specific configuration and usage of roles within the main SynapseERC20 contract are critical. Improper assignment or management of the `DEFAULT_ADMIN_ROLE`, or failure to apply appropriate role checks to sensitive functions (e.g., minting, burning, pausing, parameter changes), could lead to unauthorized administrative actions or manipulation of the token's state.
+
+**Recommendation:** Ensure that the `DEFAULT_ADMIN_ROLE` is assigned to a secure, multi-signature wallet or a robust governance mechanism. All critical functions in the SynapseERC20 contract must have explicit role-based access control checks. Conduct a thorough review of all role assignments and permissions post-deployment.
+
+
+### `L-01` — Older Solidity Compiler Version  *(Severity: Low · Status: Unresolved)*
+
+The contract uses Solidity compiler version `0.6.12`. While OpenZeppelin contracts are generally robust for their target versions, newer Solidity versions (e.g., 0.8.x) introduce additional safety features and optimizations, such as default checked arithmetic, which can prevent certain types of vulnerabilities like integer overflows/underflows.
+
+**Recommendation:** Consider upgrading to a more recent Solidity compiler version (e.g., 0.8.x) if feasible, ensuring compatibility with all dependencies. This would leverage newer language features and security enhancements.
+
+
+### `I-01` — Incomplete Contract Information  *(Severity: Informational · Status: Unresolved)*
+
+The full source code for the SynapseERC20 contract was not provided. The analysis was limited to an OpenZeppelin dependency (`AccessControlUpgradeable.sol`) and general assumptions about an ERC20 token. This significantly restricts the scope and depth of the security audit.
+
+**Recommendation:** Provide the complete and verified source code for the SynapseERC20 contract, including all dependencies and the main contract implementation, to enable a comprehensive security audit.
+
+
+### `I-02` — Upgradeability Pattern (General Considerations)  *(Severity: Informational · Status: Unresolved)*
+
+The presence of `Initializable` suggests an upgradeable contract architecture. While OpenZeppelin's upgradeable patterns are well-designed, the specific proxy implementation (e.g., UUPS, Transparent) and its initialization logic for SynapseERC20 are unknown. Incorrect proxy setup, improper initialization, or storage layout mismatches during upgrades can lead to critical vulnerabilities.
+
+**Recommendation:** Verify that the chosen upgradeability pattern is correctly implemented, including the proxy contract, initializer functions, and storage slot management. Ensure that initialization functions are called exactly once and protected against re-initialization. A detailed audit of the proxy and implementation contracts is essential.
+
+
+### `I-03` — Unaudited Core Token Logic  *(Severity: Informational · Status: Unresolved)*
+
+The core business logic of the SynapseERC20 token, including functions related to minting, burning, transfers, approvals, and any custom token functionalities (e.g., fees, blacklisting), could not be audited due to the absence of the main contract's source code. This leaves potential for various vulnerabilities such as reentrancy, integer overflows/underflows in custom logic, or incorrect tokenomics implementation.
+
+**Recommendation:** Provide the complete source code for the SynapseERC20 contract to allow for a full audit of its core logic. This should include a detailed review of all custom functions, arithmetic operations, external calls, and adherence to ERC-20 standards.
 
 ## Token Metrics
 

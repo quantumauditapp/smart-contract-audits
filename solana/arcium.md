@@ -2,24 +2,58 @@
 token: Arcium
 ticker: ARX
 network: solana
-risk_score: 63
+risk_score: 57
 status: high
 date: 2026-06-23
 ---
 
 # Arcium (ARX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 57/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/arcium-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Arcium (ARX) on Solana presents a mixed security profile for investors. On the positive side, the token's smart contract ownership has been renounced, meaning the original deployer no longer controls it, and crucially, no mint function exists, preventing the creation of new tokens which could dilute existing holders. These factors typically enhance decentralization and supply predictability. However, significant red flags warrant close attention. The contract remains unverified, hindering public scrutiny and independent code review for vulnerabilities or malicious functions. Furthermore, a highly concentrated distribution shows the top 10 holders controlling 94.8% of the total supply, raising concerns about potential market manipulation or large-scale selling pressure. Liquidity, currently at $336,297, is not locked, adding to potential market instability despite a 24-hour volume of $1,209,390. The comprehensive risk score for ARX is assessed at 63/100, indicating a high-risk investment.
+This audit of the Arcium (ARX) SPL token mint found no critical or high-severity issues based on the available on-chain data and external security signals. Both mint and freeze authorities have been revoked, indicating a fixed supply and immutable freeze status. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
 
-The most significant security concerns for Arcium (ARX) stem from its unverified contract, extreme token concentration, and unlocked liquidity. The absence of a verified contract prevents thorough public examination of the code, making it impossible for investors to confirm its integrity or absence of hidden exploits. Coupled with this, 94.8% of the supply held by the top 10 wallets creates a substantial risk of market manipulation, sudden price drops due to large sells, or even a liquidity drain if those holders decide to pull support. The fact that the current $336,297 in liquidity is not locked further exacerbates this, meaning it could be withdrawn, severely impacting tradability. While ownership renounced and no mint function are positive, these critical vulnerabilities significantly elevate the overall risk profile.
+> **Final Recommendation:** The Arcium (ARX) token mint appears to be well-configured with critical authorities revoked, offering a fixed supply and immutable freeze status. Investors should note the absence of holder concentration data, which is crucial for assessing potential market manipulation risks. It is recommended to monitor for this data if it becomes available.
+
+For a Premium Deploy, consider implementing a robust monitoring solution for holder distribution and liquidity metrics, and conduct ongoing due diligence on the project's ecosystem and team, especially given the relatively new pair age.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.2 Code Security: The Arcium (ARX) token is an SPL token mint operating on the Solana blockchain using the standard `spl-token` program. This token mint has robust security configu |
+| **Governance / Economics** | 1/10 | High | 7.4 Economic: The token exhibits moderate liquidity with $306,291 USD in total DEX liquidity. The 24-hour trading volume is $3,984 USD, resulting in a healthy Volume/Liquidity Ratio of 0.01, which doe |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The token mint's critical authorities, Mint Authority and Freeze Authority, have been revoked, indicating that the token's supply and freeze capabilities are immutable. GoPlus data confi |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

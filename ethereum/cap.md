@@ -2,14 +2,14 @@
 token: Cap
 ticker: CAP
 network: ethereum
-risk_score: 100
+risk_score: 76
 status: critical
 date: 2026-06-29
 ---
 
 # Cap (CAP) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 76/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cap-eth)
 
@@ -23,19 +23,11 @@ The audit covers an OpenZeppelin `ERC1967Proxy` contract. The proxy itself is a 
 
 For enhanced security and operational resilience, consider a Premium Deploy option. This service includes a comprehensive pre-deployment review of the full system (proxy + implementation + admin contracts), a dry run of the deployment process on a testnet, and real-time monitoring post-launch. This ensures all components interact securely and as intended in a pr…
 
-## Security Analysis
-
-The audit covers an OpenZeppelin `ERC1967Proxy` contract. The proxy itself is a standard, well-audited component. However, its security and functionality are highly dependent on the associated implementation contract and the chosen upgrade mechanism, which were not provided for review.
-
-The `ERC1967Proxy` contract itself is a standard and generally secure component from OpenZeppelin. However, its overall security and functionality are critically dependent on the associated implementation contract and the chosen upgrade management strategy (UUPS or Transparent with `ProxyAdmin`), which were not part of this audit. It is imperative that the implementation contract adheres to best practices for upgradeable contracts, including proper initializer patterns, storage slot management, and robust upgrade authorization.
-
-For enhanced security and operational resilience, consider a Premium Deploy option. This service includes a comprehensive pre-deployment review of the full system (proxy + implementation + admin contracts), a dry run of the deployment process on a testnet, and real-time monitoring post-launch. This ensures all components interact securely and as intended in a pr…
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract utilizes OpenZeppelin's `ERC1967Proxy` and its dependencies, which are robust and widely audited components (7.2 Code Security). It correctly implements the `delegatecall` mechanism for p |
+| **Technical** | 5/10 | Medium | The contract utilizes OpenZeppelin's `ERC1967Proxy` and its dependencies, which are robust and widely audited components (7.2 Code Security). It correctly implements the `delegatecall` mechanism for p |
 | **Governance / Economics** | 1/10 | High | The `ERC1967Proxy` itself does not contain specific governance or economic logic, as it acts as a transparent layer for an underlying implementation. Its economic security relies on the implementation |
 | **Upgrades** | 3/10 | High | The contract is an upgradeable proxy based on the ERC-1967 standard, allowing its logic to be updated by changing the implementation address (7.7 Upgrades). It leverages `ERC1967Utils.upgradeToAndCall |
 

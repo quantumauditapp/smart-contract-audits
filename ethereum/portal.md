@@ -21,19 +21,20 @@ The PortalToken contract is an ERC20 token implementation with extensions for pe
 
 > **Final Recommendation:** The PortalToken contract provides a solid foundation for an ERC20 token with standard extensions. The primary areas for improvement involve mitigating the risks associated with centralized ownership and ensuring clear communication regarding the custom `totalSupply` logic. We recommend implementing a multi-signature wallet for the contract owner to enhance security and decentralize control over critical administrative functions. Additionally, thorough documentation and communication with integrators are crucial to ensure they understand the custom `totalSupply` calculation.
 
-## Security Analysis
-
-The PortalToken contract is an ERC20 token implementation with extensions for permit, pausable, and burnable functionalities, leveraging OpenZeppelin's battle-tested libraries. The contract features a fixed total supply and a custom `totalSupply()` override to reflect circulating supply based on a designated proxy address. Key administrative functions are controlled by a single owner, introducing centralization risks. The overall risk level is assessed as Medium due to these centralized controls and the non-standard interpretation of `totalSupply`.
-
-The PortalToken contract provides a solid foundation for an ERC20 token with standard extensions. The primary areas for improvement involve mitigating the risks associated with centralized ownership and ensuring clear communication regarding the custom `totalSupply` logic. We recommend implementing a multi-signature wallet for the contract owner to enhance security and decentralize control over critical administrative functions. Additionally, thorough documentation and communication with integrators are crucial to ensure they understand the custom `totalSupply` calculation.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates good technical security by inheriting from well-audited OpenZeppelin libraries and using Solidity 0.8.20, which mitigates common integer overflow/underflow issues (7.2 Code S |
-| **Governance / Economics** | 6/10 | Medium | The token's economic model benefits from a fixed total supply, preventing inflationary attacks post-deployment (7.4 Economic). However, the `Ownable` pattern grants significant centralized control to  |
-| **Upgrades** | 6/10 | Low | The PortalToken contract is implemented as a standard, non-upgradeable token (7.7 Upgrades). This simplifies its architecture by avoiding the complexities and potential risks associated with proxy pat |
+| **Technical** | 4/10 | Medium | The contract demonstrates good technical security by inheriting from well-audited OpenZeppelin libraries and using Solidity 0.8.20, which mitigates common integer overflow/underflow issues (7.2 Code S |
+| **Governance / Economics** | 1/10 | High | The token's economic model benefits from a fixed total supply, preventing inflationary attacks post-deployment (7.4 Economic). However, the `Ownable` pattern grants significant centralized control to  |
+| **Upgrades** | 4/10 | Medium | The PortalToken contract is implemented as a standard, non-upgradeable token (7.7 Upgrades). This simplifies its architecture by avoiding the complexities and potential risks associated with proxy pat |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 

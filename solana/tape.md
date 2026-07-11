@@ -2,24 +2,56 @@
 token: TAPE
 ticker: TAPE
 network: solana
-risk_score: 33
+risk_score: 43
 status: medium
 date: 2026-06-16
 ---
 
 # TAPE (TAPE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 33/100 — 🟡 Medium Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tape-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-TAPE (TAPE) on Solana presents a mixed security profile for investors, earning a Medium Risk score of 33/100. Positively, the token's ownership has been renounced, meaning the original deployer cannot modify core contract parameters, and no mint function exists, preventing the creation of new tokens beyond the initial supply. However, several critical vulnerabilities are present. The contract is not verified, leaving its code opaque to public scrutiny. Furthermore, the existing liquidity of $26,985 is not locked, posing a potential rug-pull risk where liquidity could be withdrawn. Holder concentration is also a concern, with the top 10 wallets holding 47.3% of the total supply. The token currently sees a 24-hour volume of $143,433. These factors warrant careful consideration.
+The TAPE SPL token mint demonstrates a strong security posture with both Mint and Freeze authorities permanently revoked, preventing further supply inflation or asset confiscation. No malicious Token-2022 extensions like transfer hooks or permanent delegates are active, and metadata is immutable. However, holder concentration data was unavailable, precluding an assessment of supply distribution risk.
 
-The most significant signals for TAPE involve the lack of contract verification and unlocked liquidity. An unverified contract means investors cannot independently review the code to confirm its functionality or absence of malicious features, creating inherent trust issues. Crucially, with liquidity unlocked, the substantial $26,985 in the pool could be removed at any time by liquidity providers, potentially collapsing the token's value – a classic 'rug pull' scenario. Additionally, the concentration of 47.3% of the supply among the top 10 holders introduces significant market manipulation risk. These three factors combine to underscore the Medium Risk assessment, demanding investor vigilance.
+> **Final Recommendation:** Based on the audit, the TAPE token exhibits a secure on-chain configuration with critical authorities revoked and no concerning Token-2022 extensions active. Holders can be confident that the supply is fixed and their assets cannot be frozen or transferred without consent by an authority. The primary remaining unknown is holder concentration, which could impact price stability if a few large holders decide to sell. Investors should consider the moderate liquidity and the unknown holder distribution when making investment decisions. For enhanced due diligence, consider a Premium Deploy option to monitor holder movements and liquidity trends over time.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The TAPE token is configured using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, preventing further token issuance or freezing of user accounts. No Transf |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits moderate liquidity with $28,027 USD available on DEXs. The 24-hour trading volume of $13,433 USD results in a healthy Volume/Liquidity Ratio of 0.48, indicating normal trading activ |
+| **Upgrades** | 8/10 | Low | The token's configuration is robust against unauthorized changes, as both the Mint and Freeze authorities have been permanently revoked. GoPlus data indicates that the token's metadata, including name |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

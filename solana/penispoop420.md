@@ -2,14 +2,14 @@
 token: penispoop420
 ticker: PP420
 network: solana
-risk_score: 98
+risk_score: 72
 status: critical
 date: 2026-06-10
 ---
 
 # penispoop420 (PP420) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 98/100 — 🔴 Critical Risk**
+> **Risk Score: 72/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/penispoop420-sol)
 
@@ -21,19 +21,13 @@ This SPL Token Mint audit identified a significant risk due to very low liquidit
 
 > **Final Recommendation:** Given the very low liquidity of $8,897, it is strongly recommended to exercise extreme caution. Large buy or sell orders will incur severe slippage and may not be executable without significant price impact. While core authorities are revoked, the lack of holder concentration data prevents a full assessment of whale risk. Consider the token unspendable for significant amounts due to liquidity constraints. For a premium deployment, ensure sufficient liquidity is provided to support intended trading volumes.
 
-## Security Analysis
-
-This SPL Token Mint audit identified a significant risk due to very low liquidity, which can lead to severe slippage for traders. The token's core authorities (Mint and Freeze) are revoked, and metadata is immutable, indicating a degree of immutability. However, holder concentration data was unavailable, and the low liquidity makes large trades impractical. RugCheck data indicates a low risk score of 1/100.
-
-Given the very low liquidity of $8,897, it is strongly recommended to exercise extreme caution. Large buy or sell orders will incur severe slippage and may not be executable without significant price impact. While core authorities are revoked, the lack of holder concentration data prevents a full assessment of whale risk. Consider the token unspendable for significant amounts due to liquidity constraints. For a premium deployment, ensure sufficient liquidity is provided to support intended trading volumes.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The SPL Token Mint at Ac8EScJ4ufRo8PiFkun7diUrcCCktg4JvArb3mPmpump operates under the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, indicating that no single  |
-| **Governance / Economics** | 6/10 | High | The token exhibits very low liquidity, with only $8,897 USD available on DEXs, which can lead to significant slippage for trades. The 24-hour trading volume is $2,000, resulting in a normal Volume/Liq |
-| **Upgrades** | 6/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, have been revoked, preventing future changes to the token supply or account freeze status. The token metadata is immutable, meaning i |
+| **Technical** | 5/10 | Medium | The SPL Token Mint at Ac8EScJ4ufRo8PiFkun7diUrcCCktg4JvArb3mPmpump operates under the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, indicating that no single  |
+| **Governance / Economics** | 1/10 | High | The token exhibits very low liquidity, with only $8,897 USD available on DEXs, which can lead to significant slippage for trades. The 24-hour trading volume is $2,000, resulting in a normal Volume/Liq |
+| **Upgrades** | 6/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, have been revoked, preventing future changes to the token supply or account freeze status. The token metadata is immutable, meaning i |
 
 ## Security Findings
 

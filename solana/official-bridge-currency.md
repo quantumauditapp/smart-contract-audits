@@ -2,14 +2,14 @@
 token: Official Bridge Currency
 ticker: OBC
 network: solana
-risk_score: 73
-status: critical
+risk_score: 49
+status: high
 date: 2026-06-10
 ---
 
 # Official Bridge Currency (OBC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 73/100 — 🔴 Critical Risk**
+> **Risk Score: 49/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/official-bridge-currency-sol)
 
@@ -21,19 +21,13 @@ The Official Bridge Currency (OBC) token mint has revoked both mint and freeze a
 
 > **Final Recommendation:** Prospective holders should be aware of the extremely low liquidity ($4,442) for OBC, which will lead to high slippage for any significant trade. While the mint and freeze authorities are revoked, providing security against supply dilution and account freezing, the lack of holder concentration data means whale risk cannot be assessed. It is recommended to proceed with extreme caution due to the liquidity constraints.
 
-## Security Analysis
-
-The Official Bridge Currency (OBC) token mint has revoked both mint and freeze authorities, indicating a fixed supply and no ability to freeze user funds. However, the token suffers from very low liquidity, with only $4,442 available on DEXs, making large trades highly susceptible to slippage. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
-
-Prospective holders should be aware of the extremely low liquidity ($4,442) for OBC, which will lead to high slippage for any significant trade. While the mint and freeze authorities are revoked, providing security against supply dilution and account freezing, the lack of holder concentration data means whale risk cannot be assessed. It is recommended to proceed with extreme caution due to the liquidity constraints.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The Official Bridge Currency (OBC) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen ( |
-| **Governance / Economics** | 6/10 | High | The token exhibits very low liquidity, with only $4,442 USD available on DEXs, posing a significant risk for slippage and large position exits (7.4 Economic). The 24-hour volume to liquidity ratio is  |
-| **Upgrades** | 6/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and freeze capabilities cannot be altered post-launch (7.7 Upgrades). The token does not utilize any Token-2022 ext |
+| **Technical** | 5/10 | Medium | The Official Bridge Currency (OBC) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen ( |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits very low liquidity, with only $4,442 USD available on DEXs, posing a significant risk for slippage and large position exits (7.4 Economic). The 24-hour volume to liquidity ratio is  |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and freeze capabilities cannot be altered post-launch (7.7 Upgrades). The token does not utilize any Token-2022 ext |
 
 ## Security Findings
 

@@ -2,14 +2,14 @@
 token: Son Goku
 ticker: GOKU
 network: solana
-risk_score: 72
-status: critical
+risk_score: 51
+status: high
 date: 2026-06-10
 ---
 
 # Son Goku (GOKU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 51/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/son-goku-sol)
 
@@ -21,19 +21,13 @@ This audit of the Son Goku (GOKU) SPL Token Mint reveals a medium risk profile p
 
 > **Final Recommendation:** Given the 'Very New Pair' status, it is recommended to exercise caution and monitor the token's performance and holder behavior over a longer period. While core authorities are revoked, the lack of historical data and RugCheck's warnings about holder concentration warrant a conservative approach. Investors should consider the implications of potential price volatility from concentrated holdings. For enhanced security and ongoing monitoring, consider a Premium Deploy option with continuous on-chain analysis.
 
-## Security Analysis
-
-This audit of the Son Goku (GOKU) SPL Token Mint reveals a medium risk profile primarily due to the very recent creation of its DEX trading pair. While core authorities like mint and freeze are revoked, and metadata is immutable, the token's short trading history (4 days) means there is insufficient data to assess long-term stability or team behavior. Holder concentration data was unavailable from RPC, but RugCheck.xyz indicates potential high holder concentration and single holder ownership risks.
-
-Given the 'Very New Pair' status, it is recommended to exercise caution and monitor the token's performance and holder behavior over a longer period. While core authorities are revoked, the lack of historical data and RugCheck's warnings about holder concentration warrant a conservative approach. Investors should consider the implications of potential price volatility from concentrated holdings. For enhanced security and ongoing monitoring, consider a Premium Deploy option with continuous on-chain analysis.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Low | The Son Goku (GOKU) token is implemented using the spl-token-2022 program (7.1 Architecture). Both the mint authority and freeze authority have been revoked (7.3 Access Control), indicating that no ne |
-| **Governance / Economics** | 3/10 | Medium | The token's DEX pair is very new, having been created only 4 days ago (7.4 Economic), which presents an elevated risk due to insufficient track record. Total DEX liquidity stands at $88,262, with a 24 |
-| **Upgrades** | 5/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, have both been permanently revoked (7.7 Upgrades), preventing any future changes to the token's supply or the ability to freeze accou |
+| **Technical** | 6/10 | Medium | The Son Goku (GOKU) token is implemented using the spl-token-2022 program (7.1 Architecture). Both the mint authority and freeze authority have been revoked (7.3 Access Control), indicating that no ne |
+| **Governance / Economics** | 4/10 | Medium | The token's DEX pair is very new, having been created only 4 days ago (7.4 Economic), which presents an elevated risk due to insufficient track record. Total DEX liquidity stands at $88,262, with a 24 |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, have both been permanently revoked (7.7 Upgrades), preventing any future changes to the token's supply or the ability to freeze accou |
 
 ## Security Findings
 

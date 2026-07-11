@@ -2,24 +2,79 @@
 token: EigenCloud (prev. EigenLayer)
 ticker: EIGEN
 network: ethereum
-risk_score: 28
-status: medium
+risk_score: 49
+status: high
 date: 2026-06-20
 ---
 
 # EigenCloud (prev. EigenLayer) (EIGEN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 28/100 — 🟡 Medium Risk**
+> **Risk Score: 49/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/eigencloud-prev-eigenlayer-eth)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-EigenCloud's (EIGEN) token on Ethereum demonstrates several foundational security attributes. The contract is verified, meaning its code matches the deployed bytecode on the blockchain, enhancing transparency. Ownership has been renounced, which removes the creator's ability to modify core token parameters post-deployment, such as minting new tokens or altering transaction fees. Further reinforcing this, no mint function exists, preventing arbitrary inflation of the token supply. However, areas warranting investor attention include the significant concentration of 37.4% of the supply among the top 10 holders, which could influence market dynamics. Additionally, liquidity for the token is not locked. With a 24-hour volume of $157,533 against $3,371,310 in liquidity, it has been assigned a Medium Risk score of 28/100.
+The audit of the TransparentUpgradeableProxy contract reveals a robust and well-established proxy pattern from OpenZeppelin. The primary risk identified is the centralized control over upgrades by the admin address, which requires careful management to prevent single points of failure.
 
-A critical risk factor for EIGEN is the substantial concentration, with 37.4% of the token supply held by the top 10 addresses. Such centralization can lead to significant market impact from large holder actions, potentially affecting price stability and liquidity. Furthermore, the absence of locked liquidity is a notable concern. While ownership renunciation mitigates developer-initiated rug pulls via code changes, unlocked liquidity means the liquidity providers could withdraw funds, potentially impacting trading stability and accessibility. Conversely, the renounced ownership and lack of a mint function are strong safety signals, significantly reducing risks associated with developer manipulation of supply or contract parameters.
+> **Final Recommendation:** The `TransparentUpgradeableProxy` contract provides a solid foundation for an upgradeable system, leveraging OpenZeppelin's audited codebase. The paramount recommendation is to implement robust security measures for the `admin` address, ideally utilizing a multi-signature wallet or a DAO-governed `ProxyAdmin` contract to mitigate the inherent centralization risk. A comprehensive audit of the implementation contract(s) that this proxy will point to is also essential, as the proxy's security is only as strong as its implementation. For enhanced security and operational resilience, consider a Premium Deploy option that includes continuous monitoring and incident response planning for both the proxy and its implementation.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 5/10 | Medium | The contract leverages OpenZeppelin's battle-tested `TransparentUpgradeableProxy` implementation, ensuring a robust and secure proxy architecture (7.1 Architecture). The code adheres to high security  |
+| **Governance / Economics** | 3/10 | High | The governance model is highly centralized, with a single `admin` address possessing full control over contract upgrades and admin changes (7.5 Governance). This introduces a significant single point  |
+| **Upgrades** | 3/10 | High | The contract is designed for upgradeability using the transparent proxy pattern, which is a well-understood and secure mechanism (7.7 Upgrades). This allows for future enhancements and bug fixes witho |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Transparent |
+| **Admin** | OZ ProxyAdmin → Multisig 1-of-2 |
+| **Implementation** | ⚠️ Unverified source |
+| **Upgrades (30d)** | 0 (stable) |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | 47.0% |
+| **Top-3 Unlocked** | ⚠️ 88.8% |
+
+## Security Findings
+
+_🟠 1 High · ⚪ 3 Informational_
+
+### `H-01` — Centralized Control of Upgrade Mechanism  *(Severity: High · Status: Unresolved)*
+
+The `TransparentUpgradeableProxy` contract grants the `admin` address sole authority to upgrade the underlying implementation contract and to change the admin itself. This centralization introduces a single point of failure. If the `admin` key is compromised, a malicious actor could upgrade the contract to a harmful implementation, potentially leading to loss of funds or control over the protocol. The security of the entire system heavily relies on the security of this `admin` address.
+
+**Recommendation:** It is strongly recommended to secure the `admin` role with a robust multi-signature wallet (e.g., Gnosis Safe) or a dedicated `ProxyAdmin` contract governed by a DAO or a multi-signature setup. This distributes control and significantly reduces the risk associated with a single compromised key.
+
+
+### `I-01` — Reliance on OpenZeppelin Standard Library  *(Severity: Informational · Status: Unresolved)*
+
+The contract utilizes the `TransparentUpgradeableProxy` pattern from OpenZeppelin Contracts. This is a widely adopted, battle-tested, and community-audited library, which generally enhances the security and reliability of the proxy mechanism.
+
+**Recommendation:** Ensure that the OpenZeppelin library version used is up-to-date and that no modifications have been made to the core library code. Regularly monitor OpenZeppelin security advisories.
+
+
+### `I-02` — Transparent Proxy Admin Interaction Behavior  *(Severity: Informational · Status: Unresolved)*
+
+The Transparent Proxy pattern dictates that if the `admin` address calls the proxy, the call is directed to the proxy's internal admin functions (e.g., `upgradeTo`, `changeAdmin`), and *not* forwarded to the implementation. Conversely, if any other address calls the proxy, the call is always forwarded to the implementation. This design prevents selector clashes but means the admin cannot directly interact with the implementation through the proxy.
+
+**Recommendation:** Developers and integrators should be fully aware of this specific interaction behavior to avoid unexpected errors when the admin attempts to call implementation functions directly through the proxy. Admin actions should be limited to proxy management.
+
+
+### `I-03` — No Direct Economic Logic in Proxy  *(Severity: Informational · Status: Unresolved)*
+
+The `TransparentUpgradeableProxy` contract itself is a minimal forwarding contract and does not contain any complex business logic or direct economic mechanisms (e.g., token transfers, staking, lending). Its primary function is to delegate calls to an implementation contract.
+
+**Recommendation:** While the proxy itself has minimal direct economic risk, the security of the overall system's economic model is entirely dependent on the security and correctness of the underlying implementation contract(s) that the proxy points to. A thorough audit of the implementation contract(s) is crucial.
 
 ## Token Metrics
 

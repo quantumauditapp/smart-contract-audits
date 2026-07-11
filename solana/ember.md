@@ -2,24 +2,56 @@
 token: EMBER
 ticker: EMBER
 network: solana
-risk_score: 45
-status: medium
+risk_score: 57
+status: high
 date: 2026-06-15
 ---
 
 # EMBER (EMBER) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 57/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ember-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-EMBER (EMBER) on Solana currently carries a Medium Risk score of 45/100, reflecting a combination of both cautionary and positive security signals for potential investors. A notable positive aspect is that contract ownership has been renounced, which generally prevents the original deployer from altering core token functionalities post-launch. Additionally, the absence of a mint function mitigates the risk of new tokens being arbitrarily created, protecting against inflationary supply increases. However, the contract source code remains unverified, significantly impeding independent security review and overall transparency. The token's liquidity, valued at $16,420, is not locked, posing a potential risk regarding its permanence. Trading activity shows a 24-hour volume of $57,413. Furthermore, a concentration risk is observed with the top 10 holders controlling 40.2% of the total supply, which could influence market stability.
+The EMBER token mint audit reveals a significant risk due to very low liquidity, with only $4,905 available on DEXs, which can lead to severe slippage. Key authorities such as Mint Authority and Freeze Authority are revoked, indicating a fixed supply and unfreezable accounts. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-The most significant risk factors for EMBER stem from its unverified contract and unlocked liquidity. An unverified contract means the underlying code has not been publicly confirmed, preventing investors and analysts from scrutinizing it for vulnerabilities or malicious functions, thereby creating a substantial trust deficit. This lack of transparency, combined with unlocked liquidity, presents a heightened risk of liquidity withdrawal, potentially severely impacting the token's tradability and price. Furthermore, the notable concentration of 40.2% of the supply within the top 10 holders introduces a centralization risk, where large sales could trigger significant market volatility and price fluctuations.
+> **Final Recommendation:** Holders should be aware of the extremely low liquidity ($4,905) which will result in severe slippage for any significant trade. While the mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts, the lack of holder concentration data prevents a full assessment of market manipulation risk. Proceed with extreme caution due to liquidity constraints.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 5/10 | Medium | The EMBER token is an SPL Token-2022 mint with a total supply of 910,982,636.140874 tokens and 6 decimals. Crucially, both the Mint Authority and Freeze Authority have been revoked, meaning no new tok |
+| **Governance / Economics** | 3/10 | High | The token exhibits very low liquidity, with only $4,905 USD available on DEXs, which poses a high risk for significant slippage during trades. The 24-hour trading volume is $107, resulting in a normal |
+| **Upgrades** | 8/10 | Low | The token's Mint Authority and Freeze Authority are both revoked, ensuring that the token's supply cannot be increased and accounts cannot be frozen by any central entity. The token's metadata is immu |
+
+## Security Findings
+
+_🟠 1 High · ⚪ 2 Informational_
+
+### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
+
+Total DEX liquidity is $4,905. Slippage will be severe; large positions cannot be exited without significant loss. (Fact: Liquidity (USD): $4,905)
+
+**Recommendation:** Account for the severe slippage in any swap calculation and consider the difficulty of exiting large positions.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

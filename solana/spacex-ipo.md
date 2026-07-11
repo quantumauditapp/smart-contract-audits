@@ -2,14 +2,14 @@
 token: SPACEX IPO
 ticker: SPCX
 network: solana
-risk_score: 59
-status: high
+risk_score: 43
+status: medium
 date: 2026-06-12
 ---
 
 # SPACEX IPO (SPCX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spacex-ipo-sol)
 
@@ -23,21 +23,13 @@ This audit of the SPACEX IPO (SPCX) SPL Token Mint found no critical or high-sev
 
 However, a complete assessment of market risk is hindered by the unavailability of holder concentration data. Potential investors should consider this information gap and the low RugCheck score (1/100) as potential indicators of underlying market risks not covered by the deterministic rules. For a Premium Deploy, consider using a token standard that allows for transparent on-chain governance or multi-signature control over any remaining administrative functions, if applicable, although for this token, most critical authorities are already revoked.
 
-## Security Analysis
-
-This audit of the SPACEX IPO (SPCX) SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and external security signals. The mint and freeze authorities are revoked, and no Token-2022 extensions like transfer hooks or permanent delegates are active. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
-
-Based on the available data, the SPACEX IPO (SPCX) token exhibits strong security properties regarding its mint and freeze authorities, which are both revoked. This significantly reduces central party risk. The absence of active Token-2022 extensions like transfer hooks or permanent delegates also contributes to predictable token behavior.
-
-However, a complete assessment of market risk is hindered by the unavailability of holder concentration data. Potential investors should consider this information gap and the low RugCheck score (1/100) as potential indicators of underlying market risks not covered by the deterministic rules. For a Premium Deploy, consider using a token standard that allows for transparent on-chain governance or multi-signature control over any remaining administrative functions, if applicable, although for this token, most critical authorities are already revoked.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The SPACEX IPO (SPCX) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, preventing further token creation or freezing of user accounts (7.3 Access Contro |
-| **Governance / Economics** | 6/10 | Low | The token has a total DEX liquidity of $32,721, which is sufficient to avoid the 'Very Low Liquidity' flag (7.4 Economic). The 24-hour volume is $219,388, resulting in a Volume/Liquidity Ratio of 6.70 |
-| **Upgrades** | 6/10 | Low | The mint authority and freeze authority are both revoked, meaning the core properties of the token supply and transferability cannot be altered by a central entity (7.7 Upgrades). The token's metadata |
+| **Technical** | 6/10 | Medium | The SPACEX IPO (SPCX) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, preventing further token creation or freezing of user accounts (7.3 Access Contro |
+| **Governance / Economics** | 5/10 | Medium | The token has a total DEX liquidity of $32,721, which is sufficient to avoid the 'Very Low Liquidity' flag (7.4 Economic). The 24-hour volume is $219,388, resulting in a Volume/Liquidity Ratio of 6.70 |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the core properties of the token supply and transferability cannot be altered by a central entity (7.7 Upgrades). The token's metadata |
 
 ## Security Findings
 

@@ -2,14 +2,14 @@
 token: BitVault Signal
 ticker: BV7X
 network: base
-risk_score: 62
+risk_score: 55
 status: high
 date: 2026-06-10
 ---
 
 # BitVault Signal (BV7X) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 55/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bitvault-signal-base)
 
@@ -23,21 +23,20 @@ The ClankerToken contract is an ERC20 token with extensions for burning, permits
 
 For enhanced security and continuous monitoring, consider a Premium Deploy option. This service provides ongoing vigilance, real-time threat detection, and rapid response capabilities, ensuring the long-term integrity and resilience of your deployed contracts.
 
-## Security Analysis
-
-The ClankerToken contract is an ERC20 token with extensions for burning, permits, and voting, designed for cross-chain functionality. It leverages battle-tested OpenZeppelin libraries, contributing to a strong technical foundation. The primary risks identified are related to centralized administrative control over critical token parameters and the inherent reliance on the security of the external Superchain Token Bridge for cross-chain supply management.
-
-The ClankerToken contract is generally well-designed and utilizes robust, audited libraries. The primary areas of concern revolve around the centralized control of the `_admin` role and the critical dependency on the `SuperchainTokenBridge`. It is recommended to implement robust operational security measures for the `_admin` key and thoroughly audit the `SuperchainTokenBridge` if it falls within the scope of the overall system. 
-
-For enhanced security and continuous monitoring, consider a Premium Deploy option. This service provides ongoing vigilance, real-time threat detection, and rapid response capabilities, ensuring the long-term integrity and resilience of your deployed contracts.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The contract demonstrates strong technical security (7.2 Code Security) by inheriting from well-audited OpenZeppelin ERC20, ERC20Permit, ERC20Votes, and ERC20Burnable contracts, minimizing common vuln |
-| **Governance / Economics** | 6/10 | Medium | The contract exhibits a medium governance and economic risk profile (7.4 Economic, 7.5 Governance) due to its centralized administrative structure. The `_admin` role holds significant power, including |
-| **Upgrades** | 6/10 | Low | The ClankerToken contract is not designed to be upgradeable (7.7 Upgrades), which inherently eliminates risks associated with proxy patterns, upgradeability logic, and potential upgrade path vulnerabi |
+| **Technical** | 8/10 | Low | The contract demonstrates strong technical security (7.2 Code Security) by inheriting from well-audited OpenZeppelin ERC20, ERC20Permit, ERC20Votes, and ERC20Burnable contracts, minimizing common vuln |
+| **Governance / Economics** | 1/10 | High | The contract exhibits a medium governance and economic risk profile (7.4 Economic, 7.5 Governance) due to its centralized administrative structure. The `_admin` role holds significant power, including |
+| **Upgrades** | 8/10 | Low | The ClankerToken contract is not designed to be upgradeable (7.7 Upgrades), which inherently eliminates risks associated with proxy patterns, upgradeability logic, and potential upgrade path vulnerabi |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 

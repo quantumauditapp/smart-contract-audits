@@ -2,14 +2,14 @@
 token: Dogeus Maximus
 ticker: DOGEUS
 network: solana
-risk_score: 59
-status: high
+risk_score: 43
+status: medium
 date: 2026-06-10
 ---
 
 # Dogeus Maximus (DOGEUS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dogeus-maximus-sol)
 
@@ -22,20 +22,13 @@ The Dogeus Maximus (DOGEUS) SPL token mint has revoked its mint and freeze autho
 > **Final Recommendation:** Based on the available on-chain data and external security signals, the Dogeus Maximus (DOGEUS) token appears to be well-configured from a security perspective, with critical authorities revoked and no risky Token-2022 extensions active. However, holder concentration data was unavailable, which is a key factor for assessing market manipulation risk.
 For a comprehensive understanding, it is recommended to monitor holder distribution as this data becomes available. Always exercise caution with new tokens and consider the overall market conditions and project fundamentals beyond the technical configuration.
 
-## Security Analysis
-
-The Dogeus Maximus (DOGEUS) SPL token mint has revoked its mint and freeze authorities, indicating a fixed supply and no ability to freeze user funds. No Token-2022 extensions that introduce centralisation risks, such as transfer hooks or permanent delegates, are active. Holder concentration data was unavailable, and RugCheck.xyz did not flag the token as rugged, resulting in a low overall risk assessment based on the available facts.
-
-Based on the available on-chain data and external security signals, the Dogeus Maximus (DOGEUS) token appears to be well-configured from a security perspective, with critical authorities revoked and no risky Token-2022 extensions active. However, holder concentration data was unavailable, which is a key factor for assessing market manipulation risk.
-For a comprehensive understanding, it is recommended to monitor holder distribution as this data becomes available. Always exercise caution with new tokens and consider the overall market conditions and project fundamentals beyond the technical configuration.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The Dogeus Maximus (DOGEUS) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing  |
-| **Governance / Economics** | 6/10 | Low | The token has a liquidity of $28,870 USD and a 24-hour volume of $206,256 USD. The Volume/Liquidity Ratio is 7.14, which is not indicative of wash trading according to the defined threshold. The DEX p |
-| **Upgrades** | 6/10 | Low | The mint authority has been revoked, meaning the token's supply parameters cannot be altered. No Token-2022 extensions that allow for future modifications to core token behavior (e.g., transfer hook u |
+| **Technical** | 6/10 | Medium | The Dogeus Maximus (DOGEUS) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing  |
+| **Governance / Economics** | 5/10 | Medium | The token has a liquidity of $28,870 USD and a 24-hour volume of $206,256 USD. The Volume/Liquidity Ratio is 7.14, which is not indicative of wash trading according to the defined threshold. The DEX p |
+| **Upgrades** | 8/10 | Low | The mint authority has been revoked, meaning the token's supply parameters cannot be altered. No Token-2022 extensions that allow for future modifications to core token behavior (e.g., transfer hook u |
 
 ## Security Findings
 

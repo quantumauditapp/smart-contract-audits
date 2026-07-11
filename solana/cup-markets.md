@@ -2,14 +2,14 @@
 token: Cup Markets
 ticker: CUP
 network: solana
-risk_score: 61
-status: high
+risk_score: 39
+status: medium
 date: 2026-06-10
 ---
 
 # Cup Markets (CUP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cup-markets-sol)
 
@@ -23,21 +23,13 @@ The Cup Markets (CUP) token mint is based on the Solana `spl-token` program. A s
 
 For a Premium Deploy, consider tokens with a default account state that is unfrozen to avoid operational dependencies. Additionally, ensure comprehensive holder distribution analysis is available to mitigate risks associated with concentrated supply.
 
-## Security Analysis
-
-The Cup Markets (CUP) token mint is based on the Solana `spl-token` program. A significant finding is that new holder accounts are created in a frozen state, requiring an authority to unfreeze them before use. Holder concentration data was unavailable, preventing assessment of supply distribution risk. RugCheck.xyz assigned a low score of 7/100, indicating high risk, and flagged "Mutable metadata" as a concern, though GoPlus reports `metadata_mutable: False`.
-
-Holders should be aware that new token accounts for CUP are created in a frozen state, requiring an unfreeze operation by an authority before tokens can be used. It is crucial to confirm the availability and responsiveness of the entity responsible for unfreezing accounts to ensure usability. While mint and freeze authorities are revoked, the operational dependency for new accounts remains. Due to unavailable holder concentration data, the risk of whale manipulation cannot be assessed.
-
-For a Premium Deploy, consider tokens with a default account state that is unfrozen to avoid operational dependencies. Additionally, ensure comprehensive holder distribution analysis is available to mitigate risks associated with concentrated supply.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The token is an SPL token using the standard `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked, which is a positive security measure as it prevents further token mint |
-| **Governance / Economics** | 4/10 | Low | The token exhibits healthy liquidity of $81,112 USD and a normal 24-hour volume to liquidity ratio of 1.06, suggesting organic trading activity. The DEX pair has been active for 18 days, providing som |
-| **Upgrades** | 4/10 | Low | The Mint Authority and Freeze Authority for the token have been successfully revoked, indicating that the token supply is fixed and no existing accounts can be frozen by a central party. GoPlus report |
+| **Technical** | 5/10 | Medium | The token is an SPL token using the standard `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked, which is a positive security measure as it prevents further token mint |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy liquidity of $81,112 USD and a normal 24-hour volume to liquidity ratio of 1.06, suggesting organic trading activity. The DEX pair has been active for 18 days, providing som |
+| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority for the token have been successfully revoked, indicating that the token supply is fixed and no existing accounts can be frozen by a central party. GoPlus report |
 
 ## Security Findings
 

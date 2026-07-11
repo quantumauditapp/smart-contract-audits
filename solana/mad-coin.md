@@ -2,24 +2,56 @@
 token: Mad Coin
 ticker: $MAD
 network: solana
-risk_score: 54
-status: high
+risk_score: 42
+status: medium
 date: 2026-06-19
 ---
 
 # Mad Coin ($MAD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 54/100 — 🟠 High Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mad-coin-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Mad Coin ($MAD) on Solana presents a nuanced security profile that prospective investors should carefully consider. A positive indicator is that contract ownership has been renounced, which typically prevents the original deployer from modifying critical parameters post-launch, such as introducing new taxes or minting additional tokens. Furthermore, the absence of a mint function ensures the total supply cannot be arbitrarily inflated. However, several significant red flags are apparent. The contract remains unverified, severely impeding transparency and preventing independent audits of its code for potential vulnerabilities or malicious logic. This lack of verification is a primary concern. Additionally, liquidity is not locked, introducing a potential 'rug pull' risk where funds could be withdrawn, severely impacting tradability. Token concentration is high, with the top 10 holders controlling 59.9% of the supply, suggesting potential for market manipulation. The token currently holds a high-risk score of 54/100, reflecting these combined factors. Current trading activity shows $31,702 in 24-hour volume against $107,284 in liquidity.
+The Mad Coin SPL token mint exhibits a strong security posture regarding its core authorities, with both mint and freeze authorities successfully revoked. No critical Token-2022 extensions like permanent delegates or transfer hooks are active. Liquidity is moderate, and trading patterns appear normal. Holder concentration data was unavailable for direct assessment, though RugCheck.xyz indicates high ownership concentration.
 
-The most critical security concerns for Mad Coin ($MAD) stem from its unverified contract and unlocked liquidity. An unverified contract means the deployed code is not publicly available or auditable, creating a significant trust gap where hidden vulnerabilities or malicious functions could exist undetected. This makes it impossible for investors to confirm the true nature and safety of the smart contract's logic. Complementing this, the absence of locked liquidity introduces a substantial rug pull risk; liquidity providers can withdraw funds at any time, potentially collapsing the trading pair and leaving holders unable to sell. Lastly, the significant concentration of 59.9% of the supply among the top 10 holders poses a centralization risk, enabling these large holders to potentially influence market price through coordinated actions.
+> **Final Recommendation:** Based on the deterministic rules applied, Mad Coin presents a low technical risk profile, primarily due to the revocation of critical authorities (mint and freeze) and the absence of active, potentially risky Token-2022 extensions. Investors should be aware that direct holder concentration data was unavailable, which is a key factor for assessing potential market manipulation. While RugCheck.xyz indicates high ownership concentration, specific percentages could not be verified. For a Premium Deploy, further off-chain due diligence on the project team and community engagement is recommended, alongside monitoring on-chain holder distribution if that data becomes available.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The Mad Coin token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked (None), indicating that no single entity can mint new tokens or freez |
+| **Governance / Economics** | 5/10 | Medium | DEX liquidity for Mad Coin is $141,922, with a 24-hour volume of $12,951, resulting in a normal Volume/Liquidity Ratio of 0.09. The DEX pair has been active for 141 days, providing a reasonable track  |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are both revoked, preventing any future changes to the token supply or account freeze status by an external key. Key Token-2022 extensions like Transfer Hook ar |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

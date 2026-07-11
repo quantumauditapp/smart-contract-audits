@@ -2,14 +2,14 @@
 token: AnitaMaxWynn
 ticker: WYNN
 network: solana
-risk_score: 57
-status: high
+risk_score: 41
+status: medium
 date: 2026-06-10
 ---
 
 # AnitaMaxWynn (WYNN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/anitamaxwynn-sol)
 
@@ -23,21 +23,13 @@ The AnitaMaxWynn (WYNN) SPL Token Mint audit revealed a well-configured token wi
 
 For projects requiring advanced security features or custom token logic, Quantum Audit offers a Premium Deploy service, including custom smart contract development and comprehensive pre-deployment audits.
 
-## Security Analysis
-
-The AnitaMaxWynn (WYNN) SPL Token Mint audit revealed a well-configured token with no critical or high-severity issues based on the available on-chain facts. Both mint and freeze authorities have been revoked, ensuring a fixed supply and preventing arbitrary freezing of user funds. However, the token received a very low RugCheck Score of 1/100, indicating potential underlying risks not captured by standard on-chain analysis. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
-
-The AnitaMaxWynn (WYNN) token appears to be a well-configured SPL token with strong security properties. The revocation of both mint and freeze authorities significantly reduces centralisation risks, ensuring a fixed supply and preventing arbitrary freezing of user funds. Holders should be aware that holder concentration data was unavailable, which means the distribution risk could not be fully assessed. For a comprehensive understanding, it is recommended to monitor holder distribution once data becomes available. Additionally, the very low RugCheck Score of 1/100 warrants extreme caution and further independent due diligence before any significant interaction.
-
-For projects requiring advanced security features or custom token logic, Quantum Audit offers a Premium Deploy service, including custom smart contract development and comprehensive pre-deployment audits.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 10/10 | Low | The AnitaMaxWynn (WYNN) token is implemented using the spl-token-2022 program. A key security strength is the revocation of both the Mint Authority and Freeze Authority, as confirmed by the "Mint Auth |
-| **Governance / Economics** | 10/10 | Low | The token exhibits a healthy liquidity profile with "Liquidity (USD): $43,001" and a normal "Volume/Liquidity Ratio: 0.40", suggesting organic trading activity without signs of wash trading. The "Pair |
-| **Upgrades** | 10/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning the token's supply and transferability parameters are fixed and cannot be changed by any external key. The  |
+| **Technical** | 6/10 | Medium | The AnitaMaxWynn (WYNN) token is implemented using the spl-token-2022 program. A key security strength is the revocation of both the Mint Authority and Freeze Authority, as confirmed by the "Mint Auth |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a healthy liquidity profile with "Liquidity (USD): $43,001" and a normal "Volume/Liquidity Ratio: 0.40", suggesting organic trading activity without signs of wash trading. The "Pair |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning the token's supply and transferability parameters are fixed and cannot be changed by any external key. The  |
 
 ## Security Findings
 

@@ -2,14 +2,14 @@
 token: Bitcoin Bank
 ticker: BTCBANK
 network: solana
-risk_score: 49
-status: high
+risk_score: 35
+status: medium
 date: 2026-06-10
 ---
 
 # Bitcoin Bank (BTCBANK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bitcoin-bank-sol)
 
@@ -21,19 +21,13 @@ The Bitcoin Bank (BTCBANK) SPL Token Mint on Solana demonstrates a strong techni
 
 > **Final Recommendation:** This token presents a low technical risk profile due to the revocation of critical authorities and the absence of mutable features or active Token-2022 extensions that could alter token behavior. Holders should be aware that holder concentration data was not available for this audit, which is an important factor for assessing potential market manipulation. It is recommended to monitor on-chain holder distribution independently before making significant investments. No further technical audit is required for the mint configuration itself.
 
-## Security Analysis
-
-The Bitcoin Bank (BTCBANK) SPL Token Mint on Solana demonstrates a strong technical configuration with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No Token-2022 extensions like transfer hooks or permanent delegates are active, and metadata is immutable. Holder concentration data was unavailable for this audit, which is a key factor for assessing market manipulation risk.
-
-This token presents a low technical risk profile due to the revocation of critical authorities and the absence of mutable features or active Token-2022 extensions that could alter token behavior. Holders should be aware that holder concentration data was not available for this audit, which is an important factor for assessing potential market manipulation. It is recommended to monitor on-chain holder distribution independently before making significant investments. No further technical audit is required for the mint configuration itself.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.6 External: The SPL Token Mint is configured using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked |
-| **Governance / Economics** | 6/10 | Low | 7.4 Economic: The token has a total DEX liquidity of $35,597, with a 24-hour volume of $27,761. The Volume/Liquidity Ratio is 0.78, indicating normal trading activity without signs of wash trading. Th |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, indicating that the token's supply and account freezing capabilities are fixed. GoPlus data confirms that metadata is immutable, |
+| **Technical** | 6/10 | Medium | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.6 External: The SPL Token Mint is configured using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked |
+| **Governance / Economics** | 6/10 | Medium | 7.4 Economic: The token has a total DEX liquidity of $35,597, with a 24-hour volume of $27,761. The Volume/Liquidity Ratio is 0.78, indicating normal trading activity without signs of wash trading. Th |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, indicating that the token's supply and account freezing capabilities are fixed. GoPlus data confirms that metadata is immutable, |
 
 ## Security Findings
 

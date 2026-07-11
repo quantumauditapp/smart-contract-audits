@@ -2,14 +2,14 @@
 token: Geodnet
 ticker: GEOD
 network: solana
-risk_score: 100
-status: critical
+risk_score: 63
+status: high
 date: 2026-06-13
 ---
 
 # Geodnet (GEOD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 63/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/geodnet-sol)
 
@@ -21,19 +21,13 @@ The Geodnet Token (GEOD) presents critical risks due to an unrevoked mint author
 
 > **Final Recommendation:** Given the critical unrevoked mint authority, it is strongly recommended to verify on-chain that this authority is set to null before considering the token supply fixed or stable. Furthermore, the default frozen state for new accounts requires confirmation of an active issuer to unfreeze accounts; otherwise, tokens may become unspendable. Investors should proceed with extreme caution and understand the implications of these centralized controls.
 
-## Security Analysis
-
-The Geodnet Token (GEOD) presents critical risks due to an unrevoked mint authority, allowing for unlimited token minting and potential dilution. Additionally, new holder accounts are created in a frozen state, which could hinder usability without an active issuer. Holder concentration data was unavailable, preventing a full assessment of market manipulation risks.
-
-Given the critical unrevoked mint authority, it is strongly recommended to verify on-chain that this authority is set to null before considering the token supply fixed or stable. Furthermore, the default frozen state for new accounts requires confirmation of an active issuer to unfreeze accounts; otherwise, tokens may become unspendable. Investors should proceed with extreme caution and understand the implications of these centralized controls.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 10/10 | Low | The token is an SPL token using the `spl-token` program. A critical risk exists as the mint authority (`AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F`) is not revoked, allowing for arbitrary supply inc |
-| **Governance / Economics** | 10/10 | Low | The token has a total DEX liquidity of $330,693, with a 24-hour volume of $1,923,417, resulting in a Volume/Liquidity ratio of 5.82. The DEX pair has been active for 605 days, indicating a relatively  |
-| **Upgrades** | 10/10 | Low | The mint authority for the token is currently held by `AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F`, posing a significant risk of supply manipulation. In contrast, the freeze authority has been revok |
+| **Technical** | 3/10 | High | The token is an SPL token using the `spl-token` program. A critical risk exists as the mint authority (`AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F`) is not revoked, allowing for arbitrary supply inc |
+| **Governance / Economics** | 3/10 | High | The token has a total DEX liquidity of $330,693, with a 24-hour volume of $1,923,417, resulting in a Volume/Liquidity ratio of 5.82. The DEX pair has been active for 605 days, indicating a relatively  |
+| **Upgrades** | 7/10 | Low | The mint authority for the token is currently held by `AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F`, posing a significant risk of supply manipulation. In contrast, the freeze authority has been revok |
 
 ## Security Findings
 

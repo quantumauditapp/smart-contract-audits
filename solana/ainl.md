@@ -2,14 +2,14 @@
 token: AINL
 ticker: AINL
 network: solana
-risk_score: 49
-status: high
+risk_score: 22
+status: medium
 date: 2026-06-10
 ---
 
 # AINL (AINL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 22/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ainl-sol)
 
@@ -22,20 +22,20 @@ The AINL token mint exhibits very low liquidity on DEXs, with only $7,400 availa
 > **Final Recommendation:** Potential holders should be aware of the extremely low liquidity ($7,400 USD) which makes large trades impractical and exiting positions difficult without significant price impact. While the token benefits from revoked mint and freeze authorities, which prevents issuer manipulation of supply or account freezing, the economic viability is severely hampered by liquidity constraints.
 For enhanced security and functionality, consider tokens with higher liquidity and a more robust ecosystem. For projects requiring custom logic or advanced features, a Premium Deploy option with audited Token-2022 extensions and sufficient initial liquidity is recommended.
 
-## Security Analysis
-
-The AINL token mint exhibits very low liquidity on DEXs, with only $7,400 available, posing significant slippage risk for any substantial trades. Key authorities like Mint and Freeze are revoked, enhancing security against issuer-side manipulation. Holder concentration data was unavailable, preventing assessment of whale risk.
-
-Potential holders should be aware of the extremely low liquidity ($7,400 USD) which makes large trades impractical and exiting positions difficult without significant price impact. While the token benefits from revoked mint and freeze authorities, which prevents issuer manipulation of supply or account freezing, the economic viability is severely hampered by liquidity constraints.
-For enhanced security and functionality, consider tokens with higher liquidity and a more robust ecosystem. For projects requiring custom logic or advanced features, a Premium Deploy option with audited Token-2022 extensions and sufficient initial liquidity is recommended.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The AINL token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority are revoked, which is a strong positive as it prevents the issuer from minting new tokens or freezing existing ho |
-| **Governance / Economics** | 4/10 | High | The token exhibits very low liquidity, with only $7,400 USD available on DEXs, which will lead to severe slippage for trades. The 24-hour volume of $195 is low relative to liquidity, resulting in a no |
-| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked, indicating that the token's supply and transferability parameters are fixed and cannot be altered by an issuer. The token's metadata (name, sy |
+| **Technical** | 5/10 | Medium | The AINL token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority are revoked, which is a strong positive as it prevents the issuer from minting new tokens or freezing existing ho |
+| **Governance / Economics** | 7/10 | Low | The token exhibits very low liquidity, with only $7,400 USD available on DEXs, which will lead to severe slippage for trades. The 24-hour volume of $195 is low relative to liquidity, resulting in a no |
+| **Upgrades** | 10/10 | Low | The Mint Authority and Freeze Authority are both revoked, indicating that the token's supply and transferability parameters are fixed and cannot be altered by an issuer. The token's metadata (name, sy |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
+| **LP Locked** | 69.7% — Raydium Lock |
 
 ## Security Findings
 

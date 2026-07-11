@@ -2,24 +2,56 @@
 token: WSOP Fantasy Poker
 ticker: WSOLP
 network: solana
-risk_score: 47
-status: high
+risk_score: 34
+status: medium
 date: 2026-06-21
 ---
 
 # WSOP Fantasy Poker (WSOLP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 34/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wsop-fantasy-poker-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-WSOP Fantasy Poker (WSOLP) on Solana presents a mixed security profile for investors. A primary concern is that the contract is not verified, meaning its underlying code has not been publicly confirmed to match what is deployed on-chain, introducing significant transparency risk. Positively, the contract's ownership has been renounced, preventing the original deployer from making unilateral changes, and no mint function exists, which safeguards against arbitrary token supply inflation. Current liquidity stands at $54,572, with a 24-hour volume of $40,537, indicating moderate trading activity. However, the top 10 holders control 29.1% of the total supply, raising concerns about potential market manipulation. Critically, the project's liquidity is not locked, exposing investors to potential rug pull scenarios. This combination of factors contributes to its high-risk score of 47/100.
+The WSOP Fantasy Poker (WSOLP) token mint exhibits a low-risk profile based on available on-chain data. Both mint and freeze authorities are revoked, indicating a fixed supply and no ability to freeze user funds. No critical or high-severity findings were identified. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-The most critical risk signals for WSOLP are the unverified contract and unlocked liquidity. An unverified contract prevents independent confirmation of the code's integrity, obscuring potential vulnerabilities or malicious functions. Concurrently, the absence of locked liquidity means that the entire pool could be withdrawn by providers at any moment, creating a substantial rug pull risk. While the renounced ownership and lack of a mint function offer some basic protections against developer-led inflation or changes, these positive signals are heavily overshadowed by the significant transparency and liquidity risks, contributing to the token's overall high-risk assessment.
+> **Final Recommendation:** Based on the available data, the WSOP Fantasy Poker (WSOLP) token mint appears to be configured securely with revoked mint and freeze authorities. Users should be aware that holder concentration data was unavailable, so a full assessment of distribution risk could not be made. It is recommended to monitor the token's liquidity and trading volume for stability. For a Premium Deploy, consider integrating additional real-time monitoring for liquidity pool changes and holder movements.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.2 Code Security: The WSOP Fantasy Poker (WSOLP) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, which is a strong security positiv |
+| **Governance / Economics** | 6/10 | Medium | 7.4 Economic: The token has a total DEX liquidity of $34,001 USD, with a 24-hour volume of $25,153 USD, resulting in a normal Volume/Liquidity Ratio of 0.74. The DEX pair is 13 days old, indicating it |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, meaning the token's supply and freeze capabilities cannot be altered. The token uses the spl-token-2022 program, but no transfer |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

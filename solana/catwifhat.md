@@ -2,24 +2,56 @@
 token: catwifhat
 ticker: CATWIF
 network: solana
-risk_score: 45
+risk_score: 30
 status: medium
 date: 2026-06-27
 ---
 
 # catwifhat (CATWIF) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/catwifhat-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-The catwifhat (CATWIF) token on Solana exhibits a mixed security profile for investors. A primary concern is that the contract is not verified, which means its underlying code cannot be publicly scrutinized for vulnerabilities or malicious functions. Positively, ownership of the contract has been renounced, ensuring the original developer cannot alter crucial parameters post-deployment. The absence of a mint function prevents the arbitrary creation of new tokens, safeguarding against unexpected supply inflation. Furthermore, the top 10 holders collectively own 0.0% of the supply, suggesting a highly decentralized distribution. However, the existing liquidity of $83,934 is not locked, introducing a potential risk of liquidity removal. With a 24-hour volume of $823,563, CATWIF carries a Medium Risk score of 45/100, reflecting a balance of inherent risks and mitigating structural characteristics.
+The catwifhat (CATWIF) SPL Token Mint has revoked both mint and freeze authorities, indicating a fixed supply and no ability to freeze user accounts. No Token-2022 extensions that introduce centralisation risks, such as permanent delegates or transfer hooks, are active. Holder concentration data was unavailable, preventing an assessment of distribution risk. Overall, the token exhibits a low-risk profile based on available on-chain data.
 
-The two most significant risks for CATWIF are the unverified contract and unlocked liquidity. An unverified contract prevents independent security audits and public review, making hidden vulnerabilities or malicious code difficult to detect. The lack of locked liquidity means the current $83,934 pool can be removed by liquidity providers at any time, potentially impacting trading. On the positive side, ownership renunciation and the absence of a mint function are strong safety signals, removing significant risks of developer-initiated rug pulls or sudden supply dilution. These factors contribute to the overall Medium Risk assessment.
+> **Final Recommendation:** Based on the available on-chain data, the catwifhat (CATWIF) token presents a low-risk profile. Both mint and freeze authorities are revoked, ensuring a fixed supply and preventing arbitrary freezing of funds. No concerning Token-2022 extensions are active, and metadata is immutable. Investors should note that holder concentration data was unavailable, which is a common limitation for new tokens. It is always recommended to perform independent due diligence and understand the project's fundamentals before investing. For a Premium Deploy, ensure all relevant authorities are permanently revoked and consider a time-locked liquidity pool.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The catwifhat (CATWIF) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, as confirmed by `Mint Authority: revoked (None)` and `Freeze Authority: revoked  |
+| **Governance / Economics** | 6/10 | Medium | The token's liquidity on DEXs is $105,582, which is sufficient to avoid the 'Very Low Liquidity' flag. The 24-hour volume is $1,068,051, resulting in a Volume/Liquidity Ratio of 10.12, which does not  |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's core parameters related to supply and account control cannot be changed. The token uses the spl-token-2022 program but doe |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

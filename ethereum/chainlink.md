@@ -2,14 +2,14 @@
 token: Chainlink
 ticker: LINK
 network: ethereum
-risk_score: 91
-status: critical
+risk_score: 53
+status: high
 date: 2026-06-10
 ---
 
 # Chainlink (LINK) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 91/100 — 🔴 Critical Risk**
+> **Risk Score: 53/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chainlink-eth)
 
@@ -23,21 +23,20 @@ The ChainLink Token (LINK) contract implements ERC20 and ERC677 standards, incor
 
 For future deployments or significant updates, consider a Premium Deploy option. This service offers enhanced security features, including formal verification, continuous monitoring, and incident response planning, which are vital for high-value assets like the ChainLink Token. A full re-audit with complete source code and an upgrade to a modern Solidity version is strongly recommended.
 
-## Security Analysis
-
-The ChainLink Token (LINK) contract implements ERC20 and ERC677 standards, incorporating SafeMath for arithmetic safety. However, the audit identified a critical omission in the provided source code: the `validRecipient` modifier, which is used in several key transfer functions, is truncated. This prevents a complete security assessment. Additionally, the contract uses an outdated Solidity version (0.4.16), which carries inherent risks and inefficiencies compared to modern practices. The `approve` function is also susceptible to a known ERC20 race condition. The contract is not upgradeable and has simple tokenomics.
-
-The ChainLink Token contract, while functional as an ERC20/ERC677 token, presents significant security concerns primarily due to the missing `validRecipient` modifier and the use of an outdated Solidity compiler. It is imperative to provide the complete source code for a comprehensive audit, especially for critical modifiers that impact core token transfer logic. Addressing the outdated Solidity version and the ERC20 `approve` race condition are also crucial for enhancing security and efficiency. 
-
-For future deployments or significant updates, consider a Premium Deploy option. This service offers enhanced security features, including formal verification, continuous monitoring, and incident response planning, which are vital for high-value assets like the ChainLink Token. A full re-audit with complete source code and an upgrade to a modern Solidity version is strongly recommended.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The contract implements ERC20 and ERC677 standards, utilizing `SafeMath` for arithmetic safety (7.2 Code Security). The `transferAndCall` functionality enables interaction with receiving contracts, wi |
-| **Governance / Economics** | 6/10 | Low | The token design is straightforward, adhering to standard ERC20 tokenomics with a fixed total supply (7.4 Economic). The deployer receives the initial token supply, a common and transparent distributi |
-| **Upgrades** | 6/10 | Low | The contract is not designed with upgradeability features, eliminating the risks associated with proxy patterns and upgrade management (7.7 Upgrades). This provides a fixed and immutable contract logi |
+| **Technical** | 7/10 | Low | The contract implements ERC20 and ERC677 standards, utilizing `SafeMath` for arithmetic safety (7.2 Code Security). The `transferAndCall` functionality enables interaction with receiving contracts, wi |
+| **Governance / Economics** | 1/10 | High | The token design is straightforward, adhering to standard ERC20 tokenomics with a fixed total supply (7.4 Economic). The deployer receives the initial token supply, a common and transparent distributi |
+| **Upgrades** | 7/10 | Low | The contract is not designed with upgradeability features, eliminating the risks associated with proxy patterns and upgrade management (7.7 Upgrades). This provides a fixed and immutable contract logi |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 57.2% |
+| **Top-3 Unlocked** | 70.9% |
 
 ## Security Findings
 

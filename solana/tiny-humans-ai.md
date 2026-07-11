@@ -2,24 +2,56 @@
 token: Tiny Humans AI
 ticker: TINY
 network: solana
-risk_score: 38
+risk_score: 45
 status: medium
 date: 2026-06-20
 ---
 
 # Tiny Humans AI (TINY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 38/100 — 🟡 Medium Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tiny-humans-ai-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Tiny Humans AI (TINY) on Solana presents a medium risk profile with a score of 38/100. Key positive signals include ownership being renounced, which prevents the original deployer from altering token parameters, and the absence of a mint function, ensuring no new tokens can be created beyond the initial supply. However, several significant concerns persist. The contract is not verified, meaning its underlying code is not publicly auditable, increasing potential for hidden vulnerabilities or malicious functions. Furthermore, the project's liquidity, currently at $31,237 against a 24-hour volume of $434,473, is not locked, posing a risk of liquidity withdrawal. Holder concentration is notable, with the top 10 holders collectively owning 35.5% of the total supply.
+The Tiny Humans AI (TINY) SPL token mint exhibits strong security characteristics with both mint and freeze authorities revoked, indicating a fixed supply and immutable token accounts. No Token-2022 extensions like transfer hooks or permanent delegates are active, and metadata is immutable. Holder concentration data was unavailable, preventing an assessment of supply distribution risk.
 
-The two most critical risk factors for Tiny Humans AI are the unverified contract and the unlocked liquidity. An unverified contract means investors cannot independently review the code for backdoors, exploits, or unexpected functions, requiring trust in the developers without transparency. Simultaneously, with $31,237 in liquidity not locked, there's an inherent risk that a significant portion could be removed, impacting the token's market stability. On a positive note, ownership renounced mitigates some immediate manipulation risks by the original deployer, but it doesn't offset the lack of code transparency or liquidity safeguards.
+> **Final Recommendation:** Based on the available data, the Tiny Humans AI (TINY) token appears to have a robust security posture with critical authorities revoked and no active malicious Token-2022 extensions. Holders should be aware that holder concentration data was unavailable, which is a common risk factor for new tokens. It is recommended to monitor the token's liquidity and trading volume for stability. For a Premium Deploy option, consider integrating with a robust analytics platform to continuously track holder distribution and liquidity changes.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The Tiny Humans AI (TINY) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing token accounts can be fr |
+| **Governance / Economics** | 5/10 | Medium | The token has a liquidity of $19,979 USD, which is moderate. The 24-hour volume is $5,506, resulting in a healthy Volume/Liquidity Ratio of 0.28, which does not indicate wash trading. The DEX pair has |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are revoked, preventing any further changes to the token's supply or account freezing capabilities. The GoPlus data confirms that metadata is immutable, meaning |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

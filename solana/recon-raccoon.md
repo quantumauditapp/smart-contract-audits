@@ -2,14 +2,14 @@
 token: RECON RACCOON
 ticker: RCON
 network: solana
-risk_score: 50
-status: high
+risk_score: 20
+status: low
 date: 2026-06-10
 ---
 
 # RECON RACCOON (RCON) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/recon-raccoon-sol)
 
@@ -21,19 +21,20 @@ The RECON RACCOON (RCON) token presents a significant operational risk due to it
 
 > **Final Recommendation:** Prospective holders should exercise caution due to the 'Default Frozen State' of new accounts. It is critical to confirm the availability and responsiveness of an issuer or authority capable of unfreezing accounts before acquiring this token, as otherwise, newly received tokens may be unspendable. Additionally, while core authorities are revoked, the 'High holder correlation' flagged by RugCheck.xyz warrants further investigation into the token's distribution and potential for large-scale sell-offs. For a premium deployment, consider a token design where default account states are unfrozen, or where unfreezing is decentralized.
 
-## Security Analysis
-
-The RECON RACCOON (RCON) token presents a significant operational risk due to its default frozen account state, meaning new holders cannot transfer tokens without an issuer's intervention. While core mint and freeze authorities are revoked, the lack of holder concentration data and a 'High holder correlation' flag from RugCheck.xyz suggest potential market manipulation risks. Information on holder distribution was unavailable, limiting a complete assessment of supply centralization.
-
-Prospective holders should exercise caution due to the 'Default Frozen State' of new accounts. It is critical to confirm the availability and responsiveness of an issuer or authority capable of unfreezing accounts before acquiring this token, as otherwise, newly received tokens may be unspendable. Additionally, while core authorities are revoked, the 'High holder correlation' flagged by RugCheck.xyz warrants further investigation into the token's distribution and potential for large-scale sell-offs. For a premium deployment, consider a token design where default account states are unfrozen, or where unfreezing is decentralized.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The RECON RACCOON (RCON) token is implemented using the standard `spl-token` program on Solana. Key administrative authorities, including the Mint Authority and Freeze Authority, have been successfull |
-| **Governance / Economics** | 7/10 | Medium | The token exhibits moderate liquidity with $50,129 USD available on DEXs, and a healthy 24-hour volume to liquidity ratio of 0.00, suggesting organic trading activity rather than wash trading. The DEX |
-| **Upgrades** | 9/10 | Low | The RECON RACCOON (RCON) token mint has a robust immutability profile regarding its core administrative functions. Both the Mint Authority and Freeze Authority have been permanently revoked, ensuring  |
+| **Technical** | 5/10 | Medium | The RECON RACCOON (RCON) token is implemented using the standard `spl-token` program on Solana. Key administrative authorities, including the Mint Authority and Freeze Authority, have been successfull |
+| **Governance / Economics** | 7/10 | Low | The token exhibits moderate liquidity with $50,129 USD available on DEXs, and a healthy 24-hour volume to liquidity ratio of 0.00, suggesting organic trading activity rather than wash trading. The DEX |
+| **Upgrades** | 10/10 | Low | The RECON RACCOON (RCON) token mint has a robust immutability profile regarding its core administrative functions. Both the Mint Authority and Freeze Authority have been permanently revoked, ensuring  |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
+| **LP Locked** | 100.0% — Raydium Lock |
 
 ## Security Findings
 

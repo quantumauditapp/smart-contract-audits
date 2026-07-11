@@ -2,14 +2,14 @@
 token: Federal Economic Department
 ticker: FED
 network: solana
-risk_score: 100
+risk_score: 95
 status: critical
 date: 2026-06-10
 ---
 
 # Federal Economic Department (FED) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 95/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/federal-economic-department-sol)
 
@@ -23,21 +23,13 @@ This audit report analyzes the configuration and operational status of the Feder
 
 To establish a viable and trustworthy token, it is strongly recommended to initialize the mint, publish all relevant token data, and implement strategies to foster liquidity and market activity. For projects aiming for the highest standards of security and operational integrity, a 'Premium Deploy' option would involve a comprehensive pre-launch audit…
 
-## Security Analysis
-
-This audit report analyzes the configuration and operational status of the Federal Economic Department (FED) SPL Token Mint account. The primary critical finding is that the mint account is uninitialized, rendering the token non-functional. While mint and freeze authorities are appropriately revoked, significant data gaps exist regarding supply, decimals, holder distribution, and external security signals. The token also exhibits extremely low liquidity and trading volume. These factors collectively present a high risk profile for potential users and investors due to the token's current unusable state and lack of transparency.
-
-The Federal Economic Department (FED) token mint is currently non-functional due to its uninitialized state, representing a critical operational failure. Immediate action is required to initialize the mint account to enable basic token functionalities. Furthermore, addressing the significant lack of transparency regarding token metadata and holder distribution is crucial for building trust and enabling proper due diligence by potential users and investors. The extremely low liquidity and trading volume also pose substantial economic risks.
-
-To establish a viable and trustworthy token, it is strongly recommended to initialize the mint, publish all relevant token data, and implement strategies to foster liquidity and market activity. For projects aiming for the highest standards of security and operational integrity, a 'Premium Deploy' option would involve a comprehensive pre-launch audit…
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The technical assessment (7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.8 Operations) reveals a critical operational flaw: the SPL Token Mint account is uninitialized, making the token un |
-| **Governance / Economics** | 6/10 | High | The economic and governance assessment (7.4 Economic, 7.5 Governance) highlights significant risks. The token suffers from extremely low liquidity ($3,215 USD) and negligible 24-hour trading volume ($ |
-| **Upgrades** | 6/10 | Low | This audit pertains to an SPL Token Mint account, which does not have direct upgradeability in the context of custom program logic (7.7 Upgrades). The underlying SPL Token Program itself is managed an |
+| **Technical** | 3/10 | High | The technical assessment (7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.8 Operations) reveals a critical operational flaw: the SPL Token Mint account is uninitialized, making the token un |
+| **Governance / Economics** | 1/10 | High | The economic and governance assessment (7.4 Economic, 7.5 Governance) highlights significant risks. The token suffers from extremely low liquidity ($3,215 USD) and negligible 24-hour trading volume ($ |
+| **Upgrades** | 4/10 | Medium | This audit pertains to an SPL Token Mint account, which does not have direct upgradeability in the context of custom program logic (7.7 Upgrades). The underlying SPL Token Program itself is managed an |
 
 ## Security Findings
 

@@ -2,24 +2,56 @@
 token: Retard Coin
 ticker: RETARD
 network: solana
-risk_score: 36
+risk_score: 43
 status: medium
 date: 2026-06-16
 ---
 
 # Retard Coin (RETARD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/retard-coin-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Retard Coin (RETARD) on the Solana blockchain exhibits a 'Medium Risk' profile with a score of 36/100. Positive security signals include the renounced ownership, which prevents the original deployer from altering contract parameters, and the confirmed absence of a mint function, ensuring no new tokens can be arbitrarily created. However, several critical vulnerabilities are present. The contract is unverified, making it impossible for investors to transparently review its code for potential exploits or hidden malicious functions. Furthermore, the total liquidity of $26,488 is not locked, introducing a significant risk of a rug pull where liquidity providers could withdraw funds. Concentration among the top 10 holders, who control 34.0% of the total supply, also raises centralization concerns. The token currently registers a 24-hour trading volume of $35,610.
+This audit of the Retard Coin (RETARD) SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and deterministic rules. Key authorities such as mint and freeze are revoked, and no Token-2022 extensions like transfer hooks or permanent delegates are active. However, holder concentration data was unavailable, and RugCheck.xyz assigned an extremely low score of 1/100, indicating potential underlying risks not directly covered by the deterministic findings but warranting extreme caution.
 
-The most important safety signals for RETARD are its renounced ownership and the lack of a mint function, which significantly reduce the creator's ability to manipulate the token supply or contract rules post-launch. Conversely, the primary risks stem from the unverified contract, which impedes transparency and independent security review, leaving potential vulnerabilities undisclosed. Critically, the unlocked liquidity of $26,488 presents a direct risk of a liquidity pull, where funds could be withdrawn, severely impacting the token's market value. Additionally, the concentrated holdings among the top 10 addresses, controlling 34.0% of the supply, introduce potential for market manipulation.
+> **Final Recommendation:** Based on the available on-chain data, the Retard Coin (RETARD) SPL token mint appears to have a robust technical setup with key authorities revoked and no active malicious Token-2022 extensions. However, the extremely low RugCheck score of 1/100 is a significant red flag that warrants extreme caution, despite not triggering a specific 'RUGGED' verdict. Investors should also note the unavailability of holder concentration data, which prevents a full assessment of potential market manipulation risks from large holders. It is strongly recommended to investigate the reasons behind the low RugCheck score and exercise extreme caution before interacting with this token. A Premium Deploy option is not applicable for existing SPL token mints.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The Retard Coin (RETARD) token is an SPL Token-2022 mint. Its core security posture is strong, with both the mint authority and freeze authority explicitly revoked, preventing further token issuance o |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits moderate liquidity with $54,938 USD available on DEXs, and a healthy 24-hour volume of $80,122 USD, resulting in a normal Volume/Liquidity ratio of 1.46. The DEX pair has been activ |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as both mint and freeze authorities are revoked. The token utilizes the spl-token-2022 program, but no specific upgradable extensions like transfer hook or t |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

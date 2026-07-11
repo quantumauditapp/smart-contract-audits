@@ -2,24 +2,58 @@
 token: Kintara
 ticker: KINS
 network: solana
-risk_score: 36
+risk_score: 24
 status: medium
 date: 2026-06-15
 ---
 
 # Kintara (KINS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 24/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kintara-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Kintara (KINS) on Solana presents a mixed security profile for potential investors. Positively, the token's ownership has been renounced, which prevents the original deployer from making unauthorized changes to the contract. Additionally, the absence of a mint function means no new tokens can be arbitrarily created, protecting against inflationary dilution by the team. The distribution among the top 10 holders is moderately concentrated at 16.1% of the supply. However, the contract is not verified, posing a significant transparency issue as the actual code cannot be publicly inspected and confirmed to match the deployed version. Liquidity, while substantial at $463,475 with a high 24-hour volume of over $1.1 million, is currently not locked, exposing investors to potential risks if liquidity providers withdraw funds. The overall risk score is assessed at 36/100, indicating a medium risk level.
+The Kintara (KINS) SPL Token Mint exhibits a robust security posture with critical authorities, including mint and freeze authorities, being revoked. This indicates a fixed supply and immutability of account states. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-The most critical safety signals for Kintara (KINS) are the renounced ownership and the absence of a mint function. These attributes significantly reduce the risk of malicious contract modifications or arbitrary token creation by the deployer, establishing a baseline of immutability. Conversely, the primary risk factors stem from the unverified contract and unlocked liquidity. An unverified contract prevents public scrutiny of the underlying code, making it impossible to confirm its integrity or identify hidden vulnerabilities. Furthermore, with liquidity not locked, there remains a notable risk that liquidity providers could withdraw funds, potentially leading to a sharp price decline and difficulty for investors to exit positions.
+> **Final Recommendation:** Based on the available on-chain data and external security signals, the Kintara (KINS) token appears to be well-configured with critical administrative authorities revoked, indicating a fixed supply and immutable account states. Holders should be aware that holder concentration data was unavailable, which could impact price stability if a significant portion of the supply is held by a few entities.
+
+It is recommended to monitor the token's liquidity and trading volume for any significant changes. For a Premium Deploy option, consider integrating real-time holder distribution analysis to gain a complete understanding of market dynamics.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The Kintara (KINS) token is implemented using the spl-token-2022 program. Key administrative authorities, including the mint authority and freeze authority, have been revoked, ensuring no new tokens c |
+| **Governance / Economics** | 7/10 | Low | The token has a healthy liquidity of $409,038 USD and a 24-hour volume of $893,958 USD, with a normal volume/liquidity ratio of 2.19. The DEX pair has been active for 38 days, providing some track rec |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as both mint and freeze authorities are revoked. It utilizes the spl-token-2022 program without extensions like Transfer Hook or Default Account State Frozen |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

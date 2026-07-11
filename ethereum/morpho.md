@@ -2,14 +2,14 @@
 token: Morpho
 ticker: MORPHO
 network: ethereum
-risk_score: 90
-status: critical
+risk_score: 67
+status: high
 date: 2026-06-10
 ---
 
 # Morpho (MORPHO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 67/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/morpho-eth)
 
@@ -21,19 +21,28 @@ This audit covers a standard ERC-1967 compliant upgradeable proxy contract, util
 
 > **Final Recommendation:** The ERC1967Proxy contract, being a standard OpenZeppelin implementation, is inherently robust. However, its security is entirely contingent on the implementation contract it points to. It is imperative to conduct a comprehensive audit of the implementation contract to ensure the overall system's integrity and security. Particular attention should be paid to storage layout, access control, and potential attack vectors within the implementation's business logic. Consider implementing a timelock for upgrade operations to enhance security and provide a window for community review.
 
-## Security Analysis
-
-This audit covers a standard ERC-1967 compliant upgradeable proxy contract, utilizing battle-tested OpenZeppelin libraries. While the proxy's core logic is robust, the overall security of the system is critically dependent on the implementation contract, which was not provided for this audit. Key risks include the security of the implementation, centralized upgrade control, and potential storage collisions if the implementation is not correctly designed.
-
-The ERC1967Proxy contract, being a standard OpenZeppelin implementation, is inherently robust. However, its security is entirely contingent on the implementation contract it points to. It is imperative to conduct a comprehensive audit of the implementation contract to ensure the overall system's integrity and security. Particular attention should be paid to storage layout, access control, and potential attack vectors within the implementation's business logic. Consider implementing a timelock for upgrade operations to enhance security and provide a window for community review.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The contract implements a standard ERC-1967 proxy using OpenZeppelin's battle-tested libraries (7.1 Architecture). The code quality is high, leveraging efficient inline assembly for delegatecall (7.2  |
-| **Governance / Economics** | 6/10 | High | The proxy contract itself does not contain direct economic or governance mechanisms (7.4 Economic, 7.5 Governance). All economic and governance logic resides within the implementation contract. Theref |
-| **Upgrades** | 6/10 | Medium | The contract utilizes the ERC-1967 standard for upgradeability, a well-understood and secure pattern (7.7 Upgrades). The `upgradeToAndCall` function allows for safe upgrades with optional initializati |
+| **Technical** | 5/10 | Medium | The contract implements a standard ERC-1967 proxy using OpenZeppelin's battle-tested libraries (7.1 Architecture). The code quality is high, leveraging efficient inline assembly for delegatecall (7.2  |
+| **Governance / Economics** | 2/10 | High | The proxy contract itself does not contain direct economic or governance mechanisms (7.4 Economic, 7.5 Governance). All economic and governance logic resides within the implementation contract. Theref |
+| **Upgrades** | 3/10 | High | The contract utilizes the ERC-1967 standard for upgradeability, a well-understood and secure pattern (7.7 Upgrades). The `upgradeToAndCall` function allows for safe upgrades with optional initializati |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Uups |
+| **Implementation** | ⚠️ Unverified source |
+| **Upgrades (30d)** | 0 (stable) |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | 46.0% |
+| **Top-3 Unlocked** | ⚠️ 90.9% |
 
 ## Security Findings
 

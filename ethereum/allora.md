@@ -2,14 +2,14 @@
 token: Allora
 ticker: ALLO
 network: ethereum
-risk_score: 87
+risk_score: 85
 status: critical
 date: 2026-06-10
 ---
 
 # Allora (ALLO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 87/100 — 🔴 Critical Risk**
+> **Risk Score: 85/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/allora-eth)
 
@@ -23,21 +23,29 @@ This audit covers an OpenZeppelin ERC1967 Transparent Proxy contract. The contra
 
 For enhanced security and peace of mind, consider a Premium Deploy option. This service includes a pre-deployment security review of the specific implementation contract, a dry run of the upgrade process on a testnet, and continuous monitoring post-deployment for potential vulnerabilities or anomalous behavior.
 
-## Security Analysis
-
-This audit covers an OpenZeppelin ERC1967 Transparent Proxy contract. The contract utilizes battle-tested OpenZeppelin libraries for upgradeability, providing a robust foundation. The primary risks identified relate to the centralized control of upgrades by a single admin address and potential vulnerabilities in the implementation contract's initialization logic and storage management during upgrades.
-
-The OpenZeppelin ERC1967Proxy provides a solid and secure foundation for upgradeable contracts. The most critical aspect to secure is the admin key responsible for upgrades. Implementing a robust multi-signature wallet or a timelock for this role is paramount to mitigate the high risk of centralized control. Additionally, diligent development practices for implementation contracts, particularly regarding initialization and storage layout, are essential to prevent common upgrade-related vulnerabilities.
-
-For enhanced security and peace of mind, consider a Premium Deploy option. This service includes a pre-deployment security review of the specific implementation contract, a dry run of the upgrade process on a testnet, and continuous monitoring post-deployment for potential vulnerabilities or anomalous behavior.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages OpenZeppelin's battle-tested `ERC1967Proxy` and `ERC1967Upgrade` contracts, providing a robust and secure foundation for upgradeability (7.1 Architecture, 7.2 Code Security). Th |
-| **Governance / Economics** | 6/10 | High | The primary governance risk stems from the centralized control of the proxy's upgrade mechanism (7.5 Governance). A single admin address holds the power to upgrade the implementation, posing a signifi |
-| **Upgrades** | 6/10 | Medium | The contract utilizes the EIP-1967 Transparent Proxy pattern, allowing for seamless upgrades of the underlying implementation logic (7.7 Upgrades). The `_upgradeToAndCall` function facilitates both up |
+| **Technical** | 4/10 | Medium | The contract leverages OpenZeppelin's battle-tested `ERC1967Proxy` and `ERC1967Upgrade` contracts, providing a robust and secure foundation for upgradeability (7.1 Architecture, 7.2 Code Security). Th |
+| **Governance / Economics** | 1/10 | High | The primary governance risk stems from the centralized control of the proxy's upgrade mechanism (7.5 Governance). A single admin address holds the power to upgrade the implementation, posing a signifi |
+| **Upgrades** | 4/10 | Medium | The contract utilizes the EIP-1967 Transparent Proxy pattern, allowing for seamless upgrades of the underlying implementation logic (7.7 Upgrades). The `_upgradeToAndCall` function facilitates both up |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Transparent |
+| **Admin** | OZ ProxyAdmin → Multisig 2-of-3 |
+| **Implementation** | ⚠️ Unverified source |
+| **Upgrades (30d)** | 0 (stable) |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 

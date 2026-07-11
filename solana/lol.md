@@ -2,14 +2,14 @@
 token: LOL
 ticker: LOL
 network: solana
-risk_score: 39
+risk_score: 27
 status: medium
 date: 2026-06-10
 ---
 
 # LOL (LOL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 27/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lol-sol)
 
@@ -21,19 +21,13 @@ The LOL token mint appears to be securely configured with both mint and freeze a
 
 > **Final Recommendation:** Based on the available on-chain facts, the LOL token mint exhibits a robust security configuration with critical authorities (mint and freeze) permanently revoked. This prevents the issuer from minting new tokens or freezing user accounts. No concerning Token-2022 extensions like transfer hooks or permanent delegates are active, and metadata is immutable. Users can verify these facts on-chain to confirm the fixed supply and unfreezable nature of the token. However, holder concentration data was unavailable, so a full assessment of potential market manipulation risks from large holders cannot be made. Users should be aware of this data gap when considering the token.
 
-## Security Analysis
-
-The LOL token mint appears to be securely configured with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No Token-2022 extensions that introduce mutable behavior, such as transfer hooks or permanent delegates, are active. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
-
-Based on the available on-chain facts, the LOL token mint exhibits a robust security configuration with critical authorities (mint and freeze) permanently revoked. This prevents the issuer from minting new tokens or freezing user accounts. No concerning Token-2022 extensions like transfer hooks or permanent delegates are active, and metadata is immutable. Users can verify these facts on-chain to confirm the fixed supply and unfreezable nature of the token. However, holder concentration data was unavailable, so a full assessment of potential market manipulation risks from large holders cannot be made. Users should be aware of this data gap when considering the token.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Low | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control: The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, as confirmed by the 'Mint Authority: revok |
-| **Governance / Economics** | 4/10 | Low | 7.4 Economic: The token has a total DEX liquidity of $160,744, which is sufficient to avoid 'Very Low Liquidity' concerns. The 24-hour volume is $41,123, resulting in a Volume/Liquidity Ratio of 0.26, |
-| **Upgrades** | 5/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, meaning the token's core parameters related to supply and account control cannot be changed. The token utilizes the spl-token-20 |
+| **Technical** | 6/10 | Medium | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control: The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, as confirmed by the 'Mint Authority: revok |
+| **Governance / Economics** | 7/10 | Low | 7.4 Economic: The token has a total DEX liquidity of $160,744, which is sufficient to avoid 'Very Low Liquidity' concerns. The 24-hour volume is $41,123, resulting in a Volume/Liquidity Ratio of 0.26, |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, meaning the token's core parameters related to supply and account control cannot be changed. The token utilizes the spl-token-20 |
 
 ## Security Findings
 

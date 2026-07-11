@@ -2,24 +2,56 @@
 token: Meteora
 ticker: MET
 network: solana
-risk_score: 56
+risk_score: 46
 status: high
 date: 2026-06-21
 ---
 
 # Meteora (MET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 56/100 — 🟠 High Risk**
+> **Risk Score: 46/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/meteora-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Meteora (MET) on Solana presents a mixed security profile for investors, carrying an overall high-risk score of 56/100. Positively, the token's contract ownership has been renounced, eliminating the risk of the original deployer making arbitrary changes post-launch. Furthermore, the absence of a mint function prevents the arbitrary creation of new tokens, safeguarding against inflationary surprises. However, significant concerns arise from the contract's unverified status, which hinders transparency and independent security assessments. A substantial 68.0% of the token supply is held by the top ten wallets, indicating high centralization and potential for market manipulation. While liquidity is notably deep at $332,605,993, it is not locked, posing a theoretical vulnerability. The token currently sees a 24-hour volume of $178,511.
+The Meteora (MET) token has its mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. However, new holder accounts are created in a frozen state, requiring an issuer to unfreeze them before transfers are possible. Holder concentration data was unavailable, and RugCheck provided a low score of 7/100.
 
-The most critical security signals for MET investors revolve around contract verification, holder concentration, and liquidity status. The unverified contract is a primary red flag, as it prevents external scrutiny of the code, making it impossible to confirm its integrity or absence of malicious functions. Coupled with this, the highly centralized distribution, where 68.0% of the supply rests with the top 10 holders, poses substantial market manipulation risks and potential for large-scale sell-offs. While ownership is renounced and no mint function exists, offering some long-term safeguards, the unlocked state of liquidity, despite its significant size, remains a notable concern.
+> **Final Recommendation:** Holders should be aware that new token accounts for Meteora (MET) are created in a frozen state, requiring an explicit unfreeze operation by an authority. It is crucial to confirm the availability and responsiveness of the issuer to perform this action, as otherwise, newly received tokens may be unspendable. While mint and freeze authorities are revoked, the default frozen state introduces a significant operational dependency.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 5/10 | Medium | The Meteora (MET) token is an SPL token operating on the `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and existing accounts |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits healthy economic indicators with a liquidity of $2,133,784 and a normal 24-hour volume/liquidity ratio of 0.19. The DEX pair has been active for 228 days, providing a reasonable tra |
+| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable, with both mint and freeze authorities revoked. GoPlus indicates that metadata is not mutable (`GoPlus.metadata_mutable: False`), and transfer fee and |
+
+## Security Findings
+
+_🟠 1 High · ⚪ 2 Informational_
+
+### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
+
+New holder accounts are created in a frozen state and require explicit unfreezing by an authority. (Fact: `GoPlus.default_account_state: 1`)
+
+**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

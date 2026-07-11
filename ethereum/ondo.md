@@ -2,14 +2,14 @@
 token: Ondo
 ticker: ONDO
 network: ethereum
-risk_score: 85
-status: critical
+risk_score: 41
+status: medium
 date: 2026-06-10
 ---
 
 # Ondo (ONDO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 85/100 — 🔴 Critical Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ondo-eth)
 
@@ -21,19 +21,13 @@ This audit focuses on the provided Solidity code, which primarily consists of Op
 
 > **Final Recommendation:** The core AccessControl component is well-engineered and provides a solid foundation for managing permissions. The primary recommendation is to establish and enforce a robust, decentralized governance strategy for the `DEFAULT_ADMIN_ROLE` and other critical roles. This should involve multi-signature wallets, time-locks, or DAO-based decision-making to mitigate centralization risks and enhance the overall security posture. Regular audits of the full system, including any token logic and external integrations, are also crucial.
 
-## Security Analysis
-
-This audit focuses on the provided Solidity code, which primarily consists of OpenZeppelin's AccessControl contract and its dependencies, presumably used by the Ondo token. The core AccessControl implementation is robust and widely used. However, the security posture heavily relies on the proper management and decentralization of the `DEFAULT_ADMIN_ROLE` and other defined roles. Without the full Ondo token contract, specific token-related vulnerabilities cannot be assessed. The primary risks identified relate to centralized control and the potential for single points of failure if administrative roles are not securely managed.
-
-The core AccessControl component is well-engineered and provides a solid foundation for managing permissions. The primary recommendation is to establish and enforce a robust, decentralized governance strategy for the `DEFAULT_ADMIN_ROLE` and other critical roles. This should involve multi-signature wallets, time-locks, or DAO-based decision-making to mitigate centralization risks and enhance the overall security posture. Regular audits of the full system, including any token logic and external integrations, are also crucial.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The provided code implements OpenZeppelin's AccessControl, Context, ERC165, and IERC165 contracts. This foundational code (7.1 Architecture, 7.2 Code Security) is well-tested and widely adopted, provi |
-| **Governance / Economics** | 6/10 | High | The AccessControl mechanism (7.5 Governance) inherently introduces centralization risks if administrative roles, particularly the `DEFAULT_ADMIN_ROLE`, are controlled by a single entity or a small gro |
-| **Upgrades** | 6/10 | Low | The provided contract code does not include any explicit proxy or upgradeability patterns (7.7 Upgrades). Therefore, no specific upgrade safety issues can be identified or assessed from the given sour |
+| **Technical** | 8/10 | Low | The provided code implements OpenZeppelin's AccessControl, Context, ERC165, and IERC165 contracts. This foundational code (7.1 Architecture, 7.2 Code Security) is well-tested and widely adopted, provi |
+| **Governance / Economics** | 2/10 | High | The AccessControl mechanism (7.5 Governance) inherently introduces centralization risks if administrative roles, particularly the `DEFAULT_ADMIN_ROLE`, are controlled by a single entity or a small gro |
+| **Upgrades** | 8/10 | Low | The provided contract code does not include any explicit proxy or upgradeability patterns (7.7 Upgrades). Therefore, no specific upgrade safety issues can be identified or assessed from the given sour |
 
 ## Security Findings
 

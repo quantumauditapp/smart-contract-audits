@@ -2,24 +2,56 @@
 token: Make Britain Great Again
 ticker: MBGA
 network: solana
-risk_score: 36
+risk_score: 42
 status: medium
 date: 2026-06-20
 ---
 
 # Make Britain Great Again (MBGA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/make-britain-great-again-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-The Make Britain Great Again (MBGA) token on Solana presents a mixed security profile, earning a Medium Risk score of 36/100. Key positive signals include renounced ownership and the absence of a mint function, ensuring no new tokens can be created by the original deployer. However, significant concerns remain. The contract is not verified, meaning its underlying code is not publicly visible for independent review. Furthermore, liquidity totaling $22,463 is not locked, posing a potential rug pull risk. The token’s distribution also shows concentration, with the top 10 holders controlling 47.0% of the total supply. The 24-hour trading volume stands at $35,122.
+This audit of the Make Britain Great Again (MBGA) SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and external security signals. Key authorities like mint and freeze are revoked, and no Token-2022 extensions posing immediate risks are active. Holder concentration data was unavailable, preventing a full assessment of supply distribution risk.
 
-The most critical risks for MBGA stem from its unverified contract and unlocked liquidity. An unverified contract means the code running on the blockchain is not publicly auditable or transparent, leaving investors blind to potential malicious functions or vulnerabilities. Coupled with $22,463 in unlocked liquidity, there's a significant risk of liquidity providers withdrawing funds, leading to an immediate collapse in token value, often referred to as a "rug pull." Additionally, the high concentration of 47.0% of supply among the top 10 holders introduces substantial market manipulation risk, where large sales could drastically impact liquidity and price.
+> **Final Recommendation:** Based on the available on-chain data, the Make Britain Great Again (MBGA) token mint appears to have a robust security posture with key authorities revoked and no immediately apparent risky Token-2022 extensions. Holders should be aware that holder concentration data was unavailable, which means the distribution of tokens and potential for large-scale sell-offs could not be assessed. For a comprehensive understanding, it is recommended to monitor holder distribution once data becomes available. Consider using a Premium Deploy option for future token launches to ensure all critical security features are configured optimally from inception.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The Make Britain Great Again (MBGA) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing account |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a total DEX liquidity of $24,712, with a 24-hour trading volume of $16,289, resulting in a normal volume/liquidity ratio of 0.66. The DEX pair has been active for 26 days, providing |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, which means the token's core parameters cannot be altered by an external party. The token utilizes the spl-token-2022 program, but no specific |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

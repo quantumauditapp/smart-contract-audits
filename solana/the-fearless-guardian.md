@@ -2,24 +2,56 @@
 token: The Fearless Guardian
 ticker: GUARDIAN
 network: solana
-risk_score: 47
+risk_score: 52
 status: high
 date: 2026-06-18
 ---
 
 # The Fearless Guardian (GUARDIAN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-fearless-guardian-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-The Fearless Guardian (GUARDIAN) on Solana presents a mixed security profile, resulting in a calculated risk score of 47/100, indicating high risk for potential investors. On the positive side, ownership of the token contract has been renounced, meaning the creator can no longer modify its parameters, enhancing immutability. Additionally, the absence of a mint function prevents the creation of new tokens, safeguarding against inflationary dilution by the project team. However, several critical vulnerabilities demand attention. The contract has not been verified, which significantly impedes transparency and makes it impossible to independently audit the underlying code for malicious functions or backdoors. Furthermore, liquidity for GUARDIAN is not locked. This is a substantial concern, as it allows liquidity providers to withdraw funds at any time, potentially leading to a 'rug pull' scenario where all trading liquidity is removed. The concentration of 29.3% of the supply among the top ten holders also warrants careful monitoring for potential market manipulation. The project currently has a 24-hour trading volume of $108,878 against $41,644 in liquidity.
+The token "The Fearless Guardian (GUARDIAN)" exhibits a High risk primarily due to very low DEX liquidity ($5,555), making large positions difficult to exit without significant slippage. Key authorities like mint and freeze are appropriately revoked, and metadata is immutable, indicating a robust technical configuration. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-For The Fearless Guardian, two primary factors contribute to its "High Risk" designation and necessitate extreme caution. Foremost is the absence of contract verification. Without a verified contract, the actual code executing on the blockchain remains opaque, making it impossible for independent analysts or potential investors to confirm its integrity or absence of malicious functionalities. This lack of transparency is a critical red flag. Equally concerning is the fact that the token's liquidity is not locked. This crucial security flaw exposes investors to an elevated risk of a "rug pull," where liquidity providers could withdraw their funds, collapsing the token's value and leaving investors unable to sell their holdings. These unmitigated risks significantly outweigh any positive signals.
+> **Final Recommendation:** Given the very low liquidity of $5,555, users should exercise extreme caution. Exiting even moderate positions may incur significant slippage and loss. While the technical configuration is robust with revoked mint and freeze authorities and immutable metadata, the economic viability is severely hampered by the lack of market depth. It is recommended to avoid significant investment in this token until liquidity materially improves. For a Premium Deploy option, consider tokens with substantially higher liquidity and a longer track record.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 5/10 | Medium | 7.1 Architecture & 7.3 Access Control: The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority are revoked (None), preventing the creation of new tokens or freezing of holder |
+| **Governance / Economics** | 4/10 | Medium | 7.4 Economic: The token exhibits very low liquidity, with only $5,555 USD available on DEXs. This poses a significant risk for large positions due to high slippage. The 24-hour volume is $114, resulti |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The Mint Authority and Freeze Authority are both revoked, meaning the token's supply and account freeze status cannot be altered by any single entity. GoPlus data confirms that `metadata |
+
+## Security Findings
+
+_🟠 1 High · ⚪ 2 Informational_
+
+### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
+
+Total DEX liquidity is $5,555. Slippage will be severe; large positions cannot be exited without significant loss. (Fact: Liquidity (USD): $5,555)
+
+**Recommendation:** Account for the fee in any swap calculation.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

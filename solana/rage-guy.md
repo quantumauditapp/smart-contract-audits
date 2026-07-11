@@ -2,14 +2,14 @@
 token: RAGE GUY
 ticker: RAGE
 network: solana
-risk_score: 65
-status: high
+risk_score: 42
+status: medium
 date: 2026-06-10
 ---
 
 # RAGE GUY (RAGE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 65/100 — 🟠 High Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rage-guy-sol)
 
@@ -21,19 +21,13 @@ The RAGE GUY (RAGE) token mint has its mint and freeze authorities revoked, indi
 
 > **Final Recommendation:** Prospective holders should be aware that new token accounts for RAGE GUY (RAGE) will be created in a frozen state, necessitating an active issuer to unfreeze them before tokens can be transferred. Verify the availability and responsiveness of such an issuer. Given the very low RugCheck score of 1/100, further due diligence into the project's history and team is strongly recommended, despite the revoked mint and freeze authorities. Consider the implications of unavailable holder concentration data for market stability.
 
-## Security Analysis
-
-The RAGE GUY (RAGE) token mint has its mint and freeze authorities revoked, indicating a fixed supply and unfreezable existing accounts. However, new holder accounts are created in a frozen state, requiring an active issuer to unfreeze them for usability. Holder concentration data was unavailable, and RugCheck.xyz assigned a very low score of 1/100, suggesting potential underlying risks.
-
-Prospective holders should be aware that new token accounts for RAGE GUY (RAGE) will be created in a frozen state, necessitating an active issuer to unfreeze them before tokens can be transferred. Verify the availability and responsiveness of such an issuer. Given the very low RugCheck score of 1/100, further due diligence into the project's history and team is strongly recommended, despite the revoked mint and freeze authorities. Consider the implications of unavailable holder concentration data for market stability.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The RAGE GUY (RAGE) token is an SPL token operating under the `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing  |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity at $51,137 USD, with a healthy 24-hour volume to liquidity ratio of 0.06, suggesting organic trading activity. The DEX pair has been active for 279 days, providin |
-| **Upgrades** | 6/10 | Low | The token's mint and freeze authorities are revoked, preventing any further changes to supply or account freeze status. Metadata mutability is set to `False`, ensuring that the token's name, symbol, a |
+| **Technical** | 5/10 | Medium | The RAGE GUY (RAGE) token is an SPL token operating under the `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing  |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits moderate liquidity at $51,137 USD, with a healthy 24-hour volume to liquidity ratio of 0.06, suggesting organic trading activity. The DEX pair has been active for 279 days, providin |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are revoked, preventing any further changes to supply or account freeze status. Metadata mutability is set to `False`, ensuring that the token's name, symbol, a |
 
 ## Security Findings
 

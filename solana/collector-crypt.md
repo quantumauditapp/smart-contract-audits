@@ -2,14 +2,14 @@
 token: Collector Crypt
 ticker: CARDS
 network: solana
-risk_score: 80
-status: critical
+risk_score: 53
+status: high
 date: 2026-06-10
 ---
 
 # Collector Crypt (CARDS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 80/100 — 🔴 Critical Risk**
+> **Risk Score: 53/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/collector-crypt-sol)
 
@@ -23,21 +23,13 @@ The Collector Crypt (CARDS) SPL token mint demonstrates strong security regardin
 
 For users considering a Premium Deploy option, ensure that the default account state is set to 'unfrozen' during mint creation to avoid operational hurdles for future token holders. Additionally, while holder concentration data was unavailable from RPC, RugCheck indicated 'high ownership' by top holders, which warrants caution regarding potential market impact from large sell-offs.
 
-## Security Analysis
-
-The Collector Crypt (CARDS) SPL token mint demonstrates strong security regarding its core authorities, with both mint and freeze authorities successfully revoked. However, a significant operational risk is present due to the default frozen state of new token accounts, which necessitates manual unfreezing by an authority. Holder concentration data was unavailable, preventing a comprehensive assessment of distribution risk.
-
-Holders should be aware that new token accounts for CARDS are created in a frozen state. This means that upon receiving CARDS tokens for the first time, users may find their tokens untransferable until an authorized party unfreezes their account. It is crucial to confirm the availability and responsiveness of an issuer or designated authority to perform this unfreezing operation. Without such an active entity, newly received tokens may become unspendable.
-
-For users considering a Premium Deploy option, ensure that the default account state is set to 'unfrozen' during mint creation to avoid operational hurdles for future token holders. Additionally, while holder concentration data was unavailable from RPC, RugCheck indicated 'high ownership' by top holders, which warrants caution regarding potential market impact from large sell-offs.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The token is implemented using the standard `spl-token` program. Core security features are well-configured: the mint authority is revoked, preventing further token issuance, and the freeze authority  |
-| **Governance / Economics** | 6/10 | Low | The economic profile shows healthy liquidity and trading activity, with a total DEX liquidity of $2,901,340 and a 24-hour volume of $1,646,571. The volume-to-liquidity ratio is 0.57, indicating normal |
-| **Upgrades** | 6/10 | Low | The token's core parameters are fixed, as both the mint authority and freeze authority have been revoked, preventing any future changes to supply or account freezing capabilities. The metadata is also |
+| **Technical** | 5/10 | Medium | The token is implemented using the standard `spl-token` program. Core security features are well-configured: the mint authority is revoked, preventing further token issuance, and the freeze authority  |
+| **Governance / Economics** | 2/10 | High | The economic profile shows healthy liquidity and trading activity, with a total DEX liquidity of $2,901,340 and a 24-hour volume of $1,646,571. The volume-to-liquidity ratio is 0.57, indicating normal |
+| **Upgrades** | 8/10 | Low | The token's core parameters are fixed, as both the mint authority and freeze authority have been revoked, preventing any future changes to supply or account freezing capabilities. The metadata is also |
 
 ## Security Findings
 

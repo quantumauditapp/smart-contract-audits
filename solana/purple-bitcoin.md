@@ -2,14 +2,14 @@
 token: Purple Bitcoin
 ticker: PBTC
 network: solana
-risk_score: 59
-status: high
+risk_score: 18
+status: low
 date: 2026-06-10
 ---
 
 # Purple Bitcoin (PBTC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 18/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/purple-bitcoin-sol)
 
@@ -21,19 +21,19 @@ The Purple Bitcoin (PBTC) SPL token mint has its mint and freeze authorities rev
 
 > **Final Recommendation:** For holders considering interaction with Purple Bitcoin (PBTC), it is crucial to understand the implications of the default frozen account state. New token accounts will be unusable until an authorized party unfreezes them. Verify the availability and responsiveness of the issuer or a designated authority to perform this unfreezing operation. The "Copycat token" label from RugCheck.xyz also warrants caution regarding the project's legitimacy and long-term viability.
 
-## Security Analysis
-
-The Purple Bitcoin (PBTC) SPL token mint has its mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts by an issuer. However, new holder accounts are created in a frozen state, requiring an authority to unfreeze them before use. Holder concentration data was unavailable, preventing a full assessment of distribution risk, and RugCheck.xyz flagged the token as a "Copycat token" with a low score of 29/100.
-
-For holders considering interaction with Purple Bitcoin (PBTC), it is crucial to understand the implications of the default frozen account state. New token accounts will be unusable until an authorized party unfreezes them. Verify the availability and responsiveness of the issuer or a designated authority to perform this unfreezing operation. The "Copycat token" label from RugCheck.xyz also warrants caution regarding the project's legitimacy and long-term viability.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The PBTC token is an SPL token operating under the `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and existing accounts  |
-| **Governance / Economics** | 2/10 | Medium | The token exhibits moderate liquidity with $334,574 USD available on DEXs, and a healthy 24-hour volume of $74,524, resulting in a normal volume/liquidity ratio of 0.22. The DEX pair has been active f |
-| **Upgrades** | 1/10 | Low | The mint authority and freeze authority are both revoked, which means the token's supply is fixed and no accounts can be frozen by an issuer, indicating a high degree of immutability for core token pr |
+| **Technical** | 5/10 | Medium | The PBTC token is an SPL token operating under the `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and existing accounts  |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $334,574 USD available on DEXs, and a healthy 24-hour volume of $74,524, resulting in a normal volume/liquidity ratio of 0.22. The DEX pair has been active f |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, which means the token's supply is fixed and no accounts can be frozen by an issuer, indicating a high degree of immutability for core token pr |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
 
 ## Security Findings
 

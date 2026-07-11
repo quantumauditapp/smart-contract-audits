@@ -2,14 +2,14 @@
 token: The Movement
 ticker: MOVEMENT
 network: solana
-risk_score: 62
-status: high
+risk_score: 39
+status: medium
 date: 2026-06-28
 ---
 
 # The Movement (MOVEMENT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-movement-sol)
 
@@ -20,13 +20,6 @@ date: 2026-06-28
 The token "The Movement" has its mint and freeze authorities revoked, indicating a fixed supply and no ability to freeze accounts. However, the DEX pair is very new, lacking sufficient track record to assess its stability. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
 > **Final Recommendation:** Given the very new DEX pair (2 days old), it is recommended to exercise caution and monitor the token's activity and community engagement over a longer period before making significant investments. While core authorities are revoked, the lack of holder concentration data means distribution risk cannot be fully assessed.
-For enhanced security and a deeper dive into the token's ecosystem, consider a Premium Deploy audit. This would include a comprehensive review of any associated programs or off-chain governance mechanisms, if applicable, to provide a more holistic security posture assessment.
-
-## Security Analysis
-
-The token "The Movement" has its mint and freeze authorities revoked, indicating a fixed supply and no ability to freeze accounts. However, the DEX pair is very new, lacking sufficient track record to assess its stability. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
-
-Given the very new DEX pair (2 days old), it is recommended to exercise caution and monitor the token's activity and community engagement over a longer period before making significant investments. While core authorities are revoked, the lack of holder concentration data means distribution risk cannot be fully assessed.
 For enhanced security and a deeper dive into the token's ecosystem, consider a Premium Deploy audit. This would include a comprehensive review of any associated programs or off-chain governance mechanisms, if applicable, to provide a more holistic security posture assessment.
 
 ## Category Ratings

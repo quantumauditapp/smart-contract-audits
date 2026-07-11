@@ -2,14 +2,14 @@
 token: Official Trump
 ticker: TRUMP
 network: solana
-risk_score: 79
-status: critical
+risk_score: 49
+status: high
 date: 2026-06-13
 ---
 
 # Official Trump (TRUMP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 79/100 — 🔴 Critical Risk**
+> **Risk Score: 49/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/official-trump-sol)
 
@@ -23,21 +23,13 @@ The OFFICIAL TRUMP (TRUMP) SPL token mint has its mint and freeze authorities re
 
 For enhanced security and functionality, consider a Premium Deploy option for future SPL tokens. This service ensures all critical authorities (mint, freeze) are irrevocably revoked at launch, and provides comprehensive configuration to avoid default frozen states, ensuring tokens are immediately usable upon receipt.
 
-## Security Analysis
-
-The OFFICIAL TRUMP (TRUMP) SPL token mint has its mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts by the issuer. However, new holder accounts are created in a frozen state, requiring an authority to unfreeze them before use. Holder concentration data was unavailable from RPC, but RugCheck.xyz flags high ownership by top holders, indicating potential centralization risks.
-
-Prospective holders should be aware that new token accounts for OFFICIAL TRUMP (TRUMP) are created in a frozen state, necessitating an unfreeze operation by an authority before tokens can be transferred. It is crucial to confirm the availability and responsiveness of the entity responsible for unfreezing accounts. While direct holder concentration data was unavailable, external signals from RugCheck.xyz suggest high ownership by top holders, which could pose a risk of price volatility from large sell-offs.
-
-For enhanced security and functionality, consider a Premium Deploy option for future SPL tokens. This service ensures all critical authorities (mint, freeze) are irrevocably revoked at launch, and provides comprehensive configuration to avoid default frozen states, ensuring tokens are immediately usable upon receipt.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 10/10 | High | The OFFICIAL TRUMP (TRUMP) token is an SPL token operating on the Solana blockchain, utilizing the `spl-token` program. The mint authority has been revoked, ensuring no new tokens can be minted, and t |
-| **Governance / Economics** | 10/10 | Medium | The token exhibits substantial liquidity with $37,319,778 USD on DEXs and a healthy 24-hour volume of $10,058,326 USD, indicating active trading. The Volume/Liquidity Ratio is 0.27, which is considere |
-| **Upgrades** | 1/10 | Low | The mint authority for the token has been revoked, meaning the total supply is fixed and cannot be increased by the original issuer. Similarly, the freeze authority has been revoked, preventing the is |
+| **Technical** | 5/10 | Medium | The OFFICIAL TRUMP (TRUMP) token is an SPL token operating on the Solana blockchain, utilizing the `spl-token` program. The mint authority has been revoked, ensuring no new tokens can be minted, and t |
+| **Governance / Economics** | 2/10 | High | The token exhibits substantial liquidity with $37,319,778 USD on DEXs and a healthy 24-hour volume of $10,058,326 USD, indicating active trading. The Volume/Liquidity Ratio is 0.27, which is considere |
+| **Upgrades** | 8/10 | Low | The mint authority for the token has been revoked, meaning the total supply is fixed and cannot be increased by the original issuer. Similarly, the freeze authority has been revoked, preventing the is |
 
 ## Security Findings
 

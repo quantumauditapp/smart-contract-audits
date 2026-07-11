@@ -2,24 +2,56 @@
 token: drooling cat
 ticker: DROOLING
 network: solana
-risk_score: 32
+risk_score: 35
 status: medium
 date: 2026-06-18
 ---
 
 # drooling cat (DROOLING) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 32/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/drooling-cat-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-The drooling cat (DROOLING) token on Solana presents a nuanced security profile, currently assessed with a Medium Risk score of 32/100. Positively, ownership of the contract has been renounced, meaning the original deployer can no longer modify its parameters. Furthermore, the absence of a mint function prevents the creation of new tokens, thus safeguarding against inflationary dilution by the team. However, several critical risk factors are present. The contract has not been verified, making it difficult for public scrutiny to confirm its integrity. More significantly, the token's liquidity is not locked, leaving it vulnerable to potential removal. Wallet concentration indicates the top 10 holders collectively control 24.4% of the total supply, which is a notable percentage. Despite these points, DROOLING exhibits significant market activity with a 24-hour volume exceeding $1.1 million against a liquidity pool of approximately $88,316.
+This audit of the drooling cat (drooling) SPL token mint found no critical or high-severity issues based on the available on-chain data and external security signals. The mint authority and freeze authority are both revoked, indicating a fixed supply and immutability of account states. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-For DROOLING, two primary risk factors demand attention: the unverified contract and unlocked liquidity. An unverified contract means the deployed code cannot be easily cross-referenced with public source code, creating a trust barrier and potential for hidden malicious functionalities. Crucially, the absence of locked liquidity allows for a 'rug pull' scenario where liquidity providers could withdraw funds, severely impacting the token's market stability and tradability. On the positive side, the renounced ownership and absence of a mint function are strong safety signals, limiting the original deployer's ability to manipulate token supply or contract rules post-launch. Investors must weigh these significant vulnerabilities against the immutable aspects of the token's design.
+> **Final Recommendation:** Based on the available data, the drooling cat token appears to have a robust security posture regarding its mint and freeze authorities, which are both revoked. However, the absence of holder concentration data means that potential risks related to whale concentration cannot be assessed. Users should be aware of the high volume-to-liquidity ratio, which, while not triggering a wash trading flag, suggests active trading relative to available liquidity. For a more comprehensive understanding, it is recommended to monitor holder distribution once data becomes available.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The drooling cat token is an SPL Token-2022 mint with a supply of 999,685,315.534856 tokens (6 decimals). Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be  |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a liquidity of $146,291 USD on DEXs, with a 24-hour trading volume of $813,518 USD. The volume-to-liquidity ratio is 5.56, which is noted as high (>5) in the fact block, but does no |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the drooling cat token have both been revoked, meaning the token's supply is fixed and no accounts can be frozen by an external authority. The token is an S |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

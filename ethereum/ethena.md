@@ -23,21 +23,20 @@ The ENA token contract implements a standard ERC20 token with burnable and permi
 
 For enhanced security and operational resilience, consider a Premium Deploy option that includes continuous monitoring, incident response planning, and regular security reviews, especially for the entity controlling the owner address. This proactive app…
 
-## Security Analysis
-
-The ENA token contract implements a standard ERC20 token with burnable and permit functionalities, leveraging OpenZeppelin's battle-tested libraries. It features a controlled inflationary minting mechanism, restricted to the owner, with a fixed annual rate and a one-year cooldown. The primary risk lies in the centralized control over token supply through the owner's minting capabilities, which requires robust off-chain governance.
-
-The ENA token contract is well-structured and utilizes audited OpenZeppelin components, providing a solid foundation for an ERC20 token. The primary area for consideration is the centralized control over token minting. It is crucial that the `owner` address is secured by a robust multi-signature wallet or a decentralized autonomous organization (DAO) to mitigate the risks associated with a single point of failure and ensure transparent governance over the token supply. The contract does not interact with external protocols (7.6 External) and its operational aspects (7.8 Operations) are straightforward, relying on the owner for minting. 
-
-For enhanced security and operational resilience, consider a Premium Deploy option that includes continuous monitoring, incident response planning, and regular security reviews, especially for the entity controlling the owner address. This proactive app…
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The ENA token contract (7.1 Architecture) is a straightforward ERC20 implementation, inheriting from OpenZeppelin's `ERC20`, `ERC20Burnable`, `ERC20Permit`, and `Ownable2Step` contracts. This robust f |
-| **Governance / Economics** | 6/10 | Medium | The contract's economic model (7.4 Economic) features a hardcoded maximum annual inflation rate of 10% and a mandatory one-year wait period between minting operations, providing predictability for tok |
-| **Upgrades** | 6/10 | Low | The ENA token contract (7.7 Upgrades) is not designed as an upgradeable proxy. This means that any future modifications to the contract logic would necessitate the deployment of an entirely new contra |
+| **Technical** | 4/10 | Medium | The ENA token contract (7.1 Architecture) is a straightforward ERC20 implementation, inheriting from OpenZeppelin's `ERC20`, `ERC20Burnable`, `ERC20Permit`, and `Ownable2Step` contracts. This robust f |
+| **Governance / Economics** | 1/10 | High | The contract's economic model (7.4 Economic) features a hardcoded maximum annual inflation rate of 10% and a mandatory one-year wait period between minting operations, providing predictability for tok |
+| **Upgrades** | 2/10 | High | The ENA token contract (7.7 Upgrades) is not designed as an upgradeable proxy. This means that any future modifications to the contract logic would necessitate the deployment of an entirely new contra |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 63.5% |
+| **Top-3 Unlocked** | ⚠️ 95.2% |
 
 ## Security Findings
 

@@ -2,14 +2,14 @@
 token: Octra
 ticker: OCT
 network: ethereum
-risk_score: 100
+risk_score: 81
 status: critical
 date: 2026-06-10
 ---
 
 # Octra (OCT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 81/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/octra-eth)
 
@@ -23,21 +23,20 @@ The WrappedOCT token contract is an ERC20 implementation leveraging OpenZeppelin
 
 For future deployments or critical infrastructure, consider a Premium Deploy option that includes a comprehensive pre-deployment security review, real-time monitoring, and incident response planning to ensure the highest level of protection against evolving threats.
 
-## Security Analysis
-
-The WrappedOCT token contract is an ERC20 implementation leveraging OpenZeppelin's battle-tested libraries for core token functionality, access control, and pausing. The contract introduces specific roles for bridging (mint/burn) and pausing. While the code base is robust due to OpenZeppelin's foundation, the highly centralized control over token supply and pausing mechanisms by specific roles introduces significant economic and operational risks. The contract is not upgradeable, which simplifies its architecture but limits future adaptability.
-
-The WrappedOCT token contract is built on a solid foundation of OpenZeppelin contracts, ensuring a high level of code quality and security for standard ERC20 operations. However, the centralized nature of the `BRIDGE_ROLE` and `PAUSER_ROLE` introduces critical and high-severity risks related to token supply control and operational halts. It is strongly recommended to implement robust multi-signature wallets and potentially time-locks for these critical roles to mitigate single points of failure and enhance security.
-
-For future deployments or critical infrastructure, consider a Premium Deploy option that includes a comprehensive pre-deployment security review, real-time monitoring, and incident response planning to ensure the highest level of protection against evolving threats.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for ERC20, AccessControl, and Pausable functionalities, contributing to a solid code foundation (7.2 Code Security). The `decimals` override |
-| **Governance / Economics** | 6/10 | High | The economic model is highly centralized, with the `BRIDGE_ROLE` having direct control over token supply via `bridgeMint` and `bridgeBurn` functions, posing a critical risk if compromised (7.4 Economi |
-| **Upgrades** | 6/10 | Low | The `WrappedOCT` contract is not designed to be upgradeable, meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates upgrade-specific risks like proxy misconfigurations or storage |
+| **Governance / Economics** | 1/10 | High | The economic model is highly centralized, with the `BRIDGE_ROLE` having direct control over token supply via `bridgeMint` and `bridgeBurn` functions, posing a critical risk if compromised (7.4 Economi |
+| **Upgrades** | 6/10 | Medium | The `WrappedOCT` contract is not designed to be upgradeable, meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates upgrade-specific risks like proxy misconfigurations or storage |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 

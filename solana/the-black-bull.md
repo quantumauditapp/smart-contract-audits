@@ -2,14 +2,14 @@
 token: The Black Bull
 ticker: ANSEM
 network: solana
-risk_score: 76
-status: critical
+risk_score: 55
+status: high
 date: 2026-06-29
 ---
 
 # The Black Bull (ANSEM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 76/100 — 🔴 Critical Risk**
+> **Risk Score: 55/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-black-bull-sol)
 
@@ -21,19 +21,13 @@ The Black Bull (ANSEM) is an SPL Token-2022 mint on Solana. The mint authority a
 
 > **Final Recommendation:** This token presents a relatively secure technical configuration with revoked mint and freeze authorities, indicating a fixed supply and no ability for an issuer to freeze user funds. However, the high Volume/Liquidity ratio suggests potential wash trading, and while direct holder concentration data was unavailable, RugCheck's flags for high ownership by top holders warrant caution regarding potential price volatility from large sell-offs. Investors should be aware of these economic factors (7.4 Economic, 7.6 External).
 
-## Security Analysis
-
-The Black Bull (ANSEM) is an SPL Token-2022 mint on Solana. The mint authority and freeze authority have both been revoked, indicating a fixed supply and no ability to freeze user accounts by the issuer. Holder concentration data was unavailable from RPC, but RugCheck.xyz flagged high ownership by top holders, which could indicate potential for price volatility. No critical or high-severity issues were identified based on the provided facts and deterministic rules.
-
-This token presents a relatively secure technical configuration with revoked mint and freeze authorities, indicating a fixed supply and no ability for an issuer to freeze user funds. However, the high Volume/Liquidity ratio suggests potential wash trading, and while direct holder concentration data was unavailable, RugCheck's flags for high ownership by top holders warrant caution regarding potential price volatility from large sell-offs. Investors should be aware of these economic factors (7.4 Economic, 7.6 External).
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint, leveraging the latest Solana token program features. Both the mint authority and freeze authority have been revoked, which is a positive security indicator as it p |
 | **Governance / Economics** | 1/10 | High | The token has substantial liquidity, with $1,222,784 USD available on DEXs. However, the 24-hour volume of $22,628,549 is significantly higher than liquidity, resulting in a Volume/Liquidity Ratio of  |
-| **Upgrades** | 6/10 | Medium | The token's mint authority and freeze authority have been revoked, meaning no further tokens can be minted and no accounts can be frozen by an administrative key. It utilizes the spl-token-2022 progra |
+| **Upgrades** | 8/10 | Low | The token's mint authority and freeze authority have been revoked, meaning no further tokens can be minted and no accounts can be frozen by an administrative key. It utilizes the spl-token-2022 progra |
 
 ## Security Findings
 

@@ -2,24 +2,56 @@
 token: Pomni
 ticker: POMNI
 network: solana
-risk_score: 37
+risk_score: 45
 status: medium
 date: 2026-06-15
 ---
 
 # Pomni (POMNI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pomni-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Pomni (POMNI) on Solana presents a mixed security profile with a calculated risk score of 37/100, categorizing it as medium risk for investors. On the positive side, ownership of the token has been successfully renounced, effectively removing the risk of malicious contract modifications by the original developer. Furthermore, the absence of a mint function prevents the arbitrary creation of new tokens, safeguarding against supply inflation and dilution for existing holders. However, critical vulnerabilities are present. The contract is unverified, meaning its underlying code is not publicly available for independent review or audit. Significantly, the liquidity pool is not locked, leaving it susceptible to a liquidity provider withdrawing funds, a common 'rug pull' scenario. Current liquidity stands at $37,548 against a $407,055 24h volume, suggesting potential high volatility. Top 10 holders control 30.0% of the supply, indicating some centralization.
+No critical or high-severity issues were identified based on the available on-chain data and external security signals. The token's mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. However, holder concentration data was unavailable, preventing a full assessment of distribution risk, though RugCheck.xyz noted 'Single holder ownership'.
 
-The most significant security risks for Pomni (POMNI) stem from its unverified contract and unlocked liquidity. The lack of a verified contract means investors cannot independently audit the token's code for hidden backdoors or malicious functions, requiring full trust in an anonymous developer. Crucially, the absence of locked liquidity exposes the project to a potential rug pull, where liquidity providers could withdraw funds, decimating the token's value. Conversely, the renounced ownership and absence of a mint function are strong safety signals, mitigating common developer-controlled risks like malicious contract changes or supply inflation, offering some foundational immutability.
+> **Final Recommendation:** The Pomni token demonstrates a strong security posture regarding its core authorities, with both mint and freeze authorities revoked. This ensures a fixed supply and prevents arbitrary freezing of user funds. However, the absence of detailed holder concentration data means that potential risks from whale holdings cannot be fully assessed. Users should consider the 'Single holder ownership' label from RugCheck.xyz, which suggests a concentrated ownership structure, and understand its implications for market stability before interacting with the token. For enhanced due diligence, a Premium Deploy option could include deeper off-chain analysis of the project team and community.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The Pomni token is implemented using the spl-token-2022 program. A key security strength is that both the mint authority and freeze authority have been revoked, meaning no new tokens can be created an |
+| **Governance / Economics** | 5/10 | Medium | The token has a total DEX liquidity of $25,919 with a 24-hour volume of $22,940, resulting in a normal Volume/Liquidity Ratio of 0.89. The DEX pair is 94 days old, indicating some track record. While  |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. There are no active Token-2022 extensions like transfer hooks or default frozen accounts that could |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

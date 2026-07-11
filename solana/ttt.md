@@ -2,14 +2,14 @@
 token: ttt
 ticker: TTTT
 network: solana
-risk_score: 100
+risk_score: 79
 status: critical
 date: 2026-06-10
 ---
 
 # ttt (TTTT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 79/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ttt-sol)
 
@@ -21,19 +21,13 @@ This Solana SPL token mint presents a High overall risk due to its default froze
 
 > **Final Recommendation:** Holders should be aware that new token accounts will be created in a frozen state, requiring an active issuer to unfreeze them before the tokens can be spent. The very low liquidity of $7,165 USD on DEXs poses a significant risk for exiting positions without severe slippage. It is recommended to verify the availability and responsiveness of an unfreezing authority and to account for high slippage if considering trading this token. For enhanced security, consider a Premium Deploy option for future token launches to ensure all critical authorities are revoked and liquidity is adequately provisioned.
 
-## Security Analysis
-
-This Solana SPL token mint presents a High overall risk due to its default frozen account state and very low DEX liquidity. New token accounts require explicit unfreezing by an authority, and the limited liquidity of $7,165 USD means significant slippage for trades. Holder concentration data was unavailable, preventing an assessment of supply distribution risk.
-
-Holders should be aware that new token accounts will be created in a frozen state, requiring an active issuer to unfreeze them before the tokens can be spent. The very low liquidity of $7,165 USD on DEXs poses a significant risk for exiting positions without severe slippage. It is recommended to verify the availability and responsiveness of an unfreezing authority and to account for high slippage if considering trading this token. For enhanced security, consider a Premium Deploy option for future token launches to ensure all critical authorities are revoked and liquidity is adequately provisioned.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 10/10 | High | The token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, which is a positive security measure as it prevents the creation of new |
-| **Governance / Economics** | 10/10 | High | The token exhibits very low liquidity, with only $7,165 USD available on DEXs. This low liquidity means that even small trades could experience significant slippage, making it difficult to enter or ex |
-| **Upgrades** | 10/10 | Low | The token's mint and freeze authorities are both revoked, meaning no further tokens can be minted and no accounts can be frozen by an external party. The metadata, including the token name, symbol, or |
+| **Technical** | 4/10 | Medium | The token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, which is a positive security measure as it prevents the creation of new |
+| **Governance / Economics** | 1/10 | High | The token exhibits very low liquidity, with only $7,165 USD available on DEXs. This low liquidity means that even small trades could experience significant slippage, making it difficult to enter or ex |
+| **Upgrades** | 6/10 | Medium | The token's mint and freeze authorities are both revoked, meaning no further tokens can be minted and no accounts can be frozen by an external party. The metadata, including the token name, symbol, or |
 
 ## Security Findings
 

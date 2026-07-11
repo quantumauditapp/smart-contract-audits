@@ -2,14 +2,14 @@
 token: assface
 ticker: ASSFACE
 network: solana
-risk_score: 46
-status: high
+risk_score: 35
+status: medium
 date: 2026-06-10
 ---
 
 # assface (ASSFACE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 46/100 — 🟠 High Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/assface-sol)
 
@@ -21,19 +21,13 @@ This audit of the assface SPL Token Mint found that critical authorities like Mi
 
 > **Final Recommendation:** Given the revoked mint and freeze authorities, the token's core supply and transfer mechanisms are secure from central control. However, the lack of detailed holder concentration data from RPC, coupled with RugCheck's flags for 'Single holder ownership' and 'High holder concentration', suggests a potential for market manipulation or significant price impact from large holders. Users should exercise caution and consider the implications of concentrated ownership before acquiring this token. A Premium Deploy option would involve deeper off-chain due diligence on the project team and a more granular analysis of on-chain holder movements if RPC data becomes available.
 
-## Security Analysis
-
-This audit of the assface SPL Token Mint found that critical authorities like Mint and Freeze are revoked, ensuring a fixed supply and unfreezable accounts. No Token-2022 extensions posing significant risks, such as permanent delegates or transfer hooks, are active. Holder concentration data was unavailable from RPC, though RugCheck flagged potential single holder ownership and high concentration, which could pose an economic risk.
-
-Given the revoked mint and freeze authorities, the token's core supply and transfer mechanisms are secure from central control. However, the lack of detailed holder concentration data from RPC, coupled with RugCheck's flags for 'Single holder ownership' and 'High holder concentration', suggests a potential for market manipulation or significant price impact from large holders. Users should exercise caution and consider the implications of concentrated ownership before acquiring this token. A Premium Deploy option would involve deeper off-chain due diligence on the project team and a more granular analysis of on-chain holder movements if RPC data becomes available.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Low | The assface token is an SPL Token-2022 mint with 6 decimals and a total supply of 999,828,017.212586 tokens. Crucially, both the Mint Authority and Freeze Authority have been revoked, preventing furth |
-| **Governance / Economics** | 3/10 | Medium | The token exhibits a liquidity of $34,223 on DEXs, with a healthy 24-hour volume to liquidity ratio of 0.50, suggesting organic trading activity. The DEX pair has been active for 53 days, providing so |
-| **Upgrades** | 5/10 | Low | The token's immutability is strong, with both Mint and Freeze authorities permanently revoked, ensuring no new tokens can be minted and no accounts can be frozen. Furthermore, the token metadata is im |
+| **Technical** | 6/10 | Medium | The assface token is an SPL Token-2022 mint with 6 decimals and a total supply of 999,828,017.212586 tokens. Crucially, both the Mint Authority and Freeze Authority have been revoked, preventing furth |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a liquidity of $34,223 on DEXs, with a healthy 24-hour volume to liquidity ratio of 0.50, suggesting organic trading activity. The DEX pair has been active for 53 days, providing so |
+| **Upgrades** | 8/10 | Low | The token's immutability is strong, with both Mint and Freeze authorities permanently revoked, ensuring no new tokens can be minted and no accounts can be frozen. Furthermore, the token metadata is im |
 
 ## Security Findings
 

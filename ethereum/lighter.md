@@ -2,14 +2,14 @@
 token: Lighter
 ticker: LIT
 network: ethereum
-risk_score: 53
+risk_score: 59
 status: high
 date: 2026-06-10
 ---
 
 # Lighter (LIT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 59/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lighter-eth)
 
@@ -21,19 +21,20 @@ The provided source code snippet is a partial view of an OpenZeppelin ERC20 impl
 
 > **Final Recommendation:** The provided code snippet represents a strong foundation for an ERC20 token, leveraging OpenZeppelin's audited libraries and modern Solidity features like custom errors. The primary security considerations will lie in the specific implementation of the derived 'Lighter' contract, particularly its supply mechanisms (minting/burning) and any custom logic added beyond the standard ERC20 functions. A thorough audit of the full 'Lighter' contract is recommended to ensure all components are secure and align with the project's economic and operational goals. Consider a Premium Deploy option for enhanced monitoring and incident response post-deployment.
 
-## Security Analysis
-
-The provided source code snippet is a partial view of an OpenZeppelin ERC20 implementation, specifically the abstract base contract and related interfaces. The audit focuses on the general structure, adherence to standards, and potential implications for a derived token contract. While the base is robust, the full security posture depends on the complete implementation of the 'Lighter' contract.
-
-The provided code snippet represents a strong foundation for an ERC20 token, leveraging OpenZeppelin's audited libraries and modern Solidity features like custom errors. The primary security considerations will lie in the specific implementation of the derived 'Lighter' contract, particularly its supply mechanisms (minting/burning) and any custom logic added beyond the standard ERC20 functions. A thorough audit of the full 'Lighter' contract is recommended to ensure all components are secure and align with the project's economic and operational goals. Consider a Premium Deploy option for enhanced monitoring and incident response post-deployment.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The contract leverages OpenZeppelin's battle-tested ERC20 implementation, ensuring a robust and secure foundation for token operations (7.1 Architecture, 7.2 Code Security). It incorporates ERC-6093 c |
-| **Governance / Economics** | 6/10 | Low | As a base ERC20 token, the contract primarily defines standard transfer and approval mechanics, which are fundamental to its economic function (7.4 Economic). The specifics of the token's economic mod |
-| **Upgrades** | 6/10 | Low | The contract is not deployed as a proxy, as indicated by `is_proxy: false` in the prefill (7.7 Upgrades). Therefore, direct upgradeability is not a concern for this specific deployment. Any future cha |
+| **Technical** | 8/10 | Low | The contract leverages OpenZeppelin's battle-tested ERC20 implementation, ensuring a robust and secure foundation for token operations (7.1 Architecture, 7.2 Code Security). It incorporates ERC-6093 c |
+| **Governance / Economics** | 1/10 | High | As a base ERC20 token, the contract primarily defines standard transfer and approval mechanics, which are fundamental to its economic function (7.4 Economic). The specifics of the token's economic mod |
+| **Upgrades** | 8/10 | Low | The contract is not deployed as a proxy, as indicated by `is_proxy: false` in the prefill (7.7 Upgrades). Therefore, direct upgradeability is not a concern for this specific deployment. Any future cha |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 61.6% |
+| **Top-3 Unlocked** | ⚠️ 88.2% |
 
 ## Security Findings
 

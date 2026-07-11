@@ -2,14 +2,14 @@
 token: LMAO!
 ticker: LMAO!
 network: solana
-risk_score: 59
-status: high
+risk_score: 36
+status: medium
 date: 2026-06-10
 ---
 
 # LMAO! (LMAO!) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lmao-sol)
 
@@ -21,19 +21,13 @@ The LMAO! SPL token mint audit reveals a critical operational risk due to its de
 
 > **Final Recommendation:** Holders should be aware that new token accounts for LMAO! are created in a frozen state, making them unspendable until an authorized party explicitly unfreezes them. It is crucial to confirm the availability and responsiveness of the issuer or an active authority to perform this unfreezing operation. Without this, newly acquired tokens may be inaccessible. Additionally, while liquidity is reasonable, the absence of holder concentration data means potential risks from large holders cannot be fully evaluated. For enhanced security and operational control, consider a Premium Deploy option that allows for custom configuration of default account states and provides transparent holder distribution metrics.
 
-## Security Analysis
-
-The LMAO! SPL token mint audit reveals a critical operational risk due to its default frozen account state, requiring manual unfreezing for new holders. While mint and freeze authorities are revoked, and metadata is immutable, the lack of holder concentration data prevents a full assessment of economic centralization risks. RugCheck.xyz provides a low risk score of 1/100, but the default frozen state remains a significant concern for user experience and accessibility.
-
-Holders should be aware that new token accounts for LMAO! are created in a frozen state, making them unspendable until an authorized party explicitly unfreezes them. It is crucial to confirm the availability and responsiveness of the issuer or an active authority to perform this unfreezing operation. Without this, newly acquired tokens may be inaccessible. Additionally, while liquidity is reasonable, the absence of holder concentration data means potential risks from large holders cannot be fully evaluated. For enhanced security and operational control, consider a Premium Deploy option that allows for custom configuration of default account states and provides transparent holder distribution metrics.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 2/10 | High | The LMAO! token is an SPL token operating on the Solana blockchain, utilizing the standard `spl-token` program. Both the mint authority and freeze authority have been successfully revoked, indicating  |
-| **Governance / Economics** | 2/10 | Medium | The token exhibits a healthy liquidity of $261,633 USD on DEXs, with a 24-hour volume of $169,130 USD, resulting in a normal volume/liquidity ratio of 0.65. The DEX pair has been active for 236 days,  |
-| **Upgrades** | 1/10 | Low | The LMAO! token mint has a robust configuration regarding mutability and upgrades. Both the mint authority and freeze authority have been revoked, preventing any future changes to the token supply or  |
+| **Technical** | 5/10 | Medium | The LMAO! token is an SPL token operating on the Solana blockchain, utilizing the standard `spl-token` program. Both the mint authority and freeze authority have been successfully revoked, indicating  |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a healthy liquidity of $261,633 USD on DEXs, with a 24-hour volume of $169,130 USD, resulting in a normal volume/liquidity ratio of 0.65. The DEX pair has been active for 236 days,  |
+| **Upgrades** | 8/10 | Low | The LMAO! token mint has a robust configuration regarding mutability and upgrades. Both the mint authority and freeze authority have been revoked, preventing any future changes to the token supply or  |
 
 ## Security Findings
 

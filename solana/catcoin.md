@@ -2,14 +2,14 @@
 token: Catcoin
 ticker: CATCOIN
 network: solana
-risk_score: 44
+risk_score: 30
 status: medium
 date: 2026-06-10
 ---
 
 # Catcoin (CATCOIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/catcoin-sol)
 
@@ -21,19 +21,13 @@ The Catcoin (CATCOIN) SPL token mint on Solana exhibits a robust security config
 
 > **Final Recommendation:** Based on the available on-chain data, Catcoin (CATCOIN) appears to be a well-configured SPL token with key authorities revoked, indicating a commitment to immutability and security. Holders should be aware that holder concentration data was unavailable, which is a common limitation for public RPCs and third-party tools. It is recommended to monitor on-chain holder distribution if this information becomes available through specialized analytics.
 
-## Security Analysis
-
-The Catcoin (CATCOIN) SPL token mint on Solana exhibits a robust security configuration with no critical or high-severity issues identified based on the available on-chain data. Both mint and freeze authorities have been revoked, preventing further token issuance or account freezing. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
-
-Based on the available on-chain data, Catcoin (CATCOIN) appears to be a well-configured SPL token with key authorities revoked, indicating a commitment to immutability and security. Holders should be aware that holder concentration data was unavailable, which is a common limitation for public RPCs and third-party tools. It is recommended to monitor on-chain holder distribution if this information becomes available through specialized analytics.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The Catcoin (CATCOIN) token is implemented using the spl-token-2022 program on Solana. Key security features are well-configured: the mint authority is revoked (None), preventing further token creatio |
-| **Governance / Economics** | 6/10 | Low | The token exhibits healthy liquidity with $85,486 USD available on DEXs. The 24-hour volume of $140,867 USD results in a normal Volume/Liquidity Ratio of 1.65, not indicating wash trading. The DEX pai |
-| **Upgrades** | 6/10 | Low | The Catcoin (CATCOIN) token mint has a fixed configuration with no upgrade paths for core token parameters. Both the mint and freeze authorities have been permanently revoked, meaning no new tokens ca |
+| **Technical** | 6/10 | Medium | The Catcoin (CATCOIN) token is implemented using the spl-token-2022 program on Solana. Key security features are well-configured: the mint authority is revoked (None), preventing further token creatio |
+| **Governance / Economics** | 7/10 | Low | The token exhibits healthy liquidity with $85,486 USD available on DEXs. The 24-hour volume of $140,867 USD results in a normal Volume/Liquidity Ratio of 1.65, not indicating wash trading. The DEX pai |
+| **Upgrades** | 8/10 | Low | The Catcoin (CATCOIN) token mint has a fixed configuration with no upgrade paths for core token parameters. Both the mint and freeze authorities have been permanently revoked, meaning no new tokens ca |
 
 ## Security Findings
 

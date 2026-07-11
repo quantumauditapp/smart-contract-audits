@@ -2,14 +2,14 @@
 token: Traderclaw
 ticker: TCLAW
 network: solana
-risk_score: 88
-status: critical
+risk_score: 63
+status: high
 date: 2026-06-10
 ---
 
 # Traderclaw (TCLAW) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 88/100 — 🔴 Critical Risk**
+> **Risk Score: 63/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/traderclaw-sol)
 
@@ -23,21 +23,13 @@ The Traderclaw (TCLAW) SPL Token Mint audit identified a High risk due to very l
 
 For enhanced security, consider engaging Quantum Audit for a Premium Deploy service, which includes pre-deployment contract analysis and real-time monitoring to identify and mitigate risks before and after launch.
 
-## Security Analysis
-
-The Traderclaw (TCLAW) SPL Token Mint audit identified a High risk due to very low liquidity, which can lead to severe slippage for traders. Key security authorities like mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Holder concentration data was unavailable from RPC, but RugCheck.xyz flagged high ownership by top holders, suggesting centralization risk.
-
-Potential holders should be aware of the extremely low liquidity ($3,247 USD) which makes large trades impractical due to high slippage. While core authorities (mint, freeze) are revoked, indicating a fixed supply and unfreezable accounts, the high holder concentration flagged by RugCheck.xyz suggests significant centralization risk. It is recommended to proceed with extreme caution and only with funds you are prepared to lose.
-
-For enhanced security, consider engaging Quantum Audit for a Premium Deploy service, which includes pre-deployment contract analysis and real-time monitoring to identify and mitigate risks before and after launch.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The Traderclaw (TCLAW) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked (None), which means no new tokens can be minted and no existing accounts can be f |
-| **Governance / Economics** | 6/10 | High | The token exhibits very low liquidity, with only $3,247 USD available on DEXs, which will result in significant slippage for any substantial trades. The 24-hour volume to liquidity ratio is 0.04, whic |
-| **Upgrades** | 6/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply cannot be increased and accounts cannot be frozen. The token is an SPL Token-2022, but it does not have any active  |
+| **Technical** | 5/10 | Medium | The Traderclaw (TCLAW) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked (None), which means no new tokens can be minted and no existing accounts can be f |
+| **Governance / Economics** | 1/10 | High | The token exhibits very low liquidity, with only $3,247 USD available on DEXs, which will result in significant slippage for any substantial trades. The 24-hour volume to liquidity ratio is 0.04, whic |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply cannot be increased and accounts cannot be frozen. The token is an SPL Token-2022, but it does not have any active  |
 
 ## Security Findings
 

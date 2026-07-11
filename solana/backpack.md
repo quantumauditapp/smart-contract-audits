@@ -2,24 +2,56 @@
 token: Backpack
 ticker: BP
 network: solana
-risk_score: 58
-status: high
+risk_score: 92
+status: critical
 date: 2026-06-14
 ---
 
 # Backpack (BP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 92/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/backpack-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-An examination of the Backpack (BP) token on Solana reveals a security profile with notable red flags alongside some mitigating factors, resulting in a High Risk score of 58/100. Positively, the contract ownership has been renounced, meaning the original deployer can no longer alter core contract parameters. Furthermore, the absence of a mint function prevents the arbitrary creation of new tokens, offering a degree of supply predictability. However, critical concerns exist. The contract has not been verified, which significantly hinders transparency and makes a thorough security audit impossible for the public. A substantial concentration of wealth is observed, with the top 10 holders controlling 99.0% of the total supply, raising centralization risks. Additionally, the project's liquidity, currently at $731,847 with a 24-hour volume of $389,922, is not locked, posing potential risks for investors if removed.
+The Backpack (BP) token mint presents critical centralization risks due to unrevoked mint and freeze authorities. The issuer retains the ability to mint unlimited new tokens and freeze any holder's funds. Additionally, new holder accounts are created in a frozen state by default, requiring explicit unfreezing. Holder concentration data was unavailable, preventing a full assessment of supply distribution risk.
 
-The two most critical risk signals for Backpack (BP) are the unverified contract and the extremely concentrated token distribution. An unverified contract means the deployed code cannot be publicly scrutinized or matched against claimed source code, introducing significant opacity and making potential vulnerabilities or malicious functions undetectable without specialized tools. This lack of transparency is a major concern. Compounding this, the top 10 holders own 99.0% of the entire supply, creating a highly centralized ecosystem. This concentration allows a small group to exert substantial influence over the token's market dynamics, potentially leading to significant price volatility or control over governance if applicable. The absence of locked liquidity further amplifies these risks, as a rug pull scenario remains a possibility.
+> **Final Recommendation:** Users considering holding Backpack (BP) tokens should be aware of the significant centralized risks. The unrevoked mint and freeze authorities grant the issuer complete control over the token supply and the ability to freeze any holder's assets. It is strongly recommended to verify on-chain that these authorities are revoked before considering the token supply fixed or your holdings secure. Additionally, new accounts being frozen by default requires an active issuer to unfreeze them, which could lead to funds being inaccessible if the issuer becomes unresponsive.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 1/10 | High | The token is an SPL token using the `spl-token` program, with a total supply of 999,999,846.945724009 tokens and 9 decimals. Critical access controls remain active: the mint authority (`GySFHFS5ZiN4Z5 |
+| **Governance / Economics** | 1/10 | High | The token exhibits healthy liquidity with $1,942,306 USD available on DEXs and a 24-hour volume of $1,046,962 USD. The volume/liquidity ratio is 0.54, indicating normal trading patterns without signs  |
+| **Upgrades** | 4/10 | Medium | The token's core authorities, including mint and freeze, are not revoked, meaning the issuer retains full control over token supply and holder accounts. The token uses the standard `spl-token` program |
+
+## Security Findings
+
+_🔴 2 Critical · 🟠 1 High_
+
+### `C-01` — Mint Authority Not Revoked  *(Severity: Critical · Status: Unresolved)*
+
+The mint authority is GySFHFS5ZiN4Z5YnyPZcjjxpYcGvD7qHZYVjE9QzMHVH. The holder of this key can mint unlimited new tokens, diluting all current holders to zero value.
+
+**Recommendation:** Verify on-chain that the mint authority is set to null before treating supply as fixed.
+
+
+### `C-02` — Freeze Authority Not Revoked  *(Severity: Critical · Status: Unresolved)*
+
+The freeze authority is GySFHFS5ZiN4Z5YnyPZcjjxpYcGvD7qHZYVjE9QzMHVH. The holder can freeze any holder's account, blocking transfers and effectively confiscating funds.
+
+**Recommendation:** Avoid tokens whose freeze authority is not revoked unless the issuer is a regulated stablecoin operator.
+
+
+### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
+
+New holder accounts are created in a frozen state and require explicit unfreezing by an authority, as indicated by `GoPlus.default_account_state: 1`.
+
+**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
 
 ## Token Metrics
 

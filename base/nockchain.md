@@ -2,14 +2,14 @@
 token: Nockchain
 ticker: NOCK
 network: base
-risk_score: 94
-status: critical
+risk_score: 56
+status: high
 date: 2026-06-10
 ---
 
 # Nockchain (NOCK) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 94/100 — 🔴 Critical Risk**
+> **Risk Score: 56/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/nockchain-base)
 
@@ -21,19 +21,20 @@ The Nock contract is an ERC-20 token designed to represent wrapped Nockchain ass
 
 > **Final Recommendation:** The Nock contract provides a functional ERC-20 token with clear minting and burning mechanisms. However, the high degree of centralization around the `owner` for minting authority, combined with the contract's non-upgradeable nature and lack of a pause function, presents substantial risks. It is strongly recommended to implement a multi-signature wallet for the `owner` role to mitigate the risk of a single point of failure. Additionally, while immutability is a design choice, the lack of an emergency pause should be carefully considered against the potential impact of unforeseen vulnerabilities. For enhanced security and operational flexibility, a Premium Deploy option with a robust governance model and upgradeability features should be explored for future iterations.
 
-## Security Analysis
-
-The Nock contract is an ERC-20 token designed to represent wrapped Nockchain assets, allowing users to burn tokens for withdrawals and enabling a designated MessageInbox to mint new tokens. The contract leverages OpenZeppelin's battle-tested ERC20 and Ownable implementations, contributing to a solid foundation for standard token operations. However, the centralized control over the minting authority via the `owner` role, coupled with the contract's explicit non-upgradeability and lack of an emergency pause mechanism, introduces significant operational and governance risks. The non-standard `decimals` value (16) also requires careful consideration for ecosystem integrations.
-
-The Nock contract provides a functional ERC-20 token with clear minting and burning mechanisms. However, the high degree of centralization around the `owner` for minting authority, combined with the contract's non-upgradeable nature and lack of a pause function, presents substantial risks. It is strongly recommended to implement a multi-signature wallet for the `owner` role to mitigate the risk of a single point of failure. Additionally, while immutability is a design choice, the lack of an emergency pause should be carefully considered against the potential impact of unforeseen vulnerabilities. For enhanced security and operational flexibility, a Premium Deploy option with a robust governance model and upgradeability features should be explored for future iterations.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Nock contract demonstrates good code quality, utilizing OpenZeppelin's ERC20 and Ownable libraries, which are well-audited and secure (7.2 Code Security). The logic for minting and burning is stra |
-| **Governance / Economics** | 6/10 | High | The `owner` role holds significant power, specifically the ability to update the `inbox` address, which is the sole entity authorized to mint new tokens (7.3 Access Control, 7.5 Governance). This cent |
-| **Upgrades** | 6/10 | High | The Nock contract is explicitly designed as non-upgradeable, as stated in its NatSpec documentation (7.7 Upgrades). This immutability means that any discovered vulnerability, bug, or desired feature c |
+| **Technical** | 8/10 | Low | The Nock contract demonstrates good code quality, utilizing OpenZeppelin's ERC20 and Ownable libraries, which are well-audited and secure (7.2 Code Security). The logic for minting and burning is stra |
+| **Governance / Economics** | 2/10 | High | The `owner` role holds significant power, specifically the ability to update the `inbox` address, which is the sole entity authorized to mint new tokens (7.3 Access Control, 7.5 Governance). This cent |
+| **Upgrades** | 5/10 | Medium | The Nock contract is explicitly designed as non-upgradeable, as stated in its NatSpec documentation (7.7 Upgrades). This immutability means that any discovered vulnerability, bug, or desired feature c |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | 46.0% |
+| **Top-3 Unlocked** | 75.2% |
 
 ## Security Findings
 

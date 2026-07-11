@@ -2,24 +2,87 @@
 token: Re Protocol reUSD
 ticker: REUSD
 network: ethereum
-risk_score: 51
-status: high
+risk_score: 98
+status: critical
 date: 2026-06-20
 ---
 
 # Re Protocol reUSD (REUSD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 98/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/re-protocol-reusd-eth)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Re Protocol reUSD (REUSD) on Ethereum presents a mixed security profile for investors. The contract is verified, offering transparency by allowing public inspection of the deployed code. Crucially, ownership of the contract has been renounced, eliminating a common vector for malicious control or unilateral contract changes post-deployment. Furthermore, the absence of a mint function prevents the arbitrary creation of new tokens, safeguarding against inflationary dilution by the protocol team. However, significant centralization risks are apparent, with the top 10 holders controlling 98.7% of the total supply, raising concerns about potential market manipulation or large-scale selling pressure. Additionally, the liquidity is not locked, meaning liquidity providers could withdraw funds, potentially impacting trading stability. The overall risk score for REUSD is rated at 51/100, indicating a high-risk investment.
+This audit covers the OpenZeppelin ERC1967Proxy contract and its associated utility libraries. The contracts implement a standard EIP-1967 compliant upgradeable proxy, providing a robust foundation for upgradeable systems. While the core OpenZeppelin code is highly audited and secure, inherent risks associated with upgradeable proxies, such as centralized admin control, reliance on implementation contract security, and potential initialization vulnerabilities, necessitate careful consideration during deployment and operation.
 
-The two most critical risk factors for Re Protocol reUSD are its extreme token centralization and the unlocked liquidity. With the top 10 holders controlling 98.7% of the supply, there's a substantial risk of market manipulation, large sell-offs causing significant price volatility, or even coordination to impact governance if applicable. This high concentration makes the token vulnerable to the actions of a few large wallets. Concurrently, the absence of locked liquidity means that the $1,532,535 in liquidity can be withdrawn by providers at any time. This poses a 'rug pull' risk, where liquidity could be suddenly removed, leaving remaining holders unable to trade their tokens effectively.
+> **Final Recommendation:** The OpenZeppelin ERC1967Proxy provides a secure and well-vetted foundation for upgradeable smart contracts. The primary risks stem from the inherent nature of upgradeable proxies, particularly the centralized control over upgrades and the dependency on the security of the implementation contract. It is crucial to implement robust access control for the admin key, thoroughly audit all implementation contracts, and carefully manage storage layouts during upgrades to prevent vulnerabilities.
+
+For enhanced security and operational peace of mind, consider a Premium Deploy option that includes a multi-signature wallet for admin control, a time-lock mechanism for upgrade proposals, and continuous monitoring of the implementation contract for any potential vulnerabilities or unexpected behavior.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 4/10 | Medium | The technical architecture (7.1 Architecture) is based on OpenZeppelin's well-established EIP-1967 proxy standard, ensuring a robust and widely-adopted design. Code security (7.2 Code Security) is str |
+| **Governance / Economics** | 1/10 | High | The proxy itself does not contain specific economic (7.4 Economic) or governance (7.5 Governance) logic; these aspects reside within the implementation contract. However, the upgrade mechanism introdu |
+| **Upgrades** | 3/10 | High | The contract utilizes the EIP-1967 proxy pattern, allowing for future upgrades (7.7 Upgrades). The `ERC1967Utils` library provides functions like `upgradeToAndCall` and `changeAdmin`, which are fundam |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Uups |
+| **Implementation** | ⚠️ Unverified source |
+| **Upgrades (30d)** | 0 (stable) |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 72.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
+
+## Security Findings
+
+_🟠 2 High · 🟡 2 Medium · ⚪ 1 Informational_
+
+### `H-01` — Centralized Admin Control for Upgrades  *(Severity: High · Status: Unresolved)*
+
+The `ERC1967Proxy` pattern, through `ERC1967Utils`, grants a single admin address full control over upgrading the proxy's implementation and changing the admin itself. This centralized control represents a single point of failure. If the admin key is compromised, an attacker could deploy a malicious implementation, leading to loss of funds or system compromise.
+
+**Recommendation:** Implement a robust access control mechanism for the admin role. This should ideally involve a multi-signature wallet (e.g., Gnosis Safe) for the admin address. Additionally, consider integrating a time-lock contract to introduce a delay between proposing an upgrade and its execution, allowing time for review and potential intervention.
+
+
+### `H-02` — Reliance on External Implementation Contract Security  *(Severity: High · Status: Unresolved)*
+
+The `ERC1967Proxy` delegates all calls to an external implementation contract. The security and correctness of the entire system are entirely dependent on the security of this implementation contract, which was not provided for this audit. Any vulnerability (e.g., reentrancy, access control flaws, logic errors) in the implementation would directly affect the proxy and its users.
+
+**Recommendation:** Thoroughly audit all implementation contracts before deployment and every time an upgrade is performed. Ensure that the implementation contract adheres to best security practices, is well-tested, and has undergone independent security reviews. Implement robust testing, including unit, integration, and fuzz testing.
+
+
+### `M-01` — Potential Initialization Race Condition  *(Severity: Medium · Status: Unresolved)*
+
+While the `ERC1967Proxy` constructor calls `upgradeToAndCall` with `_data` to initialize the implementation, a common vulnerability in proxy patterns arises if the implementation contract's `initialize` function is public and can be called directly on the implementation address *before* the proxy's constructor executes it. An attacker could front-run the initialization, gaining control of the implementation contract's state, which would then be reflected in the proxy.
+
+**Recommendation:** Ensure that the implementation contract's `initialize` function can only be called once and is protected by an `initializer` modifier. For added safety, consider deploying the implementation contract with a disabled `initialize` function (e.g., by calling it in its own constructor) and then enabling it via a separate, restricted function call through the proxy, or by ensuring the proxy's constructor is the *only* way to call `initialize` initially.
+
+
+### `M-02` — Storage Collision Risk During Upgrades  *(Severity: Medium · Status: Unresolved)*
+
+Although EIP-1967 slots prevent collisions between proxy-specific storage and implementation storage, changes to the implementation contract's storage layout across upgrades can lead to storage collisions. If new state variables are added, removed, or reordered without careful planning, they might overwrite existing data from previous versions, leading to data corruption, unexpected behavior, or loss of funds.
+
+**Recommendation:** Adhere strictly to upgrade-safe storage layout principles. New state variables should only be appended to the end of the contract's storage. Never reorder or change the type of existing state variables. Utilize tools like OpenZeppelin's 'Upgrades Plugins' for Hardhat or Foundry to detect potential storage layout incompatibilities during development and before deployment.
+
+
+### `I-01` — Robust `msg.value` Handling in Upgrades  *(Severity: Informational · Status: Resolved)*
+
+The `ERC1967Utils` library includes the `_checkNonPayable()` function, which is called when `upgradeToAndCall` or `upgradeBeaconToAndCall` is invoked without any `data`. This function explicitly reverts if `msg.value > 0` in such scenarios. This prevents Ether from being accidentally sent to the proxy contract and becoming permanently locked if there's no delegate call to forward it.
+
+**Recommendation:** No action required. This is a positive security feature that prevents accidental loss of funds.
 
 ## Token Metrics
 

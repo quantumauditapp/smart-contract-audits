@@ -2,24 +2,56 @@
 token: chicken shrimp
 ticker: CS
 network: solana
-risk_score: 47
-status: high
+risk_score: 36
+status: medium
 date: 2026-06-21
 ---
 
 # chicken shrimp (CS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chicken-shrimp-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-The chicken shrimp (CS) token on Solana presents a mixed security profile for potential investors, categorized with a High Risk score of 47/100. On the positive side, ownership of the token's smart contract has been renounced, which generally prevents the original developer from making malicious changes like introducing new taxes or revoking token transferability. Furthermore, the absence of a mint function prevents the arbitrary creation of new tokens, thus mitigating inflationary supply shock by the developer. However, significant red flags exist. The contract is not verified, meaning its source code is not publicly available or confirmed to match the deployed bytecode, severely hindering transparency and independent security analysis. Liquidity is also not locked, posing a direct 'rug pull' risk where providers could withdraw funds.
+This Solana SPL Token Mint for chicken shrimp (CS) has no critical or high-severity findings based on the available on-chain data. Key authorities such as Mint Authority and Freeze Authority are revoked, indicating a fixed supply and immutability of account states. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-The most critical security concerns for chicken shrimp revolve around the unverified contract and unlocked liquidity. An unverified contract makes it impossible for investors or third-party auditors to review the code for backdoors, vulnerabilities, or hidden malicious functions, demanding a high degree of blind trust. Coupled with this, the absence of locked liquidity means that the $50,162 in liquidity can be removed at any time by its providers, potentially leading to a complete loss of value for holders. While ownership renounced is a positive signal, these core structural risks significantly overshadow it, making CS a highly speculative and risky asset.
+> **Final Recommendation:** Based on the available on-chain data, the chicken shrimp (CS) token appears to have a robust security posture with no active administrative authorities that could unilaterally alter its supply or freeze user funds. Investors should note that holder concentration data was unavailable, which is a common risk factor for new tokens. It is recommended to monitor the token's liquidity and trading patterns, and to verify the project's off-chain information and community engagement before making any investment decisions. For enhanced due diligence, consider a Premium Deploy audit to include deeper analysis of the project's ecosystem and any associated programs.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program (7.1 Architecture). Both the Mint Authority and Freeze Authority have been revoked, which means no new tokens can be minted and no existing to |
+| **Governance / Economics** | 6/10 | Medium | The token has a liquidity of $76,196 USD, with a 24-hour volume of $550,060 USD (7.4 Economic). The Volume/Liquidity Ratio is 7.22, which is noted as high (>5) but does not meet the threshold for a 'W |
+| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked, meaning the token's supply is fixed and no accounts can be frozen (7.7 Upgrades). The token uses the spl-token-2022 program but does not have  |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

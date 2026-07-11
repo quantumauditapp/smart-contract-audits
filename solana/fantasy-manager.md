@@ -2,14 +2,14 @@
 token: Fantasy Manager
 ticker: FANTASY
 network: solana
-risk_score: 59
-status: high
+risk_score: 42
+status: medium
 date: 2026-06-11
 ---
 
 # Fantasy Manager (FANTASY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fantasy-manager-sol)
 
@@ -23,21 +23,13 @@ Based on the available on-chain data and external security signals, no critical 
 
 Users considering this token should continue to monitor market dynamics, especially given the relatively high volume-to-liquidity ratio, and be aware of the unknown holder distribution. A Premium Deploy option would involve deeper off-chain analysis of the project team and community, which is beyond the scope of this on-chain and external signal audit.
 
-## Security Analysis
-
-Based on the available on-chain data and external security signals, no critical or high-severity risks were identified for the Fantasy Manager (FANTASY) SPL token mint. Key authorities such as mint and freeze are revoked, and no permanent delegate or transfer hook is active. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
-
-Based on the available data, the Fantasy Manager (FANTASY) token mint appears to have a robust security posture regarding its on-chain authorities, with both mint and freeze authorities revoked. However, the absence of holder concentration data prevents a complete assessment of potential market manipulation risks from large holders.
-
-Users considering this token should continue to monitor market dynamics, especially given the relatively high volume-to-liquidity ratio, and be aware of the unknown holder distribution. A Premium Deploy option would involve deeper off-chain analysis of the project team and community, which is beyond the scope of this on-chain and external signal audit.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The Fantasy Manager (FANTASY) token is an SPL Token-2022 mint on Solana. Its mint authority is revoked, preventing the creation of new tokens, and the freeze authority is also revoked, meaning no acco |
-| **Governance / Economics** | 6/10 | Low | The token exhibits a 24-hour volume of $475,114 against a liquidity of $35,134, resulting in a Volume/Liquidity Ratio of 13.52 (Fact: "24h Volume (USD): $475,114", "Liquidity (USD): $35,134"). The DEX |
-| **Upgrades** | 6/10 | Low | The mint authority and freeze authority are both revoked, indicating that the core parameters of the token, such as total supply and account freeze status, cannot be altered (Fact: "Mint Authority: re |
+| **Technical** | 6/10 | Medium | The Fantasy Manager (FANTASY) token is an SPL Token-2022 mint on Solana. Its mint authority is revoked, preventing the creation of new tokens, and the freeze authority is also revoked, meaning no acco |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a 24-hour volume of $475,114 against a liquidity of $35,134, resulting in a Volume/Liquidity Ratio of 13.52 (Fact: "24h Volume (USD): $475,114", "Liquidity (USD): $35,134"). The DEX |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, indicating that the core parameters of the token, such as total supply and account freeze status, cannot be altered (Fact: "Mint Authority: re |
 
 ## Security Findings
 

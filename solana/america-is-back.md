@@ -2,14 +2,14 @@
 token: America Is Back
 ticker: AMERICA
 network: solana
-risk_score: 39
+risk_score: 21
 status: medium
 date: 2026-06-10
 ---
 
 # America Is Back (AMERICA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 21/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/america-is-back-sol)
 
@@ -21,19 +21,13 @@ The America Is Back (AMERICA) token mint on Solana exhibits a robust security co
 
 > **Final Recommendation:** The America Is Back (AMERICA) token presents a strong technical security posture with critical authorities revoked and no centralizing Token-2022 extensions active. However, the absence of holder concentration data means that potential risks from concentrated supply cannot be assessed. Users should be aware of this information gap and consider the implications for price stability. For a comprehensive risk assessment, obtaining holder distribution data is crucial. A Premium Deploy option is not applicable as this is an existing SPL token mint.
 
-## Security Analysis
-
-The America Is Back (AMERICA) token mint on Solana exhibits a robust security configuration with both mint and freeze authorities revoked. No Token-2022 extensions that introduce centralisation risks, such as transfer hooks or permanent delegates, are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
-
-The America Is Back (AMERICA) token presents a strong technical security posture with critical authorities revoked and no centralizing Token-2022 extensions active. However, the absence of holder concentration data means that potential risks from concentrated supply cannot be assessed. Users should be aware of this information gap and consider the implications for price stability. For a comprehensive risk assessment, obtaining holder distribution data is crucial. A Premium Deploy option is not applicable as this is an existing SPL token mint.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | 7.1 Architecture & 7.3 Access Control: The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be  |
-| **Governance / Economics** | 6/10 | Low | 7.4 Economic: The token has a liquidity of $104,250 USD and a 24-hour volume of $111,215, indicating moderate trading activity. The volume/liquidity ratio of 1.07 is normal, suggesting organic trading |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The token's mint and freeze authorities are revoked, meaning its core parameters cannot be altered post-launch. GoPlus data confirms that metadata is not mutable, ensuring the token's na |
+| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.3 Access Control: The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be  |
+| **Governance / Economics** | 7/10 | Low | 7.4 Economic: The token has a liquidity of $104,250 USD and a 24-hour volume of $111,215, indicating moderate trading activity. The volume/liquidity ratio of 1.07 is normal, suggesting organic trading |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The token's mint and freeze authorities are revoked, meaning its core parameters cannot be altered post-launch. GoPlus data confirms that metadata is not mutable, ensuring the token's na |
 
 ## Security Findings
 

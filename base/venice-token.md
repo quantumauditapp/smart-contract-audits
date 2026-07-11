@@ -2,14 +2,14 @@
 token: Venice Token
 ticker: VVV
 network: base
-risk_score: 100
+risk_score: 99
 status: critical
 date: 2026-06-10
 ---
 
 # Venice Token (VVV) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 99/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/venice-token-base)
 
@@ -23,21 +23,20 @@ The Venice Token contract is a standard ERC20 implementation utilizing well-audi
 
 For enhanced security and operational resilience, consider a Premium Deploy option that includes a multi-signature setup for critical roles, continuous monitoring, and incident response planning. This would significantly reduce the risk associated with the centralized minting function and owner key compromise.
 
-## Security Analysis
-
-The Venice Token contract is a standard ERC20 implementation utilizing well-audited Solmate libraries. The primary vulnerability identified is the centralized and unlimited minting capability controlled by a single owner, posing a critical economic risk. Additionally, the initial token distribution is highly concentrated. While the code quality is high, these design choices introduce significant centralization and economic risks.
-
-The Venice Token contract is technically sound in its implementation, leveraging robust Solmate libraries. However, the critical economic risk stemming from the owner's unlimited minting capability must be thoroughly understood and addressed by the project team and token holders. It is strongly recommended to transfer ownership to a multi-signature wallet or a robust governance mechanism to mitigate the single point of failure and centralized control.
-
-For enhanced security and operational resilience, consider a Premium Deploy option that includes a multi-signature setup for critical roles, continuous monitoring, and incident response planning. This would significantly reduce the risk associated with the centralized minting function and owner key compromise.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages Solmate's ERC20 and Owned implementations, which are highly regarded for their security and gas efficiency (7.2 Code Security). The `unchecked` blocks in Solmate are used approp |
-| **Governance / Economics** | 6/10 | High | The most significant economic risk (7.4 Economic) is the `mint` function, which grants the contract owner unlimited power to create new tokens. This centralized control can lead to hyperinflation and  |
-| **Upgrades** | 6/10 | Low | The Venice Token contract is not designed with upgradeability in mind (7.7 Upgrades), meaning it is immutable once deployed. This is a common pattern for simple ERC20 tokens and avoids the complexity  |
+| **Technical** | 4/10 | Medium | The contract leverages Solmate's ERC20 and Owned implementations, which are highly regarded for their security and gas efficiency (7.2 Code Security). The `unchecked` blocks in Solmate are used approp |
+| **Governance / Economics** | 1/10 | High | The most significant economic risk (7.4 Economic) is the `mint` function, which grants the contract owner unlimited power to create new tokens. This centralized control can lead to hyperinflation and  |
+| **Upgrades** | 1/10 | High | The Venice Token contract is not designed with upgradeability in mind (7.7 Upgrades), meaning it is immutable once deployed. This is a common pattern for simple ERC20 tokens and avoids the complexity  |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | 29.2% |
+| **Top-3 Unlocked** | 52.0% |
 
 ## Security Findings
 

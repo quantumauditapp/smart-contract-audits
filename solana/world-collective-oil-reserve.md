@@ -2,14 +2,14 @@
 token: World Collective Oil Reserve
 ticker: WCOR
 network: solana
-risk_score: 57
-status: high
+risk_score: 31
+status: medium
 date: 2026-06-10
 ---
 
 # World Collective Oil Reserve (WCOR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 31/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-collective-oil-reserve-sol)
 
@@ -21,19 +21,13 @@ This audit of the World Collective Oil Reserve (WCOR) SPL token mint identified 
 
 > **Final Recommendation:** Holders should be aware of the 'Default Frozen State' for new accounts, which means an active issuer is required to unfreeze any newly created token accounts before they can be used. This introduces a dependency and potential point of failure if the issuer becomes unresponsive. Given the 'RugCheck Score' of 1/100, further due diligence into the project's background and team is strongly recommended. Consider the implications of unavailable holder concentration data, as this prevents a full assessment of supply centralization risk. For enhanced security and transparency, consider a Premium Deploy option that includes a comprehensive review of the issuer's operational procedures for unfreezing accounts and a deeper analysis of the project's reputation.
 
-## Security Analysis
-
-This audit of the World Collective Oil Reserve (WCOR) SPL token mint identified a High-severity risk due to the default frozen state for new holder accounts, requiring explicit unfreezing by an authority. While mint and freeze authorities are revoked, the lack of holder distribution data prevents a full assessment of supply centralization risk. RugCheck.xyz provides a very low score of 1/100, indicating potential underlying issues not directly covered by our deterministic rules.
-
-Holders should be aware of the 'Default Frozen State' for new accounts, which means an active issuer is required to unfreeze any newly created token accounts before they can be used. This introduces a dependency and potential point of failure if the issuer becomes unresponsive. Given the 'RugCheck Score' of 1/100, further due diligence into the project's background and team is strongly recommended. Consider the implications of unavailable holder concentration data, as this prevents a full assessment of supply centralization risk. For enhanced security and transparency, consider a Premium Deploy option that includes a comprehensive review of the issuer's operational procedures for unfreezing accounts and a deeper analysis of the project's reputation.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | 7.1 Architecture & 7.2 Code Security: The WCOR token is an SPL token mint operating under the `spl-token` program. The mint authority is revoked, meaning no new tokens can be minted, and the freeze au |
-| **Governance / Economics** | 3/10 | High | 7.4 Economic: The token has a liquidity of $55,296 USD and a 24-hour volume of $7,276 USD. The volume/liquidity ratio is 0.13, which is considered normal and does not indicate wash trading. The DEX pa |
-| **Upgrades** | 2/10 | Medium | 7.7 Upgrades: The mint authority and freeze authority have both been revoked, indicating that the token's supply is fixed and existing accounts cannot be frozen by an issuer. GoPlus data confirms that |
+| **Technical** | 5/10 | Medium | 7.1 Architecture & 7.2 Code Security: The WCOR token is an SPL token mint operating under the `spl-token` program. The mint authority is revoked, meaning no new tokens can be minted, and the freeze au |
+| **Governance / Economics** | 6/10 | Medium | 7.4 Economic: The token has a liquidity of $55,296 USD and a 24-hour volume of $7,276 USD. The volume/liquidity ratio is 0.13, which is considered normal and does not indicate wash trading. The DEX pa |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority and freeze authority have both been revoked, indicating that the token's supply is fixed and existing accounts cannot be frozen by an issuer. GoPlus data confirms that |
 
 ## Security Findings
 

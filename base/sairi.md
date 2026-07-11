@@ -2,14 +2,14 @@
 token: SAIRI
 ticker: SAIRI
 network: base
-risk_score: 63
+risk_score: 56
 status: high
 date: 2026-06-13
 ---
 
 # SAIRI (SAIRI) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 56/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sairi-base)
 
@@ -23,21 +23,20 @@ The ClankerToken contract implements an ERC20 token with cross-chain capabilitie
 
 For enhanced security and operational flexibility, we recommend a Premium Deploy option. This includes a comprehensive pre-deployment review, gas optimization analysis, and continuous monitoring post-deployment to identify and mitigate potential risks in real-time.
 
-## Security Analysis
-
-The ClankerToken contract implements an ERC20 token with cross-chain capabilities and administrative controls. The contract leverages well-audited OpenZeppelin standards for core token functionality. Key areas of concern include a potentially misleading parameter name for token supply, centralized administrative control over metadata, and the inherent dependency on an external bridge for cross-chain operations.
-
-The ClankerToken contract is generally well-written and leverages robust OpenZeppelin components. Addressing the misleading `maxSupply_` parameter and considering a multi-sig or time-lock for the `_admin` role would significantly enhance the contract's transparency and security posture. For long-term sustainability, the lack of upgradeability should be carefully considered against future needs.
-
-For enhanced security and operational flexibility, we recommend a Premium Deploy option. This includes a comprehensive pre-deployment review, gas optimization analysis, and continuous monitoring post-deployment to identify and mitigate potential risks in real-time.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates good technical practices by inheriting from battle-tested OpenZeppelin ERC20 extensions (ERC20Permit, ERC20Votes, ERC20Burnable), which enhances code security (7.2). It also  |
-| **Governance / Economics** | 6/10 | Medium | The economic model (7.4) initially mints a specified `maxSupply_` on a single chain, but the `crosschainMint` function allows the `SUPERCHAIN_TOKEN_BRIDGE` to mint additional tokens without a global c |
-| **Upgrades** | 6/10 | High | The ClankerToken contract is deployed as a standard, non-upgradeable implementation (7.7). This design choice means that once deployed, the contract's logic cannot be modified. Any future bug fixes, f |
+| **Technical** | 8/10 | Low | The contract demonstrates good technical practices by inheriting from battle-tested OpenZeppelin ERC20 extensions (ERC20Permit, ERC20Votes, ERC20Burnable), which enhances code security (7.2). It also  |
+| **Governance / Economics** | 1/10 | High | The economic model (7.4) initially mints a specified `maxSupply_` on a single chain, but the `crosschainMint` function allows the `SUPERCHAIN_TOKEN_BRIDGE` to mint additional tokens without a global c |
+| **Upgrades** | 8/10 | Low | The ClankerToken contract is deployed as a standard, non-upgradeable implementation (7.7). This design choice means that once deployed, the contract's logic cannot be modified. Any future bug fixes, f |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 

@@ -2,24 +2,58 @@
 token: spucex
 ticker: SPCX
 network: solana
-risk_score: 46
-status: high
+risk_score: 38
+status: medium
 date: 2026-06-16
 ---
 
 # spucex (SPCX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 46/100 — 🟠 High Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spucex-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-spucex (SPCX) is a Solana-based token presenting a mixed security profile for potential investors. On the positive side, ownership of the token contract has been renounced, meaning the original deployer can no longer alter its parameters or mint new tokens, which is a favorable signal against certain types of developer-led manipulation. Additionally, the absence of a mint function prevents arbitrary inflation of the supply. However, several critical concerns contribute to its high-risk score of 46/100. The contract remains unverified, preventing public scrutiny of its code and potential vulnerabilities. Furthermore, liquidity is not locked, posing a significant risk of a rug pull where liquidity could be withdrawn. The top 10 holders collectively control 34.6% of the supply, indicating notable centralization, and while daily volume is $324,598, the liquidity pool is comparatively low at $51,435, suggesting high volatility potential.
+The spucex (SPCX) token mint has no critical authorities enabled, with both mint and freeze authorities revoked. No Token-2022 extensions like transfer hooks or permanent delegates are active. However, holder concentration data was unavailable, preventing a full assessment of supply distribution risk.
 
-The most critical security signals for spucex (SPCX) revolve around its foundational transparency and liquidity management. Firstly, the contract's unverified status is a substantial red flag, as it prevents any public or expert review of its underlying code. Investors cannot ascertain if malicious functions exist or if the token operates as intended, necessitating blind trust. Secondly, the absence of locked liquidity is paramount. This means that the funds providing trading liquidity are not secured for a predetermined period, leaving them vulnerable to removal by liquidity providers. This unlocked liquidity, combined with a relatively low total liquidity of $51,435 compared to daily volume, creates a high potential for significant price volatility and an elevated risk of a liquidity pull event.
+> **Final Recommendation:** The spucex (SPCX) token presents a low technical risk profile due to the revocation of critical mint and freeze authorities and the absence of complex Token-2022 extensions. However, the lack of holder concentration data means that potential risks from concentrated supply cannot be fully assessed. Users should also note that RugCheck.xyz assigned a very low score of 1/100, which, while not triggering a specific "RUGGED" verdict per our rules, suggests caution.
+
+For a Premium Deploy option, consider a comprehensive on-chain analysis of the token's transaction history and holder movements to gain insights into supply distribution and potential whale activity, which was unavailable in this report. This would provide a more complete picture of economic risks.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The spucex (SPCX) token is an SPL Token-2022 mint with address 9qpDk7hGSHqyfMGDT7p4zFQ35aGff248Qes48CgLpump. Both the mint authority and freeze authority have been revoked, meaning no new tokens can b |
+| **Governance / Economics** | 5/10 | Medium | The token has a total DEX liquidity of $23,766 (Fact: "Liquidity (USD): $23,766"). The 24-hour trading volume is $28,752, resulting in a healthy Volume/Liquidity Ratio of 1.21, which does not indicate |
+| **Upgrades** | 8/10 | Low | The token mint's critical authorities, Mint Authority and Freeze Authority, have been revoked, indicating a fixed supply and unfreezable accounts (Fact: "Mint Authority: revoked (None)", "Freeze Autho |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

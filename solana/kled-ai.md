@@ -2,24 +2,56 @@
 token: Kled AI
 ticker: KLED
 network: solana
-risk_score: 34
+risk_score: 21
 status: medium
 date: 2026-06-27
 ---
 
 # Kled AI (KLED) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 21/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kled-ai-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Kled AI (KLED) on the Solana blockchain currently carries a Medium Risk score of 34/100, reflecting a combination of safety signals and critical vulnerabilities. On the positive side, ownership of the contract has been renounced, preventing the creator from modifying key parameters or re-enabling minting. Furthermore, the absence of a mint function ensures that no new tokens can be generated beyond the initial supply. The token demonstrates notable market activity, with a 24-hour volume exceeding $1.7 million and over $629,000 in liquidity. However, significant concerns arise from the contract not being verified, which severely limits transparency and independent code review. Additionally, the liquidity is not locked, posing a substantial risk to investor funds. The top 10 holders control 23.8% of the supply, indicating a moderate level of concentration.
+The KLEDAI (KLED) SPL token mint has its mint and freeze authorities revoked, indicating a fixed supply and no ability to freeze holder accounts. Liquidity is substantial at $654,638, and the trading volume is normal relative to liquidity. However, holder concentration data was unavailable, preventing a full assessment of distribution risk. No critical or high-severity risks were identified based on the available on-chain facts and external security signals.
 
-The two most significant risk factors for Kled AI are the unverified contract and the unlocked liquidity. An unverified contract means the deployed code cannot be publicly matched to its source, making it impossible for investors or security analysts to confirm its functionality or ensure it contains no malicious code. This lack of transparency is a critical red flag. Concurrently, the liquidity being unlocked exposes investors to a potential rug pull scenario, where liquidity providers could withdraw all funds, severely impacting the token's value. While the ownership renunciation is a positive security measure, these two fundamental risks introduce considerable uncertainty and caution for potential investors.
+> **Final Recommendation:** The KLEDAI (KLED) token presents a low technical risk profile due to the revocation of critical administrative authorities (mint and freeze). Holders can be confident in a fixed supply and unfreezable accounts. The token also demonstrates good liquidity and a mature DEX pair. However, the absence of holder concentration data means that potential risks from whale holdings cannot be assessed. Prospective holders should monitor on-chain distribution if this data becomes available. No immediate red flags were identified that would prevent interaction with this token.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.2 Code Security: The token is an SPL token mint operating under the `spl-token` program. Mint and freeze authorities are both revoked, which is a strong security posture as it pre |
+| **Governance / Economics** | 7/10 | Low | 7.4 Economic: The token exhibits healthy liquidity with $654,638 in total DEX liquidity and a 24-hour volume of $121,714. The Volume/Liquidity ratio is 0.19, which is considered normal and does not su |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority and freeze authority have both been revoked, meaning no further tokens can be minted and no accounts can be frozen. This effectively makes the token's supply and core  |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

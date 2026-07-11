@@ -2,24 +2,56 @@
 token: Religion
 ticker: RELIGION
 network: solana
-risk_score: 48
+risk_score: 47
 status: high
 date: 2026-06-18
 ---
 
 # Religion (RELIGION) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 47/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/religion-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-The Religion (RELIGION) token on Solana presents a high-risk profile, as indicated by its 48/100 risk score. On the positive side, the token's ownership has been renounced, which effectively prevents the original creator from unilaterally altering the contract post-deployment. Furthermore, the absence of a mint function safeguards against the arbitrary creation of new tokens, thus mitigating inflationary dilution by the contract owner. However, several critical concerns warrant attention. The contract has not been verified, meaning its underlying code is not publicly accessible for audit or review, posing a significant transparency issue. Liquidity, currently at $23,740 with a 24-hour volume of $227,531, is not locked, raising potential liquidity withdrawal risks. Moreover, the top 10 holders collectively control 35.6% of the supply, indicating a high concentration that could lead to market manipulation.
+This SPL Token-2022 mint, Religion (RELIGION), presents a low-risk profile based on available on-chain data. Both mint and freeze authorities are revoked, preventing further supply inflation or account freezing. No significant Token-2022 extensions like transfer hooks or permanent delegates are active, and metadata is immutable. Holder concentration data was unavailable, which prevents a full assessment of distribution risk.
 
-The most significant security concerns for Religion (RELIGION) investors revolve around the unverified contract and the unlocked liquidity. An unverified contract means that the token's underlying code cannot be independently reviewed by the public or security professionals, leaving its functionality and potential vulnerabilities undisclosed. This fundamental lack of transparency is a critical red flag. Compounding this, the project's liquidity is not locked, which always carries the risk of a sudden withdrawal, potentially making it impossible for holders to sell their tokens. While ownership renunciation and the absence of a mint function offer some protection against developer-initiated dilution or contract changes, the paramount issues of transparency and liquidity security remain unaddressed, alongside significant holder concentration.
+> **Final Recommendation:** Given that the mint and freeze authorities are revoked, and no concerning Token-2022 extensions are active, this token appears to have a fixed supply and immutable core properties. Holders should be aware that holder concentration data was unavailable, so a full assessment of distribution risk is not possible. For a comprehensive understanding, monitor holder distribution as data becomes available.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint, identified by address CkJZvvWbwmiDepzrk71pq6gMXBfRVfUkhXR61iz3pump. Both the mint authority and freeze authority have been revoked, indicating that no further toke |
+| **Governance / Economics** | 4/10 | Medium | The token has a liquidity of $11,284 USD, with a 24-hour volume of $5,285, resulting in a normal Volume/Liquidity Ratio of 0.47. The DEX pair is 15 days old, providing some track record. Holder concen |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and account freeze status cannot be altered by an external key. The token uses the SPL Token-2022 program but has n |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

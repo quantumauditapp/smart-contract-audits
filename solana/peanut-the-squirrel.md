@@ -2,14 +2,14 @@
 token: Peanut the Squirrel
 ticker: PNUT
 network: solana
-risk_score: 73
-status: critical
+risk_score: 50
+status: high
 date: 2026-06-13
 ---
 
 # Peanut the Squirrel (PNUT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 73/100 — 🔴 Critical Risk**
+> **Risk Score: 50/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/peanut-the-squirrel-sol)
 
@@ -21,19 +21,13 @@ This Solana SPL Token mint, 'Peanut the Squirrel (Pnut)', has revoked both mint 
 
 > **Final Recommendation:** Given the very new DEX pair (3 days old), potential holders should exercise caution and monitor the token's activity and community development closely. While core authorities like mint and freeze are revoked, which is positive, the 'Copycat token' label from RugCheck.xyz and the low RugCheck score warrant further investigation into the project's legitimacy and originality. Consider waiting for a more established track record before making significant investments. For premium deployments, ensure thorough due diligence on the project's background and team.
 
-## Security Analysis
-
-This Solana SPL Token mint, 'Peanut the Squirrel (Pnut)', has revoked both mint and freeze authorities, indicating a fixed supply and no ability to freeze user funds. However, the DEX pair is very new, having been created only 3 days ago, which means there is insufficient track record for the token. Holder concentration data was unavailable, and RugCheck.xyz flagged it as a 'Copycat token' with a low score.
-
-Given the very new DEX pair (3 days old), potential holders should exercise caution and monitor the token's activity and community development closely. While core authorities like mint and freeze are revoked, which is positive, the 'Copycat token' label from RugCheck.xyz and the low RugCheck score warrant further investigation into the project's legitimacy and originality. Consider waiting for a more established track record before making significant investments. For premium deployments, ensure thorough due diligence on the project's background and team.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The 'Peanut the Squirrel' token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no holder accounts can be frozen. No |
-| **Governance / Economics** | 6/10 | Medium | The token's DEX pair is very new, established only 3 days ago, which introduces uncertainty regarding its long-term viability and community behavior. Current liquidity is $37,328, with a 24-hour volum |
-| **Upgrades** | 6/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's core parameters (supply, freeze capability) cannot be altered. The token uses the spl-token-2022 program, but no mutable e |
+| **Technical** | 6/10 | Medium | The 'Peanut the Squirrel' token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no holder accounts can be frozen. No |
+| **Governance / Economics** | 4/10 | Medium | The token's DEX pair is very new, established only 3 days ago, which introduces uncertainty regarding its long-term viability and community behavior. Current liquidity is $37,328, with a 24-hour volum |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's core parameters (supply, freeze capability) cannot be altered. The token uses the spl-token-2022 program, but no mutable e |
 
 ## Security Findings
 

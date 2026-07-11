@@ -2,14 +2,14 @@
 token: Football Capital Markets
 ticker: FCM
 network: solana
-risk_score: 59
-status: high
+risk_score: 44
+status: medium
 date: 2026-06-10
 ---
 
 # Football Capital Markets (FCM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/football-capital-markets-sol)
 
@@ -21,19 +21,13 @@ The Football Capital Markets (FCM) SPL Token Mint exhibits strong security confi
 
 > **Final Recommendation:** Given the revoked mint and freeze authorities, the token's supply is fixed, and user accounts cannot be frozen. The absence of active Token-2022 extensions like transfer hooks and permanent delegates reduces operational risks. However, the lack of holder concentration data means the distribution of tokens among top accounts remains unknown, which could indicate potential for price volatility from large holders. Users should consider this data gap and monitor on-chain holder distribution if possible.
 
-## Security Analysis
-
-The Football Capital Markets (FCM) SPL Token Mint exhibits strong security configurations with both mint and freeze authorities revoked, preventing further token issuance or account freezing. No critical Token-2022 extensions like permanent delegates or transfer hooks are active. However, holder concentration data is unavailable, which prevents a full assessment of potential market manipulation risks.
-
-Given the revoked mint and freeze authorities, the token's supply is fixed, and user accounts cannot be frozen. The absence of active Token-2022 extensions like transfer hooks and permanent delegates reduces operational risks. However, the lack of holder concentration data means the distribution of tokens among top accounts remains unknown, which could indicate potential for price volatility from large holders. Users should consider this data gap and monitor on-chain holder distribution if possible.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The Football Capital Markets (FCM) token is implemented using the `spl-token-2022` program, indicating modern Solana token standards. Access control is robust, with both the mint authority and freeze  |
-| **Governance / Economics** | 6/10 | Low | Economically, the token exhibits moderate liquidity of $193,546 USD with a 24-hour trading volume of $1,069,454 USD, suggesting active trading (7.4 Economic). The pair is relatively new, at 16 days ol |
-| **Upgrades** | 6/10 | Low | The token's upgradeability posture is secure, as both mint and freeze authorities are revoked, preventing any unilateral changes to token supply or account status (7.7 Upgrades). Furthermore, GoPlus d |
+| **Technical** | 6/10 | Medium | The Football Capital Markets (FCM) token is implemented using the `spl-token-2022` program, indicating modern Solana token standards. Access control is robust, with both the mint authority and freeze  |
+| **Governance / Economics** | 5/10 | Medium | Economically, the token exhibits moderate liquidity of $193,546 USD with a 24-hour trading volume of $1,069,454 USD, suggesting active trading (7.4 Economic). The pair is relatively new, at 16 days ol |
+| **Upgrades** | 8/10 | Low | The token's upgradeability posture is secure, as both mint and freeze authorities are revoked, preventing any unilateral changes to token supply or account status (7.7 Upgrades). Furthermore, GoPlus d |
 
 ## Security Findings
 

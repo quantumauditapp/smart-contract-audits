@@ -2,14 +2,14 @@
 token: XMAQUINA
 ticker: DEUS
 network: base
-risk_score: 83
+risk_score: 88
 status: critical
 date: 2026-06-10
 ---
 
 # XMAQUINA (DEUS) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 83/100 — 🔴 Critical Risk**
+> **Risk Score: 88/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/xmaquina-base)
 
@@ -21,19 +21,20 @@ This audit focused on the provided Solidity source code, which includes standard
 
 > **Final Recommendation:** The provided `Ownable` contract is well-implemented and follows established security patterns. However, the absence of the core OFT token implementation significantly limits the scope of this audit. A comprehensive security assessment requires the full codebase to evaluate specific business logic, tokenomics, and cross-chain interactions. We recommend providing the complete source code for all relevant contracts for a full audit. For critical deployments, consider our Premium Deploy option, which includes continuous monitoring, incident response planning, and a dedicated security engineer to ensure ongoing protocol integrity.
 
-## Security Analysis
-
-This audit focused on the provided Solidity source code, which includes standard `Ownable` access control and interfaces for an Omnichain Fungible Token (OFT) and LayerZero receiver. The core implementation of the OFT token was not provided, significantly limiting the scope of a comprehensive security review. The `Ownable` contract is a robust, standard implementation. The primary risks identified are related to the inherent centralization of the `Ownable` pattern and the unknown security posture of the unprovided OFT implementation.
-
-The provided `Ownable` contract is well-implemented and follows established security patterns. However, the absence of the core OFT token implementation significantly limits the scope of this audit. A comprehensive security assessment requires the full codebase to evaluate specific business logic, tokenomics, and cross-chain interactions. We recommend providing the complete source code for all relevant contracts for a full audit. For critical deployments, consider our Premium Deploy option, which includes continuous monitoring, incident response planning, and a dedicated security engineer to ensure ongoing protocol integrity.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The technical review (7.1 Architecture, 7.2 Code Security, 7.3 Access Control) found the provided `Ownable` contract to be a standard and robust implementation, inheriting from `Context` for secure se |
-| **Governance / Economics** | 6/10 | Medium | The governance and economic aspects (7.4 Economic, 7.5 Governance) are primarily influenced by the `Ownable` pattern, which centralizes control in a single address. This introduces a single point of f |
-| **Upgrades** | 6/10 | Low | Based on the provided source code (7.7 Upgrades), no explicit upgrade mechanism (e.g., proxy pattern like UUPS or Transparent) was identified. This implies the contract is not designed to be upgradeab |
+| **Technical** | 4/10 | Medium | The technical review (7.1 Architecture, 7.2 Code Security, 7.3 Access Control) found the provided `Ownable` contract to be a standard and robust implementation, inheriting from `Context` for secure se |
+| **Governance / Economics** | 1/10 | High | The governance and economic aspects (7.4 Economic, 7.5 Governance) are primarily influenced by the `Ownable` pattern, which centralizes control in a single address. This introduces a single point of f |
+| **Upgrades** | 4/10 | Medium | Based on the provided source code (7.7 Upgrades), no explicit upgrade mechanism (e.g., proxy pattern like UUPS or Transparent) was identified. This implies the contract is not designed to be upgradeab |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 71.9% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 

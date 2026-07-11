@@ -2,24 +2,56 @@
 token: FarmTown
 ticker: FARM
 network: solana
-risk_score: 43
+risk_score: 32
 status: medium
 date: 2026-06-22
 ---
 
 # FarmTown (FARM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 32/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/farmtown-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-FarmTown (FARM) is a token operating on the Solana blockchain, presenting a mixed bag of security signals for investors. A significant concern is that the contract is not verified, which severely limits transparency and the ability for independent security reviews of its underlying code. On a positive note, ownership of the contract has been renounced, meaning the original deployer can no longer alter key parameters, and no mint function exists, preventing the team from unilaterally creating new tokens and diluting the supply. The top 10 holders collectively control 20.3% of the supply, indicating moderate concentration. However, liquidity for FARM is not locked, posing a potential risk. The token currently sees a 24-hour volume of $766,988 against $112,347 in liquidity, with an overall risk score of 43/100, categorized as Medium Risk.
+This audit of the FarmTown (FARM) SPL token mint found no critical or high-severity issues based on the provided on-chain facts and external security signals. The mint and freeze authorities are revoked, and no Token-2022 extensions posing significant risks are active. Holder concentration data was unavailable from RPC, but RugCheck.xyz indicated high ownership by top holders, which is a market risk to consider.
 
-The two most critical risk factors for FarmTown (FARM) are the unverified contract and the unlocked liquidity. The absence of a verified contract means its code is not publicly auditable, making it impossible for investors to confirm its functionality, absence of vulnerabilities, or malicious features like hidden fees. This lack of transparency is a major red flag. Furthermore, with liquidity not locked, there's a significant risk of a 'rug pull,' where liquidity providers could withdraw funds, drastically impacting the token's price and making it difficult for holders to sell. While ownership renunciation is a positive sign, these two core issues introduce substantial investment uncertainty.
+> **Final Recommendation:** Based on the available data and deterministic rules, the FarmTown (FARM) token mint presents a low-risk profile regarding its on-chain configuration and authorities. Key administrative powers like minting and freezing have been revoked, and no high-risk Token-2022 extensions are active. However, holder concentration data was unavailable from RPC, and RugCheck.xyz indicated high ownership by top holders, which could still pose a market risk. Users should consider this external signal and the relatively new pair age (12 days) when evaluating investment decisions. No Premium Deploy option is applicable for SPL token mints as there is no source code to deploy.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The FarmTown (FARM) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing accounts can be frozen. |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $39,311 USD in total DEX liquidity, which is above the very low liquidity threshold. The 24-hour volume of $119,821 results in a Volume/Liquidity Ratio of 3. |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the token have been revoked, meaning no further administrative changes can be made to the token's supply or account freezing capabilities. The token uses th |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

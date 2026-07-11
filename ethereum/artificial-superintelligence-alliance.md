@@ -2,14 +2,14 @@
 token: Artificial Superintelligence Alliance
 ticker: FET
 network: ethereum
-risk_score: 63
+risk_score: 66
 status: high
 date: 2026-06-10
 ---
 
 # Artificial Superintelligence Alliance (FET) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/artificial-superintelligence-alliance-eth)
 
@@ -21,19 +21,20 @@ This audit covers the provided Solidity source code for the OpenZeppelin `Enumer
 
 > **Final Recommendation:** The audited OpenZeppelin `EnumerableSet` and `Address` libraries are robust, well-tested, and secure. Developers integrating these libraries should ensure they are using the latest stable versions where possible and fully understand the implications of functions like `Address.isContract`. It is crucial that consuming contracts correctly handle return values and adhere to secure coding practices when interacting with these libraries to maintain overall system integrity. For projects requiring the highest assurance, a Premium Deploy option is recommended, which includes continuous monitoring and incident response planning post-deployment.
 
-## Security Analysis
-
-This audit covers the provided Solidity source code for the OpenZeppelin `EnumerableSet` and `Address` libraries. These are foundational utility libraries widely used in the EVM ecosystem. The code exhibits high quality, robust design, and adherence to established best practices. While the prefill suggested a 'FetchToken' contract, the provided source code consists solely of these libraries. The inherent technical risk of these specific libraries is very low, assuming correct integration into consuming contracts.
-
-The audited OpenZeppelin `EnumerableSet` and `Address` libraries are robust, well-tested, and secure. Developers integrating these libraries should ensure they are using the latest stable versions where possible and fully understand the implications of functions like `Address.isContract`. It is crucial that consuming contracts correctly handle return values and adhere to secure coding practices when interacting with these libraries to maintain overall system integrity. For projects requiring the highest assurance, a Premium Deploy option is recommended, which includes continuous monitoring and incident response planning post-deployment.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The technical review (7.1 Architecture, 7.2 Code Security) confirms that the `EnumerableSet` and `Address` libraries are well-structured and implement their intended functionality efficiently and secu |
-| **Governance / Economics** | 6/10 | Low | As utility libraries, `EnumerableSet` and `Address` do not possess inherent governance mechanisms or economic models (7.4 Economic, 7.5 Governance). Therefore, direct governance or economic risks with |
-| **Upgrades** | 6/10 | Low | Libraries in Solidity are generally not upgradeable in the same manner as proxy contracts (7.7 Upgrades). Once deployed, their code is immutable. Any 'upgrade' would involve deploying new versions of  |
+| **Technical** | 6/10 | Medium | The technical review (7.1 Architecture, 7.2 Code Security) confirms that the `EnumerableSet` and `Address` libraries are well-structured and implement their intended functionality efficiently and secu |
+| **Governance / Economics** | 1/10 | High | As utility libraries, `EnumerableSet` and `Address` do not possess inherent governance mechanisms or economic models (7.4 Economic, 7.5 Governance). Therefore, direct governance or economic risks with |
+| **Upgrades** | 5/10 | Medium | Libraries in Solidity are generally not upgradeable in the same manner as proxy contracts (7.7 Upgrades). Once deployed, their code is immutable. Any 'upgrade' would involve deploying new versions of  |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 87.1% |
+| **Top-3 Unlocked** | ⚠️ 95.8% |
 
 ## Security Findings
 

@@ -2,24 +2,72 @@
 token: Uniswap
 ticker: UNI
 network: ethereum
-risk_score: 68
-status: high
+risk_score: 72
+status: critical
 date: 2026-06-16
 ---
 
 # Uniswap (UNI) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 72/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/uniswap-eth)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Uniswap (UNI) on Ethereum presents a mixed security profile for investors, marked by both foundational strengths and areas requiring scrutiny. The token contract is verified, ensuring the deployed code matches the publicly available source, and notably, no mint function exists, preventing arbitrary inflation of the supply. However, key data points indicate potential centralized control and liquidity vulnerabilities. Ownership of the contract has not been renounced, and the project's liquidity is not explicitly locked. Furthermore, a significant 52.3% of the total supply is concentrated among the top 10 holders. With a 24-hour volume of $2,038,992 and total liquidity at $12,308,227, UNI currently carries a high-risk score of 68/100.
+The audit of the Uni token contract revealed a robust implementation of ERC-20 standards with added governance features. Strengths include the use of OpenZeppelin's SafeMath library and EIP-712 for gasless transactions. However, significant centralization risk exists with the 'minter' role, which can control token supply and bypass minting cooldowns. The contract's non-upgradeable nature and use of an older Solidity compiler version also contribute to the overall risk profile.
 
-A primary security concern for UNI centers on its foundational control mechanisms. The token contract's ownership has not been renounced, meaning a specific address or multi-signature wallet retains administrative capabilities. Coupled with the fact that liquidity is not explicitly locked, this introduces potential risks related to centralized control over the token's operational parameters or its market stability. Furthermore, a significant 52.3% of the supply is held by the top 10 holders, indicating a high degree of distribution concentration. These factors, alongside a 'High Risk' score of 68/100, warrant careful consideration regarding potential governance influence and market manipulation.
+> **Final Recommendation:** The Uni contract demonstrates a solid foundation for an ERC-20 token with governance capabilities. Addressing the identified high-severity centralization risks, particularly around the 'minter' role's ability to bypass cooldowns, is paramount. While non-upgradeability is a design choice, the project should be aware of its implications for long-term maintenance and bug fixes. Consider implementing a multi-signature wallet or a time-locked contract for critical administrative functions like `setMinter` and `setMintingAllowedAfter` to mitigate centralization risks.
+
+For enhanced security and ongoing monitoring, a Premium Deploy option is recommended. This service provides continuous threat monitoring, incident response planning, and regular security reviews post-deployment, ensuring the protocol remains resilient against evolving threats and operational challenges.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The technical architecture (7.1 Architecture) is well-structured, leveraging established patterns for ERC-20 and governance delegation. Code security (7.2 Code Security) is enhanced by the use of Open |
+| **Governance / Economics** | 1/10 | High | The economic model (7.4 Economic) incorporates a minting cap and a minimum time between mints, providing some control over supply inflation. The governance mechanism (7.5 Governance) uses a standard d |
+| **Upgrades** | 5/10 | Medium | The contract is designed as non-upgradeable (7.7 Upgrades), which simplifies its architecture by avoiding proxy complexities. However, this design choice introduces a high operational risk (7.8 Operat |
+
+## Security Findings
+
+_🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
+
+### `H-01` — Centralized Minter Role with Significant Power  *(Severity: High · Status: Unresolved)*
+
+The `minter` address has extensive control over the token supply, including the ability to mint new tokens and transfer the `minter` role to any address. While there are `mintCap` and `minimumTimeBetweenMints` restrictions, a compromised or malicious `minter` could still significantly impact the token's economic stability by inflating the supply up to the cap. This represents a single point of failure for token supply management.
+
+**Recommendation:** Implement a multi-signature wallet or a time-locked contract for the `minter` role. For critical functions like `setMinter`, consider a governance-controlled mechanism or a multi-step transfer process with a delay to allow community oversight and intervention.
+
+
+### `H-02` — Minter Can Bypass Minting Cooldown  *(Severity: High · Status: Unresolved)*
+
+The `setMintingAllowedAfter` function allows the `minter` to set an arbitrary timestamp for when minting is allowed. A malicious `minter` could call `mint`, then immediately call `setMintingAllowedAfter` with a past timestamp (e.g., `block.timestamp - minimumTimeBetweenMints`), effectively resetting the cooldown period and allowing subsequent mints to occur without respecting the `minimumTimeBetweenMints` constraint. This bypasses a critical economic control.
+
+**Recommendation:** Modify the `setMintingAllowedAfter` function to only allow setting a future timestamp that is greater than the current `mintingAllowedAfter` value, or remove the function entirely and rely solely on the `mint` function to update `mintingAllowedAfter` sequentially. Alternatively, ensure that `setMintingAllowedAfter` can only be called by a robust governance mechanism with appropriate time delays.
+
+
+### `M-01` — Outdated Solidity Compiler Version  *(Severity: Medium · Status: Unresolved)*
+
+The contract is compiled with Solidity version `^0.5.16`. Newer versions (e.g., `0.8.x`) include built-in overflow/underflow checks by default, reducing reliance on libraries like `SafeMath` and potentially offering gas optimizations and improved security features. Using an older compiler version might expose the contract to known compiler-level bugs or prevent it from benefiting from recent security enhancements.
+
+**Recommendation:** Consider upgrading the contract to a more recent and stable Solidity compiler version (e.g., `0.8.x`). This would involve a thorough review and testing of the code to ensure compatibility and correct behavior with the new compiler.
+
+
+### `L-01` — Non-Upgradeability of Contract  *(Severity: Low · Status: Unresolved)*
+
+The contract is deployed as an immutable, non-upgradeable contract. While this simplifies the architecture and removes proxy-related risks, it means that any bugs discovered post-deployment cannot be fixed on-chain, nor can new features be added without deploying an entirely new contract and migrating all users and assets. This poses a long-term operational and maintenance challenge.
+
+**Recommendation:** While a design choice, the project should be fully aware of the implications. For future contracts, consider using an upgradeable proxy pattern (e.g., UUPS) if the ability to fix bugs or add features post-deployment is desired. For this contract, ensure comprehensive testing and auditing to minimize the risk of immutable flaws.
+
+
+### `I-01` — Use of Experimental ABIEncoderV2 Pragma  *(Severity: Informational · Status: Unresolved)*
+
+The contract uses `pragma experimental ABIEncoderV2;`. While `ABIEncoderV2` has been stable since Solidity 0.6.0, its use in an older compiler version (`0.5.16`) where it was still marked as experimental could theoretically introduce unforeseen edge cases or vulnerabilities. Although widely adopted, relying on experimental features always carries a slight, albeit diminishing, risk.
+
+**Recommendation:** If upgrading to a newer Solidity version (e.g., `0.8.x`), the `experimental` keyword for `ABIEncoderV2` can be removed as it is stable by default. For the current version, ensure thorough testing of all functions that rely on complex data types or nested arrays/structs to confirm correct ABI encoding/decoding behavior.
 
 ## Token Metrics
 

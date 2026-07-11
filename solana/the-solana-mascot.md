@@ -2,14 +2,14 @@
 token: The Solana Mascot
 ticker: SOLY
 network: solana
-risk_score: 59
-status: high
+risk_score: 41
+status: medium
 date: 2026-06-10
 ---
 
 # The Solana Mascot (SOLY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-solana-mascot-sol)
 
@@ -21,19 +21,13 @@ This audit of The Solana Mascot (SOLY) SPL Token Mint found no critical or high-
 
 > **Final Recommendation:** This token presents a low technical risk profile due to the revocation of critical authorities and the absence of risky Token-2022 extensions. Holders can be confident that the supply is fixed and their tokens cannot be frozen. However, the lack of holder concentration data means the risk of market manipulation by large holders remains unknown. Before making significant investments, it is advisable to monitor on-chain holder distribution if that data becomes available. For enhanced security and monitoring, consider a Premium Deploy option with continuous on-chain analysis.
 
-## Security Analysis
-
-This audit of The Solana Mascot (SOLY) SPL Token Mint found no critical or high-severity issues based on the provided on-chain facts and external security signals. The mint and freeze authorities have been revoked, and no Token-2022 extensions posing significant risks (like permanent delegate or transfer hook) are active. Holder concentration data was unavailable, which represents an unassessed risk.
-
-This token presents a low technical risk profile due to the revocation of critical authorities and the absence of risky Token-2022 extensions. Holders can be confident that the supply is fixed and their tokens cannot be frozen. However, the lack of holder concentration data means the risk of market manipulation by large holders remains unknown. Before making significant investments, it is advisable to monitor on-chain holder distribution if that data becomes available. For enhanced security and monitoring, consider a Premium Deploy option with continuous on-chain analysis.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.8 Operations: The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, prev |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic: The token exhibits moderate liquidity with $21,076 USD available on DEXs, which is sufficient for small trades but may lead to slippage for larger positions. The 24-hour volume to liquid |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The token's configuration is highly immutable, with both mint and freeze authorities revoked. This means no further tokens can be minted, and no accounts can be frozen. Furthermore, GoPl |
+| **Technical** | 6/10 | Medium | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.8 Operations: The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, prev |
+| **Governance / Economics** | 5/10 | Medium | 7.4 Economic: The token exhibits moderate liquidity with $21,076 USD available on DEXs, which is sufficient for small trades but may lead to slippage for larger positions. The 24-hour volume to liquid |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The token's configuration is highly immutable, with both mint and freeze authorities revoked. This means no further tokens can be minted, and no accounts can be frozen. Furthermore, GoPl |
 
 ## Security Findings
 

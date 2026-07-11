@@ -2,24 +2,56 @@
 token: World Peace 
 ticker: PEACE 
 network: solana
-risk_score: 33
+risk_score: 38
 status: medium
 date: 2026-06-15
 ---
 
 # World Peace  (PEACE ) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 33/100 — 🟡 Medium Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-peace-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-The World Peace (PEACE) token on Solana currently holds a Medium Risk score of 33/100, indicating a blend of inherent factors for investors to consider. On the positive side, the token's ownership has been renounced, which means the original creator can no longer modify contract parameters, fostering a degree of decentralization. Furthermore, the absence of a mint function prevents the arbitrary creation of new tokens, safeguarding against inflationary exploits by a developer. However, significant security concerns arise from the contract not being verified, which limits transparency and makes independent security analysis challenging without full code visibility. The current liquidity of $61,711 is also not locked, posing a potential vulnerability for liquidity providers to withdraw funds. With 31.4% of the supply held by the top 10 holders, there's a notable concentration of tokens, which could influence market stability.
+This SPL Token-2022 mint, "World Peace" (Peace), demonstrates a strong security posture regarding its core minting and freezing authorities, both of which are revoked. The token does not utilize any potentially risky Token-2022 extensions like transfer hooks or default frozen states, and its metadata is immutable. Holder concentration data was unavailable, preventing a full assessment of supply distribution risk.
 
-Two critical areas warrant immediate investor attention: the unverified contract and the unlocked liquidity. The lack of contract verification means the underlying code is not publicly visible or auditable, introducing a significant trust factor and potential for hidden vulnerabilities or malicious functions. This makes it impossible for independent security analysts to fully assess its integrity. Compounding this, the liquidity of $61,711 is not locked. This is a primary concern for investors as it means the funds providing market depth could be removed at any time, potentially leading to a sharp devaluation or a 'rug pull' scenario. Additionally, the concentration of 31.4% of the supply among the top 10 holders presents a centralization risk.
+> **Final Recommendation:** Based on the available facts, the "World Peace" token appears to have a robust security configuration with critical authorities revoked and no active mutable extensions. Users should be aware that holder concentration data was unavailable, which is a common factor in price volatility. Before making significant investments, consider waiting for holder distribution data to become available to assess potential whale risks.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked, which prevents further token minting or freezing of user accounts (Fact: Mint Authority: revoked (N |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $32,041 USD available on DEXs (Fact: Liquidity (USD): $32,041). The 24-hour volume is $3,391, resulting in a normal Volume/Liquidity Ratio of 0.11, which doe |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both Mint and Freeze authorities (Fact: Mint Authority: revoked (None), Freeze Authority: revoked (None)). It is an SPL Token-2022, b |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

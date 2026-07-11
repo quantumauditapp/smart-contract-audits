@@ -2,24 +2,56 @@
 token: Jupiter
 ticker: JUP
 network: solana
-risk_score: 58
-status: high
+risk_score: 34
+status: medium
 date: 2026-06-21
 ---
 
 # Jupiter (JUP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 34/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jupiter-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Jupiter (JUP) on Solana presents a complex security profile for investors. On the positive side, the token's ownership has been renounced, which removes the risk of the original deployer making malicious contract changes post-launch. Furthermore, the absence of a mint function ensures no new tokens can be arbitrarily created, protecting against inflationary dilution. The token also demonstrates substantial market activity with a 24-hour volume exceeding $249 million and considerable liquidity at $88 million, indicating strong trading interest. However, several critical red flags are present. The contract is not verified, which significantly impedes transparency and makes it impossible for the public to independently confirm its intended behavior or identify vulnerabilities without direct access to the code. This lack of verification, combined with an overall risk score of 58/100, categorizes JUP as a high-risk asset. Investors should approach with caution due to these unaddressed issues.
+The Jupiter (JUP) token mint exhibits strong security configurations with both mint and freeze authorities revoked, ensuring a fixed supply and preventing account freezing. Liquidity is robust, and trading volume appears healthy. However, holder concentration data was unavailable, preventing a full assessment of distribution risk. A discrepancy exists regarding metadata mutability, with RugCheck flagging it as mutable while GoPlus reports it as immutable.
 
-The most critical risk factors for Jupiter (JUP) are the unverified contract and the highly concentrated token distribution. An unverified contract means its underlying code is not publicly auditable or transparent, leaving investors blind to potential hidden functions or exploitable vulnerabilities. This lack of transparency is a major concern. Compounding this, the top 10 holders collectively control 68.3% of the total supply. Such high concentration suggests significant whale influence, potentially enabling large-scale selling events that could drastically impact market stability and price. Additionally, with liquidity not locked, a theoretical risk of liquidity withdrawal leading to a rug pull exists. These combined factors warrant significant investor vigilance.
+> **Final Recommendation:** Based on the available on-chain data and external signals, the Jupiter (JUP) token mint appears to be robustly configured with critical authorities revoked, ensuring a fixed supply and preventing arbitrary freezing of funds. Liquidity is high, and trading patterns are normal, suggesting a healthy market. However, the absence of holder concentration data means that potential risks associated with concentrated supply cannot be assessed. Investors should also note the conflicting information regarding metadata mutability from GoPlus and RugCheck. It is recommended to verify the metadata immutability on-chain if this is a critical concern, and to monitor holder distribution if such data becomes available. For enhanced security, consider utilizing a Premium Deploy option for future token launches to ensure comprehensive pre-deployment audits and continuous monitoring.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.2 Code Security: The token is an SPL token mint utilizing the standard `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked (None), indicating that  |
+| **Governance / Economics** | 5/10 | Medium | 7.4 Economic: The token exhibits substantial liquidity with $167,376,320 USD available on DEXs. The 24-hour volume of $281,072,047 USD results in a healthy Volume/Liquidity Ratio of 1.68, which is con |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, meaning the token's supply and account freezing capabilities cannot be altered post-launch. The token is not using Token-2022 ex |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

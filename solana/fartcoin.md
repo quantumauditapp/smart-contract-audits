@@ -17,23 +17,17 @@ date: 2026-07-10
 
 ## Audit Summary
 
-The Fartcoin SPL token mint has its mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts by the issuer. However, new holder accounts are created in a frozen state, requiring an explicit unfreeze operation by an authority before tokens can be transferred. Holder concentration data was unavailable, and RugCheck.xyz provided a very low score (1/100) without explicitly flagging it as 'RUGGED'.
+This SPL Token Mint audit for Fartcoin (Fartcoin) identified a High-severity risk: new holder accounts are created in a frozen state, requiring manual unfreezing by an authority. Holder distribution data was unavailable, preventing an assessment of supply concentration. All critical mint and freeze authorities are revoked, and metadata is immutable.
 
-> **Final Recommendation:** Before interacting with Fartcoin, it is critical to understand the implications of the 'Default Frozen State' extension. New token accounts will be unusable until an authority explicitly unfreezes them. Verify the availability and responsiveness of the entity responsible for unfreezing accounts. Given the unavailability of holder concentration data, it is advisable to proceed with caution regarding potential market manipulation from large holders. The low RugCheck score (1/100) also warrants further investigation into the project's background, despite not being explicitly flagged as 'RUGGED'. For enhanced security, consider a Premium Deploy option that includes a comprehensive review of the unfreezing mechanism and a deeper dive into the project's history and team.
-
-## Security Analysis
-
-The Fartcoin SPL token mint has its mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts by the issuer. However, new holder accounts are created in a frozen state, requiring an explicit unfreeze operation by an authority before tokens can be transferred. Holder concentration data was unavailable, and RugCheck.xyz provided a very low score (1/100) without explicitly flagging it as 'RUGGED'.
-
-Before interacting with Fartcoin, it is critical to understand the implications of the 'Default Frozen State' extension. New token accounts will be unusable until an authority explicitly unfreezes them. Verify the availability and responsiveness of the entity responsible for unfreezing accounts. Given the unavailability of holder concentration data, it is advisable to proceed with caution regarding potential market manipulation from large holders. The low RugCheck score (1/100) also warrants further investigation into the project's background, despite not being explicitly flagged as 'RUGGED'. For enhanced security, consider a Premium Deploy option that includes a comprehensive review of the unfreezing mechanism and a deeper dive into the project's history and team.
+> **Final Recommendation:** Holders considering Fartcoin should be aware that new token accounts are created in a frozen state. This means that upon receiving tokens, users may not be able to transfer them until their account is explicitly unfrozen by an active authority. It is crucial to confirm the availability and responsiveness of an issuer or designated authority to unfreeze accounts to ensure token spendability. Without this, tokens may become unspendable.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Fartcoin token (9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump) is an SPL token operating under the `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no n |
-| **Governance / Economics** | 5/10 | Medium | Economic stability indicators show a healthy liquidity of $6,407,559 USD and a 24-hour trading volume of $713,270 USD. The volume/liquidity ratio is 0.11, which is normal and does not suggest wash tra |
-| **Upgrades** | 8/10 | Low | The Fartcoin SPL token mint has a robust upgrade posture regarding core authorities, with both the mint authority and freeze authority permanently revoked. This prevents any future changes to the toke |
+| **Technical** | 5/10 | Medium | The Fartcoin token is implemented using the standard `spl-token` program. Its mint authority and freeze authority are both revoked, indicating a fixed supply and immutability of account freeze status  |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits healthy liquidity with $6,359,567 in total DEX liquidity and a 24-hour trading volume of $516,813. The volume-to-liquidity ratio is 0.08, which is normal and does not suggest wash t |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the Fartcoin token have both been permanently revoked, ensuring that no new tokens can be minted and no existing accounts can be frozen by an issuer. The to |
 
 ## LP Distribution
 
@@ -47,7 +41,7 @@ _🟠 1 High · ⚪ 2 Informational_
 
 ### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
 
-New holder accounts are created in a frozen state (`GoPlus.default_account_state: 1`) and require explicit unfreezing by an authority.
+New holder accounts are created in a frozen state (default_account_state: 1) and require explicit unfreezing by an authority.
 
 **Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
 

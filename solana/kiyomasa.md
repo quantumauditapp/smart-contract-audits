@@ -2,24 +2,56 @@
 token: Kiyomasa
 ticker: 清正
 network: solana
-risk_score: 34
+risk_score: 29
 status: medium
 date: 2026-06-14
 ---
 
 # Kiyomasa (清正) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 29/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kiyomasa-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Kiyomasa (清正) on Solana presents a mixed security profile for investors. Positively, ownership has been renounced, meaning the original deployer cannot modify core contract parameters or control the project post-launch. Furthermore, the absence of a mint function prevents the creation of new tokens, safeguarding against inflationary supply dilution by the developer. However, significant red flags are present. The contract is unverified, preventing public inspection and independent audit of its code, which introduces considerable trust issues. Crucially, liquidity is not locked, exposing investors to the risk of a liquidity pull, which could severely impact the token's tradability and price. The top 10 holders control 25.4% of the supply, indicating some centralization, while current liquidity stands at $56,111 against a 24-hour volume of $410,745.
+This SPL Token Mint, Kiyomasa (清正), demonstrates a robust security posture with both mint and freeze authorities revoked, and immutable metadata. No high-risk Token-2022 extensions like transfer hooks or permanent delegates are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-The two most critical security signals for Kiyomasa (清正) are the unverified contract and unlocked liquidity. An unverified contract means investors cannot independently confirm the deployed code's safety or functionality, leaving them vulnerable to hidden malicious code. This lack of transparency is a major concern. Even more critically, the absence of locked liquidity means the funds backing the token's trading can be withdrawn by liquidity providers at any time. This exposes investors to a 'rug pull' scenario, where the token's value can plummet and become untradable. While ownership is renounced, these two fundamental risks severely undermine investor safety and transparency, despite the medium risk score.
+> **Final Recommendation:** Based on the available on-chain data, the Kiyomasa (清正) token appears to be well-configured from a security perspective, with critical authorities revoked and no active high-risk Token-2022 extensions. Holders should be aware that holder concentration data was not available, so a full assessment of potential market manipulation from large holders cannot be made. For a comprehensive understanding, monitor on-chain holder distribution if data becomes available.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The token (7.1 Architecture) is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked (7.3 Access Control), indicating that no single entity can mint new tokens or fre |
+| **Governance / Economics** | 7/10 | Low | The token has a liquidity of $18,245 USD (7.4 Economic), which is moderate. The 24-hour volume is $8,361, resulting in a healthy Volume/Liquidity Ratio of 0.46, not indicating wash trading. The DEX pa |
+| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked (7.7 Upgrades), meaning the token's core parameters (supply, freeze capability) cannot be altered. The token's metadata is immutable, preventin |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

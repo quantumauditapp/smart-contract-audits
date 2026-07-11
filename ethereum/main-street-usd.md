@@ -2,24 +2,85 @@
 token: Main Street USD
 ticker: MSUSD
 network: ethereum
-risk_score: 50
-status: high
+risk_score: 84
+status: critical
 date: 2026-06-21
 ---
 
 # Main Street USD (MSUSD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 84/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/main-street-usd-eth)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Main Street USD (MSUSD) on Ethereum presents a mixed security profile. Positively, its contract is verified, enhancing transparency, and ownership has been renounced, meaning the original deployer cannot alter the contract's core functions. The absence of a mint function prevents arbitrary supply inflation, offering some protection against token dilution. However, significant red flags exist. A critical concern is the extreme centralization of token supply, with the top 10 holders controlling 99.2%. This concentration poses a substantial risk of market manipulation and potential large-scale sell-offs. Furthermore, the absence of locked liquidity increases the vulnerability to a rug pull, where liquidity providers could withdraw funds, rendering the token illiquid. Despite a notable 24-hour trading volume of over $5 million, the relatively low liquidity of $253,949 suggests potential for high slippage and price volatility, particularly for larger transactions. This combination contributes to its assessed high-risk score of 50/100.
+This audit covers the ERC1967Proxy contract, which is a standard upgradeable proxy implementation from OpenZeppelin. The contract facilitates upgradeability by delegating calls to an implementation address stored in an EIP-1967 compliant storage slot. The core proxy logic is robust and battle-tested, with inherent risks primarily stemming from the deployment process, the security of the admin key, and the design of the implementation contracts.
 
-The most critical security concerns for MSUSD are the extreme token centralization and unlocked liquidity. With 99.2% of the supply held by the top 10 wallets, there's a significant risk of coordinated selling or manipulation, potentially causing severe price impact. The lack of locked liquidity means the current providers could withdraw their funds at any time, leaving investors unable to sell their tokens and exposing them to a rug pull scenario. While the contract's renounced ownership and absence of a mint function offer some foundational security against developer-initiated contract changes or supply inflation, these are heavily outweighed by the significant risks associated with concentrated holdings and unprotected liquidity, warranting a high-risk assessment.
+> **Final Recommendation:** The ERC1967Proxy contract is a robust and secure component, leveraging OpenZeppelin's audited libraries. The primary risks are not within the proxy's code itself but in its deployment, the security of the admin key, and the design and deployment of the implementation contracts. It is crucial to ensure proper initialization of implementation contracts and robust access control for the admin role. Consider a Premium Deploy option for enhanced security during deployment, including multi-signature control over the admin key and a time-locked upgrade mechanism for critical contracts.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The contract utilizes OpenZeppelin's battle-tested ERC1967Proxy, Proxy, and ERC1967Utils libraries, ensuring a high standard of code security (7.2 Code Security). It correctly implements the EIP-1967  |
+| **Governance / Economics** | 1/10 | High | This ERC1967Proxy contract itself does not contain any economic or governance logic (7.4 Economic, 7.5 Governance). Its sole purpose is to delegate calls to an implementation contract. Therefore, econ |
+| **Upgrades** | 3/10 | High | The contract is designed for upgradeability using the EIP-1967 proxy pattern (7.7 Upgrades). It allows for the implementation contract to be changed via the `upgradeToAndCall` function, which also sup |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Uups |
+| **Implementation** | ⚠️ Unverified source |
+| **Upgrades (30d)** | 0 (stable) |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
+
+## Security Findings
+
+_🟢 2 Low · ⚪ 3 Informational_
+
+### `L-01` — Implementation Contract Initialization Vulnerability  *(Severity: Low · Status: Unresolved)*
+
+The proxy's constructor calls `upgradeToAndCall`, which can execute initialization logic on the implementation. If the implementation contract's `initialize` function is not called correctly or is omitted during deployment, it can lead to an uninitialized state. This often allows an attacker to call the `initialize` function themselves, gaining administrative control over the implementation contract, even if the proxy's admin is secure. This is a common pitfall in proxy deployments.
+
+**Recommendation:** Ensure that the `_data` parameter in the proxy's constructor or a subsequent `upgradeToAndCall` call securely invokes the `initialize` function of the implementation contract. The `initialize` function should use an `initializer` modifier to prevent multiple calls and ensure it's called by a trusted address (e.g., the deployer or a governance contract).
+
+
+### `L-02` — Admin Key Security Criticality  *(Severity: Low · Status: Unresolved)*
+
+The security of the entire system relies heavily on the private key or mechanism controlling the `admin` role, which has the power to upgrade the implementation contract (7.3 Access Control, 7.8 Operations). A compromise of this admin key would allow an attacker to deploy a malicious implementation, potentially leading to a complete loss of funds or system control.
+
+**Recommendation:** Implement robust security measures for the admin key. This typically involves using a multi-signature wallet (e.g., Gnosis Safe) for the admin address, potentially with a time-lock mechanism for upgrades. Avoid using a single externally owned account (EOA) as the sole admin.
+
+
+### `I-01` — Standard OpenZeppelin Proxy Implementation  *(Severity: Informational · Status: Resolved)*
+
+The contract utilizes the `ERC1967Proxy` from OpenZeppelin Contracts, which is a widely adopted, thoroughly audited, and battle-tested library for upgradeable proxy patterns. This significantly reduces the risk of vulnerabilities within the proxy's core logic (7.2 Code Security).
+
+**Recommendation:** Continue to rely on well-established and audited libraries like OpenZeppelin. Regularly monitor for updates and security advisories from the OpenZeppelin team.
+
+
+### `I-02` — Storage Collision Risk in Implementation Contracts  *(Severity: Informational · Status: Unresolved)*
+
+While the `ERC1967Proxy` itself uses EIP-1967 compliant storage slots to prevent collisions with its own logic, the implementation contract must carefully manage its storage layout across upgrades. Incorrectly modifying the storage layout in a new implementation can lead to storage collisions, corrupting data or causing unexpected behavior (7.1 Architecture).
+
+**Recommendation:** Adhere strictly to storage layout compatibility rules when developing and upgrading implementation contracts. Avoid changing the order or type of state variables, and only append new variables to the end of the storage layout. Utilize tools like OpenZeppelin's Upgrades Plugins to detect potential storage collisions during development and deployment.
+
+
+### `I-03` — Immutability of Proxy Core Logic  *(Severity: Informational · Status: Resolved)*
+
+The `ERC1967Proxy` contract's core delegation logic (`_delegate`, `fallback`) is immutable once deployed. This means that the fundamental mechanism of how the proxy operates cannot be changed, providing a stable and predictable base layer (7.1 Architecture). Only the target implementation contract can be upgraded.
+
+**Recommendation:** This is an inherent design feature of the proxy pattern and is considered a strength, as it ensures the proxy's behavior remains consistent. No specific action is required.
 
 ## Token Metrics
 

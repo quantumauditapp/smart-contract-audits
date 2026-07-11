@@ -23,21 +23,26 @@ This audit covers the `BridgeToken` contract, which is an OpenZeppelin `BeaconPr
 
 We recommend a Premium Deploy option for a comprehensive audit that includes the implementation contract, the beacon contract, and any associated governance or administrative contracts. This will provide a complete security posture assessment, identify potential vulnerabilities across the entire system, and offer tailored recommendations for hardening and operational best practices.
 
-## Security Analysis
-
-This audit covers the `BridgeToken` contract, which is an OpenZeppelin `BeaconProxy`. The provided source code only includes the proxy wrapper, not the underlying implementation contract that defines the token's core logic. This significantly limits the scope of the audit, as critical vulnerabilities related to the token's functionality, economic model, and specific access controls cannot be assessed. The proxy itself utilizes a well-vetted OpenZeppelin pattern, but its security is highly dependent on the beacon contract and its controlled implementation.
-
-The `BridgeToken` contract, as an OpenZeppelin `BeaconProxy`, benefits from a well-established and audited proxy pattern. However, the absence of the implementation contract's source code prevents a full security assessment of the token's core functionality, economic model, and specific access controls. It is critical to obtain and audit the implementation contract to ensure the overall security of the system.
-
-We recommend a Premium Deploy option for a comprehensive audit that includes the implementation contract, the beacon contract, and any associated governance or administrative contracts. This will provide a complete security posture assessment, identify potential vulnerabilities across the entire system, and offer tailored recommendations for hardening and operational best practices.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | Medium | The `BridgeToken` contract leverages the robust and audited OpenZeppelin `BeaconProxy` pattern (7.1 Architecture, 7.2 Code Security), which is a strong foundation for secure proxy deployments. The cus |
-| **Governance / Economics** | 3/10 | Medium | The `BridgeToken` contract itself contains no economic logic (7.4 Economic) or direct governance mechanisms (7.5 Governance); these would reside within the implementation contract. The primary governa |
-| **Upgrades** | 3/10 | Medium | The `BeaconProxy` pattern provides a robust and efficient mechanism for upgradeability (7.7 Upgrades), allowing multiple proxy instances to share a single implementation managed by a beacon. This simp |
+| **Technical** | 3/10 | High | The `BridgeToken` contract leverages the robust and audited OpenZeppelin `BeaconProxy` pattern (7.1 Architecture, 7.2 Code Security), which is a strong foundation for secure proxy deployments. The cus |
+| **Governance / Economics** | 1/10 | High | The `BridgeToken` contract itself contains no economic logic (7.4 Economic) or direct governance mechanisms (7.5 Governance); these would reside within the implementation contract. The primary governa |
+| **Upgrades** | 2/10 | High | The `BeaconProxy` pattern provides a robust and efficient mechanism for upgradeability (7.7 Upgrades), allowing multiple proxy instances to share a single implementation managed by a beacon. This simp |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Unknown Custom |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 98.5% |
+| **Top-3 Unlocked** | ⚠️ 99.4% |
 
 ## Security Findings
 

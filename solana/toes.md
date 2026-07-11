@@ -2,14 +2,14 @@
 token: TOES
 ticker: TOESCOIN
 network: solana
-risk_score: 41
+risk_score: 23
 status: medium
 date: 2026-06-10
 ---
 
 # TOES (TOESCOIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 23/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/toes-sol)
 
@@ -21,19 +21,13 @@ The TOES token mint is configured with robust security settings, including revok
 
 > **Final Recommendation:** The token exhibits strong on-chain security configurations with no active administrative authorities that could unilaterally alter token supply or freeze user funds. The metadata is also immutable. However, potential holders should be aware of the "High holder correlation" flagged by RugCheck, which suggests a concentrated ownership that could lead to price volatility. Due to the unavailability of detailed holder distribution data, it is recommended to monitor on-chain holder analytics independently to assess concentration risks before making significant investments.
 
-## Security Analysis
-
-The TOES token mint is configured with robust security settings, including revoked mint and freeze authorities, preventing further token issuance or account freezing. No Token-2022 extensions like transfer hooks or permanent delegates are active, and metadata is immutable. Holder concentration data was unavailable, and RugCheck identified a "High holder correlation" risk, which could impact price stability.
-
-The token exhibits strong on-chain security configurations with no active administrative authorities that could unilaterally alter token supply or freeze user funds. The metadata is also immutable. However, potential holders should be aware of the "High holder correlation" flagged by RugCheck, which suggests a concentrated ownership that could lead to price volatility. Due to the unavailability of detailed holder distribution data, it is recommended to monitor on-chain holder analytics independently to assess concentration risks before making significant investments.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Low | The TOES token is an SPL Token-2022 mint with robust foundational security (7.1 Architecture, 7.2 Code Security). Both the mint authority and freeze authority have been permanently revoked (7.3 Access |
-| **Governance / Economics** | 4/10 | Low | The token exhibits a healthy volume-to-liquidity ratio of 4.50, suggesting organic trading activity without signs of wash trading (7.4 Economic). Current DEX liquidity stands at $281,362, which is suf |
-| **Upgrades** | 5/10 | Low | The TOES token mint has a strong immutability profile (7.7 Upgrades), with both the mint and freeze authorities permanently revoked. This ensures that the token supply cannot be increased and user acc |
+| **Technical** | 6/10 | Medium | The TOES token is an SPL Token-2022 mint with robust foundational security (7.1 Architecture, 7.2 Code Security). Both the mint authority and freeze authority have been permanently revoked (7.3 Access |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a healthy volume-to-liquidity ratio of 4.50, suggesting organic trading activity without signs of wash trading (7.4 Economic). Current DEX liquidity stands at $281,362, which is suf |
+| **Upgrades** | 8/10 | Low | The TOES token mint has a strong immutability profile (7.7 Upgrades), with both the mint and freeze authorities permanently revoked. This ensures that the token supply cannot be increased and user acc |
 
 ## Security Findings
 

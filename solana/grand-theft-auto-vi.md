@@ -2,24 +2,56 @@
 token: Grand Theft Auto VI
 ticker: GTAVI
 network: solana
-risk_score: 46
-status: high
+risk_score: 35
+status: medium
 date: 2026-06-23
 ---
 
 # Grand Theft Auto VI (GTAVI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 46/100 — 🟠 High Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/grand-theft-auto-vi-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-The Grand Theft Auto VI (GTAVI) token on Solana presents a mixed security profile, reflecting its reported high-risk score of 46/100. On the positive side, the contract ownership has been renounced, which generally prevents the original deployer from making future changes that could harm the token's integrity. Furthermore, the absence of a mint function ensures that no new tokens can be arbitrarily created, thus protecting against inflationary actions by the contract owner. However, significant red flags are present. The contract remains unverified, meaning its code is not publicly visible for independent review, posing a transparency issue. Crucially, the liquidity pool is not locked, leaving it vulnerable to potential removal by liquidity providers. Additionally, a notable concentration of 23.2% of the supply among the top ten holders introduces significant centralization risk, where large sales could heavily impact market stability. Investors should weigh these factors carefully.
+This audit of the Grand Theft Auto VI (GTAVI) SPL token mint found no critical or high-severity issues based on the provided on-chain facts and deterministic rules. Key authorities like mint and freeze have been revoked, and no malicious Token-2022 extensions are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-The most critical areas of concern for GTAVI involve the unverified contract and the unlocked liquidity. An unverified contract prevents public scrutiny of the underlying code, meaning investors cannot independently confirm its safety or verify the absence of malicious functions. This lack of transparency is a fundamental risk. Compounding this, the liquidity pool is not locked, which means the providers of that liquidity could, at any time, remove their funds. This vulnerability is commonly associated with 'rug pull' scenarios, where a token's value can plummet if liquidity is withdrawn. Additionally, the significant holding by the top ten wallets, at 23.2%, creates a centralization risk, where large sell-offs could severely impact the token's price stability.
+> **Final Recommendation:** Based on the available data, the Grand Theft Auto VI (GTAVI) token appears to be well-configured from a security perspective, with critical authorities revoked and no active malicious Token-2022 extensions. Holders should be aware that holder concentration data was not available, so the distribution risk could not be assessed. For a comprehensive understanding, it is recommended to monitor on-chain holder distribution once data becomes available. Consider using a premium deployment option for future tokens to ensure all relevant on-chain data points are captured and analyzed from launch.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.8 Operations: The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indi |
+| **Governance / Economics** | 6/10 | Medium | 7.4 Economic, 7.5 Governance: DEX liquidity for the token is $65,402, which is moderate. The 24-hour trading volume is $111,523, resulting in a Volume/Liquidity Ratio of 1.71, which is considered norm |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority and freeze authority have both been revoked, meaning the token's core parameters related to supply and account freezing cannot be altered. The token uses the spl-token |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: Pump.fun
 ticker: PUMP
 network: solana
-risk_score: 59
-status: high
+risk_score: 42
+status: medium
 date: 2026-06-28
 ---
 
 # Pump.fun (PUMP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pumpfun-sol)
 
@@ -20,12 +20,6 @@ date: 2026-06-28
 This audit of the Pump (PUMP) SPL Token Mint found no critical or high-severity issues based on the available on-chain data and external security signals. The mint authority and freeze authority are both revoked, indicating a fixed supply and immutability of account states. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
 > **Final Recommendation:** Based on the available data, the Pump (PUMP) SPL Token Mint appears to have a robust security posture with key authorities revoked, indicating a fixed supply and immutable account states. Holders should be aware that holder concentration data was unavailable, which is a common limitation for new or rapidly growing tokens. For a comprehensive risk assessment, it is recommended to monitor holder distribution as this data becomes available. Consider using Quantum Audit's Premium Deploy option for future token launches to ensure all best practices are implemented from inception.
-
-## Security Analysis
-
-This audit of the Pump (PUMP) SPL Token Mint found no critical or high-severity issues based on the available on-chain data and external security signals. The mint authority and freeze authority are both revoked, indicating a fixed supply and immutability of account states. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
-
-Based on the available data, the Pump (PUMP) SPL Token Mint appears to have a robust security posture with key authorities revoked, indicating a fixed supply and immutable account states. Holders should be aware that holder concentration data was unavailable, which is a common limitation for new or rapidly growing tokens. For a comprehensive risk assessment, it is recommended to monitor holder distribution as this data becomes available. Consider using Quantum Audit's Premium Deploy option for future token launches to ensure all best practices are implemented from inception.
 
 ## Category Ratings
 

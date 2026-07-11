@@ -2,14 +2,14 @@
 token: BankrCoin
 ticker: BNKR
 network: base
-risk_score: 100
+risk_score: 80
 status: critical
 date: 2026-06-10
 ---
 
 # BankrCoin (BNKR) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 80/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bankrcoin-base)
 
@@ -23,21 +23,20 @@ The Clanker protocol facilitates the deployment of new ERC20 tokens, creation of
 
 For enhanced security and a more robust deployment, consider a Premium Deploy option. This service includes a dedicated security engineer to assist with contract deployment, post-deployment monitoring, and immediate incident response, ensuring a secure launch and ongoing operational integrity.
 
-## Security Analysis
-
-The Clanker protocol facilitates the deployment of new ERC20 tokens, creation of Uniswap V3 liquidity pools, and locking of initial LP positions. The audit identified a critical bug in the Uniswap V3 pool initialization process, which will prevent the core functionality of the `deployToken` function from working correctly. Additionally, several high and medium severity issues related to economic risks, centralization, and potential deployment failures were found. The contract relies heavily on external Uniswap V3 components and a custom liquidity locker.
-
-The Clanker contract contains a critical bug that prevents its primary function from operating as intended. Immediate remediation of the Uniswap V3 pool initialization error (C-01) and the `maxUsableTick` issue (M-02) is essential. Furthermore, addressing the high centralization of control (H-02) and the `amountOutMinimum: 0` risk (H-01) is crucial for the protocol's long-term security and user confidence. A comprehensive review of all external interactions and parameter settings is recommended.
-
-For enhanced security and a more robust deployment, consider a Premium Deploy option. This service includes a dedicated security engineer to assist with contract deployment, post-deployment monitoring, and immediate incident response, ensuring a secure launch and ongoing operational integrity.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The technical architecture leverages established standards like ERC20 and integrates with Uniswap V3, demonstrating a foundational understanding of DeFi primitives (7.1 Architecture). However, a criti |
-| **Governance / Economics** | 6/10 | High | The contract exhibits high centralization, with the `owner` having sole control over critical parameters such as `taxRate`, `lpFeesCut`, `protocolCut`, `defaultLockingPeriod`, and the ability to depre |
-| **Upgrades** | 6/10 | Low | The Clanker contract is not designed with an upgrade mechanism (7.7 Upgrades). Any future modifications or bug fixes would necessitate deploying an entirely new contract and migrating existing assets  |
+| **Technical** | 6/10 | Medium | The technical architecture leverages established standards like ERC20 and integrates with Uniswap V3, demonstrating a foundational understanding of DeFi primitives (7.1 Architecture). However, a criti |
+| **Governance / Economics** | 1/10 | High | The contract exhibits high centralization, with the `owner` having sole control over critical parameters such as `taxRate`, `lpFeesCut`, `protocolCut`, `defaultLockingPeriod`, and the ability to depre |
+| **Upgrades** | 6/10 | Medium | The Clanker contract is not designed with an upgrade mechanism (7.7 Upgrades). Any future modifications or bug fixes would necessitate deploying an entirely new contract and migrating existing assets  |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 98.6% |
+| **Top-3 Unlocked** | ⚠️ 99.8% |
 
 ## Security Findings
 

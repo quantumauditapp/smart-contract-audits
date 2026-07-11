@@ -2,24 +2,56 @@
 token: Tensor
 ticker: TNSR
 network: solana
-risk_score: 55
+risk_score: 70
 status: high
 date: 2026-06-21
 ---
 
 # Tensor (TNSR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 70/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tensor-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Tensor (TNSR) on Solana presents a nuanced security profile for investors. While positive signals include the renounced ownership, which prevents the original deployer from altering critical contract functions, and the absence of a mint function, safeguarding against unexpected token inflation, several significant risks are apparent. The contract's unverified status means its underlying code is not publicly auditable, hindering independent security analysis. Furthermore, a substantial 75.3% of the total supply is concentrated among the top 10 holders, raising concerns about potential market manipulation. The lack of locked liquidity poses a direct threat, as providers could withdraw funds, severely impacting trading. With a 24-hour volume of $279,128 against $72,804 in liquidity, the token is rated with a High Risk score of 55/100, necessitating thorough due diligence.
+This SPL token mint presents critical risks primarily due to an active mint authority, 7rtye8syTEK4W8omFkUiyUcj2MPFRUTq7yuczc7jNZZS, which can mint unlimited new tokens, diluting all current holders. Additionally, new holder accounts are created in a frozen state, requiring manual unfreezing by an authority. Holder concentration data was unavailable, preventing a full assessment of whale risk.
 
-The most critical risk signals for TNSR include the absence of contract verification, preventing transparency into its operational code, and the concerning liquidity landscape. The fact that liquidity is not locked means the funds underpinning the trading pair can be withdrawn by providers at any time, posing a significant 'rug pull' risk where investors could be left with unsellable tokens. Additionally, the extreme holder concentration, with 75.3% of the supply controlled by just the top ten addresses, creates substantial centralization risk. This allows a small group to exert undue influence on price stability and market dynamics through coordinated sales, potentially leading to rapid and severe price depreciation for smaller investors.
+> **Final Recommendation:** Holders should exercise extreme caution due to the active mint authority, which allows for arbitrary supply inflation. Verify on-chain that the mint authority is set to null before considering the supply fixed. Be aware that new accounts will be frozen by default, requiring an active issuer to unfreeze them for transfers to occur. Due to the critical risks identified, interaction with this token is not recommended unless the issuer's intentions and operational procedures for unfreezing accounts are fully understood and trusted. For a Premium Deploy option, consider tokens with fully revoked mint and freeze authorities and no default frozen state.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 3/10 | High | The token is an SPL token mint operating on the `spl-token` program with a total supply of 783,790,895.968785602 tokens and 9 decimals. A critical risk is present as the mint authority, `7rtye8syTEK4W |
+| **Governance / Economics** | 1/10 | High | The token exhibits a liquidity of $65,859 USD, which is moderate but could lead to slippage for large trades. The 24-hour volume is $45,029, resulting in a healthy volume/liquidity ratio of 0.68, indi |
+| **Upgrades** | 6/10 | Medium | The mint authority remains active, posing a significant risk of supply inflation (7.3 Access Control). Conversely, the freeze authority has been revoked, preventing arbitrary freezing of user accounts |
+
+## Security Findings
+
+_🔴 1 Critical · 🟠 1 High · ⚪ 1 Informational_
+
+### `C-01` — Mint Authority Not Revoked  *(Severity: Critical · Status: Unresolved)*
+
+The mint authority is `7rtye8syTEK4W8omFkUiyUcj2MPFRUTq7yuczc7jNZZS`. The holder of this key can mint unlimited new tokens, diluting all current holders to zero value. (Fact: Mint Authority: 7rtye8syTEK4W8omFkUiyUcj2MPFRUTq7yuczc7jNZZS)
+
+**Recommendation:** Verify on-chain that the mint authority is set to null before treating supply as fixed.
+
+
+### `H-01` — Default Frozen State  *(Severity: High · Status: Unresolved)*
+
+New holder accounts are created in a frozen state and require explicit unfreezing by an authority. This means users cannot transfer tokens immediately after receiving them without an additional action from the issuer. (Fact: GoPlus.default_account_state: 1)
+
+**Recommendation:** Confirm an active issuer is available to unfreeze accounts; otherwise the token is unspendable.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

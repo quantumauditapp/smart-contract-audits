@@ -2,14 +2,14 @@
 token: SPACE ID
 ticker: ID
 network: ethereum
-risk_score: 71
+risk_score: 78
 status: critical
 date: 2026-06-11
 ---
 
 # SPACE ID (ID) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 71/100 — 🔴 Critical Risk**
+> **Risk Score: 78/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/space-id-eth)
 
@@ -23,21 +23,20 @@ This audit report covers the SpaceIDToken contract. Due to the provided source c
 
 For future deployments, consider a Premium Deploy option that includes a comprehensive pre-deployment audit, real-time monitoring, and incident response planning to mitigate risks effectively.
 
-## Security Analysis
-
-This audit report covers the SpaceIDToken contract. Due to the provided source code being heavily truncated, a comprehensive security analysis of the custom SpaceIDToken logic was not possible. The audit primarily relies on the visible OpenZeppelin AccessControl contract and general assumptions about ERC-20 token implementations. The identified risks are based on these assumptions and the inherent characteristics of role-based access control.
-
-The SpaceIDToken contract, based on the visible OpenZeppelin AccessControl component, appears to leverage robust access control mechanisms. However, the inability to review the full SpaceIDToken source code significantly limits the scope and depth of this audit. It is strongly recommended to conduct a full audit once the complete and final source code for the SpaceIDToken contract is available to ensure all custom logic is thoroughly vetted for vulnerabilities.
-
-For future deployments, consider a Premium Deploy option that includes a comprehensive pre-deployment audit, real-time monitoring, and incident response planning to mitigate risks effectively.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The visible code snippet indicates the use of OpenZeppelin's AccessControl, a well-audited and robust library (7.2 Code Security). This provides a strong foundation for role-based access control (7.3  |
-| **Governance / Economics** | 6/10 | Medium | The use of AccessControl implies a centralized governance model where specific roles control critical functions (7.5 Governance). The DEFAULT_ADMIN_ROLE, which is its own administrator, requires caref |
-| **Upgrades** | 6/10 | Low | Based on the provided information, the contract is not identified as a proxy (is_proxy: false), indicating it is not upgradeable (7.7 Upgrades). This eliminates upgrade-related risks such as proxy imp |
+| **Technical** | 6/10 | Medium | The visible code snippet indicates the use of OpenZeppelin's AccessControl, a well-audited and robust library (7.2 Code Security). This provides a strong foundation for role-based access control (7.3  |
+| **Governance / Economics** | 1/10 | High | The use of AccessControl implies a centralized governance model where specific roles control critical functions (7.5 Governance). The DEFAULT_ADMIN_ROLE, which is its own administrator, requires caref |
+| **Upgrades** | 5/10 | Medium | Based on the provided information, the contract is not identified as a proxy (is_proxy: false), indicating it is not upgradeable (7.7 Upgrades). This eliminates upgrade-related risks such as proxy imp |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 50.2% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 

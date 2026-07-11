@@ -2,14 +2,14 @@
 token: Staked Bank
 ticker: STAKE
 network: solana
-risk_score: 71
-status: critical
+risk_score: 53
+status: high
 date: 2026-06-10
 ---
 
 # Staked Bank (STAKE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 71/100 — 🔴 Critical Risk**
+> **Risk Score: 53/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/staked-bank-sol)
 
@@ -21,19 +21,13 @@ This audit of the Staked Bank (Stake) SPL token mint found no critical or high-s
 
 > **Final Recommendation:** Based on the available data, the Staked Bank (Stake) token appears to have a robust security posture regarding its core mint properties, with both mint and freeze authorities revoked. Holders should be aware that direct holder concentration percentages were unavailable, so while RugCheck flagged 'high ownership', the exact distribution could not be verified. Investors should monitor liquidity and trading volume for any significant changes. For enhanced due diligence, consider a Premium Deploy audit to include deeper off-chain analysis and real-time monitoring of holder distribution.
 
-## Security Analysis
-
-This audit of the Staked Bank (Stake) SPL token mint found no critical or high-severity issues based on the available on-chain data and external security signals. The mint and freeze authorities are revoked, and no Token-2022 extensions that introduce centralisation risks (like transfer hooks or permanent delegates) are active. Holder concentration data was unavailable from Solana RPC.
-
-Based on the available data, the Staked Bank (Stake) token appears to have a robust security posture regarding its core mint properties, with both mint and freeze authorities revoked. Holders should be aware that direct holder concentration percentages were unavailable, so while RugCheck flagged 'high ownership', the exact distribution could not be verified. Investors should monitor liquidity and trading volume for any significant changes. For enhanced due diligence, consider a Premium Deploy audit to include deeper off-chain analysis and real-time monitoring of holder distribution.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The Staked Bank (Stake) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked (None), indicating that no new tokens can be minted and no existing token accoun |
-| **Governance / Economics** | 6/10 | Low | The token exhibits moderate liquidity with $15,571 USD available on DEXs. The 24-hour trading volume of $5,081 results in a healthy volume/liquidity ratio of 0.33, suggesting organic trading activity  |
-| **Upgrades** | 6/10 | Low | The Staked Bank (Stake) token mint has both its mint and freeze authorities revoked (None), meaning its supply and transferability parameters are immutable. The token is an SPL Token-2022, but no muta |
+| **Technical** | 6/10 | Medium | The Staked Bank (Stake) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked (None), indicating that no new tokens can be minted and no existing token accoun |
+| **Governance / Economics** | 3/10 | High | The token exhibits moderate liquidity with $15,571 USD available on DEXs. The 24-hour trading volume of $5,081 results in a healthy volume/liquidity ratio of 0.33, suggesting organic trading activity  |
+| **Upgrades** | 8/10 | Low | The Staked Bank (Stake) token mint has both its mint and freeze authorities revoked (None), meaning its supply and transferability parameters are immutable. The token is an SPL Token-2022, but no muta |
 
 ## Security Findings
 

@@ -2,24 +2,56 @@
 token: Ultimate Solana World Cup
 ticker: USWC
 network: solana
-risk_score: 46
+risk_score: 47
 status: high
 date: 2026-06-15
 ---
 
 # Ultimate Solana World Cup (USWC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 46/100 — 🟠 High Risk**
+> **Risk Score: 47/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ultimate-solana-world-cup-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-The Ultimate Solana World Cup (USWC) token presents a mixed security profile for potential investors, reflected in its current High Risk score of 46/100. A key positive is that ownership of the contract has been renounced, eliminating the possibility of the original deployer making arbitrary changes to core functionalities post-launch. Furthermore, the absence of a mint function prevents the creation of new tokens by the contract owner, which is a common vector for inflationary rug pulls. However, several factors suggest caution. The contract is not verified, which means its code is not publicly visible and inspectable on the blockchain explorer, hindering transparency and independent security review. Liquidity is also not locked, leaving the project susceptible to potential liquidity removal. The top 10 holders collectively control 33.0% of the total supply, indicating a degree of centralization that could impact market stability. With a 24-hour volume of $48,805 against $31,642 in liquidity, these metrics provide a snapshot of current market activity.
+The SPL Token Mint at CqFJhmzTVCdULq4KdfwKqsBf7ABaaZarWCrarazupump exhibits a strong technical configuration with both mint and freeze authorities revoked, indicating a fixed supply and no ability to freeze user accounts. No Token-2022 transfer hook or permanent delegate is active. However, quantitative data regarding holder concentration and DEX liquidity is unavailable, preventing a full economic assessment. RugCheck.xyz qualitatively flags potential risks such as 'Single holder ownership', 'High holder concentration', and 'Low Liquidity'.
 
-The most critical risk signals for USWC center on its lack of contract verification and unlocked liquidity. Without a verified contract, investors cannot independently examine the underlying code to confirm its stated functionalities or absence of malicious logic, creating a significant trust deficit. This opaque nature is particularly concerning given the "High Risk" designation. Additionally, the absence of locked liquidity means that the funds providing the trading pair could be withdrawn at any time by the liquidity providers, potentially leading to a sharp price collapse and leaving holders unable to sell their tokens. While ownership renunciation and the lack of a mint function mitigate some developer control risks, the combination of unverified code and unlocked liquidity represents substantial operational vulnerabilities that investors should carefully consider.
+> **Final Recommendation:** The token exhibits a robust technical configuration with critical authorities revoked, ensuring a fixed supply and no ability to freeze accounts. However, the absence of quantitative data for holder concentration and DEX liquidity, coupled with RugCheck.xyz's qualitative warnings of 'High holder concentration' and 'Low Liquidity', indicates significant economic risks. Users should exercise extreme caution due to the potential for high slippage and price volatility. It is recommended to await the availability of comprehensive market data before making investment decisions. For a Premium Deploy option, consider tokens with transparent and verifiable liquidity and holder distribution metrics.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.2 Code Security: The token is an SPL Token-2022 mint. 7.3 Access Control: Both the Mint Authority and Freeze Authority have been revoked, as confirmed by 'Mint Authority: revoked  |
+| **Governance / Economics** | 4/10 | Medium | 7.4 Economic: Quantitative data for holder concentration and DEX liquidity is unavailable ('[UNKNOWN] holder concentration unavailable', '[UNKNOWN] no DEX pair data available'). This lack of data prev |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The token's configuration demonstrates strong immutability. The revocation of both Mint Authority and Freeze Authority prevents any future changes to the token supply or the ability to f |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

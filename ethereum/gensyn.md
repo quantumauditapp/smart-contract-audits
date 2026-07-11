@@ -2,14 +2,14 @@
 token: Gensyn
 ticker: AI
 network: ethereum
-risk_score: 86
+risk_score: 87
 status: critical
 date: 2026-06-10
 ---
 
 # Gensyn (AI) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 86/100 — 🔴 Critical Risk**
+> **Risk Score: 87/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gensyn-eth)
 
@@ -21,19 +21,28 @@ This audit covers the OpenZeppelin ERC1967Proxy contract, a standard UUPS (Unive
 
 > **Final Recommendation:** The OpenZeppelin ERC1967Proxy contract is a secure and reliable foundation for upgradeable systems. The primary focus for overall system security must be on the security of the admin key, which controls all upgrades, and the rigorous auditing of the implementation contract. Implement a robust multi-signature wallet or a DAO for admin control and consider adding a timelock for upgrade operations to mitigate centralization risks. Thoroughly audit all implementation contract changes for storage collisions and logic errors before deployment.
 
-## Security Analysis
-
-This audit covers the OpenZeppelin ERC1967Proxy contract, a standard UUPS (Universal Upgradeable Proxy Standard) proxy. The contract itself is highly robust and battle-tested, inheriting security from OpenZeppelin's extensive audits and community review. Key strengths include its adherence to ERC-1967 for storage slot management and a secure delegation mechanism. The primary risks are associated with the centralized control over upgrades and potential vulnerabilities in the implementation contract, which is not part of this scope. Recommendations focus on securing the admin key, implementing upgrade best practices, and careful development of the logic contract.
-
-The OpenZeppelin ERC1967Proxy contract is a secure and reliable foundation for upgradeable systems. The primary focus for overall system security must be on the security of the admin key, which controls all upgrades, and the rigorous auditing of the implementation contract. Implement a robust multi-signature wallet or a DAO for admin control and consider adding a timelock for upgrade operations to mitigate centralization risks. Thoroughly audit all implementation contract changes for storage collisions and logic errors before deployment.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The ERC1967Proxy contract (7.1 Architecture) is a well-established and secure UUPS proxy implementation from OpenZeppelin, utilizing `delegatecall` for logic execution. Its code (7.2 Code Security) is |
-| **Governance / Economics** | 6/10 | High | The governance model (7.5 Governance) for this proxy is highly centralized, with a single admin address (or a multisig) having full control over upgrades (H-01). This admin can instantly change the im |
-| **Upgrades** | 6/10 | Medium | The contract implements the ERC-1967 UUPS upgrade pattern (7.7 Upgrades), allowing the logic contract to be changed by the admin. This mechanism is standard and well-understood. However, the security  |
+| **Technical** | 4/10 | Medium | The ERC1967Proxy contract (7.1 Architecture) is a well-established and secure UUPS proxy implementation from OpenZeppelin, utilizing `delegatecall` for logic execution. Its code (7.2 Code Security) is |
+| **Governance / Economics** | 1/10 | High | The governance model (7.5 Governance) for this proxy is highly centralized, with a single admin address (or a multisig) having full control over upgrades (H-01). This admin can instantly change the im |
+| **Upgrades** | 3/10 | High | The contract implements the ERC-1967 UUPS upgrade pattern (7.7 Upgrades), allowing the logic contract to be changed by the admin. This mechanism is standard and well-understood. However, the security  |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Uups |
+| **Implementation** | ⚠️ Unverified source |
+| **Upgrades (30d)** | 0 (stable) |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 

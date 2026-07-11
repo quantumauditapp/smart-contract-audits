@@ -21,19 +21,20 @@ The StargateToken contract, an Omnichain Fungible Token (OFT) built on LayerZero
 
 > **Final Recommendation:** The Stargate Omnichain Fungible Token contract presents a robust cross-chain architecture but contains a critical vulnerability in its `lzReceive` function's address decoding. Immediate attention is required to address this high-severity issue to prevent potential loss or misdirection of funds. Additionally, the centralized control by the owner should be mitigated, ideally through a multi-signature setup. We recommend a comprehensive review of the LayerZero integration and a potential upgrade to a newer Solidity compiler version. For projects requiring the highest level of security and ongoing support, consider our Premium Deploy option, which includes continuous monitoring, incident response planning, and advanced security features.
 
-## Security Analysis
-
-The StargateToken contract, an Omnichain Fungible Token (OFT) built on LayerZero, facilitates cross-chain token transfers using a lock/burn and unlock/mint mechanism. The contract leverages OpenZeppelin's ERC20 and Ownable for core functionality and access control. A critical vulnerability was identified in the `lzReceive` function's assembly-based address decoding, which could lead to tokens being minted or unlocked to unintended addresses. Additionally, the contract exhibits a high degree of centralized control by the owner and uses an older Solidity compiler version. The contract is immutable, lacking upgradeability.
-
-The Stargate Omnichain Fungible Token contract presents a robust cross-chain architecture but contains a critical vulnerability in its `lzReceive` function's address decoding. Immediate attention is required to address this high-severity issue to prevent potential loss or misdirection of funds. Additionally, the centralized control by the owner should be mitigated, ideally through a multi-signature setup. We recommend a comprehensive review of the LayerZero integration and a potential upgrade to a newer Solidity compiler version. For projects requiring the highest level of security and ongoing support, consider our Premium Deploy option, which includes continuous monitoring, incident response planning, and advanced security features.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The technical architecture (7.1) of the Omnichain Fungible Token (OFT) is well-structured, utilizing a standard lock/burn and mint/unlock mechanism for cross-chain transfers via LayerZero. The contrac |
-| **Governance / Economics** | 6/10 | Medium | The contract's economic model (7.4) is based on a standard OFT design, ensuring token supply consistency across chains through locking/burning and minting/unlocking. Governance (7.5) is highly central |
-| **Upgrades** | 6/10 | Low | The contract is deployed as an immutable implementation, meaning its logic cannot be changed post-deployment (7.7 Upgrades). This design choice eliminates upgrade-related risks but also prevents bug f |
+| **Technical** | 4/10 | Medium | The technical architecture (7.1) of the Omnichain Fungible Token (OFT) is well-structured, utilizing a standard lock/burn and mint/unlock mechanism for cross-chain transfers via LayerZero. The contrac |
+| **Governance / Economics** | 1/10 | High | The contract's economic model (7.4) is based on a standard OFT design, ensuring token supply consistency across chains through locking/burning and minting/unlocking. Governance (7.5) is highly central |
+| **Upgrades** | 2/10 | High | The contract is deployed as an immutable implementation, meaning its logic cannot be changed post-deployment (7.7 Upgrades). This design choice eliminates upgrade-related risks but also prevents bug f |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 52.5% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 

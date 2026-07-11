@@ -2,14 +2,14 @@
 token: UFC Freedom 250
 ticker: UFC250
 network: solana
-risk_score: 97
-status: critical
+risk_score: 66
+status: high
 date: 2026-06-10
 ---
 
 # UFC Freedom 250 (UFC250) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 97/100 — 🔴 Critical Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ufc-freedom-250-sol)
 
@@ -21,19 +21,13 @@ This audit of the UFC Freedom 250 (UFC250) SPL token mint identifies significant
 
 > **Final Recommendation:** Potential holders should exercise extreme caution due to the very low liquidity ($7,871) and the extremely young age of the DEX pair (3 days). These factors indicate high volatility and difficulty in exiting positions without significant loss. It is recommended to wait for the token to establish a more substantial liquidity pool and a longer trading history before considering any significant investment. Verify the token's market stability and growth over a longer period.
 
-## Security Analysis
-
-This audit of the UFC Freedom 250 (UFC250) SPL token mint identifies significant risks primarily due to very low liquidity and the nascent age of its DEX trading pair. While core mint authorities are appropriately revoked and metadata is immutable, the token's market stability is highly uncertain. Holder concentration data was unavailable for analysis.
-
-Potential holders should exercise extreme caution due to the very low liquidity ($7,871) and the extremely young age of the DEX pair (3 days). These factors indicate high volatility and difficulty in exiting positions without significant loss. It is recommended to wait for the token to establish a more substantial liquidity pool and a longer trading history before considering any significant investment. Verify the token's market stability and growth over a longer period.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 10/10 | Low | The UFC Freedom 250 token is implemented using the spl-token-2022 program. Critically, both the Mint Authority and Freeze Authority have been revoked, preventing the creation of new tokens or the free |
-| **Governance / Economics** | 10/10 | High | The token exhibits high economic risk due to its market characteristics. Total DEX liquidity stands at a very low $7,871, indicating that even small trades could experience severe slippage. The tradin |
-| **Upgrades** | 10/10 | Low | The UFC Freedom 250 token mint has a strong security posture regarding potential post-launch modifications. Both the Mint Authority and Freeze Authority have been permanently revoked, ensuring that th |
+| **Technical** | 5/10 | Medium | The UFC Freedom 250 token is implemented using the spl-token-2022 program. Critically, both the Mint Authority and Freeze Authority have been revoked, preventing the creation of new tokens or the free |
+| **Governance / Economics** | 2/10 | High | The token exhibits high economic risk due to its market characteristics. Total DEX liquidity stands at a very low $7,871, indicating that even small trades could experience severe slippage. The tradin |
+| **Upgrades** | 6/10 | Medium | The UFC Freedom 250 token mint has a strong security posture regarding potential post-launch modifications. Both the Mint Authority and Freeze Authority have been permanently revoked, ensuring that th |
 
 ## Security Findings
 

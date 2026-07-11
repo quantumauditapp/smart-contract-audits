@@ -2,14 +2,14 @@
 token: Vibesterz
 ticker: VSTR
 network: solana
-risk_score: 62
-status: high
+risk_score: 44
+status: medium
 date: 2026-06-10
 ---
 
 # Vibesterz (VSTR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vibesterz-sol)
 
@@ -21,19 +21,13 @@ This SPL Token Mint, Vibesterz (VSTR), demonstrates a strong security posture wi
 
 > **Final Recommendation:** Based on the audit findings, the Vibesterz (VSTR) token appears to be well-configured from a security perspective, with key authorities revoked and no active malicious extensions. Users should be aware that holder concentration data was not available, so a full assessment of potential market manipulation risks from large holders could not be made. For a Premium Deploy, consider monitoring the token's liquidity and trading volume over a longer period to establish a more robust track record.
 
-## Security Analysis
-
-This SPL Token Mint, Vibesterz (VSTR), demonstrates a strong security posture with both mint and freeze authorities revoked, ensuring a fixed supply and preventing account freezing. No critical or high-severity issues were identified based on the available on-chain data and external security signals. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
-
-Based on the audit findings, the Vibesterz (VSTR) token appears to be well-configured from a security perspective, with key authorities revoked and no active malicious extensions. Users should be aware that holder concentration data was not available, so a full assessment of potential market manipulation risks from large holders could not be made. For a Premium Deploy, consider monitoring the token's liquidity and trading volume over a longer period to establish a more robust track record.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability regarding account freezing. No Transfer Hook is active,  |
-| **Governance / Economics** | 6/10 | Low | The token exhibits moderate liquidity with $18,817 USD available on DEXs. The 24-hour volume of $39,027 results in a normal Volume/Liquidity Ratio of 2.07, not indicating wash trading. The DEX pair is |
-| **Upgrades** | 6/10 | Low | The token's core parameters, including minting and freezing capabilities, are immutable as both the mint and freeze authorities have been revoked. It utilizes the spl-token-2022 program but does not i |
+| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability regarding account freezing. No Transfer Hook is active,  |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate liquidity with $18,817 USD available on DEXs. The 24-hour volume of $39,027 results in a normal Volume/Liquidity Ratio of 2.07, not indicating wash trading. The DEX pair is |
+| **Upgrades** | 8/10 | Low | The token's core parameters, including minting and freezing capabilities, are immutable as both the mint and freeze authorities have been revoked. It utilizes the spl-token-2022 program but does not i |
 
 ## Security Findings
 

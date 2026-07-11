@@ -2,14 +2,14 @@
 token: Aliens are real
 ticker: ALIENS
 network: solana
-risk_score: 39
+risk_score: 27
 status: medium
 date: 2026-06-10
 ---
 
 # Aliens are real (ALIENS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 27/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aliens-are-real-sol)
 
@@ -21,19 +21,13 @@ This Solana SPL Token Mint, 'Aliens are real', demonstrates a strong security po
 
 > **Final Recommendation:** Given the revocation of mint and freeze authorities, this token's supply is fixed and user accounts cannot be frozen by an authority. However, due to the unavailability of holder distribution and DEX liquidity data, potential investors should exercise caution. It is recommended to verify on-chain liquidity and holder concentration independently before making investment decisions. For a premium deployment, ensure all relevant Token-2022 extensions are configured as intended and audited.
 
-## Security Analysis
-
-This Solana SPL Token Mint, 'Aliens are real', demonstrates a strong security posture regarding its core mint configurations. Both mint and freeze authorities have been revoked, preventing further token issuance or account freezing. Key information regarding holder concentration and DEX liquidity was unavailable, limiting a full economic assessment.
-
-Given the revocation of mint and freeze authorities, this token's supply is fixed and user accounts cannot be frozen by an authority. However, due to the unavailability of holder distribution and DEX liquidity data, potential investors should exercise caution. It is recommended to verify on-chain liquidity and holder concentration independently before making investment decisions. For a premium deployment, ensure all relevant Token-2022 extensions are configured as intended and audited.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | 7.1 Architecture & 7.3 Access Control: The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked (None), which is a strong security practice as it prevents fu |
-| **Governance / Economics** | 6/10 | Low | 7.4 Economic & 7.5 Governance: Information regarding holder concentration was unavailable, preventing an assessment of supply distribution. Similarly, no DEX pair data was available, meaning liquidity |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The revocation of both mint and freeze authorities ensures that the token's supply and account freeze status cannot be altered post-launch. GoPlus data indicates `metadata_mutable: False |
+| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.3 Access Control: The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked (None), which is a strong security practice as it prevents fu |
+| **Governance / Economics** | 7/10 | Low | 7.4 Economic & 7.5 Governance: Information regarding holder concentration was unavailable, preventing an assessment of supply distribution. Similarly, no DEX pair data was available, meaning liquidity |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The revocation of both mint and freeze authorities ensures that the token's supply and account freeze status cannot be altered post-launch. GoPlus data indicates `metadata_mutable: False |
 
 ## Security Findings
 

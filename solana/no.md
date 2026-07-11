@@ -2,14 +2,14 @@
 token: NO
 ticker: NO
 network: solana
-risk_score: 72
-status: critical
+risk_score: 48
+status: high
 date: 2026-06-10
 ---
 
 # NO (NO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 48/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/no-sol)
 
@@ -21,19 +21,13 @@ This Solana SPL token mint 'NO' has its mint and freeze authorities revoked, ind
 
 > **Final Recommendation:** Prospective holders should be aware that new token accounts for 'NO' are created in a frozen state. It is critical to confirm the availability and responsiveness of an issuer or authority capable of unfreezing these accounts, as otherwise, newly acquired tokens would be unspendable. Given the unavailability of holder concentration data, a full assessment of potential market manipulation risks from large holders is not possible. While RugCheck.xyz did not provide a 'RUGGED' verdict, its score of 1/100 is a strong indicator of potential issues and warrants extreme caution before any interaction.
 
-## Security Analysis
-
-This Solana SPL token mint 'NO' has its mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. However, new holder accounts are created in a frozen state, requiring an active issuer to unfreeze them. Holder concentration data was unavailable. While RugCheck.xyz did not explicitly flag the token as 'RUGGED', its score of 1/100 suggests extreme caution.
-
-Prospective holders should be aware that new token accounts for 'NO' are created in a frozen state. It is critical to confirm the availability and responsiveness of an issuer or authority capable of unfreezing these accounts, as otherwise, newly acquired tokens would be unspendable. Given the unavailability of holder concentration data, a full assessment of potential market manipulation risks from large holders is not possible. While RugCheck.xyz did not provide a 'RUGGED' verdict, its score of 1/100 is a strong indicator of potential issues and warrants extreme caution before any interaction.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.8 Operations: The token is an SPL token using the `spl-token` program. Both mint and freeze authorities are revoked, which is a positive secu |
-| **Governance / Economics** | 6/10 | Low | 7.4 Economic, 7.5 Governance: The token has a liquidity of $39,943 USD and a 24-hour volume of $38,447 USD, resulting in a normal volume/liquidity ratio of 0.96. The DEX pair has been active for 23 da |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, indicating that the token's supply and account freeze status cannot be changed. Metadata is immutable (`GoPlus.metadata_mutable: |
+| **Technical** | 5/10 | Medium | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.8 Operations: The token is an SPL token using the `spl-token` program. Both mint and freeze authorities are revoked, which is a positive secu |
+| **Governance / Economics** | 5/10 | Medium | 7.4 Economic, 7.5 Governance: The token has a liquidity of $39,943 USD and a 24-hour volume of $38,447 USD, resulting in a normal volume/liquidity ratio of 0.96. The DEX pair has been active for 23 da |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, indicating that the token's supply and account freeze status cannot be changed. Metadata is immutable (`GoPlus.metadata_mutable: |
 
 ## Security Findings
 

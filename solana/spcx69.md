@@ -2,24 +2,56 @@
 token: SPCX69
 ticker: SPCX69
 network: solana
-risk_score: 44
+risk_score: 21
 status: medium
 date: 2026-06-17
 ---
 
 # SPCX69 (SPCX69) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 21/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spcx69-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-SPCX69 on Solana presents a medium risk profile with a score of 44/100. Positive indicators include the renounced ownership, which prevents the original deployer from altering key contract parameters. Furthermore, the absence of a mint function ensures no new tokens can be arbitrarily created, protecting against inflationary dilution. Holder distribution appears healthy, with the top 10 holders controlling only 8.9% of the supply, reducing significant centralization risk. However, the contract is not verified, meaning its underlying code is not publicly inspectable, hindering transparency. Critically, liquidity remains unlocked, posing a risk of removal. The token currently sees substantial 24-hour volume at $805,302, supported by $161,040 in liquidity.
+The SPCX69 SPL Token Mint exhibits a robust security posture with no critical or high-severity issues identified based on the available on-chain data and external security signals. Both mint and freeze authorities are revoked, and no permanent delegate or transfer hook extensions are active. Holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-The two most significant risk signals for SPCX69 are the unverified contract and the unlocked liquidity. An unverified contract means investors cannot independently review the code to understand its functionality or potential vulnerabilities, fostering an environment of reduced trust. Unlocked liquidity allows the liquidity providers to withdraw their funds at any time, potentially causing a drastic price impact often termed a 'rug pull.' While ownership is renounced and no mint function exists, these positives do not fully offset the fundamental risks associated with lack of transparency and unsecured liquidity, which are paramount for investor consideration.
+> **Final Recommendation:** Based on the available data, SPCX69 appears to be a well-configured SPL Token-2022 mint with key authorities revoked, indicating a commitment to immutability and decentralization of core token functions. Holders should be aware that holder concentration data was unavailable, which is a common limitation for new tokens and prevents a full assessment of distribution risk. It is recommended to monitor on-chain holder distribution as this data becomes available.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | 7.1 Architecture & 7.3 Access Control: The SPCX69 token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked (None), ensuring no new tokens can be minted and no ex |
+| **Governance / Economics** | 6/10 | Medium | 7.4 Economic: The token exhibits good liquidity with $207,698 USD on DEXs and a 24-hour volume of $1,397,421 USD. The Volume/Liquidity Ratio is 6.73, which is within acceptable limits and does not ind |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The mint authority and freeze authority are both revoked, meaning the token's core parameters (supply, freeze capability) cannot be altered. The token utilizes the spl-token-2022 program |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

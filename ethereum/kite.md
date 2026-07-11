@@ -2,14 +2,14 @@
 token: Kite
 ticker: KITE
 network: ethereum
-risk_score: 98
+risk_score: 90
 status: critical
 date: 2026-06-10
 ---
 
 # Kite (KITE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 98/100 — 🔴 Critical Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kite-eth)
 
@@ -23,21 +23,20 @@ The Kite token contract implements an ERC20 token with LayerZero OFT capabilitie
 
 For enhanced security and operational resilience, consider a Premium Deploy option that includes a formal deployment plan, multi-signature setup, and post-deployment monitoring services.
 
-## Security Analysis
-
-The Kite token contract implements an ERC20 token with LayerZero OFT capabilities, allowing for cross-chain transfers. It incorporates OpenZeppelin's Pausable and Ownable patterns for administrative control. The contract features a fixed total supply minted once on a designated native chain. While the code adheres to established standards and best practices, the audit identified a high degree of centralized control by the owner, a critical dependency on correct constructor parameters for initialization, and inherent reliance on the LayerZero protocol's security.
-
-The Kite token contract is well-engineered, leveraging established libraries and patterns. The primary risks stem from the centralized control inherent in the Ownable pattern and the critical importance of correct deployment parameters. It is strongly recommended to implement a multi-signature wallet for the owner address to mitigate the single point of failure risk. Additionally, thorough testing of the deployment process, especially the `isNativeChain` parameter, is crucial.
-
-For enhanced security and operational resilience, consider a Premium Deploy option that includes a formal deployment plan, multi-signature setup, and post-deployment monitoring services.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract architecture (7.1) is well-structured, combining ERC20, LayerZero OFT, Pausable, and Ownable functionalities using standard inheritance patterns. Code security (7.2) is generally robust,  |
-| **Governance / Economics** | 6/10 | High | The economic model (7.4) defines a fixed `TOTAL_SUPPLY` of 10 billion tokens, minted only once on the native chain, preventing inflationary risks from further minting. However, governance (7.5) is hig |
-| **Upgrades** | 6/10 | Low | The Kite contract is not designed as an upgradeable proxy (7.7). It is a standard implementation contract, meaning its logic cannot be changed post-deployment. Any future modifications would require d |
+| **Technical** | 4/10 | Medium | The contract architecture (7.1) is well-structured, combining ERC20, LayerZero OFT, Pausable, and Ownable functionalities using standard inheritance patterns. Code security (7.2) is generally robust,  |
+| **Governance / Economics** | 1/10 | High | The economic model (7.4) defines a fixed `TOTAL_SUPPLY` of 10 billion tokens, minted only once on the native chain, preventing inflationary risks from further minting. However, governance (7.5) is hig |
+| **Upgrades** | 4/10 | Medium | The Kite contract is not designed as an upgradeable proxy (7.7). It is a standard implementation contract, meaning its logic cannot be changed post-deployment. Any future modifications would require d |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 

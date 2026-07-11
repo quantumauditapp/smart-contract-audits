@@ -2,14 +2,14 @@
 token: Sherbert The Tree
 ticker: SHERBERT
 network: solana
-risk_score: 60
-status: high
+risk_score: 44
+status: medium
 date: 2026-06-13
 ---
 
 # Sherbert The Tree (SHERBERT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 60/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sherbert-the-tree-sol)
 
@@ -21,19 +21,13 @@ This audit of the Sherbert The Tree (SHERBERT) SPL Token Mint found no critical 
 
 > **Final Recommendation:** Based on the on-chain technical analysis and deterministic rules, the Sherbert The Tree (SHERBERT) token mint presents a secure configuration with revoked mint and freeze authorities. However, the unavailability of holder concentration data means that distribution risk cannot be fully assessed. Furthermore, the extremely low RugCheck score of 1/100 signals significant potential off-chain risks that are not captured by this technical audit. Users should proceed with extreme caution, conduct thorough due diligence on the project's team and community, and understand the implications of the low RugCheck score before engaging with this token. A Premium Deploy option is not applicable for SPL token mint audits.
 
-## Security Analysis
-
-This audit of the Sherbert The Tree (SHERBERT) SPL Token Mint found no critical or high-severity issues based on the provided deterministic rules. The mint and freeze authorities are revoked, indicating a fixed supply and no ability to freeze user accounts. However, holder concentration data was unavailable, preventing a full assessment of distribution risk. The extremely low RugCheck score of 1/100 suggests potential off-chain risks not covered by the on-chain technical analysis.
-
-Based on the on-chain technical analysis and deterministic rules, the Sherbert The Tree (SHERBERT) token mint presents a secure configuration with revoked mint and freeze authorities. However, the unavailability of holder concentration data means that distribution risk cannot be fully assessed. Furthermore, the extremely low RugCheck score of 1/100 signals significant potential off-chain risks that are not captured by this technical audit. Users should proceed with extreme caution, conduct thorough due diligence on the project's team and community, and understand the implications of the low RugCheck score before engaging with this token. A Premium Deploy option is not applicable for SPL token mint audits.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.8 Operations: The token is configured under the spl-token-2022 program. Both the mint authority and freeze authority are revoked (None), ensu |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic, 7.5 Governance: The token exhibits moderate liquidity with $16,309 USD available on DEXs. The 24-hour volume is $42,088, resulting in a normal Volume/Liquidity Ratio of 2.58. The DEX pai |
-| **Upgrades** | 6/10 | Low | 7.7 Upgrades: The token mint has a robust configuration with both mint and freeze authorities revoked, meaning its core supply and account control parameters are immutable. GoPlus data confirms that m |
+| **Technical** | 6/10 | Medium | 7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.8 Operations: The token is configured under the spl-token-2022 program. Both the mint authority and freeze authority are revoked (None), ensu |
+| **Governance / Economics** | 5/10 | Medium | 7.4 Economic, 7.5 Governance: The token exhibits moderate liquidity with $16,309 USD available on DEXs. The 24-hour volume is $42,088, resulting in a normal Volume/Liquidity Ratio of 2.58. The DEX pai |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades: The token mint has a robust configuration with both mint and freeze authorities revoked, meaning its core supply and account control parameters are immutable. GoPlus data confirms that m |
 
 ## Security Findings
 

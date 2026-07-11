@@ -2,14 +2,14 @@
 token: 🦎
 ticker: LIZARD
 network: solana
-risk_score: 51
-status: high
+risk_score: 22
+status: medium
 date: 2026-06-10
 ---
 
 # 🦎 (LIZARD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 22/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/token-sol)
 
@@ -21,19 +21,20 @@ The 🦎 (LIZARD) SPL token mint has a critical configuration where new holder a
 
 > **Final Recommendation:** Given the 'Default Frozen State' configuration, prospective holders should verify the identity and responsiveness of the authority responsible for unfreezing new accounts. Without an active and reliable unfreezing mechanism, newly acquired tokens may become unspendable. It is also recommended to monitor for any updates regarding holder concentration once that data becomes available, as high concentration can pose significant market risks. For enhanced security and operational control, consider a Premium Deploy option that allows for custom token configurations and ensures all authorities are managed or revoked as intended from inception.
 
-## Security Analysis
-
-The 🦎 (LIZARD) SPL token mint has a critical configuration where new holder accounts are created in a frozen state, requiring an authority to unfreeze them before use. This introduces a central point of control and potential for funds to be unspendable if the authority is inactive. Holder concentration data was unavailable, preventing assessment of supply distribution risk.
-
-Given the 'Default Frozen State' configuration, prospective holders should verify the identity and responsiveness of the authority responsible for unfreezing new accounts. Without an active and reliable unfreezing mechanism, newly acquired tokens may become unspendable. It is also recommended to monitor for any updates regarding holder concentration once that data becomes available, as high concentration can pose significant market risks. For enhanced security and operational control, consider a Premium Deploy option that allows for custom token configurations and ensures all authorities are managed or revoked as intended from inception.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The 🦎 (LIZARD) token is an SPL token operating on the `spl-token` program. Both the Mint Authority and Freeze Authority have been successfully revoked, indicating that no new tokens can be minted and  |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $33,554 USD available on DEXs, and a healthy 24-hour volume to liquidity ratio of 0.02, suggesting organic trading activity. The pair has been active for 316 |
-| **Upgrades** | 6/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, have been revoked, preventing any further changes to the token's supply or the ability to freeze accounts. Metadata mutability is als |
+| **Technical** | 5/10 | Medium | The 🦎 (LIZARD) token is an SPL token operating on the `spl-token` program. Both the Mint Authority and Freeze Authority have been successfully revoked, indicating that no new tokens can be minted and  |
+| **Governance / Economics** | 7/10 | Low | The token exhibits moderate liquidity with $33,554 USD available on DEXs, and a healthy 24-hour volume to liquidity ratio of 0.02, suggesting organic trading activity. The pair has been active for 316 |
+| **Upgrades** | 10/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, have been revoked, preventing any further changes to the token's supply or the ability to freeze accounts. Metadata mutability is als |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
+| **LP Locked** | 100.0% — Raydium Lock |
 
 ## Security Findings
 

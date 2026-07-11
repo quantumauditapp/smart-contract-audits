@@ -2,14 +2,14 @@
 token: Pudgy Penguins
 ticker: PENGU
 network: solana
-risk_score: 62
-status: high
+risk_score: 35
+status: medium
 date: 2026-06-10
 ---
 
 # Pudgy Penguins (PENGU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pudgy-penguins-sol)
 
@@ -23,21 +23,13 @@ The audit of the Pudgy Penguins (PENGU) SPL token mint identified a high-severit
 
 Consider the operational implications of the default frozen state before acquiring or holding this token. Verify the process for unfreezing accounts and the reliability of the entity responsible for this action. For a premium deployment, ensure that any future token launches explicitly set the…
 
-## Security Analysis
-
-The audit of the Pudgy Penguins (PENGU) SPL token mint identified a high-severity risk: new holder accounts are created in a frozen state, requiring manual unfreezing by an authority. While mint and freeze authorities are revoked, which is positive for supply control and general account security, the default frozen state introduces operational friction. Holder concentration data was unavailable from RPC, though RugCheck flagged high concentration as a risk label.
-
-Holders should be aware that new accounts for Pudgy Penguins (PENGU) tokens are created in a frozen state. This means that upon receiving tokens, users may need an active issuer or authority to unfreeze their accounts before they can transfer or spend the tokens. It is crucial to confirm the availability and responsiveness of such an entity. While mint and freeze authorities are revoked, which is positive for supply control and general account security, the default frozen state introduces operational friction and potential for funds to be unspendable if the unfreezing mechanism is not accessible.
-
-Consider the operational implications of the default frozen state before acquiring or holding this token. Verify the process for unfreezing accounts and the reliability of the entity responsible for this action. For a premium deployment, ensure that any future token launches explicitly set the…
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The Pudgy Penguins (PENGU) token is an SPL token mint operating on the Solana blockchain using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, indicat |
-| **Governance / Economics** | 6/10 | Medium | The token has substantial liquidity, with $3,289,871 USD available on DEXs, and a healthy 24-hour volume of $505,667 USD. The volume/liquidity ratio is 0.15, which is considered normal and does not su |
-| **Upgrades** | 6/10 | Low | The token's mint authority and freeze authority are both revoked, meaning no further tokens can be minted and no accounts can be frozen by an external authority. The metadata for the token is immutabl |
+| **Technical** | 5/10 | Medium | The Pudgy Penguins (PENGU) token is an SPL token mint operating on the Solana blockchain using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, indicat |
+| **Governance / Economics** | 5/10 | Medium | The token has substantial liquidity, with $3,289,871 USD available on DEXs, and a healthy 24-hour volume of $505,667 USD. The volume/liquidity ratio is 0.15, which is considered normal and does not su |
+| **Upgrades** | 8/10 | Low | The token's mint authority and freeze authority are both revoked, meaning no further tokens can be minted and no accounts can be frozen by an external authority. The metadata for the token is immutabl |
 
 ## Security Findings
 

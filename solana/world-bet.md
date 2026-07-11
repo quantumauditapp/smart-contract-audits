@@ -2,24 +2,56 @@
 token: WORLD BET
 ticker: WBET
 network: solana
-risk_score: 47
-status: high
+risk_score: 34
+status: medium
 date: 2026-06-25
 ---
 
 # WORLD BET (WBET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 34/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-bet-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-WORLD BET (WBET) is a token operating on the Solana blockchain. A crucial initial finding is that its contract is not verified, meaning its underlying code is not publicly auditable or reviewable by the community. On a more positive note, ownership has been renounced, removing the ability for the original deployer to make certain changes to the contract post-deployment. The token also lacks a mint function, preventing new tokens from being created, which is positive for supply control. Furthermore, the top 10 holders collectively own 0.0% of the supply, indicating a highly distributed holder base and mitigating whale manipulation concerns. However, liquidity is not locked, posing a potential risk for investors. The token currently reports a 24-hour volume of $181,789 and holds $39,695 in liquidity. The overall security assessment assigns WBET a High Risk score of 47/100.
+The WORLD BET (WBET) token exhibits strong security posture regarding core authorities, with both Mint and Freeze authorities revoked. It utilizes the modern spl-token-2022 program without active transfer hooks or mutable metadata. Holder concentration data was unavailable, preventing a full assessment of distribution risk. RugCheck.xyz provided a score of 1/100, which is a strong negative signal, but no explicit "RUGGED" verdict was provided in the facts, thus no deterministic finding was triggered.
 
-The most significant immediate risks for WORLD BET investors stem from the unverified contract and unlocked liquidity. An unverified contract means the code's functionality cannot be independently confirmed, raising transparency and trust concerns. Coupled with liquidity that is not locked, there's a heightened potential for sudden liquidity removal, often termed a "rug pull," which could severely impact token value. While positive signals like renounced ownership and a highly distributed holder base are present, they do not sufficiently mitigate these core structural vulnerabilities. Investors should carefully weigh these critical risk factors against the token's operational characteristics, particularly given the assigned high-risk score.
+> **Final Recommendation:** The WORLD BET (WBET) token demonstrates good security practices by having its Mint and Freeze authorities revoked, preventing further token issuance or account freezing by the issuer. The token also lacks active transfer hooks and has immutable metadata. However, the RugCheck score of 1/100 is a significant red flag that warrants extreme caution. While not explicitly classified as "RUGGED" by the provided facts, such a low score typically indicates severe underlying issues. It is recommended to investigate the reasons behind this low RugCheck score before considering any interaction with this token. Additionally, holder concentration data was unavailable, which is crucial for assessing market manipulation risks.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | Regarding 7.1 Architecture and 7.2 Code Security, the token is an SPL Token-2022 mint, indicating modern Solana token standards. For 7.3 Access Control, both the Mint Authority and Freeze Authority ar |
+| **Governance / Economics** | 5/10 | Medium | For 7.4 Economic and 7.5 Governance, holder concentration data was unavailable, preventing an assessment of supply distribution risk. The token has a liquidity of $12,239 USD, which is moderate. The 2 |
+| **Upgrades** | 8/10 | Low | For 7.7 Upgrades and 7.8 Operations, the token mint has no active Mint Authority or Freeze Authority, meaning its supply and freeze capabilities cannot be altered by an external key. It utilizes the s |
+
+## Security Findings
+
+_⚪ 3 Informational_
+
+### `I-01` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-02` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
+
+
+### `I-03` — Insufficient data to assess  *(Severity: Informational · Status: Unresolved)*
+
+Input did not include enough context to reliably evaluate contract behavior or upgrade safety.
+
+**Recommendation:** Provide verified source code or ABI to enable a full review.
 
 ## Token Metrics
 

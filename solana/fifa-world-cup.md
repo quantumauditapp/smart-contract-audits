@@ -2,14 +2,14 @@
 token: FIFA WORLD CUP
 ticker: FWC
 network: solana
-risk_score: 41
+risk_score: 29
 status: medium
 date: 2026-06-10
 ---
 
 # FIFA WORLD CUP (FWC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 29/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fifa-world-cup-sol)
 
@@ -21,19 +21,13 @@ The FIFA WORLD CUP (FWC) SPL Token Mint audit found no critical or high-severity
 
 > **Final Recommendation:** Based on the available data, the FIFA WORLD CUP (FWC) token appears to have a robust security posture regarding its core mint properties, with both mint and freeze authorities revoked. Users should be aware that holder concentration data was not available, which could indicate potential market manipulation risks if a few addresses control a large portion of the supply. It is recommended to monitor liquidity and trading volume for any significant changes. For a premium deployment, consider integrating advanced Token-2022 extensions like confidential transfers if privacy is a concern, or a transfer fee for sustainable protocol funding, ensuring all authorities are properly managed or revoked post-setup.
 
-## Security Analysis
-
-The FIFA WORLD CUP (FWC) SPL Token Mint audit found no critical or high-severity issues based on the available on-chain data and external security signals. The mint and freeze authorities are revoked, indicating a fixed supply and immutability of account states. Holder concentration data was unavailable, preventing an assessment of supply distribution risk.
-
-Based on the available data, the FIFA WORLD CUP (FWC) token appears to have a robust security posture regarding its core mint properties, with both mint and freeze authorities revoked. Users should be aware that holder concentration data was not available, which could indicate potential market manipulation risks if a few addresses control a large portion of the supply. It is recommended to monitor liquidity and trading volume for any significant changes. For a premium deployment, consider integrating advanced Token-2022 extensions like confidential transfers if privacy is a concern, or a transfer fee for sustainable protocol funding, ensuring all authorities are properly managed or revoked post-setup.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Low | The FWC token is an SPL Token-2022 mint on Solana. Key authorities, including mint authority and freeze authority, have been revoked, ensuring no new tokens can be minted and no existing accounts can  |
-| **Governance / Economics** | 4/10 | Low | The token exhibits a total DEX liquidity of $42,106 USD, with a 24-hour trading volume of $256,792. The volume-to-liquidity ratio is 6.10, which is not high enough to trigger a wash trading signal (th |
-| **Upgrades** | 5/10 | Low | The FWC token mint has revoked its mint and freeze authorities, meaning its supply and the ability to freeze accounts are immutable. The token is an SPL Token-2022, but it does not implement extension |
+| **Technical** | 6/10 | Medium | The FWC token is an SPL Token-2022 mint on Solana. Key authorities, including mint authority and freeze authority, have been revoked, ensuring no new tokens can be minted and no existing accounts can  |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a total DEX liquidity of $42,106 USD, with a 24-hour trading volume of $256,792. The volume-to-liquidity ratio is 6.10, which is not high enough to trigger a wash trading signal (th |
+| **Upgrades** | 8/10 | Low | The FWC token mint has revoked its mint and freeze authorities, meaning its supply and the ability to freeze accounts are immutable. The token is an SPL Token-2022, but it does not implement extension |
 
 ## Security Findings
 

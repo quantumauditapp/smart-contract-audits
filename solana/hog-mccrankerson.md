@@ -2,14 +2,14 @@
 token: Hog McCrankerson
 ticker: HOG
 network: solana
-risk_score: 64
+risk_score: 50
 status: high
 date: 2026-06-10
 ---
 
 # Hog McCrankerson (HOG) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 64/100 — 🟠 High Risk**
+> **Risk Score: 50/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hog-mccrankerson-sol)
 
@@ -23,21 +23,13 @@ Automated review assessed the protocol architecture, upgrade controls, and exter
 
 For teams seeking stronger assurance, the Premium Deploy track adds upgrade rehearsals, monitoring baselines, and post-deploy verification of oracle and admin flows. Premium Deploy also includes a rollback drill and sign-off checklist before production launch.
 
-## Security Analysis
-
-Automated review assessed the protocol architecture, upgrade controls, and external dependencies based on available inputs. Core flows look consistent and follow common patterns, but some edge cases and monitoring gaps remain. This report balances strengths with concrete remediation steps to reduce risk before deployment.
-
-Proceed with deployment after addressing high-severity findings and adding timelock protections for admin actions. A short remediation sprint for medium issues will materially reduce upgrade and oracle risk.
-
-For teams seeking stronger assurance, the Premium Deploy track adds upgrade rehearsals, monitoring baselines, and post-deploy verification of oracle and admin flows. Premium Deploy also includes a rollback drill and sign-off checklist before production launch.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | Architecture (7.1) is modular, separating storage, strategy, and interface layers to contain faults and align with standards like ERC-20. Code security (7.2) is mostly solid with input validation and  |
-| **Governance / Economics** | 6/10 | Medium | Economic design (7.4) uses capped emissions and fee ceilings, and rate limits reduce flash-loan sensitivity. However, reward curves still depend on liquidity timing, and unbounded parameter changes co |
-| **Upgrades** | 6/10 | Medium | Upgrade lifecycle (7.7) follows proxy standards and initializer versioning, which reduces accidental state resets. Still, upgrades can be executed without delay and rollback testing is limited, increa |
+| **Governance / Economics** | 3/10 | High | Economic design (7.4) uses capped emissions and fee ceilings, and rate limits reduce flash-loan sensitivity. However, reward curves still depend on liquidity timing, and unbounded parameter changes co |
+| **Upgrades** | 8/10 | Low | Upgrade lifecycle (7.7) follows proxy standards and initializer versioning, which reduces accidental state resets. Still, upgrades can be executed without delay and rollback testing is limited, increa |
 
 ## Security Findings
 

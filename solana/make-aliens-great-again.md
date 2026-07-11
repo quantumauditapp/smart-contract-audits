@@ -2,14 +2,14 @@
 token: Make Aliens Great Again 
 ticker: MAGA
 network: solana
-risk_score: 36
+risk_score: 21
 status: medium
 date: 2026-06-10
 ---
 
 # Make Aliens Great Again  (MAGA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 21/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/make-aliens-great-again-sol)
 
@@ -21,19 +21,13 @@ The Make Aliens Great Again (MAGA) token exhibits strong security characteristic
 
 > **Final Recommendation:** The Make Aliens Great Again (MAGA) token demonstrates strong security posture regarding its mint and freeze authorities, both of which are revoked. This prevents further token minting and account freezing. The absence of a transfer hook and immutable metadata are also positive attributes. However, holder concentration data was unavailable, which is a key metric for assessing potential market manipulation risks. While the RugCheck score is very low (1/100), this audit is strictly based on on-chain facts and deterministic rules, which did not trigger a specific finding for this score. Users should exercise caution and conduct further due diligence, especially regarding the implications of the low RugCheck score, before engaging with this token. For premium deployments, consider integrating real-time holder distribution monitoring.
 
-## Security Analysis
-
-The Make Aliens Great Again (MAGA) token exhibits strong security characteristics with both mint and freeze authorities revoked, ensuring a fixed supply and preventing account freezing. The token utilizes the spl-token-2022 program without a transfer hook or mutable metadata. Holder concentration data was unavailable for analysis. While RugCheck.xyz assigned a score of 1/100, this audit's deterministic rules did not trigger a specific finding based on this score.
-
-The Make Aliens Great Again (MAGA) token demonstrates strong security posture regarding its mint and freeze authorities, both of which are revoked. This prevents further token minting and account freezing. The absence of a transfer hook and immutable metadata are also positive attributes. However, holder concentration data was unavailable, which is a key metric for assessing potential market manipulation risks. While the RugCheck score is very low (1/100), this audit is strictly based on on-chain facts and deterministic rules, which did not trigger a specific finding for this score. Users should exercise caution and conduct further due diligence, especially regarding the implications of the low RugCheck score, before engaging with this token. For premium deployments, consider integrating real-time holder distribution monitoring.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Low | The Make Aliens Great Again (MAGA) token is implemented on the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, as confirmed by on-chain data, indicating that no |
-| **Governance / Economics** | 6/10 | Low | The token exhibits a healthy liquidity of $142,108 USD on DEXs, with a 24-hour volume of $31,709 USD. The volume/liquidity ratio is 0.22, which is considered normal and does not suggest wash trading.  |
-| **Upgrades** | 6/10 | Low | The mint authority for the Make Aliens Great Again (MAGA) token has been revoked, meaning the token supply cannot be arbitrarily increased. The freeze authority is also revoked, preventing any entity  |
+| **Technical** | 6/10 | Medium | The Make Aliens Great Again (MAGA) token is implemented on the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, as confirmed by on-chain data, indicating that no |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a healthy liquidity of $142,108 USD on DEXs, with a 24-hour volume of $31,709 USD. The volume/liquidity ratio is 0.22, which is considered normal and does not suggest wash trading.  |
+| **Upgrades** | 8/10 | Low | The mint authority for the Make Aliens Great Again (MAGA) token has been revoked, meaning the token supply cannot be arbitrarily increased. The freeze authority is also revoked, preventing any entity  |
 
 ## Security Findings
 

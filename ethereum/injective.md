@@ -2,14 +2,14 @@
 token: Injective
 ticker: INJ
 network: ethereum
-risk_score: 97
+risk_score: 84
 status: critical
 date: 2026-06-10
 ---
 
 # Injective (INJ) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 97/100 — 🔴 Critical Risk**
+> **Risk Score: 84/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/injective-eth)
 
@@ -23,21 +23,20 @@ This audit was conducted on a partially provided Solidity source code for what a
 
 For future deployments, consider a Premium Deploy option which includes a full audit, formal verification, and continuous monitoring to ensure the highest level of security and operational integrity for your smart contracts.
 
-## Security Analysis
-
-This audit was conducted on a partially provided Solidity source code for what appears to be an ERC-20 token contract. The core `InjectiveToken` contract implementation was truncated, limiting the scope and depth of the security analysis. While the included libraries (`SafeMath`, `Context`, `Address`) demonstrate adherence to OpenZeppelin best practices for arithmetic safety and common utilities, a comprehensive assessment of the token's logic, access control, and economic model could not be performed. The overall risk is elevated due to the inability to review the complete codebase.
-
-A comprehensive security audit cannot be completed without the full source code of the `InjectiveToken` contract. The current assessment is based on partial information and general assumptions about ERC-20 token implementations. It is strongly recommended to provide the complete, verified source code for a thorough audit to identify and mitigate all potential vulnerabilities.
-
-For future deployments, consider a Premium Deploy option which includes a full audit, formal verification, and continuous monitoring to ensure the highest level of security and operational integrity for your smart contracts.
-
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | High | The provided code snippets demonstrate good foundational practices, including the use of OpenZeppelin's `SafeMath` library (7.2 Code Security) to prevent integer overflows/underflows, and standard `IE |
-| **Governance / Economics** | 6/10 | Medium | Without the full contract code, the economic model and governance mechanisms (7.4 Economic, 7.5 Governance) of the InjectiveToken are unverified. Common ERC-20 token risks such as centralized minting/ |
-| **Upgrades** | 6/10 | Low | Based on the provided metadata indicating `is_proxy: false`, this contract is not designed to be upgradeable (7.7 Upgrades). Therefore, risks associated with upgradeability patterns (e.g., proxy imple |
+| **Technical** | 6/10 | Medium | The provided code snippets demonstrate good foundational practices, including the use of OpenZeppelin's `SafeMath` library (7.2 Code Security) to prevent integer overflows/underflows, and standard `IE |
+| **Governance / Economics** | 1/10 | High | Without the full contract code, the economic model and governance mechanisms (7.4 Economic, 7.5 Governance) of the InjectiveToken are unverified. Common ERC-20 token risks such as centralized minting/ |
+| **Upgrades** | 6/10 | Medium | Based on the provided metadata indicating `is_proxy: false`, this contract is not designed to be upgradeable (7.7 Upgrades). Therefore, risks associated with upgradeability patterns (e.g., proxy imple |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 72.5% |
+| **Top-3 Unlocked** | ⚠️ 86.4% |
 
 ## Security Findings
 
