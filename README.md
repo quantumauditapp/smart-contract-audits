@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-158-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-159-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,7 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [DeXe](./ethereum/dexe.md) | DEXE | Ethereum | 🔴 98/100 | 2026-07-12 | [↗](https://quantumaudit.app/token/dexe-eth) |
 | [Virtuals Protocol](./ethereum/virtuals-protocol.md) | VIRTUAL | Ethereum | 🔴 85/100 | 2026-07-11 | [↗](https://quantumaudit.app/token/virtuals-protocol-eth) |
 | [The Rizz Bull](./solana/the-rizz-bull.md) | RIZZLER | Solana | 🟠 49/100 | 2026-07-10 | [↗](https://quantumaudit.app/token/the-rizz-bull-sol) |
 | [Fartcoin](./solana/fartcoin.md) | FARTCOIN | Solana | 🟢 6/100 | 2026-07-10 | [↗](https://quantumaudit.app/token/fartcoin-sol) |
@@ -41,13 +42,12 @@
 | [infinity](./solana/infinity.md) | INFINITY | Solana | 🟡 45/100 | 2026-06-28 | [↗](https://quantumaudit.app/token/infinity-sol) |
 | [The Movement](./solana/the-movement.md) | MOVEMENT | Solana | 🟡 34/100 | 2026-06-28 | [↗](https://quantumaudit.app/token/the-movement-sol) |
 | [Pump.fun](./solana/pumpfun.md) | PUMP | Solana | 🟡 42/100 | 2026-06-28 | [↗](https://quantumaudit.app/token/pumpfun-sol) |
-| [catwifhat](./solana/catwifhat.md) | CATWIF | Solana | 🟡 30/100 | 2026-06-27 | [↗](https://quantumaudit.app/token/catwifhat-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (113)](./solana/README.md) · [Ethereum (33)](./ethereum/README.md) · [Base (9)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
+[Solana (113)](./solana/README.md) · [Ethereum (34)](./ethereum/README.md) · [Base (9)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
 
 ---
 

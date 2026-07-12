@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**33 reports** · Updated daily · [← All Networks](../README.md)
+**34 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [DeXe](./dexe.md) | DEXE | 🔴 98/100 Critical Risk | 2026-07-12 | [↗](https://quantumaudit.app/token/dexe-eth) |
 | [Virtuals Protocol](./virtuals-protocol.md) | VIRTUAL | 🔴 85/100 Critical Risk | 2026-07-11 | [↗](https://quantumaudit.app/token/virtuals-protocol-eth) |
 | [NEXO](./nexo.md) | NEXO | 🔴 100/100 Critical Risk | 2026-07-03 | [↗](https://quantumaudit.app/token/nexo-eth) |
 | [Gram (prev. Toncoin)](./gram-prev-toncoin.md) | GRAM | 🔴 94/100 Critical Risk | 2026-06-30 | [↗](https://quantumaudit.app/token/gram-prev-toncoin-eth) |
