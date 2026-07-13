@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**113 reports** · Updated daily · [← All Networks](../README.md)
+**115 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [BatCat](./batcat.md) | BATCAT | 🟠 50/100 High Risk | 2026-07-13 | [↗](https://quantumaudit.app/token/batcat-sol) |
+| [Cash Cat](./cash-cat.md) | CASHCAT | 🟠 69/100 High Risk | 2026-07-13 | [↗](https://quantumaudit.app/token/cash-cat-sol) |
 | [The Rizz Bull](./the-rizz-bull.md) | RIZZLER | 🟠 49/100 High Risk | 2026-07-10 | [↗](https://quantumaudit.app/token/the-rizz-bull-sol) |
 | [Fartcoin](./fartcoin.md) | FARTCOIN | 🟢 6/100 Low Risk | 2026-07-10 | [↗](https://quantumaudit.app/token/fartcoin-sol) |
 | [the bleck bull](./the-bleck-bull.md) | ANSUM | 🟡 30/100 Medium Risk | 2026-07-09 | [↗](https://quantumaudit.app/token/the-bleck-bull-sol) |
