@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**35 reports** · Updated daily · [← All Networks](../README.md)
+**36 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Derive](./derive.md) | DRV | 🔴 100/100 Critical Risk | 2026-07-14 | [↗](https://quantumaudit.app/token/derive-eth) |
 | [ADI](./adi.md) | ADI | 🟠 64/100 High Risk | 2026-07-13 | [↗](https://quantumaudit.app/token/adi-eth) |
 | [DeXe](./dexe.md) | DEXE | 🔴 98/100 Critical Risk | 2026-07-12 | [↗](https://quantumaudit.app/token/dexe-eth) |
 | [Virtuals Protocol](./virtuals-protocol.md) | VIRTUAL | 🔴 85/100 Critical Risk | 2026-07-11 | [↗](https://quantumaudit.app/token/virtuals-protocol-eth) |

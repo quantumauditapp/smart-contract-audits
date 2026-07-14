@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-162-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-165-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,9 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Dark Arena](./solana/dark-arena.md) | DARK | Solana | 🟠 55/100 | 2026-07-14 | [↗](https://quantumaudit.app/token/dark-arena-sol) |
+| [Derive](./ethereum/derive.md) | DRV | Ethereum | 🔴 100/100 | 2026-07-14 | [↗](https://quantumaudit.app/token/derive-eth) |
+| [Jito](./solana/jito.md) | JTO | Solana | 🟡 25/100 | 2026-07-14 | [↗](https://quantumaudit.app/token/jito-sol) |
 | [BatCat](./solana/batcat.md) | BATCAT | Solana | 🟠 50/100 | 2026-07-13 | [↗](https://quantumaudit.app/token/batcat-sol) |
 | [Cash Cat](./solana/cash-cat.md) | CASHCAT | Solana | 🟠 69/100 | 2026-07-13 | [↗](https://quantumaudit.app/token/cash-cat-sol) |
 | [ADI](./ethereum/adi.md) | ADI | Ethereum | 🟠 64/100 | 2026-07-13 | [↗](https://quantumaudit.app/token/adi-eth) |
@@ -39,15 +42,12 @@
 | [DIAMOND HANDS](./solana/diamond-hands.md) | DIAMOND | Solana | 🟡 36/100 | 2026-06-30 | [↗](https://quantumaudit.app/token/diamond-hands-sol) |
 | [Gram (prev. Toncoin)](./ethereum/gram-prev-toncoin.md) | GRAM | Ethereum | 🔴 94/100 | 2026-06-30 | [↗](https://quantumaudit.app/token/gram-prev-toncoin-eth) |
 | [Cap](./ethereum/cap.md) | CAP | Ethereum | 🟠 61/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/cap-eth) |
-| [Are Ya Winning, Son?](./solana/are-ya-winning-son.md) | SON | Solana | 🟢 17/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/are-ya-winning-son-sol) |
-| [The Black Bull](./solana/the-black-bull.md) | ANSEM | Solana | 🟠 55/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/the-black-bull-sol) |
-| [RaveDAO](./ethereum/ravedao.md) | RAVE | Ethereum | 🔴 90/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/ravedao-eth) |
 
 ---
 
 ## Browse by Network
 
-[Solana (115)](./solana/README.md) · [Ethereum (35)](./ethereum/README.md) · [Base (9)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
+[Solana (117)](./solana/README.md) · [Ethereum (36)](./ethereum/README.md) · [Base (9)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
 
 ---
 
