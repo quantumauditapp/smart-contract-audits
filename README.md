@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-165-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-167-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,8 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Pointless Coin](./solana/pointless-coin.md) | POINTLESS | Solana | 🟠 49/100 | 2026-07-15 | [↗](https://quantumaudit.app/token/pointless-coin-sol) |
+| [Ghosti](./solana/ghosti.md) | GHOSTI | Solana | 🟠 48/100 | 2026-07-15 | [↗](https://quantumaudit.app/token/ghosti-sol) |
 | [Dark Arena](./solana/dark-arena.md) | DARK | Solana | 🟠 55/100 | 2026-07-14 | [↗](https://quantumaudit.app/token/dark-arena-sol) |
 | [Derive](./ethereum/derive.md) | DRV | Ethereum | 🔴 100/100 | 2026-07-14 | [↗](https://quantumaudit.app/token/derive-eth) |
 | [Jito](./solana/jito.md) | JTO | Solana | 🟡 25/100 | 2026-07-14 | [↗](https://quantumaudit.app/token/jito-sol) |
@@ -40,14 +42,12 @@
 | [Baby Ansem](./bsc/baby-ansem.md) | BABYANSEM | BNB Chain | 🟠 67/100 | 2026-07-01 | [↗](https://quantumaudit.app/token/baby-ansem-bsc) |
 | [Solana Supercycle](./solana/solana-supercycle.md) | SOLS | Solana | 🟡 43/100 | 2026-07-01 | [↗](https://quantumaudit.app/token/solana-supercycle-sol) |
 | [DIAMOND HANDS](./solana/diamond-hands.md) | DIAMOND | Solana | 🟡 36/100 | 2026-06-30 | [↗](https://quantumaudit.app/token/diamond-hands-sol) |
-| [Gram (prev. Toncoin)](./ethereum/gram-prev-toncoin.md) | GRAM | Ethereum | 🔴 94/100 | 2026-06-30 | [↗](https://quantumaudit.app/token/gram-prev-toncoin-eth) |
-| [Cap](./ethereum/cap.md) | CAP | Ethereum | 🟠 61/100 | 2026-06-29 | [↗](https://quantumaudit.app/token/cap-eth) |
 
 ---
 
 ## Browse by Network
 
-[Solana (117)](./solana/README.md) · [Ethereum (36)](./ethereum/README.md) · [Base (9)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
+[Solana (119)](./solana/README.md) · [Ethereum (36)](./ethereum/README.md) · [Base (9)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
 
 ---
 

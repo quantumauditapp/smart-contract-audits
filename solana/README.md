@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**117 reports** · Updated daily · [← All Networks](../README.md)
+**119 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Pointless Coin](./pointless-coin.md) | POINTLESS | 🟠 49/100 High Risk | 2026-07-15 | [↗](https://quantumaudit.app/token/pointless-coin-sol) |
+| [Ghosti](./ghosti.md) | GHOSTI | 🟠 48/100 High Risk | 2026-07-15 | [↗](https://quantumaudit.app/token/ghosti-sol) |
 | [Dark Arena](./dark-arena.md) | DARK | 🟠 55/100 High Risk | 2026-07-14 | [↗](https://quantumaudit.app/token/dark-arena-sol) |
 | [Jito](./jito.md) | JTO | 🟡 25/100 Medium Risk | 2026-07-14 | [↗](https://quantumaudit.app/token/jito-sol) |
 | [BatCat](./batcat.md) | BATCAT | 🟠 50/100 High Risk | 2026-07-13 | [↗](https://quantumaudit.app/token/batcat-sol) |
