@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-167-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-170-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,9 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [The Algorithm](./solana/the-algorithm.md) | AGR | Solana | 🟡 36/100 | 2026-07-16 | [↗](https://quantumaudit.app/token/the-algorithm-sol) |
+| [io.net](./solana/ionet.md) | IO | Solana | 🟡 43/100 | 2026-07-16 | [↗](https://quantumaudit.app/token/ionet-sol) |
+| [Lido DAO](./ethereum/lido-dao.md) | LDO | Ethereum | 🟠 58/100 | 2026-07-16 | [↗](https://quantumaudit.app/token/lido-dao-eth) |
 | [Pointless Coin](./solana/pointless-coin.md) | POINTLESS | Solana | 🟠 49/100 | 2026-07-15 | [↗](https://quantumaudit.app/token/pointless-coin-sol) |
 | [Ghosti](./solana/ghosti.md) | GHOSTI | Solana | 🟠 48/100 | 2026-07-15 | [↗](https://quantumaudit.app/token/ghosti-sol) |
 | [Dark Arena](./solana/dark-arena.md) | DARK | Solana | 🟠 55/100 | 2026-07-14 | [↗](https://quantumaudit.app/token/dark-arena-sol) |
@@ -39,15 +42,12 @@
 | [NEXO](./ethereum/nexo.md) | NEXO | Ethereum | 🔴 100/100 | 2026-07-03 | [↗](https://quantumaudit.app/token/nexo-eth) |
 | [Metaplex](./solana/metaplex.md) | MPLX | Solana | 🟠 52/100 | 2026-07-03 | [↗](https://quantumaudit.app/token/metaplex-sol) |
 | [Moonbirds](./solana/moonbirds.md) | BIRB | Solana | 🟠 47/100 | 2026-07-02 | [↗](https://quantumaudit.app/token/moonbirds-sol) |
-| [Baby Ansem](./bsc/baby-ansem.md) | BABYANSEM | BNB Chain | 🟠 67/100 | 2026-07-01 | [↗](https://quantumaudit.app/token/baby-ansem-bsc) |
-| [Solana Supercycle](./solana/solana-supercycle.md) | SOLS | Solana | 🟡 43/100 | 2026-07-01 | [↗](https://quantumaudit.app/token/solana-supercycle-sol) |
-| [DIAMOND HANDS](./solana/diamond-hands.md) | DIAMOND | Solana | 🟡 36/100 | 2026-06-30 | [↗](https://quantumaudit.app/token/diamond-hands-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (119)](./solana/README.md) · [Ethereum (36)](./ethereum/README.md) · [Base (9)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
+[Solana (121)](./solana/README.md) · [Ethereum (37)](./ethereum/README.md) · [Base (9)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
 
 ---
 
