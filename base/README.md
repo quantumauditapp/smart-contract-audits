@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**9 reports** · Updated daily · [← All Networks](../README.md)
+**10 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [HOME](./home.md) | HOME | 🔴 100/100 Critical Risk | 2026-07-17 | [↗](https://quantumaudit.app/token/home-base) |
 | [OpenGradient](./opengradient.md) | OPG | 🟠 57/100 High Risk | 2026-07-07 | [↗](https://quantumaudit.app/token/opengradient-base) |
 | [Aerodrome Finance](./aerodrome-finance.md) | AERO | 🟠 51/100 High Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/aerodrome-finance-base) |
 | [SAIRI](./sairi.md) | SAIRI | 🟠 46/100 High Risk | 2026-06-13 | [↗](https://quantumaudit.app/token/sairi-base) |

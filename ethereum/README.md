@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**37 reports** · Updated daily · [← All Networks](../README.md)
+**38 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Cronos](./cronos.md) | CRO | 🔴 100/100 Critical Risk | 2026-07-17 | [↗](https://quantumaudit.app/token/cronos-eth) |
 | [Lido DAO](./lido-dao.md) | LDO | 🟠 58/100 High Risk | 2026-07-16 | [↗](https://quantumaudit.app/token/lido-dao-eth) |
 | [Derive](./derive.md) | DRV | 🔴 100/100 Critical Risk | 2026-07-14 | [↗](https://quantumaudit.app/token/derive-eth) |
 | [ADI](./adi.md) | ADI | 🟠 64/100 High Risk | 2026-07-13 | [↗](https://quantumaudit.app/token/adi-eth) |
