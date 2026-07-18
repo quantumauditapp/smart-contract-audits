@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-172-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-175-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,9 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Hyper Bull](./solana/hyper-bull.md) | HBULL | Solana | 🟡 43/100 | 2026-07-18 | [↗](https://quantumaudit.app/token/hyper-bull-sol) |
+| [RIBBIT ZYGO THE FROG ](./solana/ribbit-zygo-the-frog.md) | RIBBIT | Solana | 🟡 43/100 | 2026-07-18 | [↗](https://quantumaudit.app/token/ribbit-zygo-the-frog-sol) |
+| [Toshi](./base/toshi.md) | TOSHI | Base | 🟢 7/100 | 2026-07-18 | [↗](https://quantumaudit.app/token/toshi-base) |
 | [Cronos](./ethereum/cronos.md) | CRO | Ethereum | 🔴 100/100 | 2026-07-17 | [↗](https://quantumaudit.app/token/cronos-eth) |
 | [HOME](./base/home.md) | HOME | Base | 🔴 100/100 | 2026-07-17 | [↗](https://quantumaudit.app/token/home-base) |
 | [The Algorithm](./solana/the-algorithm.md) | AGR | Solana | 🟡 36/100 | 2026-07-16 | [↗](https://quantumaudit.app/token/the-algorithm-sol) |
@@ -39,15 +42,12 @@
 | [The Black Baby Bull](./solana/the-black-baby-bull.md) | BABYANSEM | Solana | 🟠 51/100 | 2026-07-04 | [↗](https://quantumaudit.app/token/the-black-baby-bull-sol) |
 | [The IQ Bull](./solana/the-iq-bull.md) | AMEN | Solana | 🟡 35/100 | 2026-07-04 | [↗](https://quantumaudit.app/token/the-iq-bull-sol) |
 | [manlet](./solana/manlet.md) | MANLET | Solana | 🟡 28/100 | 2026-07-04 | [↗](https://quantumaudit.app/token/manlet-sol) |
-| [The Top Bull ](./solana/the-top-bull.md) | TATE | Solana | 🟡 34/100 | 2026-07-03 | [↗](https://quantumaudit.app/token/the-top-bull-sol) |
-| [Anon Alien](./solana/anon-alien.md) | AALIEN | Solana | 🟡 44/100 | 2026-07-03 | [↗](https://quantumaudit.app/token/anon-alien-sol) |
-| [NEXO](./ethereum/nexo.md) | NEXO | Ethereum | 🔴 100/100 | 2026-07-03 | [↗](https://quantumaudit.app/token/nexo-eth) |
 
 ---
 
 ## Browse by Network
 
-[Solana (121)](./solana/README.md) · [Ethereum (38)](./ethereum/README.md) · [Base (10)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
+[Solana (123)](./solana/README.md) · [Ethereum (38)](./ethereum/README.md) · [Base (11)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
 
 ---
 

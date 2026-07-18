@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**121 reports** · Updated daily · [← All Networks](../README.md)
+**123 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Hyper Bull](./hyper-bull.md) | HBULL | 🟡 43/100 Medium Risk | 2026-07-18 | [↗](https://quantumaudit.app/token/hyper-bull-sol) |
+| [RIBBIT ZYGO THE FROG ](./ribbit-zygo-the-frog.md) | RIBBIT | 🟡 43/100 Medium Risk | 2026-07-18 | [↗](https://quantumaudit.app/token/ribbit-zygo-the-frog-sol) |
 | [The Algorithm](./the-algorithm.md) | AGR | 🟡 36/100 Medium Risk | 2026-07-16 | [↗](https://quantumaudit.app/token/the-algorithm-sol) |
 | [io.net](./ionet.md) | IO | 🟡 43/100 Medium Risk | 2026-07-16 | [↗](https://quantumaudit.app/token/ionet-sol) |
 | [Pointless Coin](./pointless-coin.md) | POINTLESS | 🟠 49/100 High Risk | 2026-07-15 | [↗](https://quantumaudit.app/token/pointless-coin-sol) |
