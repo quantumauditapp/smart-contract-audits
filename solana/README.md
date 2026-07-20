@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**124 reports** · Updated daily · [← All Networks](../README.md)
+**125 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Chonketha the Wet Beaver](./chonketha-the-wet-beaver.md) | CHONKETHA | 🟠 47/100 High Risk | 2026-07-20 | [↗](https://quantumaudit.app/token/chonketha-the-wet-beaver-sol) |
 | [Credible Finance](./credible-finance.md) | CRED | 🔴 73/100 Critical Risk | 2026-07-19 | [↗](https://quantumaudit.app/token/credible-finance-sol) |
 | [Hyper Bull](./hyper-bull.md) | HBULL | 🟡 43/100 Medium Risk | 2026-07-18 | [↗](https://quantumaudit.app/token/hyper-bull-sol) |
 | [RIBBIT ZYGO THE FROG ](./ribbit-zygo-the-frog.md) | RIBBIT | 🟡 43/100 Medium Risk | 2026-07-18 | [↗](https://quantumaudit.app/token/ribbit-zygo-the-frog-sol) |

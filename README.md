@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-176-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-177-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,7 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Chonketha the Wet Beaver](./solana/chonketha-the-wet-beaver.md) | CHONKETHA | Solana | 🟠 47/100 | 2026-07-20 | [↗](https://quantumaudit.app/token/chonketha-the-wet-beaver-sol) |
 | [Credible Finance](./solana/credible-finance.md) | CRED | Solana | 🔴 73/100 | 2026-07-19 | [↗](https://quantumaudit.app/token/credible-finance-sol) |
 | [Hyper Bull](./solana/hyper-bull.md) | HBULL | Solana | 🟡 43/100 | 2026-07-18 | [↗](https://quantumaudit.app/token/hyper-bull-sol) |
 | [RIBBIT ZYGO THE FROG ](./solana/ribbit-zygo-the-frog.md) | RIBBIT | Solana | 🟡 43/100 | 2026-07-18 | [↗](https://quantumaudit.app/token/ribbit-zygo-the-frog-sol) |
@@ -41,13 +42,12 @@
 | [Bonk](./solana/bonk.md) | BONK | Solana | 🟡 28/100 | 2026-07-07 | [↗](https://quantumaudit.app/token/bonk-sol) |
 | [The White Bull](./solana/the-white-bull.md) | DAVID | Solana | 🟡 28/100 | 2026-07-06 | [↗](https://quantumaudit.app/token/the-white-bull-sol) |
 | [The Black Baby Bull](./solana/the-black-baby-bull.md) | BABYANSEM | Solana | 🟠 51/100 | 2026-07-04 | [↗](https://quantumaudit.app/token/the-black-baby-bull-sol) |
-| [The IQ Bull](./solana/the-iq-bull.md) | AMEN | Solana | 🟡 35/100 | 2026-07-04 | [↗](https://quantumaudit.app/token/the-iq-bull-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (124)](./solana/README.md) · [Ethereum (38)](./ethereum/README.md) · [Base (11)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
+[Solana (125)](./solana/README.md) · [Ethereum (38)](./ethereum/README.md) · [Base (11)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
 
 ---
 
