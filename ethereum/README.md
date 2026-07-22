@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**39 reports** · Updated daily · [← All Networks](../README.md)
+**42 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Zama](./zama.md) | ZAMA | 🟠 48/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/zama-eth) |
+| [Asteroid](./asteroid.md) | ASTEROID | 🟠 61/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/asteroid-eth) |
+| [c8ntinuum](./c8ntinuum.md) | CTM | 🟠 59/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/c8ntinuum-eth) |
 | [Caldera](./caldera.md) | ERA | 🔴 73/100 Critical Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/caldera-eth) |
 | [Cronos](./cronos.md) | CRO | 🔴 100/100 Critical Risk | 2026-07-17 | [↗](https://quantumaudit.app/token/cronos-eth) |
 | [Lido DAO](./lido-dao.md) | LDO | 🟠 58/100 High Risk | 2026-07-16 | [↗](https://quantumaudit.app/token/lido-dao-eth) |

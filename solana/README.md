@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**127 reports** · Updated daily · [← All Networks](../README.md)
+**139 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,18 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [SPX6900 (Wormhole)](./spx6900-wormhole.md) | SPX | 🟠 55/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/spx6900-wormhole-sol) |
+| [Vine Coin](./vine-coin.md) | VINE | 🟢 9/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/vine-coin-sol) |
+| [NO ONE CARES](./no-one-cares.md) | KIM | 🟠 61/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/no-one-cares-sol) |
+| [Scam Altman](./scam-altman.md) | SCAM | 🟡 32/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/scam-altman-sol) |
+| [Wrapped SOL](./wrapped-sol.md) | SOL | 🟢 15/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/wrapped-sol-sol) |
+| [Jotchua](./jotchua.md) | JOTCHUA | 🟢 19/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/jotchua-sol) |
+| [maxxing](./maxxing.md) | MAXXING | 🟡 25/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/maxxing-sol) |
+| [Tung Tung Tung Sahur](./tung-tung-tung-sahur.md) | TRIPLET | 🟢 18/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/tung-tung-tung-sahur-sol) |
+| [Cupsey](./cupsey.md) | CUPSEY | 🟡 29/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/cupsey-sol) |
+| [パンチ](./punch.md) | PUNCH | 🟡 32/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/punch-sol) |
+| [USELESS COIN](./useless-coin.md) | USELESS | 🟢 0/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/useless-coin-sol) |
+| [SolAngeles](./solangeles.md) | SOLANGELES | 🟡 32/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/solangeles-sol) |
 | [TROLL](./troll.md) | TROLL | 🟢 19/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/troll-sol) |
 | [The Bull Cat](./the-bull-cat.md) | BULLCAT | 🟡 41/100 Medium Risk | 2026-07-21 | [↗](https://quantumaudit.app/token/the-bull-cat-sol) |
 | [Chonketha the Wet Beaver](./chonketha-the-wet-beaver.md) | CHONKETHA | 🟠 47/100 High Risk | 2026-07-20 | [↗](https://quantumaudit.app/token/chonketha-the-wet-beaver-sol) |
