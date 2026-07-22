@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-179-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-183-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,10 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Arbitrum](./arbitrum/arbitrum.md) | ARB | Arbitrum | 🟠 66/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/arbitrum-arb) |
+| [Coinbase Man](./base/coinbase-man.md) | BRIAN | Base | 🟡 30/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/coinbase-man-base) |
+| [Surplus Intelligence](./base/surplus-intelligence.md) | SURPLUS | Base | 🔴 84/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/surplus-intelligence-base) |
+| [TROLL](./solana/troll.md) | TROLL | Solana | 🟢 19/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/troll-sol) |
 | [Caldera](./ethereum/caldera.md) | ERA | Ethereum | 🔴 73/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/caldera-eth) |
 | [The Bull Cat](./solana/the-bull-cat.md) | BULLCAT | Solana | 🟡 41/100 | 2026-07-21 | [↗](https://quantumaudit.app/token/the-bull-cat-sol) |
 | [Chonketha the Wet Beaver](./solana/chonketha-the-wet-beaver.md) | CHONKETHA | Solana | 🟠 47/100 | 2026-07-20 | [↗](https://quantumaudit.app/token/chonketha-the-wet-beaver-sol) |
@@ -38,16 +42,12 @@
 | [Fartcoin](./solana/fartcoin.md) | FARTCOIN | Solana | 🟢 6/100 | 2026-07-10 | [↗](https://quantumaudit.app/token/fartcoin-sol) |
 | [the bleck bull](./solana/the-bleck-bull.md) | ANSUM | Solana | 🟡 30/100 | 2026-07-09 | [↗](https://quantumaudit.app/token/the-bleck-bull-sol) |
 | [Free Joby](./solana/free-joby.md) | JOBY | Solana | 🟡 21/100 | 2026-07-09 | [↗](https://quantumaudit.app/token/free-joby-sol) |
-| [The Orange Bull](./solana/the-orange-bull.md) | SAYLOR | Solana | 🟡 23/100 | 2026-07-08 | [↗](https://quantumaudit.app/token/the-orange-bull-sol) |
-| [The Red Dragon](./solana/the-red-dragon.md) | ZION | Solana | 🟠 46/100 | 2026-07-07 | [↗](https://quantumaudit.app/token/the-red-dragon-sol) |
-| [OpenGradient](./base/opengradient.md) | OPG | Base | 🟠 57/100 | 2026-07-07 | [↗](https://quantumaudit.app/token/opengradient-base) |
-| [Bonk](./solana/bonk.md) | BONK | Solana | 🟡 28/100 | 2026-07-07 | [↗](https://quantumaudit.app/token/bonk-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (126)](./solana/README.md) · [Ethereum (39)](./ethereum/README.md) · [Base (11)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
+[Solana (127)](./solana/README.md) · [Ethereum (39)](./ethereum/README.md) · [Base (13)](./base/README.md) · [BNB Chain (3)](./bsc/README.md) · [Arbitrum (1)](./arbitrum/README.md)
 
 ---
 

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**11 reports** · Updated daily · [← All Networks](../README.md)
+**13 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Coinbase Man](./coinbase-man.md) | BRIAN | 🟡 30/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/coinbase-man-base) |
+| [Surplus Intelligence](./surplus-intelligence.md) | SURPLUS | 🔴 84/100 Critical Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/surplus-intelligence-base) |
 | [Toshi](./toshi.md) | TOSHI | 🟢 7/100 Low Risk | 2026-07-18 | [↗](https://quantumaudit.app/token/toshi-base) |
 | [HOME](./home.md) | HOME | 🔴 100/100 Critical Risk | 2026-07-17 | [↗](https://quantumaudit.app/token/home-base) |
 | [OpenGradient](./opengradient.md) | OPG | 🟠 57/100 High Risk | 2026-07-07 | [↗](https://quantumaudit.app/token/opengradient-base) |

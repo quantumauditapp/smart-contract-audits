@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**126 reports** · Updated daily · [← All Networks](../README.md)
+**127 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [TROLL](./troll.md) | TROLL | 🟢 19/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/troll-sol) |
 | [The Bull Cat](./the-bull-cat.md) | BULLCAT | 🟡 41/100 Medium Risk | 2026-07-21 | [↗](https://quantumaudit.app/token/the-bull-cat-sol) |
 | [Chonketha the Wet Beaver](./chonketha-the-wet-beaver.md) | CHONKETHA | 🟠 47/100 High Risk | 2026-07-20 | [↗](https://quantumaudit.app/token/chonketha-the-wet-beaver-sol) |
 | [Credible Finance](./credible-finance.md) | CRED | 🔴 73/100 Critical Risk | 2026-07-19 | [↗](https://quantumaudit.app/token/credible-finance-sol) |
