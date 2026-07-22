@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-178-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-179-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,7 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Caldera](./ethereum/caldera.md) | ERA | Ethereum | 🔴 73/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/caldera-eth) |
 | [The Bull Cat](./solana/the-bull-cat.md) | BULLCAT | Solana | 🟡 41/100 | 2026-07-21 | [↗](https://quantumaudit.app/token/the-bull-cat-sol) |
 | [Chonketha the Wet Beaver](./solana/chonketha-the-wet-beaver.md) | CHONKETHA | Solana | 🟠 47/100 | 2026-07-20 | [↗](https://quantumaudit.app/token/chonketha-the-wet-beaver-sol) |
 | [Credible Finance](./solana/credible-finance.md) | CRED | Solana | 🔴 73/100 | 2026-07-19 | [↗](https://quantumaudit.app/token/credible-finance-sol) |
@@ -41,13 +42,12 @@
 | [The Red Dragon](./solana/the-red-dragon.md) | ZION | Solana | 🟠 46/100 | 2026-07-07 | [↗](https://quantumaudit.app/token/the-red-dragon-sol) |
 | [OpenGradient](./base/opengradient.md) | OPG | Base | 🟠 57/100 | 2026-07-07 | [↗](https://quantumaudit.app/token/opengradient-base) |
 | [Bonk](./solana/bonk.md) | BONK | Solana | 🟡 28/100 | 2026-07-07 | [↗](https://quantumaudit.app/token/bonk-sol) |
-| [The White Bull](./solana/the-white-bull.md) | DAVID | Solana | 🟡 28/100 | 2026-07-06 | [↗](https://quantumaudit.app/token/the-white-bull-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (126)](./solana/README.md) · [Ethereum (38)](./ethereum/README.md) · [Base (11)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
+[Solana (126)](./solana/README.md) · [Ethereum (39)](./ethereum/README.md) · [Base (11)](./base/README.md) · [BNB Chain (3)](./bsc/README.md)
 
 ---
 
