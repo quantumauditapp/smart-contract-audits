@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**42 reports** · Updated daily · [← All Networks](../README.md)
+**44 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Epic Chain](./epic-chain.md) | EPIC | 🟠 55/100 High Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/epic-chain-eth) |
+| [Balancer](./balancer.md) | BAL | 🟡 29/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/balancer-eth) |
 | [Zama](./zama.md) | ZAMA | 🟠 48/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/zama-eth) |
 | [Asteroid](./asteroid.md) | ASTEROID | 🟠 61/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/asteroid-eth) |
 | [c8ntinuum](./c8ntinuum.md) | CTM | 🟠 59/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/c8ntinuum-eth) |

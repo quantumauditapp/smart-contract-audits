@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**138 reports** · Updated daily · [← All Networks](../README.md)
+**143 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [world.xyz](./worldxyz.md) | WORLD | 🟡 41/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/worldxyz-sol) |
+| [HeavyPulp](./heavypulp.md) | HEAVYPULP | 🟡 45/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/heavypulp-sol) |
+| [febu](./febu.md) | FEBU | 🟡 41/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/febu-sol) |
+| [WINGIT](./wingit.md) | WINGIT | 🟡 40/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/wingit-sol) |
+| [CUBEMAN](./cubeman.md) | CUBEMAN | 🟡 42/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/cubeman-sol) |
 | [SPX6900 (Wormhole)](./spx6900-wormhole.md) | SPX | 🟠 55/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/spx6900-wormhole-sol) |
 | [Vine Coin](./vine-coin.md) | VINE | 🟢 9/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/vine-coin-sol) |
 | [NO ONE CARES](./no-one-cares.md) | KIM | 🟠 61/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/no-one-cares-sol) |

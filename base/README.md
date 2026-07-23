@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**18 reports** · Updated daily · [← All Networks](../README.md)
+**26 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,14 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [OpenVPP](./openvpp.md) | OVPP | 🟡 36/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/openvpp-base) |
+| [Unit 00 - Rei](./unit-00-rei.md) | REI | 🟡 32/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/unit-00-rei-base) |
+| [MineBean](./minebean.md) | BEAN | 🔴 86/100 Critical Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/minebean-base) |
+| [Tether USD](./tether-usd.md) | USDT | 🟠 50/100 High Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/tether-usd-base) |
+| [Aave Token](./aave-token.md) | AAVE | 🟡 33/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/aave-token-base) |
+| [ResearchCoin](./researchcoin.md) | RSC | 🟡 41/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/researchcoin-base) |
+| [RUSSELL](./russell.md) | RUSSELL | 🟢 13/100 Low Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/russell-base) |
+| [o1.exchange](./o1exchange.md) | O | 🟡 25/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/o1exchange-base) |
 | [Morpho Token](./morpho-token.md) | MORPHO | 🔴 76/100 Critical Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/morpho-token-base) |
 | [Jito Staked SOL](./jito-staked-sol.md) | JITOSOL | 🟠 57/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/jito-staked-sol-base) |
 | [Zora](./zora.md) | ZORA | 🟠 55/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/zora-base) |

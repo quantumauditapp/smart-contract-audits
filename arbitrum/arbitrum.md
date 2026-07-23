@@ -2,14 +2,14 @@
 token: Arbitrum
 ticker: ARB
 network: arbitrum
-risk_score: 66
-status: high
+risk_score: 42
+status: medium
 date: 2026-07-22
 ---
 
 # Arbitrum (ARB) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/arbitrum-arb)
 
@@ -17,17 +17,26 @@ date: 2026-07-22
 
 ## Audit Summary
 
-This audit covers a proxy contract utilizing OpenZeppelin's ERC1967Proxy, indicating a UUPS upgradeable pattern. While the proxy contract itself is based on battle-tested libraries, the critical finding is that the associated implementation contract is unverified. This prevents any meaningful security assessment of the system's core logic, including its upgradeability controls, economic model, and access permissions. Without the implementation source, the system's security posture is entirely unknown and poses a severe risk.
+The L2ArbitrumToken contract serves as the L2 counterparty for the Arbitrum token, implementing ERC20 functionality with extensions for burning, permitting, voting, and transfer-and-call. It is deployed as an upgradeable proxy, utilizing OpenZeppelin's TransparentUpgradeableProxy pattern. The contract incorporates a controlled minting mechanism (2% annual cap) and a system for tracking total delegated votes, crucial for governance. While the contract leverages battle-tested OpenZeppelin libraries and follows best practices for upgradeability, certain centralized control points and an external dependency introduce a medium level of risk. The owner, a RoleGatedExecutor, manages critical functions like minting and delegation adjustments, which is a common pattern for governance tokens but requires robust governance oversight.
 
-> **Final Recommendation:** The most critical recommendation is to immediately verify the source code of the implementation contract (0xd47d14a315394ddf063174f2286ab4eb7c507fa0) on Etherscan. Until this is done, the system should be considered unauditable and poses an extreme security risk to users. No funds should be deposited or interactions made with this contract until a full security audit can be performed on the verified implementation code. Once verified, ensure robust access control mechanisms, such as multi-signature wallets or time-locks, protect critical functions like upgrades and administrative actions.
+> **Final Recommendation:** It is recommended to conduct a thorough audit of the `TransferAndCallToken` contract to ensure its security and compatibility. For the `L2ArbitrumToken` itself, consider adding an event for the `mint` function to enhance transparency and off-chain monitoring. Review the consistency in handling negative `_totalDelegationHistory` values to ensure clarity and prevent potential misinterpretations of governance data.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The proxy contract leverages OpenZeppelin's `ERC1967Proxy` and `ERC1967Upgrade` (7.1 Architecture), which are widely adopted and considered robust. However, the primary technical risk stems from the… |
-| **Governance / Economics** | 3/10 | High | Due to the unverified implementation contract, it is impossible to assess any economic models, tokenomics, fee structures, or potential manipulation vectors (7.4 Economic). Similarly, any governance… |
-| **Upgrades** | 2/10 | High | The contract employs the UUPS (Universal Upgradeable Proxy Standard) pattern, which allows for flexible upgrades where the implementation contract controls the upgrade logic (7.7 Upgrades). While the… |
+| **Technical** | 7/10 | Low | The contract demonstrates good technical architecture (7.1) by extending well-audited OpenZeppelin ERC20, Burnable, Permit, and Votes standards, ensuring robust core token functionality. Code… |
+| **Governance / Economics** | 4/10 | Medium | The economic model (7.4) includes a controlled minting function, allowing the owner to mint up to 2% of the total supply annually, which introduces a predictable inflation mechanism. Governance (7.5)… |
+| **Upgrades** | 1/10 | High | The contract is designed for upgradeability (7.7) using OpenZeppelin's `Initializable` pattern and deployed behind a TransparentUpgradeableProxy. The constructor correctly calls… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Transparent |
+| **Admin** | OZ ProxyAdmin → RoleGatedExecutor |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
@@ -38,34 +47,41 @@ This audit covers a proxy contract utilizing OpenZeppelin's ERC1967Proxy, indica
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 2 High · 🟡 1 Medium_
+_🟡 1 Medium · 🟢 2 Low · ⚪ 2 Informational_
 
-### `C-01` — Unverified Implementation Contract  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Centralized Control over Token Parameters (Minting & Delegation Adjustment)  *(Severity: Medium · Status: Unresolved)*
 
-The proxy contract at `0x912ce59144191c1204e64559fe8253a0e49e6548` delegates all calls to an implementation contract at `0xd47d14a315394ddf063174f2286ab4eb7c507fa0`. The source code for this implementation contract is not verified on Etherscan (or provided for audit). This prevents any security assessment of the actual business logic, potential vulnerabilities, economic models, and upgradeability controls. Without the implementation code, the system is a black box, and its security cannot be guaranteed. (7.1 Architecture, 7.2 Code Security, 7.3 Access Control, 7.4 Economic, 7.5 Governance, 7.7 Upgrades, 7.8 Operations)
+The `owner` of the `L2ArbitrumToken` contract, identified as a `RoleGatedExecutor`, possesses significant centralized control. This includes the authority to mint new tokens annually, capped at 2% of the total supply, and to manually adjust the `_totalDelegationHistory` via the `adjustTotalDelegation` function. While this pattern is common for governance tokens where a robust governance mechanism (like a multi-sig or DAO) acts as the owner, these functions represent powerful capabilities that directly impact the token's supply and the integrity of governance quorum calculations (7.3 Access Control, 7.4 Economic, 7.5 Governance).
 
-**Recommendation:** Immediately verify the source code of the implementation contract (`0xd47d14a315394ddf063174f2286ab4eb7c507fa0`) on Etherscan. Until the implementation is fully auditable, users should be warned against interacting with the contract, and no funds should be considered secure.
-
-
-### `H-01` — Unknown Upgrade Access Control  *(Severity: High · Status: Unresolved)*
-
-The contract utilizes the UUPS proxy pattern, where the implementation contract is responsible for initiating upgrades via `_upgradeToAndCallUUPS`. Since the implementation contract's source code is unverified, the access control mechanisms governing who can trigger an upgrade are unknown. An attacker or compromised entity could potentially upgrade the contract to a malicious implementation, leading to a complete loss of funds or system compromise. (7.3 Access Control, 7.7 Upgrades)
-
-**Recommendation:** Once the implementation contract is verified, ensure that the function responsible for calling `_upgradeToAndCallUUPS` is protected by robust access control, such as a multi-signature wallet, a time-lock, or a well-governed DAO. This must be clearly verifiable in the source code.
+**Recommendation:** Ensure that the `RoleGatedExecutor` controlling the `owner` address has extremely robust security measures, including a high multi-signature threshold and a well-defined, transparent governance process. Regular audits of the governance mechanism itself are crucial to mitigate risks associated with this centralized power.
 
 
-### `H-02` — Undeterminable Economic and Governance Risks  *(Severity: High · Status: Unresolved)*
+### `L-01` — Dependency on Unaudited `TransferAndCallToken` Implementation  *(Severity: Low · Status: Unresolved)*
 
-Due to the unverified implementation contract, it is impossible to assess any economic models, tokenomics, fee structures, or governance mechanisms (e.g., voting, proposal execution) that might be present. This introduces significant unquantifiable risk regarding potential economic exploits, rug pulls, or governance attacks, as the system's core behavior is opaque. (7.4 Economic, 7.5 Governance)
+The `L2ArbitrumToken` contract inherits from `TransferAndCallToken`, but the source code for this external dependency was not provided for audit. The security and correctness of `TransferAndCallToken` are critical to the overall integrity and functionality of the `L2ArbitrumToken`. Any vulnerabilities or unexpected behaviors within `TransferAndCallToken` could directly impact the main token contract (7.6 External).
 
-**Recommendation:** Verify the implementation contract's source code to allow for a comprehensive review of its economic and governance logic. Implement transparent and auditable mechanisms for all critical economic parameters and governance decisions.
+**Recommendation:** Obtain and thoroughly audit the source code for the `TransferAndCallToken` contract. Verify its implementation against known vulnerability patterns, especially regarding reentrancy and external calls, to ensure it does not introduce any weaknesses into the `L2ArbitrumToken` system.
 
 
-### `M-01` — Dependency on OpenZeppelin Contracts  *(Severity: Medium · Status: Unresolved)*
+### `L-02` — Potential for Initial `_totalDelegationHistory` Estimate Manipulation  *(Severity: Low · Status: Unresolved)*
 
-The proxy contract relies heavily on OpenZeppelin's `ERC1967Proxy` and `ERC1967Upgrade` contracts. While these are widely used and audited, any future vulnerabilities discovered in these specific versions (`^0.8.0`, `^0.8.2` for the base contracts, compiled with `0.8.16`) could potentially impact the security of this proxy. (7.2 Code Security, 7.6 External)
+The `postUpgradeInit` function, used to set the initial `_totalDelegationHistory`, includes a comment acknowledging that this initial estimate 'may be manipulable with artificial delegation/undelegation prior to the upgrade.' While the comment states that the risk/impact is low due to quorum clamping by governors, it highlights a known edge case where the initial state of a critical governance parameter could be influenced (7.4 Economic, 7.5 Governance, 7.7 Upgrades).
 
-**Recommendation:** Regularly monitor OpenZeppelin security advisories and consider upgrading to newer, patched versions if vulnerabilities are found. Ensure the compiler version used is not known to have critical bugs and that all dependencies are kept up-to-date.
+**Recommendation:** While the impact is noted as low, consider if there are further measures to minimize the window or opportunity for such manipulation, or to provide clearer documentation on how the 'estimate' is derived and validated. Ensure the quorum clamping mechanism is robust and well-understood.
+
+
+### `I-01` — Missing Event for Minting Operations  *(Severity: Informational · Status: Unresolved)*
+
+The `mint` function, which allows the owner to create new tokens, does not emit an explicit event. While ERC20 `_mint` internally emits a `Transfer` event from `address(0)`, a dedicated `Mint` event could provide clearer, more specific information for off-chain monitoring, indexing, and transparency regarding token supply changes (7.2 Code Security, 7.8 Operations).
+
+**Recommendation:** Consider adding a custom `event Mint(address indexed recipient, uint256 amount)` within the `mint` function to provide more explicit signaling of minting operations. This enhances transparency and simplifies off-chain analysis.
+
+
+### `I-02` — Inconsistent Handling of Negative `_totalDelegationHistory` Values  *(Severity: Informational · Status: Unresolved)*
+
+The contract exhibits inconsistent handling of potentially negative values for `_totalDelegationHistory`. In `_updateDelegationHistory`, if `newValue` becomes negative, it is clamped to `0` (`uint256(newValue < 0 ? int256(0) : newValue)`). In contrast, the `adjustTotalDelegation` function uses a `require(newValue >= 0)` statement, which would revert if `newValue` is negative. While both approaches prevent underflow, the clamping in `_updateDelegationHistory` might silently mask an underlying issue if the calculated delta is unexpectedly large and negative, potentially leading to an inaccurate `_totalDelegationHistory` without an explicit error (7.2 Code Security).
+
+**Recommendation:** Review the logic for `_totalDelegationHistory` adjustments to ensure consistent error handling or clamping behavior. If a negative value indicates an error state, consider reverting in `_updateDelegationHistory` as well, or provide clear documentation on why clamping is preferred in one context and reverting in another.
 
 ## Token Metrics
 
@@ -82,13 +98,13 @@ The proxy contract relies heavily on OpenZeppelin's `ERC1967Proxy` and `ERC1967U
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 415 buys / 560 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
 
@@ -97,8 +113,8 @@ The proxy contract relies heavily on OpenZeppelin's `ERC1967Proxy` and `ERC1967U
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 

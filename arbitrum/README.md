@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**3 reports** · Updated daily · [← All Networks](../README.md)
+**5 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,9 +10,11 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Espresso](./espresso.md) | ESP | 🟡 41/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/espresso-arb) |
+| [Vision](./vision.md) | VSN | 🟠 66/100 High Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/vision-arb) |
+| [Arbitrum](./arbitrum.md) | ARB | 🟡 42/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/arbitrum-arb) |
 | [Chip](./chip.md) | CHIP | 🔴 76/100 Critical Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/chip-arb) |
 | [Wrapped BTC](./wrapped-btc.md) | WBTC | 🔴 81/100 Critical Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/wrapped-btc-arb) |
-| [Arbitrum](./arbitrum.md) | ARB | 🟠 66/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/arbitrum-arb) |
 
 ---
 

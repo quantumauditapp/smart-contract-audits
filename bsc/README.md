@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**19 reports** · Updated daily · [← All Networks](../README.md)
+**26 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Build On BNB](./build-on-bnb.md) | BOB | 🟠 60/100 High Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/build-on-bnb-bsc) |
+| [Solstice](./solstice.md) | SLX | 🟠 61/100 High Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/solstice-bsc) |
+| [Cap](./cap.md) | CAP | 🟠 59/100 High Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/cap-bsc) |
+| [WebKey DAO 2.0](./webkey-dao-20.md) | WKEYDAO2 | 🟠 67/100 High Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/webkey-dao-20-bsc) |
+| [ARK](./ark.md) | ARK | 🟡 37/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/ark-bsc) |
+| [XPULS](./xpuls.md) | XPULS | 🟠 49/100 High Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/xpuls-bsc) |
+| [B](./b.md) | B | 🟢 0/100 Low Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/b-bsc) |
 | [Baby Doge Coin](./baby-doge-coin.md) | BABYDOGE | 🔴 73/100 Critical Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/baby-doge-coin-bsc) |
 | [XPIN Token](./xpin-token.md) | XPIN | 🟠 49/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/xpin-token-bsc) |
 | [SKYAI](./skyai.md) | SKYAI | 🟡 42/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/skyai-bsc) |
