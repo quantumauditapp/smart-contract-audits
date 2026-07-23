@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**19 reports** · Updated daily · [← All Networks](../README.md)
+**18 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -13,7 +13,6 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 | [Morpho Token](./morpho-token.md) | MORPHO | 🔴 76/100 Critical Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/morpho-token-base) |
 | [Jito Staked SOL](./jito-staked-sol.md) | JITOSOL | 🟠 57/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/jito-staked-sol-base) |
 | [Zora](./zora.md) | ZORA | 🟠 55/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/zora-base) |
-| [Aerodrome](./aerodrome.md) | AERO | 🟠 59/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/aerodrome-base) |
 | [ViciCoin](./vicicoin.md) | VCNT | 🟠 70/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/vicicoin-base) |
 | [ClawBank](./clawbank.md) | CLAWBANK | 🟡 40/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/clawbank-base) |
 | [Coinbase Man](./coinbase-man.md) | BRIAN | 🟡 30/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/coinbase-man-base) |

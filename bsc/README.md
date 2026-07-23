@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**21 reports** · Updated daily · [← All Networks](../README.md)
+**19 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,7 +10,6 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
-| [Wrapped BNB](./wrapped-bnb.md) | WBNB | 🟠 66/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/wrapped-bnb-bsc) |
 | [Baby Doge Coin](./baby-doge-coin.md) | BABYDOGE | 🔴 73/100 Critical Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/baby-doge-coin-bsc) |
 | [XPIN Token](./xpin-token.md) | XPIN | 🟠 49/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/xpin-token-bsc) |
 | [SKYAI](./skyai.md) | SKYAI | 🟡 42/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/skyai-bsc) |
@@ -27,7 +26,6 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [TCryptochicks](./tcryptochicks.md) | TCC | 🟠 51/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/tcryptochicks-bsc) |
 | [Unibase](./unibase.md) | UB | 🟠 70/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/unibase-bsc) |
 | [WIKI CAT](./wiki-cat.md) | WKC | 🟡 36/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/wiki-cat-bsc) |
-| [ARK](./ark.md) | ARK | 🟠 56/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/ark-bsc) |
 | [Baby Ansem](./baby-ansem.md) | BABYANSEM | 🟠 67/100 High Risk | 2026-07-01 | [↗](https://quantumaudit.app/token/baby-ansem-bsc) |
 | [ZygoSwap](./zygoswap.md) | ZSWAP | 🟡 21/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/zygoswap-bsc) |
 | [吉祥马](./吉祥马.md) | 吉祥马 | 🟡 29/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/吉祥马-bsc) |

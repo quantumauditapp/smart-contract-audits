@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-226-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-220-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -17,9 +17,7 @@
 | [Morpho Token](./base/morpho-token.md) | MORPHO | Base | 🔴 76/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/morpho-token-base) |
 | [Jito Staked SOL](./base/jito-staked-sol.md) | JITOSOL | Base | 🟠 57/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/jito-staked-sol-base) |
 | [Zora](./base/zora.md) | ZORA | Base | 🟠 55/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/zora-base) |
-| [Aerodrome](./base/aerodrome.md) | AERO | Base | 🟠 59/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/aerodrome-base) |
 | [ViciCoin](./base/vicicoin.md) | VCNT | Base | 🟠 70/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/vicicoin-base) |
-| [Wrapped BNB](./bsc/wrapped-bnb.md) | WBNB | BNB Chain | 🟠 66/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/wrapped-bnb-bsc) |
 | [Baby Doge Coin](./bsc/baby-doge-coin.md) | BABYDOGE | BNB Chain | 🔴 73/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/baby-doge-coin-bsc) |
 | [XPIN Token](./bsc/xpin-token.md) | XPIN | BNB Chain | 🟠 49/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/xpin-token-bsc) |
 | [SKYAI](./bsc/skyai.md) | SKYAI | BNB Chain | 🟡 42/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/skyai-bsc) |
@@ -37,17 +35,19 @@
 | [Unibase](./bsc/unibase.md) | UB | BNB Chain | 🟠 70/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/unibase-bsc) |
 | [Zama](./ethereum/zama.md) | ZAMA | Ethereum | 🟠 48/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/zama-eth) |
 | [Asteroid](./ethereum/asteroid.md) | ASTEROID | Ethereum | 🟠 61/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/asteroid-eth) |
-| [Wrapped Ether](./arbitrum/wrapped-ether.md) | WETH | Arbitrum | 🟠 58/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/wrapped-ether-arb) |
-| [USD Coin](./arbitrum/usd-coin.md) | USDC | Arbitrum | 🟠 67/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/usd-coin-arb) |
 | [ClawBank](./base/clawbank.md) | CLAWBANK | Base | 🟡 40/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/clawbank-base) |
 | [SPX6900 (Wormhole)](./solana/spx6900-wormhole.md) | SPX | Solana | 🟠 55/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/spx6900-wormhole-sol) |
 | [Vine Coin](./solana/vine-coin.md) | VINE | Solana | 🟢 9/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/vine-coin-sol) |
+| [NO ONE CARES](./solana/no-one-cares.md) | KIM | Solana | 🟠 61/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/no-one-cares-sol) |
+| [Scam Altman](./solana/scam-altman.md) | SCAM | Solana | 🟡 32/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/scam-altman-sol) |
+| [Jotchua](./solana/jotchua.md) | JOTCHUA | Solana | 🟢 19/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/jotchua-sol) |
+| [maxxing](./solana/maxxing.md) | MAXXING | Solana | 🟡 25/100 | 2026-07-22 | [↗](https://quantumaudit.app/token/maxxing-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (139)](./solana/README.md) · [Ethereum (42)](./ethereum/README.md) · [BNB Chain (21)](./bsc/README.md) · [Base (19)](./base/README.md) · [Arbitrum (5)](./arbitrum/README.md)
+[Solana (138)](./solana/README.md) · [Ethereum (42)](./ethereum/README.md) · [BNB Chain (19)](./bsc/README.md) · [Base (18)](./base/README.md) · [Arbitrum (3)](./arbitrum/README.md)
 
 ---
 
