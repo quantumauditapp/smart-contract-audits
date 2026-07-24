@@ -2,14 +2,14 @@
 token: Cap
 ticker: CAP
 network: ethereum
-risk_score: 61
+risk_score: 48
 status: high
 date: 2026-06-29
 ---
 
 # Cap (CAP) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 48/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cap-eth)
 
@@ -25,16 +25,16 @@ This audit covers an ERC1967Proxy contract, which is a standard upgradeable prox
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The audited code consists of standard OpenZeppelin ERC1967Proxy contracts, which are widely used and have undergone extensive community review and formal verification. The proxy correctly implements… |
-| **Governance / Economics** | 1/10 | High | The ERC1967Proxy contract itself does not contain any direct governance or economic logic (7.4 Economic, 7.5 Governance). Its role is purely to delegate calls. Therefore, there are no inherent… |
-| **Upgrades** | 3/10 | High | The contract implements the UUPS (Universal Upgradeable Proxy Standard) pattern, which is a robust and widely adopted upgrade mechanism (7.7 Upgrades). The proxy delegates upgrade authorization to… |
+| **Technical** | 8/10 | Low | The audited code consists of standard OpenZeppelin ERC1967Proxy contracts, which are widely used and have undergone extensive community review and formal verification. The proxy correctly implements… |
+| **Governance / Economics** | 2/10 | High | The ERC1967Proxy contract itself does not contain any direct governance or economic logic (7.4 Economic, 7.5 Governance). Its role is purely to delegate calls. Therefore, there are no inherent… |
+| **Upgrades** | 2/10 | High | The contract implements the UUPS (Universal Upgradeable Proxy Standard) pattern, which is a robust and widely adopted upgrade mechanism (7.7 Upgrades). The proxy delegates upgrade authorization to… |
 
 ## Proxy Upgrade Controls
 
 | Control | Value |
 |---------|-------|
 | **Proxy Type** | Eip1967 Uups |
-| **Implementation** | ⚠️ Unverified source |
+| **Implementation** | ✅ Verified source |
 | **Upgrades (30d)** | 0 (stable) |
 
 ## Security Findings
@@ -81,21 +81,21 @@ While OpenZeppelin's ERC-1967 proxy uses well-defined storage slots for its inte
 |--------|-------|
 | **Contract** | [`0x9999...9999`](https://etherscan.io/address/0x99991c6aabba5a096f24f250b73580f5179b9999) |
 | **Network** | Ethereum |
-| **Price** | $0.0228 |
-| **24h Volume** | $50.1K |
-| **Liquidity** | $21.0K |
-| **Volume / Liquidity** | 2.4× |
+| **Price** | $0.0223 |
+| **24h Volume** | $2.9K |
+| **Liquidity** | $16.2K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 2d |
 | **Top-10 Holders** | 100.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 85 buys / 103 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
@@ -105,7 +105,7 @@ While OpenZeppelin's ERC-1967 proxy uses well-defined storage slots for its inte
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |

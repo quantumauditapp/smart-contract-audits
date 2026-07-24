@@ -2,14 +2,14 @@
 token: Kite
 ticker: KITE
 network: ethereum
-risk_score: 88
-status: critical
+risk_score: 40
+status: medium
 date: 2026-06-10
 ---
 
 # Kite (KITE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 88/100 — 🔴 Critical Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kite-eth)
 
@@ -25,9 +25,9 @@ The Kite token contract is an ERC-20 token with LayerZero Omnichain Fungible Tok
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract leverages well-audited OpenZeppelin (ERC20, Pausable, Ownable) and LayerZero (OFT) libraries, contributing to robust code security (7.2 Code Security). The architecture (7.1… |
-| **Governance / Economics** | 1/10 | High | The contract design exhibits high centralization (7.3 Access Control, 7.5 Governance), with a single `owner` address controlling critical functions. The owner can mint the entire `TOTAL_SUPPLY` (10… |
-| **Upgrades** | 4/10 | Medium | The Kite contract is not designed as an upgradeable proxy (7.7 Upgrades). This eliminates the specific risks associated with upgrade mechanisms, such as proxy implementation bugs or insecure upgrade… |
+| **Technical** | 8/10 | Low | The contract leverages well-audited OpenZeppelin (ERC20, Pausable, Ownable) and LayerZero (OFT) libraries, contributing to robust code security (7.2 Code Security). The architecture (7.1… |
+| **Governance / Economics** | 4/10 | Medium | The contract design exhibits high centralization (7.3 Access Control, 7.5 Governance), with a single `owner` address controlling critical functions. The owner can mint the entire `TOTAL_SUPPLY` (10… |
+| **Upgrades** | 7/10 | Low | The Kite contract is not designed as an upgradeable proxy (7.7 Upgrades). This eliminates the specific risks associated with upgrade mechanisms, such as proxy implementation bugs or insecure upgrade… |
 
 ## LP Distribution
 
@@ -80,12 +80,12 @@ The `Kite` contract is implemented as a standard, non-proxy contract. This means
 |--------|-------|
 | **Contract** | [`0x9045...16be`](https://etherscan.io/address/0x904567252d8f48555b7447c67dca23f0372e16be) |
 | **Network** | Ethereum |
-| **Price** | $0.2118 |
-| **24h Volume** | $551.1K |
-| **Liquidity** | $1.23M |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.1127 |
+| **24h Volume** | $496.8K |
+| **Liquidity** | $812.8K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | 68.5% of supply |
+| **Top-10 Holders** | 67.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 769 buys / 680 sells |
 

@@ -2,14 +2,14 @@
 token: Chinese Digital Oil Fund
 ticker: CDOF
 network: solana
-risk_score: 18
-status: low
+risk_score: 53
+status: high
 date: 2026-06-10
 ---
 
 # Chinese Digital Oil Fund (CDOF) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 18/100 — 🟢 Low Risk**
+> **Risk Score: 53/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chinese-digital-oil-fund-sol)
 
@@ -26,8 +26,8 @@ The Chinese Digital Oil Fund (CDOF) token presents a low-risk profile based on a
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Chinese Digital Oil Fund (CDOF) token is implemented using the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, preventing further token minting or… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits moderate liquidity with $39,012 in total DEX liquidity, suggesting that large trades may experience some slippage. The 24-hour volume to liquidity ratio is 0.07, which is within… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as both the mint authority and freeze authority have been permanently revoked. Metadata, including name and symbol, is also immutable, confirmed by… |
+| **Governance / Economics** | 2/10 | High | The token exhibits moderate liquidity with $39,012 in total DEX liquidity, suggesting that large trades may experience some slippage. The 24-hour volume to liquidity ratio is 0.07, which is within… |
+| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable, as both the mint authority and freeze authority have been permanently revoked. Metadata, including name and symbol, is also immutable, confirmed by… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The Chinese Digital Oil Fund (CDOF) token presents a low-risk profile based on a
 |--------|-------|
 | **Contract** | [`CDoFug...E4az`](https://solscan.io/account/CDoFug7K6gYgiotXw1vcyfc9p4rdAxnbbj2DcH5AE4az) |
 | **Network** | Solana |
-| **Price** | $0.009503 |
-| **24h Volume** | $314.9K |
-| **Liquidity** | $282.5K |
-| **Volume / Liquidity** | 1.1× |
+| **Price** | $0.00008507 |
+| **24h Volume** | $232 |
+| **Liquidity** | $26.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 14d |
-| **Top-10 Holders** | 10.9% of supply |
+| **Top-10 Holders** | 26.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2477 buys / 997 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The Chinese Digital Oil Fund (CDOF) token presents a low-risk profile based on a
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

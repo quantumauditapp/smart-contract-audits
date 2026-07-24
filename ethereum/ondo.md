@@ -2,14 +2,14 @@
 token: Ondo
 ticker: ONDO
 network: ethereum
-risk_score: 28
+risk_score: 40
 status: medium
 date: 2026-06-10
 ---
 
 # Ondo (ONDO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 28/100 — 🟡 Medium Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ondo-eth)
 
@@ -25,9 +25,16 @@ This audit covers a truncated Solidity contract identified as a component of the
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 10/10 | Low | The provided code snippet is a standard implementation of OpenZeppelin's AccessControl, demonstrating robust architecture (7.1) and adherence to secure coding practices (7.2). The use of… |
-| **Governance / Economics** | 3/10 | High | The contract establishes a role-based access control system (7.3), which is a fundamental governance mechanism. The `DEFAULT_ADMIN_ROLE` holds significant power, capable of managing all other roles… |
-| **Upgrades** | 8/10 | Low | The provided contract is a base AccessControl module and does not inherently include upgradeability mechanisms (7.7). Its role in an upgradeable system would depend on how it's integrated (e.g., as a… |
+| **Technical** | 8/10 | Low | The provided code snippet is a standard implementation of OpenZeppelin's AccessControl, demonstrating robust architecture (7.1) and adherence to secure coding practices (7.2). The use of… |
+| **Governance / Economics** | 4/10 | Medium | The contract establishes a role-based access control system (7.3), which is a fundamental governance mechanism. The `DEFAULT_ADMIN_ROLE` holds significant power, capable of managing all other roles… |
+| **Upgrades** | 3/10 | High | The provided contract is a base AccessControl module and does not inherently include upgradeability mechanisms (7.7). Its role in an upgradeable system would depend on how it's integrated (e.g., as a… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | 37.0% |
+| **Top-3 Unlocked** | 57.8% |
 
 ## Security Findings
 
@@ -73,22 +80,22 @@ The overall security and integrity of the access control system, and by extensio
 |--------|-------|
 | **Contract** | [`0xfaba...9be3`](https://etherscan.io/address/0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3) |
 | **Network** | Ethereum |
-| **Price** | $0.3553 |
-| **24h Volume** | $514.1K |
-| **Liquidity** | $669.4K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.4041 |
+| **24h Volume** | $509.8K |
+| **Liquidity** | $743.5K |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 71.1% of supply |
+| **Top-10 Holders** | 69.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 409 buys / 359 sells |
 
-## Security Flags (4/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -97,8 +104,8 @@ The overall security and integrity of the access control system, and by extensio
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: CUBEMAN
 ticker: CUBEMAN
 network: solana
-risk_score: 42
-status: medium
+risk_score: 46
+status: high
 date: 2026-07-23
 ---
 
 # CUBEMAN (CUBEMAN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 46/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cubeman-sol)
 
@@ -35,10 +35,10 @@ The CUBEMAN SPL Token Mint exhibits a low-risk profile based on available on-cha
 |--------|-------|
 | **Contract** | [`HVRtNe...pump`](https://solscan.io/account/HVRtNeFPrDcAA9Yu3WrTEdCsTLGJiYDiQbqjg3efpump) |
 | **Network** | Solana |
-| **Price** | $0.004552 |
-| **24h Volume** | $2.03M |
-| **Liquidity** | $206.3K |
-| **Volume / Liquidity** | 9.9× |
+| **Price** | $0.003356 |
+| **24h Volume** | $2.30M |
+| **Liquidity** | $178.0K |
+| **Volume / Liquidity** | 12.9× |
 | **Token Age** | 7d |
 | **Top-10 Holders** | 19.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

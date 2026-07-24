@@ -2,14 +2,14 @@
 token: EMBER
 ticker: EMBER
 network: solana
-risk_score: 47
-status: high
+risk_score: 86
+status: critical
 date: 2026-06-15
 ---
 
 # EMBER (EMBER) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 86/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ember-sol)
 
@@ -25,9 +25,9 @@ The EMBER SPL Token Mint (7RHxQQUWG9fCskqocSV9zPkWPLJqcceWTcUCjnwMpump) exhibits
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The EMBER token is implemented using the spl-token-2022 program. Key administrative authorities, including the Mint Authority and Freeze Authority, have been permanently revoked, preventing further… |
-| **Governance / Economics** | 4/10 | Medium | Assessment of the token's economic stability is limited due to unavailable DEX market data and holder concentration information. A third-party risk registry indicates 'Low Liquidity', suggesting… |
-| **Upgrades** | 8/10 | Low | The token's configuration is highly immutable, with both Mint Authority and Freeze Authority permanently revoked. Key Token-2022 extensions such as transfer hooks and transfer fees are not active… |
+| **Technical** | 4/10 | Medium | The EMBER token is implemented using the spl-token-2022 program. Key administrative authorities, including the Mint Authority and Freeze Authority, have been permanently revoked, preventing further… |
+| **Governance / Economics** | 1/10 | High | Assessment of the token's economic stability is limited due to unavailable DEX market data and holder concentration information. A third-party risk registry indicates 'Low Liquidity', suggesting… |
+| **Upgrades** | 4/10 | Medium | The token's configuration is highly immutable, with both Mint Authority and Freeze Authority permanently revoked. Key Token-2022 extensions such as transfer hooks and transfer fees are not active… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The EMBER SPL Token Mint (7RHxQQUWG9fCskqocSV9zPkWPLJqcceWTcUCjnwMpump) exhibits
 |--------|-------|
 | **Contract** | [`7RHxQQ...pump`](https://solscan.io/account/7RHxQQUWG9fCskqocSV9zPkWPLJqcceWTcUCjnwMpump) |
 | **Network** | Solana |
-| **Price** | $0.00005167 |
-| **24h Volume** | $57.4K |
-| **Liquidity** | $16.4K |
-| **Volume / Liquidity** | 3.5× |
+| **Price** | $0.00000301 |
+| **24h Volume** | $8 |
+| **Liquidity** | $4.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 40.2% of supply |
+| **Top-10 Holders** | 94.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1231 buys / 708 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The EMBER SPL Token Mint (7RHxQQUWG9fCskqocSV9zPkWPLJqcceWTcUCjnwMpump) exhibits
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

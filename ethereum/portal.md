@@ -2,14 +2,14 @@
 token: Portal
 ticker: PORTAL
 network: ethereum
-risk_score: 100
+risk_score: 77
 status: critical
 date: 2026-06-10
 ---
 
 # Portal (PORTAL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 77/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/portal-eth)
 
@@ -26,9 +26,9 @@ Furthermore, a comprehensive security audit of the external `proxy` contract is 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for its core ERC20, Ownable, Permit, Pausable, and Burnable functionalities, ensuring a solid foundation (7.2 Code Security). The custom… |
+| **Technical** | 6/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for its core ERC20, Ownable, Permit, Pausable, and Burnable functionalities, ensuring a solid foundation (7.2 Code Security). The custom… |
 | **Governance / Economics** | 1/10 | High | The token's economic model is a straightforward ERC20 with a fixed total supply and initial distribution to vesting addresses and a treasury. However, the `owner` role holds highly centralized… |
-| **Upgrades** | 4/10 | Medium | The `PortalToken` contract is deployed as a standard, non-upgradeable implementation (7.7 Upgrades). This design choice means that any future bug fixes, security patches, or feature enhancements… |
+| **Upgrades** | 6/10 | Medium | The `PortalToken` contract is deployed as a standard, non-upgradeable implementation (7.7 Upgrades). This design choice means that any future bug fixes, security patches, or feature enhancements… |
 
 ## LP Distribution
 
@@ -81,12 +81,12 @@ The constructor's comment states that "potential address duplication is mitigate
 |--------|-------|
 | **Contract** | [`0x1bbe...1fed`](https://etherscan.io/address/0x1bbe973bef3a977fc51cbed703e8ffdefe001fed) |
 | **Network** | Ethereum |
-| **Price** | $0.04034 |
-| **24h Volume** | $42.2K |
-| **Liquidity** | $9.9K |
-| **Volume / Liquidity** | 4.3× |
+| **Price** | $0.01056 |
+| **24h Volume** | $246 |
+| **Liquidity** | $6.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 66.0% of supply |
+| **Top-10 Holders** | 73.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 386 buys / 331 sells |
 

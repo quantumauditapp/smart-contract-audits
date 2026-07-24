@@ -2,14 +2,14 @@
 token: Geodnet
 ticker: GEOD
 network: solana
-risk_score: 55
-status: high
+risk_score: 71
+status: critical
 date: 2026-06-13
 ---
 
 # Geodnet (GEOD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 71/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/geodnet-sol)
 
@@ -26,8 +26,8 @@ The Geodnet Token (GEOD) mint has a critical security concern: the mint authorit
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The Geodnet Token (GEOD) is an SPL token operating under the spl-token program. A significant risk is present as the mint authority (AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F) remains active… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate liquidity with $330,508 in total DEX liquidity and a 24-hour volume of $88,288. The Volume/Liquidity Ratio is 0.27, which is considered normal and does not suggest wash… |
-| **Upgrades** | 7/10 | Low | The mint authority (AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F) is not revoked, posing a risk of future supply changes. In contrast, the freeze authority has been revoked, ensuring existing token… |
+| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $330,508 in total DEX liquidity and a 24-hour volume of $88,288. The Volume/Liquidity Ratio is 0.27, which is considered normal and does not suggest wash… |
+| **Upgrades** | 4/10 | Medium | The mint authority (AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F) is not revoked, posing a risk of future supply changes. In contrast, the freeze authority has been revoked, ensuring existing token… |
 
 ## Security Findings
 
@@ -52,22 +52,22 @@ Token name, symbol, or image can be changed post-launch.
 |--------|-------|
 | **Contract** | [`7JA5eZ...mKHu`](https://solscan.io/account/7JA5eZdCzztSfQbJvS8aVVxMFfd81Rs9VvwnocV1mKHu) |
 | **Network** | Solana |
-| **Price** | $0.2171 |
-| **24h Volume** | $1.92M |
-| **Liquidity** | $329.1K |
-| **Volume / Liquidity** | 5.8× |
+| **Price** | $0.193 |
+| **24h Volume** | $36.0K |
+| **Liquidity** | $317.3K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 56.1% of supply |
+| **Top-10 Holders** | 54.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4009 buys / 3096 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -76,8 +76,8 @@ Token name, symbol, or image can be changed post-launch.
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

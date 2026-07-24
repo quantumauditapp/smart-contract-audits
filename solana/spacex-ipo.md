@@ -2,14 +2,14 @@
 token: SPACEX IPO
 ticker: SPCX
 network: solana
-risk_score: 53
-status: high
+risk_score: 92
+status: critical
 date: 2026-06-12
 ---
 
 # SPACEX IPO (SPCX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 92/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spacex-ipo-sol)
 
@@ -25,9 +25,9 @@ The SPACEX IPO (SPCX) token mint has revoked mint and freeze authorities, indica
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The token is an SPL Token-2022 mint with a total supply of 999,640,060,628,602 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
-| **Governance / Economics** | 4/10 | Medium | The token's economic viability is severely impacted by very low liquidity, with only $7,437 USD available on DEXs. This makes large positions difficult to exit without significant loss due to… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are highly immutable, as both the mint authority and freeze authority have been permanently revoked. Metadata is also immutable, preventing changes to the token's name… |
+| **Technical** | 4/10 | Medium | The token is an SPL Token-2022 mint with a total supply of 999,640,060,628,602 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
+| **Governance / Economics** | 1/10 | High | The token's economic viability is severely impacted by very low liquidity, with only $7,437 USD available on DEXs. This makes large positions difficult to exit without significant loss due to… |
+| **Upgrades** | 4/10 | Medium | The token's core parameters are highly immutable, as both the mint authority and freeze authority have been permanently revoked. Metadata is also immutable, preventing changes to the token's name… |
 
 ## Security Findings
 
@@ -45,22 +45,22 @@ Total DEX liquidity is $7,437. Slippage will be severe; large positions cannot b
 |--------|-------|
 | **Contract** | [`Fuu6SA...pump`](https://solscan.io/account/Fuu6SApor3k4JQQHMEUW33wsar7hdTh3gYLh75Cipump) |
 | **Network** | Solana |
-| **Price** | $0.0001812 |
-| **24h Volume** | $219.2K |
-| **Liquidity** | $32.7K |
-| **Volume / Liquidity** | 6.7× |
+| **Price** | $0.00000733 |
+| **24h Volume** | $8 |
+| **Liquidity** | $7.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 11d |
-| **Top-10 Holders** | 32.8% of supply |
+| **Top-10 Holders** | 73.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3022 buys / 2022 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,8 +69,8 @@ Total DEX liquidity is $7,437. Slippage will be severe; large positions cannot b
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

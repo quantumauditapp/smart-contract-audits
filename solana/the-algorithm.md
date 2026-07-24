@@ -2,14 +2,14 @@
 token: The Algorithm
 ticker: AGR
 network: solana
-risk_score: 36
-status: medium
+risk_score: 54
+status: high
 date: 2026-07-16
 ---
 
 # The Algorithm (AGR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 54/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-algorithm-sol)
 
@@ -26,8 +26,8 @@ The audit of The Algorithm (AGR) SPL Token Mint reveals a well-configured token 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The AGR token is implemented using the spl-token-2022 program. Key authorities, including the Mint Authority and Freeze Authority, are permanently revoked (None), ensuring no new tokens can be minted… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate DEX liquidity at $37,750 USD, with a 24-hour trading volume of $97,966 USD. The Volume/Liquidity Ratio is 2.60, which is considered normal and does not indicate wash… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both Mint Authority and Freeze Authority. No Token-2022 extensions that would allow for post-launch modifications, such as Transfer… |
+| **Governance / Economics** | 2/10 | High | The token exhibits moderate DEX liquidity at $37,750 USD, with a 24-hour trading volume of $97,966 USD. The Volume/Liquidity Ratio is 2.60, which is considered normal and does not indicate wash… |
+| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable due to the revocation of both Mint Authority and Freeze Authority. No Token-2022 extensions that would allow for post-launch modifications, such as Transfer… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The audit of The Algorithm (AGR) SPL Token Mint reveals a well-configured token 
 |--------|-------|
 | **Contract** | [`5NUHtG...pump`](https://solscan.io/account/5NUHtG49aGZL5kEC9phNKsgw28BmkDWGWfeQGMTRpump) |
 | **Network** | Solana |
-| **Price** | $0.0002178 |
-| **24h Volume** | $97.9K |
-| **Liquidity** | $37.4K |
-| **Volume / Liquidity** | 2.6× |
+| **Price** | $0.0001413 |
+| **24h Volume** | $52.1K |
+| **Liquidity** | $31.2K |
+| **Volume / Liquidity** | 1.7× |
 | **Token Age** | 22d |
-| **Top-10 Holders** | 27.5% of supply |
+| **Top-10 Holders** | 29.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2494 buys / 2125 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The audit of The Algorithm (AGR) SPL Token Mint reveals a well-configured token 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

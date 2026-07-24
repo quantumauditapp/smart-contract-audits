@@ -2,14 +2,14 @@
 token: SpaceX
 ticker: SPCX
 network: solana
-risk_score: 21
-status: medium
+risk_score: 59
+status: high
 date: 2026-06-10
 ---
 
 # SpaceX (SPCX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 21/100 — 🟡 Medium Risk**
+> **Risk Score: 59/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spacex-sol)
 
@@ -26,8 +26,8 @@ The SpaceX (SPCX) token mint exhibits a secure configuration with both mint and 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority are permanently revoked (None), ensuring no new tokens can be minted and no existing… |
-| **Governance / Economics** | 7/10 | Low | The token has a moderate liquidity of $46,531 USD, with a 24-hour volume of $9,180 USD, resulting in a normal Volume/Liquidity Ratio of 0.20. The DEX pair has been active for 100 days, indicating a… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are both revoked, meaning no further changes can be made to the token's supply or account freeze status. The metadata is also immutable (`metadata_mutable… |
+| **Governance / Economics** | 1/10 | High | The token has a moderate liquidity of $46,531 USD, with a 24-hour volume of $9,180 USD, resulting in a normal Volume/Liquidity Ratio of 0.20. The DEX pair has been active for 100 days, indicating a… |
+| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are both revoked, meaning no further changes can be made to the token's supply or account freeze status. The metadata is also immutable (`metadata_mutable… |
 
 ## Token Metrics
 
@@ -35,21 +35,21 @@ The SpaceX (SPCX) token mint exhibits a secure configuration with both mint and 
 |--------|-------|
 | **Contract** | [`E6ifp2...pump`](https://solscan.io/account/E6ifp2mJy8cYQehUGUtFvrXriRKxRuonLmrvTFypump) |
 | **Network** | Solana |
-| **Price** | $0.001361 |
-| **24h Volume** | $383.0K |
-| **Liquidity** | $129.8K |
-| **Volume / Liquidity** | 3.0× |
+| **Price** | $0.00009467 |
+| **24h Volume** | $2.9K |
+| **Liquidity** | $43.5K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 17.6% of supply |
+| **Top-10 Holders** | 34.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,8 +58,8 @@ The SpaceX (SPCX) token mint exhibits a secure configuration with both mint and 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

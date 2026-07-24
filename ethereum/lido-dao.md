@@ -2,14 +2,14 @@
 token: Lido DAO
 ticker: LDO
 network: ethereum
-risk_score: 58
-status: high
+risk_score: 42
+status: medium
 date: 2026-07-16
 ---
 
 # Lido DAO (LDO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lido-dao-eth)
 
@@ -26,15 +26,15 @@ The MiniMeToken contract implements an ERC20-like token with a unique cloning me
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract implements a custom ERC20-like token with a historical balance tracking mechanism. Strengths include a clear separation of concerns with the `Controlled` base contract and an… |
-| **Governance / Economics** | 1/10 | High | The economic and governance model is highly centralized around the `controller` address. This address, initially the contract deployer, has extensive power, including the ability to change the… |
-| **Upgrades** | 5/10 | Medium | The MiniMeToken contract is not designed as an upgradeable proxy contract. It is a standard, immutable contract deployed directly to the blockchain. Therefore, there are no upgrade-specific risks… |
+| **Governance / Economics** | 4/10 | Medium | The economic and governance model is highly centralized around the `controller` address. This address, initially the contract deployer, has extensive power, including the ability to change the… |
+| **Upgrades** | 6/10 | Medium | The MiniMeToken contract is not designed as an upgradeable proxy contract. It is a standard, immutable contract deployed directly to the blockchain. Therefore, there are no upgrade-specific risks… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 25.1% |
-| **Top-3 Unlocked** | 54.2% |
+| **Top-1 Unlocked Holder** | 24.9% |
+| **Top-3 Unlocked** | 53.1% |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ Critical state-changing actions, such as `changeController`, `enableTransfers`, 
 |--------|-------|
 | **Contract** | [`0x5a98...1b32`](https://etherscan.io/address/0x5a98fcbea516cf06857215779fd812ca3bef1b32) |
 | **Network** | Ethereum |
-| **Price** | $0.3648 |
-| **24h Volume** | $253.5K |
-| **Liquidity** | $558.1K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.3905 |
+| **24h Volume** | $72.7K |
+| **Liquidity** | $591.0K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 49.3% of supply |
+| **Top-10 Holders** | 49.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 227 buys / 186 sells |
 

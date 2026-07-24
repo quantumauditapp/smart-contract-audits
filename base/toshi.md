@@ -2,14 +2,14 @@
 token: Toshi
 ticker: TOSHI
 network: base
-risk_score: 7
+risk_score: 5
 status: low
 date: 2026-07-18
 ---
 
 # Toshi (TOSHI) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 7/100 — 🟢 Low Risk**
+> **Risk Score: 5/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/toshi-base)
 
@@ -66,12 +66,12 @@ The ERC20 `approve` function is susceptible to a known race condition. If a user
 |--------|-------|
 | **Contract** | [`0xac1b...b2b4`](https://basescan.org/address/0xac1bd2486aaf3b5c0fc3fd868558b082a531b2b4) |
 | **Network** | Base |
-| **Price** | $0.0001212 |
-| **24h Volume** | $363.6K |
-| **Liquidity** | $996.2K |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.0001104 |
+| **24h Volume** | $39.2K |
+| **Liquidity** | $972.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 40.2% of supply |
+| **Top-10 Holders** | 38.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 758 buys / 411 sells |
 

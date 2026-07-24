@@ -2,14 +2,14 @@
 token: Aerodrome Finance
 ticker: AERO
 network: base
-risk_score: 51
-status: high
+risk_score: 44
+status: medium
 date: 2026-06-17
 ---
 
 # Aerodrome Finance (AERO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aerodrome-finance-base)
 
@@ -26,15 +26,15 @@ This audit covers the provided Solidity source code, which includes the OpenZepp
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 7/10 | Low | The technical architecture leverages the robust and audited OpenZeppelin ERC20 standard, ensuring a solid foundation for token operations (7.1 Architecture). The use of Solidity 0.8.19 inherently… |
-| **Governance / Economics** | 4/10 | Medium | The economic model, as inferred from the IAero interface, relies on a centralized minting mechanism controlled by a single 'minter' address (7.4 Economic). This design introduces a high degree of… |
-| **Upgrades** | 5/10 | Medium | The provided contract is not designed with an upgrade mechanism, such as a proxy pattern (7.7 Upgrades). This simplifies the contract's architecture and removes upgrade-related risks like storage… |
+| **Governance / Economics** | 3/10 | High | The economic model, as inferred from the IAero interface, relies on a centralized minting mechanism controlled by a single 'minter' address (7.4 Economic). This design introduces a high degree of… |
+| **Upgrades** | 3/10 | High | The provided contract is not designed with an upgrade mechanism, such as a proxy pattern (7.7 Upgrades). This simplifies the contract's architecture and removes upgrade-related risks like storage… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 24.8% |
-| **Top-3 Unlocked** | 38.8% |
+| **Top-1 Unlocked Holder** | 38.2% |
+| **Top-3 Unlocked** | 54.8% |
 
 ## Security Findings
 
@@ -73,21 +73,21 @@ The provided source code primarily consists of the OpenZeppelin `ERC20` base con
 |--------|-------|
 | **Contract** | [`0x9401...8631`](https://basescan.org/address/0x940181a94a35a4569e4529a3cdfb74e38fd98631) |
 | **Network** | Base |
-| **Price** | $0.4994 |
-| **24h Volume** | $11.23M |
-| **Liquidity** | $25.12M |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.4175 |
+| **24h Volume** | $2.49M |
+| **Liquidity** | $25.50M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 67.6% of supply |
+| **Top-10 Holders** | 67.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3451 buys / 4713 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -97,7 +97,7 @@ The provided source code primarily consists of the OpenZeppelin `ERC20` base con
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |

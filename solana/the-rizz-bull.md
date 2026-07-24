@@ -2,14 +2,14 @@
 token: The Rizz Bull
 ticker: RIZZLER
 network: solana
-risk_score: 49
-status: high
+risk_score: 88
+status: critical
 date: 2026-07-10
 ---
 
 # The Rizz Bull (RIZZLER) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 88/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-rizz-bull-sol)
 
@@ -25,9 +25,9 @@ The Rizz Bull (Rizzler) is an SPL Token-2022 mint with both mint and freeze auth
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Rizz Bull (Rizzler) is an SPL Token-2022 mint. Its core technical controls are robust, with both the mint authority and freeze authority explicitly revoked, ensuring a fixed supply and preventing… |
-| **Governance / Economics** | 4/10 | Medium | The token's DEX pair is very new, having been created only 3 days ago, which limits the ability to assess long-term market behavior or team actions. Current liquidity stands at $24,108, with a… |
-| **Upgrades** | 8/10 | Low | The token mint exhibits strong immutability characteristics, as both the mint and freeze authorities have been revoked. This prevents any future changes to the token's supply or the ability to freeze… |
+| **Technical** | 4/10 | Medium | The Rizz Bull (Rizzler) is an SPL Token-2022 mint. Its core technical controls are robust, with both the mint authority and freeze authority explicitly revoked, ensuring a fixed supply and preventing… |
+| **Governance / Economics** | 1/10 | High | The token's DEX pair is very new, having been created only 3 days ago, which limits the ability to assess long-term market behavior or team actions. Current liquidity stands at $24,108, with a… |
+| **Upgrades** | 4/10 | Medium | The token mint exhibits strong immutability characteristics, as both the mint and freeze authorities have been revoked. This prevents any future changes to the token's supply or the ability to freeze… |
 
 ## Security Findings
 
@@ -45,22 +45,22 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`7AJ9sd...pump`](https://solscan.io/account/7AJ9sdZW6Sodb8ajnEkESeWtQVVHyZ4Gg85H3c1Ypump) |
 | **Network** | Solana |
-| **Price** | $0.00009696 |
-| **24h Volume** | $111.4K |
-| **Liquidity** | $25.5K |
-| **Volume / Liquidity** | 4.4× |
+| **Price** | $0.00000527 |
+| **24h Volume** | $216 |
+| **Liquidity** | $6.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 33.1% of supply |
+| **Top-10 Holders** | 80.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 40024 buys / 61534 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,8 +69,8 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

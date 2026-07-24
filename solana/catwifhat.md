@@ -2,14 +2,14 @@
 token: catwifhat
 ticker: CATWIF
 network: solana
-risk_score: 30
-status: medium
+risk_score: 64
+status: high
 date: 2026-06-27
 ---
 
 # catwifhat (CATWIF) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 30/100 — 🟡 Medium Risk**
+> **Risk Score: 64/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/catwifhat-sol)
 
@@ -26,8 +26,8 @@ This audit of the catwifhat (CATWIF) SPL Token Mint found no critical or high-se
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The catwifhat (CATWIF) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a total DEX liquidity of $151,785, with a 24-hour trading volume of $1,128,329. The Volume/Liquidity Ratio is 7.43, which does not trigger the wash trading signal threshold (7.4… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the catwifhat (CATWIF) token have both been revoked, meaning the token's supply is fixed and no accounts can be frozen post-launch (7.7 Upgrades). The… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a total DEX liquidity of $151,785, with a 24-hour trading volume of $1,128,329. The Volume/Liquidity Ratio is 7.43, which does not trigger the wash trading signal threshold (7.4… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority for the catwifhat (CATWIF) token have both been revoked, meaning the token's supply is fixed and no accounts can be frozen post-launch (7.7 Upgrades). The… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ This audit of the catwifhat (CATWIF) SPL Token Mint found no critical or high-se
 |--------|-------|
 | **Contract** | [`5pYB12...pump`](https://solscan.io/account/5pYB12kEhfhSFXJjZ7JtyqDpt6uUqhsF6iu6Ee9spump) |
 | **Network** | Solana |
-| **Price** | $0.0004765 |
-| **24h Volume** | $823.6K |
-| **Liquidity** | $83.9K |
-| **Volume / Liquidity** | 9.8× |
+| **Price** | $0.00008143 |
+| **24h Volume** | $17.5K |
+| **Liquidity** | $48.8K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 48.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 9726 buys / 8883 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ This audit of the catwifhat (CATWIF) SPL Token Mint found no critical or high-se
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

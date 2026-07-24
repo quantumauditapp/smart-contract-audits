@@ -80,12 +80,12 @@ The state variables `sellCount` and `lastSellBlock` are declared within the cont
 |--------|-------|
 | **Contract** | [`0x29bb...1bcd`](https://etherscan.io/address/0x29bbace690d8f70dd161fcafcc2f028f49131bcd) |
 | **Network** | Ethereum |
-| **Price** | $0.0001769 |
-| **24h Volume** | $116.9K |
-| **Liquidity** | $26.3K |
-| **Volume / Liquidity** | 4.4× |
+| **Price** | $0.000023 |
+| **24h Volume** | $1.5K |
+| **Liquidity** | $10.2K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 36.2% of supply |
+| **Top-10 Holders** | 50.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 247 buys / 197 sells |
 

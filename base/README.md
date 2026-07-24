@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**26 reports** · Updated daily · [← All Networks](../README.md)
+**34 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,32 +10,40 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
-| [OpenVPP](./openvpp.md) | OVPP | 🟡 36/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/openvpp-base) |
-| [Unit 00 - Rei](./unit-00-rei.md) | REI | 🟡 32/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/unit-00-rei-base) |
-| [MineBean](./minebean.md) | BEAN | 🔴 86/100 Critical Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/minebean-base) |
-| [Tether USD](./tether-usd.md) | USDT | 🟠 50/100 High Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/tether-usd-base) |
-| [Aave Token](./aave-token.md) | AAVE | 🟡 33/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/aave-token-base) |
-| [ResearchCoin](./researchcoin.md) | RSC | 🟡 41/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/researchcoin-base) |
+| [Wrapped PROS](./wrapped-pros.md) | PROS | 🟠 69/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/wrapped-pros-base) |
+| [AUTONOMOPOLY](./autonomopoly.md) | AUTONO | 🟠 63/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/autonomopoly-base) |
+| [Briun Armstrung](./briun-armstrung.md) | BRIUN | 🟡 32/100 Medium Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/briun-armstrung-base) |
+| [Coinbase Wrapped XRP](./coinbase-wrapped-xrp.md) | CBXRP | 🔴 86/100 Critical Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/coinbase-wrapped-xrp-base) |
+| [EURC](./eurc.md) | EURC | 🔴 76/100 Critical Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/eurc-base) |
+| [Metronome Synth USD](./metronome-synth-usd.md) | MSUSD | 🟠 67/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/metronome-synth-usd-base) |
+| [OMI Token](./omi-token.md) | OMI | 🔴 76/100 Critical Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/omi-token-base) |
+| [Moltbook](./moltbook.md) | MOLT | 🟢 20/100 Low Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/moltbook-base) |
+| [Zora](./zora.md) | ZORA | 🟡 41/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/zora-base) |
+| [XMAQUINA](./xmaquina.md) | DEUS | 🟠 70/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/xmaquina-base) |
+| [ViciCoin](./vicicoin.md) | VCNT | 🟠 51/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/vicicoin-base) |
+| [Venice Token](./venice-token.md) | VVV | 🟠 51/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/venice-token-base) |
+| [Velvet](./velvet.md) | VELVET | 🟠 63/100 High Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/velvet-base) |
+| [Unit 00 - Rei](./unit-00-rei.md) | REI | 🟢 0/100 Low Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/unit-00-rei-base) |
+| [Toshi](./toshi.md) | TOSHI | 🟢 5/100 Low Risk | 2026-07-18 | [↗](https://quantumaudit.app/token/toshi-base) |
+| [Tether USD](./tether-usd.md) | USDT | 🟠 60/100 High Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/tether-usd-base) |
+| [Surplus Intelligence](./surplus-intelligence.md) | SURPLUS | 🟡 35/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/surplus-intelligence-base) |
+| [SAIRI](./sairi.md) | SAIRI | 🟢 18/100 Low Risk | 2026-06-13 | [↗](https://quantumaudit.app/token/sairi-base) |
 | [RUSSELL](./russell.md) | RUSSELL | 🟢 13/100 Low Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/russell-base) |
+| [ResearchCoin](./researchcoin.md) | RSC | 🟠 55/100 High Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/researchcoin-base) |
+| [OpenVPP](./openvpp.md) | OVPP | 🟢 7/100 Low Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/openvpp-base) |
+| [OpenGradient](./opengradient.md) | OPG | 🟡 36/100 Medium Risk | 2026-07-07 | [↗](https://quantumaudit.app/token/opengradient-base) |
 | [o1.exchange](./o1exchange.md) | O | 🟡 25/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/o1exchange-base) |
-| [Morpho Token](./morpho-token.md) | MORPHO | 🔴 76/100 Critical Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/morpho-token-base) |
-| [Jito Staked SOL](./jito-staked-sol.md) | JITOSOL | 🟠 57/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/jito-staked-sol-base) |
-| [Zora](./zora.md) | ZORA | 🟠 55/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/zora-base) |
-| [ViciCoin](./vicicoin.md) | VCNT | 🟠 70/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/vicicoin-base) |
-| [ClawBank](./clawbank.md) | CLAWBANK | 🟡 40/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/clawbank-base) |
-| [Coinbase Man](./coinbase-man.md) | BRIAN | 🟡 30/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/coinbase-man-base) |
-| [Surplus Intelligence](./surplus-intelligence.md) | SURPLUS | 🔴 84/100 Critical Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/surplus-intelligence-base) |
-| [Toshi](./toshi.md) | TOSHI | 🟢 7/100 Low Risk | 2026-07-18 | [↗](https://quantumaudit.app/token/toshi-base) |
-| [HOME](./home.md) | HOME | 🔴 100/100 Critical Risk | 2026-07-17 | [↗](https://quantumaudit.app/token/home-base) |
-| [OpenGradient](./opengradient.md) | OPG | 🟠 57/100 High Risk | 2026-07-07 | [↗](https://quantumaudit.app/token/opengradient-base) |
-| [Aerodrome Finance](./aerodrome-finance.md) | AERO | 🟠 51/100 High Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/aerodrome-finance-base) |
-| [SAIRI](./sairi.md) | SAIRI | 🟠 46/100 High Risk | 2026-06-13 | [↗](https://quantumaudit.app/token/sairi-base) |
-| [Velvet](./velvet.md) | VELVET | 🔴 93/100 Critical Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/velvet-base) |
-| [BitVault Signal](./bitvault-signal.md) | BV7X | 🟠 55/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/bitvault-signal-base) |
-| [Venice Token](./venice-token.md) | VVV | 🔴 81/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/venice-token-base) |
-| [XMAQUINA](./xmaquina.md) | DEUS | 🔴 100/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/xmaquina-base) |
-| [Nockchain](./nockchain.md) | NOCK | 🟠 56/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/nockchain-base) |
-| [BankrCoin](./bankrcoin.md) | BNKR | 🟠 51/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/bankrcoin-base) |
+| [Nockchain](./nockchain.md) | NOCK | 🟠 52/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/nockchain-base) |
+| [Morpho Token](./morpho-token.md) | MORPHO | 🟠 50/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/morpho-token-base) |
+| [MineBean](./minebean.md) | BEAN | 🔴 82/100 Critical Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/minebean-base) |
+| [Jito Staked SOL](./jito-staked-sol.md) | JITOSOL | 🟠 62/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/jito-staked-sol-base) |
+| [HOME](./home.md) | HOME | 🟠 52/100 High Risk | 2026-07-17 | [↗](https://quantumaudit.app/token/home-base) |
+| [Coinbase Man](./coinbase-man.md) | BRIAN | 🟡 22/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/coinbase-man-base) |
+| [ClawBank](./clawbank.md) | CLAWBANK | 🟢 2/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/clawbank-base) |
+| [BitVault Signal](./bitvault-signal.md) | BV7X | 🟡 32/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/bitvault-signal-base) |
+| [BankrCoin](./bankrcoin.md) | BNKR | 🟢 19/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/bankrcoin-base) |
+| [Aerodrome Finance](./aerodrome-finance.md) | AERO | 🟡 44/100 Medium Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/aerodrome-finance-base) |
+| [Aave Token](./aave-token.md) | AAVE | 🟡 42/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/aave-token-base) |
 
 ---
 

@@ -2,14 +2,14 @@
 token: BankrCoin
 ticker: BNKR
 network: base
-risk_score: 51
-status: high
+risk_score: 19
+status: low
 date: 2026-06-10
 ---
 
 # BankrCoin (BNKR) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 19/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bankrcoin-base)
 
@@ -25,16 +25,16 @@ The Clanker protocol consists of a factory contract (`Clanker`) for deploying ne
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The technical architecture (7.1) utilizes a factory pattern with `create2` for predictable token addresses and integrates with Uniswap V3 for liquidity. Code security (7.2) benefits from Solidity… |
-| **Governance / Economics** | 1/10 | High | Access control (7.3) is heavily centralized, with the `deployToken` function restricted to `onlyOwner` (H-01), giving the contract owner sole control over new token creation and liquidity… |
-| **Upgrades** | 8/10 | Low | The `Clanker` contract is not designed as an upgradeable proxy, meaning its logic is immutable once deployed. The `Token` contracts are deployed via `create2` and are also immutable. Therefore, there… |
+| **Technical** | 9/10 | Low | The technical architecture (7.1) utilizes a factory pattern with `create2` for predictable token addresses and integrates with Uniswap V3 for liquidity. Code security (7.2) benefits from Solidity… |
+| **Governance / Economics** | 6/10 | Medium | Access control (7.3) is heavily centralized, with the `deployToken` function restricted to `onlyOwner` (H-01), giving the contract owner sole control over new token creation and liquidity… |
+| **Upgrades** | 9/10 | Low | The `Clanker` contract is not designed as an upgradeable proxy, meaning its logic is immutable once deployed. The `Token` contracts are deployed via `create2` and are also immutable. Therefore, there… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 98.6% |
-| **Top-3 Unlocked** | ⚠️ 99.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 98.1% |
+| **Top-3 Unlocked** | ⚠️ 99.4% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ The `deprecated` flag, controllable by the owner, prevents new token deployments
 |--------|-------|
 | **Contract** | [`0x22af...6f3b`](https://basescan.org/address/0x22af33fe49fd1fa80c7149773dde5890d3c76f3b) |
 | **Network** | Base |
-| **Price** | $0.0007036 |
-| **24h Volume** | $1.05M |
-| **Liquidity** | $3.03M |
+| **Price** | $0.0003882 |
+| **24h Volume** | $631.3K |
+| **Liquidity** | $1.94M |
 | **Volume / Liquidity** | 0.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 33.2% of supply |
+| **Top-10 Holders** | 32.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1578 buys / 1625 sells |
 

@@ -2,14 +2,14 @@
 token: three.ws
 ticker: THREE
 network: solana
-risk_score: 22
-status: medium
+risk_score: 48
+status: high
 date: 2026-06-10
 ---
 
 # three.ws (THREE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 22/100 — 🟡 Medium Risk**
+> **Risk Score: 48/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/threews-sol)
 
@@ -26,8 +26,8 @@ This SPL Token-2022 mint, three.ws (three), presents a low-risk profile based on
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint, indicating it leverages the latest Solana token program features. Both the mint authority and freeze authority are revoked, meaning no new tokens can be minted… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits healthy liquidity with $182,992 USD available on DEXs. The 24-hour volume of $336,729 results in a normal Volume/Liquidity Ratio of 1.84, not indicating wash trading. The DEX pair… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token does not utilize a transfer hook, and its metadata… |
+| **Governance / Economics** | 3/10 | High | The token exhibits healthy liquidity with $182,992 USD available on DEXs. The 24-hour volume of $336,729 results in a normal Volume/Liquidity Ratio of 1.84, not indicating wash trading. The DEX pair… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token does not utilize a transfer hook, and its metadata… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ This SPL Token-2022 mint, three.ws (three), presents a low-risk profile based on
 |--------|-------|
 | **Contract** | [`FeMbDo...pump`](https://solscan.io/account/FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump) |
 | **Network** | Solana |
-| **Price** | $0.004757 |
-| **24h Volume** | $1.46M |
-| **Liquidity** | $266.3K |
-| **Volume / Liquidity** | 5.5× |
+| **Price** | $0.001549 |
+| **24h Volume** | $141.4K |
+| **Liquidity** | $211.2K |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 18.9% of supply |
+| **Top-10 Holders** | 21.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 32461 buys / 17505 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ This SPL Token-2022 mint, three.ws (three), presents a low-risk profile based on
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

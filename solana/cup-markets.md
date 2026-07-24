@@ -2,14 +2,14 @@
 token: Cup Markets
 ticker: CUP
 network: solana
-risk_score: 41
-status: medium
+risk_score: 91
+status: critical
 date: 2026-06-10
 ---
 
 # Cup Markets (CUP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 91/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cup-markets-sol)
 
@@ -25,9 +25,9 @@ The Cup Markets (CUP) token exhibits a high economic risk due to very low DEX li
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Cup Markets (CUP) token operates on the standard `spl-token` program. Both the Mint Authority and Freeze Authority are revoked, indicating that no new tokens can be minted and no existing… |
-| **Governance / Economics** | 6/10 | Medium | The economic profile of the Cup Markets (CUP) token presents a high risk due to its very low DEX liquidity, currently at $8,051. This level of liquidity makes large trades highly susceptible to… |
-| **Upgrades** | 8/10 | Low | The Cup Markets (CUP) token has a fixed supply model as its Mint Authority is revoked, preventing further token issuance. Similarly, the Freeze Authority is also revoked, meaning no accounts can be… |
+| **Technical** | 4/10 | Medium | The Cup Markets (CUP) token operates on the standard `spl-token` program. Both the Mint Authority and Freeze Authority are revoked, indicating that no new tokens can be minted and no existing… |
+| **Governance / Economics** | 1/10 | High | The economic profile of the Cup Markets (CUP) token presents a high risk due to its very low DEX liquidity, currently at $8,051. This level of liquidity makes large trades highly susceptible to… |
+| **Upgrades** | 4/10 | Medium | The Cup Markets (CUP) token has a fixed supply model as its Mint Authority is revoked, preventing further token issuance. Similarly, the Freeze Authority is also revoked, meaning no accounts can be… |
 
 ## Security Findings
 
@@ -52,22 +52,22 @@ Token name, symbol, or image can be changed post-launch.
 |--------|-------|
 | **Contract** | [`BGAED7...9cUp`](https://solscan.io/account/BGAED7f6EcBbWPamiWxcpgXqpkGm7zpYoxmx29Jh9cUp) |
 | **Network** | Solana |
-| **Price** | $0.0003248 |
-| **24h Volume** | $30.5K |
-| **Liquidity** | $55.6K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.00000566 |
+| **24h Volume** | $1 |
+| **Liquidity** | $8.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 13d |
-| **Top-10 Holders** | 27.6% of supply |
+| **Top-10 Holders** | 92.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 296 buys / 225 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -76,8 +76,8 @@ Token name, symbol, or image can be changed post-launch.
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

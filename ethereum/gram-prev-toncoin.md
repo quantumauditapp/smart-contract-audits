@@ -2,14 +2,14 @@
 token: Gram (prev. Toncoin)
 ticker: GRAM
 network: ethereum
-risk_score: 94
-status: critical
+risk_score: 67
+status: high
 date: 2026-06-30
 ---
 
 # Gram (prev. Toncoin) (GRAM) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 94/100 — 🔴 Critical Risk**
+> **Risk Score: 67/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gram-prev-toncoin-eth)
 
@@ -25,16 +25,16 @@ The TONBridge Bridge contract implements a multi-signature oracle system for min
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract demonstrates a clear architecture for a multi-signature bridge, leveraging inherited ERC20 and signature verification functionalities (7.1). However, a critical flaw exists in the quorum… |
+| **Technical** | 6/10 | Medium | The contract demonstrates a clear architecture for a multi-signature bridge, leveraging inherited ERC20 and signature verification functionalities (7.1). However, a critical flaw exists in the quorum… |
 | **Governance / Economics** | 1/10 | High | The economic model centers around the minting and burning of a wrapped token, controlled by a set of oracles. The primary economic risk stems from the centralization inherent in the oracle system; a… |
-| **Upgrades** | 4/10 | Medium | The contract is not designed as an upgradeable proxy, therefore, no upgrade-specific risks or safety issues are present (7.7). |
+| **Upgrades** | 5/10 | Medium | The contract is not designed as an upgradeable proxy, therefore, no upgrade-specific risks or safety issues are present (7.7). |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 53.0% |
-| **Top-3 Unlocked** | 74.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 60.4% |
+| **Top-3 Unlocked** | ⚠️ 81.4% |
 
 ## Security Findings
 
@@ -94,12 +94,12 @@ The contract uses `pragma experimental ABIEncoderV2;`. While ABIEncoderV2 has be
 |--------|-------|
 | **Contract** | [`0x582d...def1`](https://etherscan.io/address/0x582d872a1b094fc48f5de31d3b73f2d9be47def1) |
 | **Network** | Ethereum |
-| **Price** | $1.6300 |
-| **24h Volume** | $42.9K |
-| **Liquidity** | $745.2K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $1.5500 |
+| **24h Volume** | $4.2K |
+| **Liquidity** | $784.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | 29.3% of supply |
+| **Top-10 Holders** | 29.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 21 buys / 32 sells |
 
@@ -108,8 +108,8 @@ The contract uses `pragma experimental ABIEncoderV2;`. While ABIEncoderV2 has be
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ❌ Fail |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -118,8 +118,8 @@ The contract uses `pragma experimental ABIEncoderV2;`. While ABIEncoderV2 has be
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

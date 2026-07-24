@@ -2,14 +2,14 @@
 token: Bullish Degen
 ticker: BULLISH
 network: solana
-risk_score: 27
-status: medium
+risk_score: 51
+status: high
 date: 2026-06-10
 ---
 
 # Bullish Degen (BULLISH) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 27/100 — 🟡 Medium Risk**
+> **Risk Score: 51/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bullish-degen-sol)
 
@@ -26,8 +26,8 @@ The Bullish Degen (BULLISH) SPL token mint has no critical or high-severity risk
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Bullish Degen (BULLISH) token is an SPL token operating on the `spl-token` program. Its mint authority is revoked (None), ensuring no new tokens can be minted, fixing the total supply at… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits a healthy liquidity profile with $64,917 USD in total DEX liquidity, which is sufficient for moderate trading activity. The 24-hour volume of $5,788 USD results in a normal… |
-| **Upgrades** | 8/10 | Low | The Bullish Degen (BULLISH) token mint has both its mint and freeze authorities revoked, which means its core parameters related to supply and account freezing are immutable. The token's metadata is… |
+| **Governance / Economics** | 2/10 | High | The token exhibits a healthy liquidity profile with $64,917 USD in total DEX liquidity, which is sufficient for moderate trading activity. The 24-hour volume of $5,788 USD results in a normal… |
+| **Upgrades** | 5/10 | Medium | The Bullish Degen (BULLISH) token mint has both its mint and freeze authorities revoked, which means its core parameters related to supply and account freezing are immutable. The token's metadata is… |
 
 ## Token Metrics
 
@@ -35,21 +35,21 @@ The Bullish Degen (BULLISH) SPL token mint has no critical or high-severity risk
 |--------|-------|
 | **Contract** | [`C2omVh...pump`](https://solscan.io/account/C2omVhcvt3DDY77S2KZzawFJQeETZofgZ4eNWWkXpump) |
 | **Network** | Solana |
-| **Price** | $0.00169 |
-| **24h Volume** | $308.8K |
-| **Liquidity** | $150.3K |
-| **Volume / Liquidity** | 2.1× |
+| **Price** | $0.0002599 |
+| **24h Volume** | $12.6K |
+| **Liquidity** | $60.6K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 7mo |
-| **Top-10 Holders** | 28.6% of supply |
+| **Top-10 Holders** | 32.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,8 +58,8 @@ The Bullish Degen (BULLISH) SPL token mint has no critical or high-severity risk
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

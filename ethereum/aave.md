@@ -2,14 +2,14 @@
 token: Aave
 ticker: AAVE
 network: ethereum
-risk_score: 32
+risk_score: 28
 status: medium
 date: 2026-06-17
 ---
 
 # Aave (AAVE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 32/100 — 🟡 Medium Risk**
+> **Risk Score: 28/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aave-eth)
 
@@ -26,8 +26,8 @@ This audit covers the AaveTokenV3 contract, which functions as an ERC20 token, d
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 9/10 | Low | The technical architecture (7.1) utilizes OpenZeppelin's Transparent Proxy pattern and well-established ERC20 standards, enhancing code security (7.2). The implementation includes `ReentrancyGuard`… |
-| **Governance / Economics** | 6/10 | Medium | The economic model (7.4) is based on a standard ERC20 token, which is a core asset for the Aave ecosystem with high TVL. Governance (7.5) is centralized through an `Ownable` pattern for the… |
-| **Upgrades** | 3/10 | High | The contract employs the OpenZeppelin Transparent Upgradeability Proxy pattern (7.7), allowing for future logic upgrades without changing the contract address. The `Initializable` pattern is… |
+| **Governance / Economics** | 5/10 | Medium | The economic model (7.4) is based on a standard ERC20 token, which is a core asset for the Aave ecosystem with high TVL. Governance (7.5) is centralized through an `Ownable` pattern for the… |
+| **Upgrades** | 1/10 | High | The contract employs the OpenZeppelin Transparent Upgradeability Proxy pattern (7.7), allowing for future logic upgrades without changing the contract address. The `Initializable` pattern is… |
 
 ## Proxy Upgrade Controls
 
@@ -42,8 +42,8 @@ This audit covers the AaveTokenV3 contract, which functions as an ERC20 token, d
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 41.0% |
-| **Top-3 Unlocked** | 73.1% |
+| **Top-1 Unlocked Holder** | 38.0% |
+| **Top-3 Unlocked** | 68.2% |
 
 ## Security Findings
 
@@ -96,21 +96,21 @@ The `AaveTokenV3` implementation is compiled with Solidity 0.8.20, which include
 |--------|-------|
 | **Contract** | [`0x7fc6...dae9`](https://etherscan.io/address/0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9) |
 | **Network** | Ethereum |
-| **Price** | $76.4300 |
-| **24h Volume** | $210.3K |
-| **Liquidity** | $11.37M |
+| **Price** | $97.4700 |
+| **24h Volume** | $323.4K |
+| **Liquidity** | $13.05M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 40.9% of supply |
+| **Top-10 Holders** | 41.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 97 buys / 78 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
@@ -120,7 +120,7 @@ The `AaveTokenV3` implementation is compiled with Solidity 0.8.20, which include
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |

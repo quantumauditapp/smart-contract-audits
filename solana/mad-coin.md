@@ -2,14 +2,14 @@
 token: Mad Coin
 ticker: $MAD
 network: solana
-risk_score: 42
-status: medium
+risk_score: 60
+status: high
 date: 2026-06-19
 ---
 
 # Mad Coin ($MAD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 60/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mad-coin-sol)
 
@@ -26,8 +26,8 @@ The Mad Coin ($MAD) SPL Token Mint exhibits a low-risk profile with both mint an
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Mad Coin ($MAD) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits healthy liquidity at $184,980 USD, with a normal 24-hour volume to liquidity ratio of 0.12, suggesting organic trading activity. The DEX pair has been active for 153 days… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and account freeze status are immutable. No Token-2022 extensions like transfer hooks or permanent delegates are… |
+| **Governance / Economics** | 1/10 | High | The token exhibits healthy liquidity at $184,980 USD, with a normal 24-hour volume to liquidity ratio of 0.12, suggesting organic trading activity. The DEX pair has been active for 153 days… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, meaning the token's supply and account freeze status are immutable. No Token-2022 extensions like transfer hooks or permanent delegates are… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The Mad Coin ($MAD) SPL Token Mint exhibits a low-risk profile with both mint an
 |--------|-------|
 | **Contract** | [`Fa7ZE9...pump`](https://solscan.io/account/Fa7ZE9nCEYnrHsnoeHuhEExJpchtrBtKXnWe6CgHpump) |
 | **Network** | Solana |
-| **Price** | $0.002109 |
-| **24h Volume** | $31.7K |
-| **Liquidity** | $107.3K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.003625 |
+| **24h Volume** | $9.9K |
+| **Liquidity** | $150.6K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 59.9% of supply |
+| **Top-10 Holders** | 58.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1087 buys / 121 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The Mad Coin ($MAD) SPL Token Mint exhibits a low-risk profile with both mint an
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: SPX6900 (Wormhole)
 ticker: SPX
 network: solana
-risk_score: 55
+risk_score: 67
 status: high
 date: 2026-07-22
 ---
 
 # SPX6900 (Wormhole) (SPX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 67/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spx6900-wormhole-sol)
 
@@ -27,7 +27,7 @@ This Solana SPL Token Mint audit identified a critical risk: the mint authority 
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The token is an SPL Token Program v3 mint. A critical finding (7.3 Access Control) is that the mint authority, BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7, remains active, enabling the creation of… |
 | **Governance / Economics** | 1/10 | High | The token exhibits healthy liquidity (7.4 Economic) with $1,699,097 in total DEX liquidity, and a normal 24-hour volume to liquidity ratio of 0.14, indicating organic trading activity. The DEX pair… |
-| **Upgrades** | 7/10 | Low | The mint authority is still enabled (7.7 Upgrades), allowing for potential changes to the token's supply. The freeze authority has been revoked, which is a positive for immutability of account… |
+| **Upgrades** | 4/10 | Medium | The mint authority is still enabled (7.7 Upgrades), allowing for potential changes to the token's supply. The freeze authority has been revoked, which is a positive for immutability of account… |
 
 ## LP Distribution
 
@@ -59,22 +59,22 @@ Token name, symbol, or image can be changed post-launch.
 |--------|-------|
 | **Contract** | [`J3NKxx...3KFr`](https://solscan.io/account/J3NKxxXZcnNiMjKw9hYb2K4LUxgwB6t1FtPtQVsv3KFr) |
 | **Network** | Solana |
-| **Price** | $0.3541 |
-| **24h Volume** | $235.0K |
-| **Liquidity** | $1.69M |
+| **Price** | $0.3575 |
+| **24h Volume** | $141.4K |
+| **Liquidity** | $1.70M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 19.6% of supply |
+| **Top-10 Holders** | 19.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1337 buys / 1203 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -83,8 +83,8 @@ Token name, symbol, or image can be changed post-launch.
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

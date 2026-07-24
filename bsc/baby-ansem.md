@@ -2,14 +2,14 @@
 token: Baby Ansem
 ticker: BABYANSEM
 network: bsc
-risk_score: 67
+risk_score: 51
 status: high
 date: 2026-07-01
 ---
 
 # Baby Ansem (BABYANSEM) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/baby-ansem-bsc)
 
@@ -25,9 +25,9 @@ The BabyAnsem ERC20 token contract exhibits a critical flaw where no mechanism e
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages a structure similar to OpenZeppelin's ERC20 implementation, benefiting from Solidity 0.8.x's built-in overflow/underflow protections. However, a critical architectural flaw… |
-| **Governance / Economics** | 1/10 | High | The contract is a basic ERC20 token with no complex governance or economic mechanisms (7.5 Governance, 7.4 Economic). Its simplicity inherently reduces risks associated with intricate protocol… |
-| **Upgrades** | 6/10 | Medium | This contract is not implemented as an upgradeable proxy (7.7 Upgrades). Therefore, it does not carry the specific risks associated with proxy patterns, such as storage collisions or improper… |
+| **Technical** | 8/10 | Low | The contract leverages a structure similar to OpenZeppelin's ERC20 implementation, benefiting from Solidity 0.8.x's built-in overflow/underflow protections. However, a critical architectural flaw… |
+| **Governance / Economics** | 4/10 | Medium | The contract is a basic ERC20 token with no complex governance or economic mechanisms (7.5 Governance, 7.4 Economic). Its simplicity inherently reduces risks associated with intricate protocol… |
+| **Upgrades** | 8/10 | Low | This contract is not implemented as an upgradeable proxy (7.7 Upgrades). Therefore, it does not carry the specific risks associated with proxy patterns, such as storage collisions or improper… |
 
 ## LP Distribution
 
@@ -67,11 +67,11 @@ The `decimals()` function returns `9`. While technically valid, the vast majorit
 | **Contract** | [`0x67ee...6666`](https://bscscan.com/address/0x67eeac92cd21af06dfefa801e70df78a0dfa6666) |
 | **Network** | BNB Chain |
 | **Price** | $0. |
-| **24h Volume** | $249.7K |
-| **Liquidity** | $40.3K |
-| **Volume / Liquidity** | 6.2× |
+| **24h Volume** | $6 |
+| **Liquidity** | $10.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 30.1% of supply |
+| **Top-10 Holders** | 88.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 13560 buys / 2419 sells |
 

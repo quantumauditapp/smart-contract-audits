@@ -2,14 +2,14 @@
 token: Chip
 ticker: CHIP
 network: arbitrum
-risk_score: 76
+risk_score: 73
 status: critical
 date: 2026-07-22
 ---
 
 # Chip (CHIP) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 76/100 — 🔴 Critical Risk**
+> **Risk Score: 73/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chip-arb)
 
@@ -25,9 +25,25 @@ This audit covers an OpenZeppelin TransparentUpgradeableProxy contract. The prim
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The proxy contract (7.1 Architecture) is a standard OpenZeppelin TransparentUpgradeableProxy, which is a well-vetted and secure component. It correctly implements the transparent proxy pattern… |
+| **Technical** | 6/10 | Medium | The proxy contract (7.1 Architecture) is a standard OpenZeppelin TransparentUpgradeableProxy, which is a well-vetted and secure component. It correctly implements the transparent proxy pattern… |
 | **Governance / Economics** | 1/10 | High | The system relies on a `ProxyAdmin` contract for upgrade management (7.5 Governance). The `initialOwner` of this `ProxyAdmin` determines the centralization level of upgrade authority. If this owner… |
-| **Upgrades** | 4/10 | Medium | The contract utilizes the Transparent Proxy pattern for upgradeability (7.7 Upgrades), allowing the implementation logic to be updated. This flexibility is a strength, enabling bug fixes and feature… |
+| **Upgrades** | 3/10 | High | The contract utilizes the Transparent Proxy pattern for upgradeability (7.7 Upgrades), allowing the implementation logic to be updated. This flexibility is a strength, enabling bug fixes and feature… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Transparent |
+| **Admin** | OZ ProxyAdmin → Timelock |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 88.4% |
+| **Top-3 Unlocked** | ⚠️ 98.9% |
 
 ## Security Findings
 
@@ -66,12 +82,12 @@ The `_admin` variable in `TransparentUpgradeableProxy` is declared as `immutable
 |--------|-------|
 | **Contract** | [`0x0c1c...1f6e`](https://arbiscan.io/address/0x0c1c1c109fe34733fca54b82d7b46b75cfb71f6e) |
 | **Network** | Arbitrum |
-| **Price** | $0.03114 |
-| **24h Volume** | $81.7K |
-| **Liquidity** | $1.17M |
+| **Price** | $0.03016 |
+| **24h Volume** | $72.6K |
+| **Liquidity** | $1.16M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 75.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 818 buys / 810 sells |
 
@@ -79,21 +95,21 @@ The `_admin` variable in `TransparentUpgradeableProxy` is declared as `immutable
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

@@ -2,14 +2,14 @@
 token: SAIRI
 ticker: SAIRI
 network: base
-risk_score: 46
-status: high
+risk_score: 18
+status: low
 date: 2026-06-13
 ---
 
 # SAIRI (SAIRI) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 46/100 — 🟠 High Risk**
+> **Risk Score: 18/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sairi-base)
 
@@ -25,9 +25,9 @@ The ClankerToken contract is an ERC20 token with extensions for burning, permits
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The technical architecture (7.1) of ClankerToken is sound, building upon well-audited OpenZeppelin ERC20 standards, including ERC20Burnable, ERC20Permit, and ERC20Votes. Code security (7.2) is… |
-| **Governance / Economics** | 1/10 | High | Economically (7.4), the token's initial supply is minted entirely to the deployer on a specific chain, which is a design choice that centralizes initial distribution. The `maxSupply_` parameter is… |
-| **Upgrades** | 8/10 | Low | The ClankerToken contract is not designed as an upgradeable proxy (7.7). This means that its logic cannot be modified post-deployment. While this eliminates upgrade-related risks, any future feature… |
+| **Technical** | 10/10 | Low | The technical architecture (7.1) of ClankerToken is sound, building upon well-audited OpenZeppelin ERC20 standards, including ERC20Burnable, ERC20Permit, and ERC20Votes. Code security (7.2) is… |
+| **Governance / Economics** | 7/10 | Low | Economically (7.4), the token's initial supply is minted entirely to the deployer on a specific chain, which is a design choice that centralizes initial distribution. The `maxSupply_` parameter is… |
+| **Upgrades** | 9/10 | Low | The ClankerToken contract is not designed as an upgradeable proxy (7.7). This means that its logic cannot be modified post-deployment. While this eliminates upgrade-related risks, any future feature… |
 
 ## LP Distribution
 
@@ -73,12 +73,12 @@ The `_context` state variable is set in the constructor and exposed via the `con
 |--------|-------|
 | **Contract** | [`0xde61...eb07`](https://basescan.org/address/0xde61878b0b21ce395266c44d4d548d1c72a3eb07) |
 | **Network** | Base |
-| **Price** | $0.00001573 |
-| **24h Volume** | $143.2K |
-| **Liquidity** | $726.9K |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.00000235 |
+| **24h Volume** | $8.2K |
+| **Liquidity** | $267.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 31.2% of supply |
+| **Top-10 Holders** | 49.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 240 buys / 719 sells |
 

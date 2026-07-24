@@ -2,14 +2,14 @@
 token: MineBean
 ticker: BEAN
 network: base
-risk_score: 86
+risk_score: 82
 status: critical
 date: 2026-07-23
 ---
 
 # MineBean (BEAN) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 86/100 — 🔴 Critical Risk**
+> **Risk Score: 82/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/minebean-base)
 
@@ -25,9 +25,16 @@ The MineBean contract is an ERC20 token with a capped supply, a minter role, and
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 2/10 | High | The contract utilizes robust OpenZeppelin ERC20 and Uniswap V4 libraries for core functionalities (7.2 Code Security). The TWAP oracle mechanism incorporates a `MIN_SNAPSHOT_INTERVAL` to prevent… |
-| **Governance / Economics** | 4/10 | Medium | The contract implements a `MAX_SUPPLY` and a `minter` role, providing a controlled token issuance mechanism (7.4 Economic). The owner can `freezeMinter` and `removeLimits`, which are one-way actions… |
-| **Upgrades** | 4/10 | Medium | The contract is not designed as an upgradeable proxy. Therefore, it does not introduce any upgrade-specific risks (7.7 Upgrades). Any changes to the contract's logic would require a new deployment… |
+| **Technical** | 4/10 | Medium | The contract utilizes robust OpenZeppelin ERC20 and Uniswap V4 libraries for core functionalities (7.2 Code Security). The TWAP oracle mechanism incorporates a `MIN_SNAPSHOT_INTERVAL` to prevent… |
+| **Governance / Economics** | 6/10 | Medium | The contract implements a `MAX_SUPPLY` and a `minter` role, providing a controlled token issuance mechanism (7.4 Economic). The owner can `freezeMinter` and `removeLimits`, which are one-way actions… |
+| **Upgrades** | 6/10 | Medium | The contract is not designed as an upgradeable proxy. Therefore, it does not introduce any upgrade-specific risks (7.7 Upgrades). Any changes to the contract's logic would require a new deployment… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **LP Locked** | 98.4% — GoPlus SafeToken Locker |
+| **Top-1 Unlocked Holder** | 0.9% |
 
 ## Security Findings
 
@@ -87,33 +94,33 @@ The `_updateTickSnapshot` function is triggered on every transfer to or from an 
 |--------|-------|
 | **Contract** | [`0x5c72...5a5d`](https://basescan.org/address/0x5c72992b83e74c4d5200a8e8920fb946214a5a5d) |
 | **Network** | Base |
-| **Price** | $2.9300 |
-| **24h Volume** | $30.3K |
-| **Liquidity** | $254.7K |
+| **Price** | $2.8100 |
+| **24h Volume** | $29.0K |
+| **Liquidity** | $251.8K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 86.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 239 buys / 1364 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (4/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ✅ Pass |
-| No Mint Function | ⚠️ Unknown |
-| Liquidity Locked | ❌ Fail |
+| No Mint Function | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

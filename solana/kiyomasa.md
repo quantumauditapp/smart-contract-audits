@@ -2,14 +2,14 @@
 token: Kiyomasa
 ticker: 清正
 network: solana
-risk_score: 29
-status: medium
+risk_score: 66
+status: high
 date: 2026-06-14
 ---
 
 # Kiyomasa (清正) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 29/100 — 🟡 Medium Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kiyomasa-sol)
 
@@ -26,8 +26,8 @@ The Kiyomasa SPL Token Mint is configured with no active mint or freeze authorit
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Kiyomasa token operates on the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring no new tokens can be minted and no accounts can be frozen. The token does… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits moderate liquidity at $18,423 USD, with a 24-hour volume of $5,481 USD. The pair has been active for 111 days, providing a reasonable track record. The Volume/Liquidity Ratio is… |
-| **Upgrades** | 8/10 | Low | The token's configuration is highly immutable, as both the mint and freeze authorities have been revoked. No Token-2022 extensions that would allow for future modifications, such as transfer hook… |
+| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity at $18,423 USD, with a 24-hour volume of $5,481 USD. The pair has been active for 111 days, providing a reasonable track record. The Volume/Liquidity Ratio is… |
+| **Upgrades** | 5/10 | Medium | The token's configuration is highly immutable, as both the mint and freeze authorities have been revoked. No Token-2022 extensions that would allow for future modifications, such as transfer hook… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The Kiyomasa SPL Token Mint is configured with no active mint or freeze authorit
 |--------|-------|
 | **Contract** | [`ANP1wJ...pump`](https://solscan.io/account/ANP1wJHYWYQPfrZvg8FnjduwfBVJhRV3xqKcs3yapump) |
 | **Network** | Solana |
-| **Price** | $0.0003475 |
-| **24h Volume** | $410.7K |
-| **Liquidity** | $56.1K |
-| **Volume / Liquidity** | 7.3× |
+| **Price** | $0.00002417 |
+| **24h Volume** | $1.9K |
+| **Liquidity** | $16.4K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 25.4% of supply |
+| **Top-10 Holders** | 57.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2989 buys / 2871 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The Kiyomasa SPL Token Mint is configured with no active mint or freeze authorit
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

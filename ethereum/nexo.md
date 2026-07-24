@@ -2,14 +2,14 @@
 token: NEXO
 ticker: NEXO
 network: ethereum
-risk_score: 100
+risk_score: 79
 status: critical
 date: 2026-07-03
 ---
 
 # NEXO (NEXO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 79/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/nexo-eth)
 
@@ -25,16 +25,16 @@ The audit of the NexoToken contract revealed several areas for improvement, prim
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The technical architecture (7.1) is a standard ERC-20 token inheriting from `Owned` and `SafeMath`. Code security (7.2) is a primary concern due to inconsistent SafeMath usage in `_transfer` and… |
+| **Technical** | 6/10 | Medium | The technical architecture (7.1) is a standard ERC-20 token inheriting from `Owned` and `SafeMath`. Code security (7.2) is a primary concern due to inconsistent SafeMath usage in `_transfer` and… |
 | **Governance / Economics** | 1/10 | High | The contract's economic model (7.4) involves fixed allocations for investors, overdraft, and team, with defined vesting parameters, though the full vesting implementation is not provided. Governance… |
-| **Upgrades** | 4/10 | Medium | The contract is not designed with any upgradeability mechanism (7.7). It is a standard, non-proxy implementation, meaning its logic cannot be modified after deployment. This eliminates… |
+| **Upgrades** | 6/10 | Medium | The contract is not designed with any upgradeability mechanism (7.7). It is a standard, non-proxy implementation, meaning its logic cannot be modified after deployment. This eliminates… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 62.0% |
-| **Top-3 Unlocked** | ⚠️ 91.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 59.2% |
+| **Top-3 Unlocked** | ⚠️ 80.3% |
 
 ## Security Findings
 
@@ -87,9 +87,9 @@ The provided source code for the `NexoToken` contract includes definitions for v
 |--------|-------|
 | **Contract** | [`0xb621...5206`](https://etherscan.io/address/0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206) |
 | **Network** | Ethereum |
-| **Price** | $0.7781 |
-| **24h Volume** | $119.9K |
-| **Liquidity** | $1.22M |
+| **Price** | $0.7414 |
+| **24h Volume** | $137.1K |
+| **Liquidity** | $1.20M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 5y |
 | **Top-10 Holders** | 93.7% of supply |

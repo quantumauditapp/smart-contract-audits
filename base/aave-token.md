@@ -2,14 +2,14 @@
 token: Aave Token
 ticker: AAVE
 network: base
-risk_score: 33
+risk_score: 42
 status: medium
 date: 2026-07-23
 ---
 
 # Aave Token (AAVE) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 33/100 — 🟡 Medium Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aave-token-base)
 
@@ -25,9 +25,16 @@ The OptimismMintableERC20 contract serves as a standard ERC20 token with minting
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical implementation of the OptimismMintableERC20 contract is robust, leveraging OpenZeppelin's battle-tested ERC20 library. Key security features include the use of `immutable` variables for… |
-| **Governance / Economics** | 3/10 | High | The economic model of the OptimismMintableERC20 token is straightforward, with its supply directly managed by a designated `BRIDGE` contract (7.4 Economic). This design is intentional for cross-chain… |
-| **Upgrades** | 5/10 | Medium | The OptimismMintableERC20 contract is not designed as an upgradeable proxy, nor does it contain any self-upgrade mechanisms (7.7 Upgrades). This eliminates upgrade-related risks such as proxy storage… |
+| **Technical** | 8/10 | Low | The technical implementation of the OptimismMintableERC20 contract is robust, leveraging OpenZeppelin's battle-tested ERC20 library. Key security features include the use of `immutable` variables for… |
+| **Governance / Economics** | 2/10 | High | The economic model of the OptimismMintableERC20 token is straightforward, with its supply directly managed by a designated `BRIDGE` contract (7.4 Economic). This design is intentional for cross-chain… |
+| **Upgrades** | 3/10 | High | The OptimismMintableERC20 contract is not designed as an upgradeable proxy, nor does it contain any self-upgrade mechanisms (7.7 Upgrades). This eliminates upgrade-related risks such as proxy storage… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 99.4% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -66,22 +73,22 @@ The contract does not perform external calls to untrusted addresses after state 
 |--------|-------|
 | **Contract** | [`0x6370...814b`](https://basescan.org/address/0x63706e401c06ac8513145b7687a14804d17f814b) |
 | **Network** | Base |
-| **Price** | $97.3600 |
-| **24h Volume** | $288.3K |
-| **Liquidity** | $890.2K |
+| **Price** | $97.1000 |
+| **24h Volume** | $298.0K |
+| **Liquidity** | $891.7K |
 | **Volume / Liquidity** | 0.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 58.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 411 buys / 372 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -89,9 +96,9 @@ The contract does not perform external calls to untrusted addresses after state 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

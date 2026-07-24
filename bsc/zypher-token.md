@@ -2,14 +2,14 @@
 token: Zypher Token
 ticker: POP
 network: bsc
-risk_score: 56
-status: high
+risk_score: 74
+status: critical
 date: 2026-07-22
 ---
 
 # Zypher Token (POP) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 56/100 — 🟠 High Risk**
+> **Risk Score: 74/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zypher-token-bsc)
 
@@ -25,9 +25,16 @@ The Zypher Network Token contract is an ERC-20 compliant token built upon battle
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The technical implementation of the Zypher Network Token contract is strong, leveraging well-audited OpenZeppelin libraries (7.2 Code Security). It inherits from ERC20, ERC20Burnable, Ownable2Step… |
-| **Governance / Economics** | 2/10 | High | The contract exhibits a high degree of centralized control (7.4 Economic, 7.5 Governance). The initial owner receives the entire token supply upon deployment and retains the power to pause all token… |
+| **Technical** | 6/10 | Medium | The technical implementation of the Zypher Network Token contract is strong, leveraging well-audited OpenZeppelin libraries (7.2 Code Security). It inherits from ERC20, ERC20Burnable, Ownable2Step… |
+| **Governance / Economics** | 1/10 | High | The contract exhibits a high degree of centralized control (7.4 Economic, 7.5 Governance). The initial owner receives the entire token supply upon deployment and retains the power to pause all token… |
 | **Upgrades** | 5/10 | Medium | The Zypher Network Token contract is not designed to be upgradeable (7.7 Upgrades). It is deployed as a standard, non-proxy contract, meaning its logic cannot be modified post-deployment. Any future… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 98.3% |
+| **Top-3 Unlocked** | ⚠️ 99.5% |
 
 ## Security Findings
 
@@ -66,12 +73,12 @@ The contract heavily relies on OpenZeppelin's standard libraries (ERC20, Ownable
 |--------|-------|
 | **Contract** | [`0xa3cf...8fe6`](https://bscscan.com/address/0xa3cfb853339b77f385b994799b015cb04b208fe6) |
 | **Network** | BNB Chain |
-| **Price** | $0.002133 |
-| **24h Volume** | $2.31M |
-| **Liquidity** | $584.8K |
-| **Volume / Liquidity** | 3.9× |
+| **Price** | $0.002142 |
+| **24h Volume** | $2.34M |
+| **Liquidity** | $586.6K |
+| **Volume / Liquidity** | 4.0× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 89.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 8484 buys / 7417 sells |
 
@@ -79,9 +86,9 @@ The contract heavily relies on OpenZeppelin's standard libraries (ERC20, Ownable
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -89,9 +96,9 @@ The contract heavily relies on OpenZeppelin's standard libraries (ERC20, Ownable
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Pomni
 ticker: POMNI
 network: solana
-risk_score: 45
-status: medium
+risk_score: 67
+status: high
 date: 2026-06-15
 ---
 
 # Pomni (POMNI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 67/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pomni-sol)
 
@@ -26,8 +26,8 @@ The Pomni SPL Token-2022 mint exhibits a secure configuration with both mint and
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Pomni token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been permanently revoked, which prevents further token issuance and ensures that no… |
-| **Governance / Economics** | 5/10 | Medium | The token's market presence shows a liquidity of $17,207 USD, which is moderate. The 24-hour volume to liquidity ratio is 0.44, suggesting healthy trading activity without signs of wash trading. The… |
-| **Upgrades** | 8/10 | Low | The Pomni token mint has a fixed configuration due to the revocation of both mint and freeze authorities, preventing any future changes to supply or account freeze status. The token's metadata is… |
+| **Governance / Economics** | 1/10 | High | The token's market presence shows a liquidity of $17,207 USD, which is moderate. The 24-hour volume to liquidity ratio is 0.44, suggesting healthy trading activity without signs of wash trading. The… |
+| **Upgrades** | 5/10 | Medium | The Pomni token mint has a fixed configuration due to the revocation of both mint and freeze authorities, preventing any future changes to supply or account freeze status. The token's metadata is… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The Pomni SPL Token-2022 mint exhibits a secure configuration with both mint and
 |--------|-------|
 | **Contract** | [`DSSXu6...pump`](https://solscan.io/account/DSSXu6XbYDgWnjMVzagcVF9QpVWXY2H9iexAc4mpump) |
 | **Network** | Solana |
-| **Price** | $0.0001745 |
-| **24h Volume** | $407.1K |
-| **Liquidity** | $37.5K |
-| **Volume / Liquidity** | 10.8× |
+| **Price** | $0.00002075 |
+| **24h Volume** | $1.0K |
+| **Liquidity** | $14.7K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 30.0% of supply |
+| **Top-10 Holders** | 58.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 17714 buys / 3573 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The Pomni SPL Token-2022 mint exhibits a secure configuration with both mint and
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

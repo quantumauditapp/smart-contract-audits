@@ -2,14 +2,14 @@
 token: drooling cat
 ticker: DROOLING
 network: solana
-risk_score: 35
-status: medium
+risk_score: 54
+status: high
 date: 2026-06-18
 ---
 
 # drooling cat (DROOLING) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 35/100 — 🟡 Medium Risk**
+> **Risk Score: 54/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/drooling-cat-sol)
 
@@ -26,8 +26,8 @@ This audit of the 'drooling cat' SPL Token Mint found no critical or high-severi
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked, indicating that no new tokens can be minted and no existing accounts can be… |
-| **Governance / Economics** | 7/10 | Low | DEX liquidity for the token is $147,143, which is sufficient for moderate trading. The 24-hour volume is $581,153, resulting in a Volume/Liquidity Ratio of 3.95, which is considered normal and does… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning these critical controls cannot be changed or re-enabled. The token uses the spl-token-2022 program but… |
+| **Governance / Economics** | 2/10 | High | DEX liquidity for the token is $147,143, which is sufficient for moderate trading. The 24-hour volume is $581,153, resulting in a Volume/Liquidity Ratio of 3.95, which is considered normal and does… |
+| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning these critical controls cannot be changed or re-enabled. The token uses the spl-token-2022 program but… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ This audit of the 'drooling cat' SPL Token Mint found no critical or high-severi
 |--------|-------|
 | **Contract** | [`B6f27E...pump`](https://solscan.io/account/B6f27ETGcjgGNB1fqULJbXVmw9FnL8HgBp7R83hmpump) |
 | **Network** | Solana |
-| **Price** | $0.0007941 |
-| **24h Volume** | $1.10M |
-| **Liquidity** | $88.3K |
-| **Volume / Liquidity** | 12.5× |
+| **Price** | $0.0002027 |
+| **24h Volume** | $125.0K |
+| **Liquidity** | $60.7K |
+| **Volume / Liquidity** | 2.1× |
 | **Token Age** | 20d |
-| **Top-10 Holders** | 24.4% of supply |
+| **Top-10 Holders** | 32.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5818 buys / 5367 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ This audit of the 'drooling cat' SPL Token Mint found no critical or high-severi
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

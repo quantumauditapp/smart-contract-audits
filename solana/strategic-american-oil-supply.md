@@ -2,14 +2,14 @@
 token: Strategic American Oil Supply
 ticker: SAOS
 network: solana
-risk_score: 22
-status: medium
+risk_score: 49
+status: high
 date: 2026-06-10
 ---
 
 # Strategic American Oil Supply (SAOS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 22/100 — 🟡 Medium Risk**
+> **Risk Score: 49/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/strategic-american-oil-supply-sol)
 
@@ -26,8 +26,8 @@ This audit of the Strategic American Oil Supply (SAOS) SPL Token Mint found no c
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The SAOS token is an SPL Token-2022 mint with a total supply of 999,968,586.554128 tokens and 6 decimals. Crucially, both the mint authority and freeze authority have been revoked, preventing further… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a healthy Volume/Liquidity Ratio of 0.04, indicating normal trading activity without signs of wash trading. Total DEX liquidity stands at $34,833, which is sufficient to avoid the… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, ensuring the token's supply and transferability parameters are fixed and cannot be altered by a central entity. No Token-2022 extensions like… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a healthy Volume/Liquidity Ratio of 0.04, indicating normal trading activity without signs of wash trading. Total DEX liquidity stands at $34,833, which is sufficient to avoid the… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, ensuring the token's supply and transferability parameters are fixed and cannot be altered by a central entity. No Token-2022 extensions like… |
 
 ## Token Metrics
 
@@ -35,21 +35,21 @@ This audit of the Strategic American Oil Supply (SAOS) SPL Token Mint found no c
 |--------|-------|
 | **Contract** | [`CMButZ...M1US`](https://solscan.io/account/CMButZqQKoRabRAwemmG9gpXKa62KpQByLwjQLbjM1US) |
 | **Network** | Solana |
-| **Price** | $0.002613 |
-| **24h Volume** | $319.8K |
-| **Liquidity** | $137.3K |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $0.0001688 |
+| **24h Volume** | $773 |
+| **Liquidity** | $34.9K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 10.2% of supply |
+| **Top-10 Holders** | 15.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,8 +58,8 @@ This audit of the Strategic American Oil Supply (SAOS) SPL Token Mint found no c
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

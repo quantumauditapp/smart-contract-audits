@@ -2,14 +2,14 @@
 token: Ghosti
 ticker: GHOSTI
 network: solana
-risk_score: 48
+risk_score: 66
 status: high
 date: 2026-07-15
 ---
 
 # Ghosti (GHOSTI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ghosti-sol)
 
@@ -26,8 +26,8 @@ The Ghosti (GHOSTI) token mint has its mint and freeze authorities revoked, ensu
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Ghosti (GHOSTI) token is an SPL Token-2022 mint with a total supply of 999,812,561.695072 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits a liquidity of $21,596 with a 24-hour volume of $56,513, resulting in a normal Volume/Liquidity ratio of 2.62. The DEX pair is very new, having been created only 4 days ago, which… |
-| **Upgrades** | 8/10 | Low | The Ghosti (GHOSTI) token mint has both its mint and freeze authorities revoked, meaning these core functionalities cannot be altered or re-enabled. It is built on the spl-token-2022 program but does… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a liquidity of $21,596 with a 24-hour volume of $56,513, resulting in a normal Volume/Liquidity ratio of 2.62. The DEX pair is very new, having been created only 4 days ago, which… |
+| **Upgrades** | 5/10 | Medium | The Ghosti (GHOSTI) token mint has both its mint and freeze authorities revoked, meaning these core functionalities cannot be altered or re-enabled. It is built on the spl-token-2022 program but does… |
 
 ## Security Findings
 
@@ -45,22 +45,22 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`6hKk9y...pump`](https://solscan.io/account/6hKk9ymYMejWURC1GhKj66Rwcn6VNnHHe1E3JgE4pump) |
 | **Network** | Solana |
-| **Price** | $0.00005692 |
-| **24h Volume** | $56.5K |
-| **Liquidity** | $21.6K |
-| **Volume / Liquidity** | 2.6× |
+| **Price** | $0.0000531 |
+| **24h Volume** | $37.0K |
+| **Liquidity** | $22.5K |
+| **Volume / Liquidity** | 1.6× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 43.0% of supply |
+| **Top-10 Holders** | 48.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4200 buys / 2289 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,8 +69,8 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

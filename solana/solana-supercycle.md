@@ -2,14 +2,14 @@
 token: Solana Supercycle
 ticker: SOLS
 network: solana
-risk_score: 43
-status: medium
+risk_score: 86
+status: critical
 date: 2026-07-01
 ---
 
 # Solana Supercycle (SOLS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 86/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solana-supercycle-sol)
 
@@ -25,9 +25,9 @@ The Solana Supercycle (SOLS) token mint presents a high risk primarily due to ve
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Solana Supercycle (SOLS) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked (None), which means no new tokens can be minted and no… |
-| **Governance / Economics** | 4/10 | Medium | The token's economic profile shows very low liquidity, with total DEX liquidity at $9,128. This level of liquidity suggests that even moderate trades could experience severe slippage and significant… |
-| **Upgrades** | 8/10 | Low | The Solana Supercycle (SOLS) token mint has both its Mint Authority and Freeze Authority revoked, indicating that the token's supply is fixed and no accounts can be frozen post-launch. The token does… |
+| **Technical** | 4/10 | Medium | The Solana Supercycle (SOLS) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked (None), which means no new tokens can be minted and no… |
+| **Governance / Economics** | 1/10 | High | The token's economic profile shows very low liquidity, with total DEX liquidity at $9,128. This level of liquidity suggests that even moderate trades could experience severe slippage and significant… |
+| **Upgrades** | 4/10 | Medium | The Solana Supercycle (SOLS) token mint has both its Mint Authority and Freeze Authority revoked, indicating that the token's supply is fixed and no accounts can be frozen post-launch. The token does… |
 
 ## Security Findings
 
@@ -50,17 +50,17 @@ Total DEX liquidity is $9,128. Slippage will be severe; large positions cannot b
 | **Liquidity** | $32.2K |
 | **Volume / Liquidity** | 3.9× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 95.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1010 buys / 988 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,8 +69,8 @@ Total DEX liquidity is $9,128. Slippage will be severe; large positions cannot b
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

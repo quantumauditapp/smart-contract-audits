@@ -2,14 +2,14 @@
 token: TAPE
 ticker: TAPE
 network: solana
-risk_score: 43
-status: medium
+risk_score: 69
+status: high
 date: 2026-06-16
 ---
 
 # TAPE (TAPE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 69/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tape-sol)
 
@@ -26,8 +26,8 @@ The TAPE SPL token mint exhibits strong immutability with both mint and freeze a
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The TAPE token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account freezing. No… |
-| **Governance / Economics** | 5/10 | Medium | DEX market data indicates a liquidity of $32,736 and a 24-hour volume of $5,721, resulting in a normal Volume/Liquidity Ratio of 0.17. The DEX pair has been active for 40 days, providing some track… |
-| **Upgrades** | 8/10 | Low | The token's mint authority and freeze authority are both revoked, ensuring that no new tokens can be minted and no accounts can be frozen post-launch. The token is built on the spl-token-2022 program… |
+| **Governance / Economics** | 1/10 | High | DEX market data indicates a liquidity of $32,736 and a 24-hour volume of $5,721, resulting in a normal Volume/Liquidity Ratio of 0.17. The DEX pair has been active for 40 days, providing some track… |
+| **Upgrades** | 5/10 | Medium | The token's mint authority and freeze authority are both revoked, ensuring that no new tokens can be minted and no accounts can be frozen post-launch. The token is built on the spl-token-2022 program… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The TAPE SPL token mint exhibits strong immutability with both mint and freeze a
 |--------|-------|
 | **Contract** | [`7QXDpK...pump`](https://solscan.io/account/7QXDpKoeEe9hJjiYTw6NmaAyyqX1KyBfvVXq3F24pump) |
 | **Network** | Solana |
-| **Price** | $0.0001286 |
-| **24h Volume** | $143.4K |
-| **Liquidity** | $27.0K |
-| **Volume / Liquidity** | 5.3× |
+| **Price** | $0.0000604 |
+| **24h Volume** | $9.1K |
+| **Liquidity** | $19.4K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 15d |
-| **Top-10 Holders** | 47.3% of supply |
+| **Top-10 Holders** | 61.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2001 buys / 1507 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The TAPE SPL token mint exhibits strong immutability with both mint and freeze a
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

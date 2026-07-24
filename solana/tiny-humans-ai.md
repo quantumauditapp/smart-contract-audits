@@ -2,14 +2,14 @@
 token: Tiny Humans AI
 ticker: TINY
 network: solana
-risk_score: 45
-status: medium
+risk_score: 67
+status: high
 date: 2026-06-20
 ---
 
 # Tiny Humans AI (TINY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 67/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tiny-humans-ai-sol)
 
@@ -26,8 +26,8 @@ This audit of the Tiny Humans AI (TINY) SPL Token Mint found no critical or high
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Tiny Humans AI (TINY) token is implemented using the spl-token-2022 program. Key authorities, including the mint authority and freeze authority, have been revoked, ensuring no new tokens can be… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a healthy liquidity of $21,165 USD, with a 24-hour volume of $5,527 USD. The Volume/Liquidity Ratio is 0.26, which is considered normal and does not suggest wash trading. The DEX… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or the ability to freeze holder accounts. Metadata is immutable, ensuring the token's… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a healthy liquidity of $21,165 USD, with a 24-hour volume of $5,527 USD. The Volume/Liquidity Ratio is 0.26, which is considered normal and does not suggest wash trading. The DEX… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or the ability to freeze holder accounts. Metadata is immutable, ensuring the token's… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ This audit of the Tiny Humans AI (TINY) SPL Token Mint found no critical or high
 |--------|-------|
 | **Contract** | [`2AF7Cq...pump`](https://solscan.io/account/2AF7CqwieUjUPALL7icuZtL3X7wENdjUjGBMmfV2pump) |
 | **Network** | Solana |
-| **Price** | $0.0001456 |
-| **24h Volume** | $434.5K |
-| **Liquidity** | $31.2K |
-| **Volume / Liquidity** | 13.9× |
+| **Price** | $0.00003507 |
+| **24h Volume** | $82 |
+| **Liquidity** | $16.5K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 35.5% of supply |
+| **Top-10 Holders** | 52.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3456 buys / 2887 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ This audit of the Tiny Humans AI (TINY) SPL Token Mint found no critical or high
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

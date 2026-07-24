@@ -2,14 +2,14 @@
 token: World Peace 
 ticker: PEACE 
 network: solana
-risk_score: 38
-status: medium
+risk_score: 66
+status: high
 date: 2026-06-15
 ---
 
 # World Peace  (PEACE ) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 38/100 — 🟡 Medium Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-peace-sol)
 
@@ -26,8 +26,8 @@ This audit of the World Peace (Peace) SPL Token Mint found no critical or high-s
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint with a fixed supply of 995,303,116.495398 tokens, as the mint authority has been revoked. The freeze authority is also revoked, meaning no accounts can be frozen.… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy trading patterns with a 24-hour volume of $1,513 against a liquidity of $30,518, resulting in a normal Volume/Liquidity Ratio of 0.05. The DEX pair has been active for 133… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as both the mint and freeze authorities have been revoked. This prevents any further issuance of tokens or freezing of holder accounts. Key Token-2022… |
+| **Governance / Economics** | 1/10 | High | The token exhibits healthy trading patterns with a 24-hour volume of $1,513 against a liquidity of $30,518, resulting in a normal Volume/Liquidity Ratio of 0.05. The DEX pair has been active for 133… |
+| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable, as both the mint and freeze authorities have been revoked. This prevents any further issuance of tokens or freezing of holder accounts. Key Token-2022… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ This audit of the World Peace (Peace) SPL Token Mint found no critical or high-s
 |--------|-------|
 | **Contract** | [`atVjZ7...pump`](https://solscan.io/account/atVjZ7uM8sVrLFi5Xe1JiLGW6mW9pvQdTCWzhNFpump) |
 | **Network** | Solana |
-| **Price** | $0.0002094 |
-| **24h Volume** | $656.8K |
-| **Liquidity** | $61.7K |
-| **Volume / Liquidity** | 10.6× |
+| **Price** | $0.00004246 |
+| **24h Volume** | $1.4K |
+| **Liquidity** | $29.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 31.4% of supply |
+| **Top-10 Holders** | 50.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6504 buys / 4654 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ This audit of the World Peace (Peace) SPL Token Mint found no critical or high-s
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

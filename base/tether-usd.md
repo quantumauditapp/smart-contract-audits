@@ -2,14 +2,14 @@
 token: Tether USD
 ticker: USDT
 network: base
-risk_score: 50
+risk_score: 60
 status: high
 date: 2026-07-23
 ---
 
 # Tether USD (USDT) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 60/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tether-usd-base)
 
@@ -25,9 +25,9 @@ The audited contract is an ERC-20 token implementation, leveraging OpenZeppelin 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract demonstrates good technical security (7.2 Code Security) by utilizing OpenZeppelin Contracts v3.4.1, which include `SafeMath` for all arithmetic operations, effectively preventing… |
+| **Technical** | 7/10 | Low | The contract demonstrates good technical security (7.2 Code Security) by utilizing OpenZeppelin Contracts v3.4.1, which include `SafeMath` for all arithmetic operations, effectively preventing… |
 | **Governance / Economics** | 2/10 | High | The contract exhibits a high degree of centralization (7.3 Access Control, 7.4 Economic, 7.5 Governance). The `_owner` role has extensive privileges, including the ability to `mint` and `burn`… |
-| **Upgrades** | 5/10 | Medium | The contract is not designed with an upgrade mechanism (7.7 Upgrades), meaning its logic is immutable once deployed. This eliminates upgrade-related risks such as proxy misconfigurations or logic… |
+| **Upgrades** | 2/10 | High | The contract is not designed with an upgrade mechanism (7.7 Upgrades), meaning its logic is immutable once deployed. This eliminates upgrade-related risks such as proxy misconfigurations or logic… |
 
 ## Security Findings
 
@@ -67,21 +67,21 @@ The contract leverages well-audited OpenZeppelin libraries (Context, IERC20, Saf
 | **Contract** | [`0xfde4...9bb2`](https://basescan.org/address/0xfde4c96c8593536e31f229ea8f37b2ada2699bb2) |
 | **Network** | Base |
 | **Price** | $0.9989 |
-| **24h Volume** | $5.73M |
+| **24h Volume** | $6.66M |
 | **Liquidity** | $1.74M |
-| **Volume / Liquidity** | 3.3× |
+| **Volume / Liquidity** | 3.8× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 25.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5354 buys / 1379 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -89,9 +89,9 @@ The contract leverages well-audited OpenZeppelin libraries (Context, IERC20, Saf
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

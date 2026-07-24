@@ -2,14 +2,14 @@
 token: Credible Finance
 ticker: CRED
 network: solana
-risk_score: 73
+risk_score: 91
 status: critical
 date: 2026-07-19
 ---
 
 # Credible Finance (CRED) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 73/100 — 🔴 Critical Risk**
+> **Risk Score: 91/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/credible-finance-sol)
 
@@ -27,7 +27,7 @@ This audit of the Credible Finance (CRED) SPL token mint reveals a critical risk
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The Credible Finance (CRED) token is implemented using the standard spl-token program (v3). A critical finding is that the mint authority, ATESfxbwt3SRhSHc4nbk8BG6P8Nm8TAjsHfQCbgC2er4, remains… |
 | **Governance / Economics** | 1/10 | High | The token's DEX pair is very new, having been created only 1 day ago, which means there is insufficient track record for market behavior. Total DEX liquidity stands at $2,031,814, with a 24-hour… |
-| **Upgrades** | 6/10 | Medium | The mint authority for the token is still active, allowing for potential changes to the total supply. The freeze authority has been revoked, which is a positive security measure. The token's metadata… |
+| **Upgrades** | 4/10 | Medium | The mint authority for the token is still active, allowing for potential changes to the total supply. The freeze authority has been revoked, which is a positive security measure. The token's metadata… |
 
 ## Security Findings
 
@@ -59,22 +59,22 @@ Token name, symbol, or image can be changed post-launch.
 |--------|-------|
 | **Contract** | [`CREDBH...meta`](https://solscan.io/account/CREDBHvVqREBCAxMihzr8D1nepHMr2gmQoZWpmgGmeta) |
 | **Network** | Solana |
-| **Price** | $0.6519 |
-| **24h Volume** | $1.18M |
-| **Liquidity** | $2.04M |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.5693 |
+| **24h Volume** | $511.6K |
+| **Liquidity** | $1.91M |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 71.3% of supply |
+| **Top-10 Holders** | 72.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1135 buys / 1006 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -83,8 +83,8 @@ Token name, symbol, or image can be changed post-launch.
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

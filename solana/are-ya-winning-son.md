@@ -2,14 +2,14 @@
 token: Are Ya Winning, Son?
 ticker: SON
 network: solana
-risk_score: 17
-status: low
+risk_score: 57
+status: high
 date: 2026-06-29
 ---
 
 # Are Ya Winning, Son? (SON) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 17/100 — 🟢 Low Risk**
+> **Risk Score: 57/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/are-ya-winning-son-sol)
 
@@ -26,8 +26,8 @@ This audit of the Are Ya Winning, Son? (SON) SPL Token Mint found no critical or
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint with a total supply of 999,934,999.873139 SON (6 decimals). Both the mint authority and freeze authority have been revoked, preventing further token creation or… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits healthy liquidity at $52,601 USD, with a normal 24-hour volume to liquidity ratio of 0.37, suggesting organic trading activity. The DEX pair has been active for 42 days, providing… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, ensuring that the token's supply and account states cannot be unilaterally altered by a central party. Key Token-2022 extension flags such as… |
+| **Governance / Economics** | 1/10 | High | The token exhibits healthy liquidity at $52,601 USD, with a normal 24-hour volume to liquidity ratio of 0.37, suggesting organic trading activity. The DEX pair has been active for 42 days, providing… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, ensuring that the token's supply and account states cannot be unilaterally altered by a central party. Key Token-2022 extension flags such as… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ This audit of the Are Ya Winning, Son? (SON) SPL Token Mint found no critical or
 |--------|-------|
 | **Contract** | [`ACpzkG...pump`](https://solscan.io/account/ACpzkGJV3DDU8HXy8yjab7RL9qNmDGym2GwLkzNppump) |
 | **Network** | Solana |
-| **Price** | $0.001875 |
-| **24h Volume** | $1.31M |
-| **Liquidity** | $136.0K |
-| **Volume / Liquidity** | 9.6× |
+| **Price** | $0.00006766 |
+| **24h Volume** | $917 |
+| **Liquidity** | $28.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 11.8% of supply |
+| **Top-10 Holders** | 39.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 35624 buys / 19693 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ This audit of the Are Ya Winning, Son? (SON) SPL Token Mint found no critical or
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

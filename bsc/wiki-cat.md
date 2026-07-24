@@ -2,14 +2,14 @@
 token: WIKI CAT
 ticker: WKC
 network: bsc
-risk_score: 36
-status: medium
+risk_score: 89
+status: critical
 date: 2026-07-22
 ---
 
 # WIKI CAT (WKC) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 89/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wiki-cat-bsc)
 
@@ -25,9 +25,9 @@ The CoinToken contract implements a standard ERC-20 token with added features su
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract's technical foundation is based on an outdated Solidity compiler (0.4.24), which introduces potential vulnerabilities and inefficiencies (7.2 Code Security). A critical flaw is present… |
-| **Governance / Economics** | 6/10 | Medium | The contract exhibits a high degree of centralization, with the `owner` possessing extensive control over critical functions (7.3 Access Control, 7.5 Governance). The owner can pause all token… |
-| **Upgrades** | 8/10 | Low | The provided contract does not implement any proxy or upgradeability patterns (7.7 Upgrades). Therefore, the contract is immutable once deployed, meaning its logic cannot be changed or updated. This… |
+| **Technical** | 4/10 | Medium | The contract's technical foundation is based on an outdated Solidity compiler (0.4.24), which introduces potential vulnerabilities and inefficiencies (7.2 Code Security). A critical flaw is present… |
+| **Governance / Economics** | 2/10 | High | The contract exhibits a high degree of centralization, with the `owner` possessing extensive control over critical functions (7.3 Access Control, 7.5 Governance). The owner can pause all token… |
+| **Upgrades** | 3/10 | High | The provided contract does not implement any proxy or upgradeability patterns (7.7 Upgrades). Therefore, the contract is immutable once deployed, meaning its logic cannot be changed or updated. This… |
 
 ## LP Distribution
 
@@ -89,21 +89,21 @@ The variables `txFee` and `burnFee` are named in a way that typically implies a 
 | **Contract** | [`0x6ec9...8edb`](https://bscscan.com/address/0x6ec90334d89dbdc89e08a133271be3d104128edb) |
 | **Network** | BNB Chain |
 | **Price** | $0.00000006 |
-| **24h Volume** | $86.1K |
-| **Liquidity** | $916.5K |
+| **24h Volume** | $45.4K |
+| **Liquidity** | $905.9K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 4y |
 | **Top-10 Holders** | 43.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 833 buys / 529 sells |
 
-## Security Flags (5/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
@@ -112,8 +112,8 @@ The variables `txFee` and `burnFee` are named in a way that typically implies a 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

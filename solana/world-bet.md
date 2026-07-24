@@ -2,14 +2,14 @@
 token: WORLD BET
 ticker: WBET
 network: solana
-risk_score: 44
-status: medium
+risk_score: 93
+status: critical
 date: 2026-06-25
 ---
 
 # WORLD BET (WBET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 93/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-bet-sol)
 
@@ -25,9 +25,9 @@ The WORLD BET (WBET) token mint on Solana has revoked both its Mint and Freeze a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The WORLD BET (WBET) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no holder… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits very low liquidity, with only $4,086 in total DEX liquidity, which can lead to severe slippage for any significant trade. The 24-hour volume is $13, and the Volume/Liquidity Ratio… |
-| **Upgrades** | 8/10 | Low | The token's Mint Authority and Freeze Authority are both revoked, meaning core parameters related to supply and account control cannot be changed. The token does not have upgradable transfer fees or… |
+| **Technical** | 4/10 | Medium | The WORLD BET (WBET) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no holder… |
+| **Governance / Economics** | 1/10 | High | The token exhibits very low liquidity, with only $4,086 in total DEX liquidity, which can lead to severe slippage for any significant trade. The 24-hour volume is $13, and the Volume/Liquidity Ratio… |
+| **Upgrades** | 4/10 | Medium | The token's Mint Authority and Freeze Authority are both revoked, meaning core parameters related to supply and account control cannot be changed. The token does not have upgradable transfer fees or… |
 
 ## Security Findings
 
@@ -45,22 +45,22 @@ Total DEX liquidity is $4,086. Slippage will be severe; large positions cannot b
 |--------|-------|
 | **Contract** | [`31989Y...pump`](https://solscan.io/account/31989YsfUahV66TGiMvdSyTj1AQNvcdT327Uiu9mpump) |
 | **Network** | Solana |
-| **Price** | $0.000304 |
-| **24h Volume** | $181.8K |
-| **Liquidity** | $39.7K |
-| **Volume / Liquidity** | 4.6× |
+| **Price** | $0.00000224 |
+| **24h Volume** | $14 |
+| **Liquidity** | $3.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 89.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2050 buys / 1628 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,8 +69,8 @@ Total DEX liquidity is $4,086. Slippage will be severe; large positions cannot b
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Baby Doge Coin
 ticker: BABYDOGE
 network: bsc
-risk_score: 73
-status: critical
+risk_score: 41
+status: medium
 date: 2026-07-22
 ---
 
 # Baby Doge Coin (BABYDOGE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 73/100 — 🔴 Critical Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/baby-doge-coin-bsc)
 
@@ -25,9 +25,17 @@ This audit was conducted on an incomplete Solidity source code snippet. The prov
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The provided code snippet demonstrates a foundational understanding of secure development by including the SafeMath library for arithmetic operations (7.2 Code Security) and adhering to the IERC20… |
-| **Governance / Economics** | 1/10 | High | Due to the incomplete nature of the provided source code, it is impossible to assess any governance mechanisms (7.5 Governance) or economic models (7.4 Economic) that might be implemented within the… |
-| **Upgrades** | 4/10 | Medium | The provided information indicates that the contract is not a proxy (`is_proxy: false`) and therefore does not have upgradeability features (7.7 Upgrades). This eliminates risks associated with… |
+| **Technical** | 7/10 | Low | The provided code snippet demonstrates a foundational understanding of secure development by including the SafeMath library for arithmetic operations (7.2 Code Security) and adhering to the IERC20… |
+| **Governance / Economics** | 4/10 | Medium | Due to the incomplete nature of the provided source code, it is impossible to assess any governance mechanisms (7.5 Governance) or economic models (7.4 Economic) that might be implemented within the… |
+| **Upgrades** | 8/10 | Low | The provided information indicates that the contract is not a proxy (`is_proxy: false`) and therefore does not have upgradeability features (7.7 Upgrades). This eliminates risks associated with… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **LP Burned** | 45.9% |
+| **LP Locked** | 99.7% — Null Address, PinkLock02 |
+| **Top-1 Unlocked Holder** | 0.1% |
 
 ## Security Findings
 
@@ -74,32 +82,32 @@ Due to the critical limitation of an incomplete source code, the audit could not
 | **Contract** | [`0xc748...e8de`](https://bscscan.com/address/0xc748673057861a797275cd8a068abb95a902e8de) |
 | **Network** | BNB Chain |
 | **Price** | $0. |
-| **24h Volume** | $57.7K |
-| **Liquidity** | $6.97M |
+| **24h Volume** | $42.6K |
+| **Liquidity** | $7.00M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 77.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 666 buys / 245 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (5/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: SPACE ID
 ticker: ID
 network: ethereum
-risk_score: 78
-status: critical
+risk_score: 63
+status: high
 date: 2026-06-11
 ---
 
 # SPACE ID (ID) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 78/100 — 🔴 Critical Risk**
+> **Risk Score: 63/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/space-id-eth)
 
@@ -25,9 +25,9 @@ This audit focused solely on the OpenZeppelin `AccessControl.sol` library contra
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The provided code is the OpenZeppelin `AccessControl` library, which implements a robust role-based access control system (7.3 Access Control). It is a well-audited and widely adopted standard… |
+| **Technical** | 8/10 | Low | The provided code is the OpenZeppelin `AccessControl` library, which implements a robust role-based access control system (7.3 Access Control). It is a well-audited and widely adopted standard… |
 | **Governance / Economics** | 1/10 | High | A comprehensive assessment of economic (7.4 Economic) and governance (7.5 Governance) risks is not possible as the core `SpaceIDToken` contract logic was not provided. The `AccessControl` contract… |
-| **Upgrades** | 5/10 | Medium | The provided `AccessControl` contract is not designed as an upgradeable proxy (7.7 Upgrades). The prefill indicates `is_proxy: false` for the main contract. If the `SpaceIDToken` were to be… |
+| **Upgrades** | 3/10 | High | The provided `AccessControl` contract is not designed as an upgradeable proxy (7.7 Upgrades). The prefill indicates `is_proxy: false` for the main contract. If the `SpaceIDToken` were to be… |
 
 ## LP Distribution
 
@@ -73,21 +73,21 @@ The `AccessControl` contract explicitly states that it does not allow enumeratin
 |--------|-------|
 | **Contract** | [`0x2dff...6406`](https://etherscan.io/address/0x2dff88a56767223a5529ea5960da7a3f5f766406) |
 | **Network** | Ethereum |
-| **Price** | $0.03276 |
-| **24h Volume** | $300.9K |
-| **Liquidity** | $584.1K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.03083 |
+| **24h Volume** | $6.8K |
+| **Liquidity** | $581.9K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 8mo |
-| **Top-10 Holders** | 91.1% of supply |
+| **Top-10 Holders** | 89.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 226 buys / 282 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -97,7 +97,7 @@ The `AccessControl` contract explicitly states that it does not allow enumeratin
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |

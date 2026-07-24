@@ -2,14 +2,14 @@
 token: RaveDAO
 ticker: RAVE
 network: ethereum
-risk_score: 90
-status: critical
+risk_score: 37
+status: medium
 date: 2026-06-29
 ---
 
 # RaveDAO (RAVE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 37/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ravedao-eth)
 
@@ -25,9 +25,9 @@ The RaveToken contract is an ERC-20 token built upon OpenZeppelin's Ownable and 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The technical architecture (7.1 Architecture) of RaveToken is straightforward, extending battle-tested ERC-20, Ownable, and LayerZero OFT contracts. The custom code (7.2 Code Security) is minimal… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4 Economic) is simple, based on an ERC-20 token with cross-chain capabilities. Governance (7.5 Governance) is centralized, with a single owner address controlling critical… |
-| **Upgrades** | 4/10 | Medium | The RaveToken contract is not designed with upgradeability (7.7 Upgrades) in mind. It is a standard implementation contract, meaning there are no proxy-related risks or complexities associated with… |
+| **Technical** | 8/10 | Low | The technical architecture (7.1 Architecture) of RaveToken is straightforward, extending battle-tested ERC-20, Ownable, and LayerZero OFT contracts. The custom code (7.2 Code Security) is minimal… |
+| **Governance / Economics** | 4/10 | Medium | The economic model (7.4 Economic) is simple, based on an ERC-20 token with cross-chain capabilities. Governance (7.5 Governance) is centralized, with a single owner address controlling critical… |
+| **Upgrades** | 7/10 | Low | The RaveToken contract is not designed with upgradeability (7.7 Upgrades) in mind. It is a standard implementation contract, meaning there are no proxy-related risks or complexities associated with… |
 
 ## LP Distribution
 
@@ -73,12 +73,12 @@ The RaveToken contract's core functionality for cross-chain transfers is entirel
 |--------|-------|
 | **Contract** | [`0x1720...db97`](https://etherscan.io/address/0x17205fab260a7a6383a81452ce6315a39370db97) |
 | **Network** | Ethereum |
-| **Price** | $0.4702 |
-| **24h Volume** | $678.7K |
-| **Liquidity** | $408.0K |
-| **Volume / Liquidity** | 1.7× |
+| **Price** | $0.2909 |
+| **24h Volume** | $26.6K |
+| **Liquidity** | $253.8K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | 97.3% of supply |
+| **Top-10 Holders** | 97.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1228 buys / 1122 sells |
 

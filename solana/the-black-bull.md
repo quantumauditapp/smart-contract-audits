@@ -2,14 +2,14 @@
 token: The Black Bull
 ticker: ANSEM
 network: solana
-risk_score: 55
+risk_score: 58
 status: high
 date: 2026-06-29
 ---
 
 # The Black Bull (ANSEM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 58/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-black-bull-sol)
 
@@ -27,7 +27,7 @@ This Solana SPL Token Mint (ANSEM) exhibits a robust security configuration with
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program, leveraging its advanced features. Both the Mint Authority and Freeze Authority have been revoked, ensuring that no new tokens can be minted… |
 | **Governance / Economics** | 1/10 | High | The token benefits from significant DEX liquidity, reported at $2,194,837, which supports trading and reduces slippage for typical transactions (7.4 Economic). The 24-hour trading volume is high at… |
-| **Upgrades** | 8/10 | Low | The token's configuration demonstrates a strong commitment to immutability post-launch. The revocation of both Mint and Freeze authorities means that the token supply and the ability to freeze… |
+| **Upgrades** | 5/10 | Medium | The token's configuration demonstrates a strong commitment to immutability post-launch. The revocation of both Mint and Freeze authorities means that the token supply and the ability to freeze… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ This Solana SPL Token Mint (ANSEM) exhibits a robust security configuration with
 |--------|-------|
 | **Contract** | [`9cRCn9...pump`](https://solscan.io/account/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump) |
 | **Network** | Solana |
-| **Price** | $0.095 |
-| **24h Volume** | $36.34M |
-| **Liquidity** | $1.15M |
-| **Volume / Liquidity** | 31.5× |
+| **Price** | $0.1761 |
+| **24h Volume** | $1.88M |
+| **Liquidity** | $1.95M |
+| **Volume / Liquidity** | 1.0× |
 | **Token Age** | 12d |
-| **Top-10 Holders** | 82.4% of supply |
+| **Top-10 Holders** | 63.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 89728 buys / 75278 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ This Solana SPL Token Mint (ANSEM) exhibits a robust security configuration with
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

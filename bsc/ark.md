@@ -2,14 +2,14 @@
 token: ARK
 ticker: ARK
 network: bsc
-risk_score: 37
+risk_score: 33
 status: medium
 date: 2026-07-23
 ---
 
 # ARK (ARK) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ark-bsc)
 
@@ -25,9 +25,16 @@ This audit covers a truncated Solidity source code snippet, identified as OpenZe
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract utilizes OpenZeppelin's `AccessControl` module, which is a well-audited and widely adopted standard for implementing role-based access control (7.2 Code Security). This provides a robust… |
-| **Governance / Economics** | 3/10 | High | The `AccessControl` pattern inherently introduces governance considerations, particularly concerning the `DEFAULT_ADMIN_ROLE` (7.5 Governance). This role possesses the power to grant and revoke any… |
-| **Upgrades** | 5/10 | Medium | The provided contract is a standard `AccessControl` implementation and is not designed to be upgradeable (7.7 Upgrades). There are no proxy patterns (e.g., UUPS, Transparent) or upgrade-specific… |
+| **Technical** | 8/10 | Low | The contract utilizes OpenZeppelin's `AccessControl` module, which is a well-audited and widely adopted standard for implementing role-based access control (7.2 Code Security). This provides a robust… |
+| **Governance / Economics** | 5/10 | Medium | The `AccessControl` pattern inherently introduces governance considerations, particularly concerning the `DEFAULT_ADMIN_ROLE` (7.5 Governance). This role possesses the power to grant and revoke any… |
+| **Upgrades** | 4/10 | Medium | The provided contract is a standard `AccessControl` implementation and is not designed to be upgradeable (7.7 Upgrades). There are no proxy patterns (e.g., UUPS, Transparent) or upgrade-specific… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
+| **LP Locked** | 100.0% — Null Address |
 
 ## Security Findings
 
@@ -66,33 +73,33 @@ The provided source code snippet is a flattened version of OpenZeppelin's `Acces
 |--------|-------|
 | **Contract** | [`0xcae1...8b9d`](https://bscscan.com/address/0xcae117ca6bc8a341d2e7207f30e180f0e5618b9d) |
 | **Network** | BNB Chain |
-| **Price** | $5.2000 |
-| **24h Volume** | $3.74M |
-| **Liquidity** | $51.40M |
+| **Price** | $5.2100 |
+| **24h Volume** | $3.72M |
+| **Liquidity** | $51.44M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 11mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 98.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 22935 buys / 21542 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
-| Liquidity Locked | ❌ Fail |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

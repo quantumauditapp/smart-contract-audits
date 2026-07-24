@@ -2,14 +2,14 @@
 token: Pro Token
 ticker: PRO
 network: bsc
-risk_score: 75
-status: critical
+risk_score: 64
+status: high
 date: 2026-07-22
 ---
 
 # Pro Token (PRO) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 75/100 — 🔴 Critical Risk**
+> **Risk Score: 64/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pro-token-bsc)
 
@@ -25,9 +25,16 @@ The Pro Token contract implements an ERC20 token with custom transfer logic, inc
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The contract's architecture (7.1) is straightforward, extending OpenZeppelin's ERC20 and Ownable. Code security (7.2) is generally good with Solidity 0.8+ preventing common integer issues, and custom… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4) relies on a sell tax and a liquidity pool balancing mechanism, which can be significantly influenced by privileged roles. Governance (7.5) is highly centralized, with `owner`… |
-| **Upgrades** | 4/10 | Medium | The contract is not designed as an upgradeable proxy (7.7). Therefore, there are no upgrade-specific risks. Any changes to the contract logic would require a new deployment and migration of assets… |
+| **Technical** | 5/10 | Medium | The contract's architecture (7.1) is straightforward, extending OpenZeppelin's ERC20 and Ownable. Code security (7.2) is generally good with Solidity 0.8+ preventing common integer issues, and custom… |
+| **Governance / Economics** | 3/10 | High | The economic model (7.4) relies on a sell tax and a liquidity pool balancing mechanism, which can be significantly influenced by privileged roles. Governance (7.5) is highly centralized, with `owner`… |
+| **Upgrades** | 3/10 | High | The contract is not designed as an upgradeable proxy (7.7). Therefore, there are no upgrade-specific risks. Any changes to the contract logic would require a new deployment and migration of assets… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
+| **LP Locked** | 100.0% — Null Address |
 
 ## Security Findings
 
@@ -73,33 +80,33 @@ The `decimals()` function is overridden to return `9`. While technically valid f
 |--------|-------|
 | **Contract** | [`0x8d65...f0e2`](https://bscscan.com/address/0x8d65744527f55d0b2338350912d5c99a81ddf0e2) |
 | **Network** | BNB Chain |
-| **Price** | $60.1500 |
-| **24h Volume** | $14.98M |
-| **Liquidity** | $89.98M |
+| **Price** | $60.0470 |
+| **24h Volume** | $14.19M |
+| **Liquidity** | $87.85M |
 | **Volume / Liquidity** | 0.2× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 92.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 23622 buys / 21166 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| No Mint Function | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

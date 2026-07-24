@@ -2,14 +2,14 @@
 token: UFC Freedom 250
 ticker: UFC250
 network: solana
-risk_score: 51
-status: high
+risk_score: 82
+status: critical
 date: 2026-06-10
 ---
 
 # UFC Freedom 250 (UFC250) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 82/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ufc-freedom-250-sol)
 
@@ -26,8 +26,8 @@ This SPL Token-2022 mint exhibits strong security configurations with both Mint 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | This is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority are revoked (None), indicating a fixed supply and that no accounts can be frozen post-issuance. The token has a supply of… |
-| **Governance / Economics** | 3/10 | High | Holder concentration data is unavailable, preventing an assessment of supply distribution. Similarly, no DEX pair data is available, meaning liquidity and trading volume cannot be determined. A… |
-| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked, meaning the token's supply cannot be altered and no accounts can be frozen. The token program is spl-token-2022, and no Transfer Hook is… |
+| **Governance / Economics** | 1/10 | High | Holder concentration data is unavailable, preventing an assessment of supply distribution. Similarly, no DEX pair data is available, meaning liquidity and trading volume cannot be determined. A… |
+| **Upgrades** | 5/10 | Medium | The Mint Authority and Freeze Authority are both revoked, meaning the token's supply cannot be altered and no accounts can be frozen. The token program is spl-token-2022, and no Transfer Hook is… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ This SPL Token-2022 mint exhibits strong security configurations with both Mint 
 |--------|-------|
 | **Contract** | [`CWBiRH...pump`](https://solscan.io/account/CWBiRHPu2jQYjybiDtb7FnCFr9XWmmPXzGsPirC3pump) |
 | **Network** | Solana |
-| **Price** | $0.00009756 |
-| **24h Volume** | $92.8K |
-| **Liquidity** | $21.7K |
-| **Volume / Liquidity** | 4.3× |
+| **Price** | $0.00000208 |
+| **24h Volume** | $0 |
+| **Liquidity** | $3.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 61.8% of supply |
+| **Top-10 Holders** | 98.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3180 buys / 1696 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ This SPL Token-2022 mint exhibits strong security configurations with both Mint 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

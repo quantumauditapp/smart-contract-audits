@@ -2,14 +2,14 @@
 token: RECON RACCOON
 ticker: RCON
 network: solana
-risk_score: 10
-status: low
+risk_score: 35
+status: medium
 date: 2026-06-10
 ---
 
 # RECON RACCOON (RCON) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 10/100 — 🟢 Low Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/recon-raccoon-sol)
 
@@ -26,8 +26,8 @@ This audit of the RECON RACCOON (RCON) SPL token mint found no critical or high-
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is an SPL Token (v3) with the mint authority and freeze authority both revoked. This configuration prevents the creation of new tokens or the freezing of existing holder accounts by any… |
-| **Governance / Economics** | 8/10 | Low | The token exhibits moderate liquidity with $47,410 USD available on DEXs, which is sufficient for small to medium trades without severe slippage. Trading activity is low with a 24-hour volume of… |
-| **Upgrades** | 10/10 | Low | The token's core parameters are immutable, as both the mint and freeze authorities have been permanently revoked. This means no further tokens can be minted, and no accounts can be frozen. The token… |
+| **Governance / Economics** | 3/10 | High | The token exhibits moderate liquidity with $47,410 USD available on DEXs, which is sufficient for small to medium trades without severe slippage. Trading activity is low with a 24-hour volume of… |
+| **Upgrades** | 7/10 | Low | The token's core parameters are immutable, as both the mint and freeze authorities have been permanently revoked. This means no further tokens can be minted, and no accounts can be frozen. The token… |
 
 ## LP Distribution
 
@@ -42,21 +42,21 @@ This audit of the RECON RACCOON (RCON) SPL token mint found no critical or high-
 |--------|-------|
 | **Contract** | [`7nZuYZ...bonk`](https://solscan.io/account/7nZuYZYZnof9gF3zr9QhdnxpQ1mTM8LN3VaJuhrGbonk) |
 | **Network** | Solana |
-| **Price** | $0.002601 |
-| **24h Volume** | $121.1K |
-| **Liquidity** | $141.8K |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.0001965 |
+| **24h Volume** | $133 |
+| **Liquidity** | $36.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 8mo |
-| **Top-10 Holders** | 51.4% of supply |
+| **Top-10 Holders** | 55.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (4/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
@@ -65,8 +65,8 @@ This audit of the RECON RACCOON (RCON) SPL token mint found no critical or high-
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

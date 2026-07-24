@@ -2,14 +2,14 @@
 token: Dexe
 ticker: DEXE
 network: bsc
-risk_score: 51
-status: high
+risk_score: 76
+status: critical
 date: 2026-07-22
 ---
 
 # Dexe (DEXE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 76/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dexe-bsc)
 
@@ -26,8 +26,22 @@ This audit report covers the provided OpenZeppelin utility libraries (`StorageSl
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The provided code consists of OpenZeppelin's `StorageSlot` and `Address` libraries (7.2 Code Security). These libraries are widely used, well-audited, and adhere to high security standards, providing… |
-| **Governance / Economics** | 3/10 | High | The economic and governance aspects of the `BridgeToken`'s core functionality could not be assessed due to the absence of its source code (7.4 Economic, 7.5 Governance). However, the identified… |
-| **Upgrades** | 5/10 | Medium | The protocol utilizes a Beacon proxy pattern, allowing for efficient upgrades of multiple proxy instances through a single Beacon contract (7.7 Upgrades). While this pattern is robust, the security… |
+| **Governance / Economics** | 1/10 | High | The economic and governance aspects of the `BridgeToken`'s core functionality could not be assessed due to the absence of its source code (7.4 Economic, 7.5 Governance). However, the identified… |
+| **Upgrades** | 1/10 | High | The protocol utilizes a Beacon proxy pattern, allowing for efficient upgrades of multiple proxy instances through a single Beacon contract (7.7 Upgrades). While this pattern is robust, the security… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Beacon |
+| **Implementation** | ✅ Verified source |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 98.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -66,34 +80,34 @@ The contract at 0x6e88056e8376ae7709496ba64d37fa2f8015ce3e is identified as a Be
 |--------|-------|
 | **Contract** | [`0x6e88...ce3e`](https://bscscan.com/address/0x6e88056e8376ae7709496ba64d37fa2f8015ce3e) |
 | **Network** | BNB Chain |
-| **Price** | $13.0003 |
-| **24h Volume** | $69.4K |
-| **Liquidity** | $57.1K |
-| **Volume / Liquidity** | 1.2× |
+| **Price** | $0.5841 |
+| **24h Volume** | $6.9K |
+| **Liquidity** | $3.9K |
+| **Volume / Liquidity** | 1.8× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 96.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 279 buys / 559 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

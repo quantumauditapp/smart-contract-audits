@@ -2,14 +2,14 @@
 token: Wrapped BTC
 ticker: WBTC
 network: arbitrum
-risk_score: 81
-status: critical
+risk_score: 57
+status: high
 date: 2026-07-22
 ---
 
 # Wrapped BTC (WBTC) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 81/100 — 🔴 Critical Risk**
+> **Risk Score: 57/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-btc-arb)
 
@@ -25,9 +25,24 @@ The audited system comprises a `BeaconProxyFactory` for deploying `ClonableBeaco
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 2/10 | High | The technical architecture (7.1 Architecture) utilizes the OpenZeppelin Beacon Proxy pattern, enabling efficient deployment of multiple proxies pointing to a single upgradeable beacon. The… |
-| **Governance / Economics** | 1/10 | High | The system's governance (7.5 Governance) relies on a centralized `Ownable` pattern for the `UpgradeableBeacon` contract. The owner of this beacon has the sole authority to upgrade the implementation… |
-| **Upgrades** | 4/10 | Medium | The upgradeability mechanism (7.7 Upgrades) is based on the Beacon Proxy pattern, where all `ClonableBeaconProxy` instances delegate calls to an implementation address managed by a single… |
+| **Technical** | 5/10 | Medium | The technical architecture (7.1 Architecture) utilizes the OpenZeppelin Beacon Proxy pattern, enabling efficient deployment of multiple proxies pointing to a single upgradeable beacon. The… |
+| **Governance / Economics** | 2/10 | High | The system's governance (7.5 Governance) relies on a centralized `Ownable` pattern for the `UpgradeableBeacon` contract. The owner of this beacon has the sole authority to upgrade the implementation… |
+| **Upgrades** | 1/10 | High | The upgradeability mechanism (7.7 Upgrades) is based on the Beacon Proxy pattern, where all `ClonableBeaconProxy` instances delegate calls to an implementation address managed by a single… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Beacon |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | 20.9% |
+| **Top-3 Unlocked** | 44.4% |
 
 ## Security Findings
 
@@ -73,12 +88,12 @@ The `BeaconProxyFactory` utilizes the `CREATE2` opcode via OpenZeppelin's `Creat
 |--------|-------|
 | **Contract** | [`0x2f2a...5b0f`](https://arbiscan.io/address/0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f) |
 | **Network** | Arbitrum |
-| **Price** | $65,537.5400 |
-| **24h Volume** | $14.20M |
-| **Liquidity** | $35.59M |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $65,531.5900 |
+| **24h Volume** | $18.42M |
+| **Liquidity** | $35.55M |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 61.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2748 buys / 2428 sells |
 
@@ -86,21 +101,21 @@ The `BeaconProxyFactory` utilizes the `CREATE2` opcode via OpenZeppelin's `Creat
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

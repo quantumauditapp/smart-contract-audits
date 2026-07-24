@@ -80,12 +80,12 @@ The `totalSupply` variable is declared as `immutable`, meaning its value is set 
 |--------|-------|
 | **Contract** | [`0x0c51...ce0b`](https://basescan.org/address/0x0c5142bc58f9a61ab8c3d2085dd2f4e550c5ce0b) |
 | **Network** | Base |
-| **Price** | $0.002653 |
-| **24h Volume** | $723.5K |
-| **Liquidity** | $352.2K |
-| **Volume / Liquidity** | 2.1× |
+| **Price** | $0.002392 |
+| **24h Volume** | $762.3K |
+| **Liquidity** | $334.2K |
+| **Volume / Liquidity** | 2.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 21.7% of supply |
+| **Top-10 Holders** | 22.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 987 buys / 951 sells |
 

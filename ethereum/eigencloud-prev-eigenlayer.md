@@ -2,14 +2,14 @@
 token: EigenCloud (prev. EigenLayer)
 ticker: EIGEN
 network: ethereum
-risk_score: 67
-status: high
+risk_score: 42
+status: medium
 date: 2026-06-20
 ---
 
 # EigenCloud (prev. EigenLayer) (EIGEN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/eigencloud-prev-eigenlayer-eth)
 
@@ -26,9 +26,9 @@ Consider strengthening the administrative controls for upgrades by increasing th
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The contract implements the well-audited OpenZeppelin TransparentUpgradeableProxy pattern (7.1 Architecture). This design separates proxy logic from implementation logic, preventing selector clashes.… |
-| **Governance / Economics** | 2/10 | High | The proxy's administrative functions (e.g., `upgradeTo`, `changeAdmin`) are controlled by a ProxyAdmin contract, which is in turn owned by a 1-of-2 Gnosis Safe multisig (7.3 Access Control, 7.5… |
-| **Upgrades** | 2/10 | High | The contract uses the Transparent Proxy pattern, allowing for upgrades via `upgradeTo` and `upgradeToAndCall` functions, which are restricted to the admin (7.7 Upgrades). This standard and… |
+| **Technical** | 4/10 | Medium | The contract implements the well-audited OpenZeppelin TransparentUpgradeableProxy pattern (7.1 Architecture). This design separates proxy logic from implementation logic, preventing selector clashes.… |
+| **Governance / Economics** | 3/10 | High | The proxy's administrative functions (e.g., `upgradeTo`, `changeAdmin`) are controlled by a ProxyAdmin contract, which is in turn owned by a 1-of-2 Gnosis Safe multisig (7.3 Access Control, 7.5… |
+| **Upgrades** | 1/10 | High | The contract uses the Transparent Proxy pattern, allowing for upgrades via `upgradeTo` and `upgradeToAndCall` functions, which are restricted to the admin (7.7 Upgrades). This standard and… |
 
 ## Proxy Upgrade Controls
 
@@ -36,15 +36,15 @@ Consider strengthening the administrative controls for upgrades by increasing th
 |---------|-------|
 | **Proxy Type** | Eip1967 Transparent |
 | **Admin** | OZ ProxyAdmin → Multisig 1-of-2 |
-| **Implementation** | ⚠️ Unverified source |
+| **Implementation** | ✅ Verified source |
 | **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 47.0% |
-| **Top-3 Unlocked** | ⚠️ 88.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.0% |
+| **Top-3 Unlocked** | ⚠️ 99.7% |
 
 ## Security Findings
 
@@ -83,22 +83,22 @@ The `_requireZeroValue()` function is used internally by admin-only functions (`
 |--------|-------|
 | **Contract** | [`0xec53...1f83`](https://etherscan.io/address/0xec53bf9167f50cdeb3ae105f56099aaab9061f83) |
 | **Network** | Ethereum |
-| **Price** | $0.2657 |
-| **24h Volume** | $157.5K |
-| **Liquidity** | $3.37M |
+| **Price** | $0.2349 |
+| **24h Volume** | $19.2K |
+| **Liquidity** | $1.23M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 37.4% of supply |
+| **Top-10 Holders** | 37.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 573 buys / 547 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
 
@@ -107,8 +107,8 @@ The `_requireZeroValue()` function is used internally by admin-only functions (`
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 

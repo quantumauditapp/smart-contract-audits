@@ -2,14 +2,14 @@
 token: OpenGradient
 ticker: OPG
 network: base
-risk_score: 57
-status: high
+risk_score: 36
+status: medium
 date: 2026-07-07
 ---
 
 # OpenGradient (OPG) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/opengradient-base)
 
@@ -26,8 +26,8 @@ The OpenGradientToken contract is a standard ERC20 token with a fixed supply, bu
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract leverages battle-tested OpenZeppelin ERC20 and ERC20Permit implementations, ensuring robust and standard token functionality (7.2 Code Security). Solidity 0.8.26 provides default… |
-| **Governance / Economics** | 1/10 | High | The contract is designed for complete decentralization, with a fixed total supply of 1 billion tokens minted at deployment (7.4 Economic, 7.5 Governance). There are no administrative functions, owner… |
-| **Upgrades** | 8/10 | Low | The OpenGradientToken contract is explicitly designed as an immutable, non-upgradeable token, eliminating all risks associated with proxy patterns, upgradeability bugs, or malicious upgrade paths… |
+| **Governance / Economics** | 2/10 | High | The contract is designed for complete decentralization, with a fixed total supply of 1 billion tokens minted at deployment (7.4 Economic, 7.5 Governance). There are no administrative functions, owner… |
+| **Upgrades** | 6/10 | Medium | The OpenGradientToken contract is explicitly designed as an immutable, non-upgradeable token, eliminating all risks associated with proxy patterns, upgradeability bugs, or malicious upgrade paths… |
 
 ## LP Distribution
 
@@ -66,21 +66,21 @@ The contract is designed with a fixed total supply of 1 billion tokens, all mint
 |--------|-------|
 | **Contract** | [`0xfbc2...f5eb`](https://basescan.org/address/0xfbc2051ae2265686a469421b2c5a2d5462fbf5eb) |
 | **Network** | Base |
-| **Price** | $0.1469 |
-| **24h Volume** | $275.1K |
-| **Liquidity** | $500.8K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.1061 |
+| **24h Volume** | $17.4K |
+| **Liquidity** | $447.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 93.1% of supply |
+| **Top-10 Holders** | 92.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 373 buys / 416 sells |
 
-## Security Flags (4/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -90,7 +90,7 @@ The contract is designed with a fixed total supply of 1 billion tokens, all mint
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |

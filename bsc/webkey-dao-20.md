@@ -2,14 +2,14 @@
 token: WebKey DAO 2.0
 ticker: WKEYDAO2
 network: bsc
-risk_score: 67
-status: high
+risk_score: 100
+status: critical
 date: 2026-07-23
 ---
 
 # WebKey DAO 2.0 (WKEYDAO2) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 100/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/webkey-dao-20-bsc)
 
@@ -26,8 +26,15 @@ The wkeyDAO2 contract implements an ERC20 token with EIP-2612 permit functionali
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The contract demonstrates a foundational understanding of ERC20 standards and integrates OpenZeppelin's AccessControl and SafeMath libraries, mitigating common integer overflow/underflow risks (7.2… |
-| **Governance / Economics** | 2/10 | High | The contract utilizes OpenZeppelin's AccessControl, with the deployer assigned the `DEFAULT_ADMIN_ROLE` in the `VaultOwned` constructor, centralizing significant administrative power (7.5… |
-| **Upgrades** | 4/10 | Medium | The contract is deployed as a standard, non-upgradeable contract (7.7 Upgrades). This means that once deployed, its logic cannot be modified. Any discovered vulnerabilities, bugs, or desired feature… |
+| **Governance / Economics** | 1/10 | High | The contract utilizes OpenZeppelin's AccessControl, with the deployer assigned the `DEFAULT_ADMIN_ROLE` in the `VaultOwned` constructor, centralizing significant administrative power (7.5… |
+| **Upgrades** | 3/10 | High | The contract is deployed as a standard, non-upgradeable contract (7.7 Upgrades). This means that once deployed, its logic cannot be modified. Any discovered vulnerabilities, bugs, or desired feature… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -80,33 +87,33 @@ The `MINT` role is defined in the `VaultOwned` contract (`bytes32 public constan
 |--------|-------|
 | **Contract** | [`0xe0a2...b82e`](https://bscscan.com/address/0xe0a281deff5c9d8d67af09d39340e134ac81b82e) |
 | **Network** | BNB Chain |
-| **Price** | $1.0350 |
-| **24h Volume** | $352.1K |
-| **Liquidity** | $26.63M |
+| **Price** | $1.0330 |
+| **24h Volume** | $340.4K |
+| **Liquidity** | $26.59M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | N/A of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 99.6% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.4% |
 | **24h Transactions** | 3505 buys / 16586 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
-| Liquidity Locked | ❌ Fail |
+| No Mint Function | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

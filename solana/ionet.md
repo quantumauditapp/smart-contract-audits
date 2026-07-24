@@ -2,14 +2,14 @@
 token: io.net
 ticker: IO
 network: solana
-risk_score: 43
-status: medium
+risk_score: 61
+status: high
 date: 2026-07-16
 ---
 
 # io.net (IO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 61/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ionet-sol)
 
@@ -26,8 +26,8 @@ The IO token mint has revoked both mint and freeze authorities, indicating a fix
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The IO token is an SPL token operating under the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no holder… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits moderate liquidity at $66,764 USD, with a healthy 24-hour volume of $229,644 USD, resulting in a normal Volume/Liquidity Ratio of 3.44. The DEX pair has been active for 285 days… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are revoked, preventing changes to supply or account freeze capabilities. However, the `metadata_mutable` flag is set to True, meaning the token's name… |
+| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity at $66,764 USD, with a healthy 24-hour volume of $229,644 USD, resulting in a normal Volume/Liquidity Ratio of 3.44. The DEX pair has been active for 285 days… |
+| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are revoked, preventing changes to supply or account freeze capabilities. However, the `metadata_mutable` flag is set to True, meaning the token's name… |
 
 ## Security Findings
 
@@ -45,22 +45,22 @@ The `metadata_mutable` flag is set to True. This means the token's name, symbol,
 |--------|-------|
 | **Contract** | [`BZLbGT...646K`](https://solscan.io/account/BZLbGTNCSFfoth2GYDtwr7e4imWzpR5jqcUuGEwr646K) |
 | **Network** | Solana |
-| **Price** | $0.1572 |
-| **24h Volume** | $229.6K |
-| **Liquidity** | $66.8K |
-| **Volume / Liquidity** | 3.4× |
+| **Price** | $0.1508 |
+| **24h Volume** | $12.5K |
+| **Liquidity** | $65.9K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | 58.9% of supply |
+| **Top-10 Holders** | 58.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 732 buys / 1393 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,8 +69,8 @@ The `metadata_mutable` flag is set to True. This means the token's name, symbol,
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

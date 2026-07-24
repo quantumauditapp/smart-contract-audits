@@ -2,14 +2,14 @@
 token: Injective
 ticker: INJ
 network: ethereum
-risk_score: 56
-status: high
+risk_score: 26
+status: medium
 date: 2026-06-10
 ---
 
 # Injective (INJ) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 56/100 — 🟠 High Risk**
+> **Risk Score: 26/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/injective-eth)
 
@@ -25,16 +25,16 @@ This audit report covers the provided Solidity source code, which includes stand
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The provided code utilizes battle-tested OpenZeppelin libraries such as `Context`, `IERC20`, `SafeMath`, and `Address`, which are known for their robust and secure implementations (7.1 Architecture… |
-| **Governance / Economics** | 1/10 | High | No specific governance mechanisms or complex economic models are visible within the provided library code. Therefore, a full assessment of economic and governance risks (7.4 Economic, 7.5 Governance)… |
-| **Upgrades** | 8/10 | Low | The contract is not designed as an upgradeable proxy (7.7 Upgrades), simplifying its architecture and eliminating risks associated with proxy patterns like storage collisions or improper… |
+| **Technical** | 10/10 | Low | The provided code utilizes battle-tested OpenZeppelin libraries such as `Context`, `IERC20`, `SafeMath`, and `Address`, which are known for their robust and secure implementations (7.1 Architecture… |
+| **Governance / Economics** | 2/10 | High | No specific governance mechanisms or complex economic models are visible within the provided library code. Therefore, a full assessment of economic and governance risks (7.4 Economic, 7.5 Governance)… |
+| **Upgrades** | 6/10 | Medium | The contract is not designed as an upgradeable proxy (7.7 Upgrades), simplifying its architecture and eliminating risks associated with proxy patterns like storage collisions or improper… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 72.5% |
-| **Top-3 Unlocked** | ⚠️ 86.4% |
+| **Top-1 Unlocked Holder** | ⚠️ 75.1% |
+| **Top-3 Unlocked** | ⚠️ 86.6% |
 
 ## Security Findings
 
@@ -66,19 +66,20 @@ The provided source code only includes standard OpenZeppelin libraries (`Context
 |--------|-------|
 | **Contract** | [`0xe28b...ca30`](https://etherscan.io/address/0xe28b3b32b6c345a34ff64674606124dd5aceca30) |
 | **Network** | Ethereum |
-| **Price** | $6.1100 |
-| **24h Volume** | $55.0K |
-| **Liquidity** | $306.3K |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $5.1500 |
+| **24h Volume** | $9.3K |
+| **Liquidity** | $385.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 91.9% of supply |
+| **Top-10 Holders** | 96.1% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (4/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -88,7 +89,7 @@ The provided source code only includes standard OpenZeppelin libraries (`Context
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |

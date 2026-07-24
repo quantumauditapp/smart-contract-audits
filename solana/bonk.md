@@ -2,14 +2,14 @@
 token: Bonk
 ticker: BONK
 network: solana
-risk_score: 28
-status: medium
+risk_score: 48
+status: high
 date: 2026-07-07
 ---
 
 # Bonk (BONK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 28/100 — 🟡 Medium Risk**
+> **Risk Score: 48/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bonk-sol)
 
@@ -26,8 +26,8 @@ The Bonk SPL token mint exhibits a robust security posture regarding core mintin
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Bonk token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, preventing the creation of new tokens or the freezing of existing… |
-| **Governance / Economics** | 6/10 | Medium | The token demonstrates healthy market dynamics with over $101 million in DEX liquidity and a normal 24-hour volume to liquidity ratio of 0.01, indicating organic trading activity. The DEX pair has… |
-| **Upgrades** | 8/10 | Low | The Bonk token mint has a fixed supply and unfreezable accounts due to the revocation of both mint and freeze authorities. This provides a high degree of immutability for core token properties.… |
+| **Governance / Economics** | 2/10 | High | The token demonstrates healthy market dynamics with over $101 million in DEX liquidity and a normal 24-hour volume to liquidity ratio of 0.01, indicating organic trading activity. The DEX pair has… |
+| **Upgrades** | 5/10 | Medium | The Bonk token mint has a fixed supply and unfreezable accounts due to the revocation of both mint and freeze authorities. This provides a high degree of immutability for core token properties.… |
 
 ## Security Findings
 
@@ -45,22 +45,22 @@ The token's metadata is mutable, as indicated by the `metadata_mutable: True` fl
 |--------|-------|
 | **Contract** | [`DezXAZ...B263`](https://solscan.io/account/DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263) |
 | **Network** | Solana |
-| **Price** | $0.00000426 |
-| **24h Volume** | $253.6K |
-| **Liquidity** | $243.2K |
-| **Volume / Liquidity** | 1.0× |
+| **Price** | $0.00000298 |
+| **24h Volume** | $1.53M |
+| **Liquidity** | $146.2K |
+| **Volume / Liquidity** | 10.4× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 40.3% of supply |
+| **Top-10 Holders** | 38.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2955 buys / 2833 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,8 +69,8 @@ The token's metadata is mutable, as indicated by the `metadata_mutable: True` fl
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

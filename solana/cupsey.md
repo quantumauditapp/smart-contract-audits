@@ -2,14 +2,14 @@
 token: Cupsey
 ticker: CUPSEY
 network: solana
-risk_score: 29
-status: medium
+risk_score: 47
+status: high
 date: 2026-07-22
 ---
 
 # Cupsey (CUPSEY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 29/100 — 🟡 Medium Risk**
+> **Risk Score: 47/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cupsey-sol)
 
@@ -26,8 +26,8 @@ The Cupsey SPL token mint exhibits a robust security posture based on available 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Cupsey token is implemented using the classic `spl-token` program (v3). A key security strength is the permanent revocation of both the mint authority and the freeze authority, ensuring no new… |
-| **Governance / Economics** | 6/10 | Medium | Economically, the Cupsey token shows a healthy market profile. Total DEX liquidity stands at $173,344, with a 24-hour volume of $255,380, resulting in a normal Volume/Liquidity Ratio of 1.47. The DEX… |
-| **Upgrades** | 8/10 | Low | The Cupsey token mint has a fixed configuration due to the revocation of key authorities. Both the mint authority and freeze authority are permanently revoked, meaning the token's supply cannot be… |
+| **Governance / Economics** | 2/10 | High | Economically, the Cupsey token shows a healthy market profile. Total DEX liquidity stands at $173,344, with a 24-hour volume of $255,380, resulting in a normal Volume/Liquidity Ratio of 1.47. The DEX… |
+| **Upgrades** | 5/10 | Medium | The Cupsey token mint has a fixed configuration due to the revocation of key authorities. Both the mint authority and freeze authority are permanently revoked, meaning the token's supply cannot be… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The Cupsey SPL token mint exhibits a robust security posture based on available 
 |--------|-------|
 | **Contract** | [`6NwarB...pump`](https://solscan.io/account/6NwarBvDkXhByqVp2Qkq5i9XbtA2B3Bwe8SWGu9vpump) |
 | **Network** | Solana |
-| **Price** | $0.002355 |
-| **24h Volume** | $256.9K |
-| **Liquidity** | $172.5K |
-| **Volume / Liquidity** | 1.5× |
+| **Price** | $0.003182 |
+| **24h Volume** | $1.11M |
+| **Liquidity** | $203.1K |
+| **Volume / Liquidity** | 5.5× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | 36.9% of supply |
+| **Top-10 Holders** | 36.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1086 buys / 901 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The Cupsey SPL token mint exhibits a robust security posture based on available 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

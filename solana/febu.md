@@ -35,10 +35,10 @@ The febu SPL Token Mint exhibits a robust security posture with both mint and fr
 |--------|-------|
 | **Contract** | [`4ko5tS...pump`](https://solscan.io/account/4ko5tSr5o3H4v1sFtjTSd9MPUW7yx5AFCpkNPoL6pump) |
 | **Network** | Solana |
-| **Price** | $0.001109 |
-| **24h Volume** | $604.5K |
-| **Liquidity** | $138.3K |
-| **Volume / Liquidity** | 4.4× |
+| **Price** | $0.001058 |
+| **24h Volume** | $583.3K |
+| **Liquidity** | $135.3K |
+| **Volume / Liquidity** | 4.3× |
 | **Token Age** | 14d |
 | **Top-10 Holders** | 19.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

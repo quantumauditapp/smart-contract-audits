@@ -2,14 +2,14 @@
 token: The Top Bull 
 ticker: TATE
 network: solana
-risk_score: 34
-status: medium
+risk_score: 62
+status: high
 date: 2026-07-03
 ---
 
 # The Top Bull  (TATE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 62/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-top-bull-sol)
 
@@ -26,8 +26,8 @@ The audit of the TATE SPL Token Mint found no critical or high-severity issues b
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Crucially, both the mint authority and freeze authority are revoked (None), preventing further token… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a healthy liquidity profile with $25,538 in total DEX liquidity, which is sufficient for moderate trading activity. The 24-hour volume of $60,502 results in a normal… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. Key Token-2022 extensions such as Transfer Hook and Default Account State Frozen are not… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a healthy liquidity profile with $25,538 in total DEX liquidity, which is sufficient for moderate trading activity. The 24-hour volume of $60,502 results in a normal… |
+| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. Key Token-2022 extensions such as Transfer Hook and Default Account State Frozen are not… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The audit of the TATE SPL Token Mint found no critical or high-severity issues b
 |--------|-------|
 | **Contract** | [`CuGJf6...pump`](https://solscan.io/account/CuGJf6cfDfMh4UxVgNJ5KFQ6v8Wv3qrqop6cFKsGpump) |
 | **Network** | Solana |
-| **Price** | $0.0002457 |
-| **24h Volume** | $255.2K |
-| **Liquidity** | $42.8K |
-| **Volume / Liquidity** | 6.0× |
+| **Price** | $0.00004153 |
+| **24h Volume** | $2.8K |
+| **Liquidity** | $19.6K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 47.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 15751 buys / 9305 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The audit of the TATE SPL Token Mint found no critical or high-severity issues b
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

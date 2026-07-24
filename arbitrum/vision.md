@@ -2,14 +2,14 @@
 token: Vision
 ticker: VSN
 network: arbitrum
-risk_score: 66
-status: high
+risk_score: 79
+status: critical
 date: 2026-07-23
 ---
 
 # Vision (VSN) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 79/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vision-arb)
 
@@ -25,9 +25,24 @@ The VisionToken contract is an upgradeable ERC20 token utilizing OpenZeppelin's 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The VisionToken contract demonstrates strong technical security by inheriting from OpenZeppelin's upgradeable contracts (ERC20, Pausable, AccessControl, Permit, UUPS). This approach leverages… |
-| **Governance / Economics** | 2/10 | High | The economic model (7.4 Economic) relies on a `MINTER_ROLE` with the ability to mint an arbitrary amount of tokens, posing a significant risk of supply inflation if compromised. Governance (7.5… |
-| **Upgrades** | 2/10 | High | The contract utilizes the UUPS proxy pattern for upgradeability (7.7 Upgrades), which is a secure and widely accepted standard. The `_authorizeUpgrade` function correctly restricts upgrade… |
+| **Technical** | 6/10 | Medium | The VisionToken contract demonstrates strong technical security by inheriting from OpenZeppelin's upgradeable contracts (ERC20, Pausable, AccessControl, Permit, UUPS). This approach leverages… |
+| **Governance / Economics** | 1/10 | High | The economic model (7.4 Economic) relies on a `MINTER_ROLE` with the ability to mint an arbitrary amount of tokens, posing a significant risk of supply inflation if compromised. Governance (7.5… |
+| **Upgrades** | 1/10 | High | The contract utilizes the UUPS proxy pattern for upgradeability (7.7 Upgrades), which is a secure and widely accepted standard. The `_authorizeUpgrade` function correctly restricts upgrade… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Uups |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -80,12 +95,12 @@ The contract defines and uses custom error types `ZeroAmount()` and `ZeroAddress
 |--------|-------|
 | **Contract** | [`0x6fbb...b74b`](https://arbiscan.io/address/0x6fbbbd8bfb1cd3986b1d05e7861a0f62f87db74b) |
 | **Network** | Arbitrum |
-| **Price** | $0.03856 |
-| **24h Volume** | $430.7K |
-| **Liquidity** | $704.3K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.0392 |
+| **24h Volume** | $573.0K |
+| **Liquidity** | $710.6K |
+| **Volume / Liquidity** | 0.8× |
 | **Token Age** | 8mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 96.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2245 buys / 1531 sells |
 
@@ -93,21 +108,21 @@ The contract defines and uses custom error types `ZeroAmount()` and `ZeroAddress
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

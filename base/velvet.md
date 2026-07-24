@@ -2,14 +2,14 @@
 token: Velvet
 ticker: VELVET
 network: base
-risk_score: 93
-status: critical
+risk_score: 63
+status: high
 date: 2026-06-11
 ---
 
 # Velvet (VELVET) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 93/100 — 🔴 Critical Risk**
+> **Risk Score: 63/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/velvet-base)
 
@@ -25,22 +25,24 @@ This audit covers the `BridgeToken` proxy contract, which utilizes the OpenZeppe
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The `BridgeToken` contract is a minimal proxy leveraging OpenZeppelin's `BeaconProxy` (7.1 Architecture). This pattern delegates all calls to an implementation contract specified by a `Beacon`… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4 Economic) and governance mechanisms (7.5 Governance) of the `BridgeToken` system are primarily determined by the implementation contract and the `Beacon` contract. Without… |
-| **Upgrades** | 3/10 | High | The `BridgeToken` contract uses the `BeaconProxy` pattern, meaning its implementation can be upgraded by changing the address stored in the associated `Beacon` contract (7.7 Upgrades). This provides… |
+| **Technical** | 6/10 | Medium | The `BridgeToken` contract is a minimal proxy leveraging OpenZeppelin's `BeaconProxy` (7.1 Architecture). This pattern delegates all calls to an implementation contract specified by a `Beacon`… |
+| **Governance / Economics** | 3/10 | High | The economic model (7.4 Economic) and governance mechanisms (7.5 Governance) of the `BridgeToken` system are primarily determined by the implementation contract and the `Beacon` contract. Without… |
+| **Upgrades** | 1/10 | High | The `BridgeToken` contract uses the `BeaconProxy` pattern, meaning its implementation can be upgraded by changing the address stored in the associated `Beacon` contract (7.7 Upgrades). This provides… |
 
 ## Proxy Upgrade Controls
 
 | Control | Value |
 |---------|-------|
-| **Proxy Type** | Unknown Custom |
+| **Proxy Type** | Beacon |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 98.5% |
-| **Top-3 Unlocked** | ⚠️ 99.4% |
+| **Top-1 Unlocked Holder** | ⚠️ 94.9% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -79,22 +81,22 @@ The `BridgeToken` contract correctly utilizes the `BeaconProxy` pattern from Ope
 |--------|-------|
 | **Contract** | [`0xbf92...7cdd`](https://basescan.org/address/0xbf927b841994731c573bdf09ceb0c6b0aa887cdd) |
 | **Network** | Base |
-| **Price** | $0.8184 |
-| **24h Volume** | $126.3K |
-| **Liquidity** | $3.99M |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.5093 |
+| **24h Volume** | $560.9K |
+| **Liquidity** | $3.51M |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 79.1% of supply |
+| **Top-10 Holders** | 74.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6684 buys / 6219 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
 
@@ -103,8 +105,8 @@ The `BridgeToken` contract correctly utilizes the `BeaconProxy` pattern from Ope
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 

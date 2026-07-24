@@ -66,12 +66,12 @@ The contract implements a fixed supply model where the entire `totalSupply_` is 
 |--------|-------|
 | **Contract** | [`0x182f...20b2`](https://basescan.org/address/0x182fa643e5f29d5eca75e7b9cf9336a3fe4620b2) |
 | **Network** | Base |
-| **Price** | $0.6442 |
-| **24h Volume** | $2.18M |
-| **Liquidity** | $2.33M |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.6211 |
+| **24h Volume** | $2.22M |
+| **Liquidity** | $2.24M |
+| **Volume / Liquidity** | 1.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 96.1% of supply |
+| **Top-10 Holders** | 96.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5087 buys / 6292 sells |
 

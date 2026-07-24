@@ -35,12 +35,12 @@ The HeavyPulp SPL Token Mint exhibits a robust security posture with both mint a
 |--------|-------|
 | **Contract** | [`8G5ayE...pump`](https://solscan.io/account/8G5ayEsJF4Q7FEWEGeF4jtnUWZBEKCqhySTFQf9Ppump) |
 | **Network** | Solana |
-| **Price** | $0.002318 |
-| **24h Volume** | $1.05M |
-| **Liquidity** | $246.3K |
-| **Volume / Liquidity** | 4.3× |
+| **Price** | $0.002298 |
+| **24h Volume** | $937.2K |
+| **Liquidity** | $245.5K |
+| **Volume / Liquidity** | 3.8× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 28.0% of supply |
+| **Top-10 Holders** | 27.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4431 buys / 4061 sells |
 

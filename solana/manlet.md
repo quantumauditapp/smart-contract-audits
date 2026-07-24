@@ -2,14 +2,14 @@
 token: manlet
 ticker: MANLET
 network: solana
-risk_score: 28
-status: medium
+risk_score: 66
+status: high
 date: 2026-07-04
 ---
 
 # manlet (MANLET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 28/100 — 🟡 Medium Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/manlet-sol)
 
@@ -26,8 +26,8 @@ The manlet token mint on Solana exhibits a strong security posture with both min
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The manlet token is an SPL Token-2022 mint with its core authorities, Mint Authority and Freeze Authority, both revoked. This configuration prevents further token creation or freezing of holder… |
-| **Governance / Economics** | 6/10 | Medium | The token demonstrates healthy liquidity at $180,141 USD, with a normal 24-hour volume to liquidity ratio of 3.69, suggesting organic trading activity. The DEX pair has been active for 11 days… |
-| **Upgrades** | 8/10 | Low | The token mint's critical authorities, Mint Authority and Freeze Authority, are both revoked, ensuring that the token's supply and account states cannot be altered by an administrative key. As an SPL… |
+| **Governance / Economics** | 1/10 | High | The token demonstrates healthy liquidity at $180,141 USD, with a normal 24-hour volume to liquidity ratio of 3.69, suggesting organic trading activity. The DEX pair has been active for 11 days… |
+| **Upgrades** | 5/10 | Medium | The token mint's critical authorities, Mint Authority and Freeze Authority, are both revoked, ensuring that the token's supply and account states cannot be altered by an administrative key. As an SPL… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The manlet token mint on Solana exhibits a strong security posture with both min
 |--------|-------|
 | **Contract** | [`DdPrHY...pump`](https://solscan.io/account/DdPrHYqM8Ueovnk9kAnAgoGhswkuaTqmxcoZzU3Zpump) |
 | **Network** | Solana |
-| **Price** | $0.01874 |
-| **24h Volume** | $1.78M |
-| **Liquidity** | $516.5K |
-| **Volume / Liquidity** | 3.4× |
+| **Price** | $0.0006219 |
+| **24h Volume** | $142.7K |
+| **Liquidity** | $96.9K |
+| **Volume / Liquidity** | 1.5× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 57.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3059 buys / 3343 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The manlet token mint on Solana exhibits a strong security posture with both min
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

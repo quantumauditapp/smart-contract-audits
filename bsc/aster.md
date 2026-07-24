@@ -2,14 +2,14 @@
 token: Aster
 ticker: ASTER
 network: bsc
-risk_score: 49
-status: high
+risk_score: 30
+status: medium
 date: 2026-07-22
 ---
 
 # Aster (ASTER) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 30/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aster-bsc)
 
@@ -25,8 +25,8 @@ This audit covers the AsterToken contract, which appears to be a standard ERC-20
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture (7.1 Architecture) leverages OpenZeppelin's robust ERC-20 implementation, providing a strong foundation for code security (7.2 Code Security). This minimizes common… |
-| **Governance / Economics** | 3/10 | High | The economic model (7.4 Economic) of a standard ERC-20 token is generally straightforward, with value derived from its utility and market dynamics. Potential economic risks typically stem from… |
+| **Technical** | 10/10 | Low | The technical architecture (7.1 Architecture) leverages OpenZeppelin's robust ERC-20 implementation, providing a strong foundation for code security (7.2 Code Security). This minimizes common… |
+| **Governance / Economics** | 2/10 | High | The economic model (7.4 Economic) of a standard ERC-20 token is generally straightforward, with value derived from its utility and market dynamics. Potential economic risks typically stem from… |
 | **Upgrades** | 5/10 | Medium | The contract is not designed to be upgradeable (7.7 Upgrades), as indicated by `is_proxy: false`. This eliminates the risks associated with proxy implementations, such as storage collisions or… |
 
 ## Security Findings
@@ -73,21 +73,21 @@ The contract is not implemented as an upgradeable proxy. This means that once de
 |--------|-------|
 | **Contract** | [`0x000a...556a`](https://bscscan.com/address/0x000ae314e2a2172a039b26378814c252734f556a) |
 | **Network** | BNB Chain |
-| **Price** | $0.6257 |
-| **24h Volume** | $578.1K |
-| **Liquidity** | $928.6K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.6259 |
+| **24h Volume** | $491.8K |
+| **Liquidity** | $916.8K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 93.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1296 buys / 1218 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -96,8 +96,8 @@ The contract is not implemented as an upgradeable proxy. This means that once de
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |

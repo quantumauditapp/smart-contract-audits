@@ -2,14 +2,14 @@
 token: FarmTown
 ticker: FARM
 network: solana
-risk_score: 32
-status: medium
+risk_score: 62
+status: high
 date: 2026-06-22
 ---
 
 # FarmTown (FARM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 32/100 — 🟡 Medium Risk**
+> **Risk Score: 62/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/farmtown-sol)
 
@@ -26,8 +26,8 @@ The FarmTown (FARM) SPL Token Mint exhibits a robust security posture with both 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The FarmTown (FARM) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity at $36,785 USD, with a healthy 24-hour volume of $13,003 USD. The Volume/Liquidity Ratio is 0.35, which is considered normal and does not indicate wash trading.… |
-| **Upgrades** | 8/10 | Low | The FarmTown (FARM) token mint has fully revoked its mint and freeze authorities, meaning its core parameters are immutable. It uses the spl-token-2022 program but does not have a transfer hook or… |
+| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity at $36,785 USD, with a healthy 24-hour volume of $13,003 USD. The Volume/Liquidity Ratio is 0.35, which is considered normal and does not indicate wash trading.… |
+| **Upgrades** | 5/10 | Medium | The FarmTown (FARM) token mint has fully revoked its mint and freeze authorities, meaning its core parameters are immutable. It uses the spl-token-2022 program but does not have a transfer hook or… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The FarmTown (FARM) SPL Token Mint exhibits a robust security posture with both 
 |--------|-------|
 | **Contract** | [`yMJPZb...pump`](https://solscan.io/account/yMJPZbnhoHib3ib8n8PfiVcp9yauk1vnaGKLx7epump) |
 | **Network** | Solana |
-| **Price** | $0.00161 |
-| **24h Volume** | $767.0K |
-| **Liquidity** | $112.3K |
-| **Volume / Liquidity** | 6.8× |
+| **Price** | $0.00007281 |
+| **24h Volume** | $23.9K |
+| **Liquidity** | $27.6K |
+| **Volume / Liquidity** | 0.9× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 20.3% of supply |
+| **Top-10 Holders** | 48.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4022 buys / 3696 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The FarmTown (FARM) SPL Token Mint exhibits a robust security posture with both 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

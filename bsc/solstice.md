@@ -2,14 +2,14 @@
 token: Solstice
 ticker: SLX
 network: bsc
-risk_score: 61
-status: high
+risk_score: 78
+status: critical
 date: 2026-07-23
 ---
 
 # Solstice (SLX) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 78/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solstice-bsc)
 
@@ -26,8 +26,15 @@ The BurnMintERC20 contract provides a standard ERC20 token with controlled minti
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract `BurnMintERC20` is built upon battle-tested OpenZeppelin libraries (ERC20, ERC20Burnable, AccessControl v4.8.3), enhancing its security foundation. It correctly implements custom error… |
-| **Governance / Economics** | 2/10 | High | The token design exhibits a high degree of centralization, with the `DEFAULT_ADMIN_ROLE` possessing the authority to grant `MINTER_ROLE` and `BURNER_ROLE`, thereby controlling the total token supply… |
-| **Upgrades** | 5/10 | Medium | The `BurnMintERC20` contract is not designed as an upgradeable proxy, meaning its logic cannot be modified post-deployment (7.7 Upgrades). This eliminates upgrade-related risks such as proxy storage… |
+| **Governance / Economics** | 1/10 | High | The token design exhibits a high degree of centralization, with the `DEFAULT_ADMIN_ROLE` possessing the authority to grant `MINTER_ROLE` and `BURNER_ROLE`, thereby controlling the total token supply… |
+| **Upgrades** | 3/10 | High | The `BurnMintERC20` contract is not designed as an upgradeable proxy, meaning its logic cannot be modified post-deployment (7.7 Upgrades). This eliminates upgrade-related risks such as proxy storage… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -74,21 +81,21 @@ The `i_decimals` variable is set as an immutable value during contract deploymen
 | **Contract** | [`0x02bc...c54d`](https://bscscan.com/address/0x02bcc4c181b83a8c0a342bc003389cbecb4bc54d) |
 | **Network** | BNB Chain |
 | **Price** | $0.1069 |
-| **24h Volume** | $60.2K |
+| **24h Volume** | $59.5K |
 | **Liquidity** | $12.9K |
-| **Volume / Liquidity** | 4.7× |
+| **Volume / Liquidity** | 4.6× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 72.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 669 buys / 819 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -96,9 +103,9 @@ The `i_decimals` variable is set as an immutable value during contract deploymen
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

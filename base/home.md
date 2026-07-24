@@ -2,14 +2,14 @@
 token: HOME
 ticker: HOME
 network: base
-risk_score: 100
-status: critical
+risk_score: 52
+status: high
 date: 2026-07-17
 ---
 
 # HOME (HOME) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 52/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/home-base)
 
@@ -25,16 +25,16 @@ This report covers a security review of the provided Solidity source code. It is
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The technical review was severely limited as only LayerZero v2 interface definitions were provided, not the implementation code for the 'HomeCanonical' contract. This prevents any assessment of the… |
-| **Governance / Economics** | 1/10 | High | The economic and governance aspects of the 'HomeCanonical' contract could not be evaluated due to the absence of its implementation code. This means no assessment of tokenomics, fee structures… |
-| **Upgrades** | 4/10 | Medium | The upgradeability mechanisms (7.7 Upgrades) of the 'HomeCanonical' contract could not be assessed as its implementation code was not provided. Without the contract's source, it is impossible to… |
+| **Technical** | 8/10 | Low | The technical review was severely limited as only LayerZero v2 interface definitions were provided, not the implementation code for the 'HomeCanonical' contract. This prevents any assessment of the… |
+| **Governance / Economics** | 2/10 | High | The economic and governance aspects of the 'HomeCanonical' contract could not be evaluated due to the absence of its implementation code. This means no assessment of tokenomics, fee structures… |
+| **Upgrades** | 6/10 | Medium | The upgradeability mechanisms (7.7 Upgrades) of the 'HomeCanonical' contract could not be assessed as its implementation code was not provided. Without the contract's source, it is impossible to… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 56.3% |
-| **Top-3 Unlocked** | ⚠️ 99.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 98.7% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The economic model (7.4 Economic) and governance structure (7.5 Governance) of t
 |--------|-------|
 | **Contract** | [`0x4bfa...714f`](https://basescan.org/address/0x4bfaa776991e85e5f8b1255461cbbd216cfc714f) |
 | **Network** | Base |
-| **Price** | $0.007951 |
-| **24h Volume** | $228.0K |
-| **Liquidity** | $48.3K |
-| **Volume / Liquidity** | 4.7× |
+| **Price** | $0.006065 |
+| **24h Volume** | $39.8K |
+| **Liquidity** | $44.1K |
+| **Volume / Liquidity** | 0.9× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 93.7% of supply |
+| **Top-10 Holders** | 89.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1619 buys / 1983 sells |
 

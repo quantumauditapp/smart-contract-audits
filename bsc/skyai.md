@@ -2,14 +2,14 @@
 token: SKYAI
 ticker: SKYAI
 network: bsc
-risk_score: 42
-status: medium
+risk_score: 0
+status: low
 date: 2026-07-22
 ---
 
 # SKYAI (SKYAI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/skyai-bsc)
 
@@ -25,9 +25,16 @@ This audit covers the provided Solidity source code, which includes OpenZeppelin
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The provided code utilizes battle-tested OpenZeppelin contracts (7.2 Code Security), which are known for their robust implementation and adherence to best practices. Standard ERC20 functions like… |
-| **Governance / Economics** | 3/10 | High | As a standard ERC20 token (7.4 Economic), the contract does not inherently include complex governance mechanisms or economic models beyond basic token transfers and allowances. There are no specific… |
-| **Upgrades** | 5/10 | Medium | The provided contract is a direct implementation of ERC20 and is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, upgradeability risks such as storage collisions or incorrect… |
+| **Technical** | 10/10 | Low | The provided code utilizes battle-tested OpenZeppelin contracts (7.2 Code Security), which are known for their robust implementation and adherence to best practices. Standard ERC20 functions like… |
+| **Governance / Economics** | 8/10 | Low | As a standard ERC20 token (7.4 Economic), the contract does not inherently include complex governance mechanisms or economic models beyond basic token transfers and allowances. There are no specific… |
+| **Upgrades** | 10/10 | Low | The provided contract is a direct implementation of ERC20 and is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, upgradeability risks such as storage collisions or incorrect… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **LP Burned** | ✅ 99.9% (≈ permanent lock) |
+| **LP Locked** | 99.9% |
 
 ## Security Findings
 
@@ -59,33 +66,33 @@ The audit was conducted on a base OpenZeppelin ERC20 implementation. Without the
 |--------|-------|
 | **Contract** | [`0x92aa...fb10`](https://bscscan.com/address/0x92aa03137385f18539301349dcfc9ebc923ffb10) |
 | **Network** | BNB Chain |
-| **Price** | $0.0276 |
-| **24h Volume** | $543.8K |
-| **Liquidity** | $3.86M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.02834 |
+| **24h Volume** | $791.4K |
+| **Liquidity** | $3.91M |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 60.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1519 buys / 1212 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (5/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

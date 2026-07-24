@@ -25,7 +25,7 @@ The audit of the Backed Auto Fee Token project reveals a critical concern: the i
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The technical architecture leverages OpenZeppelin's upgradeable contracts (ERC20Upgradeable, OwnableUpgradeable, Initializable), which are well-audited and robust (7.1 Architecture). However, the… |
+| **Technical** | 4/10 | Medium | The technical architecture leverages OpenZeppelin's upgradeable contracts (ERC20Upgradeable, OwnableUpgradeable, Initializable), which are well-audited and robust (7.1 Architecture). However, the… |
 | **Governance / Economics** | 1/10 | High | The proxy administration is secured by a 2-of-3 Gnosis Safe multisig, which is a strong access control mechanism for upgrades (7.3 Access Control). However, the economic parameters and core… |
 | **Upgrades** | 1/10 | High | The contract utilizes the EIP-1967 Transparent Proxy pattern with an OpenZeppelin ProxyAdmin, which is a standard and well-understood upgrade mechanism (7.7 Upgrades). The proxy admin is controlled… |
 
@@ -35,15 +35,15 @@ The audit of the Backed Auto Fee Token project reveals a critical concern: the i
 |---------|-------|
 | **Proxy Type** | Eip1967 Transparent |
 | **Admin** | OZ ProxyAdmin → Multisig 2-of-3 |
-| **Implementation** | ⚠️ Unverified source |
+| **Implementation** | ✅ Verified source |
 | **Upgrades (30d)** | ⚠️ 1 |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 39.5% |
-| **Top-3 Unlocked** | ⚠️ 80.3% |
+| **Top-1 Unlocked Holder** | ⚠️ 83.1% |
+| **Top-3 Unlocked** | ⚠️ 97.3% |
 
 ## Security Findings
 
@@ -89,22 +89,22 @@ The project leverages well-audited and widely adopted OpenZeppelin Contracts Upg
 |--------|-------|
 | **Contract** | [`0x68fa...ce28`](https://etherscan.io/address/0x68fa48b1c2fe52b3d776e1953e0e782b5044ce28) |
 | **Network** | Ethereum |
-| **Price** | $215.6200 |
-| **24h Volume** | $45.8K |
-| **Liquidity** | $37.0K |
-| **Volume / Liquidity** | 1.2× |
+| **Price** | $116.9700 |
+| **24h Volume** | $1.9K |
+| **Liquidity** | $26.5K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 99.9% of supply |
+| **Top-10 Holders** | 99.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 124 buys / 142 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
 
@@ -113,8 +113,8 @@ The project leverages well-audited and widely adopted OpenZeppelin Contracts Upg
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 

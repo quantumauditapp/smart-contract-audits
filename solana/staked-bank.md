@@ -2,14 +2,14 @@
 token: Staked Bank
 ticker: STAKE
 network: solana
-risk_score: 53
-status: high
+risk_score: 78
+status: critical
 date: 2026-06-10
 ---
 
 # Staked Bank (STAKE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 78/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/staked-bank-sol)
 
@@ -26,8 +26,8 @@ This audit of the Staked Bank (Stake) SPL Token Mint found no critical or high-s
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Staked Bank (Stake) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked (None), which means no new tokens can be minted and no existing token accounts… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a healthy Volume/Liquidity Ratio of 0.02, suggesting normal trading activity without signs of wash trading. The DEX pair has been active for 48 days, providing a reasonable track… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, fixing the token's supply and preventing any future freezing of accounts. The token's metadata is immutable, meaning its name, symbol, or… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a healthy Volume/Liquidity Ratio of 0.02, suggesting normal trading activity without signs of wash trading. The DEX pair has been active for 48 days, providing a reasonable track… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, fixing the token's supply and preventing any future freezing of accounts. The token's metadata is immutable, meaning its name, symbol, or… |
 
 ## Token Metrics
 
@@ -35,21 +35,21 @@ This audit of the Staked Bank (Stake) SPL Token Mint found no critical or high-s
 |--------|-------|
 | **Contract** | [`5s7tf6...pump`](https://solscan.io/account/5s7tf6ih2CEZf7ZPNkJAtcknAq9DL5GsWHMMT3Jdpump) |
 | **Network** | Solana |
-| **Price** | $0.0001349 |
-| **24h Volume** | $140.7K |
-| **Liquidity** | $36.3K |
-| **Volume / Liquidity** | 3.9× |
+| **Price** | $0.00001436 |
+| **24h Volume** | $231 |
+| **Liquidity** | $11.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 65.6% of supply |
+| **Top-10 Holders** | 78.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,8 +58,8 @@ This audit of the Staked Bank (Stake) SPL Token Mint found no critical or high-s
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

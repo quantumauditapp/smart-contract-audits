@@ -2,14 +2,14 @@
 token: Espresso
 ticker: ESP
 network: arbitrum
-risk_score: 41
-status: medium
+risk_score: 63
+status: high
 date: 2026-07-23
 ---
 
 # Espresso (ESP) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 63/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/espresso-arb)
 
@@ -25,9 +25,24 @@ The `StandardArbERC20` contract serves as an L2 token implementation for the Arb
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture of `StandardArbERC20` is robust, serving as an L2 ERC20 token implementation for the Arbitrum bridge. It correctly parses and stores L1 token metadata, allowing for… |
-| **Governance / Economics** | 3/10 | High | The `StandardArbERC20` contract itself does not implement direct governance or complex economic models, functioning primarily as a standard L2 token (7.4 Economic). Its economic security is… |
-| **Upgrades** | 5/10 | Medium | The contract is designed for upgradeability, serving as an implementation for a Beacon Proxy (7.7 Upgrades). It also incorporates a `Cloneable` base, allowing it to act as a master copy for further… |
+| **Technical** | 8/10 | Low | The technical architecture of `StandardArbERC20` is robust, serving as an L2 ERC20 token implementation for the Arbitrum bridge. It correctly parses and stores L1 token metadata, allowing for… |
+| **Governance / Economics** | 1/10 | High | The `StandardArbERC20` contract itself does not implement direct governance or complex economic models, functioning primarily as a standard L2 token (7.4 Economic). Its economic security is… |
+| **Upgrades** | 1/10 | High | The contract is designed for upgradeability, serving as an implementation for a Beacon Proxy (7.7 Upgrades). It also incorporates a `Cloneable` base, allowing it to act as a master copy for further… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Beacon |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -73,12 +88,12 @@ The `BytesLib` library, used for parsing bytes, contains inline assembly (`assem
 |--------|-------|
 | **Contract** | [`0x3b8d...94f1`](https://arbiscan.io/address/0x3b8db18e69d6686ad9371a423afe3dd1065c94f1) |
 | **Network** | Arbitrum |
-| **Price** | $0.07246 |
-| **24h Volume** | $211.5K |
-| **Liquidity** | $524.2K |
+| **Price** | $0.07189 |
+| **24h Volume** | $197.1K |
+| **Liquidity** | $522.1K |
 | **Volume / Liquidity** | 0.4× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 99.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1120 buys / 1212 sells |
 
@@ -86,21 +101,21 @@ The `BytesLib` library, used for parsing bytes, contains inline assembly (`assem
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

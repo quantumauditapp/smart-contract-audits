@@ -2,14 +2,14 @@
 token: Venice Token
 ticker: VVV
 network: base
-risk_score: 81
-status: critical
+risk_score: 51
+status: high
 date: 2026-06-10
 ---
 
 # Venice Token (VVV) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 81/100 — 🔴 Critical Risk**
+> **Risk Score: 51/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/venice-token-base)
 
@@ -25,16 +25,16 @@ The Venice token contract is an ERC20 implementation leveraging well-audited Sol
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages the battle-tested Solmate ERC20 and Owned libraries, which are known for their efficiency and security (7.1 Architecture). Custom logic is minimal and correctly implements… |
-| **Governance / Economics** | 1/10 | High | The contract clearly defines an `owner` with specific privileges, providing a single point of control for minting operations. The initial supply is minted to a specified `treasury` address, allowing… |
-| **Upgrades** | 2/10 | High | The `Venice` contract is implemented as a standard, non-upgradeable contract, which simplifies its architecture and eliminates the complexities and risks associated with proxy upgrade patterns. Its… |
+| **Technical** | 7/10 | Low | The contract leverages the battle-tested Solmate ERC20 and Owned libraries, which are known for their efficiency and security (7.1 Architecture). Custom logic is minimal and correctly implements… |
+| **Governance / Economics** | 4/10 | Medium | The contract clearly defines an `owner` with specific privileges, providing a single point of control for minting operations. The initial supply is minted to a specified `treasury` address, allowing… |
+| **Upgrades** | 4/10 | Medium | The `Venice` contract is implemented as a standard, non-upgradeable contract, which simplifies its architecture and eliminates the complexities and risks associated with proxy upgrade patterns. Its… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 29.2% |
-| **Top-3 Unlocked** | 52.0% |
+| **Top-1 Unlocked Holder** | 31.2% |
+| **Top-3 Unlocked** | 55.9% |
 
 ## Security Findings
 
@@ -73,12 +73,13 @@ The `Venice` contract relies on external Solmate libraries (`ERC20`, `Owned`). W
 |--------|-------|
 | **Contract** | [`0xacfe...21bf`](https://basescan.org/address/0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf) |
 | **Network** | Base |
-| **Price** | $16.0190 |
-| **24h Volume** | $2.28M |
-| **Liquidity** | $10.16M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $12.3900 |
+| **24h Volume** | $525.0K |
+| **Liquidity** | $9.93M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 92.1% of supply |
+| **Top-10 Holders** | 91.6% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
 ## Security Flags (2/5 passed)
 

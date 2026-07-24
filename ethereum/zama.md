@@ -2,14 +2,14 @@
 token: Zama
 ticker: ZAMA
 network: ethereum
-risk_score: 48
+risk_score: 46
 status: high
 date: 2026-07-22
 ---
 
 # Zama (ZAMA) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 46/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zama-eth)
 
@@ -25,9 +25,16 @@ This audit focuses exclusively on the provided OpenZeppelin `AccessControl.sol` 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The `AccessControl` contract (7.1 Architecture, 7.2 Code Security) is a well-designed and extensively audited OpenZeppelin module, providing a robust role-based access control system. It leverages… |
-| **Governance / Economics** | 3/10 | High | The `AccessControl` module itself does not introduce direct economic or governance risks (7.4 Economic, 7.5 Governance). Its security implications are primarily derived from how it is integrated and… |
-| **Upgrades** | 5/10 | Medium | The `AccessControl` contract is an abstract base component and is not inherently upgradeable (7.7 Upgrades). If a contract inheriting `AccessControl` is designed to be upgradeable (e.g., via a proxy… |
+| **Technical** | 8/10 | Low | The `AccessControl` contract (7.1 Architecture, 7.2 Code Security) is a well-designed and extensively audited OpenZeppelin module, providing a robust role-based access control system. It leverages… |
+| **Governance / Economics** | 1/10 | High | The `AccessControl` module itself does not introduce direct economic or governance risks (7.4 Economic, 7.5 Governance). Its security implications are primarily derived from how it is integrated and… |
+| **Upgrades** | 6/10 | Medium | The `AccessControl` contract is an abstract base component and is not inherently upgradeable (7.7 Upgrades). If a contract inheriting `AccessControl` is designed to be upgradeable (e.g., via a proxy… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 99.8% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -66,21 +73,21 @@ This version of `AccessControl` (7.1 Architecture) does not provide functions to
 |--------|-------|
 | **Contract** | [`0xa12c...f4f3`](https://etherscan.io/address/0xa12cc123ba206d4031d1c7f6223d1c2ec249f4f3) |
 | **Network** | Ethereum |
-| **Price** | $0.04444 |
-| **24h Volume** | $2.43M |
-| **Liquidity** | $994.4K |
-| **Volume / Liquidity** | 2.4× |
+| **Price** | $0.05396 |
+| **24h Volume** | $3.65M |
+| **Liquidity** | $1.01M |
+| **Volume / Liquidity** | 3.6× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 94.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1464 buys / 1222 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -89,8 +96,8 @@ This version of `AccessControl` (7.1 Architecture) does not provide functions to
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |

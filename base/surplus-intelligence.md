@@ -2,14 +2,14 @@
 token: Surplus Intelligence
 ticker: SURPLUS
 network: base
-risk_score: 84
-status: critical
+risk_score: 35
+status: medium
 date: 2026-07-22
 ---
 
 # Surplus Intelligence (SURPLUS) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 84/100 — 🔴 Critical Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/surplus-intelligence-base)
 
@@ -25,15 +25,15 @@ The DERC20 contract implements an ERC20 token with voting, permit, vesting, and 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The DERC20 contract leverages battle-tested OpenZeppelin libraries for ERC20, ERC20Votes, ERC20Permit, and Ownable functionalities, enhancing code security and adherence to standards (7.2 Code… |
-| **Governance / Economics** | 1/10 | High | The contract design grants substantial control to the `owner` address, which can update the yearly mint rate, burn tokens, and lock/unlock the liquidity pool, introducing a high degree of… |
-| **Upgrades** | 5/10 | Medium | The DERC20 contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). This design choice means that any future modifications or bug fixes would necessitate a complete… |
+| **Technical** | 8/10 | Low | The DERC20 contract leverages battle-tested OpenZeppelin libraries for ERC20, ERC20Votes, ERC20Permit, and Ownable functionalities, enhancing code security and adherence to standards (7.2 Code… |
+| **Governance / Economics** | 4/10 | Medium | The contract design grants substantial control to the `owner` address, which can update the yearly mint rate, burn tokens, and lock/unlock the liquidity pool, introducing a high degree of… |
+| **Upgrades** | 7/10 | Low | The DERC20 contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). This design choice means that any future modifications or bug fixes would necessitate a complete… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 96.2% |
+| **Top-1 Unlocked Holder** | ⚠️ 97.5% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -87,12 +87,12 @@ The constructor includes a `require(vestedTokens < initialSupply, MaxTotalVested
 |--------|-------|
 | **Contract** | [`0xc52a...cba3`](https://basescan.org/address/0xc52aedec3374422d7510e294cfaa90799595cba3) |
 | **Network** | Base |
-| **Price** | $0.00004194 |
-| **24h Volume** | $205.2K |
-| **Liquidity** | $1.42M |
+| **Price** | $0.00003855 |
+| **24h Volume** | $115.0K |
+| **Liquidity** | $1.35M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 36.7% of supply |
+| **Top-10 Holders** | 37.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1094 buys / 171 sells |
 

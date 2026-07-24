@@ -2,14 +2,14 @@
 token: Based Token
 ticker: BASED
 network: bsc
-risk_score: 67
-status: high
+risk_score: 77
+status: critical
 date: 2026-07-22
 ---
 
 # Based Token (BASED) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 77/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/based-token-bsc)
 
@@ -25,9 +25,16 @@ This audit focused on the provided Solidity interfaces for LayerZero V2 componen
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The LayerZero V2 interfaces define a complex cross-chain messaging architecture (7.1 Architecture) with distinct roles for endpoints, message libraries, and receivers. The design emphasizes… |
-| **Governance / Economics** | 2/10 | High | The interfaces expose several critical functions that, in an implementation, would require strong access control and governance (7.3 Access Control, 7.5 Governance). Functions like `setLzToken`… |
-| **Upgrades** | 5/10 | Medium | As only interfaces were provided, direct upgradeability concerns (7.7 Upgrades) for these specific contracts are not applicable. However, the LayerZero V2 protocol itself is designed to be extensible… |
+| **Technical** | 6/10 | Medium | The LayerZero V2 interfaces define a complex cross-chain messaging architecture (7.1 Architecture) with distinct roles for endpoints, message libraries, and receivers. The design emphasizes… |
+| **Governance / Economics** | 3/10 | High | The interfaces expose several critical functions that, in an implementation, would require strong access control and governance (7.3 Access Control, 7.5 Governance). Functions like `setLzToken`… |
+| **Upgrades** | 4/10 | Medium | As only interfaces were provided, direct upgradeability concerns (7.7 Upgrades) for these specific contracts are not applicable. However, the LayerZero V2 protocol itself is designed to be extensible… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 61.4% |
+| **Top-3 Unlocked** | ⚠️ 80.1% |
 
 ## Security Findings
 
@@ -80,12 +87,12 @@ The LayerZero V2 protocol, as evidenced by its extensive interfaces (`ILayerZero
 |--------|-------|
 | **Contract** | [`0x1d28...8e4d`](https://bscscan.com/address/0x1d28d989f9e3ccb8b15d0cec601734514f958e4d) |
 | **Network** | BNB Chain |
-| **Price** | $0.08531 |
-| **24h Volume** | $265.3K |
-| **Liquidity** | $212.4K |
-| **Volume / Liquidity** | 1.2× |
+| **Price** | $0.08385 |
+| **24h Volume** | $217.6K |
+| **Liquidity** | $209.8K |
+| **Volume / Liquidity** | 1.0× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 75.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 850 buys / 826 sells |
 
@@ -93,9 +100,9 @@ The LayerZero V2 protocol, as evidenced by its extensive interfaces (`ILayerZero
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -103,9 +110,9 @@ The LayerZero V2 protocol, as evidenced by its extensive interfaces (`ILayerZero
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

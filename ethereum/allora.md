@@ -2,14 +2,14 @@
 token: Allora
 ticker: ALLO
 network: ethereum
-risk_score: 100
+risk_score: 91
 status: critical
 date: 2026-06-10
 ---
 
 # Allora (ALLO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 91/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/allora-eth)
 
@@ -25,9 +25,9 @@ This audit focuses on the provided OpenZeppelin ERC1967 Transparent Proxy contra
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The proxy contract (ERC1967Proxy) is built upon battle-tested OpenZeppelin libraries, ensuring a robust foundation for its core functionality (7.2 Code Security). The architecture correctly… |
+| **Technical** | 4/10 | Medium | The proxy contract (ERC1967Proxy) is built upon battle-tested OpenZeppelin libraries, ensuring a robust foundation for its core functionality (7.2 Code Security). The architecture correctly… |
 | **Governance / Economics** | 1/10 | High | The governance model for upgrades employs a 2-of-3 multisig for the `ProxyAdmin` (7.5 Governance), which is a strong access control mechanism, reducing the risk of a single point of failure (7.3… |
-| **Upgrades** | 3/10 | High | The system utilizes the EIP-1967 Transparent Proxy pattern, a well-established and secure method for upgradeability (7.7 Upgrades). This pattern correctly separates the admin interface from the… |
+| **Upgrades** | 1/10 | High | The system utilizes the EIP-1967 Transparent Proxy pattern, a well-established and secure method for upgradeability (7.7 Upgrades). This pattern correctly separates the admin interface from the… |
 
 ## Proxy Upgrade Controls
 
@@ -35,7 +35,7 @@ This audit focuses on the provided OpenZeppelin ERC1967 Transparent Proxy contra
 |---------|-------|
 | **Proxy Type** | Eip1967 Transparent |
 | **Admin** | OZ ProxyAdmin → Multisig 2-of-3 |
-| **Implementation** | ⚠️ Unverified source |
+| **Implementation** | ✅ Verified source |
 | **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
@@ -82,20 +82,21 @@ Although the upgrade authority is managed by a 2-of-3 multisig, this still repre
 |--------|-------|
 | **Contract** | [`0x8408...0489`](https://etherscan.io/address/0x8408d45b61f5823298f19a09b53b7339c0280489) |
 | **Network** | Ethereum |
-| **Price** | $0.2774 |
-| **24h Volume** | $328.1K |
-| **Liquidity** | $217.9K |
-| **Volume / Liquidity** | 1.5× |
+| **Price** | $0.4922 |
+| **24h Volume** | $2.5K |
+| **Liquidity** | $6.0K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 6mo |
 | **Top-10 Holders** | 93.4% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
 
@@ -104,8 +105,8 @@ Although the upgrade authority is managed by a 2-of-3 multisig, this still repre
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 

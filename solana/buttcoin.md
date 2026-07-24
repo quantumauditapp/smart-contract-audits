@@ -2,14 +2,14 @@
 token: Buttcoin
 ticker: BUTTCOIN
 network: solana
-risk_score: 19
-status: low
+risk_score: 35
+status: medium
 date: 2026-06-26
 ---
 
 # Buttcoin (BUTTCOIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 19/100 — 🟢 Low Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/buttcoin-sol)
 
@@ -26,8 +26,8 @@ This audit of the Buttcoin SPL Token Mint found no critical or high-severity iss
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Buttcoin token is an SPL Token-2022 mint with a total supply of 999,945,702.977861 tokens, using 6 decimals. Crucially, both the mint authority and freeze authority have been revoked, ensuring no… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits healthy market characteristics with a total DEX liquidity of $656,108 and a 24-hour trading volume of $615,100 (7.4 Economic). The volume-to-liquidity ratio is 0.94, which is… |
-| **Upgrades** | 8/10 | Low | The token's configuration demonstrates a strong commitment to immutability and fixed parameters (7.7 Upgrades). Both the mint and freeze authorities are revoked, meaning no further changes can be… |
+| **Governance / Economics** | 3/10 | High | The token exhibits healthy market characteristics with a total DEX liquidity of $656,108 and a 24-hour trading volume of $615,100 (7.4 Economic). The volume-to-liquidity ratio is 0.94, which is… |
+| **Upgrades** | 5/10 | Medium | The token's configuration demonstrates a strong commitment to immutability and fixed parameters (7.7 Upgrades). Both the mint and freeze authorities are revoked, meaning no further changes can be… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ This audit of the Buttcoin SPL Token Mint found no critical or high-severity iss
 |--------|-------|
 | **Contract** | [`Cm6fNn...pump`](https://solscan.io/account/Cm6fNnMk7NfzStP9CZpsQA2v3jjzbcYGAxdJySmHpump) |
 | **Network** | Solana |
-| **Price** | $0.01732 |
-| **24h Volume** | $495.2K |
-| **Liquidity** | $740.4K |
+| **Price** | $0.009168 |
+| **24h Volume** | $431.0K |
+| **Liquidity** | $594.0K |
 | **Volume / Liquidity** | 0.7× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 15.5% of supply |
+| **Top-10 Holders** | 16.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2257 buys / 2524 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ This audit of the Buttcoin SPL Token Mint found no critical or high-severity iss
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Collector Crypt
 ticker: CARDS
 network: solana
-risk_score: 45
-status: medium
+risk_score: 63
+status: high
 date: 2026-06-10
 ---
 
 # Collector Crypt (CARDS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 63/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/collector-crypt-sol)
 
@@ -26,8 +26,8 @@ The Collector Crypt (CARDS) token mint exhibits a low overall risk profile. The 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Collector Crypt (CARDS) token is implemented using the classic spl-token program. Both the mint authority and freeze authority have been revoked (None), ensuring that no new tokens can be minted… |
-| **Governance / Economics** | 3/10 | High | The token has substantial liquidity with $2,673,056 USD, and its 24-hour volume of $1,288,101 USD results in a normal Volume/Liquidity Ratio of 0.48, suggesting organic trading activity. The DEX pair… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the core parameters of token supply and account freezing cannot be altered. The token does not utilize Token-2022 extensions that… |
+| **Governance / Economics** | 1/10 | High | The token has substantial liquidity with $2,673,056 USD, and its 24-hour volume of $1,288,101 USD results in a normal Volume/Liquidity Ratio of 0.48, suggesting organic trading activity. The DEX pair… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, meaning the core parameters of token supply and account freezing cannot be altered. The token does not utilize Token-2022 extensions that… |
 
 ## Security Findings
 
@@ -45,22 +45,22 @@ The token's metadata is mutable (metadata_mutable: True), meaning its name, symb
 |--------|-------|
 | **Contract** | [`CARDSc...xYjp`](https://solscan.io/account/CARDSccUMFKoPRZxt5vt3ksUbxEFEcnZ3H2pd3dKxYjp) |
 | **Network** | Solana |
-| **Price** | $0.2289 |
-| **24h Volume** | $7.94M |
-| **Liquidity** | $3.35M |
-| **Volume / Liquidity** | 2.4× |
+| **Price** | $0.1361 |
+| **24h Volume** | $743.3K |
+| **Liquidity** | $2.29M |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | 84.3% of supply |
+| **Top-10 Holders** | 83.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4104 buys / 4101 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,8 +69,8 @@ The token's metadata is mutable (metadata_mutable: True), meaning its name, symb
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Meteora
 ticker: MET
 network: solana
-risk_score: 38
-status: medium
+risk_score: 63
+status: high
 date: 2026-06-21
 ---
 
 # Meteora (MET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 38/100 — 🟡 Medium Risk**
+> **Risk Score: 63/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/meteora-sol)
 
@@ -26,8 +26,8 @@ The Meteora (MET) SPL token mint exhibits a low-risk profile with both mint and 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, which means no new tokens can be minted and no holder accounts can be… |
-| **Governance / Economics** | 5/10 | Medium | The token demonstrates healthy market activity with over $51 million in DEX liquidity and a 24-hour volume of $157,839, resulting in a normal Volume/Liquidity Ratio of 0.00. The DEX pair has been… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or account freeze status. The underlying `spl-token` program is not subject to… |
+| **Governance / Economics** | 1/10 | High | The token demonstrates healthy market activity with over $51 million in DEX liquidity and a 24-hour volume of $157,839, resulting in a normal Volume/Liquidity Ratio of 0.00. The DEX pair has been… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or account freeze status. The underlying `spl-token` program is not subject to… |
 
 ## Security Findings
 
@@ -45,22 +45,22 @@ The token's metadata is mutable, as indicated by `metadata_mutable: True`. This 
 |--------|-------|
 | **Contract** | [`METvsv...mWQL`](https://solscan.io/account/METvsvVRapdj9cFLzq4Tr43xK4tAjQfwX76z3n6mWQL) |
 | **Network** | Solana |
-| **Price** | $887.2900 |
-| **24h Volume** | $178.5K |
-| **Liquidity** | $332.61M |
+| **Price** | $0.1642 |
+| **24h Volume** | $49.4K |
+| **Liquidity** | $2.07M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 68.0% of supply |
+| **Top-10 Holders** | 79.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 273 buys / 261 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,8 +69,8 @@ The token's metadata is mutable, as indicated by `metadata_mutable: True`. This 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

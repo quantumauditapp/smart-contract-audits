@@ -2,14 +2,14 @@
 token: LOL
 ticker: LOL
 network: solana
-risk_score: 27
+risk_score: 45
 status: medium
 date: 2026-06-10
 ---
 
 # LOL (LOL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 27/100 — 🟡 Medium Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lol-sol)
 
@@ -26,8 +26,8 @@ The LOL SPL token mint demonstrates a strong security posture with both mint and
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The LOL token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing accounts can… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits a healthy trading pattern with a 24-hour volume of $4,693 against a liquidity of $103,871, resulting in a normal Volume/Liquidity Ratio of 0.05. The DEX pair has been active for… |
-| **Upgrades** | 8/10 | Low | The LOL token mint has a robust and immutable configuration, as both the mint and freeze authorities have been permanently revoked. This prevents any future changes to the token's supply or the… |
+| **Governance / Economics** | 3/10 | High | The token exhibits a healthy trading pattern with a 24-hour volume of $4,693 against a liquidity of $103,871, resulting in a normal Volume/Liquidity Ratio of 0.05. The DEX pair has been active for… |
+| **Upgrades** | 5/10 | Medium | The LOL token mint has a robust and immutable configuration, as both the mint and freeze authorities have been permanently revoked. This prevents any future changes to the token's supply or the… |
 
 ## Token Metrics
 
@@ -35,21 +35,21 @@ The LOL SPL token mint demonstrates a strong security posture with both mint and
 |--------|-------|
 | **Contract** | [`34q2Km...sWYb`](https://solscan.io/account/34q2KmCvapecJgR6ZrtbCTrzZVtkt3a5mHEA3TuEsWYb) |
 | **Network** | Solana |
-| **Price** | $0.002058 |
-| **24h Volume** | $309.1K |
-| **Liquidity** | $249.4K |
-| **Volume / Liquidity** | 1.2× |
+| **Price** | $0.0003849 |
+| **24h Volume** | $20.1K |
+| **Liquidity** | $104.7K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 21.9% of supply |
+| **Top-10 Holders** | 29.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,8 +58,8 @@ The LOL SPL token mint demonstrates a strong security posture with both mint and
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

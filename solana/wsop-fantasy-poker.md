@@ -2,14 +2,14 @@
 token: WSOP Fantasy Poker
 ticker: WSOLP
 network: solana
-risk_score: 34
-status: medium
+risk_score: 57
+status: high
 date: 2026-06-21
 ---
 
 # WSOP Fantasy Poker (WSOLP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 57/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wsop-fantasy-poker-sol)
 
@@ -26,8 +26,8 @@ This audit of the WSOP Fantasy Poker (WSOLP) SPL Token Mint found no critical or
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The WSOP Fantasy Poker (WSOLP) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $45,670 USD in total DEX liquidity, which is sufficient for small to medium trades. The 24-hour volume of $133,590 results in a healthy Volume/Liquidity… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are permanently revoked, preventing any post-launch changes to supply or account states. Key Token-2022 extensions like Transfer Hook and Default Account State… |
+| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $45,670 USD in total DEX liquidity, which is sufficient for small to medium trades. The 24-hour volume of $133,590 results in a healthy Volume/Liquidity… |
+| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are permanently revoked, preventing any post-launch changes to supply or account states. Key Token-2022 extensions like Transfer Hook and Default Account State… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ This audit of the WSOP Fantasy Poker (WSOLP) SPL Token Mint found no critical or
 |--------|-------|
 | **Contract** | [`GvUCjm...pump`](https://solscan.io/account/GvUCjmWSXA5hrTh9smmNA1AU55YCtP9mDLQcrKA1pump) |
 | **Network** | Solana |
-| **Price** | $0.0005483 |
-| **24h Volume** | $40.5K |
-| **Liquidity** | $54.6K |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $0.0004886 |
+| **24h Volume** | $73.8K |
+| **Liquidity** | $56.7K |
+| **Volume / Liquidity** | 1.3× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 29.1% of supply |
+| **Top-10 Holders** | 31.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 226 buys / 220 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ This audit of the WSOP Fantasy Poker (WSOLP) SPL Token Mint found no critical or
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

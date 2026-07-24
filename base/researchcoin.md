@@ -2,14 +2,14 @@
 token: ResearchCoin
 ticker: RSC
 network: base
-risk_score: 41
-status: medium
+risk_score: 55
+status: high
 date: 2026-07-23
 ---
 
 # ResearchCoin (RSC) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 55/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/researchcoin-base)
 
@@ -25,9 +25,16 @@ The OptimismMintableERC20 contract serves as a standard ERC20 token designed for
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract exhibits good technical quality, inheriting from OpenZeppelin's robust ERC20 implementation and utilizing Solidity 0.8.15 for built-in overflow/underflow protection (7.2 Code Security).… |
+| **Technical** | 8/10 | Low | The contract exhibits good technical quality, inheriting from OpenZeppelin's robust ERC20 implementation and utilizing Solidity 0.8.15 for built-in overflow/underflow protection (7.2 Code Security).… |
 | **Governance / Economics** | 3/10 | High | The economic model of the OptimismMintableERC20 token is straightforward: it functions as a bridged representation of a token on another chain. Its economic security and peg stability are entirely… |
-| **Upgrades** | 5/10 | Medium | The OptimismMintableERC20 contract is designed as an immutable, non-upgradeable contract, with key addresses set in the constructor (7.7 Upgrades). This design choice simplifies its security model by… |
+| **Upgrades** | 3/10 | High | The OptimismMintableERC20 contract is designed as an immutable, non-upgradeable contract, with key addresses set in the constructor (7.7 Upgrades). This design choice simplifies its security model by… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | 47.5% |
+| **Top-3 Unlocked** | ⚠️ 90.0% |
 
 ## Security Findings
 
@@ -59,22 +66,22 @@ The `OptimismMintableERC20` contract is designed as an immutable contract, with 
 |--------|-------|
 | **Contract** | [`0xfbb7...f7e1`](https://basescan.org/address/0xfbb75a59193a3525a8825bebe7d4b56899e2f7e1) |
 | **Network** | Base |
-| **Price** | $0.09818 |
-| **24h Volume** | $49.8K |
-| **Liquidity** | $94.9K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.09392 |
+| **24h Volume** | $54.1K |
+| **Liquidity** | $94.1K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 56.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 433 buys / 268 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -82,9 +89,9 @@ The `OptimismMintableERC20` contract is designed as an immutable contract, with 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

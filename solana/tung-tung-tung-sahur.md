@@ -2,14 +2,14 @@
 token: Tung Tung Tung Sahur
 ticker: TRIPLET
 network: solana
-risk_score: 18
-status: low
+risk_score: 34
+status: medium
 date: 2026-07-22
 ---
 
 # Tung Tung Tung Sahur (TRIPLET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 18/100 — 🟢 Low Risk**
+> **Risk Score: 34/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tung-tung-tung-sahur-sol)
 
@@ -26,8 +26,8 @@ This audit of the Tung Tung Tung Sahur (TripleT) SPL Token Mint found no critica
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Tung Tung Tung Sahur (TripleT) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits healthy holder distribution, with the top 10 accounts holding approximately 15.81% of the total supply, indicating low concentration risk. Liquidity stands at $686,156, which is… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token's metadata is immutable, meaning its name, symbol… |
+| **Governance / Economics** | 3/10 | High | The token exhibits healthy holder distribution, with the top 10 accounts holding approximately 15.81% of the total supply, indicating low concentration risk. Liquidity stands at $686,156, which is… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token's metadata is immutable, meaning its name, symbol… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ This audit of the Tung Tung Tung Sahur (TripleT) SPL Token Mint found no critica
 |--------|-------|
 | **Contract** | [`J8PSdN...pump`](https://solscan.io/account/J8PSdNP3QewKq2Z1JJJFDMaqF7KcaiJhR7gbr5KZpump) |
 | **Network** | Solana |
-| **Price** | $0.01721 |
-| **24h Volume** | $540.4K |
-| **Liquidity** | $684.7K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.0206 |
+| **24h Volume** | $1.09M |
+| **Liquidity** | $753.4K |
+| **Volume / Liquidity** | 1.4× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 15.8% of supply |
+| **Top-10 Holders** | 15.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2605 buys / 1848 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ This audit of the Tung Tung Tung Sahur (TripleT) SPL Token Mint found no critica
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

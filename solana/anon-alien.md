@@ -2,14 +2,14 @@
 token: Anon Alien
 ticker: AALIEN
 network: solana
-risk_score: 44
-status: medium
+risk_score: 58
+status: high
 date: 2026-07-03
 ---
 
 # Anon Alien (AALIEN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 58/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/anon-alien-sol)
 
@@ -26,8 +26,8 @@ This audit of the Anon Alien (AALIEN) SPL token mint found no critical or high-r
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Anon Alien (AALIEN) token is an SPL token operating under the `spl-token` program. Its Mint Authority is revoked, ensuring no new tokens can be minted beyond the current supply of… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits moderate liquidity with $31,593 USD in total DEX liquidity. Trading activity shows a normal Volume/Liquidity Ratio of 0.05 over 24 hours, suggesting no signs of wash trading. The… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both Mint Authority and Freeze Authority. Metadata, including name and symbol, is also immutable as `metadata_mutable` is `False`.… |
+| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $31,593 USD in total DEX liquidity. Trading activity shows a normal Volume/Liquidity Ratio of 0.05 over 24 hours, suggesting no signs of wash trading. The… |
+| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable due to the revocation of both Mint Authority and Freeze Authority. Metadata, including name and symbol, is also immutable as `metadata_mutable` is `False`.… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ This audit of the Anon Alien (AALIEN) SPL token mint found no critical or high-r
 |--------|-------|
 | **Contract** | [`ARea51...eeV1`](https://solscan.io/account/ARea51UmRfn22Ds7KwFZirSMEEn1gtBdrhW4zLeveeV1) |
 | **Network** | Solana |
-| **Price** | $0.0001416 |
-| **24h Volume** | $421.6K |
-| **Liquidity** | $36.7K |
-| **Volume / Liquidity** | 11.5× |
+| **Price** | $0.00006711 |
+| **24h Volume** | $561 |
+| **Liquidity** | $25.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 33.8% of supply |
+| **Top-10 Holders** | 42.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 19799 buys / 3424 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ This audit of the Anon Alien (AALIEN) SPL token mint found no critical or high-r
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

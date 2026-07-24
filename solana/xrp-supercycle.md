@@ -2,14 +2,14 @@
 token: XRP SUPERCYCLE
 ticker: XRPS
 network: solana
-risk_score: 35
-status: medium
+risk_score: 67
+status: high
 date: 2026-06-12
 ---
 
 # XRP SUPERCYCLE (XRPS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 35/100 — 🟡 Medium Risk**
+> **Risk Score: 67/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/xrp-supercycle-sol)
 
@@ -26,8 +26,8 @@ The XRP SUPERCYCLE (XRPS) token presents a low-risk profile based on available o
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The XRP SUPERCYCLE (XRPS) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a normal trading pattern with a 24-hour Volume/Liquidity Ratio of 0.13. The DEX pair has been active for 39 days, providing some track record. Total DEX liquidity stands at… |
-| **Upgrades** | 8/10 | Low | The mint authority for XRP SUPERCYCLE (XRPS) has been revoked, preventing any further minting of tokens. Similarly, the freeze authority has also been revoked, ensuring that no accounts can be… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a normal trading pattern with a 24-hour Volume/Liquidity Ratio of 0.13. The DEX pair has been active for 39 days, providing some track record. Total DEX liquidity stands at… |
+| **Upgrades** | 5/10 | Medium | The mint authority for XRP SUPERCYCLE (XRPS) has been revoked, preventing any further minting of tokens. Similarly, the freeze authority has also been revoked, ensuring that no accounts can be… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The XRP SUPERCYCLE (XRPS) token presents a low-risk profile based on available o
 |--------|-------|
 | **Contract** | [`7XLu71...pump`](https://solscan.io/account/7XLu71Wvq7zuNU7TP5qjYY8kqg9zxtrsb7sJEEF6pump) |
 | **Network** | Solana |
-| **Price** | $0.001499 |
-| **24h Volume** | $329.4K |
-| **Liquidity** | $92.4K |
-| **Volume / Liquidity** | 3.6× |
+| **Price** | $0.00002191 |
+| **24h Volume** | $865 |
+| **Liquidity** | $12.9K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 10d |
-| **Top-10 Holders** | 37.7% of supply |
+| **Top-10 Holders** | 61.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2522 buys / 2271 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The XRP SUPERCYCLE (XRPS) token presents a low-risk profile based on available o
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

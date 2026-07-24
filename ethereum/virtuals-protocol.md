@@ -2,14 +2,14 @@
 token: Virtuals Protocol
 ticker: VIRTUAL
 network: ethereum
-risk_score: 85
-status: critical
+risk_score: 53
+status: high
 date: 2026-07-11
 ---
 
 # Virtuals Protocol (VIRTUAL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 85/100 — 🔴 Critical Risk**
+> **Risk Score: 53/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/virtuals-protocol-eth)
 
@@ -25,16 +25,16 @@ The VirtualToken contract is an ERC-20 token implementation that heavily leverag
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract utilizes well-audited OpenZeppelin libraries for its ERC-20, Ownable, and ERC20Permit implementations, which is a significant strength (7.2 Code Security). This provides robust… |
-| **Governance / Economics** | 1/10 | High | The economic model of the VirtualToken is critically centralized (7.4 Economic). The contract owner holds absolute control over all token operations, including minting, burning, and all transfers… |
-| **Upgrades** | 4/10 | Medium | The VirtualToken contract is not implemented as an upgradeable proxy (7.7 Upgrades). This design choice inherently avoids the specific risks associated with upgrade mechanisms, such as proxy… |
+| **Technical** | 5/10 | Medium | The contract utilizes well-audited OpenZeppelin libraries for its ERC-20, Ownable, and ERC20Permit implementations, which is a significant strength (7.2 Code Security). This provides robust… |
+| **Governance / Economics** | 4/10 | Medium | The economic model of the VirtualToken is critically centralized (7.4 Economic). The contract owner holds absolute control over all token operations, including minting, burning, and all transfers… |
+| **Upgrades** | 7/10 | Low | The VirtualToken contract is not implemented as an upgradeable proxy (7.7 Upgrades). This design choice inherently avoids the specific risks associated with upgrade mechanisms, such as proxy… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 86.6% |
-| **Top-3 Unlocked** | ⚠️ 96.9% |
+| **Top-1 Unlocked Holder** | ⚠️ 58.6% |
+| **Top-3 Unlocked** | ⚠️ 91.9% |
 
 ## Security Findings
 
@@ -73,22 +73,22 @@ The `Ownable` contract includes a `renounceOwnership()` function. If the current
 |--------|-------|
 | **Contract** | [`0x44ff...bf73`](https://etherscan.io/address/0x44ff8620b8ca30902395a7bd3f2407e1a091bf73) |
 | **Network** | Ethereum |
-| **Price** | $0.6165 |
-| **24h Volume** | $104.8K |
-| **Liquidity** | $224.6K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.6223 |
+| **24h Volume** | $20.0K |
+| **Liquidity** | $238.8K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 90.5% of supply |
+| **Top-10 Holders** | 90.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 148 buys / 98 sells |
 
-## Security Flags (4/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -98,7 +98,7 @@ The `Ownable` contract includes a `renounceOwnership()` function. If the current
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

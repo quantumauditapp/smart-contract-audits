@@ -96,9 +96,9 @@ The provided source code for the `XPLUSToken` contract is incomplete. Specifical
 |--------|-------|
 | **Contract** | [`0xabae...8228`](https://bscscan.com/address/0xabae909cd93bc2ddf90086f9aa6c3f8e154e8228) |
 | **Network** | BNB Chain |
-| **Price** | $0.0374 |
-| **24h Volume** | $1.77M |
-| **Liquidity** | $9.39M |
+| **Price** | $0.03641 |
+| **24h Volume** | $1.95M |
+| **Liquidity** | $9.12M |
 | **Volume / Liquidity** | 0.2× |
 | **Token Age** | 6mo |
 | **Top-10 Holders** | 37.9% of supply |

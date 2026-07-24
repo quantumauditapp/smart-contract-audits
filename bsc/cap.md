@@ -2,14 +2,14 @@
 token: Cap
 ticker: CAP
 network: bsc
-risk_score: 59
+risk_score: 55
 status: high
 date: 2026-07-23
 ---
 
 # Cap (CAP) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 55/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cap-bsc)
 
@@ -25,9 +25,23 @@ The L2TokenUpgradeable contract implements an ERC-20 token with LayerZero Omnich
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract utilizes well-audited OpenZeppelin and LayerZero upgradeable libraries, providing a robust foundation for ERC-20, permit, and cross-chain functionalities (7.1 Architecture, 7.2 Code… |
-| **Governance / Economics** | 3/10 | High | The contract employs an `Ownable` access control pattern where a single address, identified as a Timelock, holds all administrative privileges (7.3 Access Control). This owner can manage LayerZero… |
-| **Upgrades** | 7/10 | Low | The contract implements the UUPS upgradeability pattern, allowing for future logic updates (7.7 Upgrades). The `_authorizeUpgrade` function is correctly restricted to the `onlyOwner` modifier… |
+| **Technical** | 8/10 | Low | The contract utilizes well-audited OpenZeppelin and LayerZero upgradeable libraries, providing a robust foundation for ERC-20, permit, and cross-chain functionalities (7.1 Architecture, 7.2 Code… |
+| **Governance / Economics** | 2/10 | High | The contract employs an `Ownable` access control pattern where a single address, identified as a Timelock, holds all administrative privileges (7.3 Access Control). This owner can manage LayerZero… |
+| **Upgrades** | 3/10 | High | The contract implements the UUPS upgradeability pattern, allowing for future logic updates (7.7 Upgrades). The `_authorizeUpgrade` function is correctly restricted to the `onlyOwner` modifier… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Uups |
+| **Implementation** | ✅ Verified source |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -66,12 +80,12 @@ The `setDelegate` function in `OAppCoreUpgradeable` allows the owner to change t
 |--------|-------|
 | **Contract** | [`0x9999...9999`](https://bscscan.com/address/0x99991c6aabba5a096f24f250b73580f5179b9999) |
 | **Network** | BNB Chain |
-| **Price** | $0.02283 |
-| **24h Volume** | $55.5K |
+| **Price** | $0.02309 |
+| **24h Volume** | $58.0K |
 | **Liquidity** | $22.9K |
-| **Volume / Liquidity** | 2.4× |
+| **Volume / Liquidity** | 2.5× |
 | **Token Age** | 26d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 91.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 786 buys / 797 sells |
 
@@ -79,21 +93,21 @@ The `setDelegate` function in `OAppCoreUpgradeable` allows the owner to change t
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

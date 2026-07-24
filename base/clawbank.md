@@ -2,14 +2,14 @@
 token: ClawBank
 ticker: CLAWBANK
 network: base
-risk_score: 40
-status: medium
+risk_score: 2
+status: low
 date: 2026-07-22
 ---
 
 # ClawBank (CLAWBANK) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 2/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/clawbank-base)
 
@@ -25,9 +25,9 @@ The ClankerToken contract is an ERC20 token with extensions for burning, voting,
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract demonstrates strong technical foundations (7.1 Architecture, 7.2 Code Security). It inherits from well-audited OpenZeppelin ERC20, ERC20Permit, ERC20Votes, and ERC20Burnable contracts… |
-| **Governance / Economics** | 1/10 | High | The contract's economic model (7.4 Economic) involves a fixed `maxSupply_` minted to the deployer on a specific chain, which is a clear design choice. Governance (7.5 Governance) is centralized… |
-| **Upgrades** | 8/10 | Low | The ClankerToken contract is not designed with an upgrade mechanism (7.7 Upgrades), meaning its logic is immutable once deployed. This eliminates risks associated with proxy patterns or upgradeable… |
+| **Technical** | 10/10 | Low | The contract demonstrates strong technical foundations (7.1 Architecture, 7.2 Code Security). It inherits from well-audited OpenZeppelin ERC20, ERC20Permit, ERC20Votes, and ERC20Burnable contracts… |
+| **Governance / Economics** | 7/10 | Low | The contract's economic model (7.4 Economic) involves a fixed `maxSupply_` minted to the deployer on a specific chain, which is a clear design choice. Governance (7.5 Governance) is centralized… |
+| **Upgrades** | 9/10 | Low | The ClankerToken contract is not designed with an upgrade mechanism (7.7 Upgrades), meaning its logic is immutable once deployed. This eliminates risks associated with proxy patterns or upgradeable… |
 
 ## LP Distribution
 
@@ -66,12 +66,12 @@ In the constructor, the entire `maxSupply_` is minted to `msg.sender` (the contr
 |--------|-------|
 | **Contract** | [`0x1633...eb07`](https://basescan.org/address/0x16332535e2c27da578bc2e82beb09ce9d3c8eb07) |
 | **Network** | Base |
-| **Price** | $0.00001299 |
-| **24h Volume** | $33.7K |
-| **Liquidity** | $678.3K |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.00001439 |
+| **24h Volume** | $37.6K |
+| **Liquidity** | $722.7K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 34.6% of supply |
+| **Top-10 Holders** | 34.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 211 buys / 494 sells |
 

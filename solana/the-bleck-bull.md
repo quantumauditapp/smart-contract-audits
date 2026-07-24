@@ -2,14 +2,14 @@
 token: the bleck bull
 ticker: ANSUM
 network: solana
-risk_score: 30
-status: medium
+risk_score: 72
+status: critical
 date: 2026-07-09
 ---
 
 # the bleck bull (ANSUM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 30/100 — 🟡 Medium Risk**
+> **Risk Score: 72/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-bleck-bull-sol)
 
@@ -26,8 +26,8 @@ The token mint for 'the bleck bull (ANSUM)' is an SPL Token-2022. Both mint and 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is an SPL Token-2022, indicating modern Solana token standards. Both the mint authority and freeze authority have been revoked, ensuring a fixed supply and preventing any account freezing… |
-| **Governance / Economics** | 6/10 | Medium | The token has a moderate DEX liquidity of $41,196, with a 24-hour trading volume of $212,228, resulting in a Volume/Liquidity Ratio of 5.15. The DEX pair has been active for 7 days, providing a… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are permanently revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not utilize upgradable features such as a… |
+| **Governance / Economics** | 1/10 | High | The token has a moderate DEX liquidity of $41,196, with a 24-hour trading volume of $212,228, resulting in a Volume/Liquidity Ratio of 5.15. The DEX pair has been active for 7 days, providing a… |
+| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are permanently revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not utilize upgradable features such as a… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The token mint for 'the bleck bull (ANSUM)' is an SPL Token-2022. Both mint and 
 |--------|-------|
 | **Contract** | [`GaZb3D...pump`](https://solscan.io/account/GaZb3DE2U3Jcjx7ddAVwobsBKnCaDoJWLbzTvJYhpump) |
 | **Network** | Solana |
-| **Price** | $0.0006545 |
-| **24h Volume** | $298.5K |
-| **Liquidity** | $73.1K |
-| **Volume / Liquidity** | 4.1× |
+| **Price** | $0.00007777 |
+| **24h Volume** | $24.4K |
+| **Liquidity** | $26.6K |
+| **Volume / Liquidity** | 0.9× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 51.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2241 buys / 3124 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The token mint for 'the bleck bull (ANSUM)' is an SPL Token-2022. Both mint and 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

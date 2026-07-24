@@ -2,14 +2,14 @@
 token: Kled AI
 ticker: KLED
 network: solana
-risk_score: 23
+risk_score: 41
 status: medium
 date: 2026-06-27
 ---
 
 # Kled AI (KLED) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 23/100 — 🟡 Medium Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kled-ai-sol)
 
@@ -26,8 +26,8 @@ This audit of the KLEDAI (KLED) SPL token mint found that both the mint and free
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The KLEDAI (KLED) token is an SPL token operating under the spl-token program. Both the mint authority and freeze authority have been revoked (None), ensuring that no new tokens can be minted and no… |
-| **Governance / Economics** | 7/10 | Low | DEX market data indicates a liquidity of $496,380 USD and a 24-hour trading volume of $16,198 USD. The volume/liquidity ratio is 0.03, which is considered normal and does not suggest wash trading.… |
-| **Upgrades** | 8/10 | Low | The mint and freeze authorities are both revoked, meaning these core parameters cannot be changed. The token's metadata, including its name, symbol, or image, is mutable. This allows for post-launch… |
+| **Governance / Economics** | 3/10 | High | DEX market data indicates a liquidity of $496,380 USD and a 24-hour trading volume of $16,198 USD. The volume/liquidity ratio is 0.03, which is considered normal and does not suggest wash trading.… |
+| **Upgrades** | 5/10 | Medium | The mint and freeze authorities are both revoked, meaning these core parameters cannot be changed. The token's metadata, including its name, symbol, or image, is mutable. This allows for post-launch… |
 
 ## Security Findings
 
@@ -45,22 +45,22 @@ The token's metadata is mutable, as indicated by 'metadata_mutable: True'. This 
 |--------|-------|
 | **Contract** | [`1zJX5g...W6jm`](https://solscan.io/account/1zJX5gRnjLgmTpq5sVwkq69mNDQkCemqoasyjaPW6jm) |
 | **Network** | Solana |
-| **Price** | $0.02324 |
-| **24h Volume** | $1.71M |
-| **Liquidity** | $629.4K |
-| **Volume / Liquidity** | 2.7× |
+| **Price** | $0.01225 |
+| **24h Volume** | $18.3K |
+| **Liquidity** | $470.3K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 23.8% of supply |
+| **Top-10 Holders** | 23.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1679 buys / 1926 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,8 +69,8 @@ The token's metadata is mutable, as indicated by 'metadata_mutable: True'. This 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

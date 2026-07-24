@@ -2,14 +2,14 @@
 token: Uniswap
 ticker: UNI
 network: ethereum
-risk_score: 57
+risk_score: 52
 status: high
 date: 2026-06-16
 ---
 
 # Uniswap (UNI) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/uniswap-eth)
 
@@ -25,9 +25,9 @@ The Uni contract implements an ERC-20 token with governance delegation and a con
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract demonstrates good code security practices by using OpenZeppelin's `SafeMath` library to prevent arithmetic overflows/underflows (7.2 Code Security). The implementation of ERC-20, EIP-712… |
+| **Technical** | 7/10 | Low | The contract demonstrates good code security practices by using OpenZeppelin's `SafeMath` library to prevent arithmetic overflows/underflows (7.2 Code Security). The implementation of ERC-20, EIP-712… |
 | **Governance / Economics** | 1/10 | High | The contract incorporates a robust governance delegation system, allowing token holders to delegate their voting power, which is a strength for decentralized decision-making (7.5 Governance).… |
-| **Upgrades** | 5/10 | Medium | The contract is not designed with an upgrade mechanism (e.g., proxy pattern), meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates upgrade-related risks such as proxy… |
+| **Upgrades** | 4/10 | Medium | The contract is not designed with an upgrade mechanism (e.g., proxy pattern), meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates upgrade-related risks such as proxy… |
 
 ## Security Findings
 
@@ -59,22 +59,22 @@ The contract is compiled with Solidity version `^0.5.16`. While `SafeMath` is co
 |--------|-------|
 | **Contract** | [`0x1f98...f984`](https://etherscan.io/address/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984) |
 | **Network** | Ethereum |
-| **Price** | $3.0074 |
-| **24h Volume** | $2.04M |
-| **Liquidity** | $12.31M |
+| **Price** | $3.8300 |
+| **24h Volume** | $2.41M |
+| **Liquidity** | $15.50M |
 | **Volume / Liquidity** | 0.2× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 52.3% of supply |
+| **Top-10 Holders** | 51.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 608 buys / 540 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -84,7 +84,7 @@ The contract is compiled with Solidity version `^0.5.16`. While `SafeMath` is co
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

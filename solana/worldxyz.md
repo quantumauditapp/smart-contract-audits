@@ -35,10 +35,10 @@ The world.xyz SPL Token Mint (world) on Solana exhibits a robust security config
 |--------|-------|
 | **Contract** | [`FMqh9m...pump`](https://solscan.io/account/FMqh9mqR6drPZqqW6wPqLHxX4rqNDWGhYLaMfoaJpump) |
 | **Network** | Solana |
-| **Price** | $0.001822 |
-| **24h Volume** | $200.8K |
-| **Liquidity** | $175.5K |
-| **Volume / Liquidity** | 1.1× |
+| **Price** | $0.002593 |
+| **24h Volume** | $279.5K |
+| **Liquidity** | $209.8K |
+| **Volume / Liquidity** | 1.3× |
 | **Token Age** | 29d |
 | **Top-10 Holders** | 18.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

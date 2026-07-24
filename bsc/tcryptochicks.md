@@ -2,14 +2,14 @@
 token: TCryptochicks
 ticker: TCC
 network: bsc
-risk_score: 51
-status: high
+risk_score: 0
+status: low
 date: 2026-07-22
 ---
 
 # TCryptochicks (TCC) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tcryptochicks-bsc)
 
@@ -25,9 +25,16 @@ The FourERC20 contract implements a standard ERC-20 token, largely based on Open
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical implementation (7.2 Code Security) of the FourERC20 contract is robust, leveraging OpenZeppelin's well-audited ERC-20 standard. This includes built-in protections against common… |
-| **Governance / Economics** | 3/10 | High | The FourERC20 contract (7.4 Economic) is designed as a foundational ERC-20 token without inherent public minting or burning capabilities. This implies a fixed token supply if deployed directly, which… |
-| **Upgrades** | 5/10 | Medium | Based on the provided information, the contract is not deployed as a proxy (7.7 Upgrades) and is not designed to be upgradeable. This eliminates upgrade-related risks such as storage collisions… |
+| **Technical** | 10/10 | Low | The technical implementation (7.2 Code Security) of the FourERC20 contract is robust, leveraging OpenZeppelin's well-audited ERC-20 standard. This includes built-in protections against common… |
+| **Governance / Economics** | 8/10 | Low | The FourERC20 contract (7.4 Economic) is designed as a foundational ERC-20 token without inherent public minting or burning capabilities. This implies a fixed token supply if deployed directly, which… |
+| **Upgrades** | 10/10 | Low | Based on the provided information, the contract is not deployed as a proxy (7.7 Upgrades) and is not designed to be upgradeable. This eliminates upgrade-related risks such as storage collisions… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
+| **LP Locked** | 100.0% — Null Address |
 
 ## Security Findings
 
@@ -59,33 +66,33 @@ The contract leverages well-audited and widely adopted OpenZeppelin Contracts fo
 |--------|-------|
 | **Contract** | [`0xa439...4444`](https://bscscan.com/address/0xa4390b901a63641c92327e5793b45fcb46954444) |
 | **Network** | BNB Chain |
-| **Price** | $0.002365 |
-| **24h Volume** | $402.8K |
-| **Liquidity** | $206.4K |
-| **Volume / Liquidity** | 2.0× |
+| **Price** | $0.002428 |
+| **24h Volume** | $195.4K |
+| **Liquidity** | $209.2K |
+| **Volume / Liquidity** | 0.9× |
 | **Token Age** | 17d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 77.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2118 buys / 1586 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (5/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

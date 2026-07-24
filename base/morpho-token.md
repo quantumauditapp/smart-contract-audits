@@ -2,14 +2,14 @@
 token: Morpho Token
 ticker: MORPHO
 network: base
-risk_score: 76
-status: critical
+risk_score: 50
+status: high
 date: 2026-07-22
 ---
 
 # Morpho Token (MORPHO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 76/100 — 🔴 Critical Risk**
+> **Risk Score: 50/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/morpho-token-base)
 
@@ -25,9 +25,24 @@ This audit covers an ERC1967Proxy contract, which is a standard OpenZeppelin UUP
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 2/10 | High | The proxy contract (7.1 Architecture) utilizes well-vetted OpenZeppelin libraries for its core functionality, ensuring a high standard of code security for the proxy itself (7.2 Code Security).… |
+| **Technical** | 3/10 | High | The proxy contract (7.1 Architecture) utilizes well-vetted OpenZeppelin libraries for its core functionality, ensuring a high standard of code security for the proxy itself (7.2 Code Security).… |
 | **Governance / Economics** | 1/10 | High | Without access to the implementation contract's source code, the governance and economic models (7.4 Economic, 7.5 Governance) cannot be assessed. Specifically, the mechanism for authorizing upgrades… |
-| **Upgrades** | 4/10 | Medium | The contract employs the ERC-1967 (UUPS) proxy pattern (7.7 Upgrades), which is a robust standard for upgradeability. However, the control mechanism for authorizing upgrades resides within the… |
+| **Upgrades** | 1/10 | High | The contract employs the ERC-1967 (UUPS) proxy pattern (7.7 Upgrades), which is a robust standard for upgradeability. However, the control mechanism for authorizing upgrades resides within the… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Uups |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 69.4% |
+| **Top-3 Unlocked** | ⚠️ 83.3% |
 
 ## Security Findings
 
@@ -59,34 +74,34 @@ The pre-analysis notes indicate a 'non-standard storage layout' for the implemen
 |--------|-------|
 | **Contract** | [`0xbaa5...0842`](https://basescan.org/address/0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842) |
 | **Network** | Base |
-| **Price** | $2.0098 |
-| **24h Volume** | $559.4K |
-| **Liquidity** | $700.4K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $1.9700 |
+| **24h Volume** | $800.8K |
+| **Liquidity** | $483.8K |
+| **Volume / Liquidity** | 1.7× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 84.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1066 buys / 1313 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

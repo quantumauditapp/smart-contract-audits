@@ -2,14 +2,14 @@
 token: ViciCoin
 ticker: VCNT
 network: base
-risk_score: 70
+risk_score: 51
 status: high
 date: 2026-07-22
 ---
 
 # ViciCoin (VCNT) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vicicoin-base)
 
@@ -25,9 +25,25 @@ This audit covers a TransparentUpgradeableProxy contract, a standard OpenZeppeli
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The TransparentUpgradeableProxy contract itself is a robust and well-audited OpenZeppelin component (7.2 Code Security). It correctly implements the transparent proxy pattern, preventing selector… |
+| **Technical** | 7/10 | Low | The TransparentUpgradeableProxy contract itself is a robust and well-audited OpenZeppelin component (7.2 Code Security). It correctly implements the transparent proxy pattern, preventing selector… |
 | **Governance / Economics** | 1/10 | High | The contract's economic and governance security is heavily dependent on the administrative control (7.3 Access Control, 7.5 Governance). The proxy allows a single admin address to initiate upgrades… |
-| **Upgrades** | 5/10 | Medium | The contract utilizes the Transparent Proxy pattern for upgradeability (7.7 Upgrades), allowing the implementation logic to be changed. While the mechanism itself is standard, the unverified nature… |
+| **Upgrades** | 2/10 | High | The contract utilizes the Transparent Proxy pattern for upgradeability (7.7 Upgrades), allowing the implementation logic to be changed. While the mechanism itself is standard, the unverified nature… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Transparent |
+| **Admin** | OZ ProxyAdmin → Other-Contract |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 61.3% |
+| **Top-3 Unlocked** | ⚠️ 84.1% |
 
 ## Security Findings
 
@@ -66,12 +82,12 @@ The Transparent Proxy pattern explicitly prevents the admin address from directl
 |--------|-------|
 | **Contract** | [`0xdcf5...bfd0`](https://basescan.org/address/0xdcf5130274753c8050ab061b1a1dcbf583f5bfd0) |
 | **Network** | Base |
-| **Price** | $15.3000 |
-| **24h Volume** | $218.8K |
-| **Liquidity** | $176.2K |
-| **Volume / Liquidity** | 1.2× |
+| **Price** | $15.6200 |
+| **24h Volume** | $115.6K |
+| **Liquidity** | $179.6K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 82.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2675 buys / 2774 sells |
 
@@ -79,21 +95,21 @@ The Transparent Proxy pattern explicitly prevents the admin address from directl
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

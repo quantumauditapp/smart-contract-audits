@@ -2,14 +2,14 @@
 token: SolAngeles
 ticker: SOLANGELES
 network: solana
-risk_score: 32
-status: medium
+risk_score: 50
+status: high
 date: 2026-07-22
 ---
 
 # SolAngeles (SOLANGELES) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 32/100 — 🟡 Medium Risk**
+> **Risk Score: 50/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solangeles-sol)
 
@@ -26,8 +26,8 @@ The SolAngeles token mint is configured with both mint and freeze authorities re
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The SolAngeles token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked, ensuring no new tokens can be created and no existing accounts can be frozen. No transfer… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy market characteristics with $185,045 in liquidity and a 24-hour volume of $217,510, resulting in a normal Volume/Liquidity Ratio of 1.18. The pair has been active for 61… |
-| **Upgrades** | 8/10 | Low | The SolAngeles token mint has revoked its mint and freeze authorities, preventing any post-launch changes to supply or account freeze status. Key Token-2022 extensions like transfer hooks and… |
+| **Governance / Economics** | 2/10 | High | The token exhibits healthy market characteristics with $185,045 in liquidity and a 24-hour volume of $217,510, resulting in a normal Volume/Liquidity Ratio of 1.18. The pair has been active for 61… |
+| **Upgrades** | 5/10 | Medium | The SolAngeles token mint has revoked its mint and freeze authorities, preventing any post-launch changes to supply or account freeze status. Key Token-2022 extensions like transfer hooks and… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The SolAngeles token mint is configured with both mint and freeze authorities re
 |--------|-------|
 | **Contract** | [`8wxkvA...pump`](https://solscan.io/account/8wxkvAfEns76yBzu4MnbV7VnXWjg3iDPA9uwAQ6cpump) |
 | **Network** | Solana |
-| **Price** | $0.001844 |
-| **24h Volume** | $217.2K |
-| **Liquidity** | $183.8K |
-| **Volume / Liquidity** | 1.2× |
+| **Price** | $0.001852 |
+| **24h Volume** | $240.5K |
+| **Liquidity** | $184.7K |
+| **Volume / Liquidity** | 1.3× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 49.0% of supply |
+| **Top-10 Holders** | 48.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 940 buys / 843 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The SolAngeles token mint is configured with both mint and freeze authorities re
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: MEEP CAT
 ticker: MEEP
 network: solana
-risk_score: 34
-status: medium
+risk_score: 67
+status: high
 date: 2026-06-19
 ---
 
 # MEEP CAT (MEEP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 67/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/meep-cat-sol)
 
@@ -26,8 +26,8 @@ This audit of the MEEP CAT (MEEP) SPL Token Mint found no critical or high-sever
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The MEEP CAT token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account freezing. No… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits a healthy liquidity profile with $19,039 in total DEX liquidity, which is sufficient for moderate trading activity. The 24-hour volume of $3,180 results in a normal… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning no further tokens can be minted and no accounts can be frozen by an external party. The token does not utilize any Token-2022… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a healthy liquidity profile with $19,039 in total DEX liquidity, which is sufficient for moderate trading activity. The 24-hour volume of $3,180 results in a normal… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, meaning no further tokens can be minted and no accounts can be frozen by an external party. The token does not utilize any Token-2022… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ This audit of the MEEP CAT (MEEP) SPL Token Mint found no critical or high-sever
 |--------|-------|
 | **Contract** | [`8jvtfe...pump`](https://solscan.io/account/8jvtfeVTJQsrQ3L4kjQmRcXJ1iSFQMmkjkCqPUe3pump) |
 | **Network** | Solana |
-| **Price** | $0.0004162 |
-| **24h Volume** | $729.7K |
-| **Liquidity** | $56.8K |
-| **Volume / Liquidity** | 12.9× |
+| **Price** | $0.00001501 |
+| **24h Volume** | $1.6K |
+| **Liquidity** | $12.9K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 25.1% of supply |
+| **Top-10 Holders** | 64.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5604 buys / 4916 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ This audit of the MEEP CAT (MEEP) SPL Token Mint found no critical or high-sever
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

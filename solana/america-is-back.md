@@ -2,14 +2,14 @@
 token: America Is Back
 ticker: AMERICA
 network: solana
-risk_score: 21
-status: medium
+risk_score: 59
+status: high
 date: 2026-06-10
 ---
 
 # America Is Back (AMERICA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 21/100 — 🟡 Medium Risk**
+> **Risk Score: 59/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/america-is-back-sol)
 
@@ -26,8 +26,8 @@ The America Is Back (AMERICA) SPL Token Mint has revoked its Mint and Freeze aut
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens can be minted and no holder accounts can be frozen.… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits moderate liquidity at $32,931 USD, with a 24-hour trading volume of $1,859 USD. The Volume/Liquidity Ratio is 0.06, indicating normal trading patterns without signs of wash… |
-| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked, meaning the token's core parameters cannot be altered by an administrative key. Metadata is immutable, preventing changes to the token's… |
+| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity at $32,931 USD, with a 24-hour trading volume of $1,859 USD. The Volume/Liquidity Ratio is 0.06, indicating normal trading patterns without signs of wash… |
+| **Upgrades** | 5/10 | Medium | The Mint Authority and Freeze Authority are both revoked, meaning the token's core parameters cannot be altered by an administrative key. Metadata is immutable, preventing changes to the token's… |
 
 ## Token Metrics
 
@@ -35,21 +35,21 @@ The America Is Back (AMERICA) SPL Token Mint has revoked its Mint and Freeze aut
 |--------|-------|
 | **Contract** | [`AVA8Yu...pump`](https://solscan.io/account/AVA8YuCsD2YgUSpdv3Hb2cjpdf8XAhGwyXmchxwopump) |
 | **Network** | Solana |
-| **Price** | $0.001653 |
-| **24h Volume** | $1.09M |
-| **Liquidity** | $125.5K |
-| **Volume / Liquidity** | 8.7× |
+| **Price** | $0.00004353 |
+| **24h Volume** | $392 |
+| **Liquidity** | $24.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 15d |
-| **Top-10 Holders** | 15.4% of supply |
+| **Top-10 Holders** | 38.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,8 +58,8 @@ The America Is Back (AMERICA) SPL Token Mint has revoked its Mint and Freeze aut
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Balancer
 ticker: BAL
 network: ethereum
-risk_score: 29
+risk_score: 30
 status: medium
 date: 2026-07-23
 ---
 
 # Balancer (BAL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 29/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/balancer-eth)
 
@@ -25,9 +25,16 @@ This audit covers the provided Solidity source code for the `EnumerableSet` and 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical review of the `EnumerableSet` and `Address` libraries reveals robust and efficient implementations (7.2 Code Security). Both libraries are standard OpenZeppelin components, benefiting… |
-| **Governance / Economics** | 3/10 | High | As the provided source code consists solely of utility libraries (`EnumerableSet`, `Address`), there are no direct governance or economic mechanisms to assess (7.4 Economic, 7.5 Governance). The… |
-| **Upgrades** | 5/10 | Medium | The provided source code consists of utility libraries and the prefill indicates `is_proxy: false`, therefore, upgradeability mechanisms are not directly applicable to these components (7.7… |
+| **Technical** | 8/10 | Low | The technical review of the `EnumerableSet` and `Address` libraries reveals robust and efficient implementations (7.2 Code Security). Both libraries are standard OpenZeppelin components, benefiting… |
+| **Governance / Economics** | 4/10 | Medium | As the provided source code consists solely of utility libraries (`EnumerableSet`, `Address`), there are no direct governance or economic mechanisms to assess (7.4 Economic, 7.5 Governance). The… |
+| **Upgrades** | 3/10 | High | The provided source code consists of utility libraries and the prefill indicates `is_proxy: false`, therefore, upgradeability mechanisms are not directly applicable to these components (7.7… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | 25.6% |
+| **Top-3 Unlocked** | 55.0% |
 
 ## Security Findings
 
@@ -73,22 +80,22 @@ The library uses explicit type casting, such as `bytes32(uint256(value))` for `a
 |--------|-------|
 | **Contract** | [`0xba10...4e3d`](https://etherscan.io/address/0xba100000625a3754423978a60c9317c58a424e3d) |
 | **Network** | Ethereum |
-| **Price** | $0.1263 |
-| **24h Volume** | $590.6K |
-| **Liquidity** | $4.87M |
+| **Price** | $0.1231 |
+| **24h Volume** | $509.6K |
+| **Liquidity** | $4.78M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 66.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 155 buys / 382 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -96,9 +103,9 @@ The library uses explicit type casting, such as `bytes32(uint256(value))` for `a
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

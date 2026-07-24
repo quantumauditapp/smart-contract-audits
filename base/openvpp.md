@@ -2,14 +2,14 @@
 token: OpenVPP
 ticker: OVPP
 network: base
-risk_score: 36
-status: medium
+risk_score: 7
+status: low
 date: 2026-07-23
 ---
 
 # OpenVPP (OVPP) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 7/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/openvpp-base)
 
@@ -25,9 +25,16 @@ The OpenVPP token contract is a standard ERC20 implementation leveraging battle-
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The OpenVPP token contract is built upon battle-tested OpenZeppelin libraries (ERC20, ERC20Permit, Ownable2Step), ensuring a high level of code security (7.2). The architecture (7.1) is… |
+| **Technical** | 10/10 | Low | The OpenVPP token contract is built upon battle-tested OpenZeppelin libraries (ERC20, ERC20Permit, Ownable2Step), ensuring a high level of code security (7.2). The architecture (7.1) is… |
 | **Governance / Economics** | 7/10 | Low | The contract exhibits a centralized economic model (7.4) where the entire token supply is minted to a single treasury wallet at deployment, granting significant control over initial distribution.… |
-| **Upgrades** | 8/10 | Low | The OpenVPP contract is not designed as an upgradeable proxy (7.7). This simplifies its architecture by removing upgrade-related complexities and potential vulnerabilities, but also means that any… |
+| **Upgrades** | 9/10 | Low | The OpenVPP contract is not designed as an upgradeable proxy (7.7). This simplifies its architecture by removing upgrade-related complexities and potential vulnerabilities, but also means that any… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -59,22 +66,22 @@ The contract inherits `ERC20Permit`, which allows users to approve token transfe
 |--------|-------|
 | **Contract** | [`0x8c0d...9bdd`](https://basescan.org/address/0x8c0d3adcf8ce094e1ae437557ec90a6374dc9bdd) |
 | **Network** | Base |
-| **Price** | $0.003495 |
-| **24h Volume** | $221.8K |
-| **Liquidity** | $377.6K |
+| **Price** | $0.003535 |
+| **24h Volume** | $219.1K |
+| **Liquidity** | $379.3K |
 | **Volume / Liquidity** | 0.6× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 41.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1126 buys / 1254 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (4/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ✅ Pass |
-| No Mint Function | ⚠️ Unknown |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -82,9 +89,9 @@ The contract inherits `ERC20Permit`, which allows users to approve token transfe
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: chicken shrimp
 ticker: CS
 network: solana
-risk_score: 36
-status: medium
+risk_score: 73
+status: critical
 date: 2026-06-21
 ---
 
 # chicken shrimp (CS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 73/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chicken-shrimp-sol)
 
@@ -26,8 +26,8 @@ This Solana SPL Token Mint, "chicken shrimp (CS)", exhibits a robust security po
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account freezing. No Transfer… |
-| **Governance / Economics** | 6/10 | Medium | The token currently has a liquidity of $26,407 with a 24-hour trading volume of $46,253. The volume-to-liquidity ratio is 1.75, which is within normal parameters and does not suggest wash trading.… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are both revoked, meaning no further tokens can be minted and no accounts can be frozen. The token utilizes the Token-2022 program but does not have a Transfer… |
+| **Governance / Economics** | 1/10 | High | The token currently has a liquidity of $26,407 with a 24-hour trading volume of $46,253. The volume-to-liquidity ratio is 1.75, which is within normal parameters and does not suggest wash trading.… |
+| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are both revoked, meaning no further tokens can be minted and no accounts can be frozen. The token utilizes the Token-2022 program but does not have a Transfer… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ This Solana SPL Token Mint, "chicken shrimp (CS)", exhibits a robust security po
 |--------|-------|
 | **Contract** | [`9qwxah...pump`](https://solscan.io/account/9qwxahBxcgKyn5X7kZvkN7qxKZg6pkVD8Lo4URtopump) |
 | **Network** | Solana |
-| **Price** | $0.0003573 |
-| **24h Volume** | $407.5K |
-| **Liquidity** | $50.2K |
-| **Volume / Liquidity** | 8.1× |
+| **Price** | $0.00001424 |
+| **24h Volume** | $4.7K |
+| **Liquidity** | $12.9K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 28.7% of supply |
+| **Top-10 Holders** | 62.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 16276 buys / 10700 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ This Solana SPL Token Mint, "chicken shrimp (CS)", exhibits a robust security po
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Cronos
 ticker: CRO
 network: ethereum
-risk_score: 100
+risk_score: 80
 status: critical
 date: 2026-07-17
 ---
 
 # Cronos (CRO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 80/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cronos-eth)
 
@@ -25,16 +25,16 @@ This audit covers a standard ERC-20 token implementation with minting capabiliti
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract's architecture (7.1) is based on well-established OpenZeppelin patterns for ERC-20 and Ownable, which provides a solid foundation. `SafeMath` is correctly used throughout for arithmetic… |
+| **Technical** | 6/10 | Medium | The contract's architecture (7.1) is based on well-established OpenZeppelin patterns for ERC-20 and Ownable, which provides a solid foundation. `SafeMath` is correctly used throughout for arithmetic… |
 | **Governance / Economics** | 1/10 | High | The economic model (7.4) presents a high risk due to the centralized minting mechanism, which allows the contract owner to mint an unlimited supply of tokens until `finishMinting` is called. There is… |
-| **Upgrades** | 2/10 | High | The contract is not designed with an upgrade mechanism (7.7 Architecture), meaning its logic cannot be modified after deployment. This eliminates upgrade-related risks but also prevents future bug… |
+| **Upgrades** | 4/10 | Medium | The contract is not designed with an upgrade mechanism (7.7 Architecture), meaning its logic cannot be modified after deployment. This eliminates upgrade-related risks but also prevents future bug… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 59.9% |
-| **Top-3 Unlocked** | ⚠️ 82.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 64.5% |
+| **Top-3 Unlocked** | ⚠️ 85.9% |
 
 ## Security Findings
 
@@ -80,10 +80,10 @@ The contract lacks a mechanism to pause critical operations, such as token trans
 |--------|-------|
 | **Contract** | [`0xa0b7...450b`](https://etherscan.io/address/0xa0b73e1ff0b80914ab6fe0444e65848c4c34450b) |
 | **Network** | Ethereum |
-| **Price** | $0.05902 |
-| **24h Volume** | $163.4K |
-| **Liquidity** | $413.5K |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.0583 |
+| **24h Volume** | $16.3K |
+| **Liquidity** | $422.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
 | **Top-10 Holders** | 96.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

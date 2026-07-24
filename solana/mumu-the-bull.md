@@ -2,14 +2,14 @@
 token: Mumu the Bull
 ticker: MUMU
 network: solana
-risk_score: 44
-status: medium
+risk_score: 63
+status: high
 date: 2026-06-10
 ---
 
 # Mumu the Bull (MUMU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 63/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mumu-the-bull-sol)
 
@@ -26,8 +26,8 @@ The Mumu the Bull (MUMU) SPL token mint exhibits a strong security posture with 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Mumu the Bull (MUMU) token is implemented using the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, as confirmed by on-chain facts, preventing further… |
-| **Governance / Economics** | 4/10 | Medium | The token's economic profile shows a healthy liquidity of $80,790 USD and a normal 24-hour volume to liquidity ratio of 0.63, indicating no signs of wash trading. The DEX pair has been active for 32… |
-| **Upgrades** | 8/10 | Low | The Mumu the Bull token mint has a robust upgrade and mutability profile. Both the mint and freeze authorities are revoked, meaning no further changes can be made to the token's supply or account… |
+| **Governance / Economics** | 1/10 | High | The token's economic profile shows a healthy liquidity of $80,790 USD and a normal 24-hour volume to liquidity ratio of 0.63, indicating no signs of wash trading. The DEX pair has been active for 32… |
+| **Upgrades** | 5/10 | Medium | The Mumu the Bull token mint has a robust upgrade and mutability profile. Both the mint and freeze authorities are revoked, meaning no further changes can be made to the token's supply or account… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The Mumu the Bull (MUMU) SPL token mint exhibits a strong security posture with 
 |--------|-------|
 | **Contract** | [`hf34pZ...pump`](https://solscan.io/account/hf34pZHnV4entu9bdp4pFEmeKpivEUeSUhASgWopump) |
 | **Network** | Solana |
-| **Price** | $0.002795 |
-| **24h Volume** | $566.3K |
-| **Liquidity** | $114.6K |
-| **Volume / Liquidity** | 4.9× |
+| **Price** | $0.0008082 |
+| **24h Volume** | $3.5K |
+| **Liquidity** | $71.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 64.2% of supply |
+| **Top-10 Holders** | 60.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2865 buys / 2326 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The Mumu the Bull (MUMU) SPL token mint exhibits a strong security posture with 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

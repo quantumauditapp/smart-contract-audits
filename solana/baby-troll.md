@@ -2,14 +2,14 @@
 token: Baby Troll
 ticker: BABYTROLL
 network: solana
-risk_score: 30
-status: medium
+risk_score: 60
+status: high
 date: 2026-06-10
 ---
 
 # Baby Troll (BABYTROLL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 30/100 — 🟡 Medium Risk**
+> **Risk Score: 60/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/baby-troll-sol)
 
@@ -26,8 +26,8 @@ This audit of the Baby Troll (BABYTROLL) SPL Token Mint found no critical or hig
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Baby Troll (BABYTROLL) token operates on the spl-token-2022 program, indicating modern SPL token standards. Both the mint authority and freeze authority are revoked, which is a strong positive… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits moderate liquidity with $59,675 in total DEX liquidity, which is sufficient for smaller trades without severe slippage. The 24-hour volume is $37,952, resulting in a healthy… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities. The metadata is also not mutable, ensuring that the token name, symbol, or image cannot be… |
+| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $59,675 in total DEX liquidity, which is sufficient for smaller trades without severe slippage. The 24-hour volume is $37,952, resulting in a healthy… |
+| **Upgrades** | 5/10 | Medium | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities. The metadata is also not mutable, ensuring that the token name, symbol, or image cannot be… |
 
 ## Token Metrics
 
@@ -35,21 +35,21 @@ This audit of the Baby Troll (BABYTROLL) SPL Token Mint found no critical or hig
 |--------|-------|
 | **Contract** | [`6qdzMx...pump`](https://solscan.io/account/6qdzMx4c9rL2X3Ns3SwZ8uEo4zReDPjdXpAEmpo7pump) |
 | **Network** | Solana |
-| **Price** | $0.00165 |
-| **24h Volume** | $757.7K |
-| **Liquidity** | $136.1K |
-| **Volume / Liquidity** | 5.6× |
+| **Price** | $0.0001414 |
+| **24h Volume** | $8.6K |
+| **Liquidity** | $46.7K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 8d |
-| **Top-10 Holders** | 27.9% of supply |
+| **Top-10 Holders** | 33.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,8 +58,8 @@ This audit of the Baby Troll (BABYTROLL) SPL Token Mint found no critical or hig
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

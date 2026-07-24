@@ -2,14 +2,14 @@
 token: Worldcoin
 ticker: WLD
 network: ethereum
-risk_score: 66
-status: high
+risk_score: 41
+status: medium
 date: 2026-06-10
 ---
 
 # Worldcoin (WLD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/worldcoin-eth)
 
@@ -25,9 +25,16 @@ The WLD token contract implements a standard ERC20 token with additional logic f
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The WLD token contract demonstrates good technical quality, utilizing battle-tested OpenZeppelin libraries for ERC20 and Ownable2Step functionalities, which enhances code security (7.2 Code… |
-| **Governance / Economics** | 1/10 | High | The contract exhibits a high degree of centralization, primarily through the `owner` and `minter` roles (7.3 Access Control, 7.5 Governance). The owner can perform a one-time mint up to… |
-| **Upgrades** | 5/10 | Medium | The WLD contract is implemented as a standard, non-upgradeable token contract. It does not utilize proxy patterns (e.g., UUPS, Transparent) for upgradeability (7.7 Upgrades). This design choice… |
+| **Technical** | 8/10 | Low | The WLD token contract demonstrates good technical quality, utilizing battle-tested OpenZeppelin libraries for ERC20 and Ownable2Step functionalities, which enhances code security (7.2 Code… |
+| **Governance / Economics** | 4/10 | Medium | The contract exhibits a high degree of centralization, primarily through the `owner` and `minter` roles (7.3 Access Control, 7.5 Governance). The owner can perform a one-time mint up to… |
+| **Upgrades** | 7/10 | Low | The WLD contract is implemented as a standard, non-upgradeable token contract. It does not utilize proxy patterns (e.g., UUPS, Transparent) for upgradeability (7.7 Upgrades). This design choice… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 82.8% |
+| **Top-3 Unlocked** | ⚠️ 96.8% |
 
 ## Security Findings
 
@@ -66,12 +73,12 @@ The `setMinter` function allows the contract owner to update the `minter` addres
 |--------|-------|
 | **Contract** | [`0x163f...8753`](https://etherscan.io/address/0x163f8c2467924be0ae7b5347228cabf260318753) |
 | **Network** | Ethereum |
-| **Price** | $0.4144 |
-| **24h Volume** | $283.0K |
-| **Liquidity** | $277.1K |
-| **Volume / Liquidity** | 1.0× |
+| **Price** | $0.3834 |
+| **24h Volume** | $25.3K |
+| **Liquidity** | $300.1K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 69.7% of supply |
+| **Top-10 Holders** | 70.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 293 buys / 263 sells |
 

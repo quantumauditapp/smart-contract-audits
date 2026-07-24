@@ -2,14 +2,14 @@
 token: Jito Staked SOL
 ticker: JITOSOL
 network: base
-risk_score: 57
+risk_score: 62
 status: high
 date: 2026-07-22
 ---
 
 # Jito Staked SOL (JITOSOL) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 62/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jito-staked-sol-base)
 
@@ -25,9 +25,16 @@ The CrossChainERC20 contract implements a standard ERC20 token with specialized 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract is well-structured, inheriting from Solady's optimized ERC20 and Initializable contracts. It uses Solidity 0.8.28, benefiting from built-in overflow/underflow protection. Access control… |
-| **Governance / Economics** | 2/10 | High | The economic model of this token is highly centralized, as a single `_BRIDGE` address holds exclusive privileges to mint and burn tokens. This design introduces a significant single point of failure… |
-| **Upgrades** | 5/10 | Medium | The contract incorporates the `Initializable` pattern and correctly calls `_disableInitializers()` in its constructor, indicating an intent for use as an upgradeable implementation. However, the… |
+| **Technical** | 7/10 | Low | The contract is well-structured, inheriting from Solady's optimized ERC20 and Initializable contracts. It uses Solidity 0.8.28, benefiting from built-in overflow/underflow protection. Access control… |
+| **Governance / Economics** | 1/10 | High | The economic model of this token is highly centralized, as a single `_BRIDGE` address holds exclusive privileges to mint and burn tokens. This design introduces a significant single point of failure… |
+| **Upgrades** | 3/10 | High | The contract incorporates the `Initializable` pattern and correctly calls `_disableInitializers()` in its constructor, indicating an intent for use as an upgradeable implementation. However, the… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 50.5% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -66,12 +73,12 @@ The `_remoteToken` variable, a `bytes32` identifier, is intended to represent th
 |--------|-------|
 | **Contract** | [`0x97be...34de`](https://basescan.org/address/0x97be14dd8f994a5364573bc035d85309e7cb34de) |
 | **Network** | Base |
-| **Price** | $99.9400 |
-| **24h Volume** | $353.6K |
-| **Liquidity** | $11.01M |
+| **Price** | $100.3700 |
+| **24h Volume** | $315.2K |
+| **Liquidity** | $11.03M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 100.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 684 buys / 806 sells |
 
@@ -79,9 +86,9 @@ The `_remoteToken` variable, a `bytes32` identifier, is intended to represent th
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -89,9 +96,9 @@ The `_remoteToken` variable, a `bytes32` identifier, is intended to represent th
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

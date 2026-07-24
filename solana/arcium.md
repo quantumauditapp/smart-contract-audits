@@ -2,14 +2,14 @@
 token: Arcium
 ticker: ARX
 network: solana
-risk_score: 59
-status: high
+risk_score: 77
+status: critical
 date: 2026-06-23
 ---
 
 # Arcium (ARX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 77/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/arcium-sol)
 
@@ -27,7 +27,7 @@ The Arcium (ARX) SPL token mint has its mint and freeze authorities revoked, ind
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Arcium (ARX) token is an SPL token operating under the `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a healthy liquidity of $300,907 USD, with a very low 24-hour volume of $98 USD, resulting in a normal Volume/Liquidity Ratio of 0.00. The DEX pair has been active for 18 days… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply is fixed and accounts cannot be frozen. The token does not utilize Token-2022 extensions that introduce… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, meaning the token's supply is fixed and accounts cannot be frozen. The token does not utilize Token-2022 extensions that introduce… |
 
 ## Security Findings
 
@@ -45,22 +45,22 @@ The token's metadata is mutable, meaning its name, symbol, or image can be chang
 |--------|-------|
 | **Contract** | [`ARXwZk...DrFs`](https://solscan.io/account/ARXwZkNAtzPfdcoqQiduJn8EPv9fKiDfGn2KyggyDrFs) |
 | **Network** | Solana |
-| **Price** | $0.404 |
-| **24h Volume** | $1.21M |
-| **Liquidity** | $336.3K |
-| **Volume / Liquidity** | 3.6× |
+| **Price** | $0.1595 |
+| **24h Volume** | $323 |
+| **Liquidity** | $301.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 22h |
-| **Top-10 Holders** | 94.8% of supply |
+| **Top-10 Holders** | 92.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2891 buys / 3325 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,8 +69,8 @@ The token's metadata is mutable, meaning its name, symbol, or image can be chang
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

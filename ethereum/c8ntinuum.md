@@ -2,14 +2,14 @@
 token: c8ntinuum
 ticker: CTM
 network: ethereum
-risk_score: 59
+risk_score: 49
 status: high
 date: 2026-07-22
 ---
 
 # c8ntinuum (CTM) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/c8ntinuum-eth)
 
@@ -25,15 +25,15 @@ The CTM contract is an ERC20 token implementation utilizing OpenZeppelin's Acces
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The CTM contract (7.1 Architecture) is a standard ERC20 token with minting and burning functionality, built upon OpenZeppelin's secure libraries. The custom logic for minting includes a check against… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4 Economic) of CTM features a fixed maximum supply and a centralized minting authority. The `MINTER_ROLE` and `DEFAULT_ADMIN_ROLE` are controlled by a single hardcoded address… |
-| **Upgrades** | 5/10 | Medium | The CTM contract is not designed with an upgradeability pattern (7.7 Upgrades). This means that any future changes, bug fixes, or feature additions would necessitate a new contract deployment and a… |
+| **Technical** | 7/10 | Low | The CTM contract (7.1 Architecture) is a standard ERC20 token with minting and burning functionality, built upon OpenZeppelin's secure libraries. The custom logic for minting includes a check against… |
+| **Governance / Economics** | 3/10 | High | The economic model (7.4 Economic) of CTM features a fixed maximum supply and a centralized minting authority. The `MINTER_ROLE` and `DEFAULT_ADMIN_ROLE` are controlled by a single hardcoded address… |
+| **Upgrades** | 3/10 | High | The CTM contract is not designed with an upgradeability pattern (7.7 Upgrades). This means that any future changes, bug fixes, or feature additions would necessitate a new contract deployment and a… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 45.7% |
+| **Top-1 Unlocked Holder** | 45.6% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -73,22 +73,22 @@ The `MINTER_ROLE` has the exclusive authority to mint new `CTM` tokens up to the
 |--------|-------|
 | **Contract** | [`0xc8fb...8888`](https://etherscan.io/address/0xc8fb80fcc03f699c70ff0cc08c09106288888888) |
 | **Network** | Ethereum |
-| **Price** | $0.226 |
-| **24h Volume** | $2.04M |
-| **Liquidity** | $2.48M |
+| **Price** | $0.2282 |
+| **24h Volume** | $2.12M |
+| **Liquidity** | $2.50M |
 | **Volume / Liquidity** | 0.8× |
 | **Token Age** | 3mo |
 | **Top-10 Holders** | 15.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2422 buys / 2334 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -98,7 +98,7 @@ The `MINTER_ROLE` has the exclusive authority to mint new `CTM` tokens up to the
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

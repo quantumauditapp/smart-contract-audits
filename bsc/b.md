@@ -66,9 +66,9 @@ The `_init(string memory name_, string memory symbol_)` function, responsible fo
 |--------|-------|
 | **Contract** | [`0x6bdc...4444`](https://bscscan.com/address/0x6bdcce4a559076e37755a78ce0c06214e59e4444) |
 | **Network** | BNB Chain |
-| **Price** | $0.2051 |
-| **24h Volume** | $1.13M |
-| **Liquidity** | $2.43M |
+| **Price** | $0.1953 |
+| **24h Volume** | $1.18M |
+| **Liquidity** | $2.37M |
 | **Volume / Liquidity** | 0.5× |
 | **Token Age** | 1y |
 | **Top-10 Holders** | 10.9% of supply |

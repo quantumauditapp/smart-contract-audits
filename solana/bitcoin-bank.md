@@ -2,14 +2,14 @@
 token: Bitcoin Bank
 ticker: BTCBANK
 network: solana
-risk_score: 35
-status: medium
+risk_score: 67
+status: high
 date: 2026-06-10
 ---
 
 # Bitcoin Bank (BTCBANK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 35/100 — 🟡 Medium Risk**
+> **Risk Score: 67/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bitcoin-bank-sol)
 
@@ -26,8 +26,8 @@ The Bitcoin Bank (BTCBANK) SPL Token Mint exhibits a robust configuration with b
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Bitcoin Bank (BTCBANK) token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the mint authority and freeze authority have been revoked, preventing… |
-| **Governance / Economics** | 6/10 | Medium | DEX liquidity for BTCBANK is $16,198, which is above the very low liquidity threshold. The 24-hour volume of $12,983 results in a normal Volume/Liquidity Ratio of 0.80, not indicating wash trading.… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are permanently revoked, ensuring no future changes to supply or account freeze status. The token utilizes the spl-token-2022 program but does not have a… |
+| **Governance / Economics** | 1/10 | High | DEX liquidity for BTCBANK is $16,198, which is above the very low liquidity threshold. The 24-hour volume of $12,983 results in a normal Volume/Liquidity Ratio of 0.80, not indicating wash trading.… |
+| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are permanently revoked, ensuring no future changes to supply or account freeze status. The token utilizes the spl-token-2022 program but does not have a… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The Bitcoin Bank (BTCBANK) SPL Token Mint exhibits a robust configuration with b
 |--------|-------|
 | **Contract** | [`9s96G1...pump`](https://solscan.io/account/9s96G11xGsHczudfJqKQzQxzvubQgJXSySJ1wRgxpump) |
 | **Network** | Solana |
-| **Price** | $0.0004337 |
-| **24h Volume** | $220.2K |
-| **Liquidity** | $56.8K |
-| **Volume / Liquidity** | 3.9× |
+| **Price** | $0.00001605 |
+| **24h Volume** | $310 |
+| **Liquidity** | $12.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 15d |
-| **Top-10 Holders** | 37.3% of supply |
+| **Top-10 Holders** | 67.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2817 buys / 1914 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The Bitcoin Bank (BTCBANK) SPL Token Mint exhibits a robust configuration with b
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

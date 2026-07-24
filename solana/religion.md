@@ -2,14 +2,14 @@
 token: Religion
 ticker: RELIGION
 network: solana
-risk_score: 47
-status: high
+risk_score: 79
+status: critical
 date: 2026-06-18
 ---
 
 # Religion (RELIGION) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 79/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/religion-sol)
 
@@ -26,8 +26,8 @@ This Solana SPL Token Mint, Religion (RELIGION), demonstrates a robust security 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account states. No transfer… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits a healthy trading pattern with a 24-hour volume of $13,442 against a liquidity of $15,767, resulting in a normal Volume/Liquidity Ratio of 0.85. The DEX pair has been active for 27… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are fixed due to the revocation of both mint and freeze authorities. Key Token-2022 extensions, such as transfer hook and default account state frozen, are not enabled.… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a healthy trading pattern with a 24-hour volume of $13,442 against a liquidity of $15,767, resulting in a normal Volume/Liquidity Ratio of 0.85. The DEX pair has been active for 27… |
+| **Upgrades** | 5/10 | Medium | The token's core parameters are fixed due to the revocation of both mint and freeze authorities. Key Token-2022 extensions, such as transfer hook and default account state frozen, are not enabled.… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ This Solana SPL Token Mint, Religion (RELIGION), demonstrates a robust security 
 |--------|-------|
 | **Contract** | [`CkJZvv...pump`](https://solscan.io/account/CkJZvvWbwmiDepzrk71pq6gMXBfRVfUkhXR61iz3pump) |
 | **Network** | Solana |
-| **Price** | $0.00009945 |
-| **24h Volume** | $227.5K |
-| **Liquidity** | $23.7K |
-| **Volume / Liquidity** | 9.6× |
+| **Price** | $0.00001185 |
+| **24h Volume** | $1.1K |
+| **Liquidity** | $8.9K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 35.6% of supply |
+| **Top-10 Holders** | 59.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2070 buys / 1609 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ This Solana SPL Token Mint, Religion (RELIGION), demonstrates a robust security 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

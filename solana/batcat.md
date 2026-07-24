@@ -2,14 +2,14 @@
 token: BatCat
 ticker: BATCAT
 network: solana
-risk_score: 50
+risk_score: 68
 status: high
 date: 2026-07-13
 ---
 
 # BatCat (BATCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 68/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/batcat-sol)
 
@@ -26,8 +26,8 @@ The BatCat token mint exhibits a medium risk primarily due to its very recent DE
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The BatCat token is an SPL Token-2022 mint with a supply of 999,994,114.394773 tokens and 6 decimals. Both the mint authority and freeze authority are revoked, ensuring no new tokens can be minted… |
-| **Governance / Economics** | 4/10 | Medium | The DEX pair for BatCat was created only 3 days ago, which is a very short track record for assessing market dynamics and holder behavior. Current liquidity stands at $30,711, with a 24-hour volume… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the BatCat token have both been revoked, preventing any future changes to the token's supply or the ability to freeze accounts. The token's metadata is… |
+| **Governance / Economics** | 1/10 | High | The DEX pair for BatCat was created only 3 days ago, which is a very short track record for assessing market dynamics and holder behavior. Current liquidity stands at $30,711, with a 24-hour volume… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority for the BatCat token have both been revoked, preventing any future changes to the token's supply or the ability to freeze accounts. The token's metadata is… |
 
 ## Security Findings
 
@@ -45,22 +45,22 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`HCkhfd...pump`](https://solscan.io/account/HCkhfdDNF2dqMxxtL51AzgWU26MBNkUkEzGAHtqkpump) |
 | **Network** | Solana |
-| **Price** | $0.0001568 |
-| **24h Volume** | $133.0K |
-| **Liquidity** | $30.5K |
-| **Volume / Liquidity** | 4.4× |
+| **Price** | $0.0001222 |
+| **24h Volume** | $11.4K |
+| **Liquidity** | $28.2K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 40.9% of supply |
+| **Top-10 Holders** | 36.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 26131 buys / 29721 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,8 +69,8 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

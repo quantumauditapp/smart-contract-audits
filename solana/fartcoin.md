@@ -2,14 +2,14 @@
 token: Fartcoin
 ticker: FARTCOIN
 network: solana
-risk_score: 6
-status: low
+risk_score: 24
+status: medium
 date: 2026-07-10
 ---
 
 # Fartcoin (FARTCOIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 6/100 — 🟢 Low Risk**
+> **Risk Score: 24/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fartcoin-sol)
 
@@ -26,8 +26,8 @@ The Fartcoin SPL token mint exhibits a low-risk profile based on available on-ch
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is implemented using the standard `spl-token` program (v3) with 6 decimals. Both the mint authority and freeze authority are revoked, ensuring that no new tokens can be minted and no holder… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy liquidity with $6,354,417 in total DEX liquidity, supporting efficient trading. The 24-hour volume of $530,366 results in a normal Volume/Liquidity Ratio of 0.08… |
-| **Upgrades** | 8/10 | Low | The mint authority is revoked, meaning the token's supply is fixed and cannot be increased. Similarly, the freeze authority is revoked, preventing any entity from freezing token holder accounts. The… |
+| **Governance / Economics** | 2/10 | High | The token exhibits healthy liquidity with $6,354,417 in total DEX liquidity, supporting efficient trading. The 24-hour volume of $530,366 results in a normal Volume/Liquidity Ratio of 0.08… |
+| **Upgrades** | 5/10 | Medium | The mint authority is revoked, meaning the token's supply is fixed and cannot be increased. Similarly, the freeze authority is revoked, preventing any entity from freezing token holder accounts. The… |
 
 ## LP Distribution
 
@@ -41,22 +41,22 @@ The Fartcoin SPL token mint exhibits a low-risk profile based on available on-ch
 |--------|-------|
 | **Contract** | [`9BB6NF...pump`](https://solscan.io/account/9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump) |
 | **Network** | Solana |
-| **Price** | $0.1481 |
-| **24h Volume** | $713.3K |
-| **Liquidity** | $6.41M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.1357 |
+| **24h Volume** | $231.9K |
+| **Liquidity** | $6.09M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 32.3% of supply |
+| **Top-10 Holders** | 32.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 626 buys / 1100 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -65,8 +65,8 @@ The Fartcoin SPL token mint exhibits a low-risk profile based on available on-ch
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

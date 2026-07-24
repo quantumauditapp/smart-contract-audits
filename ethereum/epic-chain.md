@@ -2,14 +2,14 @@
 token: Epic Chain
 ticker: EPIC
 network: ethereum
-risk_score: 55
-status: high
+risk_score: 73
+status: critical
 date: 2026-07-23
 ---
 
 # Epic Chain (EPIC) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 73/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/epic-chain-eth)
 
@@ -25,9 +25,16 @@ The EpicToken contract implements an ERC20 token with burnable functionality and
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The technical implementation of the EpicToken contract is robust, utilizing well-audited OpenZeppelin libraries for ERC20, ERC20Burnable, and Ownable2Step functionalities. The access control… |
-| **Governance / Economics** | 4/10 | Medium | The contract establishes a clear governance structure with an `owner` (expected to be a multisig) and a `governor` role for minting. The `owner` has control over setting the `governor` and recovering… |
-| **Upgrades** | 6/10 | Medium | The EpicToken contract is not designed with upgradeability in mind (7.7 Upgrades). It is a standard, non-proxy implementation, meaning its logic cannot be modified post-deployment. This simplifies… |
+| **Technical** | 6/10 | Medium | The technical implementation of the EpicToken contract is robust, utilizing well-audited OpenZeppelin libraries for ERC20, ERC20Burnable, and Ownable2Step functionalities. The access control… |
+| **Governance / Economics** | 1/10 | High | The contract establishes a clear governance structure with an `owner` (expected to be a multisig) and a `governor` role for minting. The `owner` has control over setting the `governor` and recovering… |
+| **Upgrades** | 4/10 | Medium | The EpicToken contract is not designed with upgradeability in mind (7.7 Upgrades). It is a standard, non-proxy implementation, meaning its logic cannot be modified post-deployment. This simplifies… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 99.7% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -66,22 +73,22 @@ The contract constructor explicitly requires the `_initialOwner` to be a contrac
 |--------|-------|
 | **Contract** | [`0x9431...fc0e`](https://etherscan.io/address/0x94314a14df63779c99c0764a30e0cd22fa78fc0e) |
 | **Network** | Ethereum |
-| **Price** | $0.6073 |
-| **24h Volume** | $68.1K |
-| **Liquidity** | $116.0K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.6026 |
+| **24h Volume** | $34.8K |
+| **Liquidity** | $116.3K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 72.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 376 buys / 388 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ⚠️ Unknown |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -89,9 +96,9 @@ The contract constructor explicitly requires the `_initialOwner` to be a contrac
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: DeXe
 ticker: DEXE
 network: ethereum
-risk_score: 98
-status: critical
+risk_score: 60
+status: high
 date: 2026-07-12
 ---
 
 # DeXe (DEXE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 98/100 — 🔴 Critical Risk**
+> **Risk Score: 60/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dexe-eth)
 
@@ -25,9 +25,9 @@ The audit of the Dexe contract, an ERC20Burnable token, identified several areas
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The technical architecture leverages standard and well-audited OpenZeppelin libraries like `Ownable`, `ERC20Burnable`, and `SafeMath`, contributing to a solid foundation (7.1 Architecture, 7.2 Code… |
+| **Technical** | 8/10 | Low | The technical architecture leverages standard and well-audited OpenZeppelin libraries like `Ownable`, `ERC20Burnable`, and `SafeMath`, contributing to a solid foundation (7.1 Architecture, 7.2 Code… |
 | **Governance / Economics** | 1/10 | High | The economic model of the Dexe token, as an ERC20Burnable, appears standard, with constants defined for various token decimals. Access control is managed via the `Ownable` pattern, providing a clear… |
-| **Upgrades** | 4/10 | Medium | The provided Dexe contract is not implemented as an upgradeable proxy, meaning its logic cannot be directly modified after deployment. This eliminates risks associated with proxy upgrade mechanisms… |
+| **Upgrades** | 6/10 | Medium | The provided Dexe contract is not implemented as an upgradeable proxy, meaning its logic cannot be directly modified after deployment. This eliminates risks associated with proxy upgrade mechanisms… |
 
 ## LP Distribution
 
@@ -73,12 +73,12 @@ The `Address.isContract` function, used internally by `_functionCallWithValue`, 
 |--------|-------|
 | **Contract** | [`0xde4e...cbd6`](https://etherscan.io/address/0xde4ee8057785a7e8e800db58f9784845a5c2cbd6) |
 | **Network** | Ethereum |
-| **Price** | $42.1400 |
-| **24h Volume** | $1.23M |
-| **Liquidity** | $944.0K |
-| **Volume / Liquidity** | 1.3× |
+| **Price** | $3.8800 |
+| **24h Volume** | $879.8K |
+| **Liquidity** | $294.6K |
+| **Volume / Liquidity** | 3.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 98.6% of supply |
+| **Top-10 Holders** | 98.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1719 buys / 1690 sells |
 

@@ -2,14 +2,14 @@
 token: Hope This Moons Later
 ticker: HTML
 network: solana
-risk_score: 45
-status: medium
+risk_score: 69
+status: high
 date: 2026-06-21
 ---
 
 # Hope This Moons Later (HTML) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 69/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hope-this-moons-later-sol)
 
@@ -26,8 +26,8 @@ This SPL Token-2022 mint, "Hope This Moons Later (HTML)", presents a low-risk pr
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint with both the mint authority and freeze authority revoked, indicating a fixed supply and immutability of account states. No transfer hook is active, and the… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits a healthy liquidity of $13,211 USD, with a normal 24-hour volume to liquidity ratio of 0.48, suggesting organic trading activity. The DEX pair has been active for 205 days… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any further changes to the token's supply or account freezing capabilities. The metadata is immutable… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a healthy liquidity of $13,211 USD, with a normal 24-hour volume to liquidity ratio of 0.48, suggesting organic trading activity. The DEX pair has been active for 205 days… |
+| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any further changes to the token's supply or account freezing capabilities. The metadata is immutable… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ This SPL Token-2022 mint, "Hope This Moons Later (HTML)", presents a low-risk pr
 |--------|-------|
 | **Contract** | [`EhR8t2...pump`](https://solscan.io/account/EhR8t2Hd9KikSPiRHdHs8WidCLa3T1VEPFpnCsRRpump) |
 | **Network** | Solana |
-| **Price** | $0.00002744 |
-| **24h Volume** | $45.8K |
-| **Liquidity** | $13.1K |
-| **Volume / Liquidity** | 3.5× |
+| **Price** | $0.0000099 |
+| **24h Volume** | $287 |
+| **Liquidity** | $8.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | 50.8% of supply |
+| **Top-10 Holders** | 68.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 695 buys / 331 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ This SPL Token-2022 mint, "Hope This Moons Later (HTML)", presents a low-risk pr
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

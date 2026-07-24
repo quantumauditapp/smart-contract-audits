@@ -2,14 +2,14 @@
 token: The Final Form Bull
 ticker: CZ
 network: bsc
-risk_score: 72
-status: critical
+risk_score: 25
+status: medium
 date: 2026-07-22
 ---
 
 # The Final Form Bull (CZ) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 25/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-final-form-bull-bsc)
 
@@ -25,9 +25,16 @@ The `FourERC20` contract is a base ERC-20 implementation utilizing OpenZeppelin 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract leverages well-audited OpenZeppelin libraries for its core ERC-20 functionality, demonstrating good code security practices (7.2 Code Security). Standard functions like `transfer`… |
-| **Governance / Economics** | 2/10 | High | The contract, as a base ERC-20 implementation, does not include specific governance or economic mechanisms (7.5 Governance, 7.4 Economic). The primary economic risk stems from the absence of any… |
-| **Upgrades** | 4/10 | Medium | The contract is not designed with an upgrade mechanism (7.7 Upgrades), as indicated by `is_proxy: false`. This simplifies the architecture by removing upgrade-related complexities and risks, ensuring… |
+| **Technical** | 8/10 | Low | The contract leverages well-audited OpenZeppelin libraries for its core ERC-20 functionality, demonstrating good code security practices (7.2 Code Security). Standard functions like `transfer`… |
+| **Governance / Economics** | 5/10 | Medium | The contract, as a base ERC-20 implementation, does not include specific governance or economic mechanisms (7.5 Governance, 7.4 Economic). The primary economic risk stems from the absence of any… |
+| **Upgrades** | 9/10 | Low | The contract is not designed with an upgrade mechanism (7.7 Upgrades), as indicated by `is_proxy: false`. This simplifies the architecture by removing upgrade-related complexities and risks, ensuring… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
+| **LP Locked** | 100.0% — Null Address |
 
 ## Security Findings
 
@@ -66,33 +73,33 @@ The `_init` function, intended to set `_name` and `_symbol`, is internal and not
 |--------|-------|
 | **Contract** | [`0x7a84...4444`](https://bscscan.com/address/0x7a848a5a8169aa6a2f603d056a749f924f504444) |
 | **Network** | BNB Chain |
-| **Price** | $0.008244 |
-| **24h Volume** | $944.0K |
-| **Liquidity** | $440.2K |
-| **Volume / Liquidity** | 2.1× |
+| **Price** | $0.008201 |
+| **24h Volume** | $1.01M |
+| **Liquidity** | $440.8K |
+| **Volume / Liquidity** | 2.3× |
 | **Token Age** | 18d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 77.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4279 buys / 2994 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (5/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

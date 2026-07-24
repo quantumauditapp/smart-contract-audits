@@ -2,14 +2,14 @@
 token: Miu
 ticker: MIU
 network: solana
-risk_score: 53
-status: high
+risk_score: 81
+status: critical
 date: 2026-06-27
 ---
 
 # Miu (MIU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 81/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/miu-sol)
 
@@ -26,8 +26,8 @@ The audit of the Miu (Miu) SPL Token Mint identified a critical risk: an indepen
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The Miu (Miu) token is an SPL Token-2022 mint with both mint and freeze authorities revoked, indicating a fixed supply and immutable account states. It does not utilize a transfer hook, and new… |
-| **Governance / Economics** | 4/10 | Medium | The token has a total DEX liquidity of $31,788, which is relatively low and could lead to significant slippage for larger trades. The DEX pair is 17 days old, indicating a relatively new market with… |
-| **Upgrades** | 7/10 | Low | The mint authority and freeze authority for the Miu (Miu) token are both revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen. The token's metadata is immutable… |
+| **Governance / Economics** | 1/10 | High | The token has a total DEX liquidity of $31,788, which is relatively low and could lead to significant slippage for larger trades. The DEX pair is 17 days old, indicating a relatively new market with… |
+| **Upgrades** | 4/10 | Medium | The mint authority and freeze authority for the Miu (Miu) token are both revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen. The token's metadata is immutable… |
 
 ## Security Findings
 
@@ -45,22 +45,22 @@ An independent third-party risk registry classifies this token as high-risk base
 |--------|-------|
 | **Contract** | [`7LNFZc...pump`](https://solscan.io/account/7LNFZcNigZay5U9e2sq6n2Z4iM8BC2Dd53L14pwvpump) |
 | **Network** | Solana |
-| **Price** | $0.0001296 |
-| **24h Volume** | $153.7K |
-| **Liquidity** | $38.3K |
-| **Volume / Liquidity** | 4.0× |
+| **Price** | $0.00006812 |
+| **24h Volume** | $13.1K |
+| **Liquidity** | $29.9K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 47.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1262 buys / 1068 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,8 +69,8 @@ An independent third-party risk registry classifies this token as high-risk base
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

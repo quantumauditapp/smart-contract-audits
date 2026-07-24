@@ -2,14 +2,14 @@
 token: Nockchain
 ticker: NOCK
 network: base
-risk_score: 56
+risk_score: 52
 status: high
 date: 2026-06-10
 ---
 
 # Nockchain (NOCK) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 56/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/nockchain-base)
 
@@ -25,16 +25,16 @@ The Nock contract is an ERC-20 token designed for Nockchain integration, featuri
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Nock contract leverages battle-tested OpenZeppelin libraries (ERC20, Ownable), providing a strong base for code security (7.2). The logic for minting and burning is straightforward, with… |
-| **Governance / Economics** | 2/10 | High | The contract establishes clear access control (7.3) with an `Ownable` pattern, allowing the owner to update the critical `inbox` address. This provides a single point of control for managing the… |
-| **Upgrades** | 5/10 | Medium | The Nock contract is explicitly designed to be non-upgradeable, as stated in its documentation: "This contract is NOT upgradeable to ensure immutability of the token." This design choice eliminates… |
+| **Technical** | 7/10 | Low | The Nock contract leverages battle-tested OpenZeppelin libraries (ERC20, Ownable), providing a strong base for code security (7.2). The logic for minting and burning is straightforward, with… |
+| **Governance / Economics** | 4/10 | Medium | The contract establishes clear access control (7.3) with an `Ownable` pattern, allowing the owner to update the critical `inbox` address. This provides a single point of control for managing the… |
+| **Upgrades** | 4/10 | Medium | The Nock contract is explicitly designed to be non-upgradeable, as stated in its documentation: "This contract is NOT upgradeable to ensure immutability of the token." This design choice eliminates… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 46.0% |
-| **Top-3 Unlocked** | 75.2% |
+| **Top-1 Unlocked Holder** | ⚠️ 51.5% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -80,22 +80,22 @@ The `Nock` token overrides the standard ERC20 `decimals()` function to return 16
 |--------|-------|
 | **Contract** | [`0x9b5e...1722`](https://basescan.org/address/0x9b5e262cf9bb04869ab40b19af91d2dc85761722) |
 | **Network** | Base |
-| **Price** | $0.04957 |
-| **24h Volume** | $2.63M |
-| **Liquidity** | $1.41M |
-| **Volume / Liquidity** | 1.9× |
+| **Price** | $0.01619 |
+| **24h Volume** | $417.6K |
+| **Liquidity** | $808.4K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 25.0% of supply |
+| **Top-10 Holders** | 23.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1875 buys / 1606 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -105,7 +105,7 @@ The `Nock` token overrides the standard ERC20 `decimals()` function to return 16
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

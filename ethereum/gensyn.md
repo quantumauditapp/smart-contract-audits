@@ -2,14 +2,14 @@
 token: Gensyn
 ticker: AI
 network: ethereum
-risk_score: 87
+risk_score: 86
 status: critical
 date: 2026-06-10
 ---
 
 # Gensyn (AI) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 87/100 — 🔴 Critical Risk**
+> **Risk Score: 86/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gensyn-eth)
 
@@ -27,14 +27,14 @@ This audit focuses on an ERC1967Proxy contract, which is a standard UUPS proxy i
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The provided contract is a standard OpenZeppelin ERC1967Proxy, which is a battle-tested and secure proxy pattern (7.1 Architecture, 7.2 Code Security). It correctly implements delegatecall logic and… |
 | **Governance / Economics** | 1/10 | High | The UUPS proxy pattern delegates upgrade authorization to the implementation contract, meaning the governance and economic control over upgrades reside within the unverified implementation (7.5… |
-| **Upgrades** | 3/10 | High | The contract utilizes the UUPS (ERC-1967) proxy pattern, which is a robust and widely adopted upgrade mechanism (7.7 Upgrades). The proxy itself correctly handles the upgradeToAndCall logic. However… |
+| **Upgrades** | 1/10 | High | The contract utilizes the UUPS (ERC-1967) proxy pattern, which is a robust and widely adopted upgrade mechanism (7.7 Upgrades). The proxy itself correctly handles the upgradeToAndCall logic. However… |
 
 ## Proxy Upgrade Controls
 
 | Control | Value |
 |---------|-------|
 | **Proxy Type** | Eip1967 Uups |
-| **Implementation** | ⚠️ Unverified source |
+| **Implementation** | ✅ Verified source |
 | **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
@@ -88,20 +88,21 @@ The provided source code uses `pragma solidity ^0.8.22;` while the prefill data 
 |--------|-------|
 | **Contract** | [`0x4d70...8d48`](https://etherscan.io/address/0x4d7078ddd6ccfed2f85db5b7d3ff16828d378d48) |
 | **Network** | Ethereum |
-| **Price** | $0.03138 |
-| **24h Volume** | $231.1K |
-| **Liquidity** | $1.97M |
+| **Price** | $0.02501 |
+| **24h Volume** | $42.3K |
+| **Liquidity** | $517.2K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 85.8% of supply |
+| **Top-10 Holders** | 87.7% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
 
@@ -110,8 +111,8 @@ The provided source code uses `pragma solidity ^0.8.22;` while the prefill data 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 

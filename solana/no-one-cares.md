@@ -2,14 +2,14 @@
 token: NO ONE CARES
 ticker: KIM
 network: solana
-risk_score: 61
-status: high
+risk_score: 79
+status: critical
 date: 2026-07-22
 ---
 
 # NO ONE CARES (KIM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 79/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/no-one-cares-sol)
 
@@ -26,8 +26,8 @@ This SPL Token Mint is flagged as high-risk by an independent third-party regist
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token issuance or account freezing by any single entity.… |
-| **Governance / Economics** | 4/10 | Medium | Holder concentration is moderate, with the top 10 accounts holding 39.47% of the supply, which does not indicate extreme centralization. The total DEX liquidity stands at $35,724, which is sufficient… |
-| **Upgrades** | 7/10 | Low | The mint authority and freeze authority are both revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not utilize a transfer hook, and its upgradability for… |
+| **Governance / Economics** | 1/10 | High | Holder concentration is moderate, with the top 10 accounts holding 39.47% of the supply, which does not indicate extreme centralization. The total DEX liquidity stands at $35,724, which is sufficient… |
+| **Upgrades** | 4/10 | Medium | The mint authority and freeze authority are both revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not utilize a transfer hook, and its upgradability for… |
 
 ## Security Findings
 
@@ -45,22 +45,22 @@ An independent third-party risk registry classifies this token as high-risk base
 |--------|-------|
 | **Contract** | [`L8VV5T...pump`](https://solscan.io/account/L8VV5THQCh7oN37TwgVRRSVqb5FuPydXS9Roy1tpump) |
 | **Network** | Solana |
-| **Price** | $0.0001778 |
-| **24h Volume** | $127.6K |
-| **Liquidity** | $35.7K |
-| **Volume / Liquidity** | 3.6× |
+| **Price** | $0.0001724 |
+| **24h Volume** | $115.9K |
+| **Liquidity** | $35.5K |
+| **Volume / Liquidity** | 3.3× |
 | **Token Age** | 7d |
-| **Top-10 Holders** | 39.5% of supply |
+| **Top-10 Holders** | 40.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5301 buys / 3073 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,8 +69,8 @@ An independent third-party risk registry classifies this token as high-risk base
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

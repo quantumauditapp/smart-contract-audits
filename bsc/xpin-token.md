@@ -2,14 +2,14 @@
 token: XPIN Token
 ticker: XPIN
 network: bsc
-risk_score: 49
-status: high
+risk_score: 34
+status: medium
 date: 2026-07-22
 ---
 
 # XPIN Token (XPIN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 34/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/xpin-token-bsc)
 
@@ -25,9 +25,16 @@ The XPINToken contract is a standard ERC20 token implementation, inheriting from
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture (7.1) is robust, leveraging Solmate's battle-tested ERC20 implementation, which is known for its gas efficiency and security. Code security (7.2) is high, with careful use… |
-| **Governance / Economics** | 3/10 | High | The economic model (7.4) is that of a simple ERC20 token, with no complex internal economic mechanisms like staking, lending, or rebase. The initial supply is minted entirely to the deployer… |
-| **Upgrades** | 5/10 | Medium | The contract is not designed as an upgradeable proxy (7.7). It is a standard, non-upgradeable implementation, which eliminates risks associated with upgrade mechanisms such as proxy initialization… |
+| **Technical** | 10/10 | Low | The technical architecture (7.1) is robust, leveraging Solmate's battle-tested ERC20 implementation, which is known for its gas efficiency and security. Code security (7.2) is high, with careful use… |
+| **Governance / Economics** | 2/10 | High | The economic model (7.4) is that of a simple ERC20 token, with no complex internal economic mechanisms like staking, lending, or rebase. The initial supply is minted entirely to the deployer… |
+| **Upgrades** | 6/10 | Medium | The contract is not designed as an upgradeable proxy (7.7). It is a standard, non-upgradeable implementation, which eliminates risks associated with upgrade mechanisms such as proxy initialization… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -59,21 +66,21 @@ The `ERC20` contract utilizes `unchecked` blocks for arithmetic operations withi
 |--------|-------|
 | **Contract** | [`0xd955...31a6`](https://bscscan.com/address/0xd955c9ba56fb1ab30e34766e252a97ccce3d31a6) |
 | **Network** | BNB Chain |
-| **Price** | $0.001496 |
-| **24h Volume** | $757.1K |
-| **Liquidity** | $927.1K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.001468 |
+| **24h Volume** | $586.1K |
+| **Liquidity** | $915.4K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 11mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 80.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3931 buys / 4182 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -82,8 +89,8 @@ The `ERC20` contract utilizes `unchecked` blocks for arithmetic operations withi
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |

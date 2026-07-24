@@ -2,14 +2,14 @@
 token: The White Bull
 ticker: DAVID
 network: solana
-risk_score: 28
-status: medium
+risk_score: 96
+status: critical
 date: 2026-07-06
 ---
 
 # The White Bull (DAVID) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 28/100 — 🟡 Medium Risk**
+> **Risk Score: 96/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-white-bull-sol)
 
@@ -25,9 +25,16 @@ The White Bull (DAVID) is an SPL Token-2022 mint with both mint and freeze autho
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Key security features include the revocation of both Mint Authority and Freeze Authority, ensuring that no new tokens can be minted and no… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits a liquidity of $79,829 with a 24-hour volume of $71,967, resulting in a normal Volume/Liquidity Ratio of 0.90. The DEX pair has been active for 12 days. Holder concentration data… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are both revoked, preventing any further changes to the token's supply or the ability to freeze accounts. As an SPL Token-2022, it does not have a permanent… |
+| **Technical** | 4/10 | Medium | The token is implemented using the spl-token-2022 program. Key security features include the revocation of both Mint Authority and Freeze Authority, ensuring that no new tokens can be minted and no… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a liquidity of $79,829 with a 24-hour volume of $71,967, resulting in a normal Volume/Liquidity Ratio of 0.90. The DEX pair has been active for 12 days. Holder concentration data… |
+| **Upgrades** | 4/10 | Medium | The token's mint and freeze authorities are both revoked, preventing any further changes to the token's supply or the ability to freeze accounts. As an SPL Token-2022, it does not have a permanent… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Token Metrics
 
@@ -35,22 +42,22 @@ The White Bull (DAVID) is an SPL Token-2022 mint with both mint and freeze autho
 |--------|-------|
 | **Contract** | [`HULaBK...pump`](https://solscan.io/account/HULaBKR1eK3SA18FpfEav8Z2t7TJ1qEC775YHTLNpump) |
 | **Network** | Solana |
-| **Price** | $0.001314 |
-| **24h Volume** | $220.8K |
-| **Liquidity** | $94.9K |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $0.0007353 |
+| **24h Volume** | $29.9K |
+| **Liquidity** | $72.2K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 7d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 79.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1096 buys / 931 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +66,8 @@ The White Bull (DAVID) is an SPL Token-2022 mint with both mint and freeze autho
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Re Protocol reUSD
 ticker: REUSD
 network: ethereum
-risk_score: 96
+risk_score: 82
 status: critical
 date: 2026-06-20
 ---
 
 # Re Protocol reUSD (REUSD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 96/100 — 🔴 Critical Risk**
+> **Risk Score: 82/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/re-protocol-reusd-eth)
 
@@ -25,23 +25,23 @@ This audit covers an ERC1967Proxy contract, which utilizes OpenZeppelin's battle
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The contract utilizes battle-tested OpenZeppelin libraries for its proxy implementation, ensuring adherence to EIP-1967 standards and robust delegatecall mechanisms (7.1 Architecture, 7.2 Code… |
+| **Technical** | 4/10 | Medium | The contract utilizes battle-tested OpenZeppelin libraries for its proxy implementation, ensuring adherence to EIP-1967 standards and robust delegatecall mechanisms (7.1 Architecture, 7.2 Code… |
 | **Governance / Economics** | 1/10 | High | The proxy itself is a standard UUPS implementation, which delegates upgrade logic to the implementation contract, allowing for flexible governance models (7.5 Governance). The upgradeability… |
-| **Upgrades** | 2/10 | High | The contract correctly implements the UUPS proxy pattern using OpenZeppelin's `ERC1967Proxy` and `ERC1967Utils`, which is a well-established and secure standard for upgradeable contracts (7.7… |
+| **Upgrades** | 1/10 | High | The contract correctly implements the UUPS proxy pattern using OpenZeppelin's `ERC1967Proxy` and `ERC1967Utils`, which is a well-established and secure standard for upgradeable contracts (7.7… |
 
 ## Proxy Upgrade Controls
 
 | Control | Value |
 |---------|-------|
 | **Proxy Type** | Eip1967 Uups |
-| **Implementation** | ⚠️ Unverified source |
+| **Implementation** | ✅ Verified source |
 | **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 72.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -88,22 +88,22 @@ The `ERC1967Utils.upgradeToAndCall` function includes a check (`_checkNonPayable
 |--------|-------|
 | **Contract** | [`0x5086...0c72`](https://etherscan.io/address/0x5086bf358635b81d8c47c66d1c8b9e567db70c72) |
 | **Network** | Ethereum |
-| **Price** | $1.2300 |
-| **24h Volume** | $283.4K |
-| **Liquidity** | $1.53M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $1.0900 |
+| **24h Volume** | $64.2K |
+| **Liquidity** | $459.6K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 98.7% of supply |
+| **Top-10 Holders** | 98.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 15 buys / 14 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
 
@@ -112,8 +112,8 @@ The `ERC1967Utils.upgradeToAndCall` function includes a check (`_checkNonPayable
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 

@@ -2,14 +2,14 @@
 token: Coinbase Man
 ticker: BRIAN
 network: base
-risk_score: 30
+risk_score: 22
 status: medium
 date: 2026-07-22
 ---
 
 # Coinbase Man (BRIAN) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 30/100 — 🟡 Medium Risk**
+> **Risk Score: 22/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/coinbase-man-base)
 
@@ -26,15 +26,15 @@ This report is based on the provided contract address. No Solidity source code w
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | No contract source code was provided for technical analysis. Therefore, an assessment of architecture (7.1), code security (7.2), access control (7.3), and external interactions (7.6) could not be… |
-| **Governance / Economics** | 2/10 | High | No contract source code was provided, preventing an assessment of economic models (7.4) and governance mechanisms (7.5). Without code, it is impossible to evaluate potential economic exploits or… |
-| **Upgrades** | 8/10 | Low | No contract source code was provided, thus an analysis of upgradeability patterns (7.7) and operational procedures (7.8) could not be conducted. It is unknown if the contract is upgradeable or how… |
+| **Governance / Economics** | 3/10 | High | No contract source code was provided, preventing an assessment of economic models (7.4) and governance mechanisms (7.5). Without code, it is impossible to evaluate potential economic exploits or… |
+| **Upgrades** | 6/10 | Medium | No contract source code was provided, thus an analysis of upgradeability patterns (7.7) and operational procedures (7.8) could not be conducted. It is unknown if the contract is upgradeable or how… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 56.7% |
+| **Top-3 Unlocked** | ⚠️ 85.6% |
 
 ## Token Metrics
 
@@ -42,22 +42,22 @@ This report is based on the provided contract address. No Solidity source code w
 |--------|-------|
 | **Contract** | [`0xb200...b301`](https://basescan.org/address/0xb2000000000000000000007bf6d5cbb0e24cb301) |
 | **Network** | Base |
-| **Price** | $0.0003787 |
-| **24h Volume** | $187.8K |
-| **Liquidity** | $76.5K |
-| **Volume / Liquidity** | 2.5× |
+| **Price** | $0.0008293 |
+| **24h Volume** | $407.5K |
+| **Liquidity** | $115.2K |
+| **Volume / Liquidity** | 3.5× |
 | **Token Age** | 7d |
 | **Top-10 Holders** | 12.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1118 buys / 662 sells |
 
-## Security Flags (4/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -66,8 +66,8 @@ This report is based on the provided contract address. No Solidity source code w
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

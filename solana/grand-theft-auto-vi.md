@@ -2,14 +2,14 @@
 token: Grand Theft Auto VI
 ticker: GTAVI
 network: solana
-risk_score: 35
-status: medium
+risk_score: 53
+status: high
 date: 2026-06-23
 ---
 
 # Grand Theft Auto VI (GTAVI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 35/100 — 🟡 Medium Risk**
+> **Risk Score: 53/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/grand-theft-auto-vi-sol)
 
@@ -26,8 +26,8 @@ The Grand Theft Auto VI (GTAVI) SPL Token Mint exhibits strong security characte
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing any further token minting or freezing of holder accounts. There… |
-| **Governance / Economics** | 6/10 | Medium | The token has a total DEX liquidity of $83,938, with a 24-hour volume of $54,495. The Volume/Liquidity Ratio is 0.65, which is considered normal and does not indicate wash trading. The DEX pair has… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning no further changes can be made to the token's supply or account freeze status. Key Token-2022 extensions like transfer hooks are not… |
+| **Governance / Economics** | 2/10 | High | The token has a total DEX liquidity of $83,938, with a 24-hour volume of $54,495. The Volume/Liquidity Ratio is 0.65, which is considered normal and does not indicate wash trading. The DEX pair has… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, meaning no further changes can be made to the token's supply or account freeze status. Key Token-2022 extensions like transfer hooks are not… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The Grand Theft Auto VI (GTAVI) SPL Token Mint exhibits strong security characte
 |--------|-------|
 | **Contract** | [`EpVHyK...pump`](https://solscan.io/account/EpVHyKK8oxcLmp2C2NhAos1oDxgBNriw3wSLSozYpump) |
 | **Network** | Solana |
-| **Price** | $0.001407 |
-| **24h Volume** | $821.2K |
-| **Liquidity** | $112.0K |
-| **Volume / Liquidity** | 7.3× |
+| **Price** | $0.0008565 |
+| **24h Volume** | $124.3K |
+| **Liquidity** | $105.1K |
+| **Volume / Liquidity** | 1.2× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 23.2% of supply |
+| **Top-10 Holders** | 24.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6532 buys / 4928 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The Grand Theft Auto VI (GTAVI) SPL Token Mint exhibits strong security characte
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

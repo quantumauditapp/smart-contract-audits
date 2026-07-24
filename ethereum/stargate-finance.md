@@ -2,14 +2,14 @@
 token: Stargate Finance
 ticker: STG
 network: ethereum
-risk_score: 100
-status: critical
+risk_score: 66
+status: high
 date: 2026-06-10
 ---
 
 # Stargate Finance (STG) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/stargate-finance-eth)
 
@@ -25,9 +25,9 @@ The StargateToken contract is an ERC20 token with omnichain capabilities powered
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract leverages OpenZeppelin's battle-tested ERC20 and SafeMath for token operations, enhancing code security (7.2). It implements a standard lock/burn and mint/unlock mechanism for… |
+| **Technical** | 6/10 | Medium | The contract leverages OpenZeppelin's battle-tested ERC20 and SafeMath for token operations, enhancing code security (7.2). It implements a standard lock/burn and mint/unlock mechanism for… |
 | **Governance / Economics** | 1/10 | High | The contract employs an `Ownable` access control pattern, granting the owner significant power over critical functions such as pausing token transfers and setting destination contracts (7.3). This… |
-| **Upgrades** | 2/10 | High | The contract is deployed as a standard, non-upgradeable implementation (7.7). This design choice eliminates the complexities and risks associated with proxy upgrade mechanisms, such as storage… |
+| **Upgrades** | 6/10 | Medium | The contract is deployed as a standard, non-upgradeable implementation (7.7). This design choice eliminates the complexities and risks associated with proxy upgrade mechanisms, such as storage… |
 
 ## LP Distribution
 
@@ -80,22 +80,22 @@ The contract uses the Business Source License 1.1 (BUSL-1.1). This is a non-open
 |--------|-------|
 | **Contract** | [`0xaf51...2cd6`](https://etherscan.io/address/0xaf5191b0de278c7286d6c7cc6ab6bb8a73ba2cd6) |
 | **Network** | Ethereum |
-| **Price** | $0.404 |
-| **24h Volume** | $1.03M |
-| **Liquidity** | $1.08M |
-| **Volume / Liquidity** | 1.0× |
+| **Price** | $0.1383 |
+| **24h Volume** | $518 |
+| **Liquidity** | $14.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | 94.6% of supply |
+| **Top-10 Holders** | 93.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 561 buys / 393 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ❌ Fail |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -105,7 +105,7 @@ The contract uses the Business Source License 1.1 (BUSL-1.1). This is a non-open
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

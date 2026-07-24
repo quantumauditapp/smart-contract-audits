@@ -2,14 +2,14 @@
 token: 币安人生
 ticker: 币安人生
 network: bsc
-risk_score: 41
-status: medium
+risk_score: 0
+status: low
 date: 2026-07-22
 ---
 
 # 币安人生 (币安人生) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/token-bsc)
 
@@ -25,9 +25,16 @@ The FourERC20 contract is an implementation of the ERC-20 standard, largely base
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture (7.1) is sound, utilizing battle-tested OpenZeppelin patterns for ERC-20 implementation. Code security (7.2) is robust, with proper handling of integer arithmetic and… |
-| **Governance / Economics** | 3/10 | High | The contract itself does not implement any specific economic models (7.4) beyond standard ERC-20 token transfers, nor does it include any governance mechanisms (7.5). Its economic stability relies… |
-| **Upgrades** | 5/10 | Medium | The FourERC20 contract is not designed with explicit upgradeability features (7.7) such as proxy patterns. If this contract were to be used as an implementation in an upgradeable proxy system… |
+| **Technical** | 10/10 | Low | The technical architecture (7.1) is sound, utilizing battle-tested OpenZeppelin patterns for ERC-20 implementation. Code security (7.2) is robust, with proper handling of integer arithmetic and… |
+| **Governance / Economics** | 6/10 | Medium | The contract itself does not implement any specific economic models (7.4) beyond standard ERC-20 token transfers, nor does it include any governance mechanisms (7.5). Its economic stability relies… |
+| **Upgrades** | 10/10 | Low | The FourERC20 contract is not designed with explicit upgradeability features (7.7) such as proxy patterns. If this contract were to be used as an implementation in an upgradeable proxy system… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
+| **LP Locked** | 100.0% |
 
 ## Security Findings
 
@@ -59,33 +66,33 @@ The `approve` function, while compliant with the ERC-20 standard, is susceptible
 |--------|-------|
 | **Contract** | [`0x924f...4444`](https://bscscan.com/address/0x924fa68a0fc644485b8df8abfa0a41c2e7744444) |
 | **Network** | BNB Chain |
-| **Price** | $0.5962 |
-| **24h Volume** | $1.75M |
-| **Liquidity** | $7.56M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.6474 |
+| **24h Volume** | $1.08M |
+| **Liquidity** | $7.88M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 82.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4215 buys / 2390 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (5/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

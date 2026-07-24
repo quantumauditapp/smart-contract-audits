@@ -2,14 +2,14 @@
 token: Pointless Coin
 ticker: POINTLESS
 network: solana
-risk_score: 49
-status: high
+risk_score: 81
+status: critical
 date: 2026-07-15
 ---
 
 # Pointless Coin (POINTLESS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 81/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pointless-coin-sol)
 
@@ -26,8 +26,8 @@ This audit of the Pointless Coin (POINTLESS) SPL Token Mint identifies a medium 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Pointless Coin (POINTLESS) is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and unfreezable accounts. The token does not… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits very low liquidity, with total DEX liquidity at $16,694. The 24-hour volume is $102,008, resulting in a Volume/Liquidity Ratio of 6.11. Information regarding holder concentration… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the Pointless Coin token have both been revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not have a permanent… |
+| **Governance / Economics** | 1/10 | High | The token exhibits very low liquidity, with total DEX liquidity at $16,694. The 24-hour volume is $102,008, resulting in a Volume/Liquidity Ratio of 6.11. Information regarding holder concentration… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority for the Pointless Coin token have both been revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not have a permanent… |
 
 ## Security Findings
 
@@ -45,22 +45,22 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`D4pi5e...pump`](https://solscan.io/account/D4pi5eJNqT5mCzQcxAGfMavgVYLspfYkAQKKvQ8Xpump) |
 | **Network** | Solana |
-| **Price** | $0.00003808 |
-| **24h Volume** | $102.0K |
-| **Liquidity** | $16.7K |
-| **Volume / Liquidity** | 6.1× |
+| **Price** | $0.00001141 |
+| **24h Volume** | $2.2K |
+| **Liquidity** | $9.2K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 43.9% of supply |
+| **Top-10 Holders** | 69.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1303 buys / 1708 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,8 +69,8 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

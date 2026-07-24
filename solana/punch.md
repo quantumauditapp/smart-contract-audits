@@ -2,14 +2,14 @@
 token: パンチ
 ticker: PUNCH
 network: solana
-risk_score: 32
-status: medium
+risk_score: 50
+status: high
 date: 2026-07-22
 ---
 
 # パンチ (PUNCH) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 32/100 — 🟡 Medium Risk**
+> **Risk Score: 50/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/punch-sol)
 
@@ -26,8 +26,8 @@ The token mint for パンチ (Punch) is configured with revoked mint and freeze 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The パンチ (Punch) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be created and no existing accounts can be frozen. The… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy DEX liquidity at $225,462 USD, with a normal 24-hour volume to liquidity ratio of 0.54. The DEX pair has been active for 167 days, providing a reasonable track record.… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and account freezing capabilities are immutable. No mutable metadata or upgradable transfer fee/hook extensions… |
+| **Governance / Economics** | 2/10 | High | The token exhibits healthy DEX liquidity at $225,462 USD, with a normal 24-hour volume to liquidity ratio of 0.54. The DEX pair has been active for 167 days, providing a reasonable track record.… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, meaning the token's supply and account freezing capabilities are immutable. No mutable metadata or upgradable transfer fee/hook extensions… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The token mint for パンチ (Punch) is configured with revoked mint and freeze 
 |--------|-------|
 | **Contract** | [`NV2RYH...pump`](https://solscan.io/account/NV2RYH954cTJ3ckFUpvfqaQXU4ARqqDH3562nFSpump) |
 | **Network** | Solana |
-| **Price** | $0.001074 |
-| **24h Volume** | $124.9K |
-| **Liquidity** | $223.8K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.00117 |
+| **24h Volume** | $270.5K |
+| **Liquidity** | $234.7K |
+| **Volume / Liquidity** | 1.2× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 31.4% of supply |
+| **Top-10 Holders** | 30.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 583 buys / 697 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The token mint for パンチ (Punch) is configured with revoked mint and freeze 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

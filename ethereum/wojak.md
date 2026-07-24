@@ -2,14 +2,14 @@
 token: wojak
 ticker: WOJAK
 network: ethereum
-risk_score: 30
+risk_score: 32
 status: medium
 date: 2026-06-10
 ---
 
 # wojak (WOJAK) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 30/100 — 🟡 Medium Risk**
+> **Risk Score: 32/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wojak-eth)
 
@@ -87,12 +87,13 @@ Several owner-controlled functions that modify critical parameters, such as `set
 |--------|-------|
 | **Contract** | [`0x8de3...31ef`](https://etherscan.io/address/0x8de39b057cc6522230ab19c0205080a8663331ef) |
 | **Network** | Ethereum |
-| **Price** | $0.00000014 |
-| **24h Volume** | $1.05M |
-| **Liquidity** | $1.31M |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.00000007 |
+| **24h Volume** | $190.3K |
+| **Liquidity** | $889.0K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 37.4% of supply |
+| **Top-10 Holders** | 38.8% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
 ## Security Flags (5/5 passed)
 

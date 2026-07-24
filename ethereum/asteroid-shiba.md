@@ -101,12 +101,12 @@ The Uniswap V2 Router address (0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D) is ha
 |--------|-------|
 | **Contract** | [`0xf280...4126`](https://etherscan.io/address/0xf280b16ef293d8e534e370794ef26bf312694126) |
 | **Network** | Ethereum |
-| **Price** | $0.0001635 |
-| **24h Volume** | $18.72M |
-| **Liquidity** | $2.55M |
-| **Volume / Liquidity** | 7.3× |
+| **Price** | $0.00006393 |
+| **24h Volume** | $1.07M |
+| **Liquidity** | $1.82M |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 13.7% of supply |
+| **Top-10 Holders** | 16.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5742 buys / 4731 sells |
 

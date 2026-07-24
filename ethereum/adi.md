@@ -2,14 +2,14 @@
 token: ADI
 ticker: ADI
 network: ethereum
-risk_score: 64
-status: high
+risk_score: 27
+status: medium
 date: 2026-07-13
 ---
 
 # ADI (ADI) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 64/100 — 🟠 High Risk**
+> **Risk Score: 27/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/adi-eth)
 
@@ -25,9 +25,17 @@ Automated review assessed the protocol architecture, upgrade controls, and exter
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | Architecture (7.1) is modular, separating storage, strategy, and interface layers to contain faults and align with standards like ERC-20. Code security (7.2) is mostly solid with input validation and… |
-| **Governance / Economics** | 1/10 | High | Economic design (7.4) uses capped emissions and fee ceilings, and rate limits reduce flash-loan sensitivity. However, reward curves still depend on liquidity timing, and unbounded parameter changes… |
-| **Upgrades** | 3/10 | High | Upgrade lifecycle (7.7) follows proxy standards and initializer versioning, which reduces accidental state resets. Still, upgrades can be executed without delay and rollback testing is limited… |
+| **Technical** | 9/10 | Low | Architecture (7.1) is modular, separating storage, strategy, and interface layers to contain faults and align with standards like ERC-20. Code security (7.2) is mostly solid with input validation and… |
+| **Governance / Economics** | 2/10 | High | Economic design (7.4) uses capped emissions and fee ceilings, and rate limits reduce flash-loan sensitivity. However, reward curves still depend on liquidity timing, and unbounded parameter changes… |
+| **Upgrades** | 1/10 | High | Upgrade lifecycle (7.7) follows proxy standards and initializer versioning, which reduces accidental state resets. Still, upgrades can be executed without delay and rollback testing is limited… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Uups |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
@@ -42,8 +50,8 @@ Automated review assessed the protocol architecture, upgrade controls, and exter
 |--------|-------|
 | **Contract** | [`0x8b14...caea`](https://etherscan.io/address/0x8b1484d57abbe239bb280661377363b03c89caea) |
 | **Network** | Ethereum |
-| **Price** | $6.9700 |
-| **24h Volume** | $805.7K |
+| **Price** | $6.9600 |
+| **24h Volume** | $834.0K |
 | **Liquidity** | $2.79M |
 | **Volume / Liquidity** | 0.3× |
 | **Token Age** | 6mo |
@@ -51,12 +59,12 @@ Automated review assessed the protocol architecture, upgrade controls, and exter
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 889 buys / 666 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
@@ -66,7 +74,7 @@ Automated review assessed the protocol architecture, upgrade controls, and exter
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |

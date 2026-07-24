@@ -2,14 +2,14 @@
 token: Arcium
 ticker: ARX
 network: bsc
-risk_score: 100
+risk_score: 87
 status: critical
 date: 2026-07-22
 ---
 
 # Arcium (ARX) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 87/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/arcium-bsc)
 
@@ -25,9 +25,16 @@ The PeerToken contract implements an ERC20 token with minting and burning capabi
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 1/10 | High | The contract leverages OpenZeppelin libraries for ERC20 and Ownable functionalities, which is a good practice for code security (7.2). Custom error messages are also implemented, enhancing user… |
+| **Technical** | 3/10 | High | The contract leverages OpenZeppelin libraries for ERC20 and Ownable functionalities, which is a good practice for code security (7.2). Custom error messages are also implemented, enhancing user… |
 | **Governance / Economics** | 1/10 | High | The contract implements a two-tiered access control system with an `owner` and a `minter` (7.3). The `owner` has the power to set the `minter`, and the `minter` can mint an arbitrary amount of tokens… |
-| **Upgrades** | 3/10 | High | The PeerToken contract is not designed with upgradeability features (7.7). This means its logic is immutable once deployed, eliminating risks associated with proxy patterns or upgrade mechanisms. Any… |
+| **Upgrades** | 2/10 | High | The PeerToken contract is not designed with upgradeability features (7.7). This means its logic is immutable once deployed, eliminating risks associated with proxy patterns or upgrade mechanisms. Any… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -80,12 +87,12 @@ The `_update` function is explicitly declared with `override(ERC20, BaseToken)`,
 |--------|-------|
 | **Contract** | [`0xd5f6...a715`](https://bscscan.com/address/0xd5f6ef5deabe61e6d5cdb49bfb6f156f2c1ca715) |
 | **Network** | BNB Chain |
-| **Price** | $0.1662 |
-| **24h Volume** | $51.4K |
-| **Liquidity** | $23.1K |
-| **Volume / Liquidity** | 2.2× |
+| **Price** | $0.1593 |
+| **24h Volume** | $66.5K |
+| **Liquidity** | $23.0K |
+| **Volume / Liquidity** | 2.9× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 87.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 680 buys / 579 sells |
 
@@ -93,9 +100,9 @@ The `_update` function is explicitly declared with `override(ERC20, BaseToken)`,
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -103,9 +110,9 @@ The `_update` function is explicitly declared with `override(ERC20, BaseToken)`,
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

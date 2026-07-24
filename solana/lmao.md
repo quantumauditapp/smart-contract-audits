@@ -2,14 +2,14 @@
 token: LMAO!
 ticker: LMAO!
 network: solana
-risk_score: 26
+risk_score: 44
 status: medium
 date: 2026-06-10
 ---
 
 # LMAO! (LMAO!) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 26/100 — 🟡 Medium Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lmao-sol)
 
@@ -26,8 +26,8 @@ The LMAO! SPL token mint exhibits a low-risk profile with both mint and freeze a
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The LMAO! token is an SPL Token Program v3 asset with its mint authority revoked, ensuring no new tokens can be minted beyond the current supply of 999,659,221.527496 LMAO!. The freeze authority is… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits healthy market dynamics with $219,208 in DEX liquidity and a 24-hour volume of $54,313, resulting in a normal Volume/Liquidity Ratio of 0.25. The DEX pair has been active for 266… |
-| **Upgrades** | 8/10 | Low | The LMAO! token mint has both its mint and freeze authorities permanently revoked, preventing any future changes to supply or account freeze status. The metadata is immutable, ensuring the token's… |
+| **Governance / Economics** | 3/10 | High | The token exhibits healthy market dynamics with $219,208 in DEX liquidity and a 24-hour volume of $54,313, resulting in a normal Volume/Liquidity Ratio of 0.25. The DEX pair has been active for 266… |
+| **Upgrades** | 5/10 | Medium | The LMAO! token mint has both its mint and freeze authorities permanently revoked, preventing any future changes to supply or account freeze status. The metadata is immutable, ensuring the token's… |
 
 ## Token Metrics
 
@@ -35,21 +35,21 @@ The LMAO! SPL token mint exhibits a low-risk profile with both mint and freeze a
 |--------|-------|
 | **Contract** | [`H74CYm...pump`](https://solscan.io/account/H74CYmXgMkYHYuSRsZt6RJb4NYp2u72Vw8BS5huApump) |
 | **Network** | Solana |
-| **Price** | $0.002858 |
-| **24h Volume** | $362.8K |
-| **Liquidity** | $249.3K |
-| **Volume / Liquidity** | 1.5× |
+| **Price** | $0.003241 |
+| **24h Volume** | $110.6K |
+| **Liquidity** | $260.6K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | 23.5% of supply |
+| **Top-10 Holders** | 21.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,8 +58,8 @@ The LMAO! SPL token mint exhibits a low-risk profile with both mint and freeze a
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

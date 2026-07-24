@@ -2,14 +2,14 @@
 token: RE
 ticker: RE
 network: ethereum
-risk_score: 95
+risk_score: 81
 status: critical
 date: 2026-06-22
 ---
 
 # RE (RE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 95/100 — 🔴 Critical Risk**
+> **Risk Score: 81/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/re-eth)
 
@@ -27,23 +27,23 @@ Implement robust access control, ideally with a multi-signature wallet and/or a 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The `ERC1967Proxy` contract leverages battle-tested OpenZeppelin libraries, providing a robust and secure proxy architecture (7.1 Architecture, 7.2 Code Security). The proxy correctly implements the… |
+| **Technical** | 6/10 | Medium | The `ERC1967Proxy` contract leverages battle-tested OpenZeppelin libraries, providing a robust and secure proxy architecture (7.1 Architecture, 7.2 Code Security). The proxy correctly implements the… |
 | **Governance / Economics** | 1/10 | High | The proxy itself does not contain governance or economic logic; these aspects reside entirely within the unverified implementation contract (7.4 Economic, 7.5 Governance). Without visibility into the… |
-| **Upgrades** | 3/10 | High | The contract utilizes the UUPS proxy pattern, which is a well-established and secure upgrade mechanism (7.7 Upgrades). The `ERC1967Utils` library correctly handles implementation slot updates and… |
+| **Upgrades** | 1/10 | High | The contract utilizes the UUPS proxy pattern, which is a well-established and secure upgrade mechanism (7.7 Upgrades). The `ERC1967Utils` library correctly handles implementation slot updates and… |
 
 ## Proxy Upgrade Controls
 
 | Control | Value |
 |---------|-------|
 | **Proxy Type** | Eip1967 Uups |
-| **Implementation** | ⚠️ Unverified source |
+| **Implementation** | ✅ Verified source |
 | **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -83,21 +83,21 @@ The contract heavily relies on OpenZeppelin's battle-tested `ERC1967Proxy`, `Pro
 |--------|-------|
 | **Contract** | [`0x5265...8143`](https://etherscan.io/address/0x526526528f35ac738177003b8773b402b8df8143) |
 | **Network** | Ethereum |
-| **Price** | $0.8221 |
-| **24h Volume** | $392.6K |
-| **Liquidity** | $896.9K |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.4717 |
+| **24h Volume** | $4.8K |
+| **Liquidity** | $1.7K |
+| **Volume / Liquidity** | 2.9× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 98.3% of supply |
+| **Top-10 Holders** | 97.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 261 buys / 1586 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
@@ -107,7 +107,7 @@ The contract heavily relies on OpenZeppelin's battle-tested `ERC1967Proxy`, `Pro
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |

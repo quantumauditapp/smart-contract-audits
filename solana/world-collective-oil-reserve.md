@@ -2,14 +2,14 @@
 token: World Collective Oil Reserve
 ticker: WCOR
 network: solana
-risk_score: 21
-status: medium
+risk_score: 54
+status: high
 date: 2026-06-10
 ---
 
 # World Collective Oil Reserve (WCOR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 21/100 — 🟡 Medium Risk**
+> **Risk Score: 54/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-collective-oil-reserve-sol)
 
@@ -26,8 +26,8 @@ This audit of the World Collective Oil Reserve (WCOR) SPL token mint found no cr
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The WCOR token operates on the classic `spl-token` program. A key security strength is that both the Mint Authority and Freeze Authority are revoked, meaning no new tokens can be minted and no holder… |
-| **Governance / Economics** | 7/10 | Low | DEX market data indicates a total liquidity of $33,429, which is above the threshold for very low liquidity. The 24-hour trading volume is $322, resulting in a normal Volume/Liquidity Ratio of 0.01… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both Mint and Freeze authorities. This means the token supply cannot be increased, and the ability to freeze accounts is permanently… |
+| **Governance / Economics** | 2/10 | High | DEX market data indicates a total liquidity of $33,429, which is above the threshold for very low liquidity. The 24-hour trading volume is $322, resulting in a normal Volume/Liquidity Ratio of 0.01… |
+| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable due to the revocation of both Mint and Freeze authorities. This means the token supply cannot be increased, and the ability to freeze accounts is permanently… |
 
 ## Token Metrics
 
@@ -35,21 +35,21 @@ This audit of the World Collective Oil Reserve (WCOR) SPL token mint found no cr
 |--------|-------|
 | **Contract** | [`WCoRVx...NAzM`](https://solscan.io/account/WCoRVxGcpiwE6EvtDjXHJq6Kcn4nWT9Ubt1PrJHNAzM) |
 | **Network** | Solana |
-| **Price** | $0.01186 |
-| **24h Volume** | $479.4K |
-| **Liquidity** | $318.2K |
-| **Volume / Liquidity** | 1.5× |
+| **Price** | $0.0001692 |
+| **24h Volume** | $595 |
+| **Liquidity** | $38.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 21d |
-| **Top-10 Holders** | 19.2% of supply |
+| **Top-10 Holders** | 23.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,8 +58,8 @@ This audit of the World Collective Oil Reserve (WCOR) SPL token mint found no cr
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

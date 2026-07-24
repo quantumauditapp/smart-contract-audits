@@ -2,14 +2,14 @@
 token: ttt
 ticker: TTTT
 network: solana
-risk_score: 69
-status: high
+risk_score: 87
+status: critical
 date: 2026-06-10
 ---
 
 # ttt (TTTT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 69/100 — 🟠 High Risk**
+> **Risk Score: 87/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ttt-sol)
 
@@ -25,9 +25,9 @@ This SPL token mint exhibits a high risk due to very low liquidity, which can le
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The token is implemented using the standard `spl-token` program. Both the Mint Authority and Freeze Authority are revoked, meaning no new tokens can be minted and no accounts can be frozen. The token… |
+| **Technical** | 4/10 | Medium | The token is implemented using the standard `spl-token` program. Both the Mint Authority and Freeze Authority are revoked, meaning no new tokens can be minted and no accounts can be frozen. The token… |
 | **Governance / Economics** | 1/10 | High | The token's economic stability is significantly impacted by its very low DEX liquidity, currently at $7,759 USD. This level of liquidity suggests that even small trades could experience substantial… |
-| **Upgrades** | 6/10 | Medium | The token's upgradeability risk is low as both the Mint Authority and Freeze Authority are revoked, preventing any future changes to the token supply or account freezing capabilities. Metadata is… |
+| **Upgrades** | 4/10 | Medium | The token's upgradeability risk is low as both the Mint Authority and Freeze Authority are revoked, preventing any future changes to the token supply or account freezing capabilities. Metadata is… |
 
 ## Security Findings
 
@@ -50,16 +50,16 @@ Total DEX liquidity is $7,759. Slippage will be severe; large positions cannot b
 | **Liquidity** | $42.8K |
 | **Volume / Liquidity** | 1.4× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 72.3% of supply |
+| **Top-10 Holders** | 81.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,8 +68,8 @@ Total DEX liquidity is $7,759. Slippage will be severe; large positions cannot b
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

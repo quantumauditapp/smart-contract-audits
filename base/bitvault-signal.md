@@ -2,14 +2,14 @@
 token: BitVault Signal
 ticker: BV7X
 network: base
-risk_score: 55
-status: high
+risk_score: 32
+status: medium
 date: 2026-06-10
 ---
 
 # BitVault Signal (BV7X) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 32/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bitvault-signal-base)
 
@@ -25,9 +25,9 @@ The ClankerToken contract implements an ERC20 token with extensions for burning,
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract demonstrates strong technical foundations by inheriting from well-audited OpenZeppelin ERC20 extensions (ERC20Burnable, ERC20Permit, ERC20Votes), which minimizes common code-level… |
-| **Governance / Economics** | 1/10 | High | The contract's economic model relies on a fixed initial supply on a specific chain, with subsequent supply adjustments managed by the `SUPERCHAIN_TOKEN_BRIDGE` for cross-chain transfers (7.4… |
-| **Upgrades** | 8/10 | Low | The ClankerToken contract is implemented as a standard, non-upgradeable ERC20 token (7.7 Upgrades). It does not utilize any proxy patterns, meaning its logic cannot be modified post-deployment. This… |
+| **Technical** | 9/10 | Low | The contract demonstrates strong technical foundations by inheriting from well-audited OpenZeppelin ERC20 extensions (ERC20Burnable, ERC20Permit, ERC20Votes), which minimizes common code-level… |
+| **Governance / Economics** | 5/10 | Medium | The contract's economic model relies on a fixed initial supply on a specific chain, with subsequent supply adjustments managed by the `SUPERCHAIN_TOKEN_BRIDGE` for cross-chain transfers (7.4… |
+| **Upgrades** | 9/10 | Low | The ClankerToken contract is implemented as a standard, non-upgradeable ERC20 token (7.7 Upgrades). It does not utilize any proxy patterns, meaning its logic cannot be modified post-deployment. This… |
 
 ## LP Distribution
 
@@ -73,12 +73,13 @@ The `verify()` function can only be called once by the `_originalAdmin` to set t
 |--------|-------|
 | **Contract** | [`0xd88f...d8dc`](https://basescan.org/address/0xd88fd4a11255e51f64f78b4a7d74456325c2d8dc) |
 | **Network** | Base |
-| **Price** | $0.00001868 |
-| **24h Volume** | $322.7K |
-| **Liquidity** | $659.5K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.0000066 |
+| **24h Volume** | $6.8K |
+| **Liquidity** | $349.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 41.5% of supply |
+| **Top-10 Holders** | 72.8% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
 ## Security Flags (4/5 passed)
 

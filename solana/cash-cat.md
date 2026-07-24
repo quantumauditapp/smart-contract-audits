@@ -2,14 +2,14 @@
 token: Cash Cat
 ticker: CASHCAT
 network: solana
-risk_score: 69
-status: high
+risk_score: 78
+status: critical
 date: 2026-07-13
 ---
 
 # Cash Cat (CASHCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 69/100 — 🟠 High Risk**
+> **Risk Score: 78/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cash-cat-sol)
 
@@ -26,8 +26,8 @@ The Cash Cat (CASHCAT) SPL token mint presents critical risks primarily due to a
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The Cash Cat token operates on the `spl-token` program (v3). A significant technical risk is the active mint authority, `8czkddiDFST7eWcPKmwQLESPrxHFBfWS5G8DAQPzTRGu`, which can create new tokens at… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits a 24-hour trading volume of $2,332,738 against a liquidity of $169,640, resulting in a Volume/Liquidity Ratio of 13.75, which is high and can indicate artificial volume. The DEX… |
-| **Upgrades** | 6/10 | Medium | The mint authority remains active, allowing for potential changes to the token's total supply. The freeze authority is revoked, preventing any future freezing of token accounts. The token's metadata… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a 24-hour trading volume of $2,332,738 against a liquidity of $169,640, resulting in a Volume/Liquidity Ratio of 13.75, which is high and can indicate artificial volume. The DEX… |
+| **Upgrades** | 4/10 | Medium | The mint authority remains active, allowing for potential changes to the token's total supply. The freeze authority is revoked, preventing any future freezing of token accounts. The token's metadata… |
 
 ## Security Findings
 
@@ -59,22 +59,22 @@ Token name, symbol, or image can be changed post-launch.
 |--------|-------|
 | **Contract** | [`Cashca...JqSS`](https://solscan.io/account/CashcatZMRn4Jv8sPQZUSsbTLi2PcPe1ssqbHcnaJqSS) |
 | **Network** | Solana |
-| **Price** | $0.159 |
-| **24h Volume** | $2.33M |
-| **Liquidity** | $169.7K |
-| **Volume / Liquidity** | 13.8× |
+| **Price** | $0.04973 |
+| **24h Volume** | $122.6K |
+| **Liquidity** | $50.1K |
+| **Volume / Liquidity** | 2.4× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 40.5% of supply |
+| **Top-10 Holders** | 29.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5027 buys / 5480 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -83,8 +83,8 @@ Token name, symbol, or image can be changed post-launch.
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

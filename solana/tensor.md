@@ -2,14 +2,14 @@
 token: Tensor
 ticker: TNSR
 network: solana
-risk_score: 62
-status: high
+risk_score: 80
+status: critical
 date: 2026-06-21
 ---
 
 # Tensor (TNSR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 80/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tensor-sol)
 
@@ -26,8 +26,8 @@ The Tensor (TNSR) token mint presents a critical risk due to an unrevoked mint a
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The Tensor (TNSR) token is a standard SPL token operating under the `spl-token` program (v3), indicating a well-established token standard. A significant risk exists as the mint authority… |
-| **Governance / Economics** | 2/10 | High | The token exhibits moderate liquidity at $64,617 USD, with a healthy 24-hour volume to liquidity ratio of 0.12, suggesting organic trading activity. The DEX pair has been active for 470 days… |
-| **Upgrades** | 7/10 | Low | The mint authority for TNSR is currently active, allowing for potential future supply changes by the authority holder. While the freeze authority has been revoked, enhancing user control over funds… |
+| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity at $64,617 USD, with a healthy 24-hour volume to liquidity ratio of 0.12, suggesting organic trading activity. The DEX pair has been active for 470 days… |
+| **Upgrades** | 4/10 | Medium | The mint authority for TNSR is currently active, allowing for potential future supply changes by the authority holder. While the freeze authority has been revoked, enhancing user control over funds… |
 
 ## Security Findings
 
@@ -52,22 +52,22 @@ Token name, symbol, or image can be changed post-launch.
 |--------|-------|
 | **Contract** | [`TNSRxc...JAS6`](https://solscan.io/account/TNSRxcUxoT9xBG3de7PiJyTDYu7kskLqcpddxnEJAS6) |
 | **Network** | Solana |
-| **Price** | $0.0524 |
-| **24h Volume** | $279.1K |
-| **Liquidity** | $72.8K |
-| **Volume / Liquidity** | 3.8× |
+| **Price** | $0.03173 |
+| **24h Volume** | $7.5K |
+| **Liquidity** | $64.1K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 75.3% of supply |
+| **Top-10 Holders** | 76.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2211 buys / 3097 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -76,8 +76,8 @@ Token name, symbol, or image can be changed post-launch.
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

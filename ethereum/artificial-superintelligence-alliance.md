@@ -2,14 +2,14 @@
 token: Artificial Superintelligence Alliance
 ticker: FET
 network: ethereum
-risk_score: 66
-status: high
+risk_score: 40
+status: medium
 date: 2026-06-10
 ---
 
 # Artificial Superintelligence Alliance (FET) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/artificial-superintelligence-alliance-eth)
 
@@ -25,16 +25,16 @@ This audit covers the provided Solidity source code for the EnumerableSet and Ad
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture of the EnumerableSet and Address libraries is highly robust and well-optimized. EnumerableSet provides O(1) operations for add, remove, contains, and length, utilizing a… |
-| **Governance / Economics** | 1/10 | High | These libraries do not implement any direct governance mechanisms (7.5 Governance) or economic models (7.4 Economic). Their function is purely utility-based, providing data structures and… |
-| **Upgrades** | 5/10 | Medium | Libraries in Solidity are immutable once deployed and cannot be upgraded (7.7 Upgrades). Contracts that use these libraries are compiled with the library's bytecode linked, meaning any changes to the… |
+| **Technical** | 8/10 | Low | The technical architecture of the EnumerableSet and Address libraries is highly robust and well-optimized. EnumerableSet provides O(1) operations for add, remove, contains, and length, utilizing a… |
+| **Governance / Economics** | 2/10 | High | These libraries do not implement any direct governance mechanisms (7.5 Governance) or economic models (7.4 Economic). Their function is purely utility-based, providing data structures and… |
+| **Upgrades** | 3/10 | High | Libraries in Solidity are immutable once deployed and cannot be upgraded (7.7 Upgrades). Contracts that use these libraries are compiled with the library's bytecode linked, meaning any changes to the… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 87.1% |
-| **Top-3 Unlocked** | ⚠️ 95.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 95.0% |
+| **Top-3 Unlocked** | ⚠️ 99.8% |
 
 ## Security Findings
 
@@ -66,21 +66,21 @@ The `EnumerableSet` library explicitly states that 'No guarantees are made on th
 |--------|-------|
 | **Contract** | [`0xaea4...ad85`](https://etherscan.io/address/0xaea46a60368a7bd060eec7df8cba43b7ef41ad85) |
 | **Network** | Ethereum |
-| **Price** | $0.2676 |
-| **24h Volume** | $301.0K |
-| **Liquidity** | $1.75M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.1545 |
+| **24h Volume** | $4.9K |
+| **Liquidity** | $1.13M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 50.1% of supply |
+| **Top-10 Holders** | 47.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 180 buys / 151 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -90,7 +90,7 @@ The `EnumerableSet` library explicitly states that 'No guarantees are made on th
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |

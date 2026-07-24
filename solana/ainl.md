@@ -2,14 +2,14 @@
 token: AINL
 ticker: AINL
 network: solana
-risk_score: 22
-status: medium
+risk_score: 60
+status: high
 date: 2026-06-10
 ---
 
 # AINL (AINL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 22/100 — 🟡 Medium Risk**
+> **Risk Score: 60/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ainl-sol)
 
@@ -26,15 +26,15 @@ The AINL SPL Token Mint exhibits a high risk due to extremely low liquidity, whi
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 5/10 | Medium | The AINL token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Crucially, both the mint authority and freeze authority have been revoked, preventing the… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits very low liquidity, with only $68 USD available in DEX pools, making it highly susceptible to price volatility and severe slippage for any significant trade. The 24-hour volume is… |
-| **Upgrades** | 10/10 | Low | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities. Metadata is also immutable, ensuring that the token's name, symbol, or image cannot be… |
+| **Governance / Economics** | 1/10 | High | The token exhibits very low liquidity, with only $68 USD available in DEX pools, making it highly susceptible to price volatility and severe slippage for any significant trade. The 24-hour volume is… |
+| **Upgrades** | 7/10 | Low | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities. Metadata is also immutable, ensuring that the token's name, symbol, or image cannot be… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
 | **LP Burned** | ✅ 100.0% (≈ permanent lock) |
-| **LP Locked** | 69.7% — Raydium Lock |
+| **LP Locked** | 100.0% — Raydium Lock |
 
 ## Security Findings
 
@@ -52,21 +52,21 @@ Total DEX liquidity is $68. Slippage will be severe; large positions cannot be e
 |--------|-------|
 | **Contract** | [`56hrCR...pump`](https://solscan.io/account/56hrCR3n7danhHNjWaU4VeUHpE1eRE9VRBWpHRPKpump) |
 | **Network** | Solana |
-| **Price** | $0.005038 |
-| **24h Volume** | $722.9K |
-| **Liquidity** | $201.4K |
-| **Volume / Liquidity** | 3.6× |
+| **Price** | $0.00000678 |
+| **24h Volume** | $0 |
+| **Liquidity** | $7.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 65.4% of supply |
+| **Top-10 Holders** | 75.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (4/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
@@ -75,8 +75,8 @@ Total DEX liquidity is $68. Slippage will be severe; large positions cannot be e
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

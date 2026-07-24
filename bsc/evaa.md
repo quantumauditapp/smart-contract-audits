@@ -2,14 +2,14 @@
 token: EVAA
 ticker: EVAA
 network: bsc
-risk_score: 47
-status: high
+risk_score: 41
+status: medium
 date: 2026-07-22
 ---
 
 # EVAA (EVAA) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/evaa-bsc)
 
@@ -25,9 +25,16 @@ The provided source code consists solely of standard OpenZeppelin interfaces for
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The provided code consists solely of standard OpenZeppelin interfaces for ERC-20, ERC-721, and ERC-1155 tokens, including ERC-6093 custom errors. These interfaces define contract structures and error… |
-| **Governance / Economics** | 3/10 | High | The provided code consists only of interfaces and does not contain any governance or economic mechanisms (7.4 Economic, 7.5 Governance). Therefore, there are no associated risks related to economic… |
-| **Upgrades** | 5/10 | Medium | The provided code defines standard interfaces and does not include any upgradeability patterns (7.7 Upgrades). As interfaces, they are not directly upgradeable contracts. Any contract implementing… |
+| **Technical** | 8/10 | Low | The provided code consists solely of standard OpenZeppelin interfaces for ERC-20, ERC-721, and ERC-1155 tokens, including ERC-6093 custom errors. These interfaces define contract structures and error… |
+| **Governance / Economics** | 7/10 | Low | The provided code consists only of interfaces and does not contain any governance or economic mechanisms (7.4 Economic, 7.5 Governance). Therefore, there are no associated risks related to economic… |
+| **Upgrades** | 7/10 | Low | The provided code defines standard interfaces and does not include any upgradeability patterns (7.7 Upgrades). As interfaces, they are not directly upgradeable contracts. Any contract implementing… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 99.9% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -80,33 +87,33 @@ The provided interfaces do not define any specific operational procedures, roles
 |--------|-------|
 | **Contract** | [`0xaa03...28c1`](https://bscscan.com/address/0xaa036928c9c0df07d525b55ea8ee690bb5a628c1) |
 | **Network** | BNB Chain |
-| **Price** | $0.8385 |
-| **24h Volume** | $513.8K |
-| **Liquidity** | $161.5K |
-| **Volume / Liquidity** | 3.2× |
+| **Price** | $0.8472 |
+| **24h Volume** | $443.2K |
+| **Liquidity** | $162.3K |
+| **Volume / Liquidity** | 2.7× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 80.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 8156 buys / 8216 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (4/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ✅ Pass |
+| No Mint Function | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

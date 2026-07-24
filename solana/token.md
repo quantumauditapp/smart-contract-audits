@@ -2,14 +2,14 @@
 token: 🦎
 ticker: LIZARD
 network: solana
-risk_score: 12
-status: low
+risk_score: 36
+status: medium
 date: 2026-06-10
 ---
 
 # 🦎 (LIZARD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 12/100 — 🟢 Low Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/token-sol)
 
@@ -26,8 +26,8 @@ This audit of the 🦎 (LIZARD) SPL token mint found no critical or high-risk vu
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The 🦎 (LIZARD) token is a standard SPL token mint operating under the `spl-token` program. Its supply is fixed at 999,777,379.812728 tokens, as the mint authority has been revoked. Similarly, the… |
-| **Governance / Economics** | 8/10 | Low | The token exhibits healthy trading metrics with a 24-hour volume of $1,499 against a liquidity of $32,609, resulting in a normal Volume/Liquidity Ratio of 0.05. The DEX pair has been active for 346… |
-| **Upgrades** | 10/10 | Low | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. This means the supply cannot be increased, and no accounts can be frozen. Furthermore, the token's… |
+| **Governance / Economics** | 3/10 | High | The token exhibits healthy trading metrics with a 24-hour volume of $1,499 against a liquidity of $32,609, resulting in a normal Volume/Liquidity Ratio of 0.05. The DEX pair has been active for 346… |
+| **Upgrades** | 7/10 | Low | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. This means the supply cannot be increased, and no accounts can be frozen. Furthermore, the token's… |
 
 ## LP Distribution
 
@@ -42,21 +42,21 @@ This audit of the 🦎 (LIZARD) SPL token mint found no critical or high-risk vu
 |--------|-------|
 | **Contract** | [`347k5f...bonk`](https://solscan.io/account/347k5f1WLRYe81roRcLBWDR6k3eCRunaqetQPW6pbonk) |
 | **Network** | Solana |
-| **Price** | $0.0001683 |
-| **24h Volume** | $206.8K |
-| **Liquidity** | $58.6K |
-| **Volume / Liquidity** | 3.5× |
+| **Price** | $0.00005186 |
+| **24h Volume** | $1.2K |
+| **Liquidity** | $30.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | 50.6% of supply |
+| **Top-10 Holders** | 52.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (4/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
@@ -65,8 +65,8 @@ This audit of the 🦎 (LIZARD) SPL token mint found no critical or high-risk vu
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

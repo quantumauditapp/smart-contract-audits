@@ -2,14 +2,14 @@
 token: ChainOpera AI
 ticker: COAI
 network: bsc
-risk_score: 80
-status: critical
+risk_score: 52
+status: high
 date: 2026-07-22
 ---
 
 # ChainOpera AI (COAI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 80/100 — 🔴 Critical Risk**
+> **Risk Score: 52/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chainopera-ai-bsc)
 
@@ -25,9 +25,23 @@ The contract at 0x0a8d6c86e1bce73fe4d0bd531e1a567306836ea5 is an ERC-1967 UUPS p
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 2/10 | High | The proxy contract correctly implements the ERC-1967 UUPS pattern using battle-tested OpenZeppelin libraries, which provides a strong foundation for architectural security (7.1 Architecture).… |
+| **Technical** | 5/10 | Medium | The proxy contract correctly implements the ERC-1967 UUPS pattern using battle-tested OpenZeppelin libraries, which provides a strong foundation for architectural security (7.1 Architecture).… |
 | **Governance / Economics** | 1/10 | High | The economic model and governance mechanisms (7.4 Economic, 7.5 Governance) are entirely defined within the unverified implementation contract. Without its source code, it is impossible to determine… |
-| **Upgrades** | 4/10 | Medium | The contract utilizes the UUPS proxy pattern, where the implementation contract itself controls upgrades (7.7 Upgrades). While UUPS is a standard pattern, the unverified nature of the implementation… |
+| **Upgrades** | 2/10 | High | The contract utilizes the UUPS proxy pattern, where the implementation contract itself controls upgrades (7.7 Upgrades). While UUPS is a standard pattern, the unverified nature of the implementation… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Uups |
+| **Implementation** | ✅ Verified source |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 77.4% |
+| **Top-3 Unlocked** | ⚠️ 96.1% |
 
 ## Security Findings
 
@@ -66,12 +80,12 @@ The proxy contract itself correctly implements the ERC-1967 UUPS proxy pattern u
 |--------|-------|
 | **Contract** | [`0x0a8d...6ea5`](https://bscscan.com/address/0x0a8d6c86e1bce73fe4d0bd531e1a567306836ea5) |
 | **Network** | BNB Chain |
-| **Price** | $0.3249 |
-| **24h Volume** | $2.39M |
-| **Liquidity** | $1.91M |
-| **Volume / Liquidity** | 1.3× |
+| **Price** | $0.3432 |
+| **24h Volume** | $2.28M |
+| **Liquidity** | $1.95M |
+| **Volume / Liquidity** | 1.2× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 84.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5853 buys / 5815 sells |
 
@@ -79,21 +93,21 @@ The proxy contract itself correctly implements the ERC-1967 UUPS proxy pattern u
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

@@ -2,14 +2,14 @@
 token: XMAQUINA
 ticker: DEUS
 network: base
-risk_score: 100
-status: critical
+risk_score: 70
+status: high
 date: 2026-06-10
 ---
 
 # XMAQUINA (DEUS) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 70/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/xmaquina-base)
 
@@ -27,13 +27,13 @@ This audit covers the provided Solidity interfaces for an Omnichain Fungible Tok
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The provided code includes standard OpenZeppelin `Context` and `Ownable` abstract contracts, which are well-tested and robust for basic access control (7.3 Access Control). The `IOFT`… |
 | **Governance / Economics** | 1/10 | High | The `Ownable` pattern centralizes control to a single address, which can manage critical functions like `transferOwnership` and potentially other administrative actions in the OFT implementation (7.5… |
-| **Upgrades** | 4/10 | Medium | The provided `Ownable` contract and interfaces do not inherently include upgradeability mechanisms (7.7 Upgrades). This means the contract itself is not designed to be upgradeable. If the full OFT… |
+| **Upgrades** | 3/10 | High | The provided `Ownable` contract and interfaces do not inherently include upgradeability mechanisms (7.7 Upgrades). This means the contract itself is not designed to be upgradeable. If the full OFT… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 71.9% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.1% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -87,20 +87,21 @@ The `Ownable` contract and `IOFT` interface utilize custom errors (e.g., `Ownabl
 |--------|-------|
 | **Contract** | [`0x940a...089b`](https://basescan.org/address/0x940a319b75861014a220d9c6c144d108552b089b) |
 | **Network** | Base |
-| **Price** | $0.06194 |
-| **24h Volume** | $2.09M |
-| **Liquidity** | $1.32M |
-| **Volume / Liquidity** | 1.6× |
+| **Price** | $0.02312 |
+| **24h Volume** | $11.6K |
+| **Liquidity** | $747.5K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 9d |
-| **Top-10 Holders** | 89.5% of supply |
+| **Top-10 Holders** | 90.2% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -110,7 +111,7 @@ The `Ownable` contract and `IOFT` interface utilize custom errors (e.g., `Ownabl
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

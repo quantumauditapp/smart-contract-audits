@@ -2,14 +2,14 @@
 token: Main Street USD
 ticker: MSUSD
 network: ethereum
-risk_score: 100
+risk_score: 72
 status: critical
 date: 2026-06-21
 ---
 
 # Main Street USD (MSUSD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 72/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/main-street-usd-eth)
 
@@ -25,16 +25,16 @@ This audit covers an ERC1967Proxy contract, which is a standard UUPS proxy imple
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 2/10 | High | The proxy contract (7.1 Architecture) utilizes the battle-tested OpenZeppelin ERC1967Proxy, which is a strong foundation for upgradeability. However, the primary technical risk stems from the… |
+| **Technical** | 3/10 | High | The proxy contract (7.1 Architecture) utilizes the battle-tested OpenZeppelin ERC1967Proxy, which is a strong foundation for upgradeability. However, the primary technical risk stems from the… |
 | **Governance / Economics** | 1/10 | High | The governance and economic models (7.4 Economic, 7.5 Governance) of the protocol are entirely dependent on the logic within the implementation contract. Since the implementation contract is… |
-| **Upgrades** | 2/10 | High | The contract employs the UUPS proxy pattern (7.7 Upgrades), which is a secure and widely adopted upgrade mechanism. The `ERC1967Proxy` correctly delegates upgrade authorization to the implementation… |
+| **Upgrades** | 1/10 | High | The contract employs the UUPS proxy pattern (7.7 Upgrades), which is a secure and widely adopted upgrade mechanism. The `ERC1967Proxy` correctly delegates upgrade authorization to the implementation… |
 
 ## Proxy Upgrade Controls
 
 | Control | Value |
 |---------|-------|
 | **Proxy Type** | Eip1967 Uups |
-| **Implementation** | ⚠️ Unverified source |
+| **Implementation** | ✅ Verified source |
 | **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
@@ -95,22 +95,22 @@ The proxy's constructor uses `ERC1967Utils.upgradeToAndCall(implementation, _dat
 |--------|-------|
 | **Contract** | [`0x4ba0...7c00`](https://etherscan.io/address/0x4ba01f22827018b4772cd326c7627fb4956a7c00) |
 | **Network** | Ethereum |
-| **Price** | $0.2725 |
-| **24h Volume** | $5.15M |
-| **Liquidity** | $253.9K |
-| **Volume / Liquidity** | 20.3× |
+| **Price** | $0.3235 |
+| **24h Volume** | $738 |
+| **Liquidity** | $299.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 99.2% of supply |
+| **Top-10 Holders** | 98.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1155 buys / 990 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
 
@@ -119,8 +119,8 @@ The proxy's constructor uses `ERC1967Utils.upgradeToAndCall(implementation, _dat
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 

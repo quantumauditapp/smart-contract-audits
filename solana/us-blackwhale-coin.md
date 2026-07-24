@@ -2,14 +2,14 @@
 token: US BLACKWHALE COIN
 ticker: USBC
 network: solana
-risk_score: 41
-status: medium
+risk_score: 86
+status: critical
 date: 2026-06-15
 ---
 
 # US BLACKWHALE COIN (USBC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 86/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/us-blackwhale-coin-sol)
 
@@ -25,9 +25,9 @@ The US BLACKWHALE COIN (USBC) SPL Token Mint exhibits a secure configuration wit
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The USBC token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the mint authority and freeze authority have been revoked, which prevents the creation of… |
-| **Governance / Economics** | 5/10 | Medium | The token's economic profile shows a liquidity of $11,037 USD, which is moderate. The 24-hour volume of $427 USD results in a healthy Volume/Liquidity Ratio of 0.04, indicating normal trading… |
-| **Upgrades** | 8/10 | Low | The USBC token mint has a fixed configuration with no upgradeability concerns related to core authorities. Both the mint and freeze authorities are permanently revoked. Key Token-2022 extensions such… |
+| **Technical** | 4/10 | Medium | The USBC token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the mint authority and freeze authority have been revoked, which prevents the creation of… |
+| **Governance / Economics** | 1/10 | High | The token's economic profile shows a liquidity of $11,037 USD, which is moderate. The 24-hour volume of $427 USD results in a healthy Volume/Liquidity Ratio of 0.04, indicating normal trading… |
+| **Upgrades** | 4/10 | Medium | The USBC token mint has a fixed configuration with no upgradeability concerns related to core authorities. Both the mint and freeze authorities are permanently revoked. Key Token-2022 extensions such… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The US BLACKWHALE COIN (USBC) SPL Token Mint exhibits a secure configuration wit
 |--------|-------|
 | **Contract** | [`EA6jvQ...pump`](https://solscan.io/account/EA6jvQhjR2iMkRaVy9P9drM2ExowaFZWGn3Uo8FPpump) |
 | **Network** | Solana |
-| **Price** | $0.0002945 |
-| **24h Volume** | $401.9K |
-| **Liquidity** | $58.6K |
-| **Volume / Liquidity** | 6.9× |
+| **Price** | $0.00000552 |
+| **24h Volume** | $20 |
+| **Liquidity** | $8.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 31.8% of supply |
+| **Top-10 Holders** | 88.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 7852 buys / 6185 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The US BLACKWHALE COIN (USBC) SPL Token Mint exhibits a secure configuration wit
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

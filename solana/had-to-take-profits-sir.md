@@ -2,14 +2,14 @@
 token: had to take profits sir
 ticker: HTTPS
 network: solana
-risk_score: 61
-status: high
+risk_score: 85
+status: critical
 date: 2026-06-10
 ---
 
 # had to take profits sir (HTTPS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 85/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/had-to-take-profits-sir-sol)
 
@@ -25,9 +25,9 @@ This audit of the 'had to take profits sir' SPL Token Mint found no critical or 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Key authorities, including the Mint Authority and Freeze Authority, are both revoked, indicating a fixed supply and inability to freeze… |
+| **Technical** | 4/10 | Medium | The token is implemented using the spl-token-2022 program. Key authorities, including the Mint Authority and Freeze Authority, are both revoked, indicating a fixed supply and inability to freeze… |
 | **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $42,141 in total DEX liquidity, which supports reasonable trading activity. The 24-hour volume of $26,370 results in a healthy Volume/Liquidity Ratio of… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both Mint and Freeze Authorities. No Token-2022 extensions that allow for post-launch mutability, such as transfer hook… |
+| **Upgrades** | 4/10 | Medium | The token's core parameters are immutable due to the revocation of both Mint and Freeze Authorities. No Token-2022 extensions that allow for post-launch mutability, such as transfer hook… |
 
 ## LP Distribution
 
@@ -42,21 +42,21 @@ This audit of the 'had to take profits sir' SPL Token Mint found no critical or 
 |--------|-------|
 | **Contract** | [`7sGdNQ...pump`](https://solscan.io/account/7sGdNQSvUGpahh6qyXB3g5gsdK9FAzZM299KyCXspump) |
 | **Network** | Solana |
-| **Price** | $0.0003422 |
-| **24h Volume** | $295.6K |
-| **Liquidity** | $71.4K |
-| **Volume / Liquidity** | 4.1× |
+| **Price** | $0.00008118 |
+| **24h Volume** | $10.0K |
+| **Liquidity** | $38.2K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 36.1% of supply |
+| **Top-10 Holders** | 41.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -65,8 +65,8 @@ This audit of the 'had to take profits sir' SPL Token Mint found no critical or 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Unibase
 ticker: UB
 network: bsc
-risk_score: 70
+risk_score: 57
 status: high
 date: 2026-07-22
 ---
 
 # Unibase (UB) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 57/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/unibase-bsc)
 
@@ -25,9 +25,16 @@ This audit reviews the provided Solidity interface definitions for LayerZero V2.
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The LayerZero V2 interfaces define a robust and modular framework for cross-chain communication, leveraging distinct components for message management, composition, and channel handling (7.1… |
-| **Governance / Economics** | 2/10 | High | The interfaces expose numerous critical administrative functions, such as `setLzToken`, `setDefaultSendLibrary`, `setReceiveLibrary`, and `setConfig`, which directly impact the system's operational… |
-| **Upgrades** | 5/10 | Medium | As interfaces, these contracts are not directly upgradeable. However, any concrete contract implementing these LayerZero V2 interfaces would require a well-designed upgrade mechanism (7.7 Upgrades)… |
+| **Technical** | 8/10 | Low | The LayerZero V2 interfaces define a robust and modular framework for cross-chain communication, leveraging distinct components for message management, composition, and channel handling (7.1… |
+| **Governance / Economics** | 3/10 | High | The interfaces expose numerous critical administrative functions, such as `setLzToken`, `setDefaultSendLibrary`, `setReceiveLibrary`, and `setConfig`, which directly impact the system's operational… |
+| **Upgrades** | 7/10 | Low | As interfaces, these contracts are not directly upgradeable. However, any concrete contract implementing these LayerZero V2 interfaces would require a well-designed upgrade mechanism (7.7 Upgrades)… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 99.3% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -80,20 +87,20 @@ Functions like `setDefaultReceiveLibraryTimeout` and `setReceiveLibraryTimeout` 
 |--------|-------|
 | **Contract** | [`0x40b8...6fde`](https://bscscan.com/address/0x40b8129b786d766267a7a118cf8c07e31cdb6fde) |
 | **Network** | BNB Chain |
-| **Price** | $0.12 |
-| **24h Volume** | $10.38M |
-| **Liquidity** | $3.68M |
+| **Price** | $0.1282 |
+| **24h Volume** | $10.72M |
+| **Liquidity** | $3.79M |
 | **Volume / Liquidity** | 2.8× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 70.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 25406 buys / 24927 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
@@ -103,7 +110,7 @@ Functions like `setDefaultReceiveLibraryTimeout` and `setReceiveLibraryTimeout` 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |

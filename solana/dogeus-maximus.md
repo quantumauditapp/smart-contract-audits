@@ -2,14 +2,14 @@
 token: Dogeus Maximus
 ticker: DOGEUS
 network: solana
-risk_score: 43
-status: medium
+risk_score: 69
+status: high
 date: 2026-06-10
 ---
 
 # Dogeus Maximus (DOGEUS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 69/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dogeus-maximus-sol)
 
@@ -26,8 +26,8 @@ The Dogeus Maximus (DOGEUS) token mint exhibits a low-risk profile with both min
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Dogeus Maximus (DOGEUS) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be… |
-| **Governance / Economics** | 5/10 | Medium | The token's liquidity stands at $16,632 USD, which is above the very low liquidity threshold. The 24-hour volume of $312 USD results in a normal Volume/Liquidity Ratio of 0.02, not indicating wash… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's core parameters cannot be altered post-launch. No Token-2022 extensions like transfer hooks or transfer fees are present… |
+| **Governance / Economics** | 1/10 | High | The token's liquidity stands at $16,632 USD, which is above the very low liquidity threshold. The 24-hour volume of $312 USD results in a normal Volume/Liquidity Ratio of 0.02, not indicating wash… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, meaning the token's core parameters cannot be altered post-launch. No Token-2022 extensions like transfer hooks or transfer fees are present… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The Dogeus Maximus (DOGEUS) token mint exhibits a low-risk profile with both min
 |--------|-------|
 | **Contract** | [`FeMrhD...pump`](https://solscan.io/account/FeMrhDeddUvuzo25RZriZD6Te8xy3tdyKLLXBhEEpump) |
 | **Network** | Solana |
-| **Price** | $0.0002051 |
-| **24h Volume** | $109.4K |
-| **Liquidity** | $43.3K |
-| **Volume / Liquidity** | 2.5× |
+| **Price** | $0.00001947 |
+| **24h Volume** | $440 |
+| **Liquidity** | $15.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 10d |
-| **Top-10 Holders** | 31.6% of supply |
+| **Top-10 Holders** | 53.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1636 buys / 1297 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The Dogeus Maximus (DOGEUS) token mint exhibits a low-risk profile with both min
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

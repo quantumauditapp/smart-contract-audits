@@ -2,14 +2,14 @@
 token: Asteroid
 ticker: ASTEROID
 network: ethereum
-risk_score: 61
-status: high
+risk_score: 0
+status: low
 date: 2026-07-22
 ---
 
 # Asteroid (ASTEROID) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/asteroid-eth)
 
@@ -25,9 +25,16 @@ The audit of the ASTEROID token contract (0xaff2565091e7207191dbe340b8528d02fa78
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract implements a standard ERC20 token using Solidity 0.8.17 and includes interfaces for Uniswap V2. The use of `SafeMath` for arithmetic operations ensures protection against integer… |
-| **Governance / Economics** | 2/10 | High | A critical economic risk has been identified: the liquidity pool for the ASTEROID token is currently unlocked (7.4 Economic). This allows the liquidity provider to withdraw all funds, potentially… |
-| **Upgrades** | 4/10 | Medium | The contract is not designed as an upgradeable proxy, as indicated by `is_proxy: false` in the pre-analysis (7.7 Upgrades). This means the contract's logic cannot be modified after deployment. While… |
+| **Technical** | 8/10 | Low | The contract implements a standard ERC20 token using Solidity 0.8.17 and includes interfaces for Uniswap V2. The use of `SafeMath` for arithmetic operations ensures protection against integer… |
+| **Governance / Economics** | 9/10 | Low | A critical economic risk has been identified: the liquidity pool for the ASTEROID token is currently unlocked (7.4 Economic). This allows the liquidity provider to withdraw all funds, potentially… |
+| **Upgrades** | 9/10 | Low | The contract is not designed as an upgradeable proxy, as indicated by `is_proxy: false` in the pre-analysis (7.7 Upgrades). This means the contract's logic cannot be modified after deployment. While… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
+| **LP Locked** | 100.0% — Null Address |
 
 ## Security Findings
 
@@ -66,33 +73,33 @@ The standard ERC20 `approve` function is susceptible to a known race condition. 
 |--------|-------|
 | **Contract** | [`0xaff2...d044`](https://etherscan.io/address/0xaff2565091e7207191dbe340b8528d02fa78d044) |
 | **Network** | Ethereum |
-| **Price** | $0.001424 |
-| **24h Volume** | $193.3K |
-| **Liquidity** | $204.7K |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.001412 |
+| **24h Volume** | $66.3K |
+| **Liquidity** | $204.4K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 26.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 239 buys / 275 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (5/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

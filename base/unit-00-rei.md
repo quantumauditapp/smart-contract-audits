@@ -2,14 +2,14 @@
 token: Unit 00 - Rei
 ticker: REI
 network: base
-risk_score: 32
-status: medium
+risk_score: 0
+status: low
 date: 2026-07-23
 ---
 
 # Unit 00 - Rei (REI) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 32/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/unit-00-rei-base)
 
@@ -25,9 +25,16 @@ The REI token contract is a standard ERC20 implementation, inheriting from a rob
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract implements the ERC20 standard, utilizing custom error types and `unchecked` blocks for gas efficiency, with appropriate prior checks to prevent underflow (7.2 Code Security). It does not… |
-| **Governance / Economics** | 3/10 | High | The REI token has a fixed supply minted entirely to the deployer during construction, meaning no further minting or burning capabilities exist post-deployment (7.4 Economic). There are no governance… |
-| **Upgrades** | 5/10 | Medium | The REI contract is a standalone token implementation and is not designed to be upgradeable (7.7 Upgrades). It does not utilize any proxy patterns, which simplifies its architecture and removes… |
+| **Technical** | 10/10 | Low | The contract implements the ERC20 standard, utilizing custom error types and `unchecked` blocks for gas efficiency, with appropriate prior checks to prevent underflow (7.2 Code Security). It does not… |
+| **Governance / Economics** | 5/10 | Medium | The REI token has a fixed supply minted entirely to the deployer during construction, meaning no further minting or burning capabilities exist post-deployment (7.4 Economic). There are no governance… |
+| **Upgrades** | 6/10 | Medium | The REI contract is a standalone token implementation and is not designed to be upgradeable (7.7 Upgrades). It does not utilize any proxy patterns, which simplifies its architecture and removes… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | 19.6% |
+| **Top-3 Unlocked** | 53.5% |
 
 ## Security Findings
 
@@ -66,22 +73,22 @@ The contract does not implement any blacklist functionality. This means there is
 |--------|-------|
 | **Contract** | [`0x6b25...4cfd`](https://basescan.org/address/0x6b2504a03ca4d43d0d73776f6ad46dab2f2a4cfd) |
 | **Network** | Base |
-| **Price** | $0.02527 |
-| **24h Volume** | $286.7K |
-| **Liquidity** | $2.16M |
+| **Price** | $0.02521 |
+| **24h Volume** | $295.7K |
+| **Liquidity** | $2.08M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 25.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 335 buys / 303 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -89,9 +96,9 @@ The contract does not implement any blacklist functionality. This means there is
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

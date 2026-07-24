@@ -2,14 +2,14 @@
 token: Jito
 ticker: JTO
 network: solana
-risk_score: 25
+risk_score: 43
 status: medium
 date: 2026-07-14
 ---
 
 # Jito (JTO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 25/100 — 🟡 Medium Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jito-sol)
 
@@ -26,8 +26,8 @@ The JITO (JTO) SPL token mint has its mint and freeze authorities revoked, indic
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The JITO (JTO) token is implemented using the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy liquidity with $1,455,394 USD and a 24-hour trading volume of $913,572 USD, resulting in a normal Volume/Liquidity Ratio of 0.63. The DEX pair has been active for 950 days… |
-| **Upgrades** | 8/10 | Low | The JITO (JTO) token mint has its mint and freeze authorities revoked, meaning its core parameters related to supply and account freezing cannot be changed. As a classic SPL token, it does not… |
+| **Governance / Economics** | 2/10 | High | The token exhibits healthy liquidity with $1,455,394 USD and a 24-hour trading volume of $913,572 USD, resulting in a normal Volume/Liquidity Ratio of 0.63. The DEX pair has been active for 950 days… |
+| **Upgrades** | 5/10 | Medium | The JITO (JTO) token mint has its mint and freeze authorities revoked, meaning its core parameters related to supply and account freezing cannot be changed. As a classic SPL token, it does not… |
 
 ## Security Findings
 
@@ -45,22 +45,22 @@ The `metadata_mutable: True` flag indicates that the token's name, symbol, or im
 |--------|-------|
 | **Contract** | [`jtojto...9mCL`](https://solscan.io/account/jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL) |
 | **Network** | Solana |
-| **Price** | $0.6429 |
-| **24h Volume** | $913.4K |
-| **Liquidity** | $1.45M |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.6263 |
+| **24h Volume** | $378.9K |
+| **Liquidity** | $1.57M |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 2y |
 | **Top-10 Holders** | 47.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2218 buys / 2218 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,8 +69,8 @@ The `metadata_mutable: True` flag indicates that the token's name, symbol, or im
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

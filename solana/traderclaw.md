@@ -2,14 +2,14 @@
 token: Traderclaw
 ticker: TCLAW
 network: solana
-risk_score: 53
-status: high
+risk_score: 84
+status: critical
 date: 2026-06-10
 ---
 
 # Traderclaw (TCLAW) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 84/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/traderclaw-sol)
 
@@ -26,8 +26,8 @@ This Solana SPL Token Mint has both mint and freeze authorities revoked, indicat
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, meaning no new tokens can be minted and no existing token accounts can be… |
-| **Governance / Economics** | 2/10 | High | Information on holder concentration and DEX market data, including liquidity and trading volume, was unavailable. This prevents a comprehensive assessment of potential market manipulation risks or… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are revoked, preventing any further changes to its supply or account freeze status. Key Token-2022 extensions like transfer hook and transfer fee are not… |
+| **Governance / Economics** | 1/10 | High | Information on holder concentration and DEX market data, including liquidity and trading volume, was unavailable. This prevents a comprehensive assessment of potential market manipulation risks or… |
+| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are revoked, preventing any further changes to its supply or account freeze status. Key Token-2022 extensions like transfer hook and transfer fee are not… |
 
 ## Token Metrics
 
@@ -35,21 +35,21 @@ This Solana SPL Token Mint has both mint and freeze authorities revoked, indicat
 |--------|-------|
 | **Contract** | [`4bCcwH...pump`](https://solscan.io/account/4bCcwHAANr5dntJQmmZVqre6kxggchiuJRYiybBVpump) |
 | **Network** | Solana |
-| **Price** | $0.003623 |
-| **24h Volume** | $456.2K |
-| **Liquidity** | $161.2K |
-| **Volume / Liquidity** | 2.8× |
+| **Price** | $0.0000027 |
+| **24h Volume** | $7 |
+| **Liquidity** | $4.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 88.5% of supply |
+| **Top-10 Holders** | 89.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,8 +58,8 @@ This Solana SPL Token Mint has both mint and freeze authorities revoked, indicat
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

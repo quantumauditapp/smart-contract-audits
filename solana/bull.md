@@ -2,14 +2,14 @@
 token: Bull
 ticker: BULL
 network: solana
-risk_score: 29
-status: medium
+risk_score: 53
+status: high
 date: 2026-06-10
 ---
 
 # Bull (BULL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 29/100 — 🟡 Medium Risk**
+> **Risk Score: 53/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bull-sol)
 
@@ -26,8 +26,8 @@ This audit of the Bull SPL token mint found no critical or high-risk vulnerabili
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The Bull token operates under the `spl-token` program. Both the mint authority and freeze authority have been revoked (None), ensuring a fixed supply and immutability of account states. The token… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits healthy liquidity at $69,308 USD and a normal 24-hour volume to liquidity ratio of 1.47, suggesting organic trading activity. The pair has been active for 109 days, providing a… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked (None), meaning the token's supply and account freeze capabilities are immutable. Metadata is also not mutable (`metadata_mutable: False`)… |
+| **Governance / Economics** | 2/10 | High | The token exhibits healthy liquidity at $69,308 USD and a normal 24-hour volume to liquidity ratio of 1.47, suggesting organic trading activity. The pair has been active for 109 days, providing a… |
+| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked (None), meaning the token's supply and account freeze capabilities are immutable. Metadata is also not mutable (`metadata_mutable: False`)… |
 
 ## Token Metrics
 
@@ -35,21 +35,21 @@ This audit of the Bull SPL token mint found no critical or high-risk vulnerabili
 |--------|-------|
 | **Contract** | [`3TYgKw...pump`](https://solscan.io/account/3TYgKwkE2Y3rxdw9osLRSpxpXmSC1C1oo19W9KHspump) |
 | **Network** | Solana |
-| **Price** | $0.004915 |
-| **24h Volume** | $735.4K |
-| **Liquidity** | $324.5K |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $0.0001769 |
+| **24h Volume** | $10.2K |
+| **Liquidity** | $67.0K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 23.6% of supply |
+| **Top-10 Holders** | 42.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,8 +58,8 @@ This audit of the Bull SPL token mint found no critical or high-risk vulnerabili
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

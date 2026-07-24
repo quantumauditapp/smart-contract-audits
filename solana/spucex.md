@@ -2,14 +2,14 @@
 token: spucex
 ticker: SPCX
 network: solana
-risk_score: 38
-status: medium
+risk_score: 70
+status: high
 date: 2026-06-16
 ---
 
 # spucex (SPCX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 38/100 — 🟡 Medium Risk**
+> **Risk Score: 70/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spucex-sol)
 
@@ -26,8 +26,8 @@ The spucex (SPCX) token mint on Solana exhibits a robust security configuration 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The spucex (SPCX) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, preventing the creation of new tokens or the freezing of… |
-| **Governance / Economics** | 5/10 | Medium | The token's DEX liquidity stands at $14,095, which is moderate. The 24-hour volume is $741, resulting in a healthy Volume/Liquidity Ratio of 0.05, which does not indicate wash trading. The DEX pair… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable due to the revocation of both Mint and Freeze Authorities. The `metadata_mutable` flag is False, ensuring that the token's name, symbol, or image… |
+| **Governance / Economics** | 1/10 | High | The token's DEX liquidity stands at $14,095, which is moderate. The 24-hour volume is $741, resulting in a healthy Volume/Liquidity Ratio of 0.05, which does not indicate wash trading. The DEX pair… |
+| **Upgrades** | 5/10 | Medium | The token's core parameters are largely immutable due to the revocation of both Mint and Freeze Authorities. The `metadata_mutable` flag is False, ensuring that the token's name, symbol, or image… |
 
 ## Token Metrics
 
@@ -35,22 +35,22 @@ The spucex (SPCX) token mint on Solana exhibits a robust security configuration 
 |--------|-------|
 | **Contract** | [`9qpDk7...pump`](https://solscan.io/account/9qpDk7hGSHqyfMGDT7p4zFQ35aGff248Qes48CgLpump) |
 | **Network** | Solana |
-| **Price** | $0.0002492 |
-| **24h Volume** | $324.6K |
-| **Liquidity** | $51.4K |
-| **Volume / Liquidity** | 6.3× |
+| **Price** | $0.00001695 |
+| **24h Volume** | $5.9K |
+| **Liquidity** | $15.0K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 34.6% of supply |
+| **Top-10 Holders** | 61.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3303 buys / 2657 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ⚠️ Unknown |
+| No Mint Function | ⚠️ Unknown |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -59,8 +59,8 @@ The spucex (SPCX) token mint on Solana exhibits a robust security configuration 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

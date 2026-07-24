@@ -2,14 +2,14 @@
 token: Derive
 ticker: DRV
 network: ethereum
-risk_score: 100
-status: critical
+risk_score: 47
+status: high
 date: 2026-07-14
 ---
 
 # Derive (DRV) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 47/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/derive-eth)
 
@@ -25,9 +25,18 @@ The audit focused on the `TransparentUpgradeableProxy` contract. While the proxy
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The audited `TransparentUpgradeableProxy` contract (7.1 Architecture, 7.2 Code Security) utilizes the robust and well-audited OpenZeppelin transparent proxy pattern, effectively mitigating selector… |
-| **Governance / Economics** | 1/10 | High | The governance and economic security (7.4 Economic, 7.5 Governance) of the system are severely impacted by the lack of transparency regarding the implementation contract and the `ProxyAdmin`'s… |
-| **Upgrades** | 2/10 | High | The system employs the Transparent Proxy pattern (7.7 Upgrades) for upgradeability, a standard and secure mechanism when properly managed. However, the upgrade process carries significant risks due… |
+| **Technical** | 6/10 | Medium | The audited `TransparentUpgradeableProxy` contract (7.1 Architecture, 7.2 Code Security) utilizes the robust and well-audited OpenZeppelin transparent proxy pattern, effectively mitigating selector… |
+| **Governance / Economics** | 2/10 | High | The governance and economic security (7.4 Economic, 7.5 Governance) of the system are severely impacted by the lack of transparency regarding the implementation contract and the `ProxyAdmin`'s… |
+| **Upgrades** | 1/10 | High | The system employs the Transparent Proxy pattern (7.7 Upgrades) for upgradeability, a standard and secure mechanism when properly managed. However, the upgrade process carries significant risks due… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Transparent |
+| **Admin** | Other-Contract |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
@@ -73,21 +82,21 @@ The `_admin` variable in the `TransparentUpgradeableProxy` contract is declared 
 |--------|-------|
 | **Contract** | [`0xb1d1...71be`](https://etherscan.io/address/0xb1d1eae60eea9525032a6dcb4c1ce336a1de71be) |
 | **Network** | Ethereum |
-| **Price** | $0.1782 |
-| **24h Volume** | $96.2K |
-| **Liquidity** | $32.0K |
-| **Volume / Liquidity** | 3.0× |
+| **Price** | $0.1207 |
+| **24h Volume** | $9.4K |
+| **Liquidity** | $32.6K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 87.8% of supply |
+| **Top-10 Holders** | 88.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 196 buys / 210 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
@@ -97,7 +106,7 @@ The `_admin` variable in the `TransparentUpgradeableProxy` contract is declared 
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |

@@ -2,14 +2,14 @@
 token: Caldera
 ticker: ERA
 network: ethereum
-risk_score: 73
+risk_score: 84
 status: critical
 date: 2026-07-22
 ---
 
 # Caldera (ERA) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 73/100 — 🔴 Critical Risk**
+> **Risk Score: 84/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/caldera-eth)
 
@@ -25,9 +25,17 @@ This audit focused on the provided ERC1967Proxy contract, which is a standard UU
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The audited contract is a standard OpenZeppelin ERC1967Proxy, which is a well-vetted and widely used UUPS proxy implementation (7.1 Architecture). Its `delegatecall` mechanism is correctly… |
+| **Technical** | 5/10 | Medium | The audited contract is a standard OpenZeppelin ERC1967Proxy, which is a well-vetted and widely used UUPS proxy implementation (7.1 Architecture). Its `delegatecall` mechanism is correctly… |
 | **Governance / Economics** | 1/10 | High | The economic and governance risks are primarily tied to the upgradeability mechanism (7.5 Governance). As a UUPS proxy, the administrative control for upgrades resides within the implementation… |
-| **Upgrades** | 3/10 | High | The contract implements the UUPS (ERC-1967) proxy pattern, allowing for seamless upgrades of the underlying logic (7.7 Upgrades). This flexibility is a strength, but also introduces significant risk… |
+| **Upgrades** | 1/10 | High | The contract implements the UUPS (ERC-1967) proxy pattern, allowing for seamless upgrades of the underlying logic (7.7 Upgrades). This flexibility is a strength, but also introduces significant risk… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Uups |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## Security Findings
 
@@ -73,22 +81,22 @@ The contract utilizes the `ERC1967Proxy` from OpenZeppelin Contracts, which is a
 |--------|-------|
 | **Contract** | [`0xe2ad...de2a`](https://etherscan.io/address/0xe2ad0bf751834f2fbdc62a41014f84d67ca1de2a) |
 | **Network** | Ethereum |
-| **Price** | $0.1171 |
-| **24h Volume** | $41.9K |
-| **Liquidity** | $33.0K |
-| **Volume / Liquidity** | 1.3× |
+| **Price** | $0.104 |
+| **24h Volume** | $7.2K |
+| **Liquidity** | $10.7K |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 1y |
 | **Top-10 Holders** | 100.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 380 buys / 321 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
-| Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
 
@@ -97,8 +105,8 @@ The contract utilizes the `ERC1967Proxy` from OpenZeppelin Contracts, which is a
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
-| Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
