@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**34 reports** · Updated daily · [← All Networks](../README.md)
+**36 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Solana](./solana.md) | SOL | 🟠 63/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/solana-base) |
+| [LayerZero](./layerzero.md) | ZRO | 🟠 68/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/layerzero-base) |
 | [Wrapped PROS](./wrapped-pros.md) | PROS | 🟠 69/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/wrapped-pros-base) |
 | [AUTONOMOPOLY](./autonomopoly.md) | AUTONO | 🟠 63/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/autonomopoly-base) |
 | [Briun Armstrung](./briun-armstrung.md) | BRIUN | 🟡 32/100 Medium Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/briun-armstrung-base) |

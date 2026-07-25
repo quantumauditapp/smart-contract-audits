@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**47 reports** · Updated daily · [← All Networks](../README.md)
+**50 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Beam](./beam.md) | BEAM | 🟠 68/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/beam-eth) |
+| [VANRY](./vanry.md) | VANRY | 🟠 63/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/vanry-eth) |
+| [Covalent X Token](./covalent-x-token.md) | CXT | 🟠 66/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/covalent-x-token-eth) |
 | [Helix Token](./helix-token.md) | HLX | 🟠 66/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/helix-token-eth) |
 | [01](./01.md) | 01 | 🟢 11/100 Low Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/01-eth) |
 | [Manyu](./manyu.md) | MANYU | 🟢 15/100 Low Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/manyu-eth) |

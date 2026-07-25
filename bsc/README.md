@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**31 reports** · Updated daily · [← All Networks](../README.md)
+**36 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [TRADOOR](./tradoor.md) | TRADOOR | 🟠 67/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/tradoor-bsc) |
+| [SIREN](./siren.md) | SIREN | 🟠 63/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/siren-bsc) |
+| [ARAI Token](./arai-token.md) | AA | 🟠 65/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/arai-token-bsc) |
+| [IBS](./ibs.md) | IBS | 🟠 61/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/ibs-bsc) |
+| [CREPE](./crepe.md) | CREPE | 🟢 0/100 Low Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/crepe-bsc) |
 | [Block Street](./block-street.md) | BSB | 🟠 64/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/block-street-bsc) |
 | [Tagger](./tagger.md) | TAG | 🟠 64/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/tagger-bsc) |
 | [Yooldo Games](./yooldo-games.md) | ESPORTS | 🟠 67/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/yooldo-games-bsc) |

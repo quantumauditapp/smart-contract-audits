@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**147 reports** · Updated daily · [← All Networks](../README.md)
+**156 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,15 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Cricket The Dog](./cricket-the-dog.md) | CRICKET | 🔴 75/100 Critical Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/cricket-the-dog-sol) |
+| [dogwifhat](./dogwifhat.md) | $WIF | 🟠 62/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/dogwifhat-sol) |
+| [United States Water Reserve](./united-states-water-reserve.md) | USWR | 🔴 71/100 Critical Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/united-states-water-reserve-sol) |
+| [Sakura ](./sakura.md) | SAKURA  | 🟠 66/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/sakura-sol) |
+| [Knight Core](./knight-core.md) | KNIGHT | 🟠 62/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/knight-core-sol) |
+| [Albatross Protocol](./albatross-protocol.md) | ALBATROSS | 🟠 64/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/albatross-protocol-sol) |
+| [DXB LARP](./dxb-larp.md) | LARP | 🔴 82/100 Critical Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/dxb-larp-sol) |
+| [AI Rig Complex](./ai-rig-complex.md) | ARC | 🔴 88/100 Critical Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/ai-rig-complex-sol) |
+| [Jimothy The Raccoon](./jimothy-the-raccoon.md) | JIMOTHY | 🟠 69/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/jimothy-the-raccoon-sol) |
 | [Hoppy ](./hoppy.md) | HOPPY | 🟠 70/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/hoppy-sol) |
 | [Udin din din dun](./udin-din-din-dun.md) | UDIN | 🟠 51/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/udin-din-din-dun-sol) |
 | [The Cult of YOTS](./the-cult-of-yots.md) | YOTS | 🟠 59/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/the-cult-of-yots-sol) |
