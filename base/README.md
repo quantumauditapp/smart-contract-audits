@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**36 reports** · Updated daily · [← All Networks](../README.md)
+**39 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [B3](./b3.md) | B3 | 🟠 63/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/b3-base) |
+| [Recall](./recall.md) | RECALL | 🟠 64/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/recall-base) |
+| [Diem](./diem.md) | DIEM | 🟠 68/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/diem-base) |
 | [Solana](./solana.md) | SOL | 🟠 63/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/solana-base) |
 | [LayerZero](./layerzero.md) | ZRO | 🟠 68/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/layerzero-base) |
 | [Wrapped PROS](./wrapped-pros.md) | PROS | 🟠 69/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/wrapped-pros-base) |

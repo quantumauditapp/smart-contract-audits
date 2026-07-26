@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**36 reports** · Updated daily · [← All Networks](../README.md)
+**42 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Hana Token](./hana-token.md) | HANA | 🟠 64/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/hana-token-bsc) |
+| [LIGHT](./light.md) | LIGHT | 🟠 65/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/light-bsc) |
+| [Mame Inu](./mame-inu.md) | MAME | 🟠 67/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/mame-inu-bsc) |
+| [Invesqo QQQ](./invesqo-qqq.md) | QQQB | 🟠 63/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/invesqo-qqq-bsc) |
+| [Pieverse Token](./pieverse-token.md) | PIEVERSE | 🟠 67/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/pieverse-token-bsc) |
+| [AKE](./ake.md) | AKE | 🟠 64/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/ake-bsc) |
 | [TRADOOR](./tradoor.md) | TRADOOR | 🟠 67/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/tradoor-bsc) |
 | [SIREN](./siren.md) | SIREN | 🟠 63/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/siren-bsc) |
 | [ARAI Token](./arai-token.md) | AA | 🟠 65/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/arai-token-bsc) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**156 reports** · Updated daily · [← All Networks](../README.md)
+**160 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [The Gamestop Bull ](./the-gamestop-bull.md) | GMEBULL | 🔴 78/100 Critical Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/the-gamestop-bull-sol) |
+| [KET](./ket.md) | KET | 🔴 75/100 Critical Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/ket-sol) |
+| [Just a chill guy](./just-a-chill-guy.md) | CHILLGUY | 🟠 66/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/just-a-chill-guy-sol) |
+| [OBSDIAN](./obsdian.md) | OBSD | 🟠 66/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/obsdian-sol) |
 | [Cricket The Dog](./cricket-the-dog.md) | CRICKET | 🔴 75/100 Critical Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/cricket-the-dog-sol) |
 | [dogwifhat](./dogwifhat.md) | $WIF | 🟠 62/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/dogwifhat-sol) |
 | [United States Water Reserve](./united-states-water-reserve.md) | USWR | 🔴 71/100 Critical Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/united-states-water-reserve-sol) |

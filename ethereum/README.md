@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**50 reports** · Updated daily · [← All Networks](../README.md)
+**55 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Token Prometeus Network](./token-prometeus-network.md) | PROM | 🟠 69/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/token-prometeus-network-eth) |
+| [Request Token](./request-token.md) | REQ | 🟡 33/100 Medium Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/request-token-eth) |
+| [Pepe](./pepe.md) | PEPE | 🟢 0/100 Low Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/pepe-eth) |
+| [Euler](./euler.md) | EUL | 🔴 89/100 Critical Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/euler-eth) |
+| [Shiba Inu](./shiba-inu.md) | SHIB | 🔴 75/100 Critical Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/shiba-inu-eth) |
 | [Beam](./beam.md) | BEAM | 🟠 68/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/beam-eth) |
 | [VANRY](./vanry.md) | VANRY | 🟠 63/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/vanry-eth) |
 | [Covalent X Token](./covalent-x-token.md) | CXT | 🟠 66/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/covalent-x-token-eth) |
