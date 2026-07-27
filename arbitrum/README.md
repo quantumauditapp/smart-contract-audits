@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**7 reports** · Updated daily · [← All Networks](../README.md)
+**9 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [RAIN](./rain.md) | RAIN | 🟠 66/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/rain-arb) |
+| [Livepeer Token](./livepeer-token.md) | LPT | 🟠 67/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/livepeer-token-arb) |
 | [NOXCAT](./noxcat.md) | NOX | 🟠 65/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/noxcat-arb) |
 | [Autonomi](./autonomi.md) | ANT | 🟠 67/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/autonomi-arb) |
 | [Wrapped BTC](./wrapped-btc.md) | WBTC | 🟠 57/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/wrapped-btc-arb) |

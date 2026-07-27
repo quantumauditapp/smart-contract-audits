@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**160 reports** · Updated daily · [← All Networks](../README.md)
+**161 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Chill House](./chill-house.md) | CHILLHOUSE | 🟠 62/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/chill-house-sol) |
 | [The Gamestop Bull ](./the-gamestop-bull.md) | GMEBULL | 🔴 78/100 Critical Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/the-gamestop-bull-sol) |
 | [KET](./ket.md) | KET | 🔴 75/100 Critical Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/ket-sol) |
 | [Just a chill guy](./just-a-chill-guy.md) | CHILLGUY | 🟠 66/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/just-a-chill-guy-sol) |

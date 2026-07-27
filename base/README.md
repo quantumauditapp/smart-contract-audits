@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**39 reports** · Updated daily · [← All Networks](../README.md)
+**42 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [OWB](./owb.md) | OWB | 🟠 66/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/owb-base) |
+| [Horizen](./horizen.md) | ZEN | 🟠 63/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/horizen-base) |
+| [Avantis](./avantis.md) | AVNT | 🟠 65/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/avantis-base) |
 | [B3](./b3.md) | B3 | 🟠 63/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/b3-base) |
 | [Recall](./recall.md) | RECALL | 🟠 64/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/recall-base) |
 | [Diem](./diem.md) | DIEM | 🟠 68/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/diem-base) |

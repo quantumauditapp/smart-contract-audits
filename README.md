@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-303-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-320-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,23 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [RAIN](./arbitrum/rain.md) | RAIN | Arbitrum | 🟠 66/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/rain-arb) |
+| [Livepeer Token](./arbitrum/livepeer-token.md) | LPT | Arbitrum | 🟠 67/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/livepeer-token-arb) |
+| [OWB](./base/owb.md) | OWB | Base | 🟠 66/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/owb-base) |
+| [Horizen](./base/horizen.md) | ZEN | Base | 🟠 63/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/horizen-base) |
+| [Avantis](./base/avantis.md) | AVNT | Base | 🟠 65/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/avantis-base) |
+| [Bitway Token](./bsc/bitway-token.md) | BTW | BNB Chain | 🟠 61/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/bitway-token-bsc) |
+| [VELO](./bsc/velo.md) | VELO | BNB Chain | 🟠 65/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/velo-bsc) |
+| [Quack AI Token](./bsc/quack-ai-token.md) | Q | BNB Chain | 🟠 64/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/quack-ai-token-bsc) |
+| [Starpower Network](./bsc/starpower-network.md) | STAR | BNB Chain | 🟠 63/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/starpower-network-bsc) |
+| [OLY](./bsc/oly.md) | OLY | BNB Chain | 🟠 68/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/oly-bsc) |
+| [4](./bsc/4.md) | 4 | BNB Chain | 🟠 67/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/4-bsc) |
+| [Tether Gold](./ethereum/tether-gold.md) | XAUT | Ethereum | 🟠 65/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/tether-gold-eth) |
+| [LQTY](./ethereum/lqty.md) | LQTY | Ethereum | 🟠 61/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/lqty-eth) |
+| [Espresso](./ethereum/espresso.md) | ESP | Ethereum | 🟠 65/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/espresso-eth) |
+| [DIAToken](./ethereum/diatoken.md) | DIA | Ethereum | 🟠 65/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/diatoken-eth) |
+| [Safe Token](./ethereum/safe-token.md) | SAFE | Ethereum | 🟠 63/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/safe-token-eth) |
+| [Chill House](./solana/chill-house.md) | CHILLHOUSE | Solana | 🟠 62/100 | 2026-07-27 | [↗](https://quantumaudit.app/token/chill-house-sol) |
 | [B3](./base/b3.md) | B3 | Base | 🟠 63/100 | 2026-07-26 | [↗](https://quantumaudit.app/token/b3-base) |
 | [Recall](./base/recall.md) | RECALL | Base | 🟠 64/100 | 2026-07-26 | [↗](https://quantumaudit.app/token/recall-base) |
 | [Diem](./base/diem.md) | DIEM | Base | 🟠 68/100 | 2026-07-26 | [↗](https://quantumaudit.app/token/diem-base) |
@@ -25,29 +42,12 @@
 | [AKE](./bsc/ake.md) | AKE | BNB Chain | 🟠 64/100 | 2026-07-26 | [↗](https://quantumaudit.app/token/ake-bsc) |
 | [Token Prometeus Network](./ethereum/token-prometeus-network.md) | PROM | Ethereum | 🟠 69/100 | 2026-07-26 | [↗](https://quantumaudit.app/token/token-prometeus-network-eth) |
 | [Just a chill guy](./solana/just-a-chill-guy.md) | CHILLGUY | Solana | 🟠 66/100 | 2026-07-26 | [↗](https://quantumaudit.app/token/just-a-chill-guy-sol) |
-| [OBSDIAN](./solana/obsdian.md) | OBSD | Solana | 🟠 66/100 | 2026-07-26 | [↗](https://quantumaudit.app/token/obsdian-sol) |
-| [Request Token](./ethereum/request-token.md) | REQ | Ethereum | 🟡 33/100 | 2026-07-26 | [↗](https://quantumaudit.app/token/request-token-eth) |
-| [Pepe](./ethereum/pepe.md) | PEPE | Ethereum | 🟢 0/100 | 2026-07-26 | [↗](https://quantumaudit.app/token/pepe-eth) |
-| [Euler](./ethereum/euler.md) | EUL | Ethereum | 🔴 89/100 | 2026-07-26 | [↗](https://quantumaudit.app/token/euler-eth) |
-| [Shiba Inu](./ethereum/shiba-inu.md) | SHIB | Ethereum | 🔴 75/100 | 2026-07-26 | [↗](https://quantumaudit.app/token/shiba-inu-eth) |
-| [NOXCAT](./arbitrum/noxcat.md) | NOX | Arbitrum | 🟠 65/100 | 2026-07-25 | [↗](https://quantumaudit.app/token/noxcat-arb) |
-| [Solana](./base/solana.md) | SOL | Base | 🟠 63/100 | 2026-07-25 | [↗](https://quantumaudit.app/token/solana-base) |
-| [LayerZero](./base/layerzero.md) | ZRO | Base | 🟠 68/100 | 2026-07-25 | [↗](https://quantumaudit.app/token/layerzero-base) |
-| [TRADOOR](./bsc/tradoor.md) | TRADOOR | BNB Chain | 🟠 67/100 | 2026-07-25 | [↗](https://quantumaudit.app/token/tradoor-bsc) |
-| [SIREN](./bsc/siren.md) | SIREN | BNB Chain | 🟠 63/100 | 2026-07-25 | [↗](https://quantumaudit.app/token/siren-bsc) |
-| [ARAI Token](./bsc/arai-token.md) | AA | BNB Chain | 🟠 65/100 | 2026-07-25 | [↗](https://quantumaudit.app/token/arai-token-bsc) |
-| [IBS](./bsc/ibs.md) | IBS | BNB Chain | 🟠 61/100 | 2026-07-25 | [↗](https://quantumaudit.app/token/ibs-bsc) |
-| [Beam](./ethereum/beam.md) | BEAM | Ethereum | 🟠 68/100 | 2026-07-25 | [↗](https://quantumaudit.app/token/beam-eth) |
-| [VANRY](./ethereum/vanry.md) | VANRY | Ethereum | 🟠 63/100 | 2026-07-25 | [↗](https://quantumaudit.app/token/vanry-eth) |
-| [Covalent X Token](./ethereum/covalent-x-token.md) | CXT | Ethereum | 🟠 66/100 | 2026-07-25 | [↗](https://quantumaudit.app/token/covalent-x-token-eth) |
-| [Cricket The Dog](./solana/cricket-the-dog.md) | CRICKET | Solana | 🔴 75/100 | 2026-07-25 | [↗](https://quantumaudit.app/token/cricket-the-dog-sol) |
-| [dogwifhat](./solana/dogwifhat.md) | $WIF | Solana | 🟠 62/100 | 2026-07-25 | [↗](https://quantumaudit.app/token/dogwifhat-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (160)](./solana/README.md) · [Ethereum (55)](./ethereum/README.md) · [BNB Chain (42)](./bsc/README.md) · [Base (39)](./base/README.md) · [Arbitrum (7)](./arbitrum/README.md)
+[Solana (161)](./solana/README.md) · [Ethereum (60)](./ethereum/README.md) · [BNB Chain (48)](./bsc/README.md) · [Base (42)](./base/README.md) · [Arbitrum (9)](./arbitrum/README.md)
 
 ---
 

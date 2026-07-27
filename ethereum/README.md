@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**55 reports** · Updated daily · [← All Networks](../README.md)
+**60 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Tether Gold](./tether-gold.md) | XAUT | 🟠 65/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/tether-gold-eth) |
+| [LQTY](./lqty.md) | LQTY | 🟠 61/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/lqty-eth) |
+| [Espresso](./espresso.md) | ESP | 🟠 65/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/espresso-eth) |
+| [DIAToken](./diatoken.md) | DIA | 🟠 65/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/diatoken-eth) |
+| [Safe Token](./safe-token.md) | SAFE | 🟠 63/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/safe-token-eth) |
 | [Token Prometeus Network](./token-prometeus-network.md) | PROM | 🟠 69/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/token-prometeus-network-eth) |
 | [Request Token](./request-token.md) | REQ | 🟡 33/100 Medium Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/request-token-eth) |
 | [Pepe](./pepe.md) | PEPE | 🟢 0/100 Low Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/pepe-eth) |

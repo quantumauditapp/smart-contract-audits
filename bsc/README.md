@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**42 reports** · Updated daily · [← All Networks](../README.md)
+**48 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Bitway Token](./bitway-token.md) | BTW | 🟠 61/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/bitway-token-bsc) |
+| [VELO](./velo.md) | VELO | 🟠 65/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/velo-bsc) |
+| [Quack AI Token](./quack-ai-token.md) | Q | 🟠 64/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/quack-ai-token-bsc) |
+| [Starpower Network](./starpower-network.md) | STAR | 🟠 63/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/starpower-network-bsc) |
+| [OLY](./oly.md) | OLY | 🟠 68/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/oly-bsc) |
+| [4](./4.md) | 4 | 🟠 67/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/4-bsc) |
 | [Hana Token](./hana-token.md) | HANA | 🟠 64/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/hana-token-bsc) |
 | [LIGHT](./light.md) | LIGHT | 🟠 65/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/light-bsc) |
 | [Mame Inu](./mame-inu.md) | MAME | 🟠 67/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/mame-inu-bsc) |
