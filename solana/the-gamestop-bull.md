@@ -2,24 +2,42 @@
 token: The Gamestop Bull 
 ticker: GMEBULL
 network: solana
-risk_score: 78
-status: critical
+risk_score: 67
+status: high
 date: 2026-07-26
 ---
 
 # The Gamestop Bull  (GMEBULL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 78/100 — 🔴 Critical Risk**
+> **Risk Score: 67/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-gamestop-bull-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-The Gamestop Bull  (GMEBULL) is a token on Solana. Our automated on-chain security scanner assigned it a risk score of 78/100, classified as Critical Risk. The contract source code has not been verified on the blockchain explorer. Contract ownership has not been renounced, and the contract does not have a mint function. Liquidity does not appear to be locked. These factors are weighted to produce the overall risk classification.
+The audit of the GMEBULL SPL Token Mint reveals a Medium risk profile primarily due to the very recent launch of its DEX trading pair. Key authorities like Mint and Freeze are revoked, enhancing security. However, holder concentration data was unavailable, preventing a full assessment of distribution risk.
 
-Key signals investors should consider: the top 10 wallets hold 37.3% of the supply, which suggests a relatively distributed token supply. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
+> **Final Recommendation:** Before engaging with this token, holders should monitor the DEX pair's age to ensure it establishes a sufficient track record, ideally beyond 7 days, to mitigate risks associated with new launches. Continuously verify the token's liquidity and trading volume to ensure stability and sufficient market depth for desired transaction sizes. Regularly check for any changes in the third-party risk registry status, as new information could emerge.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The GMEBULL token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, which is a positive security indicator as it prevents further token… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a Medium risk due to its very recent launch, with the DEX pair created only 6 days ago, limiting historical data for analysis. Current liquidity stands at $23,249, with a 24-hour… |
+| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint and Freeze, are revoked, preventing post-launch changes to supply or account states. It utilizes the Token-2022 program but does not have a Transfer Hook or Default… |
+
+## Security Findings
+
+_🟡 1 Medium_
+
+### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
+
+DEX pair was created 6 days ago. Insufficient track record to assess team or holder behaviour.
+
+**Recommendation:** Monitor the pair's performance and team activity for a longer period before making significant investments.
 
 ## Token Metrics
 
@@ -27,12 +45,12 @@ Key signals investors should consider: the top 10 wallets hold 37.3% of the supp
 |--------|-------|
 | **Contract** | [`4tnZ57...pump`](https://solscan.io/account/4tnZ57E3oWjaZKSQY1iwgqiD8ivAGk5TambivhTYpump) |
 | **Network** | Solana |
-| **Price** | $0.0001359 |
-| **24h Volume** | $139.8K |
-| **Liquidity** | $33.5K |
-| **Volume / Liquidity** | 4.2× |
+| **Price** | $0.00006355 |
+| **24h Volume** | $58.6K |
+| **Liquidity** | $23.2K |
+| **Volume / Liquidity** | 2.5× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 37.3% of supply |
+| **Top-10 Holders** | 47.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3075 buys / 3003 sells |
 

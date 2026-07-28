@@ -2,24 +2,42 @@
 token: KET
 ticker: KET
 network: solana
-risk_score: 75
-status: critical
+risk_score: 59
+status: high
 date: 2026-07-26
 ---
 
 # KET (KET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 75/100 — 🔴 Critical Risk**
+> **Risk Score: 59/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ket-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-KET (KET) is a token on Solana. Our automated on-chain security scanner assigned it a risk score of 75/100, classified as Critical Risk. The contract source code has not been verified on the blockchain explorer. Contract ownership has not been renounced, and the contract does not have a mint function. Liquidity does not appear to be locked. These factors are weighted to produce the overall risk classification.
+The KET SPL token mint exhibits a Medium risk profile primarily due to its very recent DEX pair creation, which limits historical data for assessing market stability. Key authorities such as Mint Authority and Freeze Authority are revoked, enhancing security by preventing further token issuance or account freezing. Holder concentration data was unavailable, and third-party risk registries reported no adverse flags.
 
-Key signals investors should consider: the top 10 wallets hold 31.5% of the supply, which suggests a relatively distributed token supply. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
+> **Final Recommendation:** Given the recent launch of the DEX pair, prospective holders should monitor the token's market performance, liquidity depth, and trading volume over a longer period. Verify on-chain that the Mint Authority and Freeze Authority remain revoked to ensure the token's supply and transferability are not subject to central control. Regularly check for any new flags from independent third-party risk registries as more data becomes available.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The KET token is implemented using the standard `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked, preventing further token minting or freezing of holder accounts.… |
+| **Governance / Economics** | 1/10 | High | The token's economic profile shows a top 10 holder concentration of 31.18%, which is not considered highly concentrated. Total DEX liquidity stands at $321,266, supporting a 24-hour trading volume of… |
+| **Upgrades** | 5/10 | Medium | The KET token mint has a robust authority revocation status, with both Mint Authority and Freeze Authority permanently revoked. This means the token's core parameters related to supply and account… |
+
+## Security Findings
+
+_🟡 1 Medium_
+
+### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
+
+The DEX pair for KET was created 5 days ago. This short operational history provides insufficient track record to assess team or holder behaviour, making long-term stability and market dynamics uncertain.
+
+**Recommendation:** Exercise caution due to the nascent trading history. Monitor price action, liquidity trends, and overall market sentiment closely over an extended period before making significant investment decisions.
 
 ## Token Metrics
 
@@ -27,12 +45,12 @@ Key signals investors should consider: the top 10 wallets hold 31.5% of the supp
 |--------|-------|
 | **Contract** | [`9Pfync...pump`](https://solscan.io/account/9Pfync3ejPC9eHqVzq3nYQJAhyhjqpnB9UsaSfLxpump) |
 | **Network** | Solana |
-| **Price** | $0.01155 |
-| **24h Volume** | $926.2K |
-| **Liquidity** | $399.1K |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $0.009237 |
+| **24h Volume** | $1.07M |
+| **Liquidity** | $321.3K |
+| **Volume / Liquidity** | 3.3× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 31.5% of supply |
+| **Top-10 Holders** | 31.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1912 buys / 1186 sells |
 

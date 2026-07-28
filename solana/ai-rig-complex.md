@@ -2,24 +2,32 @@
 token: AI Rig Complex
 ticker: ARC
 network: solana
-risk_score: 88
-status: critical
+risk_score: 53
+status: high
 date: 2026-07-25
 ---
 
 # AI Rig Complex (ARC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 88/100 — 🔴 Critical Risk**
+> **Risk Score: 53/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ai-rig-complex-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-AI Rig Complex (ARC) is a token on Solana. Our automated on-chain security scanner assigned it a risk score of 88/100, classified as Critical Risk. The contract source code has not been verified on the blockchain explorer. Contract ownership has not been renounced, and the contract does not have a mint function. Liquidity does not appear to be locked. These factors are weighted to produce the overall risk classification.
+The AI Rig Complex (arc) token mint exhibits a high concentration of tokens among its top holders, with 79.75% of the supply controlled by the top 10 accounts, posing a significant market risk. Positively, both the mint and freeze authorities have been revoked, preventing further token issuance or account freezing. Holder distribution data from chain-native RPC was unavailable for a more granular analysis.
 
-Key signals investors should consider: the top 10 wallets hold 79.5% of the supply, which indicates concentrated ownership — a common risk factor. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
+> **Final Recommendation:** Given the high holder concentration, users should exercise caution and closely monitor the on-chain movements of the largest token holders. Significant transfers or sales by these addresses could lead to substantial price volatility. Before any interaction, verify the current status of the mint and freeze authorities on-chain to confirm they remain revoked, as this is a critical security assurance for the token's fixed supply and unfreezable accounts.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 5/10 | Medium | The AI Rig Complex token is implemented using the standard `spl-token` program (v3). Both the mint authority and freeze authority are revoked (None), indicating that no new tokens can be minted and… |
+| **Governance / Economics** | 1/10 | High | A significant economic risk is present due to high holder concentration, with the top 10 token accounts holding 79.75% of the total supply. This level of concentration makes the token susceptible to… |
+| **Upgrades** | 5/10 | Medium | The token's upgradeability and mutability features are minimal, contributing to a stable state. The mint authority and freeze authority are both revoked, meaning no further changes can be made to the… |
 
 ## LP Distribution
 
@@ -27,18 +35,28 @@ Key signals investors should consider: the top 10 wallets hold 79.5% of the supp
 |--------|-------|
 | **LP Burned** | ✅ 100.0% (≈ permanent lock) |
 
+## Security Findings
+
+_🟠 1 High_
+
+### `H-01` — Holder Concentration > 70%  *(Severity: High · Status: Unresolved)*
+
+Top 10 token accounts hold 79.75% of supply. Coordinated sell-off would crash price; single-whale dumps are common in this range.
+
+**Recommendation:** Monitor the activity of large holders and consider the potential impact of significant sell orders on market price.
+
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
 | **Contract** | [`61V8vB...pump`](https://solscan.io/account/61V8vBaqAGMpgDQi4JcAwo1dmBGHsyhzodcPqnEVpump) |
 | **Network** | Solana |
-| **Price** | $0.06085 |
-| **24h Volume** | $235.1K |
-| **Liquidity** | $3.53M |
+| **Price** | $0.05375 |
+| **24h Volume** | $271.7K |
+| **Liquidity** | $3.37M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 79.5% of supply |
+| **Top-10 Holders** | 79.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 719 buys / 697 sells |
 

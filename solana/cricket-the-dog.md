@@ -2,24 +2,42 @@
 token: Cricket The Dog
 ticker: CRICKET
 network: solana
-risk_score: 75
-status: critical
+risk_score: 66
+status: high
 date: 2026-07-25
 ---
 
 # Cricket The Dog (CRICKET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 75/100 — 🔴 Critical Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cricket-the-dog-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Cricket The Dog (CRICKET) is a token on Solana. Our automated on-chain security scanner assigned it a risk score of 75/100, classified as Critical Risk. The contract source code has not been verified on the blockchain explorer. Contract ownership has not been renounced, and the contract does not have a mint function. Liquidity does not appear to be locked. These factors are weighted to produce the overall risk classification.
+This SPL Token Mint audit for Cricket The Dog (Cricket) identifies a Medium risk due to the very recent creation of its DEX pair, indicating an insufficient track record. Key authorities like Mint and Freeze are revoked, which is a positive security measure. However, holder distribution data was unavailable, preventing a full assessment of supply concentration.
 
-Key signals investors should consider: the top 10 wallets hold 33.5% of the supply, which suggests a relatively distributed token supply. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
+> **Final Recommendation:** Prospective holders should exercise caution due to the very recent launch of the DEX pair. It is recommended to monitor the token's market behavior, liquidity, and holder distribution over a longer period to establish a more reliable track record. Verify on-chain that the Mint and Freeze authorities remain revoked to ensure the fixed supply and unfreezable nature of the token.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the Mint Authority and Freeze Authority are revoked (None), which prevents further token… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 43.38% of the supply, which is below the threshold for high concentration. Total DEX liquidity stands at $22,840, which is… |
+| **Upgrades** | 5/10 | Medium | The token's Mint Authority and Freeze Authority are both revoked, preventing any further changes to the token supply or account freeze status. It utilizes the spl-token-2022 program, but does not… |
+
+## Security Findings
+
+_🟡 1 Medium_
+
+### `M-01` — Very New Pair  *(Severity: Medium · Status: Unresolved)*
+
+The DEX pair for Cricket The Dog was created 5 days ago. This short track record provides insufficient data to assess the long-term behavior of the team or token holders, which can lead to unpredictable price movements or rug pulls.
+
+**Recommendation:** Exercise increased caution. Monitor the token's performance, liquidity, and holder activity for a longer period (e.g., several weeks) before making significant investments. A longer operational history can provide more confidence in the project's stability and community engagement.
 
 ## Token Metrics
 
@@ -27,12 +45,12 @@ Key signals investors should consider: the top 10 wallets hold 33.5% of the supp
 |--------|-------|
 | **Contract** | [`J33WbC...pump`](https://solscan.io/account/J33WbCWN2m1EpoNUP9Ch6cWoV5j6BFJervDfgPk3pump) |
 | **Network** | Solana |
-| **Price** | $0.0001349 |
-| **24h Volume** | $264.4K |
-| **Liquidity** | $30.2K |
-| **Volume / Liquidity** | 8.8× |
+| **Price** | $0.00007531 |
+| **24h Volume** | $71.6K |
+| **Liquidity** | $22.8K |
+| **Volume / Liquidity** | 3.1× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 33.5% of supply |
+| **Top-10 Holders** | 43.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1994 buys / 2831 sells |
 

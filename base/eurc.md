@@ -2,14 +2,14 @@
 token: EURC
 ticker: EURC
 network: base
-risk_score: 76
-status: critical
+risk_score: 60
+status: high
 date: 2026-07-24
 ---
 
 # EURC (EURC) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 76/100 — 🔴 Critical Risk**
+> **Risk Score: 60/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/eurc-base)
 
@@ -25,9 +25,25 @@ This audit covers the FiatTokenV2_2 contract, which serves as the implementation
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The technical architecture (7.1) is robust, leveraging an upgradeable proxy pattern and EIP-712 for off-chain signed transactions. Code security (7.2) is generally strong, with appropriate checks for… |
-| **Governance / Economics** | 2/10 | High | The economic model (7.4) is that of a centralized stablecoin, backed by fiat reserves, which inherently carries a high level of governance risk (7.5). Critical functions such as blacklisting… |
-| **Upgrades** | 2/10 | High | The contract utilizes a ZeppelinOS legacy proxy pattern, allowing for seamless upgrades of the token logic (7.7). The `initializeV2_2` function is designed for a controlled, single-time execution… |
+| **Technical** | 6/10 | Medium | The technical architecture (7.1) is robust, leveraging an upgradeable proxy pattern and EIP-712 for off-chain signed transactions. Code security (7.2) is generally strong, with appropriate checks for… |
+| **Governance / Economics** | 1/10 | High | The economic model (7.4) is that of a centralized stablecoin, backed by fiat reserves, which inherently carries a high level of governance risk (7.5). Critical functions such as blacklisting… |
+| **Upgrades** | 1/10 | High | The contract utilizes a ZeppelinOS legacy proxy pattern, allowing for seamless upgrades of the token logic (7.7). The `initializeV2_2` function is designed for a controlled, single-time execution… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Zeppelin Os Legacy |
+| **Admin** | ⚠️ EOA (single key controls upgrades) |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 92.6% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -74,11 +90,11 @@ The `initializeV2_2` function includes a `require(_initializedVersion == 2);` ch
 | **Contract** | [`0x60a3...db42`](https://basescan.org/address/0x60a3e35cc302bfa44cb288bc5a4f316fdb1adb42) |
 | **Network** | Base |
 | **Price** | $1.1300 |
-| **24h Volume** | $3.89M |
-| **Liquidity** | $1.99M |
-| **Volume / Liquidity** | 2.0× |
+| **24h Volume** | $3.53M |
+| **Liquidity** | $2.17M |
+| **Volume / Liquidity** | 1.6× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 44.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1155 buys / 1250 sells |
 
@@ -86,21 +102,21 @@ The `initializeV2_2` function includes a `require(_initializedVersion == 2);` ch
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
 | No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

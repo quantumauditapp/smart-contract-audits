@@ -2,24 +2,32 @@
 token: OBSDIAN
 ticker: OBSD
 network: solana
-risk_score: 66
-status: high
+risk_score: 100
+status: critical
 date: 2026-07-26
 ---
 
 # OBSDIAN (OBSD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 100/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/obsdian-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-OBSDIAN (OBSD) is a token on Solana. Our automated on-chain security scanner assigned it a risk score of 66/100, classified as High Risk. The contract source code has not been verified on the blockchain explorer. Contract ownership has not been renounced, and the contract does not have a mint function. Liquidity does not appear to be locked. These factors are weighted to produce the overall risk classification.
+The OBSDIAN (OBSD) token mint exhibits a high risk due to very low DEX liquidity, currently at $9,988. This makes large positions difficult to exit without significant price impact. Key authorities like Mint and Freeze are revoked, and metadata is immutable, indicating a fixed supply and unchangeable token properties. Holder distribution data was partially unavailable from chain-native RPC, though a top 10 holder percentage was provided by an external security signal.
 
-Key signals investors should consider: the top 10 wallets hold 38.5% of the supply, which suggests a relatively distributed token supply. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
+> **Final Recommendation:** Prospective holders should exercise extreme caution due to the very low liquidity. Before acquiring OBSD, verify the current DEX liquidity on a real-time market data platform to understand potential slippage. Consider the impact of any intended transaction size on the token's price. Monitor liquidity levels over time, as increased liquidity would mitigate this risk. Do not rely on the current market price for large trades without accounting for significant slippage.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 4/10 | Medium | The OBSDIAN token is a standard SPL token operating under the `spl-token` program. Both the Mint Authority and Freeze Authority are revoked, ensuring that no new tokens can be minted and no accounts… |
+| **Governance / Economics** | 1/10 | High | The token's economic profile shows a significant concern with very low DEX liquidity, currently at $9,988. This level of liquidity suggests that even moderate sell orders could lead to substantial… |
+| **Upgrades** | 4/10 | Medium | The token's upgradeability risk is low as the Mint Authority and Freeze Authority have both been revoked, preventing any future changes to the token's supply or account freeze status. Furthermore… |
 
 ## LP Distribution
 
@@ -28,16 +36,26 @@ Key signals investors should consider: the top 10 wallets hold 38.5% of the supp
 | **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
+## Security Findings
+
+_🟠 1 High_
+
+### `H-01` — Very Low Liquidity  *(Severity: High · Status: Unresolved)*
+
+Total DEX liquidity is $9,988. Slippage will be severe; large positions cannot be exited without significant loss.
+
+**Recommendation:** Account for the low liquidity and potential for severe slippage in any swap calculation. Avoid large trades that could disproportionately impact the price.
+
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
 | **Contract** | [`5PuQRf...q4N1`](https://solscan.io/account/5PuQRfBYybRqpJzT83vCyKngAQJyNziaQ7oC4Swxq4N1) |
 | **Network** | Solana |
-| **Price** | $0.1548 |
-| **24h Volume** | $41.1K |
-| **Liquidity** | $9.3K |
-| **Volume / Liquidity** | 4.4× |
+| **Price** | $0.1731 |
+| **24h Volume** | $38.2K |
+| **Liquidity** | $10.0K |
+| **Volume / Liquidity** | 3.8× |
 | **Token Age** | 2mo |
 | **Top-10 Holders** | 38.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

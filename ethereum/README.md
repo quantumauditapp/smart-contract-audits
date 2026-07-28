@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**60 reports** · Updated daily · [← All Networks](../README.md)
+**62 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,20 +10,22 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
-| [Tether Gold](./tether-gold.md) | XAUT | 🟠 65/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/tether-gold-eth) |
-| [LQTY](./lqty.md) | LQTY | 🟠 61/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/lqty-eth) |
-| [Espresso](./espresso.md) | ESP | 🟠 65/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/espresso-eth) |
-| [DIAToken](./diatoken.md) | DIA | 🟠 65/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/diatoken-eth) |
-| [Safe Token](./safe-token.md) | SAFE | 🟠 63/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/safe-token-eth) |
-| [Token Prometeus Network](./token-prometeus-network.md) | PROM | 🟠 69/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/token-prometeus-network-eth) |
-| [Request Token](./request-token.md) | REQ | 🟡 33/100 Medium Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/request-token-eth) |
-| [Pepe](./pepe.md) | PEPE | 🟢 0/100 Low Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/pepe-eth) |
-| [Euler](./euler.md) | EUL | 🔴 89/100 Critical Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/euler-eth) |
-| [Shiba Inu](./shiba-inu.md) | SHIB | 🔴 75/100 Critical Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/shiba-inu-eth) |
-| [Beam](./beam.md) | BEAM | 🟠 68/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/beam-eth) |
-| [VANRY](./vanry.md) | VANRY | 🟠 63/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/vanry-eth) |
-| [Covalent X Token](./covalent-x-token.md) | CXT | 🟠 66/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/covalent-x-token-eth) |
-| [Helix Token](./helix-token.md) | HLX | 🟠 66/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/helix-token-eth) |
+| [Fake World Assets](./fake-world-assets.md) | FWA | 🔴 72/100 Critical Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/fake-world-assets-eth) |
+| [COTI](./coti.md) | COTI | 🔴 88/100 Critical Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/coti-eth) |
+| [Helix Token](./helix-token.md) | HLX | 🟠 55/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/helix-token-eth) |
+| [Covalent X Token](./covalent-x-token.md) | CXT | 🔴 79/100 Critical Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/covalent-x-token-eth) |
+| [VANRY](./vanry.md) | VANRY | 🟠 60/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/vanry-eth) |
+| [Beam](./beam.md) | BEAM | 🟠 54/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/beam-eth) |
+| [Shiba Inu](./shiba-inu.md) | SHIB | 🟡 26/100 Medium Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/shiba-inu-eth) |
+| [Euler](./euler.md) | EUL | 🟠 54/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/euler-eth) |
+| [Pepe](./pepe.md) | PEPE | 🟡 28/100 Medium Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/pepe-eth) |
+| [Request Token](./request-token.md) | REQ | 🟡 40/100 Medium Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/request-token-eth) |
+| [Token Prometeus Network](./token-prometeus-network.md) | PROM | 🟠 53/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/token-prometeus-network-eth) |
+| [Safe Token](./safe-token.md) | SAFE | 🟠 47/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/safe-token-eth) |
+| [DIAToken](./diatoken.md) | DIA | 🟠 66/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/diatoken-eth) |
+| [Espresso](./espresso.md) | ESP | 🟠 64/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/espresso-eth) |
+| [LQTY](./lqty.md) | LQTY | 🟠 49/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/lqty-eth) |
+| [Tether Gold](./tether-gold.md) | XAUT | 🟠 58/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/tether-gold-eth) |
 | [01](./01.md) | 01 | 🟢 11/100 Low Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/01-eth) |
 | [Manyu](./manyu.md) | MANYU | 🟢 15/100 Low Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/manyu-eth) |
 | [Zama](./zama.md) | ZAMA | 🟠 46/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/zama-eth) |

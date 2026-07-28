@@ -2,24 +2,32 @@
 token: Sakura 
 ticker: SAKURA 
 network: solana
-risk_score: 66
+risk_score: 57
 status: high
 date: 2026-07-25
 ---
 
 # Sakura  (SAKURA ) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 57/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sakura-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Sakura  (SAKURA ) is a token on Solana. Our automated on-chain security scanner assigned it a risk score of 66/100, classified as High Risk. The contract source code has not been verified on the blockchain explorer. Contract ownership has not been renounced, and the contract does not have a mint function. Liquidity does not appear to be locked. These factors are weighted to produce the overall risk classification.
+The Sakura (SAKURA) SPL Token Mint audit found no critical or high-severity issues based on the available on-chain metadata and market data. Both mint and freeze authorities are revoked, indicating a fixed supply and unfreezable accounts. Holder distribution data was partially available, showing moderate concentration. Third-party risk registry data reported no adverse flags.
 
-Key signals investors should consider: the top 10 wallets hold 35.8% of the supply, which suggests a relatively distributed token supply. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
+> **Final Recommendation:** While this audit identified no immediate critical or high-severity risks, holders should remain vigilant. Continuously monitor the token's market behavior, including liquidity and trading volume, for any significant changes. Verify on-chain that the mint and freeze authorities remain revoked to ensure the token's fixed supply and unfreezable nature are maintained. Independent research into the project's long-term viability and community engagement is also recommended.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The Sakura token is implemented using the spl-token-2022 program. Key administrative authorities, including the Mint Authority and Freeze Authority, have been revoked, ensuring that no new tokens can… |
+| **Governance / Economics** | 1/10 | High | The token exhibits moderate holder concentration, with the top 10 accounts holding 37.44% of the total supply, which is below thresholds for high concern. Liquidity stands at $46,158, with a 24-hour… |
+| **Upgrades** | 5/10 | Medium | The token's core administrative authorities, Mint Authority and Freeze Authority, are permanently revoked, preventing any future changes to the token's supply or account freeze status. The token's… |
 
 ## Token Metrics
 
@@ -27,12 +35,12 @@ Key signals investors should consider: the top 10 wallets hold 35.8% of the supp
 |--------|-------|
 | **Contract** | [`EWiVNx...pump`](https://solscan.io/account/EWiVNxCqNatzV2paBHyfKUwGLnk7WKs9uZTA5jkTpump) |
 | **Network** | Solana |
-| **Price** | $0.0004189 |
-| **24h Volume** | $130.7K |
-| **Liquidity** | $62.0K |
-| **Volume / Liquidity** | 2.1× |
+| **Price** | $0.0002229 |
+| **24h Volume** | $133.9K |
+| **Liquidity** | $46.2K |
+| **Volume / Liquidity** | 2.9× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 35.8% of supply |
+| **Top-10 Holders** | 37.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 576 buys / 1022 sells |
 

@@ -2,14 +2,14 @@
 token: Coinbase Wrapped XRP
 ticker: CBXRP
 network: base
-risk_score: 86
-status: critical
+risk_score: 57
+status: high
 date: 2026-07-24
 ---
 
 # Coinbase Wrapped XRP (CBXRP) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 86/100 — 🔴 Critical Risk**
+> **Risk Score: 57/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/coinbase-wrapped-xrp-base)
 
@@ -25,9 +25,25 @@ The FiatTokenV2_2 contract serves as the implementation logic for a fiat-backed 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 2/10 | High | The contract demonstrates a robust implementation of EIP-712 signed transactions, including an anti-front-running check for `receiveWithAuthorization`. The `_chainId()` function correctly uses the… |
+| **Technical** | 5/10 | Medium | The contract demonstrates a robust implementation of EIP-712 signed transactions, including an anti-front-running check for `receiveWithAuthorization`. The `_chainId()` function correctly uses the… |
 | **Governance / Economics** | 1/10 | High | The token design is highly centralized, with critical administrative functions such as minting, burning, pausing, and blacklisting controlled by a single EOA owner (7.3 Access Control, 7.5… |
-| **Upgrades** | 2/10 | High | The contract utilizes a ZeppelinOS legacy proxy pattern, which is a known and understood upgrade mechanism. The `initializeV2_2` function correctly prevents re-initialization (7.7 Upgrades). However… |
+| **Upgrades** | 1/10 | High | The contract utilizes a ZeppelinOS legacy proxy pattern, which is a known and understood upgrade mechanism. The `initializeV2_2` function correctly prevents re-initialization (7.7 Upgrades). However… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Zeppelin Os Legacy |
+| **Admin** | ⚠️ EOA (single key controls upgrades) |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 80.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -73,12 +89,12 @@ The `initializeV2_2` function explicitly blacklists `address(this)` (the contrac
 |--------|-------|
 | **Contract** | [`0xcb58...a4af`](https://basescan.org/address/0xcb585250f852c6c6bf90434ab21a00f02833a4af) |
 | **Network** | Base |
-| **Price** | $1.1100 |
-| **24h Volume** | $1.26M |
-| **Liquidity** | $730.2K |
-| **Volume / Liquidity** | 1.7× |
+| **Price** | $1.0560 |
+| **24h Volume** | $1.28M |
+| **Liquidity** | $371.2K |
+| **Volume / Liquidity** | 3.4× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 84.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 875 buys / 771 sells |
 
@@ -86,21 +102,21 @@ The `initializeV2_2` function explicitly blacklists `address(this)` (the contrac
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
 | No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

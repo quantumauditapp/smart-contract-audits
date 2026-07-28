@@ -2,24 +2,32 @@
 token: dogwifhat
 ticker: $WIF
 network: solana
-risk_score: 62
-status: high
+risk_score: 24
+status: medium
 date: 2026-07-25
 ---
 
 # dogwifhat ($WIF) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 24/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dogwifhat-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-dogwifhat ($WIF) is a token on Solana. Our automated on-chain security scanner assigned it a risk score of 62/100, classified as High Risk. The contract source code has not been verified on the blockchain explorer. Contract ownership has not been renounced, and the contract does not have a mint function. Liquidity does not appear to be locked. These factors are weighted to produce the overall risk classification.
+This audit of the dogwifhat ($WIF) SPL token mint found a low-risk profile. Both the mint and freeze authorities are revoked, preventing further token issuance or account freezing. The token exhibits substantial liquidity and a mature market presence. Holder distribution data was partially available, indicating no high concentration among the top 10 holders. No adverse flags were reported by third-party risk registries.
 
-Key signals investors should consider: the top 10 wallets hold 44.4% of the supply, which indicates concentrated ownership — a common risk factor. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to confirm the fixed supply and unfreezable nature of the token. It is advisable to monitor the token's status with independent third-party risk registries for any emerging flags that might indicate changes in developer behavior or market sentiment. Regularly review the token's liquidity and trading volume to ensure market health and stability.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The token operates under the standard spl-token program. Both the mint authority and freeze authority have been revoked, which significantly enhances security by preventing further token issuance or… |
+| **Governance / Economics** | 2/10 | High | The token demonstrates robust market liquidity, with total DEX liquidity at $4,168,683. The 24-hour volume to liquidity ratio is 0.05, indicating normal trading activity without signs of wash… |
+| **Upgrades** | 5/10 | Medium | The token's immutability is a key strength, as both the mint and freeze authorities are permanently revoked. This prevents any future changes to the token supply or the ability to freeze holder… |
 
 ## LP Distribution
 
@@ -33,12 +41,12 @@ Key signals investors should consider: the top 10 wallets hold 44.4% of the supp
 |--------|-------|
 | **Contract** | [`EKpQGS...zcjm`](https://solscan.io/account/EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm) |
 | **Network** | Solana |
-| **Price** | $0.1448 |
-| **24h Volume** | $160.0K |
-| **Liquidity** | $4.03M |
+| **Price** | $0.1506 |
+| **24h Volume** | $196.8K |
+| **Liquidity** | $4.17M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 44.4% of supply |
+| **Top-10 Holders** | 44.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 615 buys / 423 sells |
 

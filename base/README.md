@@ -10,22 +10,22 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
-| [OWB](./owb.md) | OWB | 🟠 66/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/owb-base) |
-| [Horizen](./horizen.md) | ZEN | 🟠 63/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/horizen-base) |
-| [Avantis](./avantis.md) | AVNT | 🟠 65/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/avantis-base) |
-| [B3](./b3.md) | B3 | 🟠 63/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/b3-base) |
-| [Recall](./recall.md) | RECALL | 🟠 64/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/recall-base) |
-| [Diem](./diem.md) | DIEM | 🟠 68/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/diem-base) |
-| [Solana](./solana.md) | SOL | 🟠 63/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/solana-base) |
-| [LayerZero](./layerzero.md) | ZRO | 🟠 68/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/layerzero-base) |
-| [Wrapped PROS](./wrapped-pros.md) | PROS | 🟠 69/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/wrapped-pros-base) |
-| [AUTONOMOPOLY](./autonomopoly.md) | AUTONO | 🟠 63/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/autonomopoly-base) |
-| [Briun Armstrung](./briun-armstrung.md) | BRIUN | 🟡 32/100 Medium Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/briun-armstrung-base) |
-| [Coinbase Wrapped XRP](./coinbase-wrapped-xrp.md) | CBXRP | 🔴 86/100 Critical Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/coinbase-wrapped-xrp-base) |
-| [EURC](./eurc.md) | EURC | 🔴 76/100 Critical Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/eurc-base) |
-| [Metronome Synth USD](./metronome-synth-usd.md) | MSUSD | 🟠 67/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/metronome-synth-usd-base) |
-| [OMI Token](./omi-token.md) | OMI | 🔴 76/100 Critical Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/omi-token-base) |
-| [Moltbook](./moltbook.md) | MOLT | 🟢 20/100 Low Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/moltbook-base) |
+| [Briun Armstrung](./briun-armstrung.md) | BRIUN | 🟢 2/100 Low Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/briun-armstrung-base) |
+| [Coinbase Wrapped XRP](./coinbase-wrapped-xrp.md) | CBXRP | 🟠 57/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/coinbase-wrapped-xrp-base) |
+| [EURC](./eurc.md) | EURC | 🟠 60/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/eurc-base) |
+| [Metronome Synth USD](./metronome-synth-usd.md) | MSUSD | 🟠 59/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/metronome-synth-usd-base) |
+| [Moltbook](./moltbook.md) | MOLT | 🟡 30/100 Medium Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/moltbook-base) |
+| [OMI Token](./omi-token.md) | OMI | 🟠 58/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/omi-token-base) |
+| [AUTONOMOPOLY](./autonomopoly.md) | AUTONO | 🟠 51/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/autonomopoly-base) |
+| [Wrapped PROS](./wrapped-pros.md) | PROS | 🔴 77/100 Critical Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/wrapped-pros-base) |
+| [LayerZero](./layerzero.md) | ZRO | 🟠 61/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/layerzero-base) |
+| [Solana](./solana.md) | SOL | 🟡 43/100 Medium Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/solana-base) |
+| [Diem](./diem.md) | DIEM | 🟠 49/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/diem-base) |
+| [Recall](./recall.md) | RECALL | 🔴 74/100 Critical Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/recall-base) |
+| [B3](./b3.md) | B3 | 🟡 33/100 Medium Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/b3-base) |
+| [Avantis](./avantis.md) | AVNT | 🟠 49/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/avantis-base) |
+| [Horizen](./horizen.md) | ZEN | 🟡 34/100 Medium Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/horizen-base) |
+| [OWB](./owb.md) | OWB | 🟢 9/100 Low Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/owb-base) |
 | [Zora](./zora.md) | ZORA | 🟡 41/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/zora-base) |
 | [XMAQUINA](./xmaquina.md) | DEUS | 🟠 70/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/xmaquina-base) |
 | [ViciCoin](./vicicoin.md) | VCNT | 🟠 51/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/vicicoin-base) |

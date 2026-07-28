@@ -2,24 +2,70 @@
 token: Starpower Network
 ticker: STAR
 network: bsc
-risk_score: 63
+risk_score: 49
 status: high
 date: 2026-07-27
 ---
 
 # Starpower Network (STAR) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/starpower-network-bsc)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Starpower Network (STAR) is a token on BNB Chain. Our automated on-chain security scanner assigned it a risk score of 63/100, classified as High Risk. The contract source code has not been verified on the blockchain explorer. Contract ownership has not been renounced, and the contract does not have a mint function. Liquidity does not appear to be locked. These factors are weighted to produce the overall risk classification.
+This audit report is based on a partial source code submission, specifically OpenZeppelin library dependencies (`Context.sol`, `ECDSA.sol`). The core contract, `PeerToken`, was not provided for review. Consequently, a comprehensive security assessment of the `PeerToken` contract's specific logic, functionality, and potential vulnerabilities could not be performed. The findings primarily address general architectural considerations and the implications of the missing source code, alongside observations about the provided libraries and the contract's operational setup.
 
-Key signals investors should consider: the top 10 wallets hold 0.0% of the supply, which suggests a relatively distributed token supply. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
+> **Final Recommendation:** To enhance the security posture, it is crucial to provide the complete source code for the `PeerToken` contract for a comprehensive audit. For critical administrative functions, consider transitioning from an EOA owner to a multi-signature wallet to mitigate single points of failure. Evaluate the trade-offs of immutability versus upgradeability for future deployments, ensuring thorough testing if a non-upgradeable design is chosen.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 8/10 | Low | The provided code consists of well-audited OpenZeppelin libraries (Context, ECDSA), which are robust and widely used, indicating a strong foundation for these components (7.2 Code Security). However… |
+| **Governance / Economics** | 2/10 | High | The contract is controlled by an Externally Owned Account (EOA) owner, `0xb8169426da25f63f557189492cfb0e7b9f52ca7a`, which centralizes significant administrative power (7.5 Governance). This single… |
+| **Upgrades** | 6/10 | Medium | The contract is not deployed as an upgradeable proxy, meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates risks associated with proxy implementation bugs or upgrade path… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
+
+## Security Findings
+
+_🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
+
+### `M-01` — Centralized Control by EOA Owner  *(Severity: Medium · Status: Unresolved)*
+
+The `PeerToken` contract is controlled by an Externally Owned Account (EOA) at `0xb8169426da25f63f557189492cfb0e7b9f52ca7a`. This centralizes significant power, such as potential minting, burning, pausing, or parameter modification, depending on the token's implementation. An EOA is a single point of failure; if its private key is compromised, the entire contract's integrity could be at risk (7.3 Access Control, 7.5 Governance).
+
+**Recommendation:** Consider implementing a multi-signature wallet (e.g., Gnosis Safe) for critical administrative functions. This distributes control among multiple trusted parties, significantly reducing the risk associated with a single compromised key. Alternatively, explore transitioning to a decentralized governance model.
+
+
+### `L-01` — Lack of Upgradeability  *(Severity: Low · Status: Unresolved)*
+
+The contract is not deployed as an upgradeable proxy. This means that once deployed, its logic cannot be modified. While this eliminates upgrade-related risks (7.7 Upgrades), it also prevents bug fixes, feature enhancements, or parameter adjustments without a full redeployment and migration of user funds/states (7.8 Operations).
+
+**Recommendation:** For future deployments, evaluate the trade-offs between non-upgradeable and upgradeable contracts. If flexibility for bug fixes or feature additions is desired, consider using a well-audited proxy pattern (e.g., UUPS). If immutability is a core design principle, ensure the initial deployment is thoroughly tested and audited.
+
+
+### `I-01` — Incomplete Source Code Provided for Core Contract  *(Severity: Informational · Status: Unresolved)*
+
+The source code for the main contract, `PeerToken`, was not provided for review. Only OpenZeppelin library dependencies (`Context.sol`, `ECDSA.sol`) were available. This prevents a comprehensive security assessment of the contract's specific business logic, state variables, and potential vulnerabilities (7.1 Architecture, 7.2 Code Security).
+
+**Recommendation:** Provide the complete and verified source code for the `PeerToken` contract to enable a thorough and accurate security audit. Without the full source, the overall risk assessment remains significantly limited.
+
+
+### `I-02` — Reliance on Well-Audited OpenZeppelin Libraries  *(Severity: Informational · Status: Resolved)*
+
+The provided code snippet exclusively consists of standard, battle-tested OpenZeppelin contracts (`Context`, `ECDSA`). These libraries are widely used and have undergone extensive audits and community review, significantly reducing the risk of vulnerabilities within these specific components (7.2 Code Security).
+
+**Recommendation:** Continue to leverage well-vetted and actively maintained libraries. Ensure that the versions used are up-to-date and compatible with the project's Solidity compiler version to benefit from the latest security patches and improvements.
 
 ## Token Metrics
 
@@ -27,22 +73,22 @@ Key signals investors should consider: the top 10 wallets hold 0.0% of the suppl
 |--------|-------|
 | **Contract** | [`0x8fce...787c`](https://bscscan.com/address/0x8fce7206e3043dd360f115afa956ee31b90b787c) |
 | **Network** | BNB Chain |
-| **Price** | $0.1045 |
-| **24h Volume** | $2.70M |
-| **Liquidity** | $1.51M |
-| **Volume / Liquidity** | 1.8× |
+| **Price** | $0.1013 |
+| **24h Volume** | $2.05M |
+| **Liquidity** | $1.49M |
+| **Volume / Liquidity** | 1.4× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 47.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6520 buys / 6888 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| Ownership Renounced | ❌ Fail |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -50,9 +96,9 @@ Key signals investors should consider: the top 10 wallets hold 0.0% of the suppl
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

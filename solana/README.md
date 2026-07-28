@@ -10,21 +10,21 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
-| [Chill House](./chill-house.md) | CHILLHOUSE | 🟠 62/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/chill-house-sol) |
-| [The Gamestop Bull ](./the-gamestop-bull.md) | GMEBULL | 🔴 78/100 Critical Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/the-gamestop-bull-sol) |
-| [KET](./ket.md) | KET | 🔴 75/100 Critical Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/ket-sol) |
-| [Just a chill guy](./just-a-chill-guy.md) | CHILLGUY | 🟠 66/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/just-a-chill-guy-sol) |
-| [OBSDIAN](./obsdian.md) | OBSD | 🟠 66/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/obsdian-sol) |
-| [Cricket The Dog](./cricket-the-dog.md) | CRICKET | 🔴 75/100 Critical Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/cricket-the-dog-sol) |
-| [dogwifhat](./dogwifhat.md) | $WIF | 🟠 62/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/dogwifhat-sol) |
-| [United States Water Reserve](./united-states-water-reserve.md) | USWR | 🔴 71/100 Critical Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/united-states-water-reserve-sol) |
-| [Sakura ](./sakura.md) | SAKURA  | 🟠 66/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/sakura-sol) |
-| [Knight Core](./knight-core.md) | KNIGHT | 🟠 62/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/knight-core-sol) |
-| [Albatross Protocol](./albatross-protocol.md) | ALBATROSS | 🟠 64/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/albatross-protocol-sol) |
-| [DXB LARP](./dxb-larp.md) | LARP | 🔴 82/100 Critical Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/dxb-larp-sol) |
-| [AI Rig Complex](./ai-rig-complex.md) | ARC | 🔴 88/100 Critical Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/ai-rig-complex-sol) |
-| [Jimothy The Raccoon](./jimothy-the-raccoon.md) | JIMOTHY | 🟠 69/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/jimothy-the-raccoon-sol) |
-| [Hoppy ](./hoppy.md) | HOPPY | 🟠 70/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/hoppy-sol) |
+| [Hoppy ](./hoppy.md) | HOPPY | 🟠 51/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/hoppy-sol) |
+| [Jimothy The Raccoon](./jimothy-the-raccoon.md) | JIMOTHY | 🟠 58/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/jimothy-the-raccoon-sol) |
+| [AI Rig Complex](./ai-rig-complex.md) | ARC | 🟠 53/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/ai-rig-complex-sol) |
+| [DXB LARP](./dxb-larp.md) | LARP | 🔴 83/100 Critical Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/dxb-larp-sol) |
+| [Albatross Protocol](./albatross-protocol.md) | ALBATROSS | 🟠 56/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/albatross-protocol-sol) |
+| [Knight Core](./knight-core.md) | KNIGHT | 🟡 45/100 Medium Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/knight-core-sol) |
+| [Sakura ](./sakura.md) | SAKURA  | 🟠 57/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/sakura-sol) |
+| [United States Water Reserve](./united-states-water-reserve.md) | USWR | 🟡 41/100 Medium Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/united-states-water-reserve-sol) |
+| [dogwifhat](./dogwifhat.md) | $WIF | 🟡 24/100 Medium Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/dogwifhat-sol) |
+| [Cricket The Dog](./cricket-the-dog.md) | CRICKET | 🟠 66/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/cricket-the-dog-sol) |
+| [OBSDIAN](./obsdian.md) | OBSD | 🔴 100/100 Critical Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/obsdian-sol) |
+| [Just a chill guy](./just-a-chill-guy.md) | CHILLGUY | 🟡 38/100 Medium Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/just-a-chill-guy-sol) |
+| [KET](./ket.md) | KET | 🟠 59/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/ket-sol) |
+| [The Gamestop Bull ](./the-gamestop-bull.md) | GMEBULL | 🟠 67/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/the-gamestop-bull-sol) |
+| [Chill House](./chill-house.md) | CHILLHOUSE | 🟡 41/100 Medium Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/chill-house-sol) |
 | [Udin din din dun](./udin-din-din-dun.md) | UDIN | 🟠 51/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/udin-din-din-dun-sol) |
 | [The Cult of YOTS](./the-cult-of-yots.md) | YOTS | 🟠 59/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/the-cult-of-yots-sol) |
 | [Jimothy2.0](./jimothy20.md) | JIMOTHY2.0 | 🟠 64/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/jimothy20-sol) |

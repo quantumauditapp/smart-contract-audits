@@ -2,24 +2,32 @@
 token: Albatross Protocol
 ticker: ALBATROSS
 network: solana
-risk_score: 64
+risk_score: 56
 status: high
 date: 2026-07-25
 ---
 
 # Albatross Protocol (ALBATROSS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 64/100 — 🟠 High Risk**
+> **Risk Score: 56/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/albatross-protocol-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Albatross Protocol (ALBATROSS) is a token on Solana. Our automated on-chain security scanner assigned it a risk score of 64/100, classified as High Risk. The contract source code has not been verified on the blockchain explorer. Contract ownership has not been renounced, and the contract does not have a mint function. Liquidity does not appear to be locked. These factors are weighted to produce the overall risk classification.
+This audit of the Albatross Protocol (ALBATROSS) SPL Token Mint found no critical or high-risk vulnerabilities based on the available on-chain data and third-party security signals. Key authorities, including mint and freeze, are revoked, and metadata is immutable. Holder distribution data from chain-native RPC was unavailable, but third-party data indicates low concentration.
 
-Key signals investors should consider: the top 10 wallets hold 26.6% of the supply, which suggests a relatively distributed token supply. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to ensure supply immutability and account transferability. Monitor DEX liquidity and trading volume for any significant changes that could impact price stability or exit opportunities. While no adverse flags were reported by third-party registries, continuous monitoring of the token's ecosystem and any new security signals is advisable.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no existing accounts can be frozen. No Transfer… |
+| **Governance / Economics** | 2/10 | High | The token exhibits moderate liquidity with $44,580 USD in total DEX liquidity. The 24-hour volume of $94,110 USD results in a Volume/Liquidity Ratio of 2.11, which is considered normal and does not… |
+| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing further changes to the token supply or account freeze status. The token utilizes the spl-token-2022… |
 
 ## Token Metrics
 
@@ -27,12 +35,12 @@ Key signals investors should consider: the top 10 wallets hold 26.6% of the supp
 |--------|-------|
 | **Contract** | [`Ds28wM...pump`](https://solscan.io/account/Ds28wMScEFn1ztgwKYM1m2d2Qse6p6jXJhW6KpZppump) |
 | **Network** | Solana |
-| **Price** | $0.0003524 |
-| **24h Volume** | $95.3K |
-| **Liquidity** | $45.8K |
+| **Price** | $0.0003174 |
+| **24h Volume** | $94.1K |
+| **Liquidity** | $44.6K |
 | **Volume / Liquidity** | 2.1× |
 | **Token Age** | 9d |
-| **Top-10 Holders** | 26.6% of supply |
+| **Top-10 Holders** | 26.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 835 buys / 1098 sells |
 

@@ -2,14 +2,14 @@
 token: Briun Armstrung
 ticker: BRIUN
 network: base
-risk_score: 32
-status: medium
+risk_score: 2
+status: low
 date: 2026-07-24
 ---
 
 # Briun Armstrung (BRIUN) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 32/100 — 🟡 Medium Risk**
+> **Risk Score: 2/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/briun-armstrung-base)
 
@@ -25,9 +25,16 @@ The BriunArmstrung token contract is a standard ERC20 implementation built upon 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates high technical quality, primarily due to its reliance on OpenZeppelin's well-audited ERC20 and Ownable implementations (7.2 Code Security). There are no complex custom… |
-| **Governance / Economics** | 6/10 | Medium | The contract's ownership has been renounced (7.3 Access Control), which removes a single point of administrative control and enhances decentralization for contract functions. However, the entire… |
-| **Upgrades** | 8/10 | Low | The contract is not designed to be upgradeable (7.7 Upgrades). This eliminates upgrade-related risks such as proxy implementation vulnerabilities or administrative key compromise. The immutability… |
+| **Technical** | 10/10 | Low | The contract demonstrates high technical quality, primarily due to its reliance on OpenZeppelin's well-audited ERC20 and Ownable implementations (7.2 Code Security). There are no complex custom… |
+| **Governance / Economics** | 8/10 | Low | The contract's ownership has been renounced (7.3 Access Control), which removes a single point of administrative control and enhances decentralization for contract functions. However, the entire… |
+| **Upgrades** | 10/10 | Low | The contract is not designed to be upgradeable (7.7 Upgrades). This eliminates upgrade-related risks such as proxy implementation vulnerabilities or administrative key compromise. The immutability… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **LP Locked** | 100.0% — UNCX Locker |
+| **Top-1 Unlocked Holder** | 0.0% |
 
 ## Security Findings
 
@@ -59,33 +66,33 @@ The contract is a standard implementation of the ERC20 token specification, leve
 |--------|-------|
 | **Contract** | [`0x8c81...e987`](https://basescan.org/address/0x8c81b4c816d66d36c4bf348bdec01dbcbc70e987) |
 | **Network** | Base |
-| **Price** | $0.0001204 |
-| **24h Volume** | $60.9K |
-| **Liquidity** | $38.0K |
-| **Volume / Liquidity** | 1.6× |
+| **Price** | $0.00009178 |
+| **24h Volume** | $1.3K |
+| **Liquidity** | $33.1K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 42.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 345 buys / 272 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (5/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ✅ Pass |
-| No Mint Function | ⚠️ Unknown |
-| Liquidity Locked | ❌ Fail |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

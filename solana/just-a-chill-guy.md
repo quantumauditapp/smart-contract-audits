@@ -2,24 +2,32 @@
 token: Just a chill guy
 ticker: CHILLGUY
 network: solana
-risk_score: 66
-status: high
+risk_score: 38
+status: medium
 date: 2026-07-26
 ---
 
 # Just a chill guy (CHILLGUY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/just-a-chill-guy-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Just a chill guy (CHILLGUY) is a token on Solana. Our automated on-chain security scanner assigned it a risk score of 66/100, classified as High Risk. The contract source code has not been verified on the blockchain explorer. Contract ownership has not been renounced, and the contract does not have a mint function. Liquidity does not appear to be locked. These factors are weighted to produce the overall risk classification.
+This audit of the Just a chill guy (CHILLGUY) SPL token mint identifies a Medium risk related to holder concentration, with the top 10 accounts holding 50.53% of the supply. Key authorities, including Mint and Freeze, are revoked, and metadata is immutable, indicating a fixed supply and stable token parameters. Third-party risk registry data reported no adverse flags, and liquidity is robust. Holder distribution data was partially available, but the top 10 holder percentage was provided by an on-chain security registry.
 
-Key signals investors should consider: the top 10 wallets hold 49.5% of the supply, which indicates concentrated ownership — a common risk factor. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
+> **Final Recommendation:** Holders should monitor the distribution of CHILLGUY tokens, particularly the holdings of the top accounts, to assess potential market impact from large-scale movements. Regularly verify on-chain that the Mint and Freeze authorities remain revoked to ensure the token's supply and account states cannot be altered. Review any future announcements from the token issuer for changes in market dynamics or perceived risks.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The token is implemented using the standard `spl-token` program (v3). Both the Mint Authority and Freeze Authority have been revoked, indicating a fixed supply and immutability of account freezing.… |
+| **Governance / Economics** | 1/10 | High | Holder concentration is a notable factor, with the top 10 token accounts holding 50.53% of the total supply. While this is not extreme, it indicates a significant portion of the supply is controlled… |
+| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable, as both the Mint Authority and Freeze Authority have been revoked. Furthermore, the `metadata_mutable` flag is set to `False`, preventing changes to the… |
 
 ## LP Distribution
 
@@ -27,18 +35,28 @@ Key signals investors should consider: the top 10 wallets hold 49.5% of the supp
 |--------|-------|
 | **LP Burned** | ✅ 99.8% (≈ permanent lock) |
 
+## Security Findings
+
+_🟡 1 Medium_
+
+### `M-01` — Holder Concentration > 50%  *(Severity: Medium · Status: Unresolved)*
+
+Top 10 token accounts hold 50.53% of supply. Coordinated sell-off would crash price; single-whale dumps are common in this range.
+
+**Recommendation:** Account for the potential market impact of large holders when considering investment or trading strategies.
+
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
 | **Contract** | [`Df6yfr...pump`](https://solscan.io/account/Df6yfrKC8kZE3KNkrHERKzAetSxbrWeniQfyJY4Jpump) |
 | **Network** | Solana |
-| **Price** | $0.01288 |
-| **24h Volume** | $808.9K |
-| **Liquidity** | $1.19M |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $0.01057 |
+| **24h Volume** | $465.2K |
+| **Liquidity** | $1.09M |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 49.5% of supply |
+| **Top-10 Holders** | 50.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2165 buys / 2095 sells |
 

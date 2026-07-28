@@ -2,24 +2,32 @@
 token: Knight Core
 ticker: KNIGHT
 network: solana
-risk_score: 62
-status: high
+risk_score: 45
+status: medium
 date: 2026-07-25
 ---
 
 # Knight Core (KNIGHT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/knight-core-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Knight Core (KNIGHT) is a token on Solana. Our automated on-chain security scanner assigned it a risk score of 62/100, classified as High Risk. The contract source code has not been verified on the blockchain explorer. Contract ownership has not been renounced, and the contract does not have a mint function. Liquidity does not appear to be locked. These factors are weighted to produce the overall risk classification.
+The Knight Core (KNIGHT) token mint on Solana exhibits a low-risk profile based on available on-chain data. Both mint and freeze authorities are revoked, indicating a fixed supply and immutable account states. Liquidity is moderate, and trading patterns do not suggest wash trading. Holder distribution data indicates low concentration. Third-party risk registry data was clear, and no Token-2022 extensions posing significant risks were active. No critical or high-severity findings were identified.
 
-Key signals investors should consider: the top 10 wallets hold 28.5% of the supply, which suggests a relatively distributed token supply. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to confirm the fixed supply and unfreezable nature of the token. Monitor DEX liquidity and trading volume for any significant changes that could impact price stability or exit liquidity. While current holder concentration is low, continued monitoring of the top holder distribution is advisable for any shifts that could introduce market manipulation risks.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The Knight Core (KNIGHT) token is implemented using the spl-token-2022 program. Key security features are well-configured: the mint authority is revoked, ensuring no new tokens can be created, and… |
+| **Governance / Economics** | 3/10 | High | The economic profile of Knight Core (KNIGHT) shows a moderate liquidity of $89,369 USD, supporting reasonable trading activity. The 24-hour volume of $142,393 USD results in a healthy… |
+| **Upgrades** | 5/10 | Medium | The Knight Core (KNIGHT) token mint demonstrates a high degree of immutability. Both the mint and freeze authorities have been revoked, meaning the token supply is fixed and no accounts can be frozen… |
 
 ## Token Metrics
 
@@ -27,12 +35,12 @@ Key signals investors should consider: the top 10 wallets hold 28.5% of the supp
 |--------|-------|
 | **Contract** | [`AzeNfR...pump`](https://solscan.io/account/AzeNfRi7DX5HndH7dUgCxMD5sQPV7FPFH1cwDkoqpump) |
 | **Network** | Solana |
-| **Price** | $0.0008459 |
-| **24h Volume** | $154.4K |
-| **Liquidity** | $79.8K |
-| **Volume / Liquidity** | 1.9× |
+| **Price** | $0.001013 |
+| **24h Volume** | $142.4K |
+| **Liquidity** | $89.4K |
+| **Volume / Liquidity** | 1.6× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 28.5% of supply |
+| **Top-10 Holders** | 25.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 921 buys / 1239 sells |
 

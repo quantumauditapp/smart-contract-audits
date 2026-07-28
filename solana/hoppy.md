@@ -2,24 +2,32 @@
 token: Hoppy 
 ticker: HOPPY
 network: solana
-risk_score: 70
+risk_score: 51
 status: high
 date: 2026-07-24
 ---
 
 # Hoppy  (HOPPY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hoppy-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Hoppy  (HOPPY) is a token on Solana. Our automated on-chain security scanner assigned it a risk score of 70/100, classified as High Risk. The contract source code has not been verified on the blockchain explorer. Contract ownership has not been renounced, and the contract does not have a mint function. Liquidity does not appear to be locked. These factors are weighted to produce the overall risk classification.
+The Hoppy SPL Token Mint exhibits a robust security posture with no critical or high-risk findings identified. Key authorities such as mint and freeze are revoked, and no permanent delegate or transfer hook is active. Third-party registry data was available and reported no adverse flags.
 
-Key signals investors should consider: the top 10 wallets hold 31.0% of the supply, which suggests a relatively distributed token supply. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
+> **Final Recommendation:** This token presents a low-risk profile based on the available on-chain data. Holders should verify on-chain that the mint and freeze authorities remain revoked. Monitor the token's liquidity and trading volume for any significant changes that could impact market stability.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The Hoppy token is an SPL Token-2022 mint. Its mint authority is revoked, preventing further token issuance and ensuring a fixed supply. The freeze authority is also revoked, meaning no accounts can… |
+| **Governance / Economics** | 3/10 | High | The token exhibits a healthy holder distribution, with the top 10 accounts holding 29.46% of the supply, indicating no excessive concentration. DEX liquidity stands at $50,016, with a 24-hour volume… |
+| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are permanently revoked, indicating a fixed state for supply and account control. No permanent delegate is set, and metadata mutability is false, ensuring that… |
 
 ## Token Metrics
 
@@ -27,12 +35,12 @@ Key signals investors should consider: the top 10 wallets hold 31.0% of the supp
 |--------|-------|
 | **Contract** | [`DUYw2p...pump`](https://solscan.io/account/DUYw2p3NC6zDdsSrazV4JdDFKtRk2K4mw764EWs2pump) |
 | **Network** | Solana |
-| **Price** | $0.000331 |
-| **24h Volume** | $164.9K |
-| **Liquidity** | $51.5K |
-| **Volume / Liquidity** | 3.2× |
+| **Price** | $0.000301 |
+| **24h Volume** | $218.9K |
+| **Liquidity** | $50.0K |
+| **Volume / Liquidity** | 4.4× |
 | **Token Age** | 12d |
-| **Top-10 Holders** | 31.0% of supply |
+| **Top-10 Holders** | 29.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1829 buys / 2329 sells |
 

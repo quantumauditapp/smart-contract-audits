@@ -2,14 +2,14 @@
 token: Metronome Synth USD
 ticker: MSUSD
 network: base
-risk_score: 67
+risk_score: 59
 status: high
 date: 2026-07-24
 ---
 
 # Metronome Synth USD (MSUSD) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 59/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/metronome-synth-usd-base)
 
@@ -25,9 +25,25 @@ The audit of the SyntheticToken contract (implementation for a TransparentUpgrad
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The contract demonstrates good adherence to secure coding practices, including comprehensive input validation with custom error messages (e.g., `NameIsNull`, `AmountExceedsAllowance`). It correctly… |
-| **Governance / Economics** | 2/10 | High | The contract clearly defines a `governor` role and uses specific modifiers (`onlyGovernor`, `onlyIfCanBurn`, `onlyIfCanMint`, `onlyIfCanSeize`) to enforce access control for sensitive operations.… |
-| **Upgrades** | 2/10 | High | The contract correctly utilizes the OpenZeppelin `Initializable` pattern, including `_disableInitializers()` in the constructor and the `initializer` modifier, which is standard practice for secure… |
+| **Technical** | 6/10 | Medium | The contract demonstrates good adherence to secure coding practices, including comprehensive input validation with custom error messages (e.g., `NameIsNull`, `AmountExceedsAllowance`). It correctly… |
+| **Governance / Economics** | 1/10 | High | The contract clearly defines a `governor` role and uses specific modifiers (`onlyGovernor`, `onlyIfCanBurn`, `onlyIfCanMint`, `onlyIfCanSeize`) to enforce access control for sensitive operations.… |
+| **Upgrades** | 1/10 | High | The contract correctly utilizes the OpenZeppelin `Initializable` pattern, including `_disableInitializers()` in the constructor and the `initializer` modifier, which is standard practice for secure… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Transparent |
+| **Admin** | OZ ProxyAdmin → Multisig 3-of-5 |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -73,12 +89,12 @@ The provided contract snippet for `SyntheticToken` truncates the implementations
 |--------|-------|
 | **Contract** | [`0x5267...ae9d`](https://basescan.org/address/0x526728dbc96689597f85ae4cd716d4f7fccbae9d) |
 | **Network** | Base |
-| **Price** | $0.9839 |
-| **24h Volume** | $7.21M |
-| **Liquidity** | $14.68M |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.9842 |
+| **24h Volume** | $863.9K |
+| **Liquidity** | $13.28M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 99.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 706 buys / 562 sells |
 
@@ -86,21 +102,21 @@ The provided contract snippet for `SyntheticToken` truncates the implementations
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

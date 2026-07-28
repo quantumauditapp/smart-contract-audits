@@ -2,24 +2,32 @@
 token: Chill House
 ticker: CHILLHOUSE
 network: solana
-risk_score: 62
-status: high
+risk_score: 41
+status: medium
 date: 2026-07-27
 ---
 
 # Chill House (CHILLHOUSE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chill-house-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Chill House (CHILLHOUSE) is a token on Solana. Our automated on-chain security scanner assigned it a risk score of 62/100, classified as High Risk. The contract source code has not been verified on the blockchain explorer. Contract ownership has not been renounced, and the contract does not have a mint function. Liquidity does not appear to be locked. These factors are weighted to produce the overall risk classification.
+The Chill House (CHILLHOUSE) SPL token mint exhibits a robust security posture with no critical or high-risk findings identified based on the available on-chain data and third-party risk registries. Both the mint and freeze authorities have been revoked, ensuring a fixed supply and preventing account freezing. Holder distribution shows a moderate concentration, while liquidity and trading patterns appear healthy. Third-party registry data reported no adverse flags. Chain-native RPC data for detailed holder distribution was unavailable.
 
-Key signals investors should consider: the top 10 wallets hold 29.8% of the supply, which suggests a relatively distributed token supply. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
+> **Final Recommendation:** Holders should verify on-chain that the mint and freeze authorities remain revoked to ensure the token's fixed supply and unfreezable nature. Monitor the token's liquidity and trading volume for any significant changes that could impact market depth. While no adverse flags were reported by third-party registries, continuous monitoring of the token's ecosystem and any associated projects is advisable.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The Chill House token operates on the classic spl-token program. Key authorities, including the Mint Authority and Freeze Authority, have been permanently revoked, ensuring no new tokens can be… |
+| **Governance / Economics** | 2/10 | High | The token exhibits a moderate holder concentration, with the top 10 accounts holding 30.03% of the total supply, which is below thresholds for high concentration risk. Total DEX liquidity stands at… |
+| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable due to the revocation of both Mint and Freeze Authorities. Metadata, including name and symbol, is also immutable as indicated by `metadata_mutable: False`.… |
 
 ## Token Metrics
 
@@ -27,12 +35,12 @@ Key signals investors should consider: the top 10 wallets hold 29.8% of the supp
 |--------|-------|
 | **Contract** | [`GkyPYa...pump`](https://solscan.io/account/GkyPYa7NnCFbduLknCfBfP7p8564X1VZhwZYJ6CZpump) |
 | **Network** | Solana |
-| **Price** | $0.003556 |
-| **24h Volume** | $246.7K |
-| **Liquidity** | $546.2K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.003345 |
+| **24h Volume** | $217.8K |
+| **Liquidity** | $529.3K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 29.8% of supply |
+| **Top-10 Holders** | 30.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1019 buys / 1118 sells |
 

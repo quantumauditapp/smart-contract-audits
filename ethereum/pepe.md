@@ -2,24 +2,32 @@
 token: Pepe
 ticker: PEPE
 network: ethereum
-risk_score: 0
-status: low
+risk_score: 28
+status: medium
 date: 2026-07-26
 ---
 
 # Pepe (PEPE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 0/100 — 🟢 Low Risk**
+> **Risk Score: 28/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pepe-eth)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-Pepe (PEPE) is a token on Ethereum. Our automated on-chain security scanner assigned it a risk score of 0/100, classified as Low Risk. The contract source code is open-source and verified on the blockchain explorer. Contract ownership has been renounced, and the contract does not have a mint function. Liquidity is locked. These factors are weighted to produce the overall risk classification.
+The audit of the PepeToken contract, an ERC20 token, reveals a robust implementation primarily leveraging battle-tested OpenZeppelin libraries. A key characteristic is the renounced ownership, which enhances decentralization and immutability. This design choice, while beneficial for trust, also means the contract lacks administrative flexibility for future changes or emergency responses.
 
-Key signals investors should consider: the top 10 wallets hold 39.3% of the supply, which suggests a relatively distributed token supply. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
+> **Final Recommendation:** It is recommended to ensure that all initial parameters, especially the total supply and distribution, were correctly configured prior to ownership renouncement, as these cannot be altered. Users should be fully aware of the contract's immutable nature and the implications of no administrative control or upgrade path. For future projects, consider the trade-offs between full decentralization and the need for emergency administrative functions or upgradeability.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 10/10 | Low | The technical architecture (7.1) is sound, relying on standard OpenZeppelin ERC20 and Ownable contracts. Code security (7.2) is high due to the use of well-audited libraries and Solidity 0.8.0, which… |
+| **Governance / Economics** | 4/10 | Medium | The economic model (7.4) is a standard ERC20 token, with no apparent complex tokenomics in the provided code. Governance (7.5) is highly decentralized due to the renounced ownership, meaning no… |
+| **Upgrades** | 10/10 | Low | The contract is not designed with upgradeability (7.7) in mind, as indicated by its non-proxy architecture. Furthermore, with ownership renounced, there is no administrative mechanism to implement an… |
 
 ## LP Distribution
 
@@ -30,18 +38,42 @@ Key signals investors should consider: the top 10 wallets hold 39.3% of the supp
 | **Top-1 Unlocked Holder** | ⚠️ 99.9% |
 | **Top-3 Unlocked** | ⚠️ 99.9% |
 
+## Security Findings
+
+_🟢 1 Low · ⚪ 2 Informational_
+
+### `L-01` — No Emergency Mechanism or Upgradeability  *(Severity: Low · Status: Unresolved)*
+
+Given the renounced ownership and non-proxy architecture, there is no mechanism to pause the contract, recover accidentally sent tokens (if applicable), or upgrade the contract to address future vulnerabilities or feature requirements. This lack of administrative flexibility is a direct consequence of the design choice for maximum decentralization.
+
+**Recommendation:** For future projects where administrative flexibility or upgradeability might be desired, consider implementing a multi-signature wallet for critical administrative functions or utilizing an upgradeable proxy pattern. For this specific contract, ensure users are fully aware of its immutable nature.
+
+
+### `I-01` — Ownership Renounced and Immutability  *(Severity: Informational · Status: Unresolved)*
+
+The contract's ownership has been renounced (the `owner` address is `address(0)`), rendering all `onlyOwner` functions inaccessible. This makes the contract highly immutable and decentralized regarding administrative control. While this prevents malicious owner actions, it also means no one can perform administrative tasks, fix potential bugs, or upgrade the contract in the future.
+
+**Recommendation:** This is a design choice that enhances decentralization. Ensure that all stakeholders understand the implications of this immutability, particularly the inability to modify contract logic or parameters post-deployment.
+
+
+### `I-02` — Reliance on OpenZeppelin Standards  *(Severity: Informational · Status: Unresolved)*
+
+The contract extensively uses battle-tested OpenZeppelin libraries (Context, Ownable, ERC20). This significantly reduces the likelihood of common vulnerabilities like reentrancy, integer overflows, and basic access control flaws, as these libraries are widely audited and considered secure.
+
+**Recommendation:** Continue to leverage well-audited and maintained libraries for core functionalities. Regularly check for updates and security advisories related to these dependencies.
+
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
 | **Contract** | [`0x6982...1933`](https://etherscan.io/address/0x6982508145454ce325ddbe47a25d4ec3d2311933) |
 | **Network** | Ethereum |
-| **Price** | $0.00000299 |
-| **24h Volume** | $1.94M |
-| **Liquidity** | $21.76M |
+| **Price** | $0.00000295 |
+| **24h Volume** | $1.80M |
+| **Liquidity** | $21.96M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 39.3% of supply |
+| **Top-10 Holders** | 39.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 292 buys / 360 sells |
 

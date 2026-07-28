@@ -2,24 +2,42 @@
 token: United States Water Reserve
 ticker: USWR
 network: solana
-risk_score: 71
-status: critical
+risk_score: 41
+status: medium
 date: 2026-07-25
 ---
 
 # United States Water Reserve (USWR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 71/100 — 🔴 Critical Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/united-states-water-reserve-sol)
 
 ---
 
-## Security Analysis
+## Audit Summary
 
-United States Water Reserve (USWR) is a token on Solana. Our automated on-chain security scanner assigned it a risk score of 71/100, classified as Critical Risk. The contract source code has not been verified on the blockchain explorer. Contract ownership has not been renounced, and the contract does not have a mint function. Liquidity does not appear to be locked. These factors are weighted to produce the overall risk classification.
+The United States Water Reserve (USWR) token is an SPL Token-2022 mint with its mint and freeze authorities revoked, ensuring a fixed supply and unfreezable accounts. The primary concern identified is the mutability of its metadata, allowing for potential changes to its branding. Third-party risk registry data reported no adverse flags, and chain-native RPC data for holder distribution was unavailable.
 
-Key signals investors should consider: the top 10 wallets hold 28.2% of the supply, which suggests a relatively distributed token supply. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
+> **Final Recommendation:** Holders should verify the token's current metadata on-chain to ensure its name, symbol, and image align with their expectations, as these attributes can be changed by an authority. Ongoing monitoring of the token's metadata is advisable to detect any unauthorized branding alterations. No specific actions are required regarding the token's supply or account freezing mechanisms, as these critical authorities have been permanently revoked.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 6/10 | Medium | The USWR token is an SPL Token-2022 mint with its Mint Authority and Freeze Authority both revoked, indicating a fixed supply and that holder accounts cannot be frozen. It does not utilize a Transfer… |
+| **Governance / Economics** | 3/10 | High | The token exhibits moderate liquidity at $84,727 USD, with a 24-hour volume of $235,563 USD, resulting in a healthy Volume/Liquidity Ratio of 2.78. The DEX pair has been active for 66 days, providing… |
+| **Upgrades** | 5/10 | Medium | The Mint and Freeze authorities are permanently revoked, preventing any future changes to the token's supply or account freeze status. The token does not have a Transfer Hook, and its… |
+
+## Security Findings
+
+_🟢 1 Low_
+
+### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
+
+The `metadata_mutable` flag is set to True. This means that the token's name, symbol, or image can be changed post-launch by the metadata authority.
+
+**Recommendation:** Verify metadata against off-chain expectations before trusting branding and monitor for any changes.
 
 ## Token Metrics
 
@@ -27,12 +45,12 @@ Key signals investors should consider: the top 10 wallets hold 28.2% of the supp
 |--------|-------|
 | **Contract** | [`4D8qUH...USWR`](https://solscan.io/account/4D8qUHm334fxqeTauPvF8gQ7fYgrD4Mpmb1Wy6ftUSWR) |
 | **Network** | Solana |
-| **Price** | $0.03208 |
-| **24h Volume** | $1.04M |
-| **Liquidity** | $475.0K |
-| **Volume / Liquidity** | 2.2× |
+| **Price** | $0.001439 |
+| **24h Volume** | $235.6K |
+| **Liquidity** | $84.7K |
+| **Volume / Liquidity** | 2.8× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 28.2% of supply |
+| **Top-10 Holders** | 10.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 22127 buys / 21238 sells |
 
