@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**161 reports** · Updated daily · [← All Networks](../README.md)
+**162 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [KITTY AI](./kitty-ai.md) | KITTY | 🟡 32/100 Medium Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/kitty-ai-sol) |
 | [Hoppy ](./hoppy.md) | HOPPY | 🟠 51/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/hoppy-sol) |
 | [Jimothy The Raccoon](./jimothy-the-raccoon.md) | JIMOTHY | 🟠 58/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/jimothy-the-raccoon-sol) |
 | [AI Rig Complex](./ai-rig-complex.md) | ARC | 🟠 53/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/ai-rig-complex-sol) |

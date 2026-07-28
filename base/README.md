@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**42 reports** · Updated daily · [← All Networks](../README.md)
+**45 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [evo](./evo.md) | EVO | 🟠 59/100 High Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/evo-base) |
+| [aeon](./aeon.md) | AEON | 🟡 43/100 Medium Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/aeon-base) |
+| [mfercoin](./mfercoin.md) | $MFER | 🟢 0/100 Low Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/mfercoin-base) |
 | [Briun Armstrung](./briun-armstrung.md) | BRIUN | 🟢 2/100 Low Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/briun-armstrung-base) |
 | [Coinbase Wrapped XRP](./coinbase-wrapped-xrp.md) | CBXRP | 🟠 57/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/coinbase-wrapped-xrp-base) |
 | [EURC](./eurc.md) | EURC | 🟠 60/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/eurc-base) |

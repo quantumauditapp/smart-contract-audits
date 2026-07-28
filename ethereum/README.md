@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**62 reports** · Updated daily · [← All Networks](../README.md)
+**63 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Nillion](./nillion.md) | NIL | 🔴 79/100 Critical Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/nillion-eth) |
 | [Fake World Assets](./fake-world-assets.md) | FWA | 🔴 72/100 Critical Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/fake-world-assets-eth) |
 | [COTI](./coti.md) | COTI | 🔴 88/100 Critical Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/coti-eth) |
 | [Helix Token](./helix-token.md) | HLX | 🟠 55/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/helix-token-eth) |
