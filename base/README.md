@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**45 reports** · Updated daily · [← All Networks](../README.md)
+**46 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [gitlawb](./gitlawb.md) | GITLAWB | 🟠 46/100 High Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/gitlawb-base) |
 | [evo](./evo.md) | EVO | 🟠 59/100 High Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/evo-base) |
 | [aeon](./aeon.md) | AEON | 🟡 43/100 Medium Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/aeon-base) |
 | [mfercoin](./mfercoin.md) | $MFER | 🟢 0/100 Low Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/mfercoin-base) |

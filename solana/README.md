@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**162 reports** · Updated daily · [← All Networks](../README.md)
+**169 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [PEPONK](./peponk.md) | PEPONK | 🟠 50/100 High Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/peponk-sol) |
+| [Tilly](./tilly.md) | TILLY | 🟠 52/100 High Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/tilly-sol) |
+| [DOGE-1 Satellite](./doge-1-satellite.md) | DOGE-1 | 🟡 36/100 Medium Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/doge-1-satellite-sol) |
+| [Nick.exe](./nickexe.md) | NICK.EXE | 🟠 60/100 High Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/nickexe-sol) |
+| [Manifesting](./manifesting.md) | MANIFEST | 🟡 38/100 Medium Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/manifesting-sol) |
+| [The Official 67 Coin](./the-official-67-coin.md) | 67 | 🟡 41/100 Medium Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/the-official-67-coin-sol) |
+| [MetaDAO](./metadao.md) | META | 🟠 64/100 High Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/metadao-sol) |
 | [KITTY AI](./kitty-ai.md) | KITTY | 🟡 32/100 Medium Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/kitty-ai-sol) |
 | [Hoppy ](./hoppy.md) | HOPPY | 🟠 51/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/hoppy-sol) |
 | [Jimothy The Raccoon](./jimothy-the-raccoon.md) | JIMOTHY | 🟠 58/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/jimothy-the-raccoon-sol) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**63 reports** · Updated daily · [← All Networks](../README.md)
+**67 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Satellite Doge-1](./satellite-doge-1.md) | DOGE-1 | 🟡 44/100 Medium Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/satellite-doge-1-eth) |
+| [Cate](./cate.md) | CATE | 🟡 24/100 Medium Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/cate-eth) |
+| [HarryPotterObamaSonic10Inu](./harrypotterobamasonic10inu.md) | BITCOIN | 🟠 69/100 High Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/harrypotterobamasonic10inu-eth) |
+| [Grand Theft Auto VI](./grand-theft-auto-vi.md) | GTAVI | 🟡 26/100 Medium Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-eth) |
 | [Nillion](./nillion.md) | NIL | 🔴 79/100 Critical Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/nillion-eth) |
 | [Fake World Assets](./fake-world-assets.md) | FWA | 🔴 72/100 Critical Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/fake-world-assets-eth) |
 | [COTI](./coti.md) | COTI | 🔴 88/100 Critical Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/coti-eth) |

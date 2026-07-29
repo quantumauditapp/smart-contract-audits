@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**49 reports** · Updated daily · [← All Networks](../README.md)
+**50 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Frippy](./frippy.md) | FRIPPY | 🟢 2/100 Low Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/frippy-bsc) |
 | [CZ Terminal Token](./cz-terminal-token.md) | CZT | 🟢 13/100 Low Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/cz-terminal-token-bsc) |
 | [DOYR](./doyr.md) | DOYR | 🟢 0/100 Low Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/doyr-bsc) |
 | [STABLE](./stable.md) | STABLE | 🟠 54/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/stable-bsc) |
