@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-341-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-343-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,8 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Brötchen](./solana/brotchen.md) | BRÖTCHEN | Solana | 🟡 45/100 | 2026-07-30 | [↗](https://quantumaudit.app/token/brotchen-sol) |
+| [America Pac](./ethereum/america-pac.md) | PAC | Ethereum | 🟢 0/100 | 2026-07-30 | [↗](https://quantumaudit.app/token/america-pac-eth) |
 | [gitlawb](./base/gitlawb.md) | GITLAWB | Base | 🟠 46/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/gitlawb-base) |
 | [PEPONK](./solana/peponk.md) | PEPONK | Solana | 🟠 50/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/peponk-sol) |
 | [Tilly](./solana/tilly.md) | TILLY | Solana | 🟠 52/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/tilly-sol) |
@@ -40,14 +42,12 @@
 | [Hoppy ](./solana/hoppy.md) | HOPPY | Solana | 🟠 51/100 | 2026-07-24 | [↗](https://quantumaudit.app/token/hoppy-sol) |
 | [Moltbook](./base/moltbook.md) | MOLT | Base | 🟡 30/100 | 2026-07-24 | [↗](https://quantumaudit.app/token/moltbook-base) |
 | [OMI Token](./base/omi-token.md) | OMI | Base | 🟠 58/100 | 2026-07-24 | [↗](https://quantumaudit.app/token/omi-token-base) |
-| [Helix Token](./ethereum/helix-token.md) | HLX | Ethereum | 🟠 55/100 | 2026-07-24 | [↗](https://quantumaudit.app/token/helix-token-eth) |
-| [DOYR](./bsc/doyr.md) | DOYR | BNB Chain | 🟢 0/100 | 2026-07-24 | [↗](https://quantumaudit.app/token/doyr-bsc) |
 
 ---
 
 ## Browse by Network
 
-[Solana (169)](./solana/README.md) · [Ethereum (67)](./ethereum/README.md) · [BNB Chain (50)](./bsc/README.md) · [Base (46)](./base/README.md) · [Arbitrum (9)](./arbitrum/README.md)
+[Solana (170)](./solana/README.md) · [Ethereum (68)](./ethereum/README.md) · [BNB Chain (50)](./bsc/README.md) · [Base (46)](./base/README.md) · [Arbitrum (9)](./arbitrum/README.md)
 
 ---
 

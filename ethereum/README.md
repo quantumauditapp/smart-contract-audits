@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**67 reports** · Updated daily · [← All Networks](../README.md)
+**68 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [America Pac](./america-pac.md) | PAC | 🟢 0/100 Low Risk | 2026-07-30 | [↗](https://quantumaudit.app/token/america-pac-eth) |
 | [Satellite Doge-1](./satellite-doge-1.md) | DOGE-1 | 🟡 44/100 Medium Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/satellite-doge-1-eth) |
 | [Cate](./cate.md) | CATE | 🟡 24/100 Medium Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/cate-eth) |
 | [HarryPotterObamaSonic10Inu](./harrypotterobamasonic10inu.md) | BITCOIN | 🟠 69/100 High Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/harrypotterobamasonic10inu-eth) |

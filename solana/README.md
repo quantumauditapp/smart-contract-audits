@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**169 reports** · Updated daily · [← All Networks](../README.md)
+**170 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Brötchen](./brotchen.md) | BRÖTCHEN | 🟡 45/100 Medium Risk | 2026-07-30 | [↗](https://quantumaudit.app/token/brotchen-sol) |
 | [PEPONK](./peponk.md) | PEPONK | 🟠 50/100 High Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/peponk-sol) |
 | [Tilly](./tilly.md) | TILLY | 🟠 52/100 High Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/tilly-sol) |
 | [DOGE-1 Satellite](./doge-1-satellite.md) | DOGE-1 | 🟡 36/100 Medium Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/doge-1-satellite-sol) |
