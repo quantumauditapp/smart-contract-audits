@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**170 reports** · Updated daily · [← All Networks](../README.md)
+**175 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Catecoin](./catecoin.md) | CATE | 🟠 47/100 High Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/catecoin-sol) |
+| [ちいかわ](./chiikawa.md) | CHIIKAWA | 🟠 47/100 High Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/chiikawa-sol) |
+| [p0 Systems](./p0-systems.md) | P0 | 🟠 47/100 High Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/p0-systems-sol) |
+| [traindog](./traindog.md) | TRAINDOG | 🟠 49/100 High Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/traindog-sol) |
+| [Moon Doge Coin](./moon-doge-coin.md) | MOONDOGECOIN | 🟠 65/100 High Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/moon-doge-coin-sol) |
 | [Brötchen](./brotchen.md) | BRÖTCHEN | 🟡 45/100 Medium Risk | 2026-07-30 | [↗](https://quantumaudit.app/token/brotchen-sol) |
 | [PEPONK](./peponk.md) | PEPONK | 🟠 50/100 High Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/peponk-sol) |
 | [Tilly](./tilly.md) | TILLY | 🟠 52/100 High Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/tilly-sol) |

@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-343-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-354-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,17 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Catecoin](./solana/catecoin.md) | CATE | Solana | 🟠 47/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/catecoin-sol) |
+| [ちいかわ](./solana/chiikawa.md) | CHIIKAWA | Solana | 🟠 47/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/chiikawa-sol) |
+| [p0 Systems](./solana/p0-systems.md) | P0 | Solana | 🟠 47/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/p0-systems-sol) |
+| [traindog](./solana/traindog.md) | TRAINDOG | Solana | 🟠 49/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/traindog-sol) |
+| [Starman](./ethereum/starman.md) | STARMAN | Ethereum | 🟡 27/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/starman-eth) |
+| [LO0P](./ethereum/lo0p.md) | LO0P | Ethereum | 🟡 37/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/lo0p-eth) |
+| [HEX](./ethereum/hex.md) | HEX | Ethereum | 🟡 32/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/hex-eth) |
+| [Unipeg](./ethereum/unipeg.md) | UPEG | Ethereum | 🟡 24/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/unipeg-eth) |
+| [ElonCoin](./bsc/eloncoin.md) | ELONCOIN | BNB Chain | 🟠 55/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/eloncoin-bsc) |
+| [Moon Doge Coin](./solana/moon-doge-coin.md) | MOONDOGECOIN | Solana | 🟠 65/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/moon-doge-coin-sol) |
+| [SuperVerse](./ethereum/superverse.md) | SUPER | Ethereum | 🟠 61/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/superverse-eth) |
 | [Brötchen](./solana/brotchen.md) | BRÖTCHEN | Solana | 🟡 45/100 | 2026-07-30 | [↗](https://quantumaudit.app/token/brotchen-sol) |
 | [America Pac](./ethereum/america-pac.md) | PAC | Ethereum | 🟢 0/100 | 2026-07-30 | [↗](https://quantumaudit.app/token/america-pac-eth) |
 | [gitlawb](./base/gitlawb.md) | GITLAWB | Base | 🟠 46/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/gitlawb-base) |
@@ -31,23 +42,12 @@
 | [aeon](./base/aeon.md) | AEON | Base | 🟡 43/100 | 2026-07-28 | [↗](https://quantumaudit.app/token/aeon-base) |
 | [mfercoin](./base/mfercoin.md) | $MFER | Base | 🟢 0/100 | 2026-07-28 | [↗](https://quantumaudit.app/token/mfercoin-base) |
 | [KITTY AI](./solana/kitty-ai.md) | KITTY | Solana | 🟡 32/100 | 2026-07-28 | [↗](https://quantumaudit.app/token/kitty-ai-sol) |
-| [CZ Terminal Token](./bsc/cz-terminal-token.md) | CZT | BNB Chain | 🟢 13/100 | 2026-07-28 | [↗](https://quantumaudit.app/token/cz-terminal-token-bsc) |
-| [Nillion](./ethereum/nillion.md) | NIL | Ethereum | 🔴 79/100 | 2026-07-28 | [↗](https://quantumaudit.app/token/nillion-eth) |
-| [Fake World Assets](./ethereum/fake-world-assets.md) | FWA | Ethereum | 🔴 72/100 | 2026-07-28 | [↗](https://quantumaudit.app/token/fake-world-assets-eth) |
-| [COTI](./ethereum/coti.md) | COTI | Ethereum | 🔴 88/100 | 2026-07-28 | [↗](https://quantumaudit.app/token/coti-eth) |
-| [Briun Armstrung](./base/briun-armstrung.md) | BRIUN | Base | 🟢 2/100 | 2026-07-24 | [↗](https://quantumaudit.app/token/briun-armstrung-base) |
-| [Coinbase Wrapped XRP](./base/coinbase-wrapped-xrp.md) | CBXRP | Base | 🟠 57/100 | 2026-07-24 | [↗](https://quantumaudit.app/token/coinbase-wrapped-xrp-base) |
-| [EURC](./base/eurc.md) | EURC | Base | 🟠 60/100 | 2026-07-24 | [↗](https://quantumaudit.app/token/eurc-base) |
-| [Metronome Synth USD](./base/metronome-synth-usd.md) | MSUSD | Base | 🟠 59/100 | 2026-07-24 | [↗](https://quantumaudit.app/token/metronome-synth-usd-base) |
-| [Hoppy ](./solana/hoppy.md) | HOPPY | Solana | 🟠 51/100 | 2026-07-24 | [↗](https://quantumaudit.app/token/hoppy-sol) |
-| [Moltbook](./base/moltbook.md) | MOLT | Base | 🟡 30/100 | 2026-07-24 | [↗](https://quantumaudit.app/token/moltbook-base) |
-| [OMI Token](./base/omi-token.md) | OMI | Base | 🟠 58/100 | 2026-07-24 | [↗](https://quantumaudit.app/token/omi-token-base) |
 
 ---
 
 ## Browse by Network
 
-[Solana (170)](./solana/README.md) · [Ethereum (68)](./ethereum/README.md) · [BNB Chain (50)](./bsc/README.md) · [Base (46)](./base/README.md) · [Arbitrum (9)](./arbitrum/README.md)
+[Solana (175)](./solana/README.md) · [Ethereum (73)](./ethereum/README.md) · [BNB Chain (51)](./bsc/README.md) · [Base (46)](./base/README.md) · [Arbitrum (9)](./arbitrum/README.md)
 
 ---
 
