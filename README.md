@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-354-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-360-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,12 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Supergemma4-26b-multimodal](./base/supergemma4-26b-multimodal.md) | SUPERGEMMA | Base | 🟠 47/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/supergemma4-26b-multimodal-base) |
+| [RAKO](./solana/rako.md) | RAKO | Solana | 🟠 50/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/rako-sol) |
+| [Kekius Maximus](./ethereum/kekius-maximus.md) | KEKIUS | Ethereum | 🟡 24/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/kekius-maximus-eth) |
+| [The Nietzschean Dog](./solana/the-nietzschean-dog.md) | RUSS | Solana | 🟠 58/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/the-nietzschean-dog-sol) |
+| [UNICURVE](./ethereum/unicurve.md) | UNICURVE | Ethereum | 🔴 72/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/unicurve-eth) |
+| [Baby Asteroid](./bsc/baby-asteroid.md) | BABYASTEROID | BNB Chain | 🟡 26/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/baby-asteroid-bsc) |
 | [Catecoin](./solana/catecoin.md) | CATE | Solana | 🟠 47/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/catecoin-sol) |
 | [ちいかわ](./solana/chiikawa.md) | CHIIKAWA | Solana | 🟠 47/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/chiikawa-sol) |
 | [p0 Systems](./solana/p0-systems.md) | P0 | Solana | 🟠 47/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/p0-systems-sol) |
@@ -36,18 +42,12 @@
 | [Satellite Doge-1](./ethereum/satellite-doge-1.md) | DOGE-1 | Ethereum | 🟡 44/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/satellite-doge-1-eth) |
 | [Cate](./ethereum/cate.md) | CATE | Ethereum | 🟡 24/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/cate-eth) |
 | [HarryPotterObamaSonic10Inu](./ethereum/harrypotterobamasonic10inu.md) | BITCOIN | Ethereum | 🟠 69/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/harrypotterobamasonic10inu-eth) |
-| [Grand Theft Auto VI](./ethereum/grand-theft-auto-vi.md) | GTAVI | Ethereum | 🟡 26/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-eth) |
-| [MetaDAO](./solana/metadao.md) | META | Solana | 🟠 64/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/metadao-sol) |
-| [evo](./base/evo.md) | EVO | Base | 🟠 59/100 | 2026-07-28 | [↗](https://quantumaudit.app/token/evo-base) |
-| [aeon](./base/aeon.md) | AEON | Base | 🟡 43/100 | 2026-07-28 | [↗](https://quantumaudit.app/token/aeon-base) |
-| [mfercoin](./base/mfercoin.md) | $MFER | Base | 🟢 0/100 | 2026-07-28 | [↗](https://quantumaudit.app/token/mfercoin-base) |
-| [KITTY AI](./solana/kitty-ai.md) | KITTY | Solana | 🟡 32/100 | 2026-07-28 | [↗](https://quantumaudit.app/token/kitty-ai-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (175)](./solana/README.md) · [Ethereum (73)](./ethereum/README.md) · [BNB Chain (51)](./bsc/README.md) · [Base (46)](./base/README.md) · [Arbitrum (9)](./arbitrum/README.md)
+[Solana (177)](./solana/README.md) · [Ethereum (75)](./ethereum/README.md) · [BNB Chain (52)](./bsc/README.md) · [Base (47)](./base/README.md) · [Arbitrum (9)](./arbitrum/README.md)
 
 ---
 

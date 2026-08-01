@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**73 reports** · Updated daily · [← All Networks](../README.md)
+**75 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Kekius Maximus](./kekius-maximus.md) | KEKIUS | 🟡 24/100 Medium Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/kekius-maximus-eth) |
+| [UNICURVE](./unicurve.md) | UNICURVE | 🔴 72/100 Critical Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/unicurve-eth) |
 | [Starman](./starman.md) | STARMAN | 🟡 27/100 Medium Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/starman-eth) |
 | [LO0P](./lo0p.md) | LO0P | 🟡 37/100 Medium Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/lo0p-eth) |
 | [HEX](./hex.md) | HEX | 🟡 32/100 Medium Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/hex-eth) |

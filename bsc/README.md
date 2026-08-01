@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**51 reports** · Updated daily · [← All Networks](../README.md)
+**52 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Baby Asteroid](./baby-asteroid.md) | BABYASTEROID | 🟡 26/100 Medium Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/baby-asteroid-bsc) |
 | [ElonCoin](./eloncoin.md) | ELONCOIN | 🟠 55/100 High Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/eloncoin-bsc) |
 | [Frippy](./frippy.md) | FRIPPY | 🟢 2/100 Low Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/frippy-bsc) |
 | [CZ Terminal Token](./cz-terminal-token.md) | CZT | 🟢 13/100 Low Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/cz-terminal-token-bsc) |

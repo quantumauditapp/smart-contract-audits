@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**46 reports** · Updated daily · [← All Networks](../README.md)
+**47 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Supergemma4-26b-multimodal](./supergemma4-26b-multimodal.md) | SUPERGEMMA | 🟠 47/100 High Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/supergemma4-26b-multimodal-base) |
 | [gitlawb](./gitlawb.md) | GITLAWB | 🟠 46/100 High Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/gitlawb-base) |
 | [evo](./evo.md) | EVO | 🟠 59/100 High Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/evo-base) |
 | [aeon](./aeon.md) | AEON | 🟡 43/100 Medium Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/aeon-base) |

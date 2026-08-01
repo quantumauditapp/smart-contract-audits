@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**175 reports** · Updated daily · [← All Networks](../README.md)
+**177 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [RAKO](./rako.md) | RAKO | 🟠 50/100 High Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/rako-sol) |
+| [The Nietzschean Dog](./the-nietzschean-dog.md) | RUSS | 🟠 58/100 High Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/the-nietzschean-dog-sol) |
 | [Catecoin](./catecoin.md) | CATE | 🟠 47/100 High Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/catecoin-sol) |
 | [ちいかわ](./chiikawa.md) | CHIIKAWA | 🟠 47/100 High Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/chiikawa-sol) |
 | [p0 Systems](./p0-systems.md) | P0 | 🟠 47/100 High Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/p0-systems-sol) |
