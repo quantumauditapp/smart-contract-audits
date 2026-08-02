@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-360-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-365-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,11 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Catjak](./solana/catjak.md) | CATJAK | Solana | 🟠 47/100 | 2026-08-02 | [↗](https://quantumaudit.app/token/catjak-sol) |
+| [Neegy](./solana/neegy.md) | NEEGY | Solana | 🟠 51/100 | 2026-08-02 | [↗](https://quantumaudit.app/token/neegy-sol) |
+| [Ping Ping and Fu Shuang](./solana/ping-ping-and-fu-shuang.md) | 熊猫 | Solana | 🟠 46/100 | 2026-08-02 | [↗](https://quantumaudit.app/token/ping-ping-and-fu-shuang-sol) |
+| [The Original Doge](./solana/the-original-doge.md) | OGDOGE | Solana | 🟠 53/100 | 2026-08-02 | [↗](https://quantumaudit.app/token/the-original-doge-sol) |
+| [YETI Games](./solana/yeti-games.md) | YETI | Solana | 🟠 68/100 | 2026-08-02 | [↗](https://quantumaudit.app/token/yeti-games-sol) |
 | [Supergemma4-26b-multimodal](./base/supergemma4-26b-multimodal.md) | SUPERGEMMA | Base | 🟠 47/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/supergemma4-26b-multimodal-base) |
 | [RAKO](./solana/rako.md) | RAKO | Solana | 🟠 50/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/rako-sol) |
 | [Kekius Maximus](./ethereum/kekius-maximus.md) | KEKIUS | Ethereum | 🟡 24/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/kekius-maximus-eth) |
@@ -37,17 +42,12 @@
 | [DOGE-1 Satellite](./solana/doge-1-satellite.md) | DOGE-1 | Solana | 🟡 36/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/doge-1-satellite-sol) |
 | [Nick.exe](./solana/nickexe.md) | NICK.EXE | Solana | 🟠 60/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/nickexe-sol) |
 | [Manifesting](./solana/manifesting.md) | MANIFEST | Solana | 🟡 38/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/manifesting-sol) |
-| [The Official 67 Coin](./solana/the-official-67-coin.md) | 67 | Solana | 🟡 41/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/the-official-67-coin-sol) |
-| [Frippy](./bsc/frippy.md) | FRIPPY | BNB Chain | 🟢 2/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/frippy-bsc) |
-| [Satellite Doge-1](./ethereum/satellite-doge-1.md) | DOGE-1 | Ethereum | 🟡 44/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/satellite-doge-1-eth) |
-| [Cate](./ethereum/cate.md) | CATE | Ethereum | 🟡 24/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/cate-eth) |
-| [HarryPotterObamaSonic10Inu](./ethereum/harrypotterobamasonic10inu.md) | BITCOIN | Ethereum | 🟠 69/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/harrypotterobamasonic10inu-eth) |
 
 ---
 
 ## Browse by Network
 
-[Solana (177)](./solana/README.md) · [Ethereum (75)](./ethereum/README.md) · [BNB Chain (52)](./bsc/README.md) · [Base (47)](./base/README.md) · [Arbitrum (9)](./arbitrum/README.md)
+[Solana (182)](./solana/README.md) · [Ethereum (75)](./ethereum/README.md) · [BNB Chain (52)](./bsc/README.md) · [Base (47)](./base/README.md) · [Arbitrum (9)](./arbitrum/README.md)
 
 ---
 

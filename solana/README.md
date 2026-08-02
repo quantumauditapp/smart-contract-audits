@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**177 reports** · Updated daily · [← All Networks](../README.md)
+**182 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Catjak](./catjak.md) | CATJAK | 🟠 47/100 High Risk | 2026-08-02 | [↗](https://quantumaudit.app/token/catjak-sol) |
+| [Neegy](./neegy.md) | NEEGY | 🟠 51/100 High Risk | 2026-08-02 | [↗](https://quantumaudit.app/token/neegy-sol) |
+| [Ping Ping and Fu Shuang](./ping-ping-and-fu-shuang.md) | 熊猫 | 🟠 46/100 High Risk | 2026-08-02 | [↗](https://quantumaudit.app/token/ping-ping-and-fu-shuang-sol) |
+| [The Original Doge](./the-original-doge.md) | OGDOGE | 🟠 53/100 High Risk | 2026-08-02 | [↗](https://quantumaudit.app/token/the-original-doge-sol) |
+| [YETI Games](./yeti-games.md) | YETI | 🟠 68/100 High Risk | 2026-08-02 | [↗](https://quantumaudit.app/token/yeti-games-sol) |
 | [RAKO](./rako.md) | RAKO | 🟠 50/100 High Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/rako-sol) |
 | [The Nietzschean Dog](./the-nietzschean-dog.md) | RUSS | 🟠 58/100 High Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/the-nietzschean-dog-sol) |
 | [Catecoin](./catecoin.md) | CATE | 🟠 47/100 High Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/catecoin-sol) |
