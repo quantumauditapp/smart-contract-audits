@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**182 reports** · Updated daily · [← All Networks](../README.md)
+**186 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Proof Of Bagwork](./proof-of-bagwork.md) | POB | 🔴 79/100 Critical Risk | 2026-08-03 | [↗](https://quantumaudit.app/token/proof-of-bagwork-sol) |
+| [Burnie Senders](./burnie-senders.md) | BURNIE | 🟠 46/100 High Risk | 2026-08-03 | [↗](https://quantumaudit.app/token/burnie-senders-sol) |
+| [Chudjak](./chudjak.md) | CHUD | 🟠 46/100 High Risk | 2026-08-03 | [↗](https://quantumaudit.app/token/chudjak-sol) |
+| [The Black Table](./the-black-table.md) | MENSA | 🟠 70/100 High Risk | 2026-08-03 | [↗](https://quantumaudit.app/token/the-black-table-sol) |
 | [Catjak](./catjak.md) | CATJAK | 🟠 47/100 High Risk | 2026-08-02 | [↗](https://quantumaudit.app/token/catjak-sol) |
 | [Neegy](./neegy.md) | NEEGY | 🟠 51/100 High Risk | 2026-08-02 | [↗](https://quantumaudit.app/token/neegy-sol) |
 | [Ping Ping and Fu Shuang](./ping-ping-and-fu-shuang.md) | 熊猫 | 🟠 46/100 High Risk | 2026-08-02 | [↗](https://quantumaudit.app/token/ping-ping-and-fu-shuang-sol) |

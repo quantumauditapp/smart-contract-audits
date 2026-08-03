@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-365-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-371-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,12 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [MarsCoin](./bsc/marscoin.md) | MARSCOIN | BNB Chain | 🟡 37/100 | 2026-08-03 | [↗](https://quantumaudit.app/token/marscoin-bsc) |
+| [Programmable](./ethereum/programmable.md) | V4 | Ethereum | 🟡 32/100 | 2026-08-03 | [↗](https://quantumaudit.app/token/programmable-eth) |
+| [Proof Of Bagwork](./solana/proof-of-bagwork.md) | POB | Solana | 🔴 79/100 | 2026-08-03 | [↗](https://quantumaudit.app/token/proof-of-bagwork-sol) |
+| [Burnie Senders](./solana/burnie-senders.md) | BURNIE | Solana | 🟠 46/100 | 2026-08-03 | [↗](https://quantumaudit.app/token/burnie-senders-sol) |
+| [Chudjak](./solana/chudjak.md) | CHUD | Solana | 🟠 46/100 | 2026-08-03 | [↗](https://quantumaudit.app/token/chudjak-sol) |
+| [The Black Table](./solana/the-black-table.md) | MENSA | Solana | 🟠 70/100 | 2026-08-03 | [↗](https://quantumaudit.app/token/the-black-table-sol) |
 | [Catjak](./solana/catjak.md) | CATJAK | Solana | 🟠 47/100 | 2026-08-02 | [↗](https://quantumaudit.app/token/catjak-sol) |
 | [Neegy](./solana/neegy.md) | NEEGY | Solana | 🟠 51/100 | 2026-08-02 | [↗](https://quantumaudit.app/token/neegy-sol) |
 | [Ping Ping and Fu Shuang](./solana/ping-ping-and-fu-shuang.md) | 熊猫 | Solana | 🟠 46/100 | 2026-08-02 | [↗](https://quantumaudit.app/token/ping-ping-and-fu-shuang-sol) |
@@ -36,18 +42,12 @@
 | [SuperVerse](./ethereum/superverse.md) | SUPER | Ethereum | 🟠 61/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/superverse-eth) |
 | [Brötchen](./solana/brotchen.md) | BRÖTCHEN | Solana | 🟡 45/100 | 2026-07-30 | [↗](https://quantumaudit.app/token/brotchen-sol) |
 | [America Pac](./ethereum/america-pac.md) | PAC | Ethereum | 🟢 0/100 | 2026-07-30 | [↗](https://quantumaudit.app/token/america-pac-eth) |
-| [gitlawb](./base/gitlawb.md) | GITLAWB | Base | 🟠 46/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/gitlawb-base) |
-| [PEPONK](./solana/peponk.md) | PEPONK | Solana | 🟠 50/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/peponk-sol) |
-| [Tilly](./solana/tilly.md) | TILLY | Solana | 🟠 52/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/tilly-sol) |
-| [DOGE-1 Satellite](./solana/doge-1-satellite.md) | DOGE-1 | Solana | 🟡 36/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/doge-1-satellite-sol) |
-| [Nick.exe](./solana/nickexe.md) | NICK.EXE | Solana | 🟠 60/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/nickexe-sol) |
-| [Manifesting](./solana/manifesting.md) | MANIFEST | Solana | 🟡 38/100 | 2026-07-29 | [↗](https://quantumaudit.app/token/manifesting-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (182)](./solana/README.md) · [Ethereum (75)](./ethereum/README.md) · [BNB Chain (52)](./bsc/README.md) · [Base (47)](./base/README.md) · [Arbitrum (9)](./arbitrum/README.md)
+[Solana (186)](./solana/README.md) · [Ethereum (76)](./ethereum/README.md) · [BNB Chain (53)](./bsc/README.md) · [Base (47)](./base/README.md) · [Arbitrum (9)](./arbitrum/README.md)
 
 ---
 
