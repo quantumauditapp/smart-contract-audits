@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**186 reports** · Updated daily · [← All Networks](../README.md)
+**188 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [testicle](./testicle.md) | TESTICLE | 🟠 46/100 High Risk | 2026-08-04 | [↗](https://quantumaudit.app/token/testicle-sol) |
+| [Strategic American Oil Fund](./strategic-american-oil-fund.md) | SAOF | 🟡 36/100 Medium Risk | 2026-08-04 | [↗](https://quantumaudit.app/token/strategic-american-oil-fund-sol) |
 | [Proof Of Bagwork](./proof-of-bagwork.md) | POB | 🔴 79/100 Critical Risk | 2026-08-03 | [↗](https://quantumaudit.app/token/proof-of-bagwork-sol) |
 | [Burnie Senders](./burnie-senders.md) | BURNIE | 🟠 46/100 High Risk | 2026-08-03 | [↗](https://quantumaudit.app/token/burnie-senders-sol) |
 | [Chudjak](./chudjak.md) | CHUD | 🟠 46/100 High Risk | 2026-08-03 | [↗](https://quantumaudit.app/token/chudjak-sol) |

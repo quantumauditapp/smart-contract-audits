@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-371-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-374-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,9 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [testicle](./solana/testicle.md) | TESTICLE | Solana | 🟠 46/100 | 2026-08-04 | [↗](https://quantumaudit.app/token/testicle-sol) |
+| [Strategic American Oil Fund](./solana/strategic-american-oil-fund.md) | SAOF | Solana | 🟡 36/100 | 2026-08-04 | [↗](https://quantumaudit.app/token/strategic-american-oil-fund-sol) |
+| [Jerry The Turtle By Matt Furie](./ethereum/jerry-the-turtle-by-matt-furie.md) | JYAI | Ethereum | 🟢 0/100 | 2026-08-04 | [↗](https://quantumaudit.app/token/jerry-the-turtle-by-matt-furie-eth) |
 | [MarsCoin](./bsc/marscoin.md) | MARSCOIN | BNB Chain | 🟡 37/100 | 2026-08-03 | [↗](https://quantumaudit.app/token/marscoin-bsc) |
 | [Programmable](./ethereum/programmable.md) | V4 | Ethereum | 🟡 32/100 | 2026-08-03 | [↗](https://quantumaudit.app/token/programmable-eth) |
 | [Proof Of Bagwork](./solana/proof-of-bagwork.md) | POB | Solana | 🔴 79/100 | 2026-08-03 | [↗](https://quantumaudit.app/token/proof-of-bagwork-sol) |
@@ -39,15 +42,12 @@
 | [Unipeg](./ethereum/unipeg.md) | UPEG | Ethereum | 🟡 24/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/unipeg-eth) |
 | [ElonCoin](./bsc/eloncoin.md) | ELONCOIN | BNB Chain | 🟠 55/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/eloncoin-bsc) |
 | [Moon Doge Coin](./solana/moon-doge-coin.md) | MOONDOGECOIN | Solana | 🟠 65/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/moon-doge-coin-sol) |
-| [SuperVerse](./ethereum/superverse.md) | SUPER | Ethereum | 🟠 61/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/superverse-eth) |
-| [Brötchen](./solana/brotchen.md) | BRÖTCHEN | Solana | 🟡 45/100 | 2026-07-30 | [↗](https://quantumaudit.app/token/brotchen-sol) |
-| [America Pac](./ethereum/america-pac.md) | PAC | Ethereum | 🟢 0/100 | 2026-07-30 | [↗](https://quantumaudit.app/token/america-pac-eth) |
 
 ---
 
 ## Browse by Network
 
-[Solana (186)](./solana/README.md) · [Ethereum (76)](./ethereum/README.md) · [BNB Chain (53)](./bsc/README.md) · [Base (47)](./base/README.md) · [Arbitrum (9)](./arbitrum/README.md)
+[Solana (188)](./solana/README.md) · [Ethereum (77)](./ethereum/README.md) · [BNB Chain (53)](./bsc/README.md) · [Base (47)](./base/README.md) · [Arbitrum (9)](./arbitrum/README.md)
 
 ---
 

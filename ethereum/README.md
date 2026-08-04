@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**76 reports** · Updated daily · [← All Networks](../README.md)
+**77 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Jerry The Turtle By Matt Furie](./jerry-the-turtle-by-matt-furie.md) | JYAI | 🟢 0/100 Low Risk | 2026-08-04 | [↗](https://quantumaudit.app/token/jerry-the-turtle-by-matt-furie-eth) |
 | [Programmable](./programmable.md) | V4 | 🟡 32/100 Medium Risk | 2026-08-03 | [↗](https://quantumaudit.app/token/programmable-eth) |
 | [Kekius Maximus](./kekius-maximus.md) | KEKIUS | 🟡 24/100 Medium Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/kekius-maximus-eth) |
 | [UNICURVE](./unicurve.md) | UNICURVE | 🔴 72/100 Critical Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/unicurve-eth) |
