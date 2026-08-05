@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-374-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-381-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,13 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Silencio](./base/silencio.md) | SLC | Base | 🟠 48/100 | 2026-08-05 | [↗](https://quantumaudit.app/token/silencio-base) |
+| [FAI](./base/fai.md) | FAI | Base | 🟢 18/100 | 2026-08-05 | [↗](https://quantumaudit.app/token/fai-base) |
+| [OnlyMarms](./solana/onlymarms.md) | ONLYMARMS | Solana | 🟡 39/100 | 2026-08-05 | [↗](https://quantumaudit.app/token/onlymarms-sol) |
+| [CRYSTAL STONES](./bsc/crystal-stones.md) | CRYSTAL STONES | BNB Chain | 🟠 55/100 | 2026-08-05 | [↗](https://quantumaudit.app/token/crystal-stones-bsc) |
+| [Caitecoyn](./solana/caitecoyn.md) | CAITE | Solana | 🟠 62/100 | 2026-08-05 | [↗](https://quantumaudit.app/token/caitecoyn-sol) |
+| [HORSE](./solana/horse.md) | HOR | Solana | 🟠 60/100 | 2026-08-05 | [↗](https://quantumaudit.app/token/horse-sol) |
+| [BlockFall](./solana/blockfall.md) | BLOCK | Solana | 🟡 43/100 | 2026-08-05 | [↗](https://quantumaudit.app/token/blockfall-sol) |
 | [testicle](./solana/testicle.md) | TESTICLE | Solana | 🟠 46/100 | 2026-08-04 | [↗](https://quantumaudit.app/token/testicle-sol) |
 | [Strategic American Oil Fund](./solana/strategic-american-oil-fund.md) | SAOF | Solana | 🟡 36/100 | 2026-08-04 | [↗](https://quantumaudit.app/token/strategic-american-oil-fund-sol) |
 | [Jerry The Turtle By Matt Furie](./ethereum/jerry-the-turtle-by-matt-furie.md) | JYAI | Ethereum | 🟢 0/100 | 2026-08-04 | [↗](https://quantumaudit.app/token/jerry-the-turtle-by-matt-furie-eth) |
@@ -35,19 +42,12 @@
 | [Catecoin](./solana/catecoin.md) | CATE | Solana | 🟠 47/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/catecoin-sol) |
 | [ちいかわ](./solana/chiikawa.md) | CHIIKAWA | Solana | 🟠 47/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/chiikawa-sol) |
 | [p0 Systems](./solana/p0-systems.md) | P0 | Solana | 🟠 47/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/p0-systems-sol) |
-| [traindog](./solana/traindog.md) | TRAINDOG | Solana | 🟠 49/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/traindog-sol) |
-| [Starman](./ethereum/starman.md) | STARMAN | Ethereum | 🟡 27/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/starman-eth) |
-| [LO0P](./ethereum/lo0p.md) | LO0P | Ethereum | 🟡 37/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/lo0p-eth) |
-| [HEX](./ethereum/hex.md) | HEX | Ethereum | 🟡 32/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/hex-eth) |
-| [Unipeg](./ethereum/unipeg.md) | UPEG | Ethereum | 🟡 24/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/unipeg-eth) |
-| [ElonCoin](./bsc/eloncoin.md) | ELONCOIN | BNB Chain | 🟠 55/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/eloncoin-bsc) |
-| [Moon Doge Coin](./solana/moon-doge-coin.md) | MOONDOGECOIN | Solana | 🟠 65/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/moon-doge-coin-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (188)](./solana/README.md) · [Ethereum (77)](./ethereum/README.md) · [BNB Chain (53)](./bsc/README.md) · [Base (47)](./base/README.md) · [Arbitrum (9)](./arbitrum/README.md)
+[Solana (192)](./solana/README.md) · [Ethereum (77)](./ethereum/README.md) · [BNB Chain (54)](./bsc/README.md) · [Base (49)](./base/README.md) · [Arbitrum (9)](./arbitrum/README.md)
 
 ---
 

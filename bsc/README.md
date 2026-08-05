@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**53 reports** · Updated daily · [← All Networks](../README.md)
+**54 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [CRYSTAL STONES](./crystal-stones.md) | CRYSTAL STONES | 🟠 55/100 High Risk | 2026-08-05 | [↗](https://quantumaudit.app/token/crystal-stones-bsc) |
 | [MarsCoin](./marscoin.md) | MARSCOIN | 🟡 37/100 Medium Risk | 2026-08-03 | [↗](https://quantumaudit.app/token/marscoin-bsc) |
 | [Baby Asteroid](./baby-asteroid.md) | BABYASTEROID | 🟡 26/100 Medium Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/baby-asteroid-bsc) |
 | [ElonCoin](./eloncoin.md) | ELONCOIN | 🟠 55/100 High Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/eloncoin-bsc) |

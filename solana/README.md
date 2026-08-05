@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**188 reports** · Updated daily · [← All Networks](../README.md)
+**192 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [OnlyMarms](./onlymarms.md) | ONLYMARMS | 🟡 39/100 Medium Risk | 2026-08-05 | [↗](https://quantumaudit.app/token/onlymarms-sol) |
+| [Caitecoyn](./caitecoyn.md) | CAITE | 🟠 62/100 High Risk | 2026-08-05 | [↗](https://quantumaudit.app/token/caitecoyn-sol) |
+| [HORSE](./horse.md) | HOR | 🟠 60/100 High Risk | 2026-08-05 | [↗](https://quantumaudit.app/token/horse-sol) |
+| [BlockFall](./blockfall.md) | BLOCK | 🟡 43/100 Medium Risk | 2026-08-05 | [↗](https://quantumaudit.app/token/blockfall-sol) |
 | [testicle](./testicle.md) | TESTICLE | 🟠 46/100 High Risk | 2026-08-04 | [↗](https://quantumaudit.app/token/testicle-sol) |
 | [Strategic American Oil Fund](./strategic-american-oil-fund.md) | SAOF | 🟡 36/100 Medium Risk | 2026-08-04 | [↗](https://quantumaudit.app/token/strategic-american-oil-fund-sol) |
 | [Proof Of Bagwork](./proof-of-bagwork.md) | POB | 🔴 79/100 Critical Risk | 2026-08-03 | [↗](https://quantumaudit.app/token/proof-of-bagwork-sol) |
