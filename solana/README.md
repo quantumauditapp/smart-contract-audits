@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**192 reports** · Updated daily · [← All Networks](../README.md)
+**196 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [wiwiwi](./wiwiwi.md) | WIWIWI | 🟠 57/100 High Risk | 2026-08-06 | [↗](https://quantumaudit.app/token/wiwiwi-sol) |
+| [BRICKTON](./brickton.md) | BRICK | 🟠 48/100 High Risk | 2026-08-06 | [↗](https://quantumaudit.app/token/brickton-sol) |
+| [XST](./xst.md) | XST | 🟡 37/100 Medium Risk | 2026-08-06 | [↗](https://quantumaudit.app/token/xst-sol) |
+| [Baby Cupsey](./baby-cupsey.md) | BABYCUPSEY | 🟠 62/100 High Risk | 2026-08-06 | [↗](https://quantumaudit.app/token/baby-cupsey-sol) |
 | [OnlyMarms](./onlymarms.md) | ONLYMARMS | 🟡 39/100 Medium Risk | 2026-08-05 | [↗](https://quantumaudit.app/token/onlymarms-sol) |
 | [Caitecoyn](./caitecoyn.md) | CAITE | 🟠 62/100 High Risk | 2026-08-05 | [↗](https://quantumaudit.app/token/caitecoyn-sol) |
 | [HORSE](./horse.md) | HOR | 🟠 60/100 High Risk | 2026-08-05 | [↗](https://quantumaudit.app/token/horse-sol) |

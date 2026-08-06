@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-381-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-387-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,12 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [wiwiwi](./solana/wiwiwi.md) | WIWIWI | Solana | 🟠 57/100 | 2026-08-06 | [↗](https://quantumaudit.app/token/wiwiwi-sol) |
+| [BRICKTON](./solana/brickton.md) | BRICK | Solana | 🟠 48/100 | 2026-08-06 | [↗](https://quantumaudit.app/token/brickton-sol) |
+| [Pendle](./arbitrum/pendle.md) | PENDLE | Arbitrum | 🟡 26/100 | 2026-08-06 | [↗](https://quantumaudit.app/token/pendle-arb) |
+| [XST](./solana/xst.md) | XST | Solana | 🟡 37/100 | 2026-08-06 | [↗](https://quantumaudit.app/token/xst-sol) |
+| [I love puppies](./ethereum/i-love-puppies.md) | PUPPIES | Ethereum | 🟡 31/100 | 2026-08-06 | [↗](https://quantumaudit.app/token/i-love-puppies-eth) |
+| [Baby Cupsey](./solana/baby-cupsey.md) | BABYCUPSEY | Solana | 🟠 62/100 | 2026-08-06 | [↗](https://quantumaudit.app/token/baby-cupsey-sol) |
 | [Silencio](./base/silencio.md) | SLC | Base | 🟠 48/100 | 2026-08-05 | [↗](https://quantumaudit.app/token/silencio-base) |
 | [FAI](./base/fai.md) | FAI | Base | 🟢 18/100 | 2026-08-05 | [↗](https://quantumaudit.app/token/fai-base) |
 | [OnlyMarms](./solana/onlymarms.md) | ONLYMARMS | Solana | 🟡 39/100 | 2026-08-05 | [↗](https://quantumaudit.app/token/onlymarms-sol) |
@@ -36,18 +42,12 @@
 | [Supergemma4-26b-multimodal](./base/supergemma4-26b-multimodal.md) | SUPERGEMMA | Base | 🟠 47/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/supergemma4-26b-multimodal-base) |
 | [RAKO](./solana/rako.md) | RAKO | Solana | 🟠 50/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/rako-sol) |
 | [Kekius Maximus](./ethereum/kekius-maximus.md) | KEKIUS | Ethereum | 🟡 24/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/kekius-maximus-eth) |
-| [The Nietzschean Dog](./solana/the-nietzschean-dog.md) | RUSS | Solana | 🟠 58/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/the-nietzschean-dog-sol) |
-| [UNICURVE](./ethereum/unicurve.md) | UNICURVE | Ethereum | 🔴 72/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/unicurve-eth) |
-| [Baby Asteroid](./bsc/baby-asteroid.md) | BABYASTEROID | BNB Chain | 🟡 26/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/baby-asteroid-bsc) |
-| [Catecoin](./solana/catecoin.md) | CATE | Solana | 🟠 47/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/catecoin-sol) |
-| [ちいかわ](./solana/chiikawa.md) | CHIIKAWA | Solana | 🟠 47/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/chiikawa-sol) |
-| [p0 Systems](./solana/p0-systems.md) | P0 | Solana | 🟠 47/100 | 2026-07-31 | [↗](https://quantumaudit.app/token/p0-systems-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (192)](./solana/README.md) · [Ethereum (77)](./ethereum/README.md) · [BNB Chain (54)](./bsc/README.md) · [Base (49)](./base/README.md) · [Arbitrum (9)](./arbitrum/README.md)
+[Solana (196)](./solana/README.md) · [Ethereum (78)](./ethereum/README.md) · [BNB Chain (54)](./bsc/README.md) · [Base (49)](./base/README.md) · [Arbitrum (10)](./arbitrum/README.md)
 
 ---
 

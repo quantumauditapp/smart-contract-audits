@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**9 reports** · Updated daily · [← All Networks](../README.md)
+**10 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Pendle](./pendle.md) | PENDLE | 🟡 26/100 Medium Risk | 2026-08-06 | [↗](https://quantumaudit.app/token/pendle-arb) |
 | [Autonomi](./autonomi.md) | ANT | 🟠 48/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/autonomi-arb) |
 | [NOXCAT](./noxcat.md) | NOX | 🟡 41/100 Medium Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/noxcat-arb) |
 | [Livepeer Token](./livepeer-token.md) | LPT | 🟠 63/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/livepeer-token-arb) |
