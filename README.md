@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-387-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-392-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,11 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [STONK](./solana/stonk.md) | STONK | Solana | 🟠 53/100 | 2026-08-07 | [↗](https://quantumaudit.app/token/stonk-sol) |
+| [Virtual Protocol](./base/virtual-protocol.md) | VIRTUAL | Base | 🟡 36/100 | 2026-08-07 | [↗](https://quantumaudit.app/token/virtual-protocol-base) |
+| [モモ太](./solana/momota.md) | MOMOTA | Solana | 🟠 50/100 | 2026-08-07 | [↗](https://quantumaudit.app/token/momota-sol) |
+| [TERAFAB](./ethereum/terafab.md) | TERAFAB | Ethereum | 🟠 62/100 | 2026-08-07 | [↗](https://quantumaudit.app/token/terafab-eth) |
+| [Biconomy](./ethereum/biconomy.md) | BICO | Ethereum | 🟡 39/100 | 2026-08-07 | [↗](https://quantumaudit.app/token/biconomy-eth) |
 | [wiwiwi](./solana/wiwiwi.md) | WIWIWI | Solana | 🟠 57/100 | 2026-08-06 | [↗](https://quantumaudit.app/token/wiwiwi-sol) |
 | [BRICKTON](./solana/brickton.md) | BRICK | Solana | 🟠 48/100 | 2026-08-06 | [↗](https://quantumaudit.app/token/brickton-sol) |
 | [Pendle](./arbitrum/pendle.md) | PENDLE | Arbitrum | 🟡 26/100 | 2026-08-06 | [↗](https://quantumaudit.app/token/pendle-arb) |
@@ -37,17 +42,12 @@
 | [Catjak](./solana/catjak.md) | CATJAK | Solana | 🟠 47/100 | 2026-08-02 | [↗](https://quantumaudit.app/token/catjak-sol) |
 | [Neegy](./solana/neegy.md) | NEEGY | Solana | 🟠 51/100 | 2026-08-02 | [↗](https://quantumaudit.app/token/neegy-sol) |
 | [Ping Ping and Fu Shuang](./solana/ping-ping-and-fu-shuang.md) | 熊猫 | Solana | 🟠 46/100 | 2026-08-02 | [↗](https://quantumaudit.app/token/ping-ping-and-fu-shuang-sol) |
-| [The Original Doge](./solana/the-original-doge.md) | OGDOGE | Solana | 🟠 53/100 | 2026-08-02 | [↗](https://quantumaudit.app/token/the-original-doge-sol) |
-| [YETI Games](./solana/yeti-games.md) | YETI | Solana | 🟠 68/100 | 2026-08-02 | [↗](https://quantumaudit.app/token/yeti-games-sol) |
-| [Supergemma4-26b-multimodal](./base/supergemma4-26b-multimodal.md) | SUPERGEMMA | Base | 🟠 47/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/supergemma4-26b-multimodal-base) |
-| [RAKO](./solana/rako.md) | RAKO | Solana | 🟠 50/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/rako-sol) |
-| [Kekius Maximus](./ethereum/kekius-maximus.md) | KEKIUS | Ethereum | 🟡 24/100 | 2026-08-01 | [↗](https://quantumaudit.app/token/kekius-maximus-eth) |
 
 ---
 
 ## Browse by Network
 
-[Solana (196)](./solana/README.md) · [Ethereum (78)](./ethereum/README.md) · [BNB Chain (54)](./bsc/README.md) · [Base (49)](./base/README.md) · [Arbitrum (10)](./arbitrum/README.md)
+[Solana (198)](./solana/README.md) · [Ethereum (80)](./ethereum/README.md) · [BNB Chain (54)](./bsc/README.md) · [Base (50)](./base/README.md) · [Arbitrum (10)](./arbitrum/README.md)
 
 ---
 

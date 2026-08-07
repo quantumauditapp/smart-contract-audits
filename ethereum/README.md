@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**78 reports** · Updated daily · [← All Networks](../README.md)
+**80 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [TERAFAB](./terafab.md) | TERAFAB | 🟠 62/100 High Risk | 2026-08-07 | [↗](https://quantumaudit.app/token/terafab-eth) |
+| [Biconomy](./biconomy.md) | BICO | 🟡 39/100 Medium Risk | 2026-08-07 | [↗](https://quantumaudit.app/token/biconomy-eth) |
 | [I love puppies](./i-love-puppies.md) | PUPPIES | 🟡 31/100 Medium Risk | 2026-08-06 | [↗](https://quantumaudit.app/token/i-love-puppies-eth) |
 | [Jerry The Turtle By Matt Furie](./jerry-the-turtle-by-matt-furie.md) | JYAI | 🟢 0/100 Low Risk | 2026-08-04 | [↗](https://quantumaudit.app/token/jerry-the-turtle-by-matt-furie-eth) |
 | [Programmable](./programmable.md) | V4 | 🟡 32/100 Medium Risk | 2026-08-03 | [↗](https://quantumaudit.app/token/programmable-eth) |

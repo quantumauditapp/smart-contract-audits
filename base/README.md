@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**49 reports** · Updated daily · [← All Networks](../README.md)
+**50 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Virtual Protocol](./virtual-protocol.md) | VIRTUAL | 🟡 36/100 Medium Risk | 2026-08-07 | [↗](https://quantumaudit.app/token/virtual-protocol-base) |
 | [Silencio](./silencio.md) | SLC | 🟠 48/100 High Risk | 2026-08-05 | [↗](https://quantumaudit.app/token/silencio-base) |
 | [FAI](./fai.md) | FAI | 🟢 18/100 Low Risk | 2026-08-05 | [↗](https://quantumaudit.app/token/fai-base) |
 | [Supergemma4-26b-multimodal](./supergemma4-26b-multimodal.md) | SUPERGEMMA | 🟠 47/100 High Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/supergemma4-26b-multimodal-base) |
