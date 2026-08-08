@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**198 reports** · Updated daily · [← All Networks](../README.md)
+**200 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [BLOXWAP](./bloxwap.md) | BLOXWAP | 🟠 48/100 High Risk | 2026-08-08 | [↗](https://quantumaudit.app/token/bloxwap-sol) |
+| [Patecoin](./patecoin.md) | PATE | 🟠 46/100 High Risk | 2026-08-08 | [↗](https://quantumaudit.app/token/patecoin-sol) |
 | [STONK](./stonk.md) | STONK | 🟠 53/100 High Risk | 2026-08-07 | [↗](https://quantumaudit.app/token/stonk-sol) |
 | [モモ太](./momota.md) | MOMOTA | 🟠 50/100 High Risk | 2026-08-07 | [↗](https://quantumaudit.app/token/momota-sol) |
 | [wiwiwi](./wiwiwi.md) | WIWIWI | 🟠 57/100 High Risk | 2026-08-06 | [↗](https://quantumaudit.app/token/wiwiwi-sol) |

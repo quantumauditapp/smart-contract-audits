@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-392-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-396-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,10 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Decentrawood](./bsc/decentrawood.md) | DEOD | BNB Chain | 🟡 42/100 | 2026-08-08 | [↗](https://quantumaudit.app/token/decentrawood-bsc) |
+| [BLOXWAP](./solana/bloxwap.md) | BLOXWAP | Solana | 🟠 48/100 | 2026-08-08 | [↗](https://quantumaudit.app/token/bloxwap-sol) |
+| [Patecoin](./solana/patecoin.md) | PATE | Solana | 🟠 46/100 | 2026-08-08 | [↗](https://quantumaudit.app/token/patecoin-sol) |
+| [Cysic](./base/cysic.md) | CYS | Base | 🟠 61/100 | 2026-08-08 | [↗](https://quantumaudit.app/token/cysic-base) |
 | [STONK](./solana/stonk.md) | STONK | Solana | 🟠 53/100 | 2026-08-07 | [↗](https://quantumaudit.app/token/stonk-sol) |
 | [Virtual Protocol](./base/virtual-protocol.md) | VIRTUAL | Base | 🟡 36/100 | 2026-08-07 | [↗](https://quantumaudit.app/token/virtual-protocol-base) |
 | [モモ太](./solana/momota.md) | MOMOTA | Solana | 🟠 50/100 | 2026-08-07 | [↗](https://quantumaudit.app/token/momota-sol) |
@@ -38,16 +42,12 @@
 | [Proof Of Bagwork](./solana/proof-of-bagwork.md) | POB | Solana | 🔴 79/100 | 2026-08-03 | [↗](https://quantumaudit.app/token/proof-of-bagwork-sol) |
 | [Burnie Senders](./solana/burnie-senders.md) | BURNIE | Solana | 🟠 46/100 | 2026-08-03 | [↗](https://quantumaudit.app/token/burnie-senders-sol) |
 | [Chudjak](./solana/chudjak.md) | CHUD | Solana | 🟠 46/100 | 2026-08-03 | [↗](https://quantumaudit.app/token/chudjak-sol) |
-| [The Black Table](./solana/the-black-table.md) | MENSA | Solana | 🟠 70/100 | 2026-08-03 | [↗](https://quantumaudit.app/token/the-black-table-sol) |
-| [Catjak](./solana/catjak.md) | CATJAK | Solana | 🟠 47/100 | 2026-08-02 | [↗](https://quantumaudit.app/token/catjak-sol) |
-| [Neegy](./solana/neegy.md) | NEEGY | Solana | 🟠 51/100 | 2026-08-02 | [↗](https://quantumaudit.app/token/neegy-sol) |
-| [Ping Ping and Fu Shuang](./solana/ping-ping-and-fu-shuang.md) | 熊猫 | Solana | 🟠 46/100 | 2026-08-02 | [↗](https://quantumaudit.app/token/ping-ping-and-fu-shuang-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (198)](./solana/README.md) · [Ethereum (80)](./ethereum/README.md) · [BNB Chain (54)](./bsc/README.md) · [Base (50)](./base/README.md) · [Arbitrum (10)](./arbitrum/README.md)
+[Solana (200)](./solana/README.md) · [Ethereum (80)](./ethereum/README.md) · [BNB Chain (55)](./bsc/README.md) · [Base (51)](./base/README.md) · [Arbitrum (10)](./arbitrum/README.md)
 
 ---
 
