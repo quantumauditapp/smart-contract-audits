@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**55 reports** · Updated daily · [← All Networks](../README.md)
+**92 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,43 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [NVIDIA Corp](./nvidia-corp.md) | NVDAB | 🔴 88/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/nvidia-corp-bsc) |
+| [Subsquid](./subsquid.md) | SQD | 🟠 60/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/subsquid-bsc) |
+| [SUMMER](./summer.md) | SUMMER | 🟠 63/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/summer-bsc) |
+| [Orochi Network Token](./orochi-network-token.md) | ON | 🟢 13/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/orochi-network-token-bsc) |
+| [GUA](./gua.md) | GUA | 🟡 37/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/gua-bsc) |
+| [GRVT](./grvt.md) | GRVT | 🟠 68/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/grvt-bsc) |
+| [Beat Token](./beat-token.md) | BEAT | 🟡 34/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/beat-token-bsc) |
+| [Broccoli](./broccoli.md) | BROCCOLI | 🟢 10/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/broccoli-bsc) |
+| [Upstarty](./upstarty.md) | UPY | 🟠 66/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/upstarty-bsc) |
+| [PancakeSwap Token](./pancakeswap-token.md) | CAKE | 🔴 72/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/pancakeswap-token-bsc) |
+| [OKZOO](./okzoo.md) | AIOT | 🟢 13/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/okzoo-bsc) |
+| [ARIA.AI](./ariaai.md) | ARIA | 🟡 23/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/ariaai-bsc) |
+| [MEET48 Token](./meet48-token.md) | IDOL | 🟡 21/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/meet48-token-bsc) |
+| [SOLANA](./solana.md) | SOL | 🔴 73/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/solana-bsc) |
+| [Alaya Governance Token](./alaya-governance-token.md) | AGT | 🟡 31/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/alaya-governance-token-bsc) |
+| [Zest](./zest.md) | ZEST | 🟡 42/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/zest-bsc) |
+| [elizaOS](./elizaos.md) | ELIZAOS | 🟠 61/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/elizaos-bsc) |
+| [MYX](./myx.md) | MYX | 🟡 30/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/myx-bsc) |
+| [Monkey](./monkey.md) | MONKEY | 🔴 89/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/monkey-bsc) |
+| [Giggle Mascot](./giggle-mascot.md) | MAX | 🟢 16/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/giggle-mascot-bsc) |
+| [Ice Open Network](./ice-open-network.md) | ION | 🟠 57/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/ice-open-network-bsc) |
+| [MindNetwork FHE Token](./mindnetwork-fhe-token.md) | FHE | 🟡 22/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/mindnetwork-fhe-token-bsc) |
+| [Unitas](./unitas.md) | UP | 🟠 52/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/unitas-bsc) |
+| [Slap Cat](./slap-cat.md) | SLAP | 🟠 58/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/slap-cat-bsc) |
+| [Smart Solve Token](./smart-solve-token.md) | SST | 🟢 5/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/smart-solve-token-bsc) |
+| [ETHGas](./ethgas.md) | GWEI | 🔴 94/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/ethgas-bsc) |
+| [Anoma](./anoma.md) | XAN | 🔴 81/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/anoma-bsc) |
+| [CZ'S DOG](./czs-dog.md) | BROCCOLI | 🟡 39/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/czs-dog-bsc) |
+| [LAB](./lab.md) | LAB | 🟡 25/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/lab-bsc) |
+| [Test](./test.md) | TST | 🟡 27/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/test-bsc) |
+| [ClipX](./clipx.md) | CLIPX | 🟢 0/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/clipx-bsc) |
+| [Banana For Scale](./banana-for-scale.md) | BANANAS31 | 🟢 0/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/banana-for-scale-bsc) |
+| [Lorenzo Governance Token](./lorenzo-governance-token.md) | BANK | 🟠 65/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/lorenzo-governance-token-bsc) |
+| [Tether Gold](./tether-gold.md) | XAUT | 🔴 85/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/tether-gold-bsc) |
+| [SpaceX](./spacex.md) | SPCXB | 🔴 81/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/spacex-bsc) |
+| [mubarak](./mubarak.md) | MUBARAK | 🟡 25/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/mubarak-bsc) |
+| [Tutorial](./tutorial.md) | TUT | 🟡 32/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/tutorial-bsc) |
 | [Decentrawood](./decentrawood.md) | DEOD | 🟡 42/100 Medium Risk | 2026-08-08 | [↗](https://quantumaudit.app/token/decentrawood-bsc) |
 | [CRYSTAL STONES](./crystal-stones.md) | CRYSTAL STONES | 🟠 55/100 High Risk | 2026-08-05 | [↗](https://quantumaudit.app/token/crystal-stones-bsc) |
 | [MarsCoin](./marscoin.md) | MARSCOIN | 🟡 37/100 Medium Risk | 2026-08-03 | [↗](https://quantumaudit.app/token/marscoin-bsc) |

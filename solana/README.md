@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**200 reports** · Updated daily · [← All Networks](../README.md)
+**227 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,33 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [The retarded bull](./the-retarded-bull.md) | SLING | 🔴 86/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/the-retarded-bull-sol) |
+| [ChudTheBuilder](./chudthebuilder.md) | CHUD | 🟠 53/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/chudthebuilder-sol) |
+| [lmeow](./lmeow.md) | LMEOW | 🟠 52/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/lmeow-sol) |
+| [Otto](./otto.md) | OTTO | 🟠 68/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/otto-sol) |
+| [Prometheus](./prometheus.md) | PROMETHEUS | 🟠 63/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/prometheus-sol) |
+| [The Pygmy Hippo](./the-pygmy-hippo.md) | TINYTANK | 🟠 70/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/the-pygmy-hippo-sol) |
+| [Rise of a King](./rise-of-a-king.md) | KIO | 🟠 54/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/rise-of-a-king-sol) |
+| [Dealer](./dealer.md) | DEALER | 🔴 72/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/dealer-sol) |
+| [Pump Guy](./pump-guy.md) | PUMPGUY | 🟠 57/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/pump-guy-sol) |
+| [Raydium](./raydium.md) | RAY | 🔴 77/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/raydium-sol) |
+| [Doom](./doom.md) | DOOM | 🟠 50/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/doom-sol) |
+| [Fearless Of Missing Out](./fearless-of-missing-out.md) | FOMO | 🟠 50/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/fearless-of-missing-out-sol) |
+| [NVIDIA xStock](./nvidia-xstock.md) | NVDAX | 🔴 100/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/nvidia-xstock-sol) |
+| [3place](./3place.md) | 3PLACE | 🟠 61/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/3place-sol) |
+| [GEOM](./geom.md) | GEOM | 🟠 49/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/geom-sol) |
+| [The Bitcoin Bull](./the-bitcoin-bull.md) | TBB | 🔴 74/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/the-bitcoin-bull-sol) |
+| [Tardimals](./tardimals.md) | TARDIMALS | 🟠 69/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/tardimals-sol) |
+| [pumpcat](./pumpcat.md) | PUMPCAT | 🔴 79/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/pumpcat-sol) |
+| [NotInEmploymentEducationTraining](./notinemploymenteducationtraining.md) | NEET | 🟡 27/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/notinemploymenteducationtraining-sol) |
+| [Pippin](./pippin.md) | PIPPIN | 🟠 53/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/pippin-sol) |
+| [The Original Troll](./the-original-troll.md) | SKOGTROLL | 🟠 67/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/the-original-troll-sol) |
+| [Zebec Network](./zebec-network.md) | ZBCN | 🟠 62/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/zebec-network-sol) |
+| [Mushu](./mushu.md) | MUSHU | 🟡 29/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/mushu-sol) |
+| [nogay](./nogay.md) | NOGAY | 🟠 53/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/nogay-sol) |
+| [Hello Kitty](./hello-kitty.md) | KITTY | 🟢 8/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/hello-kitty-sol) |
+| [Act I : The AI Prophecy](./act-i-the-ai-prophecy.md) | ACT | 🟠 50/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/act-i-the-ai-prophecy-sol) |
+| [BOOK OF MEME](./book-of-meme.md) | BOME | 🔴 96/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/book-of-meme-sol) |
 | [BLOXWAP](./bloxwap.md) | BLOXWAP | 🟠 48/100 High Risk | 2026-08-08 | [↗](https://quantumaudit.app/token/bloxwap-sol) |
 | [Patecoin](./patecoin.md) | PATE | 🟠 46/100 High Risk | 2026-08-08 | [↗](https://quantumaudit.app/token/patecoin-sol) |
 | [STONK](./stonk.md) | STONK | 🟠 53/100 High Risk | 2026-08-07 | [↗](https://quantumaudit.app/token/stonk-sol) |

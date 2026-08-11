@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**80 reports** · Updated daily · [← All Networks](../README.md)
+**104 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,30 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [dmt-nat](./dmt-nat.md) | DMT-NAT | 🔴 76/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/dmt-nat-eth) |
+| [Staked USDe](./staked-usde.md) | SUSDE | 🟠 58/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/staked-usde-eth) |
+| [Olympus](./olympus.md) | OHM | 🟠 49/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/olympus-eth) |
+| [Euro Coin](./euro-coin.md) | EURC | 🟡 44/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/euro-coin-eth) |
+| [Convex Token](./convex-token.md) | CVX | 🟠 56/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/convex-token-eth) |
+| [PayPal USD](./paypal-usd.md) | PYUSD | 🔴 71/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/paypal-usd-eth) |
+| [Wrapped Pulse from PulseChain](./wrapped-pulse-from-pulsechain.md) | WPLS | 🟠 61/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/wrapped-pulse-from-pulsechain-eth) |
+| [Rally](./rally.md) | RALLY | 🔴 75/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/rally-eth) |
+| [Paxos Gold](./paxos-gold.md) | PAXG | 🟠 60/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/paxos-gold-eth) |
+| [Mog Coin](./mog-coin.md) | MOG | 🟡 26/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/mog-coin-eth) |
+| [MOMO](./momo.md) | MOMO | 🟡 41/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/momo-eth) |
+| [Wrapped liquid staked Ether 2.0](./wrapped-liquid-staked-ether-20.md) | WSTETH | 🟡 34/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/wrapped-liquid-staked-ether-20-eth) |
+| [Vestra DAO](./vestra-dao.md) | VSTR | 🟠 47/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/vestra-dao-eth) |
+| [Prism](./prism.md) | PRISM | 🟠 46/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/prism-eth) |
+| [Curve.Fi USD Stablecoin](./curvefi-usd-stablecoin.md) | CRVUSD | 🟡 41/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/curvefi-usd-stablecoin-eth) |
+| [Yield Basis](./yield-basis.md) | YB | 🟡 42/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/yield-basis-eth) |
+| [Relics](./relics.md) | RELICS | 🟡 37/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/relics-eth) |
+| [Pepes Dog](./pepes-dog.md) | ZEUS | 🟢 13/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/pepes-dog-eth) |
+| [Identity.md](./identitymd.md) | IMD | 🟠 62/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/identitymd-eth) |
+| [ICP](./icp.md) | ICP | 🟠 59/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/icp-eth) |
+| [Radicle](./radicle.md) | RAD | 🟠 60/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/radicle-eth) |
+| [Neiro](./neiro.md) | NEIRO | 🟡 42/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/neiro-eth) |
+| [DAPPOS](./dappos.md) | DOS | 🟠 64/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/dappos-eth) |
+| [Curve DAO](./curve-dao.md) | CRV | 🟠 49/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/curve-dao-eth) |
 | [TERAFAB](./terafab.md) | TERAFAB | 🟠 62/100 High Risk | 2026-08-07 | [↗](https://quantumaudit.app/token/terafab-eth) |
 | [Biconomy](./biconomy.md) | BICO | 🟡 39/100 Medium Risk | 2026-08-07 | [↗](https://quantumaudit.app/token/biconomy-eth) |
 | [I love puppies](./i-love-puppies.md) | PUPPIES | 🟡 31/100 Medium Risk | 2026-08-06 | [↗](https://quantumaudit.app/token/i-love-puppies-eth) |

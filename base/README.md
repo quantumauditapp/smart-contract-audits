@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**51 reports** · Updated daily · [← All Networks](../README.md)
+**72 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,27 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Zest](./zest.md) | ZEST | 🟠 49/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/zest-base) |
+| [Squid](./squid.md) | QUID | 🟡 37/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/squid-base) |
+| [REPPO](./reppo.md) | REPPO | 🔴 77/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/reppo-base) |
+| [TAOT](./taot.md) | TAOT | 🟠 46/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/taot-base) |
+| [Fren Pet](./fren-pet.md) | FREN PET | 🟠 66/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/fren-pet-base) |
+| [The Innovation Game](./the-innovation-game.md) | TIG | 🟠 50/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/the-innovation-game-base) |
+| [Dolphin](./dolphin.md) | POD | 🟠 62/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/dolphin-base) |
+| [Valtherix AI](./valtherix-ai.md) | VLTX | 🔴 100/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/valtherix-ai-base) |
+| [HandlPay](./handlpay.md) | HANDL | 🟡 28/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/handlpay-base) |
+| [Prompt](./prompt.md) | PROMPT | 🔴 75/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/prompt-base) |
+| [Solana (Universal)](./solana-universal.md) | USOL | 🟡 45/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/solana-universal-base) |
+| [Sport.fun](./sportfun.md) | FUN | 🔴 72/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/sportfun-base) |
+| [Sapien](./sapien.md) | SAPIEN | 🟡 33/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/sapien-base) |
+| [Cookie](./cookie.md) | COOKIE | 🟡 35/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/cookie-base) |
+| [CTR](./ctr.md) | CTR | 🟠 48/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/ctr-base) |
+| [Keeta](./keeta.md) | KTA | 🟢 15/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/keeta-base) |
+| [Coinbase Wrapped Staked ETH](./coinbase-wrapped-staked-eth.md) | CBETH | 🟠 48/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/coinbase-wrapped-staked-eth-base) |
+| [The White Wolf](./the-white-wolf.md) | WOLF | 🔴 78/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/the-white-wolf-base) |
+| [Coinbase Wrapped BTC](./coinbase-wrapped-btc.md) | CBBTC | 🟠 55/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/coinbase-wrapped-btc-base) |
+| [Flower](./flower.md) | FLOWER | 🟡 33/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/flower-base) |
+| [Ribbita by Virtuals](./ribbita-by-virtuals.md) | TIBBIR | 🟠 57/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/ribbita-by-virtuals-base) |
 | [Cysic](./cysic.md) | CYS | 🟠 61/100 High Risk | 2026-08-08 | [↗](https://quantumaudit.app/token/cysic-base) |
 | [Virtual Protocol](./virtual-protocol.md) | VIRTUAL | 🟡 36/100 Medium Risk | 2026-08-07 | [↗](https://quantumaudit.app/token/virtual-protocol-base) |
 | [Silencio](./silencio.md) | SLC | 🟠 48/100 High Risk | 2026-08-05 | [↗](https://quantumaudit.app/token/silencio-base) |

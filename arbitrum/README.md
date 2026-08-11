@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**10 reports** · Updated daily · [← All Networks](../README.md)
+**16 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Coinbase Wrapped BTC](./coinbase-wrapped-btc.md) | CBBTC | 🔴 74/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/coinbase-wrapped-btc-arb) |
+| [Wrapped liquid staked Ether 2.0](./wrapped-liquid-staked-ether-20.md) | WSTETH | 🟠 53/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/wrapped-liquid-staked-ether-20-arb) |
+| [ChainLink Token](./chainlink-token.md) | LINK | 🟡 41/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/chainlink-token-arb) |
+| [Catena Labs](./catena-labs.md) | CATE | 🔴 80/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/catena-labs-arb) |
+| [Curve DAO Token](./curve-dao-token.md) | CRV | 🟠 70/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/curve-dao-token-arb) |
+| [Subsquid](./subsquid.md) | SQD | 🟠 52/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/subsquid-arb) |
 | [Pendle](./pendle.md) | PENDLE | 🟡 26/100 Medium Risk | 2026-08-06 | [↗](https://quantumaudit.app/token/pendle-arb) |
 | [Autonomi](./autonomi.md) | ANT | 🟠 48/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/autonomi-arb) |
 | [NOXCAT](./noxcat.md) | NOX | 🟡 41/100 Medium Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/noxcat-arb) |
