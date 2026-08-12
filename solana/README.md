@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**227 reports** · Updated daily · [← All Networks](../README.md)
+**250 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,29 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Sheepcoin](./sheepcoin.md) | SHEEP | 🔴 84/100 Critical Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/sheepcoin-sol) |
+| [omo](./omo.md) | OMO | 🔴 79/100 Critical Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/omo-sol) |
+| [Wildlife Wonderland](./wildlife-wonderland.md) | WW | 🟠 58/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/wildlife-wonderland-sol) |
+| [claudius](./claudius.md) | CLAUDIUS | 🟠 62/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/claudius-sol) |
+| [The Nietzschean Eagle](./the-nietzschean-eagle.md) | JACKIE | 🟠 56/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/the-nietzschean-eagle-sol) |
+| [BULLWHALE](./bullwhale.md) | BULLWHALE | 🔴 92/100 Critical Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/bullwhale-sol) |
+| [MANLET](./manlet-sol-afd0.md) | MANLET | 🟠 52/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/manlet-sol-afd0) |
+| [The Toad Pepe](./the-toad-pepe.md) | TOAD | 🟠 50/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/the-toad-pepe-sol) |
+| [Plumber](./plumber.md) | PLUMBER | 🟠 59/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/plumber-sol) |
+| [alon](./alon.md) | ALON | 🟡 25/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/alon-sol) |
+| [Loom](./loom.md) | LOOM | 🟠 50/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/loom-sol) |
+| [Cog](./cog.md) | COG | 🟠 62/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/cog-sol) |
+| [Ava AI](./ava-ai.md) | AVA | 🟠 50/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/ava-ai-sol) |
+| [AntFun BlockChain](./antfun-blockchain.md) | ANTFUN | 🟠 58/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/antfun-blockchain-sol) |
+| [BIDit](./bidit.md) | BID | 🟠 67/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/bidit-sol) |
+| [perpspad](./perpspad.md) | PERPSPAD | 🟠 62/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/perpspad-sol) |
+| [FATCAT](./fatcat.md) | FATCAT | 🟠 69/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/fatcat-sol) |
+| [Cupsey](./cupsey-sol-1d09.md) | CUPSEY | 🟠 61/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/cupsey-sol-1d09) |
+| [CHEEMS](./cheems.md) | CHEEMS | 🟠 62/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/cheems-sol) |
+| [Infinex](./infinex.md) | INX | 🔴 93/100 Critical Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/infinex-sol) |
+| [Toad Punk](./toad-punk.md) | TOADPUNK | 🟠 56/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/toad-punk-sol) |
+| [Callout Coin](./callout-coin.md) | CALLOUT | 🟠 54/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/callout-coin-sol) |
+| [Holoworld](./holoworld.md) | HOLO | 🔴 97/100 Critical Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/holoworld-sol) |
 | [The retarded bull](./the-retarded-bull.md) | SLING | 🔴 86/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/the-retarded-bull-sol) |
 | [ChudTheBuilder](./chudthebuilder.md) | CHUD | 🟠 53/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/chudthebuilder-sol) |
 | [lmeow](./lmeow.md) | LMEOW | 🟠 52/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/lmeow-sol) |

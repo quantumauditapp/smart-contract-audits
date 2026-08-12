@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**72 reports** · Updated daily · [← All Networks](../README.md)
+**80 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,14 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Wrapped liquid staked Ether 2.0](./wrapped-liquid-staked-ether-20.md) | WSTETH | 🟠 47/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/wrapped-liquid-staked-ether-20-base) |
+| [Derive](./derive.md) | DRV | 🟡 40/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/derive-base) |
+| [VANRY](./vanry.md) | VANRY | 🔴 79/100 Critical Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/vanry-base) |
+| [LienFi](./lienfi.md) | LFI | 🟠 63/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/lienfi-base) |
+| [VEIL Token](./veil-token.md) | VEIL | 🟢 9/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/veil-token-base) |
+| [Avail (Wormhole)](./avail-wormhole.md) | AVAIL | 🟠 61/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/avail-wormhole-base) |
+| [Towns](./towns.md) | TOWNS | 🔴 71/100 Critical Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/towns-base) |
+| [noice](./noice.md) | NOICE | 🟡 36/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/noice-base) |
 | [Zest](./zest.md) | ZEST | 🟠 49/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/zest-base) |
 | [Squid](./squid.md) | QUID | 🟡 37/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/squid-base) |
 | [REPPO](./reppo.md) | REPPO | 🔴 77/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/reppo-base) |

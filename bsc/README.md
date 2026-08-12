@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**92 reports** · Updated daily · [← All Networks](../README.md)
+**113 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,27 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [New BNB Coin](./new-bnb-coin.md) | NNB | 🟡 23/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/new-bnb-coin-bsc) |
+| [MatthewCoin](./matthewcoin.md) | MATTHEWCOIN | 🟡 23/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/matthewcoin-bsc) |
+| [Brad](./brad.md) | BRAD | 🟢 0/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/brad-bsc) |
+| [CSI888](./csi888.md) | CSI | 🟢 18/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/csi888-bsc) |
+| [Bluwhale AI](./bluwhale-ai.md) | BLUAI | 🟡 39/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/bluwhale-ai-bsc) |
+| [Giggle Fund](./giggle-fund.md) | GIGGLE | 🟢 0/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/giggle-fund-bsc) |
+| [APRO oracle Token](./apro-oracle-token.md) | AT | 🟡 40/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/apro-oracle-token-bsc) |
+| [TrenchesStarterPack](./trenchesstarterpack.md) | 战壕入门包 | 🟡 43/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/trenchesstarterpack-bsc) |
+| [Billions Network Token](./billions-network-token.md) | BILL | 🟠 63/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/billions-network-token-bsc) |
+| [CZBURN](./czburn.md) | CBURN | 🟡 36/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/czburn-bsc) |
+| [Falcon Finance](./falcon-finance.md) | FF | 🔴 78/100 Critical Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/falcon-finance-bsc) |
+| [XRP Token](./xrp-token.md) | XRP | 🟠 61/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/xrp-token-bsc) |
+| [Cubus Store Coin](./cubus-store-coin.md) | CSC | 🟢 17/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/cubus-store-coin-bsc) |
+| [BSquared Token](./bsquared-token.md) | B2 | 🟡 43/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/bsquared-token-bsc) |
+| [Cookie](./cookie.md) | COOKIE | 🟠 53/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/cookie-bsc) |
+| [我踏马来了](./token-6e44cf.md) | 我踏马来了 | 🟢 18/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/token-6e44cf-bsc) |
+| [DBURN](./dburn.md) | DBURN | 🟢 9/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/dburn-bsc) |
+| [Bubblemaps](./bubblemaps.md) | BMT | 🟠 51/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/bubblemaps-bsc) |
+| [龙虾](./token-41fa71.md) | 龙虾 | 🟡 24/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/token-41fa71-bsc) |
+| [Velvet](./velvet.md) | VELVET | 🟠 52/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/velvet-bsc) |
+| [Holoworld AI](./holoworld-ai.md) | HOLO | 🟠 47/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/holoworld-ai-bsc) |
 | [NVIDIA Corp](./nvidia-corp.md) | NVDAB | 🔴 88/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/nvidia-corp-bsc) |
 | [Subsquid](./subsquid.md) | SQD | 🟠 60/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/subsquid-bsc) |
 | [SUMMER](./summer.md) | SUMMER | 🟠 63/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/summer-bsc) |

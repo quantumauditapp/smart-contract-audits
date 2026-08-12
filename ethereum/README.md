@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**104 reports** · Updated daily · [← All Networks](../README.md)
+**111 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Prometheus](./prometheus.md) | PROMETHEUS | 🟡 40/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/prometheus-eth) |
+| [DUAL](./dual.md) | DUAL | 🟡 41/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/dual-eth) |
+| [trUSD](./trusd.md) | TRUSD | 🔴 75/100 Critical Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/trusd-eth) |
+| [GULD](./guld.md) | GULD | 🟡 39/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/guld-eth) |
+| [Non-Playable Coin](./non-playable-coin.md) | NPC | 🟢 0/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/non-playable-coin-eth) |
+| [Wrapped TAO](./wrapped-tao.md) | WTAO | 🟡 38/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/wrapped-tao-eth) |
+| [Aliens](./aliens.md) | ALIENS | 🟡 25/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/aliens-eth) |
 | [dmt-nat](./dmt-nat.md) | DMT-NAT | 🔴 76/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/dmt-nat-eth) |
 | [Staked USDe](./staked-usde.md) | SUSDE | 🟠 58/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/staked-usde-eth) |
 | [Olympus](./olympus.md) | OHM | 🟠 49/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/olympus-eth) |

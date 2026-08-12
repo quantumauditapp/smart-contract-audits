@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-511-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-571-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,42 +12,42 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
-| [Zest](./base/zest.md) | ZEST | Base | 🟠 49/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/zest-base) |
-| [Squid](./base/squid.md) | QUID | Base | 🟡 37/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/squid-base) |
-| [The retarded bull](./solana/the-retarded-bull.md) | SLING | Solana | 🔴 86/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/the-retarded-bull-sol) |
-| [ChudTheBuilder](./solana/chudthebuilder.md) | CHUD | Solana | 🟠 53/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/chudthebuilder-sol) |
-| [lmeow](./solana/lmeow.md) | LMEOW | Solana | 🟠 52/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/lmeow-sol) |
-| [Otto](./solana/otto.md) | OTTO | Solana | 🟠 68/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/otto-sol) |
-| [Prometheus](./solana/prometheus.md) | PROMETHEUS | Solana | 🟠 63/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/prometheus-sol) |
-| [The Pygmy Hippo](./solana/the-pygmy-hippo.md) | TINYTANK | Solana | 🟠 70/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/the-pygmy-hippo-sol) |
-| [Rise of a King](./solana/rise-of-a-king.md) | KIO | Solana | 🟠 54/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/rise-of-a-king-sol) |
-| [Dealer](./solana/dealer.md) | DEALER | Solana | 🔴 72/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/dealer-sol) |
-| [Pump Guy](./solana/pump-guy.md) | PUMPGUY | Solana | 🟠 57/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/pump-guy-sol) |
-| [NVIDIA Corp](./bsc/nvidia-corp.md) | NVDAB | BNB Chain | 🔴 88/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/nvidia-corp-bsc) |
-| [Subsquid](./bsc/subsquid.md) | SQD | BNB Chain | 🟠 60/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/subsquid-bsc) |
-| [SUMMER](./bsc/summer.md) | SUMMER | BNB Chain | 🟠 63/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/summer-bsc) |
-| [Orochi Network Token](./bsc/orochi-network-token.md) | ON | BNB Chain | 🟢 13/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/orochi-network-token-bsc) |
-| [GUA](./bsc/gua.md) | GUA | BNB Chain | 🟡 37/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/gua-bsc) |
-| [GRVT](./bsc/grvt.md) | GRVT | BNB Chain | 🟠 68/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/grvt-bsc) |
-| [Beat Token](./bsc/beat-token.md) | BEAT | BNB Chain | 🟡 34/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/beat-token-bsc) |
-| [Coinbase Wrapped BTC](./arbitrum/coinbase-wrapped-btc.md) | CBBTC | Arbitrum | 🔴 74/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/coinbase-wrapped-btc-arb) |
-| [Wrapped liquid staked Ether 2.0](./arbitrum/wrapped-liquid-staked-ether-20.md) | WSTETH | Arbitrum | 🟠 53/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/wrapped-liquid-staked-ether-20-arb) |
-| [ChainLink Token](./arbitrum/chainlink-token.md) | LINK | Arbitrum | 🟡 41/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/chainlink-token-arb) |
-| [REPPO](./base/reppo.md) | REPPO | Base | 🔴 77/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/reppo-base) |
-| [TAOT](./base/taot.md) | TAOT | Base | 🟠 46/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/taot-base) |
-| [Fren Pet](./base/fren-pet.md) | FREN PET | Base | 🟠 66/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/fren-pet-base) |
-| [The Innovation Game](./base/the-innovation-game.md) | TIG | Base | 🟠 50/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/the-innovation-game-base) |
-| [Dolphin](./base/dolphin.md) | POD | Base | 🟠 62/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/dolphin-base) |
-| [Broccoli](./bsc/broccoli.md) | BROCCOLI | BNB Chain | 🟢 10/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/broccoli-bsc) |
-| [Upstarty](./bsc/upstarty.md) | UPY | BNB Chain | 🟠 66/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/upstarty-bsc) |
-| [PancakeSwap Token](./bsc/pancakeswap-token.md) | CAKE | BNB Chain | 🔴 72/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/pancakeswap-token-bsc) |
-| [dmt-nat](./ethereum/dmt-nat.md) | DMT-NAT | Ethereum | 🔴 76/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/dmt-nat-eth) |
+| [Sheepcoin](./solana/sheepcoin.md) | SHEEP | Solana | 🔴 84/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/sheepcoin-sol) |
+| [omo](./solana/omo.md) | OMO | Solana | 🔴 79/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/omo-sol) |
+| [Wildlife Wonderland](./solana/wildlife-wonderland.md) | WW | Solana | 🟠 58/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/wildlife-wonderland-sol) |
+| [claudius](./solana/claudius.md) | CLAUDIUS | Solana | 🟠 62/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/claudius-sol) |
+| [The Nietzschean Eagle](./solana/the-nietzschean-eagle.md) | JACKIE | Solana | 🟠 56/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/the-nietzschean-eagle-sol) |
+| [BULLWHALE](./solana/bullwhale.md) | BULLWHALE | Solana | 🔴 92/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/bullwhale-sol) |
+| [MANLET](./solana/manlet-sol-afd0.md) | MANLET | Solana | 🟠 52/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/manlet-sol-afd0) |
+| [The Toad Pepe](./solana/the-toad-pepe.md) | TOAD | Solana | 🟠 50/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/the-toad-pepe-sol) |
+| [Plumber](./solana/plumber.md) | PLUMBER | Solana | 🟠 59/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/plumber-sol) |
+| [alon](./solana/alon.md) | ALON | Solana | 🟡 25/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/alon-sol) |
+| [New BNB Coin](./bsc/new-bnb-coin.md) | NNB | BNB Chain | 🟡 23/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/new-bnb-coin-bsc) |
+| [MatthewCoin](./bsc/matthewcoin.md) | MATTHEWCOIN | BNB Chain | 🟡 23/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/matthewcoin-bsc) |
+| [Brad](./bsc/brad.md) | BRAD | BNB Chain | 🟢 0/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/brad-bsc) |
+| [CSI888](./bsc/csi888.md) | CSI | BNB Chain | 🟢 18/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/csi888-bsc) |
+| [Bluwhale AI](./bsc/bluwhale-ai.md) | BLUAI | BNB Chain | 🟡 39/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/bluwhale-ai-bsc) |
+| [Prometheus](./ethereum/prometheus.md) | PROMETHEUS | Ethereum | 🟡 40/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/prometheus-eth) |
+| [Dai Stablecoin](./arbitrum/dai-stablecoin.md) | DAI | Arbitrum | 🔴 74/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/dai-stablecoin-arb) |
+| [Wrapped liquid staked Ether 2.0](./base/wrapped-liquid-staked-ether-20.md) | WSTETH | Base | 🟠 47/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/wrapped-liquid-staked-ether-20-base) |
+| [Derive](./base/derive.md) | DRV | Base | 🟡 40/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/derive-base) |
+| [VANRY](./base/vanry.md) | VANRY | Base | 🔴 79/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/vanry-base) |
+| [LienFi](./base/lienfi.md) | LFI | Base | 🟠 63/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/lienfi-base) |
+| [VEIL Token](./base/veil-token.md) | VEIL | Base | 🟢 9/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/veil-token-base) |
+| [Giggle Fund](./bsc/giggle-fund.md) | GIGGLE | BNB Chain | 🟢 0/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/giggle-fund-bsc) |
+| [DUAL](./ethereum/dual.md) | DUAL | Ethereum | 🟡 41/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/dual-eth) |
+| [trUSD](./ethereum/trusd.md) | TRUSD | Ethereum | 🔴 75/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/trusd-eth) |
+| [GULD](./ethereum/guld.md) | GULD | Ethereum | 🟡 39/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/guld-eth) |
+| [Non-Playable Coin](./ethereum/non-playable-coin.md) | NPC | Ethereum | 🟢 0/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/non-playable-coin-eth) |
+| [Wrapped TAO](./ethereum/wrapped-tao.md) | WTAO | Ethereum | 🟡 38/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/wrapped-tao-eth) |
+| [Aliens](./ethereum/aliens.md) | ALIENS | Ethereum | 🟡 25/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/aliens-eth) |
+| [Avail (Wormhole)](./base/avail-wormhole.md) | AVAIL | Base | 🟠 61/100 | 2026-08-12 | [↗](https://quantumaudit.app/token/avail-wormhole-base) |
 
 ---
 
 ## Browse by Network
 
-[Solana (227)](./solana/README.md) · [Ethereum (104)](./ethereum/README.md) · [BNB Chain (92)](./bsc/README.md) · [Base (72)](./base/README.md) · [Arbitrum (16)](./arbitrum/README.md)
+[Solana (250)](./solana/README.md) · [BNB Chain (113)](./bsc/README.md) · [Ethereum (111)](./ethereum/README.md) · [Base (80)](./base/README.md) · [Arbitrum (17)](./arbitrum/README.md)
 
 ---
 
