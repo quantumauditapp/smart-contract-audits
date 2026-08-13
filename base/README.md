@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**80 reports** · Updated daily · [← All Networks](../README.md)
+**92 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,18 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Dot](./dot.md) | DOT | 🟠 55/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/dot-base) |
+| [DebtReliefBot](./debtreliefbot.md) | DRB | 🟢 2/100 Low Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/debtreliefbot-base) |
+| [Strike Robot](./strike-robot.md) | SR | 🔴 96/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/strike-robot-base) |
+| [Intuition](./intuition.md) | TRUST | 🔴 97/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/intuition-base) |
+| [OpenUSDT](./openusdt.md) | OUSDT | 🟠 50/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/openusdt-base) |
+| [ACU](./acu.md) | ACU | 🟡 44/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/acu-base) |
+| [toby](./toby.md) | TOBY | 🟡 30/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/toby-base) |
+| [KellyClaude](./kellyclaude.md) | KELLYCLAUDE | 🟡 32/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/kellyclaude-base) |
+| [FLock.io](./flockio.md) | FLOCK | 🔴 84/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/flockio-base) |
+| [Metronome Synth ETH](./metronome-synth-eth.md) | MSETH | 🟠 55/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/metronome-synth-eth-base) |
+| [Tevaera](./tevaera.md) | TEVA | 🔴 100/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/tevaera-base) |
+| [Checkmate](./checkmate.md) | CHECK | 🟠 48/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/checkmate-base) |
 | [Wrapped liquid staked Ether 2.0](./wrapped-liquid-staked-ether-20.md) | WSTETH | 🟠 47/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/wrapped-liquid-staked-ether-20-base) |
 | [Derive](./derive.md) | DRV | 🟡 40/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/derive-base) |
 | [VANRY](./vanry.md) | VANRY | 🔴 79/100 Critical Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/vanry-base) |

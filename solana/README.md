@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**250 reports** · Updated daily · [← All Networks](../README.md)
+**265 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,21 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [The Miracle Duck](./the-miracle-duck.md) | LOUIE | 🟠 68/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/the-miracle-duck-sol) |
+| [Haymaker Valley](./haymaker-valley.md) | HAYMAKER | 🟠 66/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/haymaker-valley-sol) |
+| [Mover](./mover.md) | MOVER | 🔴 82/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/mover-sol) |
+| [Official Fomo Mascot](./official-fomo-mascot.md) | REMUS | 🟠 55/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/official-fomo-mascot-sol) |
+| [Memes Into Money](./memes-into-money.md) | MIM | 🟠 58/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/memes-into-money-sol) |
+| [test griffain.com](./test-griffaincom.md) | GRIFFAIN | 🟡 26/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/test-griffaincom-sol) |
+| [SolCex ](./solcex.md) | SOLCEX | 🟡 25/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/solcex-sol) |
+| [Wrapped Ether (Wormhole)](./wrapped-ether-wormhole.md) | WETH | 🔴 84/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/wrapped-ether-wormhole-sol) |
+| [Peanut the Squirrel ](./peanut-the-squirrel-sol-f9fe.md) | PNUT  | 🟠 56/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/peanut-the-squirrel-sol-f9fe) |
+| [Popcat](./popcat.md) | POPCAT | 🟡 27/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/popcat-sol) |
+| [Moo Deng](./moo-deng.md) | MOODENG | 🟡 39/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/moo-deng-sol) |
+| [Bogecoin](./bogecoin.md) | BOGE | 🟠 50/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/bogecoin-sol) |
+| [bus house](./bus-house.md) | K-HOME | 🟠 56/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/bus-house-sol) |
+| [GTA VI](./gta-vi.md) | GTA6 | 🟠 58/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/gta-vi-sol) |
+| [Zazu](./zazu.md) | ZAZU | 🔴 91/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/zazu-sol) |
 | [Sheepcoin](./sheepcoin.md) | SHEEP | 🔴 84/100 Critical Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/sheepcoin-sol) |
 | [omo](./omo.md) | OMO | 🔴 79/100 Critical Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/omo-sol) |
 | [Wildlife Wonderland](./wildlife-wonderland.md) | WW | 🟠 58/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/wildlife-wonderland-sol) |

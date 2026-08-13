@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**111 reports** · Updated daily · [← All Networks](../README.md)
+**120 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,15 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [USDS Stablecoin](./usds-stablecoin.md) | USDS | 🟠 63/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/usds-stablecoin-eth) |
+| [Turtle](./turtle.md) | TURTLE | 🔴 78/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/turtle-eth) |
+| [FOX](./fox.md) | FOX | 🟠 68/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/fox-eth) |
+| [00 Token](./00-token.md) | 00 | 🟠 54/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/00-token-eth) |
+| [Yee Token](./yee-token.md) | YEE | 🟢 0/100 Low Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/yee-token-eth) |
+| [SEI](./sei.md) | SEI | 🟠 62/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/sei-eth) |
+| [Lisk](./lisk.md) | LSK | 🟡 45/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/lisk-eth) |
+| [AZTEC](./aztec.md) | AZTEC | 🟠 53/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/aztec-eth) |
+| [usocks](./usocks.md) | USOCKS | 🔴 86/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/usocks-eth) |
 | [Prometheus](./prometheus.md) | PROMETHEUS | 🟡 40/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/prometheus-eth) |
 | [DUAL](./dual.md) | DUAL | 🟡 41/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/dual-eth) |
 | [trUSD](./trusd.md) | TRUSD | 🔴 75/100 Critical Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/trusd-eth) |

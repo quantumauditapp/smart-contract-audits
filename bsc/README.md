@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**113 reports** · Updated daily · [← All Networks](../README.md)
+**127 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,20 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Billion Zone Xchange](./billion-zone-xchange.md) | ZBX | 🟡 21/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/billion-zone-xchange-bsc) |
+| [Ark Of Panda](./ark-of-panda.md) | AOP | 🟠 54/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/ark-of-panda-bsc) |
+| [Bless Token](./bless-token.md) | BLESS | 🔴 93/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/bless-token-bsc) |
+| [utility token](./utility-token.md) | UTILITY | 🟠 54/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/utility-token-bsc) |
+| [Plasma](./plasma.md) | XPL | 🔴 71/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/plasma-bsc) |
+| [Genius](./genius.md) | GENIUS | 🟡 38/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/genius-bsc) |
+| [Cross](./cross.md) | CROSS | 🟠 53/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/cross-bsc) |
+| [United Stables](./united-stables.md) | U | 🔴 82/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/united-stables-bsc) |
+| [Koma Inu](./koma-inu.md) | KOMA | 🟡 26/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/koma-inu-bsc) |
+| [FistToken](./fisttoken.md) | FIST | 🟢 0/100 Low Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/fisttoken-bsc) |
+| [Bedrock](./bedrock.md) | BR | 🔴 77/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/bedrock-bsc) |
+| [SnapCoin](./snapcoin.md) | SNAPCOIN | 🔴 90/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/snapcoin-bsc) |
+| [SpaceXcoin](./spacexcoin.md) | SPACEXCOIN | 🟡 34/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/spacexcoin-bsc) |
+| [VenusCoin](./venuscoin.md) | VENUSCOIN | 🟠 61/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/venuscoin-bsc) |
 | [New BNB Coin](./new-bnb-coin.md) | NNB | 🟡 23/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/new-bnb-coin-bsc) |
 | [MatthewCoin](./matthewcoin.md) | MATTHEWCOIN | 🟡 23/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/matthewcoin-bsc) |
 | [Brad](./brad.md) | BRAD | 🟢 0/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/brad-bsc) |
