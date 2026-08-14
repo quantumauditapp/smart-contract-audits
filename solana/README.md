@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**265 reports** · Updated daily · [← All Networks](../README.md)
+**279 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,20 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [MomoCoin](./momocoin.md) | MOMO | 🟠 61/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/momocoin-sol) |
+| [Dumb Phone Gang](./dumb-phone-gang.md) | DPG | 🟠 51/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/dumb-phone-gang-sol) |
+| [Dominion Silver](./dominion-silver.md) | SILV | 🔴 100/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/dominion-silver-sol) |
+| [Rnld Sweginatur](./rnld-sweginatur.md) | RNLD | 🟠 46/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/rnld-sweginatur-sol) |
+| [Circle xStock](./circle-xstock.md) | CRCLX | 🔴 100/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/circle-xstock-sol) |
+| [奶蛙](./token-08d386.md) | 奶蛙 | 🟠 56/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/token-08d386-sol) |
+| [Nietzschean Penguin](./nietzschean-penguin.md) | PENGUIN | 🟠 63/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/nietzschean-penguin-sol) |
+| [Kekius Maximus](./kekius-maximus.md) | KM | 🟡 27/100 Medium Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/kekius-maximus-sol) |
+| [The First Crypto Dog](./the-first-crypto-dog.md) | BUDDY | 🟠 49/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/the-first-crypto-dog-sol) |
+| [Baby Shib](./baby-shib.md) | BABYSHIB | 🟠 65/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/baby-shib-sol) |
+| [Orange Coin](./orange-coin.md) | ORANGE | 🟠 50/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/orange-coin-sol) |
+| [NET BOY](./net-boy.md) | NETBOY | 🟠 55/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/net-boy-sol) |
+| [Piñata](./pinata.md) | PINATA | 🟠 66/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/pinata-sol) |
+| [GATTO](./gatto.md) | GATTO | 🟠 52/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/gatto-sol) |
 | [The Miracle Duck](./the-miracle-duck.md) | LOUIE | 🟠 68/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/the-miracle-duck-sol) |
 | [Haymaker Valley](./haymaker-valley.md) | HAYMAKER | 🟠 66/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/haymaker-valley-sol) |
 | [Mover](./mover.md) | MOVER | 🔴 82/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/mover-sol) |

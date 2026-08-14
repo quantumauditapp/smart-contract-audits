@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**92 reports** · Updated daily · [← All Networks](../README.md)
+**96 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Degen](./degen.md) | DEGEN | 🟡 39/100 Medium Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/degen-base) |
+| [OpenAI](./openai.md) | OPENAI | 🟢 17/100 Low Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/openai-base) |
+| [BIO](./bio.md) | BIO | 🟠 61/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/bio-base) |
+| [Edel](./edel.md) | EDEL | 🟢 16/100 Low Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/edel-base) |
 | [Dot](./dot.md) | DOT | 🟠 55/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/dot-base) |
 | [DebtReliefBot](./debtreliefbot.md) | DRB | 🟢 2/100 Low Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/debtreliefbot-base) |
 | [Strike Robot](./strike-robot.md) | SR | 🔴 96/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/strike-robot-base) |

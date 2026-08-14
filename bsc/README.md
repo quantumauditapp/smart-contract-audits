@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**127 reports** · Updated daily · [← All Networks](../README.md)
+**141 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,20 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [BNI](./bni.md) | BNI | 🟢 4/100 Low Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/bni-bsc) |
+| [金蟾](./jin.md) | JIN | 🟠 48/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/jin-bsc) |
+| [Monkey](./monkey-bsc-149f.md) | MONKEY | 🔴 89/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/monkey-bsc-149f) |
+| [GameStop](./gamestop.md) | GMEB | 🔴 90/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/gamestop-bsc) |
+| [Cheese Head](./cheese-head.md) | CHEESE | 🟡 22/100 Medium Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/cheese-head-bsc) |
+| [熊猫头](./token-5cbc1f.md) | 熊猫头 | 🟢 0/100 Low Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/token-5cbc1f-bsc) |
+| [SK Hynix](./sk-hynix.md) | SKHYB | 🔴 100/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/sk-hynix-bsc) |
+| [CAT](./cat.md) | CAT | 🔴 82/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/cat-bsc) |
+| [KGEN](./kgen.md) | KGEN | 🔴 78/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/kgen-bsc) |
+| [Tesla, Inc. ](./tesla-inc.md) | TSLAB | 🔴 96/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/tesla-inc-bsc) |
+| [Orizon](./orizon.md) | ORI | 🟠 66/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/orizon-bsc) |
+| [GoPlus Security](./goplus-security.md) | GPS | 🟠 65/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/goplus-security-bsc) |
+| [REAL WORLD APPAREL](./real-world-apparel.md) | JACKET | 🟢 1/100 Low Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/real-world-apparel-bsc) |
+| [Cysic Token](./cysic-token.md) | CYS | 🟠 68/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/cysic-token-bsc) |
 | [Billion Zone Xchange](./billion-zone-xchange.md) | ZBX | 🟡 21/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/billion-zone-xchange-bsc) |
 | [Ark Of Panda](./ark-of-panda.md) | AOP | 🟠 54/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/ark-of-panda-bsc) |
 | [Bless Token](./bless-token.md) | BLESS | 🔴 93/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/bless-token-bsc) |

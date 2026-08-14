@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**120 reports** · Updated daily · [← All Networks](../README.md)
+**126 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Lego Pepe](./lego-pepe.md) | LEPE | 🟠 61/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/lego-pepe-eth) |
+| [Mantle](./mantle.md) | MNT | 🟠 60/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/mantle-eth) |
+| [Autonolas](./autonolas.md) | OLAS | 🔴 76/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/autonolas-eth) |
+| [StorjToken](./storjtoken.md) | STORJ | 🟠 53/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/storjtoken-eth) |
+| [Eden Token](./eden-token.md) | EDEN | 🔴 85/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/eden-token-eth) |
+| [ether.fi governance token](./etherfi-governance-token.md) | ETHFI | 🟡 22/100 Medium Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/etherfi-governance-token-eth) |
 | [USDS Stablecoin](./usds-stablecoin.md) | USDS | 🟠 63/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/usds-stablecoin-eth) |
 | [Turtle](./turtle.md) | TURTLE | 🔴 78/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/turtle-eth) |
 | [FOX](./fox.md) | FOX | 🟠 68/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/fox-eth) |
