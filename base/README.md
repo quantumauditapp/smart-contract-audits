@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**96 reports** · Updated daily · [← All Networks](../README.md)
+**104 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,14 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [ether.fi governance token](./etherfi-governance-token.md) | ETHFI | 🟠 65/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/etherfi-governance-token-base) |
+| [Hydrex](./hydrex.md) | HYDX | 🟠 60/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/hydrex-base) |
+| [SoSoValue](./sosovalue.md) | SOSO | 🟠 53/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/sosovalue-base) |
+| [RaveDAO](./ravedao.md) | RAVE | 🟡 44/100 Medium Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/ravedao-base) |
+| [ICP](./icp.md) | ICP | 🟠 58/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/icp-base) |
+| [Robo Token](./robo-token.md) | ROBO | 🟠 46/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/robo-token-base) |
+| [ChainLink Token](./chainlink-token.md) | LINK | 🟡 39/100 Medium Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/chainlink-token-base) |
+| [RIZE](./rize.md) | RIZE | 🟠 57/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/rize-base) |
 | [Degen](./degen.md) | DEGEN | 🟡 39/100 Medium Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/degen-base) |
 | [OpenAI](./openai.md) | OPENAI | 🟢 17/100 Low Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/openai-base) |
 | [BIO](./bio.md) | BIO | 🟠 61/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/bio-base) |

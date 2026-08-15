@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**18 reports** · Updated daily · [← All Networks](../README.md)
+**20 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [MOR](./mor.md) | MOR | 🔴 76/100 Critical Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/mor-arb) |
+| [Vangrid](./vangrid.md) | VAN | 🔴 84/100 Critical Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/vangrid-arb) |
 | [Axelar Wrapped LAVA](./axelar-wrapped-lava.md) | LAVA | 🔴 79/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/axelar-wrapped-lava-arb) |
 | [Dai Stablecoin](./dai-stablecoin.md) | DAI | 🔴 74/100 Critical Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/dai-stablecoin-arb) |
 | [Coinbase Wrapped BTC](./coinbase-wrapped-btc.md) | CBBTC | 🔴 74/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/coinbase-wrapped-btc-arb) |

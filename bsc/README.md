@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**141 reports** · Updated daily · [← All Networks](../README.md)
+**148 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Asteroid Shiba](./asteroid-shiba.md) | ASTEROID | 🟠 50/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/asteroid-shiba-bsc) |
+| [TaleX](./talex.md) | X | 🟡 28/100 Medium Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/talex-bsc) |
+| [ElonCoin](./eloncoin-bsc-55ce.md) | ELONCOIN | 🟢 0/100 Low Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/eloncoin-bsc-55ce) |
+| [binanceus doodles](./binanceus-doodles.md) | BOODLES | 🟢 17/100 Low Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/binanceus-doodles-bsc) |
+| [bStocks Never Sleep](./bstocks-never-sleep.md) | BSTOCKS | 🟡 39/100 Medium Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/bstocks-never-sleep-bsc) |
+| [ACEToken](./acetoken.md) | ACE | 🔴 92/100 Critical Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/acetoken-bsc) |
+| [Binance Brokers](./binance-brokers.md) | BBROKERS | 🟠 70/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/binance-brokers-bsc) |
 | [BNI](./bni.md) | BNI | 🟢 4/100 Low Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/bni-bsc) |
 | [金蟾](./jin.md) | JIN | 🟠 48/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/jin-bsc) |
 | [Monkey](./monkey-bsc-149f.md) | MONKEY | 🔴 89/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/monkey-bsc-149f) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**279 reports** · Updated daily · [← All Networks](../README.md)
+**298 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,25 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Boiúna](./boiuna.md) | BOIÚNA | 🟠 66/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/boiuna-sol) |
+| [Kinda Chic](./kinda-chic.md) | CHIC | 🟠 58/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/kinda-chic-sol) |
+| [Luigi Mangione](./luigi-mangione.md) | LUIGI | 🟡 32/100 Medium Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/luigi-mangione-sol) |
+| [The Callooor](./the-callooor.md) | CALLOOOR | 🟠 70/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/the-callooor-sol) |
+| [Aura Final Boss](./aura-final-boss.md) | KIMCHI | 🔴 78/100 Critical Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/aura-final-boss-sol) |
+| [creator capital](./creator-capital.md) | CC | 🟠 56/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/creator-capital-sol) |
+| [Quantum Cat](./quantum-cat.md) | MAFIA | 🔴 83/100 Critical Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/quantum-cat-sol) |
+| [FARTBOY](./fartboy.md) | FARTBOY | 🟡 42/100 Medium Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/fartboy-sol) |
+| [just a memecoin](./just-a-memecoin.md) | MEMECOIN | 🟠 52/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/just-a-memecoin-sol) |
+| [Grok Bot](./grok-bot.md) | BOT | 🟠 59/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/grok-bot-sol) |
+| [AgenC](./agenc.md) | AGENC | 🟠 65/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/agenc-sol) |
+| [Permission-less Lending](./permission-less-lending.md) | MAGPIE | 🟠 53/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/permission-less-lending-sol) |
+| [Qenis](./qenis.md) | QENIS | 🟠 58/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/qenis-sol) |
+| [world licking cat](./world-licking-cat.md) | LICKINGCAT | 🟠 55/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/world-licking-cat-sol) |
+| [Meme Season](./meme-season.md) | MEMESEASON | 🔴 88/100 Critical Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/meme-season-sol) |
+| [Mr. Madoff](./mr-madoff.md) | PONZI | 🔴 100/100 Critical Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/mr-madoff-sol) |
+| [BULLGEN](./bullgen.md) | BULLGEN | 🔴 84/100 Critical Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/bullgen-sol) |
+| [FARTCOIN](./fartcoin-sol-ed5a.md) | FART | 🟠 63/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/fartcoin-sol-ed5a) |
+| [StonkBet](./stonkbet.md) | STONKBET | 🔴 91/100 Critical Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/stonkbet-sol) |
 | [MomoCoin](./momocoin.md) | MOMO | 🟠 61/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/momocoin-sol) |
 | [Dumb Phone Gang](./dumb-phone-gang.md) | DPG | 🟠 51/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/dumb-phone-gang-sol) |
 | [Dominion Silver](./dominion-silver.md) | SILV | 🔴 100/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/dominion-silver-sol) |

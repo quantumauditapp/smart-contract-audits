@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**126 reports** · Updated daily · [← All Networks](../README.md)
+**128 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [tap](./tap.md) | TAP | 🔴 83/100 Critical Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/tap-eth) |
+| [Fabric Protocol](./fabric-protocol.md) | ROBO | 🟠 48/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/fabric-protocol-eth) |
 | [Lego Pepe](./lego-pepe.md) | LEPE | 🟠 61/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/lego-pepe-eth) |
 | [Mantle](./mantle.md) | MNT | 🟠 60/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/mantle-eth) |
 | [Autonolas](./autonolas.md) | OLAS | 🔴 76/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/autonolas-eth) |
