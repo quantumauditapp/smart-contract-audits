@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**20 reports** · Updated daily · [← All Networks](../README.md)
+**22 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Orderly Network](./orderly-network.md) | ORDER | 🟠 63/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/orderly-network-arb) |
+| [CoW Protocol Token](./cow-protocol-token.md) | COW | 🟠 54/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/cow-protocol-token-arb) |
 | [MOR](./mor.md) | MOR | 🔴 76/100 Critical Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/mor-arb) |
 | [Vangrid](./vangrid.md) | VAN | 🔴 84/100 Critical Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/vangrid-arb) |
 | [Axelar Wrapped LAVA](./axelar-wrapped-lava.md) | LAVA | 🔴 79/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/axelar-wrapped-lava-arb) |

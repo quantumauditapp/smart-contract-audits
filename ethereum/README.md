@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**128 reports** · Updated daily · [← All Networks](../README.md)
+**137 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,15 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Redstone](./redstone.md) | RED | 🟠 64/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/redstone-eth) |
+| [ApeCoin](./apecoin.md) | APE | 🟡 30/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/apecoin-eth) |
+| [Syrup Token](./syrup-token.md) | SYRUP | 🟠 70/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/syrup-token-eth) |
+| [Highstreet token](./highstreet-token.md) | HIGH | 🟡 40/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/highstreet-token-eth) |
+| [Banana](./banana.md) | BANANA | 🔴 100/100 Critical Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/banana-eth) |
+| [Gnosis Token](./gnosis-token.md) | GNO | 🟠 55/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/gnosis-token-eth) |
+| [Graph Token](./graph-token.md) | GRT | 🟠 61/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/graph-token-eth) |
+| [Dolomite](./dolomite.md) | DOLO | 🟡 42/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/dolomite-eth) |
+| [CoW Protocol Token](./cow-protocol-token.md) | COW | 🔴 73/100 Critical Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/cow-protocol-token-eth) |
 | [tap](./tap.md) | TAP | 🔴 83/100 Critical Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/tap-eth) |
 | [Fabric Protocol](./fabric-protocol.md) | ROBO | 🟠 48/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/fabric-protocol-eth) |
 | [Lego Pepe](./lego-pepe.md) | LEPE | 🟠 61/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/lego-pepe-eth) |

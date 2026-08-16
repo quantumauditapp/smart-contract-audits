@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**104 reports** · Updated daily · [← All Networks](../README.md)
+**112 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,14 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Venice Deity](./venice-deity.md) | VVVEITY | 🟡 41/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/venice-deity-base) |
+| [Ethy AI by Virtuals](./ethy-ai-by-virtuals.md) | ETHY | 🟠 60/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/ethy-ai-by-virtuals-base) |
+| [Keyboard Cat](./keyboard-cat.md) | KEYCAT | 🟢 3/100 Low Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/keyboard-cat-base) |
+| [Coinbase Wrapped MEGA](./coinbase-wrapped-mega.md) | CBMEGA | 🔴 79/100 Critical Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/coinbase-wrapped-mega-base) |
+| [Jerry the goat](./jerry-the-goat.md) | JERRY | 🟡 23/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/jerry-the-goat-base) |
+| [Play](./play.md) | PLAY | 🟡 32/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/play-base) |
+| [CoW Protocol Token](./cow-protocol-token.md) | COW | 🟠 68/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/cow-protocol-token-base) |
+| [doginme](./doginme.md) | DOGINME | 🟢 0/100 Low Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/doginme-base) |
 | [ether.fi governance token](./etherfi-governance-token.md) | ETHFI | 🟠 65/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/etherfi-governance-token-base) |
 | [Hydrex](./hydrex.md) | HYDX | 🟠 60/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/hydrex-base) |
 | [SoSoValue](./sosovalue.md) | SOSO | 🟠 53/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/sosovalue-base) |

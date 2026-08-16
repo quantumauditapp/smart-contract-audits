@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**148 reports** · Updated daily · [← All Networks](../README.md)
+**156 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,14 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Brok](./brok.md) | BROK | 🟡 42/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/brok-bsc) |
+| [FinTech AI](./fintech-ai.md) | FNA | 🟠 68/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/fintech-ai-bsc) |
+| [Liability Vortex](./liability-vortex.md) | LVTR | 🟢 16/100 Low Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/liability-vortex-bsc) |
+| [niulai](./niulai.md) | NIULAI | 🟠 48/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/niulai-bsc) |
+| [OLAXBT](./olaxbt.md) | AIO | 🟡 38/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/olaxbt-bsc) |
+| [Infinity Ground AI](./infinity-ground-ai.md) | AIN | 🟠 50/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/infinity-ground-ai-bsc) |
+| [Post-Quantum Coin](./post-quantum-coin.md) | PQC | 🟢 0/100 Low Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/post-quantum-coin-bsc) |
+| [Gen Z](./gen-z.md) | Z | 🟡 27/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/gen-z-bsc) |
 | [Asteroid Shiba](./asteroid-shiba.md) | ASTEROID | 🟠 50/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/asteroid-shiba-bsc) |
 | [TaleX](./talex.md) | X | 🟡 28/100 Medium Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/talex-bsc) |
 | [ElonCoin](./eloncoin-bsc-55ce.md) | ELONCOIN | 🟢 0/100 Low Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/eloncoin-bsc-55ce) |

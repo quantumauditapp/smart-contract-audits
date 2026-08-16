@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**298 reports** · Updated daily · [← All Networks](../README.md)
+**305 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Sent from my Pumpfun App](./sent-from-my-pumpfun-app.md) | APP | 🟠 68/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/sent-from-my-pumpfun-app-sol) |
+| [world](./world.md) | WORLD | 🔴 79/100 Critical Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/world-sol) |
+| [XFee](./xfee.md) | XFEE | 🔴 75/100 Critical Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/xfee-sol) |
+| [zerebro](./zerebro.md) | ZEREBRO | 🟠 70/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/zerebro-sol) |
+| [Loom](./loom-sol-eb2b.md) | LOOM | 🔴 83/100 Critical Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/loom-sol-eb2b) |
+| [Cash Elon](./cash-elon.md) | CASHELON | 🟠 66/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/cash-elon-sol) |
+| [FWOGAMI](./fwogami.md) | FWOGAMI | 🔴 75/100 Critical Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/fwogami-sol) |
 | [Boiúna](./boiuna.md) | BOIÚNA | 🟠 66/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/boiuna-sol) |
 | [Kinda Chic](./kinda-chic.md) | CHIC | 🟠 58/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/kinda-chic-sol) |
 | [Luigi Mangione](./luigi-mangione.md) | LUIGI | 🟡 32/100 Medium Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/luigi-mangione-sol) |
