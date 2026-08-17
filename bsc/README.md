@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**156 reports** · Updated daily · [← All Networks](../README.md)
+**160 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Marscoin](./marscoin-bsc-0ec3.md) | MARS | 🟢 10/100 Low Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/marscoin-bsc-0ec3) |
+| [Chainbase Token](./chainbase-token.md) | C | 🟡 43/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/chainbase-token-bsc) |
+| [BNB Attestation](./bnb-attestation.md) | BAS | 🔴 84/100 Critical Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/bnb-attestation-bsc) |
+| [STBL_Token - STBL Governance Token](./stbltoken-stbl-governance-token.md) | STBL | 🔴 76/100 Critical Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/stbltoken-stbl-governance-token-bsc) |
 | [Brok](./brok.md) | BROK | 🟡 42/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/brok-bsc) |
 | [FinTech AI](./fintech-ai.md) | FNA | 🟠 68/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/fintech-ai-bsc) |
 | [Liability Vortex](./liability-vortex.md) | LVTR | 🟢 16/100 Low Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/liability-vortex-bsc) |

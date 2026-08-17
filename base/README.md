@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**112 reports** · Updated daily · [← All Networks](../README.md)
+**121 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,15 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Basemate](./basemate.md) | BASEMATE | 🟠 48/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/basemate-base) |
+| [Superform](./superform.md) | UP | 🟡 45/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/superform-base) |
+| [Elsa](./elsa.md) | ELSA | 🟡 45/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/elsa-base) |
+| [Chip](./chip.md) | CHIP | 🔴 76/100 Critical Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/chip-base) |
+| [Google T-REX](./google-t-rex.md) | TREX | 🟠 56/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/google-t-rex-base) |
+| [the sleeping giant](./the-sleeping-giant.md) | TSG | 🟡 40/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/the-sleeping-giant-base) |
+| [Mr. Miggles](./mr-miggles.md) | MIGGLES | 🟢 0/100 Low Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/mr-miggles-base) |
+| [PORTAL](./portal.md) | PORTAL | 🟡 29/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/portal-base) |
+| [Coinye West](./coinye-west.md) | COINYE | 🟢 9/100 Low Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/coinye-west-base) |
 | [Venice Deity](./venice-deity.md) | VVVEITY | 🟡 41/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/venice-deity-base) |
 | [Ethy AI by Virtuals](./ethy-ai-by-virtuals.md) | ETHY | 🟠 60/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/ethy-ai-by-virtuals-base) |
 | [Keyboard Cat](./keyboard-cat.md) | KEYCAT | 🟢 3/100 Low Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/keyboard-cat-base) |

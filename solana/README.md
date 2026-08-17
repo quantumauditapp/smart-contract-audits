@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**305 reports** · Updated daily · [← All Networks](../README.md)
+**324 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,25 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Mario64](./mario64.md) | MARIO64 | 🟠 62/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/mario64-sol) |
+| [drooler](./drooler.md) | DROOLER | 🟠 69/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/drooler-sol) |
+| [ShinAI](./shinai.md) | SHINJUKU | 🟠 64/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/shinai-sol) |
+| [Jester ](./jester.md) | JESTER  | 🟠 66/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/jester-sol) |
+| [メイちゃん](./mei.md) | MEI | 🟠 58/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/mei-sol) |
+| [Solana's First AI Lifeform](./solanas-first-ai-lifeform.md) | CHARLIE | 🟠 66/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/solanas-first-ai-lifeform-sol) |
+| [looksmax.org](./looksmaxorg.md) | LOOKSMAX | 🟠 54/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/looksmaxorg-sol) |
+| [Walruse](./walruse.md) | WALRUSE | 🟠 67/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/walruse-sol) |
+| [Jab Jabich](./jab-jabich.md) | FROG | 🟠 64/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/jab-jabich-sol) |
+| [flying tesla roadster](./flying-tesla-roadster.md) | FTR | 🟠 56/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/flying-tesla-roadster-sol) |
+| [LAYOOO](./layooo.md) | LAYOOO | 🟠 51/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/layooo-sol) |
+| [c0mpute](./c0mpute.md) | ZERO | 🟠 51/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/c0mpute-sol) |
+| [RONIN](./ronin.md) | RONIN | 🔴 73/100 Critical Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/ronin-sol) |
+| [Poipoi](./poipoi.md) | POIPOI | 🟠 69/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/poipoi-sol) |
+| [Nonchalant Horse](./nonchalant-horse.md) | HORSE | 🟠 58/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/nonchalant-horse-sol) |
+| [The Collector Group](./the-collector-group.md) | TCG | 🟠 50/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/the-collector-group-sol) |
+| [GIGACHAD](./gigachad.md) | GIGA | 🟡 25/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/gigachad-sol) |
+| [Lunar Lad](./lunar-lad.md) | LAD | 🟡 44/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/lunar-lad-sol) |
+| [Jason Duval](./jason-duval.md) | JASON | 🟠 64/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/jason-duval-sol) |
 | [Sent from my Pumpfun App](./sent-from-my-pumpfun-app.md) | APP | 🟠 68/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/sent-from-my-pumpfun-app-sol) |
 | [world](./world.md) | WORLD | 🔴 79/100 Critical Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/world-sol) |
 | [XFee](./xfee.md) | XFEE | 🔴 75/100 Critical Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/xfee-sol) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**137 reports** · Updated daily · [← All Networks](../README.md)
+**145 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,14 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [ZigCoin](./zigcoin.md) | ZIG | 🟡 39/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/zigcoin-eth) |
+| [Trace Token](./trace-token.md) | TRAC | 🟠 69/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/trace-token-eth) |
+| [Illuvium](./illuvium.md) | ILV | 🟠 62/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/illuvium-eth) |
+| [PRDCTR](./prdctr.md) | PRD | 🟠 47/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/prdctr-eth) |
+| [Rekt](./rekt.md) | REKT | 🟢 13/100 Low Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/rekt-eth) |
+| [Pikachu](./pikachu.md) | PIKACHU | 🟢 0/100 Low Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/pikachu-eth) |
+| [Chip](./chip.md) | CHIP | 🔴 77/100 Critical Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/chip-eth) |
+| [VERA](./vera.md) | VRA | 🟡 32/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/vera-eth) |
 | [Redstone](./redstone.md) | RED | 🟠 64/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/redstone-eth) |
 | [ApeCoin](./apecoin.md) | APE | 🟡 30/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/apecoin-eth) |
 | [Syrup Token](./syrup-token.md) | SYRUP | 🟠 70/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/syrup-token-eth) |
