@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**324 reports** · Updated daily · [← All Networks](../README.md)
+**336 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,18 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Ani Grok Companion](./ani-grok-companion.md) | ANI | 🟢 17/100 Low Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/ani-grok-companion-sol) |
+| [clawpump.tech](./clawpumptech.md) | CLAW | 🔴 75/100 Critical Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/clawpumptech-sol) |
+| [Unicorn Fart Dust](./unicorn-fart-dust.md) | UFD | 🟢 20/100 Low Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/unicorn-fart-dust-sol) |
+| [Gunicorn](./gunicorn.md) | GUNICORN | 🟠 70/100 High Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/gunicorn-sol) |
+| [HYPE](./hype.md) | HYPE | 🟠 64/100 High Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/hype-sol) |
+| [Bertram The Pomeranian](./bertram-the-pomeranian.md) | BERT | 🟡 26/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/bertram-the-pomeranian-sol) |
+| [TARS AI](./tars-ai.md) | TAI | 🔴 85/100 Critical Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/tars-ai-sol) |
+| [BEPE](./bepe.md) | BEPE | 🟡 26/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/bepe-sol) |
+| [Daydreams](./daydreams.md) | DREAMS | 🟡 30/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/daydreams-sol) |
+| [Bullshit Coin](./bullshit-coin.md) | BULLSHIT | 🟠 53/100 High Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/bullshit-coin-sol) |
+| [Z](./z.md) | Z | 🟠 61/100 High Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/z-sol) |
+| [dogwifpants](./dogwifpants.md) | PANTS | 🟠 64/100 High Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/dogwifpants-sol) |
 | [Mario64](./mario64.md) | MARIO64 | 🟠 62/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/mario64-sol) |
 | [drooler](./drooler.md) | DROOLER | 🟠 69/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/drooler-sol) |
 | [ShinAI](./shinai.md) | SHINJUKU | 🟠 64/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/shinai-sol) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**160 reports** · Updated daily · [← All Networks](../README.md)
+**169 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,15 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [SIXSEVEN](./sixseven.md) | 67 | 🟠 52/100 High Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/sixseven-bsc) |
+| [PIZZA](./pizza.md) | PIZZA | 🟢 20/100 Low Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/pizza-bsc) |
+| [TokenFi](./tokenfi.md) | TOKEN | 🟡 28/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/tokenfi-bsc) |
+| [SOON Token](./soon-token.md) | SOON | 🟡 42/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/soon-token-bsc) |
+| [o1.exchange](./o1exchange.md) | O | 🟡 39/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/o1exchange-bsc) |
+| [MarsCoin](./marscoin-bsc-88af.md) | MARSCOIN | 🟡 23/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/marscoin-bsc-88af) |
+| [RICE AI](./rice-ai.md) | RICE | 🟠 59/100 High Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/rice-ai-bsc) |
+| [MetaSoilVerseProtocol](./metasoilverseprotocol.md) | MSVP | 🟡 42/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/metasoilverseprotocol-bsc) |
+| [牛来](./niulai-bsc-aba9.md) | NIULAI | 🟡 39/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/niulai-bsc-aba9) |
 | [Marscoin](./marscoin-bsc-0ec3.md) | MARS | 🟢 10/100 Low Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/marscoin-bsc-0ec3) |
 | [Chainbase Token](./chainbase-token.md) | C | 🟡 43/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/chainbase-token-bsc) |
 | [BNB Attestation](./bnb-attestation.md) | BAS | 🔴 84/100 Critical Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/bnb-attestation-bsc) |

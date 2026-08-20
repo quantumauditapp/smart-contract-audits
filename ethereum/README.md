@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**145 reports** · Updated daily · [← All Networks](../README.md)
+**149 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [BIO](./bio.md) | BIO | 🟠 52/100 High Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/bio-eth) |
+| [Ocean Token](./ocean-token.md) | OCEAN | 🟠 63/100 High Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/ocean-token-eth) |
+| [Sustainable Aviation Fuel](./sustainable-aviation-fuel.md) | SAF | 🟠 56/100 High Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/sustainable-aviation-fuel-eth) |
+| [PancakeSwap](./pancakeswap.md) | CAKE | 🔴 89/100 Critical Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/pancakeswap-eth) |
 | [ZigCoin](./zigcoin.md) | ZIG | 🟡 39/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/zigcoin-eth) |
 | [Trace Token](./trace-token.md) | TRAC | 🟠 69/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/trace-token-eth) |
 | [Illuvium](./illuvium.md) | ILV | 🟠 62/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/illuvium-eth) |
