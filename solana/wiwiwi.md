@@ -2,14 +2,14 @@
 token: wiwiwi
 ticker: WIWIWI
 network: solana
-risk_score: 57
-status: high
+risk_score: 30
+status: low
 date: 2026-08-06
 ---
 
 # wiwiwi (WIWIWI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wiwiwi-sol)
 
@@ -25,9 +25,9 @@ The wiwiwi SPL Token Mint exhibits a low technical risk profile with both mint a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The wiwiwi token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no holder accounts can… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 23.06% of the total supply, which is not considered highly concentrated. Total DEX liquidity stands at $74,976, with a 24-hour… |
-| **Upgrades** | 5/10 | Medium | The wiwiwi token mint has a robust non-upgradable structure. Both the mint and freeze authorities are permanently revoked, preventing any future changes to the token's supply or account freeze… |
+| **Technical** | 10/10 | Low | The wiwiwi token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no holder accounts can… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a holder concentration where the top 10 accounts hold 23.06% of the total supply, which is not considered highly concentrated. Total DEX liquidity stands at $74,976, with a 24-hour… |
+| **Upgrades** | 8/10 | Low | The wiwiwi token mint has a robust non-upgradable structure. Both the mint and freeze authorities are permanently revoked, preventing any future changes to the token's supply or account freeze… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`3XEe11...pump`](https://solscan.io/account/3XEe11RMNqNTka33ik2yEmr3siUWmFQWSESP9Ejepump) |
 | **Network** | Solana |
-| **Price** | $0.0007644 |
-| **24h Volume** | $562.4K |
-| **Liquidity** | $78.2K |
-| **Volume / Liquidity** | 7.2× |
+| **Price** | $0.0001039 |
+| **24h Volume** | $2.0K |
+| **Liquidity** | $41.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | 23.1% of supply |
+| **Top-10 Holders** | 41.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3171 buys / 3336 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

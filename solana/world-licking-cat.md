@@ -2,14 +2,14 @@
 token: world licking cat
 ticker: LICKINGCAT
 network: solana
-risk_score: 55
-status: high
+risk_score: 44
+status: medium
 date: 2026-08-15
 ---
 
 # world licking cat (LICKINGCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-licking-cat-sol)
 
@@ -25,9 +25,9 @@ This audit of the `world licking cat` SPL Token-2022 mint identifies a Medium ri
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The `world licking cat` token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked, preventing further token issuance or freezing of holder accounts. No Transfer… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 22.04% of the supply, which is relatively low. Total DEX liquidity stands at $134,213, supporting moderate trading activity.… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, including Mint and Freeze authorities, are permanently revoked, meaning no further changes can be made to the token's supply or account freeze status. Key Token-2022… |
+| **Technical** | 8/10 | Low | The `world licking cat` token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked, preventing further token issuance or freezing of holder accounts. No Transfer… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 22.04% of the supply, which is relatively low. Total DEX liquidity stands at $134,213, supporting moderate trading activity.… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, including Mint and Freeze authorities, are permanently revoked, meaning no further changes can be made to the token's supply or account freeze status. Key Token-2022… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`EjD5Y9...pump`](https://solscan.io/account/EjD5Y9NVhXmtEqU7wYvAyZvDWZFQeEuHXFatJmTbpump) |
 | **Network** | Solana |
-| **Price** | $0.001111 |
-| **24h Volume** | $192.5K |
-| **Liquidity** | $135.5K |
-| **Volume / Liquidity** | 1.4× |
+| **Price** | $0.00001689 |
+| **24h Volume** | $860 |
+| **Liquidity** | $17.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | 22.0% of supply |
+| **Top-10 Holders** | 74.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 484 buys / 450 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

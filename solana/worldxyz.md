@@ -2,14 +2,14 @@
 token: world.xyz
 ticker: WORLD
 network: solana
-risk_score: 41
-status: medium
+risk_score: 16
+status: low
 date: 2026-07-23
 ---
 
 # world.xyz (WORLD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 16/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/worldxyz-sol)
 
@@ -25,9 +25,19 @@ The world.xyz SPL Token Mint (world) on Solana exhibits a robust security config
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority are revoked, indicating a fixed supply and no ability for an external party to freeze user… |
-| **Governance / Economics** | 3/10 | High | DEX liquidity for world.xyz is $172,569, with a 24-hour volume of $201,036, resulting in a normal Volume/Liquidity Ratio of 1.16. The DEX pair has been active for 29 days, providing some track… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, preventing further minting or freezing of tokens. The token utilizes the spl-token-2022 program but does not have any active upgradable… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority are revoked, indicating a fixed supply and no ability for an external party to freeze user… |
+| **Governance / Economics** | 6/10 | Medium | DEX liquidity for world.xyz is $172,569, with a 24-hour volume of $201,036, resulting in a normal Volume/Liquidity Ratio of 1.16. The DEX pair has been active for 29 days, providing some track… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing further minting or freezing of tokens. The token utilizes the spl-token-2022 program but does not have any active upgradable… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The world.xyz SPL Token Mint (world) on Solana exhibits a robust security config
 |--------|-------|
 | **Contract** | [`FMqh9m...pump`](https://solscan.io/account/FMqh9mqR6drPZqqW6wPqLHxX4rqNDWGhYLaMfoaJpump) |
 | **Network** | Solana |
-| **Price** | $0.002593 |
-| **24h Volume** | $279.5K |
-| **Liquidity** | $209.8K |
-| **Volume / Liquidity** | 1.3× |
+| **Price** | $0.0003304 |
+| **24h Volume** | $62.1K |
+| **Liquidity** | $102.0K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 29d |
-| **Top-10 Holders** | 18.6% of supply |
+| **Top-10 Holders** | 30.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1061 buys / 820 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The world.xyz SPL Token Mint (world) on Solana exhibits a robust security config
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

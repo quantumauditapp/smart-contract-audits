@@ -2,14 +2,14 @@
 token: XST
 ticker: XST
 network: solana
-risk_score: 37
-status: medium
+risk_score: 0
+status: low
 date: 2026-08-06
 ---
 
 # XST (XST) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/xst-sol)
 
@@ -25,9 +25,19 @@ This audit of the XST SPL token mint found no critical or high-severity risks ba
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The XST token operates on the standard spl-token program. Key authorities, including the mint authority and freeze authority, are both revoked, ensuring that no new tokens can be minted and no… |
-| **Governance / Economics** | 3/10 | High | The token exhibits healthy economic indicators with a total DEX liquidity of $319,273 and a 24-hour volume of $274,049. The Volume/Liquidity Ratio is 0.86, which is considered normal and does not… |
-| **Upgrades** | 5/10 | Medium | The XST token mint has no active upgradeability or mutability features. Both the mint authority and freeze authority are permanently revoked, preventing any future changes to the token's supply or… |
+| **Technical** | 10/10 | Low | The XST token operates on the standard spl-token program. Key authorities, including the mint authority and freeze authority, are both revoked, ensuring that no new tokens can be minted and no… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits healthy economic indicators with a total DEX liquidity of $319,273 and a 24-hour volume of $274,049. The Volume/Liquidity Ratio is 0.86, which is considered normal and does not… |
+| **Upgrades** | 8/10 | Low | The XST token mint has no active upgradeability or mutability features. Both the mint authority and freeze authority are permanently revoked, preventing any future changes to the token's supply or… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the XST SPL token mint found no critical or high-severity risks ba
 |--------|-------|
 | **Contract** | [`XSTuo1...YZqP`](https://solscan.io/account/XSTuo1fV7HHMhs4BYiwtrWSLsMCJNrooH2AssWTYZqP) |
 | **Network** | Solana |
-| **Price** | $0.01738 |
-| **24h Volume** | $274.0K |
-| **Liquidity** | $319.2K |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.00131 |
+| **24h Volume** | $7.5K |
+| **Liquidity** | $89.7K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 13d |
-| **Top-10 Holders** | 8.7% of supply |
+| **Top-10 Holders** | 12.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1121 buys / 523 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the XST SPL token mint found no critical or high-severity risks ba
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

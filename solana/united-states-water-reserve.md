@@ -2,14 +2,14 @@
 token: United States Water Reserve
 ticker: USWR
 network: solana
-risk_score: 41
-status: medium
+risk_score: 3
+status: low
 date: 2026-07-25
 ---
 
 # United States Water Reserve (USWR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 3/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/united-states-water-reserve-sol)
 
@@ -25,9 +25,9 @@ The United States Water Reserve (USWR) token is an SPL Token-2022 mint with its 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The USWR token is an SPL Token-2022 mint with its Mint Authority and Freeze Authority both revoked, indicating a fixed supply and that holder accounts cannot be frozen. It does not utilize a Transfer… |
-| **Governance / Economics** | 3/10 | High | The token exhibits moderate liquidity at $84,727 USD, with a 24-hour volume of $235,563 USD, resulting in a healthy Volume/Liquidity Ratio of 2.78. The DEX pair has been active for 66 days, providing… |
-| **Upgrades** | 5/10 | Medium | The Mint and Freeze authorities are permanently revoked, preventing any future changes to the token's supply or account freeze status. The token does not have a Transfer Hook, and its… |
+| **Technical** | 10/10 | Low | The USWR token is an SPL Token-2022 mint with its Mint Authority and Freeze Authority both revoked, indicating a fixed supply and that holder accounts cannot be frozen. It does not utilize a Transfer… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits moderate liquidity at $84,727 USD, with a 24-hour volume of $235,563 USD, resulting in a healthy Volume/Liquidity Ratio of 2.78. The DEX pair has been active for 66 days, providing… |
+| **Upgrades** | 8/10 | Low | The Mint and Freeze authorities are permanently revoked, preventing any future changes to the token's supply or account freeze status. The token does not have a Transfer Hook, and its… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The `metadata_mutable` flag is set to True. This means that the token's name, sy
 |--------|-------|
 | **Contract** | [`4D8qUH...USWR`](https://solscan.io/account/4D8qUHm334fxqeTauPvF8gQ7fYgrD4Mpmb1Wy6ftUSWR) |
 | **Network** | Solana |
-| **Price** | $0.001439 |
-| **24h Volume** | $235.6K |
-| **Liquidity** | $84.7K |
-| **Volume / Liquidity** | 2.8× |
+| **Price** | $0.0004993 |
+| **24h Volume** | $9.6K |
+| **Liquidity** | $59.4K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 10.7% of supply |
+| **Top-10 Holders** | 12.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 22127 buys / 21238 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The `metadata_mutable` flag is set to True. This means that the token's name, sy
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

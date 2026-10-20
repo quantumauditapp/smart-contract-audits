@@ -2,14 +2,14 @@
 token: zerebro
 ticker: ZEREBRO
 network: solana
-risk_score: 70
-status: high
+risk_score: 32
+status: low
 date: 2026-08-16
 ---
 
 # zerebro (ZEREBRO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zerebro-sol)
 
@@ -25,15 +25,15 @@ The zerebro (ZEREBRO) SPL token mint exhibits critical risks primarily due to it
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The zerebro token is implemented using the standard spl-token program. Both the mint authority and freeze authority have been revoked, preventing the creation of new tokens or the freezing of… |
+| **Technical** | 7/10 | Low | The zerebro token is implemented using the standard spl-token program. Both the mint authority and freeze authority have been revoked, preventing the creation of new tokens or the freezing of… |
 | **Governance / Economics** | 1/10 | High | The token exhibits significant holder concentration, with the top 10 token accounts holding 77.67% of the total supply, posing a substantial risk of market manipulation or price volatility from large… |
-| **Upgrades** | 4/10 | Medium | The token mint's core parameters are highly immutable, as both the mint authority and freeze authority have been revoked. This means no new tokens can be minted, and no accounts can be frozen by an… |
+| **Upgrades** | 7/10 | Low | The token mint's core parameters are highly immutable, as both the mint authority and freeze authority have been revoked. This means no new tokens can be minted, and no accounts can be frozen by an… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **LP Burned** | ✅ 99.2% (≈ permanent lock) |
+| **LP Burned** | ✅ 99.3% (≈ permanent lock) |
 
 ## Security Findings
 
@@ -58,22 +58,21 @@ Top 10 token accounts hold 77.67% of supply. Coordinated sell-off would crash pr
 |--------|-------|
 | **Contract** | [`8x5Vqb...o2Wn`](https://solscan.io/account/8x5VqbHA8D7NkD52uNuS5nnt3PwA8pLD34ymskeSo2Wn) |
 | **Network** | Solana |
-| **Price** | $0.04055 |
-| **24h Volume** | $1.15M |
-| **Liquidity** | $2.90M |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.03373 |
+| **24h Volume** | $278.1K |
+| **Liquidity** | $3.33M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 77.7% of supply |
+| **Top-10 Holders** | 78.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3993 buys / 3939 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -81,9 +80,8 @@ Top 10 token accounts hold 77.67% of supply. Coordinated sell-off would crash pr
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: XFee
 ticker: XFEE
 network: solana
-risk_score: 75
-status: critical
+risk_score: 37
+status: medium
 date: 2026-08-16
 ---
 
 # XFee (XFEE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 75/100 — 🔴 Critical Risk**
+> **Risk Score: 37/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/xfee-sol)
 
@@ -25,9 +25,9 @@ The XFee token mint exhibits a high risk due to extreme holder concentration, wi
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The XFee token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, which means no new tokens can be minted and no existing accounts… |
-| **Governance / Economics** | 1/10 | High | A significant economic risk is present due to extreme holder concentration, with the top 10 token accounts holding 97.39% of the total supply (7.4 Economic). This high concentration is further… |
-| **Upgrades** | 5/10 | Medium | The token mint exhibits a high degree of immutability post-launch. The mint authority has been revoked, preventing any further supply inflation, and the freeze authority is also revoked, ensuring… |
+| **Technical** | 8/10 | Low | The XFee token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, which means no new tokens can be minted and no existing accounts… |
+| **Governance / Economics** | 2/10 | High | A significant economic risk is present due to extreme holder concentration, with the top 10 token accounts holding 97.39% of the total supply (7.4 Economic). This high concentration is further… |
+| **Upgrades** | 8/10 | Low | The token mint exhibits a high degree of immutability post-launch. The mint authority has been revoked, preventing any further supply inflation, and the freeze authority is also revoked, ensuring… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ Top 10 token accounts hold 97.39% of supply. Coordinated sell-off would crash pr
 |--------|-------|
 | **Contract** | [`96egra...XfuN`](https://solscan.io/account/96egraTCizRpzNx4WvMMhPJf7TKS7W5kUHeenmd1XfuN) |
 | **Network** | Solana |
-| **Price** | $10.2000 |
-| **24h Volume** | $33.7K |
-| **Liquidity** | $239.2K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $10.8600 |
+| **24h Volume** | $14.0K |
+| **Liquidity** | $359.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 97.4% of supply |
+| **Top-10 Holders** | 98.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 173 buys / 101 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ Top 10 token accounts hold 97.39% of supply. Coordinated sell-off would crash pr
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

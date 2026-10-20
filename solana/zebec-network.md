@@ -2,14 +2,14 @@
 token: Zebec Network
 ticker: ZBCN
 network: solana
-risk_score: 62
-status: high
+risk_score: 24
+status: low
 date: 2026-08-11
 ---
 
 # Zebec Network (ZBCN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 24/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zebec-network-sol)
 
@@ -25,9 +25,9 @@ The Zebec Network (ZBCN) SPL token mint has its mint and freeze authorities revo
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Zebec Network (ZBCN) token operates under the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can… |
-| **Governance / Economics** | 1/10 | High | The token's economic profile shows a medium risk due to holder concentration, with the top 10 token accounts holding 54.53% of the total supply (7.4 Economic). This level of concentration could lead… |
-| **Upgrades** | 5/10 | Medium | The Zebec Network (ZBCN) token mint has a high degree of immutability regarding its core functionalities, as both the mint and freeze authorities have been permanently revoked (7.7 Upgrades). This… |
+| **Technical** | 10/10 | Low | The Zebec Network (ZBCN) token operates under the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can… |
+| **Governance / Economics** | 5/10 | Medium | The token's economic profile shows a medium risk due to holder concentration, with the top 10 token accounts holding 54.53% of the total supply (7.4 Economic). This level of concentration could lead… |
+| **Upgrades** | 8/10 | Low | The Zebec Network (ZBCN) token mint has a high degree of immutability regarding its core functionalities, as both the mint and freeze authorities have been permanently revoked (7.7 Upgrades). This… |
 
 ## Security Findings
 
@@ -52,22 +52,21 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |--------|-------|
 | **Contract** | [`ZBCNpu...m9RU`](https://solscan.io/account/ZBCNpuD7YMXzTHB2fhGkGi78MNsHGLRXUhRewNRm9RU) |
 | **Network** | Solana |
-| **Price** | $0.001672 |
-| **24h Volume** | $79.1K |
-| **Liquidity** | $130.4K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.002018 |
+| **24h Volume** | $96.7K |
+| **Liquidity** | $147.2K |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | 54.5% of supply |
+| **Top-10 Holders** | 53.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 426 buys / 409 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -75,9 +74,8 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

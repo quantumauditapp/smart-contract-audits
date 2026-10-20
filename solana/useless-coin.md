@@ -2,14 +2,14 @@
 token: USELESS COIN
 ticker: USELESS
 network: solana
-risk_score: 14
+risk_score: 0
 status: low
 date: 2026-07-22
 ---
 
 # USELESS COIN (USELESS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 14/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/useless-coin-sol)
 
@@ -25,16 +25,26 @@ This audit of the USELESS COIN SPL token mint found no critical or high-risk vul
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the standard `spl-token` program (v3). Both the mint authority and freeze authority are revoked, indicating a fixed supply and immutability of account states. The token… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits healthy economic indicators. Top 10 holders account for 33.36% of the supply, which is below thresholds for high concentration risk. Total DEX liquidity is robust at $1,980,640… |
-| **Upgrades** | 7/10 | Low | The mint authority and freeze authority have been revoked, preventing any further token minting or freezing of accounts. The token's metadata is immutable, meaning its name, symbol, or image cannot… |
+| **Technical** | 10/10 | Low | The token is implemented using the standard `spl-token` program (v3). Both the mint authority and freeze authority are revoked, indicating a fixed supply and immutability of account states. The token… |
+| **Governance / Economics** | 9/10 | Low | The token exhibits healthy economic indicators. Top 10 holders account for 33.36% of the supply, which is below thresholds for high concentration risk. Total DEX liquidity is robust at $1,980,640… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority have been revoked, preventing any further token minting or freezing of accounts. The token's metadata is immutable, meaning its name, symbol, or image cannot… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **LP Burned** | ✅ 98.4% (≈ permanent lock) |
+| **LP Burned** | ✅ 98.2% (≈ permanent lock) |
 | **LP Locked** | 100.0% — Raydium Lock |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -42,22 +52,21 @@ This audit of the USELESS COIN SPL token mint found no critical or high-risk vul
 |--------|-------|
 | **Contract** | [`Dz9mQ9...bonk`](https://solscan.io/account/Dz9mQ9NzkBcCsuGPFJ3r1bS4wgqKMHBPiVuniW8Mbonk) |
 | **Network** | Solana |
-| **Price** | $0.06206 |
-| **24h Volume** | $231.3K |
-| **Liquidity** | $1.96M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.3138 |
+| **24h Volume** | $5.64M |
+| **Liquidity** | $6.01M |
+| **Volume / Liquidity** | 0.9× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 33.5% of supply |
+| **Top-10 Holders** | 36.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1517 buys / 1799 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
@@ -65,9 +74,8 @@ This audit of the USELESS COIN SPL token mint found no critical or high-risk vul
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

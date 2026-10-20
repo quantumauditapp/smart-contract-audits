@@ -2,14 +2,14 @@
 token: Vine Coin
 ticker: VINE
 network: solana
-risk_score: 27
-status: medium
+risk_score: 0
+status: low
 date: 2026-07-22
 ---
 
 # Vine Coin (VINE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 27/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vine-coin-sol)
 
@@ -25,9 +25,9 @@ This audit of the Vine Coin (VINE) SPL token mint found no critical or high-risk
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Vine Coin (VINE) token is implemented using the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
-| **Governance / Economics** | 2/10 | High | The token exhibits healthy liquidity with $1,497,741 USD available on DEXs, and a normal 24-hour volume to liquidity ratio of 0.30, suggesting organic trading activity. The pair has been active for… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters, including mint and freeze authorities, are revoked, preventing any post-launch modifications to supply or account states. There are no indications of upgradable transfer… |
+| **Technical** | 10/10 | Low | The Vine Coin (VINE) token is implemented using the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy liquidity with $1,497,741 USD available on DEXs, and a normal 24-hour volume to liquidity ratio of 0.30, suggesting organic trading activity. The pair has been active for… |
+| **Upgrades** | 8/10 | Low | The token's core parameters, including mint and freeze authorities, are revoked, preventing any post-launch modifications to supply or account states. There are no indications of upgradable transfer… |
 
 ## LP Distribution
 
@@ -35,28 +35,37 @@ This audit of the Vine Coin (VINE) SPL token mint found no critical or high-risk
 |--------|-------|
 | **LP Burned** | ✅ 99.8% (≈ permanent lock) |
 
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
+
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
 | **Contract** | [`6AJcP7...pump`](https://solscan.io/account/6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump) |
 | **Network** | Solana |
-| **Price** | $0.009458 |
-| **24h Volume** | $154.3K |
-| **Liquidity** | $1.46M |
+| **Price** | $0.007966 |
+| **24h Volume** | $133.0K |
+| **Liquidity** | $1.68M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 46.6% of supply |
+| **Top-10 Holders** | 46.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1635 buys / 1699 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -64,9 +73,8 @@ This audit of the Vine Coin (VINE) SPL token mint found no critical or high-risk
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

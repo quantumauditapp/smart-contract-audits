@@ -2,14 +2,14 @@
 token: Walruse
 ticker: WALRUSE
 network: solana
-risk_score: 67
-status: high
+risk_score: 50
+status: medium
 date: 2026-08-17
 ---
 
 # Walruse (WALRUSE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/walruse-sol)
 
@@ -25,9 +25,9 @@ The Walruse SPL token mint presents a Medium risk primarily due to its extremely
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Walruse token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token minting or freezing of accounts by an… |
+| **Technical** | 8/10 | Low | The Walruse token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token minting or freezing of accounts by an… |
 | **Governance / Economics** | 1/10 | High | The token exhibits very low liquidity, with total DEX liquidity at $13,210. This low liquidity, combined with a 24-hour volume of $101,040, results in a Volume/Liquidity Ratio of 7.65, suggesting… |
-| **Upgrades** | 5/10 | Medium | The Walruse token mint has a fixed configuration as both the mint and freeze authorities are revoked. This means no new tokens can be minted, and no accounts can be frozen. The token's metadata is… |
+| **Upgrades** | 8/10 | Low | The Walruse token mint has a fixed configuration as both the mint and freeze authorities are revoked. This means no new tokens can be minted, and no accounts can be frozen. The token's metadata is… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`82uM3p...pump`](https://solscan.io/account/82uM3pAPfd6AL5J3maPETqvR2JRutSYtBHkHgCkbpump) |
 | **Network** | Solana |
-| **Price** | $0.00002829 |
-| **24h Volume** | $103.2K |
-| **Liquidity** | $12.1K |
-| **Volume / Liquidity** | 8.5× |
+| **Price** | $0.00000354 |
+| **24h Volume** | $1 |
+| **Liquidity** | $3.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 44.0% of supply |
+| **Top-10 Holders** | 97.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1429 buys / 1522 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: world
 ticker: WORLD
 network: solana
-risk_score: 79
-status: critical
+risk_score: 54
+status: medium
 date: 2026-08-16
 ---
 
 # world (WORLD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 79/100 — 🔴 Critical Risk**
+> **Risk Score: 54/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-sol)
 
@@ -25,9 +25,9 @@ This Solana SPL Token Mint audit for 'world' identified two Medium severity risk
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The 'world' token is an SPL Token-2022 mint with a total supply of 958,774,375.777477 tokens and 6 decimals. Both the Mint Authority and Freeze Authority are revoked, which is a strong security… |
+| **Technical** | 8/10 | Low | The 'world' token is an SPL Token-2022 mint with a total supply of 958,774,375.777477 tokens and 6 decimals. Both the Mint Authority and Freeze Authority are revoked, which is a strong security… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a Medium risk due to holder concentration, with the top 10 token accounts holding 50.44% of the total supply, which could lead to price volatility from coordinated sell-offs. The… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint and Freeze, are permanently revoked, preventing any future changes to supply or account freeze status. As an SPL Token-2022, it supports extensions, but no Transfer… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint and Freeze, are permanently revoked, preventing any future changes to supply or account freeze status. As an SPL Token-2022, it supports extensions, but no Transfer… |
 
 ## Security Findings
 
@@ -52,22 +52,21 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`ySdyQ2...pump`](https://solscan.io/account/ySdyQ2BzYRP7HHLiHrqe6RLPDLbRuGvpH2auX8apump) |
 | **Network** | Solana |
-| **Price** | $0.00009073 |
-| **24h Volume** | $129.1K |
-| **Liquidity** | $22.2K |
-| **Volume / Liquidity** | 5.8× |
+| **Price** | $0.000004 |
+| **24h Volume** | $156 |
+| **Liquidity** | $4.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 50.4% of supply |
+| **Top-10 Holders** | 93.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1229 buys / 1495 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -75,9 +74,8 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

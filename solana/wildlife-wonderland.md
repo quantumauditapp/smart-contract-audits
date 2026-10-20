@@ -2,14 +2,14 @@
 token: Wildlife Wonderland
 ticker: WW
 network: solana
-risk_score: 58
-status: high
+risk_score: 46
+status: medium
 date: 2026-08-12
 ---
 
 # Wildlife Wonderland (WW) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wildlife-wonderland-sol)
 
@@ -25,9 +25,9 @@ The Wildlife Wonderland (WW) token is an SPL Token-2022 mint with its mint and f
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Wildlife Wonderland (WW) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, meaning no new tokens can be minted and no existing… |
-| **Governance / Economics** | 2/10 | High | The token exhibits moderate liquidity with $60,500 USD available on DEXs. The 24-hour trading volume is $596,086, resulting in a Volume/Liquidity Ratio of 9.85, which is noted as high. Holder… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are fixed due to the revocation of both mint and freeze authorities. This means the supply cannot be increased, and accounts cannot be frozen. The token utilizes the… |
+| **Technical** | 8/10 | Low | The Wildlife Wonderland (WW) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, meaning no new tokens can be minted and no existing… |
+| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $60,500 USD available on DEXs. The 24-hour trading volume is $596,086, resulting in a Volume/Liquidity Ratio of 9.85, which is noted as high. Holder… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are fixed due to the revocation of both mint and freeze authorities. This means the supply cannot be increased, and accounts cannot be frozen. The token utilizes the… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 6 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`14doqP...pump`](https://solscan.io/account/14doqPq3fLzx6kB4JRRnCMDPPLeGmGXd6QY5ZGXqpump) |
 | **Network** | Solana |
-| **Price** | $0.0004521 |
-| **24h Volume** | $593.1K |
-| **Liquidity** | $62.3K |
-| **Volume / Liquidity** | 9.5× |
+| **Price** | $0.00001433 |
+| **24h Volume** | $8.1K |
+| **Liquidity** | $13.9K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 22.8% of supply |
+| **Top-10 Holders** | 76.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3338 buys / 3498 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 6 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

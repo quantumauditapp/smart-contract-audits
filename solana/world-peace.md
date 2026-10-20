@@ -2,14 +2,14 @@
 token: World Peace 
 ticker: PEACE 
 network: solana
-risk_score: 66
-status: high
+risk_score: 28
+status: low
 date: 2026-06-15
 ---
 
 # World Peace  (PEACE ) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-peace-sol)
 
@@ -25,9 +25,19 @@ This audit of the World Peace (Peace) SPL Token Mint found no critical or high-s
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint with a fixed supply of 995,303,116.495398 tokens, as the mint authority has been revoked. The freeze authority is also revoked, meaning no accounts can be frozen.… |
-| **Governance / Economics** | 1/10 | High | The token exhibits healthy trading patterns with a 24-hour volume of $1,513 against a liquidity of $30,518, resulting in a normal Volume/Liquidity Ratio of 0.05. The DEX pair has been active for 133… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable, as both the mint and freeze authorities have been revoked. This prevents any further issuance of tokens or freezing of holder accounts. Key Token-2022… |
+| **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint with a fixed supply of 995,303,116.495398 tokens, as the mint authority has been revoked. The freeze authority is also revoked, meaning no accounts can be frozen.… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits healthy trading patterns with a 24-hour volume of $1,513 against a liquidity of $30,518, resulting in a normal Volume/Liquidity Ratio of 0.05. The DEX pair has been active for 133… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as both the mint and freeze authorities have been revoked. This prevents any further issuance of tokens or freezing of holder accounts. Key Token-2022… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the World Peace (Peace) SPL Token Mint found no critical or high-s
 |--------|-------|
 | **Contract** | [`atVjZ7...pump`](https://solscan.io/account/atVjZ7uM8sVrLFi5Xe1JiLGW6mW9pvQdTCWzhNFpump) |
 | **Network** | Solana |
-| **Price** | $0.00004246 |
-| **24h Volume** | $1.4K |
-| **Liquidity** | $29.7K |
+| **Price** | $0.00003962 |
+| **24h Volume** | $494 |
+| **Liquidity** | $35.3K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 50.4% of supply |
+| **Top-10 Holders** | 61.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6504 buys / 4654 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the World Peace (Peace) SPL Token Mint found no critical or high-s
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

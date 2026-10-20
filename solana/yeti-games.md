@@ -2,14 +2,14 @@
 token: YETI Games
 ticker: YETI
 network: solana
-risk_score: 68
-status: high
+risk_score: 51
+status: medium
 date: 2026-08-02
 ---
 
 # YETI Games (YETI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/yeti-games-sol)
 
@@ -25,9 +25,9 @@ The YETI Games (YETI) token mint exhibits a relatively low-risk profile with bot
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The YETI Games (YETI) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing accounts can be… |
+| **Technical** | 8/10 | Low | The YETI Games (YETI) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing accounts can be… |
 | **Governance / Economics** | 1/10 | High | The token's DEX pair was created only 2 days ago, which is a very short track record for assessing market behavior. Total DEX liquidity stands at $32,305, with a 24-hour volume of $100,237, resulting… |
-| **Upgrades** | 5/10 | Medium | The token mint has no mutable authorities for minting or freezing, as both have been revoked. Key Token-2022 extensions like transfer hook and transfer fee are not present or are not upgradable.… |
+| **Upgrades** | 8/10 | Low | The token mint has no mutable authorities for minting or freezing, as both have been revoked. Key Token-2022 extensions like transfer hook and transfer fee are not present or are not upgradable.… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`BX8np2...pump`](https://solscan.io/account/BX8np2NYESCYThnWhRMXZytPyybKsbnVEYMPGgWVpump) |
 | **Network** | Solana |
-| **Price** | $0.0002066 |
-| **24h Volume** | $100.4K |
-| **Liquidity** | $32.4K |
-| **Volume / Liquidity** | 3.1× |
+| **Price** | $0.00000325 |
+| **24h Volume** | $5 |
+| **Liquidity** | $3.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 38.6% of supply |
+| **Top-10 Holders** | 93.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 974 buys / 1413 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

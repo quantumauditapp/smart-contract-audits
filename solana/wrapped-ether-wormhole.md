@@ -2,14 +2,14 @@
 token: Wrapped Ether (Wormhole)
 ticker: WETH
 network: solana
-risk_score: 84
-status: critical
+risk_score: 64
+status: medium
 date: 2026-08-13
 ---
 
 # Wrapped Ether (Wormhole) (WETH) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 84/100 — 🔴 Critical Risk**
+> **Risk Score: 64/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-ether-wormhole-sol)
 
@@ -25,7 +25,7 @@ This audit of the Wrapped Ether (Wormhole) (WETH) SPL token mint reveals critica
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The token is an SPL token operating under the `spl-token` program. It has a total supply of 4,702,911,261.571 tokens with 8 decimals. A significant technical risk (7.3 Access Control) is the active… |
+| **Technical** | 5/10 | Medium | The token is an SPL token operating under the `spl-token` program. It has a total supply of 4,702,911,261.571 tokens with 8 decimals. A significant technical risk (7.3 Access Control) is the active… |
 | **Governance / Economics** | 1/10 | High | The economic stability of the token (7.4 Economic) is challenged by a high concentration of ownership, with the top 10 token accounts holding 80.24% of the total supply. This level of concentration… |
 | **Upgrades** | 4/10 | Medium | The token's core functionality is governed by the `spl-token` program, which is a fixed program. While the token itself is not upgradable in the EVM sense (7.7 Upgrades), the `metadata_mutable` flag… |
 
@@ -59,22 +59,21 @@ Token name, symbol, or image can be changed post-launch.
 |--------|-------|
 | **Contract** | [`7vfCXT...voxs`](https://solscan.io/account/7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs) |
 | **Network** | Solana |
-| **Price** | $1,886.3600 |
-| **24h Volume** | $4.27M |
-| **Liquidity** | $3.58M |
-| **Volume / Liquidity** | 1.2× |
+| **Price** | $2,751.7600 |
+| **24h Volume** | $22.13M |
+| **Liquidity** | $8.06M |
+| **Volume / Liquidity** | 2.7× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 80.2% of supply |
+| **Top-10 Holders** | 76.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5245 buys / 5261 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -82,9 +81,8 @@ Token name, symbol, or image can be changed post-launch.
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

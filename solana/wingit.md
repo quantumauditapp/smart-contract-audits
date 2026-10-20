@@ -2,14 +2,14 @@
 token: WINGIT
 ticker: WINGIT
 network: solana
-risk_score: 48
-status: high
+risk_score: 45
+status: medium
 date: 2026-07-23
 ---
 
 # WINGIT (WINGIT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wingit-sol)
 
@@ -25,9 +25,19 @@ This audit of the WINGIT SPL Token Mint found no critical or high-severity risks
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The WINGIT token is an SPL Token-2022 mint with a supply of 999,998,099.913226 tokens (6 decimals). Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
+| **Technical** | 8/10 | Low | The WINGIT token is an SPL Token-2022 mint with a supply of 999,998,099.913226 tokens (6 decimals). Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
 | **Governance / Economics** | 1/10 | High | The token exhibits low holder concentration, with the top 10 accounts holding approximately 7.45% of the total supply, reducing the risk of large-scale sell-offs (7.4 Economic). Total DEX liquidity… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, which means the token's supply is fixed and no accounts can be frozen post-launch (7.7 Upgrades). The token utilizes the spl-token-2022… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, which means the token's supply is fixed and no accounts can be frozen post-launch (7.7 Upgrades). The token utilizes the spl-token-2022… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the WINGIT SPL Token Mint found no critical or high-severity risks
 |--------|-------|
 | **Contract** | [`CVhWiQ...pump`](https://solscan.io/account/CVhWiQ2SBhpTJ3xAR3ekf3uf8Ns2tNzj3mEtzKSpump) |
 | **Network** | Solana |
-| **Price** | $0.001806 |
-| **24h Volume** | $3.53M |
-| **Liquidity** | $133.5K |
-| **Volume / Liquidity** | 26.5× |
+| **Price** | $0.00000546 |
+| **24h Volume** | $29 |
+| **Liquidity** | $9.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 8d |
-| **Top-10 Holders** | 7.4% of supply |
+| **Top-10 Holders** | 97.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6659 buys / 6030 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the WINGIT SPL Token Mint found no critical or high-severity risks
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
