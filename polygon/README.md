@@ -1,0 +1,32 @@
+# Polygon Smart Contract Security Reports | Quantum Audit
+
+Automated daily security analyses for Polygon tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
+
+**16 reports** · Updated daily · [← All Networks](../README.md)
+
+---
+
+## Reports
+
+| Token | Ticker | Risk Score | Date | Full Audit |
+|-------|--------|------------|------|------------|
+| [WhaleBit](./whalebit.md) | CES | 🟡 60/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/whalebit-poly) |
+| [Monerium EUR emoney](./monerium-eur-emoney.md) | EURE | 🟢 21/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/monerium-eur-emoney-poly) |
+| [Uniswap (PoS)](./uniswap-pos.md) | UNI | 🟢 33/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/uniswap-pos-poly) |
+| [RISE Token](./rise-token.md) | RISE | 🟠 84/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/rise-token-poly) |
+| [Auralith](./auralith.md) | AURA | 🟡 42/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/auralith-poly) |
+| [teleBTC](./telebtc.md) | TELEBTC | 🟠 84/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/telebtc-poly) |
+| [SUPER TRUST](./super-trust.md) | SUT | 🟡 41/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/super-trust-poly) |
+| [Felysyum](./felysyum.md) | FELY | 🟡 53/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/felysyum-poly) |
+| [Forta](./forta.md) | FORT | 🟠 68/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/forta-poly) |
+| [MEBT](./mebt.md) | MEBT | 🟠 77/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/mebt-poly) |
+| [Telcoin (PoS)](./telcoin-pos.md) | TEL | 🟢 30/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/telcoin-pos-poly) |
+| [Aave (PoS)](./aave-pos.md) | AAVE | 🟢 19/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/aave-pos-poly) |
+| [Geodnet Token](./geodnet-token.md) | GEOD | 🟡 36/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/geodnet-token-poly) |
+| [QuickSwap](./quickswap.md) | QUICK | 🟡 36/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/quickswap-poly) |
+| [AS Token](./as-token.md) | AS | 🟡 54/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/as-token-poly) |
+| [AI Powered Finance](./ai-powered-finance.md) | AIPF | 🟢 30/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/ai-powered-finance-poly) |
+
+---
+
+*Powered by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security analysis*
