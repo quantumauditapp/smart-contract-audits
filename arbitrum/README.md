@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**75 reports** · Updated daily · [← All Networks](../README.md)
+**76 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [SpaceX (Reality Tokenized)](./spacex-reality-tokenized.md) | RSPCX | 🟠 84/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/spacex-reality-tokenized-arb) |
 | [Meanwhile](./meanwhile.md) | MENWH | 🟠 75/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/meanwhile-arb) |
 | [Immix](./immix.md) | IMMIX | 🟠 76/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/immix-arb) |
 | [Catalyst](./catalyst.md) | CALY | 🟠 76/100 High Risk | 2026-10-19 | [↗](https://quantumaudit.app/token/catalyst-arb) |

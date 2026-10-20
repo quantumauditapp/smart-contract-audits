@@ -1,0 +1,130 @@
+---
+token: USEFUL COIN
+ticker: USEFUL
+network: solana
+risk_score: 47
+status: medium
+date: 2026-10-04
+---
+
+# USEFUL COIN (USEFUL) — Smart Contract Security Analysis | Solana
+
+> **Risk Score: 47/100 — 🟡 Medium Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/useful-coin-sol-7a79)
+
+---
+
+## Audit Summary
+
+The USEFUL COIN token mint is an SPL Token-2022 with both mint and freeze authorities revoked, indicating a fixed supply and no ability to freeze accounts. A low-severity risk is present due to mutable metadata, allowing changes to the token's branding. Holder distribution data was unavailable from chain-native RPC.
+
+> **Final Recommendation:** Holders should verify the token's metadata against official sources and monitor for any changes to its name, symbol, or image. While the core token properties like supply and freeze status are fixed, changes to branding could impact trust or recognition.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 8/10 | Low | The USEFUL COIN token is an SPL Token-2022. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no holder accounts can be frozen. It includes a… |
+| **Governance / Economics** | 8/10 | Low | The token has a total DEX liquidity of $23,456, with 100.0% of the pool's liquidity locked for good in Raydium's LP locker. The 24-hour volume to liquidity ratio is 3.91, which is considered normal… |
+| **Upgrades** | 8/10 | Low | The mint and freeze authorities are permanently revoked, preventing any future changes to supply or account freezing. While the transfer hook is not upgradable, the transfer fee is. The token's… |
+
+## Token-2022 Extensions
+
+| Extension | Value |
+|-----------|-------|
+| **Transfer Fee** | ⚠️ 3.0% · upgradeable |
+
+## Security Findings
+
+_🟢 1 Low · ⚪ 6 Informational_
+
+### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
+
+Token name, symbol, or image can be changed post-launch, as indicated by `metadata_mutable: True`.
+
+**Recommendation:** Verify metadata against off-chain expectations before trusting branding.
+
+
+### `QA-IDENTITY` — Not listed by any independent source  *(Severity: Informational · Status: Acknowledged)*
+
+Not listed by CoinGecko or any exchange GoPlus tracks. Nothing independent confirms who is behind this token, so every power its contract grants is scored at face value.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-LIQUIDITY` — Liquidity locked with no expiry  *(Severity: Informational · Status: Acknowledged)*
+
+100.0% of the pool's LP is burned or time-locked. 100.0% of the pool's liquidity is locked for good in Raydium's LP locker (Burn & Earn) — only its trading fees can be collected; no one can withdraw the liquidity.
+
+**Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $23K (DexScreener, all pools). 24h trading volume $91K (DexScreener, all pools).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-POWERS` — What the token's controller can do  *(Severity: Informational · Status: Acknowledged)*
+
+The contract lets its controller — nobody (ownership renounced) — change the buy/sell tax; change the token's name, symbol and image. Ownership is renounced, so nobody can use them now.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
+### `QA-PROFILE` — Asset class: Project token  *(Severity: Informational · Status: Acknowledged)*
+
+A token issued by a project for use, governance or fundraising. Scored on its contract and market facts. The class itself adds no points; the contract and market facts decide the score. Basis: no class-specific evidence. Tokenomics — Supply: fixed — the contract has no mint function. Control: nobody (ownership renounced). Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $23K of DEX liquidity across 1 pools. Launch: under a day of market history.
+
+**Recommendation:** Check the project's own documentation for what the token is used for; this report covers what the contract allows.
+
+
+### `QA-RECENT` — Recently launched — less than a day of market history  *(Severity: Informational · Status: Acknowledged)*
+
+The token's oldest DEX pool is less than a day old. Age is not part of the risk score — a new token is not a risky one by default — but a short history means fewer trades and holder changes behind the facts in this report.
+
+**Recommendation:** Re-check ownership, liquidity and holder distribution as the token matures; those are the facts that move early.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`GDeKVe...eLNT`](https://solscan.io/account/GDeKVeV3cs6UCTRDmHqZHugBmUbLLRW7hi9P91XXeLNT) |
+| **Network** | Solana |
+| **Price** | $0.00006307 |
+| **24h Volume** | $91.1K |
+| **Liquidity** | $23.1K |
+| **Volume / Liquidity** | 4.0× |
+| **Token Age** | 8h |
+| **Top-10 Holders** | N/A of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 3251 buys / 3091 sells |
+
+## Security Flags (4/4 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ✅ Pass |
+| Not a Proxy | ✅ Pass |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/solana/dwylzaoxfabdn9vywybnizjcqa6muarlgewrljmurwmu)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/useful-coin-sol-7a79)
+- Security data: public on-chain security registries
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-10-04*

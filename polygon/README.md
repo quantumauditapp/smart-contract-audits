@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Polygon tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**16 reports** · Updated daily · [← All Networks](../README.md)
+**17 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Polygon tokens, powered by [Quantum Audit]
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Gains Network](./gains-network.md) | GNS | 🟡 51/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/gains-network-poly) |
 | [WhaleBit](./whalebit.md) | CES | 🟡 60/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/whalebit-poly) |
 | [Monerium EUR emoney](./monerium-eur-emoney.md) | EURE | 🟢 21/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/monerium-eur-emoney-poly) |
 | [Uniswap (PoS)](./uniswap-pos.md) | UNI | 🟢 33/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/uniswap-pos-poly) |

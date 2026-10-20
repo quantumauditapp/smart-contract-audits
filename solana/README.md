@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**946 reports** · Updated daily · [← All Networks](../README.md)
+**952 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Pogo](./pogo.md) | POGO | 🟡 36/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/pogo-sol) |
+| [Pikachu Illustrator](./pikachu-illustrator.md) | ILLUSTRATOR | 🟢 15/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/pikachu-illustrator-sol) |
+| [TNTCRAFT](./tntcraft.md) | TNTCOIN | 🟢 16/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/tntcraft-sol) |
+| [WiSP](./wisp.md) | WISP | 🟢 21/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/wisp-sol) |
+| [FrunkStore](./frunkstore.md) | FRUNKSTORE | 🟢 20/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/frunkstore-sol) |
+| [Bonnie](./bonnie.md) | BONNIE | 🟢 23/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/bonnie-sol) |
 | [AOP](./aop-sol-9848.md) | AOP | 🟢 6/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/aop-sol-9848) |
 | [SAMA Index](./sama-index.md) | SAMA4 | 🟠 68/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/sama-index-sol) |
 | [CATWIFMOTION](./catwifmotion.md) | MOMO | 🟢 23/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/catwifmotion-sol) |

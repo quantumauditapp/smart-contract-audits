@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**405 reports** · Updated daily · [← All Networks](../README.md)
+**411 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Toshi](./toshi.md) | TOSHI | 🟡 58/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/toshi-bsc) |
+| [雪球](./token-4c8e5e.md) | スノーボール | 🟢 15/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/token-4c8e5e-bsc) |
+| [BIAO](./biao.md) | BIAO | 🟢 29/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/biao-bsc) |
+| [The House Wick](./the-house-wick.md) | WICK | 🟠 84/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/the-house-wick-bsc) |
+| [BURN](./burn.md) | BURN | 🟡 35/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/burn-bsc) |
+| [Mule](./mule.md) | MULE | 🟡 58/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/mule-bsc) |
 | [Agent ID](./agent-id.md) | .AI | 🟢 30/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/agent-id-bsc) |
 | [Cougarcoin](./cougarcoin.md) | COUGAR | 🟡 53/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/cougarcoin-bsc) |
 | [TeslaSI](./teslasi.md) | テスラSI | 🟢 20/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/teslasi-bsc) |
