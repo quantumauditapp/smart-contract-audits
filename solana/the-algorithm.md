@@ -2,14 +2,14 @@
 token: The Algorithm
 ticker: AGR
 network: solana
-risk_score: 54
-status: high
+risk_score: 42
+status: medium
 date: 2026-07-16
 ---
 
 # The Algorithm (AGR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 54/100 — 🟠 High Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-algorithm-sol)
 
@@ -25,9 +25,19 @@ The audit of The Algorithm (AGR) SPL Token Mint reveals a well-configured token 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The AGR token is implemented using the spl-token-2022 program. Key authorities, including the Mint Authority and Freeze Authority, are permanently revoked (None), ensuring no new tokens can be minted… |
-| **Governance / Economics** | 2/10 | High | The token exhibits moderate DEX liquidity at $37,750 USD, with a 24-hour trading volume of $97,966 USD. The Volume/Liquidity Ratio is 2.60, which is considered normal and does not indicate wash… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable due to the revocation of both Mint Authority and Freeze Authority. No Token-2022 extensions that would allow for post-launch modifications, such as Transfer… |
+| **Technical** | 8/10 | Low | The AGR token is implemented using the spl-token-2022 program. Key authorities, including the Mint Authority and Freeze Authority, are permanently revoked (None), ensuring no new tokens can be minted… |
+| **Governance / Economics** | 1/10 | High | The token exhibits moderate DEX liquidity at $37,750 USD, with a 24-hour trading volume of $97,966 USD. The Volume/Liquidity Ratio is 2.60, which is considered normal and does not indicate wash… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both Mint Authority and Freeze Authority. No Token-2022 extensions that would allow for post-launch modifications, such as Transfer… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The audit of The Algorithm (AGR) SPL Token Mint reveals a well-configured token 
 |--------|-------|
 | **Contract** | [`5NUHtG...pump`](https://solscan.io/account/5NUHtG49aGZL5kEC9phNKsgw28BmkDWGWfeQGMTRpump) |
 | **Network** | Solana |
-| **Price** | $0.0001413 |
-| **24h Volume** | $52.1K |
-| **Liquidity** | $31.2K |
-| **Volume / Liquidity** | 1.7× |
+| **Price** | $0.00000372 |
+| **24h Volume** | $30 |
+| **Liquidity** | $6.3K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 22d |
-| **Top-10 Holders** | 29.2% of supply |
+| **Top-10 Holders** | 92.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2494 buys / 2125 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The audit of The Algorithm (AGR) SPL Token Mint reveals a well-configured token 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

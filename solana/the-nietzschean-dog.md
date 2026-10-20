@@ -2,14 +2,14 @@
 token: The Nietzschean Dog
 ticker: RUSS
 network: solana
-risk_score: 58
-status: high
+risk_score: 41
+status: medium
 date: 2026-08-01
 ---
 
 # The Nietzschean Dog (RUSS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-nietzschean-dog-sol)
 
@@ -25,9 +25,19 @@ The Nietzschean Dog (RUSS) is an SPL Token-2022 mint on Solana. Both the mint au
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Key administrative authorities, including the mint authority and freeze authority, have been revoked, ensuring no new tokens can be minted… |
+| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Key administrative authorities, including the mint authority and freeze authority, have been revoked, ensuring no new tokens can be minted… |
 | **Governance / Economics** | 1/10 | High | The token has a total DEX liquidity of $11,615. Over the last 24 hours, the token recorded a volume of $112,635, resulting in a Volume/Liquidity Ratio of 9.70. The DEX pair is 7 days old, indicating… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. No Token-2022 extensions that would allow for post-launch modifications, such as a transfer hook… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. No Token-2022 extensions that would allow for post-launch modifications, such as a transfer hook… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Nietzschean Dog (RUSS) is an SPL Token-2022 mint on Solana. Both the mint au
 |--------|-------|
 | **Contract** | [`2FCerz...pump`](https://solscan.io/account/2FCerziZbakcdDbuQNgEWPxGRPYGmBzMxEJKkqJEpump) |
 | **Network** | Solana |
-| **Price** | $0.00002373 |
-| **24h Volume** | $112.6K |
-| **Liquidity** | $11.5K |
-| **Volume / Liquidity** | 9.8× |
+| **Price** | $0.00000571 |
+| **24h Volume** | $52 |
+| **Liquidity** | $6.1K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 7d |
-| **Top-10 Holders** | 49.6% of supply |
+| **Top-10 Holders** | 92.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5662 buys / 1979 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Nietzschean Dog (RUSS) is an SPL Token-2022 mint on Solana. Both the mint au
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

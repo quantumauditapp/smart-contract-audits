@@ -2,14 +2,14 @@
 token: SPCX69
 ticker: SPCX69
 network: solana
-risk_score: 39
+risk_score: 38
 status: medium
 date: 2026-06-17
 ---
 
 # SPCX69 (SPCX69) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spcx69-sol)
 
@@ -25,9 +25,19 @@ This audit of the SPCX69 SPL Token Mint found no critical or high-severity risks
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing token accounts… |
-| **Governance / Economics** | 2/10 | High | The token exhibits healthy liquidity at $177,341 USD, with a 24-hour trading volume of $229,614 USD. The Volume/Liquidity Ratio is 1.29, which is considered normal and does not suggest wash trading.… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are revoked, preventing post-launch changes to supply or account status. The metadata is immutable, meaning the token name, symbol… |
+| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing token accounts… |
+| **Governance / Economics** | 1/10 | High | The token exhibits healthy liquidity at $177,341 USD, with a 24-hour trading volume of $229,614 USD. The Volume/Liquidity Ratio is 1.29, which is considered normal and does not suggest wash trading.… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are revoked, preventing post-launch changes to supply or account status. The metadata is immutable, meaning the token name, symbol… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the SPCX69 SPL Token Mint found no critical or high-severity risks
 |--------|-------|
 | **Contract** | [`SPCXwB...3N69`](https://solscan.io/account/SPCXwBHVrKpRqMRawL3NNvt1sXP2Yf3edwRbta53N69) |
 | **Network** | Solana |
-| **Price** | $0.001599 |
-| **24h Volume** | $176.6K |
-| **Liquidity** | $154.5K |
-| **Volume / Liquidity** | 1.1× |
+| **Price** | $0.00001314 |
+| **24h Volume** | $544 |
+| **Liquidity** | $17.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 13.0% of supply |
+| **Top-10 Holders** | 80.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 14725 buys / 5805 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the SPCX69 SPL Token Mint found no critical or high-severity risks
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

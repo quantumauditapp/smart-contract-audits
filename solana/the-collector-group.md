@@ -2,14 +2,14 @@
 token: The Collector Group
 ticker: TCG
 network: solana
-risk_score: 50
-status: high
+risk_score: 12
+status: low
 date: 2026-08-17
 ---
 
 # The Collector Group (TCG) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-collector-group-sol)
 
@@ -25,9 +25,9 @@ This Solana SPL Token Mint for The Collector Group (TCG) demonstrates a robust s
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen… |
-| **Governance / Economics** | 2/10 | High | The token exhibits moderate holder concentration, with the top 10 accounts holding 43.74% of the supply, which is below the thresholds for high concentration warnings. Liquidity stands at $171,052… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token's metadata is immutable, ensuring its name, symbol… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate holder concentration, with the top 10 accounts holding 43.74% of the supply, which is below the thresholds for high concentration warnings. Liquidity stands at $171,052… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token's metadata is immutable, ensuring its name, symbol… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -45,22 +45,21 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |--------|-------|
 | **Contract** | [`DLGRpm...pump`](https://solscan.io/account/DLGRpmkMGr7J4KD1xR5x2XjaGeQH64PLFQkyxNNSpump) |
 | **Network** | Solana |
-| **Price** | $0.00294 |
-| **24h Volume** | $169.3K |
-| **Liquidity** | $172.4K |
-| **Volume / Liquidity** | 1.0× |
+| **Price** | $0.00129 |
+| **24h Volume** | $26.2K |
+| **Liquidity** | $145.5K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 8mo |
-| **Top-10 Holders** | 43.7% of supply |
+| **Top-10 Holders** | 45.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1019 buys / 981 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

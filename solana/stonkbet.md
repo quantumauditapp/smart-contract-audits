@@ -2,14 +2,14 @@
 token: StonkBet
 ticker: STONKBET
 network: solana
-risk_score: 91
-status: critical
+risk_score: 66
+status: high
 date: 2026-08-15
 ---
 
 # StonkBet (STONKBET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 91/100 — 🔴 Critical Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/stonkbet-sol)
 
@@ -25,9 +25,9 @@ The StonkBet (STONKBET) token exhibits high holder concentration, with the top 1
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The StonkBet token is an SPL Token-2022 mint with robust security controls. Both the mint authority and freeze authority have been revoked, preventing further token issuance or freezing of holder… |
+| **Technical** | 6/10 | Medium | The StonkBet token is an SPL Token-2022 mint with robust security controls. Both the mint authority and freeze authority have been revoked, preventing further token issuance or freezing of holder… |
 | **Governance / Economics** | 1/10 | High | The token exhibits high holder concentration, with the top 10 accounts controlling 79.01% of the total supply, which presents a substantial risk of market manipulation and price volatility. The DEX… |
-| **Upgrades** | 4/10 | Medium | The StonkBet token mint has no upgradeability concerns typical of EVM contracts, as SPL token mints do not have on-chain source code or proxy patterns. Key authorities like mint and freeze are… |
+| **Upgrades** | 6/10 | Medium | The StonkBet token mint has no upgradeability concerns typical of EVM contracts, as SPL token mints do not have on-chain source code or proxy patterns. Key authorities like mint and freeze are… |
 
 ## Security Findings
 
@@ -52,22 +52,21 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`FovzRh...pump`](https://solscan.io/account/FovzRhvWDSw6KcCZ7XG76ANXUHRvU4Vuyu8NVhmopump) |
 | **Network** | Solana |
-| **Price** | $0.0002311 |
-| **24h Volume** | $42.5K |
-| **Liquidity** | $125.9K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.00000258 |
+| **24h Volume** | $1 |
+| **Liquidity** | $2.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 8h |
-| **Top-10 Holders** | 79.0% of supply |
+| **Top-10 Holders** | 98.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3195 buys / 1062 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -75,9 +74,8 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

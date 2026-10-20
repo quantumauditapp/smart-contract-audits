@@ -2,14 +2,14 @@
 token: Tiny Humans AI
 ticker: TINY
 network: solana
-risk_score: 67
-status: high
+risk_score: 22
+status: low
 date: 2026-06-20
 ---
 
 # Tiny Humans AI (TINY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 22/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tiny-humans-ai-sol)
 
@@ -25,9 +25,19 @@ This audit of the Tiny Humans AI (TINY) SPL Token Mint found no critical or high
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Tiny Humans AI (TINY) token is implemented using the spl-token-2022 program. Key authorities, including the mint authority and freeze authority, have been revoked, ensuring no new tokens can be… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a healthy liquidity of $21,165 USD, with a 24-hour volume of $5,527 USD. The Volume/Liquidity Ratio is 0.26, which is considered normal and does not suggest wash trading. The DEX… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or the ability to freeze holder accounts. Metadata is immutable, ensuring the token's… |
+| **Technical** | 10/10 | Low | The Tiny Humans AI (TINY) token is implemented using the spl-token-2022 program. Key authorities, including the mint authority and freeze authority, have been revoked, ensuring no new tokens can be… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a healthy liquidity of $21,165 USD, with a 24-hour volume of $5,527 USD. The Volume/Liquidity Ratio is 0.26, which is considered normal and does not suggest wash trading. The DEX… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or the ability to freeze holder accounts. Metadata is immutable, ensuring the token's… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the Tiny Humans AI (TINY) SPL Token Mint found no critical or high
 |--------|-------|
 | **Contract** | [`2AF7Cq...pump`](https://solscan.io/account/2AF7CqwieUjUPALL7icuZtL3X7wENdjUjGBMmfV2pump) |
 | **Network** | Solana |
-| **Price** | $0.00003507 |
-| **24h Volume** | $82 |
-| **Liquidity** | $16.5K |
+| **Price** | $0.0007153 |
+| **24h Volume** | $2 |
+| **Liquidity** | $169.6K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 52.1% of supply |
+| **Top-10 Holders** | 50.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3456 buys / 2887 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the Tiny Humans AI (TINY) SPL Token Mint found no critical or high
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

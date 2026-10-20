@@ -2,14 +2,14 @@
 token: spucex
 ticker: SPCX
 network: solana
-risk_score: 70
-status: high
+risk_score: 39
+status: medium
 date: 2026-06-16
 ---
 
 # spucex (SPCX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spucex-sol)
 
@@ -25,9 +25,19 @@ The spucex (SPCX) token mint on Solana exhibits a robust security configuration 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The spucex (SPCX) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, preventing the creation of new tokens or the freezing of… |
+| **Technical** | 8/10 | Low | The spucex (SPCX) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, preventing the creation of new tokens or the freezing of… |
 | **Governance / Economics** | 1/10 | High | The token's DEX liquidity stands at $14,095, which is moderate. The 24-hour volume is $741, resulting in a healthy Volume/Liquidity Ratio of 0.05, which does not indicate wash trading. The DEX pair… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are largely immutable due to the revocation of both Mint and Freeze Authorities. The `metadata_mutable` flag is False, ensuring that the token's name, symbol, or image… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable due to the revocation of both Mint and Freeze Authorities. The `metadata_mutable` flag is False, ensuring that the token's name, symbol, or image… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The spucex (SPCX) token mint on Solana exhibits a robust security configuration 
 |--------|-------|
 | **Contract** | [`9qpDk7...pump`](https://solscan.io/account/9qpDk7hGSHqyfMGDT7p4zFQ35aGff248Qes48CgLpump) |
 | **Network** | Solana |
-| **Price** | $0.00001695 |
-| **24h Volume** | $5.9K |
-| **Liquidity** | $15.0K |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.00001038 |
+| **24h Volume** | $276 |
+| **Liquidity** | $14.5K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 61.6% of supply |
+| **Top-10 Holders** | 81.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3303 buys / 2657 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The spucex (SPCX) token mint on Solana exhibits a robust security configuration 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

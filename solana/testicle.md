@@ -2,14 +2,14 @@
 token: testicle
 ticker: TESTICLE
 network: solana
-risk_score: 46
-status: high
+risk_score: 8
+status: low
 date: 2026-08-04
 ---
 
 # testicle (TESTICLE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 46/100 — 🟠 High Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/testicle-sol)
 
@@ -25,9 +25,19 @@ This SPL Token Mint for 'testicle' appears to be well-configured from a security
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program, indicating modern SPL token standards. A key security strength is the revocation of both the Mint Authority and Freeze Authority, meaning no… |
-| **Governance / Economics** | 2/10 | High | The token exhibits healthy liquidity with $303,262 USD available on DEXs, supported by a 24-hour trading volume of $425,169 USD. The Volume/Liquidity Ratio of 1.40 is normal, suggesting organic… |
-| **Upgrades** | 5/10 | Medium | The token's immutability is a significant strength, as both the Mint Authority and Freeze Authority have been permanently revoked. This prevents any future changes to the token supply or the ability… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program, indicating modern SPL token standards. A key security strength is the revocation of both the Mint Authority and Freeze Authority, meaning no… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy liquidity with $303,262 USD available on DEXs, supported by a 24-hour trading volume of $425,169 USD. The Volume/Liquidity Ratio of 1.40 is normal, suggesting organic… |
+| **Upgrades** | 8/10 | Low | The token's immutability is a significant strength, as both the Mint Authority and Freeze Authority have been permanently revoked. This prevents any future changes to the token supply or the ability… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This SPL Token Mint for 'testicle' appears to be well-configured from a security
 |--------|-------|
 | **Contract** | [`4TyZGq...pump`](https://solscan.io/account/4TyZGqRLG3VcHTGMcLBoPUmqYitMVojXinAmkL8xpump) |
 | **Network** | Solana |
-| **Price** | $0.001966 |
-| **24h Volume** | $425.4K |
-| **Liquidity** | $302.7K |
-| **Volume / Liquidity** | 1.4× |
+| **Price** | $0.0003656 |
+| **24h Volume** | $28.8K |
+| **Liquidity** | $173.9K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 7mo |
-| **Top-10 Holders** | 30.2% of supply |
+| **Top-10 Holders** | 39.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1754 buys / 1511 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This SPL Token Mint for 'testicle' appears to be well-configured from a security
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

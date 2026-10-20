@@ -2,14 +2,14 @@
 token: TARS AI
 ticker: TAI
 network: solana
-risk_score: 85
-status: critical
+risk_score: 48
+status: medium
 date: 2026-08-20
 ---
 
 # TARS AI (TAI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 85/100 — 🔴 Critical Risk**
+> **Risk Score: 48/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tars-ai-sol)
 
@@ -25,9 +25,9 @@ The TARS AI (TAI) token mint exhibits a medium risk profile primarily due to sig
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The TARS AI (TAI) token operates under the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts… |
+| **Technical** | 8/10 | Low | The TARS AI (TAI) token operates under the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts… |
 | **Governance / Economics** | 1/10 | High | The economic profile of TARS AI (TAI) shows a medium risk due to holder concentration, with the top 10 token accounts collectively holding 56.2% of the total supply. This level of concentration could… |
-| **Upgrades** | 4/10 | Medium | The TARS AI (TAI) token mint has a robust authority revocation status, with both the mint authority and freeze authority permanently revoked. This prevents any further issuance of tokens or freezing… |
+| **Upgrades** | 8/10 | Low | The TARS AI (TAI) token mint has a robust authority revocation status, with both the mint authority and freeze authority permanently revoked. This prevents any further issuance of tokens or freezing… |
 
 ## LP Distribution
 
@@ -59,22 +59,21 @@ Token name, symbol, or image can be changed post-launch. This allows the issuer 
 |--------|-------|
 | **Contract** | [`Hax9LT...6gdD`](https://solscan.io/account/Hax9LTgsQkze1YFychnBLtFH8gYbQKtKfWKKg2SP6gdD) |
 | **Network** | Solana |
-| **Price** | $0.008387 |
-| **24h Volume** | $335.5K |
-| **Liquidity** | $146.8K |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $0.004132 |
+| **24h Volume** | $60.2K |
+| **Liquidity** | $122.6K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 56.2% of supply |
+| **Top-10 Holders** | 60.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3829 buys / 4135 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -82,9 +81,8 @@ Token name, symbol, or image can be changed post-launch. This allows the issuer 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

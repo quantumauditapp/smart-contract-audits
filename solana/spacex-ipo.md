@@ -2,14 +2,14 @@
 token: SPACEX IPO
 ticker: SPCX
 network: solana
-risk_score: 92
-status: critical
+risk_score: 54
+status: medium
 date: 2026-06-12
 ---
 
 # SPACEX IPO (SPCX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 92/100 — 🔴 Critical Risk**
+> **Risk Score: 54/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spacex-ipo-sol)
 
@@ -25,9 +25,9 @@ The SPACEX IPO (SPCX) token mint has revoked mint and freeze authorities, indica
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The token is an SPL Token-2022 mint with a total supply of 999,640,060,628,602 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
+| **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint with a total supply of 999,640,060,628,602 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
 | **Governance / Economics** | 1/10 | High | The token's economic viability is severely impacted by very low liquidity, with only $7,437 USD available on DEXs. This makes large positions difficult to exit without significant loss due to… |
-| **Upgrades** | 4/10 | Medium | The token's core parameters are highly immutable, as both the mint authority and freeze authority have been permanently revoked. Metadata is also immutable, preventing changes to the token's name… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are highly immutable, as both the mint authority and freeze authority have been permanently revoked. Metadata is also immutable, preventing changes to the token's name… |
 
 ## Security Findings
 
@@ -50,17 +50,16 @@ Total DEX liquidity is $7,437. Slippage will be severe; large positions cannot b
 | **Liquidity** | $7.2K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 11d |
-| **Top-10 Holders** | 73.3% of supply |
+| **Top-10 Holders** | 78.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3022 buys / 2022 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ Total DEX liquidity is $7,437. Slippage will be severe; large positions cannot b
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

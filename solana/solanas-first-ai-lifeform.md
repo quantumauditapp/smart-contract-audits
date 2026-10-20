@@ -2,14 +2,14 @@
 token: Solana's First AI Lifeform
 ticker: CHARLIE
 network: solana
-risk_score: 66
-status: high
+risk_score: 49
+status: medium
 date: 2026-08-17
 ---
 
 # Solana's First AI Lifeform (CHARLIE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solanas-first-ai-lifeform-sol)
 
@@ -25,9 +25,9 @@ The Solana's First AI Lifeform (CHARLIE) token mint has revoked both mint and fr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The CHARLIE token is an SPL Token-2022 mint with a supply of 963,399,671.650187 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
+| **Technical** | 8/10 | Low | The CHARLIE token is an SPL Token-2022 mint with a supply of 963,399,671.650187 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 39.71% of the supply, which is below the thresholds for high concentration risk. Total DEX liquidity stands at $14,336, which… |
-| **Upgrades** | 5/10 | Medium | The token mint's core authorities, including mint and freeze, are revoked, preventing any future changes to the token supply or account freeze status. Key Token-2022 extensions such as transfer hook… |
+| **Upgrades** | 8/10 | Low | The token mint's core authorities, including mint and freeze, are revoked, preventing any future changes to the token supply or account freeze status. Key Token-2022 extensions such as transfer hook… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`C2ZpM1...pump`](https://solscan.io/account/C2ZpM1riZX236KbRGb56S5k6GE2ZbB26D6B8FjTYpump) |
 | **Network** | Solana |
-| **Price** | $0.00003492 |
-| **24h Volume** | $136.0K |
-| **Liquidity** | $14.1K |
-| **Volume / Liquidity** | 9.6× |
+| **Price** | $0.00000407 |
+| **24h Volume** | $34 |
+| **Liquidity** | $4.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 37.1% of supply |
+| **Top-10 Holders** | 96.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1699 buys / 1731 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

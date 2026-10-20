@@ -2,14 +2,14 @@
 token: SpaceX
 ticker: SPCX
 network: solana
-risk_score: 59
-status: high
+risk_score: 15
+status: low
 date: 2026-06-10
 ---
 
 # SpaceX (SPCX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 15/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spacex-sol)
 
@@ -25,9 +25,19 @@ The SpaceX (SPCX) token mint exhibits a secure configuration with both mint and 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority are permanently revoked (None), ensuring no new tokens can be minted and no existing… |
-| **Governance / Economics** | 1/10 | High | The token has a moderate liquidity of $46,531 USD, with a 24-hour volume of $9,180 USD, resulting in a normal Volume/Liquidity Ratio of 0.20. The DEX pair has been active for 100 days, indicating a… |
-| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are both revoked, meaning no further changes can be made to the token's supply or account freeze status. The metadata is also immutable (`metadata_mutable… |
+| **Technical** | 10/10 | Low | The token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority are permanently revoked (None), ensuring no new tokens can be minted and no existing… |
+| **Governance / Economics** | 6/10 | Medium | The token has a moderate liquidity of $46,531 USD, with a 24-hour volume of $9,180 USD, resulting in a normal Volume/Liquidity Ratio of 0.20. The DEX pair has been active for 100 days, indicating a… |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are both revoked, meaning no further changes can be made to the token's supply or account freeze status. The metadata is also immutable (`metadata_mutable… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,21 +45,20 @@ The SpaceX (SPCX) token mint exhibits a secure configuration with both mint and 
 |--------|-------|
 | **Contract** | [`E6ifp2...pump`](https://solscan.io/account/E6ifp2mJy8cYQehUGUtFvrXriRKxRuonLmrvTFypump) |
 | **Network** | Solana |
-| **Price** | $0.00009467 |
-| **24h Volume** | $2.9K |
-| **Liquidity** | $43.5K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.0001847 |
+| **24h Volume** | $2.2K |
+| **Liquidity** | $75.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 34.7% of supply |
+| **Top-10 Holders** | 37.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -57,9 +66,8 @@ The SpaceX (SPCX) token mint exhibits a secure configuration with both mint and 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

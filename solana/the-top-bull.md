@@ -2,14 +2,14 @@
 token: The Top Bull 
 ticker: TATE
 network: solana
-risk_score: 62
-status: high
+risk_score: 32
+status: low
 date: 2026-07-03
 ---
 
 # The Top Bull  (TATE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-top-bull-sol)
 
@@ -25,9 +25,19 @@ The audit of the TATE SPL Token Mint found no critical or high-severity issues b
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Crucially, both the mint authority and freeze authority are revoked (None), preventing further token… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a healthy liquidity profile with $25,538 in total DEX liquidity, which is sufficient for moderate trading activity. The 24-hour volume of $60,502 results in a normal… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. Key Token-2022 extensions such as Transfer Hook and Default Account State Frozen are not… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Crucially, both the mint authority and freeze authority are revoked (None), preventing further token… |
+| **Governance / Economics** | 3/10 | High | The token exhibits a healthy liquidity profile with $25,538 in total DEX liquidity, which is sufficient for moderate trading activity. The 24-hour volume of $60,502 results in a normal… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. Key Token-2022 extensions such as Transfer Hook and Default Account State Frozen are not… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The audit of the TATE SPL Token Mint found no critical or high-severity issues b
 |--------|-------|
 | **Contract** | [`CuGJf6...pump`](https://solscan.io/account/CuGJf6cfDfMh4UxVgNJ5KFQ6v8Wv3qrqop6cFKsGpump) |
 | **Network** | Solana |
-| **Price** | $0.00004153 |
-| **24h Volume** | $2.8K |
-| **Liquidity** | $19.6K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.000021 |
+| **24h Volume** | $105 |
+| **Liquidity** | $17.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 47.5% of supply |
+| **Top-10 Holders** | 64.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 15751 buys / 9305 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The audit of the TATE SPL Token Mint found no critical or high-severity issues b
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

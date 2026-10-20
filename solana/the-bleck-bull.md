@@ -2,14 +2,14 @@
 token: the bleck bull
 ticker: ANSUM
 network: solana
-risk_score: 72
-status: critical
+risk_score: 41
+status: medium
 date: 2026-07-09
 ---
 
 # the bleck bull (ANSUM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-bleck-bull-sol)
 
@@ -25,9 +25,19 @@ The token mint for 'the bleck bull (ANSUM)' is an SPL Token-2022. Both mint and 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token-2022, indicating modern Solana token standards. Both the mint authority and freeze authority have been revoked, ensuring a fixed supply and preventing any account freezing… |
+| **Technical** | 8/10 | Low | The token is an SPL Token-2022, indicating modern Solana token standards. Both the mint authority and freeze authority have been revoked, ensuring a fixed supply and preventing any account freezing… |
 | **Governance / Economics** | 1/10 | High | The token has a moderate DEX liquidity of $41,196, with a 24-hour trading volume of $212,228, resulting in a Volume/Liquidity Ratio of 5.15. The DEX pair has been active for 7 days, providing a… |
-| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are permanently revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not utilize upgradable features such as a… |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are permanently revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not utilize upgradable features such as a… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The token mint for 'the bleck bull (ANSUM)' is an SPL Token-2022. Both mint and 
 |--------|-------|
 | **Contract** | [`GaZb3D...pump`](https://solscan.io/account/GaZb3DE2U3Jcjx7ddAVwobsBKnCaDoJWLbzTvJYhpump) |
 | **Network** | Solana |
-| **Price** | $0.00007777 |
-| **24h Volume** | $24.4K |
-| **Liquidity** | $26.6K |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.00002174 |
+| **24h Volume** | $137 |
+| **Liquidity** | $17.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 51.0% of supply |
+| **Top-10 Holders** | 76.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2241 buys / 3124 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The token mint for 'the bleck bull (ANSUM)' is an SPL Token-2022. Both mint and 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

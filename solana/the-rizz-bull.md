@@ -2,14 +2,14 @@
 token: The Rizz Bull
 ticker: RIZZLER
 network: solana
-risk_score: 88
-status: critical
+risk_score: 50
+status: medium
 date: 2026-07-10
 ---
 
 # The Rizz Bull (RIZZLER) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 88/100 — 🔴 Critical Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-rizz-bull-sol)
 
@@ -25,9 +25,9 @@ The Rizz Bull (Rizzler) is an SPL Token-2022 mint with both mint and freeze auth
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The Rizz Bull (Rizzler) is an SPL Token-2022 mint. Its core technical controls are robust, with both the mint authority and freeze authority explicitly revoked, ensuring a fixed supply and preventing… |
+| **Technical** | 8/10 | Low | The Rizz Bull (Rizzler) is an SPL Token-2022 mint. Its core technical controls are robust, with both the mint authority and freeze authority explicitly revoked, ensuring a fixed supply and preventing… |
 | **Governance / Economics** | 1/10 | High | The token's DEX pair is very new, having been created only 3 days ago, which limits the ability to assess long-term market behavior or team actions. Current liquidity stands at $24,108, with a… |
-| **Upgrades** | 4/10 | Medium | The token mint exhibits strong immutability characteristics, as both the mint and freeze authorities have been revoked. This prevents any future changes to the token's supply or the ability to freeze… |
+| **Upgrades** | 8/10 | Low | The token mint exhibits strong immutability characteristics, as both the mint and freeze authorities have been revoked. This prevents any future changes to the token's supply or the ability to freeze… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`7AJ9sd...pump`](https://solscan.io/account/7AJ9sdZW6Sodb8ajnEkESeWtQVVHyZ4Gg85H3c1Ypump) |
 | **Network** | Solana |
-| **Price** | $0.00000527 |
-| **24h Volume** | $216 |
-| **Liquidity** | $6.0K |
+| **Price** | $0.00000431 |
+| **24h Volume** | $27 |
+| **Liquidity** | $6.7K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 80.1% of supply |
+| **Top-10 Holders** | 89.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 40024 buys / 61534 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

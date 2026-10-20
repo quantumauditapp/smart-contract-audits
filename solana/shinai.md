@@ -2,14 +2,14 @@
 token: ShinAI
 ticker: SHINJUKU
 network: solana
-risk_score: 64
-status: high
+risk_score: 31
+status: low
 date: 2026-08-17
 ---
 
 # ShinAI (SHINJUKU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 64/100 — 🟠 High Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/shinai-sol)
 
@@ -25,9 +25,9 @@ The ShinAI (SHINJUKU) token is an SPL Token-2022 mint with both mint and freeze 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The ShinAI (SHINJUKU) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a top 10 holder concentration of 26.02%, which is not considered highly concentrated. Total DEX liquidity stands at $31,825, which is moderate. The 24-hour volume is $224,516… |
-| **Upgrades** | 5/10 | Medium | The ShinAI (SHINJUKU) token mint has both its mint and freeze authorities revoked, preventing any future changes to token supply or account freeze status. The token is an SPL Token-2022, but does not… |
+| **Technical** | 10/10 | Low | The ShinAI (SHINJUKU) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a top 10 holder concentration of 26.02%, which is not considered highly concentrated. Total DEX liquidity stands at $31,825, which is moderate. The 24-hour volume is $224,516… |
+| **Upgrades** | 8/10 | Low | The ShinAI (SHINJUKU) token mint has both its mint and freeze authorities revoked, preventing any future changes to token supply or account freeze status. The token is an SPL Token-2022, but does not… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`7TKRV4...aD2e`](https://solscan.io/account/7TKRV4SneC6xLRaAt21a6d1kheAzXHGKP9WDzri9aD2e) |
 | **Network** | Solana |
-| **Price** | $0.0001715 |
-| **24h Volume** | $222.3K |
-| **Liquidity** | $32.1K |
-| **Volume / Liquidity** | 6.9× |
+| **Price** | $0.0001601 |
+| **24h Volume** | $26.8K |
+| **Liquidity** | $42.7K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 26.0% of supply |
+| **Top-10 Holders** | 34.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1574 buys / 2002 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

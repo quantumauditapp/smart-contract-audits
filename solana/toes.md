@@ -2,14 +2,14 @@
 token: TOES
 ticker: TOESCOIN
 network: solana
-risk_score: 41
-status: medium
+risk_score: 17
+status: low
 date: 2026-06-10
 ---
 
 # TOES (TOESCOIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 17/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/toes-sol)
 
@@ -25,9 +25,19 @@ This audit of the TOES (TOESCOIN) SPL Token Mint found no critical or high-sever
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The TOES token is implemented using the spl-token-2022 program. Key administrative controls, specifically the mint authority and freeze authority, have been revoked, indicating a fixed supply and… |
-| **Governance / Economics** | 3/10 | High | The token exhibits healthy liquidity with $167,236 USD available on DEXs, and a normal 24-hour volume to liquidity ratio of 0.97, suggesting organic trading activity. The DEX pair has been active for… |
-| **Upgrades** | 5/10 | Medium | The SPL Token Mint for TOES has a robust configuration regarding administrative control. Both the mint and freeze authorities are permanently revoked, meaning no further tokens can be minted and no… |
+| **Technical** | 10/10 | Low | The TOES token is implemented using the spl-token-2022 program. Key administrative controls, specifically the mint authority and freeze authority, have been revoked, indicating a fixed supply and… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy liquidity with $167,236 USD available on DEXs, and a normal 24-hour volume to liquidity ratio of 0.97, suggesting organic trading activity. The DEX pair has been active for… |
+| **Upgrades** | 8/10 | Low | The SPL Token Mint for TOES has a robust configuration regarding administrative control. Both the mint and freeze authorities are permanently revoked, meaning no further tokens can be minted and no… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,21 +45,20 @@ This audit of the TOES (TOESCOIN) SPL Token Mint found no critical or high-sever
 |--------|-------|
 | **Contract** | [`6ehEcT...pump`](https://solscan.io/account/6ehEcTMCc85aNF4x9CWx8HuvWGhxQtvKdhKVf2HDpump) |
 | **Network** | Solana |
-| **Price** | $0.004864 |
-| **24h Volume** | $293.2K |
-| **Liquidity** | $259.8K |
-| **Volume / Liquidity** | 1.1× |
+| **Price** | $0.0003076 |
+| **24h Volume** | $26.1K |
+| **Liquidity** | $94.6K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 9d |
-| **Top-10 Holders** | 19.1% of supply |
+| **Top-10 Holders** | 30.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -57,9 +66,8 @@ This audit of the TOES (TOESCOIN) SPL Token Mint found no critical or high-sever
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

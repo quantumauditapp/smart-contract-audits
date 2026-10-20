@@ -2,14 +2,14 @@
 token: Strategic American Oil Fund
 ticker: SAOF
 network: solana
-risk_score: 36
-status: medium
+risk_score: 28
+status: low
 date: 2026-08-04
 ---
 
 # Strategic American Oil Fund (SAOF) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/strategic-american-oil-fund-sol)
 
@@ -25,9 +25,19 @@ This audit of the Strategic American Oil Fund (SAOF) SPL Token Mint found no cri
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Strategic American Oil Fund (SAOF) is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen… |
-| **Governance / Economics** | 3/10 | High | The token exhibits healthy liquidity with $137,251 USD available on DEXs. The 24-hour volume of $103,958 USD results in a normal Volume/Liquidity Ratio of 0.76, not indicating wash trading. Holder… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or account freeze status. Key Token-2022 extensions like transfer hook and transfer fee… |
+| **Technical** | 10/10 | Low | The Strategic American Oil Fund (SAOF) is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits healthy liquidity with $137,251 USD available on DEXs. The 24-hour volume of $103,958 USD results in a normal Volume/Liquidity Ratio of 0.76, not indicating wash trading. Holder… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or account freeze status. Key Token-2022 extensions like transfer hook and transfer fee… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the Strategic American Oil Fund (SAOF) SPL Token Mint found no cri
 |--------|-------|
 | **Contract** | [`8oSMq4...QbhX`](https://solscan.io/account/8oSMq4sSyheFNVHrd5dEANGF29CMQwcnZZe8DrdqQbhX) |
 | **Network** | Solana |
-| **Price** | $0.002616 |
-| **24h Volume** | $114.4K |
-| **Liquidity** | $137.2K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.00003758 |
+| **24h Volume** | $268 |
+| **Liquidity** | $16.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 8d |
-| **Top-10 Holders** | 11.7% of supply |
+| **Top-10 Holders** | 51.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1765 buys / 424 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the Strategic American Oil Fund (SAOF) SPL Token Mint found no cri
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

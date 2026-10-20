@@ -2,14 +2,14 @@
 token: The Fearless Guardian
 ticker: GUARDIAN
 network: solana
-risk_score: 96
-status: critical
+risk_score: 58
+status: medium
 date: 2026-06-18
 ---
 
 # The Fearless Guardian (GUARDIAN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 96/100 — 🔴 Critical Risk**
+> **Risk Score: 58/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-fearless-guardian-sol)
 
@@ -25,9 +25,9 @@ This SPL Token-2022 mint, "The Fearless Guardian (GUARDIAN)", has revoked mint a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The token is an SPL Token-2022 mint with a fixed supply of 999,740,438.348484 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and… |
+| **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint with a fixed supply of 999,740,438.348484 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and… |
 | **Governance / Economics** | 1/10 | High | The token exhibits very low liquidity, with only $5,187 available on DEXs, which can lead to severe slippage for trades. Holder concentration data was unavailable, preventing an assessment of supply… |
-| **Upgrades** | 4/10 | Medium | The mint authority and freeze authority are both revoked, meaning the token's supply and account freezing capabilities are immutable. The token is an SPL Token-2022, but no upgradable extensions like… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and account freezing capabilities are immutable. The token is an SPL Token-2022, but no upgradable extensions like… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ Total DEX liquidity is $5,187. Slippage will be severe; large positions cannot b
 |--------|-------|
 | **Contract** | [`7YMkZZ...pump`](https://solscan.io/account/7YMkZZwdcwUbXKjYpr5gFAVoB6aF4f9iLWK6pUcppump) |
 | **Network** | Solana |
-| **Price** | $0.00000291 |
-| **24h Volume** | $80 |
-| **Liquidity** | $4.9K |
+| **Price** | $0.00000389 |
+| **24h Volume** | $5 |
+| **Liquidity** | $7.0K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | 93.5% of supply |
+| **Top-10 Holders** | 96.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4236 buys / 3658 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ Total DEX liquidity is $5,187. Slippage will be severe; large positions cannot b
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: SolCex 
 ticker: SOLCEX
 network: solana
-risk_score: 25
-status: medium
+risk_score: 0
+status: low
 date: 2026-08-13
 ---
 
 # SolCex  (SOLCEX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 25/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solcex-sol)
 
@@ -25,9 +25,9 @@ The SolCex token mint has revoked mint and freeze authorities, ensuring a fixed 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token Program v3 mint. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and inability to freeze accounts (7.3 Access Control). No… |
-| **Governance / Economics** | 5/10 | Medium | The token has a liquidity of $263,396 USD and a 24-hour volume of $38,450, resulting in a normal Volume/Liquidity Ratio of 0.15. The pair has been active for 849 days, providing a long track record… |
-| **Upgrades** | 7/10 | Low | The mint authority and freeze authority are both revoked, preventing further minting or freezing of tokens (7.7 Upgrades). The token's metadata is mutable, allowing changes to its name, symbol, or… |
+| **Technical** | 10/10 | Low | The token is an SPL Token Program v3 mint. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and inability to freeze accounts (7.3 Access Control). No… |
+| **Governance / Economics** | 9/10 | Low | The token has a liquidity of $263,396 USD and a 24-hour volume of $38,450, resulting in a normal Volume/Liquidity Ratio of 0.15. The pair has been active for 849 days, providing a long track record… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both revoked, preventing further minting or freezing of tokens (7.7 Upgrades). The token's metadata is mutable, allowing changes to its name, symbol, or… |
 
 ## LP Distribution
 
@@ -52,22 +52,21 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |--------|-------|
 | **Contract** | [`AMjzRn...Pk6K`](https://solscan.io/account/AMjzRn1TBQwQfNAjHFeBb7uGbbqbJB7FzXAnGgdFPk6K) |
 | **Network** | Solana |
-| **Price** | $0.002692 |
-| **24h Volume** | $40.1K |
-| **Liquidity** | $263.4K |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.003264 |
+| **24h Volume** | $31.9K |
+| **Liquidity** | $364.9K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 33.4% of supply |
+| **Top-10 Holders** | 34.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 348 buys / 269 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
@@ -75,9 +74,8 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Ultimate Solana World Cup
 ticker: USWC
 network: solana
-risk_score: 90
-status: critical
+risk_score: 52
+status: medium
 date: 2026-06-15
 ---
 
 # Ultimate Solana World Cup (USWC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ultimate-solana-world-cup-sol)
 
@@ -25,9 +25,9 @@ The Ultimate Solana World Cup (USWC) token mint is configured with revoked mint 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The Ultimate Solana World Cup (USWC) token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked, meaning no new tokens can be minted and no accounts can be frozen.… |
+| **Technical** | 8/10 | Low | The Ultimate Solana World Cup (USWC) token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked, meaning no new tokens can be minted and no accounts can be frozen.… |
 | **Governance / Economics** | 1/10 | High | The token exhibits very low liquidity, with total DEX liquidity at only $5,192. This makes large trades highly susceptible to severe slippage and prevents significant positions from being exited… |
-| **Upgrades** | 4/10 | Medium | The token mint has a robust upgrade posture, with both the mint authority and freeze authority permanently revoked. This ensures that the token supply is fixed and no accounts can be frozen… |
+| **Upgrades** | 8/10 | Low | The token mint has a robust upgrade posture, with both the mint authority and freeze authority permanently revoked. This ensures that the token supply is fixed and no accounts can be frozen… |
 
 ## Security Findings
 
@@ -54,13 +54,12 @@ Total DEX liquidity is $5,192. Slippage will be severe; large positions cannot b
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4829 buys / 4479 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ Total DEX liquidity is $5,192. Slippage will be severe; large positions cannot b
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

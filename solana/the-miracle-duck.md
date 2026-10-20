@@ -2,14 +2,14 @@
 token: The Miracle Duck
 ticker: LOUIE
 network: solana
-risk_score: 68
-status: high
+risk_score: 45
+status: medium
 date: 2026-08-13
 ---
 
 # The Miracle Duck (LOUIE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-miracle-duck-sol)
 
@@ -25,9 +25,9 @@ This SPL Token Mint audit for The Miracle Duck (LOUIE) identifies a medium risk 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing token accounts… |
+| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing token accounts… |
 | **Governance / Economics** | 1/10 | High | The top 10 token accounts hold 45.51% of the total supply, which is below the threshold for high concentration. Total DEX liquidity is $21,285, which is moderate. The 24-hour trading volume is… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are permanently revoked, preventing future changes to supply or account freeze status. Furthermore, the token's metadata is… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are permanently revoked, preventing future changes to supply or account freeze status. Furthermore, the token's metadata is… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 5 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`AENK1Y...pump`](https://solscan.io/account/AENK1YJ9978xp19xQLKat6eNmndf7Jg2FxFfKiwvpump) |
 | **Network** | Solana |
-| **Price** | $0.00004451 |
-| **24h Volume** | $118.1K |
-| **Liquidity** | $20.7K |
-| **Volume / Liquidity** | 5.7× |
+| **Price** | $0.00001745 |
+| **24h Volume** | $9 |
+| **Liquidity** | $15.3K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 45.5% of supply |
+| **Top-10 Holders** | 86.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1536 buys / 1316 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 5 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

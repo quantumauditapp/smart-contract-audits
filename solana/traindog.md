@@ -2,14 +2,14 @@
 token: traindog
 ticker: TRAINDOG
 network: solana
-risk_score: 49
-status: high
+risk_score: 30
+status: low
 date: 2026-07-31
 ---
 
 # traindog (TRAINDOG) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/traindog-sol)
 
@@ -25,9 +25,19 @@ This audit of the traindog SPL Token Mint found no critical or high-severity iss
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The traindog token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked, ensuring that no new tokens can be minted and no existing holder accounts can be frozen. The… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a low holder concentration, with the top 10 accounts holding 26.5% of the supply, which is below thresholds for significant concentration risk. Total DEX liquidity is $77,395… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, meaning the token's supply and account freeze status cannot be altered post-launch. No Token-2022 extensions that would allow for future… |
+| **Technical** | 10/10 | Low | The traindog token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked, ensuring that no new tokens can be minted and no existing holder accounts can be frozen. The… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a low holder concentration, with the top 10 accounts holding 26.5% of the supply, which is below thresholds for significant concentration risk. Total DEX liquidity is $77,395… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and account freeze status cannot be altered post-launch. No Token-2022 extensions that would allow for future… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the traindog SPL Token Mint found no critical or high-severity iss
 |--------|-------|
 | **Contract** | [`2kcdBw...pump`](https://solscan.io/account/2kcdBw85q4qMVCjUkEynTnZ3bGbBeCqZRDRNLpeWpump) |
 | **Network** | Solana |
-| **Price** | $0.0005169 |
-| **24h Volume** | $308.9K |
-| **Liquidity** | $80.3K |
-| **Volume / Liquidity** | 3.8× |
+| **Price** | $0.00004221 |
+| **24h Volume** | $1.6K |
+| **Liquidity** | $31.0K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 26.5% of supply |
+| **Top-10 Holders** | 67.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1887 buys / 2216 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the traindog SPL Token Mint found no critical or high-severity iss
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

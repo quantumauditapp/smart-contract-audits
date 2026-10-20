@@ -2,14 +2,14 @@
 token: Sent from my Pumpfun App
 ticker: APP
 network: solana
-risk_score: 68
-status: high
+risk_score: 30
+status: low
 date: 2026-08-16
 ---
 
 # Sent from my Pumpfun App (APP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sent-from-my-pumpfun-app-sol)
 
@@ -25,9 +25,9 @@ The audit of the Sent from my Pumpfun App (App) SPL token mint identified a medi
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program, indicating modern SPL token standards and extensions. Crucially, both the mint authority and freeze authority have been revoked, preventing… |
-| **Governance / Economics** | 1/10 | High | The token's DEX pair is very new, having been created only 4 days ago, which limits the track record for assessing market behavior (7.4 Economic). Current liquidity stands at $42,173, with a 24-hour… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities (7.7 Upgrades). This means no new tokens can be minted, and no accounts can be frozen by an… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program, indicating modern SPL token standards and extensions. Crucially, both the mint authority and freeze authority have been revoked, preventing… |
+| **Governance / Economics** | 4/10 | Medium | The token's DEX pair is very new, having been created only 4 days ago, which limits the track record for assessing market behavior (7.4 Economic). Current liquidity stands at $42,173, with a 24-hour… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities (7.7 Upgrades). This means no new tokens can be minted, and no accounts can be frozen by an… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair for this token was created 4 days ago. This insufficient track reco
 |--------|-------|
 | **Contract** | [`49nkLr...8pTL`](https://solscan.io/account/49nkLrXi8nCZBVKsShDNasEtPe4Vn1mx9Xbr3kTa8pTL) |
 | **Network** | Solana |
-| **Price** | $0.0002035 |
-| **24h Volume** | $372.6K |
-| **Liquidity** | $42.2K |
-| **Volume / Liquidity** | 8.8× |
+| **Price** | $0.00006995 |
+| **24h Volume** | $20.8K |
+| **Liquidity** | $37.3K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 30.3% of supply |
+| **Top-10 Holders** | 47.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2694 buys / 2978 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair for this token was created 4 days ago. This insufficient track reco
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

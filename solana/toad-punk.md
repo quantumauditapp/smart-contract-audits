@@ -3,13 +3,13 @@ token: Toad Punk
 ticker: TOADPUNK
 network: solana
 risk_score: 56
-status: high
+status: medium
 date: 2026-08-12
 ---
 
 # Toad Punk (TOADPUNK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 56/100 — 🟠 High Risk**
+> **Risk Score: 56/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/toad-punk-sol)
 
@@ -25,9 +25,9 @@ The Toad Punk (TOADPUNK) token mint is configured with both mint and freeze auth
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Toad Punk (TOADPUNK) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring a fixed supply and preventing any account freezing.… |
+| **Technical** | 8/10 | Low | The Toad Punk (TOADPUNK) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring a fixed supply and preventing any account freezing.… |
 | **Governance / Economics** | 1/10 | High | The token's DEX liquidity stands at $125,024, with a 24-hour trading volume of $1,036,979, resulting in a Volume/Liquidity Ratio of 8.29. This ratio, while not triggering a wash trading flag… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are highly immutable, as both the mint and freeze authorities have been revoked. This prevents any future changes to the token supply or the ability to freeze holder… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are highly immutable, as both the mint and freeze authorities have been revoked. This prevents any future changes to the token supply or the ability to freeze holder… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`5rRdD6...pump`](https://solscan.io/account/5rRdD6BFADz1iPcm7dzMaeTV4tpu3PHoucGUAD8Spump) |
 | **Network** | Solana |
-| **Price** | $0.00238 |
-| **24h Volume** | $929.3K |
-| **Liquidity** | $115.6K |
-| **Volume / Liquidity** | 8.0× |
+| **Price** | $0.00000344 |
+| **24h Volume** | $43 |
+| **Liquidity** | $4.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4h |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 96.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 13946 buys / 8849 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

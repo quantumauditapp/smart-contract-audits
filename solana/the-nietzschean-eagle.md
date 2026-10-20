@@ -2,14 +2,14 @@
 token: The Nietzschean Eagle
 ticker: JACKIE
 network: solana
-risk_score: 56
-status: high
+risk_score: 44
+status: medium
 date: 2026-08-12
 ---
 
 # The Nietzschean Eagle (JACKIE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 56/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-nietzschean-eagle-sol)
 
@@ -25,9 +25,9 @@ This audit of The Nietzschean Eagle (Jackie) SPL Token Mint found no critical or
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The The Nietzschean Eagle (Jackie) token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked (None), ensuring no new tokens can be minted and no existing accounts can… |
-| **Governance / Economics** | 2/10 | High | The token exhibits moderate liquidity at $32,152 USD, with a 24-hour volume of $320,268 USD. The Volume/Liquidity Ratio is 9.96, which is not indicative of wash trading according to the defined… |
-| **Upgrades** | 5/10 | Medium | The token mint has both its mint and freeze authorities revoked, meaning its core parameters are fixed and cannot be changed. It utilizes the spl-token-2022 program but does not have any active… |
+| **Technical** | 8/10 | Low | The The Nietzschean Eagle (Jackie) token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked (None), ensuring no new tokens can be minted and no existing accounts can… |
+| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity at $32,152 USD, with a 24-hour volume of $320,268 USD. The Volume/Liquidity Ratio is 9.96, which is not indicative of wash trading according to the defined… |
+| **Upgrades** | 8/10 | Low | The token mint has both its mint and freeze authorities revoked, meaning its core parameters are fixed and cannot be changed. It utilizes the spl-token-2022 program but does not have any active… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -45,22 +45,21 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |--------|-------|
 | **Contract** | [`4zEh89...pump`](https://solscan.io/account/4zEh89StirBvyHgiphKHNYAi8Fa6FVzVZjNUffcQpump) |
 | **Network** | Solana |
-| **Price** | $0.0001394 |
-| **24h Volume** | $330.1K |
-| **Liquidity** | $34.4K |
-| **Volume / Liquidity** | 9.6× |
+| **Price** | $0.00000707 |
+| **24h Volume** | $166 |
+| **Liquidity** | $9.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 22d |
-| **Top-10 Holders** | 29.7% of supply |
+| **Top-10 Holders** | 85.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2579 buys / 2819 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

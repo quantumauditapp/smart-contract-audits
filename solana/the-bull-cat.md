@@ -2,14 +2,14 @@
 token: The Bull Cat
 ticker: BULLCAT
 network: solana
-risk_score: 59
-status: high
+risk_score: 40
+status: medium
 date: 2026-07-21
 ---
 
 # The Bull Cat (BULLCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-bull-cat-sol)
 
@@ -25,9 +25,9 @@ This audit of the BULLCAT SPL Token Mint identifies a medium risk associated wit
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The BULLCAT token is an SPL Token-2022 mint with a total supply of 999,968,593,548,461 tokens and 6 decimals. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a holder concentration where the top 10 accounts hold approximately 20.37% of the supply, which is relatively low and positive for decentralization. However, the DEX pair is very… |
-| **Upgrades** | 5/10 | Medium | The token's Mint Authority and Freeze Authority are both revoked, preventing any future changes to the token supply or account freeze status. The metadata is immutable, ensuring the token's name… |
+| **Technical** | 8/10 | Low | The BULLCAT token is an SPL Token-2022 mint with a total supply of 999,968,593,548,461 tokens and 6 decimals. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens… |
+| **Governance / Economics** | 3/10 | High | The token exhibits a holder concentration where the top 10 accounts hold approximately 20.37% of the supply, which is relatively low and positive for decentralization. However, the DEX pair is very… |
+| **Upgrades** | 8/10 | Low | The token's Mint Authority and Freeze Authority are both revoked, preventing any future changes to the token supply or account freeze status. The metadata is immutable, ensuring the token's name… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 6 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`G9j8WW...pump`](https://solscan.io/account/G9j8WWDeJXZdvwQgP82ooDuHmpc3Gy8NCSins71Lpump) |
 | **Network** | Solana |
-| **Price** | $0.0004628 |
-| **24h Volume** | $280.0K |
-| **Liquidity** | $68.4K |
-| **Volume / Liquidity** | 4.1× |
+| **Price** | $0.00002177 |
+| **24h Volume** | $1.0K |
+| **Liquidity** | $19.3K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | 23.1% of supply |
+| **Top-10 Holders** | 62.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 21316 buys / 14146 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 6 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

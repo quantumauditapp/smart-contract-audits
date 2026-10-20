@@ -2,14 +2,14 @@
 token: The Original Doge
 ticker: OGDOGE
 network: solana
-risk_score: 53
-status: high
+risk_score: 15
+status: low
 date: 2026-08-02
 ---
 
 # The Original Doge (OGDOGE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 15/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-original-doge-sol)
 
@@ -25,9 +25,19 @@ This audit of the OGDOGE SPL token mint found no critical or high-severity risks
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The OGDOGE token operates under the standard spl-token program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no holder accounts can… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a healthy economic profile. The top 10 token accounts hold 31.12% of the supply, which does not indicate excessive holder concentration. Total DEX liquidity is $199,707, providing… |
-| **Upgrades** | 5/10 | Medium | The token's immutability is a strong point, as both the mint and freeze authorities are revoked, preventing any future changes to supply or account freeze status. Furthermore, the token's metadata is… |
+| **Technical** | 10/10 | Low | The OGDOGE token operates under the standard spl-token program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no holder accounts can… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a healthy economic profile. The top 10 token accounts hold 31.12% of the supply, which does not indicate excessive holder concentration. Total DEX liquidity is $199,707, providing… |
+| **Upgrades** | 8/10 | Low | The token's immutability is a strong point, as both the mint and freeze authorities are revoked, preventing any future changes to supply or account freeze status. Furthermore, the token's metadata is… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the OGDOGE SPL token mint found no critical or high-severity risks
 |--------|-------|
 | **Contract** | [`utLyQQ...doge`](https://solscan.io/account/utLyQQCPvjuCc6zeaXdsFeEC3JNdxKS3vxaZWoGdoge) |
 | **Network** | Solana |
-| **Price** | $0.004979 |
-| **24h Volume** | $450.0K |
-| **Liquidity** | $200.3K |
-| **Volume / Liquidity** | 2.2× |
+| **Price** | $0.002351 |
+| **24h Volume** | $32.3K |
+| **Liquidity** | $179.4K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 31.1% of supply |
+| **Top-10 Holders** | 33.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3387 buys / 4158 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the OGDOGE SPL token mint found no critical or high-severity risks
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: STONK
 ticker: STONK
 network: solana
-risk_score: 53
-status: high
+risk_score: 5
+status: low
 date: 2026-08-07
 ---
 
 # STONK (STONK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 5/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/stonk-sol)
 
@@ -25,9 +25,9 @@ The STONK SPL token mint exhibits a low-risk technical configuration with both m
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The STONK token is an SPL token operating under the spl-token program. Its mint authority is revoked (None), preventing the creation of new tokens and ensuring a fixed supply. Similarly, the freeze… |
-| **Governance / Economics** | 2/10 | High | The token's economic profile shows a top 10 holder concentration of 20.09%, which is relatively low and suggests a distributed holder base. Total DEX liquidity stands at $414,641, with a 24-hour… |
-| **Upgrades** | 5/10 | Medium | The token's upgradeability and mutability aspects are minimal, contributing to a low risk profile. Both the mint authority and freeze authority have been revoked, preventing any future changes to the… |
+| **Technical** | 10/10 | Low | The STONK token is an SPL token operating under the spl-token program. Its mint authority is revoked (None), preventing the creation of new tokens and ensuring a fixed supply. Similarly, the freeze… |
+| **Governance / Economics** | 6/10 | Medium | The token's economic profile shows a top 10 holder concentration of 20.09%, which is relatively low and suggests a distributed holder base. Total DEX liquidity stands at $414,641, with a 24-hour… |
+| **Upgrades** | 8/10 | Low | The token's upgradeability and mutability aspects are minimal, contributing to a low risk profile. Both the mint authority and freeze authority have been revoked, preventing any future changes to the… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`6GmAFS...UNgx`](https://solscan.io/account/6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx) |
 | **Network** | Solana |
-| **Price** | $0.005444 |
-| **24h Volume** | $1.71M |
-| **Liquidity** | $425.0K |
-| **Volume / Liquidity** | 4.0× |
+| **Price** | $0.3298 |
+| **24h Volume** | $11.82M |
+| **Liquidity** | $6.05M |
+| **Volume / Liquidity** | 2.0× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 20.1% of supply |
+| **Top-10 Holders** | 18.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1771 buys / 1026 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

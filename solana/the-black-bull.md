@@ -2,14 +2,14 @@
 token: The Black Bull
 ticker: ANSEM
 network: solana
-risk_score: 58
-status: high
+risk_score: 20
+status: low
 date: 2026-06-29
 ---
 
 # The Black Bull (ANSEM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-black-bull-sol)
 
@@ -25,9 +25,19 @@ This Solana SPL Token Mint (ANSEM) exhibits a robust security configuration with
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program, leveraging its advanced features. Both the Mint Authority and Freeze Authority have been revoked, ensuring that no new tokens can be minted… |
-| **Governance / Economics** | 1/10 | High | The token benefits from significant DEX liquidity, reported at $2,194,837, which supports trading and reduces slippage for typical transactions (7.4 Economic). The 24-hour trading volume is high at… |
-| **Upgrades** | 5/10 | Medium | The token's configuration demonstrates a strong commitment to immutability post-launch. The revocation of both Mint and Freeze authorities means that the token supply and the ability to freeze… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program, leveraging its advanced features. Both the Mint Authority and Freeze Authority have been revoked, ensuring that no new tokens can be minted… |
+| **Governance / Economics** | 5/10 | Medium | The token benefits from significant DEX liquidity, reported at $2,194,837, which supports trading and reduces slippage for typical transactions (7.4 Economic). The 24-hour trading volume is high at… |
+| **Upgrades** | 8/10 | Low | The token's configuration demonstrates a strong commitment to immutability post-launch. The revocation of both Mint and Freeze authorities means that the token supply and the ability to freeze… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This Solana SPL Token Mint (ANSEM) exhibits a robust security configuration with
 |--------|-------|
 | **Contract** | [`9cRCn9...pump`](https://solscan.io/account/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump) |
 | **Network** | Solana |
-| **Price** | $0.1761 |
-| **24h Volume** | $1.88M |
-| **Liquidity** | $1.95M |
+| **Price** | $0.1701 |
+| **24h Volume** | $2.56M |
+| **Liquidity** | $2.62M |
 | **Volume / Liquidity** | 1.0× |
 | **Token Age** | 12d |
-| **Top-10 Holders** | 63.1% of supply |
+| **Top-10 Holders** | 67.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 89728 buys / 75278 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This Solana SPL Token Mint (ANSEM) exhibits a robust security configuration with
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

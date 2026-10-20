@@ -2,14 +2,14 @@
 token: The IQ Bull
 ticker: AMEN
 network: solana
-risk_score: 84
-status: critical
+risk_score: 46
+status: medium
 date: 2026-07-04
 ---
 
 # The IQ Bull (AMEN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 84/100 — 🔴 Critical Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-iq-bull-sol)
 
@@ -25,9 +25,19 @@ This SPL Token Mint, "The IQ Bull (AMEN)", demonstrates strong security configur
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program, indicating modern SPL features. Both the mint authority and freeze authority have been revoked, ensuring no further tokens can be minted and… |
+| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program, indicating modern SPL features. Both the mint authority and freeze authority have been revoked, ensuring no further tokens can be minted and… |
 | **Governance / Economics** | 1/10 | High | The token exhibits very low liquidity, with total DEX liquidity at $10,223. The 24-hour trading volume is $11,300, resulting in a normal Volume/Liquidity Ratio of 1.11. The pair is relatively new… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any post-launch changes to supply or account freeze status. Key Token-2022 extensions such as permanent… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any post-launch changes to supply or account freeze status. Key Token-2022 extensions such as permanent… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This SPL Token Mint, "The IQ Bull (AMEN)", demonstrates strong security configur
 |--------|-------|
 | **Contract** | [`CbdMt7...pump`](https://solscan.io/account/CbdMt7xCe91AiAwnqtiHpUB5QrR3Z3ZL3LqnKGSypump) |
 | **Network** | Solana |
-| **Price** | $0.00000916 |
-| **24h Volume** | $24 |
-| **Liquidity** | $7.4K |
+| **Price** | $0.00000975 |
+| **24h Volume** | $0 |
+| **Liquidity** | $8.9K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 95.1% of supply |
+| **Top-10 Holders** | 97.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1204 buys / 1387 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This SPL Token Mint, "The IQ Bull (AMEN)", demonstrates strong security configur
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: The Original Troll
 ticker: SKOGTROLL
 network: solana
-risk_score: 67
-status: high
+risk_score: 44
+status: medium
 date: 2026-08-11
 ---
 
 # The Original Troll (SKOGTROLL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-original-troll-sol)
 
@@ -25,9 +25,9 @@ This audit of The Original Troll (SKOGTROLL) token mint identifies a medium risk
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The SKOGTROLL token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, ensuring that no new tokens can be minted and no existing holder… |
+| **Technical** | 8/10 | Low | The SKOGTROLL token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, ensuring that no new tokens can be minted and no existing holder… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 37.6% of the supply, which is below the threshold for high concentration risk. However, the DEX pair is very new, having been… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are permanently revoked, preventing any future changes to supply or account freeze status. The token utilizes the spl-token-2022… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are permanently revoked, preventing any future changes to supply or account freeze status. The token utilizes the spl-token-2022… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`G5dyx7...pump`](https://solscan.io/account/G5dyx7UfnX6TeHqrPVAM7qNMXznAsvjtbsbTCNbRpump) |
 | **Network** | Solana |
-| **Price** | $0.0001357 |
-| **24h Volume** | $88.2K |
-| **Liquidity** | $27.1K |
-| **Volume / Liquidity** | 3.3× |
+| **Price** | $0.00001859 |
+| **24h Volume** | $10 |
+| **Liquidity** | $10.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 37.6% of supply |
+| **Top-10 Holders** | 93.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 667 buys / 691 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

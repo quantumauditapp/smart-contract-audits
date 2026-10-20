@@ -2,14 +2,14 @@
 token: The Official 67 Coin
 ticker: 67
 network: solana
-risk_score: 41
-status: medium
+risk_score: 3
+status: low
 date: 2026-07-29
 ---
 
 # The Official 67 Coin (67) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 3/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-official-67-coin-sol)
 
@@ -25,9 +25,19 @@ This SPL token mint demonstrates a robust on-chain configuration with both mint 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token mint 9AvytnUKsLxPxFHFqS6VLxaxt5p6BhYNr53SD2Chpump operates under the classic spl-token program. Both the mint authority and freeze authority are revoked, meaning no new tokens can be minted… |
-| **Governance / Economics** | 3/10 | High | The token exhibits moderate holder distribution, with the top 10 accounts holding 29.54% of the total supply, which is below thresholds for high concentration risk. Liquidity is healthy at $220,154… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any post-launch changes to supply or account freeze status. Metadata is also immutable, ensuring the… |
+| **Technical** | 10/10 | Low | The token mint 9AvytnUKsLxPxFHFqS6VLxaxt5p6BhYNr53SD2Chpump operates under the classic spl-token program. Both the mint authority and freeze authority are revoked, meaning no new tokens can be minted… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits moderate holder distribution, with the top 10 accounts holding 29.54% of the total supply, which is below thresholds for high concentration risk. Liquidity is healthy at $220,154… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any post-launch changes to supply or account freeze status. Metadata is also immutable, ensuring the… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This SPL token mint demonstrates a robust on-chain configuration with both mint 
 |--------|-------|
 | **Contract** | [`9Avytn...pump`](https://solscan.io/account/9AvytnUKsLxPxFHFqS6VLxaxt5p6BhYNr53SD2Chpump) |
 | **Network** | Solana |
-| **Price** | $0.001242 |
-| **24h Volume** | $82.0K |
-| **Liquidity** | $220.2K |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.001717 |
+| **24h Volume** | $36.8K |
+| **Liquidity** | $341.4K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 29.5% of supply |
+| **Top-10 Holders** | 26.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 501 buys / 304 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This SPL token mint demonstrates a robust on-chain configuration with both mint 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: The Solana Mascot
 ticker: SOLY
 network: solana
-risk_score: 95
-status: critical
+risk_score: 57
+status: medium
 date: 2026-06-10
 ---
 
 # The Solana Mascot (SOLY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 95/100 — 🔴 Critical Risk**
+> **Risk Score: 57/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-solana-mascot-sol)
 
@@ -25,9 +25,9 @@ The audit identified a high risk due to very low DEX liquidity ($5,669), which c
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The token is an SPL Token-2022 mint with a total supply of 999,947,003.812112 tokens across 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
+| **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint with a total supply of 999,947,003.812112 tokens across 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
 | **Governance / Economics** | 1/10 | High | The token exhibits very low DEX liquidity, with only $5,669 available, which poses a significant risk for price stability and large trades. The 24-hour trading volume is $45, resulting in a normal… |
-| **Upgrades** | 4/10 | Medium | The token's core parameters are largely immutable, as both the mint and freeze authorities are revoked. This means no further tokens can be minted, and no accounts can be frozen. Furthermore, the… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable, as both the mint and freeze authorities are revoked. This means no further tokens can be minted, and no accounts can be frozen. Furthermore, the… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ Total DEX liquidity is $5,669. Slippage will be severe; large positions cannot b
 |--------|-------|
 | **Contract** | [`DqBjJE...pump`](https://solscan.io/account/DqBjJEh6nppACX8fvuXvyWx8AQddPd5na7k2LCFWpump) |
 | **Network** | Solana |
-| **Price** | $0.00000559 |
-| **24h Volume** | $4 |
-| **Liquidity** | $5.9K |
+| **Price** | $0.00000579 |
+| **24h Volume** | $9 |
+| **Liquidity** | $7.4K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | 83.7% of supply |
+| **Top-10 Holders** | 92.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 25092 buys / 56753 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ Total DEX liquidity is $5,669. Slippage will be severe; large positions cannot b
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

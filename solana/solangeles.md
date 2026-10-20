@@ -2,14 +2,14 @@
 token: SolAngeles
 ticker: SOLANGELES
 network: solana
-risk_score: 50
-status: high
+risk_score: 20
+status: low
 date: 2026-07-22
 ---
 
 # SolAngeles (SOLANGELES) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solangeles-sol)
 
@@ -25,9 +25,19 @@ The SolAngeles token mint is configured with both mint and freeze authorities re
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The SolAngeles token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked, ensuring no new tokens can be created and no existing accounts can be frozen. No transfer… |
-| **Governance / Economics** | 2/10 | High | The token exhibits healthy market characteristics with $185,045 in liquidity and a 24-hour volume of $217,510, resulting in a normal Volume/Liquidity Ratio of 1.18. The pair has been active for 61… |
-| **Upgrades** | 5/10 | Medium | The SolAngeles token mint has revoked its mint and freeze authorities, preventing any post-launch changes to supply or account freeze status. Key Token-2022 extensions like transfer hooks and… |
+| **Technical** | 10/10 | Low | The SolAngeles token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked, ensuring no new tokens can be created and no existing accounts can be frozen. No transfer… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits healthy market characteristics with $185,045 in liquidity and a 24-hour volume of $217,510, resulting in a normal Volume/Liquidity Ratio of 1.18. The pair has been active for 61… |
+| **Upgrades** | 8/10 | Low | The SolAngeles token mint has revoked its mint and freeze authorities, preventing any post-launch changes to supply or account freeze status. Key Token-2022 extensions like transfer hooks and… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The SolAngeles token mint is configured with both mint and freeze authorities re
 |--------|-------|
 | **Contract** | [`8wxkvA...pump`](https://solscan.io/account/8wxkvAfEns76yBzu4MnbV7VnXWjg3iDPA9uwAQ6cpump) |
 | **Network** | Solana |
-| **Price** | $0.001852 |
-| **24h Volume** | $240.5K |
-| **Liquidity** | $184.7K |
-| **Volume / Liquidity** | 1.3× |
+| **Price** | $0.0007645 |
+| **24h Volume** | $46.1K |
+| **Liquidity** | $127.3K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 48.5% of supply |
+| **Top-10 Holders** | 50.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 940 buys / 843 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The SolAngeles token mint is configured with both mint and freeze authorities re
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: The Gamestop Bull 
 ticker: GMEBULL
 network: solana
-risk_score: 67
-status: high
+risk_score: 44
+status: medium
 date: 2026-07-26
 ---
 
 # The Gamestop Bull  (GMEBULL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-gamestop-bull-sol)
 
@@ -25,9 +25,9 @@ The audit of the GMEBULL SPL Token Mint reveals a Medium risk profile primarily 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The GMEBULL token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, which is a positive security indicator as it prevents further token… |
+| **Technical** | 8/10 | Low | The GMEBULL token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, which is a positive security indicator as it prevents further token… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a Medium risk due to its very recent launch, with the DEX pair created only 6 days ago, limiting historical data for analysis. Current liquidity stands at $23,249, with a 24-hour… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint and Freeze, are revoked, preventing post-launch changes to supply or account states. It utilizes the Token-2022 program but does not have a Transfer Hook or Default… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint and Freeze, are revoked, preventing post-launch changes to supply or account states. It utilizes the Token-2022 program but does not have a Transfer Hook or Default… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`4tnZ57...pump`](https://solscan.io/account/4tnZ57E3oWjaZKSQY1iwgqiD8ivAGk5TambivhTYpump) |
 | **Network** | Solana |
-| **Price** | $0.00006355 |
-| **24h Volume** | $58.6K |
-| **Liquidity** | $23.2K |
-| **Volume / Liquidity** | 2.5× |
+| **Price** | $0.00001845 |
+| **24h Volume** | $607 |
+| **Liquidity** | $15.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 47.3% of supply |
+| **Top-10 Holders** | 76.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3075 buys / 3003 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

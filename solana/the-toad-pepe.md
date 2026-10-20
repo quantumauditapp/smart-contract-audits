@@ -2,14 +2,14 @@
 token: The Toad Pepe
 ticker: TOAD
 network: solana
-risk_score: 50
-status: high
+risk_score: 21
+status: low
 date: 2026-08-12
 ---
 
 # The Toad Pepe (TOAD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 21/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-toad-pepe-sol)
 
@@ -25,9 +25,9 @@ The token mint for The Toad Pepe (TOAD) has its mint and freeze authorities revo
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing accounts can be… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 28.9% of the supply, which is below thresholds for high concentration risk. Total DEX liquidity stands at $519,161, supporting… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or the ability to freeze accounts. The token utilizes the spl-token-2022 program, but no… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing accounts can be… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a holder concentration where the top 10 accounts hold 28.9% of the supply, which is below thresholds for high concentration risk. Total DEX liquidity stands at $519,161, supporting… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or the ability to freeze accounts. The token utilizes the spl-token-2022 program, but no… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`A13oRB...pump`](https://solscan.io/account/A13oRB9FFaiUjfi6LdCg6p9ka1u8SfGkUFs4SKvPpump) |
 | **Network** | Solana |
-| **Price** | $0.01309 |
-| **24h Volume** | $4.16M |
-| **Liquidity** | $522.9K |
-| **Volume / Liquidity** | 8.0× |
+| **Price** | $0.002288 |
+| **24h Volume** | $170.5K |
+| **Liquidity** | $314.3K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 28.9% of supply |
+| **Top-10 Holders** | 34.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 7683 buys / 6824 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

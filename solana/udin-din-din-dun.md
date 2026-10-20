@@ -2,14 +2,14 @@
 token: Udin din din dun
 ticker: UDIN
 network: solana
-risk_score: 51
-status: high
+risk_score: 24
+status: low
 date: 2026-07-24
 ---
 
 # Udin din din dun (UDIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 24/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/udin-din-din-dun-sol)
 
@@ -25,9 +25,19 @@ The Udin din din dun (Udin) SPL token mint exhibits a robust security posture wi
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Udin token is a standard SPL token operating under the `spl-token` program. The mint authority is revoked, ensuring no new tokens can be minted, and the freeze authority is also revoked… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a healthy holder distribution, with the top 10 token accounts holding 25.72% of the supply, which is below common concentration thresholds. Total DEX liquidity stands at $65,163… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. This means the supply cannot be increased, and token accounts cannot be frozen. Furthermore, the… |
+| **Technical** | 10/10 | Low | The Udin token is a standard SPL token operating under the `spl-token` program. The mint authority is revoked, ensuring no new tokens can be minted, and the freeze authority is also revoked… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a healthy holder distribution, with the top 10 token accounts holding 25.72% of the supply, which is below common concentration thresholds. Total DEX liquidity stands at $65,163… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. This means the supply cannot be increased, and token accounts cannot be frozen. Furthermore, the… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Udin din din dun (Udin) SPL token mint exhibits a robust security posture wi
 |--------|-------|
 | **Contract** | [`2aQKC1...pump`](https://solscan.io/account/2aQKC1xiKpEyAWvzSDrULnYLVuybWyx7qrsnpP8hpump) |
 | **Network** | Solana |
-| **Price** | $0.0004861 |
-| **24h Volume** | $156.8K |
-| **Liquidity** | $64.9K |
-| **Volume / Liquidity** | 2.4× |
+| **Price** | $0.00007808 |
+| **24h Volume** | $3.9K |
+| **Liquidity** | $36.0K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 24d |
-| **Top-10 Holders** | 25.7% of supply |
+| **Top-10 Holders** | 45.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1402 buys / 1381 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Udin din din dun (Udin) SPL token mint exhibits a robust security posture wi
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

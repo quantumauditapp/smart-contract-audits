@@ -2,14 +2,14 @@
 token: Sheepcoin
 ticker: SHEEP
 network: solana
-risk_score: 84
-status: critical
+risk_score: 54
+status: medium
 date: 2026-08-12
 ---
 
 # Sheepcoin (SHEEP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 84/100 — 🔴 Critical Risk**
+> **Risk Score: 54/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sheepcoin-sol)
 
@@ -25,9 +25,9 @@ This audit of the Sheepcoin (Sheep) SPL Token Mint reveals critical risks primar
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The token is an SPL Token-2022 mint with a supply of 972,843,911.345005 tokens across 6 decimals. Both the Mint Authority and Freeze Authority are revoked, preventing further token issuance or… |
-| **Governance / Economics** | 1/10 | High | The token's DEX pair is very new, established only 3 days ago, which provides an insufficient track record for market stability assessment (7.4 Economic). Total DEX liquidity is $37,025, which is low… |
-| **Upgrades** | 4/10 | Medium | The token's core authorities, Mint and Freeze, are permanently revoked, eliminating the risk of unauthorized supply changes or account freezes (7.7 Upgrades). It utilizes the Token-2022 program but… |
+| **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint with a supply of 972,843,911.345005 tokens across 6 decimals. Both the Mint Authority and Freeze Authority are revoked, preventing further token issuance or… |
+| **Governance / Economics** | 2/10 | High | The token's DEX pair is very new, established only 3 days ago, which provides an insufficient track record for market stability assessment (7.4 Economic). Total DEX liquidity is $37,025, which is low… |
+| **Upgrades** | 7/10 | Low | The token's core authorities, Mint and Freeze, are permanently revoked, eliminating the risk of unauthorized supply changes or account freezes (7.7 Upgrades). It utilizes the Token-2022 program but… |
 
 ## Security Findings
 
@@ -52,22 +52,21 @@ The DEX pair was created 3 days ago. This is an insufficient track record to ass
 |--------|-------|
 | **Contract** | [`Dz2iVS...pump`](https://solscan.io/account/Dz2iVSLXFp7dXowD1nybWyCXuUcpV7cBZu68YPV5pump) |
 | **Network** | Solana |
-| **Price** | $0.000167 |
-| **24h Volume** | $206.3K |
-| **Liquidity** | $37.5K |
-| **Volume / Liquidity** | 5.5× |
+| **Price** | $0.00003211 |
+| **24h Volume** | $587 |
+| **Liquidity** | $23.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 31.1% of supply |
+| **Top-10 Holders** | 62.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1825 buys / 1954 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -75,9 +74,8 @@ The DEX pair was created 3 days ago. This is an insufficient track record to ass
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

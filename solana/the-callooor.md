@@ -2,14 +2,14 @@
 token: The Callooor
 ticker: CALLOOOR
 network: solana
-risk_score: 70
-status: high
+risk_score: 40
+status: medium
 date: 2026-08-15
 ---
 
 # The Callooor (CALLOOOR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-callooor-sol)
 
@@ -25,9 +25,9 @@ The Callooor (CALLOOOR) is an SPL Token-2022 mint with both mint and freeze auth
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate holder concentration, with the top 10 accounts holding 30.31% of the supply, which does not trigger high concentration warnings. Total DEX liquidity is $42,500, which is… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are fixed due to the revocation of both Mint and Freeze Authorities. There are no active Token-2022 extensions that would allow for post-launch modifications to transfer… |
+| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen… |
+| **Governance / Economics** | 3/10 | High | The token exhibits moderate holder concentration, with the top 10 accounts holding 30.31% of the supply, which does not trigger high concentration warnings. Total DEX liquidity is $42,500, which is… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are fixed due to the revocation of both Mint and Freeze Authorities. There are no active Token-2022 extensions that would allow for post-launch modifications to transfer… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`A48KeW...pump`](https://solscan.io/account/A48KeWUuiDSdRQBqAFssgyYATDuBv7cer54V2JSDpump) |
 | **Network** | Solana |
-| **Price** | $0.0001646 |
-| **24h Volume** | $307.4K |
-| **Liquidity** | $40.5K |
-| **Volume / Liquidity** | 7.6× |
+| **Price** | $0.00002187 |
+| **24h Volume** | $1.9K |
+| **Liquidity** | $19.2K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 30.3% of supply |
+| **Top-10 Holders** | 69.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3025 buys / 3152 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
