@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**928 reports** · Updated daily · [← All Networks](../README.md)
+**933 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [XTO](./xto-sol-e3d8.md) | XTO | 🟢 0/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/xto-sol-e3d8) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-sol-0b77.md) | AODF | 🟢 0/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol-0b77) |
+| [United Dividend Trust Fund🔥](./united-dividend-trust-fund.md) | UDTF | 🟢 0/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/united-dividend-trust-fund-sol) |
+| [AOP](./aop.md) | AOP | 🟢 0/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/aop-sol) |
+| [UDR](./udr.md) | UDR | 🟢 0/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/udr-sol) |
 | [super pika](./super-pika.md) | PIKA | 🟢 14/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/super-pika-sol) |
 | [FABLES](./fables.md) | FABLES | 🟢 26/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/fables-sol) |
 | [AlloX](./allox.md) | ALLOX | 🟢 29/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/allox-sol) |

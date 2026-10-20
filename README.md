@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-2102-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-2107-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,11 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [XTO](./solana/xto-sol-e3d8.md) | XTO | Solana | 🟢 0/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/xto-sol-e3d8) |
+| [American Oil Dividend Fund](./solana/american-oil-dividend-fund-sol-0b77.md) | AODF | Solana | 🟢 0/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol-0b77) |
+| [United Dividend Trust Fund🔥](./solana/united-dividend-trust-fund.md) | UDTF | Solana | 🟢 0/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/united-dividend-trust-fund-sol) |
+| [AOP](./solana/aop.md) | AOP | Solana | 🟢 0/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/aop-sol) |
+| [UDR](./solana/udr.md) | UDR | Solana | 🟢 0/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/udr-sol) |
 | [WhaleBit](./polygon/whalebit.md) | CES | Polygon | 🟡 60/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/whalebit-poly) |
 | [Groklet](./ethereum/groklet-eth-daa6.md) | GROKLET | Ethereum | 🟢 28/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/groklet-eth-daa6) |
 | [Meanwhile](./arbitrum/meanwhile.md) | MENWH | Arbitrum | 🟠 75/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/meanwhile-arb) |
@@ -37,17 +42,12 @@
 | [American Oil Dividend Fund](./solana/american-oil-dividend-fund.md) | AODF | Solana | 🟢 0/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol) |
 | [Strategic American Protocol](./solana/strategic-american-protocol.md) | SARP | Solana | 🟢 2/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/strategic-american-protocol-sol) |
 | [XTO](./solana/xto-sol-b9a8.md) | XTO | Solana | 🟢 0/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/xto-sol-b9a8) |
-| [SUPER TRUST](./polygon/super-trust.md) | SUT | Polygon | 🟡 41/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/super-trust-poly) |
-| [XTO](./solana/xto-sol-2329.md) | XTO | Solana | 🟢 0/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/xto-sol-2329) |
-| [XRPN](./solana/xrpn.md) | EVERNORTHX | Solana | 🟢 1/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/xrpn-sol) |
-| [Felysyum](./polygon/felysyum.md) | FELY | Polygon | 🟡 53/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/felysyum-poly) |
-| [Metaplex](./bsc/metaplex.md) | MPLX | BNB Chain | 🟠 65/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/metaplex-bsc) |
 
 ---
 
 ## Browse by Network
 
-[Solana (928)](./solana/README.md) · [BNB Chain (405)](./bsc/README.md) · [Ethereum (392)](./ethereum/README.md) · [Base (286)](./base/README.md) · [Arbitrum (75)](./arbitrum/README.md) · [Polygon (16)](./polygon/README.md)
+[Solana (933)](./solana/README.md) · [BNB Chain (405)](./bsc/README.md) · [Ethereum (392)](./ethereum/README.md) · [Base (286)](./base/README.md) · [Arbitrum (75)](./arbitrum/README.md) · [Polygon (16)](./polygon/README.md)
 
 ---
 
