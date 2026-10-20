@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**933 reports** · Updated daily · [← All Networks](../README.md)
+**946 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,19 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [AOP](./aop-sol-9848.md) | AOP | 🟢 6/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/aop-sol-9848) |
+| [SAMA Index](./sama-index.md) | SAMA4 | 🟠 68/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/sama-index-sol) |
+| [CATWIFMOTION](./catwifmotion.md) | MOMO | 🟢 23/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/catwifmotion-sol) |
+| [ARTEMI](./artemi.md) | ARTEMI | 🟢 24/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/artemi-sol) |
+| [jeanne misanthrope](./jeanne-misanthrope.md) | JEANNE | 🟡 38/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/jeanne-misanthrope-sol) |
+| [Punani Coin](./punani-coin.md) | PUNANI | 🟢 23/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/punani-coin-sol) |
+| [Darkinator Cat](./darkinator-cat.md) | DARKCAT | 🟢 10/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/darkinator-cat-sol) |
+| [DacityCoin](./dacitycoin.md) | DTC | 🟢 17/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/dacitycoin-sol) |
+| [One Piece](./one-piece.md) | ONEPIECE | 🟢 20/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/one-piece-sol) |
+| [Money Business](./money-business.md) | MONEYBIZ | 🟢 14/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/money-business-sol) |
+| [Hellhound](./hellhound-sol-dd6f.md) | HELL | 🟢 0/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/hellhound-sol-dd6f) |
+| [American Overwatch Protocol](./american-overwatch-protocol.md) | AOP | 🟢 0/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-sol) |
+| [the collectooor](./the-collectooor-sol-2670.md) | COLLECTOOOR | 🟢 0/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/the-collectooor-sol-2670) |
 | [XTO](./xto-sol-e3d8.md) | XTO | 🟢 0/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/xto-sol-e3d8) |
 | [American Oil Dividend Fund](./american-oil-dividend-fund-sol-0b77.md) | AODF | 🟢 0/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol-0b77) |
 | [United Dividend Trust Fund🔥](./united-dividend-trust-fund.md) | UDTF | 🟢 0/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/united-dividend-trust-fund-sol) |
