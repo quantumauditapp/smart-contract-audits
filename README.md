@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-2134-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-2147-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,19 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [The Official Memecoin](./solana/the-official-memecoin.md) | MEMECOIN | Solana | 🟢 23/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/the-official-memecoin-sol) |
+| [xingxing](./solana/xingxing.md) | XINGXING | Solana | 🟢 20/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/xingxing-sol) |
+| [American Overwatch Protocol](./base/american-overwatch-protocol.md) | AOP | Base | 🟠 67/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-base) |
+| [USDP](./base/usdp.md) | USDP | Base | 🟡 60/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/usdp-base) |
+| [UDR](./base/udr.md) | UDR | Base | 🟠 79/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/udr-base) |
+| [World Oil Fund Institution](./base/world-oil-fund-institution.md) | WOFI | Base | 🟡 62/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/world-oil-fund-institution-base) |
+| [NTDA](./base/ntda.md) | NTDA | Base | 🟡 63/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/ntda-base) |
+| [WOTF](./base/wotf.md) | WOTF | Base | 🟡 64/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/wotf-base) |
+| [The Final Form COW](./bsc/the-final-form-cow.md) | HEYI | BNB Chain | 🟡 57/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/the-final-form-cow-bsc) |
+| [重生之我在币安广场赚100个亿](./bsc/100.md) | 重生之我在币安广场赚100个亿 | BNB Chain | 🟡 45/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/100-bsc) |
+| [Agentic Inu](./bsc/agentic-inu-bsc-89db.md) | .AI | BNB Chain | 🟡 50/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/agentic-inu-bsc-89db) |
+| [heyi.ai](./bsc/heyiai.md) | HEYI | BNB Chain | 🟡 50/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/heyiai-bsc) |
+| [Agentic Inu](./bsc/agentic-inu.md) | .AI | BNB Chain | 🟠 81/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/agentic-inu-bsc) |
 | [Pogo](./solana/pogo.md) | POGO | Solana | 🟡 36/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/pogo-sol) |
 | [SpaceX (Reality Tokenized)](./arbitrum/spacex-reality-tokenized.md) | RSPCX | Arbitrum | 🟠 84/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/spacex-reality-tokenized-arb) |
 | [Gains Network](./polygon/gains-network.md) | GNS | Polygon | 🟡 51/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/gains-network-poly) |
@@ -29,25 +42,12 @@
 | [AOP](./solana/aop-sol-9848.md) | AOP | Solana | 🟢 6/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/aop-sol-9848) |
 | [SAMA Index](./solana/sama-index.md) | SAMA4 | Solana | 🟠 68/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/sama-index-sol) |
 | [CATWIFMOTION](./solana/catwifmotion.md) | MOMO | Solana | 🟢 23/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/catwifmotion-sol) |
-| [ARTEMI](./solana/artemi.md) | ARTEMI | Solana | 🟢 24/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/artemi-sol) |
-| [jeanne misanthrope](./solana/jeanne-misanthrope.md) | JEANNE | Solana | 🟡 38/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/jeanne-misanthrope-sol) |
-| [Punani Coin](./solana/punani-coin.md) | PUNANI | Solana | 🟢 23/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/punani-coin-sol) |
-| [Darkinator Cat](./solana/darkinator-cat.md) | DARKCAT | Solana | 🟢 10/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/darkinator-cat-sol) |
-| [DacityCoin](./solana/dacitycoin.md) | DTC | Solana | 🟢 17/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/dacitycoin-sol) |
-| [One Piece](./solana/one-piece.md) | ONEPIECE | Solana | 🟢 20/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/one-piece-sol) |
-| [Money Business](./solana/money-business.md) | MONEYBIZ | Solana | 🟢 14/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/money-business-sol) |
-| [Hellhound](./solana/hellhound-sol-dd6f.md) | HELL | Solana | 🟢 0/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/hellhound-sol-dd6f) |
-| [American Overwatch Protocol](./solana/american-overwatch-protocol.md) | AOP | Solana | 🟢 0/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-sol) |
-| [the collectooor](./solana/the-collectooor-sol-2670.md) | COLLECTOOOR | Solana | 🟢 0/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/the-collectooor-sol-2670) |
-| [XTO](./solana/xto-sol-e3d8.md) | XTO | Solana | 🟢 0/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/xto-sol-e3d8) |
-| [American Oil Dividend Fund](./solana/american-oil-dividend-fund-sol-0b77.md) | AODF | Solana | 🟢 0/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol-0b77) |
-| [United Dividend Trust Fund🔥](./solana/united-dividend-trust-fund.md) | UDTF | Solana | 🟢 0/100 | 2026-10-20 | [↗](https://quantumaudit.app/token/united-dividend-trust-fund-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (952)](./solana/README.md) · [BNB Chain (411)](./bsc/README.md) · [Ethereum (392)](./ethereum/README.md) · [Base (286)](./base/README.md) · [Arbitrum (76)](./arbitrum/README.md) · [Polygon (17)](./polygon/README.md)
+[Solana (954)](./solana/README.md) · [BNB Chain (416)](./bsc/README.md) · [Ethereum (392)](./ethereum/README.md) · [Base (292)](./base/README.md) · [Arbitrum (76)](./arbitrum/README.md) · [Polygon (17)](./polygon/README.md)
 
 ---
 

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**286 reports** · Updated daily · [← All Networks](../README.md)
+**292 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [American Overwatch Protocol](./american-overwatch-protocol.md) | AOP | 🟠 67/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-base) |
+| [USDP](./usdp.md) | USDP | 🟡 60/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/usdp-base) |
+| [UDR](./udr.md) | UDR | 🟠 79/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/udr-base) |
+| [World Oil Fund Institution](./world-oil-fund-institution.md) | WOFI | 🟡 62/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/world-oil-fund-institution-base) |
+| [NTDA](./ntda.md) | NTDA | 🟡 63/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/ntda-base) |
+| [WOTF](./wotf.md) | WOTF | 🟡 64/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/wotf-base) |
 | [Papertrade](./papertrade-base-f1ca.md) | PAPER | 🟡 54/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/papertrade-base-f1ca) |
 | [Digital Oil Trust Fund🔥](./digital-oil-trust-fund.md) | DOTF | 🔴 92/100 Critical Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/digital-oil-trust-fund-base) |
 | [United States Dividend Program🔥](./united-states-dividend-program.md) | USDP | 🟡 61/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/united-states-dividend-program-base) |

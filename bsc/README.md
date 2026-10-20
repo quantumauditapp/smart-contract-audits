@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**411 reports** · Updated daily · [← All Networks](../README.md)
+**416 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [The Final Form COW](./the-final-form-cow.md) | HEYI | 🟡 57/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/the-final-form-cow-bsc) |
+| [重生之我在币安广场赚100个亿](./100.md) | 重生之我在币安广场赚100个亿 | 🟡 45/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/100-bsc) |
+| [Agentic Inu](./agentic-inu-bsc-89db.md) | .AI | 🟡 50/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/agentic-inu-bsc-89db) |
+| [heyi.ai](./heyiai.md) | HEYI | 🟡 50/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/heyiai-bsc) |
+| [Agentic Inu](./agentic-inu.md) | .AI | 🟠 81/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/agentic-inu-bsc) |
 | [Toshi](./toshi.md) | TOSHI | 🟡 58/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/toshi-bsc) |
 | [雪球](./token-4c8e5e.md) | スノーボール | 🟢 15/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/token-4c8e5e-bsc) |
 | [BIAO](./biao.md) | BIAO | 🟢 29/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/biao-bsc) |
