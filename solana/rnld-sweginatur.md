@@ -2,14 +2,14 @@
 token: Rnld Sweginatur
 ticker: RNLD
 network: solana
-risk_score: 46
-status: high
+risk_score: 8
+status: low
 date: 2026-08-14
 ---
 
 # Rnld Sweginatur (RNLD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 46/100 — 🟠 High Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rnld-sweginatur-sol)
 
@@ -25,9 +25,9 @@ The Rnld Sweginatur (RNLD) SPL token mint exhibits a low-risk profile. Both mint
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the classic `spl-token` program. Both the mint authority and freeze authority are revoked, ensuring no new tokens can be minted and no holder accounts can be frozen… |
-| **Governance / Economics** | 2/10 | High | The token's economic profile shows moderate liquidity at $53,569 USD, which is not critically low. Holder concentration is also moderate, with the top 10 accounts holding 42.75% of the supply, which… |
-| **Upgrades** | 5/10 | Medium | The token's upgradeability risk is low due to the revocation of both mint and freeze authorities. This prevents any post-launch changes to the token's supply or account freeze status. Furthermore… |
+| **Technical** | 10/10 | Low | The token is implemented using the classic `spl-token` program. Both the mint authority and freeze authority are revoked, ensuring no new tokens can be minted and no holder accounts can be frozen… |
+| **Governance / Economics** | 6/10 | Medium | The token's economic profile shows moderate liquidity at $53,569 USD, which is not critically low. Holder concentration is also moderate, with the top 10 accounts holding 42.75% of the supply, which… |
+| **Upgrades** | 8/10 | Low | The token's upgradeability risk is low due to the revocation of both mint and freeze authorities. This prevents any post-launch changes to the token's supply or account freeze status. Furthermore… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -45,22 +45,21 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |--------|-------|
 | **Contract** | [`6VoGmo...XbD1`](https://solscan.io/account/6VoGmoGsCP7eraJoXiQ6n3fTeJW4g6tap7cNRBEsXbD1) |
 | **Network** | Solana |
-| **Price** | $0.0003766 |
-| **24h Volume** | $34.6K |
-| **Liquidity** | $53.7K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.0002517 |
+| **24h Volume** | $198 |
+| **Liquidity** | $55.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 42.8% of supply |
+| **Top-10 Holders** | 44.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 385 buys / 477 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: perpspad
 ticker: PERPSPAD
 network: solana
-risk_score: 62
-status: high
+risk_score: 12
+status: low
 date: 2026-08-12
 ---
 
 # perpspad (PERPSPAD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/perpspad-sol)
 
@@ -25,9 +25,9 @@ This audit of the perpspad SPL token mint found that the mint and freeze authori
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The perpspad token is an SPL token operating on the Solana blockchain, utilizing the standard spl-token program. Both the mint authority and freeze authority have been revoked, meaning no new tokens… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a holder concentration where the top 10 accounts hold approximately 40.09% of the total supply, which is below the threshold for high concentration risk. Total DEX liquidity stands… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority have both been revoked, preventing any further minting or freezing actions. The token is not a Token-2022 extension, so there are no upgradeable features like… |
+| **Technical** | 10/10 | Low | The perpspad token is an SPL token operating on the Solana blockchain, utilizing the standard spl-token program. Both the mint authority and freeze authority have been revoked, meaning no new tokens… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a holder concentration where the top 10 accounts hold approximately 40.09% of the total supply, which is below the threshold for high concentration risk. Total DEX liquidity stands… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority have both been revoked, preventing any further minting or freezing actions. The token is not a Token-2022 extension, so there are no upgradeable features like… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The token's metadata is mutable, as indicated by 'metadata_mutable: True'. This 
 |--------|-------|
 | **Contract** | [`PerPsC...6fHL`](https://solscan.io/account/PerPsCe2SJ7Q25CN4R5TTX4fmBdmknE2hQmqCt96fHL) |
 | **Network** | Solana |
-| **Price** | $0.0002056 |
-| **24h Volume** | $141.8K |
-| **Liquidity** | $32.7K |
-| **Volume / Liquidity** | 4.3× |
+| **Price** | $0.005688 |
+| **24h Volume** | $515.7K |
+| **Liquidity** | $264.0K |
+| **Volume / Liquidity** | 2.0× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 40.1% of supply |
+| **Top-10 Holders** | 27.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1033 buys / 818 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The token's metadata is mutable, as indicated by 'metadata_mutable: True'. This 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

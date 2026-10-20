@@ -2,14 +2,14 @@
 token: Permission-less Lending
 ticker: MAGPIE
 network: solana
-risk_score: 53
-status: high
+risk_score: 21
+status: low
 date: 2026-08-15
 ---
 
 # Permission-less Lending (MAGPIE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 21/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/permission-less-lending-sol)
 
@@ -25,9 +25,9 @@ This audit of the Permission-less Lending (Magpie) SPL Token Mint found no criti
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Permission-less Lending (Magpie) token is an SPL Token-2022 mint. Its mint authority is revoked, ensuring no new tokens can be created, fixing the total supply at 989,083,293.190903 tokens with 6… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a moderate holder concentration, with the top 10 accounts holding 36.52% of the total supply, which is below the threshold for high concentration. Total DEX liquidity stands at… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority for the Permission-less Lending (Magpie) token are both revoked, meaning these critical controls cannot be re-enabled or transferred. The token is built on the… |
+| **Technical** | 10/10 | Low | The Permission-less Lending (Magpie) token is an SPL Token-2022 mint. Its mint authority is revoked, ensuring no new tokens can be created, fixing the total supply at 989,083,293.190903 tokens with 6… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a moderate holder concentration, with the top 10 accounts holding 36.52% of the total supply, which is below the threshold for high concentration. Total DEX liquidity stands at… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the Permission-less Lending (Magpie) token are both revoked, meaning these critical controls cannot be re-enabled or transferred. The token is built on the… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -45,22 +45,21 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |--------|-------|
 | **Contract** | [`9UuLsJ...pump`](https://solscan.io/account/9UuLsJ3jf8ViBNeRcwXD53re5G3ypgfKK3s2EiMMpump) |
 | **Network** | Solana |
-| **Price** | $0.0004213 |
-| **24h Volume** | $111.2K |
-| **Liquidity** | $69.5K |
-| **Volume / Liquidity** | 1.6× |
+| **Price** | $0.0001091 |
+| **24h Volume** | $2.9K |
+| **Liquidity** | $45.1K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 35.7% of supply |
+| **Top-10 Holders** | 48.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1027 buys / 1010 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Piñata
 ticker: PINATA
 network: solana
-risk_score: 66
-status: high
+risk_score: 28
+status: low
 date: 2026-08-14
 ---
 
 # Piñata (PINATA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pinata-sol)
 
@@ -25,9 +25,9 @@ The Piñata SPL Token Mint on Solana exhibits a low technical risk profile with 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Piñata token is implemented using the spl-token-2022 program, offering modern SPL features. Key administrative authorities, including the mint authority and freeze authority, have been revoked… |
-| **Governance / Economics** | 1/10 | High | The economic profile of the Piñata token shows a moderate holder concentration, with the top 10 accounts holding 30.83% of the total supply, which is below the threshold for high concentration.… |
-| **Upgrades** | 5/10 | Medium | The Piñata token mint has a robust upgrade and mutability posture. Both the mint and freeze authorities have been permanently revoked, preventing any future changes to the token's supply or the… |
+| **Technical** | 10/10 | Low | The Piñata token is implemented using the spl-token-2022 program, offering modern SPL features. Key administrative authorities, including the mint authority and freeze authority, have been revoked… |
+| **Governance / Economics** | 4/10 | Medium | The economic profile of the Piñata token shows a moderate holder concentration, with the top 10 accounts holding 30.83% of the total supply, which is below the threshold for high concentration.… |
+| **Upgrades** | 8/10 | Low | The Piñata token mint has a robust upgrade and mutability posture. Both the mint and freeze authorities have been permanently revoked, preventing any future changes to the token's supply or the… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 6 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`Edpcd9...pump`](https://solscan.io/account/Edpcd9aYh6BVRKV5hYrgnEuJ3MHAFcdnHtSL9yvopump) |
 | **Network** | Solana |
-| **Price** | $0.0001435 |
-| **24h Volume** | $129.7K |
-| **Liquidity** | $27.7K |
-| **Volume / Liquidity** | 4.7× |
+| **Price** | $0.0002237 |
+| **24h Volume** | $8.9K |
+| **Liquidity** | $43.6K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | 30.8% of supply |
+| **Top-10 Holders** | 31.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 11686 buys / 4432 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 6 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

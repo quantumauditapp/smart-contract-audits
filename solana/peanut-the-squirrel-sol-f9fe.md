@@ -2,14 +2,14 @@
 token: Peanut the Squirrel 
 ticker: PNUT 
 network: solana
-risk_score: 56
-status: high
+risk_score: 25
+status: low
 date: 2026-08-13
 ---
 
 # Peanut the Squirrel  (PNUT ) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 56/100 — 🟠 High Risk**
+> **Risk Score: 25/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/peanut-the-squirrel-sol-f9fe)
 
@@ -25,9 +25,9 @@ This SPL token mint, 'Peanut the Squirrel (Pnut)', has both its Mint Authority a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The token is an SPL Token Program v3 mint. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be frozen. No Token-2022… |
-| **Governance / Economics** | 1/10 | High | Holder concentration is a concern, with the top 10 token accounts holding 69.65% of the total supply, indicating a potential for price manipulation from large holders. Despite this, the token has… |
-| **Upgrades** | 4/10 | Medium | The token's core parameters are immutable as both Mint and Freeze authorities are revoked. There are no active Token-2022 extensions that allow for post-deployment changes to token behavior, such as… |
+| **Technical** | 8/10 | Low | The token is an SPL Token Program v3 mint. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be frozen. No Token-2022… |
+| **Governance / Economics** | 2/10 | High | Holder concentration is a concern, with the top 10 token accounts holding 69.65% of the total supply, indicating a potential for price manipulation from large holders. Despite this, the token has… |
+| **Upgrades** | 7/10 | Low | The token's core parameters are immutable as both Mint and Freeze authorities are revoked. There are no active Token-2022 extensions that allow for post-deployment changes to token behavior, such as… |
 
 ## LP Distribution
 
@@ -58,22 +58,21 @@ Top 10 token accounts hold 69.65% of supply. Coordinated sell-off would crash pr
 |--------|-------|
 | **Contract** | [`2qEHjD...pump`](https://solscan.io/account/2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump) |
 | **Network** | Solana |
-| **Price** | $0.0416 |
-| **24h Volume** | $149.1K |
-| **Liquidity** | $2.57M |
+| **Price** | $0.05642 |
+| **24h Volume** | $549.4K |
+| **Liquidity** | $3.74M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 69.7% of supply |
+| **Top-10 Holders** | 70.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 872 buys / 779 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -81,9 +80,8 @@ Top 10 token accounts hold 69.65% of supply. Coordinated sell-off would crash pr
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

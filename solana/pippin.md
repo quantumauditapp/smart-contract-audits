@@ -2,14 +2,14 @@
 token: Pippin
 ticker: PIPPIN
 network: solana
-risk_score: 53
-status: high
+risk_score: 15
+status: low
 date: 2026-08-11
 ---
 
 # Pippin (PIPPIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 15/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pippin-sol)
 
@@ -25,15 +25,15 @@ The Pippin SPL token mint exhibits a high concentration of tokens among its top 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Pippin token is an SPL token operating under the `spl-token` program (v3). Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a high concentration of ownership, with the top 10 token accounts holding 71.74% of the total supply. This level of concentration introduces significant governance and economic… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are fixed due to the revocation of both mint and freeze authorities, meaning no further tokens can be created and no accounts can be frozen. The metadata is also… |
+| **Technical** | 9/10 | Low | The Pippin token is an SPL token operating under the `spl-token` program (v3). Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no… |
+| **Governance / Economics** | 2/10 | High | The token exhibits a high concentration of ownership, with the top 10 token accounts holding 71.74% of the total supply. This level of concentration introduces significant governance and economic… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are fixed due to the revocation of both mint and freeze authorities, meaning no further tokens can be created and no accounts can be frozen. The metadata is also… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **LP Burned** | ✅ 99.1% (≈ permanent lock) |
+| **LP Burned** | ✅ 99.2% (≈ permanent lock) |
 
 ## Security Findings
 
@@ -51,22 +51,21 @@ Top 10 token accounts hold 71.74% of supply. Coordinated sell-off would crash pr
 |--------|-------|
 | **Contract** | [`Dfh5Dz...pump`](https://solscan.io/account/Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump) |
 | **Network** | Solana |
-| **Price** | $0.01731 |
-| **24h Volume** | $269.4K |
-| **Liquidity** | $3.27M |
+| **Price** | $0.01887 |
+| **24h Volume** | $395.8K |
+| **Liquidity** | $4.28M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 71.7% of supply |
+| **Top-10 Holders** | 71.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 889 buys / 884 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -74,9 +73,8 @@ Top 10 token accounts hold 71.74% of supply. Coordinated sell-off would crash pr
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

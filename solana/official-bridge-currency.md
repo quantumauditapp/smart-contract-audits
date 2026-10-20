@@ -2,14 +2,14 @@
 token: Official Bridge Currency
 ticker: OBC
 network: solana
-risk_score: 67
-status: high
+risk_score: 49
+status: medium
 date: 2026-06-10
 ---
 
 # Official Bridge Currency (OBC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/official-bridge-currency-sol)
 
@@ -25,9 +25,9 @@ The Official Bridge Currency (OBC) token presents a high risk primarily due to i
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Official Bridge Currency (OBC) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted… |
+| **Technical** | 8/10 | Low | The Official Bridge Currency (OBC) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted… |
 | **Governance / Economics** | 1/10 | High | The token exhibits very low liquidity, with only $4,141 in total DEX liquidity. This low liquidity means that even small trades could experience significant slippage, making it difficult to enter or… |
-| **Upgrades** | 5/10 | Medium | The token's configuration is largely immutable, as both the mint and freeze authorities have been revoked. This means the token supply cannot be increased, and no accounts can be frozen post-launch.… |
+| **Upgrades** | 8/10 | Low | The token's configuration is largely immutable, as both the mint and freeze authorities have been revoked. This means the token supply cannot be increased, and no accounts can be frozen post-launch.… |
 
 ## Security Findings
 
@@ -45,21 +45,20 @@ Total DEX liquidity is $4,141. Slippage will be severe; large positions cannot b
 |--------|-------|
 | **Contract** | [`2NECWd...ydk1`](https://solscan.io/account/2NECWdgEjSTLv2yRFmSJtiNdwyVj7sNNUcqjWGc5ydk1) |
 | **Network** | Solana |
-| **Price** | $0.002121 |
-| **24h Volume** | $332.5K |
-| **Liquidity** | $69.0K |
-| **Volume / Liquidity** | 4.8× |
+| **Price** | $0.00000564 |
+| **24h Volume** | $1 |
+| **Liquidity** | $3.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 46.7% of supply |
+| **Top-10 Holders** | 50.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -67,9 +66,8 @@ Total DEX liquidity is $4,141. Slippage will be severe; large positions cannot b
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

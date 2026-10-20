@@ -2,14 +2,14 @@
 token: Pump.fun
 ticker: PUMP
 network: solana
-risk_score: 53
-status: high
+risk_score: 15
+status: low
 date: 2026-06-28
 ---
 
 # Pump.fun (PUMP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 15/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pumpfun-sol)
 
@@ -25,9 +25,19 @@ The Pump (PUMP) token mint on Solana demonstrates a strong security posture with
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Pump (PUMP) token is implemented using the spl-token-2022 program. Its supply is fixed at 850,388,805.799315888 tokens due to the Mint Authority being revoked. No Transfer Hook is active, and new… |
-| **Governance / Economics** | 1/10 | High | The token exhibits healthy liquidity with $63,317,940 USD available on DEXs. The 24-hour volume of $21,543,259 USD results in a normal Volume/Liquidity Ratio of 0.34, not indicating wash trading. The… |
-| **Upgrades** | 2/10 | High | The token's core parameters are immutable, as both Mint and Freeze authorities are revoked. Metadata is also immutable ("metadata_mutable: False"), ensuring the token's name, symbol, and image cannot… |
+| **Technical** | 10/10 | Low | The Pump (PUMP) token is implemented using the spl-token-2022 program. Its supply is fixed at 850,388,805.799315888 tokens due to the Mint Authority being revoked. No Transfer Hook is active, and new… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits healthy liquidity with $63,317,940 USD available on DEXs. The 24-hour volume of $21,543,259 USD results in a normal Volume/Liquidity Ratio of 0.34, not indicating wash trading. The… |
+| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable, as both Mint and Freeze authorities are revoked. Metadata is also immutable ("metadata_mutable: False"), ensuring the token's name, symbol, and image cannot… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Pump (PUMP) token mint on Solana demonstrates a strong security posture with
 |--------|-------|
 | **Contract** | [`pumpCm...9Dfn`](https://solscan.io/account/pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn) |
 | **Network** | Solana |
-| **Price** | $0.001946 |
-| **24h Volume** | $1.01M |
-| **Liquidity** | $14.62M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.004629 |
+| **24h Volume** | $7.55M |
+| **Liquidity** | $23.45M |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 68.8% of supply |
+| **Top-10 Holders** | 59.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 516 buys / 521 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Pump (PUMP) token mint on Solana demonstrates a strong security posture with
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

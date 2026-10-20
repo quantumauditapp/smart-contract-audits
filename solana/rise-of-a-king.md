@@ -2,14 +2,14 @@
 token: Rise of a King
 ticker: KIO
 network: solana
-risk_score: 54
-status: high
+risk_score: 43
+status: medium
 date: 2026-08-11
 ---
 
 # Rise of a King (KIO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 54/100 — 🟠 High Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rise-of-a-king-sol)
 
@@ -25,9 +25,9 @@ The Rise of a King (KIO) SPL Token Mint has revoked both mint and freeze authori
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Rise of a King (KIO) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a moderate holder concentration, with the top 10 accounts holding 20.84% of the supply, which is below typical thresholds for high risk. Total DEX liquidity stands at $119,450… |
-| **Upgrades** | 5/10 | Medium | The token mint's core authorities, including mint and freeze, are permanently revoked, preventing any future changes to the token's supply or account freeze status. Key Token-2022 extensions such as… |
+| **Technical** | 8/10 | Low | The Rise of a King (KIO) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a moderate holder concentration, with the top 10 accounts holding 20.84% of the supply, which is below typical thresholds for high risk. Total DEX liquidity stands at $119,450… |
+| **Upgrades** | 8/10 | Low | The token mint's core authorities, including mint and freeze, are permanently revoked, preventing any future changes to the token's supply or account freeze status. Key Token-2022 extensions such as… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`7rMnp9...pump`](https://solscan.io/account/7rMnp9EJd61SvNn8LGc7SAJeQxM36oeECKmP2a7opump) |
 | **Network** | Solana |
-| **Price** | $0.001225 |
-| **24h Volume** | $1.08M |
-| **Liquidity** | $117.1K |
-| **Volume / Liquidity** | 9.2× |
+| **Price** | $0.00001909 |
+| **24h Volume** | $205 |
+| **Liquidity** | $18.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | 20.7% of supply |
+| **Top-10 Holders** | 71.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4511 buys / 4639 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Quantum Cat
 ticker: MAFIA
 network: solana
-risk_score: 83
-status: critical
+risk_score: 58
+status: medium
 date: 2026-08-15
 ---
 
 # Quantum Cat (MAFIA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 83/100 — 🔴 Critical Risk**
+> **Risk Score: 58/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/quantum-cat-sol)
 
@@ -25,9 +25,9 @@ This SPL Token Mint audit for Quantum Cat (Mafia) identified two medium-severity
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the Mint Authority and Freeze Authority are revoked (None), preventing further token creation or… |
+| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the Mint Authority and Freeze Authority are revoked (None), preventing further token creation or… |
 | **Governance / Economics** | 1/10 | High | The economic profile shows a moderate holder concentration, with the top 10 token accounts holding 61.33% of the total supply, which could lead to price volatility from large sell-offs. Total DEX… |
-| **Upgrades** | 5/10 | Medium | The token mint exhibits a robust and immutable configuration. The Mint Authority and Freeze Authority are both revoked, meaning no new tokens can be minted and no accounts can be frozen post-launch.… |
+| **Upgrades** | 8/10 | Low | The token mint exhibits a robust and immutable configuration. The Mint Authority and Freeze Authority are both revoked, meaning no new tokens can be minted and no accounts can be frozen post-launch.… |
 
 ## Security Findings
 
@@ -52,22 +52,21 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`DcK63V...pump`](https://solscan.io/account/DcK63VSmkpFRdvNpBh1947QxF7hHud5TbMmhj4REpump) |
 | **Network** | Solana |
-| **Price** | $0.00003049 |
-| **24h Volume** | $32.3K |
-| **Liquidity** | $12.7K |
-| **Volume / Liquidity** | 2.5× |
+| **Price** | $0.00000592 |
+| **24h Volume** | $18 |
+| **Liquidity** | $5.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 61.3% of supply |
+| **Top-10 Holders** | 86.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 406 buys / 379 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -75,9 +74,8 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

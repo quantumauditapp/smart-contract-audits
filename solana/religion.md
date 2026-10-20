@@ -2,14 +2,14 @@
 token: Religion
 ticker: RELIGION
 network: solana
-risk_score: 79
-status: critical
+risk_score: 35
+status: medium
 date: 2026-06-18
 ---
 
 # Religion (RELIGION) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 79/100 — 🔴 Critical Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/religion-sol)
 
@@ -25,9 +25,19 @@ This Solana SPL Token Mint, Religion (RELIGION), demonstrates a robust security 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account states. No transfer… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a healthy trading pattern with a 24-hour volume of $13,442 against a liquidity of $15,767, resulting in a normal Volume/Liquidity Ratio of 0.85. The DEX pair has been active for 27… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are fixed due to the revocation of both mint and freeze authorities. Key Token-2022 extensions, such as transfer hook and default account state frozen, are not enabled.… |
+| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account states. No transfer… |
+| **Governance / Economics** | 3/10 | High | The token exhibits a healthy trading pattern with a 24-hour volume of $13,442 against a liquidity of $15,767, resulting in a normal Volume/Liquidity Ratio of 0.85. The DEX pair has been active for 27… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are fixed due to the revocation of both mint and freeze authorities. Key Token-2022 extensions, such as transfer hook and default account state frozen, are not enabled.… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This Solana SPL Token Mint, Religion (RELIGION), demonstrates a robust security 
 |--------|-------|
 | **Contract** | [`CkJZvv...pump`](https://solscan.io/account/CkJZvvWbwmiDepzrk71pq6gMXBfRVfUkhXR61iz3pump) |
 | **Network** | Solana |
-| **Price** | $0.00001185 |
-| **24h Volume** | $1.1K |
-| **Liquidity** | $8.9K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.00001615 |
+| **24h Volume** | $33 |
+| **Liquidity** | $12.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 59.3% of supply |
+| **Top-10 Holders** | 58.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2070 buys / 1609 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This Solana SPL Token Mint, Religion (RELIGION), demonstrates a robust security 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

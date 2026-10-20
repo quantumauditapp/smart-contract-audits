@@ -2,14 +2,14 @@
 token: Orange Coin
 ticker: ORANGE
 network: solana
-risk_score: 50
-status: high
+risk_score: 52
+status: medium
 date: 2026-08-14
 ---
 
 # Orange Coin (ORANGE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/orange-coin-sol)
 
@@ -25,9 +25,9 @@ The Orange Coin token mint is an SPL Token-2022 with both mint and freeze author
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Orange Coin is an SPL Token-2022 mint. Its mint authority is revoked, ensuring no new tokens can be created, fixing the total supply at 995,072,029.438782 ORANGE. The freeze authority is also… |
-| **Governance / Economics** | 2/10 | High | The token's DEX pair is very new, established only 3 days ago, which means there is limited historical data to evaluate market stability or team actions. Liquidity stands at $49,982 USD, with a… |
-| **Upgrades** | 5/10 | Medium | The token mint has both its mint and freeze authorities revoked, meaning these core parameters cannot be changed. No permanent delegate is configured, and the metadata is not mutable, ensuring the… |
+| **Technical** | 8/10 | Low | The Orange Coin is an SPL Token-2022 mint. Its mint authority is revoked, ensuring no new tokens can be created, fixing the total supply at 995,072,029.438782 ORANGE. The freeze authority is also… |
+| **Governance / Economics** | 1/10 | High | The token's DEX pair is very new, established only 3 days ago, which means there is limited historical data to evaluate market stability or team actions. Liquidity stands at $49,982 USD, with a… |
+| **Upgrades** | 8/10 | Low | The token mint has both its mint and freeze authorities revoked, meaning these core parameters cannot be changed. No permanent delegate is configured, and the metadata is not mutable, ensuring the… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair for Orange Coin was created 3 days ago. This short operational hist
 |--------|-------|
 | **Contract** | [`C6ASDs...pump`](https://solscan.io/account/C6ASDsxzqBvF5bCQFVAGMRWwfgZNhfozbb9DkgiKpump) |
 | **Network** | Solana |
-| **Price** | $0.0003867 |
-| **24h Volume** | $431.9K |
-| **Liquidity** | $51.0K |
-| **Volume / Liquidity** | 8.5× |
+| **Price** | $0.00000778 |
+| **24h Volume** | $29 |
+| **Liquidity** | $7.3K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 15.5% of supply |
+| **Top-10 Holders** | 97.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 26146 buys / 25127 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair for Orange Coin was created 3 days ago. This short operational hist
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

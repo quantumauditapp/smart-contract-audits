@@ -2,14 +2,14 @@
 token: Purple Bitcoin
 ticker: PBTC
 network: solana
-risk_score: 26
-status: medium
+risk_score: 0
+status: low
 date: 2026-06-10
 ---
 
 # Purple Bitcoin (PBTC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 26/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/purple-bitcoin-sol)
 
@@ -25,9 +25,9 @@ The Purple Bitcoin (PBTC) SPL token mint demonstrates a strong security posture 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the standard spl-token program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account freezing. No… |
-| **Governance / Economics** | 3/10 | High | DEX market data indicates a healthy liquidity of $235,645 USD and a 24-hour volume of $242,805 USD. The Volume/Liquidity Ratio is 1.03, which is normal and does not suggest wash trading. The DEX pair… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or the ability to freeze holder accounts. Metadata is immutable (`metadata_mutable… |
+| **Technical** | 10/10 | Low | The token is implemented using the standard spl-token program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account freezing. No… |
+| **Governance / Economics** | 7/10 | Low | DEX market data indicates a healthy liquidity of $235,645 USD and a 24-hour volume of $242,805 USD. The Volume/Liquidity Ratio is 1.03, which is normal and does not suggest wash trading. The DEX pair… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or the ability to freeze holder accounts. Metadata is immutable (`metadata_mutable… |
 
 ## LP Distribution
 
@@ -35,27 +35,36 @@ The Purple Bitcoin (PBTC) SPL token mint demonstrates a strong security posture 
 |--------|-------|
 | **LP Burned** | ✅ 100.0% (≈ permanent lock) |
 
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
+
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
 | **Contract** | [`HfMbPy...bF5p`](https://solscan.io/account/HfMbPyDdZH6QMaDDUokjYCkHxzjoGBMpgaUvpLWGbF5p) |
 | **Network** | Solana |
-| **Price** | $0.1689 |
-| **24h Volume** | $17.5K |
-| **Liquidity** | $214.5K |
+| **Price** | $0.2155 |
+| **24h Volume** | $44.2K |
+| **Liquidity** | $301.5K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 22.0% of supply |
+| **Top-10 Holders** | 22.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -63,9 +72,8 @@ The Purple Bitcoin (PBTC) SPL token mint demonstrates a strong security posture 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

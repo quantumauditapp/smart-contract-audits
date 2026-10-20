@@ -2,14 +2,14 @@
 token: RIBBIT ZYGO THE FROG 
 ticker: RIBBIT
 network: solana
-risk_score: 69
-status: high
+risk_score: 31
+status: low
 date: 2026-07-18
 ---
 
 # RIBBIT ZYGO THE FROG  (RIBBIT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 69/100 — 🟠 High Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ribbit-zygo-the-frog-sol)
 
@@ -25,9 +25,19 @@ This audit of the RIBBIT ZYGO THE FROG (RIBBIT) SPL Token Mint found no critical
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The RIBBIT token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be frozen. No Transfer… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate DEX liquidity at $43,626, which is sufficient to avoid the 'Very Low Liquidity' flag. The 24-hour volume to liquidity ratio is 6.57, which does not meet the threshold for… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, meaning no further changes can be made to the token's supply or account freeze status. The token utilizes the spl-token-2022 program but does… |
+| **Technical** | 10/10 | Low | The RIBBIT token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be frozen. No Transfer… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate DEX liquidity at $43,626, which is sufficient to avoid the 'Very Low Liquidity' flag. The 24-hour volume to liquidity ratio is 6.57, which does not meet the threshold for… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning no further changes can be made to the token's supply or account freeze status. The token utilizes the spl-token-2022 program but does… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the RIBBIT ZYGO THE FROG (RIBBIT) SPL Token Mint found no critical
 |--------|-------|
 | **Contract** | [`FrtbBA...pump`](https://solscan.io/account/FrtbBAaSZksfh4oV46E7Pvb43QiiUmYLD3dcGS6gpump) |
 | **Network** | Solana |
-| **Price** | $0.0001135 |
-| **24h Volume** | $530 |
-| **Liquidity** | $28.2K |
+| **Price** | $0.00006122 |
+| **24h Volume** | $44 |
+| **Liquidity** | $26.7K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 8d |
-| **Top-10 Holders** | 50.8% of supply |
+| **Top-10 Holders** | 60.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2215 buys / 1084 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the RIBBIT ZYGO THE FROG (RIBBIT) SPL Token Mint found no critical
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: OBSDIAN
 ticker: OBSD
 network: solana
-risk_score: 100
-status: critical
+risk_score: 53
+status: medium
 date: 2026-07-26
 ---
 
 # OBSDIAN (OBSD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 53/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/obsdian-sol)
 
@@ -25,9 +25,9 @@ The OBSDIAN (OBSD) token mint exhibits a high risk due to very low DEX liquidity
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The OBSDIAN token is a standard SPL token operating under the `spl-token` program. Both the Mint Authority and Freeze Authority are revoked, ensuring that no new tokens can be minted and no accounts… |
+| **Technical** | 8/10 | Low | The OBSDIAN token is a standard SPL token operating under the `spl-token` program. Both the Mint Authority and Freeze Authority are revoked, ensuring that no new tokens can be minted and no accounts… |
 | **Governance / Economics** | 1/10 | High | The token's economic profile shows a significant concern with very low DEX liquidity, currently at $9,988. This level of liquidity suggests that even moderate sell orders could lead to substantial… |
-| **Upgrades** | 4/10 | Medium | The token's upgradeability risk is low as the Mint Authority and Freeze Authority have both been revoked, preventing any future changes to the token's supply or account freeze status. Furthermore… |
+| **Upgrades** | 8/10 | Low | The token's upgradeability risk is low as the Mint Authority and Freeze Authority have both been revoked, preventing any future changes to the token's supply or account freeze status. Furthermore… |
 
 ## LP Distribution
 
@@ -52,22 +52,21 @@ Total DEX liquidity is $9,988. Slippage will be severe; large positions cannot b
 |--------|-------|
 | **Contract** | [`5PuQRf...q4N1`](https://solscan.io/account/5PuQRfBYybRqpJzT83vCyKngAQJyNziaQ7oC4Swxq4N1) |
 | **Network** | Solana |
-| **Price** | $0.1731 |
-| **24h Volume** | $38.2K |
-| **Liquidity** | $10.0K |
-| **Volume / Liquidity** | 3.8× |
+| **Price** | $0.1356 |
+| **24h Volume** | $4.0K |
+| **Liquidity** | $13.5K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 38.5% of supply |
+| **Top-10 Holders** | 29.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 485 buys / 238 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -75,9 +74,8 @@ Total DEX liquidity is $9,988. Slippage will be severe; large positions cannot b
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

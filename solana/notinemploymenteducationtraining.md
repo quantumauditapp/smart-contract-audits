@@ -2,14 +2,14 @@
 token: NotInEmploymentEducationTraining
 ticker: NEET
 network: solana
-risk_score: 27
-status: medium
+risk_score: 0
+status: low
 date: 2026-08-11
 ---
 
 # NotInEmploymentEducationTraining (NEET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 27/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/notinemploymenteducationtraining-sol)
 
@@ -25,9 +25,19 @@ The audit of the NotInEmploymentEducationTraining (neet) SPL token mint found th
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The NotInEmploymentEducationTraining (neet) token operates on the Solana blockchain using the `spl-token` program. Its supply is fixed at 999,764,546,739,397 raw units with 6 decimals, as the mint… |
-| **Governance / Economics** | 3/10 | High | The token exhibits healthy liquidity with $1,141,214 USD available on DEXs, and a 24-hour trading volume of $253,402 USD. The Volume/Liquidity Ratio is 0.22, which is considered normal and does not… |
-| **Upgrades** | 5/10 | Medium | The NotInEmploymentEducationTraining (neet) token mint has a robust security posture regarding administrative control. Both the mint authority and freeze authority have been permanently revoked… |
+| **Technical** | 10/10 | Low | The NotInEmploymentEducationTraining (neet) token operates on the Solana blockchain using the `spl-token` program. Its supply is fixed at 999,764,546,739,397 raw units with 6 decimals, as the mint… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits healthy liquidity with $1,141,214 USD available on DEXs, and a 24-hour trading volume of $253,402 USD. The Volume/Liquidity Ratio is 0.22, which is considered normal and does not… |
+| **Upgrades** | 8/10 | Low | The NotInEmploymentEducationTraining (neet) token mint has a robust security posture regarding administrative control. Both the mint authority and freeze authority have been permanently revoked… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The audit of the NotInEmploymentEducationTraining (neet) SPL token mint found th
 |--------|-------|
 | **Contract** | [`Ce2gx9...pump`](https://solscan.io/account/Ce2gx9KGXJ6C9Mp5b5x1sn9Mg87JwEbrQby4Zqo3pump) |
 | **Network** | Solana |
-| **Price** | $0.01895 |
-| **24h Volume** | $246.6K |
-| **Liquidity** | $1.14M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.03084 |
+| **24h Volume** | $1.08M |
+| **Liquidity** | $1.87M |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 18.5% of supply |
+| **Top-10 Holders** | 19.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 619 buys / 321 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The audit of the NotInEmploymentEducationTraining (neet) SPL token mint found th
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

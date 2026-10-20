@@ -2,14 +2,14 @@
 token: Prometheus
 ticker: PROMETHEUS
 network: solana
-risk_score: 63
-status: high
+risk_score: 24
+status: low
 date: 2026-08-11
 ---
 
 # Prometheus (PROMETHEUS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 24/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/prometheus-sol)
 
@@ -25,9 +25,9 @@ This audit of the Prometheus SPL Token Mint identifies a medium risk due to the 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Prometheus token is an SPL Token-2022 mint. Its Mint Authority and Freeze Authority are both revoked (None), indicating that no single entity can mint new tokens or freeze existing holder… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 27.84% of the supply, which is below the thresholds for high concentration risk. Total DEX liquidity is $42,525, which is… |
-| **Upgrades** | 5/10 | Medium | The token's Mint Authority and Freeze Authority are both revoked, preventing any further changes to the token's supply or account freeze status. Key Token-2022 extensions like Transfer Hook and… |
+| **Technical** | 10/10 | Low | The Prometheus token is an SPL Token-2022 mint. Its Mint Authority and Freeze Authority are both revoked (None), indicating that no single entity can mint new tokens or freeze existing holder… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a holder concentration where the top 10 accounts hold 27.84% of the supply, which is below the thresholds for high concentration risk. Total DEX liquidity is $42,525, which is… |
+| **Upgrades** | 8/10 | Low | The token's Mint Authority and Freeze Authority are both revoked, preventing any further changes to the token's supply or account freeze status. Key Token-2022 extensions like Transfer Hook and… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair for Prometheus was created 3 days ago. This short duration provides
 |--------|-------|
 | **Contract** | [`63zfjP...pump`](https://solscan.io/account/63zfjPfH4uaX3TQZoD35WqUrqiuCQQWndMTxQHsJpump) |
 | **Network** | Solana |
-| **Price** | $0.0003516 |
-| **24h Volume** | $356.8K |
-| **Liquidity** | $46.9K |
-| **Volume / Liquidity** | 7.6× |
+| **Price** | $0.0002378 |
+| **24h Volume** | $34.6K |
+| **Liquidity** | $55.4K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 27.4% of supply |
+| **Top-10 Holders** | 30.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2335 buys / 2228 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair for Prometheus was created 3 days ago. This short duration provides
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

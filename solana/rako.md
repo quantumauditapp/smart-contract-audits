@@ -2,14 +2,14 @@
 token: RAKO
 ticker: RAKO
 network: solana
-risk_score: 50
-status: high
+risk_score: 44
+status: medium
 date: 2026-08-01
 ---
 
 # RAKO (RAKO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rako-sol)
 
@@ -25,9 +25,19 @@ The RAKO SPL Token Mint audit found no critical or high-severity issues based on
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The RAKO token is implemented using the spl-token-2022 program, indicating modern Solana token standards. The mint authority is revoked, preventing further token creation and ensuring a fixed supply… |
-| **Governance / Economics** | 3/10 | High | The token exhibits moderate liquidity with $54,484 USD available on DEXs. The 24-hour volume of $187,667 results in a healthy Volume/Liquidity Ratio of 3.44, not indicating wash trading. Holder… |
-| **Upgrades** | 5/10 | Medium | The RAKO token mint has a robust security posture regarding mutability and upgrades. Both the mint and freeze authorities are permanently revoked, preventing any future changes to supply or account… |
+| **Technical** | 8/10 | Low | The RAKO token is implemented using the spl-token-2022 program, indicating modern Solana token standards. The mint authority is revoked, preventing further token creation and ensuring a fixed supply… |
+| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $54,484 USD available on DEXs. The 24-hour volume of $187,667 results in a healthy Volume/Liquidity Ratio of 3.44, not indicating wash trading. Holder… |
+| **Upgrades** | 8/10 | Low | The RAKO token mint has a robust security posture regarding mutability and upgrades. Both the mint and freeze authorities are permanently revoked, preventing any future changes to supply or account… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The RAKO SPL Token Mint audit found no critical or high-severity issues based on
 |--------|-------|
 | **Contract** | [`5sd8bK...pump`](https://solscan.io/account/5sd8bKraewJNHFg72scxxYXNeLCASVct1gxqi3Xipump) |
 | **Network** | Solana |
-| **Price** | $0.0003275 |
-| **24h Volume** | $181.0K |
-| **Liquidity** | $50.7K |
-| **Volume / Liquidity** | 3.6× |
+| **Price** | $0.00000922 |
+| **24h Volume** | $394 |
+| **Liquidity** | $9.5K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 7d |
-| **Top-10 Holders** | 23.2% of supply |
+| **Top-10 Holders** | 79.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1558 buys / 1680 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The RAKO SPL Token Mint audit found no critical or high-severity issues based on
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

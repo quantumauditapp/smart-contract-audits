@@ -2,14 +2,14 @@
 token: Plumber
 ticker: PLUMBER
 network: solana
-risk_score: 59
-status: high
+risk_score: 43
+status: medium
 date: 2026-08-12
 ---
 
 # Plumber (PLUMBER) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/plumber-sol)
 
@@ -25,9 +25,9 @@ This audit of the Plumber SPL Token Mint identifies a medium risk due to the ver
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Plumber token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the mint authority and freeze authority are revoked, which prevents the creation of new… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a very new market presence, with its DEX pair created just 0 days ago, which limits the ability to assess long-term market stability or community behavior. Current DEX liquidity… |
-| **Upgrades** | 5/10 | Medium | The Plumber token mint has both its mint and freeze authorities revoked, preventing any future changes to token supply or account freeze status. It utilizes the spl-token-2022 program but does not… |
+| **Technical** | 8/10 | Low | The Plumber token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the mint authority and freeze authority are revoked, which prevents the creation of new… |
+| **Governance / Economics** | 2/10 | High | The token exhibits a very new market presence, with its DEX pair created just 0 days ago, which limits the ability to assess long-term market stability or community behavior. Current DEX liquidity… |
+| **Upgrades** | 8/10 | Low | The Plumber token mint has both its mint and freeze authorities revoked, preventing any future changes to token supply or account freeze status. It utilizes the spl-token-2022 program but does not… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`GCa9TZ...pump`](https://solscan.io/account/GCa9TZMK9Q3VUSkhZgX76YAQBjqQd1dPxkBnZojFpump) |
 | **Network** | Solana |
-| **Price** | $0.003908 |
-| **24h Volume** | $2.39M |
-| **Liquidity** | $290.3K |
-| **Volume / Liquidity** | 8.2× |
+| **Price** | $0.00004389 |
+| **24h Volume** | $665 |
+| **Liquidity** | $32.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 10h |
-| **Top-10 Holders** | 22.6% of supply |
+| **Top-10 Holders** | 68.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4534 buys / 4969 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

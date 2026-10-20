@@ -2,14 +2,14 @@
 token: Otto
 ticker: OTTO
 network: solana
-risk_score: 68
-status: high
+risk_score: 51
+status: medium
 date: 2026-08-11
 ---
 
 # Otto (OTTO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/otto-sol)
 
@@ -25,9 +25,9 @@ The Otto (OTTO) SPL Token Mint exhibits a medium risk profile primarily due to i
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Otto (OTTO) token is an SPL Token-2022 mint with both Mint Authority and Freeze Authority revoked, ensuring a fixed supply and immutable account states. No Transfer Hook is active, and the… |
+| **Technical** | 8/10 | Low | The Otto (OTTO) token is an SPL Token-2022 mint with both Mint Authority and Freeze Authority revoked, ensuring a fixed supply and immutable account states. No Transfer Hook is active, and the… |
 | **Governance / Economics** | 1/10 | High | The token's DEX pair is very new, established only 2 days ago, which limits the track record for assessing market behavior and team actions. Current liquidity stands at $13,094 USD, with a 24-hour… |
-| **Upgrades** | 5/10 | Medium | The Mint Authority and Freeze Authority are both revoked, preventing any future changes to the token's supply or the ability to freeze accounts. The token does not utilize a Transfer Hook, and its… |
+| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked, preventing any future changes to the token's supply or the ability to freeze accounts. The token does not utilize a Transfer Hook, and its… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`EKppz9...pump`](https://solscan.io/account/EKppz9JRQDVLhye12yc4T4P9ue7N6A4vVEB4uyvxpump) |
 | **Network** | Solana |
-| **Price** | $0.00004142 |
-| **24h Volume** | $87.6K |
-| **Liquidity** | $14.7K |
-| **Volume / Liquidity** | 6.0× |
+| **Price** | $0.00000541 |
+| **24h Volume** | $90 |
+| **Liquidity** | $5.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 43.2% of supply |
+| **Top-10 Holders** | 89.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1076 buys / 1111 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

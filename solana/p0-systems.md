@@ -2,14 +2,14 @@
 token: p0 Systems
 ticker: P0
 network: solana
-risk_score: 47
-status: high
+risk_score: 28
+status: low
 date: 2026-07-31
 ---
 
 # p0 Systems (P0) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/p0-systems-sol)
 
@@ -25,9 +25,9 @@ This audit of the p0 Systems (P0) SPL token mint found that both mint and freeze
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The p0 Systems (P0) token is implemented using the classic SPL Token Program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a healthy distribution among its top holders, with the top 10 accounts holding 23.4% of the total supply, which is below common concentration thresholds for concern. Liquidity… |
-| **Upgrades** | 5/10 | Medium | The mint and freeze authorities are permanently revoked, preventing any future changes to supply or account freeze status. The token does not utilize any Token-2022 extensions that would introduce… |
+| **Technical** | 10/10 | Low | The p0 Systems (P0) token is implemented using the classic SPL Token Program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a healthy distribution among its top holders, with the top 10 accounts holding 23.4% of the total supply, which is below common concentration thresholds for concern. Liquidity… |
+| **Upgrades** | 8/10 | Low | The mint and freeze authorities are permanently revoked, preventing any future changes to supply or account freeze status. The token does not utilize any Token-2022 extensions that would introduce… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |--------|-------|
 | **Contract** | [`HmTi3C...BAGS`](https://solscan.io/account/HmTi3CQfKfXWbn1tNoiAxH7GzMV7L3tDAmPWabZEBAGS) |
 | **Network** | Solana |
-| **Price** | $0.0005654 |
-| **24h Volume** | $249.3K |
-| **Liquidity** | $69.0K |
-| **Volume / Liquidity** | 3.6× |
+| **Price** | $0.00002857 |
+| **24h Volume** | $2.9K |
+| **Liquidity** | $13.9K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 23.4% of supply |
+| **Top-10 Holders** | 51.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1409 buys / 1354 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

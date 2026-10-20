@@ -2,14 +2,14 @@
 token: Proof Of Bagwork
 ticker: POB
 network: solana
-risk_score: 79
-status: critical
+risk_score: 56
+status: medium
 date: 2026-08-03
 ---
 
 # Proof Of Bagwork (POB) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 79/100 — 🔴 Critical Risk**
+> **Risk Score: 56/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/proof-of-bagwork-sol)
 
@@ -25,9 +25,9 @@ This SPL Token Mint audit identifies a critical risk: a third-party risk registr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token issuance or freezing of holder accounts (7.3 Access… |
+| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token issuance or freezing of holder accounts (7.3 Access… |
 | **Governance / Economics** | 1/10 | High | The top 10 token accounts hold 35.31% of the total supply, indicating a moderate level of holder concentration (7.4 Economic). The token has a liquidity of $39,273, with a 24-hour volume of $112,800… |
-| **Upgrades** | 4/10 | Medium | The mint and freeze authorities for this SPL Token-2022 mint are both revoked, ensuring that the token supply cannot be increased and accounts cannot be frozen (7.7 Upgrades). Key extensions like… |
+| **Upgrades** | 7/10 | Low | The mint and freeze authorities for this SPL Token-2022 mint are both revoked, ensuring that the token supply cannot be increased and accounts cannot be frozen (7.7 Upgrades). Key extensions like… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ An independent third-party risk registry classifies this token as high-risk base
 |--------|-------|
 | **Contract** | [`BAGWtY...mJS6`](https://solscan.io/account/BAGWtYQm6kei9M9hoVcY3pqXxeiGZ1poGoq51io5mJS6) |
 | **Network** | Solana |
-| **Price** | $0.0001747 |
-| **24h Volume** | $112.7K |
-| **Liquidity** | $39.2K |
-| **Volume / Liquidity** | 2.9× |
+| **Price** | $0.0000132 |
+| **24h Volume** | $70 |
+| **Liquidity** | $14.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 15d |
-| **Top-10 Holders** | 35.3% of supply |
+| **Top-10 Holders** | 75.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1086 buys / 1342 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ An independent third-party risk registry classifies this token as high-risk base
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

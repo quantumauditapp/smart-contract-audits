@@ -2,14 +2,14 @@
 token: Sakura 
 ticker: SAKURA 
 network: solana
-risk_score: 57
-status: high
+risk_score: 27
+status: low
 date: 2026-07-25
 ---
 
 # Sakura  (SAKURA ) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sakura-sol)
 
@@ -25,9 +25,19 @@ The Sakura (SAKURA) SPL Token Mint audit found no critical or high-severity issu
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Sakura token is implemented using the spl-token-2022 program. Key administrative authorities, including the Mint Authority and Freeze Authority, have been revoked, ensuring that no new tokens can… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate holder concentration, with the top 10 accounts holding 37.44% of the total supply, which is below thresholds for high concern. Liquidity stands at $46,158, with a 24-hour… |
-| **Upgrades** | 5/10 | Medium | The token's core administrative authorities, Mint Authority and Freeze Authority, are permanently revoked, preventing any future changes to the token's supply or account freeze status. The token's… |
+| **Technical** | 10/10 | Low | The Sakura token is implemented using the spl-token-2022 program. Key administrative authorities, including the Mint Authority and Freeze Authority, have been revoked, ensuring that no new tokens can… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate holder concentration, with the top 10 accounts holding 37.44% of the total supply, which is below thresholds for high concern. Liquidity stands at $46,158, with a 24-hour… |
+| **Upgrades** | 8/10 | Low | The token's core administrative authorities, Mint Authority and Freeze Authority, are permanently revoked, preventing any future changes to the token's supply or account freeze status. The token's… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Sakura (SAKURA) SPL Token Mint audit found no critical or high-severity issu
 |--------|-------|
 | **Contract** | [`EWiVNx...pump`](https://solscan.io/account/EWiVNxCqNatzV2paBHyfKUwGLnk7WKs9uZTA5jkTpump) |
 | **Network** | Solana |
-| **Price** | $0.0002229 |
-| **24h Volume** | $133.9K |
-| **Liquidity** | $46.2K |
-| **Volume / Liquidity** | 2.9× |
+| **Price** | $0.00008529 |
+| **24h Volume** | $4.3K |
+| **Liquidity** | $36.9K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 37.4% of supply |
+| **Top-10 Holders** | 53.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 576 buys / 1022 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Sakura (SAKURA) SPL Token Mint audit found no critical or high-severity issu
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

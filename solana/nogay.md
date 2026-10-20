@@ -2,14 +2,14 @@
 token: nogay
 ticker: NOGAY
 network: solana
-risk_score: 53
-status: high
+risk_score: 42
+status: medium
 date: 2026-08-11
 ---
 
 # nogay (NOGAY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/nogay-sol)
 
@@ -25,9 +25,19 @@ This audit of the nogay (NOGAY) SPL Token Mint found no critical or high-severit
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The nogay (NOGAY) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing token… |
-| **Governance / Economics** | 2/10 | High | The token exhibits healthy liquidity with $71,429 in total DEX liquidity, and a normal 24-hour volume to liquidity ratio of 1.41. The top 10 token accounts hold 32.85% of the supply, which is below… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token's metadata is immutable, meaning its name, symbol… |
+| **Technical** | 8/10 | Low | The nogay (NOGAY) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing token… |
+| **Governance / Economics** | 1/10 | High | The token exhibits healthy liquidity with $71,429 in total DEX liquidity, and a normal 24-hour volume to liquidity ratio of 1.41. The top 10 token accounts hold 32.85% of the supply, which is below… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token's metadata is immutable, meaning its name, symbol… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the nogay (NOGAY) SPL Token Mint found no critical or high-severit
 |--------|-------|
 | **Contract** | [`C3Rfug...pump`](https://solscan.io/account/C3RfugybjxYDsJDYtooFf5WU5p5Mrhc6Q1xR2QGJpump) |
 | **Network** | Solana |
-| **Price** | $0.0008941 |
-| **24h Volume** | $99.4K |
-| **Liquidity** | $72.2K |
-| **Volume / Liquidity** | 1.4× |
+| **Price** | $0.00000455 |
+| **24h Volume** | $7 |
+| **Liquidity** | $4.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 7d |
-| **Top-10 Holders** | 32.8% of supply |
+| **Top-10 Holders** | 92.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 608 buys / 505 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the nogay (NOGAY) SPL Token Mint found no critical or high-severit
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

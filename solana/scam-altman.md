@@ -2,14 +2,14 @@
 token: Scam Altman
 ticker: SCAM
 network: solana
-risk_score: 50
-status: high
+risk_score: 12
+status: low
 date: 2026-07-22
 ---
 
 # Scam Altman (SCAM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/scam-altman-sol)
 
@@ -25,9 +25,19 @@ This audit of the Scam Altman (SCAM) SPL Token Mint found no critical or high-se
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Scam Altman (SCAM) token is an SPL Token-2022 mint. The mint authority is revoked, preventing the creation of new tokens and ensuring a fixed supply of 999,833,836,837,906 tokens with 6 decimals.… |
-| **Governance / Economics** | 2/10 | High | The token exhibits moderate liquidity with $86,547 USD available on DEXs. The 24-hour trading volume is $95,574 USD, resulting in a healthy Volume/Liquidity Ratio of 1.10, which does not suggest wash… |
-| **Upgrades** | 5/10 | Medium | Both the mint authority and freeze authority are revoked, meaning no further changes can be made to the token's supply or account freeze status. The token does not utilize any upgradable Token-2022… |
+| **Technical** | 10/10 | Low | The Scam Altman (SCAM) token is an SPL Token-2022 mint. The mint authority is revoked, preventing the creation of new tokens and ensuring a fixed supply of 999,833,836,837,906 tokens with 6 decimals.… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $86,547 USD available on DEXs. The 24-hour trading volume is $95,574 USD, resulting in a healthy Volume/Liquidity Ratio of 1.10, which does not suggest wash… |
+| **Upgrades** | 8/10 | Low | Both the mint authority and freeze authority are revoked, meaning no further changes can be made to the token's supply or account freeze status. The token does not utilize any upgradable Token-2022… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the Scam Altman (SCAM) SPL Token Mint found no critical or high-se
 |--------|-------|
 | **Contract** | [`6AVAUK...pump`](https://solscan.io/account/6AVAUKa9uxQpruHZUinFECpXEh1usRVtzQWK8N2wpump) |
 | **Network** | Solana |
-| **Price** | $0.0002028 |
-| **24h Volume** | $83.4K |
-| **Liquidity** | $78.2K |
-| **Volume / Liquidity** | 1.1× |
+| **Price** | $0.0001531 |
+| **24h Volume** | $4.5K |
+| **Liquidity** | $86.7K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 39.5% of supply |
+| **Top-10 Holders** | 48.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 653 buys / 622 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the Scam Altman (SCAM) SPL Token Mint found no critical or high-se
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

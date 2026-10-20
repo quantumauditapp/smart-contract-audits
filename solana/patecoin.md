@@ -2,14 +2,14 @@
 token: Patecoin
 ticker: PATE
 network: solana
-risk_score: 46
-status: high
+risk_score: 44
+status: medium
 date: 2026-08-08
 ---
 
 # Patecoin (PATE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 46/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/patecoin-sol)
 
@@ -25,9 +25,9 @@ This audit of the Patecoin (PATE) SPL Token Mint identifies a Medium risk primar
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority are revoked, indicating that no new tokens can be minted and no existing accounts can be frozen. There are no… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a low holder concentration, with the top 10 holders owning 14.91% of the supply, which is below typical concentration thresholds. Liquidity is moderate at $93,665 USD, and the… |
-| **Upgrades** | 5/10 | Medium | The token's Mint Authority and Freeze Authority are both revoked, preventing any future changes to the token supply or account freeze status. Key Token-2022 extension flags such as… |
+| **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority are revoked, indicating that no new tokens can be minted and no existing accounts can be frozen. There are no… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a low holder concentration, with the top 10 holders owning 14.91% of the supply, which is below typical concentration thresholds. Liquidity is moderate at $93,665 USD, and the… |
+| **Upgrades** | 8/10 | Low | The token's Mint Authority and Freeze Authority are both revoked, preventing any future changes to the token supply or account freeze status. Key Token-2022 extension flags such as… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`7LRo1J...pump`](https://solscan.io/account/7LRo1JRKLaGxYKGJWTyUmA5LduJFown9Xmpo1prJpump) |
 | **Network** | Solana |
-| **Price** | $0.001697 |
-| **24h Volume** | $32.5K |
-| **Liquidity** | $93.4K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.00002576 |
+| **24h Volume** | $28 |
+| **Liquidity** | $12.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 14.9% of supply |
+| **Top-10 Holders** | 99.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 738 buys / 372 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

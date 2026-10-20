@@ -2,14 +2,14 @@
 token: Poipoi
 ticker: POIPOI
 network: solana
-risk_score: 69
-status: high
+risk_score: 52
+status: medium
 date: 2026-08-17
 ---
 
 # Poipoi (POIPOI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 69/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/poipoi-sol)
 
@@ -25,9 +25,9 @@ The Poipoi SPL token mint exhibits a generally secure configuration with both mi
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Poipoi token is an SPL Token-2022 mint with a total supply of 979,530,959.273345 tokens. Both the mint authority and freeze authority have been revoked, preventing further token creation or… |
+| **Technical** | 8/10 | Low | The Poipoi token is an SPL Token-2022 mint with a total supply of 979,530,959.273345 tokens. Both the mint authority and freeze authority have been revoked, preventing further token creation or… |
 | **Governance / Economics** | 1/10 | High | The token's DEX pair is very new, having been created only 3 days ago, which limits the track record for assessing market behavior. Total DEX liquidity stands at $28,290, with a 24-hour volume of… |
-| **Upgrades** | 5/10 | Medium | The token mint has a robust configuration regarding mutability and control. Both the mint and freeze authorities are revoked, meaning no single entity can unilaterally alter the supply or freeze… |
+| **Upgrades** | 8/10 | Low | The token mint has a robust configuration regarding mutability and control. Both the mint and freeze authorities are revoked, meaning no single entity can unilaterally alter the supply or freeze… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair for this token was created 3 days ago. This short track record prov
 |--------|-------|
 | **Contract** | [`7z8Q8E...pump`](https://solscan.io/account/7z8Q8E4dpequE3XcxoXrpiCPiw1yVHZ7cY8EwT7Tpump) |
 | **Network** | Solana |
-| **Price** | $0.0001278 |
-| **24h Volume** | $116.9K |
-| **Liquidity** | $26.4K |
-| **Volume / Liquidity** | 4.4× |
+| **Price** | $0.0000056 |
+| **24h Volume** | $557 |
+| **Liquidity** | $5.5K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 32.7% of supply |
+| **Top-10 Holders** | 88.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1305 buys / 1209 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair for this token was created 3 days ago. This short track record prov
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

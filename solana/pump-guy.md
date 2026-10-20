@@ -2,14 +2,14 @@
 token: Pump Guy
 ticker: PUMPGUY
 network: solana
-risk_score: 57
-status: high
+risk_score: 38
+status: medium
 date: 2026-08-11
 ---
 
 # Pump Guy (PUMPGUY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pump-guy-sol)
 
@@ -25,9 +25,9 @@ The Pump Guy (PUMPGUY) SPL Token Mint exhibits strong security posture regarding
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Pump Guy token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been permanently revoked, preventing the creation of new tokens or the freezing… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a low holder concentration, with the top 10 accounts holding 27.4% of the total supply, which is below typical thresholds for significant whale risk (7.4 Economic). Total DEX… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning no further changes can be made to the token's supply or account freeze status (7.7 Upgrades). Metadata for… |
+| **Technical** | 8/10 | Low | The Pump Guy token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been permanently revoked, preventing the creation of new tokens or the freezing… |
+| **Governance / Economics** | 3/10 | High | The token exhibits a low holder concentration, with the top 10 accounts holding 27.4% of the total supply, which is below typical thresholds for significant whale risk (7.4 Economic). Total DEX… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning no further changes can be made to the token's supply or account freeze status (7.7 Upgrades). Metadata for… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair for Pump Guy (PUMPGUY) was created 2 days ago. This insufficient tr
 |--------|-------|
 | **Contract** | [`tpg7sW...pump`](https://solscan.io/account/tpg7sWJPSKijHqPqtpHY2BWBEUq1RwGxmJpD8Tppump) |
 | **Network** | Solana |
-| **Price** | $0.0004016 |
-| **24h Volume** | $525.0K |
-| **Liquidity** | $57.1K |
-| **Volume / Liquidity** | 9.2× |
+| **Price** | $0.00002191 |
+| **24h Volume** | $325 |
+| **Liquidity** | $16.3K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 28.8% of supply |
+| **Top-10 Holders** | 55.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3317 buys / 3457 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair for Pump Guy (PUMPGUY) was created 2 days ago. This insufficient tr
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

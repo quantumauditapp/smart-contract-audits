@@ -2,14 +2,14 @@
 token: RAGE GUY
 ticker: RAGE
 network: solana
-risk_score: 57
-status: high
+risk_score: 27
+status: low
 date: 2026-06-10
 ---
 
 # RAGE GUY (RAGE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rage-guy-sol)
 
@@ -25,9 +25,19 @@ The RAGE GUY (RAGE) SPL token mint demonstrates a robust security posture with b
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The RAGE GUY (RAGE) token operates on the `spl-token` program, indicating a standard SPL token implementation. A significant strength is the permanent revocation of both the mint authority and the… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $33,855 USD available on DEXs, supported by a 24-hour trading volume of $20,223 USD. The Volume/Liquidity Ratio of 0.60 is normal, suggesting organic… |
-| **Upgrades** | 5/10 | Medium | The RAGE GUY (RAGE) token mint is configured with a high degree of immutability, as both the mint and freeze authorities have been permanently revoked. This prevents any future changes to the token's… |
+| **Technical** | 10/10 | Low | The RAGE GUY (RAGE) token operates on the `spl-token` program, indicating a standard SPL token implementation. A significant strength is the permanent revocation of both the mint authority and the… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate liquidity with $33,855 USD available on DEXs, supported by a 24-hour trading volume of $20,223 USD. The Volume/Liquidity Ratio of 0.60 is normal, suggesting organic… |
+| **Upgrades** | 8/10 | Low | The RAGE GUY (RAGE) token mint is configured with a high degree of immutability, as both the mint and freeze authorities have been permanently revoked. This prevents any future changes to the token's… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,21 +45,20 @@ The RAGE GUY (RAGE) SPL token mint demonstrates a robust security posture with b
 |--------|-------|
 | **Contract** | [`G3FoXH...pump`](https://solscan.io/account/G3FoXHoQDuGkEG8ZqQd7riC9uB1N51bg7JuxJEPNpump) |
 | **Network** | Solana |
-| **Price** | $0.0001161 |
-| **24h Volume** | $998 |
-| **Liquidity** | $32.9K |
+| **Price** | $0.00003129 |
+| **24h Volume** | $35 |
+| **Liquidity** | $21.2K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 8mo |
-| **Top-10 Holders** | 40.6% of supply |
+| **Top-10 Holders** | 56.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -57,9 +66,8 @@ The RAGE GUY (RAGE) SPL token mint demonstrates a robust security posture with b
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

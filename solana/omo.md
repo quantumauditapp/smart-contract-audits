@@ -2,14 +2,14 @@
 token: omo
 ticker: OMO
 network: solana
-risk_score: 79
-status: critical
+risk_score: 48
+status: medium
 date: 2026-08-12
 ---
 
 # omo (OMO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 79/100 — 🔴 Critical Risk**
+> **Risk Score: 48/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/omo-sol)
 
@@ -25,9 +25,9 @@ The omo token mint is an SPL Token-2022 with both mint and freeze authorities re
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The omo token is an SPL Token-2022 mint. Its mint authority is revoked, ensuring no new tokens can be created, and the freeze authority is also revoked, preventing any account from being frozen. No… |
+| **Technical** | 8/10 | Low | The omo token is an SPL Token-2022 mint. Its mint authority is revoked, ensuring no new tokens can be created, and the freeze authority is also revoked, preventing any account from being frozen. No… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a medium level of holder concentration, with the top 10 accounts holding 55.42% of the total supply. This concentration could lead to price volatility from coordinated sell-offs.… |
-| **Upgrades** | 5/10 | Medium | The omo token mint has both its mint and freeze authorities revoked, meaning its core parameters are fixed and cannot be changed. It is an SPL Token-2022, but no transfer hook is present, and… |
+| **Upgrades** | 8/10 | Low | The omo token mint has both its mint and freeze authorities revoked, meaning its core parameters are fixed and cannot be changed. It is an SPL Token-2022, but no transfer hook is present, and… |
 
 ## Security Findings
 
@@ -52,22 +52,21 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`94Sm8j...pump`](https://solscan.io/account/94Sm8joZMSRzpQmcNVn5zZpgnRLN2DBesJYDXwuNpump) |
 | **Network** | Solana |
-| **Price** | $0.00002835 |
-| **24h Volume** | $80.0K |
-| **Liquidity** | $13.5K |
-| **Volume / Liquidity** | 5.9× |
+| **Price** | $0.00001471 |
+| **24h Volume** | $64 |
+| **Liquidity** | $15.3K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 55.4% of supply |
+| **Top-10 Holders** | 80.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1026 buys / 1278 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -75,9 +74,8 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

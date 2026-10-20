@@ -2,14 +2,14 @@
 token: pumpcat
 ticker: PUMPCAT
 network: solana
-risk_score: 79
-status: critical
+risk_score: 56
+status: medium
 date: 2026-08-11
 ---
 
 # pumpcat (PUMPCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 79/100 — 🔴 Critical Risk**
+> **Risk Score: 56/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pumpcat-sol)
 
@@ -25,9 +25,9 @@ The pumpcat SPL token mint presents a critical risk due to being flagged as high
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The token operates on the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen by the… |
+| **Technical** | 8/10 | Low | The token operates on the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen by the… |
 | **Governance / Economics** | 1/10 | High | Holder concentration shows the top 10 accounts hold 38.1% of the supply, which is below thresholds typically associated with high centralization risk. Total DEX liquidity is $36,774, providing… |
-| **Upgrades** | 4/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are revoked, preventing any post-launch changes to supply or account freeze status by the original issuer. The spl-token-2022… |
+| **Upgrades** | 7/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are revoked, preventing any post-launch changes to supply or account freeze status by the original issuer. The spl-token-2022… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ An independent third-party risk registry classifies this token as high-risk base
 |--------|-------|
 | **Contract** | [`DyKoCH...pump`](https://solscan.io/account/DyKoCHKYn69hd2nW1rjRfScYdGz1YK4YahoN3ak8pump) |
 | **Network** | Solana |
-| **Price** | $0.0001757 |
-| **24h Volume** | $108.0K |
-| **Liquidity** | $37.5K |
-| **Volume / Liquidity** | 2.9× |
+| **Price** | $0.00001701 |
+| **24h Volume** | $481 |
+| **Liquidity** | $15.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 12d |
-| **Top-10 Holders** | 38.1% of supply |
+| **Top-10 Holders** | 80.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 625 buys / 733 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ An independent third-party risk registry classifies this token as high-risk base
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

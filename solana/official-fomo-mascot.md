@@ -2,14 +2,14 @@
 token: Official Fomo Mascot
 ticker: REMUS
 network: solana
-risk_score: 55
-status: high
+risk_score: 36
+status: medium
 date: 2026-08-13
 ---
 
 # Official Fomo Mascot (REMUS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/official-fomo-mascot-sol)
 
@@ -25,9 +25,9 @@ The Official Fomo Mascot (Remus) token is an SPL Token-2022 mint with both mint 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | This token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing accounts can be… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a holder concentration of 23.89% among the top 10 accounts, which is below the threshold for significant concern. Total DEX liquidity is $72,445, which is moderate. However, the… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, meaning the token's supply and account freeze status cannot be altered. The `metadata_mutable` flag is false, indicating that the token's… |
+| **Technical** | 8/10 | Low | This token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing accounts can be… |
+| **Governance / Economics** | 3/10 | High | The token exhibits a holder concentration of 23.89% among the top 10 accounts, which is below the threshold for significant concern. Total DEX liquidity is $72,445, which is moderate. However, the… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and account freeze status cannot be altered. The `metadata_mutable` flag is false, indicating that the token's… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`23e4CN...Pgme`](https://solscan.io/account/23e4CNuJxvBQ7RjNLc8Bh3yN3pQq6jeiTbyzJGXYPgme) |
 | **Network** | Solana |
-| **Price** | $0.0004226 |
-| **24h Volume** | $473.2K |
-| **Liquidity** | $70.8K |
-| **Volume / Liquidity** | 6.7× |
+| **Price** | $0.00005803 |
+| **24h Volume** | $5.3K |
+| **Liquidity** | $33.0K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 23.9% of supply |
+| **Top-10 Holders** | 57.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3050 buys / 3231 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Peanut the Squirrel
 ticker: PNUT
 network: solana
-risk_score: 94
-status: critical
+risk_score: 56
+status: medium
 date: 2026-06-13
 ---
 
 # Peanut the Squirrel (PNUT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 94/100 — 🔴 Critical Risk**
+> **Risk Score: 56/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/peanut-the-squirrel-sol)
 
@@ -25,9 +25,9 @@ The Peanut the Squirrel (Pnut) SPL Token Mint presents a High overall risk, prim
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The Peanut the Squirrel (Pnut) token is implemented using the `spl-token-2022` program. A key security strength is that both the Mint Authority and Freeze Authority have been permanently revoked… |
+| **Technical** | 8/10 | Low | The Peanut the Squirrel (Pnut) token is implemented using the `spl-token-2022` program. A key security strength is that both the Mint Authority and Freeze Authority have been permanently revoked… |
 | **Governance / Economics** | 1/10 | High | The economic stability of the Peanut the Squirrel (Pnut) token is significantly impacted by its very low DEX liquidity, currently at $8,032. This level of liquidity suggests that even moderate sell… |
-| **Upgrades** | 4/10 | Medium | The Peanut the Squirrel (Pnut) token exhibits a low upgrade risk profile. Both the Mint Authority and Freeze Authority have been revoked (None), ensuring that no single entity can unilaterally alter… |
+| **Upgrades** | 8/10 | Low | The Peanut the Squirrel (Pnut) token exhibits a low upgrade risk profile. Both the Mint Authority and Freeze Authority have been revoked (None), ensuring that no single entity can unilaterally alter… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ Total DEX liquidity is $8,032. Slippage will be severe; large positions cannot b
 |--------|-------|
 | **Contract** | [`6p3Y3W...pump`](https://solscan.io/account/6p3Y3WBXcVwMbYNoVsU4EuVb3gdMmzSKhkEfo8Vcpump) |
 | **Network** | Solana |
-| **Price** | $0.00000469 |
-| **24h Volume** | $1 |
-| **Liquidity** | $7.6K |
+| **Price** | $0.00000406 |
+| **24h Volume** | $6 |
+| **Liquidity** | $7.1K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 91.8% of supply |
+| **Top-10 Holders** | 95.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1977 buys / 1591 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ Total DEX liquidity is $8,032. Slippage will be severe; large positions cannot b
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

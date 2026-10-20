@@ -2,14 +2,14 @@
 token: Qenis
 ticker: QENIS
 network: solana
-risk_score: 58
-status: high
+risk_score: 26
+status: low
 date: 2026-08-15
 ---
 
 # Qenis (QENIS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/qenis-sol)
 
@@ -25,9 +25,9 @@ The Qenis token mint exhibits a medium risk profile primarily due to its very re
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be frozen.… |
-| **Governance / Economics** | 2/10 | High | Holder concentration is low, with the top 10 token accounts holding approximately 28.5% of the total supply, which is below typical concentration thresholds. Total DEX liquidity stands at $144,043… |
-| **Upgrades** | 5/10 | Medium | The Mint Authority and Freeze Authority are both revoked, meaning the token's supply is fixed and no accounts can be frozen post-launch. The token utilizes the spl-token-2022 program but does not… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be frozen.… |
+| **Governance / Economics** | 5/10 | Medium | Holder concentration is low, with the top 10 token accounts holding approximately 28.5% of the total supply, which is below typical concentration thresholds. Total DEX liquidity stands at $144,043… |
+| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked, meaning the token's supply is fixed and no accounts can be frozen post-launch. The token utilizes the spl-token-2022 program but does not… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`EkcTa8...pump`](https://solscan.io/account/EkcTa8n14fXcHdfvZqCg72cTCutJnnKb19vcHwKTpump) |
 | **Network** | Solana |
-| **Price** | $0.001432 |
-| **24h Volume** | $169.0K |
-| **Liquidity** | $164.8K |
-| **Volume / Liquidity** | 1.0× |
+| **Price** | $0.0001591 |
+| **24h Volume** | $10.7K |
+| **Liquidity** | $53.3K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 28.5% of supply |
+| **Top-10 Holders** | 44.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1409 buys / 1434 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
