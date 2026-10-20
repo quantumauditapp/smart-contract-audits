@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**392 reports** · Updated daily · [← All Networks](../README.md)
+**398 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Deference](./deference.md) | DEFERENCE | 🟠 65/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/deference-eth) |
+| [Pepina](./pepina.md) | PEPINA | 🟠 84/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/pepina-eth) |
+| [e0e.fun](./e0efun.md) | E0E | 🟡 51/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/e0efun-eth) |
+| [Little Pepe](./little-pepe.md) | LILPEPE | 🟡 59/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/little-pepe-eth) |
+| [Bloom](./bloom.md) | BLOOM | 🟠 69/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/bloom-eth) |
+| [Emerald](./emerald.md) | EMERALD | 🟢 30/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/emerald-eth) |
 | [Groklet](./groklet-eth-daa6.md) | GROKLET | 🟢 28/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/groklet-eth-daa6) |
 | [JPM Coin](./jpm-coin.md) | JPMD | 🟢 0/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/jpm-coin-eth) |
 | [Dacity Coin](./dacity-coin-eth-9343.md) | DACITY | 🟢 0/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/dacity-coin-eth-9343) |

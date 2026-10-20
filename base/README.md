@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**292 reports** · Updated daily · [← All Networks](../README.md)
+**295 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [American Trust Fund System](./american-trust-fund-system.md) | ATFS | 🟠 66/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/american-trust-fund-system-base) |
+| [USOE](./usoe.md) | USOE | 🟠 66/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/usoe-base) |
+| [XRC](./xrc.md) | XRC | 🟠 68/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/xrc-base) |
 | [American Overwatch Protocol](./american-overwatch-protocol.md) | AOP | 🟠 67/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-base) |
 | [USDP](./usdp.md) | USDP | 🟡 60/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/usdp-base) |
 | [UDR](./udr.md) | UDR | 🟠 79/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/udr-base) |
