@@ -2,14 +2,14 @@
 token: Sport.fun
 ticker: FUN
 network: base
-risk_score: 72
-status: critical
+risk_score: 74
+status: high
 date: 2026-08-11
 ---
 
 # Sport.fun (FUN) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 74/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sportfun-base)
 
@@ -81,12 +81,12 @@ The contract does not include a pause mechanism (e.g., `PausableUpgradeable`) to
 |--------|-------|
 | **Contract** | [`0x16ee...dd92`](https://basescan.org/address/0x16ee7ecac70d1028e7712751e2ee6ba808a7dd92) |
 | **Network** | Base |
-| **Price** | $0.02159 |
-| **24h Volume** | $117.0K |
-| **Liquidity** | $347.1K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.02122 |
+| **24h Volume** | $123.9K |
+| **Liquidity** | $339.9K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 76.1% of supply |
+| **Top-10 Holders** | 75.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1084 buys / 1228 sells |
 

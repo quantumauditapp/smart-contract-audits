@@ -40,8 +40,8 @@ The SecuritiesToken contract, an upgradeable ERC-20 implementation, demonstrates
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 81.2% |
-| **Top-3 Unlocked** | ⚠️ 90.3% |
+| **Top-1 Unlocked Holder** | ⚠️ 74.5% |
+| **Top-3 Unlocked** | ⚠️ 88.9% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ The `SecuritiesToken` contract integrates with external `ComplianceClientUpgrade
 |--------|-------|
 | **Contract** | [`0xca75...db61`](https://bscscan.com/address/0xca750ef65f295bbecd685abf54e82caf297bdb61) |
 | **Network** | BNB Chain |
-| **Price** | $165.1100 |
-| **24h Volume** | $1.21M |
-| **Liquidity** | $847.3K |
-| **Volume / Liquidity** | 1.4× |
+| **Price** | $164.6600 |
+| **24h Volume** | $784.4K |
+| **Liquidity** | $1.04M |
+| **Volume / Liquidity** | 0.8× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 97.8% of supply |
+| **Top-10 Holders** | 97.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4058 buys / 3877 sells |
 

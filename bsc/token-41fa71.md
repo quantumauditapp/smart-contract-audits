@@ -2,14 +2,14 @@
 token: 龙虾
 ticker: 龙虾
 network: bsc
-risk_score: 24
-status: medium
+risk_score: 0
+status: low
 date: 2026-08-12
 ---
 
 # 龙虾 (龙虾) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 24/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/token-41fa71-bsc)
 
@@ -26,15 +26,15 @@ The audited contract, FourERC20, is an implementation of the ERC-20 token standa
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 9/10 | Low | The FourERC20 contract leverages OpenZeppelin's battle-tested ERC-20 implementation, ensuring a high standard of code security for core token operations (7.2 Code Security). Solidity 0.8+ provides… |
-| **Governance / Economics** | 4/10 | Medium | The FourERC20 contract, as a base ERC-20 implementation, does not include any inherent governance or economic mechanisms (7.5 Governance, 7.4 Economic). Its economic model, including total supply… |
-| **Upgrades** | 9/10 | Low | The FourERC20 contract is not designed as an upgradeable proxy contract (7.7 Upgrades). It is intended to be deployed as a standalone token or as an implementation contract for a proxy pattern… |
+| **Governance / Economics** | 7/10 | Low | The FourERC20 contract, as a base ERC-20 implementation, does not include any inherent governance or economic mechanisms (7.5 Governance, 7.4 Economic). Its economic model, including total supply… |
+| **Upgrades** | 10/10 | Low | The FourERC20 contract is not designed as an upgradeable proxy contract (7.7 Upgrades). It is intended to be deployed as a standalone token or as an implementation contract for a proxy pattern… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 33.6% |
-| **Top-3 Unlocked** | 64.2% |
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
+| **LP Locked** | 100.0% — Null Address |
 
 ## Security Findings
 
@@ -66,23 +66,23 @@ The `_totalSupply` variable is updated within `unchecked` blocks in both the `_m
 |--------|-------|
 | **Contract** | [`0xeccb...4444`](https://bscscan.com/address/0xeccbb861c0dda7efd964010085488b69317e4444) |
 | **Network** | BNB Chain |
-| **Price** | $0.01927 |
-| **24h Volume** | $3.24M |
-| **Liquidity** | $981.0K |
-| **Volume / Liquidity** | 3.3× |
+| **Price** | $0.07323 |
+| **24h Volume** | $1.76M |
+| **Liquidity** | $2.21M |
+| **Volume / Liquidity** | 0.8× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 88.3% of supply |
+| **Top-10 Holders** | 85.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 12309 buys / 12842 sells |
 
-## Security Flags (4/5 passed)
+## Security Flags (5/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -92,7 +92,7 @@ The `_totalSupply` variable is updated within `unchecked` blocks in both the `_m
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

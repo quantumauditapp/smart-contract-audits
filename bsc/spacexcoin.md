@@ -3,13 +3,13 @@ token: SpaceXcoin
 ticker: SPACEXCOIN
 network: bsc
 risk_score: 34
-status: medium
+status: low
 date: 2026-08-13
 ---
 
 # SpaceXcoin (SPACEXCOIN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spacexcoin-bsc)
 
@@ -73,12 +73,12 @@ The `isContract` function, while useful for certain checks, has documented limit
 |--------|-------|
 | **Contract** | [`0xf225...ffff`](https://bscscan.com/address/0xf225e70162837a811c77dc2bb413a5c06e97ffff) |
 | **Network** | BNB Chain |
-| **Price** | $0.0005654 |
-| **24h Volume** | $488.0K |
-| **Liquidity** | $94.8K |
-| **Volume / Liquidity** | 5.1× |
+| **Price** | $0.000195 |
+| **24h Volume** | $195.2K |
+| **Liquidity** | $62.3K |
+| **Volume / Liquidity** | 3.1× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 39.8% of supply |
+| **Top-10 Holders** | 48.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2518 buys / 1971 sells |
 

@@ -3,13 +3,13 @@ token: toby
 ticker: TOBY
 network: base
 risk_score: 30
-status: medium
+status: low
 date: 2026-08-13
 ---
 
 # toby (TOBY) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 30/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/toby-base)
 
@@ -33,8 +33,8 @@ The toby token contract is a custom ERC20 implementation with owner-controlled f
 
 | Metric | Value |
 |--------|-------|
-| **LP Burned** | ✅ 99.4% (≈ permanent lock) |
-| **LP Locked** | 99.4% |
+| **LP Burned** | ✅ 99.7% (≈ permanent lock) |
+| **LP Locked** | 99.7% |
 
 ## Security Findings
 
@@ -74,11 +74,11 @@ The contract utilizes a custom implementation of the ERC20 standard rather than 
 | **Contract** | [`0xb8d9...e56e`](https://basescan.org/address/0xb8d98a102b0079b69ffbc760c8d857a31653e56e) |
 | **Network** | Base |
 | **Price** | $0.00000001 |
-| **24h Volume** | $49.2K |
-| **Liquidity** | $177.1K |
-| **Volume / Liquidity** | 0.3× |
+| **24h Volume** | $14.9K |
+| **Liquidity** | $209.2K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 22.5% of supply |
+| **Top-10 Holders** | 23.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 465 buys / 713 sells |
 

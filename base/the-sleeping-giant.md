@@ -2,14 +2,14 @@
 token: the sleeping giant
 ticker: TSG
 network: base
-risk_score: 40
+risk_score: 37
 status: medium
 date: 2026-08-17
 ---
 
 # the sleeping giant (TSG) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 37/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-sleeping-giant-base)
 
@@ -26,15 +26,15 @@ The DERC20 token contract implements an ERC20 token with voting, permit, and own
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The DERC20 contract demonstrates good technical architecture, building upon battle-tested OpenZeppelin standards for ERC20, ERC20Votes, ERC20Permit, and Ownable. This significantly reduces the risk… |
-| **Governance / Economics** | 4/10 | Medium | The contract's economic model includes an inflationary mechanism with a configurable yearly mint rate, capped at 2% of the total supply. The owner, a multisig address, holds significant control over… |
+| **Governance / Economics** | 5/10 | Medium | The contract's economic model includes an inflationary mechanism with a configurable yearly mint rate, capped at 2% of the total supply. The owner, a multisig address, holds significant control over… |
 | **Upgrades** | 7/10 | Low | The DERC20 contract is not designed as an upgradeable proxy (7.7 Upgrades). Its logic is immutable once deployed. However, certain parameters like the `yearlyMintRate`, `tokenURI`, and the `pool`… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 66.8% |
-| **Top-3 Unlocked** | ⚠️ 94.0% |
+| **Top-1 Unlocked Holder** | 48.1% |
+| **Top-3 Unlocked** | ⚠️ 90.8% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ The constructor uses `initialSupply` as a base for calculating `maxPreMintPerAdd
 |--------|-------|
 | **Contract** | [`0x4c43...eba3`](https://basescan.org/address/0x4c433f4ef87fe506a7eed2fd1d822cbed411eba3) |
 | **Network** | Base |
-| **Price** | $0.00000142 |
-| **24h Volume** | $126.8K |
-| **Liquidity** | $166.6K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.00000154 |
+| **24h Volume** | $24.7K |
+| **Liquidity** | $97.5K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 53.0% of supply |
+| **Top-10 Holders** | 62.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 427 buys / 709 sells |
 

@@ -87,12 +87,12 @@ The provided code snippet shows `construct` instead of `constructor` for the con
 |--------|-------|
 | **Contract** | [`0x8db2...2469`](https://bscscan.com/address/0x8db27fb78c89975202f550697ce8acb2e74b2469) |
 | **Network** | BNB Chain |
-| **Price** | $1,031.9300 |
-| **24h Volume** | $64.6K |
-| **Liquidity** | $2.05M |
+| **Price** | $441.0860 |
+| **24h Volume** | $21.7K |
+| **Liquidity** | $1.34M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 99.8% of supply |
+| **Top-10 Holders** | 99.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 789 buys / 105 sells |
 

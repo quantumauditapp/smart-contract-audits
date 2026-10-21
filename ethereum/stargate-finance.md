@@ -33,7 +33,7 @@ The StargateToken contract is an ERC20 token with omnichain capabilities powered
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 52.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -80,10 +80,10 @@ The contract uses the Business Source License 1.1 (BUSL-1.1). This is a non-open
 |--------|-------|
 | **Contract** | [`0xaf51...2cd6`](https://etherscan.io/address/0xaf5191b0de278c7286d6c7cc6ab6bb8a73ba2cd6) |
 | **Network** | Ethereum |
-| **Price** | $0.1383 |
-| **24h Volume** | $518 |
-| **Liquidity** | $14.7K |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.1697 |
+| **24h Volume** | $1.9K |
+| **Liquidity** | $16.4K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 4y |
 | **Top-10 Holders** | 93.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

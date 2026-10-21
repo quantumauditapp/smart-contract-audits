@@ -2,14 +2,14 @@
 token: SUMMER
 ticker: SUMMER
 network: bsc
-risk_score: 63
-status: high
+risk_score: 64
+status: medium
 date: 2026-08-11
 ---
 
 # SUMMER (SUMMER) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 64/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/summer-bsc)
 
@@ -25,9 +25,16 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with a dynamic
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract utilizes OpenZeppelin's upgradeable standards for ERC20 and access control, which is a strong foundation (7.1 Architecture). The `PackedPoolState` struct demonstrates an effort towards… |
+| **Technical** | 6/10 | Medium | The contract utilizes OpenZeppelin's upgradeable standards for ERC20 and access control, which is a strong foundation (7.1 Architecture). The `PackedPoolState` struct demonstrates an effort towards… |
 | **Governance / Economics** | 4/10 | Medium | The contract exhibits a high degree of centralized control, with the `onlyOwner` modifier governing critical state transitions like `startMigration` and `finalizeMigration` (7.3 Access Control, 7.5… |
 | **Upgrades** | 3/10 | High | The contract correctly implements the UUPS proxy pattern using OpenZeppelin's `Initializable` and `Upgradeable` contracts. The `_disableInitializers()` in the constructor and the `initializer`… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
 
 ## LP Distribution
 
@@ -87,13 +94,13 @@ The contract utilizes a `PackedPoolState` struct with tightly packed `uint` type
 |--------|-------|
 | **Contract** | [`0xeeb3...7777`](https://bscscan.com/address/0xeeb3d73d4dd44e6e4d957d89492f05d5ccee7777) |
 | **Network** | BNB Chain |
-| **Price** | $0.00335 |
-| **24h Volume** | $1.57M |
-| **Liquidity** | $212.0K |
-| **Volume / Liquidity** | 7.4× |
+| **Price** | $0.0006576 |
+| **24h Volume** | $319.6K |
+| **Liquidity** | $108.5K |
+| **Volume / Liquidity** | 2.9× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 16.0% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 27.8% of supply |
+| **Buy / Sell Tax** | 1.0% / 1.0% |
 | **24h Transactions** | 4123 buys / 2627 sells |
 
 ## Security Flags (3/5 passed)

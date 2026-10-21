@@ -3,13 +3,13 @@ token: Safe Token
 ticker: SAFE
 network: ethereum
 risk_score: 47
-status: high
+status: medium
 date: 2026-07-27
 ---
 
 # Safe Token (SAFE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 47/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/safe-token-eth)
 
@@ -33,8 +33,8 @@ The SafeToken contract is an ERC20 token with Pausable and Ownable functionaliti
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 88.9% |
-| **Top-3 Unlocked** | ⚠️ 92.3% |
+| **Top-1 Unlocked Holder** | ⚠️ 97.4% |
+| **Top-3 Unlocked** | ⚠️ 98.4% |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ The `unpause()` function explicitly includes `require(paused(), "SafeToken: toke
 |--------|-------|
 | **Contract** | [`0x5afe...eeee`](https://etherscan.io/address/0x5afe3855358e112b5647b952709e6165e1c1eeee) |
 | **Network** | Ethereum |
-| **Price** | $0.09032 |
-| **24h Volume** | $655.3K |
-| **Liquidity** | $191.1K |
-| **Volume / Liquidity** | 3.4× |
+| **Price** | $0.09507 |
+| **24h Volume** | $56.3K |
+| **Liquidity** | $260.7K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 79.0% of supply |
+| **Top-10 Holders** | 80.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 910 buys / 1036 sells |
 

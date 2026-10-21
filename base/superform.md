@@ -2,14 +2,14 @@
 token: Superform
 ticker: UP
 network: base
-risk_score: 45
+risk_score: 47
 status: medium
 date: 2026-08-17
 ---
 
 # Superform (UP) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 47/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/superform-base)
 
@@ -33,7 +33,7 @@ The audit of the UpOFT contract, an Omni-chain Fungible Token (OFT) implementati
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 58.2% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -66,12 +66,12 @@ The `UpOFT` contract is deployed as a standard, non-upgradeable contract. This d
 |--------|-------|
 | **Contract** | [`0x5b21...c86b`](https://basescan.org/address/0x5b2193fdc451c1f847be09ca9d13a4bf60f8c86b) |
 | **Network** | Base |
-| **Price** | $0.05476 |
-| **24h Volume** | $189.4K |
-| **Liquidity** | $660.0K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.05255 |
+| **24h Volume** | $29.8K |
+| **Liquidity** | $472.3K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 83.8% of supply |
+| **Top-10 Holders** | 84.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 213 buys / 343 sells |
 

@@ -2,14 +2,14 @@
 token: Tether Gold
 ticker: XAUT
 network: bsc
-risk_score: 85
+risk_score: 87
 status: critical
 date: 2026-08-11
 ---
 
 # Tether Gold (XAUT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 85/100 — 🔴 Critical Risk**
+> **Risk Score: 87/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tether-gold-bsc)
 
@@ -41,8 +41,8 @@ The audit covers the TetherTokenV2 contract, an upgradeable ERC20 token with EIP
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 49.4% |
-| **Top-3 Unlocked** | 59.5% |
+| **Top-1 Unlocked Holder** | 44.1% |
+| **Top-3 Unlocked** | ⚠️ 88.5% |
 
 ## Security Findings
 
@@ -95,12 +95,12 @@ The `isTrusted` mapping is declared in `TetherToken.sol` but is not used anywher
 |--------|-------|
 | **Contract** | [`0x21ca...a3bf`](https://bscscan.com/address/0x21caef8a43163eea865baee23b9c2e327696a3bf) |
 | **Network** | BNB Chain |
-| **Price** | $4,353.3200 |
-| **24h Volume** | $3.78M |
-| **Liquidity** | $1.34M |
+| **Price** | $4,461.7600 |
+| **24h Volume** | $4.59M |
+| **Liquidity** | $1.63M |
 | **Volume / Liquidity** | 2.8× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 95.6% of supply |
+| **Top-10 Holders** | 92.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 18609 buys / 12487 sells |
 

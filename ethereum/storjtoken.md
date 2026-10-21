@@ -3,13 +3,13 @@ token: StorjToken
 ticker: STORJ
 network: ethereum
 risk_score: 53
-status: high
+status: medium
 date: 2026-08-14
 ---
 
 # StorjToken (STORJ) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 53/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/storjtoken-eth)
 
@@ -87,12 +87,12 @@ The `setUpgradeMaster` function allows the current `upgradeMaster` to transfer i
 |--------|-------|
 | **Contract** | [`0xb64e...b8ac`](https://etherscan.io/address/0xb64ef51c888972c908cfacf59b47c1afbc0ab8ac) |
 | **Network** | Ethereum |
-| **Price** | $0.0443 |
-| **24h Volume** | $38.6K |
-| **Liquidity** | $79.3K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.03089 |
+| **24h Volume** | $16.3K |
+| **Liquidity** | $77.7K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 6y |
-| **Top-10 Holders** | 61.7% of supply |
+| **Top-10 Holders** | 63.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 300 buys / 272 sells |
 

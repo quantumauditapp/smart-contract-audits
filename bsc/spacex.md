@@ -2,14 +2,14 @@
 token: SpaceX
 ticker: SPCXB
 network: bsc
-risk_score: 81
-status: critical
+risk_score: 77
+status: high
 date: 2026-08-11
 ---
 
 # SpaceX (SPCXB) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 81/100 — 🔴 Critical Risk**
+> **Risk Score: 77/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spacex-bsc)
 
@@ -40,8 +40,8 @@ The SecuritiesToken contract implements an upgradeable ERC-20 token with complia
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 56.9% |
-| **Top-3 Unlocked** | 76.6% |
+| **Top-1 Unlocked Holder** | 49.7% |
+| **Top-3 Unlocked** | 77.0% |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ The `ISSUER_ROLE` has the authority to mint and burn tokens, as well as to autho
 |--------|-------|
 | **Contract** | [`0xbe9d...03e1`](https://bscscan.com/address/0xbe9d156892e55e7154bcd3cb0fea677f9d3103e1) |
 | **Network** | BNB Chain |
-| **Price** | $136.8900 |
-| **24h Volume** | $10.57M |
-| **Liquidity** | $4.20M |
-| **Volume / Liquidity** | 2.5× |
+| **Price** | $150.2200 |
+| **24h Volume** | $1.87M |
+| **Liquidity** | $2.22M |
+| **Volume / Liquidity** | 0.8× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 91.5% of supply |
+| **Top-10 Holders** | 86.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 18330 buys / 16629 sells |
 

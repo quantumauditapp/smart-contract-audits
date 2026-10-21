@@ -66,12 +66,12 @@ The contract leverages well-audited and widely adopted OpenZeppelin Contracts fo
 |--------|-------|
 | **Contract** | [`0xa439...4444`](https://bscscan.com/address/0xa4390b901a63641c92327e5793b45fcb46954444) |
 | **Network** | BNB Chain |
-| **Price** | $0.002428 |
-| **24h Volume** | $195.4K |
-| **Liquidity** | $209.2K |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.000425 |
+| **24h Volume** | $26.5K |
+| **Liquidity** | $110.8K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 17d |
-| **Top-10 Holders** | 77.6% of supply |
+| **Top-10 Holders** | 70.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2118 buys / 1586 sells |
 

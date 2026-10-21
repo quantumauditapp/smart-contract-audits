@@ -2,14 +2,14 @@
 token: SOLANA
 ticker: SOL
 network: bsc
-risk_score: 73
-status: critical
+risk_score: 74
+status: high
 date: 2026-08-11
 ---
 
 # SOLANA (SOL) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 73/100 — 🔴 Critical Risk**
+> **Risk Score: 74/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solana-bsc)
 
@@ -41,7 +41,7 @@ This audit covers a BEP20 token implementation designed for an upgradeable proxy
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.7% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -81,12 +81,12 @@ The provided source code for the internal `_burnFrom` function is truncated, end
 |--------|-------|
 | **Contract** | [`0x570a...43df`](https://bscscan.com/address/0x570a5d26f7765ecb712c0924e4de545b89fd43df) |
 | **Network** | BNB Chain |
-| **Price** | $75.8400 |
-| **24h Volume** | $437.1K |
-| **Liquidity** | $1.03M |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $103.9000 |
+| **24h Volume** | $1.69M |
+| **Liquidity** | $1.30M |
+| **Volume / Liquidity** | 1.3× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 60.1% of supply |
+| **Top-10 Holders** | 62.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1147 buys / 1275 sells |
 

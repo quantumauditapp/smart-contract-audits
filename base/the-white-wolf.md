@@ -2,14 +2,14 @@
 token: The White Wolf
 ticker: WOLF
 network: base
-risk_score: 78
-status: critical
+risk_score: 74
+status: high
 date: 2026-08-11
 ---
 
 # The White Wolf (WOLF) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 78/100 — 🔴 Critical Risk**
+> **Risk Score: 74/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-white-wolf-base)
 
@@ -26,15 +26,23 @@ The audit of the DopplerERC20V1 contract identified a critical issue due to inco
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract leverages Solady libraries for ERC20, Ownable, and Initializable functionalities, which contributes to a solid architectural foundation (7.1 Architecture). Input validation in the… |
-| **Governance / Economics** | 4/10 | Medium | The contract's economic model includes a balance limit feature intended to restrict token holdings, and vesting schedules to control token distribution over time (7.4 Economic). The `initialize`… |
+| **Governance / Economics** | 3/10 | High | The contract's economic model includes a balance limit feature intended to restrict token holdings, and vesting schedules to control token distribution over time (7.4 Economic). The `initialize`… |
 | **Upgrades** | 1/10 | High | The contract is not identified as an upgradeable proxy, and therefore, upgrade safety considerations (7.7 Upgrades) are not applicable. The `Initializable` pattern is used, but… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 69.4% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 96.8% |
+| **Top-3 Unlocked** | ⚠️ 99.1% |
 
 ## Security Findings
 
@@ -80,22 +88,22 @@ The `initialize` function's validation for vesting schedules allows `s.duration 
 |--------|-------|
 | **Contract** | [`0x73ac...5ba3`](https://basescan.org/address/0x73ac2806c40ab4741ea7a35b7328aca957755ba3) |
 | **Network** | Base |
-| **Price** | $0.00000642 |
-| **24h Volume** | $144.4K |
-| **Liquidity** | $257.3K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.00000245 |
+| **24h Volume** | $14.9K |
+| **Liquidity** | $124.2K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 59.8% of supply |
+| **Top-10 Holders** | 69.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 284 buys / 436 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ⚠️ Unknown |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
 
@@ -105,7 +113,7 @@ The `initialize` function's validation for vesting schedules allows `s.duration 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 

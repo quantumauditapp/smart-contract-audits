@@ -2,14 +2,14 @@
 token: 我踏马来了
 ticker: 我踏马来了
 network: bsc
-risk_score: 18
+risk_score: 0
 status: low
 date: 2026-08-12
 ---
 
 # 我踏马来了 (我踏马来了) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 18/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/token-6e44cf-bsc)
 
@@ -26,15 +26,15 @@ The FourERC20 contract implements a standard ERC-20 token, largely leveraging we
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The contract (7.1 Architecture, 7.2 Code Security) is built upon OpenZeppelin's battle-tested ERC-20 implementation (v4.9.4), which provides a strong foundation for security, including robust… |
-| **Governance / Economics** | 5/10 | Medium | The FourERC20 contract (7.4 Economic, 7.5 Governance) does not implement any governance mechanisms or explicit owner roles, aligning with the prefill information that ownership is renounced. The… |
-| **Upgrades** | 9/10 | Low | The contract (7.7 Upgrades) is not designed with an upgrade proxy pattern, meaning it is immutable once deployed. This eliminates upgrade-related risks such as proxy misconfigurations or logic errors… |
+| **Governance / Economics** | 8/10 | Low | The FourERC20 contract (7.4 Economic, 7.5 Governance) does not implement any governance mechanisms or explicit owner roles, aligning with the prefill information that ownership is renounced. The… |
+| **Upgrades** | 10/10 | Low | The contract (7.7 Upgrades) is not designed with an upgrade proxy pattern, meaning it is immutable once deployed. This eliminates upgrade-related risks such as proxy misconfigurations or logic errors… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 53.1% |
-| **Top-3 Unlocked** | ⚠️ 95.5% |
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
+| **LP Locked** | 100.0% — Null Address |
 
 ## Security Findings
 
@@ -73,23 +73,23 @@ The `_contextSuffixLength()` function, inherited from the `Context` contract, is
 |--------|-------|
 | **Contract** | [`0xc51a...4444`](https://bscscan.com/address/0xc51a9250795c0186a6fb4a7d20a90330651e4444) |
 | **Network** | BNB Chain |
-| **Price** | $0.008793 |
-| **24h Volume** | $206.1K |
-| **Liquidity** | $726.6K |
+| **Price** | $0.01152 |
+| **24h Volume** | $248.4K |
+| **Liquidity** | $926.1K |
 | **Volume / Liquidity** | 0.3× |
 | **Token Age** | 7mo |
-| **Top-10 Holders** | 87.4% of supply |
+| **Top-10 Holders** | 85.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 653 buys / 784 sells |
 
-## Security Flags (4/5 passed)
+## Security Flags (5/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -99,7 +99,7 @@ The `_contextSuffixLength()` function, inherited from the `Context` contract, is
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

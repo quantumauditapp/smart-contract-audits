@@ -3,13 +3,13 @@ token: Tether Gold
 ticker: XAUT
 network: ethereum
 risk_score: 58
-status: high
+status: medium
 date: 2026-07-27
 ---
 
 # Tether Gold (XAUT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 58/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tether-gold-eth)
 
@@ -42,8 +42,8 @@ The TetherToken contract implements an upgradeable ERC-20 token with a centraliz
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 13.9% |
-| **Top-3 Unlocked** | 36.0% |
+| **Top-1 Unlocked Holder** | 9.3% |
+| **Top-3 Unlocked** | 23.4% |
 
 ## Security Findings
 
@@ -89,12 +89,12 @@ The `WithBlockedList` contract and its integration into `TetherToken` implement 
 |--------|-------|
 | **Contract** | [`0x6874...2f38`](https://etherscan.io/address/0x68749665ff8d2d112fa859aa293f07a622782f38) |
 | **Network** | Ethereum |
-| **Price** | $4,087.5500 |
-| **24h Volume** | $4.28M |
-| **Liquidity** | $6.12M |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $4,462.2600 |
+| **24h Volume** | $3.74M |
+| **Liquidity** | $6.15M |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | 56.4% of supply |
+| **Top-10 Holders** | 54.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 273 buys / 442 sells |
 

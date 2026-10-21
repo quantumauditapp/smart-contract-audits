@@ -2,14 +2,14 @@
 token: Supergemma4-26b-multimodal
 ticker: SUPERGEMMA
 network: base
-risk_score: 47
-status: high
+risk_score: 49
+status: medium
 date: 2026-08-01
 ---
 
 # Supergemma4-26b-multimodal (SUPERGEMMA) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/supergemma4-26b-multimodal-base)
 
@@ -33,8 +33,8 @@ The DERC20 token contract implements an ERC20 token with voting, permit, and cus
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 87.6% |
-| **Top-3 Unlocked** | ⚠️ 95.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 88.7% |
+| **Top-3 Unlocked** | ⚠️ 99.3% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The contract uses the Business Source License 1.1 (BUSL-1.1). This is a non-open
 |--------|-------|
 | **Contract** | [`0x572c...aba3`](https://basescan.org/address/0x572c4fa77623652411574c51b5ddb7e1b750aba3) |
 | **Network** | Base |
-| **Price** | $0.00001181 |
-| **24h Volume** | $168.3K |
-| **Liquidity** | $511.8K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.00000423 |
+| **24h Volume** | $9.5K |
+| **Liquidity** | $170.5K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 33.9% of supply |
+| **Top-10 Holders** | 45.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 505 buys / 726 sells |
 

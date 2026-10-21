@@ -3,13 +3,13 @@ token: The Final Form Bull
 ticker: CZ
 network: bsc
 risk_score: 25
-status: medium
+status: low
 date: 2026-07-22
 ---
 
 # The Final Form Bull (CZ) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 25/100 — 🟡 Medium Risk**
+> **Risk Score: 25/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-final-form-bull-bsc)
 
@@ -73,12 +73,12 @@ The `_init` function, intended to set `_name` and `_symbol`, is internal and not
 |--------|-------|
 | **Contract** | [`0x7a84...4444`](https://bscscan.com/address/0x7a848a5a8169aa6a2f603d056a749f924f504444) |
 | **Network** | BNB Chain |
-| **Price** | $0.008201 |
-| **24h Volume** | $1.01M |
-| **Liquidity** | $440.8K |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $0.001895 |
+| **24h Volume** | $116.6K |
+| **Liquidity** | $259.9K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 18d |
-| **Top-10 Holders** | 77.1% of supply |
+| **Top-10 Holders** | 81.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4279 buys / 2994 sells |
 

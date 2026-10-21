@@ -2,14 +2,14 @@
 token: TERAFAB
 ticker: TERAFAB
 network: ethereum
-risk_score: 62
+risk_score: 67
 status: high
 date: 2026-08-07
 ---
 
 # TERAFAB (TERAFAB) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 67/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/terafab-eth)
 
@@ -26,8 +26,8 @@ The audit of the TERAFAB (Tweet) token contract revealed critical issues, includ
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The contract's technical architecture is based on a standard ERC-20 implementation with added tax and anti-bot mechanisms (7.1 Architecture). However, critical code security flaws were identified… |
-| **Governance / Economics** | 5/10 | Medium | The contract exhibits a high degree of centralization, with the owner possessing extensive control over critical parameters such as tax rates, maximum transaction amounts, and the ability to… |
-| **Upgrades** | 8/10 | Low | The contract is not designed to be upgradeable, as it does not implement any proxy pattern (7.7 Upgrades). This eliminates upgrade-specific risks such as storage collisions or proxy… |
+| **Governance / Economics** | 4/10 | Medium | The contract exhibits a high degree of centralization, with the owner possessing extensive control over critical parameters such as tax rates, maximum transaction amounts, and the ability to… |
+| **Upgrades** | 6/10 | Medium | The contract is not designed to be upgradeable, as it does not implement any proxy pattern (7.7 Upgrades). This eliminates upgrade-specific risks such as storage collisions or proxy… |
 
 ## LP Distribution
 
@@ -101,12 +101,12 @@ The contract uses the `SafeMath` library for arithmetic operations. However, the
 |--------|-------|
 | **Contract** | [`0xd833...59ab`](https://etherscan.io/address/0xd83304a3d88323175eb041dd83fd85a5581759ab) |
 | **Network** | Ethereum |
-| **Price** | $0.00009372 |
-| **24h Volume** | $94.0K |
-| **Liquidity** | $21.6K |
-| **Volume / Liquidity** | 4.3× |
+| **Price** | $0.00003652 |
+| **24h Volume** | $137 |
+| **Liquidity** | $15.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 36.9% of supply |
+| **Top-10 Holders** | 46.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 291 buys / 264 sells |
 

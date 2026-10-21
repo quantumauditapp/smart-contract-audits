@@ -3,13 +3,13 @@ token: Tether USD
 ticker: USDT
 network: base
 risk_score: 60
-status: high
+status: medium
 date: 2026-07-23
 ---
 
 # Tether USD (USDT) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 60/100 — 🟠 High Risk**
+> **Risk Score: 60/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tether-usd-base)
 
@@ -66,12 +66,12 @@ The contract leverages well-audited OpenZeppelin libraries (Context, IERC20, Saf
 |--------|-------|
 | **Contract** | [`0xfde4...9bb2`](https://basescan.org/address/0xfde4c96c8593536e31f229ea8f37b2ada2699bb2) |
 | **Network** | Base |
-| **Price** | $0.9989 |
-| **24h Volume** | $6.66M |
-| **Liquidity** | $1.74M |
-| **Volume / Liquidity** | 3.8× |
+| **Price** | $0.999 |
+| **24h Volume** | $324.4K |
+| **Liquidity** | $192.6K |
+| **Volume / Liquidity** | 1.7× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 25.6% of supply |
+| **Top-10 Holders** | 25.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5354 buys / 1379 sells |
 

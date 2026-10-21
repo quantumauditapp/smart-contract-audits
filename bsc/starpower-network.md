@@ -2,14 +2,14 @@
 token: Starpower Network
 ticker: STAR
 network: bsc
-risk_score: 49
-status: high
+risk_score: 62
+status: medium
 date: 2026-07-27
 ---
 
 # Starpower Network (STAR) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 62/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/starpower-network-bsc)
 
@@ -27,7 +27,7 @@ This audit report is based on a partial source code submission, specifically Ope
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The provided code consists of well-audited OpenZeppelin libraries (Context, ECDSA), which are robust and widely used, indicating a strong foundation for these components (7.2 Code Security). However… |
 | **Governance / Economics** | 2/10 | High | The contract is controlled by an Externally Owned Account (EOA) owner, `0xb8169426da25f63f557189492cfb0e7b9f52ca7a`, which centralizes significant administrative power (7.5 Governance). This single… |
-| **Upgrades** | 6/10 | Medium | The contract is not deployed as an upgradeable proxy, meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates risks associated with proxy implementation bugs or upgrade path… |
+| **Upgrades** | 3/10 | High | The contract is not deployed as an upgradeable proxy, meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates risks associated with proxy implementation bugs or upgrade path… |
 
 ## LP Distribution
 
@@ -73,22 +73,22 @@ The provided code snippet exclusively consists of standard, battle-tested OpenZe
 |--------|-------|
 | **Contract** | [`0x8fce...787c`](https://bscscan.com/address/0x8fce7206e3043dd360f115afa956ee31b90b787c) |
 | **Network** | BNB Chain |
-| **Price** | $0.1013 |
-| **24h Volume** | $2.05M |
-| **Liquidity** | $1.49M |
-| **Volume / Liquidity** | 1.4× |
+| **Price** | $0.1156 |
+| **24h Volume** | $2.00M |
+| **Liquidity** | $1.59M |
+| **Volume / Liquidity** | 1.3× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 47.5% of supply |
+| **Top-10 Holders** | 44.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6520 buys / 6888 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -98,7 +98,7 @@ The provided code snippet exclusively consists of standard, battle-tested OpenZe
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

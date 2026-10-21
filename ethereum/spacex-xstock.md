@@ -36,14 +36,14 @@ The audit of the Backed Auto Fee Token project reveals a critical concern: the i
 | **Proxy Type** | Eip1967 Transparent |
 | **Admin** | OZ ProxyAdmin → Multisig 2-of-3 |
 | **Implementation** | ✅ Verified source |
-| **Upgrades (30d)** | ⚠️ 1 |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 83.1% |
-| **Top-3 Unlocked** | ⚠️ 97.3% |
+| **Top-1 Unlocked Holder** | 37.4% |
+| **Top-3 Unlocked** | ⚠️ 80.3% |
 
 ## Security Findings
 
@@ -89,12 +89,12 @@ The project leverages well-audited and widely adopted OpenZeppelin Contracts Upg
 |--------|-------|
 | **Contract** | [`0x68fa...ce28`](https://etherscan.io/address/0x68fa48b1c2fe52b3d776e1953e0e782b5044ce28) |
 | **Network** | Ethereum |
-| **Price** | $116.9700 |
-| **24h Volume** | $1.9K |
-| **Liquidity** | $26.5K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $148.4200 |
+| **24h Volume** | $6.7K |
+| **Liquidity** | $19.4K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 99.7% of supply |
+| **Top-10 Holders** | 99.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 124 buys / 142 sells |
 

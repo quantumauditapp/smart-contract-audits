@@ -41,8 +41,8 @@ The audit of the WrappedAssetV2 contract, serving as the implementation for a Be
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 27.1% |
-| **Top-3 Unlocked** | 45.2% |
+| **Top-1 Unlocked Holder** | 35.3% |
+| **Top-3 Unlocked** | 65.4% |
 
 ## Security Findings
 
@@ -95,12 +95,12 @@ The `WrappedAssetV2` constructor correctly calls `_disableInitializers()`. This 
 |--------|-------|
 | **Contract** | [`0x9b8d...db55`](https://basescan.org/address/0x9b8df6e244526ab5f6e6400d331db28c8fdddb55) |
 | **Network** | Base |
-| **Price** | $75.7000 |
-| **24h Volume** | $423.3K |
-| **Liquidity** | $768.4K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $104.7500 |
+| **24h Volume** | $649.8K |
+| **Liquidity** | $1.29M |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 75.1% of supply |
+| **Top-10 Holders** | 76.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 387 buys / 308 sells |
 

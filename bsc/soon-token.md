@@ -74,12 +74,12 @@ The `EIP3009Upgradeable` contract imports `ECDSA` from `@openzeppelin/contracts/
 |--------|-------|
 | **Contract** | [`0xb9e1...a721`](https://bscscan.com/address/0xb9e1fd5a02d3a33b25a14d661414e6ed6954a721) |
 | **Network** | BNB Chain |
-| **Price** | $0.2014 |
-| **24h Volume** | $587.4K |
-| **Liquidity** | $550.8K |
-| **Volume / Liquidity** | 1.1× |
+| **Price** | $0.1908 |
+| **24h Volume** | $346.7K |
+| **Liquidity** | $567.3K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 93.3% of supply |
+| **Top-10 Holders** | 92.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2978 buys / 3450 sells |
 

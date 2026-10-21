@@ -2,14 +2,14 @@
 token: Silencio
 ticker: SLC
 network: base
-risk_score: 48
-status: high
+risk_score: 58
+status: medium
 date: 2026-08-05
 ---
 
 # Silencio (SLC) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 58/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/silencio-base)
 
@@ -28,15 +28,15 @@ The team should also establish clear emergency procedures for potential LayerZer
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | 7.1 Architecture, 7.2 Code Security. The contract exhibits a straightforward architecture, inheriting core functionality from battle-tested OpenZeppelin `Ownable` and LayerZero `OFT` libraries. This… |
-| **Governance / Economics** | 3/10 | High | 7.3 Access Control, 7.4 Economic, 7.5 Governance. The contract implements a centralized access control model via OpenZeppelin's `Ownable` pattern, where a single owner address (`_delegate`) manages… |
+| **Governance / Economics** | 1/10 | High | 7.3 Access Control, 7.4 Economic, 7.5 Governance. The contract implements a centralized access control model via OpenZeppelin's `Ownable` pattern, where a single owner address (`_delegate`) manages… |
 | **Upgrades** | 6/10 | Medium | 7.7 Upgrades. The SilencioOFT contract is deployed as a standard, non-upgradeable implementation. This design choice eliminates the complexities and potential risks associated with proxy upgrade… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 45.6% |
-| **Top-3 Unlocked** | ⚠️ 86.9% |
+| **Top-1 Unlocked Holder** | ⚠️ 56.9% |
+| **Top-3 Unlocked** | ⚠️ 96.0% |
 
 ## Security Findings
 
@@ -75,12 +75,12 @@ _🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 |--------|-------|
 | **Contract** | [`0x6bd8...b5d2`](https://basescan.org/address/0x6bd83abc39391af1e24826e90237c4bd3468b5d2) |
 | **Network** | Base |
-| **Price** | $0.00005371 |
-| **24h Volume** | $60.6K |
-| **Liquidity** | $68.0K |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.0001663 |
+| **24h Volume** | $53.8K |
+| **Liquidity** | $138.8K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 49.6% of supply |
+| **Top-10 Holders** | 47.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 697 buys / 568 sells |
 

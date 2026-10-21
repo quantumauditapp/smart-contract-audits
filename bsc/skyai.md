@@ -66,12 +66,12 @@ The audit was conducted on a base OpenZeppelin ERC20 implementation. Without the
 |--------|-------|
 | **Contract** | [`0x92aa...fb10`](https://bscscan.com/address/0x92aa03137385f18539301349dcfc9ebc923ffb10) |
 | **Network** | BNB Chain |
-| **Price** | $0.02834 |
-| **24h Volume** | $791.4K |
-| **Liquidity** | $3.91M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.05834 |
+| **24h Volume** | $2.74M |
+| **Liquidity** | $6.70M |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 60.4% of supply |
+| **Top-10 Holders** | 61.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1519 buys / 1212 sells |
 

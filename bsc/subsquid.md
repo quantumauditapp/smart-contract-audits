@@ -2,14 +2,14 @@
 token: Subsquid
 ticker: SQD
 network: bsc
-risk_score: 60
+risk_score: 72
 status: high
 date: 2026-08-11
 ---
 
 # Subsquid (SQD) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 60/100 — 🟠 High Risk**
+> **Risk Score: 72/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/subsquid-bsc)
 
@@ -25,9 +25,9 @@ The PeerToken contract is an ERC-20 token with minting and burning capabilities,
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract is well-structured, inheriting from standard OpenZeppelin ERC20, ERC20Burnable, and Ownable contracts (7.1 Architecture). It correctly implements access control modifiers (`onlyMinter`… |
+| **Technical** | 5/10 | Medium | The contract is well-structured, inheriting from standard OpenZeppelin ERC20, ERC20Burnable, and Ownable contracts (7.1 Architecture). It correctly implements access control modifiers (`onlyMinter`… |
 | **Governance / Economics** | 1/10 | High | The economic model presents a critical risk due to the centralized minting authority. A single `minter` address, controlled by the `owner`, can mint an unlimited supply of tokens, posing a… |
-| **Upgrades** | 5/10 | Medium | The PeerToken contract is implemented as a standard, non-upgradeable contract. This design choice eliminates risks associated with proxy patterns or upgrade mechanisms, such as storage collisions or… |
+| **Upgrades** | 2/10 | High | The PeerToken contract is implemented as a standard, non-upgradeable contract. This design choice eliminates risks associated with proxy patterns or upgrade mechanisms, such as storage collisions or… |
 
 ## LP Distribution
 
@@ -73,22 +73,22 @@ The `minter` role is assigned to a single external address. While this is functi
 |--------|-------|
 | **Contract** | [`0xe50e...cc13`](https://bscscan.com/address/0xe50e3d1a46070444f44df911359033f2937fcc13) |
 | **Network** | BNB Chain |
-| **Price** | $0.04373 |
-| **24h Volume** | $3.37M |
-| **Liquidity** | $466.4K |
-| **Volume / Liquidity** | 7.2× |
+| **Price** | $0.0343 |
+| **24h Volume** | $192.3K |
+| **Liquidity** | $416.0K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 92.4% of supply |
+| **Top-10 Holders** | 94.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 20936 buys / 23573 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -98,7 +98,7 @@ The `minter` role is assigned to a single external address. While this is functi
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

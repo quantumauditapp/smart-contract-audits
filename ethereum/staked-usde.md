@@ -2,14 +2,14 @@
 token: Staked USDe
 ticker: SUSDE
 network: ethereum
-risk_score: 58
-status: high
+risk_score: 59
+status: medium
 date: 2026-08-11
 ---
 
 # Staked USDe (SUSDE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 59/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/staked-usde-eth)
 
@@ -33,8 +33,8 @@ The StakedUSDeV2 contract implements a staking mechanism with a cooldown period,
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 73.9% |
-| **Top-3 Unlocked** | ⚠️ 97.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -81,11 +81,11 @@ The `DEFAULT_ADMIN_ROLE` has the ability to set `cooldownDuration` to 0 via the 
 | **Contract** | [`0x9d39...3497`](https://etherscan.io/address/0x9d39a5de30e57443bff2a8307a4256c8797a3497) |
 | **Network** | Ethereum |
 | **Price** | $1.2400 |
-| **24h Volume** | $3.57M |
-| **Liquidity** | $12.29M |
-| **Volume / Liquidity** | 0.3× |
+| **24h Volume** | $24.3K |
+| **Liquidity** | $52.24M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 81.6% of supply |
+| **Top-10 Holders** | 77.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 97 buys / 105 sells |
 

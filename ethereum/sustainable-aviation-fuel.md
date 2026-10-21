@@ -3,13 +3,13 @@ token: Sustainable Aviation Fuel
 ticker: SAF
 network: ethereum
 risk_score: 56
-status: high
+status: medium
 date: 2026-08-20
 ---
 
 # Sustainable Aviation Fuel (SAF) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 56/100 — 🟠 High Risk**
+> **Risk Score: 56/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sustainable-aviation-fuel-eth)
 
@@ -65,12 +65,12 @@ The `SAFToken` contract primarily inherits and utilizes the `ERC20` and `Ownable
 |--------|-------|
 | **Contract** | [`0xfe4d...eef9`](https://etherscan.io/address/0xfe4db16013c1c3a9eee10829d05b9b08847feef9) |
 | **Network** | Ethereum |
-| **Price** | $0.0006341 |
-| **24h Volume** | $70.5K |
-| **Liquidity** | $67.5K |
-| **Volume / Liquidity** | 1.0× |
+| **Price** | $0.0007809 |
+| **24h Volume** | $2.2K |
+| **Liquidity** | $78.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 99.3% of supply |
+| **Top-10 Holders** | 99.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 444 buys / 421 sells |
 

@@ -3,13 +3,13 @@ token: STBL_Token - STBL Governance Token
 ticker: STBL
 network: bsc
 risk_score: 76
-status: critical
+status: high
 date: 2026-08-17
 ---
 
 # STBL_Token - STBL Governance Token (STBL) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 76/100 — 🔴 Critical Risk**
+> **Risk Score: 76/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/stbltoken-stbl-governance-token-bsc)
 
@@ -73,12 +73,12 @@ In the `burn` and `bridgeBurn` functions, `IERC20(address(this)).safeTransferFro
 |--------|-------|
 | **Contract** | [`0x8ded...79e3`](https://bscscan.com/address/0x8dedf84656fa932157e27c060d8613824e7979e3) |
 | **Network** | BNB Chain |
-| **Price** | $0.02622 |
-| **24h Volume** | $2.91M |
-| **Liquidity** | $1.76M |
-| **Volume / Liquidity** | 1.7× |
+| **Price** | $0.02558 |
+| **24h Volume** | $912.1K |
+| **Liquidity** | $1.74M |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 11mo |
-| **Top-10 Holders** | 79.1% of supply |
+| **Top-10 Holders** | 79.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 7470 buys / 8285 sells |
 

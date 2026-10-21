@@ -2,14 +2,14 @@
 token: Synapse
 ticker: SYN
 network: ethereum
-risk_score: 66
+risk_score: 76
 status: high
 date: 2026-06-22
 ---
 
 # Synapse (SYN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 76/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/synapse-eth)
 
@@ -27,14 +27,22 @@ This audit was conducted on a partial source code fragment, specifically the `Ac
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The provided code, `AccessControlUpgradeable`, is a well-vetted OpenZeppelin library, indicating a strong foundation for access control (7.2 Code Security). It utilizes standard patterns for role… |
 | **Governance / Economics** | 1/10 | High | The `AccessControlUpgradeable` contract provides a robust role-based access control system, allowing for granular permission management (7.3 Access Control). This structure can support decentralized… |
-| **Upgrades** | 3/10 | High | The contract correctly inherits from `Initializable` and includes a `__gap` variable, indicating it is designed for use in an upgradeable proxy pattern (7.7 Upgrades). This is a strong practice for… |
+| **Upgrades** | 1/10 | High | The contract correctly inherits from `Initializable` and includes a `__gap` variable, indicating it is designed for use in an upgradeable proxy pattern (7.7 Upgrades). This is a strong practice for… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 42.2% |
-| **Top-3 Unlocked** | ⚠️ 88.0% |
+| **Top-1 Unlocked Holder** | 44.3% |
+| **Top-3 Unlocked** | ⚠️ 93.5% |
 
 ## Security Findings
 
@@ -80,16 +88,16 @@ The contract extensively uses well-audited and community-vetted OpenZeppelin con
 |--------|-------|
 | **Contract** | [`0x0f2d...9f29`](https://etherscan.io/address/0x0f2d719407fdbeff09d87557abb7232601fd9f29) |
 | **Network** | Ethereum |
-| **Price** | $0.1498 |
-| **24h Volume** | $133.2K |
-| **Liquidity** | $132.1K |
-| **Volume / Liquidity** | 1.0× |
+| **Price** | $0.09281 |
+| **24h Volume** | $36.2K |
+| **Liquidity** | $114.3K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | 67.5% of supply |
+| **Top-10 Holders** | 68.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1354 buys / 1476 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
@@ -97,7 +105,7 @@ The contract extensively uses well-audited and community-vetted OpenZeppelin con
 | Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
@@ -107,7 +115,7 @@ The contract extensively uses well-audited and community-vetted OpenZeppelin con
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Frequently Asked Questions
 

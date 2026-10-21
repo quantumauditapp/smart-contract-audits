@@ -3,13 +3,13 @@ token: SoSoValue
 ticker: SOSO
 network: base
 risk_score: 53
-status: high
+status: medium
 date: 2026-08-15
 ---
 
 # SoSoValue (SOSO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 53/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sosovalue-base)
 
@@ -27,7 +27,14 @@ The OptimismMintableERC20 contract serves as a standard ERC-20 token on an L2 (l
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The technical implementation of the OptimismMintableERC20 contract is robust (7.2 Code Security). It leverages battle-tested OpenZeppelin libraries for ERC-20 functionality, minimizing common… |
 | **Governance / Economics** | 2/10 | High | The economic security of this token is critically dependent on the external `BRIDGE` contract (7.4 Economic, 7.6 External). The `BRIDGE` address has the sole authority to mint and burn tokens… |
-| **Upgrades** | 2/10 | High | The OptimismMintableERC20 contract is not designed to be upgradeable (7.7 Upgrades). It is deployed as a standard implementation contract without proxy patterns. This eliminates upgrade-related risks… |
+| **Upgrades** | 3/10 | High | The OptimismMintableERC20 contract is not designed to be upgradeable (7.7 Upgrades). It is deployed as a standard implementation contract without proxy patterns. This eliminates upgrade-related risks… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -66,12 +73,12 @@ The `REMOTE_TOKEN`, `BRIDGE`, and `DECIMALS` variables are declared as `immutabl
 |--------|-------|
 | **Contract** | [`0x624e...8831`](https://basescan.org/address/0x624e2e7fdc8903165f64891672267ab0fcb98831) |
 | **Network** | Base |
-| **Price** | $0.331 |
-| **24h Volume** | $851.7K |
-| **Liquidity** | $230.2K |
-| **Volume / Liquidity** | 3.7× |
+| **Price** | $0.3141 |
+| **24h Volume** | $1.01M |
+| **Liquidity** | $219.8K |
+| **Volume / Liquidity** | 4.6× |
 | **Token Age** | 8mo |
-| **Top-10 Holders** | 97.9% of supply |
+| **Top-10 Holders** | 97.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3788 buys / 3827 sells |
 

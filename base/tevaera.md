@@ -98,12 +98,12 @@ The `delegateOnBehalf` function uses `block.timestamp` to check the `_expiry` of
 |--------|-------|
 | **Contract** | [`0x0030...894c`](https://basescan.org/address/0x00309d634d11541b857f927be91ad2f0bd78894c) |
 | **Network** | Base |
-| **Price** | $0.0005295 |
-| **24h Volume** | $50.7K |
-| **Liquidity** | $28.5K |
-| **Volume / Liquidity** | 1.8× |
+| **Price** | $0.0004777 |
+| **24h Volume** | $1.0K |
+| **Liquidity** | $31.1K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 68.4% of supply |
+| **Top-10 Holders** | 68.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2365 buys / 2318 sells |
 

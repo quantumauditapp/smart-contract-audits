@@ -3,13 +3,13 @@ token: SIREN
 ticker: SIREN
 network: bsc
 risk_score: 21
-status: medium
+status: low
 date: 2026-07-25
 ---
 
 # SIREN (SIREN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 21/100 — 🟡 Medium Risk**
+> **Risk Score: 21/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/siren-bsc)
 
@@ -33,8 +33,8 @@ This audit covers an ERC20 token contract deployed on the BSC network. The contr
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 61.2% |
-| **Top-3 Unlocked** | ⚠️ 99.4% |
+| **Top-1 Unlocked Holder** | ⚠️ 71.2% |
+| **Top-3 Unlocked** | ⚠️ 84.2% |
 
 ## Security Findings
 
@@ -66,12 +66,12 @@ The `approve` function, as defined in the ERC20 standard and implemented here, i
 |--------|-------|
 | **Contract** | [`0x997a...18e1`](https://bscscan.com/address/0x997a58129890bbda032231a52ed1ddc845fc18e1) |
 | **Network** | BNB Chain |
-| **Price** | $0.02718 |
-| **24h Volume** | $126.5K |
-| **Liquidity** | $1.95M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.02908 |
+| **24h Volume** | $67.3K |
+| **Liquidity** | $2.34M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 81.5% of supply |
+| **Top-10 Holders** | 81.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 401 buys / 233 sells |
 

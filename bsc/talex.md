@@ -2,14 +2,14 @@
 token: TaleX
 ticker: X
 network: bsc
-risk_score: 28
-status: medium
+risk_score: 30
+status: low
 date: 2026-08-15
 ---
 
 # TaleX (X) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 28/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/talex-bsc)
 
@@ -66,12 +66,12 @@ The `_decimals` state variable is declared as `public`, which automatically gene
 |--------|-------|
 | **Contract** | [`0x0510...e776`](https://bscscan.com/address/0x0510101ec6c49d24ed911f0011e22a0d697ee776) |
 | **Network** | BNB Chain |
-| **Price** | $0.007716 |
-| **24h Volume** | $5.11M |
-| **Liquidity** | $988.4K |
-| **Volume / Liquidity** | 5.2× |
+| **Price** | $0.009001 |
+| **24h Volume** | $129.0K |
+| **Liquidity** | $496.4K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 71.2% of supply |
+| **Top-10 Holders** | 68.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4718 buys / 4720 sells |
 

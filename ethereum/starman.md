@@ -2,14 +2,14 @@
 token: Starman
 ticker: STARMAN
 network: ethereum
-risk_score: 27
-status: medium
+risk_score: 33
+status: low
 date: 2026-07-31
 ---
 
 # Starman (STARMAN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 27/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/starman-eth)
 
@@ -26,7 +26,7 @@ The Starman token contract implements standard ERC-20 functionality along with c
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 7/10 | Low | The contract utilizes `SafeMath` for arithmetic operations, mitigating common integer overflow/underflow vulnerabilities (7.2 Code Security). It implements standard ERC-20 functions and an `Ownable`… |
-| **Governance / Economics** | 8/10 | Low | The contract's economic model includes dynamic transaction taxes (initial 20% buy/sell, reducing to 0%), max transaction amounts, and max wallet sizes (7.4 Economic). These parameters, along with… |
+| **Governance / Economics** | 7/10 | Low | The contract's economic model includes dynamic transaction taxes (initial 20% buy/sell, reducing to 0%), max transaction amounts, and max wallet sizes (7.4 Economic). These parameters, along with… |
 | **Upgrades** | 9/10 | Low | The contract is a standard implementation and does not utilize any proxy patterns, meaning it is not upgradeable (7.7 Upgrades). This eliminates upgrade-related risks such as proxy implementation… |
 
 ## LP Distribution
@@ -94,12 +94,12 @@ The `_taxWallet` address, which receives collected taxes, is set during construc
 |--------|-------|
 | **Contract** | [`0x1241...e671`](https://etherscan.io/address/0x12419a0427c2a27a61c1cb4a49f5fad24fd4e671) |
 | **Network** | Ethereum |
-| **Price** | $0.0001834 |
-| **24h Volume** | $235.3K |
-| **Liquidity** | $54.6K |
-| **Volume / Liquidity** | 4.3× |
+| **Price** | $0.0001053 |
+| **24h Volume** | $2.1K |
+| **Liquidity** | $48.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 31.1% of supply |
+| **Top-10 Holders** | 43.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 404 buys / 274 sells |
 

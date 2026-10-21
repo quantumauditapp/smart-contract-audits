@@ -3,13 +3,13 @@ token: SEI
 ticker: SEI
 network: ethereum
 risk_score: 62
-status: high
+status: medium
 date: 2026-08-13
 ---
 
 # SEI (SEI) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 62/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sei-eth)
 
@@ -33,7 +33,7 @@ This audit was conducted on a partial codebase consisting solely of interfaces a
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.9% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -80,12 +80,12 @@ Several functions defined within the interfaces (e.g., `registerLibrary`, `setDe
 |--------|-------|
 | **Contract** | [`0xbdf4...788b`](https://etherscan.io/address/0xbdf43ecadc5cef51b7d1772f722e40596bc1788b) |
 | **Network** | Ethereum |
-| **Price** | $0.04144 |
-| **24h Volume** | $434.9K |
-| **Liquidity** | $2.05M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.04858 |
+| **24h Volume** | $615.4K |
+| **Liquidity** | $2.30M |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 98.4% of supply |
+| **Top-10 Holders** | 95.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 190 buys / 93 sells |
 

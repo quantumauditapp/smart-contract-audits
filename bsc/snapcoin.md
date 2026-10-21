@@ -2,14 +2,14 @@
 token: SnapCoin
 ticker: SNAPCOIN
 network: bsc
-risk_score: 90
+risk_score: 100
 status: critical
 date: 2026-08-13
 ---
 
 # SnapCoin (SNAPCOIN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 100/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/snapcoin-bsc)
 
@@ -28,6 +28,13 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 | **Technical** | 4/10 | Medium | The contract leverages OpenZeppelin's battle-tested upgradeable ERC20, Ownable, and Permit implementations, contributing to a solid foundation (7.1 Architecture). However, a critical portion of the… |
 | **Governance / Economics** | 1/10 | High | The contract establishes clear owner roles for initiating and finalizing migration states, which is a positive aspect of its operational control (7.5 Governance). However, a significant economic risk… |
 | **Upgrades** | 3/10 | High | The contract correctly implements the UUPS proxy pattern by inheriting from `Initializable` and calling `_disableInitializers()` in the constructor, ensuring proper upgradeability (7.7 Upgrades). The… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
 
 ## LP Distribution
 
@@ -99,8 +106,8 @@ The `PackedPoolState` struct is efficiently packed into a single storage slot (8
 | **Liquidity** | $17.2K |
 | **Volume / Liquidity** | 6.1× |
 | **Token Age** | 3h |
-| **Top-10 Holders** | N/A of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 99.4% of supply |
+| **Buy / Sell Tax** | 3.0% / 3.0% |
 | **24h Transactions** | 1277 buys / 924 sells |
 
 ## Security Flags (3/5 passed)

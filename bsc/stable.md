@@ -2,14 +2,14 @@
 token: STABLE
 ticker: STABLE
 network: bsc
-risk_score: 54
-status: high
+risk_score: 56
+status: medium
 date: 2026-07-24
 ---
 
 # STABLE (STABLE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 54/100 — 🟠 High Risk**
+> **Risk Score: 56/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/stable-bsc)
 
@@ -41,7 +41,7 @@ The audit focused on the `StableOFTUpgradeable` contract, which serves as an Omn
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.4% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -81,12 +81,12 @@ The `StableOFTUpgradeable` contract introduces very minimal custom logic, primar
 |--------|-------|
 | **Contract** | [`0x011e...075f`](https://bscscan.com/address/0x011ebe7d75e2c9d1e0bd0be0bef5c36f0a90075f) |
 | **Network** | BNB Chain |
-| **Price** | $0.03873 |
-| **24h Volume** | $898.9K |
-| **Liquidity** | $1.02M |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.02872 |
+| **24h Volume** | $1.32M |
+| **Liquidity** | $900.9K |
+| **Volume / Liquidity** | 1.5× |
 | **Token Age** | 7mo |
-| **Top-10 Holders** | 95.9% of supply |
+| **Top-10 Holders** | 94.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 7691 buys / 7418 sells |
 

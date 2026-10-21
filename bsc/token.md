@@ -66,12 +66,12 @@ The `approve` function, while compliant with the ERC-20 standard, is susceptible
 |--------|-------|
 | **Contract** | [`0x924f...4444`](https://bscscan.com/address/0x924fa68a0fc644485b8df8abfa0a41c2e7744444) |
 | **Network** | BNB Chain |
-| **Price** | $0.6474 |
-| **24h Volume** | $1.08M |
-| **Liquidity** | $7.88M |
+| **Price** | $0.5011 |
+| **24h Volume** | $417.9K |
+| **Liquidity** | $7.91M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | 82.0% of supply |
+| **Top-10 Holders** | 81.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4215 buys / 2390 sells |
 

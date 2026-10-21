@@ -2,14 +2,14 @@
 token: The Innovation Game
 ticker: TIG
 network: base
-risk_score: 50
-status: high
+risk_score: 48
+status: medium
 date: 2026-08-11
 ---
 
 # The Innovation Game (TIG) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 48/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-innovation-game-base)
 
@@ -33,7 +33,7 @@ The TIGToken contract is a standard ERC20 token with burnable and owner-mintable
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 95.7% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -73,10 +73,10 @@ The contract lacks a mechanism to pause critical operations (e.g., transfers, mi
 |--------|-------|
 | **Contract** | [`0x0c03...9f7b`](https://basescan.org/address/0x0c03ce270b4826ec62e7dd007f0b716068639f7b) |
 | **Network** | Base |
-| **Price** | $0.8991 |
-| **24h Volume** | $204.0K |
-| **Liquidity** | $990.7K |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.6644 |
+| **24h Volume** | $75.2K |
+| **Liquidity** | $683.3K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
 | **Top-10 Holders** | 64.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

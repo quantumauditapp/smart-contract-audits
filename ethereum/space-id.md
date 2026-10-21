@@ -3,13 +3,13 @@ token: SPACE ID
 ticker: ID
 network: ethereum
 risk_score: 63
-status: high
+status: medium
 date: 2026-06-11
 ---
 
 # SPACE ID (ID) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 63/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/space-id-eth)
 
@@ -73,12 +73,12 @@ The `AccessControl` contract explicitly states that it does not allow enumeratin
 |--------|-------|
 | **Contract** | [`0x2dff...6406`](https://etherscan.io/address/0x2dff88a56767223a5529ea5960da7a3f5f766406) |
 | **Network** | Ethereum |
-| **Price** | $0.03083 |
-| **24h Volume** | $6.8K |
-| **Liquidity** | $581.9K |
+| **Price** | $0.03204 |
+| **24h Volume** | $8.0K |
+| **Liquidity** | $597.1K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 8mo |
-| **Top-10 Holders** | 89.2% of supply |
+| **Top-10 Holders** | 88.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 226 buys / 282 sells |
 

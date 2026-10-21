@@ -80,12 +80,12 @@ The audit was conducted on partial source code, specifically OpenZeppelin's `Ree
 |--------|-------|
 | **Contract** | [`0x208b...2025`](https://bscscan.com/address/0x208bf3e7da9639f1eaefa2de78c23396b0682025) |
 | **Network** | BNB Chain |
-| **Price** | $0.001401 |
-| **24h Volume** | $3.63M |
-| **Liquidity** | $2.78M |
-| **Volume / Liquidity** | 1.3× |
+| **Price** | $0.0007189 |
+| **24h Volume** | $2.49M |
+| **Liquidity** | $2.17M |
+| **Volume / Liquidity** | 1.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 88.2% of supply |
+| **Top-10 Holders** | 86.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2579 buys / 3254 sells |
 

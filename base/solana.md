@@ -2,14 +2,14 @@
 token: Solana
 ticker: SOL
 network: base
-risk_score: 43
+risk_score: 53
 status: medium
 date: 2026-07-25
 ---
 
 # Solana (SOL) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 53/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solana-base)
 
@@ -25,16 +25,24 @@ The CrossChainERC20 contract implements a standard ERC20 token with minting and 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract utilizes the Solady ERC20 implementation, known for its gas efficiency and security, and includes explicit zero-address checks for minting and burning (7.2 Code Security). The `_BRIDGE`… |
+| **Technical** | 4/10 | Medium | The contract utilizes the Solady ERC20 implementation, known for its gas efficiency and security, and includes explicit zero-address checks for minting and burning (7.2 Code Security). The `_BRIDGE`… |
 | **Governance / Economics** | 1/10 | High | The economic model is highly centralized, with all minting and burning controlled by a single `_BRIDGE` address (7.4 Economic). This introduces a significant single point of failure; a compromise of… |
-| **Upgrades** | 5/10 | Medium | The contract is not designed for direct upgradeability, as it does not implement a proxy pattern for itself (7.7 Upgrades). The use of `Initializable` is fundamentally flawed in this context, as the… |
+| **Upgrades** | 1/10 | High | The contract is not designed for direct upgradeability, as it does not implement a proxy pattern for itself (7.7 Upgrades). The use of `Initializable` is fundamentally flawed in this context, as the… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Beacon |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 97.4% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 50.1% |
+| **Top-3 Unlocked** | 67.5% |
 
 ## Security Findings
 
@@ -80,24 +88,24 @@ The `CrossChainERC20` contract explicitly checks for `to != address(0)` in `mint
 |--------|-------|
 | **Contract** | [`0x3119...cf82`](https://basescan.org/address/0x311935cd80b76769bf2ecc9d8ab7635b2139cf82) |
 | **Network** | Base |
-| **Price** | $75.9300 |
-| **24h Volume** | $469.6K |
-| **Liquidity** | $593.1K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $103.7000 |
+| **24h Volume** | $1.19M |
+| **Liquidity** | $737.0K |
+| **Volume / Liquidity** | 1.6× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 80.6% of supply |
+| **Top-10 Holders** | 83.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 431 buys / 476 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
@@ -105,9 +113,9 @@ The `CrossChainERC20` contract explicitly checks for `to != address(0)` in `mint
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Frequently Asked Questions
 

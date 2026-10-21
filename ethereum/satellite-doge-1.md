@@ -101,12 +101,12 @@ The contract utilizes a reflection mechanism (`_rOwned`, `_tOwned`, `_rTotal`, `
 |--------|-------|
 | **Contract** | [`0xc5b0...c105`](https://etherscan.io/address/0xc5b0251dacfab74bc2debaa52072a2a4c939c105) |
 | **Network** | Ethereum |
-| **Price** | $0.0001655 |
-| **24h Volume** | $193.6K |
-| **Liquidity** | $53.9K |
-| **Volume / Liquidity** | 3.6× |
+| **Price** | $0.000161 |
+| **24h Volume** | $6.0K |
+| **Liquidity** | $61.4K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 37.6% of supply |
+| **Top-10 Holders** | 40.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 412 buys / 396 sells |
 

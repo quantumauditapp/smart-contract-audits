@@ -73,12 +73,12 @@ The `_context` state variable is set in the constructor and exposed via the `con
 |--------|-------|
 | **Contract** | [`0xde61...eb07`](https://basescan.org/address/0xde61878b0b21ce395266c44d4d548d1c72a3eb07) |
 | **Network** | Base |
-| **Price** | $0.00000235 |
-| **24h Volume** | $8.2K |
-| **Liquidity** | $267.4K |
+| **Price** | $0.00000167 |
+| **24h Volume** | $4.3K |
+| **Liquidity** | $103.6K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 49.3% of supply |
+| **Top-10 Holders** | 58.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 240 buys / 719 sells |
 

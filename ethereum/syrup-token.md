@@ -2,14 +2,14 @@
 token: Syrup Token
 ticker: SYRUP
 network: ethereum
-risk_score: 70
+risk_score: 78
 status: high
 date: 2026-08-16
 ---
 
 # Syrup Token (SYRUP) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 78/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/syrup-token-eth)
 
@@ -26,7 +26,7 @@ The MapleToken contract, serving as the implementation for a UUPS proxy, provide
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The contract implements standard ERC-20 functionality (7.2 Code Security) with robust access control (7.3 Access Control) for minting, burning, and module management, leveraging a governor and… |
-| **Governance / Economics** | 2/10 | High | The governance model (7.5 Governance) is centralized through a `governor` address, which controls critical functions like `addModule` and `removeModule`. These actions are further protected by a… |
+| **Governance / Economics** | 1/10 | High | The governance model (7.5 Governance) is centralized through a `governor` address, which controls critical functions like `addModule` and `removeModule`. These actions are further protected by a… |
 | **Upgrades** | 1/10 | High | The contract is designed as a UUPS proxy implementation, correctly using storage slots for `GLOBALS_SLOT` and `IMPLEMENTATION_SLOT` (7.7 Upgrades). However, a critical upgradeability flaw exists: the… |
 
 ## Proxy Upgrade Controls
@@ -41,8 +41,8 @@ The MapleToken contract, serving as the implementation for a UUPS proxy, provide
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 26.3% |
-| **Top-3 Unlocked** | 60.6% |
+| **Top-1 Unlocked Holder** | ⚠️ 75.2% |
+| **Top-3 Unlocked** | ⚠️ 89.0% |
 
 ## Security Findings
 
@@ -81,12 +81,12 @@ Standard ERC-20 functions such as `approve`, `increaseAllowance`, `decreaseAllow
 |--------|-------|
 | **Contract** | [`0x643c...2d66`](https://etherscan.io/address/0x643c4e15d7d62ad0abec4a9bd4b001aa3ef52d66) |
 | **Network** | Ethereum |
-| **Price** | $0.16 |
-| **24h Volume** | $208.6K |
-| **Liquidity** | $1.89M |
+| **Price** | $0.21 |
+| **24h Volume** | $351.0K |
+| **Liquidity** | $2.57M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 47.4% of supply |
+| **Top-10 Holders** | 45.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 68 buys / 35 sells |
 

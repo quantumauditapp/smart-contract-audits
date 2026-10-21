@@ -2,14 +2,14 @@
 token: SuperVerse
 ticker: SUPER
 network: ethereum
-risk_score: 61
-status: high
+risk_score: 54
+status: medium
 date: 2026-07-31
 ---
 
 # SuperVerse (SUPER) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 54/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/superverse-eth)
 
@@ -27,7 +27,7 @@ The SuperFarm Token contract implements a standard ERC-20 token with a fixed sup
 |----------|--------|-----------|-------|
 | **Technical** | 7/10 | Low | The contract is built upon battle-tested OpenZeppelin libraries (ERC20Capped, Ownable), which enhances its foundational security (7.2 Code Security). The voting mechanism is a well-understood pattern… |
 | **Governance / Economics** | 2/10 | High | The token features a fixed supply cap, preventing inflationary attacks beyond the initial design (7.4 Economic). The voting delegation mechanism is standard, promoting decentralized governance… |
-| **Upgrades** | 3/10 | High | The contract is not designed to be upgradeable. This simplifies the architecture by removing the complexities and risks associated with proxy patterns (7.7 Upgrades). However, it means that any… |
+| **Upgrades** | 5/10 | Medium | The contract is not designed to be upgradeable. This simplifies the architecture by removing the complexities and risks associated with proxy patterns (7.7 Upgrades). However, it means that any… |
 
 ## LP Distribution
 
@@ -73,12 +73,12 @@ The contract lacks a mechanism to pause critical operations (e.g., transfers, mi
 |--------|-------|
 | **Contract** | [`0xe53e...0a55`](https://etherscan.io/address/0xe53ec727dbdeb9e2d5456c3be40cff031ab40a55) |
 | **Network** | Ethereum |
-| **Price** | $0.08275 |
-| **24h Volume** | $60.0K |
-| **Liquidity** | $1.97M |
+| **Price** | $0.1146 |
+| **24h Volume** | $126.6K |
+| **Liquidity** | $2.69M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 58.1% of supply |
+| **Top-10 Holders** | 54.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 74 buys / 88 sells |
 

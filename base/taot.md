@@ -2,14 +2,14 @@
 token: TAOT
 ticker: TAOT
 network: base
-risk_score: 46
-status: high
+risk_score: 53
+status: medium
 date: 2026-08-11
 ---
 
 # TAOT (TAOT) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 46/100 — 🟠 High Risk**
+> **Risk Score: 53/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/taot-base)
 
@@ -73,12 +73,12 @@ The ERC20 `approve` function is susceptible to a known front-running vulnerabili
 |--------|-------|
 | **Contract** | [`0x7f2f...ff3e`](https://basescan.org/address/0x7f2f00e54dcaa8b248bdfd75da2ae859d4d8ff3e) |
 | **Network** | Base |
-| **Price** | $0.2531 |
-| **24h Volume** | $127.3K |
-| **Liquidity** | $213.5K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.2884 |
+| **24h Volume** | $16.5K |
+| **Liquidity** | $292.1K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 74.6% of supply |
+| **Top-10 Holders** | 76.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 301 buys / 104 sells |
 

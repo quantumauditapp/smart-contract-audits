@@ -2,14 +2,14 @@
 token: Test
 ticker: TST
 network: bsc
-risk_score: 27
-status: medium
+risk_score: 25
+status: low
 date: 2026-08-11
 ---
 
 # Test (TST) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 27/100 — 🟡 Medium Risk**
+> **Risk Score: 25/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/test-bsc)
 
@@ -33,7 +33,8 @@ The audit of the Token contract, an ERC-20 compliant token with custom transfer 
 
 | Metric | Value |
 |--------|-------|
-| **LP Locked** | 97.0% — GoPlus SafeToken Locker |
+| **LP Burned** | 1.8% |
+| **LP Locked** | 96.8% — Dead Address, GoPlus SafeToken Locker |
 | **Top-1 Unlocked Holder** | 2.8% |
 
 ## Security Findings
@@ -73,12 +74,12 @@ The `setMode` function, which modifies the critical `_mode` state variable contr
 |--------|-------|
 | **Contract** | [`0x86bb...6429`](https://bscscan.com/address/0x86bb94ddd16efc8bc58e6b056e8df71d9e666429) |
 | **Network** | BNB Chain |
-| **Price** | $0.01563 |
-| **24h Volume** | $883.8K |
-| **Liquidity** | $769.0K |
-| **Volume / Liquidity** | 1.1× |
+| **Price** | $0.017 |
+| **24h Volume** | $38.1K |
+| **Liquidity** | $868.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 85.1% of supply |
+| **Top-10 Holders** | 87.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2799 buys / 2920 sells |
 

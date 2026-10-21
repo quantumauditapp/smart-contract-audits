@@ -2,14 +2,14 @@
 token: Strike Robot
 ticker: SR
 network: base
-risk_score: 96
+risk_score: 87
 status: critical
 date: 2026-08-13
 ---
 
 # Strike Robot (SR) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 96/100 — 🔴 Critical Risk**
+> **Risk Score: 87/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/strike-robot-base)
 
@@ -28,6 +28,14 @@ The AgentTokenV3 contract implements an upgradeable ERC-20 token with custom tax
 | **Technical** | 4/10 | Medium | The contract demonstrates good architectural practices by leveraging OpenZeppelin's upgradeable contracts and implementing a reentrancy guard (`_autoSwapInProgress`) for the tax swap mechanism (7.1… |
 | **Governance / Economics** | 1/10 | High | The contract's economic model includes configurable buy/sell taxes and bot protection, which are positive features (7.4 Economic). However, the owner (and factory) retains extensive control over… |
 | **Upgrades** | 1/10 | High | The contract is designed for upgradeability using OpenZeppelin's `Initializable` and `Ownable2StepUpgradeable` patterns, ensuring a secure and controlled upgrade path (7.7 Upgrades). The… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
@@ -94,12 +102,12 @@ The `_update` function, which forms the core of the `_transfer` and `_transferFr
 |--------|-------|
 | **Contract** | [`0x10c5...1ac9`](https://basescan.org/address/0x10c56f005a379f8eafc88ff5c3f40d30f0031ac9) |
 | **Network** | Base |
-| **Price** | $0.001317 |
-| **24h Volume** | $133.7K |
-| **Liquidity** | $104.0K |
-| **Volume / Liquidity** | 1.3× |
+| **Price** | $0.001296 |
+| **24h Volume** | $21.5K |
+| **Liquidity** | $113.1K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 94.7% of supply |
+| **Top-10 Holders** | 90.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 239 buys / 165 sells |
 

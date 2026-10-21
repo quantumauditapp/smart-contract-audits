@@ -3,13 +3,13 @@ token: SIXSEVEN
 ticker: 67
 network: bsc
 risk_score: 52
-status: high
+status: medium
 date: 2026-08-20
 ---
 
 # SIXSEVEN (67) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 52/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sixseven-bsc)
 
@@ -81,12 +81,12 @@ The `decimals()` and `sharedDecimals()` functions are hardcoded to return `9`. T
 |--------|-------|
 | **Contract** | [`0xe7e5...c452`](https://bscscan.com/address/0xe7e569417d315ef260778c09d289d7966213c452) |
 | **Network** | BNB Chain |
-| **Price** | $0.03205 |
-| **24h Volume** | $165.8K |
-| **Liquidity** | $147.6K |
-| **Volume / Liquidity** | 1.1× |
+| **Price** | $0.02199 |
+| **24h Volume** | $80.5K |
+| **Liquidity** | $109.4K |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 26d |
-| **Top-10 Holders** | 12.9% of supply |
+| **Top-10 Holders** | 12.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1126 buys / 1077 sells |
 

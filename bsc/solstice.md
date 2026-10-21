@@ -2,14 +2,14 @@
 token: Solstice
 ticker: SLX
 network: bsc
-risk_score: 78
-status: critical
+risk_score: 84
+status: high
 date: 2026-07-23
 ---
 
 # Solstice (SLX) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 78/100 — 🔴 Critical Risk**
+> **Risk Score: 84/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solstice-bsc)
 
@@ -80,12 +80,12 @@ The `i_decimals` variable is set as an immutable value during contract deploymen
 |--------|-------|
 | **Contract** | [`0x02bc...c54d`](https://bscscan.com/address/0x02bcc4c181b83a8c0a342bc003389cbecb4bc54d) |
 | **Network** | BNB Chain |
-| **Price** | $0.1069 |
-| **24h Volume** | $59.5K |
-| **Liquidity** | $12.9K |
-| **Volume / Liquidity** | 4.6× |
+| **Price** | $0.06824 |
+| **24h Volume** | $28.1K |
+| **Liquidity** | $8.6K |
+| **Volume / Liquidity** | 3.3× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 72.7% of supply |
+| **Top-10 Holders** | 70.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 669 buys / 819 sells |
 

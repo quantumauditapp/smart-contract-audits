@@ -3,13 +3,13 @@ token: TokenFi
 ticker: TOKEN
 network: bsc
 risk_score: 28
-status: medium
+status: low
 date: 2026-08-20
 ---
 
 # TokenFi (TOKEN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 28/100 — 🟡 Medium Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tokenfi-bsc)
 
@@ -80,12 +80,12 @@ The `name()` function is declared as `public view`, while `symbol()` and `decima
 |--------|-------|
 | **Contract** | [`0x4507...b528`](https://bscscan.com/address/0x4507cef57c46789ef8d1a19ea45f4216bae2b528) |
 | **Network** | BNB Chain |
-| **Price** | $0.002116 |
-| **24h Volume** | $263.4K |
-| **Liquidity** | $1.37M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.002287 |
+| **24h Volume** | $63.1K |
+| **Liquidity** | $1.52M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 75.8% of supply |
+| **Top-10 Holders** | 75.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1182 buys / 870 sells |
 

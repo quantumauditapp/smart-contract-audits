@@ -3,13 +3,13 @@ token: Subsquid
 ticker: SQD
 network: arbitrum
 risk_score: 52
-status: high
+status: medium
 date: 2026-08-11
 ---
 
 # Subsquid (SQD) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 52/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/subsquid-arb)
 
@@ -33,7 +33,7 @@ The SQD token contract is an ERC20 implementation based on OpenZeppelin's battle
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 93.7% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -66,12 +66,12 @@ The `_update` function, specifically for `_totalSupply += value` and `_balances[
 |--------|-------|
 | **Contract** | [`0x1337...8ab1`](https://arbiscan.io/address/0x1337420ded5adb9980cfc35f8f2b054ea86f8ab1) |
 | **Network** | Arbitrum |
-| **Price** | $0.04422 |
-| **24h Volume** | $622.5K |
-| **Liquidity** | $379.8K |
-| **Volume / Liquidity** | 1.6× |
+| **Price** | $0.03427 |
+| **24h Volume** | $18.4K |
+| **Liquidity** | $351.6K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 57.3% of supply |
+| **Top-10 Holders** | 53.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2142 buys / 1458 sells |
 

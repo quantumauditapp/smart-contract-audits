@@ -2,14 +2,14 @@
 token: Sapien
 ticker: SAPIEN
 network: base
-risk_score: 33
+risk_score: 44
 status: medium
 date: 2026-08-11
 ---
 
 # Sapien (SAPIEN) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 33/100 — 🟡 Medium Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sapien-base)
 
@@ -25,7 +25,7 @@ The SapienToken contract is a standard ERC-20 token with EIP-2612 Permit functio
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 10/10 | Low | The technical architecture (7.1 Architecture) of SapienToken is sound, leveraging battle-tested OpenZeppelin contracts for ERC-20 and ERC-20 Permit functionalities. The code (7.2 Code Security)… |
+| **Technical** | 8/10 | Low | The technical architecture (7.1 Architecture) of SapienToken is sound, leveraging battle-tested OpenZeppelin contracts for ERC-20 and ERC-20 Permit functionalities. The code (7.2 Code Security)… |
 | **Governance / Economics** | 1/10 | High | The economic model (7.4 Economic) of SapienToken involves minting the entire `MAX_SUPPLY` to a single `treasury` address during deployment. This creates a significant centralization risk (7.3 Access… |
 | **Upgrades** | 6/10 | Medium | The SapienToken contract is implemented as a standard, non-upgradable ERC-20 token. It does not utilize any proxy patterns (7.7 Upgrades) or upgradeability mechanisms. This design choice simplifies… |
 
@@ -33,8 +33,8 @@ The SapienToken contract is a standard ERC-20 token with EIP-2612 Permit functio
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 42.1% |
-| **Top-3 Unlocked** | 74.1% |
+| **Top-1 Unlocked Holder** | ⚠️ 62.6% |
+| **Top-3 Unlocked** | ⚠️ 85.5% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The `SapienToken` contract specifies `pragma solidity 0.8.30;`, while its OpenZe
 |--------|-------|
 | **Contract** | [`0xc729...14e3`](https://basescan.org/address/0xc729777d0470f30612b1564fd96e8dd26f5814e3) |
 | **Network** | Base |
-| **Price** | $0.08255 |
-| **24h Volume** | $111.8K |
-| **Liquidity** | $852.0K |
+| **Price** | $0.07933 |
+| **24h Volume** | $48.8K |
+| **Liquidity** | $728.6K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 90.8% of supply |
+| **Top-10 Holders** | 91.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 402 buys / 572 sells |
 

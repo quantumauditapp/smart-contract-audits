@@ -2,14 +2,14 @@
 token: tap
 ticker: TAP
 network: ethereum
-risk_score: 83
+risk_score: 94
 status: critical
 date: 2026-08-15
 ---
 
 # tap (TAP) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 83/100 — 🔴 Critical Risk**
+> **Risk Score: 94/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tap-eth)
 
@@ -27,9 +27,17 @@ Further consideration should be given to the `bridgeOut` function's restriction 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture of the bridge, utilizing `Clones.clone` for efficient token deployment and `ECDSA.recover` for secure cross-chain message verification, is robust. The contract employs… |
+| **Technical** | 4/10 | Medium | The technical architecture of the bridge, utilizing `Clones.clone` for efficient token deployment and `ECDSA.recover` for secure cross-chain message verification, is robust. The contract employs… |
 | **Governance / Economics** | 1/10 | High | The economic model incorporates a fee mechanism with a discount based on a specified token balance, which is a positive feature. The `ADMIN_ROLE` provides necessary control over fees and discount… |
-| **Upgrades** | 2/10 | High | The `TapToken` contract is designed with upgradeability in mind, utilizing OpenZeppelin's `Upgradeable` contracts and an `initialize` function, which is a strong practice for future extensibility.… |
+| **Upgrades** | 1/10 | High | The `TapToken` contract is designed with upgradeability in mind, utilizing OpenZeppelin's `Upgradeable` contracts and an `initialize` function, which is a strong practice for future extensibility.… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
@@ -89,12 +97,12 @@ The `admin` and `canister` addresses, which are critical parameters for the `Tap
 |--------|-------|
 | **Contract** | [`0x5e7f...7454`](https://etherscan.io/address/0x5e7f6e008c6d9d7ad4c7eb75bd4ce62864cc7454) |
 | **Network** | Ethereum |
-| **Price** | $0.1069 |
-| **24h Volume** | $77.9K |
-| **Liquidity** | $33.4K |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $0.07175 |
+| **24h Volume** | $4.4K |
+| **Liquidity** | $27.6K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 57.8% of supply |
+| **Top-10 Holders** | 64.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 261 buys / 283 sells |
 
@@ -104,7 +112,7 @@ The `admin` and `canister` addresses, which are critical parameters for the `Tap
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ✅ Pass |
 | Not a Proxy | ❌ Fail |
 
@@ -114,7 +122,7 @@ The `admin` and `canister` addresses, which are critical parameters for the `Tap
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 

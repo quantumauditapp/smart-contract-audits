@@ -2,14 +2,14 @@
 token: Token Prometeus Network
 ticker: PROM
 network: ethereum
-risk_score: 53
-status: high
+risk_score: 59
+status: medium
 date: 2026-07-26
 ---
 
 # Token Prometeus Network (PROM) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 59/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/token-prometeus-network-eth)
 
@@ -66,12 +66,12 @@ The `SafeMath` library uses `assert` for error checking (e.g., `assert(c / a == 
 |--------|-------|
 | **Contract** | [`0xfc82...b27d`](https://etherscan.io/address/0xfc82bb4ba86045af6f327323a46e80412b91b27d) |
 | **Network** | Ethereum |
-| **Price** | $2.0076 |
-| **24h Volume** | $30.4K |
-| **Liquidity** | $94.8K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $5.0088 |
+| **24h Volume** | $75 |
+| **Liquidity** | $719 |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 71.2% of supply |
+| **Top-10 Holders** | 73.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 354 buys / 379 sells |
 

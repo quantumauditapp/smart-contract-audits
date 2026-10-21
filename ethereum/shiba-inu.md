@@ -3,13 +3,13 @@ token: Shiba Inu
 ticker: SHIB
 network: ethereum
 risk_score: 26
-status: medium
+status: low
 date: 2026-07-26
 ---
 
 # Shiba Inu (SHIB) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 26/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/shiba-inu-eth)
 
@@ -33,8 +33,8 @@ This audit covers a standard ERC20 token implementation based on OpenZeppelin Co
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 24.9% |
-| **Top-3 Unlocked** | 44.4% |
+| **Top-1 Unlocked Holder** | 25.2% |
+| **Top-3 Unlocked** | 44.8% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The `ERC20` contract description within the OpenZeppelin code explicitly mention
 |--------|-------|
 | **Contract** | [`0x95ad...c4ce`](https://etherscan.io/address/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce) |
 | **Network** | Ethereum |
-| **Price** | $0.00000502 |
-| **24h Volume** | $1.90M |
-| **Liquidity** | $2.44M |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.00000536 |
+| **24h Volume** | $93.3K |
+| **Liquidity** | $2.88M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 64.1% of supply |
+| **Top-10 Holders** | 64.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1304 buys / 1393 sells |
 

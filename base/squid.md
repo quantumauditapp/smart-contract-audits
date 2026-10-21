@@ -2,14 +2,14 @@
 token: Squid
 ticker: QUID
 network: base
-risk_score: 37
+risk_score: 39
 status: medium
 date: 2026-08-11
 ---
 
 # Squid (QUID) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/squid-base)
 
@@ -33,7 +33,7 @@ The SquidToken contract implements a standard ERC-20 token with Permit functiona
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 97.7% |
+| **Top-1 Unlocked Holder** | ⚠️ 96.5% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -66,12 +66,12 @@ The SquidToken contract leverages battle-tested and widely audited OpenZeppelin 
 |--------|-------|
 | **Contract** | [`0x1a44...cb53`](https://basescan.org/address/0x1a44233fae8d50f1aeb3a5d58dd426ff4814cb53) |
 | **Network** | Base |
-| **Price** | $0.09132 |
-| **24h Volume** | $7.35M |
-| **Liquidity** | $988.2K |
-| **Volume / Liquidity** | 7.4× |
+| **Price** | $0.06697 |
+| **24h Volume** | $151.4K |
+| **Liquidity** | $858.2K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 7d |
-| **Top-10 Holders** | 97.7% of supply |
+| **Top-10 Holders** | 97.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 29208 buys / 29622 sells |
 

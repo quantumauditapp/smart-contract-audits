@@ -2,14 +2,14 @@
 token: Slap Cat
 ticker: SLAP
 network: bsc
-risk_score: 58
-status: high
+risk_score: 59
+status: medium
 date: 2026-08-11
 ---
 
 # Slap Cat (SLAP) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 59/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/slap-cat-bsc)
 
@@ -25,9 +25,16 @@ The TokenV2 contract is an upgradeable ERC20 token utilizing OpenZeppelin's upgr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract leverages well-audited OpenZeppelin Upgradeable libraries for ERC20, ERC20Permit, and Ownable functionalities, contributing to a strong foundation (7.2 Code Security). The custom… |
+| **Technical** | 8/10 | Low | The contract leverages well-audited OpenZeppelin Upgradeable libraries for ERC20, ERC20Permit, and Ownable functionalities, contributing to a strong foundation (7.2 Code Security). The custom… |
 | **Governance / Economics** | 4/10 | Medium | The contract design grants the owner significant control, particularly over the `transferConstraints` mechanism, which can be unilaterally removed (7.3 Access Control). This centralized control… |
 | **Upgrades** | 3/10 | High | The contract is designed as an upgradeable implementation using OpenZeppelin's `Upgradeable` pattern, which is a standard and generally secure approach (7.1 Architecture). The `initialize` function… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
 
 ## Security Findings
 
@@ -66,10 +73,10 @@ During the `initialize` function call, the entire `maxSupply` of tokens is minte
 |--------|-------|
 | **Contract** | [`0xd82f...bfad`](https://bscscan.com/address/0xd82f2e48a0c7c90bb38f62d45c8d2096b7ccbfad) |
 | **Network** | BNB Chain |
-| **Price** | $0.00006987 |
-| **24h Volume** | $52.9K |
-| **Liquidity** | $23.4K |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $0.0001405 |
+| **24h Volume** | $46.8K |
+| **Liquidity** | $37.7K |
+| **Volume / Liquidity** | 1.2× |
 | **Token Age** | 8d |
 | **Top-10 Holders** | 100.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

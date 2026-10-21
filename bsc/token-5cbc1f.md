@@ -73,12 +73,12 @@ The contract does not implement any specific operational roles such as `owner`, 
 |--------|-------|
 | **Contract** | [`0xf352...4444`](https://bscscan.com/address/0xf3525965a4ad3ca0ac13f4d2f237113691194444) |
 | **Network** | BNB Chain |
-| **Price** | $0.0006059 |
-| **24h Volume** | $558.4K |
-| **Liquidity** | $114.4K |
-| **Volume / Liquidity** | 4.9× |
+| **Price** | $0.0004569 |
+| **24h Volume** | $19.8K |
+| **Liquidity** | $109.3K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 30.2% of supply |
+| **Top-10 Holders** | 32.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3404 buys / 3434 sells |
 

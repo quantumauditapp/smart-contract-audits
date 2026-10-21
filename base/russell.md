@@ -2,14 +2,14 @@
 token: RUSSELL
 ticker: RUSSELL
 network: base
-risk_score: 13
+risk_score: 11
 status: low
 date: 2026-07-23
 ---
 
 # RUSSELL (RUSSELL) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 13/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/russell-base)
 
@@ -80,12 +80,12 @@ The `totalSupply` variable is declared as `immutable`, meaning its value is set 
 |--------|-------|
 | **Contract** | [`0x0c51...ce0b`](https://basescan.org/address/0x0c5142bc58f9a61ab8c3d2085dd2f4e550c5ce0b) |
 | **Network** | Base |
-| **Price** | $0.002392 |
-| **24h Volume** | $762.3K |
-| **Liquidity** | $334.2K |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $0.002386 |
+| **24h Volume** | $60.8K |
+| **Liquidity** | $389.5K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 22.0% of supply |
+| **Top-10 Holders** | 22.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 987 buys / 951 sells |
 
