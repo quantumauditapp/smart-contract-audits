@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**976 reports** · Updated daily · [← All Networks](../README.md)
+**985 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,15 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [TRENCHPAD | iOS APP](./trenchpad-ios-app.md) | TRENCHPAD | 🟢 17/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/trenchpad-ios-app-sol) |
+| [Meme](./meme-sol-b6ac.md) | MEME | 🟡 36/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/meme-sol-b6ac) |
+| [anza.xyz](./anzaxyz.md) | ANZA | 🟢 19/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/anzaxyz-sol) |
+| [MEME](./meme.md) | MEME | 🟢 20/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/meme-sol) |
+| [Monero](./monero.md) | XMR | 🔴 99/100 Critical Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/monero-sol) |
+| [ORANGIE](./orangie.md) | ORANGIE | 🟢 24/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/orangie-sol) |
+| [Gold](./gold-sol-3a0d.md) | GOLD | 🟢 21/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/gold-sol-3a0d) |
+| [Axis Robotics](./axis-robotics.md) | AXIS | 🟢 29/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/axis-robotics-sol) |
+| [Soul Labs](./soul-labs-sol-b141.md) | SO | 🟢 29/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/soul-labs-sol-b141) |
 | [Auralized](./auralized.md) | AURALIZED | 🟢 13/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/auralized-sol) |
 | [Evrynth](./evrynth.md) | EVYN | 🟢 28/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/evrynth-sol) |
 | [CPU Coin](./cpu-coin.md) | CPU | 🟢 21/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/cpu-coin-sol) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**425 reports** · Updated daily · [← All Networks](../README.md)
+**431 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [LOL World Championship](./lol-world-championship.md) | 英雄联盟 | 🟢 0/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/lol-world-championship-bsc) |
+| [Trump](./trump-bsc-0008.md) | TRUMP | 🟠 82/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/trump-bsc-0008) |
+| [智能时代](./token-25b152.md) | 智能时代 | 🟢 27/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/token-25b152-bsc) |
+| [Zcash Token](./zcash-token-bsc-708e.md) | ZEC | 🔴 99/100 Critical Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/zcash-token-bsc-708e) |
+| [BAI](./bai.md) | BAI | 🟢 33/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/bai-bsc) |
+| [GEN](./gen.md) | GEN | 🟠 66/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/gen-bsc) |
 | [AID](./aid.md) | AID | 🟢 32/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/aid-bsc) |
 | [蝴蝶首发王炸机制](./token-8ba623.md) | 幸运蝴蝶 | 🟢 17/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/token-8ba623-bsc) |
 | [Badge](./badge.md) | BADGE | 🟡 36/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/badge-bsc) |
