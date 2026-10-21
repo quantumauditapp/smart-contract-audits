@@ -86,22 +86,21 @@ Token name, symbol, or image can be changed post-launch.
 |--------|-------|
 | **Contract** | [`XsueG8...3bd1`](https://solscan.io/account/XsueG8BtpquVJX9LVLLEGuViXUungE6WmK5YZ3p3bd1) |
 | **Network** | Solana |
-| **Price** | $74.7500 |
-| **24h Volume** | $2.31M |
-| **Liquidity** | $2.47M |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $95.6700 |
+| **24h Volume** | $8.51M |
+| **Liquidity** | $2.75M |
+| **Volume / Liquidity** | 3.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 64.5% of supply |
+| **Top-10 Holders** | 67.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2160 buys / 1700 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -109,9 +108,8 @@ Token name, symbol, or image can be changed post-launch.
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

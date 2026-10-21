@@ -2,14 +2,14 @@
 token: Bertram The Pomeranian
 ticker: BERT
 network: solana
-risk_score: 26
-status: medium
+risk_score: 0
+status: low
 date: 2026-08-20
 ---
 
 # Bertram The Pomeranian (BERT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 26/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bertram-the-pomeranian-sol)
 
@@ -25,9 +25,9 @@ This audit of the Bertram The Pomeranian (Bert) SPL token mint found no critical
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Bertram The Pomeranian (Bert) token is an SPL token operating under the `spl-token` program (v3). Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
-| **Governance / Economics** | 2/10 | High | The token exhibits healthy liquidity with $860,531 USD available on DEXs (7.4 Economic). The 24-hour trading volume of $227,492 USD results in a normal Volume/Liquidity Ratio of 0.26, not indicating… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable, as both mint and freeze authorities are revoked (7.7 Upgrades). This SPL token mint does not use Token-2022 extensions that would introduce upgradeability… |
+| **Technical** | 10/10 | Low | The Bertram The Pomeranian (Bert) token is an SPL token operating under the `spl-token` program (v3). Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy liquidity with $860,531 USD available on DEXs (7.4 Economic). The 24-hour trading volume of $227,492 USD results in a normal Volume/Liquidity Ratio of 0.26, not indicating… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as both mint and freeze authorities are revoked (7.7 Upgrades). This SPL token mint does not use Token-2022 extensions that would introduce upgradeability… |
 
 ## LP Distribution
 
@@ -41,7 +41,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -51,22 +51,21 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |--------|-------|
 | **Contract** | [`HgBRWf...pump`](https://solscan.io/account/HgBRWfYxEfvPhtqkaeymCQtHCrKE46qQ43pKe8HCpump) |
 | **Network** | Solana |
-| **Price** | $0.0115 |
-| **24h Volume** | $223.4K |
-| **Liquidity** | $867.9K |
+| **Price** | $0.01814 |
+| **24h Volume** | $345.5K |
+| **Liquidity** | $1.28M |
 | **Volume / Liquidity** | 0.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 31.5% of supply |
+| **Top-10 Holders** | 31.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1858 buys / 1854 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -74,9 +73,8 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

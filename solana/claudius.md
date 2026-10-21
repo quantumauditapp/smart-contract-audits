@@ -2,14 +2,14 @@
 token: claudius
 ticker: CLAUDIUS
 network: solana
-risk_score: 62
-status: high
+risk_score: 36
+status: medium
 date: 2026-08-12
 ---
 
 # claudius (CLAUDIUS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/claudius-sol)
 
@@ -25,9 +25,15 @@ The claudius SPL Token Mint exhibits a generally secure configuration with both 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The claudius token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account freezing. No… |
+| **Technical** | 8/10 | Low | The claudius token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account freezing. No… |
 | **Governance / Economics** | 1/10 | High | The token's economic profile shows a moderate holder concentration, with the top 10 accounts holding 31.47% of the supply, which is below thresholds for high concentration risk. Current DEX liquidity… |
-| **Upgrades** | 5/10 | Medium | The claudius token mint has a robust immutability posture regarding core authorities, with both mint and freeze authorities permanently revoked. This means the token supply cannot be increased, and… |
+| **Upgrades** | 8/10 | Low | The claudius token mint has a robust immutability posture regarding core authorities, with both mint and freeze authorities permanently revoked. This means the token supply cannot be increased, and… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
 
 ## Security Findings
 
@@ -45,22 +51,21 @@ DEX pair was created 4 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`46amR3...pump`](https://solscan.io/account/46amR3aeQE7MJ9QDrgNRqBP3FcsJ9QNYV71L2vVSpump) |
 | **Network** | Solana |
-| **Price** | $0.0002705 |
-| **24h Volume** | $408.4K |
-| **Liquidity** | $49.3K |
-| **Volume / Liquidity** | 8.3× |
+| **Price** | $0.00000701 |
+| **24h Volume** | $1.2K |
+| **Liquidity** | $8.6K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 32.8% of supply |
+| **Top-10 Holders** | 90.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2603 buys / 2923 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +73,8 @@ DEX pair was created 4 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

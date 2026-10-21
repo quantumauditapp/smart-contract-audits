@@ -2,14 +2,14 @@
 token: BOOK OF MEME
 ticker: BOME
 network: solana
-risk_score: 96
-status: critical
+risk_score: 58
+status: medium
 date: 2026-08-11
 ---
 
 # BOOK OF MEME (BOME) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 96/100 — 🔴 Critical Risk**
+> **Risk Score: 58/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/book-of-meme-sol)
 
@@ -25,9 +25,9 @@ The BOOK OF MEME (BOME) token exhibits a high concentration of holdings, with th
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The token operates on the `spl-token` program (v3), indicating a standard Solana SPL token. Both the mint authority and freeze authority have been revoked, which prevents further token creation and… |
+| **Technical** | 8/10 | Low | The token operates on the `spl-token` program (v3), indicating a standard Solana SPL token. Both the mint authority and freeze authority have been revoked, which prevents further token creation and… |
 | **Governance / Economics** | 1/10 | High | A significant concern is the high holder concentration, with the top 10 token accounts collectively holding 70.29% of the total supply. This concentration is also flagged by a third-party risk… |
-| **Upgrades** | 4/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are permanently revoked, ensuring no further supply changes or account freezing can occur. While the token is based on the classic… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are permanently revoked, ensuring no further supply changes or account freezing can occur. While the token is based on the classic… |
 
 ## LP Distribution
 
@@ -60,22 +60,21 @@ Token name, symbol, or image can be changed post-launch.
 |--------|-------|
 | **Contract** | [`ukHH6c...4J82`](https://solscan.io/account/ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82) |
 | **Network** | Solana |
-| **Price** | $0.0007632 |
-| **24h Volume** | $3.83M |
-| **Liquidity** | $12.25M |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.001059 |
+| **24h Volume** | $3.88M |
+| **Liquidity** | $18.26M |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 2y |
 | **Top-10 Holders** | 70.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 7462 buys / 7441 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -83,9 +82,8 @@ Token name, symbol, or image can be changed post-launch.
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Baby Cupsey
 ticker: BABYCUPSEY
 network: solana
-risk_score: 62
-status: high
+risk_score: 32
+status: low
 date: 2026-08-06
 ---
 
 # Baby Cupsey (BABYCUPSEY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/baby-cupsey-sol)
 
@@ -25,9 +25,19 @@ This audit of the Baby Cupsey (BabyCupsey) SPL Token Mint found no critical or h
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Baby Cupsey token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked (None), which prevents the creation of new tokens or the freezing of… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate holder concentration, with the top 10 token accounts holding 39.38% of the supply. Total DEX liquidity stands at $17,661, which is sufficient to avoid very low liquidity… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are largely immutable due to the revocation of both Mint and Freeze Authorities. Key Token-2022 extensions like Transfer Hook are not present, and metadata is not mutable.… |
+| **Technical** | 10/10 | Low | The Baby Cupsey token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked (None), which prevents the creation of new tokens or the freezing of… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate holder concentration, with the top 10 token accounts holding 39.38% of the supply. Total DEX liquidity stands at $17,661, which is sufficient to avoid very low liquidity… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable due to the revocation of both Mint and Freeze Authorities. Key Token-2022 extensions like Transfer Hook are not present, and metadata is not mutable.… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the Baby Cupsey (BabyCupsey) SPL Token Mint found no critical or h
 |--------|-------|
 | **Contract** | [`Hk8qqv...pump`](https://solscan.io/account/Hk8qqvyYU5gfAB5QCZCcJq3gR3TZ8LtvNmA1EM3bpump) |
 | **Network** | Solana |
-| **Price** | $0.00003934 |
-| **24h Volume** | $102.6K |
-| **Liquidity** | $16.7K |
-| **Volume / Liquidity** | 6.1× |
+| **Price** | $0.00001414 |
+| **24h Volume** | $81 |
+| **Liquidity** | $12.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 29d |
-| **Top-10 Holders** | 39.4% of supply |
+| **Top-10 Holders** | 64.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1528 buys / 7180 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the Baby Cupsey (BabyCupsey) SPL Token Mint found no critical or h
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

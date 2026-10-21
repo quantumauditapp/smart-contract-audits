@@ -2,14 +2,14 @@
 token: Aura Final Boss
 ticker: KIMCHI
 network: solana
-risk_score: 78
-status: critical
+risk_score: 41
+status: medium
 date: 2026-08-15
 ---
 
 # Aura Final Boss (KIMCHI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 78/100 — 🔴 Critical Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aura-final-boss-sol)
 
@@ -25,9 +25,9 @@ This audit of the Aura Final Boss (Kimchi) SPL Token Mint identifies a High risk
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Aura Final Boss (Kimchi) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token issuance or account… |
-| **Governance / Economics** | 1/10 | High | A significant economic risk is present due to high holder concentration, with the top 10 token accounts holding 80.32% of the total supply. This concentration makes the token highly susceptible to… |
-| **Upgrades** | 5/10 | Medium | The token exhibits a high degree of immutability regarding its core functions. Both the mint and freeze authorities are revoked, meaning no new tokens can be minted and no accounts can be frozen.… |
+| **Technical** | 8/10 | Low | The Aura Final Boss (Kimchi) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token issuance or account… |
+| **Governance / Economics** | 2/10 | High | A significant economic risk is present due to high holder concentration, with the top 10 token accounts holding 80.32% of the total supply. This concentration makes the token highly susceptible to… |
+| **Upgrades** | 8/10 | Low | The token exhibits a high degree of immutability regarding its core functions. Both the mint and freeze authorities are revoked, meaning no new tokens can be minted and no accounts can be frozen.… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ Top 10 token accounts hold 80.32% of supply. Coordinated sell-off would crash pr
 |--------|-------|
 | **Contract** | [`Am8iBf...pump`](https://solscan.io/account/Am8iBffqgaedfdK5XhtorbcRrKzwH9nyL3ySikQfpump) |
 | **Network** | Solana |
-| **Price** | $0.001711 |
-| **24h Volume** | $959.0K |
-| **Liquidity** | $121.7K |
-| **Volume / Liquidity** | 7.9× |
+| **Price** | $0.00047 |
+| **24h Volume** | $117.4K |
+| **Liquidity** | $83.6K |
+| **Volume / Liquidity** | 1.4× |
 | **Token Age** | 19d |
-| **Top-10 Holders** | 80.3% of supply |
+| **Top-10 Holders** | 86.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6245 buys / 5425 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ Top 10 token accounts hold 80.32% of supply. Coordinated sell-off would crash pr
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

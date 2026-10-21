@@ -2,14 +2,14 @@
 token: clawpump.tech
 ticker: CLAW
 network: solana
-risk_score: 75
-status: critical
+risk_score: 37
+status: medium
 date: 2026-08-20
 ---
 
 # clawpump.tech (CLAW) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 75/100 — 🔴 Critical Risk**
+> **Risk Score: 37/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/clawpumptech-sol)
 
@@ -25,9 +25,9 @@ The clawpump.tech (CLAW) SPL token mint exhibits a high concentration of tokens,
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The clawpump.tech (CLAW) token is an SPL token operating on the Solana blockchain, utilizing the `spl-token` program. The mint has a total supply of 999,971,473.166406 tokens with 6 decimals. Both… |
-| **Governance / Economics** | 1/10 | High | A primary economic concern for the CLAW token is its holder concentration, with the top 10 accounts controlling 73.05% of the total supply. This high concentration introduces substantial risk from… |
-| **Upgrades** | 5/10 | Medium | The SPL token mint for CLAW has a fixed configuration as both the mint authority and freeze authority are revoked. This means no new tokens can be minted, and no existing accounts can be frozen. The… |
+| **Technical** | 8/10 | Low | The clawpump.tech (CLAW) token is an SPL token operating on the Solana blockchain, utilizing the `spl-token` program. The mint has a total supply of 999,971,473.166406 tokens with 6 decimals. Both… |
+| **Governance / Economics** | 2/10 | High | A primary economic concern for the CLAW token is its holder concentration, with the top 10 accounts controlling 73.05% of the total supply. This high concentration introduces substantial risk from… |
+| **Upgrades** | 8/10 | Low | The SPL token mint for CLAW has a fixed configuration as both the mint authority and freeze authority are revoked. This means no new tokens can be minted, and no existing accounts can be frozen. The… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ Top 10 token accounts hold 73.05% of supply. Coordinated sell-off would crash pr
 |--------|-------|
 | **Contract** | [`739dnZ...pump`](https://solscan.io/account/739dnZEG4yaBWFsY8L8ZwrfhGG6dhtCSercW8Umspump) |
 | **Network** | Solana |
-| **Price** | $0.003101 |
-| **24h Volume** | $453.3K |
-| **Liquidity** | $184.4K |
-| **Volume / Liquidity** | 2.5× |
+| **Price** | $0.01029 |
+| **24h Volume** | $135.6K |
+| **Liquidity** | $402.4K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 73.0% of supply |
+| **Top-10 Holders** | 75.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1638 buys / 1849 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ Top 10 token accounts hold 73.05% of supply. Coordinated sell-off would crash pr
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

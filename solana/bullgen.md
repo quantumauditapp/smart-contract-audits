@@ -2,14 +2,14 @@
 token: BULLGEN
 ticker: BULLGEN
 network: solana
-risk_score: 84
-status: critical
+risk_score: 59
+status: medium
 date: 2026-08-15
 ---
 
 # BULLGEN (BULLGEN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 84/100 — 🔴 Critical Risk**
+> **Risk Score: 59/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bullgen-sol)
 
@@ -25,9 +25,9 @@ This SPL Token Mint for BULLGEN exhibits medium risks primarily due to significa
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The BULLGEN token is an SPL Token-2022 mint with its mint authority and freeze authority both revoked, ensuring a fixed supply and preventing account freezing. No transfer hook is active, meaning… |
+| **Technical** | 8/10 | Low | The BULLGEN token is an SPL Token-2022 mint with its mint authority and freeze authority both revoked, ensuring a fixed supply and preventing account freezing. No transfer hook is active, meaning… |
 | **Governance / Economics** | 1/10 | High | The token exhibits medium economic risk due to holder concentration, with the top 10 accounts holding 51.8% of the total supply. This concentration increases vulnerability to price volatility from… |
-| **Upgrades** | 5/10 | Medium | The token mint has both its mint authority and freeze authority revoked, which means no further tokens can be minted and no accounts can be frozen. Key Token-2022 extensions like transfer hook and… |
+| **Upgrades** | 8/10 | Low | The token mint has both its mint authority and freeze authority revoked, which means no further tokens can be minted and no accounts can be frozen. Key Token-2022 extensions like transfer hook and… |
 
 ## Security Findings
 
@@ -52,22 +52,21 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`BF9sqe...pump`](https://solscan.io/account/BF9sqerhJ1KwuUPGVwL8SQyBXmGZih2jfJqKJEFTpump) |
 | **Network** | Solana |
-| **Price** | $0.0001043 |
-| **24h Volume** | $141.2K |
-| **Liquidity** | $22.4K |
-| **Volume / Liquidity** | 6.3× |
+| **Price** | $0.00000472 |
+| **24h Volume** | $17 |
+| **Liquidity** | $4.3K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 15h |
-| **Top-10 Holders** | 51.8% of supply |
+| **Top-10 Holders** | 94.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1301 buys / 1215 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -75,9 +74,8 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

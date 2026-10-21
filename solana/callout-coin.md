@@ -3,13 +3,13 @@ token: Callout Coin
 ticker: CALLOUT
 network: solana
 risk_score: 54
-status: high
+status: medium
 date: 2026-08-12
 ---
 
 # Callout Coin (CALLOUT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 54/100 — 🟠 High Risk**
+> **Risk Score: 54/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/callout-coin-sol)
 
@@ -25,9 +25,9 @@ The Callout Coin (CALLOUT) SPL Token Mint exhibits strong security posture regar
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Callout Coin is an SPL Token-2022 mint with a total supply of 960,835,765.830465 tokens across 6 decimals. Crucially, both the mint authority and freeze authority have been revoked, preventing… |
+| **Technical** | 8/10 | Low | The Callout Coin is an SPL Token-2022 mint with a total supply of 960,835,765.830465 tokens across 6 decimals. Crucially, both the mint authority and freeze authority have been revoked, preventing… |
 | **Governance / Economics** | 1/10 | High | The token's economic profile shows a total DEX liquidity of $137,008, with a 24-hour trading volume of $282,773. The volume-to-liquidity ratio is 2.06, which is considered normal and does not suggest… |
-| **Upgrades** | 5/10 | Medium | The token's upgradeability and mutability features are minimal, contributing to a high degree of immutability. Both the mint and freeze authorities are revoked, meaning no further tokens can be… |
+| **Upgrades** | 8/10 | Low | The token's upgradeability and mutability features are minimal, contributing to a high degree of immutability. Both the mint and freeze authorities are revoked, meaning no further tokens can be… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair for Callout Coin was created 0 days ago. This indicates an insuffic
 |--------|-------|
 | **Contract** | [`7xwJQh...pump`](https://solscan.io/account/7xwJQh4jX5pgkLrKCcij4UXcdyXWxDwzeVr65NmKpump) |
 | **Network** | Solana |
-| **Price** | $0.0002348 |
-| **24h Volume** | $282.0K |
-| **Liquidity** | $142.6K |
-| **Volume / Liquidity** | 2.0× |
+| **Price** | $0.00000249 |
+| **24h Volume** | $3 |
+| **Liquidity** | $2.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 8h |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 98.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6775 buys / 2013 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair for Callout Coin was created 0 days ago. This indicates an insuffic
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Bullshit Coin
 ticker: BULLSHIT
 network: solana
-risk_score: 53
-status: high
+risk_score: 17
+status: low
 date: 2026-08-20
 ---
 
 # Bullshit Coin (BULLSHIT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 17/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bullshit-coin-sol)
 
@@ -25,9 +25,9 @@ The audit of the Bullshit Coin (BULLSHIT) SPL token mint identified a Medium ris
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the standard `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked, ensuring that no new tokens can be minted and no holder accounts can… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a low holder concentration, with the top 10 accounts holding only 20.48% of the total supply, reducing the risk of large-scale coordinated sell-offs. Liquidity is robust at… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable due to the revocation of both Mint and Freeze authorities. This prevents any future changes to the token supply or the ability to freeze accounts.… |
+| **Technical** | 10/10 | Low | The token is implemented using the standard `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked, ensuring that no new tokens can be minted and no holder accounts can… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a low holder concentration, with the top 10 accounts holding only 20.48% of the total supply, reducing the risk of large-scale coordinated sell-offs. Liquidity is robust at… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both Mint and Freeze authorities. This prevents any future changes to the token supply or the ability to freeze accounts.… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair for Bullshit Coin was created 2 days ago. This short operational pe
 |--------|-------|
 | **Contract** | [`zj1jpp...ry2k`](https://solscan.io/account/zj1jpp7QMveWHLs61vL9KMZf254KvW7j4AAmBF8ry2k) |
 | **Network** | Solana |
-| **Price** | $0.002978 |
-| **24h Volume** | $1.55M |
-| **Liquidity** | $333.1K |
-| **Volume / Liquidity** | 4.6× |
+| **Price** | $0.001021 |
+| **24h Volume** | $234.9K |
+| **Liquidity** | $165.9K |
+| **Volume / Liquidity** | 1.4× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 20.5% of supply |
+| **Top-10 Holders** | 28.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3411 buys / 2887 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair for Bullshit Coin was created 2 days ago. This short operational pe
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Cash Cat
 ticker: CASHCAT
 network: solana
-risk_score: 78
-status: critical
+risk_score: 77
+status: high
 date: 2026-07-13
 ---
 
 # Cash Cat (CASHCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 78/100 — 🔴 Critical Risk**
+> **Risk Score: 77/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cash-cat-sol)
 
@@ -25,9 +25,16 @@ The Cash Cat (CASHCAT) SPL token mint presents critical risks primarily due to a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The Cash Cat token operates on the `spl-token` program (v3). A significant technical risk is the active mint authority, `8czkddiDFST7eWcPKmwQLESPrxHFBfWS5G8DAQPzTRGu`, which can create new tokens at… |
+| **Technical** | 6/10 | Medium | The Cash Cat token operates on the `spl-token` program (v3). A significant technical risk is the active mint authority, `8czkddiDFST7eWcPKmwQLESPrxHFBfWS5G8DAQPzTRGu`, which can create new tokens at… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a 24-hour trading volume of $2,332,738 against a liquidity of $169,640, resulting in a Volume/Liquidity Ratio of 13.75, which is high and can indicate artificial volume. The DEX… |
 | **Upgrades** | 4/10 | Medium | The mint authority remains active, allowing for potential changes to the token's total supply. The freeze authority is revoked, preventing any future freezing of token accounts. The token's metadata… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -59,22 +66,21 @@ Token name, symbol, or image can be changed post-launch.
 |--------|-------|
 | **Contract** | [`Cashca...JqSS`](https://solscan.io/account/CashcatZMRn4Jv8sPQZUSsbTLi2PcPe1ssqbHcnaJqSS) |
 | **Network** | Solana |
-| **Price** | $0.04973 |
-| **24h Volume** | $122.6K |
-| **Liquidity** | $50.1K |
-| **Volume / Liquidity** | 2.4× |
+| **Price** | $0.1838 |
+| **24h Volume** | $55.2K |
+| **Liquidity** | $26.5K |
+| **Volume / Liquidity** | 2.1× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 29.8% of supply |
+| **Top-10 Holders** | 31.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5027 buys / 5480 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -82,9 +88,8 @@ Token name, symbol, or image can be changed post-launch.
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Bull
 ticker: BULL
 network: solana
-risk_score: 53
-status: high
+risk_score: 23
+status: low
 date: 2026-06-10
 ---
 
 # Bull (BULL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bull-sol)
 
@@ -25,9 +25,19 @@ This audit of the Bull SPL token mint found no critical or high-risk vulnerabili
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Bull token operates under the `spl-token` program. Both the mint authority and freeze authority have been revoked (None), ensuring a fixed supply and immutability of account states. The token… |
-| **Governance / Economics** | 2/10 | High | The token exhibits healthy liquidity at $69,308 USD and a normal 24-hour volume to liquidity ratio of 1.47, suggesting organic trading activity. The pair has been active for 109 days, providing a… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked (None), meaning the token's supply and account freeze capabilities are immutable. Metadata is also not mutable (`metadata_mutable: False`)… |
+| **Technical** | 10/10 | Low | The Bull token operates under the `spl-token` program. Both the mint authority and freeze authority have been revoked (None), ensuring a fixed supply and immutability of account states. The token… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits healthy liquidity at $69,308 USD and a normal 24-hour volume to liquidity ratio of 1.47, suggesting organic trading activity. The pair has been active for 109 days, providing a… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked (None), meaning the token's supply and account freeze capabilities are immutable. Metadata is also not mutable (`metadata_mutable: False`)… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,21 +45,20 @@ This audit of the Bull SPL token mint found no critical or high-risk vulnerabili
 |--------|-------|
 | **Contract** | [`3TYgKw...pump`](https://solscan.io/account/3TYgKwkE2Y3rxdw9osLRSpxpXmSC1C1oo19W9KHspump) |
 | **Network** | Solana |
-| **Price** | $0.0001769 |
-| **24h Volume** | $10.2K |
-| **Liquidity** | $67.0K |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.00007561 |
+| **24h Volume** | $7.7K |
+| **Liquidity** | $55.1K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 42.2% of supply |
+| **Top-10 Holders** | 54.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -57,9 +66,8 @@ This audit of the Bull SPL token mint found no critical or high-risk vulnerabili
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

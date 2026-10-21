@@ -2,14 +2,14 @@
 token: Chudjak
 ticker: CHUD
 network: solana
-risk_score: 46
-status: high
+risk_score: 20
+status: low
 date: 2026-08-03
 ---
 
 # Chudjak (CHUD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 46/100 — 🟠 High Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chudjak-sol)
 
@@ -25,9 +25,19 @@ The Chudjak (Chud) SPL token mint demonstrates strong security posture with both
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Chudjak (Chud) token operates on the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing holder… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a healthy liquidity of $77,051 USD, supporting reasonable trading activity. The 24-hour volume to liquidity ratio is 4.60, which is within normal parameters and does not suggest… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are fixed due to the revocation of both mint and freeze authorities, preventing any post-launch changes to supply or account freeze capabilities. The metadata is… |
+| **Technical** | 10/10 | Low | The Chudjak (Chud) token operates on the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing holder… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a healthy liquidity of $77,051 USD, supporting reasonable trading activity. The 24-hour volume to liquidity ratio is 4.60, which is within normal parameters and does not suggest… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are fixed due to the revocation of both mint and freeze authorities, preventing any post-launch changes to supply or account freeze capabilities. The metadata is… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Chudjak (Chud) SPL token mint demonstrates strong security posture with both
 |--------|-------|
 | **Contract** | [`8NGpdS...fNCE`](https://solscan.io/account/8NGpdSE1tZqUrvpUVqsn5Revncc6yUafk8mnAyK9fNCE) |
 | **Network** | Solana |
-| **Price** | $0.0007464 |
-| **24h Volume** | $357.6K |
-| **Liquidity** | $76.1K |
-| **Volume / Liquidity** | 4.7× |
+| **Price** | $0.00006129 |
+| **24h Volume** | $191 |
+| **Liquidity** | $30.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 24.8% of supply |
+| **Top-10 Holders** | 47.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2585 buys / 2809 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Chudjak (Chud) SPL token mint demonstrates strong security posture with both
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

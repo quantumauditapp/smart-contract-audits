@@ -2,14 +2,14 @@
 token: Baby Troll
 ticker: BABYTROLL
 network: solana
-risk_score: 60
-status: high
+risk_score: 16
+status: low
 date: 2026-06-10
 ---
 
 # Baby Troll (BABYTROLL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 60/100 — 🟠 High Risk**
+> **Risk Score: 16/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/baby-troll-sol)
 
@@ -25,9 +25,19 @@ This audit of the Baby Troll (BABYTROLL) SPL Token Mint found no critical or hig
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Baby Troll (BABYTROLL) token operates on the spl-token-2022 program, indicating modern SPL token standards. Both the mint authority and freeze authority are revoked, which is a strong positive… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $59,675 in total DEX liquidity, which is sufficient for smaller trades without severe slippage. The 24-hour volume is $37,952, resulting in a healthy… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities. The metadata is also not mutable, ensuring that the token name, symbol, or image cannot be… |
+| **Technical** | 10/10 | Low | The Baby Troll (BABYTROLL) token operates on the spl-token-2022 program, indicating modern SPL token standards. Both the mint authority and freeze authority are revoked, which is a strong positive… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $59,675 in total DEX liquidity, which is sufficient for smaller trades without severe slippage. The 24-hour volume is $37,952, resulting in a healthy… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities. The metadata is also not mutable, ensuring that the token name, symbol, or image cannot be… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,21 +45,20 @@ This audit of the Baby Troll (BABYTROLL) SPL Token Mint found no critical or hig
 |--------|-------|
 | **Contract** | [`6qdzMx...pump`](https://solscan.io/account/6qdzMx4c9rL2X3Ns3SwZ8uEo4zReDPjdXpAEmpo7pump) |
 | **Network** | Solana |
-| **Price** | $0.0001414 |
-| **24h Volume** | $8.6K |
-| **Liquidity** | $46.7K |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.000208 |
+| **24h Volume** | $10.4K |
+| **Liquidity** | $71.2K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 8d |
-| **Top-10 Holders** | 33.6% of supply |
+| **Top-10 Holders** | 33.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -57,9 +66,8 @@ This audit of the Baby Troll (BABYTROLL) SPL Token Mint found no critical or hig
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

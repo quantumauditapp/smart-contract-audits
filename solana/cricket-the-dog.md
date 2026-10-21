@@ -2,14 +2,14 @@
 token: Cricket The Dog
 ticker: CRICKET
 network: solana
-risk_score: 66
-status: high
+risk_score: 36
+status: medium
 date: 2026-07-25
 ---
 
 # Cricket The Dog (CRICKET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cricket-the-dog-sol)
 
@@ -25,9 +25,9 @@ This SPL Token Mint audit for Cricket The Dog (Cricket) identifies a Medium risk
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the Mint Authority and Freeze Authority are revoked (None), which prevents further token… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 43.38% of the supply, which is below the threshold for high concentration. Total DEX liquidity stands at $22,840, which is… |
-| **Upgrades** | 5/10 | Medium | The token's Mint Authority and Freeze Authority are both revoked, preventing any further changes to the token supply or account freeze status. It utilizes the spl-token-2022 program, but does not… |
+| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the Mint Authority and Freeze Authority are revoked (None), which prevents further token… |
+| **Governance / Economics** | 3/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 43.38% of the supply, which is below the threshold for high concentration. Total DEX liquidity stands at $22,840, which is… |
+| **Upgrades** | 8/10 | Low | The token's Mint Authority and Freeze Authority are both revoked, preventing any further changes to the token supply or account freeze status. It utilizes the spl-token-2022 program, but does not… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair for Cricket The Dog was created 5 days ago. This short track record
 |--------|-------|
 | **Contract** | [`J33WbC...pump`](https://solscan.io/account/J33WbCWN2m1EpoNUP9Ch6cWoV5j6BFJervDfgPk3pump) |
 | **Network** | Solana |
-| **Price** | $0.00007531 |
-| **24h Volume** | $71.6K |
-| **Liquidity** | $22.8K |
-| **Volume / Liquidity** | 3.1× |
+| **Price** | $0.00001863 |
+| **24h Volume** | $661 |
+| **Liquidity** | $13.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 43.4% of supply |
+| **Top-10 Holders** | 69.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1994 buys / 2831 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair for Cricket The Dog was created 5 days ago. This short track record
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

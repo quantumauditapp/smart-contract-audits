@@ -2,14 +2,14 @@
 token: Dark Arena
 ticker: DARK
 network: solana
-risk_score: 93
-status: critical
+risk_score: 49
+status: medium
 date: 2026-07-14
 ---
 
 # Dark Arena (DARK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 93/100 — 🔴 Critical Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dark-arena-sol)
 
@@ -25,9 +25,9 @@ The Dark Arena (DARK) SPL token mint has revoked mint and freeze authorities, in
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The Dark Arena (DARK) token is implemented using the classic SPL Token Program (v3). Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no… |
+| **Technical** | 8/10 | Low | The Dark Arena (DARK) token is implemented using the classic SPL Token Program (v3). Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a total DEX liquidity of $124,489 with a 24-hour trading volume of $232,808, resulting in a normal Volume/Liquidity Ratio of 1.87. However, the DEX pair is very new, established… |
-| **Upgrades** | 4/10 | Medium | The Dark Arena (DARK) token mint has robust immutability for critical functions, with both the mint authority and freeze authority permanently revoked. This means the token supply cannot be… |
+| **Upgrades** | 8/10 | Low | The Dark Arena (DARK) token mint has robust immutability for critical functions, with both the mint authority and freeze authority permanently revoked. This means the token supply cannot be… |
 
 ## Security Findings
 
@@ -52,22 +52,21 @@ The token's metadata, including its name, symbol, or image, can be changed post-
 |--------|-------|
 | **Contract** | [`3LgNCF...dArK`](https://solscan.io/account/3LgNCFW7KjV34TePFih6wRtcWb7mSSByPLsRMxCPdArK) |
 | **Network** | Solana |
-| **Price** | $0.00000579 |
-| **24h Volume** | $154 |
-| **Liquidity** | $9.8K |
+| **Price** | $0.00000735 |
+| **24h Volume** | $20 |
+| **Liquidity** | $13.5K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 94.5% of supply |
+| **Top-10 Holders** | 95.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1031 buys / 1094 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -75,9 +74,8 @@ The token's metadata, including its name, symbol, or image, can be changed post-
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

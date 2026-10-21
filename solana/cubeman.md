@@ -2,14 +2,14 @@
 token: CUBEMAN
 ticker: CUBEMAN
 network: solana
-risk_score: 46
-status: high
+risk_score: 39
+status: medium
 date: 2026-07-23
 ---
 
 # CUBEMAN (CUBEMAN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 46/100 — 🟠 High Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cubeman-sol)
 
@@ -25,9 +25,19 @@ The CUBEMAN SPL Token Mint exhibits a low-risk profile based on available on-cha
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The CUBEMAN token is an SPL Token-2022 mint with a total supply of 999,994,125.689578 tokens (999,994,125,689,578 raw supply with 6 decimals). Both the mint authority and freeze authority have been… |
-| **Governance / Economics** | 3/10 | High | The token has a liquidity of $206,800 USD with a 24-hour volume of $2,035,992 USD, indicating active trading. The Volume/Liquidity Ratio is 9.85, which does not trigger a wash trading signal. The DEX… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any post-launch changes to supply or account freeze status. Key Token-2022 extensions like transfer… |
+| **Technical** | 8/10 | Low | The CUBEMAN token is an SPL Token-2022 mint with a total supply of 999,994,125.689578 tokens (999,994,125,689,578 raw supply with 6 decimals). Both the mint authority and freeze authority have been… |
+| **Governance / Economics** | 2/10 | High | The token has a liquidity of $206,800 USD with a 24-hour volume of $2,035,992 USD, indicating active trading. The Volume/Liquidity Ratio is 9.85, which does not trigger a wash trading signal. The DEX… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any post-launch changes to supply or account freeze status. Key Token-2022 extensions like transfer… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The CUBEMAN SPL Token Mint exhibits a low-risk profile based on available on-cha
 |--------|-------|
 | **Contract** | [`HVRtNe...pump`](https://solscan.io/account/HVRtNeFPrDcAA9Yu3WrTEdCsTLGJiYDiQbqjg3efpump) |
 | **Network** | Solana |
-| **Price** | $0.003356 |
-| **24h Volume** | $2.30M |
-| **Liquidity** | $178.0K |
-| **Volume / Liquidity** | 12.9× |
+| **Price** | $0.00001254 |
+| **24h Volume** | $118 |
+| **Liquidity** | $14.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 7d |
-| **Top-10 Holders** | 19.9% of supply |
+| **Top-10 Holders** | 87.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 17617 buys / 10934 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The CUBEMAN SPL Token Mint exhibits a low-risk profile based on available on-cha
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

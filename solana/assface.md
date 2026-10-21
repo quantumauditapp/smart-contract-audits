@@ -2,14 +2,14 @@
 token: assface
 ticker: ASSFACE
 network: solana
-risk_score: 85
-status: critical
+risk_score: 54
+status: medium
 date: 2026-06-10
 ---
 
 # assface (ASSFACE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 85/100 — 🔴 Critical Risk**
+> **Risk Score: 54/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/assface-sol)
 
@@ -25,9 +25,9 @@ This audit of the assface SPL Token Mint identifies a critical risk flagged by a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The token mint operates on the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen. The… |
+| **Technical** | 8/10 | Low | The token mint operates on the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen. The… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a liquidity of $26,072 USD, supported by a 24-hour trading volume of $6,460 USD, resulting in a normal Volume/Liquidity Ratio of 0.25. The DEX pair has been active for 83 days… |
-| **Upgrades** | 4/10 | Medium | The token's metadata is immutable, meaning its name, symbol, or image cannot be changed post-launch. Key Token-2022 extensions, such as transfer fee and transfer hook, are not upgradable, ensuring… |
+| **Upgrades** | 7/10 | Low | The token's metadata is immutable, meaning its name, symbol, or image cannot be changed post-launch. Key Token-2022 extensions, such as transfer fee and transfer hook, are not upgradable, ensuring… |
 
 ## Security Findings
 
@@ -45,21 +45,20 @@ An independent third-party risk registry classifies this token as high-risk base
 |--------|-------|
 | **Contract** | [`BnXWvs...pump`](https://solscan.io/account/BnXWvsVZYgBxTUDyDqHZjvFbQGvEZeipY4ZdmqCbpump) |
 | **Network** | Solana |
-| **Price** | $0.00003363 |
-| **24h Volume** | $962 |
-| **Liquidity** | $23.9K |
+| **Price** | $0.00001861 |
+| **24h Volume** | $4 |
+| **Liquidity** | $21.9K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 58.6% of supply |
+| **Top-10 Holders** | 76.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -67,9 +66,8 @@ An independent third-party risk registry classifies this token as high-risk base
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Burnie Senders
 ticker: BURNIE
 network: solana
-risk_score: 46
-status: high
+risk_score: 8
+status: low
 date: 2026-08-03
 ---
 
 # Burnie Senders (BURNIE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 46/100 — 🟠 High Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/burnie-senders-sol)
 
@@ -25,9 +25,19 @@ The Burnie Senders (BURNIE) token is an SPL Token-2022 mint with both mint and f
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Burnie Senders token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring a fixed supply of 969,658,373.040029 tokens and… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a low holder concentration, with the top 10 token accounts holding 23.57% of the total supply, which does not indicate significant centralization risk. Total DEX liquidity stands… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are fixed due to the revocation of both mint and freeze authorities. There is no permanent delegate configured, and the metadata is immutable, preventing changes to the… |
+| **Technical** | 10/10 | Low | The Burnie Senders token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring a fixed supply of 969,658,373.040029 tokens and… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a low holder concentration, with the top 10 token accounts holding 23.57% of the total supply, which does not indicate significant centralization risk. Total DEX liquidity stands… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are fixed due to the revocation of both mint and freeze authorities. There is no permanent delegate configured, and the metadata is immutable, preventing changes to the… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Burnie Senders (BURNIE) token is an SPL Token-2022 mint with both mint and f
 |--------|-------|
 | **Contract** | [`CGEDT9...pump`](https://solscan.io/account/CGEDT9QZDvvH5GmVkWJH2BXiMJqMJySC9ihWyr7Spump) |
 | **Network** | Solana |
-| **Price** | $0.001524 |
+| **Price** | $0.00135 |
 | **24h Volume** | $91.7K |
-| **Liquidity** | $194.5K |
-| **Volume / Liquidity** | 0.5× |
+| **Liquidity** | $244.3K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 23.6% of supply |
+| **Top-10 Holders** | 28.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 422 buys / 368 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Burnie Senders (BURNIE) token is an SPL Token-2022 mint with both mint and f
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Boiúna
 ticker: BOIÚNA
 network: solana
-risk_score: 66
-status: high
+risk_score: 28
+status: low
 date: 2026-08-15
 ---
 
 # Boiúna (BOIÚNA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/boiuna-sol)
 
@@ -26,9 +26,9 @@ While core mint authorities are revoked, which is a positive security indicator,
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, preventing further token issuance or freezing of holder accounts, which is a… |
-| **Governance / Economics** | 1/10 | High | The token's DEX pair was created only 2 days ago, which is a very short period to assess long-term team or holder behavior. Current total DEX liquidity stands at $22,611, which is above the very low… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, have been revoked, preventing any future changes to the token supply or account freeze status. The token utilizes the spl-token-2022… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, preventing further token issuance or freezing of holder accounts, which is a… |
+| **Governance / Economics** | 4/10 | Medium | The token's DEX pair was created only 2 days ago, which is a very short period to assess long-term team or holder behavior. Current total DEX liquidity stands at $22,611, which is above the very low… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, have been revoked, preventing any future changes to the token supply or account freeze status. The token utilizes the spl-token-2022… |
 
 ## Security Findings
 
@@ -46,22 +46,21 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`GRehQK...pump`](https://solscan.io/account/GRehQKv9E3fVuNJGQTwAAjYpcixRCYKkzAXAb5kGpump) |
 | **Network** | Solana |
-| **Price** | $0.00004625 |
-| **24h Volume** | $187.1K |
-| **Liquidity** | $22.3K |
-| **Volume / Liquidity** | 8.4× |
+| **Price** | $0.00005912 |
+| **24h Volume** | $18.3K |
+| **Liquidity** | $31.6K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 45.9% of supply |
+| **Top-10 Holders** | 49.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2373 buys / 2151 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -69,9 +68,8 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

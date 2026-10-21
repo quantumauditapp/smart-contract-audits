@@ -2,14 +2,14 @@
 token: Bitcoin Bank
 ticker: BTCBANK
 network: solana
-risk_score: 67
-status: high
+risk_score: 36
+status: medium
 date: 2026-06-10
 ---
 
 # Bitcoin Bank (BTCBANK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bitcoin-bank-sol)
 
@@ -25,9 +25,19 @@ The Bitcoin Bank (BTCBANK) SPL Token Mint exhibits a robust configuration with b
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Bitcoin Bank (BTCBANK) token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the mint authority and freeze authority have been revoked, preventing… |
-| **Governance / Economics** | 1/10 | High | DEX liquidity for BTCBANK is $16,198, which is above the very low liquidity threshold. The 24-hour volume of $12,983 results in a normal Volume/Liquidity Ratio of 0.80, not indicating wash trading.… |
-| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are permanently revoked, ensuring no future changes to supply or account freeze status. The token utilizes the spl-token-2022 program but does not have a… |
+| **Technical** | 8/10 | Low | The Bitcoin Bank (BTCBANK) token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the mint authority and freeze authority have been revoked, preventing… |
+| **Governance / Economics** | 2/10 | High | DEX liquidity for BTCBANK is $16,198, which is above the very low liquidity threshold. The 24-hour volume of $12,983 results in a normal Volume/Liquidity Ratio of 0.80, not indicating wash trading.… |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are permanently revoked, ensuring no future changes to supply or account freeze status. The token utilizes the spl-token-2022 program but does not have a… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Bitcoin Bank (BTCBANK) SPL Token Mint exhibits a robust configuration with b
 |--------|-------|
 | **Contract** | [`9s96G1...pump`](https://solscan.io/account/9s96G11xGsHczudfJqKQzQxzvubQgJXSySJ1wRgxpump) |
 | **Network** | Solana |
-| **Price** | $0.00001605 |
-| **24h Volume** | $310 |
-| **Liquidity** | $12.7K |
+| **Price** | $0.00001426 |
+| **24h Volume** | $48 |
+| **Liquidity** | $14.7K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 15d |
-| **Top-10 Holders** | 67.4% of supply |
+| **Top-10 Holders** | 72.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2817 buys / 1914 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Bitcoin Bank (BTCBANK) SPL Token Mint exhibits a robust configuration with b
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

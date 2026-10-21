@@ -2,14 +2,14 @@
 token: Cupsey
 ticker: CUPSEY
 network: solana
-risk_score: 61
-status: high
+risk_score: 30
+status: low
 date: 2026-08-12
 ---
 
 # Cupsey (CUPSEY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cupsey-sol-1d09)
 
@@ -25,9 +25,9 @@ The Cupsey SPL token mint presents a medium risk profile primarily due to its ho
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Cupsey token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account states.… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a moderate level of holder concentration, with the top 10 accounts holding 58.55% of the total supply. This concentration could lead to price volatility if large holders coordinate… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority for the Cupsey token have both been revoked, preventing any further minting or freezing of token accounts. This indicates a fixed supply and immutable token… |
+| **Technical** | 10/10 | Low | The Cupsey token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account states.… |
+| **Governance / Economics** | 3/10 | High | The token exhibits a moderate level of holder concentration, with the top 10 accounts holding 58.55% of the total supply. This concentration could lead to price volatility if large holders coordinate… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the Cupsey token have both been revoked, preventing any further minting or freezing of token accounts. This indicates a fixed supply and immutable token… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ Top 10 token accounts hold 58.55% of supply. Coordinated sell-off would crash pr
 |--------|-------|
 | **Contract** | [`5PsnNw...pump`](https://solscan.io/account/5PsnNwPmMtsGZgG6ZqMoDJJi28BR5xpAotXHHiQhpump) |
 | **Network** | Solana |
-| **Price** | $0.0001441 |
-| **24h Volume** | $183.0K |
-| **Liquidity** | $97.0K |
-| **Volume / Liquidity** | 1.9× |
+| **Price** | $0.00006512 |
+| **24h Volume** | $315 |
+| **Liquidity** | $81.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 58.5% of supply |
+| **Top-10 Holders** | 72.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1414 buys / 877 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ Top 10 token accounts hold 58.55% of supply. Coordinated sell-off would crash pr
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

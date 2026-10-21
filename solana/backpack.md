@@ -2,14 +2,14 @@
 token: Backpack
 ticker: BP
 network: solana
-risk_score: 100
+risk_score: 97
 status: critical
 date: 2026-06-14
 ---
 
 # Backpack (BP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 97/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/backpack-sol)
 
@@ -25,9 +25,9 @@ This audit identifies critical risks due to active Mint and Freeze authorities, 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 2/10 | High | The token is implemented using the classic `spl-token` program (v3). A critical concern is the active Mint Authority, `GySFHFS5ZiN4Z5YnyPZcjjxpYcGvD7qHZYVjE9QzMHVH`, which allows for arbitrary… |
+| **Technical** | 4/10 | Medium | The token is implemented using the classic `spl-token` program (v3). A critical concern is the active Mint Authority, `GySFHFS5ZiN4Z5YnyPZcjjxpYcGvD7qHZYVjE9QzMHVH`, which allows for arbitrary… |
 | **Governance / Economics** | 1/10 | High | The token exhibits healthy market activity with a total DEX liquidity of $2,161,273 and a 24-hour volume of $813,689. The Volume/Liquidity Ratio is 0.38, indicating normal trading patterns, and the… |
-| **Upgrades** | 3/10 | High | The Mint Authority and Freeze Authority remain active, allowing for potential future changes to the token's supply and the state of holder accounts. Additionally, the token's metadata is mutable… |
+| **Upgrades** | 1/10 | High | The Mint Authority and Freeze Authority remain active, allowing for potential future changes to the token's supply and the state of holder accounts. Additionally, the token's metadata is mutable… |
 
 ## Security Findings
 
@@ -59,22 +59,21 @@ Token name, symbol, or image can be changed post-launch. (Fact: metadata_mutable
 |--------|-------|
 | **Contract** | [`BPxxfR...jPCy`](https://solscan.io/account/BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy) |
 | **Network** | Solana |
-| **Price** | $0.4674 |
-| **24h Volume** | $190.4K |
-| **Liquidity** | $2.14M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.813 |
+| **24h Volume** | $11.16M |
+| **Liquidity** | $3.71M |
+| **Volume / Liquidity** | 3.0× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 98.6% of supply |
+| **Top-10 Holders** | 97.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1148 buys / 700 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -82,9 +81,8 @@ Token name, symbol, or image can be changed post-launch. (Fact: metadata_mutable
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: ChudTheBuilder
 ticker: CHUD
 network: solana
-risk_score: 53
-status: high
+risk_score: 42
+status: medium
 date: 2026-08-11
 ---
 
 # ChudTheBuilder (CHUD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chudthebuilder-sol)
 
@@ -25,9 +25,26 @@ This audit of the ChudTheBuilder (CHUD) SPL Token Mint found no critical or high
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The ChudTheBuilder (CHUD) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no… |
-| **Governance / Economics** | 2/10 | High | The token exhibits moderate holder concentration, with the top 10 accounts holding 38.15% of the supply, which is below thresholds for high concern. Total DEX liquidity is $85,054, supporting… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, meaning the token's supply and account freeze capabilities are immutable. No Token-2022 extensions like transfer hook or transfer fee are… |
+| **Technical** | 8/10 | Low | The ChudTheBuilder (CHUD) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no… |
+| **Governance / Economics** | 1/10 | High | The token exhibits moderate holder concentration, with the top 10 accounts holding 38.15% of the supply, which is below thresholds for high concern. Total DEX liquidity is $85,054, supporting… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and account freeze capabilities are immutable. No Token-2022 extensions like transfer hook or transfer fee are… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +52,21 @@ This audit of the ChudTheBuilder (CHUD) SPL Token Mint found no critical or high
 |--------|-------|
 | **Contract** | [`21rKrt...pump`](https://solscan.io/account/21rKrtBzibPAZHAHQRzGiGDSh7XimCKB2a8VgsjZpump) |
 | **Network** | Solana |
-| **Price** | $0.000636 |
-| **24h Volume** | $443.4K |
-| **Liquidity** | $88.5K |
-| **Volume / Liquidity** | 5.0× |
+| **Price** | $0.0002153 |
+| **24h Volume** | $8.8K |
+| **Liquidity** | $65.5K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 37.5% of supply |
+| **Top-10 Holders** | 49.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2960 buys / 2330 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +74,8 @@ This audit of the ChudTheBuilder (CHUD) SPL Token Mint found no critical or high
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

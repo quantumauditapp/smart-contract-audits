@@ -2,14 +2,14 @@
 token: Baby Shib
 ticker: BABYSHIB
 network: solana
-risk_score: 65
-status: high
+risk_score: 42
+status: medium
 date: 2026-08-14
 ---
 
 # Baby Shib (BABYSHIB) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 65/100 — 🟠 High Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/baby-shib-sol)
 
@@ -25,9 +25,9 @@ The Baby Shib (BABYSHIB) SPL token mint presents a generally secure technical co
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Baby Shib (BABYSHIB) token is an SPL token operating under the `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens can be minted and no… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a moderate holder concentration, with the top 10 accounts holding 38.27% of the total supply, which is below the threshold for high concentration risk. Current DEX liquidity stands… |
-| **Upgrades** | 5/10 | Medium | The token's configuration demonstrates a high degree of immutability regarding its core parameters. The Mint Authority and Freeze Authority are both revoked, preventing any future changes to the… |
+| **Technical** | 8/10 | Low | The Baby Shib (BABYSHIB) token is an SPL token operating under the `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens can be minted and no… |
+| **Governance / Economics** | 2/10 | High | The token exhibits a moderate holder concentration, with the top 10 accounts holding 38.27% of the total supply, which is below the threshold for high concentration risk. Current DEX liquidity stands… |
+| **Upgrades** | 8/10 | Low | The token's configuration demonstrates a high degree of immutability regarding its core parameters. The Mint Authority and Freeze Authority are both revoked, preventing any future changes to the… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`5nZMRL...pump`](https://solscan.io/account/5nZMRLSFnA3oWXXswKyyaW5or2FFy34tkTUhtkWPpump) |
 | **Network** | Solana |
-| **Price** | $0.0004404 |
-| **24h Volume** | $130.7K |
-| **Liquidity** | $69.3K |
-| **Volume / Liquidity** | 1.9× |
+| **Price** | $0.00003233 |
+| **24h Volume** | $2.5K |
+| **Liquidity** | $17.5K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 22h |
-| **Top-10 Holders** | 38.3% of supply |
+| **Top-10 Holders** | 54.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1113 buys / 862 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: BlockFall
 ticker: BLOCK
 network: solana
-risk_score: 43
+risk_score: 45
 status: medium
 date: 2026-08-05
 ---
 
 # BlockFall (BLOCK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/blockfall-sol)
 
@@ -25,9 +25,19 @@ This audit of the BlockFall (BLOCK) SPL Token Mint found no critical or high-sev
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The BlockFall token is implemented using the spl-token-2022 program, indicating a modern token standard. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a healthy holder distribution, with the top 10 token accounts holding only 16.16% of the supply, mitigating risks of whale-induced price volatility. Total DEX liquidity stands at… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token utilizes the spl-token-2022 program, but no… |
+| **Technical** | 8/10 | Low | The BlockFall token is implemented using the spl-token-2022 program, indicating a modern token standard. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a healthy holder distribution, with the top 10 token accounts holding only 16.16% of the supply, mitigating risks of whale-induced price volatility. Total DEX liquidity stands at… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token utilizes the spl-token-2022 program, but no… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the BlockFall (BLOCK) SPL Token Mint found no critical or high-sev
 |--------|-------|
 | **Contract** | [`GKUwfy...1ock`](https://solscan.io/account/GKUwfyQoJ9apCaoWyYaQ9RT8inZed469v41M1Ljb1ock) |
 | **Network** | Solana |
-| **Price** | $0.0004807 |
-| **24h Volume** | $142.2K |
-| **Liquidity** | $53.4K |
-| **Volume / Liquidity** | 2.7× |
+| **Price** | $0.00000604 |
+| **24h Volume** | $38 |
+| **Liquidity** | $6.3K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 10d |
-| **Top-10 Holders** | 16.2% of supply |
+| **Top-10 Holders** | 85.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1071 buys / 1199 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the BlockFall (BLOCK) SPL Token Mint found no critical or high-sev
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

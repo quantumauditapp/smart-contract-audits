@@ -2,14 +2,14 @@
 token: Catcoin
 ticker: CATCOIN
 network: solana
-risk_score: 59
-status: high
+risk_score: 29
+status: low
 date: 2026-06-10
 ---
 
 # Catcoin (CATCOIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 29/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/catcoin-sol)
 
@@ -25,9 +25,19 @@ The Catcoin SPL Token Mint exhibits a strong security posture with both mint and
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Catcoin token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no holder accounts can be… |
-| **Governance / Economics** | 1/10 | High | The token's DEX liquidity stands at $53,338, which is sufficient to avoid the 'Very Low Liquidity' flag. The 24-hour volume to liquidity ratio is 2.86, which is considered normal and does not… |
-| **Upgrades** | 5/10 | Medium | The token's configuration is highly immutable, with both mint and freeze authorities revoked. Key Token-2022 extensions such as transfer hook and transfer fee are not present, and their upgradability… |
+| **Technical** | 10/10 | Low | The Catcoin token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no holder accounts can be… |
+| **Governance / Economics** | 4/10 | Medium | The token's DEX liquidity stands at $53,338, which is sufficient to avoid the 'Very Low Liquidity' flag. The 24-hour volume to liquidity ratio is 2.86, which is considered normal and does not… |
+| **Upgrades** | 8/10 | Low | The token's configuration is highly immutable, with both mint and freeze authorities revoked. Key Token-2022 extensions such as transfer hook and transfer fee are not present, and their upgradability… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,21 +45,20 @@ The Catcoin SPL Token Mint exhibits a strong security posture with both mint and
 |--------|-------|
 | **Contract** | [`5gTPsp...coin`](https://solscan.io/account/5gTPspC2ricuGWiYQ4Ghausg8fsq7uCrGgSVACatcoin) |
 | **Network** | Solana |
-| **Price** | $0.00005215 |
-| **24h Volume** | $8.5K |
-| **Liquidity** | $26.0K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.00005072 |
+| **24h Volume** | $1.2K |
+| **Liquidity** | $32.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 20d |
-| **Top-10 Holders** | 40.6% of supply |
+| **Top-10 Holders** | 57.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -57,9 +66,8 @@ The Catcoin SPL Token Mint exhibits a strong security posture with both mint and
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

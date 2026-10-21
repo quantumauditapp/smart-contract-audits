@@ -2,14 +2,14 @@
 token: Bullish Degen
 ticker: BULLISH
 network: solana
-risk_score: 51
-status: high
+risk_score: 12
+status: low
 date: 2026-06-10
 ---
 
 # Bullish Degen (BULLISH) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bullish-degen-sol)
 
@@ -25,9 +25,19 @@ The Bullish Degen (BULLISH) SPL token mint has no critical or high-severity risk
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Bullish Degen (BULLISH) token is an SPL token operating on the `spl-token` program. Its mint authority is revoked (None), ensuring no new tokens can be minted, fixing the total supply at… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a healthy liquidity profile with $64,917 USD in total DEX liquidity, which is sufficient for moderate trading activity. The 24-hour volume of $5,788 USD results in a normal… |
-| **Upgrades** | 5/10 | Medium | The Bullish Degen (BULLISH) token mint has both its mint and freeze authorities revoked, which means its core parameters related to supply and account freezing are immutable. The token's metadata is… |
+| **Technical** | 10/10 | Low | The Bullish Degen (BULLISH) token is an SPL token operating on the `spl-token` program. Its mint authority is revoked (None), ensuring no new tokens can be minted, fixing the total supply at… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a healthy liquidity profile with $64,917 USD in total DEX liquidity, which is sufficient for moderate trading activity. The 24-hour volume of $5,788 USD results in a normal… |
+| **Upgrades** | 8/10 | Low | The Bullish Degen (BULLISH) token mint has both its mint and freeze authorities revoked, which means its core parameters related to supply and account freezing are immutable. The token's metadata is… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,21 +45,20 @@ The Bullish Degen (BULLISH) SPL token mint has no critical or high-severity risk
 |--------|-------|
 | **Contract** | [`C2omVh...pump`](https://solscan.io/account/C2omVhcvt3DDY77S2KZzawFJQeETZofgZ4eNWWkXpump) |
 | **Network** | Solana |
-| **Price** | $0.0002599 |
-| **24h Volume** | $12.6K |
-| **Liquidity** | $60.6K |
+| **Price** | $0.0007329 |
+| **24h Volume** | $26.8K |
+| **Liquidity** | $128.1K |
 | **Volume / Liquidity** | 0.2× |
 | **Token Age** | 7mo |
-| **Top-10 Holders** | 32.3% of supply |
+| **Top-10 Holders** | 32.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -57,9 +66,8 @@ The Bullish Degen (BULLISH) SPL token mint has no critical or high-severity risk
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

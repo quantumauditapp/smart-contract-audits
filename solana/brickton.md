@@ -2,14 +2,14 @@
 token: BRICKTON
 ticker: BRICK
 network: solana
-risk_score: 48
-status: high
+risk_score: 44
+status: medium
 date: 2026-08-06
 ---
 
 # BRICKTON (BRICK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/brickton-sol)
 
@@ -25,9 +25,9 @@ The BRICKTON (BRICK) token mint exhibits a medium risk profile primarily due to 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The BRICKTON (BRICK) token is an SPL Token-2022 mint. The mint authority has been revoked, ensuring no new tokens can be minted and the supply of 996,020,270,992,860 raw tokens is fixed. The freeze… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a medium risk in its economic and governance profile due to its very recent launch. The DEX pair was created only 6 days ago, which is insufficient time to establish a track record… |
-| **Upgrades** | 5/10 | Medium | The token mint has no mutable authorities that would allow for post-launch changes to its core parameters. Both the mint and freeze authorities are revoked, meaning the token supply and account… |
+| **Technical** | 8/10 | Low | The BRICKTON (BRICK) token is an SPL Token-2022 mint. The mint authority has been revoked, ensuring no new tokens can be minted and the supply of 996,020,270,992,860 raw tokens is fixed. The freeze… |
+| **Governance / Economics** | 1/10 | High | The token exhibits a medium risk in its economic and governance profile due to its very recent launch. The DEX pair was created only 6 days ago, which is insufficient time to establish a track record… |
+| **Upgrades** | 8/10 | Low | The token mint has no mutable authorities that would allow for post-launch changes to its core parameters. Both the mint and freeze authorities are revoked, meaning the token supply and account… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 6 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`8Byg9w...pump`](https://solscan.io/account/8Byg9wi43TNzgJpYta6UXxPz3LPe8v6ZwvmWWoWQpump) |
 | **Network** | Solana |
-| **Price** | $0.0006444 |
-| **24h Volume** | $710.8K |
-| **Liquidity** | $78.6K |
-| **Volume / Liquidity** | 9.0× |
+| **Price** | $0.00000948 |
+| **24h Volume** | $44 |
+| **Liquidity** | $10.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | 19.8% of supply |
+| **Top-10 Holders** | 81.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 32697 buys / 30252 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 6 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

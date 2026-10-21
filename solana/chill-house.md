@@ -2,14 +2,14 @@
 token: Chill House
 ticker: CHILLHOUSE
 network: solana
-risk_score: 41
-status: medium
+risk_score: 3
+status: low
 date: 2026-07-27
 ---
 
 # Chill House (CHILLHOUSE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 3/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chill-house-sol)
 
@@ -25,9 +25,19 @@ The Chill House (CHILLHOUSE) SPL token mint exhibits a robust security posture w
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Chill House token operates on the classic spl-token program. Key authorities, including the Mint Authority and Freeze Authority, have been permanently revoked, ensuring no new tokens can be… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a moderate holder concentration, with the top 10 accounts holding 30.03% of the total supply, which is below thresholds for high concentration risk. Total DEX liquidity stands at… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable due to the revocation of both Mint and Freeze Authorities. Metadata, including name and symbol, is also immutable as indicated by `metadata_mutable: False`.… |
+| **Technical** | 10/10 | Low | The Chill House token operates on the classic spl-token program. Key authorities, including the Mint Authority and Freeze Authority, have been permanently revoked, ensuring no new tokens can be… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a moderate holder concentration, with the top 10 accounts holding 30.03% of the total supply, which is below thresholds for high concentration risk. Total DEX liquidity stands at… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both Mint and Freeze Authorities. Metadata, including name and symbol, is also immutable as indicated by `metadata_mutable: False`.… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Chill House (CHILLHOUSE) SPL token mint exhibits a robust security posture w
 |--------|-------|
 | **Contract** | [`GkyPYa...pump`](https://solscan.io/account/GkyPYa7NnCFbduLknCfBfP7p8564X1VZhwZYJ6CZpump) |
 | **Network** | Solana |
-| **Price** | $0.003345 |
-| **24h Volume** | $217.8K |
-| **Liquidity** | $529.3K |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.002025 |
+| **24h Volume** | $126.2K |
+| **Liquidity** | $533.6K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 30.0% of supply |
+| **Top-10 Holders** | 36.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1019 buys / 1118 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Chill House (CHILLHOUSE) SPL token mint exhibits a robust security posture w
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

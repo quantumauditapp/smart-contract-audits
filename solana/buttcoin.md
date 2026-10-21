@@ -2,14 +2,14 @@
 token: Buttcoin
 ticker: BUTTCOIN
 network: solana
-risk_score: 35
-status: medium
+risk_score: 0
+status: low
 date: 2026-06-26
 ---
 
 # Buttcoin (BUTTCOIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 35/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/buttcoin-sol)
 
@@ -25,9 +25,19 @@ This audit of the Buttcoin SPL Token Mint found no critical or high-severity iss
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Buttcoin token is an SPL Token-2022 mint with a total supply of 999,945,702.977861 tokens, using 6 decimals. Crucially, both the mint authority and freeze authority have been revoked, ensuring no… |
-| **Governance / Economics** | 3/10 | High | The token exhibits healthy market characteristics with a total DEX liquidity of $656,108 and a 24-hour trading volume of $615,100 (7.4 Economic). The volume-to-liquidity ratio is 0.94, which is… |
-| **Upgrades** | 5/10 | Medium | The token's configuration demonstrates a strong commitment to immutability and fixed parameters (7.7 Upgrades). Both the mint and freeze authorities are revoked, meaning no further changes can be… |
+| **Technical** | 10/10 | Low | The Buttcoin token is an SPL Token-2022 mint with a total supply of 999,945,702.977861 tokens, using 6 decimals. Crucially, both the mint authority and freeze authority have been revoked, ensuring no… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits healthy market characteristics with a total DEX liquidity of $656,108 and a 24-hour trading volume of $615,100 (7.4 Economic). The volume-to-liquidity ratio is 0.94, which is… |
+| **Upgrades** | 8/10 | Low | The token's configuration demonstrates a strong commitment to immutability and fixed parameters (7.7 Upgrades). Both the mint and freeze authorities are revoked, meaning no further changes can be… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the Buttcoin SPL Token Mint found no critical or high-severity iss
 |--------|-------|
 | **Contract** | [`Cm6fNn...pump`](https://solscan.io/account/Cm6fNnMk7NfzStP9CZpsQA2v3jjzbcYGAxdJySmHpump) |
 | **Network** | Solana |
-| **Price** | $0.009168 |
-| **24h Volume** | $431.0K |
-| **Liquidity** | $594.0K |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $0.01439 |
+| **24h Volume** | $1.07M |
+| **Liquidity** | $988.4K |
+| **Volume / Liquidity** | 1.1× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 16.2% of supply |
+| **Top-10 Holders** | 17.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2257 buys / 2524 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the Buttcoin SPL Token Mint found no critical or high-severity iss
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Catecoin
 ticker: CATE
 network: solana
-risk_score: 47
-status: high
+risk_score: 7
+status: low
 date: 2026-07-31
 ---
 
 # Catecoin (CATE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 7/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/catecoin-sol)
 
@@ -25,9 +25,9 @@ The Catecoin (CATE) SPL Token Mint exhibits a strong security posture regarding 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Catecoin (CATE) token is implemented using the spl-token-2022 program. A key security strength is that both the mint authority and freeze authority have been revoked, ensuring no new tokens can… |
-| **Governance / Economics** | 2/10 | High | The token's economic profile shows moderate liquidity at $284,567 USD and a normal 24-hour Volume/Liquidity ratio of 2.27, not indicating wash trading. Holder concentration is low, with the top 10… |
-| **Upgrades** | 5/10 | Medium | The token's upgradeability posture is strong, as both the mint and freeze authorities are permanently revoked. This prevents any future changes to the token's supply or the ability to freeze… |
+| **Technical** | 10/10 | Low | The Catecoin (CATE) token is implemented using the spl-token-2022 program. A key security strength is that both the mint authority and freeze authority have been revoked, ensuring no new tokens can… |
+| **Governance / Economics** | 6/10 | Medium | The token's economic profile shows moderate liquidity at $284,567 USD and a normal 24-hour Volume/Liquidity ratio of 2.27, not indicating wash trading. Holder concentration is low, with the top 10… |
+| **Upgrades** | 8/10 | Low | The token's upgradeability posture is strong, as both the mint and freeze authorities are permanently revoked. This prevents any future changes to the token's supply or the ability to freeze… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`Ai66LH...pump`](https://solscan.io/account/Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump) |
 | **Network** | Solana |
-| **Price** | $0.004071 |
-| **24h Volume** | $646.5K |
-| **Liquidity** | $279.1K |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $0.09181 |
+| **24h Volume** | $5.42M |
+| **Liquidity** | $3.52M |
+| **Volume / Liquidity** | 1.5× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 16.5% of supply |
+| **Top-10 Holders** | 16.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1932 buys / 1562 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

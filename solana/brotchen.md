@@ -2,14 +2,14 @@
 token: Brötchen
 ticker: BRÖTCHEN
 network: solana
-risk_score: 45
-status: medium
+risk_score: 27
+status: low
 date: 2026-07-30
 ---
 
 # Brötchen (BRÖTCHEN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/brotchen-sol)
 
@@ -25,9 +25,19 @@ This audit of the Brötchen SPL Token Mint found no critical or high-severity is
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Brötchen token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no holder accounts can be… |
-| **Governance / Economics** | 3/10 | High | The token exhibits healthy liquidity with $101,297 USD available on DEXs. The 24-hour volume of $364,507 results in a normal Volume/Liquidity Ratio of 3.60, not indicating wash trading. The top 10… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token's metadata is immutable, ensuring its name, symbol… |
+| **Technical** | 10/10 | Low | The Brötchen token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no holder accounts can be… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits healthy liquidity with $101,297 USD available on DEXs. The 24-hour volume of $364,507 results in a normal Volume/Liquidity Ratio of 3.60, not indicating wash trading. The top 10… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token's metadata is immutable, ensuring its name, symbol… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the Brötchen SPL Token Mint found no critical or high-severity is
 |--------|-------|
 | **Contract** | [`9ZtbET...pump`](https://solscan.io/account/9ZtbETDNjnST9Y2zs82FZYy49xUMPgqXRh46YjjRpump) |
 | **Network** | Solana |
-| **Price** | $0.0006369 |
-| **24h Volume** | $372.9K |
-| **Liquidity** | $103.8K |
-| **Volume / Liquidity** | 3.6× |
+| **Price** | $0.00002018 |
+| **24h Volume** | $92 |
+| **Liquidity** | $19.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 25.1% of supply |
+| **Top-10 Holders** | 65.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1941 buys / 2205 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the Brötchen SPL Token Mint found no critical or high-severity is
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

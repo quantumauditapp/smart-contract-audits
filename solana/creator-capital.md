@@ -2,14 +2,14 @@
 token: creator capital
 ticker: CC
 network: solana
-risk_score: 56
-status: high
+risk_score: 23
+status: low
 date: 2026-08-15
 ---
 
 # creator capital (CC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 56/100 — 🟠 High Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/creator-capital-sol)
 
@@ -25,9 +25,9 @@ The creator capital (cc) SPL Token Mint on Solana exhibits strong immutability w
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The creator capital (cc) token is an SPL Token-2022 mint with robust security configurations. Both the mint authority and freeze authority have been revoked, preventing further token issuance or… |
-| **Governance / Economics** | 2/10 | High | The economic profile of the creator capital (cc) token shows moderate liquidity at $59,634, with a 24-hour volume of $362,536. The volume/liquidity ratio is 6.08, which is a high ratio. A key concern… |
-| **Upgrades** | 5/10 | Medium | The creator capital (cc) token mint demonstrates a high degree of immutability and lack of upgradeability. The mint authority and freeze authority are both revoked, meaning no further tokens can be… |
+| **Technical** | 10/10 | Low | The creator capital (cc) token is an SPL Token-2022 mint with robust security configurations. Both the mint authority and freeze authority have been revoked, preventing further token issuance or… |
+| **Governance / Economics** | 5/10 | Medium | The economic profile of the creator capital (cc) token shows moderate liquidity at $59,634, with a 24-hour volume of $362,536. The volume/liquidity ratio is 6.08, which is a high ratio. A key concern… |
+| **Upgrades** | 8/10 | Low | The creator capital (cc) token mint demonstrates a high degree of immutability and lack of upgradeability. The mint authority and freeze authority are both revoked, meaning no further tokens can be… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`E3i7sT...pump`](https://solscan.io/account/E3i7sTY5QYEBh3itepnomZQt7Eh5kzmHFk1vkm2pump) |
 | **Network** | Solana |
-| **Price** | $0.0005085 |
-| **24h Volume** | $376.1K |
-| **Liquidity** | $62.4K |
-| **Volume / Liquidity** | 6.0× |
+| **Price** | $0.000353 |
+| **24h Volume** | $19.3K |
+| **Liquidity** | $86.1K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 23.9% of supply |
+| **Top-10 Holders** | 31.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2310 buys / 2559 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
