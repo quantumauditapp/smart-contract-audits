@@ -3,13 +3,13 @@ token: Robo Token
 ticker: ROBO
 network: base
 risk_score: 46
-status: high
+status: medium
 date: 2026-08-15
 ---
 
 # Robo Token (ROBO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 46/100 — 🟠 High Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/robo-token-base)
 
@@ -33,7 +33,7 @@ The RoboToken contract is a minimal implementation of an Omnichain Fungible Toke
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 79.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -73,12 +73,12 @@ The `RoboToken` constructor initializes two critical immutable parameters: `_lzE
 |--------|-------|
 | **Contract** | [`0x407a...6d6f`](https://basescan.org/address/0x407a5fb66cb1b3d50004f7091c08a27b42ba6d6f) |
 | **Network** | Base |
-| **Price** | $0.0176 |
-| **24h Volume** | $181.3K |
-| **Liquidity** | $426.0K |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.01167 |
+| **24h Volume** | $16.8K |
+| **Liquidity** | $395.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 89.3% of supply |
+| **Top-10 Holders** | 91.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 931 buys / 632 sells |
 

@@ -2,14 +2,14 @@
 token: RAIN
 ticker: RAIN
 network: arbitrum
-risk_score: 40
+risk_score: 43
 status: medium
 date: 2026-07-27
 ---
 
 # RAIN (RAIN) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rain-arb)
 
@@ -25,9 +25,17 @@ The audit of the Rain Token (implementation `Rain`) reveals significant architec
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture leverages OpenZeppelin's upgradeable contracts, including ERC20, Ownable2Step, and UUPS. However, a critical architectural flaw exists where the contract lacks a primary… |
+| **Technical** | 5/10 | Medium | The technical architecture leverages OpenZeppelin's upgradeable contracts, including ERC20, Ownable2Step, and UUPS. However, a critical architectural flaw exists where the contract lacks a primary… |
 | **Governance / Economics** | 2/10 | High | The economic model for token minting is based on a percentage of burned tokens, controlled by the owner (7.4 Economic). However, the contract contains extensive declarations for a USD-pegged… |
-| **Upgrades** | 5/10 | Medium | The contract utilizes the UUPSUpgradeable pattern but explicitly disables upgrades by reverting in `_authorizeUpgrade` (7.7 Upgrades). This design choice ensures immutability of the contract logic… |
+| **Upgrades** | 1/10 | High | The contract utilizes the UUPSUpgradeable pattern but explicitly disables upgrades by reverting in `_authorizeUpgrade` (7.7 Upgrades). This design choice ensures immutability of the contract logic… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Uups |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
@@ -94,16 +102,16 @@ The constructor correctly calls `_disableInitializers()` for upgradeable contrac
 |--------|-------|
 | **Contract** | [`0x2511...099d`](https://arbiscan.io/address/0x25118290e6a5f4139381d072181157035864099d) |
 | **Network** | Arbitrum |
-| **Price** | $0.01368 |
-| **24h Volume** | $56.1K |
-| **Liquidity** | $2.50M |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.01709 |
+| **24h Volume** | $1.13M |
+| **Liquidity** | $1.66M |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 88.3% of supply |
+| **Top-10 Holders** | 86.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 212 buys / 305 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
@@ -111,7 +119,7 @@ The constructor correctly calls `_disableInitializers()` for upgradeable contrac
 | Ownership Renounced | ❌ Fail |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
@@ -121,7 +129,7 @@ The constructor correctly calls `_disableInitializers()` for upgradeable contrac
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Frequently Asked Questions
 

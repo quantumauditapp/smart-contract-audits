@@ -2,14 +2,14 @@
 token: RIZE
 ticker: RIZE
 network: base
-risk_score: 57
+risk_score: 70
 status: high
 date: 2026-08-15
 ---
 
 # RIZE (RIZE) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 70/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rize-base)
 
@@ -25,9 +25,9 @@ The RizeToken contract is an ERC20 token implementation leveraging OpenZeppelin 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The RizeToken contract utilizes well-audited OpenZeppelin libraries for its core ERC20 functionality, including flash minting, permits, and a capped supply (7.1 Architecture, 7.2 Code Security). The… |
+| **Technical** | 6/10 | Medium | The RizeToken contract utilizes well-audited OpenZeppelin libraries for its core ERC20 functionality, including flash minting, permits, and a capped supply (7.1 Architecture, 7.2 Code Security). The… |
 | **Governance / Economics** | 1/10 | High | The contract implements a capped token supply, which is a positive economic control (7.4 Economic). Flash loan fees are configurable, allowing for dynamic adjustments. However, the `onlyBridge` role… |
-| **Upgrades** | 6/10 | Medium | The RizeToken contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). This design choice eliminates risks associated with upgrade mechanisms, such as proxy implementation bugs… |
+| **Upgrades** | 5/10 | Medium | The RizeToken contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). This design choice eliminates risks associated with upgrade mechanisms, such as proxy implementation bugs… |
 
 ## LP Distribution
 
@@ -80,22 +80,22 @@ The contract implements EIP-3009 for `transferWithAuthorization`, `receiveWithAu
 |--------|-------|
 | **Contract** | [`0x9818...3583`](https://basescan.org/address/0x9818b6c09f5ecc843060927e8587c427c7c93583) |
 | **Network** | Base |
-| **Price** | $0.005102 |
-| **24h Volume** | $44.4K |
-| **Liquidity** | $33.4K |
-| **Volume / Liquidity** | 1.3× |
+| **Price** | $0.004036 |
+| **24h Volume** | $24.9K |
+| **Liquidity** | $24.4K |
+| **Volume / Liquidity** | 1.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 89.0% of supply |
+| **Top-10 Holders** | 90.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 377 buys / 490 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -105,7 +105,7 @@ The contract implements EIP-3009 for `transferWithAuthorization`, `receiveWithAu
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

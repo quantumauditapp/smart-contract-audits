@@ -2,14 +2,14 @@
 token: NVIDIA Corp
 ticker: NVDAB
 network: bsc
-risk_score: 88
-status: critical
+risk_score: 81
+status: high
 date: 2026-08-11
 ---
 
 # NVIDIA Corp (NVDAB) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 88/100 — 🔴 Critical Risk**
+> **Risk Score: 81/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/nvidia-corp-bsc)
 
@@ -25,8 +25,8 @@ The SecuritiesToken contract serves as an upgradeable ERC-20 token implementatio
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The SecuritiesToken contract is built upon OpenZeppelin's upgradeable standards, ensuring robust ERC-20 functionality and upgrade safety (7.2, 7.7). It implements granular access control with… |
-| **Governance / Economics** | 1/10 | High | The contract's governance model is highly centralized, with the DEFAULT_ADMIN_ROLE holding extensive power over token parameters, roles, and external integrations (7.5). This role can modify the… |
+| **Technical** | 6/10 | Medium | The SecuritiesToken contract is built upon OpenZeppelin's upgradeable standards, ensuring robust ERC-20 functionality and upgrade safety (7.2, 7.7). It implements granular access control with… |
+| **Governance / Economics** | 2/10 | High | The contract's governance model is highly centralized, with the DEFAULT_ADMIN_ROLE holding extensive power over token parameters, roles, and external integrations (7.5). This role can modify the… |
 | **Upgrades** | 1/10 | High | The SecuritiesToken contract is designed as an upgradeable implementation for a BeaconProxy, correctly utilizing OpenZeppelin's initializer pattern and __gap storage to prevent storage collisions… |
 
 ## Proxy Upgrade Controls
@@ -40,8 +40,8 @@ The SecuritiesToken contract serves as an upgradeable ERC-20 token implementatio
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 39.8% |
-| **Top-3 Unlocked** | 63.5% |
+| **Top-1 Unlocked Holder** | 26.0% |
+| **Top-3 Unlocked** | 56.4% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ The `_checkAdminOrIssuer` function is declared as `private view`. While it is co
 |--------|-------|
 | **Contract** | [`0x02fc...7436`](https://bscscan.com/address/0x02fca66c1d1afb4e2a7884261eb00f63598a7436) |
 | **Network** | BNB Chain |
-| **Price** | $219.4500 |
-| **24h Volume** | $5.58M |
-| **Liquidity** | $1.00M |
-| **Volume / Liquidity** | 5.6× |
+| **Price** | $229.6900 |
+| **24h Volume** | $6.86M |
+| **Liquidity** | $1.67M |
+| **Volume / Liquidity** | 4.1× |
 | **Token Age** | 13d |
-| **Top-10 Holders** | 83.2% of supply |
+| **Top-10 Holders** | 76.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 23918 buys / 23741 sells |
 

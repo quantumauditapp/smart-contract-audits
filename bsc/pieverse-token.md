@@ -2,14 +2,14 @@
 token: Pieverse Token
 ticker: PIEVERSE
 network: bsc
-risk_score: 99
+risk_score: 100
 status: critical
 date: 2026-07-26
 ---
 
 # Pieverse Token (PIEVERSE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 99/100 — 🔴 Critical Risk**
+> **Risk Score: 100/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pieverse-token-bsc)
 
@@ -87,12 +87,12 @@ The `ETA` variable, once set (e.g., `transferAllowedTime + 1 days`), is never ex
 |--------|-------|
 | **Contract** | [`0x0e63...25a9`](https://bscscan.com/address/0x0e63b9c287e32a05e6b9ab8ee8df88a2760225a9) |
 | **Network** | BNB Chain |
-| **Price** | $0.6897 |
-| **24h Volume** | $48.4K |
-| **Liquidity** | $25.3K |
-| **Volume / Liquidity** | 1.9× |
+| **Price** | $1.0950 |
+| **24h Volume** | $17.1K |
+| **Liquidity** | $22.4K |
+| **Volume / Liquidity** | 0.8× |
 | **Token Age** | 8mo |
-| **Top-10 Holders** | 84.9% of supply |
+| **Top-10 Holders** | 90.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1302 buys / 1071 sells |
 

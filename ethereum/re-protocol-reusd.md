@@ -3,13 +3,13 @@ token: Re Protocol reUSD
 ticker: REUSD
 network: ethereum
 risk_score: 82
-status: critical
+status: high
 date: 2026-06-20
 ---
 
 # Re Protocol reUSD (REUSD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 82/100 — 🔴 Critical Risk**
+> **Risk Score: 82/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/re-protocol-reusd-eth)
 
@@ -88,12 +88,12 @@ The `ERC1967Utils.upgradeToAndCall` function includes a check (`_checkNonPayable
 |--------|-------|
 | **Contract** | [`0x5086...0c72`](https://etherscan.io/address/0x5086bf358635b81d8c47c66d1c8b9e567db70c72) |
 | **Network** | Ethereum |
-| **Price** | $1.0900 |
-| **24h Volume** | $64.2K |
-| **Liquidity** | $459.6K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $1.0980 |
+| **24h Volume** | $17.8K |
+| **Liquidity** | $451.5K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 98.2% of supply |
+| **Top-10 Holders** | 99.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 15 buys / 14 sells |
 

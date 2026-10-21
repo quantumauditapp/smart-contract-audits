@@ -2,14 +2,14 @@
 token: Olympus
 ticker: OHM
 network: ethereum
-risk_score: 49
-status: high
+risk_score: 50
+status: medium
 date: 2026-08-11
 ---
 
 # Olympus (OHM) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/olympus-eth)
 
@@ -66,12 +66,12 @@ The `IOHM` interface defines `mint`, `burn`, and `burnFrom` functions, which are
 |--------|-------|
 | **Contract** | [`0x64aa...f1d5`](https://etherscan.io/address/0x64aa3364f17a4d01c6f1751fd97c2bd3d7e7f1d5) |
 | **Network** | Ethereum |
-| **Price** | $18.6800 |
-| **24h Volume** | $59.9K |
-| **Liquidity** | $4.10M |
+| **Price** | $20.1900 |
+| **24h Volume** | $83.7K |
+| **Liquidity** | $4.93M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | 99.1% of supply |
+| **Top-10 Holders** | 99.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 54 buys / 52 sells |
 

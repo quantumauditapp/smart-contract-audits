@@ -33,8 +33,8 @@ This audit covers a truncated Solidity contract identified as a component of the
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 37.0% |
-| **Top-3 Unlocked** | 57.8% |
+| **Top-1 Unlocked Holder** | 29.4% |
+| **Top-3 Unlocked** | 78.2% |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ The overall security and integrity of the access control system, and by extensio
 |--------|-------|
 | **Contract** | [`0xfaba...9be3`](https://etherscan.io/address/0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3) |
 | **Network** | Ethereum |
-| **Price** | $0.4041 |
-| **24h Volume** | $509.8K |
-| **Liquidity** | $743.5K |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $0.3643 |
+| **24h Volume** | $233.2K |
+| **Liquidity** | $824.1K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 69.9% of supply |
+| **Top-10 Holders** | 68.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 409 buys / 359 sells |
 

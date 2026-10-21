@@ -94,12 +94,12 @@ The contract implements a specific mechanism to limit the number of buy transact
 |--------|-------|
 | **Contract** | [`0x812b...53ee`](https://etherscan.io/address/0x812ba41e071c7b7fa4ebcfb62df5f45f6fa853ee) |
 | **Network** | Ethereum |
-| **Price** | $0.0000683 |
-| **24h Volume** | $291.5K |
-| **Liquidity** | $2.68M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.00008812 |
+| **24h Volume** | $174.3K |
+| **Liquidity** | $3.54M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 73.0% of supply |
+| **Top-10 Holders** | 73.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 218 buys / 365 sells |
 

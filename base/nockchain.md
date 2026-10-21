@@ -2,14 +2,14 @@
 token: Nockchain
 ticker: NOCK
 network: base
-risk_score: 52
-status: high
+risk_score: 45
+status: medium
 date: 2026-06-10
 ---
 
 # Nockchain (NOCK) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 52/100 — 🟠 High Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/nockchain-base)
 
@@ -33,7 +33,7 @@ The Nock contract is an ERC-20 token designed for Nockchain integration, featuri
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 51.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 96.8% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -80,12 +80,12 @@ The `Nock` token overrides the standard ERC20 `decimals()` function to return 16
 |--------|-------|
 | **Contract** | [`0x9b5e...1722`](https://basescan.org/address/0x9b5e262cf9bb04869ab40b19af91d2dc85761722) |
 | **Network** | Base |
-| **Price** | $0.01619 |
-| **24h Volume** | $417.6K |
-| **Liquidity** | $808.4K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.01789 |
+| **24h Volume** | $1.05M |
+| **Liquidity** | $1.06M |
+| **Volume / Liquidity** | 1.0× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 23.5% of supply |
+| **Top-10 Holders** | 21.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1875 buys / 1606 sells |
 

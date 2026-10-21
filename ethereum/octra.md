@@ -2,14 +2,14 @@
 token: Octra
 ticker: OCT
 network: ethereum
-risk_score: 33
+risk_score: 38
 status: medium
 date: 2026-06-10
 ---
 
 # Octra (OCT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 33/100 — 🟡 Medium Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/octra-eth)
 
@@ -25,8 +25,8 @@ The WrappedOCT contract is an ERC20 token with bridging and pausing capabilities
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 10/10 | Low | The contract leverages well-audited OpenZeppelin libraries for ERC20, AccessControl, and Pausable functionalities (7.2 Code Security). It implements clear checks for zero addresses and amounts in… |
-| **Governance / Economics** | 3/10 | High | The contract exhibits centralized control over key functions (7.3 Access Control, 7.5 Governance). The `DEFAULT_ADMIN_ROLE` (deployer) can manage all roles, including the `BRIDGE_ROLE` which controls… |
+| **Technical** | 8/10 | Low | The contract leverages well-audited OpenZeppelin libraries for ERC20, AccessControl, and Pausable functionalities (7.2 Code Security). It implements clear checks for zero addresses and amounts in… |
+| **Governance / Economics** | 2/10 | High | The contract exhibits centralized control over key functions (7.3 Access Control, 7.5 Governance). The `DEFAULT_ADMIN_ROLE` (deployer) can manage all roles, including the `BRIDGE_ROLE` which controls… |
 | **Upgrades** | 6/10 | Medium | The WrappedOCT contract is not designed with an upgradeability pattern (7.7 Upgrades). It is a standard, immutable contract deployment. This eliminates risks associated with upgrade proxies, such as… |
 
 ## LP Distribution
@@ -66,12 +66,12 @@ The `MAX_SUPPLY` for the `WrappedOCT` token is defined as a `public constant` wi
 |--------|-------|
 | **Contract** | [`0x4647...6e80`](https://etherscan.io/address/0x4647e1fe715c9e23959022c2416c71867f5a6e80) |
 | **Network** | Ethereum |
-| **Price** | $0.02127 |
-| **24h Volume** | $26.9K |
-| **Liquidity** | $648.1K |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.02246 |
+| **24h Volume** | $139.8K |
+| **Liquidity** | $777.1K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 47.9% of supply |
+| **Top-10 Holders** | 47.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 306 buys / 246 sells |
 

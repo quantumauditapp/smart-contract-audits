@@ -3,13 +3,13 @@ token: OLY
 ticker: OLY
 network: bsc
 risk_score: 56
-status: high
+status: medium
 date: 2026-07-27
 ---
 
 # OLY (OLY) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 56/100 — 🟠 High Risk**
+> **Risk Score: 56/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/oly-bsc)
 
@@ -87,13 +87,13 @@ The `INTERN_SYSTEM` role is designed to exempt addresses from trading fees when 
 |--------|-------|
 | **Contract** | [`0x5440...61b0`](https://bscscan.com/address/0x544028231562a43b106fbceca722b65cb5c861b0) |
 | **Network** | BNB Chain |
-| **Price** | $2.3100 |
-| **24h Volume** | $716.2K |
-| **Liquidity** | $10.05M |
+| **Price** | $1.1700 |
+| **24h Volume** | $534.8K |
+| **Liquidity** | $7.21M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 98.1% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 97.7% of supply |
+| **Buy / Sell Tax** | 0.0% / 3.0% |
 | **24h Transactions** | 8951 buys / 8710 sells |
 
 ## Security Flags (3/5 passed)

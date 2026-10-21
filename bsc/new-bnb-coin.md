@@ -2,14 +2,14 @@
 token: New BNB Coin
 ticker: NNB
 network: bsc
-risk_score: 23
-status: medium
+risk_score: 34
+status: low
 date: 2026-08-12
 ---
 
 # New BNB Coin (NNB) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 23/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/new-bnb-coin-bsc)
 
@@ -26,7 +26,7 @@ The audit of the Token contract revealed a well-structured ERC20 implementation 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 7/10 | Low | The contract implements a standard ERC20 token, inheriting from OpenZeppelin's `ERC20` and `Ownable` contracts, which generally ensures good code security (7.2). The use of `unchecked` blocks for… |
-| **Governance / Economics** | 8/10 | Low | The token's economic model (7.4) is heavily reliant on the owner's control over transferability. The `_mode` variable allows the owner to restrict or completely halt transfers, which introduces a… |
+| **Governance / Economics** | 6/10 | Medium | The token's economic model (7.4) is heavily reliant on the owner's control over transferability. The `_mode` variable allows the owner to restrict or completely halt transfers, which introduces a… |
 | **Upgrades** | 9/10 | Low | The contract is not designed with upgradeability patterns (e.g., proxies) (7.7). Therefore, there are no upgrade-specific risks. Any changes to the contract logic would require deploying a new… |
 
 ## LP Distribution
@@ -79,12 +79,12 @@ The `Token` contract largely follows the well-established OpenZeppelin ERC20 imp
 |--------|-------|
 | **Contract** | [`0xcbbc...d0d5`](https://bscscan.com/address/0xcbbc4fa9f9fbfae7ec5c5bb0f3fbeeca4750d0d5) |
 | **Network** | BNB Chain |
-| **Price** | $0.0003923 |
-| **24h Volume** | $433.6K |
-| **Liquidity** | $69.9K |
-| **Volume / Liquidity** | 6.2× |
+| **Price** | $0.00001606 |
+| **24h Volume** | $2.8K |
+| **Liquidity** | $14.9K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 42.2% of supply |
+| **Top-10 Holders** | 81.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2428 buys / 1755 sells |
 

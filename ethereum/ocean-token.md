@@ -2,14 +2,14 @@
 token: Ocean Token
 ticker: OCEAN
 network: ethereum
-risk_score: 63
-status: high
+risk_score: 60
+status: medium
 date: 2026-08-20
 ---
 
 # Ocean Token (OCEAN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 60/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ocean-token-eth)
 
@@ -27,7 +27,7 @@ The audit of the OceanToken contract, an ERC20 token with minting, capping, and 
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract demonstrates good architectural practices (7.1) by using a modular design and inheriting from well-established OpenZeppelin patterns. The inclusion of SafeMath (7.2) effectively… |
 | **Governance / Economics** | 1/10 | High | The economic model (7.4) includes a capped supply and minting functionality, which provides a clear limit but also introduces inflation risk if minters are compromised. The Pausable mechanism (7.4)… |
-| **Upgrades** | 6/10 | Medium | The contract is not designed with an upgrade mechanism (7.7), meaning its logic cannot be modified post-deployment. This eliminates upgrade-related risks but also removes flexibility for future… |
+| **Upgrades** | 8/10 | Low | The contract is not designed with an upgrade mechanism (7.7), meaning its logic cannot be modified post-deployment. This eliminates upgrade-related risks but also removes flexibility for future… |
 
 ## LP Distribution
 
@@ -80,10 +80,10 @@ The `_mint` and `_burn` internal functions emit `Transfer` events where the `fro
 |--------|-------|
 | **Contract** | [`0x967d...9f48`](https://etherscan.io/address/0x967da4048cd07ab37855c090aaf366e4ce1b9f48) |
 | **Network** | Ethereum |
-| **Price** | $0.1378 |
-| **24h Volume** | $591.1K |
-| **Liquidity** | $1.16M |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.145 |
+| **24h Volume** | $32.4K |
+| **Liquidity** | $1.25M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5y |
 | **Top-10 Holders** | 90.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

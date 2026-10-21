@@ -33,7 +33,7 @@ This audit covers the OpenZeppelin `Address` library, a foundational utility con
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 50.8% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -66,12 +66,12 @@ The `Address` library provides robust wrappers for low-level `call`, `staticcall
 |--------|-------|
 | **Contract** | [`0x57ae...ffff`](https://bscscan.com/address/0x57aedac0ccaafdec0ec62fc4fbfd8252735affff) |
 | **Network** | BNB Chain |
-| **Price** | $0.004229 |
-| **24h Volume** | $1.35M |
-| **Liquidity** | $303.5K |
-| **Volume / Liquidity** | 4.4× |
+| **Price** | $0.0007981 |
+| **24h Volume** | $1.7K |
+| **Liquidity** | $136.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 10d |
-| **Top-10 Holders** | 10.5% of supply |
+| **Top-10 Holders** | 14.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5222 buys / 5332 sells |
 

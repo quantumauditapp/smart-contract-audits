@@ -2,14 +2,14 @@
 token: NOXCAT
 ticker: NOX
 network: arbitrum
-risk_score: 41
+risk_score: 58
 status: medium
 date: 2026-07-25
 ---
 
 # NOXCAT (NOX) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 58/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/noxcat-arb)
 
@@ -82,10 +82,10 @@ The contract is not implemented using a proxy pattern, meaning it is not upgrade
 |--------|-------|
 | **Contract** | [`0xb23b...8c55`](https://arbiscan.io/address/0xb23bb8c2c6cb9169eeac8f2bd42fcf333a1a8c55) |
 | **Network** | Arbitrum |
-| **Price** | $0.272 |
-| **24h Volume** | $31.5K |
-| **Liquidity** | $1.08M |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.1092 |
+| **24h Volume** | $1.2K |
+| **Liquidity** | $174 |
+| **Volume / Liquidity** | 7.2× |
 | **Token Age** | 4mo |
 | **Top-10 Holders** | 100.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

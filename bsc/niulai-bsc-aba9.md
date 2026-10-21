@@ -2,14 +2,14 @@
 token: 牛来
 ticker: NIULAI
 network: bsc
-risk_score: 39
-status: medium
+risk_score: 66
+status: high
 date: 2026-08-20
 ---
 
 # 牛来 (NIULAI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/niulai-bsc-aba9)
 
@@ -25,9 +25,16 @@ The `FourERC20` contract is a custom implementation of the ERC-20 standard. A cr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The `FourERC20` contract attempts to implement the ERC-20 standard, leveraging OpenZeppelin interfaces for compliance (7.1 Architecture). However, it suffers from a critical initialization flaw where… |
-| **Governance / Economics** | 4/10 | Medium | The contract does not implement any specific governance mechanisms (7.5 Governance). However, its economic viability is critically compromised due to the lack of initialization and minting… |
-| **Upgrades** | 8/10 | Low | The contract is not designed to be upgradeable, as indicated by `is_proxy: false` in the prefill (7.7 Upgrades). Therefore, there are no upgrade-specific risks or considerations. Any changes would… |
+| **Technical** | 6/10 | Medium | The `FourERC20` contract attempts to implement the ERC-20 standard, leveraging OpenZeppelin interfaces for compliance (7.1 Architecture). However, it suffers from a critical initialization flaw where… |
+| **Governance / Economics** | 3/10 | High | The contract does not implement any specific governance mechanisms (7.5 Governance). However, its economic viability is critically compromised due to the lack of initialization and minting… |
+| **Upgrades** | 3/10 | High | The contract is not designed to be upgradeable, as indicated by `is_proxy: false` in the prefill (7.7 Upgrades). Therefore, there are no upgrade-specific risks or considerations. Any changes would… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
 
 ## LP Distribution
 
@@ -73,16 +80,16 @@ The `approve` function, as implemented, is susceptible to a known ERC-20 front-r
 |--------|-------|
 | **Contract** | [`0x3cc3...ffff`](https://bscscan.com/address/0x3cc3c4f12dae4908d140c342eff50cf30a56ffff) |
 | **Network** | BNB Chain |
-| **Price** | $0.0008601 |
-| **24h Volume** | $185.2K |
-| **Liquidity** | $93.4K |
-| **Volume / Liquidity** | 2.0× |
+| **Price** | $0.00005039 |
+| **24h Volume** | $40 |
+| **Liquidity** | $24.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 11.6% of supply |
+| **Top-10 Holders** | 30.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1526 buys / 1210 sells |
 
-## Security Flags (4/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
@@ -90,7 +97,7 @@ The `approve` function, as implemented, is susceptible to a known ERC-20 front-r
 | Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
@@ -100,7 +107,7 @@ The `approve` function, as implemented, is susceptible to a known ERC-20 front-r
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

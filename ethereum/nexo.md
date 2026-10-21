@@ -2,14 +2,14 @@
 token: NEXO
 ticker: NEXO
 network: ethereum
-risk_score: 79
-status: critical
+risk_score: 73
+status: high
 date: 2026-07-03
 ---
 
 # NEXO (NEXO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 79/100 — 🔴 Critical Risk**
+> **Risk Score: 73/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/nexo-eth)
 
@@ -33,8 +33,8 @@ The audit of the NexoToken contract revealed several areas for improvement, prim
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 59.2% |
-| **Top-3 Unlocked** | ⚠️ 80.3% |
+| **Top-1 Unlocked Holder** | 34.5% |
+| **Top-3 Unlocked** | ⚠️ 83.2% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ The provided source code for the `NexoToken` contract includes definitions for v
 |--------|-------|
 | **Contract** | [`0xb621...5206`](https://etherscan.io/address/0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206) |
 | **Network** | Ethereum |
-| **Price** | $0.7414 |
-| **24h Volume** | $137.1K |
-| **Liquidity** | $1.20M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.844 |
+| **24h Volume** | $5.7K |
+| **Liquidity** | $1.38M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 93.7% of supply |
+| **Top-10 Holders** | 93.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 27 buys / 86 sells |
 

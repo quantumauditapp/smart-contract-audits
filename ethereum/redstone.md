@@ -2,14 +2,14 @@
 token: Redstone
 ticker: RED
 network: ethereum
-risk_score: 64
-status: high
+risk_score: 62
+status: medium
 date: 2026-08-16
 ---
 
 # Redstone (RED) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 64/100 — 🟠 High Risk**
+> **Risk Score: 62/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/redstone-eth)
 
@@ -73,12 +73,12 @@ The RedstoneToken contract does not include any mechanism to pause token transfe
 |--------|-------|
 | **Contract** | [`0xc43c...b5de`](https://etherscan.io/address/0xc43c6bfeda065fe2c4c11765bf838789bd0bb5de) |
 | **Network** | Ethereum |
-| **Price** | $0.08873 |
-| **24h Volume** | $192.9K |
-| **Liquidity** | $341.4K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.1216 |
+| **24h Volume** | $196.5K |
+| **Liquidity** | $493.6K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 61.3% of supply |
+| **Top-10 Holders** | 59.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 129 buys / 154 sells |
 

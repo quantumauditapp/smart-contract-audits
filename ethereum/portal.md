@@ -3,13 +3,13 @@ token: Portal
 ticker: PORTAL
 network: ethereum
 risk_score: 77
-status: critical
+status: high
 date: 2026-06-10
 ---
 
 # Portal (PORTAL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 77/100 — 🔴 Critical Risk**
+> **Risk Score: 77/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/portal-eth)
 
@@ -34,8 +34,8 @@ Furthermore, a comprehensive security audit of the external `proxy` contract is 
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 87.0% |
+| **Top-3 Unlocked** | ⚠️ 95.7% |
 
 ## Security Findings
 
@@ -81,12 +81,12 @@ The constructor's comment states that "potential address duplication is mitigate
 |--------|-------|
 | **Contract** | [`0x1bbe...1fed`](https://etherscan.io/address/0x1bbe973bef3a977fc51cbed703e8ffdefe001fed) |
 | **Network** | Ethereum |
-| **Price** | $0.01056 |
-| **24h Volume** | $246 |
-| **Liquidity** | $6.6K |
+| **Price** | $0.01629 |
+| **24h Volume** | $281 |
+| **Liquidity** | $5.8K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 73.9% of supply |
+| **Top-10 Holders** | 74.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 386 buys / 331 sells |
 

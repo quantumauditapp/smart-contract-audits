@@ -3,13 +3,13 @@ token: PancakeSwap Token
 ticker: CAKE
 network: bsc
 risk_score: 72
-status: critical
+status: high
 date: 2026-08-11
 ---
 
 # PancakeSwap Token (CAKE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 72/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pancakeswap-token-bsc)
 
@@ -59,12 +59,12 @@ The `decreaseAllowance` function, while an improvement over directly setting all
 |--------|-------|
 | **Contract** | [`0x0e09...ce82`](https://bscscan.com/address/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82) |
 | **Network** | BNB Chain |
-| **Price** | $1.4500 |
-| **24h Volume** | $178.3K |
-| **Liquidity** | $3.92M |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $2.0140 |
+| **24h Volume** | $1.11M |
+| **Liquidity** | $5.05M |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 96.9% of supply |
+| **Top-10 Holders** | 97.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 209 buys / 268 sells |
 

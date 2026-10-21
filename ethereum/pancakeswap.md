@@ -2,14 +2,14 @@
 token: PancakeSwap
 ticker: CAKE
 network: ethereum
-risk_score: 89
-status: critical
+risk_score: 71
+status: high
 date: 2026-08-20
 ---
 
 # PancakeSwap (CAKE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 89/100 — 🔴 Critical Risk**
+> **Risk Score: 71/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pancakeswap-eth)
 
@@ -25,9 +25,9 @@ The CakeOFT contract implements an Omnichain Fungible Token (OFT) with LayerZero
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract leverages LayerZero for omnichain functionality and OpenZeppelin's Pausable for operational control (7.1 Architecture, 7.2 Code Security). It implements daily inbound and outbound… |
+| **Technical** | 6/10 | Medium | The contract leverages LayerZero for omnichain functionality and OpenZeppelin's Pausable for operational control (7.1 Architecture, 7.2 Code Security). It implements daily inbound and outbound… |
 | **Governance / Economics** | 1/10 | High | The contract's economic model incorporates daily transfer caps to mitigate risks associated with cross-chain token movements (7.4 Economic). Control over these caps, as well as pausing and whitelist… |
-| **Upgrades** | 3/10 | High | The provided contract is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, there are no specific upgrade-related risks inherent to this contract's architecture. Any future changes would… |
+| **Upgrades** | 6/10 | Medium | The provided contract is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, there are no specific upgrade-related risks inherent to this contract's architecture. Any future changes would… |
 
 ## LP Distribution
 
@@ -66,22 +66,22 @@ The contract is an ERC-20 token itself, but it does not include a general functi
 |--------|-------|
 | **Contract** | [`0x1526...c898`](https://etherscan.io/address/0x152649ea73beab28c5b49b26eb48f7ead6d4c898) |
 | **Network** | Ethereum |
-| **Price** | $1.6300 |
-| **24h Volume** | $139.9K |
-| **Liquidity** | $167.5K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $2.0180 |
+| **24h Volume** | $244.9K |
+| **Liquidity** | $232.5K |
+| **Volume / Liquidity** | 1.1× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 57.9% of supply |
+| **Top-10 Holders** | 58.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 76 buys / 94 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ❌ Fail |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -91,7 +91,7 @@ The contract is an ERC-20 token itself, but it does not include a general functi
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

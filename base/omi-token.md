@@ -3,13 +3,13 @@ token: OMI Token
 ticker: OMI
 network: base
 risk_score: 58
-status: high
+status: medium
 date: 2026-07-24
 ---
 
 # OMI Token (OMI) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 58/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/omi-token-base)
 
@@ -33,7 +33,7 @@ The OptimismMintableERC20 contract is a standard ERC20 token designed for cross-
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 64.6% |
+| **Top-1 Unlocked Holder** | ⚠️ 64.8% |
 | **Top-3 Unlocked** | ⚠️ 99.8% |
 
 ## Security Findings
@@ -66,12 +66,12 @@ The contract includes several functions (`l1Token`, `l2Bridge`, `remoteToken`, `
 |--------|-------|
 | **Contract** | [`0x3792...3299`](https://basescan.org/address/0x3792dbdd07e87413247df995e692806aa13d3299) |
 | **Network** | Base |
-| **Price** | $0.0001529 |
-| **24h Volume** | $28.6K |
-| **Liquidity** | $237.9K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.0002406 |
+| **24h Volume** | $65.9K |
+| **Liquidity** | $345.8K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 28.8% of supply |
+| **Top-10 Holders** | 28.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 575 buys / 651 sells |
 

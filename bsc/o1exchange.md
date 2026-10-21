@@ -2,14 +2,14 @@
 token: o1.exchange
 ticker: O
 network: bsc
-risk_score: 39
+risk_score: 50
 status: medium
 date: 2026-08-20
 ---
 
 # o1.exchange (O) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/o1exchange-bsc)
 
@@ -26,15 +26,15 @@ The audit reviewed the `MyOFT` and `MyOFTAdapter` contracts, which implement Lay
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The technical architecture (7.1) is robust, utilizing standard inheritance from OpenZeppelin and LayerZero libraries for core functionalities. Code security (7.2) is enhanced by Solidity 0.8.x's… |
-| **Governance / Economics** | 3/10 | High | The contracts exhibit a medium level of governance and economic risk (7.4, 7.5) primarily due to the centralized control held by the `owner` address. The owner possesses significant privileges… |
+| **Governance / Economics** | 1/10 | High | The contracts exhibit a medium level of governance and economic risk (7.4, 7.5) primarily due to the centralized control held by the `owner` address. The owner possesses significant privileges… |
 | **Upgrades** | 7/10 | Low | These contracts are not designed as upgradeable proxies (7.7) and do not implement any upgrade mechanisms. Therefore, there are no specific upgrade safety concerns for these particular deployments.… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 42.1% |
-| **Top-3 Unlocked** | 65.3% |
+| **Top-1 Unlocked Holder** | ⚠️ 73.2% |
+| **Top-3 Unlocked** | ⚠️ 87.8% |
 
 ## Security Findings
 
@@ -66,12 +66,12 @@ The `MyOFTAdapter` contract includes a configurable bridging control mechanism t
 |--------|-------|
 | **Contract** | [`0x500a...d1c4`](https://bscscan.com/address/0x500a02a20b0b0a3f3efccfc0559543f5743bd1c4) |
 | **Network** | BNB Chain |
-| **Price** | $0.4799 |
-| **24h Volume** | $220.1K |
-| **Liquidity** | $2.36M |
+| **Price** | $0.5588 |
+| **24h Volume** | $394.2K |
+| **Liquidity** | $2.70M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 96.6% of supply |
+| **Top-10 Holders** | 97.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3274 buys / 3148 sells |
 

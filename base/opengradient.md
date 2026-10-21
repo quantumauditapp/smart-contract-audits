@@ -2,14 +2,14 @@
 token: OpenGradient
 ticker: OPG
 network: base
-risk_score: 36
+risk_score: 37
 status: medium
 date: 2026-07-07
 ---
 
 # OpenGradient (OPG) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 37/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/opengradient-base)
 
@@ -33,7 +33,7 @@ The OpenGradientToken contract is a standard ERC20 token with a fixed supply, bu
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 56.2% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -66,12 +66,12 @@ The contract is designed with a fixed total supply of 1 billion tokens, all mint
 |--------|-------|
 | **Contract** | [`0xfbc2...f5eb`](https://basescan.org/address/0xfbc2051ae2265686a469421b2c5a2d5462fbf5eb) |
 | **Network** | Base |
-| **Price** | $0.1061 |
-| **24h Volume** | $17.4K |
-| **Liquidity** | $447.0K |
+| **Price** | $0.1022 |
+| **24h Volume** | $10.7K |
+| **Liquidity** | $381.9K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 92.9% of supply |
+| **Top-10 Holders** | 94.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 373 buys / 416 sells |
 

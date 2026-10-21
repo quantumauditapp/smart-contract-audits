@@ -2,14 +2,14 @@
 token: OWB
 ticker: OWB
 network: base
-risk_score: 9
+risk_score: 33
 status: low
 date: 2026-07-27
 ---
 
 # OWB (OWB) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 9/100 — 🟢 Low Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/owb-base)
 
@@ -25,9 +25,9 @@ The audit of the Token contract, a mock ERC20 implementation with owner-controll
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The Token contract exhibits high technical quality, primarily due to its reliance on battle-tested OpenZeppelin libraries for ERC20, ERC20Permit, ERC20Burnable, and Ownable functionalities (7.2 Code… |
+| **Technical** | 7/10 | Low | The Token contract exhibits high technical quality, primarily due to its reliance on battle-tested OpenZeppelin libraries for ERC20, ERC20Permit, ERC20Burnable, and Ownable functionalities (7.2 Code… |
 | **Governance / Economics** | 8/10 | Low | The contract's economic model is highly centralized, with the owner possessing absolute control over the token supply through the `mint` function (7.4 Economic). This design, while intended for a… |
-| **Upgrades** | 10/10 | Low | The contract is not designed as an upgradeable proxy, meaning its core logic cannot be changed post-deployment (7.7 Upgrades). While the `Ownable` pattern allows for administrative control transfer… |
+| **Upgrades** | 7/10 | Low | The contract is not designed as an upgradeable proxy, meaning its core logic cannot be changed post-deployment (7.7 Upgrades). While the `Ownable` pattern allows for administrative control transfer… |
 
 ## LP Distribution
 
@@ -65,22 +65,22 @@ The contract utilizes `ERC20Permit` (EIP-2612) for gasless approvals. While the 
 |--------|-------|
 | **Contract** | [`0xef59...b3c1`](https://basescan.org/address/0xef5997c2cf2f6c138196f8a6203afc335206b3c1) |
 | **Network** | Base |
-| **Price** | $0.01464 |
-| **24h Volume** | $45.2K |
-| **Liquidity** | $77.1K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.01136 |
+| **24h Volume** | $21.4K |
+| **Liquidity** | $67.9K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | 69.7% of supply |
+| **Top-10 Holders** | 72.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 650 buys / 525 sells |
 
-## Security Flags (5/5 passed)
+## Security Flags (4/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
@@ -90,7 +90,7 @@ The contract utilizes `ERC20Permit` (EIP-2612) for gasless approvals. While the 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

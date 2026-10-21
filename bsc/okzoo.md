@@ -33,8 +33,8 @@ The OkzooToken contract is a standard ERC-20 token implementation, inheriting di
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 28.1% |
-| **Top-3 Unlocked** | 67.8% |
+| **Top-1 Unlocked Holder** | 27.3% |
+| **Top-3 Unlocked** | 61.1% |
 
 ## Security Findings
 
@@ -66,12 +66,12 @@ The total supply of OkzooToken is determined solely by the `mintAmount` paramete
 |--------|-------|
 | **Contract** | [`0x55ad...b4a5`](https://bscscan.com/address/0x55ad16bd573b3365f43a9daeb0cc66a73821b4a5) |
 | **Network** | BNB Chain |
-| **Price** | $0.03779 |
-| **24h Volume** | $696.0K |
-| **Liquidity** | $1.11M |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.03896 |
+| **24h Volume** | $231.7K |
+| **Liquidity** | $1.14M |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 82.5% of supply |
+| **Top-10 Holders** | 81.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6144 buys / 6635 sells |
 

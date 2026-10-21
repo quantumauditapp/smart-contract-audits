@@ -2,14 +2,14 @@
 token: Ribbita by Virtuals
 ticker: TIBBIR
 network: base
-risk_score: 57
-status: high
+risk_score: 56
+status: medium
 date: 2026-08-11
 ---
 
 # Ribbita by Virtuals (TIBBIR) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 56/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ribbita-by-virtuals-base)
 
@@ -25,15 +25,23 @@ The AgentToken contract is an upgradeable ERC20-like token with integrated tax m
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract demonstrates good architectural practices by leveraging OpenZeppelin's upgradeable contracts and using custom error types (7.1 Architecture, 7.2 Code Security). The `_autoSwapInProgress`… |
+| **Technical** | 8/10 | Low | The contract demonstrates good architectural practices by leveraging OpenZeppelin's upgradeable contracts and using custom error types (7.1 Architecture, 7.2 Code Security). The `_autoSwapInProgress`… |
 | **Governance / Economics** | 2/10 | High | The contract's economic model includes configurable buy and sell taxes, which can be adjusted by the owner or factory (7.4 Economic). While this offers flexibility, the absence of explicit upper… |
 | **Upgrades** | 1/10 | High | The contract correctly implements the UUPS proxy pattern by inheriting from `Initializable` and calling `_disableInitializers()` in the constructor, along with using the `initializer` modifier for… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 92.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 98.9% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -87,12 +95,12 @@ The contract effectively uses OpenZeppelin's `EnumerableSet` for managing dynami
 |--------|-------|
 | **Contract** | [`0xa4a2...6e00`](https://basescan.org/address/0xa4a2e2ca3fbfe21aed83471d28b6f65a233c6e00) |
 | **Network** | Base |
-| **Price** | $0.1294 |
-| **24h Volume** | $393.0K |
-| **Liquidity** | $2.15M |
+| **Price** | $0.2404 |
+| **24h Volume** | $764.0K |
+| **Liquidity** | $3.30M |
 | **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 17.6% of supply |
+| **Top-10 Holders** | 17.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 871 buys / 252 sells |
 

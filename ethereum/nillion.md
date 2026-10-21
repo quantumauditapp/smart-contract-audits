@@ -2,14 +2,14 @@
 token: Nillion
 ticker: NIL
 network: ethereum
-risk_score: 79
-status: critical
+risk_score: 77
+status: high
 date: 2026-07-28
 ---
 
 # Nillion (NIL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 79/100 — 🔴 Critical Risk**
+> **Risk Score: 77/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/nillion-eth)
 
@@ -88,10 +88,10 @@ The `decimals()` function is explicitly overridden to return 6 instead of the de
 |--------|-------|
 | **Contract** | [`0x7cf9...2d47`](https://etherscan.io/address/0x7cf9a80db3b29ee8efe3710aadb7b95270572d47) |
 | **Network** | Ethereum |
-| **Price** | $0.03638 |
-| **24h Volume** | $162.3K |
-| **Liquidity** | $285.5K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.04712 |
+| **24h Volume** | $35.0K |
+| **Liquidity** | $314.7K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 8mo |
 | **Top-10 Holders** | N/A of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

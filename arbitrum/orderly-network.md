@@ -3,13 +3,13 @@ token: Orderly Network
 ticker: ORDER
 network: arbitrum
 risk_score: 63
-status: high
+status: medium
 date: 2026-08-16
 ---
 
 # Orderly Network (ORDER) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 63/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/orderly-network-arb)
 
@@ -88,12 +88,12 @@ The `setPeers` function iterates through arrays (`_eids` and `_peers`) to set mu
 |--------|-------|
 | **Contract** | [`0x4e20...97b8`](https://arbiscan.io/address/0x4e200fe2f3efb977d5fd9c430a41531fb04d97b8) |
 | **Network** | Arbitrum |
-| **Price** | $0.02926 |
-| **24h Volume** | $38.4K |
-| **Liquidity** | $141.7K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.03387 |
+| **24h Volume** | $20.1K |
+| **Liquidity** | $167.3K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 88.8% of supply |
+| **Top-10 Holders** | 89.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 282 buys / 331 sells |
 

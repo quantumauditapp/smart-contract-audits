@@ -73,10 +73,10 @@ The `StandardCrowdsale` constructor includes a check `require(_startTime >= now)
 |--------|-------|
 | **Contract** | [`0x8f82...938a`](https://etherscan.io/address/0x8f8221afbb33998d8584a2b05749ba73c37a938a) |
 | **Network** | Ethereum |
-| **Price** | $0.0512 |
-| **24h Volume** | $16.7K |
-| **Liquidity** | $128.0K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.05486 |
+| **24h Volume** | $2.1K |
+| **Liquidity** | $133.1K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5y |
 | **Top-10 Holders** | 42.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

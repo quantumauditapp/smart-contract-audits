@@ -72,12 +72,12 @@ The ERC20 contract includes internal `_mint` and `_burn` functions but does not 
 |--------|-------|
 | **Contract** | [`0x8ed9...08f6`](https://etherscan.io/address/0x8ed97a637a790be1feff5e888d43629dc05408f6) |
 | **Network** | Ethereum |
-| **Price** | $0.005336 |
-| **24h Volume** | $73.3K |
-| **Liquidity** | $2.13M |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.01927 |
+| **24h Volume** | $1.21M |
+| **Liquidity** | $4.71M |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 40.7% of supply |
+| **Top-10 Holders** | 40.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 54 buys / 57 sells |
 

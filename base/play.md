@@ -2,14 +2,14 @@
 token: Play
 ticker: PLAY
 network: base
-risk_score: 32
+risk_score: 36
 status: medium
 date: 2026-08-16
 ---
 
 # Play (PLAY) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 32/100 — 🟡 Medium Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/play-base)
 
@@ -25,7 +25,7 @@ The SimpleToken contract is a basic ERC20 token implementation, inheriting direc
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 10/10 | Low | The technical architecture (7.1) is robust, leveraging the battle-tested OpenZeppelin ERC20 standard. Code security (7.2) is high due to the use of `unchecked` blocks for arithmetic where appropriate… |
+| **Technical** | 8/10 | Low | The technical architecture (7.1) is robust, leveraging the battle-tested OpenZeppelin ERC20 standard. Code security (7.2) is high due to the use of `unchecked` blocks for arithmetic where appropriate… |
 | **Governance / Economics** | 1/10 | High | The economic model (7.4) is a simple fixed-supply token after initial minting, with no complex mechanisms, fees, or staking. Governance (7.5) is not present within the contract itself, as it's a… |
 | **Upgrades** | 6/10 | Medium | The contract (7.7) is not designed to be upgradeable, meaning its logic is immutable once deployed. This eliminates upgrade-related risks such as proxy misconfigurations or logic errors during… |
 
@@ -66,12 +66,12 @@ The `decimals()` function in the `ERC20` base contract is hardcoded to return `1
 |--------|-------|
 | **Contract** | [`0x853a...f841`](https://basescan.org/address/0x853a7c99227499dba9db8c3a02aa691afdebf841) |
 | **Network** | Base |
-| **Price** | $0.03646 |
-| **24h Volume** | $129.6K |
-| **Liquidity** | $452.7K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.03584 |
+| **24h Volume** | $5.34M |
+| **Liquidity** | $450.4K |
+| **Volume / Liquidity** | 11.8× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 97.7% of supply |
+| **Top-10 Holders** | 95.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1723 buys / 1706 sells |
 

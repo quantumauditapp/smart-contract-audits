@@ -3,13 +3,13 @@ token: Plasma
 ticker: XPL
 network: bsc
 risk_score: 71
-status: critical
+status: high
 date: 2026-08-13
 ---
 
 # Plasma (XPL) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 71/100 — 🔴 Critical Risk**
+> **Risk Score: 71/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/plasma-bsc)
 
@@ -33,7 +33,7 @@ The PlasmaOFT contract is an Omnichain Fungible Token (OFT) built on LayerZero, 
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 93.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 95.1% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -80,12 +80,12 @@ The contract inherits `Ownable`, granting the owner (the `_delegate` address) si
 |--------|-------|
 | **Contract** | [`0x405f...26b0`](https://bscscan.com/address/0x405fbc9004d857903bfd6b3357792d71a50726b0) |
 | **Network** | BNB Chain |
-| **Price** | $0.07492 |
-| **24h Volume** | $229.9K |
-| **Liquidity** | $347.3K |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $0.09253 |
+| **24h Volume** | $1.32M |
+| **Liquidity** | $406.3K |
+| **Volume / Liquidity** | 3.2× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 90.4% of supply |
+| **Top-10 Holders** | 89.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2083 buys / 2456 sells |
 

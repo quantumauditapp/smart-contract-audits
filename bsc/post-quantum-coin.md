@@ -26,7 +26,7 @@ The `FourERC20` contract is a standard ERC-20 token implementation, largely base
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The technical architecture is robust, leveraging well-audited OpenZeppelin ERC-20 implementations, ensuring a strong foundation (7.1 Architecture). Code security is high, with no apparent reentrancy… |
-| **Governance / Economics** | 8/10 | Low | The contract implements a basic ERC-20 token with no inherent governance mechanisms or complex economic models (7.5 Governance, 7.4 Economic). Its economic stability relies solely on its utility and… |
+| **Governance / Economics** | 6/10 | Medium | The contract implements a basic ERC-20 token with no inherent governance mechanisms or complex economic models (7.5 Governance, 7.4 Economic). Its economic stability relies solely on its utility and… |
 | **Upgrades** | 10/10 | Low | The contract is not designed to be upgradable, as indicated by the absence of proxy patterns or upgrade-specific logic (7.7 Upgrades). This design choice eliminates risks associated with… |
 
 ## LP Distribution
@@ -59,12 +59,12 @@ The `FourERC20` contract provides internal `_mint` and `_burn` functions, but it
 |--------|-------|
 | **Contract** | [`0x887e...4444`](https://bscscan.com/address/0x887ee6d7cba3d342530d5defbeb13a7409d34444) |
 | **Network** | BNB Chain |
-| **Price** | $0.00002046 |
-| **24h Volume** | $70.2K |
-| **Liquidity** | $15.5K |
-| **Volume / Liquidity** | 4.5× |
+| **Price** | $0.00000632 |
+| **24h Volume** | $82 |
+| **Liquidity** | $9.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 58.7% of supply |
+| **Top-10 Holders** | 91.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 831 buys / 486 sells |
 

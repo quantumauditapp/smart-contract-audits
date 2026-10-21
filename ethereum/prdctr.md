@@ -2,14 +2,14 @@
 token: PRDCTR
 ticker: PRD
 network: ethereum
-risk_score: 47
-status: high
+risk_score: 64
+status: medium
 date: 2026-08-17
 ---
 
 # PRDCTR (PRD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 64/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/prdctr-eth)
 
@@ -26,7 +26,7 @@ The audit of the ConfigurableTokenUpgradeable contract, deployed via an ERC1967P
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The technical architecture (7.1) is robust, utilizing OpenZeppelin's upgradeable contracts for ERC-20, ERC-20 Permit, Ownable, and UUPS proxy patterns. Code security (7.2) is high, benefiting from… |
-| **Governance / Economics** | 4/10 | Medium | The economic model (7.4) is that of a standard ERC-20 token with an initial supply minted to a specified holder. Governance (7.5) is centralized, with the contract owner having control over initial… |
+| **Governance / Economics** | 1/10 | High | The economic model (7.4) is that of a standard ERC-20 token with an initial supply minted to a specified holder. Governance (7.5) is centralized, with the contract owner having control over initial… |
 | **Upgrades** | 1/10 | High | The contract implements the UUPS upgrade pattern (7.7), with the `_authorizeUpgrade` function correctly restricted to the `onlyOwner` modifier. This ensures that only the designated owner can… |
 
 ## Proxy Upgrade Controls
@@ -35,15 +35,14 @@ The audit of the ConfigurableTokenUpgradeable contract, deployed via an ERC1967P
 |---------|-------|
 | **Proxy Type** | Eip1967 Uups |
 | **Implementation** | ✅ Verified source |
-| **Upgrades (30d)** | ⚠️ 1 |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **LP Locked** | 36.5% — UNCX Locker |
-| **Top-1 Unlocked Holder** | ⚠️ 63.5% |
-| **Top-3 Unlocked** | 63.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -75,23 +74,23 @@ The `initializePermit()` function is marked as a `reinitializer(2)`, allowing it
 |--------|-------|
 | **Contract** | [`0xc847...efe5`](https://etherscan.io/address/0xc84782858b7bef5d25182dbac956a6aa463aefe5) |
 | **Network** | Ethereum |
-| **Price** | $0.0006856 |
-| **24h Volume** | $107.4K |
-| **Liquidity** | $5.11M |
+| **Price** | $0.0008639 |
+| **24h Volume** | $83.6K |
+| **Liquidity** | $6.32M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 96.2% of supply |
+| **Top-10 Holders** | 95.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 67 buys / 66 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
@@ -101,7 +100,7 @@ The `initializePermit()` function is marked as a `reinitializer(2)`, allowing it
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources

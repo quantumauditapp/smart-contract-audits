@@ -2,14 +2,14 @@
 token: Orochi Network Token
 ticker: ON
 network: bsc
-risk_score: 13
-status: low
+risk_score: 41
+status: medium
 date: 2026-08-11
 ---
 
 # Orochi Network Token (ON) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 13/100 — 🟢 Low Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/orochi-network-token-bsc)
 
@@ -25,9 +25,9 @@ The BNBOrochiNetworkToken contract is an ERC-20 token built upon OpenZeppelin's 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 10/10 | Low | The contract leverages battle-tested OpenZeppelin ERC20 and Ownable implementations, ensuring robust core token functionalities and secure access control (7.2 Code Security). Standard ERC20… |
+| **Technical** | 8/10 | Low | The contract leverages battle-tested OpenZeppelin ERC20 and Ownable implementations, ensuring robust core token functionalities and secure access control (7.2 Code Security). Standard ERC20… |
 | **Governance / Economics** | 6/10 | Medium | The token's economic model features a single-shot minting mechanism controlled by the owner (7.4 Economic). Once a non-zero supply is minted, no further tokens can be created, which defines a fixed… |
-| **Upgrades** | 9/10 | Low | The contract is not designed to be upgradeable (7.7 Upgrades), meaning its logic is immutable once deployed. This eliminates risks associated with proxy patterns, such as storage collisions or… |
+| **Upgrades** | 6/10 | Medium | The contract is not designed to be upgradeable (7.7 Upgrades), meaning its logic is immutable once deployed. This eliminates risks associated with proxy patterns, such as storage collisions or… |
 
 ## LP Distribution
 
@@ -66,22 +66,22 @@ The `decimals()` function is hardcoded to return `18`. While 18 is the most comm
 |--------|-------|
 | **Contract** | [`0x0e4f...1d48`](https://bscscan.com/address/0x0e4f6209ed984b21edea43ace6e09559ed051d48) |
 | **Network** | BNB Chain |
-| **Price** | $0.3905 |
-| **24h Volume** | $8.99M |
-| **Liquidity** | $1.54M |
-| **Volume / Liquidity** | 5.8× |
+| **Price** | $0.2214 |
+| **24h Volume** | $832.8K |
+| **Liquidity** | $1.17M |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | 53.3% of supply |
+| **Top-10 Holders** | 55.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 21219 buys / 22450 sells |
 
-## Security Flags (4/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -91,7 +91,7 @@ The `decimals()` function is hardcoded to return `18`. While 18 is the most comm
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -3,13 +3,13 @@ token: OpenUSDT
 ticker: OUSDT
 network: base
 risk_score: 50
-status: high
+status: medium
 date: 2026-08-13
 ---
 
 # OpenUSDT (OUSDT) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/openusdt-base)
 
@@ -42,8 +42,8 @@ The XERC20 contract, an upgradeable ERC-20 token, was audited for security vulne
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 52.7% |
+| **Top-3 Unlocked** | ⚠️ 98.8% |
 
 ## Security Findings
 
@@ -89,12 +89,12 @@ The `burn(address _user, uint256 _amount)` function is public and allows `msg.se
 |--------|-------|
 | **Contract** | [`0x1217...e189`](https://basescan.org/address/0x1217bfe6c773eec6cc4a38b5dc45b92292b6e189) |
 | **Network** | Base |
-| **Price** | $0.9993 |
-| **24h Volume** | $162.1K |
-| **Liquidity** | $136.2K |
-| **Volume / Liquidity** | 1.2× |
+| **Price** | $1.0001 |
+| **24h Volume** | $179.4K |
+| **Liquidity** | $119.4K |
+| **Volume / Liquidity** | 1.5× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 93.2% of supply |
+| **Top-10 Holders** | 92.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 251 buys / 287 sells |
 

@@ -2,14 +2,14 @@
 token: REPPO
 ticker: REPPO
 network: base
-risk_score: 77
-status: critical
+risk_score: 74
+status: high
 date: 2026-08-11
 ---
 
 # REPPO (REPPO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 77/100 — 🔴 Critical Risk**
+> **Risk Score: 74/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/reppo-base)
 
@@ -29,12 +29,20 @@ This audit covers the provided snippet of the AgentTokenV2 contract. The contrac
 | **Governance / Economics** | 1/10 | High | The contract exhibits a high degree of centralization, with the owner and factory having significant control over critical functions (7.3, 7.5). This includes the ability to blacklist addresses… |
 | **Upgrades** | 1/10 | High | The contract correctly implements the `Initializable` and `Ownable2StepUpgradeable` patterns from OpenZeppelin, providing a secure and well-understood framework for future upgrades (7.7). The… |
 
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
+
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 98.4% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 74.1% |
+| **Top-3 Unlocked** | ⚠️ 99.4% |
 
 ## Security Findings
 
@@ -87,12 +95,12 @@ The `_transferOwnership(projectOwner_)` function is called within the `_decodeBa
 |--------|-------|
 | **Contract** | [`0xff81...83d6`](https://basescan.org/address/0xff8104251e7761163fac3211ef5583fb3f8583d6) |
 | **Network** | Base |
-| **Price** | $0.01206 |
-| **24h Volume** | $33.9K |
-| **Liquidity** | $618.2K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.01864 |
+| **24h Volume** | $633.1K |
+| **Liquidity** | $896.2K |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 73.8% of supply |
+| **Top-10 Holders** | 72.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 76 buys / 60 sells |
 

@@ -2,14 +2,14 @@
 token: Relics
 ticker: RELICS
 network: ethereum
-risk_score: 37
+risk_score: 52
 status: medium
 date: 2026-08-11
 ---
 
 # Relics (RELICS) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/relics-eth)
 
@@ -26,7 +26,7 @@ The RelicsToken contract implements an ERC20 token with custom logic for trackin
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 7/10 | Low | The contract demonstrates good adherence to ERC20 standards and uses OpenZeppelin's Ownable for access control (7.3). Custom error messages enhance clarity, and `unchecked` blocks for counters are… |
-| **Governance / Economics** | 5/10 | Medium | The economic design includes a fixed, relatively low supply of 10,000 tokens (7.4 Economic), which could lead to high volatility. The `HOLDER_THRESHOLD` mechanism for 'active holders' is a core… |
+| **Governance / Economics** | 4/10 | Medium | The economic design includes a fixed, relatively low supply of 10,000 tokens (7.4 Economic), which could lead to high volatility. The `HOLDER_THRESHOLD` mechanism for 'active holders' is a core… |
 | **Upgrades** | 8/10 | Low | The RelicsToken contract is not designed as an upgradeable proxy (7.7 Upgrades). It is a standard implementation contract, meaning its logic cannot be modified after deployment. This eliminates… |
 
 ## LP Distribution
@@ -73,12 +73,12 @@ The `RelicsToken` contract has a significant dependency on the `IRelicsNFT` inte
 |--------|-------|
 | **Contract** | [`0x8f29...2da9`](https://etherscan.io/address/0x8f294a99a0609822c233b24867f331c292ce2da9) |
 | **Network** | Ethereum |
-| **Price** | $75.3000 |
-| **24h Volume** | $165.9K |
-| **Liquidity** | $226.8K |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $9.2900 |
+| **24h Volume** | $2.6K |
+| **Liquidity** | $30.1K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 7d |
-| **Top-10 Holders** | 27.2% of supply |
+| **Top-10 Holders** | 42.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 461 buys / 416 sells |
 

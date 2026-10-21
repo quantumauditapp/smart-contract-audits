@@ -3,13 +3,13 @@ token: Pro Token
 ticker: PRO
 network: bsc
 risk_score: 64
-status: high
+status: medium
 date: 2026-07-22
 ---
 
 # Pro Token (PRO) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 64/100 — 🟠 High Risk**
+> **Risk Score: 64/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pro-token-bsc)
 
@@ -80,13 +80,13 @@ The `decimals()` function is overridden to return `9`. While technically valid f
 |--------|-------|
 | **Contract** | [`0x8d65...f0e2`](https://bscscan.com/address/0x8d65744527f55d0b2338350912d5c99a81ddf0e2) |
 | **Network** | BNB Chain |
-| **Price** | $60.0470 |
-| **24h Volume** | $14.19M |
-| **Liquidity** | $87.85M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $28.8400 |
+| **24h Volume** | $4.64M |
+| **Liquidity** | $78.05M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | 92.8% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 91.7% of supply |
+| **Buy / Sell Tax** | 0.0% / 2.5% |
 | **24h Transactions** | 23622 buys / 21166 sells |
 
 ## Security Flags (3/5 passed)

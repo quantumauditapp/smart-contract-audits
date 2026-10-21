@@ -3,13 +3,13 @@ token: Pepe
 ticker: PEPE
 network: ethereum
 risk_score: 28
-status: medium
+status: low
 date: 2026-07-26
 ---
 
 # Pepe (PEPE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 28/100 — 🟡 Medium Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pepe-eth)
 
@@ -68,12 +68,12 @@ The contract extensively uses battle-tested OpenZeppelin libraries (Context, Own
 |--------|-------|
 | **Contract** | [`0x6982...1933`](https://etherscan.io/address/0x6982508145454ce325ddbe47a25d4ec3d2311933) |
 | **Network** | Ethereum |
-| **Price** | $0.00000295 |
-| **24h Volume** | $1.80M |
-| **Liquidity** | $21.96M |
+| **Price** | $0.00000367 |
+| **24h Volume** | $2.33M |
+| **Liquidity** | $27.93M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 39.1% of supply |
+| **Top-10 Holders** | 38.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 292 buys / 360 sells |
 

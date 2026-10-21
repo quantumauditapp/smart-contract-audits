@@ -2,14 +2,14 @@
 token: RE
 ticker: RE
 network: ethereum
-risk_score: 81
-status: critical
+risk_score: 68
+status: high
 date: 2026-06-22
 ---
 
 # RE (RE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 81/100 — 🔴 Critical Risk**
+> **Risk Score: 68/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/re-eth)
 
@@ -83,12 +83,12 @@ The contract heavily relies on OpenZeppelin's battle-tested `ERC1967Proxy`, `Pro
 |--------|-------|
 | **Contract** | [`0x5265...8143`](https://etherscan.io/address/0x526526528f35ac738177003b8773b402b8df8143) |
 | **Network** | Ethereum |
-| **Price** | $0.4717 |
-| **24h Volume** | $4.8K |
-| **Liquidity** | $1.7K |
-| **Volume / Liquidity** | 2.9× |
+| **Price** | $0.4612 |
+| **24h Volume** | $1.7K |
+| **Liquidity** | $6.5K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 97.5% of supply |
+| **Top-10 Holders** | 97.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 261 buys / 1586 sells |
 

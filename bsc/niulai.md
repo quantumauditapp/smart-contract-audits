@@ -2,14 +2,14 @@
 token: niulai
 ticker: NIULAI
 network: bsc
-risk_score: 48
-status: high
+risk_score: 59
+status: medium
 date: 2026-08-16
 ---
 
 # niulai (NIULAI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 59/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/niulai-bsc)
 
@@ -25,9 +25,16 @@ The CosmTaxToken contract implements an ERC-20 token with a complex tax mechanis
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract utilizes OpenZeppelin's upgradeable ERC20 and Ownable components, demonstrating a foundation of well-audited libraries. It employs a `PackedPoolState` struct for gas efficiency and… |
-| **Governance / Economics** | 6/10 | Medium | The contract benefits from a clearly defined `onlyOwner` role for critical administrative functions, such as setting tax exemptions and managing migration states. The tax mechanism includes… |
+| **Technical** | 6/10 | Medium | The contract utilizes OpenZeppelin's upgradeable ERC20 and Ownable components, demonstrating a foundation of well-audited libraries. It employs a `PackedPoolState` struct for gas efficiency and… |
+| **Governance / Economics** | 4/10 | Medium | The contract benefits from a clearly defined `onlyOwner` role for critical administrative functions, such as setting tax exemptions and managing migration states. The tax mechanism includes… |
 | **Upgrades** | 4/10 | Medium | The contract is built using OpenZeppelin's upgradeable contracts and the `initializer` pattern, suggesting an intent for future upgradeability. This provides a robust framework for potential future… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
 
 ## LP Distribution
 
@@ -87,22 +94,22 @@ The `MIN_LIQ_THRESHOLD` immutable variable is set in the constructor but does no
 |--------|-------|
 | **Contract** | [`0x3604...0111`](https://bscscan.com/address/0x3604b5c377124d2180c4fb791953fc8431a90111) |
 | **Network** | BNB Chain |
-| **Price** | $0.007188 |
-| **24h Volume** | $877.2K |
-| **Liquidity** | $238.0K |
-| **Volume / Liquidity** | 3.7× |
+| **Price** | $0.001215 |
+| **24h Volume** | $16.7K |
+| **Liquidity** | $109.9K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 17h |
-| **Top-10 Holders** | N/A of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 90.1% of supply |
+| **Buy / Sell Tax** | 3.0% / 3.0% |
 | **24h Transactions** | 2865 buys / 1417 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (4/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ✅ Pass |
-| No Mint Function | ⚠️ Unknown |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ✅ Pass |
 | Not a Proxy | ❌ Fail |
 
@@ -112,7 +119,7 @@ The `MIN_LIQ_THRESHOLD` immutable variable is set in the constructor but does no
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 

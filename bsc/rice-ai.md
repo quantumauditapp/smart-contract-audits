@@ -3,13 +3,13 @@ token: RICE AI
 ticker: RICE
 network: bsc
 risk_score: 59
-status: high
+status: medium
 date: 2026-08-20
 ---
 
 # RICE AI (RICE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 59/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rice-ai-bsc)
 
@@ -73,12 +73,12 @@ The `ETA` variable plays a role in the `setTransferAllowedTimestamp` logic, but 
 |--------|-------|
 | **Contract** | [`0xb576...98d3`](https://bscscan.com/address/0xb5761f36fdfe2892f1b54bc8ee8babb2a1b698d3) |
 | **Network** | BNB Chain |
-| **Price** | $0.005634 |
-| **24h Volume** | $938.0K |
-| **Liquidity** | $406.6K |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $0.005118 |
+| **24h Volume** | $18.5K |
+| **Liquidity** | $435.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 80.1% of supply |
+| **Top-10 Holders** | 79.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4763 buys / 4864 sells |
 

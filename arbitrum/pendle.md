@@ -3,13 +3,13 @@ token: Pendle
 ticker: PENDLE
 network: arbitrum
 risk_score: 26
-status: medium
+status: low
 date: 2026-08-06
 ---
 
 # Pendle (PENDLE) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 26/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pendle-arb)
 
@@ -41,8 +41,8 @@ The audit of the StandardArbERC20 contract, an implementation for an Arbitrum L2
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 17.0% |
-| **Top-3 Unlocked** | 34.9% |
+| **Top-1 Unlocked Holder** | 15.1% |
+| **Top-3 Unlocked** | 35.1% |
 
 ## Security Findings
 
@@ -88,12 +88,12 @@ The `Cloneable` base contract initializes `isMasterCopy` to `true` in its constr
 |--------|-------|
 | **Contract** | [`0x0c88...c9e8`](https://arbiscan.io/address/0x0c880f6761f1af8d9aa9c466984b80dab9a8c9e8) |
 | **Network** | Arbitrum |
-| **Price** | $1.3700 |
-| **24h Volume** | $51.3K |
-| **Liquidity** | $1.54M |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $1.9600 |
+| **24h Volume** | $124.7K |
+| **Liquidity** | $2.12M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 45.7% of supply |
+| **Top-10 Holders** | 41.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 139 buys / 365 sells |
 

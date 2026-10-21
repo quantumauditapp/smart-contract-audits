@@ -2,14 +2,14 @@
 token: Paxos Gold
 ticker: PAXG
 network: ethereum
-risk_score: 60
-status: high
+risk_score: 57
+status: medium
 date: 2026-08-11
 ---
 
 # Paxos Gold (PAXG) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 60/100 — 🟠 High Risk**
+> **Risk Score: 57/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/paxos-gold-eth)
 
@@ -26,7 +26,7 @@ The audit of the PAXG token implementation (0x7da4c5d9eca180a03765a6d27196f2a038
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The technical architecture benefits from inheriting OpenZeppelin's upgradeable access control (7.3 Access Control) and standard ERC-20 token functionalities (7.1 Architecture). However, a critical… |
-| **Governance / Economics** | 1/10 | High | The contract implements a centralized control model with an owner/admin role for critical operations, including pausing transfers and managing freezing (7.3 Access Control, 7.8 Operations). It also… |
+| **Governance / Economics** | 2/10 | High | The contract implements a centralized control model with an owner/admin role for critical operations, including pausing transfers and managing freezing (7.3 Access Control, 7.8 Operations). It also… |
 | **Upgrades** | 1/10 | High | The contract utilizes an `AdminUpgradeabilityProxy` pattern, allowing for future logic upgrades (7.7 Upgrades). However, the upgrade process involves a highly complex and risky `_migratePAXGStorage`… |
 
 ## Proxy Upgrade Controls
@@ -34,7 +34,7 @@ The audit of the PAXG token implementation (0x7da4c5d9eca180a03765a6d27196f2a038
 | Control | Value |
 |---------|-------|
 | **Proxy Type** | Zeppelin Os Legacy |
-| **Admin** | ⚠️ EOA (single key controls upgrades) |
+| **Admin** | Timelock — 24h delay |
 | **Implementation** | ✅ Verified source |
 | **Upgrades (30d)** | 0 (stable) |
 
@@ -89,12 +89,12 @@ The contract uses `AdminUpgradeabilityProxy`, which is an older OpenZeppelin pro
 |--------|-------|
 | **Contract** | [`0x4580...af78`](https://etherscan.io/address/0x45804880de22913dafe09f4980848ece6ecbaf78) |
 | **Network** | Ethereum |
-| **Price** | $4,372.0540 |
-| **24h Volume** | $183.3K |
-| **Liquidity** | $13.75M |
+| **Price** | $4,476.3600 |
+| **24h Volume** | $420.0K |
+| **Liquidity** | $16.11M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6y |
-| **Top-10 Holders** | 33.5% of supply |
+| **Top-10 Holders** | 33.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 71 buys / 75 sells |
 

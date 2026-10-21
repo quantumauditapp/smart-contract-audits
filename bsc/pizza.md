@@ -2,14 +2,14 @@
 token: PIZZA
 ticker: PIZZA
 network: bsc
-risk_score: 20
-status: low
+risk_score: 51
+status: medium
 date: 2026-08-20
 ---
 
 # PIZZA (PIZZA) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 20/100 — 🟢 Low Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pizza-bsc)
 
@@ -25,16 +25,23 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | 7.1 Architecture: The contract utilizes a well-structured upgradeable ERC20 pattern from OpenZeppelin, which is a strong foundation. The `PackedPoolState` struct is an efficient design choice for… |
-| **Governance / Economics** | 7/10 | Low | 7.4 Economic: The token implements a flexible tax system with different pool states and anti-farmer durations. The `maxSupply` is minted to the initializer, establishing initial distribution.… |
-| **Upgrades** | 9/10 | Low | 7.7 Upgrades: The contract correctly uses OpenZeppelin's `Initializable` pattern, enabling secure upgrades. This allows for future enhancements and bug fixes without redeploying the entire system.… |
+| **Technical** | 7/10 | Low | 7.1 Architecture: The contract utilizes a well-structured upgradeable ERC20 pattern from OpenZeppelin, which is a strong foundation. The `PackedPoolState` struct is an efficient design choice for… |
+| **Governance / Economics** | 5/10 | Medium | 7.4 Economic: The token implements a flexible tax system with different pool states and anti-farmer durations. The `maxSupply` is minted to the initializer, establishing initial distribution.… |
+| **Upgrades** | 4/10 | Medium | 7.7 Upgrades: The contract correctly uses OpenZeppelin's `Initializable` pattern, enabling secure upgrades. This allows for future enhancements and bug fixes without redeploying the entire system.… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 34.7% |
-| **Top-3 Unlocked** | 69.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -87,16 +94,16 @@ The state variables `dividendContract`, `v2Router`, `quoteToken`, and `liqExpect
 |--------|-------|
 | **Contract** | [`0x8554...7777`](https://bscscan.com/address/0x8554d38b95e4f7ca11d391008627df30b2b07777) |
 | **Network** | BNB Chain |
-| **Price** | $0.0006199 |
-| **24h Volume** | $239.2K |
-| **Liquidity** | $103.7K |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $0.0001922 |
+| **24h Volume** | $154.6K |
+| **Liquidity** | $65.3K |
+| **Volume / Liquidity** | 2.4× |
 | **Token Age** | 18d |
-| **Top-10 Holders** | 31.4% of supply |
+| **Top-10 Holders** | 32.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 937 buys / 687 sells |
 
-## Security Flags (4/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
@@ -104,7 +111,7 @@ The state variables `dividendContract`, `v2Router`, `quoteToken`, and `liqExpect
 | Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
@@ -114,7 +121,7 @@ The state variables `dividendContract`, `v2Router`, `quoteToken`, and `liqExpect
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

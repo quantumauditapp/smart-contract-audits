@@ -2,14 +2,14 @@
 token: OpenAI
 ticker: OPENAI
 network: base
-risk_score: 17
+risk_score: 32
 status: low
 date: 2026-08-14
 ---
 
 # OpenAI (OPENAI) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 17/100 — 🟢 Low Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/openai-base)
 
@@ -26,7 +26,7 @@ The ClankerToken contract is an ERC20 token with extensions for burning, permits
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The ClankerToken contract demonstrates good technical architecture (7.1 Architecture) by extending standard ERC20 functionalities with `ERC20Permit`, `ERC20Votes`, and `ERC20Burnable` from… |
-| **Governance / Economics** | 6/10 | Medium | The contract features a centralized `_admin` role (7.3 Access Control) that can update token metadata (image, context, metadata) and transfer the admin role itself. This centralization (7.5… |
+| **Governance / Economics** | 3/10 | High | The contract features a centralized `_admin` role (7.3 Access Control) that can update token metadata (image, context, metadata) and transfer the admin role itself. This centralization (7.5… |
 | **Upgrades** | 9/10 | Low | The ClankerToken contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). This means there is no inherent upgrade mechanism (e.g., proxy pattern) to modify its logic… |
 
 ## LP Distribution

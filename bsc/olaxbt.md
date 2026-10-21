@@ -33,8 +33,8 @@ The audited `Token` contract is a standard ERC-20 implementation inheriting from
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 63.9% |
-| **Top-3 Unlocked** | 78.6% |
+| **Top-1 Unlocked Holder** | ⚠️ 57.2% |
+| **Top-3 Unlocked** | 77.8% |
 
 ## Security Findings
 
@@ -73,10 +73,10 @@ The constructor includes a `require(totalSupply > 0, "Total supply cannot be zer
 |--------|-------|
 | **Contract** | [`0x81a7...32b4`](https://bscscan.com/address/0x81a7da4074b8e0ed51bea40f9dcbdf4d9d4832b4) |
 | **Network** | BNB Chain |
-| **Price** | $0.06819 |
-| **24h Volume** | $250.4K |
-| **Liquidity** | $54.3K |
-| **Volume / Liquidity** | 4.6× |
+| **Price** | $0.04927 |
+| **24h Volume** | $45.8K |
+| **Liquidity** | $49.1K |
+| **Volume / Liquidity** | 0.9× |
 | **Token Age** | 11mo |
 | **Top-10 Holders** | 95.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

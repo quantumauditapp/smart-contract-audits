@@ -2,14 +2,14 @@
 token: PayPal USD
 ticker: PYUSD
 network: ethereum
-risk_score: 71
-status: critical
+risk_score: 72
+status: high
 date: 2026-08-11
 ---
 
 # PayPal USD (PYUSD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 71/100 — 🔴 Critical Risk**
+> **Risk Score: 72/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/paypal-usd-eth)
 
@@ -42,7 +42,7 @@ The audit covers the PYUSD token contract, an ERC-20 compatible stablecoin imple
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 86.3% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -89,12 +89,12 @@ The PYUSD token uses 6 decimals, which is a non-standard choice for many ERC-20 
 |--------|-------|
 | **Contract** | [`0x6c3e...a0e8`](https://etherscan.io/address/0x6c3ea9036406852006290770bedfcaba0e23a0e8) |
 | **Network** | Ethereum |
-| **Price** | $0.9999 |
-| **24h Volume** | $96.99M |
-| **Liquidity** | $100.13M |
-| **Volume / Liquidity** | 1.0× |
+| **Price** | $1.0001 |
+| **24h Volume** | $51.57M |
+| **Liquidity** | $100.15M |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | 84.1% of supply |
+| **Top-10 Holders** | 88.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 135 buys / 186 sells |
 

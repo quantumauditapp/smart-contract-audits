@@ -3,13 +3,13 @@ token: PORTAL
 ticker: PORTAL
 network: base
 risk_score: 29
-status: medium
+status: low
 date: 2026-08-17
 ---
 
 # PORTAL (PORTAL) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 29/100 — 🟡 Medium Risk**
+> **Risk Score: 29/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/portal-base)
 
@@ -66,12 +66,12 @@ The entire fixed supply of tokens is minted and distributed during the contract'
 |--------|-------|
 | **Contract** | [`0x0ffe...cb2d`](https://basescan.org/address/0x0ffebc403f2d3dd9ea5501ca03916e98967acb2d) |
 | **Network** | Base |
-| **Price** | $0.01586 |
-| **24h Volume** | $295.0K |
-| **Liquidity** | $72.0K |
-| **Volume / Liquidity** | 4.1× |
+| **Price** | $0.01588 |
+| **24h Volume** | $138.3K |
+| **Liquidity** | $74.7K |
+| **Volume / Liquidity** | 1.9× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 100.0% of supply |
+| **Top-10 Holders** | 99.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3635 buys / 4934 sells |
 

@@ -2,14 +2,14 @@
 token: Prompt
 ticker: PROMPT
 network: base
-risk_score: 75
-status: critical
+risk_score: 56
+status: medium
 date: 2026-08-11
 ---
 
 # Prompt (PROMPT) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 75/100 — 🔴 Critical Risk**
+> **Risk Score: 56/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/prompt-base)
 
@@ -25,15 +25,15 @@ The PromptToken contract implements an ERC-20 token with LayerZero OFT capabilit
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract utilizes OpenZeppelin's `ReentrancyGuard` and `AccessControl` for robust security, including explicit prevention of role renouncement and self-revocation (7.2 Code Security, 7.3 Access… |
+| **Technical** | 8/10 | Low | The contract utilizes OpenZeppelin's `ReentrancyGuard` and `AccessControl` for robust security, including explicit prevention of role renouncement and self-revocation (7.2 Code Security, 7.3 Access… |
 | **Governance / Economics** | 2/10 | High | The contract implements a centralized access control model where the `DEFAULT_ADMIN_ROLE` (also `INVOKE_WAYFINDER_CONFIGURATION_ROLE`) has significant power, including the ability to register new… |
-| **Upgrades** | 4/10 | Medium | The `PromptToken` contract is deployed as a standard implementation and does not utilize a proxy pattern, meaning it is not directly upgradeable. Any future changes to the contract logic would… |
+| **Upgrades** | 7/10 | Low | The `PromptToken` contract is deployed as a standard implementation and does not utilize a proxy pattern, meaning it is not directly upgradeable. Any future changes to the contract logic would… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.7% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -80,22 +80,22 @@ The `revokeRole` function includes a `require(account != _msgSender(), "Cannot r
 |--------|-------|
 | **Contract** | [`0x30c7...3452`](https://basescan.org/address/0x30c7235866872213f68cb1f08c37cb9eccb93452) |
 | **Network** | Base |
-| **Price** | $0.02268 |
-| **24h Volume** | $55.8K |
-| **Liquidity** | $100.7K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.02357 |
+| **24h Volume** | $44.3K |
+| **Liquidity** | $124.1K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 77.9% of supply |
+| **Top-10 Holders** | 78.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 337 buys / 279 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ❌ Fail |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -105,7 +105,7 @@ The `revokeRole` function includes a `require(account != _msgSender(), "Cannot r
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

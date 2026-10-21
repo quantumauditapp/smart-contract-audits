@@ -73,12 +73,12 @@ The RaveToken contract's core functionality for cross-chain transfers is entirel
 |--------|-------|
 | **Contract** | [`0x1720...db97`](https://etherscan.io/address/0x17205fab260a7a6383a81452ce6315a39370db97) |
 | **Network** | Ethereum |
-| **Price** | $0.2909 |
-| **24h Volume** | $26.6K |
-| **Liquidity** | $253.8K |
+| **Price** | $0.2522 |
+| **24h Volume** | $11.9K |
+| **Liquidity** | $220.5K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | 97.6% of supply |
+| **Top-10 Holders** | 97.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1228 buys / 1122 sells |
 

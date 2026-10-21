@@ -2,14 +2,14 @@
 token: Programmable
 ticker: V4
 network: ethereum
-risk_score: 32
+risk_score: 38
 status: medium
 date: 2026-08-03
 ---
 
 # Programmable (V4) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 32/100 — 🟡 Medium Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/programmable-eth)
 
@@ -25,7 +25,7 @@ The UERC20 contract is an ERC-20 token designed for factory-based deployment. It
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract demonstrates good architectural practices by inheriting from Solady's optimized ERC20 implementation and OpenZeppelin interfaces (7.1 Architecture, 7.2 Code Security). Core token… |
+| **Technical** | 8/10 | Low | The contract demonstrates good architectural practices by inheriting from Solady's optimized ERC20 implementation and OpenZeppelin interfaces (7.1 Architecture, 7.2 Code Security). Core token… |
 | **Governance / Economics** | 1/10 | High | The UERC20 contract is a basic ERC-20 token and does not implement any complex governance mechanisms or economic models (7.5 Governance, 7.4 Economic). Its functionality is limited to standard token… |
 | **Upgrades** | 6/10 | Medium | The UERC20 contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). There are no proxy patterns (e.g., UUPS, Transparent) or other upgradeability mechanisms present. This… |
 
@@ -33,7 +33,7 @@ The UERC20 contract is an ERC-20 token designed for factory-based deployment. It
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.5% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -66,12 +66,12 @@ The `UERC20` contract implements a `tokenURI()` function, which is typically ass
 |--------|-------|
 | **Contract** | [`0x7987...24ee`](https://etherscan.io/address/0x7987f03462200b3d8a072e02c89a8a41dcb124ee) |
 | **Network** | Ethereum |
-| **Price** | $0.001535 |
-| **24h Volume** | $515.4K |
-| **Liquidity** | $138.3K |
-| **Volume / Liquidity** | 3.7× |
+| **Price** | $0.00009508 |
+| **24h Volume** | $9.0K |
+| **Liquidity** | $48.4K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | 23.8% of supply |
+| **Top-10 Holders** | 50.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 841 buys / 758 sells |
 

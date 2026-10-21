@@ -3,13 +3,13 @@ token: Radicle
 ticker: RAD
 network: ethereum
 risk_score: 60
-status: high
+status: medium
 date: 2026-08-11
 ---
 
 # Radicle (RAD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 60/100 — 🟠 High Risk**
+> **Risk Score: 60/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/radicle-eth)
 
@@ -73,12 +73,12 @@ The contract is compiled with `pragma solidity ^0.7.5;`. While not a direct vuln
 |--------|-------|
 | **Contract** | [`0x31c8...64a3`](https://etherscan.io/address/0x31c8eacbffdd875c74b94b077895bd78cf1e64a3) |
 | **Network** | Ethereum |
-| **Price** | $0.2831 |
-| **24h Volume** | $1.49M |
-| **Liquidity** | $2.13M |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $0.2366 |
+| **24h Volume** | $3.2K |
+| **Liquidity** | $1.95M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 75.9% of supply |
+| **Top-10 Holders** | 76.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 474 buys / 574 sells |
 

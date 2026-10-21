@@ -2,14 +2,14 @@
 token: Pepes Dog
 ticker: ZEUS
 network: ethereum
-risk_score: 13
+risk_score: 18
 status: low
 date: 2026-08-11
 ---
 
 # Pepes Dog (ZEUS) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 13/100 — 🟢 Low Risk**
+> **Risk Score: 18/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pepes-dog-eth)
 
@@ -26,7 +26,7 @@ The ZEUS token contract implements an ERC-20 standard with taxation and automate
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 7/10 | Low | The contract utilizes `SafeMath` for arithmetic safety and includes a `lockTheSwap` modifier to prevent reentrancy during liquidity operations (7.2 Code Security). However, the provided code is… |
-| **Governance / Economics** | 8/10 | Low | The tokenomics include high buy (23%) and sell (25%) taxes, along with max transaction and wallet size limits, which are common anti-whale mechanisms (7.4 Economic). However, the inability to modify… |
+| **Governance / Economics** | 7/10 | Low | The tokenomics include high buy (23%) and sell (25%) taxes, along with max transaction and wallet size limits, which are common anti-whale mechanisms (7.4 Economic). However, the inability to modify… |
 | **Upgrades** | 9/10 | Low | The contract is not designed with an upgrade mechanism (e.g., proxy pattern), meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates upgrade-related risks but also means any… |
 
 ## LP Distribution
@@ -88,11 +88,11 @@ The `_name` and `_symbol` string literals use the `unicode` prefix (e.g., `unico
 | **Contract** | [`0x0f7d...ccc8`](https://etherscan.io/address/0x0f7dc5d02cc1e1f5ee47854d534d332a1081ccc8) |
 | **Network** | Ethereum |
 | **Price** | $0. |
-| **24h Volume** | $196.8K |
-| **Liquidity** | $170.2K |
-| **Volume / Liquidity** | 1.2× |
+| **24h Volume** | $1.4K |
+| **Liquidity** | $198.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 42.3% of supply |
+| **Top-10 Holders** | 45.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 312 buys / 235 sells |
 

@@ -73,12 +73,12 @@ The contract utilizes `pragma solidity ^0.8.28;`, which is the latest stable ver
 |--------|-------|
 | **Contract** | [`0x1aa8...cfc3`](https://basescan.org/address/0x1aa8fd5bcce2231c6100d55bf8b377cff33acfc3) |
 | **Network** | Base |
-| **Price** | $0.2711 |
-| **24h Volume** | $261.8K |
-| **Liquidity** | $301.7K |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.2516 |
+| **24h Volume** | $102.8K |
+| **Liquidity** | $162.9K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 80.2% of supply |
+| **Top-10 Holders** | 81.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1732 buys / 1046 sells |
 

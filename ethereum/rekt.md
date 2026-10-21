@@ -73,12 +73,12 @@ The Rekt token contract extensively utilizes well-regarded and audited OpenZeppe
 |--------|-------|
 | **Contract** | [`0xdd3b...6686`](https://etherscan.io/address/0xdd3b11ef34cd511a2da159034a05fcb94d806686) |
 | **Network** | Ethereum |
-| **Price** | $0.0000001 |
-| **24h Volume** | $71.0K |
-| **Liquidity** | $937.1K |
+| **Price** | $0.00000011 |
+| **24h Volume** | $114.5K |
+| **Liquidity** | $1.12M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 45.2% of supply |
+| **Top-10 Holders** | 45.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 63 buys / 70 sells |
 

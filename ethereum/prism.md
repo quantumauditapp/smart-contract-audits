@@ -2,14 +2,14 @@
 token: Prism
 ticker: PRISM
 network: ethereum
-risk_score: 46
-status: high
+risk_score: 59
+status: medium
 date: 2026-08-11
 ---
 
 # Prism (PRISM) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 46/100 — 🟠 High Risk**
+> **Risk Score: 59/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/prism-eth)
 
@@ -26,15 +26,15 @@ The PrismHookV2 contract serves as a Uniswap V4 hook, an ERC20 token, and manage
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract demonstrates a strong technical foundation, leveraging Solady libraries for gas efficiency and `ReentrancyGuard` for common attack vectors (7.2 Code Security). Its integration with… |
-| **Governance / Economics** | 4/10 | Medium | The contract employs an `Ownable` pattern, granting the deployer significant administrative control over critical functions (7.3 Access Control, 7.5 Governance). The owner can `seed` the pool… |
+| **Governance / Economics** | 1/10 | High | The contract employs an `Ownable` pattern, granting the deployer significant administrative control over critical functions (7.3 Access Control, 7.5 Governance). The owner can `seed` the pool… |
 | **Upgrades** | 8/10 | Low | The `PrismHookV2` contract is not implemented as an upgradeable proxy, which simplifies its deployment and reduces the attack surface associated with proxy patterns (7.7 Upgrades). The presence of a… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 48.5% |
-| **Top-3 Unlocked** | ⚠️ 99.6% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ The contract functions as both an ERC20 token ('Prism') and manages a system of 
 |--------|-------|
 | **Contract** | [`0xcf4d...e040`](https://etherscan.io/address/0xcf4d29f14cc585ddd1167f956092852af844e040) |
 | **Network** | Ethereum |
-| **Price** | $533.0390 |
-| **24h Volume** | $228.3K |
-| **Liquidity** | $254.6K |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $307.7600 |
+| **24h Volume** | $26.0K |
+| **Liquidity** | $207.2K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 11d |
-| **Top-10 Holders** | 42.9% of supply |
+| **Top-10 Holders** | 41.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 154 buys / 111 sells |
 

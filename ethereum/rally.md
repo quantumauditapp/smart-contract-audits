@@ -2,14 +2,14 @@
 token: Rally
 ticker: RALLY
 network: ethereum
-risk_score: 75
-status: critical
+risk_score: 80
+status: high
 date: 2026-08-11
 ---
 
 # Rally (RALLY) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 75/100 — 🔴 Critical Risk**
+> **Risk Score: 80/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rally-eth)
 
@@ -26,15 +26,15 @@ The audit of the Token contract identified several areas for improvement, primar
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 5/10 | Medium | The contract exhibits a generally sound technical foundation, utilizing `unchecked` blocks correctly with preceding `require` statements to prevent integer overflows (7.2 Code Security). Necessary… |
-| **Governance / Economics** | 2/10 | High | The contract design incorporates a highly centralized governance model, where an `owner` can control the `issuer` role, and the `issuer` can mint tokens up to `maxSupply` (7.5 Governance, 7.4… |
+| **Governance / Economics** | 1/10 | High | The contract design incorporates a highly centralized governance model, where an `owner` can control the `issuer` role, and the `issuer` can mint tokens up to `maxSupply` (7.5 Governance, 7.4… |
 | **Upgrades** | 2/10 | High | This contract is not designed to be upgradeable, as it does not implement any proxy pattern (7.7 Upgrades). Therefore, there are no upgrade-related risks to assess. Any changes to the contract's… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 16.5% |
-| **Top-3 Unlocked** | 45.7% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ The contract utilizes `unchecked` blocks for arithmetic operations in functions 
 |--------|-------|
 | **Contract** | [`0x1964...d08c`](https://etherscan.io/address/0x19640000000ba88d36206beb10d0e86011c8d08c) |
 | **Network** | Ethereum |
-| **Price** | $0.03519 |
-| **24h Volume** | $526.7K |
-| **Liquidity** | $5.45M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.03517 |
+| **24h Volume** | $175.9K |
+| **Liquidity** | $5.47M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 35.6% of supply |
+| **Top-10 Holders** | 31.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 146 buys / 162 sells |
 

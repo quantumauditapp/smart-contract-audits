@@ -2,14 +2,14 @@
 token: noice
 ticker: NOICE
 network: base
-risk_score: 36
+risk_score: 37
 status: medium
 date: 2026-08-12
 ---
 
 # noice (NOICE) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 37/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/noice-base)
 
@@ -33,7 +33,7 @@ The ClankerToken contract is an ERC20 token with extensions for burning, permits
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.9% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -66,12 +66,12 @@ The `crosschainMint` and `crosschainBurn` functions are exclusively controlled b
 |--------|-------|
 | **Contract** | [`0x9cb4...0c69`](https://basescan.org/address/0x9cb41fd9dc6891bae8187029461bfaadf6cc0c69) |
 | **Network** | Base |
-| **Price** | $0.00001056 |
-| **24h Volume** | $332.9K |
-| **Liquidity** | $196.1K |
-| **Volume / Liquidity** | 1.7× |
+| **Price** | $0.00001203 |
+| **24h Volume** | $45.4K |
+| **Liquidity** | $233.9K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 82.0% of supply |
+| **Top-10 Holders** | 81.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1085 buys / 1225 sells |
 

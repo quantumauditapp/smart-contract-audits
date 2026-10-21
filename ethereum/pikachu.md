@@ -66,12 +66,12 @@ The contract's constructor is declared `payable` and immediately transfers any r
 |--------|-------|
 | **Contract** | [`0xe09f...86bf`](https://etherscan.io/address/0xe09fb60e8d6e7e1cebbe821bd5c3fc67a40f86bf) |
 | **Network** | Ethereum |
-| **Price** | $0.00000001 |
-| **24h Volume** | $79.9K |
-| **Liquidity** | $106.9K |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $0. |
+| **24h Volume** | $2.5K |
+| **Liquidity** | $104.3K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 54.3% of supply |
+| **Top-10 Holders** | 54.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 72 buys / 44 sells |
 

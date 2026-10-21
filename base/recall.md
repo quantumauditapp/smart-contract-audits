@@ -2,14 +2,14 @@
 token: Recall
 ticker: RECALL
 network: base
-risk_score: 74
-status: critical
+risk_score: 72
+status: high
 date: 2026-07-26
 ---
 
 # Recall (RECALL) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 74/100 — 🔴 Critical Risk**
+> **Risk Score: 72/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/recall-base)
 
@@ -88,12 +88,12 @@ The `deployer` address is set once during `initialize` to `msg.sender` and is su
 |--------|-------|
 | **Contract** | [`0x1f16...0671`](https://basescan.org/address/0x1f16e03c1a5908818f47f6ee7bb16690b40d0671) |
 | **Network** | Base |
-| **Price** | $0.03907 |
-| **24h Volume** | $130.8K |
-| **Liquidity** | $480.4K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.04058 |
+| **24h Volume** | $414.0K |
+| **Liquidity** | $561.3K |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 61.6% of supply |
+| **Top-10 Holders** | 62.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 629 buys / 848 sells |
 

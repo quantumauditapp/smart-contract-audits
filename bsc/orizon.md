@@ -73,13 +73,13 @@ The contract is compiled with Solidity version 0.7.5. While functional, newer So
 |--------|-------|
 | **Contract** | [`0xda03...092e`](https://bscscan.com/address/0xda033999bb6165e64db01bd9be14b40f5653092e) |
 | **Network** | BNB Chain |
-| **Price** | $51.4900 |
-| **24h Volume** | $100.6K |
-| **Liquidity** | $2.18M |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $52.5700 |
+| **24h Volume** | $133.6K |
+| **Liquidity** | $2.21M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 99.6% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.1% |
+| **Top-10 Holders** | 96.9% of supply |
+| **Buy / Sell Tax** | 0.0% / 5.0% |
 | **24h Transactions** | 590 buys / 1436 sells |
 
 ## Security Flags (3/5 passed)

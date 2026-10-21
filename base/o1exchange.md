@@ -3,13 +3,13 @@ token: o1.exchange
 ticker: O
 network: base
 risk_score: 25
-status: medium
+status: low
 date: 2026-07-23
 ---
 
 # o1.exchange (O) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 25/100 — 🟡 Medium Risk**
+> **Risk Score: 25/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/o1exchange-base)
 
@@ -33,8 +33,8 @@ The audited contract is a straightforward ERC-20 token implementation, inheritin
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.9% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 91.7% |
+| **Top-3 Unlocked** | ⚠️ 99.8% |
 
 ## Security Findings
 
@@ -66,12 +66,12 @@ The contract implements a fixed supply model where the entire `totalSupply_` is 
 |--------|-------|
 | **Contract** | [`0x182f...20b2`](https://basescan.org/address/0x182fa643e5f29d5eca75e7b9cf9336a3fe4620b2) |
 | **Network** | Base |
-| **Price** | $0.6211 |
-| **24h Volume** | $2.22M |
-| **Liquidity** | $2.24M |
+| **Price** | $0.5608 |
+| **24h Volume** | $1.99M |
+| **Liquidity** | $1.97M |
 | **Volume / Liquidity** | 1.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 96.3% of supply |
+| **Top-10 Holders** | 95.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5087 buys / 6292 sells |
 

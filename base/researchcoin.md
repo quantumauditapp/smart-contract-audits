@@ -2,14 +2,14 @@
 token: ResearchCoin
 ticker: RSC
 network: base
-risk_score: 55
+risk_score: 66
 status: high
 date: 2026-07-23
 ---
 
 # ResearchCoin (RSC) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/researchcoin-base)
 
@@ -25,16 +25,16 @@ The OptimismMintableERC20 contract serves as a standard ERC20 token designed for
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract exhibits good technical quality, inheriting from OpenZeppelin's robust ERC20 implementation and utilizing Solidity 0.8.15 for built-in overflow/underflow protection (7.2 Code Security).… |
-| **Governance / Economics** | 3/10 | High | The economic model of the OptimismMintableERC20 token is straightforward: it functions as a bridged representation of a token on another chain. Its economic security and peg stability are entirely… |
+| **Technical** | 6/10 | Medium | The contract exhibits good technical quality, inheriting from OpenZeppelin's robust ERC20 implementation and utilizing Solidity 0.8.15 for built-in overflow/underflow protection (7.2 Code Security).… |
+| **Governance / Economics** | 1/10 | High | The economic model of the OptimismMintableERC20 token is straightforward: it functions as a bridged representation of a token on another chain. Its economic security and peg stability are entirely… |
 | **Upgrades** | 3/10 | High | The OptimismMintableERC20 contract is designed as an immutable, non-upgradeable contract, with key addresses set in the constructor (7.7 Upgrades). This design choice simplifies its security model by… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 47.5% |
-| **Top-3 Unlocked** | ⚠️ 90.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 88.1% |
+| **Top-3 Unlocked** | ⚠️ 98.9% |
 
 ## Security Findings
 
@@ -66,12 +66,12 @@ The `OptimismMintableERC20` contract is designed as an immutable contract, with 
 |--------|-------|
 | **Contract** | [`0xfbb7...f7e1`](https://basescan.org/address/0xfbb75a59193a3525a8825bebe7d4b56899e2f7e1) |
 | **Network** | Base |
-| **Price** | $0.09392 |
-| **24h Volume** | $54.1K |
-| **Liquidity** | $94.1K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.06264 |
+| **24h Volume** | $20.5K |
+| **Liquidity** | $80.4K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 56.0% of supply |
+| **Top-10 Holders** | 56.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 433 buys / 268 sells |
 

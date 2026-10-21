@@ -2,14 +2,14 @@
 token: Prometheus
 ticker: PROMETHEUS
 network: ethereum
-risk_score: 40
-status: medium
+risk_score: 32
+status: low
 date: 2026-08-12
 ---
 
 # Prometheus (PROMETHEUS) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/prometheus-eth)
 
@@ -27,14 +27,14 @@ The Prometheus token contract implements custom tax mechanisms, anti-bot/anti-wh
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract utilizes `SafeMath` for arithmetic operations, mitigating common integer overflow/underflow vulnerabilities. Standard ERC-20 functionality is implemented correctly. However, the… |
 | **Governance / Economics** | 5/10 | Medium | The economic model presents significant risks, primarily due to an **unlocked liquidity pool** (7.4 Economic), which enables a rug pull by the deployer. The contract exhibits **high centralization**… |
-| **Upgrades** | 8/10 | Low | The contract is not designed with upgradeability mechanisms (7.7 Upgrades), meaning its logic cannot be modified post-deployment. This eliminates risks associated with proxy patterns or upgrade… |
+| **Upgrades** | 9/10 | Low | The contract is not designed with upgradeability mechanisms (7.7 Upgrades), meaning its logic cannot be modified post-deployment. This eliminates risks associated with proxy patterns or upgrade… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **LP Burned** | ✅ 98.9% (≈ permanent lock) |
-| **LP Locked** | 98.9% — Null Address |
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
+| **LP Locked** | 100.0% — Null Address |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ The provided contract snippet is incomplete, specifically lacking the implementa
 |--------|-------|
 | **Contract** | [`0x3cdb...04f1`](https://etherscan.io/address/0x3cdb41027d61c413e064e84d9c21812b6ef004f1) |
 | **Network** | Ethereum |
-| **Price** | $0.003439 |
-| **24h Volume** | $214.7K |
-| **Liquidity** | $34.3K |
-| **Volume / Liquidity** | 6.3× |
+| **Price** | $0.0007916 |
+| **24h Volume** | $10.5K |
+| **Liquidity** | $20.6K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 24.3% of supply |
+| **Top-10 Holders** | 32.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 590 buys / 399 sells |
 

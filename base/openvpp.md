@@ -2,14 +2,14 @@
 token: OpenVPP
 ticker: OVPP
 network: base
-risk_score: 7
+risk_score: 15
 status: low
 date: 2026-07-23
 ---
 
 # OpenVPP (OVPP) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 7/100 — 🟢 Low Risk**
+> **Risk Score: 15/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/openvpp-base)
 
@@ -33,7 +33,7 @@ The OpenVPP token contract is a standard ERC20 implementation leveraging battle-
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.9% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -66,12 +66,12 @@ The contract inherits `ERC20Permit`, which allows users to approve token transfe
 |--------|-------|
 | **Contract** | [`0x8c0d...9bdd`](https://basescan.org/address/0x8c0d3adcf8ce094e1ae437557ec90a6374dc9bdd) |
 | **Network** | Base |
-| **Price** | $0.003535 |
-| **24h Volume** | $219.1K |
-| **Liquidity** | $379.3K |
+| **Price** | $0.002141 |
+| **24h Volume** | $193.4K |
+| **Liquidity** | $336.9K |
 | **Volume / Liquidity** | 0.6× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 41.6% of supply |
+| **Top-10 Holders** | 44.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1126 buys / 1254 sells |
 
