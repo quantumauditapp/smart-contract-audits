@@ -3,13 +3,13 @@ token: ApeCoin
 ticker: APE
 network: ethereum
 risk_score: 30
-status: medium
+status: low
 date: 2026-08-16
 ---
 
 # ApeCoin (APE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 30/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/apecoin-eth)
 
@@ -33,8 +33,8 @@ The SimpleToken contract is a basic ERC-20 token implementation, inheriting dire
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 71.5% |
-| **Top-3 Unlocked** | ⚠️ 99.9% |
+| **Top-1 Unlocked Holder** | ⚠️ 66.2% |
+| **Top-3 Unlocked** | ⚠️ 98.3% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The inherited OpenZeppelin `ERC20` contract correctly utilizes `unchecked` block
 |--------|-------|
 | **Contract** | [`0x4d22...4381`](https://etherscan.io/address/0x4d224452801aced8b2f0aebe155379bb5d594381) |
 | **Network** | Ethereum |
-| **Price** | $0.123 |
-| **24h Volume** | $39.7K |
-| **Liquidity** | $275.8K |
+| **Price** | $0.1391 |
+| **24h Volume** | $50.6K |
+| **Liquidity** | $359.8K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 46.8% of supply |
+| **Top-10 Holders** | 47.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 73 buys / 95 sells |
 

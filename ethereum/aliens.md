@@ -2,14 +2,14 @@
 token: Aliens
 ticker: ALIENS
 network: ethereum
-risk_score: 25
-status: medium
+risk_score: 31
+status: low
 date: 2026-08-12
 ---
 
 # Aliens (ALIENS) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 25/100 — 🟡 Medium Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aliens-eth)
 
@@ -26,7 +26,7 @@ The ALIENS token contract implements standard ERC-20 functionality alongside com
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract utilizes `SafeMath` for arithmetic operations, mitigating common integer overflow/underflow vulnerabilities (7.2 Code Security). A `lockTheSwap` modifier is used to prevent reentrancy… |
-| **Governance / Economics** | 7/10 | Low | The contract grants the owner extensive control over all critical economic parameters, including initial and final buy/sell taxes, tax reduction thresholds, maximum transaction amounts, maximum… |
+| **Governance / Economics** | 6/10 | Medium | The contract grants the owner extensive control over all critical economic parameters, including initial and final buy/sell taxes, tax reduction thresholds, maximum transaction amounts, maximum… |
 | **Upgrades** | 9/10 | Low | The contract is not designed with upgradeability patterns (e.g., proxy contracts). Therefore, there are no upgrade-specific risks (7.7 Upgrades). Any changes to the contract's logic would require… |
 
 ## LP Distribution
@@ -94,12 +94,12 @@ Several critical state changes, such as modifications to tax rates, transaction 
 |--------|-------|
 | **Contract** | [`0xc778...0fdc`](https://etherscan.io/address/0xc77867d630dbe567d219a86fddbe7ef1f0670fdc) |
 | **Network** | Ethereum |
-| **Price** | $0.000019 |
-| **24h Volume** | $83.5K |
-| **Liquidity** | $51.7K |
-| **Volume / Liquidity** | 1.6× |
+| **Price** | $0.00001007 |
+| **24h Volume** | $1.5K |
+| **Liquidity** | $43.1K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 33.9% of supply |
+| **Top-10 Holders** | 41.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 167 buys / 104 sells |
 

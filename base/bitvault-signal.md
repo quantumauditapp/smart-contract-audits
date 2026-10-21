@@ -3,13 +3,13 @@ token: BitVault Signal
 ticker: BV7X
 network: base
 risk_score: 32
-status: medium
+status: low
 date: 2026-06-10
 ---
 
 # BitVault Signal (BV7X) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 32/100 — 🟡 Medium Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bitvault-signal-base)
 
@@ -73,12 +73,12 @@ The `verify()` function can only be called once by the `_originalAdmin` to set t
 |--------|-------|
 | **Contract** | [`0xd88f...d8dc`](https://basescan.org/address/0xd88fd4a11255e51f64f78b4a7d74456325c2d8dc) |
 | **Network** | Base |
-| **Price** | $0.0000066 |
-| **24h Volume** | $6.8K |
-| **Liquidity** | $349.4K |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.0000052 |
+| **24h Volume** | $31.8K |
+| **Liquidity** | $199.1K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 72.8% of supply |
+| **Top-10 Holders** | 77.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
 ## Security Flags (4/5 passed)

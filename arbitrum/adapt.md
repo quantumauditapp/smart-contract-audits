@@ -29,6 +29,13 @@ This audit report addresses a contract deployed on Arbitrum at 0x91c95440403263f
 | **Governance / Economics** | 1/10 | High | The economic model (7.4 Economic) and governance mechanisms (7.5 Governance) of this contract cannot be determined without source code. This prevents any analysis of potential economic exploits, such… |
 | **Upgrades** | 4/10 | Medium | The upgradeability status (7.7 Upgrades) of this contract is unknown without source code. It is impossible to determine if the contract is a proxy, if it uses a specific upgrade pattern (e.g., UUPS… |
 
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
+
 ## Security Findings
 
 _🟠 5 High · 🟢 1 Low_
@@ -89,14 +96,14 @@ There is no publicly available security audit report for this contract. While no
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1286 buys / 313 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
 | Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ⚠️ Unknown |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -106,7 +113,7 @@ There is no publicly available security audit report for this contract. While no
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: ARIA.AI
 ticker: ARIA
 network: bsc
-risk_score: 23
-status: medium
+risk_score: 12
+status: low
 date: 2026-08-11
 ---
 
 # ARIA.AI (ARIA) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 23/100 — 🟡 Medium Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ariaai-bsc)
 
@@ -26,15 +26,15 @@ The Aria token contract is a standard ERC20 implementation leveraging OpenZeppel
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The contract is a standard ERC20 token built upon OpenZeppelin's secure and audited libraries, minimizing common vulnerabilities like reentrancy and integer overflows (7.2 Code Security). The… |
-| **Governance / Economics** | 3/10 | High | The initial token distribution is highly centralized, with all 1 billion tokens minted to the deployer (7.4 Economic). However, the contract leverages the battle-tested OpenZeppelin Ownable contract… |
+| **Governance / Economics** | 5/10 | Medium | The initial token distribution is highly centralized, with all 1 billion tokens minted to the deployer (7.4 Economic). However, the contract leverages the battle-tested OpenZeppelin Ownable contract… |
 | **Upgrades** | 9/10 | Low | The contract is not designed with upgradeability features, such as proxy patterns. This eliminates risks associated with upgrade mechanisms, ensuring the contract's logic is immutable post-deployment… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 57.7% |
-| **Top-3 Unlocked** | ⚠️ 84.8% |
+| **Top-1 Unlocked Holder** | 39.3% |
+| **Top-3 Unlocked** | 79.4% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The Aria token contract correctly inherits and utilizes the battle-tested `ERC20
 |--------|-------|
 | **Contract** | [`0x5d3a...5238`](https://bscscan.com/address/0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238) |
 | **Network** | BNB Chain |
-| **Price** | $0.0338 |
-| **24h Volume** | $884.0K |
+| **Price** | $0.03331 |
+| **24h Volume** | $216.2K |
 | **Liquidity** | $1.28M |
-| **Volume / Liquidity** | 0.7× |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 11mo |
-| **Top-10 Holders** | 85.5% of supply |
+| **Top-10 Holders** | 86.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 7276 buys / 8072 sells |
 

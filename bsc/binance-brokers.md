@@ -2,14 +2,14 @@
 token: Binance Brokers
 ticker: BBROKERS
 network: bsc
-risk_score: 70
+risk_score: 78
 status: high
 date: 2026-08-15
 ---
 
 # Binance Brokers (BBROKERS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 78/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/binance-brokers-bsc)
 
@@ -26,8 +26,15 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with a complex
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract leverages OpenZeppelin's upgradeable ERC20 standards, ensuring a robust foundation for token functionality and future enhancements (7.1 Architecture). It implements a complex state… |
-| **Governance / Economics** | 1/10 | High | The contract exhibits a high degree of centralization, with the owner receiving the entire `maxSupply` upon initialization and retaining exclusive control over critical state transitions like… |
-| **Upgrades** | 6/10 | Medium | The contract correctly implements the OpenZeppelin upgradeable pattern, including `Initializable` and `_disableInitializers()` in the constructor, along with an `initializer` function (7.7 Upgrades).… |
+| **Governance / Economics** | 2/10 | High | The contract exhibits a high degree of centralization, with the owner receiving the entire `maxSupply` upon initialization and retaining exclusive control over critical state transitions like… |
+| **Upgrades** | 3/10 | High | The contract correctly implements the OpenZeppelin upgradeable pattern, including `Initializable` and `_disableInitializers()` in the constructor, along with an `initializer` function (7.7 Upgrades).… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
 
 ## LP Distribution
 
@@ -73,16 +80,16 @@ The `_liquidateTax` function is called at the beginning of every `_transfer` ope
 |--------|-------|
 | **Contract** | [`0xfe59...7777`](https://bscscan.com/address/0xfe59283fd13e15608d2fa627e6d238e47ff17777) |
 | **Network** | BNB Chain |
-| **Price** | $0.0002501 |
-| **24h Volume** | $274.2K |
-| **Liquidity** | $43.4K |
-| **Volume / Liquidity** | 6.3× |
+| **Price** | $0.003534 |
+| **24h Volume** | $443.2K |
+| **Liquidity** | $1.90M |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 62.5% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 84.2% of supply |
+| **Buy / Sell Tax** | 2.0% / 2.0% |
 | **24h Transactions** | 1668 buys / 1364 sells |
 
-## Security Flags (4/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
@@ -90,7 +97,7 @@ The `_liquidateTax` function is called at the beginning of every `_transfer` ope
 | Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
@@ -100,7 +107,7 @@ The `_liquidateTax` function is called at the beginning of every `_transfer` ope
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

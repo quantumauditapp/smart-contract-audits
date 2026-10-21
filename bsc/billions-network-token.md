@@ -2,14 +2,14 @@
 token: Billions Network Token
 ticker: BILL
 network: bsc
-risk_score: 63
+risk_score: 68
 status: high
 date: 2026-08-12
 ---
 
 # Billions Network Token (BILL) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 68/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/billions-network-token-bsc)
 
@@ -25,7 +25,7 @@ The audit of the BillOFT contract, an upgradeable LayerZero Omnichain Fungible T
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The BillOFT contract is a minimal wrapper around the `OFTUpgradeable` and `Ownable` libraries, which are generally well-audited. The core logic for token functionality and cross-chain transfers is… |
+| **Technical** | 6/10 | Medium | The BillOFT contract is a minimal wrapper around the `OFTUpgradeable` and `Ownable` libraries, which are generally well-audited. The core logic for token functionality and cross-chain transfers is… |
 | **Governance / Economics** | 1/10 | High | The contract exhibits centralized control (7.5 Governance) through a 3/5 multisig owner, which manages critical administrative functions and upgrades. While a multisig enhances security over a single… |
 | **Upgrades** | 4/10 | Medium | The contract utilizes a TransparentUpgradeableProxy pattern (7.7 Upgrades) with an OpenZeppelin ProxyAdmin, which is owned by a 3/5 multisig, providing a robust upgrade mechanism. The… |
 
@@ -41,8 +41,8 @@ The audit of the BillOFT contract, an upgradeable LayerZero Omnichain Fungible T
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 26.2% |
-| **Top-3 Unlocked** | 65.4% |
+| **Top-1 Unlocked Holder** | 44.4% |
+| **Top-3 Unlocked** | ⚠️ 84.8% |
 
 ## Security Findings
 
@@ -81,12 +81,12 @@ The `BillOFT` contract explicitly imports `Ownable` from `@openzeppelin/contract
 |--------|-------|
 | **Contract** | [`0xdf24...1fa5`](https://bscscan.com/address/0xdf24f8c21cb404b3031a450d8e049d6e39fc1fa5) |
 | **Network** | BNB Chain |
-| **Price** | $0.0235 |
-| **24h Volume** | $82.1K |
-| **Liquidity** | $42.1K |
-| **Volume / Liquidity** | 2.0× |
+| **Price** | $0.01549 |
+| **24h Volume** | $371 |
+| **Liquidity** | $21.9K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 92.0% of supply |
+| **Top-10 Holders** | 91.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 376 buys / 461 sells |
 

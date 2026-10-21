@@ -2,14 +2,14 @@
 token: Asteroid Shiba
 ticker: ASTEROID
 network: ethereum
-risk_score: 18
+risk_score: 20
 status: low
 date: 2026-06-19
 ---
 
 # Asteroid Shiba (ASTEROID) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 18/100 — 🟢 Low Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/asteroid-shiba-eth)
 
@@ -101,12 +101,12 @@ The Uniswap V2 Router address (0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D) is ha
 |--------|-------|
 | **Contract** | [`0xf280...4126`](https://etherscan.io/address/0xf280b16ef293d8e534e370794ef26bf312694126) |
 | **Network** | Ethereum |
-| **Price** | $0.00006393 |
-| **24h Volume** | $1.07M |
-| **Liquidity** | $1.82M |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.00002045 |
+| **24h Volume** | $1.08M |
+| **Liquidity** | $1.27M |
+| **Volume / Liquidity** | 0.9× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 16.3% of supply |
+| **Top-10 Holders** | 23.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5742 buys / 4731 sells |
 

@@ -2,14 +2,14 @@
 token: Biconomy
 ticker: BICO
 network: ethereum
-risk_score: 39
+risk_score: 45
 status: medium
 date: 2026-08-07
 ---
 
 # Biconomy (BICO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/biconomy-eth)
 
@@ -34,7 +34,7 @@ The BicoToken contract, implemented as an upgradeable ERC-20 token behind a Tran
 | Control | Value |
 |---------|-------|
 | **Proxy Type** | Eip1967 Transparent |
-| **Admin** | Multisig — 2-of-3 |
+| **Admin** | Multisig — 3-of-3 |
 | **Implementation** | ✅ Verified source |
 | **Upgrades (30d)** | 0 (stable) |
 
@@ -42,7 +42,7 @@ The BicoToken contract, implemented as an upgradeable ERC-20 token behind a Tran
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.4% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.9% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -75,12 +75,12 @@ The provided source code snippet for the `BicoTokenImplementation` contract is t
 |--------|-------|
 | **Contract** | [`0xf17e...c6c2`](https://etherscan.io/address/0xf17e65822b568b3903685a7c9f496cf7656cc6c2) |
 | **Network** | Ethereum |
-| **Price** | $0.04746 |
-| **24h Volume** | $88.6K |
-| **Liquidity** | $42.8K |
-| **Volume / Liquidity** | 2.1× |
+| **Price** | $0.02359 |
+| **24h Volume** | $8.7K |
+| **Liquidity** | $35.6K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | 68.1% of supply |
+| **Top-10 Holders** | 62.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 532 buys / 450 sells |
 

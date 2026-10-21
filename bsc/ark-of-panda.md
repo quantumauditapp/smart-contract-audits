@@ -2,14 +2,14 @@
 token: Ark Of Panda
 ticker: AOP
 network: bsc
-risk_score: 54
-status: high
+risk_score: 40
+status: medium
 date: 2026-08-13
 ---
 
 # Ark Of Panda (AOP) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 54/100 — 🟠 High Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ark-of-panda-bsc)
 
@@ -26,8 +26,8 @@ The AOPToken contract implements a standard ERC20 token with an Ownable access c
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 7/10 | Low | The AOPToken contract is built upon robust OpenZeppelin ERC20 and Ownable implementations, ensuring a solid foundation for its core functionality (7.1 Architecture, 7.2 Code Security). The use of… |
-| **Governance / Economics** | 4/10 | Medium | The contract employs an `Ownable` pattern, granting the deployer (owner) significant control, including the ability to mint tokens up to a `maxSupply` (7.3 Access Control, 7.5 Governance). This… |
-| **Upgrades** | 6/10 | Medium | The AOPToken contract is not designed as an upgradeable proxy (7.7 Upgrades). It is a standard, non-upgradeable implementation. Therefore, there are no specific upgrade safety issues to address. Any… |
+| **Governance / Economics** | 5/10 | Medium | The contract employs an `Ownable` pattern, granting the deployer (owner) significant control, including the ability to mint tokens up to a `maxSupply` (7.3 Access Control, 7.5 Governance). This… |
+| **Upgrades** | 8/10 | Low | The AOPToken contract is not designed as an upgradeable proxy (7.7 Upgrades). It is a standard, non-upgradeable implementation. Therefore, there are no specific upgrade safety issues to address. Any… |
 
 ## LP Distribution
 
@@ -73,12 +73,12 @@ The contract defines a custom error `AOPTokenError` and uses it for the `maxSupp
 |--------|-------|
 | **Contract** | [`0xd5df...16c7`](https://bscscan.com/address/0xd5df4d260d7a0145f655bcbf3b398076f21016c7) |
 | **Network** | BNB Chain |
-| **Price** | $0.02971 |
-| **24h Volume** | $6.87M |
-| **Liquidity** | $1.12M |
-| **Volume / Liquidity** | 6.1× |
+| **Price** | $0.03125 |
+| **24h Volume** | $1.20M |
+| **Liquidity** | $1.15M |
+| **Volume / Liquidity** | 1.0× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 89.8% of supply |
+| **Top-10 Holders** | 89.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 11602 buys / 11584 sells |
 

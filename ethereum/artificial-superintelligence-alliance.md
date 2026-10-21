@@ -33,8 +33,8 @@ This audit covers the provided Solidity source code for the EnumerableSet and Ad
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 95.0% |
-| **Top-3 Unlocked** | ⚠️ 99.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 68.8% |
+| **Top-3 Unlocked** | ⚠️ 95.6% |
 
 ## Security Findings
 
@@ -66,12 +66,12 @@ The `EnumerableSet` library explicitly states that 'No guarantees are made on th
 |--------|-------|
 | **Contract** | [`0xaea4...ad85`](https://etherscan.io/address/0xaea46a60368a7bd060eec7df8cba43b7ef41ad85) |
 | **Network** | Ethereum |
-| **Price** | $0.1545 |
-| **24h Volume** | $4.9K |
-| **Liquidity** | $1.13M |
+| **Price** | $0.1534 |
+| **24h Volume** | $47.1K |
+| **Liquidity** | $1.16M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 47.1% of supply |
+| **Top-10 Holders** | 45.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 180 buys / 151 sells |
 

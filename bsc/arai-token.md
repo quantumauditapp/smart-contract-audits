@@ -2,14 +2,14 @@
 token: ARAI Token
 ticker: AA
 network: bsc
-risk_score: 42
+risk_score: 44
 status: medium
 date: 2026-07-25
 ---
 
 # ARAI Token (AA) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/arai-token-bsc)
 
@@ -66,12 +66,12 @@ The `rescueBNB` function uses `payable(owner()).transfer(_amount)` to send nativ
 |--------|-------|
 | **Contract** | [`0x01bf...6936`](https://bscscan.com/address/0x01bf3d77cd08b19bf3f2309972123a2cca0f6936) |
 | **Network** | BNB Chain |
-| **Price** | $0.02726 |
-| **24h Volume** | $1.97M |
-| **Liquidity** | $934.4K |
-| **Volume / Liquidity** | 2.1× |
+| **Price** | $0.009105 |
+| **24h Volume** | $810.4K |
+| **Liquidity** | $464.4K |
+| **Volume / Liquidity** | 1.7× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 97.6% of supply |
+| **Top-10 Holders** | 97.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 8791 buys / 7986 sells |
 

@@ -3,13 +3,13 @@ token: ADI
 ticker: ADI
 network: ethereum
 risk_score: 27
-status: medium
+status: low
 date: 2026-07-13
 ---
 
 # ADI (ADI) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 27/100 — 🟡 Medium Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/adi-eth)
 
@@ -44,16 +44,26 @@ Automated review assessed the protocol architecture, upgrade controls, and exter
 | **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No issues identified in the reviewed source  *(Severity: Informational · Status: Acknowledged)*
+
+The verified source code was reviewed and no issue rising to Informational severity or above was identified. This is a statement about the code that was read, not a guarantee: the review covers the published source only. Fact-layer checks (mint capability, holder concentration) were applied separately and feed the risk score.
+
+**Recommendation:** Re-check after any contract upgrade or ownership change, both of which can alter behaviour without changing this page.
+
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
 | **Contract** | [`0x8b14...caea`](https://etherscan.io/address/0x8b1484d57abbe239bb280661377363b03c89caea) |
 | **Network** | Ethereum |
-| **Price** | $6.9600 |
-| **24h Volume** | $834.0K |
-| **Liquidity** | $2.79M |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $8.3100 |
+| **24h Volume** | $1.08M |
+| **Liquidity** | $3.00M |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 6mo |
 | **Top-10 Holders** | 98.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

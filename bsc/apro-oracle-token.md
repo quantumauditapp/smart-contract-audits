@@ -59,10 +59,10 @@ The `decimals()` function is hardcoded to return `18`. This is a standard practi
 |--------|-------|
 | **Contract** | [`0x9be6...c130`](https://bscscan.com/address/0x9be61a38725b265bc3eb7bfdf17afdfc9d26c130) |
 | **Network** | BNB Chain |
-| **Price** | $0.1543 |
-| **24h Volume** | $1.42M |
-| **Liquidity** | $1.30M |
-| **Volume / Liquidity** | 1.1× |
+| **Price** | $0.1523 |
+| **24h Volume** | $914.2K |
+| **Liquidity** | $1.29M |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 9mo |
 | **Top-10 Holders** | 100.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

@@ -3,13 +3,13 @@ token: Alaya Governance Token
 ticker: AGT
 network: bsc
 risk_score: 31
-status: medium
+status: low
 date: 2026-08-11
 ---
 
 # Alaya Governance Token (AGT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 31/100 — 🟡 Medium Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/alaya-governance-token-bsc)
 
@@ -66,12 +66,12 @@ The token's name, symbol, decimals (fixed at 18), and initial total supply are s
 |--------|-------|
 | **Contract** | [`0x5dbd...e274`](https://bscscan.com/address/0x5dbde81fce337ff4bcaaee4ca3466c00aecae274) |
 | **Network** | BNB Chain |
-| **Price** | $0.01546 |
-| **24h Volume** | $1.98M |
-| **Liquidity** | $1.19M |
-| **Volume / Liquidity** | 1.7× |
+| **Price** | $0.01634 |
+| **24h Volume** | $1.17M |
+| **Liquidity** | $1.33M |
+| **Volume / Liquidity** | 0.9× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 58.5% of supply |
+| **Top-10 Holders** | 56.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6819 buys / 7532 sells |
 

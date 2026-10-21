@@ -2,14 +2,14 @@
 token: Banana For Scale
 ticker: BANANAS31
 network: bsc
-risk_score: 0
+risk_score: 7
 status: low
 date: 2026-08-11
 ---
 
 # Banana For Scale (BANANAS31) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 0/100 — 🟢 Low Risk**
+> **Risk Score: 7/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/banana-for-scale-bsc)
 
@@ -26,15 +26,17 @@ The Token contract implements a standard ERC20 token with an Ownable pattern and
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 9/10 | Low | The contract leverages OpenZeppelin's `ERC20` and `Ownable` patterns, providing a solid foundation for token functionality and access control (7.1 Architecture). The use of `unchecked` blocks is… |
-| **Governance / Economics** | 9/10 | Low | The token's economic model features a fixed supply after initial minting, with no further minting or burning capabilities (7.4 Economic). The initial `MODE_TRANSFER_RESTRICTED` requires the owner to… |
+| **Governance / Economics** | 8/10 | Low | The token's economic model features a fixed supply after initial minting, with no further minting or burning capabilities (7.4 Economic). The initial `MODE_TRANSFER_RESTRICTED` requires the owner to… |
 | **Upgrades** | 10/10 | Low | The contract is not designed with upgradeability patterns (e.g., proxies) (7.7 Upgrades). This means its logic is immutable once deployed, which simplifies the architecture by removing… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **LP Burned** | 50.4% |
-| **LP Locked** | 50.4% — Dead Address |
+| **LP Burned** | 47.7% |
+| **LP Locked** | 47.7% — Dead Address |
+| **Top-1 Unlocked Holder** | ⚠️ 51.9% |
+| **Top-3 Unlocked** | 52.3% |
 
 ## Security Findings
 
@@ -73,12 +75,12 @@ The contract inherits `renounceOwnership()` from `Ownable`. If the current owner
 |--------|-------|
 | **Contract** | [`0x3d4f...a760`](https://bscscan.com/address/0x3d4f0513e8a29669b960f9dbca61861548a9a760) |
 | **Network** | BNB Chain |
-| **Price** | $0.009794 |
-| **24h Volume** | $6.42M |
-| **Liquidity** | $4.17M |
-| **Volume / Liquidity** | 1.5× |
+| **Price** | $0.008154 |
+| **24h Volume** | $1.53M |
+| **Liquidity** | $4.20M |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 29.1% of supply |
+| **Top-10 Holders** | 31.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 14428 buys / 14217 sells |
 

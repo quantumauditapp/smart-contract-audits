@@ -3,13 +3,13 @@ token: ARK
 ticker: ARK
 network: bsc
 risk_score: 33
-status: medium
+status: low
 date: 2026-07-23
 ---
 
 # ARK (ARK) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 33/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ark-bsc)
 
@@ -73,13 +73,13 @@ The provided source code snippet is a flattened version of OpenZeppelin's `Acces
 |--------|-------|
 | **Contract** | [`0xcae1...8b9d`](https://bscscan.com/address/0xcae117ca6bc8a341d2e7207f30e180f0e5618b9d) |
 | **Network** | BNB Chain |
-| **Price** | $5.2100 |
-| **24h Volume** | $3.72M |
-| **Liquidity** | $51.44M |
+| **Price** | $5.1200 |
+| **24h Volume** | $7.28M |
+| **Liquidity** | $51.61M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 11mo |
-| **Top-10 Holders** | 98.5% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 97.7% of supply |
+| **Buy / Sell Tax** | 0.0% / 2.5% |
 | **24h Transactions** | 22935 buys / 21542 sells |
 
 ## Security Flags (3/5 passed)

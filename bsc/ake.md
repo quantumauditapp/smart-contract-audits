@@ -2,14 +2,14 @@
 token: AKE
 ticker: AKE
 network: bsc
-risk_score: 48
-status: high
+risk_score: 52
+status: medium
 date: 2026-07-26
 ---
 
 # AKE (AKE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ake-bsc)
 
@@ -26,15 +26,15 @@ The AKEToken contract implements a standard ERC20 token with custom transfer res
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract demonstrates good technical security practices (7.2 Code Security) by inheriting from battle-tested OpenZeppelin contracts (ERC20, Ownable) and using Solidity 0.8+, which includes… |
-| **Governance / Economics** | 3/10 | High | The contract design introduces significant centralization (7.3 Access Control, 7.4 Economic, 7.5 Governance). The `_transferController` role has the power to restrict or halt all token transfers… |
+| **Governance / Economics** | 1/10 | High | The contract design introduces significant centralization (7.3 Access Control, 7.4 Economic, 7.5 Governance). The `_transferController` role has the power to restrict or halt all token transfers… |
 | **Upgrades** | 7/10 | Low | The AKEToken contract is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, there are no upgrade-related risks or considerations for this specific contract. Any changes to its logic… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.6% |
-| **Top-3 Unlocked** | ⚠️ 99.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 77.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The `isTransferController` function in the `IFourERC20` interface is declared as
 |--------|-------|
 | **Contract** | [`0x2c3a...f7db`](https://bscscan.com/address/0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db) |
 | **Network** | BNB Chain |
-| **Price** | $0.004249 |
-| **24h Volume** | $14.32M |
-| **Liquidity** | $1.04M |
-| **Volume / Liquidity** | 13.8× |
+| **Price** | $0.01348 |
+| **24h Volume** | $45.39M |
+| **Liquidity** | $2.00M |
+| **Volume / Liquidity** | 22.7× |
 | **Token Age** | 11mo |
-| **Top-10 Holders** | 56.1% of supply |
+| **Top-10 Holders** | 49.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 34847 buys / 38524 sells |
 

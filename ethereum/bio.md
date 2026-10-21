@@ -3,13 +3,13 @@ token: BIO
 ticker: BIO
 network: ethereum
 risk_score: 52
-status: high
+status: medium
 date: 2026-08-20
 ---
 
 # BIO (BIO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 52/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bio-eth)
 
@@ -33,7 +33,7 @@ The BioToken contract implements an ERC20 token with burnable functionality, uti
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.3% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -73,12 +73,12 @@ The `_beforeTokenTransfer` hook implements a mechanism where general token trans
 |--------|-------|
 | **Contract** | [`0xcb15...5ffa`](https://etherscan.io/address/0xcb1592591996765ec0efc1f92599a19767ee5ffa) |
 | **Network** | Ethereum |
-| **Price** | $0.03374 |
-| **24h Volume** | $54.4K |
-| **Liquidity** | $354.3K |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.0269 |
+| **24h Volume** | $12.7K |
+| **Liquidity** | $336.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 59.8% of supply |
+| **Top-10 Holders** | 59.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 239 buys / 278 sells |
 

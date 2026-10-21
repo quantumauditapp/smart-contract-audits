@@ -2,14 +2,14 @@
 token: Aave Token
 ticker: AAVE
 network: base
-risk_score: 42
+risk_score: 38
 status: medium
 date: 2026-07-23
 ---
 
 # Aave Token (AAVE) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aave-token-base)
 
@@ -26,15 +26,15 @@ The OptimismMintableERC20 contract serves as a standard ERC20 token with minting
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The technical implementation of the OptimismMintableERC20 contract is robust, leveraging OpenZeppelin's battle-tested ERC20 library. Key security features include the use of `immutable` variables for… |
-| **Governance / Economics** | 2/10 | High | The economic model of the OptimismMintableERC20 token is straightforward, with its supply directly managed by a designated `BRIDGE` contract (7.4 Economic). This design is intentional for cross-chain… |
+| **Governance / Economics** | 3/10 | High | The economic model of the OptimismMintableERC20 token is straightforward, with its supply directly managed by a designated `BRIDGE` contract (7.4 Economic). This design is intentional for cross-chain… |
 | **Upgrades** | 3/10 | High | The OptimismMintableERC20 contract is not designed as an upgradeable proxy, nor does it contain any self-upgrade mechanisms (7.7 Upgrades). This eliminates upgrade-related risks such as proxy storage… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.4% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | 44.1% |
+| **Top-3 Unlocked** | ⚠️ 88.8% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The contract does not perform external calls to untrusted addresses after state 
 |--------|-------|
 | **Contract** | [`0x6370...814b`](https://basescan.org/address/0x63706e401c06ac8513145b7687a14804d17f814b) |
 | **Network** | Base |
-| **Price** | $97.1000 |
-| **24h Volume** | $298.0K |
-| **Liquidity** | $891.7K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $129.2700 |
+| **24h Volume** | $667.6K |
+| **Liquidity** | $1.24M |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 58.9% of supply |
+| **Top-10 Holders** | 66.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 411 buys / 372 sells |
 

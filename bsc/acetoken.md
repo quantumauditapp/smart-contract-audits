@@ -2,14 +2,14 @@
 token: ACEToken
 ticker: ACE
 network: bsc
-risk_score: 92
+risk_score: 98
 status: critical
 date: 2026-08-15
 ---
 
 # ACEToken (ACE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 92/100 — 🔴 Critical Risk**
+> **Risk Score: 98/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/acetoken-bsc)
 
@@ -73,12 +73,12 @@ The `bridge` address is declared as `immutable` in `WrappedERC20.sol` and set du
 |--------|-------|
 | **Contract** | [`0xc27a...def4`](https://bscscan.com/address/0xc27a719105a987b4c34116223cae8bd8f4b5def4) |
 | **Network** | BNB Chain |
-| **Price** | $0.2567 |
-| **24h Volume** | $35.5K |
-| **Liquidity** | $42.8K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.1845 |
+| **24h Volume** | $2 |
+| **Liquidity** | $18 |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 83.3% of supply |
+| **Top-10 Holders** | 89.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 635 buys / 650 sells |
 

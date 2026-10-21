@@ -2,14 +2,14 @@
 token: BIO
 ticker: BIO
 network: base
-risk_score: 61
-status: high
+risk_score: 60
+status: medium
 date: 2026-08-14
 ---
 
 # BIO (BIO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 60/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bio-base)
 
@@ -73,12 +73,12 @@ The `transfersEnabled` flag is initialized to `false`, meaning general token tra
 |--------|-------|
 | **Contract** | [`0x226a...7dd2`](https://basescan.org/address/0x226a2fa2556c48245e57cd1cba4c6c9e67077dd2) |
 | **Network** | Base |
-| **Price** | $0.02441 |
-| **24h Volume** | $30.5K |
-| **Liquidity** | $324.3K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.02687 |
+| **24h Volume** | $375.1K |
+| **Liquidity** | $365.3K |
+| **Volume / Liquidity** | 1.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 80.9% of supply |
+| **Top-10 Holders** | 80.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 229 buys / 292 sells |
 

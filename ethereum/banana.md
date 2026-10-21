@@ -101,12 +101,12 @@ The `pragma experimental ABIEncoderV2;` directive is included in the contract. `
 |--------|-------|
 | **Contract** | [`0x38e6...30b4`](https://etherscan.io/address/0x38e68a37e401f7271568cecaac63c6b1e19130b4) |
 | **Network** | Ethereum |
-| **Price** | $3.8700 |
-| **24h Volume** | $488.6K |
-| **Liquidity** | $2.69M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $4.0330 |
+| **24h Volume** | $155.2K |
+| **Liquidity** | $3.14M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 74.0% of supply |
+| **Top-10 Holders** | 73.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 250 buys / 249 sells |
 

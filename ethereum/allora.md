@@ -2,14 +2,14 @@
 token: Allora
 ticker: ALLO
 network: ethereum
-risk_score: 91
+risk_score: 89
 status: critical
 date: 2026-06-10
 ---
 
 # Allora (ALLO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 91/100 — 🔴 Critical Risk**
+> **Risk Score: 89/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/allora-eth)
 
@@ -82,10 +82,10 @@ Although the upgrade authority is managed by a 2-of-3 multisig, this still repre
 |--------|-------|
 | **Contract** | [`0x8408...0489`](https://etherscan.io/address/0x8408d45b61f5823298f19a09b53b7339c0280489) |
 | **Network** | Ethereum |
-| **Price** | $0.4922 |
-| **24h Volume** | $2.5K |
-| **Liquidity** | $6.0K |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.2457 |
+| **24h Volume** | $78 |
+| **Liquidity** | $5.3K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6mo |
 | **Top-10 Holders** | 93.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

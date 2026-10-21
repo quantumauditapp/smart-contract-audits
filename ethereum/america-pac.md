@@ -26,7 +26,7 @@ This audit covers a partial Solidity contract, including standard OpenZeppelin `
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The contract utilizes standard OpenZeppelin `Ownable` and `Context` patterns, along with well-known Uniswap V2 interfaces (`IUniswapV2Factory`, `IUniswapV2Pair`, `IUniswapV2Router02`). The inclusion… |
-| **Governance / Economics** | 10/10 | Low | The contract employs the `Ownable` access control pattern (7.3 Access Control). According to deployment data, ownership has been renounced, which decentralizes control and removes the risk of a… |
+| **Governance / Economics** | 9/10 | Low | The contract employs the `Ownable` access control pattern (7.3 Access Control). According to deployment data, ownership has been renounced, which decentralizes control and removes the risk of a… |
 | **Upgrades** | 10/10 | Low | The contract is not designed with an upgradeability pattern (e.g., proxy contracts) (7.7 Upgrades). This means the contract's logic is immutable once deployed. While this simplifies the architecture… |
 
 ## LP Distribution
@@ -87,12 +87,12 @@ The provided Solidity source code for the main 'PAC' contract is truncated, with
 |--------|-------|
 | **Contract** | [`0x4c44...07f2`](https://etherscan.io/address/0x4c44a8b7823b80161eb5e6d80c014024752607f2) |
 | **Network** | Ethereum |
-| **Price** | $0.0004742 |
-| **24h Volume** | $303.4K |
-| **Liquidity** | $89.5K |
-| **Volume / Liquidity** | 3.4× |
+| **Price** | $0.000375 |
+| **24h Volume** | $4.5K |
+| **Liquidity** | $90.9K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 42.2% of supply |
+| **Top-10 Holders** | 49.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 554 buys / 442 sells |
 

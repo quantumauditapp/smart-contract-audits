@@ -2,14 +2,14 @@
 token: Arcium
 ticker: ARX
 network: bsc
-risk_score: 87
-status: critical
+risk_score: 84
+status: high
 date: 2026-07-22
 ---
 
 # Arcium (ARX) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 87/100 — 🔴 Critical Risk**
+> **Risk Score: 84/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/arcium-bsc)
 
@@ -33,8 +33,8 @@ The PeerToken contract implements an ERC20 token with minting and burning capabi
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | 36.5% |
+| **Top-3 Unlocked** | 67.3% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ The `_update` function is explicitly declared with `override(ERC20, BaseToken)`,
 |--------|-------|
 | **Contract** | [`0xd5f6...a715`](https://bscscan.com/address/0xd5f6ef5deabe61e6d5cdb49bfb6f156f2c1ca715) |
 | **Network** | BNB Chain |
-| **Price** | $0.1593 |
-| **24h Volume** | $66.5K |
-| **Liquidity** | $23.0K |
-| **Volume / Liquidity** | 2.9× |
+| **Price** | $0.1315 |
+| **24h Volume** | $21.2K |
+| **Liquidity** | $14.8K |
+| **Volume / Liquidity** | 1.4× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 87.5% of supply |
+| **Top-10 Holders** | 81.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 680 buys / 579 sells |
 

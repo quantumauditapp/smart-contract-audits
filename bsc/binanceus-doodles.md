@@ -2,14 +2,14 @@
 token: binanceus doodles
 ticker: BOODLES
 network: bsc
-risk_score: 17
+risk_score: 23
 status: low
 date: 2026-08-15
 ---
 
 # binanceus doodles (BOODLES) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 17/100 — 🟢 Low Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/binanceus-doodles-bsc)
 
@@ -26,7 +26,7 @@ This audit covers a partial implementation of an ERC-20 token contract, `FourERC
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract leverages OpenZeppelin's robust ERC-20 implementation, providing standard token functionalities like `transfer`, `approve`, and `allowance` (7.2 Code Security). The use of `unchecked`… |
-| **Governance / Economics** | 7/10 | Low | The most significant economic risk stems from the explicitly stated absence of a token supply mechanism (e.g., `_mint` or `_burn`) within the `FourERC20` contract itself, deferring it to a derived… |
+| **Governance / Economics** | 5/10 | Medium | The most significant economic risk stems from the explicitly stated absence of a token supply mechanism (e.g., `_mint` or `_burn`) within the `FourERC20` contract itself, deferring it to a derived… |
 | **Upgrades** | 9/10 | Low | The contract is explicitly marked as `is_proxy: false`, indicating it is not intended to be upgradeable in its current deployment (7.7 Upgrades). The use of an `_init` function, typically found in… |
 
 ## LP Distribution
@@ -73,10 +73,10 @@ The contract utilizes an `_init` function for setting `_name` and `_symbol`, whi
 |--------|-------|
 | **Contract** | [`0xc708...4444`](https://bscscan.com/address/0xc708c48944600c03227895abda42ca7f38c64444) |
 | **Network** | BNB Chain |
-| **Price** | $0.00002709 |
-| **24h Volume** | $123.9K |
-| **Liquidity** | $28.8K |
-| **Volume / Liquidity** | 4.3× |
+| **Price** | $0.00000361 |
+| **24h Volume** | $1 |
+| **Liquidity** | $6.5K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 10mo |
 | **Top-10 Holders** | 104.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

@@ -2,14 +2,14 @@
 token: Axelar Wrapped LAVA
 ticker: LAVA
 network: arbitrum
-risk_score: 79
+risk_score: 87
 status: critical
 date: 2026-08-14
 ---
 
 # Axelar Wrapped LAVA (LAVA) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 79/100 — 🔴 Critical Risk**
+> **Risk Score: 87/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/axelar-wrapped-lava-arb)
 
@@ -27,8 +27,8 @@ Furthermore, evaluate the implications of the highly centralized `owner` role fo
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The technical architecture (7.1) is modular, utilizing standard ERC20, Ownable, and Permit patterns. Solidity 0.8.9 mitigates integer overflow/underflow risks (7.2). A reentrancy guard is implemented… |
-| **Governance / Economics** | 2/10 | High | The token's economic model (7.4) is highly centralized, with the owner having extensive control over token supply through minting and burning functions. This introduces significant governance risk… |
+| **Technical** | 4/10 | Medium | The technical architecture (7.1) is modular, utilizing standard ERC20, Ownable, and Permit patterns. Solidity 0.8.9 mitigates integer overflow/underflow risks (7.2). A reentrancy guard is implemented… |
+| **Governance / Economics** | 1/10 | High | The token's economic model (7.4) is highly centralized, with the owner having extensive control over token supply through minting and burning functions. This introduces significant governance risk… |
 | **Upgrades** | 3/10 | High | The contracts are not designed with an explicit upgrade mechanism (7.7), meaning their logic is immutable once deployed. This eliminates upgrade-related risks such as proxy misconfigurations or logic… |
 
 ## LP Distribution
@@ -82,12 +82,12 @@ Given the high level of centralization and the critical powers of the `owner` ro
 |--------|-------|
 | **Contract** | [`0x11e9...61af`](https://arbiscan.io/address/0x11e969e9b3f89cb16d686a03cd8508c9fc0361af) |
 | **Network** | Arbitrum |
-| **Price** | $0.0187 |
-| **24h Volume** | $165.9K |
-| **Liquidity** | $382.2K |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.01894 |
+| **24h Volume** | $23.3K |
+| **Liquidity** | $389.9K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 8mo |
-| **Top-10 Holders** | 56.5% of supply |
+| **Top-10 Holders** | 59.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 820 buys / 982 sells |
 

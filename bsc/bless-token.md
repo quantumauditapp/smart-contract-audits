@@ -2,14 +2,14 @@
 token: Bless Token
 ticker: BLESS
 network: bsc
-risk_score: 93
+risk_score: 97
 status: critical
 date: 2026-08-13
 ---
 
 # Bless Token (BLESS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 93/100 — 🔴 Critical Risk**
+> **Risk Score: 97/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bless-token-bsc)
 
@@ -40,8 +40,8 @@ The DeBridgeToken contract serves as an upgradeable ERC-20 token implementation,
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 59.8% |
-| **Top-3 Unlocked** | ⚠️ 98.1% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ The `permit` function, while correctly implemented with `deadline` and `nonces` 
 |--------|-------|
 | **Contract** | [`0x7c82...e11f`](https://bscscan.com/address/0x7c8217517ed4711fe2deccdfeffe8d906b9ae11f) |
 | **Network** | BNB Chain |
-| **Price** | $0.01019 |
-| **24h Volume** | $2.09M |
-| **Liquidity** | $229.4K |
-| **Volume / Liquidity** | 9.1× |
+| **Price** | $0.008162 |
+| **24h Volume** | $421.9K |
+| **Liquidity** | $224.4K |
+| **Volume / Liquidity** | 1.9× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 92.6% of supply |
+| **Top-10 Holders** | 92.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 17685 buys / 19451 sells |
 

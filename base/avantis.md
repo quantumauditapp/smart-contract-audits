@@ -3,13 +3,13 @@ token: Avantis
 ticker: AVNT
 network: base
 risk_score: 49
-status: high
+status: medium
 date: 2026-07-27
 ---
 
 # Avantis (AVNT) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/avantis-base)
 
@@ -33,8 +33,8 @@ The audit focused on the Token contract, an ERC20 token with blacklisting and cr
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 95.6% |
-| **Top-3 Unlocked** | ⚠️ 99.2% |
+| **Top-1 Unlocked Holder** | ⚠️ 74.3% |
+| **Top-3 Unlocked** | ⚠️ 96.2% |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ The `SUPERCHAIN_TOKEN_BRIDGE` address is hardcoded as a `constant`. While this e
 |--------|-------|
 | **Contract** | [`0x696f...f4f1`](https://basescan.org/address/0x696f9436b67233384889472cd7cd58a6fb5df4f1) |
 | **Network** | Base |
-| **Price** | $0.08879 |
-| **24h Volume** | $134.7K |
-| **Liquidity** | $569.2K |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.1014 |
+| **24h Volume** | $212.3K |
+| **Liquidity** | $635.7K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 87.2% of supply |
+| **Top-10 Holders** | 86.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 943 buys / 759 sells |
 

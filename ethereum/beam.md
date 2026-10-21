@@ -3,13 +3,13 @@ token: Beam
 ticker: BEAM
 network: ethereum
 risk_score: 54
-status: high
+status: medium
 date: 2026-07-25
 ---
 
 # Beam (BEAM) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 54/100 — 🟠 High Risk**
+> **Risk Score: 54/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/beam-eth)
 
@@ -80,12 +80,12 @@ The `BeamToken` contract is deployed as a standard, non-upgradeable contract. Th
 |--------|-------|
 | **Contract** | [`0x62d0...bfce`](https://etherscan.io/address/0x62d0a8458ed7719fdaf978fe5929c6d342b0bfce) |
 | **Network** | Ethereum |
-| **Price** | $0.001592 |
-| **24h Volume** | $80.4K |
-| **Liquidity** | $2.74M |
+| **Price** | $0.00156 |
+| **24h Volume** | $129.5K |
+| **Liquidity** | $3.06M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 58.4% of supply |
+| **Top-10 Holders** | 56.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 430 buys / 445 sells |
 

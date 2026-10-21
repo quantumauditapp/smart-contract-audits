@@ -2,14 +2,14 @@
 token: Based Token
 ticker: BASED
 network: bsc
-risk_score: 77
-status: critical
+risk_score: 78
+status: high
 date: 2026-07-22
 ---
 
 # Based Token (BASED) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 77/100 — 🔴 Critical Risk**
+> **Risk Score: 78/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/based-token-bsc)
 
@@ -26,15 +26,15 @@ This audit focused on the provided Solidity interfaces for LayerZero V2 componen
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The LayerZero V2 interfaces define a complex cross-chain messaging architecture (7.1 Architecture) with distinct roles for endpoints, message libraries, and receivers. The design emphasizes… |
-| **Governance / Economics** | 3/10 | High | The interfaces expose several critical functions that, in an implementation, would require strong access control and governance (7.3 Access Control, 7.5 Governance). Functions like `setLzToken`… |
+| **Governance / Economics** | 2/10 | High | The interfaces expose several critical functions that, in an implementation, would require strong access control and governance (7.3 Access Control, 7.5 Governance). Functions like `setLzToken`… |
 | **Upgrades** | 4/10 | Medium | As only interfaces were provided, direct upgradeability concerns (7.7 Upgrades) for these specific contracts are not applicable. However, the LayerZero V2 protocol itself is designed to be extensible… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 61.4% |
-| **Top-3 Unlocked** | ⚠️ 80.1% |
+| **Top-1 Unlocked Holder** | ⚠️ 73.5% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ The LayerZero V2 protocol, as evidenced by its extensive interfaces (`ILayerZero
 |--------|-------|
 | **Contract** | [`0x1d28...8e4d`](https://bscscan.com/address/0x1d28d989f9e3ccb8b15d0cec601734514f958e4d) |
 | **Network** | BNB Chain |
-| **Price** | $0.08385 |
-| **24h Volume** | $217.6K |
-| **Liquidity** | $209.8K |
-| **Volume / Liquidity** | 1.0× |
+| **Price** | $0.06768 |
+| **24h Volume** | $2.6K |
+| **Liquidity** | $7.6K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 75.3% of supply |
+| **Top-10 Holders** | 78.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 850 buys / 826 sells |
 

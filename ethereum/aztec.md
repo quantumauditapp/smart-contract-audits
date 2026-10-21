@@ -2,14 +2,14 @@
 token: AZTEC
 ticker: AZTEC
 network: ethereum
-risk_score: 53
+risk_score: 73
 status: high
 date: 2026-08-13
 ---
 
 # AZTEC (AZTEC) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 73/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aztec-eth)
 
@@ -25,9 +25,9 @@ The Aztec token contract is an ERC20 token with a centralized minting capability
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract leverages battle-tested OpenZeppelin libraries for ERC20, Ownable2Step, and ERC20Permit functionalities, significantly enhancing code security and reliability (7.2 Code Security). The… |
+| **Technical** | 6/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for ERC20, Ownable2Step, and ERC20Permit functionalities, significantly enhancing code security and reliability (7.2 Code Security). The… |
 | **Governance / Economics** | 1/10 | High | The primary economic risk stems from the highly centralized control over token supply (7.4 Economic). The `mint` function, callable only by the contract owner, allows for arbitrary creation of new… |
-| **Upgrades** | 5/10 | Medium | The Aztec token contract is not designed to be upgradeable (7.7 Upgrades). This means its logic is immutable once deployed, providing certainty regarding its behavior. While immutability prevents… |
+| **Upgrades** | 2/10 | High | The Aztec token contract is not designed to be upgradeable (7.7 Upgrades). This means its logic is immutable once deployed, providing certainty regarding its behavior. While immutability prevents… |
 
 ## Security Findings
 
@@ -66,22 +66,22 @@ The contract utilizes OpenZeppelin's `Ownable2Step` for ownership transfers. Thi
 |--------|-------|
 | **Contract** | [`0xa27e...62d2`](https://etherscan.io/address/0xa27ec0006e59f245217ff08cd52a7e8b169e62d2) |
 | **Network** | Ethereum |
-| **Price** | $0.01232 |
-| **24h Volume** | $533.9K |
-| **Liquidity** | $12.02M |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.0158 |
+| **24h Volume** | $7.43M |
+| **Liquidity** | $15.56M |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 8mo |
 | **Top-10 Holders** | 100.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 249 buys / 304 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -91,7 +91,7 @@ The contract utilizes OpenZeppelin's `Ownable2Step` for ownership transfers. Thi
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

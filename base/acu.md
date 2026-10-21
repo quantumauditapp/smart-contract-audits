@@ -2,14 +2,14 @@
 token: ACU
 ticker: ACU
 network: base
-risk_score: 44
+risk_score: 51
 status: medium
 date: 2026-08-13
 ---
 
 # ACU (ACU) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/acu-base)
 
@@ -26,7 +26,7 @@ The AcuOFT contract is an Omnichain Fungible Token (OFT) implementation built on
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The AcuOFT contract (7.2 Code Security) is a straightforward implementation of LayerZero's OFT standard, inheriting from well-audited OpenZeppelin Ownable. The code is concise and follows common… |
-| **Governance / Economics** | 3/10 | High | The contract's access control (7.3 Access Control) is managed by the `Ownable` pattern, with the owner (also the LayerZero delegate) having significant control over LayerZero configurations and other… |
+| **Governance / Economics** | 2/10 | High | The contract's access control (7.3 Access Control) is managed by the `Ownable` pattern, with the owner (also the LayerZero delegate) having significant control over LayerZero configurations and other… |
 | **Upgrades** | 7/10 | Low | The AcuOFT contract is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, there are no direct upgrade safety concerns for this specific contract. Any future changes would require a new… |
 
 ## LP Distribution
@@ -80,12 +80,12 @@ The constructor accepts an `_lzEndpoint` address but does not include explicit v
 |--------|-------|
 | **Contract** | [`0xc5fe...3f0b`](https://basescan.org/address/0xc5fed7c8ccc75d8a72b601a66dffd7a489073f0b) |
 | **Network** | Base |
-| **Price** | $0.1212 |
-| **24h Volume** | $365.0K |
-| **Liquidity** | $241.3K |
-| **Volume / Liquidity** | 1.5× |
+| **Price** | $0.1384 |
+| **24h Volume** | $37.2K |
+| **Liquidity** | $201.2K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 89.8% of supply |
+| **Top-10 Holders** | 87.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2445 buys / 2733 sells |
 

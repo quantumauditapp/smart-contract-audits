@@ -2,14 +2,14 @@
 token: Arbitrum
 ticker: ARB
 network: arbitrum
-risk_score: 31
-status: medium
+risk_score: 28
+status: low
 date: 2026-07-22
 ---
 
 # Arbitrum (ARB) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 31/100 — 🟡 Medium Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/arbitrum-arb)
 
@@ -26,7 +26,7 @@ The L2ArbitrumToken contract serves as the L2 counterparty for the Arbitrum toke
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 7/10 | Low | The contract demonstrates good technical architecture (7.1) by extending well-audited OpenZeppelin ERC20, Burnable, Permit, and Votes standards, ensuring robust core token functionality. Code… |
-| **Governance / Economics** | 6/10 | Medium | The economic model (7.4) includes a controlled minting function, allowing the owner to mint up to 2% of the total supply annually, which introduces a predictable inflation mechanism. Governance (7.5)… |
+| **Governance / Economics** | 7/10 | Low | The economic model (7.4) includes a controlled minting function, allowing the owner to mint up to 2% of the total supply annually, which introduces a predictable inflation mechanism. Governance (7.5)… |
 | **Upgrades** | 2/10 | High | The contract is designed for upgradeability (7.7) using OpenZeppelin's `Initializable` pattern and deployed behind a TransparentUpgradeableProxy. The constructor correctly calls… |
 
 ## Proxy Upgrade Controls
@@ -42,8 +42,8 @@ The L2ArbitrumToken contract serves as the L2 counterparty for the Arbitrum toke
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 53.2% |
-| **Top-3 Unlocked** | 67.4% |
+| **Top-1 Unlocked Holder** | 36.1% |
+| **Top-3 Unlocked** | 47.3% |
 
 ## Security Findings
 
@@ -89,12 +89,12 @@ The contract exhibits inconsistent handling of potentially negative values for `
 |--------|-------|
 | **Contract** | [`0x912c...6548`](https://arbiscan.io/address/0x912ce59144191c1204e64559fe8253a0e49e6548) |
 | **Network** | Arbitrum |
-| **Price** | $0.08865 |
-| **24h Volume** | $587.0K |
-| **Liquidity** | $3.76M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.1346 |
+| **24h Volume** | $5.05M |
+| **Liquidity** | $2.61M |
+| **Volume / Liquidity** | 1.9× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 48.4% of supply |
+| **Top-10 Holders** | 48.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 415 buys / 560 sells |
 

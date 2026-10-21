@@ -3,13 +3,13 @@ token: Balancer
 ticker: BAL
 network: ethereum
 risk_score: 30
-status: medium
+status: low
 date: 2026-07-23
 ---
 
 # Balancer (BAL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 30/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/balancer-eth)
 
@@ -33,8 +33,8 @@ This audit covers the provided Solidity source code for the `EnumerableSet` and 
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 25.6% |
-| **Top-3 Unlocked** | 55.0% |
+| **Top-1 Unlocked Holder** | 25.1% |
+| **Top-3 Unlocked** | 54.0% |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ The library uses explicit type casting, such as `bytes32(uint256(value))` for `a
 |--------|-------|
 | **Contract** | [`0xba10...4e3d`](https://etherscan.io/address/0xba100000625a3754423978a60c9317c58a424e3d) |
 | **Network** | Ethereum |
-| **Price** | $0.1231 |
-| **24h Volume** | $509.6K |
-| **Liquidity** | $4.78M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.1075 |
+| **24h Volume** | $155.8K |
+| **Liquidity** | $4.23M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 66.2% of supply |
+| **Top-10 Holders** | 66.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 155 buys / 382 sells |
 

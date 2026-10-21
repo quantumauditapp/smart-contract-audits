@@ -3,13 +3,13 @@ token: Basemate
 ticker: BASEMATE
 network: base
 risk_score: 48
-status: high
+status: medium
 date: 2026-08-17
 ---
 
 # Basemate (BASEMATE) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 48/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/basemate-base)
 
@@ -94,12 +94,12 @@ The constructor includes a `require(vestedTokens < initialSupply, MaxTotalVested
 |--------|-------|
 | **Contract** | [`0x07e6...2ba3`](https://basescan.org/address/0x07e61d8a4e197dfc269e90d7ece1df0d26702ba3) |
 | **Network** | Base |
-| **Price** | $0.00000203 |
-| **24h Volume** | $32.5K |
-| **Liquidity** | $148.1K |
+| **Price** | $0.00000172 |
+| **24h Volume** | $20.1K |
+| **Liquidity** | $104.4K |
 | **Volume / Liquidity** | 0.2× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 55.6% of supply |
+| **Top-10 Holders** | 56.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 88 buys / 144 sells |
 

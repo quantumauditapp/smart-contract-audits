@@ -3,13 +3,13 @@ token: Baby Ansem
 ticker: BABYANSEM
 network: bsc
 risk_score: 51
-status: high
+status: medium
 date: 2026-07-01
 ---
 
 # Baby Ansem (BABYANSEM) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/baby-ansem-bsc)
 
@@ -68,11 +68,11 @@ The `decimals()` function returns `9`. While technically valid, the vast majorit
 | **Network** | BNB Chain |
 | **Price** | $0. |
 | **24h Volume** | $6 |
-| **Liquidity** | $10.2K |
+| **Liquidity** | $12.9K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 88.3% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 89.3% of supply |
+| **Buy / Sell Tax** | 3.0% / 3.0% |
 | **24h Transactions** | 13560 buys / 2419 sells |
 
 ## Security Flags (5/5 passed)

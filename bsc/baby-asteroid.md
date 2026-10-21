@@ -2,14 +2,14 @@
 token: Baby Asteroid
 ticker: BABYASTEROID
 network: bsc
-risk_score: 26
-status: medium
+risk_score: 27
+status: low
 date: 2026-08-01
 ---
 
 # Baby Asteroid (BABYASTEROID) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 26/100 — 🟡 Medium Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/baby-asteroid-bsc)
 
@@ -67,12 +67,12 @@ The contract's comments correctly highlight the known race condition vulnerabili
 | **Contract** | [`0xfecb...6666`](https://bscscan.com/address/0xfecbda1b8dbd73c4eea7843c04db816107fa6666) |
 | **Network** | BNB Chain |
 | **Price** | $0. |
-| **24h Volume** | $757.1K |
-| **Liquidity** | $196.5K |
-| **Volume / Liquidity** | 3.9× |
+| **24h Volume** | $23.1K |
+| **Liquidity** | $93.8K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 11.2% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 20.0% of supply |
+| **Buy / Sell Tax** | 3.0% / 3.0% |
 | **24h Transactions** | 17680 buys / 8694 sells |
 
 ## Security Flags (5/5 passed)

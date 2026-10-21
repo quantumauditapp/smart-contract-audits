@@ -82,11 +82,11 @@ Due to the critical limitation of an incomplete source code, the audit could not
 | **Contract** | [`0xc748...e8de`](https://bscscan.com/address/0xc748673057861a797275cd8a068abb95a902e8de) |
 | **Network** | BNB Chain |
 | **Price** | $0. |
-| **24h Volume** | $42.6K |
-| **Liquidity** | $7.00M |
+| **24h Volume** | $251.8K |
+| **Liquidity** | $8.81M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 77.9% of supply |
+| **Top-10 Holders** | 78.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 666 buys / 245 sells |
 

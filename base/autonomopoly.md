@@ -2,14 +2,14 @@
 token: AUTONOMOPOLY
 ticker: AUTONO
 network: base
-risk_score: 51
-status: high
+risk_score: 53
+status: medium
 date: 2026-07-24
 ---
 
 # AUTONOMOPOLY (AUTONO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 53/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/autonomopoly-base)
 
@@ -33,7 +33,7 @@ The LiquidToken contract implements a standard ERC-20 token with extensions for 
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 56.4% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.1% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -66,12 +66,12 @@ The `crosschainMint` and `crosschainBurn` functions are critical for the token's
 |--------|-------|
 | **Contract** | [`0xb3d7...6d8e`](https://basescan.org/address/0xb3d7e0c3c39a1d3f1b304663065a2f83ddf56d8e) |
 | **Network** | Base |
-| **Price** | $0.00000925 |
-| **24h Volume** | $26.2K |
-| **Liquidity** | $701.8K |
+| **Price** | $0.00000495 |
+| **24h Volume** | $11.8K |
+| **Liquidity** | $378.3K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 70.5% of supply |
+| **Top-10 Holders** | 74.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1619 buys / 716 sells |
 

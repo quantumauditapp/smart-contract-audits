@@ -2,14 +2,14 @@
 token: Autonomi
 ticker: ANT
 network: arbitrum
-risk_score: 48
-status: high
+risk_score: 49
+status: medium
 date: 2026-07-24
 ---
 
 # Autonomi (ANT) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/autonomi-arb)
 
@@ -33,8 +33,8 @@ The AutonomiNetworkToken contract is a standard ERC20 token implementation, leve
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 96.9% |
-| **Top-3 Unlocked** | ⚠️ 99.7% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.9% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -66,12 +66,12 @@ The ERC20Permit functionality allows users to sign off-chain approvals. While co
 |--------|-------|
 | **Contract** | [`0xa78d...b684`](https://arbiscan.io/address/0xa78d8321b20c4ef90ecd72f2588aa985a4bdb684) |
 | **Network** | Arbitrum |
-| **Price** | $0.04884 |
-| **24h Volume** | $21.7K |
-| **Liquidity** | $111.1K |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.03841 |
+| **24h Volume** | $11.8K |
+| **Liquidity** | $94.1K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 81.0% of supply |
+| **Top-10 Holders** | 80.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 922 buys / 891 sells |
 

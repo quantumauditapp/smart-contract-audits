@@ -2,14 +2,14 @@
 token: aeon
 ticker: AEON
 network: base
-risk_score: 43
+risk_score: 46
 status: medium
 date: 2026-07-28
 ---
 
 # aeon (AEON) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aeon-base)
 
@@ -33,7 +33,7 @@ The DERC20 contract implements an ERC20 token with custom vesting and inflation 
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 63.6% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -80,12 +80,12 @@ The DERC20 contract is deployed as a standard, non-upgradeable contract. This me
 |--------|-------|
 | **Contract** | [`0xbf8e...aba3`](https://basescan.org/address/0xbf8e8f0e8866a7052f948c16508644347c57aba3) |
 | **Network** | Base |
-| **Price** | $0.00000552 |
-| **24h Volume** | $152.8K |
-| **Liquidity** | $513.5K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.00001965 |
+| **24h Volume** | $312.1K |
+| **Liquidity** | $425.4K |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 47.4% of supply |
+| **Top-10 Holders** | 42.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 414 buys / 356 sells |
 

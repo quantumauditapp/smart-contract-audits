@@ -3,13 +3,13 @@ token: Aster
 ticker: ASTER
 network: bsc
 risk_score: 30
-status: medium
+status: low
 date: 2026-07-22
 ---
 
 # Aster (ASTER) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 30/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aster-bsc)
 
@@ -73,10 +73,10 @@ The contract is not implemented as an upgradeable proxy. This means that once de
 |--------|-------|
 | **Contract** | [`0x000a...556a`](https://bscscan.com/address/0x000ae314e2a2172a039b26378814c252734f556a) |
 | **Network** | BNB Chain |
-| **Price** | $0.6259 |
-| **24h Volume** | $491.8K |
-| **Liquidity** | $916.8K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.7346 |
+| **24h Volume** | $2.85M |
+| **Liquidity** | $981.4K |
+| **Volume / Liquidity** | 2.9× |
 | **Token Age** | 10mo |
 | **Top-10 Holders** | 93.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

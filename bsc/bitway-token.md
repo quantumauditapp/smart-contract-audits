@@ -2,14 +2,14 @@
 token: Bitway Token
 ticker: BTW
 network: bsc
-risk_score: 54
-status: high
+risk_score: 39
+status: medium
 date: 2026-07-27
 ---
 
 # Bitway Token (BTW) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 54/100 — 🟠 High Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bitway-token-bsc)
 
@@ -26,8 +26,15 @@ The BitwayToken contract implements an ERC20 token with custom transfer restrict
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The BitwayToken contract is built upon well-audited OpenZeppelin libraries (ERC20, Ownable, ERC20Permit), which contributes to a solid foundation (7.2 Code Security). The custom `_update` logic… |
-| **Governance / Economics** | 2/10 | High | The contract exhibits a high degree of centralization, with the owner having significant control over token transferability (7.3 Access Control). Specifically, the owner can indefinitely extend the… |
-| **Upgrades** | 6/10 | Medium | The BitwayToken contract is not designed with an upgrade mechanism (7.7 Upgrades). This means its logic is immutable once deployed, eliminating risks associated with proxy patterns or upgradeability… |
+| **Governance / Economics** | 5/10 | Medium | The contract exhibits a high degree of centralization, with the owner having significant control over token transferability (7.3 Access Control). Specifically, the owner can indefinitely extend the… |
+| **Upgrades** | 7/10 | Low | The BitwayToken contract is not designed with an upgrade mechanism (7.7 Upgrades). This means its logic is immutable once deployed, eliminating risks associated with proxy patterns or upgradeability… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | 21.5% |
+| **Top-3 Unlocked** | 38.2% |
 
 ## Security Findings
 
@@ -66,12 +73,12 @@ The `ETA` (Estimated Time of Arrival) logic within the `setTransferAllowedTimest
 |--------|-------|
 | **Contract** | [`0x4440...acaa`](https://bscscan.com/address/0x444045b0ee1ee319a660a5e3d604ca0ffa35acaa) |
 | **Network** | BNB Chain |
-| **Price** | $0.09705 |
-| **24h Volume** | $160.0K |
-| **Liquidity** | $30.2K |
-| **Volume / Liquidity** | 5.3× |
+| **Price** | $0.4517 |
+| **24h Volume** | $160.2K |
+| **Liquidity** | $39.3K |
+| **Volume / Liquidity** | 4.1× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 98.6% of supply |
+| **Top-10 Holders** | 96.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 908 buys / 653 sells |
 

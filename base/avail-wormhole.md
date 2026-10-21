@@ -3,13 +3,13 @@ token: Avail (Wormhole)
 ticker: AVAIL
 network: base
 risk_score: 61
-status: high
+status: medium
 date: 2026-08-12
 ---
 
 # Avail (Wormhole) (AVAIL) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 61/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/avail-wormhole-base)
 
@@ -89,12 +89,12 @@ The contract correctly calls `_disableInitializers()` in its constructor. This i
 |--------|-------|
 | **Contract** | [`0xd89d...057a`](https://basescan.org/address/0xd89d90d26b48940fa8f58385fe84625d468e057a) |
 | **Network** | Base |
-| **Price** | $0.002466 |
-| **24h Volume** | $75.6K |
-| **Liquidity** | $71.8K |
-| **Volume / Liquidity** | 1.1× |
+| **Price** | $0.002154 |
+| **24h Volume** | $1.0K |
+| **Liquidity** | $65.9K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 94.9% of supply |
+| **Top-10 Holders** | 90.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 719 buys / 716 sells |
 

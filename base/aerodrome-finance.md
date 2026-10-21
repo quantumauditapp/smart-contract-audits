@@ -33,8 +33,8 @@ This audit covers the provided Solidity source code, which includes the OpenZepp
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 38.2% |
-| **Top-3 Unlocked** | 54.8% |
+| **Top-1 Unlocked Holder** | 26.3% |
+| **Top-3 Unlocked** | 57.6% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The provided source code primarily consists of the OpenZeppelin `ERC20` base con
 |--------|-------|
 | **Contract** | [`0x9401...8631`](https://basescan.org/address/0x940181a94a35a4569e4529a3cdfb74e38fd98631) |
 | **Network** | Base |
-| **Price** | $0.4175 |
-| **24h Volume** | $2.49M |
-| **Liquidity** | $25.50M |
+| **Price** | $0.4979 |
+| **24h Volume** | $2.66M |
+| **Liquidity** | $29.21M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 67.0% of supply |
+| **Top-10 Holders** | 66.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3451 buys / 4713 sells |
 

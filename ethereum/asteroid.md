@@ -73,12 +73,12 @@ The standard ERC20 `approve` function is susceptible to a known race condition. 
 |--------|-------|
 | **Contract** | [`0xaff2...d044`](https://etherscan.io/address/0xaff2565091e7207191dbe340b8528d02fa78d044) |
 | **Network** | Ethereum |
-| **Price** | $0.001412 |
-| **24h Volume** | $66.3K |
-| **Liquidity** | $204.4K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.00297 |
+| **24h Volume** | $232.1K |
+| **Liquidity** | $345.8K |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 26.0% of supply |
+| **Top-10 Holders** | 25.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 239 buys / 275 sells |
 

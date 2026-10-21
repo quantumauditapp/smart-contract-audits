@@ -2,14 +2,14 @@
 token: Anoma
 ticker: XAN
 network: bsc
-risk_score: 81
-status: critical
+risk_score: 71
+status: high
 date: 2026-08-11
 ---
 
 # Anoma (XAN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 81/100 — 🔴 Critical Risk**
+> **Risk Score: 71/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/anoma-bsc)
 
@@ -26,7 +26,7 @@ This audit covers the TokenImplementation contract, which serves as the logic fo
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract exhibits a strong technical foundation (7.1 Architecture, 7.2 Code Security). It correctly implements ERC-20 standards and integrates EIP-712 permit functionality. State separation via… |
-| **Governance / Economics** | 2/10 | High | The contract design (7.4 Economic, 7.5 Governance) grants significant centralized control to the `owner` address. The owner can `mint` and `burn` tokens, directly impacting the total supply and… |
+| **Governance / Economics** | 3/10 | High | The contract design (7.4 Economic, 7.5 Governance) grants significant centralized control to the `owner` address. The owner can `mint` and `burn` tokens, directly impacting the total supply and… |
 | **Upgrades** | 1/10 | High | The contract is designed for upgradeability using the BeaconProxy pattern (7.7 Upgrades). The `initializer` modifier is correctly implemented to prevent re-initialization of the contract's state… |
 
 ## Proxy Upgrade Controls
@@ -40,8 +40,8 @@ This audit covers the TokenImplementation contract, which serves as the logic fo
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 78.6% |
-| **Top-3 Unlocked** | ⚠️ 99.3% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.6% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ The `_initializePermitStateIfNeeded()` function is called at the beginning of ev
 |--------|-------|
 | **Contract** | [`0x7427...a07f`](https://bscscan.com/address/0x7427bd9542e64d1ac207a540cfce194b7390a07f) |
 | **Network** | BNB Chain |
-| **Price** | $0.01227 |
-| **24h Volume** | $2.10M |
-| **Liquidity** | $473.4K |
-| **Volume / Liquidity** | 4.4× |
+| **Price** | $0.01311 |
+| **24h Volume** | $586.7K |
+| **Liquidity** | $490.4K |
+| **Volume / Liquidity** | 1.2× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 84.4% of supply |
+| **Top-10 Holders** | 89.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 14204 buys / 14669 sells |
 

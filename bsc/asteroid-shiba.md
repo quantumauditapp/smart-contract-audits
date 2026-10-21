@@ -2,14 +2,14 @@
 token: Asteroid Shiba
 ticker: ASTEROID
 network: bsc
-risk_score: 50
+risk_score: 65
 status: high
 date: 2026-08-15
 ---
 
 # Asteroid Shiba (ASTEROID) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 65/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/asteroid-shiba-bsc)
 
@@ -25,16 +25,23 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with a multi-s
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture (7.1) is complex due to its multi-state tax machine, increasing the surface for logic errors. A critical code security (7.2) issue is the missing implementation of the… |
-| **Governance / Economics** | 4/10 | Medium | The economic model (7.4) presents a high risk due to the entire `maxSupply` being minted to the owner during initialization, leading to extreme centralization and potential market manipulation.… |
-| **Upgrades** | 8/10 | Low | The contract is designed for upgradeability (7.7) using OpenZeppelin's `Initializable` and `Upgradeable` patterns, including `_disableInitializers()` in the constructor. This indicates a UUPS proxy… |
+| **Technical** | 5/10 | Medium | The technical architecture (7.1) is complex due to its multi-state tax machine, increasing the surface for logic errors. A critical code security (7.2) issue is the missing implementation of the… |
+| **Governance / Economics** | 5/10 | Medium | The economic model (7.4) presents a high risk due to the entire `maxSupply` being minted to the owner during initialization, leading to extreme centralization and potential market manipulation.… |
+| **Upgrades** | 3/10 | High | The contract is designed for upgradeability (7.7) using OpenZeppelin's `Initializable` and `Upgradeable` patterns, including `_disableInitializers()` in the constructor. This indicates a UUPS proxy… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 81.9% |
-| **Top-3 Unlocked** | ⚠️ 90.4% |
+| **Top-1 Unlocked Holder** | 39.9% |
+| **Top-3 Unlocked** | ⚠️ 85.8% |
 
 ## Security Findings
 
@@ -94,16 +101,16 @@ The `_liquidateTax` function is invoked at the beginning of every `_transfer` ca
 |--------|-------|
 | **Contract** | [`0x3309...7777`](https://bscscan.com/address/0x330990dae53bca4c5811c5362b44c33a47db7777) |
 | **Network** | BNB Chain |
-| **Price** | $0.001027 |
-| **24h Volume** | $957.0K |
-| **Liquidity** | $145.5K |
-| **Volume / Liquidity** | 6.6× |
+| **Price** | $0.0006237 |
+| **24h Volume** | $289.1K |
+| **Liquidity** | $122.3K |
+| **Volume / Liquidity** | 2.4× |
 | **Token Age** | 14d |
-| **Top-10 Holders** | 25.7% of supply |
+| **Top-10 Holders** | 27.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3262 buys / 2138 sells |
 
-## Security Flags (4/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
@@ -111,7 +118,7 @@ The `_liquidateTax` function is invoked at the beginning of every `_transfer` ca
 | Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
@@ -121,7 +128,7 @@ The `_liquidateTax` function is invoked at the beginning of every `_transfer` ca
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

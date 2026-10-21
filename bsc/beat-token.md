@@ -3,13 +3,13 @@ token: Beat Token
 ticker: BEAT
 network: bsc
 risk_score: 34
-status: medium
+status: low
 date: 2026-08-11
 ---
 
 # Beat Token (BEAT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/beat-token-bsc)
 
@@ -66,10 +66,10 @@ The `ERC20.sol` contract utilizes `unchecked` blocks in the `transferFrom`, `dec
 |--------|-------|
 | **Contract** | [`0xcf32...3e36`](https://bscscan.com/address/0xcf3232b85b43bca90e51d38cc06cc8bb8c8a3e36) |
 | **Network** | BNB Chain |
-| **Price** | $1.0480 |
-| **24h Volume** | $336.8K |
-| **Liquidity** | $61.2K |
-| **Volume / Liquidity** | 5.5× |
+| **Price** | $0.1238 |
+| **24h Volume** | $20.1K |
+| **Liquidity** | $69.9K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 9mo |
 | **Top-10 Holders** | 57.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

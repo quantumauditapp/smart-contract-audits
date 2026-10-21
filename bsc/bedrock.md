@@ -3,13 +3,13 @@ token: Bedrock
 ticker: BR
 network: bsc
 risk_score: 77
-status: critical
+status: high
 date: 2026-08-13
 ---
 
 # Bedrock (BR) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 77/100 — 🔴 Critical Risk**
+> **Risk Score: 77/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bedrock-bsc)
 
@@ -33,8 +33,8 @@ The Bedrock token contract implements ERC20 with burnable functionality and robu
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 93.8% |
-| **Top-3 Unlocked** | ⚠️ 99.6% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ The `setFreezeToRecipient` function allows the `DEFAULT_ADMIN_ROLE` to change th
 |--------|-------|
 | **Contract** | [`0xff7d...6b41`](https://bscscan.com/address/0xff7d6a96ae471bbcd7713af9cb1feeb16cf56b41) |
 | **Network** | BNB Chain |
-| **Price** | $0.2303 |
-| **24h Volume** | $1.59M |
-| **Liquidity** | $1.23M |
-| **Volume / Liquidity** | 1.3× |
+| **Price** | $0.3073 |
+| **24h Volume** | $1.9K |
+| **Liquidity** | $1.59M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 84.0% of supply |
+| **Top-10 Holders** | 84.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3513 buys / 2652 sells |
 

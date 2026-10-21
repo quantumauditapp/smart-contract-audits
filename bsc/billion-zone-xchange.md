@@ -2,14 +2,14 @@
 token: Billion Zone Xchange
 ticker: ZBX
 network: bsc
-risk_score: 21
-status: medium
+risk_score: 28
+status: low
 date: 2026-08-13
 ---
 
 # Billion Zone Xchange (ZBX) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 21/100 — 🟡 Medium Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/billion-zone-xchange-bsc)
 
@@ -26,7 +26,7 @@ This audit covers the provided Solidity source code for the BillionZoneXchange t
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 9/10 | Low | The technical architecture (7.1) is a standard ERC20 token inheriting from OpenZeppelin's Ownable and ERC20 contracts, which are highly secure and widely adopted. Code security (7.2) benefits from… |
-| **Governance / Economics** | 6/10 | Medium | The contract's access control (7.3) is managed by OpenZeppelin's Ownable pattern. The ownership has been renounced, which decentralizes control and eliminates the risk of a single owner performing… |
+| **Governance / Economics** | 4/10 | Medium | The contract's access control (7.3) is managed by OpenZeppelin's Ownable pattern. The ownership has been renounced, which decentralizes control and eliminates the risk of a single owner performing… |
 | **Upgrades** | 10/10 | Low | The contract is not designed as a proxy (7.7) and is therefore not upgradeable. This eliminates all risks associated with upgrade mechanisms, such as proxy implementation vulnerabilities, storage… |
 
 ## LP Distribution
@@ -73,12 +73,12 @@ The core functionality of the token, including its ERC20 standard compliance and
 |--------|-------|
 | **Contract** | [`0x9672...c81c`](https://bscscan.com/address/0x9672646878dff0dc3ec7cd5fda4eef27ca71c81c) |
 | **Network** | BNB Chain |
-| **Price** | $0.4253 |
-| **24h Volume** | $125.4K |
-| **Liquidity** | $20.5K |
-| **Volume / Liquidity** | 6.1× |
+| **Price** | $0.2988 |
+| **24h Volume** | $18.2K |
+| **Liquidity** | $18.2K |
+| **Volume / Liquidity** | 1.0× |
 | **Token Age** | 26d |
-| **Top-10 Holders** | 77.4% of supply |
+| **Top-10 Holders** | 80.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1187 buys / 721 sells |
 

@@ -3,13 +3,13 @@ token: Autonolas
 ticker: OLAS
 network: ethereum
 risk_score: 76
-status: critical
+status: high
 date: 2026-08-14
 ---
 
 # Autonolas (OLAS) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 76/100 — 🔴 Critical Risk**
+> **Risk Score: 76/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/autonolas-eth)
 
@@ -80,12 +80,12 @@ While the contract provides `increaseAllowance` and `decreaseAllowance` function
 |--------|-------|
 | **Contract** | [`0x0001...5cb0`](https://etherscan.io/address/0x0001a500a6b18995b03f44bb040a5ffc28e45cb0) |
 | **Network** | Ethereum |
-| **Price** | $0.01917 |
-| **24h Volume** | $365.0K |
-| **Liquidity** | $1.02M |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.02521 |
+| **24h Volume** | $12.5K |
+| **Liquidity** | $1.33M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 75.4% of supply |
+| **Top-10 Holders** | 75.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 199 buys / 112 sells |
 
