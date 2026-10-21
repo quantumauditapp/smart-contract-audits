@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**985 reports** · Updated daily · [← All Networks](../README.md)
+**991 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Shiitake](./shiitake.md) | SHIIT | 🟢 18/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/shiitake-sol) |
+| [dotcom](./dotcom.md) | DOT | 🟢 14/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/dotcom-sol) |
+| [requests](./requests.md) | REQUESTS | 🟢 21/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/requests-sol) |
+| [Kimchi Wif Hat](./kimchi-wif-hat.md) | WIFCHI | 🟢 21/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/kimchi-wif-hat-sol) |
+| [Aura Final Boss](./aura-final-boss-sol-b7f1.md) | KIMCHI | 🟢 13/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/aura-final-boss-sol-b7f1) |
+| [XTO](./xto-sol-3b8d.md) | XTO | 🟢 0/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/xto-sol-3b8d) |
 | [TRENCHPAD | iOS APP](./trenchpad-ios-app.md) | TRENCHPAD | 🟢 17/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/trenchpad-ios-app-sol) |
 | [Meme](./meme-sol-b6ac.md) | MEME | 🟡 36/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/meme-sol-b6ac) |
 | [anza.xyz](./anzaxyz.md) | ANZA | 🟢 19/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/anzaxyz-sol) |

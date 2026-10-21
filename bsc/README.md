@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**431 reports** · Updated daily · [← All Networks](../README.md)
+**432 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Axis Robotics](./axis-robotics-bsc-58cc.md) | AXIS | 🟠 75/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/axis-robotics-bsc-58cc) |
 | [LOL World Championship](./lol-world-championship.md) | 英雄联盟 | 🟢 0/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/lol-world-championship-bsc) |
 | [Trump](./trump-bsc-0008.md) | TRUMP | 🟠 82/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/trump-bsc-0008) |
 | [智能时代](./token-25b152.md) | 智能时代 | 🟢 27/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/token-25b152-bsc) |

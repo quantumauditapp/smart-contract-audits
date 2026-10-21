@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**307 reports** · Updated daily · [← All Networks](../README.md)
+**310 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [American Oil Dividend Fund](./american-oil-dividend-fund-base-b8c3.md) | AODF | 🟡 56/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-b8c3) |
+| [World Oil Supply Exchange](./world-oil-supply-exchange.md) | WOSE | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/world-oil-supply-exchange-base) |
+| [United States Dividend Program🔥](./united-states-dividend-program-base-026a.md) | USDP | 🟡 55/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/united-states-dividend-program-base-026a) |
 | [American Oil Dividend Fund](./american-oil-dividend-fund-base-1faa.md) | AODF | 🟡 60/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-1faa) |
 | [American Overwatch Protocol](./american-overwatch-protocol-base-1282.md) | AOP | 🟡 60/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-base-1282) |
 | [American Trust Fund System](./american-trust-fund-system-base-7bee.md) | ATFS | 🟡 62/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-trust-fund-system-base-7bee) |
