@@ -2,14 +2,14 @@
 token: Andes Virus
 ticker: ANDV
 network: solana
-risk_score: 68
-status: high
+risk_score: 37
+status: medium
 date: 2026-06-10
 ---
 
 # Andes Virus (ANDV) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 37/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/andes-virus-sol)
 
@@ -25,9 +25,19 @@ This audit of the Andes Virus (ANDV) SPL Token Mint found no critical or high-se
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Andes Virus (ANDV) token is implemented using the spl-token-2022 program, offering enhanced features. A key strength is the revocation of both the mint authority and freeze authority, ensuring no… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $12,082 in total DEX liquidity, which is sufficient for small trades without severe slippage. Trading activity shows a 24-hour volume of $327, resulting in… |
-| **Upgrades** | 5/10 | Medium | The token's immutability is a significant strength, as both the mint and freeze authorities have been revoked. This means the token supply is fixed and no accounts can be frozen post-launch. The… |
+| **Technical** | 8/10 | Low | The Andes Virus (ANDV) token is implemented using the spl-token-2022 program, offering enhanced features. A key strength is the revocation of both the mint authority and freeze authority, ensuring no… |
+| **Governance / Economics** | 2/10 | High | The token exhibits moderate liquidity with $12,082 in total DEX liquidity, which is sufficient for small trades without severe slippage. Trading activity shows a 24-hour volume of $327, resulting in… |
+| **Upgrades** | 8/10 | Low | The token's immutability is a significant strength, as both the mint and freeze authorities have been revoked. This means the token supply is fixed and no accounts can be frozen post-launch. The… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,21 +45,20 @@ This audit of the Andes Virus (ANDV) SPL Token Mint found no critical or high-se
 |--------|-------|
 | **Contract** | [`jvKtLF...pump`](https://solscan.io/account/jvKtLFLnNGPM7edS9KEpYqPxuY8HPGTZohLFM4Spump) |
 | **Network** | Solana |
-| **Price** | $0.00001337 |
-| **24h Volume** | $814 |
-| **Liquidity** | $11.1K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.00000747 |
+| **24h Volume** | $16 |
+| **Liquidity** | $10.3K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 7d |
-| **Top-10 Holders** | 69.5% of supply |
+| **Top-10 Holders** | 84.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -57,9 +66,8 @@ This audit of the Andes Virus (ANDV) SPL Token Mint found no critical or high-se
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

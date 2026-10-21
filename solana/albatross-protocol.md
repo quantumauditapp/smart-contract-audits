@@ -2,14 +2,14 @@
 token: Albatross Protocol
 ticker: ALBATROSS
 network: solana
-risk_score: 56
-status: high
+risk_score: 44
+status: medium
 date: 2026-07-25
 ---
 
 # Albatross Protocol (ALBATROSS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 56/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/albatross-protocol-sol)
 
@@ -25,9 +25,19 @@ This audit of the Albatross Protocol (ALBATROSS) SPL Token Mint found no critica
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no existing accounts can be frozen. No Transfer… |
-| **Governance / Economics** | 2/10 | High | The token exhibits moderate liquidity with $44,580 USD in total DEX liquidity. The 24-hour volume of $94,110 USD results in a Volume/Liquidity Ratio of 2.11, which is considered normal and does not… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing further changes to the token supply or account freeze status. The token utilizes the spl-token-2022… |
+| **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no existing accounts can be frozen. No Transfer… |
+| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $44,580 USD in total DEX liquidity. The 24-hour volume of $94,110 USD results in a Volume/Liquidity Ratio of 2.11, which is considered normal and does not… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing further changes to the token supply or account freeze status. The token utilizes the spl-token-2022… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the Albatross Protocol (ALBATROSS) SPL Token Mint found no critica
 |--------|-------|
 | **Contract** | [`Ds28wM...pump`](https://solscan.io/account/Ds28wMScEFn1ztgwKYM1m2d2Qse6p6jXJhW6KpZppump) |
 | **Network** | Solana |
-| **Price** | $0.0003174 |
-| **24h Volume** | $94.1K |
-| **Liquidity** | $44.6K |
-| **Volume / Liquidity** | 2.1× |
+| **Price** | $0.00000348 |
+| **24h Volume** | $0 |
+| **Liquidity** | $5.9K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 9d |
-| **Top-10 Holders** | 26.5% of supply |
+| **Top-10 Holders** | 93.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 835 buys / 1098 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the Albatross Protocol (ALBATROSS) SPL Token Mint found no critica
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

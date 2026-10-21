@@ -2,14 +2,14 @@
 token: AI Rig Complex
 ticker: ARC
 network: solana
-risk_score: 53
-status: high
+risk_score: 15
+status: low
 date: 2026-07-25
 ---
 
 # AI Rig Complex (ARC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 15/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ai-rig-complex-sol)
 
@@ -25,9 +25,9 @@ The AI Rig Complex (arc) token mint exhibits a high concentration of tokens amon
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The AI Rig Complex token is implemented using the standard `spl-token` program (v3). Both the mint authority and freeze authority are revoked (None), indicating that no new tokens can be minted and… |
-| **Governance / Economics** | 1/10 | High | A significant economic risk is present due to high holder concentration, with the top 10 token accounts holding 79.75% of the total supply. This level of concentration makes the token susceptible to… |
-| **Upgrades** | 5/10 | Medium | The token's upgradeability and mutability features are minimal, contributing to a stable state. The mint authority and freeze authority are both revoked, meaning no further changes can be made to the… |
+| **Technical** | 9/10 | Low | The AI Rig Complex token is implemented using the standard `spl-token` program (v3). Both the mint authority and freeze authority are revoked (None), indicating that no new tokens can be minted and… |
+| **Governance / Economics** | 2/10 | High | A significant economic risk is present due to high holder concentration, with the top 10 token accounts holding 79.75% of the total supply. This level of concentration makes the token susceptible to… |
+| **Upgrades** | 8/10 | Low | The token's upgradeability and mutability features are minimal, contributing to a stable state. The mint authority and freeze authority are both revoked, meaning no further changes can be made to the… |
 
 ## LP Distribution
 
@@ -51,22 +51,21 @@ Top 10 token accounts hold 79.75% of supply. Coordinated sell-off would crash pr
 |--------|-------|
 | **Contract** | [`61V8vB...pump`](https://solscan.io/account/61V8vBaqAGMpgDQi4JcAwo1dmBGHsyhzodcPqnEVpump) |
 | **Network** | Solana |
-| **Price** | $0.05375 |
-| **24h Volume** | $271.7K |
-| **Liquidity** | $3.37M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.08147 |
+| **24h Volume** | $24.6K |
+| **Liquidity** | $11.74M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 79.8% of supply |
+| **Top-10 Holders** | 81.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 719 buys / 697 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -74,9 +73,8 @@ Top 10 token accounts hold 79.75% of supply. Coordinated sell-off would crash pr
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

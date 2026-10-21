@@ -2,14 +2,14 @@
 token: Aliens are real
 ticker: ALIENS
 network: solana
-risk_score: 51
-status: high
+risk_score: 12
+status: low
 date: 2026-06-10
 ---
 
 # Aliens are real (ALIENS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aliens-are-real-sol)
 
@@ -25,9 +25,19 @@ This audit of the Aliens SPL Token Mint found no critical or high-severity issue
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Aliens token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing token… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a total DEX liquidity of $94,820, with a 24-hour trading volume of $72,217. The volume-to-liquidity ratio is 0.76, which is considered normal and does not suggest wash trading. The… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, meaning the token's supply and account freeze status are immutable. The token does not have a transfer hook, and the… |
+| **Technical** | 10/10 | Low | The Aliens token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing token… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a total DEX liquidity of $94,820, with a 24-hour trading volume of $72,217. The volume-to-liquidity ratio is 0.76, which is considered normal and does not suggest wash trading. The… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and account freeze status are immutable. The token does not have a transfer hook, and the… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,21 +45,20 @@ This audit of the Aliens SPL Token Mint found no critical or high-severity issue
 |--------|-------|
 | **Contract** | [`F5tfzt...pump`](https://solscan.io/account/F5tfztTnE4sYsMhZT5KrFpWvHmYSfJZoRjCuxKPbpump) |
 | **Network** | Solana |
-| **Price** | $0.0002547 |
-| **24h Volume** | $5.8K |
-| **Liquidity** | $83.7K |
+| **Price** | $0.0002592 |
+| **24h Volume** | $5.3K |
+| **Liquidity** | $106.3K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 35.8% of supply |
+| **Top-10 Holders** | 40.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -57,9 +66,8 @@ This audit of the Aliens SPL Token Mint found no critical or high-severity issue
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

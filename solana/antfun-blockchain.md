@@ -2,14 +2,14 @@
 token: AntFun BlockChain
 ticker: ANTFUN
 network: solana
-risk_score: 58
-status: high
+risk_score: 12
+status: low
 date: 2026-08-12
 ---
 
 # AntFun BlockChain (ANTFUN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/antfun-blockchain-sol)
 
@@ -25,9 +25,9 @@ The AntFun BlockChain (ANTFUN) SPL token mint exhibits a medium risk profile pri
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The AntFun BlockChain (ANTFUN) token operates on the classic spl-token program. Both the Mint Authority and Freeze Authority have been revoked, which is a positive security measure ensuring no new… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a significant holder concentration, with the top 10 accounts controlling approximately 63.85% of the total supply. This level of concentration introduces a medium risk of market… |
-| **Upgrades** | 5/10 | Medium | The AntFun BlockChain (ANTFUN) token mint has no upgradeability concerns typical of EVM contracts, as SPL token mints do not have on-chain source code or proxy patterns. The Mint Authority and Freeze… |
+| **Technical** | 10/10 | Low | The AntFun BlockChain (ANTFUN) token operates on the classic spl-token program. Both the Mint Authority and Freeze Authority have been revoked, which is a positive security measure ensuring no new… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a significant holder concentration, with the top 10 accounts controlling approximately 63.85% of the total supply. This level of concentration introduces a medium risk of market… |
+| **Upgrades** | 8/10 | Low | The AntFun BlockChain (ANTFUN) token mint has no upgradeability concerns typical of EVM contracts, as SPL token mints do not have on-chain source code or proxy patterns. The Mint Authority and Freeze… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ Top 10 token accounts hold 63.85% of supply. Coordinated sell-off would crash pr
 |--------|-------|
 | **Contract** | [`CWZ6Bs...4cMt`](https://solscan.io/account/CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt) |
 | **Network** | Solana |
-| **Price** | $0.04213 |
-| **24h Volume** | $3.05M |
-| **Liquidity** | $38.96M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.01731 |
+| **24h Volume** | $25.91M |
+| **Liquidity** | $18.25M |
+| **Volume / Liquidity** | 1.4× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 63.8% of supply |
+| **Top-10 Holders** | 49.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6773 buys / 8202 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ Top 10 token accounts hold 63.85% of supply. Coordinated sell-off would crash pr
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

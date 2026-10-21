@@ -2,14 +2,14 @@
 token: AgenC
 ticker: AGENC
 network: solana
-risk_score: 65
-status: high
+risk_score: 27
+status: low
 date: 2026-08-15
 ---
 
 # AgenC (AGENC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 65/100 — 🟠 High Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/agenc-sol)
 
@@ -25,9 +25,9 @@ The AgenC SPL Token Mint exhibits a medium risk profile primarily due to signifi
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The AgenC token is implemented using the spl-token-2022 program, offering modern SPL features. Crucially, both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens can be… |
-| **Governance / Economics** | 1/10 | High | Economic analysis reveals a medium risk due to holder concentration, with the top 10 token accounts collectively holding 58.01% of the supply. This level of concentration could lead to significant… |
-| **Upgrades** | 5/10 | Medium | The AgenC token exhibits a strong posture against post-launch changes. The Mint Authority and Freeze Authority have both been revoked, preventing any further supply inflation or account freezing. Key… |
+| **Technical** | 10/10 | Low | The AgenC token is implemented using the spl-token-2022 program, offering modern SPL features. Crucially, both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens can be… |
+| **Governance / Economics** | 5/10 | Medium | Economic analysis reveals a medium risk due to holder concentration, with the top 10 token accounts collectively holding 58.01% of the supply. This level of concentration could lead to significant… |
+| **Upgrades** | 8/10 | Low | The AgenC token exhibits a strong posture against post-launch changes. The Mint Authority and Freeze Authority have both been revoked, preventing any further supply inflation or account freezing. Key… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ Top 10 token accounts hold 58.01% of supply. Coordinated sell-off would crash pr
 |--------|-------|
 | **Contract** | [`5yC9BM...pump`](https://solscan.io/account/5yC9BM8KUsJTPbWPLfA2N8qH1s9V8DQ3Vcw1G6Jdpump) |
 | **Network** | Solana |
-| **Price** | $0.0006848 |
-| **24h Volume** | $136.0K |
-| **Liquidity** | $98.8K |
-| **Volume / Liquidity** | 1.4× |
+| **Price** | $0.0006483 |
+| **24h Volume** | $24.8K |
+| **Liquidity** | $121.2K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 58.0% of supply |
+| **Top-10 Holders** | 61.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 665 buys / 556 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ Top 10 token accounts hold 58.01% of supply. Coordinated sell-off would crash pr
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

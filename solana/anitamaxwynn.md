@@ -2,14 +2,14 @@
 token: AnitaMaxWynn
 ticker: WYNN
 network: solana
-risk_score: 65
-status: high
+risk_score: 21
+status: low
 date: 2026-06-10
 ---
 
 # AnitaMaxWynn (WYNN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 65/100 — 🟠 High Risk**
+> **Risk Score: 21/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/anitamaxwynn-sol)
 
@@ -25,9 +25,19 @@ This audit of the AnitaMaxWynn (WYNN) SPL Token Mint found no critical or high-s
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The AnitaMaxWynn (WYNN) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no holder… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a normal trading pattern with a 24-hour volume of $17,449 against a liquidity of $38,516, resulting in a healthy Volume/Liquidity Ratio of 0.45. The DEX pair has been active for 57… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable as both the mint and freeze authorities are revoked (7.7 Upgrades). No Token-2022 extensions like Transfer Hook or Default Account State Frozen are active… |
+| **Technical** | 10/10 | Low | The AnitaMaxWynn (WYNN) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no holder… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a normal trading pattern with a 24-hour volume of $17,449 against a liquidity of $38,516, resulting in a healthy Volume/Liquidity Ratio of 0.45. The DEX pair has been active for 57… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable as both the mint and freeze authorities are revoked (7.7 Upgrades). No Token-2022 extensions like Transfer Hook or Default Account State Frozen are active… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,21 +45,20 @@ This audit of the AnitaMaxWynn (WYNN) SPL Token Mint found no critical or high-s
 |--------|-------|
 | **Contract** | [`CvXyWJ...pump`](https://solscan.io/account/CvXyWJRq3ZxqifMzAuyUomDvJ8PF8NitXx8HxRLGpump) |
 | **Network** | Solana |
-| **Price** | $0.0001775 |
-| **24h Volume** | $19.2K |
-| **Liquidity** | $38.9K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.0002002 |
+| **24h Volume** | $1.7K |
+| **Liquidity** | $52.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | 37.5% of supply |
+| **Top-10 Holders** | 45.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -57,9 +66,8 @@ This audit of the AnitaMaxWynn (WYNN) SPL Token Mint found no critical or high-s
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

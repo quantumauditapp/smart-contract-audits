@@ -2,14 +2,14 @@
 token: Act I : The AI Prophecy
 ticker: ACT
 network: solana
-risk_score: 50
-status: high
+risk_score: 12
+status: low
 date: 2026-08-11
 ---
 
 # Act I : The AI Prophecy (ACT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/act-i-the-ai-prophecy-sol)
 
@@ -25,9 +25,9 @@ The audit of the Act I : The AI Prophecy (ACT) SPL token mint reveals a signific
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no holder accounts can… |
-| **Governance / Economics** | 1/10 | High | The token exhibits healthy liquidity at $1,236,064 and a normal 24-hour volume to liquidity ratio of 0.54, indicating organic trading activity. The pair has been active for 660 days, providing a… |
-| **Upgrades** | 5/10 | Medium | Both the Mint and Freeze authorities have been permanently revoked, preventing any future changes to the token's supply or the ability to freeze holder accounts. The token's metadata is also… |
+| **Technical** | 9/10 | Low | The token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no holder accounts can… |
+| **Governance / Economics** | 2/10 | High | The token exhibits healthy liquidity at $1,236,064 and a normal 24-hour volume to liquidity ratio of 0.54, indicating organic trading activity. The pair has been active for 660 days, providing a… |
+| **Upgrades** | 8/10 | Low | Both the Mint and Freeze authorities have been permanently revoked, preventing any future changes to the token's supply or the ability to freeze holder accounts. The token's metadata is also… |
 
 ## LP Distribution
 
@@ -51,22 +51,21 @@ Top 10 token accounts hold 81.48% of supply. Coordinated sell-off would crash pr
 |--------|-------|
 | **Contract** | [`GJAFwW...pump`](https://solscan.io/account/GJAFwWjJ3vnTsrQVabjBVK2TYB1YtRCQXRDfDgUnpump) |
 | **Network** | Solana |
-| **Price** | $0.01047 |
-| **24h Volume** | $754.5K |
-| **Liquidity** | $1.23M |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.01095 |
+| **24h Volume** | $164.8K |
+| **Liquidity** | $1.57M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 81.5% of supply |
+| **Top-10 Holders** | 82.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4886 buys / 5462 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -74,9 +73,8 @@ Top 10 token accounts hold 81.48% of supply. Coordinated sell-off would crash pr
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
