@@ -59,10 +59,10 @@ The provided source code for the `_transfer` function in `FourERC20.sol` is trun
 |--------|-------|
 | **Contract** | [`0x99f5...4444`](https://bscscan.com/address/0x99f5054f1d9799f901df533fbfe5d9b3f25b4444) |
 | **Network** | BNB Chain |
-| **Price** | $0.00006247 |
-| **24h Volume** | $74.5K |
-| **Liquidity** | $25.1K |
-| **Volume / Liquidity** | 3.0× |
+| **Price** | $0.00006087 |
+| **24h Volume** | $22.1K |
+| **Liquidity** | $29.5K |
+| **Volume / Liquidity** | 0.8× |
 | **Token Age** | 3d |
 | **Top-10 Holders** | 100.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

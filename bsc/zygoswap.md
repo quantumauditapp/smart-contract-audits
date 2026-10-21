@@ -2,14 +2,14 @@
 token: ZygoSwap
 ticker: ZSWAP
 network: bsc
-risk_score: 22
-status: medium
+risk_score: 21
+status: low
 date: 2026-06-10
 ---
 
 # ZygoSwap (ZSWAP) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 22/100 — 🟡 Medium Risk**
+> **Risk Score: 21/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zygoswap-bsc)
 
@@ -73,12 +73,12 @@ The internal `_init` function, which sets the token's name and symbol, does not 
 |--------|-------|
 | **Contract** | [`0x2e44...4444`](https://bscscan.com/address/0x2e44ab95549b8a12afdb970bde5a6a78365e4444) |
 | **Network** | BNB Chain |
-| **Price** | $0.0003953 |
-| **24h Volume** | $257 |
-| **Liquidity** | $70.1K |
+| **Price** | $0.001002 |
+| **24h Volume** | $4.8K |
+| **Liquidity** | $132.2K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 33.0% of supply |
+| **Top-10 Holders** | 28.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
 ## Security Flags (5/5 passed)

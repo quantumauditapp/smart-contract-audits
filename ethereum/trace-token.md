@@ -2,14 +2,14 @@
 token: Trace Token
 ticker: TRAC
 network: ethereum
-risk_score: 69
+risk_score: 67
 status: high
 date: 2026-08-17
 ---
 
 # Trace Token (TRAC) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 69/100 — 🟠 High Risk**
+> **Risk Score: 67/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/trace-token-eth)
 
@@ -33,8 +33,8 @@ The TracToken contract is an ERC-20 compliant token with minting and vesting fun
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 80.6% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 51.5% |
+| **Top-3 Unlocked** | ⚠️ 86.0% |
 
 ## Security Findings
 
@@ -101,12 +101,12 @@ The `approve` function in `StandardToken` includes an assertion: `assert(allowed
 |--------|-------|
 | **Contract** | [`0xaa7a...0a6f`](https://etherscan.io/address/0xaa7a9ca87d3694b5755f213b5d04094b8d0f0a6f) |
 | **Network** | Ethereum |
-| **Price** | $0.2618 |
-| **24h Volume** | $84.1K |
-| **Liquidity** | $349.8K |
+| **Price** | $0.3373 |
+| **24h Volume** | $90.7K |
+| **Liquidity** | $410.6K |
 | **Volume / Liquidity** | 0.2× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 51.7% of supply |
+| **Top-10 Holders** | 51.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 84 buys / 79 sells |
 

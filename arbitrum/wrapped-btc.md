@@ -3,13 +3,13 @@ token: Wrapped BTC
 ticker: WBTC
 network: arbitrum
 risk_score: 57
-status: high
+status: medium
 date: 2026-07-22
 ---
 
 # Wrapped BTC (WBTC) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 57/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-btc-arb)
 
@@ -41,8 +41,8 @@ The audited system comprises a `BeaconProxyFactory` for deploying `ClonableBeaco
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 20.9% |
-| **Top-3 Unlocked** | 44.4% |
+| **Top-1 Unlocked Holder** | 22.6% |
+| **Top-3 Unlocked** | 42.1% |
 
 ## Security Findings
 
@@ -88,12 +88,12 @@ The `BeaconProxyFactory` utilizes the `CREATE2` opcode via OpenZeppelin's `Creat
 |--------|-------|
 | **Contract** | [`0x2f2a...5b0f`](https://arbiscan.io/address/0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f) |
 | **Network** | Arbitrum |
-| **Price** | $65,531.5900 |
-| **24h Volume** | $18.42M |
-| **Liquidity** | $35.55M |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $80,979.3400 |
+| **24h Volume** | $25.85M |
+| **Liquidity** | $39.06M |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | 61.1% of supply |
+| **Top-10 Holders** | 63.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2748 buys / 2428 sells |
 

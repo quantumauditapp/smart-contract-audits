@@ -3,13 +3,13 @@ token: USDS Stablecoin
 ticker: USDS
 network: ethereum
 risk_score: 63
-status: high
+status: medium
 date: 2026-08-13
 ---
 
 # USDS Stablecoin (USDS) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 63/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/usds-stablecoin-eth)
 
@@ -81,12 +81,12 @@ The `_isValidSignature` function checks `signer.code.length > 0` to determine if
 |--------|-------|
 | **Contract** | [`0xdc03...384f`](https://etherscan.io/address/0xdc035d45d973e3ec169d2276ddab16f1e407384f) |
 | **Network** | Ethereum |
-| **Price** | $1.0040 |
-| **24h Volume** | $128.1K |
-| **Liquidity** | $7.87M |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.9978 |
+| **24h Volume** | $477.1K |
+| **Liquidity** | $8.99M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 93.1% of supply |
+| **Top-10 Holders** | 93.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 71 buys / 48 sells |
 

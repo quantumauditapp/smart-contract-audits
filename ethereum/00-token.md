@@ -3,13 +3,13 @@ token: 00 Token
 ticker: 00
 network: ethereum
 risk_score: 54
-status: high
+status: medium
 date: 2026-08-13
 ---
 
 # 00 Token (00) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 54/100 — 🟠 High Risk**
+> **Risk Score: 54/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/00-token-eth)
 
@@ -41,7 +41,7 @@ The P00lsTokenCreator contract serves as an ERC-20 token with Merkle drop functi
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 52.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -81,12 +81,12 @@ The `P00lsTokenCreator` contract has a strong dependency on the `xCreatorToken` 
 |--------|-------|
 | **Contract** | [`0x881b...250d`](https://etherscan.io/address/0x881ba05de1e78f549cc63a8f6cabb1d4ad32250d) |
 | **Network** | Ethereum |
-| **Price** | $0.009741 |
-| **24h Volume** | $64.7K |
-| **Liquidity** | $271.9K |
+| **Price** | $0.01929 |
+| **24h Volume** | $94.8K |
+| **Liquidity** | $464.7K |
 | **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 91.6% of supply |
+| **Top-10 Holders** | 89.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 125 buys / 89 sells |
 

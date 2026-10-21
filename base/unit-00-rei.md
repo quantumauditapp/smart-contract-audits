@@ -33,8 +33,8 @@ The REI token contract is a standard ERC20 implementation, inheriting from a rob
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 19.6% |
-| **Top-3 Unlocked** | 53.5% |
+| **Top-1 Unlocked Holder** | 30.1% |
+| **Top-3 Unlocked** | 63.3% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The contract does not implement any blacklist functionality. This means there is
 |--------|-------|
 | **Contract** | [`0x6b25...4cfd`](https://basescan.org/address/0x6b2504a03ca4d43d0d73776f6ad46dab2f2a4cfd) |
 | **Network** | Base |
-| **Price** | $0.02521 |
-| **24h Volume** | $295.7K |
-| **Liquidity** | $2.08M |
+| **Price** | $0.01876 |
+| **24h Volume** | $169.7K |
+| **Liquidity** | $1.94M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 25.6% of supply |
+| **Top-10 Holders** | 26.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 335 buys / 303 sells |
 

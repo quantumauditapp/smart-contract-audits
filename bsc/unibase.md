@@ -3,13 +3,13 @@ token: Unibase
 ticker: UB
 network: bsc
 risk_score: 57
-status: high
+status: medium
 date: 2026-07-22
 ---
 
 # Unibase (UB) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 57/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/unibase-bsc)
 
@@ -33,8 +33,8 @@ This audit reviews the provided Solidity interface definitions for LayerZero V2.
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.3% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 93.1% |
+| **Top-3 Unlocked** | ⚠️ 98.8% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ Functions like `setDefaultReceiveLibraryTimeout` and `setReceiveLibraryTimeout` 
 |--------|-------|
 | **Contract** | [`0x40b8...6fde`](https://bscscan.com/address/0x40b8129b786d766267a7a118cf8c07e31cdb6fde) |
 | **Network** | BNB Chain |
-| **Price** | $0.1282 |
-| **24h Volume** | $10.72M |
-| **Liquidity** | $3.79M |
-| **Volume / Liquidity** | 2.8× |
+| **Price** | $0.1241 |
+| **24h Volume** | $2.72M |
+| **Liquidity** | $3.76M |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 70.9% of supply |
+| **Top-10 Holders** | 76.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 25406 buys / 24927 sells |
 

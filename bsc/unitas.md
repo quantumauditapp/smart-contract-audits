@@ -2,14 +2,14 @@
 token: Unitas
 ticker: UP
 network: bsc
-risk_score: 52
-status: high
+risk_score: 59
+status: medium
 date: 2026-08-11
 ---
 
 # Unitas (UP) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 52/100 — 🟠 High Risk**
+> **Risk Score: 59/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/unitas-bsc)
 
@@ -80,12 +80,12 @@ The `UnitasOFT` contract primarily acts as a wrapper, inheriting functionality f
 |--------|-------|
 | **Contract** | [`0x0000...0000`](https://bscscan.com/address/0x000008d2175f9aeaddb2430c26f8a6f73c5a0000) |
 | **Network** | BNB Chain |
-| **Price** | $0.3782 |
-| **24h Volume** | $246.0K |
-| **Liquidity** | $1.24M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.4827 |
+| **24h Volume** | $17.49M |
+| **Liquidity** | $725.0K |
+| **Volume / Liquidity** | 24.1× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 97.9% of supply |
+| **Top-10 Holders** | 98.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1568 buys / 1609 sells |
 

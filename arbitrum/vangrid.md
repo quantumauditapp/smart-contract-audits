@@ -3,13 +3,13 @@ token: Vangrid
 ticker: VAN
 network: arbitrum
 risk_score: 84
-status: critical
+status: high
 date: 2026-08-15
 ---
 
 # Vangrid (VAN) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 84/100 — 🔴 Critical Risk**
+> **Risk Score: 84/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vangrid-arb)
 
@@ -33,7 +33,7 @@ This report is based on a limited analysis as no Solidity source code was provid
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -78,7 +78,7 @@ Smart contracts often interact with external contracts, oracles, or other protoc
 | **Liquidity** | $89.4K |
 | **Volume / Liquidity** | 1.7× |
 | **Token Age** | 23h |
-| **Top-10 Holders** | 100.0% of supply |
+| **Top-10 Holders** | 93.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1096 buys / 279 sells |
 

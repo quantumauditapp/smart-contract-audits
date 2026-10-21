@@ -2,14 +2,14 @@
 token: VELO
 ticker: VELO
 network: bsc
-risk_score: 58
-status: high
+risk_score: 57
+status: medium
 date: 2026-07-27
 ---
 
 # VELO (VELO) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 57/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/velo-bsc)
 
@@ -80,12 +80,12 @@ The initial token mint amount in the constructor is hardcoded to 30 billion toke
 |--------|-------|
 | **Contract** | [`0xf486...fd46`](https://bscscan.com/address/0xf486ad071f3bee968384d2e39e2d8af0fcf6fd46) |
 | **Network** | BNB Chain |
-| **Price** | $0.0035 |
-| **24h Volume** | $74.3K |
-| **Liquidity** | $557.5K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.004656 |
+| **24h Volume** | $661.1K |
+| **Liquidity** | $642.4K |
+| **Volume / Liquidity** | 1.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 74.7% of supply |
+| **Top-10 Holders** | 73.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 917 buys / 663 sells |
 

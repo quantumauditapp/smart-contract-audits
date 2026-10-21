@@ -2,14 +2,14 @@
 token: usocks
 ticker: USOCKS
 network: ethereum
-risk_score: 86
+risk_score: 91
 status: critical
 date: 2026-08-13
 ---
 
 # usocks (USOCKS) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 86/100 — 🔴 Critical Risk**
+> **Risk Score: 91/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/usocks-eth)
 
@@ -33,7 +33,7 @@ The USocks contract implements an ERC20 token with integrated NFT reward mechani
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 74.2% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -94,12 +94,12 @@ The contract lacks a mechanism to pause critical operations in an emergency (e.g
 |--------|-------|
 | **Contract** | [`0x2e43...f7d2`](https://etherscan.io/address/0x2e43e18a19ae896c6f8657ca6285b9672f67f7d2) |
 | **Network** | Ethereum |
-| **Price** | $0.00000324 |
-| **24h Volume** | $690.2K |
-| **Liquidity** | $146.3K |
-| **Volume / Liquidity** | 4.7× |
+| **Price** | $0.00000068 |
+| **24h Volume** | $380 |
+| **Liquidity** | $113.3K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 20h |
-| **Top-10 Holders** | 40.0% of supply |
+| **Top-10 Holders** | 81.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2143 buys / 2304 sells |
 

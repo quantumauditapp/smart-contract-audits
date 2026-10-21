@@ -33,8 +33,8 @@ The WLD token contract implements a standard ERC20 token with additional logic f
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 82.8% |
-| **Top-3 Unlocked** | ⚠️ 96.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 52.0% |
+| **Top-3 Unlocked** | ⚠️ 94.6% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The `setMinter` function allows the contract owner to update the `minter` addres
 |--------|-------|
 | **Contract** | [`0x163f...8753`](https://etherscan.io/address/0x163f8c2467924be0ae7b5347228cabf260318753) |
 | **Network** | Ethereum |
-| **Price** | $0.3834 |
-| **24h Volume** | $25.3K |
-| **Liquidity** | $300.1K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.3949 |
+| **24h Volume** | $27.0K |
+| **Liquidity** | $176.6K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 70.0% of supply |
+| **Top-10 Holders** | 68.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 293 buys / 263 sells |
 

@@ -2,14 +2,14 @@
 token: ZigCoin
 ticker: ZIG
 network: ethereum
-risk_score: 39
+risk_score: 38
 status: medium
 date: 2026-08-17
 ---
 
 # ZigCoin (ZIG) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zigcoin-eth)
 
@@ -73,12 +73,12 @@ The ZigCoin contract is a basic ERC-20 implementation and does not include any m
 |--------|-------|
 | **Contract** | [`0xb261...4f01`](https://etherscan.io/address/0xb2617246d0c6c0087f18703d576831899ca94f01) |
 | **Network** | Ethereum |
-| **Price** | $0.03623 |
-| **24h Volume** | $72.3K |
-| **Liquidity** | $92.7K |
+| **Price** | $0.04148 |
+| **24h Volume** | $92.4K |
+| **Liquidity** | $117.7K |
 | **Volume / Liquidity** | 0.8× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | 70.3% of supply |
+| **Top-10 Holders** | 73.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 97 buys / 155 sells |
 

@@ -2,14 +2,14 @@
 token: Velvet
 ticker: VELVET
 network: bsc
-risk_score: 52
-status: high
+risk_score: 54
+status: medium
 date: 2026-08-12
 ---
 
 # Velvet (VELVET) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 52/100 — 🟠 High Risk**
+> **Risk Score: 54/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/velvet-bsc)
 
@@ -27,14 +27,14 @@ The VelvetToken contract implements a BEP20 token with additional features for c
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The contract leverages standard OpenZeppelin libraries for its BEP20 implementation, contributing to a solid foundation (7.2 Code Security). The custom `_beforeTokenTransfer` hook is correctly… |
 | **Governance / Economics** | 5/10 | Medium | The contract grants the owner extensive centralized control, posing significant economic risks (7.4 Economic). The owner can mint up to 1 billion tokens, leading to potential inflation and dilution… |
-| **Upgrades** | 5/10 | Medium | The VelvetToken contract is not designed with upgradeability features (7.7 Upgrades). It is deployed as a standard, non-proxy contract, meaning its logic cannot be modified post-deployment. This… |
+| **Upgrades** | 7/10 | Low | The VelvetToken contract is not designed with upgradeability features (7.7 Upgrades). It is deployed as a standard, non-proxy contract, meaning its logic cannot be modified post-deployment. This… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 15.5% |
-| **Top-3 Unlocked** | 37.3% |
+| **Top-1 Unlocked Holder** | 44.8% |
+| **Top-3 Unlocked** | 67.5% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The contract relies heavily on a single `owner` address for critical operations,
 |--------|-------|
 | **Contract** | [`0x8b19...1488`](https://bscscan.com/address/0x8b194370825e37b33373e74a41009161808c1488) |
 | **Network** | BNB Chain |
-| **Price** | $0.5531 |
-| **24h Volume** | $1.23M |
-| **Liquidity** | $2.49M |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.09223 |
+| **24h Volume** | $10.6K |
+| **Liquidity** | $642.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 91.7% of supply |
+| **Top-10 Holders** | 87.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 33635 buys / 35423 sells |
 

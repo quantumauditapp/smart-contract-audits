@@ -2,14 +2,14 @@
 token: Virtuals Protocol
 ticker: VIRTUAL
 network: ethereum
-risk_score: 53
-status: high
+risk_score: 51
+status: medium
 date: 2026-07-11
 ---
 
 # Virtuals Protocol (VIRTUAL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/virtuals-protocol-eth)
 
@@ -33,8 +33,8 @@ The VirtualToken contract is an ERC-20 token implementation that heavily leverag
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 58.6% |
-| **Top-3 Unlocked** | ⚠️ 91.9% |
+| **Top-1 Unlocked Holder** | ⚠️ 95.3% |
+| **Top-3 Unlocked** | ⚠️ 97.6% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The `Ownable` contract includes a `renounceOwnership()` function. If the current
 |--------|-------|
 | **Contract** | [`0x44ff...bf73`](https://etherscan.io/address/0x44ff8620b8ca30902395a7bd3f2407e1a091bf73) |
 | **Network** | Ethereum |
-| **Price** | $0.6223 |
-| **24h Volume** | $20.0K |
-| **Liquidity** | $238.8K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.6976 |
+| **24h Volume** | $10.9K |
+| **Liquidity** | $293.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 90.3% of supply |
+| **Top-10 Holders** | 90.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 148 buys / 98 sells |
 

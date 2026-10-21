@@ -3,13 +3,13 @@ token: Turtle
 ticker: TURTLE
 network: ethereum
 risk_score: 78
-status: critical
+status: high
 date: 2026-08-13
 ---
 
 # Turtle (TURTLE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 78/100 — 🔴 Critical Risk**
+> **Risk Score: 78/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/turtle-eth)
 
@@ -81,10 +81,10 @@ The contract heavily relies on battle-tested OpenZeppelin Upgradeable contracts 
 |--------|-------|
 | **Contract** | [`0x66fd...3afd`](https://etherscan.io/address/0x66fd8de541c0594b4dccdfc13bf3a390e50d3afd) |
 | **Network** | Ethereum |
-| **Price** | $0.04296 |
-| **24h Volume** | $89.6K |
-| **Liquidity** | $1.45M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.0417 |
+| **24h Volume** | $51.4K |
+| **Liquidity** | $1.43M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6mo |
 | **Top-10 Holders** | 98.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

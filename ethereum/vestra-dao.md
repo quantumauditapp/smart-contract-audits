@@ -3,13 +3,13 @@ token: Vestra DAO
 ticker: VSTR
 network: ethereum
 risk_score: 47
-status: high
+status: medium
 date: 2026-08-11
 ---
 
 # Vestra DAO (VSTR) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 47/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vestra-dao-eth)
 
@@ -73,12 +73,12 @@ The constructor mints the entire initial supply of 50,000,000,000 tokens (adjust
 |--------|-------|
 | **Contract** | [`0x92d5...b434`](https://etherscan.io/address/0x92d5942f468447f1f21c2092580f15544923b434) |
 | **Network** | Ethereum |
-| **Price** | $0.00524 |
-| **24h Volume** | $71.1K |
-| **Liquidity** | $986.1K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.003455 |
+| **24h Volume** | $45.0K |
+| **Liquidity** | $928.9K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 98.7% of supply |
+| **Top-10 Holders** | 98.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 65 buys / 38 sells |
 

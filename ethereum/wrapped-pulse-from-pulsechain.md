@@ -2,14 +2,14 @@
 token: Wrapped Pulse from PulseChain
 ticker: WPLS
 network: ethereum
-risk_score: 61
+risk_score: 65
 status: high
 date: 2026-08-11
 ---
 
 # Wrapped Pulse from PulseChain (WPLS) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 65/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-pulse-from-pulsechain-eth)
 
@@ -26,15 +26,15 @@ This report details the security audit of an ERC20 token contract and associated
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The technical architecture leverages well-established ERC20 patterns and includes `SafeMath` for arithmetic safety (7.1 Architecture, 7.2 Code Security). However, the use of Solidity `^0.4.24` is a… |
-| **Governance / Economics** | 5/10 | Medium | The token implements standard `Ownable` access control, ensuring that critical functions like `mint` and `finishMinting` are restricted to the contract owner (7.5 Governance). The economic model… |
+| **Governance / Economics** | 4/10 | Medium | The token implements standard `Ownable` access control, ensuring that critical functions like `mint` and `finishMinting` are restricted to the contract owner (7.5 Governance). The economic model… |
 | **Upgrades** | 4/10 | Medium | The provided contracts do not implement an explicit upgrade mechanism (7.7 Upgrades). The prefill data indicates the contract is not a proxy. Therefore, upgrade safety issues are not directly… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 30.0% |
-| **Top-3 Unlocked** | 77.6% |
+| **Top-1 Unlocked Holder** | 30.6% |
+| **Top-3 Unlocked** | ⚠️ 81.0% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ The `ERC677` interface is imported, which includes the `transferAndCall(address,
 |--------|-------|
 | **Contract** | [`0xa882...d68a`](https://etherscan.io/address/0xa882606494d86804b5514e07e6bd2d6a6ee6d68a) |
 | **Network** | Ethereum |
-| **Price** | $0.0000101 |
-| **24h Volume** | $52.5K |
-| **Liquidity** | $92.1K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.00001104 |
+| **24h Volume** | $27.3K |
+| **Liquidity** | $106.2K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 38.3% of supply |
+| **Top-10 Holders** | 35.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 106 buys / 63 sells |
 

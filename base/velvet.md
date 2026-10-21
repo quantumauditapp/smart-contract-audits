@@ -3,13 +3,13 @@ token: Velvet
 ticker: VELVET
 network: base
 risk_score: 63
-status: high
+status: medium
 date: 2026-06-11
 ---
 
 # Velvet (VELVET) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 63/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/velvet-base)
 
@@ -41,7 +41,7 @@ This audit covers the `BridgeToken` proxy contract, which utilizes the OpenZeppe
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 94.9% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -81,12 +81,12 @@ The `BridgeToken` contract correctly utilizes the `BeaconProxy` pattern from Ope
 |--------|-------|
 | **Contract** | [`0xbf92...7cdd`](https://basescan.org/address/0xbf927b841994731c573bdf09ceb0c6b0aa887cdd) |
 | **Network** | Base |
-| **Price** | $0.5093 |
-| **24h Volume** | $560.9K |
-| **Liquidity** | $3.51M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.09206 |
+| **24h Volume** | $992.2K |
+| **Liquidity** | $1.25M |
+| **Volume / Liquidity** | 0.8× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 74.9% of supply |
+| **Top-10 Holders** | 70.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6684 buys / 6219 sells |
 

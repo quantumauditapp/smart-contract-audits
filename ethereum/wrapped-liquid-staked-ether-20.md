@@ -2,14 +2,14 @@
 token: Wrapped liquid staked Ether 2.0
 ticker: WSTETH
 network: ethereum
-risk_score: 34
-status: medium
+risk_score: 12
+status: low
 date: 2026-08-11
 ---
 
 # Wrapped liquid staked Ether 2.0 (WSTETH) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-liquid-staked-ether-20-eth)
 
@@ -25,16 +25,16 @@ The audited contract is a standard ERC20 token implementation, likely based on O
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The technical architecture is based on a well-established OpenZeppelin ERC20 standard, leveraging `SafeMath` for robust arithmetic operations (7.1 Architecture, 7.2 Code Security). The contract… |
-| **Governance / Economics** | 3/10 | High | The contract implements standard ERC20 token economics, focusing on transfers and allowances without complex economic models or governance mechanisms (7.4 Economic, 7.5 Governance). The base contract… |
-| **Upgrades** | 3/10 | High | The contract is not designed with an upgradeability pattern (e.g., proxy) (7.7 Upgrades). This simplifies the deployment model by eliminating upgrade-related risks such as storage collisions or logic… |
+| **Technical** | 10/10 | Low | The technical architecture is based on a well-established OpenZeppelin ERC20 standard, leveraging `SafeMath` for robust arithmetic operations (7.1 Architecture, 7.2 Code Security). The contract… |
+| **Governance / Economics** | 4/10 | Medium | The contract implements standard ERC20 token economics, focusing on transfers and allowances without complex economic models or governance mechanisms (7.4 Economic, 7.5 Governance). The base contract… |
+| **Upgrades** | 6/10 | Medium | The contract is not designed with an upgradeability pattern (e.g., proxy) (7.7 Upgrades). This simplifies the deployment model by eliminating upgrade-related risks such as storage collisions or logic… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 90.3% |
-| **Top-3 Unlocked** | ⚠️ 97.2% |
+| **Top-1 Unlocked Holder** | ⚠️ 56.4% |
+| **Top-3 Unlocked** | 78.6% |
 
 ## Security Findings
 
@@ -73,22 +73,22 @@ The contract uses Solidity version `0.6.12`. While this version is generally sta
 |--------|-------|
 | **Contract** | [`0x7f39...2ca0`](https://etherscan.io/address/0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0) |
 | **Network** | Ethereum |
-| **Price** | $2,332.8000 |
-| **24h Volume** | $1.47M |
-| **Liquidity** | $5.31M |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $3,129.5300 |
+| **24h Volume** | $2.65M |
+| **Liquidity** | $6.42M |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | 67.5% of supply |
+| **Top-10 Holders** | 65.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 138 buys / 83 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ❌ Fail |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -98,7 +98,7 @@ The contract uses Solidity version `0.6.12`. While this version is generally sta
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

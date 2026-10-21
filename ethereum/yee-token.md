@@ -101,12 +101,12 @@ The `renounceOwnership` function is present, allowing the owner to transfer owne
 |--------|-------|
 | **Contract** | [`0x9ac9...77fd`](https://etherscan.io/address/0x9ac9468e7e3e1d194080827226b45d0b892c77fd) |
 | **Network** | Ethereum |
-| **Price** | $0.00298 |
-| **24h Volume** | $48.2K |
-| **Liquidity** | $355.3K |
+| **Price** | $0.003565 |
+| **24h Volume** | $40.5K |
+| **Liquidity** | $450.8K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 18.6% of supply |
+| **Top-10 Holders** | 18.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 47 buys / 68 sells |
 

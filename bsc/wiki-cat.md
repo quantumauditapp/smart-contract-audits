@@ -2,14 +2,14 @@
 token: WIKI CAT
 ticker: WKC
 network: bsc
-risk_score: 89
+risk_score: 87
 status: critical
 date: 2026-07-22
 ---
 
 # WIKI CAT (WKC) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 89/100 — 🔴 Critical Risk**
+> **Risk Score: 87/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wiki-cat-bsc)
 
@@ -34,7 +34,7 @@ The CoinToken contract implements a standard ERC-20 token with added features su
 | Metric | Value |
 |--------|-------|
 | **LP Burned** | 37.2% |
-| **LP Locked** | 99.2% — UNCX |
+| **LP Locked** | 99.1% — UNCX |
 | **Top-1 Unlocked Holder** | 0.3% |
 
 ## Security Findings
@@ -88,13 +88,13 @@ The variables `txFee` and `burnFee` are named in a way that typically implies a 
 |--------|-------|
 | **Contract** | [`0x6ec9...8edb`](https://bscscan.com/address/0x6ec90334d89dbdc89e08a133271be3d104128edb) |
 | **Network** | BNB Chain |
-| **Price** | $0.00000006 |
-| **24h Volume** | $45.4K |
-| **Liquidity** | $905.9K |
+| **Price** | $0.00000009 |
+| **24h Volume** | $145.9K |
+| **Liquidity** | $1.32M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | 43.1% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 42.9% of supply |
+| **Buy / Sell Tax** | 2.0% / 2.0% |
 | **24h Transactions** | 833 buys / 529 sells |
 
 ## Security Flags (3/5 passed)

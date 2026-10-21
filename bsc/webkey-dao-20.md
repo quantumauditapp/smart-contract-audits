@@ -87,13 +87,13 @@ The `MINT` role is defined in the `VaultOwned` contract (`bytes32 public constan
 |--------|-------|
 | **Contract** | [`0xe0a2...b82e`](https://bscscan.com/address/0xe0a281deff5c9d8d67af09d39340e134ac81b82e) |
 | **Network** | BNB Chain |
-| **Price** | $1.0330 |
-| **24h Volume** | $340.4K |
-| **Liquidity** | $26.59M |
+| **Price** | $1.0100 |
+| **24h Volume** | $320.0K |
+| **Liquidity** | $12.40M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | 99.6% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.4% |
+| **Top-10 Holders** | 99.0% of supply |
+| **Buy / Sell Tax** | 0.0% / 40.0% |
 | **24h Transactions** | 3505 buys / 16586 sells |
 
 ## Security Flags (3/5 passed)

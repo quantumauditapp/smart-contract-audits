@@ -2,14 +2,14 @@
 token: XRP Token
 ticker: XRP
 network: bsc
-risk_score: 61
-status: high
+risk_score: 62
+status: medium
 date: 2026-08-12
 ---
 
 # XRP Token (XRP) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 62/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/xrp-token-bsc)
 
@@ -73,10 +73,10 @@ The `BEP20XRP` contract implements an external view function `getOwner()` which 
 |--------|-------|
 | **Contract** | [`0x1d2f...0dbe`](https://bscscan.com/address/0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe) |
 | **Network** | BNB Chain |
-| **Price** | $1.0190 |
-| **24h Volume** | $154.7K |
-| **Liquidity** | $1.12M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $1.4500 |
+| **24h Volume** | $450.7K |
+| **Liquidity** | $1.31M |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 3y |
 | **Top-10 Holders** | 65.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

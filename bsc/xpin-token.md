@@ -3,13 +3,13 @@ token: XPIN Token
 ticker: XPIN
 network: bsc
 risk_score: 34
-status: medium
+status: low
 date: 2026-07-22
 ---
 
 # XPIN Token (XPIN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/xpin-token-bsc)
 
@@ -66,12 +66,12 @@ The `ERC20` contract utilizes `unchecked` blocks for arithmetic operations withi
 |--------|-------|
 | **Contract** | [`0xd955...31a6`](https://bscscan.com/address/0xd955c9ba56fb1ab30e34766e252a97ccce3d31a6) |
 | **Network** | BNB Chain |
-| **Price** | $0.001468 |
-| **24h Volume** | $586.1K |
-| **Liquidity** | $915.4K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.00102 |
+| **24h Volume** | $502.7K |
+| **Liquidity** | $719.1K |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 11mo |
-| **Top-10 Holders** | 80.6% of supply |
+| **Top-10 Holders** | 81.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3931 buys / 4182 sells |
 

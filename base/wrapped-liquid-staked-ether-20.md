@@ -3,13 +3,13 @@ token: Wrapped liquid staked Ether 2.0
 ticker: WSTETH
 network: base
 risk_score: 47
-status: high
+status: medium
 date: 2026-08-12
 ---
 
 # Wrapped liquid staked Ether 2.0 (WSTETH) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 47/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-liquid-staked-ether-20-base)
 
@@ -42,8 +42,8 @@ The ERC20Bridged token, deployed via an OssifiableProxy, implements standard ERC
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 59.0% |
-| **Top-3 Unlocked** | 72.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 57.0% |
+| **Top-3 Unlocked** | 70.5% |
 
 ## Security Findings
 
@@ -75,12 +75,12 @@ The `ERC20Metadata` contract uses a custom storage slot (`DYNAMIC_METADATA_SLOT`
 |--------|-------|
 | **Contract** | [`0xc1cb...e452`](https://basescan.org/address/0xc1cba3fcea344f92d9239c08c0568f6f2f0ee452) |
 | **Network** | Base |
-| **Price** | $2,361.6600 |
-| **24h Volume** | $222.8K |
-| **Liquidity** | $2.92M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $3,132.0500 |
+| **24h Volume** | $2.46M |
+| **Liquidity** | $3.32M |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 78.5% of supply |
+| **Top-10 Holders** | 76.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 215 buys / 113 sells |
 

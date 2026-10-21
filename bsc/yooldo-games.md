@@ -2,14 +2,14 @@
 token: Yooldo Games
 ticker: ESPORTS
 network: bsc
-risk_score: 42
+risk_score: 52
 status: medium
 date: 2026-07-24
 ---
 
 # Yooldo Games (ESPORTS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/yooldo-games-bsc)
 
@@ -26,15 +26,15 @@ The YooldoToken contract is an ERC20 token built on OpenZeppelin standards, inco
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract `YooldoToken` is built upon battle-tested OpenZeppelin ERC20 standards, including `ERC20Burnable`, `ERC20Pausable`, `ERC20Permit`, and `ERC20Votes`. The implementation correctly… |
-| **Governance / Economics** | 4/10 | Medium | The token design grants significant centralized control to the `Ownable` address, which is configured as a multisig (7.3 Access Control). The owner can pause all token transfers, freeze individual… |
+| **Governance / Economics** | 2/10 | High | The token design grants significant centralized control to the `Ownable` address, which is configured as a multisig (7.3 Access Control). The owner can pause all token transfers, freeze individual… |
 | **Upgrades** | 7/10 | Low | The `YooldoToken` contract is not designed to be upgradeable (7.7 Upgrades), meaning its logic is immutable once deployed. This eliminates risks associated with proxy patterns, such as storage… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 31.1% |
-| **Top-3 Unlocked** | 61.2% |
+| **Top-1 Unlocked Holder** | ⚠️ 68.9% |
+| **Top-3 Unlocked** | ⚠️ 80.1% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The `YooldoToken` contract is deployed directly and does not implement an upgrad
 |--------|-------|
 | **Contract** | [`0xf39e...8e48`](https://bscscan.com/address/0xf39e4b21c84e737df08e2c3b32541d856f508e48) |
 | **Network** | BNB Chain |
-| **Price** | $0.02637 |
-| **24h Volume** | $43.8K |
-| **Liquidity** | $994.2K |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.01445 |
+| **24h Volume** | $200.5K |
+| **Liquidity** | $76.0K |
+| **Volume / Liquidity** | 2.6× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 85.4% of supply |
+| **Top-10 Holders** | 75.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1697 buys / 3075 sells |
 

@@ -2,14 +2,14 @@
 token: Wrapped liquid staked Ether 2.0
 ticker: WSTETH
 network: arbitrum
-risk_score: 53
-status: high
+risk_score: 42
+status: medium
 date: 2026-08-11
 ---
 
 # Wrapped liquid staked Ether 2.0 (WSTETH) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-liquid-staked-ether-20-arb)
 
@@ -42,8 +42,8 @@ The audit of the ERC20Bridged token implementation, deployed behind an Ossifiabl
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 77.1% |
-| **Top-3 Unlocked** | ⚠️ 96.9% |
+| **Top-1 Unlocked Holder** | 46.0% |
+| **Top-3 Unlocked** | 76.4% |
 
 ## Security Findings
 
@@ -82,12 +82,12 @@ The `ERC20Metadata` contract uses a custom storage slot (`DYNAMIC_METADATA_SLOT 
 |--------|-------|
 | **Contract** | [`0x5979...0529`](https://arbiscan.io/address/0x5979d7b546e38e414f7e9822514be443a4800529) |
 | **Network** | Arbitrum |
-| **Price** | $2,333.9500 |
-| **24h Volume** | $224.7K |
-| **Liquidity** | $746.4K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $3,132.7400 |
+| **24h Volume** | $963.4K |
+| **Liquidity** | $1.05M |
+| **Volume / Liquidity** | 0.9× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 77.5% of supply |
+| **Top-10 Holders** | 76.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 115 buys / 46 sells |
 

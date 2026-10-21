@@ -2,14 +2,14 @@
 token: XPULS
 ticker: XPULS
 network: bsc
-risk_score: 49
+risk_score: 66
 status: high
 date: 2026-07-23
 ---
 
 # XPULS (XPULS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/xpuls-bsc)
 
@@ -25,9 +25,9 @@ The XPLUSToken contract implements a custom ERC20 token with complex tax mechani
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract leverages OpenZeppelin's ERC20, Ownable, and ReentrancyGuard, providing a solid security baseline (7.2 Code Security). However, the overridden `_transfer` function contains highly… |
-| **Governance / Economics** | 4/10 | Medium | The tokenomics involve high buy (3.5%) and sell (3.5%) tax rates, with a complex distribution mechanism to various addresses and a burn address (7.4 Economic). The `totalProfitTaxRate` is declared… |
-| **Upgrades** | 7/10 | Low | The contract is not designed with upgradeability patterns (e.g., proxy contracts). Therefore, there are no upgrade-related risks (7.7 Upgrades). Any changes to the contract logic would require a new… |
+| **Technical** | 6/10 | Medium | The contract leverages OpenZeppelin's ERC20, Ownable, and ReentrancyGuard, providing a solid security baseline (7.2 Code Security). However, the overridden `_transfer` function contains highly… |
+| **Governance / Economics** | 1/10 | High | The tokenomics involve high buy (3.5%) and sell (3.5%) tax rates, with a complex distribution mechanism to various addresses and a burn address (7.4 Economic). The `totalProfitTaxRate` is declared… |
+| **Upgrades** | 6/10 | Medium | The contract is not designed with upgradeability patterns (e.g., proxy contracts). Therefore, there are no upgrade-related risks (7.7 Upgrades). Any changes to the contract logic would require a new… |
 
 ## LP Distribution
 
@@ -96,13 +96,13 @@ The provided source code for the `XPLUSToken` contract is incomplete. Specifical
 |--------|-------|
 | **Contract** | [`0xabae...8228`](https://bscscan.com/address/0xabae909cd93bc2ddf90086f9aa6c3f8e154e8228) |
 | **Network** | BNB Chain |
-| **Price** | $0.03641 |
-| **24h Volume** | $1.95M |
-| **Liquidity** | $9.12M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.00004457 |
+| **24h Volume** | $0 |
+| **Liquidity** | $20 |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6mo |
 | **Top-10 Holders** | 37.9% of supply |
-| **Buy / Sell Tax** | 0.1% / 0.1% |
+| **Buy / Sell Tax** | 5.0% / 5.0% |
 | **24h Transactions** | 4983 buys / 14926 sells |
 
 ## Security Flags (4/5 passed)

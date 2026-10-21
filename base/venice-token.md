@@ -3,13 +3,13 @@ token: Venice Token
 ticker: VVV
 network: base
 risk_score: 51
-status: high
+status: medium
 date: 2026-06-10
 ---
 
 # Venice Token (VVV) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/venice-token-base)
 
@@ -33,8 +33,8 @@ The Venice token contract is an ERC20 implementation leveraging well-audited Sol
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 31.2% |
-| **Top-3 Unlocked** | 55.9% |
+| **Top-1 Unlocked Holder** | 32.5% |
+| **Top-3 Unlocked** | 54.9% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The `Venice` contract relies on external Solmate libraries (`ERC20`, `Owned`). W
 |--------|-------|
 | **Contract** | [`0xacfe...21bf`](https://basescan.org/address/0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf) |
 | **Network** | Base |
-| **Price** | $12.3900 |
-| **24h Volume** | $525.0K |
-| **Liquidity** | $9.93M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $17.1700 |
+| **24h Volume** | $662.4K |
+| **Liquidity** | $13.31M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 91.6% of supply |
+| **Top-10 Holders** | 92.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
 ## Security Flags (2/5 passed)

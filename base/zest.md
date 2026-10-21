@@ -2,14 +2,14 @@
 token: Zest
 ticker: ZEST
 network: base
-risk_score: 49
-status: high
+risk_score: 57
+status: medium
 date: 2026-08-11
 ---
 
 # Zest (ZEST) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 57/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zest-base)
 
@@ -26,7 +26,7 @@ The FactoryBurnMintERC20 contract implements a standard ERC20 token with control
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract exhibits strong technical security (7.2 Code Security) by utilizing battle-tested OpenZeppelin and Chainlink libraries, and compiling with Solidity 0.8.x, which includes built-in… |
-| **Governance / Economics** | 4/10 | Medium | The economic model (7.4 Economic) is straightforward, with an immutable `maxSupply` set at deployment, preventing uncontrolled inflation unless `maxSupply` is explicitly set to zero. Governance (7.5… |
+| **Governance / Economics** | 3/10 | High | The economic model (7.4 Economic) is straightforward, with an immutable `maxSupply` set at deployment, preventing uncontrolled inflation unless `maxSupply` is explicitly set to zero. Governance (7.5… |
 | **Upgrades** | 4/10 | Medium | The contract is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, there are no upgrade-specific risks such as proxy storage collisions or improper initialization. Any changes to the… |
 
 ## LP Distribution
@@ -66,12 +66,12 @@ The `getMinters()` and `getBurners()` functions return an array of all addresses
 |--------|-------|
 | **Contract** | [`0x7297...7fc2`](https://basescan.org/address/0x7297968ffb753dd12e4f6b1f18d9865c76707fc2) |
 | **Network** | Base |
-| **Price** | $0.1645 |
-| **24h Volume** | $1.15M |
-| **Liquidity** | $179.0K |
-| **Volume / Liquidity** | 6.4× |
+| **Price** | $0.1545 |
+| **24h Volume** | $1.47M |
+| **Liquidity** | $173.2K |
+| **Volume / Liquidity** | 8.5× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 99.2% of supply |
+| **Top-10 Holders** | 98.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 8144 buys / 9323 sells |
 

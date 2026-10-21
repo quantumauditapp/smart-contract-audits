@@ -3,13 +3,13 @@ token: Aave
 ticker: AAVE
 network: ethereum
 risk_score: 28
-status: medium
+status: low
 date: 2026-06-17
 ---
 
 # Aave (AAVE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 28/100 — 🟡 Medium Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aave-eth)
 
@@ -43,7 +43,7 @@ This audit covers the AaveTokenV3 contract, which functions as an ERC20 token, d
 | Metric | Value |
 |--------|-------|
 | **Top-1 Unlocked Holder** | 38.0% |
-| **Top-3 Unlocked** | 68.2% |
+| **Top-3 Unlocked** | 68.4% |
 
 ## Security Findings
 
@@ -96,12 +96,12 @@ The `AaveTokenV3` implementation is compiled with Solidity 0.8.20, which include
 |--------|-------|
 | **Contract** | [`0x7fc6...dae9`](https://etherscan.io/address/0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9) |
 | **Network** | Ethereum |
-| **Price** | $97.4700 |
-| **24h Volume** | $323.4K |
-| **Liquidity** | $13.05M |
+| **Price** | $131.0300 |
+| **24h Volume** | $359.6K |
+| **Liquidity** | $10.90M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 41.7% of supply |
+| **Top-10 Holders** | 43.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 97 buys / 78 sells |
 

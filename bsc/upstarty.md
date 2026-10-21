@@ -33,7 +33,7 @@ The Upstarty token contract implements a standard ERC20 token with burnable and 
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 56.4% |
+| **Top-1 Unlocked Holder** | ⚠️ 54.9% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -73,10 +73,10 @@ The provided code consists of several abstract contracts (`Context`, `ERC20`, `P
 |--------|-------|
 | **Contract** | [`0xb849...3466`](https://bscscan.com/address/0xb849c4d843769d42812fb600b1bcc8a6ba843466) |
 | **Network** | BNB Chain |
-| **Price** | $0.09946 |
-| **24h Volume** | $32.4K |
-| **Liquidity** | $117.6K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.142 |
+| **24h Volume** | $31.2K |
+| **Liquidity** | $145.4K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1y |
 | **Top-10 Holders** | 92.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

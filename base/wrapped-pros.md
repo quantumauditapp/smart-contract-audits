@@ -3,13 +3,13 @@ token: Wrapped PROS
 ticker: PROS
 network: base
 risk_score: 77
-status: critical
+status: high
 date: 2026-07-24
 ---
 
 # Wrapped PROS (PROS) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 77/100 — 🔴 Critical Risk**
+> **Risk Score: 77/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-pros-base)
 
@@ -33,7 +33,7 @@ The BurnMintERC20 contract implements a standard ERC20 token with additional min
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 97.4% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -73,12 +73,12 @@ The contract relies on the inherited `AccessControl.renounceRole` function for t
 |--------|-------|
 | **Contract** | [`0x8b7d...9832`](https://basescan.org/address/0x8b7dde054be9d180c1be7fae0874697374a49832) |
 | **Network** | Base |
-| **Price** | $0.3889 |
-| **24h Volume** | $916.6K |
-| **Liquidity** | $673.7K |
-| **Volume / Liquidity** | 1.4× |
+| **Price** | $0.4084 |
+| **24h Volume** | $542.6K |
+| **Liquidity** | $705.3K |
+| **Volume / Liquidity** | 0.8× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 93.5% of supply |
+| **Top-10 Holders** | 91.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 7821 buys / 8020 sells |
 

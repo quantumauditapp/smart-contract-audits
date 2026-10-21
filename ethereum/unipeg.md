@@ -2,14 +2,14 @@
 token: Unipeg
 ticker: UPEG
 network: ethereum
-risk_score: 24
-status: medium
+risk_score: 26
+status: low
 date: 2026-07-31
 ---
 
 # Unipeg (UPEG) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 24/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/unipeg-eth)
 
@@ -33,8 +33,8 @@ The Unipeg contract implements an ERC20 token with integrated NFT (Upeg) syncing
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 84.7% |
-| **Top-3 Unlocked** | ⚠️ 99.7% |
+| **Top-1 Unlocked Holder** | ⚠️ 84.2% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ The `Unipeg.sol` contract heavily relies on the internal implementation details 
 |--------|-------|
 | **Contract** | [`0x44b2...5505`](https://etherscan.io/address/0x44b28991b167582f18ba0259e0173176ca125505) |
 | **Network** | Ethereum |
-| **Price** | $443.0670 |
-| **24h Volume** | $911.4K |
-| **Liquidity** | $1.15M |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $221.3400 |
+| **24h Volume** | $83.2K |
+| **Liquidity** | $1.59M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 17.8% of supply |
+| **Top-10 Holders** | 19.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 709 buys / 586 sells |
 

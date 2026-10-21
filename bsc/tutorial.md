@@ -3,13 +3,13 @@ token: Tutorial
 ticker: TUT
 network: bsc
 risk_score: 32
-status: medium
+status: low
 date: 2026-08-11
 ---
 
 # Tutorial (TUT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 32/100 — 🟡 Medium Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tutorial-bsc)
 
@@ -34,9 +34,9 @@ The audit of the Token contract, an ERC20-compliant token with custom transfer r
 | Metric | Value |
 |--------|-------|
 | **LP Burned** | 0.1% |
-| **LP Locked** | 34.4% — Dead Address, GoPlus SafeToken Locker |
-| **Top-1 Unlocked Holder** | ⚠️ 65.5% |
-| **Top-3 Unlocked** | 65.6% |
+| **LP Locked** | 36.8% — Dead Address, GoPlus SafeToken Locker |
+| **Top-1 Unlocked Holder** | ⚠️ 63.0% |
+| **Top-3 Unlocked** | 63.2% |
 
 ## Security Findings
 
@@ -82,12 +82,12 @@ The `_mint` and `_burn` functions are internal and only `_mint` is called once i
 |--------|-------|
 | **Contract** | [`0xcaae...99f3`](https://bscscan.com/address/0xcaae2a2f939f51d97cdfa9a86e79e3f085b799f3) |
 | **Network** | BNB Chain |
-| **Price** | $0.104 |
-| **24h Volume** | $3.96M |
-| **Liquidity** | $5.02M |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.02396 |
+| **24h Volume** | $701.5K |
+| **Liquidity** | $2.79M |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 91.8% of supply |
+| **Top-10 Holders** | 90.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5133 buys / 5920 sells |
 

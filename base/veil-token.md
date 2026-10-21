@@ -2,14 +2,14 @@
 token: VEIL Token
 ticker: VEIL
 network: base
-risk_score: 9
+risk_score: 7
 status: low
 date: 2026-08-12
 ---
 
 # VEIL Token (VEIL) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 9/100 — 🟢 Low Risk**
+> **Risk Score: 7/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/veil-token-base)
 
@@ -33,8 +33,8 @@ This audit report is based on the provided OpenZeppelin `Ownable` and `ERC20` li
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 85.8% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 52.5% |
+| **Top-3 Unlocked** | ⚠️ 95.0% |
 
 ## Security Findings
 
@@ -66,12 +66,12 @@ The contract does not include a mechanism to pause transfers or other critical o
 |--------|-------|
 | **Contract** | [`0x767a...7d7f`](https://basescan.org/address/0x767a739d1a152639e9ea1d8c1bd55fdc5b217d7f) |
 | **Network** | Base |
-| **Price** | $0.01142 |
-| **24h Volume** | $44.0K |
-| **Liquidity** | $371.4K |
+| **Price** | $0.01952 |
+| **24h Volume** | $38.4K |
+| **Liquidity** | $525.1K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 69.9% of supply |
+| **Top-10 Holders** | 64.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 96 buys / 113 sells |
 

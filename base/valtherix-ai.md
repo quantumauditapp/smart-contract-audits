@@ -2,14 +2,14 @@
 token: Valtherix AI
 ticker: VLTX
 network: base
-risk_score: 100
+risk_score: 94
 status: critical
 date: 2026-08-11
 ---
 
 # Valtherix AI (VLTX) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 94/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/valtherix-ai-base)
 
@@ -27,7 +27,7 @@ The Valtherix AI Token contract, written in Vyper, implements basic ERC-20 funct
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The contract implements standard ERC-20 functions for token transfers and approvals (7.1 Architecture). However, a critical design flaw exists where the contract immediately renounces ownership upon… |
 | **Governance / Economics** | 1/10 | High | The economic model of the token is primarily standard ERC-20, but a critical flaw introduces an severe economic risk (7.4 Economic). The contract attempts to drain its entire native token balance to… |
-| **Upgrades** | 3/10 | High | The contract is not designed with any upgradeability mechanism (7.7 Upgrades). Furthermore, the immediate renunciation of ownership in the constructor means that even if an upgrade pattern were… |
+| **Upgrades** | 4/10 | Medium | The contract is not designed with any upgradeability mechanism (7.7 Upgrades). Furthermore, the immediate renunciation of ownership in the constructor means that even if an upgrade pattern were… |
 
 ## LP Distribution
 
@@ -85,7 +85,7 @@ The contract includes `# @pragma evm-version cancun` and `#pragma version ^0.3.1
 | **Liquidity** | $424.6K |
 | **Volume / Liquidity** | 0.6× |
 | **Token Age** | 19d |
-| **Top-10 Holders** | 87.1% of supply |
+| **Top-10 Holders** | 78.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 325 buys / 337 sells |
 

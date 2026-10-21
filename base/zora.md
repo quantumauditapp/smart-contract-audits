@@ -2,14 +2,14 @@
 token: Zora
 ticker: ZORA
 network: base
-risk_score: 41
+risk_score: 37
 status: medium
 date: 2026-07-22
 ---
 
 # Zora (ZORA) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 37/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zora-base)
 
@@ -26,15 +26,15 @@ The Zora token contract is an ERC20 token with voting and permit functionalities
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract (7.1 Architecture) is a standard ERC20 token inheriting from OpenZeppelin's ERC20, ERC20Permit, ERC20Votes, and Initializable, which are well-audited components. Custom logic for… |
-| **Governance / Economics** | 1/10 | High | The `initializerAccount` (7.4 Economic) holds significant power, being solely responsible for minting the entire token supply and setting the permanent `_contractURI` during the `initialize` call.… |
+| **Governance / Economics** | 2/10 | High | The `initializerAccount` (7.4 Economic) holds significant power, being solely responsible for minting the entire token supply and setting the permanent `_contractURI` during the `initialize` call.… |
 | **Upgrades** | 6/10 | Medium | The contract utilizes the `Initializable` base contract (7.7 Upgrades) to ensure the `initialize` function can only be called once. However, this contract is not designed as an upgradeable proxy.… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 65.5% |
-| **Top-3 Unlocked** | ⚠️ 81.1% |
+| **Top-1 Unlocked Holder** | 37.3% |
+| **Top-3 Unlocked** | 56.0% |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ The contract is compiled with Solidity 0.8.28, which is a very recent version. W
 |--------|-------|
 | **Contract** | [`0x1111...fc69`](https://basescan.org/address/0x1111111111166b7fe7bd91427724b487980afc69) |
 | **Network** | Base |
-| **Price** | $0.006404 |
-| **24h Volume** | $75.6K |
-| **Liquidity** | $153.2K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.007407 |
+| **24h Volume** | $153.4K |
+| **Liquidity** | $89.2K |
+| **Volume / Liquidity** | 1.7× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 55.4% of supply |
+| **Top-10 Holders** | 57.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2366 buys / 1276 sells |
 

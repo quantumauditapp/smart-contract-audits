@@ -2,14 +2,14 @@
 token: VANRY
 ticker: VANRY
 network: ethereum
-risk_score: 60
-status: high
+risk_score: 41
+status: medium
 date: 2026-07-25
 ---
 
 # VANRY (VANRY) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 60/100 — 🟠 High Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vanry-eth)
 
@@ -26,8 +26,8 @@ The provided source code implements a standard OpenZeppelin ERC20 token. It bene
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract utilizes the well-audited OpenZeppelin ERC20 implementation, providing a strong foundation for code security (7.2) and architecture (7.1). It adheres strictly to the ERC20 standard… |
-| **Governance / Economics** | 2/10 | High | As a basic ERC20 token, the contract has no inherent governance (7.5) or complex economic (7.4) mechanisms. There are no custom fees, special roles, or rebase functionalities. The primary economic… |
-| **Upgrades** | 4/10 | Medium | The contract is not designed to be upgradeable (7.7), as it does not implement any proxy patterns. This means its logic is immutable once deployed, providing certainty but requiring a new deployment… |
+| **Governance / Economics** | 1/10 | High | As a basic ERC20 token, the contract has no inherent governance (7.5) or complex economic (7.4) mechanisms. There are no custom fees, special roles, or rebase functionalities. The primary economic… |
+| **Upgrades** | 5/10 | Medium | The contract is not designed to be upgradeable (7.7), as it does not implement any proxy patterns. This means its logic is immutable once deployed, providing certainty but requiring a new deployment… |
 
 ## LP Distribution
 
@@ -66,23 +66,23 @@ The `decimals()` function is hardcoded to return `18`. While 18 decimals is a co
 |--------|-------|
 | **Contract** | [`0x8de5...8624`](https://etherscan.io/address/0x8de5b80a0c1b02fe4976851d030b36122dbb8624) |
 | **Network** | Ethereum |
-| **Price** | $0.003944 |
-| **24h Volume** | $99.9K |
-| **Liquidity** | $396.6K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.0006019 |
+| **24h Volume** | $22 |
+| **Liquidity** | $907 |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 68.4% of supply |
+| **Top-10 Holders** | 89.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 422 buys / 379 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -92,7 +92,7 @@ The `decimals()` function is hardcoded to return `18`. While 18 decimals is a co
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions

@@ -3,13 +3,13 @@ token: VERA
 ticker: VRA
 network: ethereum
 risk_score: 32
-status: medium
+status: low
 date: 2026-08-17
 ---
 
 # VERA (VRA) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 32/100 — 🟡 Medium Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vera-eth)
 
@@ -74,12 +74,12 @@ The provided VraToken contract snippet does not include functions for minting ne
 |--------|-------|
 | **Contract** | [`0xf411...7255`](https://etherscan.io/address/0xf411903cbc70a74d22900a5de66a2dda66507255) |
 | **Network** | Ethereum |
-| **Price** | $0.00001285 |
-| **24h Volume** | $49.8K |
-| **Liquidity** | $47.5K |
-| **Volume / Liquidity** | 1.0× |
+| **Price** | $0.0000161 |
+| **24h Volume** | $24.5K |
+| **Liquidity** | $62.6K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 36.2% of supply |
+| **Top-10 Holders** | 38.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 462 buys / 425 sells |
 

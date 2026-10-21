@@ -3,13 +3,13 @@ token: Vision
 ticker: VSN
 network: arbitrum
 risk_score: 79
-status: critical
+status: high
 date: 2026-07-23
 ---
 
 # Vision (VSN) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 79/100 — 🔴 Critical Risk**
+> **Risk Score: 79/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vision-arb)
 
@@ -95,12 +95,12 @@ The contract defines and uses custom error types `ZeroAmount()` and `ZeroAddress
 |--------|-------|
 | **Contract** | [`0x6fbb...b74b`](https://arbiscan.io/address/0x6fbbbd8bfb1cd3986b1d05e7861a0f62f87db74b) |
 | **Network** | Arbitrum |
-| **Price** | $0.0392 |
-| **24h Volume** | $573.0K |
-| **Liquidity** | $710.6K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.04102 |
+| **24h Volume** | $115.4K |
+| **Liquidity** | $729.0K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 8mo |
-| **Top-10 Holders** | 96.3% of supply |
+| **Top-10 Holders** | 95.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2245 buys / 1531 sells |
 

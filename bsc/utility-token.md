@@ -2,14 +2,14 @@
 token: utility token
 ticker: UTILITY
 network: bsc
-risk_score: 54
-status: high
+risk_score: 40
+status: medium
 date: 2026-08-13
 ---
 
 # utility token (UTILITY) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 54/100 — 🟠 High Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/utility-token-bsc)
 
@@ -25,9 +25,23 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract leverages OpenZeppelin's upgradeable ERC20 and access control modules, providing a solid architectural foundation (7.1 Architecture). It employs `SafeERC20` for external token… |
-| **Governance / Economics** | 3/10 | High | The contract's economic model relies on dynamic tax rates and state transitions managed by the owner (7.4 Economic, 7.5 Governance). The owner has centralized control over critical state changes like… |
-| **Upgrades** | 3/10 | High | The contract is designed as an upgradeable implementation using OpenZeppelin's `Initializable` pattern, with `_disableInitializers()` correctly called in the constructor (7.7 Upgrades). However, the… |
+| **Technical** | 8/10 | Low | The contract leverages OpenZeppelin's upgradeable ERC20 and access control modules, providing a solid architectural foundation (7.1 Architecture). It employs `SafeERC20` for external token… |
+| **Governance / Economics** | 5/10 | Medium | The contract's economic model relies on dynamic tax rates and state transitions managed by the owner (7.4 Economic, 7.5 Governance). The owner has centralized control over critical state changes like… |
+| **Upgrades** | 4/10 | Medium | The contract is designed as an upgradeable implementation using OpenZeppelin's `Initializable` pattern, with `_disableInitializers()` correctly called in the constructor (7.7 Upgrades). However, the… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | 44.8% |
+| **Top-3 Unlocked** | ⚠️ 87.8% |
 
 ## Security Findings
 
@@ -73,12 +87,12 @@ The `PackedPoolState` struct uses tightly packed variables (`uint8`, `uint16`, `
 |--------|-------|
 | **Contract** | [`0xede0...7777`](https://bscscan.com/address/0xede00776439f9c49c592e43eee34777a51847777) |
 | **Network** | BNB Chain |
-| **Price** | $0.003841 |
-| **24h Volume** | $289.5K |
-| **Liquidity** | $32.9K |
-| **Volume / Liquidity** | 8.8× |
+| **Price** | $0.1765 |
+| **24h Volume** | $183.36M |
+| **Liquidity** | $19.93M |
+| **Volume / Liquidity** | 9.2× |
 | **Token Age** | 0h |
-| **Top-10 Holders** | 17.0% of supply |
+| **Top-10 Holders** | 27.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1388 buys / 1214 sells |
 

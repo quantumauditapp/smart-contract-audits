@@ -2,14 +2,14 @@
 token: Zypher Token
 ticker: POP
 network: bsc
-risk_score: 74
-status: critical
+risk_score: 76
+status: high
 date: 2026-07-22
 ---
 
 # Zypher Token (POP) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 74/100 — 🔴 Critical Risk**
+> **Risk Score: 76/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zypher-token-bsc)
 
@@ -33,8 +33,8 @@ The Zypher Network Token contract is an ERC-20 compliant token built upon battle
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 98.3% |
-| **Top-3 Unlocked** | ⚠️ 99.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 98.9% |
+| **Top-3 Unlocked** | ⚠️ 99.8% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The contract heavily relies on OpenZeppelin's standard libraries (ERC20, Ownable
 |--------|-------|
 | **Contract** | [`0xa3cf...8fe6`](https://bscscan.com/address/0xa3cfb853339b77f385b994799b015cb04b208fe6) |
 | **Network** | BNB Chain |
-| **Price** | $0.002142 |
-| **24h Volume** | $2.34M |
-| **Liquidity** | $586.6K |
-| **Volume / Liquidity** | 4.0× |
+| **Price** | $0.001505 |
+| **24h Volume** | $3.09M |
+| **Liquidity** | $463.7K |
+| **Volume / Liquidity** | 6.7× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 89.5% of supply |
+| **Top-10 Holders** | 89.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 8484 buys / 7417 sells |
 

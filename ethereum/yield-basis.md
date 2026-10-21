@@ -2,14 +2,14 @@
 token: Yield Basis
 ticker: YB
 network: ethereum
-risk_score: 42
+risk_score: 50
 status: medium
 date: 2026-08-11
 ---
 
 # Yield Basis (YB) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/yield-basis-eth)
 
@@ -25,16 +25,16 @@ The YBToken contract implements a custom ERC-20 token with an exponential emissi
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract implements a custom ERC-20 token with an exponential emission model. The architecture is straightforward, leveraging `snekmate` libraries for standard ERC-20 and ownership… |
+| **Technical** | 5/10 | Medium | The contract implements a custom ERC-20 token with an exponential emission model. The architecture is straightforward, leveraging `snekmate` libraries for standard ERC-20 and ownership… |
 | **Governance / Economics** | 4/10 | Medium | The economic model is based on a continuous exponential emission schedule, designed to deplete a fixed `reserve` over time. The `max_mint_rate` and `reserve` are set at deployment, making the core… |
-| **Upgrades** | 8/10 | Low | The contract is not designed with upgradeability in mind, meaning its logic is immutable once deployed. This eliminates risks associated with upgrade mechanisms (7.7 Upgrades) but also prevents any… |
+| **Upgrades** | 5/10 | Medium | The contract is not designed with upgradeability in mind, meaning its logic is immutable once deployed. This eliminates risks associated with upgrade mechanisms (7.7 Upgrades) but also prevents any… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 91.1% |
-| **Top-3 Unlocked** | ⚠️ 99.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 88.0% |
+| **Top-3 Unlocked** | ⚠️ 97.6% |
 
 ## Security Findings
 
@@ -80,22 +80,22 @@ The contract's design, particularly after ownership renunciation, places implici
 |--------|-------|
 | **Contract** | [`0x0179...45ff`](https://etherscan.io/address/0x01791f726b4103694969820be083196cc7c045ff) |
 | **Network** | Ethereum |
-| **Price** | $0.07647 |
-| **24h Volume** | $594.1K |
-| **Liquidity** | $994.5K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.09652 |
+| **24h Volume** | $83.5K |
+| **Liquidity** | $1.19M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | 85.0% of supply |
+| **Top-10 Holders** | 86.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 170 buys / 364 sells |
 
-## Security Flags (4/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -105,7 +105,7 @@ The contract's design, particularly after ownership renunciation, places implici
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

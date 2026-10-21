@@ -2,14 +2,14 @@
 token: VANRY
 ticker: VANRY
 network: base
-risk_score: 79
-status: critical
+risk_score: 72
+status: high
 date: 2026-08-12
 ---
 
 # VANRY (VANRY) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 79/100 — 🔴 Critical Risk**
+> **Risk Score: 72/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vanry-base)
 
@@ -27,7 +27,7 @@ The audit focuses on the provided Solidity code snippets for an ERC20 token, inc
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract utilizes well-regarded OpenZeppelin libraries for ERC20, Pausable, and Burnable functionalities, which generally ensures robust and audited implementations for common token operations… |
 | **Governance / Economics** | 1/10 | High | The provided contracts do not implement complex economic models or governance mechanisms (7.4 Economic, 7.5 Governance). It represents a standard ERC20 token with basic functionalities. The primary… |
-| **Upgrades** | 2/10 | High | The contract is not identified as a proxy and does not implement any upgradeability patterns (7.7 Upgrades). Therefore, its code is immutable once deployed. Any future changes would require a new… |
+| **Upgrades** | 4/10 | Medium | The contract is not identified as a proxy and does not implement any upgradeability patterns (7.7 Upgrades). Therefore, its code is immutable once deployed. Any future changes would require a new… |
 
 ## LP Distribution
 
@@ -66,12 +66,12 @@ The standard ERC20 `approve` function is susceptible to a known front-running vu
 |--------|-------|
 | **Contract** | [`0x0784...8b63`](https://basescan.org/address/0x07848a7b542a9cd856122c6c4ab9ec87c44f8b63) |
 | **Network** | Base |
-| **Price** | $0.001285 |
-| **24h Volume** | $244.9K |
-| **Liquidity** | $236.6K |
-| **Volume / Liquidity** | 1.0× |
+| **Price** | $0.0006045 |
+| **24h Volume** | $12.9K |
+| **Liquidity** | $185.9K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 20h |
-| **Top-10 Holders** | 99.1% of supply |
+| **Top-10 Holders** | 94.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 128 buys / 137 sells |
 

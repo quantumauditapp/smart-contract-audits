@@ -2,14 +2,14 @@
 token: Wrapped TAO
 ticker: WTAO
 network: ethereum
-risk_score: 38
-status: medium
+risk_score: 26
+status: low
 date: 2026-08-12
 ---
 
 # Wrapped TAO (WTAO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 38/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-tao-eth)
 
@@ -25,16 +25,16 @@ The wTAO contract implements an ERC20 token with bridging functionalities, lever
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract demonstrates good technical security practices (7.2 Code Security), utilizing battle-tested OpenZeppelin libraries for ERC20, Ownable, and AccessControl. Array length checks are… |
+| **Technical** | 9/10 | Low | The contract demonstrates good technical security practices (7.2 Code Security), utilizing battle-tested OpenZeppelin libraries for ERC20, Ownable, and AccessControl. Array length checks are… |
 | **Governance / Economics** | 4/10 | Medium | The economic and governance model (7.4 Economic, 7.5 Governance) presents a high centralization risk. The contract owner, currently an EOA, holds exclusive power to set the `BRIDGE_ROLE`, which is… |
-| **Upgrades** | 3/10 | High | The wTAO contract is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, it does not inherently carry upgrade-related risks such as proxy misconfigurations or storage collisions. Any… |
+| **Upgrades** | 6/10 | Medium | The wTAO contract is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, it does not inherently carry upgrade-related risks such as proxy misconfigurations or storage collisions. Any… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
 | **Top-1 Unlocked Holder** | 18.7% |
-| **Top-3 Unlocked** | 50.9% |
+| **Top-3 Unlocked** | 48.7% |
 
 ## Security Findings
 
@@ -66,22 +66,22 @@ The contract explicitly imports and uses `SafeMath` for `uint256` operations (e.
 |--------|-------|
 | **Contract** | [`0x77e0...0a44`](https://etherscan.io/address/0x77e06c9eccf2e797fd462a92b6d7642ef85b0a44) |
 | **Network** | Ethereum |
-| **Price** | $203.5500 |
-| **24h Volume** | $403.5K |
-| **Liquidity** | $2.08M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $227.2500 |
+| **24h Volume** | $749.1K |
+| **Liquidity** | $2.23M |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 22.0% of supply |
+| **Top-10 Holders** | 22.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 102 buys / 36 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ❌ Fail |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -91,7 +91,7 @@ The contract explicitly imports and uses `SafeMath` for `uint256` operations (e.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

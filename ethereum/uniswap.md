@@ -3,13 +3,13 @@ token: Uniswap
 ticker: UNI
 network: ethereum
 risk_score: 52
-status: high
+status: medium
 date: 2026-06-16
 ---
 
 # Uniswap (UNI) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 52/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/uniswap-eth)
 
@@ -59,12 +59,12 @@ The contract is compiled with Solidity version `^0.5.16`. While `SafeMath` is co
 |--------|-------|
 | **Contract** | [`0x1f98...f984`](https://etherscan.io/address/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984) |
 | **Network** | Ethereum |
-| **Price** | $3.8300 |
-| **24h Volume** | $2.41M |
-| **Liquidity** | $15.50M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $6.3200 |
+| **24h Volume** | $11.75M |
+| **Liquidity** | $18.12M |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 51.3% of supply |
+| **Top-10 Holders** | 52.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 608 buys / 540 sells |
 

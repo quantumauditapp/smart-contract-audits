@@ -3,13 +3,13 @@ token: United Stables
 ticker: U
 network: bsc
 risk_score: 82
-status: critical
+status: high
 date: 2026-08-13
 ---
 
 # United Stables (U) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 82/100 — 🔴 Critical Risk**
+> **Risk Score: 82/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/united-stables-bsc)
 
@@ -95,12 +95,12 @@ In the `mint(uint256 amount)` function, the `Mint` event is emitted with `_msgSe
 |--------|-------|
 | **Contract** | [`0xce24...6666`](https://bscscan.com/address/0xce24439f2d9c6a2289f741120fe202248b666666) |
 | **Network** | BNB Chain |
-| **Price** | $1.0003 |
-| **24h Volume** | $447.8K |
-| **Liquidity** | $21.02M |
+| **Price** | $0.9994 |
+| **24h Volume** | $745.8K |
+| **Liquidity** | $21.01M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 7mo |
-| **Top-10 Holders** | 93.6% of supply |
+| **Top-10 Holders** | 96.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3463 buys / 615 sells |
 

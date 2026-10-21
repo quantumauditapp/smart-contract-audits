@@ -2,14 +2,14 @@
 token: Virtual Protocol
 ticker: VIRTUAL
 network: base
-risk_score: 36
+risk_score: 35
 status: medium
 date: 2026-08-07
 ---
 
 # Virtual Protocol (VIRTUAL) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/virtual-protocol-base)
 
@@ -73,12 +73,12 @@ The core functionality of minting and burning tokens is entirely dependent on th
 |--------|-------|
 | **Contract** | [`0x0b3e...7e1b`](https://basescan.org/address/0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b) |
 | **Network** | Base |
-| **Price** | $0.565 |
-| **24h Volume** | $353.1K |
-| **Liquidity** | $4.45M |
+| **Price** | $0.6993 |
+| **24h Volume** | $322.3K |
+| **Liquidity** | $4.33M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 46.5% of supply |
+| **Top-10 Holders** | 46.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 411 buys / 243 sells |
 

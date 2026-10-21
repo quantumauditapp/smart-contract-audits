@@ -3,13 +3,13 @@ token: trUSD
 ticker: TRUSD
 network: ethereum
 risk_score: 75
-status: critical
+status: high
 date: 2026-08-12
 ---
 
 # trUSD (TRUSD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 75/100 — 🔴 Critical Risk**
+> **Risk Score: 75/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/trusd-eth)
 
@@ -74,12 +74,12 @@ The `initializeTimelockAdmin` function can only be called once by the `DEFAULT_A
 |--------|-------|
 | **Contract** | [`0xd058...1697`](https://etherscan.io/address/0xd0580192e98ea6ceb9c7b6191ed2e27560911697) |
 | **Network** | Ethereum |
-| **Price** | $1.0002 |
-| **24h Volume** | $1.39M |
-| **Liquidity** | $6.17M |
+| **Price** | $1.0000 |
+| **24h Volume** | $900.3K |
+| **Liquidity** | $5.16M |
 | **Volume / Liquidity** | 0.2× |
 | **Token Age** | 26d |
-| **Top-10 Holders** | 99.6% of supply |
+| **Top-10 Holders** | 99.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 121 buys / 46 sells |
 

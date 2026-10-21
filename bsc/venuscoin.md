@@ -2,14 +2,14 @@
 token: VenusCoin
 ticker: VENUSCOIN
 network: bsc
-risk_score: 61
+risk_score: 77
 status: high
 date: 2026-08-13
 ---
 
 # VenusCoin (VENUSCOIN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 77/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/venuscoin-bsc)
 
@@ -25,16 +25,23 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with a dynamic
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract utilizes OpenZeppelin's upgradeable ERC20 and access control patterns, which generally contribute to robust code security (7.2). The use of `SafeERC20` and packed structs… |
-| **Governance / Economics** | 5/10 | Medium | The contract's economic model relies heavily on a multi-state system (`PoolState`) and a tax mechanism. The owner has significant control over state transitions via `startMigration` and… |
+| **Technical** | 5/10 | Medium | The contract utilizes OpenZeppelin's upgradeable ERC20 and access control patterns, which generally contribute to robust code security (7.2). The use of `SafeERC20` and packed structs… |
+| **Governance / Economics** | 4/10 | Medium | The contract's economic model relies heavily on a multi-state system (`PoolState`) and a tax mechanism. The owner has significant control over state transitions via `startMigration` and… |
 | **Upgrades** | 3/10 | High | The contract is designed as an upgradeable proxy implementation, correctly using OpenZeppelin's `Initializable` pattern, `_disableInitializers()` in the constructor, and `initializer` modifier (7.7).… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 39.8% |
-| **Top-3 Unlocked** | ⚠️ 83.4% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -87,13 +94,13 @@ The `_liquidateTax` function is invoked at the beginning of every `_transfer` op
 |--------|-------|
 | **Contract** | [`0x5460...7777`](https://bscscan.com/address/0x5460b5e88799d27bbdf8a210926c17dec18d7777) |
 | **Network** | BNB Chain |
-| **Price** | $0.001437 |
-| **24h Volume** | $350.8K |
-| **Liquidity** | $153.3K |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $0.000154 |
+| **24h Volume** | $100.7K |
+| **Liquidity** | $59.7K |
+| **Volume / Liquidity** | 1.7× |
 | **Token Age** | 8d |
-| **Top-10 Holders** | 28.3% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 46.4% of supply |
+| **Buy / Sell Tax** | 3.0% / 3.0% |
 | **24h Transactions** | 839 buys / 642 sells |
 
 ## Security Flags (3/5 passed)

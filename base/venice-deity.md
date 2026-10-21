@@ -33,8 +33,8 @@ The DERC20 contract implements an ERC20 token with voting, permit, and Ownable f
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 92.6% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 63.0% |
+| **Top-3 Unlocked** | ⚠️ 95.6% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ Several critical state-changing functions, such as `lockPool()`, `unlockPool()`,
 |--------|-------|
 | **Contract** | [`0x8563...eba3`](https://basescan.org/address/0x85635006d808030e97f3174c8ea1b4aa1f1feba3) |
 | **Network** | Base |
-| **Price** | $0.0000016 |
-| **24h Volume** | $1.21M |
-| **Liquidity** | $146.7K |
-| **Volume / Liquidity** | 8.2× |
+| **Price** | $0.00000168 |
+| **24h Volume** | $73.1K |
+| **Liquidity** | $105.7K |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 58.4% of supply |
+| **Top-10 Holders** | 55.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3545 buys / 6405 sells |
 

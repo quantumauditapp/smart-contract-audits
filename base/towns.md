@@ -3,13 +3,13 @@ token: Towns
 ticker: TOWNS
 network: base
 risk_score: 71
-status: critical
+status: high
 date: 2026-08-12
 ---
 
 # Towns (TOWNS) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 71/100 — 🔴 Critical Risk**
+> **Risk Score: 71/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/towns-base)
 
@@ -41,7 +41,7 @@ The Towns contract serves as an ERC-20 token with voting capabilities, cross-cha
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 62.2% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -67,12 +67,12 @@ The `_canLock()` function in the `Towns` contract, which is an override from `Lo
 |--------|-------|
 | **Contract** | [`0x0000...9a38`](https://basescan.org/address/0x00000000a22c618fd6b4d7e9a335c4b96b189a38) |
 | **Network** | Base |
-| **Price** | $0.002338 |
-| **24h Volume** | $137.9K |
-| **Liquidity** | $199.8K |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $0.002471 |
+| **24h Volume** | $124.4K |
+| **Liquidity** | $222.4K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 76.4% of supply |
+| **Top-10 Holders** | 74.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 489 buys / 638 sells |
 

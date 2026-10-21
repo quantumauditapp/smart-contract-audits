@@ -3,13 +3,13 @@ token: TRADOOR
 ticker: TRADOOR
 network: bsc
 risk_score: 34
-status: medium
+status: low
 date: 2026-07-25
 ---
 
 # TRADOOR (TRADOOR) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tradoor-bsc)
 
@@ -33,7 +33,7 @@ The audited contract is a basic ERC20 token implementation, inheriting from batt
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 97.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 97.1% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -73,12 +73,12 @@ The `Token` contract is deployed as a standard, non-upgradeable contract. This m
 |--------|-------|
 | **Contract** | [`0x9123...f492`](https://bscscan.com/address/0x9123400446a56176eb1b6be9ee5cf703e409f492) |
 | **Network** | BNB Chain |
-| **Price** | $0.5008 |
-| **24h Volume** | $576.3K |
-| **Liquidity** | $712.0K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.6046 |
+| **24h Volume** | $3.62M |
+| **Liquidity** | $796.8K |
+| **Volume / Liquidity** | 4.5× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 89.1% of supply |
+| **Top-10 Holders** | 89.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3713 buys / 3810 sells |
 

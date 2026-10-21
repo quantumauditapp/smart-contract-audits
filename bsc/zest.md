@@ -59,10 +59,10 @@ The ZestToken contract mints a fixed total supply of 1,000,000,000 ZEST tokens (
 |--------|-------|
 | **Contract** | [`0x5506...54a1`](https://bscscan.com/address/0x5506599c722389a60580b5213ea1da60d64754a1) |
 | **Network** | BNB Chain |
-| **Price** | $0.1663 |
-| **24h Volume** | $53.0K |
-| **Liquidity** | $14.2K |
-| **Volume / Liquidity** | 3.7× |
+| **Price** | $0.1544 |
+| **24h Volume** | $96.9K |
+| **Liquidity** | $10.5K |
+| **Volume / Liquidity** | 9.2× |
 | **Token Age** | 2mo |
 | **Top-10 Holders** | 100.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

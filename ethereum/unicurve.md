@@ -2,14 +2,14 @@
 token: UNICURVE
 ticker: UNICURVE
 network: ethereum
-risk_score: 72
-status: critical
+risk_score: 68
+status: high
 date: 2026-08-01
 ---
 
 # UNICURVE (UNICURVE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 68/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/unicurve-eth)
 
@@ -28,6 +28,14 @@ The UnicurveToken contract is an ERC20 token designed for an EIP-1167 cloning pa
 | **Technical** | 6/10 | Medium | The contract leverages battle-tested OpenZeppelin ERC20 for core token functionality, enhancing code security (7.2 Code Security). The logic is straightforward, primarily managing a… |
 | **Governance / Economics** | 1/10 | High | The economic model is highly centralized, with the entire token supply minted to the `curve` address upon initialization (7.4 Economic). This grants the `curve` address complete control over token… |
 | **Upgrades** | 1/10 | High | The `UnicurveToken` contract is designed as an EIP-1167 clone, meaning it is not directly upgradeable (7.7 Upgrades). This eliminates risks associated with upgrade mechanisms, such as proxy… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
@@ -92,17 +100,17 @@ The `SUPPLY` variable is declared as a `public constant`, fixing the total token
 | **Liquidity** | $51.6K |
 | **Volume / Liquidity** | 2.6× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 36.2% of supply |
+| **Top-10 Holders** | 61.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 378 buys / 280 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
 
@@ -112,7 +120,7 @@ The `SUPPLY` variable is declared as a `public constant`, fixing the total token
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
