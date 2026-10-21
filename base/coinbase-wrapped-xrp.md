@@ -3,13 +3,13 @@ token: Coinbase Wrapped XRP
 ticker: CBXRP
 network: base
 risk_score: 57
-status: high
+status: medium
 date: 2026-07-24
 ---
 
 # Coinbase Wrapped XRP (CBXRP) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 57/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/coinbase-wrapped-xrp-base)
 
@@ -42,7 +42,7 @@ The FiatTokenV2_2 contract serves as the implementation logic for a fiat-backed 
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 80.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.9% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -89,12 +89,12 @@ The `initializeV2_2` function explicitly blacklists `address(this)` (the contrac
 |--------|-------|
 | **Contract** | [`0xcb58...a4af`](https://basescan.org/address/0xcb585250f852c6c6bf90434ab21a00f02833a4af) |
 | **Network** | Base |
-| **Price** | $1.0560 |
-| **24h Volume** | $1.28M |
-| **Liquidity** | $371.2K |
-| **Volume / Liquidity** | 3.4× |
+| **Price** | $1.4400 |
+| **24h Volume** | $2.82M |
+| **Liquidity** | $880.0K |
+| **Volume / Liquidity** | 3.2× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 84.8% of supply |
+| **Top-10 Holders** | 85.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 875 buys / 771 sells |
 

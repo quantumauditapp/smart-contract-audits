@@ -3,13 +3,13 @@ token: Bubblemaps
 ticker: BMT
 network: bsc
 risk_score: 51
-status: high
+status: medium
 date: 2026-08-12
 ---
 
 # Bubblemaps (BMT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bubblemaps-bsc)
 
@@ -33,7 +33,7 @@ The MyOFT contract is an Omnichain Fungible Token (OFT) implementation built on 
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.9% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -73,12 +73,12 @@ The MyOFT contract does not implement a direct, contract-specific emergency paus
 |--------|-------|
 | **Contract** | [`0x7d81...1b62`](https://bscscan.com/address/0x7d814b9ed370ec0a502edc3267393bf62d891b62) |
 | **Network** | BNB Chain |
-| **Price** | $0.01753 |
-| **24h Volume** | $236.1K |
-| **Liquidity** | $328.5K |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $0.01827 |
+| **24h Volume** | $21.2K |
+| **Liquidity** | $360.3K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 91.0% of supply |
+| **Top-10 Holders** | 91.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1165 buys / 1460 sells |
 

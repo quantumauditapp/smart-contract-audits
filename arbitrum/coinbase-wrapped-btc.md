@@ -3,13 +3,13 @@ token: Coinbase Wrapped BTC
 ticker: CBBTC
 network: arbitrum
 risk_score: 74
-status: critical
+status: high
 date: 2026-08-11
 ---
 
 # Coinbase Wrapped BTC (CBBTC) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 74/100 — 🔴 Critical Risk**
+> **Risk Score: 74/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/coinbase-wrapped-btc-arb)
 
@@ -42,8 +42,8 @@ The audit of the FiatTokenV2_1 implementation contract identified a critical acc
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 71.2% |
-| **Top-3 Unlocked** | ⚠️ 91.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -89,12 +89,12 @@ The `initializeV2_1` function explicitly blacklists `address(this)`, meaning the
 |--------|-------|
 | **Contract** | [`0xcbb7...33bf`](https://arbiscan.io/address/0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf) |
 | **Network** | Arbitrum |
-| **Price** | $64,172.7300 |
-| **24h Volume** | $352.6K |
-| **Liquidity** | $539.8K |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $80,971.3800 |
+| **24h Volume** | $1.36M |
+| **Liquidity** | $776.1K |
+| **Volume / Liquidity** | 1.8× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 58.8% of supply |
+| **Top-10 Holders** | 50.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 109 buys / 106 sells |
 

@@ -41,8 +41,8 @@ The audit of the StandardArbERC20 implementation contract, used by ClonableBeaco
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 9.0% |
-| **Top-3 Unlocked** | 21.4% |
+| **Top-1 Unlocked Holder** | 9.2% |
+| **Top-3 Unlocked** | 21.1% |
 
 ## Security Findings
 
@@ -81,12 +81,12 @@ For newly deployed `ClonableBeaconProxy` instances, the `bridgeInit` function is
 |--------|-------|
 | **Contract** | [`0xf97f...9fb4`](https://arbiscan.io/address/0xf97f4df75117a78c1a5a0dbb814af92458539fb4) |
 | **Network** | Arbitrum |
-| **Price** | $8.6000 |
-| **24h Volume** | $293.6K |
-| **Liquidity** | $896.8K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $11.8300 |
+| **24h Volume** | $114.2K |
+| **Liquidity** | $1.07M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 46.5% of supply |
+| **Top-10 Holders** | 44.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 290 buys / 154 sells |
 

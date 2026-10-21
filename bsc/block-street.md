@@ -2,14 +2,14 @@
 token: Block Street
 ticker: BSB
 network: bsc
-risk_score: 81
+risk_score: 85
 status: critical
 date: 2026-07-24
 ---
 
 # Block Street (BSB) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 81/100 — 🔴 Critical Risk**
+> **Risk Score: 85/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/block-street-bsc)
 
@@ -25,7 +25,7 @@ The audit of the TokenImplementation contract, serving as the logic for a Beacon
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical implementation of the Token contract is generally robust, adhering to ERC-20 standards for core functionalities like `transfer` and `approve`. Solidity 0.8.0+ provides automatic… |
+| **Technical** | 4/10 | Medium | The technical implementation of the Token contract is generally robust, adhering to ERC-20 standards for core functionalities like `transfer` and `approve`. Solidity 0.8.0+ provides automatic… |
 | **Governance / Economics** | 1/10 | High | The governance and economic model of the Token contract are highly centralized. A single `owner` address possesses significant power, including the ability to `mint` and `burn` an arbitrary amount of… |
 | **Upgrades** | 1/10 | High | The contract is designed as an implementation for a BeaconProxy, leveraging OpenZeppelin's proxy patterns for upgradeability. The `initializer` modifier correctly prevents re-initialization on… |
 
@@ -80,12 +80,12 @@ The `updateDetails` function, which allows the owner to change the token's name 
 |--------|-------|
 | **Contract** | [`0x595d...79cc`](https://bscscan.com/address/0x595deaad1eb5476ff1e649fdb7efc36f1e4679cc) |
 | **Network** | BNB Chain |
-| **Price** | $0.1235 |
-| **24h Volume** | $19.5K |
-| **Liquidity** | $48.0K |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.1079 |
+| **24h Volume** | $40.6K |
+| **Liquidity** | $32.7K |
+| **Volume / Liquidity** | 1.2× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 92.6% of supply |
+| **Top-10 Holders** | 92.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 393 buys / 405 sells |
 

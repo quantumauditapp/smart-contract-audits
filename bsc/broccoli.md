@@ -2,14 +2,14 @@
 token: Broccoli
 ticker: BROCCOLI
 network: bsc
-risk_score: 10
+risk_score: 8
 status: low
 date: 2026-08-11
 ---
 
 # Broccoli (BROCCOLI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 10/100 — 🟢 Low Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/broccoli-bsc)
 
@@ -33,9 +33,9 @@ The audit of the Token contract revealed a significant design flaw in the transf
 
 | Metric | Value |
 |--------|-------|
-| **LP Locked** | 77.8% — GoPlus SafeToken Locker |
-| **Top-1 Unlocked Holder** | 20.1% |
-| **Top-3 Unlocked** | 22.0% |
+| **LP Locked** | 76.8% — GoPlus SafeToken Locker |
+| **Top-1 Unlocked Holder** | 19.9% |
+| **Top-3 Unlocked** | 21.6% |
 
 ## Security Findings
 
@@ -74,12 +74,12 @@ The `Token` contract's constructor initializes `_mode` to `MODE_TRANSFER_RESTRIC
 |--------|-------|
 | **Contract** | [`0x12b4...2f3b`](https://bscscan.com/address/0x12b4356c65340fb02cdff01293f95febb1512f3b) |
 | **Network** | BNB Chain |
-| **Price** | $0.006755 |
-| **24h Volume** | $45.8K |
-| **Liquidity** | $930.7K |
+| **Price** | $0.006918 |
+| **24h Volume** | $32.3K |
+| **Liquidity** | $1.04M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 74.0% of supply |
+| **Top-10 Holders** | 74.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 187 buys / 164 sells |
 

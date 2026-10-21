@@ -66,12 +66,12 @@ The `FourERC20` contract provides internal `_mint` and `_burn` functions for man
 |--------|-------|
 | **Contract** | [`0xc269...4444`](https://bscscan.com/address/0xc269d59a0d608ea0bd672f2f4616c372d8554444) |
 | **Network** | BNB Chain |
-| **Price** | $0.0007432 |
-| **24h Volume** | $59.7K |
-| **Liquidity** | $111.1K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.002144 |
+| **24h Volume** | $2.97M |
+| **Liquidity** | $215.5K |
+| **Volume / Liquidity** | 13.8× |
 | **Token Age** | 8mo |
-| **Top-10 Holders** | 30.4% of supply |
+| **Top-10 Holders** | 28.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 506 buys / 470 sells |
 

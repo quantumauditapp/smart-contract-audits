@@ -2,14 +2,14 @@
 token: Cheese Head
 ticker: CHEESE
 network: bsc
-risk_score: 22
-status: medium
+risk_score: 31
+status: low
 date: 2026-08-14
 ---
 
 # Cheese Head (CHEESE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 22/100 — 🟡 Medium Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cheese-head-bsc)
 
@@ -33,10 +33,10 @@ The CHEESE Token contract implements a standard ERC20 token with Ownable access 
 
 | Metric | Value |
 |--------|-------|
-| **LP Burned** | 17.1% |
-| **LP Locked** | 17.1% — Null Address |
-| **Top-1 Unlocked Holder** | ⚠️ 82.3% |
-| **Top-3 Unlocked** | ⚠️ 82.9% |
+| **LP Burned** | 20.8% |
+| **LP Locked** | 20.8% — Null Address |
+| **Top-1 Unlocked Holder** | ⚠️ 78.7% |
+| **Top-3 Unlocked** | 79.2% |
 
 ## Security Findings
 
@@ -68,13 +68,13 @@ The `Address` library is imported into the contract, but none of its functions (
 |--------|-------|
 | **Contract** | [`0x696b...6666`](https://bscscan.com/address/0x696b057564c6b5251a1fd9b90fbf20c454e96666) |
 | **Network** | BNB Chain |
-| **Price** | $0.00000026 |
-| **24h Volume** | $49.6K |
-| **Liquidity** | $51.9K |
-| **Volume / Liquidity** | 1.0× |
+| **Price** | $0.00000013 |
+| **24h Volume** | $13.4K |
+| **Liquidity** | $42.7K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 9d |
-| **Top-10 Holders** | 36.8% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 63.8% of supply |
+| **Buy / Sell Tax** | 3.0% / 3.0% |
 | **24h Transactions** | 440 buys / 348 sells |
 
 ## Security Flags (5/5 passed)

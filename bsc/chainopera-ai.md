@@ -3,13 +3,13 @@ token: ChainOpera AI
 ticker: COAI
 network: bsc
 risk_score: 52
-status: high
+status: medium
 date: 2026-07-22
 ---
 
 # ChainOpera AI (COAI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 52/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chainopera-ai-bsc)
 
@@ -40,8 +40,8 @@ The contract at 0x0a8d6c86e1bce73fe4d0bd531e1a567306836ea5 is an ERC-1967 UUPS p
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 77.4% |
-| **Top-3 Unlocked** | ⚠️ 96.1% |
+| **Top-1 Unlocked Holder** | ⚠️ 82.2% |
+| **Top-3 Unlocked** | ⚠️ 99.6% |
 
 ## Security Findings
 
@@ -80,10 +80,10 @@ The proxy contract itself correctly implements the ERC-1967 UUPS proxy pattern u
 |--------|-------|
 | **Contract** | [`0x0a8d...6ea5`](https://bscscan.com/address/0x0a8d6c86e1bce73fe4d0bd531e1a567306836ea5) |
 | **Network** | BNB Chain |
-| **Price** | $0.3432 |
-| **24h Volume** | $2.28M |
-| **Liquidity** | $1.95M |
-| **Volume / Liquidity** | 1.2× |
+| **Price** | $0.3212 |
+| **24h Volume** | $3.96M |
+| **Liquidity** | $1.91M |
+| **Volume / Liquidity** | 2.1× |
 | **Token Age** | 10mo |
 | **Top-10 Holders** | 84.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

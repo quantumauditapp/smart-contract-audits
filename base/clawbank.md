@@ -2,14 +2,14 @@
 token: ClawBank
 ticker: CLAWBANK
 network: base
-risk_score: 2
+risk_score: 12
 status: low
 date: 2026-07-22
 ---
 
 # ClawBank (CLAWBANK) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 2/100 — 🟢 Low Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/clawbank-base)
 
@@ -33,8 +33,8 @@ The ClankerToken contract is an ERC20 token with extensions for burning, voting,
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 85.6% |
+| **Top-3 Unlocked** | ⚠️ 95.9% |
 
 ## Security Findings
 
@@ -66,12 +66,12 @@ In the constructor, the entire `maxSupply_` is minted to `msg.sender` (the contr
 |--------|-------|
 | **Contract** | [`0x1633...eb07`](https://basescan.org/address/0x16332535e2c27da578bc2e82beb09ce9d3c8eb07) |
 | **Network** | Base |
-| **Price** | $0.00001439 |
-| **24h Volume** | $37.6K |
-| **Liquidity** | $722.7K |
+| **Price** | $0.00000891 |
+| **24h Volume** | $34.4K |
+| **Liquidity** | $282.8K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 34.9% of supply |
+| **Top-10 Holders** | 41.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 211 buys / 494 sells |
 

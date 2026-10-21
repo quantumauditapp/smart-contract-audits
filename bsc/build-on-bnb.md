@@ -88,11 +88,11 @@ The contract uses the `SafeMath` library for arithmetic operations. However, Sol
 | **Contract** | [`0x5136...560e`](https://bscscan.com/address/0x51363f073b1e4920fda7aa9e9d84ba97ede1560e) |
 | **Network** | BNB Chain |
 | **Price** | $0.00000002 |
-| **24h Volume** | $121.0K |
-| **Liquidity** | $1.10M |
+| **24h Volume** | $104.0K |
+| **Liquidity** | $1.29M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 77.9% of supply |
+| **Top-10 Holders** | 78.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 622 buys / 716 sells |
 

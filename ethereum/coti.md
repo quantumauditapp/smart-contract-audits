@@ -33,8 +33,8 @@ The audit covers an ERC-20 token implementation, including SafeMath, Ownable, Cl
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 90.8% |
-| **Top-3 Unlocked** | ⚠️ 99.2% |
+| **Top-1 Unlocked Holder** | ⚠️ 90.7% |
+| **Top-3 Unlocked** | ⚠️ 99.1% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ The `approve` function does not explicitly check if the `_spender` address is `a
 |--------|-------|
 | **Contract** | [`0xddb3...55c5`](https://etherscan.io/address/0xddb3422497e61e13543bea06989c0789117555c5) |
 | **Network** | Ethereum |
-| **Price** | $0.01136 |
-| **24h Volume** | $387.7K |
-| **Liquidity** | $130.7K |
-| **Volume / Liquidity** | 3.0× |
+| **Price** | $0.0134 |
+| **24h Volume** | $38.6K |
+| **Liquidity** | $176.7K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 6y |
-| **Top-10 Holders** | 46.4% of supply |
+| **Top-10 Holders** | 47.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 866 buys / 713 sells |
 

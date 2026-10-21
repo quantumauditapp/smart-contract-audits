@@ -3,13 +3,13 @@ token: Cookie
 ticker: COOKIE
 network: bsc
 risk_score: 53
-status: high
+status: medium
 date: 2026-08-12
 ---
 
 # Cookie (COOKIE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 53/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cookie-bsc)
 
@@ -33,7 +33,7 @@ The OmnichainCookie contract is an Omnichain Fungible Token (OFT) built on Layer
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 94.6% |
+| **Top-1 Unlocked Holder** | ⚠️ 94.9% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -80,12 +80,12 @@ The OmnichainCookie contract is implemented directly and does not utilize a prox
 |--------|-------|
 | **Contract** | [`0xc004...265f`](https://bscscan.com/address/0xc0041ef357b183448b235a8ea73ce4e4ec8c265f) |
 | **Network** | BNB Chain |
-| **Price** | $0.01217 |
-| **24h Volume** | $877.2K |
-| **Liquidity** | $243.7K |
-| **Volume / Liquidity** | 3.6× |
+| **Price** | $0.01159 |
+| **24h Volume** | $34.4K |
+| **Liquidity** | $236.0K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 64.0% of supply |
+| **Top-10 Holders** | 61.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4198 buys / 4108 sells |
 

@@ -3,13 +3,13 @@ token: Coinbase Wrapped Staked ETH
 ticker: CBETH
 network: base
 risk_score: 48
-status: high
+status: medium
 date: 2026-08-11
 ---
 
 # Coinbase Wrapped Staked ETH (CBETH) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 48/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/coinbase-wrapped-staked-eth-base)
 
@@ -42,8 +42,8 @@ This audit covers an upgradeable ERC20 token, `UpgradeableOptimismMintableERC20`
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 12.6% |
-| **Top-3 Unlocked** | 20.4% |
+| **Top-1 Unlocked Holder** | 32.3% |
+| **Top-3 Unlocked** | 61.5% |
 
 ## Security Findings
 
@@ -82,12 +82,12 @@ The overall security of the system, particularly regarding upgrades and administ
 |--------|-------|
 | **Contract** | [`0x2ae3...ec22`](https://basescan.org/address/0x2ae3f1ec7f1f5012cfeab0185bfc7aa3cf0dec22) |
 | **Network** | Base |
-| **Price** | $2,137.2600 |
-| **24h Volume** | $1.31M |
-| **Liquidity** | $1.93M |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $2,857.7000 |
+| **24h Volume** | $5.24M |
+| **Liquidity** | $2.82M |
+| **Volume / Liquidity** | 1.9× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 90.7% of supply |
+| **Top-10 Holders** | 91.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 411 buys / 359 sells |
 

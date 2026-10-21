@@ -2,14 +2,14 @@
 token: BNB Attestation
 ticker: BAS
 network: bsc
-risk_score: 84
-status: critical
+risk_score: 61
+status: medium
 date: 2026-08-17
 ---
 
 # BNB Attestation (BAS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 84/100 — 🔴 Critical Risk**
+> **Risk Score: 61/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bnb-attestation-bsc)
 
@@ -27,7 +27,7 @@ The BASToken contract is an ERC20Capped token with custom access control, pausin
 |----------|--------|-----------|-------|
 | **Technical** | 5/10 | Medium | The contract demonstrates good technical quality, utilizing battle-tested OpenZeppelin libraries for ERC20, ERC20Capped, AccessControl, and Pausable functionalities (7.2 Code Security). The custom… |
 | **Governance / Economics** | 1/10 | High | The contract exhibits a high degree of centralization, with the DEFAULT_ADMIN_ROLE holding significant power, including setting the minter and recovering arbitrary ERC20 tokens (7.4 Economic, 7.5… |
-| **Upgrades** | 2/10 | High | The BASToken contract is implemented as a standard, non-upgradeable ERC20 token. It does not utilize any proxy patterns (e.g., UUPS, Transparent) or upgrade mechanisms. Therefore, there are no… |
+| **Upgrades** | 4/10 | Medium | The BASToken contract is implemented as a standard, non-upgradeable ERC20 token. It does not utilize any proxy patterns (e.g., UUPS, Transparent) or upgrade mechanisms. Therefore, there are no… |
 
 ## LP Distribution
 
@@ -80,12 +80,12 @@ The contract's constructor includes `_pause()`, meaning the token is deployed in
 |--------|-------|
 | **Contract** | [`0x0f0d...4e37`](https://bscscan.com/address/0x0f0df6cb17ee5e883eddfef9153fc6036bdb4e37) |
 | **Network** | BNB Chain |
-| **Price** | $0.02748 |
-| **24h Volume** | $1.85M |
-| **Liquidity** | $1.97M |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.02654 |
+| **24h Volume** | $1.20M |
+| **Liquidity** | $2.12M |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 76.0% of supply |
+| **Top-10 Holders** | 91.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4597 buys / 5257 sells |
 

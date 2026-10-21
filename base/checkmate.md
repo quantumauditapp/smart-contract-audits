@@ -2,14 +2,14 @@
 token: Checkmate
 ticker: CHECK
 network: base
-risk_score: 48
-status: high
+risk_score: 53
+status: medium
 date: 2026-08-13
 ---
 
 # Checkmate (CHECK) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 53/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/checkmate-base)
 
@@ -26,7 +26,7 @@ The ERC20FixedSupply contract implements a standard fixed-supply ERC-20 token wi
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract demonstrates a robust modular architecture, leveraging multiple OpenZeppelin-style extensions for ERC-20 functionality (7.1 Architecture). It includes features like safe transfers, batch… |
-| **Governance / Economics** | 2/10 | High | The economic model is a fixed-supply ERC-20 token, with all tokens minted during construction, preventing inflationary risks post-deployment (7.4 Economic). Governance is centralized, with a single… |
+| **Governance / Economics** | 1/10 | High | The economic model is a fixed-supply ERC-20 token, with all tokens minted during construction, preventing inflationary risks post-deployment (7.4 Economic). Governance is centralized, with a single… |
 | **Upgrades** | 6/10 | Medium | The contract is not designed as an upgradeable proxy, as indicated by `is_proxy: false`. However, it employs storage layout patterns (e.g., `Layout` structs, `LAYOUT_STORAGE_SLOT`… |
 
 ## LP Distribution
@@ -73,12 +73,12 @@ The `ForwarderRegistryContext` relies on an external `IForwarderRegistry` for me
 |--------|-------|
 | **Contract** | [`0x9126...86eb`](https://basescan.org/address/0x9126236476efba9ad8ab77855c60eb5bf37586eb) |
 | **Network** | Base |
-| **Price** | $0.01359 |
-| **24h Volume** | $191.1K |
-| **Liquidity** | $274.9K |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $0.01307 |
+| **24h Volume** | $73.6K |
+| **Liquidity** | $28.9K |
+| **Volume / Liquidity** | 2.6× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 92.2% of supply |
+| **Top-10 Holders** | 91.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2163 buys / 2162 sells |
 

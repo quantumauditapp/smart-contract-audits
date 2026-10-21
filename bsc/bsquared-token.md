@@ -2,14 +2,14 @@
 token: BSquared Token
 ticker: B2
 network: bsc
-risk_score: 43
+risk_score: 48
 status: medium
 date: 2026-08-12
 ---
 
 # BSquared Token (B2) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 48/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bsquared-token-bsc)
 
@@ -27,9 +27,9 @@ For future projects, evaluate the benefits of incorporating an upgradeability pa
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The B2Token contract is built upon well-audited OpenZeppelin ERC-20 standards, incorporating extensions for burnability, permits, capping, pausing, and access control (7.1 Architecture). The custom… |
+| **Technical** | 7/10 | Low | The B2Token contract is built upon well-audited OpenZeppelin ERC-20 standards, incorporating extensions for burnability, permits, capping, pausing, and access control (7.1 Architecture). The custom… |
 | **Governance / Economics** | 1/10 | High | The contract's governance and economic model are highly centralized, relying on the `DEFAULT_ADMIN_ROLE` for critical operations (7.5 Governance). This role, assigned to a single `admin` address in… |
-| **Upgrades** | 6/10 | Medium | The B2Token contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). There is no proxy pattern or other mechanism built into the contract to facilitate future modifications or… |
+| **Upgrades** | 5/10 | Medium | The B2Token contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). There is no proxy pattern or other mechanism built into the contract to facilitate future modifications or… |
 
 ## LP Distribution
 
@@ -82,22 +82,22 @@ The contract heavily relies on OpenZeppelin's battle-tested and widely used smar
 |--------|-------|
 | **Contract** | [`0x783c...e2a2`](https://bscscan.com/address/0x783c3f003f172c6ac5ac700218a357d2d66ee2a2) |
 | **Network** | BNB Chain |
-| **Price** | $0.4799 |
-| **24h Volume** | $1.87M |
-| **Liquidity** | $736.2K |
-| **Volume / Liquidity** | 2.5× |
+| **Price** | $0.4134 |
+| **24h Volume** | $385.1K |
+| **Liquidity** | $728.2K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 74.9% of supply |
+| **Top-10 Holders** | 74.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5105 buys / 5897 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -107,7 +107,7 @@ The contract heavily relies on OpenZeppelin's battle-tested and widely used smar
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -3,13 +3,13 @@ token: Catena Labs
 ticker: CATE
 network: arbitrum
 risk_score: 80
-status: critical
+status: high
 date: 2026-08-11
 ---
 
 # Catena Labs (CATE) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 80/100 — 🔴 Critical Risk**
+> **Risk Score: 80/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/catena-labs-arb)
 
@@ -33,7 +33,7 @@ No Solidity source code was provided for analysis. Therefore, a comprehensive se
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings

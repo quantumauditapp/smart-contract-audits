@@ -2,14 +2,14 @@
 token: Chip
 ticker: CHIP
 network: ethereum
-risk_score: 77
-status: critical
+risk_score: 76
+status: high
 date: 2026-08-17
 ---
 
 # Chip (CHIP) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 77/100 — 🔴 Critical Risk**
+> **Risk Score: 76/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chip-eth)
 
@@ -75,12 +75,12 @@ The `mint` and `burn` functions are protected by the `nonReentrant` modifier. Ho
 |--------|-------|
 | **Contract** | [`0x0c1c...1f6e`](https://etherscan.io/address/0x0c1c1c109fe34733fca54b82d7b46b75cfb71f6e) |
 | **Network** | Ethereum |
-| **Price** | $0.03007 |
-| **24h Volume** | $111.3K |
-| **Liquidity** | $72.9K |
-| **Volume / Liquidity** | 1.5× |
+| **Price** | $0.05852 |
+| **24h Volume** | $126.3K |
+| **Liquidity** | $102.2K |
+| **Volume / Liquidity** | 1.2× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 92.9% of supply |
+| **Top-10 Holders** | 87.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1049 buys / 949 sells |
 

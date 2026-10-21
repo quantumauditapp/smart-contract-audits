@@ -2,14 +2,14 @@
 token: bStocks Never Sleep
 ticker: BSTOCKS
 network: bsc
-risk_score: 39
-status: medium
+risk_score: 75
+status: high
 date: 2026-08-15
 ---
 
 # bStocks Never Sleep (BSTOCKS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 75/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bstocks-never-sleep-bsc)
 
@@ -25,15 +25,22 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with a dynamic
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract utilizes OpenZeppelin's upgradeable standards (ERC20Upgradeable, OwnableUpgradeable, Initializable) and `SafeERC20` for secure token interactions, demonstrating good foundational… |
-| **Governance / Economics** | 5/10 | Medium | The contract's economic model involves dynamic buy/sell taxes and a liquidation mechanism, which are central to its design (7.4 Economic). The `onlyOwner` role holds significant control, allowing the… |
-| **Upgrades** | 8/10 | Low | The contract is designed as an upgradeable proxy implementation, correctly using OpenZeppelin's `Initializable` and `_disableInitializers()` in the constructor (7.7 Upgrades). This allows for future… |
+| **Technical** | 6/10 | Medium | The contract utilizes OpenZeppelin's upgradeable standards (ERC20Upgradeable, OwnableUpgradeable, Initializable) and `SafeERC20` for secure token interactions, demonstrating good foundational… |
+| **Governance / Economics** | 4/10 | Medium | The contract's economic model involves dynamic buy/sell taxes and a liquidation mechanism, which are central to its design (7.4 Economic). The `onlyOwner` role holds significant control, allowing the… |
+| **Upgrades** | 3/10 | High | The contract is designed as an upgradeable proxy implementation, correctly using OpenZeppelin's `Initializable` and `_disableInitializers()` in the constructor (7.7 Upgrades). This allows for future… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 92.3% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.9% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -73,16 +80,16 @@ The `onlyOwner` role has extensive control over critical contract parameters and
 |--------|-------|
 | **Contract** | [`0x244b...7777`](https://bscscan.com/address/0x244b112cf746e62a5df723cbde9906a6defd7777) |
 | **Network** | BNB Chain |
-| **Price** | $0.0003492 |
-| **24h Volume** | $290.1K |
-| **Liquidity** | $72.8K |
-| **Volume / Liquidity** | 4.0× |
+| **Price** | $0.00006095 |
+| **24h Volume** | $12.9K |
+| **Liquidity** | $30.2K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 8d |
-| **Top-10 Holders** | 22.9% of supply |
+| **Top-10 Holders** | 46.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1380 buys / 1061 sells |
 
-## Security Flags (4/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
@@ -90,7 +97,7 @@ The `onlyOwner` role has extensive control over critical contract parameters and
 | Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
@@ -100,7 +107,7 @@ The `onlyOwner` role has extensive control over critical contract parameters and
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

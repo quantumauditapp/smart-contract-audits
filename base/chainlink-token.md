@@ -2,14 +2,14 @@
 token: ChainLink Token
 ticker: LINK
 network: base
-risk_score: 39
+risk_score: 37
 status: medium
 date: 2026-08-15
 ---
 
 # ChainLink Token (LINK) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 37/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chainlink-token-base)
 
@@ -33,8 +33,8 @@ The audit of the LinkToken contract, an ERC677-compliant token with burn and min
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 76.7% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 85.2% |
+| **Top-3 Unlocked** | ⚠️ 90.0% |
 
 ## Security Findings
 
@@ -66,12 +66,12 @@ The contract owner has the exclusive ability to grant and revoke minter and burn
 |--------|-------|
 | **Contract** | [`0x88fb...e196`](https://basescan.org/address/0x88fb150bdc53a65fe94dea0c9ba0a6daf8c6e196) |
 | **Network** | Base |
-| **Price** | $9.2700 |
-| **24h Volume** | $140.2K |
-| **Liquidity** | $225.4K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $11.8900 |
+| **24h Volume** | $141.0K |
+| **Liquidity** | $345.2K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 19.0% of supply |
+| **Top-10 Holders** | 20.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 678 buys / 661 sells |
 

@@ -2,14 +2,14 @@
 token: Coinbase Man
 ticker: BRIAN
 network: base
-risk_score: 22
-status: medium
+risk_score: 30
+status: low
 date: 2026-07-22
 ---
 
 # Coinbase Man (BRIAN) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 22/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/coinbase-man-base)
 
@@ -33,8 +33,18 @@ This report is based on the provided contract address. No Solidity source code w
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 56.7% |
-| **Top-3 Unlocked** | ⚠️ 85.6% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No issues identified in the reviewed source  *(Severity: Informational · Status: Acknowledged)*
+
+The verified source code was reviewed and no issue rising to Informational severity or above was identified. This is a statement about the code that was read, not a guarantee: the review covers the published source only. Fact-layer checks (holder concentration) were applied separately and feed the risk score.
+
+**Recommendation:** Re-check after any contract upgrade or ownership change, both of which can alter behaviour without changing this page.
 
 ## Token Metrics
 
@@ -42,12 +52,12 @@ This report is based on the provided contract address. No Solidity source code w
 |--------|-------|
 | **Contract** | [`0xb200...b301`](https://basescan.org/address/0xb2000000000000000000007bf6d5cbb0e24cb301) |
 | **Network** | Base |
-| **Price** | $0.0008293 |
-| **24h Volume** | $407.5K |
-| **Liquidity** | $115.2K |
-| **Volume / Liquidity** | 3.5× |
+| **Price** | $0.0004486 |
+| **24h Volume** | $50.8K |
+| **Liquidity** | $94.7K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 7d |
-| **Top-10 Holders** | 12.5% of supply |
+| **Top-10 Holders** | 30.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1118 buys / 662 sells |
 

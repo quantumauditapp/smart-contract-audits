@@ -2,14 +2,14 @@
 token: BNI
 ticker: BNI
 network: bsc
-risk_score: 4
+risk_score: 0
 status: low
 date: 2026-08-14
 ---
 
 # BNI (BNI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 4/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bni-bsc)
 
@@ -26,7 +26,7 @@ This audit covers the OpenZeppelin `Address.sol` library, a foundational compone
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The `Address.sol` library demonstrates high technical quality, adhering to secure coding standards and providing robust utilities for EVM interactions (7.2 Code Security). Functions like `sendValue`… |
-| **Governance / Economics** | 7/10 | Low | As a foundational utility library, `Address.sol` does not implement any economic mechanisms (7.4 Economic) or governance structures (7.5 Governance). Therefore, there are no inherent economic or… |
+| **Governance / Economics** | 10/10 | Low | As a foundational utility library, `Address.sol` does not implement any economic mechanisms (7.4 Economic) or governance structures (7.5 Governance). Therefore, there are no inherent economic or… |
 | **Upgrades** | 10/10 | Low | The `Address.sol` contract is a library and is not designed to be upgradeable via proxy patterns (7.7 Upgrades). It is typically deployed as an immutable component or included directly in other… |
 
 ## LP Distribution
@@ -80,13 +80,13 @@ As a utility library, `Address.sol` is designed to be imported and used by other
 |--------|-------|
 | **Contract** | [`0x209e...ffff`](https://bscscan.com/address/0x209e1c94a88318e2eae570bce87936589a90ffff) |
 | **Network** | BNB Chain |
-| **Price** | $0.0001381 |
-| **24h Volume** | $186.5K |
-| **Liquidity** | $35.2K |
-| **Volume / Liquidity** | 5.3× |
+| **Price** | $0.0007801 |
+| **24h Volume** | $35.1K |
+| **Liquidity** | $93.8K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 144.1% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 41.5% of supply |
+| **Buy / Sell Tax** | 2.0% / 2.0% |
 | **24h Transactions** | 942 buys / 714 sells |
 
 ## Security Flags (5/5 passed)

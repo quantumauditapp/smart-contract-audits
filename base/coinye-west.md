@@ -79,12 +79,12 @@ The contract employs `unchecked` blocks for arithmetic operations, specifically 
 |--------|-------|
 | **Contract** | [`0x0028...ca8b`](https://basescan.org/address/0x0028e1e60167b48a938b785aa5292917e7eaca8b) |
 | **Network** | Base |
-| **Price** | $0.0002482 |
-| **24h Volume** | $113.7K |
-| **Liquidity** | $58.6K |
-| **Volume / Liquidity** | 1.9× |
+| **Price** | $0.0002901 |
+| **24h Volume** | $751 |
+| **Liquidity** | $70.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 32.5% of supply |
+| **Top-10 Holders** | 33.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 329 buys / 307 sells |
 

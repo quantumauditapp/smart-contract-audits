@@ -2,14 +2,14 @@
 token: Clawd
 ticker: CLAWD
 network: ethereum
-risk_score: 29
-status: medium
+risk_score: 24
+status: low
 date: 2026-06-20
 ---
 
 # Clawd (CLAWD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 29/100 — 🟡 Medium Risk**
+> **Risk Score: 24/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/clawd-eth)
 
@@ -26,7 +26,7 @@ The Clawd token contract implements a standard ERC-20 token with advanced tax, a
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 7/10 | Low | 7.1 Architecture: The contract follows a standard ERC-20 token architecture with added tax and anti-bot mechanisms. 7.2 Code Security: It utilizes SafeMath for arithmetic operations and a… |
-| **Governance / Economics** | 6/10 | Medium | 7.4 Economic: The token's economic model includes dynamic buy/sell taxes, max transaction limits, and anti-whale measures. These features are highly configurable by the owner. 7.5 Governance: The… |
+| **Governance / Economics** | 7/10 | Low | 7.4 Economic: The token's economic model includes dynamic buy/sell taxes, max transaction limits, and anti-whale measures. These features are highly configurable by the owner. 7.5 Governance: The… |
 | **Upgrades** | 9/10 | Low | 7.7 Upgrades: The contract is not designed with upgradeability in mind, meaning its logic is immutable once deployed. This eliminates risks associated with proxy patterns or upgrade mechanisms… |
 
 ## LP Distribution
@@ -80,12 +80,12 @@ The state variables `sellCount` and `lastSellBlock` are declared within the cont
 |--------|-------|
 | **Contract** | [`0x29bb...1bcd`](https://etherscan.io/address/0x29bbace690d8f70dd161fcafcc2f028f49131bcd) |
 | **Network** | Ethereum |
-| **Price** | $0.000023 |
-| **24h Volume** | $1.5K |
-| **Liquidity** | $10.2K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.00006962 |
+| **24h Volume** | $4.8K |
+| **Liquidity** | $20.4K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 50.6% of supply |
+| **Top-10 Holders** | 41.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 247 buys / 197 sells |
 

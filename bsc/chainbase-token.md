@@ -66,12 +66,12 @@ The contract owner (a 3/5 multisig) has significant control over critical LayerZ
 |--------|-------|
 | **Contract** | [`0xc32c...ffc8`](https://bscscan.com/address/0xc32cc70741c3a8433dcbcb5ade071c299b55ffc8) |
 | **Network** | BNB Chain |
-| **Price** | $0.0656 |
-| **24h Volume** | $313.0K |
-| **Liquidity** | $756.1K |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.06064 |
+| **24h Volume** | $199.0K |
+| **Liquidity** | $727.5K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 97.0% of supply |
+| **Top-10 Holders** | 96.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1845 buys / 1997 sells |
 

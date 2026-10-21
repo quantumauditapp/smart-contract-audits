@@ -2,14 +2,14 @@
 token: Bluwhale AI
 ticker: BLUAI
 network: bsc
-risk_score: 39
-status: medium
+risk_score: 30
+status: low
 date: 2026-08-12
 ---
 
 # Bluwhale AI (BLUAI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bluwhale-ai-bsc)
 
@@ -25,16 +25,16 @@ The BlueWhaleToken contract is a standard ERC20 implementation leveraging battle
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The BlueWhaleToken contract is a straightforward ERC20 implementation, inheriting from OpenZeppelin's highly audited `ERC20` and `Ownable` contracts. This significantly reduces the likelihood of… |
-| **Governance / Economics** | 4/10 | Medium | The contract's economic model (7.4 Economic) is a standard fixed-supply ERC20 token with an initial mint to the deployer. Governance (7.5 Governance) is centralized via the `Ownable` pattern… |
+| **Technical** | 10/10 | Low | The BlueWhaleToken contract is a straightforward ERC20 implementation, inheriting from OpenZeppelin's highly audited `ERC20` and `Ownable` contracts. This significantly reduces the likelihood of… |
+| **Governance / Economics** | 6/10 | Medium | The contract's economic model (7.4 Economic) is a standard fixed-supply ERC20 token with an initial mint to the deployer. Governance (7.5 Governance) is centralized via the `Ownable` pattern… |
 | **Upgrades** | 7/10 | Low | The BlueWhaleToken contract is not designed to be upgradeable (7.7 Upgrades), as it does not implement any proxy patterns. This eliminates risks specifically associated with upgradeability, such as… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 84.8% |
-| **Top-3 Unlocked** | ⚠️ 91.2% |
+| **Top-1 Unlocked Holder** | 27.3% |
+| **Top-3 Unlocked** | 49.7% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The `decimals()` function in the ERC20 contract is hardcoded to return `18`. Whi
 |--------|-------|
 | **Contract** | [`0xed9a...9aad`](https://bscscan.com/address/0xed9ae3def8d6f052971bb8b6d1975ff267cf9aad) |
 | **Network** | BNB Chain |
-| **Price** | $0.01242 |
-| **24h Volume** | $7.24M |
-| **Liquidity** | $746.2K |
-| **Volume / Liquidity** | 9.7× |
+| **Price** | $0.01282 |
+| **24h Volume** | $29.1K |
+| **Liquidity** | $759.9K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | 84.6% of supply |
+| **Top-10 Holders** | 84.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 40318 buys / 42547 sells |
 

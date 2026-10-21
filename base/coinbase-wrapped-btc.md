@@ -3,13 +3,13 @@ token: Coinbase Wrapped BTC
 ticker: CBBTC
 network: base
 risk_score: 55
-status: high
+status: medium
 date: 2026-08-11
 ---
 
 # Coinbase Wrapped BTC (CBBTC) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 55/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/coinbase-wrapped-btc-base)
 
@@ -42,8 +42,7 @@ This audit covers the FiatTokenV2_1 contract, which serves as an implementation 
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 10.3% |
-| **Top-3 Unlocked** | 28.7% |
+| **Top-1 Unlocked Holder** | 4.1% |
 
 ## Security Findings
 
@@ -82,12 +81,12 @@ The provided source code for `FiatTokenV2` (the base contract) and parts of the 
 |--------|-------|
 | **Contract** | [`0xcbb7...33bf`](https://basescan.org/address/0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf) |
 | **Network** | Base |
-| **Price** | $64,160.0950 |
-| **24h Volume** | $2.47M |
+| **Price** | $80,993.3600 |
+| **24h Volume** | $2.43M |
 | **Liquidity** | $18.10M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 90.5% of supply |
+| **Top-10 Holders** | 91.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 495 buys / 446 sells |
 

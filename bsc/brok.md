@@ -2,14 +2,14 @@
 token: Brok
 ticker: BROK
 network: bsc
-risk_score: 42
+risk_score: 48
 status: medium
 date: 2026-08-16
 ---
 
 # Brok (BROK) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 48/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/brok-bsc)
 
@@ -26,7 +26,7 @@ The `FourERC20` contract is an incomplete implementation of an ERC-20 token, lac
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 5/10 | Medium | The contract utilizes OpenZeppelin's `Context`, `IERC20`, and `IERC20Metadata` components, providing a structured foundation (7.2 Code Security). However, the `FourERC20` contract is an incomplete… |
-| **Governance / Economics** | 4/10 | Medium | The economic model is severely impacted as the token is non-functional; no tokens can be minted, transferred, or burned, rendering it without any intrinsic value or utility (7.4 Economic). This… |
+| **Governance / Economics** | 2/10 | High | The economic model is severely impacted as the token is non-functional; no tokens can be minted, transferred, or burned, rendering it without any intrinsic value or utility (7.4 Economic). This… |
 | **Upgrades** | 8/10 | Low | The provided contract is a standard, non-upgradeable implementation and does not incorporate any proxy patterns (7.7 Upgrades). Therefore, direct upgrade risks are not applicable. Any future… |
 
 ## LP Distribution
@@ -73,12 +73,12 @@ Similar to minting, the `_burn` internal virtual function, which is responsible 
 |--------|-------|
 | **Contract** | [`0xcedf...4444`](https://bscscan.com/address/0xcedfec92cdda4f49541872543c18e97c587a4444) |
 | **Network** | BNB Chain |
-| **Price** | $0.00003839 |
-| **24h Volume** | $138.0K |
-| **Liquidity** | $19.0K |
-| **Volume / Liquidity** | 7.3× |
+| **Price** | $0.00000559 |
+| **24h Volume** | $233 |
+| **Liquidity** | $8.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 62.0% of supply |
+| **Top-10 Holders** | 86.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1530 buys / 952 sells |
 

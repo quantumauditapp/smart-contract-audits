@@ -2,14 +2,14 @@
 token: Convex Token
 ticker: CVX
 network: ethereum
-risk_score: 56
-status: high
+risk_score: 41
+status: medium
 date: 2026-08-11
 ---
 
 # Convex Token (CVX) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 56/100 — 🟠 High Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/convex-token-eth)
 
@@ -27,14 +27,14 @@ This audit was conducted on a partial codebase consisting of Solidity libraries 
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The provided code includes robust libraries such as `SafeMath` for arithmetic safety and `ReentrancyGuard` to prevent reentrancy attacks, which are positive indicators for code security (7.2 Code… |
 | **Governance / Economics** | 2/10 | High | The interfaces suggest a complex DeFi protocol involving staking, voting, rewards, and fee distribution (7.4 Economic, 7.5 Governance). Interfaces like `IVoting`, `IStaker`, `IRewards`, and… |
-| **Upgrades** | 2/10 | High | The provided code snippet does not contain any explicit upgrade mechanisms or proxy patterns (7.7 Upgrades). Therefore, no assessment of upgrade safety can be made based on this limited information.… |
+| **Upgrades** | 4/10 | Medium | The provided code snippet does not contain any explicit upgrade mechanisms or proxy patterns (7.7 Upgrades). Therefore, no assessment of upgrade safety can be made based on this limited information.… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 34.7% |
-| **Top-3 Unlocked** | 73.7% |
+| **Top-1 Unlocked Holder** | 34.9% |
+| **Top-3 Unlocked** | 74.2% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ Interfaces such as `IRewardFactory` with `setAccess`, `IPools` with `setPoolMana
 |--------|-------|
 | **Contract** | [`0x4e3f...9d2b`](https://etherscan.io/address/0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b) |
 | **Network** | Ethereum |
-| **Price** | $1.6600 |
-| **24h Volume** | $739.1K |
-| **Liquidity** | $4.89M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $2.3100 |
+| **24h Volume** | $464.7K |
+| **Liquidity** | $6.48M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | 69.6% of supply |
+| **Top-10 Holders** | 71.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 154 buys / 255 sells |
 

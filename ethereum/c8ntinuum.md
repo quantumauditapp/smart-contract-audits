@@ -3,13 +3,13 @@ token: c8ntinuum
 ticker: CTM
 network: ethereum
 risk_score: 49
-status: high
+status: medium
 date: 2026-07-22
 ---
 
 # c8ntinuum (CTM) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/c8ntinuum-eth)
 
@@ -33,7 +33,7 @@ The CTM contract is an ERC20 token implementation utilizing OpenZeppelin's Acces
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 45.6% |
+| **Top-1 Unlocked Holder** | 47.8% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -73,12 +73,12 @@ The `MINTER_ROLE` has the exclusive authority to mint new `CTM` tokens up to the
 |--------|-------|
 | **Contract** | [`0xc8fb...8888`](https://etherscan.io/address/0xc8fb80fcc03f699c70ff0cc08c09106288888888) |
 | **Network** | Ethereum |
-| **Price** | $0.2282 |
-| **24h Volume** | $2.12M |
-| **Liquidity** | $2.50M |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.2302 |
+| **24h Volume** | $2.57M |
+| **Liquidity** | $2.61M |
+| **Volume / Liquidity** | 1.0× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 15.2% of supply |
+| **Top-10 Holders** | 15.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2422 buys / 2334 sells |
 

@@ -3,13 +3,13 @@ token: CAT
 ticker: CAT
 network: bsc
 risk_score: 82
-status: critical
+status: high
 date: 2026-08-14
 ---
 
 # CAT (CAT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 82/100 — 🔴 Critical Risk**
+> **Risk Score: 82/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cat-bsc)
 
@@ -35,8 +35,8 @@ For immutable contracts, ensure thorough testing and auditing before deployment,
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 72.2% |
-| **Top-3 Unlocked** | ⚠️ 99.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 63.1% |
+| **Top-3 Unlocked** | ⚠️ 99.7% |
 
 ## Security Findings
 
@@ -89,12 +89,12 @@ The contracts are deployed as immutable implementations and do not incorporate a
 |--------|-------|
 | **Contract** | [`0x0667...9424`](https://bscscan.com/address/0x0667873e07ffec6509525b4e4cd97409e1fe9424) |
 | **Network** | BNB Chain |
-| **Price** | $1.8200 |
-| **24h Volume** | $1.18M |
-| **Liquidity** | $21.81M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $1.6000 |
+| **24h Volume** | $732.2K |
+| **Liquidity** | $15.52M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 95.0% of supply |
+| **Top-10 Holders** | 95.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1325 buys / 367 sells |
 

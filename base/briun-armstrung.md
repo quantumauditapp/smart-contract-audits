@@ -2,14 +2,14 @@
 token: Briun Armstrung
 ticker: BRIUN
 network: base
-risk_score: 2
+risk_score: 8
 status: low
 date: 2026-07-24
 ---
 
 # Briun Armstrung (BRIUN) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 2/100 — 🟢 Low Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/briun-armstrung-base)
 
@@ -26,7 +26,7 @@ The BriunArmstrung token contract is a standard ERC20 implementation built upon 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The contract demonstrates high technical quality, primarily due to its reliance on OpenZeppelin's well-audited ERC20 and Ownable implementations (7.2 Code Security). There are no complex custom… |
-| **Governance / Economics** | 8/10 | Low | The contract's ownership has been renounced (7.3 Access Control), which removes a single point of administrative control and enhances decentralization for contract functions. However, the entire… |
+| **Governance / Economics** | 6/10 | Medium | The contract's ownership has been renounced (7.3 Access Control), which removes a single point of administrative control and enhances decentralization for contract functions. However, the entire… |
 | **Upgrades** | 10/10 | Low | The contract is not designed to be upgradeable (7.7 Upgrades). This eliminates upgrade-related risks such as proxy implementation vulnerabilities or administrative key compromise. The immutability… |
 
 ## LP Distribution
@@ -66,12 +66,12 @@ The contract is a standard implementation of the ERC20 token specification, leve
 |--------|-------|
 | **Contract** | [`0x8c81...e987`](https://basescan.org/address/0x8c81b4c816d66d36c4bf348bdec01dbcbc70e987) |
 | **Network** | Base |
-| **Price** | $0.00009178 |
-| **24h Volume** | $1.3K |
-| **Liquidity** | $33.1K |
+| **Price** | $0.00008424 |
+| **24h Volume** | $0 |
+| **Liquidity** | $1.2K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 42.7% of supply |
+| **Top-10 Holders** | 45.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 345 buys / 272 sells |
 

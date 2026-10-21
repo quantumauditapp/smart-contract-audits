@@ -2,14 +2,14 @@
 token: Coinbase Wrapped MEGA
 ticker: CBMEGA
 network: base
-risk_score: 79
+risk_score: 85
 status: critical
 date: 2026-08-16
 ---
 
 # Coinbase Wrapped MEGA (CBMEGA) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 79/100 — 🔴 Critical Risk**
+> **Risk Score: 85/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/coinbase-wrapped-mega-base)
 
@@ -25,7 +25,7 @@ The audit of FiatTokenV2_2, an upgradeable ERC-20 stablecoin implementation, rev
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates good code security (7.2) through the use of SafeMath for arithmetic operations and clear adherence to ERC-20 standards. The EIP-712 authorization functions are correctly… |
+| **Technical** | 4/10 | Medium | The contract demonstrates good code security (7.2) through the use of SafeMath for arithmetic operations and clear adherence to ERC-20 standards. The EIP-712 authorization functions are correctly… |
 | **Governance / Economics** | 1/10 | High | The protocol exhibits a high degree of centralization (7.5 Governance) through privileged roles that can blacklist accounts and pause transfers. While typical for stablecoins, this represents a… |
 | **Upgrades** | 1/10 | High | The contract is designed as an upgradeable implementation (7.7 Upgrades) behind a proxy, utilizing an initializer (`initializeV2_2`) that correctly prevents re-initialization. The upgrade logic… |
 
@@ -42,7 +42,7 @@ The audit of FiatTokenV2_2, an upgradeable ERC-20 stablecoin implementation, rev
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 68.7% |
+| **Top-1 Unlocked Holder** | ⚠️ 84.1% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -89,12 +89,12 @@ The `_chainId()` function retrieves the chain ID using inline assembly (`chainId
 |--------|-------|
 | **Contract** | [`0xcb11...7d23`](https://basescan.org/address/0xcb111e6a2a3bde90856d299d61341ac302167d23) |
 | **Network** | Base |
-| **Price** | $0.03094 |
-| **24h Volume** | $125.6K |
-| **Liquidity** | $61.1K |
-| **Volume / Liquidity** | 2.1× |
+| **Price** | $0.03952 |
+| **24h Volume** | $215.2K |
+| **Liquidity** | $40.9K |
+| **Volume / Liquidity** | 5.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 94.1% of supply |
+| **Top-10 Holders** | 93.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 277 buys / 389 sells |
 

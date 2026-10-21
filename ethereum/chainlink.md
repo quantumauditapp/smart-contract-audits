@@ -2,14 +2,14 @@
 token: Chainlink
 ticker: LINK
 network: ethereum
-risk_score: 42
+risk_score: 39
 status: medium
 date: 2026-06-10
 ---
 
 # Chainlink (LINK) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chainlink-eth)
 
@@ -26,15 +26,15 @@ The ChainLink Token contract implements ERC-20 and ERC-677 standards, utilizing 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 7/10 | Low | The contract architecture (7.1) is a standard ERC-20 and ERC-677 token implementation, leveraging the SafeMath library for robust integer overflow/underflow protection in arithmetic operations. This… |
-| **Governance / Economics** | 2/10 | High | The economic model (7.4) of the LinkToken is straightforward, featuring a fixed total supply minted to the deployer. There are no complex fee structures, staking, or governance mechanisms (7.5)… |
+| **Governance / Economics** | 3/10 | High | The economic model (7.4) of the LinkToken is straightforward, featuring a fixed total supply minted to the deployer. There are no complex fee structures, staking, or governance mechanisms (7.5)… |
 | **Upgrades** | 5/10 | Medium | The contract is not designed with any upgradeability patterns (7.7) such as UUPS or Transparent proxies. Therefore, there are no specific upgrade-related risks. Any changes to the token's logic would… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 59.5% |
-| **Top-3 Unlocked** | 73.2% |
+| **Top-1 Unlocked Holder** | 24.6% |
+| **Top-3 Unlocked** | 50.3% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ The `transferAndCall` function calls the `onTokenTransfer` function on the recip
 |--------|-------|
 | **Contract** | [`0x5149...86ca`](https://etherscan.io/address/0x514910771af9ca656af840dff83e8264ecf986ca) |
 | **Network** | Ethereum |
-| **Price** | $8.6300 |
-| **24h Volume** | $2.36M |
-| **Liquidity** | $22.96M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $11.8800 |
+| **24h Volume** | $8.29M |
+| **Liquidity** | $22.09M |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 32.7% of supply |
+| **Top-10 Holders** | 31.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
 ## Security Flags (3/5 passed)

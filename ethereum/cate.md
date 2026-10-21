@@ -2,14 +2,14 @@
 token: Cate
 ticker: CATE
 network: ethereum
-risk_score: 24
-status: medium
+risk_score: 30
+status: low
 date: 2026-07-29
 ---
 
 # Cate (CATE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 24/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cate-eth)
 
@@ -26,7 +26,7 @@ The CATE token contract is an ERC-20 standard implementation with custom tax mec
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract utilizes `SafeMath` for arithmetic safety and implements standard ERC-20 functionalities. It includes a complex `_transfer` function with dynamic tax calculations, anti-bot measures, and… |
-| **Governance / Economics** | 7/10 | Low | The contract's ownership has been renounced, which removes the risk of the owner arbitrarily changing parameters post-deployment (7.5 Governance). However, the liquidity pool for the CATE/WETH pair… |
+| **Governance / Economics** | 6/10 | Medium | The contract's ownership has been renounced, which removes the risk of the owner arbitrarily changing parameters post-deployment (7.5 Governance). However, the liquidity pool for the CATE/WETH pair… |
 | **Upgrades** | 9/10 | Low | The CATE contract is not designed with an upgrade proxy pattern, meaning its core logic cannot be directly upgraded (7.7 Upgrades). While this ensures immutability of the contract code, the renounced… |
 
 ## LP Distribution
@@ -94,12 +94,12 @@ The contract uses the `SafeMath` library for arithmetic operations. While this w
 |--------|-------|
 | **Contract** | [`0xa004...33b8`](https://etherscan.io/address/0xa00453052a36d43a99ac1ca145dfe4a952ca33b8) |
 | **Network** | Ethereum |
-| **Price** | $0.0002997 |
-| **24h Volume** | $162.4K |
-| **Liquidity** | $100.0K |
-| **Volume / Liquidity** | 1.6× |
+| **Price** | $0.0001884 |
+| **24h Volume** | $1.7K |
+| **Liquidity** | $94.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 39.3% of supply |
+| **Top-10 Holders** | 50.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 397 buys / 384 sells |
 

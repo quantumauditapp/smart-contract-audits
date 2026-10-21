@@ -33,8 +33,8 @@ The Cookie token is an ERC-20 compliant token leveraging LayerZero's Omnichain F
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 46.3% |
-| **Top-3 Unlocked** | ⚠️ 93.7% |
+| **Top-1 Unlocked Holder** | 33.8% |
+| **Top-3 Unlocked** | ⚠️ 84.8% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The entire initial supply of `Cookie` tokens is minted to the `_delegate` addres
 |--------|-------|
 | **Contract** | [`0xc004...265f`](https://basescan.org/address/0xc0041ef357b183448b235a8ea73ce4e4ec8c265f) |
 | **Network** | Base |
-| **Price** | $0.01242 |
-| **24h Volume** | $42.9K |
-| **Liquidity** | $68.4K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.01159 |
+| **24h Volume** | $4.8K |
+| **Liquidity** | $76.3K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 73.9% of supply |
+| **Top-10 Holders** | 68.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1553 buys / 1486 sells |
 

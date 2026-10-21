@@ -3,13 +3,13 @@ token: Cap
 ticker: CAP
 network: ethereum
 risk_score: 48
-status: high
+status: medium
 date: 2026-06-29
 ---
 
 # Cap (CAP) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 48/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cap-eth)
 
@@ -81,10 +81,10 @@ While OpenZeppelin's ERC-1967 proxy uses well-defined storage slots for its inte
 |--------|-------|
 | **Contract** | [`0x9999...9999`](https://etherscan.io/address/0x99991c6aabba5a096f24f250b73580f5179b9999) |
 | **Network** | Ethereum |
-| **Price** | $0.0223 |
-| **24h Volume** | $2.9K |
-| **Liquidity** | $16.2K |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.07056 |
+| **24h Volume** | $9 |
+| **Liquidity** | $28.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2d |
 | **Top-10 Holders** | 100.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

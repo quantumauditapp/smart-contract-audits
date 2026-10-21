@@ -2,14 +2,14 @@
 token: Caldera
 ticker: ERA
 network: ethereum
-risk_score: 84
+risk_score: 90
 status: critical
 date: 2026-07-22
 ---
 
 # Caldera (ERA) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 84/100 — 🔴 Critical Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/caldera-eth)
 
@@ -25,7 +25,7 @@ This audit focused on the provided ERC1967Proxy contract, which is a standard UU
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The audited contract is a standard OpenZeppelin ERC1967Proxy, which is a well-vetted and widely used UUPS proxy implementation (7.1 Architecture). Its `delegatecall` mechanism is correctly… |
+| **Technical** | 4/10 | Medium | The audited contract is a standard OpenZeppelin ERC1967Proxy, which is a well-vetted and widely used UUPS proxy implementation (7.1 Architecture). Its `delegatecall` mechanism is correctly… |
 | **Governance / Economics** | 1/10 | High | The economic and governance risks are primarily tied to the upgradeability mechanism (7.5 Governance). As a UUPS proxy, the administrative control for upgrades resides within the implementation… |
 | **Upgrades** | 1/10 | High | The contract implements the UUPS (ERC-1967) proxy pattern, allowing for seamless upgrades of the underlying logic (7.7 Upgrades). This flexibility is a strength, but also introduces significant risk… |
 
@@ -81,10 +81,10 @@ The contract utilizes the `ERC1967Proxy` from OpenZeppelin Contracts, which is a
 |--------|-------|
 | **Contract** | [`0xe2ad...de2a`](https://etherscan.io/address/0xe2ad0bf751834f2fbdc62a41014f84d67ca1de2a) |
 | **Network** | Ethereum |
-| **Price** | $0.104 |
-| **24h Volume** | $7.2K |
-| **Liquidity** | $10.7K |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $0.05919 |
+| **24h Volume** | $129 |
+| **Liquidity** | $8.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
 | **Top-10 Holders** | 100.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

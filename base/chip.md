@@ -3,13 +3,13 @@ token: Chip
 ticker: CHIP
 network: base
 risk_score: 76
-status: critical
+status: high
 date: 2026-08-17
 ---
 
 # Chip (CHIP) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 76/100 — 🔴 Critical Risk**
+> **Risk Score: 76/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chip-base)
 
@@ -42,7 +42,7 @@ The OToken contract serves as an upgradeable ERC-20 token with minting and burni
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.9% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -82,12 +82,12 @@ The OToken contract currently lacks a pause mechanism. In the event of an emerge
 |--------|-------|
 | **Contract** | [`0x0c1c...1f6e`](https://basescan.org/address/0x0c1c1c109fe34733fca54b82d7b46b75cfb71f6e) |
 | **Network** | Base |
-| **Price** | $0.03062 |
-| **24h Volume** | $149.4K |
-| **Liquidity** | $192.2K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.05858 |
+| **24h Volume** | $714.2K |
+| **Liquidity** | $131.4K |
+| **Volume / Liquidity** | 5.4× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 97.4% of supply |
+| **Top-10 Holders** | 95.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1927 buys / 1894 sells |
 

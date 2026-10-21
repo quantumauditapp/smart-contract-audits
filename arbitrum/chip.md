@@ -3,13 +3,13 @@ token: Chip
 ticker: CHIP
 network: arbitrum
 risk_score: 73
-status: critical
+status: high
 date: 2026-07-22
 ---
 
 # Chip (CHIP) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 73/100 — 🔴 Critical Risk**
+> **Risk Score: 73/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chip-arb)
 
@@ -42,8 +42,8 @@ This audit covers an OpenZeppelin TransparentUpgradeableProxy contract. The prim
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 88.4% |
-| **Top-3 Unlocked** | ⚠️ 98.9% |
+| **Top-1 Unlocked Holder** | ⚠️ 64.2% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -82,12 +82,12 @@ The `_admin` variable in `TransparentUpgradeableProxy` is declared as `immutable
 |--------|-------|
 | **Contract** | [`0x0c1c...1f6e`](https://arbiscan.io/address/0x0c1c1c109fe34733fca54b82d7b46b75cfb71f6e) |
 | **Network** | Arbitrum |
-| **Price** | $0.03016 |
-| **24h Volume** | $72.6K |
-| **Liquidity** | $1.16M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.05869 |
+| **24h Volume** | $4.60M |
+| **Liquidity** | $1.07M |
+| **Volume / Liquidity** | 4.3× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 75.6% of supply |
+| **Top-10 Holders** | 74.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 818 buys / 810 sells |
 

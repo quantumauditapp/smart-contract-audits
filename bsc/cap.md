@@ -2,14 +2,14 @@
 token: Cap
 ticker: CAP
 network: bsc
-risk_score: 55
-status: high
+risk_score: 57
+status: medium
 date: 2026-07-23
 ---
 
 # Cap (CAP) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 57/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cap-bsc)
 
@@ -80,12 +80,12 @@ The `setDelegate` function in `OAppCoreUpgradeable` allows the owner to change t
 |--------|-------|
 | **Contract** | [`0x9999...9999`](https://bscscan.com/address/0x99991c6aabba5a096f24f250b73580f5179b9999) |
 | **Network** | BNB Chain |
-| **Price** | $0.02309 |
-| **24h Volume** | $58.0K |
-| **Liquidity** | $22.9K |
-| **Volume / Liquidity** | 2.5× |
+| **Price** | $0.05463 |
+| **24h Volume** | $161.8K |
+| **Liquidity** | $20.1K |
+| **Volume / Liquidity** | 8.0× |
 | **Token Age** | 26d |
-| **Top-10 Holders** | 91.8% of supply |
+| **Top-10 Holders** | 98.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 786 buys / 797 sells |
 
