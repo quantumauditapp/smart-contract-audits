@@ -2,14 +2,14 @@
 token: Moo Deng
 ticker: MOODENG
 network: solana
-risk_score: 39
-status: medium
+risk_score: 1
+status: low
 date: 2026-08-13
 ---
 
 # Moo Deng (MOODENG) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 1/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/moo-deng-sol)
 
@@ -25,9 +25,9 @@ This audit of the Moo Deng (MOODENG) SPL token mint identifies a medium risk due
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Moo Deng token is implemented using the standard spl-token program. A key security strength is that both the mint authority and freeze authority have been revoked, meaning no new tokens can be… |
-| **Governance / Economics** | 1/10 | High | The primary economic risk identified is holder concentration, with the top 10 token accounts collectively holding 54.69% of the total supply. This level of concentration could lead to price… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities. Furthermore, the token's metadata, including its name, symbol, or image, cannot be changed… |
+| **Technical** | 10/10 | Low | The Moo Deng token is implemented using the standard spl-token program. A key security strength is that both the mint authority and freeze authority have been revoked, meaning no new tokens can be… |
+| **Governance / Economics** | 5/10 | Medium | The primary economic risk identified is holder concentration, with the top 10 token accounts collectively holding 54.69% of the total supply. This level of concentration could lead to price… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities. Furthermore, the token's metadata, including its name, symbol, or image, cannot be changed… |
 
 ## LP Distribution
 
@@ -51,22 +51,21 @@ Top 10 token accounts hold 54.69% of supply. Coordinated sell-off would crash pr
 |--------|-------|
 | **Contract** | [`ED5nyy...PJBY`](https://solscan.io/account/ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY) |
 | **Network** | Solana |
-| **Price** | $0.03667 |
-| **24h Volume** | $87.3K |
-| **Liquidity** | $2.14M |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.04683 |
+| **24h Volume** | $892.0K |
+| **Liquidity** | $3.03M |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 54.7% of supply |
+| **Top-10 Holders** | 55.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 455 buys / 383 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -74,9 +73,8 @@ Top 10 token accounts hold 54.69% of supply. Coordinated sell-off would crash pr
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

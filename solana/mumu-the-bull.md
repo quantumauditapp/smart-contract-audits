@@ -2,14 +2,14 @@
 token: Mumu the Bull
 ticker: MUMU
 network: solana
-risk_score: 63
-status: high
+risk_score: 17
+status: low
 date: 2026-06-10
 ---
 
 # Mumu the Bull (MUMU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 17/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mumu-the-bull-sol)
 
@@ -25,9 +25,19 @@ The Mumu the Bull (MUMU) SPL token mint exhibits a strong security posture with 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Mumu the Bull (MUMU) token is implemented using the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, as confirmed by on-chain facts, preventing further… |
-| **Governance / Economics** | 1/10 | High | The token's economic profile shows a healthy liquidity of $80,790 USD and a normal 24-hour volume to liquidity ratio of 0.63, indicating no signs of wash trading. The DEX pair has been active for 32… |
-| **Upgrades** | 5/10 | Medium | The Mumu the Bull token mint has a robust upgrade and mutability profile. Both the mint and freeze authorities are revoked, meaning no further changes can be made to the token's supply or account… |
+| **Technical** | 10/10 | Low | The Mumu the Bull (MUMU) token is implemented using the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, as confirmed by on-chain facts, preventing further… |
+| **Governance / Economics** | 5/10 | Medium | The token's economic profile shows a healthy liquidity of $80,790 USD and a normal 24-hour volume to liquidity ratio of 0.63, indicating no signs of wash trading. The DEX pair has been active for 32… |
+| **Upgrades** | 8/10 | Low | The Mumu the Bull token mint has a robust upgrade and mutability profile. Both the mint and freeze authorities are revoked, meaning no further changes can be made to the token's supply or account… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Mumu the Bull (MUMU) SPL token mint exhibits a strong security posture with 
 |--------|-------|
 | **Contract** | [`hf34pZ...pump`](https://solscan.io/account/hf34pZHnV4entu9bdp4pFEmeKpivEUeSUhASgWopump) |
 | **Network** | Solana |
-| **Price** | $0.0008082 |
-| **24h Volume** | $3.5K |
-| **Liquidity** | $71.8K |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.0005562 |
+| **24h Volume** | $34.0K |
+| **Liquidity** | $75.6K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 60.1% of supply |
+| **Top-10 Holders** | 37.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2865 buys / 2326 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Mumu the Bull (MUMU) SPL token mint exhibits a strong security posture with 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

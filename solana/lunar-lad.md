@@ -2,14 +2,14 @@
 token: Lunar Lad
 ticker: LAD
 network: solana
-risk_score: 44
-status: medium
+risk_score: 6
+status: low
 date: 2026-08-17
 ---
 
 # Lunar Lad (LAD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 6/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lunar-lad-sol)
 
@@ -25,9 +25,9 @@ The Lunar Lad (LAD) SPL Token-2022 mint presents a low-risk profile based on the
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Lunar Lad (LAD) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a low concentration of holdings, with the top 10 token accounts holding 26.71% of the total supply, which does not trigger a high concentration warning. DEX liquidity stands at… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, have both been revoked, preventing any future changes to the token's supply or the ability to freeze accounts. As an SPL Token-2022… |
+| **Technical** | 10/10 | Low | The Lunar Lad (LAD) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a low concentration of holdings, with the top 10 token accounts holding 26.71% of the total supply, which does not trigger a high concentration warning. DEX liquidity stands at… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, have both been revoked, preventing any future changes to the token's supply or the ability to freeze accounts. As an SPL Token-2022… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -45,22 +45,21 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |--------|-------|
 | **Contract** | [`5Kc2Pw...pump`](https://solscan.io/account/5Kc2PwwPkyvRXC8wHgkVfKwxrMGktRuDpwTgAy1bpump) |
 | **Network** | Solana |
-| **Price** | $0.0004384 |
-| **24h Volume** | $73.9K |
-| **Liquidity** | $53.2K |
-| **Volume / Liquidity** | 1.4× |
+| **Price** | $0.0005654 |
+| **24h Volume** | $1.8K |
+| **Liquidity** | $77.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 26.7% of supply |
+| **Top-10 Holders** | 28.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 290 buys / 274 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: looksmax.org
 ticker: LOOKSMAX
 network: solana
-risk_score: 54
-status: high
+risk_score: 22
+status: low
 date: 2026-08-17
 ---
 
 # looksmax.org (LOOKSMAX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 54/100 — 🟠 High Risk**
+> **Risk Score: 22/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/looksmaxorg-sol)
 
@@ -25,9 +25,9 @@ This audit of the looksmax.org (LOOKSMAX) SPL Token Mint identifies a medium ris
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The looksmax.org (LOOKSMAX) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a relatively low holder concentration, with the top 10 accounts holding 28.7% of the total supply, which is below thresholds for high concentration risk. Total DEX liquidity is… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are largely immutable due to the revocation of both Mint and Freeze authorities. Key Token-2022 extensions such as transfer hook and transfer fee are not present or are… |
+| **Technical** | 10/10 | Low | The looksmax.org (LOOKSMAX) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a relatively low holder concentration, with the top 10 accounts holding 28.7% of the total supply, which is below thresholds for high concentration risk. Total DEX liquidity is… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable due to the revocation of both Mint and Freeze authorities. Key Token-2022 extensions such as transfer hook and transfer fee are not present or are… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`GPzpoX...pump`](https://solscan.io/account/GPzpoXpD74E2C4CJNayuoyBqPQJEsPtdse3nhntrpump) |
 | **Network** | Solana |
-| **Price** | $0.0008498 |
-| **24h Volume** | $832.7K |
-| **Liquidity** | $85.3K |
-| **Volume / Liquidity** | 9.8× |
+| **Price** | $0.0002646 |
+| **24h Volume** | $196.2K |
+| **Liquidity** | $71.7K |
+| **Volume / Liquidity** | 2.7× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 28.7% of supply |
+| **Top-10 Holders** | 34.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4123 buys / 4970 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

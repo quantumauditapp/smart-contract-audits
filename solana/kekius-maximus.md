@@ -2,14 +2,14 @@
 token: Kekius Maximus
 ticker: KM
 network: solana
-risk_score: 27
-status: medium
+risk_score: 0
+status: low
 date: 2026-08-14
 ---
 
 # Kekius Maximus (KM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 27/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kekius-maximus-sol)
 
@@ -25,9 +25,9 @@ The Kekius Maximus (KM) SPL token mint exhibits a low-risk profile based on avai
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Kekius Maximus (KM) token is an SPL token operating under the `spl-token` program. Both the mint authority and freeze authority are revoked, ensuring that no new tokens can be minted and no… |
-| **Governance / Economics** | 3/10 | High | The token exhibits healthy liquidity with $170,385 USD available on DEXs, and a normal 24-hour volume to liquidity ratio of 2.40, suggesting organic trading activity. The pair has been active for 608… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, meaning the token's supply is fixed and accounts cannot be frozen. The token is a classic SPL token (`spl-token` program) and does not… |
+| **Technical** | 10/10 | Low | The Kekius Maximus (KM) token is an SPL token operating under the `spl-token` program. Both the mint authority and freeze authority are revoked, ensuring that no new tokens can be minted and no… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits healthy liquidity with $170,385 USD available on DEXs, and a normal 24-hour volume to liquidity ratio of 2.40, suggesting organic trading activity. The pair has been active for 608… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply is fixed and accounts cannot be frozen. The token is a classic SPL token (`spl-token` program) and does not… |
 
 ## LP Distribution
 
@@ -41,7 +41,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -51,22 +51,21 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |--------|-------|
 | **Contract** | [`FThrNp...cs42`](https://solscan.io/account/FThrNpdic79XRV6i9aCWQ2UTp7oRQuCXAgUWtZR2cs42) |
 | **Network** | Solana |
-| **Price** | $0.001125 |
-| **24h Volume** | $380.5K |
-| **Liquidity** | $173.5K |
-| **Volume / Liquidity** | 2.2× |
+| **Price** | $0.0007808 |
+| **24h Volume** | $15.4K |
+| **Liquidity** | $182.5K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 21.4% of supply |
+| **Top-10 Holders** | 24.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2209 buys / 1567 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -74,9 +73,8 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

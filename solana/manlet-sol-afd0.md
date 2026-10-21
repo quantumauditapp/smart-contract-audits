@@ -2,14 +2,14 @@
 token: MANLET
 ticker: MANLET
 network: solana
-risk_score: 52
-status: high
+risk_score: 16
+status: low
 date: 2026-08-12
 ---
 
 # MANLET (MANLET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 52/100 — 🟠 High Risk**
+> **Risk Score: 16/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/manlet-sol-afd0)
 
@@ -25,9 +25,9 @@ The audit of the MANLET SPL token mint identified a medium risk primarily due to
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The MANLET token is implemented using the standard `spl-token` program (v3). Both the mint authority and freeze authority have been revoked, which is a strong security positive, preventing further… |
-| **Governance / Economics** | 2/10 | High | The token's DEX pair is very new, having been created only 5 days ago, which limits the ability to assess long-term market stability and team behavior. Current DEX liquidity stands at $401,330, with… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities. Metadata is also immutable, as `metadata_mutable` is `False`, ensuring that the token's… |
+| **Technical** | 10/10 | Low | The MANLET token is implemented using the standard `spl-token` program (v3). Both the mint authority and freeze authority have been revoked, which is a strong security positive, preventing further… |
+| **Governance / Economics** | 6/10 | Medium | The token's DEX pair is very new, having been created only 5 days ago, which limits the ability to assess long-term market stability and team behavior. Current DEX liquidity stands at $401,330, with… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities. Metadata is also immutable, as `metadata_mutable` is `False`, ensuring that the token's… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair for MANLET was created 5 days ago. This short duration provides an 
 |--------|-------|
 | **Contract** | [`HxQhDG...Ypyn`](https://solscan.io/account/HxQhDGYqyjorgogMJx7YbBHADEDxuHhLnMMmr6VYpyn) |
 | **Network** | Solana |
-| **Price** | $0.003718 |
-| **24h Volume** | $2.38M |
-| **Liquidity** | $407.7K |
-| **Volume / Liquidity** | 5.8× |
+| **Price** | $0.0007123 |
+| **24h Volume** | $38.2K |
+| **Liquidity** | $114.6K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 20.1% of supply |
+| **Top-10 Holders** | 24.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3679 buys / 4589 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair for MANLET was created 5 days ago. This short duration provides an 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

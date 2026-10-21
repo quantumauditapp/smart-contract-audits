@@ -2,14 +2,14 @@
 token: Moon Doge Coin
 ticker: MOONDOGECOIN
 network: solana
-risk_score: 65
-status: high
+risk_score: 62
+status: medium
 date: 2026-07-31
 ---
 
 # Moon Doge Coin (MOONDOGECOIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 65/100 — 🟠 High Risk**
+> **Risk Score: 62/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/moon-doge-coin-sol)
 
@@ -25,9 +25,9 @@ The Moon Doge Coin (MOONDOGECOIN) token exhibits a high volume-to-liquidity rati
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Moon Doge Coin is an SPL Token-2022 mint with both mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. No transfer hook or permanent delegate is configured… |
+| **Technical** | 8/10 | Low | The Moon Doge Coin is an SPL Token-2022 mint with both mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. No transfer hook or permanent delegate is configured… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a 24-hour volume of $8,873,780, which is 26.23x its total liquidity of $338,270. This pattern is strongly associated with artificially inflated trade volume. The DEX pair is only 0… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority for the token have both been revoked, meaning no new tokens can be minted and no accounts can be frozen. The token utilizes the spl-token-2022 program but does… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the token have both been revoked, meaning no new tokens can be minted and no accounts can be frozen. The token utilizes the spl-token-2022 program but does… |
 
 ## Security Findings
 
@@ -52,22 +52,21 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`AYJ1tY...pump`](https://solscan.io/account/AYJ1tYQZZJ1gmZhURYuXLwG9bygUcgBnYPzriLpxpump) |
 | **Network** | Solana |
-| **Price** | $0.01784 |
-| **24h Volume** | $8.82M |
-| **Liquidity** | $342.4K |
-| **Volume / Liquidity** | 25.8× |
+| **Price** | $0.0000073 |
+| **24h Volume** | $43 |
+| **Liquidity** | $7.1K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 19h |
-| **Top-10 Holders** | 2.4% of supply |
+| **Top-10 Holders** | 88.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 93917 buys / 21140 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -75,9 +74,8 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

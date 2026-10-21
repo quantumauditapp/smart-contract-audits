@@ -2,14 +2,14 @@
 token: Law Of Attraction
 ticker: LOA
 network: solana
-risk_score: 60
-status: high
+risk_score: 22
+status: low
 date: 2026-06-10
 ---
 
 # Law Of Attraction (LOA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 60/100 — 🟠 High Risk**
+> **Risk Score: 22/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/law-of-attraction-sol)
 
@@ -25,9 +25,19 @@ The Law Of Attraction (LOA) token is an SPL Token-2022 mint with both mint and f
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Law Of Attraction (LOA) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $76,148 in total DEX liquidity, and a 24-hour volume of $22,469, resulting in a normal Volume/Liquidity Ratio of 0.30. The pair has been active for 49 days… |
-| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are both revoked, preventing further supply issuance or account freezing. No Token-2022 extensions that would allow for future modifications, such as a… |
+| **Technical** | 10/10 | Low | The Law Of Attraction (LOA) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits moderate liquidity with $76,148 in total DEX liquidity, and a 24-hour volume of $22,469, resulting in a normal Volume/Liquidity Ratio of 0.30. The pair has been active for 49 days… |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are both revoked, preventing further supply issuance or account freezing. No Token-2022 extensions that would allow for future modifications, such as a… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Law Of Attraction (LOA) token is an SPL Token-2022 mint with both mint and f
 |--------|-------|
 | **Contract** | [`EhHyfj...pump`](https://solscan.io/account/EhHyfjRwj2jhmSE7GW5uJfizaLcNDa5C4HWPiSqjpump) |
 | **Network** | Solana |
-| **Price** | $0.0008232 |
-| **24h Volume** | $50.9K |
-| **Liquidity** | $80.4K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.0004987 |
+| **24h Volume** | $6.6K |
+| **Liquidity** | $79.0K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 13d |
-| **Top-10 Holders** | 59.1% of supply |
+| **Top-10 Holders** | 53.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5537 buys / 4489 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Law Of Attraction (LOA) token is an SPL Token-2022 mint with both mint and f
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

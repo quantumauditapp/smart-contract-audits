@@ -2,14 +2,14 @@
 token: Nietzschean Penguin
 ticker: PENGUIN
 network: solana
-risk_score: 63
-status: high
+risk_score: 25
+status: low
 date: 2026-08-14
 ---
 
 # Nietzschean Penguin (PENGUIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 25/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/nietzschean-penguin-sol)
 
@@ -25,9 +25,9 @@ The Nietzschean Penguin token presents a medium risk primarily due to significan
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Nietzschean Penguin token is an SPL Token-2022 mint with both mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. It does not utilize advanced Token-2022… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a moderate level of holder concentration, with the top 10 accounts holding 58.58% of the total supply, which could lead to price volatility. DEX liquidity stands at $195,547, with… |
-| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are permanently revoked, ensuring no further tokens can be minted and no accounts can be frozen. The metadata is immutable, preventing changes to the token's… |
+| **Technical** | 10/10 | Low | The Nietzschean Penguin token is an SPL Token-2022 mint with both mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. It does not utilize advanced Token-2022… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a moderate level of holder concentration, with the top 10 accounts holding 58.58% of the total supply, which could lead to price volatility. DEX liquidity stands at $195,547, with… |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are permanently revoked, ensuring no further tokens can be minted and no accounts can be frozen. The metadata is immutable, preventing changes to the token's… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ Top 10 token accounts hold 58.58% of supply. Coordinated sell-off would crash pr
 |--------|-------|
 | **Contract** | [`8Jx8AA...pump`](https://solscan.io/account/8Jx8AAHj86wbQgUTjGuj6GTTL5Ps3cqxKRTvpaJApump) |
 | **Network** | Solana |
-| **Price** | $0.001092 |
-| **24h Volume** | $240.8K |
-| **Liquidity** | $196.0K |
-| **Volume / Liquidity** | 1.2× |
+| **Price** | $0.0008477 |
+| **24h Volume** | $34.4K |
+| **Liquidity** | $219.7K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | 58.6% of supply |
+| **Top-10 Holders** | 51.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 883 buys / 683 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ Top 10 token accounts hold 58.58% of supply. Coordinated sell-off would crash pr
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

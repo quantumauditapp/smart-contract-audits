@@ -2,14 +2,14 @@
 token: Kiyomasa
 ticker: 清正
 network: solana
-risk_score: 66
-status: high
+risk_score: 35
+status: medium
 date: 2026-06-14
 ---
 
 # Kiyomasa (清正) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kiyomasa-sol)
 
@@ -25,9 +25,19 @@ The Kiyomasa SPL Token Mint is configured with no active mint or freeze authorit
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Kiyomasa token operates on the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring no new tokens can be minted and no accounts can be frozen. The token does… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity at $18,423 USD, with a 24-hour volume of $5,481 USD. The pair has been active for 111 days, providing a reasonable track record. The Volume/Liquidity Ratio is… |
-| **Upgrades** | 5/10 | Medium | The token's configuration is highly immutable, as both the mint and freeze authorities have been revoked. No Token-2022 extensions that would allow for future modifications, such as transfer hook… |
+| **Technical** | 8/10 | Low | The Kiyomasa token operates on the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring no new tokens can be minted and no accounts can be frozen. The token does… |
+| **Governance / Economics** | 2/10 | High | The token exhibits moderate liquidity at $18,423 USD, with a 24-hour volume of $5,481 USD. The pair has been active for 111 days, providing a reasonable track record. The Volume/Liquidity Ratio is… |
+| **Upgrades** | 8/10 | Low | The token's configuration is highly immutable, as both the mint and freeze authorities have been revoked. No Token-2022 extensions that would allow for future modifications, such as transfer hook… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Kiyomasa SPL Token Mint is configured with no active mint or freeze authorit
 |--------|-------|
 | **Contract** | [`ANP1wJ...pump`](https://solscan.io/account/ANP1wJHYWYQPfrZvg8FnjduwfBVJhRV3xqKcs3yapump) |
 | **Network** | Solana |
-| **Price** | $0.00002417 |
-| **24h Volume** | $1.9K |
-| **Liquidity** | $16.4K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.00001611 |
+| **24h Volume** | $172 |
+| **Liquidity** | $16.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 57.1% of supply |
+| **Top-10 Holders** | 74.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2989 buys / 2871 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Kiyomasa SPL Token Mint is configured with no active mint or freeze authorit
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

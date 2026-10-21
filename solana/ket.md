@@ -2,14 +2,14 @@
 token: KET
 ticker: KET
 network: solana
-risk_score: 59
-status: high
+risk_score: 23
+status: low
 date: 2026-07-26
 ---
 
 # KET (KET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ket-sol)
 
@@ -25,9 +25,9 @@ The KET SPL token mint exhibits a Medium risk profile primarily due to its very 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The KET token is implemented using the standard `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked, preventing further token minting or freezing of holder accounts.… |
-| **Governance / Economics** | 1/10 | High | The token's economic profile shows a top 10 holder concentration of 31.18%, which is not considered highly concentrated. Total DEX liquidity stands at $321,266, supporting a 24-hour trading volume of… |
-| **Upgrades** | 5/10 | Medium | The KET token mint has a robust authority revocation status, with both Mint Authority and Freeze Authority permanently revoked. This means the token's core parameters related to supply and account… |
+| **Technical** | 10/10 | Low | The KET token is implemented using the standard `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked, preventing further token minting or freezing of holder accounts.… |
+| **Governance / Economics** | 5/10 | Medium | The token's economic profile shows a top 10 holder concentration of 31.18%, which is not considered highly concentrated. Total DEX liquidity stands at $321,266, supporting a 24-hour trading volume of… |
+| **Upgrades** | 8/10 | Low | The KET token mint has a robust authority revocation status, with both Mint Authority and Freeze Authority permanently revoked. This means the token's core parameters related to supply and account… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair for KET was created 5 days ago. This short operational history prov
 |--------|-------|
 | **Contract** | [`9Pfync...pump`](https://solscan.io/account/9Pfync3ejPC9eHqVzq3nYQJAhyhjqpnB9UsaSfLxpump) |
 | **Network** | Solana |
-| **Price** | $0.009237 |
-| **24h Volume** | $1.07M |
-| **Liquidity** | $321.3K |
-| **Volume / Liquidity** | 3.3× |
+| **Price** | $0.003279 |
+| **24h Volume** | $296.8K |
+| **Liquidity** | $232.7K |
+| **Volume / Liquidity** | 1.3× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 31.2% of supply |
+| **Top-10 Holders** | 36.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1912 buys / 1186 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair for KET was created 5 days ago. This short operational history prov
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

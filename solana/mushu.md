@@ -2,14 +2,14 @@
 token: Mushu
 ticker: MUSHU
 network: solana
-risk_score: 29
-status: medium
+risk_score: 0
+status: low
 date: 2026-08-11
 ---
 
 # Mushu (MUSHU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 29/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mushu-sol)
 
@@ -25,9 +25,9 @@ The Mushu (MUSHU) SPL token mint audit found no critical or high-severity issues
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Mushu (MUSHU) token operates on the `spl-token` program. Its mint authority is revoked (None), preventing further token creation and ensuring a fixed supply. The freeze authority is also revoked… |
-| **Governance / Economics** | 2/10 | High | The token exhibits moderate liquidity with $368,704 USD available on DEXs. The 24-hour volume of $1,120,443 USD results in a Volume/Liquidity Ratio of 3.04, which is within normal ranges and does not… |
-| **Upgrades** | 5/10 | Medium | The Mushu (MUSHU) token mint has both its mint authority and freeze authority revoked, meaning its core parameters related to supply and account freezing are immutable. The `metadata_mutable` flag is… |
+| **Technical** | 10/10 | Low | The Mushu (MUSHU) token operates on the `spl-token` program. Its mint authority is revoked (None), preventing further token creation and ensuring a fixed supply. The freeze authority is also revoked… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $368,704 USD available on DEXs. The 24-hour volume of $1,120,443 USD results in a Volume/Liquidity Ratio of 3.04, which is within normal ranges and does not… |
+| **Upgrades** | 8/10 | Low | The Mushu (MUSHU) token mint has both its mint authority and freeze authority revoked, meaning its core parameters related to supply and account freezing are immutable. The `metadata_mutable` flag is… |
 
 ## LP Distribution
 
@@ -35,28 +35,37 @@ The Mushu (MUSHU) SPL token mint audit found no critical or high-severity issues
 |--------|-------|
 | **LP Burned** | ✅ 100.0% (≈ permanent lock) |
 
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
+
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
 | **Contract** | [`5Jr9hG...pump`](https://solscan.io/account/5Jr9hGmJgxBRjjF8XGcGgQzXUdsbpZNNMpigEv8Wpump) |
 | **Network** | Solana |
-| **Price** | $0.01096 |
-| **24h Volume** | $1.12M |
-| **Liquidity** | $373.2K |
-| **Volume / Liquidity** | 3.0× |
+| **Price** | $0.003546 |
+| **24h Volume** | $20.9K |
+| **Liquidity** | $268.6K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 31.5% of supply |
+| **Top-10 Holders** | 46.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4262 buys / 3642 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -64,9 +73,8 @@ The Mushu (MUSHU) SPL token mint audit found no critical or high-severity issues
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

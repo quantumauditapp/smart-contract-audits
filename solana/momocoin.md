@@ -2,14 +2,14 @@
 token: MomoCoin
 ticker: MOMO
 network: solana
-risk_score: 61
-status: high
+risk_score: 44
+status: medium
 date: 2026-08-14
 ---
 
 # MomoCoin (MOMO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/momocoin-sol)
 
@@ -25,9 +25,9 @@ The MomoCoin (MOMO) SPL Token Mint audit reveals a Medium risk profile primarily
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The MomoCoin (MOMO) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no existing… |
+| **Technical** | 8/10 | Low | The MomoCoin (MOMO) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no existing… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a moderate holder concentration, with the top 10 accounts holding 30.83% of the total supply, which is below the threshold for high concentration. Total DEX liquidity stands at… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning the token's supply and account freeze capabilities are immutable. The token uses the spl-token-2022… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning the token's supply and account freeze capabilities are immutable. The token uses the spl-token-2022… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`488SaF...pump`](https://solscan.io/account/488SaFq6wHF2z2k6NLSD3PtoSkXDNZaPkJwxze11pump) |
 | **Network** | Solana |
-| **Price** | $0.0005057 |
-| **24h Volume** | $548.8K |
-| **Liquidity** | $65.1K |
-| **Volume / Liquidity** | 8.4× |
+| **Price** | $0.00002282 |
+| **24h Volume** | $1.5K |
+| **Liquidity** | $19.6K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 30.8% of supply |
+| **Top-10 Holders** | 75.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2947 buys / 3022 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

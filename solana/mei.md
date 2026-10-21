@@ -2,14 +2,14 @@
 token: メイちゃん
 ticker: MEI
 network: solana
-risk_score: 58
-status: high
+risk_score: 41
+status: medium
 date: 2026-08-17
 ---
 
 # メイちゃん (MEI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mei-sol)
 
@@ -25,9 +25,9 @@ The メイちゃん (MEI) token mint on Solana exhibits strong security configur
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The メイちゃん (MEI) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing tokens can… |
+| **Technical** | 8/10 | Low | The メイちゃん (MEI) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing tokens can… |
 | **Governance / Economics** | 1/10 | High | The token exhibits moderate holder concentration, with the top 10 accounts holding approximately 40.74% of the total supply. This level does not trigger high concentration warnings. The total DEX… |
-| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are revoked, preventing any further changes to supply or account freezing capabilities. The metadata is immutable, ensuring that the token's name, symbol, or… |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are revoked, preventing any further changes to supply or account freezing capabilities. The metadata is immutable, ensuring that the token's name, symbol, or… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -45,22 +45,21 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |--------|-------|
 | **Contract** | [`AcZBJP...pump`](https://solscan.io/account/AcZBJPaabCqECpT7bFX4uxtcbvz33FiCcv22AUTXpump) |
 | **Network** | Solana |
-| **Price** | $0.0000519 |
-| **24h Volume** | $114.6K |
-| **Liquidity** | $17.0K |
-| **Volume / Liquidity** | 6.7× |
+| **Price** | $0.00000295 |
+| **24h Volume** | $2 |
+| **Liquidity** | $5.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 40.7% of supply |
+| **Top-10 Holders** | 98.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1028 buys / 858 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

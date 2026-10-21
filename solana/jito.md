@@ -2,14 +2,14 @@
 token: Jito
 ticker: JTO
 network: solana
-risk_score: 43
-status: medium
+risk_score: 5
+status: low
 date: 2026-07-14
 ---
 
 # Jito (JTO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 5/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jito-sol)
 
@@ -25,9 +25,9 @@ The JITO (JTO) SPL token mint has its mint and freeze authorities revoked, indic
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The JITO (JTO) token is implemented using the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing… |
-| **Governance / Economics** | 2/10 | High | The token exhibits healthy liquidity with $1,455,394 USD and a 24-hour trading volume of $913,572 USD, resulting in a normal Volume/Liquidity Ratio of 0.63. The DEX pair has been active for 950 days… |
-| **Upgrades** | 5/10 | Medium | The JITO (JTO) token mint has its mint and freeze authorities revoked, meaning its core parameters related to supply and account freezing cannot be changed. As a classic SPL token, it does not… |
+| **Technical** | 10/10 | Low | The JITO (JTO) token is implemented using the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits healthy liquidity with $1,455,394 USD and a 24-hour trading volume of $913,572 USD, resulting in a normal Volume/Liquidity Ratio of 0.63. The DEX pair has been active for 950 days… |
+| **Upgrades** | 8/10 | Low | The JITO (JTO) token mint has its mint and freeze authorities revoked, meaning its core parameters related to supply and account freezing cannot be changed. As a classic SPL token, it does not… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The `metadata_mutable: True` flag indicates that the token's name, symbol, or im
 |--------|-------|
 | **Contract** | [`jtojto...9mCL`](https://solscan.io/account/jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL) |
 | **Network** | Solana |
-| **Price** | $0.6263 |
-| **24h Volume** | $378.9K |
-| **Liquidity** | $1.57M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.502 |
+| **24h Volume** | $360.6K |
+| **Liquidity** | $1.35M |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 47.4% of supply |
+| **Top-10 Holders** | 48.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2218 buys / 2218 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The `metadata_mutable: True` flag indicates that the token's name, symbol, or im
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

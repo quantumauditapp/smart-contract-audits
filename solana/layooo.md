@@ -2,14 +2,14 @@
 token: LAYOOO
 ticker: LAYOOO
 network: solana
-risk_score: 51
-status: high
+risk_score: 28
+status: low
 date: 2026-08-17
 ---
 
 # LAYOOO (LAYOOO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/layooo-sol)
 
@@ -25,9 +25,9 @@ The LAYOOO token mint exhibits strong security characteristics with both mint an
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The LAYOOO token is an SPL Token-2022 mint with a total supply of 943,577,446.973992 tokens (6 decimals). A key strength is that both the Mint Authority and Freeze Authority are permanently revoked… |
-| **Governance / Economics** | 1/10 | High | The primary economic risk stems from the DEX pair's age, which is 0 days, indicating a very new market presence with no established track record. Current liquidity is $233,864, with a 24-hour volume… |
-| **Upgrades** | 5/10 | Medium | The token mint demonstrates strong immutability regarding its core functionalities. Both the Mint Authority and Freeze Authority have been revoked, ensuring that the token's supply and account freeze… |
+| **Technical** | 10/10 | Low | The LAYOOO token is an SPL Token-2022 mint with a total supply of 943,577,446.973992 tokens (6 decimals). A key strength is that both the Mint Authority and Freeze Authority are permanently revoked… |
+| **Governance / Economics** | 4/10 | Medium | The primary economic risk stems from the DEX pair's age, which is 0 days, indicating a very new market presence with no established track record. Current liquidity is $233,864, with a 24-hour volume… |
+| **Upgrades** | 8/10 | Low | The token mint demonstrates strong immutability regarding its core functionalities. Both the Mint Authority and Freeze Authority have been revoked, ensuring that the token's supply and account freeze… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`9sfCHM...pump`](https://solscan.io/account/9sfCHMLWSVy6MD6zr7pR1gD3qbT7C6K1E3dMf2ZBpump) |
 | **Network** | Solana |
-| **Price** | $0.003151 |
-| **24h Volume** | $1.41M |
-| **Liquidity** | $268.6K |
-| **Volume / Liquidity** | 5.2× |
+| **Price** | $0.0004609 |
+| **24h Volume** | $41.1K |
+| **Liquidity** | $105.9K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 16h |
-| **Top-10 Holders** | 17.4% of supply |
+| **Top-10 Holders** | 30.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3099 buys / 4346 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

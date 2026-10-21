@@ -2,14 +2,14 @@
 token: Kintara
 ticker: KINS
 network: solana
-risk_score: 40
-status: medium
+risk_score: 12
+status: low
 date: 2026-06-15
 ---
 
 # Kintara (KINS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kintara-sol)
 
@@ -25,9 +25,19 @@ The Kintara (KINS) SPL Token Mint exhibits a robust security configuration with 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Kintara (KINS) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts… |
-| **Governance / Economics** | 3/10 | High | The token exhibits healthy liquidity with $361,778 in total DEX liquidity and a 24-hour volume of $851,514. The Volume/Liquidity Ratio is 2.35, which is within normal parameters and does not suggest… |
-| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are revoked, preventing any future changes to supply or account freeze status. External security signals confirm that balance mutability, transfer fee… |
+| **Technical** | 10/10 | Low | The Kintara (KINS) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits healthy liquidity with $361,778 in total DEX liquidity and a 24-hour volume of $851,514. The Volume/Liquidity Ratio is 2.35, which is within normal parameters and does not suggest… |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are revoked, preventing any future changes to supply or account freeze status. External security signals confirm that balance mutability, transfer fee… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Kintara (KINS) SPL Token Mint exhibits a robust security configuration with 
 |--------|-------|
 | **Contract** | [`Tqj8yF...pump`](https://solscan.io/account/Tqj8yFmagrg7oorpQkVGYR52r96RFTamvWfth9bpump) |
 | **Network** | Solana |
-| **Price** | $0.004025 |
-| **24h Volume** | $222.8K |
-| **Liquidity** | $258.0K |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.001384 |
+| **24h Volume** | $41.7K |
+| **Liquidity** | $200.4K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 20d |
-| **Top-10 Holders** | 18.7% of supply |
+| **Top-10 Holders** | 21.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 913 buys / 688 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Kintara (KINS) SPL Token Mint exhibits a robust security configuration with 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

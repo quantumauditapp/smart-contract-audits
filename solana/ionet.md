@@ -2,14 +2,14 @@
 token: io.net
 ticker: IO
 network: solana
-risk_score: 61
-status: high
+risk_score: 23
+status: low
 date: 2026-07-16
 ---
 
 # io.net (IO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ionet-sol)
 
@@ -25,9 +25,9 @@ The IO token mint has revoked both mint and freeze authorities, indicating a fix
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The IO token is an SPL token operating under the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no holder… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity at $66,764 USD, with a healthy 24-hour volume of $229,644 USD, resulting in a normal Volume/Liquidity Ratio of 3.44. The DEX pair has been active for 285 days… |
-| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are revoked, preventing changes to supply or account freeze capabilities. However, the `metadata_mutable` flag is set to True, meaning the token's name… |
+| **Technical** | 10/10 | Low | The IO token is an SPL token operating under the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no holder… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits moderate liquidity at $66,764 USD, with a healthy 24-hour volume of $229,644 USD, resulting in a normal Volume/Liquidity Ratio of 3.44. The DEX pair has been active for 285 days… |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are revoked, preventing changes to supply or account freeze capabilities. However, the `metadata_mutable` flag is set to True, meaning the token's name… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The `metadata_mutable` flag is set to True. This means the token's name, symbol,
 |--------|-------|
 | **Contract** | [`BZLbGT...646K`](https://solscan.io/account/BZLbGTNCSFfoth2GYDtwr7e4imWzpR5jqcUuGEwr646K) |
 | **Network** | Solana |
-| **Price** | $0.1508 |
-| **24h Volume** | $12.5K |
-| **Liquidity** | $65.9K |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.1488 |
+| **24h Volume** | $40.2K |
+| **Liquidity** | $69.2K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | 58.8% of supply |
+| **Top-10 Holders** | 58.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 732 buys / 1393 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The `metadata_mutable` flag is set to True. This means the token's name, symbol,
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

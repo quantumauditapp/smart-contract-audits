@@ -2,14 +2,14 @@
 token: NET BOY
 ticker: NETBOY
 network: solana
-risk_score: 55
-status: high
+risk_score: 54
+status: medium
 date: 2026-08-14
 ---
 
 # NET BOY (NETBOY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 54/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/net-boy-sol)
 
@@ -25,9 +25,9 @@ The NET BOY (NETBOY) token mint is an SPL Token-2022 with critical authorities, 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The NET BOY (NETBOY) token is implemented using the spl-token-2022 program. The Mint Authority has been revoked, ensuring no new tokens can be minted, fixing the total supply at 954,900,682.778543… |
+| **Technical** | 8/10 | Low | The NET BOY (NETBOY) token is implemented using the spl-token-2022 program. The Mint Authority has been revoked, ensuring no new tokens can be minted, fixing the total supply at 954,900,682.778543… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a very new DEX pair, created 0 days ago, which means there is no historical data to assess market behavior or team actions. Current liquidity stands at $47,694, with a 24-hour… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are largely immutable due to the revocation of both Mint Authority and Freeze Authority. This means the supply cannot be increased, and existing accounts cannot be frozen.… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable due to the revocation of both Mint Authority and Freeze Authority. This means the supply cannot be increased, and existing accounts cannot be frozen.… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`J6xVFR...pump`](https://solscan.io/account/J6xVFRZTX8Q5pd8tdxRcM7D43EmpAyXrCCpXh9TRpump) |
 | **Network** | Solana |
-| **Price** | $0.0004423 |
-| **24h Volume** | $115.1K |
-| **Liquidity** | $47.5K |
-| **Volume / Liquidity** | 2.4× |
+| **Price** | $0.00000957 |
+| **24h Volume** | $95 |
+| **Liquidity** | $7.1K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 20h |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 95.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 7831 buys / 4548 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

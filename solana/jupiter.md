@@ -2,14 +2,14 @@
 token: Jupiter
 ticker: JUP
 network: solana
-risk_score: 54
-status: high
+risk_score: 16
+status: low
 date: 2026-06-21
 ---
 
 # Jupiter (JUP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 54/100 — 🟠 High Risk**
+> **Risk Score: 16/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jupiter-sol)
 
@@ -25,9 +25,9 @@ This audit of the Jupiter (JUP) SPL token mint identifies a low-severity risk re
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Jupiter (JUP) token operates on the standard `spl-token` program (v3). Both the Mint Authority and Freeze Authority are revoked, ensuring no new tokens can be minted and no existing accounts can… |
-| **Governance / Economics** | 1/10 | High | The token exhibits strong market health with over $216 million in DEX liquidity and $82 million in 24-hour trading volume. The Volume/Liquidity Ratio of 0.38 is normal, not indicating wash trading.… |
-| **Upgrades** | 5/10 | Medium | The token's core functionalities are immutable, as both the mint and freeze authorities have been revoked. There are no indications of upgradable transfer fees or transfer hooks. The only mutable… |
+| **Technical** | 10/10 | Low | The Jupiter (JUP) token operates on the standard `spl-token` program (v3). Both the Mint Authority and Freeze Authority are revoked, ensuring no new tokens can be minted and no existing accounts can… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits strong market health with over $216 million in DEX liquidity and $82 million in 24-hour trading volume. The Volume/Liquidity Ratio of 0.38 is normal, not indicating wash trading.… |
+| **Upgrades** | 8/10 | Low | The token's core functionalities are immutable, as both the mint and freeze authorities have been revoked. There are no indications of upgradable transfer fees or transfer hooks. The only mutable… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The token's metadata is mutable, meaning its name, symbol, or image can be chang
 |--------|-------|
 | **Contract** | [`JUPyiw...DvCN`](https://solscan.io/account/JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN) |
 | **Network** | Solana |
-| **Price** | $0.1939 |
-| **24h Volume** | $577.9K |
-| **Liquidity** | $1.09M |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.2913 |
+| **24h Volume** | $2.47M |
+| **Liquidity** | $1.99M |
+| **Volume / Liquidity** | 1.2× |
 | **Token Age** | 7mo |
-| **Top-10 Holders** | 66.8% of supply |
+| **Top-10 Holders** | 66.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 503 buys / 641 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The token's metadata is mutable, meaning its name, symbol, or image can be chang
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

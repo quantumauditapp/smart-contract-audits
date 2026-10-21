@@ -2,14 +2,14 @@
 token: Jab Jabich
 ticker: FROG
 network: solana
-risk_score: 64
-status: high
+risk_score: 52
+status: medium
 date: 2026-08-17
 ---
 
 # Jab Jabich (FROG) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 64/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jab-jabich-sol)
 
@@ -25,9 +25,9 @@ The Jab Jabich (FROG) token presents a medium risk primarily due to its very rec
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Jab Jabich (FROG) token operates on the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token minting or freezing of holder accounts. No… |
+| **Technical** | 8/10 | Low | The Jab Jabich (FROG) token operates on the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token minting or freezing of holder accounts. No… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 29.92% of the total supply, which is relatively low and indicates distributed ownership. Current DEX liquidity stands at… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority for the FROG token have been permanently revoked, meaning no further tokens can be minted and no accounts can be frozen. The token's metadata is immutable… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the FROG token have been permanently revoked, meaning no further tokens can be minted and no accounts can be frozen. The token's metadata is immutable… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 1 day ago. Insufficient track record to assess team or 
 |--------|-------|
 | **Contract** | [`6WS1Ns...pump`](https://solscan.io/account/6WS1NsTCjB1VFvVL8CjqUkB4VtK4fQ3sMPrN5e7rpump) |
 | **Network** | Solana |
-| **Price** | $0.000127 |
-| **24h Volume** | $232.9K |
-| **Liquidity** | $26.5K |
-| **Volume / Liquidity** | 8.8× |
+| **Price** | $0.00000349 |
+| **24h Volume** | $29 |
+| **Liquidity** | $3.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 29.9% of supply |
+| **Top-10 Holders** | 96.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4549 buys / 3367 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 1 day ago. Insufficient track record to assess team or 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

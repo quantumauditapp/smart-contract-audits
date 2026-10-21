@@ -2,14 +2,14 @@
 token: Jimothy The Raccoon
 ticker: JIMOTHY
 network: solana
-risk_score: 58
-status: high
+risk_score: 20
+status: low
 date: 2026-07-25
 ---
 
 # Jimothy The Raccoon (JIMOTHY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jimothy-the-raccoon-sol)
 
@@ -25,9 +25,9 @@ This SPL Token Mint audit for Jimothy The Raccoon (Jimothy) identifies a signifi
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no holder accounts can be… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a high Volume/Liquidity ratio of 21.63, with a 24-hour volume of $8,881,974 against a total DEX liquidity of $410,699, which is a strong indicator of potential wash trading. The… |
-| **Upgrades** | 5/10 | Medium | Both the mint and freeze authorities are permanently revoked, preventing any future changes to the token's supply or the ability to freeze holder accounts. The token's spl-token-2022 extensions… |
+| **Technical** | 9/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no holder accounts can be… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a high Volume/Liquidity ratio of 21.63, with a 24-hour volume of $8,881,974 against a total DEX liquidity of $410,699, which is a strong indicator of potential wash trading. The… |
+| **Upgrades** | 8/10 | Low | Both the mint and freeze authorities are permanently revoked, preventing any future changes to the token's supply or the ability to freeze holder accounts. The token's spl-token-2022 extensions… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The 24-hour volume is 21.63x the total DEX liquidity, a pattern strongly associa
 |--------|-------|
 | **Contract** | [`Ge87Et...pump`](https://solscan.io/account/Ge87EtsjwRQbHaqQmKRno69RFTwh9bfSsm99XNxTpump) |
 | **Network** | Solana |
-| **Price** | $0.007218 |
-| **24h Volume** | $8.88M |
-| **Liquidity** | $410.7K |
-| **Volume / Liquidity** | 21.6× |
+| **Price** | $0.005236 |
+| **24h Volume** | $332.2K |
+| **Liquidity** | $641.2K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 8d |
-| **Top-10 Holders** | 15.6% of supply |
+| **Top-10 Holders** | 23.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 26657 buys / 23127 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The 24-hour volume is 21.63x the total DEX liquidity, a pattern strongly associa
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

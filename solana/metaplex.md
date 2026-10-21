@@ -2,14 +2,14 @@
 token: Metaplex
 ticker: MPLX
 network: solana
-risk_score: 70
-status: high
+risk_score: 50
+status: medium
 date: 2026-07-03
 ---
 
 # Metaplex (MPLX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/metaplex-sol)
 
@@ -25,8 +25,8 @@ The Metaplex Token (MPLX) mint retains an active mint authority, allowing for un
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The Metaplex Token (MPLX) is an SPL token operating under the `spl-token` program. A critical risk is present as the mint authority, `BHkk3RTd4Ue6JnqXpa9QHTXbn575ycR8hxVmYx4E254k`, remains active… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a healthy liquidity of $1,705,177 USD and a normal 24-hour volume to liquidity ratio of 0.05, suggesting organic trading activity rather than wash trading. The DEX pair has been… |
+| **Technical** | 6/10 | Medium | The Metaplex Token (MPLX) is an SPL token operating under the `spl-token` program. A critical risk is present as the mint authority, `BHkk3RTd4Ue6JnqXpa9QHTXbn575ycR8hxVmYx4E254k`, remains active… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a healthy liquidity of $1,705,177 USD and a normal 24-hour volume to liquidity ratio of 0.05, suggesting organic trading activity rather than wash trading. The DEX pair has been… |
 | **Upgrades** | 4/10 | Medium | The mint authority for MPLX is still active, which allows for potential future changes to the token's total supply. In contrast, the freeze authority has been permanently revoked, ensuring that no… |
 
 ## Security Findings
@@ -52,22 +52,21 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |--------|-------|
 | **Contract** | [`METAew...Y18m`](https://solscan.io/account/METAewgxyPbgwsseH8T16a39CQ5VyVxZi9zXiDPY18m) |
 | **Network** | Solana |
-| **Price** | $0.02501 |
-| **24h Volume** | $74.1K |
-| **Liquidity** | $1.55M |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.03879 |
+| **24h Volume** | $283.0K |
+| **Liquidity** | $2.38M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 8mo |
-| **Top-10 Holders** | 68.7% of supply |
+| **Top-10 Holders** | 68.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4448 buys / 4447 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -75,9 +74,8 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

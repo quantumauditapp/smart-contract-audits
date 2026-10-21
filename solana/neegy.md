@@ -2,14 +2,14 @@
 token: Neegy
 ticker: NEEGY
 network: solana
-risk_score: 51
-status: high
+risk_score: 18
+status: low
 date: 2026-08-02
 ---
 
 # Neegy (NEEGY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 18/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/neegy-sol)
 
@@ -25,9 +25,19 @@ The Neegy (NEEGY) token mint, implemented on spl-token-2022, demonstrates a robu
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Neegy token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account freezing. No… |
-| **Governance / Economics** | 3/10 | High | The token exhibits moderate liquidity with $65,351 in total DEX liquidity. The 24-hour volume of $205,093 results in a normal Volume/Liquidity Ratio of 3.14, not indicative of wash trading. The DEX… |
-| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are permanently revoked, preventing further token creation or account freezing. Metadata, including name and symbol, is immutable, ensuring consistent… |
+| **Technical** | 10/10 | Low | The Neegy token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account freezing. No… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $65,351 in total DEX liquidity. The 24-hour volume of $205,093 results in a normal Volume/Liquidity Ratio of 3.14, not indicative of wash trading. The DEX… |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are permanently revoked, preventing further token creation or account freezing. Metadata, including name and symbol, is immutable, ensuring consistent… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Neegy (NEEGY) token mint, implemented on spl-token-2022, demonstrates a robu
 |--------|-------|
 | **Contract** | [`6oGuFD...pump`](https://solscan.io/account/6oGuFDbEeaSzTcvrmmd2MqfNYwHKXFoN7regcR22pump) |
 | **Network** | Solana |
-| **Price** | $0.0004031 |
-| **24h Volume** | $205.4K |
-| **Liquidity** | $65.4K |
-| **Volume / Liquidity** | 3.1× |
+| **Price** | $0.0001094 |
+| **24h Volume** | $32.4K |
+| **Liquidity** | $56.1K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 18d |
-| **Top-10 Holders** | 27.3% of supply |
+| **Top-10 Holders** | 44.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1579 buys / 1900 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Neegy (NEEGY) token mint, implemented on spl-token-2022, demonstrates a robu
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

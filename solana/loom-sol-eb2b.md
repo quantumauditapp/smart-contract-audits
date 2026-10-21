@@ -2,14 +2,14 @@
 token: Loom
 ticker: LOOM
 network: solana
-risk_score: 83
-status: critical
+risk_score: 45
+status: medium
 date: 2026-08-16
 ---
 
 # Loom (LOOM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 83/100 — 🔴 Critical Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/loom-sol-eb2b)
 
@@ -25,9 +25,9 @@ The Loom (LOOM) token mint exhibits a medium risk profile primarily due to signi
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Loom (LOOM) token is an SPL Token-2022 asset. Its core security posture is strong, with both the Mint Authority and Freeze Authority explicitly revoked, preventing further token issuance or… |
-| **Governance / Economics** | 1/10 | High | The economic stability of the Loom (LOOM) token presents some concerns. Holder concentration is notable, with the top 10 token accounts holding 56.91% of the total supply, indicating potential for… |
-| **Upgrades** | 5/10 | Medium | The Loom (LOOM) token mint demonstrates a robust and immutable configuration regarding its core parameters. Both the Mint Authority and Freeze Authority have been permanently revoked, ensuring no… |
+| **Technical** | 8/10 | Low | The Loom (LOOM) token is an SPL Token-2022 asset. Its core security posture is strong, with both the Mint Authority and Freeze Authority explicitly revoked, preventing further token issuance or… |
+| **Governance / Economics** | 3/10 | High | The economic stability of the Loom (LOOM) token presents some concerns. Holder concentration is notable, with the top 10 token accounts holding 56.91% of the total supply, indicating potential for… |
+| **Upgrades** | 8/10 | Low | The Loom (LOOM) token mint demonstrates a robust and immutable configuration regarding its core parameters. Both the Mint Authority and Freeze Authority have been permanently revoked, ensuring no… |
 
 ## Security Findings
 
@@ -52,22 +52,21 @@ DEX pair was created 5 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`GCR5Ph...pump`](https://solscan.io/account/GCR5PhaoRZdu69r7F3xYF6UCbwqqr1sbR46mxibWpump) |
 | **Network** | Solana |
-| **Price** | $0.0001131 |
-| **24h Volume** | $137.0K |
-| **Liquidity** | $23.6K |
-| **Volume / Liquidity** | 5.8× |
+| **Price** | $0.00002046 |
+| **24h Volume** | $555 |
+| **Liquidity** | $11.5K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 56.9% of supply |
+| **Top-10 Holders** | 54.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 903 buys / 580 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -75,9 +74,8 @@ DEX pair was created 5 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

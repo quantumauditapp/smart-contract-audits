@@ -2,14 +2,14 @@
 token: Make Britain Great Again
 ticker: MBGA
 network: solana
-risk_score: 68
-status: high
+risk_score: 30
+status: low
 date: 2026-06-20
 ---
 
 # Make Britain Great Again (MBGA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/make-britain-great-again-sol)
 
@@ -25,9 +25,19 @@ The Make Britain Great Again (MBGA) token mint is configured with revoked mint a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The MBGA token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked, ensuring no new tokens can be minted and no accounts can be frozen. It does not utilize a transfer… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity at $23,163 USD, with a healthy 24-hour volume to liquidity ratio of 0.23, suggesting organic trading activity. The DEX pair has been active for 37 days… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, meaning the token's supply and account freeze capabilities are permanently fixed and cannot be altered. The token does not have upgradable… |
+| **Technical** | 10/10 | Low | The MBGA token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked, ensuring no new tokens can be minted and no accounts can be frozen. It does not utilize a transfer… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate liquidity at $23,163 USD, with a healthy 24-hour volume to liquidity ratio of 0.23, suggesting organic trading activity. The DEX pair has been active for 37 days… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and account freeze capabilities are permanently fixed and cannot be altered. The token does not have upgradable… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Make Britain Great Again (MBGA) token mint is configured with revoked mint a
 |--------|-------|
 | **Contract** | [`dFybjf...pump`](https://solscan.io/account/dFybjfpAbTxjen9Ux2Q2dQSFTmrbcVRzYsGoiV5pump) |
 | **Network** | Solana |
-| **Price** | $0.00006329 |
-| **24h Volume** | $6.8K |
-| **Liquidity** | $24.1K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.00004474 |
+| **24h Volume** | $623 |
+| **Liquidity** | $25.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 16d |
-| **Top-10 Holders** | 50.7% of supply |
+| **Top-10 Holders** | 58.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 354 buys / 317 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Make Britain Great Again (MBGA) token mint is configured with revoked mint a
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

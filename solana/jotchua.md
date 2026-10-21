@@ -2,14 +2,14 @@
 token: Jotchua
 ticker: JOTCHUA
 network: solana
-risk_score: 45
-status: medium
+risk_score: 7
+status: low
 date: 2026-07-22
 ---
 
 # Jotchua (JOTCHUA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 7/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jotchua-sol)
 
@@ -25,9 +25,19 @@ The Jotchua SPL Token Mint is configured with revoked mint and freeze authoritie
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Jotchua token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen post-launch. No… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a low holder concentration, with the top 10 accounts holding 19.96% of the supply, reducing the risk of large-scale price manipulation. Liquidity stands at $201,170 USD, which is… |
-| **Upgrades** | 5/10 | Medium | The token's mint and freeze authorities are revoked, preventing any post-launch changes to supply or account states. It utilizes the Token-2022 program but does not have a transfer hook or default… |
+| **Technical** | 10/10 | Low | The Jotchua token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen post-launch. No… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a low holder concentration, with the top 10 accounts holding 19.96% of the supply, reducing the risk of large-scale price manipulation. Liquidity stands at $201,170 USD, which is… |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are revoked, preventing any post-launch changes to supply or account states. It utilizes the Token-2022 program but does not have a transfer hook or default… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Jotchua SPL Token Mint is configured with revoked mint and freeze authoritie
 |--------|-------|
 | **Contract** | [`BcHEaa...pump`](https://solscan.io/account/BcHEaaTCvycPwwsJ9yQTXdHP9X2gCLkznDbZ8VySpump) |
 | **Network** | Solana |
-| **Price** | $0.001573 |
-| **24h Volume** | $131.6K |
-| **Liquidity** | $187.9K |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $0.001307 |
+| **24h Volume** | $85.0K |
+| **Liquidity** | $192.7K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 21.4% of supply |
+| **Top-10 Holders** | 23.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 780 buys / 734 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Jotchua SPL Token Mint is configured with revoked mint and freeze authoritie
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

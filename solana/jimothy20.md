@@ -2,14 +2,14 @@
 token: Jimothy2.0
 ticker: JIMOTHY2.0
 network: solana
-risk_score: 64
-status: high
+risk_score: 47
+status: medium
 date: 2026-07-24
 ---
 
 # Jimothy2.0 (JIMOTHY2.0) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 64/100 — 🟠 High Risk**
+> **Risk Score: 47/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jimothy20-sol)
 
@@ -25,9 +25,9 @@ The Jimothy2.0 SPL Token Mint presents a mixed risk profile. While core authorit
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | This token is an SPL Token-2022 mint with both mint and freeze authorities revoked, indicating a fixed supply and no ability to freeze accounts. It does not utilize the Transfer Hook or Default… |
+| **Technical** | 8/10 | Low | This token is an SPL Token-2022 mint with both mint and freeze authorities revoked, indicating a fixed supply and no ability to freeze accounts. It does not utilize the Transfer Hook or Default… |
 | **Governance / Economics** | 1/10 | High | The token exhibits moderate holder concentration, with the top 10 accounts holding 47.75% of the supply, which is below the threshold for high concentration. DEX liquidity is $54,056, which is… |
-| **Upgrades** | 5/10 | Medium | The mint and freeze authorities are both revoked, ensuring that no new tokens can be minted and no accounts can be frozen. This SPL Token-2022 mint does not have a transfer hook or default frozen… |
+| **Upgrades** | 8/10 | Low | The mint and freeze authorities are both revoked, ensuring that no new tokens can be minted and no accounts can be frozen. This SPL Token-2022 mint does not have a transfer hook or default frozen… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`HBjadu...pump`](https://solscan.io/account/HBjaduVGUFukW2TT8DSwSdqLbBAW8uSJUxek2GfTpump) |
 | **Network** | Solana |
-| **Price** | $0.0005055 |
-| **24h Volume** | $161.0K |
-| **Liquidity** | $51.2K |
-| **Volume / Liquidity** | 3.1× |
+| **Price** | $0.00003008 |
+| **24h Volume** | $153 |
+| **Liquidity** | $14.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 47.8% of supply |
+| **Top-10 Holders** | 89.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 15793 buys / 1966 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

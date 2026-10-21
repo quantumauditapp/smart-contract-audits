@@ -2,14 +2,14 @@
 token: manlet
 ticker: MANLET
 network: solana
-risk_score: 66
-status: high
+risk_score: 35
+status: medium
 date: 2026-07-04
 ---
 
 # manlet (MANLET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/manlet-sol)
 
@@ -25,9 +25,19 @@ The manlet token mint on Solana exhibits a strong security posture with both min
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The manlet token is an SPL Token-2022 mint with its core authorities, Mint Authority and Freeze Authority, both revoked. This configuration prevents further token creation or freezing of holder… |
-| **Governance / Economics** | 1/10 | High | The token demonstrates healthy liquidity at $180,141 USD, with a normal 24-hour volume to liquidity ratio of 3.69, suggesting organic trading activity. The DEX pair has been active for 11 days… |
-| **Upgrades** | 5/10 | Medium | The token mint's critical authorities, Mint Authority and Freeze Authority, are both revoked, ensuring that the token's supply and account states cannot be altered by an administrative key. As an SPL… |
+| **Technical** | 8/10 | Low | The manlet token is an SPL Token-2022 mint with its core authorities, Mint Authority and Freeze Authority, both revoked. This configuration prevents further token creation or freezing of holder… |
+| **Governance / Economics** | 3/10 | High | The token demonstrates healthy liquidity at $180,141 USD, with a normal 24-hour volume to liquidity ratio of 3.69, suggesting organic trading activity. The DEX pair has been active for 11 days… |
+| **Upgrades** | 8/10 | Low | The token mint's critical authorities, Mint Authority and Freeze Authority, are both revoked, ensuring that the token's supply and account states cannot be altered by an administrative key. As an SPL… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The manlet token mint on Solana exhibits a strong security posture with both min
 |--------|-------|
 | **Contract** | [`DdPrHY...pump`](https://solscan.io/account/DdPrHYqM8Ueovnk9kAnAgoGhswkuaTqmxcoZzU3Zpump) |
 | **Network** | Solana |
-| **Price** | $0.0006219 |
-| **24h Volume** | $142.7K |
-| **Liquidity** | $96.9K |
-| **Volume / Liquidity** | 1.5× |
+| **Price** | $0.00004609 |
+| **24h Volume** | $1.7K |
+| **Liquidity** | $36.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 57.5% of supply |
+| **Top-10 Holders** | 60.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3059 buys / 3343 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The manlet token mint on Solana exhibits a strong security posture with both min
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

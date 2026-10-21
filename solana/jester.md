@@ -2,14 +2,14 @@
 token: Jester 
 ticker: JESTER 
 network: solana
-risk_score: 66
-status: high
+risk_score: 49
+status: medium
 date: 2026-08-17
 ---
 
 # Jester  (JESTER ) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jester-sol)
 
@@ -25,9 +25,9 @@ The Jester token mint is an SPL Token-2022 with both mint and freeze authorities
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Jester token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen post-launch. There is no… |
+| **Technical** | 8/10 | Low | The Jester token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen post-launch. There is no… |
 | **Governance / Economics** | 1/10 | High | The token's DEX pair is only 1 day old, which is a very short track record for assessing market dynamics and team behavior. While liquidity is $15,927, the 24-hour volume of $120,493 results in a… |
-| **Upgrades** | 5/10 | Medium | The token mint has no upgradeability concerns as both mint and freeze authorities are revoked. It is an SPL Token-2022, but extensions like transfer hook and default account state frozen are not… |
+| **Upgrades** | 8/10 | Low | The token mint has no upgradeability concerns as both mint and freeze authorities are revoked. It is an SPL Token-2022, but extensions like transfer hook and default account state frozen are not… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 1 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`DCYyd8...pump`](https://solscan.io/account/DCYyd8Vb9pHN2DLvK1VBejpte5smqgvTyRQQzNwGpump) |
 | **Network** | Solana |
-| **Price** | $0.00004925 |
-| **24h Volume** | $126.9K |
-| **Liquidity** | $15.3K |
-| **Volume / Liquidity** | 8.3× |
+| **Price** | $0.00000258 |
+| **24h Volume** | $1 |
+| **Liquidity** | $2.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 37.9% of supply |
+| **Top-10 Holders** | 97.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1991 buys / 1934 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 1 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

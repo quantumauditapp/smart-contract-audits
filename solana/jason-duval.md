@@ -2,14 +2,14 @@
 token: Jason Duval
 ticker: JASON
 network: solana
-risk_score: 64
-status: high
+risk_score: 52
+status: medium
 date: 2026-08-17
 ---
 
 # Jason Duval (JASON) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 64/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jason-duval-sol)
 
@@ -25,9 +25,9 @@ The Jason Duval (JASON) SPL Token Mint exhibits a strong security posture regard
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Jason Duval (JASON) token is implemented using the spl-token-2022 program. A key security strength is that both the Mint Authority and Freeze Authority are revoked (None), preventing further… |
+| **Technical** | 8/10 | Low | The Jason Duval (JASON) token is implemented using the spl-token-2022 program. A key security strength is that both the Mint Authority and Freeze Authority are revoked (None), preventing further… |
 | **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $24,969 USD and a 24-hour volume of $48,156, resulting in a normal Volume/Liquidity Ratio of 1.93. Holder concentration shows the top 10 accounts holding… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are highly secure against administrative changes, as both Mint and Freeze Authorities are revoked. Furthermore, the metadata is immutable ('metadata_mutable: False')… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are highly secure against administrative changes, as both Mint and Freeze Authorities are revoked. Furthermore, the metadata is immutable ('metadata_mutable: False')… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`FdQMjC...pump`](https://solscan.io/account/FdQMjCVEa77pqH1NbP381Dz32b2QR4xsJRDwM8icpump) |
 | **Network** | Solana |
-| **Price** | $0.0001274 |
-| **24h Volume** | $48.1K |
-| **Liquidity** | $24.8K |
-| **Volume / Liquidity** | 1.9× |
+| **Price** | $0.00000313 |
+| **24h Volume** | $177 |
+| **Liquidity** | $3.1K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 26.1% of supply |
+| **Top-10 Holders** | 98.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 577 buys / 542 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

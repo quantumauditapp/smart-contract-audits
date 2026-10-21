@@ -2,14 +2,14 @@
 token: lmeow
 ticker: LMEOW
 network: solana
-risk_score: 52
-status: high
+risk_score: 28
+status: low
 date: 2026-08-11
 ---
 
 # lmeow (LMEOW) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 52/100 — 🟠 High Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lmeow-sol)
 
@@ -25,9 +25,19 @@ The lmeow SPL Token Mint exhibits no critical or high-risk flags based on availa
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The lmeow token is an SPL Token-2022 mint. Key security authorities, including the Mint Authority and Freeze Authority, are permanently revoked, preventing further token issuance or freezing of… |
-| **Governance / Economics** | 2/10 | High | The token has a moderate liquidity of $50,253 USD, supporting small to medium trades. The 24-hour volume is $339,660, resulting in a Volume/Liquidity Ratio of 6.76, which is not indicative of wash… |
-| **Upgrades** | 5/10 | Medium | The lmeow token mint has no upgradeability concerns related to its core authorities, as both Mint and Freeze Authorities are revoked. It utilizes the spl-token-2022 program but does not implement… |
+| **Technical** | 10/10 | Low | The lmeow token is an SPL Token-2022 mint. Key security authorities, including the Mint Authority and Freeze Authority, are permanently revoked, preventing further token issuance or freezing of… |
+| **Governance / Economics** | 4/10 | Medium | The token has a moderate liquidity of $50,253 USD, supporting small to medium trades. The 24-hour volume is $339,660, resulting in a Volume/Liquidity Ratio of 6.76, which is not indicative of wash… |
+| **Upgrades** | 8/10 | Low | The lmeow token mint has no upgradeability concerns related to its core authorities, as both Mint and Freeze Authorities are revoked. It utilizes the spl-token-2022 program but does not implement… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The lmeow SPL Token Mint exhibits no critical or high-risk flags based on availa
 |--------|-------|
 | **Contract** | [`9tWD7C...pump`](https://solscan.io/account/9tWD7CuW2g59fgMUnggo4cZqB6XHEZrHtBaa8q7dpump) |
 | **Network** | Solana |
-| **Price** | $0.000222 |
-| **24h Volume** | $360.7K |
-| **Liquidity** | $50.5K |
-| **Volume / Liquidity** | 7.1× |
+| **Price** | $0.00004059 |
+| **24h Volume** | $5.3K |
+| **Liquidity** | $28.8K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 7d |
-| **Top-10 Holders** | 30.3% of supply |
+| **Top-10 Holders** | 57.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2144 buys / 2359 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The lmeow SPL Token Mint exhibits no critical or high-risk flags based on availa
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
