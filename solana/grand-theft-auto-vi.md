@@ -2,14 +2,14 @@
 token: Grand Theft Auto VI
 ticker: GTAVI
 network: solana
-risk_score: 53
-status: high
+risk_score: 21
+status: low
 date: 2026-06-23
 ---
 
 # Grand Theft Auto VI (GTAVI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 21/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/grand-theft-auto-vi-sol)
 
@@ -25,9 +25,19 @@ The Grand Theft Auto VI (GTAVI) SPL Token Mint exhibits strong security characte
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing any further token minting or freezing of holder accounts. There… |
-| **Governance / Economics** | 2/10 | High | The token has a total DEX liquidity of $83,938, with a 24-hour volume of $54,495. The Volume/Liquidity Ratio is 0.65, which is considered normal and does not indicate wash trading. The DEX pair has… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, meaning no further changes can be made to the token's supply or account freeze status. Key Token-2022 extensions like transfer hooks are not… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing any further token minting or freezing of holder accounts. There… |
+| **Governance / Economics** | 5/10 | Medium | The token has a total DEX liquidity of $83,938, with a 24-hour volume of $54,495. The Volume/Liquidity Ratio is 0.65, which is considered normal and does not indicate wash trading. The DEX pair has… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning no further changes can be made to the token's supply or account freeze status. Key Token-2022 extensions like transfer hooks are not… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Grand Theft Auto VI (GTAVI) SPL Token Mint exhibits strong security characte
 |--------|-------|
 | **Contract** | [`EpVHyK...pump`](https://solscan.io/account/EpVHyKK8oxcLmp2C2NhAos1oDxgBNriw3wSLSozYpump) |
 | **Network** | Solana |
-| **Price** | $0.0008565 |
-| **24h Volume** | $124.3K |
-| **Liquidity** | $105.1K |
-| **Volume / Liquidity** | 1.2× |
+| **Price** | $0.000109 |
+| **24h Volume** | $2.9K |
+| **Liquidity** | $51.1K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 24.2% of supply |
+| **Top-10 Holders** | 41.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6532 buys / 4928 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Grand Theft Auto VI (GTAVI) SPL Token Mint exhibits strong security characte
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

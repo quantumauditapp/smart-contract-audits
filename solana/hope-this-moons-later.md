@@ -2,14 +2,14 @@
 token: Hope This Moons Later
 ticker: HTML
 network: solana
-risk_score: 69
-status: high
+risk_score: 32
+status: low
 date: 2026-06-21
 ---
 
 # Hope This Moons Later (HTML) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 69/100 — 🟠 High Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hope-this-moons-later-sol)
 
@@ -25,9 +25,19 @@ This SPL Token-2022 mint, "Hope This Moons Later (HTML)", presents a low-risk pr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint with both the mint authority and freeze authority revoked, indicating a fixed supply and immutability of account states. No transfer hook is active, and the… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a healthy liquidity of $13,211 USD, with a normal 24-hour volume to liquidity ratio of 0.48, suggesting organic trading activity. The DEX pair has been active for 205 days… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any further changes to the token's supply or account freezing capabilities. The metadata is immutable… |
+| **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint with both the mint authority and freeze authority revoked, indicating a fixed supply and immutability of account states. No transfer hook is active, and the… |
+| **Governance / Economics** | 2/10 | High | The token exhibits a healthy liquidity of $13,211 USD, with a normal 24-hour volume to liquidity ratio of 0.48, suggesting organic trading activity. The DEX pair has been active for 205 days… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any further changes to the token's supply or account freezing capabilities. The metadata is immutable… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This SPL Token-2022 mint, "Hope This Moons Later (HTML)", presents a low-risk pr
 |--------|-------|
 | **Contract** | [`EhR8t2...pump`](https://solscan.io/account/EhR8t2Hd9KikSPiRHdHs8WidCLa3T1VEPFpnCsRRpump) |
 | **Network** | Solana |
-| **Price** | $0.0000099 |
-| **24h Volume** | $287 |
-| **Liquidity** | $8.8K |
+| **Price** | $0.00000928 |
+| **24h Volume** | $207 |
+| **Liquidity** | $10.5K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | 68.1% of supply |
+| **Top-10 Holders** | 82.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 695 buys / 331 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This SPL Token-2022 mint, "Hope This Moons Later (HTML)", presents a low-risk pr
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

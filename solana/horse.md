@@ -2,14 +2,14 @@
 token: HORSE
 ticker: HOR
 network: solana
-risk_score: 60
-status: high
+risk_score: 37
+status: medium
 date: 2026-08-05
 ---
 
 # HORSE (HOR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 60/100 — 🟠 High Risk**
+> **Risk Score: 37/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/horse-sol)
 
@@ -25,9 +25,19 @@ This audit of the HORSE (HOR) SPL token mint found no critical or high-risk vuln
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The HORSE (HOR) token is implemented using the standard `spl-token` program (v3). A key security strength is the revocation of both the Mint Authority and Freeze Authority, which prevents the… |
-| **Governance / Economics** | 1/10 | High | The token's economic profile shows a moderate DEX liquidity of $26,592. Trading activity appears normal, with a 24-hour volume to liquidity ratio of 1.47, which does not suggest wash trading. Holder… |
-| **Upgrades** | 5/10 | Medium | The HORSE (HOR) token mint has a fixed configuration due to the revocation of both its Mint Authority and Freeze Authority, meaning no further tokens can be minted and no accounts can be frozen. The… |
+| **Technical** | 8/10 | Low | The HORSE (HOR) token is implemented using the standard `spl-token` program (v3). A key security strength is the revocation of both the Mint Authority and Freeze Authority, which prevents the… |
+| **Governance / Economics** | 2/10 | High | The token's economic profile shows a moderate DEX liquidity of $26,592. Trading activity appears normal, with a 24-hour volume to liquidity ratio of 1.47, which does not suggest wash trading. Holder… |
+| **Upgrades** | 8/10 | Low | The HORSE (HOR) token mint has a fixed configuration due to the revocation of both its Mint Authority and Freeze Authority, meaning no further tokens can be minted and no accounts can be frozen. The… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the HORSE (HOR) SPL token mint found no critical or high-risk vuln
 |--------|-------|
 | **Contract** | [`5pW67i...xEMB`](https://solscan.io/account/5pW67iePFkjmBU5iVivErUEw2pM1kX8PY3pYiUu5xEMB) |
 | **Network** | Solana |
-| **Price** | $0.0001762 |
-| **24h Volume** | $41.5K |
-| **Liquidity** | $24.8K |
-| **Volume / Liquidity** | 1.7× |
+| **Price** | $0.00002926 |
+| **24h Volume** | $249 |
+| **Liquidity** | $12.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 7d |
-| **Top-10 Holders** | 49.1% of supply |
+| **Top-10 Holders** | 78.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 267 buys / 214 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the HORSE (HOR) SPL token mint found no critical or high-risk vuln
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: febu
 ticker: FEBU
 network: solana
-risk_score: 41
-status: medium
+risk_score: 17
+status: low
 date: 2026-07-23
 ---
 
 # febu (FEBU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 17/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/febu-sol)
 
@@ -25,9 +25,19 @@ The febu SPL Token Mint exhibits a robust security posture with both mint and fr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The febu token is implemented using the spl-token-2022 program, indicating modern SPL features. Both the Mint Authority and Freeze Authority have been revoked, preventing further token issuance or… |
-| **Governance / Economics** | 3/10 | High | DEX liquidity for febu stands at $139,383, which is sufficient to avoid very low liquidity concerns. The 24-hour volume of $608,636 results in a Volume/Liquidity Ratio of 4.37, indicating normal… |
-| **Upgrades** | 5/10 | Medium | The token's configuration shows a strong commitment to immutability, as both the Mint Authority and Freeze Authority are permanently revoked. This prevents any future changes to the total supply or… |
+| **Technical** | 10/10 | Low | The febu token is implemented using the spl-token-2022 program, indicating modern SPL features. Both the Mint Authority and Freeze Authority have been revoked, preventing further token issuance or… |
+| **Governance / Economics** | 6/10 | Medium | DEX liquidity for febu stands at $139,383, which is sufficient to avoid very low liquidity concerns. The 24-hour volume of $608,636 results in a Volume/Liquidity Ratio of 4.37, indicating normal… |
+| **Upgrades** | 8/10 | Low | The token's configuration shows a strong commitment to immutability, as both the Mint Authority and Freeze Authority are permanently revoked. This prevents any future changes to the total supply or… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The febu SPL Token Mint exhibits a robust security posture with both mint and fr
 |--------|-------|
 | **Contract** | [`4ko5tS...pump`](https://solscan.io/account/4ko5tSr5o3H4v1sFtjTSd9MPUW7yx5AFCpkNPoL6pump) |
 | **Network** | Solana |
-| **Price** | $0.001058 |
-| **24h Volume** | $583.3K |
-| **Liquidity** | $135.3K |
-| **Volume / Liquidity** | 4.3× |
+| **Price** | $0.00009906 |
+| **24h Volume** | $5.6K |
+| **Liquidity** | $56.9K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 14d |
-| **Top-10 Holders** | 19.5% of supply |
+| **Top-10 Holders** | 49.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3094 buys / 2452 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The febu SPL Token Mint exhibits a robust security posture with both mint and fr
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

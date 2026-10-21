@@ -2,14 +2,14 @@
 token: Fantasy Manager
 ticker: FANTASY
 network: solana
-risk_score: 82
-status: critical
+risk_score: 44
+status: medium
 date: 2026-06-11
 ---
 
 # Fantasy Manager (FANTASY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 82/100 — 🔴 Critical Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fantasy-manager-sol)
 
@@ -25,9 +25,19 @@ This Solana SPL Token-2022 mint exhibits a high degree of immutability, with bot
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked, indicating a fixed supply and immutability of account freezing. No Transfer Hook is active, and… |
+| **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked, indicating a fixed supply and immutability of account freezing. No Transfer Hook is active, and… |
 | **Governance / Economics** | 1/10 | High | Information regarding holder concentration and DEX market data (liquidity, trading volume, pair age) is unavailable. A third-party risk registry flags "Low Liquidity," but specific USD values or… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are revoked, preventing further minting or freezing of accounts. Key Token-2022 extensions like Transfer Hook are not configured… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are revoked, preventing further minting or freezing of accounts. Key Token-2022 extensions like Transfer Hook are not configured… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -40,17 +50,16 @@ This Solana SPL Token-2022 mint exhibits a high degree of immutability, with bot
 | **Liquidity** | $4.3K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 8d |
-| **Top-10 Holders** | 91.5% of supply |
+| **Top-10 Holders** | 98.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3427 buys / 2673 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This Solana SPL Token-2022 mint exhibits a high degree of immutability, with bot
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

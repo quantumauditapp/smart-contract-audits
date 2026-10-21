@@ -2,14 +2,14 @@
 token: Gunicorn
 ticker: GUNICORN
 network: solana
-risk_score: 70
-status: high
+risk_score: 47
+status: medium
 date: 2026-08-20
 ---
 
 # Gunicorn (GUNICORN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 47/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gunicorn-sol)
 
@@ -25,9 +25,9 @@ The Gunicorn (GUNICORN) SPL Token Mint audit reveals a generally secure configur
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Gunicorn token is implemented using the spl-token-2022 program. Its core security configuration is robust, with both the mint authority and freeze authority explicitly revoked, ensuring that no… |
+| **Technical** | 8/10 | Low | The Gunicorn token is implemented using the spl-token-2022 program. Its core security configuration is robust, with both the mint authority and freeze authority explicitly revoked, ensuring that no… |
 | **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $26,207 in total DEX liquidity, which could lead to slippage for larger trades. The 24-hour volume of $34,597 results in a healthy Volume/Liquidity Ratio of… |
-| **Upgrades** | 5/10 | Medium | The Gunicorn token mint has a fixed configuration, as both the mint and freeze authorities are revoked, preventing any future changes to the token's supply or account freeze status. It utilizes the… |
+| **Upgrades** | 8/10 | Low | The Gunicorn token mint has a fixed configuration, as both the mint and freeze authorities are revoked, preventing any future changes to the token's supply or account freeze status. It utilizes the… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`4xMegM...pump`](https://solscan.io/account/4xMegMRMd2TFQEXxv39vtMP1r5fFVuA7VcaSmAhLpump) |
 | **Network** | Solana |
-| **Price** | $0.00006972 |
-| **24h Volume** | $34.5K |
-| **Liquidity** | $26.9K |
-| **Volume / Liquidity** | 1.3× |
+| **Price** | $0.00001735 |
+| **24h Volume** | $1.7K |
+| **Liquidity** | $14.5K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 42.1% of supply |
+| **Top-10 Holders** | 70.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 437 buys / 451 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

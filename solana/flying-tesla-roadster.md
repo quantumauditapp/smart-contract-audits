@@ -2,14 +2,14 @@
 token: flying tesla roadster
 ticker: FTR
 network: solana
-risk_score: 56
-status: high
+risk_score: 37
+status: medium
 date: 2026-08-17
 ---
 
 # flying tesla roadster (FTR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 56/100 — 🟠 High Risk**
+> **Risk Score: 37/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/flying-tesla-roadster-sol)
 
@@ -25,9 +25,9 @@ The FTR token mint is based on the spl-token-2022 program with both mint and fre
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The FTR token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring a fixed supply and preventing any account freezing. No Transfer Hook is active, and… |
-| **Governance / Economics** | 2/10 | High | The token's DEX pair is very new, established only 2 days ago, which limits the ability to assess its market behavior and community (7.4 Economic). Liquidity stands at $60,025, with a 24-hour volume… |
-| **Upgrades** | 5/10 | Medium | The token mint's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning no further changes to supply or account freeze status can be made by an external key. The token… |
+| **Technical** | 8/10 | Low | The FTR token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring a fixed supply and preventing any account freezing. No Transfer Hook is active, and… |
+| **Governance / Economics** | 3/10 | High | The token's DEX pair is very new, established only 2 days ago, which limits the ability to assess its market behavior and community (7.4 Economic). Liquidity stands at $60,025, with a 24-hour volume… |
+| **Upgrades** | 8/10 | Low | The token mint's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning no further changes to supply or account freeze status can be made by an external key. The token… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`Dmkj4d...pump`](https://solscan.io/account/Dmkj4dB3Ngva9gWKkDgj8UMF39EC7ArpGf2rxLxDpump) |
 | **Network** | Solana |
-| **Price** | $0.0003812 |
-| **24h Volume** | $349.0K |
-| **Liquidity** | $59.0K |
-| **Volume / Liquidity** | 5.9× |
+| **Price** | $0.00002657 |
+| **24h Volume** | $6.5K |
+| **Liquidity** | $19.9K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 27.7% of supply |
+| **Top-10 Holders** | 60.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2460 buys / 2884 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

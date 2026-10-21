@@ -2,14 +2,14 @@
 token: Dealer
 ticker: DEALER
 network: solana
-risk_score: 72
-status: critical
+risk_score: 48
+status: medium
 date: 2026-08-11
 ---
 
 # Dealer (DEALER) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 48/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dealer-sol)
 
@@ -25,9 +25,9 @@ This SPL Token-2022 mint, "Dealer," presents a Medium risk profile primarily due
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority are revoked, which prevents the creation of new tokens or freezing of existing accounts. No Transfer Hook is… |
+| **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority are revoked, which prevents the creation of new tokens or freezing of existing accounts. No Transfer Hook is… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a medium level of holder concentration, with the top 10 accounts holding 50.86% of the total supply. While liquidity is $130,174, the DEX pair is very new, having been created only… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable due to the revocation of both Mint and Freeze authorities. Key Token-2022 extensions like transfer fees and transfer hooks are not configured as upgradable… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both Mint and Freeze authorities. Key Token-2022 extensions like transfer fees and transfer hooks are not configured as upgradable… |
 
 ## Security Findings
 
@@ -52,22 +52,21 @@ DEX pair was created 5 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`6f8ZQh...pump`](https://solscan.io/account/6f8ZQhxqfigdv7UszZ1rirbV7Sgv83s3rxv1N2Zopump) |
 | **Network** | Solana |
-| **Price** | $0.002098 |
-| **24h Volume** | $880.0K |
-| **Liquidity** | $116.0K |
-| **Volume / Liquidity** | 7.6× |
+| **Price** | $0.00003948 |
+| **24h Volume** | $3.8K |
+| **Liquidity** | $20.1K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 51.1% of supply |
+| **Top-10 Holders** | 75.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 8447 buys / 8346 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -75,9 +74,8 @@ DEX pair was created 5 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

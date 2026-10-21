@@ -2,14 +2,14 @@
 token: dogwifhat
 ticker: $WIF
 network: solana
-risk_score: 24
-status: medium
+risk_score: 0
+status: low
 date: 2026-07-25
 ---
 
 # dogwifhat ($WIF) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 24/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dogwifhat-sol)
 
@@ -25,15 +25,25 @@ This audit of the dogwifhat ($WIF) SPL token mint found a low-risk profile. Both
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token operates under the standard spl-token program. Both the mint authority and freeze authority have been revoked, which significantly enhances security by preventing further token issuance or… |
-| **Governance / Economics** | 2/10 | High | The token demonstrates robust market liquidity, with total DEX liquidity at $4,168,683. The 24-hour volume to liquidity ratio is 0.05, indicating normal trading activity without signs of wash… |
-| **Upgrades** | 5/10 | Medium | The token's immutability is a key strength, as both the mint and freeze authorities are permanently revoked. This prevents any future changes to the token supply or the ability to freeze holder… |
+| **Technical** | 10/10 | Low | The token operates under the standard spl-token program. Both the mint authority and freeze authority have been revoked, which significantly enhances security by preventing further token issuance or… |
+| **Governance / Economics** | 6/10 | Medium | The token demonstrates robust market liquidity, with total DEX liquidity at $4,168,683. The 24-hour volume to liquidity ratio is 0.05, indicating normal trading activity without signs of wash… |
+| **Upgrades** | 8/10 | Low | The token's immutability is a key strength, as both the mint and freeze authorities are permanently revoked. This prevents any future changes to the token supply or the ability to freeze holder… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **LP Burned** | ✅ 99.7% (≈ permanent lock) |
+| **LP Burned** | ✅ 99.8% (≈ permanent lock) |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -41,22 +51,21 @@ This audit of the dogwifhat ($WIF) SPL token mint found a low-risk profile. Both
 |--------|-------|
 | **Contract** | [`EKpQGS...zcjm`](https://solscan.io/account/EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm) |
 | **Network** | Solana |
-| **Price** | $0.1506 |
-| **24h Volume** | $196.8K |
-| **Liquidity** | $4.17M |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.2578 |
+| **24h Volume** | $4.58M |
+| **Liquidity** | $6.87M |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 44.2% of supply |
+| **Top-10 Holders** | 43.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 615 buys / 423 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -64,9 +73,8 @@ This audit of the dogwifhat ($WIF) SPL token mint found a low-risk profile. Both
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

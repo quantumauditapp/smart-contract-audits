@@ -2,14 +2,14 @@
 token: Hog McCrankerson
 ticker: HOG
 network: solana
-risk_score: 78
-status: critical
+risk_score: 52
+status: medium
 date: 2026-06-10
 ---
 
 # Hog McCrankerson (HOG) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 78/100 — 🔴 Critical Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hog-mccrankerson-sol)
 
@@ -25,9 +25,9 @@ The token mint at 98Z2t99JKcK8NXLxgUfgvVPhq2EyVwfxug6B7TJzpump is an SPL Token-2
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The token is implemented using the spl-token-2022 program, indicating modern SPL features. Key technical controls are well-managed: the mint authority is revoked, preventing further token issuance… |
+| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program, indicating modern SPL features. Key technical controls are well-managed: the mint authority is revoked, preventing further token issuance… |
 | **Governance / Economics** | 1/10 | High | Economic analysis is constrained by unavailable DEX market data and holder concentration information. However, a third-party risk registry explicitly flags the token for 'Low Liquidity.' This… |
-| **Upgrades** | 5/10 | Medium | The token's upgradeability and administrative control posture are robust. Both the mint authority and freeze authority have been permanently revoked, meaning the token's supply cannot be increased… |
+| **Upgrades** | 8/10 | Low | The token's upgradeability and administrative control posture are robust. Both the mint authority and freeze authority have been permanently revoked, meaning the token's supply cannot be increased… |
 
 ## Security Findings
 
@@ -45,21 +45,20 @@ Total DEX liquidity is unknown, but a third-party risk registry flags it as havi
 |--------|-------|
 | **Contract** | [`98Z2t9...pump`](https://solscan.io/account/98Z2t99JKcK8NXLxgUfgvVPhq2EyVwfxug6B7TJzpump) |
 | **Network** | Solana |
-| **Price** | $0.0005152 |
-| **24h Volume** | $349.6K |
-| **Liquidity** | $56.4K |
-| **Volume / Liquidity** | 6.2× |
+| **Price** | $0.00000282 |
+| **24h Volume** | $0 |
+| **Liquidity** | $4.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 7d |
-| **Top-10 Holders** | 96.1% of supply |
+| **Top-10 Holders** | 96.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -67,9 +66,8 @@ Total DEX liquidity is unknown, but a third-party risk registry flags it as havi
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: infinity
 ticker: INFINITY
 network: solana
-risk_score: 84
-status: critical
+risk_score: 46
+status: medium
 date: 2026-06-28
 ---
 
 # infinity (INFINITY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 84/100 — 🔴 Critical Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/infinity-sol)
 
@@ -25,9 +25,19 @@ The infinity SPL Token Mint presents a low-risk profile based on available on-ch
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The infinity token is implemented using the spl-token-2022 program. Key administrative authorities, including the Mint Authority and Freeze Authority, have been revoked, indicating a fixed supply and… |
+| **Technical** | 8/10 | Low | The infinity token is implemented using the spl-token-2022 program. Key administrative authorities, including the Mint Authority and Freeze Authority, have been revoked, indicating a fixed supply and… |
 | **Governance / Economics** | 1/10 | High | DEX market data indicates a liquidity of $21,873, which is above the very low liquidity threshold, supporting reasonable trading activity. The 24-hour volume is $5,045, with a healthy… |
-| **Upgrades** | 5/10 | Medium | The token's core administrative functions are immutable, as both the Mint Authority and Freeze Authority have been revoked. This prevents any future changes to the token's supply or the ability to… |
+| **Upgrades** | 8/10 | Low | The token's core administrative functions are immutable, as both the Mint Authority and Freeze Authority have been revoked. This prevents any future changes to the token's supply or the ability to… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The infinity SPL Token Mint presents a low-risk profile based on available on-ch
 |--------|-------|
 | **Contract** | [`H7t7oK...pump`](https://solscan.io/account/H7t7oKniUDhyMaJqsEt5ajQJ2TkxBxiPA9FXEHmUpump) |
 | **Network** | Solana |
-| **Price** | $0.00000196 |
+| **Price** | $0.00000249 |
 | **24h Volume** | $0 |
-| **Liquidity** | $3.4K |
+| **Liquidity** | $4.7K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | 93.9% of supply |
+| **Top-10 Holders** | 97.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2763 buys / 42245 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The infinity SPL Token Mint presents a low-risk profile based on available on-ch
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

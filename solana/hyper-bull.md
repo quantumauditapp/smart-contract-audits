@@ -2,14 +2,14 @@
 token: Hyper Bull
 ticker: HBULL
 network: solana
-risk_score: 61
-status: high
+risk_score: 39
+status: medium
 date: 2026-07-18
 ---
 
 # Hyper Bull (HBULL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hyper-bull-sol)
 
@@ -25,9 +25,9 @@ This audit of the Hyper Bull (HBULL) SPL Token Mint found that critical authorit
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Hyper Bull (HBULL) token is an SPL Token-2022 mint with a total supply of 999,998,837.590250 tokens across 6 decimals. Both the Mint Authority and Freeze Authority have been revoked, ensuring no… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a 24-hour trading volume of $1,213,596 against a liquidity of $150,343, resulting in a Volume/Liquidity Ratio of 8.07. This indicates active trading relative to available… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any future changes to the token supply or account freeze status. The metadata is also immutable… |
+| **Technical** | 8/10 | Low | The Hyper Bull (HBULL) token is an SPL Token-2022 mint with a total supply of 999,998,837.590250 tokens across 6 decimals. Both the Mint Authority and Freeze Authority have been revoked, ensuring no… |
+| **Governance / Economics** | 2/10 | High | The token exhibits a 24-hour trading volume of $1,213,596 against a liquidity of $150,343, resulting in a Volume/Liquidity Ratio of 8.07. This indicates active trading relative to available… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any future changes to the token supply or account freeze status. The metadata is also immutable… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`7V6Sk6...pump`](https://solscan.io/account/7V6Sk63y8Rr1MvcN5mYNp61wgFhy4EeQg5gUASk9pump) |
 | **Network** | Solana |
-| **Price** | $0.00162 |
-| **24h Volume** | $646.1K |
-| **Liquidity** | $120.2K |
-| **Volume / Liquidity** | 5.4× |
+| **Price** | $0.0001907 |
+| **24h Volume** | $4.5K |
+| **Liquidity** | $78.4K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 48.6% of supply |
+| **Top-10 Holders** | 73.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 16727 buys / 11954 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

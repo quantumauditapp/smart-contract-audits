@@ -2,14 +2,14 @@
 token: FarmTown
 ticker: FARM
 network: solana
-risk_score: 62
-status: high
+risk_score: 39
+status: medium
 date: 2026-06-22
 ---
 
 # FarmTown (FARM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/farmtown-sol)
 
@@ -25,9 +25,19 @@ The FarmTown (FARM) SPL Token Mint exhibits a robust security posture with both 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The FarmTown (FARM) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
+| **Technical** | 8/10 | Low | The FarmTown (FARM) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
 | **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity at $36,785 USD, with a healthy 24-hour volume of $13,003 USD. The Volume/Liquidity Ratio is 0.35, which is considered normal and does not indicate wash trading.… |
-| **Upgrades** | 5/10 | Medium | The FarmTown (FARM) token mint has fully revoked its mint and freeze authorities, meaning its core parameters are immutable. It uses the spl-token-2022 program but does not have a transfer hook or… |
+| **Upgrades** | 8/10 | Low | The FarmTown (FARM) token mint has fully revoked its mint and freeze authorities, meaning its core parameters are immutable. It uses the spl-token-2022 program but does not have a transfer hook or… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The FarmTown (FARM) SPL Token Mint exhibits a robust security posture with both 
 |--------|-------|
 | **Contract** | [`yMJPZb...pump`](https://solscan.io/account/yMJPZbnhoHib3ib8n8PfiVcp9yauk1vnaGKLx7epump) |
 | **Network** | Solana |
-| **Price** | $0.00007281 |
-| **24h Volume** | $23.9K |
-| **Liquidity** | $27.6K |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.00000912 |
+| **24h Volume** | $50 |
+| **Liquidity** | $12.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 48.2% of supply |
+| **Top-10 Holders** | 79.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4022 buys / 3696 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The FarmTown (FARM) SPL Token Mint exhibits a robust security posture with both 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

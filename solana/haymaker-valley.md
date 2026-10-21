@@ -2,14 +2,14 @@
 token: Haymaker Valley
 ticker: HAYMAKER
 network: solana
-risk_score: 66
-status: high
+risk_score: 49
+status: medium
 date: 2026-08-13
 ---
 
 # Haymaker Valley (HAYMAKER) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/haymaker-valley-sol)
 
@@ -25,9 +25,9 @@ This audit of the Haymaker Valley (Haymaker) SPL Token Mint identifies a medium 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Haymaker Valley token is an SPL Token-2022 mint with a supply of 958,288,073.786637 tokens and 6 decimals. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens… |
+| **Technical** | 8/10 | Low | The Haymaker Valley token is an SPL Token-2022 mint with a supply of 958,288,073.786637 tokens and 6 decimals. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens… |
 | **Governance / Economics** | 1/10 | High | The token's DEX liquidity stands at $17,376, with a 24-hour trading volume of $136,066, resulting in a Volume/Liquidity Ratio of 7.83. While this ratio is elevated, it does not meet the threshold for… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are revoked, preventing any future changes to the token supply or account freeze status. As an SPL Token-2022, it does not have a… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are revoked, preventing any future changes to the token supply or account freeze status. As an SPL Token-2022, it does not have a… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`Hr66MM...pump`](https://solscan.io/account/Hr66MMmcwwt6YNPUAVuSyjhrhFSnjCNxuPuAJ1Ubpump) |
 | **Network** | Solana |
-| **Price** | $0.00005276 |
-| **24h Volume** | $136.3K |
-| **Liquidity** | $18.3K |
-| **Volume / Liquidity** | 7.5× |
+| **Price** | $0.00000635 |
+| **24h Volume** | $1.9K |
+| **Liquidity** | $6.9K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 38.2% of supply |
+| **Top-10 Holders** | 88.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1211 buys / 1242 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

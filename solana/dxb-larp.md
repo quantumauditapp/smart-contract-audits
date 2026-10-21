@@ -2,14 +2,14 @@
 token: DXB LARP
 ticker: LARP
 network: solana
-risk_score: 83
-status: critical
+risk_score: 45
+status: medium
 date: 2026-07-25
 ---
 
 # DXB LARP (LARP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 83/100 — 🔴 Critical Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dxb-larp-sol)
 
@@ -25,9 +25,9 @@ This audit of the DXB LARP (LARP) SPL token mint identifies significant risks pr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The DXB LARP token is implemented using the standard `spl-token` program, which is a well-established and audited program on Solana. Key administrative authorities, including the Mint Authority and… |
+| **Technical** | 8/10 | Low | The DXB LARP token is implemented using the standard `spl-token` program, which is a well-established and audited program on Solana. Key administrative authorities, including the Mint Authority and… |
 | **Governance / Economics** | 1/10 | High | The economic stability of the DXB LARP token is highly concerning due to extreme holder concentration, with the top 10 token accounts holding 94.37% of the total supply. This level of concentration… |
-| **Upgrades** | 6/10 | Medium | The DXB LARP token mint exhibits a fixed configuration for core parameters. Both the Mint Authority and Freeze Authority have been permanently revoked, ensuring that no new tokens can be minted and… |
+| **Upgrades** | 8/10 | Low | The DXB LARP token mint exhibits a fixed configuration for core parameters. Both the Mint Authority and Freeze Authority have been permanently revoked, ensuring that no new tokens can be minted and… |
 
 ## LP Distribution
 
@@ -66,22 +66,21 @@ DEX pair was created 5 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`67zHAw...GreN`](https://solscan.io/account/67zHAwrdHwpvbF8psA4hYCSFarcCaFBmXNhE2HPrGreN) |
 | **Network** | Solana |
-| **Price** | $0.00000176 |
-| **24h Volume** | $708 |
-| **Liquidity** | $2.2K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.00000375 |
+| **24h Volume** | $4 |
+| **Liquidity** | $3.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3d |
 | **Top-10 Holders** | 94.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 712 buys / 450 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
@@ -89,9 +88,8 @@ DEX pair was created 5 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

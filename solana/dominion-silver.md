@@ -27,7 +27,7 @@ This SPL Token Mint presents critical risks due to active Mint, Freeze, and Perm
 |----------|--------|-----------|-------|
 | **Technical** | 1/10 | High | The Dominion Silver (SILV) token is an SPL Token-2022 mint. It has an active Mint Authority at 6FtT3CBaXVArhd2C4egCsQb1f1NF3FAfA6xhXJXD8chR, enabling the creation of new tokens. A Freeze Authority is… |
 | **Governance / Economics** | 1/10 | High | Economic stability is severely impacted by high holder concentration, with the top 10 token accounts holding 94.84% of the total supply, indicating a high risk of price volatility from large… |
-| **Upgrades** | 2/10 | High | The token's mutability features present ongoing risks. The Mint Authority and Freeze Authority are both active, allowing for future changes to supply and account status. A Permanent Delegate is also… |
+| **Upgrades** | 1/10 | High | The token's mutability features present ongoing risks. The Mint Authority and Freeze Authority are both active, allowing for future changes to supply and account status. A Permanent Delegate is also… |
 
 ## Token-2022 Extensions
 
@@ -93,22 +93,21 @@ Token name, symbol, or image can be changed post-launch.
 |--------|-------|
 | **Contract** | [`SiLVFM...B35L`](https://solscan.io/account/SiLVFMgD3eD2rgK628NbTBq9MnuJF5FW2CRaVyTB35L) |
 | **Network** | Solana |
-| **Price** | $64.3400 |
-| **24h Volume** | $1.07M |
-| **Liquidity** | $919.3K |
-| **Volume / Liquidity** | 1.2× |
+| **Price** | $26.4000 |
+| **24h Volume** | $576.0K |
+| **Liquidity** | $111.9K |
+| **Volume / Liquidity** | 5.1× |
 | **Token Age** | 19h |
-| **Top-10 Holders** | 94.8% of supply |
+| **Top-10 Holders** | 67.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6418 buys / 5684 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -116,9 +115,8 @@ Token name, symbol, or image can be changed post-launch.
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

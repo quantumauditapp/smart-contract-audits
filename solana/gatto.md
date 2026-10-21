@@ -3,13 +3,13 @@ token: GATTO
 ticker: GATTO
 network: solana
 risk_score: 52
-status: high
+status: medium
 date: 2026-08-14
 ---
 
 # GATTO (GATTO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 52/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gatto-sol)
 
@@ -25,9 +25,9 @@ The GATTO token mint is configured with revoked mint and freeze authorities, ind
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The GATTO token is an SPL Token-2022 mint with a supply of 919,435,938.596054 tokens (6 decimals). Crucially, both the mint authority and freeze authority are revoked, preventing further token… |
+| **Technical** | 8/10 | Low | The GATTO token is an SPL Token-2022 mint with a supply of 919,435,938.596054 tokens (6 decimals). Crucially, both the mint authority and freeze authority are revoked, preventing further token… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a healthy liquidity of $125,045 USD and a normal 24-hour volume of $474,303 USD, with a volume/liquidity ratio of 3.79. However, the DEX trading pair is extremely new, having been… |
-| **Upgrades** | 5/10 | Medium | The GATTO token mint has no upgradeability concerns as both the mint and freeze authorities are revoked. This means the token supply is fixed and no accounts can be frozen post-launch. Furthermore… |
+| **Upgrades** | 8/10 | Low | The GATTO token mint has no upgradeability concerns as both the mint and freeze authorities are revoked. This means the token supply is fixed and no accounts can be frozen post-launch. Furthermore… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`FM7btH...pump`](https://solscan.io/account/FM7btH3zydALWGs2fAX2EA4g6sDAUxgXdb3UcMdMpump) |
 | **Network** | Solana |
-| **Price** | $0.0002331 |
-| **24h Volume** | $474.1K |
-| **Liquidity** | $124.3K |
-| **Volume / Liquidity** | 3.8× |
+| **Price** | $0.00000314 |
+| **24h Volume** | $2 |
+| **Liquidity** | $3.3K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 13h |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 94.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 8027 buys / 4852 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

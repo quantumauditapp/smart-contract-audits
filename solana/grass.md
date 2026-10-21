@@ -2,14 +2,14 @@
 token: Grass
 ticker: GRASS
 network: solana
-risk_score: 73
-status: critical
+risk_score: 53
+status: medium
 date: 2026-06-24
 ---
 
 # Grass (GRASS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 73/100 — 🔴 Critical Risk**
+> **Risk Score: 53/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/grass-sol)
 
@@ -25,8 +25,8 @@ The Grass (GRASS) SPL token mint presents a critical risk due to an active mint 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The token is implemented using the classic SPL Token Program (spl-token). A critical finding is the active mint authority, held by 31rYartQwHeBMjAe2MgGpffGV57fQY3kug4BDN8tLGqQ, which enables the… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity at $320,381 USD, with a healthy 24-hour volume of $7,110 USD. The Volume/Liquidity Ratio is 0.02, which does not indicate wash trading. The DEX pair has been… |
+| **Technical** | 6/10 | Medium | The token is implemented using the classic SPL Token Program (spl-token). A critical finding is the active mint authority, held by 31rYartQwHeBMjAe2MgGpffGV57fQY3kug4BDN8tLGqQ, which enables the… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate liquidity at $320,381 USD, with a healthy 24-hour volume of $7,110 USD. The Volume/Liquidity Ratio is 0.02, which does not indicate wash trading. The DEX pair has been… |
 | **Upgrades** | 4/10 | Medium | The mint authority remains active, allowing for potential changes to the token's total supply. The freeze authority has been revoked, which is a positive for the immutability of account states.… |
 
 ## Security Findings
@@ -52,22 +52,21 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |--------|-------|
 | **Contract** | [`Grass7...XXjs`](https://solscan.io/account/Grass7B4RdKfBCjTKgSqnXkqjwiGvQyFbuSCUJr3XXjs) |
 | **Network** | Solana |
-| **Price** | $0.3651 |
-| **24h Volume** | $1.6K |
-| **Liquidity** | $283.0K |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.4337 |
+| **24h Volume** | $238.8K |
+| **Liquidity** | $341.5K |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 54.3% of supply |
+| **Top-10 Holders** | 53.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1519 buys / 1970 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -75,9 +74,8 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

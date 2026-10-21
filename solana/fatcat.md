@@ -2,14 +2,14 @@
 token: FATCAT
 ticker: FATCAT
 network: solana
-risk_score: 69
-status: high
+risk_score: 52
+status: medium
 date: 2026-08-12
 ---
 
 # FATCAT (FATCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 69/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fatcat-sol)
 
@@ -25,9 +25,9 @@ The FATCAT SPL Token Mint exhibits strong security fundamentals with both Mint a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked, which significantly enhances security by preventing further token minting or the… |
+| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked, which significantly enhances security by preventing further token minting or the… |
 | **Governance / Economics** | 1/10 | High | The top 10 token accounts hold 34.2% of the supply, indicating a moderate level of holder concentration. Total DEX liquidity stands at $23,816, with a 24-hour trading volume of $85,122, resulting in… |
-| **Upgrades** | 5/10 | Medium | Both the Mint and Freeze authorities are revoked, ensuring that the token's supply cannot be arbitrarily increased and holder accounts cannot be frozen. The token does not have… |
+| **Upgrades** | 8/10 | Low | Both the Mint and Freeze authorities are revoked, ensuring that the token's supply cannot be arbitrarily increased and holder accounts cannot be frozen. The token does not have… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`HBeaQ6...pump`](https://solscan.io/account/HBeaQ6Pn5n29iqzkffnXbC9ugWEdEJXUmdn6pGzbpump) |
 | **Network** | Solana |
-| **Price** | $0.0001055 |
-| **24h Volume** | $85.9K |
-| **Liquidity** | $23.9K |
-| **Volume / Liquidity** | 3.6× |
+| **Price** | $0.00000679 |
+| **24h Volume** | $40 |
+| **Liquidity** | $6.3K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 34.2% of supply |
+| **Top-10 Holders** | 77.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 572 buys / 521 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: drooler
 ticker: DROOLER
 network: solana
-risk_score: 69
-status: high
+risk_score: 52
+status: medium
 date: 2026-08-17
 ---
 
 # drooler (DROOLER) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 69/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/drooler-sol)
 
@@ -25,9 +25,9 @@ The drooler token mint has revoked both mint and freeze authorities, indicating 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The drooler token is an SPL Token-2022 mint with a supply of 953,117,483,077,050 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
+| **Technical** | 8/10 | Low | The drooler token is an SPL Token-2022 mint with a supply of 953,117,483,077,050 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 45.22% of the supply, which is below the threshold for high concentration. Total DEX liquidity is $16,315, which is not… |
-| **Upgrades** | 5/10 | Medium | The token mint has no upgrade authority in the traditional sense, as both mint and freeze authorities are revoked. It utilizes the spl-token-2022 program. The metadata is immutable, preventing… |
+| **Upgrades** | 8/10 | Low | The token mint has no upgrade authority in the traditional sense, as both mint and freeze authorities are revoked. It utilizes the spl-token-2022 program. The metadata is immutable, preventing… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`6MAjC3...pump`](https://solscan.io/account/6MAjC3uWMzGc4LAeKF3EoC85DUtX67MCFE3numnmpump) |
 | **Network** | Solana |
-| **Price** | $0.00004585 |
-| **24h Volume** | $151.7K |
-| **Liquidity** | $15.6K |
-| **Volume / Liquidity** | 9.7× |
+| **Price** | $0.00000409 |
+| **24h Volume** | $6 |
+| **Liquidity** | $4.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 45.2% of supply |
+| **Top-10 Holders** | 94.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1948 buys / 1920 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Infinex
 ticker: INX
 network: solana
-risk_score: 93
-status: critical
+risk_score: 73
+status: high
 date: 2026-08-12
 ---
 
 # Infinex (INX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 93/100 — 🔴 Critical Risk**
+> **Risk Score: 73/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/infinex-sol)
 
@@ -25,7 +25,7 @@ This audit of the Infinex (INX) SPL token mint reveals critical risks primarily 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The Infinex (INX) token is implemented using the classic `spl-token` program. A critical risk exists as the mint authority, `A3CT7ST5gyitAEjHCyBnYqybfStB6s5kM6YjqwpwWanY`, remains active, allowing… |
+| **Technical** | 5/10 | Medium | The Infinex (INX) token is implemented using the classic `spl-token` program. A critical risk exists as the mint authority, `A3CT7ST5gyitAEjHCyBnYqybfStB6s5kM6YjqwpwWanY`, remains active, allowing… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a high degree of holder concentration, with the top 10 accounts holding 94.07% of the total supply, posing a significant risk of price manipulation or large-scale sell-offs (7.4… |
 | **Upgrades** | 4/10 | Medium | The token's core functionality, governed by the `spl-token` program, is fixed. However, the mint authority remains active, allowing for potential changes to the total supply (7.7 Upgrades). The… |
 
@@ -59,22 +59,21 @@ Token name, symbol, or image can be changed post-launch. (Fact: metadata_mutable
 |--------|-------|
 | **Contract** | [`inxKXw...g4yY`](https://solscan.io/account/inxKXw9V2NDZE7hDijzpJaKKUb97NEPJDTCEEiYg4yY) |
 | **Network** | Solana |
-| **Price** | $0.00792 |
-| **24h Volume** | $254.6K |
-| **Liquidity** | $85.5K |
-| **Volume / Liquidity** | 3.0× |
+| **Price** | $0.006167 |
+| **24h Volume** | $17.2K |
+| **Liquidity** | $71.9K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | 94.1% of supply |
+| **Top-10 Holders** | 95.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5240 buys / 5453 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -82,9 +81,8 @@ Token name, symbol, or image can be changed post-launch. (Fact: metadata_mutable
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

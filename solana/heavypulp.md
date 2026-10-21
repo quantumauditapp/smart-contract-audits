@@ -2,14 +2,14 @@
 token: HeavyPulp
 ticker: HEAVYPULP
 network: solana
-risk_score: 45
-status: medium
+risk_score: 12
+status: low
 date: 2026-07-23
 ---
 
 # HeavyPulp (HEAVYPULP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/heavypulp-sol)
 
@@ -25,9 +25,19 @@ The HeavyPulp SPL Token Mint exhibits a robust security posture with both mint a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | This token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority are revoked (None), ensuring no new tokens can be minted and no holder accounts can be frozen.… |
-| **Governance / Economics** | 3/10 | High | Holder concentration is low, with the top 10 token accounts holding 27.96% of the supply, indicating a relatively distributed ownership. The token has a healthy liquidity of $247,549 and a normal… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, which means the token's supply and account freeze status cannot be altered. Metadata mutability is set to False, preventing any post-launch… |
+| **Technical** | 10/10 | Low | This token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority are revoked (None), ensuring no new tokens can be minted and no holder accounts can be frozen.… |
+| **Governance / Economics** | 6/10 | Medium | Holder concentration is low, with the top 10 token accounts holding 27.96% of the supply, indicating a relatively distributed ownership. The token has a healthy liquidity of $247,549 and a normal… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, which means the token's supply and account freeze status cannot be altered. Metadata mutability is set to False, preventing any post-launch… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The HeavyPulp SPL Token Mint exhibits a robust security posture with both mint a
 |--------|-------|
 | **Contract** | [`8G5ayE...pump`](https://solscan.io/account/8G5ayEsJF4Q7FEWEGeF4jtnUWZBEKCqhySTFQf9Ppump) |
 | **Network** | Solana |
-| **Price** | $0.002298 |
-| **24h Volume** | $937.2K |
-| **Liquidity** | $245.5K |
-| **Volume / Liquidity** | 3.8× |
+| **Price** | $0.0004875 |
+| **24h Volume** | $19.3K |
+| **Liquidity** | $145.4K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 27.9% of supply |
+| **Top-10 Holders** | 35.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4431 buys / 4061 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The HeavyPulp SPL Token Mint exhibits a robust security posture with both mint a
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

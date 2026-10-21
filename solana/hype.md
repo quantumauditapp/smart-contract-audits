@@ -2,14 +2,14 @@
 token: HYPE
 ticker: HYPE
 network: solana
-risk_score: 64
-status: high
+risk_score: 44
+status: medium
 date: 2026-08-20
 ---
 
 # HYPE (HYPE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 64/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hype-sol)
 
@@ -25,8 +25,8 @@ The HYPE token mint presents a critical security risk due to an unrevoked mint a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The HYPE token operates under the `spl-token` program (v3). A critical vulnerability exists as the mint authority, held by `3X46pk5u5gLfppNRyPF5PcKyuHYrA2pHnyJK5HRLPzfi`, remains unrevoked, enabling… |
-| **Governance / Economics** | 1/10 | High | The HYPE token exhibits strong market activity with $5,807,513 USD in DEX liquidity and a 24-hour trading volume of $13,754,814 USD. The Volume/Liquidity ratio of 2.37 is normal, indicating healthy… |
+| **Technical** | 6/10 | Medium | The HYPE token operates under the `spl-token` program (v3). A critical vulnerability exists as the mint authority, held by `3X46pk5u5gLfppNRyPF5PcKyuHYrA2pHnyJK5HRLPzfi`, remains unrevoked, enabling… |
+| **Governance / Economics** | 5/10 | Medium | The HYPE token exhibits strong market activity with $5,807,513 USD in DEX liquidity and a 24-hour trading volume of $13,754,814 USD. The Volume/Liquidity ratio of 2.37 is normal, indicating healthy… |
 | **Upgrades** | 4/10 | Medium | The primary upgrade-related risk is the unrevoked mint authority, `3X46pk5u5gLfppNRyPF5PcKyuHYrA2pHnyJK5HRLPzfi`, which retains the power to modify the token's total supply post-launch. In contrast… |
 
 ## Security Findings
@@ -45,22 +45,21 @@ The mint authority is `3X46pk5u5gLfppNRyPF5PcKyuHYrA2pHnyJK5HRLPzfi`. The holder
 |--------|-------|
 | **Contract** | [`98sMhv...Mh5g`](https://solscan.io/account/98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g) |
 | **Network** | Solana |
-| **Price** | $73.4300 |
-| **24h Volume** | $13.60M |
-| **Liquidity** | $5.82M |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $95.3200 |
+| **24h Volume** | $1.93M |
+| **Liquidity** | $3.03M |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | 34.4% of supply |
+| **Top-10 Holders** | 36.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5460 buys / 5209 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The mint authority is `3X46pk5u5gLfppNRyPF5PcKyuHYrA2pHnyJK5HRLPzfi`. The holder
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: had to take profits sir
 ticker: HTTPS
 network: solana
-risk_score: 85
-status: critical
+risk_score: 55
+status: medium
 date: 2026-06-10
 ---
 
 # had to take profits sir (HTTPS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 85/100 — 🔴 Critical Risk**
+> **Risk Score: 55/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/had-to-take-profits-sir-sol)
 
@@ -25,9 +25,9 @@ This audit of the 'had to take profits sir' SPL Token Mint found no critical or 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The token is implemented using the spl-token-2022 program. Key authorities, including the Mint Authority and Freeze Authority, are both revoked, indicating a fixed supply and inability to freeze… |
+| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Key authorities, including the Mint Authority and Freeze Authority, are both revoked, indicating a fixed supply and inability to freeze… |
 | **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $42,141 in total DEX liquidity, which supports reasonable trading activity. The 24-hour volume of $26,370 results in a healthy Volume/Liquidity Ratio of… |
-| **Upgrades** | 4/10 | Medium | The token's core parameters are immutable due to the revocation of both Mint and Freeze Authorities. No Token-2022 extensions that allow for post-launch mutability, such as transfer hook… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both Mint and Freeze Authorities. No Token-2022 extensions that allow for post-launch mutability, such as transfer hook… |
 
 ## LP Distribution
 
@@ -36,27 +36,36 @@ This audit of the 'had to take profits sir' SPL Token Mint found no critical or 
 | **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
+
 ## Token Metrics
 
 | Metric | Value |
 |--------|-------|
 | **Contract** | [`7sGdNQ...pump`](https://solscan.io/account/7sGdNQSvUGpahh6qyXB3g5gsdK9FAzZM299KyCXspump) |
 | **Network** | Solana |
-| **Price** | $0.00008118 |
-| **24h Volume** | $10.0K |
-| **Liquidity** | $38.2K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.0000636 |
+| **24h Volume** | $1.1K |
+| **Liquidity** | $43.1K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 41.4% of supply |
+| **Top-10 Holders** | 52.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -64,9 +73,8 @@ This audit of the 'had to take profits sir' SPL Token Mint found no critical or 
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

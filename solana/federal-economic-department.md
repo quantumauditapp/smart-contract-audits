@@ -3,13 +3,13 @@ token: Federal Economic Department
 ticker: FED
 network: solana
 risk_score: 80
-status: critical
+status: high
 date: 2026-06-10
 ---
 
 # Federal Economic Department (FED) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 80/100 — 🔴 Critical Risk**
+> **Risk Score: 80/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/federal-economic-department-sol)
 
@@ -52,12 +52,11 @@ The token mint is reported as `Initialized: False`. An uninitialized mint cannot
 | **Token Age** | 1d |
 | **Top-10 Holders** | N/A of supply |
 
-## Security Flags (2/5 passed)
+## Security Flags (2/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ❌ Fail |
-| Ownership Renounced | ❌ Fail |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
@@ -67,7 +66,6 @@ The token mint is reported as `Initialized: False`. An uninitialized mint cannot
 | Check | | What it means |
 |-------|---|---------------|
 | Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |

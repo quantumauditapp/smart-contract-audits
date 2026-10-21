@@ -2,14 +2,14 @@
 token: GTA VI
 ticker: GTA6
 network: solana
-risk_score: 58
-status: high
+risk_score: 20
+status: low
 date: 2026-08-13
 ---
 
 # GTA VI (GTA6) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gta-vi-sol)
 
@@ -25,9 +25,9 @@ The token mint for Take-Two Interactive Software - Backpack Securities (TTWO) ex
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The SPL token mint is configured with robust security features. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be… |
-| **Governance / Economics** | 2/10 | High | The token's economic profile shows moderate liquidity at $217,433 USD, with a 24-hour trading volume of $365,827 USD, resulting in a normal Volume/Liquidity Ratio of 1.68. Holder concentration is… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable, as indicated by the revoked mint and freeze authorities. There are no provisions for upgrading transfer fees or transfer hooks, and the token's metadata… |
+| **Technical** | 10/10 | Low | The SPL token mint is configured with robust security features. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be… |
+| **Governance / Economics** | 6/10 | Medium | The token's economic profile shows moderate liquidity at $217,433 USD, with a 24-hour trading volume of $365,827 USD, resulting in a normal Volume/Liquidity Ratio of 1.68. Holder concentration is… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as indicated by the revoked mint and freeze authorities. There are no provisions for upgrading transfer fees or transfer hooks, and the token's metadata… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`4kjruq...zDnz`](https://solscan.io/account/4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz) |
 | **Network** | Solana |
-| **Price** | $0.002407 |
-| **24h Volume** | $361.5K |
-| **Liquidity** | $213.9K |
-| **Volume / Liquidity** | 1.7× |
+| **Price** | $0.0005509 |
+| **24h Volume** | $12.0K |
+| **Liquidity** | $94.0K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | 22.4% of supply |
+| **Top-10 Holders** | 27.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 935 buys / 1095 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

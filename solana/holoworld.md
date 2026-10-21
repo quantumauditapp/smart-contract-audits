@@ -2,14 +2,14 @@
 token: Holoworld
 ticker: HOLO
 network: solana
-risk_score: 97
-status: critical
+risk_score: 78
+status: high
 date: 2026-08-12
 ---
 
 # Holoworld (HOLO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 97/100 — 🔴 Critical Risk**
+> **Risk Score: 78/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/holoworld-sol)
 
@@ -25,7 +25,7 @@ The Holoworld AI (HOLO) token mint has a critical risk due to the unrevoked mint
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The token is an SPL Token-2022 mint with a supply of 1,085,674,379.530836439 tokens and 9 decimals. A critical vulnerability exists as the mint authority… |
+| **Technical** | 5/10 | Medium | The token is an SPL Token-2022 mint with a supply of 1,085,674,379.530836439 tokens and 9 decimals. A critical vulnerability exists as the mint authority… |
 | **Governance / Economics** | 1/10 | High | The token exhibits high holder concentration, with the top 10 accounts holding 87.63% of the total supply, indicating a significant risk of price volatility from large sell-offs (7.4 Economic). Total… |
 | **Upgrades** | 4/10 | Medium | The token utilizes the spl-token-2022 program. While the mint authority is active (as noted in the technical section), the freeze authority has been revoked, preventing freezing of accounts. Metadata… |
 
@@ -59,22 +59,21 @@ Token name, symbol, or image can be changed post-launch.
 |--------|-------|
 | **Contract** | [`69RX85...JETU`](https://solscan.io/account/69RX85eQoEsnZvXGmLNjYcWgVkp9r2JjahVm99KbJETU) |
 | **Network** | Solana |
-| **Price** | $0.09181 |
-| **24h Volume** | $82.0K |
-| **Liquidity** | $85.3K |
-| **Volume / Liquidity** | 1.0× |
+| **Price** | $0.06465 |
+| **24h Volume** | $1.7K |
+| **Liquidity** | $73.9K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 13d |
-| **Top-10 Holders** | 87.6% of supply |
+| **Top-10 Holders** | 88.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 225 buys / 175 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -82,9 +81,8 @@ Token name, symbol, or image can be changed post-launch.
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

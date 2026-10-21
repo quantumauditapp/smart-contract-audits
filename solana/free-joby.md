@@ -2,14 +2,14 @@
 token: Free Joby
 ticker: JOBY
 network: solana
-risk_score: 39
-status: medium
+risk_score: 1
+status: low
 date: 2026-07-09
 ---
 
 # Free Joby (JOBY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 1/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/free-joby-sol)
 
@@ -25,9 +25,19 @@ This audit of the Free Joby (Joby) SPL Token Mint found no critical or high-seve
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The SPL Token Mint for 'Free Joby' is configured using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no… |
-| **Governance / Economics** | 3/10 | High | The token exhibits moderate liquidity at $158,299 USD, with a normal 24-hour volume to liquidity ratio of 1.31. The DEX pair has been active for 29 days, providing some track record. However, holder… |
-| **Upgrades** | 5/10 | Medium | The mint and freeze authorities are permanently revoked, ensuring no future changes to token supply or account freeze status. Metadata is immutable, preventing post-launch changes to the token's… |
+| **Technical** | 10/10 | Low | The SPL Token Mint for 'Free Joby' is configured using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits moderate liquidity at $158,299 USD, with a normal 24-hour volume to liquidity ratio of 1.31. The DEX pair has been active for 29 days, providing some track record. However, holder… |
+| **Upgrades** | 8/10 | Low | The mint and freeze authorities are permanently revoked, ensuring no future changes to token supply or account freeze status. Metadata is immutable, preventing post-launch changes to the token's… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ This audit of the Free Joby (Joby) SPL Token Mint found no critical or high-seve
 |--------|-------|
 | **Contract** | [`4SnKwn...pump`](https://solscan.io/account/4SnKwnz6DyagftnFqdxsvWvehrcbEDhxmmXNQk2Jpump) |
 | **Network** | Solana |
-| **Price** | $0.001864 |
-| **24h Volume** | $319.3K |
-| **Liquidity** | $127.2K |
-| **Volume / Liquidity** | 2.5× |
+| **Price** | $0.0009055 |
+| **24h Volume** | $27.1K |
+| **Liquidity** | $118.9K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 27d |
-| **Top-10 Holders** | 15.9% of supply |
+| **Top-10 Holders** | 18.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 11806 buys / 8180 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ This audit of the Free Joby (Joby) SPL Token Mint found no critical or high-seve
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

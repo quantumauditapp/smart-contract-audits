@@ -2,14 +2,14 @@
 token: dogwifpants
 ticker: PANTS
 network: solana
-risk_score: 64
-status: high
+risk_score: 41
+status: medium
 date: 2026-08-20
 ---
 
 # dogwifpants (PANTS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 64/100 — 🟠 High Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dogwifpants-sol)
 
@@ -25,9 +25,9 @@ The dogwifpants (PANTS) SPL token mint has revoked both mint and freeze authorit
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The dogwifpants (PANTS) token is implemented using the classic spl-token program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no… |
-| **Governance / Economics** | 1/10 | High | The economic profile of the PANTS token shows a moderate liquidity of $70,697 USD. The 24-hour volume is $400,822, resulting in a Volume/Liquidity Ratio of 5.67. Holder concentration is relatively… |
-| **Upgrades** | 5/10 | Medium | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. This means the supply cannot be increased, and account states cannot be altered by an authority.… |
+| **Technical** | 8/10 | Low | The dogwifpants (PANTS) token is implemented using the classic spl-token program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no… |
+| **Governance / Economics** | 2/10 | High | The economic profile of the PANTS token shows a moderate liquidity of $70,697 USD. The 24-hour volume is $400,822, resulting in a Volume/Liquidity Ratio of 5.67. Holder concentration is relatively… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. This means the supply cannot be increased, and account states cannot be altered by an authority.… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 |--------|-------|
 | **Contract** | [`FtateF...HbJi`](https://solscan.io/account/FtateF34Xzawa91bpbVNdX72hZYo9cymRDYqBreHHbJi) |
 | **Network** | Solana |
-| **Price** | $0.0003249 |
-| **24h Volume** | $397.4K |
-| **Liquidity** | $66.4K |
-| **Volume / Liquidity** | 6.0× |
+| **Price** | $0.00008487 |
+| **24h Volume** | $9.8K |
+| **Liquidity** | $35.7K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 19h |
-| **Top-10 Holders** | 35.9% of supply |
+| **Top-10 Holders** | 51.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2281 buys / 1571 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

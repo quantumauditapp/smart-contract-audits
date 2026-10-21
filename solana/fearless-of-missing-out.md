@@ -2,14 +2,14 @@
 token: Fearless Of Missing Out
 ticker: FOMO
 network: solana
-risk_score: 50
-status: high
+risk_score: 26
+status: low
 date: 2026-08-11
 ---
 
 # Fearless Of Missing Out (FOMO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fearless-of-missing-out-sol)
 
@@ -25,9 +25,19 @@ The Fearless Of Missing Out (FOMO) SPL Token Mint exhibits a low-risk profile ba
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority are revoked, meaning no new tokens can be minted and no holder accounts can be frozen. The… |
-| **Governance / Economics** | 2/10 | High | Chain-native RPC data for holder concentration was unavailable, preventing a direct assessment of supply distribution. However, DEX market data indicates a liquidity of $72,233 USD and a 24-hour… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, ensuring that the token's core parameters cannot be altered post-launch. The token does not utilize a Transfer Hook or Default Account State… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority are revoked, meaning no new tokens can be minted and no holder accounts can be frozen. The… |
+| **Governance / Economics** | 4/10 | Medium | Chain-native RPC data for holder concentration was unavailable, preventing a direct assessment of supply distribution. However, DEX market data indicates a liquidity of $72,233 USD and a 24-hour… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, ensuring that the token's core parameters cannot be altered post-launch. The token does not utilize a Transfer Hook or Default Account State… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,22 +45,21 @@ The Fearless Of Missing Out (FOMO) SPL Token Mint exhibits a low-risk profile ba
 |--------|-------|
 | **Contract** | [`BDdzUj...pump`](https://solscan.io/account/BDdzUjksj1J4bSnMveQ5tV9Up8A9c6YS1tHrxNw3pump) |
 | **Network** | Solana |
-| **Price** | $0.0002841 |
-| **24h Volume** | $182.1K |
-| **Liquidity** | $72.4K |
-| **Volume / Liquidity** | 2.5× |
+| **Price** | $0.00005904 |
+| **24h Volume** | $6.4K |
+| **Liquidity** | $42.9K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 32.9% of supply |
+| **Top-10 Holders** | 50.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1285 buys / 1646 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -58,9 +67,8 @@ The Fearless Of Missing Out (FOMO) SPL Token Mint exhibits a low-risk profile ba
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

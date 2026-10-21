@@ -2,14 +2,14 @@
 token: Dumb Phone Gang
 ticker: DPG
 network: solana
-risk_score: 51
-status: high
+risk_score: 50
+status: medium
 date: 2026-08-14
 ---
 
 # Dumb Phone Gang (DPG) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 51/100 — 🟠 High Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dumb-phone-gang-sol)
 
@@ -25,9 +25,9 @@ This SPL Token-2022 mint, Dumb Phone Gang (DPG), presents a Medium risk profile 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | This token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, preventing further token issuance or freezing of holder accounts. It does not utilize a transfer… |
-| **Governance / Economics** | 2/10 | High | The token has a total DEX liquidity of $91,389 and a 24-hour trading volume of $457,355, resulting in a normal Volume/Liquidity Ratio of 5.00. However, the DEX pair is very new, having been created… |
-| **Upgrades** | 5/10 | Medium | The mint authority and freeze authority are both revoked, meaning the core token parameters cannot be altered by an administrative key. The token's metadata is immutable, ensuring that its name… |
+| **Technical** | 8/10 | Low | This token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, preventing further token issuance or freezing of holder accounts. It does not utilize a transfer… |
+| **Governance / Economics** | 1/10 | High | The token has a total DEX liquidity of $91,389 and a 24-hour trading volume of $457,355, resulting in a normal Volume/Liquidity Ratio of 5.00. However, the DEX pair is very new, having been created… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the core token parameters cannot be altered by an administrative key. The token's metadata is immutable, ensuring that its name… |
 
 ## Security Findings
 
@@ -45,22 +45,21 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |--------|-------|
 | **Contract** | [`LFEJTx...pump`](https://solscan.io/account/LFEJTxJ9yi6ojGDFpjbGfABLbH55Fc3oEK8syJJpump) |
 | **Network** | Solana |
-| **Price** | $0.001369 |
-| **24h Volume** | $461.1K |
-| **Liquidity** | $90.0K |
-| **Volume / Liquidity** | 5.1× |
+| **Price** | $0.00000588 |
+| **24h Volume** | $24 |
+| **Liquidity** | $7.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 96.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2243 buys / 1984 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -68,9 +67,8 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

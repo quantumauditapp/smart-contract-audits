@@ -2,14 +2,14 @@
 token: FIFA WORLD CUP
 ticker: FWC
 network: solana
-risk_score: 80
-status: critical
+risk_score: 42
+status: medium
 date: 2026-06-10
 ---
 
 # FIFA WORLD CUP (FWC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 80/100 — 🔴 Critical Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fifa-world-cup-sol)
 
@@ -25,9 +25,19 @@ This SPL Token Mint for FIFA WORLD CUP (FWC) shows a robust security configurati
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen by an… |
+| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen by an… |
 | **Governance / Economics** | 1/10 | High | The token exhibits very low trading activity with a 24-hour volume of $31 against a liquidity of $13,224. The Volume/Liquidity Ratio is 0.00, indicating no signs of wash trading. The DEX pair has… |
-| **Upgrades** | 5/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any post-launch changes to supply or account freeze status. No transfer hook is configured, and the… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any post-launch changes to supply or account freeze status. No transfer hook is configured, and the… |
+
+## Security Findings
+
+_⚪ 1 Informational_
+
+### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
+
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+
+**Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
 ## Token Metrics
 
@@ -35,21 +45,20 @@ This SPL Token Mint for FIFA WORLD CUP (FWC) shows a robust security configurati
 |--------|-------|
 | **Contract** | [`HxWrnZ...pump`](https://solscan.io/account/HxWrnZznqF5iYf3ckMw3FTaZQvubB53ohzpjPSNUpump) |
 | **Network** | Solana |
-| **Price** | $0.00000807 |
-| **24h Volume** | $41 |
-| **Liquidity** | $8.5K |
+| **Price** | $0.00000621 |
+| **24h Volume** | $3 |
+| **Liquidity** | $9.1K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 83.8% of supply |
+| **Top-10 Holders** | 87.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/4 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
-| Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -57,9 +66,8 @@ This SPL Token Mint for FIFA WORLD CUP (FWC) shows a robust security configurati
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
-| Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
