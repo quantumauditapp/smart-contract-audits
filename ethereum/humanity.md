@@ -2,14 +2,14 @@
 token: Humanity
 ticker: H
 network: ethereum
-risk_score: 100
+risk_score: 97
 status: critical
 date: 2026-06-22
 ---
 
 # Humanity (H) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 97/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/humanity-eth)
 
@@ -89,12 +89,12 @@ The administrative control over the proxy, including upgrade capabilities, is ma
 |--------|-------|
 | **Contract** | [`0xe76c...5de1`](https://etherscan.io/address/0xe76c5b78f93909d34404e9eb4c1f19e7582a5de1) |
 | **Network** | Ethereum |
-| **Price** | $0.05904 |
-| **24h Volume** | $1.1K |
-| **Liquidity** | $15.2K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.07843 |
+| **24h Volume** | $277.8K |
+| **Liquidity** | $970.6K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 86.4% of supply |
+| **Top-10 Holders** | 86.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 738 buys / 807 sells |
 

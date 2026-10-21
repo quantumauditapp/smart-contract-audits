@@ -2,14 +2,14 @@
 token: Jerry the goat
 ticker: JERRY
 network: base
-risk_score: 23
-status: medium
+risk_score: 31
+status: low
 date: 2026-08-16
 ---
 
 # Jerry the goat (JERRY) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 23/100 — 🟡 Medium Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jerry-the-goat-base)
 
@@ -26,8 +26,15 @@ This audit report is based on the provided contract address. However, no source 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | Due to the absence of source code (7.2 Code Security), a detailed technical analysis of the contract's implementation, architecture (7.1 Architecture), and access control mechanisms (7.3 Access… |
-| **Governance / Economics** | 3/10 | High | Without access to the contract's source code, it is impossible to evaluate its economic model (7.4 Economic) or governance structure (7.5 Governance). There is no information regarding tokenomics… |
-| **Upgrades** | 5/10 | Medium | The contract's upgradeability features (7.7 Upgrades) and operational procedures (7.8 Operations) cannot be assessed without source code. It is unknown if the contract employs a proxy pattern (e.g.… |
+| **Governance / Economics** | 2/10 | High | Without access to the contract's source code, it is impossible to evaluate its economic model (7.4 Economic) or governance structure (7.5 Governance). There is no information regarding tokenomics… |
+| **Upgrades** | 6/10 | Medium | The contract's upgradeability features (7.7 Upgrades) and operational procedures (7.8 Operations) cannot be assessed without source code. It is unknown if the contract employs a proxy pattern (e.g.… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 71.4% |
+| **Top-3 Unlocked** | ⚠️ 99.8% |
 
 ## Security Findings
 
@@ -59,12 +66,12 @@ Due to the absence of source code, it was impossible to identify specific techni
 |--------|-------|
 | **Contract** | [`0xb200...eb01`](https://basescan.org/address/0xb200000000000000000000d9dac57e31e1aceb01) |
 | **Network** | Base |
-| **Price** | $0.0003771 |
-| **24h Volume** | $52.4K |
-| **Liquidity** | $22.7K |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $0.0004459 |
+| **24h Volume** | $31.2K |
+| **Liquidity** | $28.3K |
+| **Volume / Liquidity** | 1.1× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 4.4% of supply |
+| **Top-10 Holders** | 6.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 671 buys / 454 sells |
 

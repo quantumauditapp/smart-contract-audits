@@ -3,13 +3,13 @@ token: Koma Inu
 ticker: KOMA
 network: bsc
 risk_score: 26
-status: medium
+status: low
 date: 2026-08-13
 ---
 
 # Koma Inu (KOMA) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 26/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/koma-inu-bsc)
 
@@ -80,12 +80,12 @@ The contract implements `INITIAL_BUY_TAX` (30%) and `INITIAL_SELL_TAX` (30%) wit
 |--------|-------|
 | **Contract** | [`0xd5ea...3c19`](https://bscscan.com/address/0xd5eaaac47bd1993d661bc087e15dfb079a7f3c19) |
 | **Network** | BNB Chain |
-| **Price** | $0.01342 |
-| **24h Volume** | $708.7K |
-| **Liquidity** | $1.89M |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.01332 |
+| **24h Volume** | $261.9K |
+| **Liquidity** | $2.06M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 83.0% of supply |
+| **Top-10 Holders** | 85.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2211 buys / 2156 sells |
 

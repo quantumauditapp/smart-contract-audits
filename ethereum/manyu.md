@@ -2,14 +2,14 @@
 token: Manyu
 ticker: MANYU
 network: ethereum
-risk_score: 15
+risk_score: 13
 status: low
 date: 2026-07-24
 ---
 
 # Manyu (MANYU) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 15/100 — 🟢 Low Risk**
+> **Risk Score: 13/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/manyu-eth)
 
@@ -81,8 +81,8 @@ The contract uses a `SafeMath` library. While `SafeMath` is crucial for preventi
 | **Contract** | [`0x95af...24ce`](https://etherscan.io/address/0x95af4af910c28e8ece4512bfe46f1f33687424ce) |
 | **Network** | Ethereum |
 | **Price** | $0. |
-| **24h Volume** | $77.5K |
-| **Liquidity** | $419.0K |
+| **24h Volume** | $117.5K |
+| **Liquidity** | $606.7K |
 | **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1y |
 | **Top-10 Holders** | 22.3% of supply |

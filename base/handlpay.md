@@ -2,14 +2,14 @@
 token: HandlPay
 ticker: HANDL
 network: base
-risk_score: 28
+risk_score: 40
 status: medium
 date: 2026-08-11
 ---
 
 # HandlPay (HANDL) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 28/100 — 🟡 Medium Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/handlpay-base)
 
@@ -25,16 +25,16 @@ This audit covers the HandlToken and HANDLSwap contracts. The HandlToken is an O
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The technical architecture (7.1) of both contracts is straightforward. The HandlToken leverages OpenZeppelin's Ownable and LayerZero's OFT for standard and cross-chain functionality. The HANDLSwap… |
-| **Governance / Economics** | 6/10 | Medium | The economic model (7.4) of the HANDLSwap contract is a simple fixed-price exchange, entirely controlled by an administrator. The governance (7.5) is highly centralized, with a single `admin` address… |
-| **Upgrades** | 9/10 | Low | Neither the HandlToken nor the HANDLSwap contract implements any upgrade mechanism (7.7). Both contracts are designed to be immutable once deployed. This eliminates upgrade-related risks such as… |
+| **Technical** | 8/10 | Low | The technical architecture (7.1) of both contracts is straightforward. The HandlToken leverages OpenZeppelin's Ownable and LayerZero's OFT for standard and cross-chain functionality. The HANDLSwap… |
+| **Governance / Economics** | 4/10 | Medium | The economic model (7.4) of the HANDLSwap contract is a simple fixed-price exchange, entirely controlled by an administrator. The governance (7.5) is highly centralized, with a single `admin` address… |
+| **Upgrades** | 8/10 | Low | Neither the HandlToken nor the HANDLSwap contract implements any upgrade mechanism (7.7). Both contracts are designed to be immutable once deployed. This eliminates upgrade-related risks such as… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 48.1% |
-| **Top-3 Unlocked** | ⚠️ 90.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 50.2% |
+| **Top-3 Unlocked** | ⚠️ 93.0% |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ The `HANDLSwap` contract includes a `setPaused` function to halt trading, but th
 |--------|-------|
 | **Contract** | [`0x3bbc...4425`](https://basescan.org/address/0x3bbcb624cb9a1f73163a886f460f47603e5e4425) |
 | **Network** | Base |
-| **Price** | $0.002844 |
-| **24h Volume** | $71.1K |
-| **Liquidity** | $53.4K |
-| **Volume / Liquidity** | 1.3× |
+| **Price** | $0.001978 |
+| **24h Volume** | $80.8K |
+| **Liquidity** | $44.5K |
+| **Volume / Liquidity** | 1.8× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 69.9% of supply |
+| **Top-10 Holders** | 68.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1319 buys / 882 sells |
 

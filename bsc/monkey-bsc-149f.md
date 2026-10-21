@@ -2,14 +2,14 @@
 token: Monkey
 ticker: MONKEY
 network: bsc
-risk_score: 89
+risk_score: 90
 status: critical
 date: 2026-08-14
 ---
 
 # Monkey (MONKEY) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 89/100 — 🔴 Critical Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/monkey-bsc-149f)
 
@@ -33,8 +33,8 @@ The audit of the Monkey Token contract identified critical vulnerabilities that 
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 75.4% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 97.0% |
+| **Top-3 Unlocked** | ⚠️ 99.5% |
 
 ## Security Findings
 
@@ -95,9 +95,9 @@ The `_decimals` variable is set to 0. This means the token is non-divisible, and
 | **Contract** | [`0x684a...c276`](https://bscscan.com/address/0x684a1768c8d0098811017b7812c23978dd58c276) |
 | **Network** | BNB Chain |
 | **Price** | $0. |
-| **24h Volume** | $1.36M |
-| **Liquidity** | $137.8K |
-| **Volume / Liquidity** | 9.8× |
+| **24h Volume** | $205.4K |
+| **Liquidity** | $73.3K |
+| **Volume / Liquidity** | 2.8× |
 | **Token Age** | 9d |
 | **Top-10 Holders** | 100.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

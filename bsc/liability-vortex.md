@@ -2,14 +2,14 @@
 token: Liability Vortex
 ticker: LVTR
 network: bsc
-risk_score: 16
+risk_score: 11
 status: low
 date: 2026-08-16
 ---
 
 # Liability Vortex (LVTR) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 16/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/liability-vortex-bsc)
 
@@ -26,15 +26,15 @@ The LiabilityVortex contract is a standard ERC20 token implementation, inheritin
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The contract demonstrates strong technical security by utilizing battle-tested OpenZeppelin libraries for its ERC20 and Ownable functionalities (7.2 Code Security). There is no complex custom logic… |
-| **Governance / Economics** | 7/10 | Low | The primary economic risk stems from the initial token distribution: the entire fixed supply is minted to a single `treasury` address during deployment (7.4 Economic). This creates a single point of… |
+| **Governance / Economics** | 8/10 | Low | The primary economic risk stems from the initial token distribution: the entire fixed supply is minted to a single `treasury` address during deployment (7.4 Economic). This creates a single point of… |
 | **Upgrades** | 10/10 | Low | The LiabilityVortex contract is deployed as a standard, non-upgradeable implementation (7.7 Upgrades). This design choice eliminates the complexities and risks associated with upgrade mechanisms… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **LP Locked** | 89.4% — Null Address, PinkLock02 |
-| **Top-1 Unlocked Holder** | 6.3% |
+| **LP Locked** | 99.4% — Null Address, PinkLock02 |
+| **Top-1 Unlocked Holder** | 4.0% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The contract heavily relies on battle-tested OpenZeppelin contracts for ERC20 to
 |--------|-------|
 | **Contract** | [`0x2dcb...631a`](https://bscscan.com/address/0x2dcb495f5bdf5bfc06aa866710d1c7d118b9631a) |
 | **Network** | BNB Chain |
-| **Price** | $0.356 |
-| **24h Volume** | $35.2K |
-| **Liquidity** | $15.6K |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $0.6151 |
+| **24h Volume** | $7.3K |
+| **Liquidity** | $20.9K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 79.5% of supply |
+| **Top-10 Holders** | 67.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 346 buys / 277 sells |
 

@@ -2,14 +2,14 @@
 token: Morpho
 ticker: MORPHO
 network: ethereum
-risk_score: 48
-status: high
+risk_score: 54
+status: medium
 date: 2026-06-10
 ---
 
 # Morpho (MORPHO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 54/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/morpho-eth)
 
@@ -26,7 +26,7 @@ This audit covers an ERC-1967 (UUPS) proxy contract, which is a standard OpenZep
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The technical architecture (7.1) utilizes the battle-tested OpenZeppelin ERC-1967 (UUPS) proxy pattern, which is a strong foundation for upgradeability. The code security (7.2) of the proxy contracts… |
-| **Governance / Economics** | 4/10 | Medium | The governance (7.5) and economic (7.4) security of the system are heavily dependent on the implementation contract. While the ERC-1967 standard provides a framework for upgrade control, the specific… |
+| **Governance / Economics** | 2/10 | High | The governance (7.5) and economic (7.4) security of the system are heavily dependent on the implementation contract. While the ERC-1967 standard provides a framework for upgrade control, the specific… |
 | **Upgrades** | 1/10 | High | The contract implements the ERC-1967 (UUPS) upgrade pattern (7.7), which is a secure and widely adopted standard for upgradeability. This pattern delegates upgrade authorization to the implementation… |
 
 ## Proxy Upgrade Controls
@@ -41,8 +41,8 @@ This audit covers an ERC-1967 (UUPS) proxy contract, which is a standard OpenZep
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 48.0% |
-| **Top-3 Unlocked** | 79.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -88,12 +88,12 @@ The `ERC1967Proxy` constructor is `payable` and calls `ERC1967Utils.upgradeToAnd
 |--------|-------|
 | **Contract** | [`0x58d9...c2b2`](https://etherscan.io/address/0x58d97b57bb95320f9a05dc918aef65434969c2b2) |
 | **Network** | Ethereum |
-| **Price** | $1.9700 |
-| **24h Volume** | $71.7K |
-| **Liquidity** | $616.7K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $2.4700 |
+| **24h Volume** | $190.5K |
+| **Liquidity** | $797.2K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 64.9% of supply |
+| **Top-10 Holders** | 64.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 273 buys / 285 sells |
 

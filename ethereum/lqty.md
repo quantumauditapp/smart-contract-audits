@@ -2,14 +2,14 @@
 token: LQTY
 ticker: LQTY
 network: ethereum
-risk_score: 49
-status: high
+risk_score: 47
+status: medium
 date: 2026-07-27
 ---
 
 # LQTY (LQTY) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 47/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lqty-eth)
 
@@ -80,12 +80,12 @@ The LQTY token has a hard-capped total supply of 100 million tokens, all of whic
 |--------|-------|
 | **Contract** | [`0x6dea...c54d`](https://etherscan.io/address/0x6dea81c8171d0ba574754ef6f8b412f2ed88c54d) |
 | **Network** | Ethereum |
-| **Price** | $0.1968 |
-| **24h Volume** | $200.4K |
-| **Liquidity** | $474.7K |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.2221 |
+| **24h Volume** | $37.4K |
+| **Liquidity** | $553.8K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 84.1% of supply |
+| **Top-10 Holders** | 84.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 335 buys / 341 sells |
 

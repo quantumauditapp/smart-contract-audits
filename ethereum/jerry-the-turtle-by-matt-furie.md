@@ -66,12 +66,12 @@ Due to the immediate renunciation of ownership in the constructor (I-01), severa
 |--------|-------|
 | **Contract** | [`0x4e96...af8c`](https://etherscan.io/address/0x4e9623b7e5b6438542458f5ee828d65c24d3af8c) |
 | **Network** | Ethereum |
-| **Price** | $0.00000313 |
-| **24h Volume** | $102.3K |
-| **Liquidity** | $58.8K |
-| **Volume / Liquidity** | 1.7× |
+| **Price** | $0.00000285 |
+| **24h Volume** | $1.7K |
+| **Liquidity** | $65.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 29.8% of supply |
+| **Top-10 Holders** | 33.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 352 buys / 198 sells |
 

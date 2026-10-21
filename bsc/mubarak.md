@@ -2,14 +2,14 @@
 token: mubarak
 ticker: MUBARAK
 network: bsc
-risk_score: 25
-status: medium
+risk_score: 31
+status: low
 date: 2026-08-11
 ---
 
 # mubarak (MUBARAK) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 25/100 — 🟡 Medium Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mubarak-bsc)
 
@@ -26,16 +26,16 @@ This audit covers a custom ERC20 token contract with added transfer control mech
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 9/10 | Low | The contract utilizes standard OpenZeppelin patterns for ERC20 and Ownable functionalities, demonstrating a solid foundation (7.1 Architecture, 7.2 Code Security). The use of `unchecked` blocks is… |
-| **Governance / Economics** | 5/10 | Medium | The token's economic model is heavily reliant on the owner's control over transferability (7.4 Economic). The `setMode` function allows the owner to permanently disable transfer restrictions by… |
+| **Governance / Economics** | 4/10 | Medium | The token's economic model is heavily reliant on the owner's control over transferability (7.4 Economic). The `setMode` function allows the owner to permanently disable transfer restrictions by… |
 | **Upgrades** | 10/10 | Low | The contract is not designed with upgradeability in mind (7.7 Upgrades). It is a standard implementation contract without proxy patterns. Therefore, any identified issues or desired feature changes… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **LP Locked** | 65.8% — GoPlus SafeToken Locker |
-| **Top-1 Unlocked Holder** | 29.0% |
-| **Top-3 Unlocked** | 34.1% |
+| **LP Locked** | 33.0% — GoPlus SafeToken Locker |
+| **Top-1 Unlocked Holder** | ⚠️ 62.2% |
+| **Top-3 Unlocked** | 66.8% |
 
 ## Security Findings
 
@@ -67,12 +67,12 @@ Upon deployment, the token's `_mode` is initialized to `MODE_TRANSFER_RESTRICTED
 |--------|-------|
 | **Contract** | [`0x5c85...46f6`](https://bscscan.com/address/0x5c85d6c6825ab4032337f11ee92a72df936b46f6) |
 | **Network** | BNB Chain |
-| **Price** | $0.01795 |
-| **24h Volume** | $7.37M |
-| **Liquidity** | $1.55M |
-| **Volume / Liquidity** | 4.8× |
+| **Price** | $0.03003 |
+| **24h Volume** | $7.41M |
+| **Liquidity** | $2.35M |
+| **Volume / Liquidity** | 3.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 84.1% of supply |
+| **Top-10 Holders** | 86.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 10198 buys / 9208 sells |
 

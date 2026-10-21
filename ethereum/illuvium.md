@@ -2,14 +2,14 @@
 token: Illuvium
 ticker: ILV
 network: ethereum
-risk_score: 62
-status: high
+risk_score: 57
+status: medium
 date: 2026-08-17
 ---
 
 # Illuvium (ILV) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 57/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/illuvium-eth)
 
@@ -26,15 +26,15 @@ This audit covers the IlluviumERC20 token contract. The contract implements a st
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The IlluviumERC20 contract demonstrates good adherence to the ERC-20 standard, including proper event emissions and robust checks for common arithmetic overflows/underflows in `increaseAllowance` and… |
-| **Governance / Economics** | 1/10 | High | The contract design incorporates a custom access control system with distinct roles such as `ROLE_TOKEN_CREATOR` and `ROLE_TOKEN_DESTROYER`, granting significant power over the token supply to… |
+| **Governance / Economics** | 2/10 | High | The contract design incorporates a custom access control system with distinct roles such as `ROLE_TOKEN_CREATOR` and `ROLE_TOKEN_DESTROYER`, granting significant power over the token supply to… |
 | **Upgrades** | 3/10 | High | The IlluviumERC20 contract is implemented as a standard, non-upgradeable token contract (7.7 Upgrades). It does not utilize any proxy patterns (e.g., UUPS, Transparent) or other upgrade mechanisms.… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 38.9% |
-| **Top-3 Unlocked** | ⚠️ 80.2% |
+| **Top-1 Unlocked Holder** | 39.5% |
+| **Top-3 Unlocked** | 79.6% |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ The contract design grants significant centralized control to addresses holding 
 |--------|-------|
 | **Contract** | [`0x767f...ca0e`](https://etherscan.io/address/0x767fe9edc9e0df98e07454847909b5e959d7ca0e) |
 | **Network** | Ethereum |
-| **Price** | $3.0270 |
-| **24h Volume** | $64.7K |
-| **Liquidity** | $1.68M |
+| **Price** | $3.1200 |
+| **24h Volume** | $54.0K |
+| **Liquidity** | $1.93M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 61.3% of supply |
+| **Top-10 Holders** | 58.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 110 buys / 146 sells |
 

@@ -2,14 +2,14 @@
 token: Hana Token
 ticker: HANA
 network: bsc
-risk_score: 58
+risk_score: 66
 status: high
 date: 2026-07-26
 ---
 
 # Hana Token (HANA) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hana-token-bsc)
 
@@ -25,7 +25,7 @@ The HanaToken contract is an ERC20 token implementing standard functionalities f
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract leverages battle-tested OpenZeppelin libraries for ERC20, Burnable, Permit, and Ownable functionalities, contributing to robust code security and adherence to standards. It utilizes a… |
+| **Technical** | 6/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for ERC20, Burnable, Permit, and Ownable functionalities, contributing to robust code security and adherence to standards. It utilizes a… |
 | **Governance / Economics** | 1/10 | High | The token's economic model is straightforward, with a fixed `INITIAL_SUPPLY` minted once, preventing inflationary risks from further minting. However, the centralized control over token burning… |
 | **Upgrades** | 6/10 | Medium | The HanaToken contract is not designed with upgradeability patterns (e.g., proxy contracts), meaning its logic cannot be modified post-deployment. This eliminates risks associated with upgrade… |
 
@@ -33,7 +33,7 @@ The HanaToken contract is an ERC20 token implementing standard functionalities f
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 53.8% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -73,12 +73,12 @@ The contract uses `pragma solidity ^0.8.28`. While newer compiler versions often
 |--------|-------|
 | **Contract** | [`0x6261...8353`](https://bscscan.com/address/0x6261963ebe9ff014aad10ecc3b0238d4d04e8353) |
 | **Network** | BNB Chain |
-| **Price** | $0.02906 |
-| **24h Volume** | $1.24M |
-| **Liquidity** | $1.38M |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.01977 |
+| **24h Volume** | $546.5K |
+| **Liquidity** | $1.12M |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 73.5% of supply |
+| **Top-10 Holders** | 80.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 19762 buys / 18844 sells |
 

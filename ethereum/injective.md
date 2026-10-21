@@ -2,14 +2,14 @@
 token: Injective
 ticker: INJ
 network: ethereum
-risk_score: 26
-status: medium
+risk_score: 28
+status: low
 date: 2026-06-10
 ---
 
 # Injective (INJ) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 26/100 — 🟡 Medium Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/injective-eth)
 
@@ -33,8 +33,8 @@ This audit report covers the provided Solidity source code, which includes stand
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 75.1% |
-| **Top-3 Unlocked** | ⚠️ 86.6% |
+| **Top-1 Unlocked Holder** | ⚠️ 82.2% |
+| **Top-3 Unlocked** | ⚠️ 89.8% |
 
 ## Security Findings
 
@@ -66,12 +66,12 @@ The provided source code only includes standard OpenZeppelin libraries (`Context
 |--------|-------|
 | **Contract** | [`0xe28b...ca30`](https://etherscan.io/address/0xe28b3b32b6c345a34ff64674606124dd5aceca30) |
 | **Network** | Ethereum |
-| **Price** | $5.1500 |
-| **24h Volume** | $9.3K |
-| **Liquidity** | $385.2K |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $4.9800 |
+| **24h Volume** | $38.9K |
+| **Liquidity** | $396.9K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 96.1% of supply |
+| **Top-10 Holders** | 96.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
 ## Security Flags (3/5 passed)

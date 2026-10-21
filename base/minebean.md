@@ -2,14 +2,14 @@
 token: MineBean
 ticker: BEAN
 network: base
-risk_score: 82
+risk_score: 89
 status: critical
 date: 2026-07-23
 ---
 
 # MineBean (BEAN) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 82/100 — 🔴 Critical Risk**
+> **Risk Score: 89/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/minebean-base)
 
@@ -26,15 +26,15 @@ The MineBean contract is an ERC20 token with a capped supply, a minter role, and
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The contract utilizes robust OpenZeppelin ERC20 and Uniswap V4 libraries for core functionalities (7.2 Code Security). The TWAP oracle mechanism incorporates a `MIN_SNAPSHOT_INTERVAL` to prevent… |
-| **Governance / Economics** | 6/10 | Medium | The contract implements a `MAX_SUPPLY` and a `minter` role, providing a controlled token issuance mechanism (7.4 Economic). The owner can `freezeMinter` and `removeLimits`, which are one-way actions… |
-| **Upgrades** | 6/10 | Medium | The contract is not designed as an upgradeable proxy. Therefore, it does not introduce any upgrade-specific risks (7.7 Upgrades). Any changes to the contract's logic would require a new deployment… |
+| **Governance / Economics** | 4/10 | Medium | The contract implements a `MAX_SUPPLY` and a `minter` role, providing a controlled token issuance mechanism (7.4 Economic). The owner can `freezeMinter` and `removeLimits`, which are one-way actions… |
+| **Upgrades** | 4/10 | Medium | The contract is not designed as an upgradeable proxy. Therefore, it does not introduce any upgrade-specific risks (7.7 Upgrades). Any changes to the contract's logic would require a new deployment… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **LP Locked** | 98.4% — GoPlus SafeToken Locker |
-| **Top-1 Unlocked Holder** | 0.9% |
+| **LP Locked** | 96.0% — GoPlus SafeToken Locker |
+| **Top-1 Unlocked Holder** | 2.9% |
 
 ## Security Findings
 
@@ -94,12 +94,12 @@ The `_updateTickSnapshot` function is triggered on every transfer to or from an 
 |--------|-------|
 | **Contract** | [`0x5c72...5a5d`](https://basescan.org/address/0x5c72992b83e74c4d5200a8e8920fb946214a5a5d) |
 | **Network** | Base |
-| **Price** | $2.8100 |
-| **24h Volume** | $29.0K |
-| **Liquidity** | $251.8K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $1.1000 |
+| **24h Volume** | $5.9K |
+| **Liquidity** | $30.4K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 86.4% of supply |
+| **Top-10 Holders** | 88.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 239 buys / 1364 sells |
 

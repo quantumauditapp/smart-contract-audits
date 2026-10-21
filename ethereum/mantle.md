@@ -3,13 +3,13 @@ token: Mantle
 ticker: MNT
 network: ethereum
 risk_score: 60
-status: high
+status: medium
 date: 2026-08-14
 ---
 
 # Mantle (MNT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 60/100 — 🟠 High Risk**
+> **Risk Score: 60/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mantle-eth)
 
@@ -82,10 +82,10 @@ The `mint` function does not explicitly check if the `_recipient` address is `ad
 |--------|-------|
 | **Contract** | [`0x3c3a...f354`](https://etherscan.io/address/0x3c3a81e81dc49a522a592e7622a7e711c06bf354) |
 | **Network** | Ethereum |
-| **Price** | $0.4437 |
-| **24h Volume** | $118.7K |
-| **Liquidity** | $2.96M |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.5692 |
+| **24h Volume** | $216.0K |
+| **Liquidity** | $3.52M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
 | **Top-10 Holders** | 86.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

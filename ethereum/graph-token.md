@@ -3,13 +3,13 @@ token: Graph Token
 ticker: GRT
 network: ethereum
 risk_score: 61
-status: high
+status: medium
 date: 2026-08-16
 ---
 
 # Graph Token (GRT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 61/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/graph-token-eth)
 
@@ -33,8 +33,8 @@ The GraphToken contract implements a standard ERC20 token with burnable function
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 55.5% |
-| **Top-3 Unlocked** | 76.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 55.6% |
+| **Top-3 Unlocked** | 76.6% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The standard `approve` function in ERC20 tokens is susceptible to a known front-
 |--------|-------|
 | **Contract** | [`0xc944...44a7`](https://etherscan.io/address/0xc944e90c64b2c07662a292be6244bdf05cda44a7) |
 | **Network** | Ethereum |
-| **Price** | $0.01352 |
-| **24h Volume** | $67.3K |
-| **Liquidity** | $100.4K |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $0.01709 |
+| **24h Volume** | $7.5K |
+| **Liquidity** | $130.8K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 55.8% of supply |
+| **Top-10 Holders** | 55.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 191 buys / 125 sells |
 

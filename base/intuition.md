@@ -2,14 +2,14 @@
 token: Intuition
 ticker: TRUST
 network: base
-risk_score: 97
+risk_score: 98
 status: critical
 date: 2026-08-13
 ---
 
 # Intuition (TRUST) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 97/100 — 🔴 Critical Risk**
+> **Risk Score: 98/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/intuition-base)
 
@@ -42,7 +42,7 @@ The audit of the Intuition Trust contract (implementation of the token) identifi
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.9% |
+| **Top-1 Unlocked Holder** | ⚠️ 92.6% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -75,12 +75,12 @@ Due to the `Trust` contract's `mint` function overriding and bypassing the `Trus
 |--------|-------|
 | **Contract** | [`0x6cd9...d8a3`](https://basescan.org/address/0x6cd905df2ed214b22e0d48ff17cd4200c1c6d8a3) |
 | **Network** | Base |
-| **Price** | $0.05391 |
-| **24h Volume** | $197.9K |
-| **Liquidity** | $265.5K |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $0.05355 |
+| **24h Volume** | $135.7K |
+| **Liquidity** | $273.3K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 77.8% of supply |
+| **Top-10 Holders** | 77.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1348 buys / 1625 sells |
 

@@ -41,7 +41,7 @@ The HypERC20 contract implements an upgradeable ERC-20 token with interchain cap
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 50.5% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -88,12 +88,12 @@ The `HypERC20` contract, as an interchain token, heavily relies on the security 
 |--------|-------|
 | **Contract** | [`0x9a4a...642e`](https://bscscan.com/address/0x9a4a67721573f2c9209dfff972c52be4e3f6642e) |
 | **Network** | BNB Chain |
-| **Price** | $0.0117 |
-| **24h Volume** | $251.4K |
-| **Liquidity** | $172.6K |
-| **Volume / Liquidity** | 1.5× |
+| **Price** | $0.01038 |
+| **24h Volume** | $102.2K |
+| **Liquidity** | $157.4K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 95.6% of supply |
+| **Top-10 Holders** | 95.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2263 buys / 2093 sells |
 

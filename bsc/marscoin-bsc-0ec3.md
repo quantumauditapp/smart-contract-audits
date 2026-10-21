@@ -2,14 +2,14 @@
 token: Marscoin
 ticker: MARS
 network: bsc
-risk_score: 10
+risk_score: 4
 status: low
 date: 2026-08-17
 ---
 
 # Marscoin (MARS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 10/100 — 🟢 Low Risk**
+> **Risk Score: 4/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/marscoin-bsc-0ec3)
 
@@ -26,7 +26,7 @@ The audit of the Token contract revealed a well-structured ERC20 implementation 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract utilizes standard and well-audited OpenZeppelin patterns for ERC20 functionality and ownership, including safe use of `unchecked` blocks for arithmetic operations (7.2 Code Security).… |
-| **Governance / Economics** | 7/10 | Low | The `Ownable` pattern provides a clear, single point of administrative control for critical functions like `setMode` (7.5 Governance). The ability to restrict transfers offers flexibility for… |
+| **Governance / Economics** | 8/10 | Low | The `Ownable` pattern provides a clear, single point of administrative control for critical functions like `setMode` (7.5 Governance). The ability to restrict transfers offers flexibility for… |
 | **Upgrades** | 10/10 | Low | The contract is not designed with an upgradeability pattern (e.g., proxy). Therefore, there are no specific upgrade-related risks (7.7 Upgrades). Any changes to the contract logic would require a new… |
 
 ## LP Distribution
@@ -73,12 +73,12 @@ The `Ownable` contract includes a `renounceOwnership()` function. If the contrac
 |--------|-------|
 | **Contract** | [`0x1fd4...5b68`](https://bscscan.com/address/0x1fd448d0361c3212961a70930f3129a45f425b68) |
 | **Network** | BNB Chain |
-| **Price** | $0.00009292 |
-| **24h Volume** | $51.8K |
-| **Liquidity** | $47.4K |
-| **Volume / Liquidity** | 1.1× |
+| **Price** | $0.0000961 |
+| **24h Volume** | $5.6K |
+| **Liquidity** | $52.8K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 43.7% of supply |
+| **Top-10 Holders** | 44.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 275 buys / 192 sells |
 

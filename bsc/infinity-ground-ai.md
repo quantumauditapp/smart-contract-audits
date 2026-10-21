@@ -2,14 +2,14 @@
 token: Infinity Ground AI
 ticker: AIN
 network: bsc
-risk_score: 50
+risk_score: 70
 status: high
 date: 2026-08-16
 ---
 
 # Infinity Ground AI (AIN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 70/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/infinity-ground-ai-bsc)
 
@@ -25,9 +25,9 @@ The AIN token contract is an ERC20 implementation with a controlled minting mech
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract exhibits high technical quality, leveraging battle-tested OpenZeppelin libraries for ERC20 and Ownable functionalities. Solidity 0.8.20 mitigates integer overflow/underflow risks. The… |
+| **Technical** | 6/10 | Medium | The contract exhibits high technical quality, leveraging battle-tested OpenZeppelin libraries for ERC20 and Ownable functionalities. Solidity 0.8.20 mitigates integer overflow/underflow risks. The… |
 | **Governance / Economics** | 1/10 | High | The contract's economic model centers around a fixed `TOTAL_SUPPLY` with a controlled minting phase. The owner, a multisig, has significant power to add and remove minters (7.3 Access Control). Each… |
-| **Upgrades** | 7/10 | Low | The AIN contract is a standard implementation and is not designed to be upgradeable (7.7 Upgrades). This means there are no upgrade-related risks such as proxy misconfigurations or storage… |
+| **Upgrades** | 4/10 | Medium | The AIN contract is a standard implementation and is not designed to be upgradeable (7.7 Upgrades). This means there are no upgrade-related risks such as proxy misconfigurations or storage… |
 
 ## LP Distribution
 
@@ -80,22 +80,22 @@ The token has a predefined `TOTAL_SUPPLY` constant (1,000,000,000 tokens). Once 
 |--------|-------|
 | **Contract** | [`0x9558...f4a3`](https://bscscan.com/address/0x9558a9254890b2a8b057a789f413631b9084f4a3) |
 | **Network** | BNB Chain |
-| **Price** | $0.08054 |
-| **24h Volume** | $57.3K |
-| **Liquidity** | $1.64M |
+| **Price** | $0.07014 |
+| **24h Volume** | $51.0K |
+| **Liquidity** | $1.54M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 87.4% of supply |
+| **Top-10 Holders** | 88.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1635 buys / 1655 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -105,7 +105,7 @@ The token has a predefined `TOTAL_SUPPLY` constant (1,000,000,000 tokens). Once 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

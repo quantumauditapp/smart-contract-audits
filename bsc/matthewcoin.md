@@ -2,14 +2,14 @@
 token: MatthewCoin
 ticker: MATTHEWCOIN
 network: bsc
-risk_score: 23
-status: medium
+risk_score: 28
+status: low
 date: 2026-08-12
 ---
 
 # MatthewCoin (MATTHEWCOIN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 23/100 — 🟡 Medium Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/matthewcoin-bsc)
 
@@ -26,14 +26,14 @@ This audit covers the `Address.sol` utility library from OpenZeppelin Contracts.
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The `Address` library (7.1 Architecture) is a foundational utility from OpenZeppelin, designed to provide safer interactions with addresses and low-level calls. It includes functions like `sendValue`… |
-| **Governance / Economics** | 5/10 | Medium | This contract is a utility library and does not implement any specific governance mechanisms (7.5 Governance) or economic models (7.4 Economic). Therefore, governance and economic risks are not… |
+| **Governance / Economics** | 4/10 | Medium | This contract is a utility library and does not implement any specific governance mechanisms (7.5 Governance) or economic models (7.4 Economic). Therefore, governance and economic risks are not… |
 | **Upgrades** | 9/10 | Low | As a Solidity library, `Address.sol` is typically deployed as immutable bytecode and linked at compile time or used via `delegatecall` in proxy patterns. It is not designed for direct upgradeability… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 97.9% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -66,12 +66,12 @@ The library provides wrappers for low-level `call`, `delegatecall`, and `staticc
 |--------|-------|
 | **Contract** | [`0xad5b...ffff`](https://bscscan.com/address/0xad5b3485a44d2241998a0d86ea395c8f4a51ffff) |
 | **Network** | BNB Chain |
-| **Price** | $0.00003023 |
-| **24h Volume** | $106.8K |
-| **Liquidity** | $19.4K |
-| **Volume / Liquidity** | 5.5× |
+| **Price** | $0.00001215 |
+| **24h Volume** | $2.7K |
+| **Liquidity** | $13.6K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 50.1% of supply |
+| **Top-10 Holders** | 73.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 758 buys / 631 sells |
 

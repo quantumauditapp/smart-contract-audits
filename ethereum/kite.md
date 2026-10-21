@@ -2,14 +2,14 @@
 token: Kite
 ticker: KITE
 network: ethereum
-risk_score: 40
+risk_score: 39
 status: medium
 date: 2026-06-10
 ---
 
 # Kite (KITE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kite-eth)
 
@@ -85,7 +85,7 @@ The `Kite` contract is implemented as a standard, non-proxy contract. This means
 | **Liquidity** | $812.8K |
 | **Volume / Liquidity** | 0.6× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | 67.7% of supply |
+| **Top-10 Holders** | 66.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 769 buys / 680 sells |
 

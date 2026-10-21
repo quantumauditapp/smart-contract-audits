@@ -2,14 +2,14 @@
 token: GRVT
 ticker: GRVT
 network: bsc
-risk_score: 68
+risk_score: 78
 status: high
 date: 2026-08-11
 ---
 
 # GRVT (GRVT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 78/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/grvt-bsc)
 
@@ -26,7 +26,7 @@ The BridgeToken contract, implemented as a BeaconProxy, provides standard ERC-20
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 4/10 | Medium | The contract implements standard ERC-20 functionalities (7.2 Code Security) with appropriate checks for zero addresses and sufficient balances, leveraging Solidity 0.8+ for automatic integer… |
-| **Governance / Economics** | 2/10 | High | The contract's economic model (7.4 Economic) grants the owner significant centralized control, including the ability to `mint` and `burn` tokens, and `updateDetails` such as name and symbol. While… |
+| **Governance / Economics** | 1/10 | High | The contract's economic model (7.4 Economic) grants the owner significant centralized control, including the ability to `mint` and `burn` tokens, and `updateDetails` such as name and symbol. While… |
 | **Upgrades** | 1/10 | High | The contract utilizes the BeaconProxy pattern (7.1 Architecture, 7.7 Upgrades), which provides a robust and efficient mechanism for upgradeability. The `initializer` modifier correctly prevents… |
 
 ## Proxy Upgrade Controls
@@ -40,8 +40,8 @@ The BridgeToken contract, implemented as a BeaconProxy, provides standard ERC-20
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 52.4% |
-| **Top-3 Unlocked** | ⚠️ 83.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 60.9% |
+| **Top-3 Unlocked** | ⚠️ 97.5% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The `increaseAllowance` and `decreaseAllowance` functions, while standard ERC-20
 |--------|-------|
 | **Contract** | [`0x46f2...1be7`](https://bscscan.com/address/0x46f2564e0fa8248d15125e7e54173cfbdef91be7) |
 | **Network** | BNB Chain |
-| **Price** | $0.3231 |
-| **24h Volume** | $332.0K |
-| **Liquidity** | $50.4K |
-| **Volume / Liquidity** | 6.6× |
+| **Price** | $0.1586 |
+| **24h Volume** | $20.6K |
+| **Liquidity** | $21.7K |
+| **Volume / Liquidity** | 1.0× |
 | **Token Age** | 11d |
-| **Top-10 Holders** | 82.0% of supply |
+| **Top-10 Holders** | 90.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3041 buys / 3476 sells |
 

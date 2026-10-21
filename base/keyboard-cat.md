@@ -2,14 +2,14 @@
 token: Keyboard Cat
 ticker: KEYCAT
 network: base
-risk_score: 3
+risk_score: 1
 status: low
 date: 2026-08-16
 ---
 
 # Keyboard Cat (KEYCAT) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 3/100 — 🟢 Low Risk**
+> **Risk Score: 1/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/keyboard-cat-base)
 
@@ -87,12 +87,12 @@ The contract includes ERC-20 Permit functionality, allowing users to approve tok
 |--------|-------|
 | **Contract** | [`0x9a26...7973`](https://basescan.org/address/0x9a26f5433671751c3276a065f57e5a02d2817973) |
 | **Network** | Base |
-| **Price** | $0.0003838 |
-| **24h Volume** | $44.2K |
-| **Liquidity** | $564.3K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.0008255 |
+| **24h Volume** | $161.9K |
+| **Liquidity** | $974.6K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 43.7% of supply |
+| **Top-10 Holders** | 45.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 189 buys / 146 sells |
 

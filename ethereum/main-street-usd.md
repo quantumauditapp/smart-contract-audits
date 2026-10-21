@@ -2,14 +2,14 @@
 token: Main Street USD
 ticker: MSUSD
 network: ethereum
-risk_score: 72
-status: critical
+risk_score: 74
+status: high
 date: 2026-06-21
 ---
 
 # Main Street USD (MSUSD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 74/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/main-street-usd-eth)
 
@@ -41,7 +41,7 @@ This audit covers an ERC1967Proxy contract, which is a standard UUPS proxy imple
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 91.2% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -95,12 +95,12 @@ The proxy's constructor uses `ERC1967Utils.upgradeToAndCall(implementation, _dat
 |--------|-------|
 | **Contract** | [`0x4ba0...7c00`](https://etherscan.io/address/0x4ba01f22827018b4772cd326c7627fb4956a7c00) |
 | **Network** | Ethereum |
-| **Price** | $0.3235 |
-| **24h Volume** | $738 |
-| **Liquidity** | $299.7K |
+| **Price** | $0.4092 |
+| **24h Volume** | $1.1K |
+| **Liquidity** | $205.2K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 98.8% of supply |
+| **Top-10 Holders** | 98.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1155 buys / 990 sells |
 

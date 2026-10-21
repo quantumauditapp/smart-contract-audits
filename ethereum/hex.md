@@ -2,14 +2,14 @@
 token: HEX
 ticker: HEX
 network: ethereum
-risk_score: 32
-status: medium
+risk_score: 11
+status: low
 date: 2026-07-31
 ---
 
 # HEX (HEX) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 32/100 — 🟡 Medium Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hex-eth)
 
@@ -25,16 +25,16 @@ This audit covers standard OpenZeppelin library contracts (Context, IERC20, Safe
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The provided code consists of well-established OpenZeppelin libraries (Context, IERC20, SafeMath) from Solidity 0.5.13. These contracts are designed for robustness, with SafeMath effectively… |
+| **Technical** | 10/10 | Low | The provided code consists of well-established OpenZeppelin libraries (Context, IERC20, SafeMath) from Solidity 0.5.13. These contracts are designed for robustness, with SafeMath effectively… |
 | **Governance / Economics** | 4/10 | Medium | The provided contracts (Context, IERC20, SafeMath) do not contain any governance or economic logic (7.4 Economic, 7.5 Governance). Therefore, no specific economic or governance risks can be assessed… |
-| **Upgrades** | 3/10 | High | The provided contracts do not implement any upgrade mechanisms (7.7 Upgrades). They are standard libraries and interfaces, typically not designed for direct upgradeability. Upgrade safety would… |
+| **Upgrades** | 6/10 | Medium | The provided contracts do not implement any upgrade mechanisms (7.7 Upgrades). They are standard libraries and interfaces, typically not designed for direct upgradeability. Upgrade safety would… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 56.8% |
-| **Top-3 Unlocked** | 71.7% |
+| **Top-1 Unlocked Holder** | ⚠️ 57.0% |
+| **Top-3 Unlocked** | 72.1% |
 
 ## Security Findings
 
@@ -66,22 +66,22 @@ The `IERC20` interface documentation explicitly highlights a potential race cond
 |--------|-------|
 | **Contract** | [`0x2b59...eb39`](https://etherscan.io/address/0x2b591e99afe9f32eaa6214f7b7629768c40eeb39) |
 | **Network** | Ethereum |
-| **Price** | $0.001021 |
-| **24h Volume** | $347.4K |
-| **Liquidity** | $394.9K |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.001166 |
+| **24h Volume** | $86.5K |
+| **Liquidity** | $497.6K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 39.9% of supply |
+| **Top-10 Holders** | 40.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 616 buys / 747 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ❌ Fail |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -91,7 +91,7 @@ The `IERC20` interface documentation explicitly highlights a potential race cond
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

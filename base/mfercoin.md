@@ -2,14 +2,14 @@
 token: mfercoin
 ticker: $MFER
 network: base
-risk_score: 0
+risk_score: 3
 status: low
 date: 2026-07-28
 ---
 
 # mfercoin ($MFER) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 0/100 — 🟢 Low Risk**
+> **Risk Score: 3/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mfercoin-base)
 
@@ -73,12 +73,12 @@ While the `Ownable` contract provides a `transferOwnership` function, the `mferc
 |--------|-------|
 | **Contract** | [`0xe308...54ca`](https://basescan.org/address/0xe3086852a4b125803c815a158249ae468a3254ca) |
 | **Network** | Base |
-| **Price** | $0.000684 |
-| **24h Volume** | $337.2K |
-| **Liquidity** | $185.0K |
-| **Volume / Liquidity** | 1.8× |
+| **Price** | $0.0008118 |
+| **24h Volume** | $5.7K |
+| **Liquidity** | $233.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 40.9% of supply |
+| **Top-10 Holders** | 41.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1164 buys / 1201 sells |
 

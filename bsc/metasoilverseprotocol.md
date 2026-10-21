@@ -33,7 +33,7 @@ This audit focused on a set of utility libraries (`Context`, `IERC165`, `SignedM
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -73,12 +73,12 @@ The provided source code only includes utility libraries (`Context`, `IERC165`, 
 |--------|-------|
 | **Contract** | [`0x6199...fb20`](https://bscscan.com/address/0x619940c0f69f1612245f94b7659403623239fb20) |
 | **Network** | BNB Chain |
-| **Price** | $0.0004785 |
-| **24h Volume** | $40.3K |
-| **Liquidity** | $47.6K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.00007635 |
+| **24h Volume** | $1.7K |
+| **Liquidity** | $11.9K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 7mo |
-| **Top-10 Holders** | 66.0% of supply |
+| **Top-10 Holders** | 65.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 531 buys / 339 sells |
 

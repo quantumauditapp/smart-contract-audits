@@ -2,14 +2,14 @@
 token: MarsCoin
 ticker: MARSCOIN
 network: bsc
-risk_score: 37
+risk_score: 39
 status: medium
 date: 2026-08-03
 ---
 
 # MarsCoin (MARSCOIN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/marscoin-bsc)
 
@@ -25,9 +25,23 @@ The FlapTaxTokenV3 contract implements an ERC20 token with advanced tax mechanis
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract utilizes OpenZeppelin's upgradeable standards and implements a gas-optimized `PackedPoolState` struct (7.1 Architecture). A notable technical risk is the `uint96` type for… |
-| **Governance / Economics** | 5/10 | Medium | The contract exhibits a medium level of centralization due to the `onlyOwner` role having extensive control over critical parameters such as tax rates, external contract addresses (`taxProcessor`… |
-| **Upgrades** | 3/10 | High | The contract is designed for upgradeability using OpenZeppelin's `Initializable` and `Upgradeable` patterns, indicating a UUPS proxy implementation (7.7 Upgrades). Immutable variables… |
+| **Technical** | 8/10 | Low | The contract utilizes OpenZeppelin's upgradeable standards and implements a gas-optimized `PackedPoolState` struct (7.1 Architecture). A notable technical risk is the `uint96` type for… |
+| **Governance / Economics** | 7/10 | Low | The contract exhibits a medium level of centralization due to the `onlyOwner` role having extensive control over critical parameters such as tax rates, external contract addresses (`taxProcessor`… |
+| **Upgrades** | 4/10 | Medium | The contract is designed for upgradeability using OpenZeppelin's `Initializable` and `Upgradeable` patterns, indicating a UUPS proxy implementation (7.7 Upgrades). Immutable variables… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | 16.9% |
+| **Top-3 Unlocked** | 31.2% |
 
 ## Security Findings
 
@@ -87,12 +101,12 @@ The contract correctly implements the UUPS (Universal Upgradeable Proxy Standard
 |--------|-------|
 | **Contract** | [`0xfe18...7777`](https://bscscan.com/address/0xfe189e97832da1573e4e4ff034f4ffc3a15c7777) |
 | **Network** | BNB Chain |
-| **Price** | $0.03253 |
-| **24h Volume** | $3.04M |
-| **Liquidity** | $653.2K |
-| **Volume / Liquidity** | 4.7× |
+| **Price** | $0.1307 |
+| **24h Volume** | $12.38M |
+| **Liquidity** | $785.6K |
+| **Volume / Liquidity** | 15.8× |
 | **Token Age** | 6d |
-| **Top-10 Holders** | 21.0% of supply |
+| **Top-10 Holders** | 30.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5078 buys / 4557 sells |
 

@@ -2,14 +2,14 @@
 token: Mame Inu
 ticker: MAME
 network: bsc
-risk_score: 30
+risk_score: 38
 status: medium
 date: 2026-07-26
 ---
 
 # Mame Inu (MAME) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 30/100 — 🟡 Medium Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mame-inu-bsc)
 
@@ -26,8 +26,8 @@ The MAMEINU token contract implements an ERC-20 standard with reflection mechani
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract demonstrates good practices such as using Solidity 0.8.25 for checked arithmetic and implementing a reentrancy guard (`_inSwap`) for critical swap operations. The ERC-20 standard… |
-| **Governance / Economics** | 6/10 | Medium | The MAMEINU token incorporates a dynamic fee structure with extremely high initial transaction taxes (up to 90%), designed to deter bots but potentially impacting legitimate users. The contract's… |
-| **Upgrades** | 9/10 | Low | The MAMEINU contract is not designed with an upgrade mechanism, meaning its logic is immutable once deployed. This eliminates upgrade-related risks such as proxy implementation vulnerabilities or… |
+| **Governance / Economics** | 5/10 | Medium | The MAMEINU token incorporates a dynamic fee structure with extremely high initial transaction taxes (up to 90%), designed to deter bots but potentially impacting legitimate users. The contract's… |
+| **Upgrades** | 8/10 | Low | The MAMEINU contract is not designed with an upgrade mechanism, meaning its logic is immutable once deployed. This eliminates upgrade-related risks such as proxy implementation vulnerabilities or… |
 
 ## LP Distribution
 
@@ -87,13 +87,13 @@ The contract hardcodes the addresses for the PancakeSwap V2 Router (`ROUTER`) an
 |--------|-------|
 | **Contract** | [`0xe92f...2302`](https://bscscan.com/address/0xe92f7fe3eaf61df28b7b75f3faab199333c42302) |
 | **Network** | BNB Chain |
-| **Price** | $0.005159 |
-| **24h Volume** | $113.7K |
-| **Liquidity** | $712.1K |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.0023 |
+| **24h Volume** | $695.5K |
+| **Liquidity** | $558.2K |
+| **Volume / Liquidity** | 1.2× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 48.0% of supply |
-| **Buy / Sell Tax** | 0.1% / 0.1% |
+| **Top-10 Holders** | 59.5% of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1194 buys / 372 sells |
 
 ## Security Flags (5/5 passed)

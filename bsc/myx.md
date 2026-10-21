@@ -3,13 +3,13 @@ token: MYX
 ticker: MYX
 network: bsc
 risk_score: 30
-status: medium
+status: low
 date: 2026-08-11
 ---
 
 # MYX (MYX) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 30/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/myx-bsc)
 
@@ -33,8 +33,8 @@ The MYX token contract is a straightforward ERC20 implementation leveraging batt
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 38.0% |
-| **Top-3 Unlocked** | 71.9% |
+| **Top-1 Unlocked Holder** | 28.1% |
+| **Top-3 Unlocked** | 55.0% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The MYX token has a fixed `MAX_SUPPLY` of 1 billion tokens (with 18 decimals) an
 |--------|-------|
 | **Contract** | [`0xd825...3e16`](https://bscscan.com/address/0xd82544bf0dfe8385ef8fa34d67e6e4940cc63e16) |
 | **Network** | BNB Chain |
-| **Price** | $0.07198 |
-| **24h Volume** | $158.9K |
-| **Liquidity** | $234.7K |
+| **Price** | $0.06831 |
+| **24h Volume** | $167.1K |
+| **Liquidity** | $240.5K |
 | **Volume / Liquidity** | 0.7× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 88.0% of supply |
+| **Top-10 Holders** | 88.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1663 buys / 1809 sells |
 

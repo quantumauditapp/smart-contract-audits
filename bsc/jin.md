@@ -2,14 +2,14 @@
 token: 金蟾
 ticker: JIN
 network: bsc
-risk_score: 48
+risk_score: 75
 status: high
 date: 2026-08-14
 ---
 
 # 金蟾 (JIN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 75/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jin-bsc)
 
@@ -25,9 +25,16 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract leverages OpenZeppelin's upgradeable contracts, providing a solid foundation for ERC20 functionality and upgradeability (7.1 Architecture). The use of a `PackedPoolState` struct is an… |
+| **Technical** | 6/10 | Medium | The contract leverages OpenZeppelin's upgradeable contracts, providing a solid foundation for ERC20 functionality and upgradeability (7.1 Architecture). The use of a `PackedPoolState` struct is an… |
 | **Governance / Economics** | 2/10 | High | The contract includes a check ensuring `taxDuration` is greater than or equal to `antiFarmerDuration`, which is a positive economic constraint. However, the owner has significant control over… |
-| **Upgrades** | 8/10 | Low | The contract is designed as an upgradeable proxy using OpenZeppelin's `Initializable` pattern. The `_disableInitializers()` call in the constructor correctly prevents re-initialization of the… |
+| **Upgrades** | 4/10 | Medium | The contract is designed as an upgradeable proxy using OpenZeppelin's `Initializable` pattern. The `_disableInitializers()` call in the constructor correctly prevents re-initialization of the… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
 
 ## LP Distribution
 
@@ -80,16 +87,16 @@ The state variable `initialLiquidationThreshold` is set during the `initialize` 
 |--------|-------|
 | **Contract** | [`0x49f5...7777`](https://bscscan.com/address/0x49f5bcab31a86c1ceefa6fb34680ff66bf8a7777) |
 | **Network** | BNB Chain |
-| **Price** | $0.0001629 |
-| **24h Volume** | $201.7K |
-| **Liquidity** | $38.6K |
-| **Volume / Liquidity** | 5.2× |
+| **Price** | $0.00002798 |
+| **24h Volume** | $9.5K |
+| **Liquidity** | $17.4K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 16h |
-| **Top-10 Holders** | 30.0% of supply |
-| **Buy / Sell Tax** | 0.1% / 0.0% |
+| **Top-10 Holders** | 51.4% of supply |
+| **Buy / Sell Tax** | 5.0% / 5.0% |
 | **24h Transactions** | 1744 buys / 1167 sells |
 
-## Security Flags (4/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
@@ -97,7 +104,7 @@ The state variable `initialLiquidationThreshold` is set during the `initialize` 
 | Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
@@ -107,7 +114,7 @@ The state variable `initialLiquidationThreshold` is set during the `initialize` 
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

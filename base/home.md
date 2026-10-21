@@ -3,13 +3,13 @@ token: HOME
 ticker: HOME
 network: base
 risk_score: 52
-status: high
+status: medium
 date: 2026-07-17
 ---
 
 # HOME (HOME) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 52/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/home-base)
 
@@ -33,7 +33,7 @@ This report covers a security review of the provided Solidity source code. It is
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 98.7% |
+| **Top-1 Unlocked Holder** | ⚠️ 97.9% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -73,12 +73,12 @@ The economic model (7.4 Economic) and governance structure (7.5 Governance) of t
 |--------|-------|
 | **Contract** | [`0x4bfa...714f`](https://basescan.org/address/0x4bfaa776991e85e5f8b1255461cbbd216cfc714f) |
 | **Network** | Base |
-| **Price** | $0.006065 |
-| **24h Volume** | $39.8K |
-| **Liquidity** | $44.1K |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.006027 |
+| **24h Volume** | $47.1K |
+| **Liquidity** | $24.2K |
+| **Volume / Liquidity** | 1.9× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 89.2% of supply |
+| **Top-10 Holders** | 87.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1619 buys / 1983 sells |
 

@@ -2,14 +2,14 @@
 token: Gram (prev. Toncoin)
 ticker: GRAM
 network: ethereum
-risk_score: 67
+risk_score: 69
 status: high
 date: 2026-06-30
 ---
 
 # Gram (prev. Toncoin) (GRAM) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 69/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gram-prev-toncoin-eth)
 
@@ -33,8 +33,8 @@ The TONBridge Bridge contract implements a multi-signature oracle system for min
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 60.4% |
-| **Top-3 Unlocked** | ⚠️ 81.4% |
+| **Top-1 Unlocked Holder** | ⚠️ 72.0% |
+| **Top-3 Unlocked** | ⚠️ 91.1% |
 
 ## Security Findings
 
@@ -94,12 +94,12 @@ The contract uses `pragma experimental ABIEncoderV2;`. While ABIEncoderV2 has be
 |--------|-------|
 | **Contract** | [`0x582d...def1`](https://etherscan.io/address/0x582d872a1b094fc48f5de31d3b73f2d9be47def1) |
 | **Network** | Ethereum |
-| **Price** | $1.5500 |
-| **24h Volume** | $4.2K |
-| **Liquidity** | $784.6K |
+| **Price** | $1.4900 |
+| **24h Volume** | $31.9K |
+| **Liquidity** | $793.2K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | 29.4% of supply |
+| **Top-10 Holders** | 30.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 21 buys / 32 sells |
 

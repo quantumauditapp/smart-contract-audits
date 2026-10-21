@@ -2,14 +2,14 @@
 token: GUA
 ticker: GUA
 network: bsc
-risk_score: 37
+risk_score: 43
 status: medium
 date: 2026-08-11
 ---
 
 # GUA (GUA) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gua-bsc)
 
@@ -52,12 +52,12 @@ The contract's constructor mints the entire token supply (1,000,000,000 * 1e18 G
 |--------|-------|
 | **Contract** | [`0xa5c8...69be`](https://bscscan.com/address/0xa5c8e1513b6a08334b479fe4d71f1253259469be) |
 | **Network** | BNB Chain |
-| **Price** | $0.05261 |
-| **24h Volume** | $105.3K |
-| **Liquidity** | $13.4K |
-| **Volume / Liquidity** | 7.8× |
+| **Price** | $0.03823 |
+| **24h Volume** | $221 |
+| **Liquidity** | $7.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 8mo |
-| **Top-10 Holders** | 92.5% of supply |
+| **Top-10 Holders** | 93.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2252 buys / 2102 sells |
 

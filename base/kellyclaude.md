@@ -2,14 +2,14 @@
 token: KellyClaude
 ticker: KELLYCLAUDE
 network: base
-risk_score: 32
-status: medium
+risk_score: 34
+status: low
 date: 2026-08-13
 ---
 
 # KellyClaude (KELLYCLAUDE) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 32/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kellyclaude-base)
 
@@ -80,12 +80,12 @@ The ClankerToken contract is deployed as a standard, non-upgradeable contract. T
 |--------|-------|
 | **Contract** | [`0x50d2...cb07`](https://basescan.org/address/0x50d2280441372486beecdd328c1854743ebacb07) |
 | **Network** | Base |
-| **Price** | $0.00000845 |
-| **24h Volume** | $67.3K |
-| **Liquidity** | $793.0K |
+| **Price** | $0.00000726 |
+| **24h Volume** | $20.0K |
+| **Liquidity** | $241.4K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | 52.8% of supply |
+| **Top-10 Holders** | 61.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 211 buys / 462 sells |
 

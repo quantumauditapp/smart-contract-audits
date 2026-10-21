@@ -2,14 +2,14 @@
 token: ICP
 ticker: ICP
 network: base
-risk_score: 58
+risk_score: 71
 status: high
 date: 2026-08-15
 ---
 
 # ICP (ICP) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 58/100 — 🟠 High Risk**
+> **Risk Score: 71/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/icp-base)
 
@@ -25,15 +25,15 @@ The Token contract implements an ERC20 token with custom burning, minting, and E
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract utilizes robust OpenZeppelin libraries for ERC20, Ownable, and ERC20Permit, providing a solid foundation for token functionality (7.2 Code Security). Access control for minting, ETH… |
+| **Technical** | 6/10 | Medium | The contract utilizes robust OpenZeppelin libraries for ERC20, Ownable, and ERC20Permit, providing a solid foundation for token functionality (7.2 Code Security). Access control for minting, ETH… |
 | **Governance / Economics** | 1/10 | High | The contract's economic model is straightforward, with an owner-controlled `minAmount` for burning and owner-only minting capabilities (7.4 Economic). The `Ownable` pattern provides clear… |
-| **Upgrades** | 6/10 | Medium | The contract is not designed with an upgrade mechanism (e.g., proxy pattern), meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates upgrade-specific risks such as proxy… |
+| **Upgrades** | 3/10 | High | The contract is not designed with an upgrade mechanism (e.g., proxy pattern), meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates upgrade-specific risks such as proxy… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 51.2% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.1% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -80,22 +80,22 @@ The contract declares a `uint8 _decimals;` storage variable and sets it in the c
 |--------|-------|
 | **Contract** | [`0x00f3...8917`](https://basescan.org/address/0x00f3c42833c3170159af4e92dbb451fb3f708917) |
 | **Network** | Base |
-| **Price** | $2.2700 |
-| **24h Volume** | $315.1K |
-| **Liquidity** | $418.6K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $2.5500 |
+| **24h Volume** | $601.7K |
+| **Liquidity** | $594.9K |
+| **Volume / Liquidity** | 1.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 73.8% of supply |
+| **Top-10 Holders** | 73.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 914 buys / 960 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -105,7 +105,7 @@ The contract declares a `uint8 _decimals;` storage variable and sets it in the c
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

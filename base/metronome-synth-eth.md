@@ -2,14 +2,14 @@
 token: Metronome Synth ETH
 ticker: MSETH
 network: base
-risk_score: 55
-status: high
+risk_score: 50
+status: medium
 date: 2026-08-13
 ---
 
 # Metronome Synth ETH (MSETH) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/metronome-synth-eth-base)
 
@@ -82,12 +82,12 @@ The `VERSION` constant is declared but not referenced anywhere within the provid
 |--------|-------|
 | **Contract** | [`0x7ba6...8c98`](https://basescan.org/address/0x7ba6f01772924a82d9626c126347a28299e98c98) |
 | **Network** | Base |
-| **Price** | $1,327.6500 |
-| **24h Volume** | $492.9K |
-| **Liquidity** | $1.96M |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $1,170.4900 |
+| **24h Volume** | $224.7K |
+| **Liquidity** | $1.47M |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 96.8% of supply |
+| **Top-10 Holders** | 92.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 197 buys / 317 sells |
 

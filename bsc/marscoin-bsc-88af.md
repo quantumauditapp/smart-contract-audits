@@ -3,13 +3,13 @@ token: MarsCoin
 ticker: MARSCOIN
 network: bsc
 risk_score: 23
-status: medium
+status: low
 date: 2026-08-20
 ---
 
 # MarsCoin (MARSCOIN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 23/100 — 🟡 Medium Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/marscoin-bsc-88af)
 
@@ -66,12 +66,12 @@ The `_mint` and `_burn` functions are declared as `internal` and are not exposed
 |--------|-------|
 | **Contract** | [`0x1706...4444`](https://bscscan.com/address/0x1706f1e06c69f3a8cf33cce179d5d78a5c6f4444) |
 | **Network** | BNB Chain |
-| **Price** | $0.002059 |
-| **24h Volume** | $878.0K |
-| **Liquidity** | $208.5K |
-| **Volume / Liquidity** | 4.2× |
+| **Price** | $0.0008598 |
+| **24h Volume** | $147.8K |
+| **Liquidity** | $148.1K |
+| **Volume / Liquidity** | 1.0× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 80.8% of supply |
+| **Top-10 Holders** | 85.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3288 buys / 2761 sells |
 

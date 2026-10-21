@@ -3,13 +3,13 @@ token: LayerZero
 ticker: ZRO
 network: base
 risk_score: 61
-status: high
+status: medium
 date: 2026-07-25
 ---
 
 # LayerZero (ZRO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 61/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/layerzero-base)
 
@@ -33,7 +33,7 @@ The LayerZeroToken contract is a standard implementation of LayerZero's Omnichai
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 87.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -80,12 +80,12 @@ In the constructor, the `_delegate` address is used to initialize both the `Owna
 |--------|-------|
 | **Contract** | [`0x6985...71cd`](https://basescan.org/address/0x6985884c4392d348587b19cb9eaaf157f13271cd) |
 | **Network** | Base |
-| **Price** | $0.9423 |
-| **24h Volume** | $479.9K |
-| **Liquidity** | $57.3K |
-| **Volume / Liquidity** | 8.4× |
+| **Price** | $1.1500 |
+| **24h Volume** | $533.8K |
+| **Liquidity** | $69.6K |
+| **Volume / Liquidity** | 7.7× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 61.7% of supply |
+| **Top-10 Holders** | 59.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1604 buys / 1694 sells |
 

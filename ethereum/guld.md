@@ -2,14 +2,14 @@
 token: GULD
 ticker: GULD
 network: ethereum
-risk_score: 39
+risk_score: 59
 status: medium
 date: 2026-08-12
 ---
 
 # GULD (GULD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 59/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/guld-eth)
 
@@ -25,16 +25,16 @@ This report details the security audit of the Custom Token contract. The audit i
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract exhibits a clear structure and generally follows common Solidity patterns. Strengths include the use of `immutable` for critical parameters like `decimals` and `maxSupply`, and a… |
+| **Technical** | 7/10 | Low | The contract exhibits a clear structure and generally follows common Solidity patterns. Strengths include the use of `immutable` for critical parameters like `decimals` and `maxSupply`, and a… |
 | **Governance / Economics** | 2/10 | High | The token's economic model is straightforward, with a fixed `maxSupply` and a centralized `issuer` role responsible for minting (7.4 Economic). The `owner` role holds significant power, including the… |
-| **Upgrades** | 6/10 | Medium | This contract is not designed to be upgradeable. Its logic is immutable once deployed, which eliminates upgrade-related risks such as proxy misconfigurations or malicious upgrade implementations (7.7… |
+| **Upgrades** | 3/10 | High | This contract is not designed to be upgradeable. Its logic is immutable once deployed, which eliminates upgrade-related risks such as proxy misconfigurations or malicious upgrade implementations (7.7… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 96.5% |
-| **Top-3 Unlocked** | ⚠️ 99.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -80,22 +80,22 @@ The contract does not include a function to burn tokens, which means tokens can 
 |--------|-------|
 | **Contract** | [`0x14d6...47a1`](https://etherscan.io/address/0x14d6c649292c5c9790c5196d1a9ea039307947a1) |
 | **Network** | Ethereum |
-| **Price** | $0.0231 |
-| **24h Volume** | $174.9K |
-| **Liquidity** | $1.98M |
+| **Price** | $0.02188 |
+| **24h Volume** | $306.3K |
+| **Liquidity** | $2.13M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 45.6% of supply |
+| **Top-10 Holders** | 40.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 86 buys / 101 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -105,7 +105,7 @@ The contract does not include a function to burn tokens, which means tokens can 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

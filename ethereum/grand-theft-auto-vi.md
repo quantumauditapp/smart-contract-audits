@@ -3,13 +3,13 @@ token: Grand Theft Auto VI
 ticker: GTAVI
 network: ethereum
 risk_score: 26
-status: medium
+status: low
 date: 2026-07-29
 ---
 
 # Grand Theft Auto VI (GTAVI) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 26/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/grand-theft-auto-vi-eth)
 
@@ -80,9 +80,9 @@ The standard ERC-20 `approve` function is susceptible to a known front-running a
 | **Contract** | [`0x2e5e...b6f9`](https://etherscan.io/address/0x2e5ef97c96d6a44ccb8db9c30f2f5dcec04bb6f9) |
 | **Network** | Ethereum |
 | **Price** | $0. |
-| **24h Volume** | $349.2K |
-| **Liquidity** | $236.6K |
-| **Volume / Liquidity** | 1.5× |
+| **24h Volume** | $8.3K |
+| **Liquidity** | $256.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 23d |
 | **Top-10 Holders** | 49.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

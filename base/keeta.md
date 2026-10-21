@@ -2,14 +2,14 @@
 token: Keeta
 ticker: KTA
 network: base
-risk_score: 15
+risk_score: 17
 status: low
 date: 2026-08-11
 ---
 
 # Keeta (KTA) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 15/100 — 🟢 Low Risk**
+> **Risk Score: 17/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/keeta-base)
 
@@ -33,8 +33,8 @@ The audited contract implements an ERC20 token with a dynamic, time-decaying tax
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 61.2% |
-| **Top-3 Unlocked** | ⚠️ 87.3% |
+| **Top-1 Unlocked Holder** | ⚠️ 70.3% |
+| **Top-3 Unlocked** | ⚠️ 90.0% |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ The tax reduction mechanism in `getCurrentTax` relies on `block.number` to deter
 |--------|-------|
 | **Contract** | [`0xc063...8973`](https://basescan.org/address/0xc0634090f2fe6c6d75e61be2b949464abb498973) |
 | **Network** | Base |
-| **Price** | $0.09398 |
-| **24h Volume** | $118.4K |
-| **Liquidity** | $4.10M |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.07163 |
+| **24h Volume** | $280.2K |
+| **Liquidity** | $4.13M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 67.3% of supply |
+| **Top-10 Holders** | 67.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 160 buys / 382 sells |
 

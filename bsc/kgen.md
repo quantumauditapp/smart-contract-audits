@@ -3,13 +3,13 @@ token: KGEN
 ticker: KGEN
 network: bsc
 risk_score: 78
-status: critical
+status: high
 date: 2026-08-14
 ---
 
 # KGEN (KGEN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 78/100 — 🔴 Critical Risk**
+> **Risk Score: 78/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kgen-bsc)
 
@@ -80,12 +80,12 @@ The `KgenOFT` contract inherits from both `Ownable2Step` and `Ownable`. In the c
 |--------|-------|
 | **Contract** | [`0xf3d5...3a1e`](https://bscscan.com/address/0xf3d5b4c34ed623478cc5141861776e6cf7ae3a1e) |
 | **Network** | BNB Chain |
-| **Price** | $0.1861 |
-| **24h Volume** | $48.0K |
-| **Liquidity** | $30.7K |
-| **Volume / Liquidity** | 1.6× |
+| **Price** | $0.1805 |
+| **24h Volume** | $25.8K |
+| **Liquidity** | $20.8K |
+| **Volume / Liquidity** | 1.2× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 93.7% of supply |
+| **Top-10 Holders** | 93.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 392 buys / 367 sells |
 

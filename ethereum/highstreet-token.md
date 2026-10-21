@@ -66,12 +66,12 @@ The `HIGH` token contract is deployed as a standalone, non-upgradeable contract 
 |--------|-------|
 | **Contract** | [`0x71ab...0282`](https://etherscan.io/address/0x71ab77b7dbb4fa7e017bc15090b2163221420282) |
 | **Network** | Ethereum |
-| **Price** | $0.02133 |
-| **24h Volume** | $35.3K |
-| **Liquidity** | $58.9K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.02925 |
+| **24h Volume** | $30.1K |
+| **Liquidity** | $81.9K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | 66.8% of supply |
+| **Top-10 Holders** | 68.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 264 buys / 220 sells |
 

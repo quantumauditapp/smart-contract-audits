@@ -2,14 +2,14 @@
 token: Identity.md
 ticker: IMD
 network: ethereum
-risk_score: 62
-status: high
+risk_score: 40
+status: medium
 date: 2026-08-11
 ---
 
 # Identity.md (IMD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/identitymd-eth)
 
@@ -26,8 +26,15 @@ The BridgedFP contract is an Omnichain Fungible Token (OFT) implementation utili
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract demonstrates good technical architecture (7.1) by extending well-audited libraries like LayerZero's OFT and OpenZeppelin's Ownable. Code security (7.2) is generally strong, with… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4) is primarily inherited from the LayerZero OFT standard, which handles cross-chain token transfers. The governance model (7.5) is highly centralized, with a single owner… |
-| **Upgrades** | 5/10 | Medium | The BridgedFP contract is not designed as an upgradeable proxy (7.7). This means its logic is immutable once deployed, eliminating risks associated with upgrade mechanisms like proxy… |
+| **Governance / Economics** | 3/10 | High | The economic model (7.4) is primarily inherited from the LayerZero OFT standard, which handles cross-chain token transfers. The governance model (7.5) is highly centralized, with a single owner… |
+| **Upgrades** | 6/10 | Medium | The BridgedFP contract is not designed as an upgradeable proxy (7.7). This means its logic is immutable once deployed, eliminating risks associated with upgrade mechanisms like proxy… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 85.7% |
+| **Top-3 Unlocked** | ⚠️ 99.3% |
 
 ## Security Findings
 
@@ -52,12 +59,12 @@ The `BridgedFP` contract inherits significant functionality from external, widel
 |--------|-------|
 | **Contract** | [`0xd34a...63b7`](https://etherscan.io/address/0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7) |
 | **Network** | Ethereum |
-| **Price** | $1.1500 |
-| **24h Volume** | $787.9K |
-| **Liquidity** | $703.7K |
+| **Price** | $3.5000 |
+| **24h Volume** | $1.68M |
+| **Liquidity** | $1.59M |
 | **Volume / Liquidity** | 1.1× |
 | **Token Age** | 7mo |
-| **Top-10 Holders** | 100.0% of supply |
+| **Top-10 Holders** | 52.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 542 buys / 464 sells |
 

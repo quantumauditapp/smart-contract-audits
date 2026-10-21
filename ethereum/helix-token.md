@@ -3,13 +3,13 @@ token: Helix Token
 ticker: HLX
 network: ethereum
 risk_score: 55
-status: high
+status: medium
 date: 2026-07-24
 ---
 
 # Helix Token (HLX) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 55/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/helix-token-eth)
 
@@ -33,8 +33,8 @@ The HelixToken contract is a standard ERC-20 implementation, inheriting from bat
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 94.9% |
-| **Top-3 Unlocked** | ⚠️ 97.3% |
+| **Top-1 Unlocked Holder** | ⚠️ 97.9% |
+| **Top-3 Unlocked** | ⚠️ 99.4% |
 
 ## Security Findings
 
@@ -66,10 +66,10 @@ The `HelixToken` contract is implemented directly and is not upgradeable (7.7 Up
 |--------|-------|
 | **Contract** | [`0x28d4...9525`](https://etherscan.io/address/0x28d4e499c4cde621e1cea7c9cbf9d43bf75a9525) |
 | **Network** | Ethereum |
-| **Price** | $0.05269 |
-| **24h Volume** | $1.23M |
-| **Liquidity** | $359.0K |
-| **Volume / Liquidity** | 3.4× |
+| **Price** | $0.0481 |
+| **24h Volume** | $352.9K |
+| **Liquidity** | $347.9K |
+| **Volume / Liquidity** | 1.0× |
 | **Token Age** | 1mo |
 | **Top-10 Holders** | 97.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

@@ -2,14 +2,14 @@
 token: LienFi
 ticker: LFI
 network: base
-risk_score: 63
-status: high
+risk_score: 42
+status: medium
 date: 2026-08-12
 ---
 
 # LienFi (LFI) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lienfi-base)
 
@@ -26,15 +26,23 @@ The CloneDERC20VotesV2 contract implements an ERC20 token with voting capabiliti
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract's architecture (7.1) is clear, utilizing Solady libraries for robust ERC20, ERC20Votes, and Ownable implementations. Code security (7.2) is generally strong, with no apparent reentrancy… |
-| **Governance / Economics** | 5/10 | Medium | The economic model (7.4) includes a capped yearly inflation rate and a vesting mechanism. Inflation tokens are minted directly to the `owner()`, which is a multisig, mitigating the risk of a single… |
+| **Governance / Economics** | 7/10 | Low | The economic model (7.4) includes a capped yearly inflation rate and a vesting mechanism. Inflation tokens are minted directly to the `owner()`, which is a multisig, mitigating the risk of a single… |
 | **Upgrades** | 2/10 | High | The contract includes the `Initializable` base contract (7.7), suggesting it was designed with upgradeability in mind, typically for deployment behind a proxy. However, the provided information… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 69.9% |
-| **Top-3 Unlocked** | ⚠️ 99.1% |
+| **Top-1 Unlocked Holder** | 28.8% |
+| **Top-3 Unlocked** | 59.8% |
 
 ## Security Findings
 
@@ -80,22 +88,22 @@ The provided source code for the `_available` function is truncated at the point
 |--------|-------|
 | **Contract** | [`0x3722...aba3`](https://basescan.org/address/0x3722264ab15a1dfce5a5af89e6547f7949a8aba3) |
 | **Network** | Base |
-| **Price** | $0.00005673 |
-| **24h Volume** | $37.6K |
-| **Liquidity** | $577.0K |
+| **Price** | $0.00008184 |
+| **24h Volume** | $63.1K |
+| **Liquidity** | $463.0K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 50.6% of supply |
+| **Top-10 Holders** | 50.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 73 buys / 176 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ⚠️ Unknown |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ❌ Fail |
 
@@ -105,7 +113,7 @@ The provided source code for the `_available` function is truncated at the point
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 

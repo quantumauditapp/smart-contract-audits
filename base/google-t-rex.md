@@ -2,14 +2,14 @@
 token: Google T-REX
 ticker: TREX
 network: base
-risk_score: 56
-status: high
+risk_score: 32
+status: low
 date: 2026-08-17
 ---
 
 # Google T-REX (TREX) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 56/100 — 🟠 High Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/google-t-rex-base)
 
@@ -25,16 +25,16 @@ A comprehensive security audit could not be performed as the source code for the
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | Due to the absence of source code, a detailed technical analysis of the contract's architecture, code security, and access control mechanisms (7.1, 7.2, 7.3) could not be conducted. Therefore, no… |
-| **Governance / Economics** | 1/10 | High | Without the contract's source code, it is impossible to assess potential economic vulnerabilities (7.4), governance mechanisms (7.5), or external dependencies (7.6). No specific economic or… |
+| **Technical** | 10/10 | Low | Due to the absence of source code, a detailed technical analysis of the contract's architecture, code security, and access control mechanisms (7.1, 7.2, 7.3) could not be conducted. Therefore, no… |
+| **Governance / Economics** | 2/10 | High | Without the contract's source code, it is impossible to assess potential economic vulnerabilities (7.4), governance mechanisms (7.5), or external dependencies (7.6). No specific economic or… |
 | **Upgrades** | 6/10 | Medium | The upgradeability status and associated risks (7.7) cannot be determined without access to the contract's source code. Operational aspects (7.8) also remain unassessable. |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | 35.9% |
+| **Top-3 Unlocked** | 73.0% |
 
 ## Security Findings
 
@@ -66,22 +66,22 @@ For highly critical smart contracts, especially those managing significant value
 |--------|-------|
 | **Contract** | [`0xb124...1111`](https://basescan.org/address/0xb12456b5ca0993be1be6b2f76504d38b1dc91111) |
 | **Network** | Base |
-| **Price** | $0.001565 |
-| **24h Volume** | $437.8K |
-| **Liquidity** | $123.2K |
-| **Volume / Liquidity** | 3.6× |
+| **Price** | $0.0001886 |
+| **24h Volume** | $676 |
+| **Liquidity** | $16.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 63.7% of supply |
+| **Top-10 Holders** | 74.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2275 buys / 1612 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -89,9 +89,9 @@ For highly critical smart contracts, especially those managing significant value
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

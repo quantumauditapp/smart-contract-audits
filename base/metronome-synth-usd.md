@@ -2,14 +2,14 @@
 token: Metronome Synth USD
 ticker: MSUSD
 network: base
-risk_score: 59
+risk_score: 68
 status: high
 date: 2026-07-24
 ---
 
 # Metronome Synth USD (MSUSD) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 68/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/metronome-synth-usd-base)
 
@@ -89,12 +89,12 @@ The provided contract snippet for `SyntheticToken` truncates the implementations
 |--------|-------|
 | **Contract** | [`0x5267...ae9d`](https://basescan.org/address/0x526728dbc96689597f85ae4cd716d4f7fccbae9d) |
 | **Network** | Base |
-| **Price** | $0.9842 |
-| **24h Volume** | $863.9K |
-| **Liquidity** | $13.28M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.4678 |
+| **24h Volume** | $1.03M |
+| **Liquidity** | $2.60M |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 99.1% of supply |
+| **Top-10 Holders** | 94.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 706 buys / 562 sells |
 

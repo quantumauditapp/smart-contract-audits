@@ -2,14 +2,14 @@
 token: MindNetwork FHE Token
 ticker: FHE
 network: bsc
-risk_score: 22
+risk_score: 41
 status: medium
 date: 2026-08-11
 ---
 
 # MindNetwork FHE Token (FHE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 22/100 — 🟡 Medium Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mindnetwork-fhe-token-bsc)
 
@@ -25,16 +25,16 @@ The FHE token contract is an ERC20 token utilizing OpenZeppelin's battle-tested 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract is built upon well-audited OpenZeppelin libraries (ERC20, AccessControl, ERC20Burnable, ERC20Permit), which significantly reduces the risk of common technical vulnerabilities. Custom… |
+| **Technical** | 7/10 | Low | The contract is built upon well-audited OpenZeppelin libraries (ERC20, AccessControl, ERC20Burnable, ERC20Permit), which significantly reduces the risk of common technical vulnerabilities. Custom… |
 | **Governance / Economics** | 5/10 | Medium | The economic model features a fixed `maxSupply` for the FHE token, providing a clear cap on total inflation. However, the `MINTER_ROLE` has the ability to mint tokens up to this maximum, introducing… |
-| **Upgrades** | 9/10 | Low | The FHE token contract is not designed as an upgradeable proxy. Therefore, there are no upgrade-specific risks such as proxy initialization issues, storage collisions, or logic inconsistencies… |
+| **Upgrades** | 6/10 | Medium | The FHE token contract is not designed as an upgradeable proxy. Therefore, there are no upgrade-specific risks such as proxy initialization issues, storage collisions, or logic inconsistencies… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 96.1% |
-| **Top-3 Unlocked** | ⚠️ 99.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 94.8% |
+| **Top-3 Unlocked** | ⚠️ 97.7% |
 
 ## Security Findings
 
@@ -66,22 +66,22 @@ While the `DEFAULT_ADMIN_ROLE` can grant and revoke the `MINTER_ROLE`, there is 
 |--------|-------|
 | **Contract** | [`0xd55c...727e`](https://bscscan.com/address/0xd55c9fb62e176a8eb6968f32958fefdd0962727e) |
 | **Network** | BNB Chain |
-| **Price** | $0.02411 |
-| **24h Volume** | $97.4K |
-| **Liquidity** | $888.4K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.02305 |
+| **24h Volume** | $19.5K |
+| **Liquidity** | $954.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 81.5% of supply |
+| **Top-10 Holders** | 80.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 285 buys / 437 sells |
 
-## Security Flags (4/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -91,7 +91,7 @@ While the `DEFAULT_ADMIN_ROLE` can grant and revoke the `MINTER_ROLE`, there is 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

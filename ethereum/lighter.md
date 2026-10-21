@@ -2,14 +2,14 @@
 token: Lighter
 ticker: LIT
 network: ethereum
-risk_score: 24
-status: medium
+risk_score: 28
+status: low
 date: 2026-06-10
 ---
 
 # Lighter (LIT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 24/100 — 🟡 Medium Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lighter-eth)
 
@@ -26,15 +26,15 @@ This audit was conducted on the provided Solidity source code, which consists so
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The provided code consists of well-established OpenZeppelin ERC20 base contracts and interfaces (7.1 Architecture). These contracts are industry standards, extensively peer-reviewed, and have a… |
-| **Governance / Economics** | 3/10 | High | The provided OpenZeppelin ERC20 base contract does not contain any specific governance mechanisms or economic models (7.5 Governance, 7.4 Economic). These aspects would typically be defined in the… |
+| **Governance / Economics** | 1/10 | High | The provided OpenZeppelin ERC20 base contract does not contain any specific governance mechanisms or economic models (7.5 Governance, 7.4 Economic). These aspects would typically be defined in the… |
 | **Upgrades** | 6/10 | Medium | The provided code does not include any proxy or upgradeability patterns (7.7 Upgrades). It is a standard, non-upgradeable abstract ERC20 implementation. If the 'Lighter' token is intended to be… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 34.5% |
-| **Top-3 Unlocked** | 63.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 53.3% |
+| **Top-3 Unlocked** | ⚠️ 93.0% |
 
 ## Security Findings
 
@@ -59,12 +59,12 @@ The project utilizes OpenZeppelin Contracts for its ERC20 base implementation. O
 |--------|-------|
 | **Contract** | [`0x232c...4ee2`](https://etherscan.io/address/0x232ce3bd40fcd6f80f3d55a522d03f25df784ee2) |
 | **Network** | Ethereum |
-| **Price** | $2.2300 |
-| **24h Volume** | $408.1K |
-| **Liquidity** | $801.3K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $4.2800 |
+| **24h Volume** | $914.7K |
+| **Liquidity** | $1.00M |
+| **Volume / Liquidity** | 0.9× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 66.5% of supply |
+| **Top-10 Holders** | 66.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 244 buys / 267 sells |
 

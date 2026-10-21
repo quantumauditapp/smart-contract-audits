@@ -2,14 +2,14 @@
 token: Ice Open Network
 ticker: ION
 network: bsc
-risk_score: 57
-status: high
+risk_score: 47
+status: medium
 date: 2026-08-11
 ---
 
 # Ice Open Network (ION) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 57/100 — 🟠 High Risk**
+> **Risk Score: 47/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ice-open-network-bsc)
 
@@ -25,9 +25,9 @@ The Bridge contract facilitates cross-chain asset transfers using a multi-signat
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The technical implementation demonstrates good practices such as requiring sorted signatures and preventing vote replays (7.2 Code Security). The contract correctly implements a 2/3 majority… |
-| **Governance / Economics** | 6/10 | Medium | The economic and governance model is highly centralized around the oracle set (7.4 Economic, 7.5 Governance). While a 2/3 majority is required for all critical actions, including updating the oracle… |
-| **Upgrades** | 5/10 | Medium | The Bridge contract is not designed with an upgrade mechanism (7.7 Upgrades). This eliminates risks associated with proxy patterns, such as storage collisions or incorrect upgrade paths. However, it… |
+| **Technical** | 8/10 | Low | The technical implementation demonstrates good practices such as requiring sorted signatures and preventing vote replays (7.2 Code Security). The contract correctly implements a 2/3 majority… |
+| **Governance / Economics** | 5/10 | Medium | The economic and governance model is highly centralized around the oracle set (7.4 Economic, 7.5 Governance). While a 2/3 majority is required for all critical actions, including updating the oracle… |
+| **Upgrades** | 8/10 | Low | The Bridge contract is not designed with an upgrade mechanism (7.7 Upgrades). This eliminates risks associated with proxy patterns, such as storage collisions or incorrect upgrade paths. However, it… |
 
 ## LP Distribution
 
@@ -80,22 +80,22 @@ The comment in `generalVote` states: `// NOTE: In practice, the number of oracle
 |--------|-------|
 | **Contract** | [`0xe1ab...5ea8`](https://bscscan.com/address/0xe1ab61f7b093435204df32f5b3a405de55445ea8) |
 | **Network** | BNB Chain |
-| **Price** | $0.00007675 |
-| **24h Volume** | $45.9K |
-| **Liquidity** | $196.8K |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.00009249 |
+| **24h Volume** | $9.0K |
+| **Liquidity** | $237.7K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 56.4% of supply |
+| **Top-10 Holders** | 63.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 911 buys / 1356 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (4/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ❌ Fail |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
@@ -105,7 +105,7 @@ The comment in `generalVote` states: `// NOTE: In practice, the number of oracle
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

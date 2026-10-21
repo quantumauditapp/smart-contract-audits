@@ -2,14 +2,14 @@
 token: Monkey
 ticker: MONKEY
 network: bsc
-risk_score: 89
+risk_score: 90
 status: critical
 date: 2026-08-11
 ---
 
 # Monkey (MONKEY) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 89/100 — 🔴 Critical Risk**
+> **Risk Score: 90/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/monkey-bsc)
 
@@ -25,9 +25,16 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 2/10 | High | The technical architecture leverages OpenZeppelin's upgradeable ERC20 and access control patterns (7.1 Architecture). However, a critical flaw exists with immutable variables in the upgradeable… |
+| **Technical** | 3/10 | High | The technical architecture leverages OpenZeppelin's upgradeable ERC20 and access control patterns (7.1 Architecture). However, a critical flaw exists with immutable variables in the upgradeable… |
 | **Governance / Economics** | 2/10 | High | The contract's economic model includes dynamic buy/sell taxes and an anti-farmer mechanism, managed through various pool states (7.4 Economic). Critical state transitions, such as `startMigration`… |
 | **Upgrades** | 3/10 | High | The contract is designed to be upgradeable using OpenZeppelin's UUPS proxy pattern, indicated by `Initializable` and `_disableInitializers()` (7.7 Upgrades). However, the use of `immutable` variables… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
 
 ## LP Distribution
 
@@ -94,13 +101,13 @@ The `PackedPoolState` struct is designed efficiently by carefully ordering and s
 |--------|-------|
 | **Contract** | [`0x4ac8...7777`](https://bscscan.com/address/0x4ac85f2a2d22956a15a95ebe142d442da35e7777) |
 | **Network** | BNB Chain |
-| **Price** | $0.0001251 |
-| **24h Volume** | $90.9K |
-| **Liquidity** | $32.7K |
-| **Volume / Liquidity** | 2.8× |
+| **Price** | $0.00001993 |
+| **24h Volume** | $26 |
+| **Liquidity** | $14.3K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 75.4% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 91.2% of supply |
+| **Buy / Sell Tax** | 3.0% / 3.0% |
 | **24h Transactions** | 1154 buys / 772 sells |
 
 ## Security Flags (4/5 passed)

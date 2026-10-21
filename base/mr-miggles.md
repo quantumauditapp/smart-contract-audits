@@ -73,12 +73,12 @@ The `_revert` function within the `Address` library uses inline assembly to hand
 |--------|-------|
 | **Contract** | [`0xb1a0...f25d`](https://basescan.org/address/0xb1a03eda10342529bbf8eb700a06c60441fef25d) |
 | **Network** | Base |
-| **Price** | $0.001714 |
-| **24h Volume** | $107.2K |
-| **Liquidity** | $342.4K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.003008 |
+| **24h Volume** | $63.9K |
+| **Liquidity** | $528.0K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 24.1% of supply |
+| **Top-10 Holders** | 22.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 397 buys / 283 sells |
 

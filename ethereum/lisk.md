@@ -73,12 +73,12 @@ The contract lacks a mechanism to pause token transfers or burning in emergency 
 |--------|-------|
 | **Contract** | [`0x6033...ae3f`](https://etherscan.io/address/0x6033f7f88332b8db6ad452b7c6d5bb643990ae3f) |
 | **Network** | Ethereum |
-| **Price** | $0.07822 |
-| **24h Volume** | $216.3K |
-| **Liquidity** | $202.0K |
-| **Volume / Liquidity** | 1.1× |
+| **Price** | $0.1031 |
+| **24h Volume** | $12.9K |
+| **Liquidity** | $272.9K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 93.3% of supply |
+| **Top-10 Holders** | 93.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 271 buys / 271 sells |
 

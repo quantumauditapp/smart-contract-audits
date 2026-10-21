@@ -2,14 +2,14 @@
 token: MOMO
 ticker: MOMO
 network: ethereum
-risk_score: 41
+risk_score: 47
 status: medium
 date: 2026-08-11
 ---
 
 # MOMO (MOMO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 47/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/momo-eth)
 
@@ -33,8 +33,8 @@ The MomoToken contract is a standard ERC20 token implementation, inheriting from
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 97.9% |
-| **Top-3 Unlocked** | ⚠️ 99.4% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.3% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -66,12 +66,12 @@ The MomoToken contract has a fixed `INITIAL_SUPPLY` minted entirely to a single 
 |--------|-------|
 | **Contract** | [`0x664e...6e81`](https://etherscan.io/address/0x664e9d73db2a3514f6b437137de4779977a06e81) |
 | **Network** | Ethereum |
-| **Price** | $0.0006384 |
-| **24h Volume** | $89.1K |
-| **Liquidity** | $56.2K |
-| **Volume / Liquidity** | 1.6× |
+| **Price** | $0.0002444 |
+| **24h Volume** | $3.4K |
+| **Liquidity** | $47.3K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 4d |
-| **Top-10 Holders** | 71.2% of supply |
+| **Top-10 Holders** | 83.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 318 buys / 172 sells |
 

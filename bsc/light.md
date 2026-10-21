@@ -2,14 +2,14 @@
 token: LIGHT
 ticker: LIGHT
 network: bsc
-risk_score: 40
-status: medium
+risk_score: 85
+status: critical
 date: 2026-07-26
 ---
 
 # LIGHT (LIGHT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 85/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/light-bsc)
 
@@ -25,9 +25,9 @@ This audit was conducted on a truncated Solidity code snippet, primarily consist
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The provided code snippet includes standard OpenZeppelin interfaces (ERC-20, ERC-165) and the LayerZero `AddressCast` library, which appears to handle address conversions correctly with appropriate… |
-| **Governance / Economics** | 4/10 | Medium | The contract ownership is managed by a 2/3 multisig (7.5 Governance), which is a robust access control mechanism, reducing single points of failure for administrative actions. Economically (7.4… |
-| **Upgrades** | 7/10 | Low | The contract is not deployed as an upgradeable proxy (`is_proxy: false`), which eliminates risks associated with upgrade mechanisms (7.7 Upgrades), such as proxy initialization errors or storage… |
+| **Technical** | 4/10 | Medium | The provided code snippet includes standard OpenZeppelin interfaces (ERC-20, ERC-165) and the LayerZero `AddressCast` library, which appears to handle address conversions correctly with appropriate… |
+| **Governance / Economics** | 1/10 | High | The contract ownership is managed by a 2/3 multisig (7.5 Governance), which is a robust access control mechanism, reducing single points of failure for administrative actions. Economically (7.4… |
+| **Upgrades** | 3/10 | High | The contract is not deployed as an upgradeable proxy (`is_proxy: false`), which eliminates risks associated with upgrade mechanisms (7.7 Upgrades), such as proxy initialization errors or storage… |
 
 ## LP Distribution
 
@@ -80,22 +80,22 @@ The `AddressCast` library utilizes `unchecked` blocks for bit shifting operation
 |--------|-------|
 | **Contract** | [`0x477c...3c0e`](https://bscscan.com/address/0x477c2c0459004e3354ba427fa285d7c053203c0e) |
 | **Network** | BNB Chain |
-| **Price** | $0.131 |
-| **24h Volume** | $3.29M |
-| **Liquidity** | $1.42M |
-| **Volume / Liquidity** | 2.3× |
+| **Price** | $0.1745 |
+| **24h Volume** | $843.1K |
+| **Liquidity** | $1.09M |
+| **Volume / Liquidity** | 0.8× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 91.2% of supply |
+| **Top-10 Holders** | 93.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 11510 buys / 12500 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -105,7 +105,7 @@ The `AddressCast` library utilizes `unchecked` blocks for bit shifting operation
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

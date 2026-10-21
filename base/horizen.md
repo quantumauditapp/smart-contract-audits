@@ -2,14 +2,14 @@
 token: Horizen
 ticker: ZEN
 network: base
-risk_score: 34
+risk_score: 39
 status: medium
 date: 2026-07-27
 ---
 
 # Horizen (ZEN) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 34/100 — 🟡 Medium Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/horizen-base)
 
@@ -25,16 +25,16 @@ This audit covers the ZenToken contract. Due to the provided source code being t
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 10/10 | Low | The technical architecture appears to follow the well-established ERC-20 standard, utilizing OpenZeppelin interfaces for robust token functionality (7.1 Architecture). The inclusion of ERC-6093… |
+| **Technical** | 8/10 | Low | The technical architecture appears to follow the well-established ERC-20 standard, utilizing OpenZeppelin interfaces for robust token functionality (7.1 Architecture). The inclusion of ERC-6093… |
 | **Governance / Economics** | 1/10 | High | The economic model of a standard ERC-20 token is generally straightforward, relying on supply and demand dynamics (7.4 Economic). However, most custom tokens introduce owner-controlled functions such… |
-| **Upgrades** | 6/10 | Medium | The contract is not identified as a proxy and does not appear to implement any explicit upgrade mechanisms (7.7 Upgrades). This means the contract's logic is immutable once deployed, eliminating… |
+| **Upgrades** | 5/10 | Medium | The contract is not identified as a proxy and does not appear to implement any explicit upgrade mechanisms (7.7 Upgrades). This means the contract's logic is immutable once deployed, eliminating… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 98.4% |
-| **Top-3 Unlocked** | ⚠️ 99.9% |
+| **Top-1 Unlocked Holder** | ⚠️ 92.4% |
+| **Top-3 Unlocked** | ⚠️ 98.3% |
 
 ## Security Findings
 
@@ -73,22 +73,22 @@ The contract utilizes interfaces for ERC-6093 custom errors (IERC20Errors, IERC7
 |--------|-------|
 | **Contract** | [`0xf43e...9229`](https://basescan.org/address/0xf43eb8de897fbc7f2502483b2bef7bb9ea179229) |
 | **Network** | Base |
-| **Price** | $4.0670 |
-| **24h Volume** | $267.3K |
-| **Liquidity** | $1.82M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $6.2500 |
+| **24h Volume** | $2.23M |
+| **Liquidity** | $2.37M |
+| **Volume / Liquidity** | 0.9× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 70.6% of supply |
+| **Top-10 Holders** | 70.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 430 buys / 808 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -98,7 +98,7 @@ The contract utilizes interfaces for ERC-6093 custom errors (IERC20Errors, IERC7
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -3,13 +3,13 @@ token: Mog Coin
 ticker: MOG
 network: ethereum
 risk_score: 26
-status: medium
+status: low
 date: 2026-08-11
 ---
 
 # Mog Coin (MOG) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 26/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mog-coin-eth)
 
@@ -88,12 +88,12 @@ The Uniswap V2 router address (0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D) is ha
 |--------|-------|
 | **Contract** | [`0xaaee...1c7a`](https://etherscan.io/address/0xaaee1a9723aadb7afa2810263653a34ba2c21c7a) |
 | **Network** | Ethereum |
-| **Price** | $0.0000001 |
-| **24h Volume** | $75.9K |
-| **Liquidity** | $4.53M |
+| **Price** | $0.00000011 |
+| **24h Volume** | $247.0K |
+| **Liquidity** | $5.47M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 57.4% of supply |
+| **Top-10 Holders** | 59.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 75 buys / 72 sells |
 

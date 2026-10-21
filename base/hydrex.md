@@ -3,13 +3,13 @@ token: Hydrex
 ticker: HYDX
 network: base
 risk_score: 60
-status: high
+status: medium
 date: 2026-08-15
 ---
 
 # Hydrex (HYDX) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 60/100 — 🟠 High Risk**
+> **Risk Score: 60/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hydrex-base)
 
@@ -33,8 +33,8 @@ The HydrexToken contract is an ERC20 token with burnable and permit functionalit
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 72.3% |
-| **Top-3 Unlocked** | ⚠️ 89.9% |
+| **Top-1 Unlocked Holder** | ⚠️ 52.7% |
+| **Top-3 Unlocked** | ⚠️ 91.6% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The HydrexToken contract lacks a mechanism to pause token transfers or other cri
 |--------|-------|
 | **Contract** | [`0x0000...6b30`](https://basescan.org/address/0x00000e7efa313f4e11bfff432471ed9423ac6b30) |
 | **Network** | Base |
-| **Price** | $0.01518 |
-| **24h Volume** | $53.5K |
-| **Liquidity** | $558.3K |
+| **Price** | $0.02547 |
+| **24h Volume** | $39.6K |
+| **Liquidity** | $710.8K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 11mo |
-| **Top-10 Holders** | 82.8% of supply |
+| **Top-10 Holders** | 77.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 58 buys / 88 sells |
 

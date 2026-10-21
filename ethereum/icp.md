@@ -2,14 +2,14 @@
 token: ICP
 ticker: ICP
 network: ethereum
-risk_score: 59
+risk_score: 71
 status: high
 date: 2026-08-11
 ---
 
 # ICP (ICP) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 71/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/icp-eth)
 
@@ -25,9 +25,9 @@ The Token contract implements a standard ERC20 token with Ownable and ERC20Permi
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract leverages well-audited OpenZeppelin libraries for ERC20, Ownable, and ERC20Permit functionalities (7.2 Code Security). However, a critical flaw exists in the `withdrawEth` function… |
+| **Technical** | 6/10 | Medium | The contract leverages well-audited OpenZeppelin libraries for ERC20, Ownable, and ERC20Permit functionalities (7.2 Code Security). However, a critical flaw exists in the `withdrawEth` function… |
 | **Governance / Economics** | 1/10 | High | The contract utilizes the Ownable pattern, granting the deployer significant control over key functions such as minting, updating `minAmount`, and withdrawing ETH (7.3 Access Control). This… |
-| **Upgrades** | 6/10 | Medium | The contract is not designed with an upgrade mechanism (e.g., proxy pattern), which inherently avoids the complexities and potential security risks associated with upgradeable contracts (7.7… |
+| **Upgrades** | 3/10 | High | The contract is not designed with an upgrade mechanism (e.g., proxy pattern), which inherently avoids the complexities and potential security risks associated with upgradeable contracts (7.7… |
 
 ## LP Distribution
 
@@ -80,22 +80,22 @@ The contract defines four separate `burn` functions (`burn1`, `burn2`, `burn3`, 
 |--------|-------|
 | **Contract** | [`0x00f3...8917`](https://etherscan.io/address/0x00f3c42833c3170159af4e92dbb451fb3f708917) |
 | **Network** | Ethereum |
-| **Price** | $2.3000 |
-| **24h Volume** | $764.6K |
-| **Liquidity** | $460.9K |
-| **Volume / Liquidity** | 1.7× |
+| **Price** | $2.5500 |
+| **24h Volume** | $137.7K |
+| **Liquidity** | $493.9K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 1y |
 | **Top-10 Holders** | 59.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 565 buys / 526 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -105,7 +105,7 @@ The contract defines four separate `burn` functions (`burn1`, `burn2`, `burn3`, 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

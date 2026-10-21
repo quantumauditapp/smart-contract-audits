@@ -2,14 +2,14 @@
 token: Holoworld AI
 ticker: HOLO
 network: bsc
-risk_score: 47
+risk_score: 67
 status: high
 date: 2026-08-12
 ---
 
 # Holoworld AI (HOLO) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 67/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/holoworld-ai-bsc)
 
@@ -26,15 +26,15 @@ Furthermore, consider assigning critical administrative roles to multi-signature
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract leverages battle-tested OpenZeppelin libraries for ERC20 and AccessControl, enhancing code security and adherence to standards (7.2 Code Security). The `_update` override correctly… |
+| **Technical** | 6/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for ERC20 and AccessControl, enhancing code security and adherence to standards (7.2 Code Security). The `_update` override correctly… |
 | **Governance / Economics** | 1/10 | High | The token implements a clear `MAX_SUPPLY` and controlled minting via the `MINTER_ROLE`, providing transparency on token issuance (7.4 Economic). However, the system exhibits high centralization, with… |
-| **Upgrades** | 6/10 | Medium | The contract is not designed with an upgrade mechanism (e.g., proxy pattern). Therefore, there are no upgrade-specific risks (7.7 Upgrades). Any future changes to the contract logic would require a… |
+| **Upgrades** | 3/10 | High | The contract is not designed with an upgrade mechanism (e.g., proxy pattern). Therefore, there are no upgrade-specific risks (7.7 Upgrades). Any future changes to the contract logic would require a… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.3% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -74,22 +74,22 @@ The `setTransfersEnabled` function includes `require(transfersEnabled != status,
 |--------|-------|
 | **Contract** | [`0x1a5d...9497`](https://bscscan.com/address/0x1a5d7e4c3a7f940b240b7357a4bfed30d17f9497) |
 | **Network** | BNB Chain |
-| **Price** | $0.07438 |
-| **24h Volume** | $1.96M |
-| **Liquidity** | $524.2K |
-| **Volume / Liquidity** | 3.7× |
+| **Price** | $0.06307 |
+| **24h Volume** | $86.9K |
+| **Liquidity** | $509.2K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 11mo |
-| **Top-10 Holders** | 96.7% of supply |
+| **Top-10 Holders** | 95.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 8383 buys / 8398 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -99,7 +99,7 @@ The `setTransfersEnabled` function includes `require(transfersEnabled != status,
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

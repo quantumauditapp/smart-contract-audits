@@ -3,13 +3,13 @@ token: I love puppies
 ticker: PUPPIES
 network: ethereum
 risk_score: 31
-status: medium
+status: low
 date: 2026-08-06
 ---
 
 # I love puppies (PUPPIES) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 31/100 — 🟡 Medium Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/i-love-puppies-eth)
 
@@ -102,11 +102,11 @@ The contract explicitly uses the `SafeMath` library for arithmetic operations. W
 | **Contract** | [`0xcf91...6eb2`](https://etherscan.io/address/0xcf91b70017eabde82c9671e30e5502d312ea6eb2) |
 | **Network** | Ethereum |
 | **Price** | $0.00000019 |
-| **24h Volume** | $173.2K |
-| **Liquidity** | $787.9K |
-| **Volume / Liquidity** | 0.2× |
+| **24h Volume** | $119.3K |
+| **Liquidity** | $907.9K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 12.0% of supply |
+| **Top-10 Holders** | 12.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 326 buys / 225 sells |
 

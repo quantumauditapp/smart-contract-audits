@@ -2,14 +2,14 @@
 token: HarryPotterObamaSonic10Inu
 ticker: BITCOIN
 network: ethereum
-risk_score: 69
-status: high
+risk_score: 61
+status: medium
 date: 2026-07-29
 ---
 
 # HarryPotterObamaSonic10Inu (BITCOIN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 69/100 — 🟠 High Risk**
+> **Risk Score: 61/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/harrypotterobamasonic10inu-eth)
 
@@ -27,14 +27,14 @@ The HarryPotterObamaSonic10Inu (BITCOIN) token contract exhibits severe centrali
 |----------|--------|-----------|-------|
 | **Technical** | 2/10 | High | The contract implements a standard ERC-20 token with additional features like transaction taxes, anti-whale limits, and anti-bot mechanisms (7.2 Code Security). It utilizes SafeMath for arithmetic… |
 | **Governance / Economics** | 5/10 | Medium | The contract's economic model is highly centralized and vulnerable to owner manipulation (7.4 Economic). The owner has absolute control over critical parameters, including the ability to set buy and… |
-| **Upgrades** | 6/10 | Medium | The contract is not designed with an upgrade mechanism (7.7 Upgrades). This means that once deployed, its logic cannot be altered. While this eliminates upgrade-related risks, it also means that any… |
+| **Upgrades** | 7/10 | Low | The contract is not designed with an upgrade mechanism (7.7 Upgrades). This means that once deployed, its logic cannot be altered. While this eliminates upgrade-related risks, it also means that any… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **LP Locked** | 100.0% — TeamFinance |
-| **Top-1 Unlocked Holder** | 0.0% |
+| **LP Locked** | 99.7% — TeamFinance |
+| **Top-1 Unlocked Holder** | 0.2% |
 
 ## Security Findings
 
@@ -94,12 +94,12 @@ The contract uses `// SPDX-License-Identifier: NONE`. While technically valid, i
 |--------|-------|
 | **Contract** | [`0x72e4...eea9`](https://etherscan.io/address/0x72e4f9f808c49a2a61de9c5896298920dc4eeea9) |
 | **Network** | Ethereum |
-| **Price** | $0.009394 |
-| **24h Volume** | $295.1K |
-| **Liquidity** | $708.4K |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.01986 |
+| **24h Volume** | $182.5K |
+| **Liquidity** | $1.18M |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 30.7% of supply |
+| **Top-10 Holders** | 23.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 509 buys / 485 sells |
 

@@ -2,14 +2,14 @@
 token: IBS
 ticker: IBS
 network: bsc
-risk_score: 22
-status: medium
+risk_score: 20
+status: low
 date: 2026-07-25
 ---
 
 # IBS (IBS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 22/100 — 🟡 Medium Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ibs-bsc)
 
@@ -25,9 +25,9 @@ The audit of the Token contract reveals a critical risk profile primarily due to
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Token contract is built upon well-audited OpenZeppelin libraries (ERC20Burnable, ERC20Permit, AccessControl, Ownable2Step), which contributes to a solid foundation (7.2 Code Security). The tax… |
+| **Technical** | 4/10 | Medium | The Token contract is built upon well-audited OpenZeppelin libraries (ERC20Burnable, ERC20Permit, AccessControl, Ownable2Step), which contributes to a solid foundation (7.2 Code Security). The tax… |
 | **Governance / Economics** | 6/10 | Medium | The contract's economic model relies on configurable buy and sell tax rates, directed to a treasury address (7.4 Economic). The `onlyOwner` modifier initially centralizes control over these… |
-| **Upgrades** | 9/10 | Low | The Token contract is not designed as an upgradeable proxy. Therefore, there are no upgrade-specific risks or considerations for this contract. Any changes to the contract's logic would require a new… |
+| **Upgrades** | 6/10 | Medium | The Token contract is not designed as an upgradeable proxy. Therefore, there are no upgrade-specific risks or considerations for this contract. Any changes to the contract's logic would require a new… |
 
 ## LP Distribution
 
@@ -80,22 +80,22 @@ The `_collectGovernance` function's whitelist logic for tax exemption is defined
 |--------|-------|
 | **Contract** | [`0x255e...a7cd`](https://bscscan.com/address/0x255e746abb8d9acac00d6d023e5e63e3b8dfa7cd) |
 | **Network** | BNB Chain |
-| **Price** | $24.9200 |
-| **24h Volume** | $1.45M |
-| **Liquidity** | $21.46M |
+| **Price** | $12.2300 |
+| **24h Volume** | $1.32M |
+| **Liquidity** | $15.14M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 96.6% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 96.4% of supply |
+| **Buy / Sell Tax** | 0.0% / 2.5% |
 | **24h Transactions** | 5618 buys / 5173 sells |
 
-## Security Flags (5/5 passed)
+## Security Flags (4/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ✅ Pass |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
@@ -105,7 +105,7 @@ The `_collectGovernance` function's whitelist logic for tax exemption is defined
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

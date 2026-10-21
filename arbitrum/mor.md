@@ -2,14 +2,14 @@
 token: MOR
 ticker: MOR
 network: arbitrum
-risk_score: 76
-status: critical
+risk_score: 84
+status: high
 date: 2026-08-15
 ---
 
 # MOR (MOR) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 76/100 — 🔴 Critical Risk**
+> **Risk Score: 84/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mor-arb)
 
@@ -27,7 +27,7 @@ The MOROFT contract implements an omnichain ERC-20 token utilizing LayerZero's O
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract leverages well-audited LayerZero OFT and OpenZeppelin libraries, ensuring robust core ERC-20 functionality and cross-chain messaging (7.2 Code Security). The `supportsInterface`… |
 | **Governance / Economics** | 1/10 | High | Critical administrative functions, such as `updateMinter` and LayerZero configurations, are protected by `onlyOwner` and controlled by a 5/9 multisig, enhancing operational security (7.3 Access… |
-| **Upgrades** | 6/10 | Medium | The contract's immutability provides certainty regarding its deployed logic, as it cannot be altered post-deployment. However, the `MOROFT` contract is not designed with any upgradeability mechanism… |
+| **Upgrades** | 3/10 | High | The contract's immutability provides certainty regarding its deployed logic, as it cannot be altered post-deployment. However, the `MOROFT` contract is not designed with any upgradeability mechanism… |
 
 ## LP Distribution
 
@@ -74,21 +74,21 @@ The `MOROFT` token's omnichain functionality is entirely dependent on the securi
 | **Contract** | [`0x092b...fc86`](https://arbiscan.io/address/0x092baadb7def4c3981454dd9c0a0d7ff07bcfc86) |
 | **Network** | Arbitrum |
 | **Price** | $1.9400 |
-| **24h Volume** | $37.7K |
-| **Liquidity** | $1.06M |
+| **24h Volume** | $3.3K |
+| **Liquidity** | $1.23M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 71.4% of supply |
+| **Top-10 Holders** | 72.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 301 buys / 52 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -98,7 +98,7 @@ The `MOROFT` token's omnichain functionality is entirely dependent on the securi
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -2,14 +2,14 @@
 token: Invesqo QQQ
 ticker: QQQB
 network: bsc
-risk_score: 100
+risk_score: 89
 status: critical
 date: 2026-07-26
 ---
 
 # Invesqo QQQ (QQQB) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 89/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/invesqo-qqq-bsc)
 
@@ -40,8 +40,8 @@ The audit of the SecuritiesToken contract, serving as the implementation for a B
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | 42.1% |
+| **Top-3 Unlocked** | 78.4% |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ The `SecuritiesToken` contract integrates `ComplianceClientUpgradeable` and `Pau
 |--------|-------|
 | **Contract** | [`0x2058...efc7`](https://bscscan.com/address/0x205812cdbed920aff76c6580abd681a46d11efc7) |
 | **Network** | BNB Chain |
-| **Price** | $679.2300 |
-| **24h Volume** | $45.04M |
-| **Liquidity** | $1.74M |
-| **Volume / Liquidity** | 25.8× |
+| **Price** | $718.6000 |
+| **24h Volume** | $22.82M |
+| **Liquidity** | $2.52M |
+| **Volume / Liquidity** | 9.1× |
 | **Token Age** | 16d |
-| **Top-10 Holders** | 94.0% of supply |
+| **Top-10 Holders** | 81.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 7406 buys / 6727 sells |
 

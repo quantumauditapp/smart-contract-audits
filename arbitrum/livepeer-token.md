@@ -3,13 +3,13 @@ token: Livepeer Token
 ticker: LPT
 network: arbitrum
 risk_score: 63
-status: high
+status: medium
 date: 2026-07-27
 ---
 
 # Livepeer Token (LPT) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 63/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/livepeer-token-arb)
 
@@ -33,7 +33,7 @@ The LivepeerToken contract is an ERC20 token implementation leveraging OpenZeppe
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.6% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -73,12 +73,12 @@ The LivepeerToken contract is deployed as a standard, non-upgradeable contract. 
 |--------|-------|
 | **Contract** | [`0x289b...a839`](https://arbiscan.io/address/0x289ba1701c2f088cf0faf8b3705246331cb8a839) |
 | **Network** | Arbitrum |
-| **Price** | $1.4200 |
-| **24h Volume** | $142.8K |
-| **Liquidity** | $213.4K |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $1.4700 |
+| **24h Volume** | $376.3K |
+| **Liquidity** | $239.1K |
+| **Volume / Liquidity** | 1.6× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | 98.8% of supply |
+| **Top-10 Holders** | 98.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1191 buys / 1300 sells |
 

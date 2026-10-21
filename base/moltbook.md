@@ -2,14 +2,14 @@
 token: Moltbook
 ticker: MOLT
 network: base
-risk_score: 30
-status: medium
+risk_score: 34
+status: low
 date: 2026-07-24
 ---
 
 # Moltbook (MOLT) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 30/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/moltbook-base)
 
@@ -80,12 +80,12 @@ The `_admin` address has the ability to unilaterally update the token's `_image`
 |--------|-------|
 | **Contract** | [`0xb695...ab07`](https://basescan.org/address/0xb695559b26bb2c9703ef1935c37aeae9526bab07) |
 | **Network** | Base |
-| **Price** | $0.00000324 |
-| **24h Volume** | $3.5K |
-| **Liquidity** | $1.03M |
+| **Price** | $0.00000338 |
+| **24h Volume** | $3.7K |
+| **Liquidity** | $157.6K |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 47.2% of supply |
+| **Top-10 Holders** | 50.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 301 buys / 639 sells |
 

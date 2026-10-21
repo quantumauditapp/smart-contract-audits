@@ -33,7 +33,7 @@ The LOOP token contract is a fixed-supply ERC20 token built upon OpenZeppelin's 
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 74.1% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -73,13 +73,13 @@ The `burn` function is declared as `external` and allows any user to burn tokens
 |--------|-------|
 | **Contract** | [`0x0000...de3f`](https://etherscan.io/address/0x00000000000050806673b532d7486ac114c1de3f) |
 | **Network** | Ethereum |
-| **Price** | $0.7422 |
-| **24h Volume** | $458.6K |
-| **Liquidity** | $317.1K |
-| **Volume / Liquidity** | 1.4× |
+| **Price** | $0.3158 |
+| **24h Volume** | $1.1K |
+| **Liquidity** | $271.6K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 48.5% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 68.1% of supply |
+| **Buy / Sell Tax** | 1.9% / 2.0% |
 | **24h Transactions** | 554 buys / 445 sells |
 
 ## Security Flags (3/5 passed)

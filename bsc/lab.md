@@ -2,14 +2,14 @@
 token: LAB
 ticker: LAB
 network: bsc
-risk_score: 25
-status: medium
+risk_score: 26
+status: low
 date: 2026-08-11
 ---
 
 # LAB (LAB) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 25/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lab-bsc)
 
@@ -33,8 +33,8 @@ The LabToken contract implements a standard ERC20 token with burnable functional
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 85.9% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 97.3% |
+| **Top-3 Unlocked** | ⚠️ 99.9% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The `LabToken` contract does not introduce any custom business logic beyond the 
 |--------|-------|
 | **Contract** | [`0x7ec4...593a`](https://bscscan.com/address/0x7ec43cf65f1663f820427c62a5780b8f2e25593a) |
 | **Network** | BNB Chain |
-| **Price** | $0.1135 |
-| **24h Volume** | $737.2K |
-| **Liquidity** | $187.6K |
-| **Volume / Liquidity** | 3.9× |
+| **Price** | $0.07207 |
+| **24h Volume** | $316.9K |
+| **Liquidity** | $140.5K |
+| **Volume / Liquidity** | 2.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 57.3% of supply |
+| **Top-10 Holders** | 63.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4697 buys / 4689 sells |
 

@@ -3,13 +3,13 @@ token: Lego Pepe
 ticker: LEPE
 network: ethereum
 risk_score: 61
-status: high
+status: medium
 date: 2026-08-14
 ---
 
 # Lego Pepe (LEPE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 61/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lego-pepe-eth)
 

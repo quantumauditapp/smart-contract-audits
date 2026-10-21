@@ -2,14 +2,14 @@
 token: MEET48 Token
 ticker: IDOL
 network: bsc
-risk_score: 21
-status: medium
+risk_score: 23
+status: low
 date: 2026-08-11
 ---
 
 # MEET48 Token (IDOL) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 21/100 — 🟡 Medium Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/meet48-token-bsc)
 
@@ -33,7 +33,7 @@ The `Meet` contract is a standard ERC-20 token implementation, inheriting direct
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.9% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -66,12 +66,12 @@ The `Meet` contract is a pure ERC-20 token without any additional administrative
 |--------|-------|
 | **Contract** | [`0x3b4d...ab07`](https://bscscan.com/address/0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07) |
 | **Network** | BNB Chain |
-| **Price** | $0.01678 |
-| **24h Volume** | $748.8K |
-| **Liquidity** | $1.01M |
+| **Price** | $0.01347 |
+| **24h Volume** | $718.6K |
+| **Liquidity** | $977.7K |
 | **Volume / Liquidity** | 0.7× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 79.1% of supply |
+| **Top-10 Holders** | 80.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2746 buys / 2729 sells |
 

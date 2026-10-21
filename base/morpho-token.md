@@ -2,14 +2,14 @@
 token: Morpho Token
 ticker: MORPHO
 network: base
-risk_score: 50
-status: high
+risk_score: 60
+status: medium
 date: 2026-07-22
 ---
 
 # Morpho Token (MORPHO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 50/100 — 🟠 High Risk**
+> **Risk Score: 60/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/morpho-token-base)
 
@@ -41,8 +41,8 @@ This audit covers an ERC1967Proxy contract, which is a standard OpenZeppelin UUP
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 69.4% |
-| **Top-3 Unlocked** | ⚠️ 83.3% |
+| **Top-1 Unlocked Holder** | ⚠️ 64.1% |
+| **Top-3 Unlocked** | ⚠️ 80.0% |
 
 ## Security Findings
 
@@ -74,12 +74,12 @@ The pre-analysis notes indicate a 'non-standard storage layout' for the implemen
 |--------|-------|
 | **Contract** | [`0xbaa5...0842`](https://basescan.org/address/0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842) |
 | **Network** | Base |
-| **Price** | $1.9700 |
-| **24h Volume** | $800.8K |
-| **Liquidity** | $483.8K |
+| **Price** | $2.4700 |
+| **24h Volume** | $2.22M |
+| **Liquidity** | $1.30M |
 | **Volume / Liquidity** | 1.7× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 84.8% of supply |
+| **Top-10 Holders** | 83.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1066 buys / 1313 sells |
 

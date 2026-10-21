@@ -3,13 +3,13 @@ token: Kekius Maximus
 ticker: KEKIUS
 network: ethereum
 risk_score: 24
-status: medium
+status: low
 date: 2026-08-01
 ---
 
 # Kekius Maximus (KEKIUS) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 24/100 — 🟡 Medium Risk**
+> **Risk Score: 24/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kekius-maximus-eth)
 
@@ -94,12 +94,12 @@ The contract uses the `SafeMath` library for arithmetic operations (e.g., `add`,
 |--------|-------|
 | **Contract** | [`0x26e5...7dd9`](https://etherscan.io/address/0x26e550ac11b26f78a04489d5f20f24e3559f7dd9) |
 | **Network** | Ethereum |
-| **Price** | $0.004489 |
-| **24h Volume** | $401.1K |
-| **Liquidity** | $645.2K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.006948 |
+| **24h Volume** | $52.5K |
+| **Liquidity** | $938.2K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 47.0% of supply |
+| **Top-10 Holders** | 45.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 517 buys / 690 sells |
 
