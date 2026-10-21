@@ -2,14 +2,14 @@
 token: Giggle Mascot
 ticker: MAX
 network: bsc
-risk_score: 16
+risk_score: 13
 status: low
 date: 2026-08-11
 ---
 
 # Giggle Mascot (MAX) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 16/100 — 🟢 Low Risk**
+> **Risk Score: 13/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/giggle-mascot-bsc)
 
@@ -25,16 +25,23 @@ The FlapTaxTokenV3 contract is an upgradeable ERC20 token designed with a dynami
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract demonstrates good technical architecture, utilizing OpenZeppelin's upgradeable standards and a well-defined state machine for its tax and anti-farmer mechanisms. The `_liquidateTax`… |
+| **Technical** | 8/10 | Low | The contract demonstrates good technical architecture, utilizing OpenZeppelin's upgradeable standards and a well-defined state machine for its tax and anti-farmer mechanisms. The `_liquidateTax`… |
 | **Governance / Economics** | 9/10 | Low | The contract exhibits a high degree of centralization, with the `Owner` role possessing extensive control over critical parameters and state transitions (7.5 Governance). The owner can initiate… |
 | **Upgrades** | 5/10 | Medium | The contract correctly implements OpenZeppelin's `Initializable` pattern for upgradeability, including `_disableInitializers()` in the constructor and the `initializer` modifier. However, as with all… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **LP Burned** | ✅ 99.5% (≈ permanent lock) |
-| **LP Locked** | 99.5% — Null Address |
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
+| **LP Locked** | 100.0% — Null Address |
 
 ## Security Findings
 
@@ -80,13 +87,13 @@ The `_liquidateTax` function reads `poolState` into a local variable `currentPoo
 |--------|-------|
 | **Contract** | [`0xe9bc...7777`](https://bscscan.com/address/0xe9bc5c6a86caa44fd7b469bf3cc7c563e4f77777) |
 | **Network** | BNB Chain |
-| **Price** | $0.001281 |
-| **24h Volume** | $511.1K |
-| **Liquidity** | $120.3K |
-| **Volume / Liquidity** | 4.2× |
+| **Price** | $0.01373 |
+| **24h Volume** | $3.15M |
+| **Liquidity** | $490.8K |
+| **Volume / Liquidity** | 6.4× |
 | **Token Age** | 10d |
-| **Top-10 Holders** | 24.8% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 19.0% of supply |
+| **Buy / Sell Tax** | 3.0% / 3.0% |
 | **24h Transactions** | 1516 buys / 1033 sells |
 
 ## Security Flags (4/5 passed)

@@ -3,13 +3,13 @@ token: Flower
 ticker: FLOWER
 network: base
 risk_score: 33
-status: medium
+status: low
 date: 2026-08-11
 ---
 
 # Flower (FLOWER) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 33/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/flower-base)
 
@@ -33,8 +33,8 @@ The FlowerOFT contract implements an ERC-20 token with Pausable and ERC-1363 ext
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 33.6% |
-| **Top-3 Unlocked** | 48.6% |
+| **Top-1 Unlocked Holder** | 37.1% |
+| **Top-3 Unlocked** | 55.1% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The `Pausable` mechanism allows the `onlyOwner` to halt all token transfers by c
 |--------|-------|
 | **Contract** | [`0x3e12...b380`](https://basescan.org/address/0x3e12b9d6a4d12cd9b4a6d613872d0eb32f68b380) |
 | **Network** | Base |
-| **Price** | $0.102 |
-| **24h Volume** | $118.4K |
-| **Liquidity** | $254.1K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.1749 |
+| **24h Volume** | $42.5K |
+| **Liquidity** | $283.7K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 86.6% of supply |
+| **Top-10 Holders** | 91.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 585 buys / 630 sells |
 

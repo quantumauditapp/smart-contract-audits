@@ -3,13 +3,13 @@ token: Falcon Finance
 ticker: FF
 network: bsc
 risk_score: 78
-status: critical
+status: high
 date: 2026-08-12
 ---
 
 # Falcon Finance (FF) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 78/100 — 🔴 Critical Risk**
+> **Risk Score: 78/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/falcon-finance-bsc)
 
@@ -33,8 +33,8 @@ The BurnMintERC20 contract implements a standard ERC-20 token with minting and b
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.4% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 98.9% |
+| **Top-3 Unlocked** | ⚠️ 99.8% |
 
 ## Security Findings
 
@@ -66,12 +66,12 @@ The `i_decimals` and `i_maxSupply` variables are declared as `immutable`, meanin
 |--------|-------|
 | **Contract** | [`0xac23...4db2`](https://bscscan.com/address/0xac23b90a79504865d52b49b327328411a23d4db2) |
 | **Network** | BNB Chain |
-| **Price** | $0.06531 |
-| **24h Volume** | $7.19M |
-| **Liquidity** | $3.76M |
-| **Volume / Liquidity** | 1.9× |
+| **Price** | $0.102 |
+| **24h Volume** | $4.10M |
+| **Liquidity** | $4.12M |
+| **Volume / Liquidity** | 1.0× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 97.8% of supply |
+| **Top-10 Holders** | 98.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4856 buys / 4611 sells |
 

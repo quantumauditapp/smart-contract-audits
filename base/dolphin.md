@@ -3,13 +3,13 @@ token: Dolphin
 ticker: POD
 network: base
 risk_score: 62
-status: high
+status: medium
 date: 2026-08-11
 ---
 
 # Dolphin (POD) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 62/100 — 🟠 High Risk**
+> **Risk Score: 62/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dolphin-base)
 
@@ -33,7 +33,7 @@ The OptimismMintableERC20 contract serves as a standard ERC20 token designed for
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 69.6% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -73,12 +73,12 @@ Some functions and parameters within the contract, such as the constructor param
 |--------|-------|
 | **Contract** | [`0xed66...df8f`](https://basescan.org/address/0xed664536023d8e4b1640c394777d34abaff1df8f) |
 | **Network** | Base |
-| **Price** | $0.3256 |
-| **24h Volume** | $289.5K |
-| **Liquidity** | $4.35M |
+| **Price** | $0.3565 |
+| **24h Volume** | $362.6K |
+| **Liquidity** | $3.44M |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 94.3% of supply |
+| **Top-10 Holders** | 94.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 187 buys / 184 sells |
 

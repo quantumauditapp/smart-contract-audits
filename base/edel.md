@@ -33,7 +33,7 @@ The audit reviewed the provided Solidity code for `ContractOne`, an ERC20 token 
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.2% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -80,12 +80,12 @@ The provided source code for the `getCurrentLevyBps()` function and the latter p
 |--------|-------|
 | **Contract** | [`0xfb31...cc95`](https://basescan.org/address/0xfb31f85a8367210b2e4ed2360d2da9dc2d2ccc95) |
 | **Network** | Base |
-| **Price** | $0.008371 |
-| **24h Volume** | $93.7K |
-| **Liquidity** | $500.6K |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.01125 |
+| **24h Volume** | $225.2K |
+| **Liquidity** | $671.5K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | 54.1% of supply |
+| **Top-10 Holders** | 51.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 572 buys / 299 sells |
 

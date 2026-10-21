@@ -2,14 +2,14 @@
 token: DAPPOS
 ticker: DOS
 network: ethereum
-risk_score: 64
+risk_score: 71
 status: high
 date: 2026-08-11
 ---
 
 # DAPPOS (DOS) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 64/100 — 🟠 High Risk**
+> **Risk Score: 71/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dappos-eth)
 
@@ -25,7 +25,7 @@ The DapposToken contract is an ERC-20 token implementation leveraging battle-tes
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The DapposToken contract demonstrates high technical security by inheriting from well-audited OpenZeppelin ERC20, ERC20Pausable, and Ownable contracts. The custom logic is minimal, primarily… |
+| **Technical** | 6/10 | Medium | The DapposToken contract demonstrates high technical security by inheriting from well-audited OpenZeppelin ERC20, ERC20Pausable, and Ownable contracts. The custom logic is minimal, primarily… |
 | **Governance / Economics** | 1/10 | High | The contract's governance and economic model presents a medium risk due to centralized control and initial supply distribution. The `Ownable` pattern grants the owner significant power, including the… |
 | **Upgrades** | 6/10 | Medium | The DapposToken contract is not designed to be upgradeable, which simplifies its architecture and eliminates risks associated with upgrade mechanisms such as proxy patterns or mutable logic contracts… |
 
@@ -66,10 +66,10 @@ The `decimals()` function in the `DapposToken` contract is hardcoded to return `
 |--------|-------|
 | **Contract** | [`0x951f...eb5e`](https://etherscan.io/address/0x951f086a127e280724fd93ccc543f65065afeb5e) |
 | **Network** | Ethereum |
-| **Price** | $0.5456 |
-| **24h Volume** | $34.8K |
-| **Liquidity** | $12.2K |
-| **Volume / Liquidity** | 2.8× |
+| **Price** | $0.2448 |
+| **24h Volume** | $3.4K |
+| **Liquidity** | $18.3K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 4h |
 | **Top-10 Holders** | 100.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

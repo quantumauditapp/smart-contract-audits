@@ -59,12 +59,12 @@ The `_init` function is an internal helper designed to be called once within a d
 |--------|-------|
 | **Contract** | [`0x925c...4444`](https://bscscan.com/address/0x925c8ab7a9a8a148e87cd7f1ec7ecc3625864444) |
 | **Network** | BNB Chain |
-| **Price** | $0.0002948 |
-| **24h Volume** | $67.3K |
-| **Liquidity** | $118.9K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.0003235 |
+| **24h Volume** | $98.8K |
+| **Liquidity** | $145.5K |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 7mo |
-| **Top-10 Holders** | 73.0% of supply |
+| **Top-10 Holders** | 74.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4580 buys / 5048 sells |
 

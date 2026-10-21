@@ -2,14 +2,14 @@
 token: Dai Stablecoin
 ticker: DAI
 network: arbitrum
-risk_score: 74
-status: critical
+risk_score: 69
+status: high
 date: 2026-08-12
 ---
 
 # Dai Stablecoin (DAI) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 74/100 — 🔴 Critical Risk**
+> **Risk Score: 69/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dai-stablecoin-arb)
 
@@ -33,8 +33,8 @@ The audit of the Dai Stablecoin contract revealed critical vulnerabilities relat
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 75.9% |
-| **Top-3 Unlocked** | ⚠️ 94.8% |
+| **Top-1 Unlocked Holder** | ⚠️ 78.5% |
+| **Top-3 Unlocked** | ⚠️ 97.8% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ The `transfer` and `transferFrom` functions explicitly prevent transfers to `add
 |--------|-------|
 | **Contract** | [`0xda10...0da1`](https://arbiscan.io/address/0xda10009cbd5d07dd0cecc66161fc93d7c9000da1) |
 | **Network** | Arbitrum |
-| **Price** | $1.0006 |
-| **24h Volume** | $154.5K |
-| **Liquidity** | $89.0K |
-| **Volume / Liquidity** | 1.7× |
+| **Price** | $0.9997 |
+| **24h Volume** | $222.4K |
+| **Liquidity** | $94.6K |
+| **Volume / Liquidity** | 2.4× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 45.2% of supply |
+| **Top-10 Holders** | 36.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 111 buys / 60 sells |
 

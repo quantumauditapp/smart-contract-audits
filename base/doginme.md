@@ -2,14 +2,14 @@
 token: doginme
 ticker: DOGINME
 network: base
-risk_score: 0
+risk_score: 3
 status: low
 date: 2026-08-16
 ---
 
 # doginme (DOGINME) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 0/100 — 🟢 Low Risk**
+> **Risk Score: 3/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/doginme-base)
 
@@ -33,8 +33,8 @@ The doginme token contract is a standard ERC20 implementation. The code is well-
 
 | Metric | Value |
 |--------|-------|
-| **LP Burned** | ✅ 95.9% (≈ permanent lock) |
-| **LP Locked** | 95.9% — Dead Address |
+| **LP Burned** | 94.5% |
+| **LP Locked** | 94.5% — Dead Address |
 
 ## Security Findings
 
@@ -59,12 +59,12 @@ All 69,000,000,000 tokens are minted to the contract deployer (`msg.sender`) dur
 |--------|-------|
 | **Contract** | [`0x6921...b75b`](https://basescan.org/address/0x6921b130d297cc43754afba22e5eac0fbf8db75b) |
 | **Network** | Base |
-| **Price** | $0.00007394 |
-| **24h Volume** | $427.3K |
-| **Liquidity** | $1.04M |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.00009566 |
+| **24h Volume** | $112.9K |
+| **Liquidity** | $1.38M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 51.4% of supply |
+| **Top-10 Holders** | 50.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 817 buys / 843 sells |
 

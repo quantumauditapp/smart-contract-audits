@@ -2,14 +2,14 @@
 token: ElonCoin
 ticker: ELONCOIN
 network: bsc
-risk_score: 0
+risk_score: 28
 status: low
 date: 2026-08-15
 ---
 
 # ElonCoin (ELONCOIN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 0/100 — 🟢 Low Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/eloncoin-bsc-55ce)
 
@@ -25,9 +25,16 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract leverages OpenZeppelin's upgradeable standards and SafeERC20 for secure token operations (7.2 Code Security). Gas optimizations are present through the `PackedPoolState` struct (7.1… |
-| **Governance / Economics** | 9/10 | Low | The contract implements a multi-state tax system with owner-controlled migration phases, providing flexibility in token economics (7.4 Economic, 7.5 Governance). Owner privileges are appropriately… |
-| **Upgrades** | 10/10 | Low | The contract correctly implements the OpenZeppelin upgradeable pattern, including `Initializable` and `_disableInitializers()` in the constructor (7.7 Upgrades). Immutable variables are properly… |
+| **Technical** | 8/10 | Low | The contract leverages OpenZeppelin's upgradeable standards and SafeERC20 for secure token operations (7.2 Code Security). Gas optimizations are present through the `PackedPoolState` struct (7.1… |
+| **Governance / Economics** | 8/10 | Low | The contract implements a multi-state tax system with owner-controlled migration phases, providing flexibility in token economics (7.4 Economic, 7.5 Governance). Owner privileges are appropriately… |
+| **Upgrades** | 5/10 | Medium | The contract correctly implements the OpenZeppelin upgradeable pattern, including `Initializable` and `_disableInitializers()` in the constructor (7.7 Upgrades). Immutable variables are properly… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
 
 ## LP Distribution
 
@@ -73,16 +80,16 @@ The provided source code for `FlapTaxTokenV3.sol` is truncated, specifically the
 |--------|-------|
 | **Contract** | [`0x499c...7777`](https://bscscan.com/address/0x499c573997a1382f4051ece45b3d6b2f0e317777) |
 | **Network** | BNB Chain |
-| **Price** | $0.0003857 |
-| **24h Volume** | $206.1K |
-| **Liquidity** | $67.7K |
-| **Volume / Liquidity** | 3.0× |
+| **Price** | $0.00006484 |
+| **24h Volume** | $15.6K |
+| **Liquidity** | $32.7K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 10d |
-| **Top-10 Holders** | 29.6% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 46.8% of supply |
+| **Buy / Sell Tax** | 3.0% / 3.0% |
 | **24h Transactions** | 1081 buys / 902 sells |
 
-## Security Flags (5/5 passed)
+## Security Flags (4/5 passed)
 
 | Check | Status |
 |-------|--------|
@@ -90,7 +97,7 @@ The provided source code for `FlapTaxTokenV3.sol` is truncated, specifically the
 | Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ✅ Pass |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
@@ -100,7 +107,7 @@ The provided source code for `FlapTaxTokenV3.sol` is truncated, specifically the
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

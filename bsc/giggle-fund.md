@@ -33,8 +33,8 @@ The GIGGLE token contract is a standard ERC-20 implementation. The code adheres 
 
 | Metric | Value |
 |--------|-------|
-| **LP Burned** | ✅ 99.9% (≈ permanent lock) |
-| **LP Locked** | 99.9% — Null Address |
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
+| **LP Locked** | 100.0% — Null Address |
 
 ## Security Findings
 
@@ -73,13 +73,13 @@ The `_mint` and `_burn` functions are declared as `internal virtual`. This desig
 |--------|-------|
 | **Contract** | [`0x20d6...ce0e`](https://bscscan.com/address/0x20d6015660b3fe52e6690a889b5c51f69902ce0e) |
 | **Network** | BNB Chain |
-| **Price** | $36.9800 |
-| **24h Volume** | $55.7K |
-| **Liquidity** | $766.6K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $36.7400 |
+| **24h Volume** | $37.0K |
+| **Liquidity** | $831.9K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 90.7% of supply |
-| **Buy / Sell Tax** | 0.1% / 0.1% |
+| **Top-10 Holders** | 92.3% of supply |
+| **Buy / Sell Tax** | 5.0% / 5.0% |
 | **24h Transactions** | 213 buys / 106 sells |
 
 ## Security Flags (5/5 passed)

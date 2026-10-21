@@ -2,14 +2,14 @@
 token: elizaOS
 ticker: ELIZAOS
 network: bsc
-risk_score: 61
+risk_score: 73
 status: high
 date: 2026-08-11
 ---
 
 # elizaOS (ELIZAOS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 61/100 — 🟠 High Risk**
+> **Risk Score: 73/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/elizaos-bsc)
 
@@ -25,9 +25,9 @@ The BurnMintERC20 contract implements a standard ERC20 token with additional min
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract exhibits a robust architecture (7.1 Architecture) by inheriting from well-audited OpenZeppelin libraries (ERC20, AccessControl, ERC20Burnable), which significantly enhances code security… |
+| **Technical** | 6/10 | Medium | The contract exhibits a robust architecture (7.1 Architecture) by inheriting from well-audited OpenZeppelin libraries (ERC20, AccessControl, ERC20Burnable), which significantly enhances code security… |
 | **Governance / Economics** | 1/10 | High | The contract's economic model (7.4 Economic) includes a fixed `maxSupply` and controlled minting/burning, which provides predictability. Governance (7.5 Governance) is highly centralized, with the… |
-| **Upgrades** | 6/10 | Medium | The contract is not designed as an upgradeable proxy (7.7 Upgrades) and does not implement any upgrade mechanisms. Therefore, there are no upgrade-related risks. Any changes to the contract's logic… |
+| **Upgrades** | 3/10 | High | The contract is not designed as an upgradeable proxy (7.7 Upgrades) and does not implement any upgrade mechanisms. Therefore, there are no upgrade-related risks. Any changes to the contract's logic… |
 
 ## LP Distribution
 
@@ -80,22 +80,22 @@ The `i_maxSupply` is set during construction and is immutable (7.4 Economic). Wh
 |--------|-------|
 | **Contract** | [`0xea17...2478`](https://bscscan.com/address/0xea17df5cf6d172224892b5477a16acb111182478) |
 | **Network** | BNB Chain |
-| **Price** | $0.0001897 |
-| **24h Volume** | $48.6K |
-| **Liquidity** | $172.8K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.0001791 |
+| **24h Volume** | $214.4K |
+| **Liquidity** | $168.1K |
+| **Volume / Liquidity** | 1.3× |
 | **Token Age** | 8mo |
-| **Top-10 Holders** | 85.8% of supply |
+| **Top-10 Holders** | 84.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 482 buys / 510 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -105,7 +105,7 @@ The `i_maxSupply` is set during construction and is immutable (7.4 Economic). Wh
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

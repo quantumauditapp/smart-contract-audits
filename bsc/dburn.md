@@ -2,14 +2,14 @@
 token: DBURN
 ticker: DBURN
 network: bsc
-risk_score: 9
+risk_score: 17
 status: low
 date: 2026-08-12
 ---
 
 # DBURN (DBURN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 9/100 — 🟢 Low Risk**
+> **Risk Score: 17/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dburn-bsc)
 
@@ -26,7 +26,7 @@ The BurnToken contract implements a custom ERC20 token with dynamic tax phases, 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 9/10 | Low | The contract exhibits robust initialization logic and comprehensive parameter validation (7.1 Architecture). A reentrancy guard (`_swappingStairTax`) is correctly implemented for stair tax swaps… |
-| **Governance / Economics** | 7/10 | Low | The economic model features dynamic tax phases and an automated pool burning mechanism, which are configurable and contribute to tokenomics (7.4 Economic). The `taxWhitelist` and `tradingOpenTime`… |
+| **Governance / Economics** | 6/10 | Medium | The economic model features dynamic tax phases and an automated pool burning mechanism, which are configurable and contribute to tokenomics (7.4 Economic). The `taxWhitelist` and `tradingOpenTime`… |
 | **Upgrades** | 10/10 | Low | The BurnToken contract is not designed as an upgradeable proxy, thus eliminating direct upgrade-related risks (7.7 Upgrades). A `markMigrated` function exists for specific `LaunchType.Curve`… |
 
 ## LP Distribution
@@ -73,13 +73,13 @@ The `owner` (inherited from Ownable) and `tokenDeployer` roles hold significant 
 |--------|-------|
 | **Contract** | [`0xdd2f...3333`](https://bscscan.com/address/0xdd2fee7fc438aea520e2678e9ddbebc5b7b63333) |
 | **Network** | BNB Chain |
-| **Price** | $0.0912 |
-| **24h Volume** | $408.2K |
-| **Liquidity** | $254.7K |
-| **Volume / Liquidity** | 1.6× |
+| **Price** | $0.04475 |
+| **24h Volume** | $36.3K |
+| **Liquidity** | $113.4K |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 5d |
-| **Top-10 Holders** | 45.1% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 57.1% of supply |
+| **Buy / Sell Tax** | 3.0% / 3.0% |
 | **24h Transactions** | 2795 buys / 1001 sells |
 
 ## Security Flags (5/5 passed)

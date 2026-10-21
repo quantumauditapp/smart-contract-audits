@@ -3,13 +3,13 @@ token: DeXe
 ticker: DEXE
 network: ethereum
 risk_score: 60
-status: high
+status: medium
 date: 2026-07-12
 ---
 
 # DeXe (DEXE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 60/100 — 🟠 High Risk**
+> **Risk Score: 60/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dexe-eth)
 
@@ -73,12 +73,12 @@ The `Address.isContract` function, used internally by `_functionCallWithValue`, 
 |--------|-------|
 | **Contract** | [`0xde4e...cbd6`](https://etherscan.io/address/0xde4ee8057785a7e8e800db58f9784845a5c2cbd6) |
 | **Network** | Ethereum |
-| **Price** | $3.8800 |
-| **24h Volume** | $879.8K |
-| **Liquidity** | $294.6K |
-| **Volume / Liquidity** | 3.0× |
+| **Price** | $1.9700 |
+| **24h Volume** | $26.5K |
+| **Liquidity** | $241.1K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 98.4% of supply |
+| **Top-10 Holders** | 97.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1719 buys / 1690 sells |
 

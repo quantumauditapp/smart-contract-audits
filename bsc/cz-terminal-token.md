@@ -2,14 +2,14 @@
 token: CZ Terminal Token
 ticker: CZT
 network: bsc
-risk_score: 13
+risk_score: 19
 status: low
 date: 2026-07-28
 ---
 
 # CZ Terminal Token (CZT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 13/100 — 🟢 Low Risk**
+> **Risk Score: 19/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cz-terminal-token-bsc)
 
@@ -26,7 +26,7 @@ This audit covers the provided partial source code for the CZTerminalToken contr
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 9/10 | Low | The contract utilizes OpenZeppelin's `Context` and `ERC20` implementations, providing a solid foundation for token functionality (7.1 Architecture, 7.2 Code Security). Solidity 0.8.x's default… |
-| **Governance / Economics** | 9/10 | Low | The contract employs the `Ownable` pattern, granting the deployer significant control over the contract's parameters and potentially critical functions (7.3 Access Control). This introduces a… |
+| **Governance / Economics** | 8/10 | Low | The contract employs the `Ownable` pattern, granting the deployer significant control over the contract's parameters and potentially critical functions (7.3 Access Control). This introduces a… |
 | **Upgrades** | 10/10 | Low | The contract is not designed as an upgradeable proxy, as indicated by `is_proxy: false` in the prefill. Therefore, upgrade safety concerns are not applicable to this specific deployment (7.7… |
 
 ## LP Distribution
@@ -86,13 +86,13 @@ The `_mint` and `_burn` functions emit standard `Transfer` events (from address(
 |--------|-------|
 | **Contract** | [`0x9385...798c`](https://bscscan.com/address/0x93857a2c3f2a54b94ce4433c46677e3e9ad8798c) |
 | **Network** | BNB Chain |
-| **Price** | $0.001667 |
-| **24h Volume** | $65.9K |
-| **Liquidity** | $51.9K |
-| **Volume / Liquidity** | 1.3× |
+| **Price** | $0.0007337 |
+| **24h Volume** | $7.6K |
+| **Liquidity** | $40.1K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 14d |
-| **Top-10 Holders** | 15.6% of supply |
-| **Buy / Sell Tax** | 0.1% / 0.1% |
+| **Top-10 Holders** | 18.2% of supply |
+| **Buy / Sell Tax** | 5.0% / 5.0% |
 | **24h Transactions** | 1045 buys / 138 sells |
 
 ## Security Flags (5/5 passed)

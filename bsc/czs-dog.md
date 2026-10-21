@@ -35,9 +35,9 @@ Additionally, review the `increaseAllowance` implementation to prevent unexpecte
 
 | Metric | Value |
 |--------|-------|
-| **LP Locked** | 69.0% — GoPlus SafeToken Locker |
-| **Top-1 Unlocked Holder** | 18.6% |
-| **Top-3 Unlocked** | 30.8% |
+| **LP Locked** | 68.8% — GoPlus SafeToken Locker |
+| **Top-1 Unlocked Holder** | 20.2% |
+| **Top-3 Unlocked** | 31.1% |
 
 ## Security Findings
 
@@ -83,12 +83,12 @@ The `setMode` function modifies the critical `_mode` state variable, which dicta
 |--------|-------|
 | **Contract** | [`0x6d5a...6714`](https://bscscan.com/address/0x6d5ad1592ed9d6d1df9b93c793ab759573ed6714) |
 | **Network** | BNB Chain |
-| **Price** | $0.01676 |
-| **24h Volume** | $770.2K |
-| **Liquidity** | $1.73M |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.01859 |
+| **24h Volume** | $175.9K |
+| **Liquidity** | $1.99M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 79.9% of supply |
+| **Top-10 Holders** | 81.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 850 buys / 1197 sells |
 

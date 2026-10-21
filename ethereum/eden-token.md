@@ -41,7 +41,7 @@ The Eden token contract, implemented as an upgradeable ERC-20 token using OpenZe
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 87.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -81,12 +81,12 @@ The contract does not include a pause mechanism (e.g., `PausableUpgradeable`). I
 |--------|-------|
 | **Contract** | [`0x24a3...0035`](https://etherscan.io/address/0x24a3d725c37a8d1a66eb87f0e5d07fe67c120035) |
 | **Network** | Ethereum |
-| **Price** | $0.0614 |
-| **24h Volume** | $573.9K |
-| **Liquidity** | $519.1K |
-| **Volume / Liquidity** | 1.1× |
+| **Price** | $0.06183 |
+| **24h Volume** | $61.1K |
+| **Liquidity** | $624.8K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 89.2% of supply |
+| **Top-10 Holders** | 88.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 623 buys / 384 sells |
 

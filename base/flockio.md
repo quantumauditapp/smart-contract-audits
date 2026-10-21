@@ -2,14 +2,14 @@
 token: FLock.io
 ticker: FLOCK
 network: base
-risk_score: 84
+risk_score: 85
 status: critical
 date: 2026-08-13
 ---
 
 # FLock.io (FLOCK) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 84/100 — 🔴 Critical Risk**
+> **Risk Score: 85/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/flockio-base)
 
@@ -25,16 +25,25 @@ The FlockTokenUpgradeable contract implements an ERC20 token with upgradeability
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract utilizes OpenZeppelin's upgradeable standards for ERC20 and AccessControl, enhancing code security (7.2). However, a critical vulnerability exists where the `dailyMintLimit` is declared… |
+| **Technical** | 4/10 | Medium | The contract utilizes OpenZeppelin's upgradeable standards for ERC20 and AccessControl, enhancing code security (7.2). However, a critical vulnerability exists where the `dailyMintLimit` is declared… |
 | **Governance / Economics** | 1/10 | High | The token's economic model is highly centralized, with an `onlyAdmin` role controlling all minting, burning, blacklisting, and critical parameter adjustments (7.4, 7.5). While this offers… |
-| **Upgrades** | 2/10 | High | The contract employs the Transparent Upgradeable Proxy pattern with OpenZeppelin's upgradeable contracts, ensuring a robust and secure upgrade mechanism (7.7). The proxy's admin is managed by a… |
+| **Upgrades** | 1/10 | High | The contract employs the Transparent Upgradeable Proxy pattern with OpenZeppelin's upgradeable contracts, ensuring a robust and secure upgrade mechanism (7.7). The proxy's admin is managed by a… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Eip1967 Transparent |
+| **Admin** | OZ ProxyAdmin → Multisig 2-of-3 |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 82.8% |
-| **Top-3 Unlocked** | ⚠️ 94.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 86.0% |
+| **Top-3 Unlocked** | ⚠️ 96.3% |
 
 ## Security Findings
 
@@ -80,16 +89,16 @@ The contract declares `lastMintedDay` and `amountMintedToday` mappings, which ar
 |--------|-------|
 | **Contract** | [`0x5ab3...b691`](https://basescan.org/address/0x5ab3d4c385b400f3abb49e80de2faf6a88a7b691) |
 | **Network** | Base |
-| **Price** | $0.03008 |
-| **24h Volume** | $415.8K |
-| **Liquidity** | $154.2K |
-| **Volume / Liquidity** | 2.7× |
+| **Price** | $0.03981 |
+| **24h Volume** | $510.9K |
+| **Liquidity** | $157.3K |
+| **Volume / Liquidity** | 3.2× |
 | **Token Age** | 1y |
 | **Top-10 Holders** | 70.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1089 buys / 1290 sells |
 
-## Security Flags (2/5 passed)
+## Security Flags (1/5 passed)
 
 | Check | Status |
 |-------|--------|
@@ -97,7 +106,7 @@ The contract declares `lastMintedDay` and `amountMintedToday` mappings, which ar
 | Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
@@ -107,7 +116,7 @@ The contract declares `lastMintedDay` and `amountMintedToday` mappings, which ar
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

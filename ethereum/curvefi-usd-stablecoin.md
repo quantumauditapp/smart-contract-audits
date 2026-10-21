@@ -2,14 +2,14 @@
 token: Curve.Fi USD Stablecoin
 ticker: CRVUSD
 network: ethereum
-risk_score: 41
+risk_score: 42
 status: medium
 date: 2026-08-11
 ---
 
 # Curve.Fi USD Stablecoin (CRVUSD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/curvefi-usd-stablecoin-eth)
 
@@ -33,7 +33,7 @@ The crvUSD Stablecoin contract is a Vyper-based ERC-20 token implementation, inc
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 96.6% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -66,12 +66,12 @@ The EIP-712 domain separator `salt` is initialized in the constructor using `blo
 |--------|-------|
 | **Contract** | [`0xf939...1b4e`](https://etherscan.io/address/0xf939e0a03fb07f59a73314e73794be0e57ac1b4e) |
 | **Network** | Ethereum |
-| **Price** | $1.0001 |
-| **24h Volume** | $4.93M |
-| **Liquidity** | $46.39M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $1.0005 |
+| **24h Volume** | $2.09M |
+| **Liquidity** | $53.04M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 79.3% of supply |
+| **Top-10 Holders** | 76.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 207 buys / 381 sells |
 

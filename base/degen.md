@@ -2,14 +2,14 @@
 token: Degen
 ticker: DEGEN
 network: base
-risk_score: 39
+risk_score: 52
 status: medium
 date: 2026-08-14
 ---
 
 # Degen (DEGEN) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/degen-base)
 
@@ -25,15 +25,15 @@ The DegenToken contract is an ERC20 token with burnable, pausable, permit, and v
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The DegenToken contract leverages well-audited OpenZeppelin libraries for its core ERC20 functionalities, including burnable, pausable, permit, and voting extensions (7.2 Code Security). The custom… |
-| **Governance / Economics** | 3/10 | High | The economic model grants the owner significant control over token supply through an annual minting function, capped at 1% of the total supply (7.4 Economic). This introduces a continuous… |
-| **Upgrades** | 7/10 | Low | The DegenToken contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). This means that once deployed, its logic cannot be modified. Any future bug fixes, feature enhancements… |
+| **Technical** | 7/10 | Low | The DegenToken contract leverages well-audited OpenZeppelin libraries for its core ERC20 functionalities, including burnable, pausable, permit, and voting extensions (7.2 Code Security). The custom… |
+| **Governance / Economics** | 4/10 | Medium | The economic model grants the owner significant control over token supply through an annual minting function, capped at 1% of the total supply (7.4 Economic). This introduces a continuous… |
+| **Upgrades** | 4/10 | Medium | The DegenToken contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). This means that once deployed, its logic cannot be modified. Any future bug fixes, feature enhancements… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 57.2% |
+| **Top-1 Unlocked Holder** | 50.0% |
 | **Top-3 Unlocked** | ⚠️ 99.9% |
 
 ## Security Findings
@@ -73,22 +73,22 @@ The DegenToken contract is deployed as a standard, non-upgradeable implementatio
 |--------|-------|
 | **Contract** | [`0x4ed4...efed`](https://basescan.org/address/0x4ed4e862860bed51a9570b96d89af5e1b0efefed) |
 | **Network** | Base |
-| **Price** | $0.001024 |
-| **24h Volume** | $91.7K |
-| **Liquidity** | $812.0K |
+| **Price** | $0.001061 |
+| **24h Volume** | $67.2K |
+| **Liquidity** | $999.0K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 61.7% of supply |
+| **Top-10 Holders** | 61.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 260 buys / 161 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -98,7 +98,7 @@ The DegenToken contract is deployed as a standard, non-upgradeable implementatio
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

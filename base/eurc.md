@@ -2,14 +2,14 @@
 token: EURC
 ticker: EURC
 network: base
-risk_score: 60
-status: high
+risk_score: 55
+status: medium
 date: 2026-07-24
 ---
 
 # EURC (EURC) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 60/100 — 🟠 High Risk**
+> **Risk Score: 55/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/eurc-base)
 
@@ -26,7 +26,7 @@ This audit covers the FiatTokenV2_2 contract, which serves as the implementation
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The technical architecture (7.1) is robust, leveraging an upgradeable proxy pattern and EIP-712 for off-chain signed transactions. Code security (7.2) is generally strong, with appropriate checks for… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4) is that of a centralized stablecoin, backed by fiat reserves, which inherently carries a high level of governance risk (7.5). Critical functions such as blacklisting… |
+| **Governance / Economics** | 3/10 | High | The economic model (7.4) is that of a centralized stablecoin, backed by fiat reserves, which inherently carries a high level of governance risk (7.5). Critical functions such as blacklisting… |
 | **Upgrades** | 1/10 | High | The contract utilizes a ZeppelinOS legacy proxy pattern, allowing for seamless upgrades of the token logic (7.7). The `initializeV2_2` function is designed for a controlled, single-time execution… |
 
 ## Proxy Upgrade Controls
@@ -42,8 +42,8 @@ This audit covers the FiatTokenV2_2 contract, which serves as the implementation
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 92.6% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | 34.0% |
+| **Top-3 Unlocked** | 76.6% |
 
 ## Security Findings
 
@@ -89,12 +89,12 @@ The `initializeV2_2` function includes a `require(_initializedVersion == 2);` ch
 |--------|-------|
 | **Contract** | [`0x60a3...db42`](https://basescan.org/address/0x60a3e35cc302bfa44cb288bc5a4f316fdb1adb42) |
 | **Network** | Base |
-| **Price** | $1.1300 |
-| **24h Volume** | $3.53M |
-| **Liquidity** | $2.17M |
-| **Volume / Liquidity** | 1.6× |
+| **Price** | $1.1600 |
+| **24h Volume** | $6.31M |
+| **Liquidity** | $2.14M |
+| **Volume / Liquidity** | 2.9× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 44.9% of supply |
+| **Top-10 Holders** | 47.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1155 buys / 1250 sells |
 

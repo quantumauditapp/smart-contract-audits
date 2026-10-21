@@ -2,14 +2,14 @@
 token: EVAA
 ticker: EVAA
 network: bsc
-risk_score: 41
+risk_score: 51
 status: medium
 date: 2026-07-22
 ---
 
 # EVAA (EVAA) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/evaa-bsc)
 
@@ -26,7 +26,7 @@ The provided source code consists solely of standard OpenZeppelin interfaces for
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The provided code consists solely of standard OpenZeppelin interfaces for ERC-20, ERC-721, and ERC-1155 tokens, including ERC-6093 custom errors. These interfaces define contract structures and error… |
-| **Governance / Economics** | 7/10 | Low | The provided code consists only of interfaces and does not contain any governance or economic mechanisms (7.4 Economic, 7.5 Governance). Therefore, there are no associated risks related to economic… |
+| **Governance / Economics** | 6/10 | Medium | The provided code consists only of interfaces and does not contain any governance or economic mechanisms (7.4 Economic, 7.5 Governance). Therefore, there are no associated risks related to economic… |
 | **Upgrades** | 7/10 | Low | The provided code defines standard interfaces and does not include any upgradeability patterns (7.7 Upgrades). As interfaces, they are not directly upgradeable contracts. Any contract implementing… |
 
 ## LP Distribution
@@ -87,12 +87,12 @@ The provided interfaces do not define any specific operational procedures, roles
 |--------|-------|
 | **Contract** | [`0xaa03...28c1`](https://bscscan.com/address/0xaa036928c9c0df07d525b55ea8ee690bb5a628c1) |
 | **Network** | BNB Chain |
-| **Price** | $0.8472 |
-| **24h Volume** | $443.2K |
-| **Liquidity** | $162.3K |
-| **Volume / Liquidity** | 2.7× |
+| **Price** | $0.6701 |
+| **24h Volume** | $193.2K |
+| **Liquidity** | $144.9K |
+| **Volume / Liquidity** | 1.3× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | 80.3% of supply |
+| **Top-10 Holders** | 82.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 8156 buys / 8216 sells |
 

@@ -59,9 +59,9 @@ The `Dual` contract correctly implements the ERC20 and ERC20Permit standards by 
 |--------|-------|
 | **Contract** | [`0x6af4...c7db`](https://etherscan.io/address/0x6af487beb661ccecd1d045e9561a0dac9aa5c7db) |
 | **Network** | Ethereum |
-| **Price** | $0.00293 |
-| **24h Volume** | $50.7K |
-| **Liquidity** | $539.9K |
+| **Price** | $0.00259 |
+| **24h Volume** | $76.6K |
+| **Liquidity** | $600.8K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 4mo |
 | **Top-10 Holders** | 127.1% of supply |

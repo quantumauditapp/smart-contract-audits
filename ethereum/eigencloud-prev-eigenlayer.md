@@ -2,14 +2,14 @@
 token: EigenCloud (prev. EigenLayer)
 ticker: EIGEN
 network: ethereum
-risk_score: 42
+risk_score: 50
 status: medium
 date: 2026-06-20
 ---
 
 # EigenCloud (prev. EigenLayer) (EIGEN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/eigencloud-prev-eigenlayer-eth)
 
@@ -43,8 +43,8 @@ Consider strengthening the administrative controls for upgrades by increasing th
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.0% |
-| **Top-3 Unlocked** | ⚠️ 99.7% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.8% |
+| **Top-3 Unlocked** | ⚠️ 99.9% |
 
 ## Security Findings
 
@@ -83,12 +83,12 @@ The `_requireZeroValue()` function is used internally by admin-only functions (`
 |--------|-------|
 | **Contract** | [`0xec53...1f83`](https://etherscan.io/address/0xec53bf9167f50cdeb3ae105f56099aaab9061f83) |
 | **Network** | Ethereum |
-| **Price** | $0.2349 |
-| **24h Volume** | $19.2K |
-| **Liquidity** | $1.23M |
+| **Price** | $0.2032 |
+| **24h Volume** | $3.2K |
+| **Liquidity** | $1.11M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 37.0% of supply |
+| **Top-10 Holders** | 37.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 573 buys / 547 sells |
 

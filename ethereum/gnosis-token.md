@@ -2,14 +2,14 @@
 token: Gnosis Token
 ticker: GNO
 network: ethereum
-risk_score: 55
-status: high
+risk_score: 61
+status: medium
 date: 2026-08-16
 ---
 
 # Gnosis Token (GNO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 61/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gnosis-token-eth)
 
@@ -33,8 +33,8 @@ The GnosisToken contract, an ERC-20 compliant token, was audited for security vu
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 46.5% |
-| **Top-3 Unlocked** | ⚠️ 98.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 55.6% |
+| **Top-3 Unlocked** | ⚠️ 98.6% |
 
 ## Security Findings
 
@@ -87,10 +87,10 @@ The `Token` interface declares `totalSupply() constant returns (uint256 supply) 
 |--------|-------|
 | **Contract** | [`0x6810...6b96`](https://etherscan.io/address/0x6810e776880c02933d47db1b9fc05908e5386b96) |
 | **Network** | Ethereum |
-| **Price** | $103.4700 |
-| **24h Volume** | $35.4K |
-| **Liquidity** | $103.7K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $118.2300 |
+| **24h Volume** | $44.3K |
+| **Liquidity** | $93.7K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 5y |
 | **Top-10 Holders** | 96.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

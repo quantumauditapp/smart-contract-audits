@@ -2,14 +2,14 @@
 token: Dexe
 ticker: DEXE
 network: bsc
-risk_score: 76
-status: critical
+risk_score: 84
+status: high
 date: 2026-07-22
 ---
 
 # Dexe (DEXE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 76/100 — 🔴 Critical Risk**
+> **Risk Score: 84/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dexe-bsc)
 
@@ -40,7 +40,7 @@ This audit report covers the provided OpenZeppelin utility libraries (`StorageSl
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 98.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.7% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -85,7 +85,7 @@ The contract at 0x6e88056e8376ae7709496ba64d37fa2f8015ce3e is identified as a Be
 | **Liquidity** | $3.9K |
 | **Volume / Liquidity** | 1.8× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 96.0% of supply |
+| **Top-10 Holders** | 93.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 279 buys / 559 sells |
 

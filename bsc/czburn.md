@@ -2,14 +2,14 @@
 token: CZBURN
 ticker: CBURN
 network: bsc
-risk_score: 36
+risk_score: 44
 status: medium
 date: 2026-08-12
 ---
 
 # CZBURN (CBURN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/czburn-bsc)
 
@@ -25,9 +25,16 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract leverages OpenZeppelin's upgradeable ERC20 and Ownable patterns, contributing to a robust architectural foundation (7.1 Architecture). However, a significant reentrancy vulnerability was… |
-| **Governance / Economics** | 6/10 | Medium | The economic model (7.4 Economic) involves dynamic tax rates and liquidation thresholds, which are managed through state transitions. A potential denial of service exists for transfers to the… |
+| **Technical** | 8/10 | Low | The contract leverages OpenZeppelin's upgradeable ERC20 and Ownable patterns, contributing to a robust architectural foundation (7.1 Architecture). However, a significant reentrancy vulnerability was… |
+| **Governance / Economics** | 5/10 | Medium | The economic model (7.4 Economic) involves dynamic tax rates and liquidation thresholds, which are managed through state transitions. A potential denial of service exists for transfers to the… |
 | **Upgrades** | 5/10 | Medium | The contract is designed as an upgradeable proxy using OpenZeppelin's `Initializable` and `Upgradeable` patterns (7.7 Upgrades). The `_disableInitializers()` call in the constructor and the use of… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
 
 ## LP Distribution
 
@@ -87,13 +94,13 @@ The `antiFarmerExpirationTime` variable is declared as `uint48`. It is set by ca
 |--------|-------|
 | **Contract** | [`0x3094...7777`](https://bscscan.com/address/0x309409237c4db70cd66067741edcf02bf69e7777) |
 | **Network** | BNB Chain |
-| **Price** | $0.006038 |
-| **24h Volume** | $909.1K |
-| **Liquidity** | $219.1K |
-| **Volume / Liquidity** | 4.1× |
+| **Price** | $0.0001203 |
+| **24h Volume** | $7 |
+| **Liquidity** | $33.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 22h |
-| **Top-10 Holders** | 87.1% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 98.9% of supply |
+| **Buy / Sell Tax** | 3.0% / 4.0% |
 | **24h Transactions** | 3747 buys / 1422 sells |
 
 ## Security Flags (4/5 passed)

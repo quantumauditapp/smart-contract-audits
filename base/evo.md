@@ -2,14 +2,14 @@
 token: evo
 ticker: EVO
 network: base
-risk_score: 59
-status: high
+risk_score: 60
+status: medium
 date: 2026-07-28
 ---
 
 # evo (EVO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 60/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/evo-base)
 
@@ -33,8 +33,8 @@ The DERC20 token contract implements standard ERC20 functionalities along with c
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 64.0% |
+| **Top-3 Unlocked** | ⚠️ 90.2% |
 
 ## Security Findings
 
@@ -87,12 +87,12 @@ The contract is licensed under the Business Source License 1.1 (BUSL-1.1). This 
 |--------|-------|
 | **Contract** | [`0x721b...bba3`](https://basescan.org/address/0x721b072dbb616f29eea73ac004e03fd4e884bba3) |
 | **Network** | Base |
-| **Price** | $0.00000261 |
-| **24h Volume** | $174.5K |
-| **Liquidity** | $202.6K |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.00000141 |
+| **24h Volume** | $2.2K |
+| **Liquidity** | $88.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 3mo |
-| **Top-10 Holders** | 48.4% of supply |
+| **Top-10 Holders** | 64.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 413 buys / 260 sells |
 

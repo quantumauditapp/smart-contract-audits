@@ -2,14 +2,14 @@
 token: GameStop
 ticker: GMEB
 network: bsc
-risk_score: 90
+risk_score: 100
 status: critical
 date: 2026-08-14
 ---
 
 # GameStop (GMEB) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 90/100 — 🔴 Critical Risk**
+> **Risk Score: 100/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gamestop-bsc)
 
@@ -40,8 +40,8 @@ The audit of the SecuritiesToken contract, an upgradeable ERC-20 token, revealed
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 27.9% |
-| **Top-3 Unlocked** | 49.9% |
+| **Top-1 Unlocked Holder** | 26.8% |
+| **Top-3 Unlocked** | 55.9% |
 
 ## Security Findings
 
@@ -94,12 +94,12 @@ The `ISSUER_ROLE` is defined using `keccak256("ISSUER_ROLE")`. While this is a s
 |--------|-------|
 | **Contract** | [`0x46ce...b15c`](https://bscscan.com/address/0x46ceefda28dd7207059ed19b0acdc026955bb15c) |
 | **Network** | BNB Chain |
-| **Price** | $18.6600 |
-| **24h Volume** | $9.13M |
-| **Liquidity** | $1.14M |
-| **Volume / Liquidity** | 8.0× |
+| **Price** | $19.3500 |
+| **24h Volume** | $2.42M |
+| **Liquidity** | $335.7K |
+| **Volume / Liquidity** | 7.2× |
 | **Token Age** | 2d |
-| **Top-10 Holders** | 79.7% of supply |
+| **Top-10 Holders** | 79.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 44328 buys / 40389 sells |
 

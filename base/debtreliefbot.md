@@ -2,14 +2,14 @@
 token: DebtReliefBot
 ticker: DRB
 network: base
-risk_score: 2
+risk_score: 10
 status: low
 date: 2026-08-13
 ---
 
 # DebtReliefBot (DRB) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 2/100 — 🟢 Low Risk**
+> **Risk Score: 10/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/debtreliefbot-base)
 
@@ -33,8 +33,8 @@ The ClankerToken contract is an ERC-20 token utilizing OpenZeppelin standards. I
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 96.1% |
-| **Top-3 Unlocked** | ⚠️ 99.4% |
+| **Top-1 Unlocked Holder** | ⚠️ 95.0% |
+| **Top-3 Unlocked** | ⚠️ 98.2% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The contract declares a `private immutable _decimals` state variable, but it is 
 |--------|-------|
 | **Contract** | [`0x3ec2...8ea2`](https://basescan.org/address/0x3ec2156d4c0a9cbdab4a016633b7bcf6a8d68ea2) |
 | **Network** | Base |
-| **Price** | $0.0000281 |
-| **24h Volume** | $70.9K |
-| **Liquidity** | $480.3K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.0001577 |
+| **24h Volume** | $399.7K |
+| **Liquidity** | $1.35M |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 22.3% of supply |
+| **Top-10 Holders** | 23.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 187 buys / 205 sells |
 

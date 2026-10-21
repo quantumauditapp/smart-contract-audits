@@ -41,8 +41,8 @@ The EthfiL2Token contract is an upgradeable ERC20 token built upon battle-tested
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 55.8% |
-| **Top-3 Unlocked** | ⚠️ 99.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 54.5% |
+| **Top-3 Unlocked** | ⚠️ 95.4% |
 
 ## Security Findings
 
@@ -95,12 +95,12 @@ In `initializeV2`, the contract owner is automatically granted the `DEFAULT_ADMI
 |--------|-------|
 | **Contract** | [`0x6c24...2aa2`](https://basescan.org/address/0x6c240dda6b5c336df09a4d011139beaaa1ea2aa2) |
 | **Network** | Base |
-| **Price** | $0.4822 |
-| **24h Volume** | $39.6K |
-| **Liquidity** | $130.6K |
+| **Price** | $0.5833 |
+| **24h Volume** | $45.2K |
+| **Liquidity** | $149.1K |
 | **Volume / Liquidity** | 0.3× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 81.5% of supply |
+| **Top-10 Holders** | 79.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 161 buys / 142 sells |
 

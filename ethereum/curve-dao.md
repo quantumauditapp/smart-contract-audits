@@ -3,13 +3,13 @@ token: Curve DAO
 ticker: CRV
 network: ethereum
 risk_score: 49
-status: high
+status: medium
 date: 2026-08-11
 ---
 
 # Curve DAO (CRV) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/curve-dao-eth)
 
@@ -33,8 +33,8 @@ This audit covers the Curve DAO Token (CRV) contract, an ERC-20 token with a cus
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 66.3% |
-| **Top-3 Unlocked** | ⚠️ 99.7% |
+| **Top-1 Unlocked Holder** | ⚠️ 65.7% |
+| **Top-3 Unlocked** | ⚠️ 99.2% |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ The `update_mining_parameters` function can be called by anyone, but if it's cal
 |--------|-------|
 | **Contract** | [`0xd533...cd52`](https://etherscan.io/address/0xd533a949740bb3306d119cc777fa900ba034cd52) |
 | **Network** | Ethereum |
-| **Price** | $0.2602 |
-| **24h Volume** | $609.6K |
-| **Liquidity** | $1.55M |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.3685 |
+| **24h Volume** | $502.3K |
+| **Liquidity** | $1.90M |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 57.8% of supply |
+| **Top-10 Holders** | 56.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 550 buys / 499 sells |
 

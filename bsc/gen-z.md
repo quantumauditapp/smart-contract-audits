@@ -2,14 +2,14 @@
 token: Gen Z
 ticker: Z
 network: bsc
-risk_score: 27
-status: medium
+risk_score: 34
+status: low
 date: 2026-08-16
 ---
 
 # Gen Z (Z) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 27/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gen-z-bsc)
 
@@ -26,14 +26,14 @@ This audit covers the OpenZeppelin `Address` utility library, a foundational com
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The `Address` library (7.1 Architecture) demonstrates excellent code security (7.2 Code Security) and adherence to best practices. It provides robust functions for low-level calls and address checks… |
-| **Governance / Economics** | 4/10 | Medium | As a foundational utility library, `Address.sol` does not incorporate specific economic mechanisms (7.4 Economic) or governance structures (7.5 Governance). Its impact on a protocol's economics or… |
+| **Governance / Economics** | 3/10 | High | As a foundational utility library, `Address.sol` does not incorporate specific economic mechanisms (7.4 Economic) or governance structures (7.5 Governance). Its impact on a protocol's economics or… |
 | **Upgrades** | 9/10 | Low | The `Address` library is a standalone utility and is not designed for direct upgradeability (7.7 Upgrades) in the same manner as a proxy contract. Its immutability ensures consistent behavior for all… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 57.5% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -66,12 +66,12 @@ The `Address` library provides several `functionCall` variants for performing lo
 |--------|-------|
 | **Contract** | [`0x9adc...ffff`](https://bscscan.com/address/0x9adc3d87e053eee18e3544a0274141bb4969ffff) |
 | **Network** | BNB Chain |
-| **Price** | $0.002499 |
-| **24h Volume** | $1.74M |
-| **Liquidity** | $182.8K |
-| **Volume / Liquidity** | 9.5× |
+| **Price** | $0.00005091 |
+| **24h Volume** | $1.7K |
+| **Liquidity** | $27.7K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 55.0% of supply |
+| **Top-10 Holders** | 77.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4866 buys / 4245 sells |
 

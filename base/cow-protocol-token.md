@@ -73,12 +73,12 @@ The contract inherits from `Semver` to provide a version string (e.g., '1.0.0') 
 |--------|-------|
 | **Contract** | [`0xc694...ae69`](https://basescan.org/address/0xc694a91e6b071bf030a18bd3053a7fe09b6dae69) |
 | **Network** | Base |
-| **Price** | $0.1243 |
-| **24h Volume** | $52.6K |
-| **Liquidity** | $68.0K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.1301 |
+| **24h Volume** | $984 |
+| **Liquidity** | $80.4K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 8mo |
-| **Top-10 Holders** | 85.3% of supply |
+| **Top-10 Holders** | 84.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 495 buys / 486 sells |
 

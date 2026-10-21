@@ -2,14 +2,14 @@
 token: CRYSTAL STONES
 ticker: CRYSTAL STONES
 network: bsc
-risk_score: 55
-status: high
+risk_score: 49
+status: medium
 date: 2026-08-05
 ---
 
 # CRYSTAL STONES (CRYSTAL STONES) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/crystal-stones-bsc)
 
@@ -26,7 +26,7 @@ The provided source code for the FatToken contract is incomplete, specifically m
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 5/10 | Medium | The technical architecture (7.1 Architecture) of FatToken is complex, incorporating various anti-bot and fee mechanisms. A critical issue is the incomplete source code, specifically the missing… |
-| **Governance / Economics** | 4/10 | Medium | The contract's economic model (7.4 Economic) features highly dynamic and potentially high transaction fees (up to 25%), which can significantly impact user experience and market stability. The… |
+| **Governance / Economics** | 5/10 | Medium | The contract's economic model (7.4 Economic) features highly dynamic and potentially high transaction fees (up to 25%), which can significantly impact user experience and market stability. The… |
 | **Upgrades** | 8/10 | Low | The FatToken contract is not designed with upgradeability features (7.7 Upgrades), meaning its logic cannot be modified after deployment. This eliminates upgrade-related risks but also removes the… |
 
 ## LP Distribution
@@ -34,9 +34,9 @@ The provided source code for the FatToken contract is incomplete, specifically m
 | Metric | Value |
 |--------|-------|
 | **LP Burned** | 3.8% |
-| **LP Locked** | 78.2% — Null Address, PinkLock02 |
-| **Top-1 Unlocked Holder** | 21.3% |
-| **Top-3 Unlocked** | 21.8% |
+| **LP Locked** | 76.9% — Null Address, PinkLock02 |
+| **Top-1 Unlocked Holder** | 20.9% |
+| **Top-3 Unlocked** | 23.1% |
 
 ## Security Findings
 
@@ -89,13 +89,13 @@ The `TokenDistributor` contract's constructor immediately approves `msg.sender` 
 |--------|-------|
 | **Contract** | [`0xe252...0b00`](https://bscscan.com/address/0xe252fcb1aa2e0876e9b5f3ed1e15b9b4d11a0b00) |
 | **Network** | BNB Chain |
-| **Price** | $0.002452 |
-| **24h Volume** | $34.8K |
-| **Liquidity** | $41.2K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.004341 |
+| **24h Volume** | $7.2K |
+| **Liquidity** | $62.6K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 39.0% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.1% |
+| **Top-10 Holders** | 41.4% of supply |
+| **Buy / Sell Tax** | 3.0% / 6.0% |
 | **24h Transactions** | 425 buys / 708 sells |
 
 ## Security Flags (5/5 passed)

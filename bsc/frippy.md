@@ -2,14 +2,14 @@
 token: Frippy
 ticker: FRIPPY
 network: bsc
-risk_score: 2
+risk_score: 13
 status: low
 date: 2026-07-29
 ---
 
 # Frippy (FRIPPY) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 2/100 — 🟢 Low Risk**
+> **Risk Score: 13/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/frippy-bsc)
 
@@ -26,15 +26,15 @@ The Frippy contract is an ERC-20 token implementation that inherits from OpenZep
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 9/10 | Low | The contract implements a standard ERC-20 token following OpenZeppelin patterns (7.1 Architecture). It utilizes Solidity 0.8.x, which includes default overflow/underflow checks for arithmetic… |
-| **Governance / Economics** | 8/10 | Low | The contract's ownership is immediately renounced in the constructor (7.5 Governance). This design choice means no single entity can control or modify the contract post-deployment, eliminating… |
+| **Governance / Economics** | 5/10 | Medium | The contract's ownership is immediately renounced in the constructor (7.5 Governance). This design choice means no single entity can control or modify the contract post-deployment, eliminating… |
 | **Upgrades** | 10/10 | Low | The Frippy contract is not designed with upgradeability in mind (7.7 Upgrades). The immediate renunciation of ownership further solidifies its immutable nature. While this ensures the contract's… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **LP Burned** | ✅ 98.6% (≈ permanent lock) |
-| **LP Locked** | 98.6% — Null Address |
+| **LP Burned** | ✅ 100.0% (≈ permanent lock) |
+| **LP Locked** | 100.0% — Null Address |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ The `_beforeTokenTransfer` and `_afterTokenTransfer` internal virtual functions 
 |--------|-------|
 | **Contract** | [`0xf3f7...8e46`](https://bscscan.com/address/0xf3f7ec29833b758ab01b1d767efd33a14c278e46) |
 | **Network** | BNB Chain |
-| **Price** | $0.0002883 |
-| **24h Volume** | $127.0K |
-| **Liquidity** | $27.3K |
-| **Volume / Liquidity** | 4.7× |
+| **Price** | $0.0000102 |
+| **24h Volume** | $90 |
+| **Liquidity** | $6.1K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 10mo |
-| **Top-10 Holders** | 28.5% of supply |
+| **Top-10 Holders** | 54.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 732 buys / 498 sells |
 

@@ -2,14 +2,14 @@
 token: Derive
 ticker: DRV
 network: ethereum
-risk_score: 47
-status: high
+risk_score: 51
+status: medium
 date: 2026-07-14
 ---
 
 # Derive (DRV) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 47/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/derive-eth)
 
@@ -42,8 +42,8 @@ The audit focused on the `TransparentUpgradeableProxy` contract. While the proxy
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 71.5% |
+| **Top-3 Unlocked** | ⚠️ 95.2% |
 
 ## Security Findings
 
@@ -82,12 +82,12 @@ The `_admin` variable in the `TransparentUpgradeableProxy` contract is declared 
 |--------|-------|
 | **Contract** | [`0xb1d1...71be`](https://etherscan.io/address/0xb1d1eae60eea9525032a6dcb4c1ce336a1de71be) |
 | **Network** | Ethereum |
-| **Price** | $0.1207 |
-| **24h Volume** | $9.4K |
-| **Liquidity** | $32.6K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.158 |
+| **24h Volume** | $38.9K |
+| **Liquidity** | $58.6K |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 88.1% of supply |
+| **Top-10 Holders** | 89.6% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 196 buys / 210 sells |
 

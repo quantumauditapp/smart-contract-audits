@@ -2,14 +2,14 @@
 token: Ethy AI by Virtuals
 ticker: ETHY
 network: base
-risk_score: 60
+risk_score: 69
 status: high
 date: 2026-08-16
 ---
 
 # Ethy AI by Virtuals (ETHY) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 60/100 — 🟠 High Risk**
+> **Risk Score: 69/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ethy-ai-by-virtuals-base)
 
@@ -25,9 +25,17 @@ The AgentToken contract implements an ERC20-like token with custom tax mechanism
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract demonstrates good practices in using OpenZeppelin upgradeable components and `EnumerableSet` for managing dynamic lists (7.1 Architecture). Access control is robustly implemented with… |
+| **Technical** | 6/10 | Medium | The contract demonstrates good practices in using OpenZeppelin upgradeable components and `EnumerableSet` for managing dynamic lists (7.1 Architecture). Access control is robustly implemented with… |
 | **Governance / Economics** | 2/10 | High | The contract centralizes significant control over economic parameters (tax rates, recipient, swap threshold) to the owner and a factory address via the `onlyOwnerOrFactory` modifier (7.4 Economic… |
-| **Upgrades** | 6/10 | Medium | The contract is designed for upgradeability, correctly using `Initializable` and `_disableInitializers()` in the constructor (7.7 Upgrades). It also employs `Ownable2StepUpgradeable` for secure… |
+| **Upgrades** | 1/10 | High | The contract is designed for upgradeability, correctly using `Initializable` and `_disableInitializers()` in the constructor (7.7 Upgrades). It also employs `Ownable2StepUpgradeable` for secure… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
@@ -87,16 +95,16 @@ The contract defines `botProtectionDurationInSeconds` and `fundedDate`, implying
 |--------|-------|
 | **Contract** | [`0xc441...8643`](https://basescan.org/address/0xc44141a684f6aa4e36cd9264ab55550b03c88643) |
 | **Network** | Base |
-| **Price** | $0.0007626 |
-| **24h Volume** | $53.4K |
-| **Liquidity** | $163.7K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.001181 |
+| **24h Volume** | $23.0K |
+| **Liquidity** | $227.2K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 35.9% of supply |
+| **Top-10 Holders** | 34.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 124 buys / 97 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
@@ -104,7 +112,7 @@ The contract defines `botProtectionDurationInSeconds` and `fundedDate`, implying
 | Ownership Renounced | ❌ Fail |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
@@ -114,7 +122,7 @@ The contract defines `botProtectionDurationInSeconds` and `fundedDate`, implying
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

@@ -2,14 +2,14 @@
 token: Genius
 ticker: GENIUS
 network: bsc
-risk_score: 38
+risk_score: 44
 status: medium
 date: 2026-08-13
 ---
 
 # Genius (GENIUS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 38/100 — 🟡 Medium Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/genius-bsc)
 
@@ -26,15 +26,15 @@ The GeniusToken contract is a standard ERC20Permit implementation, leveraging ba
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The technical implementation of GeniusToken is robust, primarily due to its reliance on audited OpenZeppelin ERC20 and ERC20Permit contracts. This ensures strong protection against common… |
-| **Governance / Economics** | 2/10 | High | The economic model for GeniusToken is straightforward: a fixed supply of 1 billion tokens (plus decimals) is minted entirely to a single owner address upon deployment (7.4 Economic). This design… |
+| **Governance / Economics** | 1/10 | High | The economic model for GeniusToken is straightforward: a fixed supply of 1 billion tokens (plus decimals) is minted entirely to a single owner address upon deployment (7.4 Economic). This design… |
 | **Upgrades** | 6/10 | Medium | The GeniusToken contract is not designed to be upgradeable, meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates the risks associated with proxy patterns, such as… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 62.6% |
+| **Top-3 Unlocked** | ⚠️ 85.4% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The contract does not include any emergency control mechanisms such as pausing t
 |--------|-------|
 | **Contract** | [`0x1f12...e9a6`](https://bscscan.com/address/0x1f12b85aac097e43aa1555b2881e98a51090e9a6) |
 | **Network** | BNB Chain |
-| **Price** | $0.3728 |
-| **24h Volume** | $92.2K |
-| **Liquidity** | $66.9K |
-| **Volume / Liquidity** | 1.4× |
+| **Price** | $0.2909 |
+| **24h Volume** | $1.5K |
+| **Liquidity** | $48.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 98.7% of supply |
+| **Top-10 Holders** | 98.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 857 buys / 927 sells |
 

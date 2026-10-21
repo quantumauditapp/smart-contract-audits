@@ -88,12 +88,12 @@ The provided source code uses `pragma solidity ^0.8.22;` while the prefill data 
 |--------|-------|
 | **Contract** | [`0x4d70...8d48`](https://etherscan.io/address/0x4d7078ddd6ccfed2f85db5b7d3ff16828d378d48) |
 | **Network** | Ethereum |
-| **Price** | $0.02501 |
-| **24h Volume** | $42.3K |
-| **Liquidity** | $517.2K |
+| **Price** | $0.01944 |
+| **24h Volume** | $16.6K |
+| **Liquidity** | $252.0K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1mo |
-| **Top-10 Holders** | 87.7% of supply |
+| **Top-10 Holders** | 84.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
 ## Security Flags (1/5 passed)

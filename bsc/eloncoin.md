@@ -2,14 +2,14 @@
 token: ElonCoin
 ticker: ELONCOIN
 network: bsc
-risk_score: 55
-status: high
+risk_score: 64
+status: medium
 date: 2026-07-31
 ---
 
 # ElonCoin (ELONCOIN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 64/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/eloncoin-bsc)
 
@@ -25,9 +25,16 @@ The FlapTaxTokenV3 contract implements an ERC20 token with advanced tax mechanis
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates good technical practices, leveraging OpenZeppelin's upgradeable contracts and `SafeERC20` for secure token interactions (7.2 Code Security). Gas optimization is evident… |
-| **Governance / Economics** | 4/10 | Medium | The protocol exhibits a high degree of centralization, with the `onlyOwner` role possessing extensive control over critical parameters such as tax rates, durations, and external contract addresses… |
+| **Technical** | 7/10 | Low | The contract demonstrates good technical practices, leveraging OpenZeppelin's upgradeable contracts and `SafeERC20` for secure token interactions (7.2 Code Security). Gas optimization is evident… |
+| **Governance / Economics** | 3/10 | High | The protocol exhibits a high degree of centralization, with the `onlyOwner` role possessing extensive control over critical parameters such as tax rates, durations, and external contract addresses… |
 | **Upgrades** | 3/10 | High | The contract correctly implements OpenZeppelin's `Initializable` pattern and `_disableInitializers()` in the constructor, ensuring proper upgradeability (7.7 Upgrades). The use of `immutable`… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
 
 ## Security Findings
 
@@ -80,12 +87,12 @@ During the `initialize` function, the entire `maxSupply` of tokens is minted to 
 |--------|-------|
 | **Contract** | [`0xece9...7777`](https://bscscan.com/address/0xece99d73444c99008f87d0ebe6211cf8eef27777) |
 | **Network** | BNB Chain |
-| **Price** | $0.0007133 |
-| **24h Volume** | $346.3K |
-| **Liquidity** | $77.9K |
-| **Volume / Liquidity** | 4.4× |
+| **Price** | $0.00004525 |
+| **24h Volume** | $660 |
+| **Liquidity** | $22.9K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1d |
-| **Top-10 Holders** | 17.2% of supply |
+| **Top-10 Holders** | 35.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3223 buys / 2420 sells |
 

@@ -33,8 +33,8 @@ The FistStandard contract implements a basic BEP20-compatible token. The code is
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 19.0% |
-| **Top-3 Unlocked** | 44.3% |
+| **Top-1 Unlocked Holder** | 20.1% |
+| **Top-3 Unlocked** | 46.7% |
 
 ## Security Findings
 
@@ -66,12 +66,12 @@ The standard ERC-20 `approve()` function is susceptible to a known front-running
 |--------|-------|
 | **Contract** | [`0xc988...bc6a`](https://bscscan.com/address/0xc9882def23bc42d53895b8361d0b1edc7570bc6a) |
 | **Network** | BNB Chain |
-| **Price** | $0.2478 |
-| **24h Volume** | $4.99M |
-| **Liquidity** | $6.69M |
-| **Volume / Liquidity** | 0.7× |
+| **Price** | $0.293 |
+| **24h Volume** | $776.6K |
+| **Liquidity** | $7.35M |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | 49.3% of supply |
+| **Top-10 Holders** | 48.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5736 buys / 4485 sells |
 

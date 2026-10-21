@@ -2,14 +2,14 @@
 token: Cronos
 ticker: CRO
 network: ethereum
-risk_score: 80
-status: critical
+risk_score: 73
+status: high
 date: 2026-07-17
 ---
 
 # Cronos (CRO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 80/100 — 🔴 Critical Risk**
+> **Risk Score: 73/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cronos-eth)
 
@@ -33,8 +33,8 @@ This audit covers a standard ERC-20 token implementation with minting capabiliti
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 64.5% |
-| **Top-3 Unlocked** | ⚠️ 85.9% |
+| **Top-1 Unlocked Holder** | 43.0% |
+| **Top-3 Unlocked** | 70.3% |
 
 ## Security Findings
 
@@ -80,12 +80,12 @@ The contract lacks a mechanism to pause critical operations, such as token trans
 |--------|-------|
 | **Contract** | [`0xa0b7...450b`](https://etherscan.io/address/0xa0b73e1ff0b80914ab6fe0444e65848c4c34450b) |
 | **Network** | Ethereum |
-| **Price** | $0.0583 |
-| **24h Volume** | $16.3K |
-| **Liquidity** | $422.4K |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.05731 |
+| **24h Volume** | $28.9K |
+| **Liquidity** | $490.8K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 96.4% of supply |
+| **Top-10 Holders** | 96.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 138 buys / 112 sells |
 

@@ -2,14 +2,14 @@
 token: FAI
 ticker: FAI
 network: base
-risk_score: 18
+risk_score: 19
 status: low
 date: 2026-08-05
 ---
 
 # FAI (FAI) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 18/100 — 🟢 Low Risk**
+> **Risk Score: 19/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fai-base)
 
@@ -33,8 +33,8 @@ The provided source code consists entirely of standard OpenZeppelin interfaces f
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 97.8% |
-| **Top-3 Unlocked** | ⚠️ 99.9% |
+| **Top-1 Unlocked Holder** | ⚠️ 98.9% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -66,12 +66,12 @@ The pragma statement `pragma solidity ^0.8.13 ^0.8.20;` is syntactically incorre
 |--------|-------|
 | **Contract** | [`0xb33f...7935`](https://basescan.org/address/0xb33ff54b9f7242ef1593d2c9bcd8f9df46c77935) |
 | **Network** | Base |
-| **Price** | $0.002661 |
-| **24h Volume** | $394.6K |
-| **Liquidity** | $2.25M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.002411 |
+| **24h Volume** | $81.3K |
+| **Liquidity** | $2.48M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 30.8% of supply |
+| **Top-10 Holders** | 32.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 417 buys / 359 sells |
 

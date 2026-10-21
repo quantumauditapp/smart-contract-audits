@@ -2,14 +2,14 @@
 token: Curve DAO Token
 ticker: CRV
 network: arbitrum
-risk_score: 70
-status: high
+risk_score: 64
+status: medium
 date: 2026-08-11
 ---
 
 # Curve DAO Token (CRV) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 64/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/curve-dao-token-arb)
 
@@ -27,14 +27,22 @@ The audit of the StandardArbERC20 contract, serving as an L2 token implementatio
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The technical architecture leverages OpenZeppelin upgradeable contracts and custom libraries for byte parsing, demonstrating a structured approach (7.1 Architecture). The `bridgeMint` and… |
 | **Governance / Economics** | 1/10 | High | The economic model relies on the `l2Gateway` to control token minting and burning, which is standard for an L2 bridge token (7.4 Economic). The `l2Gateway` address is set during initialization… |
-| **Upgrades** | 5/10 | Medium | The contract utilizes a `ClonableBeaconProxy` pattern, indicating an intention for upgradeability (7.7 Upgrades). The `_initialize` pattern is correctly used for state initialization in the… |
+| **Upgrades** | 1/10 | High | The contract utilizes a `ClonableBeaconProxy` pattern, indicating an intention for upgradeability (7.7 Upgrades). The `_initialize` pattern is correctly used for state initialization in the… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Beacon |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 56.2% |
-| **Top-3 Unlocked** | ⚠️ 84.0% |
+| **Top-1 Unlocked Holder** | 24.2% |
+| **Top-3 Unlocked** | 37.6% |
 
 ## Security Findings
 
@@ -80,16 +88,16 @@ The `BytesParser.toString` function uses `abi.decode(input, (string))` for `inpu
 |--------|-------|
 | **Contract** | [`0x11cd...4978`](https://arbiscan.io/address/0x11cdb42b0eb46d95f990bedd4695a6e3fa034978) |
 | **Network** | Arbitrum |
-| **Price** | $0.2659 |
-| **24h Volume** | $286.0K |
-| **Liquidity** | $442.6K |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $0.3683 |
+| **24h Volume** | $195.7K |
+| **Liquidity** | $495.4K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 5y |
-| **Top-10 Holders** | 58.7% of supply |
+| **Top-10 Holders** | 63.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1171 buys / 882 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
@@ -97,7 +105,7 @@ The `BytesParser.toString` function uses `abi.decode(input, (string))` for `inpu
 | Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
-| Not a Proxy | ✅ Pass |
+| Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
 
@@ -107,7 +115,7 @@ The `BytesParser.toString` function uses `abi.decode(input, (string))` for `inpu
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
-| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+| Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources
 

@@ -42,8 +42,8 @@ This audit covers the FiatTokenV2_2 implementation contract, which serves as the
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 21.6% |
-| **Top-3 Unlocked** | 55.9% |
+| **Top-1 Unlocked Holder** | 13.7% |
+| **Top-3 Unlocked** | 39.2% |
 
 ## Security Findings
 
@@ -82,12 +82,12 @@ The `initializeV2_2` function explicitly calls `_blacklist(address(this))`, whic
 |--------|-------|
 | **Contract** | [`0x1aba...c33c`](https://etherscan.io/address/0x1abaea1f7c830bd89acc67ec4af516284b1bc33c) |
 | **Network** | Ethereum |
-| **Price** | $1.1500 |
-| **24h Volume** | $1.20M |
-| **Liquidity** | $5.06M |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $1.1600 |
+| **24h Volume** | $1.25M |
+| **Liquidity** | $3.52M |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | 37.1% of supply |
+| **Top-10 Holders** | 39.9% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 40 buys / 99 sells |
 

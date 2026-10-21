@@ -2,14 +2,14 @@
 token: gitlawb
 ticker: GITLAWB
 network: base
-risk_score: 46
-status: high
+risk_score: 47
+status: medium
 date: 2026-07-29
 ---
 
 # gitlawb (GITLAWB) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 46/100 — 🟠 High Risk**
+> **Risk Score: 47/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gitlawb-base)
 
@@ -33,8 +33,8 @@ The DERC20 token contract implements an ERC20 token with voting, permit, and Own
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 68.2% |
+| **Top-3 Unlocked** | ⚠️ 91.2% |
 
 ## Security Findings
 
@@ -94,12 +94,12 @@ Several critical state-changing functions, such as `mintInflation()`, `burn()`, 
 |--------|-------|
 | **Contract** | [`0x5f98...dba3`](https://basescan.org/address/0x5f980dcfc4c0fa3911554cf5ab288ed0eb13dba3) |
 | **Network** | Base |
-| **Price** | $0.00002067 |
-| **24h Volume** | $163.5K |
-| **Liquidity** | $1.10M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.000027 |
+| **24h Volume** | $119.9K |
+| **Liquidity** | $527.7K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 4mo |
-| **Top-10 Holders** | 35.1% of supply |
+| **Top-10 Holders** | 37.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 228 buys / 353 sells |
 

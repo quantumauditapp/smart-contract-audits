@@ -3,13 +3,13 @@ token: Cross
 ticker: CROSS
 network: bsc
 risk_score: 53
-status: high
+status: medium
 date: 2026-08-13
 ---
 
 # Cross (CROSS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 53/100 — 🟠 High Risk**
+> **Risk Score: 53/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cross-bsc)
 
@@ -66,12 +66,12 @@ The `CrossToken` contract is deployed directly and does not implement any upgrad
 |--------|-------|
 | **Contract** | [`0x6bf6...a510`](https://bscscan.com/address/0x6bf62ca91e397b5a7d1d6bce97d9092065d7a510) |
 | **Network** | BNB Chain |
-| **Price** | $0.1014 |
-| **24h Volume** | $914.5K |
-| **Liquidity** | $1.05M |
-| **Volume / Liquidity** | 0.9× |
+| **Price** | $0.1047 |
+| **24h Volume** | $1.28M |
+| **Liquidity** | $1.07M |
+| **Volume / Liquidity** | 1.2× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 97.4% of supply |
+| **Top-10 Holders** | 98.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3469 buys / 3831 sells |
 

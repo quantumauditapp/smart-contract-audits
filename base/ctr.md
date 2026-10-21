@@ -2,14 +2,14 @@
 token: CTR
 ticker: CTR
 network: base
-risk_score: 48
-status: high
+risk_score: 52
+status: medium
 date: 2026-08-11
 ---
 
 # CTR (CTR) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ctr-base)
 
@@ -73,12 +73,12 @@ The LayerZero endpoint address (`_lzEndpoint`) is set in the constructor and can
 |--------|-------|
 | **Contract** | [`0x1103...57f7`](https://basescan.org/address/0x11030f79109269d796fd0fb956d6244e502757f7) |
 | **Network** | Base |
-| **Price** | $0.008141 |
-| **24h Volume** | $542.7K |
-| **Liquidity** | $453.8K |
-| **Volume / Liquidity** | 1.2× |
+| **Price** | $0.01004 |
+| **24h Volume** | $561.6K |
+| **Liquidity** | $514.5K |
+| **Volume / Liquidity** | 1.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 80.2% of supply |
+| **Top-10 Holders** | 84.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3785 buys / 3881 sells |
 

@@ -2,14 +2,14 @@
 token: Euler
 ticker: EUL
 network: ethereum
-risk_score: 54
-status: high
+risk_score: 55
+status: medium
 date: 2026-07-26
 ---
 
 # Euler (EUL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 54/100 — 🟠 High Risk**
+> **Risk Score: 55/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/euler-eth)
 
@@ -33,8 +33,8 @@ The Eul contract implements an ERC20 token with voting capabilities and a contro
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 94.0% |
-| **Top-3 Unlocked** | ⚠️ 99.1% |
+| **Top-1 Unlocked Holder** | ⚠️ 96.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The contract lacks an emergency pause mechanism. In the event of a critical vuln
 |--------|-------|
 | **Contract** | [`0xd9fc...e07b`](https://etherscan.io/address/0xd9fcd98c322942075a5c3860693e9f4f03aae07b) |
 | **Network** | Ethereum |
-| **Price** | $1.7500 |
-| **24h Volume** | $579.2K |
-| **Liquidity** | $1.00M |
-| **Volume / Liquidity** | 0.6× |
+| **Price** | $1.3400 |
+| **24h Volume** | $39.6K |
+| **Liquidity** | $1.08M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 9mo |
-| **Top-10 Holders** | 55.2% of supply |
+| **Top-10 Holders** | 57.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2739 buys / 2748 sells |
 

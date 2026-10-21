@@ -34,7 +34,7 @@ The provided source code consists of standard Uniswap V2 interfaces (IUniswapV2R
 | Metric | Value |
 |--------|-------|
 | **LP Burned** | 3.5% |
-| **LP Locked** | 100.0% — Null Address, PinkLock02 |
+| **LP Locked** | 99.9% — Null Address, PinkLock02 |
 | **Top-1 Unlocked Holder** | 0.0% |
 
 ## Security Findings
@@ -67,12 +67,12 @@ The provided code includes interfaces for Uniswap V2 routers and factory. Any co
 |--------|-------|
 | **Contract** | [`0xeb2b...931d`](https://bscscan.com/address/0xeb2b7d5691878627eff20492ca7c9a71228d931d) |
 | **Network** | BNB Chain |
-| **Price** | $0.00001104 |
-| **24h Volume** | $19.3K |
-| **Liquidity** | $622.7K |
-| **Volume / Liquidity** | 0.0× |
+| **Price** | $0.00001455 |
+| **24h Volume** | $69.0K |
+| **Liquidity** | $808.8K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 27.2% of supply |
+| **Top-10 Holders** | 27.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 413 buys / 425 sells |
 

@@ -33,7 +33,7 @@ The Fren Pet Token contract is an ERC20 token with burnable capabilities, integr
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.3% |
+| **Top-1 Unlocked Holder** | ⚠️ 98.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -94,13 +94,13 @@ The `_transfer` function in `FrenPetToken` is highly complex due to the numerous
 |--------|-------|
 | **Contract** | [`0xff0c...e105`](https://basescan.org/address/0xff0c532fdb8cd566ae169c1cb157ff2bdc83e105) |
 | **Network** | Base |
-| **Price** | $1.1000 |
-| **24h Volume** | $145.4K |
-| **Liquidity** | $520.7K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $3.3200 |
+| **24h Volume** | $432.3K |
+| **Liquidity** | $806.3K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 63.8% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 71.6% of supply |
+| **Buy / Sell Tax** | 4.0% / 4.0% |
 | **24h Transactions** | 347 buys / 140 sells |
 
 ## Security Flags (3/5 passed)

@@ -73,12 +73,12 @@ The `ELSA` token contract, being a standard ERC20 implementation with EIP-3009 e
 |--------|-------|
 | **Contract** | [`0x29cc...bdca`](https://basescan.org/address/0x29cc30f9d113b356ce408667aa6433589cecbdca) |
 | **Network** | Base |
-| **Price** | $0.04201 |
-| **24h Volume** | $158.8K |
-| **Liquidity** | $304.6K |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.04845 |
+| **24h Volume** | $210.9K |
+| **Liquidity** | $346.0K |
+| **Volume / Liquidity** | 0.6× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | 89.6% of supply |
+| **Top-10 Holders** | 89.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1752 buys / 1936 sells |
 

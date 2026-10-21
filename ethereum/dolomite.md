@@ -2,14 +2,14 @@
 token: Dolomite
 ticker: DOLO
 network: ethereum
-risk_score: 42
+risk_score: 62
 status: medium
 date: 2026-08-16
 ---
 
 # Dolomite (DOLO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 62/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dolomite-eth)
 
@@ -25,9 +25,9 @@ The DOLOWithOwnable contract is an ERC20Burnable token with an Ownable access co
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract demonstrates good code security practices (7.2) by inheriting from battle-tested OpenZeppelin ERC20, ERC20Burnable, and Ownable contracts. It uses Solidity 0.8.9+, mitigating common… |
+| **Technical** | 7/10 | Low | The contract demonstrates good code security practices (7.2) by inheriting from battle-tested OpenZeppelin ERC20, ERC20Burnable, and Ownable contracts. It uses Solidity 0.8.9+, mitigating common… |
 | **Governance / Economics** | 2/10 | High | The economic model (7.4) of the DOLO token is highly centralized, with the contract owner having the ability to grant unlimited minting power to designated minters. This introduces a significant… |
-| **Upgrades** | 7/10 | Low | The DOLOWithOwnable contract is not designed with an upgrade mechanism (7.7), meaning its logic is immutable once deployed. This simplifies the architecture and removes upgrade-related risks such as… |
+| **Upgrades** | 4/10 | Medium | The DOLOWithOwnable contract is not designed with an upgrade mechanism (7.7), meaning its logic is immutable once deployed. This simplifies the architecture and removes upgrade-related risks such as… |
 
 ## LP Distribution
 
@@ -73,22 +73,22 @@ The contract defines a `_ccipAdmin` state variable and functions (`ownerSetCCIPA
 |--------|-------|
 | **Contract** | [`0x0f81...a654`](https://etherscan.io/address/0x0f81001ef0a83ecce5ccebf63eb302c70a39a654) |
 | **Network** | Ethereum |
-| **Price** | $0.02483 |
-| **24h Volume** | $169.9K |
-| **Liquidity** | $176.9K |
-| **Volume / Liquidity** | 1.0× |
+| **Price** | $0.02668 |
+| **24h Volume** | $7.4K |
+| **Liquidity** | $188.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 77.0% of supply |
+| **Top-10 Holders** | 79.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 583 buys / 420 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -98,7 +98,7 @@ The contract defines a `_ccipAdmin` state variable and functions (`ownerSetCCIPA
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

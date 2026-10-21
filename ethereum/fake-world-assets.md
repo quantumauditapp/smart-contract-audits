@@ -2,14 +2,14 @@
 token: Fake World Assets
 ticker: FWA
 network: ethereum
-risk_score: 72
-status: critical
+risk_score: 59
+status: medium
 date: 2026-07-28
 ---
 
 # Fake World Assets (FWA) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 72/100 — 🔴 Critical Risk**
+> **Risk Score: 59/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fake-world-assets-eth)
 
@@ -25,8 +25,8 @@ The FWAToken contract implements a fixed-supply ERC20 token with custom transfer
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates good architectural practices (7.1) by using immutable variables for critical external dependencies and inheriting `ReentrancyGuard` for code security (7.2). Custom error… |
-| **Governance / Economics** | 1/10 | High | The tokenomics (7.4) feature a fixed supply and a buyback mechanism designed to accrue value and distribute tokens, with configurable routing splits and a price limit to protect against extreme… |
+| **Technical** | 8/10 | Low | The contract demonstrates good architectural practices (7.1) by using immutable variables for critical external dependencies and inheriting `ReentrancyGuard` for code security (7.2). Custom error… |
+| **Governance / Economics** | 2/10 | High | The tokenomics (7.4) feature a fixed supply and a buyback mechanism designed to accrue value and distribute tokens, with configurable routing splits and a price limit to protect against extreme… |
 | **Upgrades** | 4/10 | Medium | The FWAToken contract is not designed as an upgradeable proxy (7.7). Therefore, there are no direct upgrade safety concerns. Any changes to the contract logic would require a new deployment and… |
 
 ## Security Findings
@@ -59,12 +59,12 @@ The `buyback()` function includes a rate-limiting mechanism (`block.number >= la
 |--------|-------|
 | **Contract** | [`0xa0df...c845`](https://etherscan.io/address/0xa0df17b5ac76ababa36e1450e2cbcd18a620c845) |
 | **Network** | Ethereum |
-| **Price** | $0.01385 |
-| **24h Volume** | $2.16M |
-| **Liquidity** | $785.1K |
-| **Volume / Liquidity** | 2.8× |
+| **Price** | $0.01162 |
+| **24h Volume** | $1.04M |
+| **Liquidity** | $823.4K |
+| **Volume / Liquidity** | 1.3× |
 | **Token Age** | 11d |
-| **Top-10 Holders** | 55.1% of supply |
+| **Top-10 Holders** | 24.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6081 buys / 6931 sells |
 

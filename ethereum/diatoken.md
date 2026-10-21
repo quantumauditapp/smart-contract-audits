@@ -2,14 +2,14 @@
 token: DIAToken
 ticker: DIA
 network: ethereum
-risk_score: 66
+risk_score: 67
 status: high
 date: 2026-07-27
 ---
 
 # DIAToken (DIA) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 67/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/diatoken-eth)
 
@@ -73,12 +73,12 @@ The `IERC20` interface documentation correctly highlights a known race condition
 |--------|-------|
 | **Contract** | [`0x84ca...9419`](https://etherscan.io/address/0x84ca8bc7997272c7cfb4d0cd3d55cd942b3c9419) |
 | **Network** | Ethereum |
-| **Price** | $0.1484 |
-| **24h Volume** | $63.9K |
-| **Liquidity** | $60.3K |
-| **Volume / Liquidity** | 1.1× |
+| **Price** | $0.1377 |
+| **24h Volume** | $4.9K |
+| **Liquidity** | $58.4K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 63.5% of supply |
+| **Top-10 Holders** | 63.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 395 buys / 254 sells |
 

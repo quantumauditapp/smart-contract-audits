@@ -2,14 +2,14 @@
 token: Decentrawood
 ticker: DEOD
 network: bsc
-risk_score: 42
-status: medium
+risk_score: 27
+status: low
 date: 2026-08-08
 ---
 
 # Decentrawood (DEOD) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/decentrawood-bsc)
 
@@ -25,9 +25,16 @@ The Decentrawood contract implements a standard ERC-20 token with burnable funct
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture (7.1) is straightforward, implementing a standard ERC-20 token. Code security (7.2) is robust due to the exclusive reliance on OpenZeppelin Contracts v5.5.0, which are… |
+| **Technical** | 10/10 | Low | The technical architecture (7.1) is straightforward, implementing a standard ERC-20 token. Code security (7.2) is robust due to the exclusive reliance on OpenZeppelin Contracts v5.5.0, which are… |
 | **Governance / Economics** | 3/10 | High | The economic model (7.4) for the Decentrawood token is simple: a fixed supply is minted at deployment, and the token is burnable. There are no complex tokenomics, staking, or lending mechanisms… |
-| **Upgrades** | 5/10 | Medium | The Decentrawood contract is not designed to be upgradeable (7.7). It is deployed as an immutable contract, meaning its logic cannot be changed after deployment. This eliminates risks associated with… |
+| **Upgrades** | 6/10 | Medium | The Decentrawood contract is not designed to be upgradeable (7.7). It is deployed as an immutable contract, meaning its logic cannot be changed after deployment. This eliminates risks associated with… |
+
+## LP Distribution
+
+| Metric | Value |
+|--------|-------|
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -66,22 +73,22 @@ The `Decentrawood` contract does not implement any administrative roles, such as
 |--------|-------|
 | **Contract** | [`0x3510...683e`](https://bscscan.com/address/0x3510fbbc13090f991ffa523527113a166161683e) |
 | **Network** | BNB Chain |
-| **Price** | $0.0228 |
-| **24h Volume** | $55.7K |
-| **Liquidity** | $71.5K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.01774 |
+| **24h Volume** | $10.7K |
+| **Liquidity** | $63.7K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | N/A of supply |
+| **Top-10 Holders** | 72.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 533 buys / 174 sells |
 
-## Security Flags (1/5 passed)
+## Security Flags (3/5 passed)
 
 | Check | Status |
 |-------|--------|
-| Contract Verified | ❌ Fail |
+| Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| No Mint Function | ✅ Pass |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -89,9 +96,9 @@ The `Decentrawood` contract does not implement any administrative roles, such as
 
 | Check | | What it means |
 |-------|---|---------------|
-| Contract Verified | ❌ | Source code is **not verified** — contract logic is opaque. |
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

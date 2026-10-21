@@ -3,13 +3,13 @@ token: Dot
 ticker: DOT
 network: base
 risk_score: 55
-status: high
+status: medium
 date: 2026-08-13
 ---
 
 # Dot (DOT) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 55/100 — 🟠 High Risk**
+> **Risk Score: 55/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dot-base)
 
@@ -33,8 +33,8 @@ The provided contract code implements a standard ERC-20 token using OpenZeppelin
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 77.3% |
-| **Top-3 Unlocked** | ⚠️ 98.1% |
+| **Top-1 Unlocked Holder** | ⚠️ 72.3% |
+| **Top-3 Unlocked** | ⚠️ 97.2% |
 
 ## Security Findings
 
@@ -73,12 +73,12 @@ The `ERC20` and `ECDSA` implementations appear to be standard, well-audited Open
 |--------|-------|
 | **Contract** | [`0x23a2...fe51`](https://basescan.org/address/0x23a2847d772803f9efc64b4277b782b06296fe51) |
 | **Network** | Base |
-| **Price** | $0.00148 |
-| **24h Volume** | $76.8K |
-| **Liquidity** | $250.7K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.002746 |
+| **24h Volume** | $98.2K |
+| **Liquidity** | $254.2K |
+| **Volume / Liquidity** | 0.4× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 34.4% of supply |
+| **Top-10 Holders** | 34.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 156 buys / 108 sells |
 

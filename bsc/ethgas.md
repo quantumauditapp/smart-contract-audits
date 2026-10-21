@@ -80,12 +80,12 @@ The contract implements core ERC-20 logic directly without inheriting from OpenZ
 |--------|-------|
 | **Contract** | [`0x3011...7d49`](https://bscscan.com/address/0x30117e4bc17d7b044194b76a38365c53b72f7d49) |
 | **Network** | BNB Chain |
-| **Price** | $0.02514 |
-| **24h Volume** | $51.1K |
-| **Liquidity** | $30.4K |
-| **Volume / Liquidity** | 1.7× |
+| **Price** | $0.02472 |
+| **24h Volume** | $10.8K |
+| **Liquidity** | $21.6K |
+| **Volume / Liquidity** | 0.5× |
 | **Token Age** | 6mo |
-| **Top-10 Holders** | 98.0% of supply |
+| **Top-10 Holders** | 96.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 819 buys / 767 sells |
 

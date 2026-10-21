@@ -3,13 +3,13 @@ token: Espresso
 ticker: ESP
 network: ethereum
 risk_score: 64
-status: high
+status: medium
 date: 2026-07-27
 ---
 
 # Espresso (ESP) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 64/100 — 🟠 High Risk**
+> **Risk Score: 64/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/espresso-eth)
 
@@ -81,10 +81,10 @@ The custom contracts `EspToken` and `EspTokenV2` do not include explicit `__gap`
 |--------|-------|
 | **Contract** | [`0x031d...db9a`](https://etherscan.io/address/0x031de51f3e8016514bd0963d0b2ab825a591db9a) |
 | **Network** | Ethereum |
-| **Price** | $0.08953 |
-| **24h Volume** | $317.6K |
-| **Liquidity** | $392.5K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.085 |
+| **24h Volume** | $22.7K |
+| **Liquidity** | $372.7K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 5mo |
 | **Top-10 Holders** | 91.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

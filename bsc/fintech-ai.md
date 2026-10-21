@@ -2,14 +2,14 @@
 token: FinTech AI
 ticker: FNA
 network: bsc
-risk_score: 68
+risk_score: 70
 status: high
 date: 2026-08-16
 ---
 
 # FinTech AI (FNA) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 70/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fintech-ai-bsc)
 
@@ -73,13 +73,13 @@ The contract is compiled with Solidity version 0.7.5. This version does not incl
 |--------|-------|
 | **Contract** | [`0x0833...114e`](https://bscscan.com/address/0x08332a515cb2a57884176e887b682e7da2eb114e) |
 | **Network** | BNB Chain |
-| **Price** | $3.8100 |
-| **24h Volume** | $92.7K |
-| **Liquidity** | $879.5K |
+| **Price** | $0.1064 |
+| **24h Volume** | $18.2K |
+| **Liquidity** | $148.0K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 95.4% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.1% |
+| **Top-10 Holders** | 94.6% of supply |
+| **Buy / Sell Tax** | 0.0% / 5.0% |
 | **24h Transactions** | 1799 buys / 4964 sells |
 
 ## Security Flags (3/5 passed)

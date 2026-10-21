@@ -2,14 +2,14 @@
 token: Diem
 ticker: DIEM
 network: base
-risk_score: 49
-status: high
+risk_score: 63
+status: medium
 date: 2026-07-26
 ---
 
 # Diem (DIEM) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 49/100 — 🟠 High Risk**
+> **Risk Score: 63/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/diem-base)
 
@@ -25,16 +25,16 @@ The Diem contract implements an ERC20 token with staking functionalities, includ
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Diem contract demonstrates good technical practices, utilizing OpenZeppelin's battle-tested ERC20 and AccessControl libraries (7.2 Code Security). The Solidity version 0.8.26 mitigates common… |
-| **Governance / Economics** | 1/10 | High | The economic model for Diem involves staking with a cooldown period, which is a standard mechanism (7.4 Economic). However, the contract exhibits high centralization, with the `DEFAULT_ADMIN_ROLE`… |
-| **Upgrades** | 6/10 | Medium | The Diem contract is not designed with upgradeability in mind (7.7 Upgrades). It is deployed as a standard, non-proxy contract. This design choice means that any future modifications, bug fixes, or… |
+| **Technical** | 6/10 | Medium | The Diem contract demonstrates good technical practices, utilizing OpenZeppelin's battle-tested ERC20 and AccessControl libraries (7.2 Code Security). The Solidity version 0.8.26 mitigates common… |
+| **Governance / Economics** | 2/10 | High | The economic model for Diem involves staking with a cooldown period, which is a standard mechanism (7.4 Economic). However, the contract exhibits high centralization, with the `DEFAULT_ADMIN_ROLE`… |
+| **Upgrades** | 3/10 | High | The Diem contract is not designed with upgradeability in mind (7.7 Upgrades). It is deployed as a standard, non-proxy contract. This design choice means that any future modifications, bug fixes, or… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 58.8% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | 31.9% |
+| **Top-3 Unlocked** | 62.1% |
 
 ## Security Findings
 
@@ -80,22 +80,22 @@ The `Diem` contract is deployed as a standard, non-proxy contract and does not i
 |--------|-------|
 | **Contract** | [`0xf4d9...a024`](https://basescan.org/address/0xf4d97f2da56e8c3098f3a8d538db630a2606a024) |
 | **Network** | Base |
-| **Price** | $1,466.6400 |
-| **24h Volume** | $45.7K |
-| **Liquidity** | $5.78M |
+| **Price** | $1,546.3600 |
+| **24h Volume** | $75.2K |
+| **Liquidity** | $6.80M |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 11mo |
-| **Top-10 Holders** | 91.3% of supply |
+| **Top-10 Holders** | 94.3% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 332 buys / 195 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -105,7 +105,7 @@ The `Diem` contract is deployed as a standard, non-proxy contract and does not i
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

@@ -3,13 +3,13 @@ token: Espresso
 ticker: ESP
 network: arbitrum
 risk_score: 63
-status: high
+status: medium
 date: 2026-07-23
 ---
 
 # Espresso (ESP) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 63/100 — 🟠 High Risk**
+> **Risk Score: 63/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/espresso-arb)
 
@@ -88,12 +88,12 @@ The `BytesLib` library, used for parsing bytes, contains inline assembly (`assem
 |--------|-------|
 | **Contract** | [`0x3b8d...94f1`](https://arbiscan.io/address/0x3b8db18e69d6686ad9371a423afe3dd1065c94f1) |
 | **Network** | Arbitrum |
-| **Price** | $0.07189 |
-| **24h Volume** | $197.1K |
-| **Liquidity** | $522.1K |
-| **Volume / Liquidity** | 0.4× |
+| **Price** | $0.08601 |
+| **24h Volume** | $455.3K |
+| **Liquidity** | $551.1K |
+| **Volume / Liquidity** | 0.8× |
 | **Token Age** | 5mo |
-| **Top-10 Holders** | 99.7% of supply |
+| **Top-10 Holders** | 99.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1120 buys / 1212 sells |
 

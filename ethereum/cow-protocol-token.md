@@ -3,13 +3,13 @@ token: CoW Protocol Token
 ticker: COW
 network: ethereum
 risk_score: 73
-status: critical
+status: high
 date: 2026-08-16
 ---
 
 # CoW Protocol Token (COW) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 73/100 — 🔴 Critical Risk**
+> **Risk Score: 73/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cow-protocol-token-eth)
 
@@ -73,12 +73,12 @@ The `mint` function allows `cowDao` to mint up to `MAX_YEARLY_INFLATION` (3%) of
 |--------|-------|
 | **Contract** | [`0xdef1...97ab`](https://etherscan.io/address/0xdef1ca1fb7fbcdc777520aa7f396b4e015f497ab) |
 | **Network** | Ethereum |
-| **Price** | $0.1248 |
-| **24h Volume** | $1.40M |
-| **Liquidity** | $347.5K |
-| **Volume / Liquidity** | 4.0× |
+| **Price** | $0.1306 |
+| **24h Volume** | $84.3K |
+| **Liquidity** | $407.7K |
+| **Volume / Liquidity** | 0.2× |
 | **Token Age** | 4y |
-| **Top-10 Holders** | 72.6% of supply |
+| **Top-10 Holders** | 71.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 592 buys / 461 sells |
 

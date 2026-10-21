@@ -2,14 +2,14 @@
 token: ether.fi governance token
 ticker: ETHFI
 network: ethereum
-risk_score: 22
-status: medium
+risk_score: 29
+status: low
 date: 2026-08-14
 ---
 
 # ether.fi governance token (ETHFI) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 22/100 — 🟡 Medium Risk**
+> **Risk Score: 29/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/etherfi-governance-token-eth)
 
@@ -26,15 +26,15 @@ The EtherFiGovernanceToken contract implements a standard ERC20 token with burna
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The technical architecture (7.1) is robust, built upon well-audited OpenZeppelin contracts for ERC20, ERC20Burnable, ERC20Permit, and ERC20Votes. Code security (7.2) is strong, with minimal custom… |
-| **Governance / Economics** | 3/10 | High | The economic model (7.4) involves a fixed total supply minted entirely to a single address (0x7A6A41F353B3002751d94118aA7f4935dA39bB53) in the constructor. This initial distribution grants 100% of… |
+| **Governance / Economics** | 1/10 | High | The economic model (7.4) involves a fixed total supply minted entirely to a single address (0x7A6A41F353B3002751d94118aA7f4935dA39bB53) in the constructor. This initial distribution grants 100% of… |
 | **Upgrades** | 6/10 | Medium | The contract is deployed as a standard implementation and is not designed to be upgradeable (7.7). This eliminates upgrade-specific risks such as proxy misconfigurations or implementation logic… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | 48.6% |
-| **Top-3 Unlocked** | 79.4% |
+| **Top-1 Unlocked Holder** | ⚠️ 50.1% |
+| **Top-3 Unlocked** | ⚠️ 81.9% |
 
 ## Security Findings
 
@@ -66,12 +66,12 @@ The contract extensively leverages standard, battle-tested OpenZeppelin contract
 |--------|-------|
 | **Contract** | [`0xfe0c...c0eb`](https://etherscan.io/address/0xfe0c30065b384f05761f15d0cc899d4f9f9cc0eb) |
 | **Network** | Ethereum |
-| **Price** | $0.4345 |
-| **24h Volume** | $1.11M |
-| **Liquidity** | $607.0K |
-| **Volume / Liquidity** | 1.8× |
+| **Price** | $0.5845 |
+| **24h Volume** | $324.5K |
+| **Liquidity** | $1.06M |
+| **Volume / Liquidity** | 0.3× |
 | **Token Age** | 3d |
-| **Top-10 Holders** | 64.6% of supply |
+| **Top-10 Holders** | 65.5% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 257 buys / 319 sells |
 

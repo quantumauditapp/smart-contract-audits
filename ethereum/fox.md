@@ -2,14 +2,14 @@
 token: FOX
 ticker: FOX
 network: ethereum
-risk_score: 68
-status: high
+risk_score: 53
+status: medium
 date: 2026-08-13
 ---
 
 # FOX (FOX) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 53/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fox-eth)
 
@@ -27,7 +27,7 @@ The FOX token contract implements an ERC20 standard with mintable and capped fea
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract utilizes the ERC20 standard, SafeMath for arithmetic safety, and a MinterRole for access control (7.2 Code Security). However, a significant design flaw exists where the entire token cap… |
 | **Governance / Economics** | 1/10 | High | The economic model of the FOX token presents a high centralization risk (7.4 Economic). The entire token supply is minted to the contract deployer during construction, granting a single entity… |
-| **Upgrades** | 3/10 | High | The FOX token contract is not designed with upgradeability in mind (7.7 Upgrades). It is a standard, non-proxy implementation, meaning its logic cannot be altered after deployment. This eliminates… |
+| **Upgrades** | 5/10 | Medium | The FOX token contract is not designed with upgradeability in mind (7.7 Upgrades). It is a standard, non-proxy implementation, meaning its logic cannot be altered after deployment. This eliminates… |
 
 ## LP Distribution
 
@@ -73,12 +73,12 @@ The `approve` function, as implemented in the ERC20 standard, is susceptible to 
 |--------|-------|
 | **Contract** | [`0xc770...e52d`](https://etherscan.io/address/0xc770eefad204b5180df6a14ee197d99d808ee52d) |
 | **Network** | Ethereum |
-| **Price** | $0.004328 |
-| **24h Volume** | $121.4K |
-| **Liquidity** | $1.06M |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.005092 |
+| **24h Volume** | $10.8K |
+| **Liquidity** | $1.33M |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 6y |
-| **Top-10 Holders** | 75.5% of supply |
+| **Top-10 Holders** | 75.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 107 buys / 139 sells |
 

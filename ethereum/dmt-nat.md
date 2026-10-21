@@ -2,14 +2,14 @@
 token: dmt-nat
 ticker: DMT-NAT
 network: ethereum
-risk_score: 76
+risk_score: 88
 status: critical
 date: 2026-08-11
 ---
 
 # dmt-nat (DMT-NAT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 76/100 — 🔴 Critical Risk**
+> **Risk Score: 88/100 — 🔴 Critical Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dmt-nat-eth)
 
@@ -25,9 +25,17 @@ The Tap Bridge protocol consists of a bridge contract and a token contract. The 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture (7.1) utilizes OpenZeppelin contracts for ERC20 and AccessControl, enhancing code security (7.2). Custom error handling and event logging are well-implemented. However, a… |
+| **Technical** | 4/10 | Medium | The technical architecture (7.1) utilizes OpenZeppelin contracts for ERC20 and AccessControl, enhancing code security (7.2). Custom error handling and event logging are well-implemented. However, a… |
 | **Governance / Economics** | 1/10 | High | The economic model (7.4) includes a fee mechanism and a discount system, configurable by the `ADMIN_ROLE` (7.5 Governance). However, the `admin` address designated to receive fees is immutable… |
-| **Upgrades** | 2/10 | High | While the `TapToken` contract is designed as an upgradeable ERC20, the `TapBridge` contract itself is not upgradeable (7.7 Upgrades). More critically, when `TapBridge` deploys new token instances… |
+| **Upgrades** | 1/10 | High | While the `TapToken` contract is designed as an upgradeable ERC20, the `TapBridge` contract itself is not upgradeable (7.7 Upgrades). More critically, when `TapBridge` deploys new token instances… |
+
+## Proxy Upgrade Controls
+
+| Control | Value |
+|---------|-------|
+| **Proxy Type** | Etherscan Detected Custom |
+| **Implementation** | ✅ Verified source |
+| **Upgrades (30d)** | 0 (stable) |
 
 ## LP Distribution
 
@@ -80,9 +88,9 @@ The `TapToken` contract imports `AccessControlUpgradeable`, while the `TapBridge
 |--------|-------|
 | **Contract** | [`0x2491...1247`](https://etherscan.io/address/0x249130f5e2dd4cf278180c0df8273f3592ad1247) |
 | **Network** | Ethereum |
-| **Price** | $0.00000009 |
-| **24h Volume** | $45.8K |
-| **Liquidity** | $801.4K |
+| **Price** | $0.00000008 |
+| **24h Volume** | $122.3K |
+| **Liquidity** | $885.8K |
 | **Volume / Liquidity** | 0.1× |
 | **Token Age** | 10mo |
 | **Top-10 Holders** | 100.0% of supply |
@@ -95,7 +103,7 @@ The `TapToken` contract imports `AccessControlUpgradeable`, while the `TapBridge
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
-| No Mint Function | ⚠️ Unknown |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ✅ Pass |
 | Not a Proxy | ❌ Fail |
 
@@ -105,7 +113,7 @@ The `TapToken` contract imports `AccessControlUpgradeable`, while the `TapBridge
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
-| No Mint Function | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 

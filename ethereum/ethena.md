@@ -2,14 +2,14 @@
 token: Ethena
 ticker: ENA
 network: ethereum
-risk_score: 59
-status: high
+risk_score: 50
+status: medium
 date: 2026-06-11
 ---
 
 # Ethena (ENA) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 59/100 — 🟠 High Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ethena-eth)
 
@@ -26,15 +26,15 @@ This report details the security audit of the ENA token contract, which serves a
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 7/10 | Low | The ENA contract demonstrates good technical architecture (7.1) by extending well-audited OpenZeppelin libraries for ERC20, burnable, permit, and two-step ownership functionalities. Code security… |
-| **Governance / Economics** | 2/10 | High | The economic model (7.4) features a controlled inflation mechanism where the contract owner can mint new tokens annually, capped at 10% of the total supply. This centralized minting authority (7.5)… |
+| **Governance / Economics** | 4/10 | Medium | The economic model (7.4) features a controlled inflation mechanism where the contract owner can mint new tokens annually, capped at 10% of the total supply. This centralized minting authority (7.5)… |
 | **Upgrades** | 5/10 | Medium | The ENA token contract is not designed to be upgradeable (7.7). This means its logic is immutable once deployed, eliminating upgrade-related risks such as proxy implementation vulnerabilities or… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 97.8% |
-| **Top-3 Unlocked** | ⚠️ 99.9% |
+| **Top-1 Unlocked Holder** | 47.6% |
+| **Top-3 Unlocked** | 66.2% |
 
 ## Security Findings
 
@@ -94,12 +94,12 @@ The `renounceOwnership` function is explicitly overridden to revert, preventing 
 |--------|-------|
 | **Contract** | [`0x57e1...6061`](https://etherscan.io/address/0x57e114b691db790c35207b2e685d4a43181e6061) |
 | **Network** | Ethereum |
-| **Price** | $0.09182 |
-| **24h Volume** | $1.69M |
-| **Liquidity** | $3.35M |
-| **Volume / Liquidity** | 0.5× |
+| **Price** | $0.1672 |
+| **24h Volume** | $569.9K |
+| **Liquidity** | $781.6K |
+| **Volume / Liquidity** | 0.7× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 60.0% of supply |
+| **Top-10 Holders** | 60.7% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 380 buys / 489 sells |
 

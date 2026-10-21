@@ -3,13 +3,13 @@ token: Epic Chain
 ticker: EPIC
 network: ethereum
 risk_score: 73
-status: critical
+status: high
 date: 2026-07-23
 ---
 
 # Epic Chain (EPIC) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 73/100 — 🔴 Critical Risk**
+> **Risk Score: 73/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/epic-chain-eth)
 
@@ -73,12 +73,12 @@ The contract constructor explicitly requires the `_initialOwner` to be a contrac
 |--------|-------|
 | **Contract** | [`0x9431...fc0e`](https://etherscan.io/address/0x94314a14df63779c99c0764a30e0cd22fa78fc0e) |
 | **Network** | Ethereum |
-| **Price** | $0.6026 |
-| **24h Volume** | $34.8K |
-| **Liquidity** | $116.3K |
-| **Volume / Liquidity** | 0.3× |
+| **Price** | $0.3366 |
+| **24h Volume** | $3.0K |
+| **Liquidity** | $151.0K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1y |
-| **Top-10 Holders** | 72.8% of supply |
+| **Top-10 Holders** | 70.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 376 buys / 388 sells |
 

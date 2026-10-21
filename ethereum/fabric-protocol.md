@@ -2,14 +2,14 @@
 token: Fabric Protocol
 ticker: ROBO
 network: ethereum
-risk_score: 48
-status: high
+risk_score: 50
+status: medium
 date: 2026-08-15
 ---
 
 # Fabric Protocol (ROBO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 48/100 — 🟠 High Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fabric-protocol-eth)
 
@@ -73,10 +73,10 @@ The contract defines a `TOTAL_SUPPLY` constant, implying a fixed maximum supply.
 |--------|-------|
 | **Contract** | [`0x32b4...f36e`](https://etherscan.io/address/0x32b4d049fe4c888d2b92eecaf729f44df6b1f36e) |
 | **Network** | Ethereum |
-| **Price** | $0.01821 |
-| **24h Volume** | $483.5K |
-| **Liquidity** | $584.0K |
-| **Volume / Liquidity** | 0.8× |
+| **Price** | $0.01163 |
+| **24h Volume** | $20.3K |
+| **Liquidity** | $439.9K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 5mo |
 | **Top-10 Holders** | 100.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |

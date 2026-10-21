@@ -2,14 +2,14 @@
 token: Cubus Store Coin
 ticker: CSC
 network: bsc
-risk_score: 17
+risk_score: 11
 status: low
 date: 2026-08-12
 ---
 
 # Cubus Store Coin (CSC) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 17/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cubus-store-coin-bsc)
 
@@ -35,10 +35,8 @@ Always apply the checks-effects-interactions pattern, utilize reentrancy guards 
 
 | Metric | Value |
 |--------|-------|
-| **LP Burned** | 47.0% |
-| **LP Locked** | 47.0% — Null Address |
-| **Top-1 Unlocked Holder** | 26.0% |
-| **Top-3 Unlocked** | 52.9% |
+| **LP Burned** | 80.7% |
+| **LP Locked** | 80.7% — Null Address |
 
 ## Security Findings
 
@@ -70,13 +68,13 @@ The `Address` library provides several wrappers for low-level calls (`functionCa
 |--------|-------|
 | **Contract** | [`0x0296...ffff`](https://bscscan.com/address/0x02962e4188902e05c4b1856e065551bcce10ffff) |
 | **Network** | BNB Chain |
-| **Price** | $0.01676 |
-| **24h Volume** | $197.4K |
-| **Liquidity** | $822.8K |
-| **Volume / Liquidity** | 0.2× |
+| **Price** | $0.01129 |
+| **24h Volume** | $7.6K |
+| **Liquidity** | $430.2K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 24d |
-| **Top-10 Holders** | 197.9% of supply |
-| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **Top-10 Holders** | 197.1% of supply |
+| **Buy / Sell Tax** | 3.0% / 3.0% |
 | **24h Transactions** | 1496 buys / 405 sells |
 
 ## Security Flags (5/5 passed)

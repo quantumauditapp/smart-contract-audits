@@ -3,13 +3,13 @@ token: CoW Protocol Token
 ticker: COW
 network: arbitrum
 risk_score: 54
-status: high
+status: medium
 date: 2026-08-16
 ---
 
 # CoW Protocol Token (COW) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 54/100 — 🟠 High Risk**
+> **Risk Score: 54/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cow-protocol-token-arb)
 
@@ -41,8 +41,8 @@ The audit of the StandardArbERC20 implementation contract, used by a ClonableBea
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 64.3% |
-| **Top-3 Unlocked** | ⚠️ 99.9% |
+| **Top-1 Unlocked Holder** | ⚠️ 57.3% |
+| **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
@@ -88,12 +88,12 @@ The `Cloneable` base contract includes a `safeSelfDestruct` function, which is p
 |--------|-------|
 | **Contract** | [`0xcb8b...7a04`](https://arbiscan.io/address/0xcb8b5cd20bdcaea9a010ac1f8d835824f5c87a04) |
 | **Network** | Arbitrum |
-| **Price** | $0.1239 |
-| **24h Volume** | $104.5K |
-| **Liquidity** | $66.0K |
-| **Volume / Liquidity** | 1.6× |
+| **Price** | $0.1293 |
+| **24h Volume** | $2.0K |
+| **Liquidity** | $78.1K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 67.6% of supply |
+| **Top-10 Holders** | 66.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1422 buys / 1571 sells |
 

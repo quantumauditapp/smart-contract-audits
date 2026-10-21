@@ -2,14 +2,14 @@
 token: Derive
 ticker: DRV
 network: base
-risk_score: 40
+risk_score: 41
 status: medium
 date: 2026-08-12
 ---
 
 # Derive (DRV) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/derive-base)
 
@@ -42,7 +42,7 @@ This audit covers the DeriveL2 token contract, deployed as an upgradeable ERC20 
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.3% |
+| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -82,12 +82,12 @@ The `_update` function includes an `unchecked` block for the subtraction `$._bal
 |--------|-------|
 | **Contract** | [`0x9d0e...d083`](https://basescan.org/address/0x9d0e8f5b25384c7310cb8c6ae32c8fbeb645d083) |
 | **Network** | Base |
-| **Price** | $0.1015 |
-| **24h Volume** | $49.7K |
-| **Liquidity** | $471.2K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.1558 |
+| **24h Volume** | $1.32M |
+| **Liquidity** | $690.7K |
+| **Volume / Liquidity** | 1.9× |
 | **Token Age** | 2mo |
-| **Top-10 Holders** | 58.0% of supply |
+| **Top-10 Holders** | 53.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 76 buys / 62 sells |
 

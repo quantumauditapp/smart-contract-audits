@@ -2,14 +2,14 @@
 token: Cysic Token
 ticker: CYS
 network: bsc
-risk_score: 68
+risk_score: 77
 status: high
 date: 2026-08-14
 ---
 
 # Cysic Token (CYS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 77/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cysic-token-bsc)
 
@@ -27,13 +27,13 @@ The CYS token contract is an ERC20 implementation with standard OpenZeppelin ext
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract leverages well-audited OpenZeppelin libraries, ensuring a solid foundation for ERC20 functionality and extensions like burning and pausing. The `_update` override correctly integrates… |
 | **Governance / Economics** | 1/10 | High | The economic model is highly centralized, with the `owner` having extensive control over the token's operational state and user access. The owner can pause all transfers, effectively halting the… |
-| **Upgrades** | 6/10 | Medium | The CYS contract is deployed directly and does not implement any upgradeability pattern (e.g., UUPS, Transparent proxies). This means the contract's logic is immutable once deployed. While this… |
+| **Upgrades** | 4/10 | Medium | The CYS contract is deployed directly and does not implement any upgradeability pattern (e.g., UUPS, Transparent proxies). This means the contract's logic is immutable once deployed. While this… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 72.2% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
@@ -87,22 +87,22 @@ The constructor allows the `bridge` address to be `address(0)`. If `bridge` is `
 |--------|-------|
 | **Contract** | [`0x0c69...07c7`](https://bscscan.com/address/0x0c69199c1562233640e0db5ce2c399a88eb507c7) |
 | **Network** | BNB Chain |
-| **Price** | $1.0072 |
-| **24h Volume** | $60.0K |
-| **Liquidity** | $21.1K |
-| **Volume / Liquidity** | 2.8× |
+| **Price** | $0.2601 |
+| **24h Volume** | $1 |
+| **Liquidity** | $7.8K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 20h |
-| **Top-10 Holders** | 88.5% of supply |
+| **Top-10 Holders** | 89.1% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 771 buys / 969 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -112,7 +112,7 @@ The constructor allows the `bridge` address to be `address(0)`. If `bridge` is `
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

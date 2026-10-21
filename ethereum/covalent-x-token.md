@@ -2,14 +2,14 @@
 token: Covalent X Token
 ticker: CXT
 network: ethereum
-risk_score: 79
-status: critical
+risk_score: 74
+status: high
 date: 2026-07-25
 ---
 
 # Covalent X Token (CXT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 79/100 — 🔴 Critical Risk**
+> **Risk Score: 74/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/covalent-x-token-eth)
 
@@ -28,15 +28,15 @@ For future iterations, evaluate the benefits of an upgradeable contract architec
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract demonstrates good technical architecture (7.1) by utilizing battle-tested OpenZeppelin libraries for ERC20 and AccessControl functionalities, enhancing code security (7.2). The minting… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4) is highly dependent on the security of the `EMISSION_ROLE` and `CAP_MANAGER_ROLE`, as these control token supply and emission limits. The governance model (7.5) is… |
+| **Governance / Economics** | 2/10 | High | The economic model (7.4) is highly dependent on the security of the `EMISSION_ROLE` and `CAP_MANAGER_ROLE`, as these control token supply and emission limits. The governance model (7.5) is… |
 | **Upgrades** | 4/10 | Medium | The CovalentXToken contract is not designed to be upgradeable (7.7). This means that any future changes, bug fixes, or feature additions would require a complete redeployment of the contract and a… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.8% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | ⚠️ 99.6% |
+| **Top-3 Unlocked** | ⚠️ 99.9% |
 
 ## Security Findings
 
@@ -89,12 +89,12 @@ The contract grants `type(uint256).max` allowance to the hardcoded Permit2 addre
 |--------|-------|
 | **Contract** | [`0x7abc...2c4d`](https://etherscan.io/address/0x7abc8a5768e6be61a6c693a6e4eacb5b60602c4d) |
 | **Network** | Ethereum |
-| **Price** | $0.003211 |
-| **24h Volume** | $4.1K |
-| **Liquidity** | $65.5K |
-| **Volume / Liquidity** | 0.1× |
+| **Price** | $0.001575 |
+| **24h Volume** | $2.3K |
+| **Liquidity** | $52.5K |
+| **Volume / Liquidity** | 0.0× |
 | **Token Age** | 2y |
-| **Top-10 Holders** | 58.3% of supply |
+| **Top-10 Holders** | 56.0% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 438 buys / 505 sells |
 
