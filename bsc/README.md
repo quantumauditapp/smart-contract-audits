@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**416 reports** · Updated daily · [← All Networks](../README.md)
+**425 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,15 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [AID](./aid.md) | AID | 🟢 32/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/aid-bsc) |
+| [蝴蝶首发王炸机制](./token-8ba623.md) | 幸运蝴蝶 | 🟢 17/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/token-8ba623-bsc) |
+| [Badge](./badge.md) | BADGE | 🟡 36/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/badge-bsc) |
+| [Binance AI](./binance-ai-bsc-f47f.md) | BIBI | 🟢 33/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/binance-ai-bsc-f47f) |
+| [Axis Robotics](./axis-robotics.md) | AXIS | 🟠 77/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/axis-robotics-bsc) |
+| [币安支付](./binance-pay.md) | BINANCE PAY | 🟢 17/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/binance-pay-bsc) |
+| [Forest](./forest.md) | FOREST | 🟡 54/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/forest-bsc) |
+| [Power of Decentralized Future](./power-of-decentralized-future.md) |  POFD | 🟢 24/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/power-of-decentralized-future-bsc) |
+| [笑傲江湖](./token-be65f3.md) | 笑傲江湖 | 🟢 15/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/token-be65f3-bsc) |
 | [The Final Form COW](./the-final-form-cow.md) | HEYI | 🟡 57/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/the-final-form-cow-bsc) |
 | [重生之我在币安广场赚100个亿](./100.md) | 重生之我在币安广场赚100个亿 | 🟡 45/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/100-bsc) |
 | [Agentic Inu](./agentic-inu-bsc-89db.md) | .AI | 🟡 50/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/agentic-inu-bsc-89db) |

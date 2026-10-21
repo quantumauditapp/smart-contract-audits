@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**398 reports** · Updated daily · [← All Networks](../README.md)
+**402 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [test](./test.md) | TEST | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/test-eth) |
+| [Nookleus](./nookleus.md) | NOOK | 🟠 69/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/nookleus-eth) |
+| [SpaceXSuperIntelligence](./spacexsuperintelligence.md) | SXSI | 🟡 37/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/spacexsuperintelligence-eth) |
+| [Edge](./edge.md) | EDGE | 🟡 48/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/edge-eth) |
 | [Deference](./deference.md) | DEFERENCE | 🟠 65/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/deference-eth) |
 | [Pepina](./pepina.md) | PEPINA | 🟠 84/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/pepina-eth) |
 | [e0e.fun](./e0efun.md) | E0E | 🟡 51/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/e0efun-eth) |

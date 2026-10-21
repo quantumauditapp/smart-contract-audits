@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**295 reports** · Updated daily · [← All Networks](../README.md)
+**299 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [American Oil Dividend Fund](./american-oil-dividend-fund-base-66ee.md) | AODF | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-66ee) |
+| [World Strategic Oil Supply](./world-strategic-oil-supply.md) | WSOS | 🟡 62/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/world-strategic-oil-supply-base) |
+| [World Water Reserve](./world-water-reserve.md) | WWR | 🟡 60/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/world-water-reserve-base) |
+| [United States Dividend Fund🔥](./united-states-dividend-fund.md) | USDF | 🟠 67/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base) |
 | [American Trust Fund System](./american-trust-fund-system.md) | ATFS | 🟠 66/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/american-trust-fund-system-base) |
 | [USOE](./usoe.md) | USOE | 🟠 66/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/usoe-base) |
 | [XRC](./xrc.md) | XRC | 🟠 68/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/xrc-base) |

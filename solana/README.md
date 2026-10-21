@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**956 reports** · Updated daily · [← All Networks](../README.md)
+**976 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,26 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Auralized](./auralized.md) | AURALIZED | 🟢 13/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/auralized-sol) |
+| [Evrynth](./evrynth.md) | EVYN | 🟢 28/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/evrynth-sol) |
+| [CPU Coin](./cpu-coin.md) | CPU | 🟢 21/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/cpu-coin-sol) |
+| [NormieCoin](./normiecoin.md) | NORMIE | 🟢 22/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/normiecoin-sol) |
+| [Trencher](./trencher.md) | TRENCHER | 🟢 22/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/trencher-sol) |
+| [Official Kimchi](./official-kimchi.md) | KIMCHI | 🟢 13/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/official-kimchi-sol) |
+| [Charizard](./charizard.md) | CHARIZARD | 🟢 0/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/charizard-sol) |
+| [cat in a dogs world](./cat-in-a-dogs-world.md) | MEW | 🟢 28/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/cat-in-a-dogs-world-sol) |
+| [MUSK Index](./musk-index.md) | MUSK4 | 🟡 60/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/musk-index-sol) |
+| [Sasona](./sasona.md) | SASONA | 🟢 14/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/sasona-sol) |
+| [Memento](./memento.md) | MEMENTO | 🟡 41/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/memento-sol) |
+| [Trump Index](./trump-index.md) | TRUMP3 | 🟠 69/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/trump-index-sol) |
+| [Energy Coin](./energy-coin-sol-57f0.md) | ENERGY | 🟡 56/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/energy-coin-sol-57f0) |
+| [Energy Coin](./energy-coin.md) | ENERGY | 🟢 23/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/energy-coin-sol) |
+| [Aura Final Boss](./aura-final-boss-sol-fe22.md) | KIMCHI | 🟢 14/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/aura-final-boss-sol-fe22) |
+| [Pokecity Coin](./pokecity-coin.md) | POKECITY | 🟢 0/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/pokecity-coin-sol) |
+| [Kimchi Boss](./kimchi-boss.md) | KIMCHIBOSS | 🟢 13/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/kimchi-boss-sol) |
+| [Kimchi Coin](./kimchi-coin.md) | KIMCHI | 🟢 13/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/kimchi-coin-sol) |
+| [XTO](./xto-sol-357d.md) | XTO | 🟢 1/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/xto-sol-357d) |
+| [United States Dividend Fund](./united-states-dividend-fund-sol-a41d.md) | USDF | 🟢 0/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-sol-a41d) |
 | [Space Coin](./space-coin.md) | SPACE | 🟢 14/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/space-coin-sol) |
 | [Mystic Cat](./mystic-cat.md) | MYSTIC | 🟢 13/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/mystic-cat-sol) |
 | [The Official Memecoin](./the-official-memecoin.md) | MEMECOIN | 🟢 23/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/the-official-memecoin-sol) |
