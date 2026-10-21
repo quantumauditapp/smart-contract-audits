@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**432 reports** · Updated daily · [← All Networks](../README.md)
+**440 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,13 +10,21 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [SpaceX Inu](./spacex-inu.md) | SI | 🟢 19/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/spacex-inu-bsc) |
+| [DOTAI](./dotai.md) | DOTAI | 🟢 20/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/dotai-bsc) |
+| [上证综合指数6900](./6900.md) | SCI6900 | 🟡 37/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/6900-bsc) |
+| [Ai Coin](./ai-coin.md) | AIC | 🟢 0/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/ai-coin-bsc) |
+| [Bina](./bina.md) | BINA | 🟢 23/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/bina-bsc) |
+| [Niannian_GiggleAcademy](./nianniangiggleacademy.md) | 年年 | 🟢 10/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/nianniangiggleacademy-bsc) |
+| [KraneShares STAR Market 50 ETF](./kraneshares-star-market-50-etf.md) | KSTRB | 🟠 84/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/kraneshares-star-market-50-etf-bsc) |
+| [SI](./si.md) | SI | 🟢 15/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/si-bsc) |
 | [Axis Robotics](./axis-robotics-bsc-58cc.md) | AXIS | 🟠 75/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/axis-robotics-bsc-58cc) |
 | [LOL World Championship](./lol-world-championship.md) | 英雄联盟 | 🟢 0/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/lol-world-championship-bsc) |
 | [Trump](./trump-bsc-0008.md) | TRUMP | 🟠 82/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/trump-bsc-0008) |
 | [智能时代](./token-25b152.md) | 智能时代 | 🟢 27/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/token-25b152-bsc) |
 | [Zcash Token](./zcash-token-bsc-708e.md) | ZEC | 🔴 99/100 Critical Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/zcash-token-bsc-708e) |
-| [BAI](./bai.md) | BAI | 🟢 33/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/bai-bsc) |
-| [GEN](./gen.md) | GEN | 🟠 66/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/gen-bsc) |
+| [BAI](./bai.md) | BAI | 🟢 26/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/bai-bsc) |
+| [GEN](./gen.md) | GEN | 🟡 62/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/gen-bsc) |
 | [AID](./aid.md) | AID | 🟢 32/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/aid-bsc) |
 | [蝴蝶首发王炸机制](./token-8ba623.md) | 幸运蝴蝶 | 🟢 17/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/token-8ba623-bsc) |
 | [Badge](./badge.md) | BADGE | 🟡 36/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/badge-bsc) |
@@ -37,28 +45,28 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [The House Wick](./the-house-wick.md) | WICK | 🟠 84/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/the-house-wick-bsc) |
 | [BURN](./burn.md) | BURN | 🟡 35/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/burn-bsc) |
 | [Mule](./mule.md) | MULE | 🟡 58/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/mule-bsc) |
-| [Agent ID](./agent-id.md) | .AI | 🟢 30/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/agent-id-bsc) |
+| [Agent ID](./agent-id.md) | .AI | 🟢 24/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/agent-id-bsc) |
 | [Cougarcoin](./cougarcoin.md) | COUGAR | 🟡 53/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/cougarcoin-bsc) |
 | [TeslaSI](./teslasi.md) | テスラSI | 🟢 20/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/teslasi-bsc) |
-| [Metaplex](./metaplex.md) | MPLX | 🟠 65/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/metaplex-bsc) |
+| [Metaplex](./metaplex.md) | MPLX | 🟡 63/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/metaplex-bsc) |
 | [Trump](./trump-bsc-2b69.md) | TRUMP | 🟠 81/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/trump-bsc-2b69) |
 | [翱翔天际的巨鸟](./token-713f6a.md) | 长鹏 | 🟢 25/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/token-713f6a-bsc) |
 | [STOCKOPOLIS](./stockopolis.md) | 股城 | 🟢 23/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/stockopolis-bsc) |
 | [Trump](./trump.md) | TRUMP | 🟠 83/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/trump-bsc) |
 | [超级社区](./token-7d0296.md) | 超级社区 | 🟢 4/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/token-7d0296-bsc) |
 | [MGO](./mgo.md) | MGO | 🟡 42/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/mgo-bsc) |
-| [SIGH](./sigh.md) | SIGH | 🟡 35/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/sigh-bsc) |
+| [SIGH](./sigh.md) | SIGH | 🟢 28/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/sigh-bsc) |
 | [TapeFour](./tapefour.md) | TAPEFOUR | 🟡 51/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/tapefour-bsc) |
 | [フリーダム・オブ・マネー](./token-5f095d.md) | フリーダム・オブ・マネー | 🟢 1/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/token-5f095d-bsc) |
 | [iShares MSCI South Korea ETF](./ishares-msci-south-korea-etf.md) | EWYB | 🟠 83/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/ishares-msci-south-korea-etf-bsc) |
 | [Catecoin](./catecoin.md) | CATE | 🟠 74/100 High Risk | 2026-10-19 | [↗](https://quantumaudit.app/token/catecoin-bsc) |
 | [saucecoin](./saucecoin.md) | SAUCE | 🟢 12/100 Low Risk | 2026-10-19 | [↗](https://quantumaudit.app/token/saucecoin-bsc) |
 | [Black Shiba](./black-shiba.md) | MANYU | 🟡 45/100 Medium Risk | 2026-10-18 | [↗](https://quantumaudit.app/token/black-shiba-bsc) |
-| [DE NEO AGENT](./de-neo-agent.md) | DNA | 🟢 26/100 Low Risk | 2026-10-18 | [↗](https://quantumaudit.app/token/de-neo-agent-bsc) |
+| [DE NEO AGENT](./de-neo-agent.md) | DNA | 🟢 20/100 Low Risk | 2026-10-18 | [↗](https://quantumaudit.app/token/de-neo-agent-bsc) |
 | [DAWG](./dawg.md) | DAWG | 🟢 0/100 Low Risk | 2026-10-17 | [↗](https://quantumaudit.app/token/dawg-bsc) |
-| [Binance AI](./binance-ai.md) | BIBI | 🟢 15/100 Low Risk | 2026-10-16 | [↗](https://quantumaudit.app/token/binance-ai-bsc) |
+| [Binance AI](./binance-ai.md) | BIBI | 🟢 6/100 Low Risk | 2026-10-16 | [↗](https://quantumaudit.app/token/binance-ai-bsc) |
 | [羊2.0](./20.md) | 羊2.0 | 🟢 0/100 Low Risk | 2026-10-16 | [↗](https://quantumaudit.app/token/20-bsc) |
-| [NEXST](./nexst.md) | NXT | 🟠 66/100 High Risk | 2026-10-16 | [↗](https://quantumaudit.app/token/nexst-bsc) |
+| [NEXST](./nexst.md) | NXT | 🟡 62/100 Medium Risk | 2026-10-16 | [↗](https://quantumaudit.app/token/nexst-bsc) |
 | [PUFFER](./puffer.md) | PUFFER | 🟢 34/100 Low Risk | 2026-10-16 | [↗](https://quantumaudit.app/token/puffer-bsc) |
 | [Velas](./velas.md) | VLX | 🟠 77/100 High Risk | 2026-10-15 | [↗](https://quantumaudit.app/token/velas-bsc) |
 | [FOO](./foo.md) | FOO | 🟠 66/100 High Risk | 2026-10-15 | [↗](https://quantumaudit.app/token/foo-bsc) |
@@ -66,11 +74,11 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [Matchain](./matchain.md) | MAT | 🟠 68/100 High Risk | 2026-10-15 | [↗](https://quantumaudit.app/token/matchain-bsc) |
 | [Alibaba](./alibaba.md) | BABAB | 🟠 81/100 High Risk | 2026-10-15 | [↗](https://quantumaudit.app/token/alibaba-bsc) |
 | [ORBOFI](./orbofi.md) | OBI | 🟠 65/100 High Risk | 2026-10-14 | [↗](https://quantumaudit.app/token/orbofi-bsc) |
-| [ShareX Token](./sharex-token.md) | SHARE | 🟡 36/100 Medium Risk | 2026-10-13 | [↗](https://quantumaudit.app/token/sharex-token-bsc) |
+| [ShareX Token](./sharex-token.md) | SHARE | 🟢 30/100 Low Risk | 2026-10-13 | [↗](https://quantumaudit.app/token/sharex-token-bsc) |
 | [GriffinAI](./griffinai.md) | GAIN | 🟡 61/100 Medium Risk | 2026-10-13 | [↗](https://quantumaudit.app/token/griffinai-bsc) |
 | [Reservoir](./reservoir.md) | DAM | 🟠 68/100 High Risk | 2026-10-12 | [↗](https://quantumaudit.app/token/reservoir-bsc) |
 | [YAODIE](./yaodie.md) | 妖蝶 | 🟢 0/100 Low Risk | 2026-10-12 | [↗](https://quantumaudit.app/token/yaodie-bsc) |
-| [YIYI](./yiyi.md) | 一一 | 🟡 45/100 Medium Risk | 2026-10-12 | [↗](https://quantumaudit.app/token/yiyi-bsc) |
+| [YIYI](./yiyi.md) | 一一 | 🟡 39/100 Medium Risk | 2026-10-12 | [↗](https://quantumaudit.app/token/yiyi-bsc) |
 | [Injective Protocol](./injective-protocol.md) | INJ | 🟡 59/100 Medium Risk | 2026-10-11 | [↗](https://quantumaudit.app/token/injective-protocol-bsc) |
 | [SPA](./spa.md) | SPA | 🟠 77/100 High Risk | 2026-10-11 | [↗](https://quantumaudit.app/token/spa-bsc) |
 | [PLAYZAP](./playzap.md) | PZP | 🟡 50/100 Medium Risk | 2026-10-11 | [↗](https://quantumaudit.app/token/playzap-bsc) |
@@ -97,11 +105,11 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [Ye Hi](./ye-hi.md) | YEHI | 🟢 26/100 Low Risk | 2026-10-08 | [↗](https://quantumaudit.app/token/ye-hi-bsc) |
 | [Giggle Hero](./giggle-hero.md) | GIGGLEHERO | 🟢 28/100 Low Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/giggle-hero-bsc) |
 | [GREEN MORNING](./green-morning.md) | GM | 🟢 9/100 Low Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/green-morning-bsc) |
-| [KGST](./kgst.md) | KGST | 🟠 71/100 High Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/kgst-bsc) |
+| [KGST](./kgst.md) | KGST | 🟠 69/100 High Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/kgst-bsc) |
 | [WFI](./wfi.md) | WFI | 🟡 43/100 Medium Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/wfi-bsc) |
 | [bInference](./binference.md) | BINF | 🟢 12/100 Low Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/binference-bsc) |
 | [Mame Inu](./mame-inu-bsc-f1e6.md) | MAME | 🟢 7/100 Low Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/mame-inu-bsc-f1e6) |
-| [RUNES](./runes.md) | RUNES | 🟡 50/100 Medium Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/runes-bsc) |
+| [RUNES](./runes.md) | RUNES | 🟡 44/100 Medium Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/runes-bsc) |
 | [pumpBTC Governance token](./pumpbtc-governance-token.md) | PUMP | 🟠 67/100 High Risk | 2026-10-05 | [↗](https://quantumaudit.app/token/pumpbtc-governance-token-bsc) |
 | [Beam](./beam.md) | BEAM | 🟡 55/100 Medium Risk | 2026-10-05 | [↗](https://quantumaudit.app/token/beam-bsc) |
 | [Cardano Token](./cardano-token.md) | ADA | 🟢 9/100 Low Risk | 2026-10-05 | [↗](https://quantumaudit.app/token/cardano-token-bsc) |
@@ -111,7 +119,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [Concrete Token](./concrete-token.md) | CT | 🟡 58/100 Medium Risk | 2026-10-03 | [↗](https://quantumaudit.app/token/concrete-token-bsc) |
 | [Disney (Ondo Tokenized)](./disney-ondo-tokenized.md) | DISON | 🟠 76/100 High Risk | 2026-10-02 | [↗](https://quantumaudit.app/token/disney-ondo-tokenized-bsc) |
 | [WangChai](./wangchai.md) | 旺柴 | 🟢 1/100 Low Risk | 2026-10-02 | [↗](https://quantumaudit.app/token/wangchai-bsc) |
-| [1000X](./1000x.md) | 1000X | 🟢 20/100 Low Risk | 2026-10-02 | [↗](https://quantumaudit.app/token/1000x-bsc) |
+| [1000X](./1000x.md) | 1000X | 🟢 10/100 Low Risk | 2026-10-02 | [↗](https://quantumaudit.app/token/1000x-bsc) |
 | [Wired fees to socials](./wired-fees-to-socials.md) | WIRED | 🟢 0/100 Low Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/wired-fees-to-socials-bsc) |
 | [Wrapped TON Coin](./wrapped-ton-coin.md) | TONCOIN | 🟢 21/100 Low Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/wrapped-ton-coin-bsc) |
 | [CESSToken](./cesstoken.md) | CESS | 🟡 47/100 Medium Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/cesstoken-bsc) |
@@ -125,7 +133,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [Irys](./irys.md) | IRYS | 🟡 62/100 Medium Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/irys-bsc) |
 | [NEAR Protocol](./near-protocol.md) | NEAR | 🟠 82/100 High Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/near-protocol-bsc) |
 | [Xeleb AI](./xeleb-ai.md) | XCX | 🟢 33/100 Low Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/xeleb-ai-bsc) |
-| [中国人能飞火箭](./token-edf71e.md) | 中国人能飞 | 🟡 38/100 Medium Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/token-edf71e-bsc) |
+| [中国人能飞火箭](./token-edf71e.md) | 中国人能飞 | 🟡 36/100 Medium Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/token-edf71e-bsc) |
 | [INFINIT](./infinit.md) | IN | 🟡 55/100 Medium Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/infinit-bsc) |
 | [Huma Finance](./huma-finance.md) | HUMA | 🟡 59/100 Medium Risk | 2026-09-26 | [↗](https://quantumaudit.app/token/huma-finance-bsc) |
 | [Aleo](./aleo.md) | ALEO | 🟠 78/100 High Risk | 2026-09-26 | [↗](https://quantumaudit.app/token/aleo-bsc) |
@@ -163,7 +171,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [Cheems](./cheems.md) | CHEEMS | 🟢 0/100 Low Risk | 2026-09-20 | [↗](https://quantumaudit.app/token/cheems-bsc) |
 | [Altura](./altura.md) | ALU | 🟡 37/100 Medium Risk | 2026-09-20 | [↗](https://quantumaudit.app/token/altura-bsc) |
 | [永生果蝇](./token-ca5d3a.md) | 永生果蝇 | 🟡 53/100 Medium Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/token-ca5d3a-bsc) |
-| [World Liberty Financial USD](./world-liberty-financial-usd.md) | USD1 | 🟠 77/100 High Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/world-liberty-financial-usd-bsc) |
+| [World Liberty Financial USD](./world-liberty-financial-usd.md) | USD1 | 🟠 75/100 High Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/world-liberty-financial-usd-bsc) |
 | [Wrapped Trust Bitcoin](./wrapped-trust-bitcoin.md) | WTBC | 🔴 100/100 Critical Risk | 2026-09-17 | [↗](https://quantumaudit.app/token/wrapped-trust-bitcoin-bsc) |
 | [CEA Industries](./cea-industries-bsc-4b12.md) | BNCB | 🔴 100/100 Critical Risk | 2026-09-17 | [↗](https://quantumaudit.app/token/cea-industries-bsc-4b12) |
 | [VortexPad](./vortexpad.md) | VPAD | 🟠 82/100 High Risk | 2026-09-17 | [↗](https://quantumaudit.app/token/vortexpad-bsc) |
@@ -217,7 +225,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [Bicat](./bicat.md) | BICAT | 🟡 55/100 Medium Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/bicat-bsc) |
 | [BEM](./bem.md) | BEM | 🟢 18/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/bem-bsc) |
 | [Bedrock](./bedrock.md) | BR | 🟠 77/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/bedrock-bsc) |
-| [Beat Token](./beat-token.md) | BEAT | 🟢 34/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/beat-token-bsc) |
+| [Beat Token](./beat-token.md) | BEAT | 🟢 32/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/beat-token-bsc) |
 | [Based Token](./based-token.md) | BASED | 🟠 78/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/based-token-bsc) |
 | [Banana For Scale](./banana-for-scale.md) | BANANAS31 | 🟢 7/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/banana-for-scale-bsc) |
 | [BabyShark](./babyshark.md) | BABYSHARK | 🟡 43/100 Medium Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/babyshark-bsc) |
@@ -228,13 +236,13 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [B](./b.md) | B | 🟢 0/100 Low Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/b-bsc) |
 | [ast.fun](./astfun.md) | AST | 🟢 29/100 Low Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/astfun-bsc) |
 | [Asteroid Shiba](./asteroid-shiba.md) | ASTEROID | 🟠 65/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/asteroid-shiba-bsc) |
-| [Aster](./aster.md) | ASTER | 🟢 30/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/aster-bsc) |
+| [Aster](./aster.md) | ASTER | 🟢 28/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/aster-bsc) |
 | [Ark Of Panda](./ark-of-panda.md) | AOP | 🟡 40/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/ark-of-panda-bsc) |
 | [ARK](./ark.md) | ARK | 🟢 33/100 Low Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/ark-bsc) |
 | [ARIA.AI](./ariaai.md) | ARIA | 🟢 12/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/ariaai-bsc) |
 | [Arcium](./arcium.md) | ARX | 🟠 84/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/arcium-bsc) |
 | [ARAI Token](./arai-token.md) | AA | 🟡 44/100 Medium Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/arai-token-bsc) |
-| [APRO oracle Token](./apro-oracle-token.md) | AT | 🟡 40/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/apro-oracle-token-bsc) |
+| [APRO oracle Token](./apro-oracle-token.md) | AT | 🟡 38/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/apro-oracle-token-bsc) |
 | [Apple](./apple.md) | AAPLB | 🔴 100/100 Critical Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/apple-bsc) |
 | [Anoma](./anoma.md) | XAN | 🟠 71/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/anoma-bsc) |
 | [ANDY](./andy.md) | ANDY | 🟢 21/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/andy-bsc) |
@@ -252,7 +260,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [吉祥马](./吉祥马.md) | 吉祥马 | 🟡 44/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/吉祥马-bsc) |
 | [Zypher Token](./zypher-token.md) | POP | 🟠 76/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/zypher-token-bsc) |
 | [ZygoSwap](./zygoswap.md) | ZSWAP | 🟢 21/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/zygoswap-bsc) |
-| [Zest](./zest.md) | ZEST | 🟡 42/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/zest-bsc) |
+| [Zest](./zest.md) | ZEST | 🟡 40/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/zest-bsc) |
 | [Yooldo Games](./yooldo-games.md) | ESPORTS | 🟡 52/100 Medium Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/yooldo-games-bsc) |
 | [XRP Token](./xrp-token.md) | XRP | 🟡 62/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/xrp-token-bsc) |
 | [XPULS](./xpuls.md) | XPULS | 🟠 66/100 High Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/xpuls-bsc) |
@@ -271,7 +279,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [Unibase](./unibase.md) | UB | 🟡 57/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/unibase-bsc) |
 | [Tutorial](./tutorial.md) | TUT | 🟢 32/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/tutorial-bsc) |
 | [Trust Wallet](./trust-wallet.md) | TWT | 🟡 55/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/trust-wallet-bsc) |
-| [TrenchesStarterPack](./trenchesstarterpack.md) | 战壕入门包 | 🟡 43/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/trenchesstarterpack-bsc) |
+| [TrenchesStarterPack](./trenchesstarterpack.md) | 战壕入门包 | 🟡 41/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/trenchesstarterpack-bsc) |
 | [TRADOOR](./tradoor.md) | TRADOOR | 🟢 34/100 Low Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/tradoor-bsc) |
 | [TokenFi](./tokenfi.md) | TOKEN | 🟢 28/100 Low Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/tokenfi-bsc) |
 | [孙小圣](./token-e50217.md) | 孙小圣 | 🟡 60/100 Medium Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/token-e50217-bsc) |
@@ -288,7 +296,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [Tether Gold](./tether-gold.md) | XAUT | 🔴 87/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/tether-gold-bsc) |
 | [Test](./test.md) | TST | 🟢 25/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/test-bsc) |
 | [Tesla, Inc. ](./tesla-inc.md) | TSLAB | 🔴 96/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/tesla-inc-bsc) |
-| [TermMax](./termmax.md) | TMX | 🟡 41/100 Medium Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/termmax-bsc) |
+| [TermMax](./termmax.md) | TMX | 🟡 39/100 Medium Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/termmax-bsc) |
 | [TCryptochicks](./tcryptochicks.md) | TCC | 🟢 0/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/tcryptochicks-bsc) |
 | [TartSwap](./tartswap.md) | TART | 🟠 76/100 High Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/tartswap-bsc) |
 | [TaleX](./talex.md) | X | 🟢 30/100 Low Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/talex-bsc) |
@@ -309,7 +317,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [SOCK](./sock.md) | SOCK | 🟠 70/100 High Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/sock-bsc) |
 | [SnapCoin](./snapcoin.md) | SNAPCOIN | 🔴 100/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/snapcoin-bsc) |
 | [Smart Solve Token](./smart-solve-token.md) | SST | 🟢 5/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/smart-solve-token-bsc) |
-| [Slap Cat](./slap-cat.md) | SLAP | 🟡 59/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/slap-cat-bsc) |
+| [Slap Cat](./slap-cat.md) | SLAP | 🟡 57/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/slap-cat-bsc) |
 | [SKYAI](./skyai.md) | SKYAI | 🟢 0/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/skyai-bsc) |
 | [SK Hynix](./sk-hynix.md) | SKHYB | 🔴 100/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/sk-hynix-bsc) |
 | [SIXSEVEN](./sixseven.md) | 67 | 🟡 52/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/sixseven-bsc) |
@@ -330,7 +338,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [PIZZA](./pizza.md) | PIZZA | 🟡 51/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/pizza-bsc) |
 | [Pieverse Token](./pieverse-token.md) | PIEVERSE | 🔴 100/100 Critical Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/pieverse-token-bsc) |
 | [PeaqOFT](./peaqoft.md) | PEAQ | 🟢 30/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/peaqoft-bsc) |
-| [PancakeSwap Token](./pancakeswap-token.md) | CAKE | 🟠 72/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/pancakeswap-token-bsc) |
+| [PancakeSwap Token](./pancakeswap-token.md) | CAKE | 🟠 70/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/pancakeswap-token-bsc) |
 | [Palu](./palu.md) | PALU | 🟢 2/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/palu-bsc) |
 | [Orochi Network Token](./orochi-network-token.md) | ON | 🟡 41/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/orochi-network-token-bsc) |
 | [Orizon](./orizon.md) | ORI | 🟠 66/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/orizon-bsc) |
@@ -398,7 +406,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [ETHGas](./ethgas.md) | GWEI | 🔴 94/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/ethgas-bsc) |
 | [Ethereum Token](./ethereum-token.md) | ETH | 🟡 49/100 Medium Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/ethereum-token-bsc) |
 | [ElonCoin](./eloncoin-bsc-55ce.md) | ELONCOIN | 🟢 28/100 Low Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/eloncoin-bsc-55ce) |
-| [ElonCoin](./eloncoin.md) | ELONCOIN | 🟡 64/100 Medium Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/eloncoin-bsc) |
+| [ElonCoin](./eloncoin.md) | ELONCOIN | 🟡 62/100 Medium Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/eloncoin-bsc) |
 | [elizaOS](./elizaos.md) | ELIZAOS | 🟠 73/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/elizaos-bsc) |
 | [DOYR](./doyr.md) | DOYR | 🟢 0/100 Low Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/doyr-bsc) |
 | [DGrid AI](./dgrid-ai.md) | DGAI | 🟡 51/100 Medium Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/dgrid-ai-bsc) |
@@ -420,7 +428,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [CoinMarketCap 20 Index DTF](./coinmarketcap-20-index-dtf.md) | CMC20 | 🟠 71/100 High Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/coinmarketcap-20-index-dtf-bsc) |
 | [ClipX](./clipx.md) | CLIPX | 🟢 0/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/clipx-bsc) |
 | [Cheese Head](./cheese-head.md) | CHEESE | 🟢 31/100 Low Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/cheese-head-bsc) |
-| [CharacterX](./characterx.md) | CAI | 🟡 39/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/characterx-bsc) |
+| [CharacterX](./characterx.md) | CAI | 🟡 37/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/characterx-bsc) |
 | [ChainOpera AI](./chainopera-ai.md) | COAI | 🟡 52/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/chainopera-ai-bsc) |
 | [ChainGPT](./chaingpt.md) | CGPT | 🟢 23/100 Low Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/chaingpt-bsc) |
 | [Chainbase Token](./chainbase-token.md) | C | 🟡 43/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/chainbase-token-bsc) |

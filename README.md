@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-2229-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-2290-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,42 +12,42 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
-| [Shiitake](./solana/shiitake.md) | SHIIT | Solana | 🟢 18/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/shiitake-sol) |
-| [dotcom](./solana/dotcom.md) | DOT | Solana | 🟢 14/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/dotcom-sol) |
-| [American Oil Dividend Fund](./base/american-oil-dividend-fund-base-b8c3.md) | AODF | Base | 🟡 56/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-b8c3) |
-| [World Oil Supply Exchange](./base/world-oil-supply-exchange.md) | WOSE | Base | 🟡 58/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/world-oil-supply-exchange-base) |
-| [United States Dividend Program🔥](./base/united-states-dividend-program-base-026a.md) | USDP | Base | 🟡 55/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/united-states-dividend-program-base-026a) |
-| [Axis Robotics](./bsc/axis-robotics-bsc-58cc.md) | AXIS | BNB Chain | 🟠 75/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/axis-robotics-bsc-58cc) |
-| [requests](./solana/requests.md) | REQUESTS | Solana | 🟢 21/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/requests-sol) |
-| [Kimchi Wif Hat](./solana/kimchi-wif-hat.md) | WIFCHI | Solana | 🟢 21/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/kimchi-wif-hat-sol) |
-| [Aura Final Boss](./solana/aura-final-boss-sol-b7f1.md) | KIMCHI | Solana | 🟢 13/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/aura-final-boss-sol-b7f1) |
-| [XTO](./solana/xto-sol-3b8d.md) | XTO | Solana | 🟢 0/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/xto-sol-3b8d) |
-| [TRENCHPAD | iOS APP](./solana/trenchpad-ios-app.md) | TRENCHPAD | Solana | 🟢 17/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/trenchpad-ios-app-sol) |
-| [American Oil Dividend Fund](./base/american-oil-dividend-fund-base-1faa.md) | AODF | Base | 🟡 60/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-1faa) |
-| [LOL World Championship](./bsc/lol-world-championship.md) | 英雄联盟 | BNB Chain | 🟢 0/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/lol-world-championship-bsc) |
-| [Meme](./solana/meme-sol-b6ac.md) | MEME | Solana | 🟡 36/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/meme-sol-b6ac) |
-| [anza.xyz](./solana/anzaxyz.md) | ANZA | Solana | 🟢 19/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/anzaxyz-sol) |
-| [MEME](./solana/meme.md) | MEME | Solana | 🟢 20/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/meme-sol) |
-| [American Overwatch Protocol](./base/american-overwatch-protocol-base-1282.md) | AOP | Base | 🟡 60/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-base-1282) |
-| [American Trust Fund System](./base/american-trust-fund-system-base-7bee.md) | ATFS | Base | 🟡 62/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/american-trust-fund-system-base-7bee) |
-| [GOIF](./base/goif.md) | GOIF | Base | 🟡 62/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/goif-base) |
-| [United States Dividend  Fund](./base/united-states-dividend-fund-base-1560.md) | USDF | Base | 🟡 61/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base-1560) |
-| [United States Dividend  Fund](./base/united-states-dividend-fund-base-7c50.md) | USDF | Base | 🟡 62/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base-7c50) |
-| [Vanguard Strategic Oil Fund](./base/vanguard-strategic-oil-fund.md) | VSOF | Base | 🟡 60/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/vanguard-strategic-oil-fund-base) |
-| [Little Buddies](./base/little-buddies.md) | BUDDIES | Base | 🟠 69/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/little-buddies-base) |
-| [Trump](./bsc/trump-bsc-0008.md) | TRUMP | BNB Chain | 🟠 82/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/trump-bsc-0008) |
-| [智能时代](./bsc/token-25b152.md) | 智能时代 | BNB Chain | 🟢 27/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/token-25b152-bsc) |
-| [Zcash Token](./bsc/zcash-token-bsc-708e.md) | ZEC | BNB Chain | 🔴 99/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/zcash-token-bsc-708e) |
-| [Monero](./solana/monero.md) | XMR | Solana | 🔴 99/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/monero-sol) |
-| [ORANGIE](./solana/orangie.md) | ORANGIE | Solana | 🟢 24/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/orangie-sol) |
-| [Gold](./solana/gold-sol-3a0d.md) | GOLD | Solana | 🟢 21/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/gold-sol-3a0d) |
-| [BAI](./bsc/bai.md) | BAI | BNB Chain | 🟢 33/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/bai-bsc) |
+| [Pangea Cat](./ethereum/pangea-cat.md) | PCAT | Ethereum | 🟡 58/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/pangea-cat-eth) |
+| [Pangea](./ethereum/pangea-eth-d397.md) | PANGEA | Ethereum | 🟢 16/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/pangea-eth-d397) |
+| [Pangea](./base/pangea.md) | PANGEA | Base | 🟠 65/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/pangea-base) |
+| [DOTF](./base/dotf.md) | DOTF | Base | 🟡 58/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/dotf-base) |
+| [SOLANA MINERS](./solana/solana-miners.md) | MINERS | Solana | 🟢 29/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/solana-miners-sol) |
+| [SpaceX Inu](./bsc/spacex-inu.md) | SI | BNB Chain | 🟢 19/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/spacex-inu-bsc) |
+| [Balances](./ethereum/balances.md) | BALANCE | Ethereum | 🟡 60/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/balances-eth) |
+| [Un1corn](./ethereum/un1corn.md) | UN1 | Ethereum | 🟠 84/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/un1corn-eth) |
+| [Tectum Emission Token](./ethereum/tectum-emission-token.md) | TET | Ethereum | 🟠 70/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/tectum-emission-token-eth) |
+| [RLUSD](./ethereum/rlusd.md) | RLUSD | Ethereum | 🟢 11/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/rlusd-eth) |
+| [Yellow](./ethereum/yellow.md) | YELLOW | Ethereum | 🟢 20/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/yellow-eth) |
+| [Candy Trader Companion](./solana/candy-trader-companion.md) | CANDY | Solana | 🟢 13/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/candy-trader-companion-sol) |
+| [Baby Kimchi](./solana/baby-kimchi.md) | BABYKIMCHI | Solana | 🟢 16/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/baby-kimchi-sol) |
+| [Trench Gang](./solana/trench-gang.md) | TRENCHERS | Solana | 🟢 15/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/trench-gang-sol) |
+| [MoonMe](./solana/moonme.md) | MOONME | Solana | 🟢 20/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/moonme-sol) |
+| [Pangea](./ethereum/pangea-eth-3f52.md) | PANGEA | Ethereum | 🟠 73/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/pangea-eth-3f52) |
+| [GRVT](./ethereum/grvt.md) | GRVT | Ethereum | 🟢 21/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/grvt-eth) |
+| [USDP](./base/usdp-base-879c.md) | USDP | Base | 🟡 55/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/usdp-base-879c) |
+| [American Oil Dividend Fund](./base/american-oil-dividend-fund-base-7c0e.md) | AODF | Base | 🟡 59/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-7c0e) |
+| [Federal Private Equity System](./base/federal-private-equity-system.md) | FPES | Base | 🟡 55/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/federal-private-equity-system-base) |
+| [World Oil Fund Institution](./base/world-oil-fund-institution-base-05e9.md) | WOFI | Base | 🟡 58/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/world-oil-fund-institution-base-05e9) |
+| [World Water Reserve](./base/world-water-reserve-base-6fb3.md) | WWR | Base | 🟡 62/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/world-water-reserve-base-6fb3) |
+| [USDP](./base/usdp-base-d408.md) | USDP | Base | 🟡 58/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/usdp-base-d408) |
+| [American Dividend Protocol](./base/american-dividend-protocol.md) | ADP | Base | 🟡 58/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/american-dividend-protocol-base) |
+| [USOE](./base/usoe-base-50c0.md) | USOE | Base | 🟡 58/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/usoe-base-50c0) |
+| [Digital Oil Trust Fund🔥](./base/digital-oil-trust-fund-base-2b55.md) | DOTF | Base | 🟡 57/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/digital-oil-trust-fund-base-2b55) |
+| [American Overwatch Protocol](./base/american-overwatch-protocol-base-3247.md) | AOP | Base | 🟡 55/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-base-3247) |
+| [United States Dividend Fund🔥](./base/united-states-dividend-fund-base-d897.md) | USDF | Base | 🟡 58/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base-d897) |
+| [US Dividend Reserve (USDR)](./base/us-dividend-reserve-usdr-base-7373.md) | USDR | Base | 🟡 57/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/us-dividend-reserve-usdr-base-7373) |
+| [National Oil Dividend Fund](./base/national-oil-dividend-fund-base-5ff4.md) | NODF | Base | 🟡 58/100 | 2026-10-21 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-base-5ff4) |
 
 ---
 
 ## Browse by Network
 
-[Solana (991)](./solana/README.md) · [BNB Chain (432)](./bsc/README.md) · [Ethereum (402)](./ethereum/README.md) · [Base (310)](./base/README.md) · [Arbitrum (76)](./arbitrum/README.md) · [Polygon (18)](./polygon/README.md)
+[Solana (1013)](./solana/README.md) · [BNB Chain (440)](./bsc/README.md) · [Ethereum (412)](./ethereum/README.md) · [Base (331)](./base/README.md) · [Arbitrum (76)](./arbitrum/README.md) · [Polygon (18)](./polygon/README.md)
 
 ---
 

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**402 reports** · Updated daily · [← All Networks](../README.md)
+**412 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,7 +10,17 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
-| [test](./test.md) | TEST | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/test-eth) |
+| [Pangea Cat](./pangea-cat.md) | PCAT | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/pangea-cat-eth) |
+| [Pangea](./pangea-eth-d397.md) | PANGEA | 🟢 16/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/pangea-eth-d397) |
+| [Balances](./balances.md) | BALANCE | 🟡 60/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/balances-eth) |
+| [Un1corn](./un1corn.md) | UN1 | 🟠 84/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/un1corn-eth) |
+| [Tectum Emission Token](./tectum-emission-token.md) | TET | 🟠 70/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/tectum-emission-token-eth) |
+| [RLUSD](./rlusd.md) | RLUSD | 🟢 11/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/rlusd-eth) |
+| [Yellow](./yellow.md) | YELLOW | 🟢 20/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/yellow-eth) |
+| [Pangea](./pangea-eth-3f52.md) | PANGEA | 🟠 73/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/pangea-eth-3f52) |
+| [GRVT](./grvt.md) | GRVT | 🟢 21/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/grvt-eth) |
+| [Pangea](./pangea.md) | PANGEA | 🟠 65/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/pangea-eth) |
+| [test](./test.md) | TEST | 🟡 57/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/test-eth) |
 | [Nookleus](./nookleus.md) | NOOK | 🟠 69/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/nookleus-eth) |
 | [SpaceXSuperIntelligence](./spacexsuperintelligence.md) | SXSI | 🟡 37/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/spacexsuperintelligence-eth) |
 | [Edge](./edge.md) | EDGE | 🟡 48/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/edge-eth) |
@@ -48,14 +58,14 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [HookVolve](./hookvolve.md) | HVOLVE | 🟢 34/100 Low Risk | 2026-10-12 | [↗](https://quantumaudit.app/token/hookvolve-eth) |
 | [Nexchain AI](./nexchain-ai.md) | NEX | 🟢 9/100 Low Risk | 2026-10-12 | [↗](https://quantumaudit.app/token/nexchain-ai-eth) |
 | [America is Back](./america-is-back.md) | AIB | 🟡 38/100 Medium Risk | 2026-10-12 | [↗](https://quantumaudit.app/token/america-is-back-eth) |
-| [Wormhole Token](./wormhole-token.md) | W | 🟡 55/100 Medium Risk | 2026-10-12 | [↗](https://quantumaudit.app/token/wormhole-token-eth) |
+| [Wormhole Token](./wormhole-token.md) | W | 🟡 53/100 Medium Risk | 2026-10-12 | [↗](https://quantumaudit.app/token/wormhole-token-eth) |
 | [Qairos](./qairos.md) | QRS | 🟢 25/100 Low Risk | 2026-10-12 | [↗](https://quantumaudit.app/token/qairos-eth) |
 | [Inference Backed Endogenous Financial Reserve](./inference-backed-endogenous-financial-reserve.md) | INFER | 🟢 24/100 Low Risk | 2026-10-12 | [↗](https://quantumaudit.app/token/inference-backed-endogenous-financial-reserve-eth) |
 | [Plume](./plume.md) | PLUME | 🟡 35/100 Medium Risk | 2026-10-12 | [↗](https://quantumaudit.app/token/plume-eth) |
 | [TAU FA](./tau-fa-eth-44f8.md) | TAUFA | 🟢 31/100 Low Risk | 2026-10-11 | [↗](https://quantumaudit.app/token/tau-fa-eth-44f8) |
 | [REFUND](./refund.md) | RFD | 🟢 6/100 Low Risk | 2026-10-11 | [↗](https://quantumaudit.app/token/refund-eth) |
 | [Wrapped Frax](./wrapped-frax.md) | WFRAX | 🟠 65/100 High Risk | 2026-10-11 | [↗](https://quantumaudit.app/token/wrapped-frax-eth) |
-| [DIME](./dime.md) | DIME | 🟡 62/100 Medium Risk | 2026-10-11 | [↗](https://quantumaudit.app/token/dime-eth) |
+| [DIME](./dime.md) | DIME | 🟡 59/100 Medium Risk | 2026-10-11 | [↗](https://quantumaudit.app/token/dime-eth) |
 | [Kishu Inu](./kishu-inu.md) | KISHU | 🟡 43/100 Medium Risk | 2026-10-11 | [↗](https://quantumaudit.app/token/kishu-inu-eth) |
 | [PolkastarterToken](./polkastartertoken.md) | POLS | 🟡 44/100 Medium Risk | 2026-10-11 | [↗](https://quantumaudit.app/token/polkastartertoken-eth) |
 | [Dusk Network](./dusk-network.md) | DUSK | 🟢 30/100 Low Risk | 2026-10-11 | [↗](https://quantumaudit.app/token/dusk-network-eth) |
@@ -83,11 +93,11 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [LCX](./lcx.md) | LCX | 🟢 12/100 Low Risk | 2026-10-07 | [↗](https://quantumaudit.app/token/lcx-eth) |
 | [Forta](./forta.md) | FORT | 🟡 49/100 Medium Risk | 2026-10-07 | [↗](https://quantumaudit.app/token/forta-eth) |
 | [Anvil](./anvil.md) | ANVL | 🟢 8/100 Low Risk | 2026-10-07 | [↗](https://quantumaudit.app/token/anvil-eth) |
-| [Tajir](./tajir.md) | TJR | 🟡 60/100 Medium Risk | 2026-10-07 | [↗](https://quantumaudit.app/token/tajir-eth) |
+| [Tajir](./tajir.md) | TJR | 🟡 55/100 Medium Risk | 2026-10-07 | [↗](https://quantumaudit.app/token/tajir-eth) |
 | [Claus](./claus.md) | CLAUS | 🟠 78/100 High Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/claus-eth) |
 | [Fluid](./fluid.md) | FLUID | 🟡 36/100 Medium Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/fluid-eth) |
 | [MAGA](./maga.md) | TRUMP | 🟡 47/100 Medium Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/maga-eth) |
-| [Pheasant Network Token](./pheasant-network-token.md) | PNT | 🟠 83/100 High Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/pheasant-network-token-eth) |
+| [Pheasant Network Token](./pheasant-network-token.md) | PNT | 🟠 81/100 High Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/pheasant-network-token-eth) |
 | [SpaceX (Ondo Tokenized)](./spacex-ondo-tokenized.md) | SPCXON | 🟠 74/100 High Risk | 2026-10-05 | [↗](https://quantumaudit.app/token/spacex-ondo-tokenized-eth) |
 | [Super Intelligence](./super-intelligence.md) | SI | 🟢 27/100 Low Risk | 2026-10-05 | [↗](https://quantumaudit.app/token/super-intelligence-eth) |
 | [VAIOT Token](./vaiot-token.md) | VAI | 🟢 30/100 Low Risk | 2026-10-05 | [↗](https://quantumaudit.app/token/vaiot-token-eth) |
@@ -106,20 +116,20 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [‎ Silvercha‎t](./silverchat.md) | SC | 🟢 27/100 Low Risk | 2026-10-02 | [↗](https://quantumaudit.app/token/silverchat-eth) |
 | [Ambire Wallet](./ambire-wallet.md) | WALLET | 🟡 53/100 Medium Risk | 2026-10-02 | [↗](https://quantumaudit.app/token/ambire-wallet-eth) |
 | [Gitcoin](./gitcoin.md) | GTC | 🟡 38/100 Medium Risk | 2026-10-02 | [↗](https://quantumaudit.app/token/gitcoin-eth) |
-| [Apex Gold Ledger](./apex-gold-ledger.md) | AGL | 🟡 43/100 Medium Risk | 2026-10-02 | [↗](https://quantumaudit.app/token/apex-gold-ledger-eth) |
+| [Apex Gold Ledger](./apex-gold-ledger.md) | AGL | 🟡 36/100 Medium Risk | 2026-10-02 | [↗](https://quantumaudit.app/token/apex-gold-ledger-eth) |
 | [zipcoin](./zipcoin.md) | ZC | 🟢 6/100 Low Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/zipcoin-eth) |
 | [JasmyCoin](./jasmycoin.md) | JASMY | 🟢 16/100 Low Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/jasmycoin-eth) |
 | [Agoras Token](./agoras-token.md) | AGRS | 🟠 72/100 High Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/agoras-token-eth) |
 | [Liquid staked Ether 2.0](./liquid-staked-ether-20.md) | STETH | 🟡 38/100 Medium Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/liquid-staked-ether-20-eth) |
 | [Superior Intelligence](./superior-intelligence.md) | SI | 🟡 43/100 Medium Risk | 2026-09-30 | [↗](https://quantumaudit.app/token/superior-intelligence-eth) |
 | [snowmoon](./snowmoon.md) | SNOWMOON | 🟠 69/100 High Risk | 2026-09-30 | [↗](https://quantumaudit.app/token/snowmoon-eth) |
-| [veridiacoin](./veridiacoin.md) | VC | 🟡 62/100 Medium Risk | 2026-09-30 | [↗](https://quantumaudit.app/token/veridiacoin-eth) |
+| [veridiacoin](./veridiacoin.md) | VC | 🟡 58/100 Medium Risk | 2026-09-30 | [↗](https://quantumaudit.app/token/veridiacoin-eth) |
 | [Artificial Pepe](./artificial-pepe.md) | AP | 🟢 6/100 Low Risk | 2026-09-29 | [↗](https://quantumaudit.app/token/artificial-pepe-eth) |
 | [Fias](./fias.md) | FIAS | 🟡 56/100 Medium Risk | 2026-09-29 | [↗](https://quantumaudit.app/token/fias-eth) |
 | [Turbo](./turbo.md) | TURBO | 🟢 20/100 Low Risk | 2026-09-29 | [↗](https://quantumaudit.app/token/turbo-eth) |
 | [Numeraire](./numeraire.md) | NMR | 🟡 64/100 Medium Risk | 2026-09-29 | [↗](https://quantumaudit.app/token/numeraire-eth) |
 | [Woof](./woof.md) | WOOF | 🟠 76/100 High Risk | 2026-09-29 | [↗](https://quantumaudit.app/token/woof-eth) |
-| [SHX](./shx.md) | SHX | 🟠 75/100 High Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/shx-eth) |
+| [SHX](./shx.md) | SHX | 🟠 73/100 High Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/shx-eth) |
 | [sato](./sato.md) | SATO | 🟢 19/100 Low Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/sato-eth) |
 | [Wrapped SOL](./wrapped-sol.md) | SOL | 🟢 34/100 Low Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/wrapped-sol-eth) |
 | [ArcBlock](./arcblock.md) | ABT | 🔴 91/100 Critical Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/arcblock-eth) |
@@ -139,7 +149,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [TornadoCash](./tornadocash.md) | TORN | 🟡 46/100 Medium Risk | 2026-09-24 | [↗](https://quantumaudit.app/token/tornadocash-eth) |
 | [Milady Cult Coin](./milady-cult-coin.md) | CULT | 🟡 55/100 Medium Risk | 2026-09-24 | [↗](https://quantumaudit.app/token/milady-cult-coin-eth) |
 | [FXN Token](./fxn-token.md) | FXN | 🟡 51/100 Medium Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/fxn-token-eth) |
-| [CreditStrategy](./creditstrategy.md) | CREDITSTR | 🟡 51/100 Medium Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/creditstrategy-eth) |
+| [CreditStrategy](./creditstrategy.md) | CREDITSTR | 🟡 49/100 Medium Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/creditstrategy-eth) |
 | [Atoshi](./atoshi.md) | ATOS | 🟠 69/100 High Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/atoshi-eth) |
 | [PAAL AI](./paal-ai.md) | $PAAL | 🟢 7/100 Low Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/paal-ai-eth) |
 | [Render Token](./render-token.md) | RNDR | 🔴 85/100 Critical Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/render-token-eth) |
@@ -165,7 +175,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [Aurora](./aurora.md) | AURORA | 🟡 41/100 Medium Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/aurora-eth) |
 | [Gravity](./gravity.md) | G | 🟡 61/100 Medium Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/gravity-eth) |
 | [rsFIRO](./rsfiro.md) | RSFIRO | 🟠 70/100 High Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/rsfiro-eth) |
-| [JPY Coin](./jpy-coin.md) | JPYC | 🔴 88/100 Critical Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/jpy-coin-eth) |
+| [JPY Coin](./jpy-coin.md) | JPYC | 🔴 86/100 Critical Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/jpy-coin-eth) |
 | [Wrapped Pearl](./wrapped-pearl.md) | WPRL | 🟠 73/100 High Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/wrapped-pearl-eth) |
 | [AVA](./ava.md) | AVA | 🟠 80/100 High Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/ava-eth) |
 | [Starknet](./starknet.md) | STRK | 🟠 69/100 High Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/starknet-eth) |
@@ -177,9 +187,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [SPECTRE AI](./spectre-ai.md) | SPECTRE | 🟢 25/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/spectre-ai-eth) |
 | [Beefy](./beefy.md) | BIFI | 🟢 28/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/beefy-eth) |
 | [Rova Protocol](./rova-protocol.md) | ROVA | 🟡 58/100 Medium Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/rova-protocol-eth) |
-| [Power](./power.md) | POWER | 🟡 36/100 Medium Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/power-eth) |
+| [Power](./power.md) | POWER | 🟢 34/100 Low Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/power-eth) |
 | [Fuse Cat](./fuse-cat-eth-a4f9.md) | FUSECAT | 🟡 62/100 Medium Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/fuse-cat-eth-a4f9) |
-| [Spark](./spark.md) | SPK | 🔴 86/100 Critical Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/spark-eth) |
+| [Spark](./spark.md) | SPK | 🟠 84/100 High Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/spark-eth) |
 | [Kyber Network Crystal v2](./kyber-network-crystal-v2.md) | KNC | 🟠 81/100 High Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/kyber-network-crystal-v2-eth) |
 | [API3](./api3.md) | API3 | 🟡 58/100 Medium Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/api3-eth) |
 | [Fuse Cat](./fuse-cat.md) | FUSECAT | 🟡 51/100 Medium Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/fuse-cat-eth) |
@@ -195,7 +205,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [Fuse](./fuse.md) | FUSE | 🟢 25/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/fuse-eth) |
 | [NEAR](./near.md) | NEAR | 🔴 96/100 Critical Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/near-eth) |
 | [PowerLedger](./powerledger.md) | POWR | 🟠 67/100 High Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/powerledger-eth) |
-| [World Liberty Financial](./world-liberty-financial.md) | WLFI | 🟡 44/100 Medium Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/world-liberty-financial-eth) |
+| [World Liberty Financial](./world-liberty-financial.md) | WLFI | 🟡 42/100 Medium Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/world-liberty-financial-eth) |
 | [Messier](./messier.md) | M87 | 🟠 73/100 High Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/messier-eth) |
 | [Tako](./tako.md) | TAKO | 🟢 27/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/tako-eth) |
 | [Adshares](./adshares.md) | ADS | 🟡 49/100 Medium Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/adshares-eth) |
@@ -218,7 +228,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [Beam](./beam.md) | BEAM | 🟡 54/100 Medium Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/beam-eth) |
 | [Banana](./banana.md) | BANANA | 🔴 100/100 Critical Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/banana-eth) |
 | [Balancer](./balancer.md) | BAL | 🟢 30/100 Low Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/balancer-eth) |
-| [AZTEC](./aztec.md) | AZTEC | 🟠 73/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/aztec-eth) |
+| [AZTEC](./aztec.md) | AZTEC | 🟠 71/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/aztec-eth) |
 | [AXGT](./axgt.md) | AXGT | 🟡 64/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/axgt-eth) |
 | [Autonolas](./autonolas.md) | OLAS | 🟠 76/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/autonolas-eth) |
 | [AUSD](./ausd.md) | AUSD | 🔴 100/100 Critical Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/ausd-eth) |
@@ -247,7 +257,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [FLOKI](./floki.md) | FLOKI | 🟠 65/100 High Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/floki-eth) |
 | [PeiPei](./peipei.md) | PEIPEI | 🟢 0/100 Low Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/peipei-eth) |
 | [Joe Coin](./joe-coin.md) | JOE | 🟢 0/100 Low Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/joe-coin-eth) |
-| [ZK Coin](./zk-coin.md) | ZKC | 🔴 85/100 Critical Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/zk-coin-eth) |
+| [ZK Coin](./zk-coin.md) | ZKC | 🟠 83/100 High Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/zk-coin-eth) |
 | [ZigCoin](./zigcoin.md) | ZIG | 🟡 38/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/zigcoin-eth) |
 | [Zama](./zama.md) | ZAMA | 🟠 68/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/zama-eth) |
 | [Yield Basis](./yield-basis.md) | YB | 🟡 50/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/yield-basis-eth) |
@@ -265,7 +275,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [usocks](./usocks.md) | USOCKS | 🔴 91/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/usocks-eth) |
 | [USDS Stablecoin](./usds-stablecoin.md) | USDS | 🟡 63/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/usds-stablecoin-eth) |
 | [USDe](./usde.md) | USDE | 🟡 50/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/usde-eth) |
-| [Uniswap](./uniswap.md) | UNI | 🟡 52/100 Medium Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/uniswap-eth) |
+| [Uniswap](./uniswap.md) | UNI | 🟡 50/100 Medium Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/uniswap-eth) |
 | [Unipeg](./unipeg.md) | UPEG | 🟢 26/100 Low Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/unipeg-eth) |
 | [UNICURVE](./unicurve.md) | UNICURVE | 🟠 68/100 High Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/unicurve-eth) |
 | [Turtle](./turtle.md) | TURTLE | 🟠 78/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/turtle-eth) |
@@ -283,7 +293,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [Syrup Token](./syrup-token.md) | SYRUP | 🟠 78/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/syrup-token-eth) |
 | [Synapse](./synapse.md) | SYN | 🟠 76/100 High Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/synapse-eth) |
 | [Sustainable Aviation Fuel](./sustainable-aviation-fuel.md) | SAF | 🟡 56/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/sustainable-aviation-fuel-eth) |
-| [SushiToken](./sushitoken.md) | SUSHI | 🟡 63/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/sushitoken-eth) |
+| [SushiToken](./sushitoken.md) | SUSHI | 🟡 61/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/sushitoken-eth) |
 | [SuperVerse](./superverse.md) | SUPER | 🟡 54/100 Medium Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/superverse-eth) |
 | [StorjToken](./storjtoken.md) | STORJ | 🟡 53/100 Medium Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/storjtoken-eth) |
 | [Starman](./starman.md) | STARMAN | 🟢 33/100 Low Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/starman-eth) |
@@ -332,7 +342,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [Octra](./octra.md) | OCT | 🟡 38/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/octra-eth) |
 | [Ocean Token](./ocean-token.md) | OCEAN | 🟡 60/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/ocean-token-eth) |
 | [Non-Playable Coin](./non-playable-coin.md) | NPC | 🟢 0/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/non-playable-coin-eth) |
-| [Nillion](./nillion.md) | NIL | 🟠 77/100 High Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/nillion-eth) |
+| [Nillion](./nillion.md) | NIL | 🟠 75/100 High Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/nillion-eth) |
 | [NEXO](./nexo.md) | NEXO | 🟠 73/100 High Risk | 2026-07-03 | [↗](https://quantumaudit.app/token/nexo-eth) |
 | [Neiro](./neiro.md) | NEIRO | 🟡 42/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/neiro-eth) |
 | [Morpho](./morpho.md) | MORPHO | 🟡 54/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/morpho-eth) |
@@ -376,8 +386,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [Gensyn](./gensyn.md) | AI | 🔴 86/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/gensyn-eth) |
 | [Frax USD](./frax-usd.md) | FRXUSD | 🟡 49/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/frax-usd-eth) |
 | [FOX](./fox.md) | FOX | 🟡 53/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/fox-eth) |
-| [Fake World Assets](./fake-world-assets.md) | FWA | 🟡 59/100 Medium Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/fake-world-assets-eth) |
-| [Fabric Protocol](./fabric-protocol.md) | ROBO | 🟡 50/100 Medium Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/fabric-protocol-eth) |
+| [Fake World Assets](./fake-world-assets.md) | FWA | 🟡 57/100 Medium Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/fake-world-assets-eth) |
+| [Fabric Protocol](./fabric-protocol.md) | ROBO | 🟡 48/100 Medium Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/fabric-protocol-eth) |
 | [Everipedia IQ](./everipedia-iq.md) | IQ | 🟠 71/100 High Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/everipedia-iq-eth) |
 | [Euro Coin](./euro-coin.md) | EURC | 🟡 44/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/euro-coin-eth) |
 | [Euler](./euler.md) | EUL | 🟡 55/100 Medium Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/euler-eth) |
@@ -388,14 +398,14 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [Epic Chain](./epic-chain.md) | EPIC | 🟠 73/100 High Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/epic-chain-eth) |
 | [EigenCloud (prev. EigenLayer)](./eigencloud-prev-eigenlayer.md) | EIGEN | 🟡 50/100 Medium Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/eigencloud-prev-eigenlayer-eth) |
 | [Eden Token](./eden-token.md) | EDEN | 🔴 85/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/eden-token-eth) |
-| [DUAL](./dual.md) | DUAL | 🟡 41/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/dual-eth) |
+| [DUAL](./dual.md) | DUAL | 🟡 39/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/dual-eth) |
 | [Dolomite](./dolomite.md) | DOLO | 🟡 62/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/dolomite-eth) |
 | [dmt-nat](./dmt-nat.md) | DMT-NAT | 🔴 88/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/dmt-nat-eth) |
 | [Dimitra Token](./dimitra-token.md) | DMTR | 🟡 36/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/dimitra-token-eth) |
 | [DIAToken](./diatoken.md) | DIA | 🟠 67/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/diatoken-eth) |
 | [DeXe](./dexe.md) | DEXE | 🟡 60/100 Medium Risk | 2026-07-12 | [↗](https://quantumaudit.app/token/dexe-eth) |
 | [Derive](./derive.md) | DRV | 🟡 51/100 Medium Risk | 2026-07-14 | [↗](https://quantumaudit.app/token/derive-eth) |
-| [DAPPOS](./dappos.md) | DOS | 🟠 71/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/dappos-eth) |
+| [DAPPOS](./dappos.md) | DOS | 🟠 69/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/dappos-eth) |
 | [Curve.Fi USD Stablecoin](./curvefi-usd-stablecoin.md) | CRVUSD | 🟡 42/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/curvefi-usd-stablecoin-eth) |
 | [Curve DAO](./curve-dao.md) | CRV | 🟡 49/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/curve-dao-eth) |
 | [Cronos](./cronos.md) | CRO | 🟠 73/100 High Risk | 2026-07-17 | [↗](https://quantumaudit.app/token/cronos-eth) |
@@ -409,8 +419,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [Chain](./chain.md) | XCN | 🟠 68/100 High Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/chain-eth) |
 | [Centrifuge](./centrifuge.md) | CFG | 🟡 58/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/centrifuge-eth) |
 | [Cate](./cate.md) | CATE | 🟢 30/100 Low Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/cate-eth) |
-| [Cap](./cap.md) | CAP | 🟡 48/100 Medium Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/cap-eth) |
-| [Caldera](./caldera.md) | ERA | 🔴 90/100 Critical Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/caldera-eth) |
+| [Cap](./cap.md) | CAP | 🟡 46/100 Medium Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/cap-eth) |
+| [Caldera](./caldera.md) | ERA | 🔴 88/100 Critical Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/caldera-eth) |
 | [c8ntinuum](./c8ntinuum.md) | CTM | 🟡 49/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/c8ntinuum-eth) |
 
 ---

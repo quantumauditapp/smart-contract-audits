@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**310 reports** · Updated daily · [← All Networks](../README.md)
+**331 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,36 +10,57 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Pangea](./pangea.md) | PANGEA | 🟠 65/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/pangea-base) |
+| [DOTF](./dotf.md) | DOTF | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/dotf-base) |
+| [USDP](./usdp-base-879c.md) | USDP | 🟡 55/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/usdp-base-879c) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-base-7c0e.md) | AODF | 🟡 59/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-7c0e) |
+| [Federal Private Equity System](./federal-private-equity-system.md) | FPES | 🟡 55/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/federal-private-equity-system-base) |
+| [World Oil Fund Institution](./world-oil-fund-institution-base-05e9.md) | WOFI | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/world-oil-fund-institution-base-05e9) |
+| [World Water Reserve](./world-water-reserve-base-6fb3.md) | WWR | 🟡 62/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/world-water-reserve-base-6fb3) |
+| [USDP](./usdp-base-d408.md) | USDP | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/usdp-base-d408) |
+| [American Dividend Protocol](./american-dividend-protocol.md) | ADP | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-dividend-protocol-base) |
+| [USOE](./usoe-base-50c0.md) | USOE | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/usoe-base-50c0) |
+| [Digital Oil Trust Fund🔥](./digital-oil-trust-fund-base-2b55.md) | DOTF | 🟡 57/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/digital-oil-trust-fund-base-2b55) |
+| [American Overwatch Protocol](./american-overwatch-protocol-base-3247.md) | AOP | 🟡 55/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-base-3247) |
+| [United States Dividend Fund🔥](./united-states-dividend-fund-base-d897.md) | USDF | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base-d897) |
+| [US Dividend Reserve (USDR)](./us-dividend-reserve-usdr-base-7373.md) | USDR | 🟡 57/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/us-dividend-reserve-usdr-base-7373) |
+| [National Oil Dividend Fund](./national-oil-dividend-fund-base-5ff4.md) | NODF | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-base-5ff4) |
+| [SARP](./sarp.md) | SARP | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/sarp-base) |
+| [AOP](./aop.md) | AOP | 🟡 59/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/aop-base) |
+| [XRC](./xrc-base-4b82.md) | XRC | 🟡 56/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/xrc-base-4b82) |
+| [Papertrade](./papertrade-base-b94e.md) | PAPER | 🟡 54/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/papertrade-base-b94e) |
+| [US Oil Exchange (USOE)](./us-oil-exchange-usoe.md) | USOE | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/us-oil-exchange-usoe-base) |
+| [Axis Robotics](./axis-robotics.md) | AXIS | 🟡 36/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/axis-robotics-base) |
 | [American Oil Dividend Fund](./american-oil-dividend-fund-base-b8c3.md) | AODF | 🟡 56/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-b8c3) |
 | [World Oil Supply Exchange](./world-oil-supply-exchange.md) | WOSE | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/world-oil-supply-exchange-base) |
 | [United States Dividend Program🔥](./united-states-dividend-program-base-026a.md) | USDP | 🟡 55/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/united-states-dividend-program-base-026a) |
-| [American Oil Dividend Fund](./american-oil-dividend-fund-base-1faa.md) | AODF | 🟡 60/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-1faa) |
-| [American Overwatch Protocol](./american-overwatch-protocol-base-1282.md) | AOP | 🟡 60/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-base-1282) |
-| [American Trust Fund System](./american-trust-fund-system-base-7bee.md) | ATFS | 🟡 62/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-trust-fund-system-base-7bee) |
-| [GOIF](./goif.md) | GOIF | 🟡 62/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/goif-base) |
-| [United States Dividend  Fund](./united-states-dividend-fund-base-1560.md) | USDF | 🟡 61/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base-1560) |
-| [United States Dividend  Fund](./united-states-dividend-fund-base-7c50.md) | USDF | 🟡 62/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base-7c50) |
-| [Vanguard Strategic Oil Fund](./vanguard-strategic-oil-fund.md) | VSOF | 🟡 60/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/vanguard-strategic-oil-fund-base) |
-| [Little Buddies](./little-buddies.md) | BUDDIES | 🟠 69/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/little-buddies-base) |
-| [American Oil Dividend Fund](./american-oil-dividend-fund-base-66ee.md) | AODF | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-66ee) |
-| [World Strategic Oil Supply](./world-strategic-oil-supply.md) | WSOS | 🟡 62/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/world-strategic-oil-supply-base) |
-| [World Water Reserve](./world-water-reserve.md) | WWR | 🟡 60/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/world-water-reserve-base) |
-| [United States Dividend Fund🔥](./united-states-dividend-fund.md) | USDF | 🟠 67/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base) |
-| [American Trust Fund System](./american-trust-fund-system.md) | ATFS | 🟠 66/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/american-trust-fund-system-base) |
-| [USOE](./usoe.md) | USOE | 🟠 66/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/usoe-base) |
-| [XRC](./xrc.md) | XRC | 🟠 68/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/xrc-base) |
-| [American Overwatch Protocol](./american-overwatch-protocol.md) | AOP | 🟠 67/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-base) |
-| [USDP](./usdp.md) | USDP | 🟡 60/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/usdp-base) |
-| [UDR](./udr.md) | UDR | 🟠 79/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/udr-base) |
-| [World Oil Fund Institution](./world-oil-fund-institution.md) | WOFI | 🟡 62/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/world-oil-fund-institution-base) |
-| [NTDA](./ntda.md) | NTDA | 🟡 63/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/ntda-base) |
-| [WOTF](./wotf.md) | WOTF | 🟡 64/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/wotf-base) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-base-1faa.md) | AODF | 🟡 55/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-1faa) |
+| [American Overwatch Protocol](./american-overwatch-protocol-base-1282.md) | AOP | 🟡 55/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-base-1282) |
+| [American Trust Fund System](./american-trust-fund-system-base-7bee.md) | ATFS | 🟡 57/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-trust-fund-system-base-7bee) |
+| [GOIF](./goif.md) | GOIF | 🟡 57/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/goif-base) |
+| [United States Dividend  Fund](./united-states-dividend-fund-base-1560.md) | USDF | 🟡 56/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base-1560) |
+| [United States Dividend  Fund](./united-states-dividend-fund-base-7c50.md) | USDF | 🟡 57/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base-7c50) |
+| [Vanguard Strategic Oil Fund](./vanguard-strategic-oil-fund.md) | VSOF | 🟡 55/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/vanguard-strategic-oil-fund-base) |
+| [Little Buddies](./little-buddies.md) | BUDDIES | 🟠 65/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/little-buddies-base) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-base-66ee.md) | AODF | 🟡 53/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-66ee) |
+| [World Strategic Oil Supply](./world-strategic-oil-supply.md) | WSOS | 🟡 57/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/world-strategic-oil-supply-base) |
+| [World Water Reserve](./world-water-reserve.md) | WWR | 🟡 55/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/world-water-reserve-base) |
+| [United States Dividend Fund🔥](./united-states-dividend-fund.md) | USDF | 🟡 64/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base) |
+| [American Trust Fund System](./american-trust-fund-system.md) | ATFS | 🟡 63/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/american-trust-fund-system-base) |
+| [USOE](./usoe.md) | USOE | 🟡 63/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/usoe-base) |
+| [XRC](./xrc.md) | XRC | 🟠 65/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/xrc-base) |
+| [American Overwatch Protocol](./american-overwatch-protocol.md) | AOP | 🟡 64/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-base) |
+| [USDP](./usdp.md) | USDP | 🟡 55/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/usdp-base) |
+| [UDR](./udr.md) | UDR | 🟠 76/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/udr-base) |
+| [World Oil Fund Institution](./world-oil-fund-institution.md) | WOFI | 🟡 57/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/world-oil-fund-institution-base) |
+| [NTDA](./ntda.md) | NTDA | 🟡 58/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/ntda-base) |
+| [WOTF](./wotf.md) | WOTF | 🟡 59/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/wotf-base) |
 | [Papertrade](./papertrade-base-f1ca.md) | PAPER | 🟡 54/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/papertrade-base-f1ca) |
-| [Digital Oil Trust Fund🔥](./digital-oil-trust-fund.md) | DOTF | 🔴 92/100 Critical Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/digital-oil-trust-fund-base) |
-| [United States Dividend Program🔥](./united-states-dividend-program.md) | USDP | 🟡 61/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/united-states-dividend-program-base) |
-| [US Dividend Reserve (USDR)](./us-dividend-reserve-usdr.md) | USDR | 🟠 67/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/us-dividend-reserve-usdr-base) |
-| [American Oil Dividend Fund](./american-oil-dividend-fund.md) | AODF | 🟡 62/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base) |
-| [National Oil Dividend Fund🔥](./national-oil-dividend-fund.md) | NODF | 🟠 65/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-base) |
+| [Digital Oil Trust Fund🔥](./digital-oil-trust-fund.md) | DOTF | 🟠 81/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/digital-oil-trust-fund-base) |
+| [United States Dividend Program🔥](./united-states-dividend-program.md) | USDP | 🟡 56/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/united-states-dividend-program-base) |
+| [US Dividend Reserve (USDR)](./us-dividend-reserve-usdr.md) | USDR | 🟡 64/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/us-dividend-reserve-usdr-base) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund.md) | AODF | 🟡 57/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base) |
+| [National Oil Dividend Fund🔥](./national-oil-dividend-fund.md) | NODF | 🟡 62/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-base) |
 | [Papertrade](./papertrade-base-0eb6.md) | PAPER | 🟡 58/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/papertrade-base-0eb6) |
 | [Impossible Cloud Network Token](./impossible-cloud-network-token.md) | ICNT | 🟢 33/100 Low Risk | 2026-10-19 | [↗](https://quantumaudit.app/token/impossible-cloud-network-token-base) |
 | [CF Large Cap Index](./cf-large-cap-index.md) | LCAP | 🟠 68/100 High Risk | 2026-10-19 | [↗](https://quantumaudit.app/token/cf-large-cap-index-base) |
@@ -52,7 +73,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 | [Papertrade](./papertrade-base-f58d.md) | PAPER | 🟠 68/100 High Risk | 2026-10-14 | [↗](https://quantumaudit.app/token/papertrade-base-f58d) |
 | [Gains Network](./gains-network.md) | GNS | 🟠 67/100 High Risk | 2026-10-14 | [↗](https://quantumaudit.app/token/gains-network-base) |
 | [Catalyst](./catalyst-base-c27c.md) | CATALYST | 🟠 67/100 High Risk | 2026-10-14 | [↗](https://quantumaudit.app/token/catalyst-base-c27c) |
-| [Palantir Technologies Inc.](./palantir-technologies-inc.md) | PLTRC | 🟡 62/100 Medium Risk | 2026-10-13 | [↗](https://quantumaudit.app/token/palantir-technologies-inc-base) |
+| [Palantir Technologies Inc.](./palantir-technologies-inc.md) | PLTRC | 🟡 57/100 Medium Risk | 2026-10-13 | [↗](https://quantumaudit.app/token/palantir-technologies-inc-base) |
 | [Paper](./paper.md) | PAPER | 🟠 68/100 High Risk | 2026-10-13 | [↗](https://quantumaudit.app/token/paper-base) |
 | [BTN](./btn.md) | BTN | 🟢 22/100 Low Risk | 2026-10-13 | [↗](https://quantumaudit.app/token/btn-base) |
 | [Reserve Rights](./reserve-rights.md) | RSR | 🟡 58/100 Medium Risk | 2026-10-12 | [↗](https://quantumaudit.app/token/reserve-rights-base) |
@@ -68,18 +89,18 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 | [MAGIC](./magic.md) | MAGIC | 🟠 71/100 High Risk | 2026-10-07 | [↗](https://quantumaudit.app/token/magic-base) |
 | [Chiliz](./chiliz.md) | CHZ | 🟡 40/100 Medium Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/chiliz-base) |
 | [PRXVT](./prxvt.md) | PRXVT | 🟠 73/100 High Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/prxvt-base) |
-| [Mamo](./mamo.md) | MAMO | 🟡 42/100 Medium Risk | 2026-10-05 | [↗](https://quantumaudit.app/token/mamo-base) |
+| [Mamo](./mamo.md) | MAMO | 🟡 41/100 Medium Risk | 2026-10-05 | [↗](https://quantumaudit.app/token/mamo-base) |
 | [Base](./base.md) | BASE | 🟠 68/100 High Risk | 2026-10-05 | [↗](https://quantumaudit.app/token/base-base) |
 | [CARV](./carv.md) | CARV | 🟡 58/100 Medium Risk | 2026-10-05 | [↗](https://quantumaudit.app/token/carv-base) |
 | [Doppler](./doppler.md) | XDP | 🟡 46/100 Medium Risk | 2026-10-05 | [↗](https://quantumaudit.app/token/doppler-base) |
 | [BASEPAD](./basepad.md) | BASEPAD | 🟢 9/100 Low Risk | 2026-10-04 | [↗](https://quantumaudit.app/token/basepad-base) |
-| [Micron Technology Inc.](./micron-technology-inc.md) | MUC | 🟡 60/100 Medium Risk | 2026-10-04 | [↗](https://quantumaudit.app/token/micron-technology-inc-base) |
+| [Micron Technology Inc.](./micron-technology-inc.md) | MUC | 🟡 55/100 Medium Risk | 2026-10-04 | [↗](https://quantumaudit.app/token/micron-technology-inc-base) |
 | [ConwayResearch](./conwayresearch.md) | CONWAY | 🟠 72/100 High Risk | 2026-10-03 | [↗](https://quantumaudit.app/token/conwayresearch-base) |
 | [STONKCAT](./stonkcat.md) | STONKCAT | 🟡 56/100 Medium Risk | 2026-10-03 | [↗](https://quantumaudit.app/token/stonkcat-base) |
 | [zipcoin](./zipcoin.md) | ZC | 🟠 83/100 High Risk | 2026-10-02 | [↗](https://quantumaudit.app/token/zipcoin-base) |
 | [Twigpine](./twigpine.md) | TWIG | 🟢 33/100 Low Risk | 2026-10-02 | [↗](https://quantumaudit.app/token/twigpine-base) |
 | [Crynux Token](./crynux-token.md) | CNX | 🔴 87/100 Critical Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/crynux-token-base) |
-| [OpenUSD](./openusd.md) | OUSD | 🟡 60/100 Medium Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/openusd-base) |
+| [OpenUSD](./openusd.md) | OUSD | 🟡 55/100 Medium Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/openusd-base) |
 | [Syrup Token](./syrup-token.md) | SYRUP | 🟢 28/100 Low Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/syrup-token-base) |
 | [Delivery Guy](./delivery-guy.md) | DGUY | 🟢 10/100 Low Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/delivery-guy-base) |
 | [ENA](./ena.md) | ENA | 🟡 39/100 Medium Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/ena-base) |
@@ -93,8 +114,8 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 | [HIVE](./hive.md) | HIVE | 🟡 52/100 Medium Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/hive-base) |
 | [Lingo](./lingo.md) | LINGO | 🟠 69/100 High Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/lingo-base) |
 | [Broker Cat](./broker-cat.md) | BROKER | 🟡 46/100 Medium Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/broker-cat-base) |
-| [SPIKE](./spike.md) | SPIKE | 🟡 41/100 Medium Risk | 2026-09-26 | [↗](https://quantumaudit.app/token/spike-base) |
-| [Coinbase Wrapped ZEC](./coinbase-wrapped-zec.md) | CBZEC | 🟢 33/100 Low Risk | 2026-09-25 | [↗](https://quantumaudit.app/token/coinbase-wrapped-zec-base) |
+| [SPIKE](./spike.md) | SPIKE | 🟡 39/100 Medium Risk | 2026-09-26 | [↗](https://quantumaudit.app/token/spike-base) |
+| [Coinbase Wrapped ZEC](./coinbase-wrapped-zec.md) | CBZEC | 🟢 31/100 Low Risk | 2026-09-25 | [↗](https://quantumaudit.app/token/coinbase-wrapped-zec-base) |
 | [WorldMobileToken](./worldmobiletoken.md) | WMTX | 🟠 65/100 High Risk | 2026-09-25 | [↗](https://quantumaudit.app/token/worldmobiletoken-base) |
 | [Definitive](./definitive.md) | EDGE | 🟡 60/100 Medium Risk | 2026-09-25 | [↗](https://quantumaudit.app/token/definitive-base) |
 | [Gyndore](./gyndore.md) | GYND | 🟡 52/100 Medium Risk | 2026-09-24 | [↗](https://quantumaudit.app/token/gyndore-base) |
@@ -102,7 +123,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 | [This Is My Iguana](./this-is-my-iguana.md) | TIMI | 🟢 12/100 Low Risk | 2026-09-24 | [↗](https://quantumaudit.app/token/this-is-my-iguana-base) |
 | [Auki Token](./auki-token.md) | AUKI | 🟠 70/100 High Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/auki-token-base) |
 | [ODEI AI](./odei-ai.md) | ODAI | 🟡 38/100 Medium Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/odei-ai-base) |
-| [Brain Armstrong](./brain-armstrong.md) | BRAINARM | 🟡 42/100 Medium Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/brain-armstrong-base) |
+| [Brain Armstrong](./brain-armstrong.md) | BRAINARM | 🟡 40/100 Medium Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/brain-armstrong-base) |
 | [BasedPepe](./basedpepe.md) | PEPE | 🟢 8/100 Low Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/basedpepe-base) |
 | [Pendle](./pendle.md) | PENDLE | 🟡 56/100 Medium Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/pendle-base) |
 | [True](./true.md) | TRUE | 🟡 60/100 Medium Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/true-base) |
@@ -113,23 +134,23 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 | [OFC](./ofc.md) | OFC | 🟡 53/100 Medium Risk | 2026-09-20 | [↗](https://quantumaudit.app/token/ofc-base) |
 | [Coinbase Wrapped ADA](./coinbase-wrapped-ada.md) | CBADA | 🟠 66/100 High Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/coinbase-wrapped-ada-base) |
 | [717ai by Virtuals](./717ai-by-virtuals.md) | WIRE | 🟡 55/100 Medium Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/717ai-by-virtuals-base) |
-| [Microsoft Corporation](./microsoft-corporation.md) | MSFTC | 🟢 31/100 Low Risk | 2026-09-17 | [↗](https://quantumaudit.app/token/microsoft-corporation-base) |
-| [Amazon.com Inc.](./amazoncom-inc.md) | AMZNC | 🟢 33/100 Low Risk | 2026-09-17 | [↗](https://quantumaudit.app/token/amazoncom-inc-base) |
+| [Microsoft Corporation](./microsoft-corporation.md) | MSFTC | 🟢 29/100 Low Risk | 2026-09-17 | [↗](https://quantumaudit.app/token/microsoft-corporation-base) |
+| [Amazon.com Inc.](./amazoncom-inc.md) | AMZNC | 🟢 31/100 Low Risk | 2026-09-17 | [↗](https://quantumaudit.app/token/amazoncom-inc-base) |
 | [Brett](./brett.md) | BRETT | 🟢 0/100 Low Risk | 2026-09-17 | [↗](https://quantumaudit.app/token/brett-base) |
 | [Cortex](./cortex.md) | CX | 🟠 77/100 High Risk | 2026-09-17 | [↗](https://quantumaudit.app/token/cortex-base) |
 | [Limitless Official Token](./limitless-official-token.md) | LMTS | 🟢 23/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/limitless-official-token-base) |
-| [Tesla Inc.](./tesla-inc.md) | TSLAC | 🟢 31/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/tesla-inc-base) |
+| [Tesla Inc.](./tesla-inc.md) | TSLAC | 🟢 29/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/tesla-inc-base) |
 | [XRP (Universal)](./xrp-universal.md) | UXRP | 🟠 76/100 High Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/xrp-universal-base) |
 | [A Society For AI Agents](./a-society-for-ai-agents.md) | 1F916 | 🟡 48/100 Medium Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/a-society-for-ai-agents-base) |
 | [Stonx](./stonx.md) | STONX | 🟡 49/100 Medium Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/stonx-base) |
 | [Kairence](./kairence.md) | KAI | 🟡 41/100 Medium Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/kairence-base) |
-| [Strategy Inc.](./strategy-inc.md) | MSTRC | 🟢 33/100 Low Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/strategy-inc-base) |
+| [Strategy Inc.](./strategy-inc.md) | MSTRC | 🟢 31/100 Low Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/strategy-inc-base) |
 | [Aligned Token](./aligned-token.md) | ALIGN | 🟡 63/100 Medium Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/aligned-token-base) |
-| [Wrapped  iShares 0-3 Month Treasury Bond ETF ST0x](./wrapped-ishares-0-3-month-treasury-bond-etf-st0x.md) | WTSGOV | 🟠 72/100 High Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/wrapped-ishares-0-3-month-treasury-bond-etf-st0x-base) |
-| [ZERO KNOWLEDGE CAT](./zero-knowledge-cat.md) | ZKAT | 🟡 43/100 Medium Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/zero-knowledge-cat-base) |
+| [Wrapped  iShares 0-3 Month Treasury Bond ETF ST0x](./wrapped-ishares-0-3-month-treasury-bond-etf-st0x.md) | WTSGOV | 🟠 70/100 High Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/wrapped-ishares-0-3-month-treasury-bond-etf-st0x-base) |
+| [ZERO KNOWLEDGE CAT](./zero-knowledge-cat.md) | ZKAT | 🟡 41/100 Medium Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/zero-knowledge-cat-base) |
 | [1claw AI](./1claw-ai.md) | 1CLAWAI | 🟠 74/100 High Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/1claw-ai-base) |
-| [Space Exploration Technologies Corp.](./space-exploration-technologies-corp.md) | SPCXC | 🟡 35/100 Medium Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/space-exploration-technologies-corp-base) |
-| [Sandisk Corporation](./sandisk-corporation.md) | SNDKC | 🟢 31/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/sandisk-corporation-base) |
+| [Space Exploration Technologies Corp.](./space-exploration-technologies-corp.md) | SPCXC | 🟢 33/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/space-exploration-technologies-corp-base) |
+| [Sandisk Corporation](./sandisk-corporation.md) | SNDKC | 🟢 29/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/sandisk-corporation-base) |
 | [Lotto Coin](./lotto-coin.md) | LOTTO | 🟡 63/100 Medium Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/lotto-coin-base) |
 | [iStonks](./istonks.md) | ISTONKS | 🟡 47/100 Medium Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/istonks-base) |
 | [ELON](./elon.md) | ELON | 🟡 46/100 Medium Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/elon-base) |
@@ -195,7 +216,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 | [Unit 00 - Rei](./unit-00-rei.md) | REI | 🟢 0/100 Low Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/unit-00-rei-base) |
 | [Umia](./umia.md) | UMIA | 🟡 63/100 Medium Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/umia-base) |
 | [Towns](./towns.md) | TOWNS | 🟠 71/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/towns-base) |
-| [Toshi](./toshi.md) | TOSHI | 🟢 5/100 Low Risk | 2026-07-18 | [↗](https://quantumaudit.app/token/toshi-base) |
+| [Toshi](./toshi.md) | TOSHI | 🟢 3/100 Low Risk | 2026-07-18 | [↗](https://quantumaudit.app/token/toshi-base) |
 | [tokenbot](./tokenbot.md) | CLANKER | 🟡 41/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/tokenbot-base) |
 | [toby](./toby.md) | TOBY | 🟢 30/100 Low Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/toby-base) |
 | [The White Wolf](./the-white-wolf.md) | WOLF | 🟠 74/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/the-white-wolf-base) |
@@ -203,7 +224,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 | [the sleeping giant](./the-sleeping-giant.md) | TSG | 🟡 37/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/the-sleeping-giant-base) |
 | [The Innovation Game](./the-innovation-game.md) | TIG | 🟡 48/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/the-innovation-game-base) |
 | [Tevaera](./tevaera.md) | TEVA | 🔴 100/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/tevaera-base) |
-| [Tether USD](./tether-usd.md) | USDT | 🟡 60/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/tether-usd-base) |
+| [Tether USD](./tether-usd.md) | USDT | 🟡 58/100 Medium Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/tether-usd-base) |
 | [TAOT](./taot.md) | TAOT | 🟡 53/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/taot-base) |
 | [Surplus Intelligence](./surplus-intelligence.md) | SURPLUS | 🟢 26/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/surplus-intelligence-base) |
 | [Supergemma4-26b-multimodal](./supergemma4-26b-multimodal.md) | SUPERGEMMA | 🟡 49/100 Medium Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/supergemma4-26b-multimodal-base) |
