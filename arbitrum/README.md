@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**77 reports** · Updated daily · [← All Networks](../README.md)
+**78 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Staked USDai](./staked-usdai.md) | SUSDAI | 🟢 10/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/staked-usdai-arb) |
 | [CipherOwl](./cipherowl.md) | CIOWL | 🟠 73/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/cipherowl-arb) |
 | [SpaceX (Reality Tokenized)](./spacex-reality-tokenized.md) | RSPCX | 🟠 84/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/spacex-reality-tokenized-arb) |
 | [Meanwhile](./meanwhile.md) | MENWH | 🟠 75/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/meanwhile-arb) |

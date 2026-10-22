@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1050 reports** · Updated daily · [← All Networks](../README.md)
+**1077 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,33 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Clout](./clout.md) | CLOUT | 🟢 15/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/clout-sol) |
+| [EggEmpire](./eggempire.md) | EMP | 🟢 26/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/eggempire-sol) |
+| [Jason Duval](./jason-duval-sol-7264.md) | JASON | 🟢 21/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/jason-duval-sol-7264) |
+| [Jason Duval](./jason-duval-sol-193b.md) | JASON | 🟢 20/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/jason-duval-sol-193b) |
+| [PVE](./pve.md) | PVE | 🟠 70/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/pve-sol) |
+| [kumchi](./kumchi.md) | KUMCHI | 🟢 21/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/kumchi-sol) |
+| [The Bee King](./the-bee-king.md) | BKING | 🟡 42/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/the-bee-king-sol) |
+| [부캉이 busan shark](./busan-shark.md) | BUKANGI | 🟢 16/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/busan-shark-sol) |
+| [Mooncoin](./mooncoin.md) | MOON | 🟢 21/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/mooncoin-sol) |
+| [Big Titty Coin](./big-titty-coin.md) | BTC | 🟢 8/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/big-titty-coin-sol) |
+| [CYBERCAT](./cybercat.md) | CYBERCAT | 🟢 21/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/cybercat-sol) |
+| [Larp Final Boss](./larp-final-boss-sol-2383.md) | KIMCHI | 🟡 53/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/larp-final-boss-sol-2383) |
+| [chrome](./chrome.md) | CHROME | 🟢 23/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/chrome-sol) |
+| [Actually Useless](./actually-useless-sol-a0cf.md) | AU | 🟢 30/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/actually-useless-sol-a0cf) |
+| [The McRib Indicator](./the-mcrib-indicator.md) | MCRIB | 🟢 17/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/the-mcrib-indicator-sol) |
+| [project kimchi](./project-kimchi.md) | KIMCHI | 🟢 24/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/project-kimchi-sol) |
+| [Soul Labs](./soul-labs-sol-9c1c.md) | SO | 🟢 29/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/soul-labs-sol-9c1c) |
+| [AlloX](./allox-sol-7fd5.md) | ALLOX | 🟢 28/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/allox-sol-7fd5) |
+| [Larp Final Boss](./larp-final-boss.md) | KIMCHI | 🟢 23/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/larp-final-boss-sol) |
+| [Nagi and Pokke](./nagi-and-pokke.md) | ヤギ | 🟢 22/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/nagi-and-pokke-sol) |
+| [Solana Intelligence](./solana-intelligence.md) | VECTOR | 🟢 24/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/solana-intelligence-sol) |
+| [Black October](./black-october.md) | BLACKTOBER | 🟢 16/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/black-october-sol) |
+| [Shamonda virus](./shamonda-virus.md) | SHAV | 🟢 20/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/shamonda-virus-sol) |
+| [Shamonda Virus Coin](./shamonda-virus-coin.md) | SHAVCOIN | 🟢 14/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/shamonda-virus-coin-sol) |
+| [TRUTH COIN🔥](./truth-coin.md) | TRUTH | 🟢 0/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/truth-coin-sol) |
+| [UDR](./udr-sol-a735.md) | UDR | 🟢 0/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/udr-sol-a735) |
+| [Trump In Box](./trump-in-box-sol-bba8.md) | TIB | 🟢 0/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/trump-in-box-sol-bba8) |
 | [Backers](./backers.md) | BACKERS | 🟢 1/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/backers-sol) |
 | [Rebuild](./rebuild.md) | REBUILD | 🟢 23/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/rebuild-sol) |
 | [PHP2SHELL](./php2shell-sol-7a22.md) | PHP2SHELL | 🟢 21/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/php2shell-sol-7a22) |

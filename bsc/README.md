@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**449 reports** · Updated daily · [← All Networks](../README.md)
+**454 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [sh!tcoin](./shtcoin.md) | SH!T | 🟡 43/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/shtcoin-bsc) |
+| [AltLayer Token](./altlayer-token.md) | ALT | 🟡 47/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/altlayer-token-bsc) |
+| [BNBCAT](./bnbcat.md) | BNBCAT | 🟠 84/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/bnbcat-bsc) |
+| [Gang](./gang.md) | GANG | 🟡 38/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/gang-bsc) |
+| [Wrapped Bank Of China xStock](./wrapped-bank-of-china-xstock.md) | WBANKCX | 🟡 44/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/wrapped-bank-of-china-xstock-bsc) |
 | [CRAZYCOIN](./crazycoin.md) | CRAZYCOIN | 🟡 47/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/crazycoin-bsc) |
 | [Gamebox](./gamebox.md) | GXB | 🟡 47/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/gamebox-bsc) |
 | [派大星国旗](./token-211f16.md) | 派大星 | 🟢 32/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/token-211f16-bsc) |

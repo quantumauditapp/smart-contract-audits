@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**417 reports** · Updated daily · [← All Networks](../README.md)
+**422 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Snowmoon](./snowmoon-eth-c0c1.md) | SNOWMOON | 🟢 13/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/snowmoon-eth-c0c1) |
+| [PVE](./pve.md) | PVE | 🟠 67/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/pve-eth) |
+| [zipcoin](./zipcoin-eth-b715.md) | ZC | 🟠 84/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/zipcoin-eth-b715) |
+| [zipcoin](./zipcoin-eth-f1a0.md) | ZC | 🟡 57/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/zipcoin-eth-f1a0) |
+| [Mask Network](./mask-network.md) | MASK | 🟡 36/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/mask-network-eth) |
 | [evmbot](./evmbot.md) | EVMBOT | 🟢 8/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/evmbot-eth) |
 | [securepub](./securepub.md) | SECUREPUB | 🟠 80/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/securepub-eth) |
 | [Pangea](./pangea-eth-c3b7.md) | PANGEA | 🟡 38/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/pangea-eth-c3b7) |
