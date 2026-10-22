@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-2350-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-2357-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,13 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Backers](./solana/backers.md) | BACKERS | Solana | 🟢 1/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/backers-sol) |
+| [CipherOwl](./arbitrum/cipherowl.md) | CIOWL | Arbitrum | 🟠 73/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/cipherowl-arb) |
+| [Cortik AI](./polygon/cortik-ai.md) | CTK | Polygon | 🟡 46/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/cortik-ai-poly) |
+| [Rebuild](./solana/rebuild.md) | REBUILD | Solana | 🟢 23/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/rebuild-sol) |
+| [PHP2SHELL](./solana/php2shell-sol-7a22.md) | PHP2SHELL | Solana | 🟢 21/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/php2shell-sol-7a22) |
+| [Trench Gang](./solana/trench-gang-sol-31ab.md) | TRENCHERS | Solana | 🟢 13/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/trench-gang-sol-31ab) |
+| [National Oil Dividend Fund 🔥](./solana/national-oil-dividend-fund-sol-c151.md) | NODF | Solana | 🟢 0/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-sol-c151) |
 | [ChainLink Token](./polygon/chainlink-token.md) | LINK | Polygon | 🟢 31/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/chainlink-token-poly) |
 | [zillions_](./solana/zillions.md) | ZILLIONS | Solana | 🟢 17/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/zillions-sol) |
 | [Capecoin](./solana/capecoin.md) | CAPE | Solana | 🟢 21/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/capecoin-sol) |
@@ -35,19 +42,12 @@
 | [Liquid Gold](./solana/liquid-gold.md) | MERCURY | Solana | 🟢 23/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/liquid-gold-sol) |
 | [Saviour of the Internet](./solana/saviour-of-the-internet.md) | SURY | Solana | 🟢 20/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/saviour-of-the-internet-sol) |
 | [United States Dividend Fund](./solana/united-states-dividend-fund-sol-b152.md) | USDF | Solana | 🟢 2/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-sol-b152) |
-| [Kimchi's Cat](./solana/kimchis-cat.md) | BAKI | Solana | 🟢 0/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/kimchis-cat-sol) |
-| [National Oil Dividend Fund](./solana/national-oil-dividend-fund-sol-66f4.md) | NODF | Solana | 🟢 0/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-sol-66f4) |
-| [National Oil Dividend Fund](./solana/national-oil-dividend-fund-sol-1ec4.md) | NODF | Solana | 🟢 0/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-sol-1ec4) |
-| [Pangea](./ethereum/pangea-eth-c3b7.md) | PANGEA | Ethereum | 🟡 38/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/pangea-eth-c3b7) |
-| [A](./polygon/a.md) | A | Polygon | 🟠 84/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/a-poly) |
-| [DIG](./solana/dig.md) | DIG | Solana | 🟢 14/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/dig-sol) |
-| [bean cat](./solana/bean-cat.md) | BEANCAT | Solana | 🟢 16/100 | 2026-10-22 | [↗](https://quantumaudit.app/token/bean-cat-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (1045)](./solana/README.md) · [BNB Chain (449)](./bsc/README.md) · [Ethereum (417)](./ethereum/README.md) · [Base (342)](./base/README.md) · [Arbitrum (76)](./arbitrum/README.md) · [Polygon (21)](./polygon/README.md)
+[Solana (1050)](./solana/README.md) · [BNB Chain (449)](./bsc/README.md) · [Ethereum (417)](./ethereum/README.md) · [Base (342)](./base/README.md) · [Arbitrum (77)](./arbitrum/README.md) · [Polygon (22)](./polygon/README.md)
 
 ---
 

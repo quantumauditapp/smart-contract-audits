@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1045 reports** · Updated daily · [← All Networks](../README.md)
+**1050 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Backers](./backers.md) | BACKERS | 🟢 1/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/backers-sol) |
+| [Rebuild](./rebuild.md) | REBUILD | 🟢 23/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/rebuild-sol) |
+| [PHP2SHELL](./php2shell-sol-7a22.md) | PHP2SHELL | 🟢 21/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/php2shell-sol-7a22) |
+| [Trench Gang](./trench-gang-sol-31ab.md) | TRENCHERS | 🟢 13/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/trench-gang-sol-31ab) |
+| [National Oil Dividend Fund 🔥](./national-oil-dividend-fund-sol-c151.md) | NODF | 🟢 0/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-sol-c151) |
 | [zillions_](./zillions.md) | ZILLIONS | 🟢 17/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/zillions-sol) |
 | [Capecoin](./capecoin.md) | CAPE | 🟢 21/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/capecoin-sol) |
 | [Capycoin](./capycoin.md) | CAPY | 🟡 38/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/capycoin-sol) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**76 reports** · Updated daily · [← All Networks](../README.md)
+**77 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [CipherOwl](./cipherowl.md) | CIOWL | 🟠 73/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/cipherowl-arb) |
 | [SpaceX (Reality Tokenized)](./spacex-reality-tokenized.md) | RSPCX | 🟠 84/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/spacex-reality-tokenized-arb) |
 | [Meanwhile](./meanwhile.md) | MENWH | 🟠 75/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/meanwhile-arb) |
 | [Immix](./immix.md) | IMMIX | 🟠 76/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/immix-arb) |
@@ -28,10 +29,10 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 | [Eunice](./eunice.md) | EUIAI | 🟠 74/100 High Risk | 2026-10-05 | [↗](https://quantumaudit.app/token/eunice-arb) |
 | [Infini](./infini.md) | IFN | 🟠 74/100 High Risk | 2026-10-04 | [↗](https://quantumaudit.app/token/infini-arb) |
 | [Wrapped eETH](./wrapped-eeth.md) | WEETH | 🟢 9/100 Low Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/wrapped-eeth-arb) |
-| [Agentum](./agentum.md) | AGT | 🟠 76/100 High Risk | 2026-09-30 | [↗](https://quantumaudit.app/token/agentum-arb) |
+| [Agentum](./agentum.md) | AGT | 🟠 74/100 High Risk | 2026-09-30 | [↗](https://quantumaudit.app/token/agentum-arb) |
 | [Camelot token](./camelot-token.md) | GRAIL | 🟡 44/100 Medium Risk | 2026-09-29 | [↗](https://quantumaudit.app/token/camelot-token-arb) |
 | [Spell Token](./spell-token.md) | SPELL | 🟡 63/100 Medium Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/spell-token-arb) |
-| [Lido DAO Token](./lido-dao-token.md) | LDO | 🟢 23/100 Low Risk | 2026-09-25 | [↗](https://quantumaudit.app/token/lido-dao-token-arb) |
+| [Lido DAO Token](./lido-dao-token.md) | LDO | 🟢 21/100 Low Risk | 2026-09-25 | [↗](https://quantumaudit.app/token/lido-dao-token-arb) |
 | [Sperax](./sperax.md) | SPA | 🟡 42/100 Medium Risk | 2026-09-24 | [↗](https://quantumaudit.app/token/sperax-arb) |
 | [ApeCoin](./apecoin.md) | APE | 🟡 44/100 Medium Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/apecoin-arb) |
 | [Uniswap](./uniswap.md) | UNI | 🟡 62/100 Medium Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/uniswap-arb) |
@@ -49,7 +50,7 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 | [Graph Token](./graph-token.md) | GRT | 🟡 63/100 Medium Risk | 2026-09-06 | [↗](https://quantumaudit.app/token/graph-token-arb) |
 | [Axelar Wrapped LAVA](./axelar-wrapped-lava.md) | LAVA | 🔴 87/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/axelar-wrapped-lava-arb) |
 | [Autonomi](./autonomi.md) | ANT | 🟡 49/100 Medium Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/autonomi-arb) |
-| [Arbitrum Intern](./arbitrum-intern.md) | INTERN | 🟠 67/100 High Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/arbitrum-intern-arb) |
+| [Arbitrum Intern](./arbitrum-intern.md) | INTERN | 🟠 65/100 High Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/arbitrum-intern-arb) |
 | [Arbitrum Dog](./arbitrum-dog.md) | MILES | 🟡 53/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/arbitrum-dog-arb) |
 | [Arbitrum](./arbitrum.md) | ARB | 🟢 28/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/arbitrum-arb) |
 | [Aethir Token](./aethir-token.md) | ATH | 🟠 69/100 High Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/aethir-token-arb) |

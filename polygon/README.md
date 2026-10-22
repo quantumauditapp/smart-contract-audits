@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Polygon tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**21 reports** · Updated daily · [← All Networks](../README.md)
+**22 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Polygon tokens, powered by [Quantum Audit]
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Cortik AI](./cortik-ai.md) | CTK | 🟡 46/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/cortik-ai-poly) |
 | [ChainLink Token](./chainlink-token.md) | LINK | 🟢 31/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/chainlink-token-poly) |
 | [A](./a.md) | A | 🟠 84/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/a-poly) |
 | [ChatApex AI](./chatapex-ai.md) | CAAI | 🟠 73/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/chatapex-ai-poly) |
