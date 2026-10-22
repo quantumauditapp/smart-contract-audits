@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1034 reports** · Updated daily · [← All Networks](../README.md)
+**1045 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,17 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [zillions_](./zillions.md) | ZILLIONS | 🟢 17/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/zillions-sol) |
+| [Capecoin](./capecoin.md) | CAPE | 🟢 21/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/capecoin-sol) |
+| [Capycoin](./capycoin.md) | CAPY | 🟡 38/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/capycoin-sol) |
+| [Macca The Gator](./macca-the-gator.md) | MACCA | 🟢 13/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/macca-the-gator-sol) |
+| [Trump In Box](./trump-in-box.md) | TIB | 🟢 16/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/trump-in-box-sol) |
+| [Liquid Gold](./liquid-gold.md) | MERCURY | 🟢 23/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/liquid-gold-sol) |
+| [Saviour of the Internet](./saviour-of-the-internet.md) | SURY | 🟢 20/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/saviour-of-the-internet-sol) |
+| [United States Dividend Fund](./united-states-dividend-fund-sol-b152.md) | USDF | 🟢 2/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-sol-b152) |
+| [Kimchi's Cat](./kimchis-cat.md) | BAKI | 🟢 0/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/kimchis-cat-sol) |
+| [National Oil Dividend Fund](./national-oil-dividend-fund-sol-66f4.md) | NODF | 🟢 0/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-sol-66f4) |
+| [National Oil Dividend Fund](./national-oil-dividend-fund-sol-1ec4.md) | NODF | 🟢 0/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-sol-1ec4) |
 | [DIG](./dig.md) | DIG | 🟢 14/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/dig-sol) |
 | [bean cat](./bean-cat.md) | BEANCAT | 🟢 16/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/bean-cat-sol) |
 | [Clapping Cat](./clapping-cat.md) | CLAPCAT | 🟢 21/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/clapping-cat-sol) |

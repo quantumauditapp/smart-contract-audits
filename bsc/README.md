@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**441 reports** · Updated daily · [← All Networks](../README.md)
+**449 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,14 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [CRAZYCOIN](./crazycoin.md) | CRAZYCOIN | 🟡 47/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/crazycoin-bsc) |
+| [Gamebox](./gamebox.md) | GXB | 🟡 47/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/gamebox-bsc) |
+| [派大星国旗](./token-211f16.md) | 派大星 | 🟢 32/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/token-211f16-bsc) |
+| [赵长鹏的狗](./zdog.md) | ZDOG | 🟢 29/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/zdog-bsc) |
+| [重生之我在币安广场赚100亿](./100-bsc-cb29.md) | 重生之我在币安广场赚100亿 | 🟢 18/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/100-bsc-cb29) |
+| [ZigCoin](./zigcoin.md) | ZIG | 🟢 18/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/zigcoin-bsc) |
+| [Trump](./trump-bsc-5dfa.md) | TRUMP | 🟠 84/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/trump-bsc-5dfa) |
+| [4cat](./4cat-bsc-5779.md) | 4CAT | 🟡 57/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/4cat-bsc-5779) |
 | [Community 1038148653](./community-1038148653.md) | 马斯克人生 | 🟢 26/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/community-1038148653-bsc) |
 | [SpaceX Inu](./spacex-inu.md) | SI | 🟢 19/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/spacex-inu-bsc) |
 | [DOTAI](./dotai.md) | DOTAI | 🟢 20/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/dotai-bsc) |

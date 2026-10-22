@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**338 reports** · Updated daily · [← All Networks](../README.md)
+**342 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Aero](./aero-base-d176.md) | AERO | 🔴 98/100 Critical Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/aero-base-d176) |
+| [Federal Oil Trust Fund](./federal-oil-trust-fund-base-75bb.md) | FOTF | 🟡 59/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/federal-oil-trust-fund-base-75bb) |
+| [Federal Oil Trust Fund](./federal-oil-trust-fund.md) | FOTF | 🟡 59/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/federal-oil-trust-fund-base) |
+| [NODF](./nodf.md) | NODF | 🟠 77/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/nodf-base) |
 | [Aero](./aero.md) | AERO | 🔴 99/100 Critical Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/aero-base) |
 | [World Strategic Oil Supply](./world-strategic-oil-supply-base-eb00.md) | WSOS | 🟡 57/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/world-strategic-oil-supply-base-eb00) |
 | [Aura Final Boss](./aura-final-boss.md) | KIMCHI | 🟡 56/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/aura-final-boss-base) |
