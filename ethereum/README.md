@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**412 reports** · Updated daily · [← All Networks](../README.md)
+**415 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Pangea](./pangea-eth-c3b7.md) | PANGEA | 🟡 38/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/pangea-eth-c3b7) |
+| [Deference](./deference-eth-5098.md) | DEFERENCE | 🟡 39/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/deference-eth-5098) |
+| [Hashmind](./hashmind.md) | HASH | 🟢 33/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/hashmind-eth) |
 | [Pangea Cat](./pangea-cat.md) | PCAT | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/pangea-cat-eth) |
 | [Pangea](./pangea-eth-d397.md) | PANGEA | 🟢 16/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/pangea-eth-d397) |
 | [Balances](./balances.md) | BALANCE | 🟡 60/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/balances-eth) |

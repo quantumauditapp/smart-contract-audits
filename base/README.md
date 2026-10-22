@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**331 reports** · Updated daily · [← All Networks](../README.md)
+**338 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Aero](./aero.md) | AERO | 🔴 99/100 Critical Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/aero-base) |
+| [World Strategic Oil Supply](./world-strategic-oil-supply-base-eb00.md) | WSOS | 🟡 57/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/world-strategic-oil-supply-base-eb00) |
+| [Aura Final Boss](./aura-final-boss.md) | KIMCHI | 🟡 56/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/aura-final-boss-base) |
+| [XTruth Oil🔥](./xtruth-oil.md) | XTO | 🟡 55/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/xtruth-oil-base) |
+| [US Oil Exchange (USOE)](./us-oil-exchange-usoe-base-b2a5.md) | USOE | 🟡 56/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/us-oil-exchange-usoe-base-b2a5) |
+| [UDR](./udr-base-96b6.md) | UDR | 🟡 57/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/udr-base-96b6) |
+| [AiBubble](./aibubble.md) | AIPOP | 🟠 73/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/aibubble-base) |
 | [Pangea](./pangea.md) | PANGEA | 🟠 65/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/pangea-base) |
 | [DOTF](./dotf.md) | DOTF | 🟡 58/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/dotf-base) |
 | [USDP](./usdp-base-879c.md) | USDP | 🟡 55/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/usdp-base-879c) |

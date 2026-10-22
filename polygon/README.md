@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Polygon tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**18 reports** · Updated daily · [← All Networks](../README.md)
+**20 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Polygon tokens, powered by [Quantum Audit]
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [A](./a.md) | A | 🟠 84/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/a-poly) |
+| [ChatApex AI](./chatapex-ai.md) | CAAI | 🟠 73/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/chatapex-ai-poly) |
 | [ROUTINE COIN](./routine-coin.md) | ROU | 🟠 74/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/routine-coin-poly) |
 | [Gains Network](./gains-network.md) | GNS | 🟡 51/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/gains-network-poly) |
 | [WhaleBit](./whalebit.md) | CES | 🟡 60/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/whalebit-poly) |
@@ -25,7 +27,7 @@ Automated daily security analyses for Polygon tokens, powered by [Quantum Audit]
 | [Telcoin (PoS)](./telcoin-pos.md) | TEL | 🟢 30/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/telcoin-pos-poly) |
 | [Aave (PoS)](./aave-pos.md) | AAVE | 🟢 19/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/aave-pos-poly) |
 | [Geodnet Token](./geodnet-token.md) | GEOD | 🟡 36/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/geodnet-token-poly) |
-| [QuickSwap](./quickswap.md) | QUICK | 🟡 36/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/quickswap-poly) |
+| [QuickSwap](./quickswap.md) | QUICK | 🟢 34/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/quickswap-poly) |
 | [AS Token](./as-token.md) | AS | 🟡 54/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/as-token-poly) |
 | [AI Powered Finance](./ai-powered-finance.md) | AIPF | 🟢 30/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/ai-powered-finance-poly) |
 

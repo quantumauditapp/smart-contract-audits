@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1013 reports** · Updated daily · [← All Networks](../README.md)
+**1034 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,27 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [DIG](./dig.md) | DIG | 🟢 14/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/dig-sol) |
+| [bean cat](./bean-cat.md) | BEANCAT | 🟢 16/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/bean-cat-sol) |
+| [Clapping Cat](./clapping-cat.md) | CLAPCAT | 🟢 21/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/clapping-cat-sol) |
+| [Caillou](./caillou.md) | CAILLOU | 🟢 22/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/caillou-sol) |
+| [Pilly](./pilly.md) | PILLY | 🟢 22/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/pilly-sol) |
+| [sentient memes producer](./sentient-memes-producer.md) | MΞMΞTIC | 🟢 27/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/sentient-memes-producer-sol) |
+| [PHP-UP-2026](./php-up-2026.md) | PHP | 🟢 5/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/php-up-2026-sol) |
+| [Frens](./frens.md) | FRENS | 🟢 16/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/frens-sol) |
+| [Actually Useless](./actually-useless.md) | AU | 🟢 16/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/actually-useless-sol) |
+| [OnlyAgent](./onlyagent.md) | OA | 🟢 7/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/onlyagent-sol) |
+| [Retail](./retail.md) | RETAIL | 🟢 13/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/retail-sol) |
+| [Agent Alpha](./agent-alpha.md) | AGENTXALPH | 🟢 29/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/agent-alpha-sol) |
+| [4coin](./4coin.md) | 4 | 🟢 23/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/4coin-sol) |
+| [CYBERINU](./cyberinu.md) | CI | 🟢 21/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/cyberinu-sol) |
+| [Pullback](./pullback.md) | PULLBACK | 🟢 21/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/pullback-sol) |
+| [PHP2SHELL](./php2shell.md) | PHP2SHELL | 🟢 24/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/php2shell-sol) |
+| [Pangea](./pangea.md) | PANGEA | 🟡 64/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/pangea-sol) |
+| [cybercurrency](./cybercurrency.md) | CYBER | 🟢 16/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/cybercurrency-sol) |
+| [Federal Oil Trust Fund](./federal-oil-trust-fund.md) | FOTF | 🟢 1/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/federal-oil-trust-fund-sol) |
+| [Moonoween](./moonoween.md) | MOONOWEEN | 🟢 0/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/moonoween-sol) |
+| [XTO](./xto-sol-c6ef.md) | XTO | 🟢 2/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/xto-sol-c6ef) |
 | [SOLANA MINERS](./solana-miners.md) | MINERS | 🟢 29/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/solana-miners-sol) |
 | [Candy Trader Companion](./candy-trader-companion.md) | CANDY | 🟢 13/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/candy-trader-companion-sol) |
 | [Baby Kimchi](./baby-kimchi.md) | BABYKIMCHI | 🟢 16/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/baby-kimchi-sol) |
