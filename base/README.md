@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**362 reports** · Updated daily · [← All Networks](../README.md)
+**369 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Dispatch](./dispatch-base-778a.md) | DSP | 🟠 65/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/dispatch-base-778a) |
+| [National Oil Dividend Fund](./national-oil-dividend-fund-base-8c5f.md) | NODF | 🟡 55/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-base-8c5f) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-base-22ed.md) | AODF | 🟡 61/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-22ed) |
+| [AOP](./aop-base-0bfd.md) | AOP | 🟡 58/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/aop-base-0bfd) |
+| [NODF 🔥](./nodf-base-df00.md) | NODF | 🟡 60/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/nodf-base-df00) |
+| [Aura Final Boss](./aura-final-boss-base-504f.md) | KIMCHI | 🟡 56/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/aura-final-boss-base-504f) |
+| [DOAS](./doas.md) | DOAS | 🟡 55/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/doas-base) |
 | [one life, its worth an attempt](./one-life-its-worth-an-attempt-base-1905.md) | WORTH | 🟠 66/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/one-life-its-worth-an-attempt-base-1905) |
 | [XTO](./xto-base-7ad2.md) | XTO | 🟡 61/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/xto-base-7ad2) |
 | [Aura Final Boss](./aura-final-boss-base-168a.md) | KIMCHI | 🟡 56/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/aura-final-boss-base-168a) |

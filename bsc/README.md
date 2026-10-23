@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**459 reports** · Updated daily · [← All Networks](../README.md)
+**468 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,15 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [AgentPad](./agentpad.md) | PAD | 🔴 94/100 Critical Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/agentpad-bsc) |
+| [BNCB stocks1131542192](./bncb-stocks1131542192.md) | BNCB股票 | 🟢 25/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/bncb-stocks1131542192-bsc) |
+| [Unsold City](./unsold-city.md) | UNSOLD | 🟡 45/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/unsold-city-bsc) |
+| [50000000](./50000000.md) | 50000000 | 🟠 84/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/50000000-bsc) |
+| [₿](./token-2c7cca.md) | ₿ | 🟡 36/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/token-2c7cca-bsc) |
+| [Gang](./gang-bsc-9ac5.md) | GANG | 🟡 42/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/gang-bsc-9ac5) |
+| [Dacity Coin](./dacity-coin.md) | DACITY | 🟠 84/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/dacity-coin-bsc) |
+| [MemeCore](./memecore.md) | M | 🟡 58/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/memecore-bsc) |
+| [CiShanGou_GiggleAcademy](./cishangougiggleacademy.md) | 慈善狗 | 🟢 9/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/cishangougiggleacademy-bsc) |
 | [Doodles](./doodles.md) | DOOD | 🟢 32/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/doodles-bsc) |
 | [sats](./sats.md) | SATS | 🟢 25/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/sats-bsc) |
 | [Binance Super CZ](./binance-super-cz.md) | BSC | 🟡 55/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/binance-super-cz-bsc) |

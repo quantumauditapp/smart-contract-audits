@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**424 reports** · Updated daily · [← All Networks](../README.md)
+**427 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Meowecoin](./meowecoin.md) | MEOWE | 🟢 25/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/meowecoin-eth) |
+| [The McRib Indicator](./the-mcrib-indicator.md) | MCRIB | 🟡 64/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/the-mcrib-indicator-eth) |
+| [Grove](./grove.md) | GROVE | 🟡 51/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/grove-eth) |
 | [Black October](./black-october.md) | BLACKTOBER | 🟢 14/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/black-october-eth) |
 | [Quickdraw](./quickdraw.md) | DRAW | 🟠 78/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/quickdraw-eth) |
 | [Snowmoon](./snowmoon-eth-c0c1.md) | SNOWMOON | 🟢 13/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/snowmoon-eth-c0c1) |

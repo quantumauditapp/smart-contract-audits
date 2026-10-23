@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1090 reports** · Updated daily · [← All Networks](../README.md)
+**1102 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,18 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [the womb](./the-womb.md) | WOMB | 🟢 22/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/the-womb-sol) |
+| [gust](./gust.md) | GUST | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/gust-sol) |
+| [cyber](./cyber.md) | CYBER | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/cyber-sol) |
+| [Shamonda virus](./shamonda-virus-sol-b626.md) | SHAMONDA | 🟢 29/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/shamonda-virus-sol-b626) |
+| [AlloX](./allox-sol-f66b.md) | ALLOX | 🟡 39/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/allox-sol-f66b) |
+| [Soul Labs](./soul-labs-sol-65db.md) | SO | 🟡 38/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/soul-labs-sol-65db) |
+| [Meowecoin](./meowecoin.md) | MEOWE | 🟢 22/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/meowecoin-sol) |
+| [zonki](./zonki.md) | ZONKI | 🟢 27/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/zonki-sol) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-sol-8eea.md) | AODF | 🟢 0/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol-8eea) |
+| [American Overwatch Protocol](./american-overwatch-protocol-sol-e95e.md) | AOP | 🟢 0/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-sol-e95e) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-sol-97f6.md) | AODF | 🟢 0/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol-97f6) |
+| [NODF](./nodf.md) | NODF | 🟢 0/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/nodf-sol) |
 | [MEMEOS](./memeos.md) | MEMEOS | 🟢 0/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/memeos-sol) |
 | [Anduril PreStocks](./anduril-prestocks.md) | ANDURIL | 🟠 84/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/anduril-prestocks-sol) |
 | [Mememon](./mememon.md) | MEMEMON | 🟢 17/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/mememon-sol) |
