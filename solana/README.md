@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1077 reports** · Updated daily · [← All Networks](../README.md)
+**1090 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,19 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [MEMEOS](./memeos.md) | MEMEOS | 🟢 0/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/memeos-sol) |
+| [Anduril PreStocks](./anduril-prestocks.md) | ANDURIL | 🟠 84/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/anduril-prestocks-sol) |
+| [Mememon](./mememon.md) | MEMEMON | 🟢 17/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/mememon-sol) |
+| [stablecoin](./stablecoin.md) | STABLECOIN | 🔴 96/100 Critical Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/stablecoin-sol) |
+| [GLOOB](./gloob.md) | GLOOB | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/gloob-sol) |
+| [Pootcoin](./pootcoin.md) | POOT | 🟢 22/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/pootcoin-sol) |
+| [Capy Glow](./capy-glow.md) | CAPYGLOW | 🟢 19/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/capy-glow-sol) |
+| [Big Titty Coin](./big-titty-coin-sol-c6df.md) | BTC | 🟢 29/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/big-titty-coin-sol-c6df) |
+| [scribes](./scribes.md) | SCRIBES | 🟢 22/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/scribes-sol) |
+| [Virtual Trade ](./virtual-trade.md) | VIRTUAL | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/virtual-trade-sol) |
+| [Bird Reich](./bird-reich.md) | FALCONS | 🟢 24/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/bird-reich-sol) |
+| [Digital Oil Asset Supply](./digital-oil-asset-supply.md) | DOAS | 🟢 0/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/digital-oil-asset-supply-sol) |
+| [Global Oil Institution Fund](./global-oil-institution-fund.md) | GOIF | 🟢 2/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/global-oil-institution-fund-sol) |
 | [Clout](./clout.md) | CLOUT | 🟢 15/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/clout-sol) |
 | [EggEmpire](./eggempire.md) | EMP | 🟢 26/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/eggempire-sol) |
 | [Jason Duval](./jason-duval-sol-7264.md) | JASON | 🟢 21/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/jason-duval-sol-7264) |

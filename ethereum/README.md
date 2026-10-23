@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**422 reports** · Updated daily · [← All Networks](../README.md)
+**424 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Black October](./black-october.md) | BLACKTOBER | 🟢 14/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/black-october-eth) |
+| [Quickdraw](./quickdraw.md) | DRAW | 🟠 78/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/quickdraw-eth) |
 | [Snowmoon](./snowmoon-eth-c0c1.md) | SNOWMOON | 🟢 13/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/snowmoon-eth-c0c1) |
 | [PVE](./pve.md) | PVE | 🟠 67/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/pve-eth) |
 | [zipcoin](./zipcoin-eth-b715.md) | ZC | 🟠 84/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/zipcoin-eth-b715) |

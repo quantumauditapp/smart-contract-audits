@@ -1,0 +1,119 @@
+---
+token: Capy Glow
+ticker: CAPYGLOW
+network: solana
+risk_score: 19
+status: low
+date: 2026-10-23
+---
+
+# Capy Glow (CAPYGLOW) — Smart Contract Security Analysis | Solana
+
+> **Risk Score: 19/100 — 🟢 Low Risk**
+
+[→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/capy-glow-sol)
+
+---
+
+## Audit Summary
+
+Capy Glow is a Token-2022 asset with both mint and freeze authorities successfully revoked. While the token exhibits strong technical security regarding authority control, the high volume-to-liquidity ratio suggests potential wash trading. Holder concentration data was unavailable from the provided sources.
+
+> **Final Recommendation:** Investors should exercise caution regarding the high trading volume relative to the available liquidity, as this often precedes high price volatility. Monitor the liquidity pool for any sudden withdrawals of the non-burned portion of the LP tokens.
+
+Verify current holder concentration using block explorers to ensure no single entity controls a majority of the supply, as this data was unavailable during this audit.
+
+## Category Ratings
+
+| Category | Rating | Risk Level | Notes |
+|----------|--------|-----------|-------|
+| **Technical** | 10/10 | Low | The token utilizes the SPL Token-2022 program. 7.1 Architecture and 7.3 Access Control are robust as both mint and freeze authorities are revoked. 7.2 Code Security is maintained by the standard… |
+| **Governance / Economics** | 5/10 | Medium | 7.4 Economic analysis reveals a volume/liquidity ratio of 119.79, which is significantly above the 20 threshold, indicating potential wash trading. 7.5 Governance and 7.6 External factors are… |
+| **Upgrades** | 8/10 | Low | 7.7 Upgrades are not applicable as this is a standard SPL mint. 7.8 Operations are secure due to the immutable metadata and non-mutable balance settings. The token configuration is finalized and… |
+
+## Security Findings
+
+_🟠 1 High · 🟡 1 Medium · ⚪ 4 Informational_
+
+### `H-01` — Wash Trading Signal  *(Severity: High · Status: Unresolved)*
+
+The 24-hour volume/liquidity ratio is 119.79, which exceeds the 20 threshold, indicating a pattern strongly associated with artificially inflated trade volume.
+
+**Recommendation:** Exercise caution when trading; the apparent market activity may not reflect genuine organic demand.
+
+
+### `QA-LIQUIDITY` — Liquidity only partly locked or burned  *(Severity: Medium · Status: Acknowledged)*
+
+63.7% of the pool's LP is burned or time-locked. 63.7% of the pool's LP tokens are burned — that liquidity can never be withdrawn by anyone. Solana LP holders are anonymous in the data we read, so who can withdraw the remaining liquidity cannot be verified.
+
+**Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
+
+
+### `QA-IDENTITY` — Not listed by any independent source  *(Severity: Informational · Status: Acknowledged)*
+
+Not listed by CoinGecko or any exchange GoPlus tracks. Nothing independent confirms who is behind this token, so every power its contract grants is scored at face value.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $116K (DexScreener, all pools). 24h trading volume $2.4M (DexScreener, all pools).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-PROFILE` — Asset class: Meme token  *(Severity: Informational · Status: Acknowledged)*
+
+A community token whose value comes from attention rather than a product. Being a meme is not a risk in itself: it is scored on exactly the same contract and market facts as any other token. The class itself adds no points; the contract and market facts decide the score. Basis: launched on pump.fun, a meme launchpad. Tokenomics — Supply: fixed — the contract has no mint function. Control: nobody (ownership renounced). Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $116K of DEX liquidity across 3 pools. Launch: launched on pump.fun, under a day of market history.
+
+**Recommendation:** Expect attention-driven volatility; the facts in this report say whether the contract itself can be used against holders.
+
+
+### `QA-RECENT` — Recently launched — less than a day of market history  *(Severity: Informational · Status: Acknowledged)*
+
+The token's oldest DEX pool is less than a day old. Age is not part of the risk score — a new token is not a risky one by default — but a short history means fewer trades and holder changes behind the facts in this report.
+
+**Recommendation:** Re-check ownership, liquidity and holder distribution as the token matures; those are the facts that move early.
+
+## Token Metrics
+
+| Metric | Value |
+|--------|-------|
+| **Contract** | [`4C8xh6...pump`](https://solscan.io/account/4C8xh6tW9wbeG7vX2DwmPJasXL7fQ6dUiNMCneu8pump) |
+| **Network** | Solana |
+| **Price** | $0.0006303 |
+| **24h Volume** | $2.39M |
+| **Liquidity** | $114.0K |
+| **Volume / Liquidity** | 21.0× |
+| **Token Age** | 0h |
+| **Top-10 Holders** | N/A of supply |
+| **Buy / Sell Tax** | 0.0% / 0.0% |
+| **24h Transactions** | 8625 buys / 7880 sells |
+
+## Security Flags (3/4 passed)
+
+| Check | Status |
+|-------|--------|
+| Contract Verified | ✅ Pass |
+| No Mint Function | ✅ Pass |
+| Liquidity Locked | ❌ Fail |
+| Not a Proxy | ✅ Pass |
+
+## Security Flags Detail
+
+| Check | | What it means |
+|-------|---|---------------|
+| Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
+| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
+
+## Sources
+
+- [View on DexScreener](https://dexscreener.com/solana/9k81tp1q1a1oc7k2fdnxujwse1khlgzmvl4mq1m9vydt)
+- [Full AI Report — Quantum Audit](https://quantumaudit.app/token/capy-glow-sol)
+- Security data: public on-chain security registries
+
+---
+*Generated by [Quantum Audit](https://quantumaudit.app) · AI-powered smart contract security · 2026-10-23*

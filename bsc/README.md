@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**454 reports** · Updated daily · [← All Networks](../README.md)
+**459 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Doodles](./doodles.md) | DOOD | 🟢 32/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/doodles-bsc) |
+| [sats](./sats.md) | SATS | 🟢 25/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/sats-bsc) |
+| [Binance Super CZ](./binance-super-cz.md) | BSC | 🟡 55/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/binance-super-cz-bsc) |
+| [SpaceX Super Intelligence](./spacex-super-intelligence.md) | SPACEXSI | 🟢 20/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/spacex-super-intelligence-bsc) |
+| [会议号3386099899](./3386099899.md) | BNCB共建 | 🟢 9/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/3386099899-bsc) |
 | [sh!tcoin](./shtcoin.md) | SH!T | 🟡 43/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/shtcoin-bsc) |
 | [AltLayer Token](./altlayer-token.md) | ALT | 🟡 47/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/altlayer-token-bsc) |
 | [BNBCAT](./bnbcat.md) | BNBCAT | 🟠 84/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/bnbcat-bsc) |
