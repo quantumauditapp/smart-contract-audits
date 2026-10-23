@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**369 reports** · Updated daily · [← All Networks](../README.md)
+**376 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [US Oil Exchange (USOE)](./us-oil-exchange-usoe-base-d19d.md) | USOE | 🟡 56/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/us-oil-exchange-usoe-base-d19d) |
+| [Digital Oil Asset Supply](./digital-oil-asset-supply.md) | DOAS | 🟡 56/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/digital-oil-asset-supply-base) |
+| [XTO](./xto-base-57b7.md) | XTO | 🟡 63/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/xto-base-57b7) |
+| [United Dividend Trust Fund](./united-dividend-trust-fund-base-837a.md) | UDTF | 🟡 56/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/united-dividend-trust-fund-base-837a) |
+| [United States Dividend Fund🔥](./united-states-dividend-fund-base-e17a.md) | USDF | 🟡 58/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base-e17a) |
+| [USOE](./usoe-base-e2ca.md) | USOE | 🟡 56/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/usoe-base-e2ca) |
+| [United States Dividend Program🔥](./united-states-dividend-program-base-7add.md) | USDP | 🟡 56/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/united-states-dividend-program-base-7add) |
 | [Dispatch](./dispatch-base-778a.md) | DSP | 🟠 65/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/dispatch-base-778a) |
 | [National Oil Dividend Fund](./national-oil-dividend-fund-base-8c5f.md) | NODF | 🟡 55/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-base-8c5f) |
 | [American Oil Dividend Fund](./american-oil-dividend-fund-base-22ed.md) | AODF | 🟡 61/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-22ed) |

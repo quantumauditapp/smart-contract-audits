@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1102 reports** · Updated daily · [← All Networks](../README.md)
+**1120 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,24 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [$RAT - Exfil Rat](./rat-exfil-rat.md) | RAT | 🟢 5/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/rat-exfil-rat-sol) |
+| [Macca & Friends](./macca-friends.md) | M&F | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/macca-friends-sol) |
+| [Bitcoin Pizza](./bitcoin-pizza.md) | PIZZA | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/bitcoin-pizza-sol) |
+| [mil](./mil.md) | MIL | 🟢 23/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/mil-sol) |
+| [Dogecoin](./dogecoin.md) | DOGE | 🔴 98/100 Critical Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/dogecoin-sol) |
+| [Trollface Chicken 67](./trollface-chicken-67.md) | TC67 | 🟢 22/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/trollface-chicken-67-sol) |
+| [Solana Smash Bros](./solana-smash-bros.md) | SSB | 🟢 20/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/solana-smash-bros-sol) |
+| [The Playful Polar Bear](./the-playful-polar-bear.md) | BEAR | 🟢 20/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/the-playful-polar-bear-sol) |
+| [mint](./mint.md) | MINT | 🟠 70/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/mint-sol) |
+| [Chunkee The Manatee](./chunkee-the-manatee.md) | CHUNKEE | 🟢 20/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/chunkee-the-manatee-sol) |
+| [The McNugget Indicator](./the-mcnugget-indicator.md) | MCNUGGET | 🟢 7/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/the-mcnugget-indicator-sol) |
+| [The McRibSauce Indicator](./the-mcribsauce-indicator.md) | MCSAUCE | 🟢 17/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/the-mcribsauce-indicator-sol) |
+| [Politburo or Parrot](./politburo-or-parrot.md) | POP | 🟢 24/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/politburo-or-parrot-sol) |
+| [catonboard](./catonboard.md) | ONBOARD | 🟢 2/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/catonboard-sol) |
+| [Arctis](./arctis.md) | ARCTIS | 🟢 16/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/arctis-sol) |
+| [King Odie](./king-odie.md) | ODIE | 🟢 17/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/king-odie-sol) |
+| [Dacity Coin](./dacity-coin-sol-2193.md) | DACITY | 🟢 13/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/dacity-coin-sol-2193) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-sol-a22b.md) | AODF | 🟢 2/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol-a22b) |
 | [the womb](./the-womb.md) | WOMB | 🟢 22/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/the-womb-sol) |
 | [gust](./gust.md) | GUST | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/gust-sol) |
 | [cyber](./cyber.md) | CYBER | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/cyber-sol) |

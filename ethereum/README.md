@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**427 reports** · Updated daily · [← All Networks](../README.md)
+**431 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Torch](./torch.md) | TORCH | 🟡 48/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/torch-eth) |
+| [Pepe6900](./pepe6900.md) | PEPE6900 | 🟢 17/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/pepe6900-eth) |
+| [Noerra](./noerra.md) | NOERRA | 🟢 33/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/noerra-eth) |
+| [Sophon](./sophon.md) | SOPH | 🟡 58/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/sophon-eth) |
 | [Meowecoin](./meowecoin.md) | MEOWE | 🟢 25/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/meowecoin-eth) |
 | [The McRib Indicator](./the-mcrib-indicator.md) | MCRIB | 🟡 64/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/the-mcrib-indicator-eth) |
 | [Grove](./grove.md) | GROVE | 🟡 51/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/grove-eth) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**468 reports** · Updated daily · [← All Networks](../README.md)
+**479 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,17 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [ID FUN](./id-fun.md) | IF | 🟡 41/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/id-fun-bsc) |
+| [牛币](./token-5bdbcc.md) | 富途牛牛&币安 | 🟠 66/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/token-5bdbcc-bsc) |
+| [FATCAT](./fatcat.md) | FATCAT | 🟢 10/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/fatcat-bsc) |
+| [Cindy](./cindy.md) | CINDY | 🟢 24/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/cindy-bsc) |
+| [Niannian_GiggleAcademy](./nianniangiggleacademy-bsc-6630.md) | 年年 | 🟠 70/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/nianniangiggleacademy-bsc-6630) |
+| [bibi.ai](./bibiai.md) | BIBI | 🟢 13/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/bibiai-bsc) |
+| [POFD](./pofd.md) | POFD | 🟢 22/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/pofd-bsc) |
+| [TCOM](./tcom.md) | TCOM | 🟡 61/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/tcom-bsc) |
+| [Flying Tesla Roadster](./flying-tesla-roadster.md) | FTR | 🟢 18/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/flying-tesla-roadster-bsc) |
+| [BNCBzilla重新定义 DeFi 财富密码](./bncbzilla-defi.md) | BNCBZILLA | 🟢 25/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/bncbzilla-defi-bsc) |
+| [富途牛牛&币安](./token-e0789e.md) | 牛币 | 🟢 22/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/token-e0789e-bsc) |
 | [AgentPad](./agentpad.md) | PAD | 🔴 94/100 Critical Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/agentpad-bsc) |
 | [BNCB stocks1131542192](./bncb-stocks1131542192.md) | BNCB股票 | 🟢 25/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/bncb-stocks1131542192-bsc) |
 | [Unsold City](./unsold-city.md) | UNSOLD | 🟡 45/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/unsold-city-bsc) |
