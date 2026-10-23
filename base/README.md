@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**376 reports** · Updated daily · [← All Networks](../README.md)
+**378 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [American Overwatch Protocol](./american-overwatch-protocol-base-f7aa.md) | AOP | 🟡 58/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-base-f7aa) |
+| [DOAS](./doas-base-ebe8.md) | DOAS | 🟡 56/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/doas-base-ebe8) |
 | [US Oil Exchange (USOE)](./us-oil-exchange-usoe-base-d19d.md) | USOE | 🟡 56/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/us-oil-exchange-usoe-base-d19d) |
 | [Digital Oil Asset Supply](./digital-oil-asset-supply.md) | DOAS | 🟡 56/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/digital-oil-asset-supply-base) |
 | [XTO](./xto-base-57b7.md) | XTO | 🟡 63/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/xto-base-57b7) |

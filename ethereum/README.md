@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**431 reports** · Updated daily · [← All Networks](../README.md)
+**436 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [You Missed Bitches](./you-missed-bitches-eth-ad5f.md) | YMB | 🟢 9/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/you-missed-bitches-eth-ad5f) |
+| [Grok Bot](./grok-bot.md) | GROKBOT | 🟠 82/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/grok-bot-eth) |
+| [You Missed Bitches](./you-missed-bitches.md) | YMB | 🟠 84/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/you-missed-bitches-eth) |
+| [terminal of truths](./terminal-of-truths.md) | TRUTH | 🟡 62/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/terminal-of-truths-eth) |
+| [Pepina](./pepina-eth-034d.md) | PEPINA | 🟢 7/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/pepina-eth-034d) |
 | [Torch](./torch.md) | TORCH | 🟡 48/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/torch-eth) |
 | [Pepe6900](./pepe6900.md) | PEPE6900 | 🟢 17/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/pepe6900-eth) |
 | [Noerra](./noerra.md) | NOERRA | 🟢 33/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/noerra-eth) |

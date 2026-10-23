@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**479 reports** · Updated daily · [← All Networks](../README.md)
+**483 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Super Intelligence](./super-intelligence.md) | 超脑 | 🟡 50/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/super-intelligence-bsc) |
+| [bibi.ai](./bibiai-bsc-38f5.md) | BIBI | 🟠 71/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/bibiai-bsc-38f5) |
+| [heyi.ai](./heyiai-bsc-e405.md) | HEYI | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/heyiai-bsc-e405) |
+| [三星堆:未来往事](./token-2533df.md) | 三星堆 | 🟢 28/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/token-2533df-bsc) |
 | [ID FUN](./id-fun.md) | IF | 🟡 41/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/id-fun-bsc) |
 | [牛币](./token-5bdbcc.md) | 富途牛牛&币安 | 🟠 66/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/token-5bdbcc-bsc) |
 | [FATCAT](./fatcat.md) | FATCAT | 🟢 10/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/fatcat-bsc) |

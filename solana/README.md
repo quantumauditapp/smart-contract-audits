@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1120 reports** · Updated daily · [← All Networks](../README.md)
+**1139 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,25 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Quit Your Job](./quit-your-job.md) | QUIT | 🟢 16/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/quit-your-job-sol) |
+| [The Sheeple Flock](./the-sheeple-flock.md) | SHEEPLE | 🟡 40/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/the-sheeple-flock-sol) |
+| [pilled](./pilled.md) | PILLED | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/pilled-sol) |
+| [Luna Expeditions](./luna-expeditions.md) | LUNARS | 🟢 33/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/luna-expeditions-sol) |
+| [drooling cat](./drooling-cat-sol-9d27.md) | DROOLING | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/drooling-cat-sol-9d27) |
+| [Turri](./turri.md) | TURRI | 🟢 28/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/turri-sol) |
+| [coinpair](./coinpair.md) | PAIR | 🟢 26/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/coinpair-sol) |
+| [The McRib Inu](./the-mcrib-inu.md) | MCRIBINU | 🟢 10/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/the-mcrib-inu-sol) |
+| [Soul Labs](./soul-labs-sol-97bc.md) | SO | 🟢 25/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/soul-labs-sol-97bc) |
+| [AlloX](./allox-sol-939e.md) | ALLOX | 🟢 29/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/allox-sol-939e) |
+| [terminal of truths](./terminal-of-truths.md) | TRUTH | 🟢 17/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/terminal-of-truths-sol) |
+| [The Skinwalker](./the-skinwalker.md) | SKINWALKER | 🟢 23/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/the-skinwalker-sol) |
+| [You Missed Bitches](./you-missed-bitches.md) | YMB | 🟢 16/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/you-missed-bitches-sol) |
+| [You Missed Coin](./you-missed-coin.md) | BITCHES | 🟢 16/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/you-missed-coin-sol) |
+| [American Overwatch Protocol](./american-overwatch-protocol-sol-3928.md) | AOP | 🟢 1/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-sol-3928) |
+| [Federal Oil Trust Fund](./federal-oil-trust-fund-sol-458b.md) | FOTF | 🟢 0/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/federal-oil-trust-fund-sol-458b) |
+| [American Dividend Protocol](./american-dividend-protocol.md) | ADP | 🟢 2/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/american-dividend-protocol-sol) |
+| [Doroni Aerospace](./doroni-aerospace.md) | DORONI | 🟢 1/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/doroni-aerospace-sol) |
+| [XTO](./xto-sol-7553.md) | XTO | 🟢 0/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/xto-sol-7553) |
 | [$RAT - Exfil Rat](./rat-exfil-rat.md) | RAT | 🟢 5/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/rat-exfil-rat-sol) |
 | [Macca & Friends](./macca-friends.md) | M&F | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/macca-friends-sol) |
 | [Bitcoin Pizza](./bitcoin-pizza.md) | PIZZA | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/bitcoin-pizza-sol) |
