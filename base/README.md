@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**378 reports** · Updated daily · [← All Networks](../README.md)
+**385 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [US Dividend Fund (USDF) 🔥](./us-dividend-fund-usdf.md) | USDF | 🟡 55/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/us-dividend-fund-usdf-base) |
+| [NODF 🔥](./nodf-base-a6cd.md) | NODF | 🟡 56/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/nodf-base-a6cd) |
+| [one life, its worth an attempt](./one-life-its-worth-an-attempt-base-36a3.md) | WORTH | 🟠 84/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/one-life-its-worth-an-attempt-base-36a3) |
+| [Aura Final Boss](./aura-final-boss-base-2b49.md) | KIMCHI | 🟡 57/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/aura-final-boss-base-2b49) |
+| [World Water Reserve](./world-water-reserve-base-74f8.md) | WWR | 🟡 62/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/world-water-reserve-base-74f8) |
+| [DOTF](./dotf-base-05af.md) | DOTF | 🟡 57/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/dotf-base-05af) |
+| [US Dividend Program (USDP)](./us-dividend-program-usdp.md) | USDP | 🟠 72/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/us-dividend-program-usdp-base) |
 | [American Overwatch Protocol](./american-overwatch-protocol-base-f7aa.md) | AOP | 🟡 58/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-base-f7aa) |
 | [DOAS](./doas-base-ebe8.md) | DOAS | 🟡 56/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/doas-base-ebe8) |
 | [US Oil Exchange (USOE)](./us-oil-exchange-usoe-base-d19d.md) | USOE | 🟡 56/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/us-oil-exchange-usoe-base-d19d) |

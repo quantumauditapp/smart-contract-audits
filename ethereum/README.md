@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**436 reports** · Updated daily · [← All Networks](../README.md)
+**439 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [You Missed Bitches](./you-missed-bitches-eth-9ff2.md) | YMB | 🟠 84/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/you-missed-bitches-eth-9ff2) |
+| [You Missed Bitches](./you-missed-bitches-eth-b9ca.md) | YMB | 🟢 31/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/you-missed-bitches-eth-b9ca) |
+| [Elon Coin](./elon-coin.md) | ELON | 🟠 66/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/elon-coin-eth) |
 | [You Missed Bitches](./you-missed-bitches-eth-ad5f.md) | YMB | 🟢 9/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/you-missed-bitches-eth-ad5f) |
 | [Grok Bot](./grok-bot.md) | GROKBOT | 🟠 82/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/grok-bot-eth) |
 | [You Missed Bitches](./you-missed-bitches.md) | YMB | 🟠 84/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/you-missed-bitches-eth) |

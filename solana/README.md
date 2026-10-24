@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1139 reports** · Updated daily · [← All Networks](../README.md)
+**1154 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,21 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [HidraNet ](./hidranet.md) | HNET | 🟢 21/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/hidranet-sol) |
+| [Privacycoin](./privacycoin.md) | PRIVACY | 🟢 23/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/privacycoin-sol) |
+| [Ombra OS](./ombra-os.md) | OMBRA | 🟢 17/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/ombra-os-sol) |
+| [███](./token-63ccf7.md) | ███ | 🟢 24/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/token-63ccf7-sol) |
+| [Trump Coin](./trump-coin.md) | TRUMP | 🟢 17/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/trump-coin-sol) |
+| [Why would I deceive you?](./why-would-i-deceive-you.md) | ELIZABETH | 🟢 13/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/why-would-i-deceive-you-sol) |
+| [Elon Coin](./elon-coin-sol-788b.md) | ELON | 🟢 20/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/elon-coin-sol-788b) |
+| [Tiggien](./tiggien.md) | TIGGIEN | 🟢 28/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/tiggien-sol) |
+| [Moustache Baby](./moustache-baby.md) | MOUSTACHE | 🟢 13/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/moustache-baby-sol) |
+| [KuriboCoin](./kuribocoin.md) | KURIBO | 🟢 24/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/kuribocoin-sol) |
+| [ACTX: The SI Threat](./actx-the-si-threat.md) | ACTX | 🟢 7/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/actx-the-si-threat-sol) |
+| [XTO](./xto-sol-58f4.md) | XTO | 🟢 2/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/xto-sol-58f4) |
+| [Digital Oil Trust Fund](./digital-oil-trust-fund.md) | DOTF | 🟢 1/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/digital-oil-trust-fund-sol) |
+| [Bubblemaps](./bubblemaps.md) | BMT | 🟠 72/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/bubblemaps-sol) |
+| [You Missed Bitches](./you-missed-bitches-sol-019e.md) | YMBCOIN | 🟢 2/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/you-missed-bitches-sol-019e) |
 | [Quit Your Job](./quit-your-job.md) | QUIT | 🟢 16/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/quit-your-job-sol) |
 | [The Sheeple Flock](./the-sheeple-flock.md) | SHEEPLE | 🟡 40/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/the-sheeple-flock-sol) |
 | [pilled](./pilled.md) | PILLED | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/pilled-sol) |
