@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**395 reports** · Updated daily · [← All Networks](../README.md)
+**412 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,23 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [United Dividend Trust Fund](./united-dividend-trust-fund-base-1f8d.md) | UDTF | 🟡 57/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/united-dividend-trust-fund-base-1f8d) |
+| [Orderly Network](./orderly-network.md) | ORDER | 🟠 71/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/orderly-network-base) |
+| [XTO](./xto-base-9855.md) | XTO | 🟡 57/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/xto-base-9855) |
+| [USOE](./usoe-base-6a5d.md) | USOE | 🟡 57/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/usoe-base-6a5d) |
+| [DOAS](./doas-base-ddcb.md) | DOAS | 🟡 57/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/doas-base-ddcb) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-base-ad28.md) | AODF | 🟡 58/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-ad28) |
+| [US Dividend Reserve (USDR)](./us-dividend-reserve-usdr-base-dd3c.md) | USDR | 🟡 64/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/us-dividend-reserve-usdr-base-dd3c) |
+| [United States Dividend Fund🔥](./united-states-dividend-fund-base-0683.md) | USDF | 🟡 56/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base-0683) |
+| [American Overwatch Protocol](./american-overwatch-protocol-base-bb95.md) | AOP | 🟡 57/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-base-bb95) |
+| [Digital Oil Asset Supply](./digital-oil-asset-supply-base-01e2.md) | DOAS | 🟡 56/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/digital-oil-asset-supply-base-01e2) |
+| [US Oil Exchange (USOE)](./us-oil-exchange-usoe-base-b796.md) | USOE | 🟡 56/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/us-oil-exchange-usoe-base-b796) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-base-804b.md) | AODF | 🟡 62/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-804b) |
+| [United Energy Reserve](./united-energy-reserve.md) | UER | 🟡 60/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/united-energy-reserve-base) |
+| [Digital Oil Trust Fund🔥](./digital-oil-trust-fund-base-a2f0.md) | DOTF | 🟡 63/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/digital-oil-trust-fund-base-a2f0) |
+| [National Oil Trust Fund](./national-oil-trust-fund.md) | NOTF | 🟡 59/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/national-oil-trust-fund-base) |
+| [XTO](./xto-base-37c4.md) | XTO | 🟡 55/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/xto-base-37c4) |
+| [United States Dividend Program🔥](./united-states-dividend-program-base-87a0.md) | USDP | 🟡 55/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/united-states-dividend-program-base-87a0) |
 | [National Oil Dividend Fund](./national-oil-dividend-fund-base-181b.md) | NODF | 🟠 76/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-base-181b) |
 | [Papertrade](./papertrade-base-5d71.md) | PAPER | 🟡 60/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/papertrade-base-5d71) |
 | [Elon Coin](./elon-coin.md) | ELON | 🟠 70/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/elon-coin-base) |

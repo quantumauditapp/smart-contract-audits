@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**486 reports** · Updated daily · [← All Networks](../README.md)
+**493 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Portal To Bitcoin](./portal-to-bitcoin.md) | PTB | 🟠 67/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/portal-to-bitcoin-bsc) |
+| [streamcall.fun](./streamcallfun.md) | STREAM | 🟠 65/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/streamcallfun-bsc) |
+| [信念](./conviction.md) | CONVICTION | 🟢 29/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/conviction-bsc) |
+| [Q群1006433752](./q1006433752.md) | 慈善羊 | 🟢 23/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/q1006433752-bsc) |
+| [CYCPAD](./cycpad.md) | CYCPAD | 🟠 84/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/cycpad-bsc) |
+| [孔子学院](./token-92cd10.md) | 孔子学院 | 🟢 30/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/token-92cd10-bsc) |
+| [金蝶圣甲](./token-63fb6e.md) | 金蝶圣甲 | 🟢 0/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/token-63fb6e-bsc) |
 | [富途牛牛&币安](./token-bc9b11.md) | 牛币 | 🟠 70/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/token-bc9b11-bsc) |
 | [Chang Zheng 6](./chang-zheng-6.md) | 长征六号 | 🟢 20/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/chang-zheng-6-bsc) |
 | [BNBCAT](./bnbcat-bsc-c479.md) | BNBCAT | 🟠 84/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/bnbcat-bsc-c479) |

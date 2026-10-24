@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1165 reports** · Updated daily · [← All Networks](../README.md)
+**1181 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,22 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [blknoiz06](./blknoiz06.md) | ANSEM | 🟢 22/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/blknoiz06-sol) |
+| [DESSA](./dessa.md) | DESSA | 🟢 20/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/dessa-sol) |
+| [Jeff FunnyGuy](./jeff-funnyguy.md) | JEFF | 🟢 28/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/jeff-funnyguy-sol) |
+| [Benny](./benny.md) | GLITCH | 🟢 14/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/benny-sol) |
+| [Privacycoin](./privacycoin-sol-fd74.md) | PRIVACY | 🟢 17/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/privacycoin-sol-fd74) |
+| [PUMP SQUADS](./pump-squads.md) | SQUADS | 🟢 20/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/pump-squads-sol) |
+| [GrandDacityCoin](./granddacitycoin-sol-7598.md) | GDC | 🟢 15/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/granddacitycoin-sol-7598) |
+| [The Snow Leopard](./the-snow-leopard.md) | HIMMEL | 🟢 27/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/the-snow-leopard-sol) |
+| [Veilink](./veilink.md) | VELK | 🟢 2/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/veilink-sol) |
+| [OpenSolana](./opensolana.md) | OPENSOLANA | 🟢 21/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/opensolana-sol) |
+| [Trump Pepe](./trump-pepe.md) | TRUMPE | 🟢 16/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/trump-pepe-sol) |
+| [Moustache Inu](./moustache-inu.md) | MI | 🟢 0/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/moustache-inu-sol) |
+| [Institutional Oil Fund](./institutional-oil-fund.md) | IOF | 🟢 2/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/institutional-oil-fund-sol) |
+| [US Dividend Fund (USDF)🔥](./us-dividend-fund-usdf.md) | USDF | 🟢 0/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/us-dividend-fund-usdf-sol) |
+| [Doroni Aerospace](./doroni-aerospace-sol-97ed.md) | DORONI | 🟢 2/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/doroni-aerospace-sol-97ed) |
+| [United States Dividend Fund](./united-states-dividend-fund-sol-bc62.md) | USDF | 🟢 1/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-sol-bc62) |
 | [Monkey Hug](./monkey-hug.md) | HUG | 🟢 14/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/monkey-hug-sol) |
 | [This is Private Property](./this-is-private-property.md) | PRIVATE | 🟡 36/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/this-is-private-property-sol) |
 | [COIL](./coil.md) | COIL | 🟢 27/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/coil-sol) |

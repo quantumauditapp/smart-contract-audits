@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**439 reports** · Updated daily · [← All Networks](../README.md)
+**442 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [evmzone](./evmzone.md) | EVMZONE | 🟢 0/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/evmzone-eth) |
+| [Treehouse Token](./treehouse-token.md) | TREE | 🟡 36/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/treehouse-token-eth) |
+| [Orderly Network](./orderly-network.md) | ORDER | 🟡 51/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/orderly-network-eth) |
 | [You Missed Bitches](./you-missed-bitches-eth-9ff2.md) | YMB | 🟠 84/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/you-missed-bitches-eth-9ff2) |
 | [You Missed Bitches](./you-missed-bitches-eth-b9ca.md) | YMB | 🟢 31/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/you-missed-bitches-eth-b9ca) |
 | [Elon Coin](./elon-coin.md) | ELON | 🟠 66/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/elon-coin-eth) |
