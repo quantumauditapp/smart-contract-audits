@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1154 reports** · Updated daily · [← All Networks](../README.md)
+**1165 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,17 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Monkey Hug](./monkey-hug.md) | HUG | 🟢 14/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/monkey-hug-sol) |
+| [This is Private Property](./this-is-private-property.md) | PRIVATE | 🟡 36/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/this-is-private-property-sol) |
+| [COIL](./coil.md) | COIL | 🟢 27/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/coil-sol) |
+| [Slopcoin](./slopcoin.md) | SLOPCOIN | 🟢 14/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/slopcoin-sol) |
+| [bio coin](./bio-coin.md) | BIO | 🟢 21/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/bio-coin-sol) |
+| [onkey](./onkey.md) | ONKEY | 🟢 19/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/onkey-sol) |
+| [baldcat](./baldcat.md) | BALDCAT | 🟢 24/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/baldcat-sol) |
+| [Hypest](./hypest.md) | HYPEST | 🟢 27/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/hypest-sol) |
+| [███](./token-03fad7.md) | ███ | 🟢 20/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/token-03fad7-sol) |
+| [Remus](./remus.md) | REMUS | 🟢 20/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/remus-sol) |
+| [National Oil Trust Fund](./national-oil-trust-fund.md) | NOTF | 🟢 0/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/national-oil-trust-fund-sol) |
 | [HidraNet ](./hidranet.md) | HNET | 🟢 21/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/hidranet-sol) |
 | [Privacycoin](./privacycoin.md) | PRIVACY | 🟢 23/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/privacycoin-sol) |
 | [Ombra OS](./ombra-os.md) | OMBRA | 🟢 17/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/ombra-os-sol) |

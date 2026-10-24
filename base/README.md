@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**385 reports** · Updated daily · [← All Networks](../README.md)
+**395 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,16 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [National Oil Dividend Fund](./national-oil-dividend-fund-base-181b.md) | NODF | 🟠 76/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-base-181b) |
+| [Papertrade](./papertrade-base-5d71.md) | PAPER | 🟡 60/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/papertrade-base-5d71) |
+| [Elon Coin](./elon-coin.md) | ELON | 🟠 70/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/elon-coin-base) |
+| [one life, its worth an attempt](./one-life-its-worth-an-attempt-base-c378.md) | WORTH | 🟡 56/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/one-life-its-worth-an-attempt-base-c378) |
+| [United States Dividend  Fund](./united-states-dividend-fund-base-a8fb.md) | USDF | 🟡 55/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base-a8fb) |
+| [American Overwatch Protocol](./american-overwatch-protocol-base-c215.md) | AOP | 🟠 75/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-base-c215) |
+| [ADP 🔥](./adp.md) | ADP | 🟠 73/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/adp-base) |
+| [AOP](./aop-base-fda4.md) | AOP | 🟠 76/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/aop-base-fda4) |
+| [XTO 🔥](./xto-base-57b5.md) | XTO | 🟡 57/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/xto-base-57b5) |
+| [United States Oil Exchange 🔥](./united-states-oil-exchange.md) | USOE | 🟠 74/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-base) |
 | [US Dividend Fund (USDF) 🔥](./us-dividend-fund-usdf.md) | USDF | 🟡 55/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/us-dividend-fund-usdf-base) |
 | [NODF 🔥](./nodf-base-a6cd.md) | NODF | 🟡 56/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/nodf-base-a6cd) |
 | [one life, its worth an attempt](./one-life-its-worth-an-attempt-base-36a3.md) | WORTH | 🟠 84/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/one-life-its-worth-an-attempt-base-36a3) |

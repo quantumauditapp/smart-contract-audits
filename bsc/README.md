@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**483 reports** · Updated daily · [← All Networks](../README.md)
+**486 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [富途牛牛&币安](./token-bc9b11.md) | 牛币 | 🟠 70/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/token-bc9b11-bsc) |
+| [Chang Zheng 6](./chang-zheng-6.md) | 长征六号 | 🟢 20/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/chang-zheng-6-bsc) |
+| [BNBCAT](./bnbcat-bsc-c479.md) | BNBCAT | 🟠 84/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/bnbcat-bsc-c479) |
 | [Super Intelligence](./super-intelligence.md) | 超脑 | 🟡 50/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/super-intelligence-bsc) |
 | [bibi.ai](./bibiai-bsc-38f5.md) | BIBI | 🟠 71/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/bibiai-bsc-38f5) |
 | [heyi.ai](./heyiai-bsc-e405.md) | HEYI | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/heyiai-bsc-e405) |
