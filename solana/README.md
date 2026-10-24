@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1181 reports** · Updated daily · [← All Networks](../README.md)
+**1210 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,35 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Benicio The Pudu](./benicio-the-pudu.md) | BENICIO | 🟢 13/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/benicio-the-pudu-sol) |
+| [PokeBombs](./pokebombs.md) | PIK | 🟢 17/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/pokebombs-sol) |
+| [rydeme](./rydeme.md) | RYDEME | 🟢 15/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/rydeme-sol) |
+| [GTA VI](./gta-vi-sol-8f19.md) | VICECITY | 🟢 16/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/gta-vi-sol-8f19) |
+| [Avon Hertz](./avon-hertz.md) | AVON | 🟢 19/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/avon-hertz-sol) |
+| [PokerFace](./pokerface.md) | POKERFACE | 🟢 17/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/pokerface-sol) |
+| [Monad](./monad.md) | MON | 🟠 67/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/monad-sol) |
+| [Gyat Coin](./gyat-coin.md) | GYAT | 🟢 17/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/gyat-coin-sol) |
+| [Choo Choo](./choo-choo.md) | CHOO | 🟢 0/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/choo-choo-sol) |
+| [SharkcardX](./sharkcardx.md) | SCX | 🟢 17/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/sharkcardx-sol) |
+| [かぼす](./token-7de43f.md) | かぼす | 🟡 36/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/token-7de43f-sol) |
+| [BIBICOIN](./bibicoin-sol-7ae4.md) | BBCOIN | 🟡 38/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/bibicoin-sol-7ae4) |
+| [WarHound](./warhound.md) | WRHND | 🟢 14/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/warhound-sol) |
+| [Hercules Cat](./hercules-cat.md) | HCAT | 🟢 20/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/hercules-cat-sol) |
+| [ber](./ber.md) | BER | 🟢 26/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/ber-sol) |
+| [bye](./bye.md) | BYE | 🟢 22/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/bye-sol) |
+| [Cattleaxe](./cattleaxe.md) | CATTLEAXE | 🟢 15/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/cattleaxe-sol) |
+| [BIBICOIN](./bibicoin.md) | BIBI | 🟢 22/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/bibicoin-sol) |
+| [AlloX](./allox-sol-baa0.md) | ALLOX | 🟢 28/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/allox-sol-baa0) |
+| [Soul Labs](./soul-labs-sol-d1d2.md) | SO | 🟢 29/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/soul-labs-sol-d1d2) |
+| [Lockheed C-130 Hercules ](./lockheed-c-130-hercules.md) | HERCULES | 🟢 22/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/lockheed-c-130-hercules-sol) |
+| [trump wif sword](./trump-wif-sword.md) | SWORDTRUMP | 🟢 16/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/trump-wif-sword-sol) |
+| [dope wif sword](./dope-wif-sword.md) | SWORDOPE | 🟢 15/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/dope-wif-sword-sol) |
+| [Digital Oil Asset Supply](./digital-oil-asset-supply-sol-0088.md) | DOAS | 🟢 1/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/digital-oil-asset-supply-sol-0088) |
+| [National Oil Dividend Fund](./national-oil-dividend-fund-sol-3f19.md) | NODF | 🟢 2/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-sol-3f19) |
+| [USDF](./usdf-sol-3063.md) | USDF | 🟢 0/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/usdf-sol-3063) |
+| [United States Wealth Fund](./united-states-wealth-fund.md) | USWF | 🟢 0/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/united-states-wealth-fund-sol) |
+| [National Oil Trust Fund🔥](./national-oil-trust-fund-sol-16a0.md) | NOTF | 🟢 2/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/national-oil-trust-fund-sol-16a0) |
+| [American Overwatch Protocol](./american-overwatch-protocol-sol-e48c.md) | AOP | 🟢 1/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-sol-e48c) |
 | [blknoiz06](./blknoiz06.md) | ANSEM | 🟢 22/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/blknoiz06-sol) |
 | [DESSA](./dessa.md) | DESSA | 🟢 20/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/dessa-sol) |
 | [Jeff FunnyGuy](./jeff-funnyguy.md) | JEFF | 🟢 28/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/jeff-funnyguy-sol) |

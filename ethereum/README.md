@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**442 reports** · Updated daily · [← All Networks](../README.md)
+**447 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [BEARStrategy](./bearstrategy.md) | BEARSTR | 🟢 0/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/bearstrategy-eth) |
+| [The McRib Indicator](./the-mcrib-indicator-eth-5540.md) | MCRIB | 🟢 14/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/the-mcrib-indicator-eth-5540) |
+| [ETHFUN](./ethfun.md) | EFUN | 🟢 31/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/ethfun-eth) |
+| [cat wif sword](./cat-wif-sword.md) | SWORDCAT | 🟢 22/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/cat-wif-sword-eth) |
+| [Rocket Pool Protocol](./rocket-pool-protocol.md) | RPL | 🟡 38/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/rocket-pool-protocol-eth) |
 | [evmzone](./evmzone.md) | EVMZONE | 🟢 0/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/evmzone-eth) |
 | [Treehouse Token](./treehouse-token.md) | TREE | 🟡 36/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/treehouse-token-eth) |
 | [Orderly Network](./orderly-network.md) | ORDER | 🟡 51/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/orderly-network-eth) |

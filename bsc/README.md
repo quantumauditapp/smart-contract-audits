@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**493 reports** · Updated daily · [← All Networks](../README.md)
+**496 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Bnb Tiger Inu](./bnb-tiger-inu-bsc-c400.md) | BNBTIGER | 🟢 20/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/bnb-tiger-inu-bsc-c400) |
+| [Fat Panda](./fat-panda.md) | 胖熊猫 | 🟢 24/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/fat-panda-bsc) |
+| [CC](./cc.md) | CC | 🟠 77/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/cc-bsc) |
 | [Portal To Bitcoin](./portal-to-bitcoin.md) | PTB | 🟠 67/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/portal-to-bitcoin-bsc) |
 | [streamcall.fun](./streamcallfun.md) | STREAM | 🟠 65/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/streamcallfun-bsc) |
 | [信念](./conviction.md) | CONVICTION | 🟢 29/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/conviction-bsc) |

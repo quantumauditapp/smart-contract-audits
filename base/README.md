@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**412 reports** · Updated daily · [← All Networks](../README.md)
+**418 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [American Dividend Protocol (ADP)](./american-dividend-protocol-adp.md) | ADP | 🟡 55/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/american-dividend-protocol-adp-base) |
+| [National Oil Dividend Fund](./national-oil-dividend-fund-base-63b1.md) | NODF | 🟡 57/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-base-63b1) |
+| [Capital Oil Reserve](./capital-oil-reserve.md) | COR | 🟡 58/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/capital-oil-reserve-base) |
+| [COR](./cor.md) | COR | 🟡 58/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/cor-base) |
+| [XTruth Oil (XTO)](./xtruth-oil-xto.md) | XTO | 🟡 59/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/xtruth-oil-xto-base) |
+| [Strategic American Protocol🔥](./strategic-american-protocol.md) | SARP | 🟡 60/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/strategic-american-protocol-base) |
 | [United Dividend Trust Fund](./united-dividend-trust-fund-base-1f8d.md) | UDTF | 🟡 57/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/united-dividend-trust-fund-base-1f8d) |
 | [Orderly Network](./orderly-network.md) | ORDER | 🟠 71/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/orderly-network-base) |
 | [XTO](./xto-base-9855.md) | XTO | 🟡 57/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/xto-base-9855) |
