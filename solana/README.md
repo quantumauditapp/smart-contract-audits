@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1210 reports** · Updated daily · [← All Networks](../README.md)
+**1231 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,27 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Ranch World](./ranch-world.md) | RANCH | 🟢 15/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/ranch-world-sol) |
+| [Orderly Network](./orderly-network.md) | ORDER | 🟠 76/100 High Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/orderly-network-sol) |
+| [METACAT](./metacat.md) | METACAT | 🟢 27/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/metacat-sol) |
+| [Institutional Oil Fund](./institutional-oil-fund-sol-4eeb.md) | IOF | 🟢 1/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/institutional-oil-fund-sol-4eeb) |
+| [Simon Bunnett](./simon-bunnett.md) | BUNNETT | 🟢 27/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/simon-bunnett-sol) |
+| [Network Coin](./network-coin.md) | NETWORK | 🟢 16/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/network-coin-sol) |
+| [くるみちゃん](./kurumi.md) | KURUMI | 🟢 6/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/kurumi-sol) |
+| [Chunkee the Manatee](./chunkee-the-manatee-sol-9e71.md) | CHUNKEE | 🟢 10/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/chunkee-the-manatee-sol-9e71) |
+| [Pablo the Race Cat](./pablo-the-race-cat.md) | PABLO | 🟢 19/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/pablo-the-race-cat-sol) |
+| [Pretty Unreal Massive Pair](./pretty-unreal-massive-pair.md) | PUMP | 🟢 21/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/pretty-unreal-massive-pair-sol) |
+| [ber](./ber-sol-f25e.md) | BER | 🟢 21/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/ber-sol-f25e) |
+| [BOYCOTTPUMPFUN](./boycottpumpfun.md) | BOYCOTT | 🟡 51/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/boycottpumpfun-sol) |
+| [AlloX](./allox-sol-c11e.md) | ALLOX | 🟢 29/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/allox-sol-c11e) |
+| [Soul Labs](./soul-labs-sol-e581.md) | SO | 🟢 25/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/soul-labs-sol-e581) |
+| [Marvin the Martian](./marvin-the-martian.md) | MARVIN | 🟢 13/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/marvin-the-martian-sol) |
+| [The anti-AI Movie](./the-anti-ai-movie.md) | WILDWOOD | 🟢 22/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/the-anti-ai-movie-sol) |
+| [NVIDIA Reachy Mini](./nvidia-reachy-mini.md) | REACHY | 🟢 1/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/nvidia-reachy-mini-sol) |
+| [Maya The Samoyed](./maya-the-samoyed.md) | MAYA | 🟢 13/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/maya-the-samoyed-sol) |
+| [Flop Labs](./flop-labs.md) | FLOP | 🟢 0/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/flop-labs-sol) |
+| [Google Gemini](./google-gemini.md) | GEMINI | 🟢 2/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/google-gemini-sol) |
+| [National Oil Trust Fund](./national-oil-trust-fund-sol-12bc.md) | NOTF | 🟢 0/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/national-oil-trust-fund-sol-12bc) |
 | [Benicio The Pudu](./benicio-the-pudu.md) | BENICIO | 🟢 13/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/benicio-the-pudu-sol) |
 | [PokeBombs](./pokebombs.md) | PIK | 🟢 17/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/pokebombs-sol) |
 | [rydeme](./rydeme.md) | RYDEME | 🟢 15/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/rydeme-sol) |

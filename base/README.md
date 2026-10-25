@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**418 reports** · Updated daily · [← All Networks](../README.md)
+**431 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,19 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Pangea](./pangea-base-2a83.md) | PANGEA | 🟠 84/100 High Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/pangea-base-2a83) |
+| [XTO](./xto-base-db59.md) | XTO | 🟡 58/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/xto-base-db59) |
+| [United States Oil Exchange 🔥](./united-states-oil-exchange-base-46d2.md) | USOE | 🟡 59/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-base-46d2) |
+| [Base tBTC v2](./base-tbtc-v2.md) | TBTC | 🟡 47/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/base-tbtc-v2-base) |
+| [Dacity Coin](./dacity-coin.md) | DACITY | 🟡 55/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/dacity-coin-base) |
+| [Aura Final Boss](./aura-final-boss-base-5a37.md) | KIMCHI | 🟡 56/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/aura-final-boss-base-5a37) |
+| [Federal Oil Trust Fund (FOTF)](./federal-oil-trust-fund-fotf.md) | FOTF | 🟡 55/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/federal-oil-trust-fund-fotf-base) |
+| [USDP](./usdp-base-27ee.md) | USDP | 🟡 57/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/usdp-base-27ee) |
+| [World Strategic Oil Supply](./world-strategic-oil-supply-base-987d.md) | WSOS | 🟡 63/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/world-strategic-oil-supply-base-987d) |
+| [Dispatch](./dispatch-base-a794.md) | DSP | 🟠 83/100 High Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/dispatch-base-a794) |
+| [US Dividend Program (USDP)](./us-dividend-program-usdp-base-983e.md) | USDP | 🟡 60/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/us-dividend-program-usdp-base-983e) |
+| [NODF 🔥](./nodf-base-8691.md) | NODF | 🟡 59/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/nodf-base-8691) |
+| [AOP🔥](./aop-base-9d8a.md) | AOP | 🟡 58/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/aop-base-9d8a) |
 | [American Dividend Protocol (ADP)](./american-dividend-protocol-adp.md) | ADP | 🟡 55/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/american-dividend-protocol-adp-base) |
 | [National Oil Dividend Fund](./national-oil-dividend-fund-base-63b1.md) | NODF | 🟡 57/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-base-63b1) |
 | [Capital Oil Reserve](./capital-oil-reserve.md) | COR | 🟡 58/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/capital-oil-reserve-base) |

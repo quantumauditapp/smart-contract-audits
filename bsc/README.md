@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**496 reports** · Updated daily · [← All Networks](../README.md)
+**502 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [DeepSeek](./deepseek.md) | DEEPSEEK | 🟠 81/100 High Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/deepseek-bsc) |
+| [FIST](./fist.md) | FIST | 🟡 41/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/fist-bsc) |
+| [100u and a Dream](./100u-and-a-dream.md) | 100U | 🟢 22/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/100u-and-a-dream-bsc) |
+| [币安BNCB股票](./bncb.md) | 币安BNCB股票 | 🟡 42/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/bncb-bsc) |
+| [Bitcoin BR](./bitcoin-br.md) | BTCBR | 🟢 19/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/bitcoin-br-bsc) |
+| [BNC上市](./bnc.md) | 币安股票 | 🟢 12/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/bnc-bsc) |
 | [Bnb Tiger Inu](./bnb-tiger-inu-bsc-c400.md) | BNBTIGER | 🟢 20/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/bnb-tiger-inu-bsc-c400) |
 | [Fat Panda](./fat-panda.md) | 胖熊猫 | 🟢 24/100 Low Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/fat-panda-bsc) |
 | [CC](./cc.md) | CC | 🟠 77/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/cc-bsc) |
