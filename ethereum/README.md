@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**451 reports** · Updated daily · [← All Networks](../README.md)
+**454 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [PVE](./pve-eth-01ec.md) | PVE | 🟡 38/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/pve-eth-01ec) |
+| [The Martian Dog](./the-martian-dog.md) | MARVIN | 🟢 0/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/the-martian-dog-eth) |
+| [Janction](./janction.md) | JCT | 🟡 62/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/janction-eth) |
 | [Unicorn](./unicorn.md) | UNICORN | 🟠 84/100 High Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/unicorn-eth) |
 | [Nigga Its Over](./nigga-its-over.md) | NIO | 🟡 64/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/nigga-its-over-eth) |
 | [Big Titty Coin](./big-titty-coin.md) | BTC | 🟡 64/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/big-titty-coin-eth) |

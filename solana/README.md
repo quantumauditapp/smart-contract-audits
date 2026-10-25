@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1231 reports** · Updated daily · [← All Networks](../README.md)
+**1236 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [The White Whale](./the-white-whale-sol-6cbe.md) | WHITEWHALE | 🟡 51/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/the-white-whale-sol-6cbe) |
+| [The Chubby Raccoon](./the-chubby-raccoon.md) | CHUBBY | 🟢 20/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/the-chubby-raccoon-sol) |
+| [The White Whale](./the-white-whale-sol-3dac.md) | WHITEWHALE | 🟡 40/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/the-white-whale-sol-3dac) |
+| [billions](./billions.md) | BILLIONS | 🟢 21/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/billions-sol) |
+| [富途牛牛 FUTUBULL](./futubull.md) | FUTUBULL | 🟢 29/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/futubull-sol) |
 | [Ranch World](./ranch-world.md) | RANCH | 🟢 15/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/ranch-world-sol) |
 | [Orderly Network](./orderly-network.md) | ORDER | 🟠 76/100 High Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/orderly-network-sol) |
 | [METACAT](./metacat.md) | METACAT | 🟢 27/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/metacat-sol) |

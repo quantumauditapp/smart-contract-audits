@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**431 reports** · Updated daily · [← All Networks](../README.md)
+**440 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,15 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [United States Oil Exchange 🔥](./united-states-oil-exchange-base-1fbc.md) | USOE | 🟡 55/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-base-1fbc) |
+| [US Oil Exchange (USOE)](./us-oil-exchange-usoe-base-3679.md) | USOE | 🟡 57/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/us-oil-exchange-usoe-base-3679) |
+| [XRC](./xrc-base-83f7.md) | XRC | 🟡 63/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/xrc-base-83f7) |
+| [United States Dividend  Fund](./united-states-dividend-fund-base-b991.md) | USDF | 🟡 55/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base-b991) |
+| [United Dividend Trust Fund](./united-dividend-trust-fund-base-9b1a.md) | UDTF | 🟡 57/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/united-dividend-trust-fund-base-9b1a) |
+| [National Oil Dividend Fund](./national-oil-dividend-fund-base-c447.md) | NODF | 🟡 60/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-base-c447) |
+| [United States Dividend Program](./united-states-dividend-program-base-b0ea.md) | USDP | 🟡 59/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/united-states-dividend-program-base-b0ea) |
+| [XTO 🔥](./xto-base-0cbc.md) | XTO | 🟡 58/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/xto-base-0cbc) |
+| [NOTF](./notf.md) | NOTF | 🟡 57/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/notf-base) |
 | [Pangea](./pangea-base-2a83.md) | PANGEA | 🟠 84/100 High Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/pangea-base-2a83) |
 | [XTO](./xto-base-db59.md) | XTO | 🟡 58/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/xto-base-db59) |
 | [United States Oil Exchange 🔥](./united-states-oil-exchange-base-46d2.md) | USOE | 🟡 59/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-base-46d2) |

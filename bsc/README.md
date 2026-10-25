@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**502 reports** · Updated daily · [← All Networks](../README.md)
+**513 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,17 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [BNC开市钟](./bnc-bsc-0931.md) | BNC开市钟 | 🟢 25/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/bnc-bsc-0931) |
+| [LUCK](./luck.md) | LUCK | 🟢 1/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/luck-bsc) |
+| [iPhone Duo](./iphone-duo.md) | IPHONE DUO | 🟠 81/100 High Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/iphone-duo-bsc) |
+| [Agent ID](./agent-id-bsc-9ffd.md) | .AI | 🟡 50/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/agent-id-bsc-9ffd) |
+| [富途牛牛&币安](./token-dd3280.md) | 牛币 | 🟡 43/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/token-dd3280-bsc) |
+| [cz要英文版q群614125332](./czq614125332.md) | BNB LEGEND | 🟢 20/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/czq614125332-bsc) |
+| [BNB的传奇之路](./bnb.md) | 传奇之路 | 🟢 21/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/bnb-bsc) |
+| [bibi.ai](./bibiai-bsc-4056.md) | BIBI | 🟡 53/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/bibiai-bsc-4056) |
+| [Binance Agent](./binance-agent.md) | 4AGENT | 🟡 51/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/binance-agent-bsc) |
+| [Altruists](./altruists.md) | 利他主义者 | 🟢 20/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/altruists-bsc) |
+| [bibi.ai](./bibiai-bsc-f9dd.md) | BIBI | 🟠 82/100 High Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/bibiai-bsc-f9dd) |
 | [DeepSeek](./deepseek.md) | DEEPSEEK | 🟠 81/100 High Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/deepseek-bsc) |
 | [FIST](./fist.md) | FIST | 🟡 41/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/fist-bsc) |
 | [100u and a Dream](./100u-and-a-dream.md) | 100U | 🟢 22/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/100u-and-a-dream-bsc) |

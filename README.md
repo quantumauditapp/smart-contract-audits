@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-2718-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-2746-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,42 +12,42 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [United States Oil Exchange 🔥](./base/united-states-oil-exchange-base-1fbc.md) | USOE | Base | 🟡 55/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-base-1fbc) |
+| [BNC开市钟](./bsc/bnc-bsc-0931.md) | BNC开市钟 | BNB Chain | 🟢 25/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/bnc-bsc-0931) |
+| [LUCK](./bsc/luck.md) | LUCK | BNB Chain | 🟢 1/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/luck-bsc) |
+| [PVE](./ethereum/pve-eth-01ec.md) | PVE | Ethereum | 🟡 38/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/pve-eth-01ec) |
+| [The Martian Dog](./ethereum/the-martian-dog.md) | MARVIN | Ethereum | 🟢 0/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/the-martian-dog-eth) |
+| [The White Whale](./solana/the-white-whale-sol-6cbe.md) | WHITEWHALE | Solana | 🟡 51/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/the-white-whale-sol-6cbe) |
+| [The Chubby Raccoon](./solana/the-chubby-raccoon.md) | CHUBBY | Solana | 🟢 20/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/the-chubby-raccoon-sol) |
+| [The White Whale](./solana/the-white-whale-sol-3dac.md) | WHITEWHALE | Solana | 🟡 40/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/the-white-whale-sol-3dac) |
+| [US Oil Exchange (USOE)](./base/us-oil-exchange-usoe-base-3679.md) | USOE | Base | 🟡 57/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/us-oil-exchange-usoe-base-3679) |
+| [XRC](./base/xrc-base-83f7.md) | XRC | Base | 🟡 63/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/xrc-base-83f7) |
+| [United States Dividend  Fund](./base/united-states-dividend-fund-base-b991.md) | USDF | Base | 🟡 55/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base-b991) |
+| [United Dividend Trust Fund](./base/united-dividend-trust-fund-base-9b1a.md) | UDTF | Base | 🟡 57/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/united-dividend-trust-fund-base-9b1a) |
+| [National Oil Dividend Fund](./base/national-oil-dividend-fund-base-c447.md) | NODF | Base | 🟡 60/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-base-c447) |
+| [United States Dividend Program](./base/united-states-dividend-program-base-b0ea.md) | USDP | Base | 🟡 59/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/united-states-dividend-program-base-b0ea) |
+| [XTO 🔥](./base/xto-base-0cbc.md) | XTO | Base | 🟡 58/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/xto-base-0cbc) |
+| [iPhone Duo](./bsc/iphone-duo.md) | IPHONE DUO | BNB Chain | 🟠 81/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/iphone-duo-bsc) |
+| [Agent ID](./bsc/agent-id-bsc-9ffd.md) | .AI | BNB Chain | 🟡 50/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/agent-id-bsc-9ffd) |
+| [富途牛牛&币安](./bsc/token-dd3280.md) | 牛币 | BNB Chain | 🟡 43/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/token-dd3280-bsc) |
+| [cz要英文版q群614125332](./bsc/czq614125332.md) | BNB LEGEND | BNB Chain | 🟢 20/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/czq614125332-bsc) |
+| [BNB的传奇之路](./bsc/bnb.md) | 传奇之路 | BNB Chain | 🟢 21/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/bnb-bsc) |
+| [bibi.ai](./bsc/bibiai-bsc-4056.md) | BIBI | BNB Chain | 🟡 53/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/bibiai-bsc-4056) |
+| [Binance Agent](./bsc/binance-agent.md) | 4AGENT | BNB Chain | 🟡 51/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/binance-agent-bsc) |
+| [Altruists](./bsc/altruists.md) | 利他主义者 | BNB Chain | 🟢 20/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/altruists-bsc) |
+| [bibi.ai](./bsc/bibiai-bsc-f9dd.md) | BIBI | BNB Chain | 🟠 82/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/bibiai-bsc-f9dd) |
+| [NOTF](./base/notf.md) | NOTF | Base | 🟡 57/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/notf-base) |
+| [billions](./solana/billions.md) | BILLIONS | Solana | 🟢 21/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/billions-sol) |
+| [富途牛牛 FUTUBULL](./solana/futubull.md) | FUTUBULL | Solana | 🟢 29/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/futubull-sol) |
+| [Janction](./ethereum/janction.md) | JCT | Ethereum | 🟡 62/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/janction-eth) |
 | [Pangea](./base/pangea-base-2a83.md) | PANGEA | Base | 🟠 84/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/pangea-base-2a83) |
 | [XTO](./base/xto-base-db59.md) | XTO | Base | 🟡 58/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/xto-base-db59) |
-| [United States Oil Exchange 🔥](./base/united-states-oil-exchange-base-46d2.md) | USOE | Base | 🟡 59/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-base-46d2) |
-| [Ranch World](./solana/ranch-world.md) | RANCH | Solana | 🟢 15/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/ranch-world-sol) |
-| [Orderly Network](./solana/orderly-network.md) | ORDER | Solana | 🟠 76/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/orderly-network-sol) |
-| [Unicorn](./ethereum/unicorn.md) | UNICORN | Ethereum | 🟠 84/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/unicorn-eth) |
-| [Base tBTC v2](./base/base-tbtc-v2.md) | TBTC | Base | 🟡 47/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/base-tbtc-v2-base) |
-| [METACAT](./solana/metacat.md) | METACAT | Solana | 🟢 27/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/metacat-sol) |
-| [Nigga Its Over](./ethereum/nigga-its-over.md) | NIO | Ethereum | 🟡 64/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/nigga-its-over-eth) |
-| [Big Titty Coin](./ethereum/big-titty-coin.md) | BTC | Ethereum | 🟡 64/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/big-titty-coin-eth) |
-| [Dacity Coin](./base/dacity-coin.md) | DACITY | Base | 🟡 55/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/dacity-coin-base) |
-| [Aura Final Boss](./base/aura-final-boss-base-5a37.md) | KIMCHI | Base | 🟡 56/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/aura-final-boss-base-5a37) |
-| [Federal Oil Trust Fund (FOTF)](./base/federal-oil-trust-fund-fotf.md) | FOTF | Base | 🟡 55/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/federal-oil-trust-fund-fotf-base) |
-| [USDP](./base/usdp-base-27ee.md) | USDP | Base | 🟡 57/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/usdp-base-27ee) |
-| [World Strategic Oil Supply](./base/world-strategic-oil-supply-base-987d.md) | WSOS | Base | 🟡 63/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/world-strategic-oil-supply-base-987d) |
-| [Dispatch](./base/dispatch-base-a794.md) | DSP | Base | 🟠 83/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/dispatch-base-a794) |
-| [US Dividend Program (USDP)](./base/us-dividend-program-usdp-base-983e.md) | USDP | Base | 🟡 60/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/us-dividend-program-usdp-base-983e) |
-| [NODF 🔥](./base/nodf-base-8691.md) | NODF | Base | 🟡 59/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/nodf-base-8691) |
-| [DeepSeek](./bsc/deepseek.md) | DEEPSEEK | BNB Chain | 🟠 81/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/deepseek-bsc) |
-| [FIST](./bsc/fist.md) | FIST | BNB Chain | 🟡 41/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/fist-bsc) |
-| [100u and a Dream](./bsc/100u-and-a-dream.md) | 100U | BNB Chain | 🟢 22/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/100u-and-a-dream-bsc) |
-| [币安BNCB股票](./bsc/bncb.md) | 币安BNCB股票 | BNB Chain | 🟡 42/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/bncb-bsc) |
-| [Institutional Oil Fund](./solana/institutional-oil-fund-sol-4eeb.md) | IOF | Solana | 🟢 1/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/institutional-oil-fund-sol-4eeb) |
-| [Simon Bunnett](./solana/simon-bunnett.md) | BUNNETT | Solana | 🟢 27/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/simon-bunnett-sol) |
-| [Bitcoin BR](./bsc/bitcoin-br.md) | BTCBR | BNB Chain | 🟢 19/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/bitcoin-br-bsc) |
-| [Prompt](./ethereum/prompt.md) | PROMPT | Ethereum | 🟡 50/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/prompt-eth) |
-| [Network Coin](./solana/network-coin.md) | NETWORK | Solana | 🟢 16/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/network-coin-sol) |
-| [BNC上市](./bsc/bnc.md) | 币安股票 | BNB Chain | 🟢 12/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/bnc-bsc) |
-| [くるみちゃん](./solana/kurumi.md) | KURUMI | Solana | 🟢 6/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/kurumi-sol) |
-| [Chunkee the Manatee](./solana/chunkee-the-manatee-sol-9e71.md) | CHUNKEE | Solana | 🟢 10/100 | 2026-10-25 | [↗](https://quantumaudit.app/token/chunkee-the-manatee-sol-9e71) |
 
 ---
 
 ## Browse by Network
 
-[Solana (1231)](./solana/README.md) · [BNB Chain (502)](./bsc/README.md) · [Ethereum (451)](./ethereum/README.md) · [Base (431)](./base/README.md) · [Arbitrum (80)](./arbitrum/README.md) · [Polygon (23)](./polygon/README.md)
+[Solana (1236)](./solana/README.md) · [BNB Chain (513)](./bsc/README.md) · [Ethereum (454)](./ethereum/README.md) · [Base (440)](./base/README.md) · [Arbitrum (80)](./arbitrum/README.md) · [Polygon (23)](./polygon/README.md)
 
 ---
 
