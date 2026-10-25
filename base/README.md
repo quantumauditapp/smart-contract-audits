@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**440 reports** · Updated daily · [← All Networks](../README.md)
+**451 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,17 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [American Oil Dividend Fund](./american-oil-dividend-fund-base-8b7d.md) | AODF | 🟡 59/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-8b7d) |
+| [American Oil Dividend Fund🔥](./american-oil-dividend-fund-base-d5cc.md) | AODF | 🟡 59/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-d5cc) |
+| [National Oil Dividend Fund](./national-oil-dividend-fund-base-d6d5.md) | NODF | 🟡 57/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-base-d6d5) |
+| [Digital Oil Trust Fund🔥](./digital-oil-trust-fund-base-1d1b.md) | DOTF | 🟡 64/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/digital-oil-trust-fund-base-1d1b) |
+| [United States Dividend  Fund🔥](./united-states-dividend-fund-base-a512.md) | USDF | 🟡 57/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base-a512) |
+| [United States Dividend Program🔥](./united-states-dividend-program-base-eef3.md) | USDP | 🟡 56/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/united-states-dividend-program-base-eef3) |
+| [Sui (Universal)](./sui-universal.md) | USUI | 🟡 58/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/sui-universal-base) |
+| [Papertrade](./papertrade-base-70ca.md) | PAPER | 🟡 62/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/papertrade-base-70ca) |
+| [Onyxcoin](./onyxcoin.md) | XCN | 🟡 40/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/onyxcoin-base) |
+| [AOP🔥](./aop-base-c1a3.md) | AOP | 🟡 57/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/aop-base-c1a3) |
+| [AODF](./aodf.md) | AODF | 🟡 58/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/aodf-base) |
 | [United States Oil Exchange 🔥](./united-states-oil-exchange-base-1fbc.md) | USOE | 🟡 55/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-base-1fbc) |
 | [US Oil Exchange (USOE)](./us-oil-exchange-usoe-base-3679.md) | USOE | 🟡 57/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/us-oil-exchange-usoe-base-3679) |
 | [XRC](./xrc-base-83f7.md) | XRC | 🟡 63/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/xrc-base-83f7) |

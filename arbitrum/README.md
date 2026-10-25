@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**80 reports** · Updated daily · [← All Networks](../README.md)
+**81 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Navra](./navra.md) | NAVA | 🟠 77/100 High Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/navra-arb) |
 | [Elastics AI](./elastics-ai.md) | ETIAI | 🟠 75/100 High Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/elastics-ai-arb) |
 | [XAUt0](./xaut0.md) | XAUT0 | 🟡 37/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/xaut0-arb) |
 | [Staked USDai](./staked-usdai.md) | SUSDAI | 🟢 10/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/staked-usdai-arb) |

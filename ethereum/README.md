@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**454 reports** · Updated daily · [← All Networks](../README.md)
+**456 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Wojak](./wojak-eth-8118.md) | WOJAK | 🟡 48/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/wojak-eth-8118) |
+| [Doge Pepe](./doge-pepe.md) | DOPE | 🟢 29/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/doge-pepe-eth) |
 | [PVE](./pve-eth-01ec.md) | PVE | 🟡 38/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/pve-eth-01ec) |
 | [The Martian Dog](./the-martian-dog.md) | MARVIN | 🟢 0/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/the-martian-dog-eth) |
 | [Janction](./janction.md) | JCT | 🟡 62/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/janction-eth) |

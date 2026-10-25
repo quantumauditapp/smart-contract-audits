@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**513 reports** · Updated daily · [← All Networks](../README.md)
+**515 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [BNCB纳斯达克153853958](./bncb153853958.md) | BNCB纳斯达克 | 🟢 21/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/bncb153853958-bsc) |
+| [Super Inu](./super-inu.md) | 四 | 🟡 52/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/super-inu-bsc) |
 | [BNC开市钟](./bnc-bsc-0931.md) | BNC开市钟 | 🟢 25/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/bnc-bsc-0931) |
 | [LUCK](./luck.md) | LUCK | 🟢 1/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/luck-bsc) |
 | [iPhone Duo](./iphone-duo.md) | IPHONE DUO | 🟠 81/100 High Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/iphone-duo-bsc) |

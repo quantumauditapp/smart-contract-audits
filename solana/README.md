@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1236 reports** · Updated daily · [← All Networks](../README.md)
+**1248 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,18 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [JuJu](./juju.md) | JUJU | 🟢 14/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/juju-sol) |
+| [Xtra Milk Reserve](./xtra-milk-reserve.md) | XMR | 🟢 27/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/xtra-milk-reserve-sol) |
+| [Analos](./analos.md) | ANALOS | 🟢 24/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/analos-sol) |
+| [Super Intelligent Beauty](./super-intelligent-beauty.md) | SIB | 🟢 15/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/super-intelligent-beauty-sol) |
+| [vamp](./vamp.md) | VAMP | 🟢 27/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/vamp-sol) |
+| [PMUP](./pmup.md) | PMUP | 🟢 24/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/pmup-sol) |
+| [TheTittyCabal](./thetittycabal.md) | TTC | 🟢 1/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/thetittycabal-sol) |
+| [Big Testicle Coin](./big-testicle-coin.md) | BTC | 🟢 22/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/big-testicle-coin-sol) |
+| [Gigantic Milker Enjoyers](./gigantic-milker-enjoyers.md) | GME | 🟢 15/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/gigantic-milker-enjoyers-sol) |
+| [Apple](./apple-sol-2d4f.md) | APPLE | 🟢 17/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/apple-sol-2d4f) |
+| [Bugmageddon](./bugmageddon.md) | BUGMAGEDDON | 🟢 20/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/bugmageddon-sol) |
+| [Tesla Super Intelligence](./tesla-super-intelligence.md) | TESLA SI | 🟢 1/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/tesla-super-intelligence-sol) |
 | [The White Whale](./the-white-whale-sol-6cbe.md) | WHITEWHALE | 🟡 51/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/the-white-whale-sol-6cbe) |
 | [The Chubby Raccoon](./the-chubby-raccoon.md) | CHUBBY | 🟢 20/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/the-chubby-raccoon-sol) |
 | [The White Whale](./the-white-whale-sol-3dac.md) | WHITEWHALE | 🟡 40/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/the-white-whale-sol-3dac) |
