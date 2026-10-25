@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1248 reports** · Updated daily · [← All Networks](../README.md)
+**1263 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,21 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Open Fork](./open-fork.md) | FORK | 🟢 19/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/open-fork-sol) |
+| [Genny The Hippo](./genny-the-hippo.md) | GENNY | 🟢 21/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/genny-the-hippo-sol) |
+| [US PRESIDENT 2028](./us-president-2028.md) | PRESIDENT | 🟢 21/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/us-president-2028-sol) |
+| [Inu](./inu-sol-2232.md) | INU | 🟢 21/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/inu-sol-2232) |
+| [Nigga Its Over](./nigga-its-over.md) | NIO | 🟢 16/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/nigga-its-over-sol) |
+| [launch cat](./launch-cat.md) | LAUNCHCAT | 🟢 22/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/launch-cat-sol) |
+| [Pumpkin Bot](./pumpkin-bot.md) | PUMPKINBOT | 🟢 8/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/pumpkin-bot-sol) |
+| [GTA Dog Mascot](./gta-dog-mascot.md) | CHOP | 🟢 24/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/gta-dog-mascot-sol) |
+| [Press Secretary Minaj](./press-secretary-minaj.md) | NICKI | 🟢 23/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/press-secretary-minaj-sol) |
+| [Soul Labs](./soul-labs-sol-1566.md) | SO | 🟢 25/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/soul-labs-sol-1566) |
+| [AlloX](./allox-sol-775b.md) | ALLOX | 🟢 25/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/allox-sol-775b) |
+| [Not My Stock](./not-my-stock.md) | NMS | 🟢 24/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/not-my-stock-sol) |
+| [Launch](./launch.md) | LAUNCH | 🟢 16/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/launch-sol) |
+| [Giga Titty Ass](./giga-titty-ass.md) | GTA | 🟢 17/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/giga-titty-ass-sol) |
+| [XTO](./xto-sol-c74c.md) | XTO | 🟢 1/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/xto-sol-c74c) |
 | [JuJu](./juju.md) | JUJU | 🟢 14/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/juju-sol) |
 | [Xtra Milk Reserve](./xtra-milk-reserve.md) | XMR | 🟢 27/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/xtra-milk-reserve-sol) |
 | [Analos](./analos.md) | ANALOS | 🟢 24/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/analos-sol) |

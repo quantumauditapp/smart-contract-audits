@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**456 reports** · Updated daily · [← All Networks](../README.md)
+**464 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,14 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [one coin](./one-coin.md) | ONECOIN | 🟠 71/100 High Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/one-coin-eth) |
+| [SQUEEK](./squeek.md) | SQK | 🟢 0/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/squeek-eth) |
+| [Not My Stock](./not-my-stock.md) | NMS | 🟢 16/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/not-my-stock-eth) |
+| [Zero Cool](./zero-cool.md) | ZERO | 🟢 9/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/zero-cool-eth) |
+| [Marvin](./marvin.md) | MARVIN | 🟢 9/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/marvin-eth) |
+| [Zero Gap](./zero-gap.md) | ZGAP | 🟡 49/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/zero-gap-eth) |
+| [Extra Thick Hoe](./extra-thick-hoe.md) | ETH | 🟢 23/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/extra-thick-hoe-eth) |
+| [KEEP Token](./keep-token.md) | KEEP | 🟢 31/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/keep-token-eth) |
 | [Wojak](./wojak-eth-8118.md) | WOJAK | 🟡 48/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/wojak-eth-8118) |
 | [Doge Pepe](./doge-pepe.md) | DOPE | 🟢 29/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/doge-pepe-eth) |
 | [PVE](./pve-eth-01ec.md) | PVE | 🟡 38/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/pve-eth-01ec) |
