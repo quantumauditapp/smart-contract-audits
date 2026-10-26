@@ -43,21 +43,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Renounce Ownership Functionality  *(Severity: Low · Status: Unresolved)*
 
-The `Ownable` contract includes a `waiveOwnership()` function, which allows the contract owner to renounce their ownership by setting the owner address to the zero address. While this can be a desired feature for decentralization or to prevent future administrative actions, if executed accidentally or maliciously, it could leave the contract without an owner, making critical administrative functions (e.g., pausing, upgrading, setting fees) permanently inaccessible (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `Ownable` contract includes a `waiveOwnership()` function, which allows the contract owner to renounce their ownership by setting the owner address to the zero address. While this can be a desired feature for decentralization or to prevent future administrative actions, if executed accidentally or maliciously, it could leave the contract without an owner, making critical administrative functions (e.g., pausing, upgrading, setting fees) permanently inaccessible (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** Ensure that the `waiveOwnership()` function is intended for the protocol's long-term strategy. If not, consider removing or restricting its access. If intended, ensure robust operational procedures are in place to prevent accidental execution and that the implications of renouncing ownership are fully understood.
 
 
 ### `I-01` — Redundant SafeMath Library in Solidity 0.8.x  *(Severity: Informational · Status: Unresolved)*
 
-The `SafeMath` library is included and used for arithmetic operations. While `SafeMath` is crucial for preventing integer overflow/underflow in Solidity versions prior to 0.8.0, Solidity 0.8.0 and later versions include built-in checks for these conditions, causing arithmetic operations to revert on overflow/underflow by default. Therefore, using `SafeMath` in Solidity 0.8.4 is redundant and adds unnecessary gas overhead.
+Not confirmed by static analysis (the model's own reading of the source). The `SafeMath` library is included and used for arithmetic operations. While `SafeMath` is crucial for preventing integer overflow/underflow in Solidity versions prior to 0.8.0, Solidity 0.8.0 and later versions include built-in checks for these conditions, causing arithmetic operations to revert on overflow/underflow by default. Therefore, using `SafeMath` in Solidity 0.8.4 is redundant and adds unnecessary gas overhead.
 
 **Recommendation:** Consider removing the `SafeMath` library and relying on Solidity's native overflow/underflow checks. This will reduce contract size and gas costs without compromising security.
 
 
 ### `I-02` — Missing Main Contract Source Code  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code is incomplete, specifically missing the full implementation of the main 'KITSUNETOKEN' contract. Only standard libraries and interfaces were supplied. This significantly limits the scope of the audit, as the core business logic, state variables, and specific functionalities of the token could not be analyzed for vulnerabilities (7.1 Architecture, 7.2 Code Security, 7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The provided source code is incomplete, specifically missing the full implementation of the main 'KITSUNETOKEN' contract. Only standard libraries and interfaces were supplied. This significantly limits the scope of the audit, as the core business logic, state variables, and specific functionalities of the token could not be analyzed for vulnerabilities (7.1 Architecture, 7.2 Code Security, 7.4 Economic).
 
 **Recommendation:** Provide the complete and final source code for the 'KITSUNETOKEN' contract to enable a comprehensive security audit. A full audit is essential to identify potential vulnerabilities specific to the token's implementation before deployment or significant user interaction.
 

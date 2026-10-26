@@ -2,14 +2,14 @@
 token: looksmax.org
 ticker: LOOKSMAX
 network: solana
-risk_score: 22
+risk_score: 5
 status: low
 date: 2026-08-17
 ---
 
 # looksmax.org (LOOKSMAX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 22/100 — 🟢 Low Risk**
+> **Risk Score: 5/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/looksmaxorg-sol)
 
@@ -26,8 +26,8 @@ This audit of the looksmax.org (LOOKSMAX) SPL Token Mint identifies a medium ris
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The looksmax.org (LOOKSMAX) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a relatively low holder concentration, with the top 10 accounts holding 28.7% of the total supply, which is below thresholds for high concentration risk. Total DEX liquidity is… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable due to the revocation of both Mint and Freeze authorities. Key Token-2022 extensions such as transfer hook and transfer fee are not present or are… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits a relatively low holder concentration, with the top 10 accounts holding 28.7% of the total supply, which is below thresholds for high concentration risk. Total DEX liquidity is… |
+| **Upgrades** | 10/10 | Low | The token's core parameters are largely immutable due to the revocation of both Mint and Freeze authorities. Key Token-2022 extensions such as transfer hook and transfer fee are not present or are… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4123 buys / 4970 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

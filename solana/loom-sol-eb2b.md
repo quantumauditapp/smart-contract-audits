@@ -2,14 +2,14 @@
 token: Loom
 ticker: LOOM
 network: solana
-risk_score: 45
-status: medium
+risk_score: 23
+status: low
 date: 2026-08-16
 ---
 
 # Loom (LOOM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/loom-sol-eb2b)
 
@@ -25,9 +25,9 @@ The Loom (LOOM) token mint exhibits a medium risk profile primarily due to signi
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Loom (LOOM) token is an SPL Token-2022 asset. Its core security posture is strong, with both the Mint Authority and Freeze Authority explicitly revoked, preventing further token issuance or… |
-| **Governance / Economics** | 3/10 | High | The economic stability of the Loom (LOOM) token presents some concerns. Holder concentration is notable, with the top 10 token accounts holding 56.91% of the total supply, indicating potential for… |
-| **Upgrades** | 8/10 | Low | The Loom (LOOM) token mint demonstrates a robust and immutable configuration regarding its core parameters. Both the Mint Authority and Freeze Authority have been permanently revoked, ensuring no… |
+| **Technical** | 10/10 | Low | The Loom (LOOM) token is an SPL Token-2022 asset. Its core security posture is strong, with both the Mint Authority and Freeze Authority explicitly revoked, preventing further token issuance or… |
+| **Governance / Economics** | 6/10 | Medium | The economic stability of the Loom (LOOM) token presents some concerns. Holder concentration is notable, with the top 10 token accounts holding 56.91% of the total supply, indicating potential for… |
+| **Upgrades** | 10/10 | Low | The Loom (LOOM) token mint demonstrates a robust and immutable configuration regarding its core parameters. Both the Mint Authority and Freeze Authority have been permanently revoked, ensuring no… |
 
 ## Security Findings
 
@@ -61,13 +61,13 @@ DEX pair was created 5 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 903 buys / 580 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ DEX pair was created 5 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

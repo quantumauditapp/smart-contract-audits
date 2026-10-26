@@ -2,14 +2,14 @@
 token: MetaDAO
 ticker: META
 network: solana
-risk_score: 44
-status: medium
+risk_score: 32
+status: low
 date: 2026-07-29
 ---
 
 # MetaDAO (META) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/metadao-sol)
 
@@ -25,9 +25,9 @@ The MetaDAO (META) token mint has a critical vulnerability: the mint authority r
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The MetaDAO (META) token is implemented using the standard `spl-token` program. A significant risk is present as the mint authority, `BfzJzFUeE54zv6Q2QdAZR4yx7UXuYRsfkeeirrRcxDvk`, is still active… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits healthy market dynamics with $2,612,489 in DEX liquidity and a 24-hour trading volume of $3,761,955. The volume/liquidity ratio of 1.44 is normal, and the pair has been active for… |
-| **Upgrades** | 4/10 | Medium | The primary upgrade risk stems from the active mint authority, which allows for an uncontrolled increase in total supply. While the freeze authority is revoked, ensuring accounts cannot be frozen… |
+| **Technical** | 8/10 | Low | The MetaDAO (META) token is implemented using the standard `spl-token` program. A significant risk is present as the mint authority, `BfzJzFUeE54zv6Q2QdAZR4yx7UXuYRsfkeeirrRcxDvk`, is still active… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits healthy market dynamics with $2,612,489 in DEX liquidity and a 24-hour trading volume of $3,761,955. The volume/liquidity ratio of 1.44 is normal, and the pair has been active for… |
+| **Upgrades** | 6/10 | Medium | The primary upgrade risk stems from the active mint authority, which allows for an uncontrolled increase in total supply. While the freeze authority is revoked, ensuring accounts cannot be frozen… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

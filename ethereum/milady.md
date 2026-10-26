@@ -2,14 +2,14 @@
 token: Milady
 ticker: LADYS
 network: ethereum
-risk_score: 54
-status: medium
+risk_score: 19
+status: low
 date: 2026-09-22
 ---
 
 # Milady (LADYS) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 54/100 — 🟡 Medium Risk**
+> **Risk Score: 19/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/milady-eth)
 
@@ -25,9 +25,9 @@ The LadysToken contract is an ERC20 token with custom features for blacklisting 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract implements a standard ERC20 token with custom transfer hooks for blacklisting and holding limits. It leverages Solidity 0.8.0+ features. A critical vulnerability exists where `unchecked`… |
-| **Governance / Economics** | 1/10 | High | The contract uses the Ownable pattern, granting the deployer significant centralized control over key parameters. The owner can blacklist any address, including users or the LP pair, posing a high… |
-| **Upgrades** | 6/10 | Medium | The contract is not designed to be upgradeable, which simplifies its architecture by avoiding proxy-related complexities. This eliminates risks associated with upgradeability patterns such as storage… |
+| **Technical** | 10/10 | Low | The contract implements a standard ERC20 token with custom transfer hooks for blacklisting and holding limits. It leverages Solidity 0.8.0+ features. A critical vulnerability exists where `unchecked`… |
+| **Governance / Economics** | 4/10 | Medium | The contract uses the Ownable pattern, granting the deployer significant centralized control over key parameters. The owner can blacklist any address, including users or the LP pair, posing a high… |
+| **Upgrades** | 7/10 | Low | The contract is not designed to be upgradeable, which simplifies its architecture by avoiding proxy-related complexities. This eliminates risks associated with upgradeability patterns such as storage… |
 
 ## LP Distribution
 
@@ -38,53 +38,53 @@ The LadysToken contract is an ERC20 token with custom features for blacklisting 
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `C-01` — Unchecked Arithmetic for Total Supply and Balances  *(Severity: Critical · Status: Unresolved)*
-
-The `_mint`, `_burn`, and `_transfer` functions explicitly use `unchecked` blocks for additions to `_totalSupply` and `_balances`. In Solidity 0.8.0+, arithmetic operations default to checked, preventing overflows. By using `unchecked` for additions, if `_totalSupply` or any account's `_balances` were to exceed `type(uint256).max`, the value would wrap around to zero. This could lead to an incorrect total supply, token inflation, or users losing their tokens due to balance manipulation.
-
-**Recommendation:** Remove the `unchecked` blocks around additions to `_totalSupply` and `_balances` in `_mint`, `_burn`, and `_transfer` functions. Allow Solidity's default checked arithmetic to prevent overflows, which is the safer behavior for token balances.
-
-
-### `H-01` — Centralized Control and Blacklisting Risk  *(Severity: High · Status: Unresolved)*
-
-The contract utilizes the `Ownable` pattern, granting the deployer (owner) exclusive control over critical functions. Specifically, the `blacklist` function allows the owner to prevent any address from sending or receiving tokens. This introduces a high level of centralization, enabling potential censorship, freezing of user funds, or manipulation of market dynamics by blacklisting liquidity pools or exchanges.
-
-**Recommendation:** Consider decentralizing control by implementing a multi-signature wallet or a time-locked contract for ownership. If blacklisting is deemed necessary, define clear, transparent criteria for its use and consider a community-governed mechanism or a timelock for such actions to reduce immediate impact.
-
-
-### `H-02` — Ambiguous/Problematic `minHoldingAmount` Logic  *(Severity: High · Status: Unresolved)*
-
-The `_beforeTokenTransfer` function includes a `minHoldingAmount` check (`super.balanceOf(to) + amount >= minHoldingAmount`) that applies only to transfers originating `from == uniswapV2Pair`. If `minHoldingAmount` is set to a non-zero value, it could prevent users from acquiring tokens from the LP if their resulting balance would be below this threshold. This could effectively lock out smaller investors or create unexpected barriers to entry for legitimate token acquisition.
-
-**Recommendation:** Clarify the intended purpose of `minHoldingAmount`. If it's meant to ensure a minimum holding, consider if applying it only to transfers from the LP is the desired behavior. If the goal is to prevent users from holding less than a certain amount, the logic might need to be adjusted to cover all transfers or be removed if it creates unintended restrictions.
-
+_🟡 4 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Holding Limit Bypass for Direct Transfers  *(Severity: Medium · Status: Unresolved)*
 
-The `limited` holding amount rules (`maxHoldingAmount`, `minHoldingAmount`) are only enforced when tokens are transferred `from == uniswapV2Pair`. This design allows users to bypass these limits by transferring tokens directly between wallets or by transferring tokens *to* the LP pair without restriction. While this might be an intentional design choice, it reduces the overall effectiveness of the holding limits if the goal is to restrict total holdings.
+Not confirmed by static analysis (the model's own reading of the source). The `limited` holding amount rules (`maxHoldingAmount`, `minHoldingAmount`) are only enforced when tokens are transferred `from == uniswapV2Pair`. This design allows users to bypass these limits by transferring tokens directly between wallets or by transferring tokens *to* the LP pair without restriction. While this might be an intentional design choice, it reduces the overall effectiveness of the holding limits if the goal is to restrict total holdings.
 
 **Recommendation:** If the intention is to enforce holding limits universally, modify the `_beforeTokenTransfer` logic to apply `maxHoldingAmount` and `minHoldingAmount` checks to all transfers, regardless of the `from` address. If the current behavior is intentional, document this limitation clearly.
 
 
+### `M-02` — Unchecked Arithmetic for Total Supply and Balances  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_mint`, `_burn`, and `_transfer` functions explicitly use `unchecked` blocks for additions to `_totalSupply` and `_balances`. In Solidity 0.8.0+, arithmetic operations default to checked, preventing overflows. By using `unchecked` for additions, if `_totalSupply` or any account's `_balances` were to exceed `type(uint256).max`, the value would wrap around to zero. This could lead to an incorrect total supply, token inflation, or users losing their tokens due to balance manipulation.
+
+**Recommendation:** Remove the `unchecked` blocks around additions to `_totalSupply` and `_balances` in `_mint`, `_burn`, and `_transfer` functions. Allow Solidity's default checked arithmetic to prevent overflows, which is the safer behavior for token balances.
+
+
+### `M-03` — Centralized Control and Blacklisting Risk  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes the `Ownable` pattern, granting the deployer (owner) exclusive control over critical functions. Specifically, the `blacklist` function allows the owner to prevent any address from sending or receiving tokens. This introduces a high level of centralization, enabling potential censorship, freezing of user funds, or manipulation of market dynamics by blacklisting liquidity pools or exchanges.
+
+**Recommendation:** Consider decentralizing control by implementing a multi-signature wallet or a time-locked contract for ownership. If blacklisting is deemed necessary, define clear, transparent criteria for its use and consider a community-governed mechanism or a timelock for such actions to reduce immediate impact.
+
+
+### `M-04` — Ambiguous/Problematic `minHoldingAmount` Logic  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_beforeTokenTransfer` function includes a `minHoldingAmount` check (`super.balanceOf(to) + amount >= minHoldingAmount`) that applies only to transfers originating `from == uniswapV2Pair`. If `minHoldingAmount` is set to a non-zero value, it could prevent users from acquiring tokens from the LP if their resulting balance would be below this threshold. This could effectively lock out smaller investors or create unexpected barriers to entry for legitimate token acquisition.
+
+**Recommendation:** Clarify the intended purpose of `minHoldingAmount`. If it's meant to ensure a minimum holding, consider if applying it only to transfers from the LP is the desired behavior. If the goal is to prevent users from holding less than a certain amount, the logic might need to be adjusted to cover all transfers or be removed if it creates unintended restrictions.
+
+
 ### `L-01` — Lack of Event for `setRule` Function  *(Severity: Low · Status: Unresolved)*
 
-The `setRule` function, which modifies critical parameters such as `limited`, `uniswapV2Pair`, `maxHoldingAmount`, and `minHoldingAmount`, does not emit an event. This makes it difficult for off-chain applications, block explorers, and users to track changes to these important contract configurations, hindering transparency and auditability.
+Not confirmed by static analysis (the model's own reading of the source). The `setRule` function, which modifies critical parameters such as `limited`, `uniswapV2Pair`, `maxHoldingAmount`, and `minHoldingAmount`, does not emit an event. This makes it difficult for off-chain applications, block explorers, and users to track changes to these important contract configurations, hindering transparency and auditability.
 
 **Recommendation:** Emit an event (e.g., `RuleSet(bool limited, address uniswapV2Pair, uint256 maxHoldingAmount, uint256 minHoldingAmount)`) whenever the `setRule` function is called. This will provide a clear, auditable history of parameter changes.
 
 
 ### `I-01` — Fixed Decimals Value  *(Severity: Informational · Status: Unresolved)*
 
-The `decimals()` function is hardcoded to return `18`. While 18 decimals is a common standard for ERC20 tokens, this value cannot be changed after deployment. This is an observation rather than a vulnerability.
+Not confirmed by static analysis (the model's own reading of the source). The `decimals()` function is hardcoded to return `18`. While 18 decimals is a common standard for ERC20 tokens, this value cannot be changed after deployment. This is an observation rather than a vulnerability.
 
 **Recommendation:** No action required if 18 decimals is the intended and permanent configuration.
 
 
 ### `I-02` — Initial Token Distribution to EOAs  *(Severity: Informational · Status: Unresolved)*
 
-The constructor mints a significant portion of the total supply (94% to `_lpWallet`, 1% to `_airdropWallet`, 5% to `_ecoWallet`) to specific addresses. If these addresses are Externally Owned Accounts (EOAs), they represent single points of failure for the initial token distribution and control over a large supply.
+Not confirmed by static analysis (the model's own reading of the source). The constructor mints a significant portion of the total supply (94% to `_lpWallet`, 1% to `_airdropWallet`, 5% to `_ecoWallet`) to specific addresses. If these addresses are Externally Owned Accounts (EOAs), they represent single points of failure for the initial token distribution and control over a large supply.
 
 **Recommendation:** Consider using multi-signature wallets or timelock contracts for these critical distribution addresses to enhance security and reduce the risk associated with a single point of control.
 

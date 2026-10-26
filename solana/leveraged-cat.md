@@ -2,14 +2,14 @@
 token: Leveraged Cat
 ticker: LEVERCAT
 network: solana
-risk_score: 16
+risk_score: 7
 status: low
 date: 2026-09-12
 ---
 
 # Leveraged Cat (LEVERCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 16/100 — 🟢 Low Risk**
+> **Risk Score: 7/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/leveraged-cat-sol)
 
@@ -26,8 +26,8 @@ This SPL Token Mint audit for Leveraged Cat (LEVERCAT) identifies a medium risk 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Leveraged Cat token operates on the spl-token-2022 program, utilizing its advanced features. Both the mint authority and freeze authority have been revoked, preventing further token issuance or… |
-| **Governance / Economics** | 6/10 | Medium | The token's DEX pair is very new, having been created only 4 days ago, which limits the ability to assess long-term market behavior (7.4 Economic). Total DEX liquidity stands at $180,536, with a… |
-| **Upgrades** | 6/10 | Medium | The mint and freeze authorities are revoked, indicating that core token parameters like total supply and account freezing cannot be altered by an external key (7.7 Upgrades). While the token uses the… |
+| **Governance / Economics** | 7/10 | Low | The token's DEX pair is very new, having been created only 4 days ago, which limits the ability to assess long-term market behavior (7.4 Economic). Total DEX liquidity stands at $180,536, with a… |
+| **Upgrades** | 7/10 | Low | The mint and freeze authorities are revoked, indicating that core token parameters like total supply and account freezing cannot be altered by an external key (7.7 Upgrades). While the token uses the… |
 
 ## Token-2022 Extensions
 
@@ -73,7 +73,7 @@ The token's metadata is mutable, as indicated by 'metadata_mutable: True'. This 
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ The token's metadata is mutable, as indicated by 'metadata_mutable: True'. This 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: Marscoin
 ticker: MARS
 network: bsc
-risk_score: 4
+risk_score: 0
 status: low
 date: 2026-08-17
 ---
 
 # Marscoin (MARS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 4/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/marscoin-bsc-0ec3)
 
@@ -25,8 +25,8 @@ The audit of the Token contract revealed a well-structured ERC20 implementation 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract utilizes standard and well-audited OpenZeppelin patterns for ERC20 functionality and ownership, including safe use of `unchecked` blocks for arithmetic operations (7.2 Code Security).… |
-| **Governance / Economics** | 8/10 | Low | The `Ownable` pattern provides a clear, single point of administrative control for critical functions like `setMode` (7.5 Governance). The ability to restrict transfers offers flexibility for… |
+| **Technical** | 10/10 | Low | The contract utilizes standard and well-audited OpenZeppelin patterns for ERC20 functionality and ownership, including safe use of `unchecked` blocks for arithmetic operations (7.2 Code Security).… |
+| **Governance / Economics** | 10/10 | Low | The `Ownable` pattern provides a clear, single point of administrative control for critical functions like `setMode` (7.5 Governance). The ability to restrict transfers offers flexibility for… |
 | **Upgrades** | 10/10 | Low | The contract is not designed with an upgradeability pattern (e.g., proxy). Therefore, there are no specific upgrade-related risks (7.7 Upgrades). Any changes to the contract logic would require a new… |
 
 ## LP Distribution
@@ -38,34 +38,34 @@ The audit of the Token contract revealed a well-structured ERC20 implementation 
 
 ## Security Findings
 
-_🟠 2 High · 🟡 2 Medium_
-
-### `H-01` — Irreversible Transfer Mode Change  *(Severity: High · Status: Unresolved)*
-
-The `setMode` function contains a condition `if (_mode != MODE_NORMAL) { _mode = v; }`. This logic prevents the owner from changing the token's transfer mode once it has been set to `MODE_NORMAL` (0). This means that if the project ever needs to re-enable transfer restrictions (e.g., for security incidents, regulatory compliance, or specific event phases), it will be impossible to do so, permanently removing a critical control mechanism.
-
-**Recommendation:** Modify the `setMode` function to remove the `if (_mode != MODE_NORMAL)` condition, allowing the owner full flexibility to switch between all defined modes at any time. Alternatively, if the irreversible nature is intentional, clearly document this design choice and its implications.
-
-
-### `H-02` — Initial Transfer Restriction Requires Owner Action  *(Severity: High · Status: Unresolved)*
-
-In the constructor, the `_mode` is initialized to `MODE_TRANSFER_RESTRICTED`. This means that immediately after deployment, no token transfers are possible until the contract owner explicitly calls `setMode(MODE_NORMAL)`. If the owner fails to perform this action, or if there's a delay, users might be unable to transfer their tokens, leading to confusion, frustration, and potential economic loss.
-
-**Recommendation:** Consider initializing the `_mode` to `MODE_NORMAL` if the intention is for the token to be freely transferable from deployment. If the restricted initial state is intentional, ensure robust off-chain communication and operational procedures are in place to promptly transition the token to `MODE_NORMAL`.
-
+_🟡 4 Medium_
 
 ### `M-01` — Centralized Transfer Control in MODE_TRANSFER_CONTROLLED  *(Severity: Medium · Status: Unresolved)*
 
-When `_mode` is set to `MODE_TRANSFER_CONTROLLED`, the `_beforeTokenTransfer` hook enforces `require(from == owner() \|\| to == owner(), 'Token: Invalid transfer');`. This design choice means that only transfers involving the contract owner (either as sender or receiver) are permitted. While potentially intentional for specific use cases, this severely centralizes control over token movement and significantly limits the token's liquidity and utility for general users, posing a high economic risk for token holders.
+Not confirmed by static analysis (the model's own reading of the source). When `_mode` is set to `MODE_TRANSFER_CONTROLLED`, the `_beforeTokenTransfer` hook enforces `require(from == owner() \|\| to == owner(), 'Token: Invalid transfer');`. This design choice means that only transfers involving the contract owner (either as sender or receiver) are permitted. While potentially intentional for specific use cases, this severely centralizes control over token movement and significantly limits the token's liquidity and utility for general users, posing a high economic risk for token holders.
 
 **Recommendation:** Clearly communicate the implications of `MODE_TRANSFER_CONTROLLED` to all potential users and stakeholders. Ensure this mode aligns with the project's long-term vision and decentralization goals. If broader transferability is desired, this mode should be used sparingly or redesigned.
 
 
 ### `M-02` — Risk of Permanent Lock if Ownership Renounced in Restricted Mode  *(Severity: Medium · Status: Unresolved)*
 
-The `Ownable` contract includes a `renounceOwnership()` function. If the contract owner renounces ownership while the token is in `MODE_TRANSFER_RESTRICTED` or `MODE_TRANSFER_CONTROLLED`, and especially if `MODE_NORMAL` has not been set (due to H-01), no entity will be able to call `setMode` to change the transfer restrictions. This could permanently lock the token in a restricted state, rendering it untransferable and valueless.
+Not confirmed by static analysis (the model's own reading of the source). The `Ownable` contract includes a `renounceOwnership()` function. If the contract owner renounces ownership while the token is in `MODE_TRANSFER_RESTRICTED` or `MODE_TRANSFER_CONTROLLED`, and especially if `MODE_NORMAL` has not been set (due to H-01), no entity will be able to call `setMode` to change the transfer restrictions. This could permanently lock the token in a restricted state, rendering it untransferable and valueless.
 
 **Recommendation:** Implement a safeguard to prevent `renounceOwnership()` if the token is not in `MODE_NORMAL`. Alternatively, ensure that ownership is only renounced after the token has been definitively set to `MODE_NORMAL` and the irreversible nature of this action is fully understood and accepted.
+
+
+### `M-03` — Irreversible Transfer Mode Change  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `setMode` function contains a condition `if (_mode != MODE_NORMAL) { _mode = v; }`. This logic prevents the owner from changing the token's transfer mode once it has been set to `MODE_NORMAL` (0). This means that if the project ever needs to re-enable transfer restrictions (e.g., for security incidents, regulatory compliance, or specific event phases), it will be impossible to do so, permanently removing a critical control mechanism.
+
+**Recommendation:** Modify the `setMode` function to remove the `if (_mode != MODE_NORMAL)` condition, allowing the owner full flexibility to switch between all defined modes at any time. Alternatively, if the irreversible nature is intentional, clearly document this design choice and its implications.
+
+
+### `M-04` — Initial Transfer Restriction Requires Owner Action  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). In the constructor, the `_mode` is initialized to `MODE_TRANSFER_RESTRICTED`. This means that immediately after deployment, no token transfers are possible until the contract owner explicitly calls `setMode(MODE_NORMAL)`. If the owner fails to perform this action, or if there's a delay, users might be unable to transfer their tokens, leading to confusion, frustration, and potential economic loss.
+
+**Recommendation:** Consider initializing the `_mode` to `MODE_NORMAL` if the intention is for the token to be freely transferable from deployment. If the restricted initial state is intentional, ensure robust off-chain communication and operational procedures are in place to promptly transition the token to `MODE_NORMAL`.
 
 ## Token Metrics
 

@@ -113,7 +113,7 @@ Not confirmed by static analysis (the model's own reading of the source). The `K
 
 ### Is Kite a scam?
 
-Based solely on the provided data, we cannot definitively label Kite as a scam. However, its critical risk score of 75/100 is attributed to several significant red flags. Key concerns include a high concentration of tokens among the top 10 holders (68.5%), ownership of the contract not being renounced, and, critically, liquidity not being locked. These characteristics are often associated with high-risk projects and potential for adverse events.
+Based solely on the provided data, we cannot definitively label Kite as a scam. However, its low risk score of 24/100 is attributed to several significant red flags. Key concerns include a high concentration of tokens among the top 10 holders (68.5%), ownership of the contract not being renounced, and, critically, liquidity not being locked. These characteristics are often associated with high-risk projects and potential for adverse events.
 
 ### Is Kite safe to buy?
 

@@ -2,14 +2,14 @@
 token: Meta Financial AI
 ticker: MEFAI
 network: bsc
-risk_score: 33
+risk_score: 31
 status: low
 date: 2026-09-22
 ---
 
 # Meta Financial AI (MEFAI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 33/100 — 🟢 Low Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/meta-financial-ai-bsc)
 
@@ -41,21 +41,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Centralized Initial Supply Distribution  *(Severity: Low · Status: Unresolved)*
 
-The entire `INITIAL_SUPPLY` of 564,249,705 MEFAI tokens is minted to `msg.sender` (the contract deployer) in the constructor. This design centralizes the control of the entire token supply at inception to a single address. Depending on the project's decentralization goals, this could pose a significant centralization risk, as the deployer holds all tokens and dictates their initial distribution.
+Not confirmed by static analysis (the model's own reading of the source). The entire `INITIAL_SUPPLY` of 564,249,705 MEFAI tokens is minted to `msg.sender` (the contract deployer) in the constructor. This design centralizes the control of the entire token supply at inception to a single address. Depending on the project's decentralization goals, this could pose a significant centralization risk, as the deployer holds all tokens and dictates their initial distribution.
 
 **Recommendation:** Consider implementing a more distributed initial token allocation strategy. This could involve vesting contracts, multi-signature wallets for holding the initial supply, or a pre-sale/IDO mechanism to distribute tokens among a wider base of participants from the outset. Clearly communicate the distribution plan to the community.
 
 
 ### `I-01` — Custom ERC20 Implementation Instead of Battle-Tested Libraries  *(Severity: Informational · Status: Unresolved)*
 
-The contract implements its own ERC20 standard rather than inheriting from widely audited and battle-tested libraries like OpenZeppelin Contracts. While the custom implementation appears to correctly adhere to the ERC20 standard and incorporates modern Solidity features like custom errors and `unchecked` blocks, custom code inherently carries a higher risk of undiscovered vulnerabilities compared to code that has undergone extensive community review and formal verification over time.
+Not confirmed by static analysis (the model's own reading of the source). The contract implements its own ERC20 standard rather than inheriting from widely audited and battle-tested libraries like OpenZeppelin Contracts. While the custom implementation appears to correctly adhere to the ERC20 standard and incorporates modern Solidity features like custom errors and `unchecked` blocks, custom code inherently carries a higher risk of undiscovered vulnerabilities compared to code that has undergone extensive community review and formal verification over time.
 
 **Recommendation:** For future projects or significant updates, consider using established and audited libraries such as OpenZeppelin Contracts for core functionalities like ERC20. If a custom implementation is necessary, ensure it undergoes rigorous testing, including unit tests, integration tests, and potentially formal verification, to achieve a similar level of security assurance.
 
 
 ### `I-02` — Fixed Decimals Value  *(Severity: Informational · Status: Unresolved)*
 
-The `decimals()` function is hardcoded to return `18`. While 18 decimals is a common standard for ERC20 tokens, this value is fixed and cannot be changed after deployment. This is standard behavior for most ERC20 tokens but is noted for completeness.
+Not confirmed by static analysis (the model's own reading of the source). The `decimals()` function is hardcoded to return `18`. While 18 decimals is a common standard for ERC20 tokens, this value is fixed and cannot be changed after deployment. This is standard behavior for most ERC20 tokens but is noted for completeness.
 
 **Recommendation:** Ensure that the choice of 18 decimals aligns with all project requirements and integrations, as it cannot be altered post-deployment. No direct action is required if 18 decimals is the intended and acceptable standard.
 

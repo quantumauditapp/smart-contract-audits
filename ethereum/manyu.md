@@ -2,14 +2,14 @@
 token: Manyu
 ticker: MANYU
 network: ethereum
-risk_score: 13
+risk_score: 0
 status: low
 date: 2026-07-24
 ---
 
 # Manyu (MANYU) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 13/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/manyu-eth)
 
@@ -25,9 +25,9 @@ This audit was conducted on an incomplete set of Solidity source code. Only the 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The provided source code consists only of a `SafeMath` library and an `IERC20` interface. The `SafeMath` library is a standard, well-tested component, correctly implementing arithmetic operations… |
-| **Governance / Economics** | 6/10 | Medium | Without the main contract's source code, it is impossible to assess any economic model, tokenomics, fee structures, or governance mechanisms (7.4 Economic, 7.5 Governance). This means potential risks… |
-| **Upgrades** | 9/10 | Low | The provided code does not include any proxy or upgradeable contract patterns, nor does it reveal operational controls. Consequently, it is impossible to determine if the contract is upgradeable… |
+| **Technical** | 10/10 | Low | The provided source code consists only of a `SafeMath` library and an `IERC20` interface. The `SafeMath` library is a standard, well-tested component, correctly implementing arithmetic operations… |
+| **Governance / Economics** | 10/10 | Low | Without the main contract's source code, it is impossible to assess any economic model, tokenomics, fee structures, or governance mechanisms (7.4 Economic, 7.5 Governance). This means potential risks… |
+| **Upgrades** | 10/10 | Low | The provided code does not include any proxy or upgradeable contract patterns, nor does it reveal operational controls. Consequently, it is impossible to determine if the contract is upgradeable… |
 
 ## LP Distribution
 
@@ -38,39 +38,39 @@ This audit was conducted on an incomplete set of Solidity source code. Only the 
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 3 High · ⚪ 1 Informational_
+_🟡 4 Medium · ⚪ 1 Informational_
 
-### `C-01` — Missing Core Contract Source Code  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Missing Core Contract Source Code  *(Severity: Medium · Status: Unresolved)*
 
-The provided source code only includes the `SafeMath` library and `IERC20` interface. The main contract implementation (e.g., the 'Manyu' token contract) is entirely missing. This prevents any meaningful security analysis of the deployed contract's logic, state variables, functions, and interactions, making a comprehensive audit impossible.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code only includes the `SafeMath` library and `IERC20` interface. The main contract implementation (e.g., the 'Manyu' token contract) is entirely missing. This prevents any meaningful security analysis of the deployed contract's logic, state variables, functions, and interactions, making a comprehensive audit impossible.
 
 **Recommendation:** Provide the complete and verified source code for the deployed contract (0x95af4af910c28e8ece4512bfe46f1f33687424ce) to allow for a comprehensive security audit. Without this, users cannot independently verify the contract's behavior or security, leading to a critical trust deficit.
 
 
-### `H-01` — Inability to Assess Access Control Mechanisms  *(Severity: High · Status: Unresolved)*
+### `M-02` — Inability to Assess Access Control Mechanisms  *(Severity: Medium · Status: Unresolved)*
 
-Without the full source code, it is impossible to evaluate the contract's access control mechanisms. This includes identifying privileged roles (e.g., owner, admin), verifying proper authorization checks (e.g., `onlyOwner`), and assessing potential centralization risks or single points of failure (7.3 Access Control). This lack of visibility poses a high risk of unauthorized actions or control.
+Not confirmed by static analysis (the model's own reading of the source). Without the full source code, it is impossible to evaluate the contract's access control mechanisms. This includes identifying privileged roles (e.g., owner, admin), verifying proper authorization checks (e.g., `onlyOwner`), and assessing potential centralization risks or single points of failure (7.3 Access Control). This lack of visibility poses a high risk of unauthorized actions or control.
 
 **Recommendation:** Provide the complete source code to allow for a thorough review of all access control implementations and ensure they align with security best practices and the project's stated decentralization goals.
 
 
-### `H-02` — Inability to Assess Economic Model and Tokenomics  *(Severity: High · Status: Unresolved)*
+### `M-03` — Inability to Assess Economic Model and Tokenomics  *(Severity: Medium · Status: Unresolved)*
 
-The absence of the main contract's source code prevents any analysis of the token's economic model, including supply mechanisms, minting/burning functions, fee structures, staking rewards, or other tokenomics features (7.4 Economic). This leaves potential vulnerabilities like uncontrolled inflation, deflationary spirals, or rug pull vectors unidentifiable, posing a high risk to token holders.
+Not confirmed by static analysis (the model's own reading of the source). The absence of the main contract's source code prevents any analysis of the token's economic model, including supply mechanisms, minting/burning functions, fee structures, staking rewards, or other tokenomics features (7.4 Economic). This leaves potential vulnerabilities like uncontrolled inflation, deflationary spirals, or rug pull vectors unidentifiable, posing a high risk to token holders.
 
 **Recommendation:** Submit the full contract source code for review to enable a comprehensive assessment of the economic model, ensuring its stability, fairness, and resistance to manipulation.
 
 
-### `H-03` — Inability to Assess Upgradeability and Operational Risks  *(Severity: High · Status: Unresolved)*
+### `M-04` — Inability to Assess Upgradeability and Operational Risks  *(Severity: Medium · Status: Unresolved)*
 
-The provided code does not reveal any upgradeability patterns or operational controls. Consequently, it's impossible to determine if the contract is upgradeable, how upgrades are managed, or if emergency functions (e.g., pause, emergency withdrawal) exist and are properly secured (7.7 Upgrades, 7.8 Operations). This introduces significant unknown risks regarding future changes and emergency response capabilities.
+Not confirmed by static analysis (the model's own reading of the source). The provided code does not reveal any upgradeability patterns or operational controls. Consequently, it's impossible to determine if the contract is upgradeable, how upgrades are managed, or if emergency functions (e.g., pause, emergency withdrawal) exist and are properly secured (7.7 Upgrades, 7.8 Operations). This introduces significant unknown risks regarding future changes and emergency response capabilities.
 
 **Recommendation:** Provide the complete source code to allow for an assessment of any upgradeability patterns (e.g., proxy implementations) and operational controls, ensuring they are robust, transparent, and secure.
 
 
 ### `I-01` — Redundant SafeMath Usage in Solidity 0.8.x  *(Severity: Informational · Status: Unresolved)*
 
-The contract uses a `SafeMath` library. While `SafeMath` is crucial for preventing integer overflow/underflow in Solidity versions prior to 0.8.0, Solidity 0.8.0 and later versions (like 0.8.19 used here) include built-in overflow and underflow checks by default for all arithmetic operations. The `add`, `sub`, `mul`, `div`, `mod` functions in the provided `SafeMath` library that do not take an `errorMessage` parameter are effectively redundant as they simply wrap native operators that already revert on overflow/underflow. The `try*` functions and those with `errorMessage` parameters correctly use `unchecked` blocks and `require` statements, respectively.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses a `SafeMath` library. While `SafeMath` is crucial for preventing integer overflow/underflow in Solidity versions prior to 0.8.0, Solidity 0.8.0 and later versions (like 0.8.19 used here) include built-in overflow and underflow checks by default for all arithmetic operations. The `add`, `sub`, `mul`, `div`, `mod` functions in the provided `SafeMath` library that do not take an `errorMessage` parameter are effectively redundant as they simply wrap native operators that already revert on overflow/underflow. The `try*` functions and those with `errorMessage` parameters correctly use `unchecked` blocks and
 
 **Recommendation:** Consider removing the `SafeMath` library for basic arithmetic operations in Solidity 0.8.x and above, relying on the native overflow/underflow checks. If custom error messages or explicit `unchecked` blocks are desired, ensure they are used judiciously where gas optimization is critical and safety is guaranteed by other means.
 

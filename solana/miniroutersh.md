@@ -2,14 +2,14 @@
 token: Minirouter.sh
 ticker: MINI
 network: solana
-risk_score: 17
+risk_score: 3
 status: low
 date: 2026-09-06
 ---
 
 # Minirouter.sh (MINI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 17/100 — 🟢 Low Risk**
+> **Risk Score: 3/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/miniroutersh-sol)
 
@@ -26,8 +26,8 @@ The Minirouter.sh (MINI) token presents a medium risk primarily due to its very 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Minirouter.sh (MINI) token is an SPL token operating on the Solana blockchain using the `spl-token` program. The mint authority for the token has been revoked, meaning no new tokens can be… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $86,290 in total DEX liquidity. The 24-hour volume of $287,533 results in a Volume/Liquidity Ratio of 3.33, which is considered normal and does not suggest… |
-| **Upgrades** | 8/10 | Low | The Minirouter.sh (MINI) token mint has a fixed configuration as both the mint authority and freeze authority have been revoked. This prevents any future changes to the token's supply or the ability… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits moderate liquidity with $86,290 in total DEX liquidity. The 24-hour volume of $287,533 results in a Volume/Liquidity Ratio of 3.33, which is considered normal and does not suggest… |
+| **Upgrades** | 9/10 | Low | The Minirouter.sh (MINI) token mint has a fixed configuration as both the mint authority and freeze authority have been revoked. This prevents any future changes to the token's supply or the ability… |
 
 ## Security Findings
 

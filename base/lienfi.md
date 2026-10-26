@@ -2,14 +2,14 @@
 token: LienFi
 ticker: LFI
 network: base
-risk_score: 42
-status: medium
+risk_score: 29
+status: low
 date: 2026-08-12
 ---
 
 # LienFi (LFI) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 29/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lienfi-base)
 
@@ -25,7 +25,7 @@ The CloneDERC20VotesV2 contract implements an ERC20 token with voting capabiliti
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract's architecture (7.1) is clear, utilizing Solady libraries for robust ERC20, ERC20Votes, and Ownable implementations. Code security (7.2) is generally strong, with no apparent reentrancy… |
+| **Technical** | 9/10 | Low | The contract's architecture (7.1) is clear, utilizing Solady libraries for robust ERC20, ERC20Votes, and Ownable implementations. Code security (7.2) is generally strong, with no apparent reentrancy… |
 | **Governance / Economics** | 7/10 | Low | The economic model (7.4) includes a capped yearly inflation rate and a vesting mechanism. Inflation tokens are minted directly to the `owner()`, which is a multisig, mitigating the risk of a single… |
 | **Upgrades** | 2/10 | High | The contract includes the `Initializable` base contract (7.7), suggesting it was designed with upgradeability in mind, typically for deployment behind a proxy. However, the provided information… |
 
@@ -50,35 +50,35 @@ _🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Unused `pool` and `isPoolLocked` Variables  *(Severity: Medium · Status: Unresolved)*
 
-The `pool` address and `isPoolLocked` boolean state variables are declared and can be set by the `onlyOwner` functions `lockPool` and `unlockPool`. However, these variables are never read or used anywhere else in the contract to restrict or enable any functionality. This indicates either incomplete features, dead code, or a misunderstanding of their intended purpose, which can be misleading and potentially lead to future vulnerabilities if these variables are later integrated without proper security review.
+Not confirmed by static analysis (the model's own reading of the source). The `pool` address and `isPoolLocked` boolean state variables are declared and can be set by the `onlyOwner` functions `lockPool` and `unlockPool`. However, these variables are never read or used anywhere else in the contract to restrict or enable any functionality. This indicates either incomplete features, dead code, or a misunderstanding of their intended purpose, which can be misleading and potentially lead to future vulnerabilities if these variables are later integrated without proper security review.
 
 **Recommendation:** Either implement the intended logic that utilizes the `pool` address and `isPoolLocked` flag, or remove these variables and their associated functions if they are not part of the current design. If they are placeholders for future functionality, clearly document their purpose and ensure a thorough security review is conducted before activating any logic dependent on them.
 
 
 ### `M-02` — Potential Gas Limit Issues in `mintInflation` Loop  *(Severity: Medium · Status: Unresolved)*
 
-The `mintInflation` function contains a `while` loop that iterates for each full year that has passed since `currentYearStart`. While `currentYearStart` is updated to `block.timestamp` upon `unlockPool` and within `mintInflation` itself, if the contract is left un-minted for an extremely long period (e.g., many centuries), this loop could iterate a significant number of times. This could potentially exceed the block gas limit, preventing the inflation mechanism from being triggered and leading to a denial of service for token minting.
+Not confirmed by static analysis (the model's own reading of the source). The `mintInflation` function contains a `while` loop that iterates for each full year that has passed since `currentYearStart`. While `currentYearStart` is updated to `block.timestamp` upon `unlockPool` and within `mintInflation` itself, if the contract is left un-minted for an extremely long period (e.g., many centuries), this loop could iterate a significant number of times. This could potentially exceed the block gas limit, preventing the inflation mechanism from being triggered and leading to a denial of service for token minting.
 
 **Recommendation:** Consider an alternative approach for calculating inflation over multiple years that avoids a `while` loop, such as a formula-based calculation or a mechanism that caps the number of iterations. Alternatively, ensure that `mintInflation` is called regularly (e.g., via a keeper bot) to prevent `currentYearStart` from becoming excessively old.
 
 
 ### `M-03` — Potential Gas Limit Issues in `release()` for Many Schedules  *(Severity: Medium · Status: Unresolved)*
 
-The `release()` function (without a `scheduleId` parameter) and `computeAvailableVestedAmount(address beneficiary)` iterate over the `_scheduleIdsOf[beneficiary]` array to process all vesting schedules for a given beneficiary. While the `initialize` function includes checks like `MAX_PRE_MINT_PER_ADDRESS_WAD` and `MAX_TOTAL_PRE_MINT_WAD`, these primarily limit the total *amount* allocated, not the *number* of individual vesting schedules. If a single beneficiary is allocated an extremely large number of distinct vesting schedules during initialization, iterating through this array could become gas-intensive, potentially leading to a denial of service for that beneficiary's ability to claim…
+Not confirmed by static analysis (the model's own reading of the source). The `release()` function (without a `scheduleId` parameter) and `computeAvailableVestedAmount(address beneficiary)` iterate over the `_scheduleIdsOf[beneficiary]` array to process all vesting schedules for a given beneficiary. While the `initialize` function includes checks like `MAX_PRE_MINT_PER_ADDRESS_WAD` and `MAX_TOTAL_PRE_MINT_WAD`, these primarily limit the total *amount* allocated, not the *number* of individual vesting schedules. If a single beneficiary is allocated an extremely large number of distinct vesting schedules during initialization, iterating through this array could become gas-intensive, potentiall
 
 **Recommendation:** During the contract deployment and initialization phase, ensure that the number of vesting schedules allocated to any single beneficiary remains within reasonable limits to prevent excessive gas consumption. If a very large number of schedules per beneficiary is a design requirement, consider implementing a paginated claim mechanism or a way to claim a subset of schedules to avoid hitting gas limits.
 
 
 ### `L-01` — Owner Receives All Inflation Tokens  *(Severity: Low · Status: Unresolved)*
 
-The `mintInflation` function mints all newly generated inflation tokens directly to the `owner()`. While the owner is a multisig (0x660eaaedebc968f8f3694354fa8ec0b4c5ba8d12, 3/6 threshold), this design centralizes the control of all newly minted supply. Depending on the project's economic model and governance structure, this could be perceived as a centralization risk, as the owner has sole discretion over the distribution or use of these tokens, potentially impacting market dynamics.
+Not confirmed by static analysis (the model's own reading of the source). The `mintInflation` function mints all newly generated inflation tokens directly to the `owner()`. While the owner is a multisig (0x660eaaedebc968f8f3694354fa8ec0b4c5ba8d12, 3/6 threshold), this design centralizes the control of all newly minted supply. Depending on the project's economic model and governance structure, this could be perceived as a centralization risk, as the owner has sole discretion over the distribution or use of these tokens, potentially impacting market dynamics.
 
 **Recommendation:** Clearly document the intended use and distribution strategy for the inflation tokens received by the owner. If a more decentralized distribution is desired in the future, consider implementing a governance-controlled treasury or a mechanism to distribute inflation directly to stakers or other protocol participants.
 
 
 ### `I-01` — Truncated Vesting Logic in `_available` Function  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code for the `_available` function is truncated at the point where the linear vesting calculation (`else { ves...`) would typically be implemented. Without the full code, a complete security analysis of the linear vesting logic, including potential edge cases like division by zero or incorrect calculation, cannot be performed.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the `_available` function is truncated at the point where the linear vesting calculation (`else { ves...`) would typically be implemented. Without the full code, a complete security analysis of the linear vesting logic, including potential edge cases like division by zero or incorrect calculation, cannot be performed.
 
 **Recommendation:** Provide the complete and untruncated source code for a comprehensive audit. Assuming a standard linear vesting implementation, ensure it correctly handles edge cases such as `s.duration == s.cliff` (which should be covered by the `if (t >= start + s.duration)` condition if `s.cliff == s.duration`) and avoids any potential for division by zero.
 

@@ -2,14 +2,14 @@
 token: LAMA Pay
 ticker: LAMA
 network: solana
-risk_score: 47
-status: medium
+risk_score: 12
+status: low
 date: 2026-09-14
 ---
 
 # LAMA Pay (LAMA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 47/100 — 🟡 Medium Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lama-pay-sol)
 
@@ -25,9 +25,9 @@ The LAMA Pay token mint is flagged as high-risk by a third-party registry due to
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The LAMA Pay token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, preventing further token issuance or freezing of holder accounts. There are no active… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 37.51% of the supply, which is below the threshold for high concentration. Liquidity is moderate at $37,480 USD, but the… |
-| **Upgrades** | 7/10 | Low | The LAMA Pay token mint has a fixed configuration as both the mint and freeze authorities are revoked. This means no new tokens can be minted, and no accounts can be frozen. Furthermore, the token's… |
+| **Technical** | 10/10 | Low | The LAMA Pay token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, preventing further token issuance or freezing of holder accounts. There are no active… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a holder concentration where the top 10 accounts hold 37.51% of the supply, which is below the threshold for high concentration. Liquidity is moderate at $37,480 USD, but the… |
+| **Upgrades** | 10/10 | Low | The LAMA Pay token mint has a fixed configuration as both the mint and freeze authorities are revoked. This means no new tokens can be minted, and no accounts can be frozen. Furthermore, the token's… |
 
 ## Security Findings
 
@@ -61,13 +61,13 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2643 buys / 2743 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

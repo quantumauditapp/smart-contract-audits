@@ -96,7 +96,7 @@ Based on the provided data, Lighter doesn't exhibit immediate red flags commonly
 
 ### Is Lighter safe to buy?
 
-Lighter is categorized as a medium-risk asset (42/100). While it has positive attributes like a verified contract and renounced ownership, significant risks persist. The top 10 holders control over 70% of the supply, creating centralization risks. Additionally, the liquidity is not locked, which could expose funds to withdrawal. Investors should be aware of these factors and conduct thorough due diligence before considering an investment.
+Lighter is categorized as a low-risk asset (28/100). While it has positive attributes like a verified contract and renounced ownership, significant risks persist. The top 10 holders control over 70% of the supply, creating centralization risks. Additionally, the liquidity is not locked, which could expose funds to withdrawal. Investors should be aware of these factors and conduct thorough due diligence before considering an investment.
 
 ### Has Lighter been audited?
 

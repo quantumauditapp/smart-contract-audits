@@ -2,14 +2,14 @@
 token: Milady Cult Coin
 ticker: CULT
 network: ethereum
-risk_score: 55
+risk_score: 51
 status: medium
 date: 2026-09-24
 ---
 
 # Milady Cult Coin (CULT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 55/100 — 🟡 Medium Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/milady-cult-coin-eth)
 
@@ -42,28 +42,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Centralized Control over Vesting and Treasury  *(Severity: Low · Status: Unresolved)*
 
-The `Ownable` pattern grants the contract owner (a multisig) exclusive control over critical functions. The owner can set all vesting schedules via `setVest` and manage contract funds (ETH and other ERC20 tokens) via `transferEther` and `transferToken`. This centralization means the security of the protocol heavily relies on the integrity and operational security of the multisig owner. While a multisig mitigates single points of failure, it still represents a single administrative entity.
+Not confirmed by static analysis (the model's own reading of the source). The `Ownable` pattern grants the contract owner (a multisig) exclusive control over critical functions. The owner can set all vesting schedules via `setVest` and manage contract funds (ETH and other ERC20 tokens) via `transferEther` and `transferToken`. This centralization means the security of the protocol heavily relies on the integrity and operational security of the multisig owner. While a multisig mitigates single points of failure, it still represents a single administrative entity.
 
 **Recommendation:** Ensure the multisig owner's keys are managed with the highest security standards. Implement robust internal processes for transaction approval and consider transparent communication regarding owner actions, especially those affecting vesting schedules or treasury movements.
 
 
 ### `L-02` — Potential Typo in ReentrancyGuard Import Path  *(Severity: Low · Status: Unresolved)*
 
-The import path for `ReentrancyGuard` is specified as `soledge/utils/ReentrancyGuard.sol`. Given that all other utility imports are from `solady/utils/`, this might be a typographical error and intended to be `solady/utils/ReentrancyGuard.sol`. If `soledge` refers to a different, potentially less-audited or custom library, it could introduce an unknown dependency risk. If it is indeed a typo and resolves to Solady's library, the risk is minimal.
+Not confirmed by static analysis (the model's own reading of the source). The import path for `ReentrancyGuard` is specified as `soledge/utils/ReentrancyGuard.sol`. Given that all other utility imports are from `solady/utils/`, this might be a typographical error and intended to be `solady/utils/ReentrancyGuard.sol`. If `soledge` refers to a different, potentially less-audited or custom library, it could introduce an unknown dependency risk. If it is indeed a typo and resolves to Solady's library, the risk is minimal.
 
 **Recommendation:** Verify the exact import path and ensure that `soledge/utils/ReentrancyGuard.sol` correctly points to the intended and audited `ReentrancyGuard` implementation, preferably Solady's. If it's a typo, correct the import statement to `solady/utils/ReentrancyGuard.sol` for clarity and consistency.
 
 
 ### `I-01` — Unused `MESSAGE` Constant  *(Severity: Informational · Status: Unresolved)*
 
-The `MESSAGE` constant is declared at the contract level but is not referenced or used anywhere within the contract's logic. Unused variables can increase bytecode size slightly and may indicate leftover code from previous development iterations.
+Not confirmed by static analysis (the model's own reading of the source). The `MESSAGE` constant is declared at the contract level but is not referenced or used anywhere within the contract's logic. Unused variables can increase bytecode size slightly and may indicate leftover code from previous development iterations.
 
 **Recommendation:** Remove the `MESSAGE` constant if it serves no current or planned purpose to optimize bytecode size and improve code clarity.
 
 
 ### `I-02` — Unused `lastClaimTime` in Vesting Calculation  *(Severity: Informational · Status: Unresolved)*
 
-The `lastClaimTime` field within the `Vest` struct is updated in the `pushVest` function to `block.timestamp`. However, this field is not utilized in the `FixedPointMathLib.lerp` calculation, which directly uses `block.timestamp` for determining the currently vested amount. This means `lastClaimTime` is purely informational in the current implementation and does not affect the vesting schedule or claimable amount.
+Not confirmed by static analysis (the model's own reading of the source). The `lastClaimTime` field within the `Vest` struct is updated in the `pushVest` function to `block.timestamp`. However, this field is not utilized in the `FixedPointMathLib.lerp` calculation, which directly uses `block.timestamp` for determining the currently vested amount. This means `lastClaimTime` is purely informational in the current implementation and does not affect the vesting schedule or claimable amount.
 
 **Recommendation:** Clarify the intended purpose of `lastClaimTime`. If it's not meant to influence the vesting calculation, consider if it's truly necessary or if its name implies a function it doesn't perform. If it's for future functionality, document its purpose.
 

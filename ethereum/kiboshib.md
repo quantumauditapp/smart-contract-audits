@@ -41,21 +41,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Lack of Emergency Pausability  *(Severity: Low · Status: Unresolved)*
 
-The contract does not include a mechanism to pause token transfers in emergency situations. This could prevent mitigation of issues like critical vulnerabilities or unexpected market events, potentially leading to irreversible losses or exploits if a rapid response is required. While not a direct vulnerability, it limits the project's ability to react to crises.
+Not confirmed by static analysis (the model's own reading of the source). The contract does not include a mechanism to pause token transfers in emergency situations. This could prevent mitigation of issues like critical vulnerabilities or unexpected market events, potentially leading to irreversible losses or exploits if a rapid response is required. While not a direct vulnerability, it limits the project's ability to react to crises.
 
 **Recommendation:** Consider implementing a pausable mechanism, typically controlled by a multi-signature wallet or a trusted governance entity. This would allow for temporary suspension of critical operations in case of an emergency, providing a window to address severe issues.
 
 
 ### `I-01` — Custom ERC20 Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The project utilizes a custom implementation of the ERC20 standard rather than leveraging battle-tested and widely audited libraries like OpenZeppelin. While the provided code appears to adhere to the standard, custom implementations carry a higher inherent risk of subtle bugs or non-standard behaviors compared to established libraries that have undergone extensive community review and formal audits.
+Not confirmed by static analysis (the model's own reading of the source). The project utilizes a custom implementation of the ERC20 standard rather than leveraging battle-tested and widely audited libraries like OpenZeppelin. While the provided code appears to adhere to the standard, custom implementations carry a higher inherent risk of subtle bugs or non-standard behaviors compared to established libraries that have undergone extensive community review and formal audits.
 
 **Recommendation:** For future projects, it is generally recommended to use well-vetted and audited libraries such as OpenZeppelin Contracts for standard functionalities. If a custom implementation is necessary, ensure it undergoes thorough testing and independent security audits.
 
 
 ### `I-02` — Centralized Initial Token Distribution  *(Severity: Informational · Status: Unresolved)*
 
-The entire initial supply of 1,000,000,000,000 * 10^18 tokens is minted to the contract deployer's address. This grants the deployer significant control over the token's supply, liquidity, and potential market dynamics, posing a centralization risk. While common for new tokens, it concentrates power in a single entity.
+Not confirmed by static analysis (the model's own reading of the source). The entire initial supply of 1,000,000,000,000 * 10^18 tokens is minted to the contract deployer's address. This grants the deployer significant control over the token's supply, liquidity, and potential market dynamics, posing a centralization risk. While common for new tokens, it concentrates power in a single entity.
 
 **Recommendation:** Ensure that the deployer's address is secured with robust measures, such as a hardware wallet or a multi-signature wallet. For long-term decentralization, consider mechanisms for distributing token control or vesting schedules for large token allocations.
 

@@ -2,14 +2,14 @@
 token: MAGIC
 ticker: MAGIC
 network: arbitrum
-risk_score: 58
+risk_score: 41
 status: medium
 date: 2026-08-31
 ---
 
 # MAGIC (MAGIC) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 58/100 — 🟡 Medium Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/magic-arb)
 
@@ -46,39 +46,39 @@ The audit of the StandardArbERC20 implementation contract, used via a ClonableBe
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Unprotected `bridgeInit` Allows Malicious Initialization of Clones  *(Severity: High · Status: Unresolved)*
-
-The `bridgeInit` function, which serves as the initializer for each cloned token instance, is declared as `public` without any access control. While `L2GatewayToken._initialize` prevents re-initialization of state variables within a single clone, the *first* caller to `bridgeInit` on a newly deployed clone can set the `l2Gateway` and `l1Address`. A malicious actor could front-run the legitimate gateway deployment or initialization, setting themselves as the `l2Gateway`, thereby gaining unauthorized control over `bridgeMint` and `bridgeBurn` functions for that specific token instance. This compromises the integrity of the token supply for affected clones (7.3 Access Control, 7.2 Code Securit…
-
-**Recommendation:** Implement an `onlyInitializing` or similar modifier to restrict calls to `bridgeInit` to a trusted entity (e.g., the deployer, a factory contract, or a designated initializer role). This ensures that only the intended party can configure the critical `l2Gateway` and `l1Address` for new token clones.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — ERC20 Standard Functions (`name`, `symbol`, `decimals`) Can Revert  *(Severity: Medium · Status: Unresolved)*
 
-The `name()`, `symbol()`, and `decimals()` functions can revert if the corresponding `ignore` flags (`ignoreName`, `ignoreSymbol`, `ignoreDecimals`) are set to `true` during `bridgeInit`. These flags are set if the `BytesParser` fails to parse the provided `_data` for name, symbol, or decimals. This behavior deviates from the standard ERC20 interface, where these functions are expected to always return a value. Integrations relying on these functions might break if they do not handle reverts gracefully, leading to a denial of service for metadata retrieval (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `name()`, `symbol()`, and `decimals()` functions can revert if the corresponding `ignore` flags (`ignoreName`, `ignoreSymbol`, `ignoreDecimals`) are set to `true` during `bridgeInit`. These flags are set if the `BytesParser` fails to parse the provided `_data` for name, symbol, or decimals. This behavior deviates from the standard ERC20 interface, where these functions are expected to always return a value. Integrations relying on these functions might break if they do not handle reverts gracefully, leading to a denial of service for metadata retrieval (7.2 Code Security).
 
 **Recommendation:** Consider returning default or empty values (e.g., empty string for name/symbol, 0 for decimals) instead of reverting when parsing fails. Alternatively, ensure robust validation of `_data` during `bridgeInit` to prevent these flags from being set unnecessarily, or provide a mechanism for a privileged role to correct the metadata if parsing initially fails.
 
 
+### `M-02` — Unprotected `bridgeInit` Allows Malicious Initialization of Clones  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `bridgeInit` function, which serves as the initializer for each cloned token instance, is declared as `public` without any access control. While `L2GatewayToken._initialize` prevents re-initialization of state variables within a single clone, the *first* caller to `bridgeInit` on a newly deployed clone can set the `l2Gateway` and `l1Address`. A malicious actor could front-run the legitimate gateway deployment or initialization, setting themselves as the `l2Gateway`, thereby gaining unauthorized control over `bridgeMint` and `bridgeBurn` functions for that specific token instance. This compromises the integrity of t
+
+**Recommendation:** Implement an `onlyInitializing` or similar modifier to restrict calls to `bridgeInit` to a trusted entity (e.g., the deployer, a factory contract, or a designated initializer role). This ensures that only the intended party can configure the critical `l2Gateway` and `l1Address` for new token clones.
+
+
 ### `L-01` — `BytesParser.toString` Edge Case for 32-Byte Strings  *(Severity: Low · Status: Unresolved)*
 
-The `BytesParser.toString` function has specific logic for `input.length == 32`. If `input[31]` is not `bytes1(0x00)`, it returns `(false, res)`, indicating a parsing failure. This means a valid 32-byte string that happens to have a non-zero last byte (e.g., 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEF') would be considered a parsing failure, leading to `ignoreName` or `ignoreSymbol` being set to `true`. This could cause the `name()` or `symbol()` functions to revert unnecessarily, even for valid inputs (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `BytesParser.toString` function has specific logic for `input.length == 32`. If `input[31]` is not `bytes1(0x00)`, it returns `(false, res)`, indicating a parsing failure. This means a valid 32-byte string that happens to have a non-zero last byte (e.g., 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEF') would be considered a parsing failure, leading to `ignoreName` or `ignoreSymbol` being set to `true`. This could cause the `name()` or `symbol()` functions to revert unnecessarily, even for valid inputs (7.2 Code Security).
 
 **Recommendation:** Review the `BytesParser.toString` logic for 32-byte strings to ensure it correctly handles all valid string representations. If the intent is to treat 32-byte inputs as `bytes32` and only convert if they are null-padded, this should be clearly documented or handled differently to avoid false negatives for valid strings.
 
 
 ### `I-01` — Indirect `abi.decode` for String/Uint8 Parsing  *(Severity: Informational · Status: Unresolved)*
 
-In `bridgeInit`, the `_data` is first `abi.decode`d into three `bytes` variables, which are then passed to `BytesParser.toString` and `BytesParser.toUint8`. If the `_data` is consistently encoded as `abi.encode(name, symbol, decimals)`, directly decoding to `(string, string, uint8)` might simplify the code. The current approach adds an extra parsing layer that handles specific byte representations (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). In `bridgeInit`, the `_data` is first `abi.decode`d into three `bytes` variables, which are then passed to `BytesParser.toString` and `BytesParser.toUint8`. If the `_data` is consistently encoded as `abi.encode(name, symbol, decimals)`, directly decoding to `(string, string, uint8)` might simplify the code. The current approach adds an extra parsing layer that handles specific byte representations (7.2 Code Security).
 
 **Recommendation:** Document the expected encoding format for `_data`. If the `_data` is always `abi.encode(name, symbol, decimals)`, consider direct `abi.decode(_data, (string, string, uint8))` for simplicity. If the `bytes` inputs are expected to be arbitrary byte sequences requiring specific parsing logic (e.g., 32-byte fixed-length strings), the current approach is justified, but the parsing logic should be robust and well-documented.
 
 
 ### `I-02` — `TransferAndCallToken` Uses `extcodesize` for `isContract` Check  *(Severity: Informational · Status: Unresolved)*
 
-The `isContract` function in `TransferAndCallToken` uses `extcodesize` to determine if an address is a contract. A known edge case with `extcodesize` is that it returns 0 during a contract's constructor execution. This means if `transferAndCall` is called to an address that is currently in its constructor, `isContract` would return `false`, and the `onTokenTransfer` callback would not be invoked (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `isContract` function in `TransferAndCallToken` uses `extcodesize` to determine if an address is a contract. A known edge case with `extcodesize` is that it returns 0 during a contract's constructor execution. This means if `transferAndCall` is called to an address that is currently in its constructor, `isContract` would return `false`, and the `onTokenTransfer` callback would not be invoked (7.2 Code Security).
 
 **Recommendation:** Be aware of this EVM quirk. For most scenarios, this is not an issue as `transferAndCall` is typically used with already deployed contracts. If interaction with contracts during their construction phase is a critical use case, alternative checks or design patterns might be necessary.
 

@@ -2,14 +2,14 @@
 token: LAYOOO
 ticker: LAYOOO
 network: solana
-risk_score: 28
+risk_score: 11
 status: low
 date: 2026-08-17
 ---
 
 # LAYOOO (LAYOOO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/layooo-sol)
 
@@ -26,8 +26,8 @@ The LAYOOO token mint exhibits strong security characteristics with both mint an
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The LAYOOO token is an SPL Token-2022 mint with a total supply of 943,577,446.973992 tokens (6 decimals). A key strength is that both the Mint Authority and Freeze Authority are permanently revoked… |
-| **Governance / Economics** | 4/10 | Medium | The primary economic risk stems from the DEX pair's age, which is 0 days, indicating a very new market presence with no established track record. Current liquidity is $233,864, with a 24-hour volume… |
-| **Upgrades** | 8/10 | Low | The token mint demonstrates strong immutability regarding its core functionalities. Both the Mint Authority and Freeze Authority have been revoked, ensuring that the token's supply and account freeze… |
+| **Governance / Economics** | 7/10 | Low | The primary economic risk stems from the DEX pair's age, which is 0 days, indicating a very new market presence with no established track record. Current liquidity is $233,864, with a 24-hour volume… |
+| **Upgrades** | 10/10 | Low | The token mint demonstrates strong immutability regarding its core functionalities. Both the Mint Authority and Freeze Authority have been revoked, ensuring that the token's supply and account freeze… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3099 buys / 4346 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

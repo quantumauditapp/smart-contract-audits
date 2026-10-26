@@ -2,14 +2,14 @@
 token: LayerZero
 ticker: ZRO
 network: base
-risk_score: 61
-status: medium
+risk_score: 31
+status: low
 date: 2026-07-25
 ---
 
 # LayerZero (ZRO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 61/100 — 🟡 Medium Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/layerzero-base)
 
@@ -25,9 +25,9 @@ The LayerZeroToken contract is a standard implementation of LayerZero's Omnichai
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract exhibits good technical quality, primarily due to its reliance on battle-tested OpenZeppelin and LayerZero OApp-v2 libraries. The custom logic in LayerZeroToken.sol is minimal, serving… |
-| **Governance / Economics** | 2/10 | High | The contract's economic and governance model (7.4 Economic, 7.5 Governance) is centralized, with a single owner/delegate address holding critical configuration privileges. This owner can set trusted… |
-| **Upgrades** | 6/10 | Medium | The LayerZeroToken contract is not designed to be upgradeable (7.7 Upgrades). It is a standard implementation contract without any proxy patterns. This eliminates upgrade-related risks such as proxy… |
+| **Technical** | 10/10 | Low | The contract exhibits good technical quality, primarily due to its reliance on battle-tested OpenZeppelin and LayerZero OApp-v2 libraries. The custom logic in LayerZeroToken.sol is minimal, serving… |
+| **Governance / Economics** | 3/10 | High | The contract's economic and governance model (7.4 Economic, 7.5 Governance) is centralized, with a single owner/delegate address holding critical configuration privileges. This owner can set trusted… |
+| **Upgrades** | 7/10 | Low | The LayerZeroToken contract is not designed to be upgradeable (7.7 Upgrades). It is a standard implementation contract without any proxy patterns. This eliminates upgrade-related risks such as proxy… |
 
 ## LP Distribution
 
@@ -38,39 +38,39 @@ The LayerZeroToken contract is a standard implementation of LayerZero's Omnichai
 
 ## Security Findings
 
-_🔴 1 Critical · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `C-01` — Critical Owner Privileges  *(Severity: Critical · Status: Unresolved)*
-
-The owner address (initialized as `_delegate` in the constructor) possesses critical administrative privileges over the LayerZeroToken contract's cross-chain functionality. Specifically, the owner can call `setPeer` to configure trusted OApp instances on other chains and `setDelegate` to change the delegate address on the LayerZero endpoint. A compromise of this owner address would grant an attacker full control over the contract's cross-chain configuration, potentially leading to unauthorized token transfers or denial of service for cross-chain operations (7.3 Access Control, 7.8 Operations).
-
-**Recommendation:** Implement a robust multi-signature wallet with a high threshold for the owner address. Consider integrating a time-lock mechanism for critical administrative functions like `setPeer` and `setDelegate` to introduce a delay before changes take effect, allowing for detection and potential intervention in case of a malicious or erroneous action. Ensure the private keys for the multi-signature signers are stored securely and follow best practices for key management.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Renounce Ownership Risk  *(Severity: Medium · Status: Unresolved)*
 
-The contract inherits `renounceOwnership()` from OpenZeppelin's `Ownable` contract. If the owner accidentally or maliciously calls this function, the contract would become unowned and unmanageable. This would prevent any future updates to critical LayerZero configurations, such as `setPeer` or `setDelegate`, effectively bricking the cross-chain functionality of the token (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract inherits `renounceOwnership()` from OpenZeppelin's `Ownable` contract. If the owner accidentally or maliciously calls this function, the contract would become unowned and unmanageable. This would prevent any future updates to critical LayerZero configurations, such as `setPeer` or `setDelegate`, effectively bricking the cross-chain functionality of the token (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** Consider overriding `renounceOwnership()` to revert, or remove it entirely if it's not intended to be used. If renouncing ownership is a desired feature, ensure there is a clear, documented process and strong safeguards to prevent accidental invocation. For critical infrastructure, renouncing ownership is generally not recommended.
 
 
 ### `M-02` — Dependency on LayerZero Endpoint Security  *(Severity: Medium · Status: Unresolved)*
 
-The LayerZeroToken contract's core cross-chain functionality is entirely dependent on the security and correct operation of the external LayerZero endpoint contract. Any vulnerability, misconfiguration, or compromise within the LayerZero endpoint itself could directly impact the security and functionality of this token, potentially leading to loss of funds or disruption of cross-chain transfers (7.6 External, 7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The LayerZeroToken contract's core cross-chain functionality is entirely dependent on the security and correct operation of the external LayerZero endpoint contract. Any vulnerability, misconfiguration, or compromise within the LayerZero endpoint itself could directly impact the security and functionality of this token, potentially leading to loss of funds or disruption of cross-chain transfers (7.6 External, 7.4 Economic).
 
 **Recommendation:** While direct mitigation within this contract is limited, it is crucial to stay informed about the security posture and audits of the LayerZero protocol. Monitor LayerZero announcements and security advisories closely. Implement off-chain monitoring for LayerZero endpoint activity relevant to this token. Diversify cross-chain solutions if possible, or have contingency plans in place for potential LayerZero endpoint issues.
 
 
+### `M-03` — Critical Owner Privileges  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The owner address (initialized as `_delegate` in the constructor) possesses critical administrative privileges over the LayerZeroToken contract's cross-chain functionality. Specifically, the owner can call `setPeer` to configure trusted OApp instances on other chains and `setDelegate` to change the delegate address on the LayerZero endpoint. A compromise of this owner address would grant an attacker full control over the contract's cross-chain configuration, potentially leading to unauthorized token transfers or denial of service for cross-chain operations (7.3 Access Control, 7.8 Operations).
+
+**Recommendation:** Implement a robust multi-signature wallet with a high threshold for the owner address. Consider integrating a time-lock mechanism for critical administrative functions like `setPeer` and `setDelegate` to introduce a delay before changes take effect, allowing for detection and potential intervention in case of a malicious or erroneous action. Ensure the private keys for the multi-signature signers are stored securely and follow best practices for key management.
+
+
 ### `L-01` — Immutable LayerZero Endpoint Address  *(Severity: Low · Status: Unresolved)*
 
-The `lzEndpoint` address is set as an immutable variable in the constructor of `OAppCore` (a base contract for LayerZeroToken). While immutability prevents malicious changes post-deployment, it also means that if the LayerZero endpoint address ever needs to change (e.g., due to a major upgrade, deprecation, or critical bug in the endpoint itself), the `LayerZeroToken` contract would need to be redeployed, and all token holders would need to migrate their tokens (7.1 Architecture, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `lzEndpoint` address is set as an immutable variable in the constructor of `OAppCore` (a base contract for LayerZeroToken). While immutability prevents malicious changes post-deployment, it also means that if the LayerZero endpoint address ever needs to change (e.g., due to a major upgrade, deprecation, or critical bug in the endpoint itself), the `LayerZeroToken` contract would need to be redeployed, and all token holders would need to migrate their tokens (7.1 Architecture, 7.8 Operations).
 
 **Recommendation:** Acknowledge this design choice. If future flexibility is desired, consider a design pattern where the endpoint address can be updated by the owner, possibly with a time-lock. However, this introduces additional complexity and potential attack surface. For many applications, an immutable endpoint is acceptable given the stability of LayerZero's infrastructure.
 
 
 ### `I-01` — Combined Owner and Delegate Role  *(Severity: Informational · Status: Unresolved)*
 
-In the constructor, the `_delegate` address is used to initialize both the `Ownable` contract (making it the contract owner) and the LayerZero endpoint delegate via `endpoint.setDelegate(_delegate)`. This design centralizes significant control in a single address, simplifying management but also consolidating risk (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). In the constructor, the `_delegate` address is used to initialize both the `Ownable` contract (making it the contract owner) and the LayerZero endpoint delegate via `endpoint.setDelegate(_delegate)`. This design centralizes significant control in a single address, simplifying management but also consolidating risk (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** Ensure that the implications of this combined role are fully understood by the operational team. While it simplifies setup, it means that the security of this single address is paramount for both contract ownership and LayerZero endpoint delegation. Document the responsibilities and security procedures for this address clearly.
 
@@ -113,11 +113,11 @@ In the constructor, the `_delegate` address is used to initialize both the `Owna
 
 ### Is LayerZero a scam?
 
-Based on automated analysis, LayerZero scores 68/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, LayerZero scores 31/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is LayerZero safe to buy?
 
-Our scanner flagged a risk score of 68/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 31/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has LayerZero been audited?
 

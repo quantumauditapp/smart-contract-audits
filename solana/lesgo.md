@@ -2,14 +2,14 @@
 token: LESGO
 ticker: GO
 network: solana
-risk_score: 25
+risk_score: 8
 status: low
 date: 2026-09-25
 ---
 
 # LESGO (GO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 25/100 — 🟢 Low Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lesgo-sol)
 
@@ -25,9 +25,9 @@ This SPL token mint presents a high-risk profile primarily due to a significant 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The token is an SPL Token Program v3 mint with a total supply of 933,931,891,809,915 units and 6 decimals. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits a high 24-hour volume of $9,179,362 against a liquidity of $240,957, resulting in a Volume/Liquidity Ratio of 38.10, which is a strong indicator of potential wash trading. The DEX… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, have been permanently revoked, ensuring that the token supply is fixed and no accounts can be frozen. The `metadata_mutable` flag is… |
+| **Technical** | 10/10 | Low | The token is an SPL Token Program v3 mint with a total supply of 933,931,891,809,915 units and 6 decimals. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a high 24-hour volume of $9,179,362 against a liquidity of $240,957, resulting in a Volume/Liquidity Ratio of 38.10, which is a strong indicator of potential wash trading. The DEX… |
+| **Upgrades** | 9/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, have been permanently revoked, ensuring that the token supply is fixed and no accounts can be frozen. The `metadata_mutable` flag is… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

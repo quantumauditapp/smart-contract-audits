@@ -2,14 +2,14 @@
 token: memestock
 ticker: MEMESTOCK
 network: bsc
-risk_score: 43
-status: medium
+risk_score: 18
+status: low
 date: 2026-08-30
 ---
 
 # memestock (MEMESTOCK) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 18/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/memestock-bsc)
 
@@ -25,9 +25,9 @@ The audit of FlapTaxTokenV3 identified a critical vulnerability due to missing c
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract leverages OpenZeppelin's upgradeable standards for ERC20 and access control, demonstrating a solid architectural foundation (7.1 Architecture). Gas optimizations are evident through… |
-| **Governance / Economics** | 6/10 | Medium | The contract's economic model includes dynamic buy/sell taxes and liquidation thresholds, managed through various `PoolState`s. The owner has significant control over these states via… |
-| **Upgrades** | 3/10 | High | The contract correctly implements the `Initializable` pattern from OpenZeppelin, including `_disableInitializers()` in the constructor and proper `__init` calls (7.7 Upgrades). This indicates a UUPS… |
+| **Technical** | 9/10 | Low | The contract leverages OpenZeppelin's upgradeable standards for ERC20 and access control, demonstrating a solid architectural foundation (7.1 Architecture). Gas optimizations are evident through… |
+| **Governance / Economics** | 7/10 | Low | The contract's economic model includes dynamic buy/sell taxes and liquidation thresholds, managed through various `PoolState`s. The owner has significant control over these states via… |
+| **Upgrades** | 4/10 | Medium | The contract correctly implements the `Initializable` pattern from OpenZeppelin, including `_disableInitializers()` in the constructor and proper `__init` calls (7.7 Upgrades). This indicates a UUPS… |
 
 ## Proxy Upgrade Controls
 
@@ -45,39 +45,39 @@ The audit of FlapTaxTokenV3 identified a critical vulnerability due to missing c
 
 ## Security Findings
 
-_🔴 1 Critical · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `C-01` — Incomplete `_liquidateTax` Function (Missing `_processTax` Implementation)  *(Severity: Critical · Status: Unresolved)*
-
-The provided code snippet for `_liquidateTax` is truncated, specifically the `_processTax(taxAmount)` call and subsequent state updates. This external call is crucial for handling collected taxes and could introduce reentrancy vulnerabilities, external call risks, or incorrect tax processing if not properly implemented and secured. Without the full implementation, a complete security assessment is impossible.
-
-**Recommendation:** Provide the full implementation of `_processTax` and the remainder of `_liquidateTax` for a complete security assessment. Ensure `_processTax` adheres to the Checks-Effects-Interactions pattern, handles potential reentrancy, and correctly manages tax funds.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralized Control over Pool State Transitions  *(Severity: Medium · Status: Unresolved)*
 
-The `startMigration` and `finalizeMigration` functions, restricted to the contract owner, allow unilateral changes to the `PoolState` (e.g., from `BondingCurve` to `Migrating` to `TaxEnforcedAntiFarmer`). These state changes directly impact transfer restrictions and tax application, potentially leading to unexpected behavior or economic implications for users without prior notice.
+Not confirmed by static analysis (the model's own reading of the source). The `startMigration` and `finalizeMigration` functions, restricted to the contract owner, allow unilateral changes to the `PoolState` (e.g., from `BondingCurve` to `Migrating` to `TaxEnforcedAntiFarmer`). These state changes directly impact transfer restrictions and tax application, potentially leading to unexpected behavior or economic implications for users without prior notice.
 
 **Recommendation:** Implement a timelock for critical state transitions to provide users with a grace period to react. Clearly document the implications of each pool state and the owner's ability to change them. Consider using a multi-signature wallet for ownership to distribute control.
 
 
+### `M-02` — Incomplete `_liquidateTax` Function (Missing `_processTax` Implementation)  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The provided code snippet for `_liquidateTax` is truncated, specifically the `_processTax(taxAmount)` call and subsequent state updates. This external call is crucial for handling collected taxes and could introduce reentrancy vulnerabilities, external call risks, or incorrect tax processing if not properly implemented and secured. Without the full implementation, a complete security assessment is impossible.
+
+**Recommendation:** Provide the full implementation of `_processTax` and the remainder of `_liquidateTax` for a complete security assessment. Ensure `_processTax` adheres to the Checks-Effects-Interactions pattern, handles potential reentrancy, and correctly manages tax funds.
+
+
 ### `L-01` — Reliance on `block.timestamp` for Critical Expiration Logic  *(Severity: Low · Status: Unresolved)*
 
-The `_liquidateTax` function uses `block.timestamp` to determine if `taxExpirationTime` or `antiFarmerExpirationTime` has passed, triggering state changes. Miners can slightly manipulate `block.timestamp` (within a certain range), potentially influencing the exact block at which these state transitions occur.
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function uses `block.timestamp` to determine if `taxExpirationTime` or `antiFarmerExpirationTime` has passed, triggering state changes. Miners can slightly manipulate `block.timestamp` (within a certain range), potentially influencing the exact block at which these state transitions occur.
 
 **Recommendation:** While common, for highly time-sensitive or economically critical transitions, acknowledge the inherent miner manipulability. For most cases, `block.timestamp` is acceptable, but the risk should be understood. If absolute precision is required, consider a decentralized oracle for time.
 
 
 ### `I-01` — Immutable Liquidation Thresholds  *(Severity: Informational · Status: Unresolved)*
 
-The `MIN_LIQ_THRESHOLD` and `START_LIQ_THRESHOLD` variables are declared as `immutable`, fixing their values at deployment. While this provides predictability, it removes the flexibility to adjust these critical economic parameters in response to evolving market conditions or protocol needs.
+Not confirmed by static analysis (the model's own reading of the source). The `MIN_LIQ_THRESHOLD` and `START_LIQ_THRESHOLD` variables are declared as `immutable`, fixing their values at deployment. While this provides predictability, it removes the flexibility to adjust these critical economic parameters in response to evolving market conditions or protocol needs.
 
 **Recommendation:** Assess whether these thresholds are truly intended to be immutable for the lifetime of the contract. If future flexibility is desired, consider making them configurable by the owner or governance, potentially with a timelock.
 
 
 ### `I-02` — All `maxSupply` Minted to Initializer  *(Severity: Informational · Status: Unresolved)*
 
-The `initialize` function mints the entire `maxSupply` of tokens to `msg.sender` (the initializer/owner). This centralizes the initial token supply, which might not align with decentralization goals or require subsequent manual distribution mechanisms.
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function mints the entire `maxSupply` of tokens to `msg.sender` (the initializer/owner). This centralizes the initial token supply, which might not align with decentralization goals or require subsequent manual distribution mechanisms.
 
 **Recommendation:** Ensure this initial distribution strategy aligns with the project's tokenomics and distribution plans. If a more distributed initial supply is desired, consider alternative minting or distribution mechanisms during initialization.
 

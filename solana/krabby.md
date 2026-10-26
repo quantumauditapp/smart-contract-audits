@@ -2,14 +2,14 @@
 token: KRABBY
 ticker: KRABBY
 network: solana
-risk_score: 47
-status: medium
+risk_score: 25
+status: low
 date: 2026-09-02
 ---
 
 # KRABBY (KRABBY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 47/100 — 🟡 Medium Risk**
+> **Risk Score: 25/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/krabby-sol)
 
@@ -25,9 +25,9 @@ This SPL Token Mint exhibits medium risks due to significant holder concentratio
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The KRABBY token is an SPL Token-2022 mint with a total supply of 479,874,796,863,977 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a medium level of holder concentration, with the top 10 token accounts holding 68.96% of the total supply, which could lead to price volatility from large sell-offs. The DEX pair… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply is fixed and no accounts can be frozen post-launch. The token does not utilize Token-2022 extensions that would… |
+| **Technical** | 10/10 | Low | The KRABBY token is an SPL Token-2022 mint with a total supply of 479,874,796,863,977 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a medium level of holder concentration, with the top 10 token accounts holding 68.96% of the total supply, which could lead to price volatility from large sell-offs. The DEX pair… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply is fixed and no accounts can be frozen post-launch. The token does not utilize Token-2022 extensions that would… |
 
 ## Security Findings
 
@@ -61,13 +61,13 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 555 buys / 527 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

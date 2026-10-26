@@ -76,11 +76,11 @@ The token's metadata is mutable, as indicated by `metadata_mutable: True`. This 
 
 ### Is Meteora a scam?
 
-Meteora carries a high-risk score of 56/100 based on available data. While ownership is renounced and no new tokens can be minted, significant concerns exist. The contract is unverified, meaning its code cannot be publicly scrutinized for vulnerabilities or hidden functions. Additionally, 68% of the supply is concentrated in the top 10 wallets, raising centralization risks. These factors warrant extreme caution.
+Meteora carries a low-risk score of 23/100 based on available data. While ownership is renounced and no new tokens can be minted, significant concerns exist. The contract is unverified, meaning its code cannot be publicly scrutinized for vulnerabilities or hidden functions. Additionally, 68% of the supply is concentrated in the top 10 wallets, raising centralization risks. These factors warrant extreme caution.
 
 ### Is Meteora safe to buy?
 
-Meteora is classified with a high-risk score of 56/100, suggesting it is not inherently safe to buy without significant due diligence. Key risk factors include an unverified contract, which prevents independent security audits, and highly centralized holdings, with 68.0% of the supply controlled by the top ten wallets. Additionally, the substantial liquidity, while impressive, is not locked, adding to potential vulnerabilities.
+Meteora is classified with a low-risk score of 23/100, suggesting it is not inherently safe to buy without significant due diligence. Key risk factors include an unverified contract, which prevents independent security audits, and highly centralized holdings, with 68.0% of the supply controlled by the top ten wallets. Additionally, the substantial liquidity, while impressive, is not locked, adding to potential vulnerabilities.
 
 ### Has Meteora been audited?
 

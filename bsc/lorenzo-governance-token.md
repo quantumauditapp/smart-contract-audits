@@ -38,25 +38,25 @@ The BankToken contract is an ERC20-compliant token with a fixed maximum supply, 
 
 ## Security Findings
 
-_🟠 1 High · ⚪ 2 Informational_
+_🟡 1 Medium · ⚪ 2 Informational_
 
-### `H-01` — Centralized Minting Authority  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Minting Authority  *(Severity: Medium · Status: Unresolved)*
 
-The `mint` function in the `BankToken` contract is restricted to `tgeContract` via `require(msg.sender == tgeContract, "Only TGE contract")`. This design centralizes the power to mint new tokens up to the `MAX_SUPPLY` in a single external address. If the `tgeContract` address is compromised, an attacker could mint the remaining supply, leading to severe token devaluation and economic instability for the protocol. While the `tgeContract` is immutable, its operational security is critical.
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function in the `BankToken` contract is restricted to `tgeContract` via `require(msg.sender == tgeContract, "Only TGE contract")`. This design centralizes the power to mint new tokens up to the `MAX_SUPPLY` in a single external address. If the `tgeContract` address is compromised, an attacker could mint the remaining supply, leading to severe token devaluation and economic instability for the protocol. While the `tgeContract` is immutable, its operational security is critical.
 
 **Recommendation:** Implement robust security measures for the `tgeContract` address. This could include using a multi-signature wallet (e.g., Gnosis Safe), a time-lock mechanism for minting operations, or a decentralized autonomous organization (DAO) for governance over minting. Ensure the private keys controlling the `tgeContract` are stored securely and follow best practices for operational security.
 
 
 ### `I-01` — Use of OpenZeppelin Standards  *(Severity: Informational · Status: Resolved)*
 
-The `BankToken` contract inherits from OpenZeppelin's `ERC20` and `ERC20Capped` contracts. These libraries are widely used, thoroughly audited, and considered industry standards for secure token implementations. This significantly reduces the risk of common vulnerabilities associated with custom token logic.
+Not confirmed by static analysis (the model's own reading of the source). The `BankToken` contract inherits from OpenZeppelin's `ERC20` and `ERC20Capped` contracts. These libraries are widely used, thoroughly audited, and considered industry standards for secure token implementations. This significantly reduces the risk of common vulnerabilities associated with custom token logic.
 
 **Recommendation:** Continue to leverage battle-tested libraries for core functionalities. Regularly monitor OpenZeppelin's security advisories and updates to ensure the project benefits from ongoing security improvements.
 
 
 ### `I-02` — Immutability of TGE Contract Address  *(Severity: Informational · Status: Resolved)*
 
-The `tgeContract` address, which controls the minting function, is declared as `immutable`. This ensures that the designated minting authority cannot be changed after the contract's deployment. This design choice provides certainty regarding the minting controller and prevents potential malicious reassignments.
+Not confirmed by static analysis (the model's own reading of the source). The `tgeContract` address, which controls the minting function, is declared as `immutable`. This ensures that the designated minting authority cannot be changed after the contract's deployment. This design choice provides certainty regarding the minting controller and prevents potential malicious reassignments.
 
 **Recommendation:** This is a good security practice for critical addresses that should not change. Ensure the initial deployment correctly sets the intended `tgeContract` address, as it cannot be modified later.
 

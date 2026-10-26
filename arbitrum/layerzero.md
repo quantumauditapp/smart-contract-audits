@@ -2,14 +2,14 @@
 token: LayerZero
 ticker: ZRO
 network: arbitrum
-risk_score: 30
+risk_score: 23
 status: low
 date: 2026-09-03
 ---
 
 # LayerZero (ZRO) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 30/100 — 🟢 Low Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/layerzero-arb)
 
@@ -42,35 +42,35 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 3 Informational_
 
 ### `M-01` — Centralized Control by Owner  *(Severity: Medium · Status: Unresolved)*
 
-The contract owner (initialized by `_delegate`) possesses significant administrative privileges, including the ability to call `setPeer` and `setDelegate`. These functions are critical for the cross-chain functionality of the OFT, allowing the owner to define which external contracts can interact with this token across chains and to change the LayerZero endpoint's delegate. While the owner is a 3/5 multisig, these privileges are still substantial.
+Not confirmed by static analysis (the model's own reading of the source). The contract owner (initialized by `_delegate`) possesses significant administrative privileges, including the ability to call `setPeer` and `setDelegate`. These functions are critical for the cross-chain functionality of the OFT, allowing the owner to define which external contracts can interact with this token across chains and to change the LayerZero endpoint's delegate. While the owner is a 3/5 multisig, these privileges are still substantial.
 
 **Recommendation:** While the owner is a multisig, which mitigates risk, it is crucial to ensure the multisig's security and operational procedures are robust. Consider implementing time-locks for critical administrative actions to provide a window for community review or emergency intervention, further decentralizing control over time.
 
 
 ### `L-01` — Potential for Operational Misconfiguration  *(Severity: Low · Status: Unresolved)*
 
-The `setPeer` function, callable by the owner, allows configuring the `bytes32 peer` for a given `uint32 eid`. An incorrect `peer` address or `eid` could lead to cross-chain messages failing or being routed incorrectly, causing operational disruption for token transfers. This is an operational risk rather than a code vulnerability.
+Not confirmed by static analysis (the model's own reading of the source). The `setPeer` function, callable by the owner, allows configuring the `bytes32 peer` for a given `uint32 eid`. An incorrect `peer` address or `eid` could lead to cross-chain messages failing or being routed incorrectly, causing operational disruption for token transfers. This is an operational risk rather than a code vulnerability.
 
 **Recommendation:** Implement robust operational procedures and thorough testing for any changes to `peer` configurations. Consider adding a mechanism (e.g., a two-step process or a delay) for critical configuration changes to prevent immediate adverse effects from human error.
 
 
 ### `I-01` — Reliance on External LayerZero Endpoint Security  *(Severity: Informational · Status: Unresolved)*
 
-The `LayerZeroToken` contract is inherently dependent on the security and correct functioning of the LayerZero Endpoint V2 contract. All cross-chain messaging and fee payments are routed through this external endpoint. Any vulnerability, misconfiguration, or compromise of the LayerZero Endpoint could directly impact the functionality and security of the `LayerZeroToken`.
+Not confirmed by static analysis (the model's own reading of the source). The `LayerZeroToken` contract is inherently dependent on the security and correct functioning of the LayerZero Endpoint V2 contract. All cross-chain messaging and fee payments are routed through this external endpoint. Any vulnerability, misconfiguration, or compromise of the LayerZero Endpoint could directly impact the functionality and security of the `LayerZeroToken`.
 
 **Recommendation:** While this is an inherent dependency of using LayerZero, it is important for the protocol to continuously monitor the security posture and operational status of the LayerZero infrastructure and any updates or advisories they release.
 
 
 ### `I-02` — Non-Upgradeability Requires Redeployment for Changes  *(Severity: Informational · Status: Unresolved)*
 
-The `LayerZeroToken` contract is deployed as a standard, non-upgradeable contract. This means that any future bug fixes, feature enhancements, or protocol changes would require deploying an entirely new contract and migrating all existing token holders and liquidity. This can be a complex and costly process.
+Not confirmed by static analysis (the model's own reading of the source). The `LayerZeroToken` contract is deployed as a standard, non-upgradeable contract. This means that any future bug fixes, feature enhancements, or protocol changes would require deploying an entirely new contract and migrating all existing token holders and liquidity. This can be a complex and costly process.
 
 **Recommendation:** Acknowledge the implications of non-upgradeability. For future versions or other protocol components, consider if an upgradeable proxy pattern (e.g., UUPS) would be more suitable if flexibility and future-proofing are desired, weighing the benefits against the added complexity and potential risks of upgradeability.
 
 
 ### `I-03` — LZ Token Availability Check  *(Severity: Informational · Status: Unresolved)*
 
-The `_payLzToken` function explicitly checks if `endpoint.lzToken()` returns `address(0)` and reverts with `LzTokenUnavailable()` if it does. This indicates that the LayerZero endpoint might not always have an associated LZ token for fee payments, or it might be configurable.
+Not confirmed by static analysis (the model's own reading of the source). The `_payLzToken` function explicitly checks if `endpoint.lzToken()` returns `address(0)` and reverts with `LzTokenUnavailable()` if it does. This indicates that the LayerZero endpoint might not always have an associated LZ token for fee payments, or it might be configurable.
 
 **Recommendation:** Ensure clear documentation and operational understanding of when and how LZ token payments are expected or required, and the implications if the LZ token is unavailable for cross-chain transactions. This helps in managing user expectations and troubleshooting.
 

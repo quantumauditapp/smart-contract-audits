@@ -2,14 +2,14 @@
 token: Liability Vortex
 ticker: LVTR
 network: bsc
-risk_score: 11
+risk_score: 6
 status: low
 date: 2026-08-16
 ---
 
 # Liability Vortex (LVTR) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 11/100 — 🟢 Low Risk**
+> **Risk Score: 6/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/liability-vortex-bsc)
 
@@ -42,28 +42,28 @@ _🟡 1 Medium · ⚪ 3 Informational_
 
 ### `M-01` — Centralized Initial Token Distribution  *(Severity: Medium · Status: Unresolved)*
 
-The entire `TOTAL_SUPPLY` of 400,000e18 tokens is minted to a single `treasury` address during contract deployment. This means 100% of the token supply is controlled by this single address (7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The entire `TOTAL_SUPPLY` of 400,000e18 tokens is minted to a single `treasury` address during contract deployment. This means 100% of the token supply is controlled by this single address (7.4 Economic).
 
 **Recommendation:** Ensure the `treasury` address is a highly secure entity, such as a robust multi-signature wallet with a well-defined operational policy and geographically distributed signers. Consider distributing the initial supply across multiple addresses or vesting contracts if a single point of control is not desired long-term.
 
 
 ### `I-01` — Immutability of Contract Logic  *(Severity: Informational · Status: Unresolved)*
 
-The `LiabilityVortex` contract is deployed as a standard, non-upgradeable contract. Its logic cannot be modified after deployment (7.7 Upgrades).
+Not confirmed by static analysis (the model's own reading of the source). The `LiabilityVortex` contract is deployed as a standard, non-upgradeable contract. Its logic cannot be modified after deployment (7.7 Upgrades).
 
 **Recommendation:** Acknowledge the immutability. If future flexibility is desired, consider an upgradeable proxy pattern for future contracts. For this specific contract, ensure thorough testing before deployment, as its logic is fixed.
 
 
 ### `I-02` — Limited Owner Privileges  *(Severity: Informational · Status: Unresolved)*
 
-The `Ownable` role, assigned to `msg.sender` during deployment, only controls the ability to transfer or renounce ownership of the contract itself. It does not grant any special privileges over the token supply (e.g., minting, burning, pausing, blacklisting) beyond the initial mint to the treasury (7.3 Access Control, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The `Ownable` role, assigned to `msg.sender` during deployment, only controls the ability to transfer or renounce ownership of the contract itself. It does not grant any special privileges over the token supply (e.g., minting, burning, pausing, blacklisting) beyond the initial mint to the treasury (7.3 Access Control, 7.5 Governance).
 
 **Recommendation:** This is a design choice. If emergency control or future administrative functions are desired, they must be explicitly added and carefully secured. For this contract, the limited scope of the owner role is a security strength against centralized control.
 
 
 ### `I-03` — Reliance on OpenZeppelin Libraries  *(Severity: Informational · Status: Unresolved)*
 
-The contract heavily relies on battle-tested OpenZeppelin contracts for ERC20 token functionality and access control (`ERC20.sol`, `Ownable.sol`). This significantly reduces the likelihood of common vulnerabilities (7.2 Code Security, 7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The contract heavily relies on battle-tested OpenZeppelin contracts for ERC20 token functionality and access control (`ERC20.sol`, `Ownable.sol`). This significantly reduces the likelihood of common vulnerabilities (7.2 Code Security, 7.6 External).
 
 **Recommendation:** Regularly monitor OpenZeppelin security advisories for the specific versions used (0.8.20+ for imports, 0.8.36 for the main contract). Ensure the project's dependency management is robust.
 

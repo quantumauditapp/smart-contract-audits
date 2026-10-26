@@ -2,14 +2,14 @@
 token: Metronome Synth USD
 ticker: MSUSD
 network: base
-risk_score: 68
-status: high
+risk_score: 46
+status: medium
 date: 2026-07-24
 ---
 
 # Metronome Synth USD (MSUSD) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/metronome-synth-usd-base)
 
@@ -25,7 +25,7 @@ The audit of the SyntheticToken contract (implementation for a TransparentUpgrad
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates good adherence to secure coding practices, including comprehensive input validation with custom error messages (e.g., `NameIsNull`, `AmountExceedsAllowance`). It correctly… |
+| **Technical** | 7/10 | Low | The contract demonstrates good adherence to secure coding practices, including comprehensive input validation with custom error messages (e.g., `NameIsNull`, `AmountExceedsAllowance`). It correctly… |
 | **Governance / Economics** | 1/10 | High | The contract clearly defines a `governor` role and uses specific modifiers (`onlyGovernor`, `onlyIfCanBurn`, `onlyIfCanMint`, `onlyIfCanSeize`) to enforce access control for sensitive operations.… |
 | **Upgrades** | 1/10 | High | The contract correctly utilizes the OpenZeppelin `Initializable` pattern, including `_disableInitializers()` in the constructor and the `initializer` modifier, which is standard practice for secure… |
 
@@ -47,39 +47,39 @@ The audit of the SyntheticToken contract (implementation for a TransparentUpgrad
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control Over Token Supply and Operations  *(Severity: High · Status: Unresolved)*
-
-The `SyntheticToken` contract grants significant control to the `governor` role (obtained from `_poolRegistry`). The governor can update `maxTotalSupply`, `maxAmoSupply`, `maxBridgedInSupply`, `maxBridgedOutSupply`, `proxyOFT`, and `amo` addresses. These addresses are then used in `onlyIfCanBurn` and `onlyIfCanMint` modifiers, effectively allowing the governor to dictate which external entities can mint or burn tokens. This centralization introduces a single point of failure; compromise of the governor's private key could lead to arbitrary minting/burning or manipulation of supply caps. (Coverage: 7.3 Access Control, 7.4 Economic, 7.5 Governance)
-
-**Recommendation:** Implement a multi-signature wallet or a time-locked governance mechanism for critical administrative functions to reduce the risk associated with a single point of control. Clearly document the powers of the governor and the associated risks.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Immutability of `_poolRegistry` after Initialization  *(Severity: Medium · Status: Unresolved)*
 
-The `_poolRegistry` address, which is crucial for determining the `governor` and potentially other core functionalities, is set only once during the `initialize` function. There is no setter function to update this address. If `_poolRegistry` is initialized incorrectly or if the referenced `IPoolRegistry` contract needs to be upgraded or replaced in the future, it would require a full contract upgrade of `SyntheticToken` itself, which is a more complex and risky operation than a simple address update. (Coverage: 7.1 Architecture, 7.3 Access Control, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The `_poolRegistry` address, which is crucial for determining the `governor` and potentially other core functionalities, is set only once during the `initialize` function. There is no setter function to update this address. If `_poolRegistry` is initialized incorrectly or if the referenced `IPoolRegistry` contract needs to be upgraded or replaced in the future, it would require a full contract upgrade of `SyntheticToken` itself, which is a more complex and risky operation than a simple address update. (Coverage: 7.1 Architecture, 7.3 Access Control, 7.8 Operations)
 
 **Recommendation:** Consider adding a `setPoolRegistry` function, protected by `onlyGovernor`, to allow for updates to this critical dependency. This would provide more flexibility for future protocol evolution and error correction, while still maintaining appropriate access control.
 
 
 ### `M-02` — Reliance on External Contract Security and Liveness  *(Severity: Medium · Status: Unresolved)*
 
-The `SyntheticToken` contract heavily relies on external contracts such as `IPoolRegistry`, `IProxyOFT`, `IPool`, and `IDebtToken` for its core access control logic (`onlyIfCanBurn`, `onlyIfCanMint`, `onlyIfCanSeize`) and to determine the `governor`. The security, liveness, and correct functioning of these external contracts are paramount. A vulnerability, compromise, or unexpected behavior in any of these dependencies could directly impact the `SyntheticToken`'s integrity, potentially leading to unauthorized minting/burning or frozen operations. (Coverage: 7.6 External, 7.1 Architecture)
+Not confirmed by static analysis (the model's own reading of the source). The `SyntheticToken` contract heavily relies on external contracts such as `IPoolRegistry`, `IProxyOFT`, `IPool`, and `IDebtToken` for its core access control logic (`onlyIfCanBurn`, `onlyIfCanMint`, `onlyIfCanSeize`) and to determine the `governor`. The security, liveness, and correct functioning of these external contracts are paramount. A vulnerability, compromise, or unexpected behavior in any of these dependencies could directly impact the `SyntheticToken`'s integrity, potentially leading to unauthorized minting/burning or frozen operations. (Coverage: 7.6 External, 7.1 Architecture)
 
 **Recommendation:** Conduct thorough security audits of all integrated external contracts. Implement robust monitoring for the health and activity of these dependencies. Consider circuit breakers or emergency pause mechanisms in `SyntheticToken` that can be triggered if a critical external dependency is compromised or malfunctions.
 
 
+### `M-03` — Centralized Control Over Token Supply and Operations  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `SyntheticToken` contract grants significant control to the `governor` role (obtained from `_poolRegistry`). The governor can update `maxTotalSupply`, `maxAmoSupply`, `maxBridgedInSupply`, `maxBridgedOutSupply`, `proxyOFT`, and `amo` addresses. These addresses are then used in `onlyIfCanBurn` and `onlyIfCanMint` modifiers, effectively allowing the governor to dictate which external entities can mint or burn tokens. This centralization introduces a single point of failure; compromise of the governor's private key could lead to arbitrary minting/burning or manipulation of supply caps. (Coverage: 7.3 Access Control, 7
+
+**Recommendation:** Implement a multi-signature wallet or a time-locked governance mechanism for critical administrative functions to reduce the risk associated with a single point of control. Clearly document the powers of the governor and the associated risks.
+
+
 ### `L-01` — Default `maxTotalSupply` to `type(uint256).max`  *(Severity: Low · Status: Unresolved)*
 
-During initialization, `maxTotalSupply` is set to `type(uint256).max`, effectively imposing no initial cap on the total supply of the synthetic token. While the `governor` can later set a specific `maxTotalSupply` via `setMaxTotalSupply`, this initial state means that until a specific cap is set, the token's supply is theoretically unbounded, subject only to the `onlyIfCanMint` restrictions. This might not align with the intended economic model if a hard cap is desired from the outset. (Coverage: 7.4 Economic, 7.5 Governance)
+Not confirmed by static analysis (the model's own reading of the source). During initialization, `maxTotalSupply` is set to `type(uint256).max`, effectively imposing no initial cap on the total supply of the synthetic token. While the `governor` can later set a specific `maxTotalSupply` via `setMaxTotalSupply`, this initial state means that until a specific cap is set, the token's supply is theoretically unbounded, subject only to the `onlyIfCanMint` restrictions. This might not align with the intended economic model if a hard cap is desired from the outset. (Coverage: 7.4 Economic, 7.5 Governance)
 
 **Recommendation:** If a specific total supply cap is intended from deployment, it should be set during the `initialize` function or immediately after deployment by the governor. Otherwise, ensure clear documentation that the initial supply is uncapped and relies on the governor to set a limit.
 
 
 ### `I-01` — Incomplete Code for Core ERC-20 Logic  *(Severity: Informational · Status: Unresolved)*
 
-The provided contract snippet for `SyntheticToken` truncates the implementations of critical internal functions such as `_approve`, `_burn`, `_mint`, and `_transfer`. These functions are fundamental to the token's ERC-20 behavior and supply management, including the enforcement of supply caps (`SurpassMaxBridgingSupply`, `SurpassMaxSynthSupply`) and balance updates. Without the full code, a comprehensive audit of these core mechanics, including potential reentrancy vectors or subtle arithmetic errors, cannot be fully performed. (Coverage: 7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). The provided contract snippet for `SyntheticToken` truncates the implementations of critical internal functions such as `_approve`, `_burn`, `_mint`, and `_transfer`. These functions are fundamental to the token's ERC-20 behavior and supply management, including the enforcement of supply caps (`SurpassMaxBridgingSupply`, `SurpassMaxSynthSupply`) and balance updates. Without the full code, a comprehensive audit of these core mechanics, including potential reentrancy vectors or subtle arithmetic errors, cannot be fully performed. (Coverage: 7.2 Code Security)
 
 **Recommendation:** Always provide the complete and final source code for all contracts and their dependencies for a thorough security audit. Assume standard and safe OpenZeppelin-like implementations for these internal functions, but verify this assumption with the full code.
 

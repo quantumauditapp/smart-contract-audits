@@ -42,28 +42,28 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Complex Assembly in Math Library Functions  *(Severity: Medium · Status: Unresolved)*
 
-The `mulDiv` and `sqrt` functions within the `Math` library utilize complex inline assembly and `unchecked` blocks for performance optimization. While these are often optimized implementations, they are inherently harder to audit, verify, and more prone to subtle errors than pure Solidity code. Any miscalculation or edge case not fully accounted for in the assembly could lead to incorrect results in critical arithmetic operations.
+Not confirmed by static analysis (the model's own reading of the source). The `mulDiv` and `sqrt` functions within the `Math` library utilize complex inline assembly and `unchecked` blocks for performance optimization. While these are often optimized implementations, they are inherently harder to audit, verify, and more prone to subtle errors than pure Solidity code. Any miscalculation or edge case not fully accounted for in the assembly could lead to incorrect results in critical arithmetic operations.
 
 **Recommendation:** Ensure extensive unit testing, including fuzz testing, for all functions involving inline assembly, especially `mulDiv` and `sqrt`, to cover all possible input ranges and edge cases. Consider adding comprehensive comments to explain the assembly logic clearly. If possible, explore alternative pure Solidity implementations for critical sections to improve readability and auditability, even if it means a slight performance trade-off.
 
 
 ### `L-01` — Unchecked Arithmetic for Nonce Increment  *(Severity: Low · Status: Unresolved)*
 
-The `_useNonce` function in the `Nonces` abstract contract uses `unchecked` for the `_nonces[owner]++` operation. While this is acceptable for nonces, as a `uint256` wrapping around is not a security concern for this specific use case (it simply resets the nonce count after 2^256 increments), it deviates from the default checked arithmetic introduced in Solidity 0.8.x. This could be a point of confusion for auditors or developers unfamiliar with the specific design choice.
+Not confirmed by static analysis (the model's own reading of the source). The `_useNonce` function in the `Nonces` abstract contract uses `unchecked` for the `_nonces[owner]++` operation. While this is acceptable for nonces, as a `uint256` wrapping around is not a security concern for this specific use case (it simply resets the nonce count after 2^256 increments), it deviates from the default checked arithmetic introduced in Solidity 0.8.x. This could be a point of confusion for auditors or developers unfamiliar with the specific design choice.
 
 **Recommendation:** Explicitly document the rationale behind using `unchecked` for nonce increments to clarify that overflow is an expected and non-critical behavior in this context. No code change is strictly required if the design intent is clear and understood.
 
 
 ### `I-01` — Extensive Use of Inline Assembly  *(Severity: Informational · Status: Unresolved)*
 
-The `StorageSlot`, `ShortStrings`, and `Math` libraries make extensive use of inline assembly. While necessary for certain low-level optimizations, direct storage manipulation, or specific string encoding, it significantly increases the complexity of the codebase. Assembly code is less readable, harder to debug, and more prone to subtle errors compared to high-level Solidity, requiring specialized expertise for thorough verification.
+Not confirmed by static analysis (the model's own reading of the source). The `StorageSlot`, `ShortStrings`, and `Math` libraries make extensive use of inline assembly. While necessary for certain low-level optimizations, direct storage manipulation, or specific string encoding, it significantly increases the complexity of the codebase. Assembly code is less readable, harder to debug, and more prone to subtle errors compared to high-level Solidity, requiring specialized expertise for thorough verification.
 
 **Recommendation:** Maintain comprehensive documentation and comments for all assembly blocks, explaining their purpose and logic. Ensure that developers working with these contracts have a strong understanding of EVM assembly. Rigorous testing is crucial to mitigate the increased risk associated with assembly code.
 
 
 ### `I-02` — `ShortStrings` Fallback Mechanism Requires Careful Management  *(Severity: Informational · Status: Unresolved)*
 
-The `ShortStrings` library implements an efficient fallback mechanism for strings longer than 31 bytes by storing them in a separate `string storage` slot. While this is a clever design pattern to optimize gas costs for short strings, it requires the consuming contract to carefully manage the associated `string storage` variable. Incorrect management (e.g., not providing a dedicated storage slot or reusing a slot for different purposes) could lead to storage collisions or unexpected behavior.
+Not confirmed by static analysis (the model's own reading of the source). The `ShortStrings` library implements an efficient fallback mechanism for strings longer than 31 bytes by storing them in a separate `string storage` slot. While this is a clever design pattern to optimize gas costs for short strings, it requires the consuming contract to carefully manage the associated `string storage` variable. Incorrect management (e.g., not providing a dedicated storage slot or reusing a slot for different purposes) could lead to storage collisions or unexpected behavior.
 
 **Recommendation:** Ensure that any contract utilizing `ShortStrings.toShortStringWithFallback` and `toStringWithFallback` allocates a dedicated and unique `string storage` variable for the fallback mechanism. Document this requirement clearly for developers integrating the library to prevent potential storage-related issues.
 

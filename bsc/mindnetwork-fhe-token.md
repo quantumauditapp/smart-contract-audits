@@ -2,14 +2,14 @@
 token: MindNetwork FHE Token
 ticker: FHE
 network: bsc
-risk_score: 41
-status: medium
+risk_score: 28
+status: low
 date: 2026-08-11
 ---
 
 # MindNetwork FHE Token (FHE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mindnetwork-fhe-token-bsc)
 
@@ -25,8 +25,8 @@ The FHE token contract is an ERC20 token utilizing OpenZeppelin's battle-tested 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract is built upon well-audited OpenZeppelin libraries (ERC20, AccessControl, ERC20Burnable, ERC20Permit), which significantly reduces the risk of common technical vulnerabilities. Custom… |
-| **Governance / Economics** | 5/10 | Medium | The economic model features a fixed `maxSupply` for the FHE token, providing a clear cap on total inflation. However, the `MINTER_ROLE` has the ability to mint tokens up to this maximum, introducing… |
+| **Technical** | 8/10 | Low | The contract is built upon well-audited OpenZeppelin libraries (ERC20, AccessControl, ERC20Burnable, ERC20Permit), which significantly reduces the risk of common technical vulnerabilities. Custom… |
+| **Governance / Economics** | 6/10 | Medium | The economic model features a fixed `maxSupply` for the FHE token, providing a clear cap on total inflation. However, the `MINTER_ROLE` has the ability to mint tokens up to this maximum, introducing… |
 | **Upgrades** | 6/10 | Medium | The FHE token contract is not designed as an upgradeable proxy. Therefore, there are no upgrade-specific risks such as proxy initialization issues, storage collisions, or logic inconsistencies… |
 
 ## LP Distribution
@@ -38,25 +38,25 @@ The FHE token contract is an ERC20 token utilizing OpenZeppelin's battle-tested 
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low_
-
-### `H-01` — Centralized Control of Critical Roles  *(Severity: High · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE` holds significant power, including the ability to grant and revoke the `MINTER_ROLE` and to change the `ccipAdmin` address. Initially, this role is assigned to the contract deployer (`msg.sender`). A compromise of this single address could lead to unauthorized token minting (up to `maxSupply`), manipulation of administrative settings, and potential economic instability for the token. (7.3 Access Control, 7.4 Economic, 7.8 Operations)
-
-**Recommendation:** It is strongly recommended to transfer the `DEFAULT_ADMIN_ROLE` to a robust multi-signature wallet or a decentralized autonomous organization (DAO) governance contract immediately after deployment. This distributes control and significantly reduces the single point of failure risk.
-
+_🟡 2 Medium · 🟢 1 Low_
 
 ### `M-01` — Unused `ccipAdmin` Role  *(Severity: Medium · Status: Unresolved)*
 
-The `ccipAdmin` state variable and its setter function `setCCIPAdmin` are implemented, allowing the `DEFAULT_ADMIN_ROLE` to change this address. However, the `ccipAdmin` variable is not utilized anywhere within the provided `FHE` contract code. This introduces an unnecessary administrative function and state variable, potentially leading to confusion about its purpose or creating an unused attack vector if its intended external use is not properly secured. (7.1 Architecture, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The `ccipAdmin` state variable and its setter function `setCCIPAdmin` are implemented, allowing the `DEFAULT_ADMIN_ROLE` to change this address. However, the `ccipAdmin` variable is not utilized anywhere within the provided `FHE` contract code. This introduces an unnecessary administrative function and state variable, potentially leading to confusion about its purpose or creating an unused attack vector if its intended external use is not properly secured. (7.1 Architecture, 7.8 Operations)
 
 **Recommendation:** Clarify the intended purpose and usage of the `ccipAdmin` variable. If it is meant for an external system, ensure that system's security model is robust and integrated. If it has no current or future use, consider removing the variable and its associated functions to reduce contract complexity and potential attack surface.
 
 
+### `M-02` — Centralized Control of Critical Roles  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` holds significant power, including the ability to grant and revoke the `MINTER_ROLE` and to change the `ccipAdmin` address. Initially, this role is assigned to the contract deployer (`msg.sender`). A compromise of this single address could lead to unauthorized token minting (up to `maxSupply`), manipulation of administrative settings, and potential economic instability for the token. (7.3 Access Control, 7.4 Economic, 7.8 Operations)
+
+**Recommendation:** It is strongly recommended to transfer the `DEFAULT_ADMIN_ROLE` to a robust multi-signature wallet or a decentralized autonomous organization (DAO) governance contract immediately after deployment. This distributes control and significantly reduces the single point of failure risk.
+
+
 ### `L-01` — Lack of Explicit Renouncement Mechanism for `MINTER_ROLE`  *(Severity: Low · Status: Unresolved)*
 
-While the `DEFAULT_ADMIN_ROLE` can grant and revoke the `MINTER_ROLE`, there is no explicit function within the `FHE` contract for an account holding the `MINTER_ROLE` to renounce it themselves. Although `AccessControl` provides a general `renounceRole` function, it requires the `callerConfirmation` parameter, which might not be intuitive for all users. An explicit function or clear documentation for `MINTER_ROLE` holders to step down could improve operational clarity and reduce potential attack surface if a minter's key is compromised and they wish to remove their privileges proactively. (7.3 Access Control, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). While the `DEFAULT_ADMIN_ROLE` can grant and revoke the `MINTER_ROLE`, there is no explicit function within the `FHE` contract for an account holding the `MINTER_ROLE` to renounce it themselves. Although `AccessControl` provides a general `renounceRole` function, it requires the `callerConfirmation` parameter, which might not be intuitive for all users. An explicit function or clear documentation for `MINTER_ROLE` holders to step down could improve operational clarity and reduce potential attack surface if a minter's key is compromised and they wish to remove their privileges proactively. (7.3 Access Control, 7.8 Opera
 
 **Recommendation:** Consider adding a specific `renounceMinterRole()` function that calls `_revokeRole(MINTER_ROLE, _msgSender())` or provide clear documentation on how `MINTER_ROLE` holders can use the inherited `renounceRole` function to step down.
 

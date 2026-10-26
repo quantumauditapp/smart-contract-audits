@@ -2,14 +2,14 @@
 token: Knight Core
 ticker: KNIGHT
 network: solana
-risk_score: 12
+risk_score: 0
 status: low
 date: 2026-07-25
 ---
 
 # Knight Core (KNIGHT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 12/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/knight-core-sol)
 
@@ -26,8 +26,8 @@ The Knight Core (KNIGHT) token mint on Solana exhibits a low-risk profile based 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Knight Core (KNIGHT) token is implemented using the spl-token-2022 program. Key security features are well-configured: the mint authority is revoked, ensuring no new tokens can be created, and… |
-| **Governance / Economics** | 6/10 | Medium | The economic profile of Knight Core (KNIGHT) shows a moderate liquidity of $89,369 USD, supporting reasonable trading activity. The 24-hour volume of $142,393 USD results in a healthy… |
-| **Upgrades** | 8/10 | Low | The Knight Core (KNIGHT) token mint demonstrates a high degree of immutability. Both the mint and freeze authorities have been revoked, meaning the token supply is fixed and no accounts can be frozen… |
+| **Governance / Economics** | 9/10 | Low | The economic profile of Knight Core (KNIGHT) shows a moderate liquidity of $89,369 USD, supporting reasonable trading activity. The 24-hour volume of $142,393 USD results in a healthy… |
+| **Upgrades** | 10/10 | Low | The Knight Core (KNIGHT) token mint demonstrates a high degree of immutability. Both the mint and freeze authorities have been revoked, meaning the token supply is fixed and no accounts can be frozen… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 921 buys / 1239 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,18 +69,18 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is Knight Core a scam?
 
-Based on automated analysis, Knight Core scores 62/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Knight Core scores 0/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Knight Core safe to buy?
 
-Our scanner flagged a risk score of 62/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 0/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Knight Core been audited?
 

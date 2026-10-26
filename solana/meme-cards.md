@@ -2,14 +2,14 @@
 token: Meme Cards
 ticker: MEMECARDS
 network: solana
-risk_score: 19
+risk_score: 2
 status: low
 date: 2026-09-26
 ---
 
 # Meme Cards (MEMECARDS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 19/100 — 🟢 Low Risk**
+> **Risk Score: 2/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/meme-cards-sol)
 
@@ -26,8 +26,8 @@ This audit of the Meme Cards (MEMECARDS) SPL Token Mint identifies a medium risk
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Meme Cards (MEMECARDS) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and no ability to freeze holder accounts. The… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a very new DEX pair, created 0 days ago, which limits the track record for assessing market behavior. Current DEX liquidity stands at $62,237, with a 24-hour volume of $301,655… |
-| **Upgrades** | 8/10 | Low | The token's mint authority and freeze authority are both revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not have a permanent delegate or an active… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits a very new DEX pair, created 0 days ago, which limits the track record for assessing market behavior. Current DEX liquidity stands at $62,237, with a 24-hour volume of $301,655… |
+| **Upgrades** | 10/10 | Low | The token's mint authority and freeze authority are both revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not have a permanent delegate or an active… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1982 buys / 2712 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

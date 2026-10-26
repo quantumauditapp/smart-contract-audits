@@ -2,14 +2,14 @@
 token: Moltbook
 ticker: MOLT
 network: base
-risk_score: 34
+risk_score: 15
 status: low
 date: 2026-07-24
 ---
 
 # Moltbook (MOLT) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 34/100 — 🟢 Low Risk**
+> **Risk Score: 15/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/moltbook-base)
 
@@ -25,8 +25,8 @@ The ClankerToken contract is an ERC20 token implementation with extensions for b
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract demonstrates a solid technical foundation, inheriting from battle-tested OpenZeppelin ERC20 and its extensions (ERC20Permit, ERC20Votes, ERC20Burnable). The implementation of `_update`… |
-| **Governance / Economics** | 5/10 | Medium | The token incorporates `ERC20Votes`, indicating an intention for governance participation (7.5 Governance). The initial supply is minted on a specific chain, and cross-chain supply adjustments are… |
+| **Technical** | 10/10 | Low | The contract demonstrates a solid technical foundation, inheriting from battle-tested OpenZeppelin ERC20 and its extensions (ERC20Permit, ERC20Votes, ERC20Burnable). The implementation of `_update`… |
+| **Governance / Economics** | 6/10 | Medium | The token incorporates `ERC20Votes`, indicating an intention for governance participation (7.5 Governance). The initial supply is minted on a specific chain, and cross-chain supply adjustments are… |
 | **Upgrades** | 9/10 | Low | The ClankerToken contract is not designed as an upgradeable proxy (7.7 Upgrades). It is a standard implementation contract. Therefore, there are no specific upgrade-related risks inherent in its… |
 
 ## LP Distribution
@@ -38,39 +38,39 @@ The ClankerToken contract is an ERC20 token implementation with extensions for b
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 2 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Admin Control Over Critical Functions  *(Severity: High · Status: Unresolved)*
-
-The `_admin` address has the sole authority to call `updateAdmin()`, `updateImage()`, and `updateMetadata()`. This means a single compromised private key for the `_admin` could lead to the transfer of administrative control to an attacker, or arbitrary changes to the token's image and metadata, potentially impacting its public perception and integration with external platforms. This is a significant centralization risk (7.3 Access Control, 7.8 Operations).
-
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the `_admin` role to require multiple approvals for sensitive operations. Alternatively, consider a time-locked governance mechanism for critical changes to allow community oversight and reaction time.
-
+_🟡 2 Medium · 🟢 2 Low · ⚪ 1 Informational_
 
 ### `M-01` — Reliance on External Superchain Token Bridge for Supply Control  *(Severity: Medium · Status: Unresolved)*
 
-The `crosschainMint()` and `crosschainBurn()` functions, which directly affect the token's supply, are exclusively callable by `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`. The security and integrity of the token's total supply across chains are entirely dependent on the correct functioning and security of this external bridge contract. Any vulnerability or compromise in the `SUPERCHAIN_TOKEN_BRIDGE` could lead to unauthorized minting or burning of ClankerTokens (7.4 Economic, 7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The `crosschainMint()` and `crosschainBurn()` functions, which directly affect the token's supply, are exclusively callable by `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`. The security and integrity of the token's total supply across chains are entirely dependent on the correct functioning and security of this external bridge contract. Any vulnerability or compromise in the `SUPERCHAIN_TOKEN_BRIDGE` could lead to unauthorized minting or burning of ClankerTokens (7.4 Economic, 7.6 External).
 
 **Recommendation:** Ensure the `SUPERCHAIN_TOKEN_BRIDGE` contract is rigorously audited, continuously monitored, and has robust security measures in place. Transparently communicate this dependency and its implications to token holders. While this is a common pattern for L2 canonical tokens, it's crucial to acknowledge and manage the associated external risk.
 
 
+### `M-02` — Centralized Admin Control Over Critical Functions  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_admin` address has the sole authority to call `updateAdmin()`, `updateImage()`, and `updateMetadata()`. This means a single compromised private key for the `_admin` could lead to the transfer of administrative control to an attacker, or arbitrary changes to the token's image and metadata, potentially impacting its public perception and integration with external platforms. This is a significant centralization risk (7.3 Access Control, 7.8 Operations).
+
+**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the `_admin` role to require multiple approvals for sensitive operations. Alternatively, consider a time-locked governance mechanism for critical changes to allow community oversight and reaction time.
+
+
 ### `L-01` — Immutability of `_originalAdmin` and One-Time `verify()` Call  *(Severity: Low · Status: Unresolved)*
 
-The `_originalAdmin` address is immutable and is the only address capable of calling the `verify()` function, which sets the `_verified` boolean to true. If the private key for `_originalAdmin` is lost or becomes inaccessible before `verify()` is called, this function can never be executed. While the impact of `_verified` is not immediately clear from the contract, this represents a minor operational inflexibility (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `_originalAdmin` address is immutable and is the only address capable of calling the `verify()` function, which sets the `_verified` boolean to true. If the private key for `_originalAdmin` is lost or becomes inaccessible before `verify()` is called, this function can never be executed. While the impact of `_verified` is not immediately clear from the contract, this represents a minor operational inflexibility (7.8 Operations).
 
 **Recommendation:** Ensure the `_originalAdmin` key is securely managed and backed up. Clearly document the purpose and importance of the `verify()` function and the `_originalAdmin` role within the protocol's overall design.
 
 
 ### `L-02` — Lack of Emergency Pause Mechanism  *(Severity: Low · Status: Unresolved)*
 
-The contract does not include a mechanism to pause token transfers or other critical operations in an emergency. In the event of a critical vulnerability discovery (e.g., in an external dependency or the token itself), the protocol would lack the ability to temporarily halt operations to prevent further damage or exploit (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract does not include a mechanism to pause token transfers or other critical operations in an emergency. In the event of a critical vulnerability discovery (e.g., in an external dependency or the token itself), the protocol would lack the ability to temporarily halt operations to prevent further damage or exploit (7.8 Operations).
 
 **Recommendation:** Consider integrating a pausable mechanism (e.g., OpenZeppelin's `Pausable` contract) controlled by the `_admin` (preferably a multisig) to allow for emergency halts of token transfers. This adds a layer of protection against unforeseen circumstances.
 
 
 ### `I-01` — Centralized Control Over Token Metadata  *(Severity: Informational · Status: Unresolved)*
 
-The `_admin` address has the ability to unilaterally update the token's `_image` and `_metadata` strings via `updateImage()` and `updateMetadata()`. While this provides flexibility for branding and information updates, it means the token's public representation can be changed by a single entity without broader community consensus. This is a design choice that centralizes control over external perception (7.4 Economic, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The `_admin` address has the ability to unilaterally update the token's `_image` and `_metadata` strings via `updateImage()` and `updateMetadata()`. While this provides flexibility for branding and information updates, it means the token's public representation can be changed by a single entity without broader community consensus. This is a design choice that centralizes control over external perception (7.4 Economic, 7.5 Governance).
 
 **Recommendation:** Clearly communicate the centralized nature of metadata updates to the community. If decentralization is a long-term goal, consider transitioning metadata updates to a governance-controlled mechanism, perhaps with a time-lock, to ensure community input and transparency.
 
@@ -113,11 +113,11 @@ The `_admin` address has the ability to unilaterally update the token's `_image`
 
 ### Is Moltbook a scam?
 
-Based on automated analysis, Moltbook scores 20/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Moltbook scores 15/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Moltbook safe to buy?
 
-Our scanner flagged a risk score of 20/100. Ownership is renounced which reduces rug-pull risk. DYOR before purchasing any token.
+Our scanner flagged a risk score of 15/100. Ownership is renounced which reduces rug-pull risk. DYOR before purchasing any token.
 
 ### Has Moltbook been audited?
 

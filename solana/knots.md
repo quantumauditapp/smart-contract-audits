@@ -2,14 +2,14 @@
 token: KNOTS
 ticker: KNOTS
 network: solana
-risk_score: 22
+risk_score: 3
 status: low
 date: 2026-09-12
 ---
 
 # KNOTS (KNOTS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 22/100 — 🟢 Low Risk**
+> **Risk Score: 3/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/knots-sol)
 
@@ -26,8 +26,8 @@ The KNOTS SPL Token Mint is built on the Token-2022 program with both mint and f
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The KNOTS token is an SPL Token-2022 mint with a total supply of 998,891,507.087884 tokens (6 decimals). Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a relatively low holder concentration, with the top 10 accounts holding 24.11% of the supply, suggesting a reasonably distributed ownership. Liquidity is robust at $1,182,219… |
-| **Upgrades** | 6/10 | Medium | The mint and freeze authorities are both revoked, preventing any further changes to the token's supply or account freeze status. While the transfer hook is not present and not upgradable, the… |
+| **Governance / Economics** | 9/10 | Low | The token exhibits a relatively low holder concentration, with the top 10 accounts holding 24.11% of the supply, suggesting a reasonably distributed ownership. Liquidity is robust at $1,182,219… |
+| **Upgrades** | 8/10 | Low | The mint and freeze authorities are both revoked, preventing any further changes to the token's supply or account freeze status. While the transfer hook is not present and not upgradable, the… |
 
 ## Token-2022 Extensions
 
@@ -67,13 +67,13 @@ Token name, symbol, or image can be changed post-launch, as indicated by 'metada
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4695 buys / 3395 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by 'metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

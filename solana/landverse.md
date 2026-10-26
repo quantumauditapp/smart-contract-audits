@@ -2,14 +2,14 @@
 token: Landverse
 ticker: LAND
 network: solana
-risk_score: 28
+risk_score: 9
 status: low
 date: 2026-09-28
 ---
 
 # Landverse (LAND) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 9/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/landverse-sol)
 
@@ -26,8 +26,8 @@ This audit of the Landverse (LAND) SPL Token Mint identifies a Medium risk prima
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Landverse (LAND) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token issuance or freezing of holder… |
-| **Governance / Economics** | 4/10 | Medium | The Landverse (LAND) token exhibits a Medium governance and economic risk (7.4 Economic) due to its extremely new DEX pair, created 0 days ago, which provides no historical data for market stability… |
-| **Upgrades** | 6/10 | Medium | The Landverse (LAND) token has a Medium upgrade risk profile (7.7 Upgrades). Key authorities such as the mint and freeze authorities are permanently revoked, which enhances security by preventing… |
+| **Governance / Economics** | 7/10 | Low | The Landverse (LAND) token exhibits a Medium governance and economic risk (7.4 Economic) due to its extremely new DEX pair, created 0 days ago, which provides no historical data for market stability… |
+| **Upgrades** | 8/10 | Low | The Landverse (LAND) token has a Medium upgrade risk profile (7.7 Upgrades). Key authorities such as the mint and freeze authorities are permanently revoked, which enhances security by preventing… |
 
 ## Token-2022 Extensions
 
@@ -67,13 +67,13 @@ Token name, symbol, or image can be changed post-launch, as indicated by 'metada
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 446 buys / 335 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by 'metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

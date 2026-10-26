@@ -2,14 +2,14 @@
 token: LIGHT
 ticker: LIGHT
 network: bsc
-risk_score: 85
-status: critical
+risk_score: 76
+status: high
 date: 2026-07-26
 ---
 
 # LIGHT (LIGHT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 85/100 — 🔴 Critical Risk**
+> **Risk Score: 76/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/light-bsc)
 
@@ -25,7 +25,7 @@ This audit was conducted on a truncated Solidity code snippet, primarily consist
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The provided code snippet includes standard OpenZeppelin interfaces (ERC-20, ERC-165) and the LayerZero `AddressCast` library, which appears to handle address conversions correctly with appropriate… |
+| **Technical** | 6/10 | Medium | The provided code snippet includes standard OpenZeppelin interfaces (ERC-20, ERC-165) and the LayerZero `AddressCast` library, which appears to handle address conversions correctly with appropriate… |
 | **Governance / Economics** | 1/10 | High | The contract ownership is managed by a 2/3 multisig (7.5 Governance), which is a robust access control mechanism, reducing single points of failure for administrative actions. Economically (7.4… |
 | **Upgrades** | 3/10 | High | The contract is not deployed as an upgradeable proxy (`is_proxy: false`), which eliminates risks associated with upgrade mechanisms (7.7 Upgrades), such as proxy initialization errors or storage… |
 
@@ -42,35 +42,35 @@ _🟡 1 Medium · 🟢 2 Low · ⚪ 2 Informational_
 
 ### `M-01` — Incomplete Contract Source for Comprehensive Audit  *(Severity: Medium · Status: Unresolved)*
 
-The provided source code is truncated, preventing a complete and thorough security audit of the `LightOFT` contract. Critical logic related to token minting, burning, cross-chain transfers, and specific administrative functions is not visible, making it impossible to assess potential vulnerabilities such as reentrancy, access control bypasses, or economic exploits within the core contract functionality.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code is truncated, preventing a complete and thorough security audit of the `LightOFT` contract. Critical logic related to token minting, burning, cross-chain transfers, and specific administrative functions is not visible, making it impossible to assess potential vulnerabilities such as reentrancy, access control bypasses, or economic exploits within the core contract functionality.
 
 **Recommendation:** Provide the complete and verified source code for the `LightOFT` contract to enable a full security assessment. This should include all inherited contracts and libraries that define the core business logic and interactions.
 
 
 ### `L-01` — Broad Solidity Pragma Directive  *(Severity: Low · Status: Unresolved)*
 
-The `pragma solidity` statement `^0.8.20 ^0.8.22;` is overly broad, allowing compilation with a wide range of compiler versions. While the prefill specifies `0.8.29`, a broad pragma can lead to unexpected behavior or introduce vulnerabilities if the contract is compiled with a different, potentially incompatible, compiler version in the future.
+Not confirmed by static analysis (the model's own reading of the source). The `pragma solidity` statement `^0.8.20 ^0.8.22;` is overly broad, allowing compilation with a wide range of compiler versions. While the prefill specifies `0.8.29`, a broad pragma can lead to unexpected behavior or introduce vulnerabilities if the contract is compiled with a different, potentially incompatible, compiler version in the future.
 
 **Recommendation:** Pin the Solidity pragma to a specific, tested compiler version (e.g., `pragma solidity 0.8.29;`) to ensure consistent compilation behavior and prevent potential issues arising from compiler version differences.
 
 
 ### `L-02` — Immutability Limits Bug Remediation  *(Severity: Low · Status: Unresolved)*
 
-The contract is not upgradeable, as indicated by `is_proxy: false`. While this removes risks associated with upgrade mechanisms, it means that any critical bugs or vulnerabilities discovered post-deployment cannot be patched. Remediation would require deploying a new contract and migrating all users and assets, which is a complex, costly, and potentially disruptive process.
+Not confirmed by static analysis (the model's own reading of the source). The contract is not upgradeable, as indicated by `is_proxy: false`. While this removes risks associated with upgrade mechanisms, it means that any critical bugs or vulnerabilities discovered post-deployment cannot be patched. Remediation would require deploying a new contract and migrating all users and assets, which is a complex, costly, and potentially disruptive process.
 
 **Recommendation:** Acknowledge the implications of immutability. Ensure extremely rigorous testing and auditing before deployment. For future projects, consider an upgradeable architecture if the ability to fix bugs or add features is deemed critical.
 
 
 ### `I-01` — Dependency on LayerZero v2 Protocol Security  *(Severity: Informational · Status: Unresolved)*
 
-The `LightOFT` contract, as a LayerZero Omnichain Fungible Token, inherently relies on the security and correct functioning of the underlying LayerZero v2 protocol and its configured message libraries. Any vulnerabilities, exploits, or misconfigurations within the LayerZero infrastructure could directly impact the security, integrity, and economic stability of the OFT.
+Not confirmed by static analysis (the model's own reading of the source). The `LightOFT` contract, as a LayerZero Omnichain Fungible Token, inherently relies on the security and correct functioning of the underlying LayerZero v2 protocol and its configured message libraries. Any vulnerabilities, exploits, or misconfigurations within the LayerZero infrastructure could directly impact the security, integrity, and economic stability of the OFT.
 
 **Recommendation:** Maintain continuous awareness of LayerZero protocol updates, security advisories, and best practices. Implement robust monitoring for LayerZero-related events and cross-chain message flows. Consider diversifying cross-chain solutions or implementing circuit breakers if the protocol allows for such mechanisms.
 
 
 ### `I-02` — `AddressCast` Library `unchecked` Block Usage Review  *(Severity: Informational · Status: Unresolved)*
 
-The `AddressCast` library utilizes `unchecked` blocks for bit shifting operations. While these blocks are preceded by explicit `if` conditions to validate input sizes (e.g., `_addressBytes.length > 32`, `_size == 0 \|\| _size > 32`), it is crucial that these checks are exhaustive and correctly prevent all potential overflow/underflow scenarios that `unchecked` blocks are designed to bypass.
+Not confirmed by static analysis (the model's own reading of the source). The `AddressCast` library utilizes `unchecked` blocks for bit shifting operations. While these blocks are preceded by explicit `if` conditions to validate input sizes (e.g., `_addressBytes.length > 32`, `_size == 0 \|\| _size > 32`), it is crucial that these checks are exhaustive and correctly prevent all potential overflow/underflow scenarios that `unchecked` blocks are designed to bypass.
 
 **Recommendation:** Ensure that the input validation logic preceding `unchecked` blocks is thoroughly reviewed and tested to guarantee that all edge cases and invalid inputs are handled, preventing any unexpected behavior or vulnerabilities from arising within the `unchecked` context.
 
@@ -113,11 +113,11 @@ The `AddressCast` library utilizes `unchecked` blocks for bit shifting operation
 
 ### Is LIGHT a scam?
 
-Based on automated analysis, LIGHT scores 65/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, LIGHT scores 76/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is LIGHT safe to buy?
 
-Our scanner flagged a risk score of 65/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 76/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has LIGHT been audited?
 

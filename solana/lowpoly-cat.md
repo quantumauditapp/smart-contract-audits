@@ -2,14 +2,14 @@
 token: LowPoly Cat
 ticker: POLYCAT
 network: solana
-risk_score: 43
-status: medium
+risk_score: 26
+status: low
 date: 2026-08-30
 ---
 
 # LowPoly Cat (POLYCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lowpoly-cat-sol)
 
@@ -25,9 +25,9 @@ This Solana SPL Token Mint audit for LowPoly Cat (Polycat) identifies a medium r
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program, featuring 6 decimals and a total supply of 953,276,548.803929 tokens. Both the mint authority and freeze authority have been revoked… |
-| **Governance / Economics** | 1/10 | High | The top 10 token accounts collectively hold 45.98% of the total supply, which is below the threshold for high concentration risk. Total DEX liquidity is $30,711, with a 24-hour trading volume of… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority have both been revoked, ensuring that the token's supply cannot be increased and holder accounts cannot be frozen post-launch. The token utilizes the… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program, featuring 6 decimals and a total supply of 953,276,548.803929 tokens. Both the mint authority and freeze authority have been revoked… |
+| **Governance / Economics** | 4/10 | Medium | The top 10 token accounts collectively hold 45.98% of the total supply, which is below the threshold for high concentration risk. Total DEX liquidity is $30,711, with a 24-hour trading volume of… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority have both been revoked, ensuring that the token's supply cannot be increased and holder accounts cannot be frozen post-launch. The token utilizes the… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 6 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 770 buys / 1088 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 6 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: Metronome Synth ETH
 ticker: MSETH
 network: base
-risk_score: 50
+risk_score: 35
 status: medium
 date: 2026-08-13
 ---
 
 # Metronome Synth ETH (MSETH) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 50/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/metronome-synth-eth-base)
 
@@ -25,8 +25,8 @@ The SyntheticToken contract serves as an upgradeable ERC-20 token implementation
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The SyntheticToken contract demonstrates good technical practices, utilizing OpenZeppelin's `Initializable` for upgradeability and custom error types for efficient error handling. Solidity 0.8.24's… |
-| **Governance / Economics** | 1/10 | High | The economic model incorporates various supply limits (`maxAmoSupply`, `maxBridgedInSupply`, `maxBridgedOutSupply`) and a governor-controlled `PoolRegistry` for managing critical parameters (7.4… |
+| **Technical** | 7/10 | Low | The SyntheticToken contract demonstrates good technical practices, utilizing OpenZeppelin's `Initializable` for upgradeability and custom error types for efficient error handling. Solidity 0.8.24's… |
+| **Governance / Economics** | 2/10 | High | The economic model incorporates various supply limits (`maxAmoSupply`, `maxBridgedInSupply`, `maxBridgedOutSupply`) and a governor-controlled `PoolRegistry` for managing critical parameters (7.4… |
 | **Upgrades** | 1/10 | High | The contract is deployed behind a `TransparentUpgradeableProxy` and correctly uses OpenZeppelin's `Initializable` pattern, including `_disableInitializers()` in the constructor and the `initializer`… |
 
 ## Proxy Upgrade Controls
@@ -47,32 +47,32 @@ The SyntheticToken contract serves as an upgradeable ERC-20 token implementation
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · ⚪ 2 Informational_
-
-### `H-01` — High Reliance on External Contracts for Core Logic and Access Control  *(Severity: High · Status: Unresolved)*
-
-The `SyntheticToken` contract delegates critical minting, burning, and seizing capabilities to external contracts (ProxyOFT, AMO, Pool, DebtToken) via the `onlyIfCanBurn`, `onlyIfCanMint`, and `onlyIfCanSeize` modifiers. These modifiers involve multiple external calls to `_poolRegistry`, `IManageable`, `IPool`, and `IDebtToken` to verify the sender's role. This architecture introduces a high degree of trust in the security and correct functioning of these external contracts and the `PoolRegistry`. A vulnerability or misconfiguration in any of these dependent contracts could directly lead to unauthorized minting, burning, or seizing of the synthetic token, compromising its supply and value.
-
-**Recommendation:** Conduct comprehensive security audits of all external contracts that are granted privileged access to the `SyntheticToken`'s core functions. Implement robust monitoring and incident response plans for these interconnected components. Consider adding circuit breakers or emergency pause mechanisms that can be triggered by the `governor` in case of a compromise in a dependent external contract.
-
+_🟡 2 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Default Unbounded `maxTotalSupply`  *(Severity: Medium · Status: Unresolved)*
 
-The `initialize` function sets `maxTotalSupply = type(uint256).max;`. This means, by default, there is no effective upper limit on the total supply of the synthetic token. While the contract includes `maxAmoSupply`, `maxBridgedInSupply`, and `maxBridgedOutSupply` limits, the overall `maxTotalSupply` being unbounded could lead to unexpected economic scenarios if not carefully managed by other protocol mechanisms or if the intention was to have a configurable global cap. If `maxTotalSupply` is intended to be a configurable limit, it should be set to a reasonable initial value rather than `type(uint256).max`.
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function sets `maxTotalSupply = type(uint256).max;`. This means, by default, there is no effective upper limit on the total supply of the synthetic token. While the contract includes `maxAmoSupply`, `maxBridgedInSupply`, and `maxBridgedOutSupply` limits, the overall `maxTotalSupply` being unbounded could lead to unexpected economic scenarios if not carefully managed by other protocol mechanisms or if the intention was to have a configurable global cap. If `maxTotalSupply` is intended to be a configurable limit, it should be set to a reasonable initial value rather than `type(uint256).max`.
 
 **Recommendation:** If a global maximum total supply is desired, set `maxTotalSupply` to a specific, reasonable value during initialization or provide a dedicated `onlyGovernor` function to set it post-deployment. If the unbounded nature is intentional, ensure that the economic implications are fully understood and that other protocol layers adequately manage the overall supply without relying on this variable.
 
 
+### `M-02` — High Reliance on External Contracts for Core Logic and Access Control  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `SyntheticToken` contract delegates critical minting, burning, and seizing capabilities to external contracts (ProxyOFT, AMO, Pool, DebtToken) via the `onlyIfCanBurn`, `onlyIfCanMint`, and `onlyIfCanSeize` modifiers. These modifiers involve multiple external calls to `_poolRegistry`, `IManageable`, `IPool`, and `IDebtToken` to verify the sender's role. This architecture introduces a high degree of trust in the security and correct functioning of these external contracts and the `PoolRegistry`. A vulnerability or misconfiguration in any of these dependent contracts could directly lead to unauthorized minting, burnin
+
+**Recommendation:** Conduct comprehensive security audits of all external contracts that are granted privileged access to the `SyntheticToken`'s core functions. Implement robust monitoring and incident response plans for these interconnected components. Consider adding circuit breakers or emergency pause mechanisms that can be triggered by the `governor` in case of a compromise in a dependent external contract.
+
+
 ### `I-01` — Lack of Specific Error for `amoSupply` Underflow  *(Severity: Informational · Status: Unresolved)*
 
-When `_isMsgSenderAmo(_msgSender)` is true in the `_burn` function, `amoSupply -= amount_` is executed. In Solidity 0.8.24, this operation will revert if `amoSupply < amount_` due to default overflow/underflow checks. However, unlike `BurnAmountExceedsBalance()` which is explicitly checked for `balanceOf[account_]`, there is no specific custom error for `amoSupply` underflow. This could lead to a less clear error message for users or integrators if an AMO attempts to burn more than its allocated supply.
+Not confirmed by static analysis (the model's own reading of the source). When `_isMsgSenderAmo(_msgSender)` is true in the `_burn` function, `amoSupply -= amount_` is executed. In Solidity 0.8.24, this operation will revert if `amoSupply < amount_` due to default overflow/underflow checks. However, unlike `BurnAmountExceedsBalance()` which is explicitly checked for `balanceOf[account_]`, there is no specific custom error for `amoSupply` underflow. This could lead to a less clear error message for users or integrators if an AMO attempts to burn more than its allocated supply.
 
 **Recommendation:** Consider adding an explicit `require(amoSupply >= amount_, 'AmoSupplyExceedsBalance')` or a custom error check before the `amoSupply -= amount_` operation to provide a more specific and user-friendly error message in case of an underflow.
 
 
 ### `I-02` — Unused `VERSION` Constant  *(Severity: Informational · Status: Unresolved)*
 
-The `VERSION` constant is declared but not referenced anywhere within the provided contract code. While not a security vulnerability, it represents dead code and could be removed to slightly reduce contract size and improve clarity, or utilized for on-chain version tracking.
+Not confirmed by static analysis (the model's own reading of the source). The `VERSION` constant is declared but not referenced anywhere within the provided contract code. While not a security vulnerability, it represents dead code and could be removed to slightly reduce contract size and improve clarity, or utilized for on-chain version tracking.
 
 **Recommendation:** Either remove the `VERSION` constant if it serves no functional purpose, or integrate it into a function (e.g., a `version()` public view function) to provide on-chain version information for external tools or users.
 

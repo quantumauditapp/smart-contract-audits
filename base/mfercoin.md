@@ -2,14 +2,14 @@
 token: mfercoin
 ticker: $MFER
 network: base
-risk_score: 3
+risk_score: 0
 status: low
 date: 2026-07-28
 ---
 
 # mfercoin ($MFER) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 3/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mfercoin-base)
 
@@ -25,8 +25,8 @@ The mfercoin contract is an ERC20 token utilizing OpenZeppelin's Ownable pattern
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract leverages battle-tested OpenZeppelin libraries for ERC20 and Ownable functionalities, contributing to robust code security (7.2 Code Security). The `_update` function correctly prevents… |
-| **Governance / Economics** | 9/10 | Low | The economic model is based on a fixed supply ERC20 token, with the entire `MAX_SUPPLY` minted to the deployer at inception (7.4 Economic). This creates a highly centralized initial distribution. The… |
+| **Technical** | 10/10 | Low | The contract leverages battle-tested OpenZeppelin libraries for ERC20 and Ownable functionalities, contributing to robust code security (7.2 Code Security). The `_update` function correctly prevents… |
+| **Governance / Economics** | 10/10 | Low | The economic model is based on a fixed supply ERC20 token, with the entire `MAX_SUPPLY` minted to the deployer at inception (7.4 Economic). This creates a highly centralized initial distribution. The… |
 | **Upgrades** | 10/10 | Low | The mfercoin contract is not designed with upgradeability features (7.7 Upgrades). This simplifies the contract's architecture and eliminates risks associated with proxy patterns, such as storage… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The mfercoin contract is an ERC20 token utilizing OpenZeppelin's Ownable pattern
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · ⚪ 2 Informational_
-
-### `H-01` — Centralized Control over Token Transfers  *(Severity: High · Status: Unresolved)*
-
-The contract owner has the ability to pause and unpause all token transfers for non-owner accounts via the `setPause` function. While the `_update` override allows the owner to transfer tokens even when paused (intended for LP setup), this grants significant centralized control over the token's liquidity and functionality. Misuse or compromise of the owner key could lead to a denial of service for all token holders, severely impacting market operations and user trust (7.3 Access Control, 7.4 Economic, 7.8 Operations).
-
-**Recommendation:** Implement a multi-signature wallet or a timelock contract for ownership to introduce a higher level of security and decentralization for critical functions like pausing/unpausing. Consider a community-driven governance mechanism for such powerful actions in the future. Clearly document the conditions under which the pause function would be used.
-
+_🟡 2 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Single Point of Failure for Owner Key  *(Severity: Medium · Status: Unresolved)*
 
-The contract relies on a single `owner` address for critical administrative functions, including the ability to pause and unpause token transfers. If this private key is compromised, lost, or becomes inaccessible, the project's ability to manage the token's operational state (e.g., unpausing for general trading after LP setup) would be severely impacted or permanently lost. This creates a single point of failure for the protocol's operations (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract relies on a single `owner` address for critical administrative functions, including the ability to pause and unpause token transfers. If this private key is compromised, lost, or becomes inaccessible, the project's ability to manage the token's operational state (e.g., unpausing for general trading after LP setup) would be severely impacted or permanently lost. This creates a single point of failure for the protocol's operations (7.8 Operations).
 
 **Recommendation:** Transfer ownership to a robust multi-signature wallet (e.g., Gnosis Safe) or a timelock contract. This distributes control among multiple trusted parties and/or introduces a delay for critical actions, significantly reducing the risk associated with a single compromised or lost key. Ensure the chosen multi-sig or timelock solution is itself well-audited and securely managed.
 
 
+### `M-02` — Centralized Control over Token Transfers  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract owner has the ability to pause and unpause all token transfers for non-owner accounts via the `setPause` function. While the `_update` override allows the owner to transfer tokens even when paused (intended for LP setup), this grants significant centralized control over the token's liquidity and functionality. Misuse or compromise of the owner key could lead to a denial of service for all token holders, severely impacting market operations and user trust (7.3 Access Control, 7.4 Economic, 7.8 Operations).
+
+**Recommendation:** Implement a multi-signature wallet or a timelock contract for ownership to introduce a higher level of security and decentralization for critical functions like pausing/unpausing. Consider a community-driven governance mechanism for such powerful actions in the future. Clearly document the conditions under which the pause function would be used.
+
+
 ### `I-01` — Initial Paused State for LP Setup  *(Severity: Informational · Status: Unresolved)*
 
-The contract is deployed with the `_paused` state set to `true` in the constructor. This means that immediately after deployment, only the owner can transfer tokens, while all other transfers are restricted. The contract comments indicate this is intended for 'LP setup' (7.1 Architecture, 7.8 Operations). Users should be aware that the token will not be generally transferable until the owner explicitly calls `setPause(false)` to unpause it.
+Not confirmed by static analysis (the model's own reading of the source). The contract is deployed with the `_paused` state set to `true` in the constructor. This means that immediately after deployment, only the owner can transfer tokens, while all other transfers are restricted. The contract comments indicate this is intended for 'LP setup' (7.1 Architecture, 7.8 Operations). Users should be aware that the token will not be generally transferable until the owner explicitly calls `setPause(false)` to unpause it.
 
 **Recommendation:** Ensure clear and prominent communication to the community regarding the initial paused state, its purpose, and the expected timeline for unpausing the contract. This transparency helps manage user expectations and builds trust.
 
 
 ### `I-02` — No Explicit Mechanism to Encourage Ownership Transfer to Secure Entity  *(Severity: Informational · Status: Unresolved)*
 
-While the `Ownable` contract provides a `transferOwnership` function, the `mfercoin` contract itself does not include any explicit mechanism, such as a post-deployment checklist or a time-locked transfer, to encourage or enforce the transfer of ownership to a more secure entity like a multi-signature wallet or a timelock contract (7.8 Operations). This leaves the decision entirely to the deployer, who might not prioritize this critical security step.
+Not confirmed by static analysis (the model's own reading of the source). While the `Ownable` contract provides a `transferOwnership` function, the `mfercoin` contract itself does not include any explicit mechanism, such as a post-deployment checklist or a time-locked transfer, to encourage or enforce the transfer of ownership to a more secure entity like a multi-signature wallet or a timelock contract (7.8 Operations). This leaves the decision entirely to the deployer, who might not prioritize this critical security step.
 
 **Recommendation:** Consider adding a comment or a post-deployment script that explicitly recommends transferring ownership to a multi-signature wallet or a timelock contract. This serves as a strong reminder and best practice guidance for the project team to enhance the long-term security and decentralization of the token.
 

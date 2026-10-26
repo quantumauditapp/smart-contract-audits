@@ -76,7 +76,7 @@ An independent third-party risk registry classifies this token as high-risk base
 
 ### Is Miu a scam?
 
-While Miu's data doesn't definitively confirm it as a scam, its high-risk profile (48/100) and unverified contract raise significant red flags. The unlocked liquidity also presents a substantial rug pull risk. Although ownership is renounced and there's no mint function, these positives are overshadowed by the lack of transparency and potential for malicious code.
+While Miu's data doesn't definitively confirm it as a scam, its low-risk profile (13/100) and unverified contract raise significant red flags. The unlocked liquidity also presents a substantial rug pull risk. Although ownership is renounced and there's no mint function, these positives are overshadowed by the lack of transparency and potential for malicious code.
 
 ### Is Miu safe to buy?
 

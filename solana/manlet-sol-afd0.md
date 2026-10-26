@@ -2,14 +2,14 @@
 token: MANLET
 ticker: MANLET
 network: solana
-risk_score: 16
+risk_score: 9
 status: low
 date: 2026-08-12
 ---
 
 # MANLET (MANLET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 16/100 — 🟢 Low Risk**
+> **Risk Score: 9/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/manlet-sol-afd0)
 
@@ -26,8 +26,8 @@ The audit of the MANLET SPL token mint identified a medium risk primarily due to
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The MANLET token is implemented using the standard `spl-token` program (v3). Both the mint authority and freeze authority have been revoked, which is a strong security positive, preventing further… |
-| **Governance / Economics** | 6/10 | Medium | The token's DEX pair is very new, having been created only 5 days ago, which limits the ability to assess long-term market stability and team behavior. Current DEX liquidity stands at $401,330, with… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities. Metadata is also immutable, as `metadata_mutable` is `False`, ensuring that the token's… |
+| **Governance / Economics** | 7/10 | Low | The token's DEX pair is very new, having been created only 5 days ago, which limits the ability to assess long-term market stability and team behavior. Current DEX liquidity stands at $401,330, with… |
+| **Upgrades** | 9/10 | Low | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities. Metadata is also immutable, as `metadata_mutable` is `False`, ensuring that the token's… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ The DEX pair for MANLET was created 5 days ago. This short duration provides an 
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for MANLET was created 5 days ago. This short duration provides an 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

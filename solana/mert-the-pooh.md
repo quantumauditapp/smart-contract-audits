@@ -2,14 +2,14 @@
 token: Mert The Pooh
 ticker: MERT
 network: solana
-risk_score: 46
-status: medium
+risk_score: 16
+status: low
 date: 2026-09-05
 ---
 
 # Mert The Pooh (MERT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 46/100 — 🟡 Medium Risk**
+> **Risk Score: 16/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mert-the-pooh-sol)
 
@@ -25,9 +25,9 @@ This SPL Token Mint, 'Mert The Pooh (Mert)', has been flagged as high-risk by an
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Mert The Pooh token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked, meaning no new tokens can be minted and no existing accounts can be… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a liquidity of $22,581 with a 24-hour volume of $130,277, resulting in a Volume/Liquidity Ratio of 5.77. The DEX pair has been active for 132 days. While chain-native RPC data for… |
-| **Upgrades** | 7/10 | Low | The token's mint and freeze authorities are both revoked, preventing any further changes to the token's supply or account freeze status. Metadata is immutable, meaning the token's name, symbol, or… |
+| **Technical** | 10/10 | Low | The Mert The Pooh token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked, meaning no new tokens can be minted and no existing accounts can be… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a liquidity of $22,581 with a 24-hour volume of $130,277, resulting in a Volume/Liquidity Ratio of 5.77. The DEX pair has been active for 132 days. While chain-native RPC data for… |
+| **Upgrades** | 10/10 | Low | The token's mint and freeze authorities are both revoked, preventing any further changes to the token's supply or account freeze status. Metadata is immutable, meaning the token's name, symbol, or… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ An independent third-party risk registry classifies this token as high-risk base
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1089 buys / 897 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ An independent third-party risk registry classifies this token as high-risk base
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

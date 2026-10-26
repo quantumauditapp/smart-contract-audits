@@ -2,14 +2,14 @@
 token: Livepeer Token
 ticker: LPT
 network: arbitrum
-risk_score: 63
+risk_score: 46
 status: medium
 date: 2026-07-27
 ---
 
 # Livepeer Token (LPT) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 63/100 — 🟡 Medium Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/livepeer-token-arb)
 
@@ -25,8 +25,8 @@ The LivepeerToken contract is an ERC20 token implementation leveraging OpenZeppe
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The LivepeerToken contract demonstrates strong technical foundations (7.1 Architecture, 7.2 Code Security). It utilizes OpenZeppelin's `AccessControl`, `ERC20Burnable`, and `ERC20Permit` modules… |
-| **Governance / Economics** | 1/10 | High | The contract's economic model (7.4 Economic) and governance structure (7.5 Governance) are highly centralized. The `DEFAULT_ADMIN_ROLE` has the power to grant and revoke `MINTER_ROLE` and… |
+| **Technical** | 8/10 | Low | The LivepeerToken contract demonstrates strong technical foundations (7.1 Architecture, 7.2 Code Security). It utilizes OpenZeppelin's `AccessControl`, `ERC20Burnable`, and `ERC20Permit` modules… |
+| **Governance / Economics** | 2/10 | High | The contract's economic model (7.4 Economic) and governance structure (7.5 Governance) are highly centralized. The `DEFAULT_ADMIN_ROLE` has the power to grant and revoke `MINTER_ROLE` and… |
 | **Upgrades** | 3/10 | High | The LivepeerToken contract is not designed with upgradeability in mind (7.7 Upgrades). It is a standard, immutable contract deployment. This design choice ensures that the contract's logic cannot be… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The LivepeerToken contract is an ERC20 token implementation leveraging OpenZeppe
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control over Token Supply  *(Severity: High · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE` has ultimate control over the token's supply by being able to grant and revoke both `MINTER_ROLE` and `BURNER_ROLE`. A compromise of the `DEFAULT_ADMIN_ROLE` would allow an attacker to mint an arbitrary amount of tokens, leading to hyperinflation, or burn all tokens, causing a denial of service for the token's utility. This centralization is a significant single point of failure for the token's economic stability (7.3 Access Control, 7.4 Economic, 7.5 Governance).
-
-**Recommendation:** Implement a robust multi-signature wallet for the `DEFAULT_ADMIN_ROLE` with a high number of required confirmations. Consider distributing the signers across different trusted entities. Explore decentralized governance mechanisms for critical role management in the long term.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Single Point of Failure for Admin Role Management  *(Severity: Medium · Status: Unresolved)*
 
-If the `DEFAULT_ADMIN_ROLE` is controlled by a single External Owned Account (EOA), it represents a single point of failure. The compromise of this EOA's private key would grant an attacker full control over the token's administrative functions, including the ability to assign themselves `MINTER_ROLE` or `BURNER_ROLE` (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). If the `DEFAULT_ADMIN_ROLE` is controlled by a single External Owned Account (EOA), it represents a single point of failure. The compromise of this EOA's private key would grant an attacker full control over the token's administrative functions, including the ability to assign themselves `MINTER_ROLE` or `BURNER_ROLE` (7.8 Operations).
 
 **Recommendation:** Ensure that the `DEFAULT_ADMIN_ROLE` is controlled by a multi-signature wallet (e.g., Gnosis Safe) rather than a single EOA. This significantly increases the security posture by requiring multiple approvals for critical operations.
 
 
+### `M-02` — Centralized Control over Token Supply  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` has ultimate control over the token's supply by being able to grant and revoke both `MINTER_ROLE` and `BURNER_ROLE`. A compromise of the `DEFAULT_ADMIN_ROLE` would allow an attacker to mint an arbitrary amount of tokens, leading to hyperinflation, or burn all tokens, causing a denial of service for the token's utility. This centralization is a significant single point of failure for the token's economic stability (7.3 Access Control, 7.4 Economic, 7.5 Governance).
+
+**Recommendation:** Implement a robust multi-signature wallet for the `DEFAULT_ADMIN_ROLE` with a high number of required confirmations. Consider distributing the signers across different trusted entities. Explore decentralized governance mechanisms for critical role management in the long term.
+
+
 ### `L-01` — Lack of Time-Locks for Critical Operations  *(Severity: Low · Status: Unresolved)*
 
-The contract does not implement time-locks for critical administrative actions, such as granting or revoking roles, or for large minting operations. While not a direct vulnerability, the absence of time-locks means that administrative changes or significant supply alterations can be executed immediately, leaving no window for community review or emergency intervention in case of a compromised key (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract does not implement time-locks for critical administrative actions, such as granting or revoking roles, or for large minting operations. While not a direct vulnerability, the absence of time-locks means that administrative changes or significant supply alterations can be executed immediately, leaving no window for community review or emergency intervention in case of a compromised key (7.8 Operations).
 
 **Recommendation:** Consider integrating a time-lock mechanism for sensitive administrative functions. This would introduce a delay between the initiation and execution of critical operations, allowing for detection and potential mitigation of malicious actions.
 
 
 ### `I-01` — Non-Upgradeability of Contract  *(Severity: Informational · Status: Unresolved)*
 
-The LivepeerToken contract is deployed as a standard, non-upgradeable contract. This means its logic cannot be modified after deployment. While this provides immutability and reduces the risk of malicious upgrades, it also implies that any future bug fixes, feature enhancements, or protocol changes would require deploying a new contract and migrating all existing token holders, which can be a complex and disruptive process (7.7 Upgrades).
+Not confirmed by static analysis (the model's own reading of the source). The LivepeerToken contract is deployed as a standard, non-upgradeable contract. This means its logic cannot be modified after deployment. While this provides immutability and reduces the risk of malicious upgrades, it also implies that any future bug fixes, feature enhancements, or protocol changes would require deploying a new contract and migrating all existing token holders, which can be a complex and disruptive process (7.7 Upgrades).
 
 **Recommendation:** Acknowledge the implications of non-upgradeability. For future contracts, if flexibility is desired, consider implementing an upgradeable proxy pattern (e.g., UUPS or Transparent Proxy) from OpenZeppelin. For this contract, ensure robust testing and a clear migration plan if changes become necessary.
 
@@ -106,11 +106,11 @@ The LivepeerToken contract is deployed as a standard, non-upgradeable contract. 
 
 ### Is Livepeer Token a scam?
 
-Based on automated analysis, Livepeer Token scores 67/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Livepeer Token scores 46/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Livepeer Token safe to buy?
 
-Our scanner flagged a risk score of 67/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 46/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Livepeer Token been audited?
 

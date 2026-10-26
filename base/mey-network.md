@@ -2,14 +2,14 @@
 token: Mey Network
 ticker: MEY
 network: base
-risk_score: 42
+risk_score: 38
 status: medium
 date: 2026-08-30
 ---
 
 # Mey Network (MEY) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mey-network-base)
 
@@ -42,28 +42,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Centralized Control over Token Supply (Potential)  *(Severity: Low · Status: Unresolved)*
 
-The underlying ERC20 contract includes internal `_mint` and `_burn` functions. If the `MeyNetwork` contract exposes the `_mint` function to an owner or a privileged role, this introduces a centralized point of control over the token's total supply. An attacker gaining control of this owner key could arbitrarily inflate the supply, devaluing existing tokens. While common for many tokens, this represents a centralization risk (7.3 Access Control, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The underlying ERC20 contract includes internal `_mint` and `_burn` functions. If the `MeyNetwork` contract exposes the `_mint` function to an owner or a privileged role, this introduces a centralized point of control over the token's total supply. An attacker gaining control of this owner key could arbitrarily inflate the supply, devaluing existing tokens. While common for many tokens, this represents a centralization risk (7.3 Access Control, 7.5 Governance).
 
 **Recommendation:** Clearly document the role and responsibilities of any address capable of minting or burning tokens. If possible, consider implementing a timelock for minting operations or a multi-signature wallet for the controlling address to reduce single points of failure. If decentralization is a goal, consider removing or restricting minting capabilities after initial supply distribution.
 
 
 ### `L-02` — Immutability of Contract Logic  *(Severity: Low · Status: Unresolved)*
 
-The contract is not implemented using an upgradeable proxy pattern (7.7 Upgrades). This means that once deployed, the contract's logic cannot be modified. While this provides certainty and removes upgrade-related risks, it also implies that any discovered bugs, vulnerabilities, or desired feature enhancements would necessitate a new contract deployment and a potentially complex token migration process for users (7.7 Upgrades).
+Not confirmed by static analysis (the model's own reading of the source). The contract is not implemented using an upgradeable proxy pattern (7.7 Upgrades). This means that once deployed, the contract's logic cannot be modified. While this provides certainty and removes upgrade-related risks, it also implies that any discovered bugs, vulnerabilities, or desired feature enhancements would necessitate a new contract deployment and a potentially complex token migration process for users (7.7 Upgrades).
 
 **Recommendation:** Ensure comprehensive testing, including unit, integration, and fuzz testing, is performed prior to deployment. Consider engaging in formal verification for critical components. Clearly communicate the immutable nature of the contract to users and stakeholders, emphasizing the importance of initial security audits.
 
 
 ### `I-01` — Adherence to OpenZeppelin Standards  *(Severity: Informational · Status: Unresolved)*
 
-The contract is built upon well-audited and widely adopted OpenZeppelin ERC20, ERC20Burnable, and ERC20Permit libraries. This significantly reduces the likelihood of common vulnerabilities such as reentrancy, integer overflows/underflows, and standard ERC20 compliance issues (7.2 Code Security). The use of these battle-tested components contributes to a strong security foundation.
+Not confirmed by static analysis (the model's own reading of the source). The contract is built upon well-audited and widely adopted OpenZeppelin ERC20, ERC20Burnable, and ERC20Permit libraries. This significantly reduces the likelihood of common vulnerabilities such as reentrancy, integer overflows/underflows, and standard ERC20 compliance issues (7.2 Code Security). The use of these battle-tested components contributes to a strong security foundation.
 
 **Recommendation:** Continue to monitor OpenZeppelin security advisories and updates. Ensure that any custom logic added to the `MeyNetwork` contract maintains the high security standards set by the inherited OpenZeppelin components.
 
 
 ### `I-02` — Robust Permit Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The `ERC20Permit` implementation correctly utilizes EIP-712 for structured data signing and incorporates nonces (`_useNonce`) to prevent signature replay attacks. This design ensures that each permit signature can only be used once, enhancing the security and usability of gasless approvals (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `ERC20Permit` implementation correctly utilizes EIP-712 for structured data signing and incorporates nonces (`_useNonce`) to prevent signature replay attacks. This design ensures that each permit signature can only be used once, enhancing the security and usability of gasless approvals (7.2 Code Security).
 
 **Recommendation:** No specific recommendation is needed for the `ERC20Permit` implementation itself, as it follows best practices. Users should be educated on how to safely interact with permit signatures and verify the details before signing.
 

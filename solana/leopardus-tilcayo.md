@@ -2,14 +2,14 @@
 token: Leopardus tilcayo
 ticker: TILCAYO
 network: solana
-risk_score: 11
+risk_score: 0
 status: low
 date: 2026-09-21
 ---
 
 # Leopardus tilcayo (TILCAYO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 11/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/leopardus-tilcayo-sol)
 
@@ -26,8 +26,8 @@ This audit of the Leopardus tilcayo (Tilcayo) SPL Token Mint identifies a Medium
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint, indicating modern SPL functionality. Both Mint Authority and Freeze Authority are revoked (None), which means no new tokens can be minted and no holder accounts… |
-| **Governance / Economics** | 6/10 | Medium | The token has $124,802 in DEX liquidity and a 24-hour volume of $819,878, indicating active trading. The Volume/Liquidity Ratio is 6.57, which is not indicative of wash trading based on the defined… |
-| **Upgrades** | 8/10 | Low | Both Mint and Freeze authorities are revoked, preventing further token issuance or account freezing, which enhances security by fixing supply and transferability. The token utilizes the… |
+| **Governance / Economics** | 9/10 | Low | The token has $124,802 in DEX liquidity and a 24-hour volume of $819,878, indicating active trading. The Volume/Liquidity Ratio is 6.57, which is not indicative of wash trading based on the defined… |
+| **Upgrades** | 10/10 | Low | Both Mint and Freeze authorities are revoked, preventing further token issuance or account freezing, which enhances security by fixing supply and transferability. The token utilizes the… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair for this token was created 3 days ago. This short track record prov
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3515 buys / 3637 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for this token was created 3 days ago. This short track record prov
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

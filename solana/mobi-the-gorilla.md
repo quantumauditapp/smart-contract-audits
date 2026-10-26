@@ -2,14 +2,14 @@
 token: Mobi The Gorilla
 ticker: MOBI
 network: solana
-risk_score: 31
+risk_score: 14
 status: low
 date: 2026-09-05
 ---
 
 # Mobi The Gorilla (MOBI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 31/100 — 🟢 Low Risk**
+> **Risk Score: 14/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mobi-the-gorilla-sol)
 
@@ -26,8 +26,8 @@ This SPL Token-2022 mint, Mobi The Gorilla (Mobi), presents a medium risk primar
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint with both the Mint Authority and Freeze Authority revoked, indicating a fixed supply and immutability of account freezing. No Transfer Hook is active, and new… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate holder concentration, with the top 10 accounts holding 34.52% of the total supply, which does not indicate extreme centralization. DEX liquidity stands at $39,941, which… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable as both the Mint and Freeze authorities are revoked. This means no new tokens can be minted, and no accounts can be frozen by an external party.… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits moderate holder concentration, with the top 10 accounts holding 34.52% of the total supply, which does not indicate extreme centralization. DEX liquidity stands at $39,941, which… |
+| **Upgrades** | 10/10 | Low | The token's core parameters are largely immutable as both the Mint and Freeze authorities are revoked. This means no new tokens can be minted, and no accounts can be frozen by an external party.… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3809 buys / 3654 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

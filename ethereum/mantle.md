@@ -2,14 +2,14 @@
 token: Mantle
 ticker: MNT
 network: ethereum
-risk_score: 60
+risk_score: 52
 status: medium
 date: 2026-08-14
 ---
 
 # Mantle (MNT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 60/100 — 🟡 Medium Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mantle-eth)
 
@@ -25,8 +25,8 @@ The L1MantleToken contract implements an upgradeable ERC-20 token with burnable,
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The L1MantleToken contract is built upon well-audited OpenZeppelin libraries, ensuring a strong foundation for ERC-20 functionality, burning, and access control (7.3 Access Control). Solidity version… |
-| **Governance / Economics** | 2/10 | High | The contract's economic model centers around a controlled minting mechanism, where new tokens can be minted by the owner, which is a robust 6/14 multisig (7.4 Economic). This centralization of… |
+| **Technical** | 7/10 | Low | The L1MantleToken contract is built upon well-audited OpenZeppelin libraries, ensuring a strong foundation for ERC-20 functionality, burning, and access control (7.3 Access Control). Solidity version… |
+| **Governance / Economics** | 3/10 | High | The contract's economic model centers around a controlled minting mechanism, where new tokens can be minted by the owner, which is a robust 6/14 multisig (7.4 Economic). This centralization of… |
 | **Upgrades** | 1/10 | High | The contract utilizes the TransparentUpgradeableProxy pattern, with the implementation logic residing in L1MantleToken. The upgrade process is secured by an OpenZeppelin ProxyAdmin, which is owned by… |
 
 ## Proxy Upgrade Controls
@@ -47,32 +47,32 @@ The L1MantleToken contract implements an upgradeable ERC-20 token with burnable,
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 2 Low_
-
-### `H-01` — Centralized Minting Authority  *(Severity: High · Status: Unresolved)*
-
-The `mint` function is protected by the `onlyOwner` modifier, meaning only the contract owner can mint new tokens. While the owner is a robust 6/14 multisig, this design centralizes the control over the token's supply, giving the multisig significant power to inflate the token supply. This is a fundamental design choice but represents a high-impact point of control (7.3 Access Control, 7.4 Economic).
-
-**Recommendation:** Acknowledge this as a design decision. Ensure the multisig governance process for minting is transparent, well-documented, and subject to community oversight. Consider implementing a timelock for minting operations or a more decentralized minting mechanism if future protocol evolution allows.
-
+_🟡 2 Medium · 🟢 2 Low_
 
 ### `M-01` — Owner's Control Over Mint Cap Numerator  *(Severity: Medium · Status: Unresolved)*
 
-The `setMintCapNumerator` function, which determines the maximum percentage of total supply that can be minted in an interval, is callable only by the owner (multisig). Although there's an upper bound (`MINT_CAP_MAX_NUMERATOR`), the owner can adjust this value at any time. Frequent or unexpected changes to this parameter could impact market perception and token economics (7.5 Governance, 7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The `setMintCapNumerator` function, which determines the maximum percentage of total supply that can be minted in an interval, is callable only by the owner (multisig). Although there's an upper bound (`MINT_CAP_MAX_NUMERATOR`), the owner can adjust this value at any time. Frequent or unexpected changes to this parameter could impact market perception and token economics (7.5 Governance, 7.4 Economic).
 
 **Recommendation:** Implement a timelock for changes to `mintCapNumerator` to provide transparency and allow stakeholders to react. Clearly communicate any proposed changes to this parameter well in advance. Consider a more decentralized governance mechanism for such critical parameter adjustments in the future.
 
 
+### `M-02` — Centralized Minting Authority  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function is protected by the `onlyOwner` modifier, meaning only the contract owner can mint new tokens. While the owner is a robust 6/14 multisig, this design centralizes the control over the token's supply, giving the multisig significant power to inflate the token supply. This is a fundamental design choice but represents a high-impact point of control (7.3 Access Control, 7.4 Economic).
+
+**Recommendation:** Acknowledge this as a design decision. Ensure the multisig governance process for minting is transparent, well-documented, and subject to community oversight. Consider implementing a timelock for minting operations or a more decentralized minting mechanism if future protocol evolution allows.
+
+
 ### `L-01` — Reliance on `block.timestamp` for `nextMint`  *(Severity: Low · Status: Unresolved)*
 
-The `nextMint` timestamp is calculated and updated using `block.timestamp`. While `block.timestamp` is generally reliable, miners can manipulate it within a small range (up to 900 seconds on Ethereum). For a `MIN_MINT_INTERVAL` of 365 days, this manipulation is negligible and does not pose a significant risk of accelerating the minting schedule (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `nextMint` timestamp is calculated and updated using `block.timestamp`. While `block.timestamp` is generally reliable, miners can manipulate it within a small range (up to 900 seconds on Ethereum). For a `MIN_MINT_INTERVAL` of 365 days, this manipulation is negligible and does not pose a significant risk of accelerating the minting schedule (7.2 Code Security).
 
 **Recommendation:** Given the very long `MIN_MINT_INTERVAL`, the impact of `block.timestamp` manipulation is minimal. No immediate action is required, but for future designs involving shorter time intervals, `block.number` or an oracle-based timestamp might be considered for greater robustness.
 
 
 ### `L-02` — Missing Zero Address Check for `_recipient` in `mint`  *(Severity: Low · Status: Unresolved)*
 
-The `mint` function does not explicitly check if the `_recipient` address is `address(0)`. While OpenZeppelin's underlying `_mint` function would revert if `to` is `address(0)`, an explicit check in the `mint` function would provide clearer intent and a more specific error message, preventing accidental burning of tokens to the zero address (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function does not explicitly check if the `_recipient` address is `address(0)`. While OpenZeppelin's underlying `_mint` function would revert if `to` is `address(0)`, an explicit check in the `mint` function would provide clearer intent and a more specific error message, preventing accidental burning of tokens to the zero address (7.2 Code Security).
 
 **Recommendation:** Add an explicit check at the beginning of the `mint` function: `if (_recipient == address(0)) revert MantleToken_ImproperlyInitialized();` or a custom error for zero address recipients.
 

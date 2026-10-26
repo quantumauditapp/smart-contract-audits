@@ -85,11 +85,11 @@ Total DEX liquidity is $9,175. Slippage will be severe; large positions cannot b
 
 ### Is Minter a scam?
 
-Based on automated analysis, Minter scores 48/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Minter scores 20/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Minter safe to buy?
 
-Our scanner flagged a risk score of 48/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 20/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Minter been audited?
 
