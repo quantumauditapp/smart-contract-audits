@@ -2,14 +2,14 @@
 token: Super Accelerationism
 ticker: S/ACC
 network: solana
-risk_score: 34
+risk_score: 0
 status: low
 date: 2026-09-27
 ---
 
 # Super Accelerationism (S/ACC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 34/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/super-accelerationism-sol)
 
@@ -25,9 +25,9 @@ This SPL Token Mint is flagged as high-risk by an independent third-party regist
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint with its mint authority and freeze authority both revoked, indicating a fixed supply and immutability of account freezing. The token has a supply of… |
-| **Governance / Economics** | 4/10 | Medium | The token's DEX liquidity is $164,341 with a 24-hour volume of $77,098, resulting in a normal Volume/Liquidity Ratio of 0.47. However, the DEX pair is extremely new, having been created only 0 days… |
-| **Upgrades** | 7/10 | Low | The mint authority and freeze authority are both revoked, meaning no further tokens can be minted and no accounts can be frozen. The token's metadata is not mutable, ensuring its name, symbol, and… |
+| **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint with its mint authority and freeze authority both revoked, indicating a fixed supply and immutability of account freezing. The token has a supply of… |
+| **Governance / Economics** | 8/10 | Low | The token's DEX liquidity is $164,341 with a 24-hour volume of $77,098, resulting in a normal Volume/Liquidity Ratio of 0.47. However, the DEX pair is extremely new, having been created only 0 days… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both revoked, meaning no further tokens can be minted and no accounts can be frozen. The token's metadata is not mutable, ensuring its name, symbol, and… |
 
 ## Security Findings
 
@@ -61,13 +61,13 @@ The DEX pair was created 0 days ago. This indicates an insufficient track record
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 7564 buys / 1244 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ The DEX pair was created 0 days ago. This indicates an insufficient track record
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

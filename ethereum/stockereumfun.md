@@ -2,14 +2,14 @@
 token: Stockereum.fun
 ticker: STOCKER
 network: ethereum
-risk_score: 26
+risk_score: 22
 status: low
 date: 2026-09-06
 ---
 
 # Stockereum.fun (STOCKER) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 26/100 — 🟢 Low Risk**
+> **Risk Score: 22/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/stockereumfun-eth)
 
@@ -42,21 +42,21 @@ _🟢 2 Low · ⚪ 1 Informational_
 
 ### `L-01` — Lack of Administrative Control  *(Severity: Low · Status: Unresolved)*
 
-The LaunchToken contract lacks any administrative functions or roles (e.g., owner, roles, pause, upgradeability). While this simplifies the contract and reduces attack surface, it means there is no mechanism to address potential future issues such as critical bugs, emergency pausing of transfers, or token migration without deploying an entirely new token. This design choice limits the project's flexibility and emergency response capabilities (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The LaunchToken contract lacks any administrative functions or roles (e.g., owner, roles, pause, upgradeability). While this simplifies the contract and reduces attack surface, it means there is no mechanism to address potential future issues such as critical bugs, emergency pausing of transfers, or token migration without deploying an entirely new token. This design choice limits the project's flexibility and emergency response capabilities (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** Consider implementing a minimal set of administrative controls, such as an `Ownable` pattern, to allow for emergency pausing of transfers or a controlled burn function if future needs are anticipated. If the intention is for a fully immutable token, ensure this design choice aligns with the project's long-term strategy and risk tolerance.
 
 
 ### `L-02` — Centralized Initial Supply Distribution  *(Severity: Low · Status: Unresolved)*
 
-The entire `TOTAL_SUPPLY` of 1 billion tokens is minted to a single `recipient` address during the contract's construction. This centralizes control of the initial token supply, making the project highly dependent on the security and integrity of that single address. Any compromise of this address would lead to the loss or unauthorized distribution of all tokens (7.4 Economic, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The entire `TOTAL_SUPPLY` of 1 billion tokens is minted to a single `recipient` address during the contract's construction. This centralizes control of the initial token supply, making the project highly dependent on the security and integrity of that single address. Any compromise of this address would lead to the loss or unauthorized distribution of all tokens (7.4 Economic, 7.8 Operations).
 
 **Recommendation:** To mitigate the risk associated with a single point of failure, consider distributing the initial supply across multiple addresses or a multi-signature wallet. This enhances security by requiring multiple approvals for token movements, reducing the impact of a single private key compromise.
 
 
 ### `I-01` — Immutability of `metadataUri`  *(Severity: Informational · Status: Unresolved)*
 
-The `metadataUri` variable is set in the constructor and has no setter function, making it immutable after deployment. While this provides certainty and prevents unauthorized changes, it also means the token's metadata URI cannot be updated if the URI becomes invalid, needs to be changed for branding, legal, or technical reasons (e.g., IPFS hash update) (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The `metadataUri` variable is set in the constructor and has no setter function, making it immutable after deployment. While this provides certainty and prevents unauthorized changes, it also means the token's metadata URI cannot be updated if the URI becomes invalid, needs to be changed for branding, legal, or technical reasons (e.g., IPFS hash update) (7.1 Architecture).
 
 **Recommendation:** If there's a potential future need to update the metadata URI, consider adding an owner-restricted function to modify this variable. If immutability is the desired design, ensure the initial URI is robust and points to a highly available and permanent storage solution.
 

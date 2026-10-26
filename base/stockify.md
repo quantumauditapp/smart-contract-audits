@@ -2,14 +2,14 @@
 token: Stockify
 ticker: STFY
 network: base
-risk_score: 35
-status: medium
+risk_score: 23
+status: low
 date: 2026-08-30
 ---
 
 # Stockify (STFY) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 35/100 — 🟡 Medium Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/stockify-base)
 
@@ -25,8 +25,8 @@ The StockifyToken contract implements an ERC20 token with a custom holder tracki
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The StockifyToken contract demonstrates strong technical foundations, leveraging battle-tested OpenZeppelin ERC20 and Ownable implementations. The custom `_syncHolder` logic for managing the… |
-| **Governance / Economics** | 5/10 | Medium | The economic model is based on a fixed total supply ERC20 token. The owner has significant control over parameters that define who is considered a 'holder' (7.4 Economic). Specifically, the… |
+| **Technical** | 10/10 | Low | The StockifyToken contract demonstrates strong technical foundations, leveraging battle-tested OpenZeppelin ERC20 and Ownable implementations. The custom `_syncHolder` logic for managing the… |
+| **Governance / Economics** | 6/10 | Medium | The economic model is based on a fixed total supply ERC20 token. The owner has significant control over parameters that define who is considered a 'holder' (7.4 Economic). Specifically, the… |
 | **Upgrades** | 7/10 | Low | The contract is not designed as an upgradeable proxy, meaning its logic cannot be modified post-deployment. This design choice eliminates upgrade-related risks such as proxy misconfigurations or… |
 
 ## LP Distribution
@@ -38,25 +38,25 @@ The StockifyToken contract implements an ERC20 token with a custom holder tracki
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Centralized Control over Holder List Parameters  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Control over Holder List Parameters  *(Severity: Medium · Status: Unresolved)*
 
-The contract owner has the ability to set `minShareBalance` and manually `rewardsExcluded` addresses. These functions directly influence which addresses are included in the `_holders` array. If this array is used for critical functions such as reward distribution, voting, or whitelisting, the owner possesses significant centralized control over these mechanisms, which could be abused to exclude legitimate holders or include favored addresses.
+Not confirmed by static analysis (the model's own reading of the source). The contract owner has the ability to set `minShareBalance` and manually `rewardsExcluded` addresses. These functions directly influence which addresses are included in the `_holders` array. If this array is used for critical functions such as reward distribution, voting, or whitelisting, the owner possesses significant centralized control over these mechanisms, which could be abused to exclude legitimate holders or include favored addresses.
 
 **Recommendation:** Consider decentralizing control over these parameters, perhaps through a multi-signature wallet, a time-locked contract, or a robust governance mechanism. Clearly document the intended use of the `_holders` array and the implications of owner control for all stakeholders.
 
 
 ### `L-01` — Owner EOA Risk  *(Severity: Low · Status: Unresolved)*
 
-The contract owner is an Externally Owned Account (EOA). If the private key for this EOA is compromised, an attacker could gain full control over the `setMinShareBalance` and `setRewardsExcluded` functions, potentially manipulating the holder list and any associated protocol mechanics.
+Not confirmed by static analysis (the model's own reading of the source). The contract owner is an Externally Owned Account (EOA). If the private key for this EOA is compromised, an attacker could gain full control over the `setMinShareBalance` and `setRewardsExcluded` functions, potentially manipulating the holder list and any associated protocol mechanics.
 
 **Recommendation:** Transfer ownership to a multi-signature wallet or a robust governance contract to mitigate the single point of failure risk associated with an EOA owner.
 
 
 ### `I-01` — Fixed `MIN_SHARE_BALANCE_FLOOR` and `MIN_SHARE_BALANCE_CEILING`  *(Severity: Informational · Status: Unresolved)*
 
-The `MIN_SHARE_BALANCE_FLOOR` and `MIN_SHARE_BALANCE_CEILING` constants are hardcoded in the contract. While this provides a bounded range for `minShareBalance`, it means the range itself cannot be adjusted without a contract redeployment. If future protocol needs require a different range, a new contract deployment would be necessary.
+Not confirmed by static analysis (the model's own reading of the source). The `MIN_SHARE_BALANCE_FLOOR` and `MIN_SHARE_BALANCE_CEILING` constants are hardcoded in the contract. While this provides a bounded range for `minShareBalance`, it means the range itself cannot be adjusted without a contract redeployment. If future protocol needs require a different range, a new contract deployment would be necessary.
 
 **Recommendation:** If flexibility is desired in the future, consider making these bounds configurable by the owner or governance. Otherwise, acknowledge that any changes to these limits would necessitate a new contract deployment.
 

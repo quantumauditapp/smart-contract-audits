@@ -2,14 +2,14 @@
 token: The Black Table
 ticker: MENSA
 network: solana
-risk_score: 41
-status: medium
+risk_score: 11
+status: low
 date: 2026-08-03
 ---
 
 # The Black Table (MENSA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-black-table-sol)
 
@@ -25,9 +25,9 @@ This SPL Token Mint has critical risks identified by a third-party risk registry
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint with its mint and freeze authorities successfully revoked, indicating a fixed supply and unfreezable accounts. No transfer hook or permanent delegate is… |
-| **Governance / Economics** | 4/10 | Medium | DEX liquidity is $220,654 with a 24-hour volume of $357,121, resulting in a normal Volume/Liquidity Ratio of 1.62. The pair has been active for 31 days, providing some track record. However, a… |
-| **Upgrades** | 7/10 | Low | The token mint has both its mint and freeze authorities revoked, preventing further supply changes or account freezing. It utilizes the spl-token-2022 program but does not have a transfer hook or… |
+| **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint with its mint and freeze authorities successfully revoked, indicating a fixed supply and unfreezable accounts. No transfer hook or permanent delegate is… |
+| **Governance / Economics** | 8/10 | Low | DEX liquidity is $220,654 with a 24-hour volume of $357,121, resulting in a normal Volume/Liquidity Ratio of 1.62. The pair has been active for 31 days, providing some track record. However, a… |
+| **Upgrades** | 10/10 | Low | The token mint has both its mint and freeze authorities revoked, preventing further supply changes or account freezing. It utilizes the spl-token-2022 program but does not have a transfer hook or… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ An independent third-party risk registry identifies "Single holder ownership" as
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 934 buys / 980 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ An independent third-party risk registry identifies "Single holder ownership" as
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

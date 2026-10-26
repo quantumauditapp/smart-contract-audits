@@ -2,14 +2,14 @@
 token: Starknet
 ticker: STRK
 network: ethereum
-risk_score: 69
-status: high
+risk_score: 44
+status: medium
 date: 2026-09-18
 ---
 
 # Starknet (STRK) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 69/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/starknet-eth)
 
@@ -25,8 +25,8 @@ The StarkNet Token contract is a standard ERC20 token with voting capabilities a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract architecture (7.1) is straightforward, implementing a standard ERC20 token with OpenZeppelin's AccessControl and ERC20Votes. Code security (7.2) is robust due to the extensive use of… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4) carries a high risk due to the `mint` function, which allows an authorized `MINTER_ROLE` to create an arbitrary amount of tokens, potentially leading to hyperinflation and… |
+| **Technical** | 8/10 | Low | The contract architecture (7.1) is straightforward, implementing a standard ERC20 token with OpenZeppelin's AccessControl and ERC20Votes. Code security (7.2) is robust due to the extensive use of… |
+| **Governance / Economics** | 2/10 | High | The economic model (7.4) carries a high risk due to the `mint` function, which allows an authorized `MINTER_ROLE` to create an arbitrary amount of tokens, potentially leading to hyperinflation and… |
 | **Upgrades** | 3/10 | High | The contract is not designed to be upgradeable (7.7), which eliminates all risks associated with upgrade mechanisms, such as proxy implementation bugs or improper upgrade paths. This immutability… |
 
 ## LP Distribution
@@ -38,39 +38,39 @@ The StarkNet Token contract is a standard ERC20 token with voting capabilities a
 
 ## Security Findings
 
-_🟠 2 High · 🟡 1 Medium · ⚪ 2 Informational_
-
-### `H-01` — Centralized Minting Authority  *(Severity: High · Status: Unresolved)*
-
-The `mint` function allows an account with the `MINTER_ROLE` to create an arbitrary amount of new tokens. This capability, if misused or compromised, can lead to uncontrolled supply inflation, devaluing existing tokens and disrupting the token's economic stability. The `MINTER_ROLE` is initially controlled by the `DEFAULT_ADMIN_ROLE`.
-
-**Recommendation:** Transfer the `MINTER_ROLE` to a secure multi-signature wallet or a DAO governance contract. Implement a timelock for minting operations and consider adding rate limits or caps on the amount that can be minted within a specific period.
-
-
-### `H-02` — Centralized Role Management  *(Severity: High · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE` has complete authority over all other roles, including the `MINTER_ROLE`. This creates a single point of failure: if the private key controlling the `DEFAULT_ADMIN_ROLE` is compromised, an attacker could gain full administrative control, including the ability to mint tokens and manage all other roles without restriction.
-
-**Recommendation:** Transfer the `DEFAULT_ADMIN_ROLE` to a robust multi-signature wallet or a DAO governance contract. Implement a timelock for any changes to role administrators or the granting/revoking of critical roles to allow for community oversight and emergency response.
-
+_🟡 3 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Lack of Emergency Pause Mechanism  *(Severity: Medium · Status: Unresolved)*
 
-The contract lacks a mechanism to pause token transfers or minting in emergency situations, such as a critical vulnerability discovery, a major exploit in an integrated DeFi protocol, or a significant market manipulation event. Without a pause function, the project team would have limited ability to mitigate ongoing damage during an incident.
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks a mechanism to pause token transfers or minting in emergency situations, such as a critical vulnerability discovery, a major exploit in an integrated DeFi protocol, or a significant market manipulation event. Without a pause function, the project team would have limited ability to mitigate ongoing damage during an incident.
 
 **Recommendation:** Consider integrating OpenZeppelin's `Pausable` contract. This would allow a designated role (e.g., controlled by a multi-signature wallet or governance) to temporarily halt critical operations, providing a safety mechanism during emergencies.
 
 
+### `M-02` — Centralized Minting Authority  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function allows an account with the `MINTER_ROLE` to create an arbitrary amount of new tokens. This capability, if misused or compromised, can lead to uncontrolled supply inflation, devaluing existing tokens and disrupting the token's economic stability. The `MINTER_ROLE` is initially controlled by the `DEFAULT_ADMIN_ROLE`.
+
+**Recommendation:** Transfer the `MINTER_ROLE` to a secure multi-signature wallet or a DAO governance contract. Implement a timelock for minting operations and consider adding rate limits or caps on the amount that can be minted within a specific period.
+
+
+### `M-03` — Centralized Role Management  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` has complete authority over all other roles, including the `MINTER_ROLE`. This creates a single point of failure: if the private key controlling the `DEFAULT_ADMIN_ROLE` is compromised, an attacker could gain full administrative control, including the ability to mint tokens and manage all other roles without restriction.
+
+**Recommendation:** Transfer the `DEFAULT_ADMIN_ROLE` to a robust multi-signature wallet or a DAO governance contract. Implement a timelock for any changes to role administrators or the granting/revoking of critical roles to allow for community oversight and emergency response.
+
+
 ### `I-01` — Immutability of Contract Logic  *(Severity: Informational · Status: Unresolved)*
 
-The `StarkNetToken` contract is deployed as a standard, non-upgradeable contract. This design choice eliminates the complexities and potential risks associated with upgrade mechanisms (e.g., proxy implementation bugs, improper upgrade paths). However, it also means that any discovered vulnerabilities or desired feature enhancements cannot be addressed without deploying a new contract and migrating all token holders.
+Not confirmed by static analysis (the model's own reading of the source). The `StarkNetToken` contract is deployed as a standard, non-upgradeable contract. This design choice eliminates the complexities and potential risks associated with upgrade mechanisms (e.g., proxy implementation bugs, improper upgrade paths). However, it also means that any discovered vulnerabilities or desired feature enhancements cannot be addressed without deploying a new contract and migrating all token holders.
 
 **Recommendation:** Acknowledge the implications of immutability. For future projects, carefully evaluate the trade-offs between immutability (simplicity, reduced upgrade risk) and upgradeability (flexibility for bug fixes, feature additions) based on the project's long-term strategy and risk tolerance.
 
 
 ### `I-02` — Reliance on OpenZeppelin Contracts  *(Severity: Informational · Status: Unresolved)*
 
-The contract extensively utilizes battle-tested and widely audited OpenZeppelin libraries for core functionalities such as ERC20, AccessControl, and ERC20Votes. This significantly reduces the likelihood of common low-level vulnerabilities (e.g., reentrancy, integer overflows) in the implemented components, contributing to a higher baseline of code security.
+Not confirmed by static analysis (the model's own reading of the source). The contract extensively utilizes battle-tested and widely audited OpenZeppelin libraries for core functionalities such as ERC20, AccessControl, and ERC20Votes. This significantly reduces the likelihood of common low-level vulnerabilities (e.g., reentrancy, integer overflows) in the implemented components, contributing to a higher baseline of code security.
 
 **Recommendation:** Continue to monitor OpenZeppelin's security advisories and ensure that any future deployments or integrations with OpenZeppelin contracts are based on the latest stable and audited versions.
 

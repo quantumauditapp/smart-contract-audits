@@ -43,42 +43,42 @@ _🟢 2 Low · ⚪ 4 Informational_
 
 ### `L-01` — Potential for Unhandled External Calls in Missing Logic  *(Severity: Low · Status: Unresolved)*
 
-While the provided ERC20 code does not make external calls that would typically require reentrancy guards, the missing 'TaoBot' contract logic might introduce such interactions. Without the full code, it's impossible to verify if reentrancy or other external call-related vulnerabilities are present in the project's specific functions (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). While the provided ERC20 code does not make external calls that would typically require reentrancy guards, the missing 'TaoBot' contract logic might introduce such interactions. Without the full code, it's impossible to verify if reentrancy or other external call-related vulnerabilities are present in the project's specific functions (7.2 Code Security).
 
 **Recommendation:** If the 'TaoBot' contract includes external calls to untrusted contracts, ensure that reentrancy guards (e.g., OpenZeppelin's `ReentrancyGuard`) are implemented where necessary, and follow the Checks-Effects-Interactions pattern.
 
 
 ### `L-02` — Initial Supply Mechanism Unknown  *(Severity: Low · Status: Unresolved)*
 
-The provided `ERC20` constructor does not mint any tokens. The actual 'TaoBot' contract (not provided) must have included a `_mint` call in its constructor or an `onlyOwner` mint function executed before ownership renunciation to establish the initial token supply. If this was not handled correctly, the token could be unmintable or have an unintended supply (7.4 Economic, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The provided `ERC20` constructor does not mint any tokens. The actual 'TaoBot' contract (not provided) must have included a `_mint` call in its constructor or an `onlyOwner` mint function executed before ownership renunciation to establish the initial token supply. If this was not handled correctly, the token could be unmintable or have an unintended supply (7.4 Economic, 7.8 Operations).
 
 **Recommendation:** Ensure that the initial token supply mechanism was correctly implemented and executed prior to ownership renunciation, and that the total supply aligns with the project's tokenomics.
 
 
 ### `I-01` — Incomplete Contract Code Provided  *(Severity: Informational · Status: Unresolved)*
 
-The core 'TaoBot' contract logic, which would define the token's specific functionalities, tokenomics, and interactions beyond standard ERC20 operations, was not provided for audit. This limitation prevents a comprehensive assessment of the project's unique business logic and potential vulnerabilities within those custom implementations (7.1 Architecture, 7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The core 'TaoBot' contract logic, which would define the token's specific functionalities, tokenomics, and interactions beyond standard ERC20 operations, was not provided for audit. This limitation prevents a comprehensive assessment of the project's unique business logic and potential vulnerabilities within those custom implementations (7.1 Architecture, 7.2 Code Security).
 
 **Recommendation:** Provide the complete source code for all contracts comprising the 'TaoBot' project to enable a full and thorough security audit.
 
 
 ### `I-02` — Renounced Ownership  *(Severity: Informational · Status: Resolved)*
 
-The contract's ownership has been renounced, transferring control to the zero address. This enhances decentralization by preventing a single entity from exercising administrative functions (e.g., pausing, blacklisting, modifying fees) after deployment (7.3 Access Control, 7.5 Governance). However, it also means no further administrative actions can be taken, even for critical bug fixes or upgrades, if the contract were upgradeable (which it isn't).
+Not confirmed by static analysis (the model's own reading of the source). The contract's ownership has been renounced, transferring control to the zero address. This enhances decentralization by preventing a single entity from exercising administrative functions (e.g., pausing, blacklisting, modifying fees) after deployment (7.3 Access Control, 7.5 Governance). However, it also means no further administrative actions can be taken, even for critical bug fixes or upgrades, if the contract were upgradeable (which it isn't).
 
 **Recommendation:** This is a design choice that prioritizes decentralization. Ensure all necessary administrative actions were completed prior to renunciation, as no further owner-privileged operations are possible.
 
 
 ### `I-03` — Standard ERC20 Implementation  *(Severity: Informational · Status: Resolved)*
 
-The token utilizes a standard and battle-tested ERC20 implementation, including `Ownable` from OpenZeppelin-like libraries. This reduces the likelihood of common token-related vulnerabilities such as reentrancy in transfer functions or integer overflows/underflows in basic arithmetic, as `unchecked` blocks are used appropriately after validation (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The token utilizes a standard and battle-tested ERC20 implementation, including `Ownable` from OpenZeppelin-like libraries. This reduces the likelihood of common token-related vulnerabilities such as reentrancy in transfer functions or integer overflows/underflows in basic arithmetic, as `unchecked` blocks are used appropriately after validation (7.2 Code Security).
 
 **Recommendation:** Continue to leverage well-audited and community-vetted libraries for core functionalities to maintain a strong security foundation.
 
 
 ### `I-04` — Liquidity Pool Locked  *(Severity: Informational · Status: Resolved)*
 
-The project's liquidity pool (LP) is locked with UNCX V2 until March 2027. This provides a degree of economic stability and reduces the risk of a rug pull, where liquidity is suddenly withdrawn, causing a price crash (7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The project's liquidity pool (LP) is locked with UNCX V2 until March 2027. This provides a degree of economic stability and reduces the risk of a rug pull, where liquidity is suddenly withdrawn, causing a price crash (7.4 Economic).
 
 **Recommendation:** Maintain transparency regarding LP lock status and duration to build and retain community trust.
 

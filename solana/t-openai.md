@@ -2,14 +2,14 @@
 token: T-OpenAI
 ticker: TOPENAI
 network: solana
-risk_score: 99
-status: critical
+risk_score: 72
+status: high
 date: 2026-09-27
 ---
 
 # T-OpenAI (TOPENAI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 99/100 — 🔴 Critical Risk**
+> **Risk Score: 72/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/t-openai-sol)
 
@@ -25,8 +25,8 @@ This SPL Token Mint exhibits critical security risks due to the active Mint Auth
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The T-OpenAI token is implemented using the spl-token-2022 program. It has an active Mint Authority at EXvTtxurWBUNNCtLojaN8ZBJFNJPZFSH3szoih9hh7YW, which can create new tokens at will. A Freeze… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a significant holder concentration, with the top 10 token accounts holding 61.44% of the total supply. This concentration poses a risk of price volatility from large sell-offs. The… |
+| **Technical** | 6/10 | Medium | The T-OpenAI token is implemented using the spl-token-2022 program. It has an active Mint Authority at EXvTtxurWBUNNCtLojaN8ZBJFNJPZFSH3szoih9hh7YW, which can create new tokens at will. A Freeze… |
+| **Governance / Economics** | 2/10 | High | The token exhibits a significant holder concentration, with the top 10 token accounts holding 61.44% of the total supply. This concentration poses a risk of price volatility from large sell-offs. The… |
 | **Upgrades** | 1/10 | High | The Mint Authority (EXvTtxurWBUNNCtLojaN8ZBJFNJPZFSH3szoih9hh7YW) and Freeze Authority (7n2PNcDXVDMK2m8dyV9cVPNY7p4jM4ZMHv7TzfibEt8o) remain active, allowing for potential changes to token supply and… |
 
 ## Token-2022 Extensions
@@ -87,7 +87,7 @@ Token name, symbol, or image can be changed post-launch. (Fact: metadata_mutable
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -96,7 +96,7 @@ Token name, symbol, or image can be changed post-launch. (Fact: metadata_mutable
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

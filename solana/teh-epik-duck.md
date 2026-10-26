@@ -2,14 +2,14 @@
 token: TEH EPIK DUCK
 ticker: EPIK
 network: solana
-risk_score: 3
+risk_score: 0
 status: low
 date: 2026-09-02
 ---
 
 # TEH EPIK DUCK (EPIK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 3/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/teh-epik-duck-sol)
 

@@ -2,14 +2,14 @@
 token: Super Inu
 ticker: SI
 network: solana
-risk_score: 17
+risk_score: 8
 status: low
 date: 2026-09-24
 ---
 
 # Super Inu (SI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 17/100 — 🟢 Low Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/super-inu-sol)
 
@@ -26,8 +26,8 @@ This audit of the Super Inu (SI) SPL Token Mint identifies a Medium risk due to 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Super Inu token is an spl-token-2022 mint with both Mint Authority and Freeze Authority successfully revoked, enhancing security by preventing arbitrary new token creation or account freezing. A… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a total DEX liquidity of $583,068 with a 24-hour volume of $2,657,713, resulting in a normal Volume/Liquidity Ratio of 4.56. A key concern is the very new DEX pair, created only 2… |
-| **Upgrades** | 6/10 | Medium | The Mint and Freeze authorities are permanently revoked, ensuring that the token's supply and account freeze capabilities cannot be altered. While the token program itself is not upgradable in the… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a total DEX liquidity of $583,068 with a 24-hour volume of $2,657,713, resulting in a normal Volume/Liquidity Ratio of 4.56. A key concern is the very new DEX pair, created only 2… |
+| **Upgrades** | 7/10 | Low | The Mint and Freeze authorities are permanently revoked, ensuring that the token's supply and account freeze capabilities cannot be altered. While the token program itself is not upgradable in the… |
 
 ## Token-2022 Extensions
 
@@ -73,7 +73,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: SuperRare
 ticker: RARE
 network: ethereum
-risk_score: 47
+risk_score: 40
 status: medium
 date: 2026-09-27
 ---
 
 # SuperRare (RARE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 47/100 — 🟡 Medium Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/superrare-eth)
 
@@ -51,28 +51,28 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralized Control over Token Supply and Operations  *(Severity: Medium · Status: Unresolved)*
 
-The `SuperRareToken` contract, by inheriting `ERC20PresetMinterPauserUpgradeable`, grants significant control to specific roles. Accounts with the `MINTER_ROLE` can mint new tokens, potentially increasing the total supply beyond the initial amount. Accounts with the `PAUSER_ROLE` can pause all token transfers, effectively freezing the token. The `DEFAULT_ADMIN_ROLE` has the power to grant and revoke these roles. While the proxy's admin is a multisig, the direct control over token mechanics remains centralized within these roles, posing a risk if compromised or misused.
+Not confirmed by static analysis (the model's own reading of the source). The `SuperRareToken` contract, by inheriting `ERC20PresetMinterPauserUpgradeable`, grants significant control to specific roles. Accounts with the `MINTER_ROLE` can mint new tokens, potentially increasing the total supply beyond the initial amount. Accounts with the `PAUSER_ROLE` can pause all token transfers, effectively freezing the token. The `DEFAULT_ADMIN_ROLE` has the power to grant and revoke these roles. While the proxy's admin is a multisig, the direct control over token mechanics remains centralized within these roles, posing a risk if compromised or misused.
 
 **Recommendation:** Ensure that the `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE`, and `PAUSER_ROLE` are assigned to trusted, multi-signature wallets or robust governance mechanisms. Clearly document the policies and procedures for exercising these powers, especially regarding minting and pausing, to maintain transparency and accountability. Consider implementing time-locks or additional governance checks for critical operations like minting large quantities or pausing.
 
 
 ### `L-01` — EIP-2612 Permit Front-Running Risk  *(Severity: Low · Status: Unresolved)*
 
-The `permit` function implements EIP-2612, allowing users to approve token transfers off-chain using a signed message. While beneficial for gasless approvals, this introduces a potential front-running risk. If a signed `permit` message is broadcast or leaked before the transaction is mined, a malicious actor could front-run the transaction, submitting their own transaction with the same signed message to approve themselves as the `spender` or to approve a different `spender` for the `owner`'s tokens. The `deadline` parameter offers some mitigation but does not eliminate the risk entirely.
+Not confirmed by static analysis (the model's own reading of the source). The `permit` function implements EIP-2612, allowing users to approve token transfers off-chain using a signed message. While beneficial for gasless approvals, this introduces a potential front-running risk. If a signed `permit` message is broadcast or leaked before the transaction is mined, a malicious actor could front-run the transaction, submitting their own transaction with the same signed message to approve themselves as the `spender` or to approve a different `spender` for the `owner`'s tokens. The `deadline` parameter offers some mitigation but does not eliminate the risk entirely.
 
 **Recommendation:** Educate users about the risks associated with sharing signed `permit` messages. Advise users to set reasonable `deadline` values and to only sign messages from trusted interfaces. While this is an inherent characteristic of EIP-2612, clear user guidance can help mitigate the practical impact.
 
 
 ### `I-01` — Redundant `InitializableV2` Contract  *(Severity: Informational · Status: Unresolved)*
 
-The `InitializableV2` contract introduces an `isInitialized` flag and associated functions (`initialize`, `_requireIsInitialized`, `_isInitialized`). This functionality is already provided by OpenZeppelin's `Initializable` contract, which `InitializableV2` itself inherits from. While `isInitialized` is private and won't cause storage collisions with OpenZeppelin's `_initialized` variable, its presence is redundant and adds unnecessary complexity to the codebase without apparent additional benefit.
+Not confirmed by static analysis (the model's own reading of the source). The `InitializableV2` contract introduces an `isInitialized` flag and associated functions (`initialize`, `_requireIsInitialized`, `_isInitialized`). This functionality is already provided by OpenZeppelin's `Initializable` contract, which `InitializableV2` itself inherits from. While `isInitialized` is private and won't cause storage collisions with OpenZeppelin's `_initialized` variable, its presence is redundant and adds unnecessary complexity to the codebase without apparent additional benefit.
 
 **Recommendation:** Consider removing `InitializableV2` and directly inheriting `Initializable` from OpenZeppelin, ensuring proper initialization calls are made to the base `Initializable` contract. If `InitializableV2` was intended for a specific purpose beyond basic initialization, clarify its role or integrate its unique logic directly into `SuperRareToken` if minimal.
 
 
 ### `I-02` — Use of Older Solidity Version (0.7.3)  *(Severity: Informational · Status: Unresolved)*
 
-The contract is compiled with Solidity version 0.7.3. While functional, newer versions (e.g., 0.8.x) include important security enhancements such as default integer overflow/underflow checks, which reduce the risk of common arithmetic vulnerabilities. Although OpenZeppelin contracts for 0.7.x typically include SafeMath, custom logic might still be susceptible if not carefully handled.
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version 0.7.3. While functional, newer versions (e.g., 0.8.x) include important security enhancements such as default integer overflow/underflow checks, which reduce the risk of common arithmetic vulnerabilities. Although OpenZeppelin contracts for 0.7.x typically include SafeMath, custom logic might still be susceptible if not carefully handled.
 
 **Recommendation:** Consider upgrading the Solidity compiler version to 0.8.x or higher, along with updating OpenZeppelin dependencies to their corresponding versions. This would leverage built-in safety features and ensure compatibility with the latest best practices. A thorough re-audit would be required after such an upgrade.
 

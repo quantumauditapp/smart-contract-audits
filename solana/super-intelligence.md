@@ -2,14 +2,14 @@
 token: Super Intelligence
 ticker: SI
 network: solana
-risk_score: 20
+risk_score: 3
 status: low
 date: 2026-09-27
 ---
 
 # Super Intelligence (SI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 20/100 — 🟢 Low Risk**
+> **Risk Score: 3/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/super-intelligence-sol)
 
@@ -26,8 +26,8 @@ This Solana SPL Token-2022 mint, Super Intelligence (SI), exhibits a highly immu
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing accounts can be frozen. Key Token-2022… |
-| **Governance / Economics** | 5/10 | Medium | The token has a total DEX liquidity of $25,702. The 24-hour trading volume is $141,851, resulting in a Volume/Liquidity Ratio of 5.52. The DEX pair is very new, having been created only 3 days ago… |
-| **Upgrades** | 8/10 | Low | The token's configuration appears immutable as both the mint authority and freeze authority have been revoked. Key Token-2022 extensions related to mutability, such as transfer fee upgradability and… |
+| **Governance / Economics** | 8/10 | Low | The token has a total DEX liquidity of $25,702. The 24-hour trading volume is $141,851, resulting in a Volume/Liquidity Ratio of 5.52. The DEX pair is very new, having been created only 3 days ago… |
+| **Upgrades** | 10/10 | Low | The token's configuration appears immutable as both the mint authority and freeze authority have been revoked. Key Token-2022 extensions related to mutability, such as transfer fee upgradability and… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 940 buys / 1230 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

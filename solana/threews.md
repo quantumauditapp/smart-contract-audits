@@ -2,14 +2,14 @@
 token: three.ws
 ticker: THREE
 network: solana
-risk_score: 10
+risk_score: 0
 status: low
 date: 2026-06-10
 ---
 
 # three.ws (THREE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 10/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/threews-sol)
 
@@ -26,8 +26,8 @@ This SPL Token-2022 mint, three.ws (three), presents a low-risk profile based on
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint, indicating it leverages the latest Solana token program features. Both the mint authority and freeze authority are revoked, meaning no new tokens can be minted… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits healthy liquidity with $182,992 USD available on DEXs. The 24-hour volume of $336,729 results in a normal Volume/Liquidity Ratio of 1.84, not indicating wash trading. The DEX pair… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token does not utilize a transfer hook, and its metadata… |
+| **Governance / Economics** | 10/10 | Low | The token exhibits healthy liquidity with $182,992 USD available on DEXs. The 24-hour volume of $336,729 results in a normal Volume/Liquidity Ratio of 1.84, not indicating wash trading. The DEX pair… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token does not utilize a transfer hook, and its metadata… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 32461 buys / 17505 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,18 +69,18 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is three.ws a scam?
 
-Based on automated analysis, three.ws scores 65/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, three.ws scores 0/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is three.ws safe to buy?
 
-Our scanner flagged a risk score of 65/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 0/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has three.ws been audited?
 

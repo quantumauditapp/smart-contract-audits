@@ -2,14 +2,14 @@
 token: The Black Ant
 ticker: ANTSEM
 network: solana
-risk_score: 46
-status: medium
+risk_score: 29
+status: low
 date: 2026-08-31
 ---
 
 # The Black Ant (ANTSEM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 46/100 — 🟡 Medium Risk**
+> **Risk Score: 29/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-black-ant-sol)
 
@@ -25,9 +25,9 @@ The token mint has robust security features with both mint and freeze authoritie
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint with both mint and freeze authorities revoked, preventing further token creation or account freezing. No transfer hook is active, and the default account state is… |
-| **Governance / Economics** | 1/10 | High | The top 10 token accounts hold 43.28% of the supply, which is below the concentration thresholds for high risk. Total DEX liquidity is $31,512, with a 24-hour volume of $121,843, resulting in a… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or account freeze status. As an SPL Token-2022, no upgradable extensions like transfer… |
+| **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint with both mint and freeze authorities revoked, preventing further token creation or account freezing. No transfer hook is active, and the default account state is… |
+| **Governance / Economics** | 4/10 | Medium | The top 10 token accounts hold 43.28% of the supply, which is below the concentration thresholds for high risk. Total DEX liquidity is $31,512, with a 24-hour volume of $121,843, resulting in a… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or account freeze status. As an SPL Token-2022, no upgradable extensions like transfer… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2111 buys / 1910 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

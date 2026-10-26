@@ -25,9 +25,9 @@ The PeerToken contract is an ERC-20 token with minting and burning capabilities,
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract is well-structured, inheriting from standard OpenZeppelin ERC20, ERC20Burnable, and Ownable contracts (7.1 Architecture). It correctly implements access control modifiers (`onlyMinter`… |
+| **Technical** | 6/10 | Medium | The contract is well-structured, inheriting from standard OpenZeppelin ERC20, ERC20Burnable, and Ownable contracts (7.1 Architecture). It correctly implements access control modifiers (`onlyMinter`… |
 | **Governance / Economics** | 1/10 | High | The economic model presents a critical risk due to the centralized minting authority. A single `minter` address, controlled by the `owner`, can mint an unlimited supply of tokens, posing a… |
-| **Upgrades** | 2/10 | High | The PeerToken contract is implemented as a standard, non-upgradeable contract. This design choice eliminates risks associated with proxy patterns or upgrade mechanisms, such as storage collisions or… |
+| **Upgrades** | 3/10 | High | The PeerToken contract is implemented as a standard, non-upgradeable contract. This design choice eliminates risks associated with proxy patterns or upgrade mechanisms, such as storage collisions or… |
 
 ## LP Distribution
 
@@ -38,32 +38,32 @@ The PeerToken contract is an ERC-20 token with minting and burning capabilities,
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `C-01` — Centralized Minting Authority and Unlimited Supply  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Centralized Minting Authority and Unlimited Supply  *(Severity: Medium · Status: Unresolved)*
 
-The `minter` role, which is controlled by the `owner`, has the ability to mint an arbitrary amount of tokens without any on-chain supply cap. This poses a critical economic risk (7.4 Economic), as a compromised `minter` or `owner` key could lead to hyperinflation and severe devaluation of the token. The contract does not enforce any maximum total supply.
+Not confirmed by static analysis (the model's own reading of the source). The `minter` role, which is controlled by the `owner`, has the ability to mint an arbitrary amount of tokens without any on-chain supply cap. This poses a critical economic risk (7.4 Economic), as a compromised `minter` or `owner` key could lead to hyperinflation and severe devaluation of the token. The contract does not enforce any maximum total supply.
 
 **Recommendation:** Implement a multi-signature wallet for the `minter` role. Consider adding a hard cap on the total supply of tokens or implementing a controlled minting schedule to limit the potential for inflation. If unlimited minting is a core design choice, ensure robust operational security for the `minter` and `owner` keys.
 
 
-### `H-01` — High Centralization of Administrative Control  *(Severity: High · Status: Unresolved)*
+### `M-02` — High Centralization of Administrative Control  *(Severity: Medium · Status: Unresolved)*
 
-The `Ownable` pattern grants significant administrative power to a single `owner` address, specifically the ability to `setMinter` and `transferOwnership` (7.3 Access Control). This central point of failure increases operational risk (7.8 Operations), as a compromised `owner` key could lead to unauthorized changes in the `minter` role, loss of administrative control, or other malicious actions.
+Not confirmed by static analysis (the model's own reading of the source). The `Ownable` pattern grants significant administrative power to a single `owner` address, specifically the ability to `setMinter` and `transferOwnership` (7.3 Access Control). This central point of failure increases operational risk (7.8 Operations), as a compromised `owner` key could lead to unauthorized changes in the `minter` role, loss of administrative control, or other malicious actions.
 
 **Recommendation:** Implement a multi-signature wallet for the `owner` address to distribute control and reduce the risk associated with a single point of failure. This would require multiple approvals for critical administrative actions, enhancing security.
 
 
 ### `L-01` — Immutability of Contract Logic  *(Severity: Low · Status: Unresolved)*
 
-The `PeerToken` contract is not upgradeable (7.7 Upgrades). While this eliminates risks associated with upgrade mechanisms, it means that any discovered vulnerabilities or desired feature changes would necessitate a new contract deployment and a potentially complex and costly migration of assets and user base. This lack of flexibility can be a long-term operational challenge.
+Not confirmed by static analysis (the model's own reading of the source). The `PeerToken` contract is not upgradeable (7.7 Upgrades). While this eliminates risks associated with upgrade mechanisms, it means that any discovered vulnerabilities or desired feature changes would necessitate a new contract deployment and a potentially complex and costly migration of assets and user base. This lack of flexibility can be a long-term operational challenge.
 
 **Recommendation:** Acknowledge the implications of immutability. For future projects, if flexibility for bug fixes or feature enhancements is critical, consider implementing an upgradeable proxy pattern (e.g., UUPS) to allow for future contract logic updates without redeployment.
 
 
 ### `I-01` — Single Address for Minter Role  *(Severity: Informational · Status: Unresolved)*
 
-The `minter` role is assigned to a single external address. While this is functional, for systems requiring higher security or distributed control, relying on a single address for such a powerful role can be a point of concern (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `minter` role is assigned to a single external address. While this is functional, for systems requiring higher security or distributed control, relying on a single address for such a powerful role can be a point of concern (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** Consider using a multi-signature wallet or a more robust role-based access control (RBAC) system (e.g., OpenZeppelin's `AccessControl` contract) for the `minter` role to enhance security and decentralize control, if appropriate for the project's long-term vision.
 

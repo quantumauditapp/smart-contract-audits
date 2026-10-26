@@ -2,14 +2,14 @@
 token: Telcoin
 ticker: TEL
 network: ethereum
-risk_score: 26
+risk_score: 17
 status: low
 date: 2026-09-01
 ---
 
 # Telcoin (TEL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 26/100 — 🟢 Low Risk**
+> **Risk Score: 17/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/telcoin-eth)
 
@@ -42,35 +42,35 @@ _🟡 1 Medium · 🟢 2 Low · ⚪ 2 Informational_
 
 ### `M-01` — ERC-20 `approve` Race Condition Vulnerability  *(Severity: Medium · Status: Unresolved)*
 
-The `approve` function in the ERC-20 standard is susceptible to a race condition. If a user approves an amount for a spender, and then attempts to change that approved amount to a different value, a malicious actor could front-run the second transaction. This could result in the spender being able to spend both the original and the new approved amounts, leading to an unintended transfer of funds. While `increaseApproval` and `decreaseApproval` functions are provided to mitigate this, the base `approve` function remains vulnerable.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function in the ERC-20 standard is susceptible to a race condition. If a user approves an amount for a spender, and then attempts to change that approved amount to a different value, a malicious actor could front-run the second transaction. This could result in the spender being able to spend both the original and the new approved amounts, leading to an unintended transfer of funds. While `increaseApproval` and `decreaseApproval` functions are provided to mitigate this, the base `approve` function remains vulnerable.
 
 **Recommendation:** Educate users to exclusively use `increaseApproval` and `decreaseApproval` functions when modifying allowances. If `approve` must be used, advise users to first set the allowance to zero before setting a new non-zero allowance, though this still involves two transactions and potential race conditions.
 
 
 ### `L-01` — Outdated Solidity Compiler Version  *(Severity: Low · Status: Unresolved)*
 
-The contract is compiled with Solidity version 0.4.18. This version is significantly outdated and lacks numerous security improvements, bug fixes, and gas optimizations introduced in later compiler versions (e.g., 0.5.x, 0.6.x, 0.8.x). While the contract is simple and uses SafeMath, relying on an old compiler can expose the contract to known compiler-level bugs or make it harder to integrate with modern tooling.
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version 0.4.18. This version is significantly outdated and lacks numerous security improvements, bug fixes, and gas optimizations introduced in later compiler versions (e.g., 0.5.x, 0.6.x, 0.8.x). While the contract is simple and uses SafeMath, relying on an old compiler can expose the contract to known compiler-level bugs or make it harder to integrate with modern tooling.
 
 **Recommendation:** For any new deployments or significant updates, consider migrating the contract to a more recent and actively supported Solidity compiler version (e.g., 0.8.x) to leverage enhanced security features, better error handling, and gas efficiency.
 
 
 ### `L-02` — SafeMath `div` Function Lacks Division-by-Zero Check  *(Severity: Low · Status: Unresolved)*
 
-The `div` function in the SafeMath library, as implemented, does not explicitly check for division by zero. While Solidity's default behavior for division by zero would revert the transaction, an explicit `require(b != 0)` check would provide clearer error messages and prevent potential unexpected behavior or gas consumption in certain edge cases. In this specific contract, the `div` function is not used, mitigating its direct impact.
+Not confirmed by static analysis (the model's own reading of the source). The `div` function in the SafeMath library, as implemented, does not explicitly check for division by zero. While Solidity's default behavior for division by zero would revert the transaction, an explicit `require(b != 0)` check would provide clearer error messages and prevent potential unexpected behavior or gas consumption in certain edge cases. In this specific contract, the `div` function is not used, mitigating its direct impact.
 
 **Recommendation:** If the `div` function were to be used in the future, consider adding an explicit `require(b != 0, "SafeMath: division by zero")` check at the beginning of the function for robustness and clarity.
 
 
 ### `I-01` — Centralized Initial Token Distribution  *(Severity: Informational · Status: Unresolved)*
 
-All `totalSupply` tokens are minted and assigned to a single `_distributor` address during contract deployment. This design choice centralizes the initial distribution of tokens to one entity. While common for initial token launches, it means the entire supply is controlled by a single address at genesis.
+Not confirmed by static analysis (the model's own reading of the source). All `totalSupply` tokens are minted and assigned to a single `_distributor` address during contract deployment. This design choice centralizes the initial distribution of tokens to one entity. While common for initial token launches, it means the entire supply is controlled by a single address at genesis.
 
 **Recommendation:** This is a design decision. Ensure the `_distributor` address is secured with robust multi-signature or hardware wallet solutions to prevent unauthorized access and control over the initial token supply.
 
 
 ### `I-02` — Use of `assert` in SafeMath Library  *(Severity: Informational · Status: Unresolved)*
 
-The SafeMath library uses `assert` statements for overflow/underflow checks. In Solidity versions 0.8.0 and later, `assert` failures consume all remaining gas, which can be costly. While this behavior is standard for Solidity 0.4.18 and `assert` is typically used for internal invariants, it's a pattern that has evolved towards `require` for input validation and `revert` for internal errors in newer Solidity versions.
+Not confirmed by static analysis (the model's own reading of the source). The SafeMath library uses `assert` statements for overflow/underflow checks. In Solidity versions 0.8.0 and later, `assert` failures consume all remaining gas, which can be costly. While this behavior is standard for Solidity 0.4.18 and `assert` is typically used for internal invariants, it's a pattern that has evolved towards `require` for input validation and `revert` for internal errors in newer Solidity versions.
 
 **Recommendation:** For future contracts or if migrating to newer Solidity versions, consider using `require` statements for all validation checks, including arithmetic safety, as they refund unused gas on failure. For this contract, the current implementation is standard for its Solidity version.
 

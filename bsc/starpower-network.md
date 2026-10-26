@@ -42,28 +42,28 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralized Control by EOA Owner  *(Severity: Medium · Status: Unresolved)*
 
-The `PeerToken` contract is controlled by an Externally Owned Account (EOA) at `0xb8169426da25f63f557189492cfb0e7b9f52ca7a`. This centralizes significant power, such as potential minting, burning, pausing, or parameter modification, depending on the token's implementation. An EOA is a single point of failure; if its private key is compromised, the entire contract's integrity could be at risk (7.3 Access Control, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The `PeerToken` contract is controlled by an Externally Owned Account (EOA) at `0xb8169426da25f63f557189492cfb0e7b9f52ca7a`. This centralizes significant power, such as potential minting, burning, pausing, or parameter modification, depending on the token's implementation. An EOA is a single point of failure; if its private key is compromised, the entire contract's integrity could be at risk (7.3 Access Control, 7.5 Governance).
 
 **Recommendation:** Consider implementing a multi-signature wallet (e.g., Gnosis Safe) for critical administrative functions. This distributes control among multiple trusted parties, significantly reducing the risk associated with a single compromised key. Alternatively, explore transitioning to a decentralized governance model.
 
 
 ### `L-01` — Lack of Upgradeability  *(Severity: Low · Status: Unresolved)*
 
-The contract is not deployed as an upgradeable proxy. This means that once deployed, its logic cannot be modified. While this eliminates upgrade-related risks (7.7 Upgrades), it also prevents bug fixes, feature enhancements, or parameter adjustments without a full redeployment and migration of user funds/states (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract is not deployed as an upgradeable proxy. This means that once deployed, its logic cannot be modified. While this eliminates upgrade-related risks (7.7 Upgrades), it also prevents bug fixes, feature enhancements, or parameter adjustments without a full redeployment and migration of user funds/states (7.8 Operations).
 
 **Recommendation:** For future deployments, evaluate the trade-offs between non-upgradeable and upgradeable contracts. If flexibility for bug fixes or feature additions is desired, consider using a well-audited proxy pattern (e.g., UUPS). If immutability is a core design principle, ensure the initial deployment is thoroughly tested and audited.
 
 
 ### `I-01` — Incomplete Source Code Provided for Core Contract  *(Severity: Informational · Status: Unresolved)*
 
-The source code for the main contract, `PeerToken`, was not provided for review. Only OpenZeppelin library dependencies (`Context.sol`, `ECDSA.sol`) were available. This prevents a comprehensive security assessment of the contract's specific business logic, state variables, and potential vulnerabilities (7.1 Architecture, 7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The source code for the main contract, `PeerToken`, was not provided for review. Only OpenZeppelin library dependencies (`Context.sol`, `ECDSA.sol`) were available. This prevents a comprehensive security assessment of the contract's specific business logic, state variables, and potential vulnerabilities (7.1 Architecture, 7.2 Code Security).
 
 **Recommendation:** Provide the complete and verified source code for the `PeerToken` contract to enable a thorough and accurate security audit. Without the full source, the overall risk assessment remains significantly limited.
 
 
 ### `I-02` — Reliance on Well-Audited OpenZeppelin Libraries  *(Severity: Informational · Status: Resolved)*
 
-The provided code snippet exclusively consists of standard, battle-tested OpenZeppelin contracts (`Context`, `ECDSA`). These libraries are widely used and have undergone extensive audits and community review, significantly reducing the risk of vulnerabilities within these specific components (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The provided code snippet exclusively consists of standard, battle-tested OpenZeppelin contracts (`Context`, `ECDSA`). These libraries are widely used and have undergone extensive audits and community review, significantly reducing the risk of vulnerabilities within these specific components (7.2 Code Security).
 
 **Recommendation:** Continue to leverage well-vetted and actively maintained libraries. Ensure that the versions used are up-to-date and compatible with the project's Solidity compiler version to benefit from the latest security patches and improvements.
 
@@ -106,11 +106,11 @@ The provided code snippet exclusively consists of standard, battle-tested OpenZe
 
 ### Is Starpower Network a scam?
 
-Based on automated analysis, Starpower Network scores 63/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Starpower Network scores 62/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Starpower Network safe to buy?
 
-Our scanner flagged a risk score of 63/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 62/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Starpower Network been audited?
 

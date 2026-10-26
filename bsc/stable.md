@@ -2,14 +2,14 @@
 token: STABLE
 ticker: STABLE
 network: bsc
-risk_score: 56
+risk_score: 44
 status: medium
 date: 2026-07-24
 ---
 
 # STABLE (STABLE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 56/100 — 🟡 Medium Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/stable-bsc)
 
@@ -50,28 +50,28 @@ _🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralized Control by Owner  *(Severity: Medium · Status: Unresolved)*
 
-The `owner` of the `StableOFTUpgradeable` contract, set during initialization, holds significant administrative privileges inherited from `OFTUpgradeable` and `OwnableUpgradeable`. These privileges include pausing token transfers, setting trusted remote LayerZero endpoints, and transferring ownership. While the prefill data indicates the owner is a 3-of-5 multisig, which mitigates single-point-of-failure risk, the concentration of power remains.
+Not confirmed by static analysis (the model's own reading of the source). The `owner` of the `StableOFTUpgradeable` contract, set during initialization, holds significant administrative privileges inherited from `OFTUpgradeable` and `OwnableUpgradeable`. These privileges include pausing token transfers, setting trusted remote LayerZero endpoints, and transferring ownership. While the prefill data indicates the owner is a 3-of-5 multisig, which mitigates single-point-of-failure risk, the concentration of power remains.
 
 **Recommendation:** Ensure robust operational security for the multisig, including secure key management, strict internal procedures for transaction approval, and regular review of multisig signers. Implement a clear emergency response plan for potential misuse of these privileges.
 
 
 ### `M-02` — Dependency on LayerZero Protocol Security  *(Severity: Medium · Status: Unresolved)*
 
-The `StableOFTUpgradeable` contract is built upon the LayerZero protocol, specifically `OFTUpgradeable` and `ILayerZeroEndpointV2`. The security and functionality of this token are directly dependent on the integrity, correctness, and ongoing security of the underlying LayerZero infrastructure and smart contracts. Any vulnerability or misconfiguration within the LayerZero protocol could directly impact the cross-chain functionality and security of this token.
+Not confirmed by static analysis (the model's own reading of the source). The `StableOFTUpgradeable` contract is built upon the LayerZero protocol, specifically `OFTUpgradeable` and `ILayerZeroEndpointV2`. The security and functionality of this token are directly dependent on the integrity, correctness, and ongoing security of the underlying LayerZero infrastructure and smart contracts. Any vulnerability or misconfiguration within the LayerZero protocol could directly impact the cross-chain functionality and security of this token.
 
 **Recommendation:** Continuously monitor LayerZero's official security announcements, audits, and updates. Ensure that the LayerZero endpoint address configured for this contract is the official and correct one for the target network. Consider implementing circuit breakers or emergency pause mechanisms if LayerZero experiences critical issues.
 
 
 ### `L-01` — Potential for Initialization Front-Running (Mitigated)  *(Severity: Low · Status: Unresolved)*
 
-The `initialize` function, which sets the token's name, symbol, and crucially, the contract owner (`_delegate`), is protected by the `initializer` modifier. Additionally, the constructor calls `_disableInitializers()`. While these mechanisms prevent re-initialization, a theoretical front-running attack during the brief window between contract deployment and the first `initialize` call could allow an attacker to become the owner if the deployment process is not atomic or carefully managed. However, in practice, with standard proxy deployment scripts, the `initialize` call is typically executed immediately by the deployer, making this scenario highly improbable.
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function, which sets the token's name, symbol, and crucially, the contract owner (`_delegate`), is protected by the `initializer` modifier. Additionally, the constructor calls `_disableInitializers()`. While these mechanisms prevent re-initialization, a theoretical front-running attack during the brief window between contract deployment and the first `initialize` call could allow an attacker to become the owner if the deployment process is not atomic or carefully managed. However, in practice, with standard proxy deployment scripts, the `initialize` call is typically executed immediately by the deploye
 
 **Recommendation:** Ensure that the `initialize` function is called immediately and atomically with the proxy deployment, or by a trusted, whitelisted address, to prevent any window for front-running. This is a standard practice for proxy deployments.
 
 
 ### `I-01` — Minimal Custom Logic Reduces Attack Surface  *(Severity: Informational · Status: Unresolved)*
 
-The `StableOFTUpgradeable` contract introduces very minimal custom logic, primarily serving as a thin wrapper around the well-audited `OFTUpgradeable` and `OwnableUpgradeable` contracts from LayerZero and OpenZeppelin, respectively. It does not add new state variables or complex business logic beyond initialization. This design choice significantly reduces the potential attack surface for vulnerabilities specific to this contract's implementation.
+Not confirmed by static analysis (the model's own reading of the source). The `StableOFTUpgradeable` contract introduces very minimal custom logic, primarily serving as a thin wrapper around the well-audited `OFTUpgradeable` and `OwnableUpgradeable` contracts from LayerZero and OpenZeppelin, respectively. It does not add new state variables or complex business logic beyond initialization. This design choice significantly reduces the potential attack surface for vulnerabilities specific to this contract's implementation.
 
 **Recommendation:** N/A (This is a strength of the current implementation and contributes positively to its security posture).
 
@@ -114,11 +114,11 @@ The `StableOFTUpgradeable` contract introduces very minimal custom logic, primar
 
 ### Is STABLE a scam?
 
-Based on automated analysis, STABLE scores 64/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, STABLE scores 44/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is STABLE safe to buy?
 
-Our scanner flagged a risk score of 64/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 44/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has STABLE been audited?
 

@@ -2,14 +2,14 @@
 token: The Gamestop Bull 
 ticker: GMEBULL
 network: solana
-risk_score: 44
-status: medium
+risk_score: 27
+status: low
 date: 2026-07-26
 ---
 
 # The Gamestop Bull  (GMEBULL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-gamestop-bull-sol)
 
@@ -25,9 +25,9 @@ The audit of the GMEBULL SPL Token Mint reveals a Medium risk profile primarily 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The GMEBULL token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, which is a positive security indicator as it prevents further token… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a Medium risk due to its very recent launch, with the DEX pair created only 6 days ago, limiting historical data for analysis. Current liquidity stands at $23,249, with a 24-hour… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint and Freeze, are revoked, preventing post-launch changes to supply or account states. It utilizes the Token-2022 program but does not have a Transfer Hook or Default… |
+| **Technical** | 10/10 | Low | The GMEBULL token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, which is a positive security indicator as it prevents further token… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a Medium risk due to its very recent launch, with the DEX pair created only 6 days ago, limiting historical data for analysis. Current liquidity stands at $23,249, with a 24-hour… |
+| **Upgrades** | 10/10 | Low | The token's core authorities, Mint and Freeze, are revoked, preventing post-launch changes to supply or account states. It utilizes the Token-2022 program but does not have a Transfer Hook or Default… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3075 buys / 3003 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,18 +69,18 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is The Gamestop Bull  a scam?
 
-Based on automated analysis, The Gamestop Bull  scores 78/100 (Critical Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, The Gamestop Bull  scores 27/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is The Gamestop Bull  safe to buy?
 
-Our scanner flagged a risk score of 78/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 27/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has The Gamestop Bull  been audited?
 

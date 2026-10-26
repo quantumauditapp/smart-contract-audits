@@ -2,14 +2,14 @@
 token: The Top Floor Boss
 ticker: TJR
 network: solana
-risk_score: 36
-status: medium
+risk_score: 14
+status: low
 date: 2026-09-02
 ---
 
 # The Top Floor Boss (TJR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 14/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-top-floor-boss-sol)
 
@@ -25,9 +25,9 @@ The token mint for The Top Floor Boss (TJR) exhibits high holder concentration, 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen post-launch. No transfer hook… |
-| **Governance / Economics** | 2/10 | High | The token exhibits high holder concentration, with the top 10 accounts controlling 88.28% of the total supply, which presents a substantial risk of market manipulation. Current DEX liquidity stands… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token is an SPL Token-2022, but no upgradable extensions… |
+| **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen post-launch. No transfer hook… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits high holder concentration, with the top 10 accounts controlling 88.28% of the total supply, which presents a substantial risk of market manipulation. Current DEX liquidity stands… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both revoked, preventing any further changes to the token's supply or account freeze status. The token is an SPL Token-2022, but no upgradable extensions… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ Top 10 token accounts hold 88.28% of supply. Coordinated sell-off would crash pr
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4836 buys / 4466 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Top 10 token accounts hold 88.28% of supply. Coordinated sell-off would crash pr
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

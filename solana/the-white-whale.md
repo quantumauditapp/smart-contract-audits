@@ -2,14 +2,14 @@
 token: The White Whale
 ticker: WHITEWHALE
 network: solana
-risk_score: 37
-status: medium
+risk_score: 15
+status: low
 date: 2026-08-30
 ---
 
 # The White Whale (WHITEWHALE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 15/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-white-whale-sol)
 
@@ -25,9 +25,9 @@ The White Whale token exhibits a high risk due to extreme holder concentration, 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token operates on the standard `spl-token` program, indicating a well-understood and widely supported implementation (7.1 Architecture). Both the mint authority and freeze authority have been… |
-| **Governance / Economics** | 2/10 | High | A significant concern is the high holder concentration, with the top 10 accounts controlling 82.33% of the total supply, posing a substantial risk of price manipulation or sudden value depreciation… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both permanently revoked, meaning no further tokens can be minted and no accounts can be frozen, providing stability against malicious changes (7.7… |
+| **Technical** | 10/10 | Low | The token operates on the standard `spl-token` program, indicating a well-understood and widely supported implementation (7.1 Architecture). Both the mint authority and freeze authority have been… |
+| **Governance / Economics** | 6/10 | Medium | A significant concern is the high holder concentration, with the top 10 accounts controlling 82.33% of the total supply, posing a substantial risk of price manipulation or sudden value depreciation… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both permanently revoked, meaning no further tokens can be minted and no accounts can be frozen, providing stability against malicious changes (7.7… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ Top 10 token accounts hold 82.33% of supply. Coordinated sell-off would crash pr
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 387 buys / 223 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Top 10 token accounts hold 82.33% of supply. Coordinated sell-off would crash pr
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

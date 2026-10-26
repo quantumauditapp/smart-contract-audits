@@ -2,14 +2,14 @@
 token: Tagger
 ticker: TAG
 network: bsc
-risk_score: 5
+risk_score: 3
 status: low
 date: 2026-07-24
 ---
 
 # Tagger (TAG) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 5/100 — 🟢 Low Risk**
+> **Risk Score: 3/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tagger-bsc)
 
@@ -42,35 +42,35 @@ _🟢 1 Low · ⚪ 4 Informational_
 
 ### `L-01` — ERC20 Approval Race Condition  *(Severity: Low · Status: Unresolved)*
 
-The standard `approve()` function in ERC20 tokens is susceptible to a known race condition. If a user approves an amount, and then attempts to change that approval to a different amount, an attacker observing the transaction might front-run the second `approve()` call. They could then spend the original allowance before the new allowance takes effect, and then spend the new allowance, effectively spending more than intended (7.2 Code Security, 7.4 Economic). OpenZeppelin mitigates this with `increaseAllowance` and `decreaseAllowance`, but the base `approve` function still carries this risk.
+Not confirmed by static analysis (the model's own reading of the source). The standard `approve()` function in ERC20 tokens is susceptible to a known race condition. If a user approves an amount, and then attempts to change that approval to a different amount, an attacker observing the transaction might front-run the second `approve()` call. They could then spend the original allowance before the new allowance takes effect, and then spend the new allowance, effectively spending more than intended (7.2 Code Security, 7.4 Economic). OpenZeppelin mitigates this with `increaseAllowance` and `decreaseAllowance`, but the base `approve` function still carries this risk.
 
 **Recommendation:** Advise users to use `increaseAllowance()` and `decreaseAllowance()` functions instead of directly calling `approve()` when modifying an existing allowance. If `approve()` must be used, recommend setting the allowance to zero first, then to the desired new value.
 
 
 ### `I-01` — Reliance on Well-Audited OpenZeppelin Libraries  *(Severity: Informational · Status: Unresolved)*
 
-The provided contract code utilizes standard and extensively audited OpenZeppelin libraries for `ReentrancyGuard` and `ERC20` functionality. These libraries are industry-standard and have a strong track record of security, significantly reducing the risk of vulnerabilities in these core components (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The provided contract code utilizes standard and extensively audited OpenZeppelin libraries for `ReentrancyGuard` and `ERC20` functionality. These libraries are industry-standard and have a strong track record of security, significantly reducing the risk of vulnerabilities in these core components (7.2 Code Security).
 
 **Recommendation:** Continue to leverage well-maintained and audited libraries. Ensure that any custom logic built upon these libraries is also thoroughly reviewed and tested to maintain the overall security posture.
 
 
 ### `I-02` — Adherence to ERC20 Standard  *(Severity: Informational · Status: Unresolved)*
 
-The `ERC20` contract implementation adheres to the official ERC20 token standard (EIP-20), including required functions like `totalSupply`, `balanceOf`, `transfer`, `transferFrom`, `approve`, and associated events. This ensures compatibility with a wide range of wallets, exchanges, and DeFi protocols (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The `ERC20` contract implementation adheres to the official ERC20 token standard (EIP-20), including required functions like `totalSupply`, `balanceOf`, `transfer`, `transferFrom`, `approve`, and associated events. This ensures compatibility with a wide range of wallets, exchanges, and DeFi protocols (7.1 Architecture).
 
 **Recommendation:** Maintain strict adherence to the ERC20 standard in any further modifications or extensions to ensure continued interoperability and predictable behavior.
 
 
 ### `I-03` — Robust Reentrancy Protection  *(Severity: Informational · Status: Unresolved)*
 
-The `ReentrancyGuard` contract provides a robust and widely accepted mechanism to prevent reentrancy attacks. The `nonReentrant` modifier ensures that a function cannot be called again before its previous execution has completed, effectively mitigating a common class of critical vulnerabilities (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `ReentrancyGuard` contract provides a robust and widely accepted mechanism to prevent reentrancy attacks. The `nonReentrant` modifier ensures that a function cannot be called again before its previous execution has completed, effectively mitigating a common class of critical vulnerabilities (7.2 Code Security).
 
 **Recommendation:** Ensure that any functions in the `TaggerToken` contract that perform external calls or transfer assets are appropriately protected with the `nonReentrant` modifier, if applicable.
 
 
 ### `I-04` — Incomplete Contract Code Provided for Audit  *(Severity: Informational · Status: Unresolved)*
 
-The audit was conducted on partial source code, specifically OpenZeppelin's `ReentrancyGuard` and `ERC20` base contracts. The full implementation of the `TaggerToken` contract, which would contain specific business logic, state variables, and interactions, was not provided. This limits the scope of the audit to the foundational components only (7.1 Architecture, 7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The audit was conducted on partial source code, specifically OpenZeppelin's `ReentrancyGuard` and `ERC20` base contracts. The full implementation of the `TaggerToken` contract, which would contain specific business logic, state variables, and interactions, was not provided. This limits the scope of the audit to the foundational components only (7.1 Architecture, 7.2 Code Security).
 
 **Recommendation:** For a comprehensive security assessment, the complete and final source code of the `TaggerToken` contract, including all inherited contracts and custom logic, must be provided for a full audit.
 
@@ -113,11 +113,11 @@ The audit was conducted on partial source code, specifically OpenZeppelin's `Ree
 
 ### Is Tagger a scam?
 
-Based on automated analysis, Tagger scores 64/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Tagger scores 3/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Tagger safe to buy?
 
-Our scanner flagged a risk score of 64/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 3/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Tagger been audited?
 

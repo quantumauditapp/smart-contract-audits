@@ -25,9 +25,9 @@ The audit of the SFI Token (ERC20) contract identified a critical flaw where the
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract implements a standard ERC20 token using well-vetted OpenZeppelin libraries like SafeMath and Address, ensuring robust arithmetic operations (7.2 Code Security). However, a critical… |
-| **Governance / Economics** | 2/10 | High | The economic model is severely impacted by the critical issue of an uninitialized token supply, meaning no tokens can be created or distributed (7.4 Economic). There are no explicit governance… |
-| **Upgrades** | 2/10 | High | The contract is a standard, non-upgradeable ERC20 implementation. There are no proxy patterns or upgrade mechanisms present, which eliminates upgrade-related risks (7.7 Upgrades). This means the… |
+| **Technical** | 8/10 | Low | The contract implements a standard ERC20 token using well-vetted OpenZeppelin libraries like SafeMath and Address, ensuring robust arithmetic operations (7.2 Code Security). However, a critical… |
+| **Governance / Economics** | 3/10 | High | The economic model is severely impacted by the critical issue of an uninitialized token supply, meaning no tokens can be created or distributed (7.4 Economic). There are no explicit governance… |
+| **Upgrades** | 3/10 | High | The contract is a standard, non-upgradeable ERC20 implementation. There are no proxy patterns or upgrade mechanisms present, which eliminates upgrade-related risks (7.7 Upgrades). This means the… |
 
 ## LP Distribution
 
@@ -38,25 +38,25 @@ The audit of the SFI Token (ERC20) contract identified a critical flaw where the
 
 ## Security Findings
 
-_🔴 1 Critical · ⚪ 2 Informational_
+_🟡 1 Medium · ⚪ 2 Informational_
 
-### `C-01` — Missing Initial Token Supply  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Missing Initial Token Supply  *(Severity: Medium · Status: Unresolved)*
 
-The `ERC20` contract's constructor initializes token metadata (`name`, `symbol`, `decimals`) but does not mint any initial supply to an owner or deployer address. The `_mint` function is `internal virtual` and is not called within the provided `ERC20` constructor. Consequently, `_totalSupply` remains 0, and no tokens can ever be created or transferred, rendering the token completely unusable upon deployment.
+Not confirmed by static analysis (the model's own reading of the source). The `ERC20` contract's constructor initializes token metadata (`name`, `symbol`, `decimals`) but does not mint any initial supply to an owner or deployer address. The `_mint` function is `internal virtual` and is not called within the provided `ERC20` constructor. Consequently, `_totalSupply` remains 0, and no tokens can ever be created or transferred, rendering the token completely unusable upon deployment.
 
 **Recommendation:** A derived contract must implement a constructor that calls `_mint(deployerAddress, initialSupply)` to create the initial token supply upon deployment. For example: `constructor(string memory name_, string memory symbol_, uint256 initialSupply_) ERC20(name_, symbol_) { _mint(msg.sender, initialSupply_); }`.
 
 
 ### `I-01` — Older Solidity Compiler Version  *(Severity: Informational · Status: Unresolved)*
 
-The contract uses Solidity version `^0.7.1`. Newer versions (e.g., `^0.8.0` and above) include additional safety checks (like default overflow/underflow protection, removing the need for SafeMath in many cases) and compiler optimizations. While SafeMath is used, leveraging newer compiler features can further enhance security and efficiency.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses Solidity version `^0.7.1`. Newer versions (e.g., `^0.8.0` and above) include additional safety checks (like default overflow/underflow protection, removing the need for SafeMath in many cases) and compiler optimizations. While SafeMath is used, leveraging newer compiler features can further enhance security and efficiency.
 
 **Recommendation:** Consider upgrading to a more recent stable Solidity compiler version (e.g., `^0.8.x`) to benefit from improved security features, gas efficiencies, and a more modern development environment.
 
 
 ### `I-02` — ERC20 `approve` Race Condition  *(Severity: Informational · Status: Unresolved)*
 
-The standard `approve` function is susceptible to a known front-running vulnerability. If a user approves an amount `X` for a spender, and then attempts to approve a new amount `Y`, a malicious actor could front-run the second transaction, spending the original `X` amount. The `Y` approval would then still be valid, potentially allowing the spender to spend `X + Y` in total. While `increaseAllowance` and `decreaseAllowance` functions are provided to mitigate this, the base `approve` function remains.
+Not confirmed by static analysis (the model's own reading of the source). The standard `approve` function is susceptible to a known front-running vulnerability. If a user approves an amount `X` for a spender, and then attempts to approve a new amount `Y`, a malicious actor could front-run the second transaction, spending the original `X` amount. The `Y` approval would then still be valid, potentially allowing the spender to spend `X + Y` in total. While `increaseAllowance` and `decreaseAllowance` functions are provided to mitigate this, the base `approve` function remains.
 
 **Recommendation:** Users should be advised to use `increaseAllowance` and `decreaseAllowance` functions instead of directly calling `approve` when modifying existing allowances, as these functions are designed to prevent this specific front-running vector.
 

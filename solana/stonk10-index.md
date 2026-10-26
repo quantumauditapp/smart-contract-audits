@@ -2,14 +2,14 @@
 token: Stonk10 Index
 ticker: STONK10
 network: solana
-risk_score: 17
+risk_score: 0
 status: low
 date: 2026-09-19
 ---
 
 # Stonk10 Index (STONK10) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 17/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/stonk10-index-sol)
 
@@ -26,8 +26,8 @@ The Stonk10 Index token is a newly launched SPL Token-2022 with its DEX pair cre
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Stonk10 Index token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts… |
-| **Governance / Economics** | 6/10 | Medium | The token's DEX pair is very new, having been created only 6 days ago, which means there is insufficient historical data to assess long-term market behavior. While liquidity is $179,995, the 24-hour… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the Stonk10 Index token have both been revoked, preventing further issuance or freezing of accounts. The token utilizes the spl-token-2022 program but does… |
+| **Governance / Economics** | 9/10 | Low | The token's DEX pair is very new, having been created only 6 days ago, which means there is insufficient historical data to assess long-term market behavior. While liquidity is $179,995, the 24-hour… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority for the Stonk10 Index token have both been revoked, preventing further issuance or freezing of accounts. The token utilizes the spl-token-2022 program but does… |
 
 ## Security Findings
 
@@ -61,13 +61,13 @@ Token name, symbol, or image can be changed post-launch, as indicated by 'metada
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4172 buys / 3984 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by 'metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: Superform
 ticker: UP
 network: base
-risk_score: 47
+risk_score: 45
 status: medium
 date: 2026-08-17
 ---
 
 # Superform (UP) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 47/100 — 🟡 Medium Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/superform-base)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Centralized Ownership (Mitigated by Multisig)  *(Severity: Low · Status: Unresolved)*
 
-The `UpOFT` contract utilizes the `Ownable` pattern, granting a single address (the `_delegate` passed in the constructor) exclusive control over sensitive functions such as `sweepNative` and potentially other administrative functions inherited from the `OFT` base contract. While this pattern is common, it introduces a single point of failure if the owner's private key is compromised.
+Not confirmed by static analysis (the model's own reading of the source). The `UpOFT` contract utilizes the `Ownable` pattern, granting a single address (the `_delegate` passed in the constructor) exclusive control over sensitive functions such as `sweepNative` and potentially other administrative functions inherited from the `OFT` base contract. While this pattern is common, it introduces a single point of failure if the owner's private key is compromised.
 
 **Recommendation:** The provided information indicates the owner address is a multisig with a 2/4 threshold. This significantly mitigates the risk of a single point of failure. Ensure the multisig signers are distinct, trusted individuals and that the multisig itself is securely managed through robust operational security practices.
 
 
 ### `I-01` — Reliance on LayerZero Protocol Security  *(Severity: Informational · Status: Unresolved)*
 
-The `UpOFT` contract heavily relies on the security and correct functioning of the LayerZero v2 protocol and its endpoint. As an Omni-chain Fungible Token (OFT), its core cross-chain transfer capabilities are entirely dependent on the LayerZero infrastructure. Any vulnerabilities, misconfigurations, or operational issues within the LayerZero protocol could directly impact the `UpOFT` token's cross-chain functionality, integrity, and overall economic stability.
+Not confirmed by static analysis (the model's own reading of the source). The `UpOFT` contract heavily relies on the security and correct functioning of the LayerZero v2 protocol and its endpoint. As an Omni-chain Fungible Token (OFT), its core cross-chain transfer capabilities are entirely dependent on the LayerZero infrastructure. Any vulnerabilities, misconfigurations, or operational issues within the LayerZero protocol could directly impact the `UpOFT` token's cross-chain functionality, integrity, and overall economic stability.
 
 **Recommendation:** It is crucial to continuously monitor LayerZero security announcements, audits, and operational status. Ensure that the configured `_lzEndpoint` address is the official, verified, and most secure endpoint for the respective network. Maintain a robust incident response plan for potential issues originating from external dependencies.
 
 
 ### `I-02` — Non-Upgradeable Contract Design  *(Severity: Informational · Status: Unresolved)*
 
-The `UpOFT` contract is deployed as a standard, non-upgradeable contract. This design choice means that once deployed, its code cannot be modified. While this simplifies the contract's architecture and eliminates risks associated with upgrade mechanisms (e.g., proxy vulnerabilities), it also implies that any discovered bugs, security vulnerabilities, or desired feature enhancements would necessitate a complete redeployment of the contract. Such a redeployment would require users to migrate their tokens to the new contract, which can be a complex, costly, and disruptive process.
+Not confirmed by static analysis (the model's own reading of the source). The `UpOFT` contract is deployed as a standard, non-upgradeable contract. This design choice means that once deployed, its code cannot be modified. While this simplifies the contract's architecture and eliminates risks associated with upgrade mechanisms (e.g., proxy vulnerabilities), it also implies that any discovered bugs, security vulnerabilities, or desired feature enhancements would necessitate a complete redeployment of the contract. Such a redeployment would require users to migrate their tokens to the new contract, which can be a complex, costly, and disruptive process.
 
 **Recommendation:** For contracts intended for long-term use or those with evolving feature sets, consider implementing an upgradeable proxy pattern (e.g., UUPS, Transparent). If immutability is a deliberate design choice, ensure thorough testing and auditing to minimize the likelihood of critical bugs, and have a clear migration strategy in place should a redeployment become necessary.
 

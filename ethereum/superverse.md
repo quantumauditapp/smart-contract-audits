@@ -2,14 +2,14 @@
 token: SuperVerse
 ticker: SUPER
 network: ethereum
-risk_score: 54
+risk_score: 39
 status: medium
 date: 2026-07-31
 ---
 
 # SuperVerse (SUPER) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 54/100 — 🟡 Medium Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/superverse-eth)
 
@@ -25,8 +25,8 @@ The SuperFarm Token contract implements a standard ERC-20 token with a fixed sup
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract is built upon battle-tested OpenZeppelin libraries (ERC20Capped, Ownable), which enhances its foundational security (7.2 Code Security). The voting mechanism is a well-understood pattern… |
-| **Governance / Economics** | 2/10 | High | The token features a fixed supply cap, preventing inflationary attacks beyond the initial design (7.4 Economic). The voting delegation mechanism is standard, promoting decentralized governance… |
+| **Technical** | 8/10 | Low | The contract is built upon battle-tested OpenZeppelin libraries (ERC20Capped, Ownable), which enhances its foundational security (7.2 Code Security). The voting mechanism is a well-understood pattern… |
+| **Governance / Economics** | 3/10 | High | The token features a fixed supply cap, preventing inflationary attacks beyond the initial design (7.4 Economic). The voting delegation mechanism is standard, promoting decentralized governance… |
 | **Upgrades** | 5/10 | Medium | The contract is not designed to be upgradeable. This simplifies the architecture by removing the complexities and risks associated with proxy patterns (7.7 Upgrades). However, it means that any… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The SuperFarm Token contract implements a standard ERC-20 token with a fixed sup
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 2 Low_
-
-### `H-01` — Centralized Minting Authority  *(Severity: High · Status: Unresolved)*
-
-The `mint` function is restricted to the contract owner, allowing them to mint tokens up to the predefined cap. This grants significant control over the token supply and distribution, which could influence governance outcomes if the owner mints tokens to themselves or allied addresses without proper oversight. (7.3 Access Control, 7.4 Economic)
-
-**Recommendation:** Consider implementing a multi-signature wallet for ownership of the `mint` function or a time-locked mechanism for minting operations. This would decentralize control and increase transparency, reducing the risk of a single point of failure or malicious action.
-
+_🟡 2 Medium · 🟢 2 Low_
 
 ### `M-01` — `delegateBySig` Expiry Front-running  *(Severity: Medium · Status: Unresolved)*
 
-The `delegateBySig` function uses `now <= expiry` to check signature validity. This check is susceptible to miner front-running, where a malicious miner could manipulate transaction inclusion order to cause a valid signature to expire or an expired signature to be included, within the same block. (7.2 Code Security, 7.6 External)
+Not confirmed by static analysis (the model's own reading of the source). The `delegateBySig` function uses `now <= expiry` to check signature validity. This check is susceptible to miner front-running, where a malicious miner could manipulate transaction inclusion order to cause a valid signature to expire or an expired signature to be included, within the same block. (7.2 Code Security, 7.6 External)
 
 **Recommendation:** While this is a common pattern and a general characteristic of blockchain transactions, users should be aware of this potential front-running risk for time-sensitive delegation. For critical operations, consider alternative mechanisms or ensure users understand the implications.
 
 
+### `M-02` — Centralized Minting Authority  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function is restricted to the contract owner, allowing them to mint tokens up to the predefined cap. This grants significant control over the token supply and distribution, which could influence governance outcomes if the owner mints tokens to themselves or allied addresses without proper oversight. (7.3 Access Control, 7.4 Economic)
+
+**Recommendation:** Consider implementing a multi-signature wallet for ownership of the `mint` function or a time-locked mechanism for minting operations. This would decentralize control and increase transparency, reducing the risk of a single point of failure or malicious action.
+
+
 ### `L-01` — Older Solidity Compiler Version  *(Severity: Low · Status: Unresolved)*
 
-The contract uses Solidity 0.6.12. While functional and compatible with OpenZeppelin 3.x, newer versions (e.g., 0.8.x) include built-in overflow/underflow checks by default, reducing reliance on SafeMath libraries and potentially simplifying code while enhancing security. (7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). The contract uses Solidity 0.6.12. While functional and compatible with OpenZeppelin 3.x, newer versions (e.g., 0.8.x) include built-in overflow/underflow checks by default, reducing reliance on SafeMath libraries and potentially simplifying code while enhancing security. (7.2 Code Security)
 
 **Recommendation:** Consider upgrading to a more recent Solidity compiler version (e.g., 0.8.x) for future deployments or significant updates to benefit from improved security features, optimizations, and reduced bytecode size. Ensure thorough testing if upgrading.
 
 
 ### `L-02` — Lack of Emergency Pause Mechanism  *(Severity: Low · Status: Unresolved)*
 
-The contract lacks a mechanism to pause critical operations (e.g., transfers, minting) in case of an emergency, such as a discovered vulnerability in the token itself or a major external exploit impacting the ecosystem. This limits the ability to react swiftly to unforeseen events. (7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks a mechanism to pause critical operations (e.g., transfers, minting) in case of an emergency, such as a discovered vulnerability in the token itself or a major external exploit impacting the ecosystem. This limits the ability to react swiftly to unforeseen events. (7.8 Operations)
 
 **Recommendation:** For future iterations, consider implementing a `Pausable` mechanism (e.g., from OpenZeppelin) controlled by a multi-signature wallet or governance. This would provide an emergency stop-gap to mitigate damage in critical situations.
 

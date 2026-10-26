@@ -2,14 +2,14 @@
 token: TAOT
 ticker: TAOT
 network: base
-risk_score: 53
+risk_score: 46
 status: medium
 date: 2026-08-11
 ---
 
 # TAOT (TAOT) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 53/100 — 🟡 Medium Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/taot-base)
 
@@ -42,28 +42,28 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralization Risk via AccessControl  *(Severity: Medium · Status: Unresolved)*
 
-The contract utilizes OpenZeppelin's AccessControl, which assigns significant power to the `DEFAULT_ADMIN_ROLE`. This role, typically held by a single address or a multisig, can grant or revoke other roles, and if `_mint` or `_burn` functions are exposed with `onlyRole` modifiers, it can control the token's total supply. This centralization introduces a single point of failure, where compromise of the admin key could lead to severe consequences for the token's integrity and value (7.3 Access Control, 7.4 Economic, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes OpenZeppelin's AccessControl, which assigns significant power to the `DEFAULT_ADMIN_ROLE`. This role, typically held by a single address or a multisig, can grant or revoke other roles, and if `_mint` or `_burn` functions are exposed with `onlyRole` modifiers, it can control the token's total supply. This centralization introduces a single point of failure, where compromise of the admin key could lead to severe consequences for the token's integrity and value (7.3 Access Control, 7.4 Economic, 7.5 Governance).
 
 **Recommendation:** Implement robust security practices for the `DEFAULT_ADMIN_ROLE` key, such as using a hardware wallet or a well-secured multisig. Consider decentralizing control over time by transferring administrative roles to a DAO or a more distributed set of entities. Clearly document the responsibilities and powers associated with each role.
 
 
 ### `L-01` — Potential `_totalSupply` Underflow in `_burn` (Unchecked Arithmetic)  *(Severity: Low · Status: Unresolved)*
 
-In the `_update` function, when `to == address(0)` (representing a burn operation), the `_totalSupply -= value` operation is performed within an `unchecked` block. While the `_balances[from]` check ensures the sender has sufficient tokens, there is no explicit check that `_totalSupply` is greater than or equal to `value` before decrementing `_totalSupply`. Although OpenZeppelin's ERC20 design generally ensures `_totalSupply` remains consistent with the sum of balances, a desynchronization could theoretically lead to an underflow (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). In the `_update` function, when `to == address(0)` (representing a burn operation), the `_totalSupply -= value` operation is performed within an `unchecked` block. While the `_balances[from]` check ensures the sender has sufficient tokens, there is no explicit check that `_totalSupply` is greater than or equal to `value` before decrementing `_totalSupply`. Although OpenZeppelin's ERC20 design generally ensures `_totalSupply` remains consistent with the sum of balances, a desynchronization could theoretically lead to an underflow (7.2 Code Security).
 
 **Recommendation:** While highly unlikely to be exploitable in a standard OpenZeppelin setup, for maximum robustness, consider adding an explicit `require(_totalSupply >= value, 'ERC20InsufficientTotalSupply');` check before the `unchecked` block for `_totalSupply -= value` in the `_update` function when `to == address(0)`.
 
 
 ### `I-01` — Incomplete Source Code Provided  *(Severity: Informational · Status: Unresolved)*
 
-The provided Solidity source code is truncated, specifically within the `AccessControl` contract definition. This prevents a complete and thorough audit of all functionalities, especially any custom logic or full implementation details of the access control mechanisms (7.1 Architecture, 7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The provided Solidity source code is truncated, specifically within the `AccessControl` contract definition. This prevents a complete and thorough audit of all functionalities, especially any custom logic or full implementation details of the access control mechanisms (7.1 Architecture, 7.2 Code Security).
 
 **Recommendation:** Provide the complete and verified source code for all contracts to enable a comprehensive security assessment. Ensure that the deployed bytecode matches the provided source code exactly.
 
 
 ### `I-02` — ERC20 Standard Limitations (Front-Running on `approve`)  *(Severity: Informational · Status: Unresolved)*
 
-The ERC20 `approve` function is susceptible to a known front-running vulnerability. If a user increases an allowance from X to Y, a malicious actor could front-run this transaction, spend the original X allowance, and then the user's transaction would set the allowance to Y, effectively allowing the malicious actor to spend X+Y. While OpenZeppelin's `_spendAllowance` mitigates some risks by checking `currentAllowance < value`, the core `approve` pattern remains vulnerable to this specific sequence (7.2 Code Security, 7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The ERC20 `approve` function is susceptible to a known front-running vulnerability. If a user increases an allowance from X to Y, a malicious actor could front-run this transaction, spend the original X allowance, and then the user's transaction would set the allowance to Y, effectively allowing the malicious actor to spend X+Y. While OpenZeppelin's `_spendAllowance` mitigates some risks by checking `currentAllowance < value`, the core `approve` pattern remains vulnerable to this specific sequence (7.2 Code Security, 7.4 Economic).
 
 **Recommendation:** Users should be advised to set allowances to zero before increasing them, or to use `increaseAllowance`/`decreaseAllowance` functions if available in a derived contract. Developers should be aware of this limitation when designing systems that rely on ERC20 allowances.
 

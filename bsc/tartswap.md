@@ -2,14 +2,14 @@
 token: TartSwap
 ticker: TART
 network: bsc
-risk_score: 76
-status: high
+risk_score: 36
+status: medium
 date: 2026-09-01
 ---
 
 # TartSwap (TART) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 76/100 — 🟠 High Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tartswap-bsc)
 
@@ -25,9 +25,9 @@ A security audit was conducted on the provided partial source code for the TartT
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The provided code snippet includes standard Uniswap V2 interfaces and a robust `Address` utility library, which correctly handles low-level calls (7.2 Code Security). However, the core `TartToken`… |
-| **Governance / Economics** | 3/10 | High | Without the full `TartToken` contract, the economic model and governance structure (7.5 Governance) cannot be fully evaluated. There is an inherent risk of centralization if the owner… |
-| **Upgrades** | 6/10 | Medium | The provided contract does not appear to implement any upgradeability pattern (7.7 Upgrades). It is a standard, non-upgradeable contract, which eliminates upgrade-specific risks but means any future… |
+| **Technical** | 8/10 | Low | The provided code snippet includes standard Uniswap V2 interfaces and a robust `Address` utility library, which correctly handles low-level calls (7.2 Code Security). However, the core `TartToken`… |
+| **Governance / Economics** | 5/10 | Medium | Without the full `TartToken` contract, the economic model and governance structure (7.5 Governance) cannot be fully evaluated. There is an inherent risk of centralization if the owner… |
+| **Upgrades** | 7/10 | Low | The provided contract does not appear to implement any upgradeability pattern (7.7 Upgrades). It is a standard, non-upgradeable contract, which eliminates upgrade-specific risks but means any future… |
 
 ## LP Distribution
 
@@ -39,39 +39,39 @@ A security audit was conducted on the provided partial source code for the TartT
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 2 Medium · 🟢 1 Low_
-
-### `C-01` — Incomplete Source Code Provided  *(Severity: Critical · Status: Unresolved)*
-
-Only a partial source code snippet for the `TartToken` contract was provided, consisting primarily of interfaces and a utility library. The core implementation of the `TartToken` contract itself is missing. This prevents a comprehensive security audit, making it impossible to identify vulnerabilities related to the token's logic, state management, access control, or interactions with other contracts (7.1 Architecture, 7.2 Code Security).
-
-**Recommendation:** Provide the complete and verifiable source code for the `TartToken` contract, including all imported libraries and dependencies, to allow for a thorough security assessment.
-
-
-### `H-01` — Potential for Reentrancy and External Call Vulnerabilities  *(Severity: High · Status: Unresolved)*
-
-Given the inclusion of Uniswap V2 router interfaces, it is highly probable that the `TartToken` contract interacts with external DeFi protocols for liquidity provision or swapping. Without the full contract implementation, it is impossible to verify if these external calls are properly guarded against reentrancy attacks or other unexpected behaviors from untrusted contracts (7.2 Code Security, 7.6 External).
-
-**Recommendation:** Ensure that all external calls are made after state changes (Checks-Effects-Interactions pattern) and consider using reentrancy guards for functions that interact with external contracts and modify critical state variables.
-
+_🟡 4 Medium · 🟢 1 Low_
 
 ### `M-01` — Undetermined Access Control Mechanisms  *(Severity: Medium · Status: Unresolved)*
 
-The full contract logic for `TartToken` is unavailable, making it impossible to determine what administrative functions exist (e.g., setting fees, pausing transfers, blacklisting) and how their access is controlled. Improper or overly centralized access control could lead to unauthorized critical operations, single points of failure, or governance risks (7.3 Access Control, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The full contract logic for `TartToken` is unavailable, making it impossible to determine what administrative functions exist (e.g., setting fees, pausing transfers, blacklisting) and how their access is controlled. Improper or overly centralized access control could lead to unauthorized critical operations, single points of failure, or governance risks (7.3 Access Control, 7.5 Governance).
 
 **Recommendation:** Clearly define and implement robust access control for all sensitive functions, preferably using a multi-signature wallet or a well-tested access control library. Document all privileged roles and their associated permissions.
 
 
 ### `M-02` — Unverified Tokenomics and DEX Compatibility  *(Severity: Medium · Status: Unresolved)*
 
-Custom token logic, such as fee-on-transfer mechanisms, reflections, or burning, can lead to unexpected behavior or break compatibility with standard DeFi protocols like Uniswap. Without the full `TartToken` implementation, its specific tokenomics and their impact on external integrations (e.g., `swapExactTokensForTokensSupportingFeeOnTransferTokens`) cannot be assessed, potentially leading to lost funds or failed transactions (7.4 Economic, 7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). Custom token logic, such as fee-on-transfer mechanisms, reflections, or burning, can lead to unexpected behavior or break compatibility with standard DeFi protocols like Uniswap. Without the full `TartToken` implementation, its specific tokenomics and their impact on external integrations (e.g., `swapExactTokensForTokensSupportingFeeOnTransferTokens`) cannot be assessed, potentially leading to lost funds or failed transactions (7.4 Economic, 7.6 External).
 
 **Recommendation:** If custom tokenomics are implemented, thoroughly test their compatibility with all intended external protocols, especially DEXes. Consider using established patterns for fee-on-transfer tokens that account for DEX liquidity pools.
 
 
+### `M-03` — Incomplete Source Code Provided  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). Only a partial source code snippet for the `TartToken` contract was provided, consisting primarily of interfaces and a utility library. The core implementation of the `TartToken` contract itself is missing. This prevents a comprehensive security audit, making it impossible to identify vulnerabilities related to the token's logic, state management, access control, or interactions with other contracts (7.1 Architecture, 7.2 Code Security).
+
+**Recommendation:** Provide the complete and verifiable source code for the `TartToken` contract, including all imported libraries and dependencies, to allow for a thorough security assessment.
+
+
+### `M-04` — Potential for Reentrancy and External Call Vulnerabilities  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). Given the inclusion of Uniswap V2 router interfaces, it is highly probable that the `TartToken` contract interacts with external DeFi protocols for liquidity provision or swapping. Without the full contract implementation, it is impossible to verify if these external calls are properly guarded against reentrancy attacks or other unexpected behaviors from untrusted contracts (7.2 Code Security, 7.6 External).
+
+**Recommendation:** Ensure that all external calls are made after state changes (Checks-Effects-Interactions pattern) and consider using reentrancy guards for functions that interact with external contracts and modify critical state variables.
+
+
 ### `L-01` — Lack of Emergency Pause Functionality  *(Severity: Low · Status: Unresolved)*
 
-Many DeFi protocols include a mechanism to pause critical operations (e.g., transfers, swaps) in emergencies, such as severe bugs, exploits, or market manipulation. The absence of the full contract prevents verification of such a safety feature, which could leave the protocol vulnerable to cascading failures without a quick mitigation strategy (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). Many DeFi protocols include a mechanism to pause critical operations (e.g., transfers, swaps) in emergencies, such as severe bugs, exploits, or market manipulation. The absence of the full contract prevents verification of such a safety feature, which could leave the protocol vulnerable to cascading failures without a quick mitigation strategy (7.8 Operations).
 
 **Recommendation:** Consider implementing a well-designed pause mechanism, controlled by a trusted entity (e.g., a multi-sig wallet), to allow for emergency halts of critical contract functionalities. Ensure the pause mechanism itself is secure and cannot be abused.
 

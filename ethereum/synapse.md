@@ -125,7 +125,7 @@ The data indicates a verified contract and renounced ownership, which are positi
 
 ### Is Synapse safe to buy?
 
-Based on the security analysis, Synapse (SYN) presents several high-risk factors that investors should consider. The existence of a mint function, significant token concentration with the top 10 holders controlling 74.8% of supply, and critically, the absence of locked liquidity contribute to a high-risk score of 66/100. These elements suggest considerable caution is warranted due to potential for market manipulation and liquidity removal.
+Based on the security analysis, Synapse (SYN) presents several high-risk factors that investors should consider. The existence of a mint function, significant token concentration with the top 10 holders controlling 74.8% of supply, and critically, the absence of locked liquidity contribute to a medium-risk score of 59/100. These elements suggest considerable caution is warranted due to potential for market manipulation and liquidity removal.
 
 ### Has Synapse been audited?
 

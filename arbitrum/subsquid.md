@@ -2,14 +2,14 @@
 token: Subsquid
 ticker: SQD
 network: arbitrum
-risk_score: 52
+risk_score: 42
 status: medium
 date: 2026-08-11
 ---
 
 # Subsquid (SQD) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 52/100 — 🟡 Medium Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/subsquid-arb)
 
@@ -26,7 +26,7 @@ The SQD token contract is an ERC20 implementation based on OpenZeppelin's battle
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The SQD token contract leverages the OpenZeppelin ERC20 standard, providing a robust and well-audited foundation (7.2 Code Security). Access control for bridge-specific minting and burning functions… |
-| **Governance / Economics** | 1/10 | High | The economic security of the SQD token is heavily reliant on the `l2Gateway` contract, which possesses the exclusive ability to mint and burn tokens (7.4 Economic). This centralized control, while… |
+| **Governance / Economics** | 2/10 | High | The economic security of the SQD token is heavily reliant on the `l2Gateway` contract, which possesses the exclusive ability to mint and burn tokens (7.4 Economic). This centralized control, while… |
 | **Upgrades** | 6/10 | Medium | The SQD contract is not designed with an upgrade mechanism (e.g., proxy pattern), meaning its code is immutable after deployment (7.7 Upgrades). This eliminates risks associated with upgradeability… |
 
 ## LP Distribution
@@ -38,25 +38,25 @@ The SQD token contract is an ERC20 implementation based on OpenZeppelin's battle
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Centralized Control of Token Supply via L2 Gateway (External Dependency Risk)  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Control of Token Supply via L2 Gateway (External Dependency Risk)  *(Severity: Medium · Status: Unresolved)*
 
-The `l2Gateway` address has exclusive control over the `bridgeMint` and `bridgeBurn` functions, allowing it to arbitrarily increase or decrease the token supply. While this is a necessary design for a bridged token, it introduces a single, highly privileged point of control. The security of the entire SQD token's economic integrity on Arbitrum is directly dependent on the security and integrity of the `l2Gateway` contract. A compromise of the `l2Gateway` would lead to a critical economic impact, such as hyperinflation or complete draining of the token supply.
+Not confirmed by static analysis (the model's own reading of the source). The `l2Gateway` address has exclusive control over the `bridgeMint` and `bridgeBurn` functions, allowing it to arbitrarily increase or decrease the token supply. While this is a necessary design for a bridged token, it introduces a single, highly privileged point of control. The security of the entire SQD token's economic integrity on Arbitrum is directly dependent on the security and integrity of the `l2Gateway` contract. A compromise of the `l2Gateway` would lead to a critical economic impact, such as hyperinflation or complete draining of the token supply.
 
 **Recommendation:** Implement the highest security standards for the `l2Gateway` contract, including robust access control (e.g., multi-signature wallet), thorough auditing, and continuous monitoring. Establish a clear and secure operational procedure for managing the `l2Gateway` to minimize the risk of compromise. Consider decentralizing control over time if feasible for the bridge architecture.
 
 
 ### `L-01` — ERC20 `approve` Race Condition  *(Severity: Low · Status: Unresolved)*
 
-The standard ERC20 `approve` function is susceptible to a known race condition. If a user approves an amount, and then approves a different amount before the first transaction is mined, an attacker could front-run the second approval to spend the original approved amount, and then the second approval would overwrite the allowance, potentially allowing the attacker to spend more than intended. This is an inherent characteristic of the ERC20 standard and not a flaw in the OpenZeppelin implementation.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC20 `approve` function is susceptible to a known race condition. If a user approves an amount, and then approves a different amount before the first transaction is mined, an attacker could front-run the second approval to spend the original approved amount, and then the second approval would overwrite the allowance, potentially allowing the attacker to spend more than intended. This is an inherent characteristic of the ERC20 standard and not a flaw in the OpenZeppelin implementation.
 
 **Recommendation:** Inform users about this potential race condition. Recommend a 'set-to-zero then approve' pattern for changing allowances, where users first approve 0 and then the new amount. Alternatively, consider using ERC20 permit or a custom `increaseAllowance`/`decreaseAllowance` pattern if the token design allows for it, although OpenZeppelin's `_spendAllowance` mitigates some risks.
 
 
 ### `I-01` — Use of `unchecked` Blocks for Addition  *(Severity: Informational · Status: Unresolved)*
 
-The `_update` function, specifically for `_totalSupply += value` and `_balances[to] += value`, utilizes `unchecked` blocks. In Solidity 0.8.0 and later, arithmetic operations revert on overflow/underflow by default. `unchecked` blocks disable this check. While this is a standard optimization in OpenZeppelin contracts, and `uint256` provides a vast range, a theoretical overflow could occur if `value` is extremely large and the target variable is near `type(uint256).max`, leading to a wrap-around instead of a revert.
+Not confirmed by static analysis (the model's own reading of the source). The `_update` function, specifically for `_totalSupply += value` and `_balances[to] += value`, utilizes `unchecked` blocks. In Solidity 0.8.0 and later, arithmetic operations revert on overflow/underflow by default. `unchecked` blocks disable this check. While this is a standard optimization in OpenZeppelin contracts, and `uint256` provides a vast range, a theoretical overflow could occur if `value` is extremely large and the target variable is near `type(uint256).max`, leading to a wrap-around instead of a revert.
 
 **Recommendation:** No direct action is required as this is a standard and generally safe optimization in modern Solidity for operations where overflow is highly improbable. However, it's important to be aware of this design choice and ensure that the context of `value` in `_mint` and `_burn` operations does not introduce an unexpected overflow scenario.
 

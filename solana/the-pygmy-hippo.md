@@ -2,14 +2,14 @@
 token: The Pygmy Hippo
 ticker: TINYTANK
 network: solana
-risk_score: 47
-status: medium
+risk_score: 30
+status: low
 date: 2026-08-11
 ---
 
 # The Pygmy Hippo (TINYTANK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 47/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-pygmy-hippo-sol)
 
@@ -25,9 +25,9 @@ This SPL Token-2022 mint, 'The Pygmy Hippo (TINYTANK)', has revoked both mint an
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint, indicating modern token program features. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no holder… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a moderate holder concentration, with the top 10 token accounts holding 33.67% of the supply. Total DEX liquidity stands at $40,172, which is sufficient for small trades but could… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or account freeze status. The token utilizes the SPL Token-2022 program but does not have… |
+| **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint, indicating modern token program features. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no holder… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a moderate holder concentration, with the top 10 token accounts holding 33.67% of the supply. Total DEX liquidity stands at $40,172, which is sufficient for small trades but could… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both revoked, preventing any future changes to the token's supply or account freeze status. The token utilizes the SPL Token-2022 program but does not have… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair for The Pygmy Hippo (TINYTANK) was created 5 days ago. This short t
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1526 buys / 1737 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for The Pygmy Hippo (TINYTANK) was created 5 days ago. This short t
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

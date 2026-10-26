@@ -2,14 +2,14 @@
 token: tap
 ticker: TAP
 network: ethereum
-risk_score: 94
-status: critical
+risk_score: 70
+status: high
 date: 2026-08-15
 ---
 
 # tap (TAP) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 94/100 — 🔴 Critical Risk**
+> **Risk Score: 70/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tap-eth)
 
@@ -27,8 +27,8 @@ Further consideration should be given to the `bridgeOut` function's restriction 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The technical architecture of the bridge, utilizing `Clones.clone` for efficient token deployment and `ECDSA.recover` for secure cross-chain message verification, is robust. The contract employs… |
-| **Governance / Economics** | 1/10 | High | The economic model incorporates a fee mechanism with a discount based on a specified token balance, which is a positive feature. The `ADMIN_ROLE` provides necessary control over fees and discount… |
+| **Technical** | 6/10 | Medium | The technical architecture of the bridge, utilizing `Clones.clone` for efficient token deployment and `ECDSA.recover` for secure cross-chain message verification, is robust. The contract employs… |
+| **Governance / Economics** | 2/10 | High | The economic model incorporates a fee mechanism with a discount based on a specified token balance, which is a positive feature. The `ADMIN_ROLE` provides necessary control over fees and discount… |
 | **Upgrades** | 1/10 | High | The `TapToken` contract is designed with upgradeability in mind, utilizing OpenZeppelin's `Upgradeable` contracts and an `initialize` function, which is a strong practice for future extensibility.… |
 
 ## Proxy Upgrade Controls
@@ -48,46 +48,46 @@ Further consideration should be given to the `bridgeOut` function's restriction 
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 2 Low · ⚪ 1 Informational_
-
-### `H-01` — Irrecoverable `admin` and `canister` Addresses  *(Severity: High · Status: Unresolved)*
-
-The `admin` address, responsible for receiving bridge fees, and the `canister` address, which is the sole authorized signer for `bridgeIn` transactions, are set in the `TapBridge` constructor and cannot be modified post-deployment. If the private keys associated with these addresses are lost, compromised, or become inaccessible, the protocol's ability to collect fees or process `bridgeIn` operations would be permanently impaired or compromised. This introduces a significant single point of failure and operational risk (7.8 Operations, 7.3 Access Control).
-
-**Recommendation:** Implement a mechanism to allow for the secure update of the `admin` and `canister` addresses. This could involve a multi-signature wallet, a time-locked update function, or integration with a robust governance system. For example, add `setAdmin(address newAdmin)` and `setCanister(address newCanister)` functions protected by the `ADMIN_ROLE` with a timelock or multi-sig confirmation.
-
+_🟡 3 Medium · 🟢 2 Low · ⚪ 1 Informational_
 
 ### `M-01` — Initial Misconfiguration of `discountToken`  *(Severity: Medium · Status: Unresolved)*
 
-In the `TapBridge` constructor, `discountToken` is initialized to `tokenTemplate`. `tokenTemplate` is an address used by `Clones.clone` as the blueprint for new `TapToken` instances, not a deployed ERC20 token itself. Consequently, `TapToken(discountToken).balanceOf(_msgSender())` will likely revert or return 0, rendering the fee discount mechanism non-functional until the `setDiscount` function is explicitly called by an `ADMIN_ROLE` to set a valid `discountToken` address. This leads to an unexpected initial state for users (7.4 Economic, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). In the `TapBridge` constructor, `discountToken` is initialized to `tokenTemplate`. `tokenTemplate` is an address used by `Clones.clone` as the blueprint for new `TapToken` instances, not a deployed ERC20 token itself. Consequently, `TapToken(discountToken).balanceOf(_msgSender())` will likely revert or return 0, rendering the fee discount mechanism non-functional until the `setDiscount` function is explicitly called by an `ADMIN_ROLE` to set a valid `discountToken` address. This leads to an unexpected initial state for users (7.4 Economic, 7.8 Operations).
 
 **Recommendation:** Initialize `discountToken` to `address(0)` or a pre-deployed, valid discount token address in the constructor. Ensure that the `setDiscount` function is called immediately after deployment to configure the correct discount token and threshold, or consider making `discountToken` configurable during deployment.
 
 
 ### `M-02` — Centralization Risk via `ADMIN_ROLE`  *(Severity: Medium · Status: Unresolved)*
 
-The `ADMIN_ROLE` in `TapBridge` holds significant power, including the ability to set bridge fees (`setFee`) and discount parameters (`setDiscount`). While this flexibility is useful, it introduces a centralized point of control. If the `ADMIN_ROLE` key is compromised or misused, an attacker could manipulate fees to drain funds or disrupt the protocol's economic model. This poses a governance risk (7.3 Access Control, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The `ADMIN_ROLE` in `TapBridge` holds significant power, including the ability to set bridge fees (`setFee`) and discount parameters (`setDiscount`). While this flexibility is useful, it introduces a centralized point of control. If the `ADMIN_ROLE` key is compromised or misused, an attacker could manipulate fees to drain funds or disrupt the protocol's economic model. This poses a governance risk (7.3 Access Control, 7.5 Governance).
 
 **Recommendation:** Consider implementing a multi-signature wallet for the `ADMIN_ROLE` or integrating with a decentralized governance system to distribute control and reduce the risk associated with a single point of failure. For critical operations like setting fees, consider adding a timelock to allow users to react to impending changes.
 
 
+### `M-03` — Irrecoverable `admin` and `canister` Addresses  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `admin` address, responsible for receiving bridge fees, and the `canister` address, which is the sole authorized signer for `bridgeIn` transactions, are set in the `TapBridge` constructor and cannot be modified post-deployment. If the private keys associated with these addresses are lost, compromised, or become inaccessible, the protocol's ability to collect fees or process `bridgeIn` operations would be permanently impaired or compromised. This introduces a significant single point of failure and operational risk (7.8 Operations, 7.3 Access Control).
+
+**Recommendation:** Implement a mechanism to allow for the secure update of the `admin` and `canister` addresses. This could involve a multi-signature wallet, a time-locked update function, or integration with a robust governance system. For example, add `setAdmin(address newAdmin)` and `setCanister(address newCanister)` functions protected by the `ADMIN_ROLE` with a timelock or multi-sig confirmation.
+
+
 ### `L-01` — `bridgeOut` Restriction for Contracts  *(Severity: Low · Status: Unresolved)*
 
-The `bridgeOut` function includes a check `if (_msgSender().code.length > 0) revert Errors.LikelyContract(_msgSender());` which prevents calls from other smart contracts. While this might be intended to prevent certain complex reentrancy or unintended interactions, it significantly limits composability. Legitimate contract wallets, proxy contracts, or other DeFi protocols would be unable to use the `bridgeOut` functionality, potentially hindering integration and user experience (7.1 Architecture, 7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The `bridgeOut` function includes a check `if (_msgSender().code.length > 0) revert Errors.LikelyContract(_msgSender());` which prevents calls from other smart contracts. While this might be intended to prevent certain complex reentrancy or unintended interactions, it significantly limits composability. Legitimate contract wallets, proxy contracts, or other DeFi protocols would be unable to use the `bridgeOut` functionality, potentially hindering integration and user experience (7.1 Architecture, 7.4 Economic).
 
 **Recommendation:** Re-evaluate the necessity of restricting `bridgeOut` calls from contracts. If the primary concern is reentrancy, ensure that the Checks-Effects-Interactions pattern is strictly followed, which is already largely the case. If the restriction is deemed critical, clearly document this design choice and its implications for users and integrators.
 
 
 ### `L-02` — `TapToken` `decimals()` Override Inconsistency  *(Severity: Low · Status: Unresolved)*
 
-The `TapToken` contract explicitly overrides the `decimals()` function to return a custom `_decimals` value set during initialization. However, the inherited `ERC20Upgradeable`'s internal `_decimals` variable (which defaults to 18) remains unchanged because `__ERC20_init` does not take a `decimals_` argument. While the public `decimals()` getter correctly returns the intended value, this internal inconsistency could lead to confusion or unexpected behavior if external tools or contracts rely on the default `ERC20Upgradeable` internal state or assumptions about `_decimals` being directly set by `__ERC20_init` (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `TapToken` contract explicitly overrides the `decimals()` function to return a custom `_decimals` value set during initialization. However, the inherited `ERC20Upgradeable`'s internal `_decimals` variable (which defaults to 18) remains unchanged because `__ERC20_init` does not take a `decimals_` argument. While the public `decimals()` getter correctly returns the intended value, this internal inconsistency could lead to confusion or unexpected behavior if external tools or contracts rely on the default `ERC20Upgradeable` internal state or assumptions about `_decimals` being directly set by `__ERC20_init` (7.2 Code
 
 **Recommendation:** To maintain consistency and clarity, consider using the `__ERC20_init(name_, symbol_, decimals_)` constructor if available in the specific OpenZeppelin version, or ensure that the custom `_decimals` variable is clearly documented as overriding the default behavior. Alternatively, if `ERC20Upgradeable`'s `_decimals` is accessible, update it directly.
 
 
 ### `I-01` — Lack of Event for Critical Parameter Setup  *(Severity: Informational · Status: Unresolved)*
 
-The `admin` and `canister` addresses, which are critical parameters for the `TapBridge` contract's operation, are set in the constructor. However, no events are emitted to log these values upon deployment. Emitting events for such critical configurations enhances transparency, allows for easier monitoring by off-chain systems, and provides an immutable record of the contract's initial setup (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `admin` and `canister` addresses, which are critical parameters for the `TapBridge` contract's operation, are set in the constructor. However, no events are emitted to log these values upon deployment. Emitting events for such critical configurations enhances transparency, allows for easier monitoring by off-chain systems, and provides an immutable record of the contract's initial setup (7.8 Operations).
 
 **Recommendation:** Emit events in the `TapBridge` constructor to log the `admin` and `canister` addresses. For example: `event AdminSet(address indexed admin);` and `event CanisterSet(address indexed canister);`.
 

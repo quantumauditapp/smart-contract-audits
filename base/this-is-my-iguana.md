@@ -2,14 +2,14 @@
 token: This Is My Iguana
 ticker: TIMI
 network: base
-risk_score: 12
+risk_score: 0
 status: low
 date: 2026-09-24
 ---
 
 # This Is My Iguana (TIMI) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 12/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/this-is-my-iguana-base)
 
@@ -25,9 +25,9 @@ The Erc20 token contract implements standard ERC-20 functionality with an Ownabl
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract leverages Solidity 0.8.24, providing built-in overflow/underflow protection, and incorporates the robust `Address` library for safe low-level calls (7.2 Code Security). The `Ownable`… |
-| **Governance / Economics** | 8/10 | Low | The token's economic model is highly centralized, with the entire initial supply minted to the owner (7.4 Economic). This, combined with a critical `transferFrom` bypass for the owner before the… |
-| **Upgrades** | 9/10 | Low | The contract is not designed with upgradeability in mind, meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates upgrade-related risks such as proxy misconfigurations or… |
+| **Technical** | 10/10 | Low | The contract leverages Solidity 0.8.24, providing built-in overflow/underflow protection, and incorporates the robust `Address` library for safe low-level calls (7.2 Code Security). The `Ownable`… |
+| **Governance / Economics** | 10/10 | Low | The token's economic model is highly centralized, with the entire initial supply minted to the owner (7.4 Economic). This, combined with a critical `transferFrom` bypass for the owner before the… |
+| **Upgrades** | 10/10 | Low | The contract is not designed with upgradeability in mind, meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates upgrade-related risks such as proxy misconfigurations or… |
 
 ## LP Distribution
 
@@ -38,32 +38,32 @@ The Erc20 token contract implements standard ERC-20 functionality with an Ownabl
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low_
-
-### `C-01` — Owner's Unrestricted `transferFrom` Before Launch  *(Severity: Critical · Status: Unresolved)*
-
-The `transferFrom` function contains a condition `if (launched == false && to == owner() && msg.sender == owner())` that allows the contract owner to transfer any amount of tokens from any `from` address to their own address (`owner()`) without requiring prior approval (`_allowed`). This bypasses the standard ERC-20 allowance mechanism and grants the owner arbitrary token transfer capabilities before the token is launched, posing a critical centralization risk and potential for a rug pull.
-
-**Recommendation:** Remove the special condition `if (launched == false && to == owner() && msg.sender == owner())` from the `transferFrom` function. All `transferFrom` operations should strictly adhere to the `_allowed` mapping, regardless of the `launched` state or the `msg.sender`.
-
-
-### `H-01` — Centralized Control Over Token Launch and Contract Interactions  *(Severity: High · Status: Unresolved)*
-
-The `launched` state, controlled solely by the `onlyOwner` function `launch()`, dictates whether the token can interact with other smart contracts (e.g., DEXes, DeFi protocols) via the `_transferAllowed` function. If the owner chooses not to call `launch()`, the token remains unusable in the broader DeFi ecosystem, severely impacting its utility and liquidity. This grants the owner significant power to control the token's market viability and adoption.
-
-**Recommendation:** Consider implementing a decentralized mechanism or a timelock for the `launch()` function to reduce single-point-of-failure risk. Alternatively, clearly document this centralized control and its implications for users and potential integrators.
-
+_🟡 3 Medium · 🟢 1 Low_
 
 ### `M-01` — Initial Token Distribution Centralization  *(Severity: Medium · Status: Unresolved)*
 
-The entire `totalSupply` is minted to the `owner()` address in the constructor (`_balances[owner()] += _totalSupply;`). While common for new tokens, this high degree of centralization, especially when combined with the owner's ability to bypass `transferFrom` approvals before launch (C-01), means the owner has complete control over the token supply and its initial distribution. This could lead to market manipulation or a rug pull scenario.
+Not confirmed by static analysis (the model's own reading of the source). The entire `totalSupply` is minted to the `owner()` address in the constructor (`_balances[owner()] += _totalSupply;`). While common for new tokens, this high degree of centralization, especially when combined with the owner's ability to bypass `transferFrom` approvals before launch (C-01), means the owner has complete control over the token supply and its initial distribution. This could lead to market manipulation or a rug pull scenario.
 
 **Recommendation:** Implement a more distributed initial token allocation strategy, such as vesting schedules, airdrops, or a public sale, to reduce the concentration of tokens in a single address. If full centralization is intended, ensure this is explicitly communicated to all users.
 
 
+### `M-02` — Owner's Unrestricted `transferFrom` Before Launch  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `transferFrom` function contains a condition `if (launched == false && to == owner() && msg.sender == owner())` that allows the contract owner to transfer any amount of tokens from any `from` address to their own address (`owner()`) without requiring prior approval (`_allowed`). This bypasses the standard ERC-20 allowance mechanism and grants the owner arbitrary token transfer capabilities before the token is launched, posing a critical centralization risk and potential for a rug pull.
+
+**Recommendation:** Remove the special condition `if (launched == false && to == owner() && msg.sender == owner())` from the `transferFrom` function. All `transferFrom` operations should strictly adhere to the `_allowed` mapping, regardless of the `launched` state or the `msg.sender`.
+
+
+### `M-03` — Centralized Control Over Token Launch and Contract Interactions  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `launched` state, controlled solely by the `onlyOwner` function `launch()`, dictates whether the token can interact with other smart contracts (e.g., DEXes, DeFi protocols) via the `_transferAllowed` function. If the owner chooses not to call `launch()`, the token remains unusable in the broader DeFi ecosystem, severely impacting its utility and liquidity. This grants the owner significant power to control the token's market viability and adoption.
+
+**Recommendation:** Consider implementing a decentralized mechanism or a timelock for the `launch()` function to reduce single-point-of-failure risk. Alternatively, clearly document this centralized control and its implications for users and potential integrators.
+
+
 ### `L-01` — Lack of Event Emission for `_transferAllowed` Restrictions  *(Severity: Low · Status: Unresolved)*
 
-The `_transferAllowed` function implements critical logic that restricts transfers to/from contract addresses before the token is launched. However, there's no event emitted when a transfer is blocked due to these restrictions. This lack of visibility makes it harder for users and off-chain systems to understand why a transfer failed, potentially leading to confusion or a poor user experience.
+Not confirmed by static analysis (the model's own reading of the source). The `_transferAllowed` function implements critical logic that restricts transfers to/from contract addresses before the token is launched. However, there's no event emitted when a transfer is blocked due to these restrictions. This lack of visibility makes it harder for users and off-chain systems to understand why a transfer failed, potentially leading to confusion or a poor user experience.
 
 **Recommendation:** Consider emitting a custom event (e.g., `TransferRestricted(address indexed from, address indexed to, uint256 value, string reason)`) within the `_transfer` function when `_transferAllowed` returns `false`. This would provide clearer debugging information and transparency.
 

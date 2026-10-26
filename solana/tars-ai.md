@@ -2,14 +2,14 @@
 token: TARS AI
 ticker: TAI
 network: solana
-risk_score: 48
+risk_score: 41
 status: medium
 date: 2026-08-20
 ---
 
 # TARS AI (TAI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 48/100 — 🟡 Medium Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tars-ai-sol)
 

@@ -83,7 +83,7 @@ Token name, symbol, or image can be changed post-launch.
 
 ### Is Tensor a scam?
 
-Based on the data, Tensor (TNSR) carries a High Risk score of 55/100. While its ownership is renounced and no mint function exists—positive anti-scam indicators—the unverified contract, unlocked liquidity, and 75.3% supply concentration by top holders are significant red flags that necessitate extreme caution. Investors should be aware of these substantial risks.
+Based on the data, Tensor (TNSR) carries a Medium Risk score of 48/100. While its ownership is renounced and no mint function exists—positive anti-scam indicators—the unverified contract, unlocked liquidity, and 75.3% supply concentration by top holders are significant red flags that necessitate extreme caution. Investors should be aware of these substantial risks.
 
 ### Is Tensor safe to buy?
 

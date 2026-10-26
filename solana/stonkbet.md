@@ -2,14 +2,14 @@
 token: StonkBet
 ticker: STONKBET
 network: solana
-risk_score: 66
-status: high
+risk_score: 49
+status: medium
 date: 2026-08-15
 ---
 
 # StonkBet (STONKBET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/stonkbet-sol)
 
@@ -25,9 +25,9 @@ The StonkBet (STONKBET) token exhibits high holder concentration, with the top 1
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The StonkBet token is an SPL Token-2022 mint with robust security controls. Both the mint authority and freeze authority have been revoked, preventing further token issuance or freezing of holder… |
+| **Technical** | 8/10 | Low | The StonkBet token is an SPL Token-2022 mint with robust security controls. Both the mint authority and freeze authority have been revoked, preventing further token issuance or freezing of holder… |
 | **Governance / Economics** | 1/10 | High | The token exhibits high holder concentration, with the top 10 accounts controlling 79.01% of the total supply, which presents a substantial risk of market manipulation and price volatility. The DEX… |
-| **Upgrades** | 6/10 | Medium | The StonkBet token mint has no upgradeability concerns typical of EVM contracts, as SPL token mints do not have on-chain source code or proxy patterns. Key authorities like mint and freeze are… |
+| **Upgrades** | 8/10 | Low | The StonkBet token mint has no upgradeability concerns typical of EVM contracts, as SPL token mints do not have on-chain source code or proxy patterns. Key authorities like mint and freeze are… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

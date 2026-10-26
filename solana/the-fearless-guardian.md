@@ -76,11 +76,11 @@ Total DEX liquidity is $5,187. Slippage will be severe; large positions cannot b
 
 ### Is The Fearless Guardian a scam?
 
-Based on available data, we cannot definitively label The Fearless Guardian (GUARDIAN) as a scam, but it exhibits several high-risk characteristics. The contract is unverified, meaning its code is not transparent for review. Crucially, the liquidity is not locked, creating a significant potential for a "rug pull" where funds could be withdrawn. This combination warrants extreme caution, reflected in its 47/100 high-risk score.
+Based on available data, we cannot definitively label The Fearless Guardian (GUARDIAN) as a scam, but it exhibits several high-risk characteristics. The contract is unverified, meaning its code is not transparent for review. Crucially, the liquidity is not locked, creating a significant potential for a "rug pull" where funds could be withdrawn. This combination warrants extreme caution, reflected in its 46/100 medium-risk score.
 
 ### Is The Fearless Guardian safe to buy?
 
-The Fearless Guardian is currently not considered safe for investment due to several prominent risk factors. The contract's unverified status prevents any independent security review, fostering a lack of transparency. Most critically, the liquidity pool is not locked, which presents a high risk of a liquidity withdrawal, commonly known as a "rug pull." These significant unmitigated risks contribute to its high-risk score of 47/100.
+The Fearless Guardian is currently not considered safe for investment due to several prominent risk factors. The contract's unverified status prevents any independent security review, fostering a lack of transparency. Most critically, the liquidity pool is not locked, which presents a high risk of a liquidity withdrawal, commonly known as a "rug pull." These significant unmitigated risks contribute to its medium-risk score of 46/100.
 
 ### Has The Fearless Guardian been audited?
 

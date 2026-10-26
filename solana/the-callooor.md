@@ -2,14 +2,14 @@
 token: The Callooor
 ticker: CALLOOOR
 network: solana
-risk_score: 40
-status: medium
+risk_score: 23
+status: low
 date: 2026-08-15
 ---
 
 # The Callooor (CALLOOOR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-callooor-sol)
 
@@ -25,9 +25,9 @@ The Callooor (CALLOOOR) is an SPL Token-2022 mint with both mint and freeze auth
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen… |
-| **Governance / Economics** | 3/10 | High | The token exhibits moderate holder concentration, with the top 10 accounts holding 30.31% of the supply, which does not trigger high concentration warnings. Total DEX liquidity is $42,500, which is… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are fixed due to the revocation of both Mint and Freeze Authorities. There are no active Token-2022 extensions that would allow for post-launch modifications to transfer… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate holder concentration, with the top 10 accounts holding 30.31% of the supply, which does not trigger high concentration warnings. Total DEX liquidity is $42,500, which is… |
+| **Upgrades** | 10/10 | Low | The token's core parameters are fixed due to the revocation of both Mint and Freeze Authorities. There are no active Token-2022 extensions that would allow for post-launch modifications to transfer… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3025 buys / 3152 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: The Movement
 ticker: MOVEMENT
 network: solana
-risk_score: 45
-status: medium
+risk_score: 33
+status: low
 date: 2026-06-28
 ---
 
 # The Movement (MOVEMENT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-movement-sol)
 
@@ -25,9 +25,9 @@ The Movement (MOVEMENT) token mint on Solana exhibits a low-risk profile based o
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, which means no new tokens can be minted and no existing token accounts can… |
-| **Governance / Economics** | 1/10 | High | The token's liquidity stands at $11,681 USD, which is above the very low liquidity threshold. The 24-hour volume is $2,129, resulting in a Volume/Liquidity Ratio of 0.18, which is considered normal… |
-| **Upgrades** | 8/10 | Low | The token mint's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any future changes to the token's supply or account freeze status. The token does not have a… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, which means no new tokens can be minted and no existing token accounts can… |
+| **Governance / Economics** | 2/10 | High | The token's liquidity stands at $11,681 USD, which is above the very low liquidity threshold. The 24-hour volume is $2,129, resulting in a Volume/Liquidity Ratio of 0.18, which is considered normal… |
+| **Upgrades** | 10/10 | Low | The token mint's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any future changes to the token's supply or account freeze status. The token does not have a… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 384 buys / 284 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
@@ -80,7 +80,7 @@ The data suggests a mixed picture. Ownership renounced and no mint function are 
 
 ### Is The Movement safe to buy?
 
-The Movement is categorized with a Medium Risk score of 44/100, indicating it's not without significant risks. Key concerns include the unverified contract, which prevents public code scrutiny, and unlocked liquidity, posing a potential for sudden withdrawal. While ownership is renounced and no new tokens can be minted, these risks suggest it is not inherently safe and requires careful consideration of potential downsides.
+The Movement is categorized with a Low Risk score of 33/100, indicating it's not without significant risks. Key concerns include the unverified contract, which prevents public code scrutiny, and unlocked liquidity, posing a potential for sudden withdrawal. While ownership is renounced and no new tokens can be minted, these risks suggest it is not inherently safe and requires careful consideration of potential downsides.
 
 ### Has The Movement been audited?
 

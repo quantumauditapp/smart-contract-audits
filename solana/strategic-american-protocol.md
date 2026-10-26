@@ -80,7 +80,7 @@ Based on current data, there is no direct evidence identifying the project as a 
 
 ### Is Strategic American Protocol safe to buy?
 
-The protocol holds a low risk score of 32/100, supported by locked liquidity and a distributed holder base. These are positive indicators for transparency. The primary risk factor is the unrenounced ownership, which allows for potential future contract changes. Investors should evaluate these technical risks carefully and never invest more capital than they can afford to lose.
+The protocol holds a low risk score of 2/100, supported by locked liquidity and a distributed holder base. These are positive indicators for transparency. The primary risk factor is the unrenounced ownership, which allows for potential future contract changes. Investors should evaluate these technical risks carefully and never invest more capital than they can afford to lose.
 
 ### Has Strategic American Protocol been audited?
 

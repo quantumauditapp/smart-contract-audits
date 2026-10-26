@@ -2,14 +2,14 @@
 token: The Innovation Game
 ticker: TIG
 network: base
-risk_score: 48
+risk_score: 40
 status: medium
 date: 2026-08-11
 ---
 
 # The Innovation Game (TIG) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 48/100 — 🟡 Medium Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-innovation-game-base)
 
@@ -25,8 +25,8 @@ The TIGToken contract is a standard ERC20 token with burnable and owner-mintable
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract leverages battle-tested OpenZeppelin libraries for ERC20, ERC20Burnable, and Ownable functionalities, ensuring a robust and standard implementation (7.2 Code Security). Standard ERC20… |
-| **Governance / Economics** | 4/10 | Medium | The primary economic and governance risk stems from the `onlyOwner` controlled `mint` function, allowing the owner to arbitrarily increase the token supply (7.4 Economic, 7.5 Governance). This… |
+| **Technical** | 8/10 | Low | The contract leverages battle-tested OpenZeppelin libraries for ERC20, ERC20Burnable, and Ownable functionalities, ensuring a robust and standard implementation (7.2 Code Security). Standard ERC20… |
+| **Governance / Economics** | 5/10 | Medium | The primary economic and governance risk stems from the `onlyOwner` controlled `mint` function, allowing the owner to arbitrarily increase the token supply (7.4 Economic, 7.5 Governance). This… |
 | **Upgrades** | 4/10 | Medium | The contract is not designed with an upgradeability pattern (e.g., proxy contracts), meaning its logic cannot be modified post-deployment (7.7 Upgrades). This eliminates risks associated with upgrade… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The TIGToken contract is a standard ERC20 token with burnable and owner-mintable
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Minting Authority  *(Severity: High · Status: Unresolved)*
-
-The `mint` function is restricted to the contract owner, allowing them to create an arbitrary amount of new tokens. This introduces a significant centralization risk and potential for supply inflation, impacting token value and trust. If the owner's intent is to maintain a controlled supply, this mechanism grants them unilateral power.
-
-**Recommendation:** Clearly communicate the minting policy and the role of the owner in the token's documentation. For future iterations, consider implementing a hard cap on the total supply or transitioning minting authority to a decentralized governance mechanism or a timelock contract.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Owner Key Compromise Risk  *(Severity: Medium · Status: Unresolved)*
 
-Critical functions such as `mint` and `transferOwnership` are controlled by a single owner address. While the pre-filled data indicates the owner is a multisig, a compromise of this multisig's keys (e.g., a majority of signers) would grant an attacker full control over token supply and ownership, leading to severe economic damage.
+Not confirmed by static analysis (the model's own reading of the source). Critical functions such as `mint` and `transferOwnership` are controlled by a single owner address. While the pre-filled data indicates the owner is a multisig, a compromise of this multisig's keys (e.g., a majority of signers) would grant an attacker full control over token supply and ownership, leading to severe economic damage.
 
 **Recommendation:** Ensure the multisig setup for the owner address follows best practices, including strong key management, geographically distributed signers, and robust operational security procedures. Regularly review and update multisig signers as needed.
 
 
+### `M-02` — Centralized Minting Authority  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function is restricted to the contract owner, allowing them to create an arbitrary amount of new tokens. This introduces a significant centralization risk and potential for supply inflation, impacting token value and trust. If the owner's intent is to maintain a controlled supply, this mechanism grants them unilateral power.
+
+**Recommendation:** Clearly communicate the minting policy and the role of the owner in the token's documentation. For future iterations, consider implementing a hard cap on the total supply or transitioning minting authority to a decentralized governance mechanism or a timelock contract.
+
+
 ### `L-01` — Lack of Programmatic Supply Cap  *(Severity: Low · Status: Unresolved)*
 
-The token contract does not implement a hard cap on the total supply. While the `mint` function is owner-controlled, the absence of a programmatic limit means the owner can continuously mint tokens without a protocol-enforced upper bound. This is a design choice but should be transparent to token holders.
+Not confirmed by static analysis (the model's own reading of the source). The token contract does not implement a hard cap on the total supply. While the `mint` function is owner-controlled, the absence of a programmatic limit means the owner can continuously mint tokens without a protocol-enforced upper bound. This is a design choice but should be transparent to token holders.
 
 **Recommendation:** If a fixed supply is desired, implement a `maxSupply` variable and enforce it within the `_mint` function. If an uncapped supply is intentional, ensure this is clearly communicated in all project documentation to manage community expectations.
 
 
 ### `I-01` — No Pause/Emergency Stop Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The contract lacks a mechanism to pause critical operations (e.g., transfers, minting) in case of an emergency, such as a detected vulnerability or a major market disruption. While not strictly necessary for a simple ERC20, it's a common security feature in more complex systems to mitigate unforeseen risks.
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks a mechanism to pause critical operations (e.g., transfers, minting) in case of an emergency, such as a detected vulnerability or a major market disruption. While not strictly necessary for a simple ERC20, it's a common security feature in more complex systems to mitigate unforeseen risks.
 
 **Recommendation:** Consider adding a `Pausable` mechanism (e.g., from OpenZeppelin) to allow the owner to temporarily halt operations in an emergency. This should be paired with clear documentation on the conditions under which pausing would occur and how it would be unpaused.
 

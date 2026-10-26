@@ -2,14 +2,14 @@
 token: TaoCats
 ticker: CONST
 network: solana
-risk_score: 31
+risk_score: 12
 status: low
 date: 2026-09-12
 ---
 
 # TaoCats (CONST) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 31/100 — 🟢 Low Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/taocats-sol)
 
@@ -26,8 +26,8 @@ The TaoCats SPL Token Mint exhibits a medium risk profile, primarily due to its 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The TaoCats token operates on the spl-token-2022 program, demonstrating robust security by having both its mint and freeze authorities permanently revoked. This ensures a fixed supply of… |
-| **Governance / Economics** | 5/10 | Medium | The token's DEX pair is relatively new, established only 5 days ago, which means there is limited historical data to fully assess market stability and team behavior. However, the current liquidity of… |
-| **Upgrades** | 6/10 | Medium | The TaoCats token benefits from the revocation of both its mint and freeze authorities, providing strong assurances against supply dilution and account confiscation. While the transfer fee mechanism… |
+| **Governance / Economics** | 8/10 | Low | The token's DEX pair is relatively new, established only 5 days ago, which means there is limited historical data to fully assess market stability and team behavior. However, the current liquidity of… |
+| **Upgrades** | 8/10 | Low | The TaoCats token benefits from the revocation of both its mint and freeze authorities, providing strong assurances against supply dilution and account confiscation. While the transfer fee mechanism… |
 
 ## Token-2022 Extensions
 
@@ -67,13 +67,13 @@ Token name, symbol, or image can be changed post-launch.
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 593 buys / 406 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

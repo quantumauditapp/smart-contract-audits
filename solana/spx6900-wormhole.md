@@ -2,14 +2,14 @@
 token: SPX6900 (Wormhole)
 ticker: SPX
 network: solana
-risk_score: 56
+risk_score: 46
 status: medium
 date: 2026-07-22
 ---
 
 # SPX6900 (Wormhole) (SPX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 56/100 — 🟡 Medium Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spx6900-wormhole-sol)
 
@@ -25,9 +25,9 @@ This Solana SPL Token Mint audit identified a critical risk: the mint authority 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token Program v3 mint. A critical finding (7.3 Access Control) is that the mint authority, BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7, remains active, enabling the creation of… |
-| **Governance / Economics** | 1/10 | High | The token exhibits healthy liquidity (7.4 Economic) with $1,699,097 in total DEX liquidity, and a normal 24-hour volume to liquidity ratio of 0.14, indicating organic trading activity. The DEX pair… |
-| **Upgrades** | 4/10 | Medium | The mint authority is still enabled (7.7 Upgrades), allowing for potential changes to the token's supply. The freeze authority has been revoked, which is a positive for immutability of account… |
+| **Technical** | 8/10 | Low | The token is an SPL Token Program v3 mint. A critical finding (7.3 Access Control) is that the mint authority, BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7, remains active, enabling the creation of… |
+| **Governance / Economics** | 2/10 | High | The token exhibits healthy liquidity (7.4 Economic) with $1,699,097 in total DEX liquidity, and a normal 24-hour volume to liquidity ratio of 0.14, indicating organic trading activity. The DEX pair… |
+| **Upgrades** | 5/10 | Medium | The mint authority is still enabled (7.7 Upgrades), allowing for potential changes to the token's supply. The freeze authority has been revoked, which is a positive for immutability of account… |
 
 ## LP Distribution
 

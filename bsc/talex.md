@@ -2,14 +2,14 @@
 token: TaleX
 ticker: X
 network: bsc
-risk_score: 30
+risk_score: 28
 status: low
 date: 2026-08-15
 ---
 
 # TaleX (X) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 30/100 — 🟢 Low Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/talex-bsc)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Standard ERC-20 `approve` Race Condition  *(Severity: Low · Status: Unresolved)*
 
-The `approve` function, as implemented in the ERC-20 standard, is susceptible to a race condition. If a user approves an amount for a spender, and then attempts to change that approved amount, a malicious spender could front-run the second `approve` transaction. This could result in the spender being able to spend both the original and the new approved amounts, effectively doubling their allowance.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function, as implemented in the ERC-20 standard, is susceptible to a race condition. If a user approves an amount for a spender, and then attempts to change that approved amount, a malicious spender could front-run the second `approve` transaction. This could result in the spender being able to spend both the original and the new approved amounts, effectively doubling their allowance.
 
 **Recommendation:** While the contract provides `increaseAllowance` and `decreaseAllowance` to mitigate this issue, users might still interact directly with the `approve` function. Educate users to always use `increaseAllowance` and `decreaseAllowance` when modifying an existing allowance. If `approve` must be used, advise users to first set the allowance to zero before setting a new non-zero allowance.
 
 
 ### `I-01` — Redundant SafeMath Usage in Solidity 0.8.x  *(Severity: Informational · Status: Unresolved)*
 
-Solidity versions 0.8.0 and higher include built-in overflow and underflow checks for all arithmetic operations by default. The explicit use of the `SafeMath` library in this contract is therefore redundant. While it does not introduce a vulnerability, it adds unnecessary gas overhead and increases code complexity.
+Not confirmed by static analysis (the model's own reading of the source). Solidity versions 0.8.0 and higher include built-in overflow and underflow checks for all arithmetic operations by default. The explicit use of the `SafeMath` library in this contract is therefore redundant. While it does not introduce a vulnerability, it adds unnecessary gas overhead and increases code complexity.
 
 **Recommendation:** Remove the `SafeMath` library and its `using SafeMath for uint256;` directive. Rely on Solidity's native checked arithmetic for `uint256` operations. This will reduce gas costs and simplify the codebase.
 
 
 ### `I-02` — Redundant Public Variable Getter  *(Severity: Informational · Status: Unresolved)*
 
-The `_decimals` state variable is declared as `public`, which automatically generates a public getter function `decimals()`. The contract then explicitly defines another external function `decimals()` that returns the same `_decimals` value. This creates a redundant function.
+Not confirmed by static analysis (the model's own reading of the source). The `_decimals` state variable is declared as `public`, which automatically generates a public getter function `decimals()`. The contract then explicitly defines another external function `decimals()` that returns the same `_decimals` value. This creates a redundant function.
 
 **Recommendation:** Remove the explicitly defined `decimals()` external function. The public `_decimals` variable already provides the necessary getter. Alternatively, if an explicit external function is preferred, declare `_decimals` as `internal` or `private`.
 

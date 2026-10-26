@@ -2,14 +2,14 @@
 token: Squid
 ticker: QUID
 network: base
-risk_score: 39
+risk_score: 35
 status: medium
 date: 2026-08-11
 ---
 
 # Squid (QUID) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/squid-base)
 
@@ -42,21 +42,21 @@ _🟢 2 Low · ⚪ 1 Informational_
 
 ### `L-01` — Immutability of Token Contract  *(Severity: Low · Status: Unresolved)*
 
-The `SquidToken` contract is not designed to be upgradeable (7.7). While this simplifies the architecture (7.1) and removes upgrade-related risks, it implies that any discovered vulnerabilities or desired feature enhancements would necessitate a new contract deployment and a potentially complex migration process for token holders. This is a design choice rather than a direct vulnerability.
+Not confirmed by static analysis (the model's own reading of the source). The `SquidToken` contract is not designed to be upgradeable (7.7). While this simplifies the architecture (7.1) and removes upgrade-related risks, it implies that any discovered vulnerabilities or desired feature enhancements would necessitate a new contract deployment and a potentially complex migration process for token holders. This is a design choice rather than a direct vulnerability.
 
 **Recommendation:** Acknowledge the implications of immutability. For future projects requiring flexibility, consider implementing an upgradeable proxy pattern. For this specific contract, ensure that the initial design is thoroughly reviewed to minimize the need for future changes.
 
 
 ### `L-02` — Permit Function Front-Running Risk  *(Severity: Low · Status: Unresolved)*
 
-The `permit` function, while a standard feature of ERC-20 Permit, can be susceptible to front-running attacks (7.2, 7.4). A malicious actor could observe a signed `permit` transaction waiting in the mempool and submit their own transaction with a higher gas price to execute the `permit` before the legitimate user. This could allow the attacker to manipulate the allowance set by the `owner` for the `spender`, potentially leading to unexpected behavior or loss of funds if not handled carefully off-chain. This is an inherent characteristic of the ERC-20 Permit standard and not a flaw in the implementation itself.
+Not confirmed by static analysis (the model's own reading of the source). The `permit` function, while a standard feature of ERC-20 Permit, can be susceptible to front-running attacks (7.2, 7.4). A malicious actor could observe a signed `permit` transaction waiting in the mempool and submit their own transaction with a higher gas price to execute the `permit` before the legitimate user. This could allow the attacker to manipulate the allowance set by the `owner` for the `spender`, potentially leading to unexpected behavior or loss of funds if not handled carefully off-chain. This is an inherent characteristic of the ERC-20 Permit standard and not a flaw in the implementation itself.
 
 **Recommendation:** Educate users about the potential for front-running when using the `permit` function. Recommend using private transaction relays or services that offer front-running protection where available. Implement off-chain mechanisms to mitigate this risk if the application relies heavily on `permit` functionality.
 
 
 ### `I-01` — Standard OpenZeppelin Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The SquidToken contract leverages battle-tested and widely audited OpenZeppelin libraries for its core ERC-20 and ERC-20 Permit functionality. This significantly reduces the likelihood of common vulnerabilities associated with custom implementations of these standards, contributing to a high level of code security (7.2).
+Not confirmed by static analysis (the model's own reading of the source). The SquidToken contract leverages battle-tested and widely audited OpenZeppelin libraries for its core ERC-20 and ERC-20 Permit functionality. This significantly reduces the likelihood of common vulnerabilities associated with custom implementations of these standards, contributing to a high level of code security (7.2).
 
 **Recommendation:** Continue to rely on well-vetted libraries for core functionalities. Regularly monitor OpenZeppelin's security advisories and updates.
 

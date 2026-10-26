@@ -2,14 +2,14 @@
 token: Stool Prisondente
 ticker: JAILSTOOL
 network: solana
-risk_score: 11
+risk_score: 6
 status: low
 date: 2026-09-01
 ---
 
 # Stool Prisondente (JAILSTOOL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 11/100 — 🟢 Low Risk**
+> **Risk Score: 6/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/stool-prisondente-sol)
 

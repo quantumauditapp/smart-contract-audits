@@ -2,14 +2,14 @@
 token: The Toad Pepe
 ticker: TOAD
 network: solana
-risk_score: 21
+risk_score: 16
 status: low
 date: 2026-08-12
 ---
 
 # The Toad Pepe (TOAD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 21/100 — 🟢 Low Risk**
+> **Risk Score: 16/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-toad-pepe-sol)
 

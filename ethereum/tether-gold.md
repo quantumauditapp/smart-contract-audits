@@ -157,11 +157,11 @@ A token backed by an off-chain asset (a stock, gold, treasury bills, a fund shar
 
 ### Is Tether Gold a scam?
 
-Based on automated analysis, Tether Gold scores 65/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Tether Gold scores 10/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Tether Gold safe to buy?
 
-Our scanner flagged a risk score of 65/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 10/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Tether Gold been audited?
 

@@ -2,14 +2,14 @@
 token: the sleeping giant
 ticker: TSG
 network: base
-risk_score: 37
-status: medium
+risk_score: 27
+status: low
 date: 2026-08-17
 ---
 
 # the sleeping giant (TSG) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-sleeping-giant-base)
 
@@ -25,8 +25,8 @@ The DERC20 token contract implements an ERC20 token with voting, permit, and own
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The DERC20 contract demonstrates good technical architecture, building upon battle-tested OpenZeppelin standards for ERC20, ERC20Votes, ERC20Permit, and Ownable. This significantly reduces the risk… |
-| **Governance / Economics** | 5/10 | Medium | The contract's economic model includes an inflationary mechanism with a configurable yearly mint rate, capped at 2% of the total supply. The owner, a multisig address, holds significant control over… |
+| **Technical** | 10/10 | Low | The DERC20 contract demonstrates good technical architecture, building upon battle-tested OpenZeppelin standards for ERC20, ERC20Votes, ERC20Permit, and Ownable. This significantly reduces the risk… |
+| **Governance / Economics** | 6/10 | Medium | The contract's economic model includes an inflationary mechanism with a configurable yearly mint rate, capped at 2% of the total supply. The owner, a multisig address, holds significant control over… |
 | **Upgrades** | 7/10 | Low | The DERC20 contract is not designed as an upgradeable proxy (7.7 Upgrades). Its logic is immutable once deployed. However, certain parameters like the `yearlyMintRate`, `tokenURI`, and the `pool`… |
 
 ## LP Distribution
@@ -38,46 +38,46 @@ The DERC20 token contract implements an ERC20 token with voting, permit, and own
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 3 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control by Owner  *(Severity: High · Status: Unresolved)*
-
-The contract utilizes the Ownable pattern, granting the owner significant control over critical functions. The owner can `lockPool`/`unlockPool`, `burn` tokens, `updateMintRate` (within a cap), trigger `mintInflation` (minting to themselves), and `updateTokenURI`. While the owner is identified as an OZ_ProxyAdmin with a 3/6 multisig, the concentration of these powers still represents a high risk if the multisig itself is compromised or mismanaged. The ability to control inflation and freeze pool transfers are particularly sensitive.
-
-**Recommendation:** Ensure the multisig controlling the owner address has robust security practices, including strong key management, regular audits, and clear operational procedures. Consider implementing time-locks or additional governance mechanisms for highly sensitive operations like `updateMintRate` or `unlockPool` to introduce a delay, allowing for community review or emergency intervention.
-
+_🟡 2 Medium · 🟢 3 Low · ⚪ 1 Informational_
 
 ### `M-01` — Constructor Constraint on Vested Tokens  *(Severity: Medium · Status: Unresolved)*
 
-The constructor includes a `require(vestedTokens < initialSupply, MaxTotalVestedExceeded(...));` statement. This condition prevents the total amount of pre-minted and vested tokens (`vestedTokens`) from being equal to the `initialSupply`. This implies that a portion of the `initialSupply` must always be minted directly to the `recipient` without vesting. This design choice might limit flexibility if the project intends to vest 100% of the initial supply or could lead to unexpected behavior if the `initialSupply` is small and `vestedTokens` approaches it.
+Not confirmed by static analysis (the model's own reading of the source). The constructor includes a `require(vestedTokens < initialSupply, MaxTotalVestedExceeded(...));` statement. This condition prevents the total amount of pre-minted and vested tokens (`vestedTokens`) from being equal to the `initialSupply`. This implies that a portion of the `initialSupply` must always be minted directly to the `recipient` without vesting. This design choice might limit flexibility if the project intends to vest 100% of the initial supply or could lead to unexpected behavior if the `initialSupply` is small and `vestedTokens` approaches it.
 
 **Recommendation:** Review this constraint to confirm it aligns with the intended token distribution strategy. If the intention is to allow for 100% of the initial supply to be vested, change the condition to `vestedTokens <= initialSupply`. If the current behavior is intentional, ensure it is clearly documented.
 
 
+### `M-02` — Centralized Control by Owner  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes the Ownable pattern, granting the owner significant control over critical functions. The owner can `lockPool`/`unlockPool`, `burn` tokens, `updateMintRate` (within a cap), trigger `mintInflation` (minting to themselves), and `updateTokenURI`. While the owner is identified as an OZ_ProxyAdmin with a 3/6 multisig, the concentration of these powers still represents a high risk if the multisig itself is compromised or mismanaged. The ability to control inflation and freeze pool transfers are particularly sensitive.
+
+**Recommendation:** Ensure the multisig controlling the owner address has robust security practices, including strong key management, regular audits, and clear operational procedures. Consider implementing time-locks or additional governance mechanisms for highly sensitive operations like `updateMintRate` or `unlockPool` to introduce a delay, allowing for community review or emergency intervention.
+
+
 ### `L-01` — Precision Loss in Vesting and Inflation Calculations  *(Severity: Low · Status: Unresolved)*
 
-The `computeAvailableVestedAmount` and `mintInflation` functions perform calculations involving multiplication followed by integer division. For example, `totalAmount * (block.timestamp - vestingStart) / vestingDuration` and `(supply * yearlyMintRate_ * timeLeftInCurrentYear) / (1 ether * 365 days)`. Integer division truncates any fractional part, effectively rounding down. This can lead to minor precision loss, resulting in slightly less than perfectly proportional amounts being released for vesting or minted for inflation over time.
+Not confirmed by static analysis (the model's own reading of the source). The `computeAvailableVestedAmount` and `mintInflation` functions perform calculations involving multiplication followed by integer division. For example, `totalAmount * (block.timestamp - vestingStart) / vestingDuration` and `(supply * yearlyMintRate_ * timeLeftInCurrentYear) / (1 ether * 365 days)`. Integer division truncates any fractional part, effectively rounding down. This can lead to minor precision loss, resulting in slightly less than perfectly proportional amounts being released for vesting or minted for inflation over time.
 
 **Recommendation:** While this is a common characteristic of integer arithmetic in Solidity and often acceptable for minor discrepancies, it's important to be aware of its implications. For higher precision, consider using fixed-point arithmetic libraries (e.g., ABDKMathQuad) if the minor precision loss is deemed unacceptable. Otherwise, ensure this behavior is understood and communicated to users.
 
 
 ### `L-02` — External Dependency on Permit2 Contract  *(Severity: Low · Status: Unresolved)*
 
-The `allowance` function grants `type(uint256).max` allowance to a specific `PERMIT_2` address (`0x000000000022D473030F116dDEE9F6B43aC78BA3`). This is a common integration with the Permit2 contract, enabling gas-efficient approvals. However, it introduces an external dependency. Any vulnerability or compromise within the Permit2 contract itself could indirectly affect the security of funds approved to this DERC20 token via Permit2.
+Not confirmed by static analysis (the model's own reading of the source). The `allowance` function grants `type(uint256).max` allowance to a specific `PERMIT_2` address (`0x000000000022D473030F116dDEE9F6B43aC78BA3`). This is a common integration with the Permit2 contract, enabling gas-efficient approvals. However, it introduces an external dependency. Any vulnerability or compromise within the Permit2 contract itself could indirectly affect the security of funds approved to this DERC20 token via Permit2.
 
 **Recommendation:** Acknowledge the inherent risk associated with integrating external protocols. While Permit2 is widely used and audited, it's crucial to monitor its security status. No direct action is required on this contract, but awareness of the dependency is important for overall risk assessment.
 
 
 ### `L-03` — Operational Dependency for Inflation Mechanism Start  *(Severity: Low · Status: Unresolved)*
 
-The `currentYearStart` and `lastMintTimestamp` variables, which are essential for the `mintInflation()` function to operate, are only initialized when the `unlockPool()` function is called by the owner. If `unlockPool()` is never invoked, `mintInflation()` will consistently revert with `MintingNotStartedYet()`, preventing any token inflation from occurring. This creates an operational dependency where the owner must perform an explicit action to enable the core inflation mechanism.
+Not confirmed by static analysis (the model's own reading of the source). The `currentYearStart` and `lastMintTimestamp` variables, which are essential for the `mintInflation()` function to operate, are only initialized when the `unlockPool()` function is called by the owner. If `unlockPool()` is never invoked, `mintInflation()` will consistently revert with `MintingNotStartedYet()`, preventing any token inflation from occurring. This creates an operational dependency where the owner must perform an explicit action to enable the core inflation mechanism.
 
 **Recommendation:** Ensure that the operational team is aware of this dependency and has a clear procedure for calling `unlockPool()` at the appropriate time to initiate the inflation schedule. Document the intended timing and conditions for this action.
 
 
 ### `I-01` — Ambiguity in `initialSupply` Interpretation  *(Severity: Informational · Status: Unresolved)*
 
-The constructor uses `initialSupply` as a base for calculating `maxPreMintPerAddress` and `maxTotalPreMint` (e.g., `initialSupply * MAX_PRE_MINT_PER_ADDRESS_WAD / 1 ether`). The term `initialSupply` could be interpreted in multiple ways: as the total supply minted at deployment, or as a base amount from which other distributions are derived. The `vestedTokens < initialSupply` check further implies `initialSupply` acts as a hard cap for total initial distribution. Clarity on this interpretation is important for understanding the token's economic model.
+Not confirmed by static analysis (the model's own reading of the source). The constructor uses `initialSupply` as a base for calculating `maxPreMintPerAddress` and `maxTotalPreMint` (e.g., `initialSupply * MAX_PRE_MINT_PER_ADDRESS_WAD / 1 ether`). The term `initialSupply` could be interpreted in multiple ways: as the total supply minted at deployment, or as a base amount from which other distributions are derived. The `vestedTokens < initialSupply` check further implies `initialSupply` acts as a hard cap for total initial distribution. Clarity on this interpretation is important for understanding the token's economic model.
 
 **Recommendation:** Add explicit NatSpec documentation to the `initialSupply` parameter in the constructor, clearly defining its role and how it relates to `vestedTokens` and the `recipient`'s initial balance. This will prevent potential misinterpretations by future auditors or developers.
 
