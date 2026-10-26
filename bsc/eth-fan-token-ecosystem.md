@@ -2,14 +2,14 @@
 token: ETH Fan Token Ecosystem
 ticker: EFT
 network: bsc
-risk_score: 28
+risk_score: 24
 status: low
 date: 2026-09-24
 ---
 
 # ETH Fan Token Ecosystem (EFT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 24/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/eth-fan-token-ecosystem-bsc)
 
@@ -43,28 +43,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Potential Centralized Control of Token Supply  *(Severity: Low · Status: Unresolved)*
 
-The `_mint` and `_burn` functions are declared as `internal virtual` within the `ERC20` contract. While this is standard for a base ERC20, if a derived contract exposes these functions to an `owner` or `onlyOwner` role without further restrictions (e.g., multi-signature, time-locks, or predefined limits), it introduces a high degree of centralization. This allows the owner to arbitrarily inflate or deflate the token supply, which can have significant economic implications for token holders and the overall protocol (7.4 Economic, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The `_mint` and `_burn` functions are declared as `internal virtual` within the `ERC20` contract. While this is standard for a base ERC20, if a derived contract exposes these functions to an `owner` or `onlyOwner` role without further restrictions (e.g., multi-signature, time-locks, or predefined limits), it introduces a high degree of centralization. This allows the owner to arbitrarily inflate or deflate the token supply, which can have significant economic implications for token holders and the overall protocol (7.4 Economic, 7.5 Governance).
 
 **Recommendation:** If `_mint` and `_burn` functionalities are exposed in any inheriting contract, implement robust access control mechanisms. Consider using a multi-signature wallet for the owner, adding time-locks for significant supply changes, or defining clear, transparent policies and limits for minting/burning operations. Clearly document the token supply management strategy.
 
 
 ### `L-02` — ERC20 `approve` Race Condition Vulnerability  *(Severity: Low · Status: Unresolved)*
 
-The standard ERC20 `approve` function is susceptible to a known front-running vulnerability. If a user attempts to change an existing allowance by calling `approve` twice (first to a new amount, or to zero then a new amount), a malicious actor could front-run the second transaction. This allows the attacker to spend the original approved amount before the new allowance is set, potentially leading to the attacker spending more than the user intended (7.2 Code Security). The contract does provide `increaseAllowance` and `decreaseAllowance` which mitigate this, but the base `approve` remains.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC20 `approve` function is susceptible to a known front-running vulnerability. If a user attempts to change an existing allowance by calling `approve` twice (first to a new amount, or to zero then a new amount), a malicious actor could front-run the second transaction. This allows the attacker to spend the original approved amount before the new allowance is set, potentially leading to the attacker spending more than the user intended (7.2 Code Security). The contract does provide `increaseAllowance` and `decreaseAllowance` which mitigate this, but the base `approve` remains.
 
 **Recommendation:** Advise users to exclusively use the `increaseAllowance` and `decreaseAllowance` functions when modifying existing allowances, as these functions are designed to prevent this specific front-running scenario. If `approve` must be used, users should first set the allowance to zero and wait for that transaction to confirm before setting a new non-zero allowance.
 
 
 ### `I-01` — Incomplete Source Code Provided  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code snippet is truncated, specifically for the `Ownable` contract and any potential derived contract (e.g., 'EFT') that would implement the `DividendPayingTokenInterface`. This limitation prevents a comprehensive security assessment of the full contract logic, including critical access control mechanisms and dividend distribution logic.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code snippet is truncated, specifically for the `Ownable` contract and any potential derived contract (e.g., 'EFT') that would implement the `DividendPayingTokenInterface`. This limitation prevents a comprehensive security assessment of the full contract logic, including critical access control mechanisms and dividend distribution logic.
 
 **Recommendation:** Provide the complete and unabridged source code for all contracts intended for deployment. A full audit requires access to the entire codebase to ensure all dependencies and inherited functionalities are properly reviewed.
 
 
 ### `I-02` — Robust Integer Overflow/Underflow Protection  *(Severity: Informational · Status: Resolved)*
 
-The contract consistently and correctly utilizes `SafeMath` for `uint256` operations and `SafeMathInt` for `int256` operations. This practice effectively prevents integer overflow and underflow vulnerabilities, which are critical security concerns in Solidity, thereby enhancing the overall robustness and security of arithmetic calculations (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract consistently and correctly utilizes `SafeMath` for `uint256` operations and `SafeMathInt` for `int256` operations. This practice effectively prevents integer overflow and underflow vulnerabilities, which are critical security concerns in Solidity, thereby enhancing the overall robustness and security of arithmetic calculations (7.2 Code Security).
 
 **Recommendation:** Continue to adhere to this best practice. While Solidity 0.8.0 and later versions include native checked arithmetic, explicit use of `SafeMath` libraries provides clear intent and backward compatibility if the pragma were to be lowered.
 

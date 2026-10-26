@@ -2,14 +2,14 @@
 token: Euler
 ticker: EUL
 network: ethereum
-risk_score: 55
+risk_score: 40
 status: medium
 date: 2026-07-26
 ---
 
 # Euler (EUL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 55/100 — 🟡 Medium Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/euler-eth)
 
@@ -25,8 +25,8 @@ The Eul contract implements an ERC20 token with voting capabilities and a contro
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The technical implementation of the Eul token is robust, utilizing OpenZeppelin's ERC20Votes and AccessControl for standard and secure functionalities (7.2 Code Security). The Solidity version 0.8.0+… |
-| **Governance / Economics** | 1/10 | High | The contract's governance model, based on AccessControl, initially centralizes significant power. The constructor assigns both the `DEFAULT_ADMIN_ROLE` and `ADMIN_ROLE` to a single `treasury`… |
+| **Technical** | 8/10 | Low | The technical implementation of the Eul token is robust, utilizing OpenZeppelin's ERC20Votes and AccessControl for standard and secure functionalities (7.2 Code Security). The Solidity version 0.8.0+… |
+| **Governance / Economics** | 2/10 | High | The contract's governance model, based on AccessControl, initially centralizes significant power. The constructor assigns both the `DEFAULT_ADMIN_ROLE` and `ADMIN_ROLE` to a single `treasury`… |
 | **Upgrades** | 3/10 | High | The Eul contract is implemented as a standard, non-upgradeable contract. It does not utilize any proxy patterns (e.g., UUPS, Transparent, Beacon) (7.7 Upgrades). Therefore, there are no… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The Eul contract implements an ERC20 token with voting capabilities and a contro
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · ⚪ 2 Informational_
-
-### `H-01` — Centralized Control of Administrative Roles  *(Severity: High · Status: Unresolved)*
-
-The contract's constructor assigns both the `DEFAULT_ADMIN_ROLE` and the `ADMIN_ROLE` to the `treasury_` address. This design centralizes significant power, including the ability to mint new tokens, update the treasury address, and manage all other roles (grant/revoke), to a single entity. If the `treasury` address is a single EOA (Externally Owned Account), it represents a single point of failure, making the system vulnerable to compromise of that key or malicious actions by its holder. (7.3 Access Control, 7.5 Governance)
-
-**Recommendation:** It is highly recommended to assign the `DEFAULT_ADMIN_ROLE` and `ADMIN_ROLE` to a robust multi-signature wallet or a DAO governance contract. This distributes control and requires multiple approvals for critical operations, significantly reducing the risk associated with a single point of failure.
-
+_🟡 2 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Lack of Safe `DEFAULT_ADMIN_ROLE` Transfer Mechanism  *(Severity: Medium · Status: Unresolved)*
 
-The contract, while using OpenZeppelin's AccessControl, does not implement a specific, multi-step mechanism for safely transferring the `DEFAULT_ADMIN_ROLE` to a new entity. The `DEFAULT_ADMIN_ROLE` is its own administrator, meaning its management is critical. A direct `grantRole` followed by `revokeRole` or `renounceRole` by the old admin carries inherent risks, such as the old admin failing to revoke/renounce or a new admin not being able to take over if the transaction fails. If the initial `treasury` address (holding `DEFAULT_ADMIN_ROLE`) is compromised or becomes inaccessible, the ultimate administrative control of the system could be lost or become unrecoverable. (7.3 Access Control,…
+Not confirmed by static analysis (the model's own reading of the source). The contract, while using OpenZeppelin's AccessControl, does not implement a specific, multi-step mechanism for safely transferring the `DEFAULT_ADMIN_ROLE` to a new entity. The `DEFAULT_ADMIN_ROLE` is its own administrator, meaning its management is critical. A direct `grantRole` followed by `revokeRole` or `renounceRole` by the old admin carries inherent risks, such as the old admin failing to revoke/renounce or a new admin not being able to take over if the transaction fails. If the initial `treasury` address (holding `DEFAULT_ADMIN_ROLE`) is compromised or becomes inaccessible, the ultimate administrative control o
 
 **Recommendation:** Implement a dedicated, multi-step transfer mechanism for the `DEFAULT_ADMIN_ROLE`. This typically involves a `proposeNewAdmin` function, followed by an `acceptNewAdmin` function from the proposed address, ensuring a secure and deliberate transfer of control. This pattern prevents accidental loss of administrative privileges.
 
 
+### `M-02` — Centralized Control of Administrative Roles  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract's constructor assigns both the `DEFAULT_ADMIN_ROLE` and the `ADMIN_ROLE` to the `treasury_` address. This design centralizes significant power, including the ability to mint new tokens, update the treasury address, and manage all other roles (grant/revoke), to a single entity. If the `treasury` address is a single EOA (Externally Owned Account), it represents a single point of failure, making the system vulnerable to compromise of that key or malicious actions by its holder. (7.3 Access Control, 7.5 Governance)
+
+**Recommendation:** It is highly recommended to assign the `DEFAULT_ADMIN_ROLE` and `ADMIN_ROLE` to a robust multi-signature wallet or a DAO governance contract. This distributes control and requires multiple approvals for critical operations, significantly reducing the risk associated with a single point of failure.
+
+
 ### `I-01` — Inflationary Tokenomics  *(Severity: Informational · Status: Unresolved)*
 
-The token design includes an annual minting mechanism, allowing the `ADMIN_ROLE` to mint new tokens equivalent to 2.718% of the current total supply. This is an intentional economic model that results in a continuously increasing total supply. While this is a design choice and not a vulnerability, it's important for users and stakeholders to be aware of the inflationary nature of the token and its potential impact on token value over time. (7.4 Economic)
+Not confirmed by static analysis (the model's own reading of the source). The token design includes an annual minting mechanism, allowing the `ADMIN_ROLE` to mint new tokens equivalent to 2.718% of the current total supply. This is an intentional economic model that results in a continuously increasing total supply. While this is a design choice and not a vulnerability, it's important for users and stakeholders to be aware of the inflationary nature of the token and its potential impact on token value over time. (7.4 Economic)
 
 **Recommendation:** Ensure that the inflationary model is clearly communicated in all project documentation, whitepapers, and user interfaces. Transparency regarding tokenomics helps manage user expectations and provides a complete picture of the token's economic design.
 
 
 ### `I-02` — Absence of Emergency Pause Functionality  *(Severity: Informational · Status: Unresolved)*
 
-The contract lacks an emergency pause mechanism. In the event of a critical vulnerability discovery, a major market exploit, or other unforeseen circumstances, the ability to temporarily halt critical operations (like minting or transfers) can be crucial for mitigating damage and allowing time for a resolution. Without such a mechanism, the protocol might be exposed to prolonged risk during an incident. (7.2 Code Security, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks an emergency pause mechanism. In the event of a critical vulnerability discovery, a major market exploit, or other unforeseen circumstances, the ability to temporarily halt critical operations (like minting or transfers) can be crucial for mitigating damage and allowing time for a resolution. Without such a mechanism, the protocol might be exposed to prolonged risk during an incident. (7.2 Code Security, 7.8 Operations)
 
 **Recommendation:** Consider integrating a pause mechanism (e.g., using OpenZeppelin's `Pausable` contract) that can be triggered by the `DEFAULT_ADMIN_ROLE` or a designated emergency multisig. This would provide a safety switch to protect users and the protocol during critical events.
 
@@ -106,11 +106,11 @@ The contract lacks an emergency pause mechanism. In the event of a critical vuln
 
 ### Is Euler a scam?
 
-Based on automated analysis, Euler scores 89/100 (Critical Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Euler scores 40/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Euler safe to buy?
 
-Our scanner flagged a risk score of 89/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 40/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Euler been audited?
 

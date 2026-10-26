@@ -2,14 +2,14 @@
 token: Everipedia IQ
 ticker: IQ
 network: ethereum
-risk_score: 71
-status: high
+risk_score: 63
+status: medium
 date: 2026-09-01
 ---
 
 # Everipedia IQ (IQ) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 71/100 — 🟠 High Risk**
+> **Risk Score: 63/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/everipedia-iq-eth)
 
@@ -25,9 +25,9 @@ The IQERC20 token contract implements a standard ERC20 token with added minting 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract utilizes OpenZeppelin's robust ERC20, Ownable, and SafeMath libraries, which significantly enhance code security and mitigate common vulnerabilities like integer overflows (7.2 Code… |
-| **Governance / Economics** | 1/10 | High | The contract design introduces a critical centralization risk due to the `owner` and `_minter` roles having unlimited minting and burning capabilities (7.4 Economic). This power allows for arbitrary… |
-| **Upgrades** | 4/10 | Medium | The IQERC20 contract is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, no upgrade-specific vulnerabilities or risks are present. Any changes to the contract logic would require… |
+| **Technical** | 8/10 | Low | The contract utilizes OpenZeppelin's robust ERC20, Ownable, and SafeMath libraries, which significantly enhance code security and mitigate common vulnerabilities like integer overflows (7.2 Code… |
+| **Governance / Economics** | 2/10 | High | The contract design introduces a critical centralization risk due to the `owner` and `_minter` roles having unlimited minting and burning capabilities (7.4 Economic). This power allows for arbitrary… |
+| **Upgrades** | 5/10 | Medium | The IQERC20 contract is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, no upgrade-specific vulnerabilities or risks are present. Any changes to the contract logic would require… |
 
 ## LP Distribution
 
@@ -38,25 +38,25 @@ The IQERC20 token contract implements a standard ERC20 token with added minting 
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · ⚪ 1 Informational_
+_🟡 2 Medium · ⚪ 1 Informational_
 
-### `C-01` — Centralized Minting/Burning Authority  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Centralized Minting/Burning Authority  *(Severity: Medium · Status: Unresolved)*
 
-The `IQERC20` contract grants the `owner` and a designated `_minter` the ability to mint and burn an unlimited amount of tokens via the `mint` and `burn` functions. This centralized control over the token supply introduces a critical economic risk, as it allows for arbitrary inflation or deflation of the token, potentially devaluing existing token holders' assets. While the owner is a multisig, the power itself is highly centralized.
+Not confirmed by static analysis (the model's own reading of the source). The `IQERC20` contract grants the `owner` and a designated `_minter` the ability to mint and burn an unlimited amount of tokens via the `mint` and `burn` functions. This centralized control over the token supply introduces a critical economic risk, as it allows for arbitrary inflation or deflation of the token, potentially devaluing existing token holders' assets. While the owner is a multisig, the power itself is highly centralized.
 
 **Recommendation:** Implement a robust governance mechanism (e.g., a DAO or a more complex multi-signature scheme) to control minting and burning. Consider introducing a maximum total supply limit (`cap`) for the token or a rate-limiting mechanism for minting operations. If unlimited minting is an intentional design, ensure this is clearly communicated to token holders and that the `_minter` address is secured with the highest possible operational security standards.
 
 
-### `H-01` — Minter Role Security  *(Severity: High · Status: Unresolved)*
+### `M-02` — Minter Role Security  *(Severity: Medium · Status: Unresolved)*
 
-The `_minter` address, once set by the `owner`, gains the power to mint and burn tokens. If this `_minter` address is a single Externally Owned Account (EOA) and its private key is compromised, an attacker could gain full control over the token supply, leading to severe economic damage. The `setMinter` function is `onlyOwner`, but the security of the `_minter` itself is critical.
+Not confirmed by static analysis (the model's own reading of the source). The `_minter` address, once set by the `owner`, gains the power to mint and burn tokens. If this `_minter` address is a single Externally Owned Account (EOA) and its private key is compromised, an attacker could gain full control over the token supply, leading to severe economic damage. The `setMinter` function is `onlyOwner`, but the security of the `_minter` itself is critical.
 
 **Recommendation:** Ensure that the `_minter` address is controlled by a highly secure entity, such as a hardware wallet, a multi-signature wallet, or a well-audited smart contract with robust access controls. Implement strict operational procedures around the `_minter`'s private key management or contract interaction. Regularly review the `_minter` address and its associated security practices.
 
 
 ### `I-01` — Standard ERC20 Approval Race Condition  *(Severity: Informational · Status: Unresolved)*
 
-The `approve` function in ERC20 contracts is susceptible to a known front-running vulnerability. If a user approves an allowance for a spender and then attempts to change that allowance, a malicious actor could front-run the second transaction, spending the original allowance before the new one is set, and then spending the new allowance as well. This can lead to the spender spending more than intended.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function in ERC20 contracts is susceptible to a known front-running vulnerability. If a user approves an allowance for a spender and then attempts to change that allowance, a malicious actor could front-run the second transaction, spending the original allowance before the new one is set, and then spending the new allowance as well. This can lead to the spender spending more than intended.
 
 **Recommendation:** While this is an inherent characteristic of the ERC20 standard, users should be advised to use the `increaseAllowance` and `decreaseAllowance` functions (which are implemented in this contract) instead of directly calling `approve` when modifying an existing allowance. These functions mitigate the race condition by atomically adding or subtracting from the current allowance.
 

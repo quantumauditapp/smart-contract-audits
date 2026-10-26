@@ -2,14 +2,14 @@
 token: Gains Network
 ticker: GNS
 network: arbitrum
-risk_score: 60
+risk_score: 43
 status: medium
 date: 2026-09-01
 ---
 
 # Gains Network (GNS) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 60/100 — 🟡 Medium Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gains-network-arb)
 
@@ -25,8 +25,8 @@ The GainsNetworkToken contract is an ERC20Capped token utilizing OpenZeppelin's 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract exhibits strong technical security (7.2 Code Security). It leverages well-audited OpenZeppelin libraries for ERC20Capped and AccessControlEnumerable, minimizing common vulnerabilities… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4 Economic) and governance structure (7.5 Governance) present the highest risks. The `DEFAULT_ADMIN_ROLE` holds significant power, able to grant and revoke all other roles… |
+| **Technical** | 8/10 | Low | The contract exhibits strong technical security (7.2 Code Security). It leverages well-audited OpenZeppelin libraries for ERC20Capped and AccessControlEnumerable, minimizing common vulnerabilities… |
+| **Governance / Economics** | 2/10 | High | The economic model (7.4 Economic) and governance structure (7.5 Governance) present the highest risks. The `DEFAULT_ADMIN_ROLE` holds significant power, able to grant and revoke all other roles… |
 | **Upgrades** | 3/10 | High | The GainsNetworkToken contract is not designed as an upgradeable proxy (7.7 Upgrades). It is a standard implementation contract, meaning its logic cannot be changed post-deployment. This eliminates… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The GainsNetworkToken contract is an ERC20Capped token utilizing OpenZeppelin's 
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control Over Token Supply  *(Severity: High · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE` has the power to grant and revoke `MINTER_ROLE` and `BURNER_ROLE`. Additionally, multiple external addresses are assigned `MINTER_ROLE` in the `setupRoles` function. A compromise of the `DEFAULT_ADMIN_ROLE` or any address holding `MINTER_ROLE` could lead to unauthorized token minting up to the cap (100,000,000 GNS), significantly devaluing existing tokens and impacting the protocol's economic stability. This represents a critical risk to the token's integrity and value (7.3 Access Control, 7.4 Economic).
-
-**Recommendation:** Implement a multi-signature wallet for the `DEFAULT_ADMIN_ROLE` to require multiple approvals for critical actions like granting/revoking roles. Carefully evaluate the necessity of each address holding `MINTER_ROLE` and consider reducing the number of such privileged entities. Implement robust security measures for all addresses with minting or burning capabilities.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Single Point of Failure for Default Admin Role  *(Severity: Medium · Status: Unresolved)*
 
-The `DEFAULT_ADMIN_ROLE` is initially assigned to a single `admin` address in the constructor. This creates a single point of failure (7.8 Operations). If this `admin` address's private key is compromised, an attacker would gain full control over all roles within the contract, including the ability to assign themselves `MINTER_ROLE` or `BURNER_ROLE`, leading to potential token manipulation (7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` is initially assigned to a single `admin` address in the constructor. This creates a single point of failure (7.8 Operations). If this `admin` address's private key is compromised, an attacker would gain full control over all roles within the contract, including the ability to assign themselves `MINTER_ROLE` or `BURNER_ROLE`, leading to potential token manipulation (7.3 Access Control).
 
 **Recommendation:** Transition the `DEFAULT_ADMIN_ROLE` to a multi-signature wallet or a robust governance contract as soon as possible after deployment. This distributes control and significantly reduces the risk associated with a single compromised key.
 
 
+### `M-02` — Centralized Control Over Token Supply  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` has the power to grant and revoke `MINTER_ROLE` and `BURNER_ROLE`. Additionally, multiple external addresses are assigned `MINTER_ROLE` in the `setupRoles` function. A compromise of the `DEFAULT_ADMIN_ROLE` or any address holding `MINTER_ROLE` could lead to unauthorized token minting up to the cap (100,000,000 GNS), significantly devaluing existing tokens and impacting the protocol's economic stability. This represents a critical risk to the token's integrity and value (7.3 Access Control, 7.4 Economic).
+
+**Recommendation:** Implement a multi-signature wallet for the `DEFAULT_ADMIN_ROLE` to require multiple approvals for critical actions like granting/revoking roles. Carefully evaluate the necessity of each address holding `MINTER_ROLE` and consider reducing the number of such privileged entities. Implement robust security measures for all addresses with minting or burning capabilities.
+
+
 ### `L-01` — Critical Initialization Function `setupRoles`  *(Severity: Low · Status: Unresolved)*
 
-The `setupRoles` function is a critical, one-time initialization function that assigns `MINTER_ROLE` and `BURNER_ROLE` to several external addresses. While protected by an `initialized` flag and `onlyRole(DEFAULT_ADMIN_ROLE)`, any error in the initial setup (e.g., incorrect addresses) or a compromise of the `DEFAULT_ADMIN_ROLE` before this call could lead to incorrect or malicious role assignments that are difficult to rectify (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `setupRoles` function is a critical, one-time initialization function that assigns `MINTER_ROLE` and `BURNER_ROLE` to several external addresses. While protected by an `initialized` flag and `onlyRole(DEFAULT_ADMIN_ROLE)`, any error in the initial setup (e.g., incorrect addresses) or a compromise of the `DEFAULT_ADMIN_ROLE` before this call could lead to incorrect or malicious role assignments that are difficult to rectify (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** Ensure thorough testing and verification of all addresses passed to `setupRoles` before deployment. Consider a timelock for the `DEFAULT_ADMIN_ROLE` to introduce a delay for critical operations, allowing time to react to potential errors or malicious actions during initialization.
 
 
 ### `I-01` — Use of AccessControlEnumerable  *(Severity: Informational · Status: Unresolved)*
 
-The contract inherits `AccessControlEnumerable`, which provides functionality to enumerate role members (e.g., `getRoleMember`, `getRoleMemberCount`). If the protocol does not actively utilize these enumeration features, inheriting directly from `AccessControl` would be sufficient. `AccessControlEnumerable` adds a slight increase in contract size and gas costs due to the additional storage and logic for `EnumerableSet` (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract inherits `AccessControlEnumerable`, which provides functionality to enumerate role members (e.g., `getRoleMember`, `getRoleMemberCount`). If the protocol does not actively utilize these enumeration features, inheriting directly from `AccessControl` would be sufficient. `AccessControlEnumerable` adds a slight increase in contract size and gas costs due to the additional storage and logic for `EnumerableSet` (7.2 Code Security).
 
 **Recommendation:** Review if the enumeration features of `AccessControlEnumerable` are strictly necessary for the protocol's operations. If not, consider using `AccessControl` to slightly optimize contract size and gas usage. This is a minor optimization and does not pose a security risk.
 

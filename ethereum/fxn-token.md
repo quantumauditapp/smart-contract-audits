@@ -93,7 +93,7 @@ The verified source code was reviewed and no issue rising to Informational sever
 
 ### Is FXN Token a scam?
 
-Based on automated analysis, FXN Token scores 51/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, FXN Token scores 51/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is FXN Token safe to buy?
 

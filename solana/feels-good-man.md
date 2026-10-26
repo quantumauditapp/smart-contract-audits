@@ -2,14 +2,14 @@
 token: Feels Good Man
 ticker: FEELSGOOD
 network: solana
-risk_score: 18
+risk_score: 9
 status: low
 date: 2026-09-20
 ---
 
 # Feels Good Man (FEELSGOOD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 18/100 — 🟢 Low Risk**
+> **Risk Score: 9/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/feels-good-man-sol)
 
@@ -26,8 +26,8 @@ The Feels Good Man (FEELSGOOD) token is an SPL Token-2022 mint with revoked mint
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Feels Good Man (FEELSGOOD) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no… |
-| **Governance / Economics** | 6/10 | Medium | The token's DEX pair is very new, having been created only 1 day ago, which provides insufficient track record for assessing market behavior. Total DEX liquidity stands at $441,164, with a 24-hour… |
-| **Upgrades** | 6/10 | Medium | The mint and freeze authorities are revoked, preventing changes to supply or account freeze status. While the token uses the Token-2022 program, its `transfer_hook_upgradable` flag is False, but the… |
+| **Governance / Economics** | 7/10 | Low | The token's DEX pair is very new, having been created only 1 day ago, which provides insufficient track record for assessing market behavior. Total DEX liquidity stands at $441,164, with a 24-hour… |
+| **Upgrades** | 7/10 | Low | The mint and freeze authorities are revoked, preventing changes to supply or account freeze status. While the token uses the Token-2022 program, its `transfer_hook_upgradable` flag is False, but the… |
 
 ## Token-2022 Extensions
 
@@ -73,7 +73,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

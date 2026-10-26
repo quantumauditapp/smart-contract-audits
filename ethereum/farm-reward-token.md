@@ -2,14 +2,14 @@
 token: FARM Reward Token
 ticker: FARM
 network: ethereum
-risk_score: 71
+risk_score: 69
 status: high
 date: 2026-09-12
 ---
 
 # FARM Reward Token (FARM) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 71/100 — 🟠 High Risk**
+> **Risk Score: 69/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/farm-reward-token-eth)
 
@@ -38,32 +38,32 @@ The RewardToken contract implements a standard ERC20 token with minting capabili
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Minter Role Management and Single Point of Failure  *(Severity: High · Status: Unresolved)*
-
-The `MinterRole` is highly centralized, with the `addMinter` function only callable by an existing minter. There is no mechanism for the contract owner or any other designated role to add or remove minters. This creates a single point of failure: if the initial minter's private key is lost, compromised, or if the last minter renounces their role without assigning another, the ability to mint new tokens (up to the defined cap) could be permanently lost or fall into malicious hands. This poses a significant operational risk and could lead to an unrecoverable state for the token's minting functionality.
-
-**Recommendation:** Implement a more robust role management system. Consider allowing the contract owner to add and remove minters, or integrate a multi-signature wallet for managing the MinterRole. This would distribute control and reduce the risk associated with a single point of failure. A timelock for critical role changes could also be considered.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Renounce Minter Leads to Potential Loss of Minting Capability  *(Severity: Medium · Status: Unresolved)*
 
-The `renounceMinter` function allows any address holding the MinterRole to remove themselves. If the last remaining minter calls this function without first assigning another minter, the contract will enter a state where no address holds the `MinterRole`. In this scenario, the `mint` function will become permanently unusable, preventing any further token issuance, even if the supply cap has not been reached.
+Not confirmed by static analysis (the model's own reading of the source). The `renounceMinter` function allows any address holding the MinterRole to remove themselves. If the last remaining minter calls this function without first assigning another minter, the contract will enter a state where no address holds the `MinterRole`. In this scenario, the `mint` function will become permanently unusable, preventing any further token issuance, even if the supply cap has not been reached.
 
 **Recommendation:** Implement a safeguard within the `renounceMinter` function to prevent the last minter from renouncing their role. This could involve checking `_minters.count()` (if a counter is added) or requiring that at least one other minter exists before allowing a minter to renounce. Alternatively, ensure strict operational procedures are in place to manage minter roles.
 
 
+### `M-02` — Centralized Minter Role Management and Single Point of Failure  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `MinterRole` is highly centralized, with the `addMinter` function only callable by an existing minter. There is no mechanism for the contract owner or any other designated role to add or remove minters. This creates a single point of failure: if the initial minter's private key is lost, compromised, or if the last minter renounces their role without assigning another, the ability to mint new tokens (up to the defined cap) could be permanently lost or fall into malicious hands. This poses a significant operational risk and could lead to an unrecoverable state for the token's minting functionality.
+
+**Recommendation:** Implement a more robust role management system. Consider allowing the contract owner to add and remove minters, or integrate a multi-signature wallet for managing the MinterRole. This would distribute control and reduce the risk associated with a single point of failure. A timelock for critical role changes could also be considered.
+
+
 ### `L-01` — Older Solidity Compiler Version  *(Severity: Low · Status: Unresolved)*
 
-The contract is compiled with Solidity version `^0.5.0`. While `SafeMath` is used to mitigate integer overflows, older compiler versions may contain known bugs, lack certain security features, or be less optimized compared to more recent and actively maintained versions (e.g., 0.8.x).
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version `^0.5.0`. While `SafeMath` is used to mitigate integer overflows, older compiler versions may contain known bugs, lack certain security features, or be less optimized compared to more recent and actively maintained versions (e.g., 0.8.x).
 
 **Recommendation:** Consider upgrading the contract to a more recent and actively supported Solidity compiler version (e.g., 0.8.x). This would allow the contract to benefit from the latest bug fixes, security enhancements (such as native overflow checks), and gas optimizations.
 
 
 ### `I-01` — Missing Dedicated Event for `_burnFrom`  *(Severity: Informational · Status: Unresolved)*
 
-The internal `_burnFrom` function performs a token burn and an allowance update. While the underlying `_burn` and `_approve` calls emit `Transfer` and `Approval` events respectively, there is no dedicated event specifically for the `_burnFrom` action. A distinct event could provide clearer and more granular off-chain visibility for this specific operation, aiding in monitoring and auditing.
+Not confirmed by static analysis (the model's own reading of the source). The internal `_burnFrom` function performs a token burn and an allowance update. While the underlying `_burn` and `_approve` calls emit `Transfer` and `Approval` events respectively, there is no dedicated event specifically for the `_burnFrom` action. A distinct event could provide clearer and more granular off-chain visibility for this specific operation, aiding in monitoring and auditing.
 
 **Recommendation:** Consider adding a dedicated event, such as `BurnFrom(address indexed account, address indexed spender, uint256 amount)`, within the `_burnFrom` function. This would enhance transparency and provide a clearer audit trail for tokens burned on behalf of another address.
 

@@ -2,14 +2,14 @@
 token: GPRO
 ticker: GPRO
 network: solana
-risk_score: 42
-status: medium
+risk_score: 25
+status: low
 date: 2026-09-01
 ---
 
 # GPRO (GPRO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 25/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gpro-sol)
 
@@ -25,9 +25,9 @@ The GPRO token mint is configured as an immutable SPL Token-2022, with both mint
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The GPRO token is an SPL Token-2022 mint with robust security configurations. Both the mint authority and freeze authority are revoked, preventing further token creation or account freezing. No… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a low holder concentration, with the top 10 accounts holding approximately 15.99% of the supply, which is a positive indicator against whale manipulation. Current DEX liquidity… |
-| **Upgrades** | 8/10 | Low | The GPRO token mint demonstrates a high degree of immutability regarding its core parameters. Both the mint and freeze authorities have been revoked, meaning no further tokens can be minted and no… |
+| **Technical** | 10/10 | Low | The GPRO token is an SPL Token-2022 mint with robust security configurations. Both the mint authority and freeze authority are revoked, preventing further token creation or account freezing. No… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a low holder concentration, with the top 10 accounts holding approximately 15.99% of the supply, which is a positive indicator against whale manipulation. Current DEX liquidity… |
+| **Upgrades** | 10/10 | Low | The GPRO token mint demonstrates a high degree of immutability regarding its core parameters. Both the mint and freeze authorities have been revoked, meaning no further tokens can be minted and no… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4973 buys / 4246 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

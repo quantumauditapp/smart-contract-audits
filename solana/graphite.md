@@ -2,14 +2,14 @@
 token: Graphite
 ticker: GP
 network: solana
-risk_score: 16
+risk_score: 7
 status: low
 date: 2026-09-05
 ---
 
 # Graphite (GP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 16/100 — 🟢 Low Risk**
+> **Risk Score: 7/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/graphite-sol)
 
@@ -26,8 +26,8 @@ This audit of the Graphite (GP) SPL token mint identified a medium risk due to s
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Graphite (GP) token is a standard SPL Token Program v3 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a notable holder concentration, with the top 10 accounts collectively holding 52.78% of the total supply, posing a medium risk for market manipulation (7.4 Economic). Liquidity is… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the Graphite (GP) token have both been revoked, preventing any further changes to the token's supply or the ability to freeze accounts. As a classic SPL… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a notable holder concentration, with the top 10 accounts collectively holding 52.78% of the total supply, posing a medium risk for market manipulation (7.4 Economic). Liquidity is… |
+| **Upgrades** | 9/10 | Low | The mint authority and freeze authority for the Graphite (GP) token have both been revoked, preventing any further changes to the token's supply or the ability to freeze accounts. As a classic SPL… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

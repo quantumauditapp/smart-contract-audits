@@ -2,14 +2,14 @@
 token: fomocoin
 ticker: FOMOCOIN
 network: solana
-risk_score: 31
+risk_score: 14
 status: low
 date: 2026-09-17
 ---
 
 # fomocoin (FOMOCOIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 31/100 — 🟢 Low Risk**
+> **Risk Score: 14/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fomocoin-sol)
 
@@ -26,8 +26,8 @@ The fomocoin SPL Token Mint exhibits a medium risk profile primarily due to its 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The fomocoin token is an SPL Token-2022 mint with a total supply of 968,589,609,276,003 tokens and 6 decimals. The Mint Authority is revoked, preventing the creation of new tokens, and the Freeze… |
-| **Governance / Economics** | 2/10 | High | The token's economic stability is currently uncertain due to its extremely young age, with the DEX pair created only 0 days ago. Total DEX liquidity stands at $26,114, with a 24-hour volume of… |
-| **Upgrades** | 8/10 | Low | The token's upgradeability and mutability features are minimal, contributing to a low risk profile in this area. Both the Mint Authority and Freeze Authority have been revoked, ensuring that no… |
+| **Governance / Economics** | 5/10 | Medium | The token's economic stability is currently uncertain due to its extremely young age, with the DEX pair created only 0 days ago. Total DEX liquidity stands at $26,114, with a 24-hour volume of… |
+| **Upgrades** | 10/10 | Low | The token's upgradeability and mutability features are minimal, contributing to a low risk profile in this area. Both the Mint Authority and Freeze Authority have been revoked, ensuring that no… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair for fomocoin was created 0 days ago. This indicates an insufficient
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1151 buys / 1678 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for fomocoin was created 0 days ago. This indicates an insufficient
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

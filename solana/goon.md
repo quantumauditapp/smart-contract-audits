@@ -2,14 +2,14 @@
 token: goon
 ticker: GOON
 network: solana
-risk_score: 13
+risk_score: 6
 status: low
 date: 2026-09-25
 ---
 
 # goon (GOON) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 13/100 — 🟢 Low Risk**
+> **Risk Score: 6/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/goon-sol)
 
@@ -26,8 +26,8 @@ The goon SPL Token Mint exhibits a low-risk profile regarding core token authori
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The goon token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account freezing. No… |
-| **Governance / Economics** | 6/10 | Medium | The token has a current liquidity of $182,996 USD with a 24-hour volume of $830,574, resulting in a normal Volume/Liquidity Ratio of 4.54. The DEX pair is very new, established only 1 day ago, which… |
-| **Upgrades** | 8/10 | Low | The goon token mint has no active upgrade paths for core authorities, as both the mint and freeze authorities are revoked. No Token-2022 extensions like Transfer Hook or Default Account State Frozen… |
+| **Governance / Economics** | 7/10 | Low | The token has a current liquidity of $182,996 USD with a 24-hour volume of $830,574, resulting in a normal Volume/Liquidity Ratio of 4.54. The DEX pair is very new, established only 1 day ago, which… |
+| **Upgrades** | 9/10 | Low | The goon token mint has no active upgrade paths for core authorities, as both the mint and freeze authorities are revoked. No Token-2022 extensions like Transfer Hook or Default Account State Frozen… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

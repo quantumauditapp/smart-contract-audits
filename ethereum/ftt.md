@@ -2,14 +2,14 @@
 token: FTT
 ticker: FTX TOKEN
 network: ethereum
-risk_score: 53
+risk_score: 46
 status: medium
 date: 2026-09-21
 ---
 
 # FTT (FTX TOKEN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 53/100 — 🟡 Medium Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ftt-eth)
 
@@ -42,21 +42,21 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralized Initial Token Supply  *(Severity: Medium · Status: Unresolved)*
 
-The `FTT` contract's constructor mints the entire initial supply of 350,000,000 FTT tokens to `msg.sender` (the contract deployer). This design choice centralizes the initial token distribution, giving the deployer significant control over the token's supply and potential market influence. While there are no further minting capabilities, the initial concentration of tokens represents a single point of control.
+Not confirmed by static analysis (the model's own reading of the source). The `FTT` contract's constructor mints the entire initial supply of 350,000,000 FTT tokens to `msg.sender` (the contract deployer). This design choice centralizes the initial token distribution, giving the deployer significant control over the token's supply and potential market influence. While there are no further minting capabilities, the initial concentration of tokens represents a single point of control.
 
 **Recommendation:** Ensure that the initial distribution strategy is clearly communicated to the community. If decentralization is a long-term goal, consider implementing a phased distribution or vesting schedule for the initial supply to reduce immediate centralization risks. Implement robust operational security for the address holding the initial supply.
 
 
 ### `L-01` — ERC20 `approve` Race Condition  *(Severity: Low · Status: Unresolved)*
 
-The standard ERC20 `approve` function is susceptible to a known race condition. If a user calls `approve(spender, newAmount)` while a `spender` is concurrently trying to spend the `oldAmount`, the `spender` might be able to spend both `oldAmount` and `newAmount` if the `newAmount` is greater than `oldAmount`. While `increaseAllowance` and `decreaseAllowance` functions are provided, the direct `approve` function remains available.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC20 `approve` function is susceptible to a known race condition. If a user calls `approve(spender, newAmount)` while a `spender` is concurrently trying to spend the `oldAmount`, the `spender` might be able to spend both `oldAmount` and `newAmount` if the `newAmount` is greater than `oldAmount`. While `increaseAllowance` and `decreaseAllowance` functions are provided, the direct `approve` function remains available.
 
 **Recommendation:** Educate users to always set the allowance to zero (`approve(spender, 0)`) before setting a new non-zero allowance, or preferably, to use `increaseAllowance` and `decreaseAllowance` functions which are designed to prevent this specific race condition. No code change is strictly required for this standard ERC20 behavior, but user education is key.
 
 
 ### `I-01` — Older Solidity Compiler Version  *(Severity: Informational · Status: Unresolved)*
 
-The contract is compiled using Solidity version `^0.5.2`. While this version is functional, it is an older release. Newer Solidity versions (e.g., 0.8.x) include various language improvements, optimizer enhancements, and additional security checks (like default checked arithmetic, which SafeMath already addresses here).
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled using Solidity version `^0.5.2`. While this version is functional, it is an older release. Newer Solidity versions (e.g., 0.8.x) include various language improvements, optimizer enhancements, and additional security checks (like default checked arithmetic, which SafeMath already addresses here).
 
 **Recommendation:** For future contract deployments or significant updates, consider migrating to a more recent and actively maintained Solidity compiler version (e.g., 0.8.x). This allows leveraging the latest language features, security improvements, and compiler optimizations.
 

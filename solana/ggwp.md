@@ -2,14 +2,14 @@
 token: GGWP
 ticker: GGWP
 network: solana
-risk_score: 27
+risk_score: 8
 status: low
 date: 2026-09-20
 ---
 
 # GGWP (GGWP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 27/100 — 🟢 Low Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ggwp-sol)
 
@@ -26,8 +26,8 @@ The GGWP token mint has its mint and freeze authorities revoked, indicating a fi
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The GGWP token is an SPL token operating under the `spl-token` program. Both the Mint Authority and Freeze Authority are revoked (None), which means no new tokens can be minted and no existing token… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a very new trading pair, established only 1 day ago, which provides insufficient historical data for market analysis. Current DEX liquidity stands at $28,232, with a 24-hour volume… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing further minting or freezing of accounts. This indicates a fixed supply and immutable freeze status.… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a very new trading pair, established only 1 day ago, which provides insufficient historical data for market analysis. Current DEX liquidity stands at $28,232, with a 24-hour volume… |
+| **Upgrades** | 10/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing further minting or freezing of accounts. This indicates a fixed supply and immutable freeze status.… |
 
 ## Security Findings
 
@@ -61,13 +61,13 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2216 buys / 1373 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

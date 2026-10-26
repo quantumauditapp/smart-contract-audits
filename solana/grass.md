@@ -83,11 +83,11 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 
 ### Is Grass a scam?
 
-Based on the available data, Grass (GRASS) exhibits several characteristics typically associated with high-risk tokens. While ownership is renounced and no mint function exists, the absence of contract verification and unlocked liquidity are significant red flags. Furthermore, the concentration of 55.6% of the supply among the top 10 holders indicates a centralized distribution. These factors contribute to its high-risk score of 54/100, suggesting caution rather than definitively labeling it a scam.
+Based on the available data, Grass (GRASS) exhibits several characteristics typically associated with high-risk tokens. While ownership is renounced and no mint function exists, the absence of contract verification and unlocked liquidity are significant red flags. Furthermore, the concentration of 55.6% of the supply among the top 10 holders indicates a centralized distribution. These factors contribute to its medium-risk score of 41/100, suggesting caution rather than definitively labeling it a scam.
 
 ### Is Grass safe to buy?
 
-Given its high-risk score of 54/100, Grass (GRASS) is not considered safe to buy without significant caution. Key risk factors include the unverified contract, which prevents independent code review, and the unlocked liquidity, exposing it to potential rug pulls. The substantial concentration of tokens among the top 10 holders also poses a risk of market manipulation or sudden sell-offs. Investors should be aware of these fundamental vulnerabilities.
+Given its medium-risk score of 41/100, Grass (GRASS) is not considered safe to buy without significant caution. Key risk factors include the unverified contract, which prevents independent code review, and the unlocked liquidity, exposing it to potential rug pulls. The substantial concentration of tokens among the top 10 holders also poses a risk of market manipulation or sudden sell-offs. Investors should be aware of these fundamental vulnerabilities.
 
 ### Has Grass been audited?
 

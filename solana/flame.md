@@ -2,14 +2,14 @@
 token: Flame
 ticker: FLAME
 network: solana
-risk_score: 20
+risk_score: 3
 status: low
 date: 2026-09-14
 ---
 
 # Flame (FLAME) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 20/100 — 🟢 Low Risk**
+> **Risk Score: 3/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/flame-sol)
 
@@ -26,8 +26,8 @@ The Flame (FLAME) SPL token mint exhibits a standard configuration with both min
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Flame token is implemented using the standard spl-token program. Both the mint authority and freeze authority have been revoked, which means no new tokens can be minted and no existing token… |
-| **Governance / Economics** | 6/10 | Medium | The token's economic profile shows moderate liquidity at $167,476 USD, with a 24-hour trading volume of $1,173,235 USD, resulting in a Volume/Liquidity Ratio of 7.01. Holder concentration is… |
-| **Upgrades** | 8/10 | Low | The token's upgradeability posture is robust, as both the mint authority and freeze authority have been permanently revoked. This prevents any future changes to the token's supply or the ability to… |
+| **Governance / Economics** | 9/10 | Low | The token's economic profile shows moderate liquidity at $167,476 USD, with a 24-hour trading volume of $1,173,235 USD, resulting in a Volume/Liquidity Ratio of 7.01. Holder concentration is… |
+| **Upgrades** | 10/10 | Low | The token's upgradeability posture is robust, as both the mint authority and freeze authority have been permanently revoked. This prevents any future changes to the token's supply or the ability to… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair for Flame (FLAME) was created 2 days ago. This short track record p
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3583 buys / 3141 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for Flame (FLAME) was created 2 days ago. This short track record p
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

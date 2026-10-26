@@ -2,14 +2,14 @@
 token: Grok Chain
 ticker: GROKCHAIN
 network: solana
-risk_score: 53
+risk_score: 36
 status: medium
 date: 2026-09-01
 ---
 
 # Grok Chain (GROKCHAIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟡 Medium Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/grok-chain-sol)
 
@@ -26,7 +26,7 @@ The Grok Chain (GROKCHAIN) SPL Token Mint has revoked both mint and freeze autho
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The Grok Chain token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked, meaning no new tokens can be minted and no accounts can be frozen. No transfer hook is… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 37.32% of the supply, which is below the threshold for high concentration. Total DEX liquidity is $28,233, which is sufficient… |
+| **Governance / Economics** | 2/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 37.32% of the supply, which is below the threshold for high concentration. Total DEX liquidity is $28,233, which is sufficient… |
 | **Upgrades** | 8/10 | Low | The token mint has revoked both mint and freeze authorities, preventing any future changes to supply or account freeze status. It is an SPL Token-2022, but does not utilize extensions like transfer… |
 
 ## Security Findings
@@ -54,13 +54,13 @@ DEX pair was created 4 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1271 buys / 1144 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 4 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

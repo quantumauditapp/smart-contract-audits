@@ -2,14 +2,14 @@
 token: Giggle Tom
 ticker: TOM
 network: bsc
-risk_score: 81
-status: high
+risk_score: 13
+status: low
 date: 2026-09-03
 ---
 
 # Giggle Tom (TOM) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 81/100 — 🟠 High Risk**
+> **Risk Score: 13/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/giggle-tom-bsc)
 
@@ -25,9 +25,9 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with a complex
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The contract leverages OpenZeppelin's upgradeable ERC20 standard and implements a detailed state machine for managing token taxes and migrations (7.1 Architecture). Code quality is generally good… |
-| **Governance / Economics** | 3/10 | High | The contract's economic model relies on a state-based tax mechanism and a liquidation process that distributes collected taxes (7.4 Economic). The owner has control over state transitions (7.5… |
-| **Upgrades** | 3/10 | High | The contract correctly implements the OpenZeppelin upgradeable pattern, including `Initializable` and `_disableInitializers()` in the constructor (7.7 Upgrades). This allows for future logic updates.… |
+| **Technical** | 9/10 | Low | The contract leverages OpenZeppelin's upgradeable ERC20 standard and implements a detailed state machine for managing token taxes and migrations (7.1 Architecture). Code quality is generally good… |
+| **Governance / Economics** | 7/10 | Low | The contract's economic model relies on a state-based tax mechanism and a liquidation process that distributes collected taxes (7.4 Economic). The owner has control over state transitions (7.5… |
+| **Upgrades** | 5/10 | Medium | The contract correctly implements the OpenZeppelin upgradeable pattern, including `Initializable` and `_disableInitializers()` in the constructor (7.7 Upgrades). This allows for future logic updates.… |
 
 ## Proxy Upgrade Controls
 
@@ -45,60 +45,60 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with a complex
 
 ## Security Findings
 
-_🔴 2 Critical · 🟠 2 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `C-01` — Reentrancy Vulnerability in `_liquidateTax`  *(Severity: Critical · Status: Unresolved)*
-
-The `_liquidateTax` function, which is called during every `_transfer`, makes external calls to `ITaxProcessor(taxProcessor).processTax` and `IDividend(dividendContract).distribute`. These calls occur before the contract's internal state (e.g., `balanceOf(address(this))`) is fully updated or protected by a reentrancy guard. A malicious `taxProcessor` or `dividendContract` could reenter the `_transfer` or `_liquidateTax` function, potentially leading to double-spending of collected tax funds or manipulation of the contract's state.
-
-**Recommendation:** Implement a reentrancy guard (e.g., OpenZeppelin's `ReentrancyGuard`) on the `_liquidateTax` function. Alternatively, ensure that all state changes related to tax collection and liquidation are completed following the 'checks-effects-interactions' pattern before any external calls are made.
-
-
-### `C-02` — Denial of Service via External Call Reverts  *(Severity: Critical · Status: Unresolved)*
-
-The `_liquidateTax` function, which is an integral part of the `_transfer` flow, makes external calls to `taxProcessor` and `dividendContract`. If either of these external contracts reverts (e.g., due to an error, intentional malicious behavior, or being paused), all token transfers (`_transfer`) will consequently revert. This effectively halts the entire token's functionality, leading to a complete denial of service for all users.
-
-**Recommendation:** Implement robust error handling for external calls. Consider using a pull-based mechanism for tax distribution where external parties claim funds, rather than pushing funds directly within the critical transfer path. Alternatively, allow the owner to remove or replace a problematic `taxProcessor` or `dividendContract` to prevent a full DoS, possibly by wrapping external calls in `try/catch` blocks if partial failure is acceptable.
-
-
-### `H-01` — Rigid Critical Parameters  *(Severity: High · Status: Unresolved)*
-
-Numerous critical operational parameters, including `taxProcessor`, `dividendContract`, `v2Router`, `quoteToken`, `liqExpectedOutputAmount`, `antiFarmerDuration`, `buyTaxRate`, `sellTaxRate`, `taxDuration`, and the `pools` mapping, are set exclusively during the `initialize` function and are immutable thereafter. This rigidity prevents the contract from adapting to changing market conditions, security threats, or evolving protocol needs without a full contract upgrade, increasing operational risk.
-
-**Recommendation:** Implement owner-controlled functions to update critical parameters (e.g., `setTaxProcessor`, `setDividendContract`, `setBuyTaxRate`, `setSellTaxRate`, `addPool`, `removePool`). These functions should include appropriate access controls (e.g., `onlyOwner`) and potentially time-locks or multi-signature approvals for sensitive changes to enhance security and flexibility.
-
-
-### `H-02` — Centralization Risk and Single Point of Failure  *(Severity: High · Status: Unresolved)*
-
-The contract relies heavily on the `owner` for critical state transitions (`startMigration`, `finalizeMigration`). Furthermore, the `taxProcessor` and `dividendContract` are fixed external dependencies. If the owner's private key is compromised, or if the `taxProcessor` or `dividendContract` are malicious or exploited, the system faces a single point of failure that could lead to fund loss, manipulation, or a complete halt of operations.
-
-**Recommendation:** Consider implementing a multi-signature wallet for ownership to reduce the risk of a single point of compromise. For external dependencies, explore mechanisms for owner-controlled updates (as in H-01) and potentially a circuit breaker or emergency pause to mitigate risks from compromised external contracts.
-
+_🟡 6 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Lack of Emergency Pause Mechanism  *(Severity: Medium · Status: Unresolved)*
 
-The contract lacks an emergency pause mechanism. In the event of a critical vulnerability, exploit, or unforeseen issue, there is no way for the owner or a governance body to temporarily halt transfers or other critical operations to prevent further damage or allow for a fix.
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks an emergency pause mechanism. In the event of a critical vulnerability, exploit, or unforeseen issue, there is no way for the owner or a governance body to temporarily halt transfers or other critical operations to prevent further damage or allow for a fix.
 
 **Recommendation:** Integrate an emergency pause mechanism (e.g., OpenZeppelin's `PausableUpgradeable` contract). This would allow the owner to pause critical functions like `_transfer` in an emergency, providing time to address issues or prepare for an upgrade.
 
 
 ### `M-02` — MEV Risk in Tax Processing  *(Severity: Medium · Status: Unresolved)*
 
-The `_liquidateTax` function calls `ITaxProcessor(taxProcessor).processTax(taxAmount, liqExpectedOutputAmount, quoteToken, v2Router)`. This likely involves a swap operation on a DEX. Such operations are susceptible to Miner Extractable Value (MEV) attacks, specifically sandwich attacks, where malicious actors can front-run and back-run the transaction to profit at the expense of the protocol, potentially reducing the effective value of the collected tax.
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function calls `ITaxProcessor(taxProcessor).processTax(taxAmount, liqExpectedOutputAmount, quoteToken, v2Router)`. This likely involves a swap operation on a DEX. Such operations are susceptible to Miner Extractable Value (MEV) attacks, specifically sandwich attacks, where malicious actors can front-run and back-run the transaction to profit at the expense of the protocol, potentially reducing the effective value of the collected tax.
 
 **Recommendation:** While completely eliminating MEV is challenging, consider strategies to mitigate its impact. This could include using a decentralized exchange aggregator that routes through multiple liquidity sources, implementing a minimum output amount check with slippage control, or exploring private transaction relays for sensitive operations.
 
 
+### `M-03` — Reentrancy Vulnerability in `_liquidateTax`  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function, which is called during every `_transfer`, makes external calls to `ITaxProcessor(taxProcessor).processTax` and `IDividend(dividendContract).distribute`. These calls occur before the contract's internal state (e.g., `balanceOf(address(this))`) is fully updated or protected by a reentrancy guard. A malicious `taxProcessor` or `dividendContract` could reenter the `_transfer` or `_liquidateTax` function, potentially leading to double-spending of collected tax funds or manipulation of the contract's state.
+
+**Recommendation:** Implement a reentrancy guard (e.g., OpenZeppelin's `ReentrancyGuard`) on the `_liquidateTax` function. Alternatively, ensure that all state changes related to tax collection and liquidation are completed following the 'checks-effects-interactions' pattern before any external calls are made.
+
+
+### `M-04` — Denial of Service via External Call Reverts  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function, which is an integral part of the `_transfer` flow, makes external calls to `taxProcessor` and `dividendContract`. If either of these external contracts reverts (e.g., due to an error, intentional malicious behavior, or being paused), all token transfers (`_transfer`) will consequently revert. This effectively halts the entire token's functionality, leading to a complete denial of service for all users.
+
+**Recommendation:** Implement robust error handling for external calls. Consider using a pull-based mechanism for tax distribution where external parties claim funds, rather than pushing funds directly within the critical transfer path. Alternatively, allow the owner to remove or replace a problematic `taxProcessor` or `dividendContract` to prevent a full DoS, possibly by wrapping external calls in `try/catch` blocks if partial failure is acceptable.
+
+
+### `M-05` — Rigid Critical Parameters  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). Numerous critical operational parameters, including `taxProcessor`, `dividendContract`, `v2Router`, `quoteToken`, `liqExpectedOutputAmount`, `antiFarmerDuration`, `buyTaxRate`, `sellTaxRate`, `taxDuration`, and the `pools` mapping, are set exclusively during the `initialize` function and are immutable thereafter. This rigidity prevents the contract from adapting to changing market conditions, security threats, or evolving protocol needs without a full contract upgrade, increasing operational risk.
+
+**Recommendation:** Implement owner-controlled functions to update critical parameters (e.g., `setTaxProcessor`, `setDividendContract`, `setBuyTaxRate`, `setSellTaxRate`, `addPool`, `removePool`). These functions should include appropriate access controls (e.g., `onlyOwner`) and potentially time-locks or multi-signature approvals for sensitive changes to enhance security and flexibility.
+
+
+### `M-06` — Centralization Risk and Single Point of Failure  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract relies heavily on the `owner` for critical state transitions (`startMigration`, `finalizeMigration`). Furthermore, the `taxProcessor` and `dividendContract` are fixed external dependencies. If the owner's private key is compromised, or if the `taxProcessor` or `dividendContract` are malicious or exploited, the system faces a single point of failure that could lead to fund loss, manipulation, or a complete halt of operations.
+
+**Recommendation:** Consider implementing a multi-signature wallet for ownership to reduce the risk of a single point of compromise. For external dependencies, explore mechanisms for owner-controlled updates (as in H-01) and potentially a circuit breaker or emergency pause to mitigate risks from compromised external contracts.
+
+
 ### `L-01` — Reliance on `block.timestamp` for Critical Logic  *(Severity: Low · Status: Unresolved)*
 
-The `_liquidateTax` function uses `block.timestamp` to determine state transitions (e.g., `taxExpirationTime`, `antiFarmerExpirationTime`). While common, `block.timestamp` can be manipulated by miners within a small window (up to 900 seconds on Ethereum, similar on BSC). This could allow a miner to slightly accelerate or delay a state change to their advantage, though the impact might be limited for expiration times.
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function uses `block.timestamp` to determine state transitions (e.g., `taxExpirationTime`, `antiFarmerExpirationTime`). While common, `block.timestamp` can be manipulated by miners within a small window (up to 900 seconds on Ethereum, similar on BSC). This could allow a miner to slightly accelerate or delay a state change to their advantage, though the impact might be limited for expiration times.
 
 **Recommendation:** Be aware of the limitations of `block.timestamp`. For critical, time-sensitive operations where precise timing is crucial and manipulation could lead to significant gains, consider using alternative time sources or mechanisms that are less susceptible to miner manipulation, such as a time oracle or a commit-reveal scheme. For expiration times, the risk is generally lower.
 
 
 ### `I-01` — No Token Recovery Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The contract does not include a function to recover accidentally sent ERC20 tokens (other than its own token) that might be mistakenly transferred to the contract address. Such tokens would become permanently locked and inaccessible.
+Not confirmed by static analysis (the model's own reading of the source). The contract does not include a function to recover accidentally sent ERC20 tokens (other than its own token) that might be mistakenly transferred to the contract address. Such tokens would become permanently locked and inaccessible.
 
 **Recommendation:** Implement an `onlyOwner` function to allow the recovery of arbitrary ERC20 tokens sent to the contract address. This function should explicitly exclude the contract's own token to prevent accidental draining.
 

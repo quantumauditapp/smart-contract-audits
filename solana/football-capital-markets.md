@@ -2,14 +2,14 @@
 token: Football Capital Markets
 ticker: FCM
 network: solana
-risk_score: 38
-status: medium
+risk_score: 26
+status: low
 date: 2026-06-10
 ---
 
 # Football Capital Markets (FCM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 38/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/football-capital-markets-sol)
 
@@ -25,9 +25,9 @@ The Football Capital Markets (FCM) SPL Token Mint audit found no critical or hig
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked (None), indicating that no new tokens can be minted and no holder accounts can be… |
-| **Governance / Economics** | 2/10 | High | The token exhibits moderate liquidity with $35,970 in total DEX liquidity, which is sufficient for small to medium trades without severe slippage. The 24-hour volume of $4,461 results in a healthy… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as both the Mint Authority and Freeze Authority have been revoked. The metadata is also immutable, with 'metadata_mutable: False', ensuring the token's… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked (None), indicating that no new tokens can be minted and no holder accounts can be… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits moderate liquidity with $35,970 in total DEX liquidity, which is sufficient for small to medium trades without severe slippage. The 24-hour volume of $4,461 results in a healthy… |
+| **Upgrades** | 10/10 | Low | The token's core parameters are immutable, as both the Mint Authority and Freeze Authority have been revoked. The metadata is also immutable, with 'metadata_mutable: False', ensuring the token's… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 7986 buys / 3573 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,18 +69,18 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is Football Capital Markets a scam?
 
-While the data does not definitively label Football Capital Markets as a scam, it exhibits several high-risk characteristics. The unverified contract, unrenounced ownership, and unlocked liquidity create conditions where malicious actions are possible. These factors contribute to its 61/100 high-risk score, warranting extreme caution from potential investors regarding the project's long-term viability and integrity.
+While the data does not definitively label Football Capital Markets as a scam, it exhibits several high-risk characteristics. The unverified contract, unrenounced ownership, and unlocked liquidity create conditions where malicious actions are possible. These factors contribute to its 26/100 low-risk score, warranting extreme caution from potential investors regarding the project's long-term viability and integrity.
 
 ### Is Football Capital Markets safe to buy?
 
-Football Capital Markets is currently assessed as having a high-risk profile (61/100), suggesting it is not safe for typical investment. Key safety concerns include the contract not being verified, ownership not being renounced, and the project's liquidity not being locked. These elements mean the project's integrity is heavily reliant on the developer's trustworthiness, which carries inherent risks for investors.
+Football Capital Markets is currently assessed as having a low-risk profile (26/100), suggesting it is not safe for typical investment. Key safety concerns include the contract not being verified, ownership not being renounced, and the project's liquidity not being locked. These elements mean the project's integrity is heavily reliant on the developer's trustworthiness, which carries inherent risks for investors.
 
 ### Has Football Capital Markets been audited?
 

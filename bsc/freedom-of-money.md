@@ -42,28 +42,28 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Incomplete Token Implementation for Standalone Deployment  *(Severity: Medium · Status: Unresolved)*
 
-The `FourERC20` contract is designed as a base ERC-20 implementation. It lacks a public constructor to set the token's `name` and `symbol` and does not expose public functions for `_mint` or `_burn`. This means the contract cannot be deployed as a fully functional, self-contained token without a derived contract adding these essential functionalities. Deploying this contract directly would result in a token with no initial supply and unchangeable default metadata.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract is designed as a base ERC-20 implementation. It lacks a public constructor to set the token's `name` and `symbol` and does not expose public functions for `_mint` or `_burn`. This means the contract cannot be deployed as a fully functional, self-contained token without a derived contract adding these essential functionalities. Deploying this contract directly would result in a token with no initial supply and unchangeable default metadata.
 
 **Recommendation:** A derived contract must be created that inherits from `FourERC20`. This derived contract should include a public constructor to call `_init(name_, symbol_)` and implement public functions (with appropriate access control) to utilize the internal `_mint` and `_burn` functionalities to manage the token supply.
 
 
 ### `L-01` — Absence of Explicit Access Control for Administrative Functions  *(Severity: Low · Status: Unresolved)*
 
-The `_mint` and `_burn` functions are internal, and the `_init` function is also internal. While this is appropriate for a base contract, if a derived contract exposes these or similar administrative functions (e.g., for supply management), it must implement robust access control (7.3). The current contract does not include any access control mechanisms like `Ownable` or `AccessControl` to restrict who can perform such operations, which could lead to unauthorized actions if not properly handled by a derived contract.
+Not confirmed by static analysis (the model's own reading of the source). The `_mint` and `_burn` functions are internal, and the `_init` function is also internal. While this is appropriate for a base contract, if a derived contract exposes these or similar administrative functions (e.g., for supply management), it must implement robust access control (7.3). The current contract does not include any access control mechanisms like `Ownable` or `AccessControl` to restrict who can perform such operations, which could lead to unauthorized actions if not properly handled by a derived contract.
 
 **Recommendation:** When extending `FourERC20` with administrative functionalities (e.g., minting, burning, pausing), ensure that these functions are protected by appropriate access control mechanisms, such as OpenZeppelin's `Ownable` or `AccessControl` roles, to prevent unauthorized execution.
 
 
 ### `I-01` — Standard ERC-20 `approve` Front-Running Vulnerability  *(Severity: Informational · Status: Unresolved)*
 
-The standard ERC-20 `approve` function is susceptible to a known front-running vulnerability. If a user approves an allowance for a spender, and then attempts to change that allowance to a different value, a malicious actor could front-run the second transaction by executing the first approved transaction. This would cause the second `approve` transaction to set an allowance based on an outdated state, potentially leading to an unintended allowance value. The contract does provide `increaseAllowance` and `decreaseAllowance` as mitigations.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC-20 `approve` function is susceptible to a known front-running vulnerability. If a user approves an allowance for a spender, and then attempts to change that allowance to a different value, a malicious actor could front-run the second transaction by executing the first approved transaction. This would cause the second `approve` transaction to set an allowance based on an outdated state, potentially leading to an unintended allowance value. The contract does provide `increaseAllowance` and `decreaseAllowance` as mitigations.
 
 **Recommendation:** Advise users to primarily use `increaseAllowance` and `decreaseAllowance` instead of directly calling `approve` when modifying existing allowances. Educate users about the risks associated with directly calling `approve` to change an allowance.
 
 
 ### `I-02` — Lack of Pause Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The contract does not include a pause mechanism (7.8 Operations) to halt transfers or other critical operations in case of an emergency, such as a discovered vulnerability or a major market disruption. While not strictly required for all tokens, a pause function can be a valuable tool for mitigating risks in complex DeFi ecosystems.
+Not confirmed by static analysis (the model's own reading of the source). The contract does not include a pause mechanism (7.8 Operations) to halt transfers or other critical operations in case of an emergency, such as a discovered vulnerability or a major market disruption. While not strictly required for all tokens, a pause function can be a valuable tool for mitigating risks in complex DeFi ecosystems.
 
 **Recommendation:** Consider integrating a pause mechanism, such as OpenZeppelin's `Pausable` contract, into a derived token contract. This would allow a designated administrator to temporarily halt token operations during critical situations, providing a safety switch for the protocol.
 

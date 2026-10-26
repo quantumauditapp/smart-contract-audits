@@ -42,21 +42,21 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Missing Public Token Supply Mechanism  *(Severity: Medium · Status: Unresolved)*
 
-The `FourERC20` contract provides internal `_mint` and `_burn` functions but lacks any public or external functions to create or destroy tokens. As a result, the token's `_totalSupply` will remain zero upon deployment, and there will be no mechanism to issue new tokens, rendering the contract non-functional as a standalone ERC-20 token. This is a design flaw that prevents the token from being used as intended without further development.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract provides internal `_mint` and `_burn` functions but lacks any public or external functions to create or destroy tokens. As a result, the token's `_totalSupply` will remain zero upon deployment, and there will be no mechanism to issue new tokens, rendering the contract non-functional as a standalone ERC-20 token. This is a design flaw that prevents the token from being used as intended without further development.
 
 **Recommendation:** If this contract is intended to be a base, ensure that any derived contract implements a public minting function (e.g., `mint(address to, uint256 amount)`) that calls the internal `_mint` function. This public function must be protected by appropriate access control mechanisms (e.g., `Ownable`, `AccessControl`) to prevent unauthorized token creation.
 
 
 ### `L-01` — Incomplete Source Code Provided for Audit  *(Severity: Low · Status: Unresolved)*
 
-The provided source code for the `_transfer` internal function within `FourERC20.sol` is truncated. This prevents a full and accurate security analysis of one of the most critical functions in an ERC-20 token, as the complete logic for balance updates and checks could not be reviewed. While it is likely based on OpenZeppelin's standard implementation, an audit cannot make assumptions about missing code.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the `_transfer` internal function within `FourERC20.sol` is truncated. This prevents a full and accurate security analysis of one of the most critical functions in an ERC-20 token, as the complete logic for balance updates and checks could not be reviewed. While it is likely based on OpenZeppelin's standard implementation, an audit cannot make assumptions about missing code.
 
 **Recommendation:** Always provide the complete and final source code for all contracts and functions to be audited. This ensures that all logic, including internal helper functions, can be thoroughly reviewed for potential vulnerabilities, edge cases, and deviations from expected behavior.
 
 
 ### `I-01` — Non-Upgradeability of Contract  *(Severity: Informational · Status: Unresolved)*
 
-The `FourERC20` contract is deployed directly and does not implement any upgradeability pattern (e.g., UUPS, Transparent Proxies). This means that once deployed, its logic cannot be modified or updated. While this simplifies the security model by removing upgrade-related risks, it also means that any future bug fixes, feature enhancements, or protocol changes would require deploying an entirely new contract and migrating users/assets.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract is deployed directly and does not implement any upgradeability pattern (e.g., UUPS, Transparent Proxies). This means that once deployed, its logic cannot be modified or updated. While this simplifies the security model by removing upgrade-related risks, it also means that any future bug fixes, feature enhancements, or protocol changes would require deploying an entirely new contract and migrating users/assets.
 
 **Recommendation:** Acknowledge the implications of non-upgradeability. If future flexibility is desired, consider implementing an upgradeable proxy pattern (e.g., UUPS) for the token contract. If non-upgradeability is a deliberate design choice, ensure that the current implementation is robust and future-proof to minimize the need for redeployment.
 

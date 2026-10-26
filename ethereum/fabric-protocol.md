@@ -2,14 +2,14 @@
 token: Fabric Protocol
 ticker: ROBO
 network: ethereum
-risk_score: 50
-status: medium
+risk_score: 31
+status: low
 date: 2026-08-15
 ---
 
 # Fabric Protocol (ROBO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 50/100 — 🟡 Medium Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fabric-protocol-eth)
 
@@ -25,45 +25,45 @@ The ERC20Token contract implements a standard ERC20 token with OpenZeppelin's ER
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract leverages well-audited OpenZeppelin libraries for ERC20, ERC20Permit, and Ownable functionalities (7.2 Code Security). Solidity version 0.8.20 provides default overflow/underflow checks… |
-| **Governance / Economics** | 3/10 | High | The contract's economic model features a fixed `TOTAL_SUPPLY`, but the `restoreSupply` function grants the owner the power to mint tokens up to this cap if the current supply is lower (7.4 Economic).… |
-| **Upgrades** | 6/10 | Medium | The contract is not designed to be upgradeable; it does not implement any proxy patterns (7.7 Upgrades). This simplifies the architecture by removing upgrade-related complexities and risks. The… |
+| **Technical** | 10/10 | Low | The contract leverages well-audited OpenZeppelin libraries for ERC20, ERC20Permit, and Ownable functionalities (7.2 Code Security). Solidity version 0.8.20 provides default overflow/underflow checks… |
+| **Governance / Economics** | 5/10 | Medium | The contract's economic model features a fixed `TOTAL_SUPPLY`, but the `restoreSupply` function grants the owner the power to mint tokens up to this cap if the current supply is lower (7.4 Economic).… |
+| **Upgrades** | 7/10 | Low | The contract is not designed to be upgradeable; it does not implement any proxy patterns (7.7 Upgrades). This simplifies the architecture by removing upgrade-related complexities and risks. The… |
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Centralized Minting Power for Supply Restoration  *(Severity: High · Status: Unresolved)*
-
-The `restoreSupply` function allows the contract owner to mint new tokens up to the `TOTAL_SUPPLY` constant. While the total supply is capped, this function grants the owner significant power to re-introduce tokens into circulation that were previously burned, effectively undoing deflationary events. This centralized control over supply restoration can lead to unexpected inflation and impact token value if not managed transparently or with community oversight.
-
-**Recommendation:** Implement a timelock for the `restoreSupply` function to introduce a delay before execution, allowing for community review and reaction. Alternatively, consider a multi-signature approval process beyond the standard owner for such a critical function, or remove the function entirely if the intent is for a truly fixed and non-restorable supply.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Single Metadata Change Limitation  *(Severity: Medium · Status: Unresolved)*
 
-The `updateNameAndSymbol` function, callable only by the owner, includes a `require(!_metadataChanged, "Name and symbol can only be changed once")` check. This design choice permanently restricts the ability to update the token's name and symbol after the first modification. While this prevents arbitrary changes, it removes flexibility for future branding, re-organizations, or corrections if a mistake is made during the single allowed update.
+Not confirmed by static analysis (the model's own reading of the source). The `updateNameAndSymbol` function, callable only by the owner, includes a `require(!_metadataChanged, "Name and symbol can only be changed once")` check. This design choice permanently restricts the ability to update the token's name and symbol after the first modification. While this prevents arbitrary changes, it removes flexibility for future branding, re-organizations, or corrections if a mistake is made during the single allowed update.
 
 **Recommendation:** Assess if this single-change limitation aligns with long-term project goals. If future flexibility is desired, consider removing the `_metadataChanged` flag or implementing a more robust governance mechanism for metadata updates, potentially with a timelock or multi-signature approval for subsequent changes.
 
 
+### `M-02` — Centralized Minting Power for Supply Restoration  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `restoreSupply` function allows the contract owner to mint new tokens up to the `TOTAL_SUPPLY` constant. While the total supply is capped, this function grants the owner significant power to re-introduce tokens into circulation that were previously burned, effectively undoing deflationary events. This centralized control over supply restoration can lead to unexpected inflation and impact token value if not managed transparently or with community oversight.
+
+**Recommendation:** Implement a timelock for the `restoreSupply` function to introduce a delay before execution, allowing for community review and reaction. Alternatively, consider a multi-signature approval process beyond the standard owner for such a critical function, or remove the function entirely if the intent is for a truly fixed and non-restorable supply.
+
+
 ### `L-01` — Inefficient EIP-712 Domain Separator Computation  *(Severity: Low · Status: Unresolved)*
 
-The `_buildCurrentDomainSeparator` function, which is called by `DOMAIN_SEPARATOR` and `_hashTypedDataV4`, recomputes the EIP-712 domain separator on every invocation. In OpenZeppelin's standard `ERC20Permit` implementation, the domain separator is typically cached to avoid redundant computations, especially since the `name` and `symbol` (which are part of the domain) are only intended to change once. Repeated computation incurs unnecessary gas costs for `permit` operations.
+Not confirmed by static analysis (the model's own reading of the source). The `_buildCurrentDomainSeparator` function, which is called by `DOMAIN_SEPARATOR` and `_hashTypedDataV4`, recomputes the EIP-712 domain separator on every invocation. In OpenZeppelin's standard `ERC20Permit` implementation, the domain separator is typically cached to avoid redundant computations, especially since the `name` and `symbol` (which are part of the domain) are only intended to change once. Repeated computation incurs unnecessary gas costs for `permit` operations.
 
 **Recommendation:** Cache the EIP-712 domain separator in a state variable and update it only when the token's name or symbol changes via `updateNameAndSymbol`. This will optimize gas usage for `permit` calls.
 
 
 ### `I-01` — Redundant Name and Symbol State Variables  *(Severity: Informational · Status: Unresolved)*
 
-The contract declares private state variables `_name` and `_symbol` in addition to inheriting these properties from the `ERC20` base contract. While the `name()` and `symbol()` overrides correctly return these private variables, and they are used to facilitate the `updateNameAndSymbol` function, it introduces a slight redundancy. If not carefully managed, this could lead to inconsistencies, although in this specific implementation, they are updated together.
+Not confirmed by static analysis (the model's own reading of the source). The contract declares private state variables `_name` and `_symbol` in addition to inheriting these properties from the `ERC20` base contract. While the `name()` and `symbol()` overrides correctly return these private variables, and they are used to facilitate the `updateNameAndSymbol` function, it introduces a slight redundancy. If not carefully managed, this could lead to inconsistencies, although in this specific implementation, they are updated together.
 
 **Recommendation:** Ensure that the custom `_name` and `_symbol` variables are always kept in sync with the underlying ERC20 state if the intention is to override the base ERC20 behavior. The current implementation correctly handles this by overriding the getters and updating the custom variables.
 
 
 ### `I-02` — Fixed Total Supply with Owner-Controlled Restoration  *(Severity: Informational · Status: Unresolved)*
 
-The contract defines a `TOTAL_SUPPLY` constant, implying a fixed maximum supply. However, the `restoreSupply` function allows the owner to mint tokens up to this `TOTAL_SUPPLY` if the current supply is lower due to burns. This means the 'fixed' total supply is only a cap, and the circulating supply can fluctuate up to this cap based on owner actions, rather than being strictly immutable after initial minting.
+Not confirmed by static analysis (the model's own reading of the source). The contract defines a `TOTAL_SUPPLY` constant, implying a fixed maximum supply. However, the `restoreSupply` function allows the owner to mint tokens up to this `TOTAL_SUPPLY` if the current supply is lower due to burns. This means the 'fixed' total supply is only a cap, and the circulating supply can fluctuate up to this cap based on owner actions, rather than being strictly immutable after initial minting.
 
 **Recommendation:** Clearly document and communicate this behavior to all token holders and potential investors. Emphasize that while there is a maximum supply, the actual circulating supply can be increased by the owner up to this maximum if tokens are burned. This transparency is crucial for managing expectations regarding tokenomics.
 
@@ -89,7 +89,7 @@ The contract defines a `TOTAL_SUPPLY` constant, implying a fixed maximum supply.
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -99,7 +99,7 @@ The contract defines a `TOTAL_SUPPLY` constant, implying a fixed maximum supply.
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

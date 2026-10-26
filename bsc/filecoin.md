@@ -2,14 +2,14 @@
 token: Filecoin
 ticker: FIL
 network: bsc
-risk_score: 61
+risk_score: 54
 status: medium
 date: 2026-09-02
 ---
 
 # Filecoin (FIL) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 61/100 — 🟡 Medium Risk**
+> **Risk Score: 54/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/filecoin-bsc)
 
@@ -50,28 +50,28 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralized Control of Token Supply  *(Severity: Medium · Status: Unresolved)*
 
-The `_owner` address has the sole authority to mint new tokens if the `_mintable` flag is set to true during initialization. This introduces a single point of failure where a compromised owner key could lead to arbitrary inflation of the token supply, devaluing existing tokens. This impacts access control (7.3) and economic stability (7.4).
+Not confirmed by static analysis (the model's own reading of the source). The `_owner` address has the sole authority to mint new tokens if the `_mintable` flag is set to true during initialization. This introduces a single point of failure where a compromised owner key could lead to arbitrary inflation of the token supply, devaluing existing tokens. This impacts access control (7.3) and economic stability (7.4).
 
 **Recommendation:** Implement a multi-signature wallet for the owner address to control critical functions like `mint`. This distributes control and requires multiple approvals for sensitive operations, significantly reducing the risk of a single point of compromise.
 
 
 ### `L-01` — Immutability of `_mintable` Flag  *(Severity: Low · Status: Unresolved)*
 
-The `_mintable` flag, which controls whether new tokens can be minted, is set only during the `initialize` function and cannot be changed thereafter. This design choice means the token's minting capability is permanently fixed upon deployment, which might limit future flexibility if the project's requirements evolve. This is a design consideration (7.1) and governance aspect (7.5).
+Not confirmed by static analysis (the model's own reading of the source). The `_mintable` flag, which controls whether new tokens can be minted, is set only during the `initialize` function and cannot be changed thereafter. This design choice means the token's minting capability is permanently fixed upon deployment, which might limit future flexibility if the project's requirements evolve. This is a design consideration (7.1) and governance aspect (7.5).
 
 **Recommendation:** If future flexibility is desired, consider adding an `onlyOwner` function to toggle the `_mintable` flag. Alternatively, clearly document this immutability as a core design decision for the token's economic model.
 
 
 ### `I-01` — Incomplete `_burnFrom` Function  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code for the `_burnFrom` internal function is truncated and therefore incomplete. While this function is not called by any other public or internal function in the provided code, its incompleteness represents a code quality issue and a potential bug if it were intended for future use or if other parts of the system rely on its full implementation. This affects code security (7.2).
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the `_burnFrom` internal function is truncated and therefore incomplete. While this function is not called by any other public or internal function in the provided code, its incompleteness represents a code quality issue and a potential bug if it were intended for future use or if other parts of the system rely on its full implementation. This affects code security (7.2).
 
 **Recommendation:** Complete the implementation of the `_burnFrom` function to ensure code correctness and maintainability. If it's not intended for use, consider removing it to avoid confusion.
 
 
 ### `I-02` — Use of Older Solidity Version  *(Severity: Informational · Status: Unresolved)*
 
-The contract uses `pragma solidity ^0.6.0`. While functional, newer Solidity versions (e.g., `^0.8.0`) offer additional security features (like default checked arithmetic), gas optimizations, and clearer error messages. Migrating to a newer version could improve overall code robustness and efficiency (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract uses `pragma solidity ^0.6.0`. While functional, newer Solidity versions (e.g., `^0.8.0`) offer additional security features (like default checked arithmetic), gas optimizations, and clearer error messages. Migrating to a newer version could improve overall code robustness and efficiency (7.2 Code Security).
 
 **Recommendation:** Consider upgrading the Solidity compiler version to `^0.8.0` or higher. Thoroughly test the contract after migration to ensure compatibility and correct functionality.
 

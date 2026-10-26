@@ -2,14 +2,14 @@
 token: Gekko Launchpad
 ticker: GEKKO
 network: solana
-risk_score: 34
+risk_score: 17
 status: low
 date: 2026-09-21
 ---
 
 # Gekko Launchpad (GEKKO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 34/100 — 🟢 Low Risk**
+> **Risk Score: 17/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gekko-launchpad-sol)
 
@@ -26,8 +26,8 @@ The Gekko Launchpad (GEKKO) token is an SPL Token-2022 mint with both mint and f
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Gekko Launchpad (GEKKO) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits a moderate level of holder concentration, with the top 10 token accounts collectively holding 62.01% of the total supply. This concentration could lead to significant price… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the Gekko Launchpad (GEKKO) token are both revoked, meaning the token's supply and account freeze status cannot be altered. The token utilizes the… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a moderate level of holder concentration, with the top 10 token accounts collectively holding 62.01% of the total supply. This concentration could lead to significant price… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority for the Gekko Launchpad (GEKKO) token are both revoked, meaning the token's supply and account freeze status cannot be altered. The token utilizes the… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ Top 10 token accounts hold 62.01% of supply. Coordinated sell-off would crash pr
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1591 buys / 1107 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Top 10 token accounts hold 62.01% of supply. Coordinated sell-off would crash pr
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

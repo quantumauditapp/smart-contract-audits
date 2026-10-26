@@ -2,14 +2,14 @@
 token: Grok Pot
 ticker: POT
 network: solana
-risk_score: 19
+risk_score: 2
 status: low
 date: 2026-09-19
 ---
 
 # Grok Pot (POT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 19/100 — 🟢 Low Risk**
+> **Risk Score: 2/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/grok-pot-sol)
 
@@ -26,8 +26,8 @@ The Grok Pot (POT) token mint demonstrates strong technical security with both m
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Grok Pot token is implemented using the spl-token-2022 program. A significant security strength is that both the Mint Authority and Freeze Authority are revoked, preventing further token issuance… |
-| **Governance / Economics** | 5/10 | Medium | The token's DEX pair has a liquidity of $50,649, which is above the very low threshold. However, the pair is very new, having been created only 3 days ago, which limits the track record for assessing… |
-| **Upgrades** | 8/10 | Low | The token exhibits strong immutability characteristics, as both the Mint Authority and Freeze Authority have been permanently revoked. This means no further tokens can be minted and no accounts can… |
+| **Governance / Economics** | 8/10 | Low | The token's DEX pair has a liquidity of $50,649, which is above the very low threshold. However, the pair is very new, having been created only 3 days ago, which limits the track record for assessing… |
+| **Upgrades** | 10/10 | Low | The token exhibits strong immutability characteristics, as both the Mint Authority and Freeze Authority have been permanently revoked. This means no further tokens can be minted and no accounts can… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2269 buys / 2242 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

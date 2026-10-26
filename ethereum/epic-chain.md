@@ -2,14 +2,14 @@
 token: Epic Chain
 ticker: EPIC
 network: ethereum
-risk_score: 73
+risk_score: 65
 status: high
 date: 2026-07-23
 ---
 
 # Epic Chain (EPIC) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 73/100 — 🟠 High Risk**
+> **Risk Score: 65/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/epic-chain-eth)
 
@@ -38,32 +38,32 @@ The EpicToken contract implements an ERC20 token with burnable functionality and
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Unbounded Inflationary Mechanism  *(Severity: High · Status: Unresolved)*
-
-The `mint` function allows the `governor` to mint up to 12% of the `initialSupply` every `waitPeriod`. This mechanism is a continuous inflationary process, not a one-time cap, meaning the total token supply can grow indefinitely over time by 12% of the initial supply per period. The comment 'up to 12% of the initial supply' could be misinterpreted as a total cap rather than a per-period limit, potentially leading to a misunderstanding of the token's long-term economic model (7.4 Economic).
-
-**Recommendation:** Clearly document and communicate the continuous inflationary nature of the token supply. Consider adding a hard cap on the total supply or a mechanism to reduce the minting rate over time if unbounded inflation is not the desired long-term economic model. If the current design is intentional, ensure all documentation reflects this accurately.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Immutability of `waitPeriod` Parameter  *(Severity: Medium · Status: Unresolved)*
 
-The `waitPeriod` variable, which determines the minimum time between minting events, is set during the contract constructor and cannot be modified thereafter. An incorrectly configured `waitPeriod` could lead to either excessive inflation (if too short) or hinder necessary supply adjustments (if too long), without any on-chain mechanism for correction (7.4 Economic, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `waitPeriod` variable, which determines the minimum time between minting events, is set during the contract constructor and cannot be modified thereafter. An incorrectly configured `waitPeriod` could lead to either excessive inflation (if too short) or hinder necessary supply adjustments (if too long), without any on-chain mechanism for correction (7.4 Economic, 7.8 Operations).
 
 **Recommendation:** Consider implementing a mechanism to allow the `owner` or `governor` to update the `waitPeriod` parameter, possibly with a time-lock or multi-signature approval, to provide flexibility for future economic adjustments. If immutability is desired, ensure the initial value is thoroughly vetted for long-term suitability.
 
 
+### `M-02` — Unbounded Inflationary Mechanism  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function allows the `governor` to mint up to 12% of the `initialSupply` every `waitPeriod`. This mechanism is a continuous inflationary process, not a one-time cap, meaning the total token supply can grow indefinitely over time by 12% of the initial supply per period. The comment 'up to 12% of the initial supply' could be misinterpreted as a total cap rather than a per-period limit, potentially leading to a misunderstanding of the token's long-term economic model (7.4 Economic).
+
+**Recommendation:** Clearly document and communicate the continuous inflationary nature of the token supply. Consider adding a hard cap on the total supply or a mechanism to reduce the minting rate over time if unbounded inflation is not the desired long-term economic model. If the current design is intentional, ensure all documentation reflects this accurately.
+
+
 ### `L-01` — Centralization Risk with `adminTokenWithdraw`  *(Severity: Low · Status: Unresolved)*
 
-The `adminTokenWithdraw` function allows the contract `owner` to withdraw any ERC20 tokens mistakenly sent to the contract. While a standard recovery mechanism, it grants significant power to a single address (the `owner`). A compromise of the owner's private key could lead to the loss of any such tokens held by the contract (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `adminTokenWithdraw` function allows the contract `owner` to withdraw any ERC20 tokens mistakenly sent to the contract. While a standard recovery mechanism, it grants significant power to a single address (the `owner`). A compromise of the owner's private key could lead to the loss of any such tokens held by the contract (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** Ensure the `owner` address is secured with robust practices, such as a hardware wallet or a well-configured multi-signature wallet. Consider adding a time-lock or requiring multi-signature approval for high-value withdrawals if the contract is expected to hold significant amounts of external tokens.
 
 
 ### `I-01` — Constructor Requirement for Initial Owner as Contract  *(Severity: Informational · Status: Unresolved)*
 
-The contract constructor explicitly requires the `_initialOwner` to be a contract (e.g., a multisig wallet) by using `require(_initialOwner.isContract(), "Initial owner can't be an EOA")`. While this is a good security practice to enforce robust ownership (like a multisig), it prevents a simple Externally Owned Account (EOA) from being the initial owner, which might be unexpected for some deployers (7.1 Architecture, 7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The contract constructor explicitly requires the `_initialOwner` to be a contract (e.g., a multisig wallet) by using `require(_initialOwner.isContract(), "Initial owner can't be an EOA")`. While this is a good security practice to enforce robust ownership (like a multisig), it prevents a simple Externally Owned Account (EOA) from being the initial owner, which might be unexpected for some deployers (7.1 Architecture, 7.3 Access Control).
 
 **Recommendation:** This is a design choice that enhances security by promoting multisig ownership. No change is strictly required, but ensure this requirement is clearly documented for anyone deploying the contract.
 

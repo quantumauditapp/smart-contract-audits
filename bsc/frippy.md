@@ -2,14 +2,14 @@
 token: Frippy
 ticker: FRIPPY
 network: bsc
-risk_score: 13
+risk_score: 0
 status: low
 date: 2026-07-29
 ---
 
 # Frippy (FRIPPY) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 13/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/frippy-bsc)
 
@@ -25,8 +25,8 @@ The Frippy contract is an ERC-20 token implementation that inherits from OpenZep
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract implements a standard ERC-20 token following OpenZeppelin patterns (7.1 Architecture). It utilizes Solidity 0.8.x, which includes default overflow/underflow checks for arithmetic… |
-| **Governance / Economics** | 5/10 | Medium | The contract's ownership is immediately renounced in the constructor (7.5 Governance). This design choice means no single entity can control or modify the contract post-deployment, eliminating… |
+| **Technical** | 10/10 | Low | The contract implements a standard ERC-20 token following OpenZeppelin patterns (7.1 Architecture). It utilizes Solidity 0.8.x, which includes default overflow/underflow checks for arithmetic… |
+| **Governance / Economics** | 6/10 | Medium | The contract's ownership is immediately renounced in the constructor (7.5 Governance). This design choice means no single entity can control or modify the contract post-deployment, eliminating… |
 | **Upgrades** | 10/10 | Low | The Frippy contract is not designed with upgradeability in mind (7.7 Upgrades). The immediate renunciation of ownership further solidifies its immutable nature. While this ensures the contract's… |
 
 ## LP Distribution
@@ -38,39 +38,39 @@ The Frippy contract is an ERC-20 token implementation that inherits from OpenZep
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Renounced Ownership and Immutability  *(Severity: High · Status: Unresolved)*
-
-The `FRIPPY` contract's constructor calls `renounceOwnership()`, setting the contract owner to the zero address. This design choice makes the contract completely immutable and unmanageable after deployment. While it removes central points of control and potential for malicious owner actions, it also eliminates any possibility for administrative intervention, bug fixes, or upgrades. This impacts 7.5 Governance, 7.8 Operations, and 7.7 Upgrades.
-
-**Recommendation:** This is a deliberate design decision. If immutability is the explicit goal, no change is needed. However, if any future flexibility, emergency control, or upgradeability is desired, ownership should not be renounced, or a robust governance mechanism (e.g., a DAO or multi-signature wallet) should be implemented to manage the contract.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Lack of Emergency Controls  *(Severity: Medium · Status: Unresolved)*
 
-Due to the renounced ownership (H-01), the contract lacks any emergency control mechanisms such as pausing transfers, blacklisting malicious addresses, or recovering tokens sent to the contract address. In the event of a critical vulnerability, market manipulation, or a significant exploit, there would be no way to halt operations or mitigate damage. This impacts 7.8 Operations and 7.4 Economic.
+Not confirmed by static analysis (the model's own reading of the source). Due to the renounced ownership (H-01), the contract lacks any emergency control mechanisms such as pausing transfers, blacklisting malicious addresses, or recovering tokens sent to the contract address. In the event of a critical vulnerability, market manipulation, or a significant exploit, there would be no way to halt operations or mitigate damage. This impacts 7.8 Operations and 7.4 Economic.
 
 **Recommendation:** If emergency controls are deemed necessary for future projects, consider implementing functions like `pause()`/`unpause()` or `blacklist()` that are controlled by a trusted entity (e.g., a multi-signature wallet) or a decentralized governance system, and ensure these are in place before renouncing ownership.
 
 
+### `M-02` — Renounced Ownership and Immutability  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `FRIPPY` contract's constructor calls `renounceOwnership()`, setting the contract owner to the zero address. This design choice makes the contract completely immutable and unmanageable after deployment. While it removes central points of control and potential for malicious owner actions, it also eliminates any possibility for administrative intervention, bug fixes, or upgrades. This impacts 7.5 Governance, 7.8 Operations, and 7.7 Upgrades.
+
+**Recommendation:** This is a deliberate design decision. If immutability is the explicit goal, no change is needed. However, if any future flexibility, emergency control, or upgradeability is desired, ownership should not be renounced, or a robust governance mechanism (e.g., a DAO or multi-signature wallet) should be implemented to manage the contract.
+
+
 ### `L-01` — Tokens Sent Directly to Contract Address May Be Locked  *(Severity: Low · Status: Unresolved)*
 
-As a standard ERC-20 token, if users mistakenly send tokens directly to the `FRIPPY` contract address via a standard `transfer` call (instead of `approve` then `transferFrom`), those tokens will become permanently locked within the contract. The contract has no mechanism to retrieve or forward these tokens. This impacts 7.8 Operations.
+Not confirmed by static analysis (the model's own reading of the source). As a standard ERC-20 token, if users mistakenly send tokens directly to the `FRIPPY` contract address via a standard `transfer` call (instead of `approve` then `transferFrom`), those tokens will become permanently locked within the contract. The contract has no mechanism to retrieve or forward these tokens. This impacts 7.8 Operations.
 
 **Recommendation:** Educate users to only interact with the token contract via its defined ERC-20 functions and to avoid sending tokens directly to the contract address. For future contracts, consider implementing a `recoverERC20()` function, callable by a trusted entity (if ownership is not renounced), to retrieve accidentally sent tokens.
 
 
 ### `I-01` — Broad Solidity Pragma  *(Severity: Informational · Status: Unresolved)*
 
-The contract uses a broad Solidity pragma `^0.8.0`. While the provided metadata indicates compilation with `0.8.26`, a broad pragma allows compilation with any future 0.8.x version, which might introduce breaking changes or unexpected behavior if not explicitly tested against. This impacts 7.2 Code Security.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses a broad Solidity pragma `^0.8.0`. While the provided metadata indicates compilation with `0.8.26`, a broad pragma allows compilation with any future 0.8.x version, which might introduce breaking changes or unexpected behavior if not explicitly tested against. This impacts 7.2 Code Security.
 
 **Recommendation:** Consider pinning the Solidity pragma to a specific compiler version (e.g., `pragma solidity 0.8.26;`) to ensure consistent compilation behavior across different environments and to prevent accidental compilation with incompatible future versions.
 
 
 ### `I-02` — Empty `_beforeTokenTransfer` and `_afterTokenTransfer` Hooks  *(Severity: Informational · Status: Unresolved)*
 
-The `_beforeTokenTransfer` and `_afterTokenTransfer` internal virtual functions are present but empty. While this is not a vulnerability, it represents a missed opportunity to implement custom logic, such as fee mechanisms, blacklisting, or snapshotting, before or after token transfers. This impacts 7.1 Architecture.
+Not confirmed by static analysis (the model's own reading of the source). The `_beforeTokenTransfer` and `_afterTokenTransfer` internal virtual functions are present but empty. While this is not a vulnerability, it represents a missed opportunity to implement custom logic, such as fee mechanisms, blacklisting, or snapshotting, before or after token transfers. This impacts 7.1 Architecture.
 
 **Recommendation:** If any custom logic or additional features are desired for token transfers in future iterations, these hooks provide a clean and secure way to integrate them without modifying the core ERC-20 logic.
 

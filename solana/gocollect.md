@@ -2,14 +2,14 @@
 token: GoCollect
 ticker: COLLECT
 network: solana
-risk_score: 17
+risk_score: 10
 status: low
 date: 2026-09-25
 ---
 
 # GoCollect (COLLECT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 17/100 — 🟢 Low Risk**
+> **Risk Score: 10/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gocollect-sol)
 
@@ -26,8 +26,8 @@ This audit of the GoCollect (COLLECT) SPL token mint found a Medium risk due to 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The GoCollect token is implemented using the spl-token-2022 program, indicating modern Solana token standards. Crucially, both the mint authority and freeze authority have been permanently revoked… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a total DEX liquidity of $191,199, with a substantial 24-hour trading volume of $1,739,600, resulting in a Volume/Liquidity Ratio of 9.10. However, the DEX pair was created only 0… |
-| **Upgrades** | 8/10 | Low | The token mint demonstrates strong immutability by having both its mint and freeze authorities permanently revoked. This prevents any future changes to the total supply or the ability to freeze… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a total DEX liquidity of $191,199, with a substantial 24-hour trading volume of $1,739,600, resulting in a Volume/Liquidity Ratio of 9.10. However, the DEX pair was created only 0… |
+| **Upgrades** | 9/10 | Low | The token mint demonstrates strong immutability by having both its mint and freeze authorities permanently revoked. This prevents any future changes to the total supply or the ability to freeze… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

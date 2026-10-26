@@ -2,14 +2,14 @@
 token: FARTCOIN
 ticker: FART
 network: solana
-risk_score: 39
-status: medium
+risk_score: 30
+status: low
 date: 2026-08-15
 ---
 
 # FARTCOIN (FART) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fartcoin-sol-ed5a)
 
@@ -25,9 +25,9 @@ This SPL Token Mint audit for FARTCOIN (FART) identifies a Medium risk due to th
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The FARTCOIN (FART) token operates on the spl-token-2022 program, indicating modern SPL token standards and extensions. Both the Mint Authority and Freeze Authority are revoked, preventing the… |
-| **Governance / Economics** | 3/10 | High | The token's DEX pair is very new, having been created only 2 days ago, which limits the ability to assess long-term team or holder behavior. Total DEX liquidity stands at $87,894, with a 24-hour… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, ensuring that no new tokens can be minted and no accounts can be frozen by an external party. Key Token-2022 extensions such as transfer fee… |
+| **Technical** | 10/10 | Low | The FARTCOIN (FART) token operates on the spl-token-2022 program, indicating modern SPL token standards and extensions. Both the Mint Authority and Freeze Authority are revoked, preventing the… |
+| **Governance / Economics** | 4/10 | Medium | The token's DEX pair is very new, having been created only 2 days ago, which limits the ability to assess long-term team or holder behavior. Total DEX liquidity stands at $87,894, with a 24-hour… |
+| **Upgrades** | 9/10 | Low | The mint authority and freeze authority are both revoked, ensuring that no new tokens can be minted and no accounts can be frozen by an external party. Key Token-2022 extensions such as transfer fee… |
 
 ## Token-2022 Extensions
 
@@ -73,7 +73,7 @@ The token's metadata is mutable (`metadata_mutable: True`). This means the token
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ The token's metadata is mutable (`metadata_mutable: True`). This means the token
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

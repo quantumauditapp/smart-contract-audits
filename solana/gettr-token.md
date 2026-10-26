@@ -2,14 +2,14 @@
 token: GETTR Token
 ticker: GTR
 network: solana
-risk_score: 38
-status: medium
+risk_score: 24
+status: low
 date: 2026-09-24
 ---
 
 # GETTR Token (GTR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 38/100 — 🟡 Medium Risk**
+> **Risk Score: 24/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gettr-token-sol)
 
@@ -25,9 +25,9 @@ The GETTR Token (GTR) mint has its mint and freeze authorities revoked, indicati
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The GETTR Token (GTR) is an SPL token operating under the `spl-token` program. Both the mint authority and freeze authority are revoked, meaning no new tokens can be minted and no accounts can be… |
-| **Governance / Economics** | 2/10 | High | The token exhibits extremely high holder concentration, with the top 10 accounts holding 98.91% of the total supply, posing a significant risk of price manipulation or sudden sell-offs. Liquidity is… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority have both been revoked, preventing any further changes to the token's supply or account freeze status. The token does not utilize Token-2022 extensions that… |
+| **Technical** | 10/10 | Low | The GETTR Token (GTR) is an SPL token operating under the `spl-token` program. Both the mint authority and freeze authority are revoked, meaning no new tokens can be minted and no accounts can be… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits extremely high holder concentration, with the top 10 accounts holding 98.91% of the total supply, posing a significant risk of price manipulation or sudden sell-offs. Liquidity is… |
+| **Upgrades** | 9/10 | Low | The mint authority and freeze authority have both been revoked, preventing any further changes to the token's supply or account freeze status. The token does not utilize Token-2022 extensions that… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

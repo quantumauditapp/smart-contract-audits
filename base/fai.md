@@ -2,14 +2,14 @@
 token: FAI
 ticker: FAI
 network: base
-risk_score: 19
+risk_score: 17
 status: low
 date: 2026-08-05
 ---
 
 # FAI (FAI) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 19/100 — 🟢 Low Risk**
+> **Risk Score: 17/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fai-base)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — No Custom Implementation Logic to Audit  *(Severity: Low · Status: Unresolved)*
 
-The provided contract code is limited to interface definitions and does not contain any custom business logic, state-modifying functions, or complex interactions. Consequently, common vulnerabilities related to contract implementation (e.g., reentrancy, access control, integer overflows, economic exploits) are not present in this specific codebase (7.2 Code Security, 7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The provided contract code is limited to interface definitions and does not contain any custom business logic, state-modifying functions, or complex interactions. Consequently, common vulnerabilities related to contract implementation (e.g., reentrancy, access control, integer overflows, economic exploits) are not present in this specific codebase (7.2 Code Security, 7.3 Access Control).
 
 **Recommendation:** This finding highlights a characteristic rather than a flaw in the interfaces themselves. Any contract that implements these interfaces must be rigorously audited for vulnerabilities in its own custom logic.
 
 
 ### `I-01` — Code Consists Solely of Interfaces  *(Severity: Informational · Status: Unresolved)*
 
-The provided Solidity source code defines standard interfaces (IERC20Errors, IERC721Errors, IERC1155Errors, IERC20) without any concrete contract implementations, state variables, or executable logic. This means there are no direct functional vulnerabilities such as reentrancy, access control flaws, or arithmetic issues within this specific codebase.
+Not confirmed by static analysis (the model's own reading of the source). The provided Solidity source code defines standard interfaces (IERC20Errors, IERC721Errors, IERC1155Errors, IERC20) without any concrete contract implementations, state variables, or executable logic. This means there are no direct functional vulnerabilities such as reentrancy, access control flaws, or arithmetic issues within this specific codebase.
 
 **Recommendation:** No direct recommendation for this code. Developers should ensure that any contracts implementing these interfaces are thoroughly audited for security vulnerabilities in their custom logic.
 
 
 ### `I-02` — Malformed Solidity Pragma Statement  *(Severity: Informational · Status: Unresolved)*
 
-The pragma statement `pragma solidity ^0.8.13 ^0.8.20;` is syntactically incorrect. A single pragma statement should specify a single version range, e.g., `pragma solidity ^0.8.20;` or `pragma solidity >=0.8.13 <0.9.0;`.
+Not confirmed by static analysis (the model's own reading of the source). The pragma statement `pragma solidity ^0.8.13 ^0.8.20;` is syntactically incorrect. A single pragma statement should specify a single version range, e.g., `pragma solidity ^0.8.20;` or `pragma solidity >=0.8.13 <0.9.0;`.
 
 **Recommendation:** Correct the pragma statement to specify a valid Solidity version range, for example, `pragma solidity ^0.8.20;` to ensure consistent compilation behavior.
 

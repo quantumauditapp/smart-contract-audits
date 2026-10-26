@@ -2,14 +2,14 @@
 token: evo
 ticker: EVO
 network: base
-risk_score: 60
+risk_score: 36
 status: medium
 date: 2026-07-28
 ---
 
 # evo (EVO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 60/100 — 🟡 Medium Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/evo-base)
 
@@ -26,7 +26,7 @@ The DERC20 token contract implements standard ERC20 functionalities along with c
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract utilizes well-audited OpenZeppelin libraries for ERC20, ERC20Votes, ERC20Permit, and Ownable, providing a strong foundation (7.2 Code Security). Custom error messages enhance clarity.… |
-| **Governance / Economics** | 2/10 | High | The contract's economic model includes a capped yearly inflation rate, preventing excessive token dilution (7.4 Economic). The owner has control over critical parameters like `yearlyMintRate` and can… |
+| **Governance / Economics** | 4/10 | Medium | The contract's economic model includes a capped yearly inflation rate, preventing excessive token dilution (7.4 Economic). The owner has control over critical parameters like `yearlyMintRate` and can… |
 | **Upgrades** | 7/10 | Low | The DERC20 contract is implemented as a standalone, non-upgradeable contract. Therefore, it does not introduce any specific upgrade-related risks (7.7 Upgrades). Any future changes would require a… |
 
 ## LP Distribution
@@ -38,46 +38,46 @@ The DERC20 token contract implements standard ERC20 functionalities along with c
 
 ## Security Findings
 
-_🟠 2 High · 🟢 2 Low · ⚪ 2 Informational_
+_🟡 2 Medium · 🟢 2 Low · ⚪ 2 Informational_
 
-### `H-01` — Inverted Logic and Misleading Error Message for Pool Locking  *(Severity: High · Status: Unresolved)*
+### `M-01` — Inverted Logic and Misleading Error Message for Pool Locking  *(Severity: Medium · Status: Unresolved)*
 
-The `_beforeTokenTransfer` hook contains logic `if (from == pool && !isPoolUnlocked) { revert PoolLocked(); }`. This prevents tokens from being transferred *from* the `pool` address when the pool is locked. However, the associated error message `PoolLocked()` states: 'Thrown when trying to transfer tokens into the pool while it is locked'. This discrepancy indicates either an inverted logic (if the intent was to prevent transfers *into* the pool) or a misleading error message (if the intent was to prevent transfers *from* the pool). If the former, the intended protection against transfers *into* the pool is completely bypassed.
+Not confirmed by static analysis (the model's own reading of the source). The `_beforeTokenTransfer` hook contains logic `if (from == pool && !isPoolUnlocked) { revert PoolLocked(); }`. This prevents tokens from being transferred *from* the `pool` address when the pool is locked. However, the associated error message `PoolLocked()` states: 'Thrown when trying to transfer tokens into the pool while it is locked'. This discrepancy indicates either an inverted logic (if the intent was to prevent transfers *into* the pool) or a misleading error message (if the intent was to prevent transfers *from* the pool). If the former, the intended protection against transfers *into* the pool is completely
 
 **Recommendation:** Clarify the intended behavior for pool locking. If the goal is to prevent transfers *into* the pool, modify the condition to `if (to == pool && !isPoolUnlocked)`. If the goal is to prevent transfers *from* the pool, update the `PoolLocked()` error message to accurately reflect this, e.g., 'Thrown when trying to transfer tokens from the pool while it is locked'.
 
 
-### `H-02` — Missing Vesting Token Release Functionality  *(Severity: High · Status: Unresolved)*
+### `M-02` — Missing Vesting Token Release Functionality  *(Severity: Medium · Status: Unresolved)*
 
-The contract defines a comprehensive vesting mechanism, including `vestingStart`, `vestingDuration`, `vestedTotalAmount`, and a `getVestingDataOf` mapping to track individual vesting data. However, the crucial `releaseVestedTokens` function (or any equivalent public/external function allowing beneficiaries to claim their vested tokens) is entirely absent from the provided source code. This renders the entire vesting system non-functional, preventing beneficiaries from accessing their vested tokens after the vesting period.
+Not confirmed by static analysis (the model's own reading of the source). The contract defines a comprehensive vesting mechanism, including `vestingStart`, `vestingDuration`, `vestedTotalAmount`, and a `getVestingDataOf` mapping to track individual vesting data. However, the crucial `releaseVestedTokens` function (or any equivalent public/external function allowing beneficiaries to claim their vested tokens) is entirely absent from the provided source code. This renders the entire vesting system non-functional, preventing beneficiaries from accessing their vested tokens after the vesting period.
 
 **Recommendation:** Implement a `releaseVestedTokens` function that allows users to claim their vested tokens based on the `vestingStart`, `vestingDuration`, and `getVestingDataOf` records. This function should calculate the releaseable amount, transfer tokens from the contract's balance to the claimant, and update the `releasedAmount` in `getVestingDataOf`.
 
 
 ### `L-01` — Precision Loss in Inflation Calculation  *(Severity: Low · Status: Unresolved)*
 
-The `mintInflation` function calculates `yearMint` and `partialYearMint` using integer division: `(supply * yearlyMintRate_ * timeLeftInCurrentYear) / (1 ether * 365 days)`. Integer division truncates any fractional token amounts, leading to a slight under-minting of tokens compared to a precise floating-point calculation. While common in Solidity, this precision loss can accumulate over time and result in a minor deviation from the intended inflation schedule.
+Not confirmed by static analysis (the model's own reading of the source). The `mintInflation` function calculates `yearMint` and `partialYearMint` using integer division: `(supply * yearlyMintRate_ * timeLeftInCurrentYear) / (1 ether * 365 days)`. Integer division truncates any fractional token amounts, leading to a slight under-minting of tokens compared to a precise floating-point calculation. While common in Solidity, this precision loss can accumulate over time and result in a minor deviation from the intended inflation schedule.
 
 **Recommendation:** Consider using a fixed-point math library or adjusting the calculation methodology to minimize precision loss if exact inflation amounts are critical. Alternatively, acknowledge this behavior as an acceptable trade-off for gas efficiency and simplicity in the project's documentation.
 
 
 ### `L-02` — Constructor Vesting Limit Logic  *(Severity: Low · Status: Unresolved)*
 
-The constructor includes a check `require(vestedTokens < initialSupply, MaxTotalVestedExceeded(vestedTokens, initialSupply));`. This condition prevents the entire `initialSupply` from being allocated to vested tokens, requiring at least one wei to be sent to the `recipient` via `_mint(recipient, initialSupply - vestedTokens)`. If the intention was to allow full initial supply vesting, this check imposes an unnecessary restriction. Additionally, the error message 'MaxTotalVestedExceeded' implies `vestedTokens > initialSupply` rather than `>= initialSupply`, which could be confusing.
+Not confirmed by static analysis (the model's own reading of the source). The constructor includes a check `require(vestedTokens < initialSupply, MaxTotalVestedExceeded(vestedTokens, initialSupply));`. This condition prevents the entire `initialSupply` from being allocated to vested tokens, requiring at least one wei to be sent to the `recipient` via `_mint(recipient, initialSupply - vestedTokens)`. If the intention was to allow full initial supply vesting, this check imposes an unnecessary restriction. Additionally, the error message 'MaxTotalVestedExceeded' implies `vestedTokens > initialSupply` rather than `>= initialSupply`, which could be confusing.
 
 **Recommendation:** Review the project's token distribution strategy to confirm if `vestedTokens` should be allowed to equal `initialSupply`. If so, change the condition to `vestedTokens <= initialSupply`. Also, consider refining the error message for clarity if the current behavior is intended.
 
 
 ### `I-01` — Centralized Control by Owner  *(Severity: Informational · Status: Unresolved)*
 
-The contract's `Ownable` pattern grants the deployer (owner) significant control over critical functions. The owner can `lockPool`, `unlockPool`, `burn` tokens, and `updateMintRate`. While `mintInflation` is public, it mints all inflation tokens directly to the owner. This centralization introduces a single point of failure and relies heavily on the owner's trustworthiness and operational security.
+Not confirmed by static analysis (the model's own reading of the source). The contract's `Ownable` pattern grants the deployer (owner) significant control over critical functions. The owner can `lockPool`, `unlockPool`, `burn` tokens, and `updateMintRate`. While `mintInflation` is public, it mints all inflation tokens directly to the owner. This centralization introduces a single point of failure and relies heavily on the owner's trustworthiness and operational security.
 
 **Recommendation:** For enhanced decentralization and security, consider implementing a multi-signature wallet for ownership or transitioning to a decentralized autonomous organization (DAO) governance model for critical functions. If centralization is intended, ensure robust operational security measures are in place for the owner's private key.
 
 
 ### `I-02` — BUSL-1.1 License Usage  *(Severity: Informational · Status: Unresolved)*
 
-The contract is licensed under the Business Source License 1.1 (BUSL-1.1). This is a non-open-source license with specific usage restrictions, typically allowing free use for non-production purposes but requiring a commercial license for production use after a certain time period. While not a security vulnerability, this has significant implications for project adoption, integration, and legal compliance for users and developers.
+Not confirmed by static analysis (the model's own reading of the source). The contract is licensed under the Business Source License 1.1 (BUSL-1.1). This is a non-open-source license with specific usage restrictions, typically allowing free use for non-production purposes but requiring a commercial license for production use after a certain time period. While not a security vulnerability, this has significant implications for project adoption, integration, and legal compliance for users and developers.
 
 **Recommendation:** Ensure all users and integrators of the DERC20 contract are fully aware of the BUSL-1.1 licensing terms and their implications. Clearly communicate the licensing model in project documentation and any public-facing materials.
 

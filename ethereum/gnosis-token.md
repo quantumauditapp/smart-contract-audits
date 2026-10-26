@@ -2,14 +2,14 @@
 token: Gnosis Token
 ticker: GNO
 network: ethereum
-risk_score: 61
-status: medium
+risk_score: 31
+status: low
 date: 2026-08-16
 ---
 
 # Gnosis Token (GNO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 61/100 — 🟡 Medium Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gnosis-token-eth)
 
@@ -25,7 +25,7 @@ The GnosisToken contract, an ERC-20 compliant token, was audited for security vu
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The GnosisToken contract implements a standard ERC-20 token with a fixed supply and initial distribution logic (7.1 Architecture). The core `transfer` and `transferFrom` functions include checks to… |
+| **Technical** | 10/10 | Low | The GnosisToken contract implements a standard ERC-20 token with a fixed supply and initial distribution logic (7.1 Architecture). The core `transfer` and `transferFrom` functions include checks to… |
 | **Governance / Economics** | 1/10 | High | The token's economic model is straightforward, with a fixed total supply and initial distribution defined in the constructor (7.4 Economic). There are no complex governance mechanisms or external… |
 | **Upgrades** | 6/10 | Medium | The contract is not designed with an upgrade mechanism, meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates upgrade-related risks but also prevents future bug fixes or… |
 
@@ -38,46 +38,46 @@ The GnosisToken contract, an ERC-20 compliant token, was audited for security vu
 
 ## Security Findings
 
-_🟠 2 High · 🟡 2 Medium · ⚪ 2 Informational_
-
-### `H-01` — Deprecated `throw` Keyword for Error Handling  *(Severity: High · Status: Unresolved)*
-
-The contract uses the `throw` keyword for error handling, which is deprecated since Solidity 0.4.22. `throw` consumes all remaining gas, making it less gas-efficient than `revert()` or `require()`, which were introduced later and allow for more precise error messages and gas refunds. This can lead to higher transaction costs for failed operations.
-
-**Recommendation:** Update the contract to use `require()` or `revert()` statements for error handling. This improves gas efficiency and allows for clearer error messages, aligning with modern Solidity best practices.
-
-
-### `H-02` — ERC-20 `approve` Race Condition Vulnerability  *(Severity: High · Status: Unresolved)*
-
-The `approve` function is susceptible to a known ERC-20 race condition. If a user calls `approve(spender, newAmount)` while the `spender` is simultaneously trying to spend the `oldAmount`, the `spender` might be able to spend both `oldAmount` and `newAmount`, effectively doubling the allowance. This can lead to unintended token transfers.
-
-**Recommendation:** Implement the `increaseAllowance` and `decreaseAllowance` pattern, as recommended by OpenZeppelin, to safely modify allowances. This pattern prevents the race condition by requiring explicit increments or decrements, ensuring atomic updates.
-
+_🟡 4 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Outdated Solidity Compiler Version  *(Severity: Medium · Status: Unresolved)*
 
-The contract is compiled with Solidity version 0.4.10. This version is significantly outdated and lacks numerous security features, bug fixes, and optimizations introduced in later versions (e.g., 0.5.x, 0.6.x, 0.8.x). Using an old compiler increases the risk of undiscovered compiler bugs or missing modern security patterns.
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version 0.4.10. This version is significantly outdated and lacks numerous security features, bug fixes, and optimizations introduced in later versions (e.g., 0.5.x, 0.6.x, 0.8.x). Using an old compiler increases the risk of undiscovered compiler bugs or missing modern security patterns.
 
 **Recommendation:** Upgrade the contract to a recent and stable Solidity compiler version (e.g., 0.8.x). This would allow leveraging modern language features, improved security checks (like built-in overflow/underflow checks for `uint` types), and better gas optimization.
 
 
 ### `M-02` — Potential Integer Overflow on Addition  *(Severity: Medium · Status: Unresolved)*
 
-The contract performs addition operations (e.g., `balances[_to] += _value` in `transfer` and `transferFrom`, `assignedTokens += tokens[i]` in the constructor) without explicit overflow checks. While `uint256` provides a large range, a malicious or accidental input exceeding `type(uint256).max` could lead to an overflow, resulting in incorrect balance calculations.
+Not confirmed by static analysis (the model's own reading of the source). The contract performs addition operations (e.g., `balances[_to] += _value` in `transfer` and `transferFrom`, `assignedTokens += tokens[i]` in the constructor) without explicit overflow checks. While `uint256` provides a large range, a malicious or accidental input exceeding `type(uint256).max` could lead to an overflow, resulting in incorrect balance calculations.
 
 **Recommendation:** Implement SafeMath or similar libraries for all arithmetic operations to prevent integer overflows. Modern Solidity versions (0.8.0+) include built-in overflow/underflow checks for `uint` types, which would mitigate this risk if the compiler is updated.
 
 
+### `M-03` — Deprecated `throw` Keyword for Error Handling  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract uses the `throw` keyword for error handling, which is deprecated since Solidity 0.4.22. `throw` consumes all remaining gas, making it less gas-efficient than `revert()` or `require()`, which were introduced later and allow for more precise error messages and gas refunds. This can lead to higher transaction costs for failed operations.
+
+**Recommendation:** Update the contract to use `require()` or `revert()` statements for error handling. This improves gas efficiency and allows for clearer error messages, aligning with modern Solidity best practices.
+
+
+### `M-04` — ERC-20 `approve` Race Condition Vulnerability  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function is susceptible to a known ERC-20 race condition. If a user calls `approve(spender, newAmount)` while the `spender` is simultaneously trying to spend the `oldAmount`, the `spender` might be able to spend both `oldAmount` and `newAmount`, effectively doubling the allowance. This can lead to unintended token transfers.
+
+**Recommendation:** Implement the `increaseAllowance` and `decreaseAllowance` pattern, as recommended by OpenZeppelin, to safely modify allowances. This pattern prevents the race condition by requiring explicit increments or decrements, ensuring atomic updates.
+
+
 ### `I-01` — Constructor Gas Limit Risk for Large Arrays  *(Severity: Informational · Status: Unresolved)*
 
-The `GnosisToken` constructor iterates through `owners` and `tokens` arrays to assign initial balances. If these arrays are excessively large, the constructor's gas consumption could exceed the block gas limit, preventing the contract from being deployed successfully.
+Not confirmed by static analysis (the model's own reading of the source). The `GnosisToken` constructor iterates through `owners` and `tokens` arrays to assign initial balances. If these arrays are excessively large, the constructor's gas consumption could exceed the block gas limit, preventing the contract from being deployed successfully.
 
 **Recommendation:** For very large initial distributions, consider an alternative mechanism such as a separate function for claiming tokens or a batched distribution function that can be called multiple times post-deployment to avoid hitting block gas limits.
 
 
 ### `I-02` — `totalSupply()` Signature Mismatch in Interface  *(Severity: Informational · Status: Unresolved)*
 
-The `Token` interface declares `totalSupply() constant returns (uint256 supply) {}` with an empty body and `constant` keyword. While `StandardToken` correctly implements `totalSupply` as a public state variable, the interface definition is slightly inconsistent with modern ERC-20 interfaces which typically declare `function totalSupply() external view returns (uint256);`. The `constant` keyword for functions was deprecated in 0.5.0.
+Not confirmed by static analysis (the model's own reading of the source). The `Token` interface declares `totalSupply() constant returns (uint256 supply) {}` with an empty body and `constant` keyword. While `StandardToken` correctly implements `totalSupply` as a public state variable, the interface definition is slightly inconsistent with modern ERC-20 interfaces which typically declare `function totalSupply() external view returns (uint256);`. The `constant` keyword for functions was deprecated in 0.5.0.
 
 **Recommendation:** While not a functional bug in `StandardToken`, for future compatibility and clarity, the `Token` interface could be updated to reflect modern ERC-20 standards, using `view` instead of `constant` and removing the empty function body.
 

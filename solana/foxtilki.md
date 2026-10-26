@@ -2,14 +2,14 @@
 token: FOXTILKI
 ticker: FOXTILKI
 network: solana
-risk_score: 25
+risk_score: 8
 status: low
 date: 2026-08-31
 ---
 
 # FOXTILKI (FOXTILKI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 25/100 — 🟢 Low Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/foxtilki-sol)
 
@@ -26,8 +26,8 @@ This audit of the FOXTILKI SPL Token Mint identifies a medium risk due to signif
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The FOXTILKI token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be frozen. No transfer… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a medium level of holder concentration, with the top 10 accounts holding 51.26% of the total supply, which could lead to price volatility from large sell-offs. Total DEX liquidity… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the FOXTILKI token have both been revoked, preventing any further changes to the token's supply or the ability to freeze accounts. The token utilizes the… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits a medium level of holder concentration, with the top 10 accounts holding 51.26% of the total supply, which could lead to price volatility from large sell-offs. Total DEX liquidity… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority for the FOXTILKI token have both been revoked, preventing any further changes to the token's supply or the ability to freeze accounts. The token utilizes the… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ Top 10 token accounts hold 51.26% of supply. Coordinated sell-off would crash pr
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1225 buys / 928 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Top 10 token accounts hold 51.26% of supply. Coordinated sell-off would crash pr
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

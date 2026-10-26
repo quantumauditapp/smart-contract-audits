@@ -2,14 +2,14 @@
 token: FarmTown
 ticker: FARM
 network: solana
-risk_score: 39
-status: medium
+risk_score: 27
+status: low
 date: 2026-06-22
 ---
 
 # FarmTown (FARM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/farmtown-sol)
 
@@ -25,9 +25,9 @@ The FarmTown (FARM) SPL Token Mint exhibits a robust security posture with both 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The FarmTown (FARM) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity at $36,785 USD, with a healthy 24-hour volume of $13,003 USD. The Volume/Liquidity Ratio is 0.35, which is considered normal and does not indicate wash trading.… |
-| **Upgrades** | 8/10 | Low | The FarmTown (FARM) token mint has fully revoked its mint and freeze authorities, meaning its core parameters are immutable. It uses the spl-token-2022 program but does not have a transfer hook or… |
+| **Technical** | 10/10 | Low | The FarmTown (FARM) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate liquidity at $36,785 USD, with a healthy 24-hour volume of $13,003 USD. The Volume/Liquidity Ratio is 0.35, which is considered normal and does not indicate wash trading.… |
+| **Upgrades** | 10/10 | Low | The FarmTown (FARM) token mint has fully revoked its mint and freeze authorities, meaning its core parameters are immutable. It uses the spl-token-2022 program but does not have a transfer hook or… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4022 buys / 3696 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,14 +69,14 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is FarmTown a scam?
 
-Based on the provided data, FarmTown cannot be definitively labeled a scam. Its ownership is renounced, and it lacks a mint function, which are positive indicators against immediate malicious team action. However, the unverified contract and unlocked liquidity introduce substantial risks commonly associated with less reputable projects. The medium risk score of 43/100 suggests a cautious approach is warranted, acknowledging both positive and negative signals.
+Based on the provided data, FarmTown cannot be definitively labeled a scam. Its ownership is renounced, and it lacks a mint function, which are positive indicators against immediate malicious team action. However, the unverified contract and unlocked liquidity introduce substantial risks commonly associated with less reputable projects. The low risk score of 27/100 suggests a cautious approach is warranted, acknowledging both positive and negative signals.
 
 ### Is FarmTown safe to buy?
 

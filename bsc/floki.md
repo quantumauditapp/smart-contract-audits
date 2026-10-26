@@ -2,14 +2,14 @@
 token: FLOKI
 ticker: FLOKI
 network: bsc
-risk_score: 84
-status: high
+risk_score: 39
+status: medium
 date: 2026-08-30
 ---
 
 # FLOKI (FLOKI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 84/100 — 🟠 High Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/floki-bsc)
 
@@ -26,9 +26,9 @@ For long-term security and decentralization, consider implementing a multi-signa
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract implements ERC-20 token standards and a Compound-style delegation system for governance. Strengths include the use of Solidity 0.8.11 for automatic overflow/underflow checks and a robust… |
-| **Governance / Economics** | 1/10 | High | The FLOKI token incorporates a standard delegation-based governance system, allowing token holders to delegate their voting power. The fixed `totalSupply` and initial distribution to the deployer… |
-| **Upgrades** | 6/10 | Medium | The FLOKI contract is implemented as a standard, non-upgradeable token contract. This design choice eliminates the complexities and potential risks associated with proxy upgrade patterns, such as… |
+| **Technical** | 8/10 | Low | The contract implements ERC-20 token standards and a Compound-style delegation system for governance. Strengths include the use of Solidity 0.8.11 for automatic overflow/underflow checks and a robust… |
+| **Governance / Economics** | 2/10 | High | The FLOKI token incorporates a standard delegation-based governance system, allowing token holders to delegate their voting power. The fixed `totalSupply` and initial distribution to the deployer… |
+| **Upgrades** | 7/10 | Low | The FLOKI contract is implemented as a standard, non-upgradeable token contract. This design choice eliminates the complexities and potential risks associated with proxy upgrade patterns, such as… |
 
 ## LP Distribution
 
@@ -39,46 +39,46 @@ For long-term security and decentralization, consider implementing a multi-signa
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `C-01` — Missing Core `_transfer` Function Implementation  *(Severity: Critical · Status: Unresolved)*
-
-The provided contract snippet for `FLOKI` is missing the implementation of the internal `_transfer` function, which is essential for all token transfers (`transfer`, `transferFrom`). Without this function, the token is non-functional, as no actual balance updates or `Transfer` events can occur.
-
-**Recommendation:** Implement the `_transfer` function, ensuring it correctly updates `_balances` for sender and recipient, and emits `Transfer` events, adhering to ERC-20 standards. This function is fundamental for the token's operation.
-
-
-### `H-01` — Incorrect `transferFrom` Allowance Logic  *(Severity: High · Status: Unresolved)*
-
-The `transferFrom` function first calls `_transfer(sender, recipient, amount)` and *then* checks and updates the allowance. This order is incorrect. If `_transfer` succeeds but the allowance check subsequently fails, the transaction will revert, but the logical flow is flawed. The allowance should be checked and updated *before* the actual token transfer to ensure atomicity and prevent potential unexpected behavior.
-
-**Recommendation:** Reorder the operations in `transferFrom`. First, check `currentAllowance >= amount`, then update `_approve(sender, _msgSender(), currentAllowance - amount)`, and finally call `_transfer(sender, recipient, amount)`.
-
-
-### `H-02` — Potential Truncation of Voting Power in `_moveDelegates`  *(Severity: High · Status: Unresolved)*
-
-In the `_moveDelegates` function, `delegatorBalance` (a `uint256`) is cast to `uint224` before being used to update delegate votes. If a delegator's balance exceeds `type(uint224).max` (approximately 2^224 - 1), the `amount` will be truncated. This leads to an incorrect representation of voting power for the delegatee, significantly impacting the integrity and accuracy of governance decisions.
-
-**Recommendation:** Ensure that `delegatorBalance` is handled as `uint256` throughout the delegation logic to prevent truncation, or implement explicit checks to revert if `delegatorBalance` exceeds `type(uint224).max` if `uint224` is strictly necessary for gas optimization. Using `uint256` for vote amounts is generally safer if the total supply can exceed `type(uint224).max`.
-
+_🟡 4 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralized Control of Tax and Treasury Handlers  *(Severity: Medium · Status: Unresolved)*
 
-The `setTaxHandler` and `setTreasuryHandler` functions are protected by `onlyOwner`, allowing the contract owner to unilaterally change the addresses of the `ITaxHandler` and `ITreasuryHandler` contracts. This grants significant power to the owner, as these handlers could potentially control critical tokenomics such as transaction taxes, fees, and treasury distributions, without any community governance or time-lock mechanisms.
+Not confirmed by static analysis (the model's own reading of the source). The `setTaxHandler` and `setTreasuryHandler` functions are protected by `onlyOwner`, allowing the contract owner to unilaterally change the addresses of the `ITaxHandler` and `ITreasuryHandler` contracts. This grants significant power to the owner, as these handlers could potentially control critical tokenomics such as transaction taxes, fees, and treasury distributions, without any community governance or time-lock mechanisms.
 
 **Recommendation:** Consider implementing a multi-signature wallet for ownership or introducing a time-lock mechanism for sensitive administrative actions like changing handler addresses. This would provide a delay, allowing the community to react to potentially malicious changes. Alternatively, integrate these changes into the governance system.
 
 
+### `M-02` — Missing Core `_transfer` Function Implementation  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The provided contract snippet for `FLOKI` is missing the implementation of the internal `_transfer` function, which is essential for all token transfers (`transfer`, `transferFrom`). Without this function, the token is non-functional, as no actual balance updates or `Transfer` events can occur.
+
+**Recommendation:** Implement the `_transfer` function, ensuring it correctly updates `_balances` for sender and recipient, and emits `Transfer` events, adhering to ERC-20 standards. This function is fundamental for the token's operation.
+
+
+### `M-03` — Incorrect `transferFrom` Allowance Logic  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `transferFrom` function first calls `_transfer(sender, recipient, amount)` and *then* checks and updates the allowance. This order is incorrect. If `_transfer` succeeds but the allowance check subsequently fails, the transaction will revert, but the logical flow is flawed. The allowance should be checked and updated *before* the actual token transfer to ensure atomicity and prevent potential unexpected behavior.
+
+**Recommendation:** Reorder the operations in `transferFrom`. First, check `currentAllowance >= amount`, then update `_approve(sender, _msgSender(), currentAllowance - amount)`, and finally call `_transfer(sender, recipient, amount)`.
+
+
+### `M-04` — Potential Truncation of Voting Power in `_moveDelegates`  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). In the `_moveDelegates` function, `delegatorBalance` (a `uint256`) is cast to `uint224` before being used to update delegate votes. If a delegator's balance exceeds `type(uint224).max` (approximately 2^224 - 1), the `amount` will be truncated. This leads to an incorrect representation of voting power for the delegatee, significantly impacting the integrity and accuracy of governance decisions.
+
+**Recommendation:** Ensure that `delegatorBalance` is handled as `uint256` throughout the delegation logic to prevent truncation, or implement explicit checks to revert if `delegatorBalance` exceeds `type(uint224).max` if `uint224` is strictly necessary for gas optimization. Using `uint256` for vote amounts is generally safer if the total supply can exceed `type(uint224).max`.
+
+
 ### `L-01` — Theoretical `numCheckpoints` Overflow  *(Severity: Low · Status: Unresolved)*
 
-The `numCheckpoints` variable, which tracks the number of checkpoints for a delegatee, is a `uint32`. While highly unlikely in practice (requiring over 4 billion delegation changes for a single address), it is theoretically possible for this variable to overflow, leading to unexpected behavior in vote counting.
+Not confirmed by static analysis (the model's own reading of the source). The `numCheckpoints` variable, which tracks the number of checkpoints for a delegatee, is a `uint32`. While highly unlikely in practice (requiring over 4 billion delegation changes for a single address), it is theoretically possible for this variable to overflow, leading to unexpected behavior in vote counting.
 
 **Recommendation:** While the practical impact is minimal, consider using `uint256` for `numCheckpoints` if future scaling or extreme usage patterns are anticipated, or add a check to prevent exceeding `type(uint32).max`.
 
 
 ### `I-01` — Highly Centralized Initial Token Distribution  *(Severity: Informational · Status: Unresolved)*
 
-In the constructor, the entire `totalSupply()` of FLOKI tokens is minted and assigned to the deployer (`_balances[_msgSender()] = totalSupply();`). This results in a highly centralized initial token distribution, where the deployer holds 100% of the tokens. While common for new projects, it implies significant control over the token's supply and potential governance power if not subsequently distributed.
+Not confirmed by static analysis (the model's own reading of the source). In the constructor, the entire `totalSupply()` of FLOKI tokens is minted and assigned to the deployer (`_balances[_msgSender()] = totalSupply();`). This results in a highly centralized initial token distribution, where the deployer holds 100% of the tokens. While common for new projects, it implies significant control over the token's supply and potential governance power if not subsequently distributed.
 
 **Recommendation:** Ensure a clear and transparent plan for token distribution is communicated to the community. Consider mechanisms for gradual decentralization of token holdings and governance power over time.
 

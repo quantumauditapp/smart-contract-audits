@@ -2,14 +2,14 @@
 token: Gravity
 ticker: G
 network: ethereum
-risk_score: 61
+risk_score: 53
 status: medium
 date: 2026-09-19
 ---
 
 # Gravity (G) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 61/100 — 🟡 Medium Risk**
+> **Risk Score: 53/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gravity-eth)
 
@@ -25,9 +25,9 @@ The Gravity Token (G) contract implements an ERC20 token with standard OpenZeppe
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The technical architecture (7.1 Architecture) benefits from extensive use of battle-tested OpenZeppelin libraries for ERC20, burning, pausing, and ownership, which enhances code security. However… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4 Economic) is significantly impacted by the `ownerMint` function, which allows the owner to mint an unlimited supply of tokens, creating a single point of failure and potential… |
-| **Upgrades** | 3/10 | High | The contract is deployed as a standard implementation and does not incorporate any upgradeability mechanisms (7.7 Upgrades). This means that any discovered bugs or desired feature enhancements would… |
+| **Technical** | 8/10 | Low | The technical architecture (7.1 Architecture) benefits from extensive use of battle-tested OpenZeppelin libraries for ERC20, burning, pausing, and ownership, which enhances code security. However… |
+| **Governance / Economics** | 3/10 | High | The economic model (7.4 Economic) is significantly impacted by the `ownerMint` function, which allows the owner to mint an unlimited supply of tokens, creating a single point of failure and potential… |
+| **Upgrades** | 4/10 | Medium | The contract is deployed as a standard implementation and does not incorporate any upgradeability mechanisms (7.7 Upgrades). This means that any discovered bugs or desired feature enhancements would… |
 
 ## LP Distribution
 
@@ -38,32 +38,32 @@ The Gravity Token (G) contract implements an ERC20 token with standard OpenZeppe
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `C-01` — Integer Overflow in `_getCurrentLimit` Calculation  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Integer Overflow in `_getCurrentLimit` Calculation  *(Severity: Medium · Status: Unresolved)*
 
-The `_getCurrentLimit` function in `LimitedMinterManager.sol` calculates the replenished minting limit using the formula `_calculatedLimit = _limit + ((_timePassed * _maxLimit) / _duration);`. The multiplication `_timePassed * _maxLimit` can lead to an integer overflow if both `_timePassed` (which can be very large, representing time elapsed since `_timestamp`) and `_maxLimit` (which can be up to `type(uint256).max / 2`) are sufficiently large. An overflow would cause `_calculatedLimit` to wrap around to a much smaller value, effectively denying minters their expected minting capacity and breaking the core economic logic of the limited minter system.
+Not confirmed by static analysis (the model's own reading of the source). The `_getCurrentLimit` function in `LimitedMinterManager.sol` calculates the replenished minting limit using the formula `_calculatedLimit = _limit + ((_timePassed * _maxLimit) / _duration);`. The multiplication `_timePassed * _maxLimit` can lead to an integer overflow if both `_timePassed` (which can be very large, representing time elapsed since `_timestamp`) and `_maxLimit` (which can be up to `type(uint256).max / 2`) are sufficiently large. An overflow would cause `_calculatedLimit` to wrap around to a much smaller value, effectively denying minters their expected minting capacity and breaking the core economic log
 
 **Recommendation:** Implement robust overflow protection for the multiplication `_timePassed * _maxLimit`. Consider using OpenZeppelin's `SafeMath` library (if not already implicitly handled by Solidity 0.8.x checked arithmetic for additions/subtractions, which it is, but not for intermediate products in a division) or explicitly check for overflow before multiplication. For example, check `if (_timePassed != 0 && _maxLimit > type(uint256).max / _timePassed)` before performing the multiplication.
 
 
-### `H-01` — Unlimited Owner Minting Capability  *(Severity: High · Status: Unresolved)*
+### `M-02` — Unlimited Owner Minting Capability  *(Severity: Medium · Status: Unresolved)*
 
-The `ownerMint(address to, uint256 amount)` function in `GravityTokenG.sol` allows the contract owner to mint an arbitrary `amount` of tokens to any `to` address without any limits or restrictions. This capability bypasses the `LimitedMinterManager`'s controlled minting mechanism entirely. While protected by `onlyOwner`, this grants the owner absolute control over the token's total supply, posing a significant centralization risk and potential for arbitrary inflation, which could severely devalue the token.
+Not confirmed by static analysis (the model's own reading of the source). The `ownerMint(address to, uint256 amount)` function in `GravityTokenG.sol` allows the contract owner to mint an arbitrary `amount` of tokens to any `to` address without any limits or restrictions. This capability bypasses the `LimitedMinterManager`'s controlled minting mechanism entirely. While protected by `onlyOwner`, this grants the owner absolute control over the token's total supply, posing a significant centralization risk and potential for arbitrary inflation, which could severely devalue the token.
 
 **Recommendation:** Evaluate the necessity of unlimited owner minting. If not strictly required, remove the `ownerMint` function. If it is deemed necessary for specific operational reasons (e.g., emergency recovery), consider implementing a time-locked or multi-signature approval mechanism for such mints, or cap the maximum amount that can be minted by the owner within a certain period. Ensure robust operational security for the owner's keys.
 
 
 ### `L-01` — Inefficient Minter Removal with Index Hint  *(Severity: Low · Status: Unresolved)*
 
-The `_removeMinterByIndexHint` function in `LimitedMinterManager.sol` requires an `_indexHint` parameter to locate the minter in the `_minters` array. If the array's state changes (e.g., another minter is added or removed) between the time an off-chain system fetches the index and the transaction is submitted, the provided `_indexHint` might become invalid. This would cause the transaction to revert with `ILimitedMinterManager_InvalidIndexHint()`, requiring the owner to re-fetch the correct index and resubmit.
+Not confirmed by static analysis (the model's own reading of the source). The `_removeMinterByIndexHint` function in `LimitedMinterManager.sol` requires an `_indexHint` parameter to locate the minter in the `_minters` array. If the array's state changes (e.g., another minter is added or removed) between the time an off-chain system fetches the index and the transaction is submitted, the provided `_indexHint` might become invalid. This would cause the transaction to revert with `ILimitedMinterManager_InvalidIndexHint()`, requiring the owner to re-fetch the correct index and resubmit.
 
 **Recommendation:** While not a security vulnerability, this can lead to a poor user experience for the owner. Consider iterating through the `_minters` array to find the minter's index if the array is expected to remain small. For larger arrays, ensure off-chain tooling is robust in handling potential index mismatches and retries, or provide a mechanism to update the index hint if the transaction reverts.
 
 
 ### `I-01` — High Degree of Centralized Control  *(Severity: Informational · Status: Unresolved)*
 
-The `GravityTokenG` contract design grants significant control to a single owner address (currently a 3/6 multisig). This owner has the power to pause/unpause transfers, change the token name, set minting limits for all minters, remove minters, and crucially, mint an unlimited supply of tokens via `ownerMint`. While a multisig mitigates some risks associated with a single point of failure, the protocol's operation remains highly dependent on the integrity and security of this central entity.
+Not confirmed by static analysis (the model's own reading of the source). The `GravityTokenG` contract design grants significant control to a single owner address (currently a 3/6 multisig). This owner has the power to pause/unpause transfers, change the token name, set minting limits for all minters, remove minters, and crucially, mint an unlimited supply of tokens via `ownerMint`. While a multisig mitigates some risks associated with a single point of failure, the protocol's operation remains highly dependent on the integrity and security of this central entity.
 
 **Recommendation:** Acknowledge and accept the inherent risks of centralized control. Ensure the multisig signers are diverse, trusted, and follow strict operational security procedures. For future iterations, consider gradually decentralizing control over critical functions, perhaps through a more robust on-chain governance mechanism or by introducing time-locks for sensitive operations.
 

@@ -2,14 +2,14 @@
 token: Fren Pet
 ticker: FREN PET
 network: base
-risk_score: 66
-status: high
+risk_score: 32
+status: low
 date: 2026-08-11
 ---
 
 # Fren Pet (FREN PET) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fren-pet-base)
 
@@ -25,9 +25,9 @@ The Fren Pet Token contract is an ERC20 token with burnable capabilities, integr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract's architecture (7.1) is a standard ERC20 token with added DeFi features, utilizing well-audited OpenZeppelin and Solmate libraries for core functionalities. Code security (7.2) is… |
-| **Governance / Economics** | 2/10 | High | The economic model (7.4) is highly dependent on owner actions, as fees can be set up to 25% for both buy and sell transactions, potentially leading to excessive taxation. The anti-whale mechanisms… |
-| **Upgrades** | 6/10 | Medium | The contract is not designed to be upgradeable, meaning its logic is immutable once deployed. This eliminates upgrade-related risks but requires any future changes to be implemented via a new… |
+| **Technical** | 10/10 | Low | The contract's architecture (7.1) is a standard ERC20 token with added DeFi features, utilizing well-audited OpenZeppelin and Solmate libraries for core functionalities. Code security (7.2) is… |
+| **Governance / Economics** | 4/10 | Medium | The economic model (7.4) is highly dependent on owner actions, as fees can be set up to 25% for both buy and sell transactions, potentially leading to excessive taxation. The anti-whale mechanisms… |
+| **Upgrades** | 7/10 | Low | The contract is not designed to be upgradeable, meaning its logic is immutable once deployed. This eliminates upgrade-related risks but requires any future changes to be implemented via a new… |
 
 ## LP Distribution
 
@@ -38,53 +38,53 @@ The Fren Pet Token contract is an ERC20 token with burnable capabilities, integr
 
 ## Security Findings
 
-_🟠 2 High · 🟡 2 Medium · 🟢 2 Low · ⚪ 1 Informational_
-
-### `H-01` — Extensive Owner Privileges and Centralization Risk  *(Severity: High · Status: Unresolved)*
-
-The `FrenPetToken` contract grants the `owner` (via `Ownable`) extensive control over critical parameters and functionalities. This includes the ability to: update buy and sell fees up to 25% each, set maximum transaction amounts and maximum wallet holdings (potentially to zero, halting transfers), enable/disable trading, blacklist any address, and control the pre-migration phase. This high degree of centralization introduces significant trust assumptions and a single point of failure. A compromised or malicious owner could severely impact token holders. (7.3 Access Control, 7.4 Economic, 7.5 Governance, 7.8 Operations)
-
-**Recommendation:** Consider implementing a multi-signature wallet for critical owner functions or a time-locked contract for sensitive parameter changes to reduce the risk associated with a single point of control. Clearly communicate the extent of owner privileges to the community.
-
-
-### `H-02` — Potential for Excessive Transaction Fees  *(Severity: High · Status: Unresolved)*
-
-The owner has the capability to set `buyTotalFees` and `sellTotalFees` up to 25% (2500 basis points) each. While the current default fees are 5% and 5% respectively, the `updateBuyFees` and `updateSellFees` functions allow the owner to increase these significantly. Such high transaction fees could render the token illiquid, discourage trading, and effectively drain value from token holders with each transaction. (7.4 Economic)
-
-**Recommendation:** Implement a maximum cap for fees that is lower than 25%, or introduce a community governance mechanism to approve fee changes. Clearly document the fee structure and potential for changes.
-
+_🟡 4 Medium · 🟢 2 Low · ⚪ 1 Informational_
 
 ### `M-01` — Anti-whale Mechanism Limitations  *(Severity: Medium · Status: Unresolved)*
 
-The `maxTransactionAmount` and `maxWallet` limits are designed to prevent large transactions and concentrated holdings. However, these mechanisms can be bypassed by sophisticated users through splitting transactions across multiple wallets or by using multiple addresses to accumulate tokens beyond the `maxWallet` limit. While common in token contracts, this limits the effectiveness of the anti-whale measures. (7.4 Economic)
+Not confirmed by static analysis (the model's own reading of the source). The `maxTransactionAmount` and `maxWallet` limits are designed to prevent large transactions and concentrated holdings. However, these mechanisms can be bypassed by sophisticated users through splitting transactions across multiple wallets or by using multiple addresses to accumulate tokens beyond the `maxWallet` limit. While common in token contracts, this limits the effectiveness of the anti-whale measures. (7.4 Economic)
 
 **Recommendation:** Acknowledge that anti-whale mechanisms have inherent limitations. For more robust control, consider alternative strategies or clearly communicate these limitations to users.
 
 
 ### `M-02` — Pre-migration Phase Operational Risk  *(Severity: Medium · Status: Unresolved)*
 
-The contract includes a `preMigrationPhase` and a `preMigrationTransferrable` mapping, allowing the owner to control token transfers during a specific phase. This adds significant complexity to the transfer logic and grants the owner granular control over who can transfer tokens during this period. Mismanagement or errors in setting these parameters could lead to unintended restrictions on token movement or operational issues during a migration event. (7.8 Operations, 7.1 Architecture)
+Not confirmed by static analysis (the model's own reading of the source). The contract includes a `preMigrationPhase` and a `preMigrationTransferrable` mapping, allowing the owner to control token transfers during a specific phase. This adds significant complexity to the transfer logic and grants the owner granular control over who can transfer tokens during this period. Mismanagement or errors in setting these parameters could lead to unintended restrictions on token movement or operational issues during a migration event. (7.8 Operations, 7.1 Architecture)
 
 **Recommendation:** Ensure thorough testing of the pre-migration phase logic. Clearly define and communicate the conditions and duration of this phase to users. Consider if such a complex mechanism is strictly necessary or if simpler, more transparent migration strategies could be employed.
 
 
+### `M-03` — Extensive Owner Privileges and Centralization Risk  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `FrenPetToken` contract grants the `owner` (via `Ownable`) extensive control over critical parameters and functionalities. This includes the ability to: update buy and sell fees up to 25% each, set maximum transaction amounts and maximum wallet holdings (potentially to zero, halting transfers), enable/disable trading, blacklist any address, and control the pre-migration phase. This high degree of centralization introduces significant trust assumptions and a single point of failure. A compromised or malicious owner could severely impact token holders. (7.3 Access Control, 7.4 Economic, 7.5 Governance, 7.8 Operations
+
+**Recommendation:** Consider implementing a multi-signature wallet for critical owner functions or a time-locked contract for sensitive parameter changes to reduce the risk associated with a single point of control. Clearly communicate the extent of owner privileges to the community.
+
+
+### `M-04` — Potential for Excessive Transaction Fees  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The owner has the capability to set `buyTotalFees` and `sellTotalFees` up to 25% (2500 basis points) each. While the current default fees are 5% and 5% respectively, the `updateBuyFees` and `updateSellFees` functions allow the owner to increase these significantly. Such high transaction fees could render the token illiquid, discourage trading, and effectively drain value from token holders with each transaction. (7.4 Economic)
+
+**Recommendation:** Implement a maximum cap for fees that is lower than 25%, or introduce a community governance mechanism to approve fee changes. Clearly document the fee structure and potential for changes.
+
+
 ### `L-01` — Redundant SafeMath Usage  *(Severity: Low · Status: Unresolved)*
 
-The contract imports and uses `SafeMath` for `uint256` operations. However, the contract is compiled with Solidity 0.8.19, which includes built-in overflow and underflow checks for all arithmetic operations by default. The explicit use of `SafeMath` is therefore redundant and adds unnecessary code complexity without providing additional security benefits in this Solidity version. (7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). The contract imports and uses `SafeMath` for `uint256` operations. However, the contract is compiled with Solidity 0.8.19, which includes built-in overflow and underflow checks for all arithmetic operations by default. The explicit use of `SafeMath` is therefore redundant and adds unnecessary code complexity without providing additional security benefits in this Solidity version. (7.2 Code Security)
 
 **Recommendation:** Remove the `using SafeMath for uint256;` statement and all explicit `SafeMath` calls. This will simplify the code without compromising security.
 
 
 ### `L-02` — Hardcoded Uniswap Router Address  *(Severity: Low · Status: Unresolved)*
 
-The Uniswap V2 Router address (`0x327Df1E6de05895d2ab08513aaDD9313Fe505d86`) is hardcoded in the constructor. While this is a common practice, it means that if the Uniswap router contract were to be upgraded, deprecated, or compromised, the `FrenPetToken` contract's `swapAndLiquify` functionality would cease to work correctly, requiring a new deployment of the token contract to update the address. (7.6 External)
+Not confirmed by static analysis (the model's own reading of the source). The Uniswap V2 Router address (`0x327Df1E6de05895d2ab08513aaDD9313Fe505d86`) is hardcoded in the constructor. While this is a common practice, it means that if the Uniswap router contract were to be upgraded, deprecated, or compromised, the `FrenPetToken` contract's `swapAndLiquify` functionality would cease to work correctly, requiring a new deployment of the token contract to update the address. (7.6 External)
 
 **Recommendation:** For future contracts, consider making critical external contract addresses configurable by the owner (e.g., via an `onlyOwner` function) to allow for updates without redeploying the entire token.
 
 
 ### `I-01` — Complex Transfer Logic  *(Severity: Informational · Status: Unresolved)*
 
-The `_transfer` function in `FrenPetToken` is highly complex due to the numerous conditional checks for fees, anti-whale limits, blacklist status, trading activity, and the pre-migration phase. This intricate logic, while designed to implement specific tokenomics, increases the cognitive load for auditors and developers, making it more challenging to reason about correctness and potentially increasing the risk of subtle bugs or unexpected interactions. (7.2 Code Security, 7.1 Architecture)
+Not confirmed by static analysis (the model's own reading of the source). The `_transfer` function in `FrenPetToken` is highly complex due to the numerous conditional checks for fees, anti-whale limits, blacklist status, trading activity, and the pre-migration phase. This intricate logic, while designed to implement specific tokenomics, increases the cognitive load for auditors and developers, making it more challenging to reason about correctness and potentially increasing the risk of subtle bugs or unexpected interactions. (7.2 Code Security, 7.1 Architecture)
 
 **Recommendation:** While the current implementation appears functionally correct, consider refactoring complex logic into smaller, more focused internal functions in future contracts to improve readability, testability, and maintainability. Ensure comprehensive unit and integration tests cover all possible execution paths within the `_transfer` function.
 

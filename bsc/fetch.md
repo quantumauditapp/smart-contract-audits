@@ -2,14 +2,14 @@
 token: Fetch
 ticker: FET
 network: bsc
-risk_score: 39
+risk_score: 37
 status: medium
 date: 2026-09-22
 ---
 
 # Fetch (FET) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 37/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/fetch-bsc)
 
@@ -42,28 +42,28 @@ _🟢 1 Low · ⚪ 3 Informational_
 
 ### `L-01` — Centralized Control via AccessControl Roles  *(Severity: Low · Status: Unresolved)*
 
-The `AccessControl` contract centralizes significant power in the hands of accounts holding administrative roles, particularly the `DEFAULT_ADMIN_ROLE`. Members of this role can grant and revoke other roles, effectively controlling who can perform privileged operations within the system. While this is the intended design of role-based access control, it introduces a single point of failure if the administrative keys are compromised or misused (7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The `AccessControl` contract centralizes significant power in the hands of accounts holding administrative roles, particularly the `DEFAULT_ADMIN_ROLE`. Members of this role can grant and revoke other roles, effectively controlling who can perform privileged operations within the system. While this is the intended design of role-based access control, it introduces a single point of failure if the administrative keys are compromised or misused (7.3 Access Control).
 
 **Recommendation:** Implement robust security measures for accounts holding administrative roles. This typically includes using multi-signature wallets (e.g., Gnosis Safe) for all administrative roles, strong key management practices, and clear operational procedures for role management. Regularly review and audit role assignments.
 
 
 ### `I-01` — Incomplete Code Snippet Provided  *(Severity: Informational · Status: Unresolved)*
 
-The provided Solidity code is a partial snippet, primarily consisting of OpenZeppelin libraries (EnumerableSet, Address, SafeMath, Context, AccessControl) and the beginning of an ERC20 token contract. Critical functions of the ERC20 standard (e.g., `_transfer`, `_mint`, `_burn`, `approve` logic) are truncated or missing. This prevents a comprehensive security analysis of the full contract's functionality and potential interactions.
+Not confirmed by static analysis (the model's own reading of the source). The provided Solidity code is a partial snippet, primarily consisting of OpenZeppelin libraries (EnumerableSet, Address, SafeMath, Context, AccessControl) and the beginning of an ERC20 token contract. Critical functions of the ERC20 standard (e.g., `_transfer`, `_mint`, `_burn`, `approve` logic) are truncated or missing. This prevents a comprehensive security analysis of the full contract's functionality and potential interactions.
 
 **Recommendation:** Provide the complete and final source code for all contracts intended for deployment to enable a thorough and accurate security audit. A full audit would cover all functions, state transitions, and external interactions.
 
 
 ### `I-02` — Older Solidity Compiler Version Used  *(Severity: Informational · Status: Unresolved)*
 
-The contract uses Solidity compiler version 0.6.2. While this version is functional, newer versions (e.g., 0.8.x) offer significant improvements in terms of security features, gas optimizations, and developer experience, such as default overflow/underflow checks, custom errors, and more efficient Yul optimizations. Using an older compiler might miss out on these benefits.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses Solidity compiler version 0.6.2. While this version is functional, newer versions (e.g., 0.8.x) offer significant improvements in terms of security features, gas optimizations, and developer experience, such as default overflow/underflow checks, custom errors, and more efficient Yul optimizations. Using an older compiler might miss out on these benefits.
 
 **Recommendation:** Consider upgrading the Solidity compiler to a more recent stable version (e.g., 0.8.x). This would allow the contract to benefit from the latest security features, bug fixes, and optimizations. Thorough testing should be performed after any compiler upgrade.
 
 
 ### `I-03` — Limitations of `Address.isContract`  *(Severity: Informational · Status: Unresolved)*
 
-The `Address.isContract` function relies on `extcodehash` to determine if an address is a contract. While standard, `extcodehash` has known limitations: it returns 0 for contracts during their constructor execution, and it can be 0 for addresses that have self-destructed. This means it might not always accurately reflect the contract status in all edge cases, potentially leading to unexpected behavior if critical logic depends on it (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `Address.isContract` function relies on `extcodehash` to determine if an address is a contract. While standard, `extcodehash` has known limitations: it returns 0 for contracts during their constructor execution, and it can be 0 for addresses that have self-destructed. This means it might not always accurately reflect the contract status in all edge cases, potentially leading to unexpected behavior if critical logic depends on it (7.2 Code Security).
 
 **Recommendation:** Be aware of the limitations of `Address.isContract`. If the contract logic requires absolute certainty about an address being a contract, especially during deployment or after potential self-destruction, consider alternative or supplementary checks, or ensure that the context of its usage does not expose the system to these edge cases. For most standard uses, the current implementation is acceptable.
 

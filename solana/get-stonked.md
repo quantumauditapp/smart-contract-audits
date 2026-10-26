@@ -2,14 +2,14 @@
 token: Get Stonked
 ticker: GETSTONKED
 network: solana
-risk_score: 55
-status: medium
+risk_score: 33
+status: low
 date: 2026-09-13
 ---
 
 # Get Stonked (GETSTONKED) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 55/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/get-stonked-sol)
 
@@ -25,9 +25,9 @@ This Solana SPL Token Mint audit for 'Get Stonked' (GETSTONKED) identifies a med
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Get Stonked token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, which means no new tokens can be minted and no existing token… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a medium level of holder concentration, with the top 10 accounts collectively holding 51.01% of the total supply. This concentration could lead to price volatility from large… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are revoked, meaning no further administrative actions can be taken to alter the token's supply or freeze accounts. The token utilizes the spl-token-2022… |
+| **Technical** | 10/10 | Low | The Get Stonked token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, which means no new tokens can be minted and no existing token… |
+| **Governance / Economics** | 2/10 | High | The token exhibits a medium level of holder concentration, with the top 10 accounts collectively holding 51.01% of the total supply. This concentration could lead to price volatility from large… |
+| **Upgrades** | 10/10 | Low | The token's mint and freeze authorities are revoked, meaning no further administrative actions can be taken to alter the token's supply or freeze accounts. The token utilizes the spl-token-2022… |
 
 ## Security Findings
 
@@ -61,13 +61,13 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1705 buys / 1745 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

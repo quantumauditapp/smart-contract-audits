@@ -42,28 +42,28 @@ _🟢 1 Low · ⚪ 3 Informational_
 
 ### `L-01` — Inherent ERC-20 `approve()` Front-Running Risk  *(Severity: Low · Status: Unresolved)*
 
-The standard ERC-20 `approve()` function is susceptible to a known front-running vulnerability. If a user approves an amount for a spender and then attempts to change that approval to a different amount, a malicious actor could front-run the second transaction. This allows the attacker to spend the original approved amount before the new approval takes effect, potentially leading to the malicious actor spending both the original and the new approved amounts. While `increaseAllowance()` and `decreaseAllowance()` mitigate this for specific use cases, the base `approve()` function remains.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC-20 `approve()` function is susceptible to a known front-running vulnerability. If a user approves an amount for a spender and then attempts to change that approval to a different amount, a malicious actor could front-run the second transaction. This allows the attacker to spend the original approved amount before the new approval takes effect, potentially leading to the malicious actor spending both the original and the new approved amounts. While `increaseAllowance()` and `decreaseAllowance()` mitigate this for specific use cases, the base `approve()` function remains.
 
 **Recommendation:** Users should be aware of this inherent risk when interacting with `approve()`. For critical operations, consider using `increaseAllowance()` and `decreaseAllowance()` or a 'permit' style approval (not implemented here) which offers a more secure alternative to direct `approve()` calls.
 
 
 ### `I-01` — Unused SafeMath Library  *(Severity: Informational · Status: Unresolved)*
 
-The `SafeMath` library is imported and declared but not utilized within the `ERC20` contract. Solidity 0.8.11 automatically includes overflow/underflow checks, making `SafeMath` redundant unless specific `unchecked` blocks are used without prior validation. In this contract, all `unchecked` blocks are correctly guarded by `require` statements, rendering `SafeMath` unnecessary.
+Not confirmed by static analysis (the model's own reading of the source). The `SafeMath` library is imported and declared but not utilized within the `ERC20` contract. Solidity 0.8.11 automatically includes overflow/underflow checks, making `SafeMath` redundant unless specific `unchecked` blocks are used without prior validation. In this contract, all `unchecked` blocks are correctly guarded by `require` statements, rendering `SafeMath` unnecessary.
 
 **Recommendation:** Remove the `SafeMath` library import and declaration to reduce contract size, optimize deployment costs, and improve code clarity, as its functionality is not needed or used.
 
 
 ### `I-02` — Unused Interfaces Declared  *(Severity: Informational · Status: Unresolved)*
 
-The `IUniswapV2Pair` and `IUniswapV2Factory` interfaces are defined within the contract file but are not referenced or used by the `ERC20` contract itself. This indicates either incomplete code, vestigial declarations, or interfaces intended for external interaction not directly implemented here.
+Not confirmed by static analysis (the model's own reading of the source). The `IUniswapV2Pair` and `IUniswapV2Factory` interfaces are defined within the contract file but are not referenced or used by the `ERC20` contract itself. This indicates either incomplete code, vestigial declarations, or interfaces intended for external interaction not directly implemented here.
 
 **Recommendation:** Remove unused interfaces to reduce contract size and improve code clarity. If these interfaces are intended for future integration or external interaction, ensure they are properly documented to explain their purpose.
 
 
 ### `I-03` — Internal Mint/Burn Functions  *(Severity: Informational · Status: Unresolved)*
 
-The `_mint` and `_burn` functions are declared as `internal virtual`. This design choice means they can only be called by the `ERC20` contract itself or by contracts that inherit from `ERC20`. There are no public or external functions provided in this contract that expose minting or burning capabilities to external users. This implies that the token has a fixed supply unless a derived contract explicitly adds such functionality.
+Not confirmed by static analysis (the model's own reading of the source). The `_mint` and `_burn` functions are declared as `internal virtual`. This design choice means they can only be called by the `ERC20` contract itself or by contracts that inherit from `ERC20`. There are no public or external functions provided in this contract that expose minting or burning capabilities to external users. This implies that the token has a fixed supply unless a derived contract explicitly adds such functionality.
 
 **Recommendation:** Document this design choice clearly for users and future developers. If a variable supply is intended, ensure that derived contracts implement secure access control for any externally exposed minting and burning functions.
 

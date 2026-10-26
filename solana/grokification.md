@@ -2,14 +2,14 @@
 token: Grokification
 ticker: GROK
 network: solana
-risk_score: 20
+risk_score: 1
 status: low
 date: 2026-09-25
 ---
 
 # Grokification (GROK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 20/100 — 🟢 Low Risk**
+> **Risk Score: 1/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/grokification-sol)
 
@@ -26,8 +26,8 @@ This audit of the Grokification (GROK) SPL Token Mint identifies a medium risk d
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Grokification (GROK) token is an SPL Token-2022 mint with a total supply of approximately 999.55 million tokens and 6 decimals. Both the mint authority and freeze authority have been revoked… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a healthy liquidity of $271,386 USD, with a 24-hour trading volume of $1,094,934 USD, resulting in a normal Volume/Liquidity Ratio of 4.03. However, the DEX pair is very new… |
-| **Upgrades** | 6/10 | Medium | The token's core authorities, Mint Authority and Freeze Authority, have been permanently revoked, ensuring a fixed supply and preventing account freezing. While the transfer hook is not upgradable… |
+| **Governance / Economics** | 9/10 | Low | The token exhibits a healthy liquidity of $271,386 USD, with a 24-hour trading volume of $1,094,934 USD, resulting in a normal Volume/Liquidity Ratio of 4.03. However, the DEX pair is very new… |
+| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, have been permanently revoked, ensuring a fixed supply and preventing account freezing. While the transfer hook is not upgradable… |
 
 ## Token-2022 Extensions
 
@@ -67,13 +67,13 @@ Token name, symbol, or image can be changed post-launch.
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2491 buys / 2527 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

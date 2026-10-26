@@ -2,14 +2,14 @@
 token: Genius
 ticker: GENIUS
 network: bsc
-risk_score: 44
+risk_score: 40
 status: medium
 date: 2026-08-13
 ---
 
 # Genius (GENIUS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/genius-bsc)
 
@@ -42,28 +42,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Centralized Initial Token Supply  *(Severity: Low · Status: Unresolved)*
 
-The entire fixed supply of 1,000,000,000 * 10^18 tokens is minted to a single `owner` address during the contract's constructor. This centralizes control of the entire token supply to one address immediately after deployment. If this address is compromised, the entire token supply could be at risk (7.3 Access Control, 7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The entire fixed supply of 1,000,000,000 * 10^18 tokens is minted to a single `owner` address during the contract's constructor. This centralizes control of the entire token supply to one address immediately after deployment. If this address is compromised, the entire token supply could be at risk (7.3 Access Control, 7.4 Economic).
 
 **Recommendation:** While this is a design choice, it is recommended that the `owner` address be a highly secured entity, such as a multi-signature wallet, to minimize the risk of a single point of failure. For future token designs, consider distributing the initial supply across multiple addresses or vesting contracts.
 
 
 ### `L-02` — `permit` Function Front-Running Risk  *(Severity: Low · Status: Unresolved)*
 
-The `ERC20Permit` functionality allows users to approve token transfers via a signed message, enabling gasless approvals. However, the `permit` function is susceptible to front-running. An attacker could observe a pending `permit` transaction, extract the signed message, and submit their own transaction with a higher gas price to execute the `permit` before the legitimate user. This could lead to the attacker gaining an approval that was intended for someone else or for a different purpose, potentially exploiting the user's signed intent (7.2 Code Security, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `ERC20Permit` functionality allows users to approve token transfers via a signed message, enabling gasless approvals. However, the `permit` function is susceptible to front-running. An attacker could observe a pending `permit` transaction, extract the signed message, and submit their own transaction with a higher gas price to execute the `permit` before the legitimate user. This could lead to the attacker gaining an approval that was intended for someone else or for a different purpose, potentially exploiting the user's signed intent (7.2 Code Security, 7.8 Operations).
 
 **Recommendation:** This is an inherent characteristic of the EIP-2612 standard and not a flaw in the contract's implementation. Users should be educated about this risk. When using `permit`, users should ensure their transactions are submitted securely, potentially using privacy-preserving transaction relays or by carefully monitoring the mempool for their signed messages.
 
 
 ### `I-01` — Lack of Upgradeability  *(Severity: Informational · Status: Unresolved)*
 
-The GeniusToken contract is implemented as a standard, non-upgradeable contract. This means that once deployed, its code cannot be modified. While this eliminates risks associated with upgrade mechanisms (e.g., malicious upgrades, upgrade bugs), it also means that any discovered vulnerabilities, desired feature enhancements, or changes to tokenomics would necessitate deploying an entirely new contract and migrating existing token holders (7.1 Architecture, 7.7 Upgrades).
+Not confirmed by static analysis (the model's own reading of the source). The GeniusToken contract is implemented as a standard, non-upgradeable contract. This means that once deployed, its code cannot be modified. While this eliminates risks associated with upgrade mechanisms (e.g., malicious upgrades, upgrade bugs), it also means that any discovered vulnerabilities, desired feature enhancements, or changes to tokenomics would necessitate deploying an entirely new contract and migrating existing token holders (7.1 Architecture, 7.7 Upgrades).
 
 **Recommendation:** This is a design choice. If future flexibility or bug-fixing capabilities are deemed important, consider implementing an upgradeable proxy pattern (e.g., UUPS) for future contracts. For this contract, acknowledge the immutability and plan accordingly for any future changes.
 
 
 ### `I-02` — Absence of Emergency Control Mechanisms  *(Severity: Informational · Status: Unresolved)*
 
-The contract does not include any emergency control mechanisms such as pausing transfers or blacklisting malicious addresses. While this promotes decentralization and immutability, it means that in the event of a critical vulnerability, exploit, or regulatory requirement, there is no built-in way to halt operations or restrict specific addresses. This could lead to irreversible losses or uncontrolled token movement (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract does not include any emergency control mechanisms such as pausing transfers or blacklisting malicious addresses. While this promotes decentralization and immutability, it means that in the event of a critical vulnerability, exploit, or regulatory requirement, there is no built-in way to halt operations or restrict specific addresses. This could lead to irreversible losses or uncontrolled token movement (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** This is a design choice that prioritizes decentralization. If the project anticipates scenarios requiring emergency intervention, consider adding features like a pausable mechanism (e.g., OpenZeppelin's `Pausable`) or a role-based access control system for specific emergency functions in future iterations. For this contract, acknowledge the lack of such controls.
 

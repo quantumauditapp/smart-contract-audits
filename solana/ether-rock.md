@@ -2,14 +2,14 @@
 token: Ether Rock
 ticker: ROCK
 network: solana
-risk_score: 25
+risk_score: 6
 status: low
 date: 2026-09-13
 ---
 
 # Ether Rock (ROCK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 25/100 — 🟢 Low Risk**
+> **Risk Score: 6/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ether-rock-sol)
 
@@ -26,8 +26,8 @@ The Ether Rock (ROCK) SPL Token-2022 mint has both mint and freeze authorities r
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Ether Rock (ROCK) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a healthy Volume/Liquidity Ratio of 4.47, not indicating wash trading. Total DEX liquidity is $135,477, which is sufficient to avoid severe slippage for moderate trades. Holder… |
-| **Upgrades** | 6/10 | Medium | The mint authority and freeze authority are both revoked, preventing further changes to the token's supply or account freeze status. The token utilizes the Token-2022 program, which includes… |
+| **Governance / Economics** | 9/10 | Low | The token exhibits a healthy Volume/Liquidity Ratio of 4.47, not indicating wash trading. Total DEX liquidity is $135,477, which is sufficient to avoid severe slippage for moderate trades. Holder… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing further changes to the token's supply or account freeze status. The token utilizes the Token-2022 program, which includes… |
 
 ## Token-2022 Extensions
 
@@ -67,13 +67,13 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1328 buys / 1958 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources
