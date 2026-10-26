@@ -26,8 +26,8 @@ This audit of the Buttcoin SPL Token Mint found no critical or high-severity iss
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Buttcoin token is an SPL Token-2022 mint with a total supply of 999,945,702.977861 tokens, using 6 decimals. Crucially, both the mint authority and freeze authority have been revoked, ensuring no… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits healthy market characteristics with a total DEX liquidity of $656,108 and a 24-hour trading volume of $615,100 (7.4 Economic). The volume-to-liquidity ratio is 0.94, which is… |
-| **Upgrades** | 8/10 | Low | The token's configuration demonstrates a strong commitment to immutability and fixed parameters (7.7 Upgrades). Both the mint and freeze authorities are revoked, meaning no further changes can be… |
+| **Governance / Economics** | 10/10 | Low | The token exhibits healthy market characteristics with a total DEX liquidity of $656,108 and a 24-hour trading volume of $615,100 (7.4 Economic). The volume-to-liquidity ratio is 0.94, which is… |
+| **Upgrades** | 10/10 | Low | The token's configuration demonstrates a strong commitment to immutability and fixed parameters (7.7 Upgrades). Both the mint and freeze authorities are revoked, meaning no further changes can be… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2257 buys / 2524 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
@@ -80,7 +80,7 @@ Based on the data, it's not possible to definitively label Buttcoin as a scam, b
 
 ### Is Buttcoin safe to buy?
 
-Buttcoin is not considered safe for investment due to critical risks. Its contract is unverified, blocking independent security audits and transparency. More importantly, liquidity is not locked, exposing investors to a 'rug pull' risk. These fundamental vulnerabilities, contributing to its medium risk score of 34/100, mean capital loss is a significant possibility.
+Buttcoin is not considered safe for investment due to critical risks. Its contract is unverified, blocking independent security audits and transparency. More importantly, liquidity is not locked, exposing investors to a 'rug pull' risk. These fundamental vulnerabilities, contributing to its low risk score of 0/100, mean capital loss is a significant possibility.
 
 ### Has Buttcoin been audited?
 

@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Lack of Emergency Pausable Mechanism  *(Severity: Low · Status: Unresolved)*
 
-The contract does not include a pausable mechanism (e.g., using OpenZeppelin's `Pausable` module). A pausable feature allows an authorized entity (e.g., an owner or multisig) to temporarily halt critical operations like transfers in case of an emergency, such as a discovered vulnerability, a major market disruption, or a governance decision. While not strictly required by the ERC-20 standard, it is a common security best practice for tokens to provide a circuit breaker.
+Not confirmed by static analysis (the model's own reading of the source). The contract does not include a pausable mechanism (e.g., using OpenZeppelin's `Pausable` module). A pausable feature allows an authorized entity (e.g., an owner or multisig) to temporarily halt critical operations like transfers in case of an emergency, such as a discovered vulnerability, a major market disruption, or a governance decision. While not strictly required by the ERC-20 standard, it is a common security best practice for tokens to provide a circuit breaker.
 
 **Recommendation:** Consider inheriting from OpenZeppelin's `Pausable` contract and implementing `_pause()` and `_unpause()` functions, protected by appropriate access control, to provide an emergency stop mechanism for the token.
 
 
 ### `I-01` — Incomplete Initialization Mechanism for Base Contract  *(Severity: Informational · Status: Unresolved)*
 
-The `FourERC20` contract includes an internal `_init` function to set the token's name and symbol. However, this base contract does not provide a public constructor to call `_init`. Consequently, any derived contract must explicitly implement a constructor that calls `_init` to ensure the token's metadata is properly set upon deployment. If a derived contract fails to do so, the `name()` and `symbol()` functions will return empty strings.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract includes an internal `_init` function to set the token's name and symbol. However, this base contract does not provide a public constructor to call `_init`. Consequently, any derived contract must explicitly implement a constructor that calls `_init` to ensure the token's metadata is properly set upon deployment. If a derived contract fails to do so, the `name()` and `symbol()` functions will return empty strings.
 
 **Recommendation:** Ensure that any contract inheriting from `FourERC20` implements a constructor that calls `_init(string memory name_, string memory symbol_)` with the desired token name and symbol.
 
 
 ### `I-02` — Missing Public Supply Management Functions  *(Severity: Informational · Status: Unresolved)*
 
-The `FourERC20` contract provides internal `_mint` and `_burn` functions for managing the token supply. However, it does not expose any public functions to allow for the creation or destruction of tokens. This design choice means the contract itself cannot mint or burn tokens directly. A derived contract would need to implement these functionalities, typically with appropriate access control (e.g., only an owner or minter role can mint), to make the token supply manageable.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract provides internal `_mint` and `_burn` functions for managing the token supply. However, it does not expose any public functions to allow for the creation or destruction of tokens. This design choice means the contract itself cannot mint or burn tokens directly. A derived contract would need to implement these functionalities, typically with appropriate access control (e.g., only an owner or minter role can mint), to make the token supply manageable.
 
 **Recommendation:** For a functional token, implement public `mint` and `burn` functions in a derived contract, ensuring they incorporate robust access control mechanisms (e.g., using OpenZeppelin's `Ownable` or `AccessControl` modules) to restrict who can perform these actions.
 

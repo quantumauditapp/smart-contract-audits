@@ -2,14 +2,14 @@
 token: ClawBank
 ticker: CLAWBANK
 network: base
-risk_score: 12
+risk_score: 7
 status: low
 date: 2026-07-22
 ---
 
 # ClawBank (CLAWBANK) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 12/100 — 🟢 Low Risk**
+> **Risk Score: 7/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/clawbank-base)
 
@@ -42,21 +42,21 @@ _🟡 1 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Centralized Control by Admin Role  *(Severity: Medium · Status: Unresolved)*
 
-The `_admin` role has significant control over the contract, including the ability to update the token's image, metadata, and crucially, to transfer the `_admin` role itself to any address via `updateAdmin`, `updateImage`, and `updateMetadata` functions. If the `_admin` key is compromised, an attacker could alter token branding or transfer administrative control, potentially leading to reputational damage or further exploits.
+Not confirmed by static analysis (the model's own reading of the source). The `_admin` role has significant control over the contract, including the ability to update the token's image, metadata, and crucially, to transfer the `_admin` role itself to any address via `updateAdmin`, `updateImage`, and `updateMetadata` functions. If the `_admin` key is compromised, an attacker could alter token branding or transfer administrative control, potentially leading to reputational damage or further exploits.
 
 **Recommendation:** Implement a multi-signature wallet for the `_admin` role to require multiple approvals for sensitive operations like `updateAdmin`. Consider adding a time-lock mechanism for `updateAdmin` to provide a window for community or team intervention if an unauthorized transfer is initiated. Clearly document the responsibilities and security procedures for managing the `_admin` key.
 
 
 ### `I-01` — Reliance on External Bridge Security  *(Severity: Informational · Status: Unresolved)*
 
-The `crosschainMint` and `crosschainBurn` functions are critical for maintaining the token's supply consistency across chains. These functions are exclusively callable by `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`. The security and integrity of the ClankerToken's cross-chain operations are entirely dependent on the security of this external bridge contract.
+Not confirmed by static analysis (the model's own reading of the source). The `crosschainMint` and `crosschainBurn` functions are critical for maintaining the token's supply consistency across chains. These functions are exclusively callable by `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`. The security and integrity of the ClankerToken's cross-chain operations are entirely dependent on the security of this external bridge contract.
 
 **Recommendation:** Ensure that the `Predeploys.SUPERCHAIN_TOKEN_BRIDGE` contract is rigorously audited, continuously monitored, and maintained with the highest security standards. Any vulnerability in the bridge could directly impact the ClankerToken's supply and value. Consider establishing a robust incident response plan for bridge-related issues.
 
 
 ### `I-02` — Fixed Initial Supply Distribution to Deployer  *(Severity: Informational · Status: Unresolved)*
 
-In the constructor, the entire `maxSupply_` is minted to `msg.sender` (the contract deployer) if `block.chainid` matches `initialSupplyChainId_`. This design choice means the initial token distribution is entirely concentrated with the deployer on a specific chain, rather than being distributed or held by a treasury contract.
+Not confirmed by static analysis (the model's own reading of the source). In the constructor, the entire `maxSupply_` is minted to `msg.sender` (the contract deployer) if `block.chainid` matches `initialSupplyChainId_`. This design choice means the initial token distribution is entirely concentrated with the deployer on a specific chain, rather than being distributed or held by a treasury contract.
 
 **Recommendation:** This is a design decision, not a vulnerability. However, it's important for the project to clearly communicate this initial distribution strategy to stakeholders. If not already planned, consider a transparent mechanism for subsequent distribution or management of this initial supply to avoid perceptions of centralization or to fund ecosystem development.
 

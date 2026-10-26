@@ -2,14 +2,14 @@
 token: Centrifuge
 ticker: CFG
 network: ethereum
-risk_score: 58
+risk_score: 38
 status: medium
 date: 2026-08-31
 ---
 
 # Centrifuge (CFG) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 58/100 — 🟡 Medium Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/centrifuge-eth)
 
@@ -25,9 +25,9 @@ The audit of the Centrifuge CFG token contracts (CFG and DelegationToken) identi
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture is based on a standard ERC-20 token with added delegation capabilities, leveraging Solidity 0.8.28 for enhanced safety. The `delegateWithSig` function correctly uses nonces… |
-| **Governance / Economics** | 2/10 | High | The token implements a standard delegation mechanism for governance, allowing holders to delegate voting power. This design is common for decentralized governance systems (7.5 Governance). The… |
-| **Upgrades** | 2/10 | High | The provided contracts do not implement any explicit upgradeability patterns (e.g., proxy contracts). This means the contracts are immutable once deployed (7.7 Upgrades). Any future changes or bug… |
+| **Technical** | 8/10 | Low | The technical architecture is based on a standard ERC-20 token with added delegation capabilities, leveraging Solidity 0.8.28 for enhanced safety. The `delegateWithSig` function correctly uses nonces… |
+| **Governance / Economics** | 3/10 | High | The token implements a standard delegation mechanism for governance, allowing holders to delegate voting power. This design is common for decentralized governance systems (7.5 Governance). The… |
+| **Upgrades** | 3/10 | High | The provided contracts do not implement any explicit upgradeability patterns (e.g., proxy contracts). This means the contracts are immutable once deployed (7.7 Upgrades). Any future changes or bug… |
 
 ## LP Distribution
 
@@ -38,25 +38,25 @@ The audit of the Centrifuge CFG token contracts (CFG and DelegationToken) identi
 
 ## Security Findings
 
-_🔴 1 Critical · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `C-01` — Public `mint` function allows unauthorized token creation  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Public `mint` function allows unauthorized token creation  *(Severity: Medium · Status: Unresolved)*
 
-The `DelegationToken` contract declares `function mint(address to, uint256 value) public override(ERC20)`. If the overridden `ERC20.mint` function (or the underlying `_mint` function it calls) does not implement proper access control (e.g., `onlyOwner`, `onlyMinter`), then any external caller can invoke this `mint` function to create an arbitrary amount of tokens. This would lead to an infinite supply and complete devaluation of the token. The provided code snippet for `DelegationToken` does not add any access control to this `public` function.
+Not confirmed by static analysis (the model's own reading of the source). The `DelegationToken` contract declares `function mint(address to, uint256 value) public override(ERC20)`. If the overridden `ERC20.mint` function (or the underlying `_mint` function it calls) does not implement proper access control (e.g., `onlyOwner`, `onlyMinter`), then any external caller can invoke this `mint` function to create an arbitrary amount of tokens. This would lead to an infinite supply and complete devaluation of the token. The provided code snippet for `DelegationToken` does not add any access control to this `public` function.
 
 **Recommendation:** Ensure that the `mint` function in `DelegationToken` (or its base `ERC20` implementation) is adequately protected by an access control mechanism, such as `onlyOwner` or `onlyMinter`, to prevent unauthorized token creation. If the intention is for `mint` to be callable by specific roles, those roles must be enforced.
 
 
 ### `L-01` — Dependency on unprovided `ERC20` implementation  *(Severity: Low · Status: Unresolved)*
 
-The `DelegationToken` contract inherits from `ERC20` located at `protocol-v3/misc/ERC20.sol`. The full source code for this base `ERC20` contract was not provided for review. The security and correctness of `DelegationToken` heavily depend on the robustness and proper implementation of this external `ERC20` contract, especially concerning access control for functions like `mint` and `burn`, and standard ERC-20 behaviors (7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The `DelegationToken` contract inherits from `ERC20` located at `protocol-v3/misc/ERC20.sol`. The full source code for this base `ERC20` contract was not provided for review. The security and correctness of `DelegationToken` heavily depend on the robustness and proper implementation of this external `ERC20` contract, especially concerning access control for functions like `mint` and `burn`, and standard ERC-20 behaviors (7.6 External).
 
 **Recommendation:** Conduct a thorough audit of the `protocol-v3/misc/ERC20.sol` contract to ensure it adheres to security best practices and correctly implements ERC-20 standards, particularly regarding access control for sensitive functions like `mint` and `burn`.
 
 
 ### `I-01` — Unspecified `rely` access control mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The `CFG` contract constructor calls `rely(ward)`. This suggests the use of a `DSAuth`-like access control pattern where a `ward` address is granted permissions. However, the `rely` function and any corresponding `auth` checks are not present in the provided code. Without the full implementation of this access control system, the scope of the `ward`'s privileges and the overall access control model cannot be fully assessed (7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The `CFG` contract constructor calls `rely(ward)`. This suggests the use of a `DSAuth`-like access control pattern where a `ward` address is granted permissions. However, the `rely` function and any corresponding `auth` checks are not present in the provided code. Without the full implementation of this access control system, the scope of the `ward`'s privileges and the overall access control model cannot be fully assessed (7.3 Access Control).
 
 **Recommendation:** Ensure that the `rely` and `auth` mechanisms are correctly implemented and that the `ward` address's permissions are clearly defined and limited to necessary administrative functions. Document the full access control architecture.
 

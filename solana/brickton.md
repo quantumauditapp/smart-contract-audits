@@ -2,14 +2,14 @@
 token: BRICKTON
 ticker: BRICK
 network: solana
-risk_score: 44
-status: medium
+risk_score: 27
+status: low
 date: 2026-08-06
 ---
 
 # BRICKTON (BRICK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/brickton-sol)
 
@@ -25,9 +25,9 @@ The BRICKTON (BRICK) token mint exhibits a medium risk profile primarily due to 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The BRICKTON (BRICK) token is an SPL Token-2022 mint. The mint authority has been revoked, ensuring no new tokens can be minted and the supply of 996,020,270,992,860 raw tokens is fixed. The freeze… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a medium risk in its economic and governance profile due to its very recent launch. The DEX pair was created only 6 days ago, which is insufficient time to establish a track record… |
-| **Upgrades** | 8/10 | Low | The token mint has no mutable authorities that would allow for post-launch changes to its core parameters. Both the mint and freeze authorities are revoked, meaning the token supply and account… |
+| **Technical** | 10/10 | Low | The BRICKTON (BRICK) token is an SPL Token-2022 mint. The mint authority has been revoked, ensuring no new tokens can be minted and the supply of 996,020,270,992,860 raw tokens is fixed. The freeze… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a medium risk in its economic and governance profile due to its very recent launch. The DEX pair was created only 6 days ago, which is insufficient time to establish a track record… |
+| **Upgrades** | 10/10 | Low | The token mint has no mutable authorities that would allow for post-launch changes to its core parameters. Both the mint and freeze authorities are revoked, meaning the token supply and account… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 6 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 32697 buys / 30252 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 6 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

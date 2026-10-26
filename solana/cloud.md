@@ -2,14 +2,14 @@
 token: Cloud
 ticker: CLOUD
 network: solana
-risk_score: 34
+risk_score: 20
 status: low
 date: 2026-09-28
 ---
 
 # Cloud (CLOUD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 34/100 — 🟢 Low Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cloud-sol)
 
@@ -25,9 +25,9 @@ This audit of the Cloud (CLOUD) SPL token mint reveals a high concentration of t
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The token is an SPL Token v3 mint. Both the Mint Authority and Freeze Authority are revoked, which prevents the creation of new tokens or freezing of existing accounts. The token does not utilize… |
-| **Governance / Economics** | 2/10 | High | The token exhibits high holder concentration, with the top 10 accounts holding 75.49% of the total supply, posing a risk of price volatility from large sell-offs. Liquidity is robust at $521,571, and… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority have both been revoked, ensuring that no further tokens can be minted and no accounts can be frozen by an external party. The token is based on the standard… |
+| **Technical** | 10/10 | Low | The token is an SPL Token v3 mint. Both the Mint Authority and Freeze Authority are revoked, which prevents the creation of new tokens or freezing of existing accounts. The token does not utilize… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits high holder concentration, with the top 10 accounts holding 75.49% of the total supply, posing a risk of price volatility from large sell-offs. Liquidity is robust at $521,571, and… |
+| **Upgrades** | 9/10 | Low | The mint authority and freeze authority have both been revoked, ensuring that no further tokens can be minted and no accounts can be frozen by an external party. The token is based on the standard… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

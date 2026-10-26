@@ -2,14 +2,14 @@
 token: ちいかわ
 ticker: CHIIKAWA
 network: solana
-risk_score: 23
+risk_score: 6
 status: low
 date: 2026-07-31
 ---
 
 # ちいかわ (CHIIKAWA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 23/100 — 🟢 Low Risk**
+> **Risk Score: 6/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chiikawa-sol)
 
@@ -26,8 +26,8 @@ This SPL Token Mint audit for ちいかわ (Chiikawa) identifies a Medium risk p
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Key administrative authorities, including the Mint Authority and Freeze Authority, have been revoked, enhancing security by preventing… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a healthy Volume/Liquidity Ratio of 2.34, with $132,005 in total DEX liquidity and $309,099 in 24-hour volume. Holder concentration is low, with the top 10 accounts holding 17.46%… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable, as both the Mint Authority and Freeze Authority have been revoked. Metadata, including name and symbol, is not mutable, ensuring consistent branding… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits a healthy Volume/Liquidity Ratio of 2.34, with $132,005 in total DEX liquidity and $309,099 in 24-hour volume. Holder concentration is low, with the top 10 accounts holding 17.46%… |
+| **Upgrades** | 10/10 | Low | The token's core parameters are largely immutable, as both the Mint Authority and Freeze Authority have been revoked. Metadata, including name and symbol, is not mutable, ensuring consistent branding… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1151 buys / 1139 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

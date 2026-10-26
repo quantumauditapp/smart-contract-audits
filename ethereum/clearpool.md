@@ -2,14 +2,14 @@
 token: Clearpool
 ticker: CPOOL
 network: ethereum
-risk_score: 27
+risk_score: 23
 status: low
 date: 2026-09-15
 ---
 
 # Clearpool (CPOOL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 27/100 — 🟢 Low Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/clearpool-eth)
 
@@ -42,28 +42,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Initial Centralization of Total Supply  *(Severity: Low · Status: Unresolved)*
 
-In the constructor, the entire `totalSupply` (1 billion tokens) is minted and assigned to a single `multisig` address. This means that at deployment, 100% of the token supply is controlled by this single address. While common for initial token distribution, it represents a significant point of centralization and control over the token's initial liquidity and distribution strategy.
+Not confirmed by static analysis (the model's own reading of the source). In the constructor, the entire `totalSupply` (1 billion tokens) is minted and assigned to a single `multisig` address. This means that at deployment, 100% of the token supply is controlled by this single address. While common for initial token distribution, it represents a significant point of centralization and control over the token's initial liquidity and distribution strategy.
 
 **Recommendation:** Ensure the `multisig` address is secured with robust operational procedures, including strong key management, multi-factor authentication, and a sufficient number of signers. Clearly communicate the role and security measures of this `multisig` to the community. This is a standard practice, but its security is paramount.
 
 
 ### `L-02` — Potential for High Gas Costs in `getPriorVotes` with Many Checkpoints  *(Severity: Low · Status: Unresolved)*
 
-The `getPriorVotes` function uses a binary search algorithm to find historical vote counts. While efficient for sorted data, if a delegatee accumulates an extremely large number of checkpoints (e.g., one per block over many years), the gas cost for accessing and iterating through the `checkpoints` mapping could become substantial. Although `numCheckpoints` is limited by `uint32`, practical gas limits might be hit before reaching the theoretical maximum, potentially leading to denial of service for this specific function for highly active delegatees.
+Not confirmed by static analysis (the model's own reading of the source). The `getPriorVotes` function uses a binary search algorithm to find historical vote counts. While efficient for sorted data, if a delegatee accumulates an extremely large number of checkpoints (e.g., one per block over many years), the gas cost for accessing and iterating through the `checkpoints` mapping could become substantial. Although `numCheckpoints` is limited by `uint32`, practical gas limits might be hit before reaching the theoretical maximum, potentially leading to denial of service for this specific function for highly active delegatees.
 
 **Recommendation:** Monitor the gas usage of `getPriorVotes` in production, especially for delegatees with a high number of checkpoints. While the current implementation is standard and generally efficient, consider if any edge cases could lead to prohibitive gas costs. No immediate code change is required, but awareness and monitoring are advised.
 
 
 ### `I-01` — Use of `uint96` for Core Balances and Votes  *(Severity: Informational · Status: Unresolved)*
 
-The contract utilizes `uint96` for `balances`, `allowances`, and `votes` storage variables. This design choice is typically made to optimize gas usage by fitting values into smaller storage slots. However, it limits the maximum possible value for these quantities to `2^96 - 1`, which is approximately 7.92 x 10^28. While this is a very large number, it is smaller than the maximum value of `uint256`.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes `uint96` for `balances`, `allowances`, and `votes` storage variables. This design choice is typically made to optimize gas usage by fitting values into smaller storage slots. However, it limits the maximum possible value for these quantities to `2^96 - 1`, which is approximately 7.92 x 10^28. While this is a very large number, it is smaller than the maximum value of `uint256`.
 
 **Recommendation:** Ensure that all users and integrators are aware of the `uint96` limit for token balances and voting power. This is a design decision, and no direct action is required if the limit is acceptable for the protocol's long-term scale. Document this constraint clearly in external-facing documentation.
 
 
 ### `I-02` — `getChainId()` Implementation Using Assembly  *(Severity: Informational · Status: Unresolved)*
 
-The `getChainId()` function uses inline assembly (`assembly { chainId := chainid() }`) to retrieve the chain ID. While functional and common in older Solidity versions, Solidity 0.8.0 and later (which this contract uses) provide the `block.chainid` global variable, offering a more readable and safer way to access the chain ID without resorting to assembly.
+Not confirmed by static analysis (the model's own reading of the source). The `getChainId()` function uses inline assembly (`assembly { chainId := chainid() }`) to retrieve the chain ID. While functional and common in older Solidity versions, Solidity 0.8.0 and later (which this contract uses) provide the `block.chainid` global variable, offering a more readable and safer way to access the chain ID without resorting to assembly.
 
 **Recommendation:** Replace the assembly block in `getChainId()` with `return block.chainid;` for improved code clarity and to leverage native Solidity features. This is a minor best practice improvement.
 

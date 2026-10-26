@@ -2,14 +2,14 @@
 token: CloudBank
 ticker: COD
 network: bsc
-risk_score: 28
+risk_score: 26
 status: low
 date: 2026-09-22
 ---
 
 # CloudBank (COD) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cloudbank-bsc)
 
@@ -42,14 +42,14 @@ _🟢 1 Low · ⚪ 1 Informational_
 
 ### `L-01` — Gas Overhead in `approve` Function's Front-Running Mitigation  *(Severity: Low · Status: Unresolved)*
 
-The `approve` function includes logic to set the allowance to zero before setting the new amount if the current allowance is non-zero and the new amount is also non-zero. Specifically, `if (_allowances[owner][spender] != 0 && amount != 0) { _approve(owner, spender, 0); }` is executed. While this pattern is intended to mitigate a specific front-running scenario (the 'double-spend' attack), it results in an extra `_approve` call and an additional `Approval` event being emitted, increasing gas costs for such transactions. Users are generally encouraged to use `increaseAllowance` and `decreaseAllowance` for safer and more efficient allowance modifications.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function includes logic to set the allowance to zero before setting the new amount if the current allowance is non-zero and the new amount is also non-zero. Specifically, `if (_allowances[owner][spender] != 0 && amount != 0) { _approve(owner, spender, 0); }` is executed. While this pattern is intended to mitigate a specific front-running scenario (the 'double-spend' attack), it results in an extra `_approve` call and an additional `Approval` event being emitted, increasing gas costs for such transactions. Users are generally encouraged to use `increaseAllowance` and `decreaseAllowance` for safer and more
 
 **Recommendation:** Consider removing the explicit `_approve(owner, spender, 0)` call within the `approve` function if the gas overhead is a concern and users are expected to primarily use `increaseAllowance` and `decreaseAllowance`. Alternatively, document this behavior and its gas implications clearly. The current implementation is functionally correct but less gas-efficient in specific scenarios.
 
 
 ### `I-01` — Ownership Renounced in Constructor  *(Severity: Informational · Status: Unresolved)*
 
-The `StandardERC20Token` contract calls `renounceOwnership()` within its constructor. This action transfers ownership to the zero address (`address(0)`), effectively making the contract ownerless immediately after deployment. This design choice ensures that no single entity has administrative control over the token post-deployment, leading to a fixed token supply (after the initial mint) and preventing any future administrative actions such as pausing, blacklisting, or further minting/burning (if such functions were to be added and protected by `onlyOwner`). This is a strong decentralization feature but also means no emergency actions can be taken by an owner.
+Not confirmed by static analysis (the model's own reading of the source). The `StandardERC20Token` contract calls `renounceOwnership()` within its constructor. This action transfers ownership to the zero address (`address(0)`), effectively making the contract ownerless immediately after deployment. This design choice ensures that no single entity has administrative control over the token post-deployment, leading to a fixed token supply (after the initial mint) and preventing any future administrative actions such as pausing, blacklisting, or further minting/burning (if such functions were to be added and protected by `onlyOwner`). This is a strong decentralization feature but also means no e
 
 **Recommendation:** Ensure that this design decision aligns with the project's long-term vision for decentralization and immutability. The implications of having no administrative control (e.g., inability to upgrade, pause, or recover from certain unforeseen issues) should be fully understood and accepted by the project team and community.
 

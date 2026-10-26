@@ -2,14 +2,14 @@
 token: Cluster Protocol
 ticker: CP
 network: base
-risk_score: 65
-status: high
+risk_score: 60
+status: medium
 date: 2026-09-03
 ---
 
 # Cluster Protocol (CP) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 65/100 — 🟠 High Risk**
+> **Risk Score: 60/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cluster-protocol-base)
 
@@ -25,8 +25,8 @@ The CPToken contract implements an ERC20 token with additional features like ERC
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The CPToken contract is built upon well-audited OpenZeppelin libraries for ERC20, ERC20Permit, and AccessControl, contributing to a solid technical foundation (7.2 Code Security). The custom… |
-| **Governance / Economics** | 1/10 | High | The contract establishes a clear role-based access control system with DEFAULT_ADMIN_ROLE, MINTER_ROLE, and BURNER_ROLE, ensuring controlled token supply management and privileged operations (7.3… |
+| **Technical** | 8/10 | Low | The CPToken contract is built upon well-audited OpenZeppelin libraries for ERC20, ERC20Permit, and AccessControl, contributing to a solid technical foundation (7.2 Code Security). The custom… |
+| **Governance / Economics** | 2/10 | High | The contract establishes a clear role-based access control system with DEFAULT_ADMIN_ROLE, MINTER_ROLE, and BURNER_ROLE, ensuring controlled token supply management and privileged operations (7.3… |
 | **Upgrades** | 3/10 | High | The CPToken contract is implemented as a standard, non-upgradeable ERC20 token. This design choice simplifies the deployment and reduces the complexity associated with upgrade mechanisms, such as… |
 
 ## LP Distribution
@@ -38,25 +38,25 @@ The CPToken contract implements an ERC20 token with additional features like ERC
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control of Critical Roles  *(Severity: High · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE` holds significant power within the CPToken contract. This role is responsible for granting `MINTER_ROLE` and `BURNER_ROLE`, and for setting the `_ccipAdmin` address. If this role is controlled by a single External Owned Account (EOA), it represents a single point of failure. A compromised or malicious administrator could mint tokens up to `MAX_SUPPLY`, burn tokens from any account that has granted an allowance to the `BURNER_ROLE` holder, and potentially influence cross-chain operations via the `_ccipAdmin` (if it's used externally). This centralization poses a high risk to the protocol's security and economic stability (7.3 Access Control, 7.5 Governance).
-
-**Recommendation:** Implement a multi-signature wallet or a robust governance mechanism (e.g., DAO) to control the `DEFAULT_ADMIN_ROLE`. This will distribute administrative power and reduce the risk associated with a single point of failure.
-
+_🟡 2 Medium · ⚪ 1 Informational_
 
 ### `M-01` — Potential for Miner Manipulation of Timestamps in Authorization  *(Severity: Medium · Status: Unresolved)*
 
-The `_requireValidAuthorization` function, used by `transferWithAuthorization` and `receiveWithAuthorization`, relies on `block.timestamp` to enforce `validAfter` and `validBefore` conditions. While `block.timestamp` is a standard practice, it can be manipulated by miners within a certain range (up to 900 seconds on Ethereum). If the `validAfter`/`validBefore` window is very narrow (e.g., a few blocks), a miner could potentially front-run or delay a transaction to cause it to fail due to timestamp expiry or prematurity, even if the user intended it to be valid. This could lead to user frustration or failed transactions (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `_requireValidAuthorization` function, used by `transferWithAuthorization` and `receiveWithAuthorization`, relies on `block.timestamp` to enforce `validAfter` and `validBefore` conditions. While `block.timestamp` is a standard practice, it can be manipulated by miners within a certain range (up to 900 seconds on Ethereum). If the `validAfter`/`validBefore` window is very narrow (e.g., a few blocks), a miner could potentially front-run or delay a transaction to cause it to fail due to timestamp expiry or prematurity, even if the user intended it to be valid. This could lead to user frustration or failed transactions
 
 **Recommendation:** Ensure that the `validAfter` and `validBefore` windows are sufficiently wide (e.g., several hours or days) to mitigate the impact of miner timestamp manipulation. Users should be made aware of this characteristic when generating signed authorizations.
 
 
+### `M-02` — Centralized Control of Critical Roles  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` holds significant power within the CPToken contract. This role is responsible for granting `MINTER_ROLE` and `BURNER_ROLE`, and for setting the `_ccipAdmin` address. If this role is controlled by a single External Owned Account (EOA), it represents a single point of failure. A compromised or malicious administrator could mint tokens up to `MAX_SUPPLY`, burn tokens from any account that has granted an allowance to the `BURNER_ROLE` holder, and potentially influence cross-chain operations via the `_ccipAdmin` (if it's used externally). This centralization poses a high risk to the protocol's secur
+
+**Recommendation:** Implement a multi-signature wallet or a robust governance mechanism (e.g., DAO) to control the `DEFAULT_ADMIN_ROLE`. This will distribute administrative power and reduce the risk associated with a single point of failure.
+
+
 ### `I-01` — Unused `_ccipAdmin` Variable  *(Severity: Informational · Status: Unresolved)*
 
-The `_ccipAdmin` state variable is declared, initialized in the constructor, and has a setter function (`setCCIPAdmin`) restricted to `DEFAULT_ADMIN_ROLE`, along with a getter. However, no other logic within the `CPToken` contract directly utilizes this variable. This suggests it might be a placeholder for future functionality or integration with an external CCIP system. Without its intended use, it represents an incomplete feature or dead code within the current contract scope, potentially leading to confusion or an unnecessary attack surface if its external purpose is not well-defined (7.1 Architecture, 7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `_ccipAdmin` state variable is declared, initialized in the constructor, and has a setter function (`setCCIPAdmin`) restricted to `DEFAULT_ADMIN_ROLE`, along with a getter. However, no other logic within the `CPToken` contract directly utilizes this variable. This suggests it might be a placeholder for future functionality or integration with an external CCIP system. Without its intended use, it represents an incomplete feature or dead code within the current contract scope, potentially leading to confusion or an unnecessary attack surface if its external purpose is not well-defined (7.1 Architecture, 7.2 Code Secu
 
 **Recommendation:** Clearly document the intended purpose and usage of the `_ccipAdmin` variable. If it's for future integration, ensure that the external system's security is thoroughly reviewed once implemented. If it's not intended for use, consider removing it to reduce contract complexity and improve clarity.
 

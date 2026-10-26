@@ -2,14 +2,14 @@
 token: claudius
 ticker: CLAUDIUS
 network: solana
-risk_score: 36
-status: medium
+risk_score: 31
+status: low
 date: 2026-08-12
 ---
 
 # claudius (CLAUDIUS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/claudius-sol)
 
@@ -25,7 +25,7 @@ The claudius SPL Token Mint exhibits a generally secure configuration with both 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The claudius token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account freezing. No… |
+| **Technical** | 10/10 | Low | The claudius token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account freezing. No… |
 | **Governance / Economics** | 1/10 | High | The token's economic profile shows a moderate holder concentration, with the top 10 accounts holding 31.47% of the supply, which is below thresholds for high concentration risk. Current DEX liquidity… |
 | **Upgrades** | 8/10 | Low | The claudius token mint has a robust immutability posture regarding core authorities, with both mint and freeze authorities permanently revoked. This means the token supply cannot be increased, and… |
 

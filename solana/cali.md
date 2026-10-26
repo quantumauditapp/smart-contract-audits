@@ -2,14 +2,14 @@
 token: CALI
 ticker: CALI
 network: solana
-risk_score: 14
+risk_score: 7
 status: low
 date: 2026-09-19
 ---
 
 # CALI (CALI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 14/100 — 🟢 Low Risk**
+> **Risk Score: 7/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cali-sol)
 
@@ -26,8 +26,8 @@ The CALI token mint has revoked both mint and freeze authorities, indicating a f
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The CALI token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be… |
-| **Governance / Economics** | 6/10 | Medium | The token's DEX pair is very new, having been created only 1 day ago, which limits the ability to assess long-term market behavior or team actions. Current liquidity stands at $113,272 with a 24-hour… |
-| **Upgrades** | 8/10 | Low | The token mint has no active upgrade mechanisms for its core features. Both mint and freeze authorities are revoked, preventing changes to supply or account states. Furthermore, extensions like… |
+| **Governance / Economics** | 7/10 | Low | The token's DEX pair is very new, having been created only 1 day ago, which limits the ability to assess long-term market behavior or team actions. Current liquidity stands at $113,272 with a 24-hour… |
+| **Upgrades** | 9/10 | Low | The token mint has no active upgrade mechanisms for its core features. Both mint and freeze authorities are revoked, preventing changes to supply or account states. Furthermore, extensions like… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ The DEX pair was created 1 day ago. Insufficient track record to assess team or 
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 1 day ago. Insufficient track record to assess team or 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -25,7 +25,7 @@ The BTCB Token contract is a standard BEP20 implementation with an Ownable acces
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract demonstrates good technical practices, including the use of the SafeMath library (7.2 Code Security) to prevent integer overflows/underflows. It adheres to the BEP20 standard, providing… |
+| **Technical** | 8/10 | Low | The contract demonstrates good technical practices, including the use of the SafeMath library (7.2 Code Security) to prevent integer overflows/underflows. It adheres to the BEP20 standard, providing… |
 | **Governance / Economics** | 1/10 | High | A significant economic risk (7.4 Economic) is the owner's ability to mint an unlimited supply of new tokens via the `mint` function (7.3 Access Control). This centralized control can lead to token… |
 | **Upgrades** | 3/10 | High | The contract is not designed with an upgradeability pattern (7.7 Upgrades), meaning its code is immutable once deployed. This eliminates upgrade-related risks but also prevents future bug fixes or… |
 
@@ -38,32 +38,32 @@ The BTCB Token contract is a standard BEP20 implementation with an Ownable acces
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · ⚪ 2 Informational_
-
-### `H-01` — Centralized Minting Capability  *(Severity: High · Status: Unresolved)*
-
-The `mint` function, callable only by the contract owner, allows for the creation of an arbitrary amount of new tokens. This centralized control over the token supply introduces a significant economic risk (7.4 Economic) as the owner can unilaterally inflate the supply, potentially diluting the value for existing token holders without any checks or balances (7.3 Access Control).
-
-**Recommendation:** Consider removing the `mint` function if a fixed supply is desired. If minting is a necessary feature, implement a robust governance mechanism (e.g., a multi-signature wallet or a DAO) to control minting operations, requiring multiple approvals or community consensus for any supply increases.
-
+_🟡 2 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Single Point of Failure for Ownership  *(Severity: Medium · Status: Unresolved)*
 
-The contract's ownership is controlled by a single Externally Owned Account (EOA). If this EOA's private key is compromised, lost, or becomes inaccessible, an attacker could gain full control over critical functions like `mint` and `transferOwnership`, or the contract could become unmanageable (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract's ownership is controlled by a single Externally Owned Account (EOA). If this EOA's private key is compromised, lost, or becomes inaccessible, an attacker could gain full control over critical functions like `mint` and `transferOwnership`, or the contract could become unmanageable (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** Transfer ownership from the current EOA to a multi-signature wallet (e.g., Gnosis Safe) to distribute control and require multiple approvals for sensitive operations, significantly reducing the risk of a single point of failure.
 
 
+### `M-02` — Centralized Minting Capability  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function, callable only by the contract owner, allows for the creation of an arbitrary amount of new tokens. This centralized control over the token supply introduces a significant economic risk (7.4 Economic) as the owner can unilaterally inflate the supply, potentially diluting the value for existing token holders without any checks or balances (7.3 Access Control).
+
+**Recommendation:** Consider removing the `mint` function if a fixed supply is desired. If minting is a necessary feature, implement a robust governance mechanism (e.g., a multi-signature wallet or a DAO) to control minting operations, requiring multiple approvals or community consensus for any supply increases.
+
+
 ### `I-01` — Older Solidity Compiler Version  *(Severity: Informational · Status: Unresolved)*
 
-The contract is compiled with Solidity version 0.5.16. While `SafeMath` is used to mitigate integer overflows/underflows, newer compiler versions (e.g., 0.8.x) include built-in overflow checks by default, offer better gas optimizations, and incorporate various security improvements and bug fixes (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version 0.5.16. While `SafeMath` is used to mitigate integer overflows/underflows, newer compiler versions (e.g., 0.8.x) include built-in overflow checks by default, offer better gas optimizations, and incorporate various security improvements and bug fixes (7.2 Code Security).
 
 **Recommendation:** Consider upgrading to a more recent and actively maintained Solidity compiler version (e.g., 0.8.x) for future deployments or contract iterations to benefit from enhanced security features and optimizations. Ensure thorough testing if upgrading.
 
 
 ### `I-02` — Standard ERC-20 `approve` Front-Running Risk  *(Severity: Informational · Status: Unresolved)*
 
-The `approve` function is susceptible to a known ERC-20 front-running vulnerability. If a user approves an amount, and then approves a different amount without first setting the allowance to zero, a malicious actor could front-run the second transaction to spend the original allowance, and then spend the new allowance, effectively spending twice (7.2 Code Security). While `increaseAllowance` and `decreaseAllowance` functions are provided to mitigate this, the base `approve` function still carries this risk.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function is susceptible to a known ERC-20 front-running vulnerability. If a user approves an amount, and then approves a different amount without first setting the allowance to zero, a malicious actor could front-run the second transaction to spend the original allowance, and then spend the new allowance, effectively spending twice (7.2 Code Security). While `increaseAllowance` and `decreaseAllowance` functions are provided to mitigate this, the base `approve` function still carries this risk.
 
 **Recommendation:** Educate users to utilize `increaseAllowance` and `decreaseAllowance` instead of directly calling `approve` when modifying an existing allowance. Alternatively, consider implementing a 'zero-then-approve' pattern within the `approve` function itself, though this adds an extra transaction for users.
 

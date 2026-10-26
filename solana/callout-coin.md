@@ -2,14 +2,14 @@
 token: Callout Coin
 ticker: CALLOUT
 network: solana
-risk_score: 54
+risk_score: 47
 status: medium
 date: 2026-08-12
 ---
 
 # Callout Coin (CALLOUT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 54/100 — 🟡 Medium Risk**
+> **Risk Score: 47/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/callout-coin-sol)
 
@@ -60,7 +60,7 @@ The DEX pair for Callout Coin was created 0 days ago. This indicates an insuffic
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for Callout Coin was created 0 days ago. This indicates an insuffic
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

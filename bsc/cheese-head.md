@@ -2,14 +2,14 @@
 token: Cheese Head
 ticker: CHEESE
 network: bsc
-risk_score: 31
+risk_score: 11
 status: low
 date: 2026-08-14
 ---
 
 # Cheese Head (CHEESE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 31/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cheese-head-bsc)
 
@@ -25,9 +25,9 @@ The CHEESE Token contract implements a standard ERC20 token with Ownable access 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract implements a standard ERC20 token with an Ownable access control pattern. It utilizes Solidity 0.8.26, benefiting from built-in overflow/underflow checks, with `unchecked` blocks… |
-| **Governance / Economics** | 7/10 | Low | The contract incorporates the Ownable pattern, granting a single owner control over ownership transfer and renunciation (7.3 Access Control). This centralizes administrative power. Economically, the… |
-| **Upgrades** | 9/10 | Low | The contract is not designed with an upgradeable proxy pattern (7.7 Upgrades). Therefore, any changes to its logic would require a redeployment and migration of assets, which is a significant… |
+| **Technical** | 10/10 | Low | The contract implements a standard ERC20 token with an Ownable access control pattern. It utilizes Solidity 0.8.26, benefiting from built-in overflow/underflow checks, with `unchecked` blocks… |
+| **Governance / Economics** | 8/10 | Low | The contract incorporates the Ownable pattern, granting a single owner control over ownership transfer and renunciation (7.3 Access Control). This centralizes administrative power. Economically, the… |
+| **Upgrades** | 10/10 | Low | The contract is not designed with an upgradeable proxy pattern (7.7 Upgrades). Therefore, any changes to its logic would require a redeployment and migration of assets, which is a significant… |
 
 ## LP Distribution
 
@@ -40,25 +40,25 @@ The CHEESE Token contract implements a standard ERC20 token with Ownable access 
 
 ## Security Findings
 
-_🔴 1 Critical · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `C-01` — Unmintable Token - Critical Functional Flaw  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Unmintable Token - Critical Functional Flaw  *(Severity: Medium · Status: Unresolved)*
 
-The `_mint` function, which is responsible for increasing the total supply and assigning tokens to an account, is declared as `internal virtual`. However, there is no public or external function within the `ERC20` contract, nor is it called in the constructor, that invokes `_mint`. Consequently, the `_totalSupply` will always remain zero, and no tokens can ever be created or distributed, rendering the token completely unusable.
+Not confirmed by static analysis (the model's own reading of the source). The `_mint` function, which is responsible for increasing the total supply and assigning tokens to an account, is declared as `internal virtual`. However, there is no public or external function within the `ERC20` contract, nor is it called in the constructor, that invokes `_mint`. Consequently, the `_totalSupply` will always remain zero, and no tokens can ever be created or distributed, rendering the token completely unusable.
 
 **Recommendation:** Implement a public or owner-restricted `mint` function that calls `_mint` to allow for token creation. Alternatively, call `_mint` within the constructor to establish an initial token supply upon deployment.
 
 
 ### `L-01` — Non-Standard Decimals Value  *(Severity: Low · Status: Unresolved)*
 
-The `decimals()` function returns a fixed value of 9. While technically valid, the most common standard for ERC20 tokens is 18 decimals. Using a non-standard value like 9 can lead to display issues or misinterpretations in wallets, exchanges, and other DeFi platforms that often default to or expect 18 decimals.
+Not confirmed by static analysis (the model's own reading of the source). The `decimals()` function returns a fixed value of 9. While technically valid, the most common standard for ERC20 tokens is 18 decimals. Using a non-standard value like 9 can lead to display issues or misinterpretations in wallets, exchanges, and other DeFi platforms that often default to or expect 18 decimals.
 
 **Recommendation:** Consider changing the `decimals()` function to return 18 for broader compatibility with existing infrastructure. If 9 decimals are intentionally desired, ensure all front-end applications and integrations are aware of and correctly handle this value.
 
 
 ### `I-01` — Unused Address Library  *(Severity: Informational · Status: Unresolved)*
 
-The `Address` library is imported into the contract, but none of its functions (`isContract`, `sendValue`, `functionCall`, `functionStaticCall`) are called or utilized within the provided `ERC20` or `Ownable` contract logic. Including unused libraries can slightly increase bytecode size and deployment costs without providing functional benefits.
+Not confirmed by static analysis (the model's own reading of the source). The `Address` library is imported into the contract, but none of its functions (`isContract`, `sendValue`, `functionCall`, `functionStaticCall`) are called or utilized within the provided `ERC20` or `Ownable` contract logic. Including unused libraries can slightly increase bytecode size and deployment costs without providing functional benefits.
 
 **Recommendation:** Remove the import and usage of the `Address` library if its functions are not required by the contract. This will optimize the contract's bytecode size.
 

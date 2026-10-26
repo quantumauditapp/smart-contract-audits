@@ -2,14 +2,14 @@
 token: Coinye West
 ticker: COINYE
 network: base
-risk_score: 9
+risk_score: 7
 status: low
 date: 2026-08-17
 ---
 
 # Coinye West (COINYE) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 9/100 — 🟢 Low Risk**
+> **Risk Score: 7/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/coinye-west-base)
 
@@ -41,35 +41,35 @@ _🟢 1 Low · ⚪ 4 Informational_
 
 ### `L-01` — Lack of Emergency Withdrawal Functionality  *(Severity: Low · Status: Unresolved)*
 
-The contract does not include a mechanism to recover accidentally sent ERC20 tokens or native currency (ETH) that might be sent to the contract address. While not directly impacting the core ERC20 functionality, such funds would be permanently locked and inaccessible (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract does not include a mechanism to recover accidentally sent ERC20 tokens or native currency (ETH) that might be sent to the contract address. While not directly impacting the core ERC20 functionality, such funds would be permanently locked and inaccessible (7.8 Operations).
 
 **Recommendation:** Implement a function, callable by a trusted address (e.g., the deployer or a multisig), to withdraw accidentally sent ERC20 tokens or native currency from the contract. This function should include checks to prevent draining legitimate contract balances.
 
 
 ### `I-01` — Fixed Supply Token  *(Severity: Informational · Status: Unresolved)*
 
-The CoinyeWest token has a fixed total supply of 1,000,000,000 COINYE, all minted to the contract deployer during construction. There are no public functions to mint or burn tokens after deployment (7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The CoinyeWest token has a fixed total supply of 1,000,000,000 COINYE, all minted to the contract deployer during construction. There are no public functions to mint or burn tokens after deployment (7.4 Economic).
 
 **Recommendation:** This is a design choice that ensures scarcity and predictability. Confirm that a fixed supply model aligns with the project's long-term economic strategy.
 
 
 ### `I-02` — No Administrative Privileges  *(Severity: Informational · Status: Unresolved)*
 
-The contract lacks any administrative roles such as an owner, minter, pauser, or blacklister. This design promotes decentralization and immutability (7.3 Access Control, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks any administrative roles such as an owner, minter, pauser, or blacklister. This design promotes decentralization and immutability (7.3 Access Control, 7.5 Governance).
 
 **Recommendation:** This design choice eliminates risks associated with centralized control but means there is no mechanism to pause transfers, recover accidentally sent tokens (as noted in L-01), or address potential future issues requiring administrative intervention. Ensure this level of decentralization is desired.
 
 
 ### `I-03` — Use of Custom Errors  *(Severity: Informational · Status: Unresolved)*
 
-The contract utilizes custom error types (e.g., `ERC20InsufficientBalance`, `ERC20InvalidSender`) instead of traditional `require` statements with string messages. This is a modern Solidity best practice (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes custom error types (e.g., `ERC20InsufficientBalance`, `ERC20InvalidSender`) instead of traditional `require` statements with string messages. This is a modern Solidity best practice (7.2 Code Security).
 
 **Recommendation:** This approach improves gas efficiency and provides more structured, machine-readable error information, which is beneficial for dApp integration and debugging. No action required.
 
 
 ### `I-04` — Appropriate Use of `unchecked` Blocks  *(Severity: Informational · Status: Unresolved)*
 
-The contract employs `unchecked` blocks for arithmetic operations, specifically for `_balances[from] = fromBalance - value;`, `_balances[to] += value;`, and `_totalSupply -= value;`. In cases of subtraction, prior checks (`if (fromBalance < value)`) prevent underflow. For addition, `uint256` capacity is practically sufficient for the token's scale (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract employs `unchecked` blocks for arithmetic operations, specifically for `_balances[from] = fromBalance - value;`, `_balances[to] += value;`, and `_totalSupply -= value;`. In cases of subtraction, prior checks (`if (fromBalance < value)`) prevent underflow. For addition, `uint256` capacity is practically sufficient for the token's scale (7.2 Code Security).
 
 **Recommendation:** The use of `unchecked` blocks here is a gas optimization technique and appears to be safe given the context and preceding checks. No action required.
 

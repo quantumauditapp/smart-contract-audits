@@ -2,14 +2,14 @@
 token: CAT
 ticker: CAT
 network: bsc
-risk_score: 82
-status: high
+risk_score: 55
+status: medium
 date: 2026-08-14
 ---
 
 # CAT (CAT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 82/100 — 🟠 High Risk**
+> **Risk Score: 55/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cat-bsc)
 
@@ -27,7 +27,7 @@ For immutable contracts, ensure thorough testing and auditing before deployment,
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical implementation demonstrates strong adherence to best practices, leveraging battle-tested OpenZeppelin libraries for ERC-20, ERC-721, Ownable, Pausable, and ReentrancyGuard… |
+| **Technical** | 8/10 | Low | The technical implementation demonstrates strong adherence to best practices, leveraging battle-tested OpenZeppelin libraries for ERC-20, ERC-721, Ownable, Pausable, and ReentrancyGuard… |
 | **Governance / Economics** | 1/10 | High | The governance and economic model exhibits a high degree of centralization, with a 3/5 multisig owner retaining extensive control over all core contract functionalities. This includes the ability to… |
 | **Upgrades** | 6/10 | Medium | The contracts are deployed as immutable, non-upgradeable implementations. This design choice eliminates risks associated with proxy patterns, such as storage collisions, logic errors during upgrades… |
 
@@ -40,46 +40,46 @@ For immutable contracts, ensure thorough testing and auditing before deployment,
 
 ## Security Findings
 
-_🟠 1 High · 🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control Across All Contracts  *(Severity: High · Status: Unresolved)*
-
-All three contracts (`CATToken`, `CatClaim`, `PolyJetClub`) are `Ownable` and explicitly prevent ownership renouncement. This design concentrates extensive power in a single 3/5 multisig address, which controls all critical operations including token blacklisting, fund transfers from blacklisted accounts, claim amount management, NFT minting, and pausing. This introduces a significant single point of control and high trust requirement in the owner (7.3, 7.5, 7.8).
-
-**Recommendation:** Consider implementing time-locks for highly sensitive owner-controlled functions to introduce a delay before execution, allowing for community review or emergency intervention. Explore progressive decentralization strategies, such as transitioning to a DAO-based governance model for critical decisions like blacklisting or major fund movements, reducing reliance on a single multisig.
-
+_🟡 4 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Owner's Power Over Blacklisted Funds  *(Severity: Medium · Status: Unresolved)*
 
-In `CATToken`, the `transferBlackFunds` function allows the owner to unilaterally transfer all tokens from a blacklisted address to any non-blacklisted recipient. While intended for recovery or enforcement, this grants significant power to the owner over user funds, which could be misused or lead to disputes if not handled transparently (7.3, 7.4).
+Not confirmed by static analysis (the model's own reading of the source). In `CATToken`, the `transferBlackFunds` function allows the owner to unilaterally transfer all tokens from a blacklisted address to any non-blacklisted recipient. While intended for recovery or enforcement, this grants significant power to the owner over user funds, which could be misused or lead to disputes if not handled transparently (7.3, 7.4).
 
 **Recommendation:** Implement a clear policy and transparent process for the use of `transferBlackFunds`, communicating the conditions under which it will be invoked. Consider requiring a multi-signature approval or a time-lock for such transfers to add an additional layer of security and accountability.
 
 
 ### `M-02` — Owner's Control Over Claimable Amounts and Funds  *(Severity: Medium · Status: Unresolved)*
 
-In `CatClaim`, the owner has exclusive control over setting and resetting claimable amounts for any user via `setClaimableAmount` and `setClaimableAmounts`. Additionally, the owner can deposit and withdraw all CAT tokens from the contract using `depositCat` and `withdrawCat`. This centralization means the owner has full discretion over who can claim, how much, and can manage or drain the contract's funds at any time (7.3, 7.4).
+Not confirmed by static analysis (the model's own reading of the source). In `CatClaim`, the owner has exclusive control over setting and resetting claimable amounts for any user via `setClaimableAmount` and `setClaimableAmounts`. Additionally, the owner can deposit and withdraw all CAT tokens from the contract using `depositCat` and `withdrawCat`. This centralization means the owner has full discretion over who can claim, how much, and can manage or drain the contract's funds at any time (7.3, 7.4).
 
 **Recommendation:** If possible, explore mechanisms to decentralize the setting of claimable amounts, perhaps through a pre-defined schedule or a community-governed process. For fund withdrawals, consider implementing a time-lock or requiring a higher threshold of multisig signers for large amounts to enhance security and trust.
 
 
 ### `M-03` — Owner's Control Over NFT Minting and Metadata  *(Severity: Medium · Status: Unresolved)*
 
-In `PolyJetClub`, the owner possesses exclusive rights to mint all NFTs up to `MAX_SUPPLY` via `mint` and `batchMint`, and can change the `baseURI` at any time using `setBaseURI`. This centralization allows the owner to control the entire distribution and metadata of the NFT collection, potentially impacting its perceived value or authenticity if the owner's key is compromised or acts maliciously (7.3, 7.4).
+Not confirmed by static analysis (the model's own reading of the source). In `PolyJetClub`, the owner possesses exclusive rights to mint all NFTs up to `MAX_SUPPLY` via `mint` and `batchMint`, and can change the `baseURI` at any time using `setBaseURI`. This centralization allows the owner to control the entire distribution and metadata of the NFT collection, potentially impacting its perceived value or authenticity if the owner's key is compromised or acts maliciously (7.3, 7.4).
 
 **Recommendation:** Consider implementing a time-lock for `setBaseURI` to provide transparency before metadata changes. For minting, if a public sale or decentralized distribution is planned, ensure the owner's minting capabilities are limited or phased out after initial distribution, or integrate a transparent minting schedule.
 
 
+### `M-04` — Centralized Control Across All Contracts  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). All three contracts (`CATToken`, `CatClaim`, `PolyJetClub`) are `Ownable` and explicitly prevent ownership renouncement. This design concentrates extensive power in a single 3/5 multisig address, which controls all critical operations including token blacklisting, fund transfers from blacklisted accounts, claim amount management, NFT minting, and pausing. This introduces a significant single point of control and high trust requirement in the owner (7.3, 7.5, 7.8).
+
+**Recommendation:** Consider implementing time-locks for highly sensitive owner-controlled functions to introduce a delay before execution, allowing for community review or emergency intervention. Explore progressive decentralization strategies, such as transitioning to a DAO-based governance model for critical decisions like blacklisting or major fund movements, reducing reliance on a single multisig.
+
+
 ### `L-01` — Pausability Centralization  *(Severity: Low · Status: Unresolved)*
 
-All contracts implement pausable functionality, allowing the owner to halt core contract operations (e.g., token transfers, claims, NFT minting) at will. While a common emergency mechanism, this feature is entirely controlled by the owner, which could disrupt user activity or be used to freeze assets without immediate recourse (7.3, 7.8).
+Not confirmed by static analysis (the model's own reading of the source). All contracts implement pausable functionality, allowing the owner to halt core contract operations (e.g., token transfers, claims, NFT minting) at will. While a common emergency mechanism, this feature is entirely controlled by the owner, which could disrupt user activity or be used to freeze assets without immediate recourse (7.3, 7.8).
 
 **Recommendation:** Clearly document the conditions under which the pause functionality would be invoked. For enhanced decentralization, consider requiring a multi-signature approval or a time-lock for pausing and unpausing, especially for prolonged periods, to prevent arbitrary halts.
 
 
 ### `I-01` — Immutable Contract Design  *(Severity: Informational · Status: Unresolved)*
 
-The contracts are deployed as immutable implementations and do not incorporate any upgradeability mechanisms (e.g., proxy patterns). While this eliminates risks associated with complex upgrade processes, it means that any future bug fixes, feature enhancements, or changes to the protocol logic would necessitate a complete redeployment of the contracts and a migration of assets, which can be a complex and costly process (7.7).
+Not confirmed by static analysis (the model's own reading of the source). The contracts are deployed as immutable implementations and do not incorporate any upgradeability mechanisms (e.g., proxy patterns). While this eliminates risks associated with complex upgrade processes, it means that any future bug fixes, feature enhancements, or changes to the protocol logic would necessitate a complete redeployment of the contracts and a migration of assets, which can be a complex and costly process (7.7).
 
 **Recommendation:** Ensure comprehensive testing and auditing are conducted prior to deployment, given the immutability of the contracts. For future projects, evaluate the trade-offs between immutability and upgradeability based on the project's long-term vision and potential for evolving requirements.
 

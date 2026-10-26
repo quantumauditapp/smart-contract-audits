@@ -2,14 +2,14 @@
 token: Chip
 ticker: CHIP
 network: ethereum
-risk_score: 76
-status: high
+risk_score: 64
+status: medium
 date: 2026-08-17
 ---
 
 # Chip (CHIP) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 76/100 — 🟠 High Risk**
+> **Risk Score: 64/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chip-eth)
 
@@ -25,7 +25,7 @@ The OToken contract serves as an upgradeable ERC-20 token, utilizing OpenZeppeli
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The OToken contract demonstrates strong technical foundations by inheriting from OpenZeppelin's `ERC20Upgradeable`, `AccessControlUpgradeable`, and `ReentrancyGuardTransient` (7.2 Code Security). The… |
+| **Technical** | 7/10 | Low | The OToken contract demonstrates strong technical foundations by inheriting from OpenZeppelin's `ERC20Upgradeable`, `AccessControlUpgradeable`, and `ReentrancyGuardTransient` (7.2 Code Security). The… |
 | **Governance / Economics** | 1/10 | High | The contract's economic model features centralized control over token supply (7.4 Economic). The `BRIDGE_ADMIN_ROLE` has exclusive rights to mint and burn tokens, with the `DEFAULT_ADMIN_ROLE` having… |
 | **Upgrades** | 1/10 | High | The OToken contract is deployed behind a TransparentUpgradeableProxy, leveraging OpenZeppelin's upgradeable patterns (7.7 Upgrades). The `initialize` function correctly uses the `initializer`… |
 
@@ -47,25 +47,25 @@ The OToken contract serves as an upgradeable ERC-20 token, utilizing OpenZeppeli
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Centralized Control of Critical Roles and Token Supply  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Control of Critical Roles and Token Supply  *(Severity: Medium · Status: Unresolved)*
 
-The `OToken` contract relies heavily on `AccessControlUpgradeable` for managing critical operations. The `DEFAULT_ADMIN_ROLE` (assigned during initialization) has the power to grant and revoke any role, including the `BRIDGE_ADMIN_ROLE`. The `BRIDGE_ADMIN_ROLE` is solely responsible for `mint` and `burn` operations, directly controlling the token's total supply. A compromise of the `DEFAULT_ADMIN_ROLE` or `BRIDGE_ADMIN_ROLE` could lead to unauthorized minting, burning, or manipulation of token supply, severely impacting the token's value and integrity (7.3 Access Control, 7.4 Economic, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The `OToken` contract relies heavily on `AccessControlUpgradeable` for managing critical operations. The `DEFAULT_ADMIN_ROLE` (assigned during initialization) has the power to grant and revoke any role, including the `BRIDGE_ADMIN_ROLE`. The `BRIDGE_ADMIN_ROLE` is solely responsible for `mint` and `burn` operations, directly controlling the token's total supply. A compromise of the `DEFAULT_ADMIN_ROLE` or `BRIDGE_ADMIN_ROLE` could lead to unauthorized minting, burning, or manipulation of token supply, severely impacting the token's value and integrity (7.3 Access Control, 7.4 Economic, 7.5 Governance).
 
 **Recommendation:** Implement robust multi-signature governance for the `DEFAULT_ADMIN_ROLE` to ensure no single entity can unilaterally control critical roles. For the `BRIDGE_ADMIN_ROLE`, consider a multi-signature setup or a more decentralized mechanism if feasible, and ensure its operational security is paramount.
 
 
 ### `L-01` — No Dedicated Emergency Pause Mechanism  *(Severity: Low · Status: Unresolved)*
 
-The contract lacks a dedicated `Pausable` mechanism to halt token transfers or mint/burn operations in an emergency (e.g., exploit, critical bug). While `AccessControl` can restrict `mint`/`burn`, it doesn't cover `transfer` or `approve` functions, which could be exploited in certain scenarios (7.2 Code Security, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks a dedicated `Pausable` mechanism to halt token transfers or mint/burn operations in an emergency (e.g., exploit, critical bug). While `AccessControl` can restrict `mint`/`burn`, it doesn't cover `transfer` or `approve` functions, which could be exploited in certain scenarios (7.2 Code Security, 7.8 Operations).
 
 **Recommendation:** Consider integrating OpenZeppelin's `PausableUpgradeable` for a global emergency stop functionality, controlled by a trusted multi-signature wallet. This would provide a rapid response capability to mitigate ongoing exploits or critical vulnerabilities.
 
 
 ### `I-01` — Unnecessary `nonReentrant` Modifier  *(Severity: Informational · Status: Unresolved)*
 
-The `mint` and `burn` functions are protected by the `nonReentrant` modifier. However, these functions do not perform any external calls that could lead to reentrancy. While harmless, the modifier adds a small, unnecessary gas cost to these operations (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `mint` and `burn` functions are protected by the `nonReentrant` modifier. However, these functions do not perform any external calls that could lead to reentrancy. While harmless, the modifier adds a small, unnecessary gas cost to these operations (7.2 Code Security).
 
 **Recommendation:** Remove the `nonReentrant` modifier from `mint` and `burn` functions as they do not interact with external contracts. If future upgrades introduce external calls within these functions, the modifier can be re-added.
 

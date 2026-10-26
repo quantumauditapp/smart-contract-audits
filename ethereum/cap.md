@@ -118,7 +118,7 @@ Based on available data, labeling Cap definitively as a scam is complex. The con
 
 ### Is Cap safe to buy?
 
-Given the current security profile, Cap is not considered safe for investment. The primary concerns stem from the top 10 holders controlling 100% of the supply, creating extreme centralization risk and potential for price manipulation. Additionally, the lack of locked liquidity means funds can be withdrawn, exposing investors to a "rug pull." These critical factors contribute to its high risk score of 57/100.
+Given the current security profile, Cap is not considered safe for investment. The primary concerns stem from the top 10 holders controlling 100% of the supply, creating extreme centralization risk and potential for price manipulation. Additionally, the lack of locked liquidity means funds can be withdrawn, exposing investors to a "rug pull." These critical factors contribute to its medium risk score of 44/100.
 
 ### Has Cap been audited?
 

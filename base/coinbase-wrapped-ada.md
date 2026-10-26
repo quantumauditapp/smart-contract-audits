@@ -2,14 +2,14 @@
 token: Coinbase Wrapped ADA
 ticker: CBADA
 network: base
-risk_score: 66
-status: high
+risk_score: 59
+status: medium
 date: 2026-09-19
 ---
 
 # Coinbase Wrapped ADA (CBADA) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 59/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/coinbase-wrapped-ada-base)
 
@@ -25,8 +25,8 @@ This audit covers the FiatTokenV2_2 contract, which serves as the implementation
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract utilizes SafeMath for arithmetic operations, mitigating common integer overflow/underflow vulnerabilities (7.2 Code Security). It also implements EIP-712 for gasless approvals and… |
-| **Governance / Economics** | 1/10 | High | As a centralized stablecoin, the economic model inherently relies on an issuer with capabilities such as minting, burning, pausing, and blacklisting (7.4 Economic). The contract includes blacklisting… |
+| **Technical** | 7/10 | Low | The contract utilizes SafeMath for arithmetic operations, mitigating common integer overflow/underflow vulnerabilities (7.2 Code Security). It also implements EIP-712 for gasless approvals and… |
+| **Governance / Economics** | 2/10 | High | As a centralized stablecoin, the economic model inherently relies on an issuer with capabilities such as minting, burning, pausing, and blacklisting (7.4 Economic). The contract includes blacklisting… |
 | **Upgrades** | 1/10 | High | The contract is designed to be upgradeable via a proxy pattern, with `FiatTokenV2_2` serving as an implementation contract. The `initializeV2_2` function manages the upgrade logic, including symbol… |
 
 ## Proxy Upgrade Controls
@@ -47,39 +47,39 @@ This audit covers the FiatTokenV2_2 contract, which serves as the implementation
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Complex Custom Storage for Balances and Blacklisting  *(Severity: High · Status: Unresolved)*
-
-The `balanceAndBlacklistStates` mapping uses a custom bit-packing strategy to store both the account balance (lower 255 bits) and the blacklist status (highest bit, 2^255) within a single `uint256`. While the `_setBalance`, `_balanceOf`, `_isBlacklisted`, and `_setBlacklistState` functions are designed to manage this, this non-standard storage pattern significantly increases complexity (7.1 Architecture, 7.2 Code Security). Any subtle error in bitwise operations or a misunderstanding of this pattern by future developers could lead to incorrect balances, incorrect blacklist states, or critical storage collisions during upgrades, potentially corrupting token data.
-
-**Recommendation:** Thoroughly document the custom storage pattern, including its design rationale, invariants, and potential pitfalls. Consider formal verification for the bitwise operations to ensure their correctness under all conditions. For future versions, evaluate if a more standard storage approach (e.g., separate mappings for balances and blacklist status) could be adopted, even if it incurs higher gas costs, to reduce complexity and improve maintainability and upgrade safety.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Hardcoded EIP-712 Domain Separator Version  *(Severity: Medium · Status: Unresolved)*
 
-The `_domainSeparator()` function hardcodes the EIP-712 domain separator version as the string literal `"2"`. This value is used in the EIP-712 signature generation for functions like `permit` and `transferWithAuthorization` (7.2 Code Security). If a future protocol upgrade or a change in EIP-712 standards requires modifying this version identifier (e.g., to `"3"`), it would necessitate deploying an entirely new implementation contract. This limits the flexibility of future upgrades related to EIP-712 functionality.
+Not confirmed by static analysis (the model's own reading of the source). The `_domainSeparator()` function hardcodes the EIP-712 domain separator version as the string literal `"2"`. This value is used in the EIP-712 signature generation for functions like `permit` and `transferWithAuthorization` (7.2 Code Security). If a future protocol upgrade or a change in EIP-712 standards requires modifying this version identifier (e.g., to `"3"`), it would necessitate deploying an entirely new implementation contract. This limits the flexibility of future upgrades related to EIP-712 functionality.
 
 **Recommendation:** Consider making the EIP-712 domain separator version configurable by an authorized role (e.g., owner or admin) through a setter function, or store it in a state variable that can be updated during an upgrade. This would allow for greater flexibility in adapting to future EIP-712 standard changes or protocol versioning without requiring a full contract redeployment.
 
 
 ### `M-02` — Unusual Self-Blacklisting in Initialization  *(Severity: Medium · Status: Unresolved)*
 
-The `initializeV2_2` function explicitly blacklists `address(this)` (the contract itself) using `_blacklist(address(this))` (7.3 Access Control, 7.8 Operations). While this might be an intentional design choice to prevent the token contract from holding its own tokens, it is an unusual pattern. If the contract's functionality were to evolve to require holding tokens (e.g., for staking, liquidity provision, or integration with other protocols), this self-blacklisting would prevent such operations and could lead to unexpected behavior or stuck funds if tokens are inadvertently sent to the contract.
+Not confirmed by static analysis (the model's own reading of the source). The `initializeV2_2` function explicitly blacklists `address(this)` (the contract itself) using `_blacklist(address(this))` (7.3 Access Control, 7.8 Operations). While this might be an intentional design choice to prevent the token contract from holding its own tokens, it is an unusual pattern. If the contract's functionality were to evolve to require holding tokens (e.g., for staking, liquidity provision, or integration with other protocols), this self-blacklisting would prevent such operations and could lead to unexpected behavior or stuck funds if tokens are inadvertently sent to the contract.
 
 **Recommendation:** Clearly document the rationale behind blacklisting `address(this)` and its intended implications. Ensure that all current and future integrations and operational procedures are aware of this behavior and account for it. If there's any possibility the contract might need to hold tokens in the future, consider removing this self-blacklisting or implementing a mechanism for an authorized role to unblacklist the contract.
 
 
+### `M-03` — Complex Custom Storage for Balances and Blacklisting  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `balanceAndBlacklistStates` mapping uses a custom bit-packing strategy to store both the account balance (lower 255 bits) and the blacklist status (highest bit, 2^255) within a single `uint256`. While the `_setBalance`, `_balanceOf`, `_isBlacklisted`, and `_setBlacklistState` functions are designed to manage this, this non-standard storage pattern significantly increases complexity (7.1 Architecture, 7.2 Code Security). Any subtle error in bitwise operations or a misunderstanding of this pattern by future developers could lead to incorrect balances, incorrect blacklist states, or critical storage collisions during
+
+**Recommendation:** Thoroughly document the custom storage pattern, including its design rationale, invariants, and potential pitfalls. Consider formal verification for the bitwise operations to ensure their correctness under all conditions. For future versions, evaluate if a more standard storage approach (e.g., separate mappings for balances and blacklist status) could be adopted, even if it incurs higher gas costs, to reduce complexity and improve maintainability and upgrade safety.
+
+
 ### `L-01` — Potential for User Front-running in EIP-712 Functions  *(Severity: Low · Status: Unresolved)*
 
-Functions like `permit`, `transferWithAuthorization`, and `receiveWithAuthorization` rely on EIP-712 signed messages. While this enables gasless transactions, users are susceptible to front-running attacks (7.4 Economic, 7.6 External). A malicious actor could observe a pending signed transaction, reconstruct it, and submit their own transaction with a higher gas price to execute it first, potentially exploiting the user's signed intent. This is a common risk for off-chain signed transactions.
+Not confirmed by static analysis (the model's own reading of the source). Functions like `permit`, `transferWithAuthorization`, and `receiveWithAuthorization` rely on EIP-712 signed messages. While this enables gasless transactions, users are susceptible to front-running attacks (7.4 Economic, 7.6 External). A malicious actor could observe a pending signed transaction, reconstruct it, and submit their own transaction with a higher gas price to execute it first, potentially exploiting the user's signed intent. This is a common risk for off-chain signed transactions.
 
 **Recommendation:** Advise users to always set a sufficiently short `deadline` for EIP-712 signed messages to minimize the window for front-running. Provide clear warnings and best practices in user-facing documentation regarding the risks associated with signed transactions and the importance of transaction deadlines.
 
 
 ### `I-01` — Use of Assembly for `_chainId()`  *(Severity: Informational · Status: Unresolved)*
 
-The `_chainId()` function retrieves the chain ID using inline assembly (`assembly { chainId := chainid() }`) (7.2 Code Security). While this is a valid and common pattern in Solidity versions prior to 0.8.0, the `block.chainid` global variable provides a more readable and idiomatic way to access the chain ID in newer Solidity versions. Using assembly can sometimes introduce subtle bugs if not handled carefully.
+Not confirmed by static analysis (the model's own reading of the source). The `_chainId()` function retrieves the chain ID using inline assembly (`assembly { chainId := chainid() }`) (7.2 Code Security). While this is a valid and common pattern in Solidity versions prior to 0.8.0, the `block.chainid` global variable provides a more readable and idiomatic way to access the chain ID in newer Solidity versions. Using assembly can sometimes introduce subtle bugs if not handled carefully.
 
 **Recommendation:** For future upgrades to Solidity 0.8.0 or higher, consider replacing the inline assembly with `block.chainid` for improved readability and maintainability. For the current version, ensure the assembly code is thoroughly tested and understood.
 

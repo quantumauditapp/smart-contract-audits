@@ -2,14 +2,14 @@
 token: Cash Elon
 ticker: CASHELON
 network: solana
-risk_score: 49
-status: medium
+risk_score: 32
+status: low
 date: 2026-08-16
 ---
 
 # Cash Elon (CASHELON) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 49/100 — 🟡 Medium Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cash-elon-sol)
 
@@ -25,9 +25,9 @@ This audit of the Cash Elon (CASHELON) SPL Token Mint identifies a medium risk d
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Cash Elon token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and no ability to freeze holder… |
-| **Governance / Economics** | 1/10 | High | The token's DEX pair is very new, having been created only 1 day ago, which limits the ability to assess its long-term market dynamics. Liquidity stands at $14,657, with a 24-hour volume of $104,399… |
-| **Upgrades** | 8/10 | Low | The token exhibits strong immutability characteristics, as both the mint authority and freeze authority have been revoked. This prevents any future changes to the token's supply or the ability to… |
+| **Technical** | 10/10 | Low | The Cash Elon token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and no ability to freeze holder… |
+| **Governance / Economics** | 2/10 | High | The token's DEX pair is very new, having been created only 1 day ago, which limits the ability to assess its long-term market dynamics. Liquidity stands at $14,657, with a 24-hour volume of $104,399… |
+| **Upgrades** | 10/10 | Low | The token exhibits strong immutability characteristics, as both the mint authority and freeze authority have been revoked. This prevents any future changes to the token's supply or the ability to… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair for Cash Elon was created 1 day ago. This short track record is ins
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 30769 buys / 13736 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for Cash Elon was created 1 day ago. This short track record is ins
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

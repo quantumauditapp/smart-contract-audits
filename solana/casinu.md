@@ -2,14 +2,14 @@
 token: casinu
 ticker: CASINU
 network: solana
-risk_score: 28
+risk_score: 11
 status: low
 date: 2026-09-17
 ---
 
 # casinu (CASINU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/casinu-sol)
 
@@ -26,8 +26,8 @@ This Solana SPL Token Mint, "casinu," presents a low technical risk profile with
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program, indicating a modern SPL standard. Key administrative authorities, including the mint authority and freeze authority, have been revoked… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a moderate liquidity of $169,051, with a 24-hour trading volume of $1,249,369. The volume/liquidity ratio is 7.39, which is elevated but does not trigger a wash trading signal. A… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are fixed due to the revocation of both mint and freeze authorities, meaning no new tokens can be minted and no accounts can be frozen. Furthermore, the metadata is… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a moderate liquidity of $169,051, with a 24-hour trading volume of $1,249,369. The volume/liquidity ratio is 7.39, which is elevated but does not trigger a wash trading signal. A… |
+| **Upgrades** | 10/10 | Low | The token's core parameters are fixed due to the revocation of both mint and freeze authorities, meaning no new tokens can be minted and no accounts can be frozen. Furthermore, the metadata is… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 16551 buys / 8221 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

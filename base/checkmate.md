@@ -2,14 +2,14 @@
 token: Checkmate
 ticker: CHECK
 network: base
-risk_score: 53
+risk_score: 46
 status: medium
 date: 2026-08-13
 ---
 
 # Checkmate (CHECK) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 53/100 — 🟡 Medium Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/checkmate-base)
 
@@ -42,28 +42,28 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralized Ownership  *(Severity: Medium · Status: Unresolved)*
 
-The `ContractOwnership` pattern grants significant control to a single owner address, including the ability to transfer ownership and potentially recover tokens via `TokenRecovery`. This introduces a single point of failure, where compromise of the owner's private key could lead to unauthorized control over critical contract functions.
+Not confirmed by static analysis (the model's own reading of the source). The `ContractOwnership` pattern grants significant control to a single owner address, including the ability to transfer ownership and potentially recover tokens via `TokenRecovery`. This introduces a single point of failure, where compromise of the owner's private key could lead to unauthorized control over critical contract functions.
 
 **Recommendation:** Consider implementing a multi-signature wallet (e.g., Gnosis Safe) for the contract owner to distribute control and reduce the risk of a single point of failure. For highly sensitive operations, explore time-locked transactions or a more decentralized governance mechanism.
 
 
 ### `L-01` — Potential Front-Running in ERC20Permit  *(Severity: Low · Status: Unresolved)*
 
-The `permit` function, while adhering to the EIP-2612 standard, can be susceptible to front-running attacks. An attacker observing a signed `permit` message could execute the `transferFrom` before the legitimate user, potentially leading to unexpected transaction ordering or a 'sandwich attack' if the `deadline` is set too far in the future or not used effectively.
+Not confirmed by static analysis (the model's own reading of the source). The `permit` function, while adhering to the EIP-2612 standard, can be susceptible to front-running attacks. An attacker observing a signed `permit` message could execute the `transferFrom` before the legitimate user, potentially leading to unexpected transaction ordering or a 'sandwich attack' if the `deadline` is set too far in the future or not used effectively.
 
 **Recommendation:** Users should be advised to set a reasonable and short `deadline` for `permit` signatures to minimize the window for front-running. Developers should ensure the `ERC20Permit` implementation correctly validates `deadline` and `nonce` to prevent replay attacks.
 
 
 ### `I-01` — Storage Layout Pattern for Non-Upgradeable Contract  *(Severity: Informational · Status: Unresolved)*
 
-The contract utilizes a storage layout pattern (e.g., `Layout` structs, `LAYOUT_STORAGE_SLOT`, `PROXY_INIT_PHASE_SLOT`) typically found in upgradeable proxy implementation contracts. While this contract is not explicitly a proxy, this design choice might be confusing or lead to issues if it were later used as an implementation without proper proxy setup, potentially causing storage collisions or unexpected behavior.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes a storage layout pattern (e.g., `Layout` structs, `LAYOUT_STORAGE_SLOT`, `PROXY_INIT_PHASE_SLOT`) typically found in upgradeable proxy implementation contracts. While this contract is not explicitly a proxy, this design choice might be confusing or lead to issues if it were later used as an implementation without proper proxy setup, potentially causing storage collisions or unexpected behavior.
 
 **Recommendation:** Clarify in documentation whether this contract is intended to be used as a standalone token or as an implementation for a proxy. If standalone, consider simplifying storage management if the proxy-specific patterns are not strictly necessary. If it is intended for future proxy use, ensure the proxy setup is robust and compatible with this storage pattern.
 
 
 ### `I-02` — Dependency on External Forwarder Registry  *(Severity: Informational · Status: Unresolved)*
 
-The `ForwarderRegistryContext` relies on an external `IForwarderRegistry` for meta-transaction functionality. The security and trustworthiness of this external registry are critical for the proper and secure operation of meta-transactions within this token contract. Any compromise or malfunction of the registry could impact the ability to process meta-transactions.
+Not confirmed by static analysis (the model's own reading of the source). The `ForwarderRegistryContext` relies on an external `IForwarderRegistry` for meta-transaction functionality. The security and trustworthiness of this external registry are critical for the proper and secure operation of meta-transactions within this token contract. Any compromise or malfunction of the registry could impact the ability to process meta-transactions.
 
 **Recommendation:** Ensure the `IForwarderRegistry` contract is thoroughly audited, well-maintained, and controlled by a secure, preferably decentralized, entity. Document the expected behavior and security considerations of the forwarder registry for users and integrators.
 

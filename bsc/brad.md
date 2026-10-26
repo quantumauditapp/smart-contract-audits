@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Uninitialized Metadata on Direct Deployment  *(Severity: Low · Status: Unresolved)*
 
-The `FourERC20` contract includes an internal `_init(string memory name_, string memory symbol_)` function to set the token's name and symbol. However, the contract itself does not have a public constructor that calls this `_init` function. If `FourERC20` is deployed directly without a constructor, the `_name` and `_symbol` state variables will remain empty strings, causing `name()` and `symbol()` functions to return empty values, which is unusual for an ERC-20 token.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract includes an internal `_init(string memory name_, string memory symbol_)` function to set the token's name and symbol. However, the contract itself does not have a public constructor that calls this `_init` function. If `FourERC20` is deployed directly without a constructor, the `_name` and `_symbol` state variables will remain empty strings, causing `name()` and `symbol()` functions to return empty values, which is unusual for an ERC-20 token.
 
 **Recommendation:** Implement a public constructor in the `FourERC20` contract or a derived contract that calls `_init(string memory name_, string memory symbol_)` to properly set the token's metadata upon deployment. For example: `constructor(string memory name_, string memory symbol_) { _init(name_, symbol_); }`.
 
 
 ### `I-01` — Base Contract Design - Missing Supply Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The `FourERC20` contract is designed as a base implementation for an ERC-20 token. It provides core functionalities like `transfer`, `approve`, and `balanceOf`, but intentionally lacks a public mechanism for minting or burning tokens. The `_mint` and `_burn` functions are internal, requiring a derived contract to implement the token's supply mechanism. This design choice means the contract, as-is, cannot create new tokens or destroy existing ones publicly.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract is designed as a base implementation for an ERC-20 token. It provides core functionalities like `transfer`, `approve`, and `balanceOf`, but intentionally lacks a public mechanism for minting or burning tokens. The `_mint` and `_burn` functions are internal, requiring a derived contract to implement the token's supply mechanism. This design choice means the contract, as-is, cannot create new tokens or destroy existing ones publicly.
 
 **Recommendation:** A derived contract must be implemented to define and control the token's supply mechanism (e.g., through a `Minter` role or a fixed supply at deployment). This is a design consideration rather than a vulnerability, but it's crucial for the token's intended utility.
 
 
 ### `I-02` — EIP-2771 Context Suffix Not Configured  *(Severity: Informational · Status: Unresolved)*
 
-The contract inherits from OpenZeppelin's `Context.sol`, which includes the virtual function `_contextSuffixLength()`. This function is part of the infrastructure for supporting EIP-2771 (meta-transactions) by indicating the length of the suffix appended to `msg.data`. The current implementation in `Context` (and thus in `FourERC20`) returns `0`, meaning EIP-2771 is not actively configured or supported by this contract. While not a vulnerability, it indicates a lack of meta-transaction support.
+Not confirmed by static analysis (the model's own reading of the source). The contract inherits from OpenZeppelin's `Context.sol`, which includes the virtual function `_contextSuffixLength()`. This function is part of the infrastructure for supporting EIP-2771 (meta-transactions) by indicating the length of the suffix appended to `msg.data`. The current implementation in `Context` (and thus in `FourERC20`) returns `0`, meaning EIP-2771 is not actively configured or supported by this contract. While not a vulnerability, it indicates a lack of meta-transaction support.
 
 **Recommendation:** If EIP-2771 meta-transactions are intended to be supported, a derived contract must override the `_contextSuffixLength()` function to return the correct suffix length, and integrate with a trusted forwarder. If meta-transactions are not a requirement, this can be disregarded.
 

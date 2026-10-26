@@ -2,14 +2,14 @@
 token: Chain
 ticker: XCN
 network: ethereum
-risk_score: 68
-status: high
+risk_score: 51
+status: medium
 date: 2026-08-31
 ---
 
 # Chain (XCN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chain-eth)
 
@@ -25,7 +25,7 @@ The audit of the Chain token contract identified a Medium overall risk level. Th
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages standard ERC20 patterns and `SafeMath` libraries for robust arithmetic operations, mitigating common integer vulnerabilities (7.2 Code Security). Role-based access control is… |
+| **Technical** | 8/10 | Low | The contract leverages standard ERC20 patterns and `SafeMath` libraries for robust arithmetic operations, mitigating common integer vulnerabilities (7.2 Code Security). Role-based access control is… |
 | **Governance / Economics** | 1/10 | High | The economic model features a fixed `MAX_SUPPLY` and a burn-to-mint mechanism with a 1:1000 ratio, creating a clear supply cap and a deflationary pressure on the base token (7.4 Economic). The… |
 | **Upgrades** | 3/10 | High | The contract is not designed with an upgrade mechanism, such as a proxy pattern. This simplifies the architecture by removing upgrade-related complexities and risks (7.7 Upgrades). However, it means… |
 
@@ -38,39 +38,39 @@ The audit of the Chain token contract identified a Medium overall risk level. Th
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Unrestricted Minting Function  *(Severity: High · Status: Unresolved)*
-
-The `mint` function in `ERC20Mintable` (and thus `Chain`) is declared as `public` but lacks the `onlyMinter` modifier. This allows any user to call the `mint` function and create new `Chain` tokens by burning the specified `MINT_BASE_TOKEN`. While this might be an intended design for a public burn-to-mint mechanism, it deviates from the typical use of an inherited `MinterRole` and could lead to uncontrolled supply inflation if the `MINT_BASE_TOKEN` is easily acquired or if the intention was for minting to be restricted to specific roles. This is an access control flaw (7.3 Access Control).
-
-**Recommendation:** Clarify the intended access control for the `mint` function. If minting should be restricted to designated minters, apply the `onlyMinter` modifier to the `mint` function. If it is intended to be publicly accessible, document this design choice clearly and ensure the economic implications of an open minting mechanism are fully understood.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Initial Supply Held by Contract Address  *(Severity: Medium · Status: Unresolved)*
 
-The `Chain` contract's constructor mints the `INITIAL_SUPPLY` (21.5 billion tokens) directly to `address(this)`. This means the contract itself holds a substantial amount of its own token. The provided code does not include any explicit mechanism or function for managing, distributing, or transferring this initial supply from the contract address. This poses an operational risk (7.8 Operations) as the tokens could become locked, inaccessible, or their distribution could be unclear, potentially leading to governance or economic issues (7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The `Chain` contract's constructor mints the `INITIAL_SUPPLY` (21.5 billion tokens) directly to `address(this)`. This means the contract itself holds a substantial amount of its own token. The provided code does not include any explicit mechanism or function for managing, distributing, or transferring this initial supply from the contract address. This poses an operational risk (7.8 Operations) as the tokens could become locked, inaccessible, or their distribution could be unclear, potentially leading to governance or economic issues (7.4 Economic).
 
 **Recommendation:** Implement a clear and secure mechanism for the management and distribution of the `INITIAL_SUPPLY`. This could involve transferring the tokens to a designated treasury, a multi-signature wallet, or a vesting contract during deployment, or providing a controlled function for an authorized entity to withdraw and distribute them.
 
 
+### `M-02` — Unrestricted Minting Function  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function in `ERC20Mintable` (and thus `Chain`) is declared as `public` but lacks the `onlyMinter` modifier. This allows any user to call the `mint` function and create new `Chain` tokens by burning the specified `MINT_BASE_TOKEN`. While this might be an intended design for a public burn-to-mint mechanism, it deviates from the typical use of an inherited `MinterRole` and could lead to uncontrolled supply inflation if the `MINT_BASE_TOKEN` is easily acquired or if the intention was for minting to be restricted to specific roles. This is an access control flaw (7.3 Access Control).
+
+**Recommendation:** Clarify the intended access control for the `mint` function. If minting should be restricted to designated minters, apply the `onlyMinter` modifier to the `mint` function. If it is intended to be publicly accessible, document this design choice clearly and ensure the economic implications of an open minting mechanism are fully understood.
+
+
 ### `L-01` — Outdated Solidity Compiler Version  *(Severity: Low · Status: Unresolved)*
 
-The contract is compiled with Solidity version 0.5.16. While `SafeMath` libraries are used to mitigate integer overflow/underflow issues, this version is significantly older than current stable releases (e.g., 0.8.x). Newer compiler versions offer built-in overflow/underflow checks, gas optimizations, improved security features, and better tooling support (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version 0.5.16. While `SafeMath` libraries are used to mitigate integer overflow/underflow issues, this version is significantly older than current stable releases (e.g., 0.8.x). Newer compiler versions offer built-in overflow/underflow checks, gas optimizations, improved security features, and better tooling support (7.2 Code Security).
 
 **Recommendation:** Consider upgrading the Solidity compiler to a more recent version (e.g., 0.8.x). This would allow for the removal of explicit `SafeMath` calls (as arithmetic operations would revert on overflow/underflow by default), potentially reducing gas costs and improving code readability. Thorough testing would be required after any compiler upgrade.
 
 
 ### `I-01` — Hardcoded External Token Address  *(Severity: Informational · Status: Unresolved)*
 
-The `MINT_BASE` token address (`0x41C37A4683d6a05adB31c39D71348A8403B13Ca9`) is hardcoded as a `public constant` in the `Chain` contract. This creates a strong, immutable dependency on a specific external contract (7.6 External). Any future issues with the `MINT_BASE` token (e.g., rug pull, pause functionality, upgrade issues, or deprecation) could directly impact the `Chain` token's minting mechanism and overall functionality, without any possibility for the `Chain` contract to adapt.
+Not confirmed by static analysis (the model's own reading of the source). The `MINT_BASE` token address (`0x41C37A4683d6a05adB31c39D71348A8403B13Ca9`) is hardcoded as a `public constant` in the `Chain` contract. This creates a strong, immutable dependency on a specific external contract (7.6 External). Any future issues with the `MINT_BASE` token (e.g., rug pull, pause functionality, upgrade issues, or deprecation) could directly impact the `Chain` token's minting mechanism and overall functionality, without any possibility for the `Chain` contract to adapt.
 
 **Recommendation:** While hardcoding constants can simplify deployment, consider making critical external dependencies, like the `MINT_BASE` token address, configurable via a constructor argument or an owner-controlled setter function. This would provide flexibility to update the dependency if the `MINT_BASE` token's address changes or if a different base token needs to be used in the future.
 
 
 ### `I-02` — ERC20 Allowance Race Condition  *(Severity: Informational · Status: Unresolved)*
 
-The standard ERC20 `approve` function is susceptible to a known front-running vulnerability. If a user calls `approve(spender, newAmount)` while a `spender` is simultaneously trying to spend the `oldAmount`, a malicious actor could front-run the `approve` transaction to spend the `oldAmount` before `newAmount` is set, and then spend `newAmount` after it's set, effectively spending more than intended (7.2 Code Security). While `increaseAllowance` and `decreaseAllowance` functions are provided, the core `approve` function still exists.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC20 `approve` function is susceptible to a known front-running vulnerability. If a user calls `approve(spender, newAmount)` while a `spender` is simultaneously trying to spend the `oldAmount`, a malicious actor could front-run the `approve` transaction to spend the `oldAmount` before `newAmount` is set, and then spend `newAmount` after it's set, effectively spending more than intended (7.2 Code Security). While `increaseAllowance` and `decreaseAllowance` functions are provided, the core `approve` function still exists.
 
 **Recommendation:** Educate users to use `increaseAllowance` and `decreaseAllowance` instead of directly calling `approve` when modifying an existing allowance. For new allowances, `approve` is generally safe. While this is a known ERC20 limitation, ensuring users are aware of the safer alternatives is important.
 

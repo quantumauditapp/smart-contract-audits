@@ -2,14 +2,14 @@
 token: BREW
 ticker: BREW
 network: bsc
-risk_score: 18
+risk_score: 14
 status: low
 date: 2026-09-13
 ---
 
 # BREW (BREW) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 18/100 — 🟢 Low Risk**
+> **Risk Score: 14/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/brew-bsc)
 
@@ -42,28 +42,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Centralized Initial Token Distribution  *(Severity: Low · Status: Unresolved)*
 
-During deployment, the entire `totalSupply_` is minted to a single `recipient_` address. While common for initial token launches, this represents a centralized point of control for the entire token supply at inception (7.4 Economic). The security of this single address is paramount for the integrity of the token supply.
+Not confirmed by static analysis (the model's own reading of the source). During deployment, the entire `totalSupply_` is minted to a single `recipient_` address. While common for initial token launches, this represents a centralized point of control for the entire token supply at inception (7.4 Economic). The security of this single address is paramount for the integrity of the token supply.
 
 **Recommendation:** Ensure the `recipient_` address is a secure, multi-signature wallet or a well-audited distribution mechanism to mitigate risks associated with a single point of failure and potential compromise of the initial token supply.
 
 
 ### `L-02` — Non-Upgradeability of Contract  *(Severity: Low · Status: Unresolved)*
 
-The `BrewToken` contract is implemented as a standard, non-upgradeable contract. This means that once deployed, its logic cannot be modified or updated. While this removes risks associated with upgrade mechanisms (7.7 Upgrades), it also means that any discovered vulnerabilities or desired feature enhancements would require deploying an entirely new token contract, which can be disruptive and costly.
+Not confirmed by static analysis (the model's own reading of the source). The `BrewToken` contract is implemented as a standard, non-upgradeable contract. This means that once deployed, its logic cannot be modified or updated. While this removes risks associated with upgrade mechanisms (7.7 Upgrades), it also means that any discovered vulnerabilities or desired feature enhancements would require deploying an entirely new token contract, which can be disruptive and costly.
 
 **Recommendation:** Projects should carefully consider their long-term needs. If future modifications or bug fixes are anticipated, a proxy pattern (e.g., UUPS) should be considered for future contracts. For this specific contract, acknowledge the immutability and plan accordingly for its lifecycle.
 
 
 ### `I-01` — Standard OpenZeppelin ERC-20 Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The `BrewToken` contract correctly implements the ERC-20 standard by inheriting from OpenZeppelin's battle-tested `ERC20` contract. This significantly reduces the likelihood of common ERC-20 vulnerabilities (7.2 Code Security). The contract also uses Solidity 0.8.x, benefiting from default overflow/underflow checks and explicit `unchecked` blocks where appropriate.
+Not confirmed by static analysis (the model's own reading of the source). The `BrewToken` contract correctly implements the ERC-20 standard by inheriting from OpenZeppelin's battle-tested `ERC20` contract. This significantly reduces the likelihood of common ERC-20 vulnerabilities (7.2 Code Security). The contract also uses Solidity 0.8.x, benefiting from default overflow/underflow checks and explicit `unchecked` blocks where appropriate.
 
 **Recommendation:** No specific recommendation, as this is a strength of the contract's design and implementation.
 
 
 ### `I-02` — Immutability of Key Parameters  *(Severity: Informational · Status: Unresolved)*
 
-The `creator`, `brewFactory`, and `metadataURI` variables are declared as `immutable` and set only during the constructor. This ensures that these critical parameters cannot be changed after deployment, providing predictability and reducing potential attack vectors related to parameter manipulation (7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The `creator`, `brewFactory`, and `metadataURI` variables are declared as `immutable` and set only during the constructor. This ensures that these critical parameters cannot be changed after deployment, providing predictability and reducing potential attack vectors related to parameter manipulation (7.3 Access Control).
 
 **Recommendation:** No specific recommendation, as this design choice enhances the security and predictability of the contract.
 

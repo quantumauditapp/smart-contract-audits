@@ -2,14 +2,14 @@
 token: Caldera
 ticker: ERA
 network: bsc
-risk_score: 63
+risk_score: 46
 status: medium
 date: 2026-08-31
 ---
 
 # Caldera (ERA) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 63/100 — 🟡 Medium Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/caldera-bsc)
 
@@ -46,32 +46,32 @@ The MetaERC20Spoke contract serves as an ERC20 token implementation for a cross-
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Inconsistent `mintedBalance` Update in `EMERGENCY_REISSUE`  *(Severity: High · Status: Unresolved)*
-
-The `EMERGENCY_REISSUE` function allows an admin to mint tokens to a recipient based on a previous transfer record. However, it calls `_mint` without updating the `mintedBalance` state variable. The `mintedBalance` variable is crucial for tracking the total supply of tokens that can be burned for cross-chain transfers via `_preDispatchHook`. If tokens are reissued without incrementing `mintedBalance`, it can lead to two issues: 1) Users holding tokens issued via `EMERGENCY_REISSUE` might be unable to transfer them cross-chain if `mintedBalance` becomes insufficient, leading to `MintedBalanceUnderflow` reverts. 2) The `mintedBalance` will not accurately reflect the total 'bridged' supply on…
-
-**Recommendation:** Clarify the intended behavior of `mintedBalance` in relation to `EMERGENCY_REISSUE`. If `EMERGENCY_REISSUE` is meant to reintroduce tokens that were effectively 'lost' from the bridged supply and should be eligible for cross-chain transfers, `mintedBalance` should be incremented by `localAmount` after `_mint`. If these tokens are not intended to be eligible for cross-chain burning, this should be explicitly documented and understood as a design choice with its implications for user experience.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralized Control by `ADMIN_ROLE`  *(Severity: Medium · Status: Unresolved)*
 
-The `ADMIN_ROLE` possesses significant control over the contract's critical functions, including `EMERGENCY_REISSUE` (which can mint tokens) and `setSecurityThreshold` (which affects cross-chain routing logic). While the prefill indicates the admin is a multisig, the concentration of such power in a single role, even if controlled by a multisig, presents a centralization risk. A compromise of the multisig could lead to unauthorized minting or manipulation of cross-chain transfer conditions. (7.3 Access Control, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The `ADMIN_ROLE` possesses significant control over the contract's critical functions, including `EMERGENCY_REISSUE` (which can mint tokens) and `setSecurityThreshold` (which affects cross-chain routing logic). While the prefill indicates the admin is a multisig, the concentration of such power in a single role, even if controlled by a multisig, presents a centralization risk. A compromise of the multisig could lead to unauthorized minting or manipulation of cross-chain transfer conditions. (7.3 Access Control, 7.8 Operations)
 
 **Recommendation:** Implement additional safeguards or time-locks for highly sensitive administrative actions, especially those involving token minting or significant changes to economic parameters. Consider a separate role or a more granular access control mechanism if specific admin actions can be delegated or require different levels of approval. Ensure robust operational security for the multisig.
 
 
+### `M-02` — Inconsistent `mintedBalance` Update in `EMERGENCY_REISSUE`  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `EMERGENCY_REISSUE` function allows an admin to mint tokens to a recipient based on a previous transfer record. However, it calls `_mint` without updating the `mintedBalance` state variable. The `mintedBalance` variable is crucial for tracking the total supply of tokens that can be burned for cross-chain transfers via `_preDispatchHook`. If tokens are reissued without incrementing `mintedBalance`, it can lead to two issues: 1) Users holding tokens issued via `EMERGENCY_REISSUE` might be unable to transfer them cross-chain if `mintedBalance` becomes insufficient, leading to `MintedBalanceUnderflow` reverts. 2) The `
+
+**Recommendation:** Clarify the intended behavior of `mintedBalance` in relation to `EMERGENCY_REISSUE`. If `EMERGENCY_REISSUE` is meant to reintroduce tokens that were effectively 'lost' from the bridged supply and should be eligible for cross-chain transfers, `mintedBalance` should be incremented by `localAmount` after `_mint`. If these tokens are not intended to be eligible for cross-chain burning, this should be explicitly documented and understood as a design choice with its implications for user experience.
+
+
 ### `L-01` — Potential for Front-Running `setSecurityThreshold`  *(Severity: Low · Status: Unresolved)*
 
-The `setSecurityThreshold` function, callable by the `ADMIN_ROLE`, updates a critical parameter that influences the routing of cross-chain transfers. While an admin function, a malicious actor could potentially front-run a transaction that changes this threshold if they can predict the new value and exploit the brief window between transaction submission and inclusion. For example, if the threshold is being significantly lowered, an attacker might attempt to initiate a large transfer that would otherwise be routed via the hub, hoping it gets processed directly before the new threshold takes effect. (7.4 Economic)
+Not confirmed by static analysis (the model's own reading of the source). The `setSecurityThreshold` function, callable by the `ADMIN_ROLE`, updates a critical parameter that influences the routing of cross-chain transfers. While an admin function, a malicious actor could potentially front-run a transaction that changes this threshold if they can predict the new value and exploit the brief window between transaction submission and inclusion. For example, if the threshold is being significantly lowered, an attacker might attempt to initiate a large transfer that would otherwise be routed via the hub, hoping it gets processed directly before the new threshold takes effect. (7.4 Economic)
 
 **Recommendation:** While the impact is limited due to it being an admin function, consider implementing a timelock for changes to critical parameters like `securityThreshold`. This would provide users and other systems with a grace period to react to upcoming changes, mitigating front-running risks.
 
 
 ### `I-01` — Reliance on External Metalayer Protocol Security  *(Severity: Informational · Status: Unresolved)*
 
-The `MetaERC20Spoke` contract is an integral part of the broader Hyperlane Metalayer cross-chain messaging system. Its security and functionality are heavily dependent on the correct and secure operation of the `IMetalayerRouter` and the underlying Metalayer protocol. Any vulnerabilities or exploits within the Metalayer infrastructure could directly impact the security and integrity of tokens managed by this `MetaERC20Spoke` contract. (7.6 External)
+Not confirmed by static analysis (the model's own reading of the source). The `MetaERC20Spoke` contract is an integral part of the broader Hyperlane Metalayer cross-chain messaging system. Its security and functionality are heavily dependent on the correct and secure operation of the `IMetalayerRouter` and the underlying Metalayer protocol. Any vulnerabilities or exploits within the Metalayer infrastructure could directly impact the security and integrity of tokens managed by this `MetaERC20Spoke` contract. (7.6 External)
 
 **Recommendation:** Ensure thorough audits and continuous monitoring of the entire Metalayer protocol, including all interconnected contracts and off-chain components. Maintain clear documentation of the assumptions and trust model regarding the Metalayer infrastructure.
 

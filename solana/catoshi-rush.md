@@ -2,14 +2,14 @@
 token: Catoshi Rush
 ticker: CATOSHI
 network: solana
-risk_score: 22
+risk_score: 3
 status: low
 date: 2026-09-19
 ---
 
 # Catoshi Rush (CATOSHI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 22/100 — 🟢 Low Risk**
+> **Risk Score: 3/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/catoshi-rush-sol)
 
@@ -26,8 +26,8 @@ This audit of the Catoshi Rush (CATOSHI) SPL Token Mint identifies a Medium risk
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Catoshi Rush (CATOSHI) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token minting or freezing of… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a Medium risk due to its very new DEX pair, established only 4 days ago, which limits the track record for assessing market stability and team behavior (7.4 Economic). Current… |
-| **Upgrades** | 6/10 | Medium | The token's mint and freeze authorities are revoked, meaning no further tokens can be minted and no accounts can be frozen by an authority. While the transfer fee is set at 3.00%, the… |
+| **Governance / Economics** | 9/10 | Low | The token exhibits a Medium risk due to its very new DEX pair, established only 4 days ago, which limits the track record for assessing market stability and team behavior (7.4 Economic). Current… |
+| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are revoked, meaning no further tokens can be minted and no accounts can be frozen by an authority. While the transfer fee is set at 3.00%, the… |
 
 ## Token-2022 Extensions
 
@@ -67,13 +67,13 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 449 buys / 384 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

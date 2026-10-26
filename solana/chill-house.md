@@ -2,14 +2,14 @@
 token: Chill House
 ticker: CHILLHOUSE
 network: solana
-risk_score: 3
+risk_score: 0
 status: low
 date: 2026-07-27
 ---
 
 # Chill House (CHILLHOUSE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 3/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chill-house-sol)
 
@@ -26,8 +26,8 @@ The Chill House (CHILLHOUSE) SPL token mint exhibits a robust security posture w
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Chill House token operates on the classic spl-token program. Key authorities, including the Mint Authority and Freeze Authority, have been permanently revoked, ensuring no new tokens can be… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a moderate holder concentration, with the top 10 accounts holding 30.03% of the total supply, which is below thresholds for high concentration risk. Total DEX liquidity stands at… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both Mint and Freeze Authorities. Metadata, including name and symbol, is also immutable as indicated by `metadata_mutable: False`.… |
+| **Governance / Economics** | 9/10 | Low | The token exhibits a moderate holder concentration, with the top 10 accounts holding 30.03% of the total supply, which is below thresholds for high concentration risk. Total DEX liquidity stands at… |
+| **Upgrades** | 10/10 | Low | The token's core parameters are immutable due to the revocation of both Mint and Freeze Authorities. Metadata, including name and symbol, is also immutable as indicated by `metadata_mutable: False`.… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1019 buys / 1118 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,18 +69,18 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is Chill House a scam?
 
-Based on automated analysis, Chill House scores 62/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Chill House scores 0/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Chill House safe to buy?
 
-Our scanner flagged a risk score of 62/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 0/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Chill House been audited?
 

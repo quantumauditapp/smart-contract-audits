@@ -2,14 +2,14 @@
 token: bus house
 ticker: K-HOME
 network: solana
-risk_score: 45
-status: medium
+risk_score: 28
+status: low
 date: 2026-08-13
 ---
 
 # bus house (K-HOME) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bus-house-sol)
 
@@ -25,9 +25,9 @@ This Solana SPL Token Mint, 'bus house (K-HOME)', has robust security features w
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring no new tokens can be minted and no accounts can be frozen. No Token-2022… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 21.03% of the supply, which is not excessively concentrated. Total DEX liquidity stands at $305,271, with a 24-hour volume of… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority have both been revoked, preventing any further changes to the token's supply or account freeze status. Furthermore, metadata mutability is disabled, meaning… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring no new tokens can be minted and no accounts can be frozen. No Token-2022… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a holder concentration where the top 10 accounts hold 21.03% of the supply, which is not excessively concentrated. Total DEX liquidity stands at $305,271, with a 24-hour volume of… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority have both been revoked, preventing any further changes to the token's supply or account freeze status. Furthermore, metadata mutability is disabled, meaning… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 1 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3743 buys / 4768 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 1 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

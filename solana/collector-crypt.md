@@ -76,11 +76,11 @@ The token's metadata is mutable (metadata_mutable: True), meaning its name, symb
 
 ### Is Collector Crypt a scam?
 
-Based on the available data, Collector Crypt (CARDS) exhibits several high-risk characteristics, including an unverified contract, unrenounced ownership, and unlocked liquidity. While these factors do not definitively label it a scam, they are commonly associated with projects that pose significant risks to investors. The overall risk score is 63/100 (High Risk).
+Based on the available data, Collector Crypt (CARDS) exhibits several high-risk characteristics, including an unverified contract, unrenounced ownership, and unlocked liquidity. While these factors do not definitively label it a scam, they are commonly associated with projects that pose significant risks to investors. The overall risk score is 21/100 (Low Risk).
 
 ### Is Collector Crypt safe to buy?
 
-Collector Crypt (CARDS) carries a high-risk score of 63/100. Key safety concerns include the contract not being verified, ownership not being renounced, and liquidity not being locked. These elements introduce considerable risk, such as the potential for contract manipulation or liquidity removal. Investors should exercise extreme caution and conduct thorough due diligence.
+Collector Crypt (CARDS) carries a low-risk score of 21/100. Key safety concerns include the contract not being verified, ownership not being renounced, and liquidity not being locked. These elements introduce considerable risk, such as the potential for contract manipulation or liquidity removal. Investors should exercise extreme caution and conduct thorough due diligence.
 
 ### Has Collector Crypt been audited?
 

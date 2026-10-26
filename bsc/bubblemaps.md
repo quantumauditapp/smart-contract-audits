@@ -2,14 +2,14 @@
 token: Bubblemaps
 ticker: BMT
 network: bsc
-risk_score: 51
-status: medium
+risk_score: 34
+status: low
 date: 2026-08-12
 ---
 
 # Bubblemaps (BMT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 51/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bubblemaps-bsc)
 
@@ -25,7 +25,7 @@ The MyOFT contract is an Omnichain Fungible Token (OFT) implementation built on 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract (7.1 Architecture) is a straightforward implementation of LayerZero's OFT standard, inheriting from battle-tested OpenZeppelin and LayerZero libraries. This minimizes direct code… |
+| **Technical** | 10/10 | Low | The contract (7.1 Architecture) is a straightforward implementation of LayerZero's OFT standard, inheriting from battle-tested OpenZeppelin and LayerZero libraries. This minimizes direct code… |
 | **Governance / Economics** | 3/10 | High | The contract utilizes OpenZeppelin's Ownable pattern, granting significant administrative control to a single owner address (7.3 Access Control). This owner, designated as the `_delegate` in the… |
 | **Upgrades** | 7/10 | Low | The MyOFT contract is not designed as an upgradeable proxy (7.7 Upgrades). It is a standard implementation contract, meaning its logic is immutable once deployed. This simplifies the upgrade safety… |
 
@@ -42,28 +42,28 @@ _🟡 3 Medium · 🟢 1 Low_
 
 ### `M-01` — Centralized Control by Owner/Delegate  *(Severity: Medium · Status: Unresolved)*
 
-The MyOFT contract inherits from OpenZeppelin's Ownable, granting the designated `_delegate` address (which is the owner) significant administrative control. This owner can configure various LayerZero parameters, including setting send/receive libraries, minimum destination gas, and LayerZero token addresses. While the provided information indicates the owner is a multisig, this still represents a centralized point of control over critical cross-chain functionality.
+Not confirmed by static analysis (the model's own reading of the source). The MyOFT contract inherits from OpenZeppelin's Ownable, granting the designated `_delegate` address (which is the owner) significant administrative control. This owner can configure various LayerZero parameters, including setting send/receive libraries, minimum destination gas, and LayerZero token addresses. While the provided information indicates the owner is a multisig, this still represents a centralized point of control over critical cross-chain functionality.
 
 **Recommendation:** Ensure the owner address is a robustly secured and actively managed multisig wallet. Implement strict internal governance procedures for any administrative actions, especially those involving LayerZero configuration changes. Consider implementing time-locks for critical parameter changes to allow for community review or emergency intervention.
 
 
 ### `M-02` — Critical Dependency on LayerZero Protocol Security  *(Severity: Medium · Status: Unresolved)*
 
-The MyOFT contract's core functionality, specifically cross-chain token transfers, is entirely dependent on the security and correct operation of the external LayerZero v2 protocol and its endpoint. Any vulnerabilities, exploits, or operational failures within the LayerZero protocol itself could directly impact the OFT, potentially leading to frozen assets, loss of funds, or disruption of cross-chain services.
+Not confirmed by static analysis (the model's own reading of the source). The MyOFT contract's core functionality, specifically cross-chain token transfers, is entirely dependent on the security and correct operation of the external LayerZero v2 protocol and its endpoint. Any vulnerabilities, exploits, or operational failures within the LayerZero protocol itself could directly impact the OFT, potentially leading to frozen assets, loss of funds, or disruption of cross-chain services.
 
 **Recommendation:** Acknowledge and monitor the inherent risks associated with relying on an external cross-chain messaging protocol. Stay informed about LayerZero security updates, audits, and any reported vulnerabilities. Implement robust monitoring for LayerZero endpoint health and cross-chain transaction finality.
 
 
 ### `M-03` — Potential for Misconfiguration of LayerZero Parameters  *(Severity: Medium · Status: Unresolved)*
 
-The owner/delegate has the ability to set various LayerZero-specific parameters, such as `minDstGas`, `lzToken`, `sendLibrary`, and `receiveLibrary`. Incorrect or malicious configuration of these parameters could lead to several issues, including failed cross-chain transactions, unexpected or excessive transaction fees for users, or even the inability to transfer tokens across certain chains, effectively halting the OFT's primary function.
+Not confirmed by static analysis (the model's own reading of the source). The owner/delegate has the ability to set various LayerZero-specific parameters, such as `minDstGas`, `lzToken`, `sendLibrary`, and `receiveLibrary`. Incorrect or malicious configuration of these parameters could lead to several issues, including failed cross-chain transactions, unexpected or excessive transaction fees for users, or even the inability to transfer tokens across certain chains, effectively halting the OFT's primary function.
 
 **Recommendation:** Establish a rigorous process for reviewing and testing all LayerZero parameter changes. Implement a 'dry run' or staging environment to validate configurations before applying them to the mainnet contract. Provide clear documentation and guidelines for the multisig signers regarding the implications of each configurable parameter.
 
 
 ### `L-01` — Lack of Direct Emergency Pause Mechanism  *(Severity: Low · Status: Unresolved)*
 
-The MyOFT contract does not implement a direct, contract-specific emergency pause mechanism. While the underlying LayerZero protocol may have its own emergency controls, a dedicated pause function within the OFT contract could provide an additional layer of defense, allowing the owner to temporarily halt cross-chain transfers in response to a critical vulnerability or exploit specific to the OFT or its immediate environment.
+Not confirmed by static analysis (the model's own reading of the source). The MyOFT contract does not implement a direct, contract-specific emergency pause mechanism. While the underlying LayerZero protocol may have its own emergency controls, a dedicated pause function within the OFT contract could provide an additional layer of defense, allowing the owner to temporarily halt cross-chain transfers in response to a critical vulnerability or exploit specific to the OFT or its immediate environment.
 
 **Recommendation:** Consider adding a `Pausable` mechanism (e.g., from OpenZeppelin) to the MyOFT contract. This would allow the owner to pause and unpause cross-chain operations in emergency situations, providing a circuit breaker for unforeseen events. Ensure that any pause mechanism is carefully designed to avoid creating new attack vectors or centralizing too much power.
 

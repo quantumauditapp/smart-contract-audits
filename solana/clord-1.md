@@ -2,14 +2,14 @@
 token: CLORD-1
 ticker: CLORD
 network: solana
-risk_score: 33
+risk_score: 16
 status: low
 date: 2026-09-14
 ---
 
 # CLORD-1 (CLORD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 33/100 — 🟢 Low Risk**
+> **Risk Score: 16/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/clord-1-sol)
 
@@ -26,8 +26,8 @@ The CLORD-1 SPL Token Mint exhibits a robust technical configuration with all cr
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The CLORD-1 token is implemented using the spl-token-2022 program. Key administrative controls, including the Mint Authority and Freeze Authority, have been permanently revoked, ensuring no new… |
-| **Governance / Economics** | 4/10 | Medium | The token's economic profile shows a top 10 holder concentration of 32.78%, which is not excessively centralized. Total DEX liquidity stands at $37,707, which is moderate. However, the 24-hour… |
-| **Upgrades** | 8/10 | Low | The token's upgradeability and mutability aspects are minimal, contributing to a low risk profile. Both the Mint Authority and Freeze Authority are revoked, preventing any future changes to supply or… |
+| **Governance / Economics** | 7/10 | Low | The token's economic profile shows a top 10 holder concentration of 32.78%, which is not excessively centralized. Total DEX liquidity stands at $37,707, which is moderate. However, the 24-hour… |
+| **Upgrades** | 10/10 | Low | The token's upgradeability and mutability aspects are minimal, contributing to a low risk profile. Both the Mint Authority and Freeze Authority are revoked, preventing any future changes to supply or… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The 24-hour trading volume is 7.90 times the total DEX liquidity. While not meet
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2064 buys / 2022 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The 24-hour trading volume is 7.90 times the total DEX liquidity. While not meet
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

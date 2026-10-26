@@ -2,14 +2,14 @@
 token: Briun Armstrung
 ticker: BRIUN
 network: base
-risk_score: 8
+risk_score: 6
 status: low
 date: 2026-07-24
 ---
 
 # Briun Armstrung (BRIUN) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 8/100 — 🟢 Low Risk**
+> **Risk Score: 6/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/briun-armstrung-base)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Centralized Initial Token Distribution  *(Severity: Low · Status: Unresolved)*
 
-The contract's constructor mints the entire initial supply of 1,000,000,000 tokens (1 billion) to the deployer address. This results in 100% of the token supply being held by a single address immediately after deployment (7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The contract's constructor mints the entire initial supply of 1,000,000,000 tokens (1 billion) to the deployer address. This results in 100% of the token supply being held by a single address immediately after deployment (7.4 Economic).
 
 **Recommendation:** While not a technical vulnerability in the contract code, this represents a significant centralization risk for the token's economic model. Future distribution strategies should aim for broader decentralization to mitigate potential market manipulation or single points of failure, aligning with principles of decentralized finance.
 
 
 ### `I-01` — Ownership Renounced  *(Severity: Informational · Status: Unresolved)*
 
-The contract's `Ownable` ownership has been renounced, as indicated by the `ownership_renounced: true` flag in the provided metadata. This means the `owner()` function will return the zero address, and any functions protected by the `onlyOwner` modifier are no longer callable. This affects `transferOwnership` and `renounceOwnership` functions.
+Not confirmed by static analysis (the model's own reading of the source). The contract's `Ownable` ownership has been renounced, as indicated by the `ownership_renounced: true` flag in the provided metadata. This means the `owner()` function will return the zero address, and any functions protected by the `onlyOwner` modifier are no longer callable. This affects `transferOwnership` and `renounceOwnership` functions.
 
 **Recommendation:** Confirm that renouncing ownership was an intentional design choice. This makes the contract immutable in terms of administrative control, preventing future changes to ownership or other `onlyOwner` protected functions. This is often a desired state for fully decentralized tokens.
 
 
 ### `I-02` — Standard OpenZeppelin ERC20 Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The contract is a standard implementation of the ERC20 token specification, leveraging well-audited OpenZeppelin Contracts (v4.9.3). This includes robust handling of transfers, approvals, and supply management. The use of battle-tested libraries significantly reduces the risk of common vulnerabilities (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract is a standard implementation of the ERC20 token specification, leveraging well-audited OpenZeppelin Contracts (v4.9.3). This includes robust handling of transfers, approvals, and supply management. The use of battle-tested libraries significantly reduces the risk of common vulnerabilities (7.2 Code Security).
 
 **Recommendation:** Continue to rely on battle-tested libraries for core functionalities. Ensure any custom logic introduced in future versions maintains the same security standards and undergoes thorough testing and auditing.
 

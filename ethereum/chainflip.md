@@ -25,8 +25,8 @@ The FLIP token contract is an ERC-20 compliant token with a centralized 'issuer'
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract leverages standard ERC20 implementation patterns, including robust handling of token transfers, approvals, minting, and burning. It uses `unchecked` blocks appropriately after `require`… |
-| **Governance / Economics** | 1/10 | High | The economic model of the FLIP token is highly centralized, with the `issuer` having absolute control over the token supply through `mint` and `burn` functions (7.4 Economic). This design choice… |
+| **Technical** | 8/10 | Low | The contract leverages standard ERC20 implementation patterns, including robust handling of token transfers, approvals, minting, and burning. It uses `unchecked` blocks appropriately after `require`… |
+| **Governance / Economics** | 2/10 | High | The economic model of the FLIP token is highly centralized, with the `issuer` having absolute control over the token supply through `mint` and `burn` functions (7.4 Economic). This design choice… |
 | **Upgrades** | 3/10 | High | The FLIP token contract is not designed with an upgradeability mechanism (7.7 Upgrades). This means its logic is immutable once deployed, preventing future modifications or bug fixes without a full… |
 
 ## LP Distribution
@@ -38,25 +38,25 @@ The FLIP token contract is an ERC-20 compliant token with a centralized 'issuer'
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control over Token Supply  *(Severity: High · Status: Unresolved)*
-
-The `issuer` address has exclusive control over the `mint` and `burn` functions, allowing arbitrary changes to the token supply. This introduces significant centralization risk, as a single entity can inflate or deflate the token supply at will, directly impacting token economics and value. This is a design choice but represents a major trust assumption (7.4 Economic, 7.3 Access Control).
-
-**Recommendation:** If possible, consider implementing a multi-signature wallet for the `issuer` role or a time-locked mechanism for large supply changes. If centralized control is intentional, ensure robust operational security for the `issuer` key and transparent communication regarding supply management policies.
-
+_🟡 2 Medium · ⚪ 1 Informational_
 
 ### `M-01` — Single Point of Failure for Issuer Role  *(Severity: Medium · Status: Unresolved)*
 
-The `issuer` address is a single point of failure. If the private key for this address is compromised, lost, or becomes inaccessible, an attacker could gain full control over token minting/burning, or legitimate operations could be halted. The `updateIssuer` function, while allowing transfer of the role, is also controlled solely by the current `issuer` (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `issuer` address is a single point of failure. If the private key for this address is compromised, lost, or becomes inaccessible, an attacker could gain full control over token minting/burning, or legitimate operations could be halted. The `updateIssuer` function, while allowing transfer of the role, is also controlled solely by the current `issuer` (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** Implement a multi-signature wallet for the `issuer` role to distribute control and significantly reduce the risk associated with a single point of failure. Establish clear operational procedures for key management, role transfers, and emergency scenarios.
 
 
+### `M-02` — Centralized Control over Token Supply  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `issuer` address has exclusive control over the `mint` and `burn` functions, allowing arbitrary changes to the token supply. This introduces significant centralization risk, as a single entity can inflate or deflate the token supply at will, directly impacting token economics and value. This is a design choice but represents a major trust assumption (7.4 Economic, 7.3 Access Control).
+
+**Recommendation:** If possible, consider implementing a multi-signature wallet for the `issuer` role or a time-locked mechanism for large supply changes. If centralized control is intentional, ensure robust operational security for the `issuer` key and transparent communication regarding supply management policies.
+
+
 ### `I-01` — Standard ERC20 Front-Running Vulnerabilities  *(Severity: Informational · Status: Unresolved)*
 
-Functions like `approve`, `increaseAllowance`, and `decreaseAllowance` are susceptible to front-running attacks. For example, if a user calls `approve(spender, newAmount)` to reduce an allowance, a malicious `spender` could front-run this transaction, spend the original allowance, and then the `newAmount` would still be approved, leading to a double-spend of the intended allowance (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). Functions like `approve`, `increaseAllowance`, and `decreaseAllowance` are susceptible to front-running attacks. For example, if a user calls `approve(spender, newAmount)` to reduce an allowance, a malicious `spender` could front-run this transaction, spend the original allowance, and then the `newAmount` would still be approved, leading to a double-spend of the intended allowance (7.2 Code Security).
 
 **Recommendation:** Users should be aware of this standard ERC20 behavior. For critical operations, consider using `increaseAllowance` and `decreaseAllowance` instead of direct `approve` calls, although `decreaseAllowance` still has a front-running risk if the `spender` spends the allowance before the `decreaseAllowance` transaction confirms. The OpenZeppelin `_spendAllowance` function mitigates some risks by checking `currentAllowance >= amount` before decrementing.
 

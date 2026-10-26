@@ -2,14 +2,14 @@
 token: Chip
 ticker: CHIP
 network: base
-risk_score: 76
-status: high
+risk_score: 59
+status: medium
 date: 2026-08-17
 ---
 
 # Chip (CHIP) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 76/100 — 🟠 High Risk**
+> **Risk Score: 59/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chip-base)
 
@@ -25,7 +25,7 @@ The OToken contract serves as an upgradeable ERC-20 token with minting and burni
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates strong technical security (7.2 Code Security) by inheriting from OpenZeppelin's robust and audited libraries, including `ERC20Upgradeable`, `AccessControlUpgradeable`, and… |
+| **Technical** | 7/10 | Low | The contract demonstrates strong technical security (7.2 Code Security) by inheriting from OpenZeppelin's robust and audited libraries, including `ERC20Upgradeable`, `AccessControlUpgradeable`, and… |
 | **Governance / Economics** | 1/10 | High | The economic model (7.4 Economic) of OToken relies heavily on centralized control for its core functions. The `BRIDGE_ADMIN_ROLE` has the power to `mint` and `burn` arbitrary amounts of tokens, which… |
 | **Upgrades** | 1/10 | High | The contract is designed for upgradeability (7.7 Upgrades) using OpenZeppelin's `TransparentUpgradeableProxy` pattern. The `_disableInitializers()` in the constructor and the `initializer` modifier… |
 
@@ -47,32 +47,32 @@ The OToken contract serves as an upgradeable ERC-20 token with minting and burni
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control Over Token Supply (Mint/Burn)  *(Severity: High · Status: Unresolved)*
-
-The `mint` and `burn` functions are exclusively controlled by the `BRIDGE_ADMIN_ROLE`. This role has the ability to arbitrarily increase or decrease the total supply of OToken. While this is an intended design for a bridge-controlled token, it introduces a significant centralization risk (7.3 Access Control, 7.4 Economic). A compromise of the `BRIDGE_ADMIN_ROLE` could lead to hyperinflation, deflation, or other manipulations that severely impact the token's value and ecosystem integrity.
-
-**Recommendation:** Ensure the `BRIDGE_ADMIN_ROLE` is secured by a robust multi-signature wallet with a high threshold or a decentralized autonomous organization (DAO) with a timelock. Implement strict operational security procedures for managing the keys associated with this role. Consider implementing rate limits or maximum mint/burn amounts per period to mitigate the impact of a potential compromise.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Criticality of DEFAULT_ADMIN_ROLE Holder  *(Severity: Medium · Status: Unresolved)*
 
-The `initialize` function grants the `DEFAULT_ADMIN_ROLE` to a single `admin` address. This role has the power to grant and revoke all other roles, including the `BRIDGE_ADMIN_ROLE` (7.3 Access Control, 7.5 Governance). If the `admin` address is a single externally owned account (EOA) or a weakly secured multi-signature wallet, it represents a single point of failure. A compromise of this address would allow an attacker to gain full control over all administrative functions of the OToken contract, including the ability to manipulate token supply.
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function grants the `DEFAULT_ADMIN_ROLE` to a single `admin` address. This role has the power to grant and revoke all other roles, including the `BRIDGE_ADMIN_ROLE` (7.3 Access Control, 7.5 Governance). If the `admin` address is a single externally owned account (EOA) or a weakly secured multi-signature wallet, it represents a single point of failure. A compromise of this address would allow an attacker to gain full control over all administrative functions of the OToken contract, including the ability to manipulate token supply.
 
 **Recommendation:** The `admin` address provided during initialization for the `DEFAULT_ADMIN_ROLE` must be a highly secure entity, preferably a multi-signature wallet with a high confirmation threshold or a DAO-controlled contract with a timelock. This ensures that critical administrative actions require consensus and have a delay period, enhancing security and decentralization.
 
 
+### `M-02` — Centralized Control Over Token Supply (Mint/Burn)  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint` and `burn` functions are exclusively controlled by the `BRIDGE_ADMIN_ROLE`. This role has the ability to arbitrarily increase or decrease the total supply of OToken. While this is an intended design for a bridge-controlled token, it introduces a significant centralization risk (7.3 Access Control, 7.4 Economic). A compromise of the `BRIDGE_ADMIN_ROLE` could lead to hyperinflation, deflation, or other manipulations that severely impact the token's value and ecosystem integrity.
+
+**Recommendation:** Ensure the `BRIDGE_ADMIN_ROLE` is secured by a robust multi-signature wallet with a high threshold or a decentralized autonomous organization (DAO) with a timelock. Implement strict operational security procedures for managing the keys associated with this role. Consider implementing rate limits or maximum mint/burn amounts per period to mitigate the impact of a potential compromise.
+
+
 ### `L-01` — Potential for Accidental Role Renunciation  *(Severity: Low · Status: Unresolved)*
 
-The `renounceRole` function allows any account to voluntarily remove a role they possess. While this is a standard OpenZeppelin feature, if a critical role holder (e.g., `DEFAULT_ADMIN_ROLE` or `BRIDGE_ADMIN_ROLE`) accidentally renounces their role without ensuring another authorized account can re-grant it, it could lead to an operational issue where essential functions become inaccessible (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `renounceRole` function allows any account to voluntarily remove a role they possess. While this is a standard OpenZeppelin feature, if a critical role holder (e.g., `DEFAULT_ADMIN_ROLE` or `BRIDGE_ADMIN_ROLE`) accidentally renounces their role without ensuring another authorized account can re-grant it, it could lead to an operational issue where essential functions become inaccessible (7.8 Operations).
 
 **Recommendation:** Educate role holders on the implications of `renounceRole`. Implement clear operational procedures for role management, including ensuring multiple accounts hold critical roles or that a recovery mechanism is in place before any role is renounced. Consider adding a check or a timelock to `renounceRole` for critical roles if the operational context allows.
 
 
 ### `I-01` — Absence of a Pause Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The OToken contract currently lacks a pause mechanism. In the event of an emergency, such as a critical vulnerability discovered in the contract itself, a connected bridge, or a wider ecosystem exploit, the ability to temporarily halt token transfers, minting, or burning could be crucial to mitigate damage (7.1 Architecture, 7.8 Operations). Without such a mechanism, the only recourse would be an upgrade, which typically involves a timelock delay.
+Not confirmed by static analysis (the model's own reading of the source). The OToken contract currently lacks a pause mechanism. In the event of an emergency, such as a critical vulnerability discovered in the contract itself, a connected bridge, or a wider ecosystem exploit, the ability to temporarily halt token transfers, minting, or burning could be crucial to mitigate damage (7.1 Architecture, 7.8 Operations). Without such a mechanism, the only recourse would be an upgrade, which typically involves a timelock delay.
 
 **Recommendation:** Consider implementing OpenZeppelin's `PausableUpgradeable` module. This would allow a designated role (e.g., a `PAUSER_ROLE` controlled by a multi-sig) to pause and unpause critical operations, providing an immediate emergency response capability. Ensure the pauser role is also securely managed.
 

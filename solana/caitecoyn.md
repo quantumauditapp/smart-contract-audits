@@ -2,14 +2,14 @@
 token: Caitecoyn
 ticker: CAITE
 network: solana
-risk_score: 50
-status: medium
+risk_score: 33
+status: low
 date: 2026-08-05
 ---
 
 # Caitecoyn (CAITE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/caitecoyn-sol)
 
@@ -25,9 +25,9 @@ The Caitecoyn (CAITE) token mint exhibits a generally secure configuration with 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Caitecoyn (CAITE) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
-| **Governance / Economics** | 1/10 | High | The token's holder concentration shows the top 10 accounts hold 26.05% of the supply, which is not indicative of high centralization. DEX liquidity stands at $19,510, with a 24-hour volume of… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as both the mint and freeze authorities have been revoked. No permanent delegate or transfer hook is configured, and metadata is also immutable, preventing… |
+| **Technical** | 10/10 | Low | The Caitecoyn (CAITE) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
+| **Governance / Economics** | 2/10 | High | The token's holder concentration shows the top 10 accounts hold 26.05% of the supply, which is not indicative of high centralization. DEX liquidity stands at $19,510, with a 24-hour volume of… |
+| **Upgrades** | 10/10 | Low | The token's core parameters are immutable, as both the mint and freeze authorities have been revoked. No permanent delegate or transfer hook is configured, and metadata is also immutable, preventing… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 1 day ago. Insufficient track record to assess team or 
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 14128 buys / 8033 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 1 day ago. Insufficient track record to assess team or 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

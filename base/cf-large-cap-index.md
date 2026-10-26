@@ -47,27 +47,27 @@ The audit of the Folio contract (implementation for FolioProxy) revealed a well-
 
 ## Security Findings
 
-_🟠 1 High · 🟡 4 Medium · 🟢 2 Low · ⚪ 5 Informational_
-
-### `H-01` — Centralized Control over Critical Functions  *(Severity: High · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE` in the Folio contract possesses extensive privileges, including the ability to set TVL and mint fees, modify the asset basket (add/remove tokens), set auction length, change the mandate, and deprecate the entire Folio. While `REBALANCE_MANAGER` and `AUCTION_LAUNCHER` roles also control significant aspects of rebalancing and auctions, the `DEFAULT_ADMIN_ROLE`'s broad authority centralizes control. This poses a significant single point of failure and a high risk of malicious actions or accidental errors if the admin key is compromised. Unlike the proxy admin, there is no apparent Timelock protecting the actions of the `DEFAULT_ADMIN_ROLE` within the contract itself (7…
-
-**Recommendation:** Implement a Timelock mechanism for the `DEFAULT_ADMIN_ROLE` to introduce a mandatory delay for critical administrative actions. This would allow time for review and potential intervention, significantly reducing the risk associated with centralized control. Consider further decentralizing roles where appropriate.
-
+_🟡 5 Medium · 🟢 2 Low · ⚪ 5 Informational_
 
 ### `M-01` — `_setName` Uses Assembly for Direct Storage Slot Manipulation  *(Severity: Medium · Status: Unresolved)*
 
-The `_setName` function directly manipulates a storage slot using inline assembly (`assembly { $.slot := ERC20_STORAGE_LOCATION } $._name = _newName;`) to update the ERC-20 token's name. While `ERC20_STORAGE_LOCATION` is a constant, relying on fixed storage slots in an upgradeable contract is a fragile pattern. If the `ERC20Upgradeable` contract's storage layout changes in a future OpenZeppelin upgrade, or if `ERC20_STORAGE_LOCATION` is miscalculated or misconfigured, it could lead to storage collisions, corrupting the contract's state and potentially leading to critical vulnerabilities (7.7 Upgrades, 7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `_setName` function directly manipulates a storage slot using inline assembly (`assembly { $.slot := ERC20_STORAGE_LOCATION } $._name = _newName;`) to update the ERC-20 token's name. While `ERC20_STORAGE_LOCATION` is a constant, relying on fixed storage slots in an upgradeable contract is a fragile pattern. If the `ERC20Upgradeable` contract's storage layout changes in a future OpenZeppelin upgrade, or if `ERC20_STORAGE_LOCATION` is miscalculated or misconfigured, it could lead to storage collisions, corrupting the contract's state and potentially leading to critical vulnerabilities (7.7 Upgrades, 7.2 Code Security
 
 **Recommendation:** Refactor the `_setName` function to avoid direct assembly-based storage manipulation. Instead, consider using a standard upgradeable pattern for modifying ERC-20 metadata, or ensure that `ERC20_STORAGE_LOCATION` is robustly verified against all potential OpenZeppelin upgrades and contract inheritance structures. If `_name` is intended to be immutable after initialization, remove the setter entirely.
 
 
 ### `M-02` — Operational Burden and Potential Griefing in Fee Recipient Management  *(Severity: Medium · Status: Unresolved)*
 
-The `_setFeeRecipients` function requires fee recipients to be provided in strictly ascending order by address (`require(_feeRecipients[i].recipient > previousRecipient)`). While this helps prevent duplicate entries and ensures deterministic storage, it creates an operational burden for the `DEFAULT_ADMIN_ROLE`. If a new fee recipient needs to be inserted with an address that falls between two existing recipients, all subsequent recipients must be removed and then re-added in the correct sorted order. This process is gas-intensive and could be exploited as a griefing vector if an attacker gains admin access, making it costly and cumbersome to manage fee distributions (7.4 Economic, 7.8 Oper…
+Not confirmed by static analysis (the model's own reading of the source). The `_setFeeRecipients` function requires fee recipients to be provided in strictly ascending order by address (`require(_feeRecipients[i].recipient > previousRecipient)`). While this helps prevent duplicate entries and ensures deterministic storage, it creates an operational burden for the `DEFAULT_ADMIN_ROLE`. If a new fee recipient needs to be inserted with an address that falls between two existing recipients, all subsequent recipients must be removed and then re-added in the correct sorted order. This process is gas-intensive and could be exploited as a griefing vector if an attacker gains admin access, making it
 
 **Recommendation:** Consider alternative methods for managing fee recipients that do not impose strict sorting requirements, such as using a mapping for individual recipient portions or allowing for unsorted additions/removals with internal sorting logic if necessary. If sorting is deemed essential, provide helper functions to simplify the process of adding, removing, or updating recipients without requiring a full re-submission of the entire list.
+
+
+### `M-03` — Centralized Control over Critical Functions  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` in the Folio contract possesses extensive privileges, including the ability to set TVL and mint fees, modify the asset basket (add/remove tokens), set auction length, change the mandate, and deprecate the entire Folio. While `REBALANCE_MANAGER` and `AUCTION_LAUNCHER` roles also control significant aspects of rebalancing and auctions, the `DEFAULT_ADMIN_ROLE`'s broad authority centralizes control. This poses a significant single point of failure and a high risk of malicious actions or accidental errors if the admin key is compromised. Unlike the proxy admin, there is no apparent Timelock protect
+
+**Recommendation:** Implement a Timelock mechanism for the `DEFAULT_ADMIN_ROLE` to introduce a mandatory delay for critical administrative actions. This would allow time for review and potential intervention, significantly reducing the risk associated with centralized control. Consider further decentralizing roles where appropriate.
 
 
 ### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
@@ -86,21 +86,21 @@ The contract lets its controller — an owner that could not be resolved — min
 
 ### `L-01` — Lack of Timelock for `DEFAULT_ADMIN_ROLE` Actions  *(Severity: Low · Status: Unresolved)*
 
-While the proxy's administrative functions are protected by a Timelock, the `DEFAULT_ADMIN_ROLE` within the `Folio` contract itself can execute critical operations (e.g., `setTVLFee`, `setMintFee`, `addToBasket`, `deprecateFolio`) immediately. The absence of a Timelock for these internal administrative actions means there is no delay period for community review or emergency intervention, increasing the risk of immediate damage from a compromised or malicious admin key (7.3 Access Control, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). While the proxy's administrative functions are protected by a Timelock, the `DEFAULT_ADMIN_ROLE` within the `Folio` contract itself can execute critical operations (e.g., `setTVLFee`, `setMintFee`, `addToBasket`, `deprecateFolio`) immediately. The absence of a Timelock for these internal administrative actions means there is no delay period for community review or emergency intervention, increasing the risk of immediate damage from a compromised or malicious admin key (7.3 Access Control, 7.5 Governance).
 
 **Recommendation:** Integrate a Timelock mechanism for the `DEFAULT_ADMIN_ROLE` to introduce a delay for all critical administrative functions. This would provide a window for monitoring and potential mitigation, enhancing the overall security and governance posture of the protocol.
 
 
 ### `L-02` — Presence of Deprecated Variables and Code  *(Severity: Low · Status: Unresolved)*
 
-The contract contains several `_DEPRECATED` variables and mappings (e.g., `auctions_DEPRECATED`, `sellEnds_DEPRECATED`, `buyEnds_DEPRECATED`, `auctionDelay_DEPRECATED`, `auctionDetails_DEPRECATED`, `dustAmount_DEPRECATED`). While these are explicitly marked as deprecated, their continued presence in the codebase adds to its complexity, increases the contract's deployed size, and could potentially lead to confusion for developers or auditors. It also suggests that the contract might have undergone significant architectural changes without full cleanup (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract contains several `_DEPRECATED` variables and mappings (e.g., `auctions_DEPRECATED`, `sellEnds_DEPRECATED`, `buyEnds_DEPRECATED`, `auctionDelay_DEPRECATED`, `auctionDetails_DEPRECATED`, `dustAmount_DEPRECATED`). While these are explicitly marked as deprecated, their continued presence in the codebase adds to its complexity, increases the contract's deployed size, and could potentially lead to confusion for developers or auditors. It also suggests that the contract might have undergone significant architectural changes without full cleanup (7.2 Code Security).
 
 **Recommendation:** Remove all deprecated variables and associated code paths from the contract. If historical data or functionality is still required, consider migrating it to a separate, immutable data contract or ensuring that the deprecated code is entirely unreachable and does not consume unnecessary gas or storage.
 
 
 ### `I-01` — Reliance on `block.timestamp` for Time-Sensitive Operations  *(Severity: Informational · Status: Unresolved)*
 
-The contract extensively uses `block.timestamp` for various time-sensitive operations, including fee accounting (`lastPoke`, `_getPendingFeeShares`), auction timing (`auctionLength`, `auctions[auctionId].endTime`), and rebalance availability (`rebalance.startedAt`, `rebalance.restrictedUntil`, `rebalance.availableUntil`). While `block.timestamp` is commonly used, it can be manipulated by miners within a certain range (up to 900 seconds on Ethereum mainnet). For critical operations, this manipulation could potentially lead to minor timing discrepancies or, in specific scenarios, be exploited by a malicious miner to gain a slight advantage (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract extensively uses `block.timestamp` for various time-sensitive operations, including fee accounting (`lastPoke`, `_getPendingFeeShares`), auction timing (`auctionLength`, `auctions[auctionId].endTime`), and rebalance availability (`rebalance.startedAt`, `rebalance.restrictedUntil`, `rebalance.availableUntil`). While `block.timestamp` is commonly used, it can be manipulated by miners within a certain range (up to 900 seconds on Ethereum mainnet). For critical operations, this manipulation could potentially lead to minor timing discrepancies or, in specific scenarios, be exploited by a malicious miner to gain
 
 **Recommendation:** For highly critical time-sensitive operations where miner manipulation of `block.timestamp` could have significant adverse effects, consider using a more robust and decentralized time oracle (e.g., Chainlink Keepers or a custom oracle solution). For less critical operations, `block.timestamp` is generally acceptable, but be aware of its limitations.
 

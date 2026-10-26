@@ -2,14 +2,14 @@
 token: cashless
 ticker: CASHLESS
 network: solana
-risk_score: 31
+risk_score: 14
 status: low
 date: 2026-09-21
 ---
 
 # cashless (CASHLESS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 31/100 — 🟢 Low Risk**
+> **Risk Score: 14/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cashless-sol)
 
@@ -26,8 +26,8 @@ The cashless token is an SPL Token-2022 mint with both mint and freeze authoriti
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The cashless token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring no new tokens can be minted and no accounts can be frozen… |
-| **Governance / Economics** | 2/10 | High | The token's DEX pair is extremely new, having been created 0 days ago, which provides insufficient track record for assessing market behavior (7.4 Economic). Current liquidity stands at $38,415, with… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are both revoked, meaning no further administrative actions can be taken to alter supply or freeze accounts. Metadata is immutable, preventing changes to the… |
+| **Governance / Economics** | 5/10 | Medium | The token's DEX pair is extremely new, having been created 0 days ago, which provides insufficient track record for assessing market behavior (7.4 Economic). Current liquidity stands at $38,415, with… |
+| **Upgrades** | 10/10 | Low | The token's mint and freeze authorities are both revoked, meaning no further administrative actions can be taken to alter supply or freeze accounts. Metadata is immutable, preventing changes to the… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 7778 buys / 7539 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

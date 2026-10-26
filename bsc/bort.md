@@ -42,28 +42,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Centralized Control over Token Supply (if implemented in derived contract)  *(Severity: Low · Status: Unresolved)*
 
-If a derived contract exposes `_mint` and `_burn` functions, they would typically be controlled by an owner or a multi-sig. This introduces a point of centralization (7.3, 7.4) where a single entity (or a small group) can control the token supply, potentially leading to inflation or deflation without broader community consensus. This is a common design pattern for many tokens but represents a centralization risk.
+Not confirmed by static analysis (the model's own reading of the source). If a derived contract exposes `_mint` and `_burn` functions, they would typically be controlled by an owner or a multi-sig. This introduces a point of centralization (7.3, 7.4) where a single entity (or a small group) can control the token supply, potentially leading to inflation or deflation without broader community consensus. This is a common design pattern for many tokens but represents a centralization risk.
 
 **Recommendation:** For derived contracts, implement robust access control for minting/burning functions, ideally with multi-sig or time-locked mechanisms, or consider a fixed supply model if dynamic supply is not required. Transparency around the minting/burning authority is crucial.
 
 
 ### `L-02` — Standard ERC-20 `approve` Front-Running Risk  *(Severity: Low · Status: Unresolved)*
 
-The contract includes `increaseAllowance` and `decreaseAllowance` to mitigate the known ERC-20 `approve` front-running vulnerability. However, the standard `approve` function is still present and can be vulnerable if users directly interact with it by approving a new non-zero amount without first setting the allowance to zero. An attacker could front-run the transaction, spend the original allowance, and then the new allowance would also be granted, leading to a double-spend of the intended allowance amount.
+Not confirmed by static analysis (the model's own reading of the source). The contract includes `increaseAllowance` and `decreaseAllowance` to mitigate the known ERC-20 `approve` front-running vulnerability. However, the standard `approve` function is still present and can be vulnerable if users directly interact with it by approving a new non-zero amount without first setting the allowance to zero. An attacker could front-run the transaction, spend the original allowance, and then the new allowance would also be granted, leading to a double-spend of the intended allowance amount.
 
 **Recommendation:** Educate users to prefer `increaseAllowance` and `decreaseAllowance` or to follow the two-step approval process (approve 0, then approve new amount) when using the `approve` function directly. This is a common best practice for ERC-20 token interactions.
 
 
 ### `I-01` — Base Contract Design for Supply Management and Initialization  *(Severity: Informational · Status: Unresolved)*
 
-The `FourERC20` contract provides internal functions (`_mint`, `_burn`, `_init`) for token supply management and initialization (setting name/symbol). These functions are not exposed externally by this contract. This design requires a derived contract to implement external interfaces for these functionalities, including appropriate access control, or to call `_init` in its constructor. If deployed directly without a derived contract, the token's name/symbol cannot be set, and its supply cannot be managed.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract provides internal functions (`_mint`, `_burn`, `_init`) for token supply management and initialization (setting name/symbol). These functions are not exposed externally by this contract. This design requires a derived contract to implement external interfaces for these functionalities, including appropriate access control, or to call `_init` in its constructor. If deployed directly without a derived contract, the token's name/symbol cannot be set, and its supply cannot be managed.
 
 **Recommendation:** Ensure that any derived contract properly implements and secures the external interfaces for `_mint`, `_burn`, and calls `_init` in its constructor to set the token's metadata. This design choice should be clearly documented and understood by developers integrating with the token.
 
 
 ### `I-02` — Missing Events for `_init` Parameters  *(Severity: Informational · Status: Unresolved)*
 
-The `_init` function, intended for setting the token's name and symbol, does not emit an event upon execution. While not a security vulnerability, emitting an event for initialization parameters can be useful for off-chain monitoring, indexing, and transparency regarding the token's metadata (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `_init` function, intended for setting the token's name and symbol, does not emit an event upon execution. While not a security vulnerability, emitting an event for initialization parameters can be useful for off-chain monitoring, indexing, and transparency regarding the token's metadata (7.8 Operations).
 
 **Recommendation:** Consider adding an event (e.g., `event Initialized(string name, string symbol);`) and emitting it within the `_init` function. This enhances the traceability and observability of the token's initial configuration.
 

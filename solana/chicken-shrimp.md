@@ -2,14 +2,14 @@
 token: chicken shrimp
 ticker: CS
 network: solana
-risk_score: 42
-status: medium
+risk_score: 30
+status: low
 date: 2026-06-21
 ---
 
 # chicken shrimp (CS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chicken-shrimp-sol)
 
@@ -25,9 +25,9 @@ This Solana SPL Token Mint, "chicken shrimp (CS)", exhibits a robust security po
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account freezing. No Transfer… |
-| **Governance / Economics** | 1/10 | High | The token currently has a liquidity of $26,407 with a 24-hour trading volume of $46,253. The volume-to-liquidity ratio is 1.75, which is within normal parameters and does not suggest wash trading.… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are both revoked, meaning no further tokens can be minted and no accounts can be frozen. The token utilizes the Token-2022 program but does not have a Transfer… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account freezing. No Transfer… |
+| **Governance / Economics** | 4/10 | Medium | The token currently has a liquidity of $26,407 with a 24-hour trading volume of $46,253. The volume-to-liquidity ratio is 1.75, which is within normal parameters and does not suggest wash trading.… |
+| **Upgrades** | 10/10 | Low | The token's mint and freeze authorities are both revoked, meaning no further tokens can be minted and no accounts can be frozen. The token utilizes the Token-2022 program but does not have a Transfer… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 16276 buys / 10700 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,18 +69,18 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is chicken shrimp a scam?
 
-Based on the provided data, CS exhibits high-risk characteristics, notably an unverified contract and unlocked liquidity, which are common traits in fraudulent schemes. While ownership is renounced and there's no mint function, these do not fully mitigate the 'rug pull' risk or the lack of transparency from the unverified code. The project is tagged with a High Risk score of 47/100, suggesting significant speculative danger rather than outright confirming it as a scam without further investigation.
+Based on the provided data, CS exhibits high-risk characteristics, notably an unverified contract and unlocked liquidity, which are common traits in fraudulent schemes. While ownership is renounced and there's no mint function, these do not fully mitigate the 'rug pull' risk or the lack of transparency from the unverified code. The project is tagged with a Low Risk score of 30/100, suggesting significant speculative danger rather than outright confirming it as a scam without further investigation.
 
 ### Is chicken shrimp safe to buy?
 
-No, chicken shrimp is not considered safe to buy based on the available security data. Key risk factors include an unverified contract, meaning its code cannot be transparently reviewed for exploits or malicious functions. Additionally, the liquidity is not locked, exposing investors to a potential 'rug pull' where liquidity can be withdrawn, crashing the token's value. The High Risk score of 47/100 underscores these significant vulnerabilities, indicating substantial speculative risk.
+No, chicken shrimp is not considered safe to buy based on the available security data. Key risk factors include an unverified contract, meaning its code cannot be transparently reviewed for exploits or malicious functions. Additionally, the liquidity is not locked, exposing investors to a potential 'rug pull' where liquidity can be withdrawn, crashing the token's value. The Low Risk score of 30/100 underscores these significant vulnerabilities, indicating substantial speculative risk.
 
 ### Has chicken shrimp been audited?
 

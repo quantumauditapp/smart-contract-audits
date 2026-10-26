@@ -2,14 +2,14 @@
 token: Cap
 ticker: CAP
 network: bsc
-risk_score: 57
+risk_score: 49
 status: medium
 date: 2026-07-23
 ---
 
 # Cap (CAP) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 57/100 — 🟡 Medium Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cap-bsc)
 
@@ -26,7 +26,7 @@ The L2TokenUpgradeable contract implements an ERC-20 token with LayerZero Omnich
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract utilizes well-audited OpenZeppelin and LayerZero upgradeable libraries, providing a robust foundation for ERC-20, permit, and cross-chain functionalities (7.1 Architecture, 7.2 Code… |
-| **Governance / Economics** | 2/10 | High | The contract employs an `Ownable` access control pattern where a single address, identified as a Timelock, holds all administrative privileges (7.3 Access Control). This owner can manage LayerZero… |
+| **Governance / Economics** | 3/10 | High | The contract employs an `Ownable` access control pattern where a single address, identified as a Timelock, holds all administrative privileges (7.3 Access Control). This owner can manage LayerZero… |
 | **Upgrades** | 3/10 | High | The contract implements the UUPS upgradeability pattern, allowing for future logic updates (7.7 Upgrades). The `_authorizeUpgrade` function is correctly restricted to the `onlyOwner` modifier… |
 
 ## Proxy Upgrade Controls
@@ -45,32 +45,32 @@ The L2TokenUpgradeable contract implements an ERC-20 token with LayerZero Omnich
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control by Owner  *(Severity: High · Status: Unresolved)*
-
-The `owner` address, set during initialization, holds significant administrative control over the contract. This includes the ability to authorize upgrades (`_authorizeUpgrade`), set LayerZero peers (`setPeer`), and set the LayerZero delegate (`setDelegate`). While the owner is identified as a Timelock, which mitigates immediate malicious actions by introducing a delay, this still represents a single point of administrative decision-making and control. A compromise of the Timelock's governance mechanism could lead to unauthorized upgrades or manipulation of cross-chain functionality.
-
-**Recommendation:** Ensure the Timelock governance mechanism is robust, well-tested, and follows best practices for decentralized decision-making. Implement strict access controls and multi-signature requirements for any actions that can modify the Timelock's configuration or execute proposals. Regularly audit the Timelock contract itself for vulnerabilities.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Dependency on LayerZero Protocol Security  *(Severity: Medium · Status: Unresolved)*
 
-The contract's core functionality, particularly its cross-chain transfer capabilities as an Omnichain Fungible Token (OFT), is entirely dependent on the security, liveness, and correct operation of the LayerZero protocol and its endpoint. Any vulnerabilities, compromises, or operational failures within the LayerZero network or its endpoint contracts could directly impact the integrity, availability, and security of the L2TokenUpgradeable's cross-chain operations, potentially leading to loss of funds or service disruption.
+Not confirmed by static analysis (the model's own reading of the source). The contract's core functionality, particularly its cross-chain transfer capabilities as an Omnichain Fungible Token (OFT), is entirely dependent on the security, liveness, and correct operation of the LayerZero protocol and its endpoint. Any vulnerabilities, compromises, or operational failures within the LayerZero network or its endpoint contracts could directly impact the integrity, availability, and security of the L2TokenUpgradeable's cross-chain operations, potentially leading to loss of funds or service disruption.
 
 **Recommendation:** Acknowledge and monitor the inherent risks associated with external protocol dependencies. Implement robust monitoring for LayerZero endpoint health, message delivery, and any security announcements from the LayerZero team. Consider contingency plans for extreme scenarios involving LayerZero disruptions, if feasible.
 
 
+### `M-02` — Centralized Control by Owner  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `owner` address, set during initialization, holds significant administrative control over the contract. This includes the ability to authorize upgrades (`_authorizeUpgrade`), set LayerZero peers (`setPeer`), and set the LayerZero delegate (`setDelegate`). While the owner is identified as a Timelock, which mitigates immediate malicious actions by introducing a delay, this still represents a single point of administrative decision-making and control. A compromise of the Timelock's governance mechanism could lead to unauthorized upgrades or manipulation of cross-chain functionality.
+
+**Recommendation:** Ensure the Timelock governance mechanism is robust, well-tested, and follows best practices for decentralized decision-making. Implement strict access controls and multi-signature requirements for any actions that can modify the Timelock's configuration or execute proposals. Regularly audit the Timelock contract itself for vulnerabilities.
+
+
 ### `L-01` — Hardcoded LayerZero Storage Slot  *(Severity: Low · Status: Unresolved)*
 
-The `OAppCoreUpgradeable` contract uses a hardcoded storage slot (`OAPP_CORE_STORAGE_LOCATION`) for its `peers` mapping. While this is a common and often necessary pattern in upgradeable contracts to ensure consistent storage layout across upgrades and complex inheritance hierarchies, incorrect calculation or accidental collision with other storage variables (especially in contracts with multiple inheritance paths) could lead to critical state corruption or unexpected behavior. Assuming LayerZero's calculation is robust, the risk is low.
+Not confirmed by static analysis (the model's own reading of the source). The `OAppCoreUpgradeable` contract uses a hardcoded storage slot (`OAPP_CORE_STORAGE_LOCATION`) for its `peers` mapping. While this is a common and often necessary pattern in upgradeable contracts to ensure consistent storage layout across upgrades and complex inheritance hierarchies, incorrect calculation or accidental collision with other storage variables (especially in contracts with multiple inheritance paths) could lead to critical state corruption or unexpected behavior. Assuming LayerZero's calculation is robust, the risk is low.
 
 **Recommendation:** Verify that the hardcoded storage slot calculation is unique and does not conflict with any other storage variables in the inheritance chain of `L2TokenUpgradeable`. While this is typically handled by library developers, a thorough understanding of the storage layout is crucial for upgradeable contracts.
 
 
 ### `I-01` — Missing Event for `setDelegate` Function  *(Severity: Informational · Status: Unresolved)*
 
-The `setDelegate` function in `OAppCoreUpgradeable` allows the owner to change the delegate address on the LayerZero endpoint. However, this function does not emit an event upon successful execution. The absence of an event makes it challenging for off-chain systems, such as block explorers, monitoring tools, or user interfaces, to track changes to the delegate address, potentially hindering transparency and auditability.
+Not confirmed by static analysis (the model's own reading of the source). The `setDelegate` function in `OAppCoreUpgradeable` allows the owner to change the delegate address on the LayerZero endpoint. However, this function does not emit an event upon successful execution. The absence of an event makes it challenging for off-chain systems, such as block explorers, monitoring tools, or user interfaces, to track changes to the delegate address, potentially hindering transparency and auditability.
 
 **Recommendation:** Consider adding an event, such as `DelegateSet(address indexed oldDelegate, address indexed newDelegate)`, to the `setDelegate` function. Emitting events for critical state changes enhances transparency, allows for easier off-chain monitoring, and improves the overall auditability of the contract's administrative actions.
 

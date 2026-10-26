@@ -2,14 +2,14 @@
 token: ChainLink Token
 ticker: LINK
 network: base
-risk_score: 37
-status: medium
+risk_score: 33
+status: low
 date: 2026-08-15
 ---
 
 # ChainLink Token (LINK) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chainlink-token-base)
 
@@ -42,21 +42,21 @@ _🟢 2 Low · ⚪ 1 Informational_
 
 ### `L-01` — Potential Gas Costs for Role Enumeration  *(Severity: Low · Status: Unresolved)*
 
-The `getMinters()` and `getBurners()` functions iterate over an `EnumerableSet` to return an array of all addresses holding the respective roles. If the number of minters or burners grows excessively large, calling these functions could become expensive in terms of gas, potentially leading to transaction failures if the gas limit is exceeded. While `EnumerableSet` is efficient for add/remove/contains, enumerating all values can be costly.
+Not confirmed by static analysis (the model's own reading of the source). The `getMinters()` and `getBurners()` functions iterate over an `EnumerableSet` to return an array of all addresses holding the respective roles. If the number of minters or burners grows excessively large, calling these functions could become expensive in terms of gas, potentially leading to transaction failures if the gas limit is exceeded. While `EnumerableSet` is efficient for add/remove/contains, enumerating all values can be costly.
 
 **Recommendation:** Monitor the number of minters and burners. If the number is expected to grow significantly, consider alternative approaches for retrieving roles, such as paginated access or only allowing retrieval of individual role status (`isMinter`, `isBurner`). For typical administrative use cases with a limited number of roles, the current implementation is acceptable.
 
 
 ### `L-02` — ERC677 `transferAndCall` Reentrancy Consideration  *(Severity: Low · Status: Unresolved)*
 
-The `transferAndCall` function, part of the ERC677 standard, performs an external call to the recipient's `onTokenTransfer` function after transferring tokens. While the `ERC677` implementation from OpenZeppelin is designed to prevent reentrancy vulnerabilities within the token contract itself (by completing the `super.transfer` before the external call), it's crucial for any contract receiving tokens via `transferAndCall` to be aware of potential reentrancy vectors if they perform state-changing operations based on the incoming token transfer. A malicious recipient could attempt to re-enter the calling contract if not properly secured.
+Not confirmed by static analysis (the model's own reading of the source). The `transferAndCall` function, part of the ERC677 standard, performs an external call to the recipient's `onTokenTransfer` function after transferring tokens. While the `ERC677` implementation from OpenZeppelin is designed to prevent reentrancy vulnerabilities within the token contract itself (by completing the `super.transfer` before the external call), it's crucial for any contract receiving tokens via `transferAndCall` to be aware of potential reentrancy vectors if they perform state-changing operations based on the incoming token transfer. A malicious recipient could attempt to re-enter the calling contract if not
 
 **Recommendation:** The `LinkToken` contract itself is not vulnerable to reentrancy through its `transferAndCall` implementation. However, it is a general best practice for any contract interacting with external contracts, especially after an external call, to follow the Checks-Effects-Interactions pattern. Recipients of `transferAndCall` should implement reentrancy guards if their `onTokenTransfer` function performs critical state changes or external calls.
 
 
 ### `I-01` — Centralized Control of Token Supply  *(Severity: Informational · Status: Unresolved)*
 
-The contract owner has the exclusive ability to grant and revoke minter and burner roles. This means the owner effectively controls the token supply (within the `maxSupply` limit) and the ability to remove tokens from circulation. While this is a common design for certain types of tokens, it introduces a centralization risk where the owner's compromise or malicious intent could impact the token's integrity. This is an inherent design choice.
+Not confirmed by static analysis (the model's own reading of the source). The contract owner has the exclusive ability to grant and revoke minter and burner roles. This means the owner effectively controls the token supply (within the `maxSupply` limit) and the ability to remove tokens from circulation. While this is a common design for certain types of tokens, it introduces a centralization risk where the owner's compromise or malicious intent could impact the token's integrity. This is an inherent design choice.
 
 **Recommendation:** Acknowledge this centralization as a design decision. The current mitigation, where the owner is a Timelock, significantly reduces the immediate risk. Ensure the Timelock is robustly configured and managed. For future iterations, consider exploring multi-signature wallets or decentralized autonomous organization (DAO) governance for ownership if greater decentralization is desired.
 

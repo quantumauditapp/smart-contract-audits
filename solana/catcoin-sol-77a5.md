@@ -2,14 +2,14 @@
 token: Catcoin
 ticker: CATCOIN
 network: solana
-risk_score: 30
+risk_score: 13
 status: low
 date: 2026-09-15
 ---
 
 # Catcoin (CATCOIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 30/100 — 🟢 Low Risk**
+> **Risk Score: 13/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/catcoin-sol-77a5)
 
@@ -26,8 +26,8 @@ Catcoin is an SPL token with its mint and freeze authorities revoked, indicating
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Catcoin SPL token mint operates under the `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits significant holder concentration, with the top 10 accounts controlling 65.57% of the total supply, as flagged by a third-party risk registry for high concentration. This level of… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as both the mint and freeze authorities have been revoked. Furthermore, the metadata for the token, including its name and symbol, is not mutable… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits significant holder concentration, with the top 10 accounts controlling 65.57% of the total supply, as flagged by a third-party risk registry for high concentration. This level of… |
+| **Upgrades** | 10/10 | Low | The token's core parameters are immutable, as both the mint and freeze authorities have been revoked. Furthermore, the metadata for the token, including its name and symbol, is not mutable… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ Top 10 token accounts hold 65.57% of supply. Coordinated sell-off would crash pr
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4149 buys / 4152 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Top 10 token accounts hold 65.57% of supply. Coordinated sell-off would crash pr
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

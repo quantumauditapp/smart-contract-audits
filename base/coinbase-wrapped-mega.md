@@ -2,14 +2,14 @@
 token: Coinbase Wrapped MEGA
 ticker: CBMEGA
 network: base
-risk_score: 85
-status: critical
+risk_score: 83
+status: high
 date: 2026-08-16
 ---
 
 # Coinbase Wrapped MEGA (CBMEGA) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 85/100 — 🔴 Critical Risk**
+> **Risk Score: 83/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/coinbase-wrapped-mega-base)
 
@@ -25,7 +25,7 @@ The audit of FiatTokenV2_2, an upgradeable ERC-20 stablecoin implementation, rev
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract demonstrates good code security (7.2) through the use of SafeMath for arithmetic operations and clear adherence to ERC-20 standards. The EIP-712 authorization functions are correctly… |
+| **Technical** | 6/10 | Medium | The contract demonstrates good code security (7.2) through the use of SafeMath for arithmetic operations and clear adherence to ERC-20 standards. The EIP-712 authorization functions are correctly… |
 | **Governance / Economics** | 1/10 | High | The protocol exhibits a high degree of centralization (7.5 Governance) through privileged roles that can blacklist accounts and pause transfers. While typical for stablecoins, this represents a… |
 | **Upgrades** | 1/10 | High | The contract is designed as an upgradeable implementation (7.7 Upgrades) behind a proxy, utilizing an initializer (`initializeV2_2`) that correctly prevents re-initialization. The upgrade logic… |
 
@@ -47,39 +47,39 @@ The audit of FiatTokenV2_2, an upgradeable ERC-20 stablecoin implementation, rev
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Centralized Control over Blacklisting and Pausing  *(Severity: High · Status: Unresolved)*
-
-The contract inherits and implements functionalities for blacklisting accounts and pausing transfers, typically controlled by privileged roles (e.g., `owner`, `masterMinter`). These functions grant significant centralized power, allowing the freezing of funds or prevention of transfers for any address. This is an inherent design choice for many stablecoins but represents a high economic and operational risk (7.3 Access Control, 7.4 Economic, 7.8 Operations).
-
-**Recommendation:** Ensure that the private keys controlling these privileged roles are secured with the highest possible standards, such as multi-signature wallets, hardware security modules, and robust access control policies. Implement clear, transparent policies regarding the use of these powers.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Custom Storage Layout for Balance and Blacklist State  *(Severity: Medium · Status: Unresolved)*
 
-The contract uses a non-standard bit manipulation technique to store both an account's balance and its blacklist status within a single `uint256` value in the `balanceAndBlacklistStates` mapping. The most significant bit (MSB) indicates blacklisting, while the lower 255 bits store the balance. This custom storage pattern, while functional, increases complexity and the potential for subtle bugs if not perfectly aligned across all interacting functions and future upgrades (7.1 Architecture, 7.2 Code Security, 7.7 Upgrades). Additionally, balances are capped at `2^255 - 1` due to this design.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses a non-standard bit manipulation technique to store both an account's balance and its blacklist status within a single `uint256` value in the `balanceAndBlacklistStates` mapping. The most significant bit (MSB) indicates blacklisting, while the lower 255 bits store the balance. This custom storage pattern, while functional, increases complexity and the potential for subtle bugs if not perfectly aligned across all interacting functions and future upgrades (7.1 Architecture, 7.2 Code Security, 7.7 Upgrades). Additionally, balances are capped at `2^255 - 1` due to this design.
 
 **Recommendation:** Thoroughly test all functions interacting with `balanceAndBlacklistStates` (e.g., `_setBlacklistState`, `_setBalance`, `_isBlacklisted`, `_balanceOf`) to ensure correct behavior under all conditions. Document this custom storage layout extensively for future development and auditing. Future upgrades must meticulously verify storage slot compatibility.
 
 
+### `M-02` — Centralized Control over Blacklisting and Pausing  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract inherits and implements functionalities for blacklisting accounts and pausing transfers, typically controlled by privileged roles (e.g., `owner`, `masterMinter`). These functions grant significant centralized power, allowing the freezing of funds or prevention of transfers for any address. This is an inherent design choice for many stablecoins but represents a high economic and operational risk (7.3 Access Control, 7.4 Economic, 7.8 Operations).
+
+**Recommendation:** Ensure that the private keys controlling these privileged roles are secured with the highest possible standards, such as multi-signature wallets, hardware security modules, and robust access control policies. Implement clear, transparent policies regarding the use of these powers.
+
+
 ### `L-01` — EIP-712 Authorization Front-Running Risk  *(Severity: Low · Status: Unresolved)*
 
-Functions such as `permit`, `transferWithAuthorization`, `receiveWithAuthorization`, and `cancelAuthorization` rely on EIP-712 signed messages. While the `deadline` parameter helps mitigate some risks, these transactions are still susceptible to front-running. A malicious actor could observe a valid signed message in the mempool and submit their own transaction with a higher gas price to execute the authorized action before the legitimate user, potentially leading to denial of service or unexpected transaction ordering (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). Functions such as `permit`, `transferWithAuthorization`, `receiveWithAuthorization`, and `cancelAuthorization` rely on EIP-712 signed messages. While the `deadline` parameter helps mitigate some risks, these transactions are still susceptible to front-running. A malicious actor could observe a valid signed message in the mempool and submit their own transaction with a higher gas price to execute the authorized action before the legitimate user, potentially leading to denial of service or unexpected transaction ordering (7.2 Code Security).
 
 **Recommendation:** Users should be advised to set reasonable `deadline` values and be aware of mempool monitoring risks. Off-chain mechanisms or privacy-enhancing transaction relays could be considered to mitigate front-running, though this is often an inherent risk of such patterns.
 
 
 ### `I-01` — Deprecated Blacklist Migration Logic  *(Severity: Informational · Status: Unresolved)*
 
-The `initializeV2_2` function includes specific logic to migrate accounts from a `_deprecatedBlacklisted` mapping to the new `balanceAndBlacklistStates` system. This involves iterating through an array of accounts, requiring them to be previously blacklisted, then blacklisting them in the new system and deleting them from the old. This is a critical state migration step during an upgrade (7.7 Upgrades, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `initializeV2_2` function includes specific logic to migrate accounts from a `_deprecatedBlacklisted` mapping to the new `balanceAndBlacklistStates` system. This involves iterating through an array of accounts, requiring them to be previously blacklisted, then blacklisting them in the new system and deleting them from the old. This is a critical state migration step during an upgrade (7.7 Upgrades, 7.8 Operations).
 
 **Recommendation:** Ensure this migration logic has been thoroughly tested in a staging environment before deployment to production. Verify that all intended accounts are correctly migrated and no unintended state changes occur. The `require` statement preventing blacklisting previously unblacklisted accounts is a good safety measure.
 
 
 ### `I-02` — Use of `_chainId()` via Assembly  *(Severity: Informational · Status: Unresolved)*
 
-The `_chainId()` function retrieves the chain ID using inline assembly (`chainId := chainid()`). While this is a common and gas-efficient pattern for Solidity versions prior to 0.8.0, direct assembly can be less readable and potentially more error-prone than native Solidity constructs (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `_chainId()` function retrieves the chain ID using inline assembly (`chainId := chainid()`). While this is a common and gas-efficient pattern for Solidity versions prior to 0.8.0, direct assembly can be less readable and potentially more error-prone than native Solidity constructs (7.2 Code Security).
 
 **Recommendation:** For future upgrades or new contracts using Solidity 0.8.0+, consider using the native `block.chainid` global variable for improved readability and safety. For the current version, ensure the assembly code is well-understood and tested.
 

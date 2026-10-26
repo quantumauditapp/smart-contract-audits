@@ -2,14 +2,14 @@
 token: Chip
 ticker: CHIP
 network: arbitrum
-risk_score: 73
-status: high
+risk_score: 40
+status: medium
 date: 2026-07-22
 ---
 
 # Chip (CHIP) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 73/100 — 🟠 High Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chip-arb)
 
@@ -25,9 +25,9 @@ This audit covers an OpenZeppelin TransparentUpgradeableProxy contract. The prim
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The proxy contract (7.1 Architecture) is a standard OpenZeppelin TransparentUpgradeableProxy, which is a well-vetted and secure component. It correctly implements the transparent proxy pattern… |
+| **Technical** | 8/10 | Low | The proxy contract (7.1 Architecture) is a standard OpenZeppelin TransparentUpgradeableProxy, which is a well-vetted and secure component. It correctly implements the transparent proxy pattern… |
 | **Governance / Economics** | 1/10 | High | The system relies on a `ProxyAdmin` contract for upgrade management (7.5 Governance). The `initialOwner` of this `ProxyAdmin` determines the centralization level of upgrade authority. If this owner… |
-| **Upgrades** | 3/10 | High | The contract utilizes the Transparent Proxy pattern for upgradeability (7.7 Upgrades), allowing the implementation logic to be updated. This flexibility is a strength, enabling bug fixes and feature… |
+| **Upgrades** | 4/10 | Medium | The contract utilizes the Transparent Proxy pattern for upgradeability (7.7 Upgrades), allowing the implementation logic to be updated. This flexibility is a strength, enabling bug fixes and feature… |
 
 ## Proxy Upgrade Controls
 
@@ -47,32 +47,32 @@ This audit covers an OpenZeppelin TransparentUpgradeableProxy contract. The prim
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · ⚪ 1 Informational_
-
-### `C-01` — Unverified Implementation Contract  *(Severity: Critical · Status: Unresolved)*
-
-The proxy contract (0x0c1c1c109fe34733fca54b82d7b46b75cfb71f6e) points to an implementation contract (0x13ae0c66dd063fbd6ba12ec1a1d5d07343daa03f) whose source code is not verified on Etherscan. This prevents any security analysis of the actual business logic and state management, making it impossible to ascertain the system's safety, functionality, or adherence to security best practices. The entire system's security is unknown.
-
-**Recommendation:** Immediately verify the source code of the implementation contract on Etherscan. Once verified, a comprehensive security audit of the implementation contract must be performed to identify and address any vulnerabilities before further operations.
-
-
-### `H-01` — Centralized Upgrade Authority  *(Severity: High · Status: Unresolved)*
-
-The `TransparentUpgradeableProxy` deploys a `ProxyAdmin` contract, whose `initialOwner` has sole control over upgrading the proxy's implementation. If this `initialOwner` is a single Externally Owned Account (EOA), it represents a single point of failure. A compromise of this EOA would allow an attacker to deploy arbitrary malicious code as the new implementation, potentially leading to a complete loss of funds or control over the protocol.
-
-**Recommendation:** It is strongly recommended that the `initialOwner` of the `ProxyAdmin` be a robust, multi-signature wallet (e.g., Gnosis Safe) or a decentralized autonomous organization (DAO) controlled by multiple parties. This distributes control and reduces the risk associated with a single point of failure.
-
+_🟡 3 Medium · ⚪ 1 Informational_
 
 ### `M-01` — Lack of Timelock for Critical Operations  *(Severity: Medium · Status: Unresolved)*
 
-The current setup allows the `ProxyAdmin` owner to execute upgrades immediately without any time delay. This means that if the admin key is compromised or if a malicious upgrade is pushed, there is no window for users or monitoring systems to react or exit before the changes take effect. This lack of a timelock increases the risk of rapid, unrecoverable damage.
+Not confirmed by static analysis (the model's own reading of the source). The current setup allows the `ProxyAdmin` owner to execute upgrades immediately without any time delay. This means that if the admin key is compromised or if a malicious upgrade is pushed, there is no window for users or monitoring systems to react or exit before the changes take effect. This lack of a timelock increases the risk of rapid, unrecoverable damage.
 
 **Recommendation:** Implement a timelock mechanism for the `ProxyAdmin` owner. This could involve making the `ProxyAdmin` owner a TimelockController contract, which introduces a mandatory delay between proposing an upgrade and its execution. This provides a crucial window for review and reaction, enhancing overall system security and user confidence.
 
 
+### `M-02` — Unverified Implementation Contract  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The proxy contract (0x0c1c1c109fe34733fca54b82d7b46b75cfb71f6e) points to an implementation contract (0x13ae0c66dd063fbd6ba12ec1a1d5d07343daa03f) whose source code is not verified on Etherscan. This prevents any security analysis of the actual business logic and state management, making it impossible to ascertain the system's safety, functionality, or adherence to security best practices. The entire system's security is unknown.
+
+**Recommendation:** Immediately verify the source code of the implementation contract on Etherscan. Once verified, a comprehensive security audit of the implementation contract must be performed to identify and address any vulnerabilities before further operations.
+
+
+### `M-03` — Centralized Upgrade Authority  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `TransparentUpgradeableProxy` deploys a `ProxyAdmin` contract, whose `initialOwner` has sole control over upgrading the proxy's implementation. If this `initialOwner` is a single Externally Owned Account (EOA), it represents a single point of failure. A compromise of this EOA would allow an attacker to deploy arbitrary malicious code as the new implementation, potentially leading to a complete loss of funds or control over the protocol.
+
+**Recommendation:** It is strongly recommended that the `initialOwner` of the `ProxyAdmin` be a robust, multi-signature wallet (e.g., Gnosis Safe) or a decentralized autonomous organization (DAO) controlled by multiple parties. This distributes control and reduces the risk associated with a single point of failure.
+
+
 ### `I-01` — Immutable Admin Address Design  *(Severity: Informational · Status: Unresolved)*
 
-The `_admin` variable in `TransparentUpgradeableProxy` is declared as `immutable`. This is a design choice in OpenZeppelin Contracts v5.x to optimize gas costs by avoiding storage reads for the admin address. It means the specific `ProxyAdmin` instance deployed by the proxy cannot be changed; only its ownership can be transferred. While this prevents accidental overwrites of the admin slot by the implementation, it also means the proxy is permanently tied to that specific `ProxyAdmin` contract instance.
+Not confirmed by static analysis (the model's own reading of the source). The `_admin` variable in `TransparentUpgradeableProxy` is declared as `immutable`. This is a design choice in OpenZeppelin Contracts v5.x to optimize gas costs by avoiding storage reads for the admin address. It means the specific `ProxyAdmin` instance deployed by the proxy cannot be changed; only its ownership can be transferred. While this prevents accidental overwrites of the admin slot by the implementation, it also means the proxy is permanently tied to that specific `ProxyAdmin` contract instance.
 
 **Recommendation:** This is an intentional design choice by OpenZeppelin and generally considered a security improvement. No direct action is required for the proxy itself, but it's important to understand that the security of the upgrade mechanism relies entirely on the `ProxyAdmin` contract's ownership and its own security practices.
 

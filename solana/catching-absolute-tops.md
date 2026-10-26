@@ -2,14 +2,14 @@
 token: Catching Absolute Tops
 ticker: CAT
 network: solana
-risk_score: 75
-status: high
+risk_score: 38
+status: medium
 date: 2026-09-22
 ---
 
 # Catching Absolute Tops (CAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 75/100 — 🟠 High Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/catching-absolute-tops-sol)
 
@@ -25,9 +25,9 @@ The Catching Absolute Tops (CAT) token exhibits critical holder concentration, w
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Catching Absolute Tops (CAT) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, which is a positive security practice as it… |
-| **Governance / Economics** | 1/10 | High | The token exhibits extremely high holder concentration, with the top 10 accounts controlling 98.87% of the total supply, indicating a significant centralization risk. Liquidity is moderate at $49,421… |
-| **Upgrades** | 5/10 | Medium | The Mint and Freeze authorities for the Catching Absolute Tops (CAT) token have been revoked, preventing further changes to the token supply or account freeze status. While the transfer fee is… |
+| **Technical** | 8/10 | Low | The Catching Absolute Tops (CAT) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, which is a positive security practice as it… |
+| **Governance / Economics** | 3/10 | High | The token exhibits extremely high holder concentration, with the top 10 accounts controlling 98.87% of the total supply, indicating a significant centralization risk. Liquidity is moderate at $49,421… |
+| **Upgrades** | 8/10 | Low | The Mint and Freeze authorities for the Catching Absolute Tops (CAT) token have been revoked, preventing further changes to the token supply or account freeze status. While the transfer fee is… |
 
 ## Token-2022 Extensions
 
@@ -74,13 +74,13 @@ Token name, symbol, or image can be changed post-launch.
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 911 buys / 666 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -89,7 +89,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources
