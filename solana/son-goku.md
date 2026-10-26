@@ -80,7 +80,7 @@ Based on the available data, Son Goku exhibits several characteristics commonly 
 
 ### Is Son Goku safe to buy?
 
-No, Son Goku is not considered safe to buy based on the provided security data. The critical risk score of 74/100 is driven by key vulnerabilities. The unverified contract, non-renounced ownership, and unlocked liquidity collectively present a high risk profile, indicating significant potential for exploits or adverse actions by the project deployer.
+No, Son Goku is not considered safe to buy based on the provided security data. The low risk score of 33/100 is driven by key vulnerabilities. The unverified contract, non-renounced ownership, and unlocked liquidity collectively present a high risk profile, indicating significant potential for exploits or adverse actions by the project deployer.
 
 ### Has Son Goku been audited?
 

@@ -2,14 +2,14 @@
 token: Rokha
 ticker: $ROKHA
 network: solana
-risk_score: 28
+risk_score: 11
 status: low
 date: 2026-09-01
 ---
 
 # Rokha ($ROKHA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rokha-sol)
 
@@ -26,8 +26,8 @@ The Rokha token mint is a Solana SPL Token-2022 with both mint and freeze author
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Rokha token is an SPL Token-2022 mint with a total supply of 969,741,545.139053 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits a holder concentration where the top 10 accounts hold 46.92% of the supply, which is below the threshold for high concentration. Current DEX liquidity stands at $21,097, with a… |
-| **Upgrades** | 8/10 | Low | The Rokha token mint has a fixed configuration with both mint and freeze authorities revoked, preventing any future changes to supply or account freeze status. It is an SPL Token-2022, but does not… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a holder concentration where the top 10 accounts hold 46.92% of the supply, which is below the threshold for high concentration. Current DEX liquidity stands at $21,097, with a… |
+| **Upgrades** | 10/10 | Low | The Rokha token mint has a fixed configuration with both mint and freeze authorities revoked, preventing any future changes to supply or account freeze status. It is an SPL Token-2022, but does not… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 695 buys / 463 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: SIREN
 ticker: SIREN
 network: bsc
-risk_score: 21
+risk_score: 11
 status: low
 date: 2026-07-25
 ---
 
 # SIREN (SIREN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 21/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/siren-bsc)
 
@@ -25,8 +25,8 @@ This audit covers an ERC20 token contract deployed on the BSC network. The contr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract is based on well-vetted OpenZeppelin ERC20 and Ownable libraries, which generally provide robust code security (7.2) and a sound architectural foundation (7.1). Solidity 0.8+ is used… |
-| **Governance / Economics** | 4/10 | Medium | The economic model (7.4) is a standard ERC20 token. The governance (7.5) is effectively decentralized due to the renounced ownership, meaning no single entity can control the contract… |
+| **Technical** | 10/10 | Low | The contract is based on well-vetted OpenZeppelin ERC20 and Ownable libraries, which generally provide robust code security (7.2) and a sound architectural foundation (7.1). Solidity 0.8+ is used… |
+| **Governance / Economics** | 5/10 | Medium | The economic model (7.4) is a standard ERC20 token. The governance (7.5) is effectively decentralized due to the renounced ownership, meaning no single entity can control the contract… |
 | **Upgrades** | 9/10 | Low | The contract is not designed as an upgradeable proxy (7.7). This means its logic is immutable once deployed, eliminating upgrade-related risks like proxy misconfigurations or malicious upgrade paths.… |
 
 ## LP Distribution
@@ -38,25 +38,25 @@ This audit covers an ERC20 token contract deployed on the BSC network. The contr
 
 ## Security Findings
 
-_🟠 1 High · ⚪ 2 Informational_
+_🟡 1 Medium · ⚪ 2 Informational_
 
-### `H-01` — Renounced Ownership Disables Critical Functions  *(Severity: High · Status: Unresolved)*
+### `M-01` — Renounced Ownership Disables Critical Functions  *(Severity: Medium · Status: Unresolved)*
 
-The contract's `Ownable` ownership has been renounced, setting the owner address to `address(0)`. This action permanently disables any functions protected by the `onlyOwner` modifier. If the contract included owner-specific functionalities such as minting, burning, pausing, setting fees, or other administrative controls, these are now irrevocably inaccessible. This can lead to a loss of operational control (7.8) and potentially impact the economic model (7.4) if supply management or emergency actions were intended.
+Not confirmed by static analysis (the model's own reading of the source). The contract's `Ownable` ownership has been renounced, setting the owner address to `address(0)`. This action permanently disables any functions protected by the `onlyOwner` modifier. If the contract included owner-specific functionalities such as minting, burning, pausing, setting fees, or other administrative controls, these are now irrevocably inaccessible. This can lead to a loss of operational control (7.8) and potentially impact the economic model (7.4) if supply management or emergency actions were intended.
 
 **Recommendation:** Ensure that all necessary administrative functions are either not protected by `onlyOwner` or that the implications of their permanent disablement are fully understood and accepted. If future administrative actions are required, this contract will be unable to perform them. For future contracts, consider a multi-signature wallet or a time-locked ownership transfer if administrative control is desired but with safeguards.
 
 
 ### `I-01` — Missing Custom Functionality (Truncated Code)  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code for the `ERC20` contract is truncated. This prevents a full and comprehensive review of any custom logic, additional functions, or modifications that might have been added beyond the standard OpenZeppelin `ERC20` implementation. While the visible code appears standard, unseen sections could contain vulnerabilities (7.2) or unexpected behavior.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the `ERC20` contract is truncated. This prevents a full and comprehensive review of any custom logic, additional functions, or modifications that might have been added beyond the standard OpenZeppelin `ERC20` implementation. While the visible code appears standard, unseen sections could contain vulnerabilities (7.2) or unexpected behavior.
 
 **Recommendation:** Provide the complete and untruncated source code for a comprehensive security audit. This ensures all aspects of the contract's functionality can be thoroughly examined for vulnerabilities.
 
 
 ### `I-02` — Standard ERC20 Allowance Race Condition  *(Severity: Informational · Status: Unresolved)*
 
-The `approve` function, as defined in the ERC20 standard and implemented here, is susceptible to a known front-running vulnerability. If a user increases an existing allowance, a malicious spender could front-run the transaction, spend the original allowance, and then spend the newly increased allowance before the owner's transaction confirms, effectively spending more than the intended total (7.2).
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function, as defined in the ERC20 standard and implemented here, is susceptible to a known front-running vulnerability. If a user increases an existing allowance, a malicious spender could front-run the transaction, spend the original allowance, and then spend the newly increased allowance before the owner's transaction confirms, effectively spending more than the intended total (7.2).
 
 **Recommendation:** Users should be advised to first set the allowance to zero before increasing it, or to use `increaseAllowance` and `decreaseAllowance` functions if they are available in the full implementation (OpenZeppelin's ERC20 typically includes these). While this is a standard ERC20 behavior, it's important for users to be aware of the risk.
 
@@ -99,11 +99,11 @@ The `approve` function, as defined in the ERC20 standard and implemented here, i
 
 ### Is SIREN a scam?
 
-Based on automated analysis, SIREN scores 63/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, SIREN scores 11/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is SIREN safe to buy?
 
-Our scanner flagged a risk score of 63/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 11/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has SIREN been audited?
 

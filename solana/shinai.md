@@ -2,14 +2,14 @@
 token: ShinAI
 ticker: SHINJUKU
 network: solana
-risk_score: 31
+risk_score: 14
 status: low
 date: 2026-08-17
 ---
 
 # ShinAI (SHINJUKU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 31/100 — 🟢 Low Risk**
+> **Risk Score: 14/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/shinai-sol)
 
@@ -26,8 +26,8 @@ The ShinAI (SHINJUKU) token is an SPL Token-2022 mint with both mint and freeze 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The ShinAI (SHINJUKU) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits a top 10 holder concentration of 26.02%, which is not considered highly concentrated. Total DEX liquidity stands at $31,825, which is moderate. The 24-hour volume is $224,516… |
-| **Upgrades** | 8/10 | Low | The ShinAI (SHINJUKU) token mint has both its mint and freeze authorities revoked, preventing any future changes to token supply or account freeze status. The token is an SPL Token-2022, but does not… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a top 10 holder concentration of 26.02%, which is not considered highly concentrated. Total DEX liquidity stands at $31,825, which is moderate. The 24-hour volume is $224,516… |
+| **Upgrades** | 10/10 | Low | The ShinAI (SHINJUKU) token mint has both its mint and freeze authorities revoked, preventing any future changes to token supply or account freeze status. The token is an SPL Token-2022, but does not… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1574 buys / 2002 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: SAFEMOON
 ticker: SFM
 network: solana
-risk_score: 62
+risk_score: 35
 status: medium
 date: 2026-09-02
 ---
 
 # SAFEMOON (SFM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 62/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/safemoon-sol)
 
@@ -26,7 +26,7 @@ This audit of the SAFEMOON (SFM) SPL Token Mint identifies significant risks pri
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The SAFEMOON (SFM) token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked, preventing the creation of new tokens or freezing of existing accounts. No transfer hook… |
-| **Governance / Economics** | 1/10 | High | The token exhibits very low DEX liquidity, with only $9,816 available, making large trades highly susceptible to slippage. The trading pair is also very new, established only 2 days ago, which means… |
+| **Governance / Economics** | 2/10 | High | The token exhibits very low DEX liquidity, with only $9,816 available, making large trades highly susceptible to slippage. The trading pair is also very new, established only 2 days ago, which means… |
 | **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are permanently revoked, ensuring no further changes to supply or account freeze status. The token is an SPL Token-2022, but… |
 
 ## Security Findings
@@ -61,13 +61,13 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1360 buys / 1127 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

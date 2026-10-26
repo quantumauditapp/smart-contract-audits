@@ -2,14 +2,14 @@
 token: SIDE EYE BABY
 ticker: SIDEEYE
 network: solana
-risk_score: 56
+risk_score: 41
 status: medium
 date: 2026-09-04
 ---
 
 # SIDE EYE BABY (SIDEEYE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 56/100 — 🟡 Medium Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/side-eye-baby-sol)
 

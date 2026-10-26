@@ -25,8 +25,8 @@ The CrossChainERC20 contract implements a standard ERC20 token with minting and 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract utilizes the Solady ERC20 implementation, known for its gas efficiency and security, and includes explicit zero-address checks for minting and burning (7.2 Code Security). The `_BRIDGE`… |
-| **Governance / Economics** | 1/10 | High | The economic model is highly centralized, with all minting and burning controlled by a single `_BRIDGE` address (7.4 Economic). This introduces a significant single point of failure; a compromise of… |
+| **Technical** | 7/10 | Low | The contract utilizes the Solady ERC20 implementation, known for its gas efficiency and security, and includes explicit zero-address checks for minting and burning (7.2 Code Security). The `_BRIDGE`… |
+| **Governance / Economics** | 3/10 | High | The economic model is highly centralized, with all minting and burning controlled by a single `_BRIDGE` address (7.4 Economic). This introduces a significant single point of failure; a compromise of… |
 | **Upgrades** | 1/10 | High | The contract is not designed for direct upgradeability, as it does not implement a proxy pattern for itself (7.7 Upgrades). The use of `Initializable` is fundamentally flawed in this context, as the… |
 
 ## Proxy Upgrade Controls
@@ -46,39 +46,39 @@ The CrossChainERC20 contract implements a standard ERC20 token with minting and 
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 2 Medium · 🟢 1 Low_
-
-### `C-01` — Initialize Function Unusable Due to Constructor Call to `_disableInitializers()`  *(Severity: Critical · Status: Unresolved)*
-
-The `CrossChainERC20` contract's constructor calls `_disableInitializers()`. This sets the `_initializing` state variable to `2`, which prevents any subsequent calls to functions guarded by the `initializer` modifier. Consequently, the `initialize` function, crucial for setting the token's `_remoteToken`, `_name`, `_symbol`, and `_decimals`, can never be successfully called. This renders the contract non-functional as an ERC20 token with its intended metadata if deployed directly, as indicated by the `is_proxy: false` metadata.
-
-**Recommendation:** If the contract is intended for direct deployment and initialization, remove `_disableInitializers()` from the constructor. If it is intended solely as an implementation contract for a proxy, ensure this is clearly documented and the deployment strategy aligns with proxy patterns, and update the `is_proxy` metadata accordingly.
-
-
-### `H-01` — Immutable Bridge Address Lacks Operational Flexibility  *(Severity: High · Status: Unresolved)*
-
-The `_BRIDGE` address is set as `immutable` in the constructor. While this prevents unauthorized changes and provides strong security, it also means the bridge address cannot be updated. If the bridge contract needs to be upgraded, replaced due to a vulnerability, or if the underlying bridge architecture changes, there is no mechanism to update the `_BRIDGE` address in this token contract. This creates a single point of failure for operational continuity and limits future adaptability.
-
-**Recommendation:** Consider implementing a mechanism to allow the `_BRIDGE` address to be updated by a trusted entity (e.g., a multi-signature wallet or governance contract) through a time-locked process. This would provide necessary operational flexibility while maintaining security safeguards.
-
+_🟡 4 Medium · 🟢 1 Low_
 
 ### `M-01` — Centralization Risk with Single Bridge Control  *(Severity: Medium · Status: Unresolved)*
 
-The entire minting and burning capability of the token is controlled by a single `_BRIDGE` address. While this is the intended design for a cross-chain token, it introduces a significant centralization risk. A compromise of the `_BRIDGE` contract or its controlling private keys would allow an attacker to mint an arbitrary amount of tokens or burn existing tokens, leading to a complete loss of value for token holders.
+Not confirmed by static analysis (the model's own reading of the source). The entire minting and burning capability of the token is controlled by a single `_BRIDGE` address. While this is the intended design for a cross-chain token, it introduces a significant centralization risk. A compromise of the `_BRIDGE` contract or its controlling private keys would allow an attacker to mint an arbitrary amount of tokens or burn existing tokens, leading to a complete loss of value for token holders.
 
 **Recommendation:** Ensure the `_BRIDGE` contract itself is highly secure, ideally controlled by a robust multi-signature wallet, a decentralized autonomous organization (DAO), or a battle-tested bridge protocol. Implement comprehensive monitoring and emergency response plans for the bridge.
 
 
 ### `M-02` — Lack of Emergency Pause Mechanism  *(Severity: Medium · Status: Unresolved)*
 
-The contract does not include any mechanism to pause critical functions such as minting, burning, or transfers in case of an emergency (e.g., a bridge exploit, critical vulnerability, or market manipulation). Without a pause mechanism, an ongoing attack could lead to irreversible damage before countermeasures can be deployed.
+Not confirmed by static analysis (the model's own reading of the source). The contract does not include any mechanism to pause critical functions such as minting, burning, or transfers in case of an emergency (e.g., a bridge exploit, critical vulnerability, or market manipulation). Without a pause mechanism, an ongoing attack could lead to irreversible damage before countermeasures can be deployed.
 
 **Recommendation:** Implement a `Pausable` mechanism (e.g., from OpenZeppelin or Solady) that allows a trusted entity (like the `_BRIDGE` or a separate admin) to pause and unpause critical functions (`mint`, `burn`, `transfer`, `transferFrom`, `approve`). This should ideally be controlled by a multi-signature wallet or governance.
 
 
+### `M-03` — Initialize Function Unusable Due to Constructor Call to `_disableInitializers()`  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `CrossChainERC20` contract's constructor calls `_disableInitializers()`. This sets the `_initializing` state variable to `2`, which prevents any subsequent calls to functions guarded by the `initializer` modifier. Consequently, the `initialize` function, crucial for setting the token's `_remoteToken`, `_name`, `_symbol`, and `_decimals`, can never be successfully called. This renders the contract non-functional as an ERC20 token with its intended metadata if deployed directly, as indicated by the `is_proxy: false` metadata.
+
+**Recommendation:** If the contract is intended for direct deployment and initialization, remove `_disableInitializers()` from the constructor. If it is intended solely as an implementation contract for a proxy, ensure this is clearly documented and the deployment strategy aligns with proxy patterns, and update the `is_proxy` metadata accordingly.
+
+
+### `M-04` — Immutable Bridge Address Lacks Operational Flexibility  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_BRIDGE` address is set as `immutable` in the constructor. While this prevents unauthorized changes and provides strong security, it also means the bridge address cannot be updated. If the bridge contract needs to be upgraded, replaced due to a vulnerability, or if the underlying bridge architecture changes, there is no mechanism to update the `_BRIDGE` address in this token contract. This creates a single point of failure for operational continuity and limits future adaptability.
+
+**Recommendation:** Consider implementing a mechanism to allow the `_BRIDGE` address to be updated by a trusted entity (e.g., a multi-signature wallet or governance contract) through a time-locked process. This would provide necessary operational flexibility while maintaining security safeguards.
+
+
 ### `L-01` — Redundant Zero Address Checks for `_mint` and `_burn`  *(Severity: Low · Status: Unresolved)*
 
-The `CrossChainERC20` contract explicitly checks for `to != address(0)` in `mint` and `from != address(0)` in `burn`. While these checks are good practice, the underlying Solady `ERC20` implementation notes that it "WILL NOT revert for such actions" for performance. This means the explicit checks in `CrossChainERC20` are necessary to enforce the desired behavior, but it's an observation on the interaction between the custom contract and the library's design philosophy.
+Not confirmed by static analysis (the model's own reading of the source). The `CrossChainERC20` contract explicitly checks for `to != address(0)` in `mint` and `from != address(0)` in `burn`. While these checks are good practice, the underlying Solady `ERC20` implementation notes that it "WILL NOT revert for such actions" for performance. This means the explicit checks in `CrossChainERC20` are necessary to enforce the desired behavior, but it's an observation on the interaction between the custom contract and the library's design philosophy.
 
 **Recommendation:** No change is strictly needed as the contract correctly implements the desired checks. This finding serves as an informational note regarding the library's behavior versus the contract's explicit requirements.
 
@@ -121,11 +121,11 @@ The `CrossChainERC20` contract explicitly checks for `to != address(0)` in `mint
 
 ### Is Solana a scam?
 
-Based on automated analysis, Solana scores 63/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Solana scores 53/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Solana safe to buy?
 
-Our scanner flagged a risk score of 63/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 53/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Solana been audited?
 

@@ -2,14 +2,14 @@
 token: Sons
 ticker: SONS
 network: solana
-risk_score: 37
-status: medium
+risk_score: 20
+status: low
 date: 2026-09-12
 ---
 
 # Sons (SONS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sons-sol)
 
@@ -25,9 +25,9 @@ This audit of the Sons (SONS) SPL Token Mint identifies a medium risk due to the
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Sons token is an SPL Token-2022 mint with its Mint Authority and Freeze Authority both revoked, ensuring no new tokens can be minted and no accounts can be frozen. It does not utilize the… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 43.87% of the supply, which is below the threshold for high concentration. Total DEX liquidity is $25,000, which is moderate.… |
-| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked, meaning the token's supply and account freeze status are immutable. The token's metadata is not mutable (`metadata_mutable: False`)… |
+| **Technical** | 10/10 | Low | The Sons token is an SPL Token-2022 mint with its Mint Authority and Freeze Authority both revoked, ensuring no new tokens can be minted and no accounts can be frozen. It does not utilize the… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a holder concentration where the top 10 accounts hold 43.87% of the supply, which is below the threshold for high concentration. Total DEX liquidity is $25,000, which is moderate.… |
+| **Upgrades** | 10/10 | Low | The Mint Authority and Freeze Authority are both revoked, meaning the token's supply and account freeze status are immutable. The token's metadata is not mutable (`metadata_mutable: False`)… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair for Sons (SONS) was created 2 days ago. This short duration provide
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1254 buys / 1357 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for Sons (SONS) was created 2 days ago. This short duration provide
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

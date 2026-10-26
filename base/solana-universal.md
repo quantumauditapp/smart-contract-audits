@@ -2,14 +2,14 @@
 token: Solana (Universal)
 ticker: USOL
 network: base
-risk_score: 45
+risk_score: 42
 status: medium
 date: 2026-08-11
 ---
 
 # Solana (Universal) (USOL) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solana-universal-base)
 
@@ -25,8 +25,8 @@ The audit of the WrappedAssetV2 contract, serving as the implementation for a Be
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for ERC20 and access control, enhancing code security (7.2). The custom blacklist logic within `_update` is correctly implemented to… |
-| **Governance / Economics** | 4/10 | Medium | The contract implements strong access control (7.3) using `AccessControlDefaultAdminRulesUpgradeable` with a 1-day delay for admin role transfers, which is a good security practice. However, the… |
+| **Technical** | 7/10 | Low | The contract leverages battle-tested OpenZeppelin libraries for ERC20 and access control, enhancing code security (7.2). The custom blacklist logic within `_update` is correctly implemented to… |
+| **Governance / Economics** | 6/10 | Medium | The contract implements strong access control (7.3) using `AccessControlDefaultAdminRulesUpgradeable` with a 1-day delay for admin role transfers, which is a good security practice. However, the… |
 | **Upgrades** | 1/10 | High | The contract is designed as an upgradeable implementation for a BeaconProxy, correctly using `Initializable` and calling `_disableInitializers()` in its constructor. This setup generally supports… |
 
 ## Proxy Upgrade Controls
@@ -46,46 +46,46 @@ The audit of the WrappedAssetV2 contract, serving as the implementation for a Be
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · ⚪ 3 Informational_
-
-### `C-01` — Critical: Custom Storage Pattern Poses Upgrade Risk  *(Severity: Critical · Status: Unresolved)*
-
-The `WrappedAssetV2` contract uses a custom storage pattern where `WrappedAssetV2Storage` is explicitly mapped to a fixed `bytes32` slot (`WrappedAssetV2StorageLocation`) using inline assembly. This approach deviates from standard upgradeable contract storage management (e.g., using OpenZeppelin's `ERC1967Upgrade` or explicit storage gaps). If a future upgrade introduces new state variables or if OpenZeppelin's internal storage layout changes in a way that conflicts with this hardcoded slot, it could lead to storage collisions, data corruption, or loss of funds for users. This is a severe upgrade safety issue (7.1, 7.7).
-
-**Recommendation:** Refactor the storage to use OpenZeppelin's recommended upgradeable storage patterns. This typically involves inheriting from `UUPSUpgradeable` or `TransparentUpgradeableProxy` and defining storage variables directly in the contract, allowing the compiler to manage storage slots. If custom storage is absolutely necessary, ensure it is placed within an explicit storage gap to prevent future collisions.
-
-
-### `H-01` — High: Centralized Control Over Token Supply and User Funds  *(Severity: High · Status: Unresolved)*
-
-The `mint` and `burn` functions are restricted to the `MERCHANT_CONTROLLER`, granting this single address complete control over the token's supply. Additionally, the `setUserBlacklist` function, restricted to the `RESPONDER_ROLE`, allows blacklisting any user, effectively freezing their funds or preventing them from receiving tokens. This high degree of centralization (7.3, 7.4) introduces significant economic risk, as a compromise or malicious action by these privileged roles could lead to arbitrary minting, burning, or censorship of user funds.
-
-**Recommendation:** Ensure that the `MERCHANT_CONTROLLER` and `RESPONDER_ROLE` are controlled by robust, multi-signature wallets with high thresholds and strict operational procedures. Clearly document the scope, responsibilities, and limitations of these roles. Consider implementing time locks or additional governance checks for critical actions like large mints or widespread blacklisting.
-
+_🟡 3 Medium · ⚪ 3 Informational_
 
 ### `M-01` — Medium: Immutable MERCHANT_CONTROLLER Address  *(Severity: Medium · Status: Unresolved)*
 
-The `MERCHANT_CONTROLLER` address is set as `immutable` in the constructor. This means that if the `MERCHANT_CONTROLLER` address needs to be changed in the future (e.g., due to compromise, operational changes, or an upgrade of the controller itself), it cannot be updated without deploying an entirely new implementation contract and performing an upgrade. This limits operational flexibility and introduces a single point of failure (7.3, 7.8).
+Not confirmed by static analysis (the model's own reading of the source). The `MERCHANT_CONTROLLER` address is set as `immutable` in the constructor. This means that if the `MERCHANT_CONTROLLER` address needs to be changed in the future (e.g., due to compromise, operational changes, or an upgrade of the controller itself), it cannot be updated without deploying an entirely new implementation contract and performing an upgrade. This limits operational flexibility and introduces a single point of failure (7.3, 7.8).
 
 **Recommendation:** Consider making the `MERCHANT_CONTROLLER` address configurable via an access-controlled function, allowing it to be updated by the contract's admin role (e.g., the multisig). This would provide greater operational flexibility and resilience without requiring a full contract upgrade for a simple address change.
 
 
+### `M-02` — Critical: Custom Storage Pattern Poses Upgrade Risk  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `WrappedAssetV2` contract uses a custom storage pattern where `WrappedAssetV2Storage` is explicitly mapped to a fixed `bytes32` slot (`WrappedAssetV2StorageLocation`) using inline assembly. This approach deviates from standard upgradeable contract storage management (e.g., using OpenZeppelin's `ERC1967Upgrade` or explicit storage gaps). If a future upgrade introduces new state variables or if OpenZeppelin's internal storage layout changes in a way that conflicts with this hardcoded slot, it could lead to storage collisions, data corruption, or loss of funds for users. This is a severe upgrade safety issue (7.1, 7.7
+
+**Recommendation:** Refactor the storage to use OpenZeppelin's recommended upgradeable storage patterns. This typically involves inheriting from `UUPSUpgradeable` or `TransparentUpgradeableProxy` and defining storage variables directly in the contract, allowing the compiler to manage storage slots. If custom storage is absolutely necessary, ensure it is placed within an explicit storage gap to prevent future collisions.
+
+
+### `M-03` — High: Centralized Control Over Token Supply and User Funds  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint` and `burn` functions are restricted to the `MERCHANT_CONTROLLER`, granting this single address complete control over the token's supply. Additionally, the `setUserBlacklist` function, restricted to the `RESPONDER_ROLE`, allows blacklisting any user, effectively freezing their funds or preventing them from receiving tokens. This high degree of centralization (7.3, 7.4) introduces significant economic risk, as a compromise or malicious action by these privileged roles could lead to arbitrary minting, burning, or censorship of user funds.
+
+**Recommendation:** Ensure that the `MERCHANT_CONTROLLER` and `RESPONDER_ROLE` are controlled by robust, multi-signature wallets with high thresholds and strict operational procedures. Clearly document the scope, responsibilities, and limitations of these roles. Consider implementing time locks or additional governance checks for critical actions like large mints or widespread blacklisting.
+
+
 ### `I-01` — Informational: Blacklist Logic Clarity  *(Severity: Informational · Status: Unresolved)*
 
-The `_update` function checks `$.userBlacklist[msg.sender] \|\| $.userBlacklist[from] \|\| $.userBlacklist[to]`. While functionally correct, the check for `msg.sender` is often redundant when `msg.sender` is also `from` (as in a direct `transfer`). This does not introduce a vulnerability but could be slightly optimized for clarity or gas if desired (7.2).
+Not confirmed by static analysis (the model's own reading of the source). The `_update` function checks `$.userBlacklist[msg.sender] \|\| $.userBlacklist[from] \|\| $.userBlacklist[to]`. While functionally correct, the check for `msg.sender` is often redundant when `msg.sender` is also `from` (as in a direct `transfer`). This does not introduce a vulnerability but could be slightly optimized for clarity or gas if desired (7.2).
 
 **Recommendation:** No change is strictly required as the logic is correct. For minor optimization, one could consider if `msg.sender` is always `from` in the context of `_update` calls from `transfer` and `transferFrom`, and potentially simplify the condition. However, the current implementation is safe.
 
 
 ### `I-02` — Informational: Use of AccessControlDefaultAdminRulesUpgradeable with Delay  *(Severity: Informational · Status: Unresolved)*
 
-The contract correctly utilizes `AccessControlDefaultAdminRulesUpgradeable` with a `ADMIN_TRANSFER_DELAY` of 1 day. This is a good security practice (7.3, 7.5) as it introduces a time delay for critical administrative role changes, providing a window for detection and potential mitigation of malicious or erroneous actions.
+Not confirmed by static analysis (the model's own reading of the source). The contract correctly utilizes `AccessControlDefaultAdminRulesUpgradeable` with a `ADMIN_TRANSFER_DELAY` of 1 day. This is a good security practice (7.3, 7.5) as it introduces a time delay for critical administrative role changes, providing a window for detection and potential mitigation of malicious or erroneous actions.
 
 **Recommendation:** Maintain this security feature. Ensure the `ADMIN_TRANSFER_DELAY` is appropriate for the operational security requirements of the protocol.
 
 
 ### `I-03` — Informational: Correct Initialization Prevention  *(Severity: Informational · Status: Unresolved)*
 
-The `WrappedAssetV2` constructor correctly calls `_disableInitializers()`. This prevents the implementation contract from being initialized directly, which is a crucial security measure for upgradeable contracts deployed behind a proxy (7.7).
+Not confirmed by static analysis (the model's own reading of the source). The `WrappedAssetV2` constructor correctly calls `_disableInitializers()`. This prevents the implementation contract from being initialized directly, which is a crucial security measure for upgradeable contracts deployed behind a proxy (7.7).
 
 **Recommendation:** No action required. This is a best practice and correctly implemented.
 

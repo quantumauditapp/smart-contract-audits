@@ -2,14 +2,14 @@
 token: SomniaOFT
 ticker: SOMI
 network: bsc
-risk_score: 64
+risk_score: 42
 status: medium
 date: 2026-09-01
 ---
 
 # SomniaOFT (SOMI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 64/100 — 🟡 Medium Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/somniaoft-bsc)
 
@@ -38,32 +38,32 @@ The SomniaOFT contract implements an Omnichain Fungible Token (OFT) utilizing La
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low_
-
-### `H-01` — Centralized Control over LayerZero Configurations  *(Severity: High · Status: Unresolved)*
-
-The `Ownable` owner (a 3/5 multisig) has extensive control over critical LayerZero parameters within the `OFT` base contract. This includes the ability to set trusted remotes, message libraries, and various configuration parameters (e.g., `setTrustedRemote`, `setSendVersion`, `setReceiveVersion`, `setMinDstGas`). While a multisig mitigates some risk, a compromise or mismanagement of the multisig could lead to severe operational issues, such as disabling cross-chain transfers, routing messages through malicious endpoints, or causing funds to become stuck.
-
-**Recommendation:** Implement robust operational security procedures for the owner multisig, including strict key management, multi-factor authentication for signers, and clear governance processes for approving configuration changes. Regularly audit all LayerZero configurations and ensure that `trustedRemote` addresses correspond to legitimate and secure endpoints. Consider implementing time-locks or additional governance checks for highly sensitive configuration changes.
-
+_🟡 3 Medium · 🟢 1 Low_
 
 ### `M-01` — Reliance on External LayerZero Infrastructure  *(Severity: Medium · Status: Unresolved)*
 
-The core cross-chain functionality of the SomniaOFT token is entirely dependent on the security, availability, and correct operation of the LayerZero endpoint and its associated message libraries (7.6 External). Any vulnerability, outage, or malicious activity within the LayerZero network or its specific endpoint implementations could directly impact the ability to transfer SomniaOFT tokens across chains, potentially leading to asset loss or service disruption.
+Not confirmed by static analysis (the model's own reading of the source). The core cross-chain functionality of the SomniaOFT token is entirely dependent on the security, availability, and correct operation of the LayerZero endpoint and its associated message libraries (7.6 External). Any vulnerability, outage, or malicious activity within the LayerZero network or its specific endpoint implementations could directly impact the ability to transfer SomniaOFT tokens across chains, potentially leading to asset loss or service disruption.
 
 **Recommendation:** Acknowledge and monitor the inherent risks associated with relying on external bridge infrastructure. Implement robust monitoring for LayerZero endpoint health, transaction finality, and any security announcements from LayerZero. Develop contingency plans for scenarios involving LayerZero outages or security incidents, such as pausing cross-chain transfers if necessary.
 
 
 ### `M-02` — Operational Risk from LayerZero Configuration Errors  *(Severity: Medium · Status: Unresolved)*
 
-The owner multisig is responsible for configuring various LayerZero parameters. Incorrect configuration, such as setting an invalid `trustedRemote` address, misconfiguring `minDstGas`, or setting incompatible message library versions, could lead to cross-chain transactions failing, tokens being stuck in transit, or unexpected fee consumption (7.8 Operations). These errors, while not necessarily security vulnerabilities, can significantly impact user experience and protocol functionality.
+Not confirmed by static analysis (the model's own reading of the source). The owner multisig is responsible for configuring various LayerZero parameters. Incorrect configuration, such as setting an invalid `trustedRemote` address, misconfiguring `minDstGas`, or setting incompatible message library versions, could lead to cross-chain transactions failing, tokens being stuck in transit, or unexpected fee consumption (7.8 Operations). These errors, while not necessarily security vulnerabilities, can significantly impact user experience and protocol functionality.
 
 **Recommendation:** Establish a rigorous testing and verification process for all LayerZero configuration changes before deployment to production. Maintain clear documentation of all configuration parameters and their intended values. Implement automated checks or simulations where possible to validate the correctness of new configurations. Ensure that the team managing these configurations has a deep understanding of LayerZero's operational requirements.
 
 
+### `M-03` — Centralized Control over LayerZero Configurations  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `Ownable` owner (a 3/5 multisig) has extensive control over critical LayerZero parameters within the `OFT` base contract. This includes the ability to set trusted remotes, message libraries, and various configuration parameters (e.g., `setTrustedRemote`, `setSendVersion`, `setReceiveVersion`, `setMinDstGas`). While a multisig mitigates some risk, a compromise or mismanagement of the multisig could lead to severe operational issues, such as disabling cross-chain transfers, routing messages through malicious endpoints, or causing funds to become stuck.
+
+**Recommendation:** Implement robust operational security procedures for the owner multisig, including strict key management, multi-factor authentication for signers, and clear governance processes for approving configuration changes. Regularly audit all LayerZero configurations and ensure that `trustedRemote` addresses correspond to legitimate and secure endpoints. Consider implementing time-locks or additional governance checks for highly sensitive configuration changes.
+
+
 ### `L-01` — Constructor Parameter `_delegate` Dual Role  *(Severity: Low · Status: Unresolved)*
 
-The `_delegate` address passed to the constructor is used to initialize both the `OFT` base contract and the `Ownable` base contract. This means the same address becomes the LayerZero delegate and the contract owner. While this is a common pattern and not a direct vulnerability, it consolidates significant control under a single entity (the multisig in this case).
+Not confirmed by static analysis (the model's own reading of the source). The `_delegate` address passed to the constructor is used to initialize both the `OFT` base contract and the `Ownable` base contract. This means the same address becomes the LayerZero delegate and the contract owner. While this is a common pattern and not a direct vulnerability, it consolidates significant control under a single entity (the multisig in this case).
 
 **Recommendation:** Ensure that the `_delegate` address is always a highly secure, multi-signature wallet or a well-governed contract. Confirm that the team understands the full scope of control granted to this address through both the `Ownable` and `OFT` roles. No code change is strictly necessary given the use of a multisig, but awareness is key.
 

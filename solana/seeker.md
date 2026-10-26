@@ -2,14 +2,14 @@
 token: Seeker
 ticker: SKR
 network: solana
-risk_score: 57
+risk_score: 40
 status: medium
 date: 2026-08-30
 ---
 
 # Seeker (SKR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 57/100 — 🟡 Medium Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/seeker-sol)
 
@@ -25,9 +25,9 @@ This audit of the Seeker (SKR) SPL token mint reveals critical risks primarily d
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Seeker (SKR) token is implemented using the classic spl-token program. A critical finding is the active Mint Authority, held by FMNn5sorEBbEoGQGrh7y3xSbYGt116F12FpL2VTsohiw, which enables the… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits a medium level of holder concentration, with the top 10 token accounts holding 60.1% of the total supply. This concentration could lead to price volatility from large sell-offs.… |
-| **Upgrades** | 4/10 | Medium | The Mint Authority, located at FMNn5sorEBbEoGQGrh7y3xSbYGt116F12FpL2VTsohiw, remains active, posing a significant risk as it allows for arbitrary supply increases. Conversely, the Freeze Authority… |
+| **Technical** | 8/10 | Low | The Seeker (SKR) token is implemented using the classic spl-token program. A critical finding is the active Mint Authority, held by FMNn5sorEBbEoGQGrh7y3xSbYGt116F12FpL2VTsohiw, which enables the… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a medium level of holder concentration, with the top 10 token accounts holding 60.1% of the total supply. This concentration could lead to price volatility from large sell-offs.… |
+| **Upgrades** | 6/10 | Medium | The Mint Authority, located at FMNn5sorEBbEoGQGrh7y3xSbYGt116F12FpL2VTsohiw, remains active, posing a significant risk as it allows for arbitrary supply increases. Conversely, the Freeze Authority… |
 
 ## Security Findings
 
@@ -74,7 +74,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -83,7 +83,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

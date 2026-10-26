@@ -2,14 +2,14 @@
 token: Sekuya
 ticker: SKYA
 network: base
-risk_score: 55
+risk_score: 40
 status: medium
 date: 2026-09-03
 ---
 
 # Sekuya (SKYA) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 55/100 — 🟡 Medium Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sekuya-base)
 
@@ -25,8 +25,8 @@ The SekuyaToken contract is an ERC20 token with burnable and access control feat
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract demonstrates strong technical quality (7.2 Code Security) by leveraging battle-tested OpenZeppelin libraries for ERC20, ERC20Burnable, and AccessControl functionalities. This… |
-| **Governance / Economics** | 3/10 | High | The economic model (7.4 Economic) of SekuyaToken relies heavily on a centralized `MINTER_ROLE`, which can mint tokens up to a `MAX_SUPPLY`. This introduces a significant risk of token dilution if the… |
+| **Technical** | 8/10 | Low | The contract demonstrates strong technical quality (7.2 Code Security) by leveraging battle-tested OpenZeppelin libraries for ERC20, ERC20Burnable, and AccessControl functionalities. This… |
+| **Governance / Economics** | 4/10 | Medium | The economic model (7.4 Economic) of SekuyaToken relies heavily on a centralized `MINTER_ROLE`, which can mint tokens up to a `MAX_SUPPLY`. This introduces a significant risk of token dilution if the… |
 | **Upgrades** | 4/10 | Medium | The SekuyaToken contract is deployed as a standard implementation contract and does not utilize any proxy patterns (7.7 Upgrades). This means the contract's logic is immutable after deployment. While… |
 
 ## LP Distribution
@@ -39,32 +39,32 @@ The SekuyaToken contract is an ERC20 token with burnable and access control feat
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · ⚪ 2 Informational_
-
-### `H-01` — Centralized Minting Authority  *(Severity: High · Status: Unresolved)*
-
-The `MINTER_ROLE` has the authority to mint new tokens up to the `MAX_SUPPLY` (1 billion tokens). This centralized control over the token supply introduces a significant economic risk, as the token supply can be increased by a single entity, potentially leading to dilution for existing token holders if not managed transparently and responsibly. This power is granted to the deployer in the constructor.
-
-**Recommendation:** Implement a multi-signature wallet for the `MINTER_ROLE` to ensure that minting operations require consensus from multiple trusted parties. Clearly communicate the minting policy and schedule to the community. Consider mechanisms to decentralize or restrict minting power further in the future if appropriate for the project's roadmap.
-
+_🟡 2 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Single Point of Failure for Administrative Roles  *(Severity: Medium · Status: Unresolved)*
 
-The contract's constructor grants both the `DEFAULT_ADMIN_ROLE` and `MINTER_ROLE` to the deployer's address (`_msgSender()`). This design creates a single point of failure for all administrative functions and token minting. If the private key associated with this single address is compromised, an attacker could gain full control over role management (granting/revoking any role) and the ability to mint tokens up to the maximum supply.
+Not confirmed by static analysis (the model's own reading of the source). The contract's constructor grants both the `DEFAULT_ADMIN_ROLE` and `MINTER_ROLE` to the deployer's address (`_msgSender()`). This design creates a single point of failure for all administrative functions and token minting. If the private key associated with this single address is compromised, an attacker could gain full control over role management (granting/revoking any role) and the ability to mint tokens up to the maximum supply.
 
 **Recommendation:** Transfer the `DEFAULT_ADMIN_ROLE` to a robust multi-signature wallet immediately after deployment. This will distribute control and require multiple approvals for critical administrative actions, significantly reducing the risk associated with a single compromised key.
 
 
+### `M-02` — Centralized Minting Authority  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `MINTER_ROLE` has the authority to mint new tokens up to the `MAX_SUPPLY` (1 billion tokens). This centralized control over the token supply introduces a significant economic risk, as the token supply can be increased by a single entity, potentially leading to dilution for existing token holders if not managed transparently and responsibly. This power is granted to the deployer in the constructor.
+
+**Recommendation:** Implement a multi-signature wallet for the `MINTER_ROLE` to ensure that minting operations require consensus from multiple trusted parties. Clearly communicate the minting policy and schedule to the community. Consider mechanisms to decentralize or restrict minting power further in the future if appropriate for the project's roadmap.
+
+
 ### `I-01` — Non-Upgradeable Contract  *(Severity: Informational · Status: Unresolved)*
 
-The `SekuyaToken` contract is deployed as a standard implementation contract and does not utilize any proxy patterns (e.g., UUPS, Transparent). This means that the contract's logic is immutable after deployment. Any future bug fixes, feature enhancements, or changes to the token's economic model would necessitate deploying an entirely new contract and migrating existing token holders, which can be a complex and costly process.
+Not confirmed by static analysis (the model's own reading of the source). The `SekuyaToken` contract is deployed as a standard implementation contract and does not utilize any proxy patterns (e.g., UUPS, Transparent). This means that the contract's logic is immutable after deployment. Any future bug fixes, feature enhancements, or changes to the token's economic model would necessitate deploying an entirely new contract and migrating existing token holders, which can be a complex and costly process.
 
 **Recommendation:** While not a vulnerability, it's important for the project team to be aware of this limitation. For future projects or if flexibility is a high priority, consider implementing an upgradeable proxy pattern (e.g., UUPS) to allow for future contract modifications without requiring a full redeployment and migration.
 
 
 ### `I-02` — Hardcoded Maximum Supply  *(Severity: Informational · Status: Unresolved)*
 
-The `MAX_SUPPLY` for the token is defined as a `public constant` within the contract. While this provides clarity and prevents accidental changes, it means the maximum possible token supply cannot be adjusted after deployment without deploying a new contract. This rigidity might limit future economic model adjustments if the project's needs evolve.
+Not confirmed by static analysis (the model's own reading of the source). The `MAX_SUPPLY` for the token is defined as a `public constant` within the contract. While this provides clarity and prevents accidental changes, it means the maximum possible token supply cannot be adjusted after deployment without deploying a new contract. This rigidity might limit future economic model adjustments if the project's needs evolve.
 
 **Recommendation:** Ensure that the `MAX_SUPPLY` value is thoroughly reviewed and aligns with the long-term vision for the token's economics. If future flexibility for supply adjustments is desired, consider making the `MAX_SUPPLY` a state variable that can be modified by a privileged role (e.g., `DEFAULT_ADMIN_ROLE`) under strict governance, though this introduces its own set of risks.
 

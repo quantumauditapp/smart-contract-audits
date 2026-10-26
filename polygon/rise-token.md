@@ -134,11 +134,11 @@ The owner can change buy limits for specific addresses, allowing for discriminat
 
 ### Is RISE Token a scam?
 
-Based on automated analysis, RISE Token scores 54/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, RISE Token scores 84/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is RISE Token safe to buy?
 
-Our scanner flagged a risk score of 54/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 84/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has RISE Token been audited?
 

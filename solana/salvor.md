@@ -2,14 +2,14 @@
 token: Salvor
 ticker: SALVOR
 network: solana
-risk_score: 16
+risk_score: 0
 status: low
 date: 2026-09-21
 ---
 
 # Salvor (SALVOR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 16/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/salvor-sol)
 
@@ -26,8 +26,8 @@ The Salvor (SALVOR) SPL token mint has revoked its mint and freeze authorities, 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Salvor (SALVOR) token is an SPL token mint operating on the Solana blockchain using the standard `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked, indicating… |
-| **Governance / Economics** | 6/10 | Medium | The token's DEX pair is very new, having been created only 1 day ago, which limits the ability to assess long-term market behavior. Current liquidity stands at $67,380, with a 24-hour trading volume… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, which prevents further minting or freezing of tokens. However, the `metadata_mutable` flag is set to `True`… |
+| **Governance / Economics** | 9/10 | Low | The token's DEX pair is very new, having been created only 1 day ago, which limits the ability to assess long-term market behavior. Current liquidity stands at $67,380, with a 24-hour trading volume… |
+| **Upgrades** | 10/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, which prevents further minting or freezing of tokens. However, the `metadata_mutable` flag is set to `True`… |
 
 ## Security Findings
 
@@ -61,13 +61,13 @@ Token name, symbol, or image can be changed post-launch.
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1536 buys / 1069 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: Rise of a King
 ticker: KIO
 network: solana
-risk_score: 43
-status: medium
+risk_score: 26
+status: low
 date: 2026-08-11
 ---
 
 # Rise of a King (KIO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rise-of-a-king-sol)
 
@@ -25,9 +25,9 @@ The Rise of a King (KIO) SPL Token Mint has revoked both mint and freeze authori
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Rise of a King (KIO) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a moderate holder concentration, with the top 10 accounts holding 20.84% of the supply, which is below typical thresholds for high risk. Total DEX liquidity stands at $119,450… |
-| **Upgrades** | 8/10 | Low | The token mint's core authorities, including mint and freeze, are permanently revoked, preventing any future changes to the token's supply or account freeze status. Key Token-2022 extensions such as… |
+| **Technical** | 10/10 | Low | The Rise of a King (KIO) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a moderate holder concentration, with the top 10 accounts holding 20.84% of the supply, which is below typical thresholds for high risk. Total DEX liquidity stands at $119,450… |
+| **Upgrades** | 10/10 | Low | The token mint's core authorities, including mint and freeze, are permanently revoked, preventing any future changes to the token's supply or account freeze status. Key Token-2022 extensions such as… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4511 buys / 4639 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

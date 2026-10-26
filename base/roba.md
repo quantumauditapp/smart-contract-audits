@@ -2,14 +2,14 @@
 token: Roba
 ticker: ROBA
 network: base
-risk_score: 20
+risk_score: 16
 status: low
 date: 2026-09-22
 ---
 
 # Roba (ROBA) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 20/100 — 🟢 Low Risk**
+> **Risk Score: 16/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/roba-base)
 
@@ -42,28 +42,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Immutability and Fixed Supply  *(Severity: Low · Status: Unresolved)*
 
-The token's total supply is fixed at deployment (1,000,000,000 ROBA) and minted entirely to a single recipient. There are no functions to mint additional tokens or modify the supply post-deployment. While this ensures a predictable token economy and prevents inflationary attacks, it also limits any future flexibility for tokenomics adjustments or ecosystem incentives.
+Not confirmed by static analysis (the model's own reading of the source). The token's total supply is fixed at deployment (1,000,000,000 ROBA) and minted entirely to a single recipient. There are no functions to mint additional tokens or modify the supply post-deployment. While this ensures a predictable token economy and prevents inflationary attacks, it also limits any future flexibility for tokenomics adjustments or ecosystem incentives.
 
 **Recommendation:** This is a design choice. Ensure that the fixed supply and initial distribution strategy align with the long-term vision and economic model of the project. If future flexibility is desired, a different token design with controlled minting/burning mechanisms would be required.
 
 
 ### `L-02` — Absence of Administrative Roles  *(Severity: Low · Status: Unresolved)*
 
-The contract does not implement any administrative roles such as an owner, pauser, minter, or blacklister. This design choice enhances decentralization by removing central points of control and potential attack vectors associated with privileged roles. However, it also means that no emergency actions (e.g., pausing transfers in case of a critical vulnerability or blacklisting malicious addresses) can be taken post-deployment.
+Not confirmed by static analysis (the model's own reading of the source). The contract does not implement any administrative roles such as an owner, pauser, minter, or blacklister. This design choice enhances decentralization by removing central points of control and potential attack vectors associated with privileged roles. However, it also means that no emergency actions (e.g., pausing transfers in case of a critical vulnerability or blacklisting malicious addresses) can be taken post-deployment.
 
 **Recommendation:** This is a deliberate design choice for decentralization. Projects should be fully aware of the implications: the contract is immutable and unmanageable after deployment. If emergency control or future administrative capabilities are deemed necessary, a different contract architecture with appropriate access control mechanisms should be considered.
 
 
 ### `I-01` — Standard OpenZeppelin Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The Roba contract is a direct implementation of ERC20, ERC20Burnable, and ERC20Permit using battle-tested OpenZeppelin libraries. This approach significantly reduces the risk of common smart contract vulnerabilities, as the underlying components have undergone extensive audits and community review.
+Not confirmed by static analysis (the model's own reading of the source). The Roba contract is a direct implementation of ERC20, ERC20Burnable, and ERC20Permit using battle-tested OpenZeppelin libraries. This approach significantly reduces the risk of common smart contract vulnerabilities, as the underlying components have undergone extensive audits and community review.
 
 **Recommendation:** No specific recommendation is needed for this finding, as it highlights a strength. Continue to monitor OpenZeppelin updates for any critical security patches, although direct contract updates are not possible for this immutable contract.
 
 
 ### `I-02` — ERC20Permit Feature for Gasless Approvals  *(Severity: Informational · Status: Unresolved)*
 
-The inclusion of the `ERC20Permit` extension allows users to approve token spending by signing an off-chain message, enabling gasless approvals. This improves user experience by separating the approval action from the on-chain transaction. OpenZeppelin's implementation correctly uses nonces to prevent replay attacks, but users must still handle signed messages securely.
+Not confirmed by static analysis (the model's own reading of the source). The inclusion of the `ERC20Permit` extension allows users to approve token spending by signing an off-chain message, enabling gasless approvals. This improves user experience by separating the approval action from the on-chain transaction. OpenZeppelin's implementation correctly uses nonces to prevent replay attacks, but users must still handle signed messages securely.
 
 **Recommendation:** Educate users about the `permit` function, its benefits, and the importance of securing their private keys and being cautious about signing messages. Ensure any front-end interfaces interacting with `permit` clearly explain the implications of signing such transactions.
 

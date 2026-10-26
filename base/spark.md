@@ -2,14 +2,14 @@
 token: SPARK
 ticker: SPARK
 network: base
-risk_score: 14
+risk_score: 12
 status: low
 date: 2026-08-30
 ---
 
 # SPARK (SPARK) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 14/100 — 🟢 Low Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spark-base)
 
@@ -41,28 +41,28 @@ _🟢 1 Low · ⚪ 3 Informational_
 
 ### `L-01` — `permit` Function Transaction Front-Running  *(Severity: Low · Status: Unresolved)*
 
-The `permit` function, while enabling gasless approvals, is susceptible to front-running (7.2 Code Security). A malicious actor monitoring the mempool could observe a signed `permit` message, and if the `deadline` allows, submit their own transaction with a higher gas price to approve and then spend the tokens before the legitimate transaction confirms. This is a known characteristic of the ERC20Permit standard and not a bug in the implementation itself, but a risk for users.
+Not confirmed by static analysis (the model's own reading of the source). The `permit` function, while enabling gasless approvals, is susceptible to front-running (7.2 Code Security). A malicious actor monitoring the mempool could observe a signed `permit` message, and if the `deadline` allows, submit their own transaction with a higher gas price to approve and then spend the tokens before the legitimate transaction confirms. This is a known characteristic of the ERC20Permit standard and not a bug in the implementation itself, but a risk for users.
 
 **Recommendation:** Users should be advised to set a sufficiently short `deadline` for `permit` signatures to minimize the window for front-running. Additionally, users should be cautious when broadcasting `permit` signatures and consider using services that protect against front-running where available.
 
 
 ### `I-01` — Reliance on Battle-Tested OpenZeppelin Libraries  *(Severity: Informational · Status: Resolved)*
 
-The SPARK token contract leverages standard and widely-audited OpenZeppelin contracts for its ERC20 and ERC20Permit implementations. This significantly reduces the likelihood of common vulnerabilities (7.2 Code Security) such as reentrancy, integer overflows/underflows, and standard ERC20 compliance issues, as these base contracts have undergone extensive scrutiny and are considered industry best practice.
+Not confirmed by static analysis (the model's own reading of the source). The SPARK token contract leverages standard and widely-audited OpenZeppelin contracts for its ERC20 and ERC20Permit implementations. This significantly reduces the likelihood of common vulnerabilities (7.2 Code Security) such as reentrancy, integer overflows/underflows, and standard ERC20 compliance issues, as these base contracts have undergone extensive scrutiny and are considered industry best practice.
 
 **Recommendation:** No action required. This is a strength of the contract's design.
 
 
 ### `I-02` — Immutability of Token Supply and Parameters  *(Severity: Informational · Status: Resolved)*
 
-The `SPARK` token has a fixed total supply that is minted entirely during the constructor call (7.4 Economic). There are no functions for further minting or burning (beyond standard transfers to/from address(0) which adjust total supply). Similarly, the token's name, symbol, and decimals are set in the constructor and cannot be changed. This design provides predictability and transparency regarding the token's supply and characteristics but limits any future flexibility or adjustments.
+Not confirmed by static analysis (the model's own reading of the source). The `SPARK` token has a fixed total supply that is minted entirely during the constructor call (7.4 Economic). There are no functions for further minting or burning (beyond standard transfers to/from address(0) which adjust total supply). Similarly, the token's name, symbol, and decimals are set in the constructor and cannot be changed. This design provides predictability and transparency regarding the token's supply and characteristics but limits any future flexibility or adjustments.
 
 **Recommendation:** No action required. This is a design choice. Ensure that the initial deployment parameters (recipient and total supply) are correct, as they cannot be altered.
 
 
 ### `I-03` — Absence of Administrative Roles  *(Severity: Informational · Status: Resolved)*
 
-The `SPARK` token contract does not implement any administrative roles (e.g., `owner`, `pauser`, `minter`) or access control mechanisms (7.3 Access Control) beyond the standard ERC20 functions. This design choice minimizes the attack surface associated with centralized control and single points of failure, as no single entity can unilaterally alter the contract's behavior or freeze funds. However, it also means there are no emergency mechanisms (e.g., pausing transfers in case of a critical vulnerability in an integrated system) or upgrade capabilities (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `SPARK` token contract does not implement any administrative roles (e.g., `owner`, `pauser`, `minter`) or access control mechanisms (7.3 Access Control) beyond the standard ERC20 functions. This design choice minimizes the attack surface associated with centralized control and single points of failure, as no single entity can unilaterally alter the contract's behavior or freeze funds. However, it also means there are no emergency mechanisms (e.g., pausing transfers in case of a critical vulnerability in an integrated system) or upgrade capabilities (7.8 Operations).
 
 **Recommendation:** No action required. This is a design choice. Stakeholders should be aware of the implications of a fully decentralized and immutable token without administrative intervention capabilities.
 

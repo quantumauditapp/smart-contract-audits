@@ -2,14 +2,14 @@
 token: RHEA
 ticker: RHEA
 network: solana
-risk_score: 49
+risk_score: 37
 status: medium
 date: 2026-09-27
 ---
 
 # RHEA (RHEA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 49/100 — 🟡 Medium Risk**
+> **Risk Score: 37/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rhea-sol)
 
@@ -25,9 +25,9 @@ The Rhea SPL token mint presents a critical risk due to an unrevoked mint author
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the classic spl-token program (v3). A significant technical risk is the active mint authority, held by FvULawNPGBbuwYus74ECaQoV1oH9Tk6XPN7VPN51NYds, which enables the… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a relatively low holder concentration, with the top 10 accounts holding 32.63% of the supply. Liquidity stands at $244,507 USD, with a 24-hour volume of $268,253 USD, resulting in… |
-| **Upgrades** | 4/10 | Medium | The mint authority remains active, allowing for potential changes to the total token supply through new minting. The freeze authority has been revoked, ensuring that existing accounts cannot be… |
+| **Technical** | 8/10 | Low | The token is implemented using the classic spl-token program (v3). A significant technical risk is the active mint authority, held by FvULawNPGBbuwYus74ECaQoV1oH9Tk6XPN7VPN51NYds, which enables the… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a relatively low holder concentration, with the top 10 accounts holding 32.63% of the supply. Liquidity stands at $244,507 USD, with a 24-hour volume of $268,253 USD, resulting in… |
+| **Upgrades** | 6/10 | Medium | The mint authority remains active, allowing for potential changes to the total token supply through new minting. The freeze authority has been revoked, ensuring that existing accounts cannot be… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

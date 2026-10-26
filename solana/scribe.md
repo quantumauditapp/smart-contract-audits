@@ -2,14 +2,14 @@
 token: Scribe
 ticker: SCRIBE
 network: solana
-risk_score: 14
+risk_score: 0
 status: low
 date: 2026-09-17
 ---
 
 # Scribe (SCRIBE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 14/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/scribe-sol)
 
@@ -26,8 +26,8 @@ The Scribe (SCRIBE) token mint exhibits a Medium risk profile primarily due to i
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Scribe (SCRIBE) token is an SPL token operating under the spl-token program. Both the Mint Authority and Freeze Authority have been revoked, which is a positive security practice as it prevents… |
-| **Governance / Economics** | 6/10 | Medium | The token's DEX pair is very new, having been created only 1 day ago, which means there is insufficient historical data to assess market stability or team behavior. Current DEX liquidity stands at… |
-| **Upgrades** | 8/10 | Low | The Mint and Freeze authorities are both revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not utilize Token-2022 extensions that introduce upgradeability… |
+| **Governance / Economics** | 9/10 | Low | The token's DEX pair is very new, having been created only 1 day ago, which means there is insufficient historical data to assess market stability or team behavior. Current DEX liquidity stands at… |
+| **Upgrades** | 10/10 | Low | The Mint and Freeze authorities are both revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not utilize Token-2022 extensions that introduce upgradeability… |
 
 ## Security Findings
 
@@ -61,13 +61,13 @@ The token's metadata is mutable, meaning its name, symbol, or image can be chang
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1600 buys / 1151 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ The token's metadata is mutable, meaning its name, symbol, or image can be chang
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

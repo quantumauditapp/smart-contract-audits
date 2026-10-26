@@ -2,14 +2,14 @@
 token: Shuffle
 ticker: SHFL
 network: ethereum
-risk_score: 60
+risk_score: 40
 status: medium
 date: 2026-09-21
 ---
 
 # Shuffle (SHFL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 60/100 — 🟡 Medium Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/shuffle-eth)
 
@@ -27,7 +27,7 @@ The SHFL token contract is a standard ERC20 implementation leveraging OpenZeppel
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract utilizes OpenZeppelin's battle-tested ERC20 implementation, providing a solid foundation for standard token operations (7.2 Code Security). However, the custom `burn` function contains a… |
 | **Governance / Economics** | 1/10 | High | The economic model is straightforward, representing a basic ERC20 token (7.4 Economic). All initial tokens are minted to the deployer, resulting in a highly centralized distribution (7.4 Economic).… |
-| **Upgrades** | 5/10 | Medium | The SHFL contract is not designed with upgradeability in mind (7.7 Upgrades). It is a standard, non-proxy ERC20 implementation. This eliminates the risks associated with upgrade mechanisms, such as… |
+| **Upgrades** | 6/10 | Medium | The SHFL contract is not designed with upgradeability in mind (7.7 Upgrades). It is a standard, non-proxy ERC20 implementation. This eliminates the risks associated with upgrade mechanisms, such as… |
 
 ## LP Distribution
 
@@ -38,18 +38,18 @@ The SHFL token contract is a standard ERC20 implementation leveraging OpenZeppel
 
 ## Security Findings
 
-_🔴 1 Critical · 🟢 1 Low_
+_🟡 1 Medium · 🟢 1 Low_
 
-### `C-01` — Incorrect Burn Implementation  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Incorrect Burn Implementation  *(Severity: Medium · Status: Unresolved)*
 
-The `burn` function in the SHFL contract calls `_update(_msgSender(), address(0xdead), value)`. OpenZeppelin's `_update` function only decreases `_totalSupply` when the `to` address is `address(0)`. By using `address(0xdead)` instead of `address(0)`, the tokens are removed from the caller's balance but are not deducted from the `_totalSupply`. This results in an inflated `totalSupply` value, misrepresenting the actual circulating supply and breaking the core functionality of a burn mechanism.
+Not confirmed by static analysis (the model's own reading of the source). The `burn` function in the SHFL contract calls `_update(_msgSender(), address(0xdead), value)`. OpenZeppelin's `_update` function only decreases `_totalSupply` when the `to` address is `address(0)`. By using `address(0xdead)` instead of `address(0)`, the tokens are removed from the caller's balance but are not deducted from the `_totalSupply`. This results in an inflated `totalSupply` value, misrepresenting the actual circulating supply and breaking the core functionality of a burn mechanism.
 
 **Recommendation:** Modify the `burn` function to correctly reduce the total supply. The recommended approach is to use OpenZeppelin's internal `_burn` function, which is designed for this purpose: `_burn(_msgSender(), value);`. Alternatively, ensure `_update` is called with `address(0)` as the recipient: `_update(_msgSender(), address(0), value);`.
 
 
 ### `L-01` — Centralized Initial Token Distribution  *(Severity: Low · Status: Unresolved)*
 
-In the constructor, all 1,000,000,000 SHFL tokens (with 18 decimals) are minted directly to the contract deployer (`_msgSender()`). This results in a highly centralized initial token distribution, where a single address holds the entire supply. While common for new projects, this level of centralization gives the deployer significant control over the token's market dynamics and potential for large-scale price manipulation or rug pull scenarios if not managed transparently.
+Not confirmed by static analysis (the model's own reading of the source). In the constructor, all 1,000,000,000 SHFL tokens (with 18 decimals) are minted directly to the contract deployer (`_msgSender()`). This results in a highly centralized initial token distribution, where a single address holds the entire supply. While common for new projects, this level of centralization gives the deployer significant control over the token's market dynamics and potential for large-scale price manipulation or rug pull scenarios if not managed transparently.
 
 **Recommendation:** Consider implementing a more distributed initial token allocation strategy, such as a vesting schedule, airdrops, or a public sale, to reduce centralization risks. If the current distribution is intentional, ensure clear communication to the community regarding the deployer's plans for managing or distributing these tokens to build trust and transparency.
 

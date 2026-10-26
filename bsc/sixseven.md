@@ -2,14 +2,14 @@
 token: SIXSEVEN
 ticker: 67
 network: bsc
-risk_score: 52
+risk_score: 40
 status: medium
 date: 2026-08-20
 ---
 
 # SIXSEVEN (67) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 52/100 — 🟡 Medium Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sixseven-bsc)
 
@@ -50,28 +50,28 @@ _🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralized Control by Owner  *(Severity: Medium · Status: Unresolved)*
 
-The contract uses the `Ownable` pattern, granting significant administrative control to a single owner address (a multisig in this case). This owner has the power to configure critical LayerZero parameters (e.g., `setTrustedRemote`, `setMinDstGas`), set delegates, and potentially upgrade the contract. While a multisig mitigates some risk, it still represents a centralized point of failure or potential misuse if the multisig's security is compromised or its members act maliciously (7.3 Access Control, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The contract uses the `Ownable` pattern, granting significant administrative control to a single owner address (a multisig in this case). This owner has the power to configure critical LayerZero parameters (e.g., `setTrustedRemote`, `setMinDstGas`), set delegates, and potentially upgrade the contract. While a multisig mitigates some risk, it still represents a centralized point of failure or potential misuse if the multisig's security is compromised or its members act maliciously (7.3 Access Control, 7.5 Governance).
 
 **Recommendation:** Consider implementing a timelock for critical administrative functions to introduce a delay before changes take effect, allowing for community review or emergency intervention. Ensure the multisig governance process is robust, transparent, and follows best practices for key management and transaction approval.
 
 
 ### `M-02` — Reliance on LayerZero Configuration and Operational Risks  *(Severity: Medium · Status: Unresolved)*
 
-The contract's core functionality as an Omnichain Fungible Token (OFT) heavily relies on the correct and ongoing configuration of LayerZero parameters by the contract owner. Misconfiguration of parameters such as `setTrustedRemote`, `setMinDstGas`, or `setFeeManager` could lead to funds being stuck, lost during cross-chain transfers, or unexpected fee structures (7.6 External, 7.8 Operations). The security and reliability of the LayerZero protocol itself are also external dependencies.
+Not confirmed by static analysis (the model's own reading of the source). The contract's core functionality as an Omnichain Fungible Token (OFT) heavily relies on the correct and ongoing configuration of LayerZero parameters by the contract owner. Misconfiguration of parameters such as `setTrustedRemote`, `setMinDstGas`, or `setFeeManager` could lead to funds being stuck, lost during cross-chain transfers, or unexpected fee structures (7.6 External, 7.8 Operations). The security and reliability of the LayerZero protocol itself are also external dependencies.
 
 **Recommendation:** Implement rigorous testing and verification procedures for all LayerZero parameter changes. Establish clear operational guidelines for the owner to manage these configurations. Monitor LayerZero's official channels for any security advisories or updates to the protocol. Consider integrating monitoring tools to detect unusual activity or misconfigurations.
 
 
 ### `L-01` — Potential Misconfiguration of Initial Owner  *(Severity: Low · Status: Unresolved)*
 
-The `initialize` function, which sets the token's name, symbol, and the initial owner via `__Ownable_init(_delegate)`, is public. While protected by the `initializer` modifier to prevent re-initialization, if the `_delegate` parameter is incorrectly specified during the initial deployment and initialization of the proxy, the contract's ownership could be assigned to an unintended address (7.3 Access Control). Given the contract is live, this is primarily a deployment-time risk.
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function, which sets the token's name, symbol, and the initial owner via `__Ownable_init(_delegate)`, is public. While protected by the `initializer` modifier to prevent re-initialization, if the `_delegate` parameter is incorrectly specified during the initial deployment and initialization of the proxy, the contract's ownership could be assigned to an unintended address (7.3 Access Control). Given the contract is live, this is primarily a deployment-time risk.
 
 **Recommendation:** Ensure that the `_delegate` address passed to the `initialize` function during proxy deployment is thoroughly verified and corresponds to the intended multisig owner. Implement a robust deployment checklist to prevent such misconfigurations.
 
 
 ### `I-01` — Hardcoded Decimals  *(Severity: Informational · Status: Unresolved)*
 
-The `decimals()` and `sharedDecimals()` functions are hardcoded to return `9`. This is a design decision for the token (7.4 Economic). Any future requirement to change the token's decimal precision would necessitate a contract upgrade, which might be a complex process.
+Not confirmed by static analysis (the model's own reading of the source). The `decimals()` and `sharedDecimals()` functions are hardcoded to return `9`. This is a design decision for the token (7.4 Economic). Any future requirement to change the token's decimal precision would necessitate a contract upgrade, which might be a complex process.
 
 **Recommendation:** No direct action is required if this is the intended design. If flexibility in decimal precision is ever anticipated, consider a design that allows the owner to update this value, though this introduces additional complexity and potential risks.
 

@@ -2,14 +2,14 @@
 token: Solrouter
 ticker: ROUTER
 network: solana
-risk_score: 27
+risk_score: 20
 status: low
 date: 2026-09-26
 ---
 
 # Solrouter (ROUTER) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 27/100 — 🟢 Low Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solrouter-sol)
 
@@ -26,8 +26,8 @@ The Solrouter (ROUTER) SPL token mint has revoked mint and freeze authorities, i
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Solrouter (ROUTER) token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a moderate level of holder concentration, with the top 10 accounts holding 55.48% of the total supply. This concentration could lead to price volatility if large holders coordinate… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. Furthermore, the `metadata_mutable` flag is set to `False`, preventing any post-launch changes to… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a moderate level of holder concentration, with the top 10 accounts holding 55.48% of the total supply. This concentration could lead to price volatility if large holders coordinate… |
+| **Upgrades** | 9/10 | Low | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. Furthermore, the `metadata_mutable` flag is set to `False`, preventing any post-launch changes to… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ Top 10 token accounts hold 55.48% of supply. Coordinated sell-off would crash pr
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Top 10 token accounts hold 55.48% of supply. Coordinated sell-off would crash pr
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

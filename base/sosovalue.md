@@ -2,14 +2,14 @@
 token: SoSoValue
 ticker: SOSO
 network: base
-risk_score: 53
+risk_score: 46
 status: medium
 date: 2026-08-15
 ---
 
 # SoSoValue (SOSO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 53/100 — 🟡 Medium Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sosovalue-base)
 
@@ -42,28 +42,28 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Critical Dependency on External Bridge Contract Security  *(Severity: Medium · Status: Unresolved)*
 
-The OptimismMintableERC20 token's entire supply mechanism relies on the `BRIDGE` address, which has exclusive permission to call the `mint` and `burn` functions. If the `BRIDGE` contract is compromised, an attacker could arbitrarily mint tokens, leading to hyperinflation and a complete loss of value for the token. This is an inherent design characteristic of a mintable bridged token, but it represents the single most significant risk to the system's economic integrity (7.4 Economic, 7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The OptimismMintableERC20 token's entire supply mechanism relies on the `BRIDGE` address, which has exclusive permission to call the `mint` and `burn` functions. If the `BRIDGE` contract is compromised, an attacker could arbitrarily mint tokens, leading to hyperinflation and a complete loss of value for the token. This is an inherent design characteristic of a mintable bridged token, but it represents the single most significant risk to the system's economic integrity (7.4 Economic, 7.6 External).
 
 **Recommendation:** Ensure the `BRIDGE` contract is secured with the highest possible standards, including comprehensive audits, robust access control (e.g., multi-signature wallets, time-locks), and continuous monitoring. The security posture of the `BRIDGE` contract directly dictates the security of this token.
 
 
 ### `L-01` — Interface Mismatch for `bridge()` Function View Mutability  *(Severity: Low · Status: Unresolved)*
 
-The `IOptimismMintableERC20` interface declares the `bridge()` function as `external returns (address)`, omitting the `view` keyword. However, the `OptimismMintableERC20` implementation correctly defines it as `public view returns (address)`. While the implementation is more restrictive and correct, this minor inconsistency in the interface definition could lead to confusion or potential issues with static analysis tools expecting exact interface compliance (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `IOptimismMintableERC20` interface declares the `bridge()` function as `external returns (address)`, omitting the `view` keyword. However, the `OptimismMintableERC20` implementation correctly defines it as `public view returns (address)`. While the implementation is more restrictive and correct, this minor inconsistency in the interface definition could lead to confusion or potential issues with static analysis tools expecting exact interface compliance (7.2 Code Security).
 
 **Recommendation:** Update the `IOptimismMintableERC20` interface to include the `view` keyword for the `bridge()` function to accurately reflect its mutability and ensure full consistency with the implementation: `function bridge() external view returns (address);`.
 
 
 ### `I-01` — Effective Use of OpenZeppelin Libraries  *(Severity: Informational · Status: Resolved)*
 
-The contract effectively utilizes battle-tested and audited OpenZeppelin contracts (ERC20, IERC165). This practice significantly reduces the risk of common vulnerabilities and improves the overall security posture of the contract by relying on widely accepted and secure implementations (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract effectively utilizes battle-tested and audited OpenZeppelin contracts (ERC20, IERC165). This practice significantly reduces the risk of common vulnerabilities and improves the overall security posture of the contract by relying on widely accepted and secure implementations (7.2 Code Security).
 
 **Recommendation:** Continue to leverage well-vetted libraries like OpenZeppelin for standard functionalities. Ensure that the specific versions used are up-to-date and free from known vulnerabilities.
 
 
 ### `I-02` — Immutable Critical Parameters  *(Severity: Informational · Status: Resolved)*
 
-The `REMOTE_TOKEN`, `BRIDGE`, and `DECIMALS` variables are declared as `immutable` and initialized in the constructor. This is a strong security practice as it ensures these critical parameters cannot be altered after deployment, preventing unauthorized changes to the token's fundamental configuration (7.2 Code Security, 7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The `REMOTE_TOKEN`, `BRIDGE`, and `DECIMALS` variables are declared as `immutable` and initialized in the constructor. This is a strong security practice as it ensures these critical parameters cannot be altered after deployment, preventing unauthorized changes to the token's fundamental configuration (7.2 Code Security, 7.3 Access Control).
 
 **Recommendation:** Maintain the use of `immutable` for all critical parameters that should not change post-deployment. This enhances security and predictability.
 

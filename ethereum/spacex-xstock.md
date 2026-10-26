@@ -164,11 +164,11 @@ The token's oldest DEX pool is 3 days old. Age is not part of the risk score —
 
 ### Is SpaceX xStock a scam?
 
-Labeling SpaceX xStock as an outright scam based solely on provided data is not definitive. While the contract is verified and ownership renounced, significantly concerning factors exist. 99.9% of the supply is controlled by the top 10 holders, indicating extreme centralization, and liquidity is not locked. These characteristics create a high potential for price manipulation or a liquidity pull. The assigned risk score of 60/100 reflects these considerable dangers, urging extreme vigilance from investors.
+Labeling SpaceX xStock as an outright scam based solely on provided data is not definitive. While the contract is verified and ownership renounced, significantly concerning factors exist. 99.9% of the supply is controlled by the top 10 holders, indicating extreme centralization, and liquidity is not locked. These characteristics create a high potential for price manipulation or a liquidity pull. The assigned risk score of 24/100 reflects these considerable dangers, urging extreme vigilance from investors.
 
 ### Is SpaceX xStock safe to buy?
 
-SpaceX xStock (SPCXX) carries significant risks and is not considered safe to buy based on current metrics. A critical concern is that 99.9% of the token supply is concentrated within the top 10 holders, making it highly susceptible to manipulation. Furthermore, the absence of locked liquidity means that the existing funds can be withdrawn at any time, posing a direct rug pull risk. Its overall risk score of 60/100 strongly indicates a hazardous investment profile.
+SpaceX xStock (SPCXX) carries significant risks and is not considered safe to buy based on current metrics. A critical concern is that 99.9% of the token supply is concentrated within the top 10 holders, making it highly susceptible to manipulation. Furthermore, the absence of locked liquidity means that the existing funds can be withdrawn at any time, posing a direct rug pull risk. Its overall risk score of 24/100 strongly indicates a hazardous investment profile.
 
 ### Has SpaceX xStock been audited?
 

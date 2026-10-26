@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Allowance Race Condition in `approve()`  *(Severity: Low · Status: Unresolved)*
 
-The standard ERC20 `approve()` function is susceptible to a known front-running vulnerability. If a user approves an allowance for a spender, and then attempts to change that allowance by calling `approve()` again with a new amount, a malicious actor could front-run the second transaction. This could allow the attacker to spend the original allowance, and then also spend the new allowance, effectively doubling the amount they can spend (7.2 Code Security). OpenZeppelin mitigates this by providing `increaseAllowance()` and `decreaseAllowance()` functions, which are safer alternatives.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC20 `approve()` function is susceptible to a known front-running vulnerability. If a user approves an allowance for a spender, and then attempts to change that allowance by calling `approve()` again with a new amount, a malicious actor could front-run the second transaction. This could allow the attacker to spend the original allowance, and then also spend the new allowance, effectively doubling the amount they can spend (7.2 Code Security). OpenZeppelin mitigates this by providing `increaseAllowance()` and `decreaseAllowance()` functions, which are safer alternatives.
 
 **Recommendation:** Advise users to primarily use `increaseAllowance()` and `decreaseAllowance()` instead of directly calling `approve()` when modifying existing allowances. If `approve()` must be used, users should first set the allowance to zero before setting a new value, though this still requires two transactions and introduces a small window of vulnerability.
 
 
 ### `I-01` — Incomplete Source Code Provided  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code for the `ERC20.sol` contract is truncated, and the specific `SKYAIToken` contract, which is likely derived from `ERC20`, was not provided. This significantly limits the scope of the audit, as any custom logic, state variables, or function overrides within the complete `ERC20.sol` or `SKYAIToken` contract could not be analyzed for vulnerabilities (7.1 Architecture, 7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the `ERC20.sol` contract is truncated, and the specific `SKYAIToken` contract, which is likely derived from `ERC20`, was not provided. This significantly limits the scope of the audit, as any custom logic, state variables, or function overrides within the complete `ERC20.sol` or `SKYAIToken` contract could not be analyzed for vulnerabilities (7.1 Architecture, 7.2 Code Security).
 
 **Recommendation:** Provide the complete and final source code for all contracts intended for deployment, including the full `ERC20.sol` and the `SKYAIToken` contract, to allow for a comprehensive security assessment.
 
 
 ### `I-02` — Lack of Custom Functionality for Audit  *(Severity: Informational · Status: Unresolved)*
 
-The audit was conducted on a base OpenZeppelin ERC20 implementation. Without the specific `SKYAIToken` contract's code, any custom functionalities such as minting, burning, pausing, fee mechanisms, or specific access control roles (7.3 Access Control, 7.8 Operations) could not be reviewed. This means that potential vulnerabilities related to the unique business logic of `SKYAIToken` are outside the scope of this report.
+Not confirmed by static analysis (the model's own reading of the source). The audit was conducted on a base OpenZeppelin ERC20 implementation. Without the specific `SKYAIToken` contract's code, any custom functionalities such as minting, burning, pausing, fee mechanisms, or specific access control roles (7.3 Access Control, 7.8 Operations) could not be reviewed. This means that potential vulnerabilities related to the unique business logic of `SKYAIToken` are outside the scope of this report.
 
 **Recommendation:** Ensure that any custom logic implemented in the `SKYAIToken` contract is thoroughly reviewed for common vulnerabilities such as reentrancy, access control bypasses, integer overflows/underflows, and logical errors. Consider a separate audit for the full custom implementation.
 

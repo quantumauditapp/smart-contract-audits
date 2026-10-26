@@ -2,14 +2,14 @@
 token: SOCK
 ticker: SOCK
 network: bsc
-risk_score: 70
-status: high
+risk_score: 40
+status: medium
 date: 2026-09-03
 ---
 
 # SOCK (SOCK) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sock-bsc)
 
@@ -25,9 +25,9 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates a well-structured architecture (7.1) using OpenZeppelin standards for ERC20 and upgradeability. However, a critical code security (7.2) vulnerability exists where external… |
-| **Governance / Economics** | 4/10 | Medium | The contract's economic model (7.4) involves dynamic tax rates and state transitions (e.g., `BondingCurve` to `TaxEnforcedAntiFarmer`). Access control (7.3) is managed via `OwnableUpgradeable`… |
-| **Upgrades** | 3/10 | High | The contract is designed as an upgradeable proxy (7.7) using OpenZeppelin's `Initializable` and `ERC20Upgradeable` patterns. The constructor correctly calls `_disableInitializers()` to prevent… |
+| **Technical** | 8/10 | Low | The contract demonstrates a well-structured architecture (7.1) using OpenZeppelin standards for ERC20 and upgradeability. However, a critical code security (7.2) vulnerability exists where external… |
+| **Governance / Economics** | 5/10 | Medium | The contract's economic model (7.4) involves dynamic tax rates and state transitions (e.g., `BondingCurve` to `TaxEnforcedAntiFarmer`). Access control (7.3) is managed via `OwnableUpgradeable`… |
+| **Upgrades** | 4/10 | Medium | The contract is designed as an upgradeable proxy (7.7) using OpenZeppelin's `Initializable` and `ERC20Upgradeable` patterns. The constructor correctly calls `_disableInitializers()` to prevent… |
 
 ## Proxy Upgrade Controls
 
@@ -45,39 +45,39 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 
 ## Security Findings
 
-_🔴 1 Critical · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `C-01` — Denial of Service (DoS) on All Transfers Due to Reverting External Calls  *(Severity: Critical · Status: Unresolved)*
-
-The `_liquidateTax` function is called at the beginning of every `_transfer` operation. This function contains external calls to `ITaxProcessor(taxProcessor).processTax(...)` and `IDividend(dividendContract).distributeDividends(...)`. If either of these external calls reverts for any reason (e.g., misconfiguration, temporary issues in the external contract, or malicious action targeting the external contract), all subsequent `_transfer` calls will also revert, effectively halting all token transfers for all users. This constitutes a severe denial of service for the entire token functionality.
-
-**Recommendation:** Implement robust error handling for external calls within `_liquidateTax`. Consider using `try/catch` blocks to gracefully handle reverts without blocking core token transfers. Alternatively, decouple the tax liquidation process from the `_transfer` function. This could involve moving the liquidation logic to a separate, owner-callable function or a function that can be called by anyone but does not revert if external calls fail (e.g., by using a pull-based mechanism for tax processing or allow…
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralization Risk with Owner-Controlled State Transitions  *(Severity: Medium · Status: Unresolved)*
 
-The `OwnableUpgradeable` pattern grants the contract owner significant control over critical state transitions. Functions like `startMigration` and `finalizeMigration` are `onlyOwner` and directly change the `poolState`, which dictates the token's taxation rules. While necessary for initial setup and migration, this centralized control allows the owner to unilaterally alter the token's economic behavior, potentially without sufficient community oversight or warning. The `taxProcessor` and `dividendContract` addresses are set during initialization and cannot be changed, but the owner's ability to trigger state changes that affect their interaction is significant.
+Not confirmed by static analysis (the model's own reading of the source). The `OwnableUpgradeable` pattern grants the contract owner significant control over critical state transitions. Functions like `startMigration` and `finalizeMigration` are `onlyOwner` and directly change the `poolState`, which dictates the token's taxation rules. While necessary for initial setup and migration, this centralized control allows the owner to unilaterally alter the token's economic behavior, potentially without sufficient community oversight or warning. The `taxProcessor` and `dividendContract` addresses are set during initialization and cannot be changed, but the owner's ability to trigger state changes t
 
 **Recommendation:** For critical owner-controlled functions that significantly alter the token's economic model, consider implementing a timelock mechanism. This would introduce a delay between the owner initiating a change and it becoming effective, providing users and the community with time to react or exit if they disagree with the proposed changes. Additionally, review if any other critical parameters should be immutable or have a more decentralized update mechanism.
 
 
 ### `M-02` — Potential for Front-running/MEV on Time-Based State Transitions  *(Severity: Medium · Status: Unresolved)*
 
-The `_liquidateTax` function modifies the `poolState` based on `block.timestamp` exceeding `taxExpirationTime` or `antiFarmerExpirationTime`. Specifically, it can transition the pool state from `TaxEnforcedAntiFarmer` to `TaxEnforced` or `TaxFree`. If the economic impact of these state changes (e.g., changes in tax rates) is significant, malicious actors or miners could front-run transactions to ensure their operations occur just before or after a state transition, potentially gaining an unfair advantage. While `block.timestamp` is a standard mechanism, its manipulability by miners within a small window is a known vector for MEV.
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function modifies the `poolState` based on `block.timestamp` exceeding `taxExpirationTime` or `antiFarmerExpirationTime`. Specifically, it can transition the pool state from `TaxEnforcedAntiFarmer` to `TaxEnforced` or `TaxFree`. If the economic impact of these state changes (e.g., changes in tax rates) is significant, malicious actors or miners could front-run transactions to ensure their operations occur just before or after a state transition, potentially gaining an unfair advantage. While `block.timestamp` is a standard mechanism, its manipulability by miners within a small window is a known vect
 
 **Recommendation:** While `block.timestamp` is commonly used, be aware of its limitations regarding precise timing and potential for MEV. If the economic implications of these state transitions are critical, consider if alternative mechanisms (e.g., a commit-reveal scheme, or requiring a specific block number instead of timestamp for critical changes) could mitigate front-running. Ensure that the economic model accounts for potential MEV around these state changes.
 
 
+### `M-03` — Denial of Service (DoS) on All Transfers Due to Reverting External Calls  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function is called at the beginning of every `_transfer` operation. This function contains external calls to `ITaxProcessor(taxProcessor).processTax(...)` and `IDividend(dividendContract).distributeDividends(...)`. If either of these external calls reverts for any reason (e.g., misconfiguration, temporary issues in the external contract, or malicious action targeting the external contract), all subsequent `_transfer` calls will also revert, effectively halting all token transfers for all users. This constitutes a severe denial of service for the entire token functionality.
+
+**Recommendation:** Implement robust error handling for external calls within `_liquidateTax`. Consider using `try/catch` blocks to gracefully handle reverts without blocking core token transfers. Alternatively, decouple the tax liquidation process from the `_transfer` function. This could involve moving the liquidation logic to a separate, owner-callable function or a function that can be called by anyone but does not revert if external calls fail (e.g., by using a pull-based mechanism for tax processing or allow…
+
+
 ### `L-01` — Precision Loss in Tax Calculation  *(Severity: Low · Status: Unresolved)*
 
-The tax calculation `(amount * rate) / 10000` uses integer division. For small `amount` values or small `buyTaxRate`/`sellTaxRate` values, this can result in a calculated `tax` of 0, even if a fractional tax should theoretically apply. For example, if `amount` is 100 and `rate` is 1 (representing 0.01%), the calculation `(100 * 1) / 10000` yields 0. This means the protocol might collect slightly less tax than intended for small transactions.
+Not confirmed by static analysis (the model's own reading of the source). The tax calculation `(amount * rate) / 10000` uses integer division. For small `amount` values or small `buyTaxRate`/`sellTaxRate` values, this can result in a calculated `tax` of 0, even if a fractional tax should theoretically apply. For example, if `amount` is 100 and `rate` is 1 (representing 0.01%), the calculation `(100 * 1) / 10000` yields 0. This means the protocol might collect slightly less tax than intended for small transactions.
 
 **Recommendation:** Acknowledge that integer division inherently causes precision loss. If this minor loss is acceptable for the protocol's economic model, no change is strictly necessary. If higher precision is desired for very small transactions or rates, consider using a higher precision fixed-point math library or adjusting the tax rate basis (e.g., using a denominator of `100_000` or `1_000_000` instead of `10_000`) to allow for finer granularity in tax rates.
 
 
 ### `I-01` — Suboptimal Storage Packing in `PackedPoolState` Struct  *(Severity: Informational · Status: Unresolved)*
 
-The `PackedPoolState` struct contains members of various sizes: `uint8`, `uint16`, `bool`, `uint96`, `uint64`, `uint48`. While Solidity attempts to pack variables into 32-byte storage slots, the current ordering may not be optimal. Reordering the members from largest to smallest (or grouping smaller types strategically) can reduce the number of storage slots used, thereby saving gas on state reads and writes.
+Not confirmed by static analysis (the model's own reading of the source). The `PackedPoolState` struct contains members of various sizes: `uint8`, `uint16`, `bool`, `uint96`, `uint64`, `uint48`. While Solidity attempts to pack variables into 32-byte storage slots, the current ordering may not be optimal. Reordering the members from largest to smallest (or grouping smaller types strategically) can reduce the number of storage slots used, thereby saving gas on state reads and writes.
 
 **Recommendation:** Reorder the `PackedPoolState` struct members to optimize storage packing. A more efficient order would typically place larger data types before smaller ones, for example: `uint96 liquidationThreshold`, `uint64 taxExpirationTime`, `uint48 antiFarmerExpirationTime`, `uint16 buyTaxRate`, `uint16 sellTaxRate`, `uint8 state`, `bool notLiquidating`. This could potentially reduce the number of storage slots from 3 to 1 or 2, leading to gas savings.
 

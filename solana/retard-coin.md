@@ -2,14 +2,14 @@
 token: Retard Coin
 ticker: RETARD
 network: solana
-risk_score: 31
+risk_score: 19
 status: low
 date: 2026-06-16
 ---
 
 # Retard Coin (RETARD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 31/100 — 🟢 Low Risk**
+> **Risk Score: 19/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/retard-coin-sol)
 
@@ -26,8 +26,8 @@ The Retard Coin (RETARD) SPL Token Mint audit found no critical or high-severity
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Retard Coin (RETARD) is an SPL Token-2022 mint. Its mint authority is revoked, preventing the creation of new tokens, and the freeze authority is also revoked, meaning no accounts can be frozen.… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate liquidity with $70,795 USD in total DEX liquidity. The 24-hour volume of $102,772 USD results in a Volume/Liquidity Ratio of 1.45, which is considered normal and does not… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, indicating a fixed supply and unfreezable accounts. The token is an SPL Token-2022, but it does not utilize… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits moderate liquidity with $70,795 USD in total DEX liquidity. The 24-hour volume of $102,772 USD results in a Volume/Liquidity Ratio of 1.45, which is considered normal and does not… |
+| **Upgrades** | 10/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, indicating a fixed supply and unfreezable accounts. The token is an SPL Token-2022, but it does not utilize… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 367 buys / 313 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
@@ -80,7 +80,7 @@ Based on the available data, Retard Coin presents a mixed security picture rathe
 
 ### Is Retard Coin safe to buy?
 
-Retard Coin is assessed as 'Medium Risk' (36/100) and is not considered entirely safe due to several key factors. The contract's unverified status means its code cannot be publicly audited for security flaws. Crucially, the liquidity of $26,488 is not locked, posing a risk of removal by liquidity providers. Additionally, 34.0% of the supply is concentrated among the top 10 holders, raising concerns about potential market influence.
+Retard Coin is assessed as 'Low Risk' (19/100) and is not considered entirely safe due to several key factors. The contract's unverified status means its code cannot be publicly audited for security flaws. Crucially, the liquidity of $26,488 is not locked, posing a risk of removal by liquidity providers. Additionally, 34.0% of the supply is concentrated among the top 10 holders, raising concerns about potential market influence.
 
 ### Has Retard Coin been audited?
 

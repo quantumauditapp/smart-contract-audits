@@ -2,14 +2,14 @@
 token: SIBYL by Virtuals
 ticker: SIBYL
 network: base
-risk_score: 74
-status: high
+risk_score: 44
+status: medium
 date: 2026-09-12
 ---
 
 # SIBYL by Virtuals (SIBYL) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 74/100 — 🟠 High Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sibyl-by-virtuals-base)
 
@@ -25,8 +25,8 @@ The AgentToken contract implements an ERC20-like token with custom tax mechanism
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates a solid architectural foundation by leveraging OpenZeppelin's upgradeable contracts (7.1 Architecture). Code security (7.2 Code Security) benefits from standard ERC20… |
-| **Governance / Economics** | 1/10 | High | The contract includes economic mechanisms for project taxes on buys and sells, with an automated swap-and-liquify feature (7.4 Economic). This design aims to sustain the project's treasury. However… |
+| **Technical** | 8/10 | Low | The contract demonstrates a solid architectural foundation by leveraging OpenZeppelin's upgradeable contracts (7.1 Architecture). Code security (7.2 Code Security) benefits from standard ERC20… |
+| **Governance / Economics** | 3/10 | High | The contract includes economic mechanisms for project taxes on buys and sells, with an automated swap-and-liquify feature (7.4 Economic). This design aims to sustain the project's treasury. However… |
 | **Upgrades** | 6/10 | Medium | The contract is designed as an upgradeable proxy using OpenZeppelin's `Initializable` and `Ownable2StepUpgradeable` patterns (7.7 Upgrades). The `_disableInitializers()` in the constructor and the… |
 
 ## LP Distribution
@@ -38,46 +38,46 @@ The AgentToken contract implements an ERC20-like token with custom tax mechanism
 
 ## Security Findings
 
-_🟠 2 High · 🟡 2 Medium · ⚪ 2 Informational_
-
-### `H-01` — Lack of Slippage Control in `_swapAndLiquify`  *(Severity: High · Status: Unresolved)*
-
-The `_swapAndLiquify` function, responsible for swapping collected tax tokens for ETH, uses `IUniswapV2Router02.swapExactTokensForETHSupportingFeeOnTransferTokens` without specifying a `minAmountOut` parameter. This omission exposes the swap to significant slippage, front-running, and sandwich attacks, potentially leading to a substantial loss of value for the protocol's collected taxes.
-
-**Recommendation:** Implement a `minAmountOut` parameter for the `swapExactTokensForETHSupportingFeeOnTransferTokens` call. This value should be calculated based on a reasonable slippage tolerance (e.g., 0.5% - 1%) at the time of the transaction. Consider using a price oracle or a time-weighted average price (TWAP) to determine a safe `minAmountOut` if precise control is needed, or allow the owner to set a dynamic slippage tolerance.
-
-
-### `H-02` — Centralization Risk with `setUniswapRouter`  *(Severity: High · Status: Unresolved)*
-
-The `setUniswapRouter` function allows the contract `owner` to change the `_uniswapRouter` address to any arbitrary address. If the owner's private key is compromised or the owner acts maliciously, they could set a rogue router contract. This rogue router could then be used to drain tokens from the `AgentToken` contract during subsequent `_swapAndLiquify` operations or other interactions, leading to a complete loss of funds.
-
-**Recommendation:** Implement a multi-signature wallet for the `owner` address to control critical functions like `setUniswapRouter`. Additionally, consider a time-lock mechanism for such sensitive changes, allowing users to react to a potentially malicious update. Restrict the `_uniswapRouter` to a whitelist of trusted router addresses if possible.
-
+_🟡 4 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Complex Bot Protection Logic with `keccak256(address.code)`  *(Severity: Medium · Status: Unresolved)*
 
-The `_checkBotProtection` function utilizes `keccak256(address.code)` to identify valid callers. While `addLiquidityPool` checks for `code.length`, `addValidCaller` does not. If `keccak256("")` (the hash for an empty code, typical of an EOA) is added to `_validCallerCodeHashes`, EOAs could potentially bypass bot protection. Furthermore, relying on `address.code` can be complex and potentially lead to unexpected behavior, especially with contracts deployed within the same transaction or during specific contract lifecycle stages.
+Not confirmed by static analysis (the model's own reading of the source). The `_checkBotProtection` function utilizes `keccak256(address.code)` to identify valid callers. While `addLiquidityPool` checks for `code.length`, `addValidCaller` does not. If `keccak256("")` (the hash for an empty code, typical of an EOA) is added to `_validCallerCodeHashes`, EOAs could potentially bypass bot protection. Furthermore, relying on `address.code` can be complex and potentially lead to unexpected behavior, especially with contracts deployed within the same transaction or during specific contract lifecycle stages.
 
 **Recommendation:** Review the bot protection logic carefully. Ensure that `_validCallerCodeHashes` cannot contain `keccak256("")` unless EOAs are explicitly intended to bypass protection. Consider alternative, more robust methods for bot detection or whitelisting, such as role-based access control or specific contract interfaces, rather than relying solely on code hashes, which can be brittle.
 
 
 ### `M-02` — `type(uint256).max` Approvals for Uniswap Router  *(Severity: Medium · Status: Unresolved)*
 
-The `_addInitialLiquidity` and `_swapAndLiquify` functions grant `type(uint256).max` (unlimited) approval to the `_uniswapRouter` for `AgentToken` and `pairToken`. While `_uniswapRouter` is expected to be a trusted Uniswap V2 router, unlimited approvals are generally discouraged as a security best practice. If the `_uniswapRouter` contract were ever compromised or replaced with a malicious one (as per H-02), it could potentially drain all approved tokens from the `AgentToken` contract.
+Not confirmed by static analysis (the model's own reading of the source). The `_addInitialLiquidity` and `_swapAndLiquify` functions grant `type(uint256).max` (unlimited) approval to the `_uniswapRouter` for `AgentToken` and `pairToken`. While `_uniswapRouter` is expected to be a trusted Uniswap V2 router, unlimited approvals are generally discouraged as a security best practice. If the `_uniswapRouter` contract were ever compromised or replaced with a malicious one (as per H-02), it could potentially drain all approved tokens from the `AgentToken` contract.
 
 **Recommendation:** Where possible, use specific, limited approvals instead of `type(uint256).max`. For `_swapAndLiquify`, approve only the exact `amountToSwap`. For initial liquidity, if `type(uint256).max` is deemed necessary for ongoing operations, ensure robust access control and monitoring for the `_uniswapRouter` address.
 
 
+### `M-03` — Lack of Slippage Control in `_swapAndLiquify`  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_swapAndLiquify` function, responsible for swapping collected tax tokens for ETH, uses `IUniswapV2Router02.swapExactTokensForETHSupportingFeeOnTransferTokens` without specifying a `minAmountOut` parameter. This omission exposes the swap to significant slippage, front-running, and sandwich attacks, potentially leading to a substantial loss of value for the protocol's collected taxes.
+
+**Recommendation:** Implement a `minAmountOut` parameter for the `swapExactTokensForETHSupportingFeeOnTransferTokens` call. This value should be calculated based on a reasonable slippage tolerance (e.g., 0.5% - 1%) at the time of the transaction. Consider using a price oracle or a time-weighted average price (TWAP) to determine a safe `minAmountOut` if precise control is needed, or allow the owner to set a dynamic slippage tolerance.
+
+
+### `M-04` — Centralization Risk with `setUniswapRouter`  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `setUniswapRouter` function allows the contract `owner` to change the `_uniswapRouter` address to any arbitrary address. If the owner's private key is compromised or the owner acts maliciously, they could set a rogue router contract. This rogue router could then be used to drain tokens from the `AgentToken` contract during subsequent `_swapAndLiquify` operations or other interactions, leading to a complete loss of funds.
+
+**Recommendation:** Implement a multi-signature wallet for the `owner` address to control critical functions like `setUniswapRouter`. Additionally, consider a time-lock mechanism for such sensitive changes, allowing users to react to a potentially malicious update. Restrict the `_uniswapRouter` to a whitelist of trusted router addresses if possible.
+
+
 ### `I-01` — Missing Events for Critical State Changes  *(Severity: Informational · Status: Unresolved)*
 
-Several administrative functions that modify critical contract parameters, such as `setProjectTaxRecipient`, `setProjectBuyTaxBasisPoints`, `setProjectSellTaxBasisPoints`, `setSwapThresholdBasisPoints`, `setUniswapRouter`, and `setBotProtectionDurationInSeconds`, do not emit corresponding events. This lack of event emission hinders transparency, makes off-chain monitoring and auditing of administrative actions difficult, and can obscure important changes to the contract's behavior.
+Not confirmed by static analysis (the model's own reading of the source). Several administrative functions that modify critical contract parameters, such as `setProjectTaxRecipient`, `setProjectBuyTaxBasisPoints`, `setProjectSellTaxBasisPoints`, `setSwapThresholdBasisPoints`, `setUniswapRouter`, and `setBotProtectionDurationInSeconds`, do not emit corresponding events. This lack of event emission hinders transparency, makes off-chain monitoring and auditing of administrative actions difficult, and can obscure important changes to the contract's behavior.
 
 **Recommendation:** Emit events for all administrative actions that modify critical state variables. This provides a clear, immutable log of changes, improving transparency and enabling better monitoring and accountability.
 
 
 ### `I-02` — Unused `CALL_GAS_LIMIT` Constant  *(Severity: Informational · Status: Unresolved)*
 
-The constant `CALL_GAS_LIMIT` is declared in the contract but is not utilized anywhere within the provided source code. This might indicate leftover code from previous iterations, a planned feature that was not implemented, or an oversight.
+Not confirmed by static analysis (the model's own reading of the source). The constant `CALL_GAS_LIMIT` is declared in the contract but is not utilized anywhere within the provided source code. This might indicate leftover code from previous iterations, a planned feature that was not implemented, or an oversight.
 
 **Recommendation:** Remove unused code to reduce contract size and improve readability. If it's intended for a future feature, consider adding a comment explaining its purpose.
 

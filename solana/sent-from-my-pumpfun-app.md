@@ -2,14 +2,14 @@
 token: Sent from my Pumpfun App
 ticker: APP
 network: solana
-risk_score: 30
+risk_score: 13
 status: low
 date: 2026-08-16
 ---
 
 # Sent from my Pumpfun App (APP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 30/100 — 🟢 Low Risk**
+> **Risk Score: 13/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sent-from-my-pumpfun-app-sol)
 
@@ -26,8 +26,8 @@ The audit of the Sent from my Pumpfun App (App) SPL token mint identified a medi
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program, indicating modern SPL token standards and extensions. Crucially, both the mint authority and freeze authority have been revoked, preventing… |
-| **Governance / Economics** | 4/10 | Medium | The token's DEX pair is very new, having been created only 4 days ago, which limits the track record for assessing market behavior (7.4 Economic). Current liquidity stands at $42,173, with a 24-hour… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities (7.7 Upgrades). This means no new tokens can be minted, and no accounts can be frozen by an… |
+| **Governance / Economics** | 7/10 | Low | The token's DEX pair is very new, having been created only 4 days ago, which limits the track record for assessing market behavior (7.4 Economic). Current liquidity stands at $42,173, with a 24-hour… |
+| **Upgrades** | 10/10 | Low | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities (7.7 Upgrades). This means no new tokens can be minted, and no accounts can be frozen by an… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair for this token was created 4 days ago. This insufficient track reco
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2694 buys / 2978 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for this token was created 4 days ago. This insufficient track reco
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: SKYBOUND
 ticker: SKY
 network: solana
-risk_score: 23
+risk_score: 16
 status: low
 date: 2026-09-27
 ---
 
 # SKYBOUND (SKY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 23/100 — 🟢 Low Risk**
+> **Risk Score: 16/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/skybound-sol)
 
@@ -26,8 +26,8 @@ The SKYBOUND (SKY) token is an SPL Token-2022 mint with both mint and freeze aut
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The SKYBOUND (SKY) token is an SPL Token-2022 mint with a total supply of 955,782,283.947048 tokens across 6 decimals. Both the mint authority and freeze authority are revoked, ensuring no new tokens… |
-| **Governance / Economics** | 4/10 | Medium | The token's DEX liquidity stands at $22,680, with a 24-hour trading volume of $82,342, resulting in a normal Volume/Liquidity Ratio of 3.63. A significant concern is the pair's age, which is 0 days… |
-| **Upgrades** | 8/10 | Low | The token's upgradeability posture is strong, with both mint and freeze authorities permanently revoked, preventing any future changes to supply or account freeze status. The metadata is immutable… |
+| **Governance / Economics** | 5/10 | Medium | The token's DEX liquidity stands at $22,680, with a 24-hour trading volume of $82,342, resulting in a normal Volume/Liquidity Ratio of 3.63. A significant concern is the pair's age, which is 0 days… |
+| **Upgrades** | 9/10 | Low | The token's upgradeability posture is strong, with both mint and freeze authorities permanently revoked, preventing any future changes to supply or account freeze status. The metadata is immutable… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

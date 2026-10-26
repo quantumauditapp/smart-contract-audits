@@ -2,14 +2,14 @@
 token: Ribbita by Virtuals
 ticker: TIBBIR
 network: base
-risk_score: 56
-status: medium
+risk_score: 34
+status: low
 date: 2026-08-11
 ---
 
 # Ribbita by Virtuals (TIBBIR) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 56/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ribbita-by-virtuals-base)
 
@@ -25,8 +25,8 @@ The AgentToken contract is an upgradeable ERC20-like token with integrated tax m
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract demonstrates good architectural practices by leveraging OpenZeppelin's upgradeable contracts and using custom error types (7.1 Architecture, 7.2 Code Security). The `_autoSwapInProgress`… |
-| **Governance / Economics** | 2/10 | High | The contract's economic model includes configurable buy and sell taxes, which can be adjusted by the owner or factory (7.4 Economic). While this offers flexibility, the absence of explicit upper… |
+| **Technical** | 9/10 | Low | The contract demonstrates good architectural practices by leveraging OpenZeppelin's upgradeable contracts and using custom error types (7.1 Architecture, 7.2 Code Security). The `_autoSwapInProgress`… |
+| **Governance / Economics** | 3/10 | High | The contract's economic model includes configurable buy and sell taxes, which can be adjusted by the owner or factory (7.4 Economic). While this offers flexibility, the absence of explicit upper… |
 | **Upgrades** | 1/10 | High | The contract correctly implements the UUPS proxy pattern by inheriting from `Initializable` and calling `_disableInitializers()` in the constructor, along with using the `initializer` modifier for… |
 
 ## Proxy Upgrade Controls
@@ -46,46 +46,46 @@ The AgentToken contract is an upgradeable ERC20-like token with integrated tax m
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Centralization Risk via Factory Address  *(Severity: High · Status: Unresolved)*
-
-The `_factory` address, set during initialization, is granted extensive administrative control through the `onlyOwnerOrFactory` modifier. This includes the ability to add/remove liquidity pools, manage valid callers, and set critical tax parameters. If the factory contract is compromised or poorly secured (e.g., a single EOA), it could lead to a complete compromise of the token's configurable parameters, allowing an attacker to manipulate taxes, liquidity, or block legitimate callers.
-
-**Recommendation:** Implement robust security measures for the `_factory` address. Consider using a multi-signature wallet or a well-audited governance contract for the factory to distribute control and reduce the risk of a single point of failure. Clearly document the responsibilities and security requirements for the factory address.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Potential for High Tax Rates  *(Severity: Medium · Status: Unresolved)*
 
-The `projectBuyTaxBasisPoints` and `projectSellTaxBasisPoints` can be set by the owner or factory. While `MAX_SWAP_THRESHOLD_MULTIPLE` is defined, the provided code snippet does not show any explicit upper bounds or validation checks on the tax basis points themselves. Without such limits, an authorized entity could set excessively high tax rates, effectively rendering the token illiquid or unusable, leading to a loss of user funds or project failure.
+Not confirmed by static analysis (the model's own reading of the source). The `projectBuyTaxBasisPoints` and `projectSellTaxBasisPoints` can be set by the owner or factory. While `MAX_SWAP_THRESHOLD_MULTIPLE` is defined, the provided code snippet does not show any explicit upper bounds or validation checks on the tax basis points themselves. Without such limits, an authorized entity could set excessively high tax rates, effectively rendering the token illiquid or unusable, leading to a loss of user funds or project failure.
 
 **Recommendation:** Implement explicit upper limits for `projectBuyTaxBasisPoints` and `projectSellTaxBasisPoints` to prevent economically destructive configurations. These limits should be carefully chosen to maintain token utility and liquidity, and ideally, any changes to these limits should be subject to a time-lock or governance vote.
 
 
 ### `M-02` — Reliance on Uniswap V2 Price for Tax Swaps  *(Severity: Medium · Status: Unresolved)*
 
-The contract relies on Uniswap V2 for price discovery when performing tax swaps (implied by `_uniswapRouter` and `swapThresholdBasisPoints`). Uniswap V2's spot price is susceptible to manipulation, especially for low-liquidity pairs, through flash loans or large trades. If the `pairToken` is easily manipulable, the automated tax swap mechanism could be exploited to execute swaps at unfavorable rates, leading to value loss for the protocol or its users.
+Not confirmed by static analysis (the model's own reading of the source). The contract relies on Uniswap V2 for price discovery when performing tax swaps (implied by `_uniswapRouter` and `swapThresholdBasisPoints`). Uniswap V2's spot price is susceptible to manipulation, especially for low-liquidity pairs, through flash loans or large trades. If the `pairToken` is easily manipulable, the automated tax swap mechanism could be exploited to execute swaps at unfavorable rates, leading to value loss for the protocol or its users.
 
 **Recommendation:** For critical operations involving price-sensitive logic, consider integrating more robust and decentralized oracle solutions (e.g., Chainlink) or implementing a time-weighted average price (TWAP) mechanism from Uniswap V2 to mitigate flash loan and price manipulation risks. Ensure sufficient liquidity for the token's pair on Uniswap V2.
 
 
+### `M-03` — Centralization Risk via Factory Address  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_factory` address, set during initialization, is granted extensive administrative control through the `onlyOwnerOrFactory` modifier. This includes the ability to add/remove liquidity pools, manage valid callers, and set critical tax parameters. If the factory contract is compromised or poorly secured (e.g., a single EOA), it could lead to a complete compromise of the token's configurable parameters, allowing an attacker to manipulate taxes, liquidity, or block legitimate callers.
+
+**Recommendation:** Implement robust security measures for the `_factory` address. Consider using a multi-signature wallet or a well-audited governance contract for the factory to distribute control and reduce the risk of a single point of failure. Clearly document the responsibilities and security requirements for the factory address.
+
+
 ### `L-01` — Unused `CALL_GAS_LIMIT` Constant  *(Severity: Low · Status: Unresolved)*
 
-The constant `CALL_GAS_LIMIT` is defined within the contract but is not utilized in the provided code snippet. While not a direct vulnerability, unused code can increase contract size, potentially leading to higher deployment costs, and may indicate incomplete or abandoned functionality.
+Not confirmed by static analysis (the model's own reading of the source). The constant `CALL_GAS_LIMIT` is defined within the contract but is not utilized in the provided code snippet. While not a direct vulnerability, unused code can increase contract size, potentially leading to higher deployment costs, and may indicate incomplete or abandoned functionality.
 
 **Recommendation:** Review the purpose of `CALL_GAS_LIMIT`. If it is intended for future functionality, ensure its value is appropriate for the intended external calls. If it is no longer needed, consider removing it to optimize contract size and clarity.
 
 
 ### `I-01` — `_autoSwapInProgress` Reentrancy Guard  *(Severity: Informational · Status: Unresolved)*
 
-The contract utilizes a private boolean flag `_autoSwapInProgress` which is set to `true` during initialization and `false` after initial liquidity is added. This pattern is commonly used as a reentrancy guard to prevent reentrant calls during critical, multi-step operations, likely related to the automated tax swap mechanism (not fully shown in the snippet). This is a good security practice.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes a private boolean flag `_autoSwapInProgress` which is set to `true` during initialization and `false` after initial liquidity is added. This pattern is commonly used as a reentrancy guard to prevent reentrant calls during critical, multi-step operations, likely related to the automated tax swap mechanism (not fully shown in the snippet). This is a good security practice.
 
 **Recommendation:** Ensure that all functions that modify or depend on the state protected by `_autoSwapInProgress` correctly set and reset the flag to maintain its effectiveness as a reentrancy guard.
 
 
 ### `I-02` — Use of `EnumerableSet` for Dynamic Sets  *(Severity: Informational · Status: Unresolved)*
 
-The contract effectively uses OpenZeppelin's `EnumerableSet` for managing dynamic collections of addresses (`_liquidityPools`) and bytes32 hashes (`_validCallerCodeHashes`). This library provides efficient and secure ways to store and retrieve unique elements, which is a good practice for managing whitelists or lists of external contracts.
+Not confirmed by static analysis (the model's own reading of the source). The contract effectively uses OpenZeppelin's `EnumerableSet` for managing dynamic collections of addresses (`_liquidityPools`) and bytes32 hashes (`_validCallerCodeHashes`). This library provides efficient and secure ways to store and retrieve unique elements, which is a good practice for managing whitelists or lists of external contracts.
 
 **Recommendation:** Continue to leverage `EnumerableSet` for managing dynamic sets where efficient iteration and membership checks are required. Ensure that access control for adding and removing elements from these sets remains robust.
 

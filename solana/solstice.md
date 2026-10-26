@@ -83,7 +83,7 @@ Token name, symbol, or image can be changed post-launch.
 
 ### Is Solstice a scam?
 
-Based on the provided data, Solstice (SLX) exhibits multiple critical risk factors often associated with fraudulent schemes, culminating in a 72/100 Critical Risk score. The lack of contract verification, unrenounced ownership, and unlocked liquidity are significant indicators of potential malicious intent or severe vulnerability. While these factors don't definitively label it a scam, they strongly advise against investment due to the high probability of financial loss.
+Based on the provided data, Solstice (SLX) exhibits multiple critical risk factors often associated with fraudulent schemes, culminating in a 46/100 Medium Risk score. The lack of contract verification, unrenounced ownership, and unlocked liquidity are significant indicators of potential malicious intent or severe vulnerability. While these factors don't definitively label it a scam, they strongly advise against investment due to the high probability of financial loss.
 
 ### Is Solstice safe to buy?
 

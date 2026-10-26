@@ -2,14 +2,14 @@
 token: Sperax
 ticker: SPA
 network: arbitrum
-risk_score: 42
-status: medium
+risk_score: 34
+status: low
 date: 2026-09-24
 ---
 
 # Sperax (SPA) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sperax-arb)
 
@@ -25,8 +25,8 @@ This audit covers a partial Solidity source code for an ERC20 token, including P
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract implements a standard ERC20 token with `SafeMath` for arithmetic safety (7.2 Code Security). It includes `Pausable` and `MintPausable` features, which are common patterns for… |
-| **Governance / Economics** | 4/10 | Medium | The contract includes `Pausable` and `MintPausable` functionalities, along with `_mint` and `_burn` capabilities, which introduce centralization points (7.4 Economic). A privileged entity or set of… |
+| **Technical** | 8/10 | Low | The contract implements a standard ERC20 token with `SafeMath` for arithmetic safety (7.2 Code Security). It includes `Pausable` and `MintPausable` features, which are common patterns for… |
+| **Governance / Economics** | 6/10 | Medium | The contract includes `Pausable` and `MintPausable` functionalities, along with `_mint` and `_burn` capabilities, which introduce centralization points (7.4 Economic). A privileged entity or set of… |
 | **Upgrades** | 6/10 | Medium | Based on the provided information and the prefill `is_proxy: false`, the contract does not appear to be upgradeable (7.7 Upgrades). This eliminates risks associated with proxy patterns, such as… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ This audit covers a partial Solidity source code for an ERC20 token, including P
 
 ## Security Findings
 
-_🟠 2 High · 🟡 1 Medium · ⚪ 1 Informational_
-
-### `H-01` — Unverified Access Control for Critical Functions  *(Severity: High · Status: Unresolved)*
-
-The provided code snippets for `Pausable` and `MintPausable` define `internal virtual` functions (`_pause`, `_unpause`, `_mintPause`, `_mintUnpause`, `_mint`, `_burn`). The actual public/external functions that call these, and their associated access control mechanisms (e.g., `onlyOwner`, role-based), are not present in the provided code. Without the full contract, it's impossible to verify if these critical administrative functions are adequately protected. The prefill `ownership_renounced: true` further raises concerns, as it implies that if an `Ownable` pattern was used, these functions might now be uncallable, leading to a denial of service for administrative actions, or, if not properl…
-
-**Recommendation:** Provide the complete source code for the contract, including all derived contracts and their access control implementations. Ensure that all administrative functions are protected by appropriate access control (e.g., `onlyOwner`, a multi-signature wallet, or a robust governance mechanism). If ownership has been renounced, confirm that a secure and functional alternative access control or governance system is in place for these critical operations.
-
-
-### `H-02` — Incomplete Code Prevents Comprehensive Audit  *(Severity: High · Status: Unresolved)*
-
-The provided source code is truncated, specifically for the `MintPausable` contract. This prevents a complete and thorough security assessment of the entire contract's logic, interactions, and potential vulnerabilities. Any findings are based solely on the partial code available, and a full security posture cannot be definitively determined.
-
-**Recommendation:** Provide the complete and untruncated source code for all contracts involved in the system to enable a comprehensive security audit. This includes all inherited contracts and any external dependencies.
-
+_🟡 3 Medium · ⚪ 1 Informational_
 
 ### `M-01` — Centralization Risk from Administrative Controls  *(Severity: Medium · Status: Unresolved)*
 
-The contract incorporates `Pausable` and `MintPausable` functionalities, along with `_mint` and `_burn` capabilities. These features inherently introduce centralization points, as a privileged entity (or set of entities) can halt token transfers, prevent minting, or adjust the total supply. The security and integrity of the token ecosystem depend heavily on the trustworthiness and security of the controlling address(es).
+Not confirmed by static analysis (the model's own reading of the source). The contract incorporates `Pausable` and `MintPausable` functionalities, along with `_mint` and `_burn` capabilities. These features inherently introduce centralization points, as a privileged entity (or set of entities) can halt token transfers, prevent minting, or adjust the total supply. The security and integrity of the token ecosystem depend heavily on the trustworthiness and security of the controlling address(es).
 
 **Recommendation:** Clearly document the administrative roles and their associated privileges. Consider implementing a multi-signature wallet or a decentralized governance mechanism to control these critical functions, thereby distributing control and reducing single points of failure. Ensure that the controlling address(es) are highly secured.
 
 
+### `M-02` — Unverified Access Control for Critical Functions  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The provided code snippets for `Pausable` and `MintPausable` define `internal virtual` functions (`_pause`, `_unpause`, `_mintPause`, `_mintUnpause`, `_mint`, `_burn`). The actual public/external functions that call these, and their associated access control mechanisms (e.g., `onlyOwner`, role-based), are not present in the provided code. Without the full contract, it's impossible to verify if these critical administrative functions are adequately protected. The prefill `ownership_renounced: true` further raises concerns, as it implies that if an `Ownable` pattern was used, these functions might now be uncallable, lead
+
+**Recommendation:** Provide the complete source code for the contract, including all derived contracts and their access control implementations. Ensure that all administrative functions are protected by appropriate access control (e.g., `onlyOwner`, a multi-signature wallet, or a robust governance mechanism). If ownership has been renounced, confirm that a secure and functional alternative access control or governance system is in place for these critical operations.
+
+
+### `M-03` — Incomplete Code Prevents Comprehensive Audit  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The provided source code is truncated, specifically for the `MintPausable` contract. This prevents a complete and thorough security assessment of the entire contract's logic, interactions, and potential vulnerabilities. Any findings are based solely on the partial code available, and a full security posture cannot be definitively determined.
+
+**Recommendation:** Provide the complete and untruncated source code for all contracts involved in the system to enable a comprehensive security audit. This includes all inherited contracts and any external dependencies.
+
+
 ### `I-01` — Use of Older Solidity Version  *(Severity: Informational · Status: Unresolved)*
 
-The contract uses Solidity versions `0.6.x`. While `SafeMath` is correctly implemented to prevent integer overflows/underflows, Solidity versions 0.8.0 and higher include built-in overflow and underflow checks by default. This means that explicit `SafeMath` library usage is no longer strictly necessary for basic arithmetic operations in newer versions.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses Solidity versions `0.6.x`. While `SafeMath` is correctly implemented to prevent integer overflows/underflows, Solidity versions 0.8.0 and higher include built-in overflow and underflow checks by default. This means that explicit `SafeMath` library usage is no longer strictly necessary for basic arithmetic operations in newer versions.
 
 **Recommendation:** Consider migrating to Solidity 0.8.0 or a newer version. This would allow for the removal of the `SafeMath` library, simplifying the codebase and leveraging the compiler's native overflow/underflow protection. Thorough testing would be required after such a migration.
 

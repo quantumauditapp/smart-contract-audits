@@ -2,14 +2,14 @@
 token: Sock
 ticker: SOCK
 network: bsc
-risk_score: 31
+risk_score: 19
 status: low
 date: 2026-09-12
 ---
 
 # Sock (SOCK) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 31/100 — 🟢 Low Risk**
+> **Risk Score: 19/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sock-bsc-16ad)
 
@@ -25,8 +25,8 @@ The SockLaunchToken contract is an ERC20 token with ERC20Permit functionality. I
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract implements standard ERC20 and ERC20Permit functionalities, leveraging battle-tested OpenZeppelin libraries for core token operations (7.2 Code Security). The `creator()` function… |
-| **Governance / Economics** | 1/10 | High | The contract's economic model is straightforward, functioning as a standard ERC20 token with initial supply minted to the deployer (7.4 Economic). There are no complex DeFi primitives or staking… |
+| **Technical** | 10/10 | Low | The contract implements standard ERC20 and ERC20Permit functionalities, leveraging battle-tested OpenZeppelin libraries for core token operations (7.2 Code Security). The `creator()` function… |
+| **Governance / Economics** | 2/10 | High | The contract's economic model is straightforward, functioning as a standard ERC20 token with initial supply minted to the deployer (7.4 Economic). There are no complex DeFi primitives or staking… |
 | **Upgrades** | 6/10 | Medium | The SockLaunchToken contract is not designed as an upgradeable proxy (7.7 Upgrades). It is deployed as a standard, immutable contract, which eliminates upgrade-related risks such as proxy storage… |
 
 ## LP Distribution
@@ -38,25 +38,25 @@ The SockLaunchToken contract is an ERC20 token with ERC20Permit functionality. I
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Critical External Dependency in Creator Logic  *(Severity: High · Status: Unresolved)*
+### `M-01` — Critical External Dependency in Creator Logic  *(Severity: Medium · Status: Unresolved)*
 
-The `creator()` function, which determines the privileged address for `setMetadataURI`, relies on external contracts (`ILaunchpadHook` and `ICreatorLookup`) to dynamically resolve the creator. If these external contracts are compromised, malicious, or misconfigured, an unauthorized entity could manipulate the `creator()` return value, thereby gaining control over the `setMetadataURI` function. This introduces a significant trust assumption and a potential single point of failure on systems not directly audited.
+Not confirmed by static analysis (the model's own reading of the source). The `creator()` function, which determines the privileged address for `setMetadataURI`, relies on external contracts (`ILaunchpadHook` and `ICreatorLookup`) to dynamically resolve the creator. If these external contracts are compromised, malicious, or misconfigured, an unauthorized entity could manipulate the `creator()` return value, thereby gaining control over the `setMetadataURI` function. This introduces a significant trust assumption and a potential single point of failure on systems not directly audited.
 
 **Recommendation:** Thoroughly audit and secure the `ILaunchpadHook` and `ICreatorLookup` contracts. Implement robust access control and immutability for these external contracts if possible. Consider adding a mechanism to update the `launchpad` address by a trusted multi-signature wallet or DAO, or a timelock for changes to the `metadataURI` if the external dependencies are deemed high risk.
 
 
 ### `L-01` — Unused Immutable Variable `drawer`  *(Severity: Low · Status: Unresolved)*
 
-The `drawer` address is set as an immutable variable in the constructor but is not utilized anywhere within the `SockLaunchToken` contract's current implementation. This may indicate incomplete functionality, a placeholder for future features, or a design oversight.
+Not confirmed by static analysis (the model's own reading of the source). The `drawer` address is set as an immutable variable in the constructor but is not utilized anywhere within the `SockLaunchToken` contract's current implementation. This may indicate incomplete functionality, a placeholder for future features, or a design oversight.
 
 **Recommendation:** If the `drawer` variable is intended for future use, document its purpose clearly. If it is no longer needed, consider removing it to reduce contract complexity and bytecode size. If it is meant to be used, ensure the functionality is implemented as intended.
 
 
 ### `I-01` — Centralized Control over Metadata  *(Severity: Informational · Status: Unresolved)*
 
-The `creator()` address has the sole ability to update the `metadataURI` of the token. While this is a common pattern for token metadata management, it represents a centralized point of control for this specific aspect of the token.
+Not confirmed by static analysis (the model's own reading of the source). The `creator()` address has the sole ability to update the `metadataURI` of the token. While this is a common pattern for token metadata management, it represents a centralized point of control for this specific aspect of the token.
 
 **Recommendation:** Acknowledge the centralized control over metadata. If decentralization is a long-term goal, consider mechanisms for community governance or multi-signature control over metadata updates in future iterations. For now, ensure the `creator()` address is securely managed.
 

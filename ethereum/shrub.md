@@ -42,28 +42,28 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Unexpected ETH Balance Without Withdrawal Mechanism  *(Severity: Medium · Status: Unresolved)*
 
-The contract holds an Ether balance of approximately 5.3 ETH (5337572695930628067 wei) but lacks any explicit functionality for receiving, holding, or withdrawing ETH. This suggests that the ETH may have been sent to the contract accidentally or without a clear purpose. Without a withdrawal function, these funds are effectively locked and inaccessible, representing a potential loss of assets. (7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The contract holds an Ether balance of approximately 5.3 ETH (5337572695930628067 wei) but lacks any explicit functionality for receiving, holding, or withdrawing ETH. This suggests that the ETH may have been sent to the contract accidentally or without a clear purpose. Without a withdrawal function, these funds are effectively locked and inaccessible, representing a potential loss of assets. (7.8 Operations)
 
 **Recommendation:** Implement a secure and permissioned function to allow authorized parties (e.g., a designated owner or multisig) to withdraw any ETH held by the contract. Ensure this function includes appropriate access control and event logging.
 
 
 ### `L-01` — Redundant SafeMath Usage  *(Severity: Low · Status: Unresolved)*
 
-The contract explicitly uses the `SafeMath` library for arithmetic operations (e.g., `add`, `sub`). However, the contract is compiled with `pragma solidity ^0.8.17;`, and Solidity versions 0.8.0 and higher include built-in overflow and underflow checks by default. The use of `SafeMath` is therefore redundant, increasing bytecode size and gas costs without providing additional security benefits in this context. (7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). The contract explicitly uses the `SafeMath` library for arithmetic operations (e.g., `add`, `sub`). However, the contract is compiled with `pragma solidity ^0.8.17;`, and Solidity versions 0.8.0 and higher include built-in overflow and underflow checks by default. The use of `SafeMath` is therefore redundant, increasing bytecode size and gas costs without providing additional security benefits in this context. (7.2 Code Security)
 
 **Recommendation:** Remove the `using SafeMath for uint256;` directive and associated SafeMath function calls. Rely on Solidity's native overflow/underflow checks for arithmetic operations, which are enabled by default in version 0.8.0 and above.
 
 
 ### `I-01` — Internal Mint and Burn Functions  *(Severity: Informational · Status: Unresolved)*
 
-The `_mint` and `_burn` functions are declared as `internal virtual`. This means they can only be called by the contract itself or by inheriting contracts, and are not directly accessible from external accounts. As a base ERC20 contract, this design implies that the token supply is fixed after initial deployment unless an inheriting contract provides public or external functions to expose these minting/burning capabilities. If a dynamic supply is intended, further implementation is required. (7.1 Architecture)
+Not confirmed by static analysis (the model's own reading of the source). The `_mint` and `_burn` functions are declared as `internal virtual`. This means they can only be called by the contract itself or by inheriting contracts, and are not directly accessible from external accounts. As a base ERC20 contract, this design implies that the token supply is fixed after initial deployment unless an inheriting contract provides public or external functions to expose these minting/burning capabilities. If a dynamic supply is intended, further implementation is required. (7.1 Architecture)
 
 **Recommendation:** If a dynamic token supply is desired, ensure that an inheriting contract implements properly permissioned external functions (e.g., `mint`, `burn`) that call these internal `_mint` and `_burn` functions. These external functions should include robust access control mechanisms (e.g., `onlyOwner`, role-based access control) to prevent unauthorized supply manipulation.
 
 
 ### `I-02` — Unused Uniswap V2 Interfaces  *(Severity: Informational · Status: Unresolved)*
 
-The contract includes interfaces for `IUniswapV2Pair` and `IUniswapV2Factory`. However, within the provided `ERC20` implementation, these interfaces are not utilized in any function calls or logic. This suggests that the contract might be part of a larger system where these interactions occur in other modules, or it serves as a base for a token intended to interact with Uniswap V2, but the current snippet does not demonstrate these interactions. (7.1 Architecture)
+Not confirmed by static analysis (the model's own reading of the source). The contract includes interfaces for `IUniswapV2Pair` and `IUniswapV2Factory`. However, within the provided `ERC20` implementation, these interfaces are not utilized in any function calls or logic. This suggests that the contract might be part of a larger system where these interactions occur in other modules, or it serves as a base for a token intended to interact with Uniswap V2, but the current snippet does not demonstrate these interactions. (7.1 Architecture)
 
 **Recommendation:** If the Uniswap V2 interfaces are not intended for use within this specific contract, consider removing them to reduce bytecode size and improve clarity. If they are part of a larger system, ensure that the overall architecture clearly defines how and where these interfaces are used for external interactions.
 

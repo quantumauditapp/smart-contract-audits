@@ -2,14 +2,14 @@
 token: Robo Token
 ticker: ROBO
 network: base
-risk_score: 46
-status: medium
+risk_score: 34
+status: low
 date: 2026-08-15
 ---
 
 # Robo Token (ROBO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 46/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/robo-token-base)
 
@@ -25,7 +25,7 @@ The RoboToken contract is a minimal implementation of an Omnichain Fungible Toke
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The technical architecture (7.1) is straightforward, utilizing a simple inheritance model from established libraries. Code security (7.2) is robust as the contract contains no custom logic, relying… |
+| **Technical** | 10/10 | Low | The technical architecture (7.1) is straightforward, utilizing a simple inheritance model from established libraries. Code security (7.2) is robust as the contract contains no custom logic, relying… |
 | **Governance / Economics** | 4/10 | Medium | The contract exhibits centralized control (7.3) through its `Ownable` pattern, where the owner (the `_delegate` address) has significant power over LayerZero configurations and token parameters… |
 | **Upgrades** | 7/10 | Low | The RoboToken contract is not designed with upgradeability mechanisms (7.7), meaning it is immutable once deployed. This eliminates risks associated with proxy patterns or upgrade logic but… |
 
@@ -42,28 +42,28 @@ _🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralized Control by Owner/Delegate  *(Severity: Medium · Status: Unresolved)*
 
-The `_delegate` address, which is set as the contract owner via `Ownable(_delegate)`, possesses significant control over the `RoboToken`'s LayerZero configurations. This includes the ability to set the LayerZero token, change the delegate, and configure send/receive libraries and their parameters. While the prefill data indicates the owner is a 3/5 multisig, this remains a critical point of control where a compromise could lead to manipulation of cross-chain transfers or token functionality.
+Not confirmed by static analysis (the model's own reading of the source). The `_delegate` address, which is set as the contract owner via `Ownable(_delegate)`, possesses significant control over the `RoboToken`'s LayerZero configurations. This includes the ability to set the LayerZero token, change the delegate, and configure send/receive libraries and their parameters. While the prefill data indicates the owner is a 3/5 multisig, this remains a critical point of control where a compromise could lead to manipulation of cross-chain transfers or token functionality.
 
 **Recommendation:** Ensure the multisig controlling the owner address is robustly secured with strong key management practices, geographically distributed signers, and strict operational procedures for executing transactions. Implement time-locks or additional governance layers for highly sensitive operations if feasible.
 
 
 ### `M-02` — Reliance on LayerZero Protocol Security  *(Severity: Medium · Status: Unresolved)*
 
-The `RoboToken` is an Omnichain Fungible Token (OFT) built upon the LayerZero protocol. Its core functionality, including cross-chain transfers and supply management, is entirely dependent on the security, correctness, and operational integrity of the LayerZero endpoint and its underlying messaging infrastructure. Any vulnerabilities, exploits, or operational failures within the LayerZero protocol could directly impact the `RoboToken`, potentially leading to loss of funds, incorrect token balances, or service disruption.
+Not confirmed by static analysis (the model's own reading of the source). The `RoboToken` is an Omnichain Fungible Token (OFT) built upon the LayerZero protocol. Its core functionality, including cross-chain transfers and supply management, is entirely dependent on the security, correctness, and operational integrity of the LayerZero endpoint and its underlying messaging infrastructure. Any vulnerabilities, exploits, or operational failures within the LayerZero protocol could directly impact the `RoboToken`, potentially leading to loss of funds, incorrect token balances, or service disruption.
 
 **Recommendation:** Acknowledge and monitor the inherent risks associated with external dependencies, particularly cross-chain protocols. Stay informed about LayerZero's security audits, updates, and any reported vulnerabilities. Consider implementing monitoring tools to detect unusual activity related to LayerZero interactions.
 
 
 ### `L-01` — Immutability and Lack of Upgradeability  *(Severity: Low · Status: Unresolved)*
 
-The `RoboToken` contract is implemented as a standard, non-upgradeable contract. This means that once deployed, its code cannot be modified. While this eliminates risks associated with upgrade mechanisms (e.g., proxy implementation bugs), it also means that any discovered bugs, security vulnerabilities, or desired feature enhancements cannot be patched or implemented without deploying an entirely new contract and requiring users to migrate their tokens.
+Not confirmed by static analysis (the model's own reading of the source). The `RoboToken` contract is implemented as a standard, non-upgradeable contract. This means that once deployed, its code cannot be modified. While this eliminates risks associated with upgrade mechanisms (e.g., proxy implementation bugs), it also means that any discovered bugs, security vulnerabilities, or desired feature enhancements cannot be patched or implemented without deploying an entirely new contract and requiring users to migrate their tokens.
 
 **Recommendation:** Ensure that the current contract design is thoroughly reviewed and considered final for its intended lifecycle. If future flexibility or bug-fixing capabilities are deemed necessary, consider a proxy-based upgradeable architecture for future token contracts. For this immutable contract, comprehensive pre-deployment testing is paramount.
 
 
 ### `I-01` — Critical Constructor Parameters  *(Severity: Informational · Status: Unresolved)*
 
-The `RoboToken` constructor initializes two critical immutable parameters: `_lzEndpoint` and `_delegate`. The `_lzEndpoint` specifies the LayerZero endpoint contract, essential for all cross-chain operations. The `_delegate` address is used to initialize both the `OFT` delegate and the `Ownable` owner. Incorrectly configured addresses for either of these parameters during deployment would lead to a non-functional token (wrong endpoint) or a severely compromised token (compromised delegate/owner address).
+Not confirmed by static analysis (the model's own reading of the source). The `RoboToken` constructor initializes two critical immutable parameters: `_lzEndpoint` and `_delegate`. The `_lzEndpoint` specifies the LayerZero endpoint contract, essential for all cross-chain operations. The `_delegate` address is used to initialize both the `OFT` delegate and the `Ownable` owner. Incorrectly configured addresses for either of these parameters during deployment would lead to a non-functional token (wrong endpoint) or a severely compromised token (compromised delegate/owner address).
 
 **Recommendation:** Implement a rigorous deployment checklist and verification process to ensure that the correct and audited LayerZero endpoint address is used, and that the `_delegate` address corresponds to the intended, securely managed multisig wallet. Double-check all addresses against official documentation and known good values before deployment.
 

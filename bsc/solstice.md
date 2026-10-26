@@ -2,14 +2,14 @@
 token: Solstice
 ticker: SLX
 network: bsc
-risk_score: 84
+risk_score: 82
 status: high
 date: 2026-07-23
 ---
 
 # Solstice (SLX) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 84/100 — 🟠 High Risk**
+> **Risk Score: 82/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solstice-bsc)
 
@@ -42,35 +42,35 @@ _🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralized Control of Token Supply  *(Severity: Medium · Status: Unresolved)*
 
-The `DEFAULT_ADMIN_ROLE` has the authority to grant and revoke `MINTER_ROLE` and `BURNER_ROLE`. This means a single entity (or a small group if a multi-sig is used for the admin address) has complete control over the token's total supply through minting and burning capabilities. While this may be an intended design for a managed token, it represents a significant centralization risk (7.3 Access Control, 7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` has the authority to grant and revoke `MINTER_ROLE` and `BURNER_ROLE`. This means a single entity (or a small group if a multi-sig is used for the admin address) has complete control over the token's total supply through minting and burning capabilities. While this may be an intended design for a managed token, it represents a significant centralization risk (7.3 Access Control, 7.4 Economic).
 
 **Recommendation:** If a centralized token supply is intended, ensure that the `DEFAULT_ADMIN_ROLE` is managed by a highly secure, multi-signature wallet with robust operational procedures. Clearly communicate this centralization to users and stakeholders.
 
 
 ### `M-02` — Single Point of Failure for DEFAULT_ADMIN_ROLE  *(Severity: Medium · Status: Unresolved)*
 
-The `DEFAULT_ADMIN_ROLE`, initially assigned to `msg.sender` during deployment, holds extensive administrative power, including managing minter/burner roles and the `s_ccipAdmin` address. If this single administrative address is compromised, lost, or becomes inaccessible, the entire token's administrative functions could be jeopardized or rendered inoperable (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE`, initially assigned to `msg.sender` during deployment, holds extensive administrative power, including managing minter/burner roles and the `s_ccipAdmin` address. If this single administrative address is compromised, lost, or becomes inaccessible, the entire token's administrative functions could be jeopardized or rendered inoperable (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** It is strongly recommended to assign the `DEFAULT_ADMIN_ROLE` to a robust multi-signature wallet (e.g., Gnosis Safe) rather than a single Externally Owned Account (EOA). Implement strict key management and operational security protocols for this multi-sig wallet.
 
 
 ### `L-01` — Lack of Two-Step Transfer for DEFAULT_ADMIN_ROLE  *(Severity: Low · Status: Unresolved)*
 
-While `AccessControl` allows for granting and revoking roles, there isn't an explicit two-step transfer mechanism for the `DEFAULT_ADMIN_ROLE` itself. Directly granting the `DEFAULT_ADMIN_ROLE` to a new address and then revoking it from the old one in separate transactions carries a risk of accidental loss of administrative control if an incorrect address is provided or if the transaction fails midway (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). While `AccessControl` allows for granting and revoking roles, there isn't an explicit two-step transfer mechanism for the `DEFAULT_ADMIN_ROLE` itself. Directly granting the `DEFAULT_ADMIN_ROLE` to a new address and then revoking it from the old one in separate transactions carries a risk of accidental loss of administrative control if an incorrect address is provided or if the transaction fails midway (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** Consider implementing a custom two-step transfer mechanism for the `DEFAULT_ADMIN_ROLE` (e.g., `proposeAdmin` and `acceptAdmin`) to prevent accidental loss of control. This adds an extra layer of security by requiring explicit acceptance from the new administrator.
 
 
 ### `I-01` — Unclear External Implications of s_ccipAdmin Role  *(Severity: Informational · Status: Unresolved)*
 
-The `s_ccipAdmin` role is managed by the `DEFAULT_ADMIN_ROLE` and is intended for 'registering with the CCIP token admin registry.' However, the specific powers and implications of this role within the external CCIP protocol are not defined within this contract. This lack of clarity could lead to misunderstandings about its importance or potential misuse if the external system grants significant power to this address (7.1 Architecture, 7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The `s_ccipAdmin` role is managed by the `DEFAULT_ADMIN_ROLE` and is intended for 'registering with the CCIP token admin registry.' However, the specific powers and implications of this role within the external CCIP protocol are not defined within this contract. This lack of clarity could lead to misunderstandings about its importance or potential misuse if the external system grants significant power to this address (7.1 Architecture, 7.6 External).
 
 **Recommendation:** Provide comprehensive documentation detailing the purpose, responsibilities, and external dependencies of the `s_ccipAdmin` role within the broader protocol. This will help users and auditors understand its full security context and potential impact.
 
 
 ### `I-02` — Hardcoded Decimals  *(Severity: Informational · Status: Unresolved)*
 
-The `i_decimals` variable is set as an immutable value during contract deployment and cannot be changed thereafter. While this is a common practice for ERC20 tokens, it means the token's decimal precision is permanently fixed and cannot be adjusted to adapt to future protocol requirements or ecosystem standards (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The `i_decimals` variable is set as an immutable value during contract deployment and cannot be changed thereafter. While this is a common practice for ERC20 tokens, it means the token's decimal precision is permanently fixed and cannot be adjusted to adapt to future protocol requirements or ecosystem standards (7.1 Architecture).
 
 **Recommendation:** No direct action is required as this is a design choice. However, ensure that the chosen decimal precision (e.g., 18 for most ERC20s) aligns with all current and anticipated future use cases for the token.
 

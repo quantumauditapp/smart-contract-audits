@@ -2,14 +2,14 @@
 token: RuneScape Gold
 ticker: GP
 network: solana
-risk_score: 22
+risk_score: 13
 status: low
 date: 2026-09-18
 ---
 
 # RuneScape Gold (GP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 22/100 — 🟢 Low Risk**
+> **Risk Score: 13/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/runescape-gold-sol)
 
@@ -26,8 +26,8 @@ The RuneScape Gold (GP) token mint is an SPL Token-2022 with revoked mint and fr
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | This SPL Token-2022 mint (HTmQz7My6MehV7bjhJ6jde8nDND1yvsz68d24LP7YgUQ) has its mint and freeze authorities revoked, ensuring no new tokens can be minted and no accounts can be frozen. It implements… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a liquidity of $418,330 with a 24-hour volume of $3,615,824, resulting in a Volume/Liquidity Ratio of 8.64. The DEX pair is very new, having been created only 1 day ago, which… |
-| **Upgrades** | 6/10 | Medium | The mint authority and freeze authority are both revoked, fixing the token's supply and preventing account freezing. The token utilizes the Token-2022 program, with its transfer fee being upgradable… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a liquidity of $418,330 with a 24-hour volume of $3,615,824, resulting in a Volume/Liquidity Ratio of 8.64. The DEX pair is very new, having been created only 1 day ago, which… |
+| **Upgrades** | 7/10 | Low | The mint authority and freeze authority are both revoked, fixing the token's supply and preventing account freezing. The token utilizes the Token-2022 program, with its transfer fee being upgradable… |
 
 ## Token-2022 Extensions
 
@@ -73,7 +73,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

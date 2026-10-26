@@ -2,14 +2,14 @@
 token: Solomon
 ticker: SOLO
 network: solana
-risk_score: 67
-status: high
+risk_score: 45
+status: medium
 date: 2026-09-24
 ---
 
 # Solomon (SOLO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solomon-sol)
 
@@ -25,9 +25,9 @@ The Solomon (SOLO) token mint presents critical risks primarily due to an active
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Solomon (SOLO) token operates on the classic `spl-token` program. A critical security concern is the active mint authority, `98SPcyUZ2rqM2dgjCqqSXS4gJrNTLSNUAAVCF38xYj9u`, which retains the power… |
-| **Governance / Economics** | 1/10 | High | The economic stability of the Solomon (SOLO) token is significantly impacted by its holder concentration, with the top 10 accounts controlling 76.1% of the total supply. This high concentration… |
-| **Upgrades** | 4/10 | Medium | The Solomon (SOLO) token's mutability features present a mixed risk profile. While the freeze authority has been revoked, the mint authority remains active, allowing for potential changes to the… |
+| **Technical** | 8/10 | Low | The Solomon (SOLO) token operates on the classic `spl-token` program. A critical security concern is the active mint authority, `98SPcyUZ2rqM2dgjCqqSXS4gJrNTLSNUAAVCF38xYj9u`, which retains the power… |
+| **Governance / Economics** | 4/10 | Medium | The economic stability of the Solomon (SOLO) token is significantly impacted by its holder concentration, with the top 10 accounts controlling 76.1% of the total supply. This high concentration… |
+| **Upgrades** | 6/10 | Medium | The Solomon (SOLO) token's mutability features present a mixed risk profile. While the freeze authority has been revoked, the mint authority remains active, allowing for potential changes to the… |
 
 ## Security Findings
 
@@ -74,7 +74,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -83,7 +83,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

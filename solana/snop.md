@@ -2,14 +2,14 @@
 token: SNOP
 ticker: SNOP
 network: solana
-risk_score: 60
+risk_score: 51
 status: medium
 date: 2026-09-12
 ---
 
 # SNOP (SNOP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 60/100 — 🟡 Medium Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/snop-sol)
 
@@ -27,7 +27,7 @@ The SNOP token mint has revoked its mint and freeze authorities, preventing new 
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The token operates on the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen. The supply is… |
 | **Governance / Economics** | 1/10 | High | The token has a total DEX liquidity of $33,655 and a 24-hour volume of $148,928, resulting in a normal Volume/Liquidity Ratio of 4.43. However, the DEX pair is very new, having been created only 1… |
-| **Upgrades** | 6/10 | Medium | The mint and freeze authorities are permanently revoked, preventing any future changes to token supply or account freeze status. The token utilizes the spl-token-2022 program. While the transfer fee… |
+| **Upgrades** | 7/10 | Low | The mint and freeze authorities are permanently revoked, preventing any future changes to token supply or account freeze status. The token utilizes the spl-token-2022 program. While the transfer fee… |
 
 ## Token-2022 Extensions
 
@@ -73,7 +73,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by 'metada
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by 'metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: Sat Rush
 ticker: RUSH
 network: solana
-risk_score: 82
-status: high
+risk_score: 55
+status: medium
 date: 2026-09-15
 ---
 
 # Sat Rush (RUSH) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 82/100 — 🟠 High Risk**
+> **Risk Score: 55/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sat-rush-sol)
 
@@ -25,9 +25,9 @@ The Sat Rush (RUSH) token mint presents critical risks due to an unrevoked mint 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Sat Rush (RUSH) token operates under the standard `spl-token` program. A critical vulnerability exists as the mint authority, held by `6jH2zPwY58uPjWQPif7XtZM5B1AQAvtuZm1ifMNWTJvR`, remains… |
-| **Governance / Economics** | 1/10 | High | Economic stability is highly vulnerable due to extreme holder concentration, with the top 10 token accounts controlling 87.79% of the total supply. This level of concentration makes the token highly… |
-| **Upgrades** | 4/10 | Medium | The token mint's core authorities show a mixed state: the mint authority is active, but the freeze authority has been revoked. As a standard `spl-token` program, it does not utilize Token-2022… |
+| **Technical** | 8/10 | Low | The Sat Rush (RUSH) token operates under the standard `spl-token` program. A critical vulnerability exists as the mint authority, held by `6jH2zPwY58uPjWQPif7XtZM5B1AQAvtuZm1ifMNWTJvR`, remains… |
+| **Governance / Economics** | 3/10 | High | Economic stability is highly vulnerable due to extreme holder concentration, with the top 10 token accounts controlling 87.79% of the total supply. This level of concentration makes the token highly… |
+| **Upgrades** | 6/10 | Medium | The token mint's core authorities show a mixed state: the mint authority is active, but the freeze authority has been revoked. As a standard `spl-token` program, it does not utilize Token-2022… |
 
 ## Security Findings
 
@@ -81,7 +81,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -90,7 +90,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

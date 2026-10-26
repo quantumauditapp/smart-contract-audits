@@ -2,14 +2,14 @@
 token: Solana's First AI Lifeform
 ticker: CHARLIE
 network: solana
-risk_score: 49
-status: medium
+risk_score: 32
+status: low
 date: 2026-08-17
 ---
 
 # Solana's First AI Lifeform (CHARLIE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 49/100 — 🟡 Medium Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/solanas-first-ai-lifeform-sol)
 
@@ -25,9 +25,9 @@ The Solana's First AI Lifeform (CHARLIE) token mint has revoked both mint and fr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The CHARLIE token is an SPL Token-2022 mint with a supply of 963,399,671.650187 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 39.71% of the supply, which is below the thresholds for high concentration risk. Total DEX liquidity stands at $14,336, which… |
-| **Upgrades** | 8/10 | Low | The token mint's core authorities, including mint and freeze, are revoked, preventing any future changes to the token supply or account freeze status. Key Token-2022 extensions such as transfer hook… |
+| **Technical** | 10/10 | Low | The CHARLIE token is an SPL Token-2022 mint with a supply of 963,399,671.650187 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
+| **Governance / Economics** | 2/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 39.71% of the supply, which is below the thresholds for high concentration risk. Total DEX liquidity stands at $14,336, which… |
+| **Upgrades** | 10/10 | Low | The token mint's core authorities, including mint and freeze, are revoked, preventing any future changes to the token supply or account freeze status. Key Token-2022 extensions such as transfer hook… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1699 buys / 1731 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: SEI
 ticker: SEI
 network: ethereum
-risk_score: 62
+risk_score: 37
 status: medium
 date: 2026-08-13
 ---
 
 # SEI (SEI) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 62/100 — 🟡 Medium Risk**
+> **Risk Score: 37/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sei-eth)
 
@@ -26,8 +26,8 @@ This audit was conducted on a partial codebase consisting solely of interfaces a
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The provided codebase consists of well-defined interfaces and two utility libraries, `AddressCast` and `OFTComposeMsgCodec`. The `AddressCast` library includes robust input validation for address… |
-| **Governance / Economics** | 2/10 | High | Due to the absence of the `OFTImplementation` contract, it is impossible to assess the protocol's governance model, economic stability, or potential for oracle manipulation (7.4 Economic, 7.5… |
-| **Upgrades** | 6/10 | Medium | The provided information states `is_proxy: false`, suggesting the `OFTImplementation` might not be directly upgradeable via a proxy pattern. However, without the actual contract code, it's impossible… |
+| **Governance / Economics** | 3/10 | High | Due to the absence of the `OFTImplementation` contract, it is impossible to assess the protocol's governance model, economic stability, or potential for oracle manipulation (7.4 Economic, 7.5… |
+| **Upgrades** | 7/10 | Low | The provided information states `is_proxy: false`, suggesting the `OFTImplementation` might not be directly upgradeable via a proxy pattern. However, without the actual contract code, it's impossible… |
 
 ## LP Distribution
 
@@ -38,39 +38,39 @@ This audit was conducted on a partial codebase consisting solely of interfaces a
 
 ## Security Findings
 
-_🔴 1 Critical · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `C-01` — Incomplete Codebase for Audit (Missing OFTImplementation)  *(Severity: Critical · Status: Unresolved)*
-
-The primary contract, `OFTImplementation`, which is expected to contain the core business logic, state variables, and access control mechanisms for the Omnichain Fungible Token, was not provided for review. This prevents a comprehensive security assessment of the protocol's functionality, potential vulnerabilities (e.g., reentrancy, integer overflows, access control flaws), and overall system integrity. Without the implementation, the actual security posture of the protocol cannot be determined.
-
-**Recommendation:** Provide the complete and verified source code for the `OFTImplementation` contract to enable a full and accurate security audit. This is essential for identifying and mitigating potential vulnerabilities before deployment or further integration.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Potential for Misinterpretation with `abi.encodePacked` in `OFTComposeMsgCodec`  *(Severity: Medium · Status: Unresolved)*
 
-The `OFTComposeMsgCodec` library utilizes `abi.encodePacked` for message encoding. While this is a common practice for cross-chain messaging, `abi.encodePacked` does not add padding and can lead to ambiguity or misinterpretation if the decoding logic on the receiving chain or within other parts of the protocol does not precisely match the encoding structure, especially when dealing with variable-length data (`bytes _composeMsg`). A mismatch could lead to incorrect parsing of message components like `nonce`, `srcEid`, or `amountLD`.
+Not confirmed by static analysis (the model's own reading of the source). The `OFTComposeMsgCodec` library utilizes `abi.encodePacked` for message encoding. While this is a common practice for cross-chain messaging, `abi.encodePacked` does not add padding and can lead to ambiguity or misinterpretation if the decoding logic on the receiving chain or within other parts of the protocol does not precisely match the encoding structure, especially when dealing with variable-length data (`bytes _composeMsg`). A mismatch could lead to incorrect parsing of message components like `nonce`, `srcEid`, or `amountLD`.
 
 **Recommendation:** Ensure that all decoding logic strictly adheres to the exact encoding structure defined in `OFTComposeMsgCodec`. Consider adding explicit length prefixes for variable-length data within the `_composeMsg` if not already handled by the underlying LayerZero messaging system, or use `abi.encode` for fixed-size encoding where possible to reduce ambiguity. Thorough cross-chain testing of message encoding and decoding is crucial.
 
 
+### `M-02` — Incomplete Codebase for Audit (Missing OFTImplementation)  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The primary contract, `OFTImplementation`, which is expected to contain the core business logic, state variables, and access control mechanisms for the Omnichain Fungible Token, was not provided for review. This prevents a comprehensive security assessment of the protocol's functionality, potential vulnerabilities (e.g., reentrancy, integer overflows, access control flaws), and overall system integrity. Without the implementation, the actual security posture of the protocol cannot be determined.
+
+**Recommendation:** Provide the complete and verified source code for the `OFTImplementation` contract to enable a full and accurate security audit. This is essential for identifying and mitigating potential vulnerabilities before deployment or further integration.
+
+
 ### `L-01` — Low-Level Assembly in `AddressCast.toBytes`  *(Severity: Low · Status: Unresolved)*
 
-The `AddressCast.toBytes` function employs inline assembly for byte manipulation. While the function includes size checks and appears to correctly handle the conversion, assembly code is inherently more complex and less readable than high-level Solidity. This increases the risk of subtle bugs, off-by-one errors, or unexpected behavior if not rigorously tested across all edge cases, potentially leading to incorrect address or byte array representations.
+Not confirmed by static analysis (the model's own reading of the source). The `AddressCast.toBytes` function employs inline assembly for byte manipulation. While the function includes size checks and appears to correctly handle the conversion, assembly code is inherently more complex and less readable than high-level Solidity. This increases the risk of subtle bugs, off-by-one errors, or unexpected behavior if not rigorously tested across all edge cases, potentially leading to incorrect address or byte array representations.
 
 **Recommendation:** Thoroughly review and test the `AddressCast.toBytes` function with a wide range of inputs, including edge cases for `_size` (e.g., 1, 32) and `_addressBytes32` values. Consider adding comprehensive unit tests to ensure its correctness and resilience. If possible, explore alternative high-level Solidity constructs that achieve the same functionality to improve readability and reduce potential error surface.
 
 
 ### `I-01` — Extensive Interface Definitions Indicate High System Complexity  *(Severity: Informational · Status: Unresolved)*
 
-The provided codebase includes a significant number of interfaces (`IMessageLibManager`, `IMessagingChannel`, `IMessagingComposer`, `IPreCrime`, etc.). While this modular design promotes separation of concerns and reusability, a large number of interconnected interfaces suggests a highly complex system architecture. Increased complexity can lead to a larger attack surface, make it more challenging to reason about the overall system's security, and increase the potential for integration errors between different components.
+Not confirmed by static analysis (the model's own reading of the source). The provided codebase includes a significant number of interfaces (`IMessageLibManager`, `IMessagingChannel`, `IMessagingComposer`, `IPreCrime`, etc.). While this modular design promotes separation of concerns and reusability, a large number of interconnected interfaces suggests a highly complex system architecture. Increased complexity can lead to a larger attack surface, make it more challenging to reason about the overall system's security, and increase the potential for integration errors between different components.
 
 **Recommendation:** Maintain clear and comprehensive documentation for the entire system, detailing the responsibilities of each interface and how they interact. Implement robust integration testing to ensure seamless and secure communication between all components. Consider architectural reviews to identify and simplify any overly complex interdependencies.
 
 
 ### `I-02` — Lack of Access Control Context in Interfaces  *(Severity: Informational · Status: Unresolved)*
 
-Several functions defined within the interfaces (e.g., `registerLibrary`, `setDefaultSendLibrary`, `setEnforcedOptions` in `IMessageLibManager`, `setEnforcedOptions` in `IOAppOptionsType3`) imply privileged administrative actions. Without the concrete implementation of these interfaces, it is impossible to verify if robust access control mechanisms (e.g., `onlyOwner`, role-based access control, multi-signature wallets) are properly applied to prevent unauthorized users from invoking these critical functions and altering protocol parameters.
+Not confirmed by static analysis (the model's own reading of the source). Several functions defined within the interfaces (e.g., `registerLibrary`, `setDefaultSendLibrary`, `setEnforcedOptions` in `IMessageLibManager`, `setEnforcedOptions` in `IOAppOptionsType3`) imply privileged administrative actions. Without the concrete implementation of these interfaces, it is impossible to verify if robust access control mechanisms (e.g., `onlyOwner`, role-based access control, multi-signature wallets) are properly applied to prevent unauthorized users from invoking these critical functions and altering protocol parameters.
 
 **Recommendation:** Ensure that all functions within the `OFTImplementation` that correspond to these privileged interface methods are protected by strong access control. Implement a multi-signature wallet for critical administrative roles to enhance security and decentralization. Clearly document the access control policies for each sensitive function.
 
