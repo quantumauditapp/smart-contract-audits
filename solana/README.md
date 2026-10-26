@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1281 reports** · Updated daily · [← All Networks](../README.md)
+**1292 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,17 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [WhiteWhale](./whitewhale.md) | WHITEWHALE | 🟡 40/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/whitewhale-sol) |
+| [Always Sunny in Space](./always-sunny-in-space.md) | ASS | 🟢 23/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/always-sunny-in-space-sol) |
+| [StonkMarket](./stonkmarket.md) | STM | 🟢 19/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/stonkmarket-sol) |
+| [sadcat](./sadcat.md) | SADCAT | 🟡 44/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/sadcat-sol) |
+| [TRUMPDOLLAR](./trumpdollar.md) | TRUMPDOLLAR | 🟡 43/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/trumpdollar-sol) |
+| [Fomopad](./fomopad.md) | FOMOPAD | 🟢 18/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/fomopad-sol) |
+| [Squad Champion Series](./squad-champion-series.md) | SCS | 🟢 22/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/squad-champion-series-sol) |
+| [frog lord](./frog-lord.md) | FROG | 🟢 29/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/frog-lord-sol) |
+| [mem0x](./mem0x.md) | MEM0X | 🟢 20/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/mem0x-sol) |
+| [Lab](./lab.md) | LAB | 🟢 1/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/lab-sol) |
+| [Hellcat](./hellcat.md) | HELLCAT | 🟢 20/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/hellcat-sol) |
 | [The Bitcoin Hacker](./the-bitcoin-hacker.md) | KILLA | 🟢 20/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/the-bitcoin-hacker-sol) |
 | [RAYDIUM LAUNCHPAD](./raydium-launchpad.md) | RAYPAD | 🟢 19/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/raydium-launchpad-sol) |
 | [Nut Vigorously In Dat Insane Ass](./nut-vigorously-in-dat-insane-ass.md) | NVDA | 🟢 13/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/nut-vigorously-in-dat-insane-ass-sol) |

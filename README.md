@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-2838-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-2858-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,26 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [WhiteWhale](./solana/whitewhale.md) | WHITEWHALE | Solana | 🟡 40/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/whitewhale-sol) |
+| [XTO](./base/xto-base-7f5c.md) | XTO | Base | 🟡 63/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/xto-base-7f5c) |
+| [Global Dollar](./arbitrum/global-dollar.md) | USDG | Arbitrum | 🟡 35/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/global-dollar-arb) |
+| [MUX Protocol](./arbitrum/mux-protocol.md) | MCB | Arbitrum | 🟡 64/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/mux-protocol-arb) |
+| [USUAL](./ethereum/usual.md) | USUAL | Ethereum | 🟡 52/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/usual-eth) |
+| [Rayls](./ethereum/rayls.md) | RLS | Ethereum | 🟠 72/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/rayls-eth) |
+| [Ether](./base/ether.md) | ETH | Base | 🔴 97/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/ether-base) |
+| [Always Sunny in Space](./solana/always-sunny-in-space.md) | ASS | Solana | 🟢 23/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/always-sunny-in-space-sol) |
+| [StonkMarket](./solana/stonkmarket.md) | STM | Solana | 🟢 19/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/stonkmarket-sol) |
+| [sadcat](./solana/sadcat.md) | SADCAT | Solana | 🟡 44/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/sadcat-sol) |
+| [TRUMPDOLLAR](./solana/trumpdollar.md) | TRUMPDOLLAR | Solana | 🟡 43/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/trumpdollar-sol) |
+| [Fomopad](./solana/fomopad.md) | FOMOPAD | Solana | 🟢 18/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/fomopad-sol) |
+| [Binance Agent](./bsc/binance-agent-bsc-d3cc.md) | 7AGENT | BNB Chain | 🟢 24/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/binance-agent-bsc-d3cc) |
+| [Squad Champion Series](./solana/squad-champion-series.md) | SCS | Solana | 🟢 22/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/squad-champion-series-sol) |
+| [frog lord](./solana/frog-lord.md) | FROG | Solana | 🟢 29/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/frog-lord-sol) |
+| [mem0x](./solana/mem0x.md) | MEM0X | Solana | 🟢 20/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/mem0x-sol) |
+| [Lab](./solana/lab.md) | LAB | Solana | 🟢 1/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/lab-sol) |
+| [Charity Binance](./bsc/charity-binance.md) | 慈善币安 | BNB Chain | 🟢 20/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/charity-binance-bsc) |
+| [Hellcat](./solana/hellcat.md) | HELLCAT | Solana | 🟢 20/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/hellcat-sol) |
+| [Binance Agent](./bsc/binance-agent-bsc-ebc4.md) | 7AGENT | BNB Chain | 🟢 2/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/binance-agent-bsc-ebc4) |
 | [Binance Agent](./bsc/binance-agent-bsc-7996.md) | 4AGENT | BNB Chain | 🟡 63/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/binance-agent-bsc-7996) |
 | [AODF](./base/aodf-base-80f8.md) | AODF | Base | 🟡 60/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/aodf-base-80f8) |
 | [one life, its worth an attempt](./base/one-life-its-worth-an-attempt-base-aeaa.md) | WORTH | Base | 🟠 83/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/one-life-its-worth-an-attempt-base-aeaa) |
@@ -22,32 +42,12 @@
 | [The Bitcoin Hacker](./solana/the-bitcoin-hacker.md) | KILLA | Solana | 🟢 20/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/the-bitcoin-hacker-sol) |
 | [RAYDIUM LAUNCHPAD](./solana/raydium-launchpad.md) | RAYPAD | Solana | 🟢 19/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/raydium-launchpad-sol) |
 | [USOE](./base/usoe-base-dbf6.md) | USOE | Base | 🟡 55/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/usoe-base-dbf6) |
-| [Marvin the Martian](./base/marvin-the-martian.md) | MARVIN | Base | 🟠 69/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/marvin-the-martian-base) |
-| [World Strategic Oil Supply](./base/world-strategic-oil-supply-base-bc81.md) | WSOS | Base | 🟡 56/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/world-strategic-oil-supply-base-bc81) |
-| [United States Dividend Program](./base/united-states-dividend-program-base-22f7.md) | USDP | Base | 🟡 58/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/united-states-dividend-program-base-22f7) |
-| [BNC's Dog](./bsc/bncs-dog.md) | BDOG | BNB Chain | 🟢 23/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/bncs-dog-bsc) |
-| [QuickSwap](./base/quickswap.md) | QUICK | Base | 🟡 64/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/quickswap-base) |
-| [FLAPAI](./bsc/flapai.md) | FLAPAI | BNB Chain | 🟡 40/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/flapai-bsc) |
-| [Nut Vigorously In Dat Insane Ass](./solana/nut-vigorously-in-dat-insane-ass.md) | NVDA | Solana | 🟢 13/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/nut-vigorously-in-dat-insane-ass-sol) |
-| [Grand Trump Agency](./solana/grand-trump-agency.md) | GTA | Solana | 🟢 10/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/grand-trump-agency-sol) |
-| [BNC Standard Corporation](./bsc/bnc-standard-corporation.md) | BNC纳斯达克 | BNB Chain | 🟢 25/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/bnc-standard-corporation-bsc) |
-| [富途牛牛 FUTUBULL](./solana/futubull-sol-ccf1.md) | FUTUBULL | Solana | 🟢 27/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/futubull-sol-ccf1) |
-| [Project Kimchi](./solana/project-kimchi-sol-0ba0.md) | KIMCHI | Solana | 🟢 30/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/project-kimchi-sol-0ba0) |
-| [MAGA 2028](./solana/maga-2028.md) | MAGA2028 | Solana | 🟢 16/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/maga-2028-sol) |
-| [Google Gemini](./solana/google-gemini-sol-99d5.md) | GEMINI | Solana | 🟢 19/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/google-gemini-sol-99d5) |
-| [playboicarti](./solana/playboicarti.md) | CARTI | Solana | 🟢 20/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/playboicarti-sol) |
-| [Giga Tits](./solana/giga-tits.md) | GIGATITS | Solana | 🟢 1/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/giga-tits-sol) |
-| [Save Bow](./solana/save-bow.md) | BOW | Solana | 🟢 23/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/save-bow-sol) |
-| [Trust in Trump](./solana/trust-in-trump.md) | TIT | Solana | 🟢 14/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/trust-in-trump-sol) |
-| [IShowSpeed](./solana/ishowspeed.md) | SPEED | Solana | 🟢 16/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/ishowspeed-sol) |
-| [Mr Beast official](./solana/mr-beast-official.md) | MRBEAST | Solana | 🟢 15/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/mr-beast-official-sol) |
-| [SpaceX](./solana/spacex-sol-788e.md) | SPACEX | Solana | 🟢 1/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/spacex-sol-788e) |
 
 ---
 
 ## Browse by Network
 
-[Solana (1281)](./solana/README.md) · [BNB Chain (523)](./bsc/README.md) · [Ethereum (464)](./ethereum/README.md) · [Base (463)](./base/README.md) · [Arbitrum (82)](./arbitrum/README.md) · [Polygon (25)](./polygon/README.md)
+[Solana (1292)](./solana/README.md) · [BNB Chain (526)](./bsc/README.md) · [Ethereum (466)](./ethereum/README.md) · [Base (465)](./base/README.md) · [Arbitrum (84)](./arbitrum/README.md) · [Polygon (25)](./polygon/README.md)
 
 ---
 

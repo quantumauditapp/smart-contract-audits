@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**523 reports** · Updated daily · [← All Networks](../README.md)
+**526 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Binance Agent](./binance-agent-bsc-d3cc.md) | 7AGENT | 🟢 24/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/binance-agent-bsc-d3cc) |
+| [Charity Binance](./charity-binance.md) | 慈善币安 | 🟢 20/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/charity-binance-bsc) |
+| [Binance Agent](./binance-agent-bsc-ebc4.md) | 7AGENT | 🟢 2/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/binance-agent-bsc-ebc4) |
 | [Binance Agent](./binance-agent-bsc-7996.md) | 4AGENT | 🟡 63/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/binance-agent-bsc-7996) |
 | [BNC's Dog](./bncs-dog.md) | BDOG | 🟢 23/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/bncs-dog-bsc) |
 | [FLAPAI](./flapai.md) | FLAPAI | 🟡 40/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/flapai-bsc) |

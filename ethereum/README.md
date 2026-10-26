@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**464 reports** · Updated daily · [← All Networks](../README.md)
+**466 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [USUAL](./usual.md) | USUAL | 🟡 52/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/usual-eth) |
+| [Rayls](./rayls.md) | RLS | 🟠 72/100 High Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/rayls-eth) |
 | [one coin](./one-coin.md) | ONECOIN | 🟠 71/100 High Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/one-coin-eth) |
 | [SQUEEK](./squeek.md) | SQK | 🟢 0/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/squeek-eth) |
 | [Not My Stock](./not-my-stock.md) | NMS | 🟢 16/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/not-my-stock-eth) |
