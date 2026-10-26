@@ -93,11 +93,11 @@ The owner can modify the maximum transaction size and maximum wallet holdings vi
 
 ### Is Cougarcoin a scam?
 
-Based on automated analysis, Cougarcoin scores 29/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Cougarcoin scores 53/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Cougarcoin safe to buy?
 
-Our scanner flagged a risk score of 29/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 53/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Cougarcoin been audited?
 

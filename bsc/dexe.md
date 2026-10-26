@@ -2,14 +2,14 @@
 token: Dexe
 ticker: DEXE
 network: bsc
-risk_score: 84
+risk_score: 83
 status: high
 date: 2026-07-22
 ---
 
 # Dexe (DEXE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 84/100 — 🟠 High Risk**
+> **Risk Score: 83/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dexe-bsc)
 
@@ -49,28 +49,28 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Unverified Beacon Admin Control  *(Severity: Medium · Status: Unresolved)*
 
-The audit notes indicate that the administrator for the Beacon contract (0xb6f6d86a8f9879a9c87f643768d9efc38c1da6e7), which dictates the implementation address for all associated proxies, could not be classified. For a Beacon proxy system, the security of the Beacon's admin is paramount. An unmanaged, single-point-of-failure, or compromised Beacon admin could lead to unauthorized upgrades, potentially deploying malicious contract logic and compromising user funds or protocol integrity.
+Not confirmed by static analysis (the model's own reading of the source). The audit notes indicate that the administrator for the Beacon contract (0xb6f6d86a8f9879a9c87f643768d9efc38c1da6e7), which dictates the implementation address for all associated proxies, could not be classified. For a Beacon proxy system, the security of the Beacon's admin is paramount. An unmanaged, single-point-of-failure, or compromised Beacon admin could lead to unauthorized upgrades, potentially deploying malicious contract logic and compromising user funds or protocol integrity.
 
 **Recommendation:** Provide the source code for the Beacon contract and clarify its administrative control mechanisms. It is strongly recommended that the Beacon's admin be secured by a robust multi-signature wallet (e.g., Gnosis Safe) or a time-locked governance contract to prevent single points of failure and provide a delay for critical changes.
 
 
 ### `L-01` — Core Contract Logic Not Provided for Audit  *(Severity: Low · Status: Unresolved)*
 
-The primary business logic for the `BridgeToken` (proxy) and its `TokenImplementation` (implementation) contracts was not provided for review. This audit is therefore limited to the provided OpenZeppelin libraries and general observations about the proxy structure. A comprehensive security assessment of the protocol's specific functionalities, access control, economic model, and potential vulnerabilities (e.g., reentrancy, integer overflows) cannot be performed without the full source code.
+Not confirmed by static analysis (the model's own reading of the source). The primary business logic for the `BridgeToken` (proxy) and its `TokenImplementation` (implementation) contracts was not provided for review. This audit is therefore limited to the provided OpenZeppelin libraries and general observations about the proxy structure. A comprehensive security assessment of the protocol's specific functionalities, access control, economic model, and potential vulnerabilities (e.g., reentrancy, integer overflows) cannot be performed without the full source code.
 
 **Recommendation:** Provide the complete source code for all contracts comprising the BridgeToken protocol, including the `BridgeToken` proxy, `TokenImplementation`, and the Beacon contract, for a full and thorough security audit. This will enable a detailed analysis of the entire system's security posture.
 
 
 ### `I-01` — Standard Library Usage  *(Severity: Informational · Status: Unresolved)*
 
-The provided contract code utilizes well-audited and widely adopted OpenZeppelin libraries (`StorageSlot.sol` and `Address.sol`). These libraries are known for their high quality, security, and adherence to best practices in smart contract development. Their inclusion contributes positively to the overall code reliability.
+Not confirmed by static analysis (the model's own reading of the source). The provided contract code utilizes well-audited and widely adopted OpenZeppelin libraries (`StorageSlot.sol` and `Address.sol`). These libraries are known for their high quality, security, and adherence to best practices in smart contract development. Their inclusion contributes positively to the overall code reliability.
 
 **Recommendation:** Continue to leverage well-vetted and community-audited libraries like OpenZeppelin to reduce the risk of introducing common vulnerabilities. Ensure that the specific versions used are up-to-date and free from known exploits.
 
 
 ### `I-02` — Beacon Proxy Pattern Identified  *(Severity: Informational · Status: Unresolved)*
 
-The contract at 0x6e88056e8376ae7709496ba64d37fa2f8015ce3e is identified as a Beacon proxy, delegating its logic to an implementation contract (0x7f8c5e730121657e17e452c5a1ba3fa1ef96f22a) via a Beacon contract (0xb6f6d86a8f9879a9c87f643768d9efc38c1da6e7). This pattern allows multiple proxies to share and upgrade their implementation logic through a single Beacon, promoting efficiency and consistency.
+Not confirmed by static analysis (the model's own reading of the source). The contract at 0x6e88056e8376ae7709496ba64d37fa2f8015ce3e is identified as a Beacon proxy, delegating its logic to an implementation contract (0x7f8c5e730121657e17e452c5a1ba3fa1ef96f22a) via a Beacon contract (0xb6f6d86a8f9879a9c87f643768d9efc38c1da6e7). This pattern allows multiple proxies to share and upgrade their implementation logic through a single Beacon, promoting efficiency and consistency.
 
 **Recommendation:** Ensure that the Beacon proxy pattern is fully understood and correctly implemented across all associated contracts. Pay close attention to the security of the Beacon contract itself, as it is a central point of control for upgrades.
 

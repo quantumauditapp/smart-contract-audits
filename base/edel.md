@@ -2,14 +2,14 @@
 token: Edel
 ticker: EDEL
 network: base
-risk_score: 16
+risk_score: 5
 status: low
 date: 2026-08-14
 ---
 
 # Edel (EDEL) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 16/100 — 🟢 Low Risk**
+> **Risk Score: 5/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/edel-base)
 
@@ -42,35 +42,35 @@ _🟡 1 Medium · 🟢 3 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralized Control by Owner  *(Severity: Medium · Status: Unresolved)*
 
-The contract inherits `Ownable`, granting a single external address (the owner) significant control over the contract. While the current code does not expose many owner-only functions beyond standard `Ownable` features, any future additions of administrative functions could introduce a single point of failure or potential for malicious actions if the owner's private key is compromised. This centralization affects access control (7.3 Access Control) and operational risk (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract inherits `Ownable`, granting a single external address (the owner) significant control over the contract. While the current code does not expose many owner-only functions beyond standard `Ownable` features, any future additions of administrative functions could introduce a single point of failure or potential for malicious actions if the owner's private key is compromised. This centralization affects access control (7.3 Access Control) and operational risk (7.8 Operations).
 
 **Recommendation:** Consider implementing a multi-signature wallet (e.g., Gnosis Safe) for the contract owner to distribute control among multiple trusted parties. This enhances security by requiring multiple approvals for critical operations, reducing the risk associated with a single point of failure.
 
 
 ### `L-01` — Immutability of Key Operational Addresses  *(Severity: Low · Status: Unresolved)*
 
-The `_lpRecipient` and `_levyRecipients` addresses are set as `immutable` in the constructor. While this prevents unauthorized modification, it also means these addresses cannot be updated if they become compromised, inactive, or if the project's operational needs change. This could lead to levy funds or LP tokens being sent to an inaccessible or malicious address, impacting economic stability and operations (7.4 Economic, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `_lpRecipient` and `_levyRecipients` addresses are set as `immutable` in the constructor. While this prevents unauthorized modification, it also means these addresses cannot be updated if they become compromised, inactive, or if the project's operational needs change. This could lead to levy funds or LP tokens being sent to an inaccessible or malicious address, impacting economic stability and operations (7.4 Economic, 7.8 Operations).
 
 **Recommendation:** Assess the long-term operational requirements. If flexibility is desired, consider implementing owner-controlled functions to update these recipient addresses. If immutability is a deliberate design choice, ensure robust, long-term security and management of the designated recipient addresses.
 
 
 ### `L-02` — External Protocol Dependency Risk  *(Severity: Low · Status: Unresolved)*
 
-The contract relies on external protocols, specifically Aerodrome DEX (router, factory, pool) and WETH, for its liquidity provision mechanism. The security and functionality of `ContractOne` are directly dependent on the correct and secure operation of these external contracts. Any vulnerabilities, exploits, or unexpected behavior in Aerodrome or WETH could directly impact the functionality and assets managed by this contract (7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The contract relies on external protocols, specifically Aerodrome DEX (router, factory, pool) and WETH, for its liquidity provision mechanism. The security and functionality of `ContractOne` are directly dependent on the correct and secure operation of these external contracts. Any vulnerabilities, exploits, or unexpected behavior in Aerodrome or WETH could directly impact the functionality and assets managed by this contract (7.6 External).
 
 **Recommendation:** Regularly monitor the security posture and operational status of all integrated external protocols. Implement robust error handling and consider circuit breakers or emergency mechanisms if the contract's functionality is critically dependent on external systems that could fail or be exploited.
 
 
 ### `L-03` — Publicly Callable Single-Use Liquidity Pool Creation  *(Severity: Low · Status: Unresolved)*
 
-The `createLiquidityPool` function is `external` and can be called by any address, but only once. While the function includes checks for `ethAmount`, `maxSlippageBps`, and ensures LP tokens are sent to `_lpRecipient`, allowing any user to trigger this critical, one-time setup could lead to suboptimal initial liquidity parameters if not coordinated. A malicious or uncoordinated actor could front-run the intended caller with less favorable slippage settings (within the allowed range) or a smaller ETH amount, potentially impacting the initial market health (7.4 Economic, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `createLiquidityPool` function is `external` and can be called by any address, but only once. While the function includes checks for `ethAmount`, `maxSlippageBps`, and ensures LP tokens are sent to `_lpRecipient`, allowing any user to trigger this critical, one-time setup could lead to suboptimal initial liquidity parameters if not coordinated. A malicious or uncoordinated actor could front-run the intended caller with less favorable slippage settings (within the allowed range) or a smaller ETH amount, potentially impacting the initial market health (7.4 Economic, 7.8 Operations).
 
 **Recommendation:** While the current implementation ensures the LP tokens go to the designated recipient, consider restricting the `createLiquidityPool` function to the owner or a trusted address. This would allow for controlled and coordinated liquidity pool creation with optimal parameters, preventing potential griefing or suboptimal initial market conditions.
 
 
 ### `I-01` — Incomplete Code Provided for Levy Logic  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code for the `getCurrentLevyBps()` function and the latter part of `_updateLevyReductionStatus()` is truncated. This prevents a full and accurate assessment of the core levy calculation and reduction mechanism, which is central to the token's economic model. Without this code, potential issues such as incorrect levy calculation, unexpected reduction behavior, or edge case vulnerabilities cannot be identified.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the `getCurrentLevyBps()` function and the latter part of `_updateLevyReductionStatus()` is truncated. This prevents a full and accurate assessment of the core levy calculation and reduction mechanism, which is central to the token's economic model. Without this code, potential issues such as incorrect levy calculation, unexpected reduction behavior, or edge case vulnerabilities cannot be identified.
 
 **Recommendation:** Provide the complete and untruncated source code for all contract functions, especially `getCurrentLevyBps()` and `_updateLevyReductionStatus()`, to enable a comprehensive security audit of the levy mechanism.
 

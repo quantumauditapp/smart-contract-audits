@@ -2,14 +2,14 @@
 token: DAPPOS
 ticker: DOS
 network: bsc
-risk_score: 59
+risk_score: 48
 status: medium
 date: 2026-09-01
 ---
 
 # DAPPOS (DOS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 59/100 — 🟡 Medium Risk**
+> **Risk Score: 48/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dappos-bsc)
 
@@ -42,42 +42,42 @@ _🟡 1 Medium · 🟢 3 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralized Control over Critical Functions  *(Severity: Medium · Status: Unresolved)*
 
-The `owner` role, currently a 3/5 multisig, holds significant power, including the ability to pause all token transfers, set LayerZero peers, and change the LayerZero delegate. While a multisig mitigates single-point-of-failure, these centralized controls could still be exploited if the multisig signers are compromised or act maliciously. (7.3 Access Control, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The `owner` role, currently a 3/5 multisig, holds significant power, including the ability to pause all token transfers, set LayerZero peers, and change the LayerZero delegate. While a multisig mitigates single-point-of-failure, these centralized controls could still be exploited if the multisig signers are compromised or act maliciously. (7.3 Access Control, 7.8 Operations)
 
 **Recommendation:** Ensure robust operational security for the multisig. Consider implementing time-locks for critical operations or further decentralizing control if feasible in the future.
 
 
 ### `L-01` — Pausable Functionality as Denial of Service Vector  *(Severity: Low · Status: Unresolved)*
 
-The `pause()` function, callable by the owner, can halt all token transfers indefinitely. While intended for emergency response, a compromised or malicious owner could use this to deny service to all token holders, preventing any movement of tokens. (7.3 Access Control, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The `pause()` function, callable by the owner, can halt all token transfers indefinitely. While intended for emergency response, a compromised or malicious owner could use this to deny service to all token holders, preventing any movement of tokens. (7.3 Access Control, 7.8 Operations)
 
 **Recommendation:** Implement clear emergency procedures for the `pause` function. Consider adding a time-lock for `unpause()` or a community-driven unpause mechanism if decentralization is a future goal.
 
 
 ### `L-02` — Mutable LayerZero Delegate Address  *(Severity: Low · Status: Unresolved)*
 
-The `setDelegate` function allows the owner to change the LayerZero delegate address. A delegate contract can define custom logic for LayerZero messaging. A malicious or compromised owner could set a malicious delegate, potentially impacting cross-chain message processing or fee handling. (7.3 Access Control, 7.7 Upgrades)
+Not confirmed by static analysis (the model's own reading of the source). The `setDelegate` function allows the owner to change the LayerZero delegate address. A delegate contract can define custom logic for LayerZero messaging. A malicious or compromised owner could set a malicious delegate, potentially impacting cross-chain message processing or fee handling. (7.3 Access Control, 7.7 Upgrades)
 
 **Recommendation:** Exercise extreme caution when setting or changing the LayerZero delegate. Only use audited and trusted delegate contracts. Consider adding a time-lock to the `setDelegate` function.
 
 
 ### `L-03` — Peer Configuration Criticality  *(Severity: Low · Status: Unresolved)*
 
-The `setPeer` function, controlled by the owner, is crucial for establishing trusted cross-chain communication paths. Incorrectly setting a peer address could lead to cross-chain messages being routed to unintended or malicious contracts, potentially resulting in loss of funds or failed transfers. (7.3 Access Control, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The `setPeer` function, controlled by the owner, is crucial for establishing trusted cross-chain communication paths. Incorrectly setting a peer address could lead to cross-chain messages being routed to unintended or malicious contracts, potentially resulting in loss of funds or failed transfers. (7.3 Access Control, 7.8 Operations)
 
 **Recommendation:** Implement strict verification processes for peer addresses before setting them. Double-check all peer configurations to ensure they correspond to the intended destination contracts on other chains.
 
 
 ### `I-01` — Reliance on LayerZero Protocol Security  *(Severity: Informational · Status: Unresolved)*
 
-The `DapposTokenOFT` contract is built upon LayerZero v2, inheriting its cross-chain messaging capabilities. The security of the token's cross-chain functionality is directly dependent on the integrity and security of the LayerZero endpoint and its underlying protocol. Any vulnerabilities or misconfigurations within the LayerZero infrastructure could impact the token. (7.6 External)
+Not confirmed by static analysis (the model's own reading of the source). The `DapposTokenOFT` contract is built upon LayerZero v2, inheriting its cross-chain messaging capabilities. The security of the token's cross-chain functionality is directly dependent on the integrity and security of the LayerZero endpoint and its underlying protocol. Any vulnerabilities or misconfigurations within the LayerZero infrastructure could impact the token. (7.6 External)
 
 **Recommendation:** Stay informed about LayerZero security updates and best practices. Regularly review LayerZero's audit reports and ensure the configured LayerZero endpoint is trusted and secure.
 
 
 ### `I-02` — Compiler Version Discrepancy  *(Severity: Informational · Status: Unresolved)*
 
-The `DapposTokenOFT` contract uses `pragma solidity ^0.8.22`, while its LayerZero dependencies use `pragma solidity ^0.8.20`. Although `^0.8.22` is compatible with `^0.8.20`, using a consistent and pinned compiler version across all project files can prevent unexpected behavior due to minor compiler differences or bugs. (7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). The `DapposTokenOFT` contract uses `pragma solidity ^0.8.22`, while its LayerZero dependencies use `pragma solidity ^0.8.20`. Although `^0.8.22` is compatible with `^0.8.20`, using a consistent and pinned compiler version across all project files can prevent unexpected behavior due to minor compiler differences or bugs. (7.2 Code Security)
 
 **Recommendation:** Consider aligning all `pragma solidity` statements to a single, pinned compiler version (e.g., `0.8.22`) for consistency and to ensure all code is compiled with the exact same rules.
 

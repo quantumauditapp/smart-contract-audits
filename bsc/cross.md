@@ -2,14 +2,14 @@
 token: Cross
 ticker: CROSS
 network: bsc
-risk_score: 53
+risk_score: 38
 status: medium
 date: 2026-08-13
 ---
 
 # Cross (CROSS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 53/100 — 🟡 Medium Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cross-bsc)
 
@@ -26,7 +26,7 @@ The CrossToken contract implements a standard ERC20 token with burnable and perm
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The `CrossToken` contract is built upon battle-tested OpenZeppelin ERC20, ERC20Burnable, ERC20Permit, and Ownable libraries, ensuring a high degree of code security and adherence to ERC standards… |
-| **Governance / Economics** | 1/10 | High | The primary economic and governance risk stems from the centralized control over the token's `burn` function, which is restricted to the contract owner (7.4 Economic). This allows a single entity to… |
+| **Governance / Economics** | 2/10 | High | The primary economic and governance risk stems from the centralized control over the token's `burn` function, which is restricted to the contract owner (7.4 Economic). This allows a single entity to… |
 | **Upgrades** | 6/10 | Medium | The `CrossToken` contract is not designed with upgradeability in mind (7.7 Upgrades). It is deployed as an immutable contract, meaning its logic cannot be altered post-deployment. While this… |
 
 ## LP Distribution
@@ -38,25 +38,25 @@ The CrossToken contract implements a standard ERC20 token with burnable and perm
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control Over Token Supply via Burn Function  *(Severity: High · Status: Unresolved)*
-
-The `burn` function in the `CrossToken` contract is protected by the `onlyOwner` modifier. This grants the contract owner exclusive power to reduce the total supply of tokens at any time. While this can be a desired feature for supply management, it introduces a significant centralization risk (7.4 Economic). A malicious or compromised owner could burn a substantial amount of tokens, leading to a drastic devaluation or even a rug pull scenario for token holders.
-
-**Recommendation:** If the ability to burn tokens is essential, consider implementing a more decentralized approach, such as requiring a multi-signature approval for burn operations or integrating a time-lock mechanism. Alternatively, if the owner's control is intentional, ensure robust security measures for the owner's private key and transparently communicate this capability to the community.
-
+_🟡 2 Medium · ⚪ 1 Informational_
 
 ### `M-01` — Single Point of Failure Due to EOA Ownership  *(Severity: Medium · Status: Unresolved)*
 
-The `CrossToken` contract is currently owned by an External Owned Account (EOA) (7.5 Governance). This creates a single point of failure, as the security of the entire contract's administrative functions (including the ability to burn tokens) relies solely on the security of that single EOA's private key. If this EOA is compromised, an attacker could gain full control over the owner-restricted functions, leading to potential misuse and loss of funds.
+Not confirmed by static analysis (the model's own reading of the source). The `CrossToken` contract is currently owned by an External Owned Account (EOA) (7.5 Governance). This creates a single point of failure, as the security of the entire contract's administrative functions (including the ability to burn tokens) relies solely on the security of that single EOA's private key. If this EOA is compromised, an attacker could gain full control over the owner-restricted functions, leading to potential misuse and loss of funds.
 
 **Recommendation:** Transfer ownership of the contract to a multi-signature wallet (e.g., Gnosis Safe). A multi-sig wallet requires multiple independent approvals for transactions, significantly enhancing security by distributing control and reducing the risk associated with a single compromised key.
 
 
+### `M-02` — Centralized Control Over Token Supply via Burn Function  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `burn` function in the `CrossToken` contract is protected by the `onlyOwner` modifier. This grants the contract owner exclusive power to reduce the total supply of tokens at any time. While this can be a desired feature for supply management, it introduces a significant centralization risk (7.4 Economic). A malicious or compromised owner could burn a substantial amount of tokens, leading to a drastic devaluation or even a rug pull scenario for token holders.
+
+**Recommendation:** If the ability to burn tokens is essential, consider implementing a more decentralized approach, such as requiring a multi-signature approval for burn operations or integrating a time-lock mechanism. Alternatively, if the owner's control is intentional, ensure robust security measures for the owner's private key and transparently communicate this capability to the community.
+
+
 ### `I-01` — Immutability of Contract Logic  *(Severity: Informational · Status: Unresolved)*
 
-The `CrossToken` contract is deployed directly and does not implement any upgradeability mechanism (7.7 Upgrades). This means that once deployed, the contract's logic cannot be modified. While this eliminates risks associated with upgrade mechanisms (e.g., proxy vulnerabilities), it also implies that any discovered bugs or desired feature enhancements would necessitate deploying an entirely new contract and migrating all token holders, which can be a complex and costly process.
+Not confirmed by static analysis (the model's own reading of the source). The `CrossToken` contract is deployed directly and does not implement any upgradeability mechanism (7.7 Upgrades). This means that once deployed, the contract's logic cannot be modified. While this eliminates risks associated with upgrade mechanisms (e.g., proxy vulnerabilities), it also implies that any discovered bugs or desired feature enhancements would necessitate deploying an entirely new contract and migrating all token holders, which can be a complex and costly process.
 
 **Recommendation:** This is a design choice. If immutability is intended, no action is required. If future flexibility is desired, consider implementing an upgradeable proxy pattern (e.g., UUPS) for future deployments, though this adds complexity and its own set of risks.
 

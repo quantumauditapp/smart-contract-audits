@@ -2,14 +2,14 @@
 token: Dolomite
 ticker: DOLO
 network: ethereum
-risk_score: 62
+risk_score: 54
 status: medium
 date: 2026-08-16
 ---
 
 # Dolomite (DOLO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 62/100 — 🟡 Medium Risk**
+> **Risk Score: 54/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dolomite-eth)
 
@@ -25,8 +25,8 @@ The DOLOWithOwnable contract is an ERC20Burnable token with an Ownable access co
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract demonstrates good code security practices (7.2) by inheriting from battle-tested OpenZeppelin ERC20, ERC20Burnable, and Ownable contracts. It uses Solidity 0.8.9+, mitigating common… |
-| **Governance / Economics** | 2/10 | High | The economic model (7.4) of the DOLO token is highly centralized, with the contract owner having the ability to grant unlimited minting power to designated minters. This introduces a significant… |
+| **Technical** | 8/10 | Low | The contract demonstrates good code security practices (7.2) by inheriting from battle-tested OpenZeppelin ERC20, ERC20Burnable, and Ownable contracts. It uses Solidity 0.8.9+, mitigating common… |
+| **Governance / Economics** | 3/10 | High | The economic model (7.4) of the DOLO token is highly centralized, with the contract owner having the ability to grant unlimited minting power to designated minters. This introduces a significant… |
 | **Upgrades** | 4/10 | Medium | The DOLOWithOwnable contract is not designed with an upgrade mechanism (7.7), meaning its logic is immutable once deployed. This simplifies the architecture and removes upgrade-related risks such as… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The DOLOWithOwnable contract is an ERC20Burnable token with an Ownable access co
 
 ## Security Findings
 
-_🟠 1 High · ⚪ 3 Informational_
+_🟡 1 Medium · ⚪ 3 Informational_
 
-### `H-01` — Centralized Unlimited Minting Capability  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Unlimited Minting Capability  *(Severity: Medium · Status: Unresolved)*
 
-The `DOLOWithOwnable` contract grants the owner the ability to set and unset minters, and these minters can call the `mint` function to create an arbitrary amount of new tokens. This centralized control over token supply introduces a significant economic risk, as a compromised owner key or a malicious minter could lead to unlimited inflation, devaluing existing tokens.
+Not confirmed by static analysis (the model's own reading of the source). The `DOLOWithOwnable` contract grants the owner the ability to set and unset minters, and these minters can call the `mint` function to create an arbitrary amount of new tokens. This centralized control over token supply introduces a significant economic risk, as a compromised owner key or a malicious minter could lead to unlimited inflation, devaluing existing tokens.
 
 **Recommendation:** Implement safeguards to limit the minting capability. This could include a hard cap on the total supply, a maximum mintable amount per period, or requiring a multi-signature approval or a timelock for minting operations. If unlimited minting is a core design choice, ensure the operational security of the owner and minter addresses is exceptionally high.
 
 
 ### `I-01` — `renounceOwnership` Function Reverted  *(Severity: Informational · Status: Unresolved)*
 
-The `renounceOwnership` function is explicitly overridden to revert, preventing the owner from ever relinquishing ownership. This design choice ensures that the contract will always have an owner with the associated administrative privileges, including control over minting and setting the CCIP admin.
+Not confirmed by static analysis (the model's own reading of the source). The `renounceOwnership` function is explicitly overridden to revert, preventing the owner from ever relinquishing ownership. This design choice ensures that the contract will always have an owner with the associated administrative privileges, including control over minting and setting the CCIP admin.
 
 **Recommendation:** Acknowledge this design choice. If future decentralization or transfer of ownership to a DAO is desired, this design would require a new contract deployment. Ensure the implications of permanent ownership are well understood and documented.
 
 
 ### `I-02` — Minter Must Be a Contract  *(Severity: Informational · Status: Unresolved)*
 
-The `_ownerSetMinter` function includes a `Require.that(_minter.isContract(), ...)` check, enforcing that only smart contract addresses can be designated as minters. This prevents Externally Owned Accounts (EOAs) from directly holding minting privileges.
+Not confirmed by static analysis (the model's own reading of the source). The `_ownerSetMinter` function includes a `Require.that(_minter.isContract(), ...)` check, enforcing that only smart contract addresses can be designated as minters. This prevents Externally Owned Accounts (EOAs) from directly holding minting privileges.
 
 **Recommendation:** Document the rationale behind this design choice. Ensure that any contract designated as a minter is thoroughly audited and secured, as its compromise would directly impact the token's supply. This design can be beneficial for integrating with governance or timelock contracts.
 
 
 ### `I-03` — Undefined `_ccipAdmin` Role Functionality  *(Severity: Informational · Status: Unresolved)*
 
-The contract defines a `_ccipAdmin` state variable and functions (`ownerSetCCIPAdmin`, `getCCIPAdmin`) to manage it. However, the provided contract code does not implement any logic that utilizes this `_ccipAdmin` role. This suggests that its functionality is intended for external integration or future development.
+Not confirmed by static analysis (the model's own reading of the source). The contract defines a `_ccipAdmin` state variable and functions (`ownerSetCCIPAdmin`, `getCCIPAdmin`) to manage it. However, the provided contract code does not implement any logic that utilizes this `_ccipAdmin` role. This suggests that its functionality is intended for external integration or future development.
 
 **Recommendation:** Clearly document the intended purpose and responsibilities of the `_ccipAdmin` role. If this role interacts with external systems or contracts, ensure those integrations are secure and that the `_ccipAdmin` address is managed with the highest security standards.
 

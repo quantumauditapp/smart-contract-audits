@@ -87,7 +87,7 @@ The provided data points for Cup Markets (CUP) indicate several high-risk factor
 
 ### Is Cup Markets safe to buy?
 
-Investing in Cup Markets (CUP) carries significant risks, highlighted by its high-risk score of 65/100. Key safety concerns include the contract not being verified, making its underlying code opaque. Furthermore, ownership of the contract has not been renounced, leaving significant control with the deployer. The liquidity also remains unlocked, posing a risk of removal. These factors suggest a high-risk environment that investors should carefully consider.
+Investing in Cup Markets (CUP) carries significant risks, highlighted by its low-risk score of 33/100. Key safety concerns include the contract not being verified, making its underlying code opaque. Furthermore, ownership of the contract has not been renounced, leaving significant control with the deployer. The liquidity also remains unlocked, posing a risk of removal. These factors suggest a high-risk environment that investors should carefully consider.
 
 ### Has Cup Markets been audited?
 

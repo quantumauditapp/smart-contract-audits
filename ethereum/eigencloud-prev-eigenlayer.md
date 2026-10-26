@@ -116,11 +116,11 @@ Not confirmed by static analysis (the model's own reading of the source). The `_
 
 ### Is EigenCloud (prev. EigenLayer) a scam?
 
-Based on the provided data, several factors reduce the typical indicators of a scam. The contract is verified, offering transparency. Ownership has been renounced, preventing the developer from making malicious contract changes. Crucially, no mint function exists, eliminating arbitrary supply inflation. While the token is categorized as "Medium Risk" (28/100), these technical safeguards significantly mitigate common scam vectors.
+Based on the provided data, several factors reduce the typical indicators of a scam. The contract is verified, offering transparency. Ownership has been renounced, preventing the developer from making malicious contract changes. Crucially, no mint function exists, eliminating arbitrary supply inflation. While the token is categorized as "Medium Risk" (50/100), these technical safeguards significantly mitigate common scam vectors.
 
 ### Is EigenCloud (prev. EigenLayer) safe to buy?
 
-Buying EIGEN carries both mitigating factors and specific risks. While the contract is verified and ownership renounced, reducing direct developer manipulation, key risk factors exist. A significant 37.4% of the supply is concentrated among the top 10 holders, which could lead to market volatility. Additionally, liquidity is not locked, potentially impacting trading stability if withdrawn. This contributes to its Medium Risk score of 28/100.
+Buying EIGEN carries both mitigating factors and specific risks. While the contract is verified and ownership renounced, reducing direct developer manipulation, key risk factors exist. A significant 37.4% of the supply is concentrated among the top 10 holders, which could lead to market volatility. Additionally, liquidity is not locked, potentially impacting trading stability if withdrawn. This contributes to its Medium Risk score of 50/100.
 
 ### Has EigenCloud (prev. EigenLayer) been audited?
 

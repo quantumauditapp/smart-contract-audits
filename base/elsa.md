@@ -2,14 +2,14 @@
 token: Elsa
 ticker: ELSA
 network: base
-risk_score: 45
-status: medium
+risk_score: 28
+status: low
 date: 2026-08-17
 ---
 
 # Elsa (ELSA) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/elsa-base)
 
@@ -25,8 +25,8 @@ The ELSA token contract implements ERC20, ERC20Permit, and ERC3009 (Transfer Wit
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The technical implementation of the ELSA token contract is robust, utilizing battle-tested OpenZeppelin libraries for ERC20, ERC20Permit, and EIP712 functionalities. The custom ERC3009 extension… |
-| **Governance / Economics** | 1/10 | High | The economic model of the ELSA token involves minting the entire `TOTAL_SUPPLY` of 1 billion tokens to the contract deployer during construction (7.4 Economic). This creates a highly centralized… |
+| **Technical** | 10/10 | Low | The technical implementation of the ELSA token contract is robust, utilizing battle-tested OpenZeppelin libraries for ERC20, ERC20Permit, and EIP712 functionalities. The custom ERC3009 extension… |
+| **Governance / Economics** | 2/10 | High | The economic model of the ELSA token involves minting the entire `TOTAL_SUPPLY` of 1 billion tokens to the contract deployer during construction (7.4 Economic). This creates a highly centralized… |
 | **Upgrades** | 6/10 | Medium | The ELSA token contract is not designed with upgradeability in mind, as it does not implement any proxy patterns (7.7 Upgrades). This means the contract's logic is immutable once deployed… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The ELSA token contract implements ERC20, ERC20Permit, and ERC3009 (Transfer Wit
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Initial Token Distribution  *(Severity: High · Status: Unresolved)*
-
-The `ELSA` contract's constructor mints the entire `TOTAL_SUPPLY` (1 billion tokens) to the `msg.sender` (the deployer). This results in a highly centralized initial distribution of all tokens to a single address. This concentration of power can lead to significant economic and governance risks, including potential market manipulation, lack of decentralization, and single point of failure if the deployer's key is compromised (7.4 Economic, 7.5 Governance).
-
-**Recommendation:** If a decentralized token distribution is desired, consider implementing a vesting schedule, a multi-signature wallet for the initial supply, or a distribution mechanism (e.g., airdrop, liquidity pool seeding) to spread ownership. Clearly communicate the intended use and security measures for the deployer's address holding the entire supply.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Front-Running Risk for `transferWithAuthorization`  *(Severity: Medium · Status: Unresolved)*
 
-The `transferWithAuthorization` function, as per EIP-3009 design, allows any third party to execute a valid signed authorization. If a signed `transferWithAuthorization` message is broadcast publicly (e.g., via a relayer or mempool), an attacker could observe it and front-run the intended transaction by submitting their own transaction with a higher gas price, effectively executing the transfer before the intended party (7.2 Code Security). While `receiveWithAuthorization` is protected by a `msg.sender != to` check, `transferWithAuthorization` lacks such a restriction.
+Not confirmed by static analysis (the model's own reading of the source). The `transferWithAuthorization` function, as per EIP-3009 design, allows any third party to execute a valid signed authorization. If a signed `transferWithAuthorization` message is broadcast publicly (e.g., via a relayer or mempool), an attacker could observe it and front-run the intended transaction by submitting their own transaction with a higher gas price, effectively executing the transfer before the intended party (7.2 Code Security). While `receiveWithAuthorization` is protected by a `msg.sender != to` check, `transferWithAuthorization` lacks such a restriction.
 
 **Recommendation:** Educate users about the front-running risks associated with `transferWithAuthorization`. For sensitive transactions, advise users to utilize private transaction relays (e.g., Flashbots) to prevent their signed messages from being exposed in the public mempool before execution. Implement monitoring for potential front-running attempts if possible.
 
 
+### `M-02` — Centralized Initial Token Distribution  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `ELSA` contract's constructor mints the entire `TOTAL_SUPPLY` (1 billion tokens) to the `msg.sender` (the deployer). This results in a highly centralized initial distribution of all tokens to a single address. This concentration of power can lead to significant economic and governance risks, including potential market manipulation, lack of decentralization, and single point of failure if the deployer's key is compromised (7.4 Economic, 7.5 Governance).
+
+**Recommendation:** If a decentralized token distribution is desired, consider implementing a vesting schedule, a multi-signature wallet for the initial supply, or a distribution mechanism (e.g., airdrop, liquidity pool seeding) to spread ownership. Clearly communicate the intended use and security measures for the deployer's address holding the entire supply.
+
+
 ### `L-01` — Reliance on `block.timestamp` for Authorization Validity  *(Severity: Low · Status: Unresolved)*
 
-The `_validateAuthorization` function uses `block.timestamp` to check `validAfter` and `validBefore` parameters. While standard practice for time-based validity, `block.timestamp` can be manipulated by miners within a small window (e.g., up to 900 seconds on Ethereum mainnet, though typically less on faster chains). This could potentially allow a miner to slightly extend or shorten the validity window of an authorization (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `_validateAuthorization` function uses `block.timestamp` to check `validAfter` and `validBefore` parameters. While standard practice for time-based validity, `block.timestamp` can be manipulated by miners within a small window (e.g., up to 900 seconds on Ethereum mainnet, though typically less on faster chains). This could potentially allow a miner to slightly extend or shorten the validity window of an authorization (7.2 Code Security).
 
 **Recommendation:** Acknowledge that `block.timestamp` is subject to minor miner manipulation. For most use cases, this level of precision is acceptable. If extremely precise time-based validity is critical, consider alternative time sources or design patterns, though this often introduces additional complexity or centralization.
 
 
 ### `I-01` — Lack of Emergency Pause Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The `ELSA` token contract, being a standard ERC20 implementation with EIP-3009 extensions, does not include any emergency pause functionality. In the event of a critical vulnerability discovered in the token itself, or in a protocol that heavily relies on it, there is no mechanism to temporarily halt transfers or other operations (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `ELSA` token contract, being a standard ERC20 implementation with EIP-3009 extensions, does not include any emergency pause functionality. In the event of a critical vulnerability discovered in the token itself, or in a protocol that heavily relies on it, there is no mechanism to temporarily halt transfers or other operations (7.8 Operations).
 
 **Recommendation:** Consider whether an emergency pause mechanism (e.g., using OpenZeppelin's `Pausable` contract) would be beneficial for the project's risk management strategy. While adding complexity and a point of control, it can provide a crucial safety switch in unforeseen circumstances. If implemented, ensure the pause functionality is controlled by a robust, multi-signature governance mechanism.
 

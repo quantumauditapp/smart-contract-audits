@@ -2,14 +2,14 @@
 token: donut fade
 ticker: DNUT
 network: solana
-risk_score: 22
+risk_score: 5
 status: low
 date: 2026-09-19
 ---
 
 # donut fade (DNUT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 22/100 — 🟢 Low Risk**
+> **Risk Score: 5/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/donut-fade-sol)
 
@@ -26,8 +26,8 @@ The donut fade (DNUT) SPL Token Mint on Solana exhibits a Medium risk profile, p
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The donut fade (DNUT) token is implemented using the spl-token-2022 program. The Mint Authority is revoked, ensuring no new tokens can be minted, fixing the total supply at 973,202,896.321420 DNUT.… |
-| **Governance / Economics** | 4/10 | Medium | The token's DEX liquidity stands at $39,059, which is moderate. However, the DEX pair was created only 0 days ago, providing no historical data for market behavior assessment. The 24-hour volume is… |
-| **Upgrades** | 8/10 | Low | The token's Mint Authority and Freeze Authority are both revoked, preventing any changes to supply or account freeze status post-launch. The metadata is immutable, meaning the token's name, symbol… |
+| **Governance / Economics** | 7/10 | Low | The token's DEX liquidity stands at $39,059, which is moderate. However, the DEX pair was created only 0 days ago, providing no historical data for market behavior assessment. The 24-hour volume is… |
+| **Upgrades** | 10/10 | Low | The token's Mint Authority and Freeze Authority are both revoked, preventing any changes to supply or account freeze status post-launch. The metadata is immutable, meaning the token's name, symbol… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 9463 buys / 7404 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

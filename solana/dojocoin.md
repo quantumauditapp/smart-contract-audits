@@ -2,14 +2,14 @@
 token: Dojocoin
 ticker: DOJO
 network: solana
-risk_score: 35
-status: medium
+risk_score: 16
+status: low
 date: 2026-09-20
 ---
 
 # Dojocoin (DOJO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 35/100 — 🟡 Medium Risk**
+> **Risk Score: 16/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dojocoin-sol)
 
@@ -25,9 +25,9 @@ The Dojocoin (DOJO) token presents a medium risk profile primarily due to signif
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Dojocoin (DOJO) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits significant holder concentration, with the top 10 accounts holding 66.15% of the total supply, indicating potential for price volatility from large sell-offs (7.4 Economic). Total… |
-| **Upgrades** | 6/10 | Medium | The mint and freeze authorities for Dojocoin (DOJO) are permanently revoked, preventing further minting or freezing of accounts (7.7 Upgrades). However, the token's metadata, including its name… |
+| **Technical** | 10/10 | Low | The Dojocoin (DOJO) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits significant holder concentration, with the top 10 accounts holding 66.15% of the total supply, indicating potential for price volatility from large sell-offs (7.4 Economic). Total… |
+| **Upgrades** | 8/10 | Low | The mint and freeze authorities for Dojocoin (DOJO) are permanently revoked, preventing further minting or freezing of accounts (7.7 Upgrades). However, the token's metadata, including its name… |
 
 ## Token-2022 Extensions
 
@@ -67,13 +67,13 @@ Token name, symbol, or image can be changed post-launch.
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1245 buys / 772 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

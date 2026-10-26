@@ -2,14 +2,14 @@
 token: Ember Cat
 ticker: EMBERCAT
 network: solana
-risk_score: 25
+risk_score: 8
 status: low
 date: 2026-09-14
 ---
 
 # Ember Cat (EMBERCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 25/100 — 🟢 Low Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ember-cat-sol)
 
@@ -26,8 +26,8 @@ This audit of the Ember Cat (EMBERCAT) SPL token mint identifies a medium risk a
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Ember Cat token operates on the classic SPL Token Program (spl-token). Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no existing… |
-| **Governance / Economics** | 5/10 | Medium | The token's DEX pair was created only 4 days ago, indicating a very new market with insufficient track record. Current liquidity stands at $75,173 USD, with a 24-hour volume of $750,631 USD… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply is fixed and accounts cannot be frozen. The metadata is immutable, preventing changes to the token's name, symbol… |
+| **Governance / Economics** | 8/10 | Low | The token's DEX pair was created only 4 days ago, indicating a very new market with insufficient track record. Current liquidity stands at $75,173 USD, with a 24-hour volume of $750,631 USD… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply is fixed and accounts cannot be frozen. The metadata is immutable, preventing changes to the token's name, symbol… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3423 buys / 3360 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

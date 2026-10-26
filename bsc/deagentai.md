@@ -2,14 +2,14 @@
 token: DeAgentAI
 ticker: AIA
 network: bsc
-risk_score: 59
+risk_score: 57
 status: medium
 date: 2026-09-02
 ---
 
 # DeAgentAI (AIA) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 59/100 — 🟡 Medium Risk**
+> **Risk Score: 57/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/deagentai-bsc)
 
@@ -42,14 +42,14 @@ _🟢 1 Low · ⚪ 1 Informational_
 
 ### `L-01` — Centralized Ownership  *(Severity: Low · Status: Unresolved)*
 
-The `AIA` contract inherits from OpenZeppelin's `Ownable` contract, granting the deployer (owner) exclusive control over critical administrative functions such as `transferOwnership` and `renounceOwnership`. This centralization introduces a single point of failure; if the owner's private key is compromised, a malicious actor could gain control over the contract's ownership, potentially leading to unauthorized actions or loss of control.
+Not confirmed by static analysis (the model's own reading of the source). The `AIA` contract inherits from OpenZeppelin's `Ownable` contract, granting the deployer (owner) exclusive control over critical administrative functions such as `transferOwnership` and `renounceOwnership`. This centralization introduces a single point of failure; if the owner's private key is compromised, a malicious actor could gain control over the contract's ownership, potentially leading to unauthorized actions or loss of control.
 
 **Recommendation:** For enhanced security and decentralization, consider transferring ownership to a multi-signature wallet (e.g., Gnosis Safe) or a time-locked contract. This would require multiple approvals or a waiting period for ownership changes, significantly reducing the risk associated with a single compromised key. If decentralization is not a primary goal, ensure the owner's private key is stored with the highest security standards.
 
 
 ### `I-01` — Custom Decimals Value  *(Severity: Informational · Status: Unresolved)*
 
-The `AIA` token contract explicitly overrides the default ERC20 `decimals()` function, setting its value to 9 instead of the common 18. While this is a valid design choice, it deviates from the widely adopted standard for many ERC20 tokens. This non-standard decimal value can lead to misinterpretation of token amounts, display errors in wallets or exchanges, and incorrect calculations in integrated DeFi protocols if they implicitly assume 18 decimals.
+Not confirmed by static analysis (the model's own reading of the source). The `AIA` token contract explicitly overrides the default ERC20 `decimals()` function, setting its value to 9 instead of the common 18. While this is a valid design choice, it deviates from the widely adopted standard for many ERC20 tokens. This non-standard decimal value can lead to misinterpretation of token amounts, display errors in wallets or exchanges, and incorrect calculations in integrated DeFi protocols if they implicitly assume 18 decimals.
 
 **Recommendation:** Ensure that all users, exchanges, wallets, and any integrated platforms are explicitly aware of and correctly configured for the token's 9-decimal value. Clear documentation and communication are essential to prevent user confusion and potential financial discrepancies. Thoroughly test all integrations to confirm correct handling of the token's decimal precision.
 

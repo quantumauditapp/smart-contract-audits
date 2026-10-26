@@ -2,14 +2,14 @@
 token: defi-native
 ticker: DEFI-NATIVE
 network: base
-risk_score: 76
-status: high
+risk_score: 51
+status: medium
 date: 2026-08-31
 ---
 
 # defi-native (DEFI-NATIVE) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 76/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/defi-native-base)
 
@@ -25,9 +25,9 @@ The DopplerERC20V1 contract implements an ERC20 token with vesting capabilities 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages well-audited Solady libraries for its ERC20 and Ownable functionalities, contributing to a solid foundation (7.1 Architecture). It utilizes custom errors for clear error… |
-| **Governance / Economics** | 2/10 | High | The economic model incorporates vesting schedules with cliff and duration periods, along with pre-mint limits to manage initial token distribution effectively (7.4 Economic). The `initialize`… |
-| **Upgrades** | 1/10 | High | The contract incorporates the `Initializable` pattern from Solady and correctly calls `_disableInitializers()` in its constructor, preventing re-initialization in a non-proxy deployment (7.7… |
+| **Technical** | 8/10 | Low | The contract leverages well-audited Solady libraries for its ERC20 and Ownable functionalities, contributing to a solid foundation (7.1 Architecture). It utilizes custom errors for clear error… |
+| **Governance / Economics** | 3/10 | High | The economic model incorporates vesting schedules with cliff and duration periods, along with pre-mint limits to manage initial token distribution effectively (7.4 Economic). The `initialize`… |
+| **Upgrades** | 2/10 | High | The contract incorporates the `Initializable` pattern from Solady and correctly calls `_disableInitializers()` in its constructor, preventing re-initialization in a non-proxy deployment (7.7… |
 
 ## Proxy Upgrade Controls
 
@@ -46,39 +46,39 @@ The DopplerERC20V1 contract implements an ERC20 token with vesting capabilities 
 
 ## Security Findings
 
-_🔴 1 Critical · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `C-01` — Missing `_beforeTokenTransfer` Override for Balance Limit Enforcement  *(Severity: Critical · Status: Unresolved)*
-
-The contract defines a balance limit mechanism (`isBalanceLimitActive`, `maxBalanceLimit`, `balanceLimitEnd`, `isExcludedFromBalanceLimit`) and related access control (`disableBalanceLimit` by controller). However, the provided code snippet does not include an override of the `_beforeTokenTransfer` hook from the inherited `ERC20` (Solady) contract. Without this override, the `maxBalanceLimit` and `balanceLimitEnd` checks are not enforced during token transfers, rendering the entire balance limit mechanism ineffective for its primary purpose.
-
-**Recommendation:** Implement the `_beforeTokenTransfer` hook to include the necessary checks for `isBalanceLimitActive`, `balanceLimitEnd`, `maxBalanceLimit`, and `isExcludedFromBalanceLimit` for the `to` address before allowing any token transfer.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralized Control by Owner/Controller  *(Severity: Medium · Status: Unresolved)*
 
-The contract utilizes the `Ownable` pattern, granting the `owner` significant administrative privileges, including `lockPool`, `unlockPool`, and `updateTokenURI`. Additionally, a `controller` role is introduced with the ability to `disableBalanceLimit`. While common for initial deployment phases, this centralization of power introduces a single point of failure and potential for malicious or compromised control.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes the `Ownable` pattern, granting the `owner` significant administrative privileges, including `lockPool`, `unlockPool`, and `updateTokenURI`. Additionally, a `controller` role is introduced with the ability to `disableBalanceLimit`. While common for initial deployment phases, this centralization of power introduces a single point of failure and potential for malicious or compromised control.
 
 **Recommendation:** Consider implementing a multi-signature wallet for the `owner` and `controller` roles to enhance security and decentralization. For critical functions, explore time-locks or community governance mechanisms if the project matures.
 
 
+### `M-02` — Missing `_beforeTokenTransfer` Override for Balance Limit Enforcement  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract defines a balance limit mechanism (`isBalanceLimitActive`, `maxBalanceLimit`, `balanceLimitEnd`, `isExcludedFromBalanceLimit`) and related access control (`disableBalanceLimit` by controller). However, the provided code snippet does not include an override of the `_beforeTokenTransfer` hook from the inherited `ERC20` (Solady) contract. Without this override, the `maxBalanceLimit` and `balanceLimitEnd` checks are not enforced during token transfers, rendering the entire balance limit mechanism ineffective for its primary purpose.
+
+**Recommendation:** Implement the `_beforeTokenTransfer` hook to include the necessary checks for `isBalanceLimitActive`, `balanceLimitEnd`, `maxBalanceLimit`, and `isExcludedFromBalanceLimit` for the `to` address before allowing any token transfer.
+
+
 ### `L-01` — Potential Gas Cost for `computeAvailableVestedAmount` with Many Schedules  *(Severity: Low · Status: Unresolved)*
 
-The `computeAvailableVestedAmount(address beneficiary)` function iterates through all schedule IDs associated with a beneficiary via `_scheduleIdsOf[beneficiary]`. If a beneficiary accumulates a very large number of individual vesting schedules, this array could grow significantly, leading to increased gas costs for calling this view function. While view functions don't directly cost the caller gas on-chain, they can impact off-chain queries and potentially on-chain calls if another contract were to query it.
+Not confirmed by static analysis (the model's own reading of the source). The `computeAvailableVestedAmount(address beneficiary)` function iterates through all schedule IDs associated with a beneficiary via `_scheduleIdsOf[beneficiary]`. If a beneficiary accumulates a very large number of individual vesting schedules, this array could grow significantly, leading to increased gas costs for calling this view function. While view functions don't directly cost the caller gas on-chain, they can impact off-chain queries and potentially on-chain calls if another contract were to query it.
 
 **Recommendation:** For beneficiaries expected to have a very high number of vesting schedules, consider alternative data structures or aggregation methods to reduce iteration costs. For typical use cases, the current implementation is likely acceptable.
 
 
 ### `I-01` — Truncated Code Prevents Full Vesting Logic Review  *(Severity: Informational · Status: Unresolved)*
 
-The provided contract snippet is truncated, specifically omitting the full implementation of the `_available`, `_releaseFor`, and `_releaseAllFor` internal functions. These functions are central to the core vesting mechanism, calculating releasable amounts and handling token transfers. Without their complete code, a comprehensive security assessment of the vesting logic cannot be performed.
+Not confirmed by static analysis (the model's own reading of the source). The provided contract snippet is truncated, specifically omitting the full implementation of the `_available`, `_releaseFor`, and `_releaseAllFor` internal functions. These functions are central to the core vesting mechanism, calculating releasable amounts and handling token transfers. Without their complete code, a comprehensive security assessment of the vesting logic cannot be performed.
 
 **Recommendation:** Provide the complete source code for all relevant functions to enable a thorough security review of the vesting mechanism.
 
 
 ### `I-02` — `pool` Address Excluded from Balance Limit  *(Severity: Informational · Status: Unresolved)*
 
-The `lockPool` function, callable by the owner, sets a `pool` address and then explicitly excludes this address from the balance limit checks by setting `isExcludedFromBalanceLimit[pool_] = true`. This design choice allows the designated pool contract to hold an unlimited amount of tokens, bypassing the `maxBalanceLimit`.
+Not confirmed by static analysis (the model's own reading of the source). The `lockPool` function, callable by the owner, sets a `pool` address and then explicitly excludes this address from the balance limit checks by setting `isExcludedFromBalanceLimit[pool_] = true`. This design choice allows the designated pool contract to hold an unlimited amount of tokens, bypassing the `maxBalanceLimit`.
 
 **Recommendation:** Ensure that the `pool` contract is thoroughly audited and trusted, as its exclusion from the balance limit could be exploited if the pool contract itself is compromised or contains vulnerabilities. Document the rationale for this exclusion clearly.
 

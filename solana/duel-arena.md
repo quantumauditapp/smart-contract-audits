@@ -2,14 +2,14 @@
 token: Duel Arena
 ticker: DUEL
 network: solana
-risk_score: 22
+risk_score: 3
 status: low
 date: 2026-09-24
 ---
 
 # Duel Arena (DUEL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 22/100 — 🟢 Low Risk**
+> **Risk Score: 3/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/duel-arena-sol)
 
@@ -26,8 +26,8 @@ The Duel Arena (DUEL) token is an SPL Token-2022 mint with revoked mint and free
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Duel Arena (DUEL) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, which is a positive security indicator as it prevents… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a healthy liquidity of $253,149 USD with a normal 24-hour volume to liquidity ratio of 3.15, suggesting organic trading activity. However, the DEX pair is very new, having been… |
-| **Upgrades** | 6/10 | Medium | The mint and freeze authorities are revoked, meaning these core token properties cannot be altered. While the transfer fee is upgradable, the transfer hook is not. The token's metadata, including its… |
+| **Governance / Economics** | 9/10 | Low | The token exhibits a healthy liquidity of $253,149 USD with a normal 24-hour volume to liquidity ratio of 3.15, suggesting organic trading activity. However, the DEX pair is very new, having been… |
+| **Upgrades** | 8/10 | Low | The mint and freeze authorities are revoked, meaning these core token properties cannot be altered. While the transfer fee is upgradable, the transfer hook is not. The token's metadata, including its… |
 
 ## Token-2022 Extensions
 
@@ -67,13 +67,13 @@ The token's metadata is mutable, as indicated by 'metadata_mutable: True'. This 
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2008 buys / 2815 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ The token's metadata is mutable, as indicated by 'metadata_mutable: True'. This 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

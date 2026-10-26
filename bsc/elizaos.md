@@ -2,14 +2,14 @@
 token: elizaOS
 ticker: ELIZAOS
 network: bsc
-risk_score: 73
+risk_score: 66
 status: high
 date: 2026-08-11
 ---
 
 # elizaOS (ELIZAOS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 73/100 — 🟠 High Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/elizaos-bsc)
 
@@ -26,7 +26,7 @@ The BurnMintERC20 contract implements a standard ERC20 token with additional min
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract exhibits a robust architecture (7.1 Architecture) by inheriting from well-audited OpenZeppelin libraries (ERC20, AccessControl, ERC20Burnable), which significantly enhances code security… |
-| **Governance / Economics** | 1/10 | High | The contract's economic model (7.4 Economic) includes a fixed `maxSupply` and controlled minting/burning, which provides predictability. Governance (7.5 Governance) is highly centralized, with the… |
+| **Governance / Economics** | 2/10 | High | The contract's economic model (7.4 Economic) includes a fixed `maxSupply` and controlled minting/burning, which provides predictability. Governance (7.5 Governance) is highly centralized, with the… |
 | **Upgrades** | 3/10 | High | The contract is not designed as an upgradeable proxy (7.7 Upgrades) and does not implement any upgrade mechanisms. Therefore, there are no upgrade-related risks. Any changes to the contract's logic… |
 
 ## LP Distribution
@@ -38,39 +38,39 @@ The BurnMintERC20 contract implements a standard ERC20 token with additional min
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Centralized Control of Token Supply and Roles  *(Severity: High · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE` has absolute control over the token's supply by being able to grant and revoke `MINTER_ROLE` and `BURNER_ROLE` to any address. This centralization (7.3 Access Control, 7.5 Governance) means a single compromised private key or malicious administrator could manipulate the token supply, leading to severe economic consequences for the protocol and its users. The constructor grants this role to `msg.sender`.
-
-**Recommendation:** Implement a multi-signature wallet or a timelock contract to control the `DEFAULT_ADMIN_ROLE`. This would require multiple approvals or introduce a delay for critical administrative actions, reducing the risk of a single point of failure and providing a window for intervention.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Critical External Admin Role (`s_ccipAdmin`) Controlled by Single Admin  *(Severity: Medium · Status: Unresolved)*
 
-The `s_ccipAdmin` address, which is likely crucial for Cross-Chain Interoperability Protocol (CCIP) operations (7.6 External), can be changed by the `DEFAULT_ADMIN_ROLE` via the `setCCIPAdmin` function. A compromise of the `DEFAULT_ADMIN_ROLE` could allow an attacker to redirect or disrupt CCIP-related functionalities, potentially impacting cross-chain asset transfers or data flows.
+Not confirmed by static analysis (the model's own reading of the source). The `s_ccipAdmin` address, which is likely crucial for Cross-Chain Interoperability Protocol (CCIP) operations (7.6 External), can be changed by the `DEFAULT_ADMIN_ROLE` via the `setCCIPAdmin` function. A compromise of the `DEFAULT_ADMIN_ROLE` could allow an attacker to redirect or disrupt CCIP-related functionalities, potentially impacting cross-chain asset transfers or data flows.
 
 **Recommendation:** Similar to other critical roles, consider placing the `setCCIPAdmin` function under the control of a multi-signature wallet or a timelock. This would add an additional layer of security for managing external protocol integrations.
 
 
+### `M-02` — Centralized Control of Token Supply and Roles  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` has absolute control over the token's supply by being able to grant and revoke `MINTER_ROLE` and `BURNER_ROLE` to any address. This centralization (7.3 Access Control, 7.5 Governance) means a single compromised private key or malicious administrator could manipulate the token supply, leading to severe economic consequences for the protocol and its users. The constructor grants this role to `msg.sender`.
+
+**Recommendation:** Implement a multi-signature wallet or a timelock contract to control the `DEFAULT_ADMIN_ROLE`. This would require multiple approvals or introduce a delay for critical administrative actions, reducing the risk of a single point of failure and providing a window for intervention.
+
+
 ### `L-01` — Lack of Timelock or Multi-sig for Critical Operations  *(Severity: Low · Status: Unresolved)*
 
-Critical administrative functions, such as `grantRole`, `revokeRole`, and `setCCIPAdmin`, are directly executable by the `DEFAULT_ADMIN_ROLE` without any time delay or multi-signature requirement (7.5 Governance, 7.8 Operations). This allows immediate execution of sensitive changes, increasing the risk of human error or rapid exploitation if the admin key is compromised.
+Not confirmed by static analysis (the model's own reading of the source). Critical administrative functions, such as `grantRole`, `revokeRole`, and `setCCIPAdmin`, are directly executable by the `DEFAULT_ADMIN_ROLE` without any time delay or multi-signature requirement (7.5 Governance, 7.8 Operations). This allows immediate execution of sensitive changes, increasing the risk of human error or rapid exploitation if the admin key is compromised.
 
 **Recommendation:** Introduce a timelock mechanism for all critical administrative functions. This would enforce a delay between the initiation and execution of sensitive operations, providing a window for detection and potential mitigation of malicious or erroneous actions.
 
 
 ### `I-01` — No Emergency Pause Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The contract lacks a mechanism to pause token transfers, minting, or burning in an emergency (7.2 Code Security, 7.8 Operations). In the event of a critical vulnerability, exploit, or unforeseen market event, the inability to halt operations could lead to significant and irreversible damage.
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks a mechanism to pause token transfers, minting, or burning in an emergency (7.2 Code Security, 7.8 Operations). In the event of a critical vulnerability, exploit, or unforeseen market event, the inability to halt operations could lead to significant and irreversible damage.
 
 **Recommendation:** Consider integrating OpenZeppelin's `Pausable` contract or a similar custom pausing mechanism. This would allow authorized roles (e.g., `DEFAULT_ADMIN_ROLE` or a dedicated 'PAUSER_ROLE') to temporarily suspend critical functions during emergencies.
 
 
 ### `I-02` — Immutable `maxSupply` Parameter  *(Severity: Informational · Status: Unresolved)*
 
-The `i_maxSupply` is set during construction and is immutable (7.4 Economic). While this provides a clear and predictable supply cap, it means the maximum supply cannot be adjusted in the future without deploying a new contract. This design choice might limit the protocol's flexibility for long-term evolution or unforeseen economic requirements.
+Not confirmed by static analysis (the model's own reading of the source). The `i_maxSupply` is set during construction and is immutable (7.4 Economic). While this provides a clear and predictable supply cap, it means the maximum supply cannot be adjusted in the future without deploying a new contract. This design choice might limit the protocol's flexibility for long-term evolution or unforeseen economic requirements.
 
 **Recommendation:** This is a design decision. If future flexibility is desired, consider making `maxSupply` adjustable by a governance mechanism (e.g., `DEFAULT_ADMIN_ROLE` with a timelock), or acknowledge this immutability as a core feature of the token's economic policy.
 

@@ -2,14 +2,14 @@
 token: Dolphin
 ticker: POD
 network: base
-risk_score: 62
+risk_score: 50
 status: medium
 date: 2026-08-11
 ---
 
 # Dolphin (POD) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 62/100 — 🟡 Medium Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dolphin-base)
 
@@ -25,8 +25,8 @@ The OptimismMintableERC20 contract serves as a standard ERC20 token designed for
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The technical implementation of the OptimismMintableERC20 contract is robust, leveraging OpenZeppelin's battle-tested ERC20 library (7.2 Code Security). Access control for critical `mint` and `burn`… |
-| **Governance / Economics** | 1/10 | High | The economic security of this token is critically dependent on the external `BRIDGE` contract (7.4 Economic). All supply manipulation (minting and burning) is exclusively controlled by this bridge… |
+| **Technical** | 8/10 | Low | The technical implementation of the OptimismMintableERC20 contract is robust, leveraging OpenZeppelin's battle-tested ERC20 library (7.2 Code Security). Access control for critical `mint` and `burn`… |
+| **Governance / Economics** | 2/10 | High | The economic security of this token is critically dependent on the external `BRIDGE` contract (7.4 Economic). All supply manipulation (minting and burning) is exclusively controlled by this bridge… |
 | **Upgrades** | 3/10 | High | The OptimismMintableERC20 contract is not designed as an upgradeable proxy (7.7 Upgrades). Its implementation is fixed upon deployment, which eliminates risks associated with proxy patterns such as… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The OptimismMintableERC20 contract serves as a standard ERC20 token designed for
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 2 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
-### `H-01` — Critical Dependency on External Bridge Security  *(Severity: High · Status: Unresolved)*
+### `M-01` — Critical Dependency on External Bridge Security  *(Severity: Medium · Status: Unresolved)*
 
-The `mint` and `burn` functions, which directly control the total supply of the OptimismMintableERC20 token, are exclusively callable by the `BRIDGE` address. This design makes the token's economic integrity entirely reliant on the security and operational robustness of the external bridge contract. A compromise of the bridge contract (e.g., through a vulnerability or private key compromise) would allow an attacker to arbitrarily mint or burn tokens, leading to severe financial loss for token holders and undermining the protocol's trust. This is an inherent architectural risk for bridged tokens (7.6 External, 7.3 Access Control, 7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The `mint` and `burn` functions, which directly control the total supply of the OptimismMintableERC20 token, are exclusively callable by the `BRIDGE` address. This design makes the token's economic integrity entirely reliant on the security and operational robustness of the external bridge contract. A compromise of the bridge contract (e.g., through a vulnerability or private key compromise) would allow an attacker to arbitrarily mint or burn tokens, leading to severe financial loss for token holders and undermining the protocol's trust. This is an inherent architectural risk for bridged tokens (7.6 External, 7.3 Acces
 
 **Recommendation:** While this is an inherent design choice for a bridged token, it is crucial to ensure the highest level of security for the `BRIDGE` contract itself. Implement rigorous security audits, formal verification, multi-signature controls, and continuous monitoring for the bridge. Establish clear incident response plans for potential bridge compromises. Communicate this dependency transparently to users.
 
 
 ### `L-01` — Immutable Bridge Address Limits Operational Flexibility  *(Severity: Low · Status: Unresolved)*
 
-The `BRIDGE` address is declared as `immutable` and set only during contract construction. While this prevents unauthorized modification and enhances security by fixing a critical parameter, it also means that if the underlying bridge contract needs to be upgraded, replaced, or if its address changes for any reason (e.g., due to a critical bug or new architecture), this OptimismMintableERC20 token contract would need to be redeployed. This could lead to complex migration processes for users and potential disruption (7.1 Architecture, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `BRIDGE` address is declared as `immutable` and set only during contract construction. While this prevents unauthorized modification and enhances security by fixing a critical parameter, it also means that if the underlying bridge contract needs to be upgraded, replaced, or if its address changes for any reason (e.g., due to a critical bug or new architecture), this OptimismMintableERC20 token contract would need to be redeployed. This could lead to complex migration processes for users and potential disruption (7.1 Architecture, 7.8 Operations).
 
 **Recommendation:** Acknowledge this design trade-off. For future token designs, consider if a controlled, multi-signature-governed mechanism for updating the bridge address (e.g., via a proxy or an `Ownable` pattern for the bridge address itself) might be beneficial, weighing the added complexity against the operational flexibility. For the current contract, ensure clear communication and a well-defined migration strategy in case of a bridge address change.
 
 
 ### `I-01` — Redundant Interface Functions  *(Severity: Informational · Status: Unresolved)*
 
-The contract implements both `ILegacyMintableERC20` and `IOptimismMintableERC20` interfaces. This results in redundant functions like `l1Token()` and `remoteToken()` both returning `REMOTE_TOKEN`, and `l2Bridge()` and `bridge()` both returning `BRIDGE`. While not a vulnerability, this introduces slight redundancy in the contract's external interface and could potentially lead to confusion for integrators (7.1 Architecture, 7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract implements both `ILegacyMintableERC20` and `IOptimismMintableERC20` interfaces. This results in redundant functions like `l1Token()` and `remoteToken()` both returning `REMOTE_TOKEN`, and `l2Bridge()` and `bridge()` both returning `BRIDGE`. While not a vulnerability, this introduces slight redundancy in the contract's external interface and could potentially lead to confusion for integrators (7.1 Architecture, 7.2 Code Security).
 
 **Recommendation:** Consider consolidating the interfaces if possible, or clearly documenting the purpose of each redundant function if they are intended for different integration paths (e.g., legacy vs. modern). If the legacy interface is no longer strictly required, it could be removed to streamline the contract.
 
 
 ### `I-02` — Missing NatSpec Documentation  *(Severity: Informational · Status: Unresolved)*
 
-Some functions and parameters within the contract, such as the constructor parameters and the `supportsInterface` function, lack comprehensive NatSpec documentation. While the code is relatively straightforward, adding detailed NatSpec comments improves readability, maintainability, and clarity for developers integrating with the contract or auditing it (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). Some functions and parameters within the contract, such as the constructor parameters and the `supportsInterface` function, lack comprehensive NatSpec documentation. While the code is relatively straightforward, adding detailed NatSpec comments improves readability, maintainability, and clarity for developers integrating with the contract or auditing it (7.2 Code Security).
 
 **Recommendation:** Add complete NatSpec documentation for all public and external functions, including descriptions for parameters, return values, and events. This enhances code clarity and facilitates easier integration and understanding for external parties.
 

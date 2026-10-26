@@ -2,14 +2,14 @@
 token: DXB LARP
 ticker: LARP
 network: solana
-risk_score: 45
-status: medium
+risk_score: 20
+status: low
 date: 2026-07-25
 ---
 
 # DXB LARP (LARP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dxb-larp-sol)
 
@@ -25,9 +25,9 @@ This audit of the DXB LARP (LARP) SPL token mint identifies significant risks pr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The DXB LARP token is implemented using the standard `spl-token` program, which is a well-established and audited program on Solana. Key administrative authorities, including the Mint Authority and… |
-| **Governance / Economics** | 1/10 | High | The economic stability of the DXB LARP token is highly concerning due to extreme holder concentration, with the top 10 token accounts holding 94.37% of the total supply. This level of concentration… |
-| **Upgrades** | 8/10 | Low | The DXB LARP token mint exhibits a fixed configuration for core parameters. Both the Mint Authority and Freeze Authority have been permanently revoked, ensuring that no new tokens can be minted and… |
+| **Technical** | 10/10 | Low | The DXB LARP token is implemented using the standard `spl-token` program, which is a well-established and audited program on Solana. Key administrative authorities, including the Mint Authority and… |
+| **Governance / Economics** | 2/10 | High | The economic stability of the DXB LARP token is highly concerning due to extreme holder concentration, with the top 10 token accounts holding 94.37% of the total supply. This level of concentration… |
+| **Upgrades** | 10/10 | Low | The DXB LARP token mint exhibits a fixed configuration for core parameters. Both the Mint Authority and Freeze Authority have been permanently revoked, ensuring that no new tokens can be minted and… |
 
 ## LP Distribution
 
@@ -97,11 +97,11 @@ DEX pair was created 5 days ago. Insufficient track record to assess team or hol
 
 ### Is DXB LARP a scam?
 
-Based on automated analysis, DXB LARP scores 82/100 (Critical Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, DXB LARP scores 20/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is DXB LARP safe to buy?
 
-Our scanner flagged a risk score of 82/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 20/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has DXB LARP been audited?
 

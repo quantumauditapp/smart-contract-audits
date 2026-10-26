@@ -2,14 +2,14 @@
 token: Effective Accelerationism
 ticker: E/ACC
 network: solana
-risk_score: 10
+risk_score: 3
 status: low
 date: 2026-09-26
 ---
 
 # Effective Accelerationism (E/ACC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 10/100 — 🟢 Low Risk**
+> **Risk Score: 3/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/effective-accelerationism-sol)
 
@@ -26,8 +26,8 @@ This audit of the Effective Accelerationism (e/acc) SPL Token Mint reveals a low
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Effective Accelerationism (e/acc) token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Crucially, both the mint authority and freeze authority have been… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a very new market presence, with its DEX pair created just 0 days ago, offering no historical data for assessing stability or team behavior. Current liquidity stands at $594,434… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as the mint and freeze authorities have been permanently revoked. Furthermore, the metadata, transfer fee, and transfer hook configurations are all reported… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a very new market presence, with its DEX pair created just 0 days ago, offering no historical data for assessing stability or team behavior. Current liquidity stands at $594,434… |
+| **Upgrades** | 9/10 | Low | The token's core parameters are immutable, as the mint and freeze authorities have been permanently revoked. Furthermore, the metadata, transfer fee, and transfer hook configurations are all reported… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

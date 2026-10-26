@@ -2,14 +2,14 @@
 token: Degen
 ticker: DEGEN
 network: base
-risk_score: 52
+risk_score: 39
 status: medium
 date: 2026-08-14
 ---
 
 # Degen (DEGEN) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 52/100 — 🟡 Medium Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/degen-base)
 
@@ -25,8 +25,8 @@ The DegenToken contract is an ERC20 token with burnable, pausable, permit, and v
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The DegenToken contract leverages well-audited OpenZeppelin libraries for its core ERC20 functionalities, including burnable, pausable, permit, and voting extensions (7.2 Code Security). The custom… |
-| **Governance / Economics** | 4/10 | Medium | The economic model grants the owner significant control over token supply through an annual minting function, capped at 1% of the total supply (7.4 Economic). This introduces a continuous… |
+| **Technical** | 8/10 | Low | The DegenToken contract leverages well-audited OpenZeppelin libraries for its core ERC20 functionalities, including burnable, pausable, permit, and voting extensions (7.2 Code Security). The custom… |
+| **Governance / Economics** | 5/10 | Medium | The economic model grants the owner significant control over token supply through an annual minting function, capped at 1% of the total supply (7.4 Economic). This introduces a continuous… |
 | **Upgrades** | 4/10 | Medium | The DegenToken contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). This means that once deployed, its logic cannot be modified. Any future bug fixes, feature enhancements… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The DegenToken contract is an ERC20 token with burnable, pausable, permit, and v
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control Over Token Supply (Minting)  *(Severity: High · Status: Unresolved)*
-
-The `mint` function, callable only by the contract owner, allows the creation of new tokens up to 1% of the current total supply annually. This centralized control over token supply can lead to inflation and dilution of existing token holders if misused or if the owner's keys are compromised. While the owner is a multisig, the power itself is significant.
-
-**Recommendation:** Implement a timelock for the `mint` function to introduce a delay between the owner initiating a minting operation and its execution. This provides a window for community review and reaction. Consider a more decentralized approach to minting, such as a community-governed mechanism or a fixed, transparent emission schedule.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralized Control Over Token Transfers (Pausable)  *(Severity: Medium · Status: Unresolved)*
 
-The contract owner has the ability to pause and unpause all token transfers via the `pause()` and `unpause()` functions. While this can be a useful emergency mechanism to mitigate active exploits, it also grants the owner the power to unilaterally halt all token activity, potentially disrupting liquidity, exchanges, and user operations. This introduces a single point of control for critical token functionality.
+Not confirmed by static analysis (the model's own reading of the source). The contract owner has the ability to pause and unpause all token transfers via the `pause()` and `unpause()` functions. While this can be a useful emergency mechanism to mitigate active exploits, it also grants the owner the power to unilaterally halt all token activity, potentially disrupting liquidity, exchanges, and user operations. This introduces a single point of control for critical token functionality.
 
 **Recommendation:** Ensure robust operational procedures are in place for the multisig controlling the `pause` function. Consider implementing a timelock for the `unpause` function to prevent immediate re-enabling of transfers after a pause, allowing for a more controlled recovery. Clearly communicate the conditions under which pausing may occur to the community.
 
 
+### `M-02` — Centralized Control Over Token Supply (Minting)  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function, callable only by the contract owner, allows the creation of new tokens up to 1% of the current total supply annually. This centralized control over token supply can lead to inflation and dilution of existing token holders if misused or if the owner's keys are compromised. While the owner is a multisig, the power itself is significant.
+
+**Recommendation:** Implement a timelock for the `mint` function to introduce a delay between the owner initiating a minting operation and its execution. This provides a window for community review and reaction. Consider a more decentralized approach to minting, such as a community-governed mechanism or a fixed, transparent emission schedule.
+
+
 ### `L-01` — Fixed Minting Cap Parameter  *(Severity: Low · Status: Unresolved)*
 
-The `MINT_CAP` is a constant value of `1`, which translates to a 1% annual minting cap relative to the total supply. This parameter is hardcoded and cannot be adjusted after deployment. While a fixed cap provides predictability, it lacks flexibility. Future economic requirements or protocol changes might necessitate a different minting rate, which would require a new contract deployment and token migration.
+Not confirmed by static analysis (the model's own reading of the source). The `MINT_CAP` is a constant value of `1`, which translates to a 1% annual minting cap relative to the total supply. This parameter is hardcoded and cannot be adjusted after deployment. While a fixed cap provides predictability, it lacks flexibility. Future economic requirements or protocol changes might necessitate a different minting rate, which would require a new contract deployment and token migration.
 
 **Recommendation:** Consider making the `MINT_CAP` a configurable parameter, adjustable by the owner (preferably with a timelock and/or governance vote). This would allow the protocol to adapt to changing economic conditions without requiring a full redeployment.
 
 
 ### `I-01` — Lack of Upgradeability  *(Severity: Informational · Status: Unresolved)*
 
-The DegenToken contract is deployed as a standard, non-upgradeable implementation. This means that its logic is immutable once deployed to the blockchain. Any future bug fixes, security patches, or feature enhancements would require deploying an entirely new contract and migrating all token holders and integrated protocols to the new address, which is a complex and costly process.
+Not confirmed by static analysis (the model's own reading of the source). The DegenToken contract is deployed as a standard, non-upgradeable implementation. This means that its logic is immutable once deployed to the blockchain. Any future bug fixes, security patches, or feature enhancements would require deploying an entirely new contract and migrating all token holders and integrated protocols to the new address, which is a complex and costly process.
 
 **Recommendation:** For future contracts, consider implementing an upgradeable proxy pattern (e.g., UUPS or Transparent Proxy) to allow for secure and controlled upgrades. This provides flexibility for long-term maintenance and evolution of the protocol without requiring token migrations.
 

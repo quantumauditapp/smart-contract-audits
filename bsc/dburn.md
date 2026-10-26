@@ -2,14 +2,14 @@
 token: DBURN
 ticker: DBURN
 network: bsc
-risk_score: 17
+risk_score: 0
 status: low
 date: 2026-08-12
 ---
 
 # DBURN (DBURN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 17/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dburn-bsc)
 
@@ -25,8 +25,8 @@ The BurnToken contract implements a custom ERC20 token with dynamic tax phases, 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract exhibits robust initialization logic and comprehensive parameter validation (7.1 Architecture). A reentrancy guard (`_swappingStairTax`) is correctly implemented for stair tax swaps… |
-| **Governance / Economics** | 6/10 | Medium | The economic model features dynamic tax phases and an automated pool burning mechanism, which are configurable and contribute to tokenomics (7.4 Economic). The `taxWhitelist` and `tradingOpenTime`… |
+| **Technical** | 10/10 | Low | The contract exhibits robust initialization logic and comprehensive parameter validation (7.1 Architecture). A reentrancy guard (`_swappingStairTax`) is correctly implemented for stair tax swaps… |
+| **Governance / Economics** | 7/10 | Low | The economic model features dynamic tax phases and an automated pool burning mechanism, which are configurable and contribute to tokenomics (7.4 Economic). The `taxWhitelist` and `tradingOpenTime`… |
 | **Upgrades** | 10/10 | Low | The BurnToken contract is not designed as an upgradeable proxy, thus eliminating direct upgrade-related risks (7.7 Upgrades). A `markMigrated` function exists for specific `LaunchType.Curve`… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The BurnToken contract implements a custom ERC20 token with dynamic tax phases, 
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Reentrancy Vulnerability in `processTax` Call  *(Severity: High · Status: Unresolved)*
-
-The `_update` function, specifically within the `if (useTaxProcessor)` block, makes an external call to `ITaxProcessor(taxProcessor).processTax` without a reentrancy guard. Although `_swapAccruedStairTax` (called earlier in the same block) is protected by `_swappingStairTax`, the `processTax` call is not. A malicious `taxProcessor` contract could reenter the `BurnToken` contract and manipulate balances or state variables before the main transfer `super._update(from, to, value - taxAmount)` is completed, leading to potential fund loss or incorrect accounting.
-
-**Recommendation:** Implement a reentrancy guard (e.g., a `nonReentrant` modifier or a boolean flag like `_swappingStairTax`) around the external call to `ITaxProcessor(taxProcessor).processTax` to prevent reentrant calls. Ensure that the guard is set before the external call and reset after it, or use OpenZeppelin's `ReentrancyGuard`.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Reliance on External Contracts for Core Economic Logic  *(Severity: Medium · Status: Unresolved)*
 
-The contract's core economic functions, such as tax processing via `ITaxProcessor` and stair tax swapping via `IUniswapV2Router`, rely on external contracts. While `try/catch` blocks are used to handle potential reverts from these external calls, a failure means that the intended tax collection or conversion might not occur, impacting the protocol's economic model. This introduces a dependency risk where the protocol's financial integrity is tied to the robustness and availability of these external systems.
+Not confirmed by static analysis (the model's own reading of the source). The contract's core economic functions, such as tax processing via `ITaxProcessor` and stair tax swapping via `IUniswapV2Router`, rely on external contracts. While `try/catch` blocks are used to handle potential reverts from these external calls, a failure means that the intended tax collection or conversion might not occur, impacting the protocol's economic model. This introduces a dependency risk where the protocol's financial integrity is tied to the robustness and availability of these external systems.
 
 **Recommendation:** Assess the potential impact of `ITaxProcessor` and `IUniswapV2Router` failures on the protocol's economics. Consider implementing fallback mechanisms or clearer communication to users if taxes cannot be processed or swapped. Ensure that the chosen external contracts are highly reliable and audited. Document the implications of these external dependencies for users and stakeholders.
 
 
+### `M-02` — Reentrancy Vulnerability in `processTax` Call  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_update` function, specifically within the `if (useTaxProcessor)` block, makes an external call to `ITaxProcessor(taxProcessor).processTax` without a reentrancy guard. Although `_swapAccruedStairTax` (called earlier in the same block) is protected by `_swappingStairTax`, the `processTax` call is not. A malicious `taxProcessor` contract could reenter the `BurnToken` contract and manipulate balances or state variables before the main transfer `super._update(from, to, value - taxAmount)` is completed, leading to potential fund loss or incorrect accounting.
+
+**Recommendation:** Implement a reentrancy guard (e.g., a `nonReentrant` modifier or a boolean flag like `_swappingStairTax`) around the external call to `ITaxProcessor(taxProcessor).processTax` to prevent reentrant calls. Ensure that the guard is set before the external call and reset after it, or use OpenZeppelin's `ReentrancyGuard`.
+
+
 ### `L-01` — Unconventional `approve` Function Behavior  *(Severity: Low · Status: Unresolved)*
 
-The `approve` function overrides the standard ERC20 behavior by calling `_executePoolBurn()` before returning. While `_executePoolBurn` is a public utility function designed to burn tokens from the DEX pair, triggering a burn on every `approve` call is an unconventional design choice. This might be unexpected for users or other protocols interacting with the token, potentially leading to confusion or unintended side effects in integrations that assume standard ERC20 `approve` semantics.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function overrides the standard ERC20 behavior by calling `_executePoolBurn()` before returning. While `_executePoolBurn` is a public utility function designed to burn tokens from the DEX pair, triggering a burn on every `approve` call is an unconventional design choice. This might be unexpected for users or other protocols interacting with the token, potentially leading to confusion or unintended side effects in integrations that assume standard ERC20 `approve` semantics.
 
 **Recommendation:** Consider separating the `_executePoolBurn` call from the `approve` function. If the intent is to ensure regular burning, rely on external calls to `executePoolBurn()` or integrate it into other frequently called functions where its side effect is more intuitive. Clearly document this behavior if it is an intentional design choice.
 
 
 ### `I-01` — Centralization Risk with Owner and Token Deployer Roles  *(Severity: Informational · Status: Unresolved)*
 
-The `owner` (inherited from Ownable) and `tokenDeployer` roles hold significant power within the contract. The `owner` can `setTaxWhitelist`, allowing specific addresses to bypass taxes. The `tokenDeployer` can `markMigrated`, which is critical for `LaunchType.Curve`. While common for new token deployments, this introduces a centralization risk where a compromised private key for either role could lead to manipulation of the token's tax structure or migration status.
+Not confirmed by static analysis (the model's own reading of the source). The `owner` (inherited from Ownable) and `tokenDeployer` roles hold significant power within the contract. The `owner` can `setTaxWhitelist`, allowing specific addresses to bypass taxes. The `tokenDeployer` can `markMigrated`, which is critical for `LaunchType.Curve`. While common for new token deployments, this introduces a centralization risk where a compromised private key for either role could lead to manipulation of the token's tax structure or migration status.
 
 **Recommendation:** For enhanced security and decentralization, consider implementing a multi-signature wallet for the `owner` and `tokenDeployer` roles. Additionally, explore time-locks for critical administrative actions to provide a window for community review or intervention in case of a compromised key. Clearly communicate the extent of administrative control to the community.
 

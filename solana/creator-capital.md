@@ -2,14 +2,14 @@
 token: creator capital
 ticker: CC
 network: solana
-risk_score: 23
+risk_score: 6
 status: low
 date: 2026-08-15
 ---
 
 # creator capital (CC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 23/100 — 🟢 Low Risk**
+> **Risk Score: 6/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/creator-capital-sol)
 
@@ -26,8 +26,8 @@ The creator capital (cc) SPL Token Mint on Solana exhibits strong immutability w
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The creator capital (cc) token is an SPL Token-2022 mint with robust security configurations. Both the mint authority and freeze authority have been revoked, preventing further token issuance or… |
-| **Governance / Economics** | 5/10 | Medium | The economic profile of the creator capital (cc) token shows moderate liquidity at $59,634, with a 24-hour volume of $362,536. The volume/liquidity ratio is 6.08, which is a high ratio. A key concern… |
-| **Upgrades** | 8/10 | Low | The creator capital (cc) token mint demonstrates a high degree of immutability and lack of upgradeability. The mint authority and freeze authority are both revoked, meaning no further tokens can be… |
+| **Governance / Economics** | 8/10 | Low | The economic profile of the creator capital (cc) token shows moderate liquidity at $59,634, with a 24-hour volume of $362,536. The volume/liquidity ratio is 6.08, which is a high ratio. A key concern… |
+| **Upgrades** | 10/10 | Low | The creator capital (cc) token mint demonstrates a high degree of immutability and lack of upgradeability. The mint authority and freeze authority are both revoked, meaning no further tokens can be… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2310 buys / 2559 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

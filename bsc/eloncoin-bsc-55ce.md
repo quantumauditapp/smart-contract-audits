@@ -2,14 +2,14 @@
 token: ElonCoin
 ticker: ELONCOIN
 network: bsc
-risk_score: 28
+risk_score: 11
 status: low
 date: 2026-08-15
 ---
 
 # ElonCoin (ELONCOIN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/eloncoin-bsc-55ce)
 
@@ -25,8 +25,8 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract leverages OpenZeppelin's upgradeable standards and SafeERC20 for secure token operations (7.2 Code Security). Gas optimizations are present through the `PackedPoolState` struct (7.1… |
-| **Governance / Economics** | 8/10 | Low | The contract implements a multi-state tax system with owner-controlled migration phases, providing flexibility in token economics (7.4 Economic, 7.5 Governance). Owner privileges are appropriately… |
+| **Technical** | 9/10 | Low | The contract leverages OpenZeppelin's upgradeable standards and SafeERC20 for secure token operations (7.2 Code Security). Gas optimizations are present through the `PackedPoolState` struct (7.1… |
+| **Governance / Economics** | 9/10 | Low | The contract implements a multi-state tax system with owner-controlled migration phases, providing flexibility in token economics (7.4 Economic, 7.5 Governance). Owner privileges are appropriately… |
 | **Upgrades** | 5/10 | Medium | The contract correctly implements the OpenZeppelin upgradeable pattern, including `Initializable` and `_disableInitializers()` in the constructor (7.7 Upgrades). Immutable variables are properly… |
 
 ## Proxy Upgrade Controls
@@ -45,32 +45,32 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Potential Reentrancy in `_transfer` via `_processTax`  *(Severity: High · Status: Unresolved)*
-
-The `_transfer` function calls `_liquidateTax`, which in turn calls `_processTax` (an external call to `taxProcessor`). While `_liquidateTax` uses a `notLiquidating` flag to prevent reentrant calls to itself, the `_transfer` function itself does not have a reentrancy guard. If the `_processTax` external call can reenter the token contract (e.g., by calling `transfer` or `transferFrom`), it could lead to unexpected behavior, state manipulation, or double-spending before the initial `_transfer` completes. The re-reading of `poolState` after `_processTax` further suggests potential state changes by the external call.
-
-**Recommendation:** Implement a reentrancy guard (e.g., OpenZeppelin's `ReentrancyGuard`) on the `_transfer` function or ensure that the `_processTax` function (and the `taxProcessor` contract) is designed to be non-reentrant. Follow the Checks-Effects-Interactions pattern strictly, ensuring all state changes are completed before any external calls.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Immutability of `taxProcessor` and `dividendContract` Addresses  *(Severity: Medium · Status: Unresolved)*
 
-The addresses for `taxProcessor` and `dividendContract` are set only during the `initialize` function and cannot be modified later. This design choice introduces rigidity (7.8 Operations). If these external contracts need to be updated, replaced due to vulnerabilities, or if their addresses change for any reason, the `FlapTaxTokenV3` contract itself would require an upgrade. Contract upgrades are more complex, costly, and carry higher risk than simply updating an address via an owner-controlled function.
+Not confirmed by static analysis (the model's own reading of the source). The addresses for `taxProcessor` and `dividendContract` are set only during the `initialize` function and cannot be modified later. This design choice introduces rigidity (7.8 Operations). If these external contracts need to be updated, replaced due to vulnerabilities, or if their addresses change for any reason, the `FlapTaxTokenV3` contract itself would require an upgrade. Contract upgrades are more complex, costly, and carry higher risk than simply updating an address via an owner-controlled function.
 
 **Recommendation:** Consider adding owner-controlled functions (e.g., `setTaxProcessor(address newProcessor)`) to allow the owner to update the `taxProcessor` and `dividendContract` addresses. This would provide greater operational flexibility and reduce the need for full contract upgrades for simple address changes. Ensure appropriate access control and validation for these setter functions.
 
 
+### `M-02` — Potential Reentrancy in `_transfer` via `_processTax`  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_transfer` function calls `_liquidateTax`, which in turn calls `_processTax` (an external call to `taxProcessor`). While `_liquidateTax` uses a `notLiquidating` flag to prevent reentrant calls to itself, the `_transfer` function itself does not have a reentrancy guard. If the `_processTax` external call can reenter the token contract (e.g., by calling `transfer` or `transferFrom`), it could lead to unexpected behavior, state manipulation, or double-spending before the initial `_transfer` completes. The re-reading of `poolState` after `_processTax` further suggests potential state changes by the external call.
+
+**Recommendation:** Implement a reentrancy guard (e.g., OpenZeppelin's `ReentrancyGuard`) on the `_transfer` function or ensure that the `_processTax` function (and the `taxProcessor` contract) is designed to be non-reentrant. Follow the Checks-Effects-Interactions pattern strictly, ensuring all state changes are completed before any external calls.
+
+
 ### `L-01` — Complex State Transition Logic in `_liquidateTax`  *(Severity: Low · Status: Unresolved)*
 
-The `_liquidateTax` function contains intricate conditional logic for transitioning between `PoolState`s (`TaxFree`, `TaxEnforced`, `TaxEnforcedAntiFarmer`) based on `block.timestamp` and `liquidationThreshold`. While the current logic appears sound, complex state machines are inherently prone to subtle bugs or edge cases that might not be immediately apparent during initial review. Misconfigurations of `taxExpirationTime`, `antiFarmerExpirationTime`, or `liquidationThreshold` could lead to unexpected state transitions or tax processing behavior.
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function contains intricate conditional logic for transitioning between `PoolState`s (`TaxFree`, `TaxEnforced`, `TaxEnforcedAntiFarmer`) based on `block.timestamp` and `liquidationThreshold`. While the current logic appears sound, complex state machines are inherently prone to subtle bugs or edge cases that might not be immediately apparent during initial review. Misconfigurations of `taxExpirationTime`, `antiFarmerExpirationTime`, or `liquidationThreshold` could lead to unexpected state transitions or tax processing behavior.
 
 **Recommendation:** Thoroughly review and test all possible scenarios and edge cases for the state transition logic in `_liquidateTax`. Consider adding comprehensive unit tests and formal verification if possible, to ensure the state machine behaves as intended under all conditions. Document the expected behavior for each state transition clearly.
 
 
 ### `I-01` — Truncated Code for `_processTax` Function  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code for `FlapTaxTokenV3.sol` is truncated, specifically the implementation of the `_processTax` function within `_liquidateTax`. This function is critical for the core tax processing mechanism and involves an external call to `taxProcessor`. Without the complete code for `_processTax`, a full and comprehensive security assessment of the tax handling, external interactions, and potential vulnerabilities (e.g., reentrancy, gas limits, error handling) cannot be performed.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for `FlapTaxTokenV3.sol` is truncated, specifically the implementation of the `_processTax` function within `_liquidateTax`. This function is critical for the core tax processing mechanism and involves an external call to `taxProcessor`. Without the complete code for `_processTax`, a full and comprehensive security assessment of the tax handling, external interactions, and potential vulnerabilities (e.g., reentrancy, gas limits, error handling) cannot be performed.
 
 **Recommendation:** Provide the complete and untruncated source code for all relevant contracts, especially `_processTax` and the `ITaxProcessor` interface implementation, to enable a full security audit.
 

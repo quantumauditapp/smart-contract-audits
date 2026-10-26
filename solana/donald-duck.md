@@ -2,14 +2,14 @@
 token: DONALD DUCK
 ticker: FUKYEAH
 network: solana
-risk_score: 46
+risk_score: 36
 status: medium
 date: 2026-09-21
 ---
 
 # DONALD DUCK (FUKYEAH) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 46/100 — 🟡 Medium Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/donald-duck-sol)
 
@@ -26,7 +26,7 @@ The DONALD DUCK (FUKYEAH) token mint exhibits strong technical immutability with
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The token mint is configured with robust technical controls (7.3 Access Control). Both the mint authority and freeze authority are revoked, preventing the creation of new tokens or the freezing of… |
-| **Governance / Economics** | 1/10 | High | The primary economic risk (7.4 Economic) stems from high holder concentration, with the top 10 token accounts holding 90.47% of the supply, as indicated by a third-party risk registry. This level of… |
+| **Governance / Economics** | 2/10 | High | The primary economic risk (7.4 Economic) stems from high holder concentration, with the top 10 token accounts holding 90.47% of the supply, as indicated by a third-party risk registry. This level of… |
 | **Upgrades** | 8/10 | Low | The token's core parameters are immutable (7.7 Upgrades), as both mint and freeze authorities are revoked. This prevents any future changes to the token supply or the ability to freeze accounts.… |
 
 ## Security Findings

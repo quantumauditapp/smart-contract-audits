@@ -2,14 +2,14 @@
 token: CZ Terminal Token
 ticker: CZT
 network: bsc
-risk_score: 19
+risk_score: 0
 status: low
 date: 2026-07-28
 ---
 
 # CZ Terminal Token (CZT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 19/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cz-terminal-token-bsc)
 
@@ -25,8 +25,8 @@ This audit covers the provided partial source code for the CZTerminalToken contr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract utilizes OpenZeppelin's `Context` and `ERC20` implementations, providing a solid foundation for token functionality (7.1 Architecture, 7.2 Code Security). Solidity 0.8.x's default… |
-| **Governance / Economics** | 8/10 | Low | The contract employs the `Ownable` pattern, granting the deployer significant control over the contract's parameters and potentially critical functions (7.3 Access Control). This introduces a… |
+| **Technical** | 10/10 | Low | The contract utilizes OpenZeppelin's `Context` and `ERC20` implementations, providing a solid foundation for token functionality (7.1 Architecture, 7.2 Code Security). Solidity 0.8.x's default… |
+| **Governance / Economics** | 9/10 | Low | The contract employs the `Ownable` pattern, granting the deployer significant control over the contract's parameters and potentially critical functions (7.3 Access Control). This introduces a… |
 | **Upgrades** | 10/10 | Low | The contract is not designed as an upgradeable proxy, as indicated by `is_proxy: false` in the prefill. Therefore, upgrade safety concerns are not applicable to this specific deployment (7.7… |
 
 ## LP Distribution
@@ -37,46 +37,46 @@ This audit covers the provided partial source code for the CZTerminalToken contr
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 2 Low · ⚪ 1 Informational_
-
-### `H-01` — Incomplete Anti-Whale/Transaction Limit Implementation  *(Severity: High · Status: Unresolved)*
-
-The contract declares `maxBuyAmount`, `maxSellAmount`, and `maxWalletAmount` variables, indicating an intention to implement anti-whale or transaction limit mechanisms. However, the provided `_transfer`, `_mint`, and `_burn` functions, which are the core logic for token movement, do not contain any checks or enforcement logic for these limits. Without proper implementation, these limits are ineffective and can be bypassed, potentially leading to market manipulation or concentrated holdings.
-
-**Recommendation:** Implement comprehensive checks within the `_transfer`, `_mint`, and `_burn` functions (or their respective hooks like `_beforeTokenTransfer`) to enforce `maxBuyAmount`, `maxSellAmount`, and `maxWalletAmount` for all relevant transactions. Ensure these checks cover both direct transfers and transfers via `transferFrom`.
-
+_🟡 3 Medium · 🟢 2 Low · ⚪ 1 Informational_
 
 ### `M-01` — Potential Reentrancy in DEX Interactions (Truncated Code)  *(Severity: Medium · Status: Unresolved)*
 
-The contract includes a `swapping` flag, which is a common pattern for reentrancy protection. However, the full implementation of functions interacting with `IDexRouter` (e.g., `swapExactTokensForETHSupportingFeeOnTransferTokens`) is not provided. If external calls to the DEX router are made within critical state-changing functions without proper reentrancy guards (e.g., using the `swapping` flag correctly, Checks-Effects-Interactions pattern), it could expose the contract to reentrancy attacks.
+Not confirmed by static analysis (the model's own reading of the source). The contract includes a `swapping` flag, which is a common pattern for reentrancy protection. However, the full implementation of functions interacting with `IDexRouter` (e.g., `swapExactTokensForETHSupportingFeeOnTransferTokens`) is not provided. If external calls to the DEX router are made within critical state-changing functions without proper reentrancy guards (e.g., using the `swapping` flag correctly, Checks-Effects-Interactions pattern), it could expose the contract to reentrancy attacks.
 
 **Recommendation:** Ensure that all functions involving external calls, especially to `IDexRouter`, are protected against reentrancy. Verify that the `swapping` flag is correctly set before external calls and reset afterwards, and that all state changes occur before any external calls. Consider using OpenZeppelin's `ReentrancyGuard` for robust protection.
 
 
 ### `M-02` — Unverified Fee-on-Transfer Logic (Truncated Code)  *(Severity: Medium · Status: Unresolved)*
 
-The `IDexRouter` interface includes `swapExactTokensForETHSupportingFeeOnTransferTokens`, implying that the token might implement a fee-on-transfer mechanism. While `_beforeTokenTransfer` and `_afterTokenTransfer` hooks are present, their implementation is empty in the provided code. Without the full logic, it's impossible to verify if fees are correctly handled, especially for transfers to/from DEX liquidity pools, to prevent issues like liquidity drain, failed swaps, or incorrect accounting for fee-exempt addresses.
+Not confirmed by static analysis (the model's own reading of the source). The `IDexRouter` interface includes `swapExactTokensForETHSupportingFeeOnTransferTokens`, implying that the token might implement a fee-on-transfer mechanism. While `_beforeTokenTransfer` and `_afterTokenTransfer` hooks are present, their implementation is empty in the provided code. Without the full logic, it's impossible to verify if fees are correctly handled, especially for transfers to/from DEX liquidity pools, to prevent issues like liquidity drain, failed swaps, or incorrect accounting for fee-exempt addresses.
 
 **Recommendation:** Thoroughly implement and test the fee-on-transfer logic within `_beforeTokenTransfer` or `_afterTokenTransfer`. Ensure that transfers to/from the DEX router and other critical protocols (e.g., staking contracts) are properly exempted from fees to maintain compatibility and prevent unexpected behavior. Document the fee mechanism clearly.
 
 
+### `M-03` — Incomplete Anti-Whale/Transaction Limit Implementation  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract declares `maxBuyAmount`, `maxSellAmount`, and `maxWalletAmount` variables, indicating an intention to implement anti-whale or transaction limit mechanisms. However, the provided `_transfer`, `_mint`, and `_burn` functions, which are the core logic for token movement, do not contain any checks or enforcement logic for these limits. Without proper implementation, these limits are ineffective and can be bypassed, potentially leading to market manipulation or concentrated holdings.
+
+**Recommendation:** Implement comprehensive checks within the `_transfer`, `_mint`, and `_burn` functions (or their respective hooks like `_beforeTokenTransfer`) to enforce `maxBuyAmount`, `maxSellAmount`, and `maxWalletAmount` for all relevant transactions. Ensure these checks cover both direct transfers and transfers via `transferFrom`.
+
+
 ### `L-01` — Centralization Risk with Owner Privileges  *(Severity: Low · Status: Unresolved)*
 
-The contract uses the `Ownable` pattern, granting the `owner` address exclusive control over sensitive functions (e.g., `transferOwnership`, `renounceOwnership`). While standard, this introduces a single point of failure. If the owner's private key is compromised, a malicious actor could gain full control over these administrative functions, potentially leading to severe consequences for the protocol.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses the `Ownable` pattern, granting the `owner` address exclusive control over sensitive functions (e.g., `transferOwnership`, `renounceOwnership`). While standard, this introduces a single point of failure. If the owner's private key is compromised, a malicious actor could gain full control over these administrative functions, potentially leading to severe consequences for the protocol.
 
 **Recommendation:** Consider implementing a multi-signature wallet (e.g., Gnosis Safe) for the `owner` address to distribute control and reduce the risk associated with a single point of failure. Alternatively, explore a time-locked ownership transfer mechanism for critical operations.
 
 
 ### `L-02` — Standard ERC20 `approve` Front-Running Vulnerability  *(Severity: Low · Status: Unresolved)*
 
-The standard ERC20 `approve` function is susceptible to a known front-running vulnerability. If a user approves an amount, then decides to decrease that allowance and sends a `decreaseAllowance` transaction, a malicious actor could front-run the `decreaseAllowance` by spending the original approved amount. This allows the attacker to spend the original allowance, and then the `decreaseAllowance` transaction will still execute, potentially allowing the attacker to spend the new (lower) allowance as well.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC20 `approve` function is susceptible to a known front-running vulnerability. If a user approves an amount, then decides to decrease that allowance and sends a `decreaseAllowance` transaction, a malicious actor could front-run the `decreaseAllowance` by spending the original approved amount. This allows the attacker to spend the original allowance, and then the `decreaseAllowance` transaction will still execute, potentially allowing the attacker to spend the new (lower) allowance as well.
 
 **Recommendation:** While `increaseAllowance` and `decreaseAllowance` mitigate this for most use cases, users should be advised to set allowances to zero before increasing them if they are concerned about this specific front-running vector with the base `approve` function. For critical operations, consider a two-step approval process.
 
 
 ### `I-01` — Missing Specific Events for Minting and Burning  *(Severity: Informational · Status: Unresolved)*
 
-The `_mint` and `_burn` functions emit standard `Transfer` events (from address(0) for mint, to address(0) for burn). While technically correct according to ERC20, having specific `Mint` and `Burn` events (e.g., `event Mint(address indexed to, uint256 amount);`) could provide clearer and more granular off-chain monitoring and indexing capabilities for these distinct token lifecycle operations.
+Not confirmed by static analysis (the model's own reading of the source). The `_mint` and `_burn` functions emit standard `Transfer` events (from address(0) for mint, to address(0) for burn). While technically correct according to ERC20, having specific `Mint` and `Burn` events (e.g., `event Mint(address indexed to, uint256 amount);`) could provide clearer and more granular off-chain monitoring and indexing capabilities for these distinct token lifecycle operations.
 
 **Recommendation:** Consider adding dedicated `Mint` and `Burn` events within the `_mint` and `_burn` functions, respectively. This would enhance transparency and simplify off-chain analysis of token supply changes.
 

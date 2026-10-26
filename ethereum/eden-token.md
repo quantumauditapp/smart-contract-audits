@@ -2,14 +2,14 @@
 token: Eden Token
 ticker: EDEN
 network: ethereum
-risk_score: 85
-status: critical
+risk_score: 68
+status: high
 date: 2026-08-14
 ---
 
 # Eden Token (EDEN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 85/100 — 🔴 Critical Risk**
+> **Risk Score: 68/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/eden-token-eth)
 
@@ -25,7 +25,7 @@ The Eden token contract, implemented as an upgradeable ERC-20 token using OpenZe
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for ERC-20, AccessControl, and UUPS upgradeability, ensuring a solid technical foundation (7.1 Architecture, 7.2 Code Security). The… |
+| **Technical** | 6/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for ERC-20, AccessControl, and UUPS upgradeability, ensuring a solid technical foundation (7.1 Architecture, 7.2 Code Security). The… |
 | **Governance / Economics** | 1/10 | High | The economic model is a standard ERC-20 token with controlled minting and burning capabilities (7.4 Economic). Governance is highly centralized, relying solely on role-based access control where a… |
 | **Upgrades** | 1/10 | High | The contract correctly implements the UUPS upgradeability pattern using OpenZeppelin's `UUPSUpgradeable` module, allowing for future enhancements and bug fixes (7.7 Upgrades). The `_authorizeUpgrade`… |
 
@@ -46,32 +46,32 @@ The Eden token contract, implemented as an upgradeable ERC-20 token using OpenZe
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control and Single Point of Failure  *(Severity: High · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE` (initially assigned to a single `_admin` address) has ultimate control over all other roles, including `MINTER_ROLE`, `BURNER_ROLE`, and `UPGRADE_ROLE`. This creates a single point of failure where a compromise of this admin key could lead to arbitrary token minting/burning, and malicious contract upgrades, severely impacting the protocol's integrity and user funds. (7.3 Access Control, 7.4 Economic, 7.5 Governance)
-
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the `DEFAULT_ADMIN_ROLE` and other critical roles to require multiple approvals for sensitive operations. Consider distributing roles among multiple trusted entities to reduce the risk associated with a single compromised key.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Absence of Timelock for Critical Operations  *(Severity: Medium · Status: Unresolved)*
 
-The contract lacks a timelock mechanism for critical administrative actions such as role management (granting/revoking `MINTER_ROLE`, `BURNER_ROLE`, `UPGRADE_ROLE`) and contract upgrades. This means that any authorized but compromised account could execute malicious operations instantly, leaving no time for detection or community intervention. (7.3 Access Control, 7.5 Governance, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks a timelock mechanism for critical administrative actions such as role management (granting/revoking `MINTER_ROLE`, `BURNER_ROLE`, `UPGRADE_ROLE`) and contract upgrades. This means that any authorized but compromised account could execute malicious operations instantly, leaving no time for detection or community intervention. (7.3 Access Control, 7.5 Governance, 7.8 Operations)
 
 **Recommendation:** Integrate a timelock contract (e.g., OpenZeppelin's `TimelockController`) for all sensitive administrative operations. This would introduce a delay between the proposal and execution of critical actions, allowing time for monitoring and potential intervention.
 
 
+### `M-02` — Centralized Control and Single Point of Failure  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` (initially assigned to a single `_admin` address) has ultimate control over all other roles, including `MINTER_ROLE`, `BURNER_ROLE`, and `UPGRADE_ROLE`. This creates a single point of failure where a compromise of this admin key could lead to arbitrary token minting/burning, and malicious contract upgrades, severely impacting the protocol's integrity and user funds. (7.3 Access Control, 7.4 Economic, 7.5 Governance)
+
+**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the `DEFAULT_ADMIN_ROLE` and other critical roles to require multiple approvals for sensitive operations. Consider distributing roles among multiple trusted entities to reduce the risk associated with a single compromised key.
+
+
 ### `L-01` — Reliance on External OpenZeppelin Contracts  *(Severity: Low · Status: Unresolved)*
 
-The contract heavily relies on OpenZeppelin's upgradeable contracts (`AccessControlUpgradeable`, `ERC20Upgradeable`, `UUPSUpgradeable`). While these libraries are well-audited and widely used, any undiscovered vulnerability in these external dependencies could directly impact the security of the `Eden` contract. (7.6 External)
+Not confirmed by static analysis (the model's own reading of the source). The contract heavily relies on OpenZeppelin's upgradeable contracts (`AccessControlUpgradeable`, `ERC20Upgradeable`, `UUPSUpgradeable`). While these libraries are well-audited and widely used, any undiscovered vulnerability in these external dependencies could directly impact the security of the `Eden` contract. (7.6 External)
 
 **Recommendation:** While OpenZeppelin contracts are considered industry standard, it is prudent to stay informed about any security advisories or updates related to these libraries. Regularly review and update dependencies to their latest secure versions.
 
 
 ### `I-01` — No Pause Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The contract does not include a pause mechanism (e.g., `PausableUpgradeable`). In the event of an emergency or discovery of a critical vulnerability, there is no immediate way to halt operations like minting, burning, or transfers, which could exacerbate potential damage. (7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The contract does not include a pause mechanism (e.g., `PausableUpgradeable`). In the event of an emergency or discovery of a critical vulnerability, there is no immediate way to halt operations like minting, burning, or transfers, which could exacerbate potential damage. (7.8 Operations)
 
 **Recommendation:** Consider integrating OpenZeppelin's `PausableUpgradeable` module to provide an emergency pause functionality. This would allow authorized roles to temporarily halt critical operations in case of an exploit or unforeseen issue, limiting potential damage.
 

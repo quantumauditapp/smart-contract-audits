@@ -2,14 +2,14 @@
 token: Dogelon
 ticker: ELON
 network: ethereum
-risk_score: 4
+risk_score: 0
 status: low
 date: 2026-09-21
 ---
 
 # Dogelon (ELON) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 4/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dogelon-eth)
 
@@ -25,8 +25,8 @@ The Dogelon contract implements a standard ERC20 token using OpenZeppelin's Safe
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The technical architecture (7.1) is a straightforward ERC20 token, inheriting from well-audited OpenZeppelin contracts. Code security (7.2) is strong, with SafeMath used throughout to prevent integer… |
-| **Governance / Economics** | 4/10 | Medium | The economic model (7.4) of the Dogelon token presents a significant centralization risk. The entire initial supply of 10e32 tokens is minted to the contract deployer (msg.sender) in the constructor… |
+| **Technical** | 10/10 | Low | The technical architecture (7.1) is a straightforward ERC20 token, inheriting from well-audited OpenZeppelin contracts. Code security (7.2) is strong, with SafeMath used throughout to prevent integer… |
+| **Governance / Economics** | 5/10 | Medium | The economic model (7.4) of the Dogelon token presents a significant centralization risk. The entire initial supply of 10e32 tokens is minted to the contract deployer (msg.sender) in the constructor… |
 | **Upgrades** | 7/10 | Low | The contract is not designed to be upgradeable (7.7), meaning its logic cannot be modified after deployment. This eliminates upgrade-related risks such as proxy misconfigurations or malicious upgrade… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The Dogelon contract implements a standard ERC20 token using OpenZeppelin's Safe
 
 ## Security Findings
 
-_🟠 1 High · ⚪ 3 Informational_
+_🟡 1 Medium · ⚪ 3 Informational_
 
-### `H-01` — Centralized Initial Token Supply  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Initial Token Supply  *(Severity: Medium · Status: Unresolved)*
 
-The `Dogelon` contract's constructor mints the entire initial supply of 10e32 tokens to the deployer's address (`msg.sender`). This results in 100% of the token supply being held by a single entity, creating a significant centralization risk. This concentration of power could lead to market manipulation, such as large-scale selling (rug pull), or give the deployer undue influence over the token's ecosystem.
+Not confirmed by static analysis (the model's own reading of the source). The `Dogelon` contract's constructor mints the entire initial supply of 10e32 tokens to the deployer's address (`msg.sender`). This results in 100% of the token supply being held by a single entity, creating a significant centralization risk. This concentration of power could lead to market manipulation, such as large-scale selling (rug pull), or give the deployer undue influence over the token's ecosystem.
 
 **Recommendation:** Implement a more decentralized distribution strategy for the initial token supply. This could involve distributing tokens to multiple addresses, locking a portion in a liquidity pool, or vesting tokens over time. For future projects, consider using a multi-signature wallet for initial token distribution or critical administrative functions.
 
 
 ### `I-01` — No Pause or Blacklist Functionality  *(Severity: Informational · Status: Unresolved)*
 
-The ERC20 token implementation does not include any pause or blacklist functionality. While this enhances decentralization by preventing arbitrary freezing of transfers or accounts, it also means there is no mechanism to stop token transfers in case of a critical vulnerability, exploit, or regulatory requirement.
+Not confirmed by static analysis (the model's own reading of the source). The ERC20 token implementation does not include any pause or blacklist functionality. While this enhances decentralization by preventing arbitrary freezing of transfers or accounts, it also means there is no mechanism to stop token transfers in case of a critical vulnerability, exploit, or regulatory requirement.
 
 **Recommendation:** This is a design choice. If the project requires the ability to halt operations or restrict certain addresses in emergencies, consider implementing `Pausable` or `Blacklist` patterns. However, be aware that such features introduce centralization and potential attack vectors.
 
 
 ### `I-02` — Fixed Decimals  *(Severity: Informational · Status: Unresolved)*
 
-The `_decimals` variable is set to 18 in the `ERC20` constructor and can only be set once via `_setupDecimals` (which is called in the constructor). This means the token's decimal precision is fixed at 18 and cannot be changed after deployment. While 18 is a common standard for ERC20 tokens, it's worth noting its immutability.
+Not confirmed by static analysis (the model's own reading of the source). The `_decimals` variable is set to 18 in the `ERC20` constructor and can only be set once via `_setupDecimals` (which is called in the constructor). This means the token's decimal precision is fixed at 18 and cannot be changed after deployment. While 18 is a common standard for ERC20 tokens, it's worth noting its immutability.
 
 **Recommendation:** This is standard behavior for most ERC20 tokens and generally not an issue. Ensure that all integrations and front-end applications correctly handle the 18 decimal places.
 
 
 ### `I-03` — Older Solidity Compiler Version  *(Severity: Informational · Status: Unresolved)*
 
-The contract uses Solidity compiler version `^0.7.1`. While this version is functional, it is not the latest stable release. Newer compiler versions often include bug fixes, security enhancements, and gas optimizations.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses Solidity compiler version `^0.7.1`. While this version is functional, it is not the latest stable release. Newer compiler versions often include bug fixes, security enhancements, and gas optimizations.
 
 **Recommendation:** Consider upgrading to the latest stable Solidity compiler version (e.g., `^0.8.x`) for new deployments to benefit from recent improvements and security patches, such as default checked arithmetic. Thoroughly test the contract after any compiler version upgrade.
 

@@ -2,14 +2,14 @@
 token: Dog Food Token
 ticker: OISHII
 network: ethereum
-risk_score: 47
+risk_score: 35
 status: medium
 date: 2026-09-04
 ---
 
 # Dog Food Token (OISHII) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 47/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dog-food-token-eth)
 
@@ -37,25 +37,25 @@ The audit of the EtherVista Token contract identified a significant design limit
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Highly Restrictive `approve` Functionality with Hardcoded Dependency  *(Severity: High · Status: Unresolved)*
+### `M-01` — Highly Restrictive `approve` Functionality with Hardcoded Dependency  *(Severity: Medium · Status: Unresolved)*
 
-The `approve` function, when the `vistaOnly` flag is set to `true`, restricts approvals exclusively to the router address obtained from a hardcoded `IEtherVistaFactory` instance (`0x9a27cb5ae0B2cEe0bb71f9A85C0D60f3920757B4`). This design choice severely limits the token's utility, preventing it from interacting with other DeFi protocols that require `approve` calls to different spenders (e.g., lending platforms, other AMMs, staking contracts). Furthermore, the hardcoded `factory` address means the token's functionality is permanently tied to a single external contract. If that factory contract is compromised, upgraded, or ceases to exist, or if the router address it returns becomes invalid,…
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function, when the `vistaOnly` flag is set to `true`, restricts approvals exclusively to the router address obtained from a hardcoded `IEtherVistaFactory` instance (`0x9a27cb5ae0B2cEe0bb71f9A85C0D60f3920757B4`). This design choice severely limits the token's utility, preventing it from interacting with other DeFi protocols that require `approve` calls to different spenders (e.g., lending platforms, other AMMs, staking contracts). Furthermore, the hardcoded `factory` address means the token's functionality is permanently tied to a single external contract. If that factory contract is compromised, upgraded,
 
 **Recommendation:** Reconsider the necessity and implications of the `vistaOnly` flag. If broader DeFi interoperability is desired, this restriction should be removed. If the restriction is critical, implement a mechanism (e.g., an owner-controlled function) to update the `factory` address or the allowed `router` address, rather than hardcoding it, to mitigate risks associated with external dependency failures.
 
 
 ### `L-01` — Use of `tx.origin` for Initial Minting  *(Severity: Low · Status: Unresolved)*
 
-The constructor uses `tx.origin` to mint the initial token supply to the deployer. While this is not a critical access control vulnerability in this specific context (as it's for initial supply and not for ongoing permissions), `tx.origin` is generally discouraged in Solidity. It can be susceptible to phishing attacks where a malicious contract could trick a user into signing a transaction that appears legitimate but actually grants permissions or transfers assets to the attacker, if `tx.origin` were used for critical access control. For initial minting, the risk is lower but it deviates from best practices. (7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). The constructor uses `tx.origin` to mint the initial token supply to the deployer. While this is not a critical access control vulnerability in this specific context (as it's for initial supply and not for ongoing permissions), `tx.origin` is generally discouraged in Solidity. It can be susceptible to phishing attacks where a malicious contract could trick a user into signing a transaction that appears legitimate but actually grants permissions or transfers assets to the attacker, if `tx.origin` were used for critical access control. For initial minting, the risk is lower but it deviates from best practices. (7.2 Code
 
 **Recommendation:** For future contracts, it is best practice to use `_msgSender()` (which resolves to `msg.sender`) instead of `tx.origin` for any address-related operations, including initial minting, to align with secure coding standards and prevent potential `tx.origin` related attack vectors in more complex scenarios.
 
 
 ### `I-01` — Lack of Standard Extensibility Hooks  *(Severity: Informational · Status: Unresolved)*
 
-The `ERC20` implementation does not include common extensibility hooks like `_beforeTokenTransfer` or `_afterTokenTransfer`, which are typically found in widely used ERC-20 libraries (e.g., OpenZeppelin). While not a direct vulnerability, this design choice limits the ability to add custom logic (e.g., fee mechanisms, blacklisting, compliance checks, or tax functions) in the future without modifying the core `_transfer` logic. This could necessitate a new token deployment if such features become necessary, increasing operational overhead. (7.1 Architecture)
+Not confirmed by static analysis (the model's own reading of the source). The `ERC20` implementation does not include common extensibility hooks like `_beforeTokenTransfer` or `_afterTokenTransfer`, which are typically found in widely used ERC-20 libraries (e.g., OpenZeppelin). While not a direct vulnerability, this design choice limits the ability to add custom logic (e.g., fee mechanisms, blacklisting, compliance checks, or tax functions) in the future without modifying the core `_transfer` logic. This could necessitate a new token deployment if such features become necessary, increasing operational overhead. (7.1 Architecture)
 
 **Recommendation:** Consider incorporating standard extensibility hooks in future ERC-20 implementations to allow for easier integration of custom logic and future-proofing without requiring a full redeployment.
 

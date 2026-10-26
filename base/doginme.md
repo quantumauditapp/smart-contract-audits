@@ -2,14 +2,14 @@
 token: doginme
 ticker: DOGINME
 network: base
-risk_score: 3
+risk_score: 1
 status: low
 date: 2026-08-16
 ---
 
 # doginme (DOGINME) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 3/100 — 🟢 Low Risk**
+> **Risk Score: 1/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/doginme-base)
 
@@ -42,14 +42,14 @@ _🟢 1 Low · ⚪ 1 Informational_
 
 ### `L-01` — Lack of Emergency Control Mechanisms  *(Severity: Low · Status: Unresolved)*
 
-The `ERC20` implementation does not include common emergency control mechanisms such as pausability or blacklisting. In the event of a critical vulnerability, exploit, or regulatory requirement, there is no built-in way to halt transfers or freeze malicious accounts (7.8 Operations). While this design choice promotes immutability and censorship resistance, it limits the project's ability to respond to unforeseen circumstances or mitigate severe exploits.
+Not confirmed by static analysis (the model's own reading of the source). The `ERC20` implementation does not include common emergency control mechanisms such as pausability or blacklisting. In the event of a critical vulnerability, exploit, or regulatory requirement, there is no built-in way to halt transfers or freeze malicious accounts (7.8 Operations). While this design choice promotes immutability and censorship resistance, it limits the project's ability to respond to unforeseen circumstances or mitigate severe exploits.
 
 **Recommendation:** Evaluate the project's risk profile and potential need for emergency controls. If such mechanisms are deemed necessary, consider integrating battle-tested libraries like OpenZeppelin's `Pausable` or `AccessControl` contracts. Implement these features carefully, ensuring that control is vested in a secure, multi-signature wallet or a robust governance process to prevent abuse.
 
 
 ### `I-01` — Centralized Initial Token Supply  *(Severity: Informational · Status: Unresolved)*
 
-All 69,000,000,000 tokens are minted to the contract deployer (`msg.sender`) during the `doginme` contract's construction. This design choice results in a highly centralized initial distribution, giving the deployer complete control over the entire token supply. While not a technical vulnerability in the code itself, this represents a significant economic and governance risk (7.4, 7.5) if the project aims for decentralization or broad community participation. The deployer could potentially manipulate market prices or control voting power if the token were used in a governance system.
+Not confirmed by static analysis (the model's own reading of the source). All 69,000,000,000 tokens are minted to the contract deployer (`msg.sender`) during the `doginme` contract's construction. This design choice results in a highly centralized initial distribution, giving the deployer complete control over the entire token supply. While not a technical vulnerability in the code itself, this represents a significant economic and governance risk (7.4, 7.5) if the project aims for decentralization or broad community participation. The deployer could potentially manipulate market prices or control voting power if the token were used in a governance system.
 
 **Recommendation:** If decentralization is a goal, consider implementing a more distributed initial token supply. This could involve a multi-sig wallet for the initial supply, a vesting schedule, or a public sale/airdrop mechanism to distribute tokens more broadly from the outset. Clearly communicate this distribution strategy to the community.
 

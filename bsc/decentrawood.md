@@ -2,14 +2,14 @@
 token: Decentrawood
 ticker: DEOD
 network: bsc
-risk_score: 27
+risk_score: 25
 status: low
 date: 2026-08-08
 ---
 
 # Decentrawood (DEOD) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 27/100 — 🟢 Low Risk**
+> **Risk Score: 25/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/decentrawood-bsc)
 
@@ -42,28 +42,28 @@ _🟢 1 Low · ⚪ 3 Informational_
 
 ### `L-01` — Critical Constructor Parameter for Initial Supply  *(Severity: Low · Status: Unresolved)*
 
-The entire initial token supply (2 billion DEOD tokens) is minted to a single `recipient` address specified in the constructor. If this address is incorrectly provided during deployment (e.g., a typo, an unowned address, or a blackholed address), the entire token supply could become permanently inaccessible or lost. This represents a critical operational risk during deployment (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The entire initial token supply (2 billion DEOD tokens) is minted to a single `recipient` address specified in the constructor. If this address is incorrectly provided during deployment (e.g., a typo, an unowned address, or a blackholed address), the entire token supply could become permanently inaccessible or lost. This represents a critical operational risk during deployment (7.8 Operations).
 
 **Recommendation:** Ensure rigorous verification of the `recipient` address before deployment. Consider using a multi-signature wallet as the recipient to enhance security and decentralization of control over the initial token supply, mitigating the risk of a single point of failure.
 
 
 ### `I-01` — Reliance on Standard OpenZeppelin Libraries  *(Severity: Informational · Status: Unresolved)*
 
-The `Decentrawood` contract extensively utilizes well-audited and battle-tested OpenZeppelin Contracts (ERC20 and ERC20Burnable, v5.5.0). This significantly reduces the likelihood of common vulnerabilities associated with custom token implementations, such as reentrancy, integer overflows/underflows, or incorrect ERC-20 standard adherence. This approach enhances the overall security posture of the contract (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `Decentrawood` contract extensively utilizes well-audited and battle-tested OpenZeppelin Contracts (ERC20 and ERC20Burnable, v5.5.0). This significantly reduces the likelihood of common vulnerabilities associated with custom token implementations, such as reentrancy, integer overflows/underflows, or incorrect ERC-20 standard adherence. This approach enhances the overall security posture of the contract (7.2 Code Security).
 
 **Recommendation:** No action required. This is a strength of the implementation. Continue to monitor OpenZeppelin updates and security advisories for any potential upstream issues.
 
 
 ### `I-02` — Fixed Token Supply and Immutability of Parameters  *(Severity: Informational · Status: Unresolved)*
 
-The `Decentrawood` token has a fixed total supply of 2 billion tokens, minted exclusively during contract deployment. The token's name ("Decentrawood") and symbol ("Deod") are also set immutably in the constructor. There are no functions to mint additional tokens, modify the total supply (beyond user-initiated burning), or change the token's metadata post-deployment. This design choice ensures predictable tokenomics (7.4 Economic) but limits future flexibility.
+Not confirmed by static analysis (the model's own reading of the source). The `Decentrawood` token has a fixed total supply of 2 billion tokens, minted exclusively during contract deployment. The token's name ("Decentrawood") and symbol ("Deod") are also set immutably in the constructor. There are no functions to mint additional tokens, modify the total supply (beyond user-initiated burning), or change the token's metadata post-deployment. This design choice ensures predictable tokenomics (7.4 Economic) but limits future flexibility.
 
 **Recommendation:** Ensure that the project's long-term vision and tokenomics model are fully compatible with an immutable, fixed-supply token. If future adjustments to supply or metadata are ever anticipated, a different contract design or upgradeability pattern would be required.
 
 
 ### `I-03` — Absence of Administrative Roles and Access Control  *(Severity: Informational · Status: Unresolved)*
 
-The `Decentrawood` contract does not implement any administrative roles, such as `Ownable` or `AccessControl` (7.3 Access Control). This means there is no single entity or group with special permissions to pause transfers, blacklist addresses, upgrade the contract, or modify any operational parameters post-deployment. This design aligns with a fully decentralized and immutable token, but it also means no emergency intervention capabilities are available.
+Not confirmed by static analysis (the model's own reading of the source). The `Decentrawood` contract does not implement any administrative roles, such as `Ownable` or `AccessControl` (7.3 Access Control). This means there is no single entity or group with special permissions to pause transfers, blacklist addresses, upgrade the contract, or modify any operational parameters post-deployment. This design aligns with a fully decentralized and immutable token, but it also means no emergency intervention capabilities are available.
 
 **Recommendation:** Confirm that the absence of administrative control aligns with the project's decentralization goals and risk tolerance. If any form of administrative control (e.g., pausing in emergencies, future feature additions) is desired, it would require a re-design of the contract to include appropriate access control mechanisms.
 

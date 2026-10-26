@@ -2,14 +2,14 @@
 token: dogwifpants
 ticker: PANTS
 network: solana
-risk_score: 41
-status: medium
+risk_score: 24
+status: low
 date: 2026-08-20
 ---
 
 # dogwifpants (PANTS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 24/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dogwifpants-sol)
 
@@ -25,9 +25,9 @@ The dogwifpants (PANTS) SPL token mint has revoked both mint and freeze authorit
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The dogwifpants (PANTS) token is implemented using the classic spl-token program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no… |
-| **Governance / Economics** | 2/10 | High | The economic profile of the PANTS token shows a moderate liquidity of $70,697 USD. The 24-hour volume is $400,822, resulting in a Volume/Liquidity Ratio of 5.67. Holder concentration is relatively… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. This means the supply cannot be increased, and account states cannot be altered by an authority.… |
+| **Technical** | 10/10 | Low | The dogwifpants (PANTS) token is implemented using the classic spl-token program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no… |
+| **Governance / Economics** | 5/10 | Medium | The economic profile of the PANTS token shows a moderate liquidity of $70,697 USD. The 24-hour volume is $400,822, resulting in a Volume/Liquidity Ratio of 5.67. Holder concentration is relatively… |
+| **Upgrades** | 10/10 | Low | The token's core parameters are immutable due to the revocation of both mint and freeze authorities. This means the supply cannot be increased, and account states cannot be altered by an authority.… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2281 buys / 1571 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

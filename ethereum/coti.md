@@ -2,14 +2,14 @@
 token: COTI
 ticker: COTI
 network: ethereum
-risk_score: 88
-status: critical
+risk_score: 61
+status: medium
 date: 2026-07-28
 ---
 
 # COTI (COTI) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 88/100 — 🔴 Critical Risk**
+> **Risk Score: 61/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/coti-eth)
 
@@ -25,8 +25,8 @@ The audit covers an ERC-20 token implementation, including SafeMath, Ownable, Cl
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The technical architecture (7.1) is modular, separating concerns into libraries and base contracts. Code security (7.2) benefits from SafeMath for arithmetic operations, mitigating overflow/underflow… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4) appears to be a standard fixed-supply ERC-20 token with no minting or burning mechanisms visible in the provided code. Governance (7.5) is centralized via a single owner… |
+| **Technical** | 8/10 | Low | The technical architecture (7.1) is modular, separating concerns into libraries and base contracts. Code security (7.2) benefits from SafeMath for arithmetic operations, mitigating overflow/underflow… |
+| **Governance / Economics** | 2/10 | High | The economic model (7.4) appears to be a standard fixed-supply ERC-20 token with no minting or burning mechanisms visible in the provided code. Governance (7.5) is centralized via a single owner… |
 | **Upgrades** | 3/10 | High | The contract is not designed with upgradeability in mind (7.7 Architecture). There are no proxy patterns or upgrade mechanisms implemented, meaning the contract's logic is immutable once deployed.… |
 
 ## LP Distribution
@@ -38,46 +38,46 @@ The audit covers an ERC-20 token implementation, including SafeMath, Ownable, Cl
 
 ## Security Findings
 
-_🟠 2 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — ERC-20 `approve` Race Condition Vulnerability  *(Severity: High · Status: Unresolved)*
-
-The `approve` function in the `StandardToken` contract is susceptible to a known ERC-20 race condition. If a user approves an allowance for a spender, and then attempts to change that allowance, a malicious spender could front-run the second transaction to spend the original allowance before the new allowance is set. This could result in the spender being able to spend both the old and new allowances. While `increaseApproval` is provided as a mitigation, the base `approve` function remains vulnerable.
-
-**Recommendation:** It is recommended to deprecate the direct `approve` function or strongly advise users to always set the allowance to zero before setting a new non-zero allowance. Encourage the use of `increaseApproval` and `decreaseApproval` functions, which are designed to prevent this race condition.
-
-
-### `H-02` — Outdated Solidity Compiler Version  *(Severity: High · Status: Unresolved)*
-
-The contract is compiled with Solidity version 0.4.24. This version is significantly outdated and no longer actively maintained. Newer compiler versions (e.g., 0.8.x) include numerous bug fixes, security enhancements, and gas optimizations that address known vulnerabilities and improve overall contract robustness. Deploying with an old compiler version exposes the contract to potential undiscovered or unpatched compiler-level bugs.
-
-**Recommendation:** Migrate the contract to a recent, stable Solidity compiler version (e.g., 0.8.x). This will require careful testing and adaptation of the code to comply with newer syntax and semantics, such as explicit `unchecked` blocks for arithmetic and changes in visibility rules.
-
+_🟡 4 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Irreversible Ownership Renunciation  *(Severity: Medium · Status: Unresolved)*
 
-The `renounceOwnership` function in the `Ownable` contract allows the current owner to set the `owner` address to `address(0)`. If this function is called without a prior transfer of ownership to a new, valid address, the contract will become permanently unmanageable, as no address will have the `onlyOwner` permissions to perform administrative actions.
+Not confirmed by static analysis (the model's own reading of the source). The `renounceOwnership` function in the `Ownable` contract allows the current owner to set the `owner` address to `address(0)`. If this function is called without a prior transfer of ownership to a new, valid address, the contract will become permanently unmanageable, as no address will have the `onlyOwner` permissions to perform administrative actions.
 
 **Recommendation:** Consider removing the `renounceOwnership` function if permanent ownership is desired. If renunciation is a required feature, ensure clear documentation and operational procedures are in place to prevent accidental unmanageability. Alternatively, implement a multi-signature wallet as the owner to add an extra layer of security and prevent single points of failure.
 
 
 ### `M-02` — Ether Transfer Failure Risk in `reclaimEther`  *(Severity: Medium · Status: Unresolved)*
 
-The `reclaimEther` function in `HasNoEther` uses `owner.transfer(address(this).balance)` to send Ether to the owner. The `transfer()` function has a fixed gas stipend of 2300 gas. If the `owner` address is a contract with a fallback function that requires more than 2300 gas to execute, the Ether transfer will fail, potentially locking Ether in the contract if the owner is a contract.
+Not confirmed by static analysis (the model's own reading of the source). The `reclaimEther` function in `HasNoEther` uses `owner.transfer(address(this).balance)` to send Ether to the owner. The `transfer()` function has a fixed gas stipend of 2300 gas. If the `owner` address is a contract with a fallback function that requires more than 2300 gas to execute, the Ether transfer will fail, potentially locking Ether in the contract if the owner is a contract.
 
 **Recommendation:** Replace `owner.transfer()` with `owner.call{value: address(this).balance}("")` for more robust Ether transfers. This method forwards all available gas, making it more resilient to complex recipient fallback functions. Ensure proper checks for the success of the `call` operation (e.g., `(bool success,) = owner.call{value: address(this).balance}(""); require(success, "Ether transfer failed");`).
 
 
+### `M-03` — ERC-20 `approve` Race Condition Vulnerability  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function in the `StandardToken` contract is susceptible to a known ERC-20 race condition. If a user approves an allowance for a spender, and then attempts to change that allowance, a malicious spender could front-run the second transaction to spend the original allowance before the new allowance is set. This could result in the spender being able to spend both the old and new allowances. While `increaseApproval` is provided as a mitigation, the base `approve` function remains vulnerable.
+
+**Recommendation:** It is recommended to deprecate the direct `approve` function or strongly advise users to always set the allowance to zero before setting a new non-zero allowance. Encourage the use of `increaseApproval` and `decreaseApproval` functions, which are designed to prevent this race condition.
+
+
+### `M-04` — Outdated Solidity Compiler Version  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version 0.4.24. This version is significantly outdated and no longer actively maintained. Newer compiler versions (e.g., 0.8.x) include numerous bug fixes, security enhancements, and gas optimizations that address known vulnerabilities and improve overall contract robustness. Deploying with an old compiler version exposes the contract to potential undiscovered or unpatched compiler-level bugs.
+
+**Recommendation:** Migrate the contract to a recent, stable Solidity compiler version (e.g., 0.8.x). This will require careful testing and adaptation of the code to comply with newer syntax and semantics, such as explicit `unchecked` blocks for arithmetic and changes in visibility rules.
+
+
 ### `L-01` — `SafeMath` uses `assert` instead of `require`  *(Severity: Low · Status: Unresolved)*
 
-The `SafeMath` library uses `assert` for its internal checks (e.g., `assert(b <= a)` in `sub`). In Solidity, `assert` consumes all remaining gas on failure, whereas `require` refunds the remaining gas. While `SafeMath` is an internal library, using `require` for input validation checks is generally considered a best practice for gas efficiency.
+Not confirmed by static analysis (the model's own reading of the source). The `SafeMath` library uses `assert` for its internal checks (e.g., `assert(b <= a)` in `sub`). In Solidity, `assert` consumes all remaining gas on failure, whereas `require` refunds the remaining gas. While `SafeMath` is an internal library, using `require` for input validation checks is generally considered a best practice for gas efficiency.
 
 **Recommendation:** Consider updating the `SafeMath` library to use `require` statements instead of `assert` for conditions that validate inputs or state. This would improve gas efficiency in cases where an invalid operation occurs.
 
 
 ### `I-01` — Missing Zero Address Check for `approve` `_spender`  *(Severity: Informational · Status: Unresolved)*
 
-The `approve` function does not explicitly check if the `_spender` address is `address(0)`. While `address(0)` cannot effectively spend tokens, adding an explicit `require(_spender != address(0))` check is a good practice to prevent accidental calls or wasted gas on invalid inputs.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function does not explicitly check if the `_spender` address is `address(0)`. While `address(0)` cannot effectively spend tokens, adding an explicit `require(_spender != address(0))` check is a good practice to prevent accidental calls or wasted gas on invalid inputs.
 
 **Recommendation:** Add a `require(_spender != address(0), "ERC20: approve to the zero address")` check at the beginning of the `approve` function.
 

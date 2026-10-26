@@ -2,14 +2,14 @@
 token: DGrid AI
 ticker: DGAI
 network: bsc
-risk_score: 51
+risk_score: 46
 status: medium
 date: 2026-08-30
 ---
 
 # DGrid AI (DGAI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 51/100 — 🟡 Medium Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dgrid-ai-bsc)
 
@@ -42,21 +42,21 @@ _🟡 1 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Centralized Control Over Token Minting  *(Severity: Medium · Status: Unresolved)*
 
-The `mint` function in the DGAI contract is restricted to the contract owner via the `onlyOwner` modifier. This grants the owner exclusive control over the issuance of new tokens up to the `maxSupply`. While the `maxSupply` provides a hard cap, the timing and recipient of new tokens are entirely at the owner's discretion. This centralization, even with a multisig owner, could lead to concerns regarding potential market manipulation or unfair distribution if not managed transparently (7.3 Access Control, 7.4 Economic, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function in the DGAI contract is restricted to the contract owner via the `onlyOwner` modifier. This grants the owner exclusive control over the issuance of new tokens up to the `maxSupply`. While the `maxSupply` provides a hard cap, the timing and recipient of new tokens are entirely at the owner's discretion. This centralization, even with a multisig owner, could lead to concerns regarding potential market manipulation or unfair distribution if not managed transparently (7.3 Access Control, 7.4 Economic, 7.5 Governance).
 
 **Recommendation:** Implement robust off-chain governance and transparency mechanisms for all minting operations. Clearly communicate the minting schedule, purpose, and recipients to the community. Consider exploring future decentralization of the minting process, perhaps through a time-locked contract or a community-governed mechanism, if the project's roadmap allows. Ensure the multisig owner remains secure and its signers are trustworthy.
 
 
 ### `I-01` — No Public Burn Function  *(Severity: Informational · Status: Unresolved)*
 
-The DGAI contract, while inheriting the internal `_burn` function from OpenZeppelin's ERC20, does not expose a public function for users to burn their tokens. This means individual token holders cannot directly reduce the total supply or their own balance through a burning mechanism (7.4 Economic). This is a design choice and not a vulnerability, but it limits a common utility found in some ERC-20 tokens.
+Not confirmed by static analysis (the model's own reading of the source). The DGAI contract, while inheriting the internal `_burn` function from OpenZeppelin's ERC20, does not expose a public function for users to burn their tokens. This means individual token holders cannot directly reduce the total supply or their own balance through a burning mechanism (7.4 Economic). This is a design choice and not a vulnerability, but it limits a common utility found in some ERC-20 tokens.
 
 **Recommendation:** If a burning mechanism is desired for future utility or supply management, consider adding a public `burn` function that allows token holders to destroy their own tokens. This could be implemented with a simple wrapper around the inherited `_burn` function.
 
 
 ### `I-02` — High Solidity Compiler Version  *(Severity: Informational · Status: Unresolved)*
 
-The contract uses Solidity compiler version `^0.8.28`, which is a very recent release. While newer versions often include security enhancements and optimizations, extremely new versions might have limited tooling support, or unexpected interactions with older libraries or development environments (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract uses Solidity compiler version `^0.8.28`, which is a very recent release. While newer versions often include security enhancements and optimizations, extremely new versions might have limited tooling support, or unexpected interactions with older libraries or development environments (7.2 Code Security).
 
 **Recommendation:** Ensure all development tools, testing frameworks, and deployment environments are fully compatible with Solidity 0.8.28. Monitor for any known issues or breaking changes that might emerge with this compiler version in the broader ecosystem.
 

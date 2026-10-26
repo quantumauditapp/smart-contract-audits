@@ -2,14 +2,14 @@
 token: drooling cat
 ticker: DROOLING
 network: solana
-risk_score: 16
+risk_score: 4
 status: low
 date: 2026-06-18
 ---
 
 # drooling cat (DROOLING) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 16/100 — 🟢 Low Risk**
+> **Risk Score: 4/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/drooling-cat-sol)
 
@@ -26,8 +26,8 @@ This audit of the 'drooling cat' SPL Token Mint found no critical or high-severi
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked, indicating that no new tokens can be minted and no existing accounts can be… |
-| **Governance / Economics** | 6/10 | Medium | DEX liquidity for the token is $147,143, which is sufficient for moderate trading. The 24-hour volume is $581,153, resulting in a Volume/Liquidity Ratio of 3.95, which is considered normal and does… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning these critical controls cannot be changed or re-enabled. The token uses the spl-token-2022 program but… |
+| **Governance / Economics** | 9/10 | Low | DEX liquidity for the token is $147,143, which is sufficient for moderate trading. The 24-hour volume is $581,153, resulting in a Volume/Liquidity Ratio of 3.95, which is considered normal and does… |
+| **Upgrades** | 10/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning these critical controls cannot be changed or re-enabled. The token uses the spl-token-2022 program but… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5818 buys / 5367 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,18 +69,18 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is drooling cat a scam?
 
-Based solely on the provided data, a definitive 'scam' label cannot be assigned. The token benefits from renounced ownership and no mint function, which reduce common developer-initiated risks. However, the contract remains unverified, and liquidity is not locked, posing significant vulnerabilities that could be exploited. These factors contribute to its 'Medium Risk' score of 32/100, suggesting a cautious approach is warranted rather than an outright dismissal or endorsement.
+Based solely on the provided data, a definitive 'scam' label cannot be assigned. The token benefits from renounced ownership and no mint function, which reduce common developer-initiated risks. However, the contract remains unverified, and liquidity is not locked, posing significant vulnerabilities that could be exploited. These factors contribute to its 'Low Risk' score of 4/100, suggesting a cautious approach is warranted rather than an outright dismissal or endorsement.
 
 ### Is drooling cat safe to buy?
 
-The drooling cat token carries a Medium Risk score of 32/100, indicating it is not inherently safe to buy without understanding specific risks. The most critical concerns are the unlocked liquidity, which exposes holders to potential rug pulls if liquidity providers withdraw funds, and the unverified contract, which prevents clear public scrutiny of its code. While ownership is renounced, these unmitigated financial and technical vulnerabilities necessitate extreme caution for potential buyers.
+The drooling cat token carries a Low Risk score of 4/100, indicating it is not inherently safe to buy without understanding specific risks. The most critical concerns are the unlocked liquidity, which exposes holders to potential rug pulls if liquidity providers withdraw funds, and the unverified contract, which prevents clear public scrutiny of its code. While ownership is renounced, these unmitigated financial and technical vulnerabilities necessitate extreme caution for potential buyers.
 
 ### Has drooling cat been audited?
 

@@ -2,14 +2,14 @@
 token: CryptoGDEX
 ticker: CGX
 network: solana
-risk_score: 51
-status: medium
+risk_score: 29
+status: low
 date: 2026-08-30
 ---
 
 # CryptoGDEX (CGX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 51/100 — 🟡 Medium Risk**
+> **Risk Score: 29/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cryptogdex-sol)
 
@@ -25,9 +25,9 @@ The CryptoGDEX (CGX) token mint demonstrates strong technical security with both
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The CryptoGDEX (CGX) token is implemented using the spl-token-2022 program, indicating adherence to modern SPL standards. Both the mint authority and freeze authority have been revoked, ensuring no… |
-| **Governance / Economics** | 1/10 | High | The token exhibits high holder concentration, with the top 10 accounts holding 80.1% of the total supply, as indicated by third-party risk registry signals. This level of concentration poses a… |
-| **Upgrades** | 8/10 | Low | The token mint has no upgradeability concerns as both mint and freeze authorities are revoked. Furthermore, critical parameters such as metadata, transfer fees, and transfer hook configurations are… |
+| **Technical** | 10/10 | Low | The CryptoGDEX (CGX) token is implemented using the spl-token-2022 program, indicating adherence to modern SPL standards. Both the mint authority and freeze authority have been revoked, ensuring no… |
+| **Governance / Economics** | 3/10 | High | The token exhibits high holder concentration, with the top 10 accounts holding 80.1% of the total supply, as indicated by third-party risk registry signals. This level of concentration poses a… |
+| **Upgrades** | 10/10 | Low | The token mint has no upgradeability concerns as both mint and freeze authorities are revoked. Furthermore, critical parameters such as metadata, transfer fees, and transfer hook configurations are… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ Top 10 token accounts hold 80.1% of supply. Coordinated sell-off would crash pri
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 350 buys / 192 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Top 10 token accounts hold 80.1% of supply. Coordinated sell-off would crash pri
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

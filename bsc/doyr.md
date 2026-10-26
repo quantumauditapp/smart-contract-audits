@@ -92,11 +92,11 @@ The `_init` function is an internal helper designed to be called once within a d
 
 ### Is DOYR a scam?
 
-Based on automated analysis, DOYR scores 67/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, DOYR scores 0/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is DOYR safe to buy?
 
-Our scanner flagged a risk score of 67/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 0/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has DOYR been audited?
 

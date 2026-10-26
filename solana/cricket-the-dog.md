@@ -2,14 +2,14 @@
 token: Cricket The Dog
 ticker: CRICKET
 network: solana
-risk_score: 36
-status: medium
+risk_score: 19
+status: low
 date: 2026-07-25
 ---
 
 # Cricket The Dog (CRICKET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 19/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cricket-the-dog-sol)
 
@@ -25,9 +25,9 @@ This SPL Token Mint audit for Cricket The Dog (Cricket) identifies a Medium risk
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the Mint Authority and Freeze Authority are revoked (None), which prevents further token… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 43.38% of the supply, which is below the threshold for high concentration. Total DEX liquidity stands at $22,840, which is… |
-| **Upgrades** | 8/10 | Low | The token's Mint Authority and Freeze Authority are both revoked, preventing any further changes to the token supply or account freeze status. It utilizes the spl-token-2022 program, but does not… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the Mint Authority and Freeze Authority are revoked (None), which prevents further token… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a holder concentration where the top 10 accounts hold 43.38% of the supply, which is below the threshold for high concentration. Total DEX liquidity stands at $22,840, which is… |
+| **Upgrades** | 10/10 | Low | The token's Mint Authority and Freeze Authority are both revoked, preventing any further changes to the token supply or account freeze status. It utilizes the spl-token-2022 program, but does not… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair for Cricket The Dog was created 5 days ago. This short track record
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1994 buys / 2831 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,18 +69,18 @@ The DEX pair for Cricket The Dog was created 5 days ago. This short track record
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is Cricket The Dog a scam?
 
-Based on automated analysis, Cricket The Dog scores 75/100 (Critical Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Cricket The Dog scores 19/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Cricket The Dog safe to buy?
 
-Our scanner flagged a risk score of 75/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 19/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Cricket The Dog been audited?
 

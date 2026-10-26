@@ -2,14 +2,14 @@
 token: Dogeus Maximus
 ticker: DOGEUS
 network: solana
-risk_score: 38
-status: medium
+risk_score: 26
+status: low
 date: 2026-06-10
 ---
 
 # Dogeus Maximus (DOGEUS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 38/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dogeus-maximus-sol)
 
@@ -25,9 +25,9 @@ The Dogeus Maximus (DOGEUS) token mint exhibits a low-risk profile with both min
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Dogeus Maximus (DOGEUS) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be… |
-| **Governance / Economics** | 2/10 | High | The token's liquidity stands at $16,632 USD, which is above the very low liquidity threshold. The 24-hour volume of $312 USD results in a normal Volume/Liquidity Ratio of 0.02, not indicating wash… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's core parameters cannot be altered post-launch. No Token-2022 extensions like transfer hooks or transfer fees are present… |
+| **Technical** | 10/10 | Low | The Dogeus Maximus (DOGEUS) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be… |
+| **Governance / Economics** | 5/10 | Medium | The token's liquidity stands at $16,632 USD, which is above the very low liquidity threshold. The 24-hour volume of $312 USD results in a normal Volume/Liquidity Ratio of 0.02, not indicating wash… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's core parameters cannot be altered post-launch. No Token-2022 extensions like transfer hooks or transfer fees are present… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1636 buys / 1297 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,18 +69,18 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is Dogeus Maximus a scam?
 
-The provided data indicates several high-risk factors commonly associated with potential malicious projects, such as an unverified contract and unrenounced ownership. While these do not definitively confirm it as a scam, they significantly raise the risk of developer manipulation or a rug-pull, contributing to its high risk score of 68/100. Investors should exercise extreme caution and conduct thorough due diligence.
+The provided data indicates several high-risk factors commonly associated with potential malicious projects, such as an unverified contract and unrenounced ownership. While these do not definitively confirm it as a scam, they significantly raise the risk of developer manipulation or a rug-pull, contributing to its low risk score of 26/100. Investors should exercise extreme caution and conduct thorough due diligence.
 
 ### Is Dogeus Maximus safe to buy?
 
-Based on the security analysis, Dogeus Maximus presents substantial risks that make it unsafe for typical investment. The contract is unverified, ownership is not renounced, and liquidity is not locked. These factors indicate a high potential for developer manipulation or liquidity withdrawal, resulting in a high risk score of 68/100. Investing under these conditions carries a significant risk of capital loss.
+Based on the security analysis, Dogeus Maximus presents substantial risks that make it unsafe for typical investment. The contract is unverified, ownership is not renounced, and liquidity is not locked. These factors indicate a high potential for developer manipulation or liquidity withdrawal, resulting in a low risk score of 26/100. Investing under these conditions carries a significant risk of capital loss.
 
 ### Has Dogeus Maximus been audited?
 

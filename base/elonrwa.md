@@ -2,14 +2,14 @@
 token: ElonRWA
 ticker: ELONRWA
 network: base
-risk_score: 34
+risk_score: 32
 status: low
 date: 2026-08-30
 ---
 
 # ElonRWA (ELONRWA) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 34/100 — 🟢 Low Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/elonrwa-base)
 
@@ -42,28 +42,28 @@ _🟢 1 Low · ⚪ 3 Informational_
 
 ### `L-01` — Permit Function Front-Running Risk  *(Severity: Low · Status: Unresolved)*
 
-The `permit` function, while implementing EIP-2612 correctly with nonces to prevent replay attacks, is inherently susceptible to front-running. A malicious actor observing a signed `permit` message off-chain could submit their own transaction with a higher gas price, potentially causing the original user's transaction to fail or be delayed. This is a known characteristic of the EIP-2612 design and not a flaw in the implementation itself.
+Not confirmed by static analysis (the model's own reading of the source). The `permit` function, while implementing EIP-2612 correctly with nonces to prevent replay attacks, is inherently susceptible to front-running. A malicious actor observing a signed `permit` message off-chain could submit their own transaction with a higher gas price, potentially causing the original user's transaction to fail or be delayed. This is a known characteristic of the EIP-2612 design and not a flaw in the implementation itself.
 
 **Recommendation:** Educate users about the potential for front-running when using the `permit` function. Advise users to set reasonable `deadline` values to limit the window of opportunity for front-running. While not a direct vulnerability, awareness helps manage user expectations and potential transaction failures.
 
 
 ### `I-01` — Reliance on OpenZeppelin Standard Libraries  *(Severity: Informational · Status: Unresolved)*
 
-The contract extensively utilizes well-audited and widely adopted OpenZeppelin contracts for ERC20 and ERC20Permit functionalities. This significantly reduces the likelihood of common vulnerabilities found in custom implementations, such as reentrancy, integer overflows/underflows, and ERC standard non-compliance. This is a strong security practice.
+Not confirmed by static analysis (the model's own reading of the source). The contract extensively utilizes well-audited and widely adopted OpenZeppelin contracts for ERC20 and ERC20Permit functionalities. This significantly reduces the likelihood of common vulnerabilities found in custom implementations, such as reentrancy, integer overflows/underflows, and ERC standard non-compliance. This is a strong security practice.
 
 **Recommendation:** Continue to leverage established and audited libraries like OpenZeppelin. Ensure that any custom modifications or extensions to these libraries are carefully reviewed and tested to maintain the high security standards.
 
 
 ### `I-02` — Hardcoded Decimals Value  *(Severity: Informational · Status: Unresolved)*
 
-The `decimals()` function is hardcoded to return `18`. This is a common practice for ERC20 tokens, aligning with Ethereum's native Ether. While not a vulnerability, it is a fixed design choice that cannot be changed post-deployment.
+Not confirmed by static analysis (the model's own reading of the source). The `decimals()` function is hardcoded to return `18`. This is a common practice for ERC20 tokens, aligning with Ethereum's native Ether. While not a vulnerability, it is a fixed design choice that cannot be changed post-deployment.
 
 **Recommendation:** Confirm that a fixed `18` decimals is the intended and desired behavior for the token throughout its lifecycle and ecosystem integrations. No action is required if this is the intended design.
 
 
 ### `I-03` — Limited Scope Due to Truncated Contract Code  *(Severity: Informational · Status: Unresolved)*
 
-The provided contract text primarily includes OpenZeppelin's base ERC20 and ERC20Permit implementations. The specific custom logic, additional functions, or modifications within the `ElonRWA` contract itself were truncated. This limits the audit's scope to the inherited OpenZeppelin components, meaning any unique vulnerabilities or design flaws introduced by the `ElonRWA` specific implementation could not be assessed.
+Not confirmed by static analysis (the model's own reading of the source). The provided contract text primarily includes OpenZeppelin's base ERC20 and ERC20Permit implementations. The specific custom logic, additional functions, or modifications within the `ElonRWA` contract itself were truncated. This limits the audit's scope to the inherited OpenZeppelin components, meaning any unique vulnerabilities or design flaws introduced by the `ElonRWA` specific implementation could not be assessed.
 
 **Recommendation:** Provide the complete source code for the `ElonRWA` contract, including any custom logic, constructor parameters, and function implementations, for a comprehensive security review. Pay particular attention to how internal functions like `_mint` and `_burn` are exposed and protected.
 

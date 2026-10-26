@@ -2,14 +2,14 @@
 token: Diem
 ticker: DIEM
 network: base
-risk_score: 63
+risk_score: 36
 status: medium
 date: 2026-07-26
 ---
 
 # Diem (DIEM) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 63/100 — 🟡 Medium Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/diem-base)
 
@@ -25,8 +25,8 @@ The Diem contract implements an ERC20 token with staking functionalities, includ
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Diem contract demonstrates good technical practices, utilizing OpenZeppelin's battle-tested ERC20 and AccessControl libraries (7.2 Code Security). The Solidity version 0.8.26 mitigates common… |
-| **Governance / Economics** | 2/10 | High | The economic model for Diem involves staking with a cooldown period, which is a standard mechanism (7.4 Economic). However, the contract exhibits high centralization, with the `DEFAULT_ADMIN_ROLE`… |
+| **Technical** | 8/10 | Low | The Diem contract demonstrates good technical practices, utilizing OpenZeppelin's battle-tested ERC20 and AccessControl libraries (7.2 Code Security). The Solidity version 0.8.26 mitigates common… |
+| **Governance / Economics** | 4/10 | Medium | The economic model for Diem involves staking with a cooldown period, which is a standard mechanism (7.4 Economic). However, the contract exhibits high centralization, with the `DEFAULT_ADMIN_ROLE`… |
 | **Upgrades** | 3/10 | High | The Diem contract is not designed with upgradeability in mind (7.7 Upgrades). It is deployed as a standard, non-proxy contract. This design choice means that any future modifications, bug fixes, or… |
 
 ## LP Distribution
@@ -38,39 +38,39 @@ The Diem contract implements an ERC20 token with staking functionalities, includ
 
 ## Security Findings
 
-_🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control by Default Admin Role  *(Severity: High · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE` in the Diem contract possesses extensive power, including the ability to set the `cooldownDuration` to any arbitrary value (potentially locking user funds indefinitely) and full management over other roles, such as the critical `MINTER_BURNER_ROLE`. This high degree of centralization means that the security of the protocol is heavily reliant on the integrity and security of the address holding the `DEFAULT_ADMIN_ROLE`. A compromise of this single address could lead to severe consequences, including fund locking or unauthorized role assignments.
-
-**Recommendation:** Implement a multi-signature wallet for the `DEFAULT_ADMIN_ROLE` to distribute control and require multiple approvals for sensitive operations. Consider adding a time-lock mechanism for critical administrative actions, such as changing the `cooldownDuration` or granting/revoking roles, to provide a window for community review or emergency intervention.
-
-
-### `H-02` — Critical Dependency on External Minter/Burner Contract  *(Severity: High · Status: Unresolved)*
-
-The `MINTER_BURNER_ROLE` is responsible for controlling the total supply of Diem tokens through the `mint` and `burn` functions. The contract's documentation indicates that this role is intended for the `StakingV2` contract. This creates a critical external dependency: the economic stability and integrity of the Diem token are directly tied to the security and correct functioning of the `StakingV2` contract. Any vulnerability, exploit, or malicious action within `StakingV2` could lead to unauthorized minting or burning of Diem, severely impacting its value and the entire ecosystem.
-
-**Recommendation:** Conduct a comprehensive security audit of the `StakingV2` contract to identify and mitigate any potential vulnerabilities. Ensure that `StakingV2`'s access control for minting/burning is robust and that its logic is sound. Implement monitoring for `mint` and `burn` events to detect anomalous activity quickly. Consider limiting the minting capacity or implementing a rate limit if feasible.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Cooldown Period Reset on Re-initiation  *(Severity: Medium · Status: Unresolved)*
 
-The `initiateUnstake` function resets the `coolDownEnd` timestamp for a user's entire `coolDownAmount` if they call the function again while an unstake is already pending. While the contract comment notes this behavior ('users can increase amount in cooldown, but have to wait again'), it can lead to an unexpected and potentially frustrating user experience. A user might accidentally or unknowingly reset their cooldown period, forcing them to wait longer for their entire unstaked amount, even if they only intended to add a small additional amount to the cooldown.
+Not confirmed by static analysis (the model's own reading of the source). The `initiateUnstake` function resets the `coolDownEnd` timestamp for a user's entire `coolDownAmount` if they call the function again while an unstake is already pending. While the contract comment notes this behavior ('users can increase amount in cooldown, but have to wait again'), it can lead to an unexpected and potentially frustrating user experience. A user might accidentally or unknowingly reset their cooldown period, forcing them to wait longer for their entire unstaked amount, even if they only intended to add a small additional amount to the cooldown.
 
 **Recommendation:** Consider modifying the `initiateUnstake` logic to either: 1) Prevent re-initiating an unstake if one is already pending, or 2) Allow users to add to `coolDownAmount` without resetting `coolDownEnd` if the new amount is added before the current cooldown expires. Alternatively, provide clear warnings in the UI about the cooldown reset behavior to prevent accidental delays.
 
 
+### `M-02` — Centralized Control by Default Admin Role  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` in the Diem contract possesses extensive power, including the ability to set the `cooldownDuration` to any arbitrary value (potentially locking user funds indefinitely) and full management over other roles, such as the critical `MINTER_BURNER_ROLE`. This high degree of centralization means that the security of the protocol is heavily reliant on the integrity and security of the address holding the `DEFAULT_ADMIN_ROLE`. A compromise of this single address could lead to severe consequences, including fund locking or unauthorized role assignments.
+
+**Recommendation:** Implement a multi-signature wallet for the `DEFAULT_ADMIN_ROLE` to distribute control and require multiple approvals for sensitive operations. Consider adding a time-lock mechanism for critical administrative actions, such as changing the `cooldownDuration` or granting/revoking roles, to provide a window for community review or emergency intervention.
+
+
+### `M-03` — Critical Dependency on External Minter/Burner Contract  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `MINTER_BURNER_ROLE` is responsible for controlling the total supply of Diem tokens through the `mint` and `burn` functions. The contract's documentation indicates that this role is intended for the `StakingV2` contract. This creates a critical external dependency: the economic stability and integrity of the Diem token are directly tied to the security and correct functioning of the `StakingV2` contract. Any vulnerability, exploit, or malicious action within `StakingV2` could lead to unauthorized minting or burning of Diem, severely impacting its value and the entire ecosystem.
+
+**Recommendation:** Conduct a comprehensive security audit of the `StakingV2` contract to identify and mitigate any potential vulnerabilities. Ensure that `StakingV2`'s access control for minting/burning is robust and that its logic is sound. Implement monitoring for `mint` and `burn` events to detect anomalous activity quickly. Consider limiting the minting capacity or implementing a rate limit if feasible.
+
+
 ### `L-01` — Lack of Maximum Cooldown Duration  *(Severity: Low · Status: Unresolved)*
 
-The `setCooldownDuration` function, callable by the `DEFAULT_ADMIN_ROLE`, allows setting an arbitrary `uint256` value for the cooldown period. There is no upper bound or sanity check implemented for this value. While controlled by a trusted administrative role, the absence of a maximum limit could, in a worst-case scenario of a compromised admin key, lead to setting an extremely long or effectively infinite cooldown duration, thereby locking all staked user funds indefinitely.
+Not confirmed by static analysis (the model's own reading of the source). The `setCooldownDuration` function, callable by the `DEFAULT_ADMIN_ROLE`, allows setting an arbitrary `uint256` value for the cooldown period. There is no upper bound or sanity check implemented for this value. While controlled by a trusted administrative role, the absence of a maximum limit could, in a worst-case scenario of a compromised admin key, lead to setting an extremely long or effectively infinite cooldown duration, thereby locking all staked user funds indefinitely.
 
 **Recommendation:** Implement a reasonable maximum limit for the `cooldownDuration` within the `setCooldownDuration` function. This would act as a safeguard against accidental misconfiguration or malicious intent by a compromised admin, ensuring that users' funds cannot be locked for an excessively long period.
 
 
 ### `I-01` — Non-Upgradeable Contract Design  *(Severity: Informational · Status: Unresolved)*
 
-The `Diem` contract is deployed as a standard, non-proxy contract and does not incorporate any upgradeability patterns (e.g., UUPS, Transparent proxies). This design choice means that any future bug fixes, feature enhancements, or protocol adjustments would necessitate deploying an entirely new contract. Migrating user funds, token balances, and staking state from the old contract to a new one can be a complex, costly, and potentially risky process, requiring significant coordination and user action.
+Not confirmed by static analysis (the model's own reading of the source). The `Diem` contract is deployed as a standard, non-proxy contract and does not incorporate any upgradeability patterns (e.g., UUPS, Transparent proxies). This design choice means that any future bug fixes, feature enhancements, or protocol adjustments would necessitate deploying an entirely new contract. Migrating user funds, token balances, and staking state from the old contract to a new one can be a complex, costly, and potentially risky process, requiring significant coordination and user action.
 
 **Recommendation:** For future iterations or new contracts, consider implementing an upgradeable proxy pattern. This would allow for seamless contract upgrades, enabling the protocol to adapt to evolving requirements, fix bugs, and introduce new features without requiring a full redeployment and migration of user assets.
 
@@ -113,11 +113,11 @@ The `Diem` contract is deployed as a standard, non-proxy contract and does not i
 
 ### Is Diem a scam?
 
-Based on automated analysis, Diem scores 68/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Diem scores 36/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Diem safe to buy?
 
-Our scanner flagged a risk score of 68/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 36/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Diem been audited?
 

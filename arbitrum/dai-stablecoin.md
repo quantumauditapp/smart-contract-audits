@@ -2,14 +2,14 @@
 token: Dai Stablecoin
 ticker: DAI
 network: arbitrum
-risk_score: 69
-status: high
+risk_score: 36
+status: medium
 date: 2026-08-12
 ---
 
 # Dai Stablecoin (DAI) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 69/100 — 🟠 High Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dai-stablecoin-arb)
 
@@ -25,9 +25,9 @@ The audit of the Dai Stablecoin contract revealed critical vulnerabilities relat
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract implements core ERC-20 functionalities and EIP-2612 permit, including a robust EIP-712 domain separator calculation. It also provides internal `_add` and `_sub` functions for safe… |
-| **Governance / Economics** | 1/10 | High | The contract employs a centralized 'ward' access control system, where the deployer is initially the sole administrator, capable of adding or removing other wards (7.3 Access Control). This… |
-| **Upgrades** | 2/10 | High | The contract is not designed as an upgradeable proxy and does not implement any upgrade mechanisms. Therefore, there are no specific upgrade-related risks inherent in its architecture (7.7 Upgrades).… |
+| **Technical** | 8/10 | Low | The contract implements core ERC-20 functionalities and EIP-2612 permit, including a robust EIP-712 domain separator calculation. It also provides internal `_add` and `_sub` functions for safe… |
+| **Governance / Economics** | 3/10 | High | The contract employs a centralized 'ward' access control system, where the deployer is initially the sole administrator, capable of adding or removing other wards (7.3 Access Control). This… |
+| **Upgrades** | 3/10 | High | The contract is not designed as an upgradeable proxy and does not implement any upgrade mechanisms. Therefore, there are no specific upgrade-related risks inherent in its architecture (7.7 Upgrades).… |
 
 ## LP Distribution
 
@@ -38,46 +38,46 @@ The audit of the Dai Stablecoin contract revealed critical vulnerabilities relat
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · ⚪ 3 Informational_
-
-### `C-01` — Unchecked Arithmetic Operations Leading to Integer Overflow/Underflow  *(Severity: Critical · Status: Unresolved)*
-
-Several critical arithmetic operations within the contract do not utilize the provided safe arithmetic functions (`_add`, `_sub`), exposing the contract to integer overflow and underflow vulnerabilities. Specifically: 1.  Additions to `balanceOf[to]` in `mint`, `transfer`, and `transferFrom` (`balanceOf[to] = balanceOf[to] + value;`) are unchecked and can overflow. 2.  Subtraction from `totalSupply` in `burn` (`totalSupply = totalSupply - value;`) is unchecked and can underflow if `totalSupply` is less than `value` (even if `balanceOf[from]` is sufficient).  This can lead to incorrect token balances, total supply, and potentially loss of funds or system instability. (7.2 Code Security)
-
-**Recommendation:** All arithmetic operations involving token balances, total supply, and allowances must consistently use the `_add` and `_sub` internal functions or a battle-tested `SafeMath` library to prevent overflows and underflows. Ensure that every addition and subtraction is protected by these safe arithmetic checks.
-
-
-### `H-01` — Centralized Ward Can Burn Any User's Tokens Without Approval  *(Severity: High · Status: Unresolved)*
-
-The `burn` function's logic allows an authorized ward (`wards[msg.sender] == 1`) to bypass the allowance check when burning tokens from any address (`from`), even if `from` is not `msg.sender`. This means a ward can unilaterally burn tokens belonging to any user without their explicit approval, which is a significant centralization risk and deviates from standard ERC-20 `burnFrom` behavior. (7.3 Access Control, 7.4 Economic)
-
-**Recommendation:** Modify the `burn` function to strictly enforce allowance checks for all `burnFrom` operations. If the intent is for wards to have privileged burning capabilities, this should be clearly documented, and a more robust governance mechanism (e.g., multi-signature approval) should be implemented for such sensitive actions to mitigate the risk of abuse or compromise.
-
+_🟡 3 Medium · ⚪ 3 Informational_
 
 ### `M-01` — Centralized Access Control for Core Token Operations  *(Severity: Medium · Status: Unresolved)*
 
-The contract utilizes a centralized access control mechanism based on a `wards` mapping and an `auth` modifier. The deployer is initially the sole ward, with the power to add or remove other wards via `rely` and `deny` functions. Critical operations like `mint` are restricted to these authorized wards. This centralization creates a single point of failure; a compromise of a ward's private key could lead to unauthorized token minting or administrative control. (7.3 Access Control, 7.5 Governance)
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes a centralized access control mechanism based on a `wards` mapping and an `auth` modifier. The deployer is initially the sole ward, with the power to add or remove other wards via `rely` and `deny` functions. Critical operations like `mint` are restricted to these authorized wards. This centralization creates a single point of failure; a compromise of a ward's private key could lead to unauthorized token minting or administrative control. (7.3 Access Control, 7.5 Governance)
 
 **Recommendation:** Consider implementing a multi-signature wallet (e.g., Gnosis Safe) for the `wards` addresses to distribute control and reduce the single point of failure risk. For highly sensitive operations like `mint`, explore adding time-locks or a more decentralized governance mechanism if aligned with the project's long-term vision.
 
 
+### `M-02` — Unchecked Arithmetic Operations Leading to Integer Overflow/Underflow  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). Several critical arithmetic operations within the contract do not utilize the provided safe arithmetic functions (`_add`, `_sub`), exposing the contract to integer overflow and underflow vulnerabilities. Specifically: 1.  Additions to `balanceOf[to]` in `mint`, `transfer`, and `transferFrom` (`balanceOf[to] = balanceOf[to] + value;`) are unchecked and can overflow. 2.  Subtraction from `totalSupply` in `burn` (`totalSupply = totalSupply - value;`) is unchecked and can underflow if `totalSupply` is less than `value` (even if `balanceOf[from]` is sufficient).  This can lead to incorrect token balances, total supply, and
+
+**Recommendation:** All arithmetic operations involving token balances, total supply, and allowances must consistently use the `_add` and `_sub` internal functions or a battle-tested `SafeMath` library to prevent overflows and underflows. Ensure that every addition and subtraction is protected by these safe arithmetic checks.
+
+
+### `M-03` — Centralized Ward Can Burn Any User's Tokens Without Approval  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `burn` function's logic allows an authorized ward (`wards[msg.sender] == 1`) to bypass the allowance check when burning tokens from any address (`from`), even if `from` is not `msg.sender`. This means a ward can unilaterally burn tokens belonging to any user without their explicit approval, which is a significant centralization risk and deviates from standard ERC-20 `burnFrom` behavior. (7.3 Access Control, 7.4 Economic)
+
+**Recommendation:** Modify the `burn` function to strictly enforce allowance checks for all `burnFrom` operations. If the intent is for wards to have privileged burning capabilities, this should be clearly documented, and a more robust governance mechanism (e.g., multi-signature approval) should be implemented for such sensitive actions to mitigate the risk of abuse or compromise.
+
+
 ### `I-01` — Missing ERC-20 `decimals()` Function  *(Severity: Informational · Status: Unresolved)*
 
-The contract defines `decimals` as a public constant `uint8`, which makes its value accessible. However, it does not implement the `decimals()` function as explicitly specified in the ERC-20 standard. While functionally equivalent for many applications, some tools or interfaces might expect the function call. (7.1 Architecture)
+Not confirmed by static analysis (the model's own reading of the source). The contract defines `decimals` as a public constant `uint8`, which makes its value accessible. However, it does not implement the `decimals()` function as explicitly specified in the ERC-20 standard. While functionally equivalent for many applications, some tools or interfaces might expect the function call. (7.1 Architecture)
 
 **Recommendation:** Add a `function decimals() external view returns (uint8)` that simply returns the `decimals` constant to ensure full ERC-20 compliance and broader compatibility with ecosystem tools.
 
 
 ### `I-02` — Redundant `_DOMAIN_SEPARATOR` Calculation in `permit` Function  *(Severity: Informational · Status: Unresolved)*
 
-The `permit` function recalculates the EIP-712 domain separator using `_calculateDomainSeparator(chainId)` if the current `chainId` differs from `deploymentChainId`. While this handles chain forks correctly, the contract already stores `_DOMAIN_SEPARATOR` as an immutable variable and provides a public `DOMAIN_SEPARATOR()` view function that performs the same conditional check. The `permit` function could potentially reuse the existing `DOMAIN_SEPARATOR()` function or the stored `_DOMAIN_SEPARATOR` after its own `chainId` check, avoiding redundant computation. (7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). The `permit` function recalculates the EIP-712 domain separator using `_calculateDomainSeparator(chainId)` if the current `chainId` differs from `deploymentChainId`. While this handles chain forks correctly, the contract already stores `_DOMAIN_SEPARATOR` as an immutable variable and provides a public `DOMAIN_SEPARATOR()` view function that performs the same conditional check. The `permit` function could potentially reuse the existing `DOMAIN_SEPARATOR()` function or the stored `_DOMAIN_SEPARATOR` after its own `chainId` check, avoiding redundant computation. (7.2 Code Security)
 
 **Recommendation:** Optimize the `permit` function to reuse the `DOMAIN_SEPARATOR()` function or the stored `_DOMAIN_SEPARATOR` directly after its `chainId == deploymentChainId` check, to avoid unnecessary recalculation and improve gas efficiency.
 
 
 ### `I-03` — Restrictive `transfer` and `transferFrom` to `address(this)` Check  *(Severity: Informational · Status: Unresolved)*
 
-The `transfer` and `transferFrom` functions explicitly prevent transfers to `address(this)` (the token contract itself) with the check `require(to != address(0) && to != address(this), 'Dai/invalid-address');`. While preventing transfers to `address(0)` is standard, disallowing transfers to the token contract might be overly restrictive depending on future protocol designs. Some DeFi protocols or token mechanisms might intentionally send tokens to the token contract for specific purposes (e.g., burning, staking, or locking). (7.1 Architecture)
+Not confirmed by static analysis (the model's own reading of the source). The `transfer` and `transferFrom` functions explicitly prevent transfers to `address(this)` (the token contract itself) with the check `require(to != address(0) && to != address(this), 'Dai/invalid-address');`. While preventing transfers to `address(0)` is standard, disallowing transfers to the token contract might be overly restrictive depending on future protocol designs. Some DeFi protocols or token mechanisms might intentionally send tokens to the token contract for specific purposes (e.g., burning, staking, or locking). (7.1 Architecture)
 
 **Recommendation:** Review if the restriction `to != address(this)` is absolutely necessary for all current and anticipated use cases. If there are scenarios where sending tokens to the contract itself is desired or could be beneficial, this check should be removed or made conditional. Otherwise, clearly document this design choice and its implications.
 

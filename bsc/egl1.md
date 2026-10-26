@@ -2,14 +2,14 @@
 token: EGL1
 ticker: EGL1
 network: bsc
-risk_score: 8
+risk_score: 0
 status: low
 date: 2026-09-23
 ---
 
 # EGL1 (EGL1) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 8/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/egl1-bsc)
 
@@ -25,9 +25,9 @@ This report details the security audit of the FourERC20 token contract. The cont
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract is based on OpenZeppelin's ERC-20 implementation, which generally provides robust and well-audited code (7.2 Code Security). Solidity version 0.8.0+ is used, benefiting from automatic… |
-| **Governance / Economics** | 8/10 | Low | As a standard ERC-20 token, the contract's economic model is straightforward. The inclusion of `_mint` and `_burn` functions suggests potential for supply manipulation (7.4 Economic). Without the… |
-| **Upgrades** | 9/10 | Low | The contract is not designed with upgradeability in mind, as indicated by the `is_proxy: false` flag and the absence of proxy-related patterns (7.7 Upgrades). This simplifies the deployment model by… |
+| **Technical** | 10/10 | Low | The contract is based on OpenZeppelin's ERC-20 implementation, which generally provides robust and well-audited code (7.2 Code Security). Solidity version 0.8.0+ is used, benefiting from automatic… |
+| **Governance / Economics** | 10/10 | Low | As a standard ERC-20 token, the contract's economic model is straightforward. The inclusion of `_mint` and `_burn` functions suggests potential for supply manipulation (7.4 Economic). Without the… |
+| **Upgrades** | 10/10 | Low | The contract is not designed with upgradeability in mind, as indicated by the `is_proxy: false` flag and the absence of proxy-related patterns (7.7 Upgrades). This simplifies the deployment model by… |
 
 ## LP Distribution
 
@@ -39,32 +39,32 @@ This report details the security audit of the FourERC20 token contract. The cont
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `C-01` — Incomplete Source Code for Critical Functions  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Incomplete Source Code for Critical Functions  *(Severity: Medium · Status: Unresolved)*
 
-The provided `FourERC20.sol` source code is truncated, specifically missing the full implementation of core internal functions such as `_transfer`, `_mint`, `_burn`, `_approve`, and `_spendAllowance`. These functions are fundamental to the operation and security of an ERC-20 token. The absence of their complete code prevents a comprehensive security assessment, leaving critical aspects of the token's behavior unverified (7.1 Architecture, 7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The provided `FourERC20.sol` source code is truncated, specifically missing the full implementation of core internal functions such as `_transfer`, `_mint`, `_burn`, `_approve`, and `_spendAllowance`. These functions are fundamental to the operation and security of an ERC-20 token. The absence of their complete code prevents a comprehensive security assessment, leaving critical aspects of the token's behavior unverified (7.1 Architecture, 7.2 Code Security).
 
 **Recommendation:** Provide the complete and verifiable source code for all contracts, including all internal and external functions, to enable a full security audit. Without the complete code, the security posture of the contract cannot be fully determined.
 
 
-### `H-01` — Potential Centralized Control over Supply (Unverified)  *(Severity: High · Status: Unresolved)*
+### `M-02` — Potential Centralized Control over Supply (Unverified)  *(Severity: Medium · Status: Unresolved)*
 
-The contract includes internal `_mint` and `_burn` functions, which allow for the creation and destruction of tokens. Without the full source code, it is impossible to determine how these functions are exposed externally and what access control mechanisms, if any, are in place (7.3 Access Control, 7.4 Economic). If these functions are callable by a single entity (e.g., an owner or admin) without robust multi-signature or time-locked controls, it poses a high risk of arbitrary token supply manipulation, which could devalue tokens or disrupt the ecosystem.
+Not confirmed by static analysis (the model's own reading of the source). The contract includes internal `_mint` and `_burn` functions, which allow for the creation and destruction of tokens. Without the full source code, it is impossible to determine how these functions are exposed externally and what access control mechanisms, if any, are in place (7.3 Access Control, 7.4 Economic). If these functions are callable by a single entity (e.g., an owner or admin) without robust multi-signature or time-locked controls, it poses a high risk of arbitrary token supply manipulation, which could devalue tokens or disrupt the ecosystem.
 
 **Recommendation:** If `_mint` and `_burn` are exposed externally, implement strict access control mechanisms (e.g., `Ownable2Step`, `AccessControl`, or a multi-signature wallet) to restrict who can call them. Consider decentralizing control or implementing time-locks for sensitive supply-altering operations. Ensure that the policy for supply changes is clearly documented and transparent.
 
 
 ### `L-01` — Standard ERC-20 `approve` Front-Running Vulnerability  *(Severity: Low · Status: Unresolved)*
 
-While the contract includes `increaseAllowance` and `decreaseAllowance` functions, which are designed to mitigate the known front-running issue with `approve`, the standard `approve` function itself remains susceptible (7.2 Code Security). A user attempting to change an allowance from amount X to amount Y can be front-run by a malicious spender. The attacker can spend the original X amount before the new Y amount is set, potentially leading to a double-spend of the allowance.
+Not confirmed by static analysis (the model's own reading of the source). While the contract includes `increaseAllowance` and `decreaseAllowance` functions, which are designed to mitigate the known front-running issue with `approve`, the standard `approve` function itself remains susceptible (7.2 Code Security). A user attempting to change an allowance from amount X to amount Y can be front-run by a malicious spender. The attacker can spend the original X amount before the new Y amount is set, potentially leading to a double-spend of the allowance.
 
 **Recommendation:** Educate users to primarily use `increaseAllowance` and `decreaseAllowance` instead of directly calling `approve` when modifying existing allowances. While this is a known ERC-20 limitation, clear communication can help users avoid this pitfall. No code change is strictly required if `increaseAllowance` and `decreaseAllowance` are promoted as the primary methods for allowance modification.
 
 
 ### `I-01` — Lack of Emergency Pause Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The contract does not implement a pausing mechanism (e.g., using OpenZeppelin's `Pausable` module) (7.8 Operations). In the event of a critical vulnerability, an unforeseen bug, or a major external dependency issue, the lack of a pause function could prevent immediate mitigation. This could lead to significant loss of funds, system disruption, or other adverse effects that cannot be quickly addressed.
+Not confirmed by static analysis (the model's own reading of the source). The contract does not implement a pausing mechanism (e.g., using OpenZeppelin's `Pausable` module) (7.8 Operations). In the event of a critical vulnerability, an unforeseen bug, or a major external dependency issue, the lack of a pause function could prevent immediate mitigation. This could lead to significant loss of funds, system disruption, or other adverse effects that cannot be quickly addressed.
 
 **Recommendation:** Consider integrating an emergency pause mechanism (e.g., `Pausable` from OpenZeppelin) to allow authorized entities to temporarily halt critical operations (like transfers, minting, or burning) in an emergency. Ensure that the pause functionality itself is protected by robust access control (e.g., a multi-signature wallet) and that the conditions for pausing and unpausing are clearly defined.
 

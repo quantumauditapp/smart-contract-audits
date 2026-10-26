@@ -2,14 +2,14 @@
 token: Dot
 ticker: DOT
 network: base
-risk_score: 55
+risk_score: 51
 status: medium
 date: 2026-08-13
 ---
 
 # Dot (DOT) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 55/100 — 🟡 Medium Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dot-base)
 
@@ -42,28 +42,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Multiple Pragma Directives  *(Severity: Low · Status: Unresolved)*
 
-The source code contains multiple `pragma solidity` directives (e.g., `>=0.4.16`, `>=0.6.2`, `^0.8.20`, `>=0.8.4`). While the compiler will use the most restrictive one for the relevant code blocks, having multiple pragmas can sometimes lead to confusion or potential compatibility issues if not consistently managed across the codebase, especially with different compiler versions.
+Not confirmed by static analysis (the model's own reading of the source). The source code contains multiple `pragma solidity` directives (e.g., `>=0.4.16`, `>=0.6.2`, `^0.8.20`, `>=0.8.4`). While the compiler will use the most restrictive one for the relevant code blocks, having multiple pragmas can sometimes lead to confusion or potential compatibility issues if not consistently managed across the codebase, especially with different compiler versions.
 
 **Recommendation:** Consolidate `pragma solidity` directives to a single, most restrictive version (e.g., `pragma solidity ^0.8.20;`) at the top of each file, or ensure consistent use if different versions are intentionally required for specific interfaces/libraries.
 
 
 ### `L-02` — Missing Access Control for `_mint` and `_burn` (Contextual)  *(Severity: Low · Status: Unresolved)*
 
-The `_mint` and `_burn` functions are internal to the `ERC20` abstract contract. If a concrete token contract inherits from `ERC20` and exposes these functions externally without proper access control (e.g., only callable by an owner, minter role, or specific governance mechanism), it could allow unauthorized manipulation of the token supply, leading to severe economic consequences.
+Not confirmed by static analysis (the model's own reading of the source). The `_mint` and `_burn` functions are internal to the `ERC20` abstract contract. If a concrete token contract inherits from `ERC20` and exposes these functions externally without proper access control (e.g., only callable by an owner, minter role, or specific governance mechanism), it could allow unauthorized manipulation of the token supply, leading to severe economic consequences.
 
 **Recommendation:** For any concrete token implementation, ensure that if `_mint` or `_burn` functionalities are exposed externally, they are protected by robust access control mechanisms (e.g., OpenZeppelin's `Ownable` or `AccessControl` contracts) to restrict their execution to authorized entities only.
 
 
 ### `I-01` — Abstract ERC20 Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The provided code defines an abstract `ERC20` contract, which serves as a base for concrete token implementations. It is not directly deployable as a token. A concrete contract inheriting from `ERC20` would be required for deployment and would define the initial supply and any custom logic.
+Not confirmed by static analysis (the model's own reading of the source). The provided code defines an abstract `ERC20` contract, which serves as a base for concrete token implementations. It is not directly deployable as a token. A concrete contract inheriting from `ERC20` would be required for deployment and would define the initial supply and any custom logic.
 
 **Recommendation:** This is an observation of the contract's structure. Ensure that the concrete token contract inheriting from this abstract base is fully reviewed for its specific implementation details, including constructor logic and any added functionalities.
 
 
 ### `I-02` — Standard OpenZeppelin Components  *(Severity: Informational · Status: Unresolved)*
 
-The `ERC20` and `ECDSA` implementations appear to be standard, well-audited OpenZeppelin libraries. These libraries are widely used and have undergone extensive security reviews, significantly reducing the likelihood of undiscovered vulnerabilities within these core components.
+Not confirmed by static analysis (the model's own reading of the source). The `ERC20` and `ECDSA` implementations appear to be standard, well-audited OpenZeppelin libraries. These libraries are widely used and have undergone extensive security reviews, significantly reducing the likelihood of undiscovered vulnerabilities within these core components.
 
 **Recommendation:** Continue to rely on well-established and audited libraries like OpenZeppelin. Ensure that any modifications or custom additions to these standard components are thoroughly tested and reviewed.
 

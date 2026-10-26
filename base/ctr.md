@@ -2,14 +2,14 @@
 token: CTR
 ticker: CTR
 network: base
-risk_score: 52
+risk_score: 35
 status: medium
 date: 2026-08-11
 ---
 
 # CTR (CTR) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 52/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ctr-base)
 
@@ -26,7 +26,7 @@ The Citrea Token OFT contract is a minimal implementation of a LayerZero Omnicha
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The CitreaTokenOFT contract is minimal, primarily inheriting from LayerZero's OFT and OpenZeppelin's Ownable. The code is straightforward and uses a recent Solidity version (0.8.33), benefiting from… |
-| **Governance / Economics** | 2/10 | High | The contract employs an `Ownable` pattern, with the owner being a 3/5 multisig, which enhances security compared to a single EOA. This owner has significant control over critical cross-chain… |
+| **Governance / Economics** | 3/10 | High | The contract employs an `Ownable` pattern, with the owner being a 3/5 multisig, which enhances security compared to a single EOA. This owner has significant control over critical cross-chain… |
 | **Upgrades** | 7/10 | Low | The CitreaTokenOFT contract is not designed as an upgradeable proxy, meaning its logic is immutable once deployed. This simplifies the architecture by avoiding upgrade-related complexities and risks… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The Citrea Token OFT contract is a minimal implementation of a LayerZero Omnicha
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control over Cross-Chain Functionality  *(Severity: High · Status: Unresolved)*
-
-The `owner` (a 3/5 multisig) has extensive control over the LayerZero OFT configuration, including setting trusted remotes, minimum destination gas, and potentially pausing cross-chain transfers via the inherited OFT functions. A compromise of the multisig could lead to redirection of cross-chain funds, denial of service for cross-chain operations, or manipulation of fees (7.3 Access Control, 7.4 Economic, 7.5 Governance).
-
-**Recommendation:** Ensure the multisig controlling the owner address adheres to the highest security standards, including robust key management, secure signing procedures, and regular audits of its members. Implement strict internal controls and monitoring for all owner-privileged functions. Consider a time-lock for critical configuration changes if feasible for the protocol's operational needs.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Reliance on External LayerZero Protocol Security  *(Severity: Medium · Status: Unresolved)*
 
-The `CitreaTokenOFT` contract is a wrapper around the LayerZero OFT implementation. Its security is fundamentally tied to the security and integrity of the LayerZero v2 protocol and its smart contracts (e.g., `OFT.sol`, `ILayerZeroEndpointV2.sol`). Any vulnerabilities or exploits within the LayerZero endpoint, message libraries, or OFT base contract could directly affect the safety of funds managed by this token (7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The `CitreaTokenOFT` contract is a wrapper around the LayerZero OFT implementation. Its security is fundamentally tied to the security and integrity of the LayerZero v2 protocol and its smart contracts (e.g., `OFT.sol`, `ILayerZeroEndpointV2.sol`). Any vulnerabilities or exploits within the LayerZero endpoint, message libraries, or OFT base contract could directly affect the safety of funds managed by this token (7.6 External).
 
 **Recommendation:** Stay informed about LayerZero protocol updates, security audits, and any reported vulnerabilities. Implement robust monitoring for LayerZero endpoint activity and cross-chain transactions involving the token. While direct mitigation within this contract is limited, awareness and rapid response capabilities are crucial.
 
 
+### `M-02` — Centralized Control over Cross-Chain Functionality  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `owner` (a 3/5 multisig) has extensive control over the LayerZero OFT configuration, including setting trusted remotes, minimum destination gas, and potentially pausing cross-chain transfers via the inherited OFT functions. A compromise of the multisig could lead to redirection of cross-chain funds, denial of service for cross-chain operations, or manipulation of fees (7.3 Access Control, 7.4 Economic, 7.5 Governance).
+
+**Recommendation:** Ensure the multisig controlling the owner address adheres to the highest security standards, including robust key management, secure signing procedures, and regular audits of its members. Implement strict internal controls and monitoring for all owner-privileged functions. Consider a time-lock for critical configuration changes if feasible for the protocol's operational needs.
+
+
 ### `L-01` — Lack of Explicit Event Emission for Critical Owner Actions  *(Severity: Low · Status: Unresolved)*
 
-While the inherited `OFT` base contract likely emits events for its critical functions (e.g., `setPeer`, `setMinDstGas`), the `CitreaTokenOFT` itself does not add any custom events for its constructor or any potential future owner-controlled functions. Explicit events for all critical state changes improve transparency and monitoring for off-chain systems (7.2 Code Security, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). While the inherited `OFT` base contract likely emits events for its critical functions (e.g., `setPeer`, `setMinDstGas`), the `CitreaTokenOFT` itself does not add any custom events for its constructor or any potential future owner-controlled functions. Explicit events for all critical state changes improve transparency and monitoring for off-chain systems (7.2 Code Security, 7.8 Operations).
 
 **Recommendation:** For any future custom owner-controlled functions added to `CitreaTokenOFT`, ensure that appropriate events are emitted to log critical state changes. Review the `OFT` base contract's events to confirm comprehensive coverage for cross-chain configuration changes.
 
 
 ### `I-01` — Immutability of LayerZero Endpoint Address  *(Severity: Informational · Status: Unresolved)*
 
-The LayerZero endpoint address (`_lzEndpoint`) is set in the constructor and cannot be changed after deployment. While this ensures stability and prevents malicious modification, it means that if the LayerZero endpoint itself needs to be upgraded or replaced (e.g., due to a critical vulnerability or protocol evolution), the `CitreaTokenOFT` contract would need to be redeployed, requiring users to migrate their tokens (7.1 Architecture, 7.7 Upgrades).
+Not confirmed by static analysis (the model's own reading of the source). The LayerZero endpoint address (`_lzEndpoint`) is set in the constructor and cannot be changed after deployment. While this ensures stability and prevents malicious modification, it means that if the LayerZero endpoint itself needs to be upgraded or replaced (e.g., due to a critical vulnerability or protocol evolution), the `CitreaTokenOFT` contract would need to be redeployed, requiring users to migrate their tokens (7.1 Architecture, 7.7 Upgrades).
 
 **Recommendation:** This is an architectural design choice. Acknowledge the implications of an immutable endpoint. If future flexibility is desired, consider an upgradeable proxy pattern for the token or a mechanism to update the endpoint address, though this adds complexity and potential attack surface.
 

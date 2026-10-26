@@ -2,14 +2,14 @@
 token: DIAToken
 ticker: DIA
 network: ethereum
-risk_score: 67
-status: high
+risk_score: 50
+status: medium
 date: 2026-07-27
 ---
 
 # DIAToken (DIA) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/diatoken-eth)
 
@@ -25,9 +25,9 @@ This audit covers the provided Solidity source code for the DIAToken contract, w
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture benefits from the use of well-vetted OpenZeppelin libraries like SafeMath (7.2 Code Security), which significantly mitigates integer overflow/underflow risks. However, the… |
-| **Governance / Economics** | 1/10 | High | The contract implements the standard ERC20 interface, providing predictable token behavior (7.4 Economic). However, external information suggests the presence of an owner (EOA) for the contract (7.5… |
-| **Upgrades** | 6/10 | Medium | The contract is not deployed as a proxy (7.7 Upgrades), which eliminates the complexities and specific risks associated with upgradeable contracts, such as storage collisions or improper… |
+| **Technical** | 8/10 | Low | The technical architecture benefits from the use of well-vetted OpenZeppelin libraries like SafeMath (7.2 Code Security), which significantly mitigates integer overflow/underflow risks. However, the… |
+| **Governance / Economics** | 2/10 | High | The contract implements the standard ERC20 interface, providing predictable token behavior (7.4 Economic). However, external information suggests the presence of an owner (EOA) for the contract (7.5… |
+| **Upgrades** | 7/10 | Low | The contract is not deployed as a proxy (7.7 Upgrades), which eliminates the complexities and specific risks associated with upgradeable contracts, such as storage collisions or improper… |
 
 ## LP Distribution
 
@@ -38,32 +38,32 @@ This audit covers the provided Solidity source code for the DIAToken contract, w
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Incomplete Contract Code Provided  *(Severity: High · Status: Unresolved)*
-
-The provided source code for the DIAToken contract is truncated, specifically the main contract body. This prevents a comprehensive security analysis of its full functionality, internal logic, access control mechanisms, and potential custom vulnerabilities. Without the complete code, critical security flaws could remain undetected.
-
-**Recommendation:** Provide the complete and verified source code for the DIAToken contract. A full audit cannot be performed without access to all relevant contract logic.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Outdated Solidity Compiler Version  *(Severity: Medium · Status: Unresolved)*
 
-The contract uses `pragma solidity ^0.5.0`, which is an outdated Solidity compiler version. While `SafeMath` mitigates common arithmetic issues, older compiler versions may contain known bugs, have less efficient bytecode generation, or lack modern security features and optimizations available in newer versions (e.g., 0.8.x).
+Not confirmed by static analysis (the model's own reading of the source). The contract uses `pragma solidity ^0.5.0`, which is an outdated Solidity compiler version. While `SafeMath` mitigates common arithmetic issues, older compiler versions may contain known bugs, have less efficient bytecode generation, or lack modern security features and optimizations available in newer versions (e.g., 0.8.x).
 
 **Recommendation:** Consider upgrading the Solidity compiler version to a more recent, stable release (e.g., 0.8.x). This would allow the contract to benefit from the latest security patches, gas optimizations, and language features. A thorough re-audit would be required after such an upgrade.
 
 
+### `M-02` — Incomplete Contract Code Provided  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the DIAToken contract is truncated, specifically the main contract body. This prevents a comprehensive security analysis of its full functionality, internal logic, access control mechanisms, and potential custom vulnerabilities. Without the complete code, critical security flaws could remain undetected.
+
+**Recommendation:** Provide the complete and verified source code for the DIAToken contract. A full audit cannot be performed without access to all relevant contract logic.
+
+
 ### `L-01` — Potential Centralized Control by Owner  *(Severity: Low · Status: Unresolved)*
 
-External information indicates that the contract has an owner (EOA: 0x5737bf56559dd32d8880cfa236fe613e2162e157). While the full contract code is not available to confirm specific owner privileges, it is common for ERC20 tokens of this era to grant significant control (e.g., minting, burning, pausing) to an owner. Such centralization introduces a single point of failure and potential for abuse or compromise.
+Not confirmed by static analysis (the model's own reading of the source). External information indicates that the contract has an owner (EOA: 0x5737bf56559dd32d8880cfa236fe613e2162e157). While the full contract code is not available to confirm specific owner privileges, it is common for ERC20 tokens of this era to grant significant control (e.g., minting, burning, pausing) to an owner. Such centralization introduces a single point of failure and potential for abuse or compromise.
 
 **Recommendation:** If the owner has privileged functions, clearly document these capabilities. Consider implementing a multi-signature wallet for critical administrative actions to distribute control and reduce the risk associated with a single EOA. Explore mechanisms to progressively decentralize control over time if feasible.
 
 
 ### `I-01` — ERC20 `approve` Race Condition Warning  *(Severity: Informational · Status: Unresolved)*
 
-The `IERC20` interface documentation correctly highlights a known race condition vulnerability when changing an allowance with the `approve` function. If a user calls `approve` to increase an allowance, a malicious spender could front-run this transaction, spend the old allowance, and then spend the newly increased allowance, effectively spending more than intended.
+Not confirmed by static analysis (the model's own reading of the source). The `IERC20` interface documentation correctly highlights a known race condition vulnerability when changing an allowance with the `approve` function. If a user calls `approve` to increase an allowance, a malicious spender could front-run this transaction, spend the old allowance, and then spend the newly increased allowance, effectively spending more than intended.
 
 **Recommendation:** Users of the `approve` function should be advised to first set the allowance to zero before setting a new, non-zero allowance. While this is a user-side concern, contract developers can provide helper functions or clear warnings in their dApp interfaces to guide users.
 
@@ -106,11 +106,11 @@ The `IERC20` interface documentation correctly highlights a known race condition
 
 ### Is DIAToken a scam?
 
-Based on automated analysis, DIAToken scores 65/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, DIAToken scores 50/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is DIAToken safe to buy?
 
-Our scanner flagged a risk score of 65/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 50/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has DIAToken been audited?
 

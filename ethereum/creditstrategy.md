@@ -2,14 +2,14 @@
 token: CreditStrategy
 ticker: CREDITSTR
 network: ethereum
-risk_score: 51
+risk_score: 49
 status: medium
 date: 2026-09-23
 ---
 
 # CreditStrategy (CREDITSTR) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 51/100 — 🟡 Medium Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/creditstrategy-eth)
 
@@ -17,7 +17,7 @@ date: 2026-09-23
 
 ## Security Analysis
 
-CreditStrategy (CREDITSTR) is a token on Ethereum. Our automated on-chain security scanner assigned it a risk score of 51/100, classified as High Risk. The contract source code is open-source and verified on the blockchain explorer. Contract ownership has not been renounced, and the contract does not have a mint function. Liquidity does not appear to be locked. These factors are weighted to produce the overall risk classification.
+CreditStrategy (CREDITSTR) is a token on Ethereum. Our automated on-chain security scanner assigned it a risk score of 49/100, classified as High Risk. The contract source code is open-source and verified on the blockchain explorer. Contract ownership has not been renounced, and the contract does not have a mint function. Liquidity lock status could not be determined. These factors are weighted to produce the overall risk classification.
 
 Key signals investors should consider: the top 10 wallets hold 37.4% of the supply, which suggests a relatively distributed token supply. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
 
@@ -26,7 +26,7 @@ Key signals investors should consider: the top 10 wallets hold 37.4% of the supp
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low |  |
-| **Governance / Economics** | 1/10 | High |  |
+| **Governance / Economics** | 2/10 | High |  |
 | **Upgrades** | 1/10 | High |  |
 
 ## Proxy Upgrade Controls
@@ -69,7 +69,7 @@ The verified source code was reviewed and no issue rising to Informational sever
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
@@ -79,18 +79,18 @@ The verified source code was reviewed and no issue rising to Informational sever
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Frequently Asked Questions
 
 ### Is CreditStrategy a scam?
 
-Based on automated analysis, CreditStrategy scores 51/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, CreditStrategy scores 49/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is CreditStrategy safe to buy?
 
-Our scanner flagged a risk score of 51/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 49/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has CreditStrategy been audited?
 

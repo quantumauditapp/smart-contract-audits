@@ -2,14 +2,14 @@
 token: Earless Hachimi
 ticker: HACHIMI
 network: solana
-risk_score: 28
+risk_score: 11
 status: low
 date: 2026-09-14
 ---
 
 # Earless Hachimi (HACHIMI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/earless-hachimi-sol)
 
@@ -26,8 +26,8 @@ The Earless Hachimi (HACHIMI) token mint exhibits a Medium risk profile primaril
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no existing accounts can be… |
-| **Governance / Economics** | 2/10 | High | The token's DEX liquidity stands at $24,429, with a 24-hour trading volume of $166,988. The Volume/Liquidity Ratio is 6.84. A significant concern is the pair's age, which is 0 days, indicating a very… |
-| **Upgrades** | 8/10 | Low | The token mint's core authorities, Mint Authority and Freeze Authority, are both revoked, which means the token's supply and account freeze status are immutable. The token does not utilize a Transfer… |
+| **Governance / Economics** | 5/10 | Medium | The token's DEX liquidity stands at $24,429, with a 24-hour trading volume of $166,988. The Volume/Liquidity Ratio is 6.84. A significant concern is the pair's age, which is 0 days, indicating a very… |
+| **Upgrades** | 10/10 | Low | The token mint's core authorities, Mint Authority and Freeze Authority, are both revoked, which means the token's supply and account freeze status are immutable. The token does not utilize a Transfer… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair for HACHIMI was created 0 days ago. Insufficient track record to as
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6664 buys / 1667 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for HACHIMI was created 0 days ago. Insufficient track record to as
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

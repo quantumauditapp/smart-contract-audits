@@ -2,14 +2,14 @@
 token: Cupsey
 ticker: CUPSEY
 network: solana
-risk_score: 30
+risk_score: 23
 status: low
 date: 2026-08-12
 ---
 
 # Cupsey (CUPSEY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 30/100 — 🟢 Low Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cupsey-sol-1d09)
 
@@ -26,8 +26,8 @@ The Cupsey SPL token mint presents a medium risk profile primarily due to its ho
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Cupsey token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account states.… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a moderate level of holder concentration, with the top 10 accounts holding 58.55% of the total supply. This concentration could lead to price volatility if large holders coordinate… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the Cupsey token have both been revoked, preventing any further minting or freezing of token accounts. This indicates a fixed supply and immutable token… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a moderate level of holder concentration, with the top 10 accounts holding 58.55% of the total supply. This concentration could lead to price volatility if large holders coordinate… |
+| **Upgrades** | 9/10 | Low | The mint authority and freeze authority for the Cupsey token have both been revoked, preventing any further minting or freezing of token accounts. This indicates a fixed supply and immutable token… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ Top 10 token accounts hold 58.55% of supply. Coordinated sell-off would crash pr
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Top 10 token accounts hold 58.55% of supply. Coordinated sell-off would crash pr
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

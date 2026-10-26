@@ -2,14 +2,14 @@
 token: Covalent X Token
 ticker: CXT
 network: ethereum
-risk_score: 74
-status: high
+risk_score: 47
+status: medium
 date: 2026-07-25
 ---
 
 # Covalent X Token (CXT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 74/100 — 🟠 High Risk**
+> **Risk Score: 47/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/covalent-x-token-eth)
 
@@ -27,8 +27,8 @@ For future iterations, evaluate the benefits of an upgradeable contract architec
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates good technical architecture (7.1) by utilizing battle-tested OpenZeppelin libraries for ERC20 and AccessControl functionalities, enhancing code security (7.2). The minting… |
-| **Governance / Economics** | 2/10 | High | The economic model (7.4) is highly dependent on the security of the `EMISSION_ROLE` and `CAP_MANAGER_ROLE`, as these control token supply and emission limits. The governance model (7.5) is… |
+| **Technical** | 8/10 | Low | The contract demonstrates good technical architecture (7.1) by utilizing battle-tested OpenZeppelin libraries for ERC20 and AccessControl functionalities, enhancing code security (7.2). The minting… |
+| **Governance / Economics** | 4/10 | Medium | The economic model (7.4) is highly dependent on the security of the `EMISSION_ROLE` and `CAP_MANAGER_ROLE`, as these control token supply and emission limits. The governance model (7.5) is… |
 | **Upgrades** | 4/10 | Medium | The CovalentXToken contract is not designed to be upgradeable (7.7). This means that any future changes, bug fixes, or feature additions would require a complete redeployment of the contract and a… |
 
 ## LP Distribution
@@ -40,46 +40,46 @@ For future iterations, evaluate the benefits of an upgradeable contract architec
 
 ## Security Findings
 
-_🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Centralized Control of Minting Cap  *(Severity: High · Status: Unresolved)*
-
-The `updateMintCap` function, controlled by the `CAP_MANAGER_ROLE`, allows setting `mintPerSecondCap` to any `uint256` value without an upper bound. If the address holding `CAP_MANAGER_ROLE` is compromised, an attacker could set an extremely high or infinite minting cap, effectively removing all emission controls and leading to arbitrary token inflation. This poses a severe economic risk to the token's value.
-
-**Recommendation:** Implement a multi-signature wallet for the `CAP_MANAGER_ROLE` to distribute control. Consider adding a maximum allowable value for `mintPerSecondCap` or a time-locked delay for significant cap increases to provide a window for community review or emergency intervention.
-
-
-### `H-02` — High Power of DEFAULT_ADMIN_ROLE  *(Severity: High · Status: Unresolved)*
-
-The `protocolCouncil` address is granted the `DEFAULT_ADMIN_ROLE` in the constructor. This role has the power to grant and revoke any other role, including itself. This creates a single point of failure where compromise of the `protocolCouncil` address would grant an attacker complete control over all access control mechanisms, including minting, cap management, and Permit2 allowance toggling.
-
-**Recommendation:** Assign the `DEFAULT_ADMIN_ROLE` to a robust multi-signature wallet with a high number of required confirmations. This significantly reduces the risk of a single compromised key leading to full protocol takeover. Regularly review and audit the signers of this multi-sig.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Miner Manipulability of `block.timestamp` for Minting  *(Severity: Medium · Status: Unresolved)*
 
-The `mint` function calculates `maxMint` based on `block.timestamp - lastMint`. While `block.timestamp` is generally reliable, miners have a limited ability to manipulate it (e.g., up to 900 seconds on Ethereum) to slightly increase the `timeElapsedSinceLastMint` and thus the `maxMint` amount within a block. Although the impact might be minor given the `mintPerSecondCap`, a malicious miner could potentially front-run or manipulate block timestamps to mint slightly more tokens than intended.
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function calculates `maxMint` based on `block.timestamp - lastMint`. While `block.timestamp` is generally reliable, miners have a limited ability to manipulate it (e.g., up to 900 seconds on Ethereum) to slightly increase the `timeElapsedSinceLastMint` and thus the `maxMint` amount within a block. Although the impact might be minor given the `mintPerSecondCap`, a malicious miner could potentially front-run or manipulate block timestamps to mint slightly more tokens than intended.
 
 **Recommendation:** While `block.timestamp` is a common and generally accepted practice for time-based calculations, for highly sensitive operations like token minting, consider if an alternative time source (e.g., an oracle for time) or a mechanism that averages `block.timestamp` over several blocks could further reduce this risk, if deemed necessary. For this specific use case, the risk is mitigated by the `mintPerSecondCap` and `lastMint` update.
 
 
+### `M-02` — Centralized Control of Minting Cap  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `updateMintCap` function, controlled by the `CAP_MANAGER_ROLE`, allows setting `mintPerSecondCap` to any `uint256` value without an upper bound. If the address holding `CAP_MANAGER_ROLE` is compromised, an attacker could set an extremely high or infinite minting cap, effectively removing all emission controls and leading to arbitrary token inflation. This poses a severe economic risk to the token's value.
+
+**Recommendation:** Implement a multi-signature wallet for the `CAP_MANAGER_ROLE` to distribute control. Consider adding a maximum allowable value for `mintPerSecondCap` or a time-locked delay for significant cap increases to provide a window for community review or emergency intervention.
+
+
+### `M-03` — High Power of DEFAULT_ADMIN_ROLE  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `protocolCouncil` address is granted the `DEFAULT_ADMIN_ROLE` in the constructor. This role has the power to grant and revoke any other role, including itself. This creates a single point of failure where compromise of the `protocolCouncil` address would grant an attacker complete control over all access control mechanisms, including minting, cap management, and Permit2 allowance toggling.
+
+**Recommendation:** Assign the `DEFAULT_ADMIN_ROLE` to a robust multi-signature wallet with a high number of required confirmations. This significantly reduces the risk of a single compromised key leading to full protocol takeover. Regularly review and audit the signers of this multi-sig.
+
+
 ### `L-01` — Missing Zero Address Check for `emissionManager` in Constructor  *(Severity: Low · Status: Unresolved)*
 
-The constructor explicitly checks if `migration`, `protocolCouncil`, or `emergencyCouncil` are `address(0)` and reverts with `InvalidAddress`. However, there is no such check for the `emissionManager` address. While `_grantRole` would likely revert if `emissionManager` is `address(0)`, an explicit check improves clarity and consistency.
+Not confirmed by static analysis (the model's own reading of the source). The constructor explicitly checks if `migration`, `protocolCouncil`, or `emergencyCouncil` are `address(0)` and reverts with `InvalidAddress`. However, there is no such check for the `emissionManager` address. While `_grantRole` would likely revert if `emissionManager` is `address(0)`, an explicit check improves clarity and consistency.
 
 **Recommendation:** Add an explicit `require(emissionManager != address(0), "InvalidAddress")` check for the `emissionManager` parameter in the constructor to ensure all critical role addresses are valid.
 
 
 ### `I-01` — Non-Upgradeable Contract  *(Severity: Informational · Status: Unresolved)*
 
-The CovalentXToken contract is deployed as a standard implementation contract and is not designed with an upgradeable proxy pattern. This means that once deployed, its logic cannot be modified. Any future bug fixes, feature enhancements, or changes to the token's economic model would necessitate deploying an entirely new contract and migrating existing token holders.
+Not confirmed by static analysis (the model's own reading of the source). The CovalentXToken contract is deployed as a standard implementation contract and is not designed with an upgradeable proxy pattern. This means that once deployed, its logic cannot be modified. Any future bug fixes, feature enhancements, or changes to the token's economic model would necessitate deploying an entirely new contract and migrating existing token holders.
 
 **Recommendation:** Acknowledge the implications of non-upgradeability. For future contracts, consider implementing an upgradeable proxy pattern (e.g., UUPS or Transparent) if flexibility for future changes is desired. Ensure thorough testing and auditing of the current non-upgradeable contract to minimize the need for future redeployments.
 
 
 ### `I-02` — Permit2 Default Max Approval  *(Severity: Informational · Status: Unresolved)*
 
-The contract grants `type(uint256).max` allowance to the hardcoded Permit2 address by default if `permit2Enabled` is true. While this is a common pattern for Permit2 integration to simplify user experience, it delegates significant trust to the Permit2 contract itself. If a vulnerability were to be discovered in Permit2, or if the `PERMIT2_REVOKER_ROLE` were compromised, it could lead to unauthorized token transfers.
+Not confirmed by static analysis (the model's own reading of the source). The contract grants `type(uint256).max` allowance to the hardcoded Permit2 address by default if `permit2Enabled` is true. While this is a common pattern for Permit2 integration to simplify user experience, it delegates significant trust to the Permit2 contract itself. If a vulnerability were to be discovered in Permit2, or if the `PERMIT2_REVOKER_ROLE` were compromised, it could lead to unauthorized token transfers.
 
 **Recommendation:** Ensure the `PERMIT2_REVOKER_ROLE` is secured with a multi-signature wallet. Regularly monitor the security landscape of the Permit2 contract and be prepared to disable the integration via `updatePermit2Allowance(false)` if any critical vulnerabilities are identified in Permit2.
 
@@ -122,11 +122,11 @@ The contract grants `type(uint256).max` allowance to the hardcoded Permit2 addre
 
 ### Is Covalent X Token a scam?
 
-Based on automated analysis, Covalent X Token scores 66/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Covalent X Token scores 47/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Covalent X Token safe to buy?
 
-Our scanner flagged a risk score of 66/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 47/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Covalent X Token been audited?
 

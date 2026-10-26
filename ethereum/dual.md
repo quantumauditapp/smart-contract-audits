@@ -2,14 +2,14 @@
 token: DUAL
 ticker: DUAL
 network: ethereum
-risk_score: 41
+risk_score: 35
 status: medium
 date: 2026-08-12
 ---
 
 # DUAL (DUAL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dual-eth)
 
@@ -26,8 +26,8 @@ The Dual token contract is a straightforward ERC20 implementation leveraging bat
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract exhibits strong technical security (7.2 Code Security) by exclusively utilizing OpenZeppelin's battle-tested ERC20 and ERC20Permit implementations, which are widely audited and… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4 Economic) involves a fixed total supply minted entirely to a single address at deployment, which centralizes initial token distribution. There are no explicit governance… |
-| **Upgrades** | 5/10 | Medium | The contract is not designed to be upgradeable (7.7 Upgrades), as it does not implement any proxy patterns. This eliminates upgrade-related risks such as proxy misconfigurations or logic errors… |
+| **Governance / Economics** | 2/10 | High | The economic model (7.4 Economic) involves a fixed total supply minted entirely to a single address at deployment, which centralizes initial token distribution. There are no explicit governance… |
+| **Upgrades** | 6/10 | Medium | The contract is not designed to be upgradeable (7.7 Upgrades), as it does not implement any proxy patterns. This eliminates upgrade-related risks such as proxy misconfigurations or logic errors… |
 
 ## Security Findings
 
@@ -35,21 +35,21 @@ _🟢 2 Low · ⚪ 1 Informational_
 
 ### `L-01` — Centralized Initial Token Distribution  *(Severity: Low · Status: Unresolved)*
 
-The entire `TOTAL_SUPPLY` of 10,000,000,000 DUAL tokens is minted to a single `mintTo` address during contract deployment. This design choice centralizes the initial control and distribution of all tokens, which could pose a risk if the `mintTo` address is compromised or acts maliciously, as it holds the entire supply.
+Not confirmed by static analysis (the model's own reading of the source). The entire `TOTAL_SUPPLY` of 10,000,000,000 DUAL tokens is minted to a single `mintTo` address during contract deployment. This design choice centralizes the initial control and distribution of all tokens, which could pose a risk if the `mintTo` address is compromised or acts maliciously, as it holds the entire supply.
 
 **Recommendation:** While this is a design decision, for projects aiming for decentralization, consider implementing a more distributed initial token allocation strategy, such as vesting schedules, multi-signature wallets for the initial recipient, or a public sale mechanism.
 
 
 ### `L-02` — Potential for Permit Function Front-Running  *(Severity: Low · Status: Unresolved)*
 
-The `permit` function, while correctly implemented per EIP-2612 using OpenZeppelin's `ERC20Permit`, is inherently susceptible to front-running. An attacker could observe a pending `permit` transaction in the mempool and submit a transaction with a higher gas price to either consume the user's nonce or approve a different spender/amount, potentially causing the original transaction to fail or leading to unintended approvals. This is a known characteristic of the EIP-2612 standard and not a flaw in the implementation itself.
+Not confirmed by static analysis (the model's own reading of the source). The `permit` function, while correctly implemented per EIP-2612 using OpenZeppelin's `ERC20Permit`, is inherently susceptible to front-running. An attacker could observe a pending `permit` transaction in the mempool and submit a transaction with a higher gas price to either consume the user's nonce or approve a different spender/amount, potentially causing the original transaction to fail or leading to unintended approvals. This is a known characteristic of the EIP-2612 standard and not a flaw in the implementation itself.
 
 **Recommendation:** Users should be educated on the risks of front-running when using `permit`. Relay services or off-chain mechanisms can help mitigate this by ensuring transactions are submitted directly to miners or through private transaction networks. Users should also be cautious about the `deadline` parameter and ensure it is set appropriately.
 
 
 ### `I-01` — Adherence to OpenZeppelin Standards  *(Severity: Informational · Status: Resolved)*
 
-The `Dual` contract correctly implements the ERC20 and ERC20Permit standards by inheriting from battle-tested OpenZeppelin contracts. This includes robust implementations for token transfers, approvals, and EIP-2612 permit functionality, significantly reducing the likelihood of common vulnerabilities related to token functionality and signature handling.
+Not confirmed by static analysis (the model's own reading of the source). The `Dual` contract correctly implements the ERC20 and ERC20Permit standards by inheriting from battle-tested OpenZeppelin contracts. This includes robust implementations for token transfers, approvals, and EIP-2612 permit functionality, significantly reducing the likelihood of common vulnerabilities related to token functionality and signature handling.
 
 **Recommendation:** Continue to leverage well-audited and maintained libraries like OpenZeppelin for core functionalities. Regularly monitor OpenZeppelin's security advisories and updates.
 
@@ -75,7 +75,7 @@ The `Dual` contract correctly implements the ERC20 and ERC20Permit standards by 
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -85,7 +85,7 @@ The `Dual` contract correctly implements the ERC20 and ERC20Permit standards by 
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

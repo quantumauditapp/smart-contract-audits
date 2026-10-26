@@ -42,28 +42,28 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralization of Mint/Burn Authority  *(Severity: Medium · Status: Unresolved)*
 
-The `BRIDGE` address has exclusive control over the `mint` and `burn` functions, allowing it to arbitrarily increase or decrease the token supply. While this is an intended design for a bridged token (7.4 Economic, 7.5 Governance), it represents a significant centralization point. A compromise of the `BRIDGE` contract or its private keys would allow an attacker to manipulate the token supply, potentially devaluing the token or causing economic instability.
+Not confirmed by static analysis (the model's own reading of the source). The `BRIDGE` address has exclusive control over the `mint` and `burn` functions, allowing it to arbitrarily increase or decrease the token supply. While this is an intended design for a bridged token (7.4 Economic, 7.5 Governance), it represents a significant centralization point. A compromise of the `BRIDGE` contract or its private keys would allow an attacker to manipulate the token supply, potentially devaluing the token or causing economic instability.
 
 **Recommendation:** Ensure the `BRIDGE` contract itself is highly secure, audited, and follows best practices for access control (e.g., multi-signature wallets, time-locks, robust governance). Implement comprehensive monitoring for `Mint` and `Burn` events to detect anomalous activity promptly. While this contract's design is sound, the security of the overall system heavily relies on the `BRIDGE`'s integrity.
 
 
 ### `L-01` — Immutability of Bridge Address  *(Severity: Low · Status: Unresolved)*
 
-The `BRIDGE` address is set as an immutable variable in the constructor and cannot be changed after deployment (7.1 Architecture, 7.8 Operations). While this provides certainty and prevents unauthorized changes, it means that if the underlying bridge contract needs to be upgraded, replaced, or if its address changes for any reason, this `OptimismMintableERC20` contract would need to be redeployed, or a new token contract would need to be deployed to point to the new bridge.
+Not confirmed by static analysis (the model's own reading of the source). The `BRIDGE` address is set as an immutable variable in the constructor and cannot be changed after deployment (7.1 Architecture, 7.8 Operations). While this provides certainty and prevents unauthorized changes, it means that if the underlying bridge contract needs to be upgraded, replaced, or if its address changes for any reason, this `OptimismMintableERC20` contract would need to be redeployed, or a new token contract would need to be deployed to point to the new bridge.
 
 **Recommendation:** This is a design choice. If operational flexibility for bridge upgrades is desired without redeploying the token, consider a pattern where the `BRIDGE` address can be updated by a trusted entity (e.g., a governance contract or multi-sig) through a controlled mechanism. However, this introduces additional complexity and potential attack surface, so the current immutable design is acceptable if redeployment is a viable strategy for bridge changes.
 
 
 ### `I-01` — Lack of Emergency Pause Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The contract lacks a general `Pausable` mechanism (e.g., from OpenZeppelin) that could halt `mint` and `burn` operations in an emergency (7.8 Operations). While the `onlyBridge` modifier restricts these functions, a `Pausable` contract could provide an additional layer of defense, allowing a trusted entity to temporarily stop critical operations in case of a severe vulnerability in the bridge, the token, or an external dependency.
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks a general `Pausable` mechanism (e.g., from OpenZeppelin) that could halt `mint` and `burn` operations in an emergency (7.8 Operations). While the `onlyBridge` modifier restricts these functions, a `Pausable` contract could provide an additional layer of defense, allowing a trusted entity to temporarily stop critical operations in case of a severe vulnerability in the bridge, the token, or an external dependency.
 
 **Recommendation:** Consider integrating an OpenZeppelin `Pausable` contract, controlled by a robust governance mechanism (e.g., a multi-sig wallet or DAO). This would provide an emergency stop-gap measure, offering more control during critical incidents. Evaluate the trade-offs between added complexity and enhanced emergency response capabilities.
 
 
 ### `I-02` — Informational Semver Usage  *(Severity: Informational · Status: Unresolved)*
 
-The contract inherits from `Semver` to provide a version string (e.g., '1.0.0') (7.1 Architecture). This is useful for identification and tracking but does not inherently enforce any upgradeability, compatibility, or security rules. It serves purely as metadata.
+Not confirmed by static analysis (the model's own reading of the source). The contract inherits from `Semver` to provide a version string (e.g., '1.0.0') (7.1 Architecture). This is useful for identification and tracking but does not inherently enforce any upgradeability, compatibility, or security rules. It serves purely as metadata.
 
 **Recommendation:** Continue using Semver for clear version tracking. Ensure that any external systems or documentation correctly reference and utilize this version information for clarity and maintenance purposes.
 

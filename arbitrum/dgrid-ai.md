@@ -2,14 +2,14 @@
 token: DGrid AI
 ticker: DGAI
 network: arbitrum
-risk_score: 84
+risk_score: 74
 status: high
 date: 2026-09-02
 ---
 
 # DGrid AI (DGAI) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 84/100 — 🟠 High Risk**
+> **Risk Score: 74/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dgrid-ai-arb)
 
@@ -38,25 +38,25 @@ The DGAIPeer contract implements an ERC20 token with minting and burning capabil
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Centralized Minter Role Poses Inflation Risk  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Minter Role Poses Inflation Risk  *(Severity: Medium · Status: Unresolved)*
 
-The `minter` role has the exclusive authority to mint new tokens up to the `maxSupply`. While the `setMinter` function is restricted to the contract owner (a multisig, per prefill), the `minter` address itself represents a single point of failure for token supply control. A compromise of the `minter`'s private key could lead to unauthorized and rapid inflation of the token supply, devaluing existing tokens.
+Not confirmed by static analysis (the model's own reading of the source). The `minter` role has the exclusive authority to mint new tokens up to the `maxSupply`. While the `setMinter` function is restricted to the contract owner (a multisig, per prefill), the `minter` address itself represents a single point of failure for token supply control. A compromise of the `minter`'s private key could lead to unauthorized and rapid inflation of the token supply, devaluing existing tokens.
 
 **Recommendation:** Implement robust operational security for the `minter` address. This could involve using a multi-signature wallet for the `minter` role itself, or a hardware security module. Additionally, consider adding a timelock mechanism to the `setMinter` function, allowing for a delay before a new minter becomes active, providing a window to react to malicious changes.
 
 
 ### `L-01` — Hardcoded Initial Authority Address  *(Severity: Low · Status: Unresolved)*
 
-The `INITIAL_AUTHORITY` address (0xE3bdE2e4D610be322cf39C8f0246d76910C5ED92) is hardcoded in the contract's constructor. While this is a standard practice for `Ownable` contracts, it means the initial ownership is fixed at deployment. If the intention was for a different entity (e.g., a specific multisig) to immediately take ownership, a transfer of ownership would be required post-deployment. The prefill data indicates the current owner is a different multisig address (0x27b7b7d28000b14cd6a55bd9131bab4a2a50b5b0), suggesting this transfer likely occurred.
+Not confirmed by static analysis (the model's own reading of the source). The `INITIAL_AUTHORITY` address (0xE3bdE2e4D610be322cf39C8f0246d76910C5ED92) is hardcoded in the contract's constructor. While this is a standard practice for `Ownable` contracts, it means the initial ownership is fixed at deployment. If the intention was for a different entity (e.g., a specific multisig) to immediately take ownership, a transfer of ownership would be required post-deployment. The prefill data indicates the current owner is a different multisig address (0x27b7b7d28000b14cd6a55bd9131bab4a2a50b5b0), suggesting this transfer likely occurred.
 
 **Recommendation:** Ensure that the hardcoded `INITIAL_AUTHORITY` is the intended initial owner. If the final desired owner is different, verify that the ownership transfer to the correct entity (e.g., a secure multisig) was successfully executed immediately after deployment. Document this post-deployment step clearly in operational procedures.
 
 
 ### `I-01` — High Maximum Token Supply  *(Severity: Informational · Status: Unresolved)*
 
-The `maxSupply` is set to 1,000,000,000 ether (1e27 wei). While this value acts as a hard cap on the total token supply, it is a very large number. This allows for significant potential inflation if the `minter` role is actively used to mint tokens up to this limit. The economic implications of such a large potential supply should be clearly understood and communicated to token holders.
+Not confirmed by static analysis (the model's own reading of the source). The `maxSupply` is set to 1,000,000,000 ether (1e27 wei). While this value acts as a hard cap on the total token supply, it is a very large number. This allows for significant potential inflation if the `minter` role is actively used to mint tokens up to this limit. The economic implications of such a large potential supply should be clearly understood and communicated to token holders.
 
 **Recommendation:** Ensure that the economic model and implications of a potentially very large token supply are well-documented and transparently communicated to the community and token holders. Consider if this `maxSupply` aligns with the long-term vision and utility of the token, and if a smaller, more constrained supply might be more appropriate for certain economic models.
 

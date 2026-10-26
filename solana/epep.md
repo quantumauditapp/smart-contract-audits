@@ -2,14 +2,14 @@
 token: EPEP
 ticker: $EPEP
 network: solana
-risk_score: 29
+risk_score: 10
 status: low
 date: 2026-09-18
 ---
 
 # EPEP ($EPEP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 29/100 — 🟢 Low Risk**
+> **Risk Score: 10/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/epep-sol)
 
@@ -26,8 +26,8 @@ This SPL Token-2022 mint has its critical mint and freeze authorities revoked, p
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint with its mint and freeze authorities revoked (None), ensuring no new tokens can be minted and no accounts can be frozen. It implements a 3.00% transfer fee, which… |
-| **Governance / Economics** | 4/10 | Medium | The token's DEX pair is extremely new, having been created 0 days ago, which means there is no track record for assessing market behavior or team actions. Liquidity stands at $107,116, which is not… |
-| **Upgrades** | 6/10 | Medium | The mint and freeze authorities are permanently revoked, ensuring no further issuance or freezing actions can occur. The token uses the spl-token-2022 program with a transfer fee that is upgradable… |
+| **Governance / Economics** | 7/10 | Low | The token's DEX pair is extremely new, having been created 0 days ago, which means there is no track record for assessing market behavior or team actions. Liquidity stands at $107,116, which is not… |
+| **Upgrades** | 8/10 | Low | The mint and freeze authorities are permanently revoked, ensuring no further issuance or freezing actions can occur. The token uses the spl-token-2022 program with a transfer fee that is upgradable… |
 
 ## Token-2022 Extensions
 
@@ -67,13 +67,13 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6303 buys / 4436 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

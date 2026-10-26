@@ -2,14 +2,14 @@
 token: ELON
 ticker: ELON
 network: base
-risk_score: 46
+risk_score: 38
 status: medium
 date: 2026-09-13
 ---
 
 # ELON (ELON) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 46/100 — 🟡 Medium Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/elon-base)
 
@@ -42,28 +42,28 @@ _🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Immutable Controller Address for Balance Limit Feature  *(Severity: Medium · Status: Unresolved)*
 
-The `controller` address, responsible for disabling the `isBalanceLimitActive` feature via `disableBalanceLimit()`, is set only during the `initialize` function. If the `balanceLimitEnd_` and `maxBalanceLimit_` parameters are both zero during initialization, the `controller` address remains `address(0)`. Even if the balance limit is active, the `controller` cannot be changed after initialization. This creates an operational inflexibility and a single point of failure: if the initial `controller` address is compromised or becomes inactive, the balance limit cannot be disabled without a contract upgrade.
+Not confirmed by static analysis (the model's own reading of the source). The `controller` address, responsible for disabling the `isBalanceLimitActive` feature via `disableBalanceLimit()`, is set only during the `initialize` function. If the `balanceLimitEnd_` and `maxBalanceLimit_` parameters are both zero during initialization, the `controller` address remains `address(0)`. Even if the balance limit is active, the `controller` cannot be changed after initialization. This creates an operational inflexibility and a single point of failure: if the initial `controller` address is compromised or becomes inactive, the balance limit cannot be disabled without a contract upgrade.
 
 **Recommendation:** Implement an `onlyOwner` function to allow the `controller` address to be updated after initialization. This would provide greater operational flexibility and resilience against a compromised or inactive controller.
 
 
 ### `M-02` — Upgradeability Risk with Dynamic Public Array  *(Severity: Medium · Status: Unresolved)*
 
-The `vestingSchedules` array is declared as `public` and is a dynamic array. In upgradeable contracts, adding new state variables *after* a dynamic array in a future implementation can lead to storage slot collisions if the array grows significantly. While `vestingSchedules` is currently the last non-mapping state variable, this pattern introduces a risk if not carefully managed in future upgrades.
+Not confirmed by static analysis (the model's own reading of the source). The `vestingSchedules` array is declared as `public` and is a dynamic array. In upgradeable contracts, adding new state variables *after* a dynamic array in a future implementation can lead to storage slot collisions if the array grows significantly. While `vestingSchedules` is currently the last non-mapping state variable, this pattern introduces a risk if not carefully managed in future upgrades.
 
 **Recommendation:** When planning future upgrades, ensure that new state variables are not introduced in a way that would cause storage slot collisions with the `vestingSchedules` array. Consider using explicit storage gap patterns or placing dynamic arrays at the end of the storage layout to mitigate this risk.
 
 
 ### `L-01` — High Initial Pre-Mint Allocation Parameters  *(Severity: Low · Status: Unresolved)*
 
-The constants `MAX_PRE_MINT_PER_ADDRESS_WAD` and `MAX_TOTAL_PRE_MINT_WAD` are both set to `0.8 ether`, effectively allowing up to 80% of the `initialSupply` to be pre-minted and allocated through vesting schedules. While this is a design choice, such a high pre-allocation percentage can lead to significant token concentration in early beneficiaries, potentially impacting initial liquidity, decentralization, and market dynamics.
+Not confirmed by static analysis (the model's own reading of the source). The constants `MAX_PRE_MINT_PER_ADDRESS_WAD` and `MAX_TOTAL_PRE_MINT_WAD` are both set to `0.8 ether`, effectively allowing up to 80% of the `initialSupply` to be pre-minted and allocated through vesting schedules. While this is a design choice, such a high pre-allocation percentage can lead to significant token concentration in early beneficiaries, potentially impacting initial liquidity, decentralization, and market dynamics.
 
 **Recommendation:** Review the tokenomics and distribution strategy to ensure that such a high pre-allocation aligns with the project's goals for decentralization and market health. Consider if a lower initial pre-mint percentage or a more diversified distribution strategy would be beneficial.
 
 
 ### `I-01` — Incomplete Vesting Logic Provided for Audit  *(Severity: Informational · Status: Unresolved)*
 
-The core logic for `_available`, `_releaseFor`, and `_releaseAllFor` functions, which are central to the vesting mechanism, is truncated in the provided source code. A comprehensive security assessment of the vesting functionality, including correct calculation of vested amounts, cliff/duration enforcement, and prevention of double-spending, cannot be performed without access to these critical internal implementations.
+Not confirmed by static analysis (the model's own reading of the source). The core logic for `_available`, `_releaseFor`, and `_releaseAllFor` functions, which are central to the vesting mechanism, is truncated in the provided source code. A comprehensive security assessment of the vesting functionality, including correct calculation of vested amounts, cliff/duration enforcement, and prevention of double-spending, cannot be performed without access to these critical internal implementations.
 
 **Recommendation:** Provide the complete source code for all internal vesting-related functions (`_available`, `_releaseFor`, `_releaseAllFor`) to enable a full and accurate security assessment of the vesting mechanism.
 

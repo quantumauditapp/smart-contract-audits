@@ -38,14 +38,7 @@ The MANAToken contract is an ERC-20 token with standard functionalities includin
 
 ## Security Findings
 
-_🟠 2 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 6 Informational_
-
-### `H-01` — Centralized Control by Owner  *(Severity: High · Status: Unresolved)*
-
-The `owner` address has extensive control over the token's core functionalities. This includes the ability to `mint` an unlimited number of new tokens, which can dilute the value of existing tokens, and the ability to `pause` all token transfers, effectively freezing the token (7.3 Access Control, 7.4 Economic). This presents a single point of failure and a high centralization risk.
-
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the `owner` address to distribute control and require multiple approvals for critical operations like minting or pausing. This significantly reduces the risk of a single point of failure or malicious action.
-
+_🟠 1 High · 🟡 3 Medium · 🟢 1 Low · ⚪ 6 Informational_
 
 ### `QA-POWERS` — What the token's controller can do  *(Severity: High · Status: Acknowledged)*
 
@@ -56,9 +49,16 @@ The contract lets its controller — a ProxyAdmin contract — mint new supply; 
 
 ### `M-01` — Missing Event for Ownership Transfer  *(Severity: Medium · Status: Unresolved)*
 
-The `transferOwnership` function in the `Ownable` contract allows the owner to transfer administrative control to a new address, but it does not emit an event to signal this critical change (7.5 Governance). This makes it difficult for off-chain systems, users, or monitoring tools to track ownership changes reliably.
+Not confirmed by static analysis (the model's own reading of the source). The `transferOwnership` function in the `Ownable` contract allows the owner to transfer administrative control to a new address, but it does not emit an event to signal this critical change (7.5 Governance). This makes it difficult for off-chain systems, users, or monitoring tools to track ownership changes reliably.
 
 **Recommendation:** Add an `event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);` and emit it within the `transferOwnership` function after the `owner` is updated.
+
+
+### `M-02` — Centralized Control by Owner  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `owner` address has extensive control over the token's core functionalities. This includes the ability to `mint` an unlimited number of new tokens, which can dilute the value of existing tokens, and the ability to `pause` all token transfers, effectively freezing the token (7.3 Access Control, 7.4 Economic). This presents a single point of failure and a high centralization risk.
+
+**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the `owner` address to distribute control and require multiple approvals for critical operations like minting or pausing. This significantly reduces the risk of a single point of failure or malicious action.
 
 
 ### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
@@ -70,21 +70,21 @@ The `transferOwnership` function in the `Ownable` contract allows the owner to t
 
 ### `L-01` — SafeMath.div Does Not Explicitly Check for Division by Zero  *(Severity: Low · Status: Unresolved)*
 
-The `div` function in the `SafeMath` library, as implemented, does not explicitly check if the divisor `b` is zero before performing the division (7.2 Code Security). While Solidity's default behavior would revert on division by zero, an explicit `require(b > 0)` check would make the intent clearer and provide a more informative error message. In this specific contract, `div` is not used in a critical path with user-controlled input.
+Not confirmed by static analysis (the model's own reading of the source). The `div` function in the `SafeMath` library, as implemented, does not explicitly check if the divisor `b` is zero before performing the division (7.2 Code Security). While Solidity's default behavior would revert on division by zero, an explicit `require(b > 0)` check would make the intent clearer and provide a more informative error message. In this specific contract, `div` is not used in a critical path with user-controlled input.
 
 **Recommendation:** For robustness, consider adding `require(b > 0, "SafeMath: division by zero");` at the beginning of the `div` function in `SafeMath`.
 
 
 ### `I-01` — Outdated Solidity Compiler Version  *(Severity: Informational · Status: Unresolved)*
 
-The contract is compiled with Solidity version `^0.4.11`. This version is significantly outdated and lacks many security features, optimizations, and bug fixes present in newer compiler versions (e.g., 0.6.x, 0.8.x) (7.2 Code Security). While the code itself might be robust for its era, newer versions offer improved safety and better error handling.
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version `^0.4.11`. This version is significantly outdated and lacks many security features, optimizations, and bug fixes present in newer compiler versions (e.g., 0.6.x, 0.8.x) (7.2 Code Security). While the code itself might be robust for its era, newer versions offer improved safety and better error handling.
 
 **Recommendation:** For any new deployments or significant upgrades, consider migrating to a recent, stable Solidity compiler version (e.g., 0.8.x) to leverage modern security enhancements and best practices.
 
 
 ### `I-02` — ERC-20 Approve Race Condition Mitigation Trade-off  *(Severity: Informational · Status: Unresolved)*
 
-The `approve` function includes a check `require((_value == 0) \|\| (allowed[msg.sender][_spender] == 0));` to mitigate the known ERC-20 `approve` race condition (7.2 Code Security). While this prevents a specific front-running scenario, it also restricts legitimate use cases where a user might want to increase an existing allowance without first setting it to zero, requiring two transactions instead of one.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function includes a check `require((_value == 0) \|\| (allowed[msg.sender][_spender] == 0));` to mitigate the known ERC-20 `approve` race condition (7.2 Code Security). While this prevents a specific front-running scenario, it also restricts legitimate use cases where a user might want to increase an existing allowance without first setting it to zero, requiring two transactions instead of one.
 
 **Recommendation:** Acknowledge this design choice. For future token designs, consider using `increaseAllowance` and `decreaseAllowance` functions (as introduced in OpenZeppelin's ERC-20 implementations) which provide a safer way to modify allowances without the need for a zero-value transaction.
 

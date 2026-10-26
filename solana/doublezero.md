@@ -2,14 +2,14 @@
 token: DoubleZero
 ticker: 2Z
 network: solana
-risk_score: 45
-status: medium
+risk_score: 33
+status: low
 date: 2026-09-26
 ---
 
 # DoubleZero (2Z) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/doublezero-sol)
 
@@ -25,9 +25,9 @@ The DoubleZero (2Z) SPL token mint has a critical vulnerability due to an unrevo
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The DoubleZero (2Z) token is an SPL token operating under the `spl-token` program. It has a current supply of 999,807,016.105025669 tokens with 8 decimals. A significant risk is present as the mint… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits healthy liquidity with $1,308,451 USD available on DEXs, and a 24-hour trading volume of $1,848,334 USD. The Volume/Liquidity Ratio is 1.41, which is considered normal and does not… |
-| **Upgrades** | 4/10 | Medium | The token's mint authority is active, allowing for potential future supply changes. The freeze authority has been revoked, which is a positive security measure against arbitrary account freezing.… |
+| **Technical** | 8/10 | Low | The DoubleZero (2Z) token is an SPL token operating under the `spl-token` program. It has a current supply of 999,807,016.105025669 tokens with 8 decimals. A significant risk is present as the mint… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits healthy liquidity with $1,308,451 USD available on DEXs, and a 24-hour trading volume of $1,848,334 USD. The Volume/Liquidity Ratio is 1.41, which is considered normal and does not… |
+| **Upgrades** | 6/10 | Medium | The token's mint authority is active, allowing for potential future supply changes. The freeze authority has been revoked, which is a positive security measure against arbitrary account freezing.… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

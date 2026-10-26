@@ -2,14 +2,14 @@
 token: EMBER
 ticker: EMBER
 network: solana
-risk_score: 48
+risk_score: 46
 status: medium
 date: 2026-06-15
 ---
 
 # EMBER (EMBER) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 48/100 — 🟡 Medium Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ember-sol)
 
@@ -60,7 +60,7 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
@@ -80,7 +80,7 @@ Based on the available data, EMBER exhibits mixed signals. The renounced ownersh
 
 ### Is EMBER safe to buy?
 
-EMBER's safety profile is impacted by several key risk factors. The contract's unverified status prevents public scrutiny of its code, and the liquidity not being locked introduces vulnerability to withdrawal, which could destabilize trading. Additionally, a substantial portion of the supply is concentrated among the top 10 holders, posing centralization risks. These elements contribute to its Medium Risk score of 45/100, suggesting investors should proceed with significant caution and understand the inherent uncertainties.
+EMBER's safety profile is impacted by several key risk factors. The contract's unverified status prevents public scrutiny of its code, and the liquidity not being locked introduces vulnerability to withdrawal, which could destabilize trading. Additionally, a substantial portion of the supply is concentrated among the top 10 holders, posing centralization risks. These elements contribute to its Medium Risk score of 46/100, suggesting investors should proceed with significant caution and understand the inherent uncertainties.
 
 ### Has EMBER been audited?
 

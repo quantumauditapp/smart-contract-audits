@@ -2,14 +2,14 @@
 token: CRYSTAL STONES
 ticker: CRYSTAL STONES
 network: bsc
-risk_score: 49
-status: medium
+risk_score: 0
+status: low
 date: 2026-08-05
 ---
 
 # CRYSTAL STONES (CRYSTAL STONES) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 49/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/crystal-stones-bsc)
 
@@ -25,9 +25,9 @@ The provided source code for the FatToken contract is incomplete, specifically m
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The technical architecture (7.1 Architecture) of FatToken is complex, incorporating various anti-bot and fee mechanisms. A critical issue is the incomplete source code, specifically the missing… |
-| **Governance / Economics** | 5/10 | Medium | The contract's economic model (7.4 Economic) features highly dynamic and potentially high transaction fees (up to 25%), which can significantly impact user experience and market stability. The… |
-| **Upgrades** | 8/10 | Low | The FatToken contract is not designed with upgradeability features (7.7 Upgrades), meaning its logic cannot be modified after deployment. This eliminates upgrade-related risks but also removes the… |
+| **Technical** | 10/10 | Low | The technical architecture (7.1 Architecture) of FatToken is complex, incorporating various anti-bot and fee mechanisms. A critical issue is the incomplete source code, specifically the missing… |
+| **Governance / Economics** | 9/10 | Low | The contract's economic model (7.4 Economic) features highly dynamic and potentially high transaction fees (up to 25%), which can significantly impact user experience and market stability. The… |
+| **Upgrades** | 10/10 | Low | The FatToken contract is not designed with upgradeability features (7.7 Upgrades), meaning its logic cannot be modified after deployment. This eliminates upgrade-related risks but also removes the… |
 
 ## LP Distribution
 
@@ -40,46 +40,46 @@ The provided source code for the FatToken contract is incomplete, specifically m
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 3 High · 🟡 1 Medium · ⚪ 1 Informational_
-
-### `C-01` — Incomplete Source Code Provided  *(Severity: Critical · Status: Unresolved)*
-
-The provided source code is truncated, specifically missing the entire implementation of the `_transfer` function. This function is fundamental to any ERC-20 token, handling all token movements, applying fees, and enforcing anti-bot/anti-whale limits. Without this critical component, a comprehensive security audit of the token's core logic, economic model, and anti-manipulation features is impossible.
-
-**Recommendation:** Provide the complete and verified source code for the FatToken contract, including all internal helper functions and the full `_transfer` implementation, to enable a thorough security assessment.
-
-
-### `H-01` — High and Complex Transaction Fees  *(Severity: High · Status: Unresolved)*
-
-The contract allows for transaction fees up to 25% (checked by `_buyFundFee + ... < 2500`). While explicitly capped, a 25% fee is exceptionally high and can deter legitimate trading, leading to poor liquidity and a negative user experience. The fee structure is also complex, with separate fund, LP, reward, and burn fees for both buy and sell transactions, increasing the likelihood of miscalculation or unexpected behavior.
-
-**Recommendation:** Re-evaluate and significantly reduce the maximum allowable transaction fees to a more reasonable and sustainable level (e.g., below 10%). Simplify the fee structure by consolidating fee types where possible to reduce complexity and potential for errors.
-
-
-### `H-02` — Centralized Control and Potential for Abuse  *(Severity: High · Status: Unresolved)*
-
-The `Ownable` pattern grants the contract owner extensive control over critical functionalities. The owner can enable/disable trading (`enableOffTrade`), adjust taxes (`enableChangeTax`), manage whitelists (`_feeWhiteList`, `_rewardList`, `isMaxEatExempt`), and control anti-bot mechanisms. This high degree of centralization creates a single point of failure, making the protocol vulnerable to malicious actions by a compromised or rogue owner, including potential rug pulls or market manipulation.
-
-**Recommendation:** Consider implementing a multi-signature wallet for critical administrative functions to distribute control and reduce the risk associated with a single point of failure. Explore mechanisms to gradually decentralize control over time, such as time-locks for sensitive operations or community governance for parameter changes.
-
-
-### `H-03` — Anti-Bot/Anti-Whale Mechanisms Complexity and Risk  *(Severity: High · Status: Unresolved)*
-
-The contract incorporates a multitude of anti-bot and anti-whale mechanisms, including `maxBuyAmount`, `maxSellAmount`, `maxWalletAmount`, `_feeWhiteList`, `isMaxEatExempt`, `user2blocks`, `batchBots`, `enableKillBatchBots`, and `killBatchBlockNumber`. Such complex systems are notoriously difficult to implement without introducing unintended side effects, false positives, or bypasses. They can lead to legitimate users being blocked, create a honeypot scenario where only certain addresses can sell, or be exploited by sophisticated attackers.
-
-**Recommendation:** Thoroughly review and simplify the anti-bot/anti-whale logic. Conduct extensive testing, including edge cases and adversarial simulations, to ensure fairness and prevent unintended consequences. Consider whether the benefits of these complex mechanisms outweigh the inherent risks and potential for abuse.
-
+_🟡 5 Medium · ⚪ 1 Informational_
 
 ### `M-01` — Reward Path Configuration Risk  *(Severity: Medium · Status: Unresolved)*
 
-The `rewardPath` array, crucial for multi-hop swaps in reward distribution and LP additions, is constructed with complex conditional logic in the constructor. The path depends on `currency`, `ETH`, and `_swapRouter.WETH()`. Incorrect configuration or unexpected values for these addresses could lead to an invalid swap path, causing reward distribution or liquidity provision functions to fail, effectively breaking a core part of the tokenomics.
+Not confirmed by static analysis (the model's own reading of the source). The `rewardPath` array, crucial for multi-hop swaps in reward distribution and LP additions, is constructed with complex conditional logic in the constructor. The path depends on `currency`, `ETH`, and `_swapRouter.WETH()`. Incorrect configuration or unexpected values for these addresses could lead to an invalid swap path, causing reward distribution or liquidity provision functions to fail, effectively breaking a core part of the tokenomics.
 
 **Recommendation:** Simplify the `rewardPath` construction logic if possible. Implement robust validation for `currency`, `ETH`, and `_swapRouter.WETH()` addresses to ensure they are valid and correctly configured. Consider adding owner-only functions to update the `rewardPath` in case of misconfiguration, along with a time-lock to prevent immediate malicious changes.
 
 
+### `M-02` — Incomplete Source Code Provided  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The provided source code is truncated, specifically missing the entire implementation of the `_transfer` function. This function is fundamental to any ERC-20 token, handling all token movements, applying fees, and enforcing anti-bot/anti-whale limits. Without this critical component, a comprehensive security audit of the token's core logic, economic model, and anti-manipulation features is impossible.
+
+**Recommendation:** Provide the complete and verified source code for the FatToken contract, including all internal helper functions and the full `_transfer` implementation, to enable a thorough security assessment.
+
+
+### `M-03` — High and Complex Transaction Fees  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract allows for transaction fees up to 25% (checked by `_buyFundFee + ... < 2500`). While explicitly capped, a 25% fee is exceptionally high and can deter legitimate trading, leading to poor liquidity and a negative user experience. The fee structure is also complex, with separate fund, LP, reward, and burn fees for both buy and sell transactions, increasing the likelihood of miscalculation or unexpected behavior.
+
+**Recommendation:** Re-evaluate and significantly reduce the maximum allowable transaction fees to a more reasonable and sustainable level (e.g., below 10%). Simplify the fee structure by consolidating fee types where possible to reduce complexity and potential for errors.
+
+
+### `M-04` — Centralized Control and Potential for Abuse  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `Ownable` pattern grants the contract owner extensive control over critical functionalities. The owner can enable/disable trading (`enableOffTrade`), adjust taxes (`enableChangeTax`), manage whitelists (`_feeWhiteList`, `_rewardList`, `isMaxEatExempt`), and control anti-bot mechanisms. This high degree of centralization creates a single point of failure, making the protocol vulnerable to malicious actions by a compromised or rogue owner, including potential rug pulls or market manipulation.
+
+**Recommendation:** Consider implementing a multi-signature wallet for critical administrative functions to distribute control and reduce the risk associated with a single point of failure. Explore mechanisms to gradually decentralize control over time, such as time-locks for sensitive operations or community governance for parameter changes.
+
+
+### `M-05` — Anti-Bot/Anti-Whale Mechanisms Complexity and Risk  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract incorporates a multitude of anti-bot and anti-whale mechanisms, including `maxBuyAmount`, `maxSellAmount`, `maxWalletAmount`, `_feeWhiteList`, `isMaxEatExempt`, `user2blocks`, `batchBots`, `enableKillBatchBots`, and `killBatchBlockNumber`. Such complex systems are notoriously difficult to implement without introducing unintended side effects, false positives, or bypasses. They can lead to legitimate users being blocked, create a honeypot scenario where only certain addresses can sell, or be exploited by sophisticated attackers.
+
+**Recommendation:** Thoroughly review and simplify the anti-bot/anti-whale logic. Conduct extensive testing, including edge cases and adversarial simulations, to ensure fairness and prevent unintended consequences. Consider whether the benefits of these complex mechanisms outweigh the inherent risks and potential for abuse.
+
+
 ### `I-01` — `TokenDistributor` Approval Pattern  *(Severity: Informational · Status: Unresolved)*
 
-The `TokenDistributor` contract's constructor immediately approves `msg.sender` for `uint256(~uint256(0))` (maximum allowance) of the specified token. While in this specific context, `FatToken` deploys `TokenDistributor` and thus `FatToken` itself receives the approval (likely for internal operations), this pattern can be risky if `TokenDistributor` is deployed by an untrusted address or with a malicious token, granting excessive control to the deployer.
+Not confirmed by static analysis (the model's own reading of the source). The `TokenDistributor` contract's constructor immediately approves `msg.sender` for `uint256(~uint256(0))` (maximum allowance) of the specified token. While in this specific context, `FatToken` deploys `TokenDistributor` and thus `FatToken` itself receives the approval (likely for internal operations), this pattern can be risky if `TokenDistributor` is deployed by an untrusted address or with a malicious token, granting excessive control to the deployer.
 
 **Recommendation:** Ensure that any deployment of `TokenDistributor` is done by a trusted entity and with a legitimate token. For future designs, consider if such a broad, immediate approval is strictly necessary or if a more granular, on-demand approval mechanism could be used to reduce potential attack surface.
 

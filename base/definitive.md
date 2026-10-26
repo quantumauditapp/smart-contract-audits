@@ -2,14 +2,14 @@
 token: Definitive
 ticker: EDGE
 network: base
-risk_score: 60
+risk_score: 55
 status: medium
 date: 2026-09-25
 ---
 
 # Definitive (EDGE) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 60/100 — 🟡 Medium Risk**
+> **Risk Score: 55/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/definitive-base)
 
@@ -25,8 +25,8 @@ The DefinitiveToken contract is an upgradeable ERC-20 token utilizing OpenZeppel
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The DefinitiveToken contract demonstrates strong technical foundations by inheriting from OpenZeppelin's `ERC20Upgradeable`, `OwnableUpgradeable`, `ERC20PermitUpgradeable`, and `UUPSUpgradeable`… |
-| **Governance / Economics** | 3/10 | High | The economic model of DefinitiveToken presents a high centralization risk due to the `mint` function, which allows the owner to create an arbitrary amount of new tokens at any time (7.4 Economic).… |
+| **Technical** | 7/10 | Low | The DefinitiveToken contract demonstrates strong technical foundations by inheriting from OpenZeppelin's `ERC20Upgradeable`, `OwnableUpgradeable`, `ERC20PermitUpgradeable`, and `UUPSUpgradeable`… |
+| **Governance / Economics** | 4/10 | Medium | The economic model of DefinitiveToken presents a high centralization risk due to the `mint` function, which allows the owner to create an arbitrary amount of new tokens at any time (7.4 Economic).… |
 | **Upgrades** | 1/10 | High | The contract implements the UUPS upgradeability pattern using OpenZeppelin's `UUPSUpgradeable` (7.7 Upgrades). The `_authorizeUpgrade` function is correctly overridden and restricted to the… |
 
 ## Proxy Upgrade Controls
@@ -46,25 +46,25 @@ The DefinitiveToken contract is an upgradeable ERC-20 token utilizing OpenZeppel
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · ⚪ 1 Informational_
-
-### `H-01` — Centralized Token Minting  *(Severity: High · Status: Unresolved)*
-
-The `mint(address to, uint256 amount)` function is callable by the contract owner (`DefinitiveConstants.MULTISIG_OWNER`) and allows for the creation of an arbitrary amount of new tokens at any time. This centralized control over the token supply introduces a significant economic risk, as it can lead to uncontrolled inflation, devaluing existing tokens and impacting the project's economic stability (7.4 Economic, 7.3 Access Control).
-
-**Recommendation:** Consider implementing a more decentralized or constrained minting mechanism. Options include: 1) Capping the total supply, 2) Implementing a time-locked minting schedule, 3) Requiring a broader governance vote for minting operations, or 4) Renouncing the minting capability entirely if a fixed supply is desired. If centralized minting is an intentional design choice, clearly communicate this economic model to all users and stakeholders.
-
+_🟡 2 Medium · ⚪ 1 Informational_
 
 ### `M-01` — Discrepancy in Hardcoded Implementation Address  *(Severity: Medium · Status: Unresolved)*
 
-The `DefinitiveConstants` library defines `DEFINITIVE_TOKEN_IMPLEMENTATION` as `0x00000000eF1C643377b715AFAEe486c89d9fe325`. However, the provided context states the live implementation address for the proxy `0xed6e000def95780fb89734c07ee2ce9f6dcaf110` is `0xc33581fc0d52df15fc72e10a3b689c2c99ce05f7`. This mismatch between the hardcoded constant and the actual deployed address can lead to confusion, misconfiguration in deployment scripts, or incorrect assumptions about the contract's identity, potentially impacting future operations or integrations (7.6 External, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `DefinitiveConstants` library defines `DEFINITIVE_TOKEN_IMPLEMENTATION` as `0x00000000eF1C643377b715AFAEe486c89d9fe325`. However, the provided context states the live implementation address for the proxy `0xed6e000def95780fb89734c07ee2ce9f6dcaf110` is `0xc33581fc0d52df15fc72e10a3b689c2c99ce05f7`. This mismatch between the hardcoded constant and the actual deployed address can lead to confusion, misconfiguration in deployment scripts, or incorrect assumptions about the contract's identity, potentially impacting future operations or integrations (7.6 External, 7.8 Operations).
 
 **Recommendation:** Update the `DEFINITIVE_TOKEN_IMPLEMENTATION` constant in `DefinitiveConstants.sol` to accurately reflect the deployed implementation address (`0xc33581fc0d52df15fc72e10a3b689c2c99ce05f7`). Ensure all hardcoded addresses in constant libraries are verified against live deployments and updated as necessary.
 
 
+### `M-02` — Centralized Token Minting  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint(address to, uint256 amount)` function is callable by the contract owner (`DefinitiveConstants.MULTISIG_OWNER`) and allows for the creation of an arbitrary amount of new tokens at any time. This centralized control over the token supply introduces a significant economic risk, as it can lead to uncontrolled inflation, devaluing existing tokens and impacting the project's economic stability (7.4 Economic, 7.3 Access Control).
+
+**Recommendation:** Consider implementing a more decentralized or constrained minting mechanism. Options include: 1) Capping the total supply, 2) Implementing a time-locked minting schedule, 3) Requiring a broader governance vote for minting operations, or 4) Renouncing the minting capability entirely if a fixed supply is desired. If centralized minting is an intentional design choice, clearly communicate this economic model to all users and stakeholders.
+
+
 ### `I-01` — Unused Constant `INITIAL_OWNER`  *(Severity: Informational · Status: Unresolved)*
 
-The `DefinitiveConstants` library defines an `INITIAL_OWNER` address (`0xc9EC08483e198ad0751aCCDF4Ac4D124a16332b8`), but this constant is not utilized anywhere within the `DefinitiveToken` contract. The `initialize` function directly sets the owner to `MULTISIG_OWNER` (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `DefinitiveConstants` library defines an `INITIAL_OWNER` address (`0xc9EC08483e198ad0751aCCDF4Ac4D124a16332b8`), but this constant is not utilized anywhere within the `DefinitiveToken` contract. The `initialize` function directly sets the owner to `MULTISIG_OWNER` (7.2 Code Security).
 
 **Recommendation:** Remove unused constants to reduce contract bytecode size and improve code clarity, or ensure that all defined constants serve a clear purpose within the contract logic. This helps maintain a clean and efficient codebase.
 
