@@ -2,14 +2,14 @@
 token: Horizen
 ticker: ZEN
 network: base
-risk_score: 39
-status: medium
+risk_score: 32
+status: low
 date: 2026-07-27
 ---
 
 # Horizen (ZEN) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/horizen-base)
 
@@ -42,28 +42,28 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Potential Centralization Risks Due to Owner Privileges  *(Severity: Medium · Status: Unresolved)*
 
-While the full contract code is unavailable, most custom ERC-20 token implementations include privileged functions (e.g., `mint`, `pause`, `blacklist`, `setFees`) that can only be called by an owner or administrator. Such centralization introduces a single point of failure and potential for abuse or compromise. If these functions exist without proper safeguards, a compromised owner key could lead to significant asset loss or protocol manipulation (7.3 Access Control, 7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). While the full contract code is unavailable, most custom ERC-20 token implementations include privileged functions (e.g., `mint`, `pause`, `blacklist`, `setFees`) that can only be called by an owner or administrator. Such centralization introduces a single point of failure and potential for abuse or compromise. If these functions exist without proper safeguards, a compromised owner key could lead to significant asset loss or protocol manipulation (7.3 Access Control, 7.4 Economic).
 
 **Recommendation:** If privileged functions exist, implement robust access control mechanisms, such as a multi-signature wallet for ownership, and consider adding timelocks for critical operations. Clearly document all privileged roles and their associated capabilities. Review the necessity and scope of each privileged function.
 
 
 ### `L-01` — Reliance on Standard OpenZeppelin Contracts (Assumed)  *(Severity: Low · Status: Unresolved)*
 
-The visible code includes OpenZeppelin interfaces (IERC20, IERC20Errors, etc.), suggesting that the ZenToken contract likely inherits from battle-tested OpenZeppelin ERC-20 implementations. While this significantly reduces the risk of common vulnerabilities found in custom token implementations, any custom logic added on top of these standard contracts would still require careful scrutiny. The security of the contract heavily relies on the correct and unmodified integration of these standard components (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The visible code includes OpenZeppelin interfaces (IERC20, IERC20Errors, etc.), suggesting that the ZenToken contract likely inherits from battle-tested OpenZeppelin ERC-20 implementations. While this significantly reduces the risk of common vulnerabilities found in custom token implementations, any custom logic added on top of these standard contracts would still require careful scrutiny. The security of the contract heavily relies on the correct and unmodified integration of these standard components (7.2 Code Security).
 
 **Recommendation:** Ensure that any custom logic added to the OpenZeppelin base implementation is thoroughly reviewed for vulnerabilities. Avoid modifying core OpenZeppelin logic directly; instead, extend or override functions carefully. Maintain up-to-date OpenZeppelin dependencies.
 
 
 ### `I-01` — Truncated Source Code Prevents Comprehensive Audit  *(Severity: Informational · Status: Unresolved)*
 
-The provided Solidity source code for the ZenToken contract is truncated. Only interfaces and the beginning of the ZenToken contract definition are available. This limitation prevents a full and comprehensive security audit, as critical implementation details, custom logic, state variables, and function bodies are missing. Without the complete code, it is impossible to identify potential vulnerabilities such as reentrancy, access control flaws, integer overflows/underflows in custom logic, or economic exploits.
+Not confirmed by static analysis (the model's own reading of the source). The provided Solidity source code for the ZenToken contract is truncated. Only interfaces and the beginning of the ZenToken contract definition are available. This limitation prevents a full and comprehensive security audit, as critical implementation details, custom logic, state variables, and function bodies are missing. Without the complete code, it is impossible to identify potential vulnerabilities such as reentrancy, access control flaws, integer overflows/underflows in custom logic, or economic exploits.
 
 **Recommendation:** Provide the complete, untruncated source code for the ZenToken contract to enable a thorough security audit. This includes all inherited contracts and libraries.
 
 
 ### `I-02` — Adoption of ERC-6093 Custom Errors  *(Severity: Informational · Status: Unresolved)*
 
-The contract utilizes interfaces for ERC-6093 custom errors (IERC20Errors, IERC721Errors, IERC1155Errors). This is a good practice that improves the clarity and specificity of error messages, making it easier for users and dApps to understand transaction failures. Custom errors are also generally more gas-efficient than revert strings (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes interfaces for ERC-6093 custom errors (IERC20Errors, IERC721Errors, IERC1155Errors). This is a good practice that improves the clarity and specificity of error messages, making it easier for users and dApps to understand transaction failures. Custom errors are also generally more gas-efficient than revert strings (7.2 Code Security).
 
 **Recommendation:** Continue to use and expand upon custom error types for all relevant revert conditions within the contract's custom logic. Ensure error messages are clear and provide sufficient context for debugging.
 
@@ -106,11 +106,11 @@ The contract utilizes interfaces for ERC-6093 custom errors (IERC20Errors, IERC7
 
 ### Is Horizen a scam?
 
-Based on automated analysis, Horizen scores 63/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Horizen scores 32/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Horizen safe to buy?
 
-Our scanner flagged a risk score of 63/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 32/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Horizen been audited?
 

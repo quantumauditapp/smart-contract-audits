@@ -2,14 +2,14 @@
 token: ICP
 ticker: ICP
 network: ethereum
-risk_score: 71
-status: high
+risk_score: 61
+status: medium
 date: 2026-08-11
 ---
 
 # ICP (ICP) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 71/100 — 🟠 High Risk**
+> **Risk Score: 61/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/icp-eth)
 
@@ -25,8 +25,8 @@ The Token contract implements a standard ERC20 token with Ownable and ERC20Permi
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages well-audited OpenZeppelin libraries for ERC20, Ownable, and ERC20Permit functionalities (7.2 Code Security). However, a critical flaw exists in the `withdrawEth` function… |
-| **Governance / Economics** | 1/10 | High | The contract utilizes the Ownable pattern, granting the deployer significant control over key functions such as minting, updating `minAmount`, and withdrawing ETH (7.3 Access Control). This… |
+| **Technical** | 8/10 | Low | The contract leverages well-audited OpenZeppelin libraries for ERC20, Ownable, and ERC20Permit functionalities (7.2 Code Security). However, a critical flaw exists in the `withdrawEth` function… |
+| **Governance / Economics** | 2/10 | High | The contract utilizes the Ownable pattern, granting the deployer significant control over key functions such as minting, updating `minAmount`, and withdrawing ETH (7.3 Access Control). This… |
 | **Upgrades** | 3/10 | High | The contract is not designed with an upgrade mechanism (e.g., proxy pattern), which inherently avoids the complexities and potential security risks associated with upgradeable contracts (7.7… |
 
 ## LP Distribution
@@ -38,39 +38,39 @@ The Token contract implements a standard ERC20 token with Ownable and ERC20Permi
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Incorrect `withdrawEth` Logic Leads to Locked Funds  *(Severity: High · Status: Unresolved)*
-
-The `withdrawEth` function contains an inverted `require` condition: `require(amount >= address(this).balance, "Balance too low");`. This condition incorrectly checks if the requested `amount` is greater than or equal to the contract's balance. As a result, the function will only succeed if `amount` is exactly equal to `address(this).balance`, or it will revert if `amount` is less than the balance. If `amount` is greater than the balance, the `require` passes, but the subsequent `transfer` call will revert due to insufficient funds. This effectively prevents the owner from withdrawing partial amounts of ETH and can lead to funds being locked in the contract if the owner attempts to withdraw…
-
-**Recommendation:** Correct the `require` condition to `require(amount <= address(this).balance, "Amount exceeds contract balance");` to allow the owner to withdraw any amount up to the contract's current ETH balance.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Unchecked `call` Return Values and Low Gas Limit in Mint Functions  *(Severity: Medium · Status: Unresolved)*
 
-The `mint` and `batchMint` functions perform external ETH transfers using `to.call{value: msg.value, gas: 2300}("")` and `recipients[i].call{value: ethAmounts[i], gas: 2300}("")` respectively. The `success` boolean returned by these `call` operations is not checked. If an external call fails (e.g., due to the recipient being a contract that reverts, or running out of gas), the transaction will still proceed, leading to a situation where the ETH was not transferred but the caller believes it was. Additionally, the fixed gas limit of 2300 is very low and might be insufficient for complex recipient contracts, causing legitimate transfers to fail.
+Not confirmed by static analysis (the model's own reading of the source). The `mint` and `batchMint` functions perform external ETH transfers using `to.call{value: msg.value, gas: 2300}("")` and `recipients[i].call{value: ethAmounts[i], gas: 2300}("")` respectively. The `success` boolean returned by these `call` operations is not checked. If an external call fails (e.g., due to the recipient being a contract that reverts, or running out of gas), the transaction will still proceed, leading to a situation where the ETH was not transferred but the caller believes it was. Additionally, the fixed gas limit of 2300 is very low and might be insufficient for complex recipient contracts, causing legi
 
 **Recommendation:** Always check the `success` boolean returned by external `call` operations and revert if `success` is false. Consider increasing the gas limit for external calls if the recipient is expected to be a contract with complex fallback logic, or remove the gas limit entirely if reentrancy is not a concern (which it is not here, as ETH is sent out after internal state changes). For example: `(bool success,) = to.call{value: msg.value}(''); require(success, 'ETH transfer failed');`
 
 
 ### `M-02` — Inconsistent ETH Handling in `batchMint` Function  *(Severity: Medium · Status: Unresolved)*
 
-The `batchMint` function's logic for handling `msg.value` and `ethAmounts` is inconsistent. If `msg.value > 0`, the function iterates through `ethAmounts` to transfer ETH to recipients. However, there is no check to ensure that `msg.value` matches the sum of `ethAmounts`. If `msg.value` is greater than the sum of `ethAmounts`, the excess ETH will remain stuck in the contract. If `msg.value` is less than the sum of `ethAmounts`, some `call` operations will revert due to insufficient balance, leading to partial failures and an inconsistent state where some recipients receive ETH and others do not, while all tokens might still be minted.
+Not confirmed by static analysis (the model's own reading of the source). The `batchMint` function's logic for handling `msg.value` and `ethAmounts` is inconsistent. If `msg.value > 0`, the function iterates through `ethAmounts` to transfer ETH to recipients. However, there is no check to ensure that `msg.value` matches the sum of `ethAmounts`. If `msg.value` is greater than the sum of `ethAmounts`, the excess ETH will remain stuck in the contract. If `msg.value` is less than the sum of `ethAmounts`, some `call` operations will revert due to insufficient balance, leading to partial failures and an inconsistent state where some recipients receive ETH and others do not, while all tokens might
 
 **Recommendation:** Implement a clear strategy for `msg.value` in `batchMint`. Either require `msg.value` to be exactly equal to the sum of `ethAmounts` (e.g., by calculating the sum and comparing), or explicitly define how excess or insufficient `msg.value` should be handled (e.g., refund excess, revert on insufficient).
 
 
+### `M-03` — Incorrect `withdrawEth` Logic Leads to Locked Funds  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `withdrawEth` function contains an inverted `require` condition: `require(amount >= address(this).balance, "Balance too low");`. This condition incorrectly checks if the requested `amount` is greater than or equal to the contract's balance. As a result, the function will only succeed if `amount` is exactly equal to `address(this).balance`, or it will revert if `amount` is less than the balance. If `amount` is greater than the balance, the `require` passes, but the subsequent `transfer` call will revert due to insufficient funds. This effectively prevents the owner from withdrawing partial amounts of ETH and can lea
+
+**Recommendation:** Correct the `require` condition to `require(amount <= address(this).balance, "Amount exceeds contract balance");` to allow the owner to withdraw any amount up to the contract's current ETH balance.
+
+
 ### `L-01` — High Centralization of Owner Privileges  *(Severity: Low · Status: Unresolved)*
 
-The contract grants significant power to the `owner` address, including the ability to mint an unlimited supply of tokens to any address, update the `minAmount` for burning, and withdraw all ETH from the contract. While this is a common pattern for `Ownable` contracts, it introduces a high degree of centralization and reliance on the owner's integrity. A compromised owner key could lead to severe consequences, such as arbitrary token minting or draining of contract funds.
+Not confirmed by static analysis (the model's own reading of the source). The contract grants significant power to the `owner` address, including the ability to mint an unlimited supply of tokens to any address, update the `minAmount` for burning, and withdraw all ETH from the contract. While this is a common pattern for `Ownable` contracts, it introduces a high degree of centralization and reliance on the owner's integrity. A compromised owner key could lead to severe consequences, such as arbitrary token minting or draining of contract funds.
 
 **Recommendation:** Consider implementing a multi-signature wallet for the owner address to reduce the risk of a single point of failure. For critical operations like minting or updating core parameters, explore adding time-locks or a governance mechanism to introduce delays and community oversight.
 
 
 ### `I-01` — Redundant Burn Functions  *(Severity: Informational · Status: Unresolved)*
 
-The contract defines four separate `burn` functions (`burn1`, `burn2`, `burn3`, `burn4`) that are identical in functionality except for the number of `bytes32` data parameters they accept. This design choice leads to code duplication and unnecessary complexity without providing distinct functional benefits that couldn't be achieved with a single, more flexible `burn` function (e.g., accepting a `bytes` array or a single `bytes` parameter).
+Not confirmed by static analysis (the model's own reading of the source). The contract defines four separate `burn` functions (`burn1`, `burn2`, `burn3`, `burn4`) that are identical in functionality except for the number of `bytes32` data parameters they accept. This design choice leads to code duplication and unnecessary complexity without providing distinct functional benefits that couldn't be achieved with a single, more flexible `burn` function (e.g., accepting a `bytes` array or a single `bytes` parameter).
 
 **Recommendation:** Consolidate the multiple `burn` functions into a single function that accepts a dynamic `bytes` array or a single `bytes` parameter for arbitrary data. This would reduce code duplication, improve readability, and simplify maintenance.
 

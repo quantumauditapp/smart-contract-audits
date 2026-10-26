@@ -2,14 +2,14 @@
 token: hiero.os
 ticker: HIERO
 network: solana
-risk_score: 50
-status: medium
+risk_score: 33
+status: low
 date: 2026-09-04
 ---
 
 # hiero.os (HIERO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hieroos-sol)
 
@@ -25,9 +25,9 @@ The hiero.os (HIERO) SPL Token Mint presents a medium risk primarily due to its 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The hiero.os (HIERO) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, preventing further token minting or freezing of holder… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a very new trading pair, established only 1 day ago, which limits the track record for assessing market behavior. Current DEX liquidity stands at $12,703, with a 24-hour volume of… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning no further changes can be made to the token's supply or account freeze status. The token utilizes the… |
+| **Technical** | 10/10 | Low | The hiero.os (HIERO) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, preventing further token minting or freezing of holder… |
+| **Governance / Economics** | 2/10 | High | The token exhibits a very new trading pair, established only 1 day ago, which limits the track record for assessing market behavior. Current DEX liquidity stands at $12,703, with a 24-hour volume of… |
+| **Upgrades** | 10/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning no further changes can be made to the token's supply or account freeze status. The token utilizes the… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1296 buys / 1152 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

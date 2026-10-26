@@ -2,14 +2,14 @@
 token: IBS
 ticker: IBS
 network: bsc
-risk_score: 20
+risk_score: 7
 status: low
 date: 2026-07-25
 ---
 
 # IBS (IBS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 20/100 — 🟢 Low Risk**
+> **Risk Score: 7/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ibs-bsc)
 
@@ -25,9 +25,9 @@ The audit of the Token contract reveals a critical risk profile primarily due to
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The Token contract is built upon well-audited OpenZeppelin libraries (ERC20Burnable, ERC20Permit, AccessControl, Ownable2Step), which contributes to a solid foundation (7.2 Code Security). The tax… |
-| **Governance / Economics** | 6/10 | Medium | The contract's economic model relies on configurable buy and sell tax rates, directed to a treasury address (7.4 Economic). The `onlyOwner` modifier initially centralizes control over these… |
-| **Upgrades** | 6/10 | Medium | The Token contract is not designed as an upgradeable proxy. Therefore, there are no upgrade-specific risks or considerations for this contract. Any changes to the contract's logic would require a new… |
+| **Technical** | 8/10 | Low | The Token contract is built upon well-audited OpenZeppelin libraries (ERC20Burnable, ERC20Permit, AccessControl, Ownable2Step), which contributes to a solid foundation (7.2 Code Security). The tax… |
+| **Governance / Economics** | 9/10 | Low | The contract's economic model relies on configurable buy and sell tax rates, directed to a treasury address (7.4 Economic). The `onlyOwner` modifier initially centralizes control over these… |
+| **Upgrades** | 7/10 | Low | The Token contract is not designed as an upgradeable proxy. Therefore, there are no upgrade-specific risks or considerations for this contract. Any changes to the contract's logic would require a new… |
 
 ## LP Distribution
 
@@ -38,39 +38,39 @@ The audit of the Token contract reveals a critical risk profile primarily due to
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 2 High · 🟡 1 Medium · ⚪ 1 Informational_
-
-### `C-01` — Immutability of Critical Parameters after Ownership Renouncement  *(Severity: Critical · Status: Unresolved)*
-
-The contract utilizes `Ownable2Step` and has numerous critical functions protected by the `onlyOwner` modifier (e.g., `setBuyRates`, `setTreasuryAddress`, `setLongGovernanceList`). If ownership is renounced, as indicated by the provided metadata, all these functions become permanently unusable. This means that critical parameters like tax rates (`longGovernanceRatio`, `shortGovernanceRatio`), treasury addresses (`treasury`, `taxTreasury`), and the various governance/whitelist mappings become immutable after deployment. While this prevents a malicious owner from changing parameters, it introduces a severe risk of rigidity, preventing any future adjustments, bug fixes, or adaptation to changi…
-
-**Recommendation:** If immutability is the desired state, ensure all initial parameters are thoroughly audited, tested, and confirmed to be correct before deployment and renouncement. If flexibility is needed, ownership should not be renounced, or a more decentralized governance mechanism (e.g., a DAO with a timelock) should be implemented to manage these parameters. Clearly document the implications of renounced ownership for all stakeholders.
-
-
-### `H-01` — Permanent Unlimited Minting Power  *(Severity: High · Status: Unresolved)*
-
-The `MINTER_ROLE` is granted to two external addresses (`rbs` and `minter_`) in the constructor. The `mint` function, callable by anyone with `MINTER_ROLE`, allows for the creation of an arbitrary amount of new tokens. If ownership is renounced, the `grantTaxer` and `revokeTaxer` functions (which manage roles) become unusable. This means the initial `MINTER_ROLE` holders retain permanent, unlimited power to mint tokens, and this power cannot be revoked. This poses a significant risk of token inflation, value dilution, and potential for malicious actors to exploit this capability.
-
-**Recommendation:** Implement a mechanism to revoke or limit minting power, even after ownership renouncement, if such flexibility is desired. Consider using a multi-signature wallet for the `MINTER_ROLE` to require multiple approvals for minting operations. If minting is intended to be limited, enforce a maximum total supply or a defined minting schedule within the contract logic.
-
-
-### `H-02` — Permanent Zero Treasury if Misconfigured  *(Severity: High · Status: Unresolved)*
-
-The `treasury` address, which is the recipient of collected taxes from `_collectGovernance`, is set only during the constructor via the `treasury_` argument. If ownership is renounced, the `setTreasuryAddress` function becomes unusable. This means if `treasury_` was initialized to `address(0)` during deployment, or to an incorrect/uncontrolled address, no taxes will ever be collected by the `_collectGovernance` function, leading to a permanent loss of intended revenue or funds being sent to an inaccessible address. This represents a critical operational flaw if not configured correctly at deployment.
-
-**Recommendation:** Ensure the `treasury` address is correctly set to a secure and controlled address during deployment. If `address(0)` is intended to disable taxes, this behavior should be explicitly documented and understood by all stakeholders. Consider adding a non-zero address check in the constructor for the `treasury_` parameter if `address(0)` is never a valid target.
-
+_🟡 4 Medium · ⚪ 1 Informational_
 
 ### `M-01` — Unclear Purpose of `transferTax` Function  *(Severity: Medium · Status: Unresolved)*
 
-The `transferTax` function, callable by `TAXER_ROLE` holders, allows an account to transfer a percentage of a specified `amount` from `_msgSender()` to `taxTreasury`, based on the `shortGovernanceRatio`. This mechanism is unusual as it is not a tax applied automatically during token transfers, but rather a separate, explicit function call initiated by a `TAXER_ROLE` holder. The intended use case, benefit, and potential for misuse of this function are not clearly defined within the code or comments, which could lead to confusion or unintended operational scenarios.
+Not confirmed by static analysis (the model's own reading of the source). The `transferTax` function, callable by `TAXER_ROLE` holders, allows an account to transfer a percentage of a specified `amount` from `_msgSender()` to `taxTreasury`, based on the `shortGovernanceRatio`. This mechanism is unusual as it is not a tax applied automatically during token transfers, but rather a separate, explicit function call initiated by a `TAXER_ROLE` holder. The intended use case, benefit, and potential for misuse of this function are not clearly defined within the code or comments, which could lead to confusion or unintended operational scenarios.
 
 **Recommendation:** Clarify the intended purpose and specific use cases for the `transferTax` function. Document its behavior thoroughly, including who is expected to call it, under what circumstances, and what problem it solves. Consider if this functionality is truly necessary or if it introduces unnecessary complexity or potential for misuse.
 
 
+### `M-02` — Immutability of Critical Parameters after Ownership Renouncement  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes `Ownable2Step` and has numerous critical functions protected by the `onlyOwner` modifier (e.g., `setBuyRates`, `setTreasuryAddress`, `setLongGovernanceList`). If ownership is renounced, as indicated by the provided metadata, all these functions become permanently unusable. This means that critical parameters like tax rates (`longGovernanceRatio`, `shortGovernanceRatio`), treasury addresses (`treasury`, `taxTreasury`), and the various governance/whitelist mappings become immutable after deployment. While this prevents a malicious owner from changing parameters, it introduces a severe risk of rigidi
+
+**Recommendation:** If immutability is the desired state, ensure all initial parameters are thoroughly audited, tested, and confirmed to be correct before deployment and renouncement. If flexibility is needed, ownership should not be renounced, or a more decentralized governance mechanism (e.g., a DAO with a timelock) should be implemented to manage these parameters. Clearly document the implications of renounced ownership for all stakeholders.
+
+
+### `M-03` — Permanent Unlimited Minting Power  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `MINTER_ROLE` is granted to two external addresses (`rbs` and `minter_`) in the constructor. The `mint` function, callable by anyone with `MINTER_ROLE`, allows for the creation of an arbitrary amount of new tokens. If ownership is renounced, the `grantTaxer` and `revokeTaxer` functions (which manage roles) become unusable. This means the initial `MINTER_ROLE` holders retain permanent, unlimited power to mint tokens, and this power cannot be revoked. This poses a significant risk of token inflation, value dilution, and potential for malicious actors to exploit this capability.
+
+**Recommendation:** Implement a mechanism to revoke or limit minting power, even after ownership renouncement, if such flexibility is desired. Consider using a multi-signature wallet for the `MINTER_ROLE` to require multiple approvals for minting operations. If minting is intended to be limited, enforce a maximum total supply or a defined minting schedule within the contract logic.
+
+
+### `M-04` — Permanent Zero Treasury if Misconfigured  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `treasury` address, which is the recipient of collected taxes from `_collectGovernance`, is set only during the constructor via the `treasury_` argument. If ownership is renounced, the `setTreasuryAddress` function becomes unusable. This means if `treasury_` was initialized to `address(0)` during deployment, or to an incorrect/uncontrolled address, no taxes will ever be collected by the `_collectGovernance` function, leading to a permanent loss of intended revenue or funds being sent to an inaccessible address. This represents a critical operational flaw if not configured correctly at deployment.
+
+**Recommendation:** Ensure the `treasury` address is correctly set to a secure and controlled address during deployment. If `address(0)` is intended to disable taxes, this behavior should be explicitly documented and understood by all stakeholders. Consider adding a non-zero address check in the constructor for the `treasury_` parameter if `address(0)` is never a valid target.
+
+
 ### `I-01` — Broad Whitelist Exemption Logic  *(Severity: Informational · Status: Unresolved)*
 
-The `_collectGovernance` function's whitelist logic for tax exemption is defined as `!whitelist[from] && !whitelist[to]`. This condition means that if *either* the `from` address or the `to` address is present in the `whitelist` mapping, the transaction will be exempt from both `longGovernanceRatio` (buy tax) and `shortGovernanceRatio` (sell tax). This broad exemption might not align with all potential use cases or expectations, as a single whitelisted participant can effectively bypass taxes for a transaction involving a non-whitelisted party.
+Not confirmed by static analysis (the model's own reading of the source). The `_collectGovernance` function's whitelist logic for tax exemption is defined as `!whitelist[from] && !whitelist[to]`. This condition means that if *either* the `from` address or the `to` address is present in the `whitelist` mapping, the transaction will be exempt from both `longGovernanceRatio` (buy tax) and `shortGovernanceRatio` (sell tax). This broad exemption might not align with all potential use cases or expectations, as a single whitelisted participant can effectively bypass taxes for a transaction involving a non-whitelisted party.
 
 **Recommendation:** Review the whitelist logic to ensure it precisely matches the intended tax exemption policy. If a stricter exemption is desired (e.g., both `from` and `to` must be whitelisted for exemption, or only the `from` address determines the tax), adjust the condition accordingly. Document the exact behavior of the whitelist for clarity.
 
@@ -113,11 +113,11 @@ The `_collectGovernance` function's whitelist logic for tax exemption is defined
 
 ### Is IBS a scam?
 
-Based on automated analysis, IBS scores 61/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, IBS scores 7/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is IBS safe to buy?
 
-Our scanner flagged a risk score of 61/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 7/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has IBS been audited?
 

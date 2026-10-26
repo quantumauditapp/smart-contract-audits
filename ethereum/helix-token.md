@@ -2,14 +2,14 @@
 token: Helix Token
 ticker: HLX
 network: ethereum
-risk_score: 55
+risk_score: 43
 status: medium
 date: 2026-07-24
 ---
 
 # Helix Token (HLX) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 55/100 — 🟡 Medium Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/helix-token-eth)
 
@@ -38,25 +38,25 @@ The HelixToken contract is a standard ERC-20 implementation, inheriting from bat
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Centralized Initial Token Supply  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Initial Token Supply  *(Severity: Medium · Status: Unresolved)*
 
-The entire token supply (100,000,000,000 HLX) is minted to the `msg.sender` (deployer) in the constructor. This grants the deployer complete control over the initial distribution and the entire token supply, posing a significant centralization risk (7.4 Economic, 7.5 Governance). This could lead to potential market manipulation, lack of trust, or a single point of failure for the token's ecosystem.
+Not confirmed by static analysis (the model's own reading of the source). The entire token supply (100,000,000,000 HLX) is minted to the `msg.sender` (deployer) in the constructor. This grants the deployer complete control over the initial distribution and the entire token supply, posing a significant centralization risk (7.4 Economic, 7.5 Governance). This could lead to potential market manipulation, lack of trust, or a single point of failure for the token's ecosystem.
 
 **Recommendation:** Implement a more decentralized and transparent distribution mechanism for the initial token supply. This could involve vesting schedules, multi-sig controlled treasury, airdrops, or immediate liquidity provision to a decentralized exchange (DEX) to mitigate the risk associated with a single entity holding the entire supply.
 
 
 ### `L-01` — Lack of Emergency Controls  *(Severity: Low · Status: Unresolved)*
 
-The `HelixToken` contract does not include any emergency mechanisms such as pausing transfers or blacklisting malicious addresses (7.8 Operations). While this aligns with a minimalist ERC-20 design, it means there are no built-in safeguards to react to critical vulnerabilities or exploits in integrated protocols that might involve the token, potentially leaving users exposed in extreme scenarios.
+Not confirmed by static analysis (the model's own reading of the source). The `HelixToken` contract does not include any emergency mechanisms such as pausing transfers or blacklisting malicious addresses (7.8 Operations). While this aligns with a minimalist ERC-20 design, it means there are no built-in safeguards to react to critical vulnerabilities or exploits in integrated protocols that might involve the token, potentially leaving users exposed in extreme scenarios.
 
 **Recommendation:** Consider if emergency controls (e.g., `Pausable` or `Blacklistable` from OpenZeppelin) are necessary for the token's intended use case and ecosystem. If such controls are deemed critical, they should be implemented with robust, multi-sig controlled access to prevent abuse.
 
 
 ### `I-01` — Non-Upgradeable Contract Design  *(Severity: Informational · Status: Unresolved)*
 
-The `HelixToken` contract is implemented directly and is not upgradeable (7.7 Upgrades). This means that once deployed, its logic cannot be modified or updated. While this eliminates risks associated with proxy patterns (e.g., upgrade path vulnerabilities), it also prevents any future bug fixes, feature enhancements, or adaptation to evolving protocol needs without a complete redeployment and token migration process.
+Not confirmed by static analysis (the model's own reading of the source). The `HelixToken` contract is implemented directly and is not upgradeable (7.7 Upgrades). This means that once deployed, its logic cannot be modified or updated. While this eliminates risks associated with proxy patterns (e.g., upgrade path vulnerabilities), it also prevents any future bug fixes, feature enhancements, or adaptation to evolving protocol needs without a complete redeployment and token migration process.
 
 **Recommendation:** Acknowledge the immutability as a design choice. If future flexibility for bug fixes or feature additions is desired for subsequent contracts or token versions, consider implementing an upgradeable proxy pattern (e.g., UUPS) to allow for future modifications.
 
@@ -99,11 +99,11 @@ The `HelixToken` contract is implemented directly and is not upgradeable (7.7 Up
 
 ### Is Helix Token a scam?
 
-Based on automated analysis, Helix Token scores 66/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Helix Token scores 43/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Helix Token safe to buy?
 
-Our scanner flagged a risk score of 66/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 43/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Helix Token been audited?
 

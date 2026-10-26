@@ -2,14 +2,14 @@
 token: Gstock
 ticker: GSTOCK
 network: bsc
-risk_score: 11
+risk_score: 9
 status: low
 date: 2026-09-22
 ---
 
 # Gstock (GSTOCK) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 11/100 — 🟢 Low Risk**
+> **Risk Score: 9/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gstock-bsc)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Lack of Emergency Control Mechanisms  *(Severity: Low · Status: Unresolved)*
 
-The `GeniusLauncherToken` contract, being a standard ERC20, does not include common emergency control features such as `pause` or `blacklist` functionality. In the event of a critical vulnerability, exploit, or regulatory requirement, there would be no built-in mechanism to halt transfers or restrict malicious actors. While this promotes decentralization, it removes a potential safety net for unforeseen circumstances.
+Not confirmed by static analysis (the model's own reading of the source). The `GeniusLauncherToken` contract, being a standard ERC20, does not include common emergency control features such as `pause` or `blacklist` functionality. In the event of a critical vulnerability, exploit, or regulatory requirement, there would be no built-in mechanism to halt transfers or restrict malicious actors. While this promotes decentralization, it removes a potential safety net for unforeseen circumstances.
 
 **Recommendation:** Consider implementing an `Ownable` or `AccessControl` pattern to allow a designated role (e.g., `pauser`) to pause token transfers in emergencies. This adds a layer of protection, though it introduces a point of centralization. If decentralization is paramount, this finding can be accepted as a design choice.
 
 
 ### `I-01` — Immutability of Token Metadata  *(Severity: Informational · Status: Unresolved)*
 
-The token's metadata, including `logo`, `description`, and the `_socials` struct, is set exclusively in the constructor and stored as immutable state variables. This means that once the contract is deployed, this information cannot be updated or modified. Any changes to project branding, social links, or descriptions would necessitate the deployment of an entirely new token contract.
+Not confirmed by static analysis (the model's own reading of the source). The token's metadata, including `logo`, `description`, and the `_socials` struct, is set exclusively in the constructor and stored as immutable state variables. This means that once the contract is deployed, this information cannot be updated or modified. Any changes to project branding, social links, or descriptions would necessitate the deployment of an entirely new token contract.
 
 **Recommendation:** Ensure that the project team is fully aware of the immutable nature of this metadata. If future updates are anticipated, consider a design where metadata is stored in an upgradeable contract or an off-chain registry referenced by a mutable URI, though this adds complexity and external dependencies.
 
 
 ### `I-02` — Centralized Initial Supply Distribution  *(Severity: Informational · Status: Unresolved)*
 
-The entire initial token supply (`supply_`) is minted to the `curve_` address during the contract's deployment. This design choice makes the `curve_` address a single point of control for the initial distribution and management of the token supply. The security and operational integrity of this specific address are paramount for the token's initial launch and subsequent distribution strategy.
+Not confirmed by static analysis (the model's own reading of the source). The entire initial token supply (`supply_`) is minted to the `curve_` address during the contract's deployment. This design choice makes the `curve_` address a single point of control for the initial distribution and management of the token supply. The security and operational integrity of this specific address are paramount for the token's initial launch and subsequent distribution strategy.
 
 **Recommendation:** Ensure that the `curve_` address is secured with the highest level of protection, such as a multi-signature wallet, hardware wallet, or a robust access control system. Implement strict operational procedures for managing this address to mitigate risks associated with private key compromise or unauthorized access.
 

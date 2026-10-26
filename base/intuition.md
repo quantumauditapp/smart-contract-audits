@@ -2,14 +2,14 @@
 token: Intuition
 ticker: TRUST
 network: base
-risk_score: 98
-status: critical
+risk_score: 52
+status: medium
 date: 2026-08-13
 ---
 
 # Intuition (TRUST) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 98/100 — 🔴 Critical Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/intuition-base)
 
@@ -25,7 +25,7 @@ The audit of the Intuition Trust contract (implementation of the token) identifi
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 2/10 | High | The contract utilizes OpenZeppelin's upgradeable patterns and access control, which generally provide a solid foundation (7.1 Architecture, 7.2 Code Security). However, critical implementation errors… |
+| **Technical** | 7/10 | Low | The contract utilizes OpenZeppelin's upgradeable patterns and access control, which generally provide a solid foundation (7.1 Architecture, 7.2 Code Security). However, critical implementation errors… |
 | **Governance / Economics** | 1/10 | High | The economic model of the token is critically compromised due to the bypassed minting logic (7.4 Economic). The `MAX_SUPPLY` and minter-specific caps defined in `TrustToken` are not enforced by the… |
 | **Upgrades** | 1/10 | High | The contract employs the Transparent Upgradeable Proxy pattern with a ProxyAdmin owned by a Timelock, which is a strong setup for upgrade safety (7.7 Upgrades). The `reinitialize` function is… |
 
@@ -47,25 +47,25 @@ The audit of the Intuition Trust contract (implementation of the token) identifi
 
 ## Security Findings
 
-_🔴 2 Critical · 🟠 1 High_
+_🟡 3 Medium_
 
-### `C-01` — ERC20 Initialization Missing in `Trust` Contract  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — ERC20 Initialization Missing in `Trust` Contract  *(Severity: Medium · Status: Unresolved)*
 
-The `Trust` contract inherits `ERC20Upgradeable` via `TrustToken`, but its `reinitialize` function only calls `__AccessControl_init()`. The `TrustToken` contract has an `init()` function that calls `__ERC20_init("TRUST", "TRUST")`, but this `init()` function is never called by the `Trust` contract. Consequently, the ERC20 token's name, symbol, and decimals are not properly initialized, which can lead to display issues in wallets/explorers and potential integration problems with DeFi protocols.
+Not confirmed by static analysis (the model's own reading of the source). The `Trust` contract inherits `ERC20Upgradeable` via `TrustToken`, but its `reinitialize` function only calls `__AccessControl_init()`. The `TrustToken` contract has an `init()` function that calls `__ERC20_init("TRUST", "TRUST")`, but this `init()` function is never called by the `Trust` contract. Consequently, the ERC20 token's name, symbol, and decimals are not properly initialized, which can lead to display issues in wallets/explorers and potential integration problems with DeFi protocols.
 
 **Recommendation:** Ensure that the `reinitialize` function in `Trust` calls the `init()` function of `TrustToken` or directly calls `__ERC20_init` with the desired token name and symbol. For example, `super.init()` or `__ERC20_init("Intuition", "INTU")` should be added to `reinitialize`.
 
 
-### `C-02` — Minting Logic and Supply Caps Bypassed  *(Severity: Critical · Status: Unresolved)*
+### `M-02` — Minting Logic and Supply Caps Bypassed  *(Severity: Medium · Status: Unresolved)*
 
-The `Trust` contract's `mint(address to, uint256 amount)` function overrides the `mint` function from `TrustToken`. However, the `Trust` contract's implementation only calls `_mint(to, amount)` (the internal ERC20 mint) and does not call `super.mint()` or otherwise incorporate the logic from `TrustToken`'s `mint` function. This means the `MINTER_A`/`MINTER_B` restrictions, `MAX_SUPPLY` check, `totalMinted` updates, and `minterAmountMinted` tracking from `TrustToken` are completely bypassed. As a result, the `baseEmissionsController` can mint an unlimited amount of tokens, ignoring all intended supply caps and minter-specific limits.
+Not confirmed by static analysis (the model's own reading of the source). The `Trust` contract's `mint(address to, uint256 amount)` function overrides the `mint` function from `TrustToken`. However, the `Trust` contract's implementation only calls `_mint(to, amount)` (the internal ERC20 mint) and does not call `super.mint()` or otherwise incorporate the logic from `TrustToken`'s `mint` function. This means the `MINTER_A`/`MINTER_B` restrictions, `MAX_SUPPLY` check, `totalMinted` updates, and `minterAmountMinted` tracking from `TrustToken` are completely bypassed. As a result, the `baseEmissionsController` can mint an unlimited amount of tokens, ignoring all intended supply caps and minter-sp
 
 **Recommendation:** The `Trust` contract's `mint` function must be refactored to correctly enforce the intended minting logic. If the `TrustToken`'s minting logic (minter caps, max supply) is still desired, the `Trust` contract's `mint` function should call `super.mint(to, amount)` or replicate the necessary checks and state updates. If the `TrustToken` logic is deprecated, it should be explicitly removed or clearly documented, and new supply caps should be implemented in `Trust` if desired.
 
 
-### `H-01` — Unused `TrustToken` Minting Logic and State Variables  *(Severity: High · Status: Unresolved)*
+### `M-03` — Unused `TrustToken` Minting Logic and State Variables  *(Severity: Medium · Status: Unresolved)*
 
-Due to the `Trust` contract's `mint` function overriding and bypassing the `TrustToken`'s `mint` function (C-02), the `MAX_SUPPLY`, `MINTER_A`, `MINTER_B` constants, and the `totalMinted`, `minterAmountMinted` state variables within `TrustToken` are effectively dead code. They are defined but never utilized or updated by the live `Trust` contract logic. This creates a false sense of security, makes the code harder to understand, and could lead to confusion regarding the actual tokenomics.
+Not confirmed by static analysis (the model's own reading of the source). Due to the `Trust` contract's `mint` function overriding and bypassing the `TrustToken`'s `mint` function (C-02), the `MAX_SUPPLY`, `MINTER_A`, `MINTER_B` constants, and the `totalMinted`, `minterAmountMinted` state variables within `TrustToken` are effectively dead code. They are defined but never utilized or updated by the live `Trust` contract logic. This creates a false sense of security, makes the code harder to understand, and could lead to confusion regarding the actual tokenomics.
 
 **Recommendation:** Align the code with the intended functionality. If the `TrustToken` minting logic is to be used, ensure it is correctly integrated (as per C-02 recommendation). If it is no longer relevant, consider removing these unused constants and state variables from `TrustToken` or refactoring the inheritance to avoid inheriting deprecated logic, to improve clarity and prevent misleading information.
 

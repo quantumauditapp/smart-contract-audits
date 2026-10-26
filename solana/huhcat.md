@@ -2,14 +2,14 @@
 token: HUHCAT
 ticker: HUHCAT
 network: solana
-risk_score: 12
+risk_score: 0
 status: low
 date: 2026-09-19
 ---
 
 # HUHCAT (HUHCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 12/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/huhcat-sol)
 
@@ -26,8 +26,8 @@ The HUHCAT token mint is based on the spl-token-2022 program with both mint and 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The HUHCAT token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing accounts can be frozen. It does… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a very new DEX pair, established only 4 days ago, which means there is insufficient historical data to evaluate long-term market stability or holder behavior. Current liquidity… |
-| **Upgrades** | 8/10 | Low | The HUHCAT token mint has a fixed configuration as both the mint authority and freeze authority are revoked, preventing any future changes to token supply or account freeze status. It is built on the… |
+| **Governance / Economics** | 9/10 | Low | The token exhibits a very new DEX pair, established only 4 days ago, which means there is insufficient historical data to evaluate long-term market stability or holder behavior. Current liquidity… |
+| **Upgrades** | 10/10 | Low | The HUHCAT token mint has a fixed configuration as both the mint authority and freeze authority are revoked, preventing any future changes to token supply or account freeze status. It is built on the… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 4 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3103 buys / 2696 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 4 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

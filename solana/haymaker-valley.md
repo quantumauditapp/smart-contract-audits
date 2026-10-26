@@ -2,14 +2,14 @@
 token: Haymaker Valley
 ticker: HAYMAKER
 network: solana
-risk_score: 49
-status: medium
+risk_score: 32
+status: low
 date: 2026-08-13
 ---
 
 # Haymaker Valley (HAYMAKER) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 49/100 — 🟡 Medium Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/haymaker-valley-sol)
 
@@ -25,9 +25,9 @@ This audit of the Haymaker Valley (Haymaker) SPL Token Mint identifies a medium 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Haymaker Valley token is an SPL Token-2022 mint with a supply of 958,288,073.786637 tokens and 6 decimals. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens… |
-| **Governance / Economics** | 1/10 | High | The token's DEX liquidity stands at $17,376, with a 24-hour trading volume of $136,066, resulting in a Volume/Liquidity Ratio of 7.83. While this ratio is elevated, it does not meet the threshold for… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are revoked, preventing any future changes to the token supply or account freeze status. As an SPL Token-2022, it does not have a… |
+| **Technical** | 10/10 | Low | The Haymaker Valley token is an SPL Token-2022 mint with a supply of 958,288,073.786637 tokens and 6 decimals. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens… |
+| **Governance / Economics** | 2/10 | High | The token's DEX liquidity stands at $17,376, with a 24-hour trading volume of $136,066, resulting in a Volume/Liquidity Ratio of 7.83. While this ratio is elevated, it does not meet the threshold for… |
+| **Upgrades** | 10/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are revoked, preventing any future changes to the token supply or account freeze status. As an SPL Token-2022, it does not have a… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1211 buys / 1242 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

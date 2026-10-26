@@ -2,14 +2,14 @@
 token: Identity.md
 ticker: IMD
 network: ethereum
-risk_score: 40
+risk_score: 35
 status: medium
 date: 2026-08-11
 ---
 
 # Identity.md (IMD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/identitymd-eth)
 
@@ -42,14 +42,14 @@ _🟡 1 Medium · ⚪ 1 Informational_
 
 ### `M-01` — Centralized Control Over Token Metadata  *(Severity: Medium · Status: Unresolved)*
 
-The `BridgedFP` contract allows the `onlyOwner` to update the token's `_updatableName` and `_updatableSymbol` via the `updateName`, `updateSymbol`, and `updateNameAndSymbol` functions. While this provides flexibility for branding or corrections, it introduces a single point of control. A compromised owner key or a malicious owner could change the token's name and symbol to something misleading, potentially causing confusion among users, facilitating phishing attempts, or damaging the project's reputation.
+Not confirmed by static analysis (the model's own reading of the source). The `BridgedFP` contract allows the `onlyOwner` to update the token's `_updatableName` and `_updatableSymbol` via the `updateName`, `updateSymbol`, and `updateNameAndSymbol` functions. While this provides flexibility for branding or corrections, it introduces a single point of control. A compromised owner key or a malicious owner could change the token's name and symbol to something misleading, potentially causing confusion among users, facilitating phishing attempts, or damaging the project's reputation.
 
 **Recommendation:** Implement robust security practices for the owner's private key, such as using a multi-signature wallet (e.g., Gnosis Safe) for the `_delegate` address. Consider whether the ability to change the name and symbol is strictly necessary post-deployment. If not, these functions could be removed or made immutable after an initial setup period. If dynamic updates are required, ensure clear communication channels are established to inform users of any changes.
 
 
 ### `I-01` — Reliance on External Contracts  *(Severity: Informational · Status: Unresolved)*
 
-The `BridgedFP` contract inherits significant functionality from external, widely-used libraries: `@openzeppelin/contracts/access/Ownable.sol` and `@layerzerolabs/oft-evm/contracts/OFT.sol`. While these libraries are generally considered secure and well-audited, any vulnerability discovered within them could directly impact the security and functionality of the `BridgedFP` contract. This represents a standard dependency risk.
+Not confirmed by static analysis (the model's own reading of the source). The `BridgedFP` contract inherits significant functionality from external, widely-used libraries: `@openzeppelin/contracts/access/Ownable.sol` and `@layerzerolabs/oft-evm/contracts/OFT.sol`. While these libraries are generally considered secure and well-audited, any vulnerability discovered within them could directly impact the security and functionality of the `BridgedFP` contract. This represents a standard dependency risk.
 
 **Recommendation:** Ensure that all external dependencies are kept up-to-date with their latest secure versions. Regularly monitor security advisories and audits related to OpenZeppelin Contracts and LayerZero's OFT library. While direct control over these external contracts is limited, awareness of their security posture is crucial.
 

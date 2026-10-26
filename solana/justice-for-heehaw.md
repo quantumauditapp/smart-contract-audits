@@ -2,14 +2,14 @@
 token: Justice for HeeHaw
 ticker: HEEHAW
 network: solana
-risk_score: 26
+risk_score: 9
 status: low
 date: 2026-09-05
 ---
 
 # Justice for HeeHaw (HEEHAW) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 26/100 — 🟢 Low Risk**
+> **Risk Score: 9/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/justice-for-heehaw-sol)
 
@@ -26,8 +26,8 @@ The Justice for HeeHaw token mint has revoked both mint and freeze authorities, 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Justice for HeeHaw token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing holder accounts can be… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a relatively low holder concentration, with the top 10 accounts holding 22.43% of the supply, which is below thresholds for high concentration risk. Liquidity stands at $192,820… |
-| **Upgrades** | 8/10 | Low | The token mint has no active mint or freeze authorities, preventing post-launch changes to supply or account states. Key Token-2022 extensions such as transfer hook and transfer fee are not present… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits a relatively low holder concentration, with the top 10 accounts holding 22.43% of the supply, which is below thresholds for high concentration risk. Liquidity stands at $192,820… |
+| **Upgrades** | 10/10 | Low | The token mint has no active mint or freeze authorities, preventing post-launch changes to supply or account states. Key Token-2022 extensions such as transfer hook and transfer fee are not present… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 5 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 8621 buys / 9567 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 5 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

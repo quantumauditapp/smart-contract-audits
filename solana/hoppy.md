@@ -83,11 +83,11 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 
 ### Is Hoppy  a scam?
 
-Based on automated analysis, Hoppy  scores 70/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Hoppy  scores 66/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Hoppy  safe to buy?
 
-Our scanner flagged a risk score of 70/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 66/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Hoppy  been audited?
 

@@ -2,14 +2,14 @@
 token: GTA VI
 ticker: GTA6
 network: solana
-risk_score: 20
+risk_score: 13
 status: low
 date: 2026-08-13
 ---
 
 # GTA VI (GTA6) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 20/100 — 🟢 Low Risk**
+> **Risk Score: 13/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gta-vi-sol)
 
@@ -26,8 +26,8 @@ The token mint for Take-Two Interactive Software - Backpack Securities (TTWO) ex
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The SPL token mint is configured with robust security features. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be… |
-| **Governance / Economics** | 6/10 | Medium | The token's economic profile shows moderate liquidity at $217,433 USD, with a 24-hour trading volume of $365,827 USD, resulting in a normal Volume/Liquidity Ratio of 1.68. Holder concentration is… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as indicated by the revoked mint and freeze authorities. There are no provisions for upgrading transfer fees or transfer hooks, and the token's metadata… |
+| **Governance / Economics** | 7/10 | Low | The token's economic profile shows moderate liquidity at $217,433 USD, with a 24-hour trading volume of $365,827 USD, resulting in a normal Volume/Liquidity Ratio of 1.68. Holder concentration is… |
+| **Upgrades** | 9/10 | Low | The token's core parameters are immutable, as indicated by the revoked mint and freeze authorities. There are no provisions for upgrading transfer fees or transfer hooks, and the token's metadata… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

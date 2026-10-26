@@ -2,14 +2,14 @@
 token: Hope This Moons Later
 ticker: HTML
 network: solana
-risk_score: 32
+risk_score: 20
 status: low
 date: 2026-06-21
 ---
 
 # Hope This Moons Later (HTML) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 32/100 — 🟢 Low Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hope-this-moons-later-sol)
 
@@ -26,8 +26,8 @@ This SPL Token-2022 mint, "Hope This Moons Later (HTML)", presents a low-risk pr
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint with both the mint authority and freeze authority revoked, indicating a fixed supply and immutability of account states. No transfer hook is active, and the… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a healthy liquidity of $13,211 USD, with a normal 24-hour volume to liquidity ratio of 0.48, suggesting organic trading activity. The DEX pair has been active for 205 days… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any further changes to the token's supply or account freezing capabilities. The metadata is immutable… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a healthy liquidity of $13,211 USD, with a normal 24-hour volume to liquidity ratio of 0.48, suggesting organic trading activity. The DEX pair has been active for 205 days… |
+| **Upgrades** | 10/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any further changes to the token's supply or account freezing capabilities. The metadata is immutable… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 695 buys / 331 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
@@ -80,7 +80,7 @@ Based on the provided data, we cannot definitively label Hope This Moons Later (
 
 ### Is Hope This Moons Later safe to buy?
 
-Hope This Moons Later (HTML) is assessed with a High Risk score of 51/100, indicating it is not considered safe to buy without significant caution. Key risk factors include the contract being unverified, which prevents transparent code review. Furthermore, the liquidity is not locked, meaning it could be withdrawn, potentially crashing the token's value. The concentrated ownership by the top 10 holders (50.8%) also poses a risk of market manipulation.
+Hope This Moons Later (HTML) is assessed with a Low Risk score of 20/100, indicating it is not considered safe to buy without significant caution. Key risk factors include the contract being unverified, which prevents transparent code review. Furthermore, the liquidity is not locked, meaning it could be withdrawn, potentially crashing the token's value. The concentrated ownership by the top 10 holders (50.8%) also poses a risk of market manipulation.
 
 ### Has Hope This Moons Later been audited?
 

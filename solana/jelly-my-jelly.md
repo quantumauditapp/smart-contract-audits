@@ -2,14 +2,14 @@
 token: jelly-my-jelly
 ticker: JELLYJELLY
 network: solana
-risk_score: 11
+risk_score: 1
 status: low
 date: 2026-09-03
 ---
 
 # jelly-my-jelly (JELLYJELLY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 11/100 — 🟢 Low Risk**
+> **Risk Score: 1/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jelly-my-jelly-sol)
 
@@ -25,8 +25,8 @@ This Solana SPL token mint has its mint and freeze authorities revoked, indicati
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The token is a standard SPL token operating under the `spl-token` program. Both the Mint Authority and Freeze Authority are revoked (None), which is a positive security characteristic as it prevents… |
-| **Governance / Economics** | 2/10 | High | The primary economic risk identified is high holder concentration, with the top 10 token accounts holding 74.96% of the total supply. This concentration makes the token susceptible to price… |
+| **Technical** | 10/10 | Low | The token is a standard SPL token operating under the `spl-token` program. Both the Mint Authority and Freeze Authority are revoked (None), which is a positive security characteristic as it prevents… |
+| **Governance / Economics** | 3/10 | High | The primary economic risk identified is high holder concentration, with the top 10 token accounts holding 74.96% of the total supply. This concentration makes the token susceptible to price… |
 | **Upgrades** | 8/10 | Low | The token exhibits a low upgrade risk profile. The Mint Authority and Freeze Authority have both been revoked, meaning no further changes can be made to the token's supply or account freeze status by… |
 
 ## LP Distribution

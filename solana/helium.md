@@ -2,14 +2,14 @@
 token: Helium
 ticker: HNT
 network: solana
-risk_score: 58
+risk_score: 48
 status: medium
 date: 2026-08-30
 ---
 
 # Helium (HNT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 58/100 — 🟡 Medium Risk**
+> **Risk Score: 48/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/helium-sol)
 
@@ -25,9 +25,9 @@ This audit of the Helium Network Token (HNT) mint identifies a critical risk due
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Helium Network Token (HNT) is an SPL token operating under the classic spl-token program. A significant technical risk is the active mint authority, held by… |
-| **Governance / Economics** | 1/10 | High | The economic stability of HNT shows moderate holder concentration, with the top 10 accounts holding 25.99% of the supply, which is below thresholds for high concern (7.4 Economic). The token has… |
-| **Upgrades** | 4/10 | Medium | The mint authority for HNT is currently active at 3QqEkX1juz4bW8mCQBMJLWjEpHqYawvbEUvpc6iwYom3, allowing for potential changes to the total supply (7.7 Upgrades). In contrast, the freeze authority… |
+| **Technical** | 8/10 | Low | The Helium Network Token (HNT) is an SPL token operating under the classic spl-token program. A significant technical risk is the active mint authority, held by… |
+| **Governance / Economics** | 2/10 | High | The economic stability of HNT shows moderate holder concentration, with the top 10 accounts holding 25.99% of the supply, which is below thresholds for high concern (7.4 Economic). The token has… |
+| **Upgrades** | 5/10 | Medium | The mint authority for HNT is currently active at 3QqEkX1juz4bW8mCQBMJLWjEpHqYawvbEUvpc6iwYom3, allowing for potential changes to the total supply (7.7 Upgrades). In contrast, the freeze authority… |
 
 ## LP Distribution
 

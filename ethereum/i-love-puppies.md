@@ -2,14 +2,14 @@
 token: I love puppies
 ticker: PUPPIES
 network: ethereum
-risk_score: 31
+risk_score: 0
 status: low
 date: 2026-08-06
 ---
 
 # I love puppies (PUPPIES) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 31/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/i-love-puppies-eth)
 
@@ -25,9 +25,9 @@ The puppies token contract implements a standard ERC-20 interface with custom ta
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract utilizes `SafeMath` for arithmetic operations, which is a good practice, although less critical in Solidity 0.8.x. A `lockTheSwap` modifier is implemented to prevent reentrancy during… |
-| **Governance / Economics** | 6/10 | Medium | The contract exhibits extreme centralization, with the `owner` having full control over all critical economic parameters, including tax rates, transaction limits, and wallet size limits (7.3 Access… |
-| **Upgrades** | 8/10 | Low | The contract is not designed with an upgrade mechanism (e.g., proxy pattern), meaning its logic cannot be changed after deployment (7.7 Upgrades). This eliminates upgrade-specific risks but also… |
+| **Technical** | 10/10 | Low | The contract utilizes `SafeMath` for arithmetic operations, which is a good practice, although less critical in Solidity 0.8.x. A `lockTheSwap` modifier is implemented to prevent reentrancy during… |
+| **Governance / Economics** | 10/10 | Low | The contract exhibits extreme centralization, with the `owner` having full control over all critical economic parameters, including tax rates, transaction limits, and wallet size limits (7.3 Access… |
+| **Upgrades** | 10/10 | Low | The contract is not designed with an upgrade mechanism (e.g., proxy pattern), meaning its logic cannot be changed after deployment (7.7 Upgrades). This eliminates upgrade-specific risks but also… |
 
 ## LP Distribution
 
@@ -38,60 +38,60 @@ The puppies token contract implements a standard ERC-20 interface with custom ta
 
 ## Security Findings
 
-_🔴 2 Critical · 🟠 2 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `C-01` — Excessive Centralized Control by Owner  *(Severity: Critical · Status: Unresolved)*
-
-The contract owner possesses extensive privileges, including the ability to set initial and final buy/sell taxes, reduce tax thresholds, modify maximum transaction and wallet sizes, exclude/include addresses from fees, and manage a 'bots' blacklist. This level of control allows the owner to unilaterally alter the token's economics and restrict user interactions, posing a significant risk of manipulation or a 'rug pull' scenario. For example, the owner can set taxes to 100% or blacklist all users, effectively trapping funds.
-
-**Recommendation:** Implement a timelock for all critical owner-controlled functions to introduce a delay before changes take effect, allowing users to react. Consider decentralizing control over key parameters through a multi-signature wallet or a community governance mechanism. Clearly document all owner privileges and their intended use.
-
-
-### `C-02` — Tax Wallet Draining and Lack of Liquidity Growth  *(Severity: Critical · Status: Unresolved)*
-
-The contract's tax mechanism swaps collected tokens for ETH and then sends this ETH directly to the `_taxWallet` (controlled by the owner) via `sendETHToFee`. There is no provision to add this ETH back to the liquidity pool. This design means that all collected taxes are effectively siphoned off to the owner's wallet, leading to a gradual drain of value from the token's liquidity pool over time. This can severely impact the token's price stability and is a common pattern in 'rug pull' schemes.
-
-**Recommendation:** Modify the tax mechanism to allocate a portion or all of the collected ETH to reinforce the liquidity pool (e.g., by pairing it with tokens and adding it to Uniswap). Alternatively, if the ETH is intended for project development, it should be sent to a transparent, multi-signature treasury with clear spending policies and public reporting.
-
-
-### `H-01` — Abuse Potential of Anti-Bot/Anti-Whale Mechanisms  *(Severity: High · Status: Unresolved)*
-
-The `_maxTxAmount`, `_maxWalletSize`, and `bots` mapping are intended to prevent malicious bot activity and whale manipulation. However, these parameters are fully controllable by the owner. The owner can arbitrarily set these limits to extremely low values or add legitimate user addresses to the `bots` list, effectively preventing users from buying, selling, or holding tokens, thereby trapping their funds or manipulating market dynamics.
-
-**Recommendation:** If these mechanisms are deemed necessary, consider making the `_maxTxAmount` and `_maxWalletSize` immutable after a certain period or subject to a timelock. The `bots` mapping should be managed with extreme caution and transparency, ideally with a multi-signature wallet or community oversight, and clear criteria for inclusion/exclusion.
-
-
-### `H-02` — Initial Trading Restrictions and Manipulation Risk  *(Severity: High · Status: Unresolved)*
-
-The contract includes `_preventSwapBefore`, `_buyCount`, `tradingOpen`, and `swapEnabled` flags, all controlled by the owner. Trading is initially closed and must be opened by the owner. This gives the owner significant control over the initial trading phase, allowing for potential manipulation such as front-running the `openTrading` call or controlling early price action by selectively enabling/disabling swaps and adjusting taxes.
-
-**Recommendation:** Clearly communicate the intended use and timeline for these initial trading restrictions. Consider making the `openTrading` function callable only once and making `_preventSwapBefore` immutable after a certain block number or timestamp. Ensure transparency around the activation of trading and swap functionalities.
-
+_🟡 6 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Sell Limit per Block Causes Denial of Service  *(Severity: Medium · Status: Unresolved)*
 
-The `_transfer` function implements a `require(sellCount < 3, "Only 3 sells per block!")` restriction. This limits the number of sell transactions that can occur within a single block. While intended to prevent rapid price drops, this mechanism can lead to a denial of service for legitimate users, especially during periods of high market volatility or when many users attempt to sell simultaneously, potentially trapping their tokens.
+Not confirmed by static analysis (the model's own reading of the source). The `_transfer` function implements a `require(sellCount < 3, "Only 3 sells per block!")` restriction. This limits the number of sell transactions that can occur within a single block. While intended to prevent rapid price drops, this mechanism can lead to a denial of service for legitimate users, especially during periods of high market volatility or when many users attempt to sell simultaneously, potentially trapping their tokens.
 
 **Recommendation:** Re-evaluate the necessity and impact of the 'sells per block' limit. If a limit is critical, consider alternative mechanisms that are less prone to denial of service, such as a cooldown period per wallet or a dynamic limit based on liquidity. Ensure that any such mechanism does not disproportionately affect smaller holders or create an unfair selling environment.
 
 
 ### `M-02` — Lack of Event Emission for Critical Parameter Changes  *(Severity: Medium · Status: Unresolved)*
 
-Many `onlyOwner` functions that modify critical contract parameters, such as `setInitialBuyTax`, `setMaxTxAmount`, `setMaxWalletSize`, and `setBots`, do not emit corresponding events. This lack of event emission makes it difficult for external parties (e.g., users, block explorers, monitoring tools) to track changes to the contract's operational parameters on-chain, reducing transparency and auditability.
+Not confirmed by static analysis (the model's own reading of the source). Many `onlyOwner` functions that modify critical contract parameters, such as `setInitialBuyTax`, `setMaxTxAmount`, `setMaxWalletSize`, and `setBots`, do not emit corresponding events. This lack of event emission makes it difficult for external parties (e.g., users, block explorers, monitoring tools) to track changes to the contract's operational parameters on-chain, reducing transparency and auditability.
 
 **Recommendation:** Emit specific events for every function that modifies a critical contract parameter. These events should include the old and new values of the parameter, along with the address of the caller and a timestamp, to provide a clear and auditable history of changes.
 
 
+### `M-03` — Excessive Centralized Control by Owner  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract owner possesses extensive privileges, including the ability to set initial and final buy/sell taxes, reduce tax thresholds, modify maximum transaction and wallet sizes, exclude/include addresses from fees, and manage a 'bots' blacklist. This level of control allows the owner to unilaterally alter the token's economics and restrict user interactions, posing a significant risk of manipulation or a 'rug pull' scenario. For example, the owner can set taxes to 100% or blacklist all users, effectively trapping funds.
+
+**Recommendation:** Implement a timelock for all critical owner-controlled functions to introduce a delay before changes take effect, allowing users to react. Consider decentralizing control over key parameters through a multi-signature wallet or a community governance mechanism. Clearly document all owner privileges and their intended use.
+
+
+### `M-04` — Tax Wallet Draining and Lack of Liquidity Growth  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract's tax mechanism swaps collected tokens for ETH and then sends this ETH directly to the `_taxWallet` (controlled by the owner) via `sendETHToFee`. There is no provision to add this ETH back to the liquidity pool. This design means that all collected taxes are effectively siphoned off to the owner's wallet, leading to a gradual drain of value from the token's liquidity pool over time. This can severely impact the token's price stability and is a common pattern in 'rug pull' schemes.
+
+**Recommendation:** Modify the tax mechanism to allocate a portion or all of the collected ETH to reinforce the liquidity pool (e.g., by pairing it with tokens and adding it to Uniswap). Alternatively, if the ETH is intended for project development, it should be sent to a transparent, multi-signature treasury with clear spending policies and public reporting.
+
+
+### `M-05` — Abuse Potential of Anti-Bot/Anti-Whale Mechanisms  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_maxTxAmount`, `_maxWalletSize`, and `bots` mapping are intended to prevent malicious bot activity and whale manipulation. However, these parameters are fully controllable by the owner. The owner can arbitrarily set these limits to extremely low values or add legitimate user addresses to the `bots` list, effectively preventing users from buying, selling, or holding tokens, thereby trapping their funds or manipulating market dynamics.
+
+**Recommendation:** If these mechanisms are deemed necessary, consider making the `_maxTxAmount` and `_maxWalletSize` immutable after a certain period or subject to a timelock. The `bots` mapping should be managed with extreme caution and transparency, ideally with a multi-signature wallet or community oversight, and clear criteria for inclusion/exclusion.
+
+
+### `M-06` — Initial Trading Restrictions and Manipulation Risk  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract includes `_preventSwapBefore`, `_buyCount`, `tradingOpen`, and `swapEnabled` flags, all controlled by the owner. Trading is initially closed and must be opened by the owner. This gives the owner significant control over the initial trading phase, allowing for potential manipulation such as front-running the `openTrading` call or controlling early price action by selectively enabling/disabling swaps and adjusting taxes.
+
+**Recommendation:** Clearly communicate the intended use and timeline for these initial trading restrictions. Consider making the `openTrading` function callable only once and making `_preventSwapBefore` immutable after a certain block number or timestamp. Ensure transparency around the activation of trading and swap functionalities.
+
+
 ### `L-01` — Hardcoded Uniswap Router Address in `openTrading`  *(Severity: Low · Status: Unresolved)*
 
-The Uniswap V2 Router address (0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D) is hardcoded within the `openTrading` function. While this is a common and stable address for Uniswap V2 on Ethereum mainnet, hardcoding can be inflexible if the router address ever changes or if the contract were to be deployed on a different network where this address is invalid.
+Not confirmed by static analysis (the model's own reading of the source). The Uniswap V2 Router address (0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D) is hardcoded within the `openTrading` function. While this is a common and stable address for Uniswap V2 on Ethereum mainnet, hardcoding can be inflexible if the router address ever changes or if the contract were to be deployed on a different network where this address is invalid.
 
 **Recommendation:** Consider making the Uniswap router address configurable by the owner (e.g., via a `setRouter` function) or setting it in the constructor. If the contract is intended for a single network, ensure the hardcoded address is correct for that network. For multi-chain deployments, a configurable address is essential.
 
 
 ### `I-01` — Redundant Use of SafeMath in Solidity 0.8.x  *(Severity: Informational · Status: Unresolved)*
 
-The contract explicitly uses the `SafeMath` library for arithmetic operations. While `SafeMath` is crucial for preventing integer overflow/underflow in older Solidity versions (prior to 0.8.0), Solidity 0.8.x and later versions include native overflow and underflow checks by default. Therefore, the explicit use of `SafeMath` for basic operations like `add`, `sub`, `mul`, and `div` is largely redundant and adds unnecessary gas cost and code complexity.
+Not confirmed by static analysis (the model's own reading of the source). The contract explicitly uses the `SafeMath` library for arithmetic operations. While `SafeMath` is crucial for preventing integer overflow/underflow in older Solidity versions (prior to 0.8.0), Solidity 0.8.x and later versions include native overflow and underflow checks by default. Therefore, the explicit use of `SafeMath` for basic operations like `add`, `sub`, `mul`, and `div` is largely redundant and adds unnecessary gas cost and code complexity.
 
 **Recommendation:** For Solidity 0.8.x and above, consider removing the `SafeMath` library and relying on the compiler's native overflow/underflow checks. This can reduce gas costs and simplify the codebase without compromising security for standard arithmetic. Ensure all custom or complex arithmetic logic is still thoroughly reviewed for potential edge cases.
 

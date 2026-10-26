@@ -2,14 +2,14 @@
 token: Kamino
 ticker: KMNO
 network: solana
-risk_score: 20
+risk_score: 11
 status: low
 date: 2026-09-12
 ---
 
 # Kamino (KMNO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 20/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kamino-sol)
 
@@ -26,8 +26,8 @@ The Kamino (KMNO) SPL token mint has its mint and freeze authorities revoked, wh
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Kamino (KMNO) token is implemented using the standard SPL Token Program (v3) on Solana. Both the mint authority and freeze authority have been revoked, preventing further token issuance or… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a medium level of holder concentration, with the top 10 token accounts collectively holding 53.98% of the total supply. This concentration could lead to price volatility if large… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the Kamino (KMNO) token have both been revoked, meaning no further tokens can be minted and no accounts can be frozen. This configuration provides a fixed… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a medium level of holder concentration, with the top 10 token accounts collectively holding 53.98% of the total supply. This concentration could lead to price volatility if large… |
+| **Upgrades** | 9/10 | Low | The mint authority and freeze authority for the Kamino (KMNO) token have both been revoked, meaning no further tokens can be minted and no accounts can be frozen. This configuration provides a fixed… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: KarratCoin
 ticker: KARRAT
 network: ethereum
-risk_score: 39
+risk_score: 35
 status: medium
 date: 2026-09-27
 ---
 
 # KarratCoin (KARRAT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/karratcoin-eth)
 
@@ -42,28 +42,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Non-Upgradeable Contract Design  *(Severity: Low · Status: Unresolved)*
 
-The Karrat token contract is deployed as a standard, non-upgradeable contract. While this eliminates upgrade-related risks (7.7 Upgrades), it means the contract's logic cannot be modified or patched in the future without a new deployment and token migration. This lack of flexibility could be a concern if critical bugs are discovered or if new features are required post-deployment (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The Karrat token contract is deployed as a standard, non-upgradeable contract. While this eliminates upgrade-related risks (7.7 Upgrades), it means the contract's logic cannot be modified or patched in the future without a new deployment and token migration. This lack of flexibility could be a concern if critical bugs are discovered or if new features are required post-deployment (7.8 Operations).
 
 **Recommendation:** Acknowledge the implications of a non-upgradeable design. For core token contracts, this is often an acceptable trade-off for simplicity and reduced attack surface. If future flexibility is desired, consider an upgradeable proxy pattern for future contracts, but be aware of the added complexity and attack vectors.
 
 
 ### `L-02` — Centralized Initial Token Distribution  *(Severity: Low · Status: Unresolved)*
 
-The entire token supply (1 billion KARRAT) is minted to two specified `MULTISIGONE` and `MULTISIGTWO` addresses in the constructor. This centralizes initial control of the token supply, meaning the security of these two multisig addresses is critical to the overall integrity and safety of the token (7.3 Access Control, 7.4 Economic). Compromise of these addresses could lead to the loss or misuse of the entire token supply.
+Not confirmed by static analysis (the model's own reading of the source). The entire token supply (1 billion KARRAT) is minted to two specified `MULTISIGONE` and `MULTISIGTWO` addresses in the constructor. This centralizes initial control of the token supply, meaning the security of these two multisig addresses is critical to the overall integrity and safety of the token (7.3 Access Control, 7.4 Economic). Compromise of these addresses could lead to the loss or misuse of the entire token supply.
 
 **Recommendation:** Ensure that the `MULTISIGONE` and `MULTISIGTWO` addresses are controlled by robust, multi-signature wallets with strong operational security practices. Implement strict internal policies and procedures for managing these keys and executing transactions. This is a design choice, so the recommendation focuses on mitigating the associated operational risk.
 
 
 ### `I-01` — High Reliance on OpenZeppelin Standard Libraries  *(Severity: Informational · Status: Unresolved)*
 
-The Karrat contract heavily relies on battle-tested and widely audited OpenZeppelin contracts (`ERC20`, `ERC20Permit`, `ERC20Votes`). This significantly reduces the attack surface and the likelihood of common vulnerabilities being present in the core token logic (7.2 Code Security). The custom logic is minimal, primarily consisting of constructor initialization and necessary overrides.
+Not confirmed by static analysis (the model's own reading of the source). The Karrat contract heavily relies on battle-tested and widely audited OpenZeppelin contracts (`ERC20`, `ERC20Permit`, `ERC20Votes`). This significantly reduces the attack surface and the likelihood of common vulnerabilities being present in the core token logic (7.2 Code Security). The custom logic is minimal, primarily consisting of constructor initialization and necessary overrides.
 
 **Recommendation:** Continue to leverage well-audited libraries for core functionalities. Regularly monitor OpenZeppelin's security advisories and updates, although direct upgrades are not possible for this non-upgradeable contract.
 
 
 ### `I-02` — ERC20Votes Checkpoint Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The `ERC20Votes` implementation uses `block.number` for its checkpointing mechanism to track voting power over time. While this is a standard and gas-efficient approach, `block.number` can be subject to minor manipulation by miners (e.g., delaying a block or including a transaction in a slightly earlier/later block) (7.4 Economic). For most governance applications, this level of manipulation is not a significant concern, but it's a known characteristic of `block.number` based systems.
+Not confirmed by static analysis (the model's own reading of the source). The `ERC20Votes` implementation uses `block.number` for its checkpointing mechanism to track voting power over time. While this is a standard and gas-efficient approach, `block.number` can be subject to minor manipulation by miners (e.g., delaying a block or including a transaction in a slightly earlier/later block) (7.4 Economic). For most governance applications, this level of manipulation is not a significant concern, but it's a known characteristic of `block.number` based systems.
 
 **Recommendation:** No direct action is required as this is a standard and accepted design pattern for `ERC20Votes`. Be aware of this characteristic if extremely precise, unmanipulable timing for vote calculations becomes a critical requirement for future governance mechanisms.
 

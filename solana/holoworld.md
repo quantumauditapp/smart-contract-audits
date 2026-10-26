@@ -2,14 +2,14 @@
 token: Holoworld
 ticker: HOLO
 network: solana
-risk_score: 78
-status: high
+risk_score: 58
+status: medium
 date: 2026-08-12
 ---
 
 # Holoworld (HOLO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 78/100 — 🟠 High Risk**
+> **Risk Score: 58/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/holoworld-sol)
 
@@ -25,9 +25,9 @@ The Holoworld AI (HOLO) token mint has a critical risk due to the unrevoked mint
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The token is an SPL Token-2022 mint with a supply of 1,085,674,379.530836439 tokens and 9 decimals. A critical vulnerability exists as the mint authority… |
-| **Governance / Economics** | 1/10 | High | The token exhibits high holder concentration, with the top 10 accounts holding 87.63% of the total supply, indicating a significant risk of price volatility from large sell-offs (7.4 Economic). Total… |
-| **Upgrades** | 4/10 | Medium | The token utilizes the spl-token-2022 program. While the mint authority is active (as noted in the technical section), the freeze authority has been revoked, preventing freezing of accounts. Metadata… |
+| **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint with a supply of 1,085,674,379.530836439 tokens and 9 decimals. A critical vulnerability exists as the mint authority… |
+| **Governance / Economics** | 3/10 | High | The token exhibits high holder concentration, with the top 10 accounts holding 87.63% of the total supply, indicating a significant risk of price volatility from large sell-offs (7.4 Economic). Total… |
+| **Upgrades** | 5/10 | Medium | The token utilizes the spl-token-2022 program. While the mint authority is active (as noted in the technical section), the freeze authority has been revoked, preventing freezing of accounts. Metadata… |
 
 ## Security Findings
 

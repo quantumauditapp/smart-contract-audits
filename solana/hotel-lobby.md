@@ -2,14 +2,14 @@
 token: Hotel Lobby
 ticker: LOBBY
 network: solana
-risk_score: 14
+risk_score: 0
 status: low
 date: 2026-09-22
 ---
 
 # Hotel Lobby (LOBBY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 14/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hotel-lobby-sol)
 
@@ -26,8 +26,8 @@ This audit of the Hotel Lobby (Lobby) SPL Token Mint identifies a medium risk pr
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Hotel Lobby (Lobby) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, preventing further token issuance or freezing of holder accounts. No Transfer… |
-| **Governance / Economics** | 6/10 | Medium | The token has a total DEX liquidity of $51,084, which is moderate. However, the 24-hour volume of $492,785 results in a Volume/Liquidity Ratio of 9.65, suggesting significant trading activity… |
-| **Upgrades** | 8/10 | Low | The token's metadata is immutable, meaning its name, symbol, or image cannot be changed post-launch. There are no upgradable features such as transfer fee upgradability or transfer hook… |
+| **Governance / Economics** | 9/10 | Low | The token has a total DEX liquidity of $51,084, which is moderate. However, the 24-hour volume of $492,785 results in a Volume/Liquidity Ratio of 9.65, suggesting significant trading activity… |
+| **Upgrades** | 10/10 | Low | The token's metadata is immutable, meaning its name, symbol, or image cannot be changed post-launch. There are no upgradable features such as transfer fee upgradability or transfer hook… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2791 buys / 2381 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

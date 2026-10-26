@@ -2,14 +2,14 @@
 token: HarryPotterObamaSonic10Inu
 ticker: BITCOIN
 network: ethereum
-risk_score: 61
-status: medium
+risk_score: 0
+status: low
 date: 2026-07-29
 ---
 
 # HarryPotterObamaSonic10Inu (BITCOIN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 61/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/harrypotterobamasonic10inu-eth)
 
@@ -25,9 +25,9 @@ The HarryPotterObamaSonic10Inu (BITCOIN) token contract exhibits severe centrali
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 2/10 | High | The contract implements a standard ERC-20 token with additional features like transaction taxes, anti-whale limits, and anti-bot mechanisms (7.2 Code Security). It utilizes SafeMath for arithmetic… |
-| **Governance / Economics** | 5/10 | Medium | The contract's economic model is highly centralized and vulnerable to owner manipulation (7.4 Economic). The owner has absolute control over critical parameters, including the ability to set buy and… |
-| **Upgrades** | 7/10 | Low | The contract is not designed with an upgrade mechanism (7.7 Upgrades). This means that once deployed, its logic cannot be altered. While this eliminates upgrade-related risks, it also means that any… |
+| **Technical** | 10/10 | Low | The contract implements a standard ERC-20 token with additional features like transaction taxes, anti-whale limits, and anti-bot mechanisms (7.2 Code Security). It utilizes SafeMath for arithmetic… |
+| **Governance / Economics** | 10/10 | Low | The contract's economic model is highly centralized and vulnerable to owner manipulation (7.4 Economic). The owner has absolute control over critical parameters, including the ability to set buy and… |
+| **Upgrades** | 10/10 | Low | The contract is not designed with an upgrade mechanism (7.7 Upgrades). This means that once deployed, its logic cannot be altered. While this eliminates upgrade-related risks, it also means that any… |
 
 ## LP Distribution
 
@@ -38,53 +38,53 @@ The HarryPotterObamaSonic10Inu (BITCOIN) token contract exhibits severe centrali
 
 ## Security Findings
 
-_🔴 3 Critical · 🟠 2 High · 🟡 1 Medium · 🟢 1 Low_
-
-### `C-01` — Owner Can Set Taxes to 100% (Rug Pull Vector)  *(Severity: Critical · Status: Unresolved)*
-
-The `setTaxes` function allows the contract owner to set `_initialBuyTax`, `_initialSellTax`, `_finalBuyTax`, and `_finalSellTax` to arbitrary values. This includes the ability to set taxes to 100%, which would effectively prevent users from selling their tokens (100% sell tax) or buying new tokens (100% buy tax). This constitutes a direct rug pull vector, allowing the owner to drain liquidity or freeze user funds.
-
-**Recommendation:** Remove or significantly restrict the owner's ability to modify tax percentages. If taxes are a core part of the tokenomics, they should be immutable or subject to a decentralized governance mechanism with a timelock. If mutable, implement strict upper bounds (e.g., max 25%) to prevent malicious exploitation.
-
-
-### `C-02` — Owner Can Blacklist/Whitelist Any Address  *(Severity: Critical · Status: Unresolved)*
-
-The `setBots` function allows the contract owner to add or remove any address from the `bots` mapping. Addresses marked as 'bots' are prevented from transferring tokens in the `_transfer` function. This grants the owner the power to arbitrarily blacklist any user, effectively freezing their tokens and preventing them from participating in trading. This is a severe centralization and censorship risk.
-
-**Recommendation:** Remove the `setBots` function entirely. Decentralized tokens should not have the ability to arbitrarily freeze user funds or prevent transfers. If anti-bot measures are desired, they should be implemented in a non-custodial and transparent manner, ideally without direct owner intervention on individual addresses.
-
-
-### `C-03` — Owner Can Manipulate Trading and Liquidity  *(Severity: Critical · Status: Unresolved)*
-
-The `openTrading` function, callable only by the owner, initializes the Uniswap router and pair, and enables trading. This gives the owner complete control over when trading starts. Furthermore, the owner can update `_maxTxAmount`, `_maxWalletSize`, `_taxSwapThreshold`, and `_maxTaxSwap` at any time. This allows the owner to manipulate market conditions, prevent large transactions, or even halt trading by setting prohibitive limits, leading to potential market manipulation and denial of service for users.
-
-**Recommendation:** Decentralize or remove the `openTrading` function. Once trading is enabled, critical parameters like transaction limits and swap thresholds should be immutable or controlled by a decentralized governance mechanism with a timelock. If mutable, implement reasonable bounds and timelocks for changes.
-
-
-### `H-01` — Centralized Control Over Fee Exclusions  *(Severity: High · Status: Unresolved)*
-
-The `excludeFromFee` function allows the owner to exempt any address from paying transaction fees. While the owner, contract, and tax wallet are initially excluded, the ability to add arbitrary addresses to this exclusion list introduces a significant centralization risk. The owner could exclude favored addresses or even themselves from all taxes, creating an unfair advantage or enabling further manipulation.
-
-**Recommendation:** Limit fee exclusion to essential protocol addresses (e.g., the contract itself, the liquidity pair). If other exclusions are necessary, they should be immutable or subject to a transparent, decentralized governance process.
-
-
-### `H-02` — Transfer Delay Can Be Arbitrarily Enabled/Disabled  *(Severity: High · Status: Unresolved)*
-
-The `setTransferDelayEnabled` function allows the owner to enable or disable the `transferDelayEnabled` mechanism at will. This mechanism, when active, prevents holders from transferring tokens within a certain timeframe after their last transfer. While intended as an anti-dump measure, the owner's unilateral control over its activation/deactivation can be used to selectively hinder trading for certain periods, potentially impacting market stability or user liquidity without warning.
-
-**Recommendation:** If a transfer delay is a core feature, its activation and deactivation should be immutable or controlled by a decentralized governance mechanism with a timelock. Arbitrary owner control over such a significant trading restriction is a high risk.
-
+_🟡 6 Medium · 🟢 1 Low_
 
 ### `M-01` — Potential for Stuck ETH in `swapAndLiquify`  *(Severity: Medium · Status: Unresolved)*
 
-In the `swapAndLiquify` function, after `swapTokensForEth` is called, the contract attempts to add liquidity and then transfer the remaining ETH to `_taxWallet`. If the `addLiquidity` call fails (e.g., due to slippage, insufficient ETH, or external router issues), the remaining ETH might not be fully utilized for liquidity. While `_taxWallet.transfer` attempts to send the remaining balance, if `_taxWallet` is a contract that rejects ETH, or if there's an unexpected revert, some ETH could become stuck in the contract, requiring manual `rescueETH` by the owner.
+Not confirmed by static analysis (the model's own reading of the source). In the `swapAndLiquify` function, after `swapTokensForEth` is called, the contract attempts to add liquidity and then transfer the remaining ETH to `_taxWallet`. If the `addLiquidity` call fails (e.g., due to slippage, insufficient ETH, or external router issues), the remaining ETH might not be fully utilized for liquidity. While `_taxWallet.transfer` attempts to send the remaining balance, if `_taxWallet` is a contract that rejects ETH, or if there's an unexpected revert, some ETH could become stuck in the contract, requiring manual `rescueETH` by the owner.
 
 **Recommendation:** Implement more robust error handling or fallback mechanisms within `swapAndLiquify`. Consider adding checks for successful liquidity addition and potentially a retry mechanism or a more explicit way to handle leftover ETH if `addLiquidity` fails. Ensure `_taxWallet` is capable of receiving ETH or add a fallback for rejected transfers.
 
 
+### `M-02` — Owner Can Set Taxes to 100% (Rug Pull Vector)  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `setTaxes` function allows the contract owner to set `_initialBuyTax`, `_initialSellTax`, `_finalBuyTax`, and `_finalSellTax` to arbitrary values. This includes the ability to set taxes to 100%, which would effectively prevent users from selling their tokens (100% sell tax) or buying new tokens (100% buy tax). This constitutes a direct rug pull vector, allowing the owner to drain liquidity or freeze user funds.
+
+**Recommendation:** Remove or significantly restrict the owner's ability to modify tax percentages. If taxes are a core part of the tokenomics, they should be immutable or subject to a decentralized governance mechanism with a timelock. If mutable, implement strict upper bounds (e.g., max 25%) to prevent malicious exploitation.
+
+
+### `M-03` — Owner Can Blacklist/Whitelist Any Address  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `setBots` function allows the contract owner to add or remove any address from the `bots` mapping. Addresses marked as 'bots' are prevented from transferring tokens in the `_transfer` function. This grants the owner the power to arbitrarily blacklist any user, effectively freezing their tokens and preventing them from participating in trading. This is a severe centralization and censorship risk.
+
+**Recommendation:** Remove the `setBots` function entirely. Decentralized tokens should not have the ability to arbitrarily freeze user funds or prevent transfers. If anti-bot measures are desired, they should be implemented in a non-custodial and transparent manner, ideally without direct owner intervention on individual addresses.
+
+
+### `M-04` — Owner Can Manipulate Trading and Liquidity  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `openTrading` function, callable only by the owner, initializes the Uniswap router and pair, and enables trading. This gives the owner complete control over when trading starts. Furthermore, the owner can update `_maxTxAmount`, `_maxWalletSize`, `_taxSwapThreshold`, and `_maxTaxSwap` at any time. This allows the owner to manipulate market conditions, prevent large transactions, or even halt trading by setting prohibitive limits, leading to potential market manipulation and denial of service for users.
+
+**Recommendation:** Decentralize or remove the `openTrading` function. Once trading is enabled, critical parameters like transaction limits and swap thresholds should be immutable or controlled by a decentralized governance mechanism with a timelock. If mutable, implement reasonable bounds and timelocks for changes.
+
+
+### `M-05` — Centralized Control Over Fee Exclusions  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `excludeFromFee` function allows the owner to exempt any address from paying transaction fees. While the owner, contract, and tax wallet are initially excluded, the ability to add arbitrary addresses to this exclusion list introduces a significant centralization risk. The owner could exclude favored addresses or even themselves from all taxes, creating an unfair advantage or enabling further manipulation.
+
+**Recommendation:** Limit fee exclusion to essential protocol addresses (e.g., the contract itself, the liquidity pair). If other exclusions are necessary, they should be immutable or subject to a transparent, decentralized governance process.
+
+
+### `M-06` — Transfer Delay Can Be Arbitrarily Enabled/Disabled  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `setTransferDelayEnabled` function allows the owner to enable or disable the `transferDelayEnabled` mechanism at will. This mechanism, when active, prevents holders from transferring tokens within a certain timeframe after their last transfer. While intended as an anti-dump measure, the owner's unilateral control over its activation/deactivation can be used to selectively hinder trading for certain periods, potentially impacting market stability or user liquidity without warning.
+
+**Recommendation:** If a transfer delay is a core feature, its activation and deactivation should be immutable or controlled by a decentralized governance mechanism with a timelock. Arbitrary owner control over such a significant trading restriction is a high risk.
+
+
 ### `L-01` — Missing SPDX License Identifier  *(Severity: Low · Status: Unresolved)*
 
-The contract uses `// SPDX-License-Identifier: NONE`. While technically valid, it's generally recommended to use a standard SPDX license identifier (e.g., MIT, GPL-3.0) to clarify the licensing terms of the code. Using 'NONE' can lead to ambiguity regarding intellectual property rights and usage permissions.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses `// SPDX-License-Identifier: NONE`. While technically valid, it's generally recommended to use a standard SPDX license identifier (e.g., MIT, GPL-3.0) to clarify the licensing terms of the code. Using 'NONE' can lead to ambiguity regarding intellectual property rights and usage permissions.
 
 **Recommendation:** Replace `// SPDX-License-Identifier: NONE` with a standard and appropriate SPDX license identifier, such as `// SPDX-License-Identifier: MIT`.
 

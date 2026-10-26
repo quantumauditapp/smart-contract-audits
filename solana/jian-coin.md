@@ -2,14 +2,14 @@
 token: JIAN COIN
 ticker: JIANCO
 network: solana
-risk_score: 22
+risk_score: 17
 status: low
 date: 2026-09-26
 ---
 
 # JIAN COIN (JIANCO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 22/100 — 🟢 Low Risk**
+> **Risk Score: 17/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jian-coin-sol)
 

@@ -2,14 +2,14 @@
 token: Highstreet token
 ticker: HIGH
 network: ethereum
-risk_score: 40
+risk_score: 38
 status: medium
 date: 2026-08-16
 ---
 
 # Highstreet token (HIGH) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/highstreet-token-eth)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Lack of Emergency Pause Functionality  *(Severity: Low · Status: Unresolved)*
 
-The `HIGH` token contract, being a standard ERC-20, does not include a mechanism to pause transfers or other critical functions in case of an emergency (e.g., a critical vulnerability discovered in an integrated DeFi protocol, or a major market manipulation event). While not a direct vulnerability in the token contract itself, the absence of such a feature can limit the project's ability to react to unforeseen circumstances, potentially mitigating larger losses.
+Not confirmed by static analysis (the model's own reading of the source). The `HIGH` token contract, being a standard ERC-20, does not include a mechanism to pause transfers or other critical functions in case of an emergency (e.g., a critical vulnerability discovered in an integrated DeFi protocol, or a major market manipulation event). While not a direct vulnerability in the token contract itself, the absence of such a feature can limit the project's ability to react to unforeseen circumstances, potentially mitigating larger losses.
 
 **Recommendation:** Consider implementing a pausable mechanism (e.g., using OpenZeppelin's `Pausable` module) to allow a trusted role (e.g., a multi-sig wallet) to temporarily halt token transfers. This should be used judiciously and only in extreme emergencies, with clear communication to the community.
 
 
 ### `I-01` — Centralized Initial Token Distribution  *(Severity: Informational · Status: Unresolved)*
 
-The `HIGH` token's entire supply (100,000,000 * 1e18) is minted to a single `minter` address during contract deployment. This design choice results in a highly centralized initial distribution, where one address holds 100% of the token supply. While not a technical vulnerability, it implies significant control by the `minter` over the token's initial market dynamics and potential for large-scale movements.
+Not confirmed by static analysis (the model's own reading of the source). The `HIGH` token's entire supply (100,000,000 * 1e18) is minted to a single `minter` address during contract deployment. This design choice results in a highly centralized initial distribution, where one address holds 100% of the token supply. While not a technical vulnerability, it implies significant control by the `minter` over the token's initial market dynamics and potential for large-scale movements.
 
 **Recommendation:** Ensure the `minter` address is a secure, multi-signature wallet controlled by trusted parties. Clearly communicate the distribution strategy and the role of the `minter` address to the community to manage expectations regarding centralization and potential market impact.
 
 
 ### `I-02` — Immutability and Lack of Administrative Flexibility  *(Severity: Informational · Status: Unresolved)*
 
-The `HIGH` token contract is deployed as a standalone, non-upgradeable contract with no administrative functions beyond the standard ERC-20 interface. There are no owner-controlled `mint`, `burn`, `setTax`, or similar functions. This immutability ensures predictable behavior and reduces attack surface, but it also means the contract cannot be modified or enhanced post-deployment, nor can any administrative actions be taken (e.g., recovering accidentally sent tokens, adjusting parameters).
+Not confirmed by static analysis (the model's own reading of the source). The `HIGH` token contract is deployed as a standalone, non-upgradeable contract with no administrative functions beyond the standard ERC-20 interface. There are no owner-controlled `mint`, `burn`, `setTax`, or similar functions. This immutability ensures predictable behavior and reduces attack surface, but it also means the contract cannot be modified or enhanced post-deployment, nor can any administrative actions be taken (e.g., recovering accidentally sent tokens, adjusting parameters).
 
 **Recommendation:** This is a fundamental design choice. If immutability is the desired goal, ensure all design decisions are final and thoroughly reviewed. If future flexibility or limited administrative control is ever anticipated, consider an upgradeable proxy pattern or adding specific, carefully scoped administrative functions (e.g., `recoverERC20`) controlled by a multi-signature wallet.
 

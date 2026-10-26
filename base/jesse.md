@@ -2,14 +2,14 @@
 token: jesse
 ticker: JESSE
 network: base
-risk_score: 63
+risk_score: 38
 status: medium
 date: 2026-08-31
 ---
 
 # jesse (JESSE) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 63/100 — 🟡 Medium Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jesse-base)
 
@@ -25,8 +25,8 @@ The audit of the CreatorCoin and BaseCoin contracts identified a critical archit
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The technical architecture of CreatorCoin, inheriting from BaseCoin, is generally well-structured, leveraging OpenZeppelin contracts for ERC20 and access control. The vesting logic in CreatorCoin is… |
-| **Governance / Economics** | 1/10 | High | The economic model for CreatorCoin incorporates a vesting schedule for creator supply, with `_calculateVestedAmount` and `getClaimableAmount` functions designed to prevent over-claiming, ensuring a… |
+| **Technical** | 8/10 | Low | The technical architecture of CreatorCoin, inheriting from BaseCoin, is generally well-structured, leveraging OpenZeppelin contracts for ERC20 and access control. The vesting logic in CreatorCoin is… |
+| **Governance / Economics** | 2/10 | High | The economic model for CreatorCoin incorporates a vesting schedule for creator supply, with `_calculateVestedAmount` and `getClaimableAmount` functions designed to prevent over-claiming, ensuring a… |
 | **Upgrades** | 1/10 | High | The `CreatorCoin` and `BaseCoin` contracts incorporate OpenZeppelin's `Upgradeable` components and the `initializer` modifier, which are standard for proxy-based upgradeable systems. However, the… |
 
 ## Proxy Upgrade Controls
@@ -46,39 +46,39 @@ The audit of the CreatorCoin and BaseCoin contracts identified a critical archit
 
 ## Security Findings
 
-_🔴 1 Critical · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `C-01` — Architectural Misconfiguration: Upgradeable Pattern in Standalone Contract  *(Severity: Critical · Status: Unresolved)*
-
-The `BaseCoin` contract, from which `CreatorCoin` inherits, utilizes OpenZeppelin's `Upgradeable` contracts (`ERC20PermitUpgradeable`, `ERC165Upgradeable`) and the `initializer` modifier in both its constructor and its `initialize` function. This pattern is exclusively designed for proxy-based upgradeable contracts (e.g., UUPS or Transparent proxies). However, the deployment context indicates `is_proxy: false`, meaning `CreatorCoin` is deployed as a standalone contract. When deployed directly, the contract's constructor runs once. The `initializer` modifier on the constructor will execute. Subsequently, the `initialize` function *must be called separately* to set up critical contract parame…
-
-**Recommendation:** If the contract is intended to be non-upgradeable, remove all `Upgradeable` base contracts and the `initializer` modifier. Move all initialization logic from the `initialize` function directly into the constructor. If the contract *is* intended to be upgradeable, it must be deployed behind a proxy contract (e.g., UUPS proxy), and the `is_proxy` flag in the deployment context should be `true`.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralization Risk with MultiOwnable  *(Severity: Medium · Status: Unresolved)*
 
-The `BaseCoin` contract uses the `MultiOwnable` pattern for critical administrative functions such as `setPayoutRecipient` and `setContractURI`. While `MultiOwnable` allows for multiple addresses to collectively control these functions, it still represents a centralized point of control. A compromise of a majority of the owner keys could lead to unauthorized changes to the contract's configuration, including redirecting the `payoutRecipient` to a malicious address, potentially impacting token distributions.
+Not confirmed by static analysis (the model's own reading of the source). The `BaseCoin` contract uses the `MultiOwnable` pattern for critical administrative functions such as `setPayoutRecipient` and `setContractURI`. While `MultiOwnable` allows for multiple addresses to collectively control these functions, it still represents a centralized point of control. A compromise of a majority of the owner keys could lead to unauthorized changes to the contract's configuration, including redirecting the `payoutRecipient` to a malicious address, potentially impacting token distributions.
 
 **Recommendation:** Consider implementing a timelock mechanism for critical administrative actions controlled by `MultiOwnable`. This would introduce a delay between the initiation and execution of sensitive changes, allowing for monitoring and potential intervention, thereby mitigating the immediate impact of a compromised owner key. Additionally, ensure robust key management practices for all owner addresses.
 
 
+### `M-02` — Architectural Misconfiguration: Upgradeable Pattern in Standalone Contract  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `BaseCoin` contract, from which `CreatorCoin` inherits, utilizes OpenZeppelin's `Upgradeable` contracts (`ERC20PermitUpgradeable`, `ERC165Upgradeable`) and the `initializer` modifier in both its constructor and its `initialize` function. This pattern is exclusively designed for proxy-based upgradeable contracts (e.g., UUPS or Transparent proxies). However, the deployment context indicates `is_proxy: false`, meaning `CreatorCoin` is deployed as a standalone contract. When deployed directly, the contract's constructor runs once. The `initializer` modifier on the constructor will execute. Subsequently, the `initialize
+
+**Recommendation:** If the contract is intended to be non-upgradeable, remove all `Upgradeable` base contracts and the `initializer` modifier. Move all initialization logic from the `initialize` function directly into the constructor. If the contract *is* intended to be upgradeable, it must be deployed behind a proxy contract (e.g., UUPS proxy), and the `is_proxy` flag in the deployment context should be `true`.
+
+
 ### `L-01` — Lack of Event Emission for Critical Configuration Changes  *(Severity: Low · Status: Unresolved)*
 
-The `_setPayoutRecipient` and `_setContractURI` internal functions, which are called by external `onlyOwner` functions (`setPayoutRecipient`, `setContractURI`), do not emit events upon execution. While the `CreatorVestingClaimed` event is emitted for vesting claims, changes to core configuration parameters like the `payoutRecipient` or `contractURI` are not logged on-chain. This makes it challenging to monitor and audit changes to the contract's operational parameters, hindering transparency and off-chain analysis.
+Not confirmed by static analysis (the model's own reading of the source). The `_setPayoutRecipient` and `_setContractURI` internal functions, which are called by external `onlyOwner` functions (`setPayoutRecipient`, `setContractURI`), do not emit events upon execution. While the `CreatorVestingClaimed` event is emitted for vesting claims, changes to core configuration parameters like the `payoutRecipient` or `contractURI` are not logged on-chain. This makes it challenging to monitor and audit changes to the contract's operational parameters, hindering transparency and off-chain analysis.
 
 **Recommendation:** Emit specific events (e.g., `PayoutRecipientUpdated(address oldRecipient, address newRecipient)` and `ContractURIUpdated(string oldURI, string newURI)`) whenever critical configuration parameters are changed. This will provide a clear, immutable record of all administrative actions on-chain, improving transparency and auditability.
 
 
 ### `I-01` — Reliance on Hardcoded Constants  *(Severity: Informational · Status: Unresolved)*
 
-The `CreatorCoin` contract relies heavily on hardcoded constants defined in `CoinConstants.sol` for critical parameters such as `CREATOR_COIN_MARKET_SUPPLY`, `TOTAL_SUPPLY`, `CREATOR_VESTING_DURATION`, and `CREATOR_COIN_CURRENCY`. While using constants ensures immutability and predictability, it removes flexibility for future adjustments or parameter tuning without requiring a full contract redeployment.
+Not confirmed by static analysis (the model's own reading of the source). The `CreatorCoin` contract relies heavily on hardcoded constants defined in `CoinConstants.sol` for critical parameters such as `CREATOR_COIN_MARKET_SUPPLY`, `TOTAL_SUPPLY`, `CREATOR_VESTING_DURATION`, and `CREATOR_COIN_CURRENCY`. While using constants ensures immutability and predictability, it removes flexibility for future adjustments or parameter tuning without requiring a full contract redeployment.
 
 **Recommendation:** For parameters that might require future adjustments (e.g., vesting duration, supply caps), consider making them configurable by an authorized entity (e.g., `MultiOwnable` or governance) through setter functions, rather than hardcoding them. This would allow for greater adaptability to changing market conditions or protocol needs. If immutability is the explicit design choice, document this decision clearly.
 
 
 ### `I-02` — Potential for Vesting Dust Amounts Due to Integer Division  *(Severity: Informational · Status: Unresolved)*
 
-The `_calculateVestedAmount` function uses integer division: `(CoinConstants.CREATOR_COIN_CREATOR_VESTING_SUPPLY * elapsedTime) / CoinConstants.CREATOR_VESTING_DURATION`. If `CREATOR_COIN_CREATOR_VESTING_SUPPLY` is not perfectly divisible by `CREATOR_VESTING_DURATION`, or if the `elapsedTime` does not perfectly align with a full vesting period, there might be a small remainder (dust) that is truncated during the division. This could result in a tiny amount of tokens being perpetually locked or the final claim being slightly less than expected.
+Not confirmed by static analysis (the model's own reading of the source). The `_calculateVestedAmount` function uses integer division: `(CoinConstants.CREATOR_COIN_CREATOR_VESTING_SUPPLY * elapsedTime) / CoinConstants.CREATOR_VESTING_DURATION`. If `CREATOR_COIN_CREATOR_VESTING_SUPPLY` is not perfectly divisible by `CREATOR_VESTING_DURATION`, or if the `elapsedTime` does not perfectly align with a full vesting period, there might be a small remainder (dust) that is truncated during the division. This could result in a tiny amount of tokens being perpetually locked or the final claim being slightly less than expected.
 
 **Recommendation:** While generally negligible for large token amounts, consider using a fixed-point math library or adjusting the calculation to ensure that any remaining dust is accounted for, especially in the final vesting period. For example, ensure the last claim explicitly transfers any remaining balance up to `CREATOR_COIN_CREATOR_VESTING_SUPPLY - totalClaimed` to prevent dust from being locked.
 

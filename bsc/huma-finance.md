@@ -2,14 +2,14 @@
 token: Huma Finance
 ticker: HUMA
 network: bsc
-risk_score: 59
+risk_score: 47
 status: medium
 date: 2026-09-26
 ---
 
 # Huma Finance (HUMA) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 59/100 — 🟡 Medium Risk**
+> **Risk Score: 47/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/huma-finance-bsc)
 
@@ -38,32 +38,32 @@ The BNBOFT contract is an Omni-Fungible Token (OFT) implementation built on Laye
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 2 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
-### `H-01` — Extensive Owner Privileges  *(Severity: High · Status: Unresolved)*
+### `M-01` — Extensive Owner Privileges  *(Severity: Medium · Status: Unresolved)*
 
-The `Ownable` pattern grants the owner (a 2/2 multisig) extensive control over critical LayerZero OFT configurations, including setting trusted remotes, message libraries, and fee settings. These privileges allow the owner to significantly influence the cross-chain functionality and security of the token. A compromise of the multisig or malicious action by its signers could lead to severe consequences such as halting cross-chain transfers, redirecting funds, or imposing arbitrary fees (7.3 Access Control, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The `Ownable` pattern grants the owner (a 2/2 multisig) extensive control over critical LayerZero OFT configurations, including setting trusted remotes, message libraries, and fee settings. These privileges allow the owner to significantly influence the cross-chain functionality and security of the token. A compromise of the multisig or malicious action by its signers could lead to severe consequences such as halting cross-chain transfers, redirecting funds, or imposing arbitrary fees (7.3 Access Control, 7.5 Governance).
 
 **Recommendation:** While the `Ownable` pattern is standard, consider implementing a more decentralized governance model for critical parameters, such as time-locked changes or a higher multisig threshold (e.g., 3/5). Ensure the multisig signers are highly trusted individuals and follow best practices for key management. Implement robust monitoring for any changes made by the owner.
 
 
 ### `L-01` — External Dependency Risk (LayerZero Protocol)  *(Severity: Low · Status: Unresolved)*
 
-The contract's core functionality, specifically its cross-chain capabilities, relies entirely on the security and operational integrity of the LayerZero protocol and its endpoint. Any vulnerabilities, exploits, or failures within the LayerZero infrastructure could directly affect the BNBOFT token's ability to perform cross-chain transfers, potentially leading to loss of funds or service disruption (7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The contract's core functionality, specifically its cross-chain capabilities, relies entirely on the security and operational integrity of the LayerZero protocol and its endpoint. Any vulnerabilities, exploits, or failures within the LayerZero infrastructure could directly affect the BNBOFT token's ability to perform cross-chain transfers, potentially leading to loss of funds or service disruption (7.6 External).
 
 **Recommendation:** Maintain continuous awareness of LayerZero protocol updates, security audits, and community announcements. Implement monitoring for LayerZero endpoint status and any reported incidents. Diversify cross-chain solutions if feasible, or ensure robust contingency plans are in place for LayerZero-related disruptions.
 
 
 ### `I-01` — Immutability of Contract  *(Severity: Informational · Status: Unresolved)*
 
-The BNBOFT contract is deployed as a standard implementation and is not designed with an upgrade proxy pattern. This means that once deployed, its code cannot be modified. Any future bug fixes, feature enhancements, or changes to the token's logic would necessitate deploying an entirely new contract and migrating existing token holders, which can be a complex, costly, and disruptive process (7.7 Upgrades).
+Not confirmed by static analysis (the model's own reading of the source). The BNBOFT contract is deployed as a standard implementation and is not designed with an upgrade proxy pattern. This means that once deployed, its code cannot be modified. Any future bug fixes, feature enhancements, or changes to the token's logic would necessitate deploying an entirely new contract and migrating existing token holders, which can be a complex, costly, and disruptive process (7.7 Upgrades).
 
 **Recommendation:** This is a design choice. If future upgradeability is desired, consider implementing a proxy pattern (e.g., UUPS) for future deployments. For the current contract, ensure thorough testing and auditing before deployment to minimize the need for future changes.
 
 
 ### `I-02` — Hardcoded Decimals Value  *(Severity: Informational · Status: Unresolved)*
 
-The `decimals()` function in the BNBOFT contract is hardcoded to return `6`. While this is an intentional design choice for the token's precision, it means that the decimal precision cannot be altered post-deployment. This immutability might limit future flexibility if a different decimal precision becomes desirable for ecosystem compatibility or other reasons (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The `decimals()` function in the BNBOFT contract is hardcoded to return `6`. While this is an intentional design choice for the token's precision, it means that the decimal precision cannot be altered post-deployment. This immutability might limit future flexibility if a different decimal precision becomes desirable for ecosystem compatibility or other reasons (7.1 Architecture).
 
 **Recommendation:** This is a design decision. Ensure that the chosen decimal precision of 6 is suitable for all current and anticipated future use cases of the token. If flexibility was a concern, a configurable decimal value could have been implemented, though it adds complexity.
 

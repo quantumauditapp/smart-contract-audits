@@ -2,14 +2,14 @@
 token: HandlPay
 ticker: HANDL
 network: base
-risk_score: 40
-status: medium
+risk_score: 23
+status: low
 date: 2026-08-11
 ---
 
 # HandlPay (HANDL) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/handlpay-base)
 
@@ -25,9 +25,9 @@ This audit covers the HandlToken and HANDLSwap contracts. The HandlToken is an O
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The technical architecture (7.1) of both contracts is straightforward. The HandlToken leverages OpenZeppelin's Ownable and LayerZero's OFT for standard and cross-chain functionality. The HANDLSwap… |
-| **Governance / Economics** | 4/10 | Medium | The economic model (7.4) of the HANDLSwap contract is a simple fixed-price exchange, entirely controlled by an administrator. The governance (7.5) is highly centralized, with a single `admin` address… |
-| **Upgrades** | 8/10 | Low | Neither the HandlToken nor the HANDLSwap contract implements any upgrade mechanism (7.7). Both contracts are designed to be immutable once deployed. This eliminates upgrade-related risks such as… |
+| **Technical** | 10/10 | Low | The technical architecture (7.1) of both contracts is straightforward. The HandlToken leverages OpenZeppelin's Ownable and LayerZero's OFT for standard and cross-chain functionality. The HANDLSwap… |
+| **Governance / Economics** | 5/10 | Medium | The economic model (7.4) of the HANDLSwap contract is a simple fixed-price exchange, entirely controlled by an administrator. The governance (7.5) is highly centralized, with a single `admin` address… |
+| **Upgrades** | 9/10 | Low | Neither the HandlToken nor the HANDLSwap contract implements any upgrade mechanism (7.7). Both contracts are designed to be immutable once deployed. This eliminates upgrade-related risks such as… |
 
 ## LP Distribution
 
@@ -38,39 +38,39 @@ This audit covers the HandlToken and HANDLSwap contracts. The HandlToken is an O
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Centralized Control and Single Point of Failure in HANDLSwap  *(Severity: High · Status: Unresolved)*
-
-The HANDLSwap contract grants extensive control to a single `admin` address, set immutably during deployment. This administrator can unilaterally set the swap price (`setPrice`), pause all trading activities (`setPaused`), and withdraw all HANDL and USDC tokens held by the contract (`withdrawHANDL`, `withdrawUSDC`). This high degree of centralization (7.3, 7.5, 7.8) creates a significant single point of failure. A compromise of the admin's private key could lead to complete loss of funds, arbitrary price manipulation, and denial of service for all users.
-
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the `admin` role to require multiple approvals for critical operations. For less time-sensitive actions like price updates, consider adding a timelock mechanism to allow users to react to impending changes. Explore options for progressive decentralization of control over time.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Potential Decimal Mismatch Risk in Swap Calculations  *(Severity: Medium · Status: Unresolved)*
 
-The `buyHANDL` and `sellHANDL` functions perform arithmetic operations involving `1e18` and `usdcPerHandl` to calculate swap amounts. While these calculations are mathematically sound for specific decimal assumptions (e.g., HANDL 18 decimals, USDC 6 decimals, and `usdcPerHandl` representing the price in 6-decimal USDC), these assumptions are not explicitly stated or enforced in the code (7.2). If `usdcPerHandl` is set with an incorrect decimal precision relative to USDC, or if USDC itself does not have 6 decimals, trades could result in incorrect token amounts being exchanged, leading to user losses or contract insolvency.
+Not confirmed by static analysis (the model's own reading of the source). The `buyHANDL` and `sellHANDL` functions perform arithmetic operations involving `1e18` and `usdcPerHandl` to calculate swap amounts. While these calculations are mathematically sound for specific decimal assumptions (e.g., HANDL 18 decimals, USDC 6 decimals, and `usdcPerHandl` representing the price in 6-decimal USDC), these assumptions are not explicitly stated or enforced in the code (7.2). If `usdcPerHandl` is set with an incorrect decimal precision relative to USDC, or if USDC itself does not have 6 decimals, trades could result in incorrect token amounts being exchanged, leading to user losses or contract insolve
 
 **Recommendation:** Explicitly document the expected decimal precision for HANDL, USDC, and `usdcPerHandl` in the contract's NatSpec comments. Consider adding a mechanism to verify or enforce the decimal places of the underlying ERC-20 tokens, if possible, or ensure robust off-chain procedures for setting `usdcPerHandl` correctly. Implement comprehensive unit tests covering various decimal scenarios.
 
 
+### `M-02` — Centralized Control and Single Point of Failure in HANDLSwap  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The HANDLSwap contract grants extensive control to a single `admin` address, set immutably during deployment. This administrator can unilaterally set the swap price (`setPrice`), pause all trading activities (`setPaused`), and withdraw all HANDL and USDC tokens held by the contract (`withdrawHANDL`, `withdrawUSDC`). This high degree of centralization (7.3, 7.5, 7.8) creates a significant single point of failure. A compromise of the admin's private key could lead to complete loss of funds, arbitrary price manipulation, and denial of service for all users.
+
+**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the `admin` role to require multiple approvals for critical operations. For less time-sensitive actions like price updates, consider adding a timelock mechanism to allow users to react to impending changes. Explore options for progressive decentralization of control over time.
+
+
 ### `L-01` — Lack of Slippage Protection for Users  *(Severity: Low · Status: Unresolved)*
 
-The `buyHANDL` and `sellHANDL` functions execute swaps at the current `usdcPerHandl` price without any user-defined slippage tolerance (7.4). While the price is fixed by the admin, an admin could theoretically change the price between a user's transaction submission and its inclusion in a block. Without slippage protection, users could receive fewer tokens than expected if the price changes unfavorably, or their transaction could revert if the price moves too much.
+Not confirmed by static analysis (the model's own reading of the source). The `buyHANDL` and `sellHANDL` functions execute swaps at the current `usdcPerHandl` price without any user-defined slippage tolerance (7.4). While the price is fixed by the admin, an admin could theoretically change the price between a user's transaction submission and its inclusion in a block. Without slippage protection, users could receive fewer tokens than expected if the price changes unfavorably, or their transaction could revert if the price moves too much.
 
 **Recommendation:** Consider adding an optional `minHandlAmount` or `maxUsdcAmount` parameter to the `buyHANDL` and `sellHANDL` functions, respectively. This would allow users to specify their acceptable slippage, ensuring they do not receive significantly less than expected or pay significantly more due to price changes or front-running (though less critical with an admin-set price).
 
 
 ### `I-01` — Hardcoded Chain ID for Initial Minting  *(Severity: Informational · Status: Unresolved)*
 
-The `HandlToken` constructor includes a condition `if(block.chainid == 137)` to mint initial tokens only on Polygon (chain ID 137). This design choice (7.1) means that if the contract is deployed on any other chain, the initial minting to `msg.sender` will not occur. While this is likely an intentional deployment strategy for a multi-chain token, it's a hardcoded dependency.
+Not confirmed by static analysis (the model's own reading of the source). The `HandlToken` constructor includes a condition `if(block.chainid == 137)` to mint initial tokens only on Polygon (chain ID 137). This design choice (7.1) means that if the contract is deployed on any other chain, the initial minting to `msg.sender` will not occur. While this is likely an intentional deployment strategy for a multi-chain token, it's a hardcoded dependency.
 
 **Recommendation:** Ensure this hardcoded chain ID aligns with the intended deployment strategy across all target networks. If initial minting is desired on other chains, the condition would need to be adjusted or removed, or a separate minting mechanism implemented post-deployment.
 
 
 ### `I-02` — No Emergency Stop for Admin Fund Withdrawals  *(Severity: Informational · Status: Unresolved)*
 
-The `HANDLSwap` contract includes a `setPaused` function to halt trading, but the `withdrawHANDL` and `withdrawUSDC` functions, which allow the admin to drain funds, are not subject to the `whenNotPaused` modifier (7.8). This means that even if the contract is paused due to an emergency, the admin retains the ability to withdraw all funds. While the admin is trusted, this could be a concern if the admin key is compromised during a pause event.
+Not confirmed by static analysis (the model's own reading of the source). The `HANDLSwap` contract includes a `setPaused` function to halt trading, but the `withdrawHANDL` and `withdrawUSDC` functions, which allow the admin to drain funds, are not subject to the `whenNotPaused` modifier (7.8). This means that even if the contract is paused due to an emergency, the admin retains the ability to withdraw all funds. While the admin is trusted, this could be a concern if the admin key is compromised during a pause event.
 
 **Recommendation:** Consider whether `withdrawHANDL` and `withdrawUSDC` should also be subject to a `whenNotPaused` modifier, or if a separate, more secure withdrawal mechanism (e.g., requiring a multi-sig or timelock) should be implemented, especially for large amounts. This would provide an additional layer of protection even if the admin key is compromised.
 

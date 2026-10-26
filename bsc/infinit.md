@@ -2,14 +2,14 @@
 token: INFINIT
 ticker: IN
 network: bsc
-risk_score: 55
+risk_score: 47
 status: medium
 date: 2026-09-27
 ---
 
 # INFINIT (IN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 55/100 — 🟡 Medium Risk**
+> **Risk Score: 47/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/infinit-bsc)
 
@@ -25,8 +25,8 @@ The IN_Token contract, an upgradeable ERC-20 OFT, implements standard token func
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages well-audited OpenZeppelin and LayerZero upgradeable libraries, contributing to a solid technical foundation (7.2 Code Security). The use of Solidity 0.8.22 mitigates common… |
-| **Governance / Economics** | 3/10 | High | The contract's economic model features centralized `mint` and `burn` functions, controlled by a 4/7 multisig (7.3 Access Control). While the multisig provides a strong governance mechanism, this… |
+| **Technical** | 7/10 | Low | The contract leverages well-audited OpenZeppelin and LayerZero upgradeable libraries, contributing to a solid technical foundation (7.2 Code Security). The use of Solidity 0.8.22 mitigates common… |
+| **Governance / Economics** | 4/10 | Medium | The contract's economic model features centralized `mint` and `burn` functions, controlled by a 4/7 multisig (7.3 Access Control). While the multisig provides a strong governance mechanism, this… |
 | **Upgrades** | 1/10 | High | The contract employs the Transparent Upgradeable Proxy pattern with OpenZeppelin's `initializer` functions, which is a standard and well-understood upgradeability mechanism (7.7 Upgrades). The… |
 
 ## Proxy Upgrade Controls
@@ -46,32 +46,32 @@ The IN_Token contract, an upgradeable ERC-20 OFT, implements standard token func
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control over Token Supply  *(Severity: High · Status: Unresolved)*
-
-The `mint` and `burn` functions are restricted to the contract owner, which is a 4/7 multisig. This grants significant power over the token's total supply, allowing for arbitrary inflation or deflation. While a multisig mitigates a single point of failure, it still represents a centralized authority that could impact token economics and trust assumptions (7.3 Access Control, 7.4 Economic).
-
-**Recommendation:** Clearly communicate the implications of centralized mint/burn authority to users. Consider implementing a time-locked governance mechanism or a community-driven proposal system for significant supply changes, or explore mechanisms to cap total supply if appropriate for the token's design.
-
+_🟡 3 Medium · ⚪ 1 Informational_
 
 ### `M-01` — Critical Initialization Parameter (`_delegate`)  *(Severity: Medium · Status: Unresolved)*
 
-The `initialize` function takes a `_delegate` parameter which is used to set both the initial `Ownable` owner and the `OFTUpgradeable` delegate. A misconfiguration during deployment, such as providing an incorrect or compromised address, would lead to the contract being controlled by an unintended entity or becoming unmanageable. This is a critical one-time setup risk (7.8 Operations, 7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function takes a `_delegate` parameter which is used to set both the initial `Ownable` owner and the `OFTUpgradeable` delegate. A misconfiguration during deployment, such as providing an incorrect or compromised address, would lead to the contract being controlled by an unintended entity or becoming unmanageable. This is a critical one-time setup risk (7.8 Operations, 7.3 Access Control).
 
 **Recommendation:** Implement a rigorous deployment checklist and multi-party verification process for the `initialize` function parameters, especially the `_delegate` address. Consider using a well-tested deployment script that logs and verifies all parameters before execution.
 
 
 ### `M-02` — External Dependency on LayerZero Endpoint  *(Severity: Medium · Status: Unresolved)*
 
-The `IN_Token` contract relies on the LayerZero v2 endpoint for its cross-chain functionality. The security, liveness, and upgradeability of this external endpoint are critical to the token's operation. Any vulnerabilities, compromises, or operational issues within the LayerZero infrastructure could directly impact the token's ability to perform cross-chain transfers (7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The `IN_Token` contract relies on the LayerZero v2 endpoint for its cross-chain functionality. The security, liveness, and upgradeability of this external endpoint are critical to the token's operation. Any vulnerabilities, compromises, or operational issues within the LayerZero infrastructure could directly impact the token's ability to perform cross-chain transfers (7.6 External).
 
 **Recommendation:** Monitor LayerZero's security announcements, audits, and operational status closely. Understand the risks associated with cross-chain bridges and communicate them transparently to users. Consider implementing emergency pause mechanisms if the LayerZero endpoint experiences critical issues.
 
 
+### `M-03` — Centralized Control over Token Supply  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint` and `burn` functions are restricted to the contract owner, which is a 4/7 multisig. This grants significant power over the token's total supply, allowing for arbitrary inflation or deflation. While a multisig mitigates a single point of failure, it still represents a centralized authority that could impact token economics and trust assumptions (7.3 Access Control, 7.4 Economic).
+
+**Recommendation:** Clearly communicate the implications of centralized mint/burn authority to users. Consider implementing a time-locked governance mechanism or a community-driven proposal system for significant supply changes, or explore mechanisms to cap total supply if appropriate for the token's design.
+
+
 ### `I-01` — Multisig Operational Security  *(Severity: Informational · Status: Unresolved)*
 
-Both the contract owner (for `mint`/`burn`) and the proxy admin (for upgrades) are controlled by a 4/7 multisig. While this is a robust access control mechanism, the security of the system ultimately depends on the operational security practices of the multisig signers (e.g., key management, quorum procedures, resistance to social engineering) (7.5 Governance, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). Both the contract owner (for `mint`/`burn`) and the proxy admin (for upgrades) are controlled by a 4/7 multisig. While this is a robust access control mechanism, the security of the system ultimately depends on the operational security practices of the multisig signers (e.g., key management, quorum procedures, resistance to social engineering) (7.5 Governance, 7.8 Operations).
 
 **Recommendation:** Ensure all multisig signers adhere to best practices for private key management, including hardware wallets, strong authentication, and secure communication channels. Regularly review and update multisig policies and procedures, and conduct periodic security awareness training for signers.
 

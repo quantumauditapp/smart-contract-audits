@@ -2,14 +2,14 @@
 token: Heavier
 ticker: HEV
 network: solana
-risk_score: 16
+risk_score: 9
 status: low
 date: 2026-09-13
 ---
 
 # Heavier (HEV) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 16/100 — 🟢 Low Risk**
+> **Risk Score: 9/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/heavier-sol)
 
@@ -26,8 +26,8 @@ The Heavier (HEV) token is an SPL Token-2022 mint with both mint and freeze auth
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Heavier (HEV) token is implemented as an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked, ensuring that no new tokens can be minted and no holder accounts can be… |
-| **Governance / Economics** | 6/10 | Medium | Holder concentration is low, with the top 10 token accounts holding 19.39% of the supply, which does not indicate immediate whale dump risk (7.4 Economic). However, the DEX pair was created only 1… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are permanently revoked, preventing further token issuance or account freezing (7.7 Upgrades). Key Token-2022 extensions, including the transfer fee and… |
+| **Governance / Economics** | 7/10 | Low | Holder concentration is low, with the top 10 token accounts holding 19.39% of the supply, which does not indicate immediate whale dump risk (7.4 Economic). However, the DEX pair was created only 1… |
+| **Upgrades** | 9/10 | Low | The token's mint and freeze authorities are permanently revoked, preventing further token issuance or account freezing (7.7 Upgrades). Key Token-2022 extensions, including the transfer fee and… |
 
 ## Token-2022 Extensions
 
@@ -66,7 +66,7 @@ The DEX pair was created 1 day ago. Insufficient track record to assess team or 
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -75,7 +75,7 @@ The DEX pair was created 1 day ago. Insufficient track record to assess team or 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

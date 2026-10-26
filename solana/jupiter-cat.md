@@ -2,14 +2,14 @@
 token: Jupiter Cat
 ticker: JUPCAT
 network: solana
-risk_score: 26
+risk_score: 12
 status: low
 date: 2026-09-14
 ---
 
 # Jupiter Cat (JUPCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 26/100 — 🟢 Low Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jupiter-cat-sol)
 
@@ -26,8 +26,8 @@ The Jupiter Cat (JUPCAT) SPL Token Mint has its mint and freeze authorities revo
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Jupiter Cat (JUPCAT) token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked, ensuring that no new tokens can be minted and no existing accounts can be frozen.… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits moderate liquidity with $51,875 in total DEX liquidity. The 24-hour volume of $148,611 results in a healthy Volume/Liquidity Ratio of 2.86, not indicating wash trading. The DEX… |
-| **Upgrades** | 6/10 | Medium | The mint authority and freeze authority are both revoked, preventing future changes to supply or account freeze status. The token utilizes the Token-2022 program and its extensions. While the… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits moderate liquidity with $51,875 in total DEX liquidity. The 24-hour volume of $148,611 results in a healthy Volume/Liquidity Ratio of 2.86, not indicating wash trading. The DEX… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing future changes to supply or account freeze status. The token utilizes the Token-2022 program and its extensions. While the… |
 
 ## Token-2022 Extensions
 
@@ -60,13 +60,13 @@ The token's metadata is mutable, meaning its name, symbol, or image can be chang
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 831 buys / 562 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -75,7 +75,7 @@ The token's metadata is mutable, meaning its name, symbol, or image can be chang
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

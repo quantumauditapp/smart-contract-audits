@@ -2,14 +2,14 @@
 token: Gunicorn
 ticker: GUNICORN
 network: solana
-risk_score: 47
-status: medium
+risk_score: 30
+status: low
 date: 2026-08-20
 ---
 
 # Gunicorn (GUNICORN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 47/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gunicorn-sol)
 
@@ -25,9 +25,9 @@ The Gunicorn (GUNICORN) SPL Token Mint audit reveals a generally secure configur
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Gunicorn token is implemented using the spl-token-2022 program. Its core security configuration is robust, with both the mint authority and freeze authority explicitly revoked, ensuring that no… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $26,207 in total DEX liquidity, which could lead to slippage for larger trades. The 24-hour volume of $34,597 results in a healthy Volume/Liquidity Ratio of… |
-| **Upgrades** | 8/10 | Low | The Gunicorn token mint has a fixed configuration, as both the mint and freeze authorities are revoked, preventing any future changes to the token's supply or account freeze status. It utilizes the… |
+| **Technical** | 10/10 | Low | The Gunicorn token is implemented using the spl-token-2022 program. Its core security configuration is robust, with both the mint authority and freeze authority explicitly revoked, ensuring that no… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate liquidity with $26,207 in total DEX liquidity, which could lead to slippage for larger trades. The 24-hour volume of $34,597 results in a healthy Volume/Liquidity Ratio of… |
+| **Upgrades** | 10/10 | Low | The Gunicorn token mint has a fixed configuration, as both the mint and freeze authorities are revoked, preventing any future changes to the token's supply or account freeze status. It utilizes the… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 437 buys / 451 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

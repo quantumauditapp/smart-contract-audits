@@ -2,14 +2,14 @@
 token: Gyndore
 ticker: GYND
 network: base
-risk_score: 52
+risk_score: 50
 status: medium
 date: 2026-09-24
 ---
 
 # Gyndore (GYND) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 52/100 — 🟡 Medium Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gyndore-base)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Incomplete `ERC20Permit` Code Snippet  *(Severity: Low · Status: Unresolved)*
 
-The provided source code for the `permit` function within the `ERC20Permit` contract is truncated. Specifically, the critical `if (signer != owner)` check, which is essential for validating the signature's authenticity against the intended owner, is cut off. While it is assumed that the full, correct OpenZeppelin implementation is used, an incomplete code snippet prevents a thorough review of the entire function's logic, particularly the security-critical signature verification and signer validation steps.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the `permit` function within the `ERC20Permit` contract is truncated. Specifically, the critical `if (signer != owner)` check, which is essential for validating the signature's authenticity against the intended owner, is cut off. While it is assumed that the full, correct OpenZeppelin implementation is used, an incomplete code snippet prevents a thorough review of the entire function's logic, particularly the security-critical signature verification and signer validation steps.
 
 **Recommendation:** Ensure that the complete and verified source code for all inherited contracts, especially security-sensitive functions like `permit`, is available for auditing and public transparency. This allows for a comprehensive review of the entire logic and confirms that no unintended modifications or omissions exist.
 
 
 ### `I-01` — Standard OpenZeppelin Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The `GyndToken` contract is a straightforward implementation of ERC-20 and ERC-20 Permit functionality, built upon battle-tested OpenZeppelin contracts. This approach significantly reduces the risk of common vulnerabilities often found in custom token implementations, as OpenZeppelin libraries undergo extensive audits and community review.
+Not confirmed by static analysis (the model's own reading of the source). The `GyndToken` contract is a straightforward implementation of ERC-20 and ERC-20 Permit functionality, built upon battle-tested OpenZeppelin contracts. This approach significantly reduces the risk of common vulnerabilities often found in custom token implementations, as OpenZeppelin libraries undergo extensive audits and community review.
 
 **Recommendation:** Continue to leverage well-audited and maintained libraries like OpenZeppelin. Ensure that the specific versions of OpenZeppelin contracts used are up-to-date and free from known vulnerabilities.
 
 
 ### `I-02` — Fixed Initial Supply and Distribution  *(Severity: Informational · Status: Unresolved)*
 
-The token's entire supply of 10,000,000 tokens is minted to a single recipient address during contract deployment. This is a standard and transparent distribution model for a fixed-supply token, clearly defining the initial state of token ownership. It implies a centralized initial control over the total supply by the recipient.
+Not confirmed by static analysis (the model's own reading of the source). The token's entire supply of 10,000,000 tokens is minted to a single recipient address during contract deployment. This is a standard and transparent distribution model for a fixed-supply token, clearly defining the initial state of token ownership. It implies a centralized initial control over the total supply by the recipient.
 
 **Recommendation:** Document the purpose and implications of the initial supply distribution for transparency to token holders and the community. This is a design choice and not a vulnerability.
 

@@ -2,14 +2,14 @@
 token: infinity
 ticker: INFINITY
 network: solana
-risk_score: 46
+risk_score: 44
 status: medium
 date: 2026-06-28
 ---
 
 # infinity (INFINITY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 46/100 — 🟡 Medium Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/infinity-sol)
 
@@ -60,7 +60,7 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,18 +69,18 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is infinity a scam?
 
-Based on the available data, INFINITY exhibits several high-risk characteristics that are often associated with less secure tokens. The unverified contract, unlocked liquidity, and concentrated holdings by the top 10 wallets are notable concerns. While ownership is renounced and no new tokens can be minted, these other factors contribute to a high-risk profile (47/100), suggesting caution is warranted rather than a definitive 'scam' label.
+Based on the available data, INFINITY exhibits several high-risk characteristics that are often associated with less secure tokens. The unverified contract, unlocked liquidity, and concentrated holdings by the top 10 wallets are notable concerns. While ownership is renounced and no new tokens can be minted, these other factors contribute to a medium-risk profile (44/100), suggesting caution is warranted rather than a definitive 'scam' label.
 
 ### Is infinity safe to buy?
 
-Investing in INFINITY carries significant risks, evidenced by its 47/100 high-risk score. The contract's unverified status means its underlying code is not transparently auditable by the public. Furthermore, the unlocked liquidity creates potential for liquidity removal, and the substantial holdings by the top 10 wallets introduce centralization concerns. These factors collectively indicate a high degree of caution is advisable, as the asset is not considered safe.
+Investing in INFINITY carries significant risks, evidenced by its 44/100 medium-risk score. The contract's unverified status means its underlying code is not transparently auditable by the public. Furthermore, the unlocked liquidity creates potential for liquidity removal, and the substantial holdings by the top 10 wallets introduce centralization concerns. These factors collectively indicate a high degree of caution is advisable, as the asset is not considered safe.
 
 ### Has infinity been audited?
 

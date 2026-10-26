@@ -2,14 +2,14 @@
 token: Kava
 ticker: KAVA
 network: bsc
-risk_score: 44
-status: medium
+risk_score: 27
+status: low
 date: 2026-09-14
 ---
 
 # Kava (KAVA) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kava-bsc)
 
@@ -25,8 +25,8 @@ The KavaOFT contract is a minimal wrapper around LayerZero's Omnichain Fungible 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The KavaOFT contract exhibits high code quality, being a straightforward implementation that primarily delegates logic to the audited LayerZero OFT library (7.2 Code Security). The architecture is… |
-| **Governance / Economics** | 3/10 | High | The contract owner, specified as a multisig, holds extensive administrative control over critical LayerZero configurations (7.5 Governance). This includes setting trusted remote addresses, minimum… |
+| **Technical** | 10/10 | Low | The KavaOFT contract exhibits high code quality, being a straightforward implementation that primarily delegates logic to the audited LayerZero OFT library (7.2 Code Security). The architecture is… |
+| **Governance / Economics** | 4/10 | Medium | The contract owner, specified as a multisig, holds extensive administrative control over critical LayerZero configurations (7.5 Governance). This includes setting trusted remote addresses, minimum… |
 | **Upgrades** | 7/10 | Low | The KavaOFT contract itself is not designed as an upgradeable proxy (7.7 Upgrades). Its implementation is immutable once deployed. This simplifies its security profile by removing upgrade-related… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The KavaOFT contract is a minimal wrapper around LayerZero's Omnichain Fungible 
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control by Owner over LayerZero Configurations  *(Severity: High · Status: Unresolved)*
-
-The `_delegate` address, which becomes the `Ownable` owner, has extensive control over the LayerZero OFT's operational parameters. This includes the ability to call functions like `setTrustedRemoteAddress`, `setMinDstGas`, `setPrecrime`, `setFeeManager`, and `setDelegate` (from `ILayerZeroEndpointV2`). Misuse or compromise of this owner address could lead to funds being misrouted, stuck, or subject to excessive fees, impacting the integrity and economic security of cross-chain transfers. While the prefill indicates the owner is a multisig, the concentration of power remains a significant risk factor (7.3 Access Control, 7.4 Economic, 7.8 Operations).
-
-**Recommendation:** Ensure the owner's multisig is secured with robust key management practices, including strong operational security, geographical distribution of signers, and regular audits. Consider implementing a timelock for critical administrative actions to provide a window for detection and mitigation of malicious or erroneous changes. All configuration changes should undergo thorough review and testing.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Heavy Reliance on LayerZero Protocol Security  *(Severity: Medium · Status: Unresolved)*
 
-The KavaOFT contract is a thin wrapper around the LayerZero OFT library and directly interacts with the LayerZero v2 Endpoint. Its security and functionality are entirely dependent on the correctness and security of these underlying LayerZero components. Any vulnerabilities, bugs, or design flaws within the LayerZero protocol itself (e.g., in `OFT.sol` or `ILayerZeroEndpointV2.sol`) could directly impact the KavaOFT contract and potentially lead to loss of funds or operational failures (7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The KavaOFT contract is a thin wrapper around the LayerZero OFT library and directly interacts with the LayerZero v2 Endpoint. Its security and functionality are entirely dependent on the correctness and security of these underlying LayerZero components. Any vulnerabilities, bugs, or design flaws within the LayerZero protocol itself (e.g., in `OFT.sol` or `ILayerZeroEndpointV2.sol`) could directly impact the KavaOFT contract and potentially lead to loss of funds or operational failures (7.6 External).
 
 **Recommendation:** While direct auditing of LayerZero's core contracts is outside the scope of this specific contract audit, it is crucial for the project team to stay informed about LayerZero's security posture, including any audits, bug bounties, or reported vulnerabilities. Maintain a strategy for responding to potential LayerZero-level incidents, such as pausing functionality if possible or communicating risks to users.
 
 
+### `M-02` — Centralized Control by Owner over LayerZero Configurations  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_delegate` address, which becomes the `Ownable` owner, has extensive control over the LayerZero OFT's operational parameters. This includes the ability to call functions like `setTrustedRemoteAddress`, `setMinDstGas`, `setPrecrime`, `setFeeManager`, and `setDelegate` (from `ILayerZeroEndpointV2`). Misuse or compromise of this owner address could lead to funds being misrouted, stuck, or subject to excessive fees, impacting the integrity and economic security of cross-chain transfers. While the prefill indicates the owner is a multisig, the concentration of power remains a significant risk factor (7.3 Access Control
+
+**Recommendation:** Ensure the owner's multisig is secured with robust key management practices, including strong operational security, geographical distribution of signers, and regular audits. Consider implementing a timelock for critical administrative actions to provide a window for detection and mitigation of malicious or erroneous changes. All configuration changes should undergo thorough review and testing.
+
+
 ### `L-01` — Immutable LayerZero Endpoint Address  *(Severity: Low · Status: Unresolved)*
 
-The `_lzEndpoint` address is set during the contract's construction and cannot be modified thereafter. This design choice ensures that the contract always interacts with a specific, known LayerZero endpoint (7.1 Architecture). However, it also means that if the LayerZero protocol were to deprecate the current endpoint, or if a critical vulnerability in the endpoint required an immediate replacement, the KavaOFT contract would need to be redeployed to point to a new endpoint (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `_lzEndpoint` address is set during the contract's construction and cannot be modified thereafter. This design choice ensures that the contract always interacts with a specific, known LayerZero endpoint (7.1 Architecture). However, it also means that if the LayerZero protocol were to deprecate the current endpoint, or if a critical vulnerability in the endpoint required an immediate replacement, the KavaOFT contract would need to be redeployed to point to a new endpoint (7.8 Operations).
 
 **Recommendation:** Acknowledge this design trade-off. For future versions or similar contracts, consider if a mechanism for the owner to update the LayerZero endpoint address (e.g., via a controlled `setLzEndpoint` function with a timelock) might be beneficial, weighing the added complexity and attack surface against the flexibility gained. For the current contract, ensure the chosen endpoint is stable and well-supported.
 
 
 ### `I-01` — Dual Role of Constructor `_delegate` Parameter  *(Severity: Informational · Status: Unresolved)*
 
-The `_delegate` parameter in the `KavaOFT` constructor serves two distinct roles: it is passed to the `OFT` base contract as its delegate and also becomes the `Ownable` owner of the `KavaOFT` contract. This dual assignment means the same address controls both the LayerZero-specific delegate functions and the general contract ownership (7.1 Architecture, 7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The `_delegate` parameter in the `KavaOFT` constructor serves two distinct roles: it is passed to the `OFT` base contract as its delegate and also becomes the `Ownable` owner of the `KavaOFT` contract. This dual assignment means the same address controls both the LayerZero-specific delegate functions and the general contract ownership (7.1 Architecture, 7.3 Access Control).
 
 **Recommendation:** Ensure that deployers and administrators are fully aware of this dual role. While not a vulnerability, clarity on the responsibilities and powers associated with the `_delegate` address is important for proper operational security and understanding of the contract's control structure.
 

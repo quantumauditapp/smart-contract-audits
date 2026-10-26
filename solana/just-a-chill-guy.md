@@ -82,11 +82,11 @@ Top 10 token accounts hold 50.53% of supply. Coordinated sell-off would crash pr
 
 ### Is Just a chill guy a scam?
 
-Based on automated analysis, Just a chill guy scores 66/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Just a chill guy scores 0/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Just a chill guy safe to buy?
 
-Our scanner flagged a risk score of 66/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 0/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Just a chill guy been audited?
 

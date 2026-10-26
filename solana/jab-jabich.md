@@ -2,14 +2,14 @@
 token: Jab Jabich
 ticker: FROG
 network: solana
-risk_score: 52
+risk_score: 35
 status: medium
 date: 2026-08-17
 ---
 
 # Jab Jabich (FROG) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 52/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jab-jabich-sol)
 
@@ -26,7 +26,7 @@ The Jab Jabich (FROG) token presents a medium risk primarily due to its very rec
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The Jab Jabich (FROG) token operates on the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token minting or freezing of holder accounts. No… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 29.92% of the total supply, which is relatively low and indicates distributed ownership. Current DEX liquidity stands at… |
+| **Governance / Economics** | 2/10 | High | The token exhibits a holder concentration where the top 10 accounts hold 29.92% of the total supply, which is relatively low and indicates distributed ownership. Current DEX liquidity stands at… |
 | **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the FROG token have been permanently revoked, meaning no further tokens can be minted and no accounts can be frozen. The token's metadata is immutable… |
 
 ## Security Findings
@@ -54,13 +54,13 @@ The DEX pair was created 1 day ago. Insufficient track record to assess team or 
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4549 buys / 3367 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 1 day ago. Insufficient track record to assess team or 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

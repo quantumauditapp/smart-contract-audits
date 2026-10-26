@@ -2,14 +2,14 @@
 token: Hana Token
 ticker: HANA
 network: bsc
-risk_score: 66
-status: high
+risk_score: 49
+status: medium
 date: 2026-07-26
 ---
 
 # Hana Token (HANA) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hana-token-bsc)
 
@@ -25,7 +25,7 @@ The HanaToken contract is an ERC20 token implementing standard functionalities f
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for ERC20, Burnable, Permit, and Ownable functionalities, contributing to robust code security and adherence to standards. It utilizes a… |
+| **Technical** | 8/10 | Low | The contract leverages battle-tested OpenZeppelin libraries for ERC20, Burnable, Permit, and Ownable functionalities, contributing to robust code security and adherence to standards. It utilizes a… |
 | **Governance / Economics** | 1/10 | High | The token's economic model is straightforward, with a fixed `INITIAL_SUPPLY` minted once, preventing inflationary risks from further minting. However, the centralized control over token burning… |
 | **Upgrades** | 6/10 | Medium | The HanaToken contract is not designed with upgradeability patterns (e.g., proxy contracts), meaning its logic cannot be modified post-deployment. This eliminates risks associated with upgrade… |
 
@@ -38,32 +38,32 @@ The HanaToken contract is an ERC20 token implementing standard functionalities f
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control of Token Burning  *(Severity: High · Status: Unresolved)*
-
-The `burn` and `burnFrom` functions in the `HanaToken` contract are restricted to the `onlyOwner` modifier. This grants the contract owner exclusive power to reduce the total supply of tokens. Such centralization introduces a significant risk, as a compromised owner key or a malicious owner could unilaterally impact the token's supply dynamics, potentially leading to adverse economic consequences or a loss of trust from token holders (7.3 Access Control, 7.4 Economic).
-
-**Recommendation:** Evaluate whether the burning functionality truly requires `onlyOwner` restriction. If not, consider removing the `onlyOwner` modifier to allow any token holder to burn their own tokens, or implement a more decentralized burning mechanism. If centralized burning is a design choice, ensure the owner's address is secured by a robust multi-signature wallet or a DAO.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Single Point of Failure for Ownership (EOA Owner)  *(Severity: Medium · Status: Unresolved)*
 
-The contract's ownership is held by an Externally Owned Account (EOA), as indicated by the provided data (`owner_kind: EOA`). This creates a single point of failure. If the EOA's private key is compromised, lost, or becomes inaccessible, critical administrative functions such as `burn`, `burnFrom`, and `transferOwnership` would be at risk of unauthorized use or permanent inaccessibility, impacting the contract's long-term operational integrity (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract's ownership is held by an Externally Owned Account (EOA), as indicated by the provided data (`owner_kind: EOA`). This creates a single point of failure. If the EOA's private key is compromised, lost, or becomes inaccessible, critical administrative functions such as `burn`, `burnFrom`, and `transferOwnership` would be at risk of unauthorized use or permanent inaccessibility, impacting the contract's long-term operational integrity (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** It is strongly recommended to transfer ownership of the contract to a multi-signature wallet (e.g., Gnosis Safe) or a decentralized autonomous organization (DAO) controlled by a robust governance mechanism. This distributes control and significantly reduces the risk associated with a single point of failure.
 
 
+### `M-02` — Centralized Control of Token Burning  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `burn` and `burnFrom` functions in the `HanaToken` contract are restricted to the `onlyOwner` modifier. This grants the contract owner exclusive power to reduce the total supply of tokens. Such centralization introduces a significant risk, as a compromised owner key or a malicious owner could unilaterally impact the token's supply dynamics, potentially leading to adverse economic consequences or a loss of trust from token holders (7.3 Access Control, 7.4 Economic).
+
+**Recommendation:** Evaluate whether the burning functionality truly requires `onlyOwner` restriction. If not, consider removing the `onlyOwner` modifier to allow any token holder to burn their own tokens, or implement a more decentralized burning mechanism. If centralized burning is a design choice, ensure the owner's address is secured by a robust multi-signature wallet or a DAO.
+
+
 ### `L-01` — Lack of Timelock for Critical Administrative Actions  *(Severity: Low · Status: Unresolved)*
 
-The `transferOwnership` function allows the current owner to immediately transfer ownership to a new address. Without a timelock mechanism, a malicious or accidental transfer of ownership cannot be reversed or prevented by the community or other stakeholders. This lack of a delay increases the risk of immediate and irreversible control loss, especially if the owner's key is compromised (7.3 Access Control, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The `transferOwnership` function allows the current owner to immediately transfer ownership to a new address. Without a timelock mechanism, a malicious or accidental transfer of ownership cannot be reversed or prevented by the community or other stakeholders. This lack of a delay increases the risk of immediate and irreversible control loss, especially if the owner's key is compromised (7.3 Access Control, 7.5 Governance).
 
 **Recommendation:** Consider implementing a timelock mechanism for critical administrative functions, particularly `transferOwnership`. This would introduce a mandatory delay between initiating an ownership transfer and its execution, providing a window for detection and potential intervention in case of an erroneous or malicious action.
 
 
 ### `I-01` — High Solidity Compiler Version Adoption  *(Severity: Informational · Status: Unresolved)*
 
-The contract uses `pragma solidity ^0.8.28`. While newer compiler versions often include optimizations and bug fixes, very recent versions might have less extensive real-world testing and community scrutiny compared to more established and widely adopted versions (e.g., `0.8.19` or `0.8.20`). This is a minor informational point, as OpenZeppelin contracts are generally well-tested across supported compiler versions (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract uses `pragma solidity ^0.8.28`. While newer compiler versions often include optimizations and bug fixes, very recent versions might have less extensive real-world testing and community scrutiny compared to more established and widely adopted versions (e.g., `0.8.19` or `0.8.20`). This is a minor informational point, as OpenZeppelin contracts are generally well-tested across supported compiler versions (7.2 Code Security).
 
 **Recommendation:** While not a direct vulnerability, projects should be aware of the trade-offs when adopting the absolute latest compiler versions. Ensure that all dependencies and tools are fully compatible and that sufficient testing is conducted. For production deployments, sometimes a slightly older, more battle-tested compiler version within the `0.8.x` range is preferred for maximum stability.
 
@@ -106,11 +106,11 @@ The contract uses `pragma solidity ^0.8.28`. While newer compiler versions often
 
 ### Is Hana Token a scam?
 
-Based on automated analysis, Hana Token scores 64/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Hana Token scores 49/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Hana Token safe to buy?
 
-Our scanner flagged a risk score of 64/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 49/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Hana Token been audited?
 

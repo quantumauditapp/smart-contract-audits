@@ -2,14 +2,14 @@
 token: Jimothy2.0
 ticker: JIMOTHY2.0
 network: solana
-risk_score: 47
-status: medium
+risk_score: 30
+status: low
 date: 2026-07-24
 ---
 
 # Jimothy2.0 (JIMOTHY2.0) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 47/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jimothy20-sol)
 
@@ -25,9 +25,9 @@ The Jimothy2.0 SPL Token Mint presents a mixed risk profile. While core authorit
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | This token is an SPL Token-2022 mint with both mint and freeze authorities revoked, indicating a fixed supply and no ability to freeze accounts. It does not utilize the Transfer Hook or Default… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate holder concentration, with the top 10 accounts holding 47.75% of the supply, which is below the threshold for high concentration. DEX liquidity is $54,056, which is… |
-| **Upgrades** | 8/10 | Low | The mint and freeze authorities are both revoked, ensuring that no new tokens can be minted and no accounts can be frozen. This SPL Token-2022 mint does not have a transfer hook or default frozen… |
+| **Technical** | 10/10 | Low | This token is an SPL Token-2022 mint with both mint and freeze authorities revoked, indicating a fixed supply and no ability to freeze accounts. It does not utilize the Transfer Hook or Default… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate holder concentration, with the top 10 accounts holding 47.75% of the supply, which is below the threshold for high concentration. DEX liquidity is $54,056, which is… |
+| **Upgrades** | 10/10 | Low | The mint and freeze authorities are both revoked, ensuring that no new tokens can be minted and no accounts can be frozen. This SPL Token-2022 mint does not have a transfer hook or default frozen… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 15793 buys / 1966 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

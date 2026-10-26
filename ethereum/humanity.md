@@ -126,7 +126,7 @@ Based on the provided data, Humanity (H) does not exhibit overt scam indicators 
 
 ### Is Humanity safe to buy?
 
-Humanity (H) carries a High Risk score of 59/100, indicating it is not considered safe for investment without significant caution. Key safety concerns include the fact that 89.5% of the supply is held by the top 10 addresses, creating immense centralization risk. Furthermore, the project's $854,223 in liquidity is not locked, exposing investors to a potential rug pull. While contract verification and renounced ownership are positive, these severe structural risks undermine overall safety.
+Humanity (H) carries a High Risk score of 71/100, indicating it is not considered safe for investment without significant caution. Key safety concerns include the fact that 89.5% of the supply is held by the top 10 addresses, creating immense centralization risk. Furthermore, the project's $854,223 in liquidity is not locked, exposing investors to a potential rug pull. While contract verification and renounced ownership are positive, these severe structural risks undermine overall safety.
 
 ### Has Humanity been audited?
 

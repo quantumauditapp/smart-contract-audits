@@ -2,14 +2,14 @@
 token: Holoworld AI
 ticker: HOLO
 network: bsc
-risk_score: 67
-status: high
+risk_score: 50
+status: medium
 date: 2026-08-12
 ---
 
 # Holoworld AI (HOLO) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/holoworld-ai-bsc)
 
@@ -26,8 +26,8 @@ Furthermore, consider assigning critical administrative roles to multi-signature
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for ERC20 and AccessControl, enhancing code security and adherence to standards (7.2 Code Security). The `_update` override correctly… |
-| **Governance / Economics** | 1/10 | High | The token implements a clear `MAX_SUPPLY` and controlled minting via the `MINTER_ROLE`, providing transparency on token issuance (7.4 Economic). However, the system exhibits high centralization, with… |
+| **Technical** | 8/10 | Low | The contract leverages battle-tested OpenZeppelin libraries for ERC20 and AccessControl, enhancing code security and adherence to standards (7.2 Code Security). The `_update` override correctly… |
+| **Governance / Economics** | 2/10 | High | The token implements a clear `MAX_SUPPLY` and controlled minting via the `MINTER_ROLE`, providing transparency on token issuance (7.4 Economic). However, the system exhibits high centralization, with… |
 | **Upgrades** | 3/10 | High | The contract is not designed with an upgrade mechanism (e.g., proxy pattern). Therefore, there are no upgrade-specific risks (7.7 Upgrades). Any future changes to the contract logic would require a… |
 
 ## LP Distribution
@@ -39,32 +39,32 @@ Furthermore, consider assigning critical administrative roles to multi-signature
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — PAUSER_ROLE Self-Management Allows Privilege Escalation  *(Severity: High · Status: Unresolved)*
-
-The `_setRoleAdmin(PAUSER_ROLE, PAUSER_ROLE)` configuration in the constructor allows any account holding the `PAUSER_ROLE` to grant or revoke `PAUSER_ROLE` to/from other addresses. This bypasses the oversight of the `DEFAULT_ADMIN_ROLE` and `ADMIN_ROLE` for managing pausers. A compromised PAUSER could add more malicious PAUSERs or remove legitimate ones, effectively taking full control of the pausing mechanism without higher administrative approval (7.3 Access Control).
-
-**Recommendation:** Change the admin role for `PAUSER_ROLE` to a higher-level administrative role, such as `DEFAULT_ADMIN_ROLE` or `ADMIN_ROLE`. For example, `_setRoleAdmin(PAUSER_ROLE, ADMIN_ROLE);` would ensure that only accounts with `ADMIN_ROLE` can manage the `PAUSER_ROLE`.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — High Centralization of Control  *(Severity: Medium · Status: Unresolved)*
 
-The contract design relies heavily on privileged roles (`DEFAULT_ADMIN_ROLE`, `ADMIN_ROLE`, `PAUSER_ROLE`, `MINTER_ROLE`). These roles have significant power, including managing other roles, minting tokens up to the maximum supply, and controlling all token transfers (pausing/unpausing, whitelisting). If the private keys associated with these roles (especially if they are EOAs) are compromised, it could lead to severe consequences such as arbitrary minting, denial of service for transfers, or loss of funds (7.5 Governance, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract design relies heavily on privileged roles (`DEFAULT_ADMIN_ROLE`, `ADMIN_ROLE`, `PAUSER_ROLE`, `MINTER_ROLE`). These roles have significant power, including managing other roles, minting tokens up to the maximum supply, and controlling all token transfers (pausing/unpausing, whitelisting). If the private keys associated with these roles (especially if they are EOAs) are compromised, it could lead to severe consequences such as arbitrary minting, denial of service for transfers, or loss of funds (7.5 Governance, 7.8 Operations).
 
 **Recommendation:** For critical roles, consider assigning them to multi-signature wallets or robust governance contracts instead of single externally owned accounts (EOAs). This distributes control and requires multiple approvals for sensitive operations, significantly reducing the risk of a single point of failure.
 
 
+### `M-02` — PAUSER_ROLE Self-Management Allows Privilege Escalation  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_setRoleAdmin(PAUSER_ROLE, PAUSER_ROLE)` configuration in the constructor allows any account holding the `PAUSER_ROLE` to grant or revoke `PAUSER_ROLE` to/from other addresses. This bypasses the oversight of the `DEFAULT_ADMIN_ROLE` and `ADMIN_ROLE` for managing pausers. A compromised PAUSER could add more malicious PAUSERs or remove legitimate ones, effectively taking full control of the pausing mechanism without higher administrative approval (7.3 Access Control).
+
+**Recommendation:** Change the admin role for `PAUSER_ROLE` to a higher-level administrative role, such as `DEFAULT_ADMIN_ROLE` or `ADMIN_ROLE`. For example, `_setRoleAdmin(PAUSER_ROLE, ADMIN_ROLE);` would ensure that only accounts with `ADMIN_ROLE` can manage the `PAUSER_ROLE`.
+
+
 ### `L-01` — Initial Role Assignments to EOAs  *(Severity: Low · Status: Unresolved)*
 
-The constructor assigns `DEFAULT_ADMIN_ROLE` to `msg.sender` and `ADMIN_ROLE`/`PAUSER_ROLE` to `initialAdmin`/`initialPauser` addresses. If these are externally owned accounts (EOAs), they represent single points of failure. A compromise of any of these EOAs could lead to unauthorized control over critical contract functions (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The constructor assigns `DEFAULT_ADMIN_ROLE` to `msg.sender` and `ADMIN_ROLE`/`PAUSER_ROLE` to `initialAdmin`/`initialPauser` addresses. If these are externally owned accounts (EOAs), they represent single points of failure. A compromise of any of these EOAs could lead to unauthorized control over critical contract functions (7.8 Operations).
 
 **Recommendation:** While common for initial deployment, it is best practice to transfer ownership of critical roles (especially `DEFAULT_ADMIN_ROLE`) to a multi-signature wallet or a well-tested governance contract immediately after deployment. This enhances security by requiring multiple approvals for sensitive actions.
 
 
 ### `I-01` — Redundant `require` in `setTransfersEnabled`  *(Severity: Informational · Status: Unresolved)*
 
-The `setTransfersEnabled` function includes `require(transfersEnabled != status, "HoloToken: status not changed");`. This check prevents setting the `transfersEnabled` state variable to its current value. While not harmful, this check is redundant as setting a state variable to its current value has no effect and consumes gas unnecessarily (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `setTransfersEnabled` function includes `require(transfersEnabled != status, "HoloToken: status not changed");`. This check prevents setting the `transfersEnabled` state variable to its current value. While not harmful, this check is redundant as setting a state variable to its current value has no effect and consumes gas unnecessarily (7.2 Code Security).
 
 **Recommendation:** Consider removing this `require` statement, as setting a variable to its existing value is a no-op and does not introduce a vulnerability. Alternatively, if the intent is to provide a more specific error, the message could be improved (e.g., 'Transfers are already enabled' or 'Transfers are already disabled').
 

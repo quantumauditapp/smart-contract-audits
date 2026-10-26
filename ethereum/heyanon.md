@@ -2,14 +2,14 @@
 token: HeyAnon
 ticker: ANON
 network: ethereum
-risk_score: 81
-status: high
+risk_score: 64
+status: medium
 date: 2026-09-12
 ---
 
 # HeyAnon (ANON) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 81/100 — 🟠 High Risk**
+> **Risk Score: 64/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/heyanon-eth)
 
@@ -25,7 +25,7 @@ The HeyAnon contract implements an Omnichain Fungible Token (OFT) utilizing Laye
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract `HeyAnon` is a straightforward implementation of an Omnichain Fungible Token (OFT) using LayerZero V2 and OpenZeppelin's `Ownable` for access control (7.1 Architecture). The code is… |
+| **Technical** | 8/10 | Low | The contract `HeyAnon` is a straightforward implementation of an Omnichain Fungible Token (OFT) using LayerZero V2 and OpenZeppelin's `Ownable` for access control (7.1 Architecture). The code is… |
 | **Governance / Economics** | 1/10 | High | The economic model is that of a standard ERC-20 token with cross-chain capabilities, relying on the underlying `OFT` implementation. The primary governance and economic risk stems from the highly… |
 | **Upgrades** | 6/10 | Medium | The `HeyAnon` contract is deployed as a standard, non-upgradeable implementation (7.7 Upgrades). This design choice eliminates upgrade-specific risks such as proxy storage collisions or incorrect… |
 
@@ -38,32 +38,32 @@ The HeyAnon contract implements an Omnichain Fungible Token (OFT) utilizing Laye
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — High Centralization of Control  *(Severity: High · Status: Unresolved)*
-
-The `_delegate` address provided in the constructor becomes both the `Ownable` owner and the `OFT` delegate. This grants a single entity extensive control over the token's administrative functions, including LayerZero configurations, pausing, and potentially other critical operations inherited from `OFT`. A compromise of this address would severely impact the protocol's cross-chain functionality and overall integrity (7.3 Access Control, 7.4 Economic).
-
-**Recommendation:** If possible, consider separating the `Ownable` owner role from the `OFT` delegate role, assigning them to different, highly secured entities or multisig wallets. If a single address must hold both roles, ensure it is a robustly secured multisignature wallet with a high threshold and strict operational security protocols.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Critical Dependency on LayerZero V2 Protocol Security  *(Severity: Medium · Status: Unresolved)*
 
-The `HeyAnon` token's core functionality relies entirely on the security and correct operation of the LayerZero V2 protocol, including its endpoint, message libraries, relayers, and oracles. Any vulnerabilities, misconfigurations, or compromises within the LayerZero infrastructure could directly affect the cross-chain transfer capabilities and overall integrity of the `HeyAnon` token (7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The `HeyAnon` token's core functionality relies entirely on the security and correct operation of the LayerZero V2 protocol, including its endpoint, message libraries, relayers, and oracles. Any vulnerabilities, misconfigurations, or compromises within the LayerZero infrastructure could directly affect the cross-chain transfer capabilities and overall integrity of the `HeyAnon` token (7.6 External).
 
 **Recommendation:** Maintain continuous monitoring of LayerZero V2 security announcements, audits, and operational status. Implement robust monitoring for cross-chain transactions and LayerZero-specific events related to the `HeyAnon` token. Develop a contingency plan for scenarios where LayerZero V2 experiences significant disruptions or security incidents.
 
 
+### `M-02` — High Centralization of Control  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_delegate` address provided in the constructor becomes both the `Ownable` owner and the `OFT` delegate. This grants a single entity extensive control over the token's administrative functions, including LayerZero configurations, pausing, and potentially other critical operations inherited from `OFT`. A compromise of this address would severely impact the protocol's cross-chain functionality and overall integrity (7.3 Access Control, 7.4 Economic).
+
+**Recommendation:** If possible, consider separating the `Ownable` owner role from the `OFT` delegate role, assigning them to different, highly secured entities or multisig wallets. If a single address must hold both roles, ensure it is a robustly secured multisignature wallet with a high threshold and strict operational security protocols.
+
+
 ### `L-01` — Reliance on OFT's Pausing Mechanism  *(Severity: Low · Status: Unresolved)*
 
-While the underlying `OFT` contract likely provides pausing mechanisms (e.g., `_pause` function callable by the owner/delegate), the `HeyAnon` contract itself does not implement any additional custom emergency functions or circuit breakers. This means the project relies solely on the inherited `OFT` controls for crisis management, without adding any specific `HeyAnon`-level emergency logic (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). While the underlying `OFT` contract likely provides pausing mechanisms (e.g., `_pause` function callable by the owner/delegate), the `HeyAnon` contract itself does not implement any additional custom emergency functions or circuit breakers. This means the project relies solely on the inherited `OFT` controls for crisis management, without adding any specific `HeyAnon`-level emergency logic (7.8 Operations).
 
 **Recommendation:** Evaluate if any specific `HeyAnon` business logic (if it were to expand beyond a simple token) would benefit from a dedicated, custom emergency pause or circuit breaker. For the current simple token, ensure the `OFT`'s pausing mechanism is well understood and accessible for rapid response by the owner/delegate.
 
 
 ### `I-01` — Constructor Input Validation  *(Severity: Informational · Status: Unresolved)*
 
-The constructor initializes critical addresses such as `_lzEndpoint` and `_delegate`. While `Ownable` checks for `address(0)` for the owner, explicit validation for `_lzEndpoint` to ensure it's a non-zero address and potentially a known valid LayerZero endpoint, or additional checks for `_delegate` (e.g., not a contract address if it's expected to be an EOA or multisig), could enhance robustness (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The constructor initializes critical addresses such as `_lzEndpoint` and `_delegate`. While `Ownable` checks for `address(0)` for the owner, explicit validation for `_lzEndpoint` to ensure it's a non-zero address and potentially a known valid LayerZero endpoint, or additional checks for `_delegate` (e.g., not a contract address if it's expected to be an EOA or multisig), could enhance robustness (7.2 Code Security).
 
 **Recommendation:** Consider adding explicit `require` statements in the constructor to validate that `_lzEndpoint` is not `address(0)`. For `_delegate`, while `Ownable` handles `address(0)`, further checks could be added if specific types of addresses (e.g., EOA vs. contract) are expected.
 

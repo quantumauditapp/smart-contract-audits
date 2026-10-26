@@ -2,14 +2,14 @@
 token: Jupiter Perps LP
 ticker: JLP
 network: solana
-risk_score: 100
-status: critical
+risk_score: 68
+status: high
 date: 2026-09-03
 ---
 
 # Jupiter Perps LP (JLP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 68/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jupiter-perps-lp-sol)
 
@@ -25,9 +25,9 @@ The Jupiter Perps LP (JLP) token mint retains both mint and freeze authorities, 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The Jupiter Perps LP (JLP) token is an SPL token operating under the `spl-token` program. It has a total supply of 194,879,188.192344 tokens with 6 decimals. Critically, both the mint authority and… |
+| **Technical** | 6/10 | Medium | The Jupiter Perps LP (JLP) token is an SPL token operating under the `spl-token` program. It has a total supply of 194,879,188.192344 tokens with 6 decimals. Critically, both the mint authority and… |
 | **Governance / Economics** | 1/10 | High | The token exhibits high holder concentration, with the top 10 accounts holding 83.35% of the total supply, which could lead to significant price volatility from large sell-offs. Liquidity is robust… |
-| **Upgrades** | 1/10 | High | The token's mint and freeze authorities are not revoked, residing with AVzP2GeRmqGphJsMxWoqjpUifPpCret7LqWhD8NWQK49. This means the token's supply and transferability parameters can be altered… |
+| **Upgrades** | 3/10 | High | The token's mint and freeze authorities are not revoked, residing with AVzP2GeRmqGphJsMxWoqjpUifPpCret7LqWhD8NWQK49. This means the token's supply and transferability parameters can be altered… |
 
 ## Security Findings
 
@@ -81,7 +81,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -90,7 +90,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: 金蟾
 ticker: JIN
 network: bsc
-risk_score: 75
-status: high
+risk_score: 45
+status: medium
 date: 2026-08-14
 ---
 
 # 金蟾 (JIN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 75/100 — 🟠 High Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jin-bsc)
 
@@ -25,8 +25,8 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages OpenZeppelin's upgradeable contracts, providing a solid foundation for ERC20 functionality and upgradeability (7.1 Architecture). The use of a `PackedPoolState` struct is an… |
-| **Governance / Economics** | 2/10 | High | The contract includes a check ensuring `taxDuration` is greater than or equal to `antiFarmerDuration`, which is a positive economic constraint. However, the owner has significant control over… |
+| **Technical** | 8/10 | Low | The contract leverages OpenZeppelin's upgradeable contracts, providing a solid foundation for ERC20 functionality and upgradeability (7.1 Architecture). The use of a `PackedPoolState` struct is an… |
+| **Governance / Economics** | 4/10 | Medium | The contract includes a check ensuring `taxDuration` is greater than or equal to `antiFarmerDuration`, which is a positive economic constraint. However, the owner has significant control over… |
 | **Upgrades** | 4/10 | Medium | The contract is designed as an upgradeable proxy using OpenZeppelin's `Initializable` pattern. The `_disableInitializers()` call in the constructor correctly prevents re-initialization of the… |
 
 ## Proxy Upgrade Controls
@@ -45,39 +45,39 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 
 ## Security Findings
 
-_🟠 2 High · 🟡 2 Medium · ⚪ 1 Informational_
-
-### `H-01` — External Contract Dependency Risk  *(Severity: High · Status: Unresolved)*
-
-The `_liquidateTax` function makes an external call to `taxProcessor.processTax(taxAmount)`. The security and correctness of the `ITaxProcessor` contract are paramount. If `taxProcessor` is malicious, buggy, or itself vulnerable (e.g., to reentrancy or unauthorized access), it could lead to the loss of all accumulated tax funds held by `FlapTaxTokenV3`. While a reentrancy guard (`notLiquidating`) is present for `_liquidateTax`, it does not mitigate risks stemming from the `taxProcessor`'s own logic or its interactions with other contracts. (7.6 External)
-
-**Recommendation:** Thoroughly audit the `ITaxProcessor` contract and any other external contracts it interacts with. Ensure robust access controls and security measures are in place for `taxProcessor`. Consider implementing a timelock for changing critical external contract addresses if they were mutable (though in this case, `taxProcessor` is immutable after initialization).
-
-
-### `H-02` — Centralized Control over Token State Transitions  *(Severity: High · Status: Unresolved)*
-
-The `startMigration` and `finalizeMigration` functions, which control significant transitions in the token's `PoolState` (e.g., from `BondingCurve` to `Migrating` to `TaxEnforcedAntiFarmer`), are restricted to `onlyOwner`. This grants the owner considerable power to alter the token's economic behavior, including tax enforcement and anti-farmer mechanisms, without community input or a timelock. Additionally, the `initialize` function mints the entire `maxSupply` to the deployer, concentrating initial token supply with the owner. (7.3 Access Control, 7.5 Governance)
-
-**Recommendation:** Consider decentralizing control over critical state transitions through a multi-signature wallet or a decentralized autonomous organization (DAO). Implement a timelock for such sensitive operations to provide users with a window to react. Document the owner's capabilities clearly to manage user expectations.
-
+_🟡 4 Medium · ⚪ 1 Informational_
 
 ### `M-01` — Immutable Liquidation Threshold  *(Severity: Medium · Status: Unresolved)*
 
-The `liquidationThreshold` within the `PackedPoolState` struct is initialized to `START_LIQ_THRESHOLD` and remains constant throughout the contract's lifecycle. This fixed threshold dictates when accumulated tax (`balanceOf(address(this))`) is processed by the `taxProcessor`. If market conditions or the protocol's needs change, this immutable threshold might become suboptimal, leading to inefficient tax processing (e.g., processing too frequently with small amounts or accumulating excessively large amounts before processing). The `initialLiquidationThreshold` variable is also set but unused. (7.4 Economic)
+Not confirmed by static analysis (the model's own reading of the source). The `liquidationThreshold` within the `PackedPoolState` struct is initialized to `START_LIQ_THRESHOLD` and remains constant throughout the contract's lifecycle. This fixed threshold dictates when accumulated tax (`balanceOf(address(this))`) is processed by the `taxProcessor`. If market conditions or the protocol's needs change, this immutable threshold might become suboptimal, leading to inefficient tax processing (e.g., processing too frequently with small amounts or accumulating excessively large amounts before processing). The `initialLiquidationThreshold` variable is also set but unused. (7.4 Economic)
 
 **Recommendation:** Consider making the `liquidationThreshold` configurable by a trusted entity (e.g., owner, multisig, or governance) to allow for adjustments based on evolving protocol requirements or market dynamics. If it's intended to be immutable, ensure this design choice is well-justified and documented. Remove the unused `initialLiquidationThreshold` variable to improve code clarity.
 
 
 ### `M-02` — Reliance on `block.timestamp` for Critical State Transitions  *(Severity: Medium · Status: Unresolved)*
 
-The `_liquidateTax` function uses `block.timestamp` to determine if `taxExpirationTime` or `antiFarmerExpirationTime` have passed, triggering changes in the `PoolState` (e.g., to `TaxFree` or `TaxEnforced`). While `block.timestamp` is suitable for relative time checks, miners can manipulate it within a small window (up to 900 seconds on Ethereum, though BSC might differ). This could potentially allow a miner or a sophisticated attacker to slightly influence the timing of these state transitions to their economic advantage, for example, by delaying a block to avoid a tax or accelerating it to trigger a specific state. (7.2 Code Security, 7.4 Economic)
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function uses `block.timestamp` to determine if `taxExpirationTime` or `antiFarmerExpirationTime` have passed, triggering changes in the `PoolState` (e.g., to `TaxFree` or `TaxEnforced`). While `block.timestamp` is suitable for relative time checks, miners can manipulate it within a small window (up to 900 seconds on Ethereum, though BSC might differ). This could potentially allow a miner or a sophisticated attacker to slightly influence the timing of these state transitions to their economic advantage, for example, by delaying a block to avoid a tax or accelerating it to trigger a specific state. (
 
 **Recommendation:** For highly sensitive time-dependent logic where even minor manipulation could have significant economic impact, consider using an oracle-based timestamp (e.g., Chainlink Keepers or similar decentralized time services) if precise, unmanipulable timing is critical. Alternatively, ensure the economic impact of minor `block.timestamp` manipulation is acceptable for the protocol.
 
 
+### `M-03` — External Contract Dependency Risk  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function makes an external call to `taxProcessor.processTax(taxAmount)`. The security and correctness of the `ITaxProcessor` contract are paramount. If `taxProcessor` is malicious, buggy, or itself vulnerable (e.g., to reentrancy or unauthorized access), it could lead to the loss of all accumulated tax funds held by `FlapTaxTokenV3`. While a reentrancy guard (`notLiquidating`) is present for `_liquidateTax`, it does not mitigate risks stemming from the `taxProcessor`'s own logic or its interactions with other contracts. (7.6 External)
+
+**Recommendation:** Thoroughly audit the `ITaxProcessor` contract and any other external contracts it interacts with. Ensure robust access controls and security measures are in place for `taxProcessor`. Consider implementing a timelock for changing critical external contract addresses if they were mutable (though in this case, `taxProcessor` is immutable after initialization).
+
+
+### `M-04` — Centralized Control over Token State Transitions  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `startMigration` and `finalizeMigration` functions, which control significant transitions in the token's `PoolState` (e.g., from `BondingCurve` to `Migrating` to `TaxEnforcedAntiFarmer`), are restricted to `onlyOwner`. This grants the owner considerable power to alter the token's economic behavior, including tax enforcement and anti-farmer mechanisms, without community input or a timelock. Additionally, the `initialize` function mints the entire `maxSupply` to the deployer, concentrating initial token supply with the owner. (7.3 Access Control, 7.5 Governance)
+
+**Recommendation:** Consider decentralizing control over critical state transitions through a multi-signature wallet or a decentralized autonomous organization (DAO). Implement a timelock for such sensitive operations to provide users with a window to react. Document the owner's capabilities clearly to manage user expectations.
+
+
 ### `I-01` — Unused State Variable `initialLiquidationThreshold`  *(Severity: Informational · Status: Unresolved)*
 
-The state variable `initialLiquidationThreshold` is set during the `initialize` function but is never subsequently read or used anywhere else in the contract. This indicates dead code, which can increase contract size, deployment costs, and potentially lead to confusion for future developers. (7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). The state variable `initialLiquidationThreshold` is set during the `initialize` function but is never subsequently read or used anywhere else in the contract. This indicates dead code, which can increase contract size, deployment costs, and potentially lead to confusion for future developers. (7.2 Code Security)
 
 **Recommendation:** Remove the `initialLiquidationThreshold` variable if it serves no purpose, or integrate it into the contract's logic if it was intended to be used.
 

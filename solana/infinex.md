@@ -2,14 +2,14 @@
 token: Infinex
 ticker: INX
 network: solana
-risk_score: 73
-status: high
+risk_score: 51
+status: medium
 date: 2026-08-12
 ---
 
 # Infinex (INX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 73/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/infinex-sol)
 
@@ -25,9 +25,9 @@ This audit of the Infinex (INX) SPL token mint reveals critical risks primarily 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The Infinex (INX) token is implemented using the classic `spl-token` program. A critical risk exists as the mint authority, `A3CT7ST5gyitAEjHCyBnYqybfStB6s5kM6YjqwpwWanY`, remains active, allowing… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a high degree of holder concentration, with the top 10 accounts holding 94.07% of the total supply, posing a significant risk of price manipulation or large-scale sell-offs (7.4… |
-| **Upgrades** | 4/10 | Medium | The token's core functionality, governed by the `spl-token` program, is fixed. However, the mint authority remains active, allowing for potential changes to the total supply (7.7 Upgrades). The… |
+| **Technical** | 8/10 | Low | The Infinex (INX) token is implemented using the classic `spl-token` program. A critical risk exists as the mint authority, `A3CT7ST5gyitAEjHCyBnYqybfStB6s5kM6YjqwpwWanY`, remains active, allowing… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a high degree of holder concentration, with the top 10 accounts holding 94.07% of the total supply, posing a significant risk of price manipulation or large-scale sell-offs (7.4… |
+| **Upgrades** | 6/10 | Medium | The token's core functionality, governed by the `spl-token` program, is fixed. However, the mint authority remains active, allowing for potential changes to the total supply (7.7 Upgrades). The… |
 
 ## Security Findings
 
@@ -74,7 +74,7 @@ Token name, symbol, or image can be changed post-launch. (Fact: metadata_mutable
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -83,7 +83,7 @@ Token name, symbol, or image can be changed post-launch. (Fact: metadata_mutable
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

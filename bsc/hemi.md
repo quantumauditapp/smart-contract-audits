@@ -2,14 +2,14 @@
 token: Hemi
 ticker: HEMI
 network: bsc
-risk_score: 68
-status: high
+risk_score: 51
+status: medium
 date: 2026-08-30
 ---
 
 # Hemi (HEMI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hemi-bsc)
 
@@ -25,9 +25,9 @@ The audit of the BinanceHemiOFT contract, an extension of LayerZero's OFT, revea
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical implementation of the BinanceHemiOFT contract is straightforward and adheres to common Solidity patterns. It correctly inherits from LayerZero's OFT and OpenZeppelin's Ownable… |
+| **Technical** | 8/10 | Low | The technical implementation of the BinanceHemiOFT contract is straightforward and adheres to common Solidity patterns. It correctly inherits from LayerZero's OFT and OpenZeppelin's Ownable… |
 | **Governance / Economics** | 1/10 | High | The contract design introduces a 'manager' role with extensive control over token transfers, including the ability to halt all transfers or selectively whitelist/blacklist accounts (7.3 Access… |
-| **Upgrades** | 6/10 | Medium | The provided contract is not implemented as an upgradeable proxy (7.7 Upgrades). This simplifies the contract's lifecycle and removes the complexities and potential risks associated with upgrade… |
+| **Upgrades** | 7/10 | Low | The provided contract is not implemented as an upgradeable proxy (7.7 Upgrades). This simplifies the contract's lifecycle and removes the complexities and potential risks associated with upgrade… |
 
 ## LP Distribution
 
@@ -38,32 +38,32 @@ The audit of the BinanceHemiOFT contract, an extension of LayerZero's OFT, revea
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control Over Token Transfers by Manager  *(Severity: High · Status: Unresolved)*
-
-The `manager` role possesses extensive control over token transfer functionality. The manager can enable/disable all transfers via `isTransferEnabled`, and selectively whitelist/blacklist accounts for sending (`canSendToAnyone`, `canSendToWhitelisted`) and receiving (`canReceive`). A compromised manager account could lead to a denial of service for all token holders by halting transfers, or selectively freeze funds by restricting specific accounts. This represents a significant centralization risk (7.3 Access Control, 7.4 Economic).
-
-**Recommendation:** Assign the `manager` role to a robust multisignature wallet with a high transaction threshold to distribute control and reduce the risk of a single point of failure. Implement off-chain governance procedures for manager actions, ensuring transparency and community oversight.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Irreversible Revocation of Management  *(Severity: Medium · Status: Unresolved)*
 
-The `revokeManagement()` function permanently sets the `manager` address to `address(0)` and, crucially, globally enables transfers by calling `updateTransferEnabled(true)`. While this decentralizes control over transfer restrictions, it means that once revoked, the transfer restriction mechanism can never be re-established or modified. This design choice is irreversible and might limit future flexibility if unforeseen circumstances require re-enabling transfer controls (7.5 Governance, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `revokeManagement()` function permanently sets the `manager` address to `address(0)` and, crucially, globally enables transfers by calling `updateTransferEnabled(true)`. While this decentralizes control over transfer restrictions, it means that once revoked, the transfer restriction mechanism can never be re-established or modified. This design choice is irreversible and might limit future flexibility if unforeseen circumstances require re-enabling transfer controls (7.5 Governance, 7.8 Operations).
 
 **Recommendation:** Ensure that the irreversible nature of `revokeManagement` is a deliberate design decision and is clearly communicated to all stakeholders. If future flexibility is desired, consider an alternative mechanism that allows for temporary suspension or a multi-step process for permanent revocation, possibly involving a governance vote.
 
 
+### `M-02` — Centralized Control Over Token Transfers by Manager  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `manager` role possesses extensive control over token transfer functionality. The manager can enable/disable all transfers via `isTransferEnabled`, and selectively whitelist/blacklist accounts for sending (`canSendToAnyone`, `canSendToWhitelisted`) and receiving (`canReceive`). A compromised manager account could lead to a denial of service for all token holders by halting transfers, or selectively freeze funds by restricting specific accounts. This represents a significant centralization risk (7.3 Access Control, 7.4 Economic).
+
+**Recommendation:** Assign the `manager` role to a robust multisignature wallet with a high transaction threshold to distribute control and reduce the risk of a single point of failure. Implement off-chain governance procedures for manager actions, ensuring transparency and community oversight.
+
+
 ### `L-01` — Manager Role Not Enforced as Multisig On-Chain  *(Severity: Low · Status: Unresolved)*
 
-The `manager` role, which holds significant power over token transfers, is defined as a single `address`. While the prefill indicates the `owner` (from `Ownable`) is a multisig, there is no on-chain enforcement or mechanism to ensure that the `manager` address itself is a multisig wallet. If the `manager` is an Externally Owned Account (EOA), it represents a single point of failure, increasing the risk of compromise (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `manager` role, which holds significant power over token transfers, is defined as a single `address`. While the prefill indicates the `owner` (from `Ownable`) is a multisig, there is no on-chain enforcement or mechanism to ensure that the `manager` address itself is a multisig wallet. If the `manager` is an Externally Owned Account (EOA), it represents a single point of failure, increasing the risk of compromise (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** If the intention is for the `manager` to be a multisig, consider implementing a check in the constructor or `updateManager` function to verify if the new manager address is a known multisig contract, or explicitly document the off-chain policy requiring a multisig for this role.
 
 
 ### `I-01` — Lack of Time-Locks for Critical Manager Operations  *(Severity: Informational · Status: Unresolved)*
 
-Critical operations performed by the `manager`, such as `updateTransferEnabled`, `updateCanSendToAnyone`, `updateCanReceive`, and `updateManager`, are executed immediately upon transaction. The absence of time-locks means that malicious or erroneous actions by a compromised manager could have immediate and irreversible consequences, leaving no window for community review or emergency intervention (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). Critical operations performed by the `manager`, such as `updateTransferEnabled`, `updateCanSendToAnyone`, `updateCanReceive`, and `updateManager`, are executed immediately upon transaction. The absence of time-locks means that malicious or erroneous actions by a compromised manager could have immediate and irreversible consequences, leaving no window for community review or emergency intervention (7.8 Operations).
 
 **Recommendation:** Consider implementing a time-lock mechanism for critical manager functions. This would introduce a delay between the initiation and execution of sensitive changes, allowing for potential detection of malicious activity or correction of errors before they take full effect.
 

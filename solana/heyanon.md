@@ -2,14 +2,14 @@
 token: HeyAnon
 ticker: ANON
 network: solana
-risk_score: 30
+risk_score: 20
 status: low
 date: 2026-09-12
 ---
 
 # HeyAnon (ANON) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 30/100 — 🟢 Low Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/heyanon-sol)
 
@@ -25,9 +25,9 @@ The HeyAnon token mint has a critical risk due to an unrevoked mint authority, a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The HeyAnon token is an SPL token operating under the `spl-token` program. A critical risk exists as the mint authority, `5AAcqakSbTFjXhRDfrczyn1Gz12EcKPkrJZHgfEANprv`, is still active, enabling the… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a moderate holder concentration, with the top 10 accounts holding 33.74% of the supply. Liquidity stands at $237,313 USD, with a 24-hour volume of $1,829,380 USD. The… |
-| **Upgrades** | 4/10 | Medium | The mint authority remains active, allowing for potential changes to the token's total supply. The freeze authority has been revoked, preventing freezing of accounts. The token's metadata is mutable… |
+| **Technical** | 8/10 | Low | The HeyAnon token is an SPL token operating under the `spl-token` program. A critical risk exists as the mint authority, `5AAcqakSbTFjXhRDfrczyn1Gz12EcKPkrJZHgfEANprv`, is still active, enabling the… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a moderate holder concentration, with the top 10 accounts holding 33.74% of the supply. Liquidity stands at $237,313 USD, with a 24-hour volume of $1,829,380 USD. The… |
+| **Upgrades** | 5/10 | Medium | The mint authority remains active, allowing for potential changes to the token's total supply. The freeze authority has been revoked, preventing freezing of accounts. The token's metadata is mutable… |
 
 ## LP Distribution
 

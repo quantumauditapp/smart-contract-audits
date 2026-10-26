@@ -155,11 +155,11 @@ The token's oldest DEX pool is 16 days old. Age is not part of the risk score â€
 
 ### Is Invesqo QQQ a scam?
 
-Based on automated analysis, Invesqo QQQ scores 63/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Invesqo QQQ scores 10/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Invesqo QQQ safe to buy?
 
-Our scanner flagged a risk score of 63/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 10/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Invesqo QQQ been audited?
 

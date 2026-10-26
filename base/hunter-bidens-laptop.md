@@ -2,14 +2,14 @@
 token: Hunter Biden's Laptop
 ticker: LAPTOP
 network: base
-risk_score: 31
+risk_score: 19
 status: low
 date: 2026-09-12
 ---
 
 # Hunter Biden's Laptop (LAPTOP) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 31/100 — 🟢 Low Risk**
+> **Risk Score: 19/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hunter-bidens-laptop-base)
 
@@ -25,8 +25,8 @@ The LaptopOFT contract implements an Omnichain Fungible Token (OFT) using LayerZ
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract architecture (7.1) leverages the well-audited LayerZero OFT standard and OpenZeppelin's Ownable2Step, providing a robust foundation for an omnichain token. Code security (7.2) is… |
-| **Governance / Economics** | 5/10 | Medium | Economically (7.4), the fixed total supply and single initial minting event provide predictability and prevent arbitrary inflation. However, the governance (7.5) model is highly centralized, with a… |
+| **Technical** | 10/10 | Low | The contract architecture (7.1) leverages the well-audited LayerZero OFT standard and OpenZeppelin's Ownable2Step, providing a robust foundation for an omnichain token. Code security (7.2) is… |
+| **Governance / Economics** | 6/10 | Medium | Economically (7.4), the fixed total supply and single initial minting event provide predictability and prevent arbitrary inflation. However, the governance (7.5) model is highly centralized, with a… |
 | **Upgrades** | 7/10 | Low | The LaptopOFT contract is not designed as an upgradeable proxy (7.7). It is a standard implementation contract, meaning its logic cannot be changed after deployment. This eliminates risks associated… |
 
 ## LP Distribution
@@ -38,25 +38,25 @@ The LaptopOFT contract implements an Omnichain Fungible Token (OFT) using LayerZ
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Centralized Control over Critical LayerZero Configurations  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Control over Critical LayerZero Configurations  *(Severity: Medium · Status: Unresolved)*
 
-The `LaptopOFT` contract inherits from `OFT`, which exposes several owner-controlled functions to configure LayerZero parameters (e.g., `setTrustedRemote`, `setMinDstGas`, `setDelegate`, `setPrecrime`, `setOracle`, `setFeeManager`). These functions are critical for the correct and secure operation of cross-chain transfers. A compromised owner key could lead to a denial of service for cross-chain functionality, incorrect fee calculations, or even potential loss of funds if `setTrustedRemote` is manipulated to a malicious endpoint, redirecting tokens to an attacker-controlled contract.
+Not confirmed by static analysis (the model's own reading of the source). The `LaptopOFT` contract inherits from `OFT`, which exposes several owner-controlled functions to configure LayerZero parameters (e.g., `setTrustedRemote`, `setMinDstGas`, `setDelegate`, `setPrecrime`, `setOracle`, `setFeeManager`). These functions are critical for the correct and secure operation of cross-chain transfers. A compromised owner key could lead to a denial of service for cross-chain functionality, incorrect fee calculations, or even potential loss of funds if `setTrustedRemote` is manipulated to a malicious endpoint, redirecting tokens to an attacker-controlled contract.
 
 **Recommendation:** Implement robust multi-signature control for the owner address to prevent a single point of failure. Consider adding a time-lock to critical configuration changes (e.g., `setTrustedRemote`, `setDelegate`) to allow for community review or emergency intervention before changes take effect. Regularly review and audit the security practices surrounding the owner's private keys.
 
 
 ### `L-01` — Dependency on External LayerZero Endpoint Security and Liveness  *(Severity: Low · Status: Unresolved)*
 
-The `LaptopOFT` contract's core cross-chain functionality relies entirely on the security and operational integrity of the LayerZero Endpoint (`_lzEndpoint`) provided during deployment. Any vulnerabilities, misconfigurations, or liveness issues within the LayerZero protocol or the specific endpoint contract could directly impact the `LaptopOFT` token's ability to transfer across chains, leading to a denial of service for users attempting cross-chain operations.
+Not confirmed by static analysis (the model's own reading of the source). The `LaptopOFT` contract's core cross-chain functionality relies entirely on the security and operational integrity of the LayerZero Endpoint (`_lzEndpoint`) provided during deployment. Any vulnerabilities, misconfigurations, or liveness issues within the LayerZero protocol or the specific endpoint contract could directly impact the `LaptopOFT` token's ability to transfer across chains, leading to a denial of service for users attempting cross-chain operations.
 
 **Recommendation:** Acknowledge this inherent dependency and monitor the LayerZero protocol's security posture and operational status. Ensure the `_lzEndpoint` address used during deployment is the official and verified LayerZero endpoint for the respective chain. Implement monitoring for LayerZero endpoint events and status.
 
 
 ### `I-01` — Fixed Total Supply and Initial Minting Design  *(Severity: Informational · Status: Unresolved)*
 
-The contract is designed with a fixed `TOTAL_SUPPLY` of 1,000,000,000 tokens, which are minted entirely to a single `_initialRecipient` address only on the `BASE_CHAIN_ID` during construction. This design choice prevents further inflation or arbitrary minting by the contract owner or any other entity, providing a predictable supply schedule. However, it also means that if the `_initialRecipient` address is incorrect or compromised at the time of deployment, the entire token supply could be misallocated.
+Not confirmed by static analysis (the model's own reading of the source). The contract is designed with a fixed `TOTAL_SUPPLY` of 1,000,000,000 tokens, which are minted entirely to a single `_initialRecipient` address only on the `BASE_CHAIN_ID` during construction. This design choice prevents further inflation or arbitrary minting by the contract owner or any other entity, providing a predictable supply schedule. However, it also means that if the `_initialRecipient` address is incorrect or compromised at the time of deployment, the entire token supply could be misallocated.
 
 **Recommendation:** Ensure the `_initialRecipient` address is thoroughly vetted, secure, and correct prior to deployment, as this is the sole opportunity for initial token distribution. This design is generally considered a positive security characteristic for fixed-supply tokens.
 

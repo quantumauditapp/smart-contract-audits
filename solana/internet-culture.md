@@ -2,14 +2,14 @@
 token: Internet Culture
 ticker: INTERNET
 network: solana
-risk_score: 28
+risk_score: 11
 status: low
 date: 2026-09-21
 ---
 
 # Internet Culture (INTERNET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/internet-culture-sol)
 
@@ -26,8 +26,8 @@ This SPL Token Mint audit for Internet Culture (Internet) identifies a Medium ri
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Internet Culture token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token issuance or freezing of holder… |
-| **Governance / Economics** | 3/10 | High | The token's DEX pair was created only 2 days ago, which is a very short period to assess market behavior and stability. Current liquidity stands at $21,510, with a 24-hour volume of $98,793… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are highly immutable, as both the mint and freeze authorities have been revoked. Additionally, the token's metadata is not mutable, ensuring that its name, symbol, or… |
+| **Governance / Economics** | 6/10 | Medium | The token's DEX pair was created only 2 days ago, which is a very short period to assess market behavior and stability. Current liquidity stands at $21,510, with a 24-hour volume of $98,793… |
+| **Upgrades** | 10/10 | Low | The token's core parameters are highly immutable, as both the mint and freeze authorities have been revoked. Additionally, the token's metadata is not mutable, ensuring that its name, symbol, or… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair for Internet Culture was created 2 days ago. This short operational
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1217 buys / 813 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for Internet Culture was created 2 days ago. This short operational
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

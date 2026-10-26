@@ -2,14 +2,14 @@
 token: HODL
 ticker: HODL
 network: solana
-risk_score: 43
-status: medium
+risk_score: 26
+status: low
 date: 2026-09-14
 ---
 
 # HODL (HODL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hodl-sol-9789)
 
@@ -25,9 +25,9 @@ The HODL token mint is based on the SPL Token-2022 program with both mint and fr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The HODL token is implemented using the SPL Token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing accounts can… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate holder concentration, with the top 10 accounts holding 38.06% of the supply, which does not indicate immediate centralization risk. DEX liquidity stands at $49,148, which… |
-| **Upgrades** | 8/10 | Low | The HODL token mint has a fixed configuration as both the mint and freeze authorities are revoked. This prevents any future changes to the token's supply or the ability to freeze holder accounts.… |
+| **Technical** | 10/10 | Low | The HODL token is implemented using the SPL Token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing accounts can… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate holder concentration, with the top 10 accounts holding 38.06% of the supply, which does not indicate immediate centralization risk. DEX liquidity stands at $49,148, which… |
+| **Upgrades** | 10/10 | Low | The HODL token mint has a fixed configuration as both the mint and freeze authorities are revoked. This prevents any future changes to the token's supply or the ability to freeze holder accounts.… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2730 buys / 2104 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

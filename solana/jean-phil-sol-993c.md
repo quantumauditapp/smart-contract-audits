@@ -2,14 +2,14 @@
 token: Jean Phil
 ticker: JEANPHIL
 network: solana
-risk_score: 7
+risk_score: 0
 status: low
 date: 2026-09-28
 ---
 
 # Jean Phil (JEANPHIL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 7/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jean-phil-sol-993c)
 
@@ -26,8 +26,8 @@ The Jean Phil (JEANPHIL) SPL Token Mint audit reveals a newly launched token wit
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Jean Phil (JEANPHIL) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a very new DEX pair, created only 1 day ago, which provides insufficient track record for assessing long-term stability or team behavior. Liquidity is substantial at $2,874,774… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as both mint and freeze authorities are revoked. No Token-2022 extensions that would allow for post-launch modifications, such as transfer hooks or default… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a very new DEX pair, created only 1 day ago, which provides insufficient track record for assessing long-term stability or team behavior. Liquidity is substantial at $2,874,774… |
+| **Upgrades** | 9/10 | Low | The token's core parameters are immutable, as both mint and freeze authorities are revoked. No Token-2022 extensions that would allow for post-launch modifications, such as transfer hooks or default… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ The DEX pair was created 1 day ago. Insufficient track record to assess team or 
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 1 day ago. Insufficient track record to assess team or 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: Kardashev Research
 ticker: KARDASHEV
 network: solana
-risk_score: 15
+risk_score: 8
 status: low
 date: 2026-09-26
 ---
 
 # Kardashev Research (KARDASHEV) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 15/100 — 🟢 Low Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kardashev-research-sol)
 
@@ -26,8 +26,8 @@ The Kardashev Research (KARDASHEV) SPL Token Mint exhibits a Medium risk profile
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Kardashev Research (KARDASHEV) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring that no new tokens can be minted and no… |
-| **Governance / Economics** | 5/10 | Medium | The token has a total DEX liquidity of $149,147, with a 24-hour volume of $544,872, resulting in a normal Volume/Liquidity Ratio of 3.65 (7.4 Economic). However, the DEX pair was created only 0 days… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are revoked, meaning its supply and account freeze capabilities cannot be altered (7.7 Upgrades). The token does not have a transfer hook or default account… |
+| **Governance / Economics** | 6/10 | Medium | The token has a total DEX liquidity of $149,147, with a 24-hour volume of $544,872, resulting in a normal Volume/Liquidity Ratio of 3.65 (7.4 Economic). However, the DEX pair was created only 0 days… |
+| **Upgrades** | 9/10 | Low | The token's mint and freeze authorities are revoked, meaning its supply and account freeze capabilities cannot be altered (7.7 Upgrades). The token does not have a transfer hook or default account… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ The DEX pair for Kardashev Research (KARDASHEV) was created 0 days ago. This ind
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for Kardashev Research (KARDASHEV) was created 0 days ago. This ind
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

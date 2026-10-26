@@ -2,14 +2,14 @@
 token: IMDStrategy
 ticker: IMDSTR
 network: ethereum
-risk_score: 71
-status: high
+risk_score: 56
+status: medium
 date: 2026-09-26
 ---
 
 # IMDStrategy (IMDSTR) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 71/100 — 🟠 High Risk**
+> **Risk Score: 56/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/imdstrategy-eth)
 
@@ -25,7 +25,7 @@ The ImmutableNFTStrategy contract serves as an implementation for a UUPS proxy, 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The `ImmutableNFTStrategy` contract is minimal, primarily overriding the `upgradeToAndCall` function to prevent further upgrades, thereby ensuring the immutability of the current implementation (7.7… |
+| **Technical** | 8/10 | Low | The `ImmutableNFTStrategy` contract is minimal, primarily overriding the `upgradeToAndCall` function to prevent further upgrades, thereby ensuring the immutability of the current implementation (7.7… |
 | **Governance / Economics** | 1/10 | High | The system, as indicated by various interfaces (e.g., `IPunkStrategy`, `IPunkStrategyHook`), involves complex economic interactions such as NFT trading, fee collection, reward distribution, and… |
 | **Upgrades** | 1/10 | High | The `ImmutableNFTStrategy` contract explicitly disables upgrades by reverting `upgradeToAndCall` with an `UpgradesDisabled()` error. This design choice makes the deployed proxy effectively immutable… |
 
@@ -46,32 +46,32 @@ The ImmutableNFTStrategy contract serves as an implementation for a UUPS proxy, 
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · ⚪ 2 Informational_
-
-### `H-01` — Incomplete Audit Scope - Missing Base Contract Source  *(Severity: High · Status: Unresolved)*
-
-The `NFTStrategy` contract, from which `ImmutableNFTStrategy` inherits its core functionality, was not provided for review. This prevents a comprehensive security assessment of the strategy's primary logic, including critical areas such as reentrancy protection, integer arithmetic, handling of funds, and complex state transitions. Without the full source, potential vulnerabilities in the base contract cannot be identified or mitigated (7.1 Architecture, 7.2 Code Security).
-
-**Recommendation:** Provide the complete and verified source code for the `NFTStrategy` contract to enable a full and thorough security audit of the entire system. This is essential for ensuring the robustness and security of the protocol.
-
+_🟡 2 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Unaudited Access Control Mechanisms  *(Severity: Medium · Status: Unresolved)*
 
-The interfaces (`IPunkStrategy`, `IStrategy`, `IBaseStrategyFactory`) indicate the presence of an `owner` role and various functions that modify critical parameters (e.g., `setReward`, `setPriceMultiplier`, `updateFeeBips`, `transferOwnership`). Without the source code for `NFTStrategy`, the implementation details of these access control mechanisms (e.g., whether `Ownable` is used, if there are multi-sig requirements, or if there are any re-entrancy guards on sensitive functions) cannot be verified. Improper access control could lead to unauthorized parameter changes or fund manipulation (7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The interfaces (`IPunkStrategy`, `IStrategy`, `IBaseStrategyFactory`) indicate the presence of an `owner` role and various functions that modify critical parameters (e.g., `setReward`, `setPriceMultiplier`, `updateFeeBips`, `transferOwnership`). Without the source code for `NFTStrategy`, the implementation details of these access control mechanisms (e.g., whether `Ownable` is used, if there are multi-sig requirements, or if there are any re-entrancy guards on sensitive functions) cannot be verified. Improper access control could lead to unauthorized parameter changes or fund manipulation (7.3 Access Control).
 
 **Recommendation:** Provide the source code for `NFTStrategy` to allow for a detailed review of all access control implementations. Ensure that critical functions are adequately protected, and consider implementing multi-signature wallets for sensitive administrative actions.
 
 
+### `M-02` — Incomplete Audit Scope - Missing Base Contract Source  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `NFTStrategy` contract, from which `ImmutableNFTStrategy` inherits its core functionality, was not provided for review. This prevents a comprehensive security assessment of the strategy's primary logic, including critical areas such as reentrancy protection, integer arithmetic, handling of funds, and complex state transitions. Without the full source, potential vulnerabilities in the base contract cannot be identified or mitigated (7.1 Architecture, 7.2 Code Security).
+
+**Recommendation:** Provide the complete and verified source code for the `NFTStrategy` contract to enable a full and thorough security audit of the entire system. This is essential for ensuring the robustness and security of the protocol.
+
+
 ### `I-01` — Reliance on External Protocols  *(Severity: Informational · Status: Unresolved)*
 
-The contract interfaces indicate significant interaction with external protocols such as Uniswap V4, CryptoPunks (`IPunks`), and a Universal Router (`IUniversalRouter`). The security and correct functioning of this strategy heavily depend on the integrity, expected behavior, and upgradeability of these external contracts. Any vulnerabilities, unexpected changes, or economic exploits in these external dependencies could directly impact the strategy (7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The contract interfaces indicate significant interaction with external protocols such as Uniswap V4, CryptoPunks (`IPunks`), and a Universal Router (`IUniversalRouter`). The security and correct functioning of this strategy heavily depend on the integrity, expected behavior, and upgradeability of these external contracts. Any vulnerabilities, unexpected changes, or economic exploits in these external dependencies could directly impact the strategy (7.6 External).
 
 **Recommendation:** Conduct a thorough review of all external dependencies, including their security audits, upgrade mechanisms, and potential failure modes. Implement robust error handling and sanity checks when interacting with external contracts to mitigate risks from unexpected behavior.
 
 
 ### `I-02` — Explicit Immutability via `UpgradesDisabled`  *(Severity: Informational · Status: Resolved)*
 
-The `ImmutableNFTStrategy` contract explicitly prevents future upgrades by overriding the `upgradeToAndCall` function to unconditionally revert with `UpgradesDisabled()`. This design choice ensures that the current logic of the strategy, once deployed as a UUPS proxy implementation, cannot be altered via the standard UUPS upgrade mechanism, providing a strong guarantee of immutability for the current implementation (7.7 Upgrades).
+Not confirmed by static analysis (the model's own reading of the source). The `ImmutableNFTStrategy` contract explicitly prevents future upgrades by overriding the `upgradeToAndCall` function to unconditionally revert with `UpgradesDisabled()`. This design choice ensures that the current logic of the strategy, once deployed as a UUPS proxy implementation, cannot be altered via the standard UUPS upgrade mechanism, providing a strong guarantee of immutability for the current implementation (7.7 Upgrades).
 
 **Recommendation:** This is a positive security feature. Ensure that this immutability aligns with the long-term operational and governance strategy for the protocol. If any future changes are anticipated, they would require a new deployment rather than an upgrade.
 

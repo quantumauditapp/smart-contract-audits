@@ -2,14 +2,14 @@
 token: Just a Backpack
 ticker: 🎒
 network: solana
-risk_score: 14
+risk_score: 10
 status: low
 date: 2026-09-18
 ---
 
 # Just a Backpack (🎒) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 14/100 — 🟢 Low Risk**
+> **Risk Score: 10/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/just-a-backpack-sol)
 
@@ -26,8 +26,8 @@ This SPL Token-2022 mint has revoked mint and freeze authorities, ensuring a fix
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint and freeze authorities are revoked, ensuring a fixed supply and preventing arbitrary freezing of holder accounts. A 1.00%… |
-| **Governance / Economics** | 7/10 | Low | Holder concentration is moderate, with the top 10 accounts holding 25.18% of the supply, which does not indicate extreme centralization. The token has $185,913 in DEX liquidity, and its pair has been… |
-| **Upgrades** | 6/10 | Medium | The mint and freeze authorities are permanently revoked, meaning the token's supply cannot be increased and no accounts can be frozen. While the transfer hook is not upgradable, the transfer fee is.… |
+| **Governance / Economics** | 8/10 | Low | Holder concentration is moderate, with the top 10 accounts holding 25.18% of the supply, which does not indicate extreme centralization. The token has $185,913 in DEX liquidity, and its pair has been… |
+| **Upgrades** | 7/10 | Low | The mint and freeze authorities are permanently revoked, meaning the token's supply cannot be increased and no accounts can be frozen. While the transfer hook is not upgradable, the transfer fee is.… |
 
 ## Token-2022 Extensions
 
@@ -66,7 +66,7 @@ The token's metadata_mutable flag is True. This means the token name, symbol, or
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -75,7 +75,7 @@ The token's metadata_mutable flag is True. This means the token name, symbol, or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

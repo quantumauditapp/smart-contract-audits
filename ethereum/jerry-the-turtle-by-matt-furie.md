@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Centralized Initial Token Distribution  *(Severity: Low · Status: Unresolved)*
 
-The entire initial supply of 1,000,000,000 tokens is minted to the contract deployer's address in the constructor. While ownership is subsequently renounced, this initial centralized distribution means that the deployer holds 100% of the token supply at launch. This concentration could lead to significant market impact or potential for manipulation if not managed transparently and responsibly post-deployment (7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The entire initial supply of 1,000,000,000 tokens is minted to the contract deployer's address in the constructor. While ownership is subsequently renounced, this initial centralized distribution means that the deployer holds 100% of the token supply at launch. This concentration could lead to significant market impact or potential for manipulation if not managed transparently and responsibly post-deployment (7.4 Economic).
 
 **Recommendation:** Implement a clear and transparent plan for the distribution of the initial token supply. This could involve locking a portion of tokens, distributing them via a fair launch mechanism, or vesting schedules to mitigate risks associated with centralized control of a large supply. Communicate this distribution strategy to the community.
 
 
 ### `I-01` — Renounced Ownership in Constructor  *(Severity: Informational · Status: Unresolved)*
 
-The contract's `Ownable` ownership is immediately renounced in the constructor via `_transferOwnership(address(0));`. This design choice ensures that no single address retains administrative control over the contract after deployment. While this enhances decentralization and immutability, it also means that any functions protected by `onlyOwner` will become permanently uncallable.
+Not confirmed by static analysis (the model's own reading of the source). The contract's `Ownable` ownership is immediately renounced in the constructor via `_transferOwnership(address(0));`. This design choice ensures that no single address retains administrative control over the contract after deployment. While this enhances decentralization and immutability, it also means that any functions protected by `onlyOwner` will become permanently uncallable.
 
 **Recommendation:** This is a deliberate design choice that promotes decentralization. Ensure that all necessary initializations are completed before deployment, as no owner-specific actions can be taken afterward. Communicate this immutability clearly to the community.
 
 
 ### `I-02` — Uncallable Administrative Functions  *(Severity: Informational · Status: Unresolved)*
 
-Due to the immediate renunciation of ownership in the constructor (I-01), several administrative functions such as `_setApprove`, `_setBalance`, and `_setTotalSupply` become permanently uncallable. These functions are intended to be owner-restricted but cannot be invoked as there is no owner. This effectively renders these code paths dead.
+Not confirmed by static analysis (the model's own reading of the source). Due to the immediate renunciation of ownership in the constructor (I-01), several administrative functions such as `_setApprove`, `_setBalance`, and `_setTotalSupply` become permanently uncallable. These functions are intended to be owner-restricted but cannot be invoked as there is no owner. This effectively renders these code paths dead.
 
 **Recommendation:** While this is a direct consequence of the renounced ownership and reinforces immutability, consider removing these functions if they are not intended to be used. This would reduce contract size and improve clarity by removing unused code. Alternatively, if any administrative control was desired, ownership should not be renounced immediately.
 

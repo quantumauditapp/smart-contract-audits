@@ -2,14 +2,14 @@
 token: Karate Cat 
 ticker: KCAT
 network: solana
-risk_score: 12
+risk_score: 0
 status: low
 date: 2026-09-24
 ---
 
 # Karate Cat  (KCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 12/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/karate-cat-sol)
 
@@ -26,8 +26,8 @@ The Karate Cat (KCAT) SPL Token Mint exhibits a medium risk profile primarily du
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The KCAT token is implemented using the spl-token-2022 program. The Mint Authority is revoked, ensuring no new tokens can be minted beyond the current supply of 963,898,990.818077 tokens. Similarly… |
-| **Governance / Economics** | 6/10 | Medium | The token's DEX liquidity stands at $51,738, with a 24-hour volume of $486,410, resulting in a Volume/Liquidity Ratio of 9.40. This ratio, while not exceeding the threshold for wash trading… |
-| **Upgrades** | 8/10 | Low | The KCAT token mint has a robust setup regarding post-launch mutability. Both the Mint Authority and Freeze Authority are revoked, preventing any future changes to the token's supply or the ability… |
+| **Governance / Economics** | 9/10 | Low | The token's DEX liquidity stands at $51,738, with a 24-hour volume of $486,410, resulting in a Volume/Liquidity Ratio of 9.40. This ratio, while not exceeding the threshold for wash trading… |
+| **Upgrades** | 10/10 | Low | The KCAT token mint has a robust setup regarding post-launch mutability. Both the Mint Authority and Freeze Authority are revoked, preventing any future changes to the token's supply or the ability… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair for Karate Cat (KCAT) was created 2 days ago. This insufficient tra
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3171 buys / 3250 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for Karate Cat (KCAT) was created 2 days ago. This insufficient tra
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources
