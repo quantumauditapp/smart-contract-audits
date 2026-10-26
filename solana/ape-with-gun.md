@@ -2,14 +2,14 @@
 token: APE WITH GUN
 ticker: APEGUN
 network: solana
-risk_score: 53
+risk_score: 36
 status: medium
 date: 2026-08-31
 ---
 
 # APE WITH GUN (APEGUN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟡 Medium Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ape-with-gun-sol)
 
@@ -26,7 +26,7 @@ This SPL Token Mint for APE WITH GUN (APEGUN) has its mint and freeze authoritie
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The APE WITH GUN (APEGUN) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
-| **Governance / Economics** | 1/10 | High | The token's DEX pair is very new, having been created only 2 days ago, which limits the ability to assess long-term market behavior. Current liquidity stands at $33,312, with a 24-hour volume of… |
+| **Governance / Economics** | 2/10 | High | The token's DEX pair is very new, having been created only 2 days ago, which limits the ability to assess long-term market behavior. Current liquidity stands at $33,312, with a 24-hour volume of… |
 | **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are revoked, meaning core token properties like supply and account freeze status cannot be changed. No transfer hook is present, and its upgradability is… |
 
 ## Security Findings
@@ -54,13 +54,13 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1168 buys / 1119 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

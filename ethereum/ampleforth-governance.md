@@ -2,14 +2,14 @@
 token: Ampleforth Governance
 ticker: FORTH
 network: ethereum
-risk_score: 54
+risk_score: 42
 status: medium
 date: 2026-09-13
 ---
 
 # Ampleforth Governance (FORTH) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 54/100 — 🟡 Medium Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ampleforth-governance-eth)
 
@@ -26,7 +26,7 @@ The Forth token contract implements an ERC-20 compliant token with additional go
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract demonstrates good adherence to ERC-20 standards and incorporates robust governance features like delegation and vote checkpoints (7.1 Architecture). It utilizes `SafeMath` for arithmetic… |
-| **Governance / Economics** | 1/10 | High | The token's economic model includes a controlled minting mechanism with a `minter` role, a `mintCap` of 2% of total supply, and a `minimumTimeBetweenMints` of one year (7.4 Economic). This provides a… |
+| **Governance / Economics** | 2/10 | High | The token's economic model includes a controlled minting mechanism with a `minter` role, a `mintCap` of 2% of total supply, and a `minimumTimeBetweenMints` of one year (7.4 Economic). This provides a… |
 | **Upgrades** | 6/10 | Medium | The Forth contract is implemented as a standard, non-upgradeable token contract (7.7 Upgrades). This design choice eliminates the complexities and risks associated with proxy patterns and… |
 
 ## LP Distribution
@@ -38,39 +38,39 @@ The Forth token contract implements an ERC-20 compliant token with additional go
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 2 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Minter Control  *(Severity: High · Status: Unresolved)*
-
-The `minter` address has significant centralized control over the token supply. This address can mint new tokens up to the `mintCap` (2% of total supply) annually and can also change the `minter` address itself via the `setMinter` function. A compromise of this single address could lead to uncontrolled inflation or a complete loss of control over the token's minting mechanism, directly impacting the token's economic stability and trust (7.3 Access Control, 7.4 Economic, 7.5 Governance).
-
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) or a time-locked contract for the `minter` role. This would require multiple trusted parties to approve critical operations like minting or changing the minter, significantly reducing the risk of a single point of failure.
-
+_🟡 2 Medium · 🟢 2 Low · ⚪ 1 Informational_
 
 ### `M-01` — Minter's Ability to Manipulate Minting Schedule  *(Severity: Medium · Status: Unresolved)*
 
-The `mintingAllowedAfter` timestamp is updated to `block.timestamp + minimumTimeBetweenMints` after every `mint` operation. This means the `minter` can effectively reset the cooldown period by performing a small, insignificant mint. If the `minter` wishes to delay a larger, scheduled mint, they could execute a minimal mint transaction, pushing the next available minting window back by `minimumTimeBetweenMints` (one year). This could lead to unexpected delays in token distribution or inflation schedule (7.4 Economic, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `mintingAllowedAfter` timestamp is updated to `block.timestamp + minimumTimeBetweenMints` after every `mint` operation. This means the `minter` can effectively reset the cooldown period by performing a small, insignificant mint. If the `minter` wishes to delay a larger, scheduled mint, they could execute a minimal mint transaction, pushing the next available minting window back by `minimumTimeBetweenMints` (one year). This could lead to unexpected delays in token distribution or inflation schedule (7.4 Economic, 7.8 Operations).
 
 **Recommendation:** Consider modifying the `mintingAllowedAfter` logic to be less susceptible to manipulation. For example, `mintingAllowedAfter` could be set to `max(mintingAllowedAfter, block.timestamp) + minimumTimeBetweenMints` or a more robust schedule could be implemented that is not solely dependent on the last minting event.
 
 
+### `M-02` — Centralized Minter Control  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `minter` address has significant centralized control over the token supply. This address can mint new tokens up to the `mintCap` (2% of total supply) annually and can also change the `minter` address itself via the `setMinter` function. A compromise of this single address could lead to uncontrolled inflation or a complete loss of control over the token's minting mechanism, directly impacting the token's economic stability and trust (7.3 Access Control, 7.4 Economic, 7.5 Governance).
+
+**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) or a time-locked contract for the `minter` role. This would require multiple trusted parties to approve critical operations like minting or changing the minter, significantly reducing the risk of a single point of failure.
+
+
 ### `L-01` — Use of Experimental ABIEncoderV2  *(Severity: Low · Status: Unresolved)*
 
-The contract uses `pragma experimental ABIEncoderV2;` with Solidity 0.6.11. While `ABIEncoderV2` has become standard and is widely used, its 'experimental' tag in older compiler versions implies that it might have had less rigorous auditing or could contain subtle bugs compared to fully stable features. Although unlikely to be a critical issue today, it's generally safer to use stable features or newer compiler versions where `ABIEncoderV2` is no longer experimental (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract uses `pragma experimental ABIEncoderV2;` with Solidity 0.6.11. While `ABIEncoderV2` has become standard and is widely used, its 'experimental' tag in older compiler versions implies that it might have had less rigorous auditing or could contain subtle bugs compared to fully stable features. Although unlikely to be a critical issue today, it's generally safer to use stable features or newer compiler versions where `ABIEncoderV2` is no longer experimental (7.2 Code Security).
 
 **Recommendation:** For future deployments or upgrades, consider migrating to a newer Solidity compiler version (e.g., 0.8.x) where `ABIEncoderV2` is stable and no longer requires the experimental pragma. This would also benefit from other security enhancements in newer compilers.
 
 
 ### `L-02` — Older Solidity Compiler Version  *(Severity: Low · Status: Unresolved)*
 
-The contract is compiled with Solidity version 0.6.11. Newer Solidity versions (e.g., 0.8.x) include several security enhancements, such as built-in overflow/underflow checks for arithmetic operations, which reduce reliance on external libraries like SafeMath. While SafeMath is used here, migrating to a newer compiler could simplify the code and benefit from the latest compiler-level security features and optimizations (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version 0.6.11. Newer Solidity versions (e.g., 0.8.x) include several security enhancements, such as built-in overflow/underflow checks for arithmetic operations, which reduce reliance on external libraries like SafeMath. While SafeMath is used here, migrating to a newer compiler could simplify the code and benefit from the latest compiler-level security features and optimizations (7.2 Code Security).
 
 **Recommendation:** Consider upgrading the Solidity compiler version to 0.8.x or later. This would allow for the removal of SafeMath (as arithmetic operations would revert on overflow/underflow by default) and provide access to other modern language features and security improvements.
 
 
 ### `I-01` — Front-running Potential in EIP-712 Signature Functions  *(Severity: Informational · Status: Unresolved)*
 
-Functions like `permit` and `delegateBySig` allow users to perform gasless transactions by providing a signed message. While `nonces` and `deadlines` are correctly implemented to prevent replay attacks, these functions are still susceptible to front-running. A malicious actor could observe a pending signed transaction, submit it with a higher gas price, and potentially cause the original user's transaction to fail or incur unnecessary gas costs. This is a common characteristic of EIP-712 signature schemes and not a direct vulnerability in the contract's logic (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). Functions like `permit` and `delegateBySig` allow users to perform gasless transactions by providing a signed message. While `nonces` and `deadlines` are correctly implemented to prevent replay attacks, these functions are still susceptible to front-running. A malicious actor could observe a pending signed transaction, submit it with a higher gas price, and potentially cause the original user's transaction to fail or incur unnecessary gas costs. This is a common characteristic of EIP-712 signature schemes and not a direct vulnerability in the contract's logic (7.2 Code Security).
 
 **Recommendation:** Educate users about the potential for front-running when using signed messages for `permit` and `delegateBySig`. Advise them to use services that offer MEV protection or to be mindful of network congestion when submitting such transactions. No direct code change is required for this inherent characteristic.
 

@@ -10,6 +10,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [PancakeSwap Token](./pancakeswap-token.md) | CAKE | 🟢 21/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/pancakeswap-token-bsc) |
 | [GinnanCoin](./ginnancoin.md) | GINNAN | 🟡 38/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/ginnancoin-bsc) |
 | [Copper](./copper.md) | COPPER | 🟢 32/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/copper-bsc) |
 | [FOMO金库](./fomo.md) | FOMO人生 | 🟢 9/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/fomo-bsc) |
@@ -434,7 +435,6 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [PIZZA](./pizza.md) | PIZZA | 🟢 24/100 Low Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/pizza-bsc) |
 | [Pieverse Token](./pieverse-token.md) | PIEVERSE | 🟠 76/100 High Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/pieverse-token-bsc) |
 | [PeaqOFT](./peaqoft.md) | PEAQ | 🟢 28/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/peaqoft-bsc) |
-| [PancakeSwap Token](./pancakeswap-token.md) | CAKE | 🟡 60/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/pancakeswap-token-bsc) |
 | [Palu](./palu.md) | PALU | 🟢 0/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/palu-bsc) |
 | [Orochi Network Token](./orochi-network-token.md) | ON | 🟢 34/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/orochi-network-token-bsc) |
 | [Orizon](./orizon.md) | ORI | 🟡 49/100 Medium Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/orizon-bsc) |

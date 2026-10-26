@@ -2,14 +2,14 @@
 token: Agent HQ
 ticker: AGENTHQ
 network: solana
-risk_score: 28
+risk_score: 11
 status: low
 date: 2026-09-01
 ---
 
 # Agent HQ (AGENTHQ) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/agent-hq-sol)
 
@@ -26,8 +26,8 @@ The Agent HQ (AGENTHQ) token mint exhibits a low technical risk profile with bot
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Agent HQ token is implemented using the classic `spl-token` program. Its core security posture is strong, with the mint authority explicitly revoked, preventing any further token issuance and… |
-| **Governance / Economics** | 4/10 | Medium | The economic profile of Agent HQ shows a moderate level of liquidity at $53,293 USD, with a 24-hour trading volume of $343,032 USD. The volume/liquidity ratio is 6.44, which, while high, does not… |
-| **Upgrades** | 8/10 | Low | The Agent HQ token mint has a robust upgrade and mutability status. Both the mint authority and freeze authority have been permanently revoked, which means the token's supply and account freeze… |
+| **Governance / Economics** | 7/10 | Low | The economic profile of Agent HQ shows a moderate level of liquidity at $53,293 USD, with a 24-hour trading volume of $343,032 USD. The volume/liquidity ratio is 6.44, which, while high, does not… |
+| **Upgrades** | 10/10 | Low | The Agent HQ token mint has a robust upgrade and mutability status. Both the mint authority and freeze authority have been permanently revoked, which means the token's supply and account freeze… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2428 buys / 1824 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

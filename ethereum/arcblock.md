@@ -2,14 +2,14 @@
 token: ArcBlock
 ticker: ABT
 network: ethereum
-risk_score: 91
-status: critical
+risk_score: 54
+status: medium
 date: 2026-09-28
 ---
 
 # ArcBlock (ABT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 91/100 — 🔴 Critical Risk**
+> **Risk Score: 54/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/arcblock-eth)
 
@@ -25,9 +25,9 @@ The ArcBlock Token contract is a standard ERC-20 implementation with pausable fu
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract implements the ERC-20 standard correctly, utilizing the SafeMath library to prevent integer overflows/underflows (7.2 Code Security). It also provides `increaseApproval` and… |
+| **Technical** | 8/10 | Low | The contract implements the ERC-20 standard correctly, utilizing the SafeMath library to prevent integer overflows/underflows (7.2 Code Security). It also provides `increaseApproval` and… |
 | **Governance / Economics** | 1/10 | High | The contract employs a centralized `Ownable` pattern, granting a single EOA full control over critical functions like pausing token transfers and ownership transfer (7.3 Access Control, 7.5… |
-| **Upgrades** | 4/10 | Medium | The ArcBlock Token contract is a standard, non-upgradeable implementation. It does not utilize any proxy patterns (e.g., UUPS, Transparent) or other mechanisms for on-chain upgradeability (7.7… |
+| **Upgrades** | 6/10 | Medium | The ArcBlock Token contract is a standard, non-upgradeable implementation. It does not utilize any proxy patterns (e.g., UUPS, Transparent) or other mechanisms for on-chain upgradeability (7.7… |
 
 ## LP Distribution
 
@@ -38,46 +38,46 @@ The ArcBlock Token contract is a standard ERC-20 implementation with pausable fu
 
 ## Security Findings
 
-_🟠 2 High · 🟡 3 Medium · 🟢 1 Low_
-
-### `H-01` — Centralized Control and Single Point of Failure (Owner EOA)  *(Severity: High · Status: Unresolved)*
-
-The contract relies on a single EOA (`0x4fd95f61a1b52b3c272ae449e95cfc307d19afd6`) for critical administrative functions such as pausing transfers and transferring ownership. This creates a single point of failure, as compromise of this EOA's private key could lead to malicious control or loss of administrative capabilities (7.3 Access Control, 7.8 Operations).
-
-**Recommendation:** Consider migrating ownership to a multi-signature wallet (e.g., Gnosis Safe) to distribute control and enhance security against single points of failure.
-
-
-### `H-02` — Outdated Solidity Compiler Version  *(Severity: High · Status: Unresolved)*
-
-The contract is compiled with `pragma solidity ^0.4.13`, which is a significantly outdated Solidity version. Older compiler versions may contain known or undiscovered bugs, lack modern security features (e.g., custom error messages with `require`), and result in less optimized bytecode (7.2 Code Security).
-
-**Recommendation:** For new deployments or major upgrades, consider migrating to a more recent and actively supported Solidity compiler version (e.g., 0.8.x) to benefit from security improvements, bug fixes, and enhanced language features.
-
+_🟡 5 Medium · 🟢 1 Low_
 
 ### `M-01` — Pausable Mechanism Centralization Risk  *(Severity: Medium · Status: Unresolved)*
 
-The `Pausable` mechanism allows the contract owner to unilaterally halt all token transfers and approvals. While intended for emergency situations, this centralized control can lead to a denial of service for token holders, impacting liquidity and utility, if misused or if the owner's key is compromised (7.3 Access Control, 7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The `Pausable` mechanism allows the contract owner to unilaterally halt all token transfers and approvals. While intended for emergency situations, this centralized control can lead to a denial of service for token holders, impacting liquidity and utility, if misused or if the owner's key is compromised (7.3 Access Control, 7.4 Economic).
 
 **Recommendation:** Clearly communicate the purpose and conditions under which the pause function would be invoked. Consider implementing a time-locked pause or a multi-signature approval for pausing to decentralize this critical control.
 
 
 ### `M-02` — ERC-20 `approve` Race Condition Vulnerability  *(Severity: Medium · Status: Unresolved)*
 
-The `approve` function is susceptible to a known ERC-20 race condition. If a user approves an amount and then attempts to change that approval to a different amount, a malicious spender could front-run the second transaction, spending the original approved amount before the new approval takes effect, and then spending the new approved amount. While `increaseApproval` and `decreaseApproval` functions are provided to mitigate this, the base `approve` function remains vulnerable (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function is susceptible to a known ERC-20 race condition. If a user approves an amount and then attempts to change that approval to a different amount, a malicious spender could front-run the second transaction, spending the original approved amount before the new approval takes effect, and then spending the new approved amount. While `increaseApproval` and `decreaseApproval` functions are provided to mitigate this, the base `approve` function remains vulnerable (7.2 Code Security).
 
 **Recommendation:** Advise users to exclusively use `increaseApproval` and `decreaseApproval` when adjusting allowances, rather than directly calling `approve` with a new value, to prevent potential front-running exploits.
 
 
 ### `M-03` — SafeMath `assert` Usage for Revert Conditions  *(Severity: Medium · Status: Unresolved)*
 
-The `SafeMath` library used in the contract employs `assert` statements for overflow/underflow checks. In Solidity, `assert` consumes all remaining gas when it fails, whereas `require` refunds unused gas. While functionally correct for these checks, using `assert` is less gas-efficient than `require` for conditions that should revert due to invalid input or state (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `SafeMath` library used in the contract employs `assert` statements for overflow/underflow checks. In Solidity, `assert` consumes all remaining gas when it fails, whereas `require` refunds unused gas. While functionally correct for these checks, using `assert` is less gas-efficient than `require` for conditions that should revert due to invalid input or state (7.2 Code Security).
 
 **Recommendation:** For future contracts or major refactors, consider updating the `SafeMath` library to use `require` statements instead of `assert` for conditions that are expected to be met by valid input, improving gas efficiency on reverts.
 
 
+### `M-04` — Centralized Control and Single Point of Failure (Owner EOA)  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract relies on a single EOA (`0x4fd95f61a1b52b3c272ae449e95cfc307d19afd6`) for critical administrative functions such as pausing transfers and transferring ownership. This creates a single point of failure, as compromise of this EOA's private key could lead to malicious control or loss of administrative capabilities (7.3 Access Control, 7.8 Operations).
+
+**Recommendation:** Consider migrating ownership to a multi-signature wallet (e.g., Gnosis Safe) to distribute control and enhance security against single points of failure.
+
+
+### `M-05` — Outdated Solidity Compiler Version  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with `pragma solidity ^0.4.13`, which is a significantly outdated Solidity version. Older compiler versions may contain known or undiscovered bugs, lack modern security features (e.g., custom error messages with `require`), and result in less optimized bytecode (7.2 Code Security).
+
+**Recommendation:** For new deployments or major upgrades, consider migrating to a more recent and actively supported Solidity compiler version (e.g., 0.8.x) to benefit from security improvements, bug fixes, and enhanced language features.
+
+
 ### `L-01` — Missing Division by Zero Check in SafeMath.div  *(Severity: Low · Status: Unresolved)*
 
-The `SafeMath.div` function does not explicitly check for division by zero. While this specific function is not directly utilized in the `ArcBlockToken` contract's core logic, its presence in the library could pose a risk if other parts of the system were to use it or if the contract were extended (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `SafeMath.div` function does not explicitly check for division by zero. While this specific function is not directly utilized in the `ArcBlockToken` contract's core logic, its presence in the library could pose a risk if other parts of the system were to use it or if the contract were extended (7.2 Code Security).
 
 **Recommendation:** Add a `require(b > 0, "division by zero")` check at the beginning of the `SafeMath.div` function to prevent potential runtime errors if it were to be used.
 

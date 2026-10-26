@@ -2,14 +2,14 @@
 token: Anonymous Cat
 ticker: ZCAT
 network: solana
-risk_score: 7
+risk_score: 0
 status: low
 date: 2026-09-04
 ---
 
 # Anonymous Cat (ZCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 7/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/anonymous-cat-sol)
 
@@ -26,8 +26,8 @@ This Solana SPL Token Mint for Anonymous Cat (ZCAT) is configured with revoked m
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Anonymous Cat (ZCAT) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a very new DEX pair, created only 4 days ago, which limits the ability to assess long-term market behavior and team actions. Current liquidity stands at $371,680, with a 24-hour… |
-| **Upgrades** | 8/10 | Low | The token mint's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing further changes to supply or account freezing. Key Token-2022 extensions such as transfer fee and… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a very new DEX pair, created only 4 days ago, which limits the ability to assess long-term market behavior and team actions. Current liquidity stands at $371,680, with a 24-hour… |
+| **Upgrades** | 9/10 | Low | The token mint's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing further changes to supply or account freezing. Key Token-2022 extensions such as transfer fee and… |
 
 ## Token-2022 Extensions
 
@@ -66,7 +66,7 @@ The DEX pair for Anonymous Cat (ZCAT) was created 4 days ago. This short operati
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -75,7 +75,7 @@ The DEX pair for Anonymous Cat (ZCAT) was created 4 days ago. This short operati
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

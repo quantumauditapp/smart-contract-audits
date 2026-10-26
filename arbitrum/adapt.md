@@ -2,14 +2,14 @@
 token: Adapt
 ticker: ADAP
 network: arbitrum
-risk_score: 100
-status: critical
+risk_score: 80
+status: high
 date: 2026-08-17
 ---
 
 # Adapt (ADAP) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 80/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/adapt-arb)
 
@@ -25,9 +25,9 @@ This audit report addresses a contract deployed on Arbitrum at 0x91c95440403263f
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 1/10 | High | Without verified source code, a comprehensive technical security assessment (7.1 Architecture, 7.2 Code Security) is impossible. The contract's architecture, logic, and potential vulnerabilities like… |
+| **Technical** | 6/10 | Medium | Without verified source code, a comprehensive technical security assessment (7.1 Architecture, 7.2 Code Security) is impossible. The contract's architecture, logic, and potential vulnerabilities like… |
 | **Governance / Economics** | 1/10 | High | The economic model (7.4 Economic) and governance mechanisms (7.5 Governance) of this contract cannot be determined without source code. This prevents any analysis of potential economic exploits, such… |
-| **Upgrades** | 4/10 | Medium | The upgradeability status (7.7 Upgrades) of this contract is unknown without source code. It is impossible to determine if the contract is a proxy, if it uses a specific upgrade pattern (e.g., UUPS… |
+| **Upgrades** | 6/10 | Medium | The upgradeability status (7.7 Upgrades) of this contract is unknown without source code. It is impossible to determine if the contract is a proxy, if it uses a specific upgrade pattern (e.g., UUPS… |
 
 ## LP Distribution
 

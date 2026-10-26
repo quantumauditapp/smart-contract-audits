@@ -25,8 +25,8 @@ The OptimismMintableERC20 contract provides a standard ERC-20 token with control
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract exhibits strong technical security, leveraging battle-tested OpenZeppelin libraries for its ERC20 implementation (7.2 Code Security). Access control for critical `mint` and `burn`… |
-| **Governance / Economics** | 1/10 | High | The economic model of the `OptimismMintableERC20` token is inherently tied to the security of its external `BRIDGE` contract (7.4 Economic, 7.6 External). The `BRIDGE` possesses exclusive rights to… |
+| **Technical** | 8/10 | Low | The contract exhibits strong technical security, leveraging battle-tested OpenZeppelin libraries for its ERC20 implementation (7.2 Code Security). Access control for critical `mint` and `burn`… |
+| **Governance / Economics** | 2/10 | High | The economic model of the `OptimismMintableERC20` token is inherently tied to the security of its external `BRIDGE` contract (7.4 Economic, 7.6 External). The `BRIDGE` possesses exclusive rights to… |
 | **Upgrades** | 3/10 | High | This contract is designed without an upgradeability mechanism, which simplifies its architecture and reduces the attack surface associated with proxy patterns (7.7 Upgrades). The `Semver`… |
 
 ## LP Distribution
@@ -38,39 +38,39 @@ The OptimismMintableERC20 contract provides a standard ERC-20 token with control
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 3 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 3 Informational_
 
-### `H-01` — Centralization Risk and External Dependency on Bridge  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralization Risk and External Dependency on Bridge  *(Severity: Medium · Status: Unresolved)*
 
-The `OptimismMintableERC20` contract grants exclusive minting and burning privileges to the `BRIDGE` address. This design introduces a significant centralization risk, as the security and integrity of the token are entirely dependent on the security of the `BRIDGE` contract. A compromise of the `BRIDGE` contract would allow an attacker to arbitrarily mint or burn tokens, leading to a loss of trust and potential economic exploit. (7.3 Access Control, 7.4 Economic, 7.6 External)
+Not confirmed by static analysis (the model's own reading of the source). The `OptimismMintableERC20` contract grants exclusive minting and burning privileges to the `BRIDGE` address. This design introduces a significant centralization risk, as the security and integrity of the token are entirely dependent on the security of the `BRIDGE` contract. A compromise of the `BRIDGE` contract would allow an attacker to arbitrarily mint or burn tokens, leading to a loss of trust and potential economic exploit. (7.3 Access Control, 7.4 Economic, 7.6 External)
 
 **Recommendation:** Ensure the `BRIDGE` contract itself undergoes rigorous security audits and implements robust access controls (e.g., multi-signature wallets, time-locks) to mitigate the risk of a single point of failure. Implement comprehensive monitoring for unusual activity originating from the `BRIDGE` address.
 
 
 ### `L-01` — Immutability of Bridge and Remote Token Addresses  *(Severity: Low · Status: Unresolved)*
 
-The `BRIDGE` and `REMOTE_TOKEN` addresses are set as `immutable` in the constructor. While this enhances security by preventing unauthorized modification post-deployment, it also means these critical addresses cannot be updated if the underlying bridge contract or remote token contract needs to be changed (e.g., due to an upgrade or a critical vulnerability in the bridge). This requires a full redeployment of the `OptimismMintableERC20` contract and an update to the bridge's configuration if such a change becomes necessary. (7.1 Architecture, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The `BRIDGE` and `REMOTE_TOKEN` addresses are set as `immutable` in the constructor. While this enhances security by preventing unauthorized modification post-deployment, it also means these critical addresses cannot be updated if the underlying bridge contract or remote token contract needs to be changed (e.g., due to an upgrade or a critical vulnerability in the bridge). This requires a full redeployment of the `OptimismMintableERC20` contract and an update to the bridge's configuration if such a change becomes necessary. (7.1 Architecture, 7.8 Operations)
 
 **Recommendation:** Acknowledge this design trade-off. For future versions, consider if a controlled mechanism for updating these addresses (e.g., via a governance-controlled proxy or a timelock) might be beneficial, weighing the added complexity against the operational flexibility gained. For the current version, ensure clear documentation and operational plans for redeployment scenarios.
 
 
 ### `I-01` — Use of Well-Audited OpenZeppelin Libraries  *(Severity: Informational · Status: Unresolved)*
 
-The contract leverages standard and widely-audited OpenZeppelin contracts (ERC20, IERC165, Strings). This significantly reduces the risk of common vulnerabilities related to token standards and utility functions, contributing to the overall robustness of the codebase. (7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). The contract leverages standard and widely-audited OpenZeppelin contracts (ERC20, IERC165, Strings). This significantly reduces the risk of common vulnerabilities related to token standards and utility functions, contributing to the overall robustness of the codebase. (7.2 Code Security)
 
 **Recommendation:** Continue to utilize well-established and audited libraries for core functionalities to maintain high security standards.
 
 
 ### `I-02` — Clear and Effective Access Control  *(Severity: Informational · Status: Unresolved)*
 
-The `onlyBridge` modifier is correctly implemented and applied to the `mint` and `burn` functions, ensuring that only the designated `BRIDGE` contract can perform these critical operations. This clear access control mechanism prevents unauthorized token supply manipulation. (7.3 Access Control)
+Not confirmed by static analysis (the model's own reading of the source). The `onlyBridge` modifier is correctly implemented and applied to the `mint` and `burn` functions, ensuring that only the designated `BRIDGE` contract can perform these critical operations. This clear access control mechanism prevents unauthorized token supply manipulation. (7.3 Access Control)
 
 **Recommendation:** Maintain clear and explicit access control mechanisms for all sensitive functions to prevent unauthorized actions.
 
 
 ### `I-03` — Non-Upgradeability  *(Severity: Informational · Status: Unresolved)*
 
-The contract is not designed with an upgrade proxy pattern. This simplifies the contract's architecture and reduces the attack surface associated with upgrade mechanisms. However, any future feature enhancements or bug fixes would necessitate deploying a new contract and updating all integrations, including the `BRIDGE` contract, to point to the new address. (7.7 Upgrades)
+Not confirmed by static analysis (the model's own reading of the source). The contract is not designed with an upgrade proxy pattern. This simplifies the contract's architecture and reduces the attack surface associated with upgrade mechanisms. However, any future feature enhancements or bug fixes would necessitate deploying a new contract and updating all integrations, including the `BRIDGE` contract, to point to the new address. (7.7 Upgrades)
 
 **Recommendation:** Document the non-upgradeable nature of the contract and establish a clear process for redeployment and migration if future changes are required. Ensure all dependent systems are aware of this design choice.
 

@@ -2,14 +2,14 @@
 token: Albatross Protocol
 ticker: ALBATROSS
 network: solana
-risk_score: 44
-status: medium
+risk_score: 32
+status: low
 date: 2026-07-25
 ---
 
 # Albatross Protocol (ALBATROSS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/albatross-protocol-sol)
 
@@ -25,9 +25,9 @@ This audit of the Albatross Protocol (ALBATROSS) SPL Token Mint found no critica
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no existing accounts can be frozen. No Transfer… |
-| **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity with $44,580 USD in total DEX liquidity. The 24-hour volume of $94,110 USD results in a Volume/Liquidity Ratio of 2.11, which is considered normal and does not… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing further changes to the token supply or account freeze status. The token utilizes the spl-token-2022… |
+| **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no existing accounts can be frozen. No Transfer… |
+| **Governance / Economics** | 3/10 | High | The token exhibits moderate liquidity with $44,580 USD in total DEX liquidity. The 24-hour volume of $94,110 USD results in a Volume/Liquidity Ratio of 2.11, which is considered normal and does not… |
+| **Upgrades** | 10/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing further changes to the token supply or account freeze status. The token utilizes the spl-token-2022… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 835 buys / 1098 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,18 +69,18 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is Albatross Protocol a scam?
 
-Based on automated analysis, Albatross Protocol scores 64/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Albatross Protocol scores 32/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Albatross Protocol safe to buy?
 
-Our scanner flagged a risk score of 64/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 32/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Albatross Protocol been audited?
 

@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-2918-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-2917-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,10 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [NeuralAI](./ethereum/neuralai.md) | NEURAL | Ethereum | 🟠 72/100 | 2026-09-13 | [↗](https://quantumaudit.app/token/neuralai-eth) |
+| [PancakeSwap](./ethereum/pancakeswap.md) | CAKE | Ethereum | 🟡 45/100 | 2026-08-20 | [↗](https://quantumaudit.app/token/pancakeswap-eth) |
+| [PancakeSwap Token](./bsc/pancakeswap-token.md) | CAKE | BNB Chain | 🟢 21/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/pancakeswap-token-bsc) |
+| [Quant](./ethereum/quant.md) | QNT | Ethereum | 🟡 43/100 | 2026-09-01 | [↗](https://quantumaudit.app/token/quant-eth) |
 | [GinnanCoin](./ethereum/ginnancoin.md) | GINNAN | Ethereum | 🟢 0/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/ginnancoin-eth) |
 | [one coin](./base/one-coin.md) | ONECOIN | Base | 🟡 50/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/one-coin-base) |
 | [DOAS](./base/doas-base-accd.md) | DOAS | Base | 🟡 56/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/doas-base-accd) |
@@ -38,16 +42,12 @@
 | [Ginnancoin](./solana/ginnancoin.md) | GINNAN | Solana | 🟢 22/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/ginnancoin-sol) |
 | [Artificial Nice Tits](./solana/artificial-nice-tits.md) | ANT | Solana | 🟢 2/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/artificial-nice-tits-sol) |
 | [Digital Oil Asset Supply](./solana/digital-oil-asset-supply-sol-02e7.md) | DOAS | Solana | 🟢 0/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/digital-oil-asset-supply-sol-02e7) |
-| [Pythagorean Curve](./solana/pythagorean-curve.md) | A²+B²=C² | Solana | 🟢 8/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/pythagorean-curve-sol) |
-| [TapeLaunch](./bsc/tapelaunch.md) | TAPE | BNB Chain | 🟢 17/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/tapelaunch-bsc) |
-| [The Stonks Exchange](./base/the-stonks-exchange-base-1b01.md) | STONKEX | Base | 🟡 57/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/the-stonks-exchange-base-1b01) |
-| [Zero Gap](./ethereum/zero-gap-eth-b6e0.md) | ZGAP | Ethereum | 🟡 43/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/zero-gap-eth-b6e0) |
 
 ---
 
 ## Browse by Network
 
-[Solana (1325)](./solana/README.md) · [BNB Chain (536)](./bsc/README.md) · [Base (474)](./base/README.md) · [Ethereum (472)](./ethereum/README.md) · [Arbitrum (85)](./arbitrum/README.md) · [Polygon (26)](./polygon/README.md)
+[Solana (1325)](./solana/README.md) · [BNB Chain (536)](./bsc/README.md) · [Base (473)](./base/README.md) · [Ethereum (472)](./ethereum/README.md) · [Arbitrum (85)](./arbitrum/README.md) · [Polygon (26)](./polygon/README.md)
 
 ---
 

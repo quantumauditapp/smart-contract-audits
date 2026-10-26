@@ -2,14 +2,14 @@
 token: Aligned Token
 ticker: ALIGN
 network: base
-risk_score: 63
+risk_score: 56
 status: medium
 date: 2026-09-14
 ---
 
 # Aligned Token (ALIGN) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 63/100 — 🟡 Medium Risk**
+> **Risk Score: 56/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aligned-token-base)
 
@@ -42,21 +42,21 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Interface Mismatch for `bridge()` Function  *(Severity: Medium · Status: Unresolved)*
 
-The `IOptimismMintableERC20` interface declares the `bridge()` function as `external returns (address);`, implying it might be a state-changing or non-view function. However, the `OptimismMintableERC20` implementation correctly defines it as `public view returns (address)`. While the implementation is functionally correct for a getter, this mismatch in the interface definition could lead to confusion or unexpected behavior if external tools or contracts strictly adhere to the interface's non-view declaration.
+Not confirmed by static analysis (the model's own reading of the source). The `IOptimismMintableERC20` interface declares the `bridge()` function as `external returns (address);`, implying it might be a state-changing or non-view function. However, the `OptimismMintableERC20` implementation correctly defines it as `public view returns (address)`. While the implementation is functionally correct for a getter, this mismatch in the interface definition could lead to confusion or unexpected behavior if external tools or contracts strictly adhere to the interface's non-view declaration.
 
 **Recommendation:** Update the `IOptimismMintableERC20` interface to declare `function bridge() external view returns (address);` to accurately reflect the `view` nature of the function in the implementation.
 
 
 ### `L-01` — Redundant Getter Functions  *(Severity: Low · Status: Unresolved)*
 
-The contract includes multiple functions that return the same immutable addresses: `l1Token()` and `remoteToken()` both return `REMOTE_TOKEN`; `l2Bridge()` and `bridge()` both return `BRIDGE`. While not a security vulnerability, this redundancy adds unnecessary code complexity and slightly increases deployment gas costs.
+Not confirmed by static analysis (the model's own reading of the source). The contract includes multiple functions that return the same immutable addresses: `l1Token()` and `remoteToken()` both return `REMOTE_TOKEN`; `l2Bridge()` and `bridge()` both return `BRIDGE`. While not a security vulnerability, this redundancy adds unnecessary code complexity and slightly increases deployment gas costs.
 
 **Recommendation:** Consolidate redundant getter functions. For example, remove `l1Token()` and `l2Bridge()`, relying solely on `remoteToken()` and `bridge()` respectively, or vice-versa, ensuring consistency with the primary interface names.
 
 
 ### `I-01` — Centralized Control by Bridge Address  *(Severity: Informational · Status: Unresolved)*
 
-The `mint` and `burn` functionalities are exclusively controlled by the `BRIDGE` address via the `onlyBridge` modifier. This design is fundamental to the cross-chain bridging mechanism, where the L2 token supply is managed by an L1 bridge. However, it means the security and integrity of the entire token supply on L2 heavily relies on the security of the `BRIDGE` contract. A compromise of the `BRIDGE` would allow arbitrary minting or burning, potentially devaluing the token.
+Not confirmed by static analysis (the model's own reading of the source). The `mint` and `burn` functionalities are exclusively controlled by the `BRIDGE` address via the `onlyBridge` modifier. This design is fundamental to the cross-chain bridging mechanism, where the L2 token supply is managed by an L1 bridge. However, it means the security and integrity of the entire token supply on L2 heavily relies on the security of the `BRIDGE` contract. A compromise of the `BRIDGE` would allow arbitrary minting or burning, potentially devaluing the token.
 
 **Recommendation:** This is an inherent design choice for mintable bridge tokens. Ensure the `BRIDGE` contract itself is highly secured, thoroughly audited, and follows robust operational security practices to mitigate the risk of its compromise.
 

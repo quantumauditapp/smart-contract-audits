@@ -2,14 +2,14 @@
 token: Act I : The AI Prophecy
 ticker: ACT
 network: solana
-risk_score: 12
+risk_score: 2
 status: low
 date: 2026-08-11
 ---
 
 # Act I : The AI Prophecy (ACT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 12/100 — 🟢 Low Risk**
+> **Risk Score: 2/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/act-i-the-ai-prophecy-sol)
 
@@ -25,8 +25,8 @@ The audit of the Act I : The AI Prophecy (ACT) SPL token mint reveals a signific
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no holder accounts can… |
-| **Governance / Economics** | 2/10 | High | The token exhibits healthy liquidity at $1,236,064 and a normal 24-hour volume to liquidity ratio of 0.54, indicating organic trading activity. The pair has been active for 660 days, providing a… |
+| **Technical** | 10/10 | Low | The token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no holder accounts can… |
+| **Governance / Economics** | 3/10 | High | The token exhibits healthy liquidity at $1,236,064 and a normal 24-hour volume to liquidity ratio of 0.54, indicating organic trading activity. The pair has been active for 660 days, providing a… |
 | **Upgrades** | 8/10 | Low | Both the Mint and Freeze authorities have been permanently revoked, preventing any future changes to the token's supply or the ability to freeze holder accounts. The token's metadata is also… |
 
 ## LP Distribution

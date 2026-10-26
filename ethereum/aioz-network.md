@@ -2,14 +2,14 @@
 token: AIOZ Network
 ticker: AIOZ
 network: ethereum
-risk_score: 75
-status: high
+risk_score: 58
+status: medium
 date: 2026-09-22
 ---
 
 # AIOZ Network (AIOZ) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 75/100 — 🟠 High Risk**
+> **Risk Score: 58/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aioz-network-eth)
 
@@ -25,8 +25,8 @@ The AIOZToken contract implements a standard ERC-20 token with an owner-controll
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture (7.1) is based on a standard ERC-20 implementation, inheriting from OpenZeppelin-like patterns for `ERC20` and `Ownable`. The contract enforces a maximum total supply for… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4) includes a fixed maximum total supply, which provides predictability for token holders. Initial token distribution is handled in the constructor, utilizing both direct mints… |
+| **Technical** | 8/10 | Low | The technical architecture (7.1) is based on a standard ERC-20 implementation, inheriting from OpenZeppelin-like patterns for `ERC20` and `Ownable`. The contract enforces a maximum total supply for… |
+| **Governance / Economics** | 2/10 | High | The economic model (7.4) includes a fixed maximum total supply, which provides predictability for token holders. Initial token distribution is handled in the constructor, utilizing both direct mints… |
 | **Upgrades** | 3/10 | High | The AIOZToken contract is not designed as an upgradeable proxy (7.7 Upgrades). It is a standard, non-upgradeable implementation. Therefore, there are no specific upgrade-related risks or… |
 
 ## LP Distribution
@@ -38,39 +38,39 @@ The AIOZToken contract implements a standard ERC-20 token with an owner-controll
 
 ## Security Findings
 
-_🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — `transferFrom` Logic Inversion  *(Severity: High · Status: Unresolved)*
-
-The `transferFrom` function performs the token transfer (`_transfer`) before checking and decreasing the allowance. While the `require` statement for allowance will revert the transaction if insufficient, this order deviates from the standard ERC-20 implementation where allowance is checked and reduced *before* the transfer. This inversion can lead to unexpected gas consumption for failed transactions and non-standard behavior, potentially causing integration issues with systems expecting the conventional ERC-20 flow.
-
-**Recommendation:** Reorder the operations within `transferFrom` to first check the allowance, then perform the transfer, and finally decrease the allowance. This aligns with the ERC-20 standard and improves gas efficiency for failed transactions. The corrected logic should be: ```solidity function transferFrom(address sender, address recipient, uint256 amount) public virtual override returns (bool) {     uint256 currentAllowance = _allowances[sender][msg.sender];     require(currentAllowance >= amount, "ERC20: tr…
-
-
-### `H-02` — Centralized Control by Owner  *(Severity: High · Status: Unresolved)*
-
-The `owner` address, currently an EOA, has exclusive control over the `mint` and `burn` functions. This allows the owner to increase the total supply (up to `_maxTotalSupply`) or decrease it at will. Such centralized control introduces a single point of failure and a high degree of trust in the owner's security and integrity, which could be a significant risk if the owner's private key is compromised or misused.
-
-**Recommendation:** Consider transferring ownership to a multi-signature wallet (e.g., Gnosis Safe) to distribute control and require multiple approvals for critical operations like minting and burning. This significantly reduces the risk associated with a single point of failure. Alternatively, implement a time-lock mechanism for sensitive owner actions.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Unaudited External Contracts (TimelockFactory & TokenTimelock)  *(Severity: Medium · Status: Unresolved)*
 
-The `AIOZToken` constructor deploys and interacts with `TimelockFactory` and `TokenTimelock` contracts for vesting purposes. The source code for these external contracts was not provided for review. The security and correctness of the token's vesting schedules and overall distribution heavily rely on the proper functioning and security of these unaudited contracts. Any vulnerabilities within them could impact the integrity of the token distribution.
+Not confirmed by static analysis (the model's own reading of the source). The `AIOZToken` constructor deploys and interacts with `TimelockFactory` and `TokenTimelock` contracts for vesting purposes. The source code for these external contracts was not provided for review. The security and correctness of the token's vesting schedules and overall distribution heavily rely on the proper functioning and security of these unaudited contracts. Any vulnerabilities within them could impact the integrity of the token distribution.
 
 **Recommendation:** Conduct a thorough security audit of the `TimelockFactory` and `TokenTimelock` contracts to ensure they are free from vulnerabilities, correctly implement the intended vesting logic, and adhere to best security practices. If possible, use well-vetted and audited implementations (e.g., OpenZeppelin's `TokenTimelock`).
 
 
+### `M-02` — `transferFrom` Logic Inversion  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `transferFrom` function performs the token transfer (`_transfer`) before checking and decreasing the allowance. While the `require` statement for allowance will revert the transaction if insufficient, this order deviates from the standard ERC-20 implementation where allowance is checked and reduced *before* the transfer. This inversion can lead to unexpected gas consumption for failed transactions and non-standard behavior, potentially causing integration issues with systems expecting the conventional ERC-20 flow.
+
+**Recommendation:** Reorder the operations within `transferFrom` to first check the allowance, then perform the transfer, and finally decrease the allowance. This aligns with the ERC-20 standard and improves gas efficiency for failed transactions. The corrected logic should be: ```solidity function transferFrom(address sender, address recipient, uint256 amount) public virtual override returns (bool) {     uint256 currentAllowance = _allowances[sender][msg.sender];     require(currentAllowance >= amount, "ERC20: tr…
+
+
+### `M-03` — Centralized Control by Owner  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `owner` address, currently an EOA, has exclusive control over the `mint` and `burn` functions. This allows the owner to increase the total supply (up to `_maxTotalSupply`) or decrease it at will. Such centralized control introduces a single point of failure and a high degree of trust in the owner's security and integrity, which could be a significant risk if the owner's private key is compromised or misused.
+
+**Recommendation:** Consider transferring ownership to a multi-signature wallet (e.g., Gnosis Safe) to distribute control and require multiple approvals for critical operations like minting and burning. This significantly reduces the risk associated with a single point of failure. Alternatively, implement a time-lock mechanism for sensitive owner actions.
+
+
 ### `L-01` — Hardcoded Addresses in Constructor  *(Severity: Low · Status: Unresolved)*
 
-Multiple recipient addresses for initial token distribution and vesting are hardcoded directly within the `AIOZToken` constructor. While this is common for initial deployments, it means that any changes to these recipient addresses or their allocated amounts would necessitate redeploying the entire contract, which is costly and disruptive.
+Not confirmed by static analysis (the model's own reading of the source). Multiple recipient addresses for initial token distribution and vesting are hardcoded directly within the `AIOZToken` constructor. While this is common for initial deployments, it means that any changes to these recipient addresses or their allocated amounts would necessitate redeploying the entire contract, which is costly and disruptive.
 
 **Recommendation:** For future deployments or similar contracts, consider using a configurable deployment script or a separate configuration contract to manage initial distribution parameters. This allows for greater flexibility without requiring contract redeployment for minor changes.
 
 
 ### `I-01` — Lack of Specific Events for Owner Actions  *(Severity: Informational · Status: Unresolved)*
 
-The `mint` and `burn` functions, which are critical owner-only operations affecting the total supply, only emit the generic `Transfer` event (from `address(0)` for mint, to `address(0)` for burn). While technically correct, emitting more specific events (e.g., `Minted(address account, uint256 amount)`, `Burned(address account, uint256 amount)`) would enhance off-chain monitoring, auditing, and transparency of these privileged actions.
+Not confirmed by static analysis (the model's own reading of the source). The `mint` and `burn` functions, which are critical owner-only operations affecting the total supply, only emit the generic `Transfer` event (from `address(0)` for mint, to `address(0)` for burn). While technically correct, emitting more specific events (e.g., `Minted(address account, uint256 amount)`, `Burned(address account, uint256 amount)`) would enhance off-chain monitoring, auditing, and transparency of these privileged actions.
 
 **Recommendation:** Consider adding custom events for `mint` and `burn` operations. This would provide clearer and more specific logs for off-chain services, making it easier to track and audit changes to the token supply initiated by the owner.
 

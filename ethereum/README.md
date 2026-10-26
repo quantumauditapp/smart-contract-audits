@@ -10,6 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [NeuralAI](./neuralai.md) | NEURAL | 🟠 72/100 High Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/neuralai-eth) |
+| [PancakeSwap](./pancakeswap.md) | CAKE | 🟡 45/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/pancakeswap-eth) |
+| [Quant](./quant.md) | QNT | 🟡 43/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/quant-eth) |
 | [GinnanCoin](./ginnancoin.md) | GINNAN | 🟢 0/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/ginnancoin-eth) |
 | [Ginnan](./ginnan.md) | GINNAN | 🟡 41/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/ginnan-eth) |
 | [Anthropic](./anthropic.md) | ANT | 🟡 44/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/anthropic-eth) |
@@ -259,7 +262,6 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [A Hunters Dream](./a-hunters-dream.md) | CAW | 🟢 10/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/a-hunters-dream-eth) |
 | [Chainflip](./chainflip.md) | FLIP | 🟡 58/100 Medium Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/chainflip-eth) |
 | [Shiro Neko](./shiro-neko.md) | SHIRO | 🟢 0/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/shiro-neko-eth) |
-| [NeuralAI](./neuralai.md) | NEURAL | 🟢 10/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/neuralai-eth) |
 | [Ampleforth Governance](./ampleforth-governance.md) | FORTH | 🟡 42/100 Medium Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/ampleforth-governance-eth) |
 | [Renzo](./renzo.md) | REZ | 🟢 25/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/renzo-eth) |
 | [Fuse](./fuse.md) | FUSE | 🟢 6/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/fuse-eth) |
@@ -377,7 +379,6 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [RaveDAO](./ravedao.md) | RAVE | 🟢 33/100 Low Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/ravedao-eth) |
 | [Rally](./rally.md) | RALLY | 🟡 40/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/rally-eth) |
 | [Radicle](./radicle.md) | RAD | 🟢 27/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/radicle-eth) |
-| [Quant](./quant.md) | QNT | 🟡 38/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/quant-eth) |
 | [PunkStrategy](./punkstrategy.md) | PNKSTR | 🟡 40/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/punkstrategy-eth) |
 | [Prometheus](./prometheus.md) | PROMETHEUS | 🟢 0/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/prometheus-eth) |
 | [Programmable](./programmable.md) | V4 | 🟢 26/100 Low Risk | 2026-08-03 | [↗](https://quantumaudit.app/token/programmable-eth) |
@@ -393,7 +394,6 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [Pendle](./pendle.md) | PENDLE | 🟢 34/100 Low Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/pendle-eth) |
 | [PayPal USD](./paypal-usd.md) | PYUSD | 🟢 9/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/paypal-usd-eth) |
 | [Paxos Gold](./paxos-gold.md) | PAXG | 🟢 11/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/paxos-gold-eth) |
-| [PancakeSwap](./pancakeswap.md) | CAKE | 🟡 38/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/pancakeswap-eth) |
 | [OutBurn](./outburn.md) | OUTBURN | 🟢 23/100 Low Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/outburn-eth) |
 | [Origin Ether](./origin-ether.md) | OETH | 🟢 10/100 Low Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/origin-ether-eth) |
 | [OpenServ](./openserv.md) | SERV | 🟡 46/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/openserv-eth) |

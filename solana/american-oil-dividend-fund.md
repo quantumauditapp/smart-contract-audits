@@ -82,7 +82,7 @@ Based on available data, there is no evidence that the American Oil Dividend Fun
 
 ### Is American Oil Dividend Fund safe to buy?
 
-The project has a low risk score of 28/100, supported by locked liquidity and high decentralization. However, safety is relative. Since ownership has not been renounced, the deployer retains administrative privileges. Investors should weigh the strong technical protections against the lack of formal ownership renunciation before deciding if the asset aligns with their personal risk management strategy.
+The project has a low risk score of 0/100, supported by locked liquidity and high decentralization. However, safety is relative. Since ownership has not been renounced, the deployer retains administrative privileges. Investors should weigh the strong technical protections against the lack of formal ownership renunciation before deciding if the asset aligns with their personal risk management strategy.
 
 ### Has American Oil Dividend Fund been audited?
 

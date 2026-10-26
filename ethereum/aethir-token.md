@@ -2,14 +2,14 @@
 token: Aethir Token
 ticker: ATH
 network: ethereum
-risk_score: 75
-status: high
+risk_score: 49
+status: medium
 date: 2026-09-22
 ---
 
 # Aethir Token (ATH) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 75/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aethir-token-eth)
 
@@ -25,9 +25,9 @@ The AethirToken contract, an ERC20Permit implementation, features a whitelisting
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The contract utilizes OpenZeppelin's ERC20 and Ownable for foundational security. However, the custom `transferToWhitelisted` function contains a critical logic error by misusing… |
-| **Governance / Economics** | 1/10 | High | The token's economic model is highly centralized, with the owner (a multisig wallet) possessing extensive control over the token supply and distribution (7.4 Economic, 7.5 Governance). The owner can… |
-| **Upgrades** | 2/10 | High | The AethirToken contract is not designed with upgradeability features, such as a proxy pattern. This means the contract's logic is immutable once deployed, eliminating upgrade-related risks but… |
+| **Technical** | 8/10 | Low | The contract utilizes OpenZeppelin's ERC20 and Ownable for foundational security. However, the custom `transferToWhitelisted` function contains a critical logic error by misusing… |
+| **Governance / Economics** | 4/10 | Medium | The token's economic model is highly centralized, with the owner (a multisig wallet) possessing extensive control over the token supply and distribution (7.4 Economic, 7.5 Governance). The owner can… |
+| **Upgrades** | 4/10 | Medium | The AethirToken contract is not designed with upgradeability features, such as a proxy pattern. This means the contract's logic is immutable once deployed, eliminating upgrade-related risks but… |
 
 ## LP Distribution
 
@@ -38,34 +38,34 @@ The AethirToken contract, an ERC20Permit implementation, features a whitelisting
 
 ## Security Findings
 
-_🔴 2 Critical · 🟠 1 High · 🟡 1 Medium_
+_🟡 4 Medium_
 
-### `C-01` — Critical Logic Error in Token Distribution (`SafeERC20.safeTransfer(this, ...)` Misuse)  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Unconventional Token Holding Pattern  *(Severity: Medium · Status: Unresolved)*
 
-The `transferToWhitelisted` function, intended to distribute tokens from the contract's balance, incorrectly uses `SafeERC20.safeTransfer(this, to, amount)`. `SafeERC20.safeTransfer` is designed for a contract to transfer *another* ERC20 token it holds. To transfer its *own* tokens (which were minted to `address(this)`), the contract must use the internal `_transfer(address(this), to, amount)` function. As implemented, `transferToWhitelisted` will fail to move tokens, effectively locking all minted tokens within the contract and making the token unusable for its intended purpose of distribution.
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function calls `_mint(address(this), amount)`, which means all newly minted tokens are held by the `AethirToken` contract itself. This is an unusual pattern for an ERC20 token. Typically, tokens are minted to a specific treasury, vesting contract, or the owner's address for subsequent distribution. Holding all tokens within the token contract makes it a single point of failure for distribution (assuming the `transferToWhitelisted` function worked correctly). This design choice increases the contract's complexity and reliance on the owner's actions for any token movement.
+
+**Recommendation:** Consider revising the minting strategy. Mint tokens directly to a dedicated treasury contract or a controlled distribution contract. This separates the token logic from the token holding and distribution responsibilities, improving modularity and potentially security.
+
+
+### `M-02` — Critical Logic Error in Token Distribution (`SafeERC20.safeTransfer(this, ...)` Misuse)  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `transferToWhitelisted` function, intended to distribute tokens from the contract's balance, incorrectly uses `SafeERC20.safeTransfer(this, to, amount)`. `SafeERC20.safeTransfer` is designed for a contract to transfer *another* ERC20 token it holds. To transfer its *own* tokens (which were minted to `address(this)`), the contract must use the internal `_transfer(address(this), to, amount)` function. As implemented, `transferToWhitelisted` will fail to move tokens, effectively locking all minted tokens within the contract and making the token unusable for its intended purpose of distribution.
 
 **Recommendation:** Replace `SafeERC20.safeTransfer(this, to, amount);` with `_transfer(address(this), to, amount);` in the `transferToWhitelisted` function. Ensure that the contract's internal balance is correctly managed for transfers.
 
 
-### `C-02` — Re-whitelisting/Re-transfer Vulnerability via `_afterTokenTransfer`  *(Severity: Critical · Status: Unresolved)*
+### `M-03` — Re-whitelisting/Re-transfer Vulnerability via `_afterTokenTransfer`  *(Severity: Medium · Status: Unresolved)*
 
-The `_afterTokenTransfer` override contains logic that allows whitelisted users to bypass their `allowedAmount` limits. If a whitelisted user sends tokens back to the `AethirToken` contract address, the `_afterTokenTransfer` function reduces their `transferredAmount[from]` and `totalTransferred`. This means a user can receive tokens via `transferToWhitelisted`, send them back to the contract, and then receive more tokens, effectively resetting their `transferredAmount` and exceeding their `allowedAmount`. This breaks the core whitelisting mechanism and can lead to unauthorized token inflation or distribution beyond intended limits.
+Not confirmed by static analysis (the model's own reading of the source). The `_afterTokenTransfer` override contains logic that allows whitelisted users to bypass their `allowedAmount` limits. If a whitelisted user sends tokens back to the `AethirToken` contract address, the `_afterTokenTransfer` function reduces their `transferredAmount[from]` and `totalTransferred`. This means a user can receive tokens via `transferToWhitelisted`, send them back to the contract, and then receive more tokens, effectively resetting their `transferredAmount` and exceeding their `allowedAmount`. This breaks the core whitelisting mechanism and can lead to unauthorized token inflation or distribution beyond int
 
 **Recommendation:** Remove or completely redesign the `_afterTokenTransfer` logic. Transfers *to* the token contract address should generally not affect internal whitelisting state variables like `transferredAmount` or `totalTransferred`. If a burn mechanism is intended, it should be explicit and not tied to general transfers to the contract address.
 
 
-### `H-01` — Centralized Control and Minting Power  *(Severity: High · Status: Unresolved)*
+### `M-04` — Centralized Control and Minting Power  *(Severity: Medium · Status: Unresolved)*
 
-The `AethirToken` contract grants the `owner` (a multisig wallet) extensive and centralized control over critical functions. The owner can `mint` tokens up to the `MAX_SUPPLY`, `transferToWhitelisted` any amount to whitelisted addresses, and fully manage the whitelisting parameters (`addWhitelisted`, `removeWhitelisted`, `updateWhitelistedMaxAmount`, `updateWhitelistedAddress`). This high degree of centralization means that the integrity of the token supply and distribution relies entirely on the security and good faith of the multisig signers. A compromise of the multisig or malicious intent could lead to significant economic damage or misuse of funds.
+Not confirmed by static analysis (the model's own reading of the source). The `AethirToken` contract grants the `owner` (a multisig wallet) extensive and centralized control over critical functions. The owner can `mint` tokens up to the `MAX_SUPPLY`, `transferToWhitelisted` any amount to whitelisted addresses, and fully manage the whitelisting parameters (`addWhitelisted`, `removeWhitelisted`, `updateWhitelistedMaxAmount`, `updateWhitelistedAddress`). This high degree of centralization means that the integrity of the token supply and distribution relies entirely on the security and good faith of the multisig signers. A compromise of the multisig or malicious intent could lead to significant
 
 **Recommendation:** While a multisig improves security over a single EOA, consider further decentralization or implementing time-locks for critical actions like large mints or significant changes to whitelisting parameters. Explore integrating with a governance module for key decisions, or at minimum, ensure robust operational security procedures for the multisig.
-
-
-### `M-01` — Unconventional Token Holding Pattern  *(Severity: Medium · Status: Unresolved)*
-
-The `mint` function calls `_mint(address(this), amount)`, which means all newly minted tokens are held by the `AethirToken` contract itself. This is an unusual pattern for an ERC20 token. Typically, tokens are minted to a specific treasury, vesting contract, or the owner's address for subsequent distribution. Holding all tokens within the token contract makes it a single point of failure for distribution (assuming the `transferToWhitelisted` function worked correctly). This design choice increases the contract's complexity and reliance on the owner's actions for any token movement.
-
-**Recommendation:** Consider revising the minting strategy. Mint tokens directly to a dedicated treasury contract or a controlled distribution contract. This separates the token logic from the token holding and distribution responsibilities, improving modularity and potentially security.
 
 ## Token Metrics
 

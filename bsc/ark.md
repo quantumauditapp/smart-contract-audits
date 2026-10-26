@@ -2,14 +2,14 @@
 token: ARK
 ticker: ARK
 network: bsc
-risk_score: 33
+risk_score: 31
 status: low
 date: 2026-07-23
 ---
 
 # ARK (ARK) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 33/100 — 🟢 Low Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ark-bsc)
 
@@ -42,28 +42,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Lack of Time-Locks for Critical Role Changes  *(Severity: Low · Status: Unresolved)*
 
-While `AccessControl` provides a robust mechanism for managing roles, it does not inherently include time-lock functionality for critical operations such as granting or revoking sensitive roles. For roles that control significant protocol parameters, funds, or upgradeability, immediate changes could be exploited if an admin key is compromised or a malicious actor gains control.
+Not confirmed by static analysis (the model's own reading of the source). While `AccessControl` provides a robust mechanism for managing roles, it does not inherently include time-lock functionality for critical operations such as granting or revoking sensitive roles. For roles that control significant protocol parameters, funds, or upgradeability, immediate changes could be exploited if an admin key is compromised or a malicious actor gains control.
 
 **Recommendation:** For any roles that have the ability to perform critical operations (e.g., modifying protocol fees, pausing contracts, or upgrading logic), consider implementing a time-lock mechanism on top of the `grantRole` and `revokeRole` functions. This would introduce a delay before changes take effect, allowing for community scrutiny or emergency intervention.
 
 
 ### `L-02` — Absence of Emergency Pause Functionality  *(Severity: Low · Status: Unresolved)*
 
-The `AccessControl` contract itself does not include an emergency pause mechanism. In complex DeFi protocols, the ability to pause certain functionalities (e.g., deposits, withdrawals, trading) can be crucial to mitigate damage during an exploit, critical bug discovery, or market instability. Without such a mechanism, the protocol may be vulnerable to ongoing attacks or irreversible losses.
+Not confirmed by static analysis (the model's own reading of the source). The `AccessControl` contract itself does not include an emergency pause mechanism. In complex DeFi protocols, the ability to pause certain functionalities (e.g., deposits, withdrawals, trading) can be crucial to mitigate damage during an exploit, critical bug discovery, or market instability. Without such a mechanism, the protocol may be vulnerable to ongoing attacks or irreversible losses.
 
 **Recommendation:** Consider integrating an emergency pause mechanism (e.g., OpenZeppelin's `Pausable` module) into the contracts that inherit `AccessControl` and manage critical protocol operations. This pause functionality should be controlled by a specific, highly secured role (e.g., a multi-sig wallet) to prevent abuse.
 
 
 ### `I-01` — Centralization Risk of DEFAULT_ADMIN_ROLE  *(Severity: Informational · Status: Unresolved)*
 
-The `DEFAULT_ADMIN_ROLE` in the `AccessControl` contract holds significant power, as it can grant and revoke any other role, including itself. If this role is controlled by a single external owned account (EOA), it represents a single point of failure and a high centralization risk. A compromise of this EOA could lead to full control over the protocol's access management.
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` in the `AccessControl` contract holds significant power, as it can grant and revoke any other role, including itself. If this role is controlled by a single external owned account (EOA), it represents a single point of failure and a high centralization risk. A compromise of this EOA could lead to full control over the protocol's access management.
 
 **Recommendation:** It is strongly recommended that the `DEFAULT_ADMIN_ROLE` be assigned to a robust multi-signature wallet (e.g., Gnosis Safe) requiring multiple approvals for any transaction. This distributes control and significantly reduces the risk of a single point of compromise.
 
 
 ### `I-02` — Incomplete Source Code Provided for Audit  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code snippet is a flattened version of OpenZeppelin's `AccessControl` and its dependencies, but it appears to be truncated. The audit was conducted based solely on the provided code, which may not represent the entire codebase of the 'ARK Protocol' or the specific contract being deployed. This limits the scope of the audit and prevents a comprehensive review of all potential interactions and custom logic.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code snippet is a flattened version of OpenZeppelin's `AccessControl` and its dependencies, but it appears to be truncated. The audit was conducted based solely on the provided code, which may not represent the entire codebase of the 'ARK Protocol' or the specific contract being deployed. This limits the scope of the audit and prevents a comprehensive review of all potential interactions and custom logic.
 
 **Recommendation:** For a complete security assessment, the full and complete source code of all relevant contracts, including any inheriting contracts or custom logic built on top of `AccessControl`, should be provided. This ensures all potential attack vectors and interactions can be thoroughly analyzed.
 

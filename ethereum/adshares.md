@@ -2,14 +2,14 @@
 token: Adshares
 ticker: ADS
 network: ethereum
-risk_score: 49
+risk_score: 37
 status: medium
 date: 2026-09-12
 ---
 
 # Adshares (ADS) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 49/100 — 🟡 Medium Risk**
+> **Risk Score: 37/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/adshares-eth)
 
@@ -25,8 +25,8 @@ The audit of the WrappedADS ERC20 token contract identified a high-severity cent
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract implements a standard ERC20 token with pausing capabilities, leveraging OpenZeppelin-like patterns and `SafeMath` for arithmetic safety (7.2 Code Security). The architecture is clear… |
-| **Governance / Economics** | 1/10 | High | The token's economic model is a standard ERC20, with no complex DeFi primitives or oracle dependencies (7.4 Economic). There are no explicit governance mechanisms beyond the `PauserRole` (7.5… |
+| **Technical** | 8/10 | Low | The contract implements a standard ERC20 token with pausing capabilities, leveraging OpenZeppelin-like patterns and `SafeMath` for arithmetic safety (7.2 Code Security). The architecture is clear… |
+| **Governance / Economics** | 2/10 | High | The token's economic model is a standard ERC20, with no complex DeFi primitives or oracle dependencies (7.4 Economic). There are no explicit governance mechanisms beyond the `PauserRole` (7.5… |
 | **Upgrades** | 3/10 | High | The contract is not designed to be upgradeable, as indicated by `is_proxy: false` (7.7 Upgrades). This eliminates upgrade-related risks such as proxy storage collisions or logic errors during… |
 
 ## LP Distribution
@@ -38,25 +38,25 @@ The audit of the WrappedADS ERC20 token contract identified a high-severity cent
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Centralized Pauser Role with Potential for Permanent Loss of Control  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Pauser Role with Potential for Permanent Loss of Control  *(Severity: Medium · Status: Unresolved)*
 
-The `PauserRole` grants significant control to a single `Pauser` address (initially the deployer) to pause and unpause all token transfers. This introduces a high centralization risk. Furthermore, the `renouncePauser()` function allows any pauser to remove themselves from the role. If the *sole* pauser renounces their role without first assigning a new pauser, the contract will be left without any active pausers. In this scenario, no new pausers can be added, and the pausing mechanism (both `pause()` and `unpause()`) would become permanently inaccessible, potentially locking the contract in a paused or unpaused state indefinitely.
+Not confirmed by static analysis (the model's own reading of the source). The `PauserRole` grants significant control to a single `Pauser` address (initially the deployer) to pause and unpause all token transfers. This introduces a high centralization risk. Furthermore, the `renouncePauser()` function allows any pauser to remove themselves from the role. If the *sole* pauser renounces their role without first assigning a new pauser, the contract will be left without any active pausers. In this scenario, no new pausers can be added, and the pausing mechanism (both `pause()` and `unpause()`) would become permanently inaccessible, potentially locking the contract in a paused or unpaused state i
 
 **Recommendation:** Implement a more robust and decentralized access control mechanism for the pauser role. Consider using a multi-signature wallet (e.g., Gnosis Safe) for the `Pauser` address. Alternatively, modify the `renouncePauser` function to prevent the sole pauser from renouncing their role unless a new pauser has already been designated, or implement a timelock for critical role changes.
 
 
 ### `L-01` — Outdated Solidity Compiler Version  *(Severity: Low · Status: Unresolved)*
 
-The contract uses Solidity `^0.5.0`. While `SafeMath` is used to mitigate common arithmetic overflows, newer compiler versions (e.g., `^0.8.0`) offer built-in overflow checks, improved security features, and gas optimizations. Using an older version might expose the contract to known compiler bugs or make it harder to integrate with newer tools and libraries.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses Solidity `^0.5.0`. While `SafeMath` is used to mitigate common arithmetic overflows, newer compiler versions (e.g., `^0.8.0`) offer built-in overflow checks, improved security features, and gas optimizations. Using an older version might expose the contract to known compiler bugs or make it harder to integrate with newer tools and libraries.
 
 **Recommendation:** Consider upgrading the Solidity compiler version to a more recent stable release (e.g., `^0.8.0` or higher). This would allow for the removal of `SafeMath` (as `uint256` operations would revert on overflow/underflow by default) and provide access to the latest language features and security improvements. Thorough testing would be required after such an upgrade.
 
 
 ### `I-01` — Unnecessary `this;` in `_msgData()`  *(Severity: Informational · Status: Unresolved)*
 
-The `_msgData()` function in the `Context` contract includes an unnecessary `this;` statement. This statement has no functional effect and can be removed.
+Not confirmed by static analysis (the model's own reading of the source). The `_msgData()` function in the `Context` contract includes an unnecessary `this;` statement. This statement has no functional effect and can be removed.
 
 **Recommendation:** Remove the `this;` statement from the `_msgData()` function to slightly reduce bytecode size and improve readability, although the gas impact is negligible.
 

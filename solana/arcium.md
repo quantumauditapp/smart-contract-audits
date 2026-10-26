@@ -76,11 +76,11 @@ The token's metadata is mutable, meaning its name, symbol, or image can be chang
 
 ### Is Arcium a scam?
 
-Based purely on the provided data, labeling Arcium (ARX) definitively as a "scam" is premature. While it exhibits positive traits like renounced ownership and no mint function, critical red flags exist. The contract is unverified, liquidity is unlocked, and a concerning 94.8% of the supply is concentrated among the top 10 holders. These factors contribute to its overall high-risk score of 63/100, indicating significant vulnerabilities that could be exploited.
+Based purely on the provided data, labeling Arcium (ARX) definitively as a "scam" is premature. While it exhibits positive traits like renounced ownership and no mint function, critical red flags exist. The contract is unverified, liquidity is unlocked, and a concerning 94.8% of the supply is concentrated among the top 10 holders. These factors contribute to its overall medium-risk score of 35/100, indicating significant vulnerabilities that could be exploited.
 
 ### Is Arcium safe to buy?
 
-Arcium (ARX) is assessed with a high-risk score of 63/100, indicating it is not considered safe for investment based on the current data. Key risk factors include the contract being unverified, extreme token concentration with 94.8% held by the top 10 wallets, and unlocked liquidity. These conditions create significant potential for market manipulation or sudden liquidity withdrawal. Investors should exercise extreme caution and be aware of these inherent volatilities.
+Arcium (ARX) is assessed with a medium-risk score of 35/100, indicating it is not considered safe for investment based on the current data. Key risk factors include the contract being unverified, extreme token concentration with 94.8% held by the top 10 wallets, and unlocked liquidity. These conditions create significant potential for market manipulation or sudden liquidity withdrawal. Investors should exercise extreme caution and be aware of these inherent volatilities.
 
 ### Has Arcium been audited?
 

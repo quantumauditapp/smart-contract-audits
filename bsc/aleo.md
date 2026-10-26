@@ -2,14 +2,14 @@
 token: Aleo
 ticker: ALEO
 network: bsc
-risk_score: 78
-status: high
+risk_score: 51
+status: medium
 date: 2026-09-26
 ---
 
 # Aleo (ALEO) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 78/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aleo-bsc)
 
@@ -25,8 +25,8 @@ The WrappedTokens contract implements an upgradeable ERC-20 token with burnable,
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract is built upon well-audited OpenZeppelin upgradeable libraries, ensuring a solid foundation for code security (7.2) and architectural patterns (7.1). Standard ERC-20, burnable, pausable… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4) of the WrappedTokens contract presents a high degree of centralization. The MINTER_ROLE has unlimited minting capability, posing a significant inflation risk if compromised.… |
+| **Technical** | 7/10 | Low | The contract is built upon well-audited OpenZeppelin upgradeable libraries, ensuring a solid foundation for code security (7.2) and architectural patterns (7.1). Standard ERC-20, burnable, pausable… |
+| **Governance / Economics** | 2/10 | High | The economic model (7.4) of the WrappedTokens contract presents a high degree of centralization. The MINTER_ROLE has unlimited minting capability, posing a significant inflation risk if compromised.… |
 | **Upgrades** | 1/10 | High | The contract correctly implements the UUPS proxy pattern (7.7) using OpenZeppelin's `Initializable` and upgradeable base contracts. The `_disableInitializers()` in the constructor and the… |
 
 ## Proxy Upgrade Controls
@@ -45,39 +45,39 @@ The WrappedTokens contract implements an upgradeable ERC-20 token with burnable,
 
 ## Security Findings
 
-_🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Minting Authority  *(Severity: High · Status: Unresolved)*
-
-The `MINTER_ROLE` possesses the unrestricted ability to mint new tokens. This centralization introduces a significant economic risk (7.4), as a compromised or malicious minter could inflate the token supply, devaluing existing holdings and impacting the token's stability. This is an access control flaw (7.3) with direct economic consequences.
-
-**Recommendation:** Implement multi-signature control for the `MINTER_ROLE` to require multiple approvals for minting operations. Consider introducing a minting cap or a rate limit to control inflation. If possible, explore mechanisms to decentralize or remove the minting capability entirely once the desired supply is reached.
-
-
-### `H-02` — Centralized Pausing Authority  *(Severity: High · Status: Unresolved)*
-
-The `PAUSER_ROLE` can unilaterally pause and unpause all token transfers. While useful for emergency situations, this power can disrupt liquidity, prevent users from moving funds, and potentially be abused if the role is compromised (7.3). This poses a significant operational and economic risk (7.4, 7.8).
-
-**Recommendation:** Implement multi-signature control for the `PAUSER_ROLE`. Consider adding a time-lock for unpausing functionality to allow for community review or emergency response. Clearly define the conditions under which pausing is permissible in project documentation.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Critical Role Management by Default Admin  *(Severity: Medium · Status: Unresolved)*
 
-The `DEFAULT_ADMIN_ROLE` has the power to grant and revoke all other roles, including `MINTER_ROLE` and `PAUSER_ROLE`. This makes the `DEFAULT_ADMIN_ROLE` a single point of failure (7.3, 7.8); its compromise would grant an attacker full control over the token's critical functions, including minting and pausing.
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` has the power to grant and revoke all other roles, including `MINTER_ROLE` and `PAUSER_ROLE`. This makes the `DEFAULT_ADMIN_ROLE` a single point of failure (7.3, 7.8); its compromise would grant an attacker full control over the token's critical functions, including minting and pausing.
 
 **Recommendation:** Implement multi-signature control for the `DEFAULT_ADMIN_ROLE` to ensure that no single entity can unilaterally manage critical roles. Consider transferring the `DEFAULT_ADMIN_ROLE` to a robust governance mechanism or a DAO if applicable.
 
 
+### `M-02` — Centralized Minting Authority  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `MINTER_ROLE` possesses the unrestricted ability to mint new tokens. This centralization introduces a significant economic risk (7.4), as a compromised or malicious minter could inflate the token supply, devaluing existing holdings and impacting the token's stability. This is an access control flaw (7.3) with direct economic consequences.
+
+**Recommendation:** Implement multi-signature control for the `MINTER_ROLE` to require multiple approvals for minting operations. Consider introducing a minting cap or a rate limit to control inflation. If possible, explore mechanisms to decentralize or remove the minting capability entirely once the desired supply is reached.
+
+
+### `M-03` — Centralized Pausing Authority  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `PAUSER_ROLE` can unilaterally pause and unpause all token transfers. While useful for emergency situations, this power can disrupt liquidity, prevent users from moving funds, and potentially be abused if the role is compromised (7.3). This poses a significant operational and economic risk (7.4, 7.8).
+
+**Recommendation:** Implement multi-signature control for the `PAUSER_ROLE`. Consider adding a time-lock for unpausing functionality to allow for community review or emergency response. Clearly define the conditions under which pausing is permissible in project documentation.
+
+
 ### `L-01` — Dependency on OpenZeppelin Libraries  *(Severity: Low · Status: Unresolved)*
 
-The contract extensively uses OpenZeppelin's upgradeable contracts. While these libraries are widely audited and considered secure, any future vulnerabilities discovered within them could indirectly impact the `WrappedTokens` contract (7.2, 7.6). This is a general risk inherent in using external dependencies.
+Not confirmed by static analysis (the model's own reading of the source). The contract extensively uses OpenZeppelin's upgradeable contracts. While these libraries are widely audited and considered secure, any future vulnerabilities discovered within them could indirectly impact the `WrappedTokens` contract (7.2, 7.6). This is a general risk inherent in using external dependencies.
 
 **Recommendation:** Stay informed about security updates and advisories from OpenZeppelin. Regularly review the project's dependencies and consider upgrading to newer versions if security patches are released. This is a continuous operational security practice.
 
 
 ### `I-01` — Hardcoded Decimals  *(Severity: Informational · Status: Unresolved)*
 
-The `decimals()` function is explicitly set to return `6`. This is a design decision and not a vulnerability (7.1), but it's a critical parameter for all integrations (e.g., exchanges, wallets, dApps) and should be clearly communicated to users and developers to prevent misinterpretation of token values.
+Not confirmed by static analysis (the model's own reading of the source). The `decimals()` function is explicitly set to return `6`. This is a design decision and not a vulnerability (7.1), but it's a critical parameter for all integrations (e.g., exchanges, wallets, dApps) and should be clearly communicated to users and developers to prevent misinterpretation of token values.
 
 **Recommendation:** Ensure that the fixed decimal value of 6 is prominently documented in all relevant project materials, including whitepapers, developer guides, and API specifications, to avoid integration errors.
 

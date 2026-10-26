@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Redundant SafeMath Library and Unchecked Blocks  *(Severity: Low · Status: Unresolved)*
 
-The contract includes a `SafeMath` library. However, Solidity version 0.8.19, used in this contract, provides native overflow and underflow protection by default. The `try*` functions within the `SafeMath` library explicitly use `unchecked` blocks, which bypass these native checks, although they implement their own checks. The `add`, `sub`, `mul`, `div`, `mod` functions without `try` or `errorMessage` parameters do not use `unchecked` and thus rely on the native compiler checks, making the library largely redundant and potentially confusing for maintainers.
+Not confirmed by static analysis (the model's own reading of the source). The contract includes a `SafeMath` library. However, Solidity version 0.8.19, used in this contract, provides native overflow and underflow protection by default. The `try*` functions within the `SafeMath` library explicitly use `unchecked` blocks, which bypass these native checks, although they implement their own checks. The `add`, `sub`, `mul`, `div`, `mod` functions without `try` or `errorMessage` parameters do not use `unchecked` and thus rely on the native compiler checks, making the library largely redundant and potentially confusing for maintainers.
 
 **Recommendation:** Consider removing the `SafeMath` library entirely and relying on Solidity's built-in overflow/underflow protection for arithmetic operations. If specific `unchecked` blocks are desired for gas optimization, ensure they are carefully placed and preceded by robust `require` statements, as is done in some parts of the `ERC20` contract itself.
 
 
 ### `I-01` — ERC20 Allowance Race Condition (Known Issue)  *(Severity: Informational · Status: Unresolved)*
 
-The standard `approve()` function is susceptible to a front-running attack. If a token holder first approves an amount for a spender, and then decides to change that approved amount, an attacker can front-run the second `approve` transaction. This allows the attacker to execute the original `approve` with the initial amount, then immediately use `transferFrom` to drain that amount, and finally allow the second `approve` transaction to proceed, granting the spender the new amount as well.
+Not confirmed by static analysis (the model's own reading of the source). The standard `approve()` function is susceptible to a front-running attack. If a token holder first approves an amount for a spender, and then decides to change that approved amount, an attacker can front-run the second `approve` transaction. This allows the attacker to execute the original `approve` with the initial amount, then immediately use `transferFrom` to drain that amount, and finally allow the second `approve` transaction to proceed, granting the spender the new amount as well.
 
 **Recommendation:** While `increaseAllowance()` and `decreaseAllowance()` functions are provided, which mitigate this issue, users should be educated to use these functions instead of directly calling `approve()` when modifying an existing allowance.
 
 
 ### `I-02` — Implications of Renounced Ownership  *(Severity: Informational · Status: Unresolved)*
 
-The provided prefill data indicates that the contract's ownership has been renounced (`ownership_renounced: true`). This means the `_owner` address in the `Ownable` contract is set to `address(0)`. Consequently, any functions protected by the `onlyOwner` modifier are permanently inaccessible and cannot be executed by any external account.
+Not confirmed by static analysis (the model's own reading of the source). The provided prefill data indicates that the contract's ownership has been renounced (`ownership_renounced: true`). This means the `_owner` address in the `Ownable` contract is set to `address(0)`. Consequently, any functions protected by the `onlyOwner` modifier are permanently inaccessible and cannot be executed by any external account.
 
 **Recommendation:** Confirm that renouncing ownership was an intentional and well-considered decision. Ensure that no critical administrative functions or emergency controls are required post-renunciation, as they cannot be recovered or executed. This design choice enhances decentralization but removes any central control.
 

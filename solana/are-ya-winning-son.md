@@ -2,14 +2,14 @@
 token: Are Ya Winning, Son?
 ticker: SON
 network: solana
-risk_score: 27
+risk_score: 15
 status: low
 date: 2026-06-29
 ---
 
 # Are Ya Winning, Son? (SON) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 27/100 — 🟢 Low Risk**
+> **Risk Score: 15/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/are-ya-winning-son-sol)
 
@@ -26,8 +26,8 @@ This audit of the Are Ya Winning, Son? (SON) SPL Token Mint found no critical or
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint with a total supply of 999,934,999.873139 SON (6 decimals). Both the mint authority and freeze authority have been revoked, preventing further token creation or… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits healthy liquidity at $52,601 USD, with a normal 24-hour volume to liquidity ratio of 0.37, suggesting organic trading activity. The DEX pair has been active for 42 days, providing… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, ensuring that the token's supply and account states cannot be unilaterally altered by a central party. Key Token-2022 extension flags such as… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits healthy liquidity at $52,601 USD, with a normal 24-hour volume to liquidity ratio of 0.37, suggesting organic trading activity. The DEX pair has been active for 42 days, providing… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both revoked, ensuring that the token's supply and account states cannot be unilaterally altered by a central party. Key Token-2022 extension flags such as… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 35624 buys / 19693 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,18 +69,18 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is Are Ya Winning, Son? a scam?
 
-Characterizing SON as a definitive 'scam' based solely on available data is not possible. While it carries a Medium Risk score of 35/100 due to factors like an unverified contract and unlocked liquidity, the renounced ownership and absence of a mint function indicate some degree of developer commitment to preventing certain malicious actions, such as supply inflation. Investors should assess the inherent risks.
+Characterizing SON as a definitive 'scam' based solely on available data is not possible. While it carries a Low Risk score of 15/100 due to factors like an unverified contract and unlocked liquidity, the renounced ownership and absence of a mint function indicate some degree of developer commitment to preventing certain malicious actions, such as supply inflation. Investors should assess the inherent risks.
 
 ### Is Are Ya Winning, Son? safe to buy?
 
-Investing in Are Ya Winning, Son? (SON) involves notable risks, contributing to its Medium Risk score of 35/100. Key concerns include the unverified contract, which obscures code transparency, and the unlocked liquidity, posing a potential 'rug pull' risk. While ownership is renounced, these significant vulnerabilities suggest a cautious approach is warranted. Investors should conduct thorough due diligence.
+Investing in Are Ya Winning, Son? (SON) involves notable risks, contributing to its Low Risk score of 15/100. Key concerns include the unverified contract, which obscures code transparency, and the unlocked liquidity, posing a potential 'rug pull' risk. While ownership is renounced, these significant vulnerabilities suggest a cautious approach is warranted. Investors should conduct thorough due diligence.
 
 ### Has Are Ya Winning, Son? been audited?
 

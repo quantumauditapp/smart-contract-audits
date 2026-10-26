@@ -2,14 +2,14 @@
 token: AntFun
 ticker: ANTFUN
 network: bsc
-risk_score: 68
-status: high
+risk_score: 64
+status: medium
 date: 2026-09-15
 ---
 
 # AntFun (ANTFUN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 64/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/antfun-bsc)
 
@@ -25,7 +25,7 @@ The ANTFUNOFT contract implements an Omnichain Fungible Token (OFT) using LayerZ
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates good technical architecture (7.1 Architecture) by inheriting from established and audited libraries like OpenZeppelin's Ownable, EIP712, and ECDSA, as well as LayerZero's… |
+| **Technical** | 8/10 | Low | The contract demonstrates good technical architecture (7.1 Architecture) by inheriting from established and audited libraries like OpenZeppelin's Ownable, EIP712, and ECDSA, as well as LayerZero's… |
 | **Governance / Economics** | 2/10 | High | The economic model (7.4 Economic) is that of a standard fungible token with cross-chain capabilities and gasless transfers. Governance (7.5 Governance) is centralized, with a single owner address… |
 | **Upgrades** | 3/10 | High | The contract is not designed with an explicit upgrade mechanism (7.7 Upgrades). While a 'version' constant is present, there are no proxy patterns (e.g., UUPS, Transparent) or other upgradeability… |
 
@@ -42,28 +42,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Timestamp Dependence for Authorization Validity  *(Severity: Low · Status: Unresolved)*
 
-The EIP-3009 authorization mechanism relies on `block.timestamp` to enforce `validAfter` and `validBefore` conditions. While standard for time-based checks on EVM chains, `block.timestamp` can be manipulated by miners within a small window (e.g., up to 900 seconds on Ethereum). This could lead to minor deviations in the precise validity period of an authorization, potentially allowing a transaction to be valid slightly earlier or later than intended by the signer.
+Not confirmed by static analysis (the model's own reading of the source). The EIP-3009 authorization mechanism relies on `block.timestamp` to enforce `validAfter` and `validBefore` conditions. While standard for time-based checks on EVM chains, `block.timestamp` can be manipulated by miners within a small window (e.g., up to 900 seconds on Ethereum). This could lead to minor deviations in the precise validity period of an authorization, potentially allowing a transaction to be valid slightly earlier or later than intended by the signer.
 
 **Recommendation:** While this is an inherent characteristic of blockchain timestamps and not a flaw in the EIP-3009 implementation, users should be aware of this potential imprecision. When signing authorizations, consider adding a small buffer to `validAfter` and `validBefore` if precise timing is critical, or use a sufficiently wide window where minor deviations are acceptable.
 
 
 ### `L-02` — Front-running Risk for EIP-3009 Authorizations  *(Severity: Low · Status: Unresolved)*
 
-EIP-3009 meta-transactions, by their nature, are susceptible to front-running. If a signed authorization is broadcast to the mempool, a malicious actor could observe it and submit a transaction with a higher gas price to execute the same authorization (or cancel it) before the legitimate sender. Although nonces prevent replay attacks, a successful front-run would consume the nonce, forcing the original sender to generate a new signature, leading to a poor user experience.
+Not confirmed by static analysis (the model's own reading of the source). EIP-3009 meta-transactions, by their nature, are susceptible to front-running. If a signed authorization is broadcast to the mempool, a malicious actor could observe it and submit a transaction with a higher gas price to execute the same authorization (or cancel it) before the legitimate sender. Although nonces prevent replay attacks, a successful front-run would consume the nonce, forcing the original sender to generate a new signature, leading to a poor user experience.
 
 **Recommendation:** Advise users to keep the `validBefore` window as short as practically possible to minimize the time an authorization is exposed to the mempool. Implement off-chain mechanisms to submit transactions quickly or use private transaction relays where available to reduce front-running opportunities.
 
 
 ### `I-01` — Centralized Ownership and Control  *(Severity: Informational · Status: Unresolved)*
 
-The contract utilizes OpenZeppelin's `Ownable` pattern, which assigns all administrative privileges to a single owner address. This includes the ability to set LayerZero delegate and minimum destination gas parameters (inherited from OFT). This centralization of power, while common, introduces a single point of failure and potential for a single compromised key to control critical contract functions.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes OpenZeppelin's `Ownable` pattern, which assigns all administrative privileges to a single owner address. This includes the ability to set LayerZero delegate and minimum destination gas parameters (inherited from OFT). This centralization of power, while common, introduces a single point of failure and potential for a single compromised key to control critical contract functions.
 
 **Recommendation:** Consider migrating ownership to a multi-signature wallet (e.g., Gnosis Safe) to distribute control and enhance security against a single point of compromise. This would require multiple approvals for sensitive operations.
 
 
 ### `I-02` — Reliance on LayerZero Protocol Security  *(Severity: Informational · Status: Unresolved)*
 
-The contract's core cross-chain functionality is built upon LayerZero's Omnichain Fungible Token (OFT) standard. This means the security and operational integrity of the ANTFUNOFT token across different chains are inherently dependent on the LayerZero protocol, its endpoints, and its underlying infrastructure. Any vulnerabilities or operational issues within LayerZero could directly impact the token.
+Not confirmed by static analysis (the model's own reading of the source). The contract's core cross-chain functionality is built upon LayerZero's Omnichain Fungible Token (OFT) standard. This means the security and operational integrity of the ANTFUNOFT token across different chains are inherently dependent on the LayerZero protocol, its endpoints, and its underlying infrastructure. Any vulnerabilities or operational issues within LayerZero could directly impact the token.
 
 **Recommendation:** Maintain awareness of LayerZero's security posture, audits, and any reported vulnerabilities. Ensure that the LayerZero endpoint address used is the official and correct one for the deployed network.
 

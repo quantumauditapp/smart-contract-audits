@@ -2,14 +2,14 @@
 token: Aethir Token
 ticker: ATH
 network: arbitrum
-risk_score: 69
-status: high
+risk_score: 47
+status: medium
 date: 2026-09-03
 ---
 
 # Aethir Token (ATH) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 69/100 — 🟠 High Risk**
+> **Risk Score: 47/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aethir-token-arb)
 
@@ -25,8 +25,8 @@ The InterchainToken contract, serving as an upgradeable ERC20 token implementati
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract demonstrates good adherence to ERC20 standards and utilizes modern Solidity features. Custom `_spendAllowance` logic, while deviating from standard libraries, appears safe due to… |
-| **Governance / Economics** | 2/10 | High | The economic model relies heavily on the `MINTER` role, which has the power to arbitrarily mint and burn tokens (7.4 Economic). The `init` function assigns this role to the `interchainTokenService_`… |
+| **Technical** | 7/10 | Low | The contract demonstrates good adherence to ERC20 standards and utilizes modern Solidity features. Custom `_spendAllowance` logic, while deviating from standard libraries, appears safe due to… |
+| **Governance / Economics** | 4/10 | Medium | The economic model relies heavily on the `MINTER` role, which has the power to arbitrarily mint and burn tokens (7.4 Economic). The `init` function assigns this role to the `interchainTokenService_`… |
 | **Upgrades** | 1/10 | High | The contract is designed as an upgradeable implementation, correctly using an `_isInitialized()` check within its `init` function to prevent re-initialization of the proxy's storage (7.7 Upgrades).… |
 
 ## Proxy Upgrade Controls
@@ -46,39 +46,39 @@ The InterchainToken contract, serving as an upgradeable ERC20 token implementati
 
 ## Security Findings
 
-_🟠 2 High · 🟢 1 Low · ⚪ 2 Informational_
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
-### `H-01` — Centralized Control via Minter Role  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Control via Minter Role  *(Severity: Medium · Status: Unresolved)*
 
-The `mint` and `burn` functions are protected by the `onlyRole(uint8(Roles.MINTER))` modifier. The `init` function adds `interchainTokenService_` and a user-provided `minter` address to the `MINTER` role. This grants significant power to these addresses, allowing them to arbitrarily mint and burn tokens, directly impacting the token's supply and value. If the `minter` address is an EOA or a single-sig contract, it represents a single point of failure and a high centralization risk (7.3 Access Control, 7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The `mint` and `burn` functions are protected by the `onlyRole(uint8(Roles.MINTER))` modifier. The `init` function adds `interchainTokenService_` and a user-provided `minter` address to the `MINTER` role. This grants significant power to these addresses, allowing them to arbitrarily mint and burn tokens, directly impacting the token's supply and value. If the `minter` address is an EOA or a single-sig contract, it represents a single point of failure and a high centralization risk (7.3 Access Control, 7.4 Economic).
 
 **Recommendation:** Implement robust governance or multi-signature control over the `MINTER` role. Consider time-locks or multi-stage processes for critical actions like adding/removing minters or large mint operations to distribute control and reduce single points of failure.
 
 
-### `H-02` — Incomplete `RolesBase` Contract  *(Severity: High · Status: Unresolved)*
+### `M-02` — Incomplete `RolesBase` Contract  *(Severity: Medium · Status: Unresolved)*
 
-The provided `RolesBase` contract, which is fundamental to the access control system, is truncated. Specifically, the `_addAccountRoles` function is incomplete: `function _addAccountRoles(address account, uint256 accountRoles) i... (truncated)`. Without the full implementation of this core access control logic, a complete security assessment of the role management system (including how roles are added, removed, and proposed) is impossible. This leaves a significant blind spot in the audit (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The provided `RolesBase` contract, which is fundamental to the access control system, is truncated. Specifically, the `_addAccountRoles` function is incomplete: `function _addAccountRoles(address account, uint256 accountRoles) i... (truncated)`. Without the full implementation of this core access control logic, a complete security assessment of the role management system (including how roles are added, removed, and proposed) is impossible. This leaves a significant blind spot in the audit (7.2 Code Security).
 
 **Recommendation:** Provide the complete source code for all inherited and used contracts, especially critical security components like `RolesBase`, to enable a comprehensive security review and ensure the integrity of the access control mechanisms.
 
 
 ### `L-01` — Redundant `_initialize()` Call in Constructor  *(Severity: Low · Status: Unresolved)*
 
-The `InterchainToken` contract, intended as a proxy implementation, calls `_initialize()` in its constructor. In a proxy pattern (like UUPS or Transparent), the constructor of the implementation contract is executed only once when the implementation itself is deployed, not when the proxy is initialized. The actual initialization for the proxy's storage occurs via an `init` function called on the proxy. While not a direct vulnerability (as `init` correctly uses `_isInitialized()` to prevent re-initialization on the proxy's storage), this constructor call is redundant and can be misleading (7.7 Upgrades).
+Not confirmed by static analysis (the model's own reading of the source). The `InterchainToken` contract, intended as a proxy implementation, calls `_initialize()` in its constructor. In a proxy pattern (like UUPS or Transparent), the constructor of the implementation contract is executed only once when the implementation itself is deployed, not when the proxy is initialized. The actual initialization for the proxy's storage occurs via an `init` function called on the proxy. While not a direct vulnerability (as `init` correctly uses `_isInitialized()` to prevent re-initialization on the proxy's storage), this constructor call is redundant and can be misleading (7.7 Upgrades).
 
 **Recommendation:** Remove the `_initialize()` call from the constructor of proxy implementation contracts. Ensure all proxy-related initialization logic resides solely within the designated initializer function (e.g., `init`) to maintain clarity and best practices for upgradeable contracts.
 
 
 ### `I-01` — Custom `_spendAllowance` Override  *(Severity: Informational · Status: Unresolved)*
 
-The contract overrides the `_spendAllowance` function with a custom implementation. It uses `_approve(sender, spender, _allowance - amount)` directly. In Solidity 0.8.0+, arithmetic operations automatically check for underflows and overflows, meaning `_allowance - amount` will revert if `amount` is greater than `_allowance`. The `UINT256_MAX` check correctly handles infinite approvals. This custom logic appears safe due to Solidity's built-in checks, but any deviation from standard library implementations warrants careful review (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract overrides the `_spendAllowance` function with a custom implementation. It uses `_approve(sender, spender, _allowance - amount)` directly. In Solidity 0.8.0+, arithmetic operations automatically check for underflows and overflows, meaning `_allowance - amount` will revert if `amount` is greater than `_allowance`. The `UINT256_MAX` check correctly handles infinite approvals. This custom logic appears safe due to Solidity's built-in checks, but any deviation from standard library implementations warrants careful review (7.2 Code Security).
 
 **Recommendation:** Document the rationale for custom overrides, especially for core ERC20 functionalities. Ensure thorough unit and integration testing covers all edge cases for allowance spending to confirm its robustness.
 
 
 ### `I-02` — Inline Assembly Usage  *(Severity: Informational · Status: Unresolved)*
 
-The contract and its inherited `RolesBase` utilize inline assembly for direct storage manipulation (e.g., `sload`, `sstore`) for initialization flags and role management. This approach is used for gas optimization and specific storage patterns (like `keccak256` based mapping keys). While assembly can introduce subtle bugs if not handled correctly, the patterns observed (e.g., using a large constant for `INITIALIZED_SLOT`, `keccak256` for mapping keys) are standard and generally considered safe for preventing storage collisions (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract and its inherited `RolesBase` utilize inline assembly for direct storage manipulation (e.g., `sload`, `sstore`) for initialization flags and role management. This approach is used for gas optimization and specific storage patterns (like `keccak256` based mapping keys). While assembly can introduce subtle bugs if not handled correctly, the patterns observed (e.g., using a large constant for `INITIALIZED_SLOT`, `keccak256` for mapping keys) are standard and generally considered safe for preventing storage collisions (7.2 Code Security).
 
 **Recommendation:** Ensure comprehensive unit and integration tests cover all code paths involving inline assembly. Maintain clear and up-to-date documentation for the storage layout and assembly logic to facilitate future audits and maintenance.
 

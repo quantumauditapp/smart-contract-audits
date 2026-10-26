@@ -2,14 +2,14 @@
 token: Animecoin
 ticker: ANIME
 network: ethereum
-risk_score: 58
+risk_score: 41
 status: medium
 date: 2026-08-31
 ---
 
 # Animecoin (ANIME) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 58/100 — 🟡 Medium Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/animecoin-eth)
 
@@ -26,7 +26,7 @@ The Animecoin contract is an ERC20Permit token with owner-controlled functionali
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract utilizes standard OpenZeppelin ERC20Permit and Ownable implementations, providing a solid foundation for token functionality (7.2 Code Security). The architecture integrates with… |
-| **Governance / Economics** | 1/10 | High | The contract employs a simple `Ownable` access control model, granting the deployer exclusive rights to critical functions like `registerTokenOnL2` (7.5 Governance). This centralized control is… |
+| **Governance / Economics** | 2/10 | High | The contract employs a simple `Ownable` access control model, granting the deployer exclusive rights to critical functions like `registerTokenOnL2` (7.5 Governance). This centralized control is… |
 | **Upgrades** | 6/10 | Medium | The Animecoin contract is not designed with an upgradeability pattern (7.7 Upgrades). This means its logic is immutable once deployed, eliminating risks associated with proxy implementation… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The Animecoin contract is an ERC20Permit token with owner-controlled functionali
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Missing ETH Withdrawal Mechanism for Owner  *(Severity: High · Status: Unresolved)*
-
-The `registerTokenOnL2` function is payable and forwards `valueForGateway` and `valueForRouter` to external Arbitrum gateway contracts. If the `msg.value` sent to `registerTokenOnL2` by the owner exceeds the sum of `valueForGateway` and `valueForRouter`, the excess ETH will remain in the `Animecoin` contract. There is no owner-controlled function to withdraw this trapped ETH, leading to a permanent loss of funds for the owner.
-
-**Recommendation:** Implement a dedicated `withdrawETH` function, restricted to the `onlyOwner` role, allowing the owner to recover any excess ETH sent to the contract. This function should transfer the contract's balance to a specified address.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Unusual `isArbitrumEnabled` View Function Behavior  *(Severity: Medium · Status: Unresolved)*
 
-The `isArbitrumEnabled` view function is guarded by `require(shouldRegisterGateway, "NOT_EXPECTED_CALL")`. The `shouldRegisterGateway` flag is only set to `true` temporarily during the execution of the `registerTokenOnL2` function. This means that `isArbitrumEnabled()` will almost always revert when called directly or by external systems outside of the specific L2 registration process, which is unexpected for a public view function and could cause integration issues or confusion.
+Not confirmed by static analysis (the model's own reading of the source). The `isArbitrumEnabled` view function is guarded by `require(shouldRegisterGateway, "NOT_EXPECTED_CALL")`. The `shouldRegisterGateway` flag is only set to `true` temporarily during the execution of the `registerTokenOnL2` function. This means that `isArbitrumEnabled()` will almost always revert when called directly or by external systems outside of the specific L2 registration process, which is unexpected for a public view function and could cause integration issues or confusion.
 
 **Recommendation:** Re-evaluate the necessity of the `shouldRegisterGateway` check within `isArbitrumEnabled`. If the intent is to only allow this function to be called during registration, this design is highly restrictive. Consider removing the `require` statement to allow the function to always return its intended value, or provide clear documentation on its intended usage and limitations.
 
 
+### `M-02` — Missing ETH Withdrawal Mechanism for Owner  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `registerTokenOnL2` function is payable and forwards `valueForGateway` and `valueForRouter` to external Arbitrum gateway contracts. If the `msg.value` sent to `registerTokenOnL2` by the owner exceeds the sum of `valueForGateway` and `valueForRouter`, the excess ETH will remain in the `Animecoin` contract. There is no owner-controlled function to withdraw this trapped ETH, leading to a permanent loss of funds for the owner.
+
+**Recommendation:** Implement a dedicated `withdrawETH` function, restricted to the `onlyOwner` role, allowing the owner to recover any excess ETH sent to the contract. This function should transfer the contract's balance to a specified address.
+
+
 ### `L-01` — Reliance on External Arbitrum Bridge Parameters  *(Severity: Low · Status: Unresolved)*
 
-The `registerTokenOnL2` function requires the owner to provide several complex parameters (`maxSubmissionCostForCustomGateway`, `maxSubmissionCostForRouter`, `maxGasForCustomGateway`, `maxGasForRouter`, `gasPriceBid`, `valueForGateway`, `valueForRouter`) for the Arbitrum bridge calls. Incorrectly calculated or provided values for these parameters could lead to failed L2 registration transactions, wasted gas, or trapped funds if `value` is too high and not fully consumed (as noted in H-01). This places a significant operational burden on the owner.
+Not confirmed by static analysis (the model's own reading of the source). The `registerTokenOnL2` function requires the owner to provide several complex parameters (`maxSubmissionCostForCustomGateway`, `maxSubmissionCostForRouter`, `maxGasForCustomGateway`, `maxGasForRouter`, `gasPriceBid`, `valueForGateway`, `valueForRouter`) for the Arbitrum bridge calls. Incorrectly calculated or provided values for these parameters could lead to failed L2 registration transactions, wasted gas, or trapped funds if `value` is too high and not fully consumed (as noted in H-01). This places a significant operational burden on the owner.
 
 **Recommendation:** Provide comprehensive documentation and clear guidelines for the owner on how to correctly calculate and provide these Arbitrum-specific parameters. Consider adding sanity checks within the contract, if feasible, to validate parameter ranges or relationships, although this might be complex given the dynamic nature of gas prices and submission costs.
 
 
 ### `I-01` — Hardcoded Arbitrum Enabled Return Value  *(Severity: Informational · Status: Unresolved)*
 
-The `isArbitrumEnabled` function returns `uint8(0xb1)`. While `0xb1` is a specific and known constant used by Arbitrum for custom tokens, its direct hardcoding as a magic number without an explicit constant definition or comment can reduce code readability and maintainability. Future changes to Arbitrum's protocol might require updating this value, which would be less clear without a named constant.
+Not confirmed by static analysis (the model's own reading of the source). The `isArbitrumEnabled` function returns `uint8(0xb1)`. While `0xb1` is a specific and known constant used by Arbitrum for custom tokens, its direct hardcoding as a magic number without an explicit constant definition or comment can reduce code readability and maintainability. Future changes to Arbitrum's protocol might require updating this value, which would be less clear without a named constant.
 
 **Recommendation:** Define `0xb1` as a named constant (e.g., `uint8 public constant ARBITRUM_ENABLED_VALUE = 0xb1;`) and use this constant in the `isArbitrumEnabled` function. This improves readability and makes the code easier to understand and maintain.
 

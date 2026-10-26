@@ -2,14 +2,14 @@
 token: Apple
 ticker: APPLE
 network: solana
-risk_score: 31
+risk_score: 14
 status: low
 date: 2026-09-02
 ---
 
 # Apple (APPLE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 31/100 — 🟢 Low Risk**
+> **Risk Score: 14/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/apple-sol)
 
@@ -26,8 +26,8 @@ The Apple SPL Token is a Token-2022 standard token with both mint and freeze aut
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring no new tokens can be minted and no accounts can be frozen post-launch. No… |
-| **Governance / Economics** | 4/10 | Medium | The economic profile of the token shows a notable concentration, with the top 10 token accounts holding 55.94% of the total supply. Current DEX liquidity stands at $28,577, with a 24-hour volume of… |
-| **Upgrades** | 8/10 | Low | The token exhibits a low upgrade risk profile as both the mint and freeze authorities have been revoked. Furthermore, the token's metadata is immutable, preventing changes to its name, symbol, or… |
+| **Governance / Economics** | 7/10 | Low | The economic profile of the token shows a notable concentration, with the top 10 token accounts holding 55.94% of the total supply. Current DEX liquidity stands at $28,577, with a 24-hour volume of… |
+| **Upgrades** | 10/10 | Low | The token exhibits a low upgrade risk profile as both the mint and freeze authorities have been revoked. Furthermore, the token's metadata is immutable, preventing changes to its name, symbol, or… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ Top 10 token accounts hold 55.94% of supply. Coordinated sell-off would crash pr
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 766 buys / 788 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Top 10 token accounts hold 55.94% of supply. Coordinated sell-off would crash pr
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

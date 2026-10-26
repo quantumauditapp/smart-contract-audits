@@ -2,14 +2,14 @@
 token: Altura
 ticker: ALU
 network: bsc
-risk_score: 37
+risk_score: 35
 status: medium
 date: 2026-09-20
 ---
 
 # Altura (ALU) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/altura-bsc)
 
@@ -42,28 +42,28 @@ _🟢 1 Low · ⚪ 3 Informational_
 
 ### `L-01` — Use of Older Solidity Compiler Version (0.5.16)  *(Severity: Low · Status: Unresolved)*
 
-The contract is compiled with Solidity version 0.5.16. While the `SafeMath` library is used to prevent integer overflows and underflows, newer compiler versions (e.g., 0.8.x) include built-in overflow checks by default, reducing reliance on external libraries for this specific safety measure. Newer compilers also offer various security improvements, bug fixes, and gas optimizations (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version 0.5.16. While the `SafeMath` library is used to prevent integer overflows and underflows, newer compiler versions (e.g., 0.8.x) include built-in overflow checks by default, reducing reliance on external libraries for this specific safety measure. Newer compilers also offer various security improvements, bug fixes, and gas optimizations (7.2 Code Security).
 
 **Recommendation:** For future deployments or upgrades, consider using the latest stable Solidity compiler version (e.g., 0.8.x). This provides enhanced security features, better gas efficiency, and improved developer tooling. Thorough testing should always accompany compiler version upgrades.
 
 
 ### `I-01` — Potential for Centralized Supply Control (Mitigated by Renounced Ownership)  *(Severity: Informational · Status: Resolved)*
 
-The `Altura` contract includes an `onlyOwner` `mint` function, allowing the contract owner to increase the total supply of tokens arbitrarily. This capability, if active, could lead to significant inflation and dilution of existing token holders, posing a substantial economic and governance risk (7.4, 7.5). However, the provided operational data indicates that ownership of the contract has been renounced. This action effectively disables the `mint` function, as there is no longer an owner to call it.
+Not confirmed by static analysis (the model's own reading of the source). The `Altura` contract includes an `onlyOwner` `mint` function, allowing the contract owner to increase the total supply of tokens arbitrarily. This capability, if active, could lead to significant inflation and dilution of existing token holders, posing a substantial economic and governance risk (7.4, 7.5). However, the provided operational data indicates that ownership of the contract has been renounced. This action effectively disables the `mint` function, as there is no longer an owner to call it.
 
 **Recommendation:** No action is required if ownership has indeed been permanently renounced. It is crucial to ensure that the renunciation is irreversible and transparently communicated to the community to build trust in the token's fixed supply post-renunciation.
 
 
 ### `I-02` — Redundant `getOwner()` Function  *(Severity: Informational · Status: Unresolved)*
 
-The `IBEP20` interface defines a `getOwner()` function. The `Altura` contract implements this by simply returning the result of the inherited `owner()` function from the `Ownable` contract. Since `owner()` is already a public function providing the same information, `getOwner()` is redundant and adds unnecessary code (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The `IBEP20` interface defines a `getOwner()` function. The `Altura` contract implements this by simply returning the result of the inherited `owner()` function from the `Ownable` contract. Since `owner()` is already a public function providing the same information, `getOwner()` is redundant and adds unnecessary code (7.1 Architecture).
 
 **Recommendation:** Consider removing the `getOwner()` function from the `IBEP20` interface and the `Altura` contract if it is not strictly required by external integrations that specifically call `getOwner()`. Relying solely on the `owner()` function is more concise.
 
 
 ### `I-03` — Internal Burn Functions Not Publicly Exposed  *(Severity: Informational · Status: Unresolved)*
 
-The `Altura` contract includes internal `_burn` and `_burnFrom` functions, which are standard helpers for token burning. However, there are no public or `onlyOwner` functions that expose this burning functionality to external callers or the contract owner. This means that, by design, tokens cannot be burned after deployment (7.1 Architecture, 7.8 Operations). This might be an intentional design choice, but it's worth noting for clarity regarding tokenomics.
+Not confirmed by static analysis (the model's own reading of the source). The `Altura` contract includes internal `_burn` and `_burnFrom` functions, which are standard helpers for token burning. However, there are no public or `onlyOwner` functions that expose this burning functionality to external callers or the contract owner. This means that, by design, tokens cannot be burned after deployment (7.1 Architecture, 7.8 Operations). This might be an intentional design choice, but it's worth noting for clarity regarding tokenomics.
 
 **Recommendation:** If token burning is intended to be a feature, consider adding a public or `onlyOwner` function that calls `_burn` or `_burnFrom`. If burning is not intended, no action is needed, but this design choice should be clearly documented.
 

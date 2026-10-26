@@ -2,14 +2,14 @@
 token: Aave
 ticker: AAVE
 network: solana
-risk_score: 60
+risk_score: 43
 status: medium
 date: 2026-09-14
 ---
 
 # Aave (AAVE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 60/100 — 🟡 Medium Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aave-sol)
 
@@ -25,9 +25,9 @@ This audit identifies a critical risk due to the active mint authority, which al
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Aave (AAVE) token is implemented using the classic SPL Token Program (spl-token). A critical risk is present as the mint authority, held by `2qMmvHtRyRHSnhHPBUE5j9B77i4ryF8s6cN2iMyfZuNY`, remains… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a medium level of holder concentration, with the top 10 accounts holding 56.6% of the total supply, which could lead to price volatility from large sell-offs. Total DEX liquidity… |
-| **Upgrades** | 4/10 | Medium | The token's metadata is mutable, meaning its name, symbol, or image can be changed post-launch. This presents a low risk for branding consistency. The mint authority is still enabled, which is a… |
+| **Technical** | 8/10 | Low | The Aave (AAVE) token is implemented using the classic SPL Token Program (spl-token). A critical risk is present as the mint authority, held by `2qMmvHtRyRHSnhHPBUE5j9B77i4ryF8s6cN2iMyfZuNY`, remains… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a medium level of holder concentration, with the top 10 accounts holding 56.6% of the total supply, which could lead to price volatility from large sell-offs. Total DEX liquidity… |
+| **Upgrades** | 6/10 | Medium | The token's metadata is mutable, meaning its name, symbol, or image can be changed post-launch. This presents a low risk for branding consistency. The mint authority is still enabled, which is a… |
 
 ## Security Findings
 
@@ -74,7 +74,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -83,7 +83,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

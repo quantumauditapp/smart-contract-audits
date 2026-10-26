@@ -2,14 +2,14 @@
 token: AgenC
 ticker: AGENC
 network: solana
-risk_score: 27
+risk_score: 10
 status: low
 date: 2026-08-15
 ---
 
 # AgenC (AGENC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 27/100 — 🟢 Low Risk**
+> **Risk Score: 10/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/agenc-sol)
 
@@ -26,8 +26,8 @@ The AgenC SPL Token Mint exhibits a medium risk profile primarily due to signifi
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The AgenC token is implemented using the spl-token-2022 program, offering modern SPL features. Crucially, both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens can be… |
-| **Governance / Economics** | 5/10 | Medium | Economic analysis reveals a medium risk due to holder concentration, with the top 10 token accounts collectively holding 58.01% of the supply. This level of concentration could lead to significant… |
-| **Upgrades** | 8/10 | Low | The AgenC token exhibits a strong posture against post-launch changes. The Mint Authority and Freeze Authority have both been revoked, preventing any further supply inflation or account freezing. Key… |
+| **Governance / Economics** | 8/10 | Low | Economic analysis reveals a medium risk due to holder concentration, with the top 10 token accounts collectively holding 58.01% of the supply. This level of concentration could lead to significant… |
+| **Upgrades** | 10/10 | Low | The AgenC token exhibits a strong posture against post-launch changes. The Mint Authority and Freeze Authority have both been revoked, preventing any further supply inflation or account freezing. Key… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ Top 10 token accounts hold 58.01% of supply. Coordinated sell-off would crash pr
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 665 buys / 556 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Top 10 token accounts hold 58.01% of supply. Coordinated sell-off would crash pr
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

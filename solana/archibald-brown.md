@@ -2,14 +2,14 @@
 token: Archibald Brown
 ticker: ARCHIBROWN
 network: solana
-risk_score: 19
+risk_score: 2
 status: low
 date: 2026-09-25
 ---
 
 # Archibald Brown (ARCHIBROWN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 19/100 — 🟢 Low Risk**
+> **Risk Score: 2/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/archibald-brown-sol)
 
@@ -26,8 +26,8 @@ The Archibald Brown (ARCHIBROWN) SPL Token Mint presents a medium risk profile, 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Archibald Brown token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked, indicating that no new tokens can be minted and no existing accounts can be… |
-| **Governance / Economics** | 5/10 | Medium | The token's economic profile shows a very new DEX pair, created only 2 days ago, which limits the ability to assess long-term stability (7.4 Economic). Current liquidity stands at $43,583, with a… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning these critical parameters cannot be changed (7.7 Upgrades). The token does not have a Transfer Hook, and… |
+| **Governance / Economics** | 8/10 | Low | The token's economic profile shows a very new DEX pair, created only 2 days ago, which limits the ability to assess long-term stability (7.4 Economic). Current liquidity stands at $43,583, with a… |
+| **Upgrades** | 10/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning these critical parameters cannot be changed (7.7 Upgrades). The token does not have a Transfer Hook, and… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3705 buys / 4571 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

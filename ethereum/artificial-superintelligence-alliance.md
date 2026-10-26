@@ -103,7 +103,7 @@ The contract for Artificial Superintelligence Alliance (FET) is verified and its
 
 ### Is Artificial Superintelligence Alliance safe to buy?
 
-Given the high-risk score of 65/100, FET presents notable safety concerns for investors. Key factors include the top 10 holders controlling 50.1% of the supply, creating significant centralization risk. Furthermore, the liquidity is not locked, exposing investors to potential rug pull scenarios where liquidity could be suddenly withdrawn. The existence of a mint function also introduces inflationary potential.
+Given the medium-risk score of 40/100, FET presents notable safety concerns for investors. Key factors include the top 10 holders controlling 50.1% of the supply, creating significant centralization risk. Furthermore, the liquidity is not locked, exposing investors to potential rug pull scenarios where liquidity could be suddenly withdrawn. The existence of a mint function also introduces inflationary potential.
 
 ### Has Artificial Superintelligence Alliance been audited?
 

@@ -2,14 +2,14 @@
 token: Ark Of Panda
 ticker: AOP
 network: bsc
-risk_score: 40
-status: medium
+risk_score: 23
+status: low
 date: 2026-08-13
 ---
 
 # Ark Of Panda (AOP) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ark-of-panda-bsc)
 
@@ -25,8 +25,8 @@ The AOPToken contract implements a standard ERC20 token with an Ownable access c
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The AOPToken contract is built upon robust OpenZeppelin ERC20 and Ownable implementations, ensuring a solid foundation for its core functionality (7.1 Architecture, 7.2 Code Security). The use of… |
-| **Governance / Economics** | 5/10 | Medium | The contract employs an `Ownable` pattern, granting the deployer (owner) significant control, including the ability to mint tokens up to a `maxSupply` (7.3 Access Control, 7.5 Governance). This… |
+| **Technical** | 8/10 | Low | The AOPToken contract is built upon robust OpenZeppelin ERC20 and Ownable implementations, ensuring a solid foundation for its core functionality (7.1 Architecture, 7.2 Code Security). The use of… |
+| **Governance / Economics** | 6/10 | Medium | The contract employs an `Ownable` pattern, granting the deployer (owner) significant control, including the ability to mint tokens up to a `maxSupply` (7.3 Access Control, 7.5 Governance). This… |
 | **Upgrades** | 8/10 | Low | The AOPToken contract is not designed as an upgradeable proxy (7.7 Upgrades). It is a standard, non-upgradeable implementation. Therefore, there are no specific upgrade safety issues to address. Any… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The AOPToken contract implements a standard ERC20 token with an Ownable access c
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control via Ownable Pattern  *(Severity: High · Status: Unresolved)*
-
-The contract uses the `Ownable` pattern, granting a single external address (the owner) exclusive control over critical functions such as `mint` and `transferOwnership`. If the owner's private key is compromised, a malicious actor could mint the entire `maxSupply` of tokens, leading to severe economic consequences for the token holders. This represents a significant single point of failure (7.3 Access Control, 7.5 Governance).
-
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) as the contract owner to distribute control among multiple trusted parties. This significantly reduces the risk of a single point of compromise. For less critical operations, consider implementing a time-locked governance mechanism.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — `maxSupply` Check After `_mint` Operation  *(Severity: Medium · Status: Unresolved)*
 
-In the `mint` function, the `maxSupply` check (`if (totalSupply() > maxSupply)`) occurs after the `_mint` internal function has already updated the `_totalSupply` and `_balances` state variables. While the transaction will revert if `maxSupply` is exceeded, this approach is less gas-efficient as it performs state changes that are then discarded. It is generally better practice to validate conditions that would cause a revert *before* modifying state (7.2 Code Security, 7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). In the `mint` function, the `maxSupply` check (`if (totalSupply() > maxSupply)`) occurs after the `_mint` internal function has already updated the `_totalSupply` and `_balances` state variables. While the transaction will revert if `maxSupply` is exceeded, this approach is less gas-efficient as it performs state changes that are then discarded. It is generally better practice to validate conditions that would cause a revert *before* modifying state (7.2 Code Security, 7.4 Economic).
 
 **Recommendation:** Move the `maxSupply` check to occur before the `_mint` call. For example, add `require(totalSupply() + amount_ <= maxSupply, 'AOPToken: mint exceeds max supply');` before `_mint(to_, amount_);` to prevent unnecessary state changes and reverts.
 
 
+### `M-02` — Centralized Control via Ownable Pattern  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract uses the `Ownable` pattern, granting a single external address (the owner) exclusive control over critical functions such as `mint` and `transferOwnership`. If the owner's private key is compromised, a malicious actor could mint the entire `maxSupply` of tokens, leading to severe economic consequences for the token holders. This represents a significant single point of failure (7.3 Access Control, 7.5 Governance).
+
+**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) as the contract owner to distribute control among multiple trusted parties. This significantly reduces the risk of a single point of compromise. For less critical operations, consider implementing a time-locked governance mechanism.
+
+
 ### `L-01` — Very Large `maxSupply` Value  *(Severity: Low · Status: Unresolved)*
 
-The `maxSupply` is set to 2,000,000,000 ether (2 * 10^27), which is an extremely large number. While this is a design choice and not a technical vulnerability, such a high maximum supply, combined with owner-controlled minting, implies a significant potential for token inflation if the owner decides to mint a substantial portion of the supply. This could impact the token's value and market dynamics (7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The `maxSupply` is set to 2,000,000,000 ether (2 * 10^27), which is an extremely large number. While this is a design choice and not a technical vulnerability, such a high maximum supply, combined with owner-controlled minting, implies a significant potential for token inflation if the owner decides to mint a substantial portion of the supply. This could impact the token's value and market dynamics (7.4 Economic).
 
 **Recommendation:** Ensure that the project's economic model and whitepaper clearly articulate the rationale behind such a large `maxSupply` and the owner's minting capabilities. Transparency regarding potential inflation scenarios is crucial for investor confidence. If possible, consider if a smaller, more controlled `maxSupply` would better align with the project's long-term vision.
 
 
 ### `I-01` — Inconsistent Custom Error Usage  *(Severity: Informational · Status: Unresolved)*
 
-The contract defines a custom error `AOPTokenError` and uses it for the `maxSupply` check. However, other `require` statements throughout the contract (including inherited OpenZeppelin functions) use traditional string messages for reverts. Adopting a consistent error handling strategy, either using custom errors or string messages exclusively, can improve code readability and potentially reduce gas costs for reverts (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract defines a custom error `AOPTokenError` and uses it for the `maxSupply` check. However, other `require` statements throughout the contract (including inherited OpenZeppelin functions) use traditional string messages for reverts. Adopting a consistent error handling strategy, either using custom errors or string messages exclusively, can improve code readability and potentially reduce gas costs for reverts (7.2 Code Security).
 
 **Recommendation:** Consider refactoring all revert conditions to use custom errors for consistency and potential gas optimization benefits (as custom errors can be cheaper than string reverts in certain scenarios). Alternatively, remove the custom error and use consistent string messages.
 

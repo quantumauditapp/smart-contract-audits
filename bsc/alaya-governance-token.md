@@ -2,14 +2,14 @@
 token: Alaya Governance Token
 ticker: AGT
 network: bsc
-risk_score: 31
+risk_score: 29
 status: low
 date: 2026-08-11
 ---
 
 # Alaya Governance Token (AGT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 31/100 — 🟢 Low Risk**
+> **Risk Score: 29/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/alaya-governance-token-bsc)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Absence of Emergency Pause/Blacklist Functionality  *(Severity: Low · Status: Unresolved)*
 
-The ERC20 contract does not include any administrative functions for emergency control, such as pausing transfers or blacklisting malicious addresses. While this enhances decentralization by removing single points of control, it also means there is no mechanism to mitigate severe exploits, respond to regulatory demands, or freeze funds in case of theft (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The ERC20 contract does not include any administrative functions for emergency control, such as pausing transfers or blacklisting malicious addresses. While this enhances decentralization by removing single points of control, it also means there is no mechanism to mitigate severe exploits, respond to regulatory demands, or freeze funds in case of theft (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** Evaluate the project's risk tolerance and operational needs. If emergency intervention capabilities are desired, consider integrating OpenZeppelin's `Pausable` or `AccessControl` contracts. If not, ensure the project's off-chain incident response plan accounts for the immutable nature of the token's operations.
 
 
 ### `I-01` — Centralized Initial Supply Distribution  *(Severity: Informational · Status: Unresolved)*
 
-The constructor of the ERC20 contract mints the entire initial supply of 5,000,000,000 * 10^18 tokens directly to `msg.sender`. This design choice results in a highly centralized initial distribution, where the deployer address holds the entire token supply at launch. While a common pattern for initial token deployment, it implies significant control by a single entity over the token's early circulation (7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The constructor of the ERC20 contract mints the entire initial supply of 5,000,000,000 * 10^18 tokens directly to `msg.sender`. This design choice results in a highly centralized initial distribution, where the deployer address holds the entire token supply at launch. While a common pattern for initial token deployment, it implies significant control by a single entity over the token's early circulation (7.4 Economic).
 
 **Recommendation:** Acknowledge and accept this centralized distribution as a design decision. If decentralization is a long-term goal, consider a phased distribution strategy or a multi-signature wallet for managing the initial supply.
 
 
 ### `I-02` — Immutability of Token Parameters  *(Severity: Informational · Status: Unresolved)*
 
-The token's name, symbol, decimals (fixed at 18), and initial total supply are set immutably within the constructor. These parameters cannot be modified after deployment. This ensures consistency and predictability for users and integrated protocols (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The token's name, symbol, decimals (fixed at 18), and initial total supply are set immutably within the constructor. These parameters cannot be modified after deployment. This ensures consistency and predictability for users and integrated protocols (7.1 Architecture).
 
 **Recommendation:** No action required. This is a standard and often desired characteristic for ERC20 tokens, providing clarity and preventing unexpected changes to fundamental token properties.
 

@@ -2,14 +2,14 @@
 token: Akita
 ticker: AKITA
 network: ethereum
-risk_score: 41
-status: medium
+risk_score: 29
+status: low
 date: 2026-09-27
 ---
 
 # Akita (AKITA) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 29/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/akita-eth)
 
@@ -25,8 +25,8 @@ The Akita contract implements a standard ERC20 token with OpenZeppelin's ERC20 a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Akita contract demonstrates strong technical foundations by inheriting from battle-tested OpenZeppelin ERC20 and ERC20Permit implementations, ensuring robust token functionality (7.2 Code… |
-| **Governance / Economics** | 1/10 | High | The economic model is straightforward, with a fixed total supply minted to a single receiver at deployment, aligning with standard ERC20 tokenomics (7.4 Economic). There is no formal on-chain… |
+| **Technical** | 10/10 | Low | The Akita contract demonstrates strong technical foundations by inheriting from battle-tested OpenZeppelin ERC20 and ERC20Permit implementations, ensuring robust token functionality (7.2 Code… |
+| **Governance / Economics** | 2/10 | High | The economic model is straightforward, with a fixed total supply minted to a single receiver at deployment, aligning with standard ERC20 tokenomics (7.4 Economic). There is no formal on-chain… |
 | **Upgrades** | 6/10 | Medium | The Akita contract is not designed with an upgradeability pattern (7.7 Upgrades), meaning its logic is immutable once deployed. This eliminates risks associated with proxy implementation bugs or… |
 
 ## LP Distribution
@@ -38,25 +38,25 @@ The Akita contract implements a standard ERC20 token with OpenZeppelin's ERC20 a
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Centralized Control of Recovery Functions  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Control of Recovery Functions  *(Severity: Medium · Status: Unresolved)*
 
-The `recovery` address has sole control over critical functions: `recoverETH()`, `recoverERC20()`, and `updateRecovery()`. This means a single external owned account (EOA) or a single point of failure controls the ability to withdraw any ETH or ERC20 tokens accidentally sent to the contract, and can also transfer this control to another address. If this `recovery` address is compromised, all funds held by the contract (e.g., from accidental transfers) could be permanently lost or stolen by an attacker (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `recovery` address has sole control over critical functions: `recoverETH()`, `recoverERC20()`, and `updateRecovery()`. This means a single external owned account (EOA) or a single point of failure controls the ability to withdraw any ETH or ERC20 tokens accidentally sent to the contract, and can also transfer this control to another address. If this `recovery` address is compromised, all funds held by the contract (e.g., from accidental transfers) could be permanently lost or stolen by an attacker (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the `recovery` address. This would require multiple trusted parties to authorize any recovery operation or change to the recovery address, significantly reducing the risk associated with a single point of failure.
 
 
 ### `L-01` — Lack of Time-Lock or Delay for Critical Operations  *(Severity: Low · Status: Unresolved)*
 
-The `updateRecovery()` function allows the `recovery` address to instantly change itself to a new address. While controlled by `onlyRecovery`, an immediate change without a time-lock or delay period could be problematic if the `recovery` address is compromised. An attacker could quickly change the recovery address before the legitimate owner has a chance to react, potentially locking out the original owner from future recovery operations (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `updateRecovery()` function allows the `recovery` address to instantly change itself to a new address. While controlled by `onlyRecovery`, an immediate change without a time-lock or delay period could be problematic if the `recovery` address is compromised. An attacker could quickly change the recovery address before the legitimate owner has a chance to react, potentially locking out the original owner from future recovery operations (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** Consider adding a time-lock mechanism to the `updateRecovery()` function. This would introduce a delay (e.g., 24-72 hours) between initiating a recovery address change and its actual activation, providing a window for detection and intervention in case of a compromised `recovery` key.
 
 
 ### `I-01` — Limited Recovery Scope for Non-ERC20 Tokens  *(Severity: Informational · Status: Unresolved)*
 
-The contract includes functions to recover accidentally sent ETH (`recoverETH`) and ERC20 tokens (`recoverERC20`). However, there is no mechanism to recover other types of tokens, such as ERC-721 (NFTs) or ERC-1155 tokens, if they are mistakenly sent to the contract address. Any such tokens would be permanently locked within the contract (7.4 Economic, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract includes functions to recover accidentally sent ETH (`recoverETH`) and ERC20 tokens (`recoverERC20`). However, there is no mechanism to recover other types of tokens, such as ERC-721 (NFTs) or ERC-1155 tokens, if they are mistakenly sent to the contract address. Any such tokens would be permanently locked within the contract (7.4 Economic, 7.8 Operations).
 
 **Recommendation:** Assess the likelihood of non-ERC20 tokens being accidentally sent to the contract. If this is a significant concern, consider implementing additional recovery functions for other token standards (e.g., `recoverERC721`, `recoverERC1155`) or explicitly documenting that such assets are unrecoverable.
 

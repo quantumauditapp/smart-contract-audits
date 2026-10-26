@@ -2,14 +2,14 @@
 token: AITECH Cloud Network
 ticker: ACN
 network: ethereum
-risk_score: 40
+risk_score: 38
 status: medium
 date: 2026-09-26
 ---
 
 # AITECH Cloud Network (ACN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aitech-cloud-network-eth)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Race Condition in `cancelAuthorization`  *(Severity: Low · Status: Unresolved)*
 
-A race condition exists where a `cancelAuthorization` transaction could be front-run by a `transferWithAuthorization` or `receiveWithAuthorization` transaction using the same nonce. If the transfer/receive transaction executes first, the authorization will be marked as used, and the subsequent cancellation will fail. While the authorization cannot be replayed, users attempting to cancel an authorization might find it already executed if a malicious actor or a legitimate recipient front-runs their cancellation (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). A race condition exists where a `cancelAuthorization` transaction could be front-run by a `transferWithAuthorization` or `receiveWithAuthorization` transaction using the same nonce. If the transfer/receive transaction executes first, the authorization will be marked as used, and the subsequent cancellation will fail. While the authorization cannot be replayed, users attempting to cancel an authorization might find it already executed if a malicious actor or a legitimate recipient front-runs their cancellation (7.2 Code Security).
 
 **Recommendation:** Users should be made aware of this potential race condition. Off-chain systems should prioritize the submission of `cancelAuthorization` transactions or provide clear warnings to users about the possibility of front-running. Consider if a mechanism to revoke all outstanding authorizations by the authorizer is feasible, though this adds complexity.
 
 
 ### `I-01` — Centralized Initial Token Distribution  *(Severity: Informational · Status: Unresolved)*
 
-The entire `TOTAL_SUPPLY` of 2,000,000,000 ACN tokens is minted to the `msg.sender` (the deployer address) during contract construction. This design choice centralizes the initial token supply, giving the deployer complete control over the initial distribution. While common for new tokens, it's a significant point for transparency regarding initial ownership and potential market impact (7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The entire `TOTAL_SUPPLY` of 2,000,000,000 ACN tokens is minted to the `msg.sender` (the deployer address) during contract construction. This design choice centralizes the initial token supply, giving the deployer complete control over the initial distribution. While common for new tokens, it's a significant point for transparency regarding initial ownership and potential market impact (7.4 Economic).
 
 **Recommendation:** Ensure the community is fully aware of this distribution model. If a more decentralized distribution is desired, consider implementing a vesting schedule, airdrop, or public sale mechanism post-deployment.
 
 
 ### `I-02` — EIP-3009 Complexity and Off-Chain Reliance  *(Severity: Informational · Status: Unresolved)*
 
-The implementation of EIP-3009 for meta-transactions (`transferWithAuthorization`, `receiveWithAuthorization`, `cancelAuthorization`) adds significant complexity to the token's functionality. While correctly implemented using OpenZeppelin standards, it requires robust off-chain infrastructure for signature generation, nonce management, and relaying transactions. Any flaws in the off-chain components could lead to user experience issues or potential misuse, though not directly a smart contract vulnerability (7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The implementation of EIP-3009 for meta-transactions (`transferWithAuthorization`, `receiveWithAuthorization`, `cancelAuthorization`) adds significant complexity to the token's functionality. While correctly implemented using OpenZeppelin standards, it requires robust off-chain infrastructure for signature generation, nonce management, and relaying transactions. Any flaws in the off-chain components could lead to user experience issues or potential misuse, though not directly a smart contract vulnerability (7.6 External).
 
 **Recommendation:** Thoroughly test and secure all off-chain components responsible for generating, managing, and relaying EIP-3009 authorizations. Provide clear documentation and SDKs for users and integrators to ensure correct and secure usage.
 

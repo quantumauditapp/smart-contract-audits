@@ -2,14 +2,14 @@
 token: ANONYMOOSE
 ticker: MOOSE
 network: solana
-risk_score: 35
-status: medium
+risk_score: 16
+status: low
 date: 2026-09-18
 ---
 
 # ANONYMOOSE (MOOSE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 35/100 — 🟡 Medium Risk**
+> **Risk Score: 16/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/anonymoose-sol)
 
@@ -25,9 +25,9 @@ The ANONYMOOSE (MOOSE) token is an SPL Token-2022 mint with its mint and freeze 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The ANONYMOOSE (MOOSE) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a very low pair age of 1 day, indicating an insufficient track record for assessing market stability or team behavior. Current DEX liquidity stands at $34,740, with a 24-hour… |
-| **Upgrades** | 6/10 | Medium | The mint authority and freeze authority for the ANONYMOOSE (MOOSE) token have both been revoked, meaning the token's supply is fixed and account freezing is not possible. The token utilizes the… |
+| **Technical** | 10/10 | Low | The ANONYMOOSE (MOOSE) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a very low pair age of 1 day, indicating an insufficient track record for assessing market stability or team behavior. Current DEX liquidity stands at $34,740, with a 24-hour… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the ANONYMOOSE (MOOSE) token have both been revoked, meaning the token's supply is fixed and account freezing is not possible. The token utilizes the… |
 
 ## Token-2022 Extensions
 
@@ -67,13 +67,13 @@ Token name, symbol, or image can be changed post-launch.
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1177 buys / 619 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: Alchemix
 ticker: ALCX
 network: ethereum
-risk_score: 49
+risk_score: 39
 status: medium
 date: 2026-09-23
 ---
 
 # Alchemix (ALCX) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 49/100 — 🟡 Medium Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/alchemix-eth)
 
@@ -25,8 +25,8 @@ The AlchemixToken contract implements a standard ERC20 token with OpenZeppelin's
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The AlchemixToken contract leverages battle-tested OpenZeppelin libraries for its ERC20 and AccessControl implementations, ensuring a solid technical foundation (7.2 Code Security). Arithmetic… |
-| **Governance / Economics** | 1/10 | High | The contract design centralizes significant power in the `ADMIN_ROLE` and `MINTER_ROLE` (7.5 Governance). The `MINTER_ROLE` has the ability to mint an unlimited supply of tokens, which is a… |
+| **Technical** | 8/10 | Low | The AlchemixToken contract leverages battle-tested OpenZeppelin libraries for its ERC20 and AccessControl implementations, ensuring a solid technical foundation (7.2 Code Security). Arithmetic… |
+| **Governance / Economics** | 2/10 | High | The contract design centralizes significant power in the `ADMIN_ROLE` and `MINTER_ROLE` (7.5 Governance). The `MINTER_ROLE` has the ability to mint an unlimited supply of tokens, which is a… |
 | **Upgrades** | 3/10 | High | The AlchemixToken contract is not designed as an upgradeable proxy (7.7 Upgrades). This simplifies the architecture by avoiding upgrade-related complexities and risks, but also means that any future… |
 
 ## LP Distribution
@@ -38,25 +38,25 @@ The AlchemixToken contract implements a standard ERC20 token with OpenZeppelin's
 
 ## Security Findings
 
-_🟠 1 High · ⚪ 2 Informational_
+_🟡 1 Medium · ⚪ 2 Informational_
 
-### `H-01` — Centralized Control of Token Minting  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Control of Token Minting  *(Severity: Medium · Status: Unresolved)*
 
-The `AlchemixToken` contract implements a `mint` function that allows an address with the `MINTER_ROLE` to create an arbitrary amount of new tokens. The `ADMIN_ROLE` has the authority to grant and revoke the `MINTER_ROLE`. Initially, the contract deployer holds both `ADMIN_ROLE` and `MINTER_ROLE`. This design centralizes significant control over the token supply. If the private key associated with the `ADMIN_ROLE` is compromised, or if the entity holding it acts maliciously, the token supply can be arbitrarily inflated, leading to a severe devaluation for all existing token holders. This represents a single point of failure for the token's economic stability (7.4 Economic, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The `AlchemixToken` contract implements a `mint` function that allows an address with the `MINTER_ROLE` to create an arbitrary amount of new tokens. The `ADMIN_ROLE` has the authority to grant and revoke the `MINTER_ROLE`. Initially, the contract deployer holds both `ADMIN_ROLE` and `MINTER_ROLE`. This design centralizes significant control over the token supply. If the private key associated with the `ADMIN_ROLE` is compromised, or if the entity holding it acts maliciously, the token supply can be arbitrarily inflated, leading to a severe devaluation for all existing token holders. This represents a single point of fa
 
 **Recommendation:** Implement robust operational security for the `ADMIN_ROLE` address, such as using a multi-signature wallet (e.g., Gnosis Safe) or a time-lock contract for critical actions like granting/revoking `MINTER_ROLE`. Consider introducing a maximum minting cap per period or a total supply cap to limit potential inflation. Explore mechanisms for progressive decentralization of the `MINTER_ROLE` or its administration over time, if aligned with the project's roadmap.
 
 
 ### `I-01` — Redundant Imports  *(Severity: Informational · Status: Unresolved)*
 
-The `AlchemixToken` contract imports `Ownable` and `IDetailedERC20` but does not utilize any functionality or interfaces from these imported contracts. The contract uses `AccessControl` for role management, making `Ownable` redundant. `IDetailedERC20` is also not implemented or referenced (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The `AlchemixToken` contract imports `Ownable` and `IDetailedERC20` but does not utilize any functionality or interfaces from these imported contracts. The contract uses `AccessControl` for role management, making `Ownable` redundant. `IDetailedERC20` is also not implemented or referenced (7.1 Architecture).
 
 **Recommendation:** Remove unused imports (`import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";` and `import {IDetailedERC20} from "./interfaces/IDetailedERC20.sol";`) to improve code clarity and reduce compilation overhead.
 
 
 ### `I-02` — Outdated Pragma Directive for ABIEncoderV2  *(Severity: Informational · Status: Unresolved)*
 
-The contract includes `pragma experimental ABIEncoderV2;`. While this pragma was necessary for Solidity versions 0.6.x and 0.7.x to enable the ABIEncoderV2, it became standard in Solidity 0.8.0 and is no longer required. Although not a vulnerability, its presence indicates the use of an older compiler feature flag (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract includes `pragma experimental ABIEncoderV2;`. While this pragma was necessary for Solidity versions 0.6.x and 0.7.x to enable the ABIEncoderV2, it became standard in Solidity 0.8.0 and is no longer required. Although not a vulnerability, its presence indicates the use of an older compiler feature flag (7.2 Code Security).
 
 **Recommendation:** If the project intends to upgrade to Solidity 0.8.0 or newer, this pragma can be safely removed. For the current compiler version (0.6.12), it is technically still relevant, but it's worth noting for future upgrades.
 

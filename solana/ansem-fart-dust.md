@@ -2,14 +2,14 @@
 token: Ansem Fart Dust 
 ticker: AFD
 network: solana
-risk_score: 51
-status: medium
+risk_score: 34
+status: low
 date: 2026-09-01
 ---
 
 # Ansem Fart Dust  (AFD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 51/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ansem-fart-dust-sol)
 
@@ -25,9 +25,9 @@ This audit of the Ansem Fart Dust (AFD) token mint identifies a medium risk due 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Ansem Fart Dust (AFD) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a holder concentration where the top 10 accounts hold approximately 35.46% of the supply, which is below the threshold for high concentration (7.4 Economic). Total DEX liquidity… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are both revoked, preventing further changes to supply or account freeze status (7.7 Upgrades). Key Token-2022 extensions such as Transfer Hook and Default… |
+| **Technical** | 10/10 | Low | The Ansem Fart Dust (AFD) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts… |
+| **Governance / Economics** | 2/10 | High | The token exhibits a holder concentration where the top 10 accounts hold approximately 35.46% of the supply, which is below the threshold for high concentration (7.4 Economic). Total DEX liquidity… |
+| **Upgrades** | 10/10 | Low | The token's mint and freeze authorities are both revoked, preventing further changes to supply or account freeze status (7.7 Upgrades). Key Token-2022 extensions such as Transfer Hook and Default… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 4 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 7497 buys / 2694 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 4 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

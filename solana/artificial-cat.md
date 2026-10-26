@@ -2,14 +2,14 @@
 token: Artificial Cat
 ticker: TCAT
 network: solana
-risk_score: 34
+risk_score: 15
 status: low
 date: 2026-09-13
 ---
 
 # Artificial Cat (TCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 34/100 — 🟢 Low Risk**
+> **Risk Score: 15/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/artificial-cat-sol)
 
@@ -26,8 +26,8 @@ The Artificial Cat (TCAT) token mint is an SPL Token-2022 asset with its mint an
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Artificial Cat (TCAT) token is an SPL Token-2022 asset. Its mint authority is revoked, ensuring no new tokens can be minted, and the freeze authority is also revoked, preventing any account from… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a holder concentration with the top 10 accounts holding 20.7% of the supply, which is not considered highly concentrated. Total DEX liquidity stands at $100,695, which is adequate… |
-| **Upgrades** | 6/10 | Medium | The mint and freeze authorities for the token are both revoked, indicating that core token parameters like supply and account freeze status are immutable. While the transfer fee is upgradable, the… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits a holder concentration with the top 10 accounts holding 20.7% of the supply, which is not considered highly concentrated. Total DEX liquidity stands at $100,695, which is adequate… |
+| **Upgrades** | 8/10 | Low | The mint and freeze authorities for the token are both revoked, indicating that core token parameters like supply and account freeze status are immutable. While the transfer fee is upgradable, the… |
 
 ## Token-2022 Extensions
 
@@ -67,13 +67,13 @@ Token name, symbol, or image can be changed post-launch.
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1026 buys / 649 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

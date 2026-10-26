@@ -2,14 +2,14 @@
 token: Arena of Memes
 ticker: ARENA
 network: solana
-risk_score: 16
+risk_score: 0
 status: low
 date: 2026-09-26
 ---
 
 # Arena of Memes (ARENA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 16/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/arena-of-memes-sol)
 
@@ -26,8 +26,8 @@ The Arena of Memes (ARENA) SPL token mint has revoked both mint and freeze autho
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Arena of Memes token is implemented using the standard `spl-token` program (v3). Crucially, both the mint authority and freeze authority have been permanently revoked, ensuring that no new tokens… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a moderate level of liquidity at $73,742, with a 24-hour trading volume of $718,410, resulting in a Volume/Liquidity Ratio of 9.74. A key economic risk is the very recent creation… |
-| **Upgrades** | 8/10 | Low | The Arena of Memes token mint has a robust security posture regarding administrative control, as both the mint and freeze authorities have been permanently revoked. This means the token's supply is… |
+| **Governance / Economics** | 9/10 | Low | The token exhibits a moderate level of liquidity at $73,742, with a 24-hour trading volume of $718,410, resulting in a Volume/Liquidity Ratio of 9.74. A key economic risk is the very recent creation… |
+| **Upgrades** | 10/10 | Low | The Arena of Memes token mint has a robust security posture regarding administrative control, as both the mint and freeze authorities have been permanently revoked. This means the token's supply is… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 1 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 17471 buys / 6198 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 1 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

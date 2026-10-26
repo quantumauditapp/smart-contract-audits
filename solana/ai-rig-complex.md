@@ -2,14 +2,14 @@
 token: AI Rig Complex
 ticker: ARC
 network: solana
-risk_score: 15
+risk_score: 5
 status: low
 date: 2026-07-25
 ---
 
 # AI Rig Complex (ARC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 15/100 — 🟢 Low Risk**
+> **Risk Score: 5/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ai-rig-complex-sol)
 
@@ -25,8 +25,8 @@ The AI Rig Complex (arc) token mint exhibits a high concentration of tokens amon
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The AI Rig Complex token is implemented using the standard `spl-token` program (v3). Both the mint authority and freeze authority are revoked (None), indicating that no new tokens can be minted and… |
-| **Governance / Economics** | 2/10 | High | A significant economic risk is present due to high holder concentration, with the top 10 token accounts holding 79.75% of the total supply. This level of concentration makes the token susceptible to… |
+| **Technical** | 10/10 | Low | The AI Rig Complex token is implemented using the standard `spl-token` program (v3). Both the mint authority and freeze authority are revoked (None), indicating that no new tokens can be minted and… |
+| **Governance / Economics** | 3/10 | High | A significant economic risk is present due to high holder concentration, with the top 10 token accounts holding 79.75% of the total supply. This level of concentration makes the token susceptible to… |
 | **Upgrades** | 8/10 | Low | The token's upgradeability and mutability features are minimal, contributing to a stable state. The mint authority and freeze authority are both revoked, meaning no further changes can be made to the… |
 
 ## LP Distribution
@@ -82,11 +82,11 @@ Top 10 token accounts hold 79.75% of supply. Coordinated sell-off would crash pr
 
 ### Is AI Rig Complex a scam?
 
-Based on automated analysis, AI Rig Complex scores 88/100 (Critical Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, AI Rig Complex scores 5/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is AI Rig Complex safe to buy?
 
-Our scanner flagged a risk score of 88/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 5/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has AI Rig Complex been audited?
 

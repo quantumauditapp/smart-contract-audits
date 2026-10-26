@@ -129,11 +129,11 @@ Not confirmed by static analysis (the model's own reading of the source). The `A
 
 ### Is Aave a scam?
 
-Based on the provided data, Aave does not exhibit typical scam characteristics. Its token contract is verified, ownership is renounced, and no mint function exists, indicating a high level of transparency and immutability. These fundamental security features contradict the hallmarks of a scam, supporting Aave's standing as a prominent decentralized finance protocol, despite its Medium Risk score of 28/100.
+Based on the provided data, Aave does not exhibit typical scam characteristics. Its token contract is verified, ownership is renounced, and no mint function exists, indicating a high level of transparency and immutability. These fundamental security features contradict the hallmarks of a scam, supporting Aave's standing as a prominent decentralized finance protocol, despite its Low Risk score of 11/100.
 
 ### Is Aave safe to buy?
 
-Aave demonstrates robust foundational security, including a verified contract, renounced ownership, and no mint function, enhancing its structural integrity. However, investors should be aware of factors contributing to its 28/100 Medium Risk score. Notably, 40.9% of the supply is concentrated among the top 10 holders, and liquidity is not locked. These elements require careful consideration regarding market stability and potential influence.
+Aave demonstrates robust foundational security, including a verified contract, renounced ownership, and no mint function, enhancing its structural integrity. However, investors should be aware of factors contributing to its 11/100 Low Risk score. Notably, 40.9% of the supply is concentrated among the top 10 holders, and liquidity is not locked. These elements require careful consideration regarding market stability and potential influence.
 
 ### Has Aave been audited?
 

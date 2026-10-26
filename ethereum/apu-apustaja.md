@@ -42,28 +42,28 @@ _🟢 1 Low · ⚪ 3 Informational_
 
 ### `L-01` — Centralized Initial Token Distribution and Ownership  *(Severity: Low · Status: Unresolved)*
 
-The entire token supply is minted to the deployer (`msg.sender`) in the constructor, establishing a highly centralized initial distribution (7.4 Economic). Additionally, the `Ownable` pattern grants the deployer exclusive control over the contract's ownership via `transferOwnership` (7.3 Access Control, 7.5 Governance), which could be a single point of failure if the owner's key is compromised. While `renounceOwnership` is available, it is not enforced, leaving the decision to the owner.
+Not confirmed by static analysis (the model's own reading of the source). The entire token supply is minted to the deployer (`msg.sender`) in the constructor, establishing a highly centralized initial distribution (7.4 Economic). Additionally, the `Ownable` pattern grants the deployer exclusive control over the contract's ownership via `transferOwnership` (7.3 Access Control, 7.5 Governance), which could be a single point of failure if the owner's key is compromised. While `renounceOwnership` is available, it is not enforced, leaving the decision to the owner.
 
 **Recommendation:** Consider renouncing ownership after all necessary administrative tasks are completed to enhance decentralization. If ownership is retained, implement robust security practices for the owner's private key (e.g., multi-signature wallet, hardware security module). Clearly communicate the initial distribution and ownership model to the community.
 
 
 ### `I-01` — Reliance on Battle-Tested OpenZeppelin Contracts  *(Severity: Informational · Status: Unresolved)*
 
-The contract leverages well-audited and widely adopted OpenZeppelin ERC20 and Ownable implementations. This significantly reduces the risk of common vulnerabilities associated with custom or less-tested code (7.2 Code Security). The use of standard libraries contributes to the overall robustness and security posture of the contract.
+Not confirmed by static analysis (the model's own reading of the source). The contract leverages well-audited and widely adopted OpenZeppelin ERC20 and Ownable implementations. This significantly reduces the risk of common vulnerabilities associated with custom or less-tested code (7.2 Code Security). The use of standard libraries contributes to the overall robustness and security posture of the contract.
 
 **Recommendation:** No action required. Continue to monitor OpenZeppelin security advisories for any updates to the base contracts.
 
 
 ### `I-02` — Fixed Token Supply  *(Severity: Informational · Status: Unresolved)*
 
-The total supply of `ApusClubToken` is fixed at `420,690,000,000 * 10**18` upon deployment and cannot be altered thereafter. There are no minting or burning functions available to the owner or any other entity post-initialization (7.4 Economic). This design provides predictability regarding token inflation/deflation, as the supply is immutable.
+Not confirmed by static analysis (the model's own reading of the source). The total supply of `ApusClubToken` is fixed at `420,690,000,000 * 10**18` upon deployment and cannot be altered thereafter. There are no minting or burning functions available to the owner or any other entity post-initialization (7.4 Economic). This design provides predictability regarding token inflation/deflation, as the supply is immutable.
 
 **Recommendation:** No action required. This is a design choice. Ensure this fixed supply model aligns with the project's long-term economic strategy and is clearly communicated to token holders.
 
 
 ### `I-03` — Lack of Emergency Controls  *(Severity: Informational · Status: Unresolved)*
 
-The contract does not include any emergency control mechanisms such as pausing transfers or blacklisting malicious addresses. While this enhances decentralization by preventing arbitrary intervention, it also means there is no way to stop transfers in the event of a major exploit, unforeseen market manipulation, or other critical circumstances (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract does not include any emergency control mechanisms such as pausing transfers or blacklisting malicious addresses. While this enhances decentralization by preventing arbitrary intervention, it also means there is no way to stop transfers in the event of a major exploit, unforeseen market manipulation, or other critical circumstances (7.8 Operations).
 
 **Recommendation:** No action required. This is a design choice that prioritizes immutability and censorship resistance over centralized emergency response capabilities. Project stakeholders should be aware of this trade-off.
 

@@ -106,7 +106,7 @@ Not confirmed by static analysis (the model's own reading of the source). The pr
 
 ### Is Aerodrome Finance a scam?
 
-Aerodrome Finance has verifiable attributes like a verified contract and renounced ownership, which suggest a degree of transparency and reduced immediate scam risks often associated with unverified or owner-controlled projects. However, its overall risk score of 64/100 is high, indicating significant inherent vulnerabilities. Investors should acknowledge these structural risks rather than solely focusing on general scam indicators.
+Aerodrome Finance has verifiable attributes like a verified contract and renounced ownership, which suggest a degree of transparency and reduced immediate scam risks often associated with unverified or owner-controlled projects. However, its overall risk score of 30/100 is high, indicating significant inherent vulnerabilities. Investors should acknowledge these structural risks rather than solely focusing on general scam indicators.
 
 ### Is Aerodrome Finance safe to buy?
 

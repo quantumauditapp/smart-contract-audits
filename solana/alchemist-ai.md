@@ -2,14 +2,14 @@
 token: Alchemist AI
 ticker: ALCH
 network: solana
-risk_score: 11
+risk_score: 1
 status: low
 date: 2026-09-13
 ---
 
 # Alchemist AI (ALCH) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 11/100 — 🟢 Low Risk**
+> **Risk Score: 1/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/alchemist-ai-sol)
 
@@ -25,8 +25,8 @@ The Alchemist AI (ALCH) SPL token mint presents a high risk primarily due to ext
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The Alchemist AI (ALCH) token operates on the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no accounts… |
-| **Governance / Economics** | 2/10 | High | The economic stability of the Alchemist AI (ALCH) token is significantly impacted by its highly concentrated holder distribution, with the top 10 accounts holding 86.54% of the total supply, which is… |
+| **Technical** | 10/10 | Low | The Alchemist AI (ALCH) token operates on the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, indicating that no new tokens can be minted and no accounts… |
+| **Governance / Economics** | 3/10 | High | The economic stability of the Alchemist AI (ALCH) token is significantly impacted by its highly concentrated holder distribution, with the top 10 accounts holding 86.54% of the total supply, which is… |
 | **Upgrades** | 8/10 | Low | The Alchemist AI (ALCH) token mint has a robust upgrade and mutability profile, with both the mint authority and freeze authority permanently revoked. This means the token supply is fixed and no… |
 
 ## LP Distribution

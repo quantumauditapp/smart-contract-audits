@@ -2,14 +2,14 @@
 token: ANTMINER
 ticker: ANT
 network: solana
-risk_score: 36
-status: medium
+risk_score: 27
+status: low
 date: 2026-09-15
 ---
 
 # ANTMINER (ANT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/antminer-sol)
 
@@ -25,9 +25,9 @@ The ANTMINER (ANT) token is an SPL Token-2022 mint with its mint and freeze auth
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The ANTMINER (ANT) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, which is a positive security indicator as it prevents further… |
-| **Governance / Economics** | 2/10 | High | The token's DEX pair is extremely new, with a Pair Age of 0 days, which means there is insufficient track record to assess team or holder behavior. Current liquidity stands at $16,202 USD, with a… |
-| **Upgrades** | 6/10 | Medium | The Mint Authority and Freeze Authority are both revoked, which prevents changes to the token's supply or account freeze status. While the transfer hook is not present and not upgradable, the… |
+| **Technical** | 10/10 | Low | The ANTMINER (ANT) token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, which is a positive security indicator as it prevents further… |
+| **Governance / Economics** | 3/10 | High | The token's DEX pair is extremely new, with a Pair Age of 0 days, which means there is insufficient track record to assess team or holder behavior. Current liquidity stands at $16,202 USD, with a… |
+| **Upgrades** | 7/10 | Low | The Mint Authority and Freeze Authority are both revoked, which prevents changes to the token's supply or account freeze status. While the transfer hook is not present and not upgradable, the… |
 
 ## Token-2022 Extensions
 
@@ -73,7 +73,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

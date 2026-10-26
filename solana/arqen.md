@@ -2,14 +2,14 @@
 token: Arqen
 ticker: ARQ
 network: solana
-risk_score: 14
+risk_score: 12
 status: low
 date: 2026-09-03
 ---
 
 # Arqen (ARQ) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 14/100 — 🟢 Low Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/arqen-sol)
 

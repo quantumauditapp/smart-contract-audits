@@ -2,14 +2,14 @@
 token: ALLINU
 ticker: ALLINU
 network: solana
-risk_score: 11
+risk_score: 2
 status: low
 date: 2026-09-17
 ---
 
 # ALLINU (ALLINU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 11/100 — 🟢 Low Risk**
+> **Risk Score: 2/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/allinu-sol)
 
@@ -26,8 +26,8 @@ The ALLINU token is an SPL Token-2022 mint with both mint and freeze authorities
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The ALLINU token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, ensuring that no new tokens can be minted and no existing accounts… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a holder concentration where the top 10 accounts hold 18.62% of the supply, which is not considered highly concentrated. Total DEX liquidity stands at $590,531, with a 24-hour… |
-| **Upgrades** | 6/10 | Medium | The token's mint and freeze authorities are revoked, preventing further issuance or freezing of accounts. As an SPL Token-2022, it supports extensions like a transfer fee, which is noted as… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a holder concentration where the top 10 accounts hold 18.62% of the supply, which is not considered highly concentrated. Total DEX liquidity stands at $590,531, with a 24-hour… |
+| **Upgrades** | 7/10 | Low | The token's mint and freeze authorities are revoked, preventing further issuance or freezing of accounts. As an SPL Token-2022, it supports extensions like a transfer fee, which is noted as… |
 
 ## Token-2022 Extensions
 
@@ -73,7 +73,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: A Hunters Dream
 ticker: CAW
 network: ethereum
-risk_score: 12
+risk_score: 10
 status: low
 date: 2026-09-13
 ---
 
 # A Hunters Dream (CAW) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 12/100 — 🟢 Low Risk**
+> **Risk Score: 10/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/a-hunters-dream-eth)
 
@@ -41,21 +41,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — ERC20 `approve`/`transferFrom` Race Condition  *(Severity: Low · Status: Unresolved)*
 
-The standard ERC20 `approve` function is susceptible to a front-running attack where a malicious spender can exploit a pending `approve` transaction to drain funds. If a user approves an amount `X`, and then attempts to approve a new amount `Y` (where `Y < X`), a front-runner can observe the second transaction, quickly execute a `transferFrom` for amount `X`, and then the second `approve` transaction will set the allowance to `Y`. This effectively allows the front-runner to spend `X + Y`. While `increaseAllowance` and `decreaseAllowance` functions are provided to mitigate this for direct allowance modifications, the base `approve` function remains vulnerable.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC20 `approve` function is susceptible to a front-running attack where a malicious spender can exploit a pending `approve` transaction to drain funds. If a user approves an amount `X`, and then attempts to approve a new amount `Y` (where `Y < X`), a front-runner can observe the second transaction, quickly execute a `transferFrom` for amount `X`, and then the second `approve` transaction will set the allowance to `Y`. This effectively allows the front-runner to spend `X + Y`. While `increaseAllowance` and `decreaseAllowance` functions are provided to mitigate this for direct allowance modifications, the ba
 
 **Recommendation:** Educate users on the risks of directly using `approve` to change an existing allowance. It is generally recommended to set allowance to zero before setting a new non-zero allowance, or exclusively use `increaseAllowance`/`decreaseAllowance` for atomic allowance adjustments.
 
 
 ### `I-01` — Unchecked Return Value of External Call in Constructor  *(Severity: Informational · Status: Unresolved)*
 
-The `ServicePayer` constructor makes an external call to `IPayable(receiver).pay{value: msg.value}(serviceName)`. The return value of this external call is not checked. If `feeReceiver_` is an Externally Owned Account (EOA), the call to `pay` will silently fail. If `feeReceiver_` is a contract that implements `pay` but returns `false` without reverting, the constructor would still succeed, but the payment might not have been processed as intended. While this occurs only during deployment and does not affect the token's runtime security, it could lead to unexpected behavior for the deployer regarding the fee payment.
+Not confirmed by static analysis (the model's own reading of the source). The `ServicePayer` constructor makes an external call to `IPayable(receiver).pay{value: msg.value}(serviceName)`. The return value of this external call is not checked. If `feeReceiver_` is an Externally Owned Account (EOA), the call to `pay` will silently fail. If `feeReceiver_` is a contract that implements `pay` but returns `false` without reverting, the constructor would still succeed, but the payment might not have been processed as intended. While this occurs only during deployment and does not affect the token's runtime security, it could lead to unexpected behavior for the deployer regarding the fee payment.
 
 **Recommendation:** Consider adding a `require(success, 'Payment failed')` check after the external call if the `pay` function is expected to return a boolean indicating success. Alternatively, ensure that the `IPayable` interface guarantees reversion on failure. For EOAs, a direct `transfer` or `call` without a function signature would be more appropriate if a simple Ether transfer is intended.
 
 
 ### `I-02` — Fixed Supply and Lack of Administrative Control  *(Severity: Informational · Status: Unresolved)*
 
-The `StandardERC20` token is designed with a fixed initial supply, minted entirely to the deployer during construction. There are no administrative functions to mint additional tokens, burn tokens (beyond the standard `_burn` which is not exposed publicly), pause transfers, or upgrade the contract. This design choice results in a fully decentralized token with predictable supply mechanics.
+Not confirmed by static analysis (the model's own reading of the source). The `StandardERC20` token is designed with a fixed initial supply, minted entirely to the deployer during construction. There are no administrative functions to mint additional tokens, burn tokens (beyond the standard `_burn` which is not exposed publicly), pause transfers, or upgrade the contract. This design choice results in a fully decentralized token with predictable supply mechanics.
 
 **Recommendation:** This is a design decision and not a vulnerability. Ensure this fixed supply and lack of administrative control aligns with the project's long-term vision and requirements. If future flexibility (e.g., for ecosystem grants, emergency pausing, or bug fixes) is desired, consider implementing an `Ownable` or `AccessControl` pattern with corresponding functions.
 

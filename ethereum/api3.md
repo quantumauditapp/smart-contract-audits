@@ -2,14 +2,14 @@
 token: API3
 ticker: API3
 network: ethereum
-risk_score: 58
+risk_score: 48
 status: medium
 date: 2026-09-14
 ---
 
 # API3 (API3) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 58/100 — 🟡 Medium Risk**
+> **Risk Score: 48/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/api3-eth)
 
@@ -25,8 +25,8 @@ This report details the security audit of the provided ERC20 token contract, whi
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The technical implementation (7.1 Architecture, 7.2 Code Security) is robust, utilizing battle-tested OpenZeppelin libraries like SafeMath for arithmetic safety and Address for secure external calls.… |
-| **Governance / Economics** | 3/10 | High | The contract incorporates the `Ownable` pattern (7.3 Access Control, 7.5 Governance), granting a single owner significant control over the token. While the prefill indicates the owner is another… |
+| **Technical** | 8/10 | Low | The technical implementation (7.1 Architecture, 7.2 Code Security) is robust, utilizing battle-tested OpenZeppelin libraries like SafeMath for arithmetic safety and Address for secure external calls.… |
+| **Governance / Economics** | 4/10 | Medium | The contract incorporates the `Ownable` pattern (7.3 Access Control, 7.5 Governance), granting a single owner significant control over the token. While the prefill indicates the owner is another… |
 | **Upgrades** | 4/10 | Medium | The contract is not designed as an upgradeable proxy (7.7 Upgrades), as indicated by `is_proxy: false` in the prefill. This means the contract's logic is immutable once deployed, eliminating… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ This report details the security audit of the provided ERC20 token contract, whi
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 2 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
-### `H-01` — Centralized Control over Token Supply (Potential)  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Control over Token Supply (Potential)  *(Severity: Medium · Status: Unresolved)*
 
-The contract utilizes the `Ownable` pattern, granting a single address (or a controlling contract) significant administrative privileges. While the base ERC20 contract's `_mint` and `_burn` functions are internal, it is highly probable that the inheriting `Api3Token` contract exposes these functions to the owner. If so, the owner would have the ability to arbitrarily increase or decrease the total token supply, which can have substantial economic implications for token holders and the protocol's stability. The prefill indicates the owner is an 'Other-Contract', which could be a multisig or governance, but the extent of control remains centralized.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes the `Ownable` pattern, granting a single address (or a controlling contract) significant administrative privileges. While the base ERC20 contract's `_mint` and `_burn` functions are internal, it is highly probable that the inheriting `Api3Token` contract exposes these functions to the owner. If so, the owner would have the ability to arbitrarily increase or decrease the total token supply, which can have substantial economic implications for token holders and the protocol's stability. The prefill indicates the owner is an 'Other-Contract', which could be a multisig or governance, but the extent of
 
 **Recommendation:** If minting/burning capabilities are exposed to the owner, ensure that the owner address is controlled by a robust multi-signature wallet with a high threshold or a decentralized governance mechanism. Clearly document the owner's capabilities and any limitations. Consider time-locks for critical operations like large mints or burns to provide transparency and allow community reaction.
 
 
 ### `L-01` — Older Solidity Compiler Version  *(Severity: Low · Status: Unresolved)*
 
-The contract is compiled with Solidity version `0.6.12`, based on pragmas `^0.6.0` and `^0.6.2`. While `SafeMath` is used to prevent arithmetic overflows/underflows, newer Solidity versions (e.g., `0.8.x` and above) include built-in overflow and underflow checks by default. Using an older compiler version may miss out on recent language improvements, optimizations, and security features introduced in later versions.
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version `0.6.12`, based on pragmas `^0.6.0` and `^0.6.2`. While `SafeMath` is used to prevent arithmetic overflows/underflows, newer Solidity versions (e.g., `0.8.x` and above) include built-in overflow and underflow checks by default. Using an older compiler version may miss out on recent language improvements, optimizations, and security features introduced in later versions.
 
 **Recommendation:** Consider upgrading the Solidity compiler version to `0.8.x` or higher. This would allow for the removal of `SafeMath` library usage, simplifying the code and leveraging the compiler's native safety features. Thorough testing would be required after any compiler upgrade.
 
 
 ### `I-01` — Lack of Pausability Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The ERC20 contract does not include a pausable mechanism. In the event of a critical vulnerability within the token contract itself, or in an integrated DeFi protocol, there is no emergency stop function to temporarily halt transfers or other critical operations. This means that if an exploit occurs, funds could be drained or manipulated without an immediate way to intervene.
+Not confirmed by static analysis (the model's own reading of the source). The ERC20 contract does not include a pausable mechanism. In the event of a critical vulnerability within the token contract itself, or in an integrated DeFi protocol, there is no emergency stop function to temporarily halt transfers or other critical operations. This means that if an exploit occurs, funds could be drained or manipulated without an immediate way to intervene.
 
 **Recommendation:** Consider integrating OpenZeppelin's `Pausable` contract into the inheriting `Api3Token` contract. This would allow the owner (or a designated role) to pause and unpause token transfers and other sensitive functions in an emergency, providing a crucial safety mechanism. Implement clear access control for the pause functionality.
 
 
 ### `I-02` — ERC20 `approve` Race Condition  *(Severity: Informational · Status: Unresolved)*
 
-The standard ERC20 `approve` function is susceptible to a known race condition. If a user approves an allowance for a spender, and then attempts to change that allowance, a malicious actor could front-run the second `approve` transaction. This could result in the spender spending the original allowance, and then also spending the new allowance, effectively doubling the approved amount. While `increaseAllowance` and `decreaseAllowance` functions are provided to mitigate this, direct `approve` calls remain vulnerable.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC20 `approve` function is susceptible to a known race condition. If a user approves an allowance for a spender, and then attempts to change that allowance, a malicious actor could front-run the second `approve` transaction. This could result in the spender spending the original allowance, and then also spending the new allowance, effectively doubling the approved amount. While `increaseAllowance` and `decreaseAllowance` functions are provided to mitigate this, direct `approve` calls remain vulnerable.
 
 **Recommendation:** Educate users and integrated protocols to primarily use `increaseAllowance` and `decreaseAllowance` instead of directly calling `approve` when modifying an existing allowance. If `approve` must be used, advise users to first set the allowance to zero and wait for that transaction to confirm before setting the new allowance.
 

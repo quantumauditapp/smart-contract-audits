@@ -2,14 +2,14 @@
 token: ApeCoin
 ticker: APE
 network: ethereum
-risk_score: 30
+risk_score: 26
 status: low
 date: 2026-08-16
 ---
 
 # ApeCoin (APE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 30/100 — 🟢 Low Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/apecoin-eth)
 
@@ -42,28 +42,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Centralized Initial Token Supply  *(Severity: Low · Status: Unresolved)*
 
-The `SimpleToken` contract's constructor mints the entire `totalSupply_` to `msg.sender`. This means the deployer address holds 100% of the token supply immediately after deployment. This centralization creates a single point of failure for the token's distribution and control, as a compromise of the deployer's private key would put the entire token supply at risk. (7.3 Access Control, 7.4 Economic)
+Not confirmed by static analysis (the model's own reading of the source). The `SimpleToken` contract's constructor mints the entire `totalSupply_` to `msg.sender`. This means the deployer address holds 100% of the token supply immediately after deployment. This centralization creates a single point of failure for the token's distribution and control, as a compromise of the deployer's private key would put the entire token supply at risk. (7.3 Access Control, 7.4 Economic)
 
 **Recommendation:** While acceptable for a 'simple' token, for projects requiring broader distribution or enhanced security, consider implementing a more decentralized initial distribution mechanism. This could involve vesting contracts, airdrops, or a multi-signature wallet to hold the initial supply.
 
 
 ### `L-02` — Immutability of Token Parameters and Supply  *(Severity: Low · Status: Unresolved)*
 
-The `SimpleToken` contract sets its name, symbol, decimals, and total supply only during construction. There are no functions for further minting, burning (beyond standard ERC20 transfers), pausing transfers, or modifying any token parameters post-deployment. This design choice makes the token highly predictable and immutable but lacks flexibility for future adjustments, emergency measures, or supply management. (7.1 Architecture, 7.4 Economic)
+Not confirmed by static analysis (the model's own reading of the source). The `SimpleToken` contract sets its name, symbol, decimals, and total supply only during construction. There are no functions for further minting, burning (beyond standard ERC20 transfers), pausing transfers, or modifying any token parameters post-deployment. This design choice makes the token highly predictable and immutable but lacks flexibility for future adjustments, emergency measures, or supply management. (7.1 Architecture, 7.4 Economic)
 
 **Recommendation:** Understand that this is a design choice for a 'simple' token. If future flexibility (e.g., ability to mint more tokens, implement a burn mechanism, or pause transfers) is desired, the contract would need to be redesigned to include such administrative functions, typically protected by an owner or governance mechanism.
 
 
 ### `I-01` — Standard ERC-20 Implementation  *(Severity: Informational · Status: Resolved)*
 
-The `SimpleToken` contract is a straightforward implementation of the ERC-20 standard, inheriting directly from OpenZeppelin's `ERC20` contract. This adherence to a widely adopted and audited standard ensures compatibility with existing infrastructure and reduces the likelihood of common ERC-20 specific vulnerabilities. (7.1 Architecture)
+Not confirmed by static analysis (the model's own reading of the source). The `SimpleToken` contract is a straightforward implementation of the ERC-20 standard, inheriting directly from OpenZeppelin's `ERC20` contract. This adherence to a widely adopted and audited standard ensures compatibility with existing infrastructure and reduces the likelihood of common ERC-20 specific vulnerabilities. (7.1 Architecture)
 
 **Recommendation:** No recommendation needed. This is a strength of the implementation.
 
 
 ### `I-02` — Safe Use of Unchecked Blocks in OpenZeppelin ERC20  *(Severity: Informational · Status: Resolved)*
 
-The inherited OpenZeppelin `ERC20` contract correctly utilizes `unchecked` blocks for arithmetic operations (e.g., `_balances[sender] = senderBalance - amount;`) that are preceded by `require` statements ensuring the conditions for safe subtraction (e.g., `require(senderBalance >= amount, ...);`). This pattern is a best practice in Solidity 0.8+ for optimizing gas costs while maintaining safety against integer underflows. (7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). The inherited OpenZeppelin `ERC20` contract correctly utilizes `unchecked` blocks for arithmetic operations (e.g., `_balances[sender] = senderBalance - amount;`) that are preceded by `require` statements ensuring the conditions for safe subtraction (e.g., `require(senderBalance >= amount, ...);`). This pattern is a best practice in Solidity 0.8+ for optimizing gas costs while maintaining safety against integer underflows. (7.2 Code Security)
 
 **Recommendation:** No recommendation needed. This demonstrates good security practices within the inherited library.
 
