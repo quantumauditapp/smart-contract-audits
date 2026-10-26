@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**468 reports** · Updated daily · [← All Networks](../README.md)
+**472 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [GinnanCoin](./ginnancoin.md) | GINNAN | 🟢 0/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/ginnancoin-eth) |
+| [Ginnan](./ginnan.md) | GINNAN | 🟡 41/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/ginnan-eth) |
+| [Anthropic](./anthropic.md) | ANT | 🟡 44/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/anthropic-eth) |
+| [Ginnan Doge's Brother](./ginnan-doges-brother.md) | GINNAN | 🟡 51/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/ginnan-doges-brother-eth) |
 | [Zero Gap](./zero-gap-eth-b6e0.md) | ZGAP | 🟡 43/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/zero-gap-eth-b6e0) |
 | [QANX Token](./qanx-token.md) | QANX | 🟠 65/100 High Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/qanx-token-eth) |
 | [USUAL](./usual.md) | USUAL | 🟡 52/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/usual-eth) |
@@ -185,299 +189,299 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 | [Turbo](./turbo.md) | TURBO | 🟢 20/100 Low Risk | 2026-09-29 | [↗](https://quantumaudit.app/token/turbo-eth) |
 | [Numeraire](./numeraire.md) | NMR | 🟡 64/100 Medium Risk | 2026-09-29 | [↗](https://quantumaudit.app/token/numeraire-eth) |
 | [Woof](./woof.md) | WOOF | 🟠 76/100 High Risk | 2026-09-29 | [↗](https://quantumaudit.app/token/woof-eth) |
-| [SHX](./shx.md) | SHX | 🟠 73/100 High Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/shx-eth) |
-| [sato](./sato.md) | SATO | 🟢 19/100 Low Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/sato-eth) |
-| [Wrapped SOL](./wrapped-sol.md) | SOL | 🟢 34/100 Low Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/wrapped-sol-eth) |
-| [ArcBlock](./arcblock.md) | ABT | 🔴 91/100 Critical Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/arcblock-eth) |
-| [Metis Token](./metis-token.md) | METIS | 🟡 39/100 Medium Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/metis-token-eth) |
-| [Audius](./audius.md) | AUDIO | 🟡 61/100 Medium Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/audius-eth) |
-| [Akita](./akita.md) | AKITA | 🟡 41/100 Medium Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/akita-eth) |
-| [BitgetToken](./bitgettoken.md) | BGB | 🟡 54/100 Medium Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/bitgettoken-eth) |
-| [SuperRare](./superrare.md) | RARE | 🟡 47/100 Medium Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/superrare-eth) |
-| [Amp](./amp.md) | AMP | 🟠 65/100 High Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/amp-eth) |
-| [KarratCoin](./karratcoin.md) | KARRAT | 🟡 39/100 Medium Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/karratcoin-eth) |
-| [CONDO](./condo.md) | CONDO | 🟡 62/100 Medium Risk | 2026-09-26 | [↗](https://quantumaudit.app/token/condo-eth) |
-| [IMDStrategy](./imdstrategy.md) | IMDSTR | 🟠 71/100 High Risk | 2026-09-26 | [↗](https://quantumaudit.app/token/imdstrategy-eth) |
-| [Rollbit Coin](./rollbit-coin.md) | RLB | 🔴 100/100 Critical Risk | 2026-09-26 | [↗](https://quantumaudit.app/token/rollbit-coin-eth) |
-| [AITECH Cloud Network](./aitech-cloud-network.md) | ACN | 🟡 40/100 Medium Risk | 2026-09-26 | [↗](https://quantumaudit.app/token/aitech-cloud-network-eth) |
+| [SHX](./shx.md) | SHX | 🟡 50/100 Medium Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/shx-eth) |
+| [sato](./sato.md) | SATO | 🟢 7/100 Low Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/sato-eth) |
+| [Wrapped SOL](./wrapped-sol.md) | SOL | 🟢 31/100 Low Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/wrapped-sol-eth) |
+| [ArcBlock](./arcblock.md) | ABT | 🟡 54/100 Medium Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/arcblock-eth) |
+| [Metis Token](./metis-token.md) | METIS | 🟡 37/100 Medium Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/metis-token-eth) |
+| [Audius](./audius.md) | AUDIO | 🟡 59/100 Medium Risk | 2026-09-28 | [↗](https://quantumaudit.app/token/audius-eth) |
+| [Akita](./akita.md) | AKITA | 🟢 29/100 Low Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/akita-eth) |
+| [BitgetToken](./bitgettoken.md) | BGB | 🟡 44/100 Medium Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/bitgettoken-eth) |
+| [SuperRare](./superrare.md) | RARE | 🟡 40/100 Medium Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/superrare-eth) |
+| [Amp](./amp.md) | AMP | 🟡 45/100 Medium Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/amp-eth) |
+| [KarratCoin](./karratcoin.md) | KARRAT | 🟡 35/100 Medium Risk | 2026-09-27 | [↗](https://quantumaudit.app/token/karratcoin-eth) |
+| [CONDO](./condo.md) | CONDO | 🟢 20/100 Low Risk | 2026-09-26 | [↗](https://quantumaudit.app/token/condo-eth) |
+| [IMDStrategy](./imdstrategy.md) | IMDSTR | 🟡 56/100 Medium Risk | 2026-09-26 | [↗](https://quantumaudit.app/token/imdstrategy-eth) |
+| [Rollbit Coin](./rollbit-coin.md) | RLB | 🟠 78/100 High Risk | 2026-09-26 | [↗](https://quantumaudit.app/token/rollbit-coin-eth) |
+| [AITECH Cloud Network](./aitech-cloud-network.md) | ACN | 🟡 38/100 Medium Risk | 2026-09-26 | [↗](https://quantumaudit.app/token/aitech-cloud-network-eth) |
 | [NVIDIA (Ondo Tokenized)](./nvidia-ondo-tokenized.md) | NVDAON | 🟢 8/100 Low Risk | 2026-09-25 | [↗](https://quantumaudit.app/token/nvidia-ondo-tokenized-eth) |
-| [EtherStreet](./etherstreet.md) | STREET | 🟡 62/100 Medium Risk | 2026-09-25 | [↗](https://quantumaudit.app/token/etherstreet-eth) |
-| [TornadoCash](./tornadocash.md) | TORN | 🟡 46/100 Medium Risk | 2026-09-24 | [↗](https://quantumaudit.app/token/tornadocash-eth) |
-| [Milady Cult Coin](./milady-cult-coin.md) | CULT | 🟡 55/100 Medium Risk | 2026-09-24 | [↗](https://quantumaudit.app/token/milady-cult-coin-eth) |
+| [EtherStreet](./etherstreet.md) | STREET | 🟡 39/100 Medium Risk | 2026-09-25 | [↗](https://quantumaudit.app/token/etherstreet-eth) |
+| [TornadoCash](./tornadocash.md) | TORN | 🟢 34/100 Low Risk | 2026-09-24 | [↗](https://quantumaudit.app/token/tornadocash-eth) |
+| [Milady Cult Coin](./milady-cult-coin.md) | CULT | 🟡 51/100 Medium Risk | 2026-09-24 | [↗](https://quantumaudit.app/token/milady-cult-coin-eth) |
 | [FXN Token](./fxn-token.md) | FXN | 🟡 51/100 Medium Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/fxn-token-eth) |
 | [CreditStrategy](./creditstrategy.md) | CREDITSTR | 🟡 49/100 Medium Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/creditstrategy-eth) |
-| [Atoshi](./atoshi.md) | ATOS | 🟠 69/100 High Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/atoshi-eth) |
-| [PAAL AI](./paal-ai.md) | $PAAL | 🟢 7/100 Low Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/paal-ai-eth) |
-| [Render Token](./render-token.md) | RNDR | 🔴 85/100 Critical Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/render-token-eth) |
-| [Alchemix](./alchemix.md) | ALCX | 🟡 49/100 Medium Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/alchemix-eth) |
-| [PepeCat](./pepecat.md) | PCAT | 🟡 55/100 Medium Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/pepecat-eth) |
-| [Aethir Token](./aethir-token.md) | ATH | 🟠 75/100 High Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/aethir-token-eth) |
+| [Atoshi](./atoshi.md) | ATOS | 🟡 37/100 Medium Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/atoshi-eth) |
+| [PAAL AI](./paal-ai.md) | $PAAL | 🟢 0/100 Low Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/paal-ai-eth) |
+| [Render Token](./render-token.md) | RNDR | 🟡 50/100 Medium Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/render-token-eth) |
+| [Alchemix](./alchemix.md) | ALCX | 🟡 39/100 Medium Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/alchemix-eth) |
+| [PepeCat](./pepecat.md) | PCAT | 🟡 41/100 Medium Risk | 2026-09-23 | [↗](https://quantumaudit.app/token/pepecat-eth) |
+| [Aethir Token](./aethir-token.md) | ATH | 🟡 49/100 Medium Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/aethir-token-eth) |
 | [tao.bot](./taobot.md) | TAOBOT | 🟢 0/100 Low Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/taobot-eth) |
 | [Everybody](./everybody.md) | HOLD | 🟢 0/100 Low Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/everybody-eth) |
-| [Milady](./milady.md) | LADYS | 🟡 54/100 Medium Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/milady-eth) |
-| [Destra Network](./destra-network.md) | DSYNC | 🟡 49/100 Medium Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/destra-network-eth) |
-| [BONE SHIBASWAP](./bone-shibaswap.md) | BONE | 🟡 41/100 Medium Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/bone-shibaswap-eth) |
-| [Book of Ethereum](./book-of-ethereum.md) | BOOE | 🟢 21/100 Low Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/book-of-ethereum-eth) |
-| [AIOZ Network](./aioz-network.md) | AIOZ | 🟠 75/100 High Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/aioz-network-eth) |
-| [Phala](./phala.md) | PHA | 🟠 68/100 High Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/phala-eth) |
-| [FTT](./ftt.md) | FTX TOKEN | 🟡 53/100 Medium Risk | 2026-09-21 | [↗](https://quantumaudit.app/token/ftt-eth) |
-| [Shuffle](./shuffle.md) | SHFL | 🟡 60/100 Medium Risk | 2026-09-21 | [↗](https://quantumaudit.app/token/shuffle-eth) |
-| [Dogelon](./dogelon.md) | ELON | 🟢 4/100 Low Risk | 2026-09-21 | [↗](https://quantumaudit.app/token/dogelon-eth) |
-| [Reserve Rights](./reserve-rights.md) | RSR | 🟡 54/100 Medium Risk | 2026-09-20 | [↗](https://quantumaudit.app/token/reserve-rights-eth) |
+| [Milady](./milady.md) | LADYS | 🟢 19/100 Low Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/milady-eth) |
+| [Destra Network](./destra-network.md) | DSYNC | 🟢 0/100 Low Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/destra-network-eth) |
+| [BONE SHIBASWAP](./bone-shibaswap.md) | BONE | 🟢 31/100 Low Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/bone-shibaswap-eth) |
+| [Book of Ethereum](./book-of-ethereum.md) | BOOE | 🟢 0/100 Low Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/book-of-ethereum-eth) |
+| [AIOZ Network](./aioz-network.md) | AIOZ | 🟡 58/100 Medium Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/aioz-network-eth) |
+| [Phala](./phala.md) | PHA | 🟡 51/100 Medium Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/phala-eth) |
+| [FTT](./ftt.md) | FTX TOKEN | 🟡 46/100 Medium Risk | 2026-09-21 | [↗](https://quantumaudit.app/token/ftt-eth) |
+| [Shuffle](./shuffle.md) | SHFL | 🟡 40/100 Medium Risk | 2026-09-21 | [↗](https://quantumaudit.app/token/shuffle-eth) |
+| [Dogelon](./dogelon.md) | ELON | 🟢 0/100 Low Risk | 2026-09-21 | [↗](https://quantumaudit.app/token/dogelon-eth) |
+| [Reserve Rights](./reserve-rights.md) | RSR | 🟢 29/100 Low Risk | 2026-09-20 | [↗](https://quantumaudit.app/token/reserve-rights-eth) |
 | [Circle Wrapped Bitcoin](./circle-wrapped-bitcoin.md) | CIRBTC | 🟢 11/100 Low Risk | 2026-09-20 | [↗](https://quantumaudit.app/token/circle-wrapped-bitcoin-eth) |
 | [CryptoAutos](./cryptoautos.md) | AUTOS | 🟢 0/100 Low Risk | 2026-09-20 | [↗](https://quantumaudit.app/token/cryptoautos-eth) |
-| [LinqAI](./linqai.md) | LNQ | 🟢 30/100 Low Risk | 2026-09-20 | [↗](https://quantumaudit.app/token/linqai-eth) |
-| [Asentum](./asentum.md) | ASE | 🟡 46/100 Medium Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/asentum-eth) |
-| [Aurora](./aurora.md) | AURORA | 🟡 41/100 Medium Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/aurora-eth) |
-| [Gravity](./gravity.md) | G | 🟡 61/100 Medium Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/gravity-eth) |
+| [LinqAI](./linqai.md) | LNQ | 🟢 0/100 Low Risk | 2026-09-20 | [↗](https://quantumaudit.app/token/linqai-eth) |
+| [Asentum](./asentum.md) | ASE | 🟢 24/100 Low Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/asentum-eth) |
+| [Aurora](./aurora.md) | AURORA | 🟢 32/100 Low Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/aurora-eth) |
+| [Gravity](./gravity.md) | G | 🟡 53/100 Medium Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/gravity-eth) |
 | [rsFIRO](./rsfiro.md) | RSFIRO | 🟠 70/100 High Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/rsfiro-eth) |
 | [JPY Coin](./jpy-coin.md) | JPYC | 🟢 11/100 Low Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/jpy-coin-eth) |
-| [Wrapped Pearl](./wrapped-pearl.md) | WPRL | 🟠 73/100 High Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/wrapped-pearl-eth) |
-| [AVA](./ava.md) | AVA | 🟠 80/100 High Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/ava-eth) |
-| [Starknet](./starknet.md) | STRK | 🟠 69/100 High Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/starknet-eth) |
-| [ARC](./arc.md) | ARC | 🟠 73/100 High Risk | 2026-09-17 | [↗](https://quantumaudit.app/token/arc-eth) |
-| [Clearpool](./clearpool.md) | CPOOL | 🟢 27/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/clearpool-eth) |
-| [Motoswap](./motoswap.md) | MOTO | 🟠 71/100 High Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/motoswap-eth) |
+| [Wrapped Pearl](./wrapped-pearl.md) | WPRL | 🟡 58/100 Medium Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/wrapped-pearl-eth) |
+| [AVA](./ava.md) | AVA | 🟡 55/100 Medium Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/ava-eth) |
+| [Starknet](./starknet.md) | STRK | 🟡 44/100 Medium Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/starknet-eth) |
+| [ARC](./arc.md) | ARC | 🟡 56/100 Medium Risk | 2026-09-17 | [↗](https://quantumaudit.app/token/arc-eth) |
+| [Clearpool](./clearpool.md) | CPOOL | 🟢 23/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/clearpool-eth) |
+| [Motoswap](./motoswap.md) | MOTO | 🟢 8/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/motoswap-eth) |
 | [apyUSD](./apyusd.md) | APYUSD | 🟢 9/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/apyusd-eth) |
-| [Wrapped Gonka](./wrapped-gonka.md) | WGNK | 🟡 40/100 Medium Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/wrapped-gonka-eth) |
-| [SPECTRE AI](./spectre-ai.md) | SPECTRE | 🟢 25/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/spectre-ai-eth) |
-| [Beefy](./beefy.md) | BIFI | 🟢 28/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/beefy-eth) |
+| [Wrapped Gonka](./wrapped-gonka.md) | WGNK | 🟡 35/100 Medium Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/wrapped-gonka-eth) |
+| [SPECTRE AI](./spectre-ai.md) | SPECTRE | 🟢 0/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/spectre-ai-eth) |
+| [Beefy](./beefy.md) | BIFI | 🟢 26/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/beefy-eth) |
 | [Rova Protocol](./rova-protocol.md) | ROVA | 🟡 58/100 Medium Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/rova-protocol-eth) |
-| [Power](./power.md) | POWER | 🟢 34/100 Low Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/power-eth) |
-| [Fuse Cat](./fuse-cat-eth-a4f9.md) | FUSECAT | 🟡 62/100 Medium Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/fuse-cat-eth-a4f9) |
-| [Spark](./spark.md) | SPK | 🟠 84/100 High Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/spark-eth) |
-| [Kyber Network Crystal v2](./kyber-network-crystal-v2.md) | KNC | 🟠 81/100 High Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/kyber-network-crystal-v2-eth) |
-| [API3](./api3.md) | API3 | 🟡 58/100 Medium Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/api3-eth) |
-| [Fuse Cat](./fuse-cat.md) | FUSECAT | 🟡 51/100 Medium Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/fuse-cat-eth) |
+| [Power](./power.md) | POWER | 🟢 29/100 Low Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/power-eth) |
+| [Fuse Cat](./fuse-cat-eth-a4f9.md) | FUSECAT | 🟢 12/100 Low Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/fuse-cat-eth-a4f9) |
+| [Spark](./spark.md) | SPK | 🟡 39/100 Medium Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/spark-eth) |
+| [Kyber Network Crystal v2](./kyber-network-crystal-v2.md) | KNC | 🟠 80/100 High Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/kyber-network-crystal-v2-eth) |
+| [API3](./api3.md) | API3 | 🟡 48/100 Medium Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/api3-eth) |
+| [Fuse Cat](./fuse-cat.md) | FUSECAT | 🟢 29/100 Low Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/fuse-cat-eth) |
 | [Abuwtiyuw](./abuwtiyuw.md) | ABU | 🟢 0/100 Low Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/abuwtiyuw-eth) |
-| [send](./send.md) | SEND | 🟡 43/100 Medium Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/send-eth) |
+| [send](./send.md) | SEND | 🟢 21/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/send-eth) |
 | [Apple (Ondo Tokenized)](./apple-ondo-tokenized.md) | AAPLON | 🟢 9/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/apple-ondo-tokenized-eth) |
-| [A Hunters Dream](./a-hunters-dream.md) | CAW | 🟢 12/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/a-hunters-dream-eth) |
+| [A Hunters Dream](./a-hunters-dream.md) | CAW | 🟢 10/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/a-hunters-dream-eth) |
 | [Chainflip](./chainflip.md) | FLIP | 🟡 58/100 Medium Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/chainflip-eth) |
-| [Shiro Neko](./shiro-neko.md) | SHIRO | 🟢 28/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/shiro-neko-eth) |
-| [NeuralAI](./neuralai.md) | NEURAL | 🟡 55/100 Medium Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/neuralai-eth) |
-| [Ampleforth Governance](./ampleforth-governance.md) | FORTH | 🟡 54/100 Medium Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/ampleforth-governance-eth) |
-| [Renzo](./renzo.md) | REZ | 🟢 27/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/renzo-eth) |
-| [Fuse](./fuse.md) | FUSE | 🟢 25/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/fuse-eth) |
-| [NEAR](./near.md) | NEAR | 🔴 96/100 Critical Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/near-eth) |
-| [PowerLedger](./powerledger.md) | POWR | 🟠 67/100 High Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/powerledger-eth) |
-| [World Liberty Financial](./world-liberty-financial.md) | WLFI | 🟡 42/100 Medium Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/world-liberty-financial-eth) |
-| [Messier](./messier.md) | M87 | 🟠 73/100 High Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/messier-eth) |
-| [Tako](./tako.md) | TAKO | 🟢 27/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/tako-eth) |
-| [Adshares](./adshares.md) | ADS | 🟡 49/100 Medium Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/adshares-eth) |
-| [HeyAnon](./heyanon.md) | ANON | 🟠 81/100 High Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/heyanon-eth) |
-| [FARM Reward Token](./farm-reward-token.md) | FARM | 🟠 71/100 High Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/farm-reward-token-eth) |
+| [Shiro Neko](./shiro-neko.md) | SHIRO | 🟢 0/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/shiro-neko-eth) |
+| [NeuralAI](./neuralai.md) | NEURAL | 🟢 10/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/neuralai-eth) |
+| [Ampleforth Governance](./ampleforth-governance.md) | FORTH | 🟡 42/100 Medium Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/ampleforth-governance-eth) |
+| [Renzo](./renzo.md) | REZ | 🟢 25/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/renzo-eth) |
+| [Fuse](./fuse.md) | FUSE | 🟢 6/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/fuse-eth) |
+| [NEAR](./near.md) | NEAR | 🟡 43/100 Medium Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/near-eth) |
+| [PowerLedger](./powerledger.md) | POWR | 🟡 40/100 Medium Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/powerledger-eth) |
+| [World Liberty Financial](./world-liberty-financial.md) | WLFI | 🟢 20/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/world-liberty-financial-eth) |
+| [Messier](./messier.md) | M87 | 🟢 28/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/messier-eth) |
+| [Tako](./tako.md) | TAKO | 🟢 0/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/tako-eth) |
+| [Adshares](./adshares.md) | ADS | 🟡 37/100 Medium Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/adshares-eth) |
+| [HeyAnon](./heyanon.md) | ANON | 🟡 64/100 Medium Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/heyanon-eth) |
+| [FARM Reward Token](./farm-reward-token.md) | FARM | 🟠 69/100 High Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/farm-reward-token-eth) |
 | [Spiral](./spiral.md) | SPIRAL | 🟢 22/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/spiral-eth) |
-| [Rail](./rail.md) | RAIL | 🟡 57/100 Medium Risk | 2026-09-06 | [↗](https://quantumaudit.app/token/rail-eth) |
-| [Wootrade Network](./wootrade-network.md) | WOO | 🟠 70/100 High Risk | 2026-09-06 | [↗](https://quantumaudit.app/token/wootrade-network-eth) |
-| [Unity Software](./unity-software.md) | UNITY | 🟢 8/100 Low Risk | 2026-09-06 | [↗](https://quantumaudit.app/token/unity-software-eth) |
-| [Stockereum.fun](./stockereumfun.md) | STOCKER | 🟢 26/100 Low Risk | 2026-09-06 | [↗](https://quantumaudit.app/token/stockereumfun-eth) |
+| [Rail](./rail.md) | RAIL | 🟡 35/100 Medium Risk | 2026-09-06 | [↗](https://quantumaudit.app/token/rail-eth) |
+| [Wootrade Network](./wootrade-network.md) | WOO | 🟢 25/100 Low Risk | 2026-09-06 | [↗](https://quantumaudit.app/token/wootrade-network-eth) |
+| [Unity Software](./unity-software.md) | UNITY | 🟢 0/100 Low Risk | 2026-09-06 | [↗](https://quantumaudit.app/token/unity-software-eth) |
+| [Stockereum.fun](./stockereumfun.md) | STOCKER | 🟢 22/100 Low Risk | 2026-09-06 | [↗](https://quantumaudit.app/token/stockereumfun-eth) |
 | [USDx](./usdx.md) | USDX | 🟢 8/100 Low Risk | 2026-09-05 | [↗](https://quantumaudit.app/token/usdx-eth) |
-| [Frankencoin](./frankencoin.md) | ZCHF | 🟠 81/100 High Risk | 2026-09-05 | [↗](https://quantumaudit.app/token/frankencoin-eth) |
+| [Frankencoin](./frankencoin.md) | ZCHF | 🟡 41/100 Medium Risk | 2026-09-05 | [↗](https://quantumaudit.app/token/frankencoin-eth) |
 | [Landwolf](./landwolf.md) | WOLF | 🟢 0/100 Low Risk | 2026-09-05 | [↗](https://quantumaudit.app/token/landwolf-eth) |
 | [Spice](./spice.md) | SFI | 🟡 54/100 Medium Risk | 2026-09-05 | [↗](https://quantumaudit.app/token/spice-eth) |
-| [Bluzelle Token](./bluzelle-token.md) | BLZ | 🔴 90/100 Critical Risk | 2026-09-05 | [↗](https://quantumaudit.app/token/bluzelle-token-eth) |
-| [ANyONe Protocol](./anyone-protocol.md) | ANYONE | 🟡 61/100 Medium Risk | 2026-09-05 | [↗](https://quantumaudit.app/token/anyone-protocol-eth) |
-| [BIO](./bio.md) | BIO | 🟡 52/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/bio-eth) |
-| [BigShortBets](./bigshortbets.md) | BIGSB | 🟠 81/100 High Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/bigshortbets-eth) |
-| [Biconomy](./biconomy.md) | BICO | 🟡 45/100 Medium Risk | 2026-08-07 | [↗](https://quantumaudit.app/token/biconomy-eth) |
-| [Beam](./beam.md) | BEAM | 🟡 54/100 Medium Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/beam-eth) |
-| [Banana](./banana.md) | BANANA | 🔴 100/100 Critical Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/banana-eth) |
+| [Bluzelle Token](./bluzelle-token.md) | BLZ | 🟡 51/100 Medium Risk | 2026-09-05 | [↗](https://quantumaudit.app/token/bluzelle-token-eth) |
+| [ANyONe Protocol](./anyone-protocol.md) | ANYONE | 🟡 39/100 Medium Risk | 2026-09-05 | [↗](https://quantumaudit.app/token/anyone-protocol-eth) |
+| [BIO](./bio.md) | BIO | 🟡 42/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/bio-eth) |
+| [BigShortBets](./bigshortbets.md) | BIGSB | 🟡 36/100 Medium Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/bigshortbets-eth) |
+| [Biconomy](./biconomy.md) | BICO | 🟡 40/100 Medium Risk | 2026-08-07 | [↗](https://quantumaudit.app/token/biconomy-eth) |
+| [Beam](./beam.md) | BEAM | 🟡 37/100 Medium Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/beam-eth) |
+| [Banana](./banana.md) | BANANA | 🟢 22/100 Low Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/banana-eth) |
 | [Balancer](./balancer.md) | BAL | 🟢 30/100 Low Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/balancer-eth) |
-| [AZTEC](./aztec.md) | AZTEC | 🟠 71/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/aztec-eth) |
-| [AXGT](./axgt.md) | AXGT | 🟡 64/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/axgt-eth) |
-| [Autonolas](./autonolas.md) | OLAS | 🟠 76/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/autonolas-eth) |
+| [AZTEC](./aztec.md) | AZTEC | 🟡 61/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/aztec-eth) |
+| [AXGT](./axgt.md) | AXGT | 🟡 47/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/axgt-eth) |
+| [Autonolas](./autonolas.md) | OLAS | 🟡 43/100 Medium Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/autonolas-eth) |
 | [AUSD](./ausd.md) | AUSD | 🟢 8/100 Low Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/ausd-eth) |
-| [Asteroid Shiba](./asteroid-shiba.md) | ASTEROID | 🟢 20/100 Low Risk | 2026-06-19 | [↗](https://quantumaudit.app/token/asteroid-shiba-eth) |
+| [Asteroid Shiba](./asteroid-shiba.md) | ASTEROID | 🟢 0/100 Low Risk | 2026-06-19 | [↗](https://quantumaudit.app/token/asteroid-shiba-eth) |
 | [Asteroid](./asteroid.md) | ASTEROID | 🟢 0/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/asteroid-eth) |
 | [Artificial Superintelligence Alliance](./artificial-superintelligence-alliance.md) | FET | 🟡 40/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/artificial-superintelligence-alliance-eth) |
-| [Arbitrum](./arbitrum.md) | ARB | 🟡 56/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/arbitrum-eth) |
+| [Arbitrum](./arbitrum.md) | ARB | 🟢 31/100 Low Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/arbitrum-eth) |
 | [Apu Apustaja](./apu-apustaja.md) | APU | 🟢 0/100 Low Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/apu-apustaja-eth) |
-| [ApeCoin](./apecoin.md) | APE | 🟢 30/100 Low Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/apecoin-eth) |
-| [Animecoin](./animecoin.md) | ANIME | 🟡 58/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/animecoin-eth) |
+| [ApeCoin](./apecoin.md) | APE | 🟢 26/100 Low Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/apecoin-eth) |
+| [Animecoin](./animecoin.md) | ANIME | 🟡 41/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/animecoin-eth) |
 | [Andy](./andy.md) | ANDY | 🟢 0/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/andy-eth) |
-| [Ampleforth](./ampleforth.md) | AMPL | 🟠 69/100 High Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/ampleforth-eth) |
+| [Ampleforth](./ampleforth.md) | AMPL | 🟡 52/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/ampleforth-eth) |
 | [America Pac](./america-pac.md) | PAC | 🟢 0/100 Low Risk | 2026-07-30 | [↗](https://quantumaudit.app/token/america-pac-eth) |
-| [Allora](./allora.md) | ALLO | 🔴 89/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/allora-eth) |
-| [Aliens](./aliens.md) | ALIENS | 🟢 31/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/aliens-eth) |
-| [Alberich Token](./alberich-token.md) | ALBRH | 🟡 54/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/alberich-token-eth) |
+| [Allora](./allora.md) | ALLO | 🟠 81/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/allora-eth) |
+| [Aliens](./aliens.md) | ALIENS | 🟢 0/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/aliens-eth) |
+| [Alberich Token](./alberich-token.md) | ALBRH | 🟡 37/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/alberich-token-eth) |
 | [ADI](./adi.md) | ADI | 🟢 27/100 Low Risk | 2026-07-13 | [↗](https://quantumaudit.app/token/adi-eth) |
-| [Aave](./aave.md) | AAVE | 🟢 28/100 Low Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/aave-eth) |
-| [4CHAN](./4chan.md) | 4CHAN | 🟢 7/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/4chan-eth) |
-| [01](./01.md) | 01 | 🟢 29/100 Low Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/01-eth) |
-| [00 Token](./00-token.md) | 00 | 🟡 54/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/00-token-eth) |
+| [Aave](./aave.md) | AAVE | 🟢 11/100 Low Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/aave-eth) |
+| [4CHAN](./4chan.md) | 4CHAN | 🟢 0/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/4chan-eth) |
+| [01](./01.md) | 01 | 🟢 22/100 Low Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/01-eth) |
+| [00 Token](./00-token.md) | 00 | 🟡 42/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/00-token-eth) |
 | [KiboShib](./kiboshib.md) | KIBSHI | 🟢 0/100 Low Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/kiboshib-eth) |
-| [Dog Food Token](./dog-food-token.md) | OISHII | 🟡 47/100 Medium Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/dog-food-token-eth) |
-| [XEN Crypto](./xen-crypto.md) | XEN | 🟢 13/100 Low Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/xen-crypto-eth) |
-| [MOO DENG](./moo-deng.md) | MOODENG | 🟢 7/100 Low Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/moo-deng-eth) |
-| [FLOKI](./floki.md) | FLOKI | 🟠 65/100 High Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/floki-eth) |
+| [Dog Food Token](./dog-food-token.md) | OISHII | 🟡 35/100 Medium Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/dog-food-token-eth) |
+| [XEN Crypto](./xen-crypto.md) | XEN | 🟢 11/100 Low Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/xen-crypto-eth) |
+| [MOO DENG](./moo-deng.md) | MOODENG | 🟢 0/100 Low Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/moo-deng-eth) |
+| [FLOKI](./floki.md) | FLOKI | 🟢 20/100 Low Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/floki-eth) |
 | [PeiPei](./peipei.md) | PEIPEI | 🟢 0/100 Low Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/peipei-eth) |
 | [Joe Coin](./joe-coin.md) | JOE | 🟢 0/100 Low Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/joe-coin-eth) |
-| [ZK Coin](./zk-coin.md) | ZKC | 🟠 83/100 High Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/zk-coin-eth) |
-| [ZigCoin](./zigcoin.md) | ZIG | 🟡 38/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/zigcoin-eth) |
-| [Zama](./zama.md) | ZAMA | 🟠 68/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/zama-eth) |
-| [Yield Basis](./yield-basis.md) | YB | 🟡 50/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/yield-basis-eth) |
+| [ZK Coin](./zk-coin.md) | ZKC | 🟡 46/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/zk-coin-eth) |
+| [ZigCoin](./zigcoin.md) | ZIG | 🟢 33/100 Low Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/zigcoin-eth) |
+| [Zama](./zama.md) | ZAMA | 🟠 66/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/zama-eth) |
+| [Yield Basis](./yield-basis.md) | YB | 🟡 35/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/yield-basis-eth) |
 | [Yee Token](./yee-token.md) | YEE | 🟢 0/100 Low Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/yee-token-eth) |
-| [Wrapped TAO](./wrapped-tao.md) | WTAO | 🟢 26/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/wrapped-tao-eth) |
-| [Wrapped Pulse from PulseChain](./wrapped-pulse-from-pulsechain.md) | WPLS | 🟠 65/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/wrapped-pulse-from-pulsechain-eth) |
+| [Wrapped TAO](./wrapped-tao.md) | WTAO | 🟢 16/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/wrapped-tao-eth) |
+| [Wrapped Pulse from PulseChain](./wrapped-pulse-from-pulsechain.md) | WPLS | 🟡 38/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/wrapped-pulse-from-pulsechain-eth) |
 | [Wrapped liquid staked Ether 2.0](./wrapped-liquid-staked-ether-20.md) | WSTETH | 🟢 1/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/wrapped-liquid-staked-ether-20-eth) |
-| [Worldcoin](./worldcoin.md) | WLD | 🟡 41/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/worldcoin-eth) |
-| [wojak](./wojak.md) | WOJAK | 🟢 30/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/wojak-eth) |
-| [Vision](./vision.md) | VSN | 🔴 95/100 Critical Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/vision-eth) |
-| [Virtuals Protocol](./virtuals-protocol.md) | VIRTUAL | 🟡 51/100 Medium Risk | 2026-07-11 | [↗](https://quantumaudit.app/token/virtuals-protocol-eth) |
-| [Vestra DAO](./vestra-dao.md) | VSTR | 🟡 47/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/vestra-dao-eth) |
+| [Worldcoin](./worldcoin.md) | WLD | 🟢 31/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/worldcoin-eth) |
+| [wojak](./wojak.md) | WOJAK | 🟢 0/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/wojak-eth) |
+| [Vision](./vision.md) | VSN | 🟡 52/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/vision-eth) |
+| [Virtuals Protocol](./virtuals-protocol.md) | VIRTUAL | 🟢 16/100 Low Risk | 2026-07-11 | [↗](https://quantumaudit.app/token/virtuals-protocol-eth) |
+| [Vestra DAO](./vestra-dao.md) | VSTR | 🟢 30/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/vestra-dao-eth) |
 | [VERA](./vera.md) | VRA | 🟢 32/100 Low Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/vera-eth) |
 | [VANRY](./vanry.md) | VANRY | 🟡 41/100 Medium Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/vanry-eth) |
-| [usocks](./usocks.md) | USOCKS | 🔴 91/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/usocks-eth) |
+| [usocks](./usocks.md) | USOCKS | 🟡 41/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/usocks-eth) |
 | [USDS Stablecoin](./usds-stablecoin.md) | USDS | 🟢 9/100 Low Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/usds-stablecoin-eth) |
 | [USDe](./usde.md) | USDE | 🟢 12/100 Low Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/usde-eth) |
-| [Uniswap](./uniswap.md) | UNI | 🟡 50/100 Medium Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/uniswap-eth) |
-| [Unipeg](./unipeg.md) | UPEG | 🟢 26/100 Low Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/unipeg-eth) |
-| [UNICURVE](./unicurve.md) | UNICURVE | 🟠 68/100 High Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/unicurve-eth) |
-| [Turtle](./turtle.md) | TURTLE | 🟠 78/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/turtle-eth) |
-| [Tsutsuji the Cate](./tsutsuji-the-cate.md) | CATE | 🟢 22/100 Low Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/tsutsuji-the-cate-eth) |
+| [Uniswap](./uniswap.md) | UNI | 🟡 40/100 Medium Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/uniswap-eth) |
+| [Unipeg](./unipeg.md) | UPEG | 🟢 0/100 Low Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/unipeg-eth) |
+| [UNICURVE](./unicurve.md) | UNICURVE | 🟡 41/100 Medium Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/unicurve-eth) |
+| [Turtle](./turtle.md) | TURTLE | 🟠 70/100 High Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/turtle-eth) |
+| [Tsutsuji the Cate](./tsutsuji-the-cate.md) | CATE | 🟢 0/100 Low Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/tsutsuji-the-cate-eth) |
 | [trUSD](./trusd.md) | TRUSD | 🟢 12/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/trusd-eth) |
-| [TRIA](./tria.md) | TRIA | 🟡 36/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/tria-eth) |
-| [Trace Token](./trace-token.md) | TRAC | 🟠 67/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/trace-token-eth) |
-| [TokenFi](./tokenfi.md) | TOKEN | 🟡 61/100 Medium Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/tokenfi-eth) |
-| [Token Prometeus Network](./token-prometeus-network.md) | PROM | 🟡 59/100 Medium Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/token-prometeus-network-eth) |
-| [Threshold Network Token](./threshold-network-token.md) | T | 🟠 71/100 High Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/threshold-network-token-eth) |
+| [TRIA](./tria.md) | TRIA | 🟢 34/100 Low Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/tria-eth) |
+| [Trace Token](./trace-token.md) | TRAC | 🟡 58/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/trace-token-eth) |
+| [TokenFi](./tokenfi.md) | TOKEN | 🟢 11/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/tokenfi-eth) |
+| [Token Prometeus Network](./token-prometeus-network.md) | PROM | 🟡 42/100 Medium Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/token-prometeus-network-eth) |
+| [Threshold Network Token](./threshold-network-token.md) | T | 🟡 54/100 Medium Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/threshold-network-token-eth) |
 | [Tether Gold](./tether-gold.md) | XAUT | 🟢 10/100 Low Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/tether-gold-eth) |
-| [TERAFAB](./terafab.md) | TERAFAB | 🟠 67/100 High Risk | 2026-08-07 | [↗](https://quantumaudit.app/token/terafab-eth) |
-| [Telcoin](./telcoin.md) | TEL | 🟢 26/100 Low Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/telcoin-eth) |
-| [tap](./tap.md) | TAP | 🔴 94/100 Critical Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/tap-eth) |
-| [Syrup Token](./syrup-token.md) | SYRUP | 🟠 78/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/syrup-token-eth) |
-| [Synapse](./synapse.md) | SYN | 🟠 76/100 High Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/synapse-eth) |
+| [TERAFAB](./terafab.md) | TERAFAB | 🟢 0/100 Low Risk | 2026-08-07 | [↗](https://quantumaudit.app/token/terafab-eth) |
+| [Telcoin](./telcoin.md) | TEL | 🟢 17/100 Low Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/telcoin-eth) |
+| [tap](./tap.md) | TAP | 🟠 70/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/tap-eth) |
+| [Syrup Token](./syrup-token.md) | SYRUP | 🟡 43/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/syrup-token-eth) |
+| [Synapse](./synapse.md) | SYN | 🟡 59/100 Medium Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/synapse-eth) |
 | [Sustainable Aviation Fuel](./sustainable-aviation-fuel.md) | SAF | 🟡 56/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/sustainable-aviation-fuel-eth) |
-| [SushiToken](./sushitoken.md) | SUSHI | 🟡 61/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/sushitoken-eth) |
-| [SuperVerse](./superverse.md) | SUPER | 🟡 54/100 Medium Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/superverse-eth) |
-| [StorjToken](./storjtoken.md) | STORJ | 🟡 53/100 Medium Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/storjtoken-eth) |
-| [Starman](./starman.md) | STARMAN | 🟢 33/100 Low Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/starman-eth) |
-| [Stargate Finance](./stargate-finance.md) | STG | 🟠 66/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/stargate-finance-eth) |
+| [SushiToken](./sushitoken.md) | SUSHI | 🟡 46/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/sushitoken-eth) |
+| [SuperVerse](./superverse.md) | SUPER | 🟡 39/100 Medium Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/superverse-eth) |
+| [StorjToken](./storjtoken.md) | STORJ | 🟢 31/100 Low Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/storjtoken-eth) |
+| [Starman](./starman.md) | STARMAN | 🟢 0/100 Low Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/starman-eth) |
+| [Stargate Finance](./stargate-finance.md) | STG | 🟡 49/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/stargate-finance-eth) |
 | [Staked USDe](./staked-usde.md) | SUSDE | 🟢 11/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/staked-usde-eth) |
-| [SPX6900](./spx6900.md) | SPX | 🟡 36/100 Medium Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/spx6900-eth) |
+| [SPX6900](./spx6900.md) | SPX | 🟢 0/100 Low Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/spx6900-eth) |
 | [SpaceX xStock](./spacex-xstock.md) | SPCXX | 🟢 24/100 Low Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/spacex-xstock-eth) |
-| [SPACE ID](./space-id.md) | ID | 🟡 63/100 Medium Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/space-id-eth) |
-| [SKY Governance Token](./sky-governance-token.md) | SKY | 🟠 70/100 High Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/sky-governance-token-eth) |
+| [SPACE ID](./space-id.md) | ID | 🟡 61/100 Medium Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/space-id-eth) |
+| [SKY Governance Token](./sky-governance-token.md) | SKY | 🟡 40/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/sky-governance-token-eth) |
 | [Shrub](./shrub.md) | SHRUB | 🟢 0/100 Low Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/shrub-eth) |
-| [Shiba Inu](./shiba-inu.md) | SHIB | 🟢 26/100 Low Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/shiba-inu-eth) |
-| [SEI](./sei.md) | SEI | 🟡 62/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/sei-eth) |
-| [Satellite Doge-1](./satellite-doge-1.md) | DOGE-1 | 🟡 44/100 Medium Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/satellite-doge-1-eth) |
-| [Safe Token](./safe-token.md) | SAFE | 🟡 47/100 Medium Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/safe-token-eth) |
-| [Request Token](./request-token.md) | REQ | 🟡 40/100 Medium Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/request-token-eth) |
-| [Relics](./relics.md) | RELICS | 🟡 52/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/relics-eth) |
-| [Rekt](./rekt.md) | REKT | 🟢 13/100 Low Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/rekt-eth) |
-| [Redstone](./redstone.md) | RED | 🟡 62/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/redstone-eth) |
+| [Shiba Inu](./shiba-inu.md) | SHIB | 🟢 21/100 Low Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/shiba-inu-eth) |
+| [SEI](./sei.md) | SEI | 🟡 37/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/sei-eth) |
+| [Satellite Doge-1](./satellite-doge-1.md) | DOGE-1 | 🟢 0/100 Low Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/satellite-doge-1-eth) |
+| [Safe Token](./safe-token.md) | SAFE | 🟢 30/100 Low Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/safe-token-eth) |
+| [Request Token](./request-token.md) | REQ | 🟢 33/100 Low Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/request-token-eth) |
+| [Relics](./relics.md) | RELICS | 🟢 19/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/relics-eth) |
+| [Rekt](./rekt.md) | REKT | 🟢 0/100 Low Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/rekt-eth) |
+| [Redstone](./redstone.md) | RED | 🟡 45/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/redstone-eth) |
 | [Re Protocol reUSD](./re-protocol-reusd.md) | REUSD | 🟢 9/100 Low Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/re-protocol-reusd-eth) |
-| [RE](./re.md) | RE | 🟠 68/100 High Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/re-eth) |
-| [RaveDAO](./ravedao.md) | RAVE | 🟡 37/100 Medium Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/ravedao-eth) |
-| [Rally](./rally.md) | RALLY | 🟠 80/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/rally-eth) |
-| [Radicle](./radicle.md) | RAD | 🟡 60/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/radicle-eth) |
-| [Quant](./quant.md) | QNT | 🟡 55/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/quant-eth) |
-| [PunkStrategy](./punkstrategy.md) | PNKSTR | 🔴 92/100 Critical Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/punkstrategy-eth) |
-| [Prometheus](./prometheus.md) | PROMETHEUS | 🟢 32/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/prometheus-eth) |
-| [Programmable](./programmable.md) | V4 | 🟡 38/100 Medium Risk | 2026-08-03 | [↗](https://quantumaudit.app/token/programmable-eth) |
-| [Prism](./prism.md) | PRISM | 🟡 59/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/prism-eth) |
-| [PRDCTR](./prdctr.md) | PRD | 🟡 64/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/prdctr-eth) |
-| [Portal](./portal.md) | PORTAL | 🟠 77/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/portal-eth) |
+| [RE](./re.md) | RE | 🟡 51/100 Medium Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/re-eth) |
+| [RaveDAO](./ravedao.md) | RAVE | 🟢 33/100 Low Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/ravedao-eth) |
+| [Rally](./rally.md) | RALLY | 🟡 40/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/rally-eth) |
+| [Radicle](./radicle.md) | RAD | 🟢 27/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/radicle-eth) |
+| [Quant](./quant.md) | QNT | 🟡 38/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/quant-eth) |
+| [PunkStrategy](./punkstrategy.md) | PNKSTR | 🟡 40/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/punkstrategy-eth) |
+| [Prometheus](./prometheus.md) | PROMETHEUS | 🟢 0/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/prometheus-eth) |
+| [Programmable](./programmable.md) | V4 | 🟢 26/100 Low Risk | 2026-08-03 | [↗](https://quantumaudit.app/token/programmable-eth) |
+| [Prism](./prism.md) | PRISM | 🟡 37/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/prism-eth) |
+| [PRDCTR](./prdctr.md) | PRD | 🟡 62/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/prdctr-eth) |
+| [Portal](./portal.md) | PORTAL | 🟡 50/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/portal-eth) |
 | [Pons](./pons.md) | PONS | 🔴 94/100 Critical Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/pons-eth) |
-| [PinLink](./pinlink.md) | PIN | 🟡 62/100 Medium Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/pinlink-eth) |
+| [PinLink](./pinlink.md) | PIN | 🟢 22/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/pinlink-eth) |
 | [Pikachu](./pikachu.md) | PIKACHU | 🟢 0/100 Low Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/pikachu-eth) |
-| [Pepes Dog](./pepes-dog.md) | ZEUS | 🟢 18/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/pepes-dog-eth) |
+| [Pepes Dog](./pepes-dog.md) | ZEUS | 🟢 0/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/pepes-dog-eth) |
 | [pepeCoin](./pepecoin.md) | PEPECOIN | 🟢 0/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/pepecoin-eth) |
-| [Pepe](./pepe.md) | PEPE | 🟢 28/100 Low Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/pepe-eth) |
+| [Pepe](./pepe.md) | PEPE | 🟢 26/100 Low Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/pepe-eth) |
 | [Pendle](./pendle.md) | PENDLE | 🟢 34/100 Low Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/pendle-eth) |
 | [PayPal USD](./paypal-usd.md) | PYUSD | 🟢 9/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/paypal-usd-eth) |
 | [Paxos Gold](./paxos-gold.md) | PAXG | 🟢 11/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/paxos-gold-eth) |
-| [PancakeSwap](./pancakeswap.md) | CAKE | 🟠 71/100 High Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/pancakeswap-eth) |
-| [OutBurn](./outburn.md) | OUTBURN | 🟡 40/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/outburn-eth) |
+| [PancakeSwap](./pancakeswap.md) | CAKE | 🟡 38/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/pancakeswap-eth) |
+| [OutBurn](./outburn.md) | OUTBURN | 🟢 23/100 Low Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/outburn-eth) |
 | [Origin Ether](./origin-ether.md) | OETH | 🟢 10/100 Low Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/origin-ether-eth) |
-| [OpenServ](./openserv.md) | SERV | 🟠 70/100 High Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/openserv-eth) |
-| [Ondo](./ondo.md) | ONDO | 🟡 40/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/ondo-eth) |
-| [Olympus](./olympus.md) | OHM | 🟡 50/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/olympus-eth) |
-| [Octra](./octra.md) | OCT | 🟡 38/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/octra-eth) |
-| [Ocean Token](./ocean-token.md) | OCEAN | 🟡 60/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/ocean-token-eth) |
+| [OpenServ](./openserv.md) | SERV | 🟡 46/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/openserv-eth) |
+| [Ondo](./ondo.md) | ONDO | 🟢 31/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/ondo-eth) |
+| [Olympus](./olympus.md) | OHM | 🟡 43/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/olympus-eth) |
+| [Octra](./octra.md) | OCT | 🟢 31/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/octra-eth) |
+| [Ocean Token](./ocean-token.md) | OCEAN | 🟢 33/100 Low Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/ocean-token-eth) |
 | [Non-Playable Coin](./non-playable-coin.md) | NPC | 🟢 0/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/non-playable-coin-eth) |
-| [Nillion](./nillion.md) | NIL | 🟠 75/100 High Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/nillion-eth) |
-| [NEXO](./nexo.md) | NEXO | 🟠 73/100 High Risk | 2026-07-03 | [↗](https://quantumaudit.app/token/nexo-eth) |
-| [Neiro](./neiro.md) | NEIRO | 🟡 42/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/neiro-eth) |
-| [Morpho](./morpho.md) | MORPHO | 🟡 54/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/morpho-eth) |
-| [MOMO](./momo.md) | MOMO | 🟡 47/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/momo-eth) |
-| [Mog Coin](./mog-coin.md) | MOG | 🟢 26/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/mog-coin-eth) |
-| [Metronome Synth USD](./metronome-synth-usd.md) | MSUSD | 🟠 73/100 High Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/metronome-synth-usd-eth) |
-| [Metronome Synth ETH](./metronome-synth-eth.md) | MSETH | 🟠 73/100 High Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/metronome-synth-eth-eth) |
-| [Matrix](./matrix.md) | MTX | 🟡 58/100 Medium Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/matrix-eth) |
-| [Marlin POND](./marlin-pond.md) | POND | 🟡 63/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/marlin-pond-eth) |
-| [Manyu](./manyu.md) | MANYU | 🟢 13/100 Low Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/manyu-eth) |
-| [Mantle](./mantle.md) | MNT | 🟡 60/100 Medium Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/mantle-eth) |
-| [Main Street USD](./main-street-usd.md) | MSUSD | 🟠 74/100 High Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/main-street-usd-eth) |
-| [LQTY](./lqty.md) | LQTY | 🟡 47/100 Medium Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/lqty-eth) |
-| [LO0P](./lo0p.md) | LO0P | 🟡 37/100 Medium Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/lo0p-eth) |
-| [Lisk](./lisk.md) | LSK | 🟡 45/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/lisk-eth) |
+| [Nillion](./nillion.md) | NIL | 🟡 40/100 Medium Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/nillion-eth) |
+| [NEXO](./nexo.md) | NEXO | 🟡 49/100 Medium Risk | 2026-07-03 | [↗](https://quantumaudit.app/token/nexo-eth) |
+| [Neiro](./neiro.md) | NEIRO | 🟢 0/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/neiro-eth) |
+| [Morpho](./morpho.md) | MORPHO | 🟡 46/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/morpho-eth) |
+| [MOMO](./momo.md) | MOMO | 🟡 45/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/momo-eth) |
+| [Mog Coin](./mog-coin.md) | MOG | 🟢 0/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/mog-coin-eth) |
+| [Metronome Synth USD](./metronome-synth-usd.md) | MSUSD | 🟡 41/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/metronome-synth-usd-eth) |
+| [Metronome Synth ETH](./metronome-synth-eth.md) | MSETH | 🟡 41/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/metronome-synth-eth-eth) |
+| [Matrix](./matrix.md) | MTX | 🟡 41/100 Medium Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/matrix-eth) |
+| [Marlin POND](./marlin-pond.md) | POND | 🟡 36/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/marlin-pond-eth) |
+| [Manyu](./manyu.md) | MANYU | 🟢 0/100 Low Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/manyu-eth) |
+| [Mantle](./mantle.md) | MNT | 🟡 52/100 Medium Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/mantle-eth) |
+| [Main Street USD](./main-street-usd.md) | MSUSD | 🟡 59/100 Medium Risk | 2026-06-21 | [↗](https://quantumaudit.app/token/main-street-usd-eth) |
+| [LQTY](./lqty.md) | LQTY | 🟡 43/100 Medium Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/lqty-eth) |
+| [LO0P](./lo0p.md) | LO0P | 🟢 27/100 Low Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/lo0p-eth) |
+| [Lisk](./lisk.md) | LSK | 🟢 28/100 Low Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/lisk-eth) |
 | [Lighter](./lighter.md) | LIT | 🟢 28/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/lighter-eth) |
-| [Lido DAO](./lido-dao.md) | LDO | 🟡 51/100 Medium Risk | 2026-07-16 | [↗](https://quantumaudit.app/token/lido-dao-eth) |
-| [Lego Pepe](./lego-pepe.md) | LEPE | 🟡 61/100 Medium Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/lego-pepe-eth) |
-| [Kite](./kite.md) | KITE | 🟡 39/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/kite-eth) |
-| [Kekius Maximus](./kekius-maximus.md) | KEKIUS | 🟢 24/100 Low Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/kekius-maximus-eth) |
+| [Lido DAO](./lido-dao.md) | LDO | 🟢 29/100 Low Risk | 2026-07-16 | [↗](https://quantumaudit.app/token/lido-dao-eth) |
+| [Lego Pepe](./lego-pepe.md) | LEPE | 🟢 0/100 Low Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/lego-pepe-eth) |
+| [Kite](./kite.md) | KITE | 🟢 24/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/kite-eth) |
+| [Kekius Maximus](./kekius-maximus.md) | KEKIUS | 🟢 0/100 Low Risk | 2026-08-01 | [↗](https://quantumaudit.app/token/kekius-maximus-eth) |
 | [Jerry The Turtle By Matt Furie](./jerry-the-turtle-by-matt-furie.md) | JYAI | 🟢 0/100 Low Risk | 2026-08-04 | [↗](https://quantumaudit.app/token/jerry-the-turtle-by-matt-furie-eth) |
-| [Ixs Token](./ixs-token.md) | IXS | 🟡 54/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/ixs-token-eth) |
-| [Interfold](./interfold.md) | FOLD | 🟡 61/100 Medium Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/interfold-eth) |
-| [Injective](./injective.md) | INJ | 🟢 28/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/injective-eth) |
-| [Illuvium](./illuvium.md) | ILV | 🟡 57/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/illuvium-eth) |
-| [Identity.md](./identitymd.md) | IMD | 🟡 40/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/identitymd-eth) |
-| [ICP](./icp.md) | ICP | 🟠 71/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/icp-eth) |
-| [I love puppies](./i-love-puppies.md) | PUPPIES | 🟢 31/100 Low Risk | 2026-08-06 | [↗](https://quantumaudit.app/token/i-love-puppies-eth) |
-| [Humanity](./humanity.md) | H | 🔴 97/100 Critical Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/humanity-eth) |
-| [Highstreet token](./highstreet-token.md) | HIGH | 🟡 40/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/highstreet-token-eth) |
+| [Ixs Token](./ixs-token.md) | IXS | 🟡 35/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/ixs-token-eth) |
+| [Interfold](./interfold.md) | FOLD | 🟡 48/100 Medium Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/interfold-eth) |
+| [Injective](./injective.md) | INJ | 🟢 26/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/injective-eth) |
+| [Illuvium](./illuvium.md) | ILV | 🟢 30/100 Low Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/illuvium-eth) |
+| [Identity.md](./identitymd.md) | IMD | 🟡 35/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/identitymd-eth) |
+| [ICP](./icp.md) | ICP | 🟡 61/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/icp-eth) |
+| [I love puppies](./i-love-puppies.md) | PUPPIES | 🟢 0/100 Low Risk | 2026-08-06 | [↗](https://quantumaudit.app/token/i-love-puppies-eth) |
+| [Humanity](./humanity.md) | H | 🟠 71/100 High Risk | 2026-06-22 | [↗](https://quantumaudit.app/token/humanity-eth) |
+| [Highstreet token](./highstreet-token.md) | HIGH | 🟡 38/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/highstreet-token-eth) |
 | [HEX](./hex.md) | HEX | 🟢 11/100 Low Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/hex-eth) |
-| [Helix Token](./helix-token.md) | HLX | 🟡 55/100 Medium Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/helix-token-eth) |
-| [HarryPotterObamaSonic10Inu](./harrypotterobamasonic10inu.md) | BITCOIN | 🟡 61/100 Medium Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/harrypotterobamasonic10inu-eth) |
-| [GULD](./guld.md) | GULD | 🟡 59/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/guld-eth) |
-| [Graph Token](./graph-token.md) | GRT | 🟡 61/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/graph-token-eth) |
-| [Grand Theft Auto VI](./grand-theft-auto-vi.md) | GTAVI | 🟢 26/100 Low Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-eth) |
-| [Gram (prev. Toncoin)](./gram-prev-toncoin.md) | GRAM | 🟠 69/100 High Risk | 2026-06-30 | [↗](https://quantumaudit.app/token/gram-prev-toncoin-eth) |
+| [Helix Token](./helix-token.md) | HLX | 🟡 43/100 Medium Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/helix-token-eth) |
+| [HarryPotterObamaSonic10Inu](./harrypotterobamasonic10inu.md) | BITCOIN | 🟢 0/100 Low Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/harrypotterobamasonic10inu-eth) |
+| [GULD](./guld.md) | GULD | 🟡 37/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/guld-eth) |
+| [Graph Token](./graph-token.md) | GRT | 🟡 57/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/graph-token-eth) |
+| [Grand Theft Auto VI](./grand-theft-auto-vi.md) | GTAVI | 🟢 4/100 Low Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-eth) |
+| [Gram (prev. Toncoin)](./gram-prev-toncoin.md) | GRAM | 🟢 19/100 Low Risk | 2026-06-30 | [↗](https://quantumaudit.app/token/gram-prev-toncoin-eth) |
 | [Goldfish](./goldfish.md) | GGBR | 🟢 12/100 Low Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/goldfish-eth) |
-| [Gnosis Token](./gnosis-token.md) | GNO | 🟡 61/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/gnosis-token-eth) |
+| [Gnosis Token](./gnosis-token.md) | GNO | 🟢 31/100 Low Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/gnosis-token-eth) |
 | [Global Dollar](./global-dollar.md) | USDG | 🟢 8/100 Low Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/global-dollar-eth) |
-| [Gensyn](./gensyn.md) | AI | 🔴 86/100 Critical Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/gensyn-eth) |
+| [Gensyn](./gensyn.md) | AI | 🟠 69/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/gensyn-eth) |
 | [Frax USD](./frax-usd.md) | FRXUSD | 🟢 9/100 Low Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/frax-usd-eth) |
-| [FOX](./fox.md) | FOX | 🟡 53/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/fox-eth) |
-| [Fake World Assets](./fake-world-assets.md) | FWA | 🟡 57/100 Medium Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/fake-world-assets-eth) |
-| [Fabric Protocol](./fabric-protocol.md) | ROBO | 🟡 48/100 Medium Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/fabric-protocol-eth) |
-| [Everipedia IQ](./everipedia-iq.md) | IQ | 🟠 71/100 High Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/everipedia-iq-eth) |
+| [FOX](./fox.md) | FOX | 🟢 26/100 Low Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/fox-eth) |
+| [Fake World Assets](./fake-world-assets.md) | FWA | 🟢 32/100 Low Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/fake-world-assets-eth) |
+| [Fabric Protocol](./fabric-protocol.md) | ROBO | 🟢 31/100 Low Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/fabric-protocol-eth) |
+| [Everipedia IQ](./everipedia-iq.md) | IQ | 🟡 63/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/everipedia-iq-eth) |
 | [Euro Coin](./euro-coin.md) | EURC | 🟢 12/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/euro-coin-eth) |
-| [Euler](./euler.md) | EUL | 🟡 55/100 Medium Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/euler-eth) |
+| [Euler](./euler.md) | EUL | 🟡 40/100 Medium Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/euler-eth) |
 | [ether.fi governance token](./etherfi-governance-token.md) | ETHFI | 🟢 29/100 Low Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/etherfi-governance-token-eth) |
-| [Ethereumcat](./ethereumcat.md) | ETHCAT | 🟢 14/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/ethereumcat-eth) |
-| [Ethena](./ethena.md) | ENA | 🟡 50/100 Medium Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/ethena-eth) |
-| [Espresso](./espresso.md) | ESP | 🟡 64/100 Medium Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/espresso-eth) |
-| [Epic Chain](./epic-chain.md) | EPIC | 🟠 73/100 High Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/epic-chain-eth) |
+| [Ethereumcat](./ethereumcat.md) | ETHCAT | 🟢 0/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/ethereumcat-eth) |
+| [Ethena](./ethena.md) | ENA | 🟡 40/100 Medium Risk | 2026-06-11 | [↗](https://quantumaudit.app/token/ethena-eth) |
+| [Espresso](./espresso.md) | ESP | 🟡 56/100 Medium Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/espresso-eth) |
+| [Epic Chain](./epic-chain.md) | EPIC | 🟠 65/100 High Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/epic-chain-eth) |
 | [EigenCloud (prev. EigenLayer)](./eigencloud-prev-eigenlayer.md) | EIGEN | 🟡 50/100 Medium Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/eigencloud-prev-eigenlayer-eth) |
-| [Eden Token](./eden-token.md) | EDEN | 🔴 85/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/eden-token-eth) |
-| [DUAL](./dual.md) | DUAL | 🟡 39/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/dual-eth) |
-| [Dolomite](./dolomite.md) | DOLO | 🟡 62/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/dolomite-eth) |
-| [dmt-nat](./dmt-nat.md) | DMT-NAT | 🔴 88/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/dmt-nat-eth) |
+| [Eden Token](./eden-token.md) | EDEN | 🟠 68/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/eden-token-eth) |
+| [DUAL](./dual.md) | DUAL | 🟡 35/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/dual-eth) |
+| [Dolomite](./dolomite.md) | DOLO | 🟡 54/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/dolomite-eth) |
+| [dmt-nat](./dmt-nat.md) | DMT-NAT | 🟠 66/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/dmt-nat-eth) |
 | [Dimitra Token](./dimitra-token.md) | DMTR | 🟡 36/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/dimitra-token-eth) |
-| [DIAToken](./diatoken.md) | DIA | 🟠 67/100 High Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/diatoken-eth) |
-| [DeXe](./dexe.md) | DEXE | 🟡 60/100 Medium Risk | 2026-07-12 | [↗](https://quantumaudit.app/token/dexe-eth) |
-| [Derive](./derive.md) | DRV | 🟡 51/100 Medium Risk | 2026-07-14 | [↗](https://quantumaudit.app/token/derive-eth) |
-| [DAPPOS](./dappos.md) | DOS | 🟠 69/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/dappos-eth) |
+| [DIAToken](./diatoken.md) | DIA | 🟡 50/100 Medium Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/diatoken-eth) |
+| [DeXe](./dexe.md) | DEXE | 🟡 43/100 Medium Risk | 2026-07-12 | [↗](https://quantumaudit.app/token/dexe-eth) |
+| [Derive](./derive.md) | DRV | 🟡 43/100 Medium Risk | 2026-07-14 | [↗](https://quantumaudit.app/token/derive-eth) |
+| [DAPPOS](./dappos.md) | DOS | 🟡 59/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/dappos-eth) |
 | [Curve.Fi USD Stablecoin](./curvefi-usd-stablecoin.md) | CRVUSD | 🟢 10/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/curvefi-usd-stablecoin-eth) |
-| [Curve DAO](./curve-dao.md) | CRV | 🟡 49/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/curve-dao-eth) |
-| [Cronos](./cronos.md) | CRO | 🟠 73/100 High Risk | 2026-07-17 | [↗](https://quantumaudit.app/token/cronos-eth) |
-| [CoW Protocol Token](./cow-protocol-token.md) | COW | 🟠 73/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/cow-protocol-token-eth) |
-| [Covalent X Token](./covalent-x-token.md) | CXT | 🟠 74/100 High Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/covalent-x-token-eth) |
-| [COTI](./coti.md) | COTI | 🔴 88/100 Critical Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/coti-eth) |
-| [Convex Token](./convex-token.md) | CVX | 🟡 41/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/convex-token-eth) |
-| [Clawd](./clawd.md) | CLAWD | 🟢 24/100 Low Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/clawd-eth) |
-| [Chip](./chip.md) | CHIP | 🟠 76/100 High Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/chip-eth) |
-| [Chainlink](./chainlink.md) | LINK | 🟡 39/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/chainlink-eth) |
-| [Chain](./chain.md) | XCN | 🟠 68/100 High Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/chain-eth) |
-| [Centrifuge](./centrifuge.md) | CFG | 🟡 58/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/centrifuge-eth) |
-| [Cate](./cate.md) | CATE | 🟢 30/100 Low Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/cate-eth) |
-| [Cap](./cap.md) | CAP | 🟡 46/100 Medium Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/cap-eth) |
-| [Caldera](./caldera.md) | ERA | 🔴 88/100 Critical Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/caldera-eth) |
-| [c8ntinuum](./c8ntinuum.md) | CTM | 🟡 49/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/c8ntinuum-eth) |
+| [Curve DAO](./curve-dao.md) | CRV | 🟢 34/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/curve-dao-eth) |
+| [Cronos](./cronos.md) | CRO | 🟡 50/100 Medium Risk | 2026-07-17 | [↗](https://quantumaudit.app/token/cronos-eth) |
+| [CoW Protocol Token](./cow-protocol-token.md) | COW | 🟡 48/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/cow-protocol-token-eth) |
+| [Covalent X Token](./covalent-x-token.md) | CXT | 🟡 47/100 Medium Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/covalent-x-token-eth) |
+| [COTI](./coti.md) | COTI | 🟡 61/100 Medium Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/coti-eth) |
+| [Convex Token](./convex-token.md) | CVX | 🟡 39/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/convex-token-eth) |
+| [Clawd](./clawd.md) | CLAWD | 🟢 0/100 Low Risk | 2026-06-20 | [↗](https://quantumaudit.app/token/clawd-eth) |
+| [Chip](./chip.md) | CHIP | 🟡 64/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/chip-eth) |
+| [Chainlink](./chainlink.md) | LINK | 🟢 0/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/chainlink-eth) |
+| [Chain](./chain.md) | XCN | 🟡 51/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/chain-eth) |
+| [Centrifuge](./centrifuge.md) | CFG | 🟡 38/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/centrifuge-eth) |
+| [Cate](./cate.md) | CATE | 🟢 0/100 Low Risk | 2026-07-29 | [↗](https://quantumaudit.app/token/cate-eth) |
+| [Cap](./cap.md) | CAP | 🟡 44/100 Medium Risk | 2026-06-29 | [↗](https://quantumaudit.app/token/cap-eth) |
+| [Caldera](./caldera.md) | ERA | 🟠 83/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/caldera-eth) |
+| [c8ntinuum](./c8ntinuum.md) | CTM | 🟡 44/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/c8ntinuum-eth) |
 
 ---
 
