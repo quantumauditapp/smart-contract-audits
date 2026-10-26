@@ -2,14 +2,14 @@
 token: Bluf
 ticker: BLUF
 network: solana
-risk_score: 18
+risk_score: 1
 status: low
 date: 2026-09-25
 ---
 
 # Bluf (BLUF) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 18/100 — 🟢 Low Risk**
+> **Risk Score: 1/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bluf-sol)
 
@@ -26,8 +26,8 @@ This audit of the Bluf (BLUF) SPL Token Mint identifies a medium risk due to the
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Bluf (BLUF) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, which prevents the creation of new tokens or the freezing of… |
-| **Governance / Economics** | 5/10 | Medium | The token's DEX pair was created only 1 day ago, indicating a very new market with limited history. Current liquidity stands at $24,261, with a 24-hour volume of $200,660, resulting in a… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the Bluf (BLUF) token have both been revoked, meaning no further tokens can be minted and no accounts can be frozen. The token utilizes the spl-token-2022… |
+| **Governance / Economics** | 8/10 | Low | The token's DEX pair was created only 1 day ago, indicating a very new market with limited history. Current liquidity stands at $24,261, with a 24-hour volume of $200,660, resulting in a… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority for the Bluf (BLUF) token have both been revoked, meaning no further tokens can be minted and no accounts can be frozen. The token utilizes the spl-token-2022… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair for Bluf (BLUF) was created 1 day ago. This indicates an insufficie
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2378 buys / 2339 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for Bluf (BLUF) was created 1 day ago. This indicates an insufficie
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

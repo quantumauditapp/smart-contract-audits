@@ -2,14 +2,14 @@
 token: Auki Token
 ticker: AUKI
 network: base
-risk_score: 70
-status: high
+risk_score: 63
+status: medium
 date: 2026-09-23
 ---
 
 # Auki Token (AUKI) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 63/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/auki-token-base)
 
@@ -25,7 +25,7 @@ This audit reviews the `AukiToken` contract, which serves as the implementation 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical architecture appears sound, relying heavily on battle-tested OpenZeppelin upgradeable contracts and libraries (7.1 Architecture). This approach significantly reduces the likelihood of… |
+| **Technical** | 7/10 | Low | The technical architecture appears sound, relying heavily on battle-tested OpenZeppelin upgradeable contracts and libraries (7.1 Architecture). This approach significantly reduces the likelihood of… |
 | **Governance / Economics** | 1/10 | High | The contract exhibits centralized control over critical functions such as token minting and contract upgrades (7.3 Access Control, 7.5 Governance). This control is managed by a 4-of-6 multisig… |
 | **Upgrades** | 1/10 | High | The contract utilizes the UUPS proxy pattern, a robust and widely adopted standard for upgradeability (7.7 Upgrades). This pattern allows for future enhancements and bug fixes without deploying a new… |
 
@@ -50,35 +50,35 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 3 Informational_
 
 ### `M-01` — Centralized Control over Token Operations and Upgrades  *(Severity: Medium · Status: Unresolved)*
 
-The `AukiToken` contract, as inferred from the provided interfaces and metadata, likely implements `AccessControlUpgradeable` and `UUPSUpgradeable`. This implies that critical functions such as token minting (given `has_mint: true`) and contract upgrades are controlled by specific roles (e.g., `MINTER_ROLE`, `DEFAULT_ADMIN_ROLE`). While the prefill indicates these roles are managed by a 4-of-6 multisig wallet, which significantly mitigates the risk of a single point of failure, it still represents a centralized authority. Compromise of the multisig signers could lead to unauthorized minting, malicious upgrades, or other detrimental actions.
+Not confirmed by static analysis (the model's own reading of the source). The `AukiToken` contract, as inferred from the provided interfaces and metadata, likely implements `AccessControlUpgradeable` and `UUPSUpgradeable`. This implies that critical functions such as token minting (given `has_mint: true`) and contract upgrades are controlled by specific roles (e.g., `MINTER_ROLE`, `DEFAULT_ADMIN_ROLE`). While the prefill indicates these roles are managed by a 4-of-6 multisig wallet, which significantly mitigates the risk of a single point of failure, it still represents a centralized authority. Compromise of the multisig signers could lead to unauthorized minting, malicious upgrades, or othe
 
 **Recommendation:** Ensure robust operational security practices for the multisig wallet and its signers. Consider implementing time-locks for critical administrative actions (e.g., upgrades, role changes) to provide a window for community review or emergency intervention. Explore decentralized governance mechanisms for future iterations if applicable to further distribute control.
 
 
 ### `L-01` — Standard `permit` Function Front-Running Risk  *(Severity: Low · Status: Unresolved)*
 
-The presence of `IERC20PermitUpgradeable` indicates the token supports the `permit` function, allowing users to approve token spending off-chain via signed messages. While convenient, this mechanism is susceptible to front-running. An attacker monitoring the mempool could observe a legitimate `permit` transaction, then submit their own transaction with a higher gas fee to approve and spend the tokens before the original transaction is confirmed. This is an inherent characteristic of the `permit` design and not a flaw in the implementation itself.
+Not confirmed by static analysis (the model's own reading of the source). The presence of `IERC20PermitUpgradeable` indicates the token supports the `permit` function, allowing users to approve token spending off-chain via signed messages. While convenient, this mechanism is susceptible to front-running. An attacker monitoring the mempool could observe a legitimate `permit` transaction, then submit their own transaction with a higher gas fee to approve and spend the tokens before the original transaction is confirmed. This is an inherent characteristic of the `permit` design and not a flaw in the implementation itself.
 
 **Recommendation:** Educate users about the potential for front-running when using the `permit` function. Advise them to be cautious when broadcasting signed messages and consider using services that protect against front-running if available. Implementations can also consider adding a `deadline` parameter to `permit` calls to limit the window of vulnerability.
 
 
 ### `I-01` — Reliance on OpenZeppelin Upgradeable Contracts  *(Severity: Informational · Status: Unresolved)*
 
-The contract heavily relies on OpenZeppelin's battle-tested upgradeable contracts and libraries (e.g., `AddressUpgradeable`, `CountersUpgradeable`, `StorageSlotUpgradeable`, `AccessControlUpgradeable`, `ERC20Upgradeable`, `UUPSUpgradeable`). This is a significant strength, as these libraries are widely used and have undergone extensive audits and community review. However, any future vulnerabilities discovered in these underlying libraries could potentially affect this contract.
+Not confirmed by static analysis (the model's own reading of the source). The contract heavily relies on OpenZeppelin's battle-tested upgradeable contracts and libraries (e.g., `AddressUpgradeable`, `CountersUpgradeable`, `StorageSlotUpgradeable`, `AccessControlUpgradeable`, `ERC20Upgradeable`, `UUPSUpgradeable`). This is a significant strength, as these libraries are widely used and have undergone extensive audits and community review. However, any future vulnerabilities discovered in these underlying libraries could potentially affect this contract.
 
 **Recommendation:** Stay informed about security updates and advisories from OpenZeppelin. Regularly review the dependencies for any reported vulnerabilities and be prepared to upgrade the implementation if critical issues are identified in the underlying libraries.
 
 
 ### `I-02` — Potential for Storage Collisions in Custom Upgrades  *(Severity: Informational · Status: Unresolved)*
 
-While OpenZeppelin's UUPS pattern is designed to prevent storage collisions, any custom storage variables added to the `AukiToken` implementation or incorrect inheritance order in future upgrades could potentially lead to storage collisions. This occurs when a variable in a new implementation occupies the same storage slot as a different variable in the previous implementation, leading to data corruption or unexpected behavior.
+Not confirmed by static analysis (the model's own reading of the source). While OpenZeppelin's UUPS pattern is designed to prevent storage collisions, any custom storage variables added to the `AukiToken` implementation or incorrect inheritance order in future upgrades could potentially lead to storage collisions. This occurs when a variable in a new implementation occupies the same storage slot as a different variable in the previous implementation, leading to data corruption or unexpected behavior.
 
 **Recommendation:** Adhere strictly to OpenZeppelin's storage layout guidelines for upgradeable contracts. When adding new state variables in future upgrades, always append them to the end of the contract's storage layout. Thoroughly test all upgrade paths in a staging environment to identify and prevent potential storage collisions before deploying to production.
 
 
 ### `I-03` — Re-initialization Attack Vector  *(Severity: Informational · Status: Unresolved)*
 
-UUPS proxy implementations are generally susceptible to re-initialization attacks if the `initialize` function is not properly protected. An attacker could call `initialize` again on the implementation contract (if not properly disabled) or on the proxy itself, potentially resetting critical state variables or re-assigning administrative roles. OpenZeppelin's `UUPSUpgradeable` typically includes mechanisms like `_disableInitializers` in the constructor and the `initializer` modifier to prevent this.
+Not confirmed by static analysis (the model's own reading of the source). UUPS proxy implementations are generally susceptible to re-initialization attacks if the `initialize` function is not properly protected. An attacker could call `initialize` again on the implementation contract (if not properly disabled) or on the proxy itself, potentially resetting critical state variables or re-assigning administrative roles. OpenZeppelin's `UUPSUpgradeable` typically includes mechanisms like `_disableInitializers` in the constructor and the `initializer` modifier to prevent this.
 
 **Recommendation:** Ensure that the `initialize` function in the `AukiToken` implementation is protected by the `initializer` modifier and that `_disableInitializers()` is called in the constructor of the implementation contract to prevent direct calls to `initialize` on the implementation itself. Verify that the proxy's `initialize` function can only be called once.
 

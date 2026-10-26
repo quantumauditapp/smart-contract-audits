@@ -38,27 +38,27 @@ The BAToken contract implements an ERC-20-like token with integrated crowdsale f
 
 ## Security Findings
 
-_🟠 1 High · 🟡 4 Medium · 🟢 1 Low · ⚪ 5 Informational_
-
-### `H-01` — Integer Overflow in StandardToken `transfer` and `transferFrom`  *(Severity: High · Status: Unresolved)*
-
-The `StandardToken` contract, inherited by `BAToken`, does not utilize `SafeMath` for addition operations within its `transfer` and `transferFrom` functions. Specifically, the line `balances[_to] += _value;` in both functions is vulnerable to integer overflow. If `balances[_to]` is sufficiently large and `_value` is also large, their sum could exceed `uint256`'s maximum value, causing the balance to wrap around to a small number. This could lead to an incorrect balance for the recipient, potentially allowing them to receive fewer tokens than intended or disrupting the total supply accounting.
-
-**Recommendation:** Implement `SafeMath` for all arithmetic operations in `StandardToken`. Specifically, replace `balances[_to] += _value;` with `balances[_to] = safeAdd(balances[_to], _value);` in both `transfer` and `transferFrom` functions.
-
+_🟡 5 Medium · 🟢 1 Low · ⚪ 5 Informational_
 
 ### `M-01` — ERC-20 `approve` Race Condition Vulnerability  *(Severity: Medium · Status: Unresolved)*
 
-The `approve` function in `StandardToken` is susceptible to a known ERC-20 race condition. If a user approves an amount for a spender, and then approves a *different* (typically lower) amount before the spender has spent the original allowance, the spender might be able to spend both the original and the new allowance. This occurs because the spender can execute a `transferFrom` transaction with the original allowance after the new approval transaction is mined but before the original allowance is updated, effectively allowing them to spend more than intended.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function in `StandardToken` is susceptible to a known ERC-20 race condition. If a user approves an amount for a spender, and then approves a *different* (typically lower) amount before the spender has spent the original allowance, the spender might be able to spend both the original and the new allowance. This occurs because the spender can execute a `transferFrom` transaction with the original allowance after the new approval transaction is mined but before the original allowance is updated, effectively allowing them to spend more than intended.
 
 **Recommendation:** To mitigate this, implement a two-step approval process (e.g., `increaseAllowance` and `decreaseAllowance` functions) or the 'approve and call' pattern. This prevents the spender from exploiting the race condition by requiring them to first set the allowance to zero before setting a new value.
 
 
 ### `M-02` — Fixed Gas Limit for External ETH Transfers (`.send()`)  *(Severity: Medium · Status: Unresolved)*
 
-The `finalize()` and `refund()` functions use the `.send()` method for transferring ETH to external addresses (`ethFundDeposit` and `msg.sender`, respectively). The `.send()` function has a fixed gas stipend of 2300. This amount is often insufficient for recipient contracts that have complex fallback functions or require more gas to process the incoming ETH. If the recipient contract's fallback function consumes more than 2300 gas, the ETH transfer will fail, potentially locking funds in the contract or preventing the successful finalization of the crowdsale or user refunds.
+Not confirmed by static analysis (the model's own reading of the source). The `finalize()` and `refund()` functions use the `.send()` method for transferring ETH to external addresses (`ethFundDeposit` and `msg.sender`, respectively). The `.send()` function has a fixed gas stipend of 2300. This amount is often insufficient for recipient contracts that have complex fallback functions or require more gas to process the incoming ETH. If the recipient contract's fallback function consumes more than 2300 gas, the ETH transfer will fail, potentially locking funds in the contract or preventing the successful finalization of the crowdsale or user refunds.
 
 **Recommendation:** Consider using `.call{value: ethVal}('')` for external ETH transfers, as it forwards all available gas by default. When using `.call`, it is crucial to implement robust reentrancy guards (e.g., OpenZeppelin's `ReentrancyGuard`) to prevent reentrancy attacks, although in this specific contract, state changes occur before the `send` call, mitigating direct reentrancy for the same transaction.
+
+
+### `M-03` — Integer Overflow in StandardToken `transfer` and `transferFrom`  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `StandardToken` contract, inherited by `BAToken`, does not utilize `SafeMath` for addition operations within its `transfer` and `transferFrom` functions. Specifically, the line `balances[_to] += _value;` in both functions is vulnerable to integer overflow. If `balances[_to]` is sufficiently large and `_value` is also large, their sum could exceed `uint256`'s maximum value, causing the balance to wrap around to a small number. This could lead to an incorrect balance for the recipient, potentially allowing them to receive fewer tokens than intended or disrupting the total supply accounting.
+
+**Recommendation:** Implement `SafeMath` for all arithmetic operations in `StandardToken`. Specifically, replace `balances[_to] += _value;` with `balances[_to] = safeAdd(balances[_to], _value);` in both `transfer` and `transferFrom` functions.
 
 
 ### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
@@ -77,14 +77,14 @@ The contract lets its controller — an owner that could not be resolved — min
 
 ### `L-01` — Use of Outdated Solidity Version and `throw` Statement  *(Severity: Low · Status: Unresolved)*
 
-The contract is compiled with Solidity `^0.4.10`, which is an outdated version. This version lacks many security features, optimizations, and best practices introduced in later Solidity releases. Additionally, the contract uses `throw` statements for error handling. `throw` consumes all remaining gas upon failure, which is less gas-efficient than `revert()` or `require()` (introduced in Solidity 0.4.10 and 0.4.22 respectively), which refund unused gas.
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity `^0.4.10`, which is an outdated version. This version lacks many security features, optimizations, and best practices introduced in later Solidity releases. Additionally, the contract uses `throw` statements for error handling. `throw` consumes all remaining gas upon failure, which is less gas-efficient than `revert()` or `require()` (introduced in Solidity 0.4.10 and 0.4.22 respectively), which refund unused gas.
 
 **Recommendation:** Upgrade the Solidity compiler version to a more recent stable release (e.g., `^0.8.0`). This will enable automatic overflow/underflow checks and provide access to modern language features. Refactor all `throw` statements to `require()` or `revert()` for improved gas efficiency and clearer error messages.
 
 
 ### `I-01` — Lack of Emergency Pause/Withdrawal Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The contract lacks a mechanism to pause critical operations (such as token transfers or crowdsale participation) or to perform emergency withdrawals of funds in case of unforeseen vulnerabilities or critical issues. While the crowdsale has specific `finalize` and `refund` conditions, there is no general 'kill switch' or pause functionality that could be activated by an authorized entity (e.g., a multi-signature wallet) to mitigate risks from unknown vulnerabilities or external attacks.
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks a mechanism to pause critical operations (such as token transfers or crowdsale participation) or to perform emergency withdrawals of funds in case of unforeseen vulnerabilities or critical issues. While the crowdsale has specific `finalize` and `refund` conditions, there is no general 'kill switch' or pause functionality that could be activated by an authorized entity (e.g., a multi-signature wallet) to mitigate risks from unknown vulnerabilities or external attacks.
 
 **Recommendation:** For future contracts, consider implementing a well-designed pause mechanism (e.g., using OpenZeppelin's `Pausable` contract) and/or an emergency withdrawal function, typically controlled by a multi-signature wallet, to provide a safety net in critical situations.
 

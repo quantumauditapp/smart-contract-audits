@@ -2,14 +2,14 @@
 token: Bedrock
 ticker: BR
 network: bsc
-risk_score: 77
-status: high
+risk_score: 42
+status: medium
 date: 2026-08-13
 ---
 
 # Bedrock (BR) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 77/100 — 🟠 High Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bedrock-bsc)
 
@@ -25,9 +25,9 @@ The Bedrock token contract implements ERC20 with burnable functionality and robu
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract leverages OpenZeppelin's battle-tested ERC20Burnable and AccessControl libraries, enhancing code security and adherence to established standards (7.2 Code Security). The implementation… |
-| **Governance / Economics** | 1/10 | High | The protocol employs a robust `AccessControl` system to manage roles for minting and freezing, ensuring only authorized entities can perform these actions (7.3 Access Control). However, the… |
-| **Upgrades** | 2/10 | High | The Bedrock contract is not designed as an upgradeable proxy, which simplifies its architecture by avoiding upgrade-specific complexities and potential vulnerabilities (7.7 Upgrades). This design… |
+| **Technical** | 8/10 | Low | The contract leverages OpenZeppelin's battle-tested ERC20Burnable and AccessControl libraries, enhancing code security and adherence to established standards (7.2 Code Security). The implementation… |
+| **Governance / Economics** | 2/10 | High | The protocol employs a robust `AccessControl` system to manage roles for minting and freezing, ensuring only authorized entities can perform these actions (7.3 Access Control). However, the… |
+| **Upgrades** | 3/10 | High | The Bedrock contract is not designed as an upgradeable proxy, which simplifies its architecture by avoiding upgrade-specific complexities and potential vulnerabilities (7.7 Upgrades). This design… |
 
 ## LP Distribution
 
@@ -38,39 +38,39 @@ The Bedrock token contract implements ERC20 with burnable functionality and robu
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `C-01` — Centralized Control and Potential for Censorship/Seizure  *(Severity: Critical · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE` and `FREEZER_ROLE` possess extensive power, including the ability to freeze user accounts and dictate that frozen funds can only be transferred to a specific `freezeToRecipient` address. This introduces a high degree of centralization and potential for censorship or even seizure of funds if the `freezeToRecipient` is maliciously controlled or if the role holders act maliciously. (7.3 Access Control, 7.4 Economic, 7.5 Governance)
-
-**Recommendation:** Implement multi-signature control for critical roles, especially `DEFAULT_ADMIN_ROLE` and `FREEZER_ROLE`. Consider a time-lock for sensitive operations like changing `freezeToRecipient`. Clearly communicate these powers and their implications to all users.
-
-
-### `H-01` — Unlimited Minting Capability  *(Severity: High · Status: Unresolved)*
-
-The `MINTER_ROLE` has the ability to mint an arbitrary amount of new tokens via the `mint` function. While this might be an intended feature for token supply management, it poses a significant economic risk as uncontrolled or malicious minting can lead to hyperinflation and devaluation of the token. (7.4 Economic)
-
-**Recommendation:** Implement a minting cap, a rate limit, or a multi-signature approval process for minting operations. Ensure the `MINTER_ROLE` is managed with the highest security standards, ideally by a multi-signature wallet or a robust governance mechanism.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Gas Limit Concerns for Batch Operations  *(Severity: Medium · Status: Unresolved)*
 
-The `batchTransfer`, `freezeUsers`, and `unfreezeUsers` functions iterate through arrays of recipients or users. If these arrays contain a very large number of elements, the transaction might exceed the block gas limit, causing the operation to fail. This can lead to denial of service for legitimate batch operations. (7.2 Code Security, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The `batchTransfer`, `freezeUsers`, and `unfreezeUsers` functions iterate through arrays of recipients or users. If these arrays contain a very large number of elements, the transaction might exceed the block gas limit, causing the operation to fail. This can lead to denial of service for legitimate batch operations. (7.2 Code Security, 7.8 Operations)
 
 **Recommendation:** Implement a maximum array size limit for these batch functions to prevent transactions from exceeding the block gas limit. Alternatively, provide alternative mechanisms for very large operations, such as pagination or Merkle tree-based claims, if such scale is anticipated.
 
 
+### `M-02` — Centralized Control and Potential for Censorship/Seizure  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` and `FREEZER_ROLE` possess extensive power, including the ability to freeze user accounts and dictate that frozen funds can only be transferred to a specific `freezeToRecipient` address. This introduces a high degree of centralization and potential for censorship or even seizure of funds if the `freezeToRecipient` is maliciously controlled or if the role holders act maliciously. (7.3 Access Control, 7.4 Economic, 7.5 Governance)
+
+**Recommendation:** Implement multi-signature control for critical roles, especially `DEFAULT_ADMIN_ROLE` and `FREEZER_ROLE`. Consider a time-lock for sensitive operations like changing `freezeToRecipient`. Clearly communicate these powers and their implications to all users.
+
+
+### `M-03` — Unlimited Minting Capability  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `MINTER_ROLE` has the ability to mint an arbitrary amount of new tokens via the `mint` function. While this might be an intended feature for token supply management, it poses a significant economic risk as uncontrolled or malicious minting can lead to hyperinflation and devaluation of the token. (7.4 Economic)
+
+**Recommendation:** Implement a minting cap, a rate limit, or a multi-signature approval process for minting operations. Ensure the `MINTER_ROLE` is managed with the highest security standards, ideally by a multi-signature wallet or a robust governance mechanism.
+
+
 ### `L-01` — Single Point of Failure for Critical Roles  *(Severity: Low · Status: Unresolved)*
 
-The constructor initially grants `DEFAULT_ADMIN_ROLE` and `FREEZER_ROLE` to a single `defaultAdmin` address. If this single address is compromised, an attacker gains full control over administrative functions, including minting, freezing, and role management, creating a single point of failure for the protocol's security. (7.3 Access Control, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The constructor initially grants `DEFAULT_ADMIN_ROLE` and `FREEZER_ROLE` to a single `defaultAdmin` address. If this single address is compromised, an attacker gains full control over administrative functions, including minting, freezing, and role management, creating a single point of failure for the protocol's security. (7.3 Access Control, 7.8 Operations)
 
 **Recommendation:** Transfer `DEFAULT_ADMIN_ROLE` to a multi-signature wallet immediately after deployment. Ensure robust security practices (e.g., hardware wallets, strong authentication) for all addresses holding critical roles.
 
 
 ### `I-01` — Lack of Event Emission for `setFreezeToRecipient`  *(Severity: Informational · Status: Unresolved)*
 
-The `setFreezeToRecipient` function allows the `DEFAULT_ADMIN_ROLE` to change the critical `freezeToRecipient` address. However, this function does not emit an event upon successful execution. This lack of an event makes it difficult to track changes to this address on-chain, impacting transparency and off-chain monitoring for users and auditors. (7.2 Code Security, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The `setFreezeToRecipient` function allows the `DEFAULT_ADMIN_ROLE` to change the critical `freezeToRecipient` address. However, this function does not emit an event upon successful execution. This lack of an event makes it difficult to track changes to this address on-chain, impacting transparency and off-chain monitoring for users and auditors. (7.2 Code Security, 7.8 Operations)
 
 **Recommendation:** Emit an event, such as `FreezeToRecipientChanged(address indexed oldRecipient, address indexed newRecipient)`, whenever `freezeToRecipient` is updated. This enhances transparency and allows for easier monitoring of critical parameter changes.
 

@@ -2,14 +2,14 @@
 token: Bnb Tiger Inu
 ticker: BNBTIGER
 network: bsc
-risk_score: 32
+risk_score: 15
 status: low
 date: 2026-09-04
 ---
 
 # Bnb Tiger Inu (BNBTIGER) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 32/100 — 🟢 Low Risk**
+> **Risk Score: 15/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bnb-tiger-inu-bsc)
 
@@ -25,8 +25,8 @@ This audit covers the provided Solidity code snippets, primarily focusing on the
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The technical architecture leverages standard libraries like SafeMath and Address, which enhance code security by preventing common integer vulnerabilities. The `Ownable` contract implements a `lock`… |
-| **Governance / Economics** | 3/10 | High | The governance model, as defined by the `Ownable` contract, is highly centralized, with a single owner controlling all administrative functions. The `lock` mechanism, while intended to temporarily… |
+| **Technical** | 10/10 | Low | The technical architecture leverages standard libraries like SafeMath and Address, which enhance code security by preventing common integer vulnerabilities. The `Ownable` contract implements a `lock`… |
+| **Governance / Economics** | 4/10 | Medium | The governance model, as defined by the `Ownable` contract, is highly centralized, with a single owner controlling all administrative functions. The `lock` mechanism, while intended to temporarily… |
 | **Upgrades** | 7/10 | Low | The provided contract is not designed with an upgrade mechanism (7.7 Upgrades), meaning its logic cannot be modified after deployment. This eliminates upgrade-related risks such as proxy… |
 
 ## LP Distribution
@@ -38,25 +38,25 @@ This audit covers the provided Solidity code snippets, primarily focusing on the
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low_
-
-### `H-01` — Denial of Service via Ownable.lock()  *(Severity: High · Status: Unresolved)*
-
-The `lock()` function in the `Ownable` contract sets the `_owner` to `address(0)` for a specified duration. During this period, any function protected by the `onlyOwner` modifier will be inaccessible. If critical administrative functions (e.g., pausing transfers, adjusting fees, emergency withdrawals) rely on `onlyOwner` permissions, the protocol could experience a denial of service, preventing essential operations or responses to emergencies.
-
-**Recommendation:** Assess all owner-restricted functions in the main contract. If any are critical for ongoing operations or emergency responses, consider alternative access control mechanisms (e.g., time-locked multi-signature, governance vote) that remain functional during the lock period, or ensure the lock period is only applied when no critical owner actions are anticipated.
-
+_🟡 2 Medium · 🟢 1 Low_
 
 ### `M-01` — Single Point of Failure for Ownership Recovery  *(Severity: Medium · Status: Unresolved)*
 
-The `unlock()` function, which restores ownership after a `lock()` period, can only be called by the `_previousOwner` address. This creates a single point of failure. If the `_previousOwner` address is compromised, lost, or becomes inaccessible (e.g., if it's a contract that cannot initiate the call), the contract could remain permanently locked, or ownership could be transferred to an unauthorized entity after the lock period expires.
+Not confirmed by static analysis (the model's own reading of the source). The `unlock()` function, which restores ownership after a `lock()` period, can only be called by the `_previousOwner` address. This creates a single point of failure. If the `_previousOwner` address is compromised, lost, or becomes inaccessible (e.g., if it's a contract that cannot initiate the call), the contract could remain permanently locked, or ownership could be transferred to an unauthorized entity after the lock period expires.
 
 **Recommendation:** Implement a more robust ownership recovery mechanism. Consider using a multi-signature wallet for the `_previousOwner` or a time-locked recovery process that allows a community or a set of trusted parties to regain control, rather than relying on a single address.
 
 
+### `M-02` — Denial of Service via Ownable.lock()  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `lock()` function in the `Ownable` contract sets the `_owner` to `address(0)` for a specified duration. During this period, any function protected by the `onlyOwner` modifier will be inaccessible. If critical administrative functions (e.g., pausing transfers, adjusting fees, emergency withdrawals) rely on `onlyOwner` permissions, the protocol could experience a denial of service, preventing essential operations or responses to emergencies.
+
+**Recommendation:** Assess all owner-restricted functions in the main contract. If any are critical for ongoing operations or emergency responses, consider alternative access control mechanisms (e.g., time-locked multi-signature, governance vote) that remain functional during the lock period, or ensure the lock period is only applied when no critical owner actions are anticipated.
+
+
 ### `L-01` — Misleading Error Message in unlock()  *(Severity: Low · Status: Unresolved)*
 
-The `unlock()` function includes a revert message `"Contract is locked until 7 days"`. However, the actual lock duration (`_lockTime`) is dynamically set by the `time` parameter passed to the `lock()` function, not a fixed 7 days. This hardcoded message can be misleading to users regarding the actual remaining lock period.
+Not confirmed by static analysis (the model's own reading of the source). The `unlock()` function includes a revert message `"Contract is locked until 7 days"`. However, the actual lock duration (`_lockTime`) is dynamically set by the `time` parameter passed to the `lock()` function, not a fixed 7 days. This hardcoded message can be misleading to users regarding the actual remaining lock period.
 
 **Recommendation:** Update the error message to accurately reflect the dynamic nature of the lock time. For example, remove the specific '7 days' reference or dynamically include the actual unlock timestamp in the error message.
 

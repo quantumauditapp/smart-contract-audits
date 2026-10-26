@@ -2,14 +2,14 @@
 token: Bagwork
 ticker: BAGWORK
 network: solana
-risk_score: 19
+risk_score: 2
 status: low
 date: 2026-09-28
 ---
 
 # Bagwork (BAGWORK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 19/100 — 🟢 Low Risk**
+> **Risk Score: 2/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bagwork-sol)
 
@@ -26,8 +26,8 @@ The Bagwork SPL Token Mint presents a Medium risk profile, primarily due to its 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | This token is an SPL Token-2022 mint with key authorities revoked. The mint authority is revoked, preventing further token creation. The freeze authority is also revoked, meaning no accounts can be… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits moderate liquidity at $35,913 USD, but has a very new DEX pair, created only 2 days ago. The 24-hour volume is $314,682, resulting in a Volume/Liquidity Ratio of 8.76, indicating… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both permanently revoked, ensuring no further changes to supply or account freeze status. The metadata is immutable, preventing… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits moderate liquidity at $35,913 USD, but has a very new DEX pair, created only 2 days ago. The 24-hour volume is $314,682, resulting in a Volume/Liquidity Ratio of 8.76, indicating… |
+| **Upgrades** | 10/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both permanently revoked, ensuring no further changes to supply or account freeze status. The metadata is immutable, preventing… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1950 buys / 1848 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

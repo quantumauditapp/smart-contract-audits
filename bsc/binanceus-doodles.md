@@ -2,14 +2,14 @@
 token: binanceus doodles
 ticker: BOODLES
 network: bsc
-risk_score: 23
+risk_score: 0
 status: low
 date: 2026-08-15
 ---
 
 # binanceus doodles (BOODLES) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 23/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/binanceus-doodles-bsc)
 
@@ -25,9 +25,9 @@ This audit covers a partial implementation of an ERC-20 token contract, `FourERC
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract leverages OpenZeppelin's robust ERC-20 implementation, providing standard token functionalities like `transfer`, `approve`, and `allowance` (7.2 Code Security). The use of `unchecked`… |
-| **Governance / Economics** | 5/10 | Medium | The most significant economic risk stems from the explicitly stated absence of a token supply mechanism (e.g., `_mint` or `_burn`) within the `FourERC20` contract itself, deferring it to a derived… |
-| **Upgrades** | 9/10 | Low | The contract is explicitly marked as `is_proxy: false`, indicating it is not intended to be upgradeable in its current deployment (7.7 Upgrades). The use of an `_init` function, typically found in… |
+| **Technical** | 10/10 | Low | The contract leverages OpenZeppelin's robust ERC-20 implementation, providing standard token functionalities like `transfer`, `approve`, and `allowance` (7.2 Code Security). The use of `unchecked`… |
+| **Governance / Economics** | 6/10 | Medium | The most significant economic risk stems from the explicitly stated absence of a token supply mechanism (e.g., `_mint` or `_burn`) within the `FourERC20` contract itself, deferring it to a derived… |
+| **Upgrades** | 10/10 | Low | The contract is explicitly marked as `is_proxy: false`, indicating it is not intended to be upgradeable in its current deployment (7.7 Upgrades). The use of an `_init` function, typically found in… |
 
 ## LP Distribution
 
@@ -38,32 +38,32 @@ This audit covers a partial implementation of an ERC-20 token contract, `FourERC
 
 ## Security Findings
 
-_🔴 1 Critical · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `C-01` — Undefined Token Supply Mechanism  *(Severity: Critical · Status: Unresolved)*
-
-The `FourERC20` contract explicitly states that a supply mechanism (e.g., `_mint`) must be added in a derived contract. Without the full implementation of the derived contract, the total supply, minting, and burning capabilities of the token are unknown. This prevents a complete economic and security analysis of the token's fundamental properties, leaving it vulnerable to potential uncontrolled inflation or deflation if the derived contract's implementation is flawed or malicious (7.4 Economic).
-
-**Recommendation:** Provide the complete source code for the derived contract that implements the token supply mechanism. Ensure that minting and burning functions have robust access control (e.g., only callable by a trusted multisig or governance) and clear, auditable logic to prevent unauthorized supply manipulation.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Truncated Code Snippet for Critical Functions  *(Severity: Medium · Status: Unresolved)*
 
-The provided source code for the `_transfer` function, a core component of ERC-20 token movement, is truncated. This prevents a full and accurate security analysis of the token's transfer logic, including checks for zero addresses, sufficient balances, and potential reentrancy vectors if external calls were introduced (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the `_transfer` function, a core component of ERC-20 token movement, is truncated. This prevents a full and accurate security analysis of the token's transfer logic, including checks for zero addresses, sufficient balances, and potential reentrancy vectors if external calls were introduced (7.2 Code Security).
 
 **Recommendation:** Provide the complete and untruncated source code for all contracts, especially critical internal functions like `_transfer`, to enable a thorough security audit.
 
 
+### `M-02` — Undefined Token Supply Mechanism  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract explicitly states that a supply mechanism (e.g., `_mint`) must be added in a derived contract. Without the full implementation of the derived contract, the total supply, minting, and burning capabilities of the token are unknown. This prevents a complete economic and security analysis of the token's fundamental properties, leaving it vulnerable to potential uncontrolled inflation or deflation if the derived contract's implementation is flawed or malicious (7.4 Economic).
+
+**Recommendation:** Provide the complete source code for the derived contract that implements the token supply mechanism. Ensure that minting and burning functions have robust access control (e.g., only callable by a trusted multisig or governance) and clear, auditable logic to prevent unauthorized supply manipulation.
+
+
 ### `L-01` — Lack of Emergency Pausing Mechanism  *(Severity: Low · Status: Unresolved)*
 
-The `FourERC20` contract does not include a mechanism to pause token transfers or other critical operations. In the event of a critical vulnerability, exploit, or market manipulation, the absence of a pausing mechanism could lead to irreversible damage or loss of funds (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract does not include a mechanism to pause token transfers or other critical operations. In the event of a critical vulnerability, exploit, or market manipulation, the absence of a pausing mechanism could lead to irreversible damage or loss of funds (7.8 Operations).
 
 **Recommendation:** Consider integrating OpenZeppelin's `Pausable` module or a similar custom pausing mechanism. This would allow a designated role (e.g., an owner or multisig) to temporarily halt critical functions during emergencies, providing time to address issues.
 
 
 ### `I-01` — `_init` Function in Non-Proxy Context  *(Severity: Informational · Status: Unresolved)*
 
-The contract utilizes an `_init` function for setting `_name` and `_symbol`, which is a common pattern in upgradeable proxy contracts for initialization after deployment. However, the contract is marked as `is_proxy: false`. While the `_init` function is `internal` in the provided snippet, if this contract were later used as an implementation contract for a proxy without an `initializer` modifier, it could lead to reinitialization vulnerabilities (7.7 Upgrades).
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes an `_init` function for setting `_name` and `_symbol`, which is a common pattern in upgradeable proxy contracts for initialization after deployment. However, the contract is marked as `is_proxy: false`. While the `_init` function is `internal` in the provided snippet, if this contract were later used as an implementation contract for a proxy without an `initializer` modifier, it could lead to reinitialization vulnerabilities (7.7 Upgrades).
 
 **Recommendation:** If this contract is not intended for use as an upgradeable proxy implementation, ensure that any constructor or external function calling `_init` is properly secured. If it is intended for proxy use, ensure the `_init` function is protected by an `initializer` modifier to prevent multiple calls.
 

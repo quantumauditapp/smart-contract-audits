@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Standard ERC-20 `approve` Front-Running Risk (Mitigated)  *(Severity: Low · Status: Unresolved)*
 
-The standard ERC-20 `approve` function is susceptible to a front-running attack where an attacker can sandwich a user's `approve` transaction to steal tokens. If a user approves an amount, then approves a different amount, an attacker can front-run the second approval, transfer the original approved amount, and then allow the second approval to go through, effectively getting two transfers for one approval. This contract provides `increaseAllowance` and `decreaseAllowance` functions which mitigate this risk by allowing atomic adjustments to allowances.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC-20 `approve` function is susceptible to a front-running attack where an attacker can sandwich a user's `approve` transaction to steal tokens. If a user approves an amount, then approves a different amount, an attacker can front-run the second approval, transfer the original approved amount, and then allow the second approval to go through, effectively getting two transfers for one approval. This contract provides `increaseAllowance` and `decreaseAllowance` functions which mitigate this risk by allowing atomic adjustments to allowances.
 
 **Recommendation:** Educate users to prefer `increaseAllowance` and `decreaseAllowance` over directly calling `approve` when adjusting existing allowances. If `approve` must be used to change an existing allowance, users should first set the allowance to zero and wait for that transaction to confirm before setting the new allowance.
 
 
 ### `I-01` — Base Contract Requires Extension for Supply Management  *(Severity: Informational · Status: Unresolved)*
 
-The `FourERC20` contract provides the core ERC-20 logic but does not include public functions for minting or burning tokens. These functionalities are exposed only via internal `_mint` and `_burn` functions. This design choice means that a derived contract must be implemented to provide the actual supply mechanism (e.g., a minter role, a fixed supply, or a burn function).
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract provides the core ERC-20 logic but does not include public functions for minting or burning tokens. These functionalities are exposed only via internal `_mint` and `_burn` functions. This design choice means that a derived contract must be implemented to provide the actual supply mechanism (e.g., a minter role, a fixed supply, or a burn function).
 
 **Recommendation:** This is an intentional design pattern for a base ERC-20 implementation. Ensure that any contract inheriting from `FourERC20` implements its supply management (minting/burning) functions with appropriate access control and economic considerations.
 
 
 ### `I-02` — Potential Re-initialization if Used as Proxy Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The `_init` function is used to set `_name` and `_symbol`. While this contract is not explicitly a proxy implementation, if it were to be used as one in the future without proper initializer safeguards (e.g., an `initializer` modifier or an `_initialized` flag), the `_init` function could be called multiple times by malicious actors, potentially altering the token's name and symbol.
+Not confirmed by static analysis (the model's own reading of the source). The `_init` function is used to set `_name` and `_symbol`. While this contract is not explicitly a proxy implementation, if it were to be used as one in the future without proper initializer safeguards (e.g., an `initializer` modifier or an `_initialized` flag), the `_init` function could be called multiple times by malicious actors, potentially altering the token's name and symbol.
 
 **Recommendation:** If this contract is ever intended to be used as an implementation contract for an upgradeable proxy, ensure that the `_init` function is protected by an `initializer` modifier (e.g., from OpenZeppelin's `Initializable` contract) to prevent multiple invocations and re-initialization attacks.
 

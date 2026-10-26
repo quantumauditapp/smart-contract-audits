@@ -2,14 +2,14 @@
 token: Aura Final Boss
 ticker: KIMCHI
 network: solana
-risk_score: 41
-status: medium
+risk_score: 19
+status: low
 date: 2026-08-15
 ---
 
 # Aura Final Boss (KIMCHI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 19/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/aura-final-boss-sol)
 
@@ -25,9 +25,9 @@ This audit of the Aura Final Boss (Kimchi) SPL Token Mint identifies a High risk
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Aura Final Boss (Kimchi) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token issuance or account… |
-| **Governance / Economics** | 2/10 | High | A significant economic risk is present due to high holder concentration, with the top 10 token accounts holding 80.32% of the total supply. This concentration makes the token highly susceptible to… |
-| **Upgrades** | 8/10 | Low | The token exhibits a high degree of immutability regarding its core functions. Both the mint and freeze authorities are revoked, meaning no new tokens can be minted and no accounts can be frozen.… |
+| **Technical** | 10/10 | Low | The Aura Final Boss (Kimchi) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token issuance or account… |
+| **Governance / Economics** | 6/10 | Medium | A significant economic risk is present due to high holder concentration, with the top 10 token accounts holding 80.32% of the total supply. This concentration makes the token highly susceptible to… |
+| **Upgrades** | 10/10 | Low | The token exhibits a high degree of immutability regarding its core functions. Both the mint and freeze authorities are revoked, meaning no new tokens can be minted and no accounts can be frozen.… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ Top 10 token accounts hold 80.32% of supply. Coordinated sell-off would crash pr
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6245 buys / 5425 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Top 10 token accounts hold 80.32% of supply. Coordinated sell-off would crash pr
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

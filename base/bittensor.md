@@ -25,9 +25,9 @@ The BurnMintERC20 contract implements an ERC-20 token with minting and burning c
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates good code security practices (7.2 Code Security) by utilizing OpenZeppelin's battle-tested libraries, employing Solidity 0.8+ for overflow safety, and using custom errors.… |
-| **Governance / Economics** | 1/10 | High | The contract implements a basic governance structure (7.5 Governance) through OpenZeppelin's AccessControl, with a `DEFAULT_ADMIN_ROLE` capable of managing the `s_ccipAdmin` address. Economic… |
-| **Upgrades** | 2/10 | High | This contract is not designed to be upgradeable (7.7 Upgrades), meaning its logic is immutable once deployed. This eliminates risks associated with proxy patterns, upgradeability proxies, and… |
+| **Technical** | 8/10 | Low | The contract demonstrates good code security practices (7.2 Code Security) by utilizing OpenZeppelin's battle-tested libraries, employing Solidity 0.8+ for overflow safety, and using custom errors.… |
+| **Governance / Economics** | 2/10 | High | The contract implements a basic governance structure (7.5 Governance) through OpenZeppelin's AccessControl, with a `DEFAULT_ADMIN_ROLE` capable of managing the `s_ccipAdmin` address. Economic… |
+| **Upgrades** | 3/10 | High | This contract is not designed to be upgradeable (7.7 Upgrades), meaning its logic is immutable once deployed. This eliminates risks associated with proxy patterns, upgradeability proxies, and… |
 
 ## LP Distribution
 
@@ -38,11 +38,11 @@ The BurnMintERC20 contract implements an ERC-20 token with minting and burning c
 
 ## Security Findings
 
-_🔴 1 Critical_
+_🟡 1 Medium_
 
-### `C-01` — Unrestricted `grantMintAndBurnRoles` Function  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Unrestricted `grantMintAndBurnRoles` Function  *(Severity: Medium · Status: Unresolved)*
 
-The `grantMintAndBurnRoles` function lacks any access control, allowing any external caller to grant `MINTER_ROLE` and `BURNER_ROLE` to any address, including themselves. This enables unauthorized minting of new tokens (potentially bypassing `maxSupply` if `MINTER_ROLE` is granted) and burning of existing tokens, leading to complete compromise of the token's supply and value. This directly impacts 7.3 Access Control, 7.4 Economic, and 7.8 Operations.
+Not confirmed by static analysis (the model's own reading of the source). The `grantMintAndBurnRoles` function lacks any access control, allowing any external caller to grant `MINTER_ROLE` and `BURNER_ROLE` to any address, including themselves. This enables unauthorized minting of new tokens (potentially bypassing `maxSupply` if `MINTER_ROLE` is granted) and burning of existing tokens, leading to complete compromise of the token's supply and value. This directly impacts 7.3 Access Control, 7.4 Economic, and 7.8 Operations.
 
 **Recommendation:** Implement robust access control for the `grantMintAndBurnRoles` function. It should be restricted to addresses holding the `DEFAULT_ADMIN_ROLE` or a specifically designated administrative role. For example, add `onlyRole(DEFAULT_ADMIN_ROLE)` to the function signature: `function grantMintAndBurnRoles(address burnAndMinter) external onlyRole(DEFAULT_ADMIN_ROLE)`.
 

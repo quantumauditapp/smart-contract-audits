@@ -2,14 +2,14 @@
 token: Autonomi
 ticker: ANT
 network: arbitrum
-risk_score: 49
+risk_score: 44
 status: medium
 date: 2026-07-24
 ---
 
 # Autonomi (ANT) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 49/100 — 🟡 Medium Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/autonomi-arb)
 
@@ -42,21 +42,21 @@ _🟡 1 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Centralized Initial Token Distribution  *(Severity: Medium · Status: Unresolved)*
 
-The contract's constructor mints the entire initial supply of 1.2 billion tokens to a single `autonomi` address. This design choice results in a highly centralized token distribution at deployment, giving the controlling entity significant influence over governance (via ERC20Votes) and potential economic power (7.4 Economic, 7.5 Governance). A compromise of this single address could have severe consequences for the protocol.
+Not confirmed by static analysis (the model's own reading of the source). The contract's constructor mints the entire initial supply of 1.2 billion tokens to a single `autonomi` address. This design choice results in a highly centralized token distribution at deployment, giving the controlling entity significant influence over governance (via ERC20Votes) and potential economic power (7.4 Economic, 7.5 Governance). A compromise of this single address could have severe consequences for the protocol.
 
 **Recommendation:** Implement robust security measures for the `autonomi` address, such as a multi-signature wallet (e.g., Gnosis Safe) with a diverse set of signers. Consider a strategy for progressive decentralization of the token supply over time, distributing tokens to various stakeholders or a community treasury to reduce single-point-of-failure risks.
 
 
 ### `I-01` — Lack of Emergency Pause Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The AutonomiNetworkToken contract does not include an emergency pause mechanism. While this is common for simple ERC20 tokens and reduces complexity, it means that in the event of a critical vulnerability or exploit in an integrated system, token transfers cannot be halted (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The AutonomiNetworkToken contract does not include an emergency pause mechanism. While this is common for simple ERC20 tokens and reduces complexity, it means that in the event of a critical vulnerability or exploit in an integrated system, token transfers cannot be halted (7.8 Operations).
 
 **Recommendation:** Evaluate whether an emergency pause functionality is necessary for the broader Autonomi Network ecosystem. If deemed critical for future integrations or potential risks, consider wrapping this token with a pausable contract or implementing a governance-controlled pause in a future version or related contract.
 
 
 ### `I-02` — Potential Front-running of ERC20Permit  *(Severity: Informational · Status: Unresolved)*
 
-The ERC20Permit functionality allows users to sign off-chain approvals. While correctly implemented using OpenZeppelin's battle-tested code, the nature of `permit` transactions means they can be susceptible to front-running (7.2 Code Security). A malicious actor could observe a pending `permit` transaction and submit their own transaction with a higher gas price to execute the `permit` call before the legitimate user, potentially manipulating the order of operations.
+Not confirmed by static analysis (the model's own reading of the source). The ERC20Permit functionality allows users to sign off-chain approvals. While correctly implemented using OpenZeppelin's battle-tested code, the nature of `permit` transactions means they can be susceptible to front-running (7.2 Code Security). A malicious actor could observe a pending `permit` transaction and submit their own transaction with a higher gas price to execute the `permit` call before the legitimate user, potentially manipulating the order of operations.
 
 **Recommendation:** Users should be aware of the potential for front-running when using `permit` signatures. Off-chain systems integrating `permit` should implement mechanisms to mitigate front-running, such as using transaction relays that can submit transactions privately or with appropriate timing, or by educating users on best practices for submitting signed messages.
 
@@ -99,11 +99,11 @@ The ERC20Permit functionality allows users to sign off-chain approvals. While co
 
 ### Is Autonomi a scam?
 
-Based on automated analysis, Autonomi scores 67/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Autonomi scores 44/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Autonomi safe to buy?
 
-Our scanner flagged a risk score of 67/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 44/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Autonomi been audited?
 

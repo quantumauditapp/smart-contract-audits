@@ -94,7 +94,7 @@ Backpack (BP) shows critical risk factors. The contract is unverified, lacking t
 
 ### Is Backpack safe to buy?
 
-No, Backpack (BP) is not safe to buy, indicated by its High Risk score of 58/100. Core issues include its unverified contract, which lacks transparency for investors. A critical 99.0% of the supply is controlled by the top 10 holders, posing extreme centralization risk. Crucially, liquidity is not locked, meaning it can be withdrawn. These factors make it highly speculative and risky.
+No, Backpack (BP) is not safe to buy, indicated by its High Risk score of 75/100. Core issues include its unverified contract, which lacks transparency for investors. A critical 99.0% of the supply is controlled by the top 10 holders, posing extreme centralization risk. Crucially, liquidity is not locked, meaning it can be withdrawn. These factors make it highly speculative and risky.
 
 ### Has Backpack been audited?
 

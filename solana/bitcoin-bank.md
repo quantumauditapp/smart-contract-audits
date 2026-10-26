@@ -2,14 +2,14 @@
 token: Bitcoin Bank
 ticker: BTCBANK
 network: solana
-risk_score: 36
-status: medium
+risk_score: 24
+status: low
 date: 2026-06-10
 ---
 
 # Bitcoin Bank (BTCBANK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 24/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bitcoin-bank-sol)
 
@@ -25,9 +25,9 @@ The Bitcoin Bank (BTCBANK) SPL Token Mint exhibits a robust configuration with b
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Bitcoin Bank (BTCBANK) token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the mint authority and freeze authority have been revoked, preventing… |
-| **Governance / Economics** | 2/10 | High | DEX liquidity for BTCBANK is $16,198, which is above the very low liquidity threshold. The 24-hour volume of $12,983 results in a normal Volume/Liquidity Ratio of 0.80, not indicating wash trading.… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are permanently revoked, ensuring no future changes to supply or account freeze status. The token utilizes the spl-token-2022 program but does not have a… |
+| **Technical** | 10/10 | Low | The Bitcoin Bank (BTCBANK) token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the mint authority and freeze authority have been revoked, preventing… |
+| **Governance / Economics** | 5/10 | Medium | DEX liquidity for BTCBANK is $16,198, which is above the very low liquidity threshold. The 24-hour volume of $12,983 results in a normal Volume/Liquidity Ratio of 0.80, not indicating wash trading.… |
+| **Upgrades** | 10/10 | Low | The token's mint and freeze authorities are permanently revoked, ensuring no future changes to supply or account freeze status. The token utilizes the spl-token-2022 program but does not have a… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2817 buys / 1914 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
@@ -80,7 +80,7 @@ Based on the available data, Bitcoin Bank (BTCBANK) exhibits several high-risk c
 
 ### Is Bitcoin Bank safe to buy?
 
-Given its high-risk score of 70/100, Bitcoin Bank (BTCBANK) is not considered safe for investment. Key risk factors include an unverified contract, unrenounced ownership, and unlocked liquidity. These conditions expose investors to significant vulnerabilities such as potential contract manipulation, token supply inflation, and the complete withdrawal of liquidity, leading to substantial financial loss.
+Given its low-risk score of 24/100, Bitcoin Bank (BTCBANK) is not considered safe for investment. Key risk factors include an unverified contract, unrenounced ownership, and unlocked liquidity. These conditions expose investors to significant vulnerabilities such as potential contract manipulation, token supply inflation, and the complete withdrawal of liquidity, leading to substantial financial loss.
 
 ### Has Bitcoin Bank been audited?
 

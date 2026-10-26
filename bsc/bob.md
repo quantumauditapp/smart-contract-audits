@@ -2,14 +2,14 @@
 token: BOB
 ticker: BOB
 network: bsc
-risk_score: 72
+risk_score: 69
 status: high
 date: 2026-08-31
 ---
 
 # BOB (BOB) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 72/100 — 🟠 High Risk**
+> **Risk Score: 69/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bob-bsc)
 
@@ -26,7 +26,7 @@ The BobToken contract is an upgradeable ERC-20 token utilizing OpenZeppelin's UU
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract leverages well-vetted OpenZeppelin upgradeable libraries for its ERC-20, burnable, permit, and access control functionalities (7.2 Code Security). The architecture is standard for an… |
-| **Governance / Economics** | 2/10 | High | The economic model includes a fixed maximum supply (`i_maxSupply`) for the token, which provides predictability but limits flexibility without an upgrade (7.4 Economic). Governance relies on… |
+| **Governance / Economics** | 3/10 | High | The economic model includes a fixed maximum supply (`i_maxSupply`) for the token, which provides predictability but limits flexibility without an upgrade (7.4 Economic). Governance relies on… |
 | **Upgrades** | 1/10 | High | The contract correctly implements the UUPS upgradeability pattern using OpenZeppelin's `UUPSUpgradeable` (7.7 Upgrades). The `_authorizeUpgrade` function is restricted to `onlyOwner`, ensuring that… |
 
 ## Proxy Upgrade Controls
@@ -45,32 +45,32 @@ The BobToken contract is an upgradeable ERC-20 token utilizing OpenZeppelin's UU
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Broken Role Management Functions (`grantMintAndBurnRoles`, `revokeMintAndBurnRoles`)  *(Severity: High · Status: Unresolved)*
-
-The `grantMintAndBurnRoles` and `revokeMintAndBurnRoles` functions are intended to manage `MINTER_ROLE` and `BURNER_ROLE`. However, they lack explicit access control (e.g., `onlyRole(DEFAULT_ADMIN_ROLE)`). When these functions are called, they internally invoke `grantRole` or `revokeRole`. Since `grantRole` and `revokeRole` are protected by `onlyRole(getRoleAdmin(role))`, and the `msg.sender` for the internal call is the contract itself (`address(this)`), which does not hold `DEFAULT_ADMIN_ROLE`, these functions will always revert. This renders the custom role management functions unusable, requiring `DEFAULT_ADMIN_ROLE` holders to directly interact with `AccessControlUpgradeable`'s `grantR…
-
-**Recommendation:** Add `onlyRole(DEFAULT_ADMIN_ROLE)` to both `grantMintAndBurnRoles` and `revokeMintAndBurnRoles` functions. This will ensure that only authorized administrators can call these functions, and the internal calls to `grantRole`/`revokeRole` will then be correctly executed with the `msg.sender` being the authorized administrator.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralized Control over Minting/Burning and CCIP Admin  *(Severity: Medium · Status: Unresolved)*
 
-The `DEFAULT_ADMIN_ROLE` holds significant power within the contract. This role can grant/revoke `MINTER_ROLE` and `BURNER_ROLE`, effectively controlling the token's supply dynamics (up to `i_maxSupply`), and can also set the `s_ccipAdmin` address. While the `initialOwner` (assigned `DEFAULT_ADMIN_ROLE`) is a multisig, this still represents a single point of control for these critical functions. A compromise of the multisig could lead to unauthorized token inflation or manipulation of the CCIP admin address.
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` holds significant power within the contract. This role can grant/revoke `MINTER_ROLE` and `BURNER_ROLE`, effectively controlling the token's supply dynamics (up to `i_maxSupply`), and can also set the `s_ccipAdmin` address. While the `initialOwner` (assigned `DEFAULT_ADMIN_ROLE`) is a multisig, this still represents a single point of control for these critical functions. A compromise of the multisig could lead to unauthorized token inflation or manipulation of the CCIP admin address.
 
 **Recommendation:** Consider implementing further decentralization or introducing a timelock mechanism for critical operations such as granting/revoking `MINTER_ROLE` or `BURNER_ROLE`, or changing the `s_ccipAdmin`. This would provide a delay for users to react to malicious actions and reduce the immediate impact of a multisig compromise.
 
 
+### `M-02` — Broken Role Management Functions (`grantMintAndBurnRoles`, `revokeMintAndBurnRoles`)  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `grantMintAndBurnRoles` and `revokeMintAndBurnRoles` functions are intended to manage `MINTER_ROLE` and `BURNER_ROLE`. However, they lack explicit access control (e.g., `onlyRole(DEFAULT_ADMIN_ROLE)`). When these functions are called, they internally invoke `grantRole` or `revokeRole`. Since `grantRole` and `revokeRole` are protected by `onlyRole(getRoleAdmin(role))`, and the `msg.sender` for the internal call is the contract itself (`address(this)`), which does not hold `DEFAULT_ADMIN_ROLE`, these functions will always revert. This renders the custom role management functions unusable, requiring `DEFAULT_ADMIN_ROL
+
+**Recommendation:** Add `onlyRole(DEFAULT_ADMIN_ROLE)` to both `grantMintAndBurnRoles` and `revokeMintAndBurnRoles` functions. This will ensure that only authorized administrators can call these functions, and the internal calls to `grantRole`/`revokeRole` will then be correctly executed with the `msg.sender` being the authorized administrator.
+
+
 ### `L-01` — Fixed Max Supply Value  *(Severity: Low · Status: Unresolved)*
 
-The `i_maxSupply` is hardcoded in the `initialize` function to `10,000,000,000 * 10**decimals()`. While this provides a clear and immutable supply cap, it means the maximum supply cannot be adjusted without a contract upgrade. If future protocol needs or market conditions require a different supply cap, an upgrade would be necessary, which might not always be desirable or feasible.
+Not confirmed by static analysis (the model's own reading of the source). The `i_maxSupply` is hardcoded in the `initialize` function to `10,000,000,000 * 10**decimals()`. While this provides a clear and immutable supply cap, it means the maximum supply cannot be adjusted without a contract upgrade. If future protocol needs or market conditions require a different supply cap, an upgrade would be necessary, which might not always be desirable or feasible.
 
 **Recommendation:** If flexibility in the maximum supply is desired, consider making `i_maxSupply` configurable by a privileged role (e.g., `DEFAULT_ADMIN_ROLE`) or through a governance mechanism. If the intention is for the maximum supply to be permanently fixed, no change is strictly necessary, but this design choice should be explicitly documented.
 
 
 ### `I-01` — External `useNonce` Function Exposure  *(Severity: Informational · Status: Unresolved)*
 
-The `useNonce()` function is an external wrapper around `_useNonce(msg.sender)`. While it doesn't pose a direct vulnerability, `_useNonce` is typically an internal function used by `ERC20Permit`'s `_permit` and `_approve` functions to prevent replay attacks. Exposing this internal mechanism directly via an external function might lead to confusion or unintended usage if its purpose is not clearly understood or documented.
+Not confirmed by static analysis (the model's own reading of the source). The `useNonce()` function is an external wrapper around `_useNonce(msg.sender)`. While it doesn't pose a direct vulnerability, `_useNonce` is typically an internal function used by `ERC20Permit`'s `_permit` and `_approve` functions to prevent replay attacks. Exposing this internal mechanism directly via an external function might lead to confusion or unintended usage if its purpose is not clearly understood or documented.
 
 **Recommendation:** Review if the `useNonce()` function is truly necessary for external calls. If its functionality is only required internally by the `ERC20Permit` mechanism, consider removing the external wrapper. If it serves a specific external purpose, ensure its functionality and intended use cases are thoroughly documented.
 

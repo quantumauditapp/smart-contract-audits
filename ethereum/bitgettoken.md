@@ -2,14 +2,14 @@
 token: BitgetToken
 ticker: BGB
 network: ethereum
-risk_score: 54
+risk_score: 44
 status: medium
 date: 2026-09-27
 ---
 
 # BitgetToken (BGB) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 54/100 — 🟡 Medium Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bitgettoken-eth)
 
@@ -38,25 +38,25 @@ The BitgetToken contract is a standard ERC20 token implementation, inheriting fr
 
 ## Security Findings
 
-_🟠 1 High · ⚪ 2 Informational_
+_🟡 1 Medium · ⚪ 2 Informational_
 
-### `H-01` — Centralization of Token Supply to a Single Address  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralization of Token Supply to a Single Address  *(Severity: Medium · Status: Unresolved)*
 
-The `BitgetToken` contract's constructor mints the entire `totalSupply` (2e9 * 1e18 tokens) to a single `vault` address. This design choice centralizes control over the entire token supply to this one address. If the `vault` address is compromised (e.g., private key theft) or mismanaged, the entire token supply could be at risk of loss or unauthorized movement, posing a significant economic and operational risk to the project and its users.
+Not confirmed by static analysis (the model's own reading of the source). The `BitgetToken` contract's constructor mints the entire `totalSupply` (2e9 * 1e18 tokens) to a single `vault` address. This design choice centralizes control over the entire token supply to this one address. If the `vault` address is compromised (e.g., private key theft) or mismanaged, the entire token supply could be at risk of loss or unauthorized movement, posing a significant economic and operational risk to the project and its users.
 
 **Recommendation:** Implement robust security measures for the `vault` address. This should include, at a minimum, a multi-signature wallet with a sufficient number of signers. For enhanced security and transparency, consider integrating a timelock contract to introduce a delay for critical operations, allowing time for review and potential intervention. Explore options for gradual distribution or vesting schedules if the intention is to release tokens over time, rather than holding the entire supply in one hot wa…
 
 
 ### `I-01` — Lack of Advanced Token Features  *(Severity: Informational · Status: Unresolved)*
 
-The `BitgetToken` contract is a basic ERC20 implementation, inheriting directly from OpenZeppelin's standard `ERC20` contract. It does not include additional features commonly found in more complex token designs, such as pausing transfers (`ERC20Pausable`), blacklisting malicious addresses, or role-based access control (`AccessControl`) for specific functions (e.g., minting/burning beyond the initial supply). While this simplicity reduces attack surface, it also limits operational flexibility.
+Not confirmed by static analysis (the model's own reading of the source). The `BitgetToken` contract is a basic ERC20 implementation, inheriting directly from OpenZeppelin's standard `ERC20` contract. It does not include additional features commonly found in more complex token designs, such as pausing transfers (`ERC20Pausable`), blacklisting malicious addresses, or role-based access control (`AccessControl`) for specific functions (e.g., minting/burning beyond the initial supply). While this simplicity reduces attack surface, it also limits operational flexibility.
 
 **Recommendation:** Evaluate if these advanced features are necessary for the project's long-term vision, regulatory compliance, or operational needs. If features like pausing or blacklisting are deemed important for emergency situations or mitigating specific risks, consider extending the ERC20 contract with appropriate OpenZeppelin modules or custom implementations in future iterations. Acknowledge that adding such features also introduces additional complexity and potential attack vectors.
 
 
 ### `I-02` — Non-Upgradeable Contract Design  *(Severity: Informational · Status: Unresolved)*
 
-The `BitgetToken` contract is deployed as a standard, non-upgradeable contract. This means that once deployed, its code cannot be modified. Any future bug fixes, feature enhancements, or changes to the token's logic would necessitate deploying a new contract and migrating existing token holders. This process can be complex, costly, and disruptive for the community.
+Not confirmed by static analysis (the model's own reading of the source). The `BitgetToken` contract is deployed as a standard, non-upgradeable contract. This means that once deployed, its code cannot be modified. Any future bug fixes, feature enhancements, or changes to the token's logic would necessitate deploying a new contract and migrating existing token holders. This process can be complex, costly, and disruptive for the community.
 
 **Recommendation:** Acknowledge the implications of non-upgradeability. For a simple, immutable token, this can be a desired feature. However, if future flexibility or the ability to fix potential bugs post-deployment is critical, consider implementing an upgradeable proxy pattern (e.g., UUPS or Transparent Proxy) for future deployments. Note that upgradeability introduces its own set of complexities and security considerations that would require careful design and auditing.
 

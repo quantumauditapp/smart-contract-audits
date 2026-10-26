@@ -2,14 +2,14 @@
 token: BIDit
 ticker: BID
 network: solana
-risk_score: 50
-status: medium
+risk_score: 33
+status: low
 date: 2026-08-12
 ---
 
 # BIDit (BID) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bidit-sol)
 
@@ -25,9 +25,9 @@ The BIDit token mint demonstrates strong foundational security with both mint an
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The BIDit token is an SPL Token-2022 mint with a fixed supply of 984,131,845.217859 tokens (6 decimals), as the mint authority has been revoked. The freeze authority is also revoked, preventing any… |
-| **Governance / Economics** | 1/10 | High | The token's DEX pair is very new, having been created only 4 days ago, which limits the ability to assess long-term market dynamics. Total DEX liquidity stands at $23,520, with a 24-hour volume of… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the BIDit token have both been revoked, meaning the token's supply is fixed and no accounts can be frozen. The token does not utilize any Token-2022… |
+| **Technical** | 10/10 | Low | The BIDit token is an SPL Token-2022 mint with a fixed supply of 984,131,845.217859 tokens (6 decimals), as the mint authority has been revoked. The freeze authority is also revoked, preventing any… |
+| **Governance / Economics** | 2/10 | High | The token's DEX pair is very new, having been created only 4 days ago, which limits the ability to assess long-term market dynamics. Total DEX liquidity stands at $23,520, with a 24-hour volume of… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority for the BIDit token have both been revoked, meaning the token's supply is fixed and no accounts can be frozen. The token does not utilize any Token-2022… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 4 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 349 buys / 391 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 4 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

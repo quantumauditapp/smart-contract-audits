@@ -120,7 +120,7 @@ Not confirmed by static analysis (the model's own reading of the source). The `d
 
 ### Is BankrCoin a scam?
 
-BankrCoin's status is not indicative of an outright scam based on available data. Its contract is verified, ownership is renounced, and no mint function exists, which are strong positive indicators against common scam tactics like malicious code or supply inflation. While liquidity is not locked, posing a risk, the low overall risk score of 18/100 suggests a generally positive security evaluation.
+BankrCoin's status is not indicative of an outright scam based on available data. Its contract is verified, ownership is renounced, and no mint function exists, which are strong positive indicators against common scam tactics like malicious code or supply inflation. While liquidity is not locked, posing a risk, the low overall risk score of 4/100 suggests a generally positive security evaluation.
 
 ### Is BankrCoin safe to buy?
 

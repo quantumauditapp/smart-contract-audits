@@ -2,14 +2,14 @@
 token: Avantis
 ticker: AVNT
 network: base
-risk_score: 49
-status: medium
+risk_score: 24
+status: low
 date: 2026-07-27
 ---
 
 # Avantis (AVNT) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 49/100 — 🟡 Medium Risk**
+> **Risk Score: 24/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/avantis-base)
 
@@ -25,8 +25,8 @@ The audit focused on the Token contract, an ERC20 token with blacklisting and cr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract (7.1 Architecture) is a standard ERC20 implementation enhanced with blacklisting and cross-chain functionality. It leverages OpenZeppelin's well-audited contracts (ERC20, Ownable2Step)… |
-| **Governance / Economics** | 2/10 | High | The contract exhibits significant centralization (7.3 Access Control) through the `onlyOwner` modifier for the `blacklistUpdate` function, granting the owner the power to freeze funds or prevent… |
+| **Technical** | 10/10 | Low | The contract (7.1 Architecture) is a standard ERC20 implementation enhanced with blacklisting and cross-chain functionality. It leverages OpenZeppelin's well-audited contracts (ERC20, Ownable2Step)… |
+| **Governance / Economics** | 4/10 | Medium | The contract exhibits significant centralization (7.3 Access Control) through the `onlyOwner` modifier for the `blacklistUpdate` function, granting the owner the power to freeze funds or prevent… |
 | **Upgrades** | 7/10 | Low | The contract is not designed with an upgrade mechanism (7.7 Upgrades). This means that any future bug fixes, feature enhancements, or changes to critical dependencies (like the… |
 
 ## LP Distribution
@@ -38,39 +38,39 @@ The audit focused on the Token contract, an ERC20 token with blacklisting and cr
 
 ## Security Findings
 
-_🟠 2 High · 🟡 1 Medium · ⚪ 2 Informational_
-
-### `H-01` — Centralized Blacklisting Power  *(Severity: High · Status: Unresolved)*
-
-The `blacklistUpdate` function, protected by `onlyOwner`, allows the contract owner to blacklist any address. This grants significant centralized control, enabling the owner to prevent transfers to or from specific users, effectively freezing their tokens or preventing participation. While the owner is a multisig (3/6), a compromise of the multisig could lead to severe disruption and loss of user access to funds.
-
-**Recommendation:** Ensure the multisig controlling the owner address is secured with the highest operational and key management standards. Implement robust internal procedures and controls for the use of the blacklisting function. Consider adding a timelock for critical owner actions like blacklisting to provide a window for detection and reaction.
-
-
-### `H-02` — Critical Dependency on SuperchainTokenBridge  *(Severity: High · Status: Unresolved)*
-
-The `crosschainMint` and `crosschainBurn` functions are exclusively callable by the `SUPERCHAIN_TOKEN_BRIDGE` address. This makes the token's supply and cross-chain functionality critically dependent on the security and integrity of this external bridge contract. A vulnerability or compromise in the `SUPERCHAIN_TOKEN_BRIDGE` could lead to unauthorized minting of tokens (inflation) or burning of user funds (deflation), severely impacting the token's economic stability.
-
-**Recommendation:** Thoroughly audit and continuously monitor the security of the `SUPERCHAIN_TOKEN_BRIDGE` contract. Implement robust monitoring systems to detect unusual activity related to cross-chain minting/burning. Consider a mechanism to pause cross-chain operations in an emergency, if feasible within the bridge's design.
-
+_🟡 3 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Potential for User Fund Freezing via Blacklist  *(Severity: Medium · Status: Unresolved)*
 
-The blacklisting mechanism, while an intended feature, inherently carries the risk of freezing user funds. If an address holding tokens is blacklisted, those tokens become untransferable. This could occur due to an error, a malicious act by a compromised owner, or a policy decision, leading to a loss of access for affected users.
+Not confirmed by static analysis (the model's own reading of the source). The blacklisting mechanism, while an intended feature, inherently carries the risk of freezing user funds. If an address holding tokens is blacklisted, those tokens become untransferable. This could occur due to an error, a malicious act by a compromised owner, or a policy decision, leading to a loss of access for affected users.
 
 **Recommendation:** Clearly communicate the blacklisting policy and its implications to all users. Establish a transparent process for blacklisting decisions and potential appeals. Consider implementing a 'grace period' or notification system before an address is fully blacklisted, if appropriate for the project's risk model.
 
 
+### `M-02` — Centralized Blacklisting Power  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `blacklistUpdate` function, protected by `onlyOwner`, allows the contract owner to blacklist any address. This grants significant centralized control, enabling the owner to prevent transfers to or from specific users, effectively freezing their tokens or preventing participation. While the owner is a multisig (3/6), a compromise of the multisig could lead to severe disruption and loss of user access to funds.
+
+**Recommendation:** Ensure the multisig controlling the owner address is secured with the highest operational and key management standards. Implement robust internal procedures and controls for the use of the blacklisting function. Consider adding a timelock for critical owner actions like blacklisting to provide a window for detection and reaction.
+
+
+### `M-03` — Critical Dependency on SuperchainTokenBridge  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `crosschainMint` and `crosschainBurn` functions are exclusively callable by the `SUPERCHAIN_TOKEN_BRIDGE` address. This makes the token's supply and cross-chain functionality critically dependent on the security and integrity of this external bridge contract. A vulnerability or compromise in the `SUPERCHAIN_TOKEN_BRIDGE` could lead to unauthorized minting of tokens (inflation) or burning of user funds (deflation), severely impacting the token's economic stability.
+
+**Recommendation:** Thoroughly audit and continuously monitor the security of the `SUPERCHAIN_TOKEN_BRIDGE` contract. Implement robust monitoring systems to detect unusual activity related to cross-chain minting/burning. Consider a mechanism to pause cross-chain operations in an emergency, if feasible within the bridge's design.
+
+
 ### `I-01` — No Upgradeability Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The contract is implemented without an upgradeability pattern (e.g., proxies). This means that once deployed, the contract's logic cannot be modified. Any future bug fixes, security patches, or feature enhancements would require deploying a new contract and migrating all users and associated liquidity, which can be a complex and costly process.
+Not confirmed by static analysis (the model's own reading of the source). The contract is implemented without an upgradeability pattern (e.g., proxies). This means that once deployed, the contract's logic cannot be modified. Any future bug fixes, security patches, or feature enhancements would require deploying a new contract and migrating all users and associated liquidity, which can be a complex and costly process.
 
 **Recommendation:** Acknowledge the implications of non-upgradeability. For critical infrastructure, consider if an upgradeable design would be beneficial for long-term maintenance and adaptability. If not, ensure the current design is extremely robust and future-proof.
 
 
 ### `I-02` — Hardcoded SuperchainTokenBridge Address  *(Severity: Informational · Status: Unresolved)*
 
-The `SUPERCHAIN_TOKEN_BRIDGE` address is hardcoded as a `constant`. While this ensures immutability and prevents accidental changes, it also means that if the bridge contract ever needs to be replaced (e.g., due to a major upgrade, vulnerability, or change in infrastructure), the Token contract itself would need to be redeployed. This lack of flexibility could be a long-term operational constraint.
+Not confirmed by static analysis (the model's own reading of the source). The `SUPERCHAIN_TOKEN_BRIDGE` address is hardcoded as a `constant`. While this ensures immutability and prevents accidental changes, it also means that if the bridge contract ever needs to be replaced (e.g., due to a major upgrade, vulnerability, or change in infrastructure), the Token contract itself would need to be redeployed. This lack of flexibility could be a long-term operational constraint.
 
 **Recommendation:** Evaluate the long-term stability and upgrade path of the `SUPERCHAIN_TOKEN_BRIDGE`. If there's a foreseeable need for the bridge address to change, consider making it a configurable state variable, managed by the owner (preferably with a timelock), rather than a constant. If the bridge is truly immutable and part of the core chain infrastructure, then the constant is appropriate.
 
@@ -113,11 +113,11 @@ The `SUPERCHAIN_TOKEN_BRIDGE` address is hardcoded as a `constant`. While this e
 
 ### Is Avantis a scam?
 
-Based on automated analysis, Avantis scores 65/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Avantis scores 24/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Avantis safe to buy?
 
-Our scanner flagged a risk score of 65/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 24/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Avantis been audited?
 

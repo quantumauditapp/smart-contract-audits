@@ -2,14 +2,14 @@
 token: Bluwhale AI
 ticker: BLUAI
 network: bsc
-risk_score: 30
+risk_score: 24
 status: low
 date: 2026-08-12
 ---
 
 # Bluwhale AI (BLUAI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 30/100 — 🟢 Low Risk**
+> **Risk Score: 24/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bluwhale-ai-bsc)
 
@@ -42,28 +42,28 @@ _🟢 3 Low · ⚪ 1 Informational_
 
 ### `L-01` — Centralized Ownership  *(Severity: Low · Status: Unresolved)*
 
-The contract utilizes OpenZeppelin's `Ownable` pattern, which grants a single address (or a multisig, as indicated by the prefill) exclusive control over certain administrative functions, specifically `transferOwnership` and `renounceOwnership`. While the prefill indicates a multisig, the contract itself does not enforce this, relying on external operational security. This centralization introduces a single point of control for critical administrative actions.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes OpenZeppelin's `Ownable` pattern, which grants a single address (or a multisig, as indicated by the prefill) exclusive control over certain administrative functions, specifically `transferOwnership` and `renounceOwnership`. While the prefill indicates a multisig, the contract itself does not enforce this, relying on external operational security. This centralization introduces a single point of control for critical administrative actions.
 
 **Recommendation:** While a multisig is used, consider implementing a timelock for ownership transfers to provide a delay for users to react to potentially malicious or accidental changes. For increased decentralization, explore migrating ownership to a community-governed DAO.
 
 
 ### `L-02` — Lack of Pause Mechanism  *(Severity: Low · Status: Unresolved)*
 
-The BlueWhaleToken contract does not include a pause mechanism. In the event of a critical vulnerability in the token itself, or in a protocol integrating the token, there is no way to halt transfers or other token operations. This could lead to irreversible loss of funds or exploitation before a fix can be deployed.
+Not confirmed by static analysis (the model's own reading of the source). The BlueWhaleToken contract does not include a pause mechanism. In the event of a critical vulnerability in the token itself, or in a protocol integrating the token, there is no way to halt transfers or other token operations. This could lead to irreversible loss of funds or exploitation before a fix can be deployed.
 
 **Recommendation:** Consider implementing a `Pausable` mechanism (e.g., from OpenZeppelin) to allow the owner (or a designated role) to temporarily halt token transfers in emergencies. This feature should be used judiciously and ideally controlled by a multisig or governance.
 
 
 ### `L-03` — Constructor Initial Minting to Deployer  *(Severity: Low · Status: Unresolved)*
 
-The entire `initialSupply` of tokens is minted to the contract deployer's address during construction. While this is a common pattern for token launches, it means the deployer initially holds 100% of the token supply. This concentration of tokens in a single address could lead to significant selling pressure if not managed carefully, potentially impacting market stability or perceived decentralization.
+Not confirmed by static analysis (the model's own reading of the source). The entire `initialSupply` of tokens is minted to the contract deployer's address during construction. While this is a common pattern for token launches, it means the deployer initially holds 100% of the token supply. This concentration of tokens in a single address could lead to significant selling pressure if not managed carefully, potentially impacting market stability or perceived decentralization.
 
 **Recommendation:** Ensure a clear and transparent distribution plan for the initial supply is communicated to the community. Consider distributing a portion of the initial supply to multiple addresses or vesting contracts from the outset to promote broader distribution and mitigate centralization concerns.
 
 
 ### `I-01` — Fixed Decimals Value  *(Severity: Informational · Status: Unresolved)*
 
-The `decimals()` function in the ERC20 contract is hardcoded to return `18`. While 18 is the most common decimal value for ERC20 tokens, it is a fixed design choice. This is not a vulnerability but a design characteristic that cannot be changed post-deployment.
+Not confirmed by static analysis (the model's own reading of the source). The `decimals()` function in the ERC20 contract is hardcoded to return `18`. While 18 is the most common decimal value for ERC20 tokens, it is a fixed design choice. This is not a vulnerability but a design characteristic that cannot be changed post-deployment.
 
 **Recommendation:** No action required, as this is a standard and widely accepted design choice for ERC20 tokens. Ensure all integrations and user interfaces correctly interpret the token's 18 decimals.
 

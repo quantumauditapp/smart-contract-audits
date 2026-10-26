@@ -2,14 +2,14 @@
 token: Avici
 ticker: AVICI
 network: solana
-risk_score: 45
-status: medium
+risk_score: 33
+status: low
 date: 2026-08-30
 ---
 
 # Avici (AVICI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/avici-sol)
 
@@ -25,9 +25,9 @@ This SPL token mint has a critical risk due to an active mint authority, allowin
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Avici token is an SPL token operating under the `spl-token` program (v3). A significant technical risk is the active mint authority, held by `DGgYoUcu1aDZt4GEL5NQiducwHRGbkMWsUzsXh2j622G`, which… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits relatively healthy DEX market conditions with a liquidity of $1,457,920 USD and a 24-hour volume of $459,103 USD. The Volume/Liquidity Ratio is 0.31, which is normal and does not… |
-| **Upgrades** | 4/10 | Medium | The primary upgradeability concern is the active mint authority at `DGgYoUcu1aDZt4GEL5NQiducwHRGbkMWsUzsXh2j622G`, which retains the power to increase the token supply. In contrast, the freeze… |
+| **Technical** | 8/10 | Low | The Avici token is an SPL token operating under the `spl-token` program (v3). A significant technical risk is the active mint authority, held by `DGgYoUcu1aDZt4GEL5NQiducwHRGbkMWsUzsXh2j622G`, which… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits relatively healthy DEX market conditions with a liquidity of $1,457,920 USD and a 24-hour volume of $459,103 USD. The Volume/Liquidity Ratio is 0.31, which is normal and does not… |
+| **Upgrades** | 6/10 | Medium | The primary upgradeability concern is the active mint authority at `DGgYoUcu1aDZt4GEL5NQiducwHRGbkMWsUzsXh2j622G`, which retains the power to increase the token supply. In contrast, the freeze… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

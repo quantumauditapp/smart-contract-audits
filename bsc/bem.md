@@ -2,14 +2,14 @@
 token: BEM
 ticker: BEM
 network: bsc
-risk_score: 18
+risk_score: 11
 status: low
 date: 2026-08-30
 ---
 
 # BEM (BEM) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 18/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bem-bsc)
 
@@ -42,28 +42,28 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralized Minter Role  *(Severity: Medium · Status: Unresolved)*
 
-The `minter` address, set during contract deployment, has exclusive control over the `mint` function. This allows the `minter` to issue new tokens up to the `MAX_SUPPLY` (21,000,000 tokens with 8 decimals). This centralized control introduces a single point of failure; if the `minter`'s private key is compromised or if the `minter` acts maliciously, the entire remaining supply could be minted and potentially dumped, impacting token value and user trust. (7.3 Access Control, 7.4 Economic)
+Not confirmed by static analysis (the model's own reading of the source). The `minter` address, set during contract deployment, has exclusive control over the `mint` function. This allows the `minter` to issue new tokens up to the `MAX_SUPPLY` (21,000,000 tokens with 8 decimals). This centralized control introduces a single point of failure; if the `minter`'s private key is compromised or if the `minter` acts maliciously, the entire remaining supply could be minted and potentially dumped, impacting token value and user trust. (7.3 Access Control, 7.4 Economic)
 
 **Recommendation:** Consider implementing a multi-signature wallet (e.g., Gnosis Safe) or a time-locked contract for the `minter` role. This would require multiple approvals or introduce a delay for minting operations, significantly reducing the risk associated with a single compromised key or malicious actor. Alternatively, if the `minter` is intended to be a DAO, ensure the DAO's governance is robust.
 
 
 ### `L-01` — Minter Key Management Considerations  *(Severity: Low · Status: Unresolved)*
 
-If the `minter` address is an Externally Owned Account (EOA), it is inherently susceptible to private key compromise through phishing, malware, or poor key management practices. While the contract's logic is secure, the operational security of the `minter`'s private key is critical to the overall security of the token supply. (7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). If the `minter` address is an Externally Owned Account (EOA), it is inherently susceptible to private key compromise through phishing, malware, or poor key management practices. While the contract's logic is secure, the operational security of the `minter`'s private key is critical to the overall security of the token supply. (7.8 Operations)
 
 **Recommendation:** It is strongly recommended that the `minter` address be controlled by a secure mechanism such as a hardware wallet, a multi-signature wallet, or a smart contract with robust access control and recovery features. Regular security audits and best practices for key management should be followed for the entity controlling the `minter` address.
 
 
 ### `I-01` — Non-Standard Decimals  *(Severity: Informational · Status: Unresolved)*
 
-The `PodToken` contract explicitly sets `DECIMALS` to 8, overriding the default 18 used by many ERC-20 tokens and OpenZeppelin's base `ERC20` contract. While this is a valid design choice and correctly implemented, it deviates from the common standard. This requires all interacting dApps, exchanges, and wallets to correctly interpret the token's decimal places to prevent display errors, incorrect calculations, or user confusion. (7.1 Architecture)
+Not confirmed by static analysis (the model's own reading of the source). The `PodToken` contract explicitly sets `DECIMALS` to 8, overriding the default 18 used by many ERC-20 tokens and OpenZeppelin's base `ERC20` contract. While this is a valid design choice and correctly implemented, it deviates from the common standard. This requires all interacting dApps, exchanges, and wallets to correctly interpret the token's decimal places to prevent display errors, incorrect calculations, or user confusion. (7.1 Architecture)
 
 **Recommendation:** Ensure that all documentation, user interfaces, and integrations clearly communicate and correctly handle the 8-decimal precision of the PodToken. Thoroughly test all external systems that interact with the token to confirm they correctly interpret and display token amounts.
 
 
 ### `I-02` — Fixed Supply and Immutability  *(Severity: Informational · Status: Unresolved)*
 
-The PodToken contract is designed with a fixed `MAX_SUPPLY` of 21,000,000 tokens (with 8 decimals) and an immutable `minter` address set during construction. This design ensures that the total token supply cannot exceed a predefined limit and that the minting authority cannot be changed after deployment. This provides predictability and transparency regarding the token's economic model. (7.1 Architecture, 7.4 Economic)
+Not confirmed by static analysis (the model's own reading of the source). The PodToken contract is designed with a fixed `MAX_SUPPLY` of 21,000,000 tokens (with 8 decimals) and an immutable `minter` address set during construction. This design ensures that the total token supply cannot exceed a predefined limit and that the minting authority cannot be changed after deployment. This provides predictability and transparency regarding the token's economic model. (7.1 Architecture, 7.4 Economic)
 
 **Recommendation:** No recommendation needed as this is a design feature. Maintain clear documentation of these immutable parameters for users and integrators.
 

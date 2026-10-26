@@ -2,14 +2,14 @@
 token: BIO
 ticker: BIO
 network: ethereum
-risk_score: 52
+risk_score: 42
 status: medium
 date: 2026-08-20
 ---
 
 # BIO (BIO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 52/100 — 🟡 Medium Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bio-eth)
 
@@ -25,8 +25,8 @@ The BioToken contract implements an ERC20 token with burnable functionality, uti
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The BioToken contract (7.1 Architecture, 7.2 Code Security) is built upon battle-tested OpenZeppelin ERC20, ERC20Burnable, Ownable, and AccessControlEnumerable libraries, which significantly reduces… |
-| **Governance / Economics** | 3/10 | High | The contract exhibits a high degree of centralization (7.4 Economic, 7.5 Governance, 7.8 Operations). The `MINTER_ROLE` allows for unlimited token minting, which, if compromised or misused, could… |
+| **Technical** | 8/10 | Low | The BioToken contract (7.1 Architecture, 7.2 Code Security) is built upon battle-tested OpenZeppelin ERC20, ERC20Burnable, Ownable, and AccessControlEnumerable libraries, which significantly reduces… |
+| **Governance / Economics** | 4/10 | Medium | The contract exhibits a high degree of centralization (7.4 Economic, 7.5 Governance, 7.8 Operations). The `MINTER_ROLE` allows for unlimited token minting, which, if compromised or misused, could… |
 | **Upgrades** | 4/10 | Medium | The BioToken contract (7.7 Upgrades) is not designed with any upgradeability mechanism, such as a proxy pattern. This means that once deployed, the contract's logic cannot be modified or updated.… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The BioToken contract implements an ERC20 token with burnable functionality, uti
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control over Token Supply and Transfers  *(Severity: High · Status: Unresolved)*
-
-The contract grants significant power to the `owner()` and accounts with `MINTER_ROLE`. The `mint` function, callable by `MINTER_ROLE` holders, allows for an arbitrary amount of new tokens to be created, potentially leading to unlimited inflation. Furthermore, the `enableTransfers` function, callable only by the `owner()`, dictates when general token transfers are allowed, effectively enabling the owner to freeze or unfreeze transfers for all users. This high degree of centralization (7.4 Economic, 7.5 Governance, 7.8 Operations) poses a substantial risk if the controlling keys are compromised or misused, potentially leading to economic instability or censorship.
-
-**Recommendation:** Implement a multi-signature wallet for the `owner()` address and for managing the `MINTER_ROLE` and `TRANSFER_ROLE`. Consider adding a time-lock mechanism for critical operations like enabling transfers or changing minters to provide a window for community review or emergency intervention. Explore options for progressive decentralization of these powers, potentially through a governance module.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Dual Access Control Mechanisms  *(Severity: Medium · Status: Unresolved)*
 
-The `BioToken` contract inherits from both `Ownable` and `AccessControlEnumerable` (7.3 Access Control). While both are robust OpenZeppelin libraries, their combined use for different privileged functions (`onlyOwner` for `enableTransfers` and `onlyRole` for `mint`) creates two distinct access control systems. This can lead to increased complexity in role management, potential confusion for administrators, and a higher chance of misconfiguration compared to using a single, unified access control system.
+Not confirmed by static analysis (the model's own reading of the source). The `BioToken` contract inherits from both `Ownable` and `AccessControlEnumerable` (7.3 Access Control). While both are robust OpenZeppelin libraries, their combined use for different privileged functions (`onlyOwner` for `enableTransfers` and `onlyRole` for `mint`) creates two distinct access control systems. This can lead to increased complexity in role management, potential confusion for administrators, and a higher chance of misconfiguration compared to using a single, unified access control system.
 
 **Recommendation:** Consolidate access control under a single mechanism, preferably `AccessControlEnumerable` due to its flexibility. For instance, `enableTransfers` could be protected by a specific role (e.g., `PAUSER_ROLE`) instead of `onlyOwner`. This would streamline permission management and reduce potential operational errors.
 
 
+### `M-02` — Centralized Control over Token Supply and Transfers  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract grants significant power to the `owner()` and accounts with `MINTER_ROLE`. The `mint` function, callable by `MINTER_ROLE` holders, allows for an arbitrary amount of new tokens to be created, potentially leading to unlimited inflation. Furthermore, the `enableTransfers` function, callable only by the `owner()`, dictates when general token transfers are allowed, effectively enabling the owner to freeze or unfreeze transfers for all users. This high degree of centralization (7.4 Economic, 7.5 Governance, 7.8 Operations) poses a substantial risk if the controlling keys are compromised or misused, potentially l
+
+**Recommendation:** Implement a multi-signature wallet for the `owner()` address and for managing the `MINTER_ROLE` and `TRANSFER_ROLE`. Consider adding a time-lock mechanism for critical operations like enabling transfers or changing minters to provide a window for community review or emergency intervention. Explore options for progressive decentralization of these powers, potentially through a governance module.
+
+
 ### `L-01` — Unused Import  *(Severity: Low · Status: Unresolved)*
 
-The contract imports `ERC20Capped` from `@openzeppelin/contracts/token/ERC20/extensions/ERC20Capped.sol` but does not utilize its functionality (7.2 Code Security). The `BioToken` contract does not inherit from `ERC20Capped` nor does it implement any capping logic.
+Not confirmed by static analysis (the model's own reading of the source). The contract imports `ERC20Capped` from `@openzeppelin/contracts/token/ERC20/extensions/ERC20Capped.sol` but does not utilize its functionality (7.2 Code Security). The `BioToken` contract does not inherit from `ERC20Capped` nor does it implement any capping logic.
 
 **Recommendation:** Remove the unused import statement for `ERC20Capped` to improve code clarity and reduce unnecessary dependencies. If capping functionality is intended for the future, ensure it is properly integrated into the contract's inheritance and logic.
 
 
 ### `I-01` — Initial Transfer Restrictions  *(Severity: Informational · Status: Unresolved)*
 
-The `_beforeTokenTransfer` hook implements a mechanism where general token transfers are restricted until the `transfersEnabled` flag is set to `true` by the owner (7.1 Architecture, 7.8 Operations). During this restricted phase, only minting, transfers by the owner, or transfers by accounts holding the `TRANSFER_ROLE` are permitted. This is a common pattern for controlled token launches or initial distribution phases.
+Not confirmed by static analysis (the model's own reading of the source). The `_beforeTokenTransfer` hook implements a mechanism where general token transfers are restricted until the `transfersEnabled` flag is set to `true` by the owner (7.1 Architecture, 7.8 Operations). During this restricted phase, only minting, transfers by the owner, or transfers by accounts holding the `TRANSFER_ROLE` are permitted. This is a common pattern for controlled token launches or initial distribution phases.
 
 **Recommendation:** Ensure that the project's documentation clearly communicates this initial transfer restriction and the conditions under which general transfers will be enabled. This transparency helps manage user expectations and prevents confusion regarding token liquidity.
 

@@ -2,14 +2,14 @@
 token: Bobo
 ticker: BOBO
 network: solana
-risk_score: 26
+risk_score: 21
 status: low
 date: 2026-09-02
 ---
 
 # Bobo (BOBO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 26/100 — 🟢 Low Risk**
+> **Risk Score: 21/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bobo-sol)
 

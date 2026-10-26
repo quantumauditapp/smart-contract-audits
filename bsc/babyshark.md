@@ -2,14 +2,14 @@
 token: BabyShark
 ticker: BABYSHARK
 network: bsc
-risk_score: 43
+risk_score: 41
 status: medium
 date: 2026-09-04
 ---
 
 # BabyShark (BABYSHARK) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/babyshark-bsc)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Centralized Minting/Burning (Design Choice)  *(Severity: Low · Status: Unresolved)*
 
-The `_mint` and `_burn` functions are declared as `internal virtual`. This design allows a derived contract to implement specific logic for token supply manipulation. While this provides flexibility for tokenomics, it introduces a centralized point of control if the inheriting contract does not implement robust access control (e.g., `onlyOwner`, `onlyMinter`) for these powerful functions. Without proper restrictions, an attacker gaining control of the derived contract's owner could arbitrarily mint or burn tokens.
+Not confirmed by static analysis (the model's own reading of the source). The `_mint` and `_burn` functions are declared as `internal virtual`. This design allows a derived contract to implement specific logic for token supply manipulation. While this provides flexibility for tokenomics, it introduces a centralized point of control if the inheriting contract does not implement robust access control (e.g., `onlyOwner`, `onlyMinter`) for these powerful functions. Without proper restrictions, an attacker gaining control of the derived contract's owner could arbitrarily mint or burn tokens.
 
 **Recommendation:** Any contract inheriting from this ERC20 base must implement strict access control mechanisms (e.g., OpenZeppelin's `Ownable` or `AccessControl`) for the `_mint` and `_burn` functions to prevent unauthorized supply changes. Clearly define and document the roles and permissions associated with these functions.
 
 
 ### `I-01` — Standard ERC20 Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The contract provides a robust and standard implementation of the ERC20 token specification. It includes `increaseAllowance` and `decreaseAllowance` functions, which are best practices to mitigate common `approve` race conditions by allowing atomic adjustments to allowances rather than direct setting.
+Not confirmed by static analysis (the model's own reading of the source). The contract provides a robust and standard implementation of the ERC20 token specification. It includes `increaseAllowance` and `decreaseAllowance` functions, which are best practices to mitigate common `approve` race conditions by allowing atomic adjustments to allowances rather than direct setting.
 
 **Recommendation:** No specific recommendation. This finding highlights a strength of the contract.
 
 
 ### `I-02` — Truncated Math Library  *(Severity: Informational · Status: Unresolved)*
 
-The provided `Math` library code is truncated, specifically the `mulDiv` function. This prevents a full security review of its arithmetic operations and potential edge cases. While the visible part includes an overflow check (`require(denominator > prod1, "Math: mulDiv overflow")`), the completeness and correctness of the entire function cannot be verified.
+Not confirmed by static analysis (the model's own reading of the source). The provided `Math` library code is truncated, specifically the `mulDiv` function. This prevents a full security review of its arithmetic operations and potential edge cases. While the visible part includes an overflow check (`require(denominator > prod1, "Math: mulDiv overflow")`), the completeness and correctness of the entire function cannot be verified.
 
 **Recommendation:** If the `Math` library is intended for production use, ensure its full, verified source code is available for a complete security review. Verify that all arithmetic operations, especially complex ones like `mulDiv`, handle edge cases and potential overflows/underflows correctly.
 

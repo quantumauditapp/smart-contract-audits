@@ -2,14 +2,14 @@
 token: Beefy
 ticker: BIFI
 network: ethereum
-risk_score: 28
+risk_score: 26
 status: low
 date: 2026-09-15
 ---
 
 # Beefy (BIFI) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/beefy-eth)
 
@@ -42,28 +42,28 @@ _🟢 1 Low · ⚪ 3 Informational_
 
 ### `L-01` — Centralized Initial Token Distribution  *(Severity: Low · Status: Unresolved)*
 
-The entire initial supply of 80,000 BIFI tokens is minted to a single `_treasury` address during the `initialize` function call. This design choice creates a single point of control and potential failure (7.1 Architecture, 7.4 Economic), as the security of this treasury address is paramount for the token's integrity and distribution.
+Not confirmed by static analysis (the model's own reading of the source). The entire initial supply of 80,000 BIFI tokens is minted to a single `_treasury` address during the `initialize` function call. This design choice creates a single point of control and potential failure (7.1 Architecture, 7.4 Economic), as the security of this treasury address is paramount for the token's integrity and distribution.
 
 **Recommendation:** Ensure the `_treasury` address is a highly secured multi-signature wallet or a robust governance-controlled contract. Implement strict operational security procedures for managing this address to mitigate the risks associated with a single point of failure.
 
 
 ### `I-01` — Fixed and Immutable Total Supply  *(Severity: Informational · Status: Unresolved)*
 
-The contract's `initialize` function mints a fixed amount of 80,000 BIFI tokens to the treasury, and no further public minting or burning mechanisms are implemented (7.4 Economic). This design choice results in a fixed and immutable total supply, which has specific economic implications for the token's scarcity and distribution.
+Not confirmed by static analysis (the model's own reading of the source). The contract's `initialize` function mints a fixed amount of 80,000 BIFI tokens to the treasury, and no further public minting or burning mechanisms are implemented (7.4 Economic). This design choice results in a fixed and immutable total supply, which has specific economic implications for the token's scarcity and distribution.
 
 **Recommendation:** Document this economic model clearly for token holders and stakeholders. If future flexibility for supply adjustments is desired, consider implementing controlled minting/burning functions in a future upgrade, protected by robust access control (7.3 Access Control).
 
 
 ### `I-02` — Reliance on OpenZeppelin Upgradeable Libraries  *(Severity: Informational · Status: Unresolved)*
 
-The `BIFI` token contract extensively leverages battle-tested and audited OpenZeppelin upgradeable contracts (ERC20Upgradeable, ERC20PermitUpgradeable, Initializable) (7.2 Code Security). This significantly enhances the contract's security posture by minimizing custom code and utilizing well-vetted implementations.
+Not confirmed by static analysis (the model's own reading of the source). The `BIFI` token contract extensively leverages battle-tested and audited OpenZeppelin upgradeable contracts (ERC20Upgradeable, ERC20PermitUpgradeable, Initializable) (7.2 Code Security). This significantly enhances the contract's security posture by minimizing custom code and utilizing well-vetted implementations.
 
 **Recommendation:** Regularly monitor OpenZeppelin's security advisories and updates. Ensure that any future upgrades or custom logic adhere to the same high security standards and best practices.
 
 
 ### `I-03` — Standard ERC20 Front-Running Considerations  *(Severity: Informational · Status: Unresolved)*
 
-As a standard ERC20 token, operations like `approve` and `transferFrom` are susceptible to front-running attacks (7.2 Code Security), where a malicious actor can observe a pending transaction and submit their own transaction with a higher gas price to execute before the original. This is an inherent characteristic of the ERC20 standard and not a specific vulnerability in the contract's implementation.
+Not confirmed by static analysis (the model's own reading of the source). As a standard ERC20 token, operations like `approve` and `transferFrom` are susceptible to front-running attacks (7.2 Code Security), where a malicious actor can observe a pending transaction and submit their own transaction with a higher gas price to execute before the original. This is an inherent characteristic of the ERC20 standard and not a specific vulnerability in the contract's implementation.
 
 **Recommendation:** Users should be aware of these risks when interacting with `approve` and `transferFrom`. For `approve`, users should consider using `increaseAllowance` and `decreaseAllowance` to mitigate some front-running risks, although the contract already implements these functions.
 

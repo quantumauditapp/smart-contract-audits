@@ -2,14 +2,14 @@
 token: Bitcat
 ticker: BITCAT
 network: solana
-risk_score: 38
-status: medium
+risk_score: 19
+status: low
 date: 2026-09-12
 ---
 
 # Bitcat (BITCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 38/100 — 🟡 Medium Risk**
+> **Risk Score: 19/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bitcat-sol)
 
@@ -25,9 +25,9 @@ The Bitcat (BITCAT) SPL Token Mint audit identified a Medium risk due to the ver
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Bitcat (BITCAT) token is an SPL Token-2022 mint. Its Mint Authority and Freeze Authority are both revoked, preventing further issuance or freezing of accounts. The token incorporates a 3.00%… |
-| **Governance / Economics** | 4/10 | Medium | Holder concentration is relatively low, with the top 10 accounts holding 27.32% of the total supply. The token's DEX liquidity is $43,320, supporting moderate trading activity. The 24-hour volume of… |
-| **Upgrades** | 6/10 | Medium | The core Mint and Freeze authorities are permanently revoked, ensuring no future changes to these critical controls. While the token is an SPL Token-2022, its transfer hook is not upgradable.… |
+| **Technical** | 10/10 | Low | The Bitcat (BITCAT) token is an SPL Token-2022 mint. Its Mint Authority and Freeze Authority are both revoked, preventing further issuance or freezing of accounts. The token incorporates a 3.00%… |
+| **Governance / Economics** | 7/10 | Low | Holder concentration is relatively low, with the top 10 accounts holding 27.32% of the total supply. The token's DEX liquidity is $43,320, supporting moderate trading activity. The 24-hour volume of… |
+| **Upgrades** | 8/10 | Low | The core Mint and Freeze authorities are permanently revoked, ensuring no future changes to these critical controls. While the token is an SPL Token-2022, its transfer hook is not upgradable.… |
 
 ## Token-2022 Extensions
 
@@ -67,13 +67,13 @@ Token name, symbol, or image can be changed post-launch.
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2542 buys / 1759 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

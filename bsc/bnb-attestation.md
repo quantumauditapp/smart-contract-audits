@@ -2,14 +2,14 @@
 token: BNB Attestation
 ticker: BAS
 network: bsc
-risk_score: 61
-status: medium
+risk_score: 26
+status: low
 date: 2026-08-17
 ---
 
 # BNB Attestation (BAS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 61/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bnb-attestation-bsc)
 
@@ -25,9 +25,9 @@ The BASToken contract is an ERC20Capped token with custom access control, pausin
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract demonstrates good technical quality, utilizing battle-tested OpenZeppelin libraries for ERC20, ERC20Capped, AccessControl, and Pausable functionalities (7.2 Code Security). The custom… |
-| **Governance / Economics** | 1/10 | High | The contract exhibits a high degree of centralization, with the DEFAULT_ADMIN_ROLE holding significant power, including setting the minter and recovering arbitrary ERC20 tokens (7.4 Economic, 7.5… |
-| **Upgrades** | 4/10 | Medium | The BASToken contract is implemented as a standard, non-upgradeable ERC20 token. It does not utilize any proxy patterns (e.g., UUPS, Transparent) or upgrade mechanisms. Therefore, there are no… |
+| **Technical** | 8/10 | Low | The contract demonstrates good technical quality, utilizing battle-tested OpenZeppelin libraries for ERC20, ERC20Capped, AccessControl, and Pausable functionalities (7.2 Code Security). The custom… |
+| **Governance / Economics** | 2/10 | High | The contract exhibits a high degree of centralization, with the DEFAULT_ADMIN_ROLE holding significant power, including setting the minter and recovering arbitrary ERC20 tokens (7.4 Economic, 7.5… |
+| **Upgrades** | 5/10 | Medium | The BASToken contract is implemented as a standard, non-upgradeable ERC20 token. It does not utilize any proxy patterns (e.g., UUPS, Transparent) or upgrade mechanisms. Therefore, there are no… |
 
 ## LP Distribution
 
@@ -38,39 +38,39 @@ The BASToken contract is an ERC20Capped token with custom access control, pausin
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `C-01` — PAUSER_ROLE Self-Administration Creates Unmanageable Role  *(Severity: Critical · Status: Unresolved)*
-
-The constructor calls `_setRoleAdmin(PAUSER_ROLE, PAUSER_ROLE)`. This configuration means that only an address already possessing the PAUSER_ROLE can grant or revoke the PAUSER_ROLE from other addresses. The DEFAULT_ADMIN_ROLE, which typically manages all other roles, loses its ability to manage PAUSER_ROLE members. If the initial PAUSER_ROLE holder's key is lost or compromised, it becomes impossible to add new PAUSER_ROLE holders or remove existing ones, leading to an unmanageable and potentially unrecoverable critical role (7.3 Access Control, 7.8 Operations).
-
-**Recommendation:** Change the role administration for PAUSER_ROLE to DEFAULT_ADMIN_ROLE. The constructor should call `_setRoleAdmin(PAUSER_ROLE, DEFAULT_ADMIN_ROLE)` instead of `_setRoleAdmin(PAUSER_ROLE, PAUSER_ROLE)`. This ensures that the DEFAULT_ADMIN_ROLE retains control over managing PAUSER_ROLE members.
-
-
-### `H-01` — High Centralization of Power  *(Severity: High · Status: Unresolved)*
-
-The contract design grants significant power to a few privileged roles. The DEFAULT_ADMIN_ROLE can set the MINTER_ROLE and recover any ERC20 tokens accidentally sent to the contract. The PAUSER_ROLE can pause/unpause the contract and manage the whitelist, effectively controlling token transferability and liquidity. The MINTER_ROLE can mint new tokens up to the cap. This high degree of centralization introduces single points of failure and potential for abuse if these privileged accounts are compromised or act maliciously (7.4 Economic, 7.5 Governance).
-
-**Recommendation:** Implement multi-signature wallets (e.g., Gnosis Safe) for all critical roles (DEFAULT_ADMIN_ROLE, PAUSER_ROLE, MINTER_ROLE) to distribute control and require multiple approvals for sensitive operations. Consider a time-locked mechanism for critical administrative actions or a transition to a decentralized autonomous organization (DAO) for governance over time.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Whitelist Mechanism During Pause Can Restrict Transfers  *(Severity: Medium · Status: Unresolved)*
 
-When the contract is paused, token transfers are only permitted if both the sender and receiver are on the whitelist, or if it's a minting operation. The PAUSER_ROLE has the sole authority to add or remove addresses from this whitelist. While this mechanism might be intended for specific operational control, it gives the PAUSER_ROLE the ability to selectively restrict or allow transfers, potentially impacting market liquidity or creating a censorship vector (7.4 Economic, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). When the contract is paused, token transfers are only permitted if both the sender and receiver are on the whitelist, or if it's a minting operation. The PAUSER_ROLE has the sole authority to add or remove addresses from this whitelist. While this mechanism might be intended for specific operational control, it gives the PAUSER_ROLE the ability to selectively restrict or allow transfers, potentially impacting market liquidity or creating a censorship vector (7.4 Economic, 7.8 Operations).
 
 **Recommendation:** Clearly document the intended use cases and implications of the whitelist mechanism, especially during paused states. Consider implementing a time-lock for whitelist changes to provide transparency and allow users to react. If possible, explore more decentralized or community-governed approaches for whitelist management.
 
 
+### `M-02` — PAUSER_ROLE Self-Administration Creates Unmanageable Role  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The constructor calls `_setRoleAdmin(PAUSER_ROLE, PAUSER_ROLE)`. This configuration means that only an address already possessing the PAUSER_ROLE can grant or revoke the PAUSER_ROLE from other addresses. The DEFAULT_ADMIN_ROLE, which typically manages all other roles, loses its ability to manage PAUSER_ROLE members. If the initial PAUSER_ROLE holder's key is lost or compromised, it becomes impossible to add new PAUSER_ROLE holders or remove existing ones, leading to an unmanageable and potentially unrecoverable critical role (7.3 Access Control, 7.8 Operations).
+
+**Recommendation:** Change the role administration for PAUSER_ROLE to DEFAULT_ADMIN_ROLE. The constructor should call `_setRoleAdmin(PAUSER_ROLE, DEFAULT_ADMIN_ROLE)` instead of `_setRoleAdmin(PAUSER_ROLE, PAUSER_ROLE)`. This ensures that the DEFAULT_ADMIN_ROLE retains control over managing PAUSER_ROLE members.
+
+
+### `M-03` — High Centralization of Power  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract design grants significant power to a few privileged roles. The DEFAULT_ADMIN_ROLE can set the MINTER_ROLE and recover any ERC20 tokens accidentally sent to the contract. The PAUSER_ROLE can pause/unpause the contract and manage the whitelist, effectively controlling token transferability and liquidity. The MINTER_ROLE can mint new tokens up to the cap. This high degree of centralization introduces single points of failure and potential for abuse if these privileged accounts are compromised or act maliciously (7.4 Economic, 7.5 Governance).
+
+**Recommendation:** Implement multi-signature wallets (e.g., Gnosis Safe) for all critical roles (DEFAULT_ADMIN_ROLE, PAUSER_ROLE, MINTER_ROLE) to distribute control and require multiple approvals for sensitive operations. Consider a time-locked mechanism for critical administrative actions or a transition to a decentralized autonomous organization (DAO) for governance over time.
+
+
 ### `L-01` — Minter Role Can Be Granted to Multiple Addresses  *(Severity: Low · Status: Unresolved)*
 
-The `setMinter` function allows the DEFAULT_ADMIN_ROLE to grant the MINTER_ROLE to any address. There is no explicit mechanism to revoke a previously granted MINTER_ROLE before assigning a new one, nor is there a restriction on the number of addresses that can hold the MINTER_ROLE simultaneously. This could lead to multiple entities having minting capabilities, which might not align with the project's intended operational model (7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The `setMinter` function allows the DEFAULT_ADMIN_ROLE to grant the MINTER_ROLE to any address. There is no explicit mechanism to revoke a previously granted MINTER_ROLE before assigning a new one, nor is there a restriction on the number of addresses that can hold the MINTER_ROLE simultaneously. This could lead to multiple entities having minting capabilities, which might not align with the project's intended operational model (7.3 Access Control).
 
 **Recommendation:** If only a single minter is desired, modify the `setMinter` function to first revoke the MINTER_ROLE from any existing minter before granting it to a new address. Alternatively, if multiple minters are acceptable, explicitly document this design choice and ensure robust operational procedures for managing multiple minting entities.
 
 
 ### `I-01` — Contract Deploys in Paused State  *(Severity: Informational · Status: Unresolved)*
 
-The contract's constructor includes `_pause()`, meaning the token is deployed in a paused state. This prevents most token transfers (except whitelisted transfers or minting) immediately after deployment until the `unpause()` function is called by an account with the PAUSER_ROLE. This is likely a deliberate design choice for initial setup or pre-launch phases (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract's constructor includes `_pause()`, meaning the token is deployed in a paused state. This prevents most token transfers (except whitelisted transfers or minting) immediately after deployment until the `unpause()` function is called by an account with the PAUSER_ROLE. This is likely a deliberate design choice for initial setup or pre-launch phases (7.8 Operations).
 
 **Recommendation:** Ensure that the operational plan for unpausing the contract and enabling full token transfers is clearly defined and communicated to all stakeholders. This includes the timing of the unpause event and the responsibilities of the PAUSER_ROLE.
 

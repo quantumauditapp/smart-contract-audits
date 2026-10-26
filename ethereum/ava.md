@@ -2,14 +2,14 @@
 token: AVA
 ticker: AVA
 network: ethereum
-risk_score: 80
-status: high
+risk_score: 55
+status: medium
 date: 2026-09-18
 ---
 
 # AVA (AVA) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 80/100 — 🟠 High Risk**
+> **Risk Score: 55/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ava-eth)
 
@@ -25,9 +25,9 @@ The AVA token contract implements an ERC20 token with a time-based inflationary 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract utilizes OpenZeppelin's `ERC20PresetMinterPauser` for core ERC20 functionality and access control (7.1 Architecture). The code generally follows good practices for Solidity 0.8.18… |
+| **Technical** | 8/10 | Low | The contract utilizes OpenZeppelin's `ERC20PresetMinterPauser` for core ERC20 functionality and access control (7.1 Architecture). The code generally follows good practices for Solidity 0.8.18… |
 | **Governance / Economics** | 1/10 | High | The tokenomics are based on a predefined 10-year inflationary schedule, with the `DEFAULT_ADMIN_ROLE` having significant power to modify future yearly mint amounts, add new years, and increase the… |
-| **Upgrades** | 2/10 | High | The AVA contract is deployed as a standard, non-upgradeable implementation (7.7 Upgrades). This design choice means that any identified vulnerabilities or desired feature changes would necessitate a… |
+| **Upgrades** | 3/10 | High | The AVA contract is deployed as a standard, non-upgradeable implementation (7.7 Upgrades). This design choice means that any identified vulnerabilities or desired feature changes would necessitate a… |
 
 ## LP Distribution
 
@@ -38,39 +38,39 @@ The AVA token contract implements an ERC20 token with a time-based inflationary 
 
 ## Security Findings
 
-_🔴 1 Critical · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `C-01` — Unauthorized Minting via Public Functions  *(Severity: Critical · Status: Unresolved)*
-
-The `mintCurrentYear`, `mintRemainingCurrentYear`, and `mintRemainingPastYear` functions are declared `public` but lack any access control checks (e.g., `onlyRole(MINTER_ROLE)`). This allows any external caller to mint tokens up to the yearly limits defined by the inflationary model, bypassing the intended authorization mechanism provided by `ERC20PresetMinterPauser` and leading to uncontrolled inflation.
-
-**Recommendation:** Implement appropriate role-based access control for all custom minting functions. For instance, add `onlyRole(MINTER_ROLE)` or `onlyRole(DEFAULT_ADMIN_ROLE)` to `mintCurrentYear`, `mintRemainingCurrentYear`, and `mintRemainingPastYear` to restrict their execution to authorized accounts.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Inconsistent `inflationaryModelTotalYears` Update Logic  *(Severity: Medium · Status: Unresolved)*
 
-The `addNewYearForInflationaryModel` function's logic for updating `inflationaryModelTotalYears` can lead to gaps in the inflationary model. If `getCurrentYear()` is significantly ahead of `inflationaryModelTotalYears`, the function will set `inflationaryModelTotalYears = currentYear`, skipping intermediate years. This means `inflationaryModelPerYear` entries for the skipped years will remain zero, preventing minting during those periods if `getCurrentYear()` falls within them, potentially disrupting the token's planned inflation schedule.
+Not confirmed by static analysis (the model's own reading of the source). The `addNewYearForInflationaryModel` function's logic for updating `inflationaryModelTotalYears` can lead to gaps in the inflationary model. If `getCurrentYear()` is significantly ahead of `inflationaryModelTotalYears`, the function will set `inflationaryModelTotalYears = currentYear`, skipping intermediate years. This means `inflationaryModelPerYear` entries for the skipped years will remain zero, preventing minting during those periods if `getCurrentYear()` falls within them, potentially disrupting the token's planned inflation schedule.
 
 **Recommendation:** Refine the logic in `addNewYearForInflationaryModel` to ensure that new years are added sequentially or allow the admin to specify the exact `yearID` to add, ensuring no gaps are created in the inflationary model. For example, ensure `inflationaryModelTotalYears` is always `currentYear` or `inflationaryModelTotalYears + 1` when adding a new year.
 
 
+### `M-02` — Unauthorized Minting via Public Functions  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mintCurrentYear`, `mintRemainingCurrentYear`, and `mintRemainingPastYear` functions are declared `public` but lack any access control checks (e.g., `onlyRole(MINTER_ROLE)`). This allows any external caller to mint tokens up to the yearly limits defined by the inflationary model, bypassing the intended authorization mechanism provided by `ERC20PresetMinterPauser` and leading to uncontrolled inflation.
+
+**Recommendation:** Implement appropriate role-based access control for all custom minting functions. For instance, add `onlyRole(MINTER_ROLE)` or `onlyRole(DEFAULT_ADMIN_ROLE)` to `mintCurrentYear`, `mintRemainingCurrentYear`, and `mintRemainingPastYear` to restrict their execution to authorized accounts.
+
+
 ### `L-01` — Admin Can Increase `MAX_SUPPLY` Indefinitely  *(Severity: Low · Status: Unresolved)*
 
-The `increaseMaxSupply` function allows the `DEFAULT_ADMIN_ROLE` to increase the `MAX_SUPPLY` by a percentage of the `totalSupply` once per year after the initial 10-year period. While restricted to a percentage less than 100%, this mechanism, if repeatedly invoked over many years, could lead to a significantly higher total supply than initially anticipated, potentially diluting existing token holders over a long timeframe.
+Not confirmed by static analysis (the model's own reading of the source). The `increaseMaxSupply` function allows the `DEFAULT_ADMIN_ROLE` to increase the `MAX_SUPPLY` by a percentage of the `totalSupply` once per year after the initial 10-year period. While restricted to a percentage less than 100%, this mechanism, if repeatedly invoked over many years, could lead to a significantly higher total supply than initially anticipated, potentially diluting existing token holders over a long timeframe.
 
 **Recommendation:** Consider implementing a hard cap on the total `MAX_SUPPLY` or a maximum number of times the `increaseMaxSupply` function can be called. Clearly communicate the long-term implications of this mechanism to token holders to manage expectations regarding potential supply dilution.
 
 
 ### `I-01` — Hardcoded Initial Inflationary Model Limits Flexibility  *(Severity: Informational · Status: Unresolved)*
 
-The inflationary model for the first 10 years is hardcoded in the constructor. While `updateInflationaryModelPerYear` allows modification of future years, it requires `yearID >= currentYear`. This design choice prevents the admin from adjusting the minting schedule for any of the initial 10 years that have not yet passed, limiting flexibility in response to unforeseen economic conditions.
+Not confirmed by static analysis (the model's own reading of the source). The inflationary model for the first 10 years is hardcoded in the constructor. While `updateInflationaryModelPerYear` allows modification of future years, it requires `yearID >= currentYear`. This design choice prevents the admin from adjusting the minting schedule for any of the initial 10 years that have not yet passed, limiting flexibility in response to unforeseen economic conditions.
 
 **Recommendation:** This is a design choice. If greater flexibility is desired, consider allowing the admin to update future years within the initial 10-year period, perhaps with a grace period or a multi-signature approval process.
 
 
 ### `I-02` — Reliance on `block.timestamp` for Critical Logic  *(Severity: Informational · Status: Unresolved)*
 
-The `getCurrentYear` function, which is central to the inflationary model and `MAX_SUPPLY` increase logic, relies on `block.timestamp`. While acceptable for long durations like years, `block.timestamp` can be manipulated by miners within a small range (up to 900 seconds on Ethereum), potentially affecting the precise timing of year transitions.
+Not confirmed by static analysis (the model's own reading of the source). The `getCurrentYear` function, which is central to the inflationary model and `MAX_SUPPLY` increase logic, relies on `block.timestamp`. While acceptable for long durations like years, `block.timestamp` can be manipulated by miners within a small range (up to 900 seconds on Ethereum), potentially affecting the precise timing of year transitions.
 
 **Recommendation:** For yearly calculations, `block.timestamp` is generally considered acceptable. However, for extremely time-sensitive operations, consider using a decentralized oracle for time if precise, unmanipulable time is critical, though this adds complexity and external dependencies.
 

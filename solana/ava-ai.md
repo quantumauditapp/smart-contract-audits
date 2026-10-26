@@ -2,14 +2,14 @@
 token: Ava AI
 ticker: AVA
 network: solana
-risk_score: 12
+risk_score: 2
 status: low
 date: 2026-08-12
 ---
 
 # Ava AI (AVA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 12/100 — 🟢 Low Risk**
+> **Risk Score: 2/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ava-ai-sol)
 
@@ -27,8 +27,8 @@ Before any significant interaction, verify on-chain that the mint and freeze aut
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The Ava AI (AVA) token operates on the classic spl-token program (v3), indicating a stable and well-understood token standard (7.1 Architecture). Both the mint authority and freeze authority have… |
-| **Governance / Economics** | 2/10 | High | A primary economic risk (7.4 Economic) is the high holder concentration, with the top 10 token accounts holding 71.99% of the total supply. This level of concentration is flagged by a third-party… |
+| **Technical** | 10/10 | Low | The Ava AI (AVA) token operates on the classic spl-token program (v3), indicating a stable and well-understood token standard (7.1 Architecture). Both the mint authority and freeze authority have… |
+| **Governance / Economics** | 3/10 | High | A primary economic risk (7.4 Economic) is the high holder concentration, with the top 10 token accounts holding 71.99% of the total supply. This level of concentration is flagged by a third-party… |
 | **Upgrades** | 8/10 | Low | The token's upgradeability posture is robust (7.7 Upgrades). The mint authority is revoked, preventing any future supply changes. Similarly, the freeze authority is revoked, ensuring no accounts can… |
 
 ## LP Distribution

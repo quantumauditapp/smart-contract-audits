@@ -2,14 +2,14 @@
 token: Block Street
 ticker: BSB
 network: bsc
-risk_score: 85
-status: critical
+risk_score: 79
+status: high
 date: 2026-07-24
 ---
 
 # Block Street (BSB) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 85/100 — 🔴 Critical Risk**
+> **Risk Score: 79/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/block-street-bsc)
 
@@ -25,8 +25,8 @@ The audit of the TokenImplementation contract, serving as the logic for a Beacon
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The technical implementation of the Token contract is generally robust, adhering to ERC-20 standards for core functionalities like `transfer` and `approve`. Solidity 0.8.0+ provides automatic… |
-| **Governance / Economics** | 1/10 | High | The governance and economic model of the Token contract are highly centralized. A single `owner` address possesses significant power, including the ability to `mint` and `burn` an arbitrary amount of… |
+| **Technical** | 6/10 | Medium | The technical implementation of the Token contract is generally robust, adhering to ERC-20 standards for core functionalities like `transfer` and `approve`. Solidity 0.8.0+ provides automatic… |
+| **Governance / Economics** | 2/10 | High | The governance and economic model of the Token contract are highly centralized. A single `owner` address possesses significant power, including the ability to `mint` and `burn` an arbitrary amount of… |
 | **Upgrades** | 1/10 | High | The contract is designed as an implementation for a BeaconProxy, leveraging OpenZeppelin's proxy patterns for upgradeability. The `initializer` modifier correctly prevents re-initialization on… |
 
 ## Proxy Upgrade Controls
@@ -45,32 +45,32 @@ The audit of the TokenImplementation contract, serving as the logic for a Beacon
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control over Token Supply and Metadata  *(Severity: High · Status: Unresolved)*
-
-The `owner` address has the ability to `mint` and `burn` an arbitrary amount of tokens, directly affecting the total supply and value. Additionally, the `owner` can `updateDetails` (name, symbol) of the token. This grants significant centralized control over the token's economic properties and identity, posing a high risk if the owner's key is compromised or acts maliciously. This impacts 7.3 Access Control and 7.4 Economic aspects.
-
-**Recommendation:** Consider implementing a multi-signature wallet or a time-locked governance contract to control the `owner` address. For critical functions like `mint` and `burn`, consider requiring multiple approvals or a delay period. Clearly document the extent of owner privileges and the security measures in place for the owner's private key.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Missing `permit` Function for EIP-712 Support  *(Severity: Medium · Status: Unresolved)*
 
-The contract includes extensive logic for EIP-712 domain separator generation (`_initializePermitStateIfNeeded`, `_domainSeparatorV4`, `_buildDomainSeparator`) and imports `ECDSA`, indicating an intention to support EIP-712 `permit` functionality. However, the actual `permit` function, which allows users to approve token transfers via a signed message without on-chain transactions, is not implemented. This leaves the EIP-712 infrastructure present but unused, resulting in an incomplete feature. This impacts 7.1 Architecture and 7.2 Code Security.
+Not confirmed by static analysis (the model's own reading of the source). The contract includes extensive logic for EIP-712 domain separator generation (`_initializePermitStateIfNeeded`, `_domainSeparatorV4`, `_buildDomainSeparator`) and imports `ECDSA`, indicating an intention to support EIP-712 `permit` functionality. However, the actual `permit` function, which allows users to approve token transfers via a signed message without on-chain transactions, is not implemented. This leaves the EIP-712 infrastructure present but unused, resulting in an incomplete feature. This impacts 7.1 Architecture and 7.2 Code Security.
 
 **Recommendation:** Either fully implement the EIP-712 `permit` function to provide the intended functionality, or remove the unused EIP-712 related code and imports to reduce contract size and improve clarity if the feature is not desired.
 
 
+### `M-02` — Centralized Control over Token Supply and Metadata  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `owner` address has the ability to `mint` and `burn` an arbitrary amount of tokens, directly affecting the total supply and value. Additionally, the `owner` can `updateDetails` (name, symbol) of the token. This grants significant centralized control over the token's economic properties and identity, posing a high risk if the owner's key is compromised or acts maliciously. This impacts 7.3 Access Control and 7.4 Economic aspects.
+
+**Recommendation:** Consider implementing a multi-signature wallet or a time-locked governance contract to control the `owner` address. For critical functions like `mint` and `burn`, consider requiring multiple approvals or a delay period. Clearly document the extent of owner privileges and the security measures in place for the owner's private key.
+
+
 ### `L-01` — Custom `Ownable` Implementation Deviates from Standard  *(Severity: Low · Status: Unresolved)*
 
-The contract imports OpenZeppelin's `Ownable.sol` but does not inherit from it. Instead, it implements its own `owner()` function and `onlyOwner` modifier, managing the `_state.owner` variable directly. While functionally correct for this contract, this deviation from standard OpenZeppelin patterns might lead to confusion or unexpected behavior for developers expecting the full `Ownable` interface (e.g., `transferOwnership`, `renounceOwnership`). This impacts 7.1 Architecture and 7.2 Code Security.
+Not confirmed by static analysis (the model's own reading of the source). The contract imports OpenZeppelin's `Ownable.sol` but does not inherit from it. Instead, it implements its own `owner()` function and `onlyOwner` modifier, managing the `_state.owner` variable directly. While functionally correct for this contract, this deviation from standard OpenZeppelin patterns might lead to confusion or unexpected behavior for developers expecting the full `Ownable` interface (e.g., `transferOwnership`, `renounceOwnership`). This impacts 7.1 Architecture and 7.2 Code Security.
 
 **Recommendation:** Consider either inheriting from OpenZeppelin's `Ownable` to leverage its battle-tested implementation and standard interface, or explicitly documenting the custom ownership management to clarify expected behavior and available functions.
 
 
 ### `I-01` — `updateDetails` Requires Sequence Increment  *(Severity: Informational · Status: Unresolved)*
 
-The `updateDetails` function, which allows the owner to change the token's name and symbol, requires the `sequence_` parameter to be strictly greater than `_state.metaLastUpdatedSequence`. This mechanism prevents replaying old metadata updates but also implies that if an owner wishes to revert to a previous name/symbol (e.g., due to a typo), they must use a new, higher sequence number. This is a design choice, not a vulnerability, but it's an operational constraint. This impacts 7.8 Operations.
+Not confirmed by static analysis (the model's own reading of the source). The `updateDetails` function, which allows the owner to change the token's name and symbol, requires the `sequence_` parameter to be strictly greater than `_state.metaLastUpdatedSequence`. This mechanism prevents replaying old metadata updates but also implies that if an owner wishes to revert to a previous name/symbol (e.g., due to a typo), they must use a new, higher sequence number. This is a design choice, not a vulnerability, but it's an operational constraint. This impacts 7.8 Operations.
 
 **Recommendation:** Ensure this design choice is well-documented for operators. If flexibility to revert to previous metadata is desired without incrementing a sequence, the `require` statement would need to be adjusted, but this would also introduce the risk of replay attacks for metadata updates.
 
@@ -113,11 +113,11 @@ The `updateDetails` function, which allows the owner to change the token's name 
 
 ### Is Block Street a scam?
 
-Based on automated analysis, Block Street scores 64/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Block Street scores 79/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Block Street safe to buy?
 
-Our scanner flagged a risk score of 64/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 79/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Block Street been audited?
 

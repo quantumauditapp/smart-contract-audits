@@ -2,14 +2,14 @@
 token: BIO
 ticker: BIO
 network: base
-risk_score: 60
+risk_score: 48
 status: medium
 date: 2026-08-14
 ---
 
 # BIO (BIO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 60/100 — 🟡 Medium Risk**
+> **Risk Score: 48/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bio-base)
 
@@ -42,28 +42,28 @@ _🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralized Control over Token Transfers  *(Severity: Medium · Status: Unresolved)*
 
-The `DEFAULT_ADMIN_ROLE` has significant control over token transfers. It can call `enableTransfers()` to allow all users to transfer tokens, and it can also bypass the `transfersEnabled` restriction itself via the `owner()` check in `_beforeTokenTransfer`. This centralizes critical control over the token's liquidity and transferability, posing a risk if the `DEFAULT_ADMIN_ROLE` is compromised or mismanaged.
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` has significant control over token transfers. It can call `enableTransfers()` to allow all users to transfer tokens, and it can also bypass the `transfersEnabled` restriction itself via the `owner()` check in `_beforeTokenTransfer`. This centralizes critical control over the token's liquidity and transferability, posing a risk if the `DEFAULT_ADMIN_ROLE` is compromised or mismanaged.
 
 **Recommendation:** Ensure the `DEFAULT_ADMIN_ROLE` is secured by a robust multi-signature wallet with a high threshold. Clearly define and communicate the operational procedures and responsibilities associated with this role. Consider if the ability for the `DEFAULT_ADMIN_ROLE` to bypass transfer restrictions is strictly necessary, or if it could be limited to only enabling/disabling for all users.
 
 
 ### `M-02` — Unlimited Minting Capability  *(Severity: Medium · Status: Unresolved)*
 
-The `MINTER_ROLE` has the ability to mint an unlimited supply of tokens via the `mint()` function. There is no cap enforced on the total supply, which could lead to token inflation and devaluation if the `MINTER_ROLE` is compromised or misused. While `ERC20Capped` is imported, it is not utilized by the `Token` contract.
+Not confirmed by static analysis (the model's own reading of the source). The `MINTER_ROLE` has the ability to mint an unlimited supply of tokens via the `mint()` function. There is no cap enforced on the total supply, which could lead to token inflation and devaluation if the `MINTER_ROLE` is compromised or misused. While `ERC20Capped` is imported, it is not utilized by the `Token` contract.
 
 **Recommendation:** If a maximum supply is intended, implement the `ERC20Capped` functionality or introduce a custom cap mechanism. If unlimited minting is by design, ensure strict off-chain governance and operational controls are in place for the `MINTER_ROLE` to prevent abuse. Consider implementing a time-locked or multi-signature controlled minting process for large amounts.
 
 
 ### `L-01` — Unused ERC20Capped Import  *(Severity: Low · Status: Unresolved)*
 
-The `ERC20Capped` contract is imported from OpenZeppelin but is not inherited or utilized by the `Token` contract. This suggests a potential design decision change or oversight, as the contract currently has no maximum supply cap despite importing the relevant functionality.
+Not confirmed by static analysis (the model's own reading of the source). The `ERC20Capped` contract is imported from OpenZeppelin but is not inherited or utilized by the `Token` contract. This suggests a potential design decision change or oversight, as the contract currently has no maximum supply cap despite importing the relevant functionality.
 
 **Recommendation:** Remove the unused import if a supply cap is not intended, to improve code clarity and reduce potential confusion. If a supply cap was intended, integrate `ERC20Capped` into the `Token` contract's inheritance hierarchy and set an appropriate cap during deployment.
 
 
 ### `I-01` — Initial Transfer Restriction Requires Manual Activation  *(Severity: Informational · Status: Unresolved)*
 
-The `transfersEnabled` flag is initialized to `false`, meaning general token transfers are restricted immediately after deployment. Transfers can only be performed by `address(0)` (minting), the `owner()` (DEFAULT_ADMIN_ROLE), or accounts with the `TRANSFER_ROLE` until the `enableTransfers()` function is explicitly called by the `DEFAULT_ADMIN_ROLE`.
+Not confirmed by static analysis (the model's own reading of the source). The `transfersEnabled` flag is initialized to `false`, meaning general token transfers are restricted immediately after deployment. Transfers can only be performed by `address(0)` (minting), the `owner()` (DEFAULT_ADMIN_ROLE), or accounts with the `TRANSFER_ROLE` until the `enableTransfers()` function is explicitly called by the `DEFAULT_ADMIN_ROLE`.
 
 **Recommendation:** This is an intended feature for controlled token launch. Ensure that the operational team is aware of this initial state and has a clear plan for when and how `enableTransfers()` will be called. Communicate this behavior to users to manage expectations.
 

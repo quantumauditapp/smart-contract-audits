@@ -2,14 +2,14 @@
 token: Boiúna
 ticker: BOIÚNA
 network: solana
-risk_score: 28
+risk_score: 11
 status: low
 date: 2026-08-15
 ---
 
 # Boiúna (BOIÚNA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/boiuna-sol)
 
@@ -27,8 +27,8 @@ While core mint authorities are revoked, which is a positive security indicator,
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, preventing further token issuance or freezing of holder accounts, which is a… |
-| **Governance / Economics** | 4/10 | Medium | The token's DEX pair was created only 2 days ago, which is a very short period to assess long-term team or holder behavior. Current total DEX liquidity stands at $22,611, which is above the very low… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, have been revoked, preventing any future changes to the token supply or account freeze status. The token utilizes the spl-token-2022… |
+| **Governance / Economics** | 7/10 | Low | The token's DEX pair was created only 2 days ago, which is a very short period to assess long-term team or holder behavior. Current total DEX liquidity stands at $22,611, which is above the very low… |
+| **Upgrades** | 10/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, have been revoked, preventing any future changes to the token supply or account freeze status. The token utilizes the spl-token-2022… |
 
 ## Security Findings
 
@@ -55,13 +55,13 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2373 buys / 2151 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -70,7 +70,7 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

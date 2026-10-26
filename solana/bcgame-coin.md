@@ -2,14 +2,14 @@
 token: BCGame Coin
 ticker: BC
 network: solana
-risk_score: 28
+risk_score: 14
 status: low
 date: 2026-09-01
 ---
 
 # BCGame Coin (BC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 14/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bcgame-coin-sol)
 
@@ -25,9 +25,9 @@ This audit of the BCGame Coin (BC) SPL token mint reveals a high-risk profile pr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The token is implemented using the SPL Token Program (v3). Both the mint authority and freeze authority have been revoked, preventing further token minting or account freezing. However, the token's… |
-| **Governance / Economics** | 2/10 | High | The token exhibits high holder concentration, with the top 10 accounts holding 84.63% of the total supply, posing a significant risk of price volatility from large sell-offs. Total DEX liquidity is… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, ensuring no new tokens can be minted and no accounts can be frozen. This provides a degree of stability regarding… |
+| **Technical** | 10/10 | Low | The token is implemented using the SPL Token Program (v3). Both the mint authority and freeze authority have been revoked, preventing further token minting or account freezing. However, the token's… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits high holder concentration, with the top 10 accounts holding 84.63% of the total supply, posing a significant risk of price volatility from large sell-offs. Total DEX liquidity is… |
+| **Upgrades** | 9/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, ensuring no new tokens can be minted and no accounts can be frozen. This provides a degree of stability regarding… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ Token name, symbol, or image can be changed post-launch. (Fact: `metadata_mutabl
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch. (Fact: `metadata_mutabl
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

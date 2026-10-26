@@ -2,14 +2,14 @@
 token: Baby Asteroid
 ticker: BABYASTEROID
 network: bsc
-risk_score: 27
+risk_score: 7
 status: low
 date: 2026-08-01
 ---
 
 # Baby Asteroid (BABYASTEROID) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 27/100 — 🟢 Low Risk**
+> **Risk Score: 7/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/baby-asteroid-bsc)
 
@@ -25,9 +25,9 @@ The audit of the BabyAsteroid token contract, an ERC20 implementation, identifie
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract is based on a standard ERC20 implementation, demonstrating good code structure and adherence to common patterns (7.1 Architecture, 7.2 Code Security). However, a critical functional flaw… |
-| **Governance / Economics** | 7/10 | Low | The contract implements a standard ERC20 token with no complex economic models or governance mechanisms (7.4 Economic, 7.5 Governance). The prefill indicates ownership is renounced, which eliminates… |
-| **Upgrades** | 9/10 | Low | The contract is not designed as an upgradeable proxy (7.7 Upgrades). It is a standard, non-upgradeable implementation, which simplifies its architecture and removes upgrade-related risks. |
+| **Technical** | 10/10 | Low | The contract is based on a standard ERC20 implementation, demonstrating good code structure and adherence to common patterns (7.1 Architecture, 7.2 Code Security). However, a critical functional flaw… |
+| **Governance / Economics** | 8/10 | Low | The contract implements a standard ERC20 token with no complex economic models or governance mechanisms (7.4 Economic, 7.5 Governance). The prefill indicates ownership is renounced, which eliminates… |
+| **Upgrades** | 10/10 | Low | The contract is not designed as an upgradeable proxy (7.7 Upgrades). It is a standard, non-upgradeable implementation, which simplifies its architecture and removes upgrade-related risks. |
 
 ## LP Distribution
 
@@ -38,25 +38,25 @@ The audit of the BabyAsteroid token contract, an ERC20 implementation, identifie
 
 ## Security Findings
 
-_🔴 1 Critical · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `C-01` — Token Supply Always Zero, Rendering Token Non-Functional  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Token Supply Always Zero, Rendering Token Non-Functional  *(Severity: Medium · Status: Unresolved)*
 
-The `ERC20` contract's `_totalSupply` variable is declared but never initialized in the constructor, nor is there any `_mint` function provided within the contract to increase this supply. Consequently, `totalSupply()` will always return 0, and no tokens can ever be created or transferred. This makes the token completely non-functional and unusable.
+Not confirmed by static analysis (the model's own reading of the source). The `ERC20` contract's `_totalSupply` variable is declared but never initialized in the constructor, nor is there any `_mint` function provided within the contract to increase this supply. Consequently, `totalSupply()` will always return 0, and no tokens can ever be created or transferred. This makes the token completely non-functional and unusable.
 
 **Recommendation:** Implement a `_mint` function, typically restricted to an owner or deployer, to allow for the creation of new tokens. Alternatively, initialize `_totalSupply` and mint an initial supply to a designated address within the constructor. Ensure that the `_balances` mapping is updated accordingly during minting.
 
 
 ### `L-01` — Non-Standard Decimals Value  *(Severity: Low · Status: Unresolved)*
 
-The `decimals()` function returns a value of 9. While technically valid, the common standard for ERC20 tokens is 18 decimals, mimicking Ethereum's Wei. Deviating from this standard can lead to display inconsistencies or misinterpretations in wallets, exchanges, and DApps that assume 18 decimals.
+Not confirmed by static analysis (the model's own reading of the source). The `decimals()` function returns a value of 9. While technically valid, the common standard for ERC20 tokens is 18 decimals, mimicking Ethereum's Wei. Deviating from this standard can lead to display inconsistencies or misinterpretations in wallets, exchanges, and DApps that assume 18 decimals.
 
 **Recommendation:** Consider changing the `decimals()` function to return 18 for better compatibility and user experience across the broader EVM ecosystem. If 9 decimals is an intentional design choice, ensure all front-end applications and integrations are aware of and correctly handle this value.
 
 
 ### `I-01` — ERC20 `approve` Race Condition Warning  *(Severity: Informational · Status: Unresolved)*
 
-The contract's comments correctly highlight the known race condition vulnerability associated with the `approve` function, where an attacker might exploit unfortunate transaction ordering to spend both the old and new allowance amounts. The contract provides `increaseAllowance` and `decreaseAllowance` as mitigations.
+Not confirmed by static analysis (the model's own reading of the source). The contract's comments correctly highlight the known race condition vulnerability associated with the `approve` function, where an attacker might exploit unfortunate transaction ordering to spend both the old and new allowance amounts. The contract provides `increaseAllowance` and `decreaseAllowance` as mitigations.
 
 **Recommendation:** Educate users and integrated applications to prefer `increaseAllowance` and `decreaseAllowance` over directly calling `approve` when modifying an existing allowance. This helps prevent potential double-spend scenarios related to the `approve` race condition.
 

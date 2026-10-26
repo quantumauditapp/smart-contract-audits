@@ -2,14 +2,14 @@
 token: Binance Cat
 ticker: BNBCAT
 network: bsc
-risk_score: 13
+risk_score: 0
 status: low
 date: 2026-08-30
 ---
 
 # Binance Cat (BNBCAT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 13/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/binance-cat-bsc)
 
@@ -25,8 +25,8 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract utilizes OpenZeppelin's upgradeable standards for ERC20 and Ownable, providing a robust foundation (7.1). A reentrancy guard (`notLiquidating` flag) is implemented for the tax… |
-| **Governance / Economics** | 9/10 | Low | The contract's economic parameters, such as buy/sell tax rates and liquidation thresholds, are well-defined and managed through a multi-state pool system (7.4). The owner has significant control over… |
+| **Technical** | 9/10 | Low | The contract utilizes OpenZeppelin's upgradeable standards for ERC20 and Ownable, providing a robust foundation (7.1). A reentrancy guard (`notLiquidating` flag) is implemented for the tax… |
+| **Governance / Economics** | 10/10 | Low | The contract's economic parameters, such as buy/sell tax rates and liquidation thresholds, are well-defined and managed through a multi-state pool system (7.4). The owner has significant control over… |
 | **Upgrades** | 5/10 | Medium | The contract correctly implements the UUPS proxy pattern using OpenZeppelin's `Initializable` and `Upgradeable` contracts, ensuring future upgradeability (7.7). The `_disableInitializers()` call in… |
 
 ## Proxy Upgrade Controls
@@ -45,39 +45,39 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 2 Low · ⚪ 1 Informational_
-
-### `H-01` — External Call to Untrusted `ITaxProcessor` (Truncated Code)  *(Severity: High · Status: Unresolved)*
-
-The `_liquidateTax` function, which is called on every token transfer, makes an external call to `_processTax` via the `ITaxProcessor` interface. The implementation of `_processTax` and the `ITaxProcessor` contract itself are not provided for audit. While a `notLiquidating` flag is used as a reentrancy guard for the liquidation process, the external call to an unaudited contract introduces a significant security risk. A malicious or vulnerable `ITaxProcessor` could exploit the `FlapTaxTokenV3` contract, potentially leading to unauthorized fund transfers, state manipulation, or denial of service.
-
-**Recommendation:** Conduct a thorough security audit of the `ITaxProcessor` and `IDividend` contracts. Ensure they adhere to secure coding practices, implement necessary reentrancy guards, and handle funds and state transitions securely. Consider implementing a timelock for critical changes to external contract addresses.
-
+_🟡 2 Medium · 🟢 2 Low · ⚪ 1 Informational_
 
 ### `M-01` — Incomplete State Reversion on `_processTax` Failure  *(Severity: Medium · Status: Unresolved)*
 
-In the `_liquidateTax` function, the `notLiquidating` flag is set to `false` before the external call to `_processTax`. If the `_processTax` call reverts for any reason (e.g., due to an issue in the `taxProcessor` or `dividendContract`), the `notLiquidating` flag will remain `false`. This would permanently prevent any future liquidations from occurring, effectively bricking the tax collection mechanism and requiring a contract upgrade to resolve.
+Not confirmed by static analysis (the model's own reading of the source). In the `_liquidateTax` function, the `notLiquidating` flag is set to `false` before the external call to `_processTax`. If the `_processTax` call reverts for any reason (e.g., due to an issue in the `taxProcessor` or `dividendContract`), the `notLiquidating` flag will remain `false`. This would permanently prevent any future liquidations from occurring, effectively bricking the tax collection mechanism and requiring a contract upgrade to resolve.
 
 **Recommendation:** Ensure that the `notLiquidating` flag is reset to `true` even if `_processTax` reverts. This can be achieved by wrapping the external call in a try-catch block or by ensuring the flag is reset in a `finally` block if Solidity supported it. A simpler approach is to reset the flag immediately after the external call, and if the external call reverts, the entire transaction would revert, thus reverting the flag change as well. However, if the intent is to allow the transaction to continue while ma…
 
 
+### `M-02` — External Call to Untrusted `ITaxProcessor` (Truncated Code)  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function, which is called on every token transfer, makes an external call to `_processTax` via the `ITaxProcessor` interface. The implementation of `_processTax` and the `ITaxProcessor` contract itself are not provided for audit. While a `notLiquidating` flag is used as a reentrancy guard for the liquidation process, the external call to an unaudited contract introduces a significant security risk. A malicious or vulnerable `ITaxProcessor` could exploit the `FlapTaxTokenV3` contract, potentially leading to unauthorized fund transfers, state manipulation, or denial of service.
+
+**Recommendation:** Conduct a thorough security audit of the `ITaxProcessor` and `IDividend` contracts. Ensure they adhere to secure coding practices, implement necessary reentrancy guards, and handle funds and state transitions securely. Consider implementing a timelock for critical changes to external contract addresses.
+
+
 ### `L-01` — Unused `initialLiquidationThreshold` Variable  *(Severity: Low · Status: Unresolved)*
 
-The `initialLiquidationThreshold` state variable is set during the `initialize` function but is never read or used anywhere else in the provided contract code. This variable represents dead code.
+Not confirmed by static analysis (the model's own reading of the source). The `initialLiquidationThreshold` state variable is set during the `initialize` function but is never read or used anywhere else in the provided contract code. This variable represents dead code.
 
 **Recommendation:** Remove the `initialLiquidationThreshold` state variable to reduce contract size, save gas on deployment, and improve code clarity. If it is intended for future use, ensure it is properly documented and integrated into the contract's logic.
 
 
 ### `L-02` — Potential Truncation for `liquidationThreshold`  *(Severity: Low · Status: Unresolved)*
 
-The `MIN_LIQ_THRESHOLD` and `START_LIQ_THRESHOLD` are defined as `uint256`, but `poolState.liquidationThreshold` is a `uint96`. In the `initialize` function, `poolState.liquidationThreshold` is set by casting `START_LIQ_THRESHOLD` to `uint96`. While `START_LIQ_THRESHOLD` is likely to be within the `uint96` range, if a value exceeding `2^96 - 1` were ever passed, it would be truncated without warning, potentially leading to unexpected behavior or a lower-than-intended liquidation threshold.
+Not confirmed by static analysis (the model's own reading of the source). The `MIN_LIQ_THRESHOLD` and `START_LIQ_THRESHOLD` are defined as `uint256`, but `poolState.liquidationThreshold` is a `uint96`. In the `initialize` function, `poolState.liquidationThreshold` is set by casting `START_LIQ_THRESHOLD` to `uint96`. While `START_LIQ_THRESHOLD` is likely to be within the `uint96` range, if a value exceeding `2^96 - 1` were ever passed, it would be truncated without warning, potentially leading to unexpected behavior or a lower-than-intended liquidation threshold.
 
 **Recommendation:** Ensure that `START_LIQ_THRESHOLD` and `MIN_LIQ_THRESHOLD` are explicitly constrained to fit within `uint96` during initialization or parameter setting. Alternatively, consider making `poolState.liquidationThreshold` a `uint256` for consistency and to avoid potential truncation issues.
 
 
 ### `I-01` — Centralization Risk with Owner Privileges  *(Severity: Informational · Status: Unresolved)*
 
-The `owner` address has significant control over critical contract functions, including `startMigration`, `finalizeMigration`, and setting key external contract addresses (`v2Router`, `taxProcessor`, `dividendContract`, `pools`) during initialization. This centralization introduces a single point of failure, as a compromised owner key could lead to malicious state changes, manipulation of tax parameters, or redirection of funds.
+Not confirmed by static analysis (the model's own reading of the source). The `owner` address has significant control over critical contract functions, including `startMigration`, `finalizeMigration`, and setting key external contract addresses (`v2Router`, `taxProcessor`, `dividendContract`, `pools`) during initialization. This centralization introduces a single point of failure, as a compromised owner key could lead to malicious state changes, manipulation of tax parameters, or redirection of funds.
 
 **Recommendation:** Consider implementing a multi-signature wallet for the `owner` address to distribute control and reduce the risk associated with a single point of failure. For highly sensitive operations, a timelock mechanism could be introduced to provide a delay before changes take effect, allowing for community review or emergency intervention.
 

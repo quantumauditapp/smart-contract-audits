@@ -2,14 +2,14 @@
 token: AUTONOMOPOLY
 ticker: AUTONO
 network: base
-risk_score: 53
+risk_score: 46
 status: medium
 date: 2026-07-24
 ---
 
 # AUTONOMOPOLY (AUTONO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 53/100 — 🟡 Medium Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/autonomopoly-base)
 
@@ -42,21 +42,21 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralized Admin Control  *(Severity: Medium · Status: Unresolved)*
 
-The `_admin` role in the LiquidToken contract possesses significant control, including the ability to update the `_admin` address itself, as well as the token's `_image` and `_metadata` strings. A compromise of this single `_admin` address could lead to unauthorized changes to the token's administrative control and its associated descriptive data. While the `_originalAdmin` can only call `verify()` once, the mutable `_admin` retains broad powers.
+Not confirmed by static analysis (the model's own reading of the source). The `_admin` role in the LiquidToken contract possesses significant control, including the ability to update the `_admin` address itself, as well as the token's `_image` and `_metadata` strings. A compromise of this single `_admin` address could lead to unauthorized changes to the token's administrative control and its associated descriptive data. While the `_originalAdmin` can only call `verify()` once, the mutable `_admin` retains broad powers.
 
 **Recommendation:** Consider implementing a multi-signature wallet for the `_admin` role to require multiple approvals for sensitive actions, thereby reducing the risk associated with a single point of failure. Alternatively, a time-lock mechanism could be introduced for critical administrative changes, providing a window for community or governance intervention if an unauthorized change is detected.
 
 
 ### `L-01` — `maxSupply_` is not a strict global hard cap  *(Severity: Low · Status: Unresolved)*
 
-The `maxSupply_` parameter in the constructor is used to mint the initial supply to `msg.sender` only if `block.chainid == initialSupplyChainId_`. However, the `crosschainMint` function, which is callable by the `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`, allows for additional tokens to be minted without any explicit check against the `maxSupply_` value. This implies that `maxSupply_` is only a limit for the initial distribution on a specific chain, not a global hard cap for the token's total supply across all chains.
+Not confirmed by static analysis (the model's own reading of the source). The `maxSupply_` parameter in the constructor is used to mint the initial supply to `msg.sender` only if `block.chainid == initialSupplyChainId_`. However, the `crosschainMint` function, which is callable by the `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`, allows for additional tokens to be minted without any explicit check against the `maxSupply_` value. This implies that `maxSupply_` is only a limit for the initial distribution on a specific chain, not a global hard cap for the token's total supply across all chains.
 
 **Recommendation:** Clarify in the project documentation that `maxSupply_` refers specifically to the initial supply minted on the designated chain and does not represent a global hard cap. If a global hard cap is intended, a mechanism to enforce this limit across all minting functions, including `crosschainMint`, should be implemented. This could involve a state variable tracking total supply and a check in `_mint`.
 
 
 ### `I-01` — Reliance on External Superchain Token Bridge  *(Severity: Informational · Status: Unresolved)*
 
-The `crosschainMint` and `crosschainBurn` functions are critical for the token's multi-chain functionality, and their execution is exclusively authorized by the `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`. The security and operational integrity of this external bridge are paramount, as any vulnerability or compromise within the bridge could directly impact the supply control and integrity of the LiquidToken across different chains.
+Not confirmed by static analysis (the model's own reading of the source). The `crosschainMint` and `crosschainBurn` functions are critical for the token's multi-chain functionality, and their execution is exclusively authorized by the `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`. The security and operational integrity of this external bridge are paramount, as any vulnerability or compromise within the bridge could directly impact the supply control and integrity of the LiquidToken across different chains.
 
 **Recommendation:** Acknowledge and continuously monitor the security posture and operational status of the `SUPERCHAIN_TOKEN_BRIDGE`. Ensure that robust security audits, incident response plans, and operational security practices are in place for the bridge itself, as it represents a significant external dependency for the token's cross-chain functionality.
 
@@ -99,11 +99,11 @@ The `crosschainMint` and `crosschainBurn` functions are critical for the token's
 
 ### Is AUTONOMOPOLY a scam?
 
-Based on automated analysis, AUTONOMOPOLY scores 63/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, AUTONOMOPOLY scores 46/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is AUTONOMOPOLY safe to buy?
 
-Our scanner flagged a risk score of 63/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 46/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has AUTONOMOPOLY been audited?
 

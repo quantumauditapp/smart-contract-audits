@@ -2,14 +2,14 @@
 token: Biconomy
 ticker: BICO
 network: ethereum
-risk_score: 45
+risk_score: 40
 status: medium
 date: 2026-08-07
 ---
 
 # Biconomy (BICO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/biconomy-eth)
 
@@ -51,21 +51,21 @@ _🟡 1 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Transparent Proxy Admin Function Clash  *(Severity: Medium · Status: Unresolved)*
 
-The contract uses the Transparent Proxy pattern. A known characteristic of this pattern is that if the proxy admin (0x2a2d6e4919ff1519e3d7ede8e44164025654bce3) calls a function that exists in both the proxy contract and the implementation contract, the call will be routed to the proxy's function, not the implementation's. This can lead to unexpected behavior, failed transactions, or operational errors if the admin intends to interact with the implementation's logic (7.1 Architecture, 7.7 Upgrades).
+Not confirmed by static analysis (the model's own reading of the source). The contract uses the Transparent Proxy pattern. A known characteristic of this pattern is that if the proxy admin (0x2a2d6e4919ff1519e3d7ede8e44164025654bce3) calls a function that exists in both the proxy contract and the implementation contract, the call will be routed to the proxy's function, not the implementation's. This can lead to unexpected behavior, failed transactions, or operational errors if the admin intends to interact with the implementation's logic (7.1 Architecture, 7.7 Upgrades).
 
 **Recommendation:** The proxy admin should only call functions that are unique to the proxy (e.g., `upgradeTo`, `changeAdmin`). All other interactions with the contract's logic should be performed by non-admin accounts. Implement thorough testing and clear operational guidelines for the multisig signers to prevent accidental function clashes.
 
 
 ### `I-01` — Centralized Control of Upgradeability  *(Severity: Informational · Status: Unresolved)*
 
-The upgradeability of the BicoToken is controlled by a 2-of-3 multisig (0x2a2d6e4919ff1519e3d7ede8e44164025654bce3). While a multisig enhances security over a single External Owned Account (EOA), it still represents a centralized point of control for future contract logic changes. This implies that a majority of the multisig signers can unilaterally decide on and execute upgrades, which could introduce new vulnerabilities or alter tokenomics (7.5 Governance, 7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The upgradeability of the BicoToken is controlled by a 2-of-3 multisig (0x2a2d6e4919ff1519e3d7ede8e44164025654bce3). While a multisig enhances security over a single External Owned Account (EOA), it still represents a centralized point of control for future contract logic changes. This implies that a majority of the multisig signers can unilaterally decide on and execute upgrades, which could introduce new vulnerabilities or alter tokenomics (7.5 Governance, 7.3 Access Control).
 
 **Recommendation:** This is a common and often necessary design choice for upgradeable contracts. For transparency, clearly communicate the role and responsibilities of the multisig signers to the community. Consider exploring more decentralized governance mechanisms for upgrades in the long term, if aligned with the project's vision.
 
 
 ### `I-02` — Incomplete Source Code Provided  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code snippet for the `BicoTokenImplementation` contract is truncated, specifically for the `StringsUpgradeable` library and potentially the main token logic. A full security audit requires access to the complete, verifiable source code of all deployed contracts and their dependencies to ensure no hidden logic or vulnerabilities exist beyond the scope of the provided snippet (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The provided source code snippet for the `BicoTokenImplementation` contract is truncated, specifically for the `StringsUpgradeable` library and potentially the main token logic. A full security audit requires access to the complete, verifiable source code of all deployed contracts and their dependencies to ensure no hidden logic or vulnerabilities exist beyond the scope of the provided snippet (7.2 Code Security).
 
 **Recommendation:** For future audits, always provide the complete and verified source code for all contracts, including any imported libraries or inherited contracts, to enable a comprehensive security analysis.
 

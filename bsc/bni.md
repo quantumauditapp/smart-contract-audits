@@ -42,35 +42,35 @@ _🟢 1 Low · ⚪ 4 Informational_
 
 ### `L-01` — Reliance on Calling Contract for External Call Safety  *(Severity: Low · Status: Unresolved)*
 
-The `Address.sol` library provides robust primitives for interacting with external addresses, including sending value and making arbitrary calls. However, the ultimate responsibility for ensuring the security of these interactions, such as preventing reentrancy or handling unexpected external contract behavior, lies with the contract that integrates and utilizes these library functions. A lack of proper implementation of the Checks-Effects-Interactions pattern or reentrancy guards in the calling contract can lead to vulnerabilities (7.2 Code Security, 7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The `Address.sol` library provides robust primitives for interacting with external addresses, including sending value and making arbitrary calls. However, the ultimate responsibility for ensuring the security of these interactions, such as preventing reentrancy or handling unexpected external contract behavior, lies with the contract that integrates and utilizes these library functions. A lack of proper implementation of the Checks-Effects-Interactions pattern or reentrancy guards in the calling contract can lead to vulnerabilities (7.2 Code Security, 7.6 External).
 
 **Recommendation:** All contracts integrating `Address.sol` functions that perform external calls must implement the Checks-Effects-Interactions pattern. State changes should occur before any external calls. Additionally, consider using reentrancy guards for functions that transfer assets or modify critical state after an external call. Thoroughly test all external interactions.
 
 
 ### `I-01` — Limitations of `isContract` Function  *(Severity: Informational · Status: Unresolved)*
 
-The `isContract` function, while correctly implemented, has inherent limitations as explicitly noted in its NatSpec documentation. It returns `false` for contracts in construction, externally-owned accounts (EOAs), addresses where a contract will be created, or where a contract was destroyed. It also returns `true` for contracts scheduled for `SELFDESTRUCT` within the same transaction. Relying on `isContract` alone for security, especially against flash loan attacks or to distinguish EOAs from contracts, is explicitly discouraged by OpenZeppelin (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `isContract` function, while correctly implemented, has inherent limitations as explicitly noted in its NatSpec documentation. It returns `false` for contracts in construction, externally-owned accounts (EOAs), addresses where a contract will be created, or where a contract was destroyed. It also returns `true` for contracts scheduled for `SELFDESTRUCT` within the same transaction. Relying on `isContract` alone for security, especially against flash loan attacks or to distinguish EOAs from contracts, is explicitly discouraged by OpenZeppelin (7.2 Code Security).
 
 **Recommendation:** Developers should be fully aware of the limitations of `isContract` and avoid using it as a primary security mechanism, particularly for preventing calls from contracts or protecting against flash loan attacks. Implement robust access control mechanisms and reentrancy guards instead of relying on `isContract` for such purposes.
 
 
 ### `I-02` — `sendValue` Reentrancy Warning  *(Severity: Informational · Status: Unresolved)*
 
-The `sendValue` function, which replaces Solidity's `transfer` for sending ETH, explicitly warns about the potential for reentrancy vulnerabilities due to control being transferred to the recipient. While `sendValue` itself is a safe way to send ETH by forwarding all available gas, the calling contract must implement proper reentrancy protection (e.g., `ReentrancyGuard` or the Checks-Effects-Interactions pattern) to prevent malicious re-entry attacks (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `sendValue` function, which replaces Solidity's `transfer` for sending ETH, explicitly warns about the potential for reentrancy vulnerabilities due to control being transferred to the recipient. While `sendValue` itself is a safe way to send ETH by forwarding all available gas, the calling contract must implement proper reentrancy protection (e.g., `ReentrancyGuard` or the Checks-Effects-Interactions pattern) to prevent malicious re-entry attacks (7.2 Code Security).
 
 **Recommendation:** When using `sendValue` or any function that performs external calls, ensure that the calling contract strictly adheres to the Checks-Effects-Interactions pattern. Integrate a reentrancy guard mechanism (e.g., OpenZeppelin's `ReentrancyGuard`) in functions that modify state before making external calls to untrusted addresses.
 
 
 ### `I-03` — Usage of Low-Level Call Functions  *(Severity: Informational · Status: Unresolved)*
 
-The library provides several `functionCall` variants for performing low-level `call`, `staticcall`, and `delegatecall` operations. These functions are correctly implemented with error handling and revert bubbling. However, low-level calls inherently carry risks if the target contract is untrusted, malicious, or buggy. Misuse of these functions, especially `delegatecall`, can lead to critical vulnerabilities in the calling contract if not handled with extreme care (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The library provides several `functionCall` variants for performing low-level `call`, `staticcall`, and `delegatecall` operations. These functions are correctly implemented with error handling and revert bubbling. However, low-level calls inherently carry risks if the target contract is untrusted, malicious, or buggy. Misuse of these functions, especially `delegatecall`, can lead to critical vulnerabilities in the calling contract if not handled with extreme care (7.2 Code Security).
 
 **Recommendation:** Developers should use low-level call functions only when absolutely necessary and with a thorough understanding of their implications. Always validate the target address and the `data` payload. For `delegatecall`, ensure the target contract is fully trusted and compatible with the calling contract's storage layout to prevent storage collisions or unexpected behavior.
 
 
 ### `I-04` — Library Nature and Integration Risk  *(Severity: Informational · Status: Unresolved)*
 
-As a utility library, `Address.sol` is designed to be imported and used by other contracts. While the library itself is highly secure and well-audited, its security posture within a larger system is dependent on the correct and secure integration by consuming contracts. Flaws in the application logic of contracts using `Address.sol` could inadvertently introduce vulnerabilities, even if the library functions are used as intended (7.1 Architecture, 7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). As a utility library, `Address.sol` is designed to be imported and used by other contracts. While the library itself is highly secure and well-audited, its security posture within a larger system is dependent on the correct and secure integration by consuming contracts. Flaws in the application logic of contracts using `Address.sol` could inadvertently introduce vulnerabilities, even if the library functions are used as intended (7.1 Architecture, 7.6 External).
 
 **Recommendation:** Developers should treat the integration of `Address.sol` (and any external library) as a critical security boundary. Comprehensive unit and integration testing should be performed on all functions that utilize `Address.sol` utilities. A holistic security review of the entire system, including how `Address.sol` is used, is recommended.
 

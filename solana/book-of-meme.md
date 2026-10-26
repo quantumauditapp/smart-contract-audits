@@ -2,14 +2,14 @@
 token: BOOK OF MEME
 ticker: BOME
 network: solana
-risk_score: 58
+risk_score: 46
 status: medium
 date: 2026-08-11
 ---
 
 # BOOK OF MEME (BOME) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 58/100 — 🟡 Medium Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/book-of-meme-sol)
 

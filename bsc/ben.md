@@ -2,14 +2,14 @@
 token: BEN
 ticker: BEN
 network: bsc
-risk_score: 18
+risk_score: 0
 status: low
 date: 2026-09-12
 ---
 
 # BEN (BEN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 18/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ben-bsc)
 
@@ -25,8 +25,8 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with a dynamic
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract demonstrates good technical practices, leveraging OpenZeppelin's upgradeable ERC20 and Ownable implementations (7.2 Code Security). The `PackedPoolState` struct uses efficient storage… |
-| **Governance / Economics** | 7/10 | Low | The economic model incorporates dynamic tax rates and anti-farmer mechanisms, with checks like `taxDuration >= antiFarmerDuration` ensuring logical consistency (7.4 Economic). The `maxSupply` is… |
+| **Technical** | 10/10 | Low | The contract demonstrates good technical practices, leveraging OpenZeppelin's upgradeable ERC20 and Ownable implementations (7.2 Code Security). The `PackedPoolState` struct uses efficient storage… |
+| **Governance / Economics** | 8/10 | Low | The economic model incorporates dynamic tax rates and anti-farmer mechanisms, with checks like `taxDuration >= antiFarmerDuration` ensuring logical consistency (7.4 Economic). The `maxSupply` is… |
 | **Upgrades** | 9/10 | Low | The contract correctly implements the UUPS proxy pattern using OpenZeppelin's `Initializable` and `Upgradeable` contracts, including `_disableInitializers()` in the constructor and the `initializer`… |
 
 ## LP Distribution
@@ -38,39 +38,39 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with a dynamic
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Potential Reentrancy in `_liquidateTax` Function  *(Severity: High · Status: Unresolved)*
-
-The `_liquidateTax` function is called within the `_transfer` function. While the provided code is truncated, the presence of `ITaxProcessor` and `IDividend` interfaces strongly suggests that `_liquidateTax` will make external calls to these contracts. If these external calls are made before critical state updates (e.g., updating `poolState` or `balanceOf(address(this))`) or without proper reentrancy guards, a malicious external contract could re-enter `_transfer` or `_liquidateTax` to drain funds or manipulate the contract's state. This is a common vulnerability pattern in contracts interacting with external addresses.
-
-**Recommendation:** Implement a reentrancy guard (e.g., OpenZeppelin's `ReentrancyGuard` or a custom mutex) on the `_liquidateTax` function and any other functions that make external calls and modify state. Ensure that all state changes related to the external call are completed before the call is made (Checks-Effects-Interactions pattern).
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Timestamp Dependence for Critical State Transitions  *(Severity: Medium · Status: Unresolved)*
 
-The `_liquidateTax` function relies on `block.timestamp` to determine critical state transitions, specifically for `taxExpirationTime` and `antiFarmerExpirationTime`. While `block.timestamp` is suitable for general time-based events, miners can manipulate it within a small window (up to 900 seconds on Ethereum, similar on BSC). This could allow a miner or a sophisticated attacker to slightly accelerate or delay the transition to `TaxFree` or `TaxEnforced` states, potentially impacting tax collection or anti-farmer mechanisms in a specific block.
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function relies on `block.timestamp` to determine critical state transitions, specifically for `taxExpirationTime` and `antiFarmerExpirationTime`. While `block.timestamp` is suitable for general time-based events, miners can manipulate it within a small window (up to 900 seconds on Ethereum, similar on BSC). This could allow a miner or a sophisticated attacker to slightly accelerate or delay the transition to `TaxFree` or `TaxEnforced` states, potentially impacting tax collection or anti-farmer mechanisms in a specific block.
 
 **Recommendation:** For highly sensitive time-based events where precise timing is critical, consider using a time-weighted average oracle or a more robust time source if available and suitable for the use case. For less critical events, acknowledge the inherent miner manipulability of `block.timestamp` and ensure the impact of minor deviations is acceptable. In this context, the impact might be limited but should be understood.
 
 
 ### `M-02` — Integer Truncation Risk for Packed State Variables  *(Severity: Medium · Status: Unresolved)*
 
-The `PackedPoolState` struct uses smaller integer types (`uint64`, `uint48`, `uint96`) for `taxExpirationTime`, `antiFarmerExpirationTime`, and `liquidationThreshold` respectively. During initialization, `initialLiquidationThreshold` (a `uint256`) is cast to `uint96` for `liquidationThreshold`. If `START_LIQ_THRESHOLD` (which sets `initialLiquidationThreshold`) is initialized with a value greater than `type(uint96).max` (approximately `7.9 * 10^28`), it will be silently truncated, leading to an incorrect and potentially exploitable `liquidationThreshold`. While `block.timestamp` is currently well within `uint48` and `uint64` limits, extremely large `antiFarmerDuration` values or very long c…
+Not confirmed by static analysis (the model's own reading of the source). The `PackedPoolState` struct uses smaller integer types (`uint64`, `uint48`, `uint96`) for `taxExpirationTime`, `antiFarmerExpirationTime`, and `liquidationThreshold` respectively. During initialization, `initialLiquidationThreshold` (a `uint256`) is cast to `uint96` for `liquidationThreshold`. If `START_LIQ_THRESHOLD` (which sets `initialLiquidationThreshold`) is initialized with a value greater than `type(uint96).max` (approximately `7.9 * 10^28`), it will be silently truncated, leading to an incorrect and potentially exploitable `liquidationThreshold`. While `block.timestamp` is currently well within `uint48` and `u
 
 **Recommendation:** Ensure that `START_LIQ_THRESHOLD` is always initialized with a value that fits within `uint96` to prevent silent truncation. Add a `require` statement in the `initialize` function to explicitly check `require(params.initialLiquidationThreshold <= type(uint96).max, 'Liquidation threshold too large');` or similar. For time-related variables, consider if `uint256` is more appropriate if durations could be exceptionally long, or add checks to ensure sums fit within the packed types.
 
 
+### `M-03` — Potential Reentrancy in `_liquidateTax` Function  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function is called within the `_transfer` function. While the provided code is truncated, the presence of `ITaxProcessor` and `IDividend` interfaces strongly suggests that `_liquidateTax` will make external calls to these contracts. If these external calls are made before critical state updates (e.g., updating `poolState` or `balanceOf(address(this))`) or without proper reentrancy guards, a malicious external contract could re-enter `_transfer` or `_liquidateTax` to drain funds or manipulate the contract's state. This is a common vulnerability pattern in contracts interacting with external addresses
+
+**Recommendation:** Implement a reentrancy guard (e.g., OpenZeppelin's `ReentrancyGuard` or a custom mutex) on the `_liquidateTax` function and any other functions that make external calls and modify state. Ensure that all state changes related to the external call are completed before the call is made (Checks-Effects-Interactions pattern).
+
+
 ### `L-01` — Centralized Control Over Migration Functions  *(Severity: Low · Status: Unresolved)*
 
-The `startMigration` and `finalizeMigration` functions are protected by the `onlyOwner` modifier. This grants the contract owner exclusive control over initiating and completing the migration process, which involves critical state changes. While common for administrative functions, this centralization introduces a single point of failure. If the owner's private key is compromised, an attacker could manipulate the contract's state transitions related to migration.
+Not confirmed by static analysis (the model's own reading of the source). The `startMigration` and `finalizeMigration` functions are protected by the `onlyOwner` modifier. This grants the contract owner exclusive control over initiating and completing the migration process, which involves critical state changes. While common for administrative functions, this centralization introduces a single point of failure. If the owner's private key is compromised, an attacker could manipulate the contract's state transitions related to migration.
 
 **Recommendation:** For critical administrative functions, consider implementing a multi-signature wallet (e.g., Gnosis Safe) as the contract owner. This distributes control and requires multiple approvals for sensitive operations, significantly reducing the risk associated with a single compromised key. Alternatively, implement a time-lock mechanism for these functions to provide a window for users to react to pending changes.
 
 
 ### `I-01` — Initial Token Distribution to Deployer  *(Severity: Informational · Status: Unresolved)*
 
-During the `initialize` function, the entire `maxSupply` of tokens is minted to `msg.sender` (the deployer of the proxy contract). This means that initially, all tokens are held by a single address. While this is a common pattern for initial token distribution, it implies that the deployer has full control over the initial supply and subsequent distribution.
+Not confirmed by static analysis (the model's own reading of the source). During the `initialize` function, the entire `maxSupply` of tokens is minted to `msg.sender` (the deployer of the proxy contract). This means that initially, all tokens are held by a single address. While this is a common pattern for initial token distribution, it implies that the deployer has full control over the initial supply and subsequent distribution.
 
 **Recommendation:** This is an informational finding and not a vulnerability in itself. However, it is important for transparency and to ensure that the project's token distribution strategy is clearly communicated to the community. If not already planned, consider a clear and secure strategy for distributing these tokens to avoid centralization concerns or potential market manipulation.
 

@@ -2,14 +2,14 @@
 token: BabyCate
 ticker: BABYCATE
 network: solana
-risk_score: 23
+risk_score: 6
 status: low
 date: 2026-09-19
 ---
 
 # BabyCate (BABYCATE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 23/100 — 🟢 Low Risk**
+> **Risk Score: 6/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/babycate-sol)
 
@@ -26,8 +26,8 @@ The BabyCate (BABYCATE) SPL Token-2022 mint has revoked mint and freeze authorit
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The BabyCate token is implemented using the spl-token-2022 program, indicating modern SPL token standards. A key security strength is that both the mint authority and freeze authority have been… |
-| **Governance / Economics** | 4/10 | Medium | The token's DEX pair is very new, having been created only 0 days ago, which means there is insufficient track record to assess team or holder behavior. Total DEX liquidity stands at $58,146, which… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, which means the token's supply and account freezing capabilities are permanently fixed and cannot be altered. The token's metadata is also… |
+| **Governance / Economics** | 7/10 | Low | The token's DEX pair is very new, having been created only 0 days ago, which means there is insufficient track record to assess team or holder behavior. Total DEX liquidity stands at $58,146, which… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both revoked, which means the token's supply and account freezing capabilities are permanently fixed and cannot be altered. The token's metadata is also… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair for BabyCate (BABYCATE) was created 0 days ago. Insufficient track 
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2187 buys / 1599 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for BabyCate (BABYCATE) was created 0 days ago. Insufficient track 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: Boop
 ticker: BOOP
 network: arbitrum
-risk_score: 44
-status: medium
+risk_score: 0
+status: low
 date: 2026-09-01
 ---
 
 # Boop (BOOP) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/boop-arb)
 
@@ -25,9 +25,9 @@ The Boop token contract implements standard ERC-20 functionality alongside custo
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract utilizes Solidity 0.8.21 and `SafeMath` for arithmetic, although the latter is redundant due to native overflow checks. It incorporates anti-reentrancy measures with `lockTheSwap` for… |
-| **Governance / Economics** | 4/10 | Medium | The `Boop` token's economic model includes a fixed total supply, marketing allocation, and mechanisms like `_maxTxAmount` and `_maxWalletSize` to manage token distribution and prevent large… |
-| **Upgrades** | 8/10 | Low | The `Boop` contract is implemented as a standard, non-upgradeable token contract. This design choice ensures immutability, meaning the contract's logic cannot be altered post-deployment (7.7… |
+| **Technical** | 10/10 | Low | The contract utilizes Solidity 0.8.21 and `SafeMath` for arithmetic, although the latter is redundant due to native overflow checks. It incorporates anti-reentrancy measures with `lockTheSwap` for… |
+| **Governance / Economics** | 7/10 | Low | The `Boop` token's economic model includes a fixed total supply, marketing allocation, and mechanisms like `_maxTxAmount` and `_maxWalletSize` to manage token distribution and prevent large… |
+| **Upgrades** | 9/10 | Low | The `Boop` contract is implemented as a standard, non-upgradeable token contract. This design choice ensures immutability, meaning the contract's logic cannot be altered post-deployment (7.7… |
 
 ## LP Distribution
 
@@ -38,46 +38,46 @@ The Boop token contract implements standard ERC-20 functionality alongside custo
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 2 High · 🟡 2 Medium · 🟢 1 Low_
-
-### `C-01` — Truncated Code Prevents Full Audit  *(Severity: Critical · Status: Unresolved)*
-
-The provided source code for the `_transfer` function is incomplete. The function, which is central to all token movements and likely contains critical logic for fees, anti-bot measures, and external interactions, is truncated at `_holderLastTransferTimestamp[tx.orig...`. This prevents a comprehensive security assessment of the contract's core functionality, leaving significant attack vectors and vulnerabilities potentially undiscovered (7.2 Code Security, 7.6 External).
-
-**Recommendation:** Provide the complete and untruncated source code for all contract functions, especially the `_transfer` function, to allow for a thorough security audit.
-
-
-### `H-01` — Centralized Control and Owner Privileges  *(Severity: High · Status: Unresolved)*
-
-The contract owner, utilizing the `Ownable` pattern, possesses extensive control over critical contract parameters and operations. This includes the ability to manage `_maxTxAmount`, `_maxWalletSize`, `transferDelayEnabled`, `bots` mapping, and `tradingOpen` (though specific setter functions are not fully visible in the truncated code, their existence is implied by the state variables). This high degree of centralization introduces a single point of failure and potential for malicious activity or operational errors, such as pausing trading or blocking legitimate users (7.3 Access Control, 7.5 Governance, 7.8 Operations).
-
-**Recommendation:** Consider decentralizing control where feasible, perhaps by implementing a multi-signature wallet for ownership or introducing time-locks for sensitive parameter changes. Clearly document all owner-controlled functions and their potential impact. Implement robust access control checks for all administrative functions.
-
-
-### `H-02` — Constructor Ownership Transfer Logic  *(Severity: High · Status: Unresolved)*
-
-The constructor includes logic `if (_lockOwner != msg.sender) transferOwnership(_lockOwner);` to transfer ownership. If `_lockOwner` is an incorrect address, a contract that cannot accept ownership, or `address(0)` (which would revert), the contract's ownership could become stuck or transferred to an unintended entity. This could lead to a loss of administrative control over critical contract functions (7.3 Access Control, 7.8 Operations).
-
-**Recommendation:** Ensure that the `_lockOwner` address provided during deployment is correct, is an EOA or a contract capable of accepting ownership, and is the intended administrative address. Consider adding a two-step ownership transfer process for the constructor, where the `_lockOwner` must explicitly claim ownership.
-
+_🟡 5 Medium · 🟢 1 Low_
 
 ### `M-01` — Redundant SafeMath Usage  *(Severity: Medium · Status: Unresolved)*
 
-The contract uses the `SafeMath` library for arithmetic operations. While `SafeMath` is crucial for preventing integer overflows/underflows in Solidity versions prior to 0.8.0, Solidity 0.8.x and later versions include native overflow and underflow checks by default. Therefore, the explicit use of `SafeMath` adds unnecessary code complexity and slightly increases gas costs without providing additional security benefits in this compiler version (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract uses the `SafeMath` library for arithmetic operations. While `SafeMath` is crucial for preventing integer overflows/underflows in Solidity versions prior to 0.8.0, Solidity 0.8.x and later versions include native overflow and underflow checks by default. Therefore, the explicit use of `SafeMath` adds unnecessary code complexity and slightly increases gas costs without providing additional security benefits in this compiler version (7.2 Code Security).
 
 **Recommendation:** Remove the `SafeMath` library and its `using` directives. Rely on Solidity's native overflow/underflow checks for arithmetic operations, which are enabled by default in `pragma solidity 0.8.21`.
 
 
 ### `M-02` — Anti-Bot/Anti-Whale Mechanisms as DoS Vectors  *(Severity: Medium · Status: Unresolved)*
 
-The contract implements several anti-bot and anti-whale mechanisms, including `_maxTxAmount`, `_maxWalletSize`, `transferDelayEnabled`, and the `bots` mapping. While intended to prevent malicious activity, these features grant significant power to the owner and can be misused or inadvertently cause denial of service for legitimate users, especially large holders, liquidity providers, or automated systems. For example, setting `_maxTxAmount` too low could prevent necessary liquidity movements (7.4 Economic, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract implements several anti-bot and anti-whale mechanisms, including `_maxTxAmount`, `_maxWalletSize`, `transferDelayEnabled`, and the `bots` mapping. While intended to prevent malicious activity, these features grant significant power to the owner and can be misused or inadvertently cause denial of service for legitimate users, especially large holders, liquidity providers, or automated systems. For example, setting `_maxTxAmount` too low could prevent necessary liquidity movements (7.4 Economic, 7.8 Operations).
 
 **Recommendation:** Carefully review the parameters and conditions for these anti-bot/anti-whale features. Ensure that they are configured to minimize impact on legitimate users and liquidity. Consider implementing a mechanism for users to appeal bot status or for the community to vote on parameter changes if decentralization is a goal.
 
 
+### `M-03` — Truncated Code Prevents Full Audit  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the `_transfer` function is incomplete. The function, which is central to all token movements and likely contains critical logic for fees, anti-bot measures, and external interactions, is truncated at `_holderLastTransferTimestamp[tx.orig...`. This prevents a comprehensive security assessment of the contract's core functionality, leaving significant attack vectors and vulnerabilities potentially undiscovered (7.2 Code Security, 7.6 External).
+
+**Recommendation:** Provide the complete and untruncated source code for all contract functions, especially the `_transfer` function, to allow for a thorough security audit.
+
+
+### `M-04` — Centralized Control and Owner Privileges  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract owner, utilizing the `Ownable` pattern, possesses extensive control over critical contract parameters and operations. This includes the ability to manage `_maxTxAmount`, `_maxWalletSize`, `transferDelayEnabled`, `bots` mapping, and `tradingOpen` (though specific setter functions are not fully visible in the truncated code, their existence is implied by the state variables). This high degree of centralization introduces a single point of failure and potential for malicious activity or operational errors, such as pausing trading or blocking legitimate users (7.3 Access Control, 7.5 Governance, 7.8 Operations
+
+**Recommendation:** Consider decentralizing control where feasible, perhaps by implementing a multi-signature wallet for ownership or introducing time-locks for sensitive parameter changes. Clearly document all owner-controlled functions and their potential impact. Implement robust access control checks for all administrative functions.
+
+
+### `M-05` — Constructor Ownership Transfer Logic  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The constructor includes logic `if (_lockOwner != msg.sender) transferOwnership(_lockOwner);` to transfer ownership. If `_lockOwner` is an incorrect address, a contract that cannot accept ownership, or `address(0)` (which would revert), the contract's ownership could become stuck or transferred to an unintended entity. This could lead to a loss of administrative control over critical contract functions (7.3 Access Control, 7.8 Operations).
+
+**Recommendation:** Ensure that the `_lockOwner` address provided during deployment is correct, is an EOA or a contract capable of accepting ownership, and is the intended administrative address. Consider adding a two-step ownership transfer process for the constructor, where the `_lockOwner` must explicitly claim ownership.
+
+
 ### `L-01` — Lack of Event Emission for Critical State Changes  *(Severity: Low · Status: Unresolved)*
 
-The provided code snippet does not show event emissions for changes to several critical contract parameters, such as `_maxWalletSize`, `transferDelayEnabled`, or updates to the `bots` mapping. While `MaxTxAmountUpdated` is present, comprehensive event logging for all configurable parameters is crucial for transparency, allowing off-chain applications and users to monitor changes and react accordingly (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The provided code snippet does not show event emissions for changes to several critical contract parameters, such as `_maxWalletSize`, `transferDelayEnabled`, or updates to the `bots` mapping. While `MaxTxAmountUpdated` is present, comprehensive event logging for all configurable parameters is crucial for transparency, allowing off-chain applications and users to monitor changes and react accordingly (7.8 Operations).
 
 **Recommendation:** Emit events whenever critical state variables or configuration parameters are modified. This enhances transparency and allows for better off-chain monitoring and auditing of contract behavior.
 

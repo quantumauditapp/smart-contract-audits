@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Incomplete Source Code for Core Logic  *(Severity: Low · Status: Unresolved)*
 
-The provided source code for the `FourERC20.sol` contract is truncated, specifically within the `_transfer` internal function. This prevents a full and definitive security assessment of the token's fundamental transfer mechanism, including checks for zero addresses, sufficient balances, and event emissions (7.2 Code Security). While the contract is based on OpenZeppelin, which implies robust implementations, the absence of the complete code means these critical internal operations could not be fully verified.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the `FourERC20.sol` contract is truncated, specifically within the `_transfer` internal function. This prevents a full and definitive security assessment of the token's fundamental transfer mechanism, including checks for zero addresses, sufficient balances, and event emissions (7.2 Code Security). While the contract is based on OpenZeppelin, which implies robust implementations, the absence of the complete code means these critical internal operations could not be fully verified.
 
 **Recommendation:** Provide the complete and untruncated source code for all contracts, especially for core internal functions like `_transfer`, `_mint`, and `_burn`, to allow for a comprehensive security audit and verification of all logic and checks.
 
 
 ### `I-01` — Missing Public Mint/Burn Functionality  *(Severity: Informational · Status: Unresolved)*
 
-The `FourERC20` contract, as a base ERC-20 implementation, does not expose public `_mint` or `_burn` functions. This means that the token's total supply (`_totalSupply`) is fixed at deployment and can only be modified by the internal `_transfer` function, or if a derived contract implements and exposes minting/burning capabilities (7.4 Economic). This is a design choice and not a vulnerability, but it's important for understanding the token's supply dynamics.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract, as a base ERC-20 implementation, does not expose public `_mint` or `_burn` functions. This means that the token's total supply (`_totalSupply`) is fixed at deployment and can only be modified by the internal `_transfer` function, or if a derived contract implements and exposes minting/burning capabilities (7.4 Economic). This is a design choice and not a vulnerability, but it's important for understanding the token's supply dynamics.
 
 **Recommendation:** If a variable token supply is desired, ensure that any derived contract implementing minting or burning functions includes appropriate access control (e.g., `Ownable`, `AccessControl`) and limits on who can call these functions and under what conditions. Clearly document the token's supply mechanism.
 
 
 ### `I-02` — Internal `_init` Function Requires Constructor Call  *(Severity: Informational · Status: Unresolved)*
 
-The `_init(string memory name_, string memory symbol_)` function, responsible for setting the token's name and symbol, is declared as `internal`. This means it must be explicitly called within the constructor of the `FourERC20` contract itself or a contract that inherits from it (7.1 Architecture). If `FourERC20` is deployed directly without a constructor calling `_init`, the `name()` and `symbol()` functions will return empty strings, potentially leading to issues with token display and integration in wallets or exchanges.
+Not confirmed by static analysis (the model's own reading of the source). The `_init(string memory name_, string memory symbol_)` function, responsible for setting the token's name and symbol, is declared as `internal`. This means it must be explicitly called within the constructor of the `FourERC20` contract itself or a contract that inherits from it (7.1 Architecture). If `FourERC20` is deployed directly without a constructor calling `_init`, the `name()` and `symbol()` functions will return empty strings, potentially leading to issues with token display and integration in wallets or exchanges.
 
 **Recommendation:** Ensure that the `_init` function is called in the constructor of the contract that is deployed to set the desired token name and symbol. For example: `constructor() { _init("MyToken", "MTK"); }`
 
