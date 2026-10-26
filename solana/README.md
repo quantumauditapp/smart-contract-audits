@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1292 reports** · Updated daily · [← All Networks](../README.md)
+**1311 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,25 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Opacus](./opacus.md) | OPACUS | 🟢 14/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/opacus-sol) |
+| [Arrow](./arrow.md) | ARROW | 🟢 24/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/arrow-sol) |
+| [Pump Hooks](./pump-hooks.md) | PHOOK | 🟢 20/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/pump-hooks-sol) |
+| [LaunchAssUnleashesNextCryptoHigh](./launchassunleashesnextcryptohigh.md) | LAUNCH | 🟢 20/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/launchassunleashesnextcryptohigh-sol) |
+| [STONKS PARK](./stonks-park.md) | PARK | 🟢 7/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/stonks-park-sol) |
+| [Anh Yêu Em](./anh-yeu-em.md) | ILY | 🟢 24/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/anh-yeu-em-sol) |
+| [Tetsuo Super Intelligence](./tetsuo-super-intelligence.md) | TSI | 🟢 21/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/tetsuo-super-intelligence-sol) |
+| [PUMPCAT](./pumpcat-sol-cd5f.md) | PUMPCAT | 🟢 17/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/pumpcat-sol-cd5f) |
+| [Kobecoin](./kobecoin.md) | KOBX | 🟢 22/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/kobecoin-sol) |
+| [TATOBRO](./tatobro.md) | BRO | 🟢 23/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/tatobro-sol) |
+| [apeonpump](./apeonpump.md) | PUMP | 🟢 20/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/apeonpump-sol) |
+| [Shitcoin](./shitcoin.md) | SHITCOIN | 🟢 23/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/shitcoin-sol) |
+| [Anthropic IPO](./anthropic-ipo.md) | ANT | 🟢 16/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/anthropic-ipo-sol) |
+| [Justice For Leyla](./justice-for-leyla.md) | LEYLA | 🟢 16/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/justice-for-leyla-sol) |
+| [Grok](./grok.md) | GROK | 🟢 2/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/grok-sol) |
+| [American Overwatch Protocol](./american-overwatch-protocol-sol-0a4b.md) | AOP | 🟢 2/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-sol-0a4b) |
+| [USOE](./usoe.md) | USOE | 🟢 1/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/usoe-sol) |
+| [AODF](./aodf.md) | AODF | 🟢 0/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/aodf-sol) |
+| [United States Dividend Fund](./united-states-dividend-fund-sol-a4d6.md) | USDF | 🟢 1/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-sol-a4d6) |
 | [WhiteWhale](./whitewhale.md) | WHITEWHALE | 🟡 40/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/whitewhale-sol) |
 | [Always Sunny in Space](./always-sunny-in-space.md) | ASS | 🟢 23/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/always-sunny-in-space-sol) |
 | [StonkMarket](./stonkmarket.md) | STM | 🟢 19/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/stonkmarket-sol) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**466 reports** · Updated daily · [← All Networks](../README.md)
+**468 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Zero Gap](./zero-gap-eth-b6e0.md) | ZGAP | 🟡 43/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/zero-gap-eth-b6e0) |
+| [QANX Token](./qanx-token.md) | QANX | 🟠 65/100 High Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/qanx-token-eth) |
 | [USUAL](./usual.md) | USUAL | 🟡 52/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/usual-eth) |
 | [Rayls](./rayls.md) | RLS | 🟠 72/100 High Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/rayls-eth) |
 | [one coin](./one-coin.md) | ONECOIN | 🟠 71/100 High Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/one-coin-eth) |

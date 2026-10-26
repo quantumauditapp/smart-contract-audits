@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**465 reports** · Updated daily · [← All Networks](../README.md)
+**469 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [The Stonks Exchange](./the-stonks-exchange-base-1b01.md) | STONKEX | 🟡 57/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/the-stonks-exchange-base-1b01) |
+| [SK hynix Inc.](./sk-hynix-inc.md) | SKHYC | 🟡 56/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/sk-hynix-inc-base) |
+| [UDTF](./udtf.md) | UDTF | 🟡 58/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/udtf-base) |
+| [Papertrade](./papertrade-base-59d0.md) | PAPER | 🟠 80/100 High Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/papertrade-base-59d0) |
 | [XTO](./xto-base-7f5c.md) | XTO | 🟡 63/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/xto-base-7f5c) |
 | [Ether](./ether.md) | ETH | 🔴 97/100 Critical Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/ether-base) |
 | [AODF](./aodf-base-80f8.md) | AODF | 🟡 60/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/aodf-base-80f8) |

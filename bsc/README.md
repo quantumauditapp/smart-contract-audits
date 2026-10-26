@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**526 reports** · Updated daily · [← All Networks](../README.md)
+**533 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [TapeLaunch](./tapelaunch.md) | TAPE | 🟢 17/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/tapelaunch-bsc) |
+| [大肥鱼](./token-7a4cd2.md) | 大肥鱼 | 🟠 65/100 High Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/token-7a4cd2-bsc) |
+| [Trump](./trump-bsc-2bdd.md) | TRUMP | 🟠 84/100 High Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/trump-bsc-2bdd) |
+| [Group number:1098777202](./group-number1098777202.md) | BINANCE LEGEND | 🟢 20/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/group-number1098777202-bsc) |
+| [Flying Tesla Roadster](./flying-tesla-roadster-bsc-cf70.md) | FTR | 🟠 76/100 High Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/flying-tesla-roadster-bsc-cf70) |
+| [DODO bird](./dodo-bird.md) | DODO | 🟡 40/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/dodo-bird-bsc) |
+| [币安慈善](./token-673880.md) | 币安慈善 | 🟢 25/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/token-673880-bsc) |
 | [Binance Agent](./binance-agent-bsc-d3cc.md) | 7AGENT | 🟢 24/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/binance-agent-bsc-d3cc) |
 | [Charity Binance](./charity-binance.md) | 慈善币安 | 🟢 20/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/charity-binance-bsc) |
 | [Binance Agent](./binance-agent-bsc-ebc4.md) | 7AGENT | 🟢 2/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/binance-agent-bsc-ebc4) |
