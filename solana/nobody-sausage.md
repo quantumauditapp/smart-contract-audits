@@ -2,14 +2,14 @@
 token: Nobody Sausage
 ticker: NOBODY
 network: solana
-risk_score: 18
+risk_score: 11
 status: low
 date: 2026-09-12
 ---
 
 # Nobody Sausage (NOBODY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 18/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/nobody-sausage-sol)
 
@@ -26,8 +26,8 @@ The Nobody Sausage (NOBODY) SPL token mint exhibits a medium risk profile primar
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Nobody Sausage (NOBODY) token is a standard SPL token operating under the `spl-token` program. Both the mint authority and freeze authority have been revoked, meaning no new tokens can be minted… |
-| **Governance / Economics** | 5/10 | Medium | The economic stability of the NOBODY token is moderately impacted by holder concentration, with the top 10 accounts collectively holding 55.78% of the total supply (7.4 Economic). This level of… |
-| **Upgrades** | 8/10 | Low | The Nobody Sausage (NOBODY) token mint has a fixed configuration as both the mint and freeze authorities are revoked (7.3 Access Control). This means the token's supply cannot be increased, and no… |
+| **Governance / Economics** | 6/10 | Medium | The economic stability of the NOBODY token is moderately impacted by holder concentration, with the top 10 accounts collectively holding 55.78% of the total supply (7.4 Economic). This level of… |
+| **Upgrades** | 9/10 | Low | The Nobody Sausage (NOBODY) token mint has a fixed configuration as both the mint and freeze authorities are revoked (7.3 Access Control). This means the token's supply cannot be increased, and no… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ Top 10 token accounts hold 55.78% of supply. Coordinated sell-off would crash pr
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Top 10 token accounts hold 55.78% of supply. Coordinated sell-off would crash pr
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

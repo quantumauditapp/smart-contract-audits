@@ -117,7 +117,7 @@ Based on available data, labeling Nockchain definitively as a scam is not possib
 
 ### Is Nockchain safe to buy?
 
-Nockchain (NOCK) carries a high-risk score of 51/100, indicating it is not inherently safe for investment. Key risk factors include the contract owner retaining control, which could lead to unexpected changes or manipulation. Additionally, the liquidity is not locked, exposing investors to potential rug pulls where funds supporting the token's value are withdrawn. These significant risks should be carefully considered.
+Nockchain (NOCK) carries a low-risk score of 32/100, indicating it is not inherently safe for investment. Key risk factors include the contract owner retaining control, which could lead to unexpected changes or manipulation. Additionally, the liquidity is not locked, exposing investors to potential rug pulls where funds supporting the token's value are withdrawn. These significant risks should be carefully considered.
 
 ### Has Nockchain been audited?
 

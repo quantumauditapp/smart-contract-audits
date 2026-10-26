@@ -2,14 +2,14 @@
 token: OpenUSDT
 ticker: OUSDT
 network: base
-risk_score: 50
+risk_score: 42
 status: medium
 date: 2026-08-13
 ---
 
 # OpenUSDT (OUSDT) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 50/100 — 🟡 Medium Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/openusdt-base)
 
@@ -25,8 +25,8 @@ The XERC20 contract, an upgradeable ERC-20 token, was audited for security vulne
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract leverages OpenZeppelin's upgradeable ERC20 and Ownable patterns, providing a solid foundation for token functionality and access control (7.2 Code Security). It implements a rate… |
-| **Governance / Economics** | 2/10 | High | The contract's ownership is secured by a Timelock with a 24-hour delay, which is a strong governance practice for administrative functions like setting rate limits and adding/removing bridges (7.5… |
+| **Technical** | 7/10 | Low | The contract leverages OpenZeppelin's upgradeable ERC20 and Ownable patterns, providing a solid foundation for token functionality and access control (7.2 Code Security). It implements a rate… |
+| **Governance / Economics** | 4/10 | Medium | The contract's ownership is secured by a Timelock with a 24-hour delay, which is a strong governance practice for administrative functions like setting rate limits and adding/removing bridges (7.5… |
 | **Upgrades** | 1/10 | High | The contract utilizes the Transparent Upgradeable Proxy pattern, with the proxy admin owned by a Timelock, ensuring a secure and controlled upgrade path (7.7 Upgrades). The `initialize` function is… |
 
 ## Proxy Upgrade Controls
@@ -47,39 +47,39 @@ The XERC20 contract, an upgradeable ERC-20 token, was audited for security vulne
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `C-01` — Public `mint` function allows arbitrary token creation  *(Severity: Critical · Status: Unresolved)*
-
-The `mint(address _user, uint256 _amount)` function is declared `public`, allowing any external caller to mint new tokens to any specified address. This bypasses typical access control mechanisms for token creation, leading to uncontrolled inflation and potential devaluation of the token. While the `_mintWithCaller` function applies a rate limit based on `msg.sender`, this only limits the rate of minting per individual caller, not the overall ability to inflate the supply.
-
-**Recommendation:** Restrict the `mint` function to authorized roles (e.g., `onlyOwner` or a dedicated minter role) or remove it if minting is only intended via cross-chain mechanisms.
-
-
-### `H-01` — Rate limit bypass via multiple addresses  *(Severity: High · Status: Unresolved)*
-
-The rate limiting mechanism in `_depleteBuffer` and `_replenishBuffer` is applied per `_caller` address. If the `mint` function remains public, an attacker could use multiple distinct addresses to bypass the individual rate limits, effectively minting a large amount of tokens quickly by distributing the minting operations across many accounts. This undermines the intended purpose of the rate limits for controlling overall token supply.
-
-**Recommendation:** If the `mint` function is intended to be public (which is highly discouraged), consider implementing a global rate limit in addition to or instead of the per-caller rate limit, or restrict the `mint` function to a single, trusted entity.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Immutability of `lockbox` address  *(Severity: Medium · Status: Unresolved)*
 
-The `lockbox` address is declared `immutable` and set in the constructor. This address is used to bypass rate limits for internal minting/burning operations. If the `lockbox` address needs to be changed in the future due to compromise, operational changes, or system evolution, it cannot be updated without a full contract upgrade, which is a more complex and risky operation than a simple parameter change.
+Not confirmed by static analysis (the model's own reading of the source). The `lockbox` address is declared `immutable` and set in the constructor. This address is used to bypass rate limits for internal minting/burning operations. If the `lockbox` address needs to be changed in the future due to compromise, operational changes, or system evolution, it cannot be updated without a full contract upgrade, which is a more complex and risky operation than a simple parameter change.
 
 **Recommendation:** Re-evaluate the necessity of `lockbox` being `immutable`. If it represents a critical operational address that might need to change, consider making it a mutable `onlyOwner` configurable variable.
 
 
+### `M-02` — Public `mint` function allows arbitrary token creation  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint(address _user, uint256 _amount)` function is declared `public`, allowing any external caller to mint new tokens to any specified address. This bypasses typical access control mechanisms for token creation, leading to uncontrolled inflation and potential devaluation of the token. While the `_mintWithCaller` function applies a rate limit based on `msg.sender`, this only limits the rate of minting per individual caller, not the overall ability to inflate the supply.
+
+**Recommendation:** Restrict the `mint` function to authorized roles (e.g., `onlyOwner` or a dedicated minter role) or remove it if minting is only intended via cross-chain mechanisms.
+
+
+### `M-03` — Rate limit bypass via multiple addresses  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The rate limiting mechanism in `_depleteBuffer` and `_replenishBuffer` is applied per `_caller` address. If the `mint` function remains public, an attacker could use multiple distinct addresses to bypass the individual rate limits, effectively minting a large amount of tokens quickly by distributing the minting operations across many accounts. This undermines the intended purpose of the rate limits for controlling overall token supply.
+
+**Recommendation:** If the `mint` function is intended to be public (which is highly discouraged), consider implementing a global rate limit in addition to or instead of the per-caller rate limit, or restrict the `mint` function to a single, trusted entity.
+
+
 ### `L-01` — Hardcoded `decimals` value  *(Severity: Low · Status: Unresolved)*
 
-The `decimals()` function is hardcoded to return `6`. While this is a valid design choice, it means the token will always have 6 decimal places. If there's a future need to change the decimal precision (e.g., for integration with other systems that expect a different standard like 18), it would require a contract upgrade.
+Not confirmed by static analysis (the model's own reading of the source). The `decimals()` function is hardcoded to return `6`. While this is a valid design choice, it means the token will always have 6 decimal places. If there's a future need to change the decimal precision (e.g., for integration with other systems that expect a different standard like 18), it would require a contract upgrade.
 
 **Recommendation:** Document this design choice clearly. If flexibility is desired, consider making `decimals` an `immutable` variable set in the constructor or an `onlyOwner` configurable variable, though changing decimals for an existing token is generally not recommended due to ecosystem impact.
 
 
 ### `I-01` — Ambiguous `burn` function naming  *(Severity: Informational · Status: Unresolved)*
 
-The `burn(address _user, uint256 _amount)` function is public and allows `msg.sender` to burn tokens from `_user` if `msg.sender` has an allowance from `_user`. This behavior is typically associated with a `burnFrom` function in ERC20 standards, while a `burn` function usually implies burning tokens owned by `msg.sender`. The current naming might lead to confusion for integrators or users.
+Not confirmed by static analysis (the model's own reading of the source). The `burn(address _user, uint256 _amount)` function is public and allows `msg.sender` to burn tokens from `_user` if `msg.sender` has an allowance from `_user`. This behavior is typically associated with a `burnFrom` function in ERC20 standards, while a `burn` function usually implies burning tokens owned by `msg.sender`. The current naming might lead to confusion for integrators or users.
 
 **Recommendation:** Rename the function to `burnFrom(address _user, uint256 _amount)` to align with common ERC20 naming conventions if it's intended to allow burning on behalf of others. If it's only intended for users to burn their own tokens, then the allowance check should be removed, and `_user` should be `msg.sender`.
 

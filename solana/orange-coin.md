@@ -2,14 +2,14 @@
 token: Orange Coin
 ticker: ORANGE
 network: solana
-risk_score: 52
+risk_score: 35
 status: medium
 date: 2026-08-14
 ---
 
 # Orange Coin (ORANGE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 52/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/orange-coin-sol)
 
@@ -26,7 +26,7 @@ The Orange Coin token mint is an SPL Token-2022 with both mint and freeze author
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The Orange Coin is an SPL Token-2022 mint. Its mint authority is revoked, ensuring no new tokens can be created, fixing the total supply at 995,072,029.438782 ORANGE. The freeze authority is also… |
-| **Governance / Economics** | 1/10 | High | The token's DEX pair is very new, established only 3 days ago, which means there is limited historical data to evaluate market stability or team actions. Liquidity stands at $49,982 USD, with a… |
+| **Governance / Economics** | 2/10 | High | The token's DEX pair is very new, established only 3 days ago, which means there is limited historical data to evaluate market stability or team actions. Liquidity stands at $49,982 USD, with a… |
 | **Upgrades** | 8/10 | Low | The token mint has both its mint and freeze authorities revoked, meaning these core parameters cannot be changed. No permanent delegate is configured, and the metadata is not mutable, ensuring the… |
 
 ## Security Findings
@@ -54,13 +54,13 @@ The DEX pair for Orange Coin was created 3 days ago. This short operational hist
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 26146 buys / 25127 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for Orange Coin was created 3 days ago. This short operational hist
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: OpenVPP
 ticker: OVPP
 network: base
-risk_score: 15
+risk_score: 8
 status: low
 date: 2026-07-23
 ---
 
 # OpenVPP (OVPP) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 15/100 — 🟢 Low Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/openvpp-base)
 
@@ -42,21 +42,21 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralized Control of Token Supply  *(Severity: Medium · Status: Unresolved)*
 
-The entire fixed supply of 1,000,000,000 OVPP tokens is minted to a single `_treasuryWallet` address during contract deployment. This grants significant control over the token's initial distribution, liquidity provision, and potential market impact to a single entity or set of keys. A compromise of this wallet could lead to a large-scale token dump or misuse, impacting the project's integrity and token value (7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The entire fixed supply of 1,000,000,000 OVPP tokens is minted to a single `_treasuryWallet` address during contract deployment. This grants significant control over the token's initial distribution, liquidity provision, and potential market impact to a single entity or set of keys. A compromise of this wallet could lead to a large-scale token dump or misuse, impacting the project's integrity and token value (7.4 Economic).
 
 **Recommendation:** Consider implementing a multi-signature wallet for the `_treasuryWallet` to distribute control and require multiple approvals for large transactions. Alternatively, a time-locked vesting schedule or a decentralized distribution mechanism could be explored for future token releases to mitigate single-point-of-failure risks.
 
 
 ### `L-01` — Owner Privileges and Single Point of Control  *(Severity: Low · Status: Unresolved)*
 
-The contract utilizes OpenZeppelin's `Ownable2Step` for access control, which is a robust pattern for ownership transfer. However, the `_owner` address retains full control over critical administrative functions, such as initiating ownership transfers and potentially interacting with other privileged functions if added in the future. While `Ownable2Step` enhances security for ownership changes, the owner remains a single point of control (7.3 Access Control, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes OpenZeppelin's `Ownable2Step` for access control, which is a robust pattern for ownership transfer. However, the `_owner` address retains full control over critical administrative functions, such as initiating ownership transfers and potentially interacting with other privileged functions if added in the future. While `Ownable2Step` enhances security for ownership changes, the owner remains a single point of control (7.3 Access Control, 7.5 Governance).
 
 **Recommendation:** It is recommended that the `_owner` address be secured with a multi-signature wallet to distribute control and reduce the risk of a single point of compromise. Implement robust operational security procedures for managing the owner's private keys.
 
 
 ### `I-01` — Potential User-Side Front-Running with ERC20Permit  *(Severity: Informational · Status: Unresolved)*
 
-The contract inherits `ERC20Permit`, which allows users to approve token transfers off-chain using signed messages, enabling gasless approvals. While beneficial for user experience, the `permit` function can be susceptible to front-running if a user's signed message (especially with a high allowance and a distant deadline) is observed by an attacker who then submits the transaction with a higher gas price. This is primarily a user-side risk rather than a contract vulnerability (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract inherits `ERC20Permit`, which allows users to approve token transfers off-chain using signed messages, enabling gasless approvals. While beneficial for user experience, the `permit` function can be susceptible to front-running if a user's signed message (especially with a high allowance and a distant deadline) is observed by an attacker who then submits the transaction with a higher gas price. This is primarily a user-side risk rather than a contract vulnerability (7.2 Code Security).
 
 **Recommendation:** Educate users on the potential risks associated with `permit` signatures, particularly regarding front-running. Advise users to use reasonable `deadline` values and be cautious when signing permits for large amounts. Consider providing client-side tools that help users set appropriate parameters and understand the implications of their signatures.
 

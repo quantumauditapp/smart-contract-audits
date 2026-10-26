@@ -2,14 +2,14 @@
 token: OFC
 ticker: OFC
 network: base
-risk_score: 53
+risk_score: 46
 status: medium
 date: 2026-09-20
 ---
 
 # OFC (OFC) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 53/100 — 🟡 Medium Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ofc-base)
 
@@ -42,21 +42,21 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Deployment DoS via Large `batchMint` Arrays  *(Severity: Medium · Status: Unresolved)*
 
-The `ERC20FixedSupply` constructor calls `ERC20Storage.layout().batchMint(holders, allocations)`. If the `holders` and `allocations` arrays are excessively large, the gas cost of this operation could exceed the block gas limit, preventing the contract from being deployed. This constitutes a denial-of-service at deployment time (7.2).
+Not confirmed by static analysis (the model's own reading of the source). The `ERC20FixedSupply` constructor calls `ERC20Storage.layout().batchMint(holders, allocations)`. If the `holders` and `allocations` arrays are excessively large, the gas cost of this operation could exceed the block gas limit, preventing the contract from being deployed. This constitutes a denial-of-service at deployment time (7.2).
 
 **Recommendation:** Prior to deployment, carefully calculate the gas cost of the `batchMint` operation with the intended array sizes. If the arrays are too large, consider reducing the initial number of recipients to ensure the constructor call fits within a single transaction's gas limit. For a fixed-supply token, the entire initial allocation must be processed in the constructor.
 
 
 ### `L-01` — Single-step Ownership Transfer  *(Severity: Low · Status: Unresolved)*
 
-The `transferOwnership` function in `ContractOwnershipBase` allows the current owner to transfer ownership to a new address in a single transaction (7.3). While functional, this pattern carries a risk: if the `newOwner` address is incorrect (e.g., a typo or an unowned address), the contract's ownership could be permanently lost or transferred to an inaccessible address (7.8).
+Not confirmed by static analysis (the model's own reading of the source). The `transferOwnership` function in `ContractOwnershipBase` allows the current owner to transfer ownership to a new address in a single transaction (7.3). While functional, this pattern carries a risk: if the `newOwner` address is incorrect (e.g., a typo or an unowned address), the contract's ownership could be permanently lost or transferred to an inaccessible address (7.8).
 
 **Recommendation:** Implement a two-step ownership transfer mechanism. This typically involves a `proposeOwner` function where the current owner nominates a new owner, and an `acceptOwnership` function that the nominated new owner must call to finalize the transfer. This mitigates the risk of accidental ownership loss.
 
 
 ### `I-01` — Reliance on External Forwarder Registry  *(Severity: Informational · Status: Unresolved)*
 
-The `ERC20FixedSupply` contract integrates `ForwarderRegistryContext` and relies on an external `IForwarderRegistry` contract for meta-transaction support. The security and availability of this external registry are critical for the proper functioning of meta-transactions within the token (7.6).
+Not confirmed by static analysis (the model's own reading of the source). The `ERC20FixedSupply` contract integrates `ForwarderRegistryContext` and relies on an external `IForwarderRegistry` contract for meta-transaction support. The security and availability of this external registry are critical for the proper functioning of meta-transactions within the token (7.6).
 
 **Recommendation:** Ensure that the `IForwarderRegistry` contract used is thoroughly audited, well-maintained, and deployed by a trusted entity. Understand its operational risks and potential points of failure, as any issues with the registry could impact the user experience for meta-transactions.
 

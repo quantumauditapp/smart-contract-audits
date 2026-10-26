@@ -2,14 +2,14 @@
 token: Nola
 ticker: NOLA
 network: arbitrum
-risk_score: 60
+risk_score: 36
 status: medium
 date: 2026-09-01
 ---
 
 # Nola (NOLA) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 60/100 — 🟡 Medium Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/nola-arb)
 
@@ -26,7 +26,7 @@ The OdysToken contract implements a standard ERC-20-like token with custom trans
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The OdysToken contract provides a basic ERC-20 implementation with additional transfer restrictions for wallet and transaction sizes (7.1 Architecture). It correctly implements standard ERC-20… |
-| **Governance / Economics** | 1/10 | High | The `factory` address holds centralized control for setting the `liquidityPool` and `initialBuyRecipient` addresses (7.3 Access Control), posing a single point of failure if compromised. Key… |
+| **Governance / Economics** | 2/10 | High | The `factory` address holds centralized control for setting the `liquidityPool` and `initialBuyRecipient` addresses (7.3 Access Control), posing a single point of failure if compromised. Key… |
 | **Upgrades** | 6/10 | Medium | The OdysToken contract is not designed to be upgradeable (7.7 Upgrades), meaning its logic cannot be modified after deployment. This eliminates risks associated with proxy patterns, upgradeability… |
 
 ## LP Distribution
@@ -38,53 +38,53 @@ The OdysToken contract implements a standard ERC-20-like token with custom trans
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 2 Low · ⚪ 2 Informational_
-
-### `H-01` — Integer Overflow in `maxWallet` and `maxTx` Calculations  *(Severity: High · Status: Unresolved)*
-
-The calculations for `maxWallet()` and `maxTx()` involve multiplication operations: `(totalSupply * maxWalletBps)` and `(w * 110)`. If `totalSupply` or `w` (the result of `maxWallet()`) are sufficiently large, these multiplications can exceed `type(uint256).max`, leading to an integer overflow. This would result in incorrect (smaller than intended) `maxWallet` or `maxTx` values, potentially allowing transfers that should be restricted or causing unexpected behavior in the token's economic model (7.2 Code Security).
-
-**Recommendation:** Implement safe arithmetic for all multiplication operations, especially those involving large `uint256` values. Consider using OpenZeppelin's `SafeMath` library or explicitly checking for overflow before multiplication, for example, `require(totalSupply <= type(uint256).max / maxWalletBps, 'Overflow');`.
-
+_🟡 3 Medium · 🟢 2 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralized Control by `factory` Address  *(Severity: Medium · Status: Unresolved)*
 
-The `factory` address, set during contract deployment, holds exclusive control over critical functions such as `setPool()` and `setInitialBuyRecipient()` (7.3 Access Control). If the private key associated with this `factory` address is compromised, an attacker could maliciously set the `liquidityPool` or `initialBuyRecipient` to an arbitrary address, potentially disrupting liquidity or diverting funds. This represents a single point of failure for initial contract setup.
+Not confirmed by static analysis (the model's own reading of the source). The `factory` address, set during contract deployment, holds exclusive control over critical functions such as `setPool()` and `setInitialBuyRecipient()` (7.3 Access Control). If the private key associated with this `factory` address is compromised, an attacker could maliciously set the `liquidityPool` or `initialBuyRecipient` to an arbitrary address, potentially disrupting liquidity or diverting funds. This represents a single point of failure for initial contract setup.
 
 **Recommendation:** To mitigate the risk of a single point of failure, consider using a multi-signature wallet (e.g., Gnosis Safe) for the `factory` address. For highly critical operations, implementing a time-lock mechanism could provide a window for intervention if a malicious transaction is initiated.
 
 
 ### `M-02` — Immutability of Key Parameters Limits Flexibility  *(Severity: Medium · Status: Unresolved)*
 
-The `maxWalletBps` and `restrictionSeconds` parameters are set as `immutable` in the constructor (7.4 Economic). While this provides predictability and reduces governance complexity, it also means these critical tokenomic parameters cannot be adjusted after deployment. This lack of flexibility could become a significant issue if unforeseen market conditions, community feedback, or protocol evolution necessitate changes to the token's transfer restrictions.
+Not confirmed by static analysis (the model's own reading of the source). The `maxWalletBps` and `restrictionSeconds` parameters are set as `immutable` in the constructor (7.4 Economic). While this provides predictability and reduces governance complexity, it also means these critical tokenomic parameters cannot be adjusted after deployment. This lack of flexibility could become a significant issue if unforeseen market conditions, community feedback, or protocol evolution necessitate changes to the token's transfer restrictions.
 
 **Recommendation:** Evaluate whether future flexibility for these parameters is desirable. If so, consider making them configurable by a trusted entity (e.g., the `factory` address or a governance mechanism) with appropriate safeguards like time-locks or multi-signature approvals. If immutability is the intended design, ensure this decision is well-documented and understood by stakeholders.
 
 
+### `M-03` — Integer Overflow in `maxWallet` and `maxTx` Calculations  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The calculations for `maxWallet()` and `maxTx()` involve multiplication operations: `(totalSupply * maxWalletBps)` and `(w * 110)`. If `totalSupply` or `w` (the result of `maxWallet()`) are sufficiently large, these multiplications can exceed `type(uint256).max`, leading to an integer overflow. This would result in incorrect (smaller than intended) `maxWallet` or `maxTx` values, potentially allowing transfers that should be restricted or causing unexpected behavior in the token's economic model (7.2 Code Security).
+
+**Recommendation:** Implement safe arithmetic for all multiplication operations, especially those involving large `uint256` values. Consider using OpenZeppelin's `SafeMath` library or explicitly checking for overflow before multiplication, for example, `require(totalSupply <= type(uint256).max / maxWalletBps, 'Overflow');`.
+
+
 ### `L-01` — Missing `metaURI` Setter or Immutability Declaration  *(Severity: Low · Status: Unresolved)*
 
-The `metaURI` state variable is declared as `string public` and initialized in the constructor. However, there is no setter function provided to update its value after deployment. If the intention was for `metaURI` to be mutable, this is an oversight. If it was intended to be immutable, it should be declared as `immutable` to clearly communicate its fixed nature and potentially save gas (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The `metaURI` state variable is declared as `string public` and initialized in the constructor. However, there is no setter function provided to update its value after deployment. If the intention was for `metaURI` to be mutable, this is an oversight. If it was intended to be immutable, it should be declared as `immutable` to clearly communicate its fixed nature and potentially save gas (7.1 Architecture).
 
 **Recommendation:** Clarify the intended mutability of `metaURI`. If it should be immutable, declare it as `string public immutable metaURI;`. If it should be mutable, add a restricted setter function (e.g., callable only by the `factory` address) to allow updates.
 
 
 ### `L-02` — No Mechanism for Recovering Accidentally Sent Tokens  *(Severity: Low · Status: Unresolved)*
 
-The contract lacks a function to recover accidentally sent ERC-20 tokens (other than its own `OdysToken`) or native currency (ETH/MATIC/BNB) that might be mistakenly sent to the contract address (7.8 Operations). Any such assets would become permanently locked within the contract, leading to irrecoverable loss.
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks a function to recover accidentally sent ERC-20 tokens (other than its own `OdysToken`) or native currency (ETH/MATIC/BNB) that might be mistakenly sent to the contract address (7.8 Operations). Any such assets would become permanently locked within the contract, leading to irrecoverable loss.
 
 **Recommendation:** Implement a restricted `recoverERC20(address tokenAddress, uint256 amount)` function and a `withdrawEther(uint256 amount)` function, callable only by the `factory` address. This would allow the recovery of assets sent to the contract by mistake.
 
 
 ### `I-01` — `unchecked` Block for `balanceOf[to] += value`  *(Severity: Informational · Status: Unresolved)*
 
-The operation `balanceOf[to] += value;` is placed within an `unchecked` block. While `balanceOf[from] -= value;` is outside, ensuring `value` does not exceed `balanceOf[from]`, and `totalSupply` is fixed, it's important to confirm that `balanceOf[to]` can never exceed `type(uint256).max` under any valid scenario. Given the current design, where `value` is bounded by `balanceOf[from]` and `totalSupply` is fixed, an overflow of `balanceOf[to]` is highly unlikely, but explicit documentation of this invariant would be beneficial (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The operation `balanceOf[to] += value;` is placed within an `unchecked` block. While `balanceOf[from] -= value;` is outside, ensuring `value` does not exceed `balanceOf[from]`, and `totalSupply` is fixed, it's important to confirm that `balanceOf[to]` can never exceed `type(uint256).max` under any valid scenario. Given the current design, where `value` is bounded by `balanceOf[from]` and `totalSupply` is fixed, an overflow of `balanceOf[to]` is highly unlikely, but explicit documentation of this invariant would be beneficial (7.2 Code Security).
 
 **Recommendation:** Document the reasoning behind using `unchecked` for this specific operation, explicitly stating the invariants that prevent an overflow (e.g., `balanceOf[to]` cannot exceed `totalSupply`, and `totalSupply` is less than `type(uint256).max`).
 
 
 ### `I-02` — Lack of Emergency Pause Functionality  *(Severity: Informational · Status: Unresolved)*
 
-The contract does not include a mechanism to pause transfers or other critical operations in case of an emergency, such as a discovered vulnerability, a major exploit in an integrated protocol, or severe market manipulation (7.8 Operations). Without a pause function, the protocol would be unable to react quickly to mitigate ongoing damage.
+Not confirmed by static analysis (the model's own reading of the source). The contract does not include a mechanism to pause transfers or other critical operations in case of an emergency, such as a discovered vulnerability, a major exploit in an integrated protocol, or severe market manipulation (7.8 Operations). Without a pause function, the protocol would be unable to react quickly to mitigate ongoing damage.
 
 **Recommendation:** Consider adding a pause mechanism, controlled by the `factory` address (preferably a multi-signature wallet), that can temporarily halt transfers. This would provide a crucial safety switch during unforeseen events.
 

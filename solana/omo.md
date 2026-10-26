@@ -2,14 +2,14 @@
 token: omo
 ticker: OMO
 network: solana
-risk_score: 48
-status: medium
+risk_score: 26
+status: low
 date: 2026-08-12
 ---
 
 # omo (OMO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 48/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/omo-sol)
 
@@ -25,9 +25,9 @@ The omo token mint is an SPL Token-2022 with both mint and freeze authorities re
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The omo token is an SPL Token-2022 mint. Its mint authority is revoked, ensuring no new tokens can be created, and the freeze authority is also revoked, preventing any account from being frozen. No… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a medium level of holder concentration, with the top 10 accounts holding 55.42% of the total supply. This concentration could lead to price volatility from coordinated sell-offs.… |
-| **Upgrades** | 8/10 | Low | The omo token mint has both its mint and freeze authorities revoked, meaning its core parameters are fixed and cannot be changed. It is an SPL Token-2022, but no transfer hook is present, and… |
+| **Technical** | 10/10 | Low | The omo token is an SPL Token-2022 mint. Its mint authority is revoked, ensuring no new tokens can be created, and the freeze authority is also revoked, preventing any account from being frozen. No… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a medium level of holder concentration, with the top 10 accounts holding 55.42% of the total supply. This concentration could lead to price volatility from coordinated sell-offs.… |
+| **Upgrades** | 10/10 | Low | The omo token mint has both its mint and freeze authorities revoked, meaning its core parameters are fixed and cannot be changed. It is an SPL Token-2022, but no transfer hook is present, and… |
 
 ## Security Findings
 
@@ -61,13 +61,13 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1026 buys / 1278 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

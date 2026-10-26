@@ -2,14 +2,14 @@
 token: MUSWORLD
 ticker: MUSEWORLD
 network: base
-risk_score: 37
+risk_score: 35
 status: medium
 date: 2026-09-21
 ---
 
 # MUSWORLD (MUSEWORLD) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/musworld-base)
 
@@ -42,35 +42,35 @@ _🟢 1 Low · ⚪ 4 Informational_
 
 ### `L-01` — Centralized Initial Token Distribution  *(Severity: Low · Status: Unresolved)*
 
-The constructor of the `LaunchToken` contract mints the entire initial `supply` to `msg.sender` (the `factory` address). This means that the deployer of the contract holds 100% of the initial token supply. While common for token launches, this represents a single point of control over the token's initial distribution.
+Not confirmed by static analysis (the model's own reading of the source). The constructor of the `LaunchToken` contract mints the entire initial `supply` to `msg.sender` (the `factory` address). This means that the deployer of the contract holds 100% of the initial token supply. While common for token launches, this represents a single point of control over the token's initial distribution.
 
 **Recommendation:** Projects should clearly communicate this centralized initial distribution to their community. Consider implementing a more distributed initial allocation strategy, such as a vesting schedule, airdrop, or liquidity pool seeding, to mitigate risks associated with a single entity holding all tokens.
 
 
 ### `I-01` — Unused `launcher` Variable  *(Severity: Informational · Status: Unresolved)*
 
-The `launcher` address is passed as a constructor argument and stored as an `immutable` public variable. However, this variable is never referenced or used within any of the contract's functions or logic.
+Not confirmed by static analysis (the model's own reading of the source). The `launcher` address is passed as a constructor argument and stored as an `immutable` public variable. However, this variable is never referenced or used within any of the contract's functions or logic.
 
 **Recommendation:** Review the intended purpose of the `launcher` variable. If it serves no on-chain function, consider removing it to reduce contract size and improve clarity. If it's intended for off-chain use, document this clearly.
 
 
 ### `I-02` — `metadataURI` Not Explicitly Immutable  *(Severity: Informational · Status: Unresolved)*
 
-The `metadataURI` variable is set in the constructor and is public, but it is not declared `immutable`. While there is no setter function, making it effectively immutable, explicitly declaring it `immutable` would clearly communicate its intended immutability and prevent any future confusion or accidental modification if the contract were to be extended.
+Not confirmed by static analysis (the model's own reading of the source). The `metadataURI` variable is set in the constructor and is public, but it is not declared `immutable`. While there is no setter function, making it effectively immutable, explicitly declaring it `immutable` would clearly communicate its intended immutability and prevent any future confusion or accidental modification if the contract were to be extended.
 
 **Recommendation:** If `metadataURI` is intended to be unchangeable after deployment, declare it as `immutable` in the contract definition.
 
 
 ### `I-03` — Sole Reliance on OpenZeppelin Libraries  *(Severity: Informational · Status: Unresolved)*
 
-The `LaunchToken` contract heavily relies on OpenZeppelin's `ERC20` and `ERC20Permit` implementations. While these libraries are highly regarded and extensively audited, any undiscovered vulnerability in the specific versions used (`^0.8.20` and `^0.8.26` for `LaunchToken`) could potentially impact the security of this contract.
+Not confirmed by static analysis (the model's own reading of the source). The `LaunchToken` contract heavily relies on OpenZeppelin's `ERC20` and `ERC20Permit` implementations. While these libraries are highly regarded and extensively audited, any undiscovered vulnerability in the specific versions used (`^0.8.20` and `^0.8.26` for `LaunchToken`) could potentially impact the security of this contract.
 
 **Recommendation:** Regularly monitor OpenZeppelin's security advisories and updates for the versions of contracts used. While direct action on this contract might not be possible if it's not upgradeable, awareness is key for future deployments or related projects.
 
 
 ### `I-04` — No Direct Burning Mechanism for `factory` or `launcher`  *(Severity: Informational · Status: Unresolved)*
 
-The contract includes an internal `_burn` function inherited from ERC20, but there is no public function exposed that allows the `factory` (deployer) or `launcher` to directly burn tokens from their own balance or from others (with approval). Tokens can only be 'burned' by transferring them to `address(0)` via standard ERC20 `transfer` or `transferFrom`.
+Not confirmed by static analysis (the model's own reading of the source). The contract includes an internal `_burn` function inherited from ERC20, but there is no public function exposed that allows the `factory` (deployer) or `launcher` to directly burn tokens from their own balance or from others (with approval). Tokens can only be 'burned' by transferring them to `address(0)` via standard ERC20 `transfer` or `transferFrom`.
 
 **Recommendation:** If there is a design requirement for the `factory` or `launcher` to have a direct token burning capability, consider adding a specific public function for this purpose. Otherwise, ensure that the current method of sending to `address(0)` is sufficient for any intended tokenomics.
 

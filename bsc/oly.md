@@ -2,14 +2,14 @@
 token: OLY
 ticker: OLY
 network: bsc
-risk_score: 56
-status: medium
+risk_score: 19
+status: low
 date: 2026-07-27
 ---
 
 # OLY (OLY) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 56/100 — 🟡 Medium Risk**
+> **Risk Score: 19/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/oly-bsc)
 
@@ -25,8 +25,8 @@ The OLY token contract implements a custom ERC20 token with a fee mechanism on t
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract implements a custom ERC20 token with `SafeMath` for arithmetic safety. A complex fee mechanism is integrated into the `_transfer` function, applying different ratios for buy and sell… |
-| **Governance / Economics** | 3/10 | High | The protocol exhibits high centralization, with the `DEFAULT_ADMIN_ROLE` possessing extensive control over critical parameters such as `mainPair`, `feeRatio`, and `buyFeeRatio`, as well as role… |
+| **Technical** | 8/10 | Low | The contract implements a custom ERC20 token with `SafeMath` for arithmetic safety. A complex fee mechanism is integrated into the `_transfer` function, applying different ratios for buy and sell… |
+| **Governance / Economics** | 5/10 | Medium | The protocol exhibits high centralization, with the `DEFAULT_ADMIN_ROLE` possessing extensive control over critical parameters such as `mainPair`, `feeRatio`, and `buyFeeRatio`, as well as role… |
 | **Upgrades** | 4/10 | Medium | The contract is not designed with an upgradeability pattern (e.g., proxy). Any future changes to the contract logic would require a complete redeployment and a potentially complex token migration… |
 
 ## LP Distribution
@@ -38,46 +38,46 @@ The OLY token contract implements a custom ERC20 token with a fee mechanism on t
 
 ## Security Findings
 
-_🟠 2 High · 🟡 3 Medium · 🟢 1 Low_
-
-### `H-01` — Denial of Service via Malicious or Faulty `feeReceiver`  *(Severity: High · Status: Unresolved)*
-
-The `_transfer` function makes an external call to `IFeeReceiver(feeReceiver).triggerSwapFeeForLottery()` when tokens are sold to `mainPair` and fees are taken. If the `feeReceiver` contract is malicious and reverts, or if it is a buggy contract that runs out of gas, all such token transfers will fail. This effectively creates a Denial of Service (DoS) vulnerability for a significant portion of token trades, blocking users from selling their tokens.
-
-**Recommendation:** Implement a robust error handling mechanism for the external call, such as a `try/catch` block to gracefully handle reverts without blocking transfers. Alternatively, consider a pull-based system where the `feeReceiver` initiates the call, or implement an emergency mechanism to disable the external call or change the `feeReceiver` address if it becomes problematic.
-
-
-### `H-02` — Centralized Control and Single Point of Failure  *(Severity: High · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE`, initially assigned to the contract deployer, possesses extensive control over critical contract parameters and roles. This includes the ability to set `mainPair`, adjust `feeRatio` and `buyFeeRatio`, and grant/revoke `MINT` and `INTERN_SYSTEM` roles. A compromise of this single administrative address would allow an attacker to manipulate fees, disable minting/burning controls, or block trades, leading to severe financial and operational risks.
-
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) or a time-lock contract to manage the `DEFAULT_ADMIN_ROLE`. This adds a layer of security by requiring multiple approvals for critical operations and provides a delay for users to react to proposed changes.
-
+_🟡 5 Medium · 🟢 1 Low_
 
 ### `M-01` — Custom ERC20 Implementation Risk  *(Severity: Medium · Status: Unresolved)*
 
-The contract utilizes a custom implementation of the ERC20 standard rather than leveraging battle-tested and widely audited libraries like OpenZeppelin's `ERC20`. While `SafeMath` is used, custom implementations are more prone to subtle bugs, edge-case vulnerabilities, or non-compliance issues that might be overlooked during development and testing, potentially leading to unexpected behavior or exploits.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes a custom implementation of the ERC20 standard rather than leveraging battle-tested and widely audited libraries like OpenZeppelin's `ERC20`. While `SafeMath` is used, custom implementations are more prone to subtle bugs, edge-case vulnerabilities, or non-compliance issues that might be overlooked during development and testing, potentially leading to unexpected behavior or exploits.
 
 **Recommendation:** Consider refactoring the token contract to inherit from OpenZeppelin's `ERC20` contract. If a custom implementation is strictly necessary, ensure comprehensive unit and integration tests are developed and executed to cover all ERC20 functionalities and potential edge cases thoroughly.
 
 
 ### `M-02` — Lack of Emergency Pause Mechanism  *(Severity: Medium · Status: Unresolved)*
 
-The contract lacks a mechanism to pause critical operations (such as transfers or fee collection) in the event of an emergency. In scenarios like a discovered vulnerability, a malicious `feeReceiver`, or a compromised `mainPair`, the absence of a pause function could lead to irreversible losses, continued exploitation, or prolonged protocol disruption.
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks a mechanism to pause critical operations (such as transfers or fee collection) in the event of an emergency. In scenarios like a discovered vulnerability, a malicious `feeReceiver`, or a compromised `mainPair`, the absence of a pause function could lead to irreversible losses, continued exploitation, or prolonged protocol disruption.
 
 **Recommendation:** Implement a pause mechanism, for example, by inheriting from OpenZeppelin's `Pausable` contract. This mechanism should be controllable by a trusted entity (e.g., the `DEFAULT_ADMIN_ROLE` or a multi-sig) to temporarily halt operations during emergencies, allowing time for remediation.
 
 
 ### `M-03` — Potential for Fee Manipulation by Admin  *(Severity: Medium · Status: Unresolved)*
 
-The `DEFAULT_ADMIN_ROLE` has the authority to change `feeRatio` and `buyFeeRatio` at any time via the `setRatio` function. While this provides flexibility, it also allows an administrator to arbitrarily increase fees up to `PRECISION` (100%) without prior notice or community consensus. Such sudden changes could negatively impact user trust, token utility, and overall protocol stability.
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` has the authority to change `feeRatio` and `buyFeeRatio` at any time via the `setRatio` function. While this provides flexibility, it also allows an administrator to arbitrarily increase fees up to `PRECISION` (100%) without prior notice or community consensus. Such sudden changes could negatively impact user trust, token utility, and overall protocol stability.
 
 **Recommendation:** Implement a time-lock for changes to critical parameters like `feeRatio` and `buyFeeRatio`. This would introduce a delay between the proposal and activation of a change, providing transparency and allowing users to react or voice concerns. Alternatively, integrate these parameter changes into a broader governance mechanism.
 
 
+### `M-04` — Denial of Service via Malicious or Faulty `feeReceiver`  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_transfer` function makes an external call to `IFeeReceiver(feeReceiver).triggerSwapFeeForLottery()` when tokens are sold to `mainPair` and fees are taken. If the `feeReceiver` contract is malicious and reverts, or if it is a buggy contract that runs out of gas, all such token transfers will fail. This effectively creates a Denial of Service (DoS) vulnerability for a significant portion of token trades, blocking users from selling their tokens.
+
+**Recommendation:** Implement a robust error handling mechanism for the external call, such as a `try/catch` block to gracefully handle reverts without blocking transfers. Alternatively, consider a pull-based system where the `feeReceiver` initiates the call, or implement an emergency mechanism to disable the external call or change the `feeReceiver` address if it becomes problematic.
+
+
+### `M-05` — Centralized Control and Single Point of Failure  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE`, initially assigned to the contract deployer, possesses extensive control over critical contract parameters and roles. This includes the ability to set `mainPair`, adjust `feeRatio` and `buyFeeRatio`, and grant/revoke `MINT` and `INTERN_SYSTEM` roles. A compromise of this single administrative address would allow an attacker to manipulate fees, disable minting/burning controls, or block trades, leading to severe financial and operational risks.
+
+**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) or a time-lock contract to manage the `DEFAULT_ADMIN_ROLE`. This adds a layer of security by requiring multiple approvals for critical operations and provides a delay for users to react to proposed changes.
+
+
 ### `L-01` — `INTERN_SYSTEM` Role Misconfiguration Risk  *(Severity: Low · Status: Unresolved)*
 
-The `INTERN_SYSTEM` role is designed to exempt addresses from trading fees when interacting with the `mainPair`. While the constructor correctly grants this role to the deployer and `_feeReceiver`, accidental granting of this role to the `mainPair` address itself could lead to unintended fee bypasses for all trades involving that pair. Although the current `_isTradeAndNotInSystem` logic appears robust against this specific scenario, careful management of roles is crucial to prevent future misconfigurations.
+Not confirmed by static analysis (the model's own reading of the source). The `INTERN_SYSTEM` role is designed to exempt addresses from trading fees when interacting with the `mainPair`. While the constructor correctly grants this role to the deployer and `_feeReceiver`, accidental granting of this role to the `mainPair` address itself could lead to unintended fee bypasses for all trades involving that pair. Although the current `_isTradeAndNotInSystem` logic appears robust against this specific scenario, careful management of roles is crucial to prevent future misconfigurations.
 
 **Recommendation:** Clearly document the intended use and implications of the `INTERN_SYSTEM` role. Implement additional checks or safeguards within the `grantRole` function to prevent `mainPair` from being assigned this role if it is not intended to be fee-exempt. Regular audits of role assignments are also recommended.
 
@@ -120,11 +120,11 @@ The `INTERN_SYSTEM` role is designed to exempt addresses from trading fees when 
 
 ### Is OLY a scam?
 
-Based on automated analysis, OLY scores 68/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, OLY scores 19/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is OLY safe to buy?
 
-Our scanner flagged a risk score of 68/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 19/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has OLY been audited?
 

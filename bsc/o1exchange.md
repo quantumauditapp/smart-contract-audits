@@ -2,14 +2,14 @@
 token: o1.exchange
 ticker: O
 network: bsc
-risk_score: 50
+risk_score: 45
 status: medium
 date: 2026-08-20
 ---
 
 # o1.exchange (O) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 50/100 — 🟡 Medium Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/o1exchange-bsc)
 
@@ -42,21 +42,21 @@ _🟡 1 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Centralization Risk due to Owner Privileges  *(Severity: Medium · Status: Unresolved)*
 
-The `owner` of the `MyOFTAdapter` contract holds significant centralized control over critical functionalities. The owner can enable or disable bridging for all users via `setBridgingEnabled`, manage a whitelist of addresses that can bypass bridging restrictions using `setWhitelist`, and recover any ERC20 tokens sent to the contract via the `sweep` function. While the provided context indicates the owner is a multisig, these extensive privileges still represent a single point of control that could lead to censorship, denial of service, or fund manipulation if the multisig is compromised or acts maliciously.
+Not confirmed by static analysis (the model's own reading of the source). The `owner` of the `MyOFTAdapter` contract holds significant centralized control over critical functionalities. The owner can enable or disable bridging for all users via `setBridgingEnabled`, manage a whitelist of addresses that can bypass bridging restrictions using `setWhitelist`, and recover any ERC20 tokens sent to the contract via the `sweep` function. While the provided context indicates the owner is a multisig, these extensive privileges still represent a single point of control that could lead to censorship, denial of service, or fund manipulation if the multisig is compromised or acts maliciously.
 
 **Recommendation:** Ensure the multisig controlling the owner address is highly secure with strong operational procedures, including robust key management, quorum requirements, and clear policies for transaction execution. Consider implementing time-locks or additional governance mechanisms for highly sensitive functions if further decentralization is desired in the future.
 
 
 ### `I-01` — Dependency on LayerZero Protocol Security  *(Severity: Informational · Status: Unresolved)*
 
-The `MyOFT` and `MyOFTAdapter` contracts are built upon and heavily rely on the LayerZero protocol for their omnichain functionality. This includes interactions with LayerZero endpoints and the underlying messaging infrastructure. The security and operational integrity of these contracts are therefore directly dependent on the security of the LayerZero protocol itself (7.6 External). Any vulnerabilities, compromises, or operational issues within the LayerZero ecosystem could directly impact the functionality and security of these deployed contracts.
+Not confirmed by static analysis (the model's own reading of the source). The `MyOFT` and `MyOFTAdapter` contracts are built upon and heavily rely on the LayerZero protocol for their omnichain functionality. This includes interactions with LayerZero endpoints and the underlying messaging infrastructure. The security and operational integrity of these contracts are therefore directly dependent on the security of the LayerZero protocol itself (7.6 External). Any vulnerabilities, compromises, or operational issues within the LayerZero ecosystem could directly impact the functionality and security of these deployed contracts.
 
 **Recommendation:** Maintain continuous monitoring of LayerZero's security posture, official announcements, and any reported vulnerabilities. Ensure that the LayerZero endpoint addresses configured in the contracts are correct and trusted. Implement robust monitoring for cross-chain transactions and LayerZero's operational status.
 
 
 ### `I-02` — Configurable Bridging Control Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The `MyOFTAdapter` contract includes a configurable bridging control mechanism through the `bridgingEnabled` flag and a `whitelist` mapping. When `bridgingEnabled` is set to `false`, only addresses present in the `whitelist` are permitted to initiate bridging operations via the `_debit` function. This feature provides the owner with a powerful tool to pause or restrict token bridging, either globally or for specific users. This is a design choice that offers flexibility for operational control but also introduces a potential point of centralized control over user access to bridging services.
+Not confirmed by static analysis (the model's own reading of the source). The `MyOFTAdapter` contract includes a configurable bridging control mechanism through the `bridgingEnabled` flag and a `whitelist` mapping. When `bridgingEnabled` is set to `false`, only addresses present in the `whitelist` are permitted to initiate bridging operations via the `_debit` function. This feature provides the owner with a powerful tool to pause or restrict token bridging, either globally or for specific users. This is a design choice that offers flexibility for operational control but also introduces a potential point of centralized control over user access to bridging services.
 
 **Recommendation:** Clearly document the intended use cases and operational policies for the `bridgingEnabled` flag and the `whitelist`. Communicate these controls transparently to users. Regularly review the necessity and scope of these controls to ensure they align with the project's long-term decentralization goals and risk management strategy.
 

@@ -2,14 +2,14 @@
 token: OpenServ
 ticker: SERV
 network: ethereum
-risk_score: 70
-status: high
+risk_score: 46
+status: medium
 date: 2026-08-31
 ---
 
 # OpenServ (SERV) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/openserv-eth)
 
@@ -25,7 +25,7 @@ The OpenServ token contract implements a standard ERC-20 interface with addition
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract implements standard ERC-20 functionality with custom transfer logic, including anti-whale/bot limits and fee mechanisms. The use of `SafeERC20` for external transfers is a good practice… |
+| **Technical** | 8/10 | Low | The contract implements standard ERC-20 functionality with custom transfer logic, including anti-whale/bot limits and fee mechanisms. The use of `SafeERC20` for external transfers is a good practice… |
 | **Governance / Economics** | 1/10 | High | The contract exhibits a high degree of centralization, with the owner possessing extensive control over critical economic parameters and user access (7.3 Access Control, 7.4 Economic). The owner can… |
 | **Upgrades** | 6/10 | Medium | The contract is not designed with an upgrade mechanism, meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates upgrade-specific risks but also prevents any future bug fixes or… |
 
@@ -38,46 +38,46 @@ The OpenServ token contract implements a standard ERC-20 interface with addition
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 2 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control and Blacklisting Capability  *(Severity: High · Status: Unresolved)*
-
-The `Ownable` contract grants the owner extensive control over critical parameters and the ability to blacklist addresses. This includes setting transaction limits (`maxTransactionAmount`, `maxWallet`), fees (`buyTotalFees`, `sellTotalFees`, `treasuryFee`), and preventing transfers for any address via `addRemoveBlackList`. This centralization poses a significant trust risk, as a malicious or compromised owner could manipulate the token's economy or censor users (7.3 Access Control, 7.4 Economic, 7.8 Operations).
-
-**Recommendation:** Consider implementing a multi-signature wallet for ownership to distribute control and reduce the risk of a single point of failure. For blacklisting, evaluate if such a powerful censorship mechanism is truly necessary for the protocol's long-term vision, and if so, consider a decentralized governance mechanism for its activation.
-
+_🟡 3 Medium · 🟢 2 Low · ⚪ 1 Informational_
 
 ### `M-01` — High and Configurable Transaction Fees  *(Severity: Medium · Status: Unresolved)*
 
-The contract implements `buyTotalFees` (5%), `sellTotalFees` (5%), and `treasuryFee` (10%), which are high and can be updated by the owner. While common in certain token designs, such high and mutable fees can deter legitimate usage and introduce uncertainty for users. The owner's ability to change these at will creates a potential for abuse or unexpected changes in token economics. The exact application of these fees could not be fully verified due to the truncation of the `_transfer` function (7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The contract implements `buyTotalFees` (5%), `sellTotalFees` (5%), and `treasuryFee` (10%), which are high and can be updated by the owner. While common in certain token designs, such high and mutable fees can deter legitimate usage and introduce uncertainty for users. The owner's ability to change these at will creates a potential for abuse or unexpected changes in token economics. The exact application of these fees could not be fully verified due to the truncation of the `_transfer` function (7.4 Economic).
 
 **Recommendation:** Clearly communicate the fee structure and the owner's ability to modify it to users. Consider implementing a time-lock or a governance vote for fee changes to provide transparency and reduce immediate manipulation risk. Ensure the complete `_transfer` function is available for audit to verify correct fee application.
 
 
 ### `M-02` — Potential for Price Impact from `swapBack` Mechanism  *(Severity: Medium · Status: Unresolved)*
 
-The `swapBack` function is triggered when the contract's token balance reaches `SwapTokensAtAmount`. If `SwapTokensAtAmount` is set too low relative to the available liquidity on Uniswap, frequent swaps could occur. This can lead to increased transaction costs, higher slippage, and potential negative price impact, especially during periods of low liquidity or high trading volume. The implementation of `swapBack` was truncated, limiting full analysis (7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The `swapBack` function is triggered when the contract's token balance reaches `SwapTokensAtAmount`. If `SwapTokensAtAmount` is set too low relative to the available liquidity on Uniswap, frequent swaps could occur. This can lead to increased transaction costs, higher slippage, and potential negative price impact, especially during periods of low liquidity or high trading volume. The implementation of `swapBack` was truncated, limiting full analysis (7.4 Economic).
 
 **Recommendation:** Carefully monitor and adjust `SwapTokensAtAmount` based on liquidity and trading volume to minimize negative price impact. Consider implementing a minimum time interval between `swapBack` calls or a maximum swap amount to prevent excessive market activity. Ensure the complete `swapBack` function is available for audit to verify its implementation details.
 
 
+### `M-03` — Centralized Control and Blacklisting Capability  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `Ownable` contract grants the owner extensive control over critical parameters and the ability to blacklist addresses. This includes setting transaction limits (`maxTransactionAmount`, `maxWallet`), fees (`buyTotalFees`, `sellTotalFees`, `treasuryFee`), and preventing transfers for any address via `addRemoveBlackList`. This centralization poses a significant trust risk, as a malicious or compromised owner could manipulate the token's economy or censor users (7.3 Access Control, 7.4 Economic, 7.8 Operations).
+
+**Recommendation:** Consider implementing a multi-signature wallet for ownership to distribute control and reduce the risk of a single point of failure. For blacklisting, evaluate if such a powerful censorship mechanism is truly necessary for the protocol's long-term vision, and if so, consider a decentralized governance mechanism for its activation.
+
+
 ### `L-01` — Lack of Emergency Pause Mechanism  *(Severity: Low · Status: Unresolved)*
 
-The contract lacks a mechanism to globally pause transfers or critical functions in case of an emergency (e.g., a major exploit, critical bug discovery, or extreme market instability). While the owner can blacklist individual addresses, a global pause would offer a more robust and immediate response to widespread issues affecting the entire protocol (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks a mechanism to globally pause transfers or critical functions in case of an emergency (e.g., a major exploit, critical bug discovery, or extreme market instability). While the owner can blacklist individual addresses, a global pause would offer a more robust and immediate response to widespread issues affecting the entire protocol (7.8 Operations).
 
 **Recommendation:** Consider implementing a pause functionality that can halt transfers or other critical operations in an emergency. This mechanism should ideally be controlled by a multi-signature wallet or a time-locked governance process to prevent arbitrary activation.
 
 
 ### `L-02` — Reliance on `pragma experimental ABIEncoderV2`  *(Severity: Low · Status: Unresolved)*
 
-The contract uses `pragma experimental ABIEncoderV2;`. While this pragma is widely used and generally stable in recent Solidity versions (0.8.x), it is still marked as experimental. In very rare cases, experimental features might have undiscovered edge cases or subtle bugs that could lead to unexpected behavior (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract uses `pragma experimental ABIEncoderV2;`. While this pragma is widely used and generally stable in recent Solidity versions (0.8.x), it is still marked as experimental. In very rare cases, experimental features might have undiscovered edge cases or subtle bugs that could lead to unexpected behavior (7.2 Code Security).
 
 **Recommendation:** While the risk is low in Solidity 0.8.x, it's generally good practice to avoid experimental pragmas if possible. If `ABIEncoderV2` is not strictly necessary for specific data structures, consider removing it. Otherwise, ensure thorough testing of all functions that might implicitly or explicitly use this encoder.
 
 
 ### `I-01` — Immutability of Contract Logic  *(Severity: Informational · Status: Unresolved)*
 
-The contract is not designed with an upgrade mechanism (e.g., proxy pattern). This means that any discovered bugs, vulnerabilities, or desired feature enhancements cannot be implemented without deploying an entirely new contract and migrating users. This is a complex and costly process that can fragment liquidity and user base (7.7 Upgrades).
+Not confirmed by static analysis (the model's own reading of the source). The contract is not designed with an upgrade mechanism (e.g., proxy pattern). This means that any discovered bugs, vulnerabilities, or desired feature enhancements cannot be implemented without deploying an entirely new contract and migrating users. This is a complex and costly process that can fragment liquidity and user base (7.7 Upgrades).
 
 **Recommendation:** Acknowledge the immutability of the contract. For future projects, consider using an upgradeable proxy pattern (e.g., UUPS) if the ability to fix bugs or add features post-deployment is desired. For this contract, ensure all logic is thoroughly tested before deployment, as changes will not be possible.
 

@@ -2,14 +2,14 @@
 token: OTC
 ticker: OTC
 network: solana
-risk_score: 14
+risk_score: 0
 status: low
 date: 2026-09-01
 ---
 
 # OTC (OTC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 14/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/otc-sol)
 
@@ -26,8 +26,8 @@ This SPL Token Mint, OTC, demonstrates strong security posture regarding core au
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is implemented on the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked, which prevents further token issuance or freezing of holder accounts. No Transfer… |
-| **Governance / Economics** | 6/10 | Medium | Holder concentration is low, with the top 10 accounts holding 23.36% of the supply, reducing the risk of large-scale sell-offs. The token has moderate liquidity at $346,288, with a 24-hour volume of… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint and Freeze, are permanently revoked, ensuring no future changes to supply or account status by an administrative key. This SPL Token-2022 mint does not utilize a… |
+| **Governance / Economics** | 9/10 | Low | Holder concentration is low, with the top 10 accounts holding 23.36% of the supply, reducing the risk of large-scale sell-offs. The token has moderate liquidity at $346,288, with a 24-hour volume of… |
+| **Upgrades** | 10/10 | Low | The token's core authorities, Mint and Freeze, are permanently revoked, ensuring no future changes to supply or account status by an administrative key. This SPL Token-2022 mint does not utilize a… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3509 buys / 3605 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 3 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

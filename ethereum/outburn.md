@@ -2,14 +2,14 @@
 token: OutBurn
 ticker: OUTBURN
 network: ethereum
-risk_score: 40
-status: medium
+risk_score: 23
+status: low
 date: 2026-09-02
 ---
 
 # OutBurn (OUTBURN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/outburn-eth)
 
@@ -25,9 +25,9 @@ The ClankerToken contract is an ERC20 token implementation leveraging well-audit
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract demonstrates good technical practices by inheriting from battle-tested OpenZeppelin ERC20 extensions (ERC20Burnable, ERC20Permit, ERC20Votes), which significantly reduces the risk of… |
-| **Governance / Economics** | 3/10 | High | The token's economic model is a standard fixed-supply ERC20, with initial minting occurring only on a specific chain ID, which is a robust design choice (7.4 Economic). The `_originalAdmin` is… |
-| **Upgrades** | 8/10 | Low | The ClankerToken contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). This design choice eliminates the complexities and potential risks associated with proxy upgrade… |
+| **Technical** | 10/10 | Low | The contract demonstrates good technical practices by inheriting from battle-tested OpenZeppelin ERC20 extensions (ERC20Burnable, ERC20Permit, ERC20Votes), which significantly reduces the risk of… |
+| **Governance / Economics** | 4/10 | Medium | The token's economic model is a standard fixed-supply ERC20, with initial minting occurring only on a specific chain ID, which is a robust design choice (7.4 Economic). The `_originalAdmin` is… |
+| **Upgrades** | 9/10 | Low | The ClankerToken contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). This design choice eliminates the complexities and potential risks associated with proxy upgrade… |
 
 ## LP Distribution
 
@@ -38,32 +38,32 @@ The ClankerToken contract is an ERC20 token implementation leveraging well-audit
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control of Admin Role  *(Severity: High · Status: Unresolved)*
-
-The `_admin` role has significant power, including the ability to transfer itself via `updateAdmin` and modify token-related metadata (`updateImage`, `updateMetadata`). This creates a single point of failure; if the `_admin` key is compromised or transferred to an untrusted address, it could lead to a complete loss of control over these critical functions, potentially allowing malicious updates to token information or an irreversible transfer of administrative power.
-
-**Recommendation:** Consider implementing a multi-signature wallet for the `_admin` role to require multiple approvals for critical actions. For the `updateAdmin` function specifically, implement a time-lock mechanism (e.g., a timelock controller) to introduce a delay before the new admin address becomes active, allowing for community oversight or emergency intervention.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Lack of Clarity on `_verified` State Impact  *(Severity: Medium · Status: Unresolved)*
 
-The `verify()` function, callable only once by the `_originalAdmin`, sets the `_verified` boolean flag to `true`. However, the contract logic does not use this `_verified` state to gate or modify any other critical functionality (e.g., transfers, burning, admin actions). Its purpose is unclear from the code, potentially leading to confusion among users or developers regarding its intended role and impact on the token's behavior.
+Not confirmed by static analysis (the model's own reading of the source). The `verify()` function, callable only once by the `_originalAdmin`, sets the `_verified` boolean flag to `true`. However, the contract logic does not use this `_verified` state to gate or modify any other critical functionality (e.g., transfers, burning, admin actions). Its purpose is unclear from the code, potentially leading to confusion among users or developers regarding its intended role and impact on the token's behavior.
 
 **Recommendation:** Clearly document the intended purpose of the `_verified` state. If it is meant to enable or disable specific features, implement the corresponding conditional logic within the contract. If it is purely an informational flag, explicitly state this in documentation to manage expectations.
 
 
+### `M-02` — Centralized Control of Admin Role  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_admin` role has significant power, including the ability to transfer itself via `updateAdmin` and modify token-related metadata (`updateImage`, `updateMetadata`). This creates a single point of failure; if the `_admin` key is compromised or transferred to an untrusted address, it could lead to a complete loss of control over these critical functions, potentially allowing malicious updates to token information or an irreversible transfer of administrative power.
+
+**Recommendation:** Consider implementing a multi-signature wallet for the `_admin` role to require multiple approvals for critical actions. For the `updateAdmin` function specifically, implement a time-lock mechanism (e.g., a timelock controller) to introduce a delay before the new admin address becomes active, allowing for community oversight or emergency intervention.
+
+
 ### `L-01` — Mutable Metadata and Image URLs  *(Severity: Low · Status: Unresolved)*
 
-The `_admin` role has the ability to update the `_image`, `_metadata`, and `_context` strings via `updateImage` and `updateMetadata` functions. While this provides flexibility for branding and informational updates, it also means that the public-facing information associated with the token can be changed at any time by the `_admin`. This could potentially be used to mislead users if malicious or inaccurate data is set.
+Not confirmed by static analysis (the model's own reading of the source). The `_admin` role has the ability to update the `_image`, `_metadata`, and `_context` strings via `updateImage` and `updateMetadata` functions. While this provides flexibility for branding and informational updates, it also means that the public-facing information associated with the token can be changed at any time by the `_admin`. This could potentially be used to mislead users if malicious or inaccurate data is set.
 
 **Recommendation:** Ensure clear communication to token holders and the community that these fields are mutable. For projects aiming for higher decentralization, consider integrating these updates into a governance mechanism or adding a time-lock to provide transparency and community review before changes take effect.
 
 
 ### `I-01` — Robust Immutable Admin and Initial Minting Logic  *(Severity: Informational · Status: Resolved)*
 
-The `_originalAdmin` address is declared as `immutable`, ensuring that the address with the one-time `verify()` capability cannot be changed after deployment. Additionally, the initial token minting in the constructor is conditionally executed based on `block.chainid == initialSupplyChainId_`. These design choices enhance security by preventing critical parameters from being altered and ensuring that the initial supply is minted only on the intended blockchain, reducing deployment-related risks.
+Not confirmed by static analysis (the model's own reading of the source). The `_originalAdmin` address is declared as `immutable`, ensuring that the address with the one-time `verify()` capability cannot be changed after deployment. Additionally, the initial token minting in the constructor is conditionally executed based on `block.chainid == initialSupplyChainId_`. These design choices enhance security by preventing critical parameters from being altered and ensuring that the initial supply is minted only on the intended blockchain, reducing deployment-related risks.
 
 **Recommendation:** No recommendation; this is a positive security feature.
 

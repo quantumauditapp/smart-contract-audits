@@ -2,14 +2,14 @@
 token: Novalon
 ticker: NVLN
 network: base
-risk_score: 61
+risk_score: 59
 status: medium
 date: 2026-09-03
 ---
 
 # Novalon (NVLN) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 61/100 — 🟡 Medium Risk**
+> **Risk Score: 59/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/novalon-base)
 
@@ -42,28 +42,28 @@ _🟢 1 Low · ⚪ 3 Informational_
 
 ### `L-01` — Missing Access Control for Minting/Burning in Inheriting Contract  *(Severity: Low · Status: Unresolved)*
 
-The `_mint` and `_burn` functions are declared as `internal` in the `ERC20` contract. While this is appropriate for an abstract base contract, it means that any contract inheriting from `ERC20` (or `ERC20Permit`) must implement its own access control mechanisms for functions that call `_mint` or `_burn`. Without proper restrictions (e.g., `onlyOwner`), an inheriting contract could inadvertently allow unauthorized minting or burning, leading to uncontrolled supply changes.
+Not confirmed by static analysis (the model's own reading of the source). The `_mint` and `_burn` functions are declared as `internal` in the `ERC20` contract. While this is appropriate for an abstract base contract, it means that any contract inheriting from `ERC20` (or `ERC20Permit`) must implement its own access control mechanisms for functions that call `_mint` or `_burn`. Without proper restrictions (e.g., `onlyOwner`), an inheriting contract could inadvertently allow unauthorized minting or burning, leading to uncontrolled supply changes.
 
 **Recommendation:** Ensure that any public or external functions in the inheriting Novalon token contract that call `_mint` or `_burn` are protected by appropriate access control mechanisms, such as `onlyOwner`, `onlyMinter`, or a robust governance system, to prevent unauthorized supply manipulation.
 
 
 ### `I-01` — Use of Unchecked Arithmetic Blocks  *(Severity: Informational · Status: Unresolved)*
 
-The `_update` and `_spendAllowance` functions utilize `unchecked` blocks for arithmetic operations such as `_balances[from] = fromBalance - value;` and `_balances[to] += value;`. This is a standard optimization in modern Solidity to save gas by bypassing default overflow/underflow checks. In these specific cases, the `unchecked` blocks are preceded by explicit checks (e.g., `if (fromBalance < value)`) or operate on values that are guaranteed not to overflow/underflow based on the contract's logic (e.g., `_totalSupply` decrease during burn).
+Not confirmed by static analysis (the model's own reading of the source). The `_update` and `_spendAllowance` functions utilize `unchecked` blocks for arithmetic operations such as `_balances[from] = fromBalance - value;` and `_balances[to] += value;`. This is a standard optimization in modern Solidity to save gas by bypassing default overflow/underflow checks. In these specific cases, the `unchecked` blocks are preceded by explicit checks (e.g., `if (fromBalance < value)`) or operate on values that are guaranteed not to overflow/underflow based on the contract's logic (e.g., `_totalSupply` decrease during burn).
 
 **Recommendation:** No direct action is required as this is a standard and safe practice in the context of OpenZeppelin contracts. However, it's important for developers to understand the implications of `unchecked` blocks and ensure that all necessary bounds checks are performed prior to entering such blocks in custom logic.
 
 
 ### `I-02` — Abstract Contract Requires Further Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The provided `ERC20` and `ERC20Permit` contracts are abstract. They define the core logic and interfaces for an ERC20 token with permit functionality but do not include specific deployment-ready implementations for functions like initial supply minting or specific administrative roles. A concrete contract, such as 'Novalon', would need to inherit from `ERC20Permit` and implement these details.
+Not confirmed by static analysis (the model's own reading of the source). The provided `ERC20` and `ERC20Permit` contracts are abstract. They define the core logic and interfaces for an ERC20 token with permit functionality but do not include specific deployment-ready implementations for functions like initial supply minting or specific administrative roles. A concrete contract, such as 'Novalon', would need to inherit from `ERC20Permit` and implement these details.
 
 **Recommendation:** Ensure that the final concrete Novalon token contract correctly inherits from `ERC20Permit` and provides all necessary implementations, including a constructor that calls `super(name)` and any desired minting/burning functions with appropriate access control.
 
 
 ### `I-03` — Fixed Decimals Value  *(Severity: Informational · Status: Unresolved)*
 
-The `decimals()` function in the `ERC20` contract is hardcoded to return `18`. This is the standard number of decimal places for most ERC20 tokens on Ethereum-compatible networks. While common, it means the token's divisibility cannot be changed without deploying a new contract.
+Not confirmed by static analysis (the model's own reading of the source). The `decimals()` function in the `ERC20` contract is hardcoded to return `18`. This is the standard number of decimal places for most ERC20 tokens on Ethereum-compatible networks. While common, it means the token's divisibility cannot be changed without deploying a new contract.
 
 **Recommendation:** No action is required if 18 decimals is the intended and desired divisibility for the Novalon token. If a different number of decimals is ever considered, this function would need to be overridden in the inheriting contract or the base contract modified (which is not recommended for OpenZeppelin libraries).
 

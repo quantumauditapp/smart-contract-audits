@@ -2,14 +2,14 @@
 token: OpenAI
 ticker: OPENAI
 network: base
-risk_score: 32
+risk_score: 20
 status: low
 date: 2026-08-14
 ---
 
 # OpenAI (OPENAI) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 32/100 — 🟢 Low Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/openai-base)
 
@@ -42,42 +42,42 @@ _🟡 2 Medium · 🟢 1 Low · ⚪ 3 Informational_
 
 ### `M-01` — Centralized Admin Control  *(Severity: Medium · Status: Unresolved)*
 
-The `_admin` role has significant control over critical token parameters, including the ability to update the token's image, metadata, and context strings. Furthermore, the `_admin` can transfer its own role to any address via `updateAdmin`. This high degree of centralization (7.3 Access Control, 7.5 Governance) means that a compromise of the `_admin`'s private key could lead to unauthorized changes to the token's public representation or even a malicious transfer of administrative control.
+Not confirmed by static analysis (the model's own reading of the source). The `_admin` role has significant control over critical token parameters, including the ability to update the token's image, metadata, and context strings. Furthermore, the `_admin` can transfer its own role to any address via `updateAdmin`. This high degree of centralization (7.3 Access Control, 7.5 Governance) means that a compromise of the `_admin`'s private key could lead to unauthorized changes to the token's public representation or even a malicious transfer of administrative control.
 
 **Recommendation:** Consider implementing a multi-signature wallet for the `_admin` role to require multiple approvals for sensitive operations like `updateAdmin`, `updateImage`, and `updateMetadata`. Alternatively, introduce a time-lock mechanism for `updateAdmin` to provide a window for community review or intervention before a new admin takes full control.
 
 
 ### `M-02` — Misleading `maxSupply_` Parameter in Constructor  *(Severity: Medium · Status: Unresolved)*
 
-The constructor takes a `maxSupply_` parameter, which is used to mint an initial supply to `msg.sender` under a specific `block.chainid` condition. However, the `crosschainMint` function, controlled by `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`, allows for additional minting without any explicit cap related to `maxSupply_`. This implies that `maxSupply_` is effectively an initial supply on the primary chain rather than a true global maximum supply. This discrepancy (7.4 Economic) can lead to confusion among users and investors regarding the token's total circulating supply and inflation mechanics.
+Not confirmed by static analysis (the model's own reading of the source). The constructor takes a `maxSupply_` parameter, which is used to mint an initial supply to `msg.sender` under a specific `block.chainid` condition. However, the `crosschainMint` function, controlled by `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`, allows for additional minting without any explicit cap related to `maxSupply_`. This implies that `maxSupply_` is effectively an initial supply on the primary chain rather than a true global maximum supply. This discrepancy (7.4 Economic) can lead to confusion among users and investors regarding the token's total circulating supply and inflation mechanics.
 
 **Recommendation:** Clarify the purpose of the `maxSupply_` parameter in the contract's documentation, explicitly stating that it refers to the initial supply on the designated chain and not a global hard cap. If a global hard cap is intended, implement a mechanism within `crosschainMint` to enforce it, or rename the parameter to `initialChainSupply` or similar for better clarity.
 
 
 ### `L-01` — Single-Use `_originalAdmin` Role  *(Severity: Low · Status: Unresolved)*
 
-The `_originalAdmin` role is an immutable address set in the constructor, but its only function is to call `verify()` once. After `verify()` is successfully executed, the `_originalAdmin` address holds no further special privileges or responsibilities within the contract (7.3 Access Control, 7.8 Operations). While not a direct vulnerability, if this key were compromised *before* `verify()` is called, it could be used to prematurely verify the token, potentially against the project's intended timeline.
+Not confirmed by static analysis (the model's own reading of the source). The `_originalAdmin` role is an immutable address set in the constructor, but its only function is to call `verify()` once. After `verify()` is successfully executed, the `_originalAdmin` address holds no further special privileges or responsibilities within the contract (7.3 Access Control, 7.8 Operations). While not a direct vulnerability, if this key were compromised *before* `verify()` is called, it could be used to prematurely verify the token, potentially against the project's intended timeline.
 
 **Recommendation:** Consider if the `_originalAdmin` role is strictly necessary post-deployment, or if its functionality could be integrated into the `_admin` role with appropriate safeguards. If kept, ensure the `_originalAdmin` key is secured with the highest standards, especially prior to the `verify()` call. After `verify()` is called, the key can be safely archived or even burned if no other off-chain responsibilities are tied to it.
 
 
 ### `I-01` — Non-Upgradeable Contract  *(Severity: Informational · Status: Unresolved)*
 
-The `ClankerToken` contract is deployed as a standard, non-proxy implementation. This means that its logic cannot be modified or upgraded after deployment (7.7 Upgrades). Any future bug fixes, feature additions, or changes to the token's behavior would require deploying an entirely new contract and migrating all existing token holders and integrations, which can be a complex, costly, and disruptive process.
+Not confirmed by static analysis (the model's own reading of the source). The `ClankerToken` contract is deployed as a standard, non-proxy implementation. This means that its logic cannot be modified or upgraded after deployment (7.7 Upgrades). Any future bug fixes, feature additions, or changes to the token's behavior would require deploying an entirely new contract and migrating all existing token holders and integrations, which can be a complex, costly, and disruptive process.
 
 **Recommendation:** Acknowledge the implications of a non-upgradeable contract. For projects requiring long-term flexibility or potential for future enhancements, consider adopting an upgradeable proxy pattern (e.g., UUPS or Transparent Proxy) for future contract deployments. If non-upgradeability is a deliberate design choice, ensure all current functionalities are thoroughly tested and robust.
 
 
 ### `I-02` — Reliance on External Superchain Token Bridge  *(Severity: Informational · Status: Unresolved)*
 
-The `crosschainMint` and `crosschainBurn` functions are exclusively callable by `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`. This design makes the token's cross-chain functionality entirely dependent on the security, availability, and correct operation of this external bridge (7.6 External). Any vulnerabilities or compromises within the `SUPERCHAIN_TOKEN_BRIDGE` could directly impact the integrity and supply of the ClankerToken across different chains.
+Not confirmed by static analysis (the model's own reading of the source). The `crosschainMint` and `crosschainBurn` functions are exclusively callable by `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`. This design makes the token's cross-chain functionality entirely dependent on the security, availability, and correct operation of this external bridge (7.6 External). Any vulnerabilities or compromises within the `SUPERCHAIN_TOKEN_BRIDGE` could directly impact the integrity and supply of the ClankerToken across different chains.
 
 **Recommendation:** Ensure that the `Predeploys.SUPERCHAIN_TOKEN_BRIDGE` is a highly secure and audited component. Maintain continuous monitoring of the bridge's operational status and security posture. Document the trust assumptions made regarding the bridge for users and integrators.
 
 
 ### `I-03` — Chain-Specific Initial Minting Condition  *(Severity: Informational · Status: Unresolved)*
 
-The constructor includes a condition `if (block.chainid == initialSupplyChainId_) { _mint(msg.sender, maxSupply_); }`. This means that the initial `maxSupply_` will only be minted if the contract is deployed on a specific, predefined chain (7.1 Architecture, 7.4 Economic). If deployed on any other chain, the initial supply will be zero, requiring `crosschainMint` operations to introduce tokens into circulation.
+Not confirmed by static analysis (the model's own reading of the source). The constructor includes a condition `if (block.chainid == initialSupplyChainId_) { _mint(msg.sender, maxSupply_); }`. This means that the initial `maxSupply_` will only be minted if the contract is deployed on a specific, predefined chain (7.1 Architecture, 7.4 Economic). If deployed on any other chain, the initial supply will be zero, requiring `crosschainMint` operations to introduce tokens into circulation.
 
 **Recommendation:** Clearly document this chain-specific initial minting behavior to avoid confusion regarding token distribution and deployment strategies. Ensure that the `initialSupplyChainId_` is correctly set for the intended primary deployment chain.
 

@@ -2,14 +2,14 @@
 token: niulai
 ticker: NIULAI
 network: bsc
-risk_score: 59
-status: medium
+risk_score: 19
+status: low
 date: 2026-08-16
 ---
 
 # niulai (NIULAI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 59/100 — 🟡 Medium Risk**
+> **Risk Score: 19/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/niulai-bsc)
 
@@ -25,9 +25,9 @@ The CosmTaxToken contract implements an ERC-20 token with a complex tax mechanis
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract utilizes OpenZeppelin's upgradeable ERC20 and Ownable components, demonstrating a foundation of well-audited libraries. It employs a `PackedPoolState` struct for gas efficiency and… |
-| **Governance / Economics** | 4/10 | Medium | The contract benefits from a clearly defined `onlyOwner` role for critical administrative functions, such as setting tax exemptions and managing migration states. The tax mechanism includes… |
-| **Upgrades** | 4/10 | Medium | The contract is built using OpenZeppelin's upgradeable contracts and the `initializer` pattern, suggesting an intent for future upgradeability. This provides a robust framework for potential future… |
+| **Technical** | 9/10 | Low | The contract utilizes OpenZeppelin's upgradeable ERC20 and Ownable components, demonstrating a foundation of well-audited libraries. It employs a `PackedPoolState` struct for gas efficiency and… |
+| **Governance / Economics** | 6/10 | Medium | The contract benefits from a clearly defined `onlyOwner` role for critical administrative functions, such as setting tax exemptions and managing migration states. The tax mechanism includes… |
+| **Upgrades** | 5/10 | Medium | The contract is built using OpenZeppelin's upgradeable contracts and the `initializer` pattern, suggesting an intent for future upgradeability. This provides a robust framework for potential future… |
 
 ## Proxy Upgrade Controls
 
@@ -45,46 +45,46 @@ The CosmTaxToken contract implements an ERC-20 token with a complex tax mechanis
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `C-01` — Missing Critical Functionality (`_processTax`)  *(Severity: Critical · Status: Unresolved)*
-
-The `_processTax` internal function, which is crucial for handling accumulated tax tokens, is called within `_liquidateTax` but its implementation is entirely missing from the provided source code. This renders the core tax mechanism non-functional and prevents the protocol from processing and distributing collected taxes, leading to a complete failure of a primary contract feature (7.2 Code Security, 7.8 Operations).
-
-**Recommendation:** Implement the `_processTax` function with the intended logic for tax distribution, liquidity provision, or other specified uses. Ensure it handles external calls securely (e.g., reentrancy guards) and aligns with the protocol's economic model.
-
-
-### `H-01` — Inconsistent Upgradeability Pattern Usage  *(Severity: High · Status: Unresolved)*
-
-The contract `CosmTaxToken` inherits from OpenZeppelin `Upgradeable` contracts (e.g., `ERC20PermitUpgradeable`, `OwnableUpgradeable`) and uses the `initializer` pattern. However, the provided metadata indicates `is_proxy: false` and `implementation: null`, suggesting it's deployed directly as a standalone contract, not as an implementation behind a proxy. This misapplication of the upgradeability pattern leads to unnecessary complexity, gas overhead, and potentially confusion regarding the contract's intended lifecycle. If direct deployment is intended, `Upgradeable` contracts should not be used. If upgradeability is intended, it must be deployed behind a proxy (7.1 Architecture, 7.7 Upgrad…
-
-**Recommendation:** Clarify the intended deployment strategy. If upgradeability is desired, deploy `CosmTaxToken` as an implementation contract behind a proxy (e.g., UUPS proxy). If upgradeability is not required, refactor the contract to use standard (non-upgradeable) OpenZeppelin contracts and remove the `initializer` pattern.
-
+_🟡 4 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — High Owner Privileges and Centralization Risk  *(Severity: Medium · Status: Unresolved)*
 
-The `onlyOwner` role has significant control over critical contract parameters and state transitions. Functions like `setDexTaxExempt`, `startMigration`, and `finalizeMigration` allow the owner to unilaterally change the contract's operational state and tax exemptions. This centralization introduces a single point of failure and potential for malicious or compromised owner actions to impact all token holders (7.3 Access Control, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The `onlyOwner` role has significant control over critical contract parameters and state transitions. Functions like `setDexTaxExempt`, `startMigration`, and `finalizeMigration` allow the owner to unilaterally change the contract's operational state and tax exemptions. This centralization introduces a single point of failure and potential for malicious or compromised owner actions to impact all token holders (7.3 Access Control, 7.5 Governance).
 
 **Recommendation:** Consider implementing a multi-signature wallet for the owner address to reduce single-point-of-failure risk. For critical state changes, explore time-locks or governance mechanisms to introduce a delay or community oversight.
 
 
 ### `M-02` — Complex `_transfer` Logic and State Machine  *(Severity: Medium · Status: Unresolved)*
 
-The `_transfer` function contains a complex series of `if-else if` statements based on the `PoolState` enum, leading to multiple execution paths. This complexity increases the likelihood of subtle bugs, unexpected behavior, or edge cases being missed, especially concerning tax calculations and pool interactions. The `_liquidateTax` function, called at the beginning of `_transfer`, also modifies `poolState`, adding to the complexity (7.1 Architecture, 7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `_transfer` function contains a complex series of `if-else if` statements based on the `PoolState` enum, leading to multiple execution paths. This complexity increases the likelihood of subtle bugs, unexpected behavior, or edge cases being missed, especially concerning tax calculations and pool interactions. The `_liquidateTax` function, called at the beginning of `_transfer`, also modifies `poolState`, adding to the complexity (7.1 Architecture, 7.2 Code Security).
 
 **Recommendation:** Refactor the `_transfer` logic to improve readability and reduce complexity. Consider using a state-machine pattern with clearer transitions and encapsulated logic for each state. Thoroughly test all possible state transitions and their impact on transfers and tax calculations.
 
 
+### `M-03` — Missing Critical Functionality (`_processTax`)  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_processTax` internal function, which is crucial for handling accumulated tax tokens, is called within `_liquidateTax` but its implementation is entirely missing from the provided source code. This renders the core tax mechanism non-functional and prevents the protocol from processing and distributing collected taxes, leading to a complete failure of a primary contract feature (7.2 Code Security, 7.8 Operations).
+
+**Recommendation:** Implement the `_processTax` function with the intended logic for tax distribution, liquidity provision, or other specified uses. Ensure it handles external calls securely (e.g., reentrancy guards) and aligns with the protocol's economic model.
+
+
+### `M-04` — Inconsistent Upgradeability Pattern Usage  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract `CosmTaxToken` inherits from OpenZeppelin `Upgradeable` contracts (e.g., `ERC20PermitUpgradeable`, `OwnableUpgradeable`) and uses the `initializer` pattern. However, the provided metadata indicates `is_proxy: false` and `implementation: null`, suggesting it's deployed directly as a standalone contract, not as an implementation behind a proxy. This misapplication of the upgradeability pattern leads to unnecessary complexity, gas overhead, and potentially confusion regarding the contract's intended lifecycle. If direct deployment is intended, `Upgradeable` contracts should not be used. If upgradeability is i
+
+**Recommendation:** Clarify the intended deployment strategy. If upgradeability is desired, deploy `CosmTaxToken` as an implementation contract behind a proxy (e.g., UUPS proxy). If upgradeability is not required, refactor the contract to use standard (non-upgradeable) OpenZeppelin contracts and remove the `initializer` pattern.
+
+
 ### `L-01` — Reliance on `block.timestamp` for Critical State Transitions  *(Severity: Low · Status: Unresolved)*
 
-The `_liquidateTax` function uses `block.timestamp` to determine when `taxExpirationTime` and `antiFarmerExpirationTime` have passed, triggering `PoolState` changes. While `block.timestamp` is generally reliable, miners have a limited ability to manipulate it (typically within a few seconds of actual time). This could potentially allow for minor front-running or back-running opportunities for state transitions, though the impact might be limited given the long durations involved (7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function uses `block.timestamp` to determine when `taxExpirationTime` and `antiFarmerExpirationTime` have passed, triggering `PoolState` changes. While `block.timestamp` is generally reliable, miners have a limited ability to manipulate it (typically within a few seconds of actual time). This could potentially allow for minor front-running or back-running opportunities for state transitions, though the impact might be limited given the long durations involved (7.4 Economic).
 
 **Recommendation:** For time-sensitive operations, consider using a time oracle or a more robust time-keeping mechanism if the exact timing of state transitions is critical and susceptible to minor manipulation. For durations of days/years, the risk is generally acceptable.
 
 
 ### `I-01` — Unused `MIN_LIQ_THRESHOLD` and `initialLiquidationThreshold`  *(Severity: Informational · Status: Unresolved)*
 
-The `MIN_LIQ_THRESHOLD` immutable variable is set in the constructor but does not appear to be used anywhere else in the provided code. Similarly, `initialLiquidationThreshold` is set in `initialize` but its usage is not visible. The `liquidationThreshold` within `PackedPoolState` is used, but it's initialized with `START_LIQ_THRESHOLD`, not `initialLiquidationThreshold` (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `MIN_LIQ_THRESHOLD` immutable variable is set in the constructor but does not appear to be used anywhere else in the provided code. Similarly, `initialLiquidationThreshold` is set in `initialize` but its usage is not visible. The `liquidationThreshold` within `PackedPoolState` is used, but it's initialized with `START_LIQ_THRESHOLD`, not `initialLiquidationThreshold` (7.2 Code Security).
 
 **Recommendation:** Review the contract logic to determine if `MIN_LIQ_THRESHOLD` and `initialLiquidationThreshold` are intended for future use or if they can be removed to reduce contract size and complexity. Ensure that `liquidationThreshold` is correctly managed and updated if `initialLiquidationThreshold` was meant to play a role.
 

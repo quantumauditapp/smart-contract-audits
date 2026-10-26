@@ -2,14 +2,14 @@
 token: OWB
 ticker: OWB
 network: base
-risk_score: 33
+risk_score: 25
 status: low
 date: 2026-07-27
 ---
 
 # OWB (OWB) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 33/100 — 🟢 Low Risk**
+> **Risk Score: 25/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/owb-base)
 
@@ -25,8 +25,8 @@ The audit of the Token contract, a mock ERC20 implementation with owner-controll
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The Token contract exhibits high technical quality, primarily due to its reliance on battle-tested OpenZeppelin libraries for ERC20, ERC20Permit, ERC20Burnable, and Ownable functionalities (7.2 Code… |
-| **Governance / Economics** | 8/10 | Low | The contract's economic model is highly centralized, with the owner possessing absolute control over the token supply through the `mint` function (7.4 Economic). This design, while intended for a… |
+| **Technical** | 8/10 | Low | The Token contract exhibits high technical quality, primarily due to its reliance on battle-tested OpenZeppelin libraries for ERC20, ERC20Permit, ERC20Burnable, and Ownable functionalities (7.2 Code… |
+| **Governance / Economics** | 9/10 | Low | The contract's economic model is highly centralized, with the owner possessing absolute control over the token supply through the `mint` function (7.4 Economic). This design, while intended for a… |
 | **Upgrades** | 7/10 | Low | The contract is not designed as an upgradeable proxy, meaning its core logic cannot be changed post-deployment (7.7 Upgrades). While the `Ownable` pattern allows for administrative control transfer… |
 
 ## LP Distribution
@@ -37,25 +37,25 @@ The audit of the Token contract, a mock ERC20 implementation with owner-controll
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Owner Key Compromise Leads to Supply Manipulation  *(Severity: High · Status: Unresolved)*
+### `M-01` — Owner Key Compromise Leads to Supply Manipulation  *(Severity: Medium · Status: Unresolved)*
 
-The `Token` contract grants the `owner` exclusive control over the `mint` function, allowing arbitrary inflation of the token supply. If the owner's private key is compromised, an attacker could mint an unlimited number of tokens, severely devaluing the asset and causing significant economic damage. This represents a single point of failure for the token's economic integrity (7.3 Access Control, 7.4 Economic, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `Token` contract grants the `owner` exclusive control over the `mint` function, allowing arbitrary inflation of the token supply. If the owner's private key is compromised, an attacker could mint an unlimited number of tokens, severely devaluing the asset and causing significant economic damage. This represents a single point of failure for the token's economic integrity (7.3 Access Control, 7.4 Economic, 7.8 Operations).
 
 **Recommendation:** Implement robust security measures for the owner's private key, such as a hardware security module (HSM) or a multi-signature wallet. For production systems, consider a time-locked mechanism or a governance-controlled minting process to mitigate the risk of a single point of failure or malicious action.
 
 
 ### `L-01` — Irreversible Loss of Owner Privileges  *(Severity: Low · Status: Unresolved)*
 
-The `renounceOwnership` function allows the current owner to permanently relinquish ownership of the contract by transferring it to `address(0)`. If this function is called without a plan for re-establishing control or if it's done accidentally, all `onlyOwner` functions, including `mint`, will become permanently inaccessible (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `renounceOwnership` function allows the current owner to permanently relinquish ownership of the contract by transferring it to `address(0)`. If this function is called without a plan for re-establishing control or if it's done accidentally, all `onlyOwner` functions, including `mint`, will become permanently inaccessible (7.8 Operations).
 
 **Recommendation:** Exercise extreme caution when using `renounceOwnership`. Ensure that renouncing ownership is an intentional and well-understood action, typically only performed when the contract is designed to be immutable after deployment or when control is transferred to a governance mechanism.
 
 
 ### `I-01` — EIP-2612 Permit Signature Replay Considerations  *(Severity: Informational · Status: Unresolved)*
 
-The contract utilizes `ERC20Permit` (EIP-2612) for gasless approvals. While the OpenZeppelin implementation correctly uses nonces to prevent on-chain replay of signatures, users should be aware that off-chain signature replay attacks are still possible if a signed permit message is broadcast multiple times by different relayers before it's processed on-chain (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes `ERC20Permit` (EIP-2612) for gasless approvals. While the OpenZeppelin implementation correctly uses nonces to prevent on-chain replay of signatures, users should be aware that off-chain signature replay attacks are still possible if a signed permit message is broadcast multiple times by different relayers before it's processed on-chain (7.2 Code Security).
 
 **Recommendation:** Users should be educated on the mechanics of EIP-2612 and the importance of using unique signatures for each transaction. Relay services should implement robust mechanisms to prevent replaying signatures.
 
@@ -98,11 +98,11 @@ The contract utilizes `ERC20Permit` (EIP-2612) for gasless approvals. While the 
 
 ### Is OWB a scam?
 
-Based on automated analysis, OWB scores 66/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, OWB scores 25/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is OWB safe to buy?
 
-Our scanner flagged a risk score of 66/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 25/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has OWB been audited?
 

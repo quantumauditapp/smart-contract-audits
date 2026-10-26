@@ -2,14 +2,14 @@
 token: Official Charlie Kirk Coin
 ticker: KIRK
 network: solana
-risk_score: 49
-status: medium
+risk_score: 27
+status: low
 date: 2026-08-31
 ---
 
 # Official Charlie Kirk Coin (KIRK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 49/100 — 🟡 Medium Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/official-charlie-kirk-coin-sol)
 
@@ -25,9 +25,9 @@ This audit of the Official Charlie Kirk Coin (KIRK) SPL Token Mint identifies a 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Official Charlie Kirk Coin (KIRK) is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen… |
-| **Governance / Economics** | 1/10 | High | The token exhibits high holder concentration, with the top 10 token accounts collectively holding 77.97% of the total supply. This level of concentration poses a significant risk of price volatility… |
-| **Upgrades** | 8/10 | Low | The token mint's core parameters are largely immutable, as both the Mint Authority and Freeze Authority have been revoked. This prevents any future changes to the token supply or the ability to… |
+| **Technical** | 10/10 | Low | The Official Charlie Kirk Coin (KIRK) is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits high holder concentration, with the top 10 token accounts collectively holding 77.97% of the total supply. This level of concentration poses a significant risk of price volatility… |
+| **Upgrades** | 10/10 | Low | The token mint's core parameters are largely immutable, as both the Mint Authority and Freeze Authority have been revoked. This prevents any future changes to the token supply or the ability to… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ Top 10 token accounts hold 77.97% of supply. Coordinated sell-off would crash pr
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2210 buys / 1694 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Top 10 token accounts hold 77.97% of supply. Coordinated sell-off would crash pr
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

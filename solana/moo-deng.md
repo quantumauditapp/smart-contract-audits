@@ -2,14 +2,14 @@
 token: Moo Deng
 ticker: MOODENG
 network: solana
-risk_score: 1
+risk_score: 0
 status: low
 date: 2026-08-13
 ---
 
 # Moo Deng (MOODENG) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 1/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/moo-deng-sol)
 

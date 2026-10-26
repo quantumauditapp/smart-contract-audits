@@ -2,14 +2,14 @@
 token: mubarak
 ticker: MUBARAK
 network: bsc
-risk_score: 31
+risk_score: 14
 status: low
 date: 2026-08-11
 ---
 
 # mubarak (MUBARAK) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 31/100 — 🟢 Low Risk**
+> **Risk Score: 14/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mubarak-bsc)
 
@@ -25,8 +25,8 @@ This audit covers a custom ERC20 token contract with added transfer control mech
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract utilizes standard OpenZeppelin patterns for ERC20 and Ownable functionalities, demonstrating a solid foundation (7.1 Architecture, 7.2 Code Security). The use of `unchecked` blocks is… |
-| **Governance / Economics** | 4/10 | Medium | The token's economic model is heavily reliant on the owner's control over transferability (7.4 Economic). The `setMode` function allows the owner to permanently disable transfer restrictions by… |
+| **Technical** | 10/10 | Low | The contract utilizes standard OpenZeppelin patterns for ERC20 and Ownable functionalities, demonstrating a solid foundation (7.1 Architecture, 7.2 Code Security). The use of `unchecked` blocks is… |
+| **Governance / Economics** | 5/10 | Medium | The token's economic model is heavily reliant on the owner's control over transferability (7.4 Economic). The `setMode` function allows the owner to permanently disable transfer restrictions by… |
 | **Upgrades** | 10/10 | Low | The contract is not designed with upgradeability in mind (7.7 Upgrades). It is a standard implementation contract without proxy patterns. Therefore, any identified issues or desired feature changes… |
 
 ## LP Distribution
@@ -39,25 +39,25 @@ This audit covers a custom ERC20 token contract with added transfer control mech
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low_
-
-### `H-01` — Irreversible Transfer Mode Change  *(Severity: High · Status: Unresolved)*
-
-The `setMode` function contains a condition `if (_mode != MODE_NORMAL) { _mode = v; }`. This logic prevents the owner from changing the transfer mode once it has been set to `MODE_NORMAL`. If the owner ever sets the token to `MODE_NORMAL`, they permanently lose the ability to re-enable `MODE_TRANSFER_RESTRICTED` or `MODE_TRANSFER_CONTROLLED`, even in emergency situations. This represents an irreversible loss of a critical control mechanism (7.3 Access Control, 7.4 Economic).
-
-**Recommendation:** Remove the `if (_mode != MODE_NORMAL)` condition from the `setMode` function if the intention is for the owner to always retain full control over the transfer mode. Alternatively, if the irreversible transition is intended, ensure this design choice is clearly documented and understood by all stakeholders, acknowledging the permanent loss of control.
-
+_🟡 2 Medium · 🟢 1 Low_
 
 ### `M-01` — Centralized Control over Token Transfers  *(Severity: Medium · Status: Unresolved)*
 
-The `owner()` address has complete control over the token's transferability through the `setMode` function and the `_beforeTokenTransfer` hook. The owner can pause all transfers (`MODE_TRANSFER_RESTRICTED`) or restrict them to only involve the owner (`MODE_TRANSFER_CONTROLLED`). This introduces a single point of failure, as a compromised owner key could lead to censorship or manipulation of token transfers (7.3 Access Control, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The `owner()` address has complete control over the token's transferability through the `setMode` function and the `_beforeTokenTransfer` hook. The owner can pause all transfers (`MODE_TRANSFER_RESTRICTED`) or restrict them to only involve the owner (`MODE_TRANSFER_CONTROLLED`). This introduces a single point of failure, as a compromised owner key could lead to censorship or manipulation of token transfers (7.3 Access Control, 7.5 Governance).
 
 **Recommendation:** Consider implementing a multi-signature wallet for the `owner` role or introducing a time-lock mechanism for critical functions like `setMode`. This would distribute control and provide a delay for users to react to potentially malicious actions, enhancing security and decentralization.
 
 
+### `M-02` — Irreversible Transfer Mode Change  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `setMode` function contains a condition `if (_mode != MODE_NORMAL) { _mode = v; }`. This logic prevents the owner from changing the transfer mode once it has been set to `MODE_NORMAL`. If the owner ever sets the token to `MODE_NORMAL`, they permanently lose the ability to re-enable `MODE_TRANSFER_RESTRICTED` or `MODE_TRANSFER_CONTROLLED`, even in emergency situations. This represents an irreversible loss of a critical control mechanism (7.3 Access Control, 7.4 Economic).
+
+**Recommendation:** Remove the `if (_mode != MODE_NORMAL)` condition from the `setMode` function if the intention is for the owner to always retain full control over the transfer mode. Alternatively, if the irreversible transition is intended, ensure this design choice is clearly documented and understood by all stakeholders, acknowledging the permanent loss of control.
+
+
 ### `L-01` — Initial Restricted Transfer State  *(Severity: Low · Status: Unresolved)*
 
-Upon deployment, the token's `_mode` is initialized to `MODE_TRANSFER_RESTRICTED`. This means that immediately after deployment, no transfers of the token are possible until the owner explicitly calls `setMode` to change it to `MODE_NORMAL` or `MODE_TRANSFER_CONTROLLED`. This requires an immediate operational step from the owner for the token to become functional for general use (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). Upon deployment, the token's `_mode` is initialized to `MODE_TRANSFER_RESTRICTED`. This means that immediately after deployment, no transfers of the token are possible until the owner explicitly calls `setMode` to change it to `MODE_NORMAL` or `MODE_TRANSFER_CONTROLLED`. This requires an immediate operational step from the owner for the token to become functional for general use (7.8 Operations).
 
 **Recommendation:** Ensure that the operational team is aware of this initial state and has a clear plan for calling `setMode` to the desired initial operational mode shortly after deployment. Document this step in the deployment checklist.
 

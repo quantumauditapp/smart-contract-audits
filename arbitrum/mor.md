@@ -2,14 +2,14 @@
 token: MOR
 ticker: MOR
 network: arbitrum
-risk_score: 84
+risk_score: 69
 status: high
 date: 2026-08-15
 ---
 
 # MOR (MOR) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 84/100 — 🟠 High Risk**
+> **Risk Score: 69/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mor-arb)
 
@@ -38,32 +38,32 @@ The MOROFT contract implements an omnichain ERC-20 token utilizing LayerZero's O
 
 ## Security Findings
 
-_🟠 2 High · 🟡 1 Medium · 🟢 1 Low_
-
-### `H-01` — Centralized Minting Authority and Inflationary Risk  *(Severity: High · Status: Unresolved)*
-
-The `MOROFT` contract includes a `mint` function accessible only by addresses designated as `minter`. The `updateMinter` function, which controls these roles, is restricted to the contract owner. This centralized control over token supply allows the designated minter(s) to mint an arbitrary amount of tokens, introducing significant inflationary risk to the token's economic model (7.4 Economic). A compromise of the minter's private key or a malicious action by the owner could lead to uncontrolled token issuance and severe devaluation.
-
-**Recommendation:** Implement a time-locked or multi-signature mechanism for minting operations, or introduce a maximum minting limit per period. Consider integrating a governance mechanism (e.g., DAO) to approve minting requests, decentralizing control. Ensure strict operational security for the owner multisig and any designated minter addresses.
-
-
-### `H-02` — Immutability and Lack of Upgradeability  *(Severity: High · Status: Unresolved)*
-
-The `MOROFT` contract is deployed as a standard, non-proxy contract, meaning it is immutable once deployed. There is no mechanism to upgrade the contract's logic (7.7 Upgrades). This poses a significant risk because any critical bugs, vulnerabilities, or necessary feature enhancements discovered post-deployment cannot be patched. Remediation would require deploying a new contract and migrating all token holders, which is a complex, costly, and disruptive process for the protocol and its users.
-
-**Recommendation:** For future deployments, consider implementing an upgradeable proxy pattern (e.g., UUPS or Transparent Proxy) to allow for bug fixes and feature enhancements without requiring a token migration. For the current deployment, ensure extremely thorough testing, formal verification, and a robust incident response plan are in place.
-
+_🟡 3 Medium · 🟢 1 Low_
 
 ### `M-01` — Critical LayerZero Configuration Management  *(Severity: Medium · Status: Unresolved)*
 
-The `MOROFT` contract inherits from LayerZero's `OFT` contract, which includes several `onlyOwner` functions for critical cross-chain configuration (e.g., `setPeer`, `setTrustedRemote`, `setMinDstGas`, `setFeeManager`). Incorrect configuration of these parameters, or a compromise of the owner's address, could lead to funds being stuck during cross-chain transfers, excessive gas fees, or potential exploits related to message relaying (7.6 External, 7.8 Operations). While the owner is a multisig, the complexity of LayerZero configuration requires careful management.
+Not confirmed by static analysis (the model's own reading of the source). The `MOROFT` contract inherits from LayerZero's `OFT` contract, which includes several `onlyOwner` functions for critical cross-chain configuration (e.g., `setPeer`, `setTrustedRemote`, `setMinDstGas`, `setFeeManager`). Incorrect configuration of these parameters, or a compromise of the owner's address, could lead to funds being stuck during cross-chain transfers, excessive gas fees, or potential exploits related to message relaying (7.6 External, 7.8 Operations). While the owner is a multisig, the complexity of LayerZero configuration requires careful management.
 
 **Recommendation:** Establish clear, documented procedures for all LayerZero configuration changes. Implement a robust testing environment to validate configuration changes before applying them to production. Consider adding a timelock to critical LayerZero configuration changes to provide a window for review and potential intervention.
 
 
+### `M-02` — Centralized Minting Authority and Inflationary Risk  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `MOROFT` contract includes a `mint` function accessible only by addresses designated as `minter`. The `updateMinter` function, which controls these roles, is restricted to the contract owner. This centralized control over token supply allows the designated minter(s) to mint an arbitrary amount of tokens, introducing significant inflationary risk to the token's economic model (7.4 Economic). A compromise of the minter's private key or a malicious action by the owner could lead to uncontrolled token issuance and severe devaluation.
+
+**Recommendation:** Implement a time-locked or multi-signature mechanism for minting operations, or introduce a maximum minting limit per period. Consider integrating a governance mechanism (e.g., DAO) to approve minting requests, decentralizing control. Ensure strict operational security for the owner multisig and any designated minter addresses.
+
+
+### `M-03` — Immutability and Lack of Upgradeability  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `MOROFT` contract is deployed as a standard, non-proxy contract, meaning it is immutable once deployed. There is no mechanism to upgrade the contract's logic (7.7 Upgrades). This poses a significant risk because any critical bugs, vulnerabilities, or necessary feature enhancements discovered post-deployment cannot be patched. Remediation would require deploying a new contract and migrating all token holders, which is a complex, costly, and disruptive process for the protocol and its users.
+
+**Recommendation:** For future deployments, consider implementing an upgradeable proxy pattern (e.g., UUPS or Transparent Proxy) to allow for bug fixes and feature enhancements without requiring a token migration. For the current deployment, ensure extremely thorough testing, formal verification, and a robust incident response plan are in place.
+
+
 ### `L-01` — Dependency on External LayerZero Security  *(Severity: Low · Status: Unresolved)*
 
-The `MOROFT` token's omnichain functionality is entirely dependent on the security and operational integrity of the LayerZero protocol. Any vulnerabilities, exploits, or operational failures within the LayerZero network itself could directly impact the `MOROFT` token, potentially leading to loss of funds during cross-chain transfers or disruption of its core functionality (7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The `MOROFT` token's omnichain functionality is entirely dependent on the security and operational integrity of the LayerZero protocol. Any vulnerabilities, exploits, or operational failures within the LayerZero network itself could directly impact the `MOROFT` token, potentially leading to loss of funds during cross-chain transfers or disruption of its core functionality (7.6 External).
 
 **Recommendation:** While direct control over LayerZero's core security is not possible, the project should continuously monitor LayerZero's security announcements, audits, and operational status. Maintain a contingency plan for potential LayerZero disruptions, such as communication strategies for users and potential mitigation steps.
 

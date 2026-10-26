@@ -2,14 +2,14 @@
 token: OBSDIAN
 ticker: OBSD
 network: solana
-risk_score: 53
+risk_score: 43
 status: medium
 date: 2026-07-26
 ---
 
 # OBSDIAN (OBSD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟡 Medium Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/obsdian-sol)
 
@@ -83,11 +83,11 @@ Total DEX liquidity is $9,988. Slippage will be severe; large positions cannot b
 
 ### Is OBSDIAN a scam?
 
-Based on automated analysis, OBSDIAN scores 66/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, OBSDIAN scores 43/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is OBSDIAN safe to buy?
 
-Our scanner flagged a risk score of 66/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 43/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has OBSDIAN been audited?
 

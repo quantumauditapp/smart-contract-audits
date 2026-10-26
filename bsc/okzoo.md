@@ -2,14 +2,14 @@
 token: OKZOO
 ticker: AIOT
 network: bsc
-risk_score: 13
+risk_score: 11
 status: low
 date: 2026-08-11
 ---
 
 # OKZOO (AIOT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 13/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/okzoo-bsc)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Lack of Administrative Control Functions  *(Severity: Low · Status: Unresolved)*
 
-The OkzooToken contract does not include any administrative control functions such as `pause`, `blacklist`, or `owner`-restricted minting/burning capabilities beyond the initial constructor mint. While this design choice minimizes centralization risk and potential attack vectors associated with privileged roles, it also means there is no mechanism to halt transfers in an emergency (e.g., a critical bug in a DeFi protocol interacting with the token) or to recover tokens sent to incorrect addresses.
+Not confirmed by static analysis (the model's own reading of the source). The OkzooToken contract does not include any administrative control functions such as `pause`, `blacklist`, or `owner`-restricted minting/burning capabilities beyond the initial constructor mint. While this design choice minimizes centralization risk and potential attack vectors associated with privileged roles, it also means there is no mechanism to halt transfers in an emergency (e.g., a critical bug in a DeFi protocol interacting with the token) or to recover tokens sent to incorrect addresses.
 
 **Recommendation:** Assess whether the absence of administrative controls aligns with the project's long-term strategy and risk tolerance. If emergency response capabilities are deemed necessary, consider implementing a separate governance or multi-sig controlled contract that can interact with the token, or deploying a token with such features from the outset. For this specific contract, no changes are recommended if the current design is intentional.
 
 
 ### `I-01` — Reliance on OpenZeppelin Standard Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The OkzooToken contract inherits directly from OpenZeppelin's ERC20 contract, which is a widely used and thoroughly audited library. This significantly reduces the likelihood of common ERC-20 vulnerabilities such as reentrancy, integer overflows/underflows, and incorrect token accounting. The custom logic is limited to the constructor, which performs an initial mint.
+Not confirmed by static analysis (the model's own reading of the source). The OkzooToken contract inherits directly from OpenZeppelin's ERC20 contract, which is a widely used and thoroughly audited library. This significantly reduces the likelihood of common ERC-20 vulnerabilities such as reentrancy, integer overflows/underflows, and incorrect token accounting. The custom logic is limited to the constructor, which performs an initial mint.
 
 **Recommendation:** No specific recommendation is required as this is a strength. Continue to monitor OpenZeppelin's security advisories for any potential issues in the base contracts, although this is generally handled by the OpenZeppelin team.
 
 
 ### `I-02` — Fixed Token Supply After Initial Mint  *(Severity: Informational · Status: Unresolved)*
 
-The total supply of OkzooToken is determined solely by the `mintAmount` parameter provided during the contract's deployment in the constructor. There are no functions available to mint additional tokens or burn tokens (beyond the internal `_burn` function which is not exposed externally) after the initial deployment. This results in a fixed supply token.
+Not confirmed by static analysis (the model's own reading of the source). The total supply of OkzooToken is determined solely by the `mintAmount` parameter provided during the contract's deployment in the constructor. There are no functions available to mint additional tokens or burn tokens (beyond the internal `_burn` function which is not exposed externally) after the initial deployment. This results in a fixed supply token.
 
 **Recommendation:** Ensure that the initial `mintAmount` is carefully chosen and verified, as it cannot be altered post-deployment. This fixed supply characteristic is generally a security strength, preventing arbitrary inflation, but it also means the token's supply cannot be adjusted to respond to future economic or protocol needs.
 

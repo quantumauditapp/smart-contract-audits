@@ -113,11 +113,11 @@ Not confirmed by static analysis (the model's own reading of the source). The ov
 
 ### Is Ondo a scam?
 
-Based on the provided data, Ondo does not exhibit typical scam characteristics. The contract is verified, ownership has been renounced, and there is no function to mint new tokens, all of which are strong positive indicators of legitimate intent and foundational security. While a medium risk score of 43/100 exists due to other factors like holder concentration, these technical safeguards suggest it's not designed as a rug-pull or scam project.
+Based on the provided data, Ondo does not exhibit typical scam characteristics. The contract is verified, ownership has been renounced, and there is no function to mint new tokens, all of which are strong positive indicators of legitimate intent and foundational security. While a low risk score of 31/100 exists due to other factors like holder concentration, these technical safeguards suggest it's not designed as a rug-pull or scam project.
 
 ### Is Ondo safe to buy?
 
-Investing in Ondo carries a medium risk profile, as indicated by its 43/100 score. Key safety aspects include a verified contract, renounced ownership, and no mint function, which mitigate several common smart contract risks. However, significant risk factors remain, primarily the high concentration of 71.1% of tokens among the top 10 holders and the lack of locked liquidity. Investors should weigh these risks against the project's overall transparency and technical safeguards.
+Investing in Ondo carries a low risk profile, as indicated by its 31/100 score. Key safety aspects include a verified contract, renounced ownership, and no mint function, which mitigate several common smart contract risks. However, significant risk factors remain, primarily the high concentration of 71.1% of tokens among the top 10 holders and the lack of locked liquidity. Investors should weigh these risks against the project's overall transparency and technical safeguards.
 
 ### Has Ondo been audited?
 

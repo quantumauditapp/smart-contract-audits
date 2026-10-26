@@ -2,14 +2,14 @@
 token: moonkey
 ticker: MOONKEY
 network: solana
-risk_score: 18
+risk_score: 1
 status: low
 date: 2026-09-01
 ---
 
 # moonkey (MOONKEY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 18/100 — 🟢 Low Risk**
+> **Risk Score: 1/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/moonkey-sol)
 
@@ -26,8 +26,8 @@ The moonkey SPL Token-2022 mint exhibits a robust technical configuration with r
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The moonkey token is an SPL Token-2022 mint with address BRZ5aeJCDuruA42V1CntqKvofa2G7DS3yyxx1pZEpump. Both the Mint Authority and Freeze Authority are revoked, preventing further token issuance or… |
-| **Governance / Economics** | 6/10 | Medium | The token has a total DEX liquidity of $80,617. The trading pair is very new, established only 4 days ago, which limits the track record for assessing market behavior. While primary holder… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are fixed, as both Mint and Freeze authorities have been revoked. There are no active Token-2022 extensions that would allow for post-launch modifications to transfer… |
+| **Governance / Economics** | 9/10 | Low | The token has a total DEX liquidity of $80,617. The trading pair is very new, established only 4 days ago, which limits the track record for assessing market behavior. While primary holder… |
+| **Upgrades** | 10/10 | Low | The token's core parameters are fixed, as both Mint and Freeze authorities have been revoked. There are no active Token-2022 extensions that would allow for post-launch modifications to transfer… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 4 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2644 buys / 2688 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 4 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

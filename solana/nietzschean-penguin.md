@@ -2,14 +2,14 @@
 token: Nietzschean Penguin
 ticker: PENGUIN
 network: solana
-risk_score: 25
+risk_score: 8
 status: low
 date: 2026-08-14
 ---
 
 # Nietzschean Penguin (PENGUIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 25/100 — 🟢 Low Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/nietzschean-penguin-sol)
 
@@ -26,8 +26,8 @@ The Nietzschean Penguin token presents a medium risk primarily due to significan
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Nietzschean Penguin token is an SPL Token-2022 mint with both mint and freeze authorities revoked, indicating a fixed supply and unfreezable accounts. It does not utilize advanced Token-2022… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a moderate level of holder concentration, with the top 10 accounts holding 58.58% of the total supply, which could lead to price volatility. DEX liquidity stands at $195,547, with… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are permanently revoked, ensuring no further tokens can be minted and no accounts can be frozen. The metadata is immutable, preventing changes to the token's… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits a moderate level of holder concentration, with the top 10 accounts holding 58.58% of the total supply, which could lead to price volatility. DEX liquidity stands at $195,547, with… |
+| **Upgrades** | 10/10 | Low | The token's mint and freeze authorities are permanently revoked, ensuring no further tokens can be minted and no accounts can be frozen. The metadata is immutable, preventing changes to the token's… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ Top 10 token accounts hold 58.58% of supply. Coordinated sell-off would crash pr
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 883 buys / 683 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Top 10 token accounts hold 58.58% of supply. Coordinated sell-off would crash pr
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

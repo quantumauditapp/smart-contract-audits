@@ -2,14 +2,14 @@
 token: MOMO
 ticker: MOMO
 network: ethereum
-risk_score: 47
+risk_score: 45
 status: medium
 date: 2026-08-11
 ---
 
 # MOMO (MOMO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 47/100 — 🟡 Medium Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/momo-eth)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Unused State Variable `_PERMIT_TYPEHASH_DEPRECATED_SLOT`  *(Severity: Low · Status: Unresolved)*
 
-The `ERC20Permit` contract declares a private state variable `bytes32 private _PERMIT_TYPEHASH_DEPRECATED_SLOT;` which is never assigned a value or used within the contract. This represents dead code and a minor inefficiency.
+Not confirmed by static analysis (the model's own reading of the source). The `ERC20Permit` contract declares a private state variable `bytes32 private _PERMIT_TYPEHASH_DEPRECATED_SLOT;` which is never assigned a value or used within the contract. This represents dead code and a minor inefficiency.
 
 **Recommendation:** Remove the unused state variable `_PERMIT_TYPEHASH_DEPRECATED_SLOT` to improve code clarity and slightly reduce contract deployment size.
 
 
 ### `I-01` — Use of Draft ERC Standard  *(Severity: Informational · Status: Unresolved)*
 
-The contract utilizes `ERC20Permit`, which is currently a 'draft' ERC standard (indicated by `draft-ERC20Permit.sol` in OpenZeppelin). While functional, draft standards are subject to change and may not be as widely adopted or battle-tested as finalized standards.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes `ERC20Permit`, which is currently a 'draft' ERC standard (indicated by `draft-ERC20Permit.sol` in OpenZeppelin). While functional, draft standards are subject to change and may not be as widely adopted or battle-tested as finalized standards.
 
 **Recommendation:** Be aware that draft standards may evolve. Monitor the status of ERC20Permit and consider the implications if the standard undergoes significant changes in the future. For production systems, finalized standards are generally preferred.
 
 
 ### `I-02` — Fixed Supply and No Central Control  *(Severity: Informational · Status: Unresolved)*
 
-The MomoToken contract has a fixed `INITIAL_SUPPLY` minted entirely to a single recipient during construction. There are no owner-controlled minting, burning, pausing, or upgrade functionalities. This design ensures decentralization and predictability of the token supply.
+Not confirmed by static analysis (the model's own reading of the source). The MomoToken contract has a fixed `INITIAL_SUPPLY` minted entirely to a single recipient during construction. There are no owner-controlled minting, burning, pausing, or upgrade functionalities. This design ensures decentralization and predictability of the token supply.
 
 **Recommendation:** This is a design choice that enhances decentralization and reduces governance risk. Ensure this aligns with the long-term vision for the token. No action is required if this is the intended design.
 

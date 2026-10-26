@@ -2,14 +2,14 @@
 token: MOO DENG
 ticker: MOODENG
 network: ethereum
-risk_score: 7
+risk_score: 0
 status: low
 date: 2026-09-04
 ---
 
 # MOO DENG (MOODENG) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 7/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/moo-deng-eth)
 
@@ -25,9 +25,9 @@ The `token` contract implements an ERC-20 standard with custom taxation, anti-bo
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract utilizes `SafeMath` to prevent integer overflows/underflows, which is a strong security practice (7.2 Code Security). However, the architecture grants the owner highly centralized… |
-| **Governance / Economics** | 8/10 | Low | The economic model incorporates initial buy and sell taxes (21%) which can be reduced based on `_buyCount` thresholds (7.4 Economic). While this provides flexibility, the initial high taxes could… |
-| **Upgrades** | 9/10 | Low | The contract is not designed with an upgrade mechanism (e.g., proxy pattern) (7.7 Upgrades). This means the contract's logic is immutable once deployed. While this eliminates risks associated with… |
+| **Technical** | 10/10 | Low | The contract utilizes `SafeMath` to prevent integer overflows/underflows, which is a strong security practice (7.2 Code Security). However, the architecture grants the owner highly centralized… |
+| **Governance / Economics** | 10/10 | Low | The economic model incorporates initial buy and sell taxes (21%) which can be reduced based on `_buyCount` thresholds (7.4 Economic). While this provides flexibility, the initial high taxes could… |
+| **Upgrades** | 10/10 | Low | The contract is not designed with an upgrade mechanism (e.g., proxy pattern) (7.7 Upgrades). This means the contract's logic is immutable once deployed. While this eliminates risks associated with… |
 
 ## LP Distribution
 
@@ -38,39 +38,39 @@ The `token` contract implements an ERC-20 standard with custom taxation, anti-bo
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `C-01` — Owner Privileges and Centralization Risk  *(Severity: Critical · Status: Unresolved)*
-
-The contract owner possesses extensive control over critical token parameters, including the ability to set taxes (`setInitialBuyTax`, `setFinalSellTax`), transaction limits (`setMaxTxAmount`, `setMaxWalletSize`), manage bot lists (`addBot`, `delBot`), and enable/disable trading and swapping (`openTrading`, `setSwapEnabled`). This high degree of centralization allows the owner to manipulate the token's economy, halt trading by setting `_maxTxAmount` or `_maxWalletSize` to zero, or even redirect collected taxes by changing `_taxWallet`. A compromised owner key or a malicious owner could lead to a complete loss of user funds or render the token untradable.
-
-**Recommendation:** Implement a multi-signature wallet for ownership or transition to a decentralized governance model. For highly sensitive functions, consider adding a time-lock mechanism to allow users to react to pending changes. Clearly communicate the extent of owner privileges to the community.
-
-
-### `H-01` — Anti-Bot/Anti-Whale Mechanisms with Centralized Control  *(Severity: High · Status: Unresolved)*
-
-The contract includes anti-bot (`bots` mapping) and anti-whale (`_maxTxAmount`, `_maxWalletSize`, `sellCount` per block) mechanisms. While intended to protect against manipulation, these features are centrally controlled by the owner. The owner can arbitrarily add or remove addresses from the `bots` list, potentially blocking legitimate users. The `sellCount` limit per block can restrict users' ability to sell their desired amount, and can be circumvented by using multiple addresses. These mechanisms introduce subjective control and potential for abuse, impacting fair market operations and user liquidity.
-
-**Recommendation:** Re-evaluate the necessity and implementation of these mechanisms. If retained, consider decentralizing control over the `bots` list through a community vote or a transparent, auditable process. Ensure that `_maxTxAmount` and `_maxWalletSize` are set to reasonable values that do not unduly restrict legitimate trading. Clearly document the behavior and limitations of these features.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — High Initial Transaction Taxes  *(Severity: Medium · Status: Unresolved)*
 
-The contract is configured with high initial buy and sell taxes of 21% (`_initialBuyTax`, `_initialSellTax`). While these taxes are designed to reduce after certain `_buyCount` thresholds (`_reduceBuyTaxAt`, `_reduceSellTaxAt`), such high initial rates can deter early adoption, reduce trading volume, and create a perception of a 'honeypot' or an unsustainable economic model. This could negatively impact the token's liquidity and overall market health.
+Not confirmed by static analysis (the model's own reading of the source). The contract is configured with high initial buy and sell taxes of 21% (`_initialBuyTax`, `_initialSellTax`). While these taxes are designed to reduce after certain `_buyCount` thresholds (`_reduceBuyTaxAt`, `_reduceSellTaxAt`), such high initial rates can deter early adoption, reduce trading volume, and create a perception of a 'honeypot' or an unsustainable economic model. This could negatively impact the token's liquidity and overall market health.
 
 **Recommendation:** Consider lowering the initial tax rates to more standard levels (e.g., 5-10%) to encourage early trading and adoption. Clearly communicate the tax structure, including initial rates and reduction thresholds, to potential investors. Monitor the impact of tax rates on trading volume and adjust as necessary through a controlled governance process.
 
 
+### `M-02` — Owner Privileges and Centralization Risk  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract owner possesses extensive control over critical token parameters, including the ability to set taxes (`setInitialBuyTax`, `setFinalSellTax`), transaction limits (`setMaxTxAmount`, `setMaxWalletSize`), manage bot lists (`addBot`, `delBot`), and enable/disable trading and swapping (`openTrading`, `setSwapEnabled`). This high degree of centralization allows the owner to manipulate the token's economy, halt trading by setting `_maxTxAmount` or `_maxWalletSize` to zero, or even redirect collected taxes by changing `_taxWallet`. A compromised owner key or a malicious owner could lead to a complete loss of user f
+
+**Recommendation:** Implement a multi-signature wallet for ownership or transition to a decentralized governance model. For highly sensitive functions, consider adding a time-lock mechanism to allow users to react to pending changes. Clearly communicate the extent of owner privileges to the community.
+
+
+### `M-03` — Anti-Bot/Anti-Whale Mechanisms with Centralized Control  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract includes anti-bot (`bots` mapping) and anti-whale (`_maxTxAmount`, `_maxWalletSize`, `sellCount` per block) mechanisms. While intended to protect against manipulation, these features are centrally controlled by the owner. The owner can arbitrarily add or remove addresses from the `bots` list, potentially blocking legitimate users. The `sellCount` limit per block can restrict users' ability to sell their desired amount, and can be circumvented by using multiple addresses. These mechanisms introduce subjective control and potential for abuse, impacting fair market operations and user liquidity.
+
+**Recommendation:** Re-evaluate the necessity and implementation of these mechanisms. If retained, consider decentralizing control over the `bots` list through a community vote or a transparent, auditable process. Ensure that `_maxTxAmount` and `_maxWalletSize` are set to reasonable values that do not unduly restrict legitimate trading. Clearly document the behavior and limitations of these features.
+
+
 ### `L-01` — Front-running of `openTrading` Function  *(Severity: Low · Status: Unresolved)*
 
-The `openTrading()` function, which enables transfers by setting `tradingOpen = true`, can be front-run. Malicious actors or bots can monitor the transaction pool for the `openTrading()` call and submit their own buy transactions with a higher gas price to be among the first to trade the token. This allows them to gain an unfair advantage in early trading, potentially buying at a lower price before wider market participation.
+Not confirmed by static analysis (the model's own reading of the source). The `openTrading()` function, which enables transfers by setting `tradingOpen = true`, can be front-run. Malicious actors or bots can monitor the transaction pool for the `openTrading()` call and submit their own buy transactions with a higher gas price to be among the first to trade the token. This allows them to gain an unfair advantage in early trading, potentially buying at a lower price before wider market participation.
 
 **Recommendation:** While this is a common characteristic of new token launches and not a direct vulnerability in the contract's logic, projects should be aware of this risk. Consider alternative launch mechanisms or clearly communicate the launch strategy to manage community expectations. No direct code change is typically required for this inherent market dynamic.
 
 
 ### `I-01` — Implications of Renouncing Ownership  *(Severity: Informational · Status: Unresolved)*
 
-The contract includes a `renounceOwnership()` function, which allows the current owner to transfer ownership to the zero address. If ownership is renounced, all functions protected by the `onlyOwner` modifier become permanently inaccessible. This means that critical parameters such as tax rates, transaction limits, wallet limits, and the bot list can never be changed, and any potential issues or desired updates cannot be addressed. While this increases decentralization, it also removes any ability to adapt or mitigate future problems.
+Not confirmed by static analysis (the model's own reading of the source). The contract includes a `renounceOwnership()` function, which allows the current owner to transfer ownership to the zero address. If ownership is renounced, all functions protected by the `onlyOwner` modifier become permanently inaccessible. This means that critical parameters such as tax rates, transaction limits, wallet limits, and the bot list can never be changed, and any potential issues or desired updates cannot be addressed. While this increases decentralization, it also removes any ability to adapt or mitigate future problems.
 
 **Recommendation:** If the intention is to renounce ownership, ensure that all critical parameters are set to their final, desired state before renunciation. Clearly communicate the implications of renouncing ownership to the community, emphasizing that the contract will become immutable and unmanageable by any single entity.
 

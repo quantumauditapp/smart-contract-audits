@@ -2,14 +2,14 @@
 token: Olympus
 ticker: OHM
 network: ethereum
-risk_score: 50
+risk_score: 43
 status: medium
 date: 2026-08-11
 ---
 
 # Olympus (OHM) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 50/100 — 🟡 Medium Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/olympus-eth)
 
@@ -42,21 +42,21 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralized Control via OlympusAuthority  *(Severity: Medium · Status: Unresolved)*
 
-The `OlympusAccessControlled` pattern relies on a single `IOlympusAuthority` contract to manage all critical roles (governor, guardian, policy, vault). The `governor` role has the power to change the `authority` contract itself via `setAuthority`. If the `governor` address is compromised, it could lead to a complete takeover of the protocol's access control, potentially enabling unauthorized minting, burning, or other critical operations if the `OlympusERC20Token` implements `IOHM` and uses these roles. This introduces significant governance and operational risk (7.3 Access Control, 7.5 Governance, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `OlympusAccessControlled` pattern relies on a single `IOlympusAuthority` contract to manage all critical roles (governor, guardian, policy, vault). The `governor` role has the power to change the `authority` contract itself via `setAuthority`. If the `governor` address is compromised, it could lead to a complete takeover of the protocol's access control, potentially enabling unauthorized minting, burning, or other critical operations if the `OlympusERC20Token` implements `IOHM` and uses these roles. This introduces significant governance and operational risk (7.3 Access Control, 7.5 Governance, 7.8 Operations).
 
 **Recommendation:** Implement robust multi-signature (e.g., Gnosis Safe) for the `governor` address and other critical roles. Ensure clear operational procedures and key management for these privileged accounts. Consider time-locks for critical administrative actions like `setAuthority` to allow for community review and emergency response.
 
 
 ### `L-01` — Use of Solidity 0.7.x  *(Severity: Low · Status: Unresolved)*
 
-The contracts are compiled with Solidity `0.7.5` and `^0.7.5`. While `SafeMath` is used to prevent integer overflows/underflows, newer Solidity versions (e.g., `0.8.x`) include default checked arithmetic, which provides an additional layer of safety and reduces the reliance on external libraries for basic arithmetic. Migrating to a newer compiler version could simplify the code and leverage these built-in safety features (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contracts are compiled with Solidity `0.7.5` and `^0.7.5`. While `SafeMath` is used to prevent integer overflows/underflows, newer Solidity versions (e.g., `0.8.x`) include default checked arithmetic, which provides an additional layer of safety and reduces the reliance on external libraries for basic arithmetic. Migrating to a newer compiler version could simplify the code and leverage these built-in safety features (7.2 Code Security).
 
 **Recommendation:** Consider upgrading to Solidity `0.8.x` to benefit from default checked arithmetic and other compiler improvements. Thoroughly test all contracts after any compiler upgrade to ensure compatibility and prevent unexpected behavior.
 
 
 ### `I-01` — Powerful `IOHM` Interface Functions  *(Severity: Informational · Status: Unresolved)*
 
-The `IOHM` interface defines `mint`, `burn`, and `burnFrom` functions, which are highly privileged operations for an ERC-20 token. While the `OlympusAccessControlled` abstract contract provides modifiers (`onlyPolicy`, `onlyVault`, etc.) to restrict access, the specific roles assigned to these functions in the actual `OlympusERC20Token` implementation are not visible in the provided snippets. Misconfiguration or overly broad permissions for these functions could lead to uncontrolled supply manipulation, impacting the token's economic stability (7.1 Architecture, 7.3 Access Control, 7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The `IOHM` interface defines `mint`, `burn`, and `burnFrom` functions, which are highly privileged operations for an ERC-20 token. While the `OlympusAccessControlled` abstract contract provides modifiers (`onlyPolicy`, `onlyVault`, etc.) to restrict access, the specific roles assigned to these functions in the actual `OlympusERC20Token` implementation are not visible in the provided snippets. Misconfiguration or overly broad permissions for these functions could lead to uncontrolled supply manipulation, impacting the token's economic stability (7.1 Architecture, 7.3 Access Control, 7.4 Economic).
 
 **Recommendation:** Ensure that `mint`, `burn`, and `burnFrom` functions in the `OlympusERC20Token` are strictly controlled by appropriate, multi-sig-protected roles (e.g., `onlyPolicy` or `onlyVault` with strong governance). Document the exact permissions and their implications clearly to maintain transparency and accountability.
 

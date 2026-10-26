@@ -2,14 +2,14 @@
 token: Morpho Token
 ticker: MORPHO
 network: base
-risk_score: 60
+risk_score: 52
 status: medium
 date: 2026-07-22
 ---
 
 # Morpho Token (MORPHO) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 60/100 — 🟡 Medium Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/morpho-token-base)
 
@@ -25,8 +25,8 @@ This audit covers an ERC1967Proxy contract, which is a standard OpenZeppelin UUP
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The proxy contract (7.1 Architecture) utilizes well-vetted OpenZeppelin libraries for its core functionality, ensuring a high standard of code security for the proxy itself (7.2 Code Security).… |
-| **Governance / Economics** | 1/10 | High | Without access to the implementation contract's source code, the governance and economic models (7.4 Economic, 7.5 Governance) cannot be assessed. Specifically, the mechanism for authorizing upgrades… |
+| **Technical** | 7/10 | Low | The proxy contract (7.1 Architecture) utilizes well-vetted OpenZeppelin libraries for its core functionality, ensuring a high standard of code security for the proxy itself (7.2 Code Security).… |
+| **Governance / Economics** | 3/10 | High | Without access to the implementation contract's source code, the governance and economic models (7.4 Economic, 7.5 Governance) cannot be assessed. Specifically, the mechanism for authorizing upgrades… |
 | **Upgrades** | 1/10 | High | The contract employs the ERC-1967 (UUPS) proxy pattern (7.7 Upgrades), which is a robust standard for upgradeability. However, the control mechanism for authorizing upgrades resides within the… |
 
 ## Proxy Upgrade Controls
@@ -46,25 +46,25 @@ This audit covers an ERC1967Proxy contract, which is a standard OpenZeppelin UUP
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 2 High_
+_🟡 3 Medium_
 
-### `C-01` — Unverified Implementation Contract Source Code  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Unverified Implementation Contract Source Code  *(Severity: Medium · Status: Unresolved)*
 
-The implementation contract at 0xa860498f8a299526174b539fcc49f13cc082fb18, which the ERC1967Proxy delegates all calls to, has unverified source code on the blockchain explorer. This prevents any security analysis of the core business logic, potential vulnerabilities, or malicious functionality. Users cannot independently verify what code they are interacting with, leading to a complete lack of trust and transparency.
+Not confirmed by static analysis (the model's own reading of the source). The implementation contract at 0xa860498f8a299526174b539fcc49f13cc082fb18, which the ERC1967Proxy delegates all calls to, has unverified source code on the blockchain explorer. This prevents any security analysis of the core business logic, potential vulnerabilities, or malicious functionality. Users cannot independently verify what code they are interacting with, leading to a complete lack of trust and transparency.
 
 **Recommendation:** Immediately verify and publish the full source code of the implementation contract on the blockchain explorer. Once verified, a thorough security audit of the implementation contract should be conducted to ensure its integrity and security.
 
 
-### `H-01` — Unknown Upgrade Authorization Mechanism  *(Severity: High · Status: Unresolved)*
+### `M-02` — Unknown Upgrade Authorization Mechanism  *(Severity: Medium · Status: Unresolved)*
 
-As an ERC1967 (UUPS) proxy, the authorization logic for upgrades resides within the implementation contract. With the implementation's source code unverified, the specific mechanism (e.g., an owner address, a multisig, a governance contract) that controls the ability to upgrade the proxy is unknown. This poses a significant risk, as an attacker who discovers or exploits this unknown mechanism could unilaterally upgrade the contract to a malicious version, potentially draining funds or seizing control.
+Not confirmed by static analysis (the model's own reading of the source). As an ERC1967 (UUPS) proxy, the authorization logic for upgrades resides within the implementation contract. With the implementation's source code unverified, the specific mechanism (e.g., an owner address, a multisig, a governance contract) that controls the ability to upgrade the proxy is unknown. This poses a significant risk, as an attacker who discovers or exploits this unknown mechanism could unilaterally upgrade the contract to a malicious version, potentially draining funds or seizing control.
 
 **Recommendation:** Upon verification of the implementation contract's source code, clearly document and audit the upgrade authorization mechanism. Ensure that upgrade permissions are secured by robust access control, ideally a multi-signature wallet or a well-tested governance system, to prevent single points of failure.
 
 
-### `H-02` — Potential Storage Collisions in Unverified Implementation  *(Severity: High · Status: Unresolved)*
+### `M-03` — Potential Storage Collisions in Unverified Implementation  *(Severity: Medium · Status: Unresolved)*
 
-The pre-analysis notes indicate a 'non-standard storage layout' for the implementation contract. In UUPS proxies, the implementation contract must carefully manage its storage to avoid collisions with the proxy's reserved storage slots (e.g., for implementation address, admin address). Without verified source code, it's impossible to confirm if the implementation correctly adheres to ERC-1967 storage slot conventions or if its custom layout could inadvertently overwrite critical proxy state variables, leading to severe data corruption or loss of control.
+Not confirmed by static analysis (the model's own reading of the source). The pre-analysis notes indicate a 'non-standard storage layout' for the implementation contract. In UUPS proxies, the implementation contract must carefully manage its storage to avoid collisions with the proxy's reserved storage slots (e.g., for implementation address, admin address). Without verified source code, it's impossible to confirm if the implementation correctly adheres to ERC-1967 storage slot conventions or if its custom layout could inadvertently overwrite critical proxy state variables, leading to severe data corruption or loss of control.
 
 **Recommendation:** After verifying the implementation's source code, conduct a detailed storage layout analysis to confirm that there are no potential collisions with the ERC-1967 proxy's reserved slots. Ensure that the implementation's storage variables are declared in a way that is compatible with the proxy pattern, especially if custom storage patterns are used.
 

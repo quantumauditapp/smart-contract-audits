@@ -103,7 +103,7 @@ Based on the provided data, Octra exhibits characteristics that mitigate common 
 
 ### Is Octra safe to buy?
 
-While Octra has a low risk score of 18/100 and positive attributes like a verified, renounced contract without a mint function, two key factors warrant caution. The liquidity is not locked, posing a risk to market stability if withdrawn. Furthermore, the top 10 holders control 46.3% of the supply, indicating potential for significant market impact.
+While Octra has a low risk score of 31/100 and positive attributes like a verified, renounced contract without a mint function, two key factors warrant caution. The liquidity is not locked, posing a risk to market stability if withdrawn. Furthermore, the top 10 holders control 46.3% of the supply, indicating potential for significant market impact.
 
 ### Has Octra been audited?
 

@@ -2,14 +2,14 @@
 token: Olivia AI 2.0
 ticker: $OLIVIA2.0
 network: base
-risk_score: 28
+risk_score: 26
 status: low
 date: 2026-08-30
 ---
 
 # Olivia AI 2.0 ($OLIVIA2.0) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/olivia-ai-20-base)
 
@@ -42,28 +42,28 @@ _🟢 1 Low · ⚪ 3 Informational_
 
 ### `L-01` — Standard ERC-20 `approve` Race Condition  *(Severity: Low · Status: Unresolved)*
 
-The standard ERC-20 `approve` function is susceptible to a known race condition. If a user increases an allowance, a malicious actor could front-run the transaction, spend the original allowance, and then the user's new `approve` transaction would grant an allowance on top of the already spent amount, potentially leading to a double-spend of the allowance. While `ERC20Permit` offers an alternative, the `approve` function remains vulnerable.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC-20 `approve` function is susceptible to a known race condition. If a user increases an allowance, a malicious actor could front-run the transaction, spend the original allowance, and then the user's new `approve` transaction would grant an allowance on top of the already spent amount, potentially leading to a double-spend of the allowance. While `ERC20Permit` offers an alternative, the `approve` function remains vulnerable.
 
 **Recommendation:** Users should be advised to set allowances to zero before increasing them, or to use the `increaseAllowance` and `decreaseAllowance` functions (if available in a `ERC20` variant, though not directly in this specific OpenZeppelin version) to mitigate this risk. For new approvals, `ERC20Permit` can be used as a safer alternative.
 
 
 ### `I-01` — Centralized Ownership  *(Severity: Informational · Status: Unresolved)*
 
-The contract utilizes the `Ownable` pattern, which grants a single external address (the owner) exclusive control over certain administrative functions, specifically `transferOwnership` and `renounceOwnership`. While standard for many tokens, this introduces a single point of control.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes the `Ownable` pattern, which grants a single external address (the owner) exclusive control over certain administrative functions, specifically `transferOwnership` and `renounceOwnership`. While standard for many tokens, this introduces a single point of control.
 
 **Recommendation:** For enhanced security and decentralization, consider transitioning ownership to a multi-signature wallet or a decentralized autonomous organization (DAO) if the project's roadmap allows for it. If a single owner is intended, ensure robust security practices for the owner's private key.
 
 
 ### `I-02` — Initial Supply Centralization  *(Severity: Informational · Status: Unresolved)*
 
-The constructor mints the entire `initialSupply` to a single `initialHolder` address. This design choice centralizes the initial token distribution to one entity, which could have significant control over the token's early market dynamics.
+Not confirmed by static analysis (the model's own reading of the source). The constructor mints the entire `initialSupply` to a single `initialHolder` address. This design choice centralizes the initial token distribution to one entity, which could have significant control over the token's early market dynamics.
 
 **Recommendation:** Ensure that the implications of this initial distribution are clearly communicated to the community. If a more decentralized distribution is desired, consider implementing a vesting schedule, airdrop mechanism, or a public sale contract for future token distribution.
 
 
 ### `I-03` — No Emergency Withdrawal for Accidental ETH/Token Transfers  *(Severity: Informational · Status: Unresolved)*
 
-The contract does not include a mechanism for the owner to recover accidentally sent ETH or other ERC-20 tokens that are not the contract's native token. Funds sent directly to the contract address, other than the intended token, would be permanently locked.
+Not confirmed by static analysis (the model's own reading of the source). The contract does not include a mechanism for the owner to recover accidentally sent ETH or other ERC-20 tokens that are not the contract's native token. Funds sent directly to the contract address, other than the intended token, would be permanently locked.
 
 **Recommendation:** Consider adding a function, callable only by the owner, to withdraw arbitrary ERC-20 tokens or native blockchain currency (ETH/MATIC/BNB etc.) that might be accidentally sent to the contract. This improves operational resilience and prevents loss of funds.
 

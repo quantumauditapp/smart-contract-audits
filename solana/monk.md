@@ -2,14 +2,14 @@
 token: MONK
 ticker: MONK
 network: solana
-risk_score: 43
-status: medium
+risk_score: 26
+status: low
 date: 2026-09-04
 ---
 
 # MONK (MONK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/monk-sol)
 
@@ -25,9 +25,9 @@ The MONK SPL Token Mint operates on the spl-token-2022 program with both mint an
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The MONK token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing accounts can… |
-| **Governance / Economics** | 1/10 | High | The token's economic profile shows a moderate holder concentration, with the top 10 token accounts holding 42.73% of the supply. Total DEX liquidity is $26,720, which is sufficient for small trades… |
-| **Upgrades** | 8/10 | Low | The token's upgradeability posture is robust, as both the mint and freeze authorities have been revoked, preventing any future changes to the token supply or account freeze status. The token does not… |
+| **Technical** | 10/10 | Low | The MONK token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no existing accounts can… |
+| **Governance / Economics** | 4/10 | Medium | The token's economic profile shows a moderate holder concentration, with the top 10 token accounts holding 42.73% of the supply. Total DEX liquidity is $26,720, which is sufficient for small trades… |
+| **Upgrades** | 10/10 | Low | The token's upgradeability posture is robust, as both the mint and freeze authorities have been revoked, preventing any future changes to the token supply or account freeze status. The token does not… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 1 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1530 buys / 1520 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 1 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

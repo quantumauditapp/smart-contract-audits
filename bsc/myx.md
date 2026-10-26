@@ -2,14 +2,14 @@
 token: MYX
 ticker: MYX
 network: bsc
-risk_score: 30
+risk_score: 18
 status: low
 date: 2026-08-11
 ---
 
 # MYX (MYX) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 30/100 — 🟢 Low Risk**
+> **Risk Score: 18/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/myx-bsc)
 
@@ -25,8 +25,8 @@ The MYX token contract is a straightforward ERC20 implementation leveraging batt
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The MYX token contract is simple and primarily relies on battle-tested OpenZeppelin ERC20 and ERC20Permit implementations (7.2 Code Security). This significantly reduces the risk of common token… |
-| **Governance / Economics** | 3/10 | High | The token has a fixed maximum supply, providing transparency and predictability regarding its total issuance (7.4 Economic). There are no complex economic models or governance mechanisms introduced… |
+| **Technical** | 10/10 | Low | The MYX token contract is simple and primarily relies on battle-tested OpenZeppelin ERC20 and ERC20Permit implementations (7.2 Code Security). This significantly reduces the risk of common token… |
+| **Governance / Economics** | 4/10 | Medium | The token has a fixed maximum supply, providing transparency and predictability regarding its total issuance (7.4 Economic). There are no complex economic models or governance mechanisms introduced… |
 | **Upgrades** | 6/10 | Medium | The contract is not designed to be upgradeable, which eliminates all risks associated with upgrade mechanisms, such as proxy implementation bugs, storage collisions, or improper upgrade paths (7.7… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The MYX token contract is a straightforward ERC20 implementation leveraging batt
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 2 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
-### `H-01` — Centralization of Token Supply  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralization of Token Supply  *(Severity: Medium · Status: Unresolved)*
 
-The entire `MAX_SUPPLY` of MYX tokens (1,000,000,000 ether) is minted to a single `_DISTRIBUTOR` address (0x3E1D9070C3573E72113DDc5a0E1Fa61d5f42b293) in the contract's constructor. This design choice creates a single point of failure for the entire token supply (7.4 Economic, 7.8 Operations). If the `_DISTRIBUTOR` address's private key is compromised, or if the address itself is a contract with a vulnerability, the entire token supply could be stolen or frozen, leading to a catastrophic loss for the project and its users.
+Not confirmed by static analysis (the model's own reading of the source). The entire `MAX_SUPPLY` of MYX tokens (1,000,000,000 ether) is minted to a single `_DISTRIBUTOR` address (0x3E1D9070C3573E72113DDc5a0E1Fa61d5f42b293) in the contract's constructor. This design choice creates a single point of failure for the entire token supply (7.4 Economic, 7.8 Operations). If the `_DISTRIBUTOR` address's private key is compromised, or if the address itself is a contract with a vulnerability, the entire token supply could be stolen or frozen, leading to a catastrophic loss for the project and its users.
 
 **Recommendation:** Implement robust security measures for the `_DISTRIBUTOR` address. This could include using a hardware wallet, a multi-signature wallet (e.g., Gnosis Safe), or a time-locked contract for managing the token distribution. Consider distributing the initial supply across multiple secure addresses or implementing a more decentralized distribution mechanism if feasible for future token projects.
 
 
 ### `L-01` — Front-running Risk for Permit Function  *(Severity: Low · Status: Unresolved)*
 
-The `permit` function, while a standard and useful feature from EIP-2612, can be susceptible to front-running (7.2 Code Security). A malicious actor could observe a user's signed `permit` message in the mempool and submit their own transaction with a higher gas price, effectively 'stealing' the user's intended approval or causing the legitimate transaction to fail and incur unnecessary gas costs. This is an inherent characteristic of the `permit` pattern and not a flaw in the contract's implementation itself.
+Not confirmed by static analysis (the model's own reading of the source). The `permit` function, while a standard and useful feature from EIP-2612, can be susceptible to front-running (7.2 Code Security). A malicious actor could observe a user's signed `permit` message in the mempool and submit their own transaction with a higher gas price, effectively 'stealing' the user's intended approval or causing the legitimate transaction to fail and incur unnecessary gas costs. This is an inherent characteristic of the `permit` pattern and not a flaw in the contract's implementation itself.
 
 **Recommendation:** Educate users about the potential for front-running when using the `permit` function. Advise them to be cautious when broadcasting signed messages and to consider using private transaction relays or services that offer front-running protection if available on the network.
 
 
 ### `I-01` — Reliance on Battle-Tested OpenZeppelin Libraries  *(Severity: Informational · Status: Unresolved)*
 
-The MYX contract extensively uses OpenZeppelin's `ERC20` and `ERC20Permit` implementations. These libraries are widely recognized as industry standards, have undergone numerous audits, and are battle-tested in production environments (7.2 Code Security). This significantly reduces the likelihood of common vulnerabilities such as reentrancy, integer overflows/underflows, or incorrect ERC20 behavior within the core token logic.
+Not confirmed by static analysis (the model's own reading of the source). The MYX contract extensively uses OpenZeppelin's `ERC20` and `ERC20Permit` implementations. These libraries are widely recognized as industry standards, have undergone numerous audits, and are battle-tested in production environments (7.2 Code Security). This significantly reduces the likelihood of common vulnerabilities such as reentrancy, integer overflows/underflows, or incorrect ERC20 behavior within the core token logic.
 
 **Recommendation:** Continue to monitor OpenZeppelin's security advisories and updates. Ensure that the specific versions of OpenZeppelin contracts used are up-to-date and free from known vulnerabilities.
 
 
 ### `I-02` — Fixed Token Supply and Immutability  *(Severity: Informational · Status: Unresolved)*
 
-The MYX token has a fixed `MAX_SUPPLY` of 1 billion tokens (with 18 decimals) and no additional minting or burning capabilities beyond the initial constructor mint (7.4 Economic). The contract is also not upgradeable (7.7 Upgrades). This design provides transparency and predictability regarding the total token supply and ensures that the contract's logic remains immutable post-deployment.
+Not confirmed by static analysis (the model's own reading of the source). The MYX token has a fixed `MAX_SUPPLY` of 1 billion tokens (with 18 decimals) and no additional minting or burning capabilities beyond the initial constructor mint (7.4 Economic). The contract is also not upgradeable (7.7 Upgrades). This design provides transparency and predictability regarding the total token supply and ensures that the contract's logic remains immutable post-deployment.
 
 **Recommendation:** This is a design choice. Ensure that the fixed supply and immutability align with the long-term economic and operational goals of the MYX project. Clearly communicate these characteristics to the community.
 

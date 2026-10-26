@@ -2,14 +2,14 @@
 token: NEAR
 ticker: NEAR
 network: solana
-risk_score: 61
+risk_score: 51
 status: medium
 date: 2026-09-18
 ---
 
 # NEAR (NEAR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 61/100 — 🟡 Medium Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/near-sol)
 
@@ -25,9 +25,9 @@ The NEAR SPL token mint has a critical vulnerability due to an unrevoked mint au
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token Program v3 mint with a total supply of 1,274,230,641.91 tokens across 9 decimals. A critical risk is present as the mint authority… |
+| **Technical** | 8/10 | Low | The token is an SPL Token Program v3 mint with a total supply of 1,274,230,641.91 tokens across 9 decimals. A critical risk is present as the mint authority… |
 | **Governance / Economics** | 1/10 | High | The token exhibits moderate liquidity at $1,077,938 USD, with a 24-hour trading volume of $7,847,115 USD. The Volume/Liquidity Ratio is 7.28, which is high but does not trigger a wash trading signal.… |
-| **Upgrades** | 4/10 | Medium | The mint authority for this SPL token is currently active, allowing for potential changes to the token's total supply through new minting. The freeze authority has been revoked, preventing any future… |
+| **Upgrades** | 5/10 | Medium | The mint authority for this SPL token is currently active, allowing for potential changes to the token's total supply through new minting. The freeze authority has been revoked, preventing any future… |
 
 ## LP Distribution
 

@@ -2,14 +2,14 @@
 token: 牛来
 ticker: NIULAI
 network: bsc
-risk_score: 66
-status: high
+risk_score: 31
+status: low
 date: 2026-08-20
 ---
 
 # 牛来 (NIULAI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/niulai-bsc-aba9)
 
@@ -25,9 +25,9 @@ The `FourERC20` contract is a custom implementation of the ERC-20 standard. A cr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The `FourERC20` contract attempts to implement the ERC-20 standard, leveraging OpenZeppelin interfaces for compliance (7.1 Architecture). However, it suffers from a critical initialization flaw where… |
-| **Governance / Economics** | 3/10 | High | The contract does not implement any specific governance mechanisms (7.5 Governance). However, its economic viability is critically compromised due to the lack of initialization and minting… |
-| **Upgrades** | 3/10 | High | The contract is not designed to be upgradeable, as indicated by `is_proxy: false` in the prefill (7.7 Upgrades). Therefore, there are no upgrade-specific risks or considerations. Any changes would… |
+| **Technical** | 9/10 | Low | The `FourERC20` contract attempts to implement the ERC-20 standard, leveraging OpenZeppelin interfaces for compliance (7.1 Architecture). However, it suffers from a critical initialization flaw where… |
+| **Governance / Economics** | 5/10 | Medium | The contract does not implement any specific governance mechanisms (7.5 Governance). However, its economic viability is critically compromised due to the lack of initialization and minting… |
+| **Upgrades** | 4/10 | Medium | The contract is not designed to be upgradeable, as indicated by `is_proxy: false` in the prefill (7.7 Upgrades). Therefore, there are no upgrade-specific risks or considerations. Any changes would… |
 
 ## Proxy Upgrade Controls
 
@@ -45,32 +45,32 @@ The `FourERC20` contract is a custom implementation of the ERC-20 standard. A cr
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low_
-
-### `C-01` — Uninitialized Token State  *(Severity: Critical · Status: Unresolved)*
-
-The `FourERC20` contract lacks a constructor or any public initialization function to set the token's `_name`, `_symbol`, and `_totalSupply`. As a result, upon deployment, the token will have an empty name, empty symbol, and a total supply of zero. This renders the token completely unusable and non-functional as an ERC-20 asset.
-
-**Recommendation:** Add a constructor to the `FourERC20` contract that takes `name_` and `symbol_` as arguments and calls `_init(name_, symbol_)`. Additionally, if an initial supply is desired, call `_mint(msg.sender, initialSupply)` within the constructor to set the `_totalSupply` and assign tokens to the deployer.
-
-
-### `H-01` — Missing Mint/Burn Access Control  *(Severity: High · Status: Unresolved)*
-
-The `_mint` and `_burn` functions are declared as `internal virtual`, meaning they can only be called by the contract itself or derived contracts. However, there are no public or external functions provided in `FourERC20` that call `_mint` or `_burn`. This design prevents any entity from increasing or decreasing the token's supply after deployment, making it a fixed-supply token without any initial supply, which is a critical limitation.
-
-**Recommendation:** If the token is intended to have minting and burning capabilities, implement public functions (e.g., `mint(address to, uint256 amount)` and `burn(uint256 amount)`) that call the internal `_mint` and `_burn` functions. These public functions should incorporate robust access control mechanisms (e.g., `onlyOwner`, `onlyMinter`) to restrict who can perform these sensitive operations.
-
+_🟡 3 Medium · 🟢 1 Low_
 
 ### `M-01` — Redundant `unchecked` Blocks After `require` Statements  *(Severity: Medium · Status: Unresolved)*
 
-Several functions, such as `_transfer`, `_burn`, `decreaseAllowance`, and `_spendAllowance`, use `unchecked` blocks for arithmetic operations (e.g., `_balances[from] = fromBalance - amount;`) immediately after a `require` statement has already validated that the operation will not underflow (e.g., `require(fromBalance >= amount)`). While not a vulnerability due to the preceding `require`, the `unchecked` block is redundant and does not provide additional safety or significant gas savings in these specific contexts in Solidity 0.8+.
+Not confirmed by static analysis (the model's own reading of the source). Several functions, such as `_transfer`, `_burn`, `decreaseAllowance`, and `_spendAllowance`, use `unchecked` blocks for arithmetic operations (e.g., `_balances[from] = fromBalance - amount;`) immediately after a `require` statement has already validated that the operation will not underflow (e.g., `require(fromBalance >= amount)`). While not a vulnerability due to the preceding `require`, the `unchecked` block is redundant and does not provide additional safety or significant gas savings in these specific contexts in Solidity 0.8+.
 
 **Recommendation:** Remove the `unchecked` blocks where a `require` statement already guarantees the safety of the arithmetic operation. This improves code clarity and removes unnecessary constructs without compromising security in Solidity 0.8+.
 
 
+### `M-02` — Uninitialized Token State  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract lacks a constructor or any public initialization function to set the token's `_name`, `_symbol`, and `_totalSupply`. As a result, upon deployment, the token will have an empty name, empty symbol, and a total supply of zero. This renders the token completely unusable and non-functional as an ERC-20 asset.
+
+**Recommendation:** Add a constructor to the `FourERC20` contract that takes `name_` and `symbol_` as arguments and calls `_init(name_, symbol_)`. Additionally, if an initial supply is desired, call `_mint(msg.sender, initialSupply)` within the constructor to set the `_totalSupply` and assign tokens to the deployer.
+
+
+### `M-03` — Missing Mint/Burn Access Control  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_mint` and `_burn` functions are declared as `internal virtual`, meaning they can only be called by the contract itself or derived contracts. However, there are no public or external functions provided in `FourERC20` that call `_mint` or `_burn`. This design prevents any entity from increasing or decreasing the token's supply after deployment, making it a fixed-supply token without any initial supply, which is a critical limitation.
+
+**Recommendation:** If the token is intended to have minting and burning capabilities, implement public functions (e.g., `mint(address to, uint256 amount)` and `burn(uint256 amount)`) that call the internal `_mint` and `_burn` functions. These public functions should incorporate robust access control mechanisms (e.g., `onlyOwner`, `onlyMinter`) to restrict who can perform these sensitive operations.
+
+
 ### `L-01` — Standard ERC-20 `approve` Race Condition  *(Severity: Low · Status: Unresolved)*
 
-The `approve` function, as implemented, is susceptible to a known ERC-20 front-running attack. If a user approves an amount for a spender, and then attempts to change that approval to a lower amount, a malicious spender could front-run the transaction, spend the original approved amount, and then the user's transaction would approve the lower amount, effectively allowing the spender to spend more than intended.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function, as implemented, is susceptible to a known ERC-20 front-running attack. If a user approves an amount for a spender, and then attempts to change that approval to a lower amount, a malicious spender could front-run the transaction, spend the original approved amount, and then the user's transaction would approve the lower amount, effectively allowing the spender to spend more than intended.
 
 **Recommendation:** While not a critical vulnerability specific to this implementation, it's a known ERC-20 limitation. To mitigate, encourage users to use `increaseAllowance` and `decreaseAllowance` instead of directly calling `approve` to change an existing allowance. Alternatively, a two-step approval process (approve 0, then approve new amount) can be used, though this is less user-friendly.
 

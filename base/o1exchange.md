@@ -2,14 +2,14 @@
 token: o1.exchange
 ticker: O
 network: base
-risk_score: 25
+risk_score: 23
 status: low
 date: 2026-07-23
 ---
 
 # o1.exchange (O) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 25/100 — 🟢 Low Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/o1exchange-base)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Irreversible Deployment Parameters  *(Severity: Low · Status: Unresolved)*
 
-The `Token` contract's constructor sets critical parameters such as `name_`, `symbol_`, `totalSupply_`, and `recipient_` immutably upon deployment. Any errors in these parameters, such as an incorrect total supply or a wrong recipient address, cannot be corrected after the contract is deployed. This falls under 7.8 Operations risk.
+Not confirmed by static analysis (the model's own reading of the source). The `Token` contract's constructor sets critical parameters such as `name_`, `symbol_`, `totalSupply_`, and `recipient_` immutably upon deployment. Any errors in these parameters, such as an incorrect total supply or a wrong recipient address, cannot be corrected after the contract is deployed. This falls under 7.8 Operations risk.
 
 **Recommendation:** Implement a rigorous deployment checklist and perform multiple verifications of all constructor arguments before deploying the contract to a production environment. Consider deploying to a testnet first to confirm all parameters are as expected.
 
 
 ### `I-01` — Immutability of Contract Logic  *(Severity: Informational · Status: Unresolved)*
 
-The `Token` contract is not designed with any upgradeability mechanism (7.7 Upgrades). This means that once deployed, its code cannot be modified or updated. While this provides strong guarantees of immutability and reduces upgrade-related risks, it also means that any discovered vulnerabilities or desired feature enhancements cannot be implemented without deploying a new contract and migrating assets.
+Not confirmed by static analysis (the model's own reading of the source). The `Token` contract is not designed with any upgradeability mechanism (7.7 Upgrades). This means that once deployed, its code cannot be modified or updated. While this provides strong guarantees of immutability and reduces upgrade-related risks, it also means that any discovered vulnerabilities or desired feature enhancements cannot be implemented without deploying a new contract and migrating assets.
 
 **Recommendation:** Acknowledge the trade-off between immutability and flexibility. For a simple token, this design is often acceptable. If future changes or bug fixes are anticipated, a proxy pattern (e.g., UUPS) would be necessary, but would also introduce additional complexity and upgrade-specific risks.
 
 
 ### `I-02` — Fixed Supply and Initial Distribution  *(Severity: Informational · Status: Unresolved)*
 
-The contract implements a fixed supply model where the entire `totalSupply_` is minted to a single `recipient_` during the constructor call (7.4 Economic). There are no functions for further minting, burning (beyond standard ERC20 transfers to `address(0)`), or adjusting the supply post-deployment. This design ensures a predictable token economy.
+Not confirmed by static analysis (the model's own reading of the source). The contract implements a fixed supply model where the entire `totalSupply_` is minted to a single `recipient_` during the constructor call (7.4 Economic). There are no functions for further minting, burning (beyond standard ERC20 transfers to `address(0)`), or adjusting the supply post-deployment. This design ensures a predictable token economy.
 
 **Recommendation:** Ensure the chosen fixed supply and initial distribution model aligns with the project's long-term economic strategy. Communicate this fixed supply nature clearly to token holders and the community to manage expectations regarding tokenomics.
 

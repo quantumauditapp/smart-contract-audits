@@ -2,14 +2,14 @@
 token: Mooncat
 ticker: MCAT
 network: solana
-risk_score: 19
+risk_score: 2
 status: low
 date: 2026-09-20
 ---
 
 # Mooncat (MCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 19/100 — 🟢 Low Risk**
+> **Risk Score: 2/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/mooncat-sol)
 
@@ -26,8 +26,8 @@ The Mooncat (MCAT) token mint has successfully revoked both mint and freeze auth
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Mooncat (MCAT) token is an SPL Token Program v3 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing tokens can be frozen.… |
-| **Governance / Economics** | 5/10 | Medium | The token's DEX pair is very new, established only 2 days ago, which provides insufficient history for market behavior assessment. Current liquidity stands at $67,618, with a 24-hour volume of… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, preventing any post-launch changes to token supply or account freeze status. The token's metadata is immutable, ensuring its name, symbol… |
+| **Governance / Economics** | 8/10 | Low | The token's DEX pair is very new, established only 2 days ago, which provides insufficient history for market behavior assessment. Current liquidity stands at $67,618, with a 24-hour volume of… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both revoked, preventing any post-launch changes to token supply or account freeze status. The token's metadata is immutable, ensuring its name, symbol… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3857 buys / 3425 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

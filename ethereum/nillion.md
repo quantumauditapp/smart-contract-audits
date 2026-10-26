@@ -2,14 +2,14 @@
 token: Nillion
 ticker: NIL
 network: ethereum
-risk_score: 77
-status: high
+risk_score: 40
+status: medium
 date: 2026-07-28
 ---
 
 # Nillion (NIL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 77/100 — 🟠 High Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/nillion-eth)
 
@@ -25,8 +25,8 @@ The audit covers an ERC-20 token contract, Nillion, implemented as an upgradeabl
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The technical architecture is sound, leveraging OpenZeppelin's upgradeable contracts for ERC-20, burnable tokens, and UUPS proxy patterns (7.1 Architecture). The custom logic for `burn` and… |
-| **Governance / Economics** | 1/10 | High | The contract's economic model features an initial supply of 1 billion tokens with 6 decimals. A primary concern is the highly centralized control over critical economic functions (7.4 Economic). The… |
+| **Technical** | 7/10 | Low | The technical architecture is sound, leveraging OpenZeppelin's upgradeable contracts for ERC-20, burnable tokens, and UUPS proxy patterns (7.1 Architecture). The custom logic for `burn` and… |
+| **Governance / Economics** | 4/10 | Medium | The contract's economic model features an initial supply of 1 billion tokens with 6 decimals. A primary concern is the highly centralized control over critical economic functions (7.4 Economic). The… |
 | **Upgrades** | 1/10 | High | The contract employs the UUPS upgradeability pattern, a standard and robust mechanism for contract evolution (7.7 Upgrades). The `_authorizeUpgrade` function is correctly restricted by the… |
 
 ## Proxy Upgrade Controls
@@ -39,46 +39,46 @@ The audit covers an ERC-20 token contract, Nillion, implemented as an upgradeabl
 
 ## Security Findings
 
-_🟠 3 High · 🟡 1 Medium · ⚪ 2 Informational_
-
-### `H-01` — Centralized Control of Critical Roles (Minter, Burner, Upgrader, Admin)  *(Severity: High · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE`, `BURNER_ROLE`, and `UPGRADER_ROLE` are all initially granted to the `msg.sender` (initializer). The `DEFAULT_ADMIN_ROLE` has the power to grant and revoke all other roles, including itself. This high degree of centralization means that a compromise of this single address would grant an attacker full control over token minting, burning (from any address), and contract upgradeability, posing a critical risk to the protocol's integrity and user funds (7.3 Access Control, 7.5 Governance, 7.8 Operations).
-
-**Recommendation:** Implement a robust multi-signature wallet (e.g., Gnosis Safe) for the `DEFAULT_ADMIN_ROLE` to distribute control and require multiple approvals for critical operations. Consider delegating specific roles (e.g., `MINTER_ROLE`, `BURNER_ROLE`) to separate, potentially more restricted, entities or smart contracts if their functionality is required long-term.
-
-
-### `H-02` — Unlimited Minting Capability  *(Severity: High · Status: Unresolved)*
-
-The `MINTER_ROLE` allows an authorized address to mint an arbitrary amount of new tokens at any time. This capability can lead to uncontrolled supply inflation, significantly devaluing existing tokens and impacting the project's economy (7.4 Economic, 7.3 Access Control).
-
-**Recommendation:** Evaluate if continuous minting is truly necessary. If not, consider revoking the `MINTER_ROLE` after the initial token distribution. If minting is required, implement a controlled minting mechanism (e.g., capped minting, time-locked minting, or a governance-controlled minting process) to prevent arbitrary supply increases.
-
-
-### `H-03` — Arbitrary Token Burning Capability  *(Severity: High · Status: Unresolved)*
-
-The `BURNER_ROLE` allows an authorized address to burn tokens from *any* specified address (`from`). This means a malicious or compromised `BURNER_ROLE` holder could drain tokens from user accounts, leading to direct loss of user funds (7.4 Economic, 7.3 Access Control).
-
-**Recommendation:** Re-evaluate the necessity of the `BURNER_ROLE` having the ability to burn from arbitrary addresses. If burning is only intended for specific scenarios (e.g., protocol-owned tokens, specific user opt-in), restrict the `burn` function to only allow burning from `msg.sender` or implement a more granular access control mechanism. If the functionality is critical, ensure the `BURNER_ROLE` is controlled by a highly secure, multi-signature wallet.
-
+_🟡 4 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Upgradeability Risk with Centralized Control  *(Severity: Medium · Status: Unresolved)*
 
-The contract uses the UUPS upgradeability pattern, allowing the contract logic to be changed. The `UPGRADER_ROLE` is initially granted to the `msg.sender` (initializer). While UUPS is a standard pattern, a compromised `UPGRADER_ROLE` holder could upgrade the contract to malicious code, potentially leading to loss of funds, freezing of assets, or other severe consequences (7.7 Upgrades, 7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The contract uses the UUPS upgradeability pattern, allowing the contract logic to be changed. The `UPGRADER_ROLE` is initially granted to the `msg.sender` (initializer). While UUPS is a standard pattern, a compromised `UPGRADER_ROLE` holder could upgrade the contract to malicious code, potentially leading to loss of funds, freezing of assets, or other severe consequences (7.7 Upgrades, 7.3 Access Control).
 
 **Recommendation:** Ensure the `UPGRADER_ROLE` is controlled by a robust multi-signature wallet with a high threshold. Consider implementing a timelock for upgrades to provide users with a window to react to proposed changes. Thoroughly audit all proposed upgrade implementations before deployment.
 
 
+### `M-02` — Centralized Control of Critical Roles (Minter, Burner, Upgrader, Admin)  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE`, `BURNER_ROLE`, and `UPGRADER_ROLE` are all initially granted to the `msg.sender` (initializer). The `DEFAULT_ADMIN_ROLE` has the power to grant and revoke all other roles, including itself. This high degree of centralization means that a compromise of this single address would grant an attacker full control over token minting, burning (from any address), and contract upgradeability, posing a critical risk to the protocol's integrity and user funds (7.3 Access Control, 7.5 Governance, 7.8 Operations).
+
+**Recommendation:** Implement a robust multi-signature wallet (e.g., Gnosis Safe) for the `DEFAULT_ADMIN_ROLE` to distribute control and require multiple approvals for critical operations. Consider delegating specific roles (e.g., `MINTER_ROLE`, `BURNER_ROLE`) to separate, potentially more restricted, entities or smart contracts if their functionality is required long-term.
+
+
+### `M-03` — Unlimited Minting Capability  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `MINTER_ROLE` allows an authorized address to mint an arbitrary amount of new tokens at any time. This capability can lead to uncontrolled supply inflation, significantly devaluing existing tokens and impacting the project's economy (7.4 Economic, 7.3 Access Control).
+
+**Recommendation:** Evaluate if continuous minting is truly necessary. If not, consider revoking the `MINTER_ROLE` after the initial token distribution. If minting is required, implement a controlled minting mechanism (e.g., capped minting, time-locked minting, or a governance-controlled minting process) to prevent arbitrary supply increases.
+
+
+### `M-04` — Arbitrary Token Burning Capability  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `BURNER_ROLE` allows an authorized address to burn tokens from *any* specified address (`from`). This means a malicious or compromised `BURNER_ROLE` holder could drain tokens from user accounts, leading to direct loss of user funds (7.4 Economic, 7.3 Access Control).
+
+**Recommendation:** Re-evaluate the necessity of the `BURNER_ROLE` having the ability to burn from arbitrary addresses. If burning is only intended for specific scenarios (e.g., protocol-owned tokens, specific user opt-in), restrict the `burn` function to only allow burning from `msg.sender` or implement a more granular access control mechanism. If the functionality is critical, ensure the `BURNER_ROLE` is controlled by a highly secure, multi-signature wallet.
+
+
 ### `I-01` — Constructor `_disableInitializers()` in Implementation  *(Severity: Informational · Status: Resolved)*
 
-The `Nillion` contract's constructor calls `_disableInitializers()`. This is a good security practice for upgradeable contracts, preventing the implementation contract from being initialized directly, which could lead to state corruption if it were accidentally called (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `Nillion` contract's constructor calls `_disableInitializers()`. This is a good security practice for upgradeable contracts, preventing the implementation contract from being initialized directly, which could lead to state corruption if it were accidentally called (7.2 Code Security).
 
 **Recommendation:** No action required; this is a positive security measure.
 
 
 ### `I-02` — Decimals Override  *(Severity: Informational · Status: Resolved)*
 
-The `decimals()` function is explicitly overridden to return 6 instead of the default 18 for ERC-20 tokens. This is a design choice that impacts how the token amount is displayed and handled by interfaces and integrations (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The `decimals()` function is explicitly overridden to return 6 instead of the default 18 for ERC-20 tokens. This is a design choice that impacts how the token amount is displayed and handled by interfaces and integrations (7.1 Architecture).
 
 **Recommendation:** Ensure all front-ends, exchanges, and integrations are aware of and correctly handle the 6-decimal precision to prevent display errors or miscalculations.
 
@@ -104,7 +104,7 @@ The `decimals()` function is explicitly overridden to return 6 instead of the de
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
@@ -114,7 +114,7 @@ The `decimals()` function is explicitly overridden to return 6 instead of the de
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources

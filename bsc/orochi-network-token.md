@@ -2,14 +2,14 @@
 token: Orochi Network Token
 ticker: ON
 network: bsc
-risk_score: 41
-status: medium
+risk_score: 34
+status: low
 date: 2026-08-11
 ---
 
 # Orochi Network Token (ON) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/orochi-network-token-bsc)
 
@@ -42,21 +42,21 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Single-Shot Minting Design Limitation  *(Severity: Medium · Status: Unresolved)*
 
-The `mint()` function includes a check `if (totalSupply() > 0) { revert AlreadyMinted(totalSupply()); }`, which prevents subsequent minting calls if any tokens have already been minted (i.e., `totalSupply` is non-zero). If the owner initially mints 0 tokens, they can still mint a non-zero amount later. However, if they mint any non-zero amount, they cannot mint additional tokens in the future. This design choice creates an immutable total supply after the first non-zero mint, which might be a desired feature but limits flexibility for future token supply management.
+Not confirmed by static analysis (the model's own reading of the source). The `mint()` function includes a check `if (totalSupply() > 0) { revert AlreadyMinted(totalSupply()); }`, which prevents subsequent minting calls if any tokens have already been minted (i.e., `totalSupply` is non-zero). If the owner initially mints 0 tokens, they can still mint a non-zero amount later. However, if they mint any non-zero amount, they cannot mint additional tokens in the future. This design choice creates an immutable total supply after the first non-zero mint, which might be a desired feature but limits flexibility for future token supply management.
 
 **Recommendation:** Confirm that a fixed, non-expandable token supply after the initial mint is the intended tokenomic model. If future flexibility for supply adjustments (e.g., for ecosystem growth, liquidity incentives) is ever desired, this design would require a new contract deployment. Ensure the initial mint quantity is carefully planned to meet all long-term requirements.
 
 
 ### `L-01` — Centralized Ownership Risk  *(Severity: Low · Status: Unresolved)*
 
-The contract utilizes the `Ownable` pattern, granting a single external address (the `owner`) exclusive control over critical administrative functions, specifically the `mint()` function and the ability to `transferOwnership()`. This introduces a single point of failure (7.3 Access Control). If the owner's private key is compromised, a malicious actor could potentially perform an unauthorized initial mint or transfer ownership to themselves, leading to a loss of control or unexpected token distribution.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes the `Ownable` pattern, granting a single external address (the `owner`) exclusive control over critical administrative functions, specifically the `mint()` function and the ability to `transferOwnership()`. This introduces a single point of failure (7.3 Access Control). If the owner's private key is compromised, a malicious actor could potentially perform an unauthorized initial mint or transfer ownership to themselves, leading to a loss of control or unexpected token distribution.
 
 **Recommendation:** To mitigate the risk associated with a single point of failure, consider transferring ownership to a multi-signature wallet (e.g., Gnosis Safe) after deployment. This distributes control among multiple trusted parties, requiring multiple approvals for critical operations. Alternatively, if the token supply is fixed and no further administrative actions are anticipated, the owner could renounce ownership to fully decentralize control.
 
 
 ### `I-01` — Immutability of Token Decimals  *(Severity: Informational · Status: Unresolved)*
 
-The `decimals()` function is hardcoded to return `18`. While 18 is the most common and widely accepted standard for ERC-20 token decimals, this value is immutable once the contract is deployed. Any future requirement to change the token's decimal precision would necessitate deploying an entirely new token contract.
+Not confirmed by static analysis (the model's own reading of the source). The `decimals()` function is hardcoded to return `18`. While 18 is the most common and widely accepted standard for ERC-20 token decimals, this value is immutable once the contract is deployed. Any future requirement to change the token's decimal precision would necessitate deploying an entirely new token contract.
 
 **Recommendation:** Confirm that 18 decimals is the permanent and desired configuration for the token. This is generally a safe and standard practice, but it's important to acknowledge its immutability in the context of long-term project planning.
 

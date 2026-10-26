@@ -2,14 +2,14 @@
 token: Ocean Token
 ticker: OCEAN
 network: ethereum
-risk_score: 60
-status: medium
+risk_score: 33
+status: low
 date: 2026-08-20
 ---
 
 # Ocean Token (OCEAN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 60/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ocean-token-eth)
 
@@ -25,8 +25,8 @@ The audit of the OceanToken contract, an ERC20 token with minting, capping, and 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates good architectural practices (7.1) by using a modular design and inheriting from well-established OpenZeppelin patterns. The inclusion of SafeMath (7.2) effectively… |
-| **Governance / Economics** | 1/10 | High | The economic model (7.4) includes a capped supply and minting functionality, which provides a clear limit but also introduces inflation risk if minters are compromised. The Pausable mechanism (7.4)… |
+| **Technical** | 8/10 | Low | The contract demonstrates good architectural practices (7.1) by using a modular design and inheriting from well-established OpenZeppelin patterns. The inclusion of SafeMath (7.2) effectively… |
+| **Governance / Economics** | 3/10 | High | The economic model (7.4) includes a capped supply and minting functionality, which provides a clear limit but also introduces inflation risk if minters are compromised. The Pausable mechanism (7.4)… |
 | **Upgrades** | 8/10 | Low | The contract is not designed with an upgrade mechanism (7.7), meaning its logic cannot be modified post-deployment. This eliminates upgrade-related risks but also removes flexibility for future… |
 
 ## LP Distribution
@@ -38,39 +38,39 @@ The audit of the OceanToken contract, an ERC20 token with minting, capping, and 
 
 ## Security Findings
 
-_🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control of Minter and Pauser Roles  *(Severity: High · Status: Unresolved)*
-
-The `MinterRole` and `PauserRole` contracts implement highly centralized access control. The `addMinter` and `addPauser` functions can only be called by existing minters and pausers, respectively. The initial deployer automatically becomes the sole minter and pauser. This concentration of power creates a single point of failure, where a compromise of a single private key could lead to unauthorized minting, pausing of all token transfers, or other malicious actions, severely impacting the token's integrity and value.
-
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) to control the Minter and Pauser roles. This would require multiple trusted parties to approve critical administrative actions, significantly reducing the risk associated with a single compromised key. Alternatively, explore a more decentralized governance model if feasible for the project's roadmap.
-
-
-### `H-02` — Risk of Losing Administrative Control  *(Severity: High · Status: Unresolved)*
-
-The `MinterRole` and `PauserRole` contracts allow an existing role bearer to `renounceMinter()` or `renouncePauser()`. If the initial deployer, who is the sole minter and pauser by default, renounces these roles without first assigning them to other trusted addresses (or a multi-signature wallet), the ability to mint new tokens or pause/unpause the contract could be permanently lost. This would render the token unmanageable for these critical functions.
-
-**Recommendation:** Establish clear operational procedures for role management. Before any role bearer renounces their privileges, ensure that new, trusted addresses (preferably a multi-signature wallet) have been successfully assigned the respective roles. Consider adding a mechanism that prevents renouncing a role if it would leave the contract without any active minters or pausers, or at least requires a minimum number of active role holders.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Outdated Solidity Compiler Version  *(Severity: Medium · Status: Unresolved)*
 
-The contract is compiled with Solidity version 0.5.3. While `SafeMath` is used to mitigate integer overflow/underflow, newer compiler versions (e.g., 0.8.x and above) include built-in overflow/underflow checks by default, along with numerous other security enhancements, bug fixes, and gas optimizations. Using an older compiler version may expose the contract to known vulnerabilities or inefficiencies that have been addressed in later versions.
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version 0.5.3. While `SafeMath` is used to mitigate integer overflow/underflow, newer compiler versions (e.g., 0.8.x and above) include built-in overflow/underflow checks by default, along with numerous other security enhancements, bug fixes, and gas optimizations. Using an older compiler version may expose the contract to known vulnerabilities or inefficiencies that have been addressed in later versions.
 
 **Recommendation:** Consider upgrading the Solidity compiler version to 0.8.x or higher. This would allow for the removal of `SafeMath` (as checks are built-in) and leverage the latest security features and best practices. A thorough re-audit would be required after such an upgrade to ensure compatibility and identify any new issues introduced by syntax changes or new compiler behaviors.
 
 
+### `M-02` — Centralized Control of Minter and Pauser Roles  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `MinterRole` and `PauserRole` contracts implement highly centralized access control. The `addMinter` and `addPauser` functions can only be called by existing minters and pausers, respectively. The initial deployer automatically becomes the sole minter and pauser. This concentration of power creates a single point of failure, where a compromise of a single private key could lead to unauthorized minting, pausing of all token transfers, or other malicious actions, severely impacting the token's integrity and value.
+
+**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) to control the Minter and Pauser roles. This would require multiple trusted parties to approve critical administrative actions, significantly reducing the risk associated with a single compromised key. Alternatively, explore a more decentralized governance model if feasible for the project's roadmap.
+
+
+### `M-03` — Risk of Losing Administrative Control  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `MinterRole` and `PauserRole` contracts allow an existing role bearer to `renounceMinter()` or `renouncePauser()`. If the initial deployer, who is the sole minter and pauser by default, renounces these roles without first assigning them to other trusted addresses (or a multi-signature wallet), the ability to mint new tokens or pause/unpause the contract could be permanently lost. This would render the token unmanageable for these critical functions.
+
+**Recommendation:** Establish clear operational procedures for role management. Before any role bearer renounces their privileges, ensure that new, trusted addresses (preferably a multi-signature wallet) have been successfully assigned the respective roles. Consider adding a mechanism that prevents renouncing a role if it would leave the contract without any active minters or pausers, or at least requires a minimum number of active role holders.
+
+
 ### `L-01` — Standard ERC20 Approval Race Condition  *(Severity: Low · Status: Unresolved)*
 
-While the contract provides `increaseAllowance` and `decreaseAllowance` functions to mitigate the 'approve race condition', users who directly interact with the `approve` function are still susceptible to this known ERC20 vulnerability. If a user calls `approve(spender, newAmount)` while the `spender` is simultaneously executing `transferFrom` based on an old allowance, the `spender` might be able to spend more than `newAmount` or `oldAmount` depending on transaction ordering.
+Not confirmed by static analysis (the model's own reading of the source). While the contract provides `increaseAllowance` and `decreaseAllowance` functions to mitigate the 'approve race condition', users who directly interact with the `approve` function are still susceptible to this known ERC20 vulnerability. If a user calls `approve(spender, newAmount)` while the `spender` is simultaneously executing `transferFrom` based on an old allowance, the `spender` might be able to spend more than `newAmount` or `oldAmount` depending on transaction ordering.
 
 **Recommendation:** Educate users and front-end interfaces to exclusively use `increaseAllowance` and `decreaseAllowance` instead of directly calling `approve` when modifying an existing allowance. While the contract provides the safer functions, off-chain guidance is crucial for user protection.
 
 
 ### `I-01` — Event Emission for Mint/Burn from `address(0)`  *(Severity: Informational · Status: Unresolved)*
 
-The `_mint` and `_burn` internal functions emit `Transfer` events where the `from` or `to` address is `address(0)`. Specifically, `_mint` emits `Transfer(address(0), account, value)` and `_burn` emits `Transfer(account, address(0), value)`. This is a common and widely accepted convention in ERC20 tokens to signify token creation or destruction, but it's important for off-chain indexing services to correctly interpret these events.
+Not confirmed by static analysis (the model's own reading of the source). The `_mint` and `_burn` internal functions emit `Transfer` events where the `from` or `to` address is `address(0)`. Specifically, `_mint` emits `Transfer(address(0), account, value)` and `_burn` emits `Transfer(account, address(0), value)`. This is a common and widely accepted convention in ERC20 tokens to signify token creation or destruction, but it's important for off-chain indexing services to correctly interpret these events.
 
 **Recommendation:** No direct code change is required as this is standard practice. Ensure that any off-chain services, such as block explorers or analytics platforms, are aware of and correctly interpret `address(0)` in `Transfer` events to represent minting and burning operations.
 

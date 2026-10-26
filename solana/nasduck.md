@@ -2,14 +2,14 @@
 token: Nasduck
 ticker: NASDUCK
 network: solana
-risk_score: 25
+risk_score: 8
 status: low
 date: 2026-09-13
 ---
 
 # Nasduck (NASDUCK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 25/100 — 🟢 Low Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/nasduck-sol)
 
@@ -26,8 +26,8 @@ The Nasduck SPL Token Mint exhibits a low-risk profile with both mint and freeze
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Nasduck token is an SPL Token-2022 mint with both mint and freeze authorities revoked, ensuring a fixed supply and preventing account freezing. No permanent delegate or transfer hook is… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits moderate liquidity at $119,086, with a healthy 24-hour volume of $543,448 and a normal Volume/Liquidity Ratio of 4.56. Holder concentration is low, with the top 10 accounts holding… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are permanently revoked, meaning no further tokens can be minted and no accounts can be frozen. Key Token-2022 extensions like transfer hooks and transfer fees… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits moderate liquidity at $119,086, with a healthy 24-hour volume of $543,448 and a normal Volume/Liquidity Ratio of 4.56. Holder concentration is low, with the top 10 accounts holding… |
+| **Upgrades** | 10/10 | Low | The token's mint and freeze authorities are permanently revoked, meaning no further tokens can be minted and no accounts can be frozen. Key Token-2022 extensions like transfer hooks and transfer fees… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4253 buys / 3632 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 6 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources
