@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**455 reports** · Updated daily · [← All Networks](../README.md)
+**463 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,14 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [AODF](./aodf-base-80f8.md) | AODF | 🟡 60/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/aodf-base-80f8) |
+| [one life, its worth an attempt](./one-life-its-worth-an-attempt-base-aeaa.md) | WORTH | 🟠 83/100 High Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/one-life-its-worth-an-attempt-base-aeaa) |
+| [Launch](./launch.md) | LAUNCH | 🟠 82/100 High Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/launch-base) |
+| [USOE](./usoe-base-dbf6.md) | USOE | 🟡 55/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/usoe-base-dbf6) |
+| [Marvin the Martian](./marvin-the-martian.md) | MARVIN | 🟠 69/100 High Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/marvin-the-martian-base) |
+| [World Strategic Oil Supply](./world-strategic-oil-supply-base-bc81.md) | WSOS | 🟡 56/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/world-strategic-oil-supply-base-bc81) |
+| [United States Dividend Program](./united-states-dividend-program-base-22f7.md) | USDP | 🟡 58/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/united-states-dividend-program-base-22f7) |
+| [QuickSwap](./quickswap.md) | QUICK | 🟡 64/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/quickswap-base) |
 | [Zero Gap](./zero-gap.md) | ZGAP | 🟡 54/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/zero-gap-base) |
 | [United States Dividend Program](./united-states-dividend-program-base-4ece.md) | USDP | 🟡 59/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/united-states-dividend-program-base-4ece) |
 | [United Dividend Trust Fund](./united-dividend-trust-fund-base-a68b.md) | UDTF | 🟡 55/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/united-dividend-trust-fund-base-a68b) |

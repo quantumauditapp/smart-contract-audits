@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1263 reports** · Updated daily · [← All Networks](../README.md)
+**1281 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,24 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [The Bitcoin Hacker](./the-bitcoin-hacker.md) | KILLA | 🟢 20/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/the-bitcoin-hacker-sol) |
+| [RAYDIUM LAUNCHPAD](./raydium-launchpad.md) | RAYPAD | 🟢 19/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/raydium-launchpad-sol) |
+| [Nut Vigorously In Dat Insane Ass](./nut-vigorously-in-dat-insane-ass.md) | NVDA | 🟢 13/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/nut-vigorously-in-dat-insane-ass-sol) |
+| [Grand Trump Agency](./grand-trump-agency.md) | GTA | 🟢 10/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/grand-trump-agency-sol) |
+| [富途牛牛 FUTUBULL](./futubull-sol-ccf1.md) | FUTUBULL | 🟢 27/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/futubull-sol-ccf1) |
+| [Project Kimchi](./project-kimchi-sol-0ba0.md) | KIMCHI | 🟢 30/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/project-kimchi-sol-0ba0) |
+| [MAGA 2028](./maga-2028.md) | MAGA2028 | 🟢 16/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/maga-2028-sol) |
+| [Google Gemini](./google-gemini-sol-99d5.md) | GEMINI | 🟢 19/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/google-gemini-sol-99d5) |
+| [playboicarti](./playboicarti.md) | CARTI | 🟢 20/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/playboicarti-sol) |
+| [Giga Tits](./giga-tits.md) | GIGATITS | 🟢 1/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/giga-tits-sol) |
+| [Save Bow](./save-bow.md) | BOW | 🟢 23/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/save-bow-sol) |
+| [Trust in Trump](./trust-in-trump.md) | TIT | 🟢 14/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/trust-in-trump-sol) |
+| [IShowSpeed](./ishowspeed.md) | SPEED | 🟢 16/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/ishowspeed-sol) |
+| [Mr Beast official](./mr-beast-official.md) | MRBEAST | 🟢 15/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/mr-beast-official-sol) |
+| [SpaceX](./spacex-sol-788e.md) | SPACEX | 🟢 1/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/spacex-sol-788e) |
+| [NASA](./nasa.md) | NASA | 🟢 2/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/nasa-sol) |
+| [fomo](./fomo.md) | FOMO | 🟢 0/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/fomo-sol) |
+| [XTO](./xto-sol-2504.md) | XTO | 🟢 1/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/xto-sol-2504) |
 | [Open Fork](./open-fork.md) | FORK | 🟢 19/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/open-fork-sol) |
 | [Genny The Hippo](./genny-the-hippo.md) | GENNY | 🟢 21/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/genny-the-hippo-sol) |
 | [US PRESIDENT 2028](./us-president-2028.md) | PRESIDENT | 🟢 21/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/us-president-2028-sol) |

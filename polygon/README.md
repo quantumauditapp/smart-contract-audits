@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Polygon tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**23 reports** · Updated daily · [← All Networks](../README.md)
+**25 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Polygon tokens, powered by [Quantum Audit]
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [BRZ Token](./brz-token.md) | BRZ | 🟢 11/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/brz-token-poly) |
+| [BRL1](./brl1.md) | BRL1 | 🟠 80/100 High Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/brl1-poly) |
 | [Sway Social Protocol](./sway-social-protocol.md) | SWAY | 🟡 61/100 Medium Risk | 2026-10-24 | [↗](https://quantumaudit.app/token/sway-social-protocol-poly) |
 | [Cortik AI](./cortik-ai.md) | CTK | 🟡 46/100 Medium Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/cortik-ai-poly) |
 | [ChainLink Token](./chainlink-token.md) | LINK | 🟢 31/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/chainlink-token-poly) |
