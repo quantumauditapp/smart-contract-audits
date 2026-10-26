@@ -2,14 +2,14 @@
 token: Staked USDe
 ticker: SUSDE
 network: ethereum
-risk_score: 59
-status: medium
+risk_score: 11
+status: low
 date: 2026-08-11
 ---
 
 # Staked USDe (SUSDE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 59/100 — 🟡 Medium Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/staked-usde-eth)
 
@@ -25,9 +25,9 @@ The StakedUSDeV2 contract implements a staking mechanism with a cooldown period,
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The technical architecture (7.1 Architecture) is well-structured, leveraging inheritance and OpenZeppelin standards. Code security (7.2 Code Security) is enhanced by `ReentrancyGuard` in critical… |
-| **Governance / Economics** | 3/10 | High | The economic model (7.4 Economic) includes a cooldown mechanism for unstaking, a vesting period for rewards, and a blacklisting feature. Access control (7.3 Access Control) is robust, with a… |
-| **Upgrades** | 5/10 | Medium | The contract is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, there are no specific upgrade-related risks associated with proxy patterns. Any future changes to the contract logic… |
+| **Technical** | 10/10 | Low | The technical architecture (7.1 Architecture) is well-structured, leveraging inheritance and OpenZeppelin standards. Code security (7.2 Code Security) is enhanced by `ReentrancyGuard` in critical… |
+| **Governance / Economics** | 9/10 | Low | The economic model (7.4 Economic) includes a cooldown mechanism for unstaking, a vesting period for rewards, and a blacklisting feature. Access control (7.3 Access Control) is robust, with a… |
+| **Upgrades** | 10/10 | Low | The contract is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, there are no specific upgrade-related risks associated with proxy patterns. Any future changes to the contract logic… |
 
 ## LP Distribution
 
@@ -38,41 +38,76 @@ The StakedUSDeV2 contract implements a staking mechanism with a cooldown period,
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Centralized Control by DEFAULT_ADMIN_ROLE  *(Severity: High · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE` in `SingleAdminAccessControl` and `StakedUSDe` possesses extensive control over critical contract parameters and operations. This includes the ability to set `cooldownDuration` (effectively disabling cooldowns), add/remove users from blacklists, rescue arbitrary ERC20 tokens (excluding the asset token), and redistribute locked amounts from full-restricted stakers. While a 2-step transfer mechanism is implemented for the admin role, a compromise of this single role could lead to significant financial loss or protocol manipulation. (7.3 Access Control, 7.8 Operations)
-
-**Recommendation:** Ensure the `DEFAULT_ADMIN_ROLE` is controlled by a robust multi-signature wallet with a timelock, as indicated by the prefill data. Implement strict operational procedures and multi-party approvals for any sensitive actions taken by this role. Consider further decentralizing control over time if feasible.
-
+_🟡 1 Medium · 🟢 1 Low · ⚪ 8 Informational_
 
 ### `M-01` — Dependency on USDeSilo Contract Security  *(Severity: Medium · Status: Unresolved)*
 
-The `StakedUSDeV2` contract relies on the `USDeSilo` contract to temporarily hold user funds during the cooldown period. The `USDeSilo` contract is deployed by `StakedUSDeV2`'s constructor, making its address immutable. The security and correctness of `USDeSilo` are paramount, as any vulnerability in `USDeSilo` (e.g., reentrancy, unauthorized withdrawals, or incorrect accounting) could directly impact the safety of funds in `StakedUSDeV2`. The code for `USDeSilo` was not provided for this audit. (7.6 External, 7.1 Architecture)
+Not confirmed by static analysis (the model's own reading of the source). The `StakedUSDeV2` contract relies on the `USDeSilo` contract to temporarily hold user funds during the cooldown period. The `USDeSilo` contract is deployed by `StakedUSDeV2`'s constructor, making its address immutable. The security and correctness of `USDeSilo` are paramount, as any vulnerability in `USDeSilo` (e.g., reentrancy, unauthorized withdrawals, or incorrect accounting) could directly impact the safety of funds in `StakedUSDeV2`. The code for `USDeSilo` was not provided for this audit. (7.6 External, 7.1 Architecture)
 
 **Recommendation:** Conduct a thorough and independent security audit of the `USDeSilo` contract to ensure it is secure, correctly handles asset transfers, and does not introduce any unexpected behaviors or vulnerabilities. Verify that its withdrawal logic is robust and cannot be exploited.
 
 
 ### `L-01` — `UserCooldown` `underlyingAmount` Type Limitation  *(Severity: Low · Status: Unresolved)*
 
-The `underlyingAmount` in the `UserCooldown` struct is defined as `uint152`. While `uint152` can hold a very large value (~1.6 * 10^45), it is smaller than `uint256`, which is the standard type for ERC20 token balances. If a single user attempts to put an amount of assets into cooldown that exceeds `type(uint152).max`, the explicit cast `uint152(assets)` in `cooldownAssets` or `cooldownShares` would revert. This acts as a safety measure, but it represents a hard limit on the maximum amount a single user can put into cooldown. (7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). The `underlyingAmount` in the `UserCooldown` struct is defined as `uint152`. While `uint152` can hold a very large value (~1.6 * 10^45), it is smaller than `uint256`, which is the standard type for ERC20 token balances. If a single user attempts to put an amount of assets into cooldown that exceeds `type(uint152).max`, the explicit cast `uint152(assets)` in `cooldownAssets` or `cooldownShares` would revert. This acts as a safety measure, but it represents a hard limit on the maximum amount a single user can put into cooldown. (7.2 Code Security)
 
 **Recommendation:** Document this limitation clearly for users and administrators. If there is a theoretical possibility of users needing to cooldown amounts larger than `uint152` can hold, consider using `uint256` for `underlyingAmount` to remove this constraint, acknowledging the slight increase in storage costs.
 
 
 ### `I-01` — Precision Loss in Vesting Calculation  *(Severity: Informational · Status: Unresolved)*
 
-The `getUnvestedAmount()` function calculates the currently unvested portion of rewards using integer division: `(deltaT * vestingAmount) / VESTING_PERIOD`. This calculation can suffer from precision loss, especially if `vestingAmount` is small relative to `VESTING_PERIOD`. This might lead to a slight underestimation of the unvested amount over time, potentially leaving a tiny residual amount unvested. (7.4 Economic)
+Not confirmed by static analysis (the model's own reading of the source). The `getUnvestedAmount()` function calculates the currently unvested portion of rewards using integer division: `(deltaT * vestingAmount) / VESTING_PERIOD`. This calculation can suffer from precision loss, especially if `vestingAmount` is small relative to `VESTING_PERIOD`. This might lead to a slight underestimation of the unvested amount over time, potentially leaving a tiny residual amount unvested. (7.4 Economic)
 
 **Recommendation:** Acknowledge this inherent characteristic of integer arithmetic. For most practical purposes, the impact is negligible. If higher precision is deemed critical for the vesting mechanism, consider using a fixed-point math library, though this would add complexity and increase gas costs.
 
 
 ### `I-02` — Cooldown Bypass via Admin Control  *(Severity: Informational · Status: Unresolved)*
 
-The `DEFAULT_ADMIN_ROLE` has the ability to set `cooldownDuration` to 0 via the `setCooldownDuration` function. When `cooldownDuration` is 0, the `ensureCooldownOff` modifier allows direct `withdraw` and `redeem` calls, effectively bypassing the cooldown mechanism. Additionally, the `unstake` function also allows immediate withdrawal if `cooldownDuration == 0`. This is an intended design choice, granting the admin the ability to disable cooldowns. (7.3 Access Control, 7.4 Economic)
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` has the ability to set `cooldownDuration` to 0 via the `setCooldownDuration` function. When `cooldownDuration` is 0, the `ensureCooldownOff` modifier allows direct `withdraw` and `redeem` calls, effectively bypassing the cooldown mechanism. Additionally, the `unstake` function also allows immediate withdrawal if `cooldownDuration == 0`. This is an intended design choice, granting the admin the ability to disable cooldowns. (7.3 Access Control, 7.4 Economic)
 
 **Recommendation:** Ensure this functionality is well-understood and clearly documented as a powerful administrative control. Any changes to `cooldownDuration` should follow strict governance procedures and be communicated transparently to users.
+
+
+### `I-03` — Centralized Control by DEFAULT_ADMIN_ROLE  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` in `SingleAdminAccessControl` and `StakedUSDe` possesses extensive control over critical contract parameters and operations. This includes the ability to set `cooldownDuration` (effectively disabling cooldowns), add/remove users from blacklists, rescue arbitrary ERC20 tokens (excluding the asset token), and redistribute locked amounts from full-restricted stakers. While a 2-step transfer mechanism is implemented for the admin role, a compromise of this single role could lead to significant financial loss or protocol manipulation. (7.3 Access Control, 7.8 Operations)
+
+**Recommendation:** Ensure the `DEFAULT_ADMIN_ROLE` is controlled by a robust multi-signature wallet with a timelock, as indicated by the prefill data. Implement strict operational procedures and multi-party approvals for any sensitive actions taken by this role. Consider further decentralizing control over time if feasible.
+
+
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
+
+The ten largest holders own 77.7% of supply. What remains: 11.1% in wallets, 66.6% in other contracts. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
+
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as Ethena Staked USDe (SUSDE), market cap $1.2B. Its owner (0xe8dc…7c94) controls 3 issuer-backed coins CoinGecko lists on ethereum, $6.0B together, among them Ethena USDe, Ethena Staked ENA: one issuer's programme, read on-chain. Verified by: CoinGecko, issuer programme.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $75.3M (DexScreener, all pools). 24h trading volume $24K (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-POWERS` — What the token's controller can do  *(Severity: Informational · Status: Acknowledged)*
+
+The contract lets its controller — a timelock with a 24h delay — mint new supply. These are the issuer's controls by design; for a verified issuer they are counterparty risk — the issuer can act on any holder, including you.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
+### `QA-PROFILE` — Asset class: Stablecoin — yield-bearing  *(Severity: Informational · Status: Acknowledged)*
+
+A token designed to hold a fixed value (usually $1). Its safety rests on what backs it and on who can mint, freeze or pause it. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Yield-Bearing Stablecoin. Tokenomics — Supply: issued and redeemed by the issuer against its backing. Control: a timelock with a 24h delay. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $75.3M of DEX liquidity across 25 pools. Launch: 431 days of market history.
+
+**Recommendation:** Check what backs the peg and who controls supply: reserve attestations for an issuer-backed coin, collateral and governance for a protocol coin.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: Litecoin Token
 ticker: LTC
 network: bsc
-risk_score: 70
-status: high
+risk_score: 11
+status: low
 date: 2026-09-25
 ---
 
 # Litecoin Token (LTC) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/litecoin-token-bsc)
 
@@ -25,9 +25,9 @@ The BEP20BitcoinCash contract implements a standard BEP-20 token with owner-cont
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates good security practices by utilizing SafeMath for all arithmetic operations, effectively preventing integer overflow/underflow vulnerabilities (7.2 Code Security). Standard… |
-| **Governance / Economics** | 3/10 | High | The contract implements an `Ownable` pattern, granting the deployer significant control over the token (7.5 Governance). Specifically, the owner has the exclusive ability to `mint` new tokens, which… |
-| **Upgrades** | 3/10 | High | The contract is not designed with an upgradeability pattern (e.g., proxy contracts), meaning its logic cannot be modified after deployment (7.7 Upgrades). This provides immutability and… |
+| **Technical** | 10/10 | Low | The contract demonstrates good security practices by utilizing SafeMath for all arithmetic operations, effectively preventing integer overflow/underflow vulnerabilities (7.2 Code Security). Standard… |
+| **Governance / Economics** | 9/10 | Low | The contract implements an `Ownable` pattern, granting the deployer significant control over the token (7.5 Governance). Specifically, the owner has the exclusive ability to `mint` new tokens, which… |
+| **Upgrades** | 10/10 | Low | The contract is not designed with an upgradeability pattern (e.g., proxy contracts), meaning its logic cannot be modified after deployment (7.7 Upgrades). This provides immutability and… |
 
 ## LP Distribution
 
@@ -38,48 +38,83 @@ The BEP20BitcoinCash contract implements a standard BEP-20 token with owner-cont
 
 ## Security Findings
 
-_🟡 2 Medium · 🟢 2 Low · ⚪ 2 Informational_
+_🟡 2 Medium · 🟢 2 Low · ⚪ 7 Informational_
 
 ### `M-01` — Outdated Solidity Compiler Version  *(Severity: Medium · Status: Unresolved)*
 
-The contract is compiled with Solidity version `0.5.16`. While `SafeMath` is used to mitigate integer overflows/underflows, newer compiler versions (e.g., 0.8.x) include built-in overflow checks, improved security features, and various bug fixes and optimizations not present in older versions. Using an outdated compiler can expose the contract to potential, albeit unknown, vulnerabilities or inefficiencies.
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version `0.5.16`. While `SafeMath` is used to mitigate integer overflows/underflows, newer compiler versions (e.g., 0.8.x) include built-in overflow checks, improved security features, and various bug fixes and optimizations not present in older versions. Using an outdated compiler can expose the contract to potential, albeit unknown, vulnerabilities or inefficiencies.
 
 **Recommendation:** Upgrade the Solidity compiler version to a more recent and actively maintained release (e.g., `^0.8.0`). This will leverage modern security features, better gas optimizations, and address known compiler-specific issues.
 
 
 ### `M-02` — Naming Inconsistency Between Contract and Token Details  *(Severity: Medium · Status: Unresolved)*
 
-The contract is named `BEP20BitcoinCash`, but its internal `_name` is initialized as 'Litecoin Token' and `_symbol` as 'LTC'. This discrepancy can lead to significant confusion for users, exchanges, and integration partners, potentially causing misidentification of the token or trust issues.
+Not confirmed by static analysis (the model's own reading of the source). The contract is named `BEP20BitcoinCash`, but its internal `_name` is initialized as 'Litecoin Token' and `_symbol` as 'LTC'. This discrepancy can lead to significant confusion for users, exchanges, and integration partners, potentially causing misidentification of the token or trust issues.
 
 **Recommendation:** Ensure consistency between the contract's name, its file name, and the token's `name()` and `symbol()` values. For example, if the intention is a Bitcoin Cash token, the `_name` should be 'Bitcoin Cash Token' and `_symbol` 'BCH'. If it's a Litecoin token, the contract name should reflect that.
 
 
 ### `L-01` — Redundant Public Getters for State Variables  *(Severity: Low · Status: Unresolved)*
 
-The contract includes external functions `getOwner()` and `decimals()` which simply return the value of the public `owner()` function and the public state variable `_decimals` respectively. Since `owner()` is already public and `_decimals` is a public state variable, these explicit getter functions are redundant and add unnecessary bytecode and gas cost without providing additional functionality.
+Not confirmed by static analysis (the model's own reading of the source). The contract includes external functions `getOwner()` and `decimals()` which simply return the value of the public `owner()` function and the public state variable `_decimals` respectively. Since `owner()` is already public and `_decimals` is a public state variable, these explicit getter functions are redundant and add unnecessary bytecode and gas cost without providing additional functionality.
 
 **Recommendation:** Remove the redundant `getOwner()` and `decimals()` functions. Users can directly access the `owner()` function or the `_decimals` public state variable.
 
 
 ### `L-02` — Unused Internal `_burnFrom` Functionality  *(Severity: Low · Status: Unresolved)*
 
-The contract defines an internal function `_burnFrom(address account, uint256 amount)` which allows burning tokens from an account with an allowance. However, this internal function is not called by any public or external function, meaning the `burnFrom` functionality (burning tokens on behalf of another user with their approval) is effectively unavailable to users. This represents a missing feature rather than a direct vulnerability.
+Not confirmed by static analysis (the model's own reading of the source). The contract defines an internal function `_burnFrom(address account, uint256 amount)` which allows burning tokens from an account with an allowance. However, this internal function is not called by any public or external function, meaning the `burnFrom` functionality (burning tokens on behalf of another user with their approval) is effectively unavailable to users. This represents a missing feature rather than a direct vulnerability.
 
 **Recommendation:** If `burnFrom` functionality is intended, create a public or external function that calls `_burnFrom`. Otherwise, consider removing the unused internal function to reduce bytecode size and improve clarity.
 
 
 ### `I-01` — Centralized Control via Owner Minting  *(Severity: Informational · Status: Unresolved)*
 
-The `mint` function is restricted to the contract owner via the `onlyOwner` modifier. This allows the owner to increase the total supply of tokens at any time, potentially diluting the value for existing token holders. While this is a common design choice for certain token models, it introduces a centralized point of control and an economic risk.
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function is restricted to the contract owner via the `onlyOwner` modifier. This allows the owner to increase the total supply of tokens at any time, potentially diluting the value for existing token holders. While this is a common design choice for certain token models, it introduces a centralized point of control and an economic risk.
 
 **Recommendation:** Clearly communicate the owner's ability to mint new tokens to all prospective token holders. If a more decentralized approach is desired, consider implementing a timelock for minting operations, multi-signature control, or removing the minting capability entirely after an initial supply distribution.
 
 
 ### `I-02` — `_msgData()` from `Context` is Unused  *(Severity: Informational · Status: Unresolved)*
 
-The `Context` contract is inherited by `BEP20BitcoinCash`, which includes the internal function `_msgData()`. However, `_msgData()` is never called within the `BEP20BitcoinCash` contract. While this is a minor issue, it adds a small amount of unnecessary bytecode to the deployed contract.
+Not confirmed by static analysis (the model's own reading of the source). The `Context` contract is inherited by `BEP20BitcoinCash`, which includes the internal function `_msgData()`. However, `_msgData()` is never called within the `BEP20BitcoinCash` contract. While this is a minor issue, it adds a small amount of unnecessary bytecode to the deployed contract.
 
 **Recommendation:** If `_msgData()` is not required for any functionality, consider removing the `Context` inheritance or ensuring that only necessary components are included to optimize bytecode size.
+
+
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
+
+The ten largest holders own 67.3% of supply. What remains: 61.5% in wallets, 5.8% in other contracts. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
+
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as Binance-Peg Litecoin (LTC), market cap $42M. Its owner (0xf68a…f62d) controls 12 issuer-backed coins CoinGecko lists on bsc, $11.5B together, among them Binance Bridged USDT (BNB Smart Chain), Binance-Peg WETH, Binance-Peg XRP: one issuer's programme, read on-chain. Verified by: issuer programme.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $1.2M (DexScreener, all pools). 24h trading volume $312K (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-POWERS` — What the token's controller can do  *(Severity: Informational · Status: Acknowledged)*
+
+The contract lets its controller — a single wallet (EOA) — mint new supply. These are the issuer's controls by design; for a verified issuer they are counterparty risk — the issuer can act on any holder, including you.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
+### `QA-PROFILE` — Asset class: Wrapped or bridged asset  *(Severity: Informational · Status: Acknowledged)*
+
+A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Binance-Peg Tokens. Tokenomics — Supply: mintable with no on-chain cap found. Control: a single wallet (EOA). Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $1.2M of DEX liquidity across 30 pools. Launch: 1270 days of market history.
+
+**Recommendation:** The backing is the risk: check who holds the underlying asset and how redemption works.
 
 ## Token Metrics
 

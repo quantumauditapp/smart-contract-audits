@@ -2,14 +2,14 @@
 token: Monero
 ticker: XMR
 network: solana
-risk_score: 99
-status: critical
+risk_score: 77
+status: high
 date: 2026-10-21
 ---
 
 # Monero (XMR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 99/100 — 🔴 Critical Risk**
+> **Risk Score: 77/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/monero-sol)
 
@@ -27,26 +27,19 @@ Verify the current mint authority status on-chain using a block explorer before 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The token utilizes the standard spl-token program. 7.1 Architecture and 7.2 Code Security are standard for this program type. 7.3 Access Control is currently compromised by an active mint authority… |
-| **Governance / Economics** | 4/10 | Medium | 7.4 Economic factors show moderate holder concentration at 36.89% for the top 10. 7.6 External liquidity is $449,314 with a healthy volume/liquidity ratio of 0.94. However, 100% of pool liquidity is… |
-| **Upgrades** | 4/10 | Medium | 7.7 Upgrades are not applicable as SPL tokens do not use proxy patterns. Metadata is mutable, allowing for potential branding changes. The mint authority remains active, which is the primary concern… |
+| **Technical** | 6/10 | Medium | The token utilizes the standard spl-token program. 7.1 Architecture and 7.2 Code Security are standard for this program type. 7.3 Access Control is currently compromised by an active mint authority… |
+| **Governance / Economics** | 6/10 | Medium | 7.4 Economic factors show moderate holder concentration at 36.89% for the top 10. 7.6 External liquidity is $449,314 with a healthy volume/liquidity ratio of 0.94. However, 100% of pool liquidity is… |
+| **Upgrades** | 5/10 | Medium | 7.7 Upgrades are not applicable as SPL tokens do not use proxy patterns. Metadata is mutable, allowing for potential branding changes. The mint authority remains active, which is the primary concern… |
 
 ## Security Findings
 
-_🔴 2 Critical · 🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 4 Informational_
+_🔴 1 Critical · 🟠 1 High · 🟡 3 Medium · 🟢 1 Low · ⚪ 4 Informational_
 
 ### `C-01` — Mint Authority Not Revoked  *(Severity: Critical · Status: Unresolved)*
 
 The mint authority is 2yy692W8JX511d63i5BdKHqULJCnQyBYrfnkavnzjZuE. The holder of this key can mint unlimited new tokens, diluting all current holders to zero value.
 
 **Recommendation:** Verify on-chain that the mint authority is set to null before treating supply as fixed.
-
-
-### `QA-IDENTITY` — Imitation of Monero (XMR)  *(Severity: Critical · Status: Acknowledged)*
-
-Presents itself as Monero (XMR), but CoinGecko lists no Monero contract on solana at all (CoinGecko). Holders who think they own the real asset own this contract instead; it has none of the real asset's backing, liquidity or redemption.
-
-**Recommendation:** Do not buy, hold or accept this token as the asset it names. Verify any token address against the issuer's official site.
 
 
 ### `H-01` — Pool Liquidity Not Locked  *(Severity: High · Status: Unresolved)*
@@ -61,6 +54,13 @@ Presents itself as Monero (XMR), but CoinGecko lists no Monero contract on solan
 Token name, symbol, or image can be changed post-launch.
 
 **Recommendation:** Verify metadata against off-chain expectations before trusting branding.
+
+
+### `QA-IDENTITY` — Unofficial representation of Monero (XMR)  *(Severity: Medium · Status: Acknowledged)*
+
+Presents itself as Monero (XMR), which has no contract of its own on solana (CoinGecko), and trades at $594.97 against Monero's $590.27: a representation of Monero issued by a third party, whose backing cannot be verified here. 36,316 holders. Not listed by CoinGecko or any exchange GoPlus tracks. Its value holds only while whoever issues it keeps enough XMR to redeem every token; nothing independent shows that they do.
+
+**Recommendation:** Treat the issuer as the counterparty: find who holds the XMR behind it and how redemption works before holding a size you cannot lose.
 
 
 ### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
@@ -98,11 +98,11 @@ The contract lets its controller — nobody (ownership renounced) — mint new s
 **Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
 
 
-### `QA-PROFILE` — Asset class: Imitation of Monero (XMR)  *(Severity: Informational · Status: Acknowledged)*
+### `QA-PROFILE` — Asset class: Wrapped or bridged asset — backing unverified  *(Severity: Informational · Status: Acknowledged)*
 
-A token presenting itself under the name or ticker of an established asset without being that asset's contract. Its only reason to borrow that identity is to be mistaken for it. Scored as an imitation (see the identity finding). Basis: launched on pump.fun (PumpSwap), a meme launchpad; behaves as: meme token. Tokenomics — Supply: mintable with no on-chain cap found. Control: nobody (ownership renounced). Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $1.0M of DEX liquidity across 30 pools. Launch: launched on pump.fun (PumpSwap), 175 days of market history.
+A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. Nothing independent confirms who holds the underlying coin, so every power over its supply is scored in full: a wrapper is only as good as whoever can mint it, and the unverified backing is scored under identity. Basis: trades at the price of Monero (XMR), which has no contract of its own on this chain. Tokenomics — Supply: mintable with no on-chain cap found. Control: nobody (ownership renounced). Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $1.0M of DEX liquidity across 30 pools. Launch: launched on pump.fun (PumpSwap), 175 days of market history.
 
-**Recommendation:** Do not treat this token as the asset it names. Use only the official contract address published by that asset's issuer.
+**Recommendation:** The backing is the risk: check who holds the underlying asset and how redemption works.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: Coinbase Wrapped XRP
 ticker: CBXRP
 network: base
-risk_score: 57
-status: medium
+risk_score: 11
+status: low
 date: 2026-07-24
 ---
 
 # Coinbase Wrapped XRP (CBXRP) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 57/100 — 🟡 Medium Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/coinbase-wrapped-xrp-base)
 
@@ -25,9 +25,9 @@ The FiatTokenV2_2 contract serves as the implementation logic for a fiat-backed 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract demonstrates a robust implementation of EIP-712 signed transactions, including an anti-front-running check for `receiveWithAuthorization`. The `_chainId()` function correctly uses the… |
-| **Governance / Economics** | 1/10 | High | The token design is highly centralized, with critical administrative functions such as minting, burning, pausing, and blacklisting controlled by a single EOA owner (7.3 Access Control, 7.5… |
-| **Upgrades** | 1/10 | High | The contract utilizes a ZeppelinOS legacy proxy pattern, which is a known and understood upgrade mechanism. The `initializeV2_2` function correctly prevents re-initialization (7.7 Upgrades). However… |
+| **Technical** | 9/10 | Low | The contract demonstrates a robust implementation of EIP-712 signed transactions, including an anti-front-running check for `receiveWithAuthorization`. The `_chainId()` function correctly uses the… |
+| **Governance / Economics** | 9/10 | Low | The token design is highly centralized, with critical administrative functions such as minting, burning, pausing, and blacklisting controlled by a single EOA owner (7.3 Access Control, 7.5… |
+| **Upgrades** | 2/10 | High | The contract utilizes a ZeppelinOS legacy proxy pattern, which is a known and understood upgrade mechanism. The `initializeV2_2` function correctly prevents re-initialization (7.7 Upgrades). However… |
 
 ## Proxy Upgrade Controls
 
@@ -47,41 +47,76 @@ The FiatTokenV2_2 contract serves as the implementation logic for a fiat-backed 
 
 ## Security Findings
 
-_🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Upgrade Control by EOA Admin  *(Severity: High · Status: Unresolved)*
-
-The proxy contract's upgradeability is controlled by a single External Owned Account (EOA) at `0x7fec9bc54c94d4ed5d98bcfadaebcbc55aa0c24e`. If this EOA's private key is compromised, an attacker could unilaterally upgrade the contract to a malicious implementation, potentially leading to loss of funds or complete control over the token supply.
-
-**Recommendation:** Migrate the proxy admin role from a single EOA to a robust multi-signature wallet (e.g., Gnosis Safe) with a high threshold of signers, or a time-locked governance contract. This distributes control and adds a layer of security against a single point of failure.
-
-
-### `H-02` — Centralized Administrative Control by EOA Owner  *(Severity: High · Status: Unresolved)*
-
-Critical administrative functions such as minting, burning, pausing, and blacklisting are controlled by a single EOA owner at `0x9c4955ad8b8ec15aea30fa7d751a59699c179144`. A compromise of this EOA would grant an attacker the ability to freeze user funds, manipulate token supply, or blacklist legitimate users, severely impacting the protocol's integrity and user trust.
-
-**Recommendation:** Transfer ownership of critical administrative roles to a multi-signature wallet or a decentralized autonomous organization (DAO) governance system. Implement a timelock for sensitive operations to provide a delay for review and potential intervention.
-
-
-### `M-01` — Complex Custom Bit-Packed Storage for Balances and Blacklisting  *(Severity: Medium · Status: Unresolved)*
-
-The contract uses a custom storage pattern where `balanceAndBlacklistStates` stores both the account balance (lower 255 bits) and blacklist status (highest bit) in a single `uint256`. While this saves storage slots, it is a non-standard and complex design that increases the risk of subtle bugs, especially during future upgrades or if the bit manipulation logic is not perfectly maintained. Incorrect handling could lead to balance corruption or unintended blacklist states.
-
-**Recommendation:** Ensure rigorous testing and formal verification of any future contract upgrades that interact with `balanceAndBlacklistStates`. Document the storage layout meticulously. Consider refactoring to separate storage variables for balances and blacklist status in a future major upgrade, if gas costs allow, to improve clarity and reduce complexity.
-
+_🟢 1 Low · ⚪ 9 Informational_
 
 ### `L-01` — Older Solidity Compiler Version  *(Severity: Low · Status: Unresolved)*
 
-The contract is compiled with Solidity version 0.6.12. While this version is stable, it predates several security enhancements and optimizations introduced in newer versions, particularly Solidity 0.8.0+, which includes built-in overflow/underflow checks for arithmetic operations by default.
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version 0.6.12. While this version is stable, it predates several security enhancements and optimizations introduced in newer versions, particularly Solidity 0.8.0+, which includes built-in overflow/underflow checks for arithmetic operations by default.
 
 **Recommendation:** Consider upgrading to a more recent and actively maintained Solidity compiler version (e.g., 0.8.x) in future contract iterations. This would leverage the latest compiler features, bug fixes, and built-in safety mechanisms, potentially reducing the attack surface.
 
 
 ### `I-01` — Self-Blacklisting of Contract Address During Initialization  *(Severity: Informational · Status: Unresolved)*
 
-The `initializeV2_2` function explicitly blacklists `address(this)` (the contract itself) after migrating deprecated blacklist accounts. This means the token contract address cannot hold or transfer tokens, as it will always be considered blacklisted.
+Not confirmed by static analysis (the model's own reading of the source). The `initializeV2_2` function explicitly blacklists `address(this)` (the contract itself) after migrating deprecated blacklist accounts. This means the token contract address cannot hold or transfer tokens, as it will always be considered blacklisted.
 
 **Recommendation:** While this might be an intentional design choice to prevent tokens from being locked in the contract, it's an unusual pattern. Ensure this behavior is clearly documented and understood by all stakeholders to avoid confusion or unexpected issues if tokens are accidentally sent to the contract address.
+
+
+### `I-02` — Centralized Upgrade Control by EOA Admin  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The proxy contract's upgradeability is controlled by a single External Owned Account (EOA) at `0x7fec9bc54c94d4ed5d98bcfadaebcbc55aa0c24e`. If this EOA's private key is compromised, an attacker could unilaterally upgrade the contract to a malicious implementation, potentially leading to loss of funds or complete control over the token supply.
+
+**Recommendation:** Migrate the proxy admin role from a single EOA to a robust multi-signature wallet (e.g., Gnosis Safe) with a high threshold of signers, or a time-locked governance contract. This distributes control and adds a layer of security against a single point of failure.
+
+
+### `I-03` — Centralized Administrative Control by EOA Owner  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). Critical administrative functions such as minting, burning, pausing, and blacklisting are controlled by a single EOA owner at `0x9c4955ad8b8ec15aea30fa7d751a59699c179144`. A compromise of this EOA would grant an attacker the ability to freeze user funds, manipulate token supply, or blacklist legitimate users, severely impacting the protocol's integrity and user trust.
+
+**Recommendation:** Transfer ownership of critical administrative roles to a multi-signature wallet or a decentralized autonomous organization (DAO) governance system. Implement a timelock for sensitive operations to provide a delay for review and potential intervention.
+
+
+### `I-04` — Complex Custom Bit-Packed Storage for Balances and Blacklisting  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract uses a custom storage pattern where `balanceAndBlacklistStates` stores both the account balance (lower 255 bits) and blacklist status (highest bit) in a single `uint256`. While this saves storage slots, it is a non-standard and complex design that increases the risk of subtle bugs, especially during future upgrades or if the bit manipulation logic is not perfectly maintained. Incorrect handling could lead to balance corruption or unintended blacklist states.
+
+**Recommendation:** Ensure rigorous testing and formal verification of any future contract upgrades that interact with `balanceAndBlacklistStates`. Document the storage layout meticulously. Consider refactoring to separate storage variables for balances and blacklist status in a future major upgrade, if gas costs allow, to improve clarity and reduce complexity.
+
+
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
+
+The ten largest holders own 85.8% of supply. What remains: 1.7% in wallets, 84.1% in other contracts. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
+
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as Coinbase Wrapped XRP (CBXRP), market cap $192M. Verified by: CoinGecko.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $1.5M (DexScreener, all pools). 24h trading volume $2.8M (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-POWERS` — What the token's controller can do  *(Severity: Informational · Status: Acknowledged)*
+
+The contract lets its controller — a single wallet (EOA) — mint new supply. These are the issuer's controls by design; for a verified issuer they are counterparty risk — the issuer can act on any holder, including you.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
+### `QA-PROFILE` — Asset class: Wrapped or bridged asset  *(Severity: Informational · Status: Acknowledged)*
+
+A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Wrapped-Tokens. Tokenomics — Supply: mintable with no on-chain cap found. Control: a single wallet (EOA). Code: upgradeable proxy. Fees: no buy or sell tax. Market: $1.5M of DEX liquidity across 22 pools. Launch: 365 days of market history.
+
+**Recommendation:** The backing is the risk: check who holds the underlying asset and how redemption works.
 
 ## Token Metrics
 

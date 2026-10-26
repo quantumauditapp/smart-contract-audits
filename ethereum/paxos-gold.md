@@ -2,14 +2,14 @@
 token: Paxos Gold
 ticker: PAXG
 network: ethereum
-risk_score: 57
-status: medium
+risk_score: 11
+status: low
 date: 2026-08-11
 ---
 
 # Paxos Gold (PAXG) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 57/100 — 🟡 Medium Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/paxos-gold-eth)
 
@@ -25,9 +25,9 @@ The audit of the PAXG token implementation (0x7da4c5d9eca180a03765a6d27196f2a038
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The technical architecture benefits from inheriting OpenZeppelin's upgradeable access control (7.3 Access Control) and standard ERC-20 token functionalities (7.1 Architecture). However, a critical… |
-| **Governance / Economics** | 2/10 | High | The contract implements a centralized control model with an owner/admin role for critical operations, including pausing transfers and managing freezing (7.3 Access Control, 7.8 Operations). It also… |
-| **Upgrades** | 1/10 | High | The contract utilizes an `AdminUpgradeabilityProxy` pattern, allowing for future logic upgrades (7.7 Upgrades). However, the upgrade process involves a highly complex and risky `_migratePAXGStorage`… |
+| **Technical** | 9/10 | Low | The technical architecture benefits from inheriting OpenZeppelin's upgradeable access control (7.3 Access Control) and standard ERC-20 token functionalities (7.1 Architecture). However, a critical… |
+| **Governance / Economics** | 9/10 | Low | The contract implements a centralized control model with an owner/admin role for critical operations, including pausing transfers and managing freezing (7.3 Access Control, 7.8 Operations). It also… |
+| **Upgrades** | 6/10 | Medium | The contract utilizes an `AdminUpgradeabilityProxy` pattern, allowing for future logic upgrades (7.7 Upgrades). However, the upgrade process involves a highly complex and risky `_migratePAXGStorage`… |
 
 ## Proxy Upgrade Controls
 
@@ -47,41 +47,76 @@ The audit of the PAXG token implementation (0x7da4c5d9eca180a03765a6d27196f2a038
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 8 Informational_
 
-### `C-01` — Critical Storage Collision: Freezing Mechanism Overwrites `supplyControllerDeprecated`  *(Severity: Critical · Status: Unresolved)*
+### `M-03` — Complex and Risky Assembly-Based Storage Migration  *(Severity: Medium · Status: Unresolved)*
 
-The `PAXG` contract defines `_PAXG_FROZEN_SLOT = 7` for its custom freezing mechanism, which uses inline assembly (`sstore(slot, 1)`/`sstore(slot, 0)`). However, in the inherited `BaseStorageV3` contract, storage slot 7 is occupied by the `address public supplyControllerDeprecated;` variable. This means that any call to `_freeze` or `_unfreeze` will directly overwrite or read from the `supplyControllerDeprecated` variable, leading to severe data corruption, unexpected behavior, and potential loss of critical state or control. This is a direct and unmitigated storage collision (7.2 Code Security, 7.7 Upgrades).
-
-**Recommendation:** Immediately rectify the storage collision. The `_PAXG_FROZEN_SLOT` must be changed to a slot that is guaranteed to be unused and will not collide with any current or future inherited storage variables. A safer approach would be to use Solidity's native `mapping(address => bool) internal frozenAddresses;` and ensure it's placed at a non-colliding slot, avoiding direct assembly for this purpose.
-
-
-### `H-01` — Complex and Risky Assembly-Based Storage Migration  *(Severity: High · Status: Unresolved)*
-
-The `_migratePAXGStorage` function directly manipulates storage slots (4, 5, 6, 8, 14, 15) using inline assembly. While intended for migration during upgrades, direct `sload`/`sstore` operations are highly error-prone and bypass Solidity's type safety and storage layout guarantees. A single byte offset error or misunderstanding of the previous storage layout could lead to irreversible data corruption or loss of critical state. This is a high-risk operation, especially in an upgradeable context (7.2 Code Security, 7.7 Upgrades).
+Not confirmed by static analysis (the model's own reading of the source). The `_migratePAXGStorage` function directly manipulates storage slots (4, 5, 6, 8, 14, 15) using inline assembly. While intended for migration during upgrades, direct `sload`/`sstore` operations are highly error-prone and bypass Solidity's type safety and storage layout guarantees. A single byte offset error or misunderstanding of the previous storage layout could lead to irreversible data corruption or loss of critical state. This is a high-risk operation, especially in an upgradeable context (7.2 Code Security, 7.7 Upgrades).
 
 **Recommendation:** Thoroughly review and refactor the `_migratePAXGStorage` function. If possible, replace assembly-based slot manipulation with safer, Solidity-native storage management patterns or leverage well-tested migration libraries. If assembly is unavoidable, ensure exhaustive testing, formal verification, and clear documentation of the exact storage layout being migrated from and to. Consider using a `bytes32` constant for each slot to improve readability and reduce magic numbers.
 
 
-### `M-01` — Inconsistent Freezing Mechanisms and Deprecated Storage  *(Severity: Medium · Status: Unresolved)*
-
-The contract exhibits an inconsistent approach to address freezing. `PAXG` implements its own freezing logic using `_PAXG_FROZEN_SLOT` (which critically collides with `supplyControllerDeprecated`). Simultaneously, `BaseStorageV3` defines a `mapping(address => bool) internal frozen;` at slot 6, along with `_isFrozen` and `_setFrozen` functions that operate on it. Although `_migratePAXGStorage` clears slot 6, the continued presence of these functions and the `frozen` mapping creates ambiguity and could lead to misinterpretation or accidental use of the deprecated freezing mechanism, resulting in inconsistent state or unexpected behavior (7.1 Architecture, 7.2 Code Security).
-
-**Recommendation:** Consolidate the freezing logic into a single, well-defined mechanism. Remove or clearly mark as `internal pure` or `private` any deprecated freezing functions or storage variables that are no longer intended for use. Ensure that all parts of the system consistently refer to the intended freezing state. If `BaseStorageV3`'s `frozen` mapping is truly deprecated, its functions (`_isFrozen`, `_setFrozen`) should be removed or overridden to revert.
-
-
 ### `L-01` — Truncation Risk in `_setBalanceData`  *(Severity: Low · Status: Unresolved)*
 
-The `_setBalanceData` function in `BaseStorageV3` casts `uint256` inputs (`balance`, `shares`) to `uint64` using `StorageLib.toUint64Balance` and `StorageLib.toUint64Shares`. If the input `uint256` values exceed `type(uint64).max`, they will be silently truncated. While this might be an intentional design choice for specific tokenomics, it introduces a potential for loss of precision or unexpected behavior if not carefully managed by all calling functions (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `_setBalanceData` function in `BaseStorageV3` casts `uint256` inputs (`balance`, `shares`) to `uint64` using `StorageLib.toUint64Balance` and `StorageLib.toUint64Shares`. If the input `uint256` values exceed `type(uint64).max`, they will be silently truncated. While this might be an intentional design choice for specific tokenomics, it introduces a potential for loss of precision or unexpected behavior if not carefully managed by all calling functions (7.2 Code Security).
 
 **Recommendation:** Implement explicit checks (e.g., `require(balance <= type(uint64).max, "Balance exceeds uint64 limit")`) before casting `uint256` values to `uint64` within `StorageLib.toUint64Balance` and `StorageLib.toUint64Shares`. This ensures that truncation is prevented or explicitly handled, providing clearer error messages and preventing unexpected state changes.
 
 
 ### `I-01` — Legacy Proxy Pattern Used  *(Severity: Informational · Status: Unresolved)*
 
-The contract uses `AdminUpgradeabilityProxy`, which is an older OpenZeppelin proxy pattern. While functional, newer patterns like UUPS (e.g., `UUPSUpgradeable`) offer better decentralization of upgrade control by allowing the implementation contract to manage upgrades, rather than relying on a separate proxy admin contract (7.1 Architecture, 7.7 Upgrades).
+Not confirmed by static analysis (the model's own reading of the source). The contract uses `AdminUpgradeabilityProxy`, which is an older OpenZeppelin proxy pattern. While functional, newer patterns like UUPS (e.g., `UUPSUpgradeable`) offer better decentralization of upgrade control by allowing the implementation contract to manage upgrades, rather than relying on a separate proxy admin contract (7.1 Architecture, 7.7 Upgrades).
 
 **Recommendation:** Consider migrating to a UUPS proxy pattern in future upgrades. UUPS proxies allow the implementation contract to manage its own upgrades, which can simplify the upgrade process and potentially enhance decentralization by removing the need for a separate proxy admin address to initiate upgrades.
+
+
+### `I-02` — Critical Storage Collision: Freezing Mechanism Overwrites `supplyControllerDeprecated`  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `PAXG` contract defines `_PAXG_FROZEN_SLOT = 7` for its custom freezing mechanism, which uses inline assembly (`sstore(slot, 1)`/`sstore(slot, 0)`). However, in the inherited `BaseStorageV3` contract, storage slot 7 is occupied by the `address public supplyControllerDeprecated;` variable. This means that any call to `_freeze` or `_unfreeze` will directly overwrite or read from the `supplyControllerDeprecated` variable, leading to severe data corruption, unexpected behavior, and potential loss of critical state or control. This is a direct and unmitigated storage collision (7.2 Code Security, 7.7 Upgrades).
+
+**Recommendation:** Immediately rectify the storage collision. The `_PAXG_FROZEN_SLOT` must be changed to a slot that is guaranteed to be unused and will not collide with any current or future inherited storage variables. A safer approach would be to use Solidity's native `mapping(address => bool) internal frozenAddresses;` and ensure it's placed at a non-colliding slot, avoiding direct assembly for this purpose.
+
+
+### `I-03` — Inconsistent Freezing Mechanisms and Deprecated Storage  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract exhibits an inconsistent approach to address freezing. `PAXG` implements its own freezing logic using `_PAXG_FROZEN_SLOT` (which critically collides with `supplyControllerDeprecated`). Simultaneously, `BaseStorageV3` defines a `mapping(address => bool) internal frozen;` at slot 6, along with `_isFrozen` and `_setFrozen` functions that operate on it. Although `_migratePAXGStorage` clears slot 6, the continued presence of these functions and the `frozen` mapping creates ambiguity and could lead to misinterpretation or accidental use of the deprecated freezing mechanism, resulting in inconsistent state or une
+
+**Recommendation:** Consolidate the freezing logic into a single, well-defined mechanism. Remove or clearly mark as `internal pure` or `private` any deprecated freezing functions or storage variables that are no longer intended for use. Ensure that all parts of the system consistently refer to the intended freezing state. If `BaseStorageV3`'s `frozen` mapping is truly deprecated, its functions (`_isFrozen`, `_setFrozen`) should be removed or overridden to revert.
+
+
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
+
+The ten largest holders own 33.6% of supply. What remains: 33.6% in wallets, 0.0% in other contracts. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
+
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as PAX Gold (PAXG), market cap $1.8B, rank #54. Verified by: CoinGecko.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $28.7M (DexScreener, all pools). 24h trading volume $420K (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-POWERS` — What the token's controller can do  *(Severity: Informational · Status: Acknowledged)*
+
+The contract lets its controller — a timelock with a 24h delay — mint new supply. These are the issuer's controls by design; for a verified issuer they are counterparty risk — the issuer can act on any holder, including you.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
+### `QA-PROFILE` — Asset class: Tokenized real-world asset  *(Severity: Informational · Status: Acknowledged)*
+
+A token backed by an off-chain asset (a stock, gold, treasury bills, a fund share) held by a named issuer or custodian. Issuance, redemption and transfer restrictions are the issuer's by design. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Tokenized Gold. Tokenomics — Supply: issued and redeemed by the issuer against its backing. Control: a timelock with a 24h delay. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $28.7M of DEX liquidity across 21 pools. Launch: 2273 days of market history.
+
+**Recommendation:** Treat the issuer or custodian as the counterparty: check its custody reports and who may hold or redeem the token.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: Tesla (Ondo Tokenized)
 ticker: TSLAON
 network: ethereum
-risk_score: 65
-status: high
+risk_score: 11
+status: low
 date: 2026-10-16
 ---
 
 # Tesla (Ondo Tokenized) (TSLAON) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 65/100 — 🟠 High Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tesla-ondo-tokenized-eth)
 
@@ -25,9 +25,9 @@ The GMToken contract is an upgradeable ERC-20 token utilizing a Beacon proxy pat
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The GMToken contract is built upon OpenZeppelin's upgradeable ERC-20 and AccessControl standards, providing a solid foundation for token functionality and role-based permissions (7.1 Architecture).… |
-| **Governance / Economics** | 1/10 | High | The economic model of GMToken is subject to centralized control, as a privileged role can `mint` new tokens at will, directly impacting the total supply and potentially diluting existing token… |
-| **Upgrades** | 1/10 | High | The GMToken contract is deployed as a Beacon proxy, allowing its implementation logic to be upgraded. This upgradeability provides flexibility for future enhancements or bug fixes (7.7 Upgrades).… |
+| **Technical** | 9/10 | Low | The GMToken contract is built upon OpenZeppelin's upgradeable ERC-20 and AccessControl standards, providing a solid foundation for token functionality and role-based permissions (7.1 Architecture).… |
+| **Governance / Economics** | 9/10 | Low | The economic model of GMToken is subject to centralized control, as a privileged role can `mint` new tokens at will, directly impacting the total supply and potentially diluting existing token… |
+| **Upgrades** | 5/10 | Medium | The GMToken contract is deployed as a Beacon proxy, allowing its implementation logic to be upgraded. This upgradeability provides flexibility for future enhancements or bug fixes (7.7 Upgrades).… |
 
 ## Proxy Upgrade Controls
 
@@ -46,39 +46,32 @@ The GMToken contract is an upgradeable ERC-20 token utilizing a Beacon proxy pat
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · ⚪ 4 Informational_
+_⚪ 6 Informational_
 
-### `CP-03` — A privileged address can replace a contract every transfer depends on  *(Severity: High · Status: Unresolved)*
-
-Transfers call an external contract whose address a privileged function can change. Whoever controls that setting controls what a transfer does. Functions: setCompliance, setTokenPauseManager. Restricted to: role.
-
-**Recommendation:** Check who holds these functions and whether a timelock or multisig stands between them and holders.
-
-
-### `CP-01` — A privileged address can mint new tokens  *(Severity: Medium · Status: Unresolved)*
+### `CP-01` — A privileged address can mint new tokens  *(Severity: Informational · Status: Unresolved)*
 
 A privileged function increases the total supply, diluting every holder. Functions: mint(address,uint256). Restricted to: role.
 
 **Recommendation:** Check who holds these functions and whether a timelock or multisig stands between them and holders.
 
 
-### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
+### `CP-03` — A privileged address can replace a contract every transfer depends on  *(Severity: Informational · Status: Unresolved)*
 
-0.0% of the pool's LP is burned or time-locked. 100.0% is held, unlocked, by 5 address(es) other than the owner/deployer. One of them — a contract, 0x1b26…9eb7 — holds 64.6% and can remove that share at once; who controls it is not visible on-chain, so it is not treated as an independent provider. Some pools are concentrated-liquidity (V3/V4) positions; shares above are by position as GoPlus reports them. This assessment covers the main pool, which holds 23% of the token's DEX liquidity; the other pools were not assessed.
+Transfers call an external contract whose address a privileged function can change. Whoever controls that setting controls what a transfer does. Functions: setCompliance, setTokenPauseManager. Restricted to: role.
 
-**Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
+**Recommendation:** Check who holds these functions and whether a timelock or multisig stands between them and holders.
 
 
 ### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-The ten largest holders own 70.6% of supply. What remains: 53.5% in wallets, 17.1% in other contracts. 3,540 holders in total.
+The ten largest holders own 70.6% of supply. What remains: 53.5% in wallets, 17.1% in other contracts. 3,540 holders in total. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
 
 **Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
 
 
-### `QA-IDENTITY` — Listed, but not independently verified  *(Severity: Informational · Status: Acknowledged)*
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
 
-Listed on CoinGecko as Tesla (Ondo Tokenized Stock) (TSLAON), market cap $17M, rank #935. 3,540 holders.
+Listed on CoinGecko as Tesla (Ondo Tokenized Stock) (TSLAON), market cap $20M, rank #819. Its admin (0x3715…34f1) controls 441 issuer-backed coins CoinGecko lists on ethereum, $1.0B together, among them Circle Internet Group (Ondo Tokenized Stock), Ondo U.S. Dollar Token, iShares Core S&P 500 ETF (Ondo Tokenized ETF): one issuer's programme, read on-chain. 3,540 holders. Verified by: issuer programme.
 
 **Recommendation:** Match the contract address against the project's official channels before trading.
 
@@ -92,7 +85,7 @@ Liquidity $646K (DexScreener, all pools). 24h trading volume $2.3M (CoinGecko, a
 
 ### `QA-PROFILE` — Asset class: Tokenized real-world asset  *(Severity: Informational · Status: Acknowledged)*
 
-A token backed by an off-chain asset (a stock, gold, treasury bills, a fund share) held by a named issuer or custodian. Issuance, redemption and transfer restrictions are the issuer's by design. The class itself adds no points; the contract and market facts decide the score. Basis: CoinGecko category: Tokenized Stocks. Tokenomics — Supply: mintable with no on-chain cap found. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $646K of DEX liquidity across 29 pools. Launch: 394 days of market history.
+A token backed by an off-chain asset (a stock, gold, treasury bills, a fund share) held by a named issuer or custodian. Issuance, redemption and transfer restrictions are the issuer's by design. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Tokenized Stocks. Tokenomics — Supply: issued and redeemed by the issuer against its backing. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $646K of DEX liquidity across 29 pools. Launch: 394 days of market history.
 
 **Recommendation:** Treat the issuer or custodian as the counterparty: check its custody reports and who may hold or redeem the token.
 

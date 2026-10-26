@@ -2,14 +2,14 @@
 token: Wrapped BTC
 ticker: WBTC
 network: arbitrum
-risk_score: 57
-status: medium
+risk_score: 10
+status: low
 date: 2026-07-22
 ---
 
 # Wrapped BTC (WBTC) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 57/100 — 🟡 Medium Risk**
+> **Risk Score: 10/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-btc-arb)
 
@@ -25,9 +25,9 @@ The audited system comprises a `BeaconProxyFactory` for deploying `ClonableBeaco
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The technical architecture (7.1 Architecture) utilizes the OpenZeppelin Beacon Proxy pattern, enabling efficient deployment of multiple proxies pointing to a single upgradeable beacon. The… |
-| **Governance / Economics** | 2/10 | High | The system's governance (7.5 Governance) relies on a centralized `Ownable` pattern for the `UpgradeableBeacon` contract. The owner of this beacon has the sole authority to upgrade the implementation… |
-| **Upgrades** | 1/10 | High | The upgradeability mechanism (7.7 Upgrades) is based on the Beacon Proxy pattern, where all `ClonableBeaconProxy` instances delegate calls to an implementation address managed by a single… |
+| **Technical** | 9/10 | Low | The technical architecture (7.1 Architecture) utilizes the OpenZeppelin Beacon Proxy pattern, enabling efficient deployment of multiple proxies pointing to a single upgradeable beacon. The… |
+| **Governance / Economics** | 10/10 | Low | The system's governance (7.5 Governance) relies on a centralized `Ownable` pattern for the `UpgradeableBeacon` contract. The owner of this beacon has the sole authority to upgrade the implementation… |
+| **Upgrades** | 5/10 | Medium | The upgradeability mechanism (7.7 Upgrades) is based on the Beacon Proxy pattern, where all `ClonableBeaconProxy` instances delegate calls to an implementation address managed by a single… |
 
 ## Proxy Upgrade Controls
 
@@ -46,41 +46,69 @@ The audited system comprises a `BeaconProxyFactory` for deploying `ClonableBeaco
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 2 High · 🟡 1 Medium · ⚪ 1 Informational_
+_🟡 1 Medium · ⚪ 8 Informational_
 
-### `C-01` — BeaconProxyFactory.initialize Lacks Access Control  *(Severity: Critical · Status: Unresolved)*
+### `M-03` — Unverified Implementation Contract  *(Severity: Medium · Status: Unresolved)*
 
-The `initialize` function in `BeaconProxyFactory` is designed to set the crucial `beacon` address, which dictates the implementation logic for all proxies deployed by the factory. However, this function lacks any access control, meaning any external address can call it. If an attacker calls `initialize` before the legitimate owner, they can set a malicious beacon address, effectively compromising all future proxies deployed by this factory to point to an attacker-controlled implementation. This leads to a complete loss of control over the system's core logic.
-
-**Recommendation:** Implement robust access control for the `initialize` function. It should only be callable once by a trusted entity, preferably the deployer or a designated owner/governance contract. Consider using OpenZeppelin's `Ownable` or a multi-signature wallet for this critical setup function.
-
-
-### `H-01` — Unverified Implementation Contract  *(Severity: High · Status: Unresolved)*
-
-The implementation contract (`0x3f770ac673856f105b586bb393d122721265ad46`) that the `UpgradeableBeacon` points to is not source-verified on Etherscan. This lack of transparency makes it impossible for users, auditors, or the community to inspect the actual code that the `ClonableBeaconProxy` instances will execute. Without verified source code, there is no way to confirm the contract's intended functionality, security, or absence of malicious logic, posing a significant trust and security risk.
+Not confirmed by static analysis (the model's own reading of the source). The implementation contract (`0x3f770ac673856f105b586bb393d122721265ad46`) that the `UpgradeableBeacon` points to is not source-verified on Etherscan. This lack of transparency makes it impossible for users, auditors, or the community to inspect the actual code that the `ClonableBeaconProxy` instances will execute. Without verified source code, there is no way to confirm the contract's intended functionality, security, or absence of malicious logic, posing a significant trust and security risk.
 
 **Recommendation:** Immediately verify the source code of the implementation contract on all relevant block explorers (e.g., Etherscan, Arbiscan). This is a fundamental step for transparency and user trust in any proxy-based system.
 
 
-### `H-02` — Centralized Control Over Upgrades  *(Severity: High · Status: Unresolved)*
+### `I-01` — Use of CREATE2 for Deterministic Proxy Addresses  *(Severity: Informational · Status: Unresolved)*
 
-The `UpgradeableBeacon` contract, which dictates the implementation for all deployed proxies, is controlled by a single owner via the `Ownable` pattern. This centralized control means that if the owner's private key is compromised, a malicious actor could upgrade all associated proxies to a harmful implementation, potentially leading to a complete loss of user funds or system manipulation. This represents a single point of failure for the entire system's upgradeability.
+Not confirmed by static analysis (the model's own reading of the source). The `BeaconProxyFactory` utilizes the `CREATE2` opcode via OpenZeppelin's `Create2` library to deploy `ClonableBeaconProxy` instances. This allows for deterministic address generation, meaning the address of a proxy can be calculated in advance using the factory address, a salt, and the proxy's creation bytecode. While a powerful feature, it implies that if a specific salt is reused, deployment will fail. The factory mitigates this by generating a unique salt based on `msg.sender` and `userSalt`.
+
+**Recommendation:** No direct recommendation for a vulnerability, as this is an intended feature. However, ensure that the implications of deterministic addresses (e.g., potential for 'counterfactual interactions' or pre-funding addresses) are fully understood and align with the project's design goals.
+
+
+### `I-02` — BeaconProxyFactory.initialize Lacks Access Control  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function in `BeaconProxyFactory` is designed to set the crucial `beacon` address, which dictates the implementation logic for all proxies deployed by the factory. However, this function lacks any access control, meaning any external address can call it. If an attacker calls `initialize` before the legitimate owner, they can set a malicious beacon address, effectively compromising all future proxies deployed by this factory to point to an attacker-controlled implementation. This leads to a complete loss of control over the system's core logic.
+
+**Recommendation:** Implement robust access control for the `initialize` function. It should only be callable once by a trusted entity, preferably the deployer or a designated owner/governance contract. Consider using OpenZeppelin's `Ownable` or a multi-signature wallet for this critical setup function.
+
+
+### `I-03` — Centralized Control Over Upgrades  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `UpgradeableBeacon` contract, which dictates the implementation for all deployed proxies, is controlled by a single owner via the `Ownable` pattern. This centralized control means that if the owner's private key is compromised, a malicious actor could upgrade all associated proxies to a harmful implementation, potentially leading to a complete loss of user funds or system manipulation. This represents a single point of failure for the entire system's upgradeability.
 
 **Recommendation:** Consider decentralizing or enhancing the security of the upgrade mechanism. Options include transferring ownership to a multi-signature wallet (e.g., Gnosis Safe), implementing a time-lock contract for upgrade delays, or integrating a more robust governance mechanism to approve upgrades.
 
 
-### `M-01` — No Initialization Data Passed to ClonableBeaconProxy  *(Severity: Medium · Status: Unresolved)*
+### `I-04` — No Initialization Data Passed to ClonableBeaconProxy  *(Severity: Informational · Status: Unresolved)*
 
-The `ClonableBeaconProxy` constructor calls `BeaconProxy(ProxySetter(msg.sender).beacon(), "")`, passing an empty `data` parameter. This means that if the underlying implementation contract has an `initialize` function (a common pattern for upgradeable contracts), it will not be called automatically during the proxy's deployment. If the implementation requires initialization for proper functioning or to set critical parameters, it must be initialized separately after proxy deployment. Failure to do so could leave the implementation in an uninitialized or vulnerable state.
+Not confirmed by static analysis (the model's own reading of the source). The `ClonableBeaconProxy` constructor calls `BeaconProxy(ProxySetter(msg.sender).beacon(), "")`, passing an empty `data` parameter. This means that if the underlying implementation contract has an `initialize` function (a common pattern for upgradeable contracts), it will not be called automatically during the proxy's deployment. If the implementation requires initialization for proper functioning or to set critical parameters, it must be initialized separately after proxy deployment. Failure to do so could leave the implementation in an uninitialized or vulnerable state.
 
 **Recommendation:** Ensure that the implementation contract is designed to either be immutable (not requiring initialization) or that a robust and secure process is in place to call its `initialize` function immediately after the proxy's deployment. Document this initialization requirement clearly for operators.
 
 
-### `I-01` — Use of CREATE2 for Deterministic Proxy Addresses  *(Severity: Informational · Status: Unresolved)*
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-The `BeaconProxyFactory` utilizes the `CREATE2` opcode via OpenZeppelin's `Create2` library to deploy `ClonableBeaconProxy` instances. This allows for deterministic address generation, meaning the address of a proxy can be calculated in advance using the factory address, a salt, and the proxy's creation bytecode. While a powerful feature, it implies that if a specific salt is reused, deployment will fail. The factory mitigates this by generating a unique salt based on `msg.sender` and `userSalt`.
+The ten largest holders own 63.1% of supply. What remains: 0.0% in wallets, 63.1% in other contracts. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
 
-**Recommendation:** No direct recommendation for a vulnerability, as this is an intended feature. However, ensure that the implications of deterministic addresses (e.g., potential for 'counterfactual interactions' or pre-funding addresses) are fully understood and align with the project's design goals.
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as Arbitrum Bridged WBTC (Arbitrum One) (WBTC), market cap $589M. Verified by: CoinGecko.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $45.4M (DexScreener, all pools). 24h trading volume $25.8M (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-PROFILE` — Asset class: Wrapped or bridged asset  *(Severity: Informational · Status: Acknowledged)*
+
+A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Bridged-Tokens. Tokenomics — Supply: fixed — the contract has no mint function. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $45.4M of DEX liquidity across 30 pools. Launch: 1774 days of market history.
+
+**Recommendation:** The backing is the risk: check who holds the underlying asset and how redemption works.
 
 ## Token Metrics
 

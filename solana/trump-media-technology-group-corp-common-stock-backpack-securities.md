@@ -2,14 +2,14 @@
 token: Trump Media & Technology Group Corp. Common Stock - Backpack Securities
 ticker: DJT
 network: solana
-risk_score: 100
-status: critical
+risk_score: 84
+status: high
 date: 2026-09-15
 ---
 
 # Trump Media & Technology Group Corp. Common Stock - Backpack Securities (DJT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 84/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/trump-media-technology-group-corp-common-stock-backpack-securities-sol)
 
@@ -25,8 +25,8 @@ This SPL Token Mint exhibits critical security risks due to multiple unrevoked a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 1/10 | High | The token is an SPL Token-2022 mint, indicating modern Solana token standards. However, the mint authority (3zbLadZi7cn7A6SavYkKah2QzUQEGNDtwmf5o17Rx17G) remains active, allowing for unlimited new… |
-| **Governance / Economics** | 1/10 | High | The token exhibits high holder concentration, with the top 10 accounts holding 70.55% of the total supply, posing a significant risk of price manipulation or sudden sell-offs. The DEX pair is very… |
+| **Technical** | 4/10 | Medium | The token is an SPL Token-2022 mint, indicating modern Solana token standards. However, the mint authority (3zbLadZi7cn7A6SavYkKah2QzUQEGNDtwmf5o17Rx17G) remains active, allowing for unlimited new… |
+| **Governance / Economics** | 2/10 | High | The token exhibits high holder concentration, with the top 10 accounts holding 70.55% of the total supply, posing a significant risk of price manipulation or sudden sell-offs. The DEX pair is very… |
 | **Upgrades** | 1/10 | High | The token's metadata is mutable, meaning the token name, symbol, or image can be changed post-launch. The token program is `spl-token-2022`, which supports various extensions, but no transfer hook is… |
 
 ## Token-2022 Extensions
@@ -37,7 +37,7 @@ This SPL Token Mint exhibits critical security risks due to multiple unrevoked a
 
 ## Security Findings
 
-_🔴 3 Critical · 🟠 1 High · 🟡 2 Medium · 🟢 1 Low_
+_🔴 3 Critical · 🟠 1 High · 🟡 3 Medium · 🟢 1 Low · ⚪ 5 Informational_
 
 ### `C-01` — Mint Authority Not Revoked  *(Severity: Critical · Status: Unresolved)*
 
@@ -81,11 +81,53 @@ A balance-mutating authority can adjust user balances.
 **Recommendation:** Account for the fee in any swap calculation.
 
 
+### `QA-POWERS` — What the token's controller can do  *(Severity: Medium · Status: Acknowledged)*
+
+The contract lets its controller — the freeze authority — mint new supply. Nothing independent vouches for whoever holds them, so each is a live risk to holders.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
 ### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
 
 Token name, symbol, or image can be changed post-launch.
 
 **Recommendation:** Verify metadata against off-chain expectations before trusting branding.
+
+
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
+
+The ten largest holders own 54.0% of supply. What remains: 54.0% in wallets, 0.0% in other contracts.
+
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Listed, but not independently verified  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as Trump Media & Technology Group Corp. Common Stock (Backpack Securities) (DJT), market cap $1M, rank #2792.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $421K (DexScreener, all pools). 24h trading volume $3.0M (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-PROFILE` — Asset class: Project token  *(Severity: Informational · Status: Acknowledged)*
+
+A token issued by a project for use, governance or fundraising. Scored on its contract and market facts. The class itself adds no points; the contract and market facts decide the score. Basis: no class-specific evidence. Tokenomics — Supply: mintable with no on-chain cap found. Control: the freeze authority. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $421K of DEX liquidity across 9 pools. Launch: 5 days of market history.
+
+**Recommendation:** Check the project's own documentation for what the token is used for; this report covers what the contract allows.
+
+
+### `QA-RECENT` — Recently launched — 5 days of market history  *(Severity: Informational · Status: Acknowledged)*
+
+The token's oldest DEX pool is 5 days old. Age is not part of the risk score — a new token is not a risky one by default — but a short history means fewer trades and holder changes behind the facts in this report.
+
+**Recommendation:** Re-check ownership, liquidity and holder distribution as the token matures; those are the facts that move early.
 
 ## Token Metrics
 
@@ -108,7 +150,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -117,7 +159,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: SPDR S&P 500 ETF (Ondo Tokenized)
 ticker: SPYON
 network: ethereum
-risk_score: 73
-status: high
+risk_score: 9
+status: low
 date: 2026-10-10
 ---
 
 # SPDR S&P 500 ETF (Ondo Tokenized) (SPYON) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 73/100 — 🟠 High Risk**
+> **Risk Score: 9/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spdr-sp-500-etf-ondo-tokenized-eth)
 
@@ -25,9 +25,9 @@ The GMToken contract is an upgradeable ERC-20 token utilizing a Beacon proxy pat
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The GMToken contract is built upon OpenZeppelin's upgradeable ERC-20 and AccessControl standards, ensuring a robust and well-tested foundation (7.1 Architecture, 7.2 Code Security). Access control is… |
-| **Governance / Economics** | 2/10 | High | The economic stability of the GMToken is highly dependent on the integrity of its privileged roles (7.4 Economic). A role can `mint` new tokens, directly increasing total supply and diluting existing… |
-| **Upgrades** | 1/10 | High | The GMToken contract is deployed using a Beacon proxy pattern, making it upgradeable (7.7 Upgrades). This allows for future enhancements or bug fixes to the token's logic. The… |
+| **Technical** | 9/10 | Low | The GMToken contract is built upon OpenZeppelin's upgradeable ERC-20 and AccessControl standards, ensuring a robust and well-tested foundation (7.1 Architecture, 7.2 Code Security). Access control is… |
+| **Governance / Economics** | 9/10 | Low | The economic stability of the GMToken is highly dependent on the integrity of its privileged roles (7.4 Economic). A role can `mint` new tokens, directly increasing total supply and diluting existing… |
+| **Upgrades** | 5/10 | Medium | The GMToken contract is deployed using a Beacon proxy pattern, making it upgradeable (7.7 Upgrades). This allows for future enhancements or bug fixes to the token's logic. The… |
 
 ## Proxy Upgrade Controls
 
@@ -46,39 +46,32 @@ The GMToken contract is an upgradeable ERC-20 token utilizing a Beacon proxy pat
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · ⚪ 4 Informational_
+_⚪ 6 Informational_
 
-### `CP-03` — Critical External Dependency Manipulation  *(Severity: High · Status: Unresolved)*
-
-The `setCompliance(address _compliance)` and `setTokenPauseManager(address _tokenPauseManager)` functions allow an address holding the `CONFIGURER_ROLE` to change the addresses of external contracts that directly influence how token transfers behave. The `compliance` and `tokenPauseManager` contracts can dictate rules, fees, or even pause transfers. This means that whoever controls the `CONFIGURER_ROLE` can effectively control or disrupt all token transfers by pointing to a malicious or arbitrary contract.
-
-**Recommendation:** Token holders should understand that the project administrators have significant control over the token's transfer mechanics. It is crucial for the project to secure the `CONFIGURER_ROLE` with the highest level of security, such as a multi-signature wallet with a high threshold. Any changes to these critical dependency addresses should be communicated transparently and ideally be subject to a time-lock to allow for community review.
-
-
-### `CP-01` — Centralized Minting Capability  *(Severity: Medium · Status: Unresolved)*
+### `CP-01` — Centralized Minting Capability  *(Severity: Informational · Status: Unresolved)*
 
 The `mint(address to, uint256 amount)` function allows an address holding the `MINTER_ROLE` to create new tokens and assign them to any address. This increases the total supply of GMToken, which can dilute the value of tokens held by existing token holders without their consent.
 
 **Recommendation:** Token holders should be aware that the supply of GMToken is not fixed and can be increased by the project's administrators. It is recommended that the project clearly communicates its minting policy and any planned minting events to the community. Consider implementing a time-lock or multi-signature requirement for minting operations to add an extra layer of security and transparency.
 
 
-### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
+### `CP-03` — Critical External Dependency Manipulation  *(Severity: Informational · Status: Unresolved)*
 
-0.0% of the pool's LP is burned or time-locked. 94.0% is held, unlocked, by 10 address(es) other than the owner/deployer. No single one holds a majority: their exits thin the market rather than hand anyone the pool. Some pools are concentrated-liquidity (V3/V4) positions; shares above are by position as GoPlus reports them. This assessment covers the main pool, which holds 59% of the token's DEX liquidity; the other pools were not assessed.
+The `setCompliance(address _compliance)` and `setTokenPauseManager(address _tokenPauseManager)` functions allow an address holding the `CONFIGURER_ROLE` to change the addresses of external contracts that directly influence how token transfers behave. The `compliance` and `tokenPauseManager` contracts can dictate rules, fees, or even pause transfers. This means that whoever controls the `CONFIGURER_ROLE` can effectively control or disrupt all token transfers by pointing to a malicious or arbitrary contract.
 
-**Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
+**Recommendation:** Token holders should understand that the project administrators have significant control over the token's transfer mechanics. It is crucial for the project to secure the `CONFIGURER_ROLE` with the highest level of security, such as a multi-signature wallet with a high threshold. Any changes to these critical dependency addresses should be communicated transparently and ideally be subject to a time-lock to allow for community review.
 
 
 ### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-The ten largest holders own 71.8% of supply. What remains: 32.6% in wallets, 39.2% in other contracts. 2,151 holders in total.
+The ten largest holders own 71.8% of supply. What remains: 32.6% in wallets, 39.2% in other contracts. 2,151 holders in total. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
 
 **Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
 
 
-### `QA-IDENTITY` — Listed, but not independently verified  *(Severity: Informational · Status: Acknowledged)*
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
 
-Listed on CoinGecko as SPDR S&P 500 ETF (Ondo Tokenized ETF) (SPYON), market cap $47M, rank #507. 2,151 holders.
+Listed on CoinGecko as SPDR S&P 500 ETF (Ondo Tokenized ETF) (SPYON), market cap $47M, rank #475. Its admin (0x3715…34f1) controls 441 issuer-backed coins CoinGecko lists on ethereum, $1.0B together, among them Circle Internet Group (Ondo Tokenized Stock), Ondo U.S. Dollar Token, iShares Core S&P 500 ETF (Ondo Tokenized ETF): one issuer's programme, read on-chain. 2,151 holders. Verified by: issuer programme.
 
 **Recommendation:** Match the contract address against the project's official channels before trading.
 
@@ -90,11 +83,11 @@ Liquidity $185K (DexScreener, all pools). 24h trading volume $2.4M (CoinGecko, a
 **Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
 
 
-### `QA-PROFILE` — Asset class: Project token  *(Severity: Informational · Status: Acknowledged)*
+### `QA-PROFILE` — Asset class: Tokenized real-world asset  *(Severity: Informational · Status: Acknowledged)*
 
-A token issued by a project for use, governance or fundraising. Scored on its contract and market facts. The class itself adds no points; the contract and market facts decide the score. Basis: no class-specific evidence. Tokenomics — Supply: mintable with no on-chain cap found. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $185K of DEX liquidity across 17 pools. Launch: 399 days of market history.
+A token backed by an off-chain asset (a stock, gold, treasury bills, a fund share) held by a named issuer or custodian. Issuance, redemption and transfer restrictions are the issuer's by design. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Tokenized Exchange-Traded Funds (ETFs). Tokenomics — Supply: issued and redeemed by the issuer against its backing. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $185K of DEX liquidity across 17 pools. Launch: 399 days of market history.
 
-**Recommendation:** Check the project's own documentation for what the token is used for; this report covers what the contract allows.
+**Recommendation:** Treat the issuer or custodian as the counterparty: check its custody reports and who may hold or redeem the token.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: apyUSD
 ticker: APYUSD
 network: ethereum
-risk_score: 83
-status: high
+risk_score: 9
+status: low
 date: 2026-09-15
 ---
 
 # apyUSD (APYUSD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 83/100 — 🟠 High Risk**
+> **Risk Score: 9/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/apyusd-eth)
 
@@ -25,9 +25,9 @@ The ApyUSD contract functions as an upgradeable ERC-20 token with ERC-4626 vault
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract utilizes robust OpenZeppelin upgradeable components for ERC-20, ERC-4626, pausing, and access control, providing a strong foundation (7.2 Code Security). Reentrancy is mitigated using… |
-| **Governance / Economics** | 1/10 | High | The contract's `AccessManagedUpgradeable` pattern centralizes significant control under an `Authority` (7.3 Access Control). This entity can pause transfers, manage the deny-list, set critical… |
-| **Upgrades** | 1/10 | High | The contract employs the UUPS proxy pattern, with `_authorizeUpgrade` restricted to the `AccessManager`, which is a secure approach for upgrade authorization (7.7 Upgrades). However, the use of a… |
+| **Technical** | 9/10 | Low | The contract utilizes robust OpenZeppelin upgradeable components for ERC-20, ERC-4626, pausing, and access control, providing a strong foundation (7.2 Code Security). Reentrancy is mitigated using… |
+| **Governance / Economics** | 9/10 | Low | The contract's `AccessManagedUpgradeable` pattern centralizes significant control under an `Authority` (7.3 Access Control). This entity can pause transfers, manage the deny-list, set critical… |
+| **Upgrades** | 5/10 | Medium | The contract employs the UUPS proxy pattern, with `_authorizeUpgrade` restricted to the `AccessManager`, which is a secure approach for upgrade authorization (7.7 Upgrades). However, the use of a… |
 
 ## Proxy Upgrade Controls
 
@@ -46,48 +46,83 @@ The ApyUSD contract functions as an upgradeable ERC-20 token with ERC-4626 vault
 
 ## Security Findings
 
-_🟠 2 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control and Privileged Roles  *(Severity: High · Status: Unresolved)*
-
-The `AccessManagedUpgradeable` pattern grants significant power to the designated `Authority` (or `AccessManager`). This entity has the ability to pause the contract, manage the deny-list, set critical external contract addresses (e.g., `unlockToken`, `vesting`, `unlockReceipt`), set the `ccipAdmin`, and authorize upgrades. This high degree of centralization introduces a single point of failure or compromise, where a malicious or compromised `AccessManager` could severely impact the protocol's integrity and user funds.
-
-**Recommendation:** Implement robust governance mechanisms, such as a multi-signature wallet or a decentralized autonomous organization (DAO), to control the `AccessManager` role. Ensure that critical actions require multiple approvals or community consensus. Clearly document the powers of the `AccessManager` and the procedures for its management.
-
-
-### `H-02` — Critical External Contract Dependencies  *(Severity: High · Status: Unresolved)*
-
-The `ApyUSD` contract relies heavily on external contracts such as `IUnlockToken`, `IVesting`, `IUnlockReceipt`, and `IAddressList`. Specifically, the `_withdraw` function calls `$.vesting.pullVestedYield()` and `$.unlockReceipt.mint()`, and the `totalAssets()` calculation depends on `$.vesting.vestedAmount()`. Vulnerabilities, malicious behavior, or unexpected state in any of these external contracts could directly lead to security breaches, economic exploits, or operational failures within the `ApyUSD` contract.
-
-**Recommendation:** Conduct thorough security audits of all dependent external contracts. Implement robust input validation and sanity checks on return values from external calls where possible. Consider implementing circuit breakers or emergency mechanisms to temporarily disable interactions with compromised external contracts. Ensure that the addresses of these external contracts are set by a secure, multi-signature controlled process.
-
+_🟡 3 Medium · ⚪ 8 Informational_
 
 ### `M-01` — Strict `receiver` check in `_withdraw`  *(Severity: Medium · Status: Unresolved)*
 
-The `_withdraw` function includes a strict check `if (receiver != owner) revert InvalidCaller();`. This design choice mandates that the `receiver` of the withdrawn assets must be the same as the `owner` (the address initiating the withdrawal). This deviates from the typical ERC-4626 `withdraw` behavior, which usually allows `receiver` to be a different address than `owner`. While this might be an intentional design for specific use cases (e.g., direct receipt minting to the owner), it could limit flexibility for users and lead to unexpected integration issues for systems expecting standard ERC-4626 functionality.
+Not confirmed by static analysis (the model's own reading of the source). The `_withdraw` function includes a strict check `if (receiver != owner) revert InvalidCaller();`. This design choice mandates that the `receiver` of the withdrawn assets must be the same as the `owner` (the address initiating the withdrawal). This deviates from the typical ERC-4626 `withdraw` behavior, which usually allows `receiver` to be a different address than `owner`. While this might be an intentional design for specific use cases (e.g., direct receipt minting to the owner), it could limit flexibility for users and lead to unexpected integration issues for systems expecting standard ERC-4626 functionality.
 
 **Recommendation:** Clarify and document the rationale behind this strict `receiver` check. If the intention is to allow withdrawals to different addresses, consider removing or modifying this check, ensuring that any such change does not introduce new vulnerabilities. If the current behavior is intentional, ensure it is clearly communicated to integrators and users.
 
 
 ### `M-02` — Custom Storage Slot Management  *(Severity: Medium · Status: Unresolved)*
 
-The contract uses a custom storage slot (`APYUSD_STORAGE_LOC`) for `ApyUSDStorage` via inline assembly. While this pattern is a valid approach for managing custom state in upgradeable contracts, it requires meticulous care. If the chosen slot collides with OpenZeppelin's internal storage slots or any future state variables introduced in subsequent upgrades, it could lead to critical state corruption, loss of funds, or unexpected contract behavior.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses a custom storage slot (`APYUSD_STORAGE_LOC`) for `ApyUSDStorage` via inline assembly. While this pattern is a valid approach for managing custom state in upgradeable contracts, it requires meticulous care. If the chosen slot collides with OpenZeppelin's internal storage slots or any future state variables introduced in subsequent upgrades, it could lead to critical state corruption, loss of funds, or unexpected contract behavior.
 
 **Recommendation:** Ensure that the chosen custom storage slot is sufficiently far from known OpenZeppelin storage slots and any other potential future state variables. Maintain a clear and detailed storage layout map for all contract versions. Implement robust testing, including upgrade simulations, to verify storage compatibility before deploying new implementations.
 
 
-### `L-01` — Missing Fee Cap Enforcement in `setUnlockingFee` (Assumed)  *(Severity: Low · Status: Unresolved)*
+### `M-04` — Critical External Contract Dependencies  *(Severity: Medium · Status: Unresolved)*
 
-The contract defines a `MAX_FEE` constant of `0.01e18` (1%). However, the `setUnlockingFee` function (which is truncated in the provided code but assumed to exist and be `restricted`) is not explicitly shown to enforce this `MAX_FEE` limit. Without this check, a privileged role could potentially set an arbitrarily high unlocking fee, leading to economic exploitation or making withdrawals prohibitively expensive.
+Not confirmed by static analysis (the model's own reading of the source). The `ApyUSD` contract relies heavily on external contracts such as `IUnlockToken`, `IVesting`, `IUnlockReceipt`, and `IAddressList`. Specifically, the `_withdraw` function calls `$.vesting.pullVestedYield()` and `$.unlockReceipt.mint()`, and the `totalAssets()` calculation depends on `$.vesting.vestedAmount()`. Vulnerabilities, malicious behavior, or unexpected state in any of these external contracts could directly lead to security breaches, economic exploits, or operational failures within the `ApyUSD` contract.
 
-**Recommendation:** Ensure that the `setUnlockingFee` function includes a check to prevent setting the `unlockingFee` above `MAX_FEE`. For example: `require(newFee <= MAX_FEE, "Fee exceeds max");`.
+**Recommendation:** Conduct thorough security audits of all dependent external contracts. Implement robust input validation and sanity checks on return values from external calls where possible. Consider implementing circuit breakers or emergency mechanisms to temporarily disable interactions with compromised external contracts. Ensure that the addresses of these external contracts are set by a secure, multi-signature controlled process.
 
 
 ### `I-01` — Use of `TransientSlot` for `tokenId`  *(Severity: Informational · Status: Unresolved)*
 
-The contract utilizes `TransientSlot` (`LAST_TOKEN_ID_TSLOT`) to temporarily store the `tokenId` generated during `_withdraw` and retrieve it in `withdrawForReceipt` and `redeemForReceipt`. This pattern is designed to pass values across internal/external calls within a single transaction without permanent storage. While generally safe for its intended purpose, it's a less common pattern that requires careful understanding to ensure correct usage and prevent unexpected behavior if transaction flow is altered or re-entered in an unforeseen way.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes `TransientSlot` (`LAST_TOKEN_ID_TSLOT`) to temporarily store the `tokenId` generated during `_withdraw` and retrieve it in `withdrawForReceipt` and `redeemForReceipt`. This pattern is designed to pass values across internal/external calls within a single transaction without permanent storage. While generally safe for its intended purpose, it's a less common pattern that requires careful understanding to ensure correct usage and prevent unexpected behavior if transaction flow is altered or re-entered in an unforeseen way.
 
 **Recommendation:** Document the specific use case and assumptions for `TransientSlot` usage within the contract. Ensure that all developers and integrators understand its ephemeral nature and the implications for transaction design. Verify through testing that the `tokenId` is correctly stored and retrieved under various transaction scenarios.
+
+
+### `I-02` — Centralized Control and Privileged Roles  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `AccessManagedUpgradeable` pattern grants significant power to the designated `Authority` (or `AccessManager`). This entity has the ability to pause the contract, manage the deny-list, set critical external contract addresses (e.g., `unlockToken`, `vesting`, `unlockReceipt`), set the `ccipAdmin`, and authorize upgrades. This high degree of centralization introduces a single point of failure or compromise, where a malicious or compromised `AccessManager` could severely impact the protocol's integrity and user funds.
+
+**Recommendation:** Implement robust governance mechanisms, such as a multi-signature wallet or a decentralized autonomous organization (DAO), to control the `AccessManager` role. Ensure that critical actions require multiple approvals or community consensus. Clearly document the powers of the `AccessManager` and the procedures for its management.
+
+
+### `I-03` — Missing Fee Cap Enforcement in `setUnlockingFee` (Assumed)  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract defines a `MAX_FEE` constant of `0.01e18` (1%). However, the `setUnlockingFee` function (which is truncated in the provided code but assumed to exist and be `restricted`) is not explicitly shown to enforce this `MAX_FEE` limit. Without this check, a privileged role could potentially set an arbitrarily high unlocking fee, leading to economic exploitation or making withdrawals prohibitively expensive.
+
+**Recommendation:** Ensure that the `setUnlockingFee` function includes a check to prevent setting the `unlockingFee` above `MAX_FEE`. For example: `require(newFee <= MAX_FEE, "Fee exceeds max");`.
+
+
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
+
+The ten largest holders own 83.6% of supply. What remains: 1.2% in wallets, 82.4% in other contracts. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
+
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as apyUSD (APYUSD), market cap $157M, rank #202. Verified by: CoinGecko.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $18.2M (DexScreener, all pools). 24h trading volume $2.2M (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-POWERS` — What the token's controller can do  *(Severity: Informational · Status: Acknowledged)*
+
+The contract lets its controller — an owner that could not be resolved — mint new supply. These are the issuer's controls by design; for a verified issuer they are counterparty risk — the issuer can act on any holder, including you.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
+### `QA-PROFILE` — Asset class: Stablecoin — yield-bearing  *(Severity: Informational · Status: Acknowledged)*
+
+A token designed to hold a fixed value (usually $1). Its safety rests on what backs it and on who can mint, freeze or pause it. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Yield-Bearing Stablecoin. Tokenomics — Supply: issued and redeemed by the issuer against its backing. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $18.2M of DEX liquidity across 6 pools. Launch: 167 days of market history.
+
+**Recommendation:** Check what backs the peg and who controls supply: reserve attestations for an issuer-backed coin, collateral and governance for a protocol coin.
 
 ## Token Metrics
 

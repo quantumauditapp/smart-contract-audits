@@ -2,14 +2,14 @@
 token: Disney (Ondo Tokenized)
 ticker: DISON
 network: bsc
-risk_score: 76
-status: high
+risk_score: 11
+status: low
 date: 2026-10-02
 ---
 
 # Disney (Ondo Tokenized) (DISON) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 76/100 — 🟠 High Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/disney-ondo-tokenized-bsc)
 
@@ -27,9 +27,9 @@ Additionally, establish clear, transparent, and publicly verifiable processes fo
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The GMToken contract is built upon established OpenZeppelin upgradeable standards, providing a robust foundation for an ERC-20 token (7.1 Architecture). It includes standard ERC-20 functionalities… |
-| **Governance / Economics** | 1/10 | High | The contract employs a role-based access control system, allowing for granular permission management over sensitive operations. This structure provides a clear framework for governance (7.5… |
-| **Upgrades** | 1/10 | High | The GMToken contract utilizes the BeaconProxy pattern, enabling future upgrades to its logic without changing the token's address (7.7 Upgrades). This pattern, based on OpenZeppelin's `Initializable`… |
+| **Technical** | 9/10 | Low | The GMToken contract is built upon established OpenZeppelin upgradeable standards, providing a robust foundation for an ERC-20 token (7.1 Architecture). It includes standard ERC-20 functionalities… |
+| **Governance / Economics** | 9/10 | Low | The contract employs a role-based access control system, allowing for granular permission management over sensitive operations. This structure provides a clear framework for governance (7.5… |
+| **Upgrades** | 5/10 | Medium | The GMToken contract utilizes the BeaconProxy pattern, enabling future upgrades to its logic without changing the token's address (7.7 Upgrades). This pattern, based on OpenZeppelin's `Initializable`… |
 
 ## Proxy Upgrade Controls
 
@@ -47,39 +47,32 @@ Additionally, establish clear, transparent, and publicly verifiable processes fo
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · ⚪ 4 Informational_
+_⚪ 6 Informational_
 
-### `CP-03` — A privileged address can replace a contract every transfer depends on  *(Severity: High · Status: Unresolved)*
-
-Transfers call an external contract whose address a privileged function can change. Whoever controls that setting controls what a transfer does. Functions: setTokenPauseManager, setCompliance. Restricted to: role.
-
-**Recommendation:** Check who holds these functions and whether a timelock or multisig stands between them and holders.
-
-
-### `CP-01` — A privileged address can mint new tokens  *(Severity: Medium · Status: Unresolved)*
+### `CP-01` — A privileged address can mint new tokens  *(Severity: Informational · Status: Unresolved)*
 
 A privileged function increases the total supply, diluting every holder. Functions: mint(address,uint256). Restricted to: role.
 
 **Recommendation:** Check who holds these functions and whether a timelock or multisig stands between them and holders.
 
 
-### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
+### `CP-03` — A privileged address can replace a contract every transfer depends on  *(Severity: Informational · Status: Unresolved)*
 
-0.0% of the pool's LP is burned or time-locked. 99.8% is held, unlocked, by 8 address(es) other than the owner/deployer. One of them — a wallet, 0x8145…0992 — holds 96.9% and can remove that share at once; who controls it is not visible on-chain, so it is not treated as an independent provider. Some pools are concentrated-liquidity (V3/V4) positions; shares above are by position as GoPlus reports them. This assessment covers the main pool, which holds 75% of the token's DEX liquidity; the other pools were not assessed.
+Transfers call an external contract whose address a privileged function can change. Whoever controls that setting controls what a transfer does. Functions: setTokenPauseManager, setCompliance. Restricted to: role.
 
-**Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
+**Recommendation:** Check who holds these functions and whether a timelock or multisig stands between them and holders.
 
 
 ### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-The ten largest holders own 78.3% of supply. Of that, 19.4% in DEX pools — not holders that can sell, so excluded from the concentration score. What remains: 35.9% in wallets, 23.1% in other contracts. 1,294 holders in total.
+The ten largest holders own 78.3% of supply. Of that, 19.4% in DEX pools — not holders that can sell, so excluded from the concentration score. What remains: 35.9% in wallets, 23.1% in other contracts. 1,294 holders in total. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
 
 **Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
 
 
-### `QA-IDENTITY` — Listed, but not independently verified  *(Severity: Informational · Status: Acknowledged)*
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
 
-Listed on CoinGecko as Disney (Ondo Tokenized Stock) (DISON), market cap $1M, rank #3041. 1,294 holders.
+Listed on CoinGecko as Disney (Ondo Tokenized Stock) (DISON), market cap $1M, rank #2801. Its admin (0x8860…3b26) controls 440 issuer-backed coins CoinGecko lists on bsc, $1.0B together, among them Circle Internet Group (Ondo Tokenized Stock), Ondo U.S. Dollar Token, iShares Core S&P 500 ETF (Ondo Tokenized ETF): one issuer's programme, read on-chain. 1,294 holders. Verified by: issuer programme.
 
 **Recommendation:** Match the contract address against the project's official channels before trading.
 
@@ -93,7 +86,7 @@ Liquidity $67K (DexScreener, all pools). 24h trading volume $211K (CoinGecko, al
 
 ### `QA-PROFILE` — Asset class: Tokenized real-world asset  *(Severity: Informational · Status: Acknowledged)*
 
-A token backed by an off-chain asset (a stock, gold, treasury bills, a fund share) held by a named issuer or custodian. Issuance, redemption and transfer restrictions are the issuer's by design. The class itself adds no points; the contract and market facts decide the score. Basis: CoinGecko category: Tokenized Stocks. Tokenomics — Supply: mintable with no on-chain cap found. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $67K of DEX liquidity across 30 pools. Launch: 60 days of market history.
+A token backed by an off-chain asset (a stock, gold, treasury bills, a fund share) held by a named issuer or custodian. Issuance, redemption and transfer restrictions are the issuer's by design. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Tokenized Stocks. Tokenomics — Supply: issued and redeemed by the issuer against its backing. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $67K of DEX liquidity across 30 pools. Launch: 60 days of market history.
 
 **Recommendation:** Treat the issuer or custodian as the counterparty: check its custody reports and who may hold or redeem the token.
 

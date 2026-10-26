@@ -2,14 +2,14 @@
 token: Cypherpunk Technologies - Backpack Securities
 ticker: CYPH
 network: solana
-risk_score: 100
-status: critical
+risk_score: 77
+status: high
 date: 2026-09-20
 ---
 
 # Cypherpunk Technologies - Backpack Securities (CYPH) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 77/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cypherpunk-technologies-backpack-securities-sol)
 
@@ -25,8 +25,8 @@ This SPL Token-2022 mint presents critical risks due to active Mint, Freeze, and
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 1/10 | High | The token is an SPL Token-2022 mint with a total supply of 119,446,740.336 tokens (6 decimals). It features an active Mint Authority at `Cmzoo3U8ezcb95BJYmy3e6p6Lh1kyPm2bjDLcvNtVXES`, a Freeze… |
-| **Governance / Economics** | 1/10 | High | The token has a liquidity of $165,561 USD and a 24-hour volume of $1,020,515 USD. The Volume/Liquidity Ratio is 6.16, indicating significant trading activity relative to available liquidity. The DEX… |
+| **Technical** | 4/10 | Medium | The token is an SPL Token-2022 mint with a total supply of 119,446,740.336 tokens (6 decimals). It features an active Mint Authority at `Cmzoo3U8ezcb95BJYmy3e6p6Lh1kyPm2bjDLcvNtVXES`, a Freeze… |
+| **Governance / Economics** | 4/10 | Medium | The token has a liquidity of $165,561 USD and a 24-hour volume of $1,020,515 USD. The Volume/Liquidity Ratio is 6.16, indicating significant trading activity relative to available liquidity. The DEX… |
 | **Upgrades** | 1/10 | High | The Mint Authority, Freeze Authority, and Permanent Delegate are all active, allowing for significant control over the token's parameters and user funds. The token's metadata is mutable, meaning its… |
 
 ## Token-2022 Extensions
@@ -37,7 +37,7 @@ This SPL Token-2022 mint presents critical risks due to active Mint, Freeze, and
 
 ## Security Findings
 
-_🔴 3 Critical · 🟡 2 Medium · 🟢 1 Low_
+_🔴 3 Critical · 🟡 3 Medium · 🟢 1 Low · ⚪ 4 Informational_
 
 ### `C-01` — Mint Authority Not Revoked  *(Severity: Critical · Status: Unresolved)*
 
@@ -74,11 +74,46 @@ A balance-mutating authority can adjust user balances. (Fact: balance_mutable: T
 **Recommendation:** Understand the implications of an authority being able to unilaterally modify user balances before holding this token.
 
 
+### `QA-POWERS` — What the token's controller can do  *(Severity: Medium · Status: Acknowledged)*
+
+The contract lets its controller — the freeze authority — mint new supply. Nothing independent vouches for whoever holds them, so each is a live risk to holders.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
 ### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
 
 Token name, symbol, or image can be changed post-launch. (Fact: metadata_mutable: True)
 
 **Recommendation:** Verify metadata against off-chain expectations before trusting branding.
+
+
+### `QA-IDENTITY` — Listed, but not independently verified  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as Cypherpunk Technologies (Backpack Securities) (CYPH), rank #3702.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $210K (DexScreener, all pools). 24h trading volume $406K (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-PROFILE` — Asset class: Tokenized real-world asset  *(Severity: Informational · Status: Acknowledged)*
+
+A token backed by an off-chain asset (a stock, gold, treasury bills, a fund share) held by a named issuer or custodian. Issuance, redemption and transfer restrictions are the issuer's by design. The class itself adds no points; the contract and market facts decide the score. Basis: CoinGecko category: Tokenized Stocks. Tokenomics — Supply: mintable with no on-chain cap found. Control: the freeze authority. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $210K of DEX liquidity across 11 pools. Launch: 1 days of market history.
+
+**Recommendation:** Treat the issuer or custodian as the counterparty: check its custody reports and who may hold or redeem the token.
+
+
+### `QA-RECENT` — Recently launched — 1 day of market history  *(Severity: Informational · Status: Acknowledged)*
+
+The token's oldest DEX pool is 1 day old. Age is not part of the risk score — a new token is not a risky one by default — but a short history means fewer trades and holder changes behind the facts in this report.
+
+**Recommendation:** Re-check ownership, liquidity and holder distribution as the token matures; those are the facts that move early.
 
 ## Token Metrics
 
@@ -101,7 +136,7 @@ Token name, symbol, or image can be changed post-launch. (Fact: metadata_mutable
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -110,7 +145,7 @@ Token name, symbol, or image can be changed post-launch. (Fact: metadata_mutable
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: Wrapped Frax
 ticker: WFRAX
 network: ethereum
-risk_score: 65
-status: high
+risk_score: 11
+status: low
 date: 2026-10-11
 ---
 
 # Wrapped Frax (WFRAX) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 65/100 — 🟠 High Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-frax-eth)
 
@@ -25,9 +25,9 @@ The WFRAXTokenOFTUpgradeable contract functions as a cross-chain ERC-20 token, l
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The WFRAXTokenOFTUpgradeable contract implements the ERC-20 standard and LayerZero's OFT functionality, enabling cross-chain transfers (7.1 Architecture). The code leverages established upgradeable… |
-| **Governance / Economics** | 1/10 | High | The contract's economic model (7.4 Economic) is directly impacted by the minting capability. While the primary owner (a 3/5 multisig) controls administrative settings, the ability to mint tokens… |
-| **Upgrades** | 1/10 | High | The contract is deployed behind a TransparentUpgradeableProxy (7.7 Upgrades), allowing for future logic upgrades. The proxy's admin is controlled by a Timelock… |
+| **Technical** | 9/10 | Low | The WFRAXTokenOFTUpgradeable contract implements the ERC-20 standard and LayerZero's OFT functionality, enabling cross-chain transfers (7.1 Architecture). The code leverages established upgradeable… |
+| **Governance / Economics** | 9/10 | Low | The contract's economic model (7.4 Economic) is directly impacted by the minting capability. While the primary owner (a 3/5 multisig) controls administrative settings, the ability to mint tokens… |
+| **Upgrades** | 6/10 | Medium | The contract is deployed behind a TransparentUpgradeableProxy (7.7 Upgrades), allowing for future logic upgrades. The proxy's admin is controlled by a Timelock… |
 
 ## Proxy Upgrade Controls
 
@@ -47,32 +47,25 @@ The WFRAXTokenOFTUpgradeable contract functions as a cross-chain ERC-20 token, l
 
 ## Security Findings
 
-_🟡 2 Medium · ⚪ 4 Informational_
+_⚪ 5 Informational_
 
-### `CP-01` — External Endpoint Can Mint New Tokens  *(Severity: Medium · Status: Unresolved)*
+### `CP-01` — External Endpoint Can Mint New Tokens  *(Severity: Informational · Status: Unresolved)*
 
 The WFRAXTokenOFTUpgradeable contract allows an external address, referred to as the 'endpoint', to create new tokens. Specifically, the `send`, `lzReceiveSimulate`, and `lzReceive` functions, which are restricted to this 'endpoint', can increase the total supply of WFRAX tokens. This means that if the 'endpoint' address is compromised or misused, new tokens could be minted, diluting the value for all existing token holders.
 
 **Recommendation:** Token holders should be aware that the 'endpoint' address has the power to mint new WFRAX tokens. It is crucial for the project team to ensure the security of this 'endpoint' address through strong operational security practices, such as multi-signature control or a timelock, to prevent unauthorized minting and protect the token's value.
 
 
-### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
-
-0.0% of the pool's LP is burned or time-locked. 100.0% is held, unlocked, by 1 address(es) other than the owner/deployer. One of them — a contract, 0x4b5c…df67 — holds 100.0% and can remove that share at once; who controls it is not visible on-chain, so it is not treated as an independent provider. Some pools are concentrated-liquidity (V3/V4) positions; shares above are by position as GoPlus reports them. This assessment covers the main pool, which holds 81% of the token's DEX liquidity; the other pools were not assessed.
-
-**Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
-
-
 ### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-The ten largest holders own 95.7% of supply. What remains: 27.3% in wallets, 68.4% in other contracts. 942 holders in total.
+The ten largest holders own 95.7% of supply. What remains: 27.3% in wallets, 68.4% in other contracts. 942 holders in total. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
 
 **Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
 
 
-### `QA-IDENTITY` — Listed, but not independently verified  *(Severity: Informational · Status: Acknowledged)*
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
 
-Listed on CoinGecko as Wrapped FRAX (WFRAX), market cap $18M. 942 holders.
+Listed on CoinGecko as Wrapped FRAX (WFRAX), market cap $14M. Its owner (0xb174…3f27) controls 2 issuer-backed coins CoinGecko lists on ethereum, $232M together, among them Legacy Frax Dollar: one issuer's programme, read on-chain. 942 holders. Verified by: issuer programme.
 
 **Recommendation:** Match the contract address against the project's official channels before trading.
 
@@ -86,7 +79,7 @@ Liquidity $2.6M (DexScreener, all pools). 24h trading volume $1.3M (CoinGecko, a
 
 ### `QA-PROFILE` — Asset class: Wrapped or bridged asset  *(Severity: Informational · Status: Acknowledged)*
 
-A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. The class itself adds no points; the contract and market facts decide the score. Basis: CoinGecko category: Wrapped-Tokens. Tokenomics — Supply: mintable with no on-chain cap found. Control: a 3-of-5 multisig. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $2.6M of DEX liquidity across 3 pools. Launch: 495 days of market history.
+A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Wrapped-Tokens. Tokenomics — Supply: mintable with no on-chain cap found. Control: a 3-of-5 multisig. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $2.6M of DEX liquidity across 3 pools. Launch: 495 days of market history.
 
 **Recommendation:** The backing is the risk: check who holds the underlying asset and how redemption works.
 

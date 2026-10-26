@@ -2,14 +2,14 @@
 token: Alibaba
 ticker: BABAB
 network: bsc
-risk_score: 81
-status: high
+risk_score: 11
+status: low
 date: 2026-10-15
 ---
 
 # Alibaba (BABAB) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 81/100 — 🟠 High Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/alibaba-bsc)
 
@@ -25,9 +25,9 @@ The SecuritiesToken is an upgradeable ERC-20 token designed with extensive admin
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The SecuritiesToken is an upgradeable ERC-20 token leveraging OpenZeppelin's AccessControlEnumerableUpgradeable for robust role-based access management (7.3 Access Control). It integrates external… |
-| **Governance / Economics** | 1/10 | High | The token's economic model and governance are highly centralized, with a DEFAULT_ADMIN_ROLE controlling critical functions (7.5 Governance). This role can enable/disable minting and burning, set the… |
-| **Upgrades** | 1/10 | High | The SecuritiesToken is deployed via a Beacon Proxy pattern, enabling future upgrades to its logic (7.7 Upgrades). This design allows for bug fixes and feature enhancements without redeploying the… |
+| **Technical** | 9/10 | Low | The SecuritiesToken is an upgradeable ERC-20 token leveraging OpenZeppelin's AccessControlEnumerableUpgradeable for robust role-based access management (7.3 Access Control). It integrates external… |
+| **Governance / Economics** | 9/10 | Low | The token's economic model and governance are highly centralized, with a DEFAULT_ADMIN_ROLE controlling critical functions (7.5 Governance). This role can enable/disable minting and burning, set the… |
+| **Upgrades** | 5/10 | Medium | The SecuritiesToken is deployed via a Beacon Proxy pattern, enabling future upgrades to its logic (7.7 Upgrades). This design allows for bug fixes and feature enhancements without redeploying the… |
 
 ## Proxy Upgrade Controls
 
@@ -45,30 +45,23 @@ The SecuritiesToken is an upgradeable ERC-20 token designed with extensive admin
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 4 Informational_
+_⚪ 7 Informational_
 
-### `CP-03` — Centralized Control Over Critical External Contracts  *(Severity: High · Status: Unresolved)*
+### `CP-03` — Centralized Control Over Critical External Contracts  *(Severity: Informational · Status: Unresolved)*
 
 A privileged address, specifically the one holding the `DEFAULT_ADMIN_ROLE`, has the ability to replace the `PauseManager` and `Compliance` contracts. These external contracts are called during token transfers to determine if a transfer is allowed or paused. If the controlling address is compromised, it could redirect token logic to a malicious contract, potentially blocking all transfers or imposing arbitrary rules.
 
 **Recommendation:** Token holders should be aware that the administrator can change the core logic governing transfers by updating the `PauseManager` (via `setPauseManager` function) and `Compliance` (via `setCompliance` function) contract addresses. This power should be secured by a multi-signature wallet and any changes should be publicly announced with sufficient lead time.
 
 
-### `CP-07` — Administrator Can Change Transfer Fees  *(Severity: Medium · Status: Unresolved)*
+### `CP-07` — Administrator Can Change Transfer Fees  *(Severity: Informational · Status: Unresolved)*
 
 The `DEFAULT_ADMIN_ROLE` has the power to modify the `_uiMultiplier` parameter using the `setUIMultiplier` function. This parameter directly influences the fees or amounts deducted during token transfers. A malicious or compromised administrator could set excessively high fees, impacting the economic viability of token transactions for users.
 
 **Recommendation:** Token holders should understand that the administrator can change the fees associated with transfers using the `setUIMultiplier` function. It is recommended that any changes to transfer fees are communicated transparently and that the controlling role is secured with a multi-signature wallet to prevent unauthorized modifications.
 
 
-### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
-
-0.0% of the pool's LP is burned or time-locked. 94.2% is held, unlocked, by 10 address(es) other than the owner/deployer. One of them — a wallet, 0x5b0d…a9b9 — holds 70.8% and can remove that share at once; who controls it is not visible on-chain, so it is not treated as an independent provider. Some pools are concentrated-liquidity (V3/V4) positions; shares above are by position as GoPlus reports them. This assessment covers the main pool, which holds 89% of the token's DEX liquidity; the other pools were not assessed.
-
-**Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
-
-
-### `CP-08` — Administrator Can Change Transfer Limits  *(Severity: Low · Status: Unresolved)*
+### `CP-08` — Administrator Can Change Transfer Limits  *(Severity: Informational · Status: Unresolved)*
 
 The `DEFAULT_ADMIN_ROLE` can adjust numeric limits checked during the transfer process, such as those related to the UI multiplier, via the `setUIMultiplier` function. While not directly a "fee," changes to this multiplier could indirectly affect perceived transfer amounts or introduce unexpected behavior related to how amounts are scaled or validated.
 
@@ -77,14 +70,14 @@ The `DEFAULT_ADMIN_ROLE` can adjust numeric limits checked during the transfer p
 
 ### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-The ten largest holders own 92.1% of supply. Of that, 22.8% in DEX pools — not holders that can sell, so excluded from the concentration score. What remains: 66.2% in wallets, 3.0% in other contracts. 35,218 holders in total.
+The ten largest holders own 92.1% of supply. Of that, 22.8% in DEX pools — not holders that can sell, so excluded from the concentration score. What remains: 66.2% in wallets, 3.0% in other contracts. 35,218 holders in total. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
 
 **Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
 
 
-### `QA-IDENTITY` — Listed, but not independently verified  *(Severity: Informational · Status: Acknowledged)*
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
 
-Listed on CoinGecko as Alibaba (bStocks Tokenized Stock) (BABAB), market cap $9M, rank #1308. 35,218 holders.
+Listed on CoinGecko as Alibaba (bStocks Tokenized Stock) (BABAB), market cap $9M, rank #1294. Its admin (0x45e3…679d) controls 100 issuer-backed coins CoinGecko lists on bsc, $1.2B together, among them SpaceX (bStocks Tokenized Stock), Circle Internet Group (bStocks Tokenized Stock), SanDisk (bStocks Tokenized Stock): one issuer's programme, read on-chain. 35,218 holders. Verified by: issuer programme.
 
 **Recommendation:** Match the contract address against the project's official channels before trading.
 
@@ -98,7 +91,7 @@ Liquidity $2.9M (DexScreener, all pools). 24h trading volume $13.8M (CoinGecko, 
 
 ### `QA-PROFILE` — Asset class: Tokenized real-world asset  *(Severity: Informational · Status: Acknowledged)*
 
-A token backed by an off-chain asset (a stock, gold, treasury bills, a fund share) held by a named issuer or custodian. Issuance, redemption and transfer restrictions are the issuer's by design. The class itself adds no points; the contract and market facts decide the score. Basis: CoinGecko category: Tokenized Stocks. Tokenomics — Supply: mintable with no on-chain cap found. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $2.9M of DEX liquidity across 30 pools. Launch: 73 days of market history.
+A token backed by an off-chain asset (a stock, gold, treasury bills, a fund share) held by a named issuer or custodian. Issuance, redemption and transfer restrictions are the issuer's by design. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Tokenized Stocks. Tokenomics — Supply: issued and redeemed by the issuer against its backing. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $2.9M of DEX liquidity across 30 pools. Launch: 73 days of market history.
 
 **Recommendation:** Treat the issuer or custodian as the counterparty: check its custody reports and who may hold or redeem the token.
 

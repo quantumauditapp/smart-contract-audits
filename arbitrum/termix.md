@@ -2,14 +2,14 @@
 token: TermiX
 ticker: TMX
 network: arbitrum
-risk_score: 96
-status: critical
+risk_score: 84
+status: high
 date: 2026-09-02
 ---
 
 # TermiX (TMX) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 96/100 — 🔴 Critical Risk**
+> **Risk Score: 84/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/termix-arb)
 
@@ -25,9 +25,9 @@ No source code was provided for the contract at 0xd0a132ad2acc7f8803fdcf2b034776
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | Without access to the contract's source code, a detailed technical analysis of its architecture, code security, and access control mechanisms (7.1, 7.2, 7.3) cannot be performed. While well-designed… |
+| **Technical** | 6/10 | Medium | Without access to the contract's source code, a detailed technical analysis of its architecture, code security, and access control mechanisms (7.1, 7.2, 7.3) cannot be performed. While well-designed… |
 | **Governance / Economics** | 1/10 | High | An assessment of economic models, governance structures, and potential oracle manipulation (7.4, 7.5) is not possible without understanding the contract's functionality. Robust economic incentives… |
-| **Upgrades** | 4/10 | Medium | The upgradeability status and associated risks (7.7) cannot be determined without source code. If the contract is upgradeable, proper proxy patterns (e.g., UUPS, Transparent) and secure upgrade… |
+| **Upgrades** | 6/10 | Medium | The upgradeability status and associated risks (7.7) cannot be determined without source code. If the contract is upgradeable, proper proxy patterns (e.g., UUPS, Transparent) and secure upgrade… |
 
 ## LP Distribution
 
@@ -38,7 +38,14 @@ No source code was provided for the contract at 0xd0a132ad2acc7f8803fdcf2b034776
 
 ## Security Findings
 
-_⚪ 5 Informational_
+_🟡 1 Medium · ⚪ 9 Informational_
+
+### `QA-MARKET` — The market for this token  *(Severity: Medium · Status: Acknowledged)*
+
+Liquidity $7K (DexScreener, all pools). 24h trading volume $739 (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
 
 ### `I-01` — Lack of Publicly Verified Source Code  *(Severity: Informational · Status: Unresolved)*
 
@@ -73,6 +80,34 @@ The access control mechanisms governing critical functions within the contract c
 Without source code, any external contracts or protocols that this contract interacts with remain unknown. Undisclosed external dependencies can introduce cascading risks, as vulnerabilities in a dependent contract could directly impact the security and functionality of this contract.
 
 **Recommendation:** Clearly document all external dependencies, including their addresses and the nature of the interaction. Perform due diligence on all integrated contracts to understand their security posture and potential risks.
+
+
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
+
+The ten largest holders own 94.5% of supply. What remains: 92.1% in wallets, 2.4% in other contracts.
+
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Not listed by any independent source  *(Severity: Informational · Status: Acknowledged)*
+
+Not listed by CoinGecko or any exchange GoPlus tracks. Nothing independent confirms who is behind this token, so every power its contract grants is scored at face value.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-PROFILE` — Asset class: Project token  *(Severity: Informational · Status: Acknowledged)*
+
+A token issued by a project for use, governance or fundraising. Scored on its contract and market facts. The class itself adds no points; the contract and market facts decide the score. Basis: no class-specific evidence. Tokenomics — Supply: mint capability could not be read. Control: an owner that could not be resolved. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $7K of DEX liquidity across 1 pools. Launch: under a day of market history.
+
+**Recommendation:** Check the project's own documentation for what the token is used for; this report covers what the contract allows.
+
+
+### `QA-RECENT` — Recently launched — less than a day of market history  *(Severity: Informational · Status: Acknowledged)*
+
+The token's oldest DEX pool is less than a day old. Age is not part of the risk score — a new token is not a risky one by default — but a short history means fewer trades and holder changes behind the facts in this report.
+
+**Recommendation:** Re-check ownership, liquidity and holder distribution as the token matures; those are the facts that move early.
 
 ## Token Metrics
 

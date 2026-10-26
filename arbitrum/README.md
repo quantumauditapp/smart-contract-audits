@@ -18,7 +18,7 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 | [XAUt0](./xaut0.md) | XAUT0 | 🟡 37/100 Medium Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/xaut0-arb) |
 | [Staked USDai](./staked-usdai.md) | SUSDAI | 🟢 10/100 Low Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/staked-usdai-arb) |
 | [CipherOwl](./cipherowl.md) | CIOWL | 🟠 73/100 High Risk | 2026-10-22 | [↗](https://quantumaudit.app/token/cipherowl-arb) |
-| [SpaceX (Reality Tokenized)](./spacex-reality-tokenized.md) | RSPCX | 🟠 84/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/spacex-reality-tokenized-arb) |
+| [SpaceX (Reality Tokenized)](./spacex-reality-tokenized.md) | RSPCX | 🟡 48/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/spacex-reality-tokenized-arb) |
 | [Meanwhile](./meanwhile.md) | MENWH | 🟠 75/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/meanwhile-arb) |
 | [Immix](./immix.md) | IMMIX | 🟠 76/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/immix-arb) |
 | [Catalyst](./catalyst.md) | CALY | 🟠 76/100 High Risk | 2026-10-19 | [↗](https://quantumaudit.app/token/catalyst-arb) |
@@ -46,7 +46,7 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 | [Pepe](./pepe.md) | PEPE | 🟡 41/100 Medium Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/pepe-arb) |
 | [Vangrid](./vangrid-arb-25db.md) | VANG | 🟠 80/100 High Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/vangrid-arb-25db) |
 | [Pear](./pear.md) | PEAR | 🟢 24/100 Low Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/pear-arb) |
-| [Ninja Squad Token](./ninja-squad-token.md) | NST | 🔴 88/100 Critical Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/ninja-squad-token-arb) |
+| [Ninja Squad Token](./ninja-squad-token.md) | NST | 🟠 72/100 High Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/ninja-squad-token-arb) |
 | [Orthogonal](./orthogonal.md) | ORGOL | 🟠 69/100 High Risk | 2026-09-17 | [↗](https://quantumaudit.app/token/orthogonal-arb) |
 | [GU Factory](./gu-factory.md) | GU | 🔴 89/100 Critical Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/gu-factory-arb) |
 | [Sperax USD](./sperax-usd.md) | USDS | 🟡 51/100 Medium Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/sperax-usd-arb) |
@@ -63,13 +63,13 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 | [Aethir Token](./aethir-token.md) | ATH | 🟠 69/100 High Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/aethir-token-arb) |
 | [Adapt](./adapt.md) | ADAP | 🔴 100/100 Critical Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/adapt-arb) |
 | [Aave Token](./aave-token.md) | AAVE | 🟡 42/100 Medium Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/aave-token-arb) |
-| [Wrapped liquid staked Ether 2.0](./wrapped-liquid-staked-ether-20.md) | WSTETH | 🟡 42/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/wrapped-liquid-staked-ether-20-arb) |
-| [Wrapped BTC](./wrapped-btc.md) | WBTC | 🟡 57/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/wrapped-btc-arb) |
+| [Wrapped liquid staked Ether 2.0](./wrapped-liquid-staked-ether-20.md) | WSTETH | 🟢 8/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/wrapped-liquid-staked-ether-20-arb) |
+| [Wrapped BTC](./wrapped-btc.md) | WBTC | 🟢 10/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/wrapped-btc-arb) |
 | [WINR](./winr.md) | WINR | 🟡 60/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/winr-arb) |
 | [Vision](./vision.md) | VSN | 🟠 79/100 High Risk | 2026-07-23 | [↗](https://quantumaudit.app/token/vision-arb) |
 | [Vangrid](./vangrid.md) | VAN | 🟠 84/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/vangrid-arb) |
 | [Unicity Labs](./unicity-labs.md) | UNYLA | 🟠 81/100 High Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/unicity-labs-arb) |
-| [TermiX](./termix.md) | TMX | 🔴 96/100 Critical Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/termix-arb) |
+| [TermiX](./termix.md) | TMX | 🟠 84/100 High Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/termix-arb) |
 | [Subsquid](./subsquid.md) | SQD | 🟡 52/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/subsquid-arb) |
 | [RAIN](./rain.md) | RAIN | 🟡 43/100 Medium Risk | 2026-07-27 | [↗](https://quantumaudit.app/token/rain-arb) |
 | [Pendle](./pendle.md) | PENDLE | 🟢 26/100 Low Risk | 2026-08-06 | [↗](https://quantumaudit.app/token/pendle-arb) |
@@ -89,7 +89,7 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 | [Dai Stablecoin](./dai-stablecoin.md) | DAI | 🟠 69/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/dai-stablecoin-arb) |
 | [Curve DAO Token](./curve-dao-token.md) | CRV | 🟡 64/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/curve-dao-token-arb) |
 | [CoW Protocol Token](./cow-protocol-token.md) | COW | 🟡 54/100 Medium Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/cow-protocol-token-arb) |
-| [Coinbase Wrapped BTC](./coinbase-wrapped-btc.md) | CBBTC | 🟠 74/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/coinbase-wrapped-btc-arb) |
+| [Coinbase Wrapped BTC](./coinbase-wrapped-btc.md) | CBBTC | 🟢 9/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/coinbase-wrapped-btc-arb) |
 | [Chip](./chip.md) | CHIP | 🟠 73/100 High Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/chip-arb) |
 | [ChainLink Token](./chainlink-token.md) | LINK | 🟡 41/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/chainlink-token-arb) |
 | [Catena Labs](./catena-labs.md) | CATE | 🟠 80/100 High Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/catena-labs-arb) |

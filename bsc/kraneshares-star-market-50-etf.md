@@ -2,14 +2,14 @@
 token: KraneShares STAR Market 50 ETF
 ticker: KSTRB
 network: bsc
-risk_score: 84
-status: high
+risk_score: 12
+status: low
 date: 2026-10-21
 ---
 
 # KraneShares STAR Market 50 ETF (KSTRB) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 84/100 — 🟠 High Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kraneshares-star-market-50-etf-bsc)
 
@@ -27,9 +27,9 @@ Ensure that the external contracts linked via setCompliance and setPauseManager 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract follows standard OpenZeppelin upgradeable patterns (7.1 Architecture). Code security is robust, utilizing well-audited libraries for access control and ERC-20 compliance (7.2 Code… |
-| **Governance / Economics** | 1/10 | High | Governance is strictly centralized under role-based access control (7.3 Access Control, 7.5 Governance). Administrators have the power to alter token economics, including fees and multipliers (7.4… |
-| **Upgrades** | 1/10 | High | The protocol uses a Beacon Proxy pattern, allowing for efficient implementation updates (7.7 Upgrades). Operations are managed through standard administrative roles (7.8 Operations). While this… |
+| **Technical** | 9/10 | Low | The contract follows standard OpenZeppelin upgradeable patterns (7.1 Architecture). Code security is robust, utilizing well-audited libraries for access control and ERC-20 compliance (7.2 Code… |
+| **Governance / Economics** | 9/10 | Low | Governance is strictly centralized under role-based access control (7.3 Access Control, 7.5 Governance). Administrators have the power to alter token economics, including fees and multipliers (7.4… |
+| **Upgrades** | 5/10 | Medium | The protocol uses a Beacon Proxy pattern, allowing for efficient implementation updates (7.7 Upgrades). Operations are managed through standard administrative roles (7.8 Operations). While this… |
 
 ## Proxy Upgrade Controls
 
@@ -47,30 +47,23 @@ Ensure that the external contracts linked via setCompliance and setPauseManager 
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 5 Informational_
+_⚪ 8 Informational_
 
-### `CP-03` — Centralized Control Over Core Token Logic  *(Severity: High · Status: Unresolved)*
+### `CP-03` — Centralized Control Over Core Token Logic  *(Severity: Informational · Status: Unresolved)*
 
 The functions setPauseManager and setCompliance allow administrators to replace the external contracts that govern token transfers. Because transfers depend on these external contracts, an administrator can effectively halt or redirect the flow of tokens at will.
 
 **Recommendation:** Restrict these functions to a multi-signature wallet or a time-locked governance contract to prevent unilateral changes.
 
 
-### `CP-07` — Administrative Control Over Transfer Fees  *(Severity: Medium · Status: Unresolved)*
+### `CP-07` — Administrative Control Over Transfer Fees  *(Severity: Informational · Status: Unresolved)*
 
 The setUIMultiplier function allows privileged roles to change the fee structure applied to token transfers. This gives administrators the ability to modify the economic cost of using the token without prior notice to users.
 
 **Recommendation:** Implement a delay or a public notification period before fee changes take effect to protect users from sudden economic shifts.
 
 
-### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
-
-0.0% of the pool's LP is burned or time-locked. 100.0% is held, unlocked, by 9 address(es) other than the owner/deployer. No single one holds a majority: their exits thin the market rather than hand anyone the pool. Some pools are concentrated-liquidity (V3/V4) positions; shares above are by position as GoPlus reports them. This assessment covers the main pool, which holds 41% of the token's DEX liquidity; the other pools were not assessed.
-
-**Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
-
-
-### `CP-08` — Administrative Control Over Transfer Limits  *(Severity: Low · Status: Unresolved)*
+### `CP-08` — Administrative Control Over Transfer Limits  *(Severity: Informational · Status: Unresolved)*
 
 The setUIMultiplier function also controls numeric limits that affect transaction or wallet sizes. Administrators can adjust these thresholds, potentially restricting or enabling specific user behaviors.
 
@@ -79,14 +72,14 @@ The setUIMultiplier function also controls numeric limits that affect transactio
 
 ### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-The ten largest holders own 99.2% of supply. Of that, 8.2% in DEX pools — not holders that can sell, so excluded from the concentration score. What remains: 60.6% in wallets, 30.3% in other contracts. 585 holders in total.
+The ten largest holders own 99.2% of supply. Of that, 8.2% in DEX pools — not holders that can sell, so excluded from the concentration score. What remains: 60.6% in wallets, 30.3% in other contracts. 585 holders in total. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
 
 **Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
 
 
-### `QA-IDENTITY` — Not listed by any independent source  *(Severity: Informational · Status: Acknowledged)*
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
 
-585 holders. Not listed by CoinGecko or any exchange GoPlus tracks. Nothing independent confirms who is behind this token, so every power its contract grants is scored at face value.
+Listed on CoinGecko as KraneShares STAR Market 50 ETF (bStocks Tokenized ETF) (KSTRB), rank #3334. Its admin (0x45e3…679d) controls 100 issuer-backed coins CoinGecko lists on bsc, $1.2B together, among them SpaceX (bStocks Tokenized Stock), Circle Internet Group (bStocks Tokenized Stock), SanDisk (bStocks Tokenized Stock): one issuer's programme, read on-chain. 585 holders. Verified by: issuer programme.
 
 **Recommendation:** Match the contract address against the project's official channels before trading.
 
@@ -98,11 +91,11 @@ Liquidity $392K (DexScreener, all pools). 24h trading volume $1.7M (DexScreener,
 **Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
 
 
-### `QA-PROFILE` — Asset class: Project token  *(Severity: Informational · Status: Acknowledged)*
+### `QA-PROFILE` — Asset class: Tokenized real-world asset  *(Severity: Informational · Status: Acknowledged)*
 
-A token issued by a project for use, governance or fundraising. Scored on its contract and market facts. The class itself adds no points; the contract and market facts decide the score. Basis: no class-specific evidence. Tokenomics — Supply: mintable with no on-chain cap found. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $392K of DEX liquidity across 30 pools. Launch: under a day of market history.
+A token backed by an off-chain asset (a stock, gold, treasury bills, a fund share) held by a named issuer or custodian. Issuance, redemption and transfer restrictions are the issuer's by design. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Tokenized Commodity Exchange-Traded Products (ETPs). Tokenomics — Supply: issued and redeemed by the issuer against its backing. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $392K of DEX liquidity across 30 pools. Launch: under a day of market history.
 
-**Recommendation:** Check the project's own documentation for what the token is used for; this report covers what the contract allows.
+**Recommendation:** Treat the issuer or custodian as the counterparty: check its custody reports and who may hold or redeem the token.
 
 
 ### `QA-RECENT` — Recently launched — less than a day of market history  *(Severity: Informational · Status: Acknowledged)*

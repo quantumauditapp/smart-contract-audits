@@ -2,14 +2,14 @@
 token: SpaceX (Reality Tokenized)
 ticker: RSPCX
 network: arbitrum
-risk_score: 84
-status: high
+risk_score: 48
+status: medium
 date: 2026-10-20
 ---
 
 # SpaceX (Reality Tokenized) (RSPCX) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 84/100 — 🟠 High Risk**
+> **Risk Score: 48/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/spacex-reality-tokenized-arb)
 
@@ -26,8 +26,8 @@ The contract is a standard BeaconProxy implementation used to delegate calls to 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 6/10 | Medium | The contract utilizes a standard BeaconProxy pattern, ensuring clean separation between proxy storage and logic. 7.1 Architecture is robust, relying on a beacon to resolve implementation addresses.… |
-| **Governance / Economics** | 3/10 | High | 7.4 Economic and 7.5 Governance factors are not applicable to this proxy contract as it holds no assets and contains no governance logic. The contract serves only as a transparent interface for the… |
-| **Upgrades** | 4/10 | Medium | 7.7 Upgrades are handled via the Beacon pattern, which allows for atomic updates across multiple proxy instances. This is a secure and efficient way to manage contract evolution. 7.8 Operations are… |
+| **Governance / Economics** | 8/10 | Low | 7.4 Economic and 7.5 Governance factors are not applicable to this proxy contract as it holds no assets and contains no governance logic. The contract serves only as a transparent interface for the… |
+| **Upgrades** | 5/10 | Medium | 7.7 Upgrades are handled via the Beacon pattern, which allows for atomic updates across multiple proxy instances. This is a secure and efficient way to manage contract evolution. 7.8 Operations are… |
 
 ## Proxy Upgrade Controls
 
@@ -46,14 +46,7 @@ The contract is a standard BeaconProxy implementation used to delegate calls to 
 
 ## Security Findings
 
-_🟡 1 Medium · ⚪ 5 Informational_
-
-### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
-
-0.0% of the pool's LP is burned or time-locked. 100.0% is held, unlocked, by 1 address(es) other than the owner/deployer. One of them — a wallet, 0x78be…cf74 — holds 100.0% and can remove that share at once; who controls it is not visible on-chain, so it is not treated as an independent provider. Some pools are concentrated-liquidity (V3/V4) positions; shares above are by position as GoPlus reports them.
-
-**Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
-
+_⚪ 5 Informational_
 
 ### `I-01` — No issues identified in the reviewed source  *(Severity: Informational · Status: Acknowledged)*
 
@@ -64,14 +57,14 @@ The verified source code was reviewed and no issue rising to Informational sever
 
 ### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-The ten largest holders own 99.9% of supply. Of that, 0.7% in DEX pools — not holders that can sell, so excluded from the concentration score. What remains: 99.2% in wallets, 0.0% in other contracts. 136 holders in total.
+The ten largest holders own 99.9% of supply. Of that, 0.7% in DEX pools — not holders that can sell, so excluded from the concentration score. What remains: 99.2% in wallets, 0.0% in other contracts. 136 holders in total. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
 
 **Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
 
 
-### `QA-IDENTITY` — Listed, but not independently verified  *(Severity: Informational · Status: Acknowledged)*
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
 
-Listed on CoinGecko as SpaceX Tokenized Stock (Reality) (RSPCX), market cap $14M, rank #1003. 136 holders.
+Listed on CoinGecko as SpaceX Tokenized Stock (Reality) (RSPCX), market cap $15M, rank #954. Its admin (0xe656…bcbb) controls 674 issuer-backed coins CoinGecko lists on arbitrum, $155M together, among them Circle Internet Group Tokenized Stock (Reality), SanDisk Tokenized Stock (Reality), Strategy Tokenized Stock (Reality): one issuer's programme, read on-chain. 136 holders. Verified by: issuer programme.
 
 **Recommendation:** Match the contract address against the project's official channels before trading.
 
@@ -85,7 +78,7 @@ Liquidity $203K (DexScreener, all pools). 24h trading volume $146K (CoinGecko, a
 
 ### `QA-PROFILE` — Asset class: Tokenized real-world asset  *(Severity: Informational · Status: Acknowledged)*
 
-A token backed by an off-chain asset (a stock, gold, treasury bills, a fund share) held by a named issuer or custodian. Issuance, redemption and transfer restrictions are the issuer's by design. The class itself adds no points; the contract and market facts decide the score. Basis: CoinGecko category: Tokenized Stocks. Tokenomics — Supply: mint capability could not be read. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $203K of DEX liquidity across 1 pools. Launch: 35 days of market history.
+A token backed by an off-chain asset (a stock, gold, treasury bills, a fund share) held by a named issuer or custodian. Issuance, redemption and transfer restrictions are the issuer's by design. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Tokenized Stocks. Tokenomics — Supply: mint capability could not be read. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $203K of DEX liquidity across 1 pools. Launch: 35 days of market history.
 
 **Recommendation:** Treat the issuer or custodian as the counterparty: check its custody reports and who may hold or redeem the token.
 

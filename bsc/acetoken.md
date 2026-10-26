@@ -2,14 +2,14 @@
 token: ACEToken
 ticker: ACE
 network: bsc
-risk_score: 98
-status: critical
+risk_score: 77
+status: high
 date: 2026-08-15
 ---
 
 # ACEToken (ACE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 98/100 — 🔴 Critical Risk**
+> **Risk Score: 77/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/acetoken-bsc)
 
@@ -25,7 +25,7 @@ The ACEToken contract is a wrapped ERC-20 token built upon OpenZeppelin's battle
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The `ACEToken` contract is a minimal wrapper around `WrappedERC20`, which extends OpenZeppelin's battle-tested `ERC20` implementation (7.1). The custom logic for `mint` and `burn` is correctly… |
+| **Technical** | 6/10 | Medium | The `ACEToken` contract is a minimal wrapper around `WrappedERC20`, which extends OpenZeppelin's battle-tested `ERC20` implementation (7.1). The custom logic for `mint` and `burn` is correctly… |
 | **Governance / Economics** | 1/10 | High | The economic model of `ACEToken` is highly centralized, with the `bridge` address holding exclusive control over the `mint` and `burn` functions (7.4). This design is typical for wrapped tokens but… |
 | **Upgrades** | 3/10 | High | The `ACEToken` and `WrappedERC20` contracts are not designed with upgradeability patterns (e.g., proxies). They are deployed as immutable implementations. This eliminates risks associated with… |
 
@@ -38,34 +38,69 @@ The ACEToken contract is a wrapped ERC-20 token built upon OpenZeppelin's battle
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control of Token Supply by Bridge  *(Severity: High · Status: Unresolved)*
-
-The `WrappedERC20` contract, and thus `ACEToken`, grants the `bridge` address exclusive control over `mint` and `burn` functions. This centralization means the security of the `ACEToken`'s supply is entirely dependent on the security and integrity of the `bridge` contract. A compromise of the `bridge` could lead to arbitrary minting or burning of `ACEToken`, severely impacting its value and ecosystem (7.3, 7.4).
-
-**Recommendation:** While inherent to wrapped token designs, it's crucial to ensure the `bridge` contract itself undergoes rigorous security audits and implements robust security measures (e.g., multi-signature, time-locks, circuit breakers). Users should be aware of this centralized control point.
-
+_🟡 4 Medium · 🟢 1 Low · ⚪ 4 Informational_
 
 ### `M-01` — Dependency on External Bridge Contract Security  *(Severity: Medium · Status: Unresolved)*
 
-The `ACEToken` contract's functionality, particularly its supply management, is entirely reliant on an external `bridge` contract whose code was not provided for this audit. The security posture of the `ACEToken` is therefore directly tied to the security of this external `bridge`. Any vulnerabilities in the `bridge` contract could directly impact the integrity and functionality of `ACEToken` (7.6).
+Not confirmed by static analysis (the model's own reading of the source). The `ACEToken` contract's functionality, particularly its supply management, is entirely reliant on an external `bridge` contract whose code was not provided for this audit. The security posture of the `ACEToken` is therefore directly tied to the security of this external `bridge`. Any vulnerabilities in the `bridge` contract could directly impact the integrity and functionality of `ACEToken` (7.6).
 
 **Recommendation:** The `bridge` contract should be thoroughly audited for common vulnerabilities, including reentrancy, access control, and logic errors. Implement robust monitoring and incident response for the bridge.
 
 
+### `M-02` — Centralized Control of Token Supply by Bridge  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `WrappedERC20` contract, and thus `ACEToken`, grants the `bridge` address exclusive control over `mint` and `burn` functions. This centralization means the security of the `ACEToken`'s supply is entirely dependent on the security and integrity of the `bridge` contract. A compromise of the `bridge` could lead to arbitrary minting or burning of `ACEToken`, severely impacting its value and ecosystem (7.3, 7.4).
+
+**Recommendation:** While inherent to wrapped token designs, it's crucial to ensure the `bridge` contract itself undergoes rigorous security audits and implements robust security measures (e.g., multi-signature, time-locks, circuit breakers). Users should be aware of this centralized control point.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Medium · Status: Acknowledged)*
+
+Liquidity $18 (DexScreener, all pools). 24h trading volume $2 (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-POWERS` — What the token's controller can do  *(Severity: Medium · Status: Acknowledged)*
+
+The contract lets its controller — an owner key — mint new supply. Nothing independent vouches for whoever holds them, so each is a live risk to holders.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
 ### `L-01` — Standard ERC-20 Front-Running Risks  *(Severity: Low · Status: Unresolved)*
 
-The `approve` function in the underlying OpenZeppelin ERC20 contract is susceptible to a known front-running attack vector. If a user approves an amount, and then attempts to decrease that approval, a malicious actor could front-run the decrease transaction, spending the original approved amount before the decrease takes effect. This could lead to the malicious actor spending more than the user intended. While mitigated by `increaseAllowance` and `decreaseAllowance`, the base `approve` function still exists (7.2).
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function in the underlying OpenZeppelin ERC20 contract is susceptible to a known front-running attack vector. If a user approves an amount, and then attempts to decrease that approval, a malicious actor could front-run the decrease transaction, spending the original approved amount before the decrease takes effect. This could lead to the malicious actor spending more than the user intended. While mitigated by `increaseAllowance` and `decreaseAllowance`, the base `approve` function still exists (7.2).
 
 **Recommendation:** Users should be advised to use `increaseAllowance` and `decreaseAllowance` functions instead of directly calling `approve` to modify existing allowances, as these functions are not susceptible to this specific front-running attack.
 
 
 ### `I-01` — Immutability of Bridge Address  *(Severity: Informational · Status: Unresolved)*
 
-The `bridge` address is declared as `immutable` in `WrappedERC20.sol` and set during construction. This prevents any modification of the bridge address after deployment, which is generally good for security as it removes a potential point of attack for unauthorized changes. However, it also means that if the initially configured `bridge` address is incorrect or becomes compromised and unrecoverable, there is no on-chain mechanism to update it, potentially rendering the token's mint/burn functionality permanently unusable or controlled by a defunct address (7.8).
+Not confirmed by static analysis (the model's own reading of the source). The `bridge` address is declared as `immutable` in `WrappedERC20.sol` and set during construction. This prevents any modification of the bridge address after deployment, which is generally good for security as it removes a potential point of attack for unauthorized changes. However, it also means that if the initially configured `bridge` address is incorrect or becomes compromised and unrecoverable, there is no on-chain mechanism to update it, potentially rendering the token's mint/burn functionality permanently unusable or controlled by a defunct address (7.8).
 
 **Recommendation:** Ensure extreme diligence in verifying the `bridge` address during deployment. Consider off-chain emergency procedures or a migration plan in case the bridge becomes permanently inoperable.
+
+
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
+
+The ten largest holders own 89.1% of supply. What remains: 89.1% in wallets, 0.0% in other contracts.
+
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Listed, but not independently verified  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as Fusionist (ACE), market cap $16M, rank #944.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-PROFILE` — Asset class: Project token  *(Severity: Informational · Status: Acknowledged)*
+
+A token issued by a project for use, governance or fundraising. Scored on its contract and market facts. The class itself adds no points; the contract and market facts decide the score. Basis: no class-specific evidence. Tokenomics — Supply: mintable with no on-chain cap found. Control: an owner key. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $18 of DEX liquidity across 1 pools. Launch: 971 days of market history.
+
+**Recommendation:** Check the project's own documentation for what the token is used for; this report covers what the contract allows.
 
 ## Token Metrics
 

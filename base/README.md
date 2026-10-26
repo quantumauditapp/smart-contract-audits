@@ -51,7 +51,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 | [Pangea](./pangea-base-2a83.md) | PANGEA | 🟠 84/100 High Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/pangea-base-2a83) |
 | [XTO](./xto-base-db59.md) | XTO | 🟡 58/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/xto-base-db59) |
 | [United States Oil Exchange 🔥](./united-states-oil-exchange-base-46d2.md) | USOE | 🟡 59/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-base-46d2) |
-| [Base tBTC v2](./base-tbtc-v2.md) | TBTC | 🟡 47/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/base-tbtc-v2-base) |
+| [Base tBTC v2](./base-tbtc-v2.md) | TBTC | 🟢 11/100 Low Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/base-tbtc-v2-base) |
 | [Dacity Coin](./dacity-coin.md) | DACITY | 🟡 55/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/dacity-coin-base) |
 | [Aura Final Boss](./aura-final-boss-base-5a37.md) | KIMCHI | 🟡 56/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/aura-final-boss-base-5a37) |
 | [Federal Oil Trust Fund (FOTF)](./federal-oil-trust-fund-fotf.md) | FOTF | 🟡 55/100 Medium Risk | 2026-10-25 | [↗](https://quantumaudit.app/token/federal-oil-trust-fund-fotf-base) |
@@ -338,7 +338,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 | [Zest](./zest.md) | ZEST | 🟡 57/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/zest-base) |
 | [XMAQUINA](./xmaquina.md) | DEUS | 🟠 71/100 High Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/xmaquina-base) |
 | [Wrapped PROS](./wrapped-pros.md) | PROS | 🟠 77/100 High Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/wrapped-pros-base) |
-| [Wrapped liquid staked Ether 2.0](./wrapped-liquid-staked-ether-20.md) | WSTETH | 🟡 47/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/wrapped-liquid-staked-ether-20-base) |
+| [Wrapped liquid staked Ether 2.0](./wrapped-liquid-staked-ether-20.md) | WSTETH | 🟢 9/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/wrapped-liquid-staked-ether-20-base) |
 | [Wrapped Coinbase Global Inc ST0x](./wrapped-coinbase-global-inc-st0x.md) | WTCOIN | 🟡 59/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/wrapped-coinbase-global-inc-st0x-base) |
 | [Voice of the Gods by Virtuals](./voice-of-the-gods-by-virtuals.md) | ADM | 🟠 66/100 High Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/voice-of-the-gods-by-virtuals-base) |
 | [Virtual Protocol](./virtual-protocol.md) | VIRTUAL | 🟡 35/100 Medium Risk | 2026-08-07 | [↗](https://quantumaudit.app/token/virtual-protocol-base) |
@@ -428,7 +428,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 | [KellyClaude](./kellyclaude.md) | KELLYCLAUDE | 🟢 34/100 Low Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/kellyclaude-base) |
 | [Keeta](./keeta.md) | KTA | 🟢 17/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/keeta-base) |
 | [KAITO](./kaito.md) | KAITO | 🟡 48/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/kaito-base) |
-| [Jito Staked SOL](./jito-staked-sol.md) | JITOSOL | 🟡 62/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/jito-staked-sol-base) |
+| [Jito Staked SOL](./jito-staked-sol.md) | JITOSOL | 🟢 8/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/jito-staked-sol-base) |
 | [jesse](./jesse.md) | JESSE | 🟡 63/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/jesse-base) |
 | [Jerry the goat](./jerry-the-goat.md) | JERRY | 🟢 31/100 Low Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/jerry-the-goat-base) |
 | [Intuition](./intuition.md) | TRUST | 🔴 98/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/intuition-base) |
@@ -446,7 +446,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 | [FLock.io](./flockio.md) | FLOCK | 🔴 85/100 Critical Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/flockio-base) |
 | [FAI](./fai.md) | FAI | 🟢 19/100 Low Risk | 2026-08-05 | [↗](https://quantumaudit.app/token/fai-base) |
 | [evo](./evo.md) | EVO | 🟡 60/100 Medium Risk | 2026-07-28 | [↗](https://quantumaudit.app/token/evo-base) |
-| [EURC](./eurc.md) | EURC | 🟡 55/100 Medium Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/eurc-base) |
+| [EURC](./eurc.md) | EURC | 🟢 9/100 Low Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/eurc-base) |
 | [Ethy AI by Virtuals](./ethy-ai-by-virtuals.md) | ETHY | 🟠 69/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/ethy-ai-by-virtuals-base) |
 | [ether.fi governance token](./etherfi-governance-token.md) | ETHFI | 🟠 65/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/etherfi-governance-token-base) |
 | [Elsa](./elsa.md) | ELSA | 🟡 45/100 Medium Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/elsa-base) |
@@ -465,11 +465,11 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 | [CoW Protocol Token](./cow-protocol-token.md) | COW | 🟠 68/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/cow-protocol-token-base) |
 | [Cookie](./cookie.md) | COOKIE | 🟡 35/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/cookie-base) |
 | [Coinye West](./coinye-west.md) | COINYE | 🟢 9/100 Low Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/coinye-west-base) |
-| [Coinbase Wrapped XRP](./coinbase-wrapped-xrp.md) | CBXRP | 🟡 57/100 Medium Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/coinbase-wrapped-xrp-base) |
-| [Coinbase Wrapped Staked ETH](./coinbase-wrapped-staked-eth.md) | CBETH | 🟡 48/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/coinbase-wrapped-staked-eth-base) |
+| [Coinbase Wrapped XRP](./coinbase-wrapped-xrp.md) | CBXRP | 🟢 11/100 Low Risk | 2026-07-24 | [↗](https://quantumaudit.app/token/coinbase-wrapped-xrp-base) |
+| [Coinbase Wrapped Staked ETH](./coinbase-wrapped-staked-eth.md) | CBETH | 🟢 11/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/coinbase-wrapped-staked-eth-base) |
 | [Coinbase Wrapped MEGA](./coinbase-wrapped-mega.md) | CBMEGA | 🔴 85/100 Critical Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/coinbase-wrapped-mega-base) |
 | [Coinbase Wrapped Hyperliquid](./coinbase-wrapped-hyperliquid.md) | CBHYPE | 🟢 18/100 Low Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/coinbase-wrapped-hyperliquid-base) |
-| [Coinbase Wrapped BTC](./coinbase-wrapped-btc.md) | CBBTC | 🟡 55/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/coinbase-wrapped-btc-base) |
+| [Coinbase Wrapped BTC](./coinbase-wrapped-btc.md) | CBBTC | 🟢 9/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/coinbase-wrapped-btc-base) |
 | [Coinbase Man](./coinbase-man.md) | BRIAN | 🟢 30/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/coinbase-man-base) |
 | [Cluster Protocol](./cluster-protocol.md) | CP | 🟠 65/100 High Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/cluster-protocol-base) |
 | [ClawBank](./clawbank.md) | CLAWBANK | 🟢 12/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/clawbank-base) |

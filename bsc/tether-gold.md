@@ -2,14 +2,14 @@
 token: Tether Gold
 ticker: XAUT
 network: bsc
-risk_score: 87
-status: critical
+risk_score: 12
+status: low
 date: 2026-08-11
 ---
 
 # Tether Gold (XAUT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 87/100 — 🔴 Critical Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tether-gold-bsc)
 
@@ -25,9 +25,9 @@ The audit covers the TetherTokenV2 contract, an upgradeable ERC20 token with EIP
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract leverages OpenZeppelin's upgradeable ERC20, Ownable, and Permit standards, enhancing code security and maintainability (7.2 Code Security). It implements EIP-3009 for signature-based… |
-| **Governance / Economics** | 1/10 | High | The contract exhibits a high degree of centralization, with the owner (a 3/5 multisig) possessing extensive control over the token's economic parameters and user funds (7.4 Economic, 7.5 Governance).… |
-| **Upgrades** | 1/10 | High | The contract utilizes the TransparentUpgradeableProxy pattern from OpenZeppelin, a well-established and secure upgrade mechanism (7.7 Upgrades). The implementation contract correctly inherits from… |
+| **Technical** | 9/10 | Low | The contract leverages OpenZeppelin's upgradeable ERC20, Ownable, and Permit standards, enhancing code security and maintainability (7.2 Code Security). It implements EIP-3009 for signature-based… |
+| **Governance / Economics** | 9/10 | Low | The contract exhibits a high degree of centralization, with the owner (a 3/5 multisig) possessing extensive control over the token's economic parameters and user funds (7.4 Economic, 7.5 Governance).… |
+| **Upgrades** | 7/10 | Low | The contract utilizes the TransparentUpgradeableProxy pattern from OpenZeppelin, a well-established and secure upgrade mechanism (7.7 Upgrades). The implementation contract correctly inherits from… |
 
 ## Proxy Upgrade Controls
 
@@ -46,48 +46,83 @@ The audit covers the TetherTokenV2 contract, an upgradeable ERC20 token with EIP
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `C-01` — Centralized Control and Owner Privileges  *(Severity: Critical · Status: Unresolved)*
-
-The contract owner (a 3/5 multisig) possesses extensive centralized control over the token supply and user funds. The owner can `mint` new tokens, `redeem` (burn) tokens from their own balance, `block` any address, and `destroyBlockedFunds` from blocked users. This level of control allows the owner to arbitrarily increase/decrease token supply and confiscate user assets, representing a significant economic and governance risk (7.3 Access Control, 7.4 Economic, 7.5 Governance).
-
-**Recommendation:** Clearly communicate the extent of owner privileges to all users and stakeholders. Consider implementing time-locks or community governance for critical functions like minting, burning, or fund destruction to decentralize control over time. Ensure robust operational security for the multisig wallet controlling the owner address.
-
-
-### `H-01` — Potential Gas Limit Exceeded in `multiTransfer`  *(Severity: High · Status: Unresolved)*
-
-The `multiTransfer` function iterates through arrays of recipients and values to perform multiple `transfer` calls. If the `_recipients` and `_values` arrays are excessively large, the transaction could exceed the block gas limit, causing the transaction to fail or become unusable for large batch operations (7.2 Code Security).
-
-**Recommendation:** Implement a mechanism to limit the number of transfers per transaction, or provide a way to process transfers in smaller batches. Alternatively, consider using a more gas-efficient batch transfer pattern if large-scale operations are a primary use case.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 8 Informational_
 
 ### `M-01` — Truncated `_permit` Function Source Code  *(Severity: Medium · Status: Unresolved)*
 
-The provided source code for the `_permit` function in `TetherTokenV2.sol` is truncated. This prevents a complete security analysis of the ERC20 Permit functionality, which is critical for gasless transactions and involves signature verification (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the `_permit` function in `TetherTokenV2.sol` is truncated. This prevents a complete security analysis of the ERC20 Permit functionality, which is critical for gasless transactions and involves signature verification (7.2 Code Security).
 
 **Recommendation:** Provide the complete and verified source code for the `_permit` function to allow for a thorough security audit of its implementation, especially regarding signature validation, nonce management, and deadline checks.
 
 
-### `M-02` — Owner Bypass for Blocked `from` Address in `_beforeTokenTransfer`  *(Severity: Medium · Status: Unresolved)*
+### `M-04` — Potential Gas Limit Exceeded in `multiTransfer`  *(Severity: Medium · Status: Unresolved)*
 
-The `_beforeTokenTransfer` hook contains a condition `require(!isBlocked[from] \|\| msg.sender == owner(), 'TetherToken: from is blocked');`. This allows the contract owner to bypass the blocked list check and transfer tokens *from* a blocked address. While consistent with the `destroyBlockedFunds` functionality, this grants the owner additional power to move funds from blocked accounts without explicitly burning them, which might not be immediately obvious to users (7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The `multiTransfer` function iterates through arrays of recipients and values to perform multiple `transfer` calls. If the `_recipients` and `_values` arrays are excessively large, the transaction could exceed the block gas limit, causing the transaction to fail or become unusable for large batch operations (7.2 Code Security).
 
-**Recommendation:** Clearly document this specific owner capability in user-facing materials and internal documentation. Ensure that the implications of this bypass are fully understood by all stakeholders, as it provides a mechanism for the owner to reallocate funds from blocked users.
+**Recommendation:** Implement a mechanism to limit the number of transfers per transaction, or provide a way to process transfers in smaller batches. Alternatively, consider using a more gas-efficient batch transfer pattern if large-scale operations are a primary use case.
 
 
 ### `L-01` — Mixed Solidity Pragma Directives  *(Severity: Low · Status: Unresolved)*
 
-The `EIP3009.sol` file uses `pragma solidity >=0.6.12 <0.9.0;`, while `TetherToken.sol` and `TetherTokenV2.sol` use `pragma solidity 0.8.4;`. Although `0.8.4` falls within the specified range, using consistent and explicit pragma directives across all files is a best practice for clarity and to prevent unexpected compiler behavior with future versions (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `EIP3009.sol` file uses `pragma solidity >=0.6.12 <0.9.0;`, while `TetherToken.sol` and `TetherTokenV2.sol` use `pragma solidity 0.8.4;`. Although `0.8.4` falls within the specified range, using consistent and explicit pragma directives across all files is a best practice for clarity and to prevent unexpected compiler behavior with future versions (7.2 Code Security).
 
 **Recommendation:** Unify the pragma directives to `pragma solidity 0.8.4;` across all contract files for consistency and to explicitly state the intended compiler version.
 
 
 ### `I-01` — Unused `isTrusted` Mapping  *(Severity: Informational · Status: Unresolved)*
 
-The `isTrusted` mapping is declared in `TetherToken.sol` but is not used anywhere in the provided contract code. This variable consumes storage space without serving any functional purpose (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `isTrusted` mapping is declared in `TetherToken.sol` but is not used anywhere in the provided contract code. This variable consumes storage space without serving any functional purpose (7.2 Code Security).
 
 **Recommendation:** Remove the `isTrusted` mapping if it is not intended for future use, or implement its intended functionality. If it's a placeholder for future features, consider adding a comment to explain its purpose.
+
+
+### `I-02` — Centralized Control and Owner Privileges  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract owner (a 3/5 multisig) possesses extensive centralized control over the token supply and user funds. The owner can `mint` new tokens, `redeem` (burn) tokens from their own balance, `block` any address, and `destroyBlockedFunds` from blocked users. This level of control allows the owner to arbitrarily increase/decrease token supply and confiscate user assets, representing a significant economic and governance risk (7.3 Access Control, 7.4 Economic, 7.5 Governance).
+
+**Recommendation:** Clearly communicate the extent of owner privileges to all users and stakeholders. Consider implementing time-locks or community governance for critical functions like minting, burning, or fund destruction to decentralize control over time. Ensure robust operational security for the multisig wallet controlling the owner address.
+
+
+### `I-03` — Owner Bypass for Blocked `from` Address in `_beforeTokenTransfer`  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_beforeTokenTransfer` hook contains a condition `require(!isBlocked[from] \|\| msg.sender == owner(), 'TetherToken: from is blocked');`. This allows the contract owner to bypass the blocked list check and transfer tokens *from* a blocked address. While consistent with the `destroyBlockedFunds` functionality, this grants the owner additional power to move funds from blocked accounts without explicitly burning them, which might not be immediately obvious to users (7.3 Access Control).
+
+**Recommendation:** Clearly document this specific owner capability in user-facing materials and internal documentation. Ensure that the implications of this bypass are fully understood by all stakeholders, as it provides a mechanism for the owner to reallocate funds from blocked users.
+
+
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
+
+The ten largest holders own 92.9% of supply. What remains: 83.8% in wallets, 9.0% in other contracts. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
+
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as Tether Gold Tokens (XAUT0), market cap $110M. Verified by: CoinGecko.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $3.5M (DexScreener, all pools). 24h trading volume $4.6M (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-POWERS` — What the token's controller can do  *(Severity: Informational · Status: Acknowledged)*
+
+The contract lets its controller — a 3-of-5 multisig — mint new supply. These are the issuer's controls by design; for a verified issuer they are counterparty risk — the issuer can act on any holder, including you.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
+### `QA-PROFILE` — Asset class: Tokenized real-world asset  *(Severity: Informational · Status: Acknowledged)*
+
+A token backed by an off-chain asset (a stock, gold, treasury bills, a fund share) held by a named issuer or custodian. Issuance, redemption and transfer restrictions are the issuer's by design. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Tokenized Gold. Tokenomics — Supply: issued and redeemed by the issuer against its backing. Control: a 3-of-5 multisig. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $3.5M of DEX liquidity across 16 pools. Launch: 126 days of market history.
+
+**Recommendation:** Treat the issuer or custodian as the counterparty: check its custody reports and who may hold or redeem the token.
 
 ## Token Metrics
 

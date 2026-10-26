@@ -2,14 +2,14 @@
 token: World Liberty Financial USD
 ticker: USD1
 network: bsc
-risk_score: 77
-status: high
+risk_score: 10
+status: low
 date: 2026-09-19
 ---
 
 # World Liberty Financial USD (USD1) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 77/100 — 🟠 High Risk**
+> **Risk Score: 10/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-liberty-financial-usd-bsc)
 
@@ -25,9 +25,9 @@ The StablecoinV2 contract, an upgradeable ERC-20 token, implements EIP-3009 for 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates strong technical foundations by utilizing OpenZeppelin's battle-tested upgradeable contracts and `SafeERC20` for secure token interactions (7.2 Code Security). The… |
-| **Governance / Economics** | 1/10 | High | The contract's owner, a 3/5 multisig, provides a good level of decentralization for administrative actions (7.5 Governance). However, the `drain` and `reallocate` functions grant the owner… |
-| **Upgrades** | 1/10 | High | The contract is designed for upgradeability using OpenZeppelin's `TransparentUpgradeableProxy` pattern, correctly employing `_disableInitializers()` and `reinitializer` (7.7 Upgrades). The use of a… |
+| **Technical** | 9/10 | Low | The contract demonstrates strong technical foundations by utilizing OpenZeppelin's battle-tested upgradeable contracts and `SafeERC20` for secure token interactions (7.2 Code Security). The… |
+| **Governance / Economics** | 9/10 | Low | The contract's owner, a 3/5 multisig, provides a good level of decentralization for administrative actions (7.5 Governance). However, the `drain` and `reallocate` functions grant the owner… |
+| **Upgrades** | 7/10 | Low | The contract is designed for upgradeability using OpenZeppelin's `TransparentUpgradeableProxy` pattern, correctly employing `_disableInitializers()` and `reinitializer` (7.7 Upgrades). The use of a… |
 
 ## Proxy Upgrade Controls
 
@@ -39,41 +39,76 @@ The StablecoinV2 contract, an upgradeable ERC-20 token, implements EIP-3009 for 
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Centralized Control Over Frozen Account Funds  *(Severity: High · Status: Unresolved)*
-
-The `drain` and `reallocate` functions allow the contract owner to transfer all funds from a frozen account to any specified address. While intended for emergency situations, this grants the owner significant centralized control over user assets in frozen accounts. A compromise of the owner's private keys or the multisig could lead to the unauthorized draining or reallocation of funds from all frozen accounts.
-
-**Recommendation:** Implement additional safeguards for `drain` and `reallocate` functions. Consider requiring a multi-signature approval from a separate, highly secure committee, or introducing a timelock mechanism to allow users to react to pending fund movements. Clearly document the conditions under which these functions would be used.
-
+_🟡 1 Medium · 🟢 1 Low · ⚪ 8 Informational_
 
 ### `M-01` — Batch Cancellation Silent Error Handling  *(Severity: Medium · Status: Unresolved)*
 
-The `batchCancelAuthorization` function includes an `_ignoreErrors` parameter. If set to `true`, individual authorization cancellations that fail (e.g., due to invalid signatures or already used nonces) will be silently skipped, and the transaction will not revert. This behavior might be unexpected for users who assume all authorizations in a batch will be canceled or that the transaction will revert on any failure, potentially leading to confusion or incorrect off-chain state tracking.
+Not confirmed by static analysis (the model's own reading of the source). The `batchCancelAuthorization` function includes an `_ignoreErrors` parameter. If set to `true`, individual authorization cancellations that fail (e.g., due to invalid signatures or already used nonces) will be silently skipped, and the transaction will not revert. This behavior might be unexpected for users who assume all authorizations in a batch will be canceled or that the transaction will revert on any failure, potentially leading to confusion or incorrect off-chain state tracking.
 
 **Recommendation:** Evaluate if silent error ignoring is the desired behavior. If not, consider removing the `_ignoreErrors` parameter or making the default behavior to revert on any individual failure. If `_ignoreErrors` is kept, ensure clear documentation and user interface communication about its implications, and consider emitting more granular events for each successful/failed cancellation within the batch.
 
 
 ### `L-01` — Undetermined Security of Parent Contract `Stablecoin`  *(Severity: Low · Status: Unresolved)*
 
-The `StablecoinV2` contract inherits from `Stablecoin`, but the source code for `Stablecoin` was not provided for this audit. The security and upgradeability of `StablecoinV2` are directly dependent on the correctness, security, and proper upgradeability patterns of its parent contract. Any vulnerabilities, improper storage layouts, or upgrade issues within `Stablecoin` could directly impact `StablecoinV2`.
+Not confirmed by static analysis (the model's own reading of the source). The `StablecoinV2` contract inherits from `Stablecoin`, but the source code for `Stablecoin` was not provided for this audit. The security and upgradeability of `StablecoinV2` are directly dependent on the correctness, security, and proper upgradeability patterns of its parent contract. Any vulnerabilities, improper storage layouts, or upgrade issues within `Stablecoin` could directly impact `StablecoinV2`.
 
 **Recommendation:** Conduct a full security audit of the `Stablecoin` parent contract to ensure it adheres to best practices, especially regarding upgradeability and storage management. Verify that its design does not introduce any hidden vulnerabilities or storage collision risks for `StablecoinV2`.
 
 
 ### `I-01` — EIP-712 Domain Separator Reliance on Mutable `name()`  *(Severity: Informational · Status: Unresolved)*
 
-The EIP-712 domain separator is initialized using `__EIP712_init(name(), _EIP712_VERSION)`. The `name()` function, while typically static for ERC-20 tokens, could theoretically be changed in a future contract upgrade. If the token's `name()` were to change, it would invalidate all previously signed EIP-712 authorizations, as the domain separator would no longer match.
+Not confirmed by static analysis (the model's own reading of the source). The EIP-712 domain separator is initialized using `__EIP712_init(name(), _EIP712_VERSION)`. The `name()` function, while typically static for ERC-20 tokens, could theoretically be changed in a future contract upgrade. If the token's `name()` were to change, it would invalidate all previously signed EIP-712 authorizations, as the domain separator would no longer match.
 
 **Recommendation:** While `name()` is generally considered immutable for tokens, for maximum robustness and future-proofing, consider using a more stable identifier for the EIP-712 domain separator that is guaranteed not to change across upgrades, such as a hardcoded string or a constant that is not derived from a potentially mutable contract state.
 
 
 ### `I-02` — Lack of Event for Authorization Usage  *(Severity: Informational · Status: Unresolved)*
 
-The `_setAuthorizationAsUsed` function, which marks an EIP-3009 authorization nonce as used, does not emit an explicit event. While `AuthorizationCanceled` is emitted when an authorization is canceled, there is no corresponding event when an authorization is successfully used (e.g., via `transferWithAuthorization` or `receiveWithAuthorization`). This makes it harder for off-chain systems to track the exact moment an authorization becomes invalid due to usage.
+Not confirmed by static analysis (the model's own reading of the source). The `_setAuthorizationAsUsed` function, which marks an EIP-3009 authorization nonce as used, does not emit an explicit event. While `AuthorizationCanceled` is emitted when an authorization is canceled, there is no corresponding event when an authorization is successfully used (e.g., via `transferWithAuthorization` or `receiveWithAuthorization`). This makes it harder for off-chain systems to track the exact moment an authorization becomes invalid due to usage.
 
 **Recommendation:** Consider emitting an event (e.g., `AuthorizationUsed(address indexed authorizer, bytes32 indexed nonce)`) within the `_setAuthorizationAsUsed` function. This would provide clearer visibility into the lifecycle of authorizations and facilitate more robust off-chain monitoring and indexing.
+
+
+### `I-03` — Centralized Control Over Frozen Account Funds  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `drain` and `reallocate` functions allow the contract owner to transfer all funds from a frozen account to any specified address. While intended for emergency situations, this grants the owner significant centralized control over user assets in frozen accounts. A compromise of the owner's private keys or the multisig could lead to the unauthorized draining or reallocation of funds from all frozen accounts.
+
+**Recommendation:** Implement additional safeguards for `drain` and `reallocate` functions. Consider requiring a multi-signature approval from a separate, highly secure committee, or introducing a timelock mechanism to allow users to react to pending fund movements. Clearly document the conditions under which these functions would be used.
+
+
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
+
+The ten largest holders own 85.6% of supply. What remains: 80.9% in wallets, 4.6% in other contracts. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
+
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as USD1 (USD1), market cap $3.9B, rank #29. Verified by: CoinGecko.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $8.4M (DexScreener, all pools). 24h trading volume $607K (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-POWERS` — What the token's controller can do  *(Severity: Informational · Status: Acknowledged)*
+
+The contract lets its controller — a ProxyAdmin contract — mint new supply. These are the issuer's controls by design; for a verified issuer they are counterparty risk — the issuer can act on any holder, including you.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
+### `QA-PROFILE` — Asset class: Stablecoin  *(Severity: Informational · Status: Acknowledged)*
+
+A token designed to hold a fixed value (usually $1). Its safety rests on what backs it and on who can mint, freeze or pause it. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Stablecoins. Tokenomics — Supply: issued and redeemed by the issuer against its backing. Control: a ProxyAdmin contract. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $8.4M of DEX liquidity across 20 pools. Launch: 525 days of market history.
+
+**Recommendation:** Check what backs the peg and who controls supply: reserve attestations for an issuer-backed coin, collateral and governance for a protocol coin.
 
 ## Token Metrics
 
@@ -97,7 +132,7 @@ The `_setAuthorizationAsUsed` function, which marks an EIP-3009 authorization no
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
@@ -107,7 +142,7 @@ The `_setAuthorizationAsUsed` function, which marks an EIP-3009 authorization no
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources

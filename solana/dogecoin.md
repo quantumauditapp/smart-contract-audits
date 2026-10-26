@@ -2,14 +2,14 @@
 token: Dogecoin
 ticker: DOGE
 network: solana
-risk_score: 98
-status: critical
+risk_score: 72
+status: high
 date: 2026-10-23
 ---
 
 # Dogecoin (DOGE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 98/100 — 🔴 Critical Risk**
+> **Risk Score: 72/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dogecoin-sol)
 
@@ -27,26 +27,19 @@ Before interacting with this token, confirm that the current metadata matches yo
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The token is initialized on the standard SPL Token program. The mint authority is currently held by address FCBW5Xs4grHRpDPtfEgtYrBc97QSwBvKUxwJkbt3ZdJZ, allowing for unlimited token creation. The… |
-| **Governance / Economics** | 4/10 | Medium | The top 10 holders that can sell control 25.94% of the supply, indicating moderate concentration. Liquidity is $232,930 with a healthy volume/liquidity ratio of 0.79. The status of liquidity locks… |
-| **Upgrades** | 4/10 | Medium | SPL token mints do not support upgrade patterns. Metadata is currently mutable, allowing the token name, symbol, or image to be changed by the owner. No other extensions are active. |
+| **Technical** | 6/10 | Medium | The token is initialized on the standard SPL Token program. The mint authority is currently held by address FCBW5Xs4grHRpDPtfEgtYrBc97QSwBvKUxwJkbt3ZdJZ, allowing for unlimited token creation. The… |
+| **Governance / Economics** | 6/10 | Medium | The top 10 holders that can sell control 25.94% of the supply, indicating moderate concentration. Liquidity is $232,930 with a healthy volume/liquidity ratio of 0.79. The status of liquidity locks… |
+| **Upgrades** | 6/10 | Medium | SPL token mints do not support upgrade patterns. Metadata is currently mutable, allowing the token name, symbol, or image to be changed by the owner. No other extensions are active. |
 
 ## Security Findings
 
-_🔴 2 Critical · 🟡 2 Medium · 🟢 1 Low · ⚪ 4 Informational_
+_🔴 1 Critical · 🟡 3 Medium · 🟢 1 Low · ⚪ 4 Informational_
 
 ### `C-01` — Mint Authority Not Revoked  *(Severity: Critical · Status: Unresolved)*
 
 The mint authority is FCBW5Xs4grHRpDPtfEgtYrBc97QSwBvKUxwJkbt3ZdJZ. The holder of this key can mint unlimited new tokens, diluting all current holders to zero value.
 
 **Recommendation:** Verify on-chain that the mint authority is set to null before treating supply as fixed.
-
-
-### `QA-IDENTITY` — Imitation of Dogecoin (DOGE)  *(Severity: Critical · Status: Acknowledged)*
-
-Presents itself as Dogecoin (DOGE), but CoinGecko lists no Dogecoin contract on solana at all (CoinGecko). Holders who think they own the real asset own this contract instead; it has none of the real asset's backing, liquidity or redemption.
-
-**Recommendation:** Do not buy, hold or accept this token as the asset it names. Verify any token address against the issuer's official site.
 
 
 ### `M-01` — Mutable Metadata  *(Severity: Medium · Status: Unresolved)*
@@ -61,6 +54,13 @@ Token name, symbol, or image can be changed post-launch.
 An independent third-party risk registry classifies this token as high-risk based on its own dataset (developer history, LP movements).
 
 **Recommendation:** Do not interact with this token.
+
+
+### `QA-IDENTITY` — Unofficial representation of Dogecoin (DOGE)  *(Severity: Medium · Status: Acknowledged)*
+
+Presents itself as Dogecoin (DOGE), which has no contract of its own on solana (CoinGecko), and trades at $0.07997 against Dogecoin's $0.077089: a representation of Dogecoin issued by a third party, whose backing cannot be verified here. 41,150 holders. Not listed by CoinGecko or any exchange GoPlus tracks. Its value holds only while whoever issues it keeps enough DOGE to redeem every token; nothing independent shows that they do.
+
+**Recommendation:** Treat the issuer as the counterparty: find who holds the DOGE behind it and how redemption works before holding a size you cannot lose.
 
 
 ### `L-01` — Pool Liquidity Not Locked  *(Severity: Low · Status: Unresolved)*
@@ -91,11 +91,11 @@ The contract lets its controller — nobody (ownership renounced) — mint new s
 **Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
 
 
-### `QA-PROFILE` — Asset class: Imitation of Dogecoin (DOGE)  *(Severity: Informational · Status: Acknowledged)*
+### `QA-PROFILE` — Asset class: Wrapped or bridged asset — backing unverified  *(Severity: Informational · Status: Acknowledged)*
 
-A token presenting itself under the name or ticker of an established asset without being that asset's contract. Its only reason to borrow that identity is to be mistaken for it. Scored as an imitation (see the identity finding). Basis: meme vocabulary in name/ticker (doge); launched on pump.fun (PumpSwap), a meme launchpad; behaves as: meme token. Tokenomics — Supply: mintable with no on-chain cap found. Control: nobody (ownership renounced). Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $565K of DEX liquidity across 30 pools. Launch: launched on pump.fun (PumpSwap), 46 days of market history.
+A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. Nothing independent confirms who holds the underlying coin, so every power over its supply is scored in full: a wrapper is only as good as whoever can mint it, and the unverified backing is scored under identity. Basis: trades at the price of Dogecoin (DOGE), which has no contract of its own on this chain. Tokenomics — Supply: mintable with no on-chain cap found. Control: nobody (ownership renounced). Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $565K of DEX liquidity across 30 pools. Launch: launched on pump.fun (PumpSwap), 46 days of market history.
 
-**Recommendation:** Do not treat this token as the asset it names. Use only the official contract address published by that asset's issuer.
+**Recommendation:** The backing is the risk: check who holds the underlying asset and how redemption works.
 
 ## Token Metrics
 

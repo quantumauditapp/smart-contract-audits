@@ -21,7 +21,7 @@ Automated daily security analyses for Polygon tokens, powered by [Quantum Audit]
 | [ROUTINE COIN](./routine-coin.md) | ROU | 🟠 74/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/routine-coin-poly) |
 | [Gains Network](./gains-network.md) | GNS | 🟡 51/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/gains-network-poly) |
 | [WhaleBit](./whalebit.md) | CES | 🟡 60/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/whalebit-poly) |
-| [Monerium EUR emoney](./monerium-eur-emoney.md) | EURE | 🟢 21/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/monerium-eur-emoney-poly) |
+| [Monerium EUR emoney](./monerium-eur-emoney.md) | EURE | 🟢 11/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/monerium-eur-emoney-poly) |
 | [Uniswap (PoS)](./uniswap-pos.md) | UNI | 🟢 33/100 Low Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/uniswap-pos-poly) |
 | [RISE Token](./rise-token.md) | RISE | 🟠 84/100 High Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/rise-token-poly) |
 | [Auralith](./auralith.md) | AURA | 🟡 42/100 Medium Risk | 2026-10-20 | [↗](https://quantumaudit.app/token/auralith-poly) |

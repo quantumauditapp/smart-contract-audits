@@ -2,14 +2,14 @@
 token: Re Protocol reUSD
 ticker: REUSD
 network: ethereum
-risk_score: 82
-status: high
+risk_score: 9
+status: low
 date: 2026-06-20
 ---
 
 # Re Protocol reUSD (REUSD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 82/100 — 🟠 High Risk**
+> **Risk Score: 9/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/re-protocol-reusd-eth)
 
@@ -25,9 +25,9 @@ This audit covers an ERC1967Proxy contract, which utilizes OpenZeppelin's battle
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract utilizes battle-tested OpenZeppelin libraries for its proxy implementation, ensuring adherence to EIP-1967 standards and robust delegatecall mechanisms (7.1 Architecture, 7.2 Code… |
-| **Governance / Economics** | 1/10 | High | The proxy itself is a standard UUPS implementation, which delegates upgrade logic to the implementation contract, allowing for flexible governance models (7.5 Governance). The upgradeability… |
-| **Upgrades** | 1/10 | High | The contract correctly implements the UUPS proxy pattern using OpenZeppelin's `ERC1967Proxy` and `ERC1967Utils`, which is a well-established and secure standard for upgradeable contracts (7.7… |
+| **Technical** | 9/10 | Low | The contract utilizes battle-tested OpenZeppelin libraries for its proxy implementation, ensuring adherence to EIP-1967 standards and robust delegatecall mechanisms (7.1 Architecture, 7.2 Code… |
+| **Governance / Economics** | 9/10 | Low | The proxy itself is a standard UUPS implementation, which delegates upgrade logic to the implementation contract, allowing for flexible governance models (7.5 Governance). The upgradeability… |
+| **Upgrades** | 5/10 | Medium | The contract correctly implements the UUPS proxy pattern using OpenZeppelin's `ERC1967Proxy` and `ERC1967Utils`, which is a well-established and secure standard for upgradeable contracts (7.7… |
 
 ## Proxy Upgrade Controls
 
@@ -46,41 +46,76 @@ This audit covers an ERC1967Proxy contract, which utilizes OpenZeppelin's battle
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · ⚪ 3 Informational_
+_🟡 1 Medium · ⚪ 9 Informational_
 
-### `C-01` — Unverified Implementation Contract  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Unverified Implementation Contract  *(Severity: Medium · Status: Unresolved)*
 
-The proxy contract (0x5086bf358635b81d8c47c66d1c8b9e567db70c72) delegates all its logic to an implementation contract identified as 'ShareToken' at address 0xb5276c436f65913cd5332de745d04fedeb4a21d4. The source code for this implementation contract is not verified on the blockchain explorer. This means the actual code being executed by the proxy is unknown, making it impossible to assess its security, functionality, or potential malicious behavior. This poses an extreme risk as the contract could contain backdoors, vulnerabilities, or arbitrary logic.
+Not confirmed by static analysis (the model's own reading of the source). The proxy contract (0x5086bf358635b81d8c47c66d1c8b9e567db70c72) delegates all its logic to an implementation contract identified as 'ShareToken' at address 0xb5276c436f65913cd5332de745d04fedeb4a21d4. The source code for this implementation contract is not verified on the blockchain explorer. This means the actual code being executed by the proxy is unknown, making it impossible to assess its security, functionality, or potential malicious behavior. This poses an extreme risk as the contract could contain backdoors, vulnerabilities, or arbitrary logic.
 
 **Recommendation:** Immediately verify the source code of the implementation contract (0xb5276c436f65913cd5332de745d04fedeb4a21d4) on the blockchain explorer. Once verified, a thorough security audit of the implementation's code must be conducted to ensure its safety and integrity.
 
 
-### `H-01` — Centralized Upgradeability Control  *(Severity: High · Status: Unresolved)*
-
-The contract uses the UUPS proxy pattern, where the upgrade logic and its associated access control reside within the implementation contract. While this is a standard pattern, it implies a centralized point of control for upgrades. If the private key of the address or the multisig controlling the upgrade function within the implementation contract is compromised, an attacker could deploy a malicious new implementation, leading to a complete loss of funds or control over the protocol. The specific details of this control cannot be assessed due to the unverified implementation.
-
-**Recommendation:** Once the implementation contract is verified, ensure that the upgrade function is protected by a robust access control mechanism, ideally a well-configured multi-signature wallet (e.g., Gnosis Safe) with a sufficient threshold, or a time-locked governance mechanism. Implement strict operational security procedures for managing the upgrade key(s).
-
-
 ### `I-01` — OpenZeppelin Library Usage  *(Severity: Informational · Status: Unresolved)*
 
-The contract leverages OpenZeppelin's battle-tested and widely adopted proxy libraries (ERC1967Proxy, ERC1967Utils, IBeacon, Proxy, Address, StorageSlot). This is a strong security practice as these libraries are rigorously audited and maintained by the OpenZeppelin team, significantly reducing the risk of common proxy-related vulnerabilities.
+Not confirmed by static analysis (the model's own reading of the source). The contract leverages OpenZeppelin's battle-tested and widely adopted proxy libraries (ERC1967Proxy, ERC1967Utils, IBeacon, Proxy, Address, StorageSlot). This is a strong security practice as these libraries are rigorously audited and maintained by the OpenZeppelin team, significantly reducing the risk of common proxy-related vulnerabilities.
 
 **Recommendation:** Continue to use and monitor updates from OpenZeppelin for best practices and security patches.
 
 
 ### `I-02` — EIP-1967 Compliance  *(Severity: Informational · Status: Unresolved)*
 
-The proxy contract correctly implements the EIP-1967 standard for transparent proxy storage slots. This ensures that the implementation address, admin address (if used), and beacon address (if used) are stored in well-defined, non-colliding storage locations, preventing storage clashes with the logic contract.
+Not confirmed by static analysis (the model's own reading of the source). The proxy contract correctly implements the EIP-1967 standard for transparent proxy storage slots. This ensures that the implementation address, admin address (if used), and beacon address (if used) are stored in well-defined, non-colliding storage locations, preventing storage clashes with the logic contract.
 
 **Recommendation:** No action required. This is a best practice.
 
 
 ### `I-03` — Non-Payable Upgrade Check  *(Severity: Informational · Status: Unresolved)*
 
-The `ERC1967Utils.upgradeToAndCall` function includes a check (`_checkNonPayable()`) that reverts if `msg.value > 0` when no `data` is provided for a setup call. This prevents accidental transfer of Ether to the proxy contract during an upgrade operation where the Ether would otherwise become stuck.
+Not confirmed by static analysis (the model's own reading of the source). The `ERC1967Utils.upgradeToAndCall` function includes a check (`_checkNonPayable()`) that reverts if `msg.value > 0` when no `data` is provided for a setup call. This prevents accidental transfer of Ether to the proxy contract during an upgrade operation where the Ether would otherwise become stuck.
 
 **Recommendation:** No action required. This is a good security practice.
+
+
+### `I-04` — Centralized Upgradeability Control  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract uses the UUPS proxy pattern, where the upgrade logic and its associated access control reside within the implementation contract. While this is a standard pattern, it implies a centralized point of control for upgrades. If the private key of the address or the multisig controlling the upgrade function within the implementation contract is compromised, an attacker could deploy a malicious new implementation, leading to a complete loss of funds or control over the protocol. The specific details of this control cannot be assessed due to the unverified implementation.
+
+**Recommendation:** Once the implementation contract is verified, ensure that the upgrade function is protected by a robust access control mechanism, ideally a well-configured multi-signature wallet (e.g., Gnosis Safe) with a sufficient threshold, or a time-locked governance mechanism. Implement strict operational security procedures for managing the upgrade key(s).
+
+
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
+
+The ten largest holders own 99.4% of supply. What remains: 0.8% in wallets, 98.6% in other contracts. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
+
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as Re Protocol reUSD (REUSD), market cap $359M, rank #121. Verified by: CoinGecko.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $452K (DexScreener, all pools). 24h trading volume $18K (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-POWERS` — What the token's controller can do  *(Severity: Informational · Status: Acknowledged)*
+
+The contract lets its controller — an owner that could not be resolved — mint new supply. These are the issuer's controls by design; for a verified issuer they are counterparty risk — the issuer can act on any holder, including you.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
+### `QA-PROFILE` — Asset class: Stablecoin — yield-bearing  *(Severity: Informational · Status: Acknowledged)*
+
+A token designed to hold a fixed value (usually $1). Its safety rests on what backs it and on who can mint, freeze or pause it. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Stablecoins. Tokenomics — Supply: issued and redeemed by the issuer against its backing. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $452K of DEX liquidity across 1 pools. Launch: 304 days of market history.
+
+**Recommendation:** Check what backs the peg and who controls supply: reserve attestations for an issuer-backed coin, collateral and governance for a protocol coin.
 
 ## Token Metrics
 

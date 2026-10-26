@@ -205,7 +205,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [Macca & Friends](./macca-friends.md) | M&F | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/macca-friends-sol) |
 | [Bitcoin Pizza](./bitcoin-pizza.md) | PIZZA | 🟢 21/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/bitcoin-pizza-sol) |
 | [mil](./mil.md) | MIL | 🟢 23/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/mil-sol) |
-| [Dogecoin](./dogecoin.md) | DOGE | 🔴 98/100 Critical Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/dogecoin-sol) |
+| [Dogecoin](./dogecoin.md) | DOGE | 🟠 72/100 High Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/dogecoin-sol) |
 | [Trollface Chicken 67](./trollface-chicken-67.md) | TC67 | 🟢 22/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/trollface-chicken-67-sol) |
 | [Solana Smash Bros](./solana-smash-bros.md) | SSB | 🟢 20/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/solana-smash-bros-sol) |
 | [The Playful Polar Bear](./the-playful-polar-bear.md) | BEAR | 🟢 20/100 Low Risk | 2026-10-23 | [↗](https://quantumaudit.app/token/the-playful-polar-bear-sol) |
@@ -340,7 +340,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [Meme](./meme-sol-b6ac.md) | MEME | 🟡 36/100 Medium Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/meme-sol-b6ac) |
 | [anza.xyz](./anzaxyz.md) | ANZA | 🟢 19/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/anzaxyz-sol) |
 | [MEME](./meme.md) | MEME | 🟢 20/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/meme-sol) |
-| [Monero](./monero.md) | XMR | 🔴 99/100 Critical Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/monero-sol) |
+| [Monero](./monero.md) | XMR | 🟠 77/100 High Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/monero-sol) |
 | [ORANGIE](./orangie.md) | ORANGIE | 🟢 24/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/orangie-sol) |
 | [Gold](./gold-sol-3a0d.md) | GOLD | 🟢 21/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/gold-sol-3a0d) |
 | [Axis Robotics](./axis-robotics.md) | AXIS | 🟢 29/100 Low Risk | 2026-10-21 | [↗](https://quantumaudit.app/token/axis-robotics-sol) |
@@ -523,7 +523,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [farm](./farm.md) | FARM | 🟢 5/100 Low Risk | 2026-10-14 | [↗](https://quantumaudit.app/token/farm-sol) |
 | [XTO](./xto.md) | XTO | 🟢 0/100 Low Risk | 2026-10-14 | [↗](https://quantumaudit.app/token/xto-sol) |
 | [YieldPilot](./yieldpilot.md) | YPILOT | 🟢 26/100 Low Risk | 2026-10-14 | [↗](https://quantumaudit.app/token/yieldpilot-sol) |
-| [Broadcom xStock](./broadcom-xstock.md) | AVGOX | 🟠 84/100 High Risk | 2026-10-13 | [↗](https://quantumaudit.app/token/broadcom-xstock-sol) |
+| [Broadcom xStock](./broadcom-xstock.md) | AVGOX | 🟢 9/100 Low Risk | 2026-10-13 | [↗](https://quantumaudit.app/token/broadcom-xstock-sol) |
 | [Pepper The Raccoon](./pepper-the-raccoon.md) | PEPPER | 🟢 13/100 Low Risk | 2026-10-13 | [↗](https://quantumaudit.app/token/pepper-the-raccoon-sol) |
 | [PROJECT 486](./project-486.md) | 486 | 🟢 15/100 Low Risk | 2026-10-13 | [↗](https://quantumaudit.app/token/project-486-sol) |
 | [Dancing Dog](./dancing-dog.md) | DOGGO | 🟢 20/100 Low Risk | 2026-10-13 | [↗](https://quantumaudit.app/token/dancing-dog-sol) |
@@ -743,7 +743,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [Zoe](./zoe.md) | ZOE | 🟢 8/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/zoe-sol) |
 | [zerebro](./zerebro.md) | ZEREBRO | 🟢 32/100 Low Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/zerebro-sol) |
 | [Zebec Network](./zebec-network.md) | ZBCN | 🟢 22/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/zebec-network-sol) |
-| [Zcash](./zcash.md) | ZEC | 🟡 41/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/zcash-sol) |
+| [Zcash](./zcash.md) | ZEC | 🟢 9/100 Low Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/zcash-sol) |
 | [Zcash Official Mascot](./zcash-official-mascot.md) | JUBJUB | 🟢 19/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/zcash-official-mascot-sol) |
 | [Zazu](./zazu.md) | ZAZU | 🟡 54/100 Medium Risk | 2026-08-13 | [↗](https://quantumaudit.app/token/zazu-sol) |
 | [Z500](./z500.md) | Z500 | 🟢 18/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/z500-sol) |
@@ -776,7 +776,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [waalmaeng](./waalmaeng.md) | MAENG | 🟡 54/100 Medium Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/waalmaeng-sol) |
 | [VOXIE](./voxie.md) | VOXIE | 🟢 24/100 Low Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/voxie-sol) |
 | [Vine Coin](./vine-coin.md) | VINE | 🟢 0/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/vine-coin-sol) |
-| [Vida Global xStock](./vida-global-xstock.md) | VIDAX | 🔴 100/100 Critical Risk | 2026-09-05 | [↗](https://quantumaudit.app/token/vida-global-xstock-sol) |
+| [Vida Global xStock](./vida-global-xstock.md) | VIDAX | 🟢 8/100 Low Risk | 2026-09-05 | [↗](https://quantumaudit.app/token/vida-global-xstock-sol) |
 | [Vida Global CTO](./vida-global-cto.md) | CTO | 🟢 13/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/vida-global-cto-sol) |
 | [Vibesterz](./vibesterz.md) | VSTR | 🟡 43/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/vibesterz-sol) |
 | [USELESS COIN](./useless-coin.md) | USELESS | 🟢 0/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/useless-coin-sol) |
@@ -795,7 +795,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [Tung Tung Tung Sahur](./tung-tung-tung-sahur.md) | TRIPLET | 🟢 0/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/tung-tung-tung-sahur-sol) |
 | [ttt](./ttt.md) | TTTT | 🟡 53/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/ttt-sol) |
 | [Tsuki](./tsuki.md) | TSUKI | 🟢 0/100 Low Risk | 2026-09-06 | [↗](https://quantumaudit.app/token/tsuki-sol) |
-| [Trump Media & Technology Group Corp. Common Stock - Backpack Securities](./trump-media-technology-group-corp-common-stock-backpack-securities.md) | DJT | 🔴 100/100 Critical Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/trump-media-technology-group-corp-common-stock-backpack-securities-sol) |
+| [Trump Media & Technology Group Corp. Common Stock - Backpack Securities](./trump-media-technology-group-corp-common-stock-backpack-securities.md) | DJT | 🟠 84/100 High Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/trump-media-technology-group-corp-common-stock-backpack-securities-sol) |
 | [Trump Digital Gold](./trump-digital-gold.md) | GOLD | 🟢 33/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/trump-digital-gold-sol) |
 | [TROLL](./troll.md) | TROLL | 🟢 0/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/troll-sol) |
 | [traindog](./traindog.md) | TRAINDOG | 🟢 18/100 Low Risk | 2026-07-31 | [↗](https://quantumaudit.app/token/traindog-sol) |
@@ -869,11 +869,11 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [SPX6900 (Wormhole)](./spx6900-wormhole.md) | SPX | 🟡 56/100 Medium Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/spx6900-wormhole-sol) |
 | [spucex](./spucex.md) | SPCX | 🟢 27/100 Low Risk | 2026-06-16 | [↗](https://quantumaudit.app/token/spucex-sol) |
 | [SPCX69](./spcx69.md) | SPCX69 | 🟢 26/100 Low Risk | 2026-06-17 | [↗](https://quantumaudit.app/token/spcx69-sol) |
-| [SpaceX xStock](./spacex-xstock.md) | SPCXX | 🔴 100/100 Critical Risk | 2026-09-20 | [↗](https://quantumaudit.app/token/spacex-xstock-sol) |
+| [SpaceX xStock](./spacex-xstock.md) | SPCXX | 🟢 8/100 Low Risk | 2026-09-20 | [↗](https://quantumaudit.app/token/spacex-xstock-sol) |
 | [SpaceX](./spacex.md) | SPCX | 🟢 3/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/spacex-sol) |
 | [SPACEX IPO](./spacex-ipo.md) | SPCX | 🟡 52/100 Medium Risk | 2026-06-12 | [↗](https://quantumaudit.app/token/spacex-ipo-sol) |
-| [SpaceX - Backpack Securities](./spacex-backpack-securities.md) | SPCX | 🔴 100/100 Critical Risk | 2026-09-20 | [↗](https://quantumaudit.app/token/spacex-backpack-securities-sol) |
-| [SP500 xStock](./sp500-xstock.md) | SPYX | 🔴 100/100 Critical Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/sp500-xstock-sol) |
+| [SpaceX - Backpack Securities](./spacex-backpack-securities.md) | SPCX | 🟠 81/100 High Risk | 2026-09-20 | [↗](https://quantumaudit.app/token/spacex-backpack-securities-sol) |
+| [SP500 xStock](./sp500-xstock.md) | SPYX | 🟢 9/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/sp500-xstock-sol) |
 | [Sons](./sons.md) | SONS | 🟢 25/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/sons-sol) |
 | [Son Goku](./son-goku.md) | GOKU | 🟡 43/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/son-goku-sol) |
 | [Solstice](./solstice.md) | SLX | 🟡 53/100 Medium Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/solstice-sol) |
@@ -895,7 +895,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [Schrödinger](./schrodinger.md) | DINGER | 🟢 16/100 Low Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/schrodinger-sol) |
 | [Scam Altman](./scam-altman.md) | SCAM | 🟢 0/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/scam-altman-sol) |
 | [Sat Rush](./sat-rush.md) | RUSH | 🟠 80/100 High Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/sat-rush-sol) |
-| [Sandisk - Backpack Securities](./sandisk-backpack-securities.md) | SNDK | 🔴 100/100 Critical Risk | 2026-09-17 | [↗](https://quantumaudit.app/token/sandisk-backpack-securities-sol) |
+| [Sandisk - Backpack Securities](./sandisk-backpack-securities.md) | SNDK | 🟠 84/100 High Risk | 2026-09-17 | [↗](https://quantumaudit.app/token/sandisk-backpack-securities-sol) |
 | [Salvor](./salvor.md) | SALVOR | 🟢 4/100 Low Risk | 2026-09-21 | [↗](https://quantumaudit.app/token/salvor-sol) |
 | [Sakura ](./sakura.md) | SAKURA  | 🟢 15/100 Low Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/sakura-sol) |
 | [SAFEMOON](./safemoon.md) | SFM | 🟡 50/100 Medium Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/safemoon-sol) |
@@ -968,7 +968,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [Otto](./otto.md) | OTTO | 🟡 49/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/otto-sol) |
 | [OTC](./otc.md) | OTC | 🟢 2/100 Low Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/otc-sol) |
 | [Orange Coin](./orange-coin.md) | ORANGE | 🟡 40/100 Medium Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/orange-coin-sol) |
-| [OpenAI PreStocks](./openai-prestocks.md) | OPENAI | 🔴 100/100 Critical Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/openai-prestocks-sol) |
+| [OpenAI PreStocks](./openai-prestocks.md) | OPENAI | 🟠 84/100 High Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/openai-prestocks-sol) |
 | [ONYX COIN](./onyx-coin.md) | ONYX | 🟢 7/100 Low Risk | 2026-09-04 | [↗](https://quantumaudit.app/token/onyx-coin-sol) |
 | [OnlyMarms](./onlymarms.md) | ONLYMARMS | 🟢 17/100 Low Risk | 2026-08-05 | [↗](https://quantumaudit.app/token/onlymarms-sol) |
 | [omo](./omo.md) | OMO | 🟡 36/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/omo-sol) |
@@ -979,7 +979,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [Ocula](./ocula.md) | OCULA | 🟢 16/100 Low Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/ocula-sol) |
 | [OBSDIAN](./obsdian.md) | OBSD | 🟡 53/100 Medium Risk | 2026-07-26 | [↗](https://quantumaudit.app/token/obsdian-sol) |
 | [Nyan Cat](./nyan-cat.md) | NYAN | 🟢 0/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/nyan-cat-sol) |
-| [NVIDIA xStock](./nvidia-xstock.md) | NVDAX | 🔴 100/100 Critical Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/nvidia-xstock-sol) |
+| [NVIDIA xStock](./nvidia-xstock.md) | NVDAX | 🟢 8/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/nvidia-xstock-sol) |
 | [NVDA4200](./nvda4200.md) | 英伟达 | 🟡 54/100 Medium Risk | 2026-06-12 | [↗](https://quantumaudit.app/token/nvda4200-sol) |
 | [nubcat](./nubcat.md) | NUB | 🟢 0/100 Low Risk | 2026-09-05 | [↗](https://quantumaudit.app/token/nubcat-sol) |
 | [NotInEmploymentEducationTraining](./notinemploymenteducationtraining.md) | NEET | 🟢 0/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/notinemploymenteducationtraining-sol) |
@@ -996,7 +996,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [NearKat](./nearkat.md) | NEARKAT | 🟢 1/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/nearkat-sol) |
 | [NEAR](./near.md) | NEAR | 🟡 61/100 Medium Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/near-sol) |
 | [Nasduck](./nasduck.md) | NASDUCK | 🟢 13/100 Low Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/nasduck-sol) |
-| [Nasdaq xStock](./nasdaq-xstock.md) | QQQX | 🔴 100/100 Critical Risk | 2026-09-17 | [↗](https://quantumaudit.app/token/nasdaq-xstock-sol) |
+| [Nasdaq xStock](./nasdaq-xstock.md) | QQQX | 🟢 11/100 Low Risk | 2026-09-17 | [↗](https://quantumaudit.app/token/nasdaq-xstock-sol) |
 | [Mushu](./mushu.md) | MUSHU | 🟢 0/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/mushu-sol) |
 | [Mumu the Bull](./mumu-the-bull.md) | MUMU | 🟢 5/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/mumu-the-bull-sol) |
 | [Mr. Madoff](./mr-madoff.md) | PONZI | 🟠 70/100 High Risk | 2026-08-15 | [↗](https://quantumaudit.app/token/mr-madoff-sol) |
@@ -1027,7 +1027,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [Melon Musk](./melon-musk.md) | MELONMUSK | 🟢 12/100 Low Risk | 2026-09-14 | [↗](https://quantumaudit.app/token/melon-musk-sol) |
 | [メイちゃん](./mei.md) | MEI | 🟢 29/100 Low Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/mei-sol) |
 | [MEEP CAT](./meep-cat.md) | MEEP | 🟢 17/100 Low Risk | 2026-06-19 | [↗](https://quantumaudit.app/token/meep-cat-sol) |
-| [McDonald's xStock](./mcdonalds-xstock.md) | MCDX | 🔴 100/100 Critical Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/mcdonalds-xstock-sol) |
+| [McDonald's xStock](./mcdonalds-xstock.md) | MCDX | 🟢 12/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/mcdonalds-xstock-sol) |
 | [maxxing](./maxxing.md) | MAXXING | 🟢 0/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/maxxing-sol) |
 | [Martians](./martians.md) | MARTIANS | 🟢 3/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/martians-sol) |
 | [Mario64](./mario64.md) | MARIO64 | 🟢 26/100 Low Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/mario64-sol) |
@@ -1096,7 +1096,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [Infinex](./infinex.md) | INX | 🟠 71/100 High Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/infinex-sol) |
 | [Hypurr](./hypurr.md) | PURR | 🟢 4/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/hypurr-sol) |
 | [Hyper Bull](./hyper-bull.md) | HBULL | 🟢 27/100 Low Risk | 2026-07-18 | [↗](https://quantumaudit.app/token/hyper-bull-sol) |
-| [HYPE](./hype.md) | HYPE | 🟡 42/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/hype-sol) |
+| [HYPE](./hype.md) | HYPE | 🟢 12/100 Low Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/hype-sol) |
 | [Hungry Chomp](./hungry-chomp.md) | CHOMP | 🟡 45/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/hungry-chomp-sol) |
 | [HUHCAT](./huhcat.md) | HUHCAT | 🟢 0/100 Low Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/huhcat-sol) |
 | [Hotel Lobby](./hotel-lobby.md) | LOBBY | 🟢 2/100 Low Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/hotel-lobby-sol) |
@@ -1129,7 +1129,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [Graphite](./graphite.md) | GP | 🟢 14/100 Low Risk | 2026-09-05 | [↗](https://quantumaudit.app/token/graphite-sol) |
 | [Grand Theft Auto VI](./grand-theft-auto-vi.md) | GTAVI | 🟢 9/100 Low Risk | 2026-06-23 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-sol) |
 | [GPRO](./gpro.md) | GPRO | 🟢 30/100 Low Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/gpro-sol) |
-| [Gold xStock](./gold-xstock.md) | GLDX | 🔴 100/100 Critical Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/gold-xstock-sol) |
+| [Gold xStock](./gold-xstock.md) | GLDX | 🟢 10/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/gold-xstock-sol) |
 | [Gnome Child](./gnome-child.md) | GNOME | 🟢 8/100 Low Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/gnome-child-sol) |
 | [GIGACHAD](./gigachad.md) | GIGA | 🟢 0/100 Low Risk | 2026-08-17 | [↗](https://quantumaudit.app/token/gigachad-sol) |
 | [Ghosti](./ghosti.md) | GHOSTI | 🟢 31/100 Low Risk | 2026-07-15 | [↗](https://quantumaudit.app/token/ghosti-sol) |
@@ -1140,7 +1140,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [Gekko Launchpad](./gekko-launchpad.md) | GEKKO | 🟢 22/100 Low Risk | 2026-09-21 | [↗](https://quantumaudit.app/token/gekko-launchpad-sol) |
 | [GATTO](./gatto.md) | GATTO | 🟡 50/100 Medium Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/gatto-sol) |
 | [GASSPAS](./gasspas.md) | GASSPAS | 🟢 9/100 Low Risk | 2026-09-02 | [↗](https://quantumaudit.app/token/gasspas-sol) |
-| [Gamestop xStock](./gamestop-xstock.md) | GMEX | 🔴 100/100 Critical Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/gamestop-xstock-sol) |
+| [Gamestop xStock](./gamestop-xstock.md) | GMEX | 🟢 12/100 Low Risk | 2026-09-22 | [↗](https://quantumaudit.app/token/gamestop-xstock-sol) |
 | [GameStop](./gamestop.md) | GME | 🟢 0/100 Low Risk | 2026-09-05 | [↗](https://quantumaudit.app/token/gamestop-sol) |
 | [FWOGAMI](./fwogami.md) | FWOGAMI | 🟠 73/100 High Risk | 2026-08-16 | [↗](https://quantumaudit.app/token/fwogami-sol) |
 | [FWOG](./fwog.md) | FWOG | 🟢 0/100 Low Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/fwog-sol) |
@@ -1178,7 +1178,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [Doom](./doom.md) | DOOM | 🟢 6/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/doom-sol) |
 | [donut fade](./donut-fade.md) | DNUT | 🟢 10/100 Low Risk | 2026-09-19 | [↗](https://quantumaudit.app/token/donut-fade-sol) |
 | [DONALD DUCK](./donald-duck.md) | FUKYEAH | 🟡 46/100 Medium Risk | 2026-09-21 | [↗](https://quantumaudit.app/token/donald-duck-sol) |
-| [Dominion Silver](./dominion-silver.md) | SILV | 🔴 100/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/dominion-silver-sol) |
+| [Dominion Silver](./dominion-silver.md) | SILV | 🟠 84/100 High Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/dominion-silver-sol) |
 | [Dojocoin](./dojocoin.md) | DOJO | 🟢 23/100 Low Risk | 2026-09-20 | [↗](https://quantumaudit.app/token/dojocoin-sol) |
 | [dogwifpants](./dogwifpants.md) | PANTS | 🟢 29/100 Low Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/dogwifpants-sol) |
 | [dogwifhat](./dogwifhat.md) | $WIF | 🟢 0/100 Low Risk | 2026-07-25 | [↗](https://quantumaudit.app/token/dogwifhat-sol) |
@@ -1191,7 +1191,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [Daydreams](./daydreams.md) | DREAMS | 🟢 0/100 Low Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/daydreams-sol) |
 | [DATA HEDGE](./data-hedge.md) | DATA | 🟢 2/100 Low Risk | 2026-09-12 | [↗](https://quantumaudit.app/token/data-hedge-sol) |
 | [Dark Arena](./dark-arena.md) | DARK | 🟡 37/100 Medium Risk | 2026-07-14 | [↗](https://quantumaudit.app/token/dark-arena-sol) |
-| [Cypherpunk Technologies - Backpack Securities](./cypherpunk-technologies-backpack-securities.md) | CYPH | 🔴 100/100 Critical Risk | 2026-09-20 | [↗](https://quantumaudit.app/token/cypherpunk-technologies-backpack-securities-sol) |
+| [Cypherpunk Technologies - Backpack Securities](./cypherpunk-technologies-backpack-securities.md) | CYPH | 🟠 77/100 High Risk | 2026-09-20 | [↗](https://quantumaudit.app/token/cypherpunk-technologies-backpack-securities-sol) |
 | [CyberLeek](./cyberleek.md) | CYBERLEEK | 🟢 0/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/cyberleek-sol) |
 | [Cupsey](./cupsey-sol-1d09.md) | CUPSEY | 🟢 28/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/cupsey-sol-1d09) |
 | [Cupsey](./cupsey.md) | CUPSEY | 🟢 0/100 Low Risk | 2026-07-22 | [↗](https://quantumaudit.app/token/cupsey-sol) |
@@ -1206,7 +1206,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [Coughing Cat](./coughing-cat.md) | COUGH | 🟡 39/100 Medium Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/coughing-cat-sol) |
 | [Copper (inu)](./copper-inu.md) | COPPERINU | 🟢 20/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/copper-inu-sol) |
 | [Collector Crypt](./collector-crypt.md) | CARDS | 🟢 23/100 Low Risk | 2026-06-10 | [↗](https://quantumaudit.app/token/collector-crypt-sol) |
-| [Coinbase Wrapped BTC](./coinbase-wrapped-btc.md) | CBBTC | 🔴 87/100 Critical Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/coinbase-wrapped-btc-sol) |
+| [Coinbase Wrapped BTC](./coinbase-wrapped-btc.md) | CBBTC | 🟢 10/100 Low Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/coinbase-wrapped-btc-sol) |
 | [Cog](./cog.md) | COG | 🟢 12/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/cog-sol) |
 | [Codec Flow](./codec-flow.md) | CODEC | 🟢 0/100 Low Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/codec-flow-sol) |
 | [Clown Pussy](./clown-pussy.md) | CLUSSY | 🟢 10/100 Low Risk | 2026-09-03 | [↗](https://quantumaudit.app/token/clown-pussy-sol) |
@@ -1214,7 +1214,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [clawpump.tech](./clawpumptech.md) | CLAW | 🟢 25/100 Low Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/clawpumptech-sol) |
 | [claudius](./claudius.md) | CLAUDIUS | 🟡 36/100 Medium Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/claudius-sol) |
 | [clarity cat](./clarity-cat.md) | CLARITY | 🟢 19/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/clarity-cat-sol) |
-| [Circle xStock](./circle-xstock.md) | CRCLX | 🔴 100/100 Critical Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/circle-xstock-sol) |
+| [Circle xStock](./circle-xstock.md) | CRCLX | 🟢 10/100 Low Risk | 2026-08-14 | [↗](https://quantumaudit.app/token/circle-xstock-sol) |
 | [ChudTheBuilder](./chudthebuilder.md) | CHUD | 🟡 42/100 Medium Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/chudthebuilder-sol) |
 | [Chudjak](./chudjak.md) | CHUD | 🟢 8/100 Low Risk | 2026-08-03 | [↗](https://quantumaudit.app/token/chudjak-sol) |
 | [Chonketha the Wet Beaver](./chonketha-the-wet-beaver.md) | CHONKETHA | 🟢 8/100 Low Risk | 2026-07-20 | [↗](https://quantumaudit.app/token/chonketha-the-wet-beaver-sol) |
@@ -1293,7 +1293,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 | [apeonfone](./apeonfone.md) | FONE | 🟢 0/100 Low Risk | 2026-09-05 | [↗](https://quantumaudit.app/token/apeonfone-sol) |
 | [APE WITH GUN](./ape-with-gun.md) | APEGUN | 🟡 41/100 Medium Risk | 2026-08-31 | [↗](https://quantumaudit.app/token/ape-with-gun-sol) |
 | [ANTMINER](./antminer.md) | ANT | 🟢 34/100 Low Risk | 2026-09-15 | [↗](https://quantumaudit.app/token/antminer-sol) |
-| [Anthropic PreStocks](./anthropic-prestocks.md) | ANTHROPIC | 🔴 100/100 Critical Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/anthropic-prestocks-sol) |
+| [Anthropic PreStocks](./anthropic-prestocks.md) | ANTHROPIC | 🟠 81/100 High Risk | 2026-09-18 | [↗](https://quantumaudit.app/token/anthropic-prestocks-sol) |
 | [AntFun BlockChain](./antfun-blockchain.md) | ANTFUN | 🟢 10/100 Low Risk | 2026-08-12 | [↗](https://quantumaudit.app/token/antfun-blockchain-sol) |
 | [Ansem.tips](./ansemtips.md) | TIPANSEM | 🟢 9/100 Low Risk | 2026-08-30 | [↗](https://quantumaudit.app/token/ansemtips-sol) |
 | [Ansem Fart Dust ](./ansem-fart-dust.md) | AFD | 🟡 39/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/ansem-fart-dust-sol) |

@@ -2,14 +2,14 @@
 token: JPY Coin
 ticker: JPYC
 network: ethereum
-risk_score: 88
-status: critical
+risk_score: 11
+status: low
 date: 2026-09-18
 ---
 
 # JPY Coin (JPYC) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 88/100 — 🔴 Critical Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jpy-coin-eth)
 
@@ -25,9 +25,9 @@ The FiatTokenV1 contract serves as the implementation for an ERC-20 compatible t
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract exhibits good technical design, adhering to ERC-20 standards and utilizing Solidity 0.8.11 for built-in overflow/underflow protection (7.2 Code Security). Access control mechanisms for… |
-| **Governance / Economics** | 1/10 | High | The economic model centers around a controlled supply via minters, managed by a `minterAdmin` (7.4 Economic). While the `owner` role holds significant power over critical functions such as pausing… |
-| **Upgrades** | 1/10 | High | The contract implements the UUPS upgradeability pattern, ensuring future flexibility and maintainability (7.7 Upgrades). The `initialize` function correctly uses an `initializedVersion` check to… |
+| **Technical** | 9/10 | Low | The contract exhibits good technical design, adhering to ERC-20 standards and utilizing Solidity 0.8.11 for built-in overflow/underflow protection (7.2 Code Security). Access control mechanisms for… |
+| **Governance / Economics** | 9/10 | Low | The economic model centers around a controlled supply via minters, managed by a `minterAdmin` (7.4 Economic). While the `owner` role holds significant power over critical functions such as pausing… |
+| **Upgrades** | 5/10 | Medium | The contract implements the UUPS upgradeability pattern, ensuring future flexibility and maintainability (7.7 Upgrades). The `initialize` function correctly uses an `initializedVersion` check to… |
 
 ## Proxy Upgrade Controls
 
@@ -39,34 +39,69 @@ The FiatTokenV1 contract serves as the implementation for an ERC-20 compatible t
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_⚪ 9 Informational_
 
-### `H-01` — FiatTokenV1 Tokens Locked Due to Self-Blocklisting  *(Severity: High · Status: Unresolved)*
+### `I-01` — Storage Layout Management for UUPS Upgrades  *(Severity: Informational · Status: Unresolved)*
 
-The `initialize` function explicitly blocklists the contract's own address by setting `blocklisted[address(this)] = 1;`. This action prevents any `_transfer` operation where the `from` address is the contract itself, due to the `notBlocklisted(from)` modifier. Consequently, if FiatTokenV1 tokens are accidentally sent to the FiatTokenV1 contract address, the `rescueERC20` function (inherited from `Rescuable`) will fail when attempting to transfer these tokens out, as it would call `_transfer` with `from = address(this)`. This leads to the permanent locking of any FiatTokenV1 tokens sent to the contract address.
+Not confirmed by static analysis (the model's own reading of the source). As a UUPS upgradeable contract, `FiatTokenV1` relies on careful management of its storage layout across different implementation versions. Adding, removing, or reordering state variables in future contract upgrades without proper planning and adherence to UUPS storage guidelines can lead to storage collisions, data corruption, and unexpected behavior in the upgraded contract.
+
+**Recommendation:** Establish and strictly follow a robust storage layout management strategy for all future upgrades. Utilize tools like `hardhat-upgrades` or `openzeppelin-upgrades` to detect storage layout incompatibilities during development and testing. Document the storage slot usage for all state variables to aid in future upgrade planning.
+
+
+### `I-02` — FiatTokenV1 Tokens Locked Due to Self-Blocklisting  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function explicitly blocklists the contract's own address by setting `blocklisted[address(this)] = 1;`. This action prevents any `_transfer` operation where the `from` address is the contract itself, due to the `notBlocklisted(from)` modifier. Consequently, if FiatTokenV1 tokens are accidentally sent to the FiatTokenV1 contract address, the `rescueERC20` function (inherited from `Rescuable`) will fail when attempting to transfer these tokens out, as it would call `_transfer` with `from = address(this)`. This leads to the permanent locking of any FiatTokenV1 tokens sent to the contract address.
 
 **Recommendation:** Remove the line `blocklisted[address(this)] = 1;` from the `initialize` function. Instead, implement a specific check within the `_transfer` function to prevent transfers *to* `address(this)` if the intent is to prevent tokens from being held by the contract, or ensure that the `rescueERC20` function explicitly bypasses the blocklist check for `address(this)` when rescuing its own token.
 
 
-### `M-01` — Hardcoded EIP-712 Version Limits Upgrade Flexibility  *(Severity: Medium · Status: Unresolved)*
+### `I-03` — Hardcoded EIP-712 Version Limits Upgrade Flexibility  *(Severity: Informational · Status: Unresolved)*
 
-The `VERSION` string used for the EIP-712 domain separator is hardcoded to '1' in the `initialize` function. While the `initialize` function prevents re-initialization, this means that if a future upgrade requires changing the token's `name` or the EIP-712 `VERSION` (e.g., for a major protocol revision), the `DOMAIN_SEPARATOR` cannot be updated. This could lead to incompatibility with existing signed messages or limit branding flexibility in future versions.
+Not confirmed by static analysis (the model's own reading of the source). The `VERSION` string used for the EIP-712 domain separator is hardcoded to '1' in the `initialize` function. While the `initialize` function prevents re-initialization, this means that if a future upgrade requires changing the token's `name` or the EIP-712 `VERSION` (e.g., for a major protocol revision), the `DOMAIN_SEPARATOR` cannot be updated. This could lead to incompatibility with existing signed messages or limit branding flexibility in future versions.
 
 **Recommendation:** Consider making the EIP-712 `VERSION` configurable by the owner or `minterAdmin` through a dedicated function, or ensure that future upgrade plans account for the immutability of this parameter. If the token name is expected to remain constant, this issue's impact is reduced.
 
 
-### `L-01` — Centralized Control by Owner Role  *(Severity: Low · Status: Unresolved)*
+### `I-04` — Centralized Control by Owner Role  *(Severity: Informational · Status: Unresolved)*
 
-The `owner` role possesses significant control over critical contract functions, including the ability to pause/unpause the contract, blocklist/unblocklist addresses, update the `minterAdmin`, and initiate contract upgrades. While the prefill indicates the owner is a multisig, this still represents a centralized point of control. A compromise or malicious action by the multisig signers could lead to severe consequences for the protocol and its users.
+Not confirmed by static analysis (the model's own reading of the source). The `owner` role possesses significant control over critical contract functions, including the ability to pause/unpause the contract, blocklist/unblocklist addresses, update the `minterAdmin`, and initiate contract upgrades. While the prefill indicates the owner is a multisig, this still represents a centralized point of control. A compromise or malicious action by the multisig signers could lead to severe consequences for the protocol and its users.
 
 **Recommendation:** Maintain strict operational security practices for the multisig wallet controlling the `owner` role. Consider exploring further decentralization strategies for critical governance functions in future iterations, such as time-locks for sensitive operations or community-driven governance mechanisms.
 
 
-### `I-01` — Storage Layout Management for UUPS Upgrades  *(Severity: Informational · Status: Unresolved)*
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-As a UUPS upgradeable contract, `FiatTokenV1` relies on careful management of its storage layout across different implementation versions. Adding, removing, or reordering state variables in future contract upgrades without proper planning and adherence to UUPS storage guidelines can lead to storage collisions, data corruption, and unexpected behavior in the upgraded contract.
+The ten largest holders own 100.0% of supply. What remains: 100.0% in wallets, 0.0% in other contracts. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
 
-**Recommendation:** Establish and strictly follow a robust storage layout management strategy for all future upgrades. Utilize tools like `hardhat-upgrades` or `openzeppelin-upgrades` to detect storage layout incompatibilities during development and testing. Document the storage slot usage for all state variables to aid in future upgrade planning.
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as JPY Coin (JPYC), market cap $135M, rank #224. Verified by: CoinGecko.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $129K (DexScreener, all pools). 24h trading volume $563K (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-POWERS` — What the token's controller can do  *(Severity: Informational · Status: Acknowledged)*
+
+The contract lets its controller — a 3-of-5 multisig — mint new supply. These are the issuer's controls by design; for a verified issuer they are counterparty risk — the issuer can act on any holder, including you.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
+### `QA-PROFILE` — Asset class: Stablecoin — issuer-backed (fiat reserves)  *(Severity: Informational · Status: Acknowledged)*
+
+A token designed to hold a fixed value (usually $1). Its safety rests on what backs it and on who can mint, freeze or pause it. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Fiat-backed Stablecoin. Tokenomics — Supply: issued and redeemed by the issuer against its backing. Control: a 3-of-5 multisig. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $129K of DEX liquidity across 6 pools. Launch: 203 days of market history.
+
+**Recommendation:** Check what backs the peg and who controls supply: reserve attestations for an issuer-backed coin, collateral and governance for a protocol coin.
 
 ## Token Metrics
 
@@ -90,7 +125,7 @@ As a UUPS upgradeable contract, `FiatTokenV1` relies on careful management of it
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
@@ -100,7 +135,7 @@ As a UUPS upgradeable contract, `FiatTokenV1` relies on careful management of it
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources

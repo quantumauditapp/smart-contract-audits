@@ -2,14 +2,14 @@
 token: XRP Token
 ticker: XRP
 network: bsc
-risk_score: 62
-status: medium
+risk_score: 12
+status: low
 date: 2026-08-12
 ---
 
 # XRP Token (XRP) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 62/100 — 🟡 Medium Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/xrp-token-bsc)
 
@@ -25,9 +25,9 @@ The BEP20XRP token contract implements a standard BEP20 token with minting and b
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract exhibits good technical security practices, including the consistent use of SafeMath to prevent integer overflows/underflows (7.2 Code Security). The implementation of BEP20 standards is… |
-| **Governance / Economics** | 1/10 | High | The contract's economic model presents a high risk due to the owner's unrestricted ability to mint new tokens (7.4 Economic). The `mint` function, protected by `onlyOwner`, allows the total supply to… |
-| **Upgrades** | 3/10 | High | This contract is not designed to be upgradeable, as it does not implement any proxy pattern (7.7 Upgrades). Therefore, there are no upgrade-specific risks associated with its deployment. Any changes… |
+| **Technical** | 10/10 | Low | The contract exhibits good technical security practices, including the consistent use of SafeMath to prevent integer overflows/underflows (7.2 Code Security). The implementation of BEP20 standards is… |
+| **Governance / Economics** | 9/10 | Low | The contract's economic model presents a high risk due to the owner's unrestricted ability to mint new tokens (7.4 Economic). The `mint` function, protected by `onlyOwner`, allows the total supply to… |
+| **Upgrades** | 10/10 | Low | This contract is not designed to be upgradeable, as it does not implement any proxy pattern (7.7 Upgrades). Therefore, there are no upgrade-specific risks associated with its deployment. Any changes… |
 
 ## LP Distribution
 
@@ -38,34 +38,69 @@ The BEP20XRP token contract implements a standard BEP20 token with minting and b
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Centralized Minting Authority  *(Severity: High · Status: Unresolved)*
-
-The `mint` function is restricted to the contract owner via the `onlyOwner` modifier. This allows the owner to mint an arbitrary amount of new tokens at any time, increasing the total supply without limit. This centralized control over token supply introduces a significant economic risk, as it can lead to inflation, dilution of existing token holders' value, and potential for abuse if the owner's key is compromised or misused (7.4 Economic, 7.5 Governance).
-
-**Recommendation:** If the token is intended to have a fixed or capped supply, the `mint` function should be removed entirely or modified to enforce a maximum total supply. If minting is a necessary feature, consider implementing a multi-signature wallet for the owner address or integrating a decentralized governance mechanism to approve minting operations.
-
+_🟢 1 Low · ⚪ 8 Informational_
 
 ### `L-01` — Outdated Solidity Compiler Version  *(Severity: Low · Status: Unresolved)*
 
-The contract is compiled with Solidity version 0.5.16. While `SafeMath` is used to prevent integer overflows/underflows, newer Solidity versions (e.g., 0.8.x and above) include built-in overflow and underflow checks by default, making `SafeMath` largely redundant and potentially saving gas. Using an older compiler version may also miss out on recent compiler optimizations, bug fixes, and security enhancements (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version 0.5.16. While `SafeMath` is used to prevent integer overflows/underflows, newer Solidity versions (e.g., 0.8.x and above) include built-in overflow and underflow checks by default, making `SafeMath` largely redundant and potentially saving gas. Using an older compiler version may also miss out on recent compiler optimizations, bug fixes, and security enhancements (7.2 Code Security).
 
 **Recommendation:** Consider upgrading the contract to a more recent Solidity compiler version (e.g., 0.8.x). This would allow for the removal of the `SafeMath` library, simplifying the code and potentially reducing gas costs, while benefiting from the latest language features and security improvements.
 
 
 ### `I-01` — Unused Internal Function `_burnFrom`  *(Severity: Informational · Status: Unresolved)*
 
-The contract defines an internal function `_burnFrom(address account, uint256 amount)` which allows burning tokens from an account's balance and simultaneously reducing the allowance. However, this function is never called anywhere within the `BEP20XRP` contract. This means the functionality to burn tokens on behalf of another address (similar to `transferFrom`) is implemented but not exposed (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract defines an internal function `_burnFrom(address account, uint256 amount)` which allows burning tokens from an account's balance and simultaneously reducing the allowance. However, this function is never called anywhere within the `BEP20XRP` contract. This means the functionality to burn tokens on behalf of another address (similar to `transferFrom`) is implemented but not exposed (7.2 Code Security).
 
 **Recommendation:** Either remove the `_burnFrom` function if its functionality is not intended to be used, or expose it via a public function (e.g., `burnFrom(address account, uint256 amount)`) if it is a desired feature. Removing unused code can slightly reduce contract size and improve clarity.
 
 
 ### `I-02` — Redundant `getOwner()` Function  *(Severity: Informational · Status: Unresolved)*
 
-The `BEP20XRP` contract implements an external view function `getOwner()` which simply returns the result of the inherited `owner()` function from the `Ownable` contract. This `getOwner()` function is redundant as the `owner()` function already provides the same functionality and is publicly accessible (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `BEP20XRP` contract implements an external view function `getOwner()` which simply returns the result of the inherited `owner()` function from the `Ownable` contract. This `getOwner()` function is redundant as the `owner()` function already provides the same functionality and is publicly accessible (7.2 Code Security).
 
 **Recommendation:** The `getOwner()` function can be safely removed without affecting contract functionality, as `owner()` already serves its purpose. This would slightly reduce contract size and improve code clarity.
+
+
+### `I-03` — Centralized Minting Authority  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function is restricted to the contract owner via the `onlyOwner` modifier. This allows the owner to mint an arbitrary amount of new tokens at any time, increasing the total supply without limit. This centralized control over token supply introduces a significant economic risk, as it can lead to inflation, dilution of existing token holders' value, and potential for abuse if the owner's key is compromised or misused (7.4 Economic, 7.5 Governance).
+
+**Recommendation:** If the token is intended to have a fixed or capped supply, the `mint` function should be removed entirely or modified to enforce a maximum total supply. If minting is a necessary feature, consider implementing a multi-signature wallet for the owner address or integrating a decentralized governance mechanism to approve minting operations.
+
+
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
+
+The ten largest holders own 65.6% of supply. What remains: 62.7% in wallets, 2.9% in other contracts. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
+
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as Binance-Peg XRP (XRP), market cap $420M. Its owner (0xf68a…f62d) controls 12 issuer-backed coins CoinGecko lists on bsc, $11.5B together, among them Binance Bridged USDT (BNB Smart Chain), Binance-Peg WETH, Binance-Peg ZEC: one issuer's programme, read on-chain. Verified by: CoinGecko, issuer programme.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $4.8M (DexScreener, all pools). 24h trading volume $451K (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-POWERS` — What the token's controller can do  *(Severity: Informational · Status: Acknowledged)*
+
+The contract lets its controller — a single wallet (EOA) — mint new supply. These are the issuer's controls by design; for a verified issuer they are counterparty risk — the issuer can act on any holder, including you.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
+### `QA-PROFILE` — Asset class: Wrapped or bridged asset  *(Severity: Informational · Status: Acknowledged)*
+
+A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Binance-Peg Tokens. Tokenomics — Supply: mintable with no on-chain cap found. Control: a single wallet (EOA). Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $4.8M of DEX liquidity across 30 pools. Launch: 1129 days of market history.
+
+**Recommendation:** The backing is the risk: check who holds the underlying asset and how redemption works.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: Wrapped liquid staked Ether 2.0
 ticker: WSTETH
 network: arbitrum
-risk_score: 42
-status: medium
+risk_score: 8
+status: low
 date: 2026-08-11
 ---
 
 # Wrapped liquid staked Ether 2.0 (WSTETH) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-liquid-staked-ether-20-arb)
 
@@ -25,9 +25,9 @@ The audit of the ERC20Bridged token implementation, deployed behind an Ossifiabl
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The ERC20Bridged token implements standard ERC-20 functionality with custom mint/burn capabilities controlled by a 'bridge' address. The core ERC-20 logic in ERC20Core is generally well-structured… |
-| **Governance / Economics** | 1/10 | High | The economic model of the ERC20Bridged token relies heavily on the security and integrity of the designated 'bridge' address. This address holds absolute power over the token's supply through the… |
-| **Upgrades** | 1/10 | High | The contract is designed as an implementation for an OssifiableProxy (Transparent Proxy), which is a standard upgradeability pattern (7.7 Upgrades). However, the use of 'immutable' variables… |
+| **Technical** | 9/10 | Low | The ERC20Bridged token implements standard ERC-20 functionality with custom mint/burn capabilities controlled by a 'bridge' address. The core ERC-20 logic in ERC20Core is generally well-structured… |
+| **Governance / Economics** | 9/10 | Low | The economic model of the ERC20Bridged token relies heavily on the security and integrity of the designated 'bridge' address. This address holds absolute power over the token's supply through the… |
+| **Upgrades** | 5/10 | Medium | The contract is designed as an implementation for an OssifiableProxy (Transparent Proxy), which is a standard upgradeability pattern (7.7 Upgrades). However, the use of 'immutable' variables… |
 
 ## Proxy Upgrade Controls
 
@@ -47,34 +47,62 @@ The audit of the ERC20Bridged token implementation, deployed behind an Ossifiabl
 
 ## Security Findings
 
-_🔴 2 Critical · 🟠 1 High · 🟡 1 Medium_
+_🟡 1 Medium · ⚪ 7 Informational_
 
-### `C-01` — Critical: Immutable Variables Incompatible with Proxy Pattern  *(Severity: Critical · Status: Unresolved)*
+### `M-03` — Critical: Unprotected Initialization Function  *(Severity: Medium · Status: Unresolved)*
 
-The `ERC20Bridged` contract declares `bridge` as an `immutable` variable, and `ERC20Metadata` declares `decimals` as `immutable`. When an implementation contract with `immutable` variables is deployed behind a proxy, these variables are set during the implementation's constructor execution and are stored in the implementation's bytecode or a special storage area, not in the proxy's delegated storage. Consequently, when calls are made through the proxy, `bridge` will always evaluate to `address(0)` and `decimals` will always evaluate to `0`. This renders the `onlyBridge` modifier ineffective, allowing any non-zero address to call `bridgeMint` and `bridgeBurn`, and causes the `decimals()` fun…
-
-**Recommendation:** Remove the `immutable` keyword from `bridge` and `decimals`. These variables should be declared as regular state variables and initialized via an access-controlled initializer function (e.g., `initialize(..., address bridge_, uint8 decimals_)`) that is called only once through the proxy. Ensure the initializer function is properly protected to prevent re-initialization.
-
-
-### `C-02` — Critical: Unprotected Initialization Function  *(Severity: Critical · Status: Unresolved)*
-
-The `initialize` function in `ERC20Bridged` allows setting the token's `name` and `symbol` via `_setERC20MetadataName` and `_setERC20MetadataSymbol`. This function lacks any access control (e.g., `onlyOwner` or `initializer` modifier). When the contract is deployed as an implementation behind a proxy, the proxy's storage for `name` and `symbol` will initially be empty. This allows any external caller to invoke `initialize` through the proxy and set arbitrary `name` and `symbol` values for the token, leading to potential manipulation of the token's identity.
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function in `ERC20Bridged` allows setting the token's `name` and `symbol` via `_setERC20MetadataName` and `_setERC20MetadataSymbol`. This function lacks any access control (e.g., `onlyOwner` or `initializer` modifier). When the contract is deployed as an implementation behind a proxy, the proxy's storage for `name` and `symbol` will initially be empty. This allows any external caller to invoke `initialize` through the proxy and set arbitrary `name` and `symbol` values for the token, leading to potential manipulation of the token's identity.
 
 **Recommendation:** Implement robust access control for the `initialize` function. It should be callable only once by a trusted entity (e.g., the contract owner or a dedicated deployer address) during the proxy's initialization. Consider using OpenZeppelin's `Initializable` base contract and its `initializer` modifier for secure proxy initialization.
 
 
-### `H-01` — High: Centralization Risk with Bridge Address  *(Severity: High · Status: Unresolved)*
+### `I-01` — Critical: Immutable Variables Incompatible with Proxy Pattern  *(Severity: Informational · Status: Unresolved)*
 
-The `bridge` address has absolute control over the token's supply through the `bridgeMint` and `bridgeBurn` functions. If this address is compromised, an attacker could mint an arbitrary amount of tokens or burn existing tokens, leading to severe economic instability and loss of user funds. While this is a common design for bridged tokens, the single point of failure represents a significant centralization risk.
+Not confirmed by static analysis (the model's own reading of the source). The `ERC20Bridged` contract declares `bridge` as an `immutable` variable, and `ERC20Metadata` declares `decimals` as `immutable`. When an implementation contract with `immutable` variables is deployed behind a proxy, these variables are set during the implementation's constructor execution and are stored in the implementation's bytecode or a special storage area, not in the proxy's delegated storage. Consequently, when calls are made through the proxy, `bridge` will always evaluate to `address(0)` and `decimals` will always evaluate to `0`. This renders the `onlyBridge` modifier ineffective, allowing any non-zero addre
+
+**Recommendation:** Remove the `immutable` keyword from `bridge` and `decimals`. These variables should be declared as regular state variables and initialized via an access-controlled initializer function (e.g., `initialize(..., address bridge_, uint8 decimals_)`) that is called only once through the proxy. Ensure the initializer function is properly protected to prevent re-initialization.
+
+
+### `I-02` — High: Centralization Risk with Bridge Address  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `bridge` address has absolute control over the token's supply through the `bridgeMint` and `bridgeBurn` functions. If this address is compromised, an attacker could mint an arbitrary amount of tokens or burn existing tokens, leading to severe economic instability and loss of user funds. While this is a common design for bridged tokens, the single point of failure represents a significant centralization risk.
 
 **Recommendation:** Consider implementing a multi-signature wallet (e.g., Gnosis Safe) for the `bridge` address to distribute control and require multiple approvals for critical operations. Alternatively, explore time-locks or governance mechanisms to introduce delays or community oversight for `bridgeMint` and `bridgeBurn` operations.
 
 
-### `M-01` — Medium: Potential for Storage Collisions with Custom Metadata Slot  *(Severity: Medium · Status: Unresolved)*
+### `I-03` — Medium: Potential for Storage Collisions with Custom Metadata Slot  *(Severity: Informational · Status: Unresolved)*
 
-The `ERC20Metadata` contract uses a custom storage slot (`DYNAMIC_METADATA_SLOT = keccak256("ERC20Metdata.dynamicMetadata")`) for storing the token's `name` and `symbol`. While using a `keccak256` hash for a storage slot is a common technique to avoid collisions with standard storage variables, it introduces a potential risk in future upgrades. If a new version of the contract or a base contract introduces a state variable that happens to occupy this specific storage slot, it could lead to a storage collision, corrupting data or causing unexpected behavior.
+Not confirmed by static analysis (the model's own reading of the source). The `ERC20Metadata` contract uses a custom storage slot (`DYNAMIC_METADATA_SLOT = keccak256("ERC20Metdata.dynamicMetadata")`) for storing the token's `name` and `symbol`. While using a `keccak256` hash for a storage slot is a common technique to avoid collisions with standard storage variables, it introduces a potential risk in future upgrades. If a new version of the contract or a base contract introduces a state variable that happens to occupy this specific storage slot, it could lead to a storage collision, corrupting data or causing unexpected behavior.
 
 **Recommendation:** Ensure that any future upgrades or modifications to the contract's storage layout are meticulously reviewed for potential collisions with this custom slot. Document this custom slot clearly in the contract's design specifications. Consider using a more explicit 'gap' array or OpenZeppelin's `ERC1967Storage` pattern for proxy-safe storage management, although the current approach is generally considered safer than direct slot assignment for custom data.
+
+
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
+
+The ten largest holders own 76.6% of supply. What remains: 3.4% in wallets, 73.1% in other contracts. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
+
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as Arbitrum Bridged wstETH (Arbitrum) (WSTETH), market cap $133M. Verified by: CoinGecko.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $1.2M (DexScreener, all pools). 24h trading volume $963K (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-PROFILE` — Asset class: Wrapped or bridged asset  *(Severity: Informational · Status: Acknowledged)*
+
+A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Bridged-Tokens. Tokenomics — Supply: fixed — the contract has no mint function. Control: an owner key. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $1.2M of DEX liquidity across 14 pools. Launch: 1263 days of market history.
+
+**Recommendation:** The backing is the risk: check who holds the underlying asset and how redemption works.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: Curve.Fi USD Stablecoin
 ticker: CRVUSD
 network: ethereum
-risk_score: 42
-status: medium
+risk_score: 10
+status: low
 date: 2026-08-11
 ---
 
 # Curve.Fi USD Stablecoin (CRVUSD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 10/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/curvefi-usd-stablecoin-eth)
 
@@ -25,9 +25,9 @@ The crvUSD Stablecoin contract is a Vyper-based ERC-20 token implementation, inc
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract exhibits strong technical security (7.2 Code Security). It correctly implements ERC-20 and EIP-2612 standards, including robust replay protection for permits and ERC-1271 support for… |
-| **Governance / Economics** | 2/10 | High | The economic model (7.4 Economic) centers around a stablecoin with a centralized `minter` role. This `minter` has the sole authority to mint new tokens and transfer the minter privilege (7.5… |
-| **Upgrades** | 3/10 | High | This contract is not designed with an upgrade mechanism (7.7 Upgrades). It is deployed as a standalone, immutable contract. Therefore, there are no upgrade-related risks to assess. Any future changes… |
+| **Technical** | 10/10 | Low | The contract exhibits strong technical security (7.2 Code Security). It correctly implements ERC-20 and EIP-2612 standards, including robust replay protection for permits and ERC-1271 support for… |
+| **Governance / Economics** | 9/10 | Low | The economic model (7.4 Economic) centers around a stablecoin with a centralized `minter` role. This `minter` has the sole authority to mint new tokens and transfer the minter privilege (7.5… |
+| **Upgrades** | 10/10 | Low | This contract is not designed with an upgrade mechanism (7.7 Upgrades). It is deployed as a standalone, immutable contract. Therefore, there are no upgrade-related risks to assess. Any future changes… |
 
 ## LP Distribution
 
@@ -38,27 +38,62 @@ The crvUSD Stablecoin contract is a Vyper-based ERC-20 token implementation, inc
 
 ## Security Findings
 
-_🟡 1 Medium · ⚪ 2 Informational_
-
-### `M-01` — Centralized Minter Role  *(Severity: Medium · Status: Unresolved)*
-
-The `minter` address holds exclusive control over the `mint` function, allowing it to create an arbitrary amount of new tokens. Additionally, the `minter` can transfer this privilege to any other address via `set_minter`. While this is a common design for centralized stablecoins, it introduces a significant single point of failure. A compromise of the `minter`'s private key would allow an attacker to inflate the token supply, leading to a loss of peg and severe economic consequences for the protocol and its users.
-
-**Recommendation:** Implement robust security measures for the `minter` address, such as a multi-signature wallet with a high threshold for transactions, or a time-locked governance mechanism. Establish clear operational procedures for managing the `minter` key and any changes to the `minter` address. Consider a mechanism for emergency pausing or rate-limiting minting if feasible within the protocol's design.
-
+_⚪ 8 Informational_
 
 ### `I-01` — Standard ERC-20 `approve` Race Condition  *(Severity: Informational · Status: Unresolved)*
 
-The `approve` function, as per the ERC-20 standard, is susceptible to a known front-running or race condition attack. If a user increases an allowance from `X` to `Y` and a malicious spender observes this transaction, they can front-run it by spending the original `X` allowance, then allowing the user's `approve(Y)` transaction to confirm, and finally spending `Y` tokens. This results in the spender taking `X + Y` tokens instead of just `Y` (or `X` if the user intended to decrease). The contract's docstring for `approve` acknowledges this and recommends `increaseAllowance` and `decreaseAllowance` as safer alternatives.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function, as per the ERC-20 standard, is susceptible to a known front-running or race condition attack. If a user increases an allowance from `X` to `Y` and a malicious spender observes this transaction, they can front-run it by spending the original `X` allowance, then allowing the user's `approve(Y)` transaction to confirm, and finally spending `Y` tokens. This results in the spender taking `X + Y` tokens instead of just `Y` (or `X` if the user intended to decrease). The contract's docstring for `approve` acknowledges this and recommends `increaseAllowance` and `decreaseAllowance` as safer alternatives.
 
 **Recommendation:** Educate users to primarily use `increaseAllowance` and `decreaseAllowance` instead of directly calling `approve` when changing an existing allowance. If `approve` must be used to change an allowance, it is best practice to first set the allowance to zero before setting it to a new non-zero value.
 
 
 ### `I-02` — Immutability of EIP-712 `salt` from `block.prevhash`  *(Severity: Informational · Status: Unresolved)*
 
-The EIP-712 domain separator `salt` is initialized in the constructor using `block.prevhash` and then made `immutable`. While `block.prevhash` provides a unique value for the deployment, ensuring domain separation, it is not a cryptographically strong source of randomness. For the specific purpose of an EIP-712 `salt`, which primarily needs to be unique per deployment and consistent, this approach is generally acceptable and does not pose a direct security vulnerability. The contract also correctly recalculates the domain separator if `chain.id` changes, enhancing fork safety.
+Not confirmed by static analysis (the model's own reading of the source). The EIP-712 domain separator `salt` is initialized in the constructor using `block.prevhash` and then made `immutable`. While `block.prevhash` provides a unique value for the deployment, ensuring domain separation, it is not a cryptographically strong source of randomness. For the specific purpose of an EIP-712 `salt`, which primarily needs to be unique per deployment and consistent, this approach is generally acceptable and does not pose a direct security vulnerability. The contract also correctly recalculates the domain separator if `chain.id` changes, enhancing fork safety.
 
 **Recommendation:** No direct action is required as the current implementation is acceptable for its intended purpose. For future contracts requiring stronger randomness or unpredictability for initialization parameters, consider using a Verifiable Random Function (VRF) or a more robust source of entropy if available and appropriate for the use case.
+
+
+### `I-03` — Centralized Minter Role  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `minter` address holds exclusive control over the `mint` function, allowing it to create an arbitrary amount of new tokens. Additionally, the `minter` can transfer this privilege to any other address via `set_minter`. While this is a common design for centralized stablecoins, it introduces a significant single point of failure. A compromise of the `minter`'s private key would allow an attacker to inflate the token supply, leading to a loss of peg and severe economic consequences for the protocol and its users.
+
+**Recommendation:** Implement robust security measures for the `minter` address, such as a multi-signature wallet with a high threshold for transactions, or a time-locked governance mechanism. Establish clear operational procedures for managing the `minter` key and any changes to the `minter` address. Consider a mechanism for emergency pausing or rate-limiting minting if feasible within the protocol's design.
+
+
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
+
+The ten largest holders own 76.5% of supply. What remains: 0.0% in wallets, 76.5% in other contracts. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
+
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as crvUSD (CRVUSD), market cap $194M, rank #180. Verified by: CoinGecko.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $126.7M (DexScreener, all pools). 24h trading volume $2.1M (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-POWERS` — What the token's controller can do  *(Severity: Informational · Status: Acknowledged)*
+
+The contract lets its controller — an owner that could not be resolved — mint new supply. These are the issuer's controls by design; for a verified issuer they are counterparty risk — the issuer can act on any holder, including you.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
+### `QA-PROFILE` — Asset class: Stablecoin — protocol-backed (crypto collateral)  *(Severity: Informational · Status: Acknowledged)*
+
+A token designed to hold a fixed value (usually $1). Its safety rests on what backs it and on who can mint, freeze or pause it. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Crypto-backed Stablecoin. Tokenomics — Supply: issued and redeemed by the issuer against its backing. Control: an owner that could not be resolved. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $126.7M of DEX liquidity across 13 pools. Launch: 1184 days of market history.
+
+**Recommendation:** Check what backs the peg and who controls supply: reserve attestations for an issuer-backed coin, collateral and governance for a protocol coin.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: Dominion Silver
 ticker: SILV
 network: solana
-risk_score: 100
-status: critical
+risk_score: 84
+status: high
 date: 2026-08-14
 ---
 
 # Dominion Silver (SILV) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 84/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dominion-silver-sol)
 
@@ -25,9 +25,9 @@ This SPL Token Mint presents critical risks due to active Mint, Freeze, and Perm
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 1/10 | High | The Dominion Silver (SILV) token is an SPL Token-2022 mint. It has an active Mint Authority at 6FtT3CBaXVArhd2C4egCsQb1f1NF3FAfA6xhXJXD8chR, enabling the creation of new tokens. A Freeze Authority is… |
-| **Governance / Economics** | 1/10 | High | Economic stability is severely impacted by high holder concentration, with the top 10 token accounts holding 94.84% of the total supply, indicating a high risk of price volatility from large… |
-| **Upgrades** | 1/10 | High | The token's mutability features present ongoing risks. The Mint Authority and Freeze Authority are both active, allowing for future changes to supply and account status. A Permanent Delegate is also… |
+| **Technical** | 4/10 | Medium | The Dominion Silver (SILV) token is an SPL Token-2022 mint. It has an active Mint Authority at 6FtT3CBaXVArhd2C4egCsQb1f1NF3FAfA6xhXJXD8chR, enabling the creation of new tokens. A Freeze Authority is… |
+| **Governance / Economics** | 2/10 | High | Economic stability is severely impacted by high holder concentration, with the top 10 token accounts holding 94.84% of the total supply, indicating a high risk of price volatility from large… |
+| **Upgrades** | 3/10 | High | The token's mutability features present ongoing risks. The Mint Authority and Freeze Authority are both active, allowing for future changes to supply and account status. A Permanent Delegate is also… |
 
 ## Token-2022 Extensions
 
@@ -37,7 +37,7 @@ This SPL Token Mint presents critical risks due to active Mint, Freeze, and Perm
 
 ## Security Findings
 
-_🔴 3 Critical · 🟠 1 High · 🟡 2 Medium · 🟢 1 Low_
+_🔴 3 Critical · 🟠 1 High · 🟡 3 Medium · 🟢 1 Low · ⚪ 5 Informational_
 
 ### `C-01` — Mint Authority Not Revoked  *(Severity: Critical · Status: Unresolved)*
 
@@ -81,11 +81,53 @@ A balance-mutating authority can adjust user balances.
 **Recommendation:** Be aware that an authority exists which can modify token balances directly, potentially without user consent.
 
 
+### `QA-POWERS` — What the token's controller can do  *(Severity: Medium · Status: Acknowledged)*
+
+The contract lets its controller — the freeze authority — mint new supply. Nothing independent vouches for whoever holds them, so each is a live risk to holders.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
 ### `L-01` — Mutable Metadata  *(Severity: Low · Status: Unresolved)*
 
 Token name, symbol, or image can be changed post-launch.
 
 **Recommendation:** Verify metadata against off-chain expectations before trusting branding.
+
+
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
+
+The ten largest holders own 67.7% of supply. What remains: 67.7% in wallets, 0.0% in other contracts.
+
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Listed, but not independently verified  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as Dominion Silver (SILV).
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $212K (DexScreener, all pools). 24h trading volume $576K (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-PROFILE` — Asset class: Tokenized real-world asset  *(Severity: Informational · Status: Acknowledged)*
+
+A token backed by an off-chain asset (a stock, gold, treasury bills, a fund share) held by a named issuer or custodian. Issuance, redemption and transfer restrictions are the issuer's by design. The class itself adds no points; the contract and market facts decide the score. Basis: CoinGecko category: Tokenized Commodities. Tokenomics — Supply: mintable with no on-chain cap found. Control: the freeze authority. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $212K of DEX liquidity across 16 pools. Launch: under a day of market history.
+
+**Recommendation:** Treat the issuer or custodian as the counterparty: check its custody reports and who may hold or redeem the token.
+
+
+### `QA-RECENT` — Recently launched — less than a day of market history  *(Severity: Informational · Status: Acknowledged)*
+
+The token's oldest DEX pool is less than a day old. Age is not part of the risk score — a new token is not a risky one by default — but a short history means fewer trades and holder changes behind the facts in this report.
+
+**Recommendation:** Re-check ownership, liquidity and holder distribution as the token matures; those are the facts that move early.
 
 ## Token Metrics
 
@@ -108,7 +150,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -117,7 +159,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

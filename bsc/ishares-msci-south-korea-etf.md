@@ -2,14 +2,14 @@
 token: iShares MSCI South Korea ETF
 ticker: EWYB
 network: bsc
-risk_score: 83
-status: high
+risk_score: 9
+status: low
 date: 2026-10-20
 ---
 
 # iShares MSCI South Korea ETF (EWYB) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 83/100 — 🟠 High Risk**
+> **Risk Score: 9/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ishares-msci-south-korea-etf-bsc)
 
@@ -27,9 +27,9 @@ Additionally, implement a timelock mechanism for all sensitive administrative fu
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract follows standard OpenZeppelin upgradeable patterns (7.1 Architecture) and implements secure ERC-20 logic (7.2 Code Security). Access control is strictly enforced via… |
-| **Governance / Economics** | 1/10 | High | Governance is centralized under administrative roles (7.5 Governance). Economic parameters like transfer fees and UI multipliers are fully adjustable by privileged roles (7.4 Economic). This allows… |
-| **Upgrades** | 1/10 | High | The contract utilizes a Beacon proxy pattern (7.7 Upgrades), allowing for standardized upgrades across multiple instances. Operations (7.8 Operations) are well-defined through explicit setter… |
+| **Technical** | 9/10 | Low | The contract follows standard OpenZeppelin upgradeable patterns (7.1 Architecture) and implements secure ERC-20 logic (7.2 Code Security). Access control is strictly enforced via… |
+| **Governance / Economics** | 9/10 | Low | Governance is centralized under administrative roles (7.5 Governance). Economic parameters like transfer fees and UI multipliers are fully adjustable by privileged roles (7.4 Economic). This allows… |
+| **Upgrades** | 5/10 | Medium | The contract utilizes a Beacon proxy pattern (7.7 Upgrades), allowing for standardized upgrades across multiple instances. Operations (7.8 Operations) are well-defined through explicit setter… |
 
 ## Proxy Upgrade Controls
 
@@ -47,30 +47,23 @@ Additionally, implement a timelock mechanism for all sensitive administrative fu
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 5 Informational_
+_⚪ 8 Informational_
 
-### `CP-03` — Centralized Control Over Token Logic  *(Severity: High · Status: Unresolved)*
+### `CP-03` — Centralized Control Over Token Logic  *(Severity: Informational · Status: Unresolved)*
 
 The contract allows a privileged role to change the addresses of the Compliance and PauseManager contracts. Because all token transfers depend on these external contracts, an administrator can effectively halt all transfers or bypass compliance checks at will.
 
 **Recommendation:** Implement a multi-signature wallet for the administrative role and consider adding a timelock to any function that updates critical external contract dependencies.
 
 
-### `CP-07` — Administrative Control Over Transfer Fees  *(Severity: Medium · Status: Unresolved)*
+### `CP-07` — Administrative Control Over Transfer Fees  *(Severity: Informational · Status: Unresolved)*
 
 The setUIMultiplier function allows privileged roles to modify the transfer fee structure. This gives the administrator the ability to change the cost of moving tokens without prior notice to token holders.
 
 **Recommendation:** Document the fee adjustment policy clearly and implement a notice period or a cap on how frequently or drastically fees can be adjusted.
 
 
-### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
-
-0.0% of the pool's LP is burned or time-locked. 96.4% is held, unlocked, by 10 address(es) other than the owner/deployer. No single one holds a majority: their exits thin the market rather than hand anyone the pool. Some pools are concentrated-liquidity (V3/V4) positions; shares above are by position as GoPlus reports them.
-
-**Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
-
-
-### `CP-08` — Administrative Control Over Transfer Limits  *(Severity: Low · Status: Unresolved)*
+### `CP-08` — Administrative Control Over Transfer Limits  *(Severity: Informational · Status: Unresolved)*
 
 Privileged roles can modify numeric limits related to transaction sizes or wallet thresholds via the setUIMultiplier function. This allows the administrator to restrict or enable specific transfer behaviors arbitrarily.
 
@@ -79,14 +72,14 @@ Privileged roles can modify numeric limits related to transaction sizes or walle
 
 ### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-The ten largest holders own 99.4% of supply. Of that, 1.2% in DEX pools — not holders that can sell, so excluded from the concentration score. What remains: 96.3% in wallets, 1.9% in other contracts. 3,658 holders in total.
+The ten largest holders own 99.4% of supply. Of that, 1.2% in DEX pools — not holders that can sell, so excluded from the concentration score. What remains: 96.3% in wallets, 1.9% in other contracts. 3,658 holders in total. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
 
 **Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
 
 
-### `QA-IDENTITY` — Listed, but not independently verified  *(Severity: Informational · Status: Acknowledged)*
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
 
-Listed on CoinGecko as iShares MSCI South Korea ETF (bStocks Tokenized Stock) (EWYB), market cap $10M, rank #1193. 3,658 holders.
+Listed on CoinGecko as iShares MSCI South Korea ETF (bStocks Tokenized ETF) (EWYB), market cap $10M, rank #1230. Its admin (0x45e3…679d) controls 100 issuer-backed coins CoinGecko lists on bsc, $1.2B together, among them SpaceX (bStocks Tokenized Stock), Circle Internet Group (bStocks Tokenized Stock), SanDisk (bStocks Tokenized Stock): one issuer's programme, read on-chain. 3,658 holders. Verified by: issuer programme.
 
 **Recommendation:** Match the contract address against the project's official channels before trading.
 
@@ -100,7 +93,7 @@ Liquidity $222K (DexScreener, all pools). 24h trading volume $5.0M (CoinGecko, a
 
 ### `QA-PROFILE` — Asset class: Tokenized real-world asset  *(Severity: Informational · Status: Acknowledged)*
 
-A token backed by an off-chain asset (a stock, gold, treasury bills, a fund share) held by a named issuer or custodian. Issuance, redemption and transfer restrictions are the issuer's by design. The class itself adds no points; the contract and market facts decide the score. Basis: CoinGecko category: Tokenized Exchange-Traded Funds (ETFs). Tokenomics — Supply: mintable with no on-chain cap found. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $222K of DEX liquidity across 30 pools. Launch: 5 days of market history.
+A token backed by an off-chain asset (a stock, gold, treasury bills, a fund share) held by a named issuer or custodian. Issuance, redemption and transfer restrictions are the issuer's by design. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Tokenized Exchange-Traded Funds (ETFs). Tokenomics — Supply: issued and redeemed by the issuer against its backing. Control: an owner that could not be resolved. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $222K of DEX liquidity across 30 pools. Launch: 5 days of market history.
 
 **Recommendation:** Treat the issuer or custodian as the counterparty: check its custody reports and who may hold or redeem the token.
 

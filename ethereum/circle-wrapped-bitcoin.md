@@ -2,14 +2,14 @@
 token: Circle Wrapped Bitcoin
 ticker: CIRBTC
 network: ethereum
-risk_score: 86
-status: critical
+risk_score: 11
+status: low
 date: 2026-09-20
 ---
 
 # Circle Wrapped Bitcoin (CIRBTC) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 86/100 — 🔴 Critical Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/circle-wrapped-bitcoin-eth)
 
@@ -25,9 +25,9 @@ This audit covers the FiatTokenV2_2 contract, which serves as the implementation
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract demonstrates robust implementation of EIP-712 permit and authorization functions, leveraging secure libraries like ECRecover and SignatureChecker (7.2 Code Security). The bitwise packing… |
-| **Governance / Economics** | 1/10 | High | As a stablecoin, the protocol exhibits a high degree of centralized control, with roles such as owner, pauser, and blacklister possessing significant authority over token operations, including… |
-| **Upgrades** | 1/10 | High | The contract is designed as an upgradeable implementation for a proxy (7.1 Architecture). The `initializeV2_2` function includes a version check (`_initializedVersion == 2`) to prevent… |
+| **Technical** | 9/10 | Low | The contract demonstrates robust implementation of EIP-712 permit and authorization functions, leveraging secure libraries like ECRecover and SignatureChecker (7.2 Code Security). The bitwise packing… |
+| **Governance / Economics** | 9/10 | Low | As a stablecoin, the protocol exhibits a high degree of centralized control, with roles such as owner, pauser, and blacklister possessing significant authority over token operations, including… |
+| **Upgrades** | 2/10 | High | The contract is designed as an upgradeable implementation for a proxy (7.1 Architecture). The `initializeV2_2` function includes a version check (`_initializedVersion == 2`) to prevent… |
 
 ## Proxy Upgrade Controls
 
@@ -47,34 +47,76 @@ This audit covers the FiatTokenV2_2 contract, which serves as the implementation
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
+_⚪ 10 Informational_
 
-### `H-01` — Storage Collision Risk in Upgrade  *(Severity: High · Status: Unresolved)*
+### `I-01` — Complex Bitwise Operations for State Packing  *(Severity: Informational · Status: Unresolved)*
 
-The `FiatTokenV2_2` contract introduces a new storage pattern where `balanceAndBlacklistStates` combines both the token balance and the blacklisted status into a single `uint256` using bitwise operations. If prior versions of the contract (e.g., `FiatTokenV2_1`, `FiatTokenV2`, `FiatTokenV1`) stored these two pieces of information in separate storage slots (e.g., `balances` mapping and `blacklisted` mapping), this change in storage layout could lead to a storage collision during an upgrade. A collision would result in data corruption, where existing balances or blacklist statuses are overwritten or misinterpreted, potentially leading to loss of funds or incorrect blacklisting.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes bitwise operations to pack two distinct pieces of state (token balance and blacklisted status) into a single `uint256` variable (`balanceAndBlacklistStates`). Specifically, the highest bit (2^255) is used to indicate blacklisting, while the lower 255 bits store the balance. While this is an efficient storage optimization, it significantly increases the complexity of the code and the potential for subtle errors if not handled with extreme care (7.2 Code Security).
+
+**Recommendation:** Ensure comprehensive unit and integration tests specifically cover all edge cases related to the bitwise operations, including maximum balance values, blacklisting/unblacklisting transitions, and concurrent operations. Maintain clear and detailed documentation explaining this storage mechanism to reduce the risk of future misinterpretations or errors during maintenance or upgrades.
+
+
+### `I-02` — Storage Collision Risk in Upgrade  *(Severity: Informational · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `FiatTokenV2_2` contract introduces a new storage pattern where `balanceAndBlacklistStates` combines both the token balance and the blacklisted status into a single `uint256` using bitwise operations. If prior versions of the contract (e.g., `FiatTokenV2_1`, `FiatTokenV2`, `FiatTokenV1`) stored these two pieces of information in separate storage slots (e.g., `balances` mapping and `blacklisted` mapping), this change in storage layout could lead to a storage collision during an upgrade. A collision would result in data corruption, where existing balances or blacklist statuses are overwritten or misinterpreted, poten
 
 **Recommendation:** Conduct a comprehensive storage layout analysis across all contract versions in the upgrade path to ensure that the introduction of `balanceAndBlacklistStates` does not conflict with previously used storage slots. If a conflict is identified, a migration strategy or a different storage layout for the new version must be implemented to preserve existing data integrity. This is critical for upgrade safety (7.7 Upgrades).
 
 
-### `M-01` — Self-Blacklisting of Contract Address  *(Severity: Medium · Status: Unresolved)*
+### `I-03` — Self-Blacklisting of Contract Address  *(Severity: Informational · Status: Unresolved)*
 
-The `initializeV2_2` function explicitly blacklists the contract's own address (`_blacklist(address(this))`). While this might be an intentional design choice to prevent the token contract itself from holding tokens, it is an unusual pattern for an ERC-20 token. This could lead to unexpected behavior or operational limitations if future functionalities or integrations require the contract to temporarily hold or receive its own tokens. It also means the contract cannot be a recipient in any transfer, which might not be immediately obvious to external systems (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `initializeV2_2` function explicitly blacklists the contract's own address (`_blacklist(address(this))`). While this might be an intentional design choice to prevent the token contract itself from holding tokens, it is an unusual pattern for an ERC-20 token. This could lead to unexpected behavior or operational limitations if future functionalities or integrations require the contract to temporarily hold or receive its own tokens. It also means the contract cannot be a recipient in any transfer, which might not be immediately obvious to external systems (7.8 Operations).
 
 **Recommendation:** Clearly document the rationale and implications of blacklisting the contract's own address. Ensure that all current and future operational requirements and integrations are compatible with this restriction. If the intent is solely to prevent the contract from holding tokens, consider alternative mechanisms that are less restrictive or more explicit in their purpose.
 
 
-### `L-01` — Centralized Control Over Critical Functions  *(Severity: Low · Status: Unresolved)*
+### `I-04` — Centralized Control Over Critical Functions  *(Severity: Informational · Status: Unresolved)*
 
-The contract, as part of a stablecoin system, relies on centralized control for critical functions such as pausing transfers, blacklisting accounts, and managing upgrades. Roles like `owner`, `pauser`, and `blacklister` (inherited from base contracts) possess significant power, including the ability to freeze user funds or prevent all token operations (7.3 Access Control, 7.5 Governance). While this is a common and often necessary design for stablecoins to ensure stability and compliance, it introduces a single point of failure and a high degree of trust in the controlling entities.
+Not confirmed by static analysis (the model's own reading of the source). The contract, as part of a stablecoin system, relies on centralized control for critical functions such as pausing transfers, blacklisting accounts, and managing upgrades. Roles like `owner`, `pauser`, and `blacklister` (inherited from base contracts) possess significant power, including the ability to freeze user funds or prevent all token operations (7.3 Access Control, 7.5 Governance). While this is a common and often necessary design for stablecoins to ensure stability and compliance, it introduces a single point of failure and a high degree of trust in the controlling entities.
 
 **Recommendation:** While centralization is inherent to this type of asset, consider implementing additional security measures for critical administrative roles, such as multi-signature wallets for ownership and key operational roles, and potentially time-locks for sensitive parameter changes or upgrade approvals. This enhances security by distributing control and providing a delay for review (7.5 Governance).
 
 
-### `I-01` — Complex Bitwise Operations for State Packing  *(Severity: Informational · Status: Unresolved)*
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-The contract utilizes bitwise operations to pack two distinct pieces of state (token balance and blacklisted status) into a single `uint256` variable (`balanceAndBlacklistStates`). Specifically, the highest bit (2^255) is used to indicate blacklisting, while the lower 255 bits store the balance. While this is an efficient storage optimization, it significantly increases the complexity of the code and the potential for subtle errors if not handled with extreme care (7.2 Code Security).
+The ten largest holders own 100.1% of supply. What remains: 52.3% in wallets, 47.8% in other contracts. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
 
-**Recommendation:** Ensure comprehensive unit and integration tests specifically cover all edge cases related to the bitwise operations, including maximum balance values, blacklisting/unblacklisting transitions, and concurrent operations. Maintain clear and detailed documentation explaining this storage mechanism to reduce the risk of future misinterpretations or errors during maintenance or upgrades.
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as Circle Wrapped BTC (CIRBTC), market cap $494M. Verified by: CoinGecko.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $33.4M (DexScreener, all pools). 24h trading volume $4.5M (DexScreener, main pool).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-POWERS` — What the token's controller can do  *(Severity: Informational · Status: Acknowledged)*
+
+The contract lets its controller — a single wallet (EOA) — mint new supply. These are the issuer's controls by design; for a verified issuer they are counterparty risk — the issuer can act on any holder, including you.
+
+**Recommendation:** Check who holds these powers and whether a timelock or multisig stands between them and holders.
+
+
+### `QA-PROFILE` — Asset class: Wrapped or bridged asset  *(Severity: Informational · Status: Acknowledged)*
+
+A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Wrapped-Tokens. Tokenomics — Supply: mintable with no on-chain cap found. Control: a single wallet (EOA). Code: upgradeable proxy. Fees: no buy or sell tax. Market: $33.4M of DEX liquidity across 7 pools. Launch: 4 days of market history.
+
+**Recommendation:** The backing is the risk: check who holds the underlying asset and how redemption works.
+
+
+### `QA-RECENT` — Recently launched — 4 days of market history  *(Severity: Informational · Status: Acknowledged)*
+
+The token's oldest DEX pool is 4 days old. Age is not part of the risk score — a new token is not a risky one by default — but a short history means fewer trades and holder changes behind the facts in this report.
+
+**Recommendation:** Re-check ownership, liquidity and holder distribution as the token matures; those are the facts that move early.
 
 ## Token Metrics
 

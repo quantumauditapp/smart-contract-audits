@@ -2,14 +2,14 @@
 token: Base tBTC v2
 ticker: TBTC
 network: base
-risk_score: 47
-status: medium
+risk_score: 11
+status: low
 date: 2026-10-25
 ---
 
 # Base tBTC v2 (TBTC) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 47/100 — 🟡 Medium Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/base-tbtc-v2-base)
 
@@ -27,8 +27,8 @@ For future iterations, consider implementing a decentralized governance mechanis
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The architecture follows industry-standard OpenZeppelin upgradeable patterns, ensuring robust code structure. 7.1 Architecture is sound, utilizing a proxy-implementation separation. 7.2 Code Security… |
-| **Governance / Economics** | 8/10 | Low | 7.4 Economic risk is centered on the minting capability, which allows for supply dilution. 7.5 Governance is handled by a 6-of-9 multisig, which is a strong security measure against… |
+| **Technical** | 9/10 | Low | The architecture follows industry-standard OpenZeppelin upgradeable patterns, ensuring robust code structure. 7.1 Architecture is sound, utilizing a proxy-implementation separation. 7.2 Code Security… |
+| **Governance / Economics** | 9/10 | Low | 7.4 Economic risk is centered on the minting capability, which allows for supply dilution. 7.5 Governance is handled by a 6-of-9 multisig, which is a strong security measure against… |
 | **Upgrades** | 6/10 | Medium | 7.7 Upgrades are managed through a Transparent Proxy pattern controlled by a Timelock, providing a 24-hour delay for administrative changes. 7.8 Operations are well-defined with clear roles for… |
 
 ## Proxy Upgrade Controls
@@ -66,7 +66,7 @@ The ten largest holders own 77.6% of supply. What remains: 3.6% in wallets, 74.0
 
 ### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
 
-Listed on CoinGecko as tBTC (TBTC), market cap $333M. 84,980 holders. Verified by: CoinGecko.
+Listed on CoinGecko as tBTC (TBTC), market cap $331M. 84,980 holders. Verified by: CoinGecko.
 
 **Recommendation:** Match the contract address against the project's official channels before trading.
 
