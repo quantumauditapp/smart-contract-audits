@@ -2,14 +2,14 @@
 token: PUMOSHI NAKAMOTO
 ticker: PUMO
 network: solana
-risk_score: 21
+risk_score: 9
 status: low
 date: 2026-09-23
 ---
 
 # PUMOSHI NAKAMOTO (PUMO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 21/100 — 🟢 Low Risk**
+> **Risk Score: 9/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pumoshi-nakamoto-sol)
 
@@ -17,7 +17,7 @@ date: 2026-09-23
 
 ## Security Analysis
 
-PUMOSHI NAKAMOTO (PUMO) is a token on Solana. Our automated on-chain security scanner assigned it a risk score of 21/100, classified as Medium Risk. The contract source code is open-source and verified on the blockchain explorer. Contract ownership has been renounced, and the contract does not have a mint function. Liquidity does not appear to be locked. These factors are weighted to produce the overall risk classification.
+PUMOSHI NAKAMOTO (PUMO) is a token on Solana. Our automated on-chain security scanner assigned it a risk score of 9/100, classified as Medium Risk. The contract source code is open-source and verified on the blockchain explorer. Contract ownership has been renounced, and the contract does not have a mint function. Liquidity is locked. These factors are weighted to produce the overall risk classification.
 
 Key signals investors should consider: the top 10 wallets hold 0.0% of the supply, which suggests a relatively distributed token supply. As with any new token, on-chain data can change rapidly. Always verify contract details independently on a block explorer and conduct your own research before making any investment decisions.
 
@@ -26,8 +26,8 @@ Key signals investors should consider: the top 10 wallets hold 0.0% of the suppl
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low |  |
-| **Governance / Economics** | 4/10 | Medium |  |
-| **Upgrades** | 8/10 | Low |  |
+| **Governance / Economics** | 7/10 | Low |  |
+| **Upgrades** | 10/10 | Low |  |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _1 finding(s)_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3234 buys / 1392 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,18 +69,18 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is PUMOSHI NAKAMOTO a scam?
 
-Based on automated analysis, PUMOSHI NAKAMOTO scores 21/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, PUMOSHI NAKAMOTO scores 9/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is PUMOSHI NAKAMOTO safe to buy?
 
-Our scanner flagged a risk score of 21/100. Ownership is renounced which reduces rug-pull risk. DYOR before purchasing any token.
+Our scanner flagged a risk score of 9/100. Ownership is renounced which reduces rug-pull risk. DYOR before purchasing any token.
 
 ### Has PUMOSHI NAKAMOTO been audited?
 

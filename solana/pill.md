@@ -2,14 +2,14 @@
 token: pill
 ticker: PILL
 network: solana
-risk_score: 14
+risk_score: 0
 status: low
 date: 2026-09-17
 ---
 
 # pill (PILL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 14/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pill-sol)
 
@@ -26,8 +26,8 @@ The 'pill' token is an SPL Token-2022 mint with both mint and freeze authorities
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The 'pill' token is implemented using the spl-token-2022 program. Key security features include the revocation of both the mint authority and the freeze authority, ensuring that no new tokens can be… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits a moderate level of liquidity at $190,619 USD, with a 24-hour trading volume of $1,425,104 USD. The Volume/Liquidity Ratio is 7.48, which is elevated but below the threshold for a… |
-| **Upgrades** | 8/10 | Low | The 'pill' token mint has a strong immutability profile as both the mint authority and freeze authority have been revoked. This means the token's supply is fixed and no accounts can be frozen. The… |
+| **Governance / Economics** | 9/10 | Low | The token exhibits a moderate level of liquidity at $190,619 USD, with a 24-hour trading volume of $1,425,104 USD. The Volume/Liquidity Ratio is 7.48, which is elevated but below the threshold for a… |
+| **Upgrades** | 10/10 | Low | The 'pill' token mint has a strong immutability profile as both the mint authority and freeze authority have been revoked. This means the token's supply is fixed and no accounts can be frozen. The… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 3 days ago. This provides an insufficient track record 
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3791 buys / 3228 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 3 days ago. This provides an insufficient track record 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

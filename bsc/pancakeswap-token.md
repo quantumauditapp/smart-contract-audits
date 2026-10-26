@@ -2,14 +2,14 @@
 token: PancakeSwap Token
 ticker: CAKE
 network: bsc
-risk_score: 72
-status: high
+risk_score: 21
+status: low
 date: 2026-08-11
 ---
 
 # PancakeSwap Token (CAKE) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 72/100 — 🟠 High Risk**
+> **Risk Score: 21/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pancakeswap-token-bsc)
 
@@ -17,41 +17,57 @@ date: 2026-08-11
 
 ## Audit Summary
 
-The audit of the provided BEP20 token contract identified a critical functional flaw: the token's total supply is uninitialized and there is no mechanism to mint new tokens, rendering the contract unusable for transfers. Additionally, the contract employs a standard Ownable pattern, centralizing administrative control, and exhibits a low-severity front-running risk common to ERC-20 allowance mechanisms. The contract otherwise demonstrates good code quality and utilizes established libraries for secure arithmetic and address interactions.
+The CakeToken contract is a standard BEP-20 token implementation with additional minting capabilities. The architecture is straightforward, relying on OpenZeppelin's Ownable and BEP20 patterns. The primary risk is centralized control over the total supply via the minting functions, which is typical for this type of governance token.
 
-> **Final Recommendation:** It is critical to address the uninitialized total supply by implementing a minting mechanism, either in the constructor for an initial supply or through an owner-controlled mint function. Without this, the token contract is non-functional. For administrative control, consider enhancing the owner's security by using a multi-signature wallet or a time-locked governance contract, especially given the owner is an OZ_ProxyAdmin, which suggests a more robust setup might be intended.
+> **Final Recommendation:** The protocol should consider transitioning ownership to a multi-signature wallet or a decentralized governance contract to mitigate the risk of centralized minting. This would ensure that any increase in total supply requires community consensus rather than a single privileged address.
+
+Additionally, ensure that the private keys associated with the owner address are stored in a secure, hardware-backed environment. Regular monitoring of the minting functions is recommended to detect any unauthorized supply changes.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates strong technical foundations by utilizing the SafeMath library (7.2 Code Security) to prevent integer overflows/underflows and the Address library for secure external… |
-| **Governance / Economics** | 1/10 | High | The contract implements the Ownable pattern (7.3 Access Control), centralizing administrative control to a single owner address, which is noted to be an OZ_ProxyAdmin externally. This introduces a… |
-| **Upgrades** | 2/10 | High | The provided contract is not designed as an upgradeable proxy (7.7 Upgrades) and does not contain any upgrade-specific logic. Therefore, direct upgrade safety concerns for this specific contract are… |
+| **Technical** | 8/10 | Low | The contract utilizes well-audited OpenZeppelin libraries for core ERC-20 functionality. 7.1 Architecture is modular and follows standard patterns. 7.2 Code Security is robust, with no evidence of… |
+| **Governance / Economics** | 6/10 | Medium | 7.4 Economic and 7.5 Governance risks are centered on the owner's ability to mint tokens. This allows the owner to unilaterally dilute the supply, which is a significant trust requirement. 7.6… |
+| **Upgrades** | 4/10 | Medium | 7.7 Upgrades are not supported as the contract is not a proxy. 7.8 Operations are stable, and the lack of upgradeability ensures immutability of the core logic. No upgrade-related risks are present. |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟡 1 Medium · 🟢 1 Low_
+_🟡 1 Medium · ⚪ 4 Informational_
 
-### `C-01` — Uninitialized Total Supply and No Minting Mechanism  *(Severity: Critical · Status: Unresolved)*
+### `CP-01` — Centralized Minting Authority  *(Severity: Medium · Status: Unresolved)*
 
-The `_totalSupply` state variable is initialized to 0 in the contract and there are no functions (e.g., `_mint` or an initial supply in the constructor) provided in the code to increase it. Consequently, the `totalSupply()` function will always return 0, and the `_balances` mapping will remain empty. This renders the token untransferable and completely unusable, as no tokens can ever exist or be moved.
+The owner of the contract has the ability to call mint(uint256) and mint(address, uint256) to create new tokens at will. This allows the controller to increase the total supply, which directly dilutes the value of existing tokens held by users.
 
-**Recommendation:** Implement a mechanism to initialize and/or increase the `_totalSupply`. This could involve minting an initial supply in the constructor or adding an owner-controlled `mint` function to create new tokens and assign them to specific addresses.
-
-
-### `M-01` — Centralized Control by Owner  *(Severity: Medium · Status: Unresolved)*
-
-The contract utilizes the `Ownable` pattern, granting a single `owner` address exclusive control over critical administrative functions such as `transferOwnership` and `renounceOwnership`. While common, this introduces a single point of failure. If the owner's private key is compromised, an attacker could gain full administrative control over the contract. The prefill indicates the owner is an 'OZ_ProxyAdmin', which suggests a more robust external governance mechanism might be in place, but from the contract's perspective, it's a single address.
-
-**Recommendation:** Consider implementing a multi-signature wallet for the owner address or integrating a time-locked governance mechanism for critical operations. This would distribute control and add a delay to sensitive actions, enhancing security and decentralization.
+**Recommendation:** Consider implementing a time-lock mechanism for minting operations or transferring ownership to a DAO-controlled contract to prevent unilateral supply inflation.
 
 
-### `L-01` — Front-Running Risk in `decreaseAllowance`  *(Severity: Low · Status: Unresolved)*
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-The `decreaseAllowance` function, while an improvement over directly setting allowance to zero, is still susceptible to front-running. If a user broadcasts a transaction to `decreaseAllowance`, an attacker monitoring the mempool could front-run this transaction by quickly spending the remaining allowance before the decrease takes effect. This is a known pattern in ERC-20 tokens.
+The ten largest holders own 97.2% of supply. Of that, 94.1% burned — not holders that can sell, so excluded from the concentration score. What remains: 2.2% in wallets, 0.8% in other contracts. 1,911,330 holders in total.
 
-**Recommendation:** Users should be aware of this inherent risk when interacting with allowance mechanisms. While no direct code change is typically made for this, users can mitigate risk by approving only necessary amounts or by using a transaction relay service that obscures transaction details until confirmation.
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as PancakeSwap (CAKE), market cap $668M, rank #92. On GoPlus's list of trusted tokens. Traded on Binance. 1,911,330 holders. Verified by: CoinGecko, GoPlus, exchange listings.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $19.2M (DexScreener, all pools). 24h trading volume $51.1M (CoinGecko, all markets, daily snapshot). 24h trading volume $2.6M (DexScreener, all pools). CoinGecko's record for this coin: all-time high $43.96 on 2021-04-30; the price is now 95.2158% below it.
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-PROFILE` — Asset class: Governance token  *(Severity: Informational · Status: Acknowledged)*
+
+A token whose main use is voting on a protocol's decisions (delegation and vote checkpoints in its code). The class itself adds no points; the contract and market facts decide the score. Basis: CoinGecko category: Governance. Tokenomics — Supply: mintable with no on-chain cap found. Control: a ProxyAdmin contract. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $19.2M of DEX liquidity across 30 pools. Launch: 2011 days of market history.
+
+**Recommendation:** Check how much of the voting supply insiders hold and what governance can change.
 
 ## Token Metrics
 
@@ -59,12 +75,12 @@ The `decreaseAllowance` function, while an improvement over directly setting all
 |--------|-------|
 | **Contract** | [`0x0e09...ce82`](https://bscscan.com/address/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82) |
 | **Network** | BNB Chain |
-| **Price** | $2.0140 |
-| **24h Volume** | $1.11M |
-| **Liquidity** | $5.05M |
-| **Volume / Liquidity** | 0.2× |
-| **Token Age** | 3y |
-| **Top-10 Holders** | 97.0% of supply |
+| **Price** | $2.1100 |
+| **24h Volume** | $921.6K |
+| **Liquidity** | $6.28M |
+| **Volume / Liquidity** | 0.1× |
+| **Token Age** | 5y |
+| **Top-10 Holders** | 97.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 209 buys / 268 sells |
 
@@ -75,7 +91,7 @@ The `decreaseAllowance` function, while an improvement over directly setting all
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -85,7 +101,7 @@ The `decreaseAllowance` function, while an improvement over directly setting all
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: Pepe
 ticker: PEPE
 network: ethereum
-risk_score: 28
+risk_score: 26
 status: low
 date: 2026-07-26
 ---
 
 # Pepe (PEPE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pepe-eth)
 
@@ -44,21 +44,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — No Emergency Mechanism or Upgradeability  *(Severity: Low · Status: Unresolved)*
 
-Given the renounced ownership and non-proxy architecture, there is no mechanism to pause the contract, recover accidentally sent tokens (if applicable), or upgrade the contract to address future vulnerabilities or feature requirements. This lack of administrative flexibility is a direct consequence of the design choice for maximum decentralization.
+Not confirmed by static analysis (the model's own reading of the source). Given the renounced ownership and non-proxy architecture, there is no mechanism to pause the contract, recover accidentally sent tokens (if applicable), or upgrade the contract to address future vulnerabilities or feature requirements. This lack of administrative flexibility is a direct consequence of the design choice for maximum decentralization.
 
 **Recommendation:** For future projects where administrative flexibility or upgradeability might be desired, consider implementing a multi-signature wallet for critical administrative functions or utilizing an upgradeable proxy pattern. For this specific contract, ensure users are fully aware of its immutable nature.
 
 
 ### `I-01` — Ownership Renounced and Immutability  *(Severity: Informational · Status: Unresolved)*
 
-The contract's ownership has been renounced (the `owner` address is `address(0)`), rendering all `onlyOwner` functions inaccessible. This makes the contract highly immutable and decentralized regarding administrative control. While this prevents malicious owner actions, it also means no one can perform administrative tasks, fix potential bugs, or upgrade the contract in the future.
+Not confirmed by static analysis (the model's own reading of the source). The contract's ownership has been renounced (the `owner` address is `address(0)`), rendering all `onlyOwner` functions inaccessible. This makes the contract highly immutable and decentralized regarding administrative control. While this prevents malicious owner actions, it also means no one can perform administrative tasks, fix potential bugs, or upgrade the contract in the future.
 
 **Recommendation:** This is a design choice that enhances decentralization. Ensure that all stakeholders understand the implications of this immutability, particularly the inability to modify contract logic or parameters post-deployment.
 
 
 ### `I-02` — Reliance on OpenZeppelin Standards  *(Severity: Informational · Status: Unresolved)*
 
-The contract extensively uses battle-tested OpenZeppelin libraries (Context, Ownable, ERC20). This significantly reduces the likelihood of common vulnerabilities like reentrancy, integer overflows, and basic access control flaws, as these libraries are widely audited and considered secure.
+Not confirmed by static analysis (the model's own reading of the source). The contract extensively uses battle-tested OpenZeppelin libraries (Context, Ownable, ERC20). This significantly reduces the likelihood of common vulnerabilities like reentrancy, integer overflows, and basic access control flaws, as these libraries are widely audited and considered secure.
 
 **Recommendation:** Continue to leverage well-audited and maintained libraries for core functionalities. Regularly check for updates and security advisories related to these dependencies.
 
@@ -101,11 +101,11 @@ The contract extensively uses battle-tested OpenZeppelin libraries (Context, Own
 
 ### Is Pepe a scam?
 
-Based on automated analysis, Pepe scores 0/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Pepe scores 26/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Pepe safe to buy?
 
-Our scanner flagged a risk score of 0/100. Ownership is renounced which reduces rug-pull risk. DYOR before purchasing any token.
+Our scanner flagged a risk score of 26/100. Ownership is renounced which reduces rug-pull risk. DYOR before purchasing any token.
 
 ### Has Pepe been audited?
 

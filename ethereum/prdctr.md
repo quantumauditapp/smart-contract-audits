@@ -2,14 +2,14 @@
 token: PRDCTR
 ticker: PRD
 network: ethereum
-risk_score: 64
+risk_score: 62
 status: medium
 date: 2026-08-17
 ---
 
 # PRDCTR (PRD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 64/100 — 🟡 Medium Risk**
+> **Risk Score: 62/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/prdctr-eth)
 
@@ -50,21 +50,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Centralized Control by Owner  *(Severity: Low · Status: Unresolved)*
 
-The `ConfigurableTokenUpgradeable` contract grants significant control to the contract owner, including the ability to authorize contract upgrades (`_authorizeUpgrade`), transfer ownership, and renounce ownership. The initial token configuration (name, symbol, decimals, initial supply, initial holder) is also set by the owner during initialization. The prefill indicates the owner is a 2/4 multisig.
+Not confirmed by static analysis (the model's own reading of the source). The `ConfigurableTokenUpgradeable` contract grants significant control to the contract owner, including the ability to authorize contract upgrades (`_authorizeUpgrade`), transfer ownership, and renounce ownership. The initial token configuration (name, symbol, decimals, initial supply, initial holder) is also set by the owner during initialization. The prefill indicates the owner is a 2/4 multisig.
 
 **Recommendation:** While the use of a multisig wallet for ownership significantly mitigates the risk of a single point of failure, it is crucial that the multisig signers are trustworthy, follow robust operational security practices, and that the multisig threshold is appropriate for the protocol's risk profile. Consider implementing time-locks for critical operations like upgrades if further decentralization or safety is desired.
 
 
 ### `I-01` — Custom Decimals Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The `ConfigurableTokenUpgradeable` contract overrides the `decimals()` function from `ERC20Upgradeable` to return a custom `_decimals` value set during initialization, rather than the default 18. While this provides flexibility, it deviates from the common ERC-20 standard of 18 decimals.
+Not confirmed by static analysis (the model's own reading of the source). The `ConfigurableTokenUpgradeable` contract overrides the `decimals()` function from `ERC20Upgradeable` to return a custom `_decimals` value set during initialization, rather than the default 18. While this provides flexibility, it deviates from the common ERC-20 standard of 18 decimals.
 
 **Recommendation:** Ensure all integrations and user interfaces are aware of and correctly handle the token's configurable decimal count to prevent display issues or misinterpretations. Clearly document this design choice in external documentation.
 
 
 ### `I-02` — Reinitializer for ERC20Permit  *(Severity: Informational · Status: Unresolved)*
 
-The `initializePermit()` function is marked as a `reinitializer(2)`, allowing it to be called multiple times if the reinitialization flag for slot 2 is reset. This function re-initializes the `ERC20Permit` component by calling `__ERC20Permit_init(name())`.
+Not confirmed by static analysis (the model's own reading of the source). The `initializePermit()` function is marked as a `reinitializer(2)`, allowing it to be called multiple times if the reinitialization flag for slot 2 is reset. This function re-initializes the `ERC20Permit` component by calling `__ERC20Permit_init(name())`.
 
 **Recommendation:** Confirm the specific use case and necessity for `ERC20Permit` re-initialization. While generally safe, ensure that repeated calls do not introduce unexpected state changes or gas inefficiencies if not genuinely required.
 

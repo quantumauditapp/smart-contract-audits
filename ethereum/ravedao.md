@@ -106,11 +106,11 @@ Not confirmed by static analysis (the model's own reading of the source). The Ra
 
 ### Is RaveDAO a scam?
 
-Based on the provided data, RaveDAO exhibits several characteristics commonly associated with high-risk projects. The unrenounced contract ownership, extreme token centralization (97.3% in top 10 holders), and unlocked liquidity are significant red flags that can indicate a heightened potential for malicious actions or severe market manipulation. These factors contribute to its critical risk score of 71/100.
+Based on the provided data, RaveDAO exhibits several characteristics commonly associated with high-risk projects. The unrenounced contract ownership, extreme token centralization (97.3% in top 10 holders), and unlocked liquidity are significant red flags that can indicate a heightened potential for malicious actions or severe market manipulation. These factors contribute to its low risk score of 33/100.
 
 ### Is RaveDAO safe to buy?
 
-Investing in RaveDAO carries significant risk, reflected by its critical risk score of 71/100. Key safety concerns include the unrenounced contract ownership, allowing potential future alterations by the deployer, and the highly concentrated token supply that enables substantial market control by a few large holders. Additionally, the lack of locked liquidity means the project is vulnerable to liquidity withdrawals, posing a substantial risk to investor funds.
+Investing in RaveDAO carries significant risk, reflected by its low risk score of 33/100. Key safety concerns include the unrenounced contract ownership, allowing potential future alterations by the deployer, and the highly concentrated token supply that enables substantial market control by a few large holders. Additionally, the lack of locked liquidity means the project is vulnerable to liquidity withdrawals, posing a substantial risk to investor funds.
 
 ### Has RaveDAO been audited?
 

@@ -2,14 +2,14 @@
 token: Pippin
 ticker: PIPPIN
 network: solana
-risk_score: 15
+risk_score: 5
 status: low
 date: 2026-08-11
 ---
 
 # Pippin (PIPPIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 15/100 — 🟢 Low Risk**
+> **Risk Score: 5/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pippin-sol)
 
@@ -25,8 +25,8 @@ The Pippin SPL token mint exhibits a high concentration of tokens among its top 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The Pippin token is an SPL token operating under the `spl-token` program (v3). Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a high concentration of ownership, with the top 10 token accounts holding 71.74% of the total supply. This level of concentration introduces significant governance and economic… |
+| **Technical** | 10/10 | Low | The Pippin token is an SPL token operating under the `spl-token` program (v3). Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no… |
+| **Governance / Economics** | 3/10 | High | The token exhibits a high concentration of ownership, with the top 10 token accounts holding 71.74% of the total supply. This level of concentration introduces significant governance and economic… |
 | **Upgrades** | 8/10 | Low | The token's core parameters are fixed due to the revocation of both mint and freeze authorities, meaning no further tokens can be created and no accounts can be frozen. The metadata is also… |
 
 ## LP Distribution

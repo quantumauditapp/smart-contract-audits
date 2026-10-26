@@ -42,14 +42,14 @@ _🟢 1 Low · ⚪ 1 Informational_
 
 ### `L-01` — Potential for Uninitialized Token Metadata  *(Severity: Low · Status: Unresolved)*
 
-The `FourERC20` contract includes an internal `_init` function intended to set the token's `_name` and `_symbol`. However, this function is not called within the `FourERC20` contract itself. If a derived contract fails to call `_init` in its constructor, the `name()` and `symbol()` functions will return empty strings, leading to a poor user experience and potential integration issues with platforms expecting valid metadata.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract includes an internal `_init` function intended to set the token's `_name` and `_symbol`. However, this function is not called within the `FourERC20` contract itself. If a derived contract fails to call `_init` in its constructor, the `name()` and `symbol()` functions will return empty strings, leading to a poor user experience and potential integration issues with platforms expecting valid metadata.
 
 **Recommendation:** Ensure that any contract inheriting from `FourERC20` explicitly calls the `_init(string memory name_, string memory symbol_)` function within its constructor to properly initialize the token's metadata.
 
 
 ### `I-01` — Absence of Public Supply Control  *(Severity: Informational · Status: Unresolved)*
 
-The `FourERC20` contract provides internal `_mint` and `_burn` functions, but it does not expose any public functions for minting or burning tokens. This means that the total supply of the token is fixed at deployment unless a derived contract explicitly implements and exposes these functionalities. This is a design choice for a base ERC-20 contract but should be noted for deployment planning (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract provides internal `_mint` and `_burn` functions, but it does not expose any public functions for minting or burning tokens. This means that the total supply of the token is fixed at deployment unless a derived contract explicitly implements and exposes these functionalities. This is a design choice for a base ERC-20 contract but should be noted for deployment planning (7.8 Operations).
 
 **Recommendation:** If dynamic supply management (minting or burning) is required, a new contract inheriting from `FourERC20` must be created to implement and secure these functionalities with appropriate access control. Otherwise, the token's supply will be immutable after initial deployment.
 

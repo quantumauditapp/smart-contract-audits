@@ -2,14 +2,14 @@
 token: Patecoin
 ticker: PATE
 network: solana
-risk_score: 44
-status: medium
+risk_score: 27
+status: low
 date: 2026-08-08
 ---
 
 # Patecoin (PATE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/patecoin-sol)
 
@@ -25,9 +25,9 @@ This audit of the Patecoin (PATE) SPL Token Mint identifies a Medium risk primar
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority are revoked, indicating that no new tokens can be minted and no existing accounts can be frozen. There are no… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a low holder concentration, with the top 10 holders owning 14.91% of the supply, which is below typical concentration thresholds. Liquidity is moderate at $93,665 USD, and the… |
-| **Upgrades** | 8/10 | Low | The token's Mint Authority and Freeze Authority are both revoked, preventing any future changes to the token supply or account freeze status. Key Token-2022 extension flags such as… |
+| **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority are revoked, indicating that no new tokens can be minted and no existing accounts can be frozen. There are no… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a low holder concentration, with the top 10 holders owning 14.91% of the supply, which is below typical concentration thresholds. Liquidity is moderate at $93,665 USD, and the… |
+| **Upgrades** | 10/10 | Low | The token's Mint Authority and Freeze Authority are both revoked, preventing any future changes to the token supply or account freeze status. Key Token-2022 extension flags such as… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 738 buys / 372 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

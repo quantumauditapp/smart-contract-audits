@@ -2,14 +2,14 @@
 token: Piñata
 ticker: PINATA
 network: solana
-risk_score: 28
+risk_score: 11
 status: low
 date: 2026-08-14
 ---
 
 # Piñata (PINATA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pinata-sol)
 
@@ -26,8 +26,8 @@ The Piñata SPL Token Mint on Solana exhibits a low technical risk profile with 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Piñata token is implemented using the spl-token-2022 program, offering modern SPL features. Key administrative authorities, including the mint authority and freeze authority, have been revoked… |
-| **Governance / Economics** | 4/10 | Medium | The economic profile of the Piñata token shows a moderate holder concentration, with the top 10 accounts holding 30.83% of the total supply, which is below the threshold for high concentration.… |
-| **Upgrades** | 8/10 | Low | The Piñata token mint has a robust upgrade and mutability posture. Both the mint and freeze authorities have been permanently revoked, preventing any future changes to the token's supply or the… |
+| **Governance / Economics** | 7/10 | Low | The economic profile of the Piñata token shows a moderate holder concentration, with the top 10 accounts holding 30.83% of the total supply, which is below the threshold for high concentration.… |
+| **Upgrades** | 10/10 | Low | The Piñata token mint has a robust upgrade and mutability posture. Both the mint and freeze authorities have been permanently revoked, preventing any future changes to the token's supply or the… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 6 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 11686 buys / 4432 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 6 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

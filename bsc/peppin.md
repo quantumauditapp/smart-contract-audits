@@ -2,14 +2,14 @@
 token: Peppin
 ticker: PEPPIN
 network: bsc
-risk_score: 53
-status: medium
+risk_score: 21
+status: low
 date: 2026-09-23
 ---
 
 # Peppin (PEPPIN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 53/100 — 🟡 Medium Risk**
+> **Risk Score: 21/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/peppin-bsc)
 
@@ -25,9 +25,9 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with a dynamic
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract demonstrates good use of OpenZeppelin upgradeable standards and gas optimization with `PackedPoolState`. However, a significant reentrancy vulnerability exists in the `_liquidateTax`… |
-| **Governance / Economics** | 4/10 | Medium | The economic model incorporates dynamic tax rates and state-based transitions, managed by an `OwnableUpgradeable` contract. The owner has centralized control over critical state changes like… |
-| **Upgrades** | 8/10 | Low | The contract correctly utilizes OpenZeppelin's UUPS proxy pattern, including `Initializable` and `_disableInitializers` in the constructor, ensuring proper upgradeability (7.1 Architecture, 7.7… |
+| **Technical** | 10/10 | Low | The contract demonstrates good use of OpenZeppelin upgradeable standards and gas optimization with `PackedPoolState`. However, a significant reentrancy vulnerability exists in the `_liquidateTax`… |
+| **Governance / Economics** | 6/10 | Medium | The economic model incorporates dynamic tax rates and state-based transitions, managed by an `OwnableUpgradeable` contract. The owner has centralized control over critical state changes like… |
+| **Upgrades** | 9/10 | Low | The contract correctly utilizes OpenZeppelin's UUPS proxy pattern, including `Initializable` and `_disableInitializers` in the constructor, ensuring proper upgradeability (7.1 Architecture, 7.7… |
 
 ## LP Distribution
 
@@ -38,46 +38,46 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with a dynamic
 
 ## Security Findings
 
-_🟠 2 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Reentrancy Vulnerability in `_liquidateTax`  *(Severity: High · Status: Unresolved)*
-
-The `_liquidateTax` function, called during every `_transfer`, modifies the `notLiquidating` state variable to `false` *before* making external calls to `ITaxProcessor(taxProcessor).processTax` and `IDividend(dividendContract).distributeDividends`. It resets `notLiquidating` to `true` *after* these calls. A malicious `taxProcessor` or `dividendContract` could re-enter the `_transfer` function (and thus `_liquidateTax`) while `notLiquidating` is `false`. This could lead to unexpected behavior, such as multiple liquidations within a single transaction, or other state manipulation if the re-entered logic relies on `notLiquidating` to prevent concurrent execution.
-
-**Recommendation:** Implement a Checks-Effects-Interactions pattern. Move the external calls to `taxProcessor` and `dividendContract` *after* all state changes, including resetting `notLiquidating` to `true`. Consider using a reentrancy guard if complex interactions are unavoidable.
-
-
-### `H-02` — Denial of Service via External Call Reverts  *(Severity: High · Status: Unresolved)*
-
-The `_liquidateTax` function, which is called on every token transfer, makes external calls to `ITaxProcessor(taxProcessor).processTax` and `IDividend(dividendContract).distributeDividends`. If either of these external contracts reverts for any reason (e.g., misconfiguration, intentional attack, or unexpected state), the entire `_transfer` transaction will revert. This could lead to a denial of service, preventing all token transfers and potentially locking funds within the contract.
-
-**Recommendation:** Implement robust error handling for external calls. Consider using `try/catch` blocks to gracefully handle reverts from `taxProcessor` and `dividendContract`, allowing transfers to proceed even if tax processing or dividend distribution fails. Alternatively, ensure these external contracts are highly reliable and audited, or design the system to allow the owner to disable/change them in case of issues.
-
+_🟡 4 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralized Control over Critical State Transitions  *(Severity: Medium · Status: Unresolved)*
 
-The `startMigration` and `finalizeMigration` functions, which control the `PoolState` transitions from `BondingCurve` to `Migrating` and then to `TaxEnforcedAntiFarmer`, are protected by the `onlyOwner` modifier. This grants significant centralized control to the contract owner over the token's operational state, including when taxes are enforced and anti-farmer mechanisms are activated. While common for initial phases, this centralization could pose a risk if the owner's key is compromised or acts maliciously.
+Not confirmed by static analysis (the model's own reading of the source). The `startMigration` and `finalizeMigration` functions, which control the `PoolState` transitions from `BondingCurve` to `Migrating` and then to `TaxEnforcedAntiFarmer`, are protected by the `onlyOwner` modifier. This grants significant centralized control to the contract owner over the token's operational state, including when taxes are enforced and anti-farmer mechanisms are activated. While common for initial phases, this centralization could pose a risk if the owner's key is compromised or acts maliciously.
 
 **Recommendation:** For long-term decentralization and security, consider transitioning critical administrative functions to a multi-signature wallet or a decentralized autonomous organization (DAO) governance mechanism. Clearly document the owner's responsibilities and the implications of their control.
 
 
 ### `M-02` — Potential for Storage Collisions in Future Upgrades  *(Severity: Medium · Status: Unresolved)*
 
-The contract uses a `PackedPoolState` struct to optimize gas usage by packing multiple state variables into a single storage slot. While efficient, modifying the `PackedPoolState` struct (e.g., changing the order, type, or adding new fields) in a future upgrade could lead to storage collisions if not handled with extreme care. This could corrupt existing state variables, leading to unexpected behavior or loss of funds.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses a `PackedPoolState` struct to optimize gas usage by packing multiple state variables into a single storage slot. While efficient, modifying the `PackedPoolState` struct (e.g., changing the order, type, or adding new fields) in a future upgrade could lead to storage collisions if not handled with extreme care. This could corrupt existing state variables, leading to unexpected behavior or loss of funds.
 
 **Recommendation:** When performing upgrades, strictly adhere to the OpenZeppelin UUPS storage layout guidelines. New state variables should only be appended to the end of the contract's storage. If changes to `PackedPoolState` are necessary, consider a migration strategy or ensure that the new struct layout is fully compatible with the old one, which is often difficult to guarantee without careful planning and testing.
 
 
+### `M-03` — Reentrancy Vulnerability in `_liquidateTax`  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function, called during every `_transfer`, modifies the `notLiquidating` state variable to `false` *before* making external calls to `ITaxProcessor(taxProcessor).processTax` and `IDividend(dividendContract).distributeDividends`. It resets `notLiquidating` to `true` *after* these calls. A malicious `taxProcessor` or `dividendContract` could re-enter the `_transfer` function (and thus `_liquidateTax`) while `notLiquidating` is `false`. This could lead to unexpected behavior, such as multiple liquidations within a single transaction, or other state manipulation if the re-entered logic relies on `notLiq
+
+**Recommendation:** Implement a Checks-Effects-Interactions pattern. Move the external calls to `taxProcessor` and `dividendContract` *after* all state changes, including resetting `notLiquidating` to `true`. Consider using a reentrancy guard if complex interactions are unavoidable.
+
+
+### `M-04` — Denial of Service via External Call Reverts  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function, which is called on every token transfer, makes external calls to `ITaxProcessor(taxProcessor).processTax` and `IDividend(dividendContract).distributeDividends`. If either of these external contracts reverts for any reason (e.g., misconfiguration, intentional attack, or unexpected state), the entire `_transfer` transaction will revert. This could lead to a denial of service, preventing all token transfers and potentially locking funds within the contract.
+
+**Recommendation:** Implement robust error handling for external calls. Consider using `try/catch` blocks to gracefully handle reverts from `taxProcessor` and `dividendContract`, allowing transfers to proceed even if tax processing or dividend distribution fails. Alternatively, ensure these external contracts are highly reliable and audited, or design the system to allow the owner to disable/change them in case of issues.
+
+
 ### `L-01` — Lack of Pause Mechanism  *(Severity: Low · Status: Unresolved)*
 
-The contract implements complex tax and state transition logic, and relies on external contracts for tax processing and dividend distribution. In the event of an emergency, such as a critical bug, an exploit in an external dependency, or a market manipulation attempt, there is no mechanism for the owner to temporarily pause transfers or critical operations. This could exacerbate losses or allow an attack to continue unchecked.
+Not confirmed by static analysis (the model's own reading of the source). The contract implements complex tax and state transition logic, and relies on external contracts for tax processing and dividend distribution. In the event of an emergency, such as a critical bug, an exploit in an external dependency, or a market manipulation attempt, there is no mechanism for the owner to temporarily pause transfers or critical operations. This could exacerbate losses or allow an attack to continue unchecked.
 
 **Recommendation:** Consider implementing a `PausableUpgradeable` mechanism (e.g., from OpenZeppelin) to allow the owner (or a designated emergency multisig) to pause critical functions like `_transfer` in an emergency. This provides a crucial safety net, though it introduces another point of centralization.
 
 
 ### `I-01` — Truncated Code for `_liquidateTax` Function  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code for the `_liquidateTax` function is truncated, specifically the condition `taxAmount >= currentPoolState.liqu...`. This prevents a full security analysis of the complete liquidation logic, including the exact conditions under which `ITaxProcessor` and `IDividend` calls are made.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the `_liquidateTax` function is truncated, specifically the condition `taxAmount >= currentPoolState.liqu...`. This prevents a full security analysis of the complete liquidation logic, including the exact conditions under which `ITaxProcessor` and `IDividend` calls are made.
 
 **Recommendation:** Provide the complete and untruncated source code for a comprehensive audit.
 

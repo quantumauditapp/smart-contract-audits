@@ -2,14 +2,14 @@
 token: PEPE Goblin
 ticker: CACKLE
 network: solana
-risk_score: 31
+risk_score: 26
 status: low
 date: 2026-09-25
 ---
 
 # PEPE Goblin (CACKLE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 31/100 — 🟢 Low Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pepe-goblin-sol)
 

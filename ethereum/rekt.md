@@ -2,14 +2,14 @@
 token: Rekt
 ticker: REKT
 network: ethereum
-risk_score: 13
+risk_score: 0
 status: low
 date: 2026-08-17
 ---
 
 # Rekt (REKT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 13/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rekt-eth)
 
@@ -25,8 +25,8 @@ The Rekt token is a standard ERC-20 token utilizing audited OpenZeppelin librari
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The Rekt token contract (7.1 Architecture, 7.2 Code Security) is built upon well-audited OpenZeppelin ERC20, Ownable, Burnable, Pausable, and Permit libraries, significantly reducing the likelihood… |
-| **Governance / Economics** | 6/10 | Medium | The economic model (7.4 Economic) presents a high centralization risk due to the initial minting of 420,690,000,000,000 tokens (420.69 quadrillion) to a single address… |
+| **Technical** | 10/10 | Low | The Rekt token contract (7.1 Architecture, 7.2 Code Security) is built upon well-audited OpenZeppelin ERC20, Ownable, Burnable, Pausable, and Permit libraries, significantly reducing the likelihood… |
+| **Governance / Economics** | 7/10 | Low | The economic model (7.4 Economic) presents a high centralization risk due to the initial minting of 420,690,000,000,000 tokens (420.69 quadrillion) to a single address… |
 | **Upgrades** | 9/10 | Low | The Rekt token contract is not designed with upgradeability features (7.7 Upgrades). This means its logic is immutable post-deployment, preventing any future modifications or bug fixes. While this… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The Rekt token is a standard ERC-20 token utilizing audited OpenZeppelin librari
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Token Supply  *(Severity: High · Status: Unresolved)*
-
-During contract deployment, a substantial amount of 420,690,000,000,000 tokens (420.69 quadrillion) was minted to a single address (0x424De83E135d0BE9a4b6b1268b04BCD4D92F7C98). This concentration of nearly the entire token supply in one address creates a single point of control, enabling potential market manipulation, rug pulls, or significant influence over any DeFi protocols integrating this token. This poses a severe economic risk to other token holders and the overall ecosystem.
-
-**Recommendation:** For future token deployments, consider implementing a more decentralized initial distribution strategy. This could involve vesting schedules, fair launch mechanisms, or distributing tokens across multiple addresses controlled by different entities to mitigate the risk associated with a single point of failure and control.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Unpausable Token After Ownership Renouncement  *(Severity: Medium · Status: Unresolved)*
 
-The contract inherits `ERC20Pausable` and includes `pause()` and `unpause()` functions, which are restricted to the `onlyOwner` modifier. However, the provided prefill indicates that ownership has been renounced. While renouncing ownership removes the centralization risk of an owner arbitrarily pausing transfers, it also renders the token permanently unpausable. This means that in the event of a critical vulnerability in an integrated DeFi protocol or a severe market exploit, there is no mechanism to halt token transfers to prevent further damage.
+Not confirmed by static analysis (the model's own reading of the source). The contract inherits `ERC20Pausable` and includes `pause()` and `unpause()` functions, which are restricted to the `onlyOwner` modifier. However, the provided prefill indicates that ownership has been renounced. While renouncing ownership removes the centralization risk of an owner arbitrarily pausing transfers, it also renders the token permanently unpausable. This means that in the event of a critical vulnerability in an integrated DeFi protocol or a severe market exploit, there is no mechanism to halt token transfers to prevent further damage.
 
 **Recommendation:** Acknowledge the trade-off between decentralization (no owner to pause) and emergency response capability (no ability to pause). If an emergency pause mechanism is deemed necessary for future versions or similar projects, consider alternative decentralized governance-controlled pause mechanisms (e.g., multi-sig or DAO-controlled) rather than relying solely on `Ownable`.
 
 
+### `M-02` — Centralized Token Supply  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). During contract deployment, a substantial amount of 420,690,000,000,000 tokens (420.69 quadrillion) was minted to a single address (0x424De83E135d0BE9a4b6b1268b04BCD4D92F7C98). This concentration of nearly the entire token supply in one address creates a single point of control, enabling potential market manipulation, rug pulls, or significant influence over any DeFi protocols integrating this token. This poses a severe economic risk to other token holders and the overall ecosystem.
+
+**Recommendation:** For future token deployments, consider implementing a more decentralized initial distribution strategy. This could involve vesting schedules, fair launch mechanisms, or distributing tokens across multiple addresses controlled by different entities to mitigate the risk associated with a single point of failure and control.
+
+
 ### `L-01` — Immutability of Core Logic  *(Severity: Low · Status: Unresolved)*
 
-The Rekt token contract is deployed without any upgradeability pattern (e.g., proxy contracts). This design choice makes the contract's logic immutable once deployed. While immutability provides certainty and reduces upgrade-related risks, it also means that any bugs discovered post-deployment cannot be fixed, and new features or protocol adjustments cannot be implemented without deploying an entirely new token contract.
+Not confirmed by static analysis (the model's own reading of the source). The Rekt token contract is deployed without any upgradeability pattern (e.g., proxy contracts). This design choice makes the contract's logic immutable once deployed. While immutability provides certainty and reduces upgrade-related risks, it also means that any bugs discovered post-deployment cannot be fixed, and new features or protocol adjustments cannot be implemented without deploying an entirely new token contract.
 
 **Recommendation:** Ensure that the current contract logic is thoroughly tested and deemed final, as no changes can be made. For projects requiring flexibility or long-term maintenance, consider implementing an upgradeable contract pattern in future iterations, along with robust upgrade safety procedures.
 
 
 ### `I-01` — Reliance on OpenZeppelin Libraries  *(Severity: Informational · Status: Unresolved)*
 
-The Rekt token contract extensively utilizes well-regarded and audited OpenZeppelin contracts (ERC20, Ownable, ERC20Burnable, ERC20Pausable, ERC20Permit). This significantly enhances the baseline security of the contract by leveraging battle-tested code. However, the security of the Rekt token is inherently dependent on the continued security and correct implementation of these external libraries.
+Not confirmed by static analysis (the model's own reading of the source). The Rekt token contract extensively utilizes well-regarded and audited OpenZeppelin contracts (ERC20, Ownable, ERC20Burnable, ERC20Pausable, ERC20Permit). This significantly enhances the baseline security of the contract by leveraging battle-tested code. However, the security of the Rekt token is inherently dependent on the continued security and correct implementation of these external libraries.
 
 **Recommendation:** Continue to monitor OpenZeppelin's security advisories and updates. While OpenZeppelin contracts are highly secure, any newly discovered vulnerabilities in their libraries could potentially affect dependent contracts. Ensure that the specific versions used are up-to-date and free from known issues.
 

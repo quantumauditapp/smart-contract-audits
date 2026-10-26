@@ -2,14 +2,14 @@
 token: PINK COIN
 ticker: PINK
 network: solana
-risk_score: 23
+risk_score: 6
 status: low
 date: 2026-09-01
 ---
 
 # PINK COIN (PINK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 23/100 — 🟢 Low Risk**
+> **Risk Score: 6/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pink-coin-sol)
 
@@ -26,8 +26,8 @@ The PINK COIN token is an SPL Token-2022 with both mint and freeze authorities r
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The PINK COIN token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring that no new tokens can be minted and no accounts can be frozen… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits moderate holder concentration, with the top 10 accounts holding 34.3% of the total supply, which is below the threshold for high concentration. Current DEX liquidity stands at… |
-| **Upgrades** | 8/10 | Low | The token's mint authority and freeze authority are both revoked, preventing any future changes to the token supply or account freeze status. The spl-token-2022 extensions, including Transfer Hook… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits moderate holder concentration, with the top 10 accounts holding 34.3% of the total supply, which is below the threshold for high concentration. Current DEX liquidity stands at… |
+| **Upgrades** | 10/10 | Low | The token's mint authority and freeze authority are both revoked, preventing any future changes to the token supply or account freeze status. The spl-token-2022 extensions, including Transfer Hook… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2646 buys / 3220 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

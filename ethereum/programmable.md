@@ -2,14 +2,14 @@
 token: Programmable
 ticker: V4
 network: ethereum
-risk_score: 38
-status: medium
+risk_score: 26
+status: low
 date: 2026-08-03
 ---
 
 # Programmable (V4) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 38/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/programmable-eth)
 
@@ -25,8 +25,8 @@ The UERC20 contract is an ERC-20 token designed for factory-based deployment. It
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract demonstrates good architectural practices by inheriting from Solady's optimized ERC20 implementation and OpenZeppelin interfaces (7.1 Architecture, 7.2 Code Security). Core token… |
-| **Governance / Economics** | 1/10 | High | The UERC20 contract is a basic ERC-20 token and does not implement any complex governance mechanisms or economic models (7.5 Governance, 7.4 Economic). Its functionality is limited to standard token… |
+| **Technical** | 10/10 | Low | The contract demonstrates good architectural practices by inheriting from Solady's optimized ERC20 implementation and OpenZeppelin interfaces (7.1 Architecture, 7.2 Code Security). Core token… |
+| **Governance / Economics** | 2/10 | High | The UERC20 contract is a basic ERC-20 token and does not implement any complex governance mechanisms or economic models (7.5 Governance, 7.4 Economic). Its functionality is limited to standard token… |
 | **Upgrades** | 6/10 | Medium | The UERC20 contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). There are no proxy patterns (e.g., UUPS, Transparent) or other upgradeability mechanisms present. This… |
 
 ## LP Distribution
@@ -38,25 +38,25 @@ The UERC20 contract is an ERC-20 token designed for factory-based deployment. It
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Critical Dependency on `msg.sender` for Initialization  *(Severity: High · Status: Unresolved)*
+### `M-01` — Critical Dependency on `msg.sender` for Initialization  *(Severity: Medium · Status: Unresolved)*
 
-The `UERC20` constructor critically relies on `msg.sender` to be the `IUERC20Factory` and to correctly provide all initialization parameters via `getParameters()`. If the `UERC20` contract is deployed directly by an address other than the intended factory, or by a malicious contract mimicking the factory interface, the token could be initialized with arbitrary or incorrect properties (e.g., wrong name, symbol, decimals, or even minting to an unintended recipient). This design pattern places a high degree of trust in the caller during deployment (7.3 Access Control, 7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `UERC20` constructor critically relies on `msg.sender` to be the `IUERC20Factory` and to correctly provide all initialization parameters via `getParameters()`. If the `UERC20` contract is deployed directly by an address other than the intended factory, or by a malicious contract mimicking the factory interface, the token could be initialized with arbitrary or incorrect properties (e.g., wrong name, symbol, decimals, or even minting to an unintended recipient). This design pattern places a high degree of trust in the caller during deployment (7.3 Access Control, 7.2 Code Security).
 
 **Recommendation:** The factory contract should be designed to ensure that `UERC20` tokens are only deployed through its `createToken` function, potentially using `create2` with a salt derived from the parameters to prevent front-running and ensure deterministic addresses. The factory must perform comprehensive validation of all parameters before passing them to the token constructor. Consider adding a mechanism (e.g., an `onlyFactory` modifier if direct deployment is to be prevented, though this is complex for co…
 
 
 ### `L-01` — Lack of Internal Parameter Validation in Constructor  *(Severity: Low · Status: Unresolved)*
 
-The `UERC20` constructor directly uses parameters obtained from `IUERC20Factory(msg.sender).getParameters()` without performing any internal validation. For instance, it does not check if `params.totalSupply` is greater than zero or if `params.recipient` is not the zero address before calling `_mint`. While the `ITokenFactory` interface defines errors for these conditions, relying solely on the factory's validation introduces a single point of failure. If a factory were to provide invalid parameters, the `_mint` call might revert, or the token could be created in an unusable state (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `UERC20` constructor directly uses parameters obtained from `IUERC20Factory(msg.sender).getParameters()` without performing any internal validation. For instance, it does not check if `params.totalSupply` is greater than zero or if `params.recipient` is not the zero address before calling `_mint`. While the `ITokenFactory` interface defines errors for these conditions, relying solely on the factory's validation introduces a single point of failure. If a factory were to provide invalid parameters, the `_mint` call might revert, or the token could be created in an unusable state (7.2 Code Security).
 
 **Recommendation:** Implement basic defensive validation checks within the `UERC20` constructor for critical parameters. For example, ensure `params.totalSupply > 0` and `params.recipient != address(0)` before proceeding with the `_mint` operation. This adds a layer of robustness, preventing the creation of malformed tokens even if the factory provides invalid inputs.
 
 
 ### `I-01` — `tokenURI()` Function for Fungible Token  *(Severity: Informational · Status: Unresolved)*
 
-The `UERC20` contract implements a `tokenURI()` function, which is typically associated with ERC-721 (NFT) tokens to provide a URI pointing to off-chain metadata. While technically permissible, its inclusion in a fungible ERC-20 token is unusual and not part of the standard ERC-20 specification. This might lead to confusion or unexpected behavior for systems and wallets that primarily interact with ERC-20 tokens and do not anticipate this extension (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The `UERC20` contract implements a `tokenURI()` function, which is typically associated with ERC-721 (NFT) tokens to provide a URI pointing to off-chain metadata. While technically permissible, its inclusion in a fungible ERC-20 token is unusual and not part of the standard ERC-20 specification. This might lead to confusion or unexpected behavior for systems and wallets that primarily interact with ERC-20 tokens and do not anticipate this extension (7.1 Architecture).
 
 **Recommendation:** Clearly document the purpose and intended use of the `tokenURI()` function for this fungible token. Ensure that any off-chain systems or front-ends interacting with this token are aware of this non-standard extension and how to interpret the returned metadata. If not strictly necessary, consider removing it to maintain strict ERC-20 compliance.
 

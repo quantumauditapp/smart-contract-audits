@@ -2,14 +2,14 @@
 token: Quantum Cat
 ticker: QCAT
 network: solana
-risk_score: 52
+risk_score: 35
 status: medium
 date: 2026-09-03
 ---
 
 # Quantum Cat (QCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 52/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/quantum-cat-sol-61bc)
 
@@ -26,7 +26,7 @@ The Quantum Cat (QCAT) token is an SPL Token-2022 mint with both mint and freeze
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The Quantum Cat (QCAT) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no holder… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a very new DEX trading pair, established only 1 day ago, which provides insufficient history for evaluating market stability or team behavior. Current liquidity stands at $23,723… |
+| **Governance / Economics** | 2/10 | High | The token exhibits a very new DEX trading pair, established only 1 day ago, which provides insufficient history for evaluating market stability or team behavior. Current liquidity stands at $23,723… |
 | **Upgrades** | 8/10 | Low | The token mint's core authorities, including mint and freeze, are permanently revoked, preventing any post-deployment changes to supply or account status. The token is an SPL Token-2022, but… |
 
 ## Security Findings
@@ -54,13 +54,13 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2326 buys / 2103 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

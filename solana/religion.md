@@ -2,14 +2,14 @@
 token: Religion
 ticker: RELIGION
 network: solana
-risk_score: 35
-status: medium
+risk_score: 23
+status: low
 date: 2026-06-18
 ---
 
 # Religion (RELIGION) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 35/100 — 🟡 Medium Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/religion-sol)
 
@@ -25,9 +25,9 @@ This Solana SPL Token Mint, Religion (RELIGION), demonstrates a robust security 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account states. No transfer… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a healthy trading pattern with a 24-hour volume of $13,442 against a liquidity of $15,767, resulting in a normal Volume/Liquidity Ratio of 0.85. The DEX pair has been active for 27… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are fixed due to the revocation of both mint and freeze authorities. Key Token-2022 extensions, such as transfer hook and default account state frozen, are not enabled.… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and immutability of account states. No transfer… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a healthy trading pattern with a 24-hour volume of $13,442 against a liquidity of $15,767, resulting in a normal Volume/Liquidity Ratio of 0.85. The DEX pair has been active for 27… |
+| **Upgrades** | 10/10 | Low | The token's core parameters are fixed due to the revocation of both mint and freeze authorities. Key Token-2022 extensions, such as transfer hook and default account state frozen, are not enabled.… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2070 buys / 1609 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,18 +69,18 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is Religion a scam?
 
-Based on the provided data, Religion (RELIGION) carries a high-risk score of 48/100. While ownership is renounced and no mint function exists, key red flags include an unverified contract and unlocked liquidity, which present significant risks. These factors suggest a potential for considerable downside, requiring investors to proceed with extreme caution and understand that the project lacks fundamental security assurances often associated with legitimate tokens.
+Based on the provided data, Religion (RELIGION) carries a low-risk score of 23/100. While ownership is renounced and no mint function exists, key red flags include an unverified contract and unlocked liquidity, which present significant risks. These factors suggest a potential for considerable downside, requiring investors to proceed with extreme caution and understand that the project lacks fundamental security assurances often associated with legitimate tokens.
 
 ### Is Religion safe to buy?
 
-Religion (RELIGION) is currently rated as high risk (48/100), suggesting it is not safe for typical investment. Critical risk factors include an unverified contract, which prevents code review; unlocked liquidity, posing a potential for sudden withdrawal; and substantial token concentration among the top 10 holders (35.6%), increasing vulnerability to manipulation. These combined elements indicate a significant probability of adverse events for investors.
+Religion (RELIGION) is currently rated as low risk (23/100), suggesting it is not safe for typical investment. Critical risk factors include an unverified contract, which prevents code review; unlocked liquidity, posing a potential for sudden withdrawal; and substantial token concentration among the top 10 holders (35.6%), increasing vulnerability to manipulation. These combined elements indicate a significant probability of adverse events for investors.
 
 ### Has Religion been audited?
 

@@ -80,7 +80,7 @@ It's not definitively labeled a scam based on available data, but significant ri
 
 ### Is Pump.fun safe to buy?
 
-Pump.fun is associated with a high risk score of 52/100. Key risks include the contract not being verified, meaning its security hasn't been audited. A large portion (75.8%) of tokens is held by the top 10 wallets, risking manipulation. Additionally, the liquidity is not locked, which poses a significant rug pull risk. These factors suggest a high level of speculative risk for potential investors.
+Pump.fun is associated with a low risk score of 15/100. Key risks include the contract not being verified, meaning its security hasn't been audited. A large portion (75.8%) of tokens is held by the top 10 wallets, risking manipulation. Additionally, the liquidity is not locked, which poses a significant rug pull risk. These factors suggest a high level of speculative risk for potential investors.
 
 ### Has Pump.fun been audited?
 

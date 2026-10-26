@@ -2,14 +2,14 @@
 token: Palu
 ticker: PALU
 network: bsc
-risk_score: 2
+risk_score: 0
 status: low
 date: 2026-08-30
 ---
 
 # Palu (PALU) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 2/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/palu-bsc)
 
@@ -25,9 +25,9 @@ The FourERC20 contract is an implementation of the ERC-20 standard, largely base
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract leverages well-audited OpenZeppelin libraries for its core ERC-20 functionality, which contributes to strong code security (7.2 Code Security). Standard ERC-20 functions like `transfer`… |
-| **Governance / Economics** | 8/10 | Low | The contract has no explicit governance mechanisms (7.5 Governance) or access control roles beyond the standard ERC-20 sender/spender model (7.3 Access Control). The economic model (7.4 Economic) is… |
-| **Upgrades** | 9/10 | Low | The FourERC20 contract is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, there are no specific upgrade-related risks. Any changes to the token's logic would require deploying a new… |
+| **Technical** | 10/10 | Low | The contract leverages well-audited OpenZeppelin libraries for its core ERC-20 functionality, which contributes to strong code security (7.2 Code Security). Standard ERC-20 functions like `transfer`… |
+| **Governance / Economics** | 9/10 | Low | The contract has no explicit governance mechanisms (7.5 Governance) or access control roles beyond the standard ERC-20 sender/spender model (7.3 Access Control). The economic model (7.4 Economic) is… |
+| **Upgrades** | 10/10 | Low | The FourERC20 contract is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, there are no specific upgrade-related risks. Any changes to the token's logic would require deploying a new… |
 
 ## LP Distribution
 
@@ -38,25 +38,25 @@ The FourERC20 contract is an implementation of the ERC-20 standard, largely base
 
 ## Security Findings
 
-_🔴 1 Critical · ⚪ 2 Informational_
+_🟡 1 Medium · ⚪ 2 Informational_
 
-### `C-01` — Non-functional Token due to Missing Constructor and Minting Logic  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Non-functional Token due to Missing Constructor and Minting Logic  *(Severity: Medium · Status: Unresolved)*
 
-The `FourERC20` contract, as provided, lacks a public constructor to initialize the token's `_name` and `_symbol` variables. More critically, it does not include any public or external function to mint an initial supply of tokens. The `_mint` function is internal, meaning it can only be called by the contract itself or a derived contract. If `FourERC20` is deployed directly, `_totalSupply` will remain 0, and no tokens can ever be created, rendering the token completely non-functional and unusable.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract, as provided, lacks a public constructor to initialize the token's `_name` and `_symbol` variables. More critically, it does not include any public or external function to mint an initial supply of tokens. The `_mint` function is internal, meaning it can only be called by the contract itself or a derived contract. If `FourERC20` is deployed directly, `_totalSupply` will remain 0, and no tokens can ever be created, rendering the token completely non-functional and unusable.
 
 **Recommendation:** Implement a public constructor in `FourERC20` that calls `_init(name_, symbol_)` and `_mint(recipient, initialSupply)` to set the token's metadata and create an initial supply upon deployment. Alternatively, ensure that any contract inheriting `FourERC20` properly implements these initialization and minting steps in its own constructor.
 
 
 ### `I-01` — Use of Internal `_init` Function for Token Metadata  *(Severity: Informational · Status: Unresolved)*
 
-The contract uses an internal function `_init(string memory name_, string memory symbol_)` to set the token's name and symbol. While this pattern is common in base contracts designed for inheritance, it means that if `FourERC20` is deployed directly without a derived contract calling `_init` in its constructor, the `_name` and `_symbol` state variables will remain empty strings. This contributes to the non-functional state of the token.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses an internal function `_init(string memory name_, string memory symbol_)` to set the token's name and symbol. While this pattern is common in base contracts designed for inheritance, it means that if `FourERC20` is deployed directly without a derived contract calling `_init` in its constructor, the `_name` and `_symbol` state variables will remain empty strings. This contributes to the non-functional state of the token.
 
 **Recommendation:** If `FourERC20` is intended to be directly deployable, convert `_init` into a public constructor. If it's strictly a base contract, ensure clear documentation for developers inheriting it to call `_init` in their derived contract's constructor.
 
 
 ### `I-02` — Adherence to OpenZeppelin Standards  *(Severity: Informational · Status: Unresolved)*
 
-The `FourERC20` contract largely follows the structure and implementation patterns of OpenZeppelin Contracts for ERC-20 tokens. This includes using `Context` for `_msgSender()`, implementing standard ERC-20 functions, and including `increaseAllowance` and `decreaseAllowance` to mitigate common allowance-related issues. This adherence to well-audited and widely adopted standards enhances the contract's inherent security and reliability.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract largely follows the structure and implementation patterns of OpenZeppelin Contracts for ERC-20 tokens. This includes using `Context` for `_msgSender()`, implementing standard ERC-20 functions, and including `increaseAllowance` and `decreaseAllowance` to mitigate common allowance-related issues. This adherence to well-audited and widely adopted standards enhances the contract's inherent security and reliability.
 
 **Recommendation:** Continue to leverage and stay updated with OpenZeppelin's best practices and contract versions. Ensure any custom logic added in the future maintains the same high standards.
 

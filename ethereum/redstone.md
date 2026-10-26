@@ -2,14 +2,14 @@
 token: Redstone
 ticker: RED
 network: ethereum
-risk_score: 62
+risk_score: 45
 status: medium
 date: 2026-08-16
 ---
 
 # Redstone (RED) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 62/100 — 🟡 Medium Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/redstone-eth)
 
@@ -25,8 +25,8 @@ The RedstoneToken contract implements a standard ERC20 token with a fixed maximu
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The RedstoneToken contract demonstrates good technical security, leveraging OpenZeppelin's robust ERC20 implementation (7.2 Code Security). The contract correctly enforces a maximum supply limit… |
-| **Governance / Economics** | 1/10 | High | The economic model of RedstoneToken is defined by a fixed `MAX_SUPPLY` of 1 billion tokens, which is a positive aspect for long-term value (7.4 Economic). However, the `minter` role holds significant… |
+| **Technical** | 8/10 | Low | The RedstoneToken contract demonstrates good technical security, leveraging OpenZeppelin's robust ERC20 implementation (7.2 Code Security). The contract correctly enforces a maximum supply limit… |
+| **Governance / Economics** | 2/10 | High | The economic model of RedstoneToken is defined by a fixed `MAX_SUPPLY` of 1 billion tokens, which is a positive aspect for long-term value (7.4 Economic). However, the `minter` role holds significant… |
 | **Upgrades** | 3/10 | High | The RedstoneToken contract is not designed to be upgradeable (7.7 Upgrades). This eliminates risks associated with proxy patterns, upgradeability logic, and potential upgrade path vulnerabilities.… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The RedstoneToken contract implements a standard ERC20 token with a fixed maximu
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Minter Role with Significant Power  *(Severity: High · Status: Unresolved)*
-
-The `minter` address has exclusive control over the `mint` function, allowing it to create new tokens up to the `MAX_SUPPLY` of 1 billion tokens. This centralized control represents a single point of failure. If the `minter`'s private key is compromised, a malicious actor could mint a large number of tokens, leading to severe inflation and dilution of existing token holders' value. While the `MAX_SUPPLY` is capped, the ability to mint up to this limit at will by a single entity poses a substantial economic risk.
-
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the `minter` role to distribute control and require multiple approvals for minting operations. For very large mints, consider adding a time-lock mechanism to allow for community oversight or emergency intervention.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Minter Role Transfer Lacks Revocation/Timeout  *(Severity: Medium · Status: Unresolved)*
 
-The `proposeNewMinter` function allows the current `minter` to propose a new address to take over the role. However, there is no mechanism for the current `minter` to revoke this proposal once made, nor is there a time limit for the `proposedMinter` to accept the role. If an incorrect address is proposed, or if the proposed address becomes unresponsive, the current `minter` must issue a new proposal to overwrite the previous one, which could lead to operational delays or temporary uncertainty regarding the minter's succession.
+Not confirmed by static analysis (the model's own reading of the source). The `proposeNewMinter` function allows the current `minter` to propose a new address to take over the role. However, there is no mechanism for the current `minter` to revoke this proposal once made, nor is there a time limit for the `proposedMinter` to accept the role. If an incorrect address is proposed, or if the proposed address becomes unresponsive, the current `minter` must issue a new proposal to overwrite the previous one, which could lead to operational delays or temporary uncertainty regarding the minter's succession.
 
 **Recommendation:** Consider adding a `revokeMinterProposal` function that allows the current `minter` to cancel an outstanding proposal. Alternatively, implement a time-based expiry for proposals, requiring the `proposedMinter` to accept within a certain timeframe, after which the proposal becomes invalid.
 
 
+### `M-02` — Centralized Minter Role with Significant Power  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `minter` address has exclusive control over the `mint` function, allowing it to create new tokens up to the `MAX_SUPPLY` of 1 billion tokens. This centralized control represents a single point of failure. If the `minter`'s private key is compromised, a malicious actor could mint a large number of tokens, leading to severe inflation and dilution of existing token holders' value. While the `MAX_SUPPLY` is capped, the ability to mint up to this limit at will by a single entity poses a substantial economic risk.
+
+**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the `minter` role to distribute control and require multiple approvals for minting operations. For very large mints, consider adding a time-lock mechanism to allow for community oversight or emergency intervention.
+
+
 ### `L-01` — Minter Can Propose Zero Address  *(Severity: Low · Status: Unresolved)*
 
-The `proposeNewMinter` function does not explicitly prevent the `minter` from proposing `address(0)` as the new minter. While `acceptMinterRole` would prevent `address(0)` from ever accepting the role (as `msg.sender` cannot be `address(0)`), this scenario would leave the `proposedMinter` state variable set to `address(0)`. This is a minor operational inconvenience, as the current `minter` would then need to issue another valid proposal to a non-zero address.
+Not confirmed by static analysis (the model's own reading of the source). The `proposeNewMinter` function does not explicitly prevent the `minter` from proposing `address(0)` as the new minter. While `acceptMinterRole` would prevent `address(0)` from ever accepting the role (as `msg.sender` cannot be `address(0)`), this scenario would leave the `proposedMinter` state variable set to `address(0)`. This is a minor operational inconvenience, as the current `minter` would then need to issue another valid proposal to a non-zero address.
 
 **Recommendation:** Add a `require(newProposedMinter != address(0), "Cannot propose zero address")` check at the beginning of the `proposeNewMinter` function to prevent setting the proposed minter to the zero address.
 
 
 ### `I-01` — Lack of Pausability Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The RedstoneToken contract does not include any mechanism to pause token transfers or minting operations. While not a direct vulnerability, a pausability feature can be crucial for emergency situations, such as responding to critical vulnerabilities discovered in the token contract itself or in integrated DeFi protocols. Without it, immediate action to prevent further damage might be impossible.
+Not confirmed by static analysis (the model's own reading of the source). The RedstoneToken contract does not include any mechanism to pause token transfers or minting operations. While not a direct vulnerability, a pausability feature can be crucial for emergency situations, such as responding to critical vulnerabilities discovered in the token contract itself or in integrated DeFi protocols. Without it, immediate action to prevent further damage might be impossible.
 
 **Recommendation:** Consider integrating a pausability mechanism (e.g., using OpenZeppelin's `Pausable` contract) controlled by a trusted entity, such as a multi-signature wallet. This would allow for emergency halting of critical functions if unforeseen issues arise.
 

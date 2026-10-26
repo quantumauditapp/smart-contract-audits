@@ -2,14 +2,14 @@
 token: PancakeSwap
 ticker: CAKE
 network: ethereum
-risk_score: 71
-status: high
+risk_score: 45
+status: medium
 date: 2026-08-20
 ---
 
 # PancakeSwap (CAKE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 71/100 — 🟠 High Risk**
+> **Risk Score: 45/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pancakeswap-eth)
 
@@ -17,48 +17,69 @@ date: 2026-08-20
 
 ## Audit Summary
 
-The CakeOFT contract implements an Omnichain Fungible Token (OFT) with LayerZero integration, featuring daily transfer caps and a whitelist mechanism. The audit identified a critical inconsistency in token decimals, which could lead to severe miscalculations or loss of funds. Additionally, centralized control and the lack of a general emergency withdrawal function for accidentally sent ERC-20 tokens were noted.
+The CakeOFT contract implements an Omnichain Fungible Token (OFT) standard, allowing cross-chain transfers via LayerZero. The architecture relies on a centralized owner with extensive control over token supply, fee structures, and cross-chain caps. While the implementation follows standard LayerZero patterns, the high level of centralization and the ability to mint tokens pose significant risks to token holders.
 
-> **Final Recommendation:** Immediately address the critical inconsistency in token decimals to prevent potential miscalculations and loss of funds. Review the access control strategy for the `onlyOwner` role, especially concerning the whitelist, and ensure robust security measures are in place for the owner's private keys or multisig setup. Consider implementing a general emergency withdrawal function for accidentally sent ERC-20 tokens to enhance operational safety.
+> **Final Recommendation:** It is recommended to transition the ownership of the contract to a multi-signature wallet or a decentralized governance DAO to mitigate the risks associated with a single point of failure. Additionally, implementing a timelock on sensitive administrative functions like setOutboundCap and setFeeBp would provide users with sufficient notice before economic changes take effect.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages LayerZero for omnichain functionality and OpenZeppelin's Pausable for operational control (7.1 Architecture, 7.2 Code Security). It implements daily inbound and outbound… |
-| **Governance / Economics** | 1/10 | High | The contract's economic model incorporates daily transfer caps to mitigate risks associated with cross-chain token movements (7.4 Economic). Control over these caps, as well as pausing and whitelist… |
-| **Upgrades** | 6/10 | Medium | The provided contract is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, there are no specific upgrade-related risks inherent to this contract's architecture. Any future changes would… |
+| **Technical** | 8/10 | Low | The contract utilizes established LayerZero OFT libraries for cross-chain messaging. 7.1 Architecture is modular, separating core logic from cross-chain transport. 7.2 Code Security is robust… |
+| **Governance / Economics** | 3/10 | High | 7.4 Economic and 7.5 Governance are heavily centralized under the contract owner. The owner can modify fee structures via setFeeBp and setOutboundCap, directly impacting user costs and liquidity… |
+| **Upgrades** | 4/10 | Medium | 7.7 Upgrades are not implemented via proxy patterns in this contract. The contract is immutable in its logic, which prevents unauthorized code changes. 7.8 Operations are managed through… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 99.1% |
+| **Top-1 Unlocked Holder** | ⚠️ 91.7% |
 | **Top-3 Unlocked** | ⚠️ 100.0% |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium_
+_🟡 2 Medium · ⚪ 4 Informational_
 
-### `C-01` — Inconsistent Token Decimals  *(Severity: Critical · Status: Unresolved)*
+### `CP-01` — Privileged Minting Capability  *(Severity: Medium · Status: Unresolved)*
 
-The `CakeOFT` contract's `decimals()` function explicitly overrides the inherited `ERC20.decimals()` to return `18`. However, in its constructor, it initializes the `OFTWithFee` (which inherits from `ERC20`) with `8` decimals: `OFTWithFee("PancakeSwap Token", "Cake", 8, _lzEndpoint)`. This creates a severe inconsistency where the token internally operates with 8 decimals (e.g., for LayerZero `_amountLD` calculations) but externally reports 18 decimals. This discrepancy can lead to incorrect token amounts being transferred, displayed, or accounted for in external systems, potentially resulting in significant financial loss or protocol malfunction.
+The sendAndCall function allows a privileged address to mint new tokens. This action increases the total supply of the token, which directly dilutes the value of existing holdings for all token holders.
 
-**Recommendation:** Ensure consistency in token decimals. Either initialize `OFTWithFee` with 18 decimals in the constructor and remove the `decimals()` override, or ensure all internal and external interactions correctly handle the 8-decimal representation. The most straightforward solution is to align the constructor parameter with the overridden `decimals()` function.
-
-
-### `H-01` — Centralized Control and Whitelist Bypass Risk  *(Severity: High · Status: Unresolved)*
-
-The `onlyOwner` role holds significant power, including the ability to pause/unpause the contract, set inbound/outbound transfer caps, and manage the whitelist. The whitelist allows designated addresses to bypass the daily transfer caps, which are a critical security feature designed to limit potential losses during bridge exploits. If the `onlyOwner` key (or multisig) is compromised, or if a whitelisted address is compromised, an attacker could bypass the caps and drain funds or cause significant disruption.
-
-**Recommendation:** Implement robust security measures for the `onlyOwner` role, such as a strong multisig with a high threshold. Regularly review and audit whitelisted addresses. Consider implementing time-locks or multi-signature approvals for critical administrative actions like setting caps to zero or adding/removing addresses from the whitelist, to introduce a delay and allow for community oversight or emergency intervention.
+**Recommendation:** Restrict the minting capability to a specific, audited bridge contract or remove the minting functionality entirely if it is not required for the intended cross-chain operations.
 
 
-### `M-01` — Lack of General Emergency Withdrawal for ERC-20 Tokens  *(Severity: Medium · Status: Unresolved)*
+### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
 
-The contract is an ERC-20 token itself, but it does not include a general function to recover other ERC-20 tokens that might be accidentally sent to its address. While the contract is primarily for its native token, receiving other tokens by mistake is a common operational risk. Without a dedicated recovery mechanism, such tokens would be permanently locked in the contract.
+0.0% of the pool's LP is burned or time-locked. 100.0% is held, unlocked, by 2 address(es) other than the owner/deployer. One of them — a wallet, 0x3374…6898 — holds 91.7% and can remove that share at once; who controls it is not visible on-chain, so it is not treated as an independent provider. Some pools are concentrated-liquidity (V3/V4) positions; shares above are by position as GoPlus reports them. This assessment covers the main pool, which holds 65% of the token's DEX liquidity; the other pools were not assessed.
 
-**Recommendation:** Implement a `recoverERC20(address tokenAddress, uint256 amount)` function, restricted to the `onlyOwner` role. This function would allow the owner to retrieve any ERC-20 tokens accidentally sent to the contract, preventing their permanent loss. Ensure this function cannot be used to drain the contract's native token.
+**Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
+
+
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
+
+The ten largest holders own 59.2% of supply. What remains: 59.2% in wallets, 0.0% in other contracts. 21,312 holders in total.
+
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as PancakeSwap (CAKE), market cap $668M, rank #92. Traded on Binance, Coinbase. 21,312 holders. Verified by: CoinGecko, exchange listings.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $230K (DexScreener, all pools). 24h trading volume $51.1M (CoinGecko, all markets, daily snapshot). 24h trading volume $24K (DexScreener, all pools). CoinGecko's record for this coin: all-time high $43.96 on 2021-04-30; the price is now 95.2158% below it.
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-PROFILE` — Asset class: Governance token  *(Severity: Informational · Status: Acknowledged)*
+
+A token whose main use is voting on a protocol's decisions (delegation and vote checkpoints in its code). The class itself adds no points; the contract and market facts decide the score. Basis: CoinGecko category: Governance. Tokenomics — Supply: mintable with no on-chain cap found. Control: a ProxyAdmin contract. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $230K of DEX liquidity across 10 pools. Launch: 1304 days of market history.
+
+**Recommendation:** Check how much of the voting supply insiders hold and what governance can change.
 
 ## Token Metrics
 
@@ -66,22 +87,22 @@ The contract is an ERC-20 token itself, but it does not include a general functi
 |--------|-------|
 | **Contract** | [`0x1526...c898`](https://etherscan.io/address/0x152649ea73beab28c5b49b26eb48f7ead6d4c898) |
 | **Network** | Ethereum |
-| **Price** | $2.0180 |
-| **24h Volume** | $244.9K |
-| **Liquidity** | $232.5K |
-| **Volume / Liquidity** | 1.1× |
+| **Price** | $2.1100 |
+| **24h Volume** | $15.8K |
+| **Liquidity** | $149.5K |
+| **Volume / Liquidity** | 0.1× |
 | **Token Age** | 3y |
-| **Top-10 Holders** | 58.3% of supply |
+| **Top-10 Holders** | 59.2% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 76 buys / 94 sells |
 
-## Security Flags (3/5 passed)
+## Security Flags (2/5 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
-| No Mint Function | ✅ Pass |
+| No Mint Function | ❌ Fail |
 | Liquidity Locked | ❌ Fail |
 | Not a Proxy | ✅ Pass |
 
@@ -91,7 +112,7 @@ The contract is an ERC-20 token itself, but it does not include a general functi
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
-| No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
+| No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
 | Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 

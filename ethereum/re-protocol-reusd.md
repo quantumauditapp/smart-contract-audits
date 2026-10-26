@@ -160,7 +160,7 @@ While the data does not definitively confirm Re Protocol reUSD as a scam, severa
 
 ### Is Re Protocol reUSD safe to buy?
 
-Based on the provided data, Re Protocol reUSD carries a high-risk score of 51/100, suggesting it is not safe for risk-averse investors. Key concerns include the top 10 holders controlling nearly all supply (98.7%), posing a significant centralization risk and potential for market manipulation. Furthermore, the absence of locked liquidity means funds can be withdrawn, increasing volatility and potential for sudden market impact.
+Based on the provided data, Re Protocol reUSD carries a low-risk score of 9/100, suggesting it is not safe for risk-averse investors. Key concerns include the top 10 holders controlling nearly all supply (98.7%), posing a significant centralization risk and potential for market manipulation. Furthermore, the absence of locked liquidity means funds can be withdrawn, increasing volatility and potential for sudden market impact.
 
 ### Has Re Protocol reUSD been audited?
 

@@ -2,14 +2,14 @@
 token: PIZZA
 ticker: PIZZA
 network: bsc
-risk_score: 51
-status: medium
+risk_score: 24
+status: low
 date: 2026-08-20
 ---
 
 # PIZZA (PIZZA) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 51/100 — 🟡 Medium Risk**
+> **Risk Score: 24/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pizza-bsc)
 
@@ -25,8 +25,8 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | 7.1 Architecture: The contract utilizes a well-structured upgradeable ERC20 pattern from OpenZeppelin, which is a strong foundation. The `PackedPoolState` struct is an efficient design choice for… |
-| **Governance / Economics** | 5/10 | Medium | 7.4 Economic: The token implements a flexible tax system with different pool states and anti-farmer durations. The `maxSupply` is minted to the initializer, establishing initial distribution.… |
+| **Technical** | 9/10 | Low | 7.1 Architecture: The contract utilizes a well-structured upgradeable ERC20 pattern from OpenZeppelin, which is a strong foundation. The `PackedPoolState` struct is an efficient design choice for… |
+| **Governance / Economics** | 7/10 | Low | 7.4 Economic: The token implements a flexible tax system with different pool states and anti-farmer durations. The `maxSupply` is minted to the initializer, establishing initial distribution.… |
 | **Upgrades** | 4/10 | Medium | 7.7 Upgrades: The contract correctly uses OpenZeppelin's `Initializable` pattern, enabling secure upgrades. This allows for future enhancements and bug fixes without redeploying the entire system.… |
 
 ## Proxy Upgrade Controls
@@ -45,46 +45,46 @@ The FlapTaxTokenV3 contract implements an upgradeable ERC20 token with dynamic t
 
 ## Security Findings
 
-_🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Incorrect `taxExpirationTime` Initialization Logic  *(Severity: High · Status: Unresolved)*
-
-The `taxExpirationTime` field in `PackedPoolState` is initialized with `uint64(params.taxDuration)` in the `initialize` function. Subsequently, in `finalizeMigration`, it is updated by adding `block.timestamp` to its current value (`currentPoolState.taxExpirationTime + block.timestamp`). This implies `params.taxDuration` is treated as an absolute timestamp during initialization and then as a duration during migration finalization. This inconsistent logic will result in an incorrect `taxExpirationTime` that is significantly longer than intended, leading to prolonged tax enforcement.
-
-**Recommendation:** Ensure consistent interpretation of `params.taxDuration`. If `params.taxDuration` is intended as a duration, `taxExpirationTime` should be initialized as `uint64(block.timestamp + params.taxDuration)` in the `initialize` function. The `finalizeMigration` function should then only update the state and `antiFarmerExpirationTime` as needed, or recalculate `taxExpirationTime` based on `block.timestamp` and the intended duration.
-
-
-### `H-02` — Owner Centralization and Immutability of Critical Parameters  *(Severity: High · Status: Unresolved)*
-
-The owner has significant centralized control over the token's core mechanics through `startMigration` and `finalizeMigration`, which dictate the `PoolState` and tax enforcement. Furthermore, several critical external contract addresses (`taxProcessor`, `v2Router`, `quoteToken`, `mainPool`, `dividendContract`) and parameters (`antiFarmerDuration`, `liqExpectedOutputAmount`) are set only during initialization and lack direct setter functions. This immutability creates a high operational risk, as these dependencies cannot be updated or replaced without a full contract upgrade if they become compromised, deprecated, or require changes.
-
-**Recommendation:** Consider implementing `onlyOwner` (or multi-signature) protected setter functions for critical external contract addresses and configurable parameters. This would allow for greater flexibility and responsiveness to changes in the ecosystem or security incidents without requiring a full contract upgrade. Clearly document the owner's responsibilities and the implications of these centralized controls.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Potential Truncation in `PackedPoolState` Fields  *(Severity: Medium · Status: Unresolved)*
 
-The `liquidationThreshold` field within the `PackedPoolState` struct is defined as `uint96`, while the initial values `MIN_LIQ_THRESHOLD` and `START_LIQ_THRESHOLD` are `uint256`. If `START_LIQ_THRESHOLD` (or any value assigned to `liquidationThreshold`) exceeds the maximum value of `uint96` (`2^96 - 1`), it will be truncated. This could lead to a smaller effective liquidation threshold than intended, potentially affecting the tax liquidation mechanism and economic stability.
+Not confirmed by static analysis (the model's own reading of the source). The `liquidationThreshold` field within the `PackedPoolState` struct is defined as `uint96`, while the initial values `MIN_LIQ_THRESHOLD` and `START_LIQ_THRESHOLD` are `uint256`. If `START_LIQ_THRESHOLD` (or any value assigned to `liquidationThreshold`) exceeds the maximum value of `uint96` (`2^96 - 1`), it will be truncated. This could lead to a smaller effective liquidation threshold than intended, potentially affecting the tax liquidation mechanism and economic stability.
 
 **Recommendation:** Ensure that `START_LIQ_THRESHOLD` and `MIN_LIQ_THRESHOLD` are within the bounds of `uint96` or explicitly cast them with a `require` check to prevent truncation. Alternatively, consider increasing the size of `liquidationThreshold` to `uint256` if the intended values can exceed `uint96` max, though this would increase storage costs.
 
 
+### `M-02` — Incorrect `taxExpirationTime` Initialization Logic  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `taxExpirationTime` field in `PackedPoolState` is initialized with `uint64(params.taxDuration)` in the `initialize` function. Subsequently, in `finalizeMigration`, it is updated by adding `block.timestamp` to its current value (`currentPoolState.taxExpirationTime + block.timestamp`). This implies `params.taxDuration` is treated as an absolute timestamp during initialization and then as a duration during migration finalization. This inconsistent logic will result in an incorrect `taxExpirationTime` that is significantly longer than intended, leading to prolonged tax enforcement.
+
+**Recommendation:** Ensure consistent interpretation of `params.taxDuration`. If `params.taxDuration` is intended as a duration, `taxExpirationTime` should be initialized as `uint64(block.timestamp + params.taxDuration)` in the `initialize` function. The `finalizeMigration` function should then only update the state and `antiFarmerExpirationTime` as needed, or recalculate `taxExpirationTime` based on `block.timestamp` and the intended duration.
+
+
+### `M-03` — Owner Centralization and Immutability of Critical Parameters  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The owner has significant centralized control over the token's core mechanics through `startMigration` and `finalizeMigration`, which dictate the `PoolState` and tax enforcement. Furthermore, several critical external contract addresses (`taxProcessor`, `v2Router`, `quoteToken`, `mainPool`, `dividendContract`) and parameters (`antiFarmerDuration`, `liqExpectedOutputAmount`) are set only during initialization and lack direct setter functions. This immutability creates a high operational risk, as these dependencies cannot be updated or replaced without a full contract upgrade if they become compromised, deprecated, or re
+
+**Recommendation:** Consider implementing `onlyOwner` (or multi-signature) protected setter functions for critical external contract addresses and configurable parameters. This would allow for greater flexibility and responsiveness to changes in the ecosystem or security incidents without requiring a full contract upgrade. Clearly document the owner's responsibilities and the implications of these centralized controls.
+
+
 ### `L-01` — Reliance on External `ITaxProcessor` Contract  *(Severity: Low · Status: Unresolved)*
 
-The `_processTax` function makes an external call to the `taxProcessor` contract to handle collected tax funds. While a reentrancy guard (`notLiquidating`) is in place for this specific call, the overall security and correctness of the `FlapTaxTokenV3` contract are highly dependent on the implementation and trustworthiness of the `ITaxProcessor` contract. A bug, vulnerability, or malicious logic within `ITaxProcessor` could lead to the loss or misuse of collected tax funds.
+Not confirmed by static analysis (the model's own reading of the source). The `_processTax` function makes an external call to the `taxProcessor` contract to handle collected tax funds. While a reentrancy guard (`notLiquidating`) is in place for this specific call, the overall security and correctness of the `FlapTaxTokenV3` contract are highly dependent on the implementation and trustworthiness of the `ITaxProcessor` contract. A bug, vulnerability, or malicious logic within `ITaxProcessor` could lead to the loss or misuse of collected tax funds.
 
 **Recommendation:** Thoroughly audit the `ITaxProcessor` contract to ensure its security and intended functionality. Implement robust monitoring for the `taxProcessor` address and its behavior. Consider adding mechanisms for the owner to pause tax processing or update the `taxProcessor` address in emergencies (as suggested in H-02).
 
 
 ### `I-01` — Lack of Event Emission for Critical Parameter Initialization  *(Severity: Informational · Status: Unresolved)*
 
-Several critical parameters, including `v2Router`, `quoteToken`, `antiFarmerDuration`, `mainPool`, `liqExpectedOutputAmount`, `taxProcessor`, and `dividendContract`, are set during the `initialize` function but no corresponding events are emitted. While these parameters are immutable after initialization, emitting events for their initial values would significantly improve transparency and allow off-chain monitoring systems to track the contract's configuration from deployment.
+Not confirmed by static analysis (the model's own reading of the source). Several critical parameters, including `v2Router`, `quoteToken`, `antiFarmerDuration`, `mainPool`, `liqExpectedOutputAmount`, `taxProcessor`, and `dividendContract`, are set during the `initialize` function but no corresponding events are emitted. While these parameters are immutable after initialization, emitting events for their initial values would significantly improve transparency and allow off-chain monitoring systems to track the contract's configuration from deployment.
 
 **Recommendation:** Emit events for all critical parameters set during the `initialize` function. For example, `event ConfigUpdated(address indexed v2Router, address indexed taxProcessor, uint256 antiFarmerDuration, ...);`.
 
 
 ### `I-02` — Unused State Variables  *(Severity: Informational · Status: Unresolved)*
 
-The state variables `dividendContract`, `v2Router`, `quoteToken`, and `liqExpectedOutputAmount` are declared and initialized in the contract but are not used in any of the provided functions. This might indicate incomplete functionality, placeholder variables for future development, or an oversight.
+Not confirmed by static analysis (the model's own reading of the source). The state variables `dividendContract`, `v2Router`, `quoteToken`, and `liqExpectedOutputAmount` are declared and initialized in the contract but are not used in any of the provided functions. This might indicate incomplete functionality, placeholder variables for future development, or an oversight.
 
 **Recommendation:** Review the purpose of these unused variables. If they are intended for future functionality, consider adding comments to clarify their role. If they are no longer needed, remove them to reduce contract size and improve clarity.
 

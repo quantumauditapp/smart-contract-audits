@@ -2,14 +2,14 @@
 token: Recall
 ticker: RECALL
 network: base
-risk_score: 72
-status: high
+risk_score: 50
+status: medium
 date: 2026-07-26
 ---
 
 # Recall (RECALL) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 72/100 — 🟠 High Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/recall-base)
 
@@ -25,8 +25,8 @@ The Recall token contract is an upgradeable ERC20 token leveraging OpenZeppelin'
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates strong technical foundations (7.1 Architecture, 7.2 Code Security). It utilizes OpenZeppelin's upgradeable contracts for ERC20, AccessControl, Pausable, and UUPS, ensuring… |
-| **Governance / Economics** | 1/10 | High | The contract implements robust access control via OpenZeppelin's `AccessControlUpgradeable` (7.3 Access Control). However, all critical roles (ADMIN_ROLE, MINTER_ROLE, PAUSER_ROLE) are initially… |
+| **Technical** | 7/10 | Low | The contract demonstrates strong technical foundations (7.1 Architecture, 7.2 Code Security). It utilizes OpenZeppelin's upgradeable contracts for ERC20, AccessControl, Pausable, and UUPS, ensuring… |
+| **Governance / Economics** | 2/10 | High | The contract implements robust access control via OpenZeppelin's `AccessControlUpgradeable` (7.3 Access Control). However, all critical roles (ADMIN_ROLE, MINTER_ROLE, PAUSER_ROLE) are initially… |
 | **Upgrades** | 1/10 | High | The contract correctly implements the UUPSUpgradeable proxy pattern (7.7 Upgrades), which is a secure and widely adopted standard for upgradeability. The `_authorizeUpgrade` function is appropriately… |
 
 ## Proxy Upgrade Controls
@@ -46,39 +46,39 @@ The Recall token contract is an upgradeable ERC20 token leveraging OpenZeppelin'
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control of Critical Roles  *(Severity: High · Status: Unresolved)*
-
-The `initialize` function assigns the `ADMIN_ROLE`, `MINTER_ROLE`, and `PAUSER_ROLE` to the `msg.sender` (deployer EOA). The `ADMIN_ROLE` has the ability to manage all other roles, unpause the contract, and authorize contract upgrades. This creates a single point of failure where a compromise of the deployer's EOA could lead to complete control over the token's functionality, including arbitrary minting, halting operations, and deploying malicious contract logic (7.3 Access Control, 7.5 Governance, 7.8 Operations).
-
-**Recommendation:** Transfer the `ADMIN_ROLE`, `MINTER_ROLE`, and `PAUSER_ROLE` to a multi-signature wallet or a robust DAO governance contract immediately after deployment and initialization. This distributes control and significantly reduces the risk associated with a single compromised private key.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Pausability as a Centralized Denial-of-Service Vector  *(Severity: Medium · Status: Unresolved)*
 
-The `PAUSER_ROLE` has the ability to call `pause()`, which halts all token transfers, minting, and burning operations. While the `ADMIN_ROLE` can `unpause()`, the unilateral ability of a single `PAUSER_ROLE` holder to stop all token activity presents a significant centralization risk and potential for denial of service (7.3 Access Control, 7.4 Economic). A malicious or compromised `PAUSER_ROLE` could disrupt the protocol's operations.
+Not confirmed by static analysis (the model's own reading of the source). The `PAUSER_ROLE` has the ability to call `pause()`, which halts all token transfers, minting, and burning operations. While the `ADMIN_ROLE` can `unpause()`, the unilateral ability of a single `PAUSER_ROLE` holder to stop all token activity presents a significant centralization risk and potential for denial of service (7.3 Access Control, 7.4 Economic). A malicious or compromised `PAUSER_ROLE` could disrupt the protocol's operations.
 
 **Recommendation:** Consider implementing a timelock for the `pause()` function or requiring multiple parties (e.g., a multi-signature wallet) to approve pausing. Alternatively, restrict the `PAUSER_ROLE` to a trusted, highly secure entity or a governance mechanism with appropriate checks and balances.
 
 
 ### `M-02` — Centralized Minting Authority  *(Severity: Medium · Status: Unresolved)*
 
-The `MINTER_ROLE` has the authority to mint an arbitrary amount of new tokens to any address. If the `MINTER_ROLE` is controlled by a single EOA and that EOA is compromised, an attacker could mint an unlimited supply of tokens, leading to hyperinflation and severe devaluation of existing tokens (7.4 Economic). This centralized control over token supply poses a significant economic risk.
+Not confirmed by static analysis (the model's own reading of the source). The `MINTER_ROLE` has the authority to mint an arbitrary amount of new tokens to any address. If the `MINTER_ROLE` is controlled by a single EOA and that EOA is compromised, an attacker could mint an unlimited supply of tokens, leading to hyperinflation and severe devaluation of existing tokens (7.4 Economic). This centralized control over token supply poses a significant economic risk.
 
 **Recommendation:** Implement a minting cap, rate limit, or transfer the `MINTER_ROLE` to a multi-signature wallet or a controlled contract that enforces specific minting policies. This would introduce checks and balances to prevent uncontrolled token issuance.
 
 
+### `M-03` — Centralized Control of Critical Roles  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function assigns the `ADMIN_ROLE`, `MINTER_ROLE`, and `PAUSER_ROLE` to the `msg.sender` (deployer EOA). The `ADMIN_ROLE` has the ability to manage all other roles, unpause the contract, and authorize contract upgrades. This creates a single point of failure where a compromise of the deployer's EOA could lead to complete control over the token's functionality, including arbitrary minting, halting operations, and deploying malicious contract logic (7.3 Access Control, 7.5 Governance, 7.8 Operations).
+
+**Recommendation:** Transfer the `ADMIN_ROLE`, `MINTER_ROLE`, and `PAUSER_ROLE` to a multi-signature wallet or a robust DAO governance contract immediately after deployment and initialization. This distributes control and significantly reduces the risk associated with a single compromised private key.
+
+
 ### `L-01` — Reliance on External Axelar Interchain Token Service  *(Severity: Low · Status: Unresolved)*
 
-The contract integrates with the Axelar Interchain Token Standard and relies on the `_interchainTokenService` address for interchain functionality, specifically for deriving the `interchainTokenId`. The security and availability of this external service are critical to the token's cross-chain operations (7.6 External). Any vulnerabilities or disruptions in the Axelar service could indirectly impact the token's intended functionality.
+Not confirmed by static analysis (the model's own reading of the source). The contract integrates with the Axelar Interchain Token Standard and relies on the `_interchainTokenService` address for interchain functionality, specifically for deriving the `interchainTokenId`. The security and availability of this external service are critical to the token's cross-chain operations (7.6 External). Any vulnerabilities or disruptions in the Axelar service could indirectly impact the token's intended functionality.
 
 **Recommendation:** Acknowledge and continuously monitor the security and operational status of the Axelar Interchain Token Service. While this is an inherent dependency and not a direct vulnerability in the Recall contract's logic, understanding and managing this external risk is crucial.
 
 
 ### `I-01` — Fixed Deployer Address for Interchain Token ID Derivation  *(Severity: Informational · Status: Unresolved)*
 
-The `deployer` address is set once during `initialize` to `msg.sender` and is subsequently used in the `interchainTokenId()` function to derive the unique token identifier via the Axelar Interchain Token Service. This means the `deployer` address is a permanently fixed component in the token's interchain identity (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The `deployer` address is set once during `initialize` to `msg.sender` and is subsequently used in the `interchainTokenId()` function to derive the unique token identifier via the Axelar Interchain Token Service. This means the `deployer` address is a permanently fixed component in the token's interchain identity (7.1 Architecture).
 
 **Recommendation:** No direct security recommendation. This is an architectural design choice for Axelar integration. Ensure that the `deployer` address used during initialization is a stable and known entity, as its identity is permanently linked to the token's interchain ID.
 
@@ -121,11 +121,11 @@ The `deployer` address is set once during `initialize` to `msg.sender` and is su
 
 ### Is Recall a scam?
 
-Based on automated analysis, Recall scores 64/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Recall scores 50/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Recall safe to buy?
 
-Our scanner flagged a risk score of 64/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 50/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Recall been audited?
 

@@ -2,14 +2,14 @@
 token: Paid
 ticker: PAID
 network: solana
-risk_score: 9
+risk_score: 2
 status: low
 date: 2026-09-17
 ---
 
 # Paid (PAID) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 9/100 — 🟢 Low Risk**
+> **Risk Score: 2/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/paid-sol)
 
@@ -26,8 +26,8 @@ The Paid (PAID) token mint is an SPL Token-2022 asset with both mint and freeze 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Paid (PAID) token is implemented using the spl-token-2022 program. Key authorities, including the mint authority and freeze authority, have been revoked, ensuring that no new tokens can be minted… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits significant trading activity with a 24-hour volume of $7,781,521 against a liquidity of $1,112,535, resulting in a Volume/Liquidity Ratio of 6.99. This ratio, while not exceeding… |
-| **Upgrades** | 8/10 | Low | The Paid (PAID) token mint has a fixed configuration with both mint and freeze authorities revoked, preventing any future changes to supply or account freeze status. It does not employ any Token-2022… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits significant trading activity with a 24-hour volume of $7,781,521 against a liquidity of $1,112,535, resulting in a Volume/Liquidity Ratio of 6.99. This ratio, while not exceeding… |
+| **Upgrades** | 9/10 | Low | The Paid (PAID) token mint has a fixed configuration with both mint and freeze authorities revoked, preventing any future changes to supply or account freeze status. It does not employ any Token-2022… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

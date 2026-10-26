@@ -42,21 +42,21 @@ _🟡 1 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Critical Dependency on Bridge Contract Security  *(Severity: Medium · Status: Unresolved)*
 
-The `OptimismMintableERC20` contract's core functionality, specifically the ability to `mint` and `burn` tokens, is exclusively controlled by the `BRIDGE` contract. This makes the token's supply mechanism and overall economic integrity entirely dependent on the security and operational robustness of the external `BRIDGE` contract. A compromise or malfunction of the `BRIDGE` contract would directly lead to unauthorized token issuance or destruction, severely impacting the token's peg and trust (7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The `OptimismMintableERC20` contract's core functionality, specifically the ability to `mint` and `burn` tokens, is exclusively controlled by the `BRIDGE` contract. This makes the token's supply mechanism and overall economic integrity entirely dependent on the security and operational robustness of the external `BRIDGE` contract. A compromise or malfunction of the `BRIDGE` contract would directly lead to unauthorized token issuance or destruction, severely impacting the token's peg and trust (7.6 External).
 
 **Recommendation:** While this dependency is inherent to the bridged token design, it is crucial to ensure the `BRIDGE` contract itself is subject to the highest security standards, including comprehensive audits, formal verification, and robust operational controls. Implement continuous monitoring for the `BRIDGE` contract's activities.
 
 
 ### `I-01` — Inclusion of Legacy Interface Functions  *(Severity: Informational · Status: Unresolved)*
 
-The contract includes several legacy getter functions (`l1Token`, `l2Bridge`, `remoteToken`, `bridge`) for backward compatibility with older interfaces. While these functions do not introduce direct vulnerabilities, they add to the contract's bytecode size and interface complexity, potentially making the contract harder to reason about for new integrations (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The contract includes several legacy getter functions (`l1Token`, `l2Bridge`, `remoteToken`, `bridge`) for backward compatibility with older interfaces. While these functions do not introduce direct vulnerabilities, they add to the contract's bytecode size and interface complexity, potentially making the contract harder to reason about for new integrations (7.1 Architecture).
 
 **Recommendation:** Ensure that documentation clearly distinguishes between current and legacy functions. For future iterations, consider whether the maintenance of extensive legacy interfaces is necessary, or if a cleaner, more streamlined interface could be adopted.
 
 
 ### `I-02` — Non-Upgradeable Contract Design  *(Severity: Informational · Status: Unresolved)*
 
-The `OptimismMintableERC20` contract is designed as an immutable contract, with key parameters like `REMOTE_TOKEN` and `BRIDGE` set as `immutable` in the constructor. This means the contract cannot be upgraded or modified after deployment (7.7 Upgrades). While this simplifies the security model by removing upgrade-related risks, it implies that any discovered vulnerabilities or desired feature changes would necessitate a new deployment and a potentially complex migration process for token holders.
+Not confirmed by static analysis (the model's own reading of the source). The `OptimismMintableERC20` contract is designed as an immutable contract, with key parameters like `REMOTE_TOKEN` and `BRIDGE` set as `immutable` in the constructor. This means the contract cannot be upgraded or modified after deployment (7.7 Upgrades). While this simplifies the security model by removing upgrade-related risks, it implies that any discovered vulnerabilities or desired feature changes would necessitate a new deployment and a potentially complex migration process for token holders.
 
 **Recommendation:** Acknowledge the implications of a non-upgradeable design. Ensure that the initial deployment is exceptionally robust due to the inability to patch. Plan for potential future migration strategies in case a critical issue or necessary feature update arises.
 

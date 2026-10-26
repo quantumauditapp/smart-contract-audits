@@ -2,14 +2,14 @@
 token: PeaqOFT
 ticker: PEAQ
 network: bsc
-risk_score: 30
+risk_score: 28
 status: low
 date: 2026-08-30
 ---
 
 # PeaqOFT (PEAQ) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 30/100 — 🟢 Low Risk**
+> **Risk Score: 28/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/peaqoft-bsc)
 
@@ -42,28 +42,28 @@ _🟢 1 Low · ⚪ 3 Informational_
 
 ### `L-01` — Centralized Ownership  *(Severity: Low · Status: Unresolved)*
 
-The contract utilizes the `Ownable` pattern, granting the `owner` address significant control over administrative functions such as `transferOwnership` and `renounceOwnership`. While the prefill indicates the owner is a multisig (0x3e3f35d49ff20262be309695c9c52ec14bdcf08b with 3/5 threshold), which mitigates single-point-of-failure risk, this still represents a centralized control point for the contract's management.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes the `Ownable` pattern, granting the `owner` address significant control over administrative functions such as `transferOwnership` and `renounceOwnership`. While the prefill indicates the owner is a multisig (0x3e3f35d49ff20262be309695c9c52ec14bdcf08b with 3/5 threshold), which mitigates single-point-of-failure risk, this still represents a centralized control point for the contract's management.
 
 **Recommendation:** Ensure the multisig wallet managing ownership is highly secure, with robust key management practices and a sufficient threshold for transaction execution. Regularly review the multisig signers and their security practices. Consider implementing a time-lock for critical administrative actions to provide a window for community review or emergency intervention.
 
 
 ### `I-01` — Missing Specific Contract Source for `PeaqOFT`  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code only contains OpenZeppelin base contracts (`Context`, `Ownable`, `ERC20`, etc.) and interfaces (`IERC1363`). The actual implementation of the `PeaqOFT` token, which would inherit from `ERC20` and potentially add custom logic or implement `IERC1363`, is not included. This limits the scope of the audit to the generic OpenZeppelin components only, and any specific vulnerabilities or features of the `PeaqOFT` contract itself could not be assessed.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code only contains OpenZeppelin base contracts (`Context`, `Ownable`, `ERC20`, etc.) and interfaces (`IERC1363`). The actual implementation of the `PeaqOFT` token, which would inherit from `ERC20` and potentially add custom logic or implement `IERC1363`, is not included. This limits the scope of the audit to the generic OpenZeppelin components only, and any specific vulnerabilities or features of the `PeaqOFT` contract itself could not be assessed.
 
 **Recommendation:** Provide the complete source code for the `PeaqOFT` contract to enable a comprehensive security audit of its specific implementation and business logic.
 
 
 ### `I-02` — ERC20 `approve` Race Condition  *(Severity: Informational · Status: Unresolved)*
 
-The standard ERC20 `approve` function is susceptible to a front-running attack. If a user attempts to change an existing allowance by calling `approve` with a new value, a malicious actor can observe this transaction, front-run it by spending the original allowance, and then allow the new `approve` transaction to proceed. This results in the spender having access to the original allowance plus the new allowance, effectively spending more than intended. This is an inherent design pattern of ERC20 and not a flaw in this specific implementation.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC20 `approve` function is susceptible to a front-running attack. If a user attempts to change an existing allowance by calling `approve` with a new value, a malicious actor can observe this transaction, front-run it by spending the original allowance, and then allow the new `approve` transaction to proceed. This results in the spender having access to the original allowance plus the new allowance, effectively spending more than intended. This is an inherent design pattern of ERC20 and not a flaw in this specific implementation.
 
 **Recommendation:** Users should be advised to first set the allowance to zero (`approve(spender, 0)`) before setting a new non-zero allowance (`approve(spender, newAmount)`). Alternatively, consider using `increaseAllowance` and `decreaseAllowance` functions if available in a derived contract, or explore alternative approval mechanisms like ERC2612 (permit) for more secure allowance management.
 
 
 ### `I-03` — `IERC1363` Interface Present Without Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The `IERC1363` interface, which defines `transferAndCall` and `approveAndCall` functionalities, is included in the provided source code. However, the `ERC20` abstract contract does not implement these functions. If the `PeaqOFT` contract (not provided) also does not implement them, users might expect these functionalities based on the interface's presence but find them unavailable, potentially leading to confusion or failed transactions.
+Not confirmed by static analysis (the model's own reading of the source). The `IERC1363` interface, which defines `transferAndCall` and `approveAndCall` functionalities, is included in the provided source code. However, the `ERC20` abstract contract does not implement these functions. If the `PeaqOFT` contract (not provided) also does not implement them, users might expect these functionalities based on the interface's presence but find them unavailable, potentially leading to confusion or failed transactions.
 
 **Recommendation:** If `PeaqOFT` is intended to support `IERC1363`, ensure the contract explicitly implements all functions defined in the interface. If not, consider removing the `IERC1363` interface import to avoid misleading users about supported functionalities.
 

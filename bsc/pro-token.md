@@ -2,14 +2,14 @@
 token: Pro Token
 ticker: PRO
 network: bsc
-risk_score: 64
-status: medium
+risk_score: 31
+status: low
 date: 2026-07-22
 ---
 
 # Pro Token (PRO) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 64/100 — 🟡 Medium Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pro-token-bsc)
 
@@ -25,9 +25,9 @@ The Pro Token contract implements an ERC20 token with custom transfer logic, inc
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract's architecture (7.1) is straightforward, extending OpenZeppelin's ERC20 and Ownable. Code security (7.2) is generally good with Solidity 0.8+ preventing common integer issues, and custom… |
-| **Governance / Economics** | 3/10 | High | The economic model (7.4) relies on a sell tax and a liquidity pool balancing mechanism, which can be significantly influenced by privileged roles. Governance (7.5) is highly centralized, with `owner`… |
-| **Upgrades** | 3/10 | High | The contract is not designed as an upgradeable proxy (7.7). Therefore, there are no upgrade-specific risks. Any changes to the contract logic would require a new deployment and migration of assets… |
+| **Technical** | 8/10 | Low | The contract's architecture (7.1) is straightforward, extending OpenZeppelin's ERC20 and Ownable. Code security (7.2) is generally good with Solidity 0.8+ preventing common integer issues, and custom… |
+| **Governance / Economics** | 5/10 | Medium | The economic model (7.4) relies on a sell tax and a liquidity pool balancing mechanism, which can be significantly influenced by privileged roles. Governance (7.5) is highly centralized, with `owner`… |
+| **Upgrades** | 4/10 | Medium | The contract is not designed as an upgradeable proxy (7.7). Therefore, there are no upgrade-specific risks. Any changes to the contract logic would require a new deployment and migration of assets… |
 
 ## LP Distribution
 
@@ -38,39 +38,39 @@ The Pro Token contract implements an ERC20 token with custom transfer logic, inc
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `C-01` — Excessive Centralization of Control  *(Severity: Critical · Status: Unresolved)*
-
-The `owner` and `governance` roles possess extensive power over the contract's functionality and economic parameters. The `owner` can set `targetPool`, `treasury`, `targetRatio`, `transferStatus`, `add/removeWhitelist`, and `transferGovernance`. The `governance` can set `feeReceiver`, `sellRatio`, and call `balancePool`. This high degree of centralization creates a single point of failure, where a compromised or malicious privileged account could manipulate the token's economics, halt trading, or transfer administrative control without warning. For example, the `owner` can instantly transfer `governance` to any address via `transferGovernance`.
-
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for both the `owner` and `governance` roles. For highly sensitive functions, consider adding a time-lock mechanism to introduce a delay before changes take effect, allowing for community oversight and reaction.
-
-
-### `H-01` — Critical Parameter Manipulation without Timelocks  *(Severity: High · Status: Unresolved)*
-
-Key economic and operational parameters such as `targetPool`, `targetRatio`, `sellRatio`, `feeReceiver`, and `transferStatus` can be changed instantly by the `owner` or `governance` roles. This immediate effect allows for rapid and potentially malicious alterations to the token's behavior, such as drastically increasing the sell tax, disabling transfers from the pool, or changing the liquidity pool address, without any grace period for users or external systems to react. For instance, `setSellRates` can change the sell tax up to 30% instantly.
-
-**Recommendation:** Introduce a time-lock mechanism for all functions that modify critical parameters. This would enforce a delay between the initiation of a parameter change and its actual activation, providing transparency and an opportunity for stakeholders to review and react to proposed changes.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Incomplete Validation for `setFeeReceiver`  *(Severity: Medium · Status: Unresolved)*
 
-The `_update` internal function correctly includes a `require(feeReceiver != address(0) && feeReceiver != targetPool, "invalid fee receiver");` check to prevent issues with fee distribution. However, the `setFeeReceiver` function, which is callable by `onlyGovernance`, only checks `_newReceiver != address(0)`. It does not prevent setting `_newReceiver` to `targetPool`. If `feeReceiver` is set to `targetPool`, any subsequent token transfers to the pool (sells) would revert due to the check in `_update`, effectively halting selling functionality.
+Not confirmed by static analysis (the model's own reading of the source). The `_update` internal function correctly includes a `require(feeReceiver != address(0) && feeReceiver != targetPool, "invalid fee receiver");` check to prevent issues with fee distribution. However, the `setFeeReceiver` function, which is callable by `onlyGovernance`, only checks `_newReceiver != address(0)`. It does not prevent setting `_newReceiver` to `targetPool`. If `feeReceiver` is set to `targetPool`, any subsequent token transfers to the pool (sells) would revert due to the check in `_update`, effectively halting selling functionality.
 
 **Recommendation:** Add a check in the `setFeeReceiver` function to ensure that `_newReceiver` is not equal to `targetPool`. This will prevent the `feeReceiver` from being set to an invalid address that would cause future transactions to revert. Example: `if (_newReceiver == address(0) \|\| _newReceiver == targetPool) revert InvalidAddress();`
 
 
+### `M-02` — Excessive Centralization of Control  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `owner` and `governance` roles possess extensive power over the contract's functionality and economic parameters. The `owner` can set `targetPool`, `treasury`, `targetRatio`, `transferStatus`, `add/removeWhitelist`, and `transferGovernance`. The `governance` can set `feeReceiver`, `sellRatio`, and call `balancePool`. This high degree of centralization creates a single point of failure, where a compromised or malicious privileged account could manipulate the token's economics, halt trading, or transfer administrative control without warning. For example, the `owner` can instantly transfer `governance` to any address
+
+**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for both the `owner` and `governance` roles. For highly sensitive functions, consider adding a time-lock mechanism to introduce a delay before changes take effect, allowing for community oversight and reaction.
+
+
+### `M-03` — Critical Parameter Manipulation without Timelocks  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). Key economic and operational parameters such as `targetPool`, `targetRatio`, `sellRatio`, `feeReceiver`, and `transferStatus` can be changed instantly by the `owner` or `governance` roles. This immediate effect allows for rapid and potentially malicious alterations to the token's behavior, such as drastically increasing the sell tax, disabling transfers from the pool, or changing the liquidity pool address, without any grace period for users or external systems to react. For instance, `setSellRates` can change the sell tax up to 30% instantly.
+
+**Recommendation:** Introduce a time-lock mechanism for all functions that modify critical parameters. This would enforce a delay between the initiation of a parameter change and its actual activation, providing transparency and an opportunity for stakeholders to review and react to proposed changes.
+
+
 ### `L-01` — Missing Mint Function Implementation  *(Severity: Low · Status: Unresolved)*
 
-The state variable `treasury` is documented with the comment `/// @dev Treasury address authorized to mint tokens`. However, no `mint` function or similar functionality that allows the `treasury` address to create new tokens is present in the provided contract snippet. This creates a discrepancy between the contract's documentation and its actual implementation, leading to confusion about the intended capabilities of the `treasury` role.
+Not confirmed by static analysis (the model's own reading of the source). The state variable `treasury` is documented with the comment `/// @dev Treasury address authorized to mint tokens`. However, no `mint` function or similar functionality that allows the `treasury` address to create new tokens is present in the provided contract snippet. This creates a discrepancy between the contract's documentation and its actual implementation, leading to confusion about the intended capabilities of the `treasury` role.
 
 **Recommendation:** Either implement the `mint` function with appropriate access control for the `treasury` address, or remove the `treasury` variable and its associated documentation if token minting is not an intended feature of the contract. Ensure the contract's code accurately reflects its intended functionality.
 
 
 ### `I-01` — Non-Standard ERC20 Decimals  *(Severity: Informational · Status: Unresolved)*
 
-The `decimals()` function is overridden to return `9`. While technically valid for an ERC20 token, the most common standard for fungible tokens in the EVM ecosystem is 18 decimals. Using a non-standard decimal count like 9 can sometimes lead to compatibility issues or require custom handling when integrating with existing DeFi protocols, exchanges, or wallets that might implicitly assume 18 decimals.
+Not confirmed by static analysis (the model's own reading of the source). The `decimals()` function is overridden to return `9`. While technically valid for an ERC20 token, the most common standard for fungible tokens in the EVM ecosystem is 18 decimals. Using a non-standard decimal count like 9 can sometimes lead to compatibility issues or require custom handling when integrating with existing DeFi protocols, exchanges, or wallets that might implicitly assume 18 decimals.
 
 **Recommendation:** Ensure that all external systems, such as exchanges, wallets, and DeFi protocols, are explicitly aware of and correctly configured to handle the token's 9 decimals. Clearly document this choice in all public-facing materials. If possible and without significant disruption, consider migrating to 18 decimals for broader compatibility.
 

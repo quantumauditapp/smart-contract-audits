@@ -114,11 +114,11 @@ Not confirmed by static analysis (the model's own reading of the source). The co
 
 ### Is Portal a scam?
 
-Based on the provided data, we cannot definitively label Portal a scam. However, it exhibits significant red flags often associated with high-risk projects. The high-risk score of 67/100, combined with unrenounced ownership, unlocked liquidity, and extreme token concentration, indicates a strong potential for investor losses due to developer action or market manipulation rather than a secure investment. Investors should proceed with extreme caution.
+Based on the provided data, we cannot definitively label Portal a scam. However, it exhibits significant red flags often associated with high-risk projects. The medium-risk score of 50/100, combined with unrenounced ownership, unlocked liquidity, and extreme token concentration, indicates a strong potential for investor losses due to developer action or market manipulation rather than a secure investment. Investors should proceed with extreme caution.
 
 ### Is Portal safe to buy?
 
-Portal is not considered safe to buy based on its current security profile and high-risk score of 67/100. Key risk factors include unrenounced contract ownership, allowing potential malicious changes, and unlocked liquidity, which enables a 'rug pull' by liquidity providers. The highly concentrated token supply, with 66.0% held by the top 10, also poses a significant risk of price manipulation. These factors indicate substantial investment risks.
+Portal is not considered safe to buy based on its current security profile and medium-risk score of 50/100. Key risk factors include unrenounced contract ownership, allowing potential malicious changes, and unlocked liquidity, which enables a 'rug pull' by liquidity providers. The highly concentrated token supply, with 66.0% held by the top 10, also poses a significant risk of price manipulation. These factors indicate substantial investment risks.
 
 ### Has Portal been audited?
 

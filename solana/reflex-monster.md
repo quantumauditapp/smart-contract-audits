@@ -2,14 +2,14 @@
 token: Reflex Monster
 ticker: FLEX
 network: solana
-risk_score: 13
+risk_score: 0
 status: low
 date: 2026-09-22
 ---
 
 # Reflex Monster (FLEX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 13/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/reflex-monster-sol)
 
@@ -26,8 +26,8 @@ The Reflex Monster (FLEX) token is an SPL Token-2022 with both mint and freeze a
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Reflex Monster (FLEX) token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts… |
-| **Governance / Economics** | 6/10 | Medium | The token's DEX pair is very new, established only 3 days ago, which means there is insufficient historical data to evaluate long-term market stability or team behavior. Liquidity stands at $101,089… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are revoked, preventing any further changes to supply or account freeze status. Key Token-2022 extensions such as transfer hook and transfer fee are not… |
+| **Governance / Economics** | 9/10 | Low | The token's DEX pair is very new, established only 3 days ago, which means there is insufficient historical data to evaluate long-term market stability or team behavior. Liquidity stands at $101,089… |
+| **Upgrades** | 10/10 | Low | The token's mint and freeze authorities are revoked, preventing any further changes to supply or account freeze status. Key Token-2022 extensions such as transfer hook and transfer fee are not… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2375 buys / 2763 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

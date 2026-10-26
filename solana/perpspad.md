@@ -2,14 +2,14 @@
 token: perpspad
 ticker: PERPSPAD
 network: solana
-risk_score: 12
+risk_score: 1
 status: low
 date: 2026-08-12
 ---
 
 # perpspad (PERPSPAD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 12/100 — 🟢 Low Risk**
+> **Risk Score: 1/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/perpspad-sol)
 
@@ -26,8 +26,8 @@ This audit of the perpspad SPL token mint found that the mint and freeze authori
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The perpspad token is an SPL token operating on the Solana blockchain, utilizing the standard spl-token program. Both the mint authority and freeze authority have been revoked, meaning no new tokens… |
-| **Governance / Economics** | 7/10 | Low | The token exhibits a holder concentration where the top 10 accounts hold approximately 40.09% of the total supply, which is below the threshold for high concentration risk. Total DEX liquidity stands… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority have both been revoked, preventing any further minting or freezing actions. The token is not a Token-2022 extension, so there are no upgradeable features like… |
+| **Governance / Economics** | 9/10 | Low | The token exhibits a holder concentration where the top 10 accounts hold approximately 40.09% of the total supply, which is below the threshold for high concentration risk. Total DEX liquidity stands… |
+| **Upgrades** | 9/10 | Low | The mint authority and freeze authority have both been revoked, preventing any further minting or freezing actions. The token is not a Token-2022 extension, so there are no upgradeable features like… |
 
 ## Security Findings
 

@@ -2,14 +2,14 @@
 token: Raydium
 ticker: RAY
 network: solana
-risk_score: 37
-status: medium
+risk_score: 25
+status: low
 date: 2026-08-11
 ---
 
 # Raydium (RAY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 25/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/raydium-sol)
 
@@ -25,7 +25,7 @@ The Raydium (RAY) SPL token mint exhibits high holder concentration, with the to
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token operates on the standard `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen.… |
+| **Technical** | 10/10 | Low | The token operates on the standard `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen.… |
 | **Governance / Economics** | 1/10 | High | The token demonstrates high holder concentration, with the top 10 accounts holding 76.79% of the total supply. This concentration poses a substantial risk of price manipulation or sudden sell-offs.… |
 | **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked, preventing any future changes to the token's supply or account freeze status. However, the token's metadata, including its name, symbol, or… |
 

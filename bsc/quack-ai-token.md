@@ -2,14 +2,14 @@
 token: Quack AI Token
 ticker: Q
 network: bsc
-risk_score: 67
-status: high
+risk_score: 59
+status: medium
 date: 2026-07-27
 ---
 
 # Quack AI Token (Q) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 67/100 — 🟠 High Risk**
+> **Risk Score: 59/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/quack-ai-token-bsc)
 
@@ -25,7 +25,7 @@ The PeerToken contract is an ERC-20 token with burnable and permit functionaliti
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The technical implementation of PeerToken is robust, leveraging battle-tested OpenZeppelin contracts for ERC-20, ERC-20Permit, ERC-20Burnable, and Ownable functionalities (7.2 Code Security). Custom… |
+| **Technical** | 8/10 | Low | The technical implementation of PeerToken is robust, leveraging battle-tested OpenZeppelin contracts for ERC-20, ERC-20Permit, ERC-20Burnable, and Ownable functionalities (7.2 Code Security). Custom… |
 | **Governance / Economics** | 1/10 | High | The contract implements a robust access control system with distinct `owner` and `minter` roles (7.3 Access Control). The `owner` is a Timelock with a 48-hour delay, which significantly enhances… |
 | **Upgrades** | 5/10 | Medium | The PeerToken contract is not designed as an upgradeable proxy (7.7 Upgrades). This eliminates upgrade-related risks such as proxy implementation mismatches or storage collisions. However, it also… |
 
@@ -38,18 +38,18 @@ The PeerToken contract is an ERC-20 token with burnable and permit functionaliti
 
 ## Security Findings
 
-_🟠 1 High · ⚪ 1 Informational_
+_🟡 1 Medium · ⚪ 1 Informational_
 
-### `H-01` — Centralized Unlimited Minting Authority  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Unlimited Minting Authority  *(Severity: Medium · Status: Unresolved)*
 
-The `PeerToken` contract grants an `onlyMinter` role the ability to mint an unlimited quantity of new tokens via the `mint(address _account, uint256 _amount)` function. While the `owner` (a Timelock) can change the `minter` address, the `minter` itself has unchecked power over the token supply. A compromise of the `minter`'s private key or a malicious `minter` could lead to arbitrary token inflation, severely devaluing existing tokens and impacting the protocol's economic stability (7.4 Economic, 7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The `PeerToken` contract grants an `onlyMinter` role the ability to mint an unlimited quantity of new tokens via the `mint(address _account, uint256 _amount)` function. While the `owner` (a Timelock) can change the `minter` address, the `minter` itself has unchecked power over the token supply. A compromise of the `minter`'s private key or a malicious `minter` could lead to arbitrary token inflation, severely devaluing existing tokens and impacting the protocol's economic stability (7.4 Economic, 7.3 Access Control).
 
 **Recommendation:** Implement a more robust control mechanism for the `minter` role. Consider: 1) Using a multi-signature wallet for the `minter` address. 2) Implementing a minting cap (e.g., a maximum total supply or a rate limit for minting). 3) Introducing a time-locked minting approval process requiring multiple parties. 4) If unlimited minting is intended, ensure the `minter`'s operational security is paramount.
 
 
 ### `I-01` — Non-Upgradeable Contract  *(Severity: Informational · Status: Unresolved)*
 
-The `PeerToken` contract is deployed directly and does not utilize a proxy pattern, meaning it is not upgradeable (7.7 Upgrades). This implies that its logic cannot be modified or updated after deployment. While this eliminates upgrade-related security risks, it also means that any future bug fixes, feature enhancements, or changes to the token's economic model would require deploying an entirely new contract and migrating users/liquidity.
+Not confirmed by static analysis (the model's own reading of the source). The `PeerToken` contract is deployed directly and does not utilize a proxy pattern, meaning it is not upgradeable (7.7 Upgrades). This implies that its logic cannot be modified or updated after deployment. While this eliminates upgrade-related security risks, it also means that any future bug fixes, feature enhancements, or changes to the token's economic model would require deploying an entirely new contract and migrating users/liquidity.
 
 **Recommendation:** This is an architectural decision. If future flexibility is desired, consider implementing an upgradeable proxy pattern (e.g., UUPS or Transparent Proxy) for future contracts. If immutability is the goal, ensure the current design is thoroughly reviewed and future-proofed.
 
@@ -92,11 +92,11 @@ The `PeerToken` contract is deployed directly and does not utilize a proxy patte
 
 ### Is Quack AI Token a scam?
 
-Based on automated analysis, Quack AI Token scores 64/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Quack AI Token scores 59/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Quack AI Token safe to buy?
 
-Our scanner flagged a risk score of 64/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 59/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Quack AI Token been audited?
 

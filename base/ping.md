@@ -2,14 +2,14 @@
 token: Ping
 ticker: PING
 network: base
-risk_score: 50
+risk_score: 35
 status: medium
 date: 2026-09-03
 ---
 
 # Ping (PING) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 50/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ping-base)
 
@@ -38,25 +38,25 @@ The Ping token contract implements ERC20 functionality with EIP-2612-like author
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · ⚪ 1 Informational_
-
-### `H-01` — Critical State if Liquidity Deployment Fails  *(Severity: High · Status: Unresolved)*
-
-The `_initializePoolAndDeployLiquidity` function is called automatically when `_mintCount` reaches `MAX_MINT_COUNT`. If this function, which involves external calls to Uniswap V4 `IPoolManager` and `IPositionManager`, fails for any reason (e.g., insufficient funds, network issues, or unexpected hook behavior), the `_mintCount` will already be updated, and `MAX_MINT_COUNT` will be reached. This prevents further minting and leaves the contract in a state where the intended liquidity was not deployed, potentially rendering the token illiquid or unusable as intended. There is no retry mechanism or emergency fallback to deploy liquidity manually.
-
-**Recommendation:** Implement robust error handling and a recovery mechanism for liquidity deployment. Consider adding a `_liquidityDeployed` flag that is only set upon successful deployment, and allow the `MINTER_ROLE` or `DEFAULT_ADMIN_ROLE` to re-attempt deployment if it initially fails, or to manually deploy liquidity if the automatic process is stuck. This could involve a separate callable function for the admin to trigger liquidity deployment if the automatic one fails.
-
+_🟡 2 Medium · ⚪ 1 Informational_
 
 ### `M-01` — Fixed Initial Liquidity Parameters  *(Severity: Medium · Status: Unresolved)*
 
-The `POOL_SEED_AMOUNT`, `PAYMENT_SEED`, `SQRT_PRICE_PAYMENT_TOKEN_FIRST`, and `SQRT_PRICE_PING_FIRST` are set as immutable variables in the constructor. These parameters dictate the initial liquidity provision and price for the Uniswap V4 pool. While immutability provides certainty, fixing these values at deployment means there is no flexibility to adjust them based on market conditions or unforeseen circumstances leading up to the liquidity deployment event (which occurs only after `MAX_MINT_COUNT` is reached). This could result in suboptimal initial liquidity, significant impermanent loss, or an unfavorable initial price for the token.
+Not confirmed by static analysis (the model's own reading of the source). The `POOL_SEED_AMOUNT`, `PAYMENT_SEED`, `SQRT_PRICE_PAYMENT_TOKEN_FIRST`, and `SQRT_PRICE_PING_FIRST` are set as immutable variables in the constructor. These parameters dictate the initial liquidity provision and price for the Uniswap V4 pool. While immutability provides certainty, fixing these values at deployment means there is no flexibility to adjust them based on market conditions or unforeseen circumstances leading up to the liquidity deployment event (which occurs only after `MAX_MINT_COUNT` is reached). This could result in suboptimal initial liquidity, significant impermanent loss, or an unfavorable initial p
 
 **Recommendation:** Evaluate if these parameters truly need to be immutable. If flexibility is desired, consider making them configurable by a trusted role (e.g., `DEFAULT_ADMIN_ROLE`) before liquidity deployment, or implement a mechanism to allow the owner to adjust liquidity post-deployment if initial conditions are not met. This would allow for better adaptation to market dynamics.
 
 
+### `M-02` — Critical State if Liquidity Deployment Fails  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_initializePoolAndDeployLiquidity` function is called automatically when `_mintCount` reaches `MAX_MINT_COUNT`. If this function, which involves external calls to Uniswap V4 `IPoolManager` and `IPositionManager`, fails for any reason (e.g., insufficient funds, network issues, or unexpected hook behavior), the `_mintCount` will already be updated, and `MAX_MINT_COUNT` will be reached. This prevents further minting and leaves the contract in a state where the intended liquidity was not deployed, potentially rendering the token illiquid or unusable as intended. There is no retry mechanism or emergency fallback to dep
+
+**Recommendation:** Implement robust error handling and a recovery mechanism for liquidity deployment. Consider adding a `_liquidityDeployed` flag that is only set upon successful deployment, and allow the `MINTER_ROLE` or `DEFAULT_ADMIN_ROLE` to re-attempt deployment if it initially fails, or to manually deploy liquidity if the automatic process is stuck. This could involve a separate callable function for the admin to trigger liquidity deployment if the automatic one fails.
+
+
 ### `I-01` — Redundant Ownable Inheritance  *(Severity: Informational · Status: Unresolved)*
 
-The `Ping` contract inherits both `AccessControl` and `Ownable`. While `AccessControl` is used for defining `MINTER_ROLE` and `DEFAULT_ADMIN_ROLE`, the `Ownable` inheritance adds an `owner()` function and `transferOwnership()`/`renounceOwnership()` methods that are not explicitly used or integrated with the `AccessControl` roles. This creates a slight redundancy and potential for confusion regarding the primary access control mechanism, although `_grantRole(DEFAULT_ADMIN_ROLE, msg.sender)` effectively makes the deployer the admin.
+Not confirmed by static analysis (the model's own reading of the source). The `Ping` contract inherits both `AccessControl` and `Ownable`. While `AccessControl` is used for defining `MINTER_ROLE` and `DEFAULT_ADMIN_ROLE`, the `Ownable` inheritance adds an `owner()` function and `transferOwnership()`/`renounceOwnership()` methods that are not explicitly used or integrated with the `AccessControl` roles. This creates a slight redundancy and potential for confusion regarding the primary access control mechanism, although `_grantRole(DEFAULT_ADMIN_ROLE, msg.sender)` effectively makes the deployer the admin.
 
 **Recommendation:** Remove the `Ownable` inheritance if `AccessControl` is intended to be the sole access control mechanism. Ensure that all owner-like functionalities are managed through `DEFAULT_ADMIN_ROLE` or other specific roles defined in `AccessControl` to maintain a single, clear access control model.
 

@@ -2,14 +2,14 @@
 token: PEPE Parker
 ticker: PEPARK
 network: solana
-risk_score: 39
-status: medium
+risk_score: 29
+status: low
 date: 2026-09-19
 ---
 
 # PEPE Parker (PEPARK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 29/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pepe-parker-sol)
 
@@ -25,8 +25,8 @@ The PEPE Parker (PEPARK) token mint has revoked both mint and freeze authorities
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The PEPE Parker (PEPARK) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen… |
-| **Governance / Economics** | 2/10 | High | The token exhibits high holder concentration, with the top 10 accounts controlling 70.59% of the total supply. This concentration poses a significant risk of price volatility from large sell-offs… |
+| **Technical** | 10/10 | Low | The PEPE Parker (PEPARK) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen… |
+| **Governance / Economics** | 3/10 | High | The token exhibits high holder concentration, with the top 10 accounts controlling 70.59% of the total supply. This concentration poses a significant risk of price volatility from large sell-offs… |
 | **Upgrades** | 8/10 | Low | The token mint has no mutable authorities for balance, metadata, or transfer fees, and no transfer hook is upgradable. Both mint and freeze authorities are revoked, preventing any changes to the… |
 
 ## Security Findings

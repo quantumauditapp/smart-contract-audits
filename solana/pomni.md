@@ -2,14 +2,14 @@
 token: Pomni
 ticker: POMNI
 network: solana
-risk_score: 29
+risk_score: 17
 status: low
 date: 2026-06-15
 ---
 
 # Pomni (POMNI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 29/100 — 🟢 Low Risk**
+> **Risk Score: 17/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pomni-sol)
 
@@ -26,8 +26,8 @@ The Pomni SPL Token-2022 mint exhibits a secure configuration with both mint and
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Pomni token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been permanently revoked, which prevents further token issuance and ensures that no… |
-| **Governance / Economics** | 4/10 | Medium | The token's market presence shows a liquidity of $17,207 USD, which is moderate. The 24-hour volume to liquidity ratio is 0.44, suggesting healthy trading activity without signs of wash trading. The… |
-| **Upgrades** | 8/10 | Low | The Pomni token mint has a fixed configuration due to the revocation of both mint and freeze authorities, preventing any future changes to supply or account freeze status. The token's metadata is… |
+| **Governance / Economics** | 7/10 | Low | The token's market presence shows a liquidity of $17,207 USD, which is moderate. The 24-hour volume to liquidity ratio is 0.44, suggesting healthy trading activity without signs of wash trading. The… |
+| **Upgrades** | 10/10 | Low | The Pomni token mint has a fixed configuration due to the revocation of both mint and freeze authorities, preventing any future changes to supply or account freeze status. The token's metadata is… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 17714 buys / 3573 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,18 +69,18 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is Pomni a scam?
 
-While Pomni exhibits positive traits like renounced ownership and no mint function, mitigating some direct developer-controlled scam vectors, the unverified contract and unlocked liquidity introduce significant scam potential. The inability to review the code and the risk of liquidity withdrawal mean investors face elevated risks. The medium risk score of 37/100 indicates that caution is strongly advised due to these unaddressed vulnerabilities.
+While Pomni exhibits positive traits like renounced ownership and no mint function, mitigating some direct developer-controlled scam vectors, the unverified contract and unlocked liquidity introduce significant scam potential. The inability to review the code and the risk of liquidity withdrawal mean investors face elevated risks. The low risk score of 17/100 indicates that caution is strongly advised due to these unaddressed vulnerabilities.
 
 ### Is Pomni safe to buy?
 
-Pomni carries considerable risk due to an unverified contract and unlocked liquidity. These factors prevent independent code review and expose the project to a potential rug pull by liquidity providers. Given its medium risk score (37/100) and relatively low liquidity compared to trading volume, which can lead to high volatility and slippage, potential investors should exercise extreme caution and acknowledge the elevated risk of capital loss.
+Pomni carries considerable risk due to an unverified contract and unlocked liquidity. These factors prevent independent code review and expose the project to a potential rug pull by liquidity providers. Given its low risk score (17/100) and relatively low liquidity compared to trading volume, which can lead to high volatility and slippage, potential investors should exercise extreme caution and acknowledge the elevated risk of capital loss.
 
 ### Has Pomni been audited?
 

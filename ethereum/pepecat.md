@@ -2,14 +2,14 @@
 token: PepeCat
 ticker: PCAT
 network: ethereum
-risk_score: 55
+risk_score: 41
 status: medium
 date: 2026-09-23
 ---
 
 # PepeCat (PCAT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 55/100 — 🟡 Medium Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pepecat-eth)
 
@@ -38,39 +38,39 @@ The RobinVistaToken contract serves as an ERC20 token implementation for a proxy
 
 ## Security Findings
 
-_🟠 1 High · 🟢 2 Low · ⚪ 2 Informational_
+_🟡 1 Medium · 🟢 2 Low · ⚪ 2 Informational_
 
-### `H-01` — Centralized Control over Initial Supply and Pool Configuration  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Control over Initial Supply and Pool Configuration  *(Severity: Medium · Status: Unresolved)*
 
-The `initialize` function grants `msg.sender` (the address that calls `initialize` on the proxy) the ability to mint the entire `totalSupply_` to themselves. Additionally, this same address is set as the `factory`, which is the only address permitted to call `setPool` to configure critical `poolId` and `baseToken` parameters. This design centralizes significant control in a single entity, creating a single point of failure and potential for misuse or compromise. If the initializer's private key is compromised, the entire token supply and critical pool configurations could be at risk.
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function grants `msg.sender` (the address that calls `initialize` on the proxy) the ability to mint the entire `totalSupply_` to themselves. Additionally, this same address is set as the `factory`, which is the only address permitted to call `setPool` to configure critical `poolId` and `baseToken` parameters. This design centralizes significant control in a single entity, creating a single point of failure and potential for misuse or compromise. If the initializer's private key is compromised, the entire token supply and critical pool configurations could be at risk.
 
 **Recommendation:** Implement a more decentralized approach for managing the initial token supply and the `factory` role. Consider the following: 1.  **Initial Supply:** Mint the initial supply to a multi-signature wallet, a timelock contract, or a predefined distribution contract instead of directly to `msg.sender`. 2.  **Factory Role:** Assign the `factory` role to a multi-signature wallet or a governance contract rather than a single EOA. This would require multiple approvals for critical `setPool` operations.…
 
 
 ### `L-01` — Missing Events for Critical Setup Functions  *(Severity: Low · Status: Unresolved)*
 
-The `initialize` and `setPool` functions, which perform critical one-time setup operations for the token and its associated pool, do not emit any events. While state variables are updated, the absence of explicit events makes it harder for off-chain systems (e.g., block explorers, indexers, monitoring tools) to track and verify these crucial configuration changes transparently and efficiently.
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` and `setPool` functions, which perform critical one-time setup operations for the token and its associated pool, do not emit any events. While state variables are updated, the absence of explicit events makes it harder for off-chain systems (e.g., block explorers, indexers, monitoring tools) to track and verify these crucial configuration changes transparently and efficiently.
 
 **Recommendation:** Emit events for the `initialize` and `setPool` functions to provide clear, auditable records of these critical operations. For example: -   `event Initialized(address indexed initializer, address indexed deployer, uint256 totalSupply);` -   `event PoolSet(bytes32 indexed poolId, address indexed baseToken);` Emitting events enhances transparency, simplifies off-chain monitoring, and improves the overall auditability of the contract's lifecycle.
 
 
 ### `L-02` — Unused `deployer` State Variable  *(Severity: Low · Status: Unresolved)*
 
-The `deployer` state variable is set once during the `initialize` function but is never read or used anywhere else in the contract's logic. While it might be intended for informational purposes, storing an unused variable consumes gas during deployment and state storage, and adds unnecessary complexity to the contract's state.
+Not confirmed by static analysis (the model's own reading of the source). The `deployer` state variable is set once during the `initialize` function but is never read or used anywhere else in the contract's logic. While it might be intended for informational purposes, storing an unused variable consumes gas during deployment and state storage, and adds unnecessary complexity to the contract's state.
 
 **Recommendation:** If the `deployer` variable serves no functional purpose within the contract's logic, consider removing it to optimize gas costs and simplify the contract's state. If it is intended purely for informational purposes, consider emitting it in an `Initialized` event instead of storing it as a state variable.
 
 
 ### `I-01` — Constructor Initialization with `address(0xdead)`  *(Severity: Informational · Status: Unresolved)*
 
-The contract's constructor initializes the `factory` variable to `address(0xdead)`. This is a common and effective pattern used in proxy implementation contracts to prevent accidental or malicious direct initialization of the implementation contract itself. Since the proxy's constructor is not called, the `initialize` function's check `if (factory != address(0))` correctly ensures that initialization only occurs once via the proxy.
+Not confirmed by static analysis (the model's own reading of the source). The contract's constructor initializes the `factory` variable to `address(0xdead)`. This is a common and effective pattern used in proxy implementation contracts to prevent accidental or malicious direct initialization of the implementation contract itself. Since the proxy's constructor is not called, the `initialize` function's check `if (factory != address(0))` correctly ensures that initialization only occurs once via the proxy.
 
 **Recommendation:** No action required. This is a secure and standard practice for proxy implementations.
 
 
 ### `I-02` — Safe Use of `unchecked` Blocks in ERC20 Standard Library  *(Severity: Informational · Status: Unresolved)*
 
-The OpenZeppelin `ERC20` contract utilizes `unchecked` blocks for arithmetic operations such as `_balances[from] = fromBalance - value;` and `_balances[to] += value;`. These `unchecked` blocks are safely implemented because preceding conditional checks (e.g., `if (fromBalance < value)`) prevent underflow for subtractions, and overflows for additions are generally accepted for token balances given the `uint256` maximum value. This design choice optimizes gas costs without compromising security due to careful preceding logic.
+Not confirmed by static analysis (the model's own reading of the source). The OpenZeppelin `ERC20` contract utilizes `unchecked` blocks for arithmetic operations such as `_balances[from] = fromBalance - value;` and `_balances[to] += value;`. These `unchecked` blocks are safely implemented because preceding conditional checks (e.g., `if (fromBalance < value)`) prevent underflow for subtractions, and overflows for additions are generally accepted for token balances given the `uint256` maximum value. This design choice optimizes gas costs without compromising security due to careful preceding logic.
 
 **Recommendation:** No action required. This is a well-audited and secure pattern within the OpenZeppelin library.
 

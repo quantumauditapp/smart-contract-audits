@@ -2,14 +2,14 @@
 token: Plasma
 ticker: XPL
 network: bsc
-risk_score: 71
-status: high
+risk_score: 49
+status: medium
 date: 2026-08-13
 ---
 
 # Plasma (XPL) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 71/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/plasma-bsc)
 
@@ -25,9 +25,9 @@ The PlasmaOFT contract is an Omnichain Fungible Token (OFT) built on LayerZero, 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The PlasmaOFT contract is a straightforward implementation of an Omnichain Fungible Token (OFT) using LayerZero's OFT library and OpenZeppelin's Ownable. The code is minimal and leverages… |
+| **Technical** | 8/10 | Low | The PlasmaOFT contract is a straightforward implementation of an Omnichain Fungible Token (OFT) using LayerZero's OFT library and OpenZeppelin's Ownable. The code is minimal and leverages… |
 | **Governance / Economics** | 1/10 | High | The contract's ownership is managed by a robust 4-of-6 multisig, significantly mitigating risks associated with single points of failure or compromised private keys (7.3 Access Control, 7.5… |
-| **Upgrades** | 6/10 | Medium | The PlasmaOFT contract is deployed as a standard, non-upgradeable implementation (7.7 Upgrades). This eliminates upgrade-specific risks such as proxy misconfigurations or logic contract… |
+| **Upgrades** | 7/10 | Low | The PlasmaOFT contract is deployed as a standard, non-upgradeable implementation (7.7 Upgrades). This eliminates upgrade-specific risks such as proxy misconfigurations or logic contract… |
 
 ## LP Distribution
 
@@ -38,39 +38,39 @@ The PlasmaOFT contract is an Omnichain Fungible Token (OFT) built on LayerZero, 
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Cross-Chain Bridge Security Risk  *(Severity: High · Status: Unresolved)*
-
-The contract's core functionality relies on the LayerZero protocol for cross-chain token transfers. Bridge protocols are complex and have historically been targets for significant exploits, leading to substantial asset losses. Any vulnerability in the LayerZero endpoint, message passing, or associated relayers could directly impact the security of PlasmaOFT tokens across chains.
-
-**Recommendation:** Conduct continuous monitoring of LayerZero protocol security announcements and audits. Implement robust off-chain monitoring for unusual cross-chain activity. Diversify bridge reliance if possible in future iterations.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Dependency on LayerZero Protocol  *(Severity: Medium · Status: Unresolved)*
 
-The PlasmaOFT contract is a wrapper around LayerZero's OFT implementation. Its security and functionality are entirely dependent on the correctness and security of the LayerZero libraries and the underlying LayerZero endpoint. While LayerZero is a prominent solution, any undiscovered vulnerability or operational issue within their extensive codebase could directly affect this contract.
+Not confirmed by static analysis (the model's own reading of the source). The PlasmaOFT contract is a wrapper around LayerZero's OFT implementation. Its security and functionality are entirely dependent on the correctness and security of the LayerZero libraries and the underlying LayerZero endpoint. While LayerZero is a prominent solution, any undiscovered vulnerability or operational issue within their extensive codebase could directly affect this contract.
 
 **Recommendation:** Maintain a deep understanding of the LayerZero protocol's architecture and security model. Regularly review LayerZero's official documentation, security updates, and audit reports. Ensure the `_lzEndpoint` address is correctly configured and points to the official, audited LayerZero endpoint.
 
 
 ### `M-02` — Lack of Emergency Pause Mechanism  *(Severity: Medium · Status: Unresolved)*
 
-The PlasmaOFT contract, as a standard ERC-20/OFT implementation, does not include an emergency pause or circuit breaker mechanism. In the event of a critical vulnerability, exploit, or market manipulation, there is no immediate way for the owner to halt token transfers or cross-chain operations to prevent further loss of funds.
+Not confirmed by static analysis (the model's own reading of the source). The PlasmaOFT contract, as a standard ERC-20/OFT implementation, does not include an emergency pause or circuit breaker mechanism. In the event of a critical vulnerability, exploit, or market manipulation, there is no immediate way for the owner to halt token transfers or cross-chain operations to prevent further loss of funds.
 
 **Recommendation:** Evaluate the feasibility of integrating a pause mechanism, potentially at a higher protocol level or through a governance-controlled wrapper, to provide an emergency stop functionality. This would allow the owner (multisig) to temporarily freeze operations in critical situations, subject to predefined conditions and governance approval.
 
 
+### `M-03` — Cross-Chain Bridge Security Risk  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract's core functionality relies on the LayerZero protocol for cross-chain token transfers. Bridge protocols are complex and have historically been targets for significant exploits, leading to substantial asset losses. Any vulnerability in the LayerZero endpoint, message passing, or associated relayers could directly impact the security of PlasmaOFT tokens across chains.
+
+**Recommendation:** Conduct continuous monitoring of LayerZero protocol security announcements and audits. Implement robust off-chain monitoring for unusual cross-chain activity. Diversify bridge reliance if possible in future iterations.
+
+
 ### `L-01` — Configuration Risk for LayerZero Parameters  *(Severity: Low · Status: Unresolved)*
 
-The constructor takes `_lzEndpoint` and `_delegate` as parameters, which are critical for LayerZero operations and ownership. Incorrectly setting these parameters during deployment could lead to the contract being inoperable, funds being sent to the wrong endpoint, or control being assigned to an unintended address.
+Not confirmed by static analysis (the model's own reading of the source). The constructor takes `_lzEndpoint` and `_delegate` as parameters, which are critical for LayerZero operations and ownership. Incorrectly setting these parameters during deployment could lead to the contract being inoperable, funds being sent to the wrong endpoint, or control being assigned to an unintended address.
 
 **Recommendation:** Implement a rigorous deployment checklist and multi-party verification process for all constructor arguments, especially `_lzEndpoint` and `_delegate`. Ensure these addresses are thoroughly vetted and correspond to the intended, audited components.
 
 
 ### `I-01` — Centralized Owner Privileges (Mitigated by Multisig)  *(Severity: Informational · Status: Unresolved)*
 
-The contract inherits `Ownable`, granting the owner (the `_delegate` address) significant administrative control. While the provided prefill indicates this owner is a 4-of-6 multisig, centralizing control, even with a multisig, means that a compromise of the multisig signers could lead to unauthorized actions, such as reconfiguring LayerZero parameters or potentially impacting token functionality.
+Not confirmed by static analysis (the model's own reading of the source). The contract inherits `Ownable`, granting the owner (the `_delegate` address) significant administrative control. While the provided prefill indicates this owner is a 4-of-6 multisig, centralizing control, even with a multisig, means that a compromise of the multisig signers could lead to unauthorized actions, such as reconfiguring LayerZero parameters or potentially impacting token functionality.
 
 **Recommendation:** Maintain strict security practices for all multisig signers, including hardware wallets, strong authentication, and secure key management. Regularly review the multisig's operational procedures and ensure a clear understanding of the owner's capabilities and responsibilities.
 

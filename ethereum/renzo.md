@@ -2,14 +2,14 @@
 token: Renzo
 ticker: REZ
 network: ethereum
-risk_score: 27
+risk_score: 25
 status: low
 date: 2026-09-13
 ---
 
 # Renzo (REZ) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 27/100 — 🟢 Low Risk**
+> **Risk Score: 25/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/renzo-eth)
 
@@ -42,35 +42,35 @@ _🟢 1 Low · ⚪ 4 Informational_
 
 ### `L-01` — Timestamp Dependence in `delegateBySig` Expiry  *(Severity: Low · Status: Unresolved)*
 
-The `delegateBySig` function uses `block.timestamp` to check the `expiry` of a signed delegation. While standard, `block.timestamp` can be manipulated by miners within a small window (up to 900 seconds on Ethereum). This could potentially allow a miner to include a transaction with an expired signature if they are able to manipulate the timestamp within this window.
+Not confirmed by static analysis (the model's own reading of the source). The `delegateBySig` function uses `block.timestamp` to check the `expiry` of a signed delegation. While standard, `block.timestamp` can be manipulated by miners within a small window (up to 900 seconds on Ethereum). This could potentially allow a miner to include a transaction with an expired signature if they are able to manipulate the timestamp within this window.
 
 **Recommendation:** For critical operations where precise timing is paramount, consider using a time oracle or a mechanism less susceptible to miner manipulation. For delegation signatures, the current `block.timestamp` check is generally acceptable given the typical use case, but users should be aware of this inherent EVM characteristic. Ensure `expiry` values are set with a reasonable buffer.
 
 
 ### `I-01` — Incomplete Audit Scope Due to Missing Main Contract Source Code  *(Severity: Informational · Status: Unresolved)*
 
-The audit was conducted on a partial set of source code, specifically OpenZeppelin's `Votes` abstract contract, related interfaces, and a truncated `ERC20` contract. The main 'Renzo' contract, which would inherit from or interact with these components, was not provided. This significantly limits the scope of the audit, as the core business logic, specific integrations, access control mechanisms, and overall architecture of the 'Renzo' protocol could not be reviewed.
+Not confirmed by static analysis (the model's own reading of the source). The audit was conducted on a partial set of source code, specifically OpenZeppelin's `Votes` abstract contract, related interfaces, and a truncated `ERC20` contract. The main 'Renzo' contract, which would inherit from or interact with these components, was not provided. This significantly limits the scope of the audit, as the core business logic, specific integrations, access control mechanisms, and overall architecture of the 'Renzo' protocol could not be reviewed.
 
 **Recommendation:** Provide the complete source code for the 'Renzo' main contract and all its dependencies to enable a comprehensive security audit. This is essential for assessing the full attack surface and identifying potential vulnerabilities within the protocol's unique implementation.
 
 
 ### `I-02` — Abstract Contract Requires Concrete Implementation of `_getVotingUnits`  *(Severity: Informational · Status: Unresolved)*
 
-The `Votes` abstract contract includes an abstract function `_getVotingUnits(address) internal view virtual returns (uint256)`. This function is critical for determining the amount of voting power an account holds and must be implemented by any concrete contract inheriting from `Votes`. The security and correctness of the governance system heavily depend on the accurate and secure implementation of this function.
+Not confirmed by static analysis (the model's own reading of the source). The `Votes` abstract contract includes an abstract function `_getVotingUnits(address) internal view virtual returns (uint256)`. This function is critical for determining the amount of voting power an account holds and must be implemented by any concrete contract inheriting from `Votes`. The security and correctness of the governance system heavily depend on the accurate and secure implementation of this function.
 
 **Recommendation:** Ensure that the inheriting 'Renzo' contract provides a robust and secure implementation for `_getVotingUnits`. This implementation should accurately reflect the protocol's logic for assigning voting power (e.g., based on token balance, staked amount, etc.) and be thoroughly tested for edge cases and potential manipulation.
 
 
 ### `I-03` — Reliance on OpenZeppelin Libraries  *(Severity: Informational · Status: Unresolved)*
 
-The provided code heavily relies on well-established and audited OpenZeppelin contracts and libraries (e.g., `Votes`, `ERC20`, `Checkpoints`, `EIP712`, `SafeCast`, `Nonces`). This is generally a strength, as these libraries undergo rigorous security reviews and are widely adopted. However, it also means the project inherits any potential, albeit unlikely, vulnerabilities discovered in these external dependencies.
+Not confirmed by static analysis (the model's own reading of the source). The provided code heavily relies on well-established and audited OpenZeppelin contracts and libraries (e.g., `Votes`, `ERC20`, `Checkpoints`, `EIP712`, `SafeCast`, `Nonces`). This is generally a strength, as these libraries undergo rigorous security reviews and are widely adopted. However, it also means the project inherits any potential, albeit unlikely, vulnerabilities discovered in these external dependencies.
 
 **Recommendation:** While OpenZeppelin libraries are highly secure, it is good practice to stay updated with their releases and security advisories. Ensure that the project uses the latest stable versions and that any custom code interacting with these libraries correctly adheres to their expected behavior and interfaces.
 
 
 ### `I-04` — Robust `CLOCK_MODE` Consistency Check  *(Severity: Informational · Status: Unresolved)*
 
-The `CLOCK_MODE` function includes a consistency check `if (clock() != Time.blockNumber()) { revert ERC6372InconsistentClock(); }`. This ensures that the `clock()` implementation, which is intended to return `Time.blockNumber()`, remains consistent with the underlying `Time` utility. This is a good practice for maintaining the integrity of the `ERC6372` clock interface.
+Not confirmed by static analysis (the model's own reading of the source). The `CLOCK_MODE` function includes a consistency check `if (clock() != Time.blockNumber()) { revert ERC6372InconsistentClock(); }`. This ensures that the `clock()` implementation, which is intended to return `Time.blockNumber()`, remains consistent with the underlying `Time` utility. This is a good practice for maintaining the integrity of the `ERC6372` clock interface.
 
 **Recommendation:** Maintain this consistency check in any overrides or custom implementations of `clock()` to ensure the `ERC6372` interface behaves as expected. This helps prevent unexpected behavior if the clock source were to diverge from `block.timestamp`.
 

@@ -25,8 +25,8 @@ The pepeCoin contract is an ERC20 token built upon battle-tested OpenZeppelin li
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract leverages battle-tested OpenZeppelin contracts for ERC20 and Ownable functionalities, ensuring standard compliance and robust implementation of core token operations (7.2 Code Security).… |
-| **Governance / Economics** | 9/10 | Low | The token features a fixed total supply and a burn mechanism, providing some predictability and deflationary potential. However, the primary economic risk stems from the highly centralized initial… |
+| **Technical** | 10/10 | Low | The contract leverages battle-tested OpenZeppelin contracts for ERC20 and Ownable functionalities, ensuring standard compliance and robust implementation of core token operations (7.2 Code Security).… |
+| **Governance / Economics** | 10/10 | Low | The token features a fixed total supply and a burn mechanism, providing some predictability and deflationary potential. However, the primary economic risk stems from the highly centralized initial… |
 | **Upgrades** | 10/10 | Low | The contract is not designed with an upgrade mechanism (e.g., proxy pattern), which inherently eliminates risks associated with upgradeability, such as proxy misconfigurations or malicious upgrade… |
 
 ## LP Distribution
@@ -39,39 +39,39 @@ The pepeCoin contract is an ERC20 token built upon battle-tested OpenZeppelin li
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Locked Ether Due to Renounced Ownership  *(Severity: High · Status: Unresolved)*
-
-The `withdraw()` function, which allows the contract owner to retrieve Ether, is protected by the `onlyOwner` modifier. According to the provided prefill data, the contract ownership has been renounced (`ownership_renounced: true`). This means the `_owner` address is set to `address(0)`, making the `onlyOwner` modifier always revert. Consequently, any Ether accidentally or intentionally sent to the contract will be permanently locked and inaccessible.
-
-**Recommendation:** Ensure that no Ether is sent to this contract. If the contract was intended to hold or manage Ether, a redeployment with a revised withdrawal mechanism (e.g., a multi-signature wallet or a mechanism that allows anyone to trigger a withdrawal to a predefined address) would be necessary before renouncing ownership.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralized Token Distribution  *(Severity: Medium · Status: Unresolved)*
 
-The entire `_totalSupply` of `pepeCoin` is minted to the contract deployer (`msg.sender`) in the constructor. This results in a highly centralized initial token distribution, where one address holds 100% of the token supply. Such centralization can lead to significant market manipulation risks, as the single holder has disproportionate control over the token's liquidity and price.
+Not confirmed by static analysis (the model's own reading of the source). The entire `_totalSupply` of `pepeCoin` is minted to the contract deployer (`msg.sender`) in the constructor. This results in a highly centralized initial token distribution, where one address holds 100% of the token supply. Such centralization can lead to significant market manipulation risks, as the single holder has disproportionate control over the token's liquidity and price.
 
 **Recommendation:** For future projects, consider implementing a more decentralized initial token distribution strategy, such as a fair launch, liquidity bootstrapping pool, or a vesting schedule for team tokens, to promote broader ownership and reduce centralization risks.
 
 
+### `M-02` — Locked Ether Due to Renounced Ownership  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `withdraw()` function, which allows the contract owner to retrieve Ether, is protected by the `onlyOwner` modifier. According to the provided prefill data, the contract ownership has been renounced (`ownership_renounced: true`). This means the `_owner` address is set to `address(0)`, making the `onlyOwner` modifier always revert. Consequently, any Ether accidentally or intentionally sent to the contract will be permanently locked and inaccessible.
+
+**Recommendation:** Ensure that no Ether is sent to this contract. If the contract was intended to hold or manage Ether, a redeployment with a revised withdrawal mechanism (e.g., a multi-signature wallet or a mechanism that allows anyone to trigger a withdrawal to a predefined address) would be necessary before renouncing ownership.
+
+
 ### `L-01` — Unused `_tokenPrice` Variable  *(Severity: Low · Status: Unresolved)*
 
-The contract includes a state variable `_tokenPrice` along with `setTokenPrice()` and `getTokenPrice()` functions. However, this `_tokenPrice` variable is not integrated into any core token logic, such as calculating transfer fees, enabling token purchases, or influencing any other economic mechanism within the contract. It serves no functional purpose, and its value is immutable due to renounced ownership.
+Not confirmed by static analysis (the model's own reading of the source). The contract includes a state variable `_tokenPrice` along with `setTokenPrice()` and `getTokenPrice()` functions. However, this `_tokenPrice` variable is not integrated into any core token logic, such as calculating transfer fees, enabling token purchases, or influencing any other economic mechanism within the contract. It serves no functional purpose, and its value is immutable due to renounced ownership.
 
 **Recommendation:** Remove the `_tokenPrice` variable and its associated functions (`setTokenPrice`, `getTokenPrice`) if they are not intended to be used for any on-chain logic. This will reduce contract complexity, save gas, and prevent potential confusion for users or external systems that might misinterpret its purpose.
 
 
 ### `I-01` — Missing Event for State Change  *(Severity: Informational · Status: Unresolved)*
 
-The `setTokenPrice()` function modifies the `_tokenPrice` state variable but does not emit an event to signal this change. While this function is currently unusable due to renounced ownership, if it were callable, the absence of an event would make it difficult for off-chain applications, block explorers, or monitoring tools to track changes to this parameter.
+Not confirmed by static analysis (the model's own reading of the source). The `setTokenPrice()` function modifies the `_tokenPrice` state variable but does not emit an event to signal this change. While this function is currently unusable due to renounced ownership, if it were callable, the absence of an event would make it difficult for off-chain applications, block explorers, or monitoring tools to track changes to this parameter.
 
 **Recommendation:** For any function that modifies critical state variables, it is a best practice to emit an event. If `setTokenPrice` were to be functional, consider adding an event like `TokenPriceUpdated(uint256 oldPrice, uint256 newPrice)` to improve transparency and off-chain observability.
 
 
 ### `I-02` — Lack of Emergency Pause Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The contract lacks a mechanism to pause critical operations, such as token transfers or burning, in case of an emergency (e.g., discovery of a critical vulnerability, major exploit, or market instability). While not strictly a vulnerability, a pause mechanism is a common security best practice for tokens to provide a temporary emergency stop.
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks a mechanism to pause critical operations, such as token transfers or burning, in case of an emergency (e.g., discovery of a critical vulnerability, major exploit, or market instability). While not strictly a vulnerability, a pause mechanism is a common security best practice for tokens to provide a temporary emergency stop.
 
 **Recommendation:** Consider implementing a pause mechanism (e.g., using OpenZeppelin's `Pausable` contract) that can be triggered by a trusted entity (e.g., a multi-signature wallet or a governance contract). This would allow for a temporary halt of operations to address unforeseen issues, although this would require a redeployment given the current contract's non-upgradeable nature and renounced ownership.
 

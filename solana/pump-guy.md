@@ -2,14 +2,14 @@
 token: Pump Guy
 ticker: PUMPGUY
 network: solana
-risk_score: 38
-status: medium
+risk_score: 21
+status: low
 date: 2026-08-11
 ---
 
 # Pump Guy (PUMPGUY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 38/100 — 🟡 Medium Risk**
+> **Risk Score: 21/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pump-guy-sol)
 
@@ -25,9 +25,9 @@ The Pump Guy (PUMPGUY) SPL Token Mint exhibits strong security posture regarding
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Pump Guy token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been permanently revoked, preventing the creation of new tokens or the freezing… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a low holder concentration, with the top 10 accounts holding 27.4% of the total supply, which is below typical thresholds for significant whale risk (7.4 Economic). Total DEX… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning no further changes can be made to the token's supply or account freeze status (7.7 Upgrades). Metadata for… |
+| **Technical** | 10/10 | Low | The Pump Guy token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been permanently revoked, preventing the creation of new tokens or the freezing… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a low holder concentration, with the top 10 accounts holding 27.4% of the total supply, which is below typical thresholds for significant whale risk (7.4 Economic). Total DEX… |
+| **Upgrades** | 10/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, meaning no further changes can be made to the token's supply or account freeze status (7.7 Upgrades). Metadata for… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair for Pump Guy (PUMPGUY) was created 2 days ago. This insufficient tr
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3317 buys / 3457 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for Pump Guy (PUMPGUY) was created 2 days ago. This insufficient tr
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

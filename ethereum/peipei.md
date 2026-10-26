@@ -42,35 +42,35 @@ _🟢 2 Low · ⚪ 3 Informational_
 
 ### `L-01` — Incomplete `Ownable` Contract Provided  *(Severity: Low · Status: Unresolved)*
 
-The provided source code for the `Ownable` contract is truncated. This prevents a full security assessment of its implementation, including verification of standard access control patterns, potential owner-controlled functions, and the impact of the `ownership_renounced: true` prefill information. Without the complete code, it's impossible to confirm the exact privileges of the owner or the implications of ownership renunciation.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the `Ownable` contract is truncated. This prevents a full security assessment of its implementation, including verification of standard access control patterns, potential owner-controlled functions, and the impact of the `ownership_renounced: true` prefill information. Without the complete code, it's impossible to confirm the exact privileges of the owner or the implications of ownership renunciation.
 
 **Recommendation:** Provide the complete and verified source code for all inherited contracts, especially `Ownable`, to allow for a comprehensive security audit of access control mechanisms (7.3 Access Control) and governance implications (7.5 Governance).
 
 
 ### `L-02` — Missing NatSpec Documentation  *(Severity: Low · Status: Unresolved)*
 
-Several functions within the contract, particularly internal and private helper functions, lack comprehensive NatSpec documentation. This can hinder understanding of the contract's logic, especially for future maintainers or auditors, and may lead to misinterpretations or errors during upgrades or integrations.
+Not confirmed by static analysis (the model's own reading of the source). Several functions within the contract, particularly internal and private helper functions, lack comprehensive NatSpec documentation. This can hinder understanding of the contract's logic, especially for future maintainers or auditors, and may lead to misinterpretations or errors during upgrades or integrations.
 
 **Recommendation:** Add detailed NatSpec comments for all functions, especially those that are public, external, or implement complex logic. This includes `@param`, `@return`, and `@notice` tags to clearly describe their purpose, parameters, and return values.
 
 
 ### `I-01` — Use of SafeMath Library  *(Severity: Informational · Status: Resolved)*
 
-The contract correctly utilizes the SafeMath library for all arithmetic operations (addition, subtraction, multiplication, division, modulo). This effectively prevents integer overflow and underflow vulnerabilities (7.2 Code Security), which are common pitfalls in Solidity development.
+Not confirmed by static analysis (the model's own reading of the source). The contract correctly utilizes the SafeMath library for all arithmetic operations (addition, subtraction, multiplication, division, modulo). This effectively prevents integer overflow and underflow vulnerabilities (7.2 Code Security), which are common pitfalls in Solidity development.
 
 **Recommendation:** Maintain the consistent use of SafeMath or Solidity's native checked arithmetic (available in Solidity 0.8.0 and above) for all arithmetic operations to ensure robust handling of numerical values.
 
 
 ### `I-02` — Adherence to ERC20 Standard  *(Severity: Informational · Status: Resolved)*
 
-The contract implements the ERC20 standard correctly, including all required functions (`totalSupply`, `balanceOf`, `transfer`, `allowance`, `approve`, `transferFrom`) and events (`Transfer`, `Approval`). This ensures compatibility with various DeFi protocols and wallets (7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The contract implements the ERC20 standard correctly, including all required functions (`totalSupply`, `balanceOf`, `transfer`, `allowance`, `approve`, `transferFrom`) and events (`Transfer`, `Approval`). This ensures compatibility with various DeFi protocols and wallets (7.6 External).
 
 **Recommendation:** Continue to adhere strictly to established ERC standards to maintain broad compatibility and interoperability within the EVM ecosystem.
 
 
 ### `I-03` — Internal Mint/Burn Functions  *(Severity: Informational · Status: Resolved)*
 
-The `_mint` and `_burn` functions are declared as `internal virtual`. This design choice means that the ERC20 contract itself does not expose public minting or burning capabilities. Any such functionality would need to be explicitly implemented in a derived contract, allowing for controlled inflation/deflation mechanisms (7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The `_mint` and `_burn` functions are declared as `internal virtual`. This design choice means that the ERC20 contract itself does not expose public minting or burning capabilities. Any such functionality would need to be explicitly implemented in a derived contract, allowing for controlled inflation/deflation mechanisms (7.4 Economic).
 
 **Recommendation:** If public minting or burning is intended in a derived contract, ensure that these functions are protected by appropriate access control mechanisms (e.g., only callable by a trusted role or governance) to prevent unauthorized token supply manipulation.
 

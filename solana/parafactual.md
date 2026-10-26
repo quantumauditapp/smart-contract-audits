@@ -2,14 +2,14 @@
 token: parafactual
 ticker: PARAFACTUAL
 network: solana
-risk_score: 12
+risk_score: 0
 status: low
 date: 2026-09-27
 ---
 
 # parafactual (PARAFACTUAL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 12/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/parafactual-sol)
 
@@ -26,8 +26,8 @@ The parafactual SPL Token Mint exhibits strong security posture regarding core a
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The parafactual token is implemented using the spl-token-2022 program. Crucially, the mint authority and freeze authority have both been revoked, preventing further token issuance or freezing of… |
-| **Governance / Economics** | 6/10 | Medium | The token's DEX liquidity stands at $122,371, with a 24-hour trading volume of $1,196,453. The volume-to-liquidity ratio is 9.78, indicating active trading. However, the DEX pair is very new… |
-| **Upgrades** | 8/10 | Low | The parafactual token mint has a robust immutability profile. Both the mint and freeze authorities are permanently revoked, ensuring no further changes to supply or account states by an authority.… |
+| **Governance / Economics** | 9/10 | Low | The token's DEX liquidity stands at $122,371, with a 24-hour trading volume of $1,196,453. The volume-to-liquidity ratio is 9.78, indicating active trading. However, the DEX pair is very new… |
+| **Upgrades** | 10/10 | Low | The parafactual token mint has a robust immutability profile. Both the mint and freeze authorities are permanently revoked, ensuring no further changes to supply or account states by an authority.… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6099 buys / 6360 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

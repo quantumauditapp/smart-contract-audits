@@ -2,14 +2,14 @@
 token: PORTAL
 ticker: PORTAL
 network: base
-risk_score: 29
+risk_score: 27
 status: low
 date: 2026-08-17
 ---
 
 # PORTAL (PORTAL) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 29/100 — 🟢 Low Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/portal-base)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Centralization Risk with Owner Privileges  *(Severity: Low · Status: Unresolved)*
 
-The contract owner, despite being a multisig, retains significant control over certain administrative functions. For instance, the owner can transfer ownership of the contract and utilize the `TokenRecovery` mechanism to recover accidentally sent ERC20 tokens. While a multisig mitigates single points of failure, the concentration of these powers still represents a centralization risk if the multisig signers are compromised or act maliciously.
+Not confirmed by static analysis (the model's own reading of the source). The contract owner, despite being a multisig, retains significant control over certain administrative functions. For instance, the owner can transfer ownership of the contract and utilize the `TokenRecovery` mechanism to recover accidentally sent ERC20 tokens. While a multisig mitigates single points of failure, the concentration of these powers still represents a centralization risk if the multisig signers are compromised or act maliciously.
 
 **Recommendation:** Ensure the multisig signers are highly trusted individuals or entities with robust security practices. Implement strict internal governance procedures for multisig operations. Consider time-locks or additional approval steps for critical actions like `transferOwnership` if the protocol's future evolution requires more decentralized control.
 
 
 ### `I-01` — Dependency on External Forwarder Registry  *(Severity: Informational · Status: Unresolved)*
 
-The contract relies on an external `IForwarderRegistry` for its meta-transaction functionality, specifically for overriding `_msgSender()` and `_msgData()`. The security, liveness, and immutability of this external registry are critical for the proper functioning and security of meta-transactions within the `ERC20FixedSupply` contract. A compromise or malfunction in the `IForwarderRegistry` could disrupt meta-transaction services.
+Not confirmed by static analysis (the model's own reading of the source). The contract relies on an external `IForwarderRegistry` for its meta-transaction functionality, specifically for overriding `_msgSender()` and `_msgData()`. The security, liveness, and immutability of this external registry are critical for the proper functioning and security of meta-transactions within the `ERC20FixedSupply` contract. A compromise or malfunction in the `IForwarderRegistry` could disrupt meta-transaction services.
 
 **Recommendation:** Thoroughly audit the `IForwarderRegistry` contract and ensure it is deployed by a trusted entity and maintained securely. Monitor its operational status and any potential upgrade paths. Document the expected behavior and security assumptions related to this external dependency.
 
 
 ### `I-02` — Criticality of Initial Token Distribution  *(Severity: Informational · Status: Unresolved)*
 
-The entire fixed supply of tokens is minted and distributed during the contract's constructor via the `batchMint` function. This is a one-time, irreversible operation. Any errors in the `holders` addresses or `allocations` amounts provided during deployment would lead to an incorrect or unfair initial distribution of the token supply, which cannot be rectified post-deployment.
+Not confirmed by static analysis (the model's own reading of the source). The entire fixed supply of tokens is minted and distributed during the contract's constructor via the `batchMint` function. This is a one-time, irreversible operation. Any errors in the `holders` addresses or `allocations` amounts provided during deployment would lead to an incorrect or unfair initial distribution of the token supply, which cannot be rectified post-deployment.
 
 **Recommendation:** Implement rigorous pre-deployment checks and simulations for the `holders` and `allocations` arrays. Conduct multiple reviews of the deployment script and parameters by independent parties. Consider a dry-run deployment on a testnet with the exact parameters intended for mainnet to verify the outcome.
 

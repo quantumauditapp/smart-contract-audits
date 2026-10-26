@@ -2,14 +2,14 @@
 token: Pendle
 ticker: PENDLE
 network: arbitrum
-risk_score: 26
+risk_score: 17
 status: low
 date: 2026-08-06
 ---
 
 # Pendle (PENDLE) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 26/100 — 🟢 Low Risk**
+> **Risk Score: 17/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pendle-arb)
 
@@ -50,35 +50,35 @@ _🟡 1 Medium · 🟢 2 Low · ⚪ 2 Informational_
 
 ### `M-01` — Revert on Missing ERC20 Metadata  *(Severity: Medium · Status: Unresolved)*
 
-The `decimals()`, `name()`, and `symbol()` functions explicitly revert if the corresponding `ignore` flag (e.g., `availableGetters.ignoreDecimals`) is set, indicating that the metadata was not successfully parsed from the L1 token. While this behavior is intended to mimic L1 contracts where such functions might not exist, it deviates from standard ERC20 implementations which typically return a value (e.g., 0 for decimals, empty string for name/symbol) rather than reverting. This could cause issues for dApps or integrations that expect these standard ERC20 getters to always return a value and do not handle reverts gracefully.
+Not confirmed by static analysis (the model's own reading of the source). The `decimals()`, `name()`, and `symbol()` functions explicitly revert if the corresponding `ignore` flag (e.g., `availableGetters.ignoreDecimals`) is set, indicating that the metadata was not successfully parsed from the L1 token. While this behavior is intended to mimic L1 contracts where such functions might not exist, it deviates from standard ERC20 implementations which typically return a value (e.g., 0 for decimals, empty string for name/symbol) rather than reverting. This could cause issues for dApps or integrations that expect these standard ERC20 getters to always return a value and do not handle reverts grace
 
 **Recommendation:** Clearly document this specific behavior for integrators. Consider if returning a default value (e.g., 0 for decimals, empty string for name/symbol) is a more compatible approach for a broader range of ERC20 integrations, even if it deviates from the L1 mimicry. If reverting is critical for the design, ensure comprehensive testing of integrations under these conditions.
 
 
 ### `L-01` — Implicit Trust in `L2GatewayToken` Initialization Logic  *(Severity: Low · Status: Unresolved)*
 
-The `bridgeInit` function calls `L2GatewayToken._initialize` to perform the core initialization logic. The security of preventing multiple initializations (a critical aspect for proxy contracts) relies entirely on `L2GatewayToken._initialize` correctly implementing an `initializer` pattern (e.g., using an `initialized` flag or `initializer` modifier). Without the source code for `L2GatewayToken`, this crucial protection is an assumption, introducing a dependency risk.
+Not confirmed by static analysis (the model's own reading of the source). The `bridgeInit` function calls `L2GatewayToken._initialize` to perform the core initialization logic. The security of preventing multiple initializations (a critical aspect for proxy contracts) relies entirely on `L2GatewayToken._initialize` correctly implementing an `initializer` pattern (e.g., using an `initialized` flag or `initializer` modifier). Without the source code for `L2GatewayToken`, this crucial protection is an assumption, introducing a dependency risk.
 
 **Recommendation:** Verify that the `L2GatewayToken._initialize` function rigorously enforces a single-call initialization to prevent re-initialization attacks. If possible, consider adding an explicit `initializer` modifier directly to `StandardArbERC20.bridgeInit` for defense in depth, even if `L2GatewayToken` provides its own protection.
 
 
 ### `L-02` — Inline Assembly Usage in `BytesLib`  *(Severity: Low · Status: Unresolved)*
 
-The `BytesLib` library, used by `BytesParser` for decoding `_data`, extensively utilizes inline assembly (`assembly { ... }`) for byte manipulation. While assembly can be highly efficient for low-level operations, it is inherently more complex, error-prone, and harder to audit than high-level Solidity. Although the library includes `require` statements for bounds checking, subtle errors in assembly logic could lead to unexpected behavior or vulnerabilities.
+Not confirmed by static analysis (the model's own reading of the source). The `BytesLib` library, used by `BytesParser` for decoding `_data`, extensively utilizes inline assembly (`assembly { ... }`) for byte manipulation. While assembly can be highly efficient for low-level operations, it is inherently more complex, error-prone, and harder to audit than high-level Solidity. Although the library includes `require` statements for bounds checking, subtle errors in assembly logic could lead to unexpected behavior or vulnerabilities.
 
 **Recommendation:** Ensure that `BytesLib` has undergone thorough and independent security review, specifically focusing on its assembly code. Maintain comprehensive test coverage for all functions within `BytesLib` to validate correct behavior across various input scenarios.
 
 
 ### `I-01` — `bridgeInit` Visibility and Explicit Initializer Pattern  *(Severity: Informational · Status: Unresolved)*
 
-The `bridgeInit` function is declared as `public virtual`. While `L2GatewayToken._initialize` is expected to handle the single-call initialization, making `bridgeInit` `public` rather than `external` means it can be called internally, which is not strictly necessary for an initializer. Additionally, an explicit `initializer` modifier (e.g., from OpenZeppelin's `Initializable` pattern) is not directly applied to `bridgeInit` in `StandardArbERC20` itself, relying solely on the base contract.
+Not confirmed by static analysis (the model's own reading of the source). The `bridgeInit` function is declared as `public virtual`. While `L2GatewayToken._initialize` is expected to handle the single-call initialization, making `bridgeInit` `public` rather than `external` means it can be called internally, which is not strictly necessary for an initializer. Additionally, an explicit `initializer` modifier (e.g., from OpenZeppelin's `Initializable` pattern) is not directly applied to `bridgeInit` in `StandardArbERC20` itself, relying solely on the base contract.
 
 **Recommendation:** Consider changing `bridgeInit` to `external` if it's not intended for internal calls. For clarity and robustness, explicitly apply an `initializer` modifier to `bridgeInit` within `StandardArbERC20` if `L2GatewayToken` does not already provide a sufficiently robust and explicit mechanism, or if `StandardArbERC20` needs its own initialization state.
 
 
 ### `I-02` — `Cloneable` `isMasterCopy` Storage Behavior in Proxy Context  *(Severity: Informational · Status: Unresolved)*
 
-The `Cloneable` base contract initializes `isMasterCopy` to `true` in its constructor. In a proxy deployment, the constructor of the implementation contract (`StandardArbERC20`) is only called once when the implementation itself is deployed, not when proxy instances are initialized. Consequently, `isMasterCopy` will always be `true` in the implementation's storage slot. For proxy instances, this storage slot will be initialized to its default value (false) unless explicitly set during initialization. This is the intended behavior for the `Cloneable` pattern, where the implementation serves as the 'master copy' and clones are distinct.
+Not confirmed by static analysis (the model's own reading of the source). The `Cloneable` base contract initializes `isMasterCopy` to `true` in its constructor. In a proxy deployment, the constructor of the implementation contract (`StandardArbERC20`) is only called once when the implementation itself is deployed, not when proxy instances are initialized. Consequently, `isMasterCopy` will always be `true` in the implementation's storage slot. For proxy instances, this storage slot will be initialized to its default value (false) unless explicitly set during initialization. This is the intended behavior for the `Cloneable` pattern, where the implementation serves as the 'master copy' and clon
 
 **Recommendation:** No direct action is required as this is the designed behavior of the `Cloneable` pattern. However, it's important for developers and auditors to understand this distinction to avoid misinterpreting the state of `isMasterCopy` when analyzing proxy instances versus the master implementation.
 

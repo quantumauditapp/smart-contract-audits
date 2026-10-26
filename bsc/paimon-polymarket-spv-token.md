@@ -2,14 +2,14 @@
 token: Paimon Polymarket SPV Token
 ticker: PPOLY
 network: bsc
-risk_score: 45
+risk_score: 43
 status: medium
 date: 2026-09-25
 ---
 
 # Paimon Polymarket SPV Token (PPOLY) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/paimon-polymarket-spv-token-bsc)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Missing External Access Control for Core Functions  *(Severity: Low · Status: Unresolved)*
 
-The `_mint`, `_burn`, `_pause`, and `_unpause` functions are implemented as `internal virtual`. This means that the `PreIPOToken` contract itself does not expose these functionalities externally. If the intention is for the token supply to be mutable or for the token to be pausable, a derived contract must implement external functions with appropriate access control (e.g., `onlyOwner` or a multi-sig mechanism) to call these internal functions. Without such external wrappers, the token's supply is fixed after initial deployment (if `_mint` is called in constructor) and the pausing mechanism is unusable.
+Not confirmed by static analysis (the model's own reading of the source). The `_mint`, `_burn`, `_pause`, and `_unpause` functions are implemented as `internal virtual`. This means that the `PreIPOToken` contract itself does not expose these functionalities externally. If the intention is for the token supply to be mutable or for the token to be pausable, a derived contract must implement external functions with appropriate access control (e.g., `onlyOwner` or a multi-sig mechanism) to call these internal functions. Without such external wrappers, the token's supply is fixed after initial deployment (if `_mint` is called in constructor) and the pausing mechanism is unusable.
 
 **Recommendation:** If minting, burning, or pausing capabilities are desired, implement a derived contract that exposes these functionalities via external functions, protected by robust access control mechanisms (e.g., OpenZeppelin's `Ownable` or a Gnosis Safe). If the intention is for a fixed-supply, non-pausable token, ensure this design choice is clearly documented.
 
 
 ### `I-01` — Standard ERC-20 `approve` Race Condition  *(Severity: Informational · Status: Unresolved)*
 
-The `approve` function in the ERC-20 standard is susceptible to a known front-running vulnerability. If a user increases an existing allowance for a spender, a malicious actor could front-run this transaction, spend the original allowance, and then the user's new allowance would also be spent, leading to a double-spend of the intended allowance amount. This is a limitation of the ERC-20 standard itself, not a flaw in this specific implementation.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function in the ERC-20 standard is susceptible to a known front-running vulnerability. If a user increases an existing allowance for a spender, a malicious actor could front-run this transaction, spend the original allowance, and then the user's new allowance would also be spent, leading to a double-spend of the intended allowance amount. This is a limitation of the ERC-20 standard itself, not a flaw in this specific implementation.
 
 **Recommendation:** Users should be advised to first set their allowance to zero before increasing it to a new value. Alternatively, consider using `increaseAllowance` and `decreaseAllowance` functions (if implemented) which mitigate this specific race condition, though they are not part of the core ERC-20 standard.
 
 
 ### `I-02` — Unused `SafeIntrospection` Library  *(Severity: Informational · Status: Unresolved)*
 
-The `SafeIntrospection` library is included in the provided source code, but its functions are not called or utilized by the `PreIPOToken` contract. Including unused libraries can increase contract bytecode size and potentially introduce unnecessary complexity, even if the library itself is secure.
+Not confirmed by static analysis (the model's own reading of the source). The `SafeIntrospection` library is included in the provided source code, but its functions are not called or utilized by the `PreIPOToken` contract. Including unused libraries can increase contract bytecode size and potentially introduce unnecessary complexity, even if the library itself is secure.
 
 **Recommendation:** Remove the `SafeIntrospection` library if it is not intended to be used by `PreIPOToken` or any directly derived contracts. If it is part of a larger codebase and intended for future use by other components, ensure its inclusion is justified.
 

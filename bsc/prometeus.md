@@ -2,14 +2,14 @@
 token: Prometeus
 ticker: PROM
 network: bsc
-risk_score: 59
+risk_score: 57
 status: medium
 date: 2026-09-01
 ---
 
 # Prometeus (PROM) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 59/100 — 🟡 Medium Risk**
+> **Risk Score: 57/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/prometeus-bsc)
 
@@ -42,14 +42,14 @@ _🟢 1 Low · ⚪ 1 Informational_
 
 ### `L-01` — Potential `approve` Race Condition (Mitigated)  *(Severity: Low · Status: Unresolved)*
 
-The standard ERC-20 `approve` function is susceptible to a front-running attack where a malicious actor can observe a transaction to decrease an allowance and front-run it, transferring the original approved amount before the allowance is reduced. This could lead to a user approving a larger amount than intended. While the contract provides `increaseAllowance` and `decreaseAllowance` functions to mitigate this by allowing atomic adjustments, the base `approve` function still exists and can be used directly.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC-20 `approve` function is susceptible to a front-running attack where a malicious actor can observe a transaction to decrease an allowance and front-run it, transferring the original approved amount before the allowance is reduced. This could lead to a user approving a larger amount than intended. While the contract provides `increaseAllowance` and `decreaseAllowance` functions to mitigate this by allowing atomic adjustments, the base `approve` function still exists and can be used directly.
 
 **Recommendation:** Educate users to primarily use `increaseAllowance` and `decreaseAllowance` instead of directly calling `approve` when modifying an existing allowance. For new approvals, `approve` is safe. Ensure any external integrations or dApps interacting with this token prioritize the use of the safer allowance adjustment functions.
 
 
 ### `I-01` — Use of Older Solidity Compiler Version  *(Severity: Informational · Status: Unresolved)*
 
-The contract is compiled with Solidity version `0.5.16`. While functional, this version is older. Newer Solidity versions (e.g., 0.8.x) offer significant improvements, including built-in overflow/underflow checks (making `SafeMath` redundant and potentially saving gas), better optimizer performance, and enhanced security features.
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version `0.5.16`. While functional, this version is older. Newer Solidity versions (e.g., 0.8.x) offer significant improvements, including built-in overflow/underflow checks (making `SafeMath` redundant and potentially saving gas), better optimizer performance, and enhanced security features.
 
 **Recommendation:** Consider upgrading the Solidity compiler version to a more recent stable release (e.g., 0.8.x) for future deployments or contract updates. This would allow for removal of the `SafeMath` library, reducing bytecode size and gas costs, and leveraging modern compiler optimizations.
 

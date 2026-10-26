@@ -2,14 +2,14 @@
 token: popke
 ticker: POPKE
 network: solana
-risk_score: 52
+risk_score: 35
 status: medium
 date: 2026-08-30
 ---
 
 # popke (POPKE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 52/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/popke-sol)
 
@@ -26,7 +26,7 @@ The popke SPL Token Mint exhibits a medium risk profile primarily due to its ver
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The popke token is an SPL Token-2022 mint with address GC7bXNsDkg7rGDgbbihbMhfVwsipSigJVCFUK7Kcpump. The mint authority has been revoked, ensuring no new tokens can be created, fixing the total… |
-| **Governance / Economics** | 1/10 | High | The token's economic profile shows a top 10 holder concentration of 41.79%, which is below the threshold for high concentration risk. Total DEX liquidity stands at $24,318, which is moderate. The… |
+| **Governance / Economics** | 2/10 | High | The token's economic profile shows a top 10 holder concentration of 41.79%, which is below the threshold for high concentration risk. Total DEX liquidity stands at $24,318, which is moderate. The… |
 | **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply and account freeze status cannot be altered. The token does not have a transfer hook, and its metadata is… |
 
 ## Security Findings
@@ -54,13 +54,13 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1608 buys / 1423 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

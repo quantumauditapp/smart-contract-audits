@@ -2,14 +2,14 @@
 token: Proof Of Bagwork
 ticker: POB
 network: solana
-risk_score: 56
-status: medium
+risk_score: 26
+status: low
 date: 2026-08-03
 ---
 
 # Proof Of Bagwork (POB) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 56/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/proof-of-bagwork-sol)
 
@@ -25,9 +25,9 @@ This SPL Token Mint audit identifies a critical risk: a third-party risk registr
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token issuance or freezing of holder accounts (7.3 Access… |
-| **Governance / Economics** | 1/10 | High | The top 10 token accounts hold 35.31% of the total supply, indicating a moderate level of holder concentration (7.4 Economic). The token has a liquidity of $39,273, with a 24-hour volume of $112,800… |
-| **Upgrades** | 7/10 | Low | The mint and freeze authorities for this SPL Token-2022 mint are both revoked, ensuring that the token supply cannot be increased and accounts cannot be frozen (7.7 Upgrades). Key extensions like… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token issuance or freezing of holder accounts (7.3 Access… |
+| **Governance / Economics** | 5/10 | Medium | The top 10 token accounts hold 35.31% of the total supply, indicating a moderate level of holder concentration (7.4 Economic). The token has a liquidity of $39,273, with a 24-hour volume of $112,800… |
+| **Upgrades** | 10/10 | Low | The mint and freeze authorities for this SPL Token-2022 mint are both revoked, ensuring that the token supply cannot be increased and accounts cannot be frozen (7.7 Upgrades). Key extensions like… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ An independent third-party risk registry classifies this token as high-risk base
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1086 buys / 1342 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ An independent third-party risk registry classifies this token as high-risk base
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

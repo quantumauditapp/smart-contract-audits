@@ -2,14 +2,14 @@
 token: Rainbow
 ticker: RNBW
 network: base
-risk_score: 51
+risk_score: 49
 status: medium
 date: 2026-09-04
 ---
 
 # Rainbow (RNBW) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 51/100 — 🟡 Medium Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rainbow-base)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Dependency on External Bridge Security  *(Severity: Low · Status: Unresolved)*
 
-The `OptimismMintableERC20` token's security is highly dependent on the security of the `BRIDGE` contract, which has exclusive control over minting and burning via the `onlyBridge` modifier. A compromise of the `BRIDGE` would directly impact the token's integrity by allowing unauthorized supply manipulation. This is an inherent design characteristic of a bridged token, not a flaw in this specific contract, but it represents a significant external risk (7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The `OptimismMintableERC20` token's security is highly dependent on the security of the `BRIDGE` contract, which has exclusive control over minting and burning via the `onlyBridge` modifier. A compromise of the `BRIDGE` would directly impact the token's integrity by allowing unauthorized supply manipulation. This is an inherent design characteristic of a bridged token, not a flaw in this specific contract, but it represents a significant external risk (7.6 External).
 
 **Recommendation:** Ensure the `BRIDGE` contract undergoes rigorous security audits and maintains robust operational security. Implement comprehensive monitoring for the `BRIDGE` contract's activities and consider multi-signature or time-lock mechanisms for critical operations.
 
 
 ### `I-01` — Immutable Critical Parameters  *(Severity: Informational · Status: Resolved)*
 
-Key parameters such as `REMOTE_TOKEN`, `BRIDGE`, and `DECIMALS` are declared as `immutable` and set during construction. This prevents any post-deployment modification, enhancing the contract's security and predictability (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). Key parameters such as `REMOTE_TOKEN`, `BRIDGE`, and `DECIMALS` are declared as `immutable` and set during construction. This prevents any post-deployment modification, enhancing the contract's security and predictability (7.1 Architecture).
 
 **Recommendation:** No action required; this is a good security practice already implemented.
 
 
 ### `I-02` — Adherence to Standards and Best Practices  *(Severity: Informational · Status: Resolved)*
 
-The contract correctly implements ERC20 and ERC165 standards, including the `supportsInterface` function, ensuring compatibility within the ecosystem. It also utilizes battle-tested OpenZeppelin libraries for core ERC20 functionality, reducing the likelihood of common vulnerabilities (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract correctly implements ERC20 and ERC165 standards, including the `supportsInterface` function, ensuring compatibility within the ecosystem. It also utilizes battle-tested OpenZeppelin libraries for core ERC20 functionality, reducing the likelihood of common vulnerabilities (7.2 Code Security).
 
 **Recommendation:** No action required; this is a good security practice already implemented.
 

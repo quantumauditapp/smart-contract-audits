@@ -2,14 +2,14 @@
 token: Peanut the Squirrel 
 ticker: PNUT 
 network: solana
-risk_score: 25
+risk_score: 2
 status: low
 date: 2026-08-13
 ---
 
 # Peanut the Squirrel  (PNUT ) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 25/100 — 🟢 Low Risk**
+> **Risk Score: 2/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/peanut-the-squirrel-sol-f9fe)
 
@@ -25,9 +25,9 @@ This SPL token mint, 'Peanut the Squirrel (Pnut)', has both its Mint Authority a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is an SPL Token Program v3 mint. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be frozen. No Token-2022… |
-| **Governance / Economics** | 2/10 | High | Holder concentration is a concern, with the top 10 token accounts holding 69.65% of the total supply, indicating a potential for price manipulation from large holders. Despite this, the token has… |
-| **Upgrades** | 7/10 | Low | The token's core parameters are immutable as both Mint and Freeze authorities are revoked. There are no active Token-2022 extensions that allow for post-deployment changes to token behavior, such as… |
+| **Technical** | 10/10 | Low | The token is an SPL Token Program v3 mint. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be frozen. No Token-2022… |
+| **Governance / Economics** | 3/10 | High | Holder concentration is a concern, with the top 10 token accounts holding 69.65% of the total supply, indicating a potential for price manipulation from large holders. Despite this, the token has… |
+| **Upgrades** | 8/10 | Low | The token's core parameters are immutable as both Mint and Freeze authorities are revoked. There are no active Token-2022 extensions that allow for post-deployment changes to token behavior, such as… |
 
 ## LP Distribution
 

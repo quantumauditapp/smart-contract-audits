@@ -2,14 +2,14 @@
 token: RaveDAO
 ticker: RAVE
 network: base
-risk_score: 44
+risk_score: 42
 status: medium
 date: 2026-08-15
 ---
 
 # RaveDAO (RAVE) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ravedao-base)
 
@@ -42,28 +42,28 @@ _🟢 1 Low · ⚪ 3 Informational_
 
 ### `L-01` — Centralization Risk of Owner  *(Severity: Low · Status: Unresolved)*
 
-The `RaveToken` contract inherits `Ownable`, granting significant administrative control to a single owner address. This owner, even if a multisig, has the ability to configure critical LayerZero parameters (e.g., `setTrustedRemoteAddress`, `setPeer`, `setMinDstGas`, `setFeeManager`) through the inherited `OFT` functions. A compromise of the multisig or malicious intent by its signers could lead to operational issues, unexpected cross-chain transfer fees, or disruption of token bridging functionality (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `RaveToken` contract inherits `Ownable`, granting significant administrative control to a single owner address. This owner, even if a multisig, has the ability to configure critical LayerZero parameters (e.g., `setTrustedRemoteAddress`, `setPeer`, `setMinDstGas`, `setFeeManager`) through the inherited `OFT` functions. A compromise of the multisig or malicious intent by its signers could lead to operational issues, unexpected cross-chain transfer fees, or disruption of token bridging functionality (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** While a multisig mitigates single points of failure, consider implementing a timelock for critical owner-controlled functions. This would introduce a delay before changes take effect, allowing for community review or emergency intervention in case of a compromised key or malicious action. Regularly review and secure the multisig signers and their operational procedures.
 
 
 ### `I-01` — Reliance on LayerZero v2 Protocol  *(Severity: Informational · Status: Unresolved)*
 
-The `RaveToken` contract is built as an Omnichain Fungible Token (OFT) using the LayerZero v2 protocol. Its core cross-chain transfer functionality is entirely dependent on the security, correctness, and availability of the LayerZero endpoint, message libraries, and overall infrastructure. Any vulnerabilities, misconfigurations, or operational issues within the LayerZero protocol itself could directly impact the security and functionality of the RaveToken (7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The `RaveToken` contract is built as an Omnichain Fungible Token (OFT) using the LayerZero v2 protocol. Its core cross-chain transfer functionality is entirely dependent on the security, correctness, and availability of the LayerZero endpoint, message libraries, and overall infrastructure. Any vulnerabilities, misconfigurations, or operational issues within the LayerZero protocol itself could directly impact the security and functionality of the RaveToken (7.6 External).
 
 **Recommendation:** Acknowledge the inherent dependency risk associated with using a third-party protocol. Monitor LayerZero's security announcements, audits, and community channels. Ensure that the configured LayerZero endpoint and associated libraries are the official and most secure versions. Consider a robust incident response plan for potential LayerZero-related issues.
 
 
 ### `I-02` — Fixed Supply Token Model  *(Severity: Informational · Status: Unresolved)*
 
-The `RaveToken` contract mints a fixed `totalSupply` to the specified owner address during its constructor execution. There are no additional minting capabilities provided after initial deployment. This establishes a fixed supply token model, which can be beneficial for transparency and predictability of tokenomics (7.4 Economic). The `burn` function allows for a reduction in total supply by any token holder.
+Not confirmed by static analysis (the model's own reading of the source). The `RaveToken` contract mints a fixed `totalSupply` to the specified owner address during its constructor execution. There are no additional minting capabilities provided after initial deployment. This establishes a fixed supply token model, which can be beneficial for transparency and predictability of tokenomics (7.4 Economic). The `burn` function allows for a reduction in total supply by any token holder.
 
 **Recommendation:** Document this fixed supply model clearly in the project's whitepaper or tokenomics documentation to ensure transparency for users and investors. This design choice is generally considered a positive security and economic characteristic for many token projects.
 
 
 ### `I-03` — Use of Latest Solidity Version  *(Severity: Informational · Status: Unresolved)*
 
-The contract utilizes `pragma solidity ^0.8.28;`, which is the latest stable version of the Solidity compiler at the time of this audit. This ensures that the contract benefits from the most recent compiler optimizations, bug fixes, and security features, including default checked arithmetic for integer operations, which prevents common overflow/underflow vulnerabilities (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes `pragma solidity ^0.8.28;`, which is the latest stable version of the Solidity compiler at the time of this audit. This ensures that the contract benefits from the most recent compiler optimizations, bug fixes, and security features, including default checked arithmetic for integer operations, which prevents common overflow/underflow vulnerabilities (7.2 Code Security).
 
 **Recommendation:** Continue to monitor Solidity compiler updates and security advisories. While using the latest version is beneficial, always thoroughly test contracts with the specific compiler version used for deployment to ensure consistent behavior and avoid unexpected issues from minor version changes.
 

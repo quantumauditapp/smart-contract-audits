@@ -2,14 +2,14 @@
 token: peaq
 ticker: PEAQ
 network: solana
-risk_score: 68
-status: high
+risk_score: 51
+status: medium
 date: 2026-09-25
 ---
 
 # peaq (PEAQ) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/peaq-sol)
 
@@ -25,9 +25,9 @@ This audit of the peaq (PEAQ) SPL token mint identifies a critical risk due to t
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the standard spl-token program. A critical risk exists as the mint authority, Hd6dAx5G2SJ1cxyXJvvaXdfCgn9mYLfvAcPYk9xXy2Gt, remains active, allowing for unlimited new… |
-| **Governance / Economics** | 4/10 | Medium | The economic stability of the token is impacted by a significant holder concentration, with the top 10 accounts holding 59.24% of the total supply, posing a risk of price volatility from large… |
-| **Upgrades** | 4/10 | Medium | The token's core parameters are subject to change due to the active mint authority, which can alter the total supply. While the freeze authority is revoked, ensuring accounts cannot be frozen, the… |
+| **Technical** | 8/10 | Low | The token is implemented using the standard spl-token program. A critical risk exists as the mint authority, Hd6dAx5G2SJ1cxyXJvvaXdfCgn9mYLfvAcPYk9xXy2Gt, remains active, allowing for unlimited new… |
+| **Governance / Economics** | 6/10 | Medium | The economic stability of the token is impacted by a significant holder concentration, with the top 10 accounts holding 59.24% of the total supply, posing a risk of price volatility from large… |
+| **Upgrades** | 6/10 | Medium | The token's core parameters are subject to change due to the active mint authority, which can alter the total supply. While the freeze authority is revoked, ensuring accounts cannot be frozen, the… |
 
 ## Security Findings
 
@@ -74,7 +74,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -83,7 +83,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

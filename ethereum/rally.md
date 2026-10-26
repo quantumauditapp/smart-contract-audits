@@ -2,14 +2,14 @@
 token: Rally
 ticker: RALLY
 network: ethereum
-risk_score: 80
-status: high
+risk_score: 40
+status: medium
 date: 2026-08-11
 ---
 
 # Rally (RALLY) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 80/100 — 🟠 High Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/rally-eth)
 
@@ -25,9 +25,9 @@ The audit of the Token contract identified several areas for improvement, primar
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract exhibits a generally sound technical foundation, utilizing `unchecked` blocks correctly with preceding `require` statements to prevent integer overflows (7.2 Code Security). Necessary… |
-| **Governance / Economics** | 1/10 | High | The contract design incorporates a highly centralized governance model, where an `owner` can control the `issuer` role, and the `issuer` can mint tokens up to `maxSupply` (7.5 Governance, 7.4… |
-| **Upgrades** | 2/10 | High | This contract is not designed to be upgradeable, as it does not implement any proxy pattern (7.7 Upgrades). Therefore, there are no upgrade-related risks to assess. Any changes to the contract's… |
+| **Technical** | 8/10 | Low | The contract exhibits a generally sound technical foundation, utilizing `unchecked` blocks correctly with preceding `require` statements to prevent integer overflows (7.2 Code Security). Necessary… |
+| **Governance / Economics** | 3/10 | High | The contract design incorporates a highly centralized governance model, where an `owner` can control the `issuer` role, and the `issuer` can mint tokens up to `maxSupply` (7.5 Governance, 7.4… |
+| **Upgrades** | 3/10 | High | This contract is not designed to be upgradeable, as it does not implement any proxy pattern (7.7 Upgrades). Therefore, there are no upgrade-related risks to assess. Any changes to the contract's… |
 
 ## LP Distribution
 
@@ -38,46 +38,46 @@ The audit of the Token contract identified several areas for improvement, primar
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `C-01` — Missing `totalSupply()` Function Implementation  *(Severity: Critical · Status: Unresolved)*
-
-The contract declares `IERC20` but does not implement the `totalSupply()` function as required by the ERC-20 standard. While a public `totalSupply` state variable exists, many dApps and tools rely on the explicit function call for compatibility. This omission can lead to integration issues and unexpected behavior with external systems expecting a standard ERC-20 token.
-
-**Recommendation:** Implement the `totalSupply()` function to return the value of the `totalSupply` state variable, ensuring full ERC-20 compliance. Example: `function totalSupply() external view override returns (uint) { return totalSupply; }`
-
-
-### `H-01` — High Centralization Risk  *(Severity: High · Status: Unresolved)*
-
-The `owner` and `issuer` roles possess significant power. The `owner` can change the `issuer`, and the `issuer` has the ability to `mint` new tokens up to the `maxSupply`. This centralized control means that a compromise of the `owner` or `issuer`'s private key could lead to unauthorized token minting, market manipulation, or a complete loss of trust in the token's supply integrity.
-
-**Recommendation:** Consider implementing a multi-signature wallet for the `owner` and `issuer` roles to distribute control and reduce the risk associated with a single point of failure. Explore time-locks or governance mechanisms for critical actions like changing the issuer or minting large amounts of tokens.
-
+_🟡 4 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Ownership Transfer to `address(0)` Possible  *(Severity: Medium · Status: Unresolved)*
 
-The `transferOwnership` function allows the current `owner` to set `pendingOwner` to `address(0)`. If this occurs, the `confirmOwnership` function, which requires `msg.sender == pendingOwner`, can never be called, effectively locking the ownership transfer mechanism. The current `owner` would remain the owner indefinitely, unable to transfer ownership to a new, valid address.
+Not confirmed by static analysis (the model's own reading of the source). The `transferOwnership` function allows the current `owner` to set `pendingOwner` to `address(0)`. If this occurs, the `confirmOwnership` function, which requires `msg.sender == pendingOwner`, can never be called, effectively locking the ownership transfer mechanism. The current `owner` would remain the owner indefinitely, unable to transfer ownership to a new, valid address.
 
 **Recommendation:** Add a `require` statement in `transferOwnership` to prevent setting `newOwner` to `address(0)`. For example: `require(newOwner != address(0), 'New owner cannot be the zero address');`
 
 
 ### `M-02` — `setIssuer` to `address(0)` Disables Minting  *(Severity: Medium · Status: Unresolved)*
 
-The `setIssuer` function allows the `owner` to set the `issuer` address to `address(0)`. If `issuer` is set to `address(0)`, the `mint` function becomes permanently unusable because the `only(issuer)` modifier will always fail. While the `owner` can later set a new valid issuer, this action could temporarily halt token issuance and might be an unintended consequence if not carefully managed.
+Not confirmed by static analysis (the model's own reading of the source). The `setIssuer` function allows the `owner` to set the `issuer` address to `address(0)`. If `issuer` is set to `address(0)`, the `mint` function becomes permanently unusable because the `only(issuer)` modifier will always fail. While the `owner` can later set a new valid issuer, this action could temporarily halt token issuance and might be an unintended consequence if not carefully managed.
 
 **Recommendation:** Consider adding a `require` statement in `setIssuer` to prevent setting `newIssuer` to `address(0)` unless this is an explicit, intended mechanism to permanently disable minting. If temporary disablement is desired, implement a separate pause/unpause mechanism for minting.
 
 
+### `M-03` — Missing `totalSupply()` Function Implementation  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract declares `IERC20` but does not implement the `totalSupply()` function as required by the ERC-20 standard. While a public `totalSupply` state variable exists, many dApps and tools rely on the explicit function call for compatibility. This omission can lead to integration issues and unexpected behavior with external systems expecting a standard ERC-20 token.
+
+**Recommendation:** Implement the `totalSupply()` function to return the value of the `totalSupply` state variable, ensuring full ERC-20 compliance. Example: `function totalSupply() external view override returns (uint) { return totalSupply; }`
+
+
+### `M-04` — High Centralization Risk  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `owner` and `issuer` roles possess significant power. The `owner` can change the `issuer`, and the `issuer` has the ability to `mint` new tokens up to the `maxSupply`. This centralized control means that a compromise of the `owner` or `issuer`'s private key could lead to unauthorized token minting, market manipulation, or a complete loss of trust in the token's supply integrity.
+
+**Recommendation:** Consider implementing a multi-signature wallet for the `owner` and `issuer` roles to distribute control and reduce the risk associated with a single point of failure. Explore time-locks or governance mechanisms for critical actions like changing the issuer or minting large amounts of tokens.
+
+
 ### `L-01` — Standard ERC-20 `approve` Front-Running Vulnerability  *(Severity: Low · Status: Unresolved)*
 
-The `approve` function, as implemented, is susceptible to a known ERC-20 front-running vulnerability. If a user approves an amount for a spender and then attempts to change that approved amount to a different value (especially a lower one), an attacker can front-run the second transaction. The attacker could spend the original approved amount before the new allowance is set, potentially leading to a double-spend of the allowance.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function, as implemented, is susceptible to a known ERC-20 front-running vulnerability. If a user approves an amount for a spender and then attempts to change that approved amount to a different value (especially a lower one), an attacker can front-run the second transaction. The attacker could spend the original approved amount before the new allowance is set, potentially leading to a double-spend of the allowance.
 
 **Recommendation:** While this is a common ERC-20 limitation, consider using `increaseAllowance` and `decreaseAllowance` functions (as seen in OpenZeppelin's ERC-20 implementation) instead of directly setting the allowance. This pattern mitigates the front-running risk by requiring explicit increments or decrements.
 
 
 ### `I-01` — Use of `unchecked` Blocks  *(Severity: Informational · Status: Unresolved)*
 
-The contract utilizes `unchecked` blocks for arithmetic operations in functions like `mint`, `transferFrom`, and `updateBalance`. These blocks are correctly preceded by `require` statements (e.g., `require(totalSupply + value <= maxSupply)` or `require(balanceOf[from] >= value)`) that ensure the operations will not overflow or underflow. This is a valid optimization in Solidity 0.8.x to save gas by explicitly opting out of default overflow/underflow checks.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes `unchecked` blocks for arithmetic operations in functions like `mint`, `transferFrom`, and `updateBalance`. These blocks are correctly preceded by `require` statements (e.g., `require(totalSupply + value <= maxSupply)` or `require(balanceOf[from] >= value)`) that ensure the operations will not overflow or underflow. This is a valid optimization in Solidity 0.8.x to save gas by explicitly opting out of default overflow/underflow checks.
 
 **Recommendation:** No direct action is required as the `unchecked` blocks are used safely. However, it is crucial to maintain rigorous testing and review of any changes to these functions to ensure that the preceding `require` statements always provide adequate protection against arithmetic overflows/underflows.
 

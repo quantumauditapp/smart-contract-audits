@@ -2,14 +2,14 @@
 token: Pear
 ticker: PEAR
 network: arbitrum
-risk_score: 24
+risk_score: 20
 status: low
 date: 2026-09-19
 ---
 
 # Pear (PEAR) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 24/100 — 🟢 Low Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pear-arb)
 
@@ -42,28 +42,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Initial Centralization of Supply  *(Severity: Low · Status: Unresolved)*
 
-The `PearToken` contract's constructor mints the entire `MAX_SUPPLY` (1,000,000,000 PEAR) to a single `receiver` address. This means 100% of the token supply is initially held by one address. While this is a common pattern for initial token distribution, it represents a single point of failure or control for the entire token supply at deployment (7.4 Economic). If this address is compromised or mismanaged, it could impact the token's ecosystem.
+Not confirmed by static analysis (the model's own reading of the source). The `PearToken` contract's constructor mints the entire `MAX_SUPPLY` (1,000,000,000 PEAR) to a single `receiver` address. This means 100% of the token supply is initially held by one address. While this is a common pattern for initial token distribution, it represents a single point of failure or control for the entire token supply at deployment (7.4 Economic). If this address is compromised or mismanaged, it could impact the token's ecosystem.
 
 **Recommendation:** If the `receiver` address is intended for a team or project treasury, consider using a multi-signature wallet or a timelock contract for this address to enhance security and decentralization. This would require multiple approvals or a time delay for significant token movements, reducing the risk of a single point of compromise.
 
 
 ### `L-02` — Lack of Pause Mechanism  *(Severity: Low · Status: Unresolved)*
 
-The `PearToken` contract does not include a mechanism to pause token transfers or other critical functions. In the event of an unforeseen vulnerability, a major exploit, or a critical operational issue (7.8 Operations), the project would lack the ability to temporarily halt token activity to mitigate damage or address the problem. While not strictly required for a simple token, a pause mechanism is a common security feature in many projects.
+Not confirmed by static analysis (the model's own reading of the source). The `PearToken` contract does not include a mechanism to pause token transfers or other critical functions. In the event of an unforeseen vulnerability, a major exploit, or a critical operational issue (7.8 Operations), the project would lack the ability to temporarily halt token activity to mitigate damage or address the problem. While not strictly required for a simple token, a pause mechanism is a common security feature in many projects.
 
 **Recommendation:** Consider implementing a pausable mechanism (e.g., inheriting from OpenZeppelin's `Pausable` contract) controlled by a trusted entity, such as a multi-signature wallet. This would provide an emergency stop-gap. Ensure that the access control for pausing is robust and transparent to avoid centralization risks.
 
 
 ### `I-01` — Standard ERC-20 Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The `PearToken` contract correctly implements the ERC-20 standard by inheriting from OpenZeppelin's `ERC20` contract. This ensures adherence to well-established patterns and security practices for fungible tokens (7.2 Code Security). The custom `burn` function is also implemented correctly, utilizing the internal `_burn` function from the base contract.
+Not confirmed by static analysis (the model's own reading of the source). The `PearToken` contract correctly implements the ERC-20 standard by inheriting from OpenZeppelin's `ERC20` contract. This ensures adherence to well-established patterns and security practices for fungible tokens (7.2 Code Security). The custom `burn` function is also implemented correctly, utilizing the internal `_burn` function from the base contract.
 
 **Recommendation:** No specific recommendation. Continue to leverage well-audited libraries for core functionalities.
 
 
 ### `I-02` — Fixed Supply Token  *(Severity: Informational · Status: Unresolved)*
 
-The `PearToken` has a clearly defined `MAX_SUPPLY` of 1,000,000,000 tokens, which is minted entirely during the contract's deployment. There are no functions allowing for additional minting after the initial deployment (7.4 Economic). This fixed supply model provides transparency and predictability regarding the total token circulation, which can be a desirable characteristic for certain tokenomics.
+Not confirmed by static analysis (the model's own reading of the source). The `PearToken` has a clearly defined `MAX_SUPPLY` of 1,000,000,000 tokens, which is minted entirely during the contract's deployment. There are no functions allowing for additional minting after the initial deployment (7.4 Economic). This fixed supply model provides transparency and predictability regarding the total token circulation, which can be a desirable characteristic for certain tokenomics.
 
 **Recommendation:** No specific recommendation. This is a design choice that contributes to the token's economic transparency.
 

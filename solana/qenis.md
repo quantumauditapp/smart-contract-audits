@@ -2,14 +2,14 @@
 token: Qenis
 ticker: QENIS
 network: solana
-risk_score: 26
+risk_score: 9
 status: low
 date: 2026-08-15
 ---
 
 # Qenis (QENIS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 26/100 — 🟢 Low Risk**
+> **Risk Score: 9/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/qenis-sol)
 
@@ -26,8 +26,8 @@ The Qenis token mint exhibits a medium risk profile primarily due to its very re
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, ensuring no new tokens can be minted and no existing accounts can be frozen.… |
-| **Governance / Economics** | 5/10 | Medium | Holder concentration is low, with the top 10 token accounts holding approximately 28.5% of the total supply, which is below typical concentration thresholds. Total DEX liquidity stands at $144,043… |
-| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked, meaning the token's supply is fixed and no accounts can be frozen post-launch. The token utilizes the spl-token-2022 program but does not… |
+| **Governance / Economics** | 8/10 | Low | Holder concentration is low, with the top 10 token accounts holding approximately 28.5% of the total supply, which is below typical concentration thresholds. Total DEX liquidity stands at $144,043… |
+| **Upgrades** | 10/10 | Low | The Mint Authority and Freeze Authority are both revoked, meaning the token's supply is fixed and no accounts can be frozen post-launch. The token utilizes the spl-token-2022 program but does not… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1409 buys / 1434 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

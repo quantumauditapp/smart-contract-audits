@@ -2,14 +2,14 @@
 token: Quant
 ticker: QNT
 network: ethereum
-risk_score: 55
+risk_score: 43
 status: medium
 date: 2026-09-01
 ---
 
 # Quant (QNT) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 55/100 — 🟡 Medium Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/quant-eth)
 
@@ -17,62 +17,71 @@ date: 2026-09-01
 
 ## Audit Summary
 
-The audit of the StandardToken contract revealed a critical flaw where the `totalSupply()` function does not accurately reflect the actual circulating supply due to the `mint` function failing to update the `totalSupply_` variable. Additionally, the contract uses an outdated Solidity compiler version, which may expose it to known vulnerabilities. Access control for minting is centralized and immutable, and the ERC-20 `approve` function is susceptible to a race condition.
+The protocol implements a standard ERC-20 token with an additional minting capability restricted to a crowdsale contract. While the core transfer logic follows standard patterns, the minting function introduces significant centralization risk. The contract lacks modern security features like reentrancy guards or pause functionality, which is consistent with its 2018 deployment era.
 
-> **Final Recommendation:** It is imperative to address the critical `totalSupply` calculation error by ensuring the `mint` function correctly updates the `totalSupply_` variable. The contract should be recompiled with a modern, stable Solidity compiler version (e.g., 0.8.x) to benefit from recent security patches and gas optimizations. Consider implementing a multi-signature wallet for the `crowdsale` address to enhance security and decentralization of minting control.
+> **Final Recommendation:** The protocol should implement a multi-signature wallet or a time-locked governance contract to control the crowdsale address. This would mitigate the risk of a single compromised key performing unauthorized minting operations.
+
+Additionally, consider adding a 'pause' mechanism to halt transfers in the event of a detected exploit. Future iterations should migrate to modern OpenZeppelin standards, including AccessControl for granular permission management and ReentrancyGuard for all state-changing functions.
 
 ## Category Ratings
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract implements the ERC-20 standard using the `SafeMath` library to prevent integer overflows/underflows, which is a strength (7.2 Code Security). However, a critical issue exists where the… |
-| **Governance / Economics** | 1/10 | High | The economic model is severely impacted by the `totalSupply` misrepresentation, which can lead to incorrect market valuations and user confusion (7.4 Economic). Access control for the `mint` function… |
-| **Upgrades** | 2/10 | High | The contract does not implement any upgradeability patterns, meaning its logic is immutable once deployed (7.7 Upgrades). While this eliminates risks associated with faulty upgrade mechanisms, it… |
+| **Technical** | 8/10 | Low | The contract utilizes standard OpenZeppelin-style ERC-20 logic, ensuring 7.1 Architecture and 7.2 Code Security are consistent with established patterns. 7.3 Access Control is implemented via a… |
+| **Governance / Economics** | 3/10 | High | 7.4 Economic and 7.5 Governance risks are concentrated in the crowdsale contract's ability to mint tokens. This creates a single point of failure where the crowdsale controller can arbitrarily… |
+| **Upgrades** | 3/10 | High | 7.7 Upgrades are not supported as the contract is not a proxy. 7.8 Operations are static, meaning the contract logic cannot be altered post-deployment. This provides immutability but prevents… |
 
 ## LP Distribution
 
 | Metric | Value |
 |--------|-------|
-| **Top-1 Unlocked Holder** | ⚠️ 76.8% |
-| **Top-3 Unlocked** | ⚠️ 100.0% |
+| **Top-1 Unlocked Holder** | 19.8% |
+| **Top-3 Unlocked** | 50.0% |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 2 Medium · 🟢 1 Low_
+_🟠 1 High · 🟡 1 Medium · ⚪ 4 Informational_
 
-### `C-01` — Inaccurate `totalSupply` Calculation  *(Severity: Critical · Status: Unresolved)*
+### `CP-02` — Centralized Minting Authority  *(Severity: High · Status: Unresolved)*
 
-The `totalSupply_` variable is initialized to a fixed value (45,467,000 QNT with 18 decimals) and never updated by the `mint` function. This means `totalSupply()` will always return the initial hardcoded value, not the actual sum of all token balances, leading to a critical misrepresentation of the token's circulating supply. This can severely impact market perception, integrations, and overall token economics.
+The mint(address,uint256) function allows the crowdsale controller to create new tokens and assign them to any address. This grants the controller total control over the token supply and the ability to dilute existing holders or manipulate balances.
 
-**Recommendation:** Modify the `mint` function to increment `totalSupply_` by `_value` whenever new tokens are minted. Ensure `totalSupply_` accurately reflects the sum of all token balances. Alternatively, remove `totalSupply_` and calculate `totalSupply()` by summing all balances, though this is less gas efficient.
-
-
-### `H-01` — Outdated Solidity Compiler Version  *(Severity: High · Status: Unresolved)*
-
-The contract uses `pragma solidity ^0.4.21`. This version range is significantly outdated and may be susceptible to known compiler bugs and security vulnerabilities that have been patched in newer versions (e.g., 0.8.x). Deploying with an old compiler version increases the risk of undiscovered or known exploits.
-
-**Recommendation:** Upgrade the Solidity compiler version to a recent, stable release (e.g., `^0.8.0`). Thoroughly test the contract after upgrading, as syntax and behavior may have changed, particularly regarding `assert` vs `require` and default overflow checks.
+**Recommendation:** Restrict the minting capability by requiring multi-signature approval or a time-locked governance process. Ensure the crowdsale contract is audited and its ownership is transferred to a secure multi-sig wallet.
 
 
-### `M-01` — ERC-20 `approve` Race Condition  *(Severity: Medium · Status: Unresolved)*
+### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
 
-The `approve` function is vulnerable to the known ERC-20 race condition. If a user calls `approve` to change an allowance from `X` to `Y`, and the spender front-runs this transaction by spending `X` tokens, the spender could then spend `Y` tokens, effectively spending `X+Y` tokens. While `increaseApproval` and `decreaseApproval` are provided to mitigate this, the `approve` function itself remains vulnerable.
+0.0% of the pool's LP is burned or time-locked. 78.1% is held, unlocked, by 10 address(es) other than the owner/deployer. No single one holds a majority: their exits thin the market rather than hand anyone the pool. Some pools are concentrated-liquidity (V3/V4) positions; shares above are by position as GoPlus reports them. This assessment covers the main pool, which holds 49% of the token's DEX liquidity; the other pools were not assessed.
 
-**Recommendation:** While `increaseApproval` and `decreaseApproval` are good additions, users should be educated to use these functions instead of `approve` when modifying an existing allowance. For `approve` itself, consider adding a check that `_value` is 0 if `allowed[msg.sender][_spender]` is not 0, forcing a two-step approval process (set to 0, then set to new value).
-
-
-### `M-02` — Immutable Crowdsale Address and Centralized Minting  *(Severity: Medium · Status: Unresolved)*
-
-The `crowdsale` address, which has exclusive permission to call the `mint` function, is set in the constructor and cannot be changed. This creates a single point of control for token minting without any mechanism for transferability or multi-signature protection. If the `crowdsale` key is compromised or lost, it could lead to unauthorized minting or a permanent inability to mint new tokens.
-
-**Recommendation:** Consider implementing a mechanism to transfer ownership of the `crowdsale` role, possibly through a time-locked or multi-signature process. Ideally, the `crowdsale` address itself should be a multi-signature wallet to reduce the risk of a single point of failure.
+**Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
 
 
-### `L-01` — Gas Inefficiency with `assert` in SafeMath  *(Severity: Low · Status: Unresolved)*
+### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-The `SafeMath` library uses `assert` for overflow/underflow checks. In Solidity versions prior to 0.8.0, `assert` consumes all remaining gas upon failure, whereas `require` refunds unused gas. While functionally correct for preventing arithmetic errors, this can lead to higher gas costs for failed transactions compared to modern `require`-based checks.
+The ten largest holders own 28.8% of supply. What remains: 7.8% in wallets, 21.0% in other contracts. 187,006 holders in total.
 
-**Recommendation:** If upgrading to Solidity 0.8.0+, `SafeMath` might not be strictly necessary due to built-in overflow checks. If remaining in 0.4.x, consider replacing `assert` with `require` in `SafeMath` functions for better gas efficiency on reverts, though this would require careful re-evaluation of the `SafeMath` library's design.
+**Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
+
+
+### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
+
+Listed on CoinGecko as Quant (QNT), market cap $3.2B, rank #34. Traded on Binance, Coinbase. 187,006 holders. Verified by: CoinGecko, exchange listings.
+
+**Recommendation:** Match the contract address against the project's official channels before trading.
+
+
+### `QA-MARKET` — The market for this token  *(Severity: Informational · Status: Acknowledged)*
+
+Liquidity $2.3M (DexScreener, all pools). 24h trading volume $151.0M (CoinGecko, all markets, daily snapshot). 24h trading volume $2.4M (DexScreener, all pools).
+
+**Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
+
+
+### `QA-PROFILE` — Asset class: Project token  *(Severity: Informational · Status: Acknowledged)*
+
+A token issued by a project for use, governance or fundraising. Scored on its contract and market facts. The class itself adds no points; the contract and market facts decide the score. Basis: no class-specific evidence. Tokenomics — Supply: mintable with no on-chain cap found. Control: crowdsale — a single wallet (EOA). Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $2.3M of DEX liquidity across 22 pools. Launch: 2314 days of market history.
+
+**Recommendation:** Check the project's own documentation for what the token is used for; this report covers what the contract allows.
 
 ## Token Metrics
 
@@ -80,11 +89,11 @@ The `SafeMath` library uses `assert` for overflow/underflow checks. In Solidity 
 |--------|-------|
 | **Contract** | [`0x4a22...4675`](https://etherscan.io/address/0x4a220e6096b25eadb88358cb44068a3248254675) |
 | **Network** | Ethereum |
-| **Price** | $65.4300 |
-| **24h Volume** | $103.0K |
-| **Liquidity** | $459.8K |
-| **Volume / Liquidity** | 0.2× |
-| **Token Age** | 5y |
+| **Price** | $201.2600 |
+| **24h Volume** | $1.46M |
+| **Liquidity** | $1.11M |
+| **Volume / Liquidity** | 1.3× |
+| **Token Age** | 6y |
 | **Top-10 Holders** | 28.8% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 110 buys / 115 sells |

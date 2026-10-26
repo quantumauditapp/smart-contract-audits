@@ -2,14 +2,14 @@
 token: Plumber
 ticker: PLUMBER
 network: solana
-risk_score: 43
-status: medium
+risk_score: 26
+status: low
 date: 2026-08-12
 ---
 
 # Plumber (PLUMBER) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/plumber-sol)
 
@@ -25,9 +25,9 @@ This audit of the Plumber SPL Token Mint identifies a medium risk due to the ver
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Plumber token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the mint authority and freeze authority are revoked, which prevents the creation of new… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a very new market presence, with its DEX pair created just 0 days ago, which limits the ability to assess long-term market stability or community behavior. Current DEX liquidity… |
-| **Upgrades** | 8/10 | Low | The Plumber token mint has both its mint and freeze authorities revoked, preventing any future changes to token supply or account freeze status. It utilizes the spl-token-2022 program but does not… |
+| **Technical** | 10/10 | Low | The Plumber token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the mint authority and freeze authority are revoked, which prevents the creation of new… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a very new market presence, with its DEX pair created just 0 days ago, which limits the ability to assess long-term market stability or community behavior. Current DEX liquidity… |
+| **Upgrades** | 10/10 | Low | The Plumber token mint has both its mint and freeze authorities revoked, preventing any future changes to token supply or account freeze status. It utilizes the spl-token-2022 program but does not… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4534 buys / 4969 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

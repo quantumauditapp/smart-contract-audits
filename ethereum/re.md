@@ -116,11 +116,11 @@ Not confirmed by static analysis (the model's own reading of the source). The co
 
 ### Is RE a scam?
 
-Based on the available data, labeling RE definitively as a "scam" is not possible, but it carries a high-risk score of 59/100. While contract ownership is renounced and no mint function exists, the extreme concentration of 98.3% of tokens in the top 10 wallets and unlocked liquidity are significant red flags often associated with projects that could lead to investor losses.
+Based on the available data, labeling RE definitively as a "scam" is not possible, but it carries a medium-risk score of 51/100. While contract ownership is renounced and no mint function exists, the extreme concentration of 98.3% of tokens in the top 10 wallets and unlocked liquidity are significant red flags often associated with projects that could lead to investor losses.
 
 ### Is RE safe to buy?
 
-RE is not considered safe to buy, evidenced by its high-risk score of 59/100. The primary concerns include the very high concentration of 98.3% of the supply among the top 10 holders, which poses a significant manipulation risk. Additionally, the liquidity is not locked, meaning it could be removed by providers, potentially leading to a sharp price collapse and leaving investors unable to sell.
+RE is not considered safe to buy, evidenced by its medium-risk score of 51/100. The primary concerns include the very high concentration of 98.3% of the supply among the top 10 holders, which poses a significant manipulation risk. Additionally, the liquidity is not locked, meaning it could be removed by providers, potentially leading to a sharp price collapse and leaving investors unable to sell.
 
 ### Has RE been audited?
 

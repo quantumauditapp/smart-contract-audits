@@ -37,27 +37,27 @@ The PooToken contract implements a complex ERC-20 token with integrated tax, swa
 
 ## Security Findings
 
-_🟠 1 High · 🟡 3 Medium · 🟢 1 Low · ⚪ 7 Informational_
-
-### `H-01` — Potential Denial of Service in `pushOwed` due to Unbounded Loop  *(Severity: High · Status: Unresolved)*
-
-The `pushOwed` function iterates through `_tax.payeeCount + 1` recipients to distribute accumulated quote tokens. Each iteration involves an external call to `TaxLib.pushQuote`, which itself can perform external transfers. If the number of tax payees (`_tax.payeeCount`) is not strictly limited to a small number, this loop could consume excessive gas, causing the transaction to exceed the block gas limit and revert. This would prevent the distribution of owed funds to all payees, leading to a denial of service for fund distribution and potentially locking funds for some recipients.
-
-**Recommendation:** Implement a hard limit on the number of tax payees (`p.taxPayees.length`) during contract construction to ensure `_tax.payeeCount` remains within safe gas limits. Alternatively, refactor the `pushOwed` function to allow payees to pull their owed funds individually, or implement a pagination mechanism for distribution.
-
+_🟡 4 Medium · 🟢 1 Low · ⚪ 7 Informational_
 
 ### `M-01` — Oracle Manipulation Risk for `_windowPrice`  *(Severity: Medium · Status: Unresolved)*
 
-The `_windowPrice` function calculates a time-weighted average price (TWAP) from Uniswap V2 reserves. While TWAPs are generally more resilient than spot prices, their robustness depends on the length of the observation window (`block.timestamp - _engine.priceAt`) and the liquidity of the pair. If the price window is short or the liquidity is low, a sophisticated attacker could manipulate the TWAP with a flash loan or large capital, potentially influencing the `_swap` function's execution and leading to unfavorable swaps for the protocol, resulting in economic loss.
+Not confirmed by static analysis (the model's own reading of the source). The `_windowPrice` function calculates a time-weighted average price (TWAP) from Uniswap V2 reserves. While TWAPs are generally more resilient than spot prices, their robustness depends on the length of the observation window (`block.timestamp - _engine.priceAt`) and the liquidity of the pair. If the price window is short or the liquidity is low, a sophisticated attacker could manipulate the TWAP with a flash loan or large capital, potentially influencing the `_swap` function's execution and leading to unfavorable swaps for the protocol, resulting in economic loss.
 
 **Recommendation:** Ensure that the `_engine.priceAt` is updated with a sufficiently long interval to create a robust TWAP. Consider implementing additional safeguards such as volume checks, deviation checks, or integrating with a more robust oracle solution (e.g., Chainlink) if the economic impact of price manipulation is significant.
 
 
 ### `M-02` — Front-running Opportunities in `open()` and `process()`  *(Severity: Medium · Status: Unresolved)*
 
-The `open()` function, which initializes trading parameters like `_lpSupplyMark` and `_priceCumulative`, and the `process()` function, which triggers swap-backs and distributions, are publicly callable. An attacker could front-run the `open()` transaction by performing a large swap just before it, manipulating the initial state for price calculations. Similarly, `process()` can be front-run to execute profitable swaps or distributions, allowing an attacker to gain an unfair advantage or cause the original transaction to revert if the state changes.
+Not confirmed by static analysis (the model's own reading of the source). The `open()` function, which initializes trading parameters like `_lpSupplyMark` and `_priceCumulative`, and the `process()` function, which triggers swap-backs and distributions, are publicly callable. An attacker could front-run the `open()` transaction by performing a large swap just before it, manipulating the initial state for price calculations. Similarly, `process()` can be front-run to execute profitable swaps or distributions, allowing an attacker to gain an unfair advantage or cause the original transaction to revert if the state changes.
 
 **Recommendation:** For `open()`, consider if a commit-reveal scheme or a small, fixed delay after scheduling could mitigate manipulation of initial state. For `process()`, acknowledge the inherent front-running risk of public functions that trigger profitable actions. Ensure that the economic impact of such front-running is minimal and does not lead to significant losses for the protocol or its users.
+
+
+### `M-03` — Potential Denial of Service in `pushOwed` due to Unbounded Loop  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `pushOwed` function iterates through `_tax.payeeCount + 1` recipients to distribute accumulated quote tokens. Each iteration involves an external call to `TaxLib.pushQuote`, which itself can perform external transfers. If the number of tax payees (`_tax.payeeCount`) is not strictly limited to a small number, this loop could consume excessive gas, causing the transaction to exceed the block gas limit and revert. This would prevent the distribution of owed funds to all payees, leading to a denial of service for fund distribution and potentially locking funds for some recipients.
+
+**Recommendation:** Implement a hard limit on the number of tax payees (`p.taxPayees.length`) during contract construction to ensure `_tax.payeeCount` remains within safe gas limits. Alternatively, refactor the `pushOwed` function to allow payees to pull their owed funds individually, or implement a pagination mechanism for distribution.
 
 
 ### `QA-MARKET` — The market for this token  *(Severity: Medium · Status: Acknowledged)*
@@ -69,21 +69,21 @@ Liquidity $9K (DexScreener, all pools). 24h trading volume $37K (DexScreener, al
 
 ### `L-01` — High Complexity of External Module Interactions  *(Severity: Low · Status: Unresolved)*
 
-The `PooToken` contract extensively uses external modules (`_tokenModules`) for various hooks (gate, track, operate on sell/buy). While the `runOperate` function includes a `_undoes` check to prevent modules from draining liquidity, the overall complexity introduced by arbitrary external code execution increases the attack surface. A subtle bug or unexpected behavior in a module, even with the `_undoes` safeguard, could lead to unintended consequences or denial of service for specific module functionalities.
+Not confirmed by static analysis (the model's own reading of the source). The `PooToken` contract extensively uses external modules (`_tokenModules`) for various hooks (gate, track, operate on sell/buy). While the `runOperate` function includes a `_undoes` check to prevent modules from draining liquidity, the overall complexity introduced by arbitrary external code execution increases the attack surface. A subtle bug or unexpected behavior in a module, even with the `_undoes` safeguard, could lead to unintended consequences or denial of service for specific module functionalities.
 
 **Recommendation:** Thoroughly audit all deployed token modules. Implement strict validation and whitelisting for module addresses. Consider adding circuit breakers or pause mechanisms for individual modules if a vulnerability is discovered post-deployment to limit potential damage.
 
 
 ### `I-01` — Use of Non-Standard `transient` Keyword  *(Severity: Informational · Status: Unresolved)*
 
-The contract uses `bool private transient _inTransfer;` and similar declarations. The `transient` keyword is not a standard Solidity keyword and is treated as a comment by the compiler. While the variables are correctly declared as `private` and function as expected (not stored in state), this non-standard notation could be confusing for developers unfamiliar with this specific convention.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses `bool private transient _inTransfer;` and similar declarations. The `transient` keyword is not a standard Solidity keyword and is treated as a comment by the compiler. While the variables are correctly declared as `private` and function as expected (not stored in state), this non-standard notation could be confusing for developers unfamiliar with this specific convention.
 
 **Recommendation:** Remove the `transient` keyword or replace it with a standard comment (e.g., `// transient`) to improve code clarity and adherence to Solidity best practices.
 
 
 ### `I-02` — Unused Compile-Time Assertion Function  *(Severity: Informational · Status: Unresolved)*
 
-The function `_assertTokenModulesFitRunsDueWidth(uint8[8 - TOKEN_MODULE_LIMIT] memory)` is a clever pattern for a compile-time assertion. However, it is declared `private pure` and is never called within the contract. While this pattern often works by causing a compilation error if the condition is not met, explicitly calling it (even in a dummy way) or ensuring the compiler's behavior is understood for unused functions would guarantee the check is always enforced.
+Not confirmed by static analysis (the model's own reading of the source). The function `_assertTokenModulesFitRunsDueWidth(uint8[8 - TOKEN_MODULE_LIMIT] memory)` is a clever pattern for a compile-time assertion. However, it is declared `private pure` and is never called within the contract. While this pattern often works by causing a compilation error if the condition is not met, explicitly calling it (even in a dummy way) or ensuring the compiler's behavior is understood for unused functions would guarantee the check is always enforced.
 
 **Recommendation:** Verify that the compiler enforces this compile-time check even if the function is unused. If not, consider calling this function in the constructor or another appropriate place to ensure the assertion is always active. Alternatively, if its purpose is purely documentation, clarify this intent.
 
