@@ -2,14 +2,14 @@
 token: Credible Finance
 ticker: CRED
 network: solana
-risk_score: 71
-status: high
+risk_score: 54
+status: medium
 date: 2026-07-19
 ---
 
 # Credible Finance (CRED) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 71/100 — 🟠 High Risk**
+> **Risk Score: 54/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/credible-finance-sol)
 
@@ -25,9 +25,9 @@ This audit of the Credible Finance (CRED) SPL token mint reveals a critical risk
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Credible Finance (CRED) token is implemented using the standard spl-token program (v3). A critical finding is that the mint authority, ATESfxbwt3SRhSHc4nbk8BG6P8Nm8TAjsHfQCbgC2er4, remains… |
-| **Governance / Economics** | 1/10 | High | The token's DEX pair is very new, having been created only 1 day ago, which means there is insufficient track record for market behavior. Total DEX liquidity stands at $2,031,814, with a 24-hour… |
-| **Upgrades** | 4/10 | Medium | The mint authority for the token is still active, allowing for potential changes to the total supply. The freeze authority has been revoked, which is a positive security measure. The token's metadata… |
+| **Technical** | 8/10 | Low | The Credible Finance (CRED) token is implemented using the standard spl-token program (v3). A critical finding is that the mint authority, ATESfxbwt3SRhSHc4nbk8BG6P8Nm8TAjsHfQCbgC2er4, remains… |
+| **Governance / Economics** | 3/10 | High | The token's DEX pair is very new, having been created only 1 day ago, which means there is insufficient track record for market behavior. Total DEX liquidity stands at $2,031,814, with a 24-hour… |
+| **Upgrades** | 6/10 | Medium | The mint authority for the token is still active, allowing for potential changes to the total supply. The freeze authority has been revoked, which is a positive security measure. The token's metadata… |
 
 ## Security Findings
 
@@ -74,7 +74,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -83,7 +83,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

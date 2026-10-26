@@ -2,14 +2,14 @@
 token: The Solana Mascot
 ticker: SOLY
 network: solana
-risk_score: 57
+risk_score: 35
 status: medium
 date: 2026-06-10
 ---
 
 # The Solana Mascot (SOLY) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 57/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-solana-mascot-sol)
 
@@ -26,7 +26,7 @@ The audit identified a high risk due to very low DEX liquidity ($5,669), which c
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The token is an SPL Token-2022 mint with a total supply of 999,947,003.812112 tokens across 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be… |
-| **Governance / Economics** | 1/10 | High | The token exhibits very low DEX liquidity, with only $5,669 available, which poses a significant risk for price stability and large trades. The 24-hour trading volume is $45, resulting in a normal… |
+| **Governance / Economics** | 2/10 | High | The token exhibits very low DEX liquidity, with only $5,669 available, which poses a significant risk for price stability and large trades. The 24-hour trading volume is $45, resulting in a normal… |
 | **Upgrades** | 8/10 | Low | The token's core parameters are largely immutable, as both the mint and freeze authorities are revoked. This means no further tokens can be minted, and no accounts can be frozen. Furthermore, the… |
 
 ## Security Findings
@@ -54,13 +54,13 @@ Total DEX liquidity is $5,669. Slippage will be severe; large positions cannot b
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 25092 buys / 56753 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Total DEX liquidity is $5,669. Slippage will be severe; large positions cannot b
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions

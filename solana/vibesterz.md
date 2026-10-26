@@ -2,14 +2,14 @@
 token: Vibesterz
 ticker: VSTR
 network: solana
-risk_score: 55
-status: medium
+risk_score: 33
+status: low
 date: 2026-06-10
 ---
 
 # Vibesterz (VSTR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 55/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vibesterz-sol)
 
@@ -25,9 +25,9 @@ The Vibesterz (VSTR) token mint is technically sound, with both mint and freeze 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Vibesterz (VSTR) token is an SPL Token-2022 mint with its mint authority and freeze authority both revoked, ensuring a fixed supply and preventing arbitrary freezing of holder accounts. No… |
-| **Governance / Economics** | 1/10 | High | The token's economic profile shows very low DEX liquidity at $5,153, which presents a high risk for price impact on trades. The 24-hour volume is $34, resulting in a normal Volume/Liquidity Ratio of… |
-| **Upgrades** | 8/10 | Low | The token mint has both its mint and freeze authorities revoked, meaning its supply and account freeze status cannot be altered. No Token-2022 extensions that allow for future upgradability of… |
+| **Technical** | 10/10 | Low | The Vibesterz (VSTR) token is an SPL Token-2022 mint with its mint authority and freeze authority both revoked, ensuring a fixed supply and preventing arbitrary freezing of holder accounts. No… |
+| **Governance / Economics** | 2/10 | High | The token's economic profile shows very low DEX liquidity at $5,153, which presents a high risk for price impact on trades. The 24-hour volume is $34, resulting in a normal Volume/Liquidity Ratio of… |
+| **Upgrades** | 10/10 | Low | The token mint has both its mint and freeze authorities revoked, meaning its supply and account freeze status cannot be altered. No Token-2022 extensions that allow for future upgradability of… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ Total DEX liquidity is $5,153. Slippage will be severe; large positions cannot b
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 840 buys / 750 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Total DEX liquidity is $5,153. Slippage will be severe; large positions cannot b
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

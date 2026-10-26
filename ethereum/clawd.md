@@ -2,14 +2,14 @@
 token: Clawd
 ticker: CLAWD
 network: ethereum
-risk_score: 24
+risk_score: 0
 status: low
 date: 2026-06-20
 ---
 
 # Clawd (CLAWD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 24/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/clawd-eth)
 
@@ -25,9 +25,9 @@ The Clawd token contract implements a standard ERC-20 token with advanced tax, a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | 7.1 Architecture: The contract follows a standard ERC-20 token architecture with added tax and anti-bot mechanisms. 7.2 Code Security: It utilizes SafeMath for arithmetic operations and a… |
-| **Governance / Economics** | 7/10 | Low | 7.4 Economic: The token's economic model includes dynamic buy/sell taxes, max transaction limits, and anti-whale measures. These features are highly configurable by the owner. 7.5 Governance: The… |
-| **Upgrades** | 9/10 | Low | 7.7 Upgrades: The contract is not designed with upgradeability in mind, meaning its logic is immutable once deployed. This eliminates risks associated with proxy patterns or upgrade mechanisms… |
+| **Technical** | 10/10 | Low | 7.1 Architecture: The contract follows a standard ERC-20 token architecture with added tax and anti-bot mechanisms. 7.2 Code Security: It utilizes SafeMath for arithmetic operations and a… |
+| **Governance / Economics** | 9/10 | Low | 7.4 Economic: The token's economic model includes dynamic buy/sell taxes, max transaction limits, and anti-whale measures. These features are highly configurable by the owner. 7.5 Governance: The… |
+| **Upgrades** | 10/10 | Low | 7.7 Upgrades: The contract is not designed with upgradeability in mind, meaning its logic is immutable once deployed. This eliminates risks associated with proxy patterns or upgrade mechanisms… |
 
 ## LP Distribution
 
@@ -38,39 +38,39 @@ The Clawd token contract implements a standard ERC-20 token with advanced tax, a
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `C-01` — Extreme Centralization and Potential Honeypot Vector  *(Severity: Critical · Status: Unresolved)*
-
-The contract owner possesses extensive control over critical parameters and functionalities, including the ability to: set all tax rates (buy, sell, transfer), enable/disable trading, enable/disable automatic liquidity swaps, set max transaction and wallet size limits, and add/remove addresses from the `bots` mapping (effectively blacklisting them). This level of control allows the owner to manipulate trading conditions, potentially creating a honeypot scenario where users can buy but are prevented from selling (e.g., by setting sell tax to 100% or blacklisting specific addresses). This poses a severe risk to user funds and trust in the protocol.
-
-**Recommendation:** Implement a timelock for all sensitive owner-controlled functions (e.g., setting taxes, modifying trading status, updating bot list) to introduce a delay before changes take effect. Consider transferring ownership to a multi-signature wallet to distribute control and require consensus for critical operations. Clearly communicate the extent of owner privileges to users.
-
-
-### `H-01` — Missing `receive()` or `fallback()` Function - Stuck ETH  *(Severity: High · Status: Unresolved)*
-
-The contract does not implement a `receive()` or `fallback()` payable function. This means that if any Ether is sent directly to the contract address without calling a specific payable function (e.g., `addLiquidityETH`), it will be permanently locked within the contract and become irrecoverable. While the contract is designed to handle ETH through specific functions, accidental direct transfers are a common occurrence.
-
-**Recommendation:** Add a `receive() external payable {}` function to the contract to allow it to accept direct Ether transfers. If direct ETH transfers are not intended, consider adding a `fallback() external payable { revert("ETH not accepted"); }` to explicitly prevent them and inform users.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Complex and Potentially Ambiguous Tax Logic  *(Severity: Medium · Status: Unresolved)*
 
-The `_transfer` function contains multiple conditional blocks for calculating `taxAmount` based on `_buyCount`, `from`, and `to` addresses. The interaction between the general `if(_buyCount==0)` / `if(_buyCount>0)` blocks and the specific `if (from == uniswapV2Pair)` (buy) / `if(to == uniswapV2Pair)` (sell) blocks is complex and could lead to unintended tax applications or make the logic difficult to reason about. For instance, the `_buyCount==0` and `_buyCount>0` conditions might be overridden by the buy/sell specific conditions, leading to confusion.
+Not confirmed by static analysis (the model's own reading of the source). The `_transfer` function contains multiple conditional blocks for calculating `taxAmount` based on `_buyCount`, `from`, and `to` addresses. The interaction between the general `if(_buyCount==0)` / `if(_buyCount>0)` blocks and the specific `if (from == uniswapV2Pair)` (buy) / `if(to == uniswapV2Pair)` (sell) blocks is complex and could lead to unintended tax applications or make the logic difficult to reason about. For instance, the `_buyCount==0` and `_buyCount>0` conditions might be overridden by the buy/sell specific conditions, leading to confusion.
 
 **Recommendation:** Refactor the `_transfer` function's tax calculation logic to be clearer and more modular. Use a single, well-defined flow for determining the applicable tax based on the transaction type (buy, sell, general transfer). Add comprehensive inline comments and external documentation to explain the exact tax application rules under different scenarios.
 
 
+### `M-02` — Extreme Centralization and Potential Honeypot Vector  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract owner possesses extensive control over critical parameters and functionalities, including the ability to: set all tax rates (buy, sell, transfer), enable/disable trading, enable/disable automatic liquidity swaps, set max transaction and wallet size limits, and add/remove addresses from the `bots` mapping (effectively blacklisting them). This level of control allows the owner to manipulate trading conditions, potentially creating a honeypot scenario where users can buy but are prevented from selling (e.g., by setting sell tax to 100% or blacklisting specific addresses). This poses a severe risk to user fund
+
+**Recommendation:** Implement a timelock for all sensitive owner-controlled functions (e.g., setting taxes, modifying trading status, updating bot list) to introduce a delay before changes take effect. Consider transferring ownership to a multi-signature wallet to distribute control and require consensus for critical operations. Clearly communicate the extent of owner privileges to users.
+
+
+### `M-03` — Missing `receive()` or `fallback()` Function - Stuck ETH  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract does not implement a `receive()` or `fallback()` payable function. This means that if any Ether is sent directly to the contract address without calling a specific payable function (e.g., `addLiquidityETH`), it will be permanently locked within the contract and become irrecoverable. While the contract is designed to handle ETH through specific functions, accidental direct transfers are a common occurrence.
+
+**Recommendation:** Add a `receive() external payable {}` function to the contract to allow it to accept direct Ether transfers. If direct ETH transfers are not intended, consider adding a `fallback() external payable { revert("ETH not accepted"); }` to explicitly prevent them and inform users.
+
+
 ### `L-01` — Lack of Event Emission for Critical State Changes  *(Severity: Low · Status: Unresolved)*
 
-The contract defines events such as `MaxTxAmountUpdated` and `TransferTaxUpdated`, but these events are not emitted when the corresponding state variables (`_maxTxAmount`, `_transferTax`) are modified by the owner. This lack of event emission hinders off-chain monitoring, transparency, and the ability for external applications or users to track critical changes to the token's parameters.
+Not confirmed by static analysis (the model's own reading of the source). The contract defines events such as `MaxTxAmountUpdated` and `TransferTaxUpdated`, but these events are not emitted when the corresponding state variables (`_maxTxAmount`, `_transferTax`) are modified by the owner. This lack of event emission hinders off-chain monitoring, transparency, and the ability for external applications or users to track critical changes to the token's parameters.
 
 **Recommendation:** Ensure that all functions that modify critical state variables (e.g., `setMaxTxAmount`, `setTransferTax`, `setInitialBuyTax`, `setFinalBuyTax`, etc.) emit appropriate events to signal these changes. This improves transparency and allows for better off-chain tracking and auditing.
 
 
 ### `I-01` — Unused State Variables  *(Severity: Informational · Status: Unresolved)*
 
-The state variables `sellCount` and `lastSellBlock` are declared within the contract but are not utilized anywhere in the provided source code. This suggests either incomplete functionality, vestigial code from a previous iteration, or a potential oversight.
+Not confirmed by static analysis (the model's own reading of the source). The state variables `sellCount` and `lastSellBlock` are declared within the contract but are not utilized anywhere in the provided source code. This suggests either incomplete functionality, vestigial code from a previous iteration, or a potential oversight.
 
 **Recommendation:** Review the purpose of `sellCount` and `lastSellBlock`. If they are intended for future functionality, ensure they are properly implemented. If they are no longer needed, remove them to reduce contract size and improve code clarity.
 

@@ -2,14 +2,14 @@
 token: Nockchain
 ticker: NOCK
 network: base
-risk_score: 45
-status: medium
+risk_score: 32
+status: low
 date: 2026-06-10
 ---
 
 # Nockchain (NOCK) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/nockchain-base)
 
@@ -25,8 +25,8 @@ The Nock contract is an ERC-20 token designed for Nockchain integration, featuri
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The Nock contract leverages battle-tested OpenZeppelin libraries (ERC20, Ownable), providing a strong base for code security (7.2). The logic for minting and burning is straightforward, with… |
-| **Governance / Economics** | 4/10 | Medium | The contract establishes clear access control (7.3) with an `Ownable` pattern, allowing the owner to update the critical `inbox` address. This provides a single point of control for managing the… |
+| **Technical** | 8/10 | Low | The Nock contract leverages battle-tested OpenZeppelin libraries (ERC20, Ownable), providing a strong base for code security (7.2). The logic for minting and burning is straightforward, with… |
+| **Governance / Economics** | 5/10 | Medium | The contract establishes clear access control (7.3) with an `Ownable` pattern, allowing the owner to update the critical `inbox` address. This provides a single point of control for managing the… |
 | **Upgrades** | 4/10 | Medium | The Nock contract is explicitly designed to be non-upgradeable, as stated in its documentation: "This contract is NOT upgradeable to ensure immutability of the token." This design choice eliminates… |
 
 ## LP Distribution
@@ -38,39 +38,39 @@ The Nock contract is an ERC-20 token designed for Nockchain integration, featuri
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Reliance on External `IMessageInbox` Security  *(Severity: High · Status: Unresolved)*
-
-The `Nock` token contract heavily relies on the security and correct behavior of the external `IMessageInbox` contract (7.6). The `inbox` address is the sole minter of `Nock` tokens and is called during every `burn` operation via `notifyBurn()`. A compromise or malfunction of `IMessageInbox` could lead to unauthorized token minting, denial of service for withdrawals, or other adverse effects, directly impacting the token's integrity and value.
-
-**Recommendation:** Conduct a comprehensive security audit of the `IMessageInbox` contract and its associated off-chain logic. Ensure robust access control, input validation, and reentrancy protection within `IMessageInbox`, especially for functions interacting with `Nock`. Implement strong governance and operational security for the `IMessageInbox` contract's ownership and deployment.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralized Minting and Lack of Supply Cap  *(Severity: Medium · Status: Unresolved)*
 
-The `Nock` token has no explicit supply cap (the `cap()` function returns 0), and all minting is exclusively controlled by the `inbox` address (7.4). While this design centralizes control for specific operational reasons, it introduces a significant centralization risk. If the `inbox` contract or its controlling entity is compromised, an arbitrary amount of tokens could be minted, leading to severe token dilution and loss of value for existing holders.
+Not confirmed by static analysis (the model's own reading of the source). The `Nock` token has no explicit supply cap (the `cap()` function returns 0), and all minting is exclusively controlled by the `inbox` address (7.4). While this design centralizes control for specific operational reasons, it introduces a significant centralization risk. If the `inbox` contract or its controlling entity is compromised, an arbitrary amount of tokens could be minted, leading to severe token dilution and loss of value for existing holders.
 
 **Recommendation:** Evaluate the necessity of an uncapped supply. If a cap is not feasible, implement robust security measures for the `IMessageInbox` contract and its owner, such as a multi-signature wallet, time-locks for critical operations, or a transparent governance mechanism. Consider adding a configurable supply cap if the protocol design allows for it.
 
 
 ### `M-02` — Potential Reentrancy in `burn` via External Call  *(Severity: Medium · Status: Unresolved)*
 
-The `burn` function makes an external call to `IMessageInbox(inbox).notifyBurn()` after performing the token burn (7.2). Although the `_burn` operation occurs before the external call, which mitigates direct reentrancy on the `balanceOf` check for the burning user, an untrusted or malicious `IMessageInbox` contract could potentially re-enter the `Nock` contract in other ways or execute unexpected logic that affects the overall system state or other users. This violates the Checks-Effects-Interactions pattern.
+Not confirmed by static analysis (the model's own reading of the source). The `burn` function makes an external call to `IMessageInbox(inbox).notifyBurn()` after performing the token burn (7.2). Although the `_burn` operation occurs before the external call, which mitigates direct reentrancy on the `balanceOf` check for the burning user, an untrusted or malicious `IMessageInbox` contract could potentially re-enter the `Nock` contract in other ways or execute unexpected logic that affects the overall system state or other users. This violates the Checks-Effects-Interactions pattern.
 
 **Recommendation:** While the direct reentrancy on the `burn` amount is mitigated, it is best practice to strictly follow the Checks-Effects-Interactions pattern. If `notifyBurn` is not intended to modify state or call back into `Nock`, consider adding a reentrancy guard to the `burn` function or ensuring `IMessageInbox` is non-reentrant. Alternatively, move the external call before state changes if possible, or use a pull-based mechanism.
 
 
+### `M-03` — Reliance on External `IMessageInbox` Security  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `Nock` token contract heavily relies on the security and correct behavior of the external `IMessageInbox` contract (7.6). The `inbox` address is the sole minter of `Nock` tokens and is called during every `burn` operation via `notifyBurn()`. A compromise or malfunction of `IMessageInbox` could lead to unauthorized token minting, denial of service for withdrawals, or other adverse effects, directly impacting the token's integrity and value.
+
+**Recommendation:** Conduct a comprehensive security audit of the `IMessageInbox` contract and its associated off-chain logic. Ensure robust access control, input validation, and reentrancy protection within `IMessageInbox`, especially for functions interacting with `Nock`. Implement strong governance and operational security for the `IMessageInbox` contract's ownership and deployment.
+
+
 ### `L-01` — Owner's Ability to Change `inbox` Address  *(Severity: Low · Status: Unresolved)*
 
-The `Ownable` contract pattern grants the contract owner the ability to update the `inbox` address via the `updateInbox` function (7.3, 7.5). Since the `inbox` address is the sole minter of `Nock` tokens, a malicious or compromised owner could transfer minting control to an attacker-controlled address, leading to unauthorized token issuance. This represents a single point of failure for a critical function.
+Not confirmed by static analysis (the model's own reading of the source). The `Ownable` contract pattern grants the contract owner the ability to update the `inbox` address via the `updateInbox` function (7.3, 7.5). Since the `inbox` address is the sole minter of `Nock` tokens, a malicious or compromised owner could transfer minting control to an attacker-controlled address, leading to unauthorized token issuance. This represents a single point of failure for a critical function.
 
 **Recommendation:** Consider implementing a multi-signature wallet for the contract owner to reduce the risk of a single point of compromise. Additionally, a time-lock mechanism could be introduced for the `updateInbox` function, allowing users to react to a potentially malicious change before it takes effect.
 
 
 ### `I-01` — Non-Standard Decimals Value  *(Severity: Informational · Status: Unresolved)*
 
-The `Nock` token overrides the standard ERC20 `decimals()` function to return 16 instead of the typical 18. While explicitly stated as 'Nockchain alignment,' this non-standard value can lead to integration issues, display errors in wallets or exchanges, and potential user confusion if not handled correctly by all interacting systems (7.4).
+Not confirmed by static analysis (the model's own reading of the source). The `Nock` token overrides the standard ERC20 `decimals()` function to return 16 instead of the typical 18. While explicitly stated as 'Nockchain alignment,' this non-standard value can lead to integration issues, display errors in wallets or exchanges, and potential user confusion if not handled correctly by all interacting systems (7.4).
 
 **Recommendation:** Ensure all front-end applications, exchanges, and integrated protocols are fully aware of and correctly handle the 16-decimal precision for `Nock` tokens. Clear and prominent documentation should be provided to prevent misinterpretation and ensure consistent display across platforms.
 

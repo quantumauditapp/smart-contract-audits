@@ -2,14 +2,14 @@
 token: SPACE ID
 ticker: ID
 network: ethereum
-risk_score: 63
+risk_score: 61
 status: medium
 date: 2026-06-11
 ---
 
 # SPACE ID (ID) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 63/100 — 🟡 Medium Risk**
+> **Risk Score: 61/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/space-id-eth)
 
@@ -42,28 +42,28 @@ _🟢 1 Low · ⚪ 3 Informational_
 
 ### `L-01` — Lack of Time-Lock for Critical Operations  *(Severity: Low · Status: Unresolved)*
 
-The `AccessControl` contract itself does not inherently include time-lock mechanisms for sensitive operations like `grantRole` or `revokeRole`. Without a time-lock, critical changes can be executed immediately, leaving no window for community or governance intervention in case of a compromised key or malicious action (7.5 Governance, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `AccessControl` contract itself does not inherently include time-lock mechanisms for sensitive operations like `grantRole` or `revokeRole`. Without a time-lock, critical changes can be executed immediately, leaving no window for community or governance intervention in case of a compromised key or malicious action (7.5 Governance, 7.8 Operations).
 
 **Recommendation:** For critical roles, especially the `DEFAULT_ADMIN_ROLE`, consider implementing a separate time-lock contract that acts as an intermediary for executing sensitive `AccessControl` functions. This introduces a delay, allowing for review and potential cancellation of malicious or erroneous operations.
 
 
 ### `I-01` — Default Admin Role Security  *(Severity: Informational · Status: Unresolved)*
 
-The `DEFAULT_ADMIN_ROLE` in `AccessControl` has the power to grant and revoke any other role, including itself. Compromise of an account holding this role would grant an attacker full control over the contract's access control mechanisms, potentially leading to critical system compromise (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` in `AccessControl` has the power to grant and revoke any other role, including itself. Compromise of an account holding this role would grant an attacker full control over the contract's access control mechanisms, potentially leading to critical system compromise (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** The address assigned to `DEFAULT_ADMIN_ROLE` should be a highly secured multi-signature wallet. Consider implementing a time-lock for critical operations performed by this role to provide a window for intervention.
 
 
 ### `I-02` — Role Granularity and Least Privilege  *(Severity: Informational · Status: Unresolved)*
 
-While `AccessControl` provides a robust framework, the security of the system heavily depends on how roles are defined and assigned in the inheriting `SpaceIDToken` contract. Over-permissioning accounts can lead to unintended access to sensitive functions (7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). While `AccessControl` provides a robust framework, the security of the system heavily depends on how roles are defined and assigned in the inheriting `SpaceIDToken` contract. Over-permissioning accounts can lead to unintended access to sensitive functions (7.3 Access Control).
 
 **Recommendation:** Adhere strictly to the principle of least privilege. Each role should have only the minimum permissions necessary to perform its designated tasks. Regularly review role assignments and revoke unnecessary permissions.
 
 
 ### `I-03` — Event Monitoring for Role Changes  *(Severity: Informational · Status: Unresolved)*
 
-The `AccessControl` contract explicitly states that it does not allow enumerating role members except through off-chain means by accessing contract event logs. This means that active monitoring of `RoleGranted`, `RoleRevoked`, and `RoleAdminChanged` events is crucial for maintaining an accurate understanding of current permissions (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `AccessControl` contract explicitly states that it does not allow enumerating role members except through off-chain means by accessing contract event logs. This means that active monitoring of `RoleGranted`, `RoleRevoked`, and `RoleAdminChanged` events is crucial for maintaining an accurate understanding of current permissions (7.8 Operations).
 
 **Recommendation:** Implement robust off-chain monitoring systems to track all role-related events. This allows for timely detection of unauthorized role changes or misconfigurations, enhancing operational security.
 

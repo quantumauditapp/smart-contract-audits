@@ -2,14 +2,14 @@
 token: RaveDAO
 ticker: RAVE
 network: ethereum
-risk_score: 37
-status: medium
+risk_score: 33
+status: low
 date: 2026-06-29
 ---
 
 # RaveDAO (RAVE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ravedao-eth)
 
@@ -25,7 +25,7 @@ The RaveToken contract is an ERC-20 token built upon OpenZeppelin's Ownable and 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The technical architecture (7.1 Architecture) of RaveToken is straightforward, extending battle-tested ERC-20, Ownable, and LayerZero OFT contracts. The custom code (7.2 Code Security) is minimal… |
+| **Technical** | 10/10 | Low | The technical architecture (7.1 Architecture) of RaveToken is straightforward, extending battle-tested ERC-20, Ownable, and LayerZero OFT contracts. The custom code (7.2 Code Security) is minimal… |
 | **Governance / Economics** | 4/10 | Medium | The economic model (7.4 Economic) is simple, based on an ERC-20 token with cross-chain capabilities. Governance (7.5 Governance) is centralized, with a single owner address controlling critical… |
 | **Upgrades** | 7/10 | Low | The RaveToken contract is not designed with upgradeability (7.7 Upgrades) in mind. It is a standard implementation contract, meaning there are no proxy-related risks or complexities associated with… |
 
@@ -42,28 +42,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Lack of Emergency Pause Mechanism  *(Severity: Low · Status: Unresolved)*
 
-The contract lacks an emergency pause mechanism. In the event of a critical vulnerability, an exploit, or a severe issue with the LayerZero protocol, there is no function available to the owner or any authorized entity to temporarily halt token transfers or cross-chain operations. This could prevent the project from mitigating ongoing losses or preventing further damage.
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks an emergency pause mechanism. In the event of a critical vulnerability, an exploit, or a severe issue with the LayerZero protocol, there is no function available to the owner or any authorized entity to temporarily halt token transfers or cross-chain operations. This could prevent the project from mitigating ongoing losses or preventing further damage.
 
 **Recommendation:** Implement a `Pausable` mechanism (e.g., from OpenZeppelin) that allows the owner or a designated governance entity to pause and unpause critical functions, such as `transfer`, `transferFrom`, `sendFrom`, and `_debit` (for cross-chain transfers). This provides a crucial safety switch for incident response.
 
 
 ### `L-02` — No Mechanism for Recovering Accidentally Sent Tokens  *(Severity: Low · Status: Unresolved)*
 
-The contract does not include a function to recover accidentally sent ERC-20 tokens (other than RaveToken itself) or native currency (ETH/MATIC/BNB) that might be mistakenly sent to the contract address. Any such assets sent to the contract would become permanently locked and inaccessible.
+Not confirmed by static analysis (the model's own reading of the source). The contract does not include a function to recover accidentally sent ERC-20 tokens (other than RaveToken itself) or native currency (ETH/MATIC/BNB) that might be mistakenly sent to the contract address. Any such assets sent to the contract would become permanently locked and inaccessible.
 
 **Recommendation:** Add an `onlyOwner` function to allow the recovery of arbitrary ERC-20 tokens and native currency. This function should enable the owner to transfer specified tokens or native currency from the contract to a designated address. Care should be taken to prevent the recovery of the contract's own RaveTokens if they are intended to be held by the contract for specific purposes.
 
 
 ### `I-01` — Centralized Control by Owner  *(Severity: Informational · Status: Unresolved)*
 
-The contract utilizes the OpenZeppelin `Ownable` pattern, granting a single address (the owner) exclusive control over critical functions. Specifically, the owner can configure LayerZero parameters such as `setDelegate`, `setTrustedRemote`, and `setEnforcedOptions`. This centralization introduces a single point of failure, where a compromise of the owner's private key could lead to unauthorized control over the token's cross-chain functionality.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes the OpenZeppelin `Ownable` pattern, granting a single address (the owner) exclusive control over critical functions. Specifically, the owner can configure LayerZero parameters such as `setDelegate`, `setTrustedRemote`, and `setEnforcedOptions`. This centralization introduces a single point of failure, where a compromise of the owner's private key could lead to unauthorized control over the token's cross-chain functionality.
 
 **Recommendation:** Consider using a robust multisig wallet (e.g., Gnosis Safe) as the owner to distribute control and reduce the risk associated with a single point of failure. For highly sensitive operations, explore integrating a more decentralized governance mechanism if feasible for the project's scope.
 
 
 ### `I-02` — Reliance on LayerZero Security  *(Severity: Informational · Status: Unresolved)*
 
-The RaveToken contract's core functionality for cross-chain transfers is entirely dependent on the LayerZero protocol and its endpoint. The security and operational integrity of the token across different chains are directly tied to the security of LayerZero's infrastructure, including its relayer network and oracle services. Any vulnerability or compromise within LayerZero could directly impact the RaveToken's cross-chain value transfer and integrity.
+Not confirmed by static analysis (the model's own reading of the source). The RaveToken contract's core functionality for cross-chain transfers is entirely dependent on the LayerZero protocol and its endpoint. The security and operational integrity of the token across different chains are directly tied to the security of LayerZero's infrastructure, including its relayer network and oracle services. Any vulnerability or compromise within LayerZero could directly impact the RaveToken's cross-chain value transfer and integrity.
 
 **Recommendation:** Acknowledge and monitor the security posture of the LayerZero protocol. Stay updated on LayerZero's security announcements, audits, and any reported vulnerabilities. Implement robust monitoring for LayerZero-related events and potential anomalies in cross-chain transfers.
 

@@ -2,14 +2,14 @@
 token: The Black Baby Bull
 ticker: BABYANSEM
 network: solana
-risk_score: 56
+risk_score: 36
 status: medium
 date: 2026-07-04
 ---
 
 # The Black Baby Bull (BABYANSEM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 56/100 — 🟡 Medium Risk**
+> **Risk Score: 36/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/the-black-baby-bull-sol)
 
@@ -26,8 +26,8 @@ This SPL Token Mint is flagged as high-risk by an independent third-party regist
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The token operates on the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked, ensuring no new tokens can be minted and no accounts can be frozen post-launch. The token… |
-| **Governance / Economics** | 1/10 | High | The token has a total DEX liquidity of $15,534, which is moderate. The 24-hour volume to liquidity ratio is 0.54, indicating normal trading activity without signs of wash trading. The DEX pair has… |
-| **Upgrades** | 7/10 | Low | The Mint Authority and Freeze Authority are both revoked, preventing any future changes to the token's supply or the ability to freeze holder accounts. The token's metadata is immutable, meaning its… |
+| **Governance / Economics** | 2/10 | High | The token has a total DEX liquidity of $15,534, which is moderate. The 24-hour volume to liquidity ratio is 0.54, indicating normal trading activity without signs of wash trading. The DEX pair has… |
+| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked, preventing any future changes to the token's supply or the ability to freeze holder accounts. The token's metadata is immutable, meaning its… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ An independent third-party risk registry classifies this token as high-risk base
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ An independent third-party risk registry classifies this token as high-risk base
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

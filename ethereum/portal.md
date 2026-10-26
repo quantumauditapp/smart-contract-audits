@@ -2,14 +2,14 @@
 token: Portal
 ticker: PORTAL
 network: ethereum
-risk_score: 77
-status: high
+risk_score: 50
+status: medium
 date: 2026-06-10
 ---
 
 # Portal (PORTAL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 77/100 — 🟠 High Risk**
+> **Risk Score: 50/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/portal-eth)
 
@@ -26,9 +26,9 @@ Furthermore, a comprehensive security audit of the external `proxy` contract is 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for its core ERC20, Ownable, Permit, Pausable, and Burnable functionalities, ensuring a solid foundation (7.2 Code Security). The custom… |
+| **Technical** | 8/10 | Low | The contract leverages battle-tested OpenZeppelin libraries for its core ERC20, Ownable, Permit, Pausable, and Burnable functionalities, ensuring a solid foundation (7.2 Code Security). The custom… |
 | **Governance / Economics** | 1/10 | High | The token's economic model is a straightforward ERC20 with a fixed total supply and initial distribution to vesting addresses and a treasury. However, the `owner` role holds highly centralized… |
-| **Upgrades** | 6/10 | Medium | The `PortalToken` contract is deployed as a standard, non-upgradeable implementation (7.7 Upgrades). This design choice means that any future bug fixes, security patches, or feature enhancements… |
+| **Upgrades** | 7/10 | Low | The `PortalToken` contract is deployed as a standard, non-upgradeable implementation (7.7 Upgrades). This design choice means that any future bug fixes, security patches, or feature enhancements… |
 
 ## LP Distribution
 
@@ -39,39 +39,39 @@ Furthermore, a comprehensive security audit of the external `proxy` contract is 
 
 ## Security Findings
 
-_🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control by Owner  *(Severity: High · Status: Unresolved)*
-
-The `owner` role has extensive control over critical token functions, including pausing transfers (`pause`), enabling/disabling permit functionality (`disablePermit`), and setting the `proxy` address (`setProxyAddress`) which directly impacts the reported `totalSupply`. A compromise of the owner's private key could lead to a complete halt of token operations, manipulation of circulating supply, or disruption of user interactions.
-
-**Recommendation:** Implement a multi-signature wallet or a time-locked contract for the `owner` role to introduce a delay and require multiple approvals for critical operations. This decentralizes control and reduces the risk associated with a single point of failure.
-
-
-### `H-02` — Critical Dependency on External Proxy for Circulating Supply  *(Severity: High · Status: Unresolved)*
-
-The `totalSupply()` function is overridden to subtract the balance held by a `proxy` address, intended for cross-chain functionality. The security and integrity of the `PortalToken`'s reported circulating supply are critically dependent on the correct functioning and security of this external `proxy` contract. A malicious or compromised `proxy` could manipulate the perceived circulating supply, leading to economic instability or misrepresentation.
-
-**Recommendation:** Thoroughly audit the external `proxy` contract to ensure its robustness and security. Implement strong access controls and monitoring for the `proxy` address. Clearly document the operational procedures and security model of the `proxy` and consider mechanisms to revoke or update the `proxy` address in a secure, multi-party controlled manner.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Lack of Upgradeability  *(Severity: Medium · Status: Unresolved)*
 
-The `PortalToken` contract is deployed as a standard implementation without any built-in upgradeability mechanism (e.g., UUPS, Transparent proxies). This means that any future bug fixes, security patches, or feature enhancements would necessitate deploying an entirely new token contract and migrating all existing token holders, which is a complex, costly, and disruptive process.
+Not confirmed by static analysis (the model's own reading of the source). The `PortalToken` contract is deployed as a standard implementation without any built-in upgradeability mechanism (e.g., UUPS, Transparent proxies). This means that any future bug fixes, security patches, or feature enhancements would necessitate deploying an entirely new token contract and migrating all existing token holders, which is a complex, costly, and disruptive process.
 
 **Recommendation:** For long-term projects, consider implementing an upgradeable proxy pattern (e.g., UUPS) to allow for future contract modifications without requiring a full token migration. If upgradeability is not desired, ensure the current implementation is extremely robust and thoroughly tested.
 
 
+### `M-02` — Centralized Control by Owner  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `owner` role has extensive control over critical token functions, including pausing transfers (`pause`), enabling/disabling permit functionality (`disablePermit`), and setting the `proxy` address (`setProxyAddress`) which directly impacts the reported `totalSupply`. A compromise of the owner's private key could lead to a complete halt of token operations, manipulation of circulating supply, or disruption of user interactions.
+
+**Recommendation:** Implement a multi-signature wallet or a time-locked contract for the `owner` role to introduce a delay and require multiple approvals for critical operations. This decentralizes control and reduces the risk associated with a single point of failure.
+
+
+### `M-03` — Critical Dependency on External Proxy for Circulating Supply  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `totalSupply()` function is overridden to subtract the balance held by a `proxy` address, intended for cross-chain functionality. The security and integrity of the `PortalToken`'s reported circulating supply are critically dependent on the correct functioning and security of this external `proxy` contract. A malicious or compromised `proxy` could manipulate the perceived circulating supply, leading to economic instability or misrepresentation.
+
+**Recommendation:** Thoroughly audit the external `proxy` contract to ensure its robustness and security. Implement strong access controls and monitoring for the `proxy` address. Clearly document the operational procedures and security model of the `proxy` and consider mechanisms to revoke or update the `proxy` address in a secure, multi-party controlled manner.
+
+
 ### `L-01` — Owner Can Disable Permit Functionality  *(Severity: Low · Status: Unresolved)*
 
-The `disablePermit` function allows the owner to enable or disable the ERC20 Permit functionality. While this is an intended feature, disabling `permit` could disrupt user experience or integrations that rely on gasless approvals. This power is centralized with the owner.
+Not confirmed by static analysis (the model's own reading of the source). The `disablePermit` function allows the owner to enable or disable the ERC20 Permit functionality. While this is an intended feature, disabling `permit` could disrupt user experience or integrations that rely on gasless approvals. This power is centralized with the owner.
 
 **Recommendation:** Clearly communicate the operational policy regarding the `permitEnabled` state. Consider if this control needs to be managed by a multi-sig or a more decentralized mechanism if the project aims for progressive decentralization.
 
 
 ### `I-01` — Reliance on Off-Chain Mitigation for Vesting Deposits  *(Severity: Informational · Status: Unresolved)*
 
-The constructor's comment states that "potential address duplication is mitigated by the deployment scripts" for `vestingDeposits`. This indicates a reliance on off-chain processes to ensure correct initial token distribution. While not a direct contract vulnerability, a failure in the deployment script could lead to unintended initial token allocations.
+Not confirmed by static analysis (the model's own reading of the source). The constructor's comment states that "potential address duplication is mitigated by the deployment scripts" for `vestingDeposits`. This indicates a reliance on off-chain processes to ensure correct initial token distribution. While not a direct contract vulnerability, a failure in the deployment script could lead to unintended initial token allocations.
 
 **Recommendation:** Implement on-chain validation or a more robust deployment process to prevent potential issues with `vestingDeposits` duplication or errors, if possible. Ensure deployment scripts are thoroughly tested and reviewed.
 

@@ -2,14 +2,14 @@
 token: Arcium
 ticker: ARX
 network: solana
-risk_score: 39
+risk_score: 35
 status: medium
 date: 2026-06-23
 ---
 
 # Arcium (ARX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/arcium-sol)
 
@@ -26,7 +26,7 @@ The Arcium (ARX) SPL token mint has its mint and freeze authorities revoked, ind
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The Arcium (ARX) token is an SPL token operating under the `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no existing… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a healthy liquidity of $300,907 USD, with a very low 24-hour volume of $98 USD, resulting in a normal Volume/Liquidity Ratio of 0.00. The DEX pair has been active for 18 days… |
+| **Governance / Economics** | 2/10 | High | The token exhibits a healthy liquidity of $300,907 USD, with a very low 24-hour volume of $98 USD, resulting in a normal Volume/Liquidity Ratio of 0.00. The DEX pair has been active for 18 days… |
 | **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the token's supply is fixed and accounts cannot be frozen. The token does not utilize Token-2022 extensions that introduce… |
 
 ## Security Findings
@@ -60,7 +60,7 @@ The token's metadata is mutable, meaning its name, symbol, or image can be chang
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The token's metadata is mutable, meaning its name, symbol, or image can be chang
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions

@@ -2,14 +2,14 @@
 token: Uniswap
 ticker: UNI
 network: ethereum
-risk_score: 52
+risk_score: 40
 status: medium
 date: 2026-06-16
 ---
 
 # Uniswap (UNI) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 52/100 — 🟡 Medium Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/uniswap-eth)
 
@@ -25,31 +25,31 @@ The Uni contract implements an ERC-20 token with governance delegation and a con
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract demonstrates good code security practices by using OpenZeppelin's `SafeMath` library to prevent arithmetic overflows/underflows (7.2 Code Security). The implementation of ERC-20, EIP-712… |
-| **Governance / Economics** | 1/10 | High | The contract incorporates a robust governance delegation system, allowing token holders to delegate their voting power, which is a strength for decentralized decision-making (7.5 Governance).… |
-| **Upgrades** | 4/10 | Medium | The contract is not designed with an upgrade mechanism (e.g., proxy pattern), meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates upgrade-related risks such as proxy… |
+| **Technical** | 8/10 | Low | The contract demonstrates good code security practices by using OpenZeppelin's `SafeMath` library to prevent arithmetic overflows/underflows (7.2 Code Security). The implementation of ERC-20, EIP-712… |
+| **Governance / Economics** | 3/10 | High | The contract incorporates a robust governance delegation system, allowing token holders to delegate their voting power, which is a strength for decentralized decision-making (7.5 Governance).… |
+| **Upgrades** | 5/10 | Medium | The contract is not designed with an upgrade mechanism (e.g., proxy pattern), meaning its logic is immutable once deployed (7.7 Upgrades). This eliminates upgrade-related risks such as proxy… |
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Centralized Minter Role  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Minter Role  *(Severity: Medium · Status: Unresolved)*
 
-The `minter` address has the sole authority to mint new tokens, subject to `mintCap` and time constraints. This represents a significant centralization risk (7.3 Access Control, 7.4 Economic). If the `minter`'s private key is compromised, an attacker could inflate the token supply up to the `mintCap` per year, devaluing existing tokens. The `setMinter` function allows the current minter to transfer this critical role, which is also a high-privilege operation.
+Not confirmed by static analysis (the model's own reading of the source). The `minter` address has the sole authority to mint new tokens, subject to `mintCap` and time constraints. This represents a significant centralization risk (7.3 Access Control, 7.4 Economic). If the `minter`'s private key is compromised, an attacker could inflate the token supply up to the `mintCap` per year, devaluing existing tokens. The `setMinter` function allows the current minter to transfer this critical role, which is also a high-privilege operation.
 
 **Recommendation:** Consider decentralizing the `minter` role by assigning it to a robust multi-signature wallet (e.g., Gnosis Safe) or a community-governed smart contract. This would require multiple approvals for minting operations or role transfers, significantly reducing the risk of a single point of failure.
 
 
 ### `L-01` — Potential High Gas Costs for Checkpoints  *(Severity: Low · Status: Unresolved)*
 
-The `_writeCheckpoint` function stores historical vote data for each account. While necessary for the governance delegation mechanism, if an account frequently delegates or transfers tokens, the `numCheckpoints` for that address could grow very large. This could lead to increased gas costs for subsequent `_writeCheckpoint` operations or for reading historical vote data (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `_writeCheckpoint` function stores historical vote data for each account. While necessary for the governance delegation mechanism, if an account frequently delegates or transfers tokens, the `numCheckpoints` for that address could grow very large. This could lead to increased gas costs for subsequent `_writeCheckpoint` operations or for reading historical vote data (7.8 Operations).
 
 **Recommendation:** While this is an inherent design choice for Compound-style governance, consider monitoring the growth of `numCheckpoints` for highly active addresses. For future iterations, explore alternative checkpointing strategies or gas optimization techniques if this becomes a significant operational burden.
 
 
 ### `I-01` — Older Solidity Compiler Version  *(Severity: Informational · Status: Unresolved)*
 
-The contract is compiled with Solidity version `^0.5.16`. While `SafeMath` is correctly used to prevent integer overflows/underflows, newer Solidity versions (e.g., 0.8.x) include built-in overflow/underflow checks by default, making external libraries like `SafeMath` largely redundant and potentially saving gas (7.2 Code Security). Newer compilers also offer additional language features and security improvements.
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version `^0.5.16`. While `SafeMath` is correctly used to prevent integer overflows/underflows, newer Solidity versions (e.g., 0.8.x) include built-in overflow/underflow checks by default, making external libraries like `SafeMath` largely redundant and potentially saving gas (7.2 Code Security). Newer compilers also offer additional language features and security improvements.
 
 **Recommendation:** For future contract deployments or upgrades, consider migrating to a more recent Solidity compiler version (e.g., 0.8.x). This would allow for the removal of `SafeMath` library calls, simplifying the code and potentially reducing gas costs, while benefiting from the latest compiler optimizations and security features.
 
@@ -75,7 +75,7 @@ The contract is compiled with Solidity version `^0.5.16`. While `SafeMath` is co
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -85,7 +85,7 @@ The contract is compiled with Solidity version `^0.5.16`. While `SafeMath` is co
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions

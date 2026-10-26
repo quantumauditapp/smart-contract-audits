@@ -2,14 +2,14 @@
 token: BankrCoin
 ticker: BNKR
 network: base
-risk_score: 25
+risk_score: 4
 status: low
 date: 2026-06-10
 ---
 
 # BankrCoin (BNKR) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 25/100 — 🟢 Low Risk**
+> **Risk Score: 4/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bankrcoin-base)
 
@@ -25,8 +25,8 @@ The Clanker protocol consists of a factory contract (`Clanker`) for deploying ne
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The technical architecture (7.1) utilizes a factory pattern with `create2` for predictable token addresses and integrates with Uniswap V3 for liquidity. Code security (7.2) benefits from Solidity… |
-| **Governance / Economics** | 5/10 | Medium | Access control (7.3) is heavily centralized, with the `deployToken` function restricted to `onlyOwner` (H-01), giving the contract owner sole control over new token creation and liquidity… |
+| **Technical** | 10/10 | Low | The technical architecture (7.1) utilizes a factory pattern with `create2` for predictable token addresses and integrates with Uniswap V3 for liquidity. Code security (7.2) benefits from Solidity… |
+| **Governance / Economics** | 6/10 | Medium | Access control (7.3) is heavily centralized, with the `deployToken` function restricted to `onlyOwner` (H-01), giving the contract owner sole control over new token creation and liquidity… |
 | **Upgrades** | 9/10 | Low | The `Clanker` contract is not designed as an upgradeable proxy, meaning its logic is immutable once deployed. The `Token` contracts are deployed via `create2` and are also immutable. Therefore, there… |
 
 ## LP Distribution
@@ -38,46 +38,46 @@ The Clanker protocol consists of a factory contract (`Clanker`) for deploying ne
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 3 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control over Token Deployment  *(Severity: High · Status: Unresolved)*
-
-The `deployToken` function, which is responsible for creating new `Token` contracts, establishing Uniswap V3 liquidity pools, and locking LP tokens, is restricted to `onlyOwner`. This means that only the contract owner can initiate the creation of new tokens and their associated liquidity. This centralization introduces a single point of failure, limits the protocol's decentralization, and could lead to censorship or bottlenecks in token creation.
-
-**Recommendation:** Consider decentralizing the token deployment process. Options include: 1) Removing the `onlyOwner` modifier to allow anyone to deploy tokens (if appropriate for the protocol's design). 2) Implementing a multi-signature wallet or a decentralized autonomous organization (DAO) for approving token deployments. 3) Introducing a whitelisting mechanism for trusted deployers, managed by a multi-sig or DAO.
-
+_🟡 2 Medium · 🟢 3 Low · ⚪ 1 Informational_
 
 ### `M-01` — Arbitrary `weth` Address Requirement for Token Deployment  *(Severity: Medium · Status: Unresolved)*
 
-The `deployToken` function includes a `require(address(token) < weth, "Invalid salt");` condition. This forces the deployed token's address (determined by `create2` with a user-provided `_salt`) to be numerically less than the `weth` address. This arbitrary requirement can significantly increase the computational burden and gas costs for users attempting to find a valid `_salt` that satisfies this condition. In some scenarios, it might even make it practically impossible to deploy a token if `weth` has a very low address, hindering legitimate token creation.
+Not confirmed by static analysis (the model's own reading of the source). The `deployToken` function includes a `require(address(token) < weth, "Invalid salt");` condition. This forces the deployed token's address (determined by `create2` with a user-provided `_salt`) to be numerically less than the `weth` address. This arbitrary requirement can significantly increase the computational burden and gas costs for users attempting to find a valid `_salt` that satisfies this condition. In some scenarios, it might even make it practically impossible to deploy a token if `weth` has a very low address, hindering legitimate token creation.
 
 **Recommendation:** Re-evaluate the necessity of the `address(token) < weth` requirement. If it serves no critical security or functional purpose, it should be removed to improve usability and reduce deployment costs. If there is a specific architectural reason, consider alternative, less restrictive methods to achieve the desired consistency, or provide tools to assist users in generating valid salts efficiently.
 
 
+### `M-02` — Centralized Control over Token Deployment  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `deployToken` function, which is responsible for creating new `Token` contracts, establishing Uniswap V3 liquidity pools, and locking LP tokens, is restricted to `onlyOwner`. This means that only the contract owner can initiate the creation of new tokens and their associated liquidity. This centralization introduces a single point of failure, limits the protocol's decentralization, and could lead to censorship or bottlenecks in token creation.
+
+**Recommendation:** Consider decentralizing the token deployment process. Options include: 1) Removing the `onlyOwner` modifier to allow anyone to deploy tokens (if appropriate for the protocol's design). 2) Implementing a multi-signature wallet or a decentralized autonomous organization (DAO) for approving token deployments. 3) Introducing a whitelisting mechanism for trusted deployers, managed by a multi-sig or DAO.
+
+
 ### `L-01` — Immutability of Key Economic Parameters  *(Severity: Low · Status: Unresolved)*
 
-The `defaultLockingPeriod` and `lpFeesCut` variables are set during the constructor and are not provided with setter functions. This makes them immutable after deployment. While immutability can offer predictability, the lack of flexibility might become an issue if market conditions, regulatory requirements, or protocol strategies necessitate adjustments to these parameters in the future. This could lead to the protocol becoming rigid or requiring a full redeployment to adapt.
+Not confirmed by static analysis (the model's own reading of the source). The `defaultLockingPeriod` and `lpFeesCut` variables are set during the constructor and are not provided with setter functions. This makes them immutable after deployment. While immutability can offer predictability, the lack of flexibility might become an issue if market conditions, regulatory requirements, or protocol strategies necessitate adjustments to these parameters in the future. This could lead to the protocol becoming rigid or requiring a full redeployment to adapt.
 
 **Recommendation:** Consider adding owner-controlled setter functions for `defaultLockingPeriod` and `lpFeesCut`. These setters should include appropriate access control (e.g., `onlyOwner`) and potentially a timelock or a multi-signature approval mechanism for sensitive changes to ensure security and provide a grace period for users to react.
 
 
 ### `L-02` — Immutability of `taxCollector` and `bundleFeeSwitch`  *(Severity: Low · Status: Unresolved)*
 
-The `taxCollector` address is set in the constructor and is immutable. If this address is initially set incorrectly (e.g., to a non-existent address, a contract that cannot receive ETH, or a malicious address), the fee collection mechanism (`bundleFeeSwitch`) could be permanently broken or funds could be misdirected. Similarly, the `bundleFeeSwitch` itself is a public variable without a setter, making its state (whether fees are collected or not) immutable after deployment. This lack of configurability for a critical economic parameter limits the protocol's adaptability.
+Not confirmed by static analysis (the model's own reading of the source). The `taxCollector` address is set in the constructor and is immutable. If this address is initially set incorrectly (e.g., to a non-existent address, a contract that cannot receive ETH, or a malicious address), the fee collection mechanism (`bundleFeeSwitch`) could be permanently broken or funds could be misdirected. Similarly, the `bundleFeeSwitch` itself is a public variable without a setter, making its state (whether fees are collected or not) immutable after deployment. This lack of configurability for a critical economic parameter limits the protocol's adaptability.
 
 **Recommendation:** Implement owner-controlled setter functions for both `taxCollector` and `bundleFeeSwitch`. For `taxCollector`, ensure the setter includes input validation (e.g., `require(newTaxCollector != address(0))`). For both, consider adding a timelock or multi-signature approval for changes to enhance security and provide transparency.
 
 
 ### `L-03` — Unchecked Return Values of External Calls  *(Severity: Low · Status: Unresolved)*
 
-While the `call` to `taxCollector` explicitly checks its success, some other external calls to Uniswap V3 components (e.g., `uniswapV3Factory.createPool`, `positionManager.mint`, `liquidityLocker.deploy`, `ILocker(lockerAddress).initializer`) and `ISwapRouter.exactInputSingle` do not explicitly check their return values. Although these are typically interface calls that revert on failure, explicit checks or `try/catch` blocks can provide additional robustness and clearer error handling, especially for calls to external, potentially less trusted, contracts.
+Not confirmed by static analysis (the model's own reading of the source). While the `call` to `taxCollector` explicitly checks its success, some other external calls to Uniswap V3 components (e.g., `uniswapV3Factory.createPool`, `positionManager.mint`, `liquidityLocker.deploy`, `ILocker(lockerAddress).initializer`) and `ISwapRouter.exactInputSingle` do not explicitly check their return values. Although these are typically interface calls that revert on failure, explicit checks or `try/catch` blocks can provide additional robustness and clearer error handling, especially for calls to external, potentially less trusted, contracts.
 
 **Recommendation:** For critical external calls, consider adding explicit checks for return values or wrapping them in `try/catch` blocks to handle potential failures gracefully. This can improve the contract's resilience against unexpected behavior from external dependencies.
 
 
 ### `I-01` — `deprecated` Flag Lifecycle Management  *(Severity: Informational · Status: Unresolved)*
 
-The `deprecated` flag, controllable by the owner, prevents new token deployments when set to `true`. However, there is no mechanism to un-deprecate the contract. While this might be an intentional design choice for a final shutdown, it means that once deprecated, the factory cannot resume its primary function without a new deployment. The contract also does not specify how existing tokens or liquidity pools are affected or managed after deprecation.
+Not confirmed by static analysis (the model's own reading of the source). The `deprecated` flag, controllable by the owner, prevents new token deployments when set to `true`. However, there is no mechanism to un-deprecate the contract. While this might be an intentional design choice for a final shutdown, it means that once deprecated, the factory cannot resume its primary function without a new deployment. The contract also does not specify how existing tokens or liquidity pools are affected or managed after deprecation.
 
 **Recommendation:** Clarify the intended lifecycle of the `deprecated` flag. If temporary deprecation is desired, implement a function to revert the flag. If permanent, ensure documentation clearly states this. Additionally, consider adding logic or documentation regarding the implications of deprecation on existing deployed tokens and their liquidity.
 

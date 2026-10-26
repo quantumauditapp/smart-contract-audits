@@ -2,14 +2,14 @@
 token: Cap
 ticker: CAP
 network: ethereum
-risk_score: 48
+risk_score: 44
 status: medium
 date: 2026-06-29
 ---
 
 # Cap (CAP) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 48/100 — 🟡 Medium Risk**
+> **Risk Score: 44/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cap-eth)
 
@@ -26,8 +26,8 @@ This audit covers an ERC1967Proxy contract, which is a standard upgradeable prox
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The audited code consists of standard OpenZeppelin ERC1967Proxy contracts, which are widely used and have undergone extensive community review and formal verification. The proxy correctly implements… |
-| **Governance / Economics** | 2/10 | High | The ERC1967Proxy contract itself does not contain any direct governance or economic logic (7.4 Economic, 7.5 Governance). Its role is purely to delegate calls. Therefore, there are no inherent… |
-| **Upgrades** | 2/10 | High | The contract implements the UUPS (Universal Upgradeable Proxy Standard) pattern, which is a robust and widely adopted upgrade mechanism (7.7 Upgrades). The proxy delegates upgrade authorization to… |
+| **Governance / Economics** | 3/10 | High | The ERC1967Proxy contract itself does not contain any direct governance or economic logic (7.4 Economic, 7.5 Governance). Its role is purely to delegate calls. Therefore, there are no inherent… |
+| **Upgrades** | 3/10 | High | The contract implements the UUPS (Universal Upgradeable Proxy Standard) pattern, which is a robust and widely adopted upgrade mechanism (7.7 Upgrades). The proxy delegates upgrade authorization to… |
 
 ## Proxy Upgrade Controls
 
@@ -43,35 +43,35 @@ _🟢 1 Low · ⚪ 4 Informational_
 
 ### `L-01` — Potential for Stuck Funds with `msg.value` in Initializer  *(Severity: Low · Status: Unresolved)*
 
-The `ERC1967Utils.upgradeToAndCall` function, when called with `data` (e.g., for initialization), allows `msg.value` to be forwarded to the implementation via `Address.functionDelegateCall`. If the target function in the implementation is not `payable` or does not properly handle received `msg.value`, any Ether sent during deployment or upgrade with initialization data could become permanently stuck in the implementation contract. While `_checkNonPayable()` prevents `msg.value` if `data` is empty, the case with `data` requires developer vigilance. (Coverage: 7.2 Code Security, 7.4 Economic)
+Not confirmed by static analysis (the model's own reading of the source). The `ERC1967Utils.upgradeToAndCall` function, when called with `data` (e.g., for initialization), allows `msg.value` to be forwarded to the implementation via `Address.functionDelegateCall`. If the target function in the implementation is not `payable` or does not properly handle received `msg.value`, any Ether sent during deployment or upgrade with initialization data could become permanently stuck in the implementation contract. While `_checkNonPayable()` prevents `msg.value` if `data` is empty, the case with `data` requires developer vigilance. (Coverage: 7.2 Code Security, 7.4 Economic)
 
 **Recommendation:** Ensure that any function in the implementation contract intended to be called via `upgradeToAndCall` with `data` is explicitly marked `payable` if it is expected to receive Ether. If no Ether is expected, ensure the function is not `payable` or that any received Ether is handled (e.g., forwarded or reverted) to prevent funds from being stuck.
 
 
 ### `I-01` — Core Logic Resides in Unaudited Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The `ERC1967Proxy` contract acts as a transparent proxy, delegating all calls to an external implementation contract. The security, functionality, and economic integrity of the system are entirely dependent on the implementation contract, which was not provided for this audit. Without auditing the implementation, no definitive statement can be made about the overall system's security. (Coverage: 7.1 Architecture, 7.2 Code Security, 7.4 Economic)
+Not confirmed by static analysis (the model's own reading of the source). The `ERC1967Proxy` contract acts as a transparent proxy, delegating all calls to an external implementation contract. The security, functionality, and economic integrity of the system are entirely dependent on the implementation contract, which was not provided for this audit. Without auditing the implementation, no definitive statement can be made about the overall system's security. (Coverage: 7.1 Architecture, 7.2 Code Security, 7.4 Economic)
 
 **Recommendation:** Conduct a full security audit of the implementation contract to identify and mitigate any vulnerabilities. Ensure the implementation adheres to best practices for smart contract security, including reentrancy guards, access control, and secure arithmetic operations.
 
 
 ### `I-02` — Upgrade Authorization Logic External to Proxy  *(Severity: Informational · Status: Unresolved)*
 
-This is a UUPS proxy, meaning the logic for authorizing upgrades resides within the implementation contract (e.g., via an `_authorizeUpgrade` function). The security of future upgrades, including who can initiate them and under what conditions, is solely determined by the implementation's access control and upgrade logic, which is outside the scope of this review. An insecure `_authorizeUpgrade` function in the implementation could lead to unauthorized upgrades. (Coverage: 7.3 Access Control, 7.7 Upgrades)
+Not confirmed by static analysis (the model's own reading of the source). This is a UUPS proxy, meaning the logic for authorizing upgrades resides within the implementation contract (e.g., via an `_authorizeUpgrade` function). The security of future upgrades, including who can initiate them and under what conditions, is solely determined by the implementation's access control and upgrade logic, which is outside the scope of this review. An insecure `_authorizeUpgrade` function in the implementation could lead to unauthorized upgrades. (Coverage: 7.3 Access Control, 7.7 Upgrades)
 
 **Recommendation:** Ensure the implementation contract's `_authorizeUpgrade` function (or equivalent upgrade authorization logic) is robustly secured, ideally using a multi-signature wallet or a time-locked governance mechanism. Thoroughly test the upgrade path to prevent unauthorized or malicious upgrades.
 
 
 ### `I-03` — Criticality of Initializer Function in Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The proxy's constructor calls `ERC1967Utils.upgradeToAndCall` which can execute an initialization function on the implementation if `_data` is provided. It is crucial that the implementation's initializer is correctly implemented, callable only once, and secured against re-initialization attacks to prevent critical vulnerabilities that could lead to ownership hijacking or state corruption. (Coverage: 7.2 Code Security, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The proxy's constructor calls `ERC1967Utils.upgradeToAndCall` which can execute an initialization function on the implementation if `_data` is provided. It is crucial that the implementation's initializer is correctly implemented, callable only once, and secured against re-initialization attacks to prevent critical vulnerabilities that could lead to ownership hijacking or state corruption. (Coverage: 7.2 Code Security, 7.8 Operations)
 
 **Recommendation:** Implement a robust `initializer` function in the implementation contract, ensuring it uses the `_disableInitializers` modifier from OpenZeppelin's `Initializable` contract to prevent multiple invocations. Carefully review the logic within the initializer to ensure it correctly sets up the contract's initial state.
 
 
 ### `I-04` — Storage Collision Risk with Implementation  *(Severity: Informational · Status: Unresolved)*
 
-While OpenZeppelin's ERC-1967 proxy uses well-defined storage slots for its internal variables (e.g., `IMPLEMENTATION_SLOT`), any implementation contract must be carefully designed to avoid storage collisions with these proxy-specific slots. Improper storage layout in the implementation, especially if not using `UUPSUpgradeable` or `TransparentUpgradeableProxy` correctly, could lead to critical state corruption or unexpected behavior. (Coverage: 7.1 Architecture, 7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). While OpenZeppelin's ERC-1967 proxy uses well-defined storage slots for its internal variables (e.g., `IMPLEMENTATION_SLOT`), any implementation contract must be carefully designed to avoid storage collisions with these proxy-specific slots. Improper storage layout in the implementation, especially if not using `UUPSUpgradeable` or `TransparentUpgradeableProxy` correctly, could lead to critical state corruption or unexpected behavior. (Coverage: 7.1 Architecture, 7.2 Code Security)
 
 **Recommendation:** Ensure the implementation contract inherits from `UUPSUpgradeable` (or `TransparentUpgradeableProxy` if using that pattern) and follows its storage layout guidelines. Avoid declaring state variables at storage slot 0 or other slots reserved by the proxy. Use tools like `solidity-storage-layout` to verify storage compatibility between the proxy and implementation.
 
@@ -97,7 +97,7 @@ While OpenZeppelin's ERC-1967 proxy uses well-defined storage slots for its inte
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ❌ Fail |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
@@ -107,7 +107,7 @@ While OpenZeppelin's ERC-1967 proxy uses well-defined storage slots for its inte
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ❌ | Ownership **not renounced** — the deployer retains control over parameters. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Frequently Asked Questions

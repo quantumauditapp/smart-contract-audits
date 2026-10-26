@@ -2,14 +2,14 @@
 token: assface
 ticker: ASSFACE
 network: solana
-risk_score: 54
-status: medium
+risk_score: 24
+status: low
 date: 2026-06-10
 ---
 
 # assface (ASSFACE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 54/100 — 🟡 Medium Risk**
+> **Risk Score: 24/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/assface-sol)
 
@@ -25,9 +25,9 @@ This audit of the assface SPL Token Mint identifies a critical risk flagged by a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token mint operates on the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen. The… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a liquidity of $26,072 USD, supported by a 24-hour trading volume of $6,460 USD, resulting in a normal Volume/Liquidity Ratio of 0.25. The DEX pair has been active for 83 days… |
-| **Upgrades** | 7/10 | Low | The token's metadata is immutable, meaning its name, symbol, or image cannot be changed post-launch. Key Token-2022 extensions, such as transfer fee and transfer hook, are not upgradable, ensuring… |
+| **Technical** | 10/10 | Low | The token mint operates on the spl-token-2022 program. Both the mint authority and freeze authority are revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen. The… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a liquidity of $26,072 USD, supported by a 24-hour trading volume of $6,460 USD, resulting in a normal Volume/Liquidity Ratio of 0.25. The DEX pair has been active for 83 days… |
+| **Upgrades** | 10/10 | Low | The token's metadata is immutable, meaning its name, symbol, or image cannot be changed post-launch. Key Token-2022 extensions, such as transfer fee and transfer hook, are not upgradable, ensuring… |
 
 ## Security Findings
 
@@ -53,13 +53,13 @@ An independent third-party risk registry classifies this token as high-risk base
 | **Top-10 Holders** | 76.4% of supply |
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -68,7 +68,7 @@ An independent third-party risk registry classifies this token as high-risk base
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

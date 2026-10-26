@@ -2,14 +2,14 @@
 token: Moonbirds
 ticker: BIRB
 network: solana
-risk_score: 27
+risk_score: 23
 status: low
 date: 2026-07-02
 ---
 
 # Moonbirds (BIRB) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 27/100 — 🟢 Low Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/moonbirds-sol)
 
@@ -26,8 +26,8 @@ The Moonbirds (BIRB) SPL token mint has revoked both mint and freeze authorities
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Moonbirds (BIRB) token is implemented using the classic SPL Token Program (v3). Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no… |
-| **Governance / Economics** | 3/10 | High | The token exhibits healthy liquidity of $1,582,428 USD and a 24-hour trading volume of $501,603 USD, with a normal volume/liquidity ratio of 0.32. The DEX pair has been active for 163 days, providing… |
-| **Upgrades** | 8/10 | Low | The mint and freeze authorities for the token have been permanently revoked, preventing any future changes to the token's supply or account freeze status. However, the token's metadata remains… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits healthy liquidity of $1,582,428 USD and a 24-hour trading volume of $501,603 USD, with a normal volume/liquidity ratio of 0.32. The DEX pair has been active for 163 days, providing… |
+| **Upgrades** | 9/10 | Low | The mint and freeze authorities for the token have been permanently revoked, preventing any future changes to the token's supply or account freeze status. However, the token's metadata remains… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ Token name, symbol, or image can be changed post-launch. This is indicated by th
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Token name, symbol, or image can be changed post-launch. This is indicated by th
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

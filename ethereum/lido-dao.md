@@ -2,14 +2,14 @@
 token: Lido DAO
 ticker: LDO
 network: ethereum
-risk_score: 51
-status: medium
+risk_score: 29
+status: low
 date: 2026-07-16
 ---
 
 # Lido DAO (LDO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 51/100 — 🟡 Medium Risk**
+> **Risk Score: 29/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/lido-dao-eth)
 
@@ -25,8 +25,8 @@ The MiniMeToken contract implements an ERC20-like token with a unique cloning me
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract implements a custom ERC20-like token with a historical balance tracking mechanism. Strengths include a clear separation of concerns with the `Controlled` base contract and an… |
-| **Governance / Economics** | 1/10 | High | The economic and governance model is highly centralized around the `controller` address. This address, initially the contract deployer, has extensive power, including the ability to change the… |
+| **Technical** | 10/10 | Low | The contract implements a custom ERC20-like token with a historical balance tracking mechanism. Strengths include a clear separation of concerns with the `Controlled` base contract and an… |
+| **Governance / Economics** | 2/10 | High | The economic and governance model is highly centralized around the `controller` address. This address, initially the contract deployer, has extensive power, including the ability to change the… |
 | **Upgrades** | 6/10 | Medium | The MiniMeToken contract is not designed as an upgradeable proxy contract. It is a standard, immutable contract deployed directly to the blockchain. Therefore, there are no upgrade-specific risks… |
 
 ## LP Distribution
@@ -38,39 +38,39 @@ The MiniMeToken contract implements an ERC20-like token with a unique cloning me
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control by Controller  *(Severity: High · Status: Unresolved)*
-
-The `controller` address, initially the contract deployer, possesses extensive power over the token contract. This includes the ability to change the controller, enable/disable transfers, and bypass standard `transferFrom` allowance checks to move tokens arbitrarily. This represents a significant centralization risk and a single point of failure. If the controller's private key is compromised, all token holders could be at risk.
-
-**Recommendation:** Evaluate if such a high degree of centralization is necessary. If not, consider implementing a multi-signature wallet for the controller address or transitioning control to a decentralized autonomous organization (DAO) for critical functions like `changeController` and `enableTransfers`/`disableTransfers`. Ensure robust security measures are in place for the controller's private key.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Old Solidity Compiler Version and Lack of SafeMath  *(Severity: Medium · Status: Unresolved)*
 
-The contract uses `pragma solidity ^0.4.24`, an outdated compiler version. This version lacks built-in overflow/underflow protection (like SafeMath in newer versions) and may contain known compiler bugs. While some checks are present (e.g., `previousBalanceFrom >= _amount`), other arithmetic operations, especially with `uint128` values in `Checkpoint` structs or in the truncated `generateTokens`/`destroyTokens` functions, could be vulnerable if not explicitly guarded. This increases the risk of unexpected behavior or exploits.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses `pragma solidity ^0.4.24`, an outdated compiler version. This version lacks built-in overflow/underflow protection (like SafeMath in newer versions) and may contain known compiler bugs. While some checks are present (e.g., `previousBalanceFrom >= _amount`), other arithmetic operations, especially with `uint128` values in `Checkpoint` structs or in the truncated `generateTokens`/`destroyTokens` functions, could be vulnerable if not explicitly guarded. This increases the risk of unexpected behavior or exploits.
 
 **Recommendation:** Upgrade the contract to a modern Solidity compiler version (e.g., 0.8.x) which includes default overflow/underflow checks. If upgrading is not feasible, thoroughly audit all arithmetic operations, especially those involving `uint128` and `uint256` types, and explicitly implement `SafeMath` checks for all additions, subtractions, and multiplications to prevent overflows and underflows.
 
 
 ### `M-02` — ERC20 `approve` Front-Running Vulnerability  *(Severity: Medium · Status: Unresolved)*
 
-The standard ERC20 `approve` function is susceptible to a known front-running attack. If a user approves an amount, then attempts to approve a different amount, a malicious actor can front-run the second transaction. This allows the malicious actor to spend the original approved amount, and then the new approval is set, potentially leading to a double-spend of the approved amount if the user intended to reduce the allowance.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC20 `approve` function is susceptible to a known front-running attack. If a user approves an amount, then attempts to approve a different amount, a malicious actor can front-run the second transaction. This allows the malicious actor to spend the original approved amount, and then the new approval is set, potentially leading to a double-spend of the approved amount if the user intended to reduce the allowance.
 
 **Recommendation:** Advise users to set the allowance to zero (`approve(spender, 0)`) before setting a new non-zero allowance. Alternatively, consider implementing an `increaseAllowance` and `decreaseAllowance` pattern, as seen in modern ERC20 implementations, which mitigates this specific front-running vector.
 
 
+### `M-03` — Centralized Control by Controller  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `controller` address, initially the contract deployer, possesses extensive power over the token contract. This includes the ability to change the controller, enable/disable transfers, and bypass standard `transferFrom` allowance checks to move tokens arbitrarily. This represents a significant centralization risk and a single point of failure. If the controller's private key is compromised, all token holders could be at risk.
+
+**Recommendation:** Evaluate if such a high degree of centralization is necessary. If not, consider implementing a multi-signature wallet for the controller address or transitioning control to a decentralized autonomous organization (DAO) for critical functions like `changeController` and `enableTransfers`/`disableTransfers`. Ensure robust security measures are in place for the controller's private key.
+
+
 ### `L-01` — Non-Standard `transferFrom` Return Behavior  *(Severity: Low · Status: Unresolved)*
 
-The `transferFrom` function returns `false` on insufficient allowance rather than reverting. While technically compliant with the original ERC20 specification, modern Solidity best practices and many integrations expect a `revert` on failure. Returning `false` can lead to unexpected behavior or silent failures in consuming contracts that do not explicitly check the return value.
+Not confirmed by static analysis (the model's own reading of the source). The `transferFrom` function returns `false` on insufficient allowance rather than reverting. While technically compliant with the original ERC20 specification, modern Solidity best practices and many integrations expect a `revert` on failure. Returning `false` can lead to unexpected behavior or silent failures in consuming contracts that do not explicitly check the return value.
 
 **Recommendation:** Consider modifying the `transferFrom` function to `revert` (using `require()` or `revert()`) instead of returning `false` when the allowance is insufficient. This aligns with current best practices and improves compatibility with modern DeFi protocols and tools.
 
 
 ### `I-01` — Lack of Event Emission for Critical Actions  *(Severity: Informational · Status: Unresolved)*
 
-Critical state-changing actions, such as `changeController`, `enableTransfers`, `disableTransfers`, and potentially token minting/burning (if present in the truncated code), do not emit corresponding events. This hinders off-chain monitoring, transparency, and makes it difficult to track significant administrative changes or token supply adjustments.
+Not confirmed by static analysis (the model's own reading of the source). Critical state-changing actions, such as `changeController`, `enableTransfers`, `disableTransfers`, and potentially token minting/burning (if present in the truncated code), do not emit corresponding events. This hinders off-chain monitoring, transparency, and makes it difficult to track significant administrative changes or token supply adjustments.
 
 **Recommendation:** Emit events for all critical state-changing functions. For example, `event ControllerChanged(address indexed oldController, address indexed newController);` or `event TransfersEnabled(bool enabled);`. This enhances transparency and allows for easier integration with off-chain monitoring systems.
 

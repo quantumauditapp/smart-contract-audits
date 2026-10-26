@@ -2,14 +2,14 @@
 token: Grass
 ticker: GRASS
 network: solana
-risk_score: 53
+risk_score: 41
 status: medium
 date: 2026-06-24
 ---
 
 # Grass (GRASS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 53/100 — 🟡 Medium Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/grass-sol)
 
@@ -25,9 +25,9 @@ The Grass (GRASS) SPL token mint presents a critical risk due to an active mint 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is implemented using the classic SPL Token Program (spl-token). A critical finding is the active mint authority, held by 31rYartQwHeBMjAe2MgGpffGV57fQY3kug4BDN8tLGqQ, which enables the… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate liquidity at $320,381 USD, with a healthy 24-hour volume of $7,110 USD. The Volume/Liquidity Ratio is 0.02, which does not indicate wash trading. The DEX pair has been… |
-| **Upgrades** | 4/10 | Medium | The mint authority remains active, allowing for potential changes to the token's total supply. The freeze authority has been revoked, which is a positive for the immutability of account states.… |
+| **Technical** | 8/10 | Low | The token is implemented using the classic SPL Token Program (spl-token). A critical finding is the active mint authority, held by 31rYartQwHeBMjAe2MgGpffGV57fQY3kug4BDN8tLGqQ, which enables the… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity at $320,381 USD, with a healthy 24-hour volume of $7,110 USD. The Volume/Liquidity Ratio is 0.02, which does not indicate wash trading. The DEX pair has been… |
+| **Upgrades** | 6/10 | Medium | The mint authority remains active, allowing for potential changes to the token's total supply. The freeze authority has been revoked, which is a positive for the immutability of account states.… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions

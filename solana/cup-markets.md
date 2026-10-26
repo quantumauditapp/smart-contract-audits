@@ -2,14 +2,14 @@
 token: Cup Markets
 ticker: CUP
 network: solana
-risk_score: 47
-status: medium
+risk_score: 33
+status: low
 date: 2026-06-10
 ---
 
 # Cup Markets (CUP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 47/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cup-markets-sol)
 
@@ -25,9 +25,9 @@ The Cup Markets (CUP) token exhibits a high economic risk due to very low DEX li
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Cup Markets (CUP) token operates on the standard `spl-token` program. Both the Mint Authority and Freeze Authority are revoked, indicating that no new tokens can be minted and no existing… |
-| **Governance / Economics** | 1/10 | High | The economic profile of the Cup Markets (CUP) token presents a high risk due to its very low DEX liquidity, currently at $8,051. This level of liquidity makes large trades highly susceptible to… |
-| **Upgrades** | 8/10 | Low | The Cup Markets (CUP) token has a fixed supply model as its Mint Authority is revoked, preventing further token issuance. Similarly, the Freeze Authority is also revoked, meaning no accounts can be… |
+| **Technical** | 10/10 | Low | The Cup Markets (CUP) token operates on the standard `spl-token` program. Both the Mint Authority and Freeze Authority are revoked, indicating that no new tokens can be minted and no existing… |
+| **Governance / Economics** | 3/10 | High | The economic profile of the Cup Markets (CUP) token presents a high risk due to its very low DEX liquidity, currently at $8,051. This level of liquidity makes large trades highly susceptible to… |
+| **Upgrades** | 9/10 | Low | The Cup Markets (CUP) token has a fixed supply model as its Mint Authority is revoked, preventing further token issuance. Similarly, the Freeze Authority is also revoked, meaning no accounts can be… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions

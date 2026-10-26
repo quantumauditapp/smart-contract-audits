@@ -2,14 +2,14 @@
 token: HOME
 ticker: HOME
 network: base
-risk_score: 52
-status: medium
+risk_score: 34
+status: low
 date: 2026-07-17
 ---
 
 # HOME (HOME) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 52/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/home-base)
 
@@ -25,9 +25,9 @@ This report covers a security review of the provided Solidity source code. It is
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The technical review was severely limited as only LayerZero v2 interface definitions were provided, not the implementation code for the 'HomeCanonical' contract. This prevents any assessment of the… |
-| **Governance / Economics** | 2/10 | High | The economic and governance aspects of the 'HomeCanonical' contract could not be evaluated due to the absence of its implementation code. This means no assessment of tokenomics, fee structures… |
-| **Upgrades** | 6/10 | Medium | The upgradeability mechanisms (7.7 Upgrades) of the 'HomeCanonical' contract could not be assessed as its implementation code was not provided. Without the contract's source, it is impossible to… |
+| **Technical** | 10/10 | Low | The technical review was severely limited as only LayerZero v2 interface definitions were provided, not the implementation code for the 'HomeCanonical' contract. This prevents any assessment of the… |
+| **Governance / Economics** | 3/10 | High | The economic and governance aspects of the 'HomeCanonical' contract could not be evaluated due to the absence of its implementation code. This means no assessment of tokenomics, fee structures… |
+| **Upgrades** | 7/10 | Low | The upgradeability mechanisms (7.7 Upgrades) of the 'HomeCanonical' contract could not be assessed as its implementation code was not provided. Without the contract's source, it is impossible to… |
 
 ## LP Distribution
 
@@ -38,32 +38,32 @@ This report covers a security review of the provided Solidity source code. It is
 
 ## Security Findings
 
-_🔴 1 Critical · ⚪ 3 Informational_
+_🟡 1 Medium · ⚪ 3 Informational_
 
-### `C-01` — Missing Core Contract Implementation  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Missing Core Contract Implementation  *(Severity: Medium · Status: Unresolved)*
 
-The provided source code consists solely of LayerZero v2 interface definitions (e.g., `ILayerZeroEndpointV2`, `ILayerZeroReceiver`). The actual implementation code for the `HomeCanonical` contract, which is the stated target of this audit, was not included. This prevents any meaningful security analysis of the contract's logic, state variables, access control, and potential vulnerabilities like reentrancy, integer overflows, or specific business logic flaws.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code consists solely of LayerZero v2 interface definitions (e.g., `ILayerZeroEndpointV2`, `ILayerZeroReceiver`). The actual implementation code for the `HomeCanonical` contract, which is the stated target of this audit, was not included. This prevents any meaningful security analysis of the contract's logic, state variables, access control, and potential vulnerabilities like reentrancy, integer overflows, or specific business logic flaws.
 
 **Recommendation:** Provide the complete and verified Solidity source code for the `HomeCanonical` contract, including all its dependencies and libraries, to enable a comprehensive security audit.
 
 
 ### `I-01` — Reliance on LayerZero v2 Protocol Security  *(Severity: Informational · Status: Unresolved)*
 
-The `HomeCanonical` contract, as indicated by the provided interfaces, relies heavily on the LayerZero v2 protocol for cross-chain messaging. The security and integrity of the `HomeCanonical` contract will be directly dependent on the robustness and security of the underlying LayerZero v2 infrastructure, including its endpoints, message libraries, and relayers. Any vulnerabilities or compromises within the LayerZero v2 protocol could potentially impact the `HomeCanonical` contract.
+Not confirmed by static analysis (the model's own reading of the source). The `HomeCanonical` contract, as indicated by the provided interfaces, relies heavily on the LayerZero v2 protocol for cross-chain messaging. The security and integrity of the `HomeCanonical` contract will be directly dependent on the robustness and security of the underlying LayerZero v2 infrastructure, including its endpoints, message libraries, and relayers. Any vulnerabilities or compromises within the LayerZero v2 protocol could potentially impact the `HomeCanonical` contract.
 
 **Recommendation:** While the LayerZero v2 protocol is designed for security, it is crucial for the project team to stay informed about any security updates, audits, or known vulnerabilities related to LayerZero. Implement robust monitoring for cross-chain operations and consider circuit breakers for extreme scenarios.
 
 
 ### `I-02` — Unassessable Access Control Mechanisms  *(Severity: Informational · Status: Unresolved)*
 
-Without the implementation code for `HomeCanonical`, it is impossible to assess the access control mechanisms (7.3 Access Control) governing critical functions. This includes identifying privileged roles (e.g., owner, admin, governor), verifying proper authorization checks (e.g., `onlyOwner`, `require(msg.sender == _someRole)`), and ensuring that sensitive operations are adequately protected against unauthorized execution.
+Not confirmed by static analysis (the model's own reading of the source). Without the implementation code for `HomeCanonical`, it is impossible to assess the access control mechanisms (7.3 Access Control) governing critical functions. This includes identifying privileged roles (e.g., owner, admin, governor), verifying proper authorization checks (e.g., `onlyOwner`, `require(msg.sender == _someRole)`), and ensuring that sensitive operations are adequately protected against unauthorized execution.
 
 **Recommendation:** Once the full contract code is available, a detailed review of all access control patterns should be conducted. Ensure that the principle of least privilege is applied, and that multi-signature wallets are used for critical administrative functions where appropriate.
 
 
 ### `I-03` — Unverified Economic and Governance Model  *(Severity: Informational · Status: Unresolved)*
 
-The economic model (7.4 Economic) and governance structure (7.5 Governance) of the `HomeCanonical` contract cannot be verified or audited without its full implementation. This includes aspects such as fee collection, reward distribution, tokenomics, and any on-chain voting or administrative processes. Unforeseen economic incentives or governance flaws could lead to instability or manipulation.
+Not confirmed by static analysis (the model's own reading of the source). The economic model (7.4 Economic) and governance structure (7.5 Governance) of the `HomeCanonical` contract cannot be verified or audited without its full implementation. This includes aspects such as fee collection, reward distribution, tokenomics, and any on-chain voting or administrative processes. Unforeseen economic incentives or governance flaws could lead to instability or manipulation.
 
 **Recommendation:** Upon receiving the full contract code, a thorough review of the economic and governance logic should be performed. This includes simulating various scenarios to identify potential attack vectors or unintended consequences related to incentives, fees, and decision-making processes.
 

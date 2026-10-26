@@ -2,14 +2,14 @@
 token: Sherbert The Tree
 ticker: SHERBERT
 network: solana
-risk_score: 55
-status: medium
+risk_score: 33
+status: low
 date: 2026-06-13
 ---
 
 # Sherbert The Tree (SHERBERT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 55/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sherbert-the-tree-sol)
 
@@ -25,9 +25,9 @@ This audit of the Sherbert The Tree (SHERBERT) SPL Token Mint identifies a high 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Sherbert The Tree (SHERBERT) token is an SPL Token-2022 mint. Its technical configuration is robust, with both the mint authority and freeze authority successfully revoked, ensuring no new tokens… |
-| **Governance / Economics** | 1/10 | High | The primary economic risk for SHERBERT is its very low liquidity, currently at $4,134 USD, which a third-party risk registry also flagged. This makes it challenging to trade significant amounts… |
-| **Upgrades** | 8/10 | Low | The token's upgradeability posture is favorable, as both the mint and freeze authorities have been revoked, preventing any future changes to supply or account freeze status. The token does not have a… |
+| **Technical** | 10/10 | Low | The Sherbert The Tree (SHERBERT) token is an SPL Token-2022 mint. Its technical configuration is robust, with both the mint authority and freeze authority successfully revoked, ensuring no new tokens… |
+| **Governance / Economics** | 3/10 | High | The primary economic risk for SHERBERT is its very low liquidity, currently at $4,134 USD, which a third-party risk registry also flagged. This makes it challenging to trade significant amounts… |
+| **Upgrades** | 10/10 | Low | The token's upgradeability posture is favorable, as both the mint and freeze authorities have been revoked, preventing any future changes to supply or account freeze status. The token does not have a… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ Total DEX liquidity for SHERBERT is $4,134. Slippage will be severe; large posit
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 622 buys / 525 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Total DEX liquidity for SHERBERT is $4,134. Slippage will be severe; large posit
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

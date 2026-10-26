@@ -2,14 +2,14 @@
 token: Ghosti
 ticker: GHOSTI
 network: solana
-risk_score: 43
-status: medium
+risk_score: 26
+status: low
 date: 2026-07-15
 ---
 
 # Ghosti (GHOSTI) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ghosti-sol)
 
@@ -25,9 +25,9 @@ The Ghosti (GHOSTI) token mint has its mint and freeze authorities revoked, ensu
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Ghosti (GHOSTI) token is an SPL Token-2022 mint with a total supply of 999,812,561.695072 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a liquidity of $21,596 with a 24-hour volume of $56,513, resulting in a normal Volume/Liquidity ratio of 2.62. The DEX pair is very new, having been created only 4 days ago, which… |
-| **Upgrades** | 8/10 | Low | The Ghosti (GHOSTI) token mint has both its mint and freeze authorities revoked, meaning these core functionalities cannot be altered or re-enabled. It is built on the spl-token-2022 program but does… |
+| **Technical** | 10/10 | Low | The Ghosti (GHOSTI) token is an SPL Token-2022 mint with a total supply of 999,812,561.695072 tokens and 6 decimals. Both the mint authority and freeze authority have been revoked, ensuring no new… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a liquidity of $21,596 with a 24-hour volume of $56,513, resulting in a normal Volume/Liquidity ratio of 2.62. The DEX pair is very new, having been created only 4 days ago, which… |
+| **Upgrades** | 10/10 | Low | The Ghosti (GHOSTI) token mint has both its mint and freeze authorities revoked, meaning these core functionalities cannot be altered or re-enabled. It is built on the spl-token-2022 program but does… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4200 buys / 2289 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

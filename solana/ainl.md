@@ -2,14 +2,14 @@
 token: AINL
 ticker: AINL
 network: solana
-risk_score: 16
+risk_score: 6
 status: low
 date: 2026-06-10
 ---
 
 # AINL (AINL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 16/100 — 🟢 Low Risk**
+> **Risk Score: 6/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ainl-sol)
 
@@ -25,8 +25,8 @@ The AINL SPL Token Mint exhibits a high risk due to extremely low liquidity, whi
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The AINL token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Crucially, both the mint authority and freeze authority have been revoked, preventing the… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits very low liquidity, with only $68 USD available in DEX pools, making it highly susceptible to price volatility and severe slippage for any significant trade. The 24-hour volume is… |
+| **Technical** | 10/10 | Low | The AINL token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Crucially, both the mint authority and freeze authority have been revoked, preventing the… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits very low liquidity, with only $68 USD available in DEX pools, making it highly susceptible to price volatility and severe slippage for any significant trade. The 24-hour volume is… |
 | **Upgrades** | 10/10 | Low | The token's core parameters are largely immutable due to the revocation of both mint and freeze authorities. Metadata is also immutable, ensuring that the token's name, symbol, or image cannot be… |
 
 ## LP Distribution

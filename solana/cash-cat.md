@@ -2,14 +2,14 @@
 token: Cash Cat
 ticker: CASHCAT
 network: solana
-risk_score: 77
-status: high
+risk_score: 62
+status: medium
 date: 2026-07-13
 ---
 
 # Cash Cat (CASHCAT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 77/100 — 🟠 High Risk**
+> **Risk Score: 62/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/cash-cat-sol)
 
@@ -25,9 +25,9 @@ The Cash Cat (CASHCAT) SPL token mint presents critical risks primarily due to a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Cash Cat token operates on the `spl-token` program (v3). A significant technical risk is the active mint authority, `8czkddiDFST7eWcPKmwQLESPrxHFBfWS5G8DAQPzTRGu`, which can create new tokens at… |
+| **Technical** | 8/10 | Low | The Cash Cat token operates on the `spl-token` program (v3). A significant technical risk is the active mint authority, `8czkddiDFST7eWcPKmwQLESPrxHFBfWS5G8DAQPzTRGu`, which can create new tokens at… |
 | **Governance / Economics** | 1/10 | High | The token exhibits a 24-hour trading volume of $2,332,738 against a liquidity of $169,640, resulting in a Volume/Liquidity Ratio of 13.75, which is high and can indicate artificial volume. The DEX… |
-| **Upgrades** | 4/10 | Medium | The mint authority remains active, allowing for potential changes to the token's total supply. The freeze authority is revoked, preventing any future freezing of token accounts. The token's metadata… |
+| **Upgrades** | 5/10 | Medium | The mint authority remains active, allowing for potential changes to the token's total supply. The freeze authority is revoked, preventing any future freezing of token accounts. The token's metadata… |
 
 ## LP Distribution
 

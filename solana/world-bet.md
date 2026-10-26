@@ -2,14 +2,14 @@
 token: WORLD BET
 ticker: WBET
 network: solana
-risk_score: 55
+risk_score: 43
 status: medium
 date: 2026-06-25
 ---
 
 # WORLD BET (WBET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 55/100 — 🟡 Medium Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-bet-sol)
 
@@ -60,7 +60,7 @@ Total DEX liquidity is $4,086. Slippage will be severe; large positions cannot b
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Total DEX liquidity is $4,086. Slippage will be severe; large positions cannot b
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions

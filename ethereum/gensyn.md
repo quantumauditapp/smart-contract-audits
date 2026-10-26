@@ -2,14 +2,14 @@
 token: Gensyn
 ticker: AI
 network: ethereum
-risk_score: 86
-status: critical
+risk_score: 69
+status: high
 date: 2026-06-10
 ---
 
 # Gensyn (AI) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 86/100 — 🔴 Critical Risk**
+> **Risk Score: 69/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/gensyn-eth)
 
@@ -25,7 +25,7 @@ This audit focuses on an ERC1967Proxy contract, which is a standard UUPS proxy i
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The provided contract is a standard OpenZeppelin ERC1967Proxy, which is a battle-tested and secure proxy pattern (7.1 Architecture, 7.2 Code Security). It correctly implements delegatecall logic and… |
+| **Technical** | 6/10 | Medium | The provided contract is a standard OpenZeppelin ERC1967Proxy, which is a battle-tested and secure proxy pattern (7.1 Architecture, 7.2 Code Security). It correctly implements delegatecall logic and… |
 | **Governance / Economics** | 1/10 | High | The UUPS proxy pattern delegates upgrade authorization to the implementation contract, meaning the governance and economic control over upgrades reside within the unverified implementation (7.5… |
 | **Upgrades** | 1/10 | High | The contract utilizes the UUPS (ERC-1967) proxy pattern, which is a robust and widely adopted upgrade mechanism (7.7 Upgrades). The proxy itself correctly handles the upgradeToAndCall logic. However… |
 
@@ -46,39 +46,39 @@ This audit focuses on an ERC1967Proxy contract, which is a standard UUPS proxy i
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Unverified Implementation Contract  *(Severity: High · Status: Unresolved)*
-
-The proxy contract (0x4d7078ddd6ccfed2f85db5b7d3ff16828d378d48) delegates all calls to an implementation contract (0x81cfa8f011a137ec93039694eeea40d4c5b56cbe) for which the source code is not publicly verified. This makes it impossible to audit the actual business logic, security, and behavior of the system, introducing an opaque trust assumption. Any vulnerabilities in the unverified implementation could directly impact the funds or functionality controlled by the proxy.
-
-**Recommendation:** Immediately verify and publish the source code for the implementation contract (0x81cfa8f011a137ec93039694eeea40d4c5b56cbe) on block explorers. Conduct a thorough security audit of the implementation contract to identify and mitigate any potential vulnerabilities.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Reliance on Unverified Implementation for Upgrade Authorization  *(Severity: Medium · Status: Unresolved)*
 
-As a UUPS proxy, the authorization logic for upgrades resides within the implementation contract. Since the implementation contract's source code is unverified, the mechanism by which upgrades are authorized and executed is unknown. This could lead to unauthorized upgrades if the implementation's `_authorizeUpgrade` function is missing, flawed, or controlled by a single, unsecure entity, potentially allowing a malicious actor to deploy arbitrary code.
+Not confirmed by static analysis (the model's own reading of the source). As a UUPS proxy, the authorization logic for upgrades resides within the implementation contract. Since the implementation contract's source code is unverified, the mechanism by which upgrades are authorized and executed is unknown. This could lead to unauthorized upgrades if the implementation's `_authorizeUpgrade` function is missing, flawed, or controlled by a single, unsecure entity, potentially allowing a malicious actor to deploy arbitrary code.
 
 **Recommendation:** Ensure the implementation contract implements a secure and robust `_authorizeUpgrade` function. This function should enforce strict access control, ideally requiring a multi-signature wallet and/or a timelock for upgrade approvals. Once implemented, verify the source code and audit this logic.
 
 
+### `M-02` — Unverified Implementation Contract  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The proxy contract (0x4d7078ddd6ccfed2f85db5b7d3ff16828d378d48) delegates all calls to an implementation contract (0x81cfa8f011a137ec93039694eeea40d4c5b56cbe) for which the source code is not publicly verified. This makes it impossible to audit the actual business logic, security, and behavior of the system, introducing an opaque trust assumption. Any vulnerabilities in the unverified implementation could directly impact the funds or functionality controlled by the proxy.
+
+**Recommendation:** Immediately verify and publish the source code for the implementation contract (0x81cfa8f011a137ec93039694eeea40d4c5b56cbe) on block explorers. Conduct a thorough security audit of the implementation contract to identify and mitigate any potential vulnerabilities.
+
+
 ### `L-01` — Payable Constructor with Potential for Stuck Funds  *(Severity: Low · Status: Unresolved)*
 
-The `ERC1967Proxy` constructor is `payable`. While `ERC1967Utils.upgradeToAndCall` includes a check (`_checkNonPayable()`) to revert if `msg.value > 0` when `data` is empty, if `data` is provided and `msg.value > 0`, the funds are delegated to the implementation. If the implementation's constructor or initialization function does not explicitly handle or consume `msg.value`, these funds could become permanently stuck in the proxy contract.
+Not confirmed by static analysis (the model's own reading of the source). The `ERC1967Proxy` constructor is `payable`. While `ERC1967Utils.upgradeToAndCall` includes a check (`_checkNonPayable()`) to revert if `msg.value > 0` when `data` is empty, if `data` is provided and `msg.value > 0`, the funds are delegated to the implementation. If the implementation's constructor or initialization function does not explicitly handle or consume `msg.value`, these funds could become permanently stuck in the proxy contract.
 
 **Recommendation:** Ensure that any initialization logic called via `data` in the constructor of the implementation contract explicitly handles or consumes any `msg.value` sent. Alternatively, avoid sending `msg.value` to the proxy constructor unless it is explicitly required and consumed by the implementation's initialization.
 
 
 ### `I-01` — Use of Standard OpenZeppelin UUPS Proxy  *(Severity: Informational · Status: Resolved)*
 
-The contract utilizes the ERC1967Proxy from OpenZeppelin, implementing the UUPS (Universal Upgradeable Proxy Standard) pattern. This is a widely adopted and well-audited proxy standard, providing a secure and flexible mechanism for contract upgradeability while maintaining a consistent address.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes the ERC1967Proxy from OpenZeppelin, implementing the UUPS (Universal Upgradeable Proxy Standard) pattern. This is a widely adopted and well-audited proxy standard, providing a secure and flexible mechanism for contract upgradeability while maintaining a consistent address.
 
 **Recommendation:** No specific recommendation, as this is a best practice. Continue to leverage well-vetted libraries like OpenZeppelin for core infrastructure components.
 
 
 ### `I-02` — Solidity Compiler Version Compatibility  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code uses `pragma solidity ^0.8.22;` while the prefill data indicates a compiler version of `0.8.30`. This is compatible as `^0.8.22` allows compilation with any version from `0.8.22` up to (but not including) `0.9.0`. Using a specific, fixed compiler version (e.g., `pragma solidity 0.8.30;`) can help ensure deterministic bytecode generation and avoid potential issues with future compiler versions.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code uses `pragma solidity ^0.8.22;` while the prefill data indicates a compiler version of `0.8.30`. This is compatible as `^0.8.22` allows compilation with any version from `0.8.22` up to (but not including) `0.9.0`. Using a specific, fixed compiler version (e.g., `pragma solidity 0.8.30;`) can help ensure deterministic bytecode generation and avoid potential issues with future compiler versions.
 
 **Recommendation:** Consider pinning the Solidity compiler version to the exact version used for deployment (e.g., `pragma solidity 0.8.30;`) to ensure consistent compilation results across different environments and prevent unexpected behavior from future compiler updates.
 

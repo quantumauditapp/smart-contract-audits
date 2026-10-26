@@ -2,14 +2,14 @@
 token: Allora
 ticker: ALLO
 network: ethereum
-risk_score: 89
-status: critical
+risk_score: 81
+status: high
 date: 2026-06-10
 ---
 
 # Allora (ALLO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 89/100 — 🔴 Critical Risk**
+> **Risk Score: 81/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/allora-eth)
 
@@ -25,7 +25,7 @@ This audit focuses on the provided OpenZeppelin ERC1967 Transparent Proxy contra
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The proxy contract (ERC1967Proxy) is built upon battle-tested OpenZeppelin libraries, ensuring a robust foundation for its core functionality (7.2 Code Security). The architecture correctly… |
+| **Technical** | 6/10 | Medium | The proxy contract (ERC1967Proxy) is built upon battle-tested OpenZeppelin libraries, ensuring a robust foundation for its core functionality (7.2 Code Security). The architecture correctly… |
 | **Governance / Economics** | 1/10 | High | The governance model for upgrades employs a 2-of-3 multisig for the `ProxyAdmin` (7.5 Governance), which is a strong access control mechanism, reducing the risk of a single point of failure (7.3… |
 | **Upgrades** | 1/10 | High | The system utilizes the EIP-1967 Transparent Proxy pattern, a well-established and secure method for upgradeability (7.7 Upgrades). This pattern correctly separates the admin interface from the… |
 
@@ -47,32 +47,32 @@ This audit focuses on the provided OpenZeppelin ERC1967 Transparent Proxy contra
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low_
-
-### `C-01` — Unverified Implementation Contract Source Code  *(Severity: Critical · Status: Unresolved)*
-
-The core logic of the system resides in the implementation contract (AlloOFTUpgradeable at 0xb21c7c5a7be430ea3517892e63f905c109b06278), but its source code is not publicly verified. This prevents any security assessment of the actual business logic, making it impossible to identify vulnerabilities such as reentrancy, access control flaws, or economic exploits. Users and auditors cannot independently verify the contract's behavior or safety.
-
-**Recommendation:** Immediately verify and publish the source code for the `AlloOFTUpgradeable` implementation contract on block explorers. Conduct a thorough security audit of this implementation contract to identify and remediate any vulnerabilities. Ensure that all future implementation upgrades also have their source code verified.
-
-
-### `H-01` — Lack of Timelock for Critical Operations (Upgrades)  *(Severity: High · Status: Unresolved)*
-
-While the upgrade mechanism is controlled by a 2-of-3 multisig, there is no timelock in place for executing upgrades. This means that once the required multisig approvals are obtained, an upgrade can be deployed instantly. This lack of a delay period prevents users, the community, or automated monitoring systems from reacting to a potentially malicious or erroneous upgrade before it takes effect, increasing the risk of irreversible damage or fund loss.
-
-**Recommendation:** Integrate a timelock contract into the upgrade process. The `ProxyAdmin` should be owned by a timelock, which in turn is controlled by the multisig. This ensures that any proposed upgrade has a mandatory delay period (e.g., 24-72 hours) before it can be executed, allowing for review and potential intervention.
-
+_🟡 3 Medium · 🟢 1 Low_
 
 ### `M-01` — Reliance on External Contracts for Core Logic  *(Severity: Medium · Status: Unresolved)*
 
-The security and functionality of the entire system are entirely dependent on the `AlloOFTUpgradeable` implementation contract. Any vulnerability within this external contract, whether due to design flaws, coding errors, or malicious intent, will directly impact the proxy and its users. This risk is exacerbated by the unverified source code of the implementation.
+Not confirmed by static analysis (the model's own reading of the source). The security and functionality of the entire system are entirely dependent on the `AlloOFTUpgradeable` implementation contract. Any vulnerability within this external contract, whether due to design flaws, coding errors, or malicious intent, will directly impact the proxy and its users. This risk is exacerbated by the unverified source code of the implementation.
 
 **Recommendation:** Ensure rigorous security practices for the development, testing, and auditing of the implementation contract. Implement robust monitoring for the implementation contract's behavior and state. Consider formal verification or extensive fuzzing for critical components of the implementation.
 
 
+### `M-02` — Unverified Implementation Contract Source Code  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The core logic of the system resides in the implementation contract (AlloOFTUpgradeable at 0xb21c7c5a7be430ea3517892e63f905c109b06278), but its source code is not publicly verified. This prevents any security assessment of the actual business logic, making it impossible to identify vulnerabilities such as reentrancy, access control flaws, or economic exploits. Users and auditors cannot independently verify the contract's behavior or safety.
+
+**Recommendation:** Immediately verify and publish the source code for the `AlloOFTUpgradeable` implementation contract on block explorers. Conduct a thorough security audit of this implementation contract to identify and remediate any vulnerabilities. Ensure that all future implementation upgrades also have their source code verified.
+
+
+### `M-03` — Lack of Timelock for Critical Operations (Upgrades)  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). While the upgrade mechanism is controlled by a 2-of-3 multisig, there is no timelock in place for executing upgrades. This means that once the required multisig approvals are obtained, an upgrade can be deployed instantly. This lack of a delay period prevents users, the community, or automated monitoring systems from reacting to a potentially malicious or erroneous upgrade before it takes effect, increasing the risk of irreversible damage or fund loss.
+
+**Recommendation:** Integrate a timelock contract into the upgrade process. The `ProxyAdmin` should be owned by a timelock, which in turn is controlled by the multisig. This ensures that any proposed upgrade has a mandatory delay period (e.g., 24-72 hours) before it can be executed, allowing for review and potential intervention.
+
+
 ### `L-01` — Centralized Upgrade Authority  *(Severity: Low · Status: Unresolved)*
 
-Although the upgrade authority is managed by a 2-of-3 multisig, this still represents a centralized point of control. If a majority of the multisig signers are compromised, collude, or act maliciously, they could unilaterally upgrade the contract to a harmful implementation, potentially leading to loss of funds or system compromise.
+Not confirmed by static analysis (the model's own reading of the source). Although the upgrade authority is managed by a 2-of-3 multisig, this still represents a centralized point of control. If a majority of the multisig signers are compromised, collude, or act maliciously, they could unilaterally upgrade the contract to a harmful implementation, potentially leading to loss of funds or system compromise.
 
 **Recommendation:** While a multisig is a strong control, consider further decentralizing the upgrade authority over time, possibly by integrating a more distributed governance mechanism or a larger, more diverse set of signers. Implement strict operational security procedures for all multisig signers, including hardware wallets, secure key management, and multi-factor authentication.
 

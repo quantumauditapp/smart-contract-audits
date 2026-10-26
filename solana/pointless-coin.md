@@ -2,14 +2,14 @@
 token: Pointless Coin
 ticker: POINTLESS
 network: solana
-risk_score: 50
-status: medium
+risk_score: 33
+status: low
 date: 2026-07-15
 ---
 
 # Pointless Coin (POINTLESS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟡 Medium Risk**
+> **Risk Score: 33/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pointless-coin-sol)
 
@@ -25,9 +25,9 @@ This audit of the Pointless Coin (POINTLESS) SPL Token Mint identifies a medium 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Pointless Coin (POINTLESS) is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and unfreezable accounts. The token does not… |
-| **Governance / Economics** | 1/10 | High | The token exhibits very low liquidity, with total DEX liquidity at $16,694. The 24-hour volume is $102,008, resulting in a Volume/Liquidity Ratio of 6.11. Information regarding holder concentration… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the Pointless Coin token have both been revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not have a permanent… |
+| **Technical** | 10/10 | Low | The Pointless Coin (POINTLESS) is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, indicating a fixed supply and unfreezable accounts. The token does not… |
+| **Governance / Economics** | 2/10 | High | The token exhibits very low liquidity, with total DEX liquidity at $16,694. The 24-hour volume is $102,008, resulting in a Volume/Liquidity Ratio of 6.11. Information regarding holder concentration… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority for the Pointless Coin token have both been revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not have a permanent… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1303 buys / 1708 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 3 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

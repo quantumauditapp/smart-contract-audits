@@ -2,14 +2,14 @@
 token: Bonk
 ticker: BONK
 network: solana
-risk_score: 4
+risk_score: 0
 status: low
 date: 2026-07-07
 ---
 
 # Bonk (BONK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 4/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/bonk-sol)
 
@@ -26,8 +26,8 @@ The Bonk SPL token mint exhibits a robust security posture regarding core mintin
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Bonk token is implemented using the standard `spl-token` program. Both the mint authority and freeze authority have been revoked, preventing the creation of new tokens or the freezing of existing… |
-| **Governance / Economics** | 6/10 | Medium | The token demonstrates healthy market dynamics with over $101 million in DEX liquidity and a normal 24-hour volume to liquidity ratio of 0.01, indicating organic trading activity. The DEX pair has… |
-| **Upgrades** | 8/10 | Low | The Bonk token mint has a fixed supply and unfreezable accounts due to the revocation of both mint and freeze authorities. This provides a high degree of immutability for core token properties.… |
+| **Governance / Economics** | 7/10 | Low | The token demonstrates healthy market dynamics with over $101 million in DEX liquidity and a normal 24-hour volume to liquidity ratio of 0.01, indicating organic trading activity. The DEX pair has… |
+| **Upgrades** | 9/10 | Low | The Bonk token mint has a fixed supply and unfreezable accounts due to the revocation of both mint and freeze authorities. This provides a high degree of immutability for core token properties.… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ The token's metadata is mutable, as indicated by the `metadata_mutable: True` fl
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The token's metadata is mutable, as indicated by the `metadata_mutable: True` fl
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

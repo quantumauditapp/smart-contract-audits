@@ -2,14 +2,14 @@
 token: Humanity
 ticker: H
 network: ethereum
-risk_score: 97
-status: critical
+risk_score: 71
+status: high
 date: 2026-06-22
 ---
 
 # Humanity (H) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 97/100 — 🔴 Critical Risk**
+> **Risk Score: 71/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/humanity-eth)
 
@@ -25,7 +25,7 @@ This audit focuses on a TransparentUpgradeableProxy contract, which utilizes sta
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The provided proxy contract utilizes well-audited OpenZeppelin `ERC1967Proxy` and `ERC1967Utils` for its upgradeability mechanism (7.1 Architecture). This ensures a robust and standard proxy… |
+| **Technical** | 6/10 | Medium | The provided proxy contract utilizes well-audited OpenZeppelin `ERC1967Proxy` and `ERC1967Utils` for its upgradeability mechanism (7.1 Architecture). This ensures a robust and standard proxy… |
 | **Governance / Economics** | 1/10 | High | The proxy's administrative control is managed by a 4-of-7 Gnosis Safe multisig (7.3 Access Control), which enhances security by requiring multiple approvals for critical operations like upgrades.… |
 | **Upgrades** | 1/10 | High | The contract employs the Transparent Proxy pattern, managed by an OpenZeppelin `ProxyAdmin` contract, whose owner is a Gnosis Safe multisig (7.7 Upgrades). This provides a secure and standard upgrade… |
 
@@ -47,39 +47,39 @@ This audit focuses on a TransparentUpgradeableProxy contract, which utilizes sta
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · ⚪ 2 Informational_
-
-### `C-01` — Unverified Implementation Contract  *(Severity: Critical · Status: Unresolved)*
-
-The source code for the `HToken` implementation contract (0x85d0b85f290ba575c50a6be38f24f9e99f94e7d3) is not verified on the blockchain. This prevents any security analysis of the core logic and functionality of the protocol. Without verified source code, it is impossible to ascertain the contract's behavior, identify vulnerabilities, or confirm its adherence to stated specifications, posing an extreme risk to users and the protocol's integrity (7.2 Code Security).
-
-**Recommendation:** Immediately verify the source code of the `HToken` implementation contract on Etherscan or the relevant block explorer. Conduct a comprehensive security audit of the implementation contract to identify and remediate any vulnerabilities before further operations.
-
-
-### `H-01` — Centralized Upgrade Authority  *(Severity: High · Status: Unresolved)*
-
-While the proxy's admin is a 4-of-7 Gnosis Safe multisig, this still represents a centralized point of control for upgrades. The multisig owners have the power to upgrade the implementation contract to any arbitrary code, potentially introducing malicious logic or critical vulnerabilities without broader community consensus or review (7.3 Access Control, 7.7 Upgrades).
-
-**Recommendation:** Consider decentralizing the upgrade mechanism further, potentially by integrating a governance module or a more distributed decision-making process. Ensure that all multisig signers are trusted, distinct entities, and that their private keys are secured with best practices.
-
+_🟡 3 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Lack of Timelock for Upgrades  *(Severity: Medium · Status: Unresolved)*
 
-The current Transparent Proxy setup does not incorporate a timelock for upgrade operations. This means that once an upgrade transaction is approved by the multisig admin, it can be executed immediately. This lack of a delay period prevents users and the community from reviewing proposed changes or reacting to potentially malicious upgrades before they are deployed (7.7 Upgrades, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The current Transparent Proxy setup does not incorporate a timelock for upgrade operations. This means that once an upgrade transaction is approved by the multisig admin, it can be executed immediately. This lack of a delay period prevents users and the community from reviewing proposed changes or reacting to potentially malicious upgrades before they are deployed (7.7 Upgrades, 7.8 Operations).
 
 **Recommendation:** Implement a timelock mechanism for all critical administrative actions, especially upgrades. This would introduce a mandatory delay between the approval of an upgrade and its actual execution, providing a window for scrutiny and emergency response.
 
 
+### `M-02` — Unverified Implementation Contract  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The source code for the `HToken` implementation contract (0x85d0b85f290ba575c50a6be38f24f9e99f94e7d3) is not verified on the blockchain. This prevents any security analysis of the core logic and functionality of the protocol. Without verified source code, it is impossible to ascertain the contract's behavior, identify vulnerabilities, or confirm its adherence to stated specifications, posing an extreme risk to users and the protocol's integrity (7.2 Code Security).
+
+**Recommendation:** Immediately verify the source code of the `HToken` implementation contract on Etherscan or the relevant block explorer. Conduct a comprehensive security audit of the implementation contract to identify and remediate any vulnerabilities before further operations.
+
+
+### `M-03` — Centralized Upgrade Authority  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). While the proxy's admin is a 4-of-7 Gnosis Safe multisig, this still represents a centralized point of control for upgrades. The multisig owners have the power to upgrade the implementation contract to any arbitrary code, potentially introducing malicious logic or critical vulnerabilities without broader community consensus or review (7.3 Access Control, 7.7 Upgrades).
+
+**Recommendation:** Consider decentralizing the upgrade mechanism further, potentially by integrating a governance module or a more distributed decision-making process. Ensure that all multisig signers are trusted, distinct entities, and that their private keys are secured with best practices.
+
+
 ### `I-01` — Use of Standard OpenZeppelin Contracts  *(Severity: Informational · Status: Resolved)*
 
-The proxy contract leverages battle-tested and widely audited OpenZeppelin libraries for its core functionality, including `ERC1967Proxy` and `ERC1967Utils`. This significantly reduces the risk of vulnerabilities within the proxy's own code (7.1 Architecture, 7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The proxy contract leverages battle-tested and widely audited OpenZeppelin libraries for its core functionality, including `ERC1967Proxy` and `ERC1967Utils`. This significantly reduces the risk of vulnerabilities within the proxy's own code (7.1 Architecture, 7.2 Code Security).
 
 **Recommendation:** Continue to rely on well-established and audited libraries for core functionalities. Regularly update to the latest stable versions of OpenZeppelin contracts to benefit from ongoing security improvements.
 
 
 ### `I-02` — Multisig Admin for Proxy  *(Severity: Informational · Status: Resolved)*
 
-The administrative control over the proxy, including upgrade capabilities, is managed by a 4-of-7 Gnosis Safe multisig. This setup enhances security by requiring multiple independent approvals for critical operations, mitigating the risk of a single point of failure or compromise (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The administrative control over the proxy, including upgrade capabilities, is managed by a 4-of-7 Gnosis Safe multisig. This setup enhances security by requiring multiple independent approvals for critical operations, mitigating the risk of a single point of failure or compromise (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** Ensure robust operational security practices for all multisig signers, including strong key management and phishing prevention. Regularly review the list of multisig owners to ensure it remains appropriate and active.
 

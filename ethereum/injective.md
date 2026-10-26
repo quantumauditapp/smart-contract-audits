@@ -2,14 +2,14 @@
 token: Injective
 ticker: INJ
 network: ethereum
-risk_score: 28
+risk_score: 26
 status: low
 date: 2026-06-10
 ---
 
 # Injective (INJ) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/injective-eth)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — ERC-20 `approve` Race Condition  *(Severity: Low · Status: Unresolved)*
 
-The ERC-20 standard's `approve` function is susceptible to a known race condition. If a user approves an amount for a spender, and then attempts to change that allowance to a different value, a malicious actor could front-run the second transaction. This allows the attacker to spend the original allowance, and then also spend the new allowance after the second transaction confirms, effectively spending more than the intended total. This is explicitly mentioned in the `IERC20` interface comments.
+Not confirmed by static analysis (the model's own reading of the source). The ERC-20 standard's `approve` function is susceptible to a known race condition. If a user approves an amount for a spender, and then attempts to change that allowance to a different value, a malicious actor could front-run the second transaction. This allows the attacker to spend the original allowance, and then also spend the new allowance after the second transaction confirms, effectively spending more than the intended total. This is explicitly mentioned in the `IERC20` interface comments.
 
 **Recommendation:** While this is an inherent design characteristic of the ERC-20 standard, users should be advised to mitigate this risk by first setting the allowance to zero with one transaction, and then setting the desired new allowance in a subsequent transaction. Alternatively, consider using `increaseAllowance` and `decreaseAllowance` functions if available in the full token contract, as these functions are designed to prevent this specific race condition.
 
 
 ### `I-01` — Use of Older Solidity Compiler Version  *(Severity: Informational · Status: Unresolved)*
 
-The contract is compiled with Solidity version 0.6.12. While `SafeMath` is used to prevent arithmetic overflows and underflows, newer Solidity versions (e.g., 0.8.0 and above) include native overflow/underflow checks by default, which can simplify code and potentially reduce gas costs by removing explicit `SafeMath` calls. Using an older compiler version might also mean missing out on newer language features, optimizations, and security improvements.
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with Solidity version 0.6.12. While `SafeMath` is used to prevent arithmetic overflows and underflows, newer Solidity versions (e.g., 0.8.0 and above) include native overflow/underflow checks by default, which can simplify code and potentially reduce gas costs by removing explicit `SafeMath` calls. Using an older compiler version might also mean missing out on newer language features, optimizations, and security improvements.
 
 **Recommendation:** Consider upgrading to a more recent Solidity compiler version (e.g., 0.8.x) for future deployments or major upgrades. This would allow for native overflow checks and access to the latest language features and optimizations. Ensure thorough testing if upgrading, as syntax and behavior changes may require adjustments.
 
 
 ### `I-02` — Incomplete Contract Code Provided for Audit  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code only includes standard OpenZeppelin libraries (`Context`, `SafeMath`, `Address`) and the `IERC20` interface. The core implementation of the `InjectiveToken` contract, which would inherit from these components and define its specific logic (e.g., constructor, minting/burning functions, custom modifiers, state variables), was not included. This significantly limits the scope of the audit, preventing a full assessment of the token's security posture, access control, and economic model.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code only includes standard OpenZeppelin libraries (`Context`, `SafeMath`, `Address`) and the `IERC20` interface. The core implementation of the `InjectiveToken` contract, which would inherit from these components and define its specific logic (e.g., constructor, minting/burning functions, custom modifiers, state variables), was not included. This significantly limits the scope of the audit, preventing a full assessment of the token's security posture, access control, and economic model.
 
 **Recommendation:** For a comprehensive and accurate security assessment, the complete and unabridged source code for the `InjectiveToken` contract must be provided. This includes all inherited contracts and any custom logic specific to the token.
 

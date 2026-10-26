@@ -2,14 +2,14 @@
 token: NO ONE CARES
 ticker: KIM
 network: solana
-risk_score: 62
-status: medium
+risk_score: 32
+status: low
 date: 2026-07-22
 ---
 
 # NO ONE CARES (KIM) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 62/100 — 🟡 Medium Risk**
+> **Risk Score: 32/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/no-one-cares-sol)
 
@@ -25,9 +25,9 @@ This SPL Token Mint is flagged as high-risk by an independent third-party regist
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token issuance or account freezing by any single entity.… |
-| **Governance / Economics** | 1/10 | High | Holder concentration is moderate, with the top 10 accounts holding 39.47% of the supply, which does not indicate extreme centralization. The total DEX liquidity stands at $35,724, which is sufficient… |
-| **Upgrades** | 7/10 | Low | The mint authority and freeze authority are both revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not utilize a transfer hook, and its upgradability for… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, preventing further token issuance or account freezing by any single entity.… |
+| **Governance / Economics** | 3/10 | High | Holder concentration is moderate, with the top 10 accounts holding 39.47% of the supply, which does not indicate extreme centralization. The total DEX liquidity stands at $35,724, which is sufficient… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both revoked, meaning no further tokens can be minted and no accounts can be frozen. The token does not utilize a transfer hook, and its upgradability for… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ An independent third-party risk registry classifies this token as high-risk base
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 5301 buys / 3073 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ An independent third-party risk registry classifies this token as high-risk base
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: Collector Crypt
 ticker: CARDS
 network: solana
-risk_score: 25
+risk_score: 21
 status: low
 date: 2026-06-10
 ---
 
 # Collector Crypt (CARDS) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 25/100 — 🟢 Low Risk**
+> **Risk Score: 21/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/collector-crypt-sol)
 
@@ -26,8 +26,8 @@ The Collector Crypt (CARDS) token mint exhibits a low overall risk profile. The 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Collector Crypt (CARDS) token is implemented using the classic spl-token program. Both the mint authority and freeze authority have been revoked (None), ensuring that no new tokens can be minted… |
-| **Governance / Economics** | 3/10 | High | The token has substantial liquidity with $2,673,056 USD, and its 24-hour volume of $1,288,101 USD results in a normal Volume/Liquidity Ratio of 0.48, suggesting organic trading activity. The DEX pair… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning the core parameters of token supply and account freezing cannot be altered. The token does not utilize Token-2022 extensions that… |
+| **Governance / Economics** | 4/10 | Medium | The token has substantial liquidity with $2,673,056 USD, and its 24-hour volume of $1,288,101 USD results in a normal Volume/Liquidity Ratio of 0.48, suggesting organic trading activity. The DEX pair… |
+| **Upgrades** | 9/10 | Low | The mint authority and freeze authority are both revoked, meaning the core parameters of token supply and account freezing cannot be altered. The token does not utilize Token-2022 extensions that… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ The token's metadata is mutable (metadata_mutable: True), meaning its name, symb
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The token's metadata is mutable (metadata_mutable: True), meaning its name, symb
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions

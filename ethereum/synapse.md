@@ -2,14 +2,14 @@
 token: Synapse
 ticker: SYN
 network: ethereum
-risk_score: 76
-status: high
+risk_score: 59
+status: medium
 date: 2026-06-22
 ---
 
 # Synapse (SYN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 76/100 — 🟠 High Risk**
+> **Risk Score: 59/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/synapse-eth)
 
@@ -25,8 +25,8 @@ This audit was conducted on a partial source code fragment, specifically the `Ac
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The provided code, `AccessControlUpgradeable`, is a well-vetted OpenZeppelin library, indicating a strong foundation for access control (7.2 Code Security). It utilizes standard patterns for role… |
-| **Governance / Economics** | 1/10 | High | The `AccessControlUpgradeable` contract provides a robust role-based access control system, allowing for granular permission management (7.3 Access Control). This structure can support decentralized… |
+| **Technical** | 7/10 | Low | The provided code, `AccessControlUpgradeable`, is a well-vetted OpenZeppelin library, indicating a strong foundation for access control (7.2 Code Security). It utilizes standard patterns for role… |
+| **Governance / Economics** | 2/10 | High | The `AccessControlUpgradeable` contract provides a robust role-based access control system, allowing for granular permission management (7.3 Access Control). This structure can support decentralized… |
 | **Upgrades** | 1/10 | High | The contract correctly inherits from `Initializable` and includes a `__gap` variable, indicating it is designed for use in an upgradeable proxy pattern (7.7 Upgrades). This is a strong practice for… |
 
 ## Proxy Upgrade Controls
@@ -46,39 +46,39 @@ This audit was conducted on a partial source code fragment, specifically the `Ac
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Incomplete Audit Scope Due to Partial Source Code  *(Severity: High · Status: Unresolved)*
-
-The audit was conducted on a fragment of the project's source code, specifically the `AccessControlUpgradeable.sol` contract. The main `SynapseERC20` contract, which would integrate this access control, was not provided. This limitation prevents a comprehensive security assessment of the entire protocol, meaning potential vulnerabilities in the core logic, interactions, or other components of `SynapseERC20` could not be identified.
-
-**Recommendation:** Provide the complete source code for all relevant contracts, especially the `SynapseERC20` token and any other contracts it interacts with, to enable a full and comprehensive security audit. This will allow for a thorough analysis of architectural design, business logic, and inter-contract dependencies.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Critical Initialization Dependency for Upgradeable Contracts  *(Severity: Medium · Status: Unresolved)*
 
-The `AccessControlUpgradeable` contract, being an upgradeable component, relies on its `__AccessControl_init()` or `__AccessControl_init_unchained()` functions to be called exactly once during the inheriting contract's initialization. Failure to correctly call these initializers in the `SynapseERC20` contract's `initialize` function could lead to an uninitialized state, rendering access control mechanisms ineffective or locking critical functions.
+Not confirmed by static analysis (the model's own reading of the source). The `AccessControlUpgradeable` contract, being an upgradeable component, relies on its `__AccessControl_init()` or `__AccessControl_init_unchained()` functions to be called exactly once during the inheriting contract's initialization. Failure to correctly call these initializers in the `SynapseERC20` contract's `initialize` function could lead to an uninitialized state, rendering access control mechanisms ineffective or locking critical functions.
 
 **Recommendation:** Ensure that the `SynapseERC20` contract's `initialize` function correctly calls `__AccessControl_init()` (or `__AccessControl_init_unchained()` if part of a larger initialization chain) from its constructor or `initialize` function. Implement robust testing to verify that all upgradeable components are correctly initialized upon deployment.
 
 
+### `M-02` — Incomplete Audit Scope Due to Partial Source Code  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The audit was conducted on a fragment of the project's source code, specifically the `AccessControlUpgradeable.sol` contract. The main `SynapseERC20` contract, which would integrate this access control, was not provided. This limitation prevents a comprehensive security assessment of the entire protocol, meaning potential vulnerabilities in the core logic, interactions, or other components of `SynapseERC20` could not be identified.
+
+**Recommendation:** Provide the complete source code for all relevant contracts, especially the `SynapseERC20` token and any other contracts it interacts with, to enable a full and comprehensive security audit. This will allow for a thorough analysis of architectural design, business logic, and inter-contract dependencies.
+
+
 ### `L-01` — Centralization Risk of DEFAULT_ADMIN_ROLE  *(Severity: Low · Status: Unresolved)*
 
-The `AccessControlUpgradeable` contract's `DEFAULT_ADMIN_ROLE` possesses the authority to grant and revoke all other roles, including itself. While this is an inherent design of the OpenZeppelin AccessControl pattern, it introduces a single point of failure. If the account(s) holding the `DEFAULT_ADMIN_ROLE` are compromised or act maliciously, the entire access control system could be subverted.
+Not confirmed by static analysis (the model's own reading of the source). The `AccessControlUpgradeable` contract's `DEFAULT_ADMIN_ROLE` possesses the authority to grant and revoke all other roles, including itself. While this is an inherent design of the OpenZeppelin AccessControl pattern, it introduces a single point of failure. If the account(s) holding the `DEFAULT_ADMIN_ROLE` are compromised or act maliciously, the entire access control system could be subverted.
 
 **Recommendation:** Implement robust security measures for the account(s) holding the `DEFAULT_ADMIN_ROLE`. This typically involves using a multi-signature wallet (e.g., Gnosis Safe) with a sufficient number of signers, or integrating it into a decentralized governance mechanism. Regularly review and audit the accounts assigned to this critical role.
 
 
 ### `I-01` — Proper Use of Upgradeable Contract Pattern  *(Severity: Informational · Status: Unresolved)*
 
-The contract correctly utilizes OpenZeppelin's `Initializable` base contract and includes a `__gap` storage variable. This demonstrates adherence to best practices for building upgradeable contracts, ensuring storage compatibility across different versions when used with a proxy pattern.
+Not confirmed by static analysis (the model's own reading of the source). The contract correctly utilizes OpenZeppelin's `Initializable` base contract and includes a `__gap` storage variable. This demonstrates adherence to best practices for building upgradeable contracts, ensuring storage compatibility across different versions when used with a proxy pattern.
 
 **Recommendation:** Continue to follow OpenZeppelin's upgradeability guidelines strictly for all future contract development and upgrades. Ensure that all state variables are declared before the `__gap` variable and that `initializer` modifiers are used correctly.
 
 
 ### `I-02` — Leveraging OpenZeppelin Standard Library  *(Severity: Informational · Status: Unresolved)*
 
-The contract extensively uses well-audited and community-vetted OpenZeppelin contracts for its access control logic. This practice significantly reduces the risk of low-level vulnerabilities and common coding errors, as these libraries are maintained and regularly updated by a reputable team.
+Not confirmed by static analysis (the model's own reading of the source). The contract extensively uses well-audited and community-vetted OpenZeppelin contracts for its access control logic. This practice significantly reduces the risk of low-level vulnerabilities and common coding errors, as these libraries are maintained and regularly updated by a reputable team.
 
 **Recommendation:** Maintain vigilance in keeping OpenZeppelin dependencies updated to their latest stable versions, especially when security patches are released. Regularly review OpenZeppelin's security advisories and release notes.
 

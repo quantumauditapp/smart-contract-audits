@@ -2,14 +2,14 @@
 token: Geodnet
 ticker: GEOD
 network: solana
-risk_score: 49
+risk_score: 37
 status: medium
 date: 2026-06-13
 ---
 
 # Geodnet (GEOD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 49/100 — 🟡 Medium Risk**
+> **Risk Score: 37/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/geodnet-sol)
 
@@ -25,9 +25,9 @@ The Geodnet Token (GEOD) mint has a critical security concern: the mint authorit
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Geodnet Token (GEOD) is an SPL token operating under the spl-token program. A significant risk is present as the mint authority (AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F) remains active… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate liquidity with $330,508 in total DEX liquidity and a 24-hour volume of $88,288. The Volume/Liquidity Ratio is 0.27, which is considered normal and does not suggest wash… |
-| **Upgrades** | 4/10 | Medium | The mint authority (AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F) is not revoked, posing a risk of future supply changes. In contrast, the freeze authority has been revoked, ensuring existing token… |
+| **Technical** | 8/10 | Low | The Geodnet Token (GEOD) is an SPL token operating under the spl-token program. A significant risk is present as the mint authority (AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F) remains active… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity with $330,508 in total DEX liquidity and a 24-hour volume of $88,288. The Volume/Liquidity Ratio is 0.27, which is considered normal and does not suggest wash… |
+| **Upgrades** | 6/10 | Medium | The mint authority (AJihE2yBYmC8kTDRtj2oDGcDQduSvPQekkXZ1LSAwA5F) is not revoked, posing a risk of future supply changes. In contrast, the freeze authority has been revoked, ensuring existing token… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

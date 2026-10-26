@@ -2,14 +2,14 @@
 token: Meteora
 ticker: MET
 network: solana
-risk_score: 25
+risk_score: 23
 status: low
 date: 2026-06-21
 ---
 
 # Meteora (MET) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 25/100 — 🟢 Low Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/meteora-sol)
 

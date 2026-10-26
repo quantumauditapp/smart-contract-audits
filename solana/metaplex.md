@@ -2,14 +2,14 @@
 token: Metaplex
 ticker: MPLX
 network: solana
-risk_score: 50
+risk_score: 38
 status: medium
 date: 2026-07-03
 ---
 
 # Metaplex (MPLX) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 50/100 — 🟡 Medium Risk**
+> **Risk Score: 38/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/metaplex-sol)
 
@@ -25,9 +25,9 @@ The Metaplex Token (MPLX) mint retains an active mint authority, allowing for un
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Metaplex Token (MPLX) is an SPL token operating under the `spl-token` program. A critical risk is present as the mint authority, `BHkk3RTd4Ue6JnqXpa9QHTXbn575ycR8hxVmYx4E254k`, remains active… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits a healthy liquidity of $1,705,177 USD and a normal 24-hour volume to liquidity ratio of 0.05, suggesting organic trading activity rather than wash trading. The DEX pair has been… |
-| **Upgrades** | 4/10 | Medium | The mint authority for MPLX is still active, which allows for potential future changes to the token's total supply. In contrast, the freeze authority has been permanently revoked, ensuring that no… |
+| **Technical** | 8/10 | Low | The Metaplex Token (MPLX) is an SPL token operating under the `spl-token` program. A critical risk is present as the mint authority, `BHkk3RTd4Ue6JnqXpa9QHTXbn575ycR8hxVmYx4E254k`, remains active… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a healthy liquidity of $1,705,177 USD and a normal 24-hour volume to liquidity ratio of 0.05, suggesting organic trading activity rather than wash trading. The DEX pair has been… |
+| **Upgrades** | 6/10 | Medium | The mint authority for MPLX is still active, which allows for potential future changes to the token's total supply. In contrast, the freeze authority has been permanently revoked, ensuring that no… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

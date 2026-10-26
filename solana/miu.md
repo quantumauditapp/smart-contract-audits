@@ -2,14 +2,14 @@
 token: Miu
 ticker: MIU
 network: solana
-risk_score: 43
-status: medium
+risk_score: 13
+status: low
 date: 2026-06-27
 ---
 
 # Miu (MIU) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 13/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/miu-sol)
 
@@ -25,9 +25,9 @@ The audit of the Miu (Miu) SPL Token Mint identified a critical risk: an indepen
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Miu (Miu) token is an SPL Token-2022 mint with both mint and freeze authorities revoked, indicating a fixed supply and immutable account states. It does not utilize a transfer hook, and new… |
-| **Governance / Economics** | 3/10 | High | The token has a total DEX liquidity of $31,788, which is relatively low and could lead to significant slippage for larger trades. The DEX pair is 17 days old, indicating a relatively new market with… |
-| **Upgrades** | 7/10 | Low | The mint authority and freeze authority for the Miu (Miu) token are both revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen. The token's metadata is immutable… |
+| **Technical** | 10/10 | Low | The Miu (Miu) token is an SPL Token-2022 mint with both mint and freeze authorities revoked, indicating a fixed supply and immutable account states. It does not utilize a transfer hook, and new… |
+| **Governance / Economics** | 7/10 | Low | The token has a total DEX liquidity of $31,788, which is relatively low and could lead to significant slippage for larger trades. The DEX pair is 17 days old, indicating a relatively new market with… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority for the Miu (Miu) token are both revoked, ensuring that no new tokens can be minted and no holder accounts can be frozen. The token's metadata is immutable… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ An independent third-party risk registry classifies this token as high-risk base
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1262 buys / 1068 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ An independent third-party risk registry classifies this token as high-risk base
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions

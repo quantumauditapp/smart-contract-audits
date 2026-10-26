@@ -2,14 +2,14 @@
 token: Venice Token
 ticker: VVV
 network: base
-risk_score: 51
+risk_score: 43
 status: medium
 date: 2026-06-10
 ---
 
 # Venice Token (VVV) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 51/100 — 🟡 Medium Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/venice-token-base)
 
@@ -25,8 +25,8 @@ The Venice token contract is an ERC20 implementation leveraging well-audited Sol
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract leverages the battle-tested Solmate ERC20 and Owned libraries, which are known for their efficiency and security (7.1 Architecture). Custom logic is minimal and correctly implements… |
-| **Governance / Economics** | 4/10 | Medium | The contract clearly defines an `owner` with specific privileges, providing a single point of control for minting operations. The initial supply is minted to a specified `treasury` address, allowing… |
+| **Technical** | 8/10 | Low | The contract leverages the battle-tested Solmate ERC20 and Owned libraries, which are known for their efficiency and security (7.1 Architecture). Custom logic is minimal and correctly implements… |
+| **Governance / Economics** | 5/10 | Medium | The contract clearly defines an `owner` with specific privileges, providing a single point of control for minting operations. The initial supply is minted to a specified `treasury` address, allowing… |
 | **Upgrades** | 4/10 | Medium | The `Venice` contract is implemented as a standard, non-upgradeable contract, which simplifies its architecture and eliminates the complexities and risks associated with proxy upgrade patterns. Its… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The Venice token contract is an ERC20 implementation leveraging well-audited Sol
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 2 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
-### `H-01` — Centralized Minting Authority  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Minting Authority  *(Severity: Medium · Status: Unresolved)*
 
-The `owner` of the `Venice` contract has the exclusive ability to mint an arbitrary amount of new tokens via the `mint` function. This grants significant power to a single entity, allowing for unlimited inflation and dilution of existing token holders' value. This is an economic risk (7.4 Economic) and an access control concern (7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The `owner` of the `Venice` contract has the exclusive ability to mint an arbitrary amount of new tokens via the `mint` function. This grants significant power to a single entity, allowing for unlimited inflation and dilution of existing token holders' value. This is an economic risk (7.4 Economic) and an access control concern (7.3 Access Control).
 
 **Recommendation:** Consider implementing a more decentralized or constrained minting mechanism, such as a time-locked minting schedule, a cap on total supply, or requiring multi-signature wallet/DAO approval for minting. If centralized minting is intended, ensure robust operational security for the owner key and clear communication to token holders regarding minting policies.
 
 
 ### `L-01` — Owner Key Management Criticality  *(Severity: Low · Status: Unresolved)*
 
-The `Venice` contract relies on a single `owner` address for critical operations, specifically the `mint` function. Compromise of this owner's private key would allow an attacker to mint unlimited tokens, leading to a complete loss of trust and value for the token. This is an operational risk (7.8 Operations) and an access control vulnerability (7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The `Venice` contract relies on a single `owner` address for critical operations, specifically the `mint` function. Compromise of this owner's private key would allow an attacker to mint unlimited tokens, leading to a complete loss of trust and value for the token. This is an operational risk (7.8 Operations) and an access control vulnerability (7.3 Access Control).
 
 **Recommendation:** It is crucial to secure the owner's private key with best practices, such as a hardware wallet, multi-signature wallet, or a robust key management system. Regular audits of the owner's operational security are recommended.
 
 
 ### `I-01` — Lack of Emergency Pause Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The `Venice` token contract lacks a mechanism to pause transfers or other critical functions in case of an emergency (e.g., a critical vulnerability discovered in an integrated DeFi protocol, a major market exploit, or a regulatory requirement). This could limit the ability to react swiftly to unforeseen events (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `Venice` token contract lacks a mechanism to pause transfers or other critical functions in case of an emergency (e.g., a critical vulnerability discovered in an integrated DeFi protocol, a major market exploit, or a regulatory requirement). This could limit the ability to react swiftly to unforeseen events (7.8 Operations).
 
 **Recommendation:** Consider adding a pause mechanism, typically controlled by the owner or a governance body, to temporarily halt token operations during emergencies. This should be implemented carefully to avoid centralization risks and should have clear activation/deactivation conditions.
 
 
 ### `I-02` — Dependency on Solmate Libraries  *(Severity: Informational · Status: Unresolved)*
 
-The `Venice` contract relies on external Solmate libraries (`ERC20`, `Owned`). While Solmate is a well-regarded and audited library, any undiscovered vulnerability within these dependencies could indirectly affect the security of the `Venice` token (7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The `Venice` contract relies on external Solmate libraries (`ERC20`, `Owned`). While Solmate is a well-regarded and audited library, any undiscovered vulnerability within these dependencies could indirectly affect the security of the `Venice` token (7.6 External).
 
 **Recommendation:** Regularly monitor security advisories and updates for the Solmate library. While direct code changes are not possible for deployed contracts, awareness of dependency risks is important for future deployments or integrations.
 

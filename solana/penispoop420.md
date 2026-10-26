@@ -2,14 +2,14 @@
 token: penispoop420
 ticker: PP420
 network: solana
-risk_score: 52
+risk_score: 40
 status: medium
 date: 2026-06-10
 ---
 
 # penispoop420 (PP420) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 52/100 — 🟡 Medium Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/penispoop420-sol)
 
@@ -26,7 +26,7 @@ The token mint for penispoop420 (PP420) has revoked both mint and freeze authori
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The SPL Token Mint (Ac8EScJ4ufRo8PiFkun7diUrcCCktg4JvArb3mPmpump) is implemented using the spl-token-2022 program. Both the mint authority and freeze authority have been revoked, ensuring no new… |
-| **Governance / Economics** | 1/10 | High | The token's economic profile shows very low liquidity, with total DEX liquidity at $8,836. This level of liquidity suggests that even small trades could experience significant price impact. The… |
+| **Governance / Economics** | 2/10 | High | The token's economic profile shows very low liquidity, with total DEX liquidity at $8,836. This level of liquidity suggests that even small trades could experience significant price impact. The… |
 | **Upgrades** | 8/10 | Low | The token mint has no active upgrade authorities. Both mint and freeze authorities are revoked, meaning the token's supply and account freeze status are immutable. No Token-2022 extensions like… |
 
 ## Security Findings
@@ -59,7 +59,7 @@ Total DEX liquidity is $8,836. Slippage will be severe; large positions cannot b
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -68,7 +68,7 @@ Total DEX liquidity is $8,836. Slippage will be severe; large positions cannot b
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

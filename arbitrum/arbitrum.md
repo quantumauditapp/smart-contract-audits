@@ -2,14 +2,14 @@
 token: Arbitrum
 ticker: ARB
 network: arbitrum
-risk_score: 28
+risk_score: 19
 status: low
 date: 2026-07-22
 ---
 
 # Arbitrum (ARB) — Smart Contract Security Analysis | Arbitrum
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 19/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/arbitrum-arb)
 
@@ -51,35 +51,35 @@ _🟡 1 Medium · 🟢 2 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralized Control over Token Parameters (Minting & Delegation Adjustment)  *(Severity: Medium · Status: Unresolved)*
 
-The `owner` of the `L2ArbitrumToken` contract, identified as a `RoleGatedExecutor`, possesses significant centralized control. This includes the authority to mint new tokens annually, capped at 2% of the total supply, and to manually adjust the `_totalDelegationHistory` via the `adjustTotalDelegation` function. While this pattern is common for governance tokens where a robust governance mechanism (like a multi-sig or DAO) acts as the owner, these functions represent powerful capabilities that directly impact the token's supply and the integrity of governance quorum calculations (7.3 Access Control, 7.4 Economic, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The `owner` of the `L2ArbitrumToken` contract, identified as a `RoleGatedExecutor`, possesses significant centralized control. This includes the authority to mint new tokens annually, capped at 2% of the total supply, and to manually adjust the `_totalDelegationHistory` via the `adjustTotalDelegation` function. While this pattern is common for governance tokens where a robust governance mechanism (like a multi-sig or DAO) acts as the owner, these functions represent powerful capabilities that directly impact the token's supply and the integrity of governance quorum calculations (7.3 Access Control, 7.4 Economic, 7.5 Go
 
 **Recommendation:** Ensure that the `RoleGatedExecutor` controlling the `owner` address has extremely robust security measures, including a high multi-signature threshold and a well-defined, transparent governance process. Regular audits of the governance mechanism itself are crucial to mitigate risks associated with this centralized power.
 
 
 ### `L-01` — Dependency on Unaudited `TransferAndCallToken` Implementation  *(Severity: Low · Status: Unresolved)*
 
-The `L2ArbitrumToken` contract inherits from `TransferAndCallToken`, but the source code for this external dependency was not provided for audit. The security and correctness of `TransferAndCallToken` are critical to the overall integrity and functionality of the `L2ArbitrumToken`. Any vulnerabilities or unexpected behaviors within `TransferAndCallToken` could directly impact the main token contract (7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The `L2ArbitrumToken` contract inherits from `TransferAndCallToken`, but the source code for this external dependency was not provided for audit. The security and correctness of `TransferAndCallToken` are critical to the overall integrity and functionality of the `L2ArbitrumToken`. Any vulnerabilities or unexpected behaviors within `TransferAndCallToken` could directly impact the main token contract (7.6 External).
 
 **Recommendation:** Obtain and thoroughly audit the source code for the `TransferAndCallToken` contract. Verify its implementation against known vulnerability patterns, especially regarding reentrancy and external calls, to ensure it does not introduce any weaknesses into the `L2ArbitrumToken` system.
 
 
 ### `L-02` — Potential for Initial `_totalDelegationHistory` Estimate Manipulation  *(Severity: Low · Status: Unresolved)*
 
-The `postUpgradeInit` function, used to set the initial `_totalDelegationHistory`, includes a comment acknowledging that this initial estimate 'may be manipulable with artificial delegation/undelegation prior to the upgrade.' While the comment states that the risk/impact is low due to quorum clamping by governors, it highlights a known edge case where the initial state of a critical governance parameter could be influenced (7.4 Economic, 7.5 Governance, 7.7 Upgrades).
+Not confirmed by static analysis (the model's own reading of the source). The `postUpgradeInit` function, used to set the initial `_totalDelegationHistory`, includes a comment acknowledging that this initial estimate 'may be manipulable with artificial delegation/undelegation prior to the upgrade.' While the comment states that the risk/impact is low due to quorum clamping by governors, it highlights a known edge case where the initial state of a critical governance parameter could be influenced (7.4 Economic, 7.5 Governance, 7.7 Upgrades).
 
 **Recommendation:** While the impact is noted as low, consider if there are further measures to minimize the window or opportunity for such manipulation, or to provide clearer documentation on how the 'estimate' is derived and validated. Ensure the quorum clamping mechanism is robust and well-understood.
 
 
 ### `I-01` — Missing Event for Minting Operations  *(Severity: Informational · Status: Unresolved)*
 
-The `mint` function, which allows the owner to create new tokens, does not emit an explicit event. While ERC20 `_mint` internally emits a `Transfer` event from `address(0)`, a dedicated `Mint` event could provide clearer, more specific information for off-chain monitoring, indexing, and transparency regarding token supply changes (7.2 Code Security, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function, which allows the owner to create new tokens, does not emit an explicit event. While ERC20 `_mint` internally emits a `Transfer` event from `address(0)`, a dedicated `Mint` event could provide clearer, more specific information for off-chain monitoring, indexing, and transparency regarding token supply changes (7.2 Code Security, 7.8 Operations).
 
 **Recommendation:** Consider adding a custom `event Mint(address indexed recipient, uint256 amount)` within the `mint` function to provide more explicit signaling of minting operations. This enhances transparency and simplifies off-chain analysis.
 
 
 ### `I-02` — Inconsistent Handling of Negative `_totalDelegationHistory` Values  *(Severity: Informational · Status: Unresolved)*
 
-The contract exhibits inconsistent handling of potentially negative values for `_totalDelegationHistory`. In `_updateDelegationHistory`, if `newValue` becomes negative, it is clamped to `0` (`uint256(newValue < 0 ? int256(0) : newValue)`). In contrast, the `adjustTotalDelegation` function uses a `require(newValue >= 0)` statement, which would revert if `newValue` is negative. While both approaches prevent underflow, the clamping in `_updateDelegationHistory` might silently mask an underlying issue if the calculated delta is unexpectedly large and negative, potentially leading to an inaccurate `_totalDelegationHistory` without an explicit error (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract exhibits inconsistent handling of potentially negative values for `_totalDelegationHistory`. In `_updateDelegationHistory`, if `newValue` becomes negative, it is clamped to `0` (`uint256(newValue < 0 ? int256(0) : newValue)`). In contrast, the `adjustTotalDelegation` function uses a `require(newValue >= 0)` statement, which would revert if `newValue` is negative. While both approaches prevent underflow, the clamping in `_updateDelegationHistory` might silently mask an underlying issue if the calculated delta is unexpectedly large and negative, potentially leading to an inaccurate `_totalDelegationHistory`
 
 **Recommendation:** Review the logic for `_totalDelegationHistory` adjustments to ensure consistent error handling or clamping behavior. If a negative value indicates an error state, consider reverting in `_updateDelegationHistory` as well, or provide clear documentation on why clamping is preferred in one context and reverting in another.
 

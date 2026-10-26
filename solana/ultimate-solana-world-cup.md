@@ -2,14 +2,14 @@
 token: Ultimate Solana World Cup
 ticker: USWC
 network: solana
-risk_score: 52
+risk_score: 40
 status: medium
 date: 2026-06-15
 ---
 
 # Ultimate Solana World Cup (USWC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 52/100 — 🟡 Medium Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ultimate-solana-world-cup-sol)
 
@@ -26,7 +26,7 @@ The Ultimate Solana World Cup (USWC) token mint is configured with revoked mint 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The Ultimate Solana World Cup (USWC) token is an SPL Token-2022 mint. Both the mint authority and freeze authority are revoked, meaning no new tokens can be minted and no accounts can be frozen.… |
-| **Governance / Economics** | 1/10 | High | The token exhibits very low liquidity, with total DEX liquidity at only $5,192. This makes large trades highly susceptible to severe slippage and prevents significant positions from being exited… |
+| **Governance / Economics** | 2/10 | High | The token exhibits very low liquidity, with total DEX liquidity at only $5,192. This makes large trades highly susceptible to severe slippage and prevents significant positions from being exited… |
 | **Upgrades** | 8/10 | Low | The token mint has a robust upgrade posture, with both the mint authority and freeze authority permanently revoked. This ensures that the token supply is fixed and no accounts can be frozen… |
 
 ## Security Findings
@@ -60,7 +60,7 @@ Total DEX liquidity is $5,192. Slippage will be severe; large positions cannot b
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ Total DEX liquidity is $5,192. Slippage will be severe; large positions cannot b
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions

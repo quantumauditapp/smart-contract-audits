@@ -2,14 +2,14 @@
 token: RE
 ticker: RE
 network: ethereum
-risk_score: 68
-status: high
+risk_score: 51
+status: medium
 date: 2026-06-22
 ---
 
 # RE (RE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/re-eth)
 
@@ -27,7 +27,7 @@ Implement robust access control, ideally with a multi-signature wallet and/or a 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The `ERC1967Proxy` contract leverages battle-tested OpenZeppelin libraries, providing a robust and secure proxy architecture (7.1 Architecture, 7.2 Code Security). The proxy correctly implements the… |
+| **Technical** | 8/10 | Low | The `ERC1967Proxy` contract leverages battle-tested OpenZeppelin libraries, providing a robust and secure proxy architecture (7.1 Architecture, 7.2 Code Security). The proxy correctly implements the… |
 | **Governance / Economics** | 1/10 | High | The proxy itself does not contain governance or economic logic; these aspects reside entirely within the unverified implementation contract (7.4 Economic, 7.5 Governance). Without visibility into the… |
 | **Upgrades** | 1/10 | High | The contract utilizes the UUPS proxy pattern, which is a well-established and secure upgrade mechanism (7.7 Upgrades). The `ERC1967Utils` library correctly handles implementation slot updates and… |
 
@@ -48,32 +48,32 @@ Implement robust access control, ideally with a multi-signature wallet and/or a 
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Unverified Implementation Contract Source Code  *(Severity: High · Status: Unresolved)*
-
-The implementation contract at address `0x4d24b40e5b1103b3ce071192fce91ef39abc0273`, which contains the core logic for the `ERC1967Proxy`, does not have its source code verified on Etherscan or provided for audit. This prevents a thorough security analysis of the actual business logic, access control, economic mechanisms, and upgrade authorization. Without visibility into the implementation, critical vulnerabilities such as reentrancy, integer overflows, or logic flaws cannot be identified, rendering the entire system's security unknown.
-
-**Recommendation:** Immediately verify and publish the source code for the implementation contract (`0x4d24b40e5b1103b3ce071192fce91ef39abc0273`) on Etherscan. Once verified, a full security audit of the implementation contract should be conducted to identify and mitigate any potential vulnerabilities.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Lack of Transparent Upgrade Authorization  *(Severity: Medium · Status: Unresolved)*
 
-While the `ERC1967Proxy` implements the UUPS upgrade pattern, the authorization mechanism for performing upgrades (i.e., who can call `upgradeToAndCall` or `_authorizeUpgrade` in the implementation) is unknown due to the unverified implementation contract. This lack of transparency means it's impossible to assess if robust access control (e.g., multi-signature wallet, timelock) is in place to prevent unauthorized or malicious upgrades, which could lead to a complete compromise of the protocol.
+Not confirmed by static analysis (the model's own reading of the source). While the `ERC1967Proxy` implements the UUPS upgrade pattern, the authorization mechanism for performing upgrades (i.e., who can call `upgradeToAndCall` or `_authorizeUpgrade` in the implementation) is unknown due to the unverified implementation contract. This lack of transparency means it's impossible to assess if robust access control (e.g., multi-signature wallet, timelock) is in place to prevent unauthorized or malicious upgrades, which could lead to a complete compromise of the protocol.
 
 **Recommendation:** After verifying the implementation contract's source code, ensure that the upgrade authorization logic is robust. Implement a multi-signature wallet and/or a timelock for controlling upgrades to the implementation contract. This adds a layer of security and decentralization, preventing a single point of compromise from enabling malicious upgrades.
 
 
+### `M-02` — Unverified Implementation Contract Source Code  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The implementation contract at address `0x4d24b40e5b1103b3ce071192fce91ef39abc0273`, which contains the core logic for the `ERC1967Proxy`, does not have its source code verified on Etherscan or provided for audit. This prevents a thorough security analysis of the actual business logic, access control, economic mechanisms, and upgrade authorization. Without visibility into the implementation, critical vulnerabilities such as reentrancy, integer overflows, or logic flaws cannot be identified, rendering the entire system's security unknown.
+
+**Recommendation:** Immediately verify and publish the source code for the implementation contract (`0x4d24b40e5b1103b3ce071192fce91ef39abc0273`) on Etherscan. Once verified, a full security audit of the implementation contract should be conducted to identify and mitigate any potential vulnerabilities.
+
+
 ### `L-01` — Potential for Unintended Ether Reception in Proxy  *(Severity: Low · Status: Unresolved)*
 
-The `ERC1967Proxy` constructor is `payable` and delegates to `ERC1967Utils.upgradeToAndCall`. If `_data` is provided, `msg.value` is forwarded via `Address.functionDelegateCall`. If the implementation's initializer function is not designed to handle or consume this `msg.value`, any Ether sent during the proxy deployment (initialization) could become permanently locked in the proxy contract. While `ERC1967Utils` includes a check (`_checkNonPayable()`) to revert if `msg.value > 0` and `_data` is empty, this does not cover the case where `_data` is non-empty but the implementation's initializer does not consume the Ether.
+Not confirmed by static analysis (the model's own reading of the source). The `ERC1967Proxy` constructor is `payable` and delegates to `ERC1967Utils.upgradeToAndCall`. If `_data` is provided, `msg.value` is forwarded via `Address.functionDelegateCall`. If the implementation's initializer function is not designed to handle or consume this `msg.value`, any Ether sent during the proxy deployment (initialization) could become permanently locked in the proxy contract. While `ERC1967Utils` includes a check (`_checkNonPayable()`) to revert if `msg.value > 0` and `_data` is empty, this does not cover the case where `_data` is non-empty but the implementation's initializer does not consume the Ether.
 
 **Recommendation:** Ensure that the initializer function of the implementation contract is either `payable` and explicitly handles any forwarded `msg.value`, or that the deployment process strictly ensures `msg.value` is zero when `_data` is non-empty and the initializer is not designed to receive Ether.
 
 
 ### `I-01` — Reliance on OpenZeppelin Libraries  *(Severity: Informational · Status: Resolved)*
 
-The contract heavily relies on OpenZeppelin's battle-tested `ERC1967Proxy`, `Proxy`, and `ERC1967Utils` libraries. These libraries are widely used and have undergone extensive audits and community review, significantly reducing the risk of vulnerabilities within the proxy's core delegation and storage management logic.
+Not confirmed by static analysis (the model's own reading of the source). The contract heavily relies on OpenZeppelin's battle-tested `ERC1967Proxy`, `Proxy`, and `ERC1967Utils` libraries. These libraries are widely used and have undergone extensive audits and community review, significantly reducing the risk of vulnerabilities within the proxy's core delegation and storage management logic.
 
 **Recommendation:** Continue to monitor OpenZeppelin's security advisories and updates for any potential issues in the utilized library versions. Ensure that any custom logic built upon these libraries adheres to similar high security standards.
 

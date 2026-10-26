@@ -2,14 +2,14 @@
 token: Ethena
 ticker: ENA
 network: ethereum
-risk_score: 50
+risk_score: 40
 status: medium
 date: 2026-06-11
 ---
 
 # Ethena (ENA) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 50/100 — 🟡 Medium Risk**
+> **Risk Score: 40/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ethena-eth)
 
@@ -25,8 +25,8 @@ This report details the security audit of the ENA token contract, which serves a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The ENA contract demonstrates good technical architecture (7.1) by extending well-audited OpenZeppelin libraries for ERC20, burnable, permit, and two-step ownership functionalities. Code security… |
-| **Governance / Economics** | 4/10 | Medium | The economic model (7.4) features a controlled inflation mechanism where the contract owner can mint new tokens annually, capped at 10% of the total supply. This centralized minting authority (7.5)… |
+| **Technical** | 8/10 | Low | The ENA contract demonstrates good technical architecture (7.1) by extending well-audited OpenZeppelin libraries for ERC20, burnable, permit, and two-step ownership functionalities. Code security… |
+| **Governance / Economics** | 5/10 | Medium | The economic model (7.4) features a controlled inflation mechanism where the contract owner can mint new tokens annually, capped at 10% of the total supply. This centralized minting authority (7.5)… |
 | **Upgrades** | 5/10 | Medium | The ENA token contract is not designed to be upgradeable (7.7). This means its logic is immutable once deployed, eliminating upgrade-related risks such as proxy implementation vulnerabilities or… |
 
 ## LP Distribution
@@ -38,53 +38,53 @@ This report details the security audit of the ENA token contract, which serves a
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 3 Informational_
-
-### `H-01` — Centralized Minting Authority  *(Severity: High · Status: Unresolved)*
-
-The `mint` function is restricted to the contract owner via the `onlyOwner` modifier. This allows the owner to inflate the token supply annually up to `MAX_INFLATION` (10% of total supply). While limits are in place, this centralizes significant control over the token's economic policy in a single entity. A compromise of the owner's private key or malicious action by the owner could lead to uncontrolled inflation, devaluing the token.
-
-**Recommendation:** Implement a robust multi-signature wallet or a decentralized autonomous organization (DAO) for the contract owner address. This would distribute control and require multiple approvals for critical operations like minting, significantly reducing the risk of a single point of failure or malicious unilateral action.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 3 Informational_
 
 ### `M-01` — Reliance on `block.timestamp` for Critical Cooldown  *(Severity: Medium · Status: Unresolved)*
 
-The `MINT_WAIT_PERIOD` (365 days) relies on `block.timestamp` to enforce the yearly minting cooldown. While miner manipulation of `block.timestamp` is typically limited to small deviations to avoid network rejection, it is not entirely immune to manipulation. For a yearly cooldown, the impact is generally low, but it's a general pattern to be aware of for time-sensitive operations.
+Not confirmed by static analysis (the model's own reading of the source). The `MINT_WAIT_PERIOD` (365 days) relies on `block.timestamp` to enforce the yearly minting cooldown. While miner manipulation of `block.timestamp` is typically limited to small deviations to avoid network rejection, it is not entirely immune to manipulation. For a yearly cooldown, the impact is generally low, but it's a general pattern to be aware of for time-sensitive operations.
 
 **Recommendation:** For a yearly cooldown, `block.timestamp` is often considered acceptable. However, for future critical time-sensitive operations, consider using a decentralized oracle service (e.g., Chainlink Keepers or a dedicated time oracle) to provide a more robust and less manipulable time source.
 
 
 ### `M-02` — Significant Initial Supply Distribution to Specific Addresses  *(Severity: Medium · Status: Unresolved)*
 
-The constructor mints a substantial initial supply of 15 billion tokens to `_treasury` and `_foundation` addresses. The security and operational controls around these addresses are critical. If these are externally owned accounts (EOAs), they represent a single point of failure. If they are multi-signature wallets, their security depends on the configuration and key management practices.
+Not confirmed by static analysis (the model's own reading of the source). The constructor mints a substantial initial supply of 15 billion tokens to `_treasury` and `_foundation` addresses. The security and operational controls around these addresses are critical. If these are externally owned accounts (EOAs), they represent a single point of failure. If they are multi-signature wallets, their security depends on the configuration and key management practices.
 
 **Recommendation:** Ensure that the `_treasury` and `_foundation` addresses are secured with robust operational controls, ideally multi-signature wallets with a sufficient number of signers and proper key management procedures. Regularly audit the security practices surrounding these critical addresses.
 
 
+### `M-03` — Centralized Minting Authority  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function is restricted to the contract owner via the `onlyOwner` modifier. This allows the owner to inflate the token supply annually up to `MAX_INFLATION` (10% of total supply). While limits are in place, this centralizes significant control over the token's economic policy in a single entity. A compromise of the owner's private key or malicious action by the owner could lead to uncontrolled inflation, devaluing the token.
+
+**Recommendation:** Implement a robust multi-signature wallet or a decentralized autonomous organization (DAO) for the contract owner address. This would distribute control and require multiple approvals for critical operations like minting, significantly reducing the risk of a single point of failure or malicious unilateral action.
+
+
 ### `L-01` — Inflexible Inflation Rate  *(Severity: Low · Status: Unresolved)*
 
-The `MAX_INFLATION` is defined as a `constant` (10%), meaning it cannot be modified after contract deployment. While this provides predictability for token holders, it removes the flexibility to adjust the inflation rate in response to future economic conditions or evolving protocol needs. This is a design choice that trades adaptability for certainty.
+Not confirmed by static analysis (the model's own reading of the source). The `MAX_INFLATION` is defined as a `constant` (10%), meaning it cannot be modified after contract deployment. While this provides predictability for token holders, it removes the flexibility to adjust the inflation rate in response to future economic conditions or evolving protocol needs. This is a design choice that trades adaptability for certainty.
 
 **Recommendation:** This is a design decision. If future flexibility is desired, consider making `MAX_INFLATION` a state variable that can be updated by the owner or a governance mechanism, potentially with a time-lock or multi-signature approval for changes.
 
 
 ### `I-01` — Efficient `uint40` Usage for Timestamp  *(Severity: Informational · Status: Resolved)*
 
-The `lastMintTimestamp` variable is declared as `uint40`. This is an efficient use of storage compared to `uint256` for storing timestamps, as `uint40` is sufficient to store Unix timestamps for many centuries, leading to gas savings.
+Not confirmed by static analysis (the model's own reading of the source). The `lastMintTimestamp` variable is declared as `uint40`. This is an efficient use of storage compared to `uint256` for storing timestamps, as `uint40` is sufficient to store Unix timestamps for many centuries, leading to gas savings.
 
 **Recommendation:** No action required. This is a good practice for gas optimization.
 
 
 ### `I-02` — Robust Ownership Transfer Mechanism  *(Severity: Informational · Status: Resolved)*
 
-The contract utilizes OpenZeppelin's `Ownable2Step` for ownership transfers. This mechanism requires a two-step process (propose and accept), significantly reducing the risk of accidental ownership loss during transfer, which is a common vulnerability in `Ownable` contracts.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes OpenZeppelin's `Ownable2Step` for ownership transfers. This mechanism requires a two-step process (propose and accept), significantly reducing the risk of accidental ownership loss during transfer, which is a common vulnerability in `Ownable` contracts.
 
 **Recommendation:** No action required. This is a good security practice.
 
 
 ### `I-03` — Prevention of Ownership Renunciation  *(Severity: Informational · Status: Resolved)*
 
-The `renounceOwnership` function is explicitly overridden to revert, preventing the owner from accidentally or maliciously relinquishing control of the contract. This is a good security practice for contracts with critical owner-controlled functions.
+Not confirmed by static analysis (the model's own reading of the source). The `renounceOwnership` function is explicitly overridden to revert, preventing the owner from accidentally or maliciously relinquishing control of the contract. This is a good security practice for contracts with critical owner-controlled functions.
 
 **Recommendation:** No action required. This is a good security practice.
 

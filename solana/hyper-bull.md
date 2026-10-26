@@ -2,14 +2,14 @@
 token: Hyper Bull
 ticker: HBULL
 network: solana
-risk_score: 39
-status: medium
+risk_score: 22
+status: low
 date: 2026-07-18
 ---
 
 # Hyper Bull (HBULL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 22/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/hyper-bull-sol)
 
@@ -25,9 +25,9 @@ This audit of the Hyper Bull (HBULL) SPL Token Mint found that critical authorit
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Hyper Bull (HBULL) token is an SPL Token-2022 mint with a total supply of 999,998,837.590250 tokens across 6 decimals. Both the Mint Authority and Freeze Authority have been revoked, ensuring no… |
-| **Governance / Economics** | 2/10 | High | The token exhibits a 24-hour trading volume of $1,213,596 against a liquidity of $150,343, resulting in a Volume/Liquidity Ratio of 8.07. This indicates active trading relative to available… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any future changes to the token supply or account freeze status. The metadata is also immutable… |
+| **Technical** | 10/10 | Low | The Hyper Bull (HBULL) token is an SPL Token-2022 mint with a total supply of 999,998,837.590250 tokens across 6 decimals. Both the Mint Authority and Freeze Authority have been revoked, ensuring no… |
+| **Governance / Economics** | 5/10 | Medium | The token exhibits a 24-hour trading volume of $1,213,596 against a liquidity of $150,343, resulting in a Volume/Liquidity Ratio of 8.07. This indicates active trading relative to available… |
+| **Upgrades** | 10/10 | Low | The token's core authorities, Mint Authority and Freeze Authority, are both revoked, preventing any future changes to the token supply or account freeze status. The metadata is also immutable… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 16727 buys / 11954 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 4 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: Kite
 ticker: KITE
 network: ethereum
-risk_score: 39
-status: medium
+risk_score: 24
+status: low
 date: 2026-06-10
 ---
 
 # Kite (KITE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 24/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kite-eth)
 
@@ -25,8 +25,8 @@ The Kite token contract is an ERC-20 token with LayerZero Omnichain Fungible Tok
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract leverages well-audited OpenZeppelin (ERC20, Pausable, Ownable) and LayerZero (OFT) libraries, contributing to robust code security (7.2 Code Security). The architecture (7.1… |
-| **Governance / Economics** | 4/10 | Medium | The contract design exhibits high centralization (7.3 Access Control, 7.5 Governance), with a single `owner` address controlling critical functions. The owner can mint the entire `TOTAL_SUPPLY` (10… |
+| **Technical** | 10/10 | Low | The contract leverages well-audited OpenZeppelin (ERC20, Pausable, Ownable) and LayerZero (OFT) libraries, contributing to robust code security (7.2 Code Security). The architecture (7.1… |
+| **Governance / Economics** | 5/10 | Medium | The contract design exhibits high centralization (7.3 Access Control, 7.5 Governance), with a single `owner` address controlling critical functions. The owner can mint the entire `TOTAL_SUPPLY` (10… |
 | **Upgrades** | 7/10 | Low | The Kite contract is not designed as an upgradeable proxy (7.7 Upgrades). This eliminates the specific risks associated with upgrade mechanisms, such as proxy implementation bugs or insecure upgrade… |
 
 ## LP Distribution
@@ -38,39 +38,39 @@ The Kite token contract is an ERC-20 token with LayerZero Omnichain Fungible Tok
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · ⚪ 3 Informational_
-
-### `H-01` — Centralized Control by Owner  *(Severity: High · Status: Unresolved)*
-
-The `Ownable` pattern grants significant control to a single `owner` address. This includes the ability to `initialize` the token supply (minting all tokens to themselves), `pause` and `unpause` all token transfers, and `transferOwnership`. This centralization introduces a single point of failure; compromise of the owner's private key could lead to a complete loss of control over the token's functionality and potentially its economic stability.
-
-**Recommendation:** Consider implementing a multi-signature wallet for the `owner` address to distribute control and reduce the risk associated with a single point of failure. For critical operations, explore time-locks or a more decentralized governance mechanism.
-
+_🟡 2 Medium · ⚪ 3 Informational_
 
 ### `M-01` — Single Point of Failure for LayerZero Configuration  *(Severity: Medium · Status: Unresolved)*
 
-The `OFT` constructor sets the `_delegate` for LayerZero configurations to the `_owner` address. This means the same single owner address is responsible for managing critical cross-chain parameters and security settings within the LayerZero endpoint. A compromise of this owner key could allow an attacker to manipulate cross-chain message passing, potentially leading to unauthorized token transfers or denial of service for cross-chain operations.
+Not confirmed by static analysis (the model's own reading of the source). The `OFT` constructor sets the `_delegate` for LayerZero configurations to the `_owner` address. This means the same single owner address is responsible for managing critical cross-chain parameters and security settings within the LayerZero endpoint. A compromise of this owner key could allow an attacker to manipulate cross-chain message passing, potentially leading to unauthorized token transfers or denial of service for cross-chain operations.
 
 **Recommendation:** While the `OFT` contract itself doesn't expose delegate management functions, ensure the `owner` address (which acts as the LayerZero delegate) is secured with a robust multi-signature setup. Regularly review LayerZero configurations and permissions.
 
 
+### `M-02` — Centralized Control by Owner  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `Ownable` pattern grants significant control to a single `owner` address. This includes the ability to `initialize` the token supply (minting all tokens to themselves), `pause` and `unpause` all token transfers, and `transferOwnership`. This centralization introduces a single point of failure; compromise of the owner's private key could lead to a complete loss of control over the token's functionality and potentially its economic stability.
+
+**Recommendation:** Consider implementing a multi-signature wallet for the `owner` address to distribute control and reduce the risk associated with a single point of failure. For critical operations, explore time-locks or a more decentralized governance mechanism.
+
+
 ### `I-01` — Irreversible `isNativeChain` Flag  *(Severity: Informational · Status: Unresolved)*
 
-The `isNativeChain` boolean variable, which determines if the `initialize()` function can be called and where the total supply is minted, is set in the constructor and cannot be modified thereafter. This design ensures that the native chain designation is immutable, preventing accidental or malicious changes post-deployment.
+Not confirmed by static analysis (the model's own reading of the source). The `isNativeChain` boolean variable, which determines if the `initialize()` function can be called and where the total supply is minted, is set in the constructor and cannot be modified thereafter. This design ensures that the native chain designation is immutable, preventing accidental or malicious changes post-deployment.
 
 **Recommendation:** No direct recommendation, as this is an intentional design choice. Ensure the initial deployment parameter for `_isNativeChain` is correctly set for each deployed instance.
 
 
 ### `I-02` — Initial Token Distribution to Owner  *(Severity: Informational · Status: Unresolved)*
 
-The `initialize()` function, callable only once by the `owner` on the native chain, mints the entire `TOTAL_SUPPLY` (10 billion KITE tokens) directly to the `msg.sender` (the owner). This design places the entire initial token supply under the control of the owner, who is then responsible for its distribution.
+Not confirmed by static analysis (the model's own reading of the source). The `initialize()` function, callable only once by the `owner` on the native chain, mints the entire `TOTAL_SUPPLY` (10 billion KITE tokens) directly to the `msg.sender` (the owner). This design places the entire initial token supply under the control of the owner, who is then responsible for its distribution.
 
 **Recommendation:** This is a common initial distribution strategy. Ensure the owner has a clear and secure plan for distributing the tokens to avoid centralization concerns post-minting.
 
 
 ### `I-03` — Non-Upgradeable Contract  *(Severity: Informational · Status: Unresolved)*
 
-The `Kite` contract is implemented as a standard, non-proxy contract. This means it is not designed to be upgradeable. While this eliminates risks associated with upgrade mechanisms (e.g., proxy implementation bugs, upgrade path vulnerabilities), it also means that any discovered bugs or desired feature enhancements cannot be implemented without a complete redeployment and migration of assets.
+Not confirmed by static analysis (the model's own reading of the source). The `Kite` contract is implemented as a standard, non-proxy contract. This means it is not designed to be upgradeable. While this eliminates risks associated with upgrade mechanisms (e.g., proxy implementation bugs, upgrade path vulnerabilities), it also means that any discovered bugs or desired feature enhancements cannot be implemented without a complete redeployment and migration of assets.
 
 **Recommendation:** No direct recommendation, as this is a design choice. Acknowledge the immutability and ensure thorough testing before deployment, as the contract cannot be modified once deployed.
 

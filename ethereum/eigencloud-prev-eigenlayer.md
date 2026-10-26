@@ -26,8 +26,8 @@ Consider strengthening the administrative controls for upgrades by increasing th
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract implements the well-audited OpenZeppelin TransparentUpgradeableProxy pattern (7.1 Architecture). This design separates proxy logic from implementation logic, preventing selector clashes.… |
-| **Governance / Economics** | 3/10 | High | The proxy's administrative functions (e.g., `upgradeTo`, `changeAdmin`) are controlled by a ProxyAdmin contract, which is in turn owned by a 1-of-2 Gnosis Safe multisig (7.3 Access Control, 7.5… |
+| **Technical** | 7/10 | Low | The contract implements the well-audited OpenZeppelin TransparentUpgradeableProxy pattern (7.1 Architecture). This design separates proxy logic from implementation logic, preventing selector clashes.… |
+| **Governance / Economics** | 5/10 | Medium | The proxy's administrative functions (e.g., `upgradeTo`, `changeAdmin`) are controlled by a ProxyAdmin contract, which is in turn owned by a 1-of-2 Gnosis Safe multisig (7.3 Access Control, 7.5… |
 | **Upgrades** | 1/10 | High | The contract uses the Transparent Proxy pattern, allowing for upgrades via `upgradeTo` and `upgradeToAndCall` functions, which are restricted to the admin (7.7 Upgrades). This standard and… |
 
 ## Proxy Upgrade Controls
@@ -48,32 +48,32 @@ Consider strengthening the administrative controls for upgrades by increasing th
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · ⚪ 2 Informational_
+_🟡 2 Medium · ⚪ 2 Informational_
 
-### `C-01` — Unverified Implementation Contract  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Unverified Implementation Contract  *(Severity: Medium · Status: Unresolved)*
 
-The contract at 0xec53bf9167f50cdeb3ae105f56099aaab9061f83 is a TransparentUpgradeableProxy pointing to an implementation contract at 0x2c4a81e257381f87f5a5c4bd525116466d972e50. The source code for this implementation contract is not verified on Etherscan or similar block explorers. This means the actual logic being executed when users interact with the proxy is unknown and cannot be publicly audited or verified. This poses an extreme risk, as the implementation could contain malicious code, critical vulnerabilities, or unexpected behavior. (7.2 Code Security, 7.6 External)
+Not confirmed by static analysis (the model's own reading of the source). The contract at 0xec53bf9167f50cdeb3ae105f56099aaab9061f83 is a TransparentUpgradeableProxy pointing to an implementation contract at 0x2c4a81e257381f87f5a5c4bd525116466d972e50. The source code for this implementation contract is not verified on Etherscan or similar block explorers. This means the actual logic being executed when users interact with the proxy is unknown and cannot be publicly audited or verified. This poses an extreme risk, as the implementation could contain malicious code, critical vulnerabilities, or unexpected behavior. (7.2 Code Security, 7.6 External)
 
 **Recommendation:** Immediately verify the source code of the implementation contract (0x2c4a81e257381f87f5a5c4bd525116466d972e50) on the blockchain explorer. Without this, the security and integrity of the entire system are compromised. All future implementation contracts should also be fully verified.
 
 
-### `H-01` — Low Multisig Threshold for Upgrade Control  *(Severity: High · Status: Unresolved)*
+### `M-02` — Low Multisig Threshold for Upgrade Control  *(Severity: Medium · Status: Unresolved)*
 
-The administrative control over the proxy, including the ability to upgrade the implementation or change the admin, is managed by a ProxyAdmin contract owned by a 1-of-2 Gnosis Safe multisig. While a multisig is generally a good security practice, a 1-of-2 threshold means that compromise of a single private key among the two owners is sufficient to gain full control over the proxy's upgradeability and administrative functions. This presents a significant centralization risk and a single point of failure for critical operations. (7.3 Access Control, 7.5 Governance)
+Not confirmed by static analysis (the model's own reading of the source). The administrative control over the proxy, including the ability to upgrade the implementation or change the admin, is managed by a ProxyAdmin contract owned by a 1-of-2 Gnosis Safe multisig. While a multisig is generally a good security practice, a 1-of-2 threshold means that compromise of a single private key among the two owners is sufficient to gain full control over the proxy's upgradeability and administrative functions. This presents a significant centralization risk and a single point of failure for critical operations. (7.3 Access Control, 7.5 Governance)
 
 **Recommendation:** Consider increasing the multisig threshold to at least 2-of-3 or higher, depending on the number of trusted signers available. This would require a compromise of multiple keys to execute unauthorized actions, significantly enhancing security. Additionally, evaluate the possibility of adding a timelock to upgrade operations to provide a delay for community review and potential emergency intervention.
 
 
 ### `I-01` — Standard OpenZeppelin TransparentUpgradeableProxy Usage  *(Severity: Informational · Status: Unresolved)*
 
-The contract utilizes the TransparentUpgradeableProxy from OpenZeppelin Contracts. This is a widely adopted, well-audited, and robust proxy pattern (EIP-1967) that effectively prevents selector clashes between the proxy and its implementation. The use of standard, battle-tested libraries reduces the likelihood of novel vulnerabilities in the proxy's core logic. (7.1 Architecture, 7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes the TransparentUpgradeableProxy from OpenZeppelin Contracts. This is a widely adopted, well-audited, and robust proxy pattern (EIP-1967) that effectively prevents selector clashes between the proxy and its implementation. The use of standard, battle-tested libraries reduces the likelihood of novel vulnerabilities in the proxy's core logic. (7.1 Architecture, 7.2 Code Security)
 
 **Recommendation:** Continue to rely on well-vetted and audited libraries like OpenZeppelin for core infrastructure components. Ensure that any custom logic built on top of these components is thoroughly tested and audited.
 
 
 ### `I-02` — Admin Function `_requireZeroValue()` Check  *(Severity: Informational · Status: Unresolved)*
 
-The `_requireZeroValue()` function is used internally by admin-only functions (`_dispatchAdmin`, `_dispatchImplementation`, `_dispatchChangeAdmin`, `_dispatchUpgradeTo`, `_dispatchUpgradeToAndCall`) to ensure that no Ether is sent along with these calls. This is a good practice to prevent accidental loss of funds or unexpected behavior, as these administrative functions are not intended to receive value. (7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). The `_requireZeroValue()` function is used internally by admin-only functions (`_dispatchAdmin`, `_dispatchImplementation`, `_dispatchChangeAdmin`, `_dispatchUpgradeTo`, `_dispatchUpgradeToAndCall`) to ensure that no Ether is sent along with these calls. This is a good practice to prevent accidental loss of funds or unexpected behavior, as these administrative functions are not intended to receive value. (7.2 Code Security)
 
 **Recommendation:** Maintain this practice for administrative functions that do not require Ether transfers.
 

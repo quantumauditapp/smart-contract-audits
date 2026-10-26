@@ -2,14 +2,14 @@
 token: OpenGradient
 ticker: OPG
 network: base
-risk_score: 37
+risk_score: 35
 status: medium
 date: 2026-07-07
 ---
 
 # OpenGradient (OPG) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/opengradient-base)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Irreversible Burn Function  *(Severity: Low · Status: Unresolved)*
 
-The contract includes a `burn` function that allows any token holder to permanently destroy their own tokens. While this function is correctly implemented using OpenZeppelin's `_burn` and adheres to ERC20 standards, the action is irreversible. If a user accidentally burns tokens, there is no mechanism to recover them.
+Not confirmed by static analysis (the model's own reading of the source). The contract includes a `burn` function that allows any token holder to permanently destroy their own tokens. While this function is correctly implemented using OpenZeppelin's `_burn` and adheres to ERC20 standards, the action is irreversible. If a user accidentally burns tokens, there is no mechanism to recover them.
 
 **Recommendation:** Educate users about the irreversible nature of the `burn` function. Implement clear UI/UX warnings in any front-end interfaces that interact with this function to prevent accidental token loss. Consider adding a multi-step confirmation process for burning tokens.
 
 
 ### `I-01` — Immutability and Lack of Upgradeability  *(Severity: Informational · Status: Unresolved)*
 
-The OpenGradientToken contract is designed to be immutable and non-upgradeable. This design choice eliminates risks associated with proxy patterns and malicious upgrades, providing certainty about the contract's behavior over time (7.7 Upgrades). However, it also means that no bug fixes, feature enhancements, or adjustments can be made to the contract logic post-deployment. Any future changes would require deploying a new token contract and migrating users.
+Not confirmed by static analysis (the model's own reading of the source). The OpenGradientToken contract is designed to be immutable and non-upgradeable. This design choice eliminates risks associated with proxy patterns and malicious upgrades, providing certainty about the contract's behavior over time (7.7 Upgrades). However, it also means that no bug fixes, feature enhancements, or adjustments can be made to the contract logic post-deployment. Any future changes would require deploying a new token contract and migrating users.
 
 **Recommendation:** Acknowledge this design choice and its implications. Ensure all initial requirements are thoroughly met, as no on-chain modifications are possible. Communicate clearly to the community that the token contract is immutable.
 
 
 ### `I-02` — Fixed Supply and Absence of Administrative Control  *(Severity: Informational · Status: Unresolved)*
 
-The contract is designed with a fixed total supply of 1 billion tokens, all minted to a recipient during deployment, and explicitly states 'No centralized admin functions - completely decentralized' (7.4 Economic, 7.5 Governance). This design choice ensures decentralization and prevents arbitrary supply manipulation or centralized control. However, it also means there are no on-chain mechanisms for future tokenomics adjustments (e.g., adding staking rewards, adjusting supply for ecosystem growth) or emergency actions (e.g., pausing transfers in case of a critical vulnerability in an integrated protocol).
+Not confirmed by static analysis (the model's own reading of the source). The contract is designed with a fixed total supply of 1 billion tokens, all minted to a recipient during deployment, and explicitly states 'No centralized admin functions - completely decentralized' (7.4 Economic, 7.5 Governance). This design choice ensures decentralization and prevents arbitrary supply manipulation or centralized control. However, it also means there are no on-chain mechanisms for future tokenomics adjustments (e.g., adding staking rewards, adjusting supply for ecosystem growth) or emergency actions (e.g., pausing transfers in case of a critical vulnerability in an integrated protocol).
 
 **Recommendation:** Ensure that the project's long-term vision and tokenomics are fully compatible with a fixed supply and lack of administrative control. If future flexibility is desired, consider off-chain governance mechanisms or separate contracts for ecosystem incentives that interact with this token.
 

@@ -2,14 +2,14 @@
 token: Jupiter
 ticker: JUP
 network: solana
-risk_score: 16
+risk_score: 12
 status: low
 date: 2026-06-21
 ---
 
 # Jupiter (JUP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 16/100 — 🟢 Low Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/jupiter-sol)
 
@@ -26,8 +26,8 @@ This audit of the Jupiter (JUP) SPL token mint identifies a low-severity risk re
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Jupiter (JUP) token operates on the standard `spl-token` program (v3). Both the Mint Authority and Freeze Authority are revoked, ensuring no new tokens can be minted and no existing accounts can… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits strong market health with over $216 million in DEX liquidity and $82 million in 24-hour trading volume. The Volume/Liquidity Ratio of 0.38 is normal, not indicating wash trading.… |
-| **Upgrades** | 8/10 | Low | The token's core functionalities are immutable, as both the mint and freeze authorities have been revoked. There are no indications of upgradable transfer fees or transfer hooks. The only mutable… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits strong market health with over $216 million in DEX liquidity and $82 million in 24-hour trading volume. The Volume/Liquidity Ratio of 0.38 is normal, not indicating wash trading.… |
+| **Upgrades** | 9/10 | Low | The token's core functionalities are immutable, as both the mint and freeze authorities have been revoked. There are no indications of upgradable transfer fees or transfer hooks. The only mutable… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ The token's metadata is mutable, meaning its name, symbol, or image can be chang
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The token's metadata is mutable, meaning its name, symbol, or image can be chang
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions

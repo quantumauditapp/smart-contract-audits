@@ -2,14 +2,14 @@
 token: Chonketha the Wet Beaver
 ticker: CHONKETHA
 network: solana
-risk_score: 20
+risk_score: 3
 status: low
 date: 2026-07-20
 ---
 
 # Chonketha the Wet Beaver (CHONKETHA) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 20/100 — 🟢 Low Risk**
+> **Risk Score: 3/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/chonketha-the-wet-beaver-sol)
 
@@ -26,8 +26,8 @@ The Chonketha token mint is an SPL Token-2022 with both mint and freeze authorit
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Chonketha token is an SPL Token-2022 mint with both mint and freeze authorities revoked, ensuring no new tokens can be created and no accounts can be frozen. It does not utilize a transfer hook… |
-| **Governance / Economics** | 6/10 | Medium | The token's DEX pair is very new, established only 1 day ago, which means there is insufficient historical data to evaluate its market behavior or community stability. Liquidity is $41,357, and the… |
-| **Upgrades** | 8/10 | Low | The token mint has no mutable authorities for minting or freezing, and its metadata is immutable, meaning core properties cannot be changed. No Token-2022 extensions that allow for upgradable… |
+| **Governance / Economics** | 9/10 | Low | The token's DEX pair is very new, established only 1 day ago, which means there is insufficient historical data to evaluate its market behavior or community stability. Liquidity is $41,357, and the… |
+| **Upgrades** | 10/10 | Low | The token mint has no mutable authorities for minting or freezing, and its metadata is immutable, meaning core properties cannot be changed. No Token-2022 extensions that allow for upgradable… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3920 buys / 2300 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

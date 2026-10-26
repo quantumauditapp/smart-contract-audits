@@ -2,14 +2,14 @@
 token: Worldcoin
 ticker: WLD
 network: ethereum
-risk_score: 41
-status: medium
+risk_score: 31
+status: low
 date: 2026-06-10
 ---
 
 # Worldcoin (WLD) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 41/100 — 🟡 Medium Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/worldcoin-eth)
 
@@ -25,8 +25,8 @@ The WLD token contract implements a standard ERC20 token with additional logic f
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The WLD token contract demonstrates good technical quality, utilizing battle-tested OpenZeppelin libraries for ERC20 and Ownable2Step functionalities, which enhances code security (7.2 Code… |
-| **Governance / Economics** | 4/10 | Medium | The contract exhibits a high degree of centralization, primarily through the `owner` and `minter` roles (7.3 Access Control, 7.5 Governance). The owner can perform a one-time mint up to… |
+| **Technical** | 10/10 | Low | The WLD token contract demonstrates good technical quality, utilizing battle-tested OpenZeppelin libraries for ERC20 and Ownable2Step functionalities, which enhances code security (7.2 Code… |
+| **Governance / Economics** | 5/10 | Medium | The contract exhibits a high degree of centralization, primarily through the `owner` and `minter` roles (7.3 Access Control, 7.5 Governance). The owner can perform a one-time mint up to… |
 | **Upgrades** | 7/10 | Low | The WLD contract is implemented as a standard, non-upgradeable token contract. It does not utilize proxy patterns (e.g., UUPS, Transparent) for upgradeability (7.7 Upgrades). This design choice… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The WLD token contract implements a standard ERC20 token with additional logic f
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralization Risk with Owner and Minter Roles  *(Severity: High · Status: Unresolved)*
-
-The `owner` role, secured by `Ownable2Step`, holds significant power, including a one-time mint of up to `INITIAL_SUPPLY_CAP` and the ability to set/change the `minter` address. The `minter` then controls all subsequent inflation minting. If these roles are controlled by a single EOA, it introduces a high degree of centralization and a single point of failure, potentially leading to unauthorized supply manipulation or governance issues. (7.3 Access Control, 7.4 Economic, 7.5 Governance)
-
-**Recommendation:** Consider implementing a multi-signature wallet or a robust governance mechanism (e.g., a DAO) to control the `owner` and `minter` roles. This would distribute control and require multiple approvals for critical operations, enhancing security and decentralization.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Complex Inflation Logic and Potential for Misinterpretation  *(Severity: Medium · Status: Unresolved)*
 
-The `mintInflation` function implements a detailed inflation mechanism with `inflationUnlockTime`, `inflationCapPeriod`, and `inflationCapWad`. The NatSpec explicitly notes that 'it is possible for period over period inflation to reach up to (1 + inflation cap)^2 - 1' under certain conditions. While documented, this complexity could lead to misinterpretation by stakeholders regarding the actual maximum inflation rate over arbitrary periods, potentially causing unexpected token supply increases. (7.2 Code Security, 7.4 Economic)
+Not confirmed by static analysis (the model's own reading of the source). The `mintInflation` function implements a detailed inflation mechanism with `inflationUnlockTime`, `inflationCapPeriod`, and `inflationCapWad`. The NatSpec explicitly notes that 'it is possible for period over period inflation to reach up to (1 + inflation cap)^2 - 1' under certain conditions. While documented, this complexity could lead to misinterpretation by stakeholders regarding the actual maximum inflation rate over arbitrary periods, potentially causing unexpected token supply increases. (7.2 Code Security, 7.4 Economic)
 
 **Recommendation:** Ensure comprehensive documentation and clear communication to all stakeholders about the nuances of the inflation mechanism, especially the potential for slightly higher-than-expected inflation over certain intervals. Consider adding internal helper functions or clearer comments if the logic can be further modularized for readability.
 
 
+### `M-02` — Centralization Risk with Owner and Minter Roles  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `owner` role, secured by `Ownable2Step`, holds significant power, including a one-time mint of up to `INITIAL_SUPPLY_CAP` and the ability to set/change the `minter` address. The `minter` then controls all subsequent inflation minting. If these roles are controlled by a single EOA, it introduces a high degree of centralization and a single point of failure, potentially leading to unauthorized supply manipulation or governance issues. (7.3 Access Control, 7.4 Economic, 7.5 Governance)
+
+**Recommendation:** Consider implementing a multi-signature wallet or a robust governance mechanism (e.g., a DAO) to control the `owner` and `minter` roles. This would distribute control and require multiple approvals for critical operations, enhancing security and decentralization.
+
+
 ### `L-01` — Immutability of Critical Constructor Parameters  *(Severity: Low · Status: Unresolved)*
 
-Several critical parameters, including `inflationCapPeriod`, `inflationCapWad`, and `inflationUnlockTime`, are set as `immutable` during contract deployment via the constructor. Additionally, the initial `existingHolders` and `existingAmounts` are processed only at deployment. Any error or misconfiguration in these parameters during deployment cannot be corrected post-deployment, requiring a new contract deployment and migration if a mistake occurs. (7.1 Architecture, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). Several critical parameters, including `inflationCapPeriod`, `inflationCapWad`, and `inflationUnlockTime`, are set as `immutable` during contract deployment via the constructor. Additionally, the initial `existingHolders` and `existingAmounts` are processed only at deployment. Any error or misconfiguration in these parameters during deployment cannot be corrected post-deployment, requiring a new contract deployment and migration if a mistake occurs. (7.1 Architecture, 7.8 Operations)
 
 **Recommendation:** Thoroughly review and test all constructor parameters in a controlled environment before mainnet deployment. Implement robust deployment scripts and verification processes to minimize the risk of misconfiguration. While immutability provides certainty, ensure the initial setup is flawless.
 
 
 ### `I-01` — Lack of Event for Minter Address Update  *(Severity: Informational · Status: Unresolved)*
 
-The `setMinter` function allows the contract owner to update the `minter` address, which is a critical role responsible for inflation minting. However, this function does not emit an event upon a successful update. This lack of an event makes it challenging for off-chain monitoring systems, block explorers, and users to track changes to the `minter` address, reducing transparency and auditability. (7.2 Code Security, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The `setMinter` function allows the contract owner to update the `minter` address, which is a critical role responsible for inflation minting. However, this function does not emit an event upon a successful update. This lack of an event makes it challenging for off-chain monitoring systems, block explorers, and users to track changes to the `minter` address, reducing transparency and auditability. (7.2 Code Security, 7.8 Operations)
 
 **Recommendation:** Add an event to the `setMinter` function, such as `event MinterUpdated(address indexed oldMinter, address indexed newMinter);`, to log changes to the `minter` address. This will improve transparency and allow for easier tracking and auditing of this critical role.
 

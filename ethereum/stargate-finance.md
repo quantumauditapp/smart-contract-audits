@@ -2,14 +2,14 @@
 token: Stargate Finance
 ticker: STG
 network: ethereum
-risk_score: 66
-status: high
+risk_score: 49
+status: medium
 date: 2026-06-10
 ---
 
 # Stargate Finance (STG) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 49/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/stargate-finance-eth)
 
@@ -25,9 +25,9 @@ The StargateToken contract is an ERC20 token with omnichain capabilities powered
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages OpenZeppelin's battle-tested ERC20 and SafeMath for token operations, enhancing code security (7.2). It implements a standard lock/burn and mint/unlock mechanism for… |
+| **Technical** | 8/10 | Low | The contract leverages OpenZeppelin's battle-tested ERC20 and SafeMath for token operations, enhancing code security (7.2). It implements a standard lock/burn and mint/unlock mechanism for… |
 | **Governance / Economics** | 1/10 | High | The contract employs an `Ownable` access control pattern, granting the owner significant power over critical functions such as pausing token transfers and setting destination contracts (7.3). This… |
-| **Upgrades** | 6/10 | Medium | The contract is deployed as a standard, non-upgradeable implementation (7.7). This design choice eliminates the complexities and risks associated with proxy upgrade mechanisms, such as storage… |
+| **Upgrades** | 7/10 | Low | The contract is deployed as a standard, non-upgradeable implementation (7.7). This design choice eliminates the complexities and risks associated with proxy upgrade mechanisms, such as storage… |
 
 ## LP Distribution
 
@@ -38,39 +38,39 @@ The StargateToken contract is an ERC20 token with omnichain capabilities powered
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Centralized Control by Owner  *(Severity: High · Status: Unresolved)*
-
-The `Ownable` pattern grants the contract owner extensive control over critical functions, including `pauseSendTokens`, `setDestination`, and various LayerZero endpoint configurations (`setConfig`, `setSendVersion`, `setReceiveVersion`, `forceResumeReceive`). A compromise of the owner's private key could lead to the pausing of cross-chain transfers, misdirection of funds by setting malicious destination contracts, or manipulation of LayerZero configurations. (7.3 Access Control, 7.4 Economic, 7.8 Operations)
-
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for ownership of the contract to distribute control and reduce the single point of failure risk. Consider time-locks for critical administrative actions to allow for community review or emergency response.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Reliance on External LayerZero Endpoint Security  *(Severity: Medium · Status: Unresolved)*
 
-The contract's core cross-chain functionality relies entirely on the security and correct operation of the LayerZero endpoint. Any vulnerabilities, misconfigurations, or compromises within the LayerZero protocol or its specific endpoint implementation could directly impact the integrity of token transfers, potentially leading to loss of funds or incorrect token supply across chains. (7.6 External)
+Not confirmed by static analysis (the model's own reading of the source). The contract's core cross-chain functionality relies entirely on the security and correct operation of the LayerZero endpoint. Any vulnerabilities, misconfigurations, or compromises within the LayerZero protocol or its specific endpoint implementation could directly impact the integrity of token transfers, potentially leading to loss of funds or incorrect token supply across chains. (7.6 External)
 
 **Recommendation:** While direct mitigation within this contract is limited, it is crucial to maintain a strong understanding of LayerZero's security posture, monitor their announcements, and have contingency plans in place for potential LayerZero-related incidents. Ensure the LayerZero endpoint address used is the official and correct one.
 
 
+### `M-02` — Centralized Control by Owner  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `Ownable` pattern grants the contract owner extensive control over critical functions, including `pauseSendTokens`, `setDestination`, and various LayerZero endpoint configurations (`setConfig`, `setSendVersion`, `setReceiveVersion`, `forceResumeReceive`). A compromise of the owner's private key could lead to the pausing of cross-chain transfers, misdirection of funds by setting malicious destination contracts, or manipulation of LayerZero configurations. (7.3 Access Control, 7.4 Economic, 7.8 Operations)
+
+**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for ownership of the contract to distribute control and reduce the single point of failure risk. Consider time-locks for critical administrative actions to allow for community review or emergency response.
+
+
 ### `L-01` — Assembly for Address Decoding  *(Severity: Low · Status: Unresolved)*
 
-The `lzReceive` function uses an inline assembly block (`assembly { toAddress := mload(add(_to, 20)) }`) to extract an `address` from a `bytes` variable `_to`. While this pattern can be efficient, it relies on specific knowledge of how `bytes` are encoded in memory and assumes `_to` will always contain a 20-byte address at the expected offset. If the encoding of `_to` were to change or if `_to` were not exactly 20 bytes, this could lead to incorrect address extraction or unexpected behavior. (7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). The `lzReceive` function uses an inline assembly block (`assembly { toAddress := mload(add(_to, 20)) }`) to extract an `address` from a `bytes` variable `_to`. While this pattern can be efficient, it relies on specific knowledge of how `bytes` are encoded in memory and assumes `_to` will always contain a 20-byte address at the expected offset. If the encoding of `_to` were to change or if `_to` were not exactly 20 bytes, this could lead to incorrect address extraction or unexpected behavior. (7.2 Code Security)
 
 **Recommendation:** Consider using `abi.decode` directly if the `_to` parameter is consistently an `address` type encoded as `bytes`. For example, if `_to` is always `abi.encodePacked(address_value)`, then `(address toAddress, uint256 qty) = abi.decode(_payload, (address, uint256));` would be safer and more readable. If the current assembly is strictly necessary due to LayerZero's specific payload structure, ensure thorough testing covers edge cases for `_to`'s length and content.
 
 
 ### `I-01` — Renounce Ownership Disabled  *(Severity: Informational · Status: Unresolved)*
 
-The `renounceOwnership()` function is overridden to be a no-op (`function renounceOwnership() public override onlyOwner {}`). This prevents the owner from accidentally or intentionally renouncing ownership, which can be a security feature to avoid leaving the contract unmanaged. However, it also means that ownership cannot be permanently removed without transferring it to another address. (7.3 Access Control, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The `renounceOwnership()` function is overridden to be a no-op (`function renounceOwnership() public override onlyOwner {}`). This prevents the owner from accidentally or intentionally renouncing ownership, which can be a security feature to avoid leaving the contract unmanaged. However, it also means that ownership cannot be permanently removed without transferring it to another address. (7.3 Access Control, 7.8 Operations)
 
 **Recommendation:** This is a design choice. If the intention is to always have an owner, this implementation is acceptable. Ensure that the owner address is securely managed and that there are clear operational procedures for ownership transfers.
 
 
 ### `I-02` — BUSL-1.1 License  *(Severity: Informational · Status: Unresolved)*
 
-The contract uses the Business Source License 1.1 (BUSL-1.1). This is a non-open source license that typically restricts usage for a certain period or until specific conditions are met, after which it may convert to an open-source license like MIT. While not a security vulnerability, it's important for users and integrators to be aware of the licensing terms and their implications for usage and modification.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses the Business Source License 1.1 (BUSL-1.1). This is a non-open source license that typically restricts usage for a certain period or until specific conditions are met, after which it may convert to an open-source license like MIT. While not a security vulnerability, it's important for users and integrators to be aware of the licensing terms and their implications for usage and modification.
 
 **Recommendation:** Ensure all parties interacting with or building upon this contract understand the terms and conditions of the BUSL-1.1 license.
 

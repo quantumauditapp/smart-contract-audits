@@ -2,14 +2,14 @@
 token: Dark Arena
 ticker: DARK
 network: solana
-risk_score: 49
-status: medium
+risk_score: 30
+status: low
 date: 2026-07-14
 ---
 
 # Dark Arena (DARK) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 49/100 — 🟡 Medium Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dark-arena-sol)
 
@@ -25,9 +25,9 @@ The Dark Arena (DARK) SPL token mint has revoked mint and freeze authorities, in
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The Dark Arena (DARK) token is implemented using the classic SPL Token Program (v3). Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no… |
-| **Governance / Economics** | 1/10 | High | The token exhibits a total DEX liquidity of $124,489 with a 24-hour trading volume of $232,808, resulting in a normal Volume/Liquidity Ratio of 1.87. However, the DEX pair is very new, established… |
-| **Upgrades** | 8/10 | Low | The Dark Arena (DARK) token mint has robust immutability for critical functions, with both the mint authority and freeze authority permanently revoked. This means the token supply cannot be… |
+| **Technical** | 10/10 | Low | The Dark Arena (DARK) token is implemented using the classic SPL Token Program (v3). Both the mint authority and freeze authority have been revoked, ensuring that no new tokens can be minted and no… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits a total DEX liquidity of $124,489 with a 24-hour trading volume of $232,808, resulting in a normal Volume/Liquidity Ratio of 1.87. However, the DEX pair is very new, established… |
+| **Upgrades** | 10/10 | Low | The Dark Arena (DARK) token mint has robust immutability for critical functions, with both the mint authority and freeze authority permanently revoked. This means the token supply cannot be… |
 
 ## Security Findings
 
@@ -61,13 +61,13 @@ The token's metadata, including its name, symbol, or image, can be changed post-
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1031 buys / 1094 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ The token's metadata, including its name, symbol, or image, can be changed post-
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

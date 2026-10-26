@@ -2,14 +2,14 @@
 token: Asteroid Shiba
 ticker: ASTEROID
 network: ethereum
-risk_score: 20
+risk_score: 0
 status: low
 date: 2026-06-19
 ---
 
 # Asteroid Shiba (ASTEROID) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 20/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/asteroid-shiba-eth)
 
@@ -25,9 +25,9 @@ The Asteroid Shiba (AS) token contract is an ERC-20 token with significant owner
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract's technical architecture (7.1) is a standard ERC-20 implementation with added tax and anti-bot/anti-whale mechanisms. Code security (7.2) benefits from Solidity 0.8.25's built-in… |
-| **Governance / Economics** | 7/10 | Low | The economic model (7.4) is highly centralized, granting the owner extensive control over all critical parameters, including buy/sell taxes, transaction limits, wallet size limits, and the ability to… |
-| **Upgrades** | 8/10 | Low | The contract is not designed to be upgradeable (7.7). There are no proxy patterns or upgrade interfaces implemented, meaning the contract's logic is immutable once deployed. This eliminates… |
+| **Technical** | 10/10 | Low | The contract's technical architecture (7.1) is a standard ERC-20 implementation with added tax and anti-bot/anti-whale mechanisms. Code security (7.2) benefits from Solidity 0.8.25's built-in… |
+| **Governance / Economics** | 10/10 | Low | The economic model (7.4) is highly centralized, granting the owner extensive control over all critical parameters, including buy/sell taxes, transaction limits, wallet size limits, and the ability to… |
+| **Upgrades** | 10/10 | Low | The contract is not designed to be upgradeable (7.7). There are no proxy patterns or upgrade interfaces implemented, meaning the contract's logic is immutable once deployed. This eliminates… |
 
 ## LP Distribution
 
@@ -38,60 +38,60 @@ The Asteroid Shiba (AS) token contract is an ERC-20 token with significant owner
 
 ## Security Findings
 
-_🔴 2 Critical · 🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `C-01` — Extreme Centralization and Owner Privileges  *(Severity: Critical · Status: Unresolved)*
-
-The contract owner possesses extensive control over nearly all critical parameters, including tax rates (_initialBuyTax, _initialSellTax, _finalBuyTax, _finalSellTax), transaction limits (_maxTxAmount), wallet size limits (_maxWalletSize), swap thresholds (_taxSwapThreshold, _maxTaxSwap), anti-bot measures (sellsPerBlock, buysFirstBlock), and the ability to enable/disable trading (tradingOpen, swapEnabled). The owner can also whitelist addresses via the `isExile` mapping to bypass all restrictions. This level of centralization allows the owner to unilaterally alter the token's economic model and operational behavior, posing a severe risk to token holders.
-
-**Recommendation:** Decentralize control over critical parameters. Implement a multi-signature wallet for sensitive operations or introduce a time-locked governance mechanism for changes to tax rates, limits, and trading status. Remove the `isExile` mapping or restrict its use to only essential protocol addresses, not arbitrary user addresses.
-
-
-### `C-02` — Honeypot Potential  *(Severity: Critical · Status: Unresolved)*
-
-Due to the extreme centralization (C-01), the contract has significant honeypot potential. The owner can, at any time, set the sell tax to 100%, set the maximum transaction amount for sells to zero, or set the maximum wallet size to a value that prevents existing holders from selling. This would effectively trap user funds within the contract, making them unsellable and leading to total loss for investors.
-
-**Recommendation:** Implement immutable tax rates and transaction limits, or subject any changes to a decentralized governance process with a time-lock. Ensure that minimum sell transaction amounts and maximum wallet sizes cannot be set to values that would prevent legitimate users from selling their tokens.
-
-
-### `H-01` — Anti-Bot/Anti-Whale Mechanisms Bypass  *(Severity: High · Status: Unresolved)*
-
-The contract implements anti-bot (e.g., `sellsPerBlock`, `buysFirstBlock`) and anti-whale (`_maxTxAmount`, `_maxWalletSize`) mechanisms. However, the `isExile` mapping, controlled by the owner, allows any address to bypass these restrictions. This means the owner can whitelist their own addresses or those of favored parties, rendering the anti-bot/anti-whale measures ineffective for those addresses and creating an unfair advantage or potential for manipulation.
-
-**Recommendation:** Re-evaluate the necessity and scope of the `isExile` mapping. If critical for protocol operations, restrict its use to only contract-internal addresses (e.g., router, treasury) and remove the owner's ability to add arbitrary user addresses. Ensure all users are subject to the same rules.
-
+_🟡 5 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Lack of Event Emission for Critical State Changes  *(Severity: Medium · Status: Unresolved)*
 
-Many critical owner-controlled parameters, such as `_maxTxAmount`, `_maxWalletSize`, various tax rates, `swapEnabled`, `tradingOpen`, `sellsPerBlock`, `buysFirstBlock`, and `isExile` status, can be modified without emitting corresponding events. This lack of transparency makes it difficult for users and off-chain monitoring tools to track changes to the contract's behavior and economic model, increasing trust requirements.
+Not confirmed by static analysis (the model's own reading of the source). Many critical owner-controlled parameters, such as `_maxTxAmount`, `_maxWalletSize`, various tax rates, `swapEnabled`, `tradingOpen`, `sellsPerBlock`, `buysFirstBlock`, and `isExile` status, can be modified without emitting corresponding events. This lack of transparency makes it difficult for users and off-chain monitoring tools to track changes to the contract's behavior and economic model, increasing trust requirements.
 
 **Recommendation:** Emit explicit events for every function that modifies a critical state variable. For example, `MaxTxAmountUpdated(uint256 newAmount)`, `TaxRatesUpdated(uint256 newBuyTax, uint256 newSellTax)`, `SwapEnabledToggled(bool status)`, `ExileStatusUpdated(address indexed account, bool isExiled)`. This improves transparency and auditability.
 
 
 ### `M-02` — Potential for Stuck ETH in Swap Mechanism  *(Severity: Medium · Status: Unresolved)*
 
-The `swapAndLiquify` function transfers ETH to the `_taxWallet` after swapping tokens. If the `_taxWallet` address is a contract that does not have a `receive()` or `fallback()` function capable of accepting ETH, or if it reverts during the transfer, the entire swap operation could fail. This could lead to a denial of service for the automatic liquidity/tax collection mechanism, potentially accumulating tokens in the contract without being able to process them.
+Not confirmed by static analysis (the model's own reading of the source). The `swapAndLiquify` function transfers ETH to the `_taxWallet` after swapping tokens. If the `_taxWallet` address is a contract that does not have a `receive()` or `fallback()` function capable of accepting ETH, or if it reverts during the transfer, the entire swap operation could fail. This could lead to a denial of service for the automatic liquidity/tax collection mechanism, potentially accumulating tokens in the contract without being able to process them.
 
 **Recommendation:** Implement robust error handling for external ETH transfers. Consider adding a mechanism for the owner to recover stuck ETH from the contract if the `_taxWallet` becomes problematic. Ensure the `_taxWallet` is a reliable address or a contract designed to accept ETH.
 
 
+### `M-03` — Extreme Centralization and Owner Privileges  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract owner possesses extensive control over nearly all critical parameters, including tax rates (_initialBuyTax, _initialSellTax, _finalBuyTax, _finalSellTax), transaction limits (_maxTxAmount), wallet size limits (_maxWalletSize), swap thresholds (_taxSwapThreshold, _maxTaxSwap), anti-bot measures (sellsPerBlock, buysFirstBlock), and the ability to enable/disable trading (tradingOpen, swapEnabled). The owner can also whitelist addresses via the `isExile` mapping to bypass all restrictions. This level of centralization allows the owner to unilaterally alter the token's economic model and operational behavior, p
+
+**Recommendation:** Decentralize control over critical parameters. Implement a multi-signature wallet for sensitive operations or introduce a time-locked governance mechanism for changes to tax rates, limits, and trading status. Remove the `isExile` mapping or restrict its use to only essential protocol addresses, not arbitrary user addresses.
+
+
+### `M-04` — Honeypot Potential  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). Due to the extreme centralization (C-01), the contract has significant honeypot potential. The owner can, at any time, set the sell tax to 100%, set the maximum transaction amount for sells to zero, or set the maximum wallet size to a value that prevents existing holders from selling. This would effectively trap user funds within the contract, making them unsellable and leading to total loss for investors.
+
+**Recommendation:** Implement immutable tax rates and transaction limits, or subject any changes to a decentralized governance process with a time-lock. Ensure that minimum sell transaction amounts and maximum wallet sizes cannot be set to values that would prevent legitimate users from selling their tokens.
+
+
+### `M-05` — Anti-Bot/Anti-Whale Mechanisms Bypass  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract implements anti-bot (e.g., `sellsPerBlock`, `buysFirstBlock`) and anti-whale (`_maxTxAmount`, `_maxWalletSize`) mechanisms. However, the `isExile` mapping, controlled by the owner, allows any address to bypass these restrictions. This means the owner can whitelist their own addresses or those of favored parties, rendering the anti-bot/anti-whale measures ineffective for those addresses and creating an unfair advantage or potential for manipulation.
+
+**Recommendation:** Re-evaluate the necessity and scope of the `isExile` mapping. If critical for protocol operations, restrict its use to only contract-internal addresses (e.g., router, treasury) and remove the owner's ability to add arbitrary user addresses. Ensure all users are subject to the same rules.
+
+
 ### `L-01` — Unchecked Return Values for External Calls  *(Severity: Low · Status: Unresolved)*
 
-The contract makes external calls to `IUniswapV2Factory.createPair` and `IUniswapV2Router02.swapExactTokensForETHSupportingFeeOnTransferTokens` without explicitly checking their boolean return values. While Uniswap functions typically revert on failure, explicitly checking return values is a best practice to ensure expected behavior and prevent unexpected state. The `_approve` function is internal, but its usage in `transferFrom` relies on `SafeMath` for allowance checks.
+Not confirmed by static analysis (the model's own reading of the source). The contract makes external calls to `IUniswapV2Factory.createPair` and `IUniswapV2Router02.swapExactTokensForETHSupportingFeeOnTransferTokens` without explicitly checking their boolean return values. While Uniswap functions typically revert on failure, explicitly checking return values is a best practice to ensure expected behavior and prevent unexpected state. The `_approve` function is internal, but its usage in `transferFrom` relies on `SafeMath` for allowance checks.
 
 **Recommendation:** Explicitly check the return values of external calls where applicable, especially for functions that return a boolean indicating success or failure. Although Uniswap functions often revert, defensive programming suggests checking for unexpected behavior.
 
 
 ### `I-01` — Redundant SafeMath Library  *(Severity: Informational · Status: Unresolved)*
 
-The contract uses the `SafeMath` library for arithmetic operations. However, the contract is compiled with Solidity 0.8.25, which includes built-in overflow and underflow checks by default. The use of `SafeMath` in this context is redundant and adds unnecessary gas overhead for each arithmetic operation.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses the `SafeMath` library for arithmetic operations. However, the contract is compiled with Solidity 0.8.25, which includes built-in overflow and underflow checks by default. The use of `SafeMath` in this context is redundant and adds unnecessary gas overhead for each arithmetic operation.
 
 **Recommendation:** Remove the `SafeMath` library and directly use native arithmetic operators. Solidity 0.8.0 and later versions automatically handle overflow/underflow, making `SafeMath` obsolete for basic arithmetic.
 
 
 ### `I-02` — Hardcoded Uniswap Router Address  *(Severity: Informational · Status: Unresolved)*
 
-The Uniswap V2 Router address (0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D) is hardcoded in the constructor. While this is common for mainnet deployments, it reduces flexibility. If the Uniswap router address changes in the future or if the contract were to be deployed on a different network with a different router address, the contract would need to be redeployed.
+Not confirmed by static analysis (the model's own reading of the source). The Uniswap V2 Router address (0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D) is hardcoded in the constructor. While this is common for mainnet deployments, it reduces flexibility. If the Uniswap router address changes in the future or if the contract were to be deployed on a different network with a different router address, the contract would need to be redeployed.
 
 **Recommendation:** Consider making the Uniswap router address configurable by the owner through a setter function, or pass it as a constructor argument. This would allow for greater flexibility and adaptability to future changes or multi-chain deployments.
 

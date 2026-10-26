@@ -2,14 +2,14 @@
 token: SAIRI
 ticker: SAIRI
 network: base
-risk_score: 18
+risk_score: 11
 status: low
 date: 2026-06-13
 ---
 
 # SAIRI (SAIRI) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 18/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/sairi-base)
 
@@ -42,28 +42,28 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralized Control of Admin Role and Metadata  *(Severity: Medium · Status: Unresolved)*
 
-The `_admin` role has the sole authority to transfer the admin role (`updateAdmin`) and modify token metadata (`updateImage`, `updateMetadata`). A compromise of the `_admin` key could lead to unauthorized changes to the token's administrative control and public-facing information. This centralizes significant power in a single address, increasing the impact of a private key compromise. (7.3 Access Control, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The `_admin` role has the sole authority to transfer the admin role (`updateAdmin`) and modify token metadata (`updateImage`, `updateMetadata`). A compromise of the `_admin` key could lead to unauthorized changes to the token's administrative control and public-facing information. This centralizes significant power in a single address, increasing the impact of a private key compromise. (7.3 Access Control, 7.8 Operations)
 
 **Recommendation:** Consider implementing a multi-signature wallet for the `_admin` role or introducing a time-lock for critical administrative actions like `updateAdmin` to provide a window for community review or emergency intervention. This would distribute control and enhance security.
 
 
 ### `L-01` — Initial Supply Distribution to Deployer  *(Severity: Low · Status: Unresolved)*
 
-The constructor mints the entire `maxSupply_` to `msg.sender` (the deployer) if `block.chainid` matches `initialSupplyChainId_`. This design centralizes the initial token supply entirely with the deployer, which might not align with desired distribution strategies for a public token. While not a direct vulnerability, it's a significant design choice for token distribution. (7.4 Economic)
+Not confirmed by static analysis (the model's own reading of the source). The constructor mints the entire `maxSupply_` to `msg.sender` (the deployer) if `block.chainid` matches `initialSupplyChainId_`. This design centralizes the initial token supply entirely with the deployer, which might not align with desired distribution strategies for a public token. While not a direct vulnerability, it's a significant design choice for token distribution. (7.4 Economic)
 
 **Recommendation:** Ensure that this distribution model is intentional and clearly communicated to stakeholders. For future deployments, consider alternative initial distribution mechanisms, such as vesting contracts or a controlled release, if a broader initial distribution is desired.
 
 
 ### `I-01` — `maxSupply_` is not a Global Hard Cap  *(Severity: Informational · Status: Unresolved)*
 
-The `maxSupply_` parameter in the constructor only dictates the initial supply minted on a specific chain. The `crosschainMint` function, callable by `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`, allows for additional tokens to be minted, meaning the total supply across all chains can exceed the initial `maxSupply_`. This is a standard pattern for cross-chain tokens but should be explicitly understood by users and stakeholders. (7.4 Economic, 7.1 Architecture)
+Not confirmed by static analysis (the model's own reading of the source). The `maxSupply_` parameter in the constructor only dictates the initial supply minted on a specific chain. The `crosschainMint` function, callable by `Predeploys.SUPERCHAIN_TOKEN_BRIDGE`, allows for additional tokens to be minted, meaning the total supply across all chains can exceed the initial `maxSupply_`. This is a standard pattern for cross-chain tokens but should be explicitly understood by users and stakeholders. (7.4 Economic, 7.1 Architecture)
 
 **Recommendation:** Clearly document that `maxSupply_` refers to the initial supply on a specific chain and that the total supply can increase through legitimate cross-chain bridging operations. This helps manage expectations regarding tokenomics and supply dynamics.
 
 
 ### `I-02` — Unused `_context` Variable  *(Severity: Informational · Status: Unresolved)*
 
-The `_context` state variable is set in the constructor and exposed via the `context()` and `allData()` view functions, but there is no function to update its value after deployment. This makes it a static piece of metadata. If it's intended to be dynamic, its current implementation limits flexibility. (7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). The `_context` state variable is set in the constructor and exposed via the `context()` and `allData()` view functions, but there is no function to update its value after deployment. This makes it a static piece of metadata. If it's intended to be dynamic, its current implementation limits flexibility. (7.2 Code Security)
 
 **Recommendation:** If `_context` is intended to be dynamic, add an `updateContext` function with appropriate access control. If it's meant to be static, ensure this is clearly documented. If it serves no purpose, consider removing it to reduce contract size and complexity.
 

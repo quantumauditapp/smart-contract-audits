@@ -2,14 +2,14 @@
 token: Virtuals Protocol
 ticker: VIRTUAL
 network: ethereum
-risk_score: 51
-status: medium
+risk_score: 16
+status: low
 date: 2026-07-11
 ---
 
 # Virtuals Protocol (VIRTUAL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 51/100 — 🟡 Medium Risk**
+> **Risk Score: 16/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/virtuals-protocol-eth)
 
@@ -25,9 +25,9 @@ The VirtualToken contract is an ERC-20 token implementation that heavily leverag
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract utilizes well-audited OpenZeppelin libraries for its ERC-20, Ownable, and ERC20Permit implementations, which is a significant strength (7.2 Code Security). This provides robust… |
-| **Governance / Economics** | 4/10 | Medium | The economic model of the VirtualToken is critically centralized (7.4 Economic). The contract owner holds absolute control over all token operations, including minting, burning, and all transfers… |
-| **Upgrades** | 7/10 | Low | The VirtualToken contract is not implemented as an upgradeable proxy (7.7 Upgrades). This design choice inherently avoids the specific risks associated with upgrade mechanisms, such as proxy… |
+| **Technical** | 8/10 | Low | The contract utilizes well-audited OpenZeppelin libraries for its ERC-20, Ownable, and ERC20Permit implementations, which is a significant strength (7.2 Code Security). This provides robust… |
+| **Governance / Economics** | 6/10 | Medium | The economic model of the VirtualToken is critically centralized (7.4 Economic). The contract owner holds absolute control over all token operations, including minting, burning, and all transfers… |
+| **Upgrades** | 8/10 | Low | The VirtualToken contract is not implemented as an upgradeable proxy (7.7 Upgrades). This design choice inherently avoids the specific risks associated with upgrade mechanisms, such as proxy… |
 
 ## LP Distribution
 
@@ -38,32 +38,32 @@ The VirtualToken contract is an ERC-20 token implementation that heavily leverag
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 1 Medium · 🟢 1 Low_
-
-### `C-01` — Extreme Centralization of Token Operations  *(Severity: Critical · Status: Unresolved)*
-
-The `VirtualToken` contract overrides several core ERC-20 functions (`_update`, `_mint`, `_burn`, `_approve`, `_spendAllowance`, `_increaseAllowance`, `_decreaseAllowance`, `_permit`) with the `onlyOwner` modifier. This design choice means that only the contract owner can initiate or facilitate any token transfer, minting, burning, or allowance management. Consequently, regular users cannot transfer their own tokens, approve spending for others, or utilize permit functionality, rendering the token non-transferable and completely controlled by a single address.
-
-**Recommendation:** Unless this extreme centralization is an explicit and fully understood design requirement, remove the `onlyOwner` modifier from functions that are intended for general user interaction, particularly `_update`, `_approve`, and `_permit`. If centralization is intended, clearly document this behavior and consider implementing a robust multi-signature wallet or a time-locked contract for ownership to distribute control and enhance security.
-
-
-### `H-01` — Single Point of Failure and Key Compromise Risk  *(Severity: High · Status: Unresolved)*
-
-Due to the extreme centralization (C-01), the contract owner's private key represents a critical single point of failure. If this key is compromised, an attacker would gain absolute control over all token operations, including the ability to arbitrarily mint new tokens, burn existing ones, and transfer any token balance, leading to a complete loss of funds and trust in the protocol.
-
-**Recommendation:** Implement a robust access control mechanism such as a multi-signature wallet (e.g., Gnosis Safe) for the contract owner address. This would require multiple approvals for critical operations, significantly reducing the risk associated with a single key compromise. Additionally, consider implementing a timelock for sensitive owner-only operations to provide a window for intervention.
-
+_🟡 3 Medium · 🟢 1 Low_
 
 ### `M-01` — Misleading ERC-20 Standard Compliance  *(Severity: Medium · Status: Unresolved)*
 
-While the `VirtualToken` contract inherits from OpenZeppelin's `ERC20` and `ERC20Permit` standards, its extensive use of `onlyOwner` modifiers on core functionalities fundamentally deviates from the expected behavior and utility of a standard ERC-20 token. Users and integrating protocols might expect free transferability and decentralized allowance management, which this token does not provide. This discrepancy can lead to confusion, integration issues, and a lack of trust.
+Not confirmed by static analysis (the model's own reading of the source). While the `VirtualToken` contract inherits from OpenZeppelin's `ERC20` and `ERC20Permit` standards, its extensive use of `onlyOwner` modifiers on core functionalities fundamentally deviates from the expected behavior and utility of a standard ERC-20 token. Users and integrating protocols might expect free transferability and decentralized allowance management, which this token does not provide. This discrepancy can lead to confusion, integration issues, and a lack of trust.
 
 **Recommendation:** Clearly and prominently communicate the highly centralized nature and restricted functionality of this token to all potential users, investors, and integrating platforms. If the intent is to be a standard ERC-20, the access control restrictions should be removed. If it's a specialized token, consider renaming it or adding specific documentation to avoid misrepresentation.
 
 
+### `M-02` — Extreme Centralization of Token Operations  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `VirtualToken` contract overrides several core ERC-20 functions (`_update`, `_mint`, `_burn`, `_approve`, `_spendAllowance`, `_increaseAllowance`, `_decreaseAllowance`, `_permit`) with the `onlyOwner` modifier. This design choice means that only the contract owner can initiate or facilitate any token transfer, minting, burning, or allowance management. Consequently, regular users cannot transfer their own tokens, approve spending for others, or utilize permit functionality, rendering the token non-transferable and completely controlled by a single address.
+
+**Recommendation:** Unless this extreme centralization is an explicit and fully understood design requirement, remove the `onlyOwner` modifier from functions that are intended for general user interaction, particularly `_update`, `_approve`, and `_permit`. If centralization is intended, clearly document this behavior and consider implementing a robust multi-signature wallet or a time-locked contract for ownership to distribute control and enhance security.
+
+
+### `M-03` — Single Point of Failure and Key Compromise Risk  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). Due to the extreme centralization (C-01), the contract owner's private key represents a critical single point of failure. If this key is compromised, an attacker would gain absolute control over all token operations, including the ability to arbitrarily mint new tokens, burn existing ones, and transfer any token balance, leading to a complete loss of funds and trust in the protocol.
+
+**Recommendation:** Implement a robust access control mechanism such as a multi-signature wallet (e.g., Gnosis Safe) for the contract owner address. This would require multiple approvals for critical operations, significantly reducing the risk associated with a single key compromise. Additionally, consider implementing a timelock for sensitive owner-only operations to provide a window for intervention.
+
+
 ### `L-01` — Irreversible Loss of Functionality via Renounce Ownership  *(Severity: Low · Status: Unresolved)*
 
-The `Ownable` contract includes a `renounceOwnership()` function. If the current owner calls this function, the contract will be left without an owner. Given that almost all critical token operations are restricted by `onlyOwner`, renouncing ownership would permanently disable all token management functionalities, including transfers, minting, and burning, effectively bricking the token and making all existing tokens untransferable.
+Not confirmed by static analysis (the model's own reading of the source). The `Ownable` contract includes a `renounceOwnership()` function. If the current owner calls this function, the contract will be left without an owner. Given that almost all critical token operations are restricted by `onlyOwner`, renouncing ownership would permanently disable all token management functionalities, including transfers, minting, and burning, effectively bricking the token and making all existing tokens untransferable.
 
 **Recommendation:** Consider removing the `renounceOwnership` function if there is no clear use case for it, or implement a mechanism that allows for a new owner to be set before ownership can be renounced, or a recovery mechanism. If `renounceOwnership` is kept, ensure its implications are fully understood and documented, and consider adding a time-lock or multi-signature requirement for this specific action.
 

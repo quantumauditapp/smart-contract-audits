@@ -2,14 +2,14 @@
 token: Tensor
 ticker: TNSR
 network: solana
-risk_score: 60
+risk_score: 48
 status: medium
 date: 2026-06-21
 ---
 
 # Tensor (TNSR) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 60/100 — 🟡 Medium Risk**
+> **Risk Score: 48/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tensor-sol)
 
@@ -25,9 +25,9 @@ The Tensor (TNSR) token mint presents a critical risk due to an unrevoked mint a
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The Tensor (TNSR) token is a standard SPL token operating under the `spl-token` program (v3), indicating a well-established token standard. A significant risk exists as the mint authority… |
-| **Governance / Economics** | 2/10 | High | The token exhibits moderate liquidity at $64,617 USD, with a healthy 24-hour volume to liquidity ratio of 0.12, suggesting organic trading activity. The DEX pair has been active for 470 days… |
-| **Upgrades** | 4/10 | Medium | The mint authority for TNSR is currently active, allowing for potential future supply changes by the authority holder. While the freeze authority has been revoked, enhancing user control over funds… |
+| **Technical** | 8/10 | Low | The Tensor (TNSR) token is a standard SPL token operating under the `spl-token` program (v3), indicating a well-established token standard. A significant risk exists as the mint authority… |
+| **Governance / Economics** | 4/10 | Medium | The token exhibits moderate liquidity at $64,617 USD, with a healthy 24-hour volume to liquidity ratio of 0.12, suggesting organic trading activity. The DEX pair has been active for 470 days… |
+| **Upgrades** | 6/10 | Medium | The mint authority for TNSR is currently active, allowing for potential future supply changes by the authority holder. While the freeze authority has been revoked, enhancing user control over funds… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions

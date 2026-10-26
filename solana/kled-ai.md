@@ -2,14 +2,14 @@
 token: Kled AI
 ticker: KLED
 network: solana
-risk_score: 3
+risk_score: 0
 status: low
 date: 2026-06-27
 ---
 
 # Kled AI (KLED) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 3/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/kled-ai-sol)
 
@@ -26,8 +26,8 @@ This audit of the KLEDAI (KLED) SPL token mint found that both the mint and free
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The KLEDAI (KLED) token is an SPL token operating under the spl-token program. Both the mint authority and freeze authority have been revoked (None), ensuring that no new tokens can be minted and no… |
-| **Governance / Economics** | 7/10 | Low | DEX market data indicates a liquidity of $496,380 USD and a 24-hour trading volume of $16,198 USD. The volume/liquidity ratio is 0.03, which is considered normal and does not suggest wash trading.… |
-| **Upgrades** | 8/10 | Low | The mint and freeze authorities are both revoked, meaning these core parameters cannot be changed. The token's metadata, including its name, symbol, or image, is mutable. This allows for post-launch… |
+| **Governance / Economics** | 8/10 | Low | DEX market data indicates a liquidity of $496,380 USD and a 24-hour trading volume of $16,198 USD. The volume/liquidity ratio is 0.03, which is considered normal and does not suggest wash trading.… |
+| **Upgrades** | 9/10 | Low | The mint and freeze authorities are both revoked, meaning these core parameters cannot be changed. The token's metadata, including its name, symbol, or image, is mutable. This allows for post-launch… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ The token's metadata is mutable, as indicated by 'metadata_mutable: True'. This 
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The token's metadata is mutable, as indicated by 'metadata_mutable: True'. This 
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions

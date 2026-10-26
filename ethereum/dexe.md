@@ -2,14 +2,14 @@
 token: DeXe
 ticker: DEXE
 network: ethereum
-risk_score: 60
+risk_score: 43
 status: medium
 date: 2026-07-12
 ---
 
 # DeXe (DEXE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 60/100 — 🟡 Medium Risk**
+> **Risk Score: 43/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/dexe-eth)
 
@@ -26,7 +26,7 @@ The audit of the Dexe contract, an ERC20Burnable token, identified several areas
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The technical architecture leverages standard and well-audited OpenZeppelin libraries like `Ownable`, `ERC20Burnable`, and `SafeMath`, contributing to a solid foundation (7.1 Architecture, 7.2 Code… |
-| **Governance / Economics** | 1/10 | High | The economic model of the Dexe token, as an ERC20Burnable, appears standard, with constants defined for various token decimals. Access control is managed via the `Ownable` pattern, providing a clear… |
+| **Governance / Economics** | 2/10 | High | The economic model of the Dexe token, as an ERC20Burnable, appears standard, with constants defined for various token decimals. Access control is managed via the `Ownable` pattern, providing a clear… |
 | **Upgrades** | 6/10 | Medium | The provided Dexe contract is not implemented as an upgradeable proxy, meaning its logic cannot be directly modified after deployment. This eliminates risks associated with proxy upgrade mechanisms… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The audit of the Dexe contract, an ERC20Burnable token, identified several areas
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Oracle Dependence and Manipulation Risk  *(Severity: High · Status: Unresolved)*
-
-The `Dexe` contract relies on external `IPriceFeed` contracts (usdtPriceFeed, dexePriceFeed, ethPriceFeed) to obtain critical price data. The security and liveness of these oracles are paramount to the contract's economic stability. Without details on the implementation of `IPriceFeed` or the specific oracle providers, there's a significant risk of price manipulation, staleness, or single points of failure. An attacker could potentially exploit a vulnerable oracle to gain an unfair advantage or disrupt the protocol's operations (7.4 Economic, 7.6 External).
-
-**Recommendation:** Implement robust oracle solutions, such as decentralized oracle networks (e.g., Chainlink) with multiple data sources and aggregation. Incorporate liveness checks (e.g., timestamp checks) to prevent stale data usage. Consider circuit breakers or emergency pauses in case of extreme price deviations or oracle failures. Thoroughly audit the chosen oracle providers and their configurations.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Potential Reentrancy in External Calls  *(Severity: Medium · Status: Unresolved)*
 
-The `Address` library provides `sendValue` and `_functionCallWithValue` which perform low-level external calls. While `Address.sol` itself includes warnings about reentrancy, the full implementation of the `Dexe` contract is truncated, making it impossible to verify if the 'checks-effects-interactions' pattern is consistently applied to all external calls made by `Dexe`. Any function in `Dexe` that makes an external call to an untrusted contract and then modifies its own state could be vulnerable to reentrancy (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `Address` library provides `sendValue` and `_functionCallWithValue` which perform low-level external calls. While `Address.sol` itself includes warnings about reentrancy, the full implementation of the `Dexe` contract is truncated, making it impossible to verify if the 'checks-effects-interactions' pattern is consistently applied to all external calls made by `Dexe`. Any function in `Dexe` that makes an external call to an untrusted contract and then modifies its own state could be vulnerable to reentrancy (7.2 Code Security).
 
 **Recommendation:** Ensure that all functions within the `Dexe` contract that perform external calls adhere strictly to the 'checks-effects-interactions' pattern. Consider using OpenZeppelin's `ReentrancyGuard` for critical functions that interact with external contracts or transfer tokens. Conduct a comprehensive review of all external call sites once the full contract code is available.
 
 
+### `M-02` — Oracle Dependence and Manipulation Risk  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `Dexe` contract relies on external `IPriceFeed` contracts (usdtPriceFeed, dexePriceFeed, ethPriceFeed) to obtain critical price data. The security and liveness of these oracles are paramount to the contract's economic stability. Without details on the implementation of `IPriceFeed` or the specific oracle providers, there's a significant risk of price manipulation, staleness, or single points of failure. An attacker could potentially exploit a vulnerable oracle to gain an unfair advantage or disrupt the protocol's operations (7.4 Economic, 7.6 External).
+
+**Recommendation:** Implement robust oracle solutions, such as decentralized oracle networks (e.g., Chainlink) with multiple data sources and aggregation. Incorporate liveness checks (e.g., timestamp checks) to prevent stale data usage. Consider circuit breakers or emergency pauses in case of extreme price deviations or oracle failures. Thoroughly audit the chosen oracle providers and their configurations.
+
+
 ### `L-01` — Use of Older Solidity Compiler Version  *(Severity: Low · Status: Unresolved)*
 
-The contract is compiled with `pragma solidity 0.7.0`. This version is older and does not benefit from several security enhancements and optimizations introduced in later Solidity versions, particularly 0.8.x, which includes default checked arithmetic for overflow/underflow, improved error messages, and more efficient code generation. While `SafeMath` mitigates some arithmetic risks, upgrading could provide additional layers of safety and efficiency (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract is compiled with `pragma solidity 0.7.0`. This version is older and does not benefit from several security enhancements and optimizations introduced in later Solidity versions, particularly 0.8.x, which includes default checked arithmetic for overflow/underflow, improved error messages, and more efficient code generation. While `SafeMath` mitigates some arithmetic risks, upgrading could provide additional layers of safety and efficiency (7.2 Code Security).
 
 **Recommendation:** Consider upgrading the Solidity compiler version to a more recent stable release (e.g., 0.8.x). This would allow for the removal of `SafeMath` (as arithmetic checks are default in 0.8.x) and leverage newer language features and security improvements. A thorough re-audit would be required after such an upgrade.
 
 
 ### `I-01` — `isContract` Limitations  *(Severity: Informational · Status: Unresolved)*
 
-The `Address.isContract` function, used internally by `_functionCallWithValue`, has inherent limitations as explicitly stated in its NatSpec documentation. It may return `false` for contracts under construction, addresses where a contract will be created, or addresses where a contract was destroyed. While this is a known limitation of the EVM's `extcodehash` opcode and the library handles it correctly, it's important for developers to be aware that `isContract` returning `false` does not definitively mean an address is an EOA, which could lead to incorrect assumptions in complex interaction scenarios (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `Address.isContract` function, used internally by `_functionCallWithValue`, has inherent limitations as explicitly stated in its NatSpec documentation. It may return `false` for contracts under construction, addresses where a contract will be created, or addresses where a contract was destroyed. While this is a known limitation of the EVM's `extcodehash` opcode and the library handles it correctly, it's important for developers to be aware that `isContract` returning `false` does not definitively mean an address is an EOA, which could lead to incorrect assumptions in complex interaction scenarios (7.2 Code Security
 
 **Recommendation:** Developers should be fully aware of the limitations of `Address.isContract` and avoid making critical security decisions solely based on its return value, especially when dealing with contract deployment or self-destruct scenarios. For most standard interactions with deployed contracts, its behavior is acceptable.
 
