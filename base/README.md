@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**487 reports** · Updated daily · [← All Networks](../README.md)
+**491 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [one life, its worth an attempt](./one-life-its-worth-an-attempt-base-fdb7.md) | WORTH | 🟡 62/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/one-life-its-worth-an-attempt-base-fdb7) |
+| [IOF](./iof.md) | IOF | 🟡 63/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/iof-base) |
+| [UDTF](./udtf-base-d7e9.md) | UDTF | 🟠 65/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/udtf-base-d7e9) |
+| [United Dividend Fund Trust’](./united-dividend-fund-trust.md) | UDFT | 🟡 56/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/united-dividend-fund-trust-base) |
 | [Elon 2028](./elon-2028.md) | ELON2028 | 🟠 68/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/elon-2028-base) |
 | [United Trust Dividend Fund 🔥](./united-trust-dividend-fund.md) | UTDF | 🟢 22/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/united-trust-dividend-fund-base) |
 | [Anthropic](./anthropic.md) | ANTHROPIC | 🟠 74/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/anthropic-base) |

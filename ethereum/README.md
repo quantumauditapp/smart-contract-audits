@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**478 reports** · Updated daily · [← All Networks](../README.md)
+**481 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [███](./token-73cf4d.md) | ███ | 🟡 38/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/token-73cf4d-eth) |
+| [Groklet](./groklet-eth-2818.md) | GROKLET | 🟡 45/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/groklet-eth-2818) |
+| [Groklet](./groklet-eth-ac79.md) | GROKLET | 🟡 60/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/groklet-eth-ac79) |
 | [Elon 2028](./elon-2028-eth-e055.md) | ELON2028 | 🟢 2/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/elon-2028-eth-e055) |
 | [Unite Coin](./unite-coin.md) | UNITE | 🟠 68/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/unite-coin-eth) |
 | [Exponential Time Hypothesis](./exponential-time-hypothesis.md) | ETH | 🟢 32/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/exponential-time-hypothesis-eth) |

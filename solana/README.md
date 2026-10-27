@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1380 reports** · Updated daily · [← All Networks](../README.md)
+**1405 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,31 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [BOYCOTTPUMPFUN](./boycottpumpfun-sol-2f47.md) | BPF | 🟢 15/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/boycottpumpfun-sol-2f47) |
+| [Justice for ChaCha](./justice-for-chacha.md) | CHACHA | 🟢 15/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/justice-for-chacha-sol) |
+| [STONKUS](./stonkus.md) | STONKUS | 🟡 58/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/stonkus-sol) |
+| [Save The Seals](./save-the-seals.md) | SEALS | 🟢 21/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/save-the-seals-sol) |
+| [Cute Crypto Carrot](./cute-crypto-carrot.md) | CCC | 🟢 28/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/cute-crypto-carrot-sol) |
+| [DogWifJob](./dogwifjob.md) | JOB | 🟢 0/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/dogwifjob-sol) |
+| [********** ***](./token-d52f04.md) | ** | 🟢 24/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/token-d52f04-sol) |
+| [Wrapped XRP](./wrapped-xrp.md) | WXRP | 🟢 8/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/wrapped-xrp-sol) |
+| [Huma Finance](./huma-finance.md) | HUMA | 🟡 40/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/huma-finance-sol) |
+| [Soul Token](./soul-token.md) | SOUL | 🟢 14/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/soul-token-sol) |
+| [Halloween Inu](./halloween-inu-sol-60a8.md) | INUWEEN | 🟡 37/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/halloween-inu-sol-60a8) |
+| [SOON MOON](./soon-moon.md) | MOONX | 🟢 17/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/soon-moon-sol) |
+| [Retarded Bitcoin](./retarded-bitcoin.md) | RTC  | 🟢 13/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/retarded-bitcoin-sol) |
+| [Kekius Max](./kekius-max.md) | KEKIUS | 🟢 20/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/kekius-max-sol) |
+| [Dogecock](./dogecock.md) | DOCK | 🟢 22/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/dogecock-sol) |
+| [UDTF](./udtf-sol-40f7.md) | UDTF | 🟢 9/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/udtf-sol-40f7) |
+| [Mogz.fun](./mogzfun.md) | MOGZ | 🟢 14/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/mogzfun-sol) |
+| [Frongus](./frongus.md) | FRONGUS | 🟢 13/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/frongus-sol) |
+| [Super Iguana](./super-iguana.md) | SI | 🟢 17/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/super-iguana-sol) |
+| [USOE](./usoe-sol-bbdd.md) | USOE | 🟢 0/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/usoe-sol-bbdd) |
+| [Fomies](./fomies.md) | FOMIES | 🟢 0/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/fomies-sol) |
+| [FOTF](./fotf.md) | FOTF | 🟢 2/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/fotf-sol) |
+| [USDP](./usdp-sol-ecb0.md) | USDP | 🔴 91/100 Critical Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/usdp-sol-ecb0) |
+| [NODF](./nodf-sol-9f7e.md) | NODF | 🟢 0/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/nodf-sol-9f7e) |
+| [USDP](./usdp-sol-610b.md) | USDP | 🔴 91/100 Critical Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/usdp-sol-610b) |
 | [State Property](./state-property.md) | STATE? | 🟢 21/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/state-property-sol) |
 | [Shǔ bǎo](./shu-bao.md) | 슈바오 | 🟢 19/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/shu-bao-sol) |
 | [Remora](./remora.md) | REM | 🟢 23/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/remora-sol) |

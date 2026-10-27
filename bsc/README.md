@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**550 reports** · Updated daily · [← All Networks](../README.md)
+**554 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [JANCTION](./janction.md) | JCT | 🟠 67/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/janction-bsc) |
+| [TMTN](./tmtn.md) | TMTN | 🟡 37/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/tmtn-bsc) |
+| [DIAM](./diam.md) | DIAM | 🟡 63/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/diam-bsc) |
+| [ShopinX](./shopinx.md) | SHOPINX | 🔴 93/100 Critical Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/shopinx-bsc) |
 | [CL Ai Agent](./cl-ai-agent.md) | 财来 | 🟢 2/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/cl-ai-agent-bsc) |
 | [FUND](./fund.md) | FUND | 🟢 23/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/fund-bsc) |
 | [Gangstar](./gangstar-bsc-819e.md) | GANGSTAR | 🟠 69/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/gangstar-bsc-819e) |
