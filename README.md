@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-2937-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-2938-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,7 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [AOP](./base/aop-base-090d.md) | AOP | Base | 🟡 55/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/aop-base-090d) |
 | [AODF](./base/aodf-base-5aac.md) | AODF | Base | 🟡 57/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/aodf-base-5aac) |
 | [Teenage Mutant Ninja Turtles](./solana/teenage-mutant-ninja-turtles.md) | TMNT | Solana | 🟢 23/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/teenage-mutant-ninja-turtles-sol) |
 | [bnc的新名字](./bsc/bnc-bsc-1b4a.md) | BNB STANDARD | BNB Chain | 🟢 21/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/bnc-bsc-1b4a) |
@@ -41,13 +42,12 @@
 | [DOAS](./base/doas-base-accd.md) | DOAS | Base | 🟡 56/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/doas-base-accd) |
 | [Onepad](./solana/onepad.md) | ONEPAD | Solana | 🟡 38/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/onepad-sol) |
 | [Ginnan](./ethereum/ginnan.md) | GINNAN | Ethereum | 🟡 41/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/ginnan-eth) |
-| [Anthropic](./ethereum/anthropic.md) | ANT | Ethereum | 🟡 44/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/anthropic-eth) |
 
 ---
 
 ## Browse by Network
 
-[Solana (1341)](./solana/README.md) · [BNB Chain (538)](./bsc/README.md) · [Base (474)](./base/README.md) · [Ethereum (473)](./ethereum/README.md) · [Arbitrum (85)](./arbitrum/README.md) · [Polygon (26)](./polygon/README.md)
+[Solana (1341)](./solana/README.md) · [BNB Chain (538)](./bsc/README.md) · [Base (475)](./base/README.md) · [Ethereum (473)](./ethereum/README.md) · [Arbitrum (85)](./arbitrum/README.md) · [Polygon (26)](./polygon/README.md)
 
 ---
 

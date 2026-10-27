@@ -79,7 +79,7 @@ Liquidity $125K (DexScreener, all pools). 24h trading volume $567K (DexScreener,
 
 ### `QA-PROFILE` — Asset class: Wrapped or bridged asset  *(Severity: Informational · Status: Acknowledged)*
 
-A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. The class itself adds no points; the contract and market facts decide the score. Basis: a copy of the coin from its home chain (solana), minted here by LayerZero (lzReceive). Tokenomics — Supply: mintable with no on-chain cap found. Control: a contract. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $125K of DEX liquidity across 9 pools. Launch: under a day of market history.
+A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. The class itself adds no points; the contract and market facts decide the score. Basis: a copy of the coin from its home chain (solana), minted here by LayerZero (lzReceive). Tokenomics — Supply: minted here by LayerZero (lzReceive) against tokens locked or burned on other chains. Control: a contract. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $125K of DEX liquidity across 9 pools. Launch: under a day of market history.
 
 **Recommendation:** The backing is the risk: check who holds the underlying asset and how redemption works.
 

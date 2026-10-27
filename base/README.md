@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**474 reports** · Updated daily · [← All Networks](../README.md)
+**475 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [AOP](./aop-base-090d.md) | AOP | 🟡 55/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/aop-base-090d) |
 | [AODF](./aodf-base-5aac.md) | AODF | 🟡 57/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/aodf-base-5aac) |
 | [one coin](./one-coin.md) | ONECOIN | 🟡 50/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/one-coin-base) |
 | [DOAS](./doas-base-accd.md) | DOAS | 🟡 56/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/doas-base-accd) |
