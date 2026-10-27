@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**539 reports** · Updated daily · [← All Networks](../README.md)
+**544 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [😬](./token-1bdee7.md) | 😬 | 🟡 46/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/token-1bdee7-bsc) |
+| [甲亢哥](./speed.md) | SPEED | 🟠 84/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/speed-bsc) |
+| [Quack AI Token](./quack-ai-token-bsc-b719.md) | Q | 🔴 97/100 Critical Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/quack-ai-token-bsc-b719) |
+| [Launch](./launch.md) | LAUNCH | 🟠 83/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/launch-bsc) |
+| [Gangstar](./gangstar.md) | GANGSTAR | 🟡 54/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/gangstar-bsc) |
 | [Agent City](./agent-city.md) | AGENT CITY | 🟡 40/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/agent-city-bsc) |
 | [bnc的新名字](./bnc-bsc-1b4a.md) | BNB STANDARD | 🟢 21/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/bnc-bsc-1b4a) |
 | [国库币](./token-2c59e0.md) | 国库币 | 🟢 27/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/token-2c59e0-bsc) |

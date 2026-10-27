@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**479 reports** · Updated daily · [← All Networks](../README.md)
+**483 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [one life, its worth an attempt](./one-life-its-worth-an-attempt-base-3b3a.md) | WORTH | 🟠 78/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/one-life-its-worth-an-attempt-base-3b3a) |
+| [XRC](./xrc-base-fe10.md) | XRC | 🟡 56/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/xrc-base-fe10) |
+| [[XTO] Xtrust Oil](./xto-xtrust-oil.md) | XOT | 🟡 59/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/xto-xtrust-oil-base) |
+| [Papertrade](./papertrade-base-b0c7.md) | PAPER | 🟡 54/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/papertrade-base-b0c7) |
 | [Surplus Intelligence](./surplus-intelligence-base-ecca.md) | SURPLUS | 🟠 78/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/surplus-intelligence-base-ecca) |
 | [Warden Protocol](./warden-protocol.md) | WRDN | 🟠 78/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/warden-protocol-base) |
 | [HYPE](./hype.md) | HYPE | 🟠 65/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/hype-base) |

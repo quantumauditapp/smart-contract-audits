@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**85 reports** · Updated daily · [← All Networks](../README.md)
+**86 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Unicity Labs](./unicity-labs-arb-84e4.md) | UNCLA | 🟠 75/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/unicity-labs-arb-84e4) |
 | [Wrapped SOL](./wrapped-sol.md) | SOL | 🟠 70/100 High Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/wrapped-sol-arb) |
 | [Global Dollar](./global-dollar.md) | USDG | 🟡 35/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/global-dollar-arb) |
 | [MUX Protocol](./mux-protocol.md) | MCB | 🟡 64/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/mux-protocol-arb) |

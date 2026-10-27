@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1348 reports** · Updated daily · [← All Networks](../README.md)
+**1360 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,18 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [paws at you](./paws-at-you.md) | PAWS | 🟢 14/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/paws-at-you-sol) |
+| [BLUNTS by Shaw ](./blunts-by-shaw.md) | BLUNTS | 🟢 17/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/blunts-by-shaw-sol) |
+| [TypeSOL](./typesol.md) | TS | 🟢 16/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/typesol-sol) |
+| [Blackout](./blackout.md) | BLACKOUT | 🟢 24/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/blackout-sol) |
+| [snow leopard meimei](./snow-leopard-meimei.md) | MEIMEI | 🟢 30/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/snow-leopard-meimei-sol) |
+| [Blackout Coin](./blackout-coin.md) | BLACKOUT | 🟢 17/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/blackout-coin-sol) |
+| [Organic Coin](./organic-coin.md) | OC | 🟢 0/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/organic-coin-sol) |
+| [Elon 2028](./elon-2028.md) | ELON2028 | 🟢 28/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/elon-2028-sol) |
+| [wienercoin](./wienercoin.md) | WIENER | 🟢 20/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/wienercoin-sol) |
+| [Trump 2028](./trump-2028.md) | TRUMP2028 | 🟢 22/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/trump-2028-sol) |
+| [Anthropic](./anthropic.md) | ANTHROPIC | 🟢 2/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/anthropic-sol) |
+| [Federal Oil Trust Fund](./federal-oil-trust-fund-sol-7381.md) | FOTF | 🟢 2/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/federal-oil-trust-fund-sol-7381) |
 | [Orbit](./orbit.md) | ORBIT | 🟢 31/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/orbit-sol) |
 | [Leverage](./leverage.md) | LEVERAGE | 🟢 16/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/leverage-sol) |
 | [Rapecoin ](./rapecoin.md) | RAPE  | 🟢 16/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/rapecoin-sol) |
