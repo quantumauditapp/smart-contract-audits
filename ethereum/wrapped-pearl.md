@@ -2,14 +2,14 @@
 token: Wrapped Pearl
 ticker: WPRL
 network: ethereum
-risk_score: 73
-status: high
+risk_score: 58
+status: medium
 date: 2026-09-18
 ---
 
 # Wrapped Pearl (WPRL) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 73/100 — 🟠 High Risk**
+> **Risk Score: 58/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-pearl-eth)
 
@@ -25,8 +25,8 @@ The WPearl contract implements an upgradeable ERC-20 token with custom freezing 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract utilizes a robust architecture based on OpenZeppelin's upgradeable ERC-20, AccessControl, and UUPS proxy patterns, which are well-audited and widely adopted. Custom logic for freezing… |
-| **Governance / Economics** | 3/10 | High | The economic model includes a `MAX_SUPPLY` of 2.1 billion WPRL, preventing uncontrolled inflation. Minting and burning are centralized under a `bridgeController` role, which is a significant point of… |
+| **Technical** | 7/10 | Low | The contract utilizes a robust architecture based on OpenZeppelin's upgradeable ERC-20, AccessControl, and UUPS proxy patterns, which are well-audited and widely adopted. Custom logic for freezing… |
+| **Governance / Economics** | 4/10 | Medium | The economic model includes a `MAX_SUPPLY` of 2.1 billion WPRL, preventing uncontrolled inflation. Minting and burning are centralized under a `bridgeController` role, which is a significant point of… |
 | **Upgrades** | 1/10 | High | The contract implements the UUPS upgradeability pattern, a standard and secure method for upgradeable contracts (7.7 Upgrades). Upgrades are controlled by the `DEFAULT_ADMIN_ROLE` and incorporate a… |
 
 ## Proxy Upgrade Controls
@@ -46,32 +46,32 @@ The WPearl contract implements an upgradeable ERC-20 token with custom freezing 
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control of Critical Functions  *(Severity: High · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE` possesses extensive power, including the ability to grant/revoke all other roles (e.g., `bridgeController`, `FREEZER_ROLE`, `REVOKE_FREEZE_ROLE`), propose/cancel upgrades, and adjust the upgrade delay. The `bridgeController` role has sole authority to `mint` new tokens (up to `MAX_SUPPLY`) and `burnFrom` any account. The `FREEZER_ROLE` can freeze and unfreeze accounts, impacting token transferability. While `AccessControlDefaultAdminRulesUpgradeable` provides an initial delay for admin actions, the concentration of power in these roles represents a significant centralization risk. A compromise of the keys controlling these roles could lead to severe consequences suc…
-
-**Recommendation:** Ensure that the `DEFAULT_ADMIN_ROLE` and `bridgeController` are controlled by robust multi-signature wallets with high thresholds, or a well-governed DAO. Implement strict operational security procedures, including multi-party approval and time-locks for critical actions, to mitigate the risk of a single point of failure or key compromise.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Missing Emergency Token Rescue Function  *(Severity: Medium · Status: Unresolved)*
 
-The contract lacks a function to rescue accidentally sent ERC-20 tokens (other than WPRL itself) or native currency. If any other token or ETH is mistakenly transferred to the contract address, it will be permanently locked and inaccessible, leading to irretrievable loss of funds. (7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks a function to rescue accidentally sent ERC-20 tokens (other than WPRL itself) or native currency. If any other token or ETH is mistakenly transferred to the contract address, it will be permanently locked and inaccessible, leading to irretrievable loss of funds. (7.8 Operations)
 
 **Recommendation:** Implement a `rescueTokens(address tokenAddress, address to, uint256 amount)` function, restricted to the `DEFAULT_ADMIN_ROLE`, to allow recovery of mistakenly sent tokens. This function should explicitly prevent the rescue of the contract's own token (`address(this)`) to avoid accidental draining of the token supply.
 
 
+### `M-02` — Centralized Control of Critical Functions  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` possesses extensive power, including the ability to grant/revoke all other roles (e.g., `bridgeController`, `FREEZER_ROLE`, `REVOKE_FREEZE_ROLE`), propose/cancel upgrades, and adjust the upgrade delay. The `bridgeController` role has sole authority to `mint` new tokens (up to `MAX_SUPPLY`) and `burnFrom` any account. The `FREEZER_ROLE` can freeze and unfreeze accounts, impacting token transferability. While `AccessControlDefaultAdminRulesUpgradeable` provides an initial delay for admin actions, the concentration of power in these roles represents a significant centralization risk. A compromise
+
+**Recommendation:** Ensure that the `DEFAULT_ADMIN_ROLE` and `bridgeController` are controlled by robust multi-signature wallets with high thresholds, or a well-governed DAO. Implement strict operational security procedures, including multi-party approval and time-locks for critical actions, to mitigate the risk of a single point of failure or key compromise.
+
+
 ### `L-01` — Permanent Revocation of Freeze Ability  *(Severity: Low · Status: Unresolved)*
 
-The `revokeFreezeAbility()` function, callable by `REVOKE_FREEZE_ROLE`, permanently sets `freezeAbilityRevoked = true` if `frozenCount == 0`. Once this flag is set, the `FREEZER_ROLE` can no longer be granted, and accounts cannot be frozen or unfrozen. This is an irreversible state change designed to permanently disable the freeze mechanism. While intentional, it represents a critical, one-time decision with lasting implications for the token's censorship resistance. (7.3 Access Control, 7.4 Economic)
+Not confirmed by static analysis (the model's own reading of the source). The `revokeFreezeAbility()` function, callable by `REVOKE_FREEZE_ROLE`, permanently sets `freezeAbilityRevoked = true` if `frozenCount == 0`. Once this flag is set, the `FREEZER_ROLE` can no longer be granted, and accounts cannot be frozen or unfrozen. This is an irreversible state change designed to permanently disable the freeze mechanism. While intentional, it represents a critical, one-time decision with lasting implications for the token's censorship resistance. (7.3 Access Control, 7.4 Economic)
 
 **Recommendation:** Ensure that the implications of `revokeFreezeAbility` are fully understood by the `REVOKE_FREEZE_ROLE` holders. If not already covered by the admin's multi-sig or DAO, consider adding a multi-step process or a governance vote for such a critical, irreversible action to ensure broad consensus.
 
 
 ### `I-01` — `burn()` Function Reverts by Design  *(Severity: Informational · Status: Unresolved)*
 
-The `burn()` function, which is part of the `ERC20BurnableUpgradeable` standard, is explicitly overridden to `revert("WPearl: use BridgeController.requestBurn()")`. This design choice centralizes all burning operations through the `bridgeController` via the `burnFrom` function. This deviates from the standard ERC-20 `burn` behavior where any token holder can burn their own tokens. (7.1 Architecture, 7.2 Code Security)
+Not confirmed by static analysis (the model's own reading of the source). The `burn()` function, which is part of the `ERC20BurnableUpgradeable` standard, is explicitly overridden to `revert("WPearl: use BridgeController.requestBurn()")`. This design choice centralizes all burning operations through the `bridgeController` via the `burnFrom` function. This deviates from the standard ERC-20 `burn` behavior where any token holder can burn their own tokens. (7.1 Architecture, 7.2 Code Security)
 
 **Recommendation:** Document this design choice clearly for users and integrators, explaining that direct burning by token holders is not supported and all burn requests must be initiated or processed through the `bridgeController`.
 

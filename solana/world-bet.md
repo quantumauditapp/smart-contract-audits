@@ -76,11 +76,11 @@ Total DEX liquidity is $4,086. Slippage will be severe; large positions cannot b
 
 ### Is WORLD BET a scam?
 
-Based on the available data, WORLD BET exhibits several high-risk characteristics that investors should be aware of. The contract is unverified, meaning its code cannot be publicly inspected for malicious functions or vulnerabilities. Additionally, the liquidity is not locked, creating a potential for sudden withdrawal, commonly associated with "rug pull" schemes. These factors, alongside its 47/100 high-risk score, suggest extreme caution is warranted.
+Based on the available data, WORLD BET exhibits several high-risk characteristics that investors should be aware of. The contract is unverified, meaning its code cannot be publicly inspected for malicious functions or vulnerabilities. Additionally, the liquidity is not locked, creating a potential for sudden withdrawal, commonly associated with "rug pull" schemes. These factors, alongside its 43/100 medium-risk score, suggest extreme caution is warranted.
 
 ### Is WORLD BET safe to buy?
 
-WORLD BET is not considered safe to buy based on the provided security data. Key risk factors include an unverified contract, which prevents public code review, and unlocked liquidity, which carries the risk of a "rug pull." Despite renounced ownership and a distributed holder base, these critical vulnerabilities contribute to a high-risk score of 47/100, advising investors to exercise extreme caution before considering any investment.
+WORLD BET is not considered safe to buy based on the provided security data. Key risk factors include an unverified contract, which prevents public code review, and unlocked liquidity, which carries the risk of a "rug pull." Despite renounced ownership and a distributed holder base, these critical vulnerabilities contribute to a medium-risk score of 43/100, advising investors to exercise extreme caution before considering any investment.
 
 ### Has WORLD BET been audited?
 

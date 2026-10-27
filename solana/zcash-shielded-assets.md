@@ -2,14 +2,14 @@
 token: Zcash Shielded Assets
 ticker: STAMP
 network: solana
-risk_score: 15
+risk_score: 0
 status: low
 date: 2026-09-23
 ---
 
 # Zcash Shielded Assets (STAMP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 15/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zcash-shielded-assets-sol)
 
@@ -26,8 +26,8 @@ The Zcash Shielded Assets (Stamp) token is an SPL Token-2022 mint with both mint
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint, indicating modern Solana token standards. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can… |
-| **Governance / Economics** | 6/10 | Medium | The token has a liquidity of $99,000 USD, with a 24-hour volume of $375,569 USD, resulting in a normal Volume/Liquidity Ratio of 3.79. However, the DEX pair is very new, established only 2 days ago… |
-| **Upgrades** | 8/10 | Low | The token is an SPL Token-2022, and critical authorities like mint and freeze have been revoked, preventing further changes to supply or account freeze status. The token does not have upgradable… |
+| **Governance / Economics** | 9/10 | Low | The token has a liquidity of $99,000 USD, with a 24-hour volume of $375,569 USD, resulting in a normal Volume/Liquidity Ratio of 3.79. However, the DEX pair is very new, established only 2 days ago… |
+| **Upgrades** | 10/10 | Low | The token is an SPL Token-2022, and critical authorities like mint and freeze have been revoked, preventing further changes to supply or account freeze status. The token does not have upgradable… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1280 buys / 1109 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

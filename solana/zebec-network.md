@@ -2,14 +2,14 @@
 token: Zebec Network
 ticker: ZBCN
 network: solana
-risk_score: 24
+risk_score: 15
 status: low
 date: 2026-08-11
 ---
 
 # Zebec Network (ZBCN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 24/100 — 🟢 Low Risk**
+> **Risk Score: 15/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zebec-network-sol)
 
@@ -26,8 +26,8 @@ The Zebec Network (ZBCN) SPL token mint has its mint and freeze authorities revo
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Zebec Network (ZBCN) token operates under the classic `spl-token` program. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can… |
-| **Governance / Economics** | 5/10 | Medium | The token's economic profile shows a medium risk due to holder concentration, with the top 10 token accounts holding 54.53% of the total supply (7.4 Economic). This level of concentration could lead… |
-| **Upgrades** | 8/10 | Low | The Zebec Network (ZBCN) token mint has a high degree of immutability regarding its core functionalities, as both the mint and freeze authorities have been permanently revoked (7.7 Upgrades). This… |
+| **Governance / Economics** | 6/10 | Medium | The token's economic profile shows a medium risk due to holder concentration, with the top 10 token accounts holding 54.53% of the total supply (7.4 Economic). This level of concentration could lead… |
+| **Upgrades** | 9/10 | Low | The Zebec Network (ZBCN) token mint has a high degree of immutability regarding its core functionalities, as both the mint and freeze authorities have been permanently revoked (7.7 Upgrades). This… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by `metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

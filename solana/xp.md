@@ -2,14 +2,14 @@
 token: xp
 ticker: XP
 network: solana
-risk_score: 28
+risk_score: 9
 status: low
 date: 2026-09-19
 ---
 
 # xp (XP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 9/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/xp-sol)
 
@@ -26,8 +26,8 @@ The xp token mint has successfully revoked both mint and freeze authorities, ens
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The xp token is an SPL Token-2022 implementation. Both the mint authority and freeze authority have been revoked, which means no new tokens can be minted and no holder accounts can be frozen by an… |
-| **Governance / Economics** | 5/10 | Medium | The token's DEX pair is very new, established only 2 days ago, which provides an insufficient track record to assess long-term market behavior or team actions (7.4 Economic). Current liquidity is… |
-| **Upgrades** | 6/10 | Medium | The mint and freeze authorities are permanently revoked, preventing any future changes to these core token functionalities (7.7 Upgrades). The token utilizes the spl-token-2022 program, and while the… |
+| **Governance / Economics** | 8/10 | Low | The token's DEX pair is very new, established only 2 days ago, which provides an insufficient track record to assess long-term market behavior or team actions (7.4 Economic). Current liquidity is… |
+| **Upgrades** | 8/10 | Low | The mint and freeze authorities are permanently revoked, preventing any future changes to these core token functionalities (7.7 Upgrades). The token utilizes the spl-token-2022 program, and while the… |
 
 ## Token-2022 Extensions
 
@@ -67,13 +67,13 @@ Token name, symbol, or image can be changed post-launch.
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2725 buys / 2471 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

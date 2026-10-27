@@ -2,14 +2,14 @@
 token: xSOL
 ticker: XSOL
 network: solana
-risk_score: 46
-status: medium
+risk_score: 34
+status: low
 date: 2026-09-19
 ---
 
 # xSOL (XSOL) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 46/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/xsol-sol)
 
@@ -25,9 +25,9 @@ The xSOL SPL token mint presents a critical risk due to an active mint authority
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The xSOL token is implemented using the standard `spl-token` program. A critical risk exists as the mint authority, held by J8rGkrzsvqinX9kfwD8SkP3mRzXAk3uiDRUaiZKXM4as, remains active, allowing for… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits substantial liquidity, with total DEX liquidity at $17,800,891, indicating a healthy trading environment. The 24-hour volume to liquidity ratio is a normal 0.06, and the pair has… |
-| **Upgrades** | 4/10 | Medium | The token's core minting capability remains mutable due to the active mint authority. While the freeze authority is revoked, the token's metadata, including its name, symbol, or image, can be changed… |
+| **Technical** | 8/10 | Low | The xSOL token is implemented using the standard `spl-token` program. A critical risk exists as the mint authority, held by J8rGkrzsvqinX9kfwD8SkP3mRzXAk3uiDRUaiZKXM4as, remains active, allowing for… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits substantial liquidity, with total DEX liquidity at $17,800,891, indicating a healthy trading environment. The 24-hour volume to liquidity ratio is a normal 0.06, and the pair has… |
+| **Upgrades** | 6/10 | Medium | The token's core minting capability remains mutable due to the active mint authority. While the freeze authority is revoked, the token's metadata, including its name, symbol, or image, can be changed… |
 
 ## Security Findings
 
@@ -67,7 +67,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -76,7 +76,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: WoW Gold
 ticker: WOW
 network: solana
-risk_score: 14
+risk_score: 10
 status: low
 date: 2026-09-25
 ---
 
 # WoW Gold (WOW) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 14/100 — 🟢 Low Risk**
+> **Risk Score: 10/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wow-gold-sol)
 
@@ -26,8 +26,8 @@ The WoW Gold (WOW) token is an SPL Token-2022 mint with revoked mint and freeze 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The WoW Gold token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority are revoked, ensuring that no new tokens can be minted and no holder accounts can be… |
-| **Governance / Economics** | 7/10 | Low | DEX liquidity for WoW Gold is $285,475, supporting moderate trading activity. The 24-hour volume of $1,769,876 results in a Volume/Liquidity Ratio of 6.20, which is high and suggests active trading… |
-| **Upgrades** | 6/10 | Medium | The mint authority and freeze authority are both revoked, preventing any changes to the token's supply or the ability to freeze holder accounts. However, the token's metadata is mutable, meaning its… |
+| **Governance / Economics** | 8/10 | Low | DEX liquidity for WoW Gold is $285,475, supporting moderate trading activity. The 24-hour volume of $1,769,876 results in a Volume/Liquidity Ratio of 6.20, which is high and suggests active trading… |
+| **Upgrades** | 7/10 | Low | The mint authority and freeze authority are both revoked, preventing any changes to the token's supply or the ability to freeze holder accounts. However, the token's metadata is mutable, meaning its… |
 
 ## Token-2022 Extensions
 
@@ -66,7 +66,7 @@ The token's metadata, including its name, symbol, or image, can be changed post-
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -75,7 +75,7 @@ The token's metadata, including its name, symbol, or image, can be changed post-
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: wifout
 ticker: WIFOUT
 network: solana
-risk_score: 27
+risk_score: 8
 status: low
 date: 2026-09-17
 ---
 
 # wifout (WIFOUT) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 27/100 — 🟢 Low Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wifout-sol)
 
@@ -26,8 +26,8 @@ This Solana SPL Token Mint audit for wifout identifies a Medium risk due to the 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | This token is an SPL Token-2022 mint. Both the Mint Authority and Freeze Authority have been revoked, indicating a fixed supply and immutability of account freezing. It features a 1.00% transfer fee… |
-| **Governance / Economics** | 5/10 | Medium | The token's DEX pair is extremely new, created 0 days ago, which means there is no historical data to assess market stability. Current liquidity stands at $207,511 USD, with a 24-hour volume of… |
-| **Upgrades** | 6/10 | Medium | The Mint Authority and Freeze Authority are both revoked, preventing further token minting or account freezing by an authority. While the transfer hook is not present and not upgradable, the transfer… |
+| **Governance / Economics** | 8/10 | Low | The token's DEX pair is extremely new, created 0 days ago, which means there is no historical data to assess market stability. Current liquidity stands at $207,511 USD, with a 24-hour volume of… |
+| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked, preventing further token minting or account freezing by an authority. While the transfer hook is not present and not upgradable, the transfer… |
 
 ## Token-2022 Extensions
 
@@ -67,13 +67,13 @@ Token name, symbol, or image can be changed post-launch.
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 3088 buys / 2956 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: WHEEL SMITH
 ticker: WHEELSMITH
 network: solana
-risk_score: 42
-status: medium
+risk_score: 12
+status: low
 date: 2026-09-17
 ---
 
 # WHEEL SMITH (WHEELSMITH) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wheel-smith-sol)
 
@@ -25,9 +25,9 @@ The WHEEL SMITH token mint is flagged as high-risk by a third-party registry due
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The WHEEL SMITH token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, which is a positive security characteristic, preventing further token issuance or… |
-| **Governance / Economics** | 4/10 | Medium | The token's DEX liquidity is $38,582, which is moderate, and the 24-hour volume to liquidity ratio of 4.71 is normal, not indicating wash trading (7.4 Economic). The DEX pair has been active for 11… |
-| **Upgrades** | 7/10 | Low | The mint authority and freeze authority are both revoked, meaning no further tokens can be minted and no accounts can be frozen, providing stability to the token's supply and transferability (7.7… |
+| **Technical** | 10/10 | Low | The WHEEL SMITH token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, which is a positive security characteristic, preventing further token issuance or… |
+| **Governance / Economics** | 8/10 | Low | The token's DEX liquidity is $38,582, which is moderate, and the 24-hour volume to liquidity ratio of 4.71 is normal, not indicating wash trading (7.4 Economic). The DEX pair has been active for 11… |
+| **Upgrades** | 10/10 | Low | The mint authority and freeze authority are both revoked, meaning no further tokens can be minted and no accounts can be frozen, providing stability to the token's supply and transferability (7.7… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ An independent third-party risk registry classifies this token as high-risk base
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1397 buys / 1899 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ An independent third-party risk registry classifies this token as high-risk base
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

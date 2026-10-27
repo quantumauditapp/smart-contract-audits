@@ -2,14 +2,14 @@
 token: XEN Crypto
 ticker: XEN
 network: ethereum
-risk_score: 13
+risk_score: 11
 status: low
 date: 2026-09-04
 ---
 
 # XEN Crypto (XEN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 13/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/xen-crypto-eth)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Extensive Use of `require` for Fixed-Point Range Checks  *(Severity: Low · Status: Unresolved)*
 
-The `ABDKMath64x64` library extensively uses `require` statements within `unchecked` blocks to enforce range limits (`MIN_64x64`, `MAX_64x64`) for 64.64-bit fixed-point numbers after intermediate `int256` calculations. While these checks are crucial for preventing overflows/underflows and ensuring mathematical correctness, they can lead to higher gas costs for transactions that provide inputs resulting in out-of-range fixed-point values, as such transactions will revert. This is an expected trade-off for safety in fixed-point arithmetic.
+Not confirmed by static analysis (the model's own reading of the source). The `ABDKMath64x64` library extensively uses `require` statements within `unchecked` blocks to enforce range limits (`MIN_64x64`, `MAX_64x64`) for 64.64-bit fixed-point numbers after intermediate `int256` calculations. While these checks are crucial for preventing overflows/underflows and ensuring mathematical correctness, they can lead to higher gas costs for transactions that provide inputs resulting in out-of-range fixed-point values, as such transactions will revert. This is an expected trade-off for safety in fixed-point arithmetic.
 
 **Recommendation:** This is a design choice for safety and is generally acceptable for fixed-point libraries. Users of the `Math` library should be aware that inputs leading to results outside the 64.64-bit range will cause transactions to revert. No direct action is required unless gas optimization for invalid inputs is a critical concern, which would typically involve a different fixed-point implementation strategy.
 
 
 ### `I-01` — Reliance on Third-Party Library  *(Severity: Informational · Status: Unresolved)*
 
-The `Math` contract's core functionality for fixed-point arithmetic is entirely dependent on the `ABDKMath64x64` library. While `ABDKMath64x64` is a well-known and generally robust library, any undiscovered vulnerability or subtle bug within its extensive codebase would directly impact the `Math` contract and any protocol relying on it. This introduces an inherent dependency risk.
+Not confirmed by static analysis (the model's own reading of the source). The `Math` contract's core functionality for fixed-point arithmetic is entirely dependent on the `ABDKMath64x64` library. While `ABDKMath64x64` is a well-known and generally robust library, any undiscovered vulnerability or subtle bug within its extensive codebase would directly impact the `Math` contract and any protocol relying on it. This introduces an inherent dependency risk.
 
 **Recommendation:** Ensure that the `ABDKMath64x64` library has been thoroughly audited independently and that its specific version used in this project is free from known vulnerabilities. Consider maintaining a local copy of the audited version to prevent unexpected changes from external dependencies.
 
 
 ### `I-02` — Truncated `log_2` Function in `ABDKMath64x64`  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code for the `ABDKMath64x64.log_2` function is incomplete, indicated by `... (truncated)`. Without the full implementation, a comprehensive security assessment of this specific function's logic, including potential edge cases, gas consumption, and correctness, cannot be performed.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the `ABDKMath64x64.log_2` function is incomplete, indicated by `... (truncated)`. Without the full implementation, a comprehensive security assessment of this specific function's logic, including potential edge cases, gas consumption, and correctness, cannot be performed.
 
 **Recommendation:** Provide the complete source code for the `ABDKMath64x64.log_2` function to allow for a full and thorough audit of its implementation. Verify that the deployed bytecode matches the complete source code.
 

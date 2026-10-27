@@ -2,14 +2,14 @@
 token: Zama
 ticker: ZAMA
 network: ethereum
-risk_score: 68
+risk_score: 66
 status: high
 date: 2026-07-22
 ---
 
 # Zama (ZAMA) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zama-eth)
 
@@ -42,28 +42,28 @@ _🟢 1 Low · ⚪ 3 Informational_
 
 ### `L-01` — Criticality of Proper Role Management  *(Severity: Low · Status: Unresolved)*
 
-The overall security of any system utilizing `AccessControl` is highly dependent on the correct and secure management of roles (7.3 Access Control, 7.8 Operations). Misconfigurations, such as granting excessive privileges or failing to revoke roles from compromised accounts, can lead to unauthorized access to sensitive functions or assets.
+Not confirmed by static analysis (the model's own reading of the source). The overall security of any system utilizing `AccessControl` is highly dependent on the correct and secure management of roles (7.3 Access Control, 7.8 Operations). Misconfigurations, such as granting excessive privileges or failing to revoke roles from compromised accounts, can lead to unauthorized access to sensitive functions or assets.
 
 **Recommendation:** Establish clear policies and procedures for role assignment, revocation, and administration. Regularly audit current role holders and their permissions. Adhere to the principle of least privilege, ensuring accounts only have the roles necessary for their intended functions.
 
 
 ### `I-01` — `DEFAULT_ADMIN_ROLE` Self-Administration Requires Vigilance  *(Severity: Informational · Status: Unresolved)*
 
-The `DEFAULT_ADMIN_ROLE` is designed to be its own administrator. This means any account holding the `DEFAULT_ADMIN_ROLE` can grant or revoke this role from other accounts, as well as administer all other roles. While a standard OpenZeppelin design, it concentrates significant power (7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` is designed to be its own administrator. This means any account holding the `DEFAULT_ADMIN_ROLE` can grant or revoke this role from other accounts, as well as administer all other roles. While a standard OpenZeppelin design, it concentrates significant power (7.3 Access Control).
 
 **Recommendation:** Implement robust operational security measures for accounts holding the `DEFAULT_ADMIN_ROLE`, such as multi-signature wallets, hardware security modules, or time-locks for critical operations. Consider using OpenZeppelin's `AccessControlDefaultAdminRules` for enhanced security around this role.
 
 
 ### `I-02` — Abstract Nature and Integration Dependency  *(Severity: Informational · Status: Unresolved)*
 
-`AccessControl` is an abstract contract (7.1 Architecture) designed to be inherited by other contracts. Its security and functionality are fully realized only when correctly integrated into a concrete contract. The audit of this module alone does not cover potential vulnerabilities arising from its specific implementation within a larger system.
+Not confirmed by static analysis (the model's own reading of the source). `AccessControl` is an abstract contract (7.1 Architecture) designed to be inherited by other contracts. Its security and functionality are fully realized only when correctly integrated into a concrete contract. The audit of this module alone does not cover potential vulnerabilities arising from its specific implementation within a larger system.
 
 **Recommendation:** Ensure that the inheriting contract correctly implements and utilizes the `AccessControl` functions. A comprehensive audit of the concrete contract that inherits `AccessControl` is recommended to assess the full security posture of the system.
 
 
 ### `I-03` — No On-Chain Role Enumeration  *(Severity: Informational · Status: Unresolved)*
 
-This version of `AccessControl` (7.1 Architecture) does not provide functions to enumerate all accounts holding a specific role on-chain. Role membership can only be determined by parsing past `RoleGranted` and `RoleRevoked` events off-chain. For some applications, on-chain enumerability might be desired.
+Not confirmed by static analysis (the model's own reading of the source). This version of `AccessControl` (7.1 Architecture) does not provide functions to enumerate all accounts holding a specific role on-chain. Role membership can only be determined by parsing past `RoleGranted` and `RoleRevoked` events off-chain. For some applications, on-chain enumerability might be desired.
 
 **Recommendation:** If on-chain enumeration of role members is a requirement, consider using OpenZeppelin's `AccessControlEnumerable` module instead, which provides this functionality.
 

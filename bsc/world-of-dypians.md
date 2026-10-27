@@ -2,14 +2,14 @@
 token: World of Dypians
 ticker: WOD
 network: bsc
-risk_score: 10
+risk_score: 8
 status: low
 date: 2026-09-03
 ---
 
 # World of Dypians (WOD) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 10/100 — 🟢 Low Risk**
+> **Risk Score: 8/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-of-dypians-bsc)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Centralized Control of Initial Supply  *(Severity: Low · Status: Unresolved)*
 
-The entire `MAX_SUPPLY` of WorldOfDypians tokens is minted to a single `tokenLockAddress` (0x3589Fcb5bEE84DbB4DA4f987Ed84a45F012d3890) during contract deployment. This design choice centralizes control over the initial token distribution to the entity managing this specific address. Any compromise, mismanagement, or single point of failure associated with the `tokenLockAddress` could significantly impact the entire token supply and its intended distribution (7.3 Access Control, 7.4 Economic, 7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The entire `MAX_SUPPLY` of WorldOfDypians tokens is minted to a single `tokenLockAddress` (0x3589Fcb5bEE84DbB4DA4f987Ed84a45F012d3890) during contract deployment. This design choice centralizes control over the initial token distribution to the entity managing this specific address. Any compromise, mismanagement, or single point of failure associated with the `tokenLockAddress` could significantly impact the entire token supply and its intended distribution (7.3 Access Control, 7.4 Economic, 7.6 External).
 
 **Recommendation:** Implement robust security measures for the `tokenLockAddress`, such as a multi-signature wallet or a time-locked contract, to distribute control and reduce the risk of a single point of failure. Clearly communicate the purpose and management of this address to stakeholders.
 
 
 ### `I-01` — Immutable Token Supply  *(Severity: Informational · Status: Unresolved)*
 
-The WorldOfDypians token contract implements a fixed token supply model. After the initial minting of `MAX_SUPPLY` tokens to the `tokenLockAddress` in the constructor, there are no public or internal functions available to mint additional tokens or burn existing ones. This design makes the total token supply immutable, preventing any future inflation or deflation through contract-level operations (7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The WorldOfDypians token contract implements a fixed token supply model. After the initial minting of `MAX_SUPPLY` tokens to the `tokenLockAddress` in the constructor, there are no public or internal functions available to mint additional tokens or burn existing ones. This design makes the total token supply immutable, preventing any future inflation or deflation through contract-level operations (7.4 Economic).
 
 **Recommendation:** No action is required if a fixed supply is the intended economic model. Ensure this design choice is clearly communicated in the project's documentation and whitepaper.
 
 
 ### `I-02` — Hardcoded `tokenLockAddress`  *(Severity: Informational · Status: Unresolved)*
 
-The `tokenLockAddress` (0x3589Fcb5bEE84DbB4DA4f987Ed84a45F012d3890) is defined as a `public constant` within the contract. While this ensures the address cannot be changed after deployment, it also introduces inflexibility. If the intended recipient or the strategy for managing the initial token supply needs to change in the future, it would necessitate deploying an entirely new contract (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The `tokenLockAddress` (0x3589Fcb5bEE84DbB4DA4f987Ed84a45F012d3890) is defined as a `public constant` within the contract. While this ensures the address cannot be changed after deployment, it also introduces inflexibility. If the intended recipient or the strategy for managing the initial token supply needs to change in the future, it would necessitate deploying an entirely new contract (7.1 Architecture).
 
 **Recommendation:** No action is required if immutability of the lock address is the intended design. For future projects requiring flexibility, consider making such critical addresses configurable via constructor arguments or an owner-controlled setter function, if appropriate for the project's risk model.
 

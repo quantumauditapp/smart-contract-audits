@@ -2,14 +2,14 @@
 token: Zest
 ticker: ZEST
 network: base
-risk_score: 57
+risk_score: 55
 status: medium
 date: 2026-08-11
 ---
 
 # Zest (ZEST) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 57/100 — 🟡 Medium Risk**
+> **Risk Score: 55/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zest-base)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Use of Deprecated ERC20 `increaseApproval`/`decreaseApproval` Functions  *(Severity: Low · Status: Unresolved)*
 
-The contract includes `increaseApproval` and `decreaseApproval` functions, which are deprecated in modern ERC20 standards. While these functions correctly delegate to `increaseAllowance` and `decreaseAllowance` respectively, their presence can lead to confusion or suggest outdated practices to users and integrators.
+Not confirmed by static analysis (the model's own reading of the source). The contract includes `increaseApproval` and `decreaseApproval` functions, which are deprecated in modern ERC20 standards. While these functions correctly delegate to `increaseAllowance` and `decreaseAllowance` respectively, their presence can lead to confusion or suggest outdated practices to users and integrators.
 
 **Recommendation:** Consider removing the `increaseApproval` and `decreaseApproval` functions. Users should be encouraged to interact directly with `increaseAllowance` and `decreaseAllowance` for clarity and adherence to current ERC20 best practices.
 
 
 ### `I-01` — Significant Centralized Control by Owner  *(Severity: Informational · Status: Unresolved)*
 
-The `owner` role possesses extensive control over critical functions, including granting/revoking minter and burner roles, and setting the `ccipAdmin` address. This centralization means that a compromise of the owner's private key could lead to unauthorized minting, burning, or manipulation of the `ccipAdmin` role. The pre-filled data indicates the owner is a multisig, which significantly mitigates this risk (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `owner` role possesses extensive control over critical functions, including granting/revoking minter and burner roles, and setting the `ccipAdmin` address. This centralization means that a compromise of the owner's private key could lead to unauthorized minting, burning, or manipulation of the `ccipAdmin` role. The pre-filled data indicates the owner is a multisig, which significantly mitigates this risk (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** While mitigated by a multisig, it is crucial to maintain robust security practices for the multisig signers. Regularly review and audit the multisig setup and its participants. Consider implementing time-locks for critical administrative actions if the protocol's risk profile increases.
 
 
 ### `I-02` — Potential Gas Limit Exceedance for Role Enumeration  *(Severity: Informational · Status: Unresolved)*
 
-The `getMinters()` and `getBurners()` functions return an array of all addresses with the respective roles using `EnumerableSet.values()`. If the number of minters or burners were to grow excessively large (e.g., hundreds or thousands), calling these functions could potentially exceed the block gas limit, rendering them unusable (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `getMinters()` and `getBurners()` functions return an array of all addresses with the respective roles using `EnumerableSet.values()`. If the number of minters or burners were to grow excessively large (e.g., hundreds or thousands), calling these functions could potentially exceed the block gas limit, rendering them unusable (7.2 Code Security).
 
 **Recommendation:** For roles that are expected to remain limited (e.g., administrative roles), this is a low concern. If the design ever anticipates a very large number of minters/burners, consider alternative methods for querying roles, such as individual `isMinter`/`isBurner` checks, or pagination if a UI needs to display all roles.
 

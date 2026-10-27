@@ -2,14 +2,14 @@
 token: World Peace 
 ticker: PEACE 
 network: solana
-risk_score: 28
+risk_score: 16
 status: low
 date: 2026-06-15
 ---
 
 # World Peace  (PEACE ) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 16/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/world-peace-sol)
 
@@ -26,8 +26,8 @@ This audit of the World Peace (Peace) SPL Token Mint found no critical or high-s
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is an SPL Token-2022 mint with a fixed supply of 995,303,116.495398 tokens, as the mint authority has been revoked. The freeze authority is also revoked, meaning no accounts can be frozen.… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits healthy trading patterns with a 24-hour volume of $1,513 against a liquidity of $30,518, resulting in a normal Volume/Liquidity Ratio of 0.05. The DEX pair has been active for 133… |
-| **Upgrades** | 8/10 | Low | The token's core parameters are immutable, as both the mint and freeze authorities have been revoked. This prevents any further issuance of tokens or freezing of holder accounts. Key Token-2022… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits healthy trading patterns with a 24-hour volume of $1,513 against a liquidity of $30,518, resulting in a normal Volume/Liquidity Ratio of 0.05. The DEX pair has been active for 133… |
+| **Upgrades** | 10/10 | Low | The token's core parameters are immutable, as both the mint and freeze authorities have been revoked. This prevents any further issuance of tokens or freezing of holder accounts. Key Token-2022… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6504 buys / 4654 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
@@ -80,7 +80,7 @@ The provided data does not definitively confirm World Peace as a scam, nor does 
 
 ### Is World Peace safe to buy?
 
-Investing in World Peace carries notable risks, earning it a Medium Risk score of 33/100. The contract remains unverified, preventing full security assessment and transparency. Critically, the liquidity is not locked, exposing investors to potential 'rug pull' scenarios if providers withdraw funds. Furthermore, the significant concentration of tokens among the top 10 holders introduces market stability concerns. These factors suggest it is not inherently 'safe' without further due diligence.
+Investing in World Peace carries notable risks, earning it a Low Risk score of 16/100. The contract remains unverified, preventing full security assessment and transparency. Critically, the liquidity is not locked, exposing investors to potential 'rug pull' scenarios if providers withdraw funds. Furthermore, the significant concentration of tokens among the top 10 holders introduces market stability concerns. These factors suggest it is not inherently 'safe' without further due diligence.
 
 ### Has World Peace been audited?
 

@@ -2,14 +2,14 @@
 token: Z
 ticker: Z
 network: solana
-risk_score: 38
-status: medium
+risk_score: 21
+status: low
 date: 2026-08-20
 ---
 
 # Z (Z) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 38/100 — 🟡 Medium Risk**
+> **Risk Score: 21/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/z-sol)
 
@@ -25,9 +25,9 @@ This SPL token mint for 'Z' has its mint and freeze authorities revoked, indicat
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is an SPL token operating under the standard `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked, ensuring that no new tokens can be minted and no holder… |
-| **Governance / Economics** | 3/10 | High | The top 10 token accounts hold 37.95% of the supply, which does not indicate excessive holder concentration. The token has a total DEX liquidity of $71,368 USD and a 24-hour volume of $300,194 USD… |
-| **Upgrades** | 8/10 | Low | The Mint Authority and Freeze Authority are both revoked, preventing any future changes to the token's supply or the ability to freeze accounts. The token's metadata is immutable, meaning its name… |
+| **Technical** | 10/10 | Low | The token is an SPL token operating under the standard `spl-token` program. Both the Mint Authority and Freeze Authority have been revoked, ensuring that no new tokens can be minted and no holder… |
+| **Governance / Economics** | 6/10 | Medium | The top 10 token accounts hold 37.95% of the supply, which does not indicate excessive holder concentration. The token has a total DEX liquidity of $71,368 USD and a 24-hour volume of $300,194 USD… |
+| **Upgrades** | 10/10 | Low | The Mint Authority and Freeze Authority are both revoked, preventing any future changes to the token's supply or the ability to freeze accounts. The token's metadata is immutable, meaning its name… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1523 buys / 1240 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 2 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

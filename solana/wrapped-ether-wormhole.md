@@ -2,14 +2,14 @@
 token: Wrapped Ether (Wormhole)
 ticker: WETH
 network: solana
-risk_score: 64
+risk_score: 42
 status: medium
 date: 2026-08-13
 ---
 
 # Wrapped Ether (Wormhole) (WETH) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 64/100 — 🟡 Medium Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-ether-wormhole-sol)
 
@@ -25,9 +25,9 @@ This audit of the Wrapped Ether (Wormhole) (WETH) SPL token mint reveals critica
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The token is an SPL token operating under the `spl-token` program. It has a total supply of 4,702,911,261.571 tokens with 8 decimals. A significant technical risk (7.3 Access Control) is the active… |
-| **Governance / Economics** | 1/10 | High | The economic stability of the token (7.4 Economic) is challenged by a high concentration of ownership, with the top 10 token accounts holding 80.24% of the total supply. This level of concentration… |
-| **Upgrades** | 4/10 | Medium | The token's core functionality is governed by the `spl-token` program, which is a fixed program. While the token itself is not upgradable in the EVM sense (7.7 Upgrades), the `metadata_mutable` flag… |
+| **Technical** | 8/10 | Low | The token is an SPL token operating under the `spl-token` program. It has a total supply of 4,702,911,261.571 tokens with 8 decimals. A significant technical risk (7.3 Access Control) is the active… |
+| **Governance / Economics** | 4/10 | Medium | The economic stability of the token (7.4 Economic) is challenged by a high concentration of ownership, with the top 10 token accounts holding 80.24% of the total supply. This level of concentration… |
+| **Upgrades** | 6/10 | Medium | The token's core functionality is governed by the `spl-token` program, which is a fixed program. While the token itself is not upgradable in the EVM sense (7.7 Upgrades), the `metadata_mutable` flag… |
 
 ## Security Findings
 
@@ -74,7 +74,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -83,7 +83,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

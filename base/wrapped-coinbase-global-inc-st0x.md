@@ -2,14 +2,14 @@
 token: Wrapped Coinbase Global Inc ST0x
 ticker: WTCOIN
 network: base
-risk_score: 59
+risk_score: 52
 status: medium
 date: 2026-09-02
 ---
 
 # Wrapped Coinbase Global Inc ST0x (WTCOIN) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 59/100 — 🟡 Medium Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-coinbase-global-inc-st0x-base)
 
@@ -50,21 +50,21 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Incompatibility with Fee-on-Transfer or Rebasing Tokens  *(Severity: Medium · Status: Unresolved)*
 
-The StoxWrappedTokenVault, as an ERC-4626 vault, does not explicitly handle fee-on-transfer or rebasing ERC-20 tokens. If the underlying `asset` token charges fees on transfers (e.g., during deposits or withdrawals) or has a rebasing mechanism, the vault's internal accounting (specifically `totalAssets()`) may not accurately reflect the actual amount of underlying tokens held. This discrepancy can lead to incorrect share prices, loss of funds for users, or denial of service for certain operations.
+Not confirmed by static analysis (the model's own reading of the source). The StoxWrappedTokenVault, as an ERC-4626 vault, does not explicitly handle fee-on-transfer or rebasing ERC-20 tokens. If the underlying `asset` token charges fees on transfers (e.g., during deposits or withdrawals) or has a rebasing mechanism, the vault's internal accounting (specifically `totalAssets()`) may not accurately reflect the actual amount of underlying tokens held. This discrepancy can lead to incorrect share prices, loss of funds for users, or denial of service for certain operations.
 
 **Recommendation:** Before deploying with a specific asset, verify that the underlying ERC-20 token is a standard, non-rebasing, non-fee-on-transfer token. If such tokens must be supported, consider implementing custom `_deposit`, `_withdraw`, `_mint`, and `_redeem` hooks to account for token mechanics, or use a wrapper that normalizes the token's behavior.
 
 
 ### `L-01` — Critical Initialization Parameter (Asset Address)  *(Severity: Low · Status: Unresolved)*
 
-The `initialize` function decodes the `asset` address from `bytes calldata data`. While this pattern is common for factory-deployed clones, it makes the correct functioning of the vault entirely dependent on the accuracy of the `data` provided during the proxy's initialization. An incorrect or malicious `asset` address supplied during the initial deployment and initialization of the BeaconProxy could render the vault unusable or link it to an unintended or exploitable token.
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function decodes the `asset` address from `bytes calldata data`. While this pattern is common for factory-deployed clones, it makes the correct functioning of the vault entirely dependent on the accuracy of the `data` provided during the proxy's initialization. An incorrect or malicious `asset` address supplied during the initial deployment and initialization of the BeaconProxy could render the vault unusable or link it to an unintended or exploitable token.
 
 **Recommendation:** Implement stringent checks and multi-party verification processes for the `data` parameter used during the BeaconProxy's initialization. Ensure that the `asset` address is thoroughly vetted and confirmed to be the intended token before deployment. Consider adding a mechanism to allow the Beacon owner to pause the vault or change the asset if a misconfiguration is detected, although this would add complexity.
 
 
 ### `I-01` — Redundant `__ERC20_init` Call  *(Severity: Informational · Status: Unresolved)*
 
-The `initialize` function includes a call to `__ERC20_init("", "")`, which sets the ERC-20 name and symbol of the shares token to empty strings. However, the contract immediately overrides the `name()` and `symbol()` functions to derive these values from the underlying asset. Consequently, the `__ERC20_init` call is redundant as its effects are immediately superseded by the overrides.
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function includes a call to `__ERC20_init("", "")`, which sets the ERC-20 name and symbol of the shares token to empty strings. However, the contract immediately overrides the `name()` and `symbol()` functions to derive these values from the underlying asset. Consequently, the `__ERC20_init` call is redundant as its effects are immediately superseded by the overrides.
 
 **Recommendation:** The `__ERC20_init("", "")` call can be safely removed from the `initialize` function without affecting the contract's functionality or security, potentially saving a small amount of gas during initialization.
 

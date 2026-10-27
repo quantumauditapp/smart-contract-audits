@@ -2,14 +2,14 @@
 token: zerebro
 ticker: ZEREBRO
 network: solana
-risk_score: 32
+risk_score: 4
 status: low
 date: 2026-08-16
 ---
 
 # zerebro (ZEREBRO) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 32/100 — 🟢 Low Risk**
+> **Risk Score: 4/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zerebro-sol)
 
@@ -25,9 +25,9 @@ The zerebro (ZEREBRO) SPL token mint exhibits critical risks primarily due to it
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The zerebro token is implemented using the standard spl-token program. Both the mint authority and freeze authority have been revoked, preventing the creation of new tokens or the freezing of… |
-| **Governance / Economics** | 1/10 | High | The token exhibits significant holder concentration, with the top 10 token accounts holding 77.67% of the total supply, posing a substantial risk of market manipulation or price volatility from large… |
-| **Upgrades** | 7/10 | Low | The token mint's core parameters are highly immutable, as both the mint authority and freeze authority have been revoked. This means no new tokens can be minted, and no accounts can be frozen by an… |
+| **Technical** | 10/10 | Low | The zerebro token is implemented using the standard spl-token program. Both the mint authority and freeze authority have been revoked, preventing the creation of new tokens or the freezing of… |
+| **Governance / Economics** | 3/10 | High | The token exhibits significant holder concentration, with the top 10 token accounts holding 77.67% of the total supply, posing a substantial risk of market manipulation or price volatility from large… |
+| **Upgrades** | 8/10 | Low | The token mint's core parameters are highly immutable, as both the mint authority and freeze authority have been revoked. This means no new tokens can be minted, and no accounts can be frozen by an… |
 
 ## LP Distribution
 

@@ -2,14 +2,14 @@
 token: XPIN Token
 ticker: XPIN
 network: bsc
-risk_score: 34
+risk_score: 30
 status: low
 date: 2026-07-22
 ---
 
 # XPIN Token (XPIN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 34/100 — 🟢 Low Risk**
+> **Risk Score: 30/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/xpin-token-bsc)
 
@@ -42,21 +42,21 @@ _🟢 2 Low · ⚪ 1 Informational_
 
 ### `L-01` — Centralized Initial Supply Distribution  *(Severity: Low · Status: Unresolved)*
 
-The `XPINToken` constructor mints the entire `initialSupply` to `msg.sender`. This design choice centralizes the initial distribution of tokens, giving the deployer significant control over the token's early supply and potential market impact. While common for new tokens, it's a point of centralization.
+Not confirmed by static analysis (the model's own reading of the source). The `XPINToken` constructor mints the entire `initialSupply` to `msg.sender`. This design choice centralizes the initial distribution of tokens, giving the deployer significant control over the token's early supply and potential market impact. While common for new tokens, it's a point of centralization.
 
 **Recommendation:** Ensure that the deployer's private keys are secured with best practices (e.g., hardware wallet, multi-signature setup). Consider a transparent and decentralized distribution strategy for the initial supply if the project aims for broader community ownership.
 
 
 ### `L-02` — Reliance on `ecrecover` for `permit` Functionality  *(Severity: Low · Status: Unresolved)*
 
-The `permit` function relies on the `ecrecover` precompile for signature verification. While Solmate's implementation correctly uses EIP-712 domain separators and nonces to mitigate common issues like replay attacks and signature malleability, `ecrecover` itself is a complex cryptographic primitive. Incorrect usage or subtle flaws in the signing process could lead to vulnerabilities.
+Not confirmed by static analysis (the model's own reading of the source). The `permit` function relies on the `ecrecover` precompile for signature verification. While Solmate's implementation correctly uses EIP-712 domain separators and nonces to mitigate common issues like replay attacks and signature malleability, `ecrecover` itself is a complex cryptographic primitive. Incorrect usage or subtle flaws in the signing process could lead to vulnerabilities.
 
 **Recommendation:** Maintain vigilance regarding best practices for off-chain signature generation and verification. Educate users about the implications of signing `permit` messages and the importance of verifying the message content and deadline. Ensure any off-chain services interacting with `permit` are robustly implemented.
 
 
 ### `I-01` — Justified Use of `unchecked` Blocks  *(Severity: Informational · Status: Unresolved)*
 
-The `ERC20` contract utilizes `unchecked` blocks for arithmetic operations within `transfer`, `transferFrom`, `_mint`, and `_burn` functions. Specifically, `balanceOf[to] += amount` and `totalSupply -= amount` are placed in `unchecked` blocks. The accompanying comments justify this by stating that ERC20 invariants (e.g., sum of balances cannot exceed `totalSupply`, user balance cannot exceed `totalSupply`) prevent overflows/underflows. This design choice optimizes gas costs by skipping Solidity's default overflow/underflow checks.
+Not confirmed by static analysis (the model's own reading of the source). The `ERC20` contract utilizes `unchecked` blocks for arithmetic operations within `transfer`, `transferFrom`, `_mint`, and `_burn` functions. Specifically, `balanceOf[to] += amount` and `totalSupply -= amount` are placed in `unchecked` blocks. The accompanying comments justify this by stating that ERC20 invariants (e.g., sum of balances cannot exceed `totalSupply`, user balance cannot exceed `totalSupply`) prevent overflows/underflows. This design choice optimizes gas costs by skipping Solidity's default overflow/underflow checks.
 
 **Recommendation:** No direct action is required as the usage is justified by the contract's invariants and is a common pattern in gas-optimized libraries like Solmate. However, it is crucial for any future modifications or inherited contracts to strictly maintain these invariants to prevent potential arithmetic vulnerabilities.
 

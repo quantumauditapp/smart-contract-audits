@@ -78,11 +78,11 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 
 ### Is XRPN a scam?
 
-Based on automated analysis, XRPN scores 31/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, XRPN scores 1/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is XRPN safe to buy?
 
-Our scanner flagged a risk score of 31/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 1/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has XRPN been audited?
 

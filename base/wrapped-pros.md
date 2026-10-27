@@ -2,14 +2,14 @@
 token: Wrapped PROS
 ticker: PROS
 network: base
-risk_score: 77
+risk_score: 70
 status: high
 date: 2026-07-24
 ---
 
 # Wrapped PROS (PROS) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 77/100 — 🟠 High Risk**
+> **Risk Score: 70/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-pros-base)
 
@@ -38,32 +38,32 @@ The BurnMintERC20 contract implements a standard ERC20 token with additional min
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control of Token Supply  *(Severity: High · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE` has complete authority to grant and revoke `MINTER_ROLE` and `BURNER_ROLE`. This means a single entity or a small group controlling the `DEFAULT_ADMIN_ROLE` can arbitrarily increase or decrease the token's total supply (up to `maxSupply`), significantly impacting the token's economic stability and value. This represents a high centralization risk for the token's economic model (7.3 Access Control, 7.4 Economic).
-
-**Recommendation:** Implement a multi-signature wallet or a decentralized autonomous organization (DAO) to control the `DEFAULT_ADMIN_ROLE`. Consider adding a time-lock for sensitive operations like granting/revoking roles to allow for community oversight and reaction time.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Centralized CCIPAdmin Role Management  *(Severity: Medium · Status: Unresolved)*
 
-The `s_ccipAdmin` address, intended for external Chainlink CCIP integration, can be set by the `DEFAULT_ADMIN_ROLE` via `setCCIPAdmin`. While this contract does not directly use `s_ccipAdmin` for critical token operations, its centralized control by a single address (the `DEFAULT_ADMIN_ROLE`) could pose a risk to external systems relying on this role if the `DEFAULT_ADMIN_ROLE`'s private key is compromised (7.3 Access Control, 7.6 External).
+Not confirmed by static analysis (the model's own reading of the source). The `s_ccipAdmin` address, intended for external Chainlink CCIP integration, can be set by the `DEFAULT_ADMIN_ROLE` via `setCCIPAdmin`. While this contract does not directly use `s_ccipAdmin` for critical token operations, its centralized control by a single address (the `DEFAULT_ADMIN_ROLE`) could pose a risk to external systems relying on this role if the `DEFAULT_ADMIN_ROLE`'s private key is compromised (7.3 Access Control, 7.6 External).
 
 **Recommendation:** Evaluate the criticality of the `CCIPAdmin` role in external systems. If it holds significant power, consider applying similar multi-signature or time-lock controls to the `setCCIPAdmin` function as recommended for other administrative roles.
 
 
+### `M-02` — Centralized Control of Token Supply  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` has complete authority to grant and revoke `MINTER_ROLE` and `BURNER_ROLE`. This means a single entity or a small group controlling the `DEFAULT_ADMIN_ROLE` can arbitrarily increase or decrease the token's total supply (up to `maxSupply`), significantly impacting the token's economic stability and value. This represents a high centralization risk for the token's economic model (7.3 Access Control, 7.4 Economic).
+
+**Recommendation:** Implement a multi-signature wallet or a decentralized autonomous organization (DAO) to control the `DEFAULT_ADMIN_ROLE`. Consider adding a time-lock for sensitive operations like granting/revoking roles to allow for community oversight and reaction time.
+
+
 ### `L-01` — Immutable Decimals Design Choice  *(Severity: Low · Status: Unresolved)*
 
-The token's `decimals` property is set as an immutable variable (`i_decimals`) in the constructor and cannot be changed after deployment. While this ensures consistency and prevents unexpected changes, it means the token's precision is permanently fixed. This might be a limitation if future protocol requirements or ecosystem standards necessitate a change in decimal precision (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The token's `decimals` property is set as an immutable variable (`i_decimals`) in the constructor and cannot be changed after deployment. While this ensures consistency and prevents unexpected changes, it means the token's precision is permanently fixed. This might be a limitation if future protocol requirements or ecosystem standards necessitate a change in decimal precision (7.1 Architecture).
 
 **Recommendation:** This is a design choice and not a vulnerability. Ensure that the chosen decimal precision (`i_decimals`) is suitable for all current and foreseeable use cases of the token. No code change is strictly required unless future flexibility is desired.
 
 
 ### `I-01` — Lack of Explicit Admin Role Renouncement Function  *(Severity: Informational · Status: Unresolved)*
 
-The contract relies on the inherited `AccessControl.renounceRole` function for the `DEFAULT_ADMIN_ROLE` to potentially relinquish its administrative powers. However, there is no explicit function within `BurnMintERC20` to facilitate or encourage this. Explicitly exposing or documenting a path for the `DEFAULT_ADMIN_ROLE` to renounce itself could be a step towards decentralization post-deployment (7.5 Governance, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The contract relies on the inherited `AccessControl.renounceRole` function for the `DEFAULT_ADMIN_ROLE` to potentially relinquish its administrative powers. However, there is no explicit function within `BurnMintERC20` to facilitate or encourage this. Explicitly exposing or documenting a path for the `DEFAULT_ADMIN_ROLE` to renounce itself could be a step towards decentralization post-deployment (7.5 Governance, 7.8 Operations).
 
 **Recommendation:** Consider adding a public function that calls `renounceRole(DEFAULT_ADMIN_ROLE, msg.sender)` to provide a clear and explicit path for the deployer to renounce the admin role, if decentralization is a future goal. Alternatively, ensure this process is clearly documented.
 
@@ -106,11 +106,11 @@ The contract relies on the inherited `AccessControl.renounceRole` function for t
 
 ### Is Wrapped PROS a scam?
 
-Based on automated analysis, Wrapped PROS scores 69/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, Wrapped PROS scores 70/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is Wrapped PROS safe to buy?
 
-Our scanner flagged a risk score of 69/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 70/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has Wrapped PROS been audited?
 

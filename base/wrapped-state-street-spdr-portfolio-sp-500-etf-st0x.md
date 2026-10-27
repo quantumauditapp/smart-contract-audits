@@ -2,14 +2,14 @@
 token: Wrapped State Street SPDR Portfolio S&P 500 ETF ST0x
 ticker: WTSPYM
 network: base
-risk_score: 64
+risk_score: 62
 status: medium
 date: 2026-09-06
 ---
 
 # Wrapped State Street SPDR Portfolio S&P 500 ETF ST0x (WTSPYM) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 64/100 — 🟡 Medium Risk**
+> **Risk Score: 62/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-state-street-spdr-portfolio-sp-500-etf-st0x-base)
 
@@ -50,21 +50,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Potential for Non-Standard ERC-20 Asset Issues  *(Severity: Low · Status: Unresolved)*
 
-The `StoxWrappedTokenVault` is an ERC-4626 vault that wraps an underlying ERC-20 asset. While OpenZeppelin's ERC-4626 implementation is robust, certain non-standard ERC-20 tokens (e.g., rebase tokens, tokens with transfer fees, tokens that revert on zero-value transfers, tokens with non-boolean return values for `transfer`/`transferFrom`) can cause unexpected behavior, accounting discrepancies, or loss of funds within an ERC-4626 vault. The current contract does not implement specific safeguards or checks for such tokens, relying solely on the standard ERC-20 interface.
+Not confirmed by static analysis (the model's own reading of the source). The `StoxWrappedTokenVault` is an ERC-4626 vault that wraps an underlying ERC-20 asset. While OpenZeppelin's ERC-4626 implementation is robust, certain non-standard ERC-20 tokens (e.g., rebase tokens, tokens with transfer fees, tokens that revert on zero-value transfers, tokens with non-boolean return values for `transfer`/`transferFrom`) can cause unexpected behavior, accounting discrepancies, or loss of funds within an ERC-4626 vault. The current contract does not implement specific safeguards or checks for such tokens, relying solely on the standard ERC-20 interface.
 
 **Recommendation:** Before deploying with a specific asset, thoroughly review the underlying ERC-20 token's contract for any non-standard behaviors. If such behaviors are identified, consider implementing custom logic within the vault (e.g., by overriding `_deposit`, `_withdraw`, `_mint`, `_redeem` functions) to handle them gracefully, or restrict the vault to only support standard ERC-20 tokens. Comprehensive testing with the chosen asset is crucial.
 
 
 ### `I-01` — Unused/Decoy `initialize(address)` Function  *(Severity: Informational · Status: Unresolved)*
 
-The contract includes an `initialize(address asset) external pure returns (bytes32)` function that immediately reverts with `InitializeSignatureFn()`. This function is marked `pure`, meaning it cannot modify state, and its immediate revert makes it harmless. However, its presence alongside the actual `initialize(bytes calldata data)` function could be confusing or misleading for developers or auditors.
+Not confirmed by static analysis (the model's own reading of the source). The contract includes an `initialize(address asset) external pure returns (bytes32)` function that immediately reverts with `InitializeSignatureFn()`. This function is marked `pure`, meaning it cannot modify state, and its immediate revert makes it harmless. However, its presence alongside the actual `initialize(bytes calldata data)` function could be confusing or misleading for developers or auditors.
 
 **Recommendation:** Consider removing the unused `initialize(address asset)` function to improve code clarity and reduce potential confusion. If it serves a specific, non-obvious purpose (e.g., preventing a specific signature collision), add a comment explaining its intent.
 
 
 ### `I-02` — Reliance on External `ICloneableV2` Interface  *(Severity: Informational · Status: Unresolved)*
 
-The contract implements the `ICloneableV2` interface and returns `ICLONEABLE_V2_SUCCESS` from its `initialize` function. This indicates that the contract is designed to be deployed via a factory that expects this specific interface and return value. While not a vulnerability in the vault itself, this is an important architectural dependency that should be understood for proper deployment, management, and interaction with the vault instances.
+Not confirmed by static analysis (the model's own reading of the source). The contract implements the `ICloneableV2` interface and returns `ICLONEABLE_V2_SUCCESS` from its `initialize` function. This indicates that the contract is designed to be deployed via a factory that expects this specific interface and return value. While not a vulnerability in the vault itself, this is an important architectural dependency that should be understood for proper deployment, management, and interaction with the vault instances.
 
 **Recommendation:** Ensure that the factory deploying instances of this vault is correctly configured to interact with the `ICloneableV2` interface and handles the expected return value. Document this architectural dependency clearly for future development and operational teams.
 

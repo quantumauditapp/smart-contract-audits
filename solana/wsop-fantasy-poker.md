@@ -2,14 +2,14 @@
 token: WSOP Fantasy Poker
 ticker: WSOLP
 network: solana
-risk_score: 18
+risk_score: 6
 status: low
 date: 2026-06-21
 ---
 
 # WSOP Fantasy Poker (WSOLP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 18/100 — 🟢 Low Risk**
+> **Risk Score: 6/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wsop-fantasy-poker-sol)
 
@@ -26,8 +26,8 @@ This audit of the WSOP Fantasy Poker (WSOLP) SPL Token Mint found no critical or
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The WSOP Fantasy Poker (WSOLP) token is an SPL Token-2022 mint. Both the mint authority and freeze authority have been revoked, ensuring no new tokens can be minted and no accounts can be frozen… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits moderate liquidity with $45,670 USD in total DEX liquidity, which is sufficient for small to medium trades. The 24-hour volume of $133,590 results in a healthy Volume/Liquidity… |
-| **Upgrades** | 8/10 | Low | The token's mint and freeze authorities are permanently revoked, preventing any post-launch changes to supply or account states. Key Token-2022 extensions like Transfer Hook and Default Account State… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits moderate liquidity with $45,670 USD in total DEX liquidity, which is sufficient for small to medium trades. The 24-hour volume of $133,590 results in a healthy Volume/Liquidity… |
+| **Upgrades** | 10/10 | Low | The token's mint and freeze authorities are permanently revoked, preventing any post-launch changes to supply or account states. Key Token-2022 extensions like Transfer Hook and Default Account State… |
 
 ## Security Findings
 
@@ -35,7 +35,7 @@ _⚪ 1 Informational_
 
 ### `I-01` — No code-level findings — an SPL mint exposes no auditable program source  *(Severity: Informational · Status: Acknowledged)*
 
-This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, holder concentration, which are read directly from chain state and from third-party risk registries.
+This token is an SPL token mint, not a deployed program: there is no contract source code on-chain for a line-by-line review, so no code-level vulnerability could be identified either way. The assessment on this page therefore rests on mint/owner authority, mint capability, LP lock/burn state, holder concentration, which are read directly from chain state and from third-party risk registries.
 
 **Recommendation:** Read the risk score breakdown below as the substance of this audit. For a code-level review, the token would need an accompanying verified program.
 
@@ -54,13 +54,13 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 226 buys / 220 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
@@ -80,7 +80,7 @@ The data presents a mixed picture. While ownership is renounced and no mint func
 
 ### Is WSOP Fantasy Poker safe to buy?
 
-WSOP Fantasy Poker (WSOLP) is categorized as a high-risk asset (47/100). The unverified contract and unlocked liquidity are major safety concerns, exposing investors to potential vulnerabilities and rug pull risks. The concentration of tokens among top holders also adds to market manipulation potential. It is not considered safe without further verification and improved security measures.
+WSOP Fantasy Poker (WSOLP) is categorized as a low-risk asset (6/100). The unverified contract and unlocked liquidity are major safety concerns, exposing investors to potential vulnerabilities and rug pull risks. The concentration of tokens among top holders also adds to market manipulation potential. It is not considered safe without further verification and improved security measures.
 
 ### Has WSOP Fantasy Poker been audited?
 

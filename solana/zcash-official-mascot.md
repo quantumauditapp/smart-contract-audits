@@ -2,14 +2,14 @@
 token: Zcash Official Mascot
 ticker: JUBJUB
 network: solana
-risk_score: 31
+risk_score: 12
 status: low
 date: 2026-09-13
 ---
 
 # Zcash Official Mascot (JUBJUB) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 31/100 — 🟢 Low Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zcash-official-mascot-sol)
 
@@ -26,8 +26,8 @@ This SPL Token Mint audit for Zcash Official Mascot (JubJub) identifies a Medium
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both the Mint Authority and Freeze Authority have been revoked, preventing further token minting or freezing of accounts. A 1.00% transfer… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits a holder concentration where the top 10 accounts hold 23.72% of the supply, which is below the threshold for high concentration risk. Current DEX liquidity stands at $218,797… |
-| **Upgrades** | 6/10 | Medium | The mint authority and freeze authority are both revoked, meaning core token parameters like total supply and account freeze status cannot be altered. While the transfer fee is upgradable, the… |
+| **Governance / Economics** | 7/10 | Low | The token exhibits a holder concentration where the top 10 accounts hold 23.72% of the supply, which is below the threshold for high concentration risk. Current DEX liquidity stands at $218,797… |
+| **Upgrades** | 8/10 | Low | The mint authority and freeze authority are both revoked, meaning core token parameters like total supply and account freeze status cannot be altered. While the transfer fee is upgradable, the… |
 
 ## Token-2022 Extensions
 
@@ -67,13 +67,13 @@ Token name, symbol, or image can be changed post-launch, as indicated by 'metada
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 1317 buys / 1014 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch, as indicated by 'metada
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

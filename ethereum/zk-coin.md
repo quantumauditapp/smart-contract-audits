@@ -2,14 +2,14 @@
 token: ZK Coin
 ticker: ZKC
 network: ethereum
-risk_score: 85
-status: critical
+risk_score: 46
+status: medium
 date: 2026-08-31
 ---
 
 # ZK Coin (ZKC) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 85/100 — 🔴 Critical Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/zk-coin-eth)
 
@@ -25,7 +25,7 @@ The ZKC token contract implements an upgradeable ERC-20 token with a custom epoc
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract leverages battle-tested OpenZeppelin upgradeable libraries for ERC-20, access control, and UUPS proxy patterns, contributing to a robust technical foundation (7.1 Architecture, 7.2 Code… |
+| **Technical** | 8/10 | Low | The contract leverages battle-tested OpenZeppelin upgradeable libraries for ERC-20, access control, and UUPS proxy patterns, contributing to a robust technical foundation (7.1 Architecture, 7.2 Code… |
 | **Governance / Economics** | 1/10 | High | The tokenomics design includes an epoch-based emission schedule with distinct roles for PoVW and Staking minters (7.4 Economic). Initial token distribution is managed by two designated minters, which… |
 | **Upgrades** | 1/10 | High | The contract utilizes the UUPS upgradeable proxy pattern, allowing for future logic updates (7.7 Upgrades). Upgrade authorization is appropriately restricted to the `ADMIN_ROLE` via… |
 
@@ -39,46 +39,46 @@ The ZKC token contract implements an upgradeable ERC-20 token with a custom epoc
 
 ## Security Findings
 
-_🟠 2 High · 🟡 3 Medium · 🟢 1 Low_
-
-### `H-01` — Misleading `totalSupply()` Implementation  *(Severity: High · Status: Unresolved)*
-
-The `totalSupply()` function overrides the standard ERC-20 behavior by returning a *projected* supply based on the current epoch's calculated emissions (`getSupplyAtEpochStart(getCurrentEpoch())`), rather than the actual number of tokens minted and in circulation (`super.totalSupply()`). This deviation from the ERC-20 standard can lead to significant confusion for users, incorrect calculations by external protocols, and misrepresentation of the token's true circulating supply. The actual minted supply is available via `claimedTotalSupply()`, but this requires specific knowledge of the contract's non-standard implementation.
-
-**Recommendation:** It is highly recommended to align `totalSupply()` with the ERC-20 standard by returning the actual minted supply (`super.totalSupply()`). If a projected supply is necessary for specific use cases, it should be provided through a clearly named, separate function (e.g., `getProjectedSupply()`) to avoid ambiguity and maintain ERC-20 compliance.
-
-
-### `H-02` — Centralization Risk of Initial Minting  *(Severity: High · Status: Unresolved)*
-
-The `initialMint` function allows `initialMinter1` or `initialMinter2` to mint the entire `INITIAL_SUPPLY` to any specified recipients. If either of these initial minter addresses is compromised or acts maliciously, they could mint the entire initial supply to themselves or other unauthorized addresses, leading to a complete loss of control over the initial token distribution.
-
-**Recommendation:** Implement multi-signature control for the `initialMinter1` and `initialMinter2` roles to distribute trust and prevent single points of failure. Alternatively, consider a more decentralized initial distribution mechanism or a time-locked release schedule for the initial supply.
-
+_🟡 5 Medium · 🟢 1 Low_
 
 ### `M-01` — Critical `epoch0StartTime` Initialization  *(Severity: Medium · Status: Unresolved)*
 
-The `epoch0StartTime` variable, which dictates the entire token emission schedule, is set only once via the `initializeV3()` reinitializer. This function is restricted to the `ADMIN_ROLE`. The precise timing of this initialization is critical; an accidental delay or premature call could significantly alter the intended tokenomics and emission curve. This represents a single point of operational risk.
+Not confirmed by static analysis (the model's own reading of the source). The `epoch0StartTime` variable, which dictates the entire token emission schedule, is set only once via the `initializeV3()` reinitializer. This function is restricted to the `ADMIN_ROLE`. The precise timing of this initialization is critical; an accidental delay or premature call could significantly alter the intended tokenomics and emission curve. This represents a single point of operational risk.
 
 **Recommendation:** Establish clear, documented operational procedures for the `initializeV3()` call, including a specific window for execution. Consider adding a time-lock or a multi-signature requirement for this critical function to ensure careful deliberation before execution. Implement monitoring to detect any unintended delays or premature calls.
 
 
 ### `M-02` — Reliance on Unaudited `Supply` Library for Core Tokenomics  *(Severity: Medium · Status: Unresolved)*
 
-The contract's core tokenomics, including the calculation of total supply at each epoch (`getSupplyAtEpochStart`) and epoch-specific emissions (`getEmissionsForEpoch`), are delegated to an external `Supply` library. The source code for this library was not provided for audit. Without a thorough review of the `Supply` library, the accuracy, security, and economic soundness of the token's emission schedule cannot be fully verified. Any vulnerabilities or incorrect logic within this library would directly impact the `ZKC` token.
+Not confirmed by static analysis (the model's own reading of the source). The contract's core tokenomics, including the calculation of total supply at each epoch (`getSupplyAtEpochStart`) and epoch-specific emissions (`getEmissionsForEpoch`), are delegated to an external `Supply` library. The source code for this library was not provided for audit. Without a thorough review of the `Supply` library, the accuracy, security, and economic soundness of the token's emission schedule cannot be fully verified. Any vulnerabilities or incorrect logic within this library would directly impact the `ZKC` token.
 
 **Recommendation:** Provide the complete source code for the `Supply` library for a comprehensive security and economic audit. Ensure the library's logic is thoroughly tested, especially for edge cases in epoch calculations and emission rates.
 
 
 ### `M-03` — Centralized Control over Key Roles and Upgrades  *(Severity: Medium · Status: Unresolved)*
 
-The `ADMIN_ROLE` holds extensive power, including the ability to grant `POVW_MINTER_ROLE` and `STAKING_MINTER_ROLE`, set the critical `epoch0StartTime`, and authorize contract upgrades via `_authorizeUpgrade`. This high degree of centralization means that a compromise of the `ADMIN_ROLE` address could lead to significant security breaches, including unauthorized minting, alteration of tokenomics, or malicious contract upgrades.
+Not confirmed by static analysis (the model's own reading of the source). The `ADMIN_ROLE` holds extensive power, including the ability to grant `POVW_MINTER_ROLE` and `STAKING_MINTER_ROLE`, set the critical `epoch0StartTime`, and authorize contract upgrades via `_authorizeUpgrade`. This high degree of centralization means that a compromise of the `ADMIN_ROLE` address could lead to significant security breaches, including unauthorized minting, alteration of tokenomics, or malicious contract upgrades.
 
 **Recommendation:** Implement multi-signature control for the `ADMIN_ROLE` to distribute trust and reduce the risk associated with a single point of failure. Consider separating critical responsibilities into distinct roles with different access policies, if feasible, to further decentralize control.
 
 
+### `M-04` — Misleading `totalSupply()` Implementation  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `totalSupply()` function overrides the standard ERC-20 behavior by returning a *projected* supply based on the current epoch's calculated emissions (`getSupplyAtEpochStart(getCurrentEpoch())`), rather than the actual number of tokens minted and in circulation (`super.totalSupply()`). This deviation from the ERC-20 standard can lead to significant confusion for users, incorrect calculations by external protocols, and misrepresentation of the token's true circulating supply. The actual minted supply is available via `claimedTotalSupply()`, but this requires specific knowledge of the contract's non-standard implementa
+
+**Recommendation:** It is highly recommended to align `totalSupply()` with the ERC-20 standard by returning the actual minted supply (`super.totalSupply()`). If a projected supply is necessary for specific use cases, it should be provided through a clearly named, separate function (e.g., `getProjectedSupply()`) to avoid ambiguity and maintain ERC-20 compliance.
+
+
+### `M-05` — Centralization Risk of Initial Minting  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `initialMint` function allows `initialMinter1` or `initialMinter2` to mint the entire `INITIAL_SUPPLY` to any specified recipients. If either of these initial minter addresses is compromised or acts maliciously, they could mint the entire initial supply to themselves or other unauthorized addresses, leading to a complete loss of control over the initial token distribution.
+
+**Recommendation:** Implement multi-signature control for the `initialMinter1` and `initialMinter2` roles to distribute trust and prevent single points of failure. Alternatively, consider a more decentralized initial distribution mechanism or a time-locked release schedule for the initial supply.
+
+
 ### `L-01` — Potential for Reward Claiming Logic Misinterpretation  *(Severity: Low · Status: Unresolved)*
 
-The functions `getTotalPoVWEmissionsAtEpochStart` and `getTotalStakingEmissionsAtEpochStart` calculate the *cumulative* total emissions available up to a given epoch. These are then used to check against `poVWClaimed` and `stakingClaimed`, which are also *cumulative* totals of claimed rewards. While this logic appears consistent for cumulative tracking, the function names might be misinterpreted by developers or auditors as representing *epoch-specific* emissions, potentially leading to confusion or incorrect assumptions about the reward distribution mechanism.
+Not confirmed by static analysis (the model's own reading of the source). The functions `getTotalPoVWEmissionsAtEpochStart` and `getTotalStakingEmissionsAtEpochStart` calculate the *cumulative* total emissions available up to a given epoch. These are then used to check against `poVWClaimed` and `stakingClaimed`, which are also *cumulative* totals of claimed rewards. While this logic appears consistent for cumulative tracking, the function names might be misinterpreted by developers or auditors as representing *epoch-specific* emissions, potentially leading to confusion or incorrect assumptions about the reward distribution mechanism.
 
 **Recommendation:** Enhance clarity by either renaming the functions to explicitly indicate cumulative totals (e.g., `getOverallPoVWEmissionsUpToEpoch`) or by adding comprehensive NatSpec documentation to explain that these functions return cumulative values, not epoch-specific ones.
 
@@ -104,7 +104,7 @@ The functions `getTotalPoVWEmissionsAtEpochStart` and `getTotalStakingEmissionsA
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ❌ Fail |
 
 ## Security Flags Detail
@@ -114,7 +114,7 @@ The functions `getTotalPoVWEmissionsAtEpochStart` and `getTotalStakingEmissionsA
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ❌ | **Proxy contract** — the implementation can be swapped by the owner. |
 
 ## Sources

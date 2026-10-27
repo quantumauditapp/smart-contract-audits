@@ -2,14 +2,14 @@
 token: WorldMobileToken
 ticker: WMTX
 network: bsc
-risk_score: 75
-status: high
+risk_score: 58
+status: medium
 date: 2026-09-20
 ---
 
 # WorldMobileToken (WMTX) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 75/100 — 🟠 High Risk**
+> **Risk Score: 58/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/worldmobiletoken-bsc)
 
@@ -25,7 +25,7 @@ The WorldMobileToken contract is an ERC20 token utilizing OpenZeppelin's battle-
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for ERC20, ERC20Capped, ERC20Permit, and AccessControl, contributing to a solid foundation (7.2 Code Security). The implementation… |
+| **Technical** | 8/10 | Low | The contract leverages battle-tested OpenZeppelin libraries for ERC20, ERC20Capped, ERC20Permit, and AccessControl, contributing to a solid foundation (7.2 Code Security). The implementation… |
 | **Governance / Economics** | 1/10 | High | The token design incorporates a fixed supply cap and explicit roles for minting and burning, providing controlled supply management (7.4 Economic). However, the `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE`… |
 | **Upgrades** | 3/10 | High | The `WorldMobileToken` contract is deployed as a standard implementation and does not utilize any proxy patterns, meaning it is not upgradeable (7.7 Upgrades). This ensures immutability… |
 
@@ -38,32 +38,32 @@ The WorldMobileToken contract is an ERC20 token utilizing OpenZeppelin's battle-
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Access Control and Single Point of Failure  *(Severity: High · Status: Unresolved)*
-
-The contract's constructor grants the `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE`, and `BURNER_ROLE` to the deployer's address (`_msgSender()`). This design centralizes significant power in a single entity. The `DEFAULT_ADMIN_ROLE` can grant or revoke any other role, including `MINTER_ROLE` and `BURNER_ROLE`. A compromise of the deployer's private key would allow an attacker to mint new tokens up to the cap, burn existing tokens, or manipulate roles, leading to severe economic impact and loss of trust (7.3 Access Control, 7.8 Operations).
-
-**Recommendation:** Transfer the `DEFAULT_ADMIN_ROLE` to a robust multi-signature wallet (e.g., Gnosis Safe) immediately after deployment. This distributes control and requires multiple approvals for critical administrative actions, significantly reducing the risk associated with a single point of failure.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Non-Standard ERC20 Decimals  *(Severity: Medium · Status: Unresolved)*
 
-The `decimals()` function is overridden to return 6, whereas the widely adopted standard for ERC20 tokens is 18 decimals. This deviation can lead to significant integration challenges, miscalculations, and user confusion across various platforms such as exchanges, wallets, block explorers, and DeFi protocols that often assume 18 decimals by default (7.1 Architecture, 7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The `decimals()` function is overridden to return 6, whereas the widely adopted standard for ERC20 tokens is 18 decimals. This deviation can lead to significant integration challenges, miscalculations, and user confusion across various platforms such as exchanges, wallets, block explorers, and DeFi protocols that often assume 18 decimals by default (7.1 Architecture, 7.4 Economic).
 
 **Recommendation:** Ensure all external systems and user interfaces interacting with the WorldMobileToken are explicitly aware of and correctly configured to handle 6 decimals. Provide clear documentation and communication regarding this non-standard precision to prevent errors and ensure accurate display of token amounts.
 
 
+### `M-02` — Centralized Access Control and Single Point of Failure  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract's constructor grants the `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE`, and `BURNER_ROLE` to the deployer's address (`_msgSender()`). This design centralizes significant power in a single entity. The `DEFAULT_ADMIN_ROLE` can grant or revoke any other role, including `MINTER_ROLE` and `BURNER_ROLE`. A compromise of the deployer's private key would allow an attacker to mint new tokens up to the cap, burn existing tokens, or manipulate roles, leading to severe economic impact and loss of trust (7.3 Access Control, 7.8 Operations).
+
+**Recommendation:** Transfer the `DEFAULT_ADMIN_ROLE` to a robust multi-signature wallet (e.g., Gnosis Safe) immediately after deployment. This distributes control and requires multiple approvals for critical administrative actions, significantly reducing the risk associated with a single point of failure.
+
+
 ### `L-01` — Lack of Dedicated `DEFAULT_ADMIN_ROLE` Transfer Function  *(Severity: Low · Status: Unresolved)*
 
-While the `AccessControl` contract allows for granting and revoking roles, there isn't a dedicated, explicit function to safely transfer the `DEFAULT_ADMIN_ROLE` to a new address or a multi-signature wallet in a single, atomic transaction. Transferring this critical role requires a multi-step process (granting to new admin, then revoking from old admin), which can be error-prone if not executed carefully (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). While the `AccessControl` contract allows for granting and revoking roles, there isn't a dedicated, explicit function to safely transfer the `DEFAULT_ADMIN_ROLE` to a new address or a multi-signature wallet in a single, atomic transaction. Transferring this critical role requires a multi-step process (granting to new admin, then revoking from old admin), which can be error-prone if not executed carefully (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** Implement a custom `transferAdmin` function that allows the current `DEFAULT_ADMIN_ROLE` to transfer its role to a new address in a single, atomic transaction, or ensure a well-documented and tested procedure is followed for manual transfer. This reduces the risk of accidental loss of administrative control during the transfer process.
 
 
 ### `I-01` — Contract Immutability (Non-Upgradeable)  *(Severity: Informational · Status: Unresolved)*
 
-The `WorldMobileToken` contract is deployed as a standard implementation and does not incorporate any proxy patterns (e.g., UUPS, Transparent). This means the contract's logic is immutable once deployed to the blockchain. While this provides certainty regarding the contract's behavior, it also implies that any future bug fixes, security patches, or feature enhancements would necessitate deploying an entirely new contract and migrating all token holders (7.7 Upgrades).
+Not confirmed by static analysis (the model's own reading of the source). The `WorldMobileToken` contract is deployed as a standard implementation and does not incorporate any proxy patterns (e.g., UUPS, Transparent). This means the contract's logic is immutable once deployed to the blockchain. While this provides certainty regarding the contract's behavior, it also implies that any future bug fixes, security patches, or feature enhancements would necessitate deploying an entirely new contract and migrating all token holders (7.7 Upgrades).
 
 **Recommendation:** Acknowledge the immutability of the contract. For future projects, consider using upgradeable proxy patterns if flexibility for future updates or bug fixes is desired. For this contract, ensure thorough testing before deployment, as no post-deployment logic changes are possible.
 

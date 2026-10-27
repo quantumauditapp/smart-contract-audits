@@ -110,7 +110,7 @@ Based on the provided data, Worldcoin (WLD) exhibits several risk factors common
 
 ### Is Worldcoin safe to buy?
 
-Investing in Worldcoin (WLD) carries a critical risk, indicated by its 75/100 risk score, making it unsafe for risk-averse investors. Key safety concerns include the unrenounced contract ownership, allowing the deployer control. The vast majority of tokens (69.7%) are concentrated in the top 10 wallets, posing a high centralization risk. Furthermore, unlocked liquidity means funds could be withdrawn, impacting market stability significantly.
+Investing in Worldcoin (WLD) carries a low risk, indicated by its 31/100 risk score, making it unsafe for risk-averse investors. Key safety concerns include the unrenounced contract ownership, allowing the deployer control. The vast majority of tokens (69.7%) are concentrated in the top 10 wallets, posing a high centralization risk. Furthermore, unlocked liquidity means funds could be withdrawn, impacting market stability significantly.
 
 ### Has Worldcoin been audited?
 

@@ -2,14 +2,14 @@
 token: Wrapped Trust Bitcoin
 ticker: WTBC
 network: bsc
-risk_score: 100
-status: critical
+risk_score: 61
+status: medium
 date: 2026-09-17
 ---
 
 # Wrapped Trust Bitcoin (WTBC) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 100/100 — 🔴 Critical Risk**
+> **Risk Score: 61/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-trust-bitcoin-bsc)
 
@@ -25,9 +25,9 @@ The WTBC contract implements an ERC20 token with custom transaction fees, access
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract demonstrates good code quality, utilizing Solidity 0.8.28 which mitigates common integer overflow/underflow issues (7.2 Code Security). It correctly implements OpenZeppelin's ERC20 and… |
-| **Governance / Economics** | 1/10 | High | The contract exhibits a high degree of centralization through the `DEFAULT_ADMIN_ROLE`, which can assign `MINTER_ROLE` and `BURNER_ROLE`, and control fee exclusions and validator wallet (7.3 Access… |
-| **Upgrades** | 3/10 | High | The WTBC contract is not designed with an upgrade mechanism (e.g., proxy pattern) (7.7 Upgrades). This means the contract's logic is immutable once deployed, eliminating upgrade-specific risks but… |
+| **Technical** | 8/10 | Low | The contract demonstrates good code quality, utilizing Solidity 0.8.28 which mitigates common integer overflow/underflow issues (7.2 Code Security). It correctly implements OpenZeppelin's ERC20 and… |
+| **Governance / Economics** | 2/10 | High | The contract exhibits a high degree of centralization through the `DEFAULT_ADMIN_ROLE`, which can assign `MINTER_ROLE` and `BURNER_ROLE`, and control fee exclusions and validator wallet (7.3 Access… |
+| **Upgrades** | 4/10 | Medium | The WTBC contract is not designed with an upgrade mechanism (e.g., proxy pattern) (7.7 Upgrades). This means the contract's logic is immutable once deployed, eliminating upgrade-specific risks but… |
 
 ## LP Distribution
 
@@ -38,46 +38,46 @@ The WTBC contract implements an ERC20 token with custom transaction fees, access
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟡 2 Medium · 🟢 2 Low_
-
-### `C-01` — High Centralization of Administrative Roles  *(Severity: Critical · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE` holds extensive power, including the ability to grant `MINTER_ROLE` and `BURNER_ROLE`, update the validator wallet, and set fee exclusions. A compromised `DEFAULT_ADMIN_ROLE` or `MINTER_ROLE` could lead to unauthorized minting up to `MAX_SUPPLY`, manipulation of transaction fees, or diversion of validator funds, severely impacting the token's integrity and value. (7.3 Access Control, 7.4 Economic, 7.8 Operations)
-
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the `DEFAULT_ADMIN_ROLE` and `MINTER_ROLE` to require multiple approvals for critical operations. This significantly reduces the risk of a single point of compromise. Consider time-locks for sensitive administrative actions.
-
-
-### `H-01` — Hardcoded Transaction Fees  *(Severity: High · Status: Unresolved)*
-
-The `BURN_FEE` and `VALIDATOR_FEE` are defined as `public constant` variables, making them immutable after deployment. This lack of flexibility prevents any adjustments to the token's economic model in response to changing market conditions, community feedback, or unforeseen circumstances, potentially hindering the protocol's long-term sustainability or competitiveness. (7.4 Economic)
-
-**Recommendation:** Introduce administrative functions to allow the `DEFAULT_ADMIN_ROLE` (preferably via multi-sig) to update `BURN_FEE` and `VALIDATOR_FEE` within predefined, reasonable bounds. This provides necessary adaptability while preventing arbitrary changes.
-
+_🟡 4 Medium · 🟢 2 Low_
 
 ### `M-01` — Single Point of Failure for Validator Wallet  *(Severity: Medium · Status: Unresolved)*
 
-The `validator` address, which receives `VALIDATOR_FEE` from transactions, is a single address controlled by the `DEFAULT_ADMIN_ROLE`. If this `validator` address is compromised, all collected fees will be diverted to an attacker, leading to a loss of funds intended for the protocol's operations or beneficiaries. There is no built-in mechanism for multi-signature control or recovery for this specific wallet. (7.3 Access Control, 7.8 Operations)
+Not confirmed by static analysis (the model's own reading of the source). The `validator` address, which receives `VALIDATOR_FEE` from transactions, is a single address controlled by the `DEFAULT_ADMIN_ROLE`. If this `validator` address is compromised, all collected fees will be diverted to an attacker, leading to a loss of funds intended for the protocol's operations or beneficiaries. There is no built-in mechanism for multi-signature control or recovery for this specific wallet. (7.3 Access Control, 7.8 Operations)
 
 **Recommendation:** Consider using a multi-signature wallet for the `validator` address to secure the collected fees. Alternatively, implement a mechanism to distribute fees to multiple addresses or a contract that manages funds more securely, such as a timelock or a vesting contract.
 
 
 ### `M-02` — Irreversible Main Liquidity Pair Creation  *(Severity: Medium · Status: Unresolved)*
 
-The primary liquidity pair with `USDT` is created once in the constructor using the provided `_router` address and is then stored as an `immutable` variable `pair`. While `updateLiquidityPair` allows managing *other* liquidity pairs, the main `pair` cannot be changed or removed. If the initial `_router` address is incorrect, or the associated DEX becomes deprecated or compromised, the core liquidity mechanism for WTBC could be permanently affected without recourse. (7.1 Architecture, 7.6 External)
+Not confirmed by static analysis (the model's own reading of the source). The primary liquidity pair with `USDT` is created once in the constructor using the provided `_router` address and is then stored as an `immutable` variable `pair`. While `updateLiquidityPair` allows managing *other* liquidity pairs, the main `pair` cannot be changed or removed. If the initial `_router` address is incorrect, or the associated DEX becomes deprecated or compromised, the core liquidity mechanism for WTBC could be permanently affected without recourse. (7.1 Architecture, 7.6 External)
 
 **Recommendation:** While direct modification of an immutable variable is impossible, consider a future version or a wrapper contract that allows for more flexible management of the primary liquidity source, perhaps by allowing the protocol to interact with multiple DEX pairs or to migrate liquidity if necessary. For the current contract, ensure the `_router` and `USDT` addresses are thoroughly verified before deployment.
 
 
+### `M-03` — High Centralization of Administrative Roles  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` holds extensive power, including the ability to grant `MINTER_ROLE` and `BURNER_ROLE`, update the validator wallet, and set fee exclusions. A compromised `DEFAULT_ADMIN_ROLE` or `MINTER_ROLE` could lead to unauthorized minting up to `MAX_SUPPLY`, manipulation of transaction fees, or diversion of validator funds, severely impacting the token's integrity and value. (7.3 Access Control, 7.4 Economic, 7.8 Operations)
+
+**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the `DEFAULT_ADMIN_ROLE` and `MINTER_ROLE` to require multiple approvals for critical operations. This significantly reduces the risk of a single point of compromise. Consider time-locks for sensitive administrative actions.
+
+
+### `M-04` — Hardcoded Transaction Fees  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `BURN_FEE` and `VALIDATOR_FEE` are defined as `public constant` variables, making them immutable after deployment. This lack of flexibility prevents any adjustments to the token's economic model in response to changing market conditions, community feedback, or unforeseen circumstances, potentially hindering the protocol's long-term sustainability or competitiveness. (7.4 Economic)
+
+**Recommendation:** Introduce administrative functions to allow the `DEFAULT_ADMIN_ROLE` (preferably via multi-sig) to update `BURN_FEE` and `VALIDATOR_FEE` within predefined, reasonable bounds. This provides necessary adaptability while preventing arbitrary changes.
+
+
 ### `L-01` — Lack of Role Management Flexibility  *(Severity: Low · Status: Unresolved)*
 
-The contract uses OpenZeppelin's `AccessControl` but does not implement explicit functions for renouncing roles or transferring the `DEFAULT_ADMIN_ROLE` directly. While `_grantRole` and `_revokeRole` exist, a direct `transferAdmin` function or a `renounceRole` for the admin itself is not present, which could complicate governance transitions or reduce decentralization over time. (7.3 Access Control)
+Not confirmed by static analysis (the model's own reading of the source). The contract uses OpenZeppelin's `AccessControl` but does not implement explicit functions for renouncing roles or transferring the `DEFAULT_ADMIN_ROLE` directly. While `_grantRole` and `_revokeRole` exist, a direct `transferAdmin` function or a `renounceRole` for the admin itself is not present, which could complicate governance transitions or reduce decentralization over time. (7.3 Access Control)
 
 **Recommendation:** Consider adding a `transferAdmin` function that allows the current `DEFAULT_ADMIN_ROLE` to transfer its role to a new address, potentially with a two-step transfer mechanism for added security. Also, evaluate if `renounceRole` functionality for `DEFAULT_ADMIN_ROLE` is desired, understanding its implications.
 
 
 ### `L-02` — Hardcoded USDT Address  *(Severity: Low · Status: Unresolved)*
 
-The `USDT` token address (0x55d398326f99059fF775485246999027B3197955) is hardcoded as a `public constant`. While this is common for specific deployments, it ties the contract to a particular token on a specific blockchain (BSC in this case). If the protocol were to expand to other networks or if the canonical USDT address were to change, the contract would need redeployment. (7.1 Architecture, 7.6 External)
+Not confirmed by static analysis (the model's own reading of the source). The `USDT` token address (0x55d398326f99059fF775485246999027B3197955) is hardcoded as a `public constant`. While this is common for specific deployments, it ties the contract to a particular token on a specific blockchain (BSC in this case). If the protocol were to expand to other networks or if the canonical USDT address were to change, the contract would need redeployment. (7.1 Architecture, 7.6 External)
 
 **Recommendation:** For future deployments or multi-chain considerations, consider making the `USDT` address configurable via a constructor parameter or an administrative function. For the current deployment, ensure the hardcoded address is indeed the correct and canonical USDT address on the target network.
 

@@ -2,14 +2,14 @@
 token: Wrapped TAO
 ticker: WTAO
 network: ethereum
-risk_score: 26
+risk_score: 16
 status: low
 date: 2026-08-12
 ---
 
 # Wrapped TAO (WTAO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 26/100 — 🟢 Low Risk**
+> **Risk Score: 16/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-tao-eth)
 
@@ -25,8 +25,8 @@ The wTAO contract implements an ERC20 token with bridging functionalities, lever
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract demonstrates good technical security practices (7.2 Code Security), utilizing battle-tested OpenZeppelin libraries for ERC20, Ownable, and AccessControl. Array length checks are… |
-| **Governance / Economics** | 4/10 | Medium | The economic and governance model (7.4 Economic, 7.5 Governance) presents a high centralization risk. The contract owner, currently an EOA, holds exclusive power to set the `BRIDGE_ROLE`, which is… |
+| **Technical** | 10/10 | Low | The contract demonstrates good technical security practices (7.2 Code Security), utilizing battle-tested OpenZeppelin libraries for ERC20, Ownable, and AccessControl. Array length checks are… |
+| **Governance / Economics** | 5/10 | Medium | The economic and governance model (7.4 Economic, 7.5 Governance) presents a high centralization risk. The contract owner, currently an EOA, holds exclusive power to set the `BRIDGE_ROLE`, which is… |
 | **Upgrades** | 6/10 | Medium | The wTAO contract is not designed as an upgradeable proxy (7.7 Upgrades). Therefore, it does not inherently carry upgrade-related risks such as proxy misconfigurations or storage collisions. Any… |
 
 ## LP Distribution
@@ -38,25 +38,25 @@ The wTAO contract implements an ERC20 token with bridging functionalities, lever
 
 ## Security Findings
 
-_🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `H-01` — Centralized Control Over Bridge Role and Funds  *(Severity: High · Status: Unresolved)*
+### `M-01` — Centralized Control Over Bridge Role and Funds  *(Severity: Medium · Status: Unresolved)*
 
-The contract owner (and `DEFAULT_ADMIN_ROLE`) possesses exclusive control over critical functions. The `setBridge` function, callable only by the owner, assigns the `BRIDGE_ROLE`, which is the sole entity authorized to mint new wTAO tokens via `bridgedTo`. Additionally, the `reclaimToken` function allows the owner to transfer any ERC20 tokens or native ETH held by the contract to their address. This high degree of centralization means that a compromised owner key could lead to arbitrary token minting, manipulation of the token supply, and theft of all funds held within the contract, posing a significant economic and operational risk (7.3 Access Control, 7.4 Economic, 7.5 Governance, 7.8 Ope…
+Not confirmed by static analysis (the model's own reading of the source). The contract owner (and `DEFAULT_ADMIN_ROLE`) possesses exclusive control over critical functions. The `setBridge` function, callable only by the owner, assigns the `BRIDGE_ROLE`, which is the sole entity authorized to mint new wTAO tokens via `bridgedTo`. Additionally, the `reclaimToken` function allows the owner to transfer any ERC20 tokens or native ETH held by the contract to their address. This high degree of centralization means that a compromised owner key could lead to arbitrary token minting, manipulation of the token supply, and theft of all funds held within the contract, posing a significant economic and op
 
 **Recommendation:** Implement a multi-signature wallet or a decentralized autonomous organization (DAO) governance system to manage the contract's ownership and `DEFAULT_ADMIN_ROLE`. This would require multiple approvals for critical actions, distributing control and significantly reducing the risk associated with a single point of failure. Consider a timelock for sensitive operations to allow community review.
 
 
 ### `L-01` — Misleading `BITTENSOR_FEE` Naming  *(Severity: Low · Status: Unresolved)*
 
-The `BITTENSOR_FEE` variable is used within the `bridgeBack` function as a minimum amount that must be burned (`require(_amount > BITTENSOR_FEE)`). However, the term 'FEE' typically implies an amount that is collected or transferred to a specific address. In this contract, the `BITTENSOR_FEE` is merely a threshold, and no actual fee is collected by the contract or any other entity. This naming convention could lead to confusion for users or integrators regarding the token's economic model (7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The `BITTENSOR_FEE` variable is used within the `bridgeBack` function as a minimum amount that must be burned (`require(_amount > BITTENSOR_FEE)`). However, the term 'FEE' typically implies an amount that is collected or transferred to a specific address. In this contract, the `BITTENSOR_FEE` is merely a threshold, and no actual fee is collected by the contract or any other entity. This naming convention could lead to confusion for users or integrators regarding the token's economic model (7.4 Economic).
 
 **Recommendation:** Rename the `BITTENSOR_FEE` variable to something more descriptive of its actual function, such as `MIN_BRIDGE_BACK_AMOUNT` or `MIN_BURN_THRESHOLD`. Additionally, update any associated comments or documentation to clearly explain its purpose.
 
 
 ### `I-01` — Redundant `SafeMath` Usage  *(Severity: Informational · Status: Unresolved)*
 
-The contract explicitly imports and uses `SafeMath` for `uint256` operations (e.g., `cumulative_bridged.add(_amounts[i])`). While this practice is harmless, Solidity versions 0.8.0 and above, which this contract uses (`pragma solidity ^0.8.0;`), include built-in overflow and underflow checks by default for all arithmetic operations. This makes the explicit use of `SafeMath` redundant for preventing these types of vulnerabilities (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract explicitly imports and uses `SafeMath` for `uint256` operations (e.g., `cumulative_bridged.add(_amounts[i])`). While this practice is harmless, Solidity versions 0.8.0 and above, which this contract uses (`pragma solidity ^0.8.0;`), include built-in overflow and underflow checks by default for all arithmetic operations. This makes the explicit use of `SafeMath` redundant for preventing these types of vulnerabilities (7.2 Code Security).
 
 **Recommendation:** Consider removing the `SafeMath` import and usage. The contract will still be protected against integer overflows/underflows by Solidity's default behavior. This can slightly reduce contract size and improve readability without compromising security.
 

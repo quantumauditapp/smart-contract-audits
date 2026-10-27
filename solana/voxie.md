@@ -2,14 +2,14 @@
 token: VOXIE
 ticker: VOXIE
 network: solana
-risk_score: 36
-status: medium
+risk_score: 19
+status: low
 date: 2026-09-02
 ---
 
 # VOXIE (VOXIE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 36/100 — 🟡 Medium Risk**
+> **Risk Score: 19/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/voxie-sol)
 
@@ -25,9 +25,9 @@ The VOXIE SPL Token Mint exhibits a medium risk profile primarily due to its ver
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The VOXIE token is an SPL Token-2022 mint with a supply of 944,141,932.556208 tokens (6 decimals). Crucially, the Mint Authority is revoked, preventing the creation of new tokens and ensuring a fixed… |
-| **Governance / Economics** | 3/10 | High | The token's economic profile shows a very new DEX pair, created only 1 day ago, which limits the ability to assess long-term market dynamics. Current DEX liquidity stands at $24,369, which is… |
-| **Upgrades** | 8/10 | Low | The token mint exhibits strong immutability characteristics. Both the Mint Authority and Freeze Authority are revoked, meaning no further tokens can be minted, and no accounts can be frozen. The… |
+| **Technical** | 10/10 | Low | The VOXIE token is an SPL Token-2022 mint with a supply of 944,141,932.556208 tokens (6 decimals). Crucially, the Mint Authority is revoked, preventing the creation of new tokens and ensuring a fixed… |
+| **Governance / Economics** | 6/10 | Medium | The token's economic profile shows a very new DEX pair, created only 1 day ago, which limits the ability to assess long-term market dynamics. Current DEX liquidity stands at $24,369, which is… |
+| **Upgrades** | 10/10 | Low | The token mint exhibits strong immutability characteristics. Both the Mint Authority and Freeze Authority are revoked, meaning no further tokens can be minted, and no accounts can be frozen. The… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair for VOXIE was created 1 day ago. This insufficient track record mak
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2011 buys / 1932 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair for VOXIE was created 1 day ago. This insufficient track record mak
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

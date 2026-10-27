@@ -2,14 +2,14 @@
 token: WALTER WORM
 ticker: WALTER
 network: solana
-risk_score: 22
+risk_score: 15
 status: low
 date: 2026-09-24
 ---
 
 # WALTER WORM (WALTER) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 22/100 — 🟢 Low Risk**
+> **Risk Score: 15/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/walter-worm-sol)
 
@@ -26,8 +26,8 @@ This audit of the WALTER WORM (WALTER) SPL token mint identifies a medium risk d
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The WALTER WORM token operates under the classic `spl-token` program. Both the mint authority and freeze authority have been permanently revoked, ensuring that no new tokens can be minted and no… |
-| **Governance / Economics** | 5/10 | Medium | The token's economic profile shows a total DEX liquidity of $15,356, which is sufficient to avoid the 'Very Low Liquidity' flag. However, the trading pair was created only 1 day ago, which is a… |
-| **Upgrades** | 8/10 | Low | The WALTER WORM token mint has a fixed configuration with no upgradeability concerns related to core authorities. The mint authority and freeze authority are both revoked, meaning the token's supply… |
+| **Governance / Economics** | 6/10 | Medium | The token's economic profile shows a total DEX liquidity of $15,356, which is sufficient to avoid the 'Very Low Liquidity' flag. However, the trading pair was created only 1 day ago, which is a… |
+| **Upgrades** | 9/10 | Low | The WALTER WORM token mint has a fixed configuration with no upgradeability concerns related to core authorities. The mint authority and freeze authority are both revoked, meaning the token's supply… |
 
 ## Security Findings
 
@@ -60,7 +60,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 1 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

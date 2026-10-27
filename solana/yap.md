@@ -2,14 +2,14 @@
 token: YAP
 ticker: YAP
 network: solana
-risk_score: 12
+risk_score: 0
 status: low
 date: 2026-09-28
 ---
 
 # YAP (YAP) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 12/100 — 🟢 Low Risk**
+> **Risk Score: 0/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/yap-sol)
 
@@ -26,8 +26,8 @@ The YAP token mint audit reveals a Solana SPL Token-2022 with revoked mint and f
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program. Both mint and freeze authorities are revoked, indicating a fixed supply and no ability to freeze accounts (7.3 Access Control). No… |
-| **Governance / Economics** | 6/10 | Medium | The token exhibits moderate liquidity at $172,596, with a high 24-hour volume of $1,369,780, resulting in a Volume/Liquidity Ratio of 7.94 (7.4 Economic). However, the DEX pair is very new… |
-| **Upgrades** | 8/10 | Low | The mint and freeze authorities are permanently revoked, preventing further token issuance or account freezing (7.7 Upgrades). The token's metadata is immutable, ensuring branding consistency. No… |
+| **Governance / Economics** | 9/10 | Low | The token exhibits moderate liquidity at $172,596, with a high 24-hour volume of $1,369,780, resulting in a Volume/Liquidity Ratio of 7.94 (7.4 Economic). However, the DEX pair is very new… |
+| **Upgrades** | 10/10 | Low | The mint and freeze authorities are permanently revoked, preventing further token issuance or account freezing (7.7 Upgrades). The token's metadata is immutable, ensuring branding consistency. No… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 6064 buys / 5292 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 2 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: Wrapped Gonka
 ticker: WGNK
 network: ethereum
-risk_score: 40
+risk_score: 35
 status: medium
 date: 2026-09-15
 ---
 
 # Wrapped Gonka (WGNK) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 40/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-gonka-eth)
 
@@ -42,35 +42,35 @@ _🟡 1 Medium · ⚪ 4 Informational_
 
 ### `M-01` — Potential Integer Overflow in `_mint` and `_transfer` Additions  *(Severity: Medium · Status: Unresolved)*
 
-The `_mint` function increments `_totalSupply` and `_balances[account]` within an `unchecked` block. Similarly, `_transfer` increments `_balances[to]` within an `unchecked` block. While Solidity 0.8+ generally provides overflow protection, explicit `unchecked` blocks disable this. If `_totalSupply` or a specific `_balances[account]` or `_balances[to]` is near `type(uint256).max` and a sufficiently large `amount` is added, an overflow could occur. This would lead to incorrect token supply, incorrect user balances, and could potentially be exploited to create 'phantom' tokens or disrupt token economics (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `_mint` function increments `_totalSupply` and `_balances[account]` within an `unchecked` block. Similarly, `_transfer` increments `_balances[to]` within an `unchecked` block. While Solidity 0.8+ generally provides overflow protection, explicit `unchecked` blocks disable this. If `_totalSupply` or a specific `_balances[account]` or `_balances[to]` is near `type(uint256).max` and a sufficiently large `amount` is added, an overflow could occur. This would lead to incorrect token supply, incorrect user balances, and could potentially be exploited to create 'phantom' tokens or disrupt token economics (7.2 Code Security
 
 **Recommendation:** Ensure that `_totalSupply` and individual `_balances` cannot overflow during addition. This can be achieved by either removing the `unchecked` blocks for additions (relying on default Solidity 0.8+ checks) or by adding explicit `require` statements to check for potential overflows before the addition, especially in `_mint` where `amount` is arbitrary. For `_transfer`, `_balances[to]` is bounded by `_totalSupply`, so if `_totalSupply` is handled correctly, `_balances[to]` overflow is less likely…
 
 
 ### `I-01` — Potential `increaseAllowance` Overflow  *(Severity: Informational · Status: Unresolved)*
 
-The `increaseAllowance` function directly adds `addedValue` to the current allowance without an explicit overflow check. While Solidity 0.8+ provides default overflow protection, if `allowance(owner, spender)` is already extremely high (e.g., near `type(uint256).max`) and `addedValue` is non-zero, an overflow could occur, resetting the allowance to a small value. This is an edge case for allowance manipulation (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `increaseAllowance` function directly adds `addedValue` to the current allowance without an explicit overflow check. While Solidity 0.8+ provides default overflow protection, if `allowance(owner, spender)` is already extremely high (e.g., near `type(uint256).max`) and `addedValue` is non-zero, an overflow could occur, resetting the allowance to a small value. This is an edge case for allowance manipulation (7.2 Code Security).
 
 **Recommendation:** While highly improbable for practical use cases, consider adding an explicit overflow check for the addition in `increaseAllowance` if extreme allowance values are a concern, or rely on Solidity 0.8+ default checks by removing the `unchecked` block if it were present (though it's not in this specific function).
 
 
 ### `I-02` — Standard ERC20 `approve` Race Condition  *(Severity: Informational · Status: Unresolved)*
 
-The `approve` function is susceptible to a known front-running attack (7.4 Economic). If a user approves an amount, then approves a different amount for the same spender before the first transaction is mined, a malicious spender could front-run the second approval, causing the spender to be able to spend both the original and the new approved amounts. While `increaseAllowance` and `decreaseAllowance` mitigate some aspects of this, the core `approve` function still carries this risk.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function is susceptible to a known front-running attack (7.4 Economic). If a user approves an amount, then approves a different amount for the same spender before the first transaction is mined, a malicious spender could front-run the second approval, causing the spender to be able to spend both the original and the new approved amounts. While `increaseAllowance` and `decreaseAllowance` mitigate some aspects of this, the core `approve` function still carries this risk.
 
 **Recommendation:** Educate users about the `approve` race condition and recommend using `increaseAllowance` and `decreaseAllowance` functions when modifying an existing allowance, as these functions are less susceptible to this specific front-running vector. For new approvals, users should be aware of the risk.
 
 
 ### `I-03` — Internal `_mint` and `_burn` Require Careful Access Control in Derived Contracts  *(Severity: Informational · Status: Unresolved)*
 
-The `_mint` and `_burn` functions are declared as `internal virtual`. This is appropriate for a base ERC20 contract, as it prevents direct external calls. However, any contract inheriting from this `ERC20` implementation that exposes these functionalities externally (e.g., via a public `mint` or `burn` function) *must* implement robust access control mechanisms (e.g., `onlyOwner`, `onlyMinter`) to prevent unauthorized token creation or destruction (7.3 Access Control, 7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The `_mint` and `_burn` functions are declared as `internal virtual`. This is appropriate for a base ERC20 contract, as it prevents direct external calls. However, any contract inheriting from this `ERC20` implementation that exposes these functionalities externally (e.g., via a public `mint` or `burn` function) *must* implement robust access control mechanisms (e.g., `onlyOwner`, `onlyMinter`) to prevent unauthorized token creation or destruction (7.3 Access Control, 7.1 Architecture).
 
 **Recommendation:** When extending this `ERC20` contract, ensure that any external functions that call `_mint` or `_burn` are protected by appropriate and secure access control modifiers to restrict who can perform these sensitive operations.
 
 
 ### `I-04` — Empty `_beforeTokenTransfer` and `_afterTokenTransfer` Hooks  *(Severity: Informational · Status: Unresolved)*
 
-The `_beforeTokenTransfer` and `_afterTokenTransfer` hook functions are implemented as empty virtual functions. While this is standard for a base ERC20 contract, it means no custom logic or security checks are enforced at the token transfer level by default (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The `_beforeTokenTransfer` and `_afterTokenTransfer` hook functions are implemented as empty virtual functions. While this is standard for a base ERC20 contract, it means no custom logic or security checks are enforced at the token transfer level by default (7.1 Architecture).
 
 **Recommendation:** Derived contracts should consider implementing these hooks to add custom logic, such as pausing transfers, blacklisting addresses, enforcing KYC/AML, or integrating with other protocol-specific functionalities, if required for the project's specific use case.
 

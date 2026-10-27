@@ -2,14 +2,14 @@
 token: Xeleb AI
 ticker: XCX
 network: bsc
-risk_score: 33
+risk_score: 31
 status: low
 date: 2026-09-28
 ---
 
 # Xeleb AI (XCX) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 33/100 — 🟢 Low Risk**
+> **Risk Score: 31/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/xeleb-ai-bsc)
 
@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Standard ERC-20 `approve` Race Condition  *(Severity: Low · Status: Unresolved)*
 
-The standard ERC-20 `approve` function, as implemented in OpenZeppelin's ERC20, is susceptible to a known front-running vulnerability. If a user attempts to change an existing allowance from `X` to `Y` (where `Y` is not 0), a malicious actor observing this transaction could front-run it by spending the original `X` allowance before the new `Y` allowance is set. This could lead to the malicious actor effectively spending `X + Y` tokens instead of just `Y`, if the user's intent was to replace `X` with `Y`.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC-20 `approve` function, as implemented in OpenZeppelin's ERC20, is susceptible to a known front-running vulnerability. If a user attempts to change an existing allowance from `X` to `Y` (where `Y` is not 0), a malicious actor observing this transaction could front-run it by spending the original `X` allowance before the new `Y` allowance is set. This could lead to the malicious actor effectively spending `X + Y` tokens instead of just `Y`, if the user's intent was to replace `X` with `Y`.
 
 **Recommendation:** Users should be advised to always set the allowance to zero (`approve(spender, 0)`) before setting a new non-zero allowance to mitigate this specific race condition. Alternatively, for more robust allowance management, consider using `increaseAllowance` and `decreaseAllowance` functions (if implemented in a custom ERC20 extension), which are designed to prevent this type of front-running attack.
 
 
 ### `I-01` — Centralized Initial Token Distribution  *(Severity: Informational · Status: Unresolved)*
 
-The `TokenERC20` contract's constructor mints the entire `_totalSupply` to `msg.sender` (the deployer). This design choice results in a highly centralized initial distribution, where the deployer holds 100% of the token supply. This concentration of tokens can pose risks related to market manipulation, single points of failure, or perceived lack of decentralization.
+Not confirmed by static analysis (the model's own reading of the source). The `TokenERC20` contract's constructor mints the entire `_totalSupply` to `msg.sender` (the deployer). This design choice results in a highly centralized initial distribution, where the deployer holds 100% of the token supply. This concentration of tokens can pose risks related to market manipulation, single points of failure, or perceived lack of decentralization.
 
 **Recommendation:** Projects should consider a more decentralized distribution strategy for the initial token supply. This could involve mechanisms such as airdrops, liquidity pool provisioning, vesting schedules, or multi-signature controlled treasuries to distribute tokens among multiple stakeholders or the community. This is a design decision that impacts economic governance and project perception.
 
 
 ### `I-02` — Non-Upgradeable Contract Design  *(Severity: Informational · Status: Unresolved)*
 
-The `TokenERC20` contract is deployed as a standard, non-upgradeable contract. This means that once deployed, its logic cannot be modified or updated. Any discovered vulnerabilities, desired feature enhancements, or changes to the token's behavior would require deploying a new contract and migrating all users and assets, which can be a complex and costly process.
+Not confirmed by static analysis (the model's own reading of the source). The `TokenERC20` contract is deployed as a standard, non-upgradeable contract. This means that once deployed, its logic cannot be modified or updated. Any discovered vulnerabilities, desired feature enhancements, or changes to the token's behavior would require deploying a new contract and migrating all users and assets, which can be a complex and costly process.
 
 **Recommendation:** For projects with long-term aspirations or those that anticipate evolving requirements, consider implementing an upgradeable proxy pattern (e.g., UUPS, Transparent) from OpenZeppelin. This would allow for future bug fixes, optimizations, or feature additions without requiring a full redeployment and migration, enhancing the project's longevity and adaptability.
 

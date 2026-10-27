@@ -2,14 +2,14 @@
 token: Wrapped BTC (Wormhole)
 ticker: WBTC
 network: solana
-risk_score: 52
+risk_score: 35
 status: medium
 date: 2026-09-14
 ---
 
 # Wrapped BTC (Wormhole) (WBTC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 52/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wrapped-btc-wormhole-sol)
 
@@ -25,9 +25,9 @@ The Wrapped BTC (Wormhole) token mint presents a critical risk due to an unrevok
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The token is an SPL Token Program v3 mint with 8 decimals and a current supply of 244,830,393,163 raw units. A critical risk exists as the mint authority… |
-| **Governance / Economics** | 4/10 | Medium | The token exhibits a medium risk due to holder concentration, with the top 10 token accounts holding 69.96% of the total supply (7.4 Economic). This concentration could lead to significant price… |
-| **Upgrades** | 4/10 | Medium | The token's metadata is mutable, meaning its name, symbol, or image can be altered post-launch (7.7 Upgrades). The mint authority remains active, which is a critical risk as described in the… |
+| **Technical** | 8/10 | Low | The token is an SPL Token Program v3 mint with 8 decimals and a current supply of 244,830,393,163 raw units. A critical risk exists as the mint authority… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a medium risk due to holder concentration, with the top 10 token accounts holding 69.96% of the total supply (7.4 Economic). This concentration could lead to significant price… |
+| **Upgrades** | 6/10 | Medium | The token's metadata is mutable, meaning its name, symbol, or image can be altered post-launch (7.7 Upgrades). The mint authority remains active, which is a critical risk as described in the… |
 
 ## Security Findings
 
@@ -74,7 +74,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -83,7 +83,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

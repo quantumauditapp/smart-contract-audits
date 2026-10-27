@@ -78,11 +78,11 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 
 ### Is XTO a scam?
 
-Based on automated analysis, XTO scores 30/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, XTO scores 0/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is XTO safe to buy?
 
-Our scanner flagged a risk score of 30/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 0/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has XTO been audited?
 

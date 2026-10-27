@@ -2,14 +2,14 @@
 token: Wootrade Network
 ticker: WOO
 network: ethereum
-risk_score: 70
-status: high
+risk_score: 25
+status: low
 date: 2026-09-06
 ---
 
 # Wootrade Network (WOO) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 25/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/wootrade-network-eth)
 
@@ -25,9 +25,9 @@ The WootradeNetwork contract is an ERC-20-like token implementation. The audit i
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract implements a basic ERC-20 token with an `approveAndCall` extension. Strengths include a fallback function that prevents accidental Ether transfers and basic checks for `_value > 0` in… |
+| **Technical** | 10/10 | Low | The contract implements a basic ERC-20 token with an `approveAndCall` extension. Strengths include a fallback function that prevents accidental Ether transfers and basic checks for `_value > 0` in… |
 | **Governance / Economics** | 1/10 | High | The WootradeNetwork token is a standard ERC-20-like asset with no complex economic models or governance mechanisms (7.4 Economic, 7.5 Governance). The initial token supply is minted to the deployer… |
-| **Upgrades** | 5/10 | Medium | The WootradeNetwork contract is not designed to be upgradeable (7.7 Upgrades). It is a standard, non-proxy implementation, meaning its logic cannot be modified after deployment. This eliminates… |
+| **Upgrades** | 6/10 | Medium | The WootradeNetwork contract is not designed to be upgradeable (7.7 Upgrades). It is a standard, non-proxy implementation, meaning its logic cannot be modified after deployment. This eliminates… |
 
 ## LP Distribution
 
@@ -38,39 +38,39 @@ The WootradeNetwork contract is an ERC-20-like token implementation. The audit i
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 2 High · 🟡 1 Medium · 🟢 1 Low_
-
-### `C-01` — Integer Overflow in Token Balances  *(Severity: Critical · Status: Unresolved)*
-
-The `balances[_to] += _value;` operation in both `transfer` and `transferFrom` functions lacks protection against integer overflow. In Solidity versions prior to 0.8.0, arithmetic operations do not automatically revert on overflow. A malicious actor could potentially cause an overflow if `_value` is sufficiently large and `balances[_to]` is near `type(uint256).max`, leading to an incorrect balance (wrapping around to a small number) and effectively minting tokens.
-
-**Recommendation:** Upgrade to Solidity 0.8.0 or higher, which includes built-in overflow/underflow checks. Alternatively, for older Solidity versions, use a SafeMath library for all arithmetic operations to prevent overflows and underflows.
-
-
-### `H-01` — ERC-20 `approve` Race Condition  *(Severity: High · Status: Unresolved)*
-
-The `approve` function is vulnerable to a known ERC-20 race condition. If a user approves an amount `X` for a spender, then decides to change it to `Y` (where `Y < X`), a front-running attacker could observe the transaction changing `X` to `Y`, quickly execute a `transferFrom` for amount `X` before the `approve(Y)` transaction is mined. The `approve(Y)` transaction would then proceed, leaving the spender with an allowance of `Y` after having already spent `X`, allowing the spender to spend more than intended. The `approveAndCall` function also sets `allowed` and is thus susceptible to this initial race condition before the external call.
-
-**Recommendation:** Advise users to first set the allowance to zero with `approve(spender, 0)` and wait for that transaction to confirm before setting a new allowance. Alternatively, implement a `decreaseAllowance` and `increaseAllowance` pattern, or use a more robust `approve` mechanism that prevents this race condition.
-
-
-### `H-02` — Outdated Solidity Compiler Version  *(Severity: High · Status: Unresolved)*
-
-The contract uses Solidity `^0.4.4`, which is likely compiled with version `0.4.18` as per the provided metadata. This compiler version is significantly outdated and lacks many security features, optimizations, and bug fixes present in newer compilers (e.g., `0.8.x`). Notably, it does not include built-in overflow/underflow checks for arithmetic operations, which is a major source of vulnerabilities if not manually mitigated (e.g., with SafeMath).
-
-**Recommendation:** Upgrade the contract to a modern Solidity compiler version (e.g., 0.8.x). This will automatically enable important security features like checked arithmetic, reducing the risk of integer overflows/underflows, and benefit from other compiler improvements and bug fixes.
-
+_🟡 4 Medium · 🟢 1 Low_
 
 ### `M-01` — Risky `approveAndCall` External Call  *(Severity: Medium · Status: Unresolved)*
 
-The `approveAndCall` function performs an external call to an arbitrary `_spender` address. While the allowance is updated before the call, external calls to untrusted contracts introduce risks. A malicious or buggy `_spender` contract could revert, causing the `approveAndCall` transaction to fail, or potentially attempt reentrancy (though less direct in this specific pattern due to state changes preceding the call). The use of `keccak256` for selector generation is also an older, less explicit pattern compared to `abi.encodeWithSelector`.
+Not confirmed by static analysis (the model's own reading of the source). The `approveAndCall` function performs an external call to an arbitrary `_spender` address. While the allowance is updated before the call, external calls to untrusted contracts introduce risks. A malicious or buggy `_spender` contract could revert, causing the `approveAndCall` transaction to fail, or potentially attempt reentrancy (though less direct in this specific pattern due to state changes preceding the call). The use of `keccak256` for selector generation is also an older, less explicit pattern compared to `abi.encodeWithSelector`.
 
 **Recommendation:** Ensure that any `_spender` contract called via `approveAndCall` is fully trusted and audited. Consider implementing reentrancy guards if the contract's logic were to involve more complex interactions. For new development, use `abi.encodeWithSelector` for clarity and type safety when encoding function calls.
 
 
+### `M-02` — Integer Overflow in Token Balances  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `balances[_to] += _value;` operation in both `transfer` and `transferFrom` functions lacks protection against integer overflow. In Solidity versions prior to 0.8.0, arithmetic operations do not automatically revert on overflow. A malicious actor could potentially cause an overflow if `_value` is sufficiently large and `balances[_to]` is near `type(uint256).max`, leading to an incorrect balance (wrapping around to a small number) and effectively minting tokens.
+
+**Recommendation:** Upgrade to Solidity 0.8.0 or higher, which includes built-in overflow/underflow checks. Alternatively, for older Solidity versions, use a SafeMath library for all arithmetic operations to prevent overflows and underflows.
+
+
+### `M-03` — ERC-20 `approve` Race Condition  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function is vulnerable to a known ERC-20 race condition. If a user approves an amount `X` for a spender, then decides to change it to `Y` (where `Y < X`), a front-running attacker could observe the transaction changing `X` to `Y`, quickly execute a `transferFrom` for amount `X` before the `approve(Y)` transaction is mined. The `approve(Y)` transaction would then proceed, leaving the spender with an allowance of `Y` after having already spent `X`, allowing the spender to spend more than intended. The `approveAndCall` function also sets `allowed` and is thus susceptible to this initial race condition before
+
+**Recommendation:** Advise users to first set the allowance to zero with `approve(spender, 0)` and wait for that transaction to confirm before setting a new allowance. Alternatively, implement a `decreaseAllowance` and `increaseAllowance` pattern, or use a more robust `approve` mechanism that prevents this race condition.
+
+
+### `M-04` — Outdated Solidity Compiler Version  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract uses Solidity `^0.4.4`, which is likely compiled with version `0.4.18` as per the provided metadata. This compiler version is significantly outdated and lacks many security features, optimizations, and bug fixes present in newer compilers (e.g., `0.8.x`). Notably, it does not include built-in overflow/underflow checks for arithmetic operations, which is a major source of vulnerabilities if not manually mitigated (e.g., with SafeMath).
+
+**Recommendation:** Upgrade the contract to a modern Solidity compiler version (e.g., 0.8.x). This will automatically enable important security features like checked arithmetic, reducing the risk of integer overflows/underflows, and benefit from other compiler improvements and bug fixes.
+
+
 ### `L-01` — Redundant `totalSupply` Declaration  *(Severity: Low · Status: Unresolved)*
 
-The `totalSupply` state variable is declared multiple times across the inheritance chain: in `Token`, `StandardToken`, and `WootradeNetwork`. While the declaration in `WootradeNetwork` effectively shadows the others, this redundancy can lead to confusion for developers and is considered poor coding practice.
+Not confirmed by static analysis (the model's own reading of the source). The `totalSupply` state variable is declared multiple times across the inheritance chain: in `Token`, `StandardToken`, and `WootradeNetwork`. While the declaration in `WootradeNetwork` effectively shadows the others, this redundancy can lead to confusion for developers and is considered poor coding practice.
 
 **Recommendation:** Declare `totalSupply` only once in the base `Token` contract or the most appropriate contract in the inheritance hierarchy, and ensure derived contracts do not redeclare it. This improves code clarity and maintainability.
 
