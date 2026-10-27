@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1325 reports** · Updated daily · [← All Networks](../README.md)
+**1348 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,29 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Orbit](./orbit.md) | ORBIT | 🟢 31/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/orbit-sol) |
+| [Leverage](./leverage.md) | LEVERAGE | 🟢 16/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/leverage-sol) |
+| [Rapecoin ](./rapecoin.md) | RAPE  | 🟢 16/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/rapecoin-sol) |
+| [something](./something.md) | SOMETHING | 🟢 31/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/something-sol) |
+| [Ginnan the Cat](./ginnan-the-cat.md) | GINNAN | 🟢 6/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/ginnan-the-cat-sol) |
+| [พลอย](./ploy.md) | PLOY | 🟢 13/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/ploy-sol) |
+| [MIYA.EXE](./miyaexe.md) | MIYA | 🟢 22/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/miyaexe-sol) |
+| [Teenage Mutant Ninja Turtles](./teenage-mutant-ninja-turtles.md) | TMNT | 🟢 23/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/teenage-mutant-ninja-turtles-sol) |
+| [Conway Autonomous AI](./conway-autonomous-ai.md) | CONWAY-SOL | 🟢 22/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/conway-autonomous-ai-sol) |
+| [SOLVET](./solvet.md) | SOLVET | 🟢 28/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/solvet-sol) |
+| [Wifoween](./wifoween.md) | WIFOWEEN | 🟢 22/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/wifoween-sol) |
+| [DARK MAGA 2028](./dark-maga-2028.md) | DMAGA2028 | 🟢 20/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/dark-maga-2028-sol) |
+| [Backed By Belief](./backed-by-belief-sol-e5d7.md) | NOTHING | 🟢 26/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/backed-by-belief-sol-e5d7) |
+| [hachi](./hachi.md) | HACHI | 🟢 20/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/hachi-sol) |
+| [MUSK2028](./musk2028.md) | MUSK2028 | 🟢 22/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/musk2028-sol) |
+| [gently used joystick](./gently-used-joystick.md) | N64 | 🟢 15/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/gently-used-joystick-sol) |
+| [GTA6DOG](./gta6dog.md) | CHICO | 🟢 0/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/gta6dog-sol) |
+| [President 2028](./president-2028.md) | ELON2028 | 🟢 14/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/president-2028-sol) |
+| [UDTF](./udtf.md) | UDTF | 🟢 2/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/udtf-sol) |
+| [Halloween Inu](./halloween-inu.md) | INUWEEN | 🟢 0/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/halloween-inu-sol) |
+| [SOLANA ACCELERATE](./solana-accelerate.md) | S/ACC | 🟢 16/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/solana-accelerate-sol) |
+| [XTO](./xto-sol-35c4.md) | XTO | 🟢 2/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/xto-sol-35c4) |
+| [███WIF](./wif.md) | ███WIF | 🟢 0/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/wif-sol) |
 | [Onepad](./onepad.md) | ONEPAD | 🟡 38/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/onepad-sol) |
 | [BILLBOARD](./billboard.md) | BILLBOARD | 🟢 21/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/billboard-sol) |
 | [First Time?](./first-time.md) | FIRSTTIME | 🟡 38/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/first-time-sol) |

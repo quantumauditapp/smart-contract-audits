@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**473 reports** · Updated daily · [← All Networks](../README.md)
+**476 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Exponential Time Hypothesis](./exponential-time-hypothesis.md) | ETH | 🟢 32/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/exponential-time-hypothesis-eth) |
+| [America Party](./america-party.md) | AP | 🟢 4/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/america-party-eth) |
+| [LightchainAI](./lightchainai.md) | LCAI | 🟢 13/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/lightchainai-eth) |
 | [Elon 2028](./elon-2028.md) | ELON2028 | 🟡 41/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/elon-2028-eth) |
 | [NeuralAI](./neuralai.md) | NEURAL | 🟠 72/100 High Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/neuralai-eth) |
 | [PancakeSwap](./pancakeswap.md) | CAKE | 🟢 10/100 Low Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/pancakeswap-eth) |

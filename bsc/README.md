@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**538 reports** · Updated daily · [← All Networks](../README.md)
+**539 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Agent City](./agent-city.md) | AGENT CITY | 🟡 40/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/agent-city-bsc) |
 | [bnc的新名字](./bnc-bsc-1b4a.md) | BNB STANDARD | 🟢 21/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/bnc-bsc-1b4a) |
 | [国库币](./token-2c59e0.md) | 国库币 | 🟢 27/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/token-2c59e0-bsc) |
 | [PancakeSwap Token](./pancakeswap-token.md) | CAKE | 🟢 21/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/pancakeswap-token-bsc) |

@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-2938-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-2953-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,21 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Orbit](./solana/orbit.md) | ORBIT | Solana | 🟢 31/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/orbit-sol) |
+| [Leverage](./solana/leverage.md) | LEVERAGE | Solana | 🟢 16/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/leverage-sol) |
+| [Rapecoin ](./solana/rapecoin.md) | RAPE  | Solana | 🟢 16/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/rapecoin-sol) |
+| [something](./solana/something.md) | SOMETHING | Solana | 🟢 31/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/something-sol) |
+| [Ginnan the Cat](./solana/ginnan-the-cat.md) | GINNAN | Solana | 🟢 6/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/ginnan-the-cat-sol) |
+| [Exponential Time Hypothesis](./ethereum/exponential-time-hypothesis.md) | ETH | Ethereum | 🟢 32/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/exponential-time-hypothesis-eth) |
+| [America Party](./ethereum/america-party.md) | AP | Ethereum | 🟢 4/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/america-party-eth) |
+| [LightchainAI](./ethereum/lightchainai.md) | LCAI | Ethereum | 🟢 13/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/lightchainai-eth) |
+| [พลอย](./solana/ploy.md) | PLOY | Solana | 🟢 13/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/ploy-sol) |
+| [MIYA.EXE](./solana/miyaexe.md) | MIYA | Solana | 🟢 22/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/miyaexe-sol) |
+| [Agent City](./bsc/agent-city.md) | AGENT CITY | BNB Chain | 🟡 40/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/agent-city-bsc) |
+| [Surplus Intelligence](./base/surplus-intelligence-base-ecca.md) | SURPLUS | Base | 🟠 78/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/surplus-intelligence-base-ecca) |
+| [Warden Protocol](./base/warden-protocol.md) | WRDN | Base | 🟠 78/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/warden-protocol-base) |
+| [HYPE](./base/hype.md) | HYPE | Base | 🟠 65/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/hype-base) |
+| [NODF](./base/nodf-base-cdba.md) | NODF | Base | 🟡 56/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/nodf-base-cdba) |
 | [AOP](./base/aop-base-090d.md) | AOP | Base | 🟡 55/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/aop-base-090d) |
 | [AODF](./base/aodf-base-5aac.md) | AODF | Base | 🟡 57/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/aodf-base-5aac) |
 | [Teenage Mutant Ninja Turtles](./solana/teenage-mutant-ninja-turtles.md) | TMNT | Solana | 🟢 23/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/teenage-mutant-ninja-turtles-sol) |
@@ -27,27 +42,12 @@
 | [MUSK2028](./solana/musk2028.md) | MUSK2028 | Solana | 🟢 22/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/musk2028-sol) |
 | [gently used joystick](./solana/gently-used-joystick.md) | N64 | Solana | 🟢 15/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/gently-used-joystick-sol) |
 | [GTA6DOG](./solana/gta6dog.md) | CHICO | Solana | 🟢 0/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/gta6dog-sol) |
-| [President 2028](./solana/president-2028.md) | ELON2028 | Solana | 🟢 14/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/president-2028-sol) |
-| [UDTF](./solana/udtf.md) | UDTF | Solana | 🟢 2/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/udtf-sol) |
-| [Halloween Inu](./solana/halloween-inu.md) | INUWEEN | Solana | 🟢 0/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/halloween-inu-sol) |
-| [SOLANA ACCELERATE](./solana/solana-accelerate.md) | S/ACC | Solana | 🟢 16/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/solana-accelerate-sol) |
-| [XTO](./solana/xto-sol-35c4.md) | XTO | Solana | 🟢 2/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/xto-sol-35c4) |
-| [███WIF](./solana/wif.md) | ███WIF | Solana | 🟢 0/100 | 2026-10-27 | [↗](https://quantumaudit.app/token/wif-sol) |
-| [NeuralAI](./ethereum/neuralai.md) | NEURAL | Ethereum | 🟠 72/100 | 2026-09-13 | [↗](https://quantumaudit.app/token/neuralai-eth) |
-| [PancakeSwap](./ethereum/pancakeswap.md) | CAKE | Ethereum | 🟢 10/100 | 2026-08-20 | [↗](https://quantumaudit.app/token/pancakeswap-eth) |
-| [PancakeSwap Token](./bsc/pancakeswap-token.md) | CAKE | BNB Chain | 🟢 21/100 | 2026-08-11 | [↗](https://quantumaudit.app/token/pancakeswap-token-bsc) |
-| [Quant](./ethereum/quant.md) | QNT | Ethereum | 🟡 43/100 | 2026-09-01 | [↗](https://quantumaudit.app/token/quant-eth) |
-| [GinnanCoin](./ethereum/ginnancoin.md) | GINNAN | Ethereum | 🟢 0/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/ginnancoin-eth) |
-| [one coin](./base/one-coin.md) | ONECOIN | Base | 🟡 50/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/one-coin-base) |
-| [DOAS](./base/doas-base-accd.md) | DOAS | Base | 🟡 56/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/doas-base-accd) |
-| [Onepad](./solana/onepad.md) | ONEPAD | Solana | 🟡 38/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/onepad-sol) |
-| [Ginnan](./ethereum/ginnan.md) | GINNAN | Ethereum | 🟡 41/100 | 2026-10-26 | [↗](https://quantumaudit.app/token/ginnan-eth) |
 
 ---
 
 ## Browse by Network
 
-[Solana (1341)](./solana/README.md) · [BNB Chain (538)](./bsc/README.md) · [Base (475)](./base/README.md) · [Ethereum (473)](./ethereum/README.md) · [Arbitrum (85)](./arbitrum/README.md) · [Polygon (26)](./polygon/README.md)
+[Solana (1348)](./solana/README.md) · [BNB Chain (539)](./bsc/README.md) · [Base (479)](./base/README.md) · [Ethereum (476)](./ethereum/README.md) · [Arbitrum (85)](./arbitrum/README.md) · [Polygon (26)](./polygon/README.md)
 
 ---
 

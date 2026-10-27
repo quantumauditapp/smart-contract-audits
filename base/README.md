@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**475 reports** · Updated daily · [← All Networks](../README.md)
+**479 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Surplus Intelligence](./surplus-intelligence-base-ecca.md) | SURPLUS | 🟠 78/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/surplus-intelligence-base-ecca) |
+| [Warden Protocol](./warden-protocol.md) | WRDN | 🟠 78/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/warden-protocol-base) |
+| [HYPE](./hype.md) | HYPE | 🟠 65/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/hype-base) |
+| [NODF](./nodf-base-cdba.md) | NODF | 🟡 56/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/nodf-base-cdba) |
 | [AOP](./aop-base-090d.md) | AOP | 🟡 55/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/aop-base-090d) |
 | [AODF](./aodf-base-5aac.md) | AODF | 🟡 57/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/aodf-base-5aac) |
 | [one coin](./one-coin.md) | ONECOIN | 🟡 50/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/one-coin-base) |
