@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**483 reports** · Updated daily · [← All Networks](../README.md)
+**487 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Elon 2028](./elon-2028.md) | ELON2028 | 🟠 68/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/elon-2028-base) |
+| [United Trust Dividend Fund 🔥](./united-trust-dividend-fund.md) | UTDF | 🟢 22/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/united-trust-dividend-fund-base) |
+| [Anthropic](./anthropic.md) | ANTHROPIC | 🟠 74/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/anthropic-base) |
+| [UDTF](./udtf-base-6281.md) | UDTF | 🟡 58/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/udtf-base-6281) |
 | [one life, its worth an attempt](./one-life-its-worth-an-attempt-base-3b3a.md) | WORTH | 🟠 78/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/one-life-its-worth-an-attempt-base-3b3a) |
 | [XRC](./xrc-base-fe10.md) | XRC | 🟡 56/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/xrc-base-fe10) |
 | [[XTO] Xtrust Oil](./xto-xtrust-oil.md) | XOT | 🟡 59/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/xto-xtrust-oil-base) |

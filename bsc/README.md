@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**544 reports** · Updated daily · [← All Networks](../README.md)
+**550 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [CL Ai Agent](./cl-ai-agent.md) | 财来 | 🟢 2/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/cl-ai-agent-bsc) |
+| [FUND](./fund.md) | FUND | 🟢 23/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/fund-bsc) |
+| [Gangstar](./gangstar-bsc-819e.md) | GANGSTAR | 🟠 69/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/gangstar-bsc-819e) |
+| [A Gangstar Inu](./a-gangstar-inu.md) | AGI | 🟡 64/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/a-gangstar-inu-bsc) |
+| [Binance Agent](./binance-agent-bsc-197c.md) | 7AGENT | 🟢 30/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/binance-agent-bsc-197c) |
+| [Haedal](./haedal.md) | HAEDAL | 🟠 73/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/haedal-bsc) |
 | [😬](./token-1bdee7.md) | 😬 | 🟡 46/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/token-1bdee7-bsc) |
 | [甲亢哥](./speed.md) | SPEED | 🟠 84/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/speed-bsc) |
 | [Quack AI Token](./quack-ai-token-bsc-b719.md) | Q | 🔴 97/100 Critical Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/quack-ai-token-bsc-b719) |

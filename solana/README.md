@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1360 reports** · Updated daily · [← All Networks](../README.md)
+**1380 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,26 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [State Property](./state-property.md) | STATE? | 🟢 21/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/state-property-sol) |
+| [Shǔ bǎo](./shu-bao.md) | 슈바오 | 🟢 19/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/shu-bao-sol) |
+| [Remora](./remora.md) | REM | 🟢 23/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/remora-sol) |
+| [Project Nevada](./project-nevada.md) | NEVADA | 🟢 27/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/project-nevada-sol) |
+| [The Handstand Kitten](./the-handstand-kitten.md) | DARLA | 🟢 20/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/the-handstand-kitten-sol) |
+| [contract address token](./contract-address-token.md) | CAT | 🟢 21/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/contract-address-token-sol) |
+| [Mbappe Zedong](./mbappe-zedong.md) | DICTATOR | 🟢 24/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/mbappe-zedong-sol) |
+| [Peak](./peak.md) | PEAK | 🟢 0/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/peak-sol) |
+| [Tits Or Nothing](./tits-or-nothing.md) | TON | 🟢 17/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/tits-or-nothing-sol) |
+| [Maxxing](./maxxing-sol-1f0f.md) | MAXXING | 🟢 20/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/maxxing-sol-1f0f) |
+| [Backed By Belief](./backed-by-belief-sol-03bf.md) | NOTHING | 🟢 27/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/backed-by-belief-sol-03bf) |
+| [USDP](./usdp.md) | USDP | 🔴 90/100 Critical Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/usdp-sol) |
+| [XTO](./xto-sol-9638.md) | XTO | 🟢 2/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/xto-sol-9638) |
+| [Banana Cat](./banana-cat.md) | BANANA CAT | 🟢 0/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/banana-cat-sol) |
+| [Jean Phil](./jean-phil-sol-362d.md) | JEANPHIL | 🟢 0/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/jean-phil-sol-362d) |
+| [TRUTH COIN🔥](./truth-coin-sol-1bcf.md) | TRUTH | 🟢 1/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/truth-coin-sol-1bcf) |
+| [Backed By Belief](./backed-by-belief-sol-4eeb.md) | NOTHING | 🟢 2/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/backed-by-belief-sol-4eeb) |
+| [USDF](./usdf-sol-f2ba.md) | USDF | 🟢 1/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/usdf-sol-f2ba) |
+| [NODF](./nodf-sol-cb7a.md) | NODF | 🟢 0/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/nodf-sol-cb7a) |
+| [XTO](./xto-sol-2172.md) | XTO | 🟢 1/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/xto-sol-2172) |
 | [paws at you](./paws-at-you.md) | PAWS | 🟢 14/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/paws-at-you-sol) |
 | [BLUNTS by Shaw ](./blunts-by-shaw.md) | BLUNTS | 🟢 17/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/blunts-by-shaw-sol) |
 | [TypeSOL](./typesol.md) | TS | 🟢 16/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/typesol-sol) |
