@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**473 reports** · Updated daily · [← All Networks](../README.md)
+**474 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [AODF](./aodf-base-5aac.md) | AODF | 🟡 57/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/aodf-base-5aac) |
 | [one coin](./one-coin.md) | ONECOIN | 🟡 50/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/one-coin-base) |
 | [DOAS](./doas-base-accd.md) | DOAS | 🟡 56/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/doas-base-accd) |
 | [NODF 🔥](./nodf-base-4d6b.md) | NODF | 🟡 56/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/nodf-base-4d6b) |
@@ -226,7 +227,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 | [Apple 3x Long](./apple-3x-long.md) | AAPLX3L | 🟠 65/100 High Risk | 2026-10-10 | [↗](https://quantumaudit.app/token/apple-3x-long-base) |
 | [MEGA YACHT CULT](./mega-yacht-cult.md) | MYC | 🟠 76/100 High Risk | 2026-10-10 | [↗](https://quantumaudit.app/token/mega-yacht-cult-base) |
 | [Whuffie](./whuffie.md) | WHUF | 🟡 49/100 Medium Risk | 2026-10-09 | [↗](https://quantumaudit.app/token/whuffie-base) |
-| [Moca](./moca.md) | MOCA | 🟡 44/100 Medium Risk | 2026-10-09 | [↗](https://quantumaudit.app/token/moca-base) |
+| [Moca](./moca.md) | MOCA | 🟢 9/100 Low Risk | 2026-10-09 | [↗](https://quantumaudit.app/token/moca-base) |
 | [Wormhole Token](./wormhole-token.md) | W | 🟡 60/100 Medium Risk | 2026-10-08 | [↗](https://quantumaudit.app/token/wormhole-token-base) |
 | [MAGIC](./magic.md) | MAGIC | 🟠 71/100 High Risk | 2026-10-07 | [↗](https://quantumaudit.app/token/magic-base) |
 | [Chiliz](./chiliz.md) | CHZ | 🟡 40/100 Medium Risk | 2026-10-06 | [↗](https://quantumaudit.app/token/chiliz-base) |
@@ -243,9 +244,9 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 | [Twigpine](./twigpine.md) | TWIG | 🟢 33/100 Low Risk | 2026-10-02 | [↗](https://quantumaudit.app/token/twigpine-base) |
 | [Crynux Token](./crynux-token.md) | CNX | 🔴 87/100 Critical Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/crynux-token-base) |
 | [OpenUSD](./openusd.md) | OUSD | 🟡 55/100 Medium Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/openusd-base) |
-| [Syrup Token](./syrup-token.md) | SYRUP | 🟢 28/100 Low Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/syrup-token-base) |
+| [Syrup Token](./syrup-token.md) | SYRUP | 🟢 8/100 Low Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/syrup-token-base) |
 | [Delivery Guy](./delivery-guy.md) | DGUY | 🟢 10/100 Low Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/delivery-guy-base) |
-| [ENA](./ena.md) | ENA | 🟡 39/100 Medium Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/ena-base) |
+| [ENA](./ena.md) | ENA | 🟢 11/100 Low Risk | 2026-10-01 | [↗](https://quantumaudit.app/token/ena-base) |
 | [Wrapped L1coin](./wrapped-l1coin.md) | WL1 | 🟠 84/100 High Risk | 2026-09-30 | [↗](https://quantumaudit.app/token/wrapped-l1coin-base) |
 | [GROOVE](./groove.md) | GROOVE | 🟡 50/100 Medium Risk | 2026-09-29 | [↗](https://quantumaudit.app/token/groove-base) |
 | [Superfluid Token](./superfluid-token.md) | SUP | 🟠 81/100 High Risk | 2026-09-29 | [↗](https://quantumaudit.app/token/superfluid-token-base) |

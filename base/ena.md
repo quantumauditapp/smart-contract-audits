@@ -2,14 +2,14 @@
 token: ENA
 ticker: ENA
 network: base
-risk_score: 39
-status: medium
+risk_score: 11
+status: low
 date: 2026-10-01
 ---
 
 # ENA (ENA) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 39/100 — 🟡 Medium Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ena-base)
 
@@ -25,9 +25,9 @@ The ENAOFT contract is an Omnichain Fungible Token (OFT) designed for cross-chai
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The ENAOFT contract implements the ERC-20 standard with additional LayerZero OFT (Omnichain Fungible Token) capabilities, allowing for cross-chain token transfers. It includes a `RateLimiter` to… |
-| **Governance / Economics** | 1/10 | High | The contract uses a Timelock for its owner, which enhances security for owner-controlled functions like `transferOwnership` and `setRateLimiter` by introducing a delay for changes. However, the… |
-| **Upgrades** | 4/10 | Medium | The ENAOFT contract is not deployed as an upgradeable proxy. This means its logic cannot be modified or updated after deployment. While this eliminates upgrade-related risks such as proxy… |
+| **Technical** | 10/10 | Low | The ENAOFT contract implements the ERC-20 standard with additional LayerZero OFT (Omnichain Fungible Token) capabilities, allowing for cross-chain token transfers. It includes a `RateLimiter` to… |
+| **Governance / Economics** | 9/10 | Low | The contract uses a Timelock for its owner, which enhances security for owner-controlled functions like `transferOwnership` and `setRateLimiter` by introducing a delay for changes. However, the… |
+| **Upgrades** | 10/10 | Low | The ENAOFT contract is not deployed as an upgradeable proxy. This means its logic cannot be modified or updated after deployment. While this eliminates upgrade-related risks such as proxy… |
 
 ## LP Distribution
 
@@ -38,32 +38,25 @@ The ENAOFT contract is an Omnichain Fungible Token (OFT) designed for cross-chai
 
 ## Security Findings
 
-_🟡 2 Medium · ⚪ 4 Informational_
+_⚪ 5 Informational_
 
-### `CP-01` — Special Address Can Create New Tokens  *(Severity: Medium · Status: Unresolved)*
+### `CP-01` — Special Address Can Create New Tokens  *(Severity: Informational · Status: Unresolved)*
 
 The ENAOFT token contract has a special address, referred to as the 'endpoint', that has the power to create new ENAOFT tokens. This can happen through functions like `send`, `lzReceiveSimulate`, and `lzReceive`. When new tokens are created, the total supply of ENAOFT increases, which can reduce the value of tokens held by existing holders.
 
 **Recommendation:** It is crucial to understand who controls this 'endpoint' address and what security measures are in place to protect it. The project team should ensure that the 'endpoint' address is highly secure, possibly controlled by a multi-signature wallet or a robust governance mechanism, to prevent any unauthorized creation of tokens.
 
 
-### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
-
-0.0% of the pool's LP is burned or time-locked. 100.0% is held, unlocked, by 1 address(es) other than the owner/deployer. One of them — a contract, 0xfcaf…245e — holds 100.0% and can remove that share at once; who controls it is not visible on-chain, so it is not treated as an independent provider. Some pools are concentrated-liquidity (V3/V4) positions; shares above are by position as GoPlus reports them.
-
-**Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
-
-
 ### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-The ten largest holders own 83.6% of supply. What remains: 2.6% in wallets, 80.9% in other contracts. 4,738 holders in total.
+The ten largest holders own 83.6% of supply. What remains: 2.6% in wallets, 80.9% in other contracts. 4,738 holders in total. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
 
 **Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
 
 
 ### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
 
-Listed on CoinGecko as Ethena (ENA), market cap $2.7B, rank #41. 4,738 holders. Verified by: CoinGecko.
+Listed on CoinGecko as Ethena (ENA), market cap $2.7B, rank #40. 4,738 holders. Verified by: CoinGecko.
 
 **Recommendation:** Match the contract address against the project's official channels before trading.
 
@@ -75,11 +68,11 @@ Liquidity $59K (DexScreener, all pools). 24h trading volume $790.1M (CoinGecko, 
 **Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
 
 
-### `QA-PROFILE` — Asset class: Governance token  *(Severity: Informational · Status: Acknowledged)*
+### `QA-PROFILE` — Asset class: Wrapped or bridged asset  *(Severity: Informational · Status: Acknowledged)*
 
-A token whose main use is voting on a protocol's decisions (delegation and vote checkpoints in its code). The class itself adds no points; the contract and market facts decide the score. Basis: CoinGecko category: Governance. Tokenomics — Supply: mintable with no on-chain cap found. Control: a timelock with a 24h delay. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $59K of DEX liquidity across 11 pools. Launch: 403 days of market history.
+A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Governance; a copy of the coin from its home chain (ethereum), minted here by LayerZero (lzReceive). Tokenomics — Supply: mintable with no on-chain cap found. Control: a timelock with a 24h delay. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $59K of DEX liquidity across 11 pools. Launch: 403 days of market history.
 
-**Recommendation:** Check how much of the voting supply insiders hold and what governance can change.
+**Recommendation:** The backing is the risk: check who holds the underlying asset and how redemption works.
 
 ## Token Metrics
 

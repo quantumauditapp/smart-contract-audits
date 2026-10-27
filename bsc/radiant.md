@@ -2,14 +2,14 @@
 token: Radiant
 ticker: RDNT
 network: bsc
-risk_score: 46
-status: medium
+risk_score: 11
+status: low
 date: 2026-10-08
 ---
 
 # Radiant (RDNT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 46/100 — 🟡 Medium Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/radiant-bsc)
 
@@ -25,9 +25,9 @@ The RadiantOFT contract is an ERC-20 token with LayerZero cross-chain functional
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The RadiantOFT contract implements the ERC-20 standard and integrates LayerZero for cross-chain functionality, enabling token transfers across different chains (7.1 Architecture). The contract… |
-| **Governance / Economics** | 1/10 | High | The contract's ownership is retained by a multisig wallet, which enhances security by requiring multiple approvals for critical operations (7.5 Governance). The owner has significant control over… |
-| **Upgrades** | 3/10 | High | The RadiantOFT contract is not designed with an explicit upgrade mechanism (7.7 Upgrades). This means its logic cannot be changed post-deployment, providing immutability but requiring a new… |
+| **Technical** | 10/10 | Low | The RadiantOFT contract implements the ERC-20 standard and integrates LayerZero for cross-chain functionality, enabling token transfers across different chains (7.1 Architecture). The contract… |
+| **Governance / Economics** | 9/10 | Low | The contract's ownership is retained by a multisig wallet, which enhances security by requiring multiple approvals for critical operations (7.5 Governance). The owner has significant control over… |
+| **Upgrades** | 10/10 | Low | The RadiantOFT contract is not designed with an explicit upgrade mechanism (7.7 Upgrades). This means its logic cannot be changed post-deployment, providing immutability but requiring a new… |
 
 ## LP Distribution
 
@@ -38,21 +38,7 @@ The RadiantOFT contract is an ERC-20 token with LayerZero cross-chain functional
 
 ## Security Findings
 
-_🟡 3 Medium · 🟢 1 Low · ⚪ 3 Informational_
-
-### `CP-01` — Owner can mint new tokens  *(Severity: Medium · Status: Unresolved)*
-
-The `sendAndCall` function, which is controlled by the contract owner (a multisig wallet), has the capability to increase the total supply of tokens. This means the owner can create new tokens at will, potentially diluting the value for existing token holders.
-
-**Recommendation:** Token holders should be aware that the multisig wallet controlling the contract can mint new tokens using the `sendAndCall` function. It is recommended that the project team implements strict governance policies and transparency around the use of this function, or explores technical solutions to remove or restrict this minting capability if it's not intended for ongoing use.
-
-
-### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
-
-0.0% of the pool's LP is burned or time-locked. 96.7% is held, unlocked, by 10 address(es) other than the owner/deployer. One of them — a contract, 0x4fd9…cb5e — holds 67.6% and can remove that share at once; who controls it is not visible on-chain, so it is not treated as an independent provider. Some pools are concentrated-liquidity (V3/V4) positions; shares above are by position as GoPlus reports them.
-
-**Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
-
+_🟡 1 Medium · 🟢 1 Low · ⚪ 4 Informational_
 
 ### `QA-MARKET` — The market for this token  *(Severity: Medium · Status: Acknowledged)*
 
@@ -68,25 +54,32 @@ The `getBridgeFee` function calculates fees by performing division before multip
 **Recommendation:** Token holders should note that small rounding losses might occur during bridge fee calculations. The project team should consider reordering the operations in the `getBridgeFee` function to perform multiplication before division (e.g., `(amount * numerator) / denominator`) to minimize or eliminate these rounding losses and ensure more accurate fee collection.
 
 
+### `CP-01` — Owner can mint new tokens  *(Severity: Informational · Status: Unresolved)*
+
+The `sendAndCall` function, which is controlled by the contract owner (a multisig wallet), has the capability to increase the total supply of tokens. This means the owner can create new tokens at will, potentially diluting the value for existing token holders.
+
+**Recommendation:** Token holders should be aware that the multisig wallet controlling the contract can mint new tokens using the `sendAndCall` function. It is recommended that the project team implements strict governance policies and transparency around the use of this function, or explores technical solutions to remove or restrict this minting capability if it's not intended for ongoing use.
+
+
 ### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-The ten largest holders own 82.5% of supply. Of that, 19.9% in DEX pools — not holders that can sell, so excluded from the concentration score. What remains: 59.9% in wallets, 2.7% in other contracts. 150,870 holders in total.
+The ten largest holders own 82.5% of supply. Of that, 19.9% in DEX pools — not holders that can sell, so excluded from the concentration score. What remains: 59.9% in wallets, 2.7% in other contracts. 150,870 holders in total. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
 
 **Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
 
 
 ### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
 
-Listed on CoinGecko as Radiant Capital (RDNT), market cap $1M, rank #2721. Traded on Binance. 150,870 holders. Verified by: exchange listings.
+Listed on CoinGecko as Radiant Capital (RDNT), rank #3237. Traded on Binance. 150,870 holders. Verified by: exchange listings.
 
 **Recommendation:** Match the contract address against the project's official channels before trading.
 
 
-### `QA-PROFILE` — Asset class: Project token  *(Severity: Informational · Status: Acknowledged)*
+### `QA-PROFILE` — Asset class: Wrapped or bridged asset  *(Severity: Informational · Status: Acknowledged)*
 
-A token issued by a project for use, governance or fundraising. Scored on its contract and market facts. The class itself adds no points; the contract and market facts decide the score. Basis: no class-specific evidence. Tokenomics — Supply: mintable with no on-chain cap found. Control: a 4-of-11 multisig. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $136K of DEX liquidity across 18 pools. Launch: 1290 days of market history.
+A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: a copy of the coin from its home chain (arbitrum-one), minted here by LayerZero (lzReceive). Tokenomics — Supply: mintable with no on-chain cap found. Control: a 4-of-11 multisig. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $136K of DEX liquidity across 18 pools. Launch: 1290 days of market history.
 
-**Recommendation:** Check the project's own documentation for what the token is used for; this report covers what the contract allows.
+**Recommendation:** The backing is the risk: check who holds the underlying asset and how redemption works.
 
 ## Token Metrics
 

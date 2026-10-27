@@ -63,9 +63,9 @@ The ten largest holders own 21.1% of supply. What remains: 12.2% in wallets, 9.0
 **Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
 
 
-### `QA-IDENTITY` — Not listed by any independent source  *(Severity: Informational · Status: Acknowledged)*
+### `QA-IDENTITY` — Listed, but not independently verified  *(Severity: Informational · Status: Acknowledged)*
 
-180 holders. Not listed by CoinGecko or any exchange GoPlus tracks. Nothing independent confirms who is behind this token, so every power its contract grants is scored at face value.
+Listed on CoinGecko as Pangea (PANGEA), market cap $20M, rank #828. 180 holders.
 
 **Recommendation:** Match the contract address against the project's official channels before trading.
 
@@ -77,11 +77,11 @@ Liquidity $125K (DexScreener, all pools). 24h trading volume $567K (DexScreener,
 **Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
 
 
-### `QA-PROFILE` — Asset class: Project token  *(Severity: Informational · Status: Acknowledged)*
+### `QA-PROFILE` — Asset class: Wrapped or bridged asset  *(Severity: Informational · Status: Acknowledged)*
 
-A token issued by a project for use, governance or fundraising. Scored on its contract and market facts. The class itself adds no points; the contract and market facts decide the score. Basis: no class-specific evidence. Tokenomics — Supply: mintable with no on-chain cap found. Control: a contract. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $125K of DEX liquidity across 9 pools. Launch: under a day of market history.
+A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. The class itself adds no points; the contract and market facts decide the score. Basis: a copy of the coin from its home chain (solana), minted here by LayerZero (lzReceive). Tokenomics — Supply: mintable with no on-chain cap found. Control: a contract. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $125K of DEX liquidity across 9 pools. Launch: under a day of market history.
 
-**Recommendation:** Check the project's own documentation for what the token is used for; this report covers what the contract allows.
+**Recommendation:** The backing is the risk: check who holds the underlying asset and how redemption works.
 
 
 ### `QA-RECENT` — Recently launched — less than a day of market history  *(Severity: Informational · Status: Acknowledged)*

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**536 reports** · Updated daily · [← All Networks](../README.md)
+**538 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [bnc的新名字](./bnc-bsc-1b4a.md) | BNB STANDARD | 🟢 21/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/bnc-bsc-1b4a) |
+| [国库币](./token-2c59e0.md) | 国库币 | 🟢 27/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/token-2c59e0-bsc) |
 | [PancakeSwap Token](./pancakeswap-token.md) | CAKE | 🟢 21/100 Low Risk | 2026-08-11 | [↗](https://quantumaudit.app/token/pancakeswap-token-bsc) |
 | [GinnanCoin](./ginnancoin.md) | GINNAN | 🟡 38/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/ginnancoin-bsc) |
 | [Copper](./copper.md) | COPPER | 🟢 32/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/copper-bsc) |
@@ -164,7 +166,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [Binance AI](./binance-ai.md) | BIBI | 🟢 6/100 Low Risk | 2026-10-16 | [↗](https://quantumaudit.app/token/binance-ai-bsc) |
 | [羊2.0](./20.md) | 羊2.0 | 🟢 0/100 Low Risk | 2026-10-16 | [↗](https://quantumaudit.app/token/20-bsc) |
 | [NEXST](./nexst.md) | NXT | 🟡 62/100 Medium Risk | 2026-10-16 | [↗](https://quantumaudit.app/token/nexst-bsc) |
-| [PUFFER](./puffer.md) | PUFFER | 🟢 34/100 Low Risk | 2026-10-16 | [↗](https://quantumaudit.app/token/puffer-bsc) |
+| [PUFFER](./puffer.md) | PUFFER | 🟢 18/100 Low Risk | 2026-10-16 | [↗](https://quantumaudit.app/token/puffer-bsc) |
 | [Velas](./velas.md) | VLX | 🟠 77/100 High Risk | 2026-10-15 | [↗](https://quantumaudit.app/token/velas-bsc) |
 | [FOO](./foo.md) | FOO | 🟠 66/100 High Risk | 2026-10-15 | [↗](https://quantumaudit.app/token/foo-bsc) |
 | [Polkadot Token](./polkadot-token.md) | DOT | 🟢 8/100 Low Risk | 2026-10-15 | [↗](https://quantumaudit.app/token/polkadot-token-bsc) |
@@ -193,7 +195,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 | [Everlyn Token](./everlyn-token.md) | LYN | 🟢 19/100 Low Risk | 2026-10-09 | [↗](https://quantumaudit.app/token/everlyn-token-bsc) |
 | [人生K线](./k.md) | 人生K线 | 🟢 14/100 Low Risk | 2026-10-09 | [↗](https://quantumaudit.app/token/k-bsc) |
 | [Cao Zhen](./cao-zhen.md) | CZ | 🟢 21/100 Low Risk | 2026-10-08 | [↗](https://quantumaudit.app/token/cao-zhen-bsc) |
-| [Radiant](./radiant.md) | RDNT | 🟡 46/100 Medium Risk | 2026-10-08 | [↗](https://quantumaudit.app/token/radiant-bsc) |
+| [Radiant](./radiant.md) | RDNT | 🟢 11/100 Low Risk | 2026-10-08 | [↗](https://quantumaudit.app/token/radiant-bsc) |
 | [ZEUS](./zeus.md) | ZEUS | 🟡 63/100 Medium Risk | 2026-10-08 | [↗](https://quantumaudit.app/token/zeus-bsc) |
 | [79AU](./79au.md) | 79AU | 🟡 64/100 Medium Risk | 2026-10-08 | [↗](https://quantumaudit.app/token/79au-bsc) |
 | [Marina Protocol](./marina-protocol.md) | BAY | 🟢 32/100 Low Risk | 2026-10-08 | [↗](https://quantumaudit.app/token/marina-protocol-bsc) |

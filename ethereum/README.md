@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**472 reports** · Updated daily · [← All Networks](../README.md)
+**473 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,8 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Elon 2028](./elon-2028.md) | ELON2028 | 🟡 41/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/elon-2028-eth) |
 | [NeuralAI](./neuralai.md) | NEURAL | 🟠 72/100 High Risk | 2026-09-13 | [↗](https://quantumaudit.app/token/neuralai-eth) |
-| [PancakeSwap](./pancakeswap.md) | CAKE | 🟡 45/100 Medium Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/pancakeswap-eth) |
+| [PancakeSwap](./pancakeswap.md) | CAKE | 🟢 10/100 Low Risk | 2026-08-20 | [↗](https://quantumaudit.app/token/pancakeswap-eth) |
 | [Quant](./quant.md) | QNT | 🟡 43/100 Medium Risk | 2026-09-01 | [↗](https://quantumaudit.app/token/quant-eth) |
 | [GinnanCoin](./ginnancoin.md) | GINNAN | 🟢 0/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/ginnancoin-eth) |
 | [Ginnan](./ginnan.md) | GINNAN | 🟡 41/100 Medium Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/ginnan-eth) |

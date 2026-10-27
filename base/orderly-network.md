@@ -79,7 +79,7 @@ The ten largest holders own 80.1% of supply. What remains: 11.3% in wallets, 68.
 
 ### `QA-IDENTITY` — Listed, but not independently verified  *(Severity: Informational · Status: Acknowledged)*
 
-Listed on CoinGecko as Orderly (ORDER), market cap $14M, rank #1004. 4,880 holders.
+Listed on CoinGecko as Orderly (ORDER), market cap $16M, rank #927. 4,880 holders.
 
 **Recommendation:** Match the contract address against the project's official channels before trading.
 
@@ -91,11 +91,11 @@ Liquidity $173K (DexScreener, all pools). 24h trading volume $3.6M (CoinGecko, a
 **Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
 
 
-### `QA-PROFILE` — Asset class: Project token  *(Severity: Informational · Status: Acknowledged)*
+### `QA-PROFILE` — Asset class: Wrapped or bridged asset  *(Severity: Informational · Status: Acknowledged)*
 
-A token issued by a project for use, governance or fundraising. Scored on its contract and market facts. The class itself adds no points; the contract and market facts decide the score. Basis: no class-specific evidence. Tokenomics — Supply: fixed — the contract has no mint function. Control: a 2-of-3 multisig. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $173K of DEX liquidity across 8 pools. Launch: 396 days of market history.
+A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. The class itself adds no points; the contract and market facts decide the score. Basis: a copy of the coin from its home chain (ethereum), minted here by LayerZero (lzReceive). Tokenomics — Supply: fixed — the contract has no mint function. Control: a 2-of-3 multisig. Code: upgradeable proxy. Fees: no buy or sell tax. Market: $173K of DEX liquidity across 8 pools. Launch: 396 days of market history.
 
-**Recommendation:** Check the project's own documentation for what the token is used for; this report covers what the contract allows.
+**Recommendation:** The backing is the risk: check who holds the underlying asset and how redemption works.
 
 ## Token Metrics
 

@@ -2,14 +2,14 @@
 token: PUFFER
 ticker: PUFFER
 network: bsc
-risk_score: 34
+risk_score: 18
 status: low
 date: 2026-10-16
 ---
 
 # PUFFER (PUFFER) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 34/100 — 🟢 Low Risk**
+> **Risk Score: 18/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/puffer-bsc)
 
@@ -25,9 +25,9 @@ The PUFFER contract is an ERC-20 token implementing LayerZero's OFT standard, en
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The PUFFER contract is an ERC-20 token that integrates LayerZero's Omnichain Fungible Token (OFT) functionality, allowing for seamless cross-chain transfers. The contract correctly implements… |
-| **Governance / Economics** | 1/10 | High | The contract utilizes an `Ownable` pattern, with ownership retained by a multisig wallet, enhancing security for critical administrative functions (7.3 Access Control). The owner can manage various… |
-| **Upgrades** | 3/10 | High | The PUFFER contract is not designed as an upgradeable proxy, meaning its logic cannot be altered post-deployment (7.7 Upgrades). This eliminates risks associated with upgradeability patterns, such as… |
+| **Technical** | 10/10 | Low | The PUFFER contract is an ERC-20 token that integrates LayerZero's Omnichain Fungible Token (OFT) functionality, allowing for seamless cross-chain transfers. The contract correctly implements… |
+| **Governance / Economics** | 9/10 | Low | The contract utilizes an `Ownable` pattern, with ownership retained by a multisig wallet, enhancing security for critical administrative functions (7.3 Access Control). The owner can manage various… |
+| **Upgrades** | 10/10 | Low | The PUFFER contract is not designed as an upgradeable proxy, meaning its logic cannot be altered post-deployment (7.7 Upgrades). This eliminates risks associated with upgradeability patterns, such as… |
 
 ## LP Distribution
 
@@ -38,20 +38,13 @@ The PUFFER contract is an ERC-20 token implementing LayerZero's OFT standard, en
 
 ## Security Findings
 
-_🟡 2 Medium · ⚪ 4 Informational_
+_⚪ 5 Informational_
 
-### `CP-01` — Privileged Address Can Mint New Tokens  *(Severity: Medium · Status: Unresolved)*
+### `CP-01` — Privileged Address Can Mint New Tokens  *(Severity: Informational · Status: Unresolved)*
 
 The contract allows a specific privileged address, identified as the LayerZero endpoint, to create new PUFFER tokens. This capability is exposed through the `send`, `lzReceiveSimulate`, and `lzReceive` functions. If this endpoint address were compromised or misused, an attacker could mint an arbitrary amount of new tokens, significantly increasing the total supply and diluting the value of existing token holders.
 
 **Recommendation:** Token holders should be aware that the LayerZero endpoint has the power to mint new tokens. It is crucial for the protocol team to ensure this endpoint address is extremely secure and that its operations are transparent. Consider implementing safeguards such as a hard cap on the total supply, a maximum minting limit per transaction, or requiring a governance vote for any minting operations to protect against potential dilution.
-
-
-### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
-
-0.0% of the pool's LP is burned or time-locked. 100.0% is held, unlocked, by 2 address(es) other than the owner/deployer. One of them — a contract, 0xbb9c…6046 — holds 98.5% and can remove that share at once; who controls it is not visible on-chain, so it is not treated as an independent provider. Some pools are concentrated-liquidity (V3/V4) positions; shares above are by position as GoPlus reports them. This assessment covers the main pool, which holds 95% of the token's DEX liquidity; the other pools were not assessed.
-
-**Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
 
 
 ### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
@@ -63,7 +56,7 @@ The holder list from the security indexer adds up to 100.6% of supply, so it doe
 
 ### `QA-IDENTITY` — Identity verified by independent sources  *(Severity: Informational · Status: Acknowledged)*
 
-Listed on CoinGecko as Puffer (PUFFER), market cap $27M, rank #704. 13,012 holders. Verified by: CoinGecko.
+Listed on CoinGecko as Puffer (PUFFER), market cap $16M, rank #928. 13,012 holders. Verified by: CoinGecko.
 
 **Recommendation:** Match the contract address against the project's official channels before trading.
 
@@ -75,11 +68,11 @@ Liquidity $623K (DexScreener, all pools). 24h trading volume $70.2M (CoinGecko, 
 **Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
 
 
-### `QA-PROFILE` — Asset class: Governance token  *(Severity: Informational · Status: Acknowledged)*
+### `QA-PROFILE` — Asset class: Wrapped or bridged asset  *(Severity: Informational · Status: Acknowledged)*
 
-A token whose main use is voting on a protocol's decisions (delegation and vote checkpoints in its code). The class itself adds no points; the contract and market facts decide the score. Basis: CoinGecko category: Liquid Restaking Governance Tokens. Tokenomics — Supply: mintable with no on-chain cap found. Control: a 3-of-6 multisig. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $623K of DEX liquidity across 8 pools. Launch: 523 days of market history.
+A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Liquid Restaking Governance Tokens; a copy of the coin from its home chain (ethereum), minted here by LayerZero (lzReceive). Tokenomics — Supply: mintable with no on-chain cap found. Control: a 3-of-6 multisig. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $623K of DEX liquidity across 8 pools. Launch: 523 days of market history.
 
-**Recommendation:** Check how much of the voting supply insiders hold and what governance can change.
+**Recommendation:** The backing is the risk: check who holds the underlying asset and how redemption works.
 
 ## Token Metrics
 

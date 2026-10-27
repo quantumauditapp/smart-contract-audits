@@ -2,14 +2,14 @@
 token: PancakeSwap
 ticker: CAKE
 network: ethereum
-risk_score: 45
-status: medium
+risk_score: 10
+status: low
 date: 2026-08-20
 ---
 
 # PancakeSwap (CAKE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 45/100 — 🟡 Medium Risk**
+> **Risk Score: 10/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/pancakeswap-eth)
 
@@ -25,9 +25,9 @@ The CakeOFT contract implements an Omnichain Fungible Token (OFT) standard, allo
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract utilizes established LayerZero OFT libraries for cross-chain messaging. 7.1 Architecture is modular, separating core logic from cross-chain transport. 7.2 Code Security is robust… |
-| **Governance / Economics** | 3/10 | High | 7.4 Economic and 7.5 Governance are heavily centralized under the contract owner. The owner can modify fee structures via setFeeBp and setOutboundCap, directly impacting user costs and liquidity… |
-| **Upgrades** | 4/10 | Medium | 7.7 Upgrades are not implemented via proxy patterns in this contract. The contract is immutable in its logic, which prevents unauthorized code changes. 7.8 Operations are managed through… |
+| **Technical** | 10/10 | Low | The contract utilizes established LayerZero OFT libraries for cross-chain messaging. 7.1 Architecture is modular, separating core logic from cross-chain transport. 7.2 Code Security is robust… |
+| **Governance / Economics** | 9/10 | Low | 7.4 Economic and 7.5 Governance are heavily centralized under the contract owner. The owner can modify fee structures via setFeeBp and setOutboundCap, directly impacting user costs and liquidity… |
+| **Upgrades** | 10/10 | Low | 7.7 Upgrades are not implemented via proxy patterns in this contract. The contract is immutable in its logic, which prevents unauthorized code changes. 7.8 Operations are managed through… |
 
 ## LP Distribution
 
@@ -38,25 +38,18 @@ The CakeOFT contract implements an Omnichain Fungible Token (OFT) standard, allo
 
 ## Security Findings
 
-_🟡 2 Medium · ⚪ 4 Informational_
+_⚪ 5 Informational_
 
-### `CP-01` — Privileged Minting Capability  *(Severity: Medium · Status: Unresolved)*
+### `CP-01` — Privileged Minting Capability  *(Severity: Informational · Status: Unresolved)*
 
 The sendAndCall function allows a privileged address to mint new tokens. This action increases the total supply of the token, which directly dilutes the value of existing holdings for all token holders.
 
 **Recommendation:** Restrict the minting capability to a specific, audited bridge contract or remove the minting functionality entirely if it is not required for the intended cross-chain operations.
 
 
-### `QA-LIQUIDITY` — Liquidity not locked  *(Severity: Medium · Status: Acknowledged)*
-
-0.0% of the pool's LP is burned or time-locked. 100.0% is held, unlocked, by 2 address(es) other than the owner/deployer. One of them — a wallet, 0x3374…6898 — holds 91.7% and can remove that share at once; who controls it is not visible on-chain, so it is not treated as an independent provider. Some pools are concentrated-liquidity (V3/V4) positions; shares above are by position as GoPlus reports them. This assessment covers the main pool, which holds 65% of the token's DEX liquidity; the other pools were not assessed.
-
-**Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
-
-
 ### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-The ten largest holders own 59.2% of supply. What remains: 59.2% in wallets, 0.0% in other contracts. 21,312 holders in total.
+The ten largest holders own 59.2% of supply. What remains: 59.2% in wallets, 0.0% in other contracts. 21,312 holders in total. For a verified reference asset the largest holders are custodians, exchanges and bridges; concentration is reported, not scored.
 
 **Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
 
@@ -75,11 +68,11 @@ Liquidity $230K (DexScreener, all pools). 24h trading volume $51.1M (CoinGecko, 
 **Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
 
 
-### `QA-PROFILE` — Asset class: Governance token  *(Severity: Informational · Status: Acknowledged)*
+### `QA-PROFILE` — Asset class: Wrapped or bridged asset  *(Severity: Informational · Status: Acknowledged)*
 
-A token whose main use is voting on a protocol's decisions (delegation and vote checkpoints in its code). The class itself adds no points; the contract and market facts decide the score. Basis: CoinGecko category: Governance. Tokenomics — Supply: mintable with no on-chain cap found. Control: a ProxyAdmin contract. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $230K of DEX liquidity across 10 pools. Launch: 1304 days of market history.
+A token representing another asset's units 1:1, backed by a wrapping contract, a custodian or a bridge. Scored as an established reference asset: its identity is verified, so the issuer's or protocol's controls (listed as findings) are real and are priced once as counterparty risk, and LP locks and holder concentration are not scored — its pools belong to market makers and its largest holders are exchanges, bridges and custody. Basis: CoinGecko category: Governance; a copy of the coin from its home chain (binance-smart-chain), minted here by LayerZero (lzReceive). Tokenomics — Supply: mintable with no on-chain cap found. Control: a ProxyAdmin contract. Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $230K of DEX liquidity across 10 pools. Launch: 1304 days of market history.
 
-**Recommendation:** Check how much of the voting supply insiders hold and what governance can change.
+**Recommendation:** The backing is the risk: check who holds the underlying asset and how redemption works.
 
 ## Token Metrics
 
