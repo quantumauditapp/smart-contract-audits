@@ -99,11 +99,11 @@ The `decimals()` function is hardcoded to return `18`. While 18 decimals is a co
 
 ### Is VANRY a scam?
 
-Based on automated analysis, VANRY scores 63/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, VANRY scores 41/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is VANRY safe to buy?
 
-Our scanner flagged a risk score of 63/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 41/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has VANRY been audited?
 

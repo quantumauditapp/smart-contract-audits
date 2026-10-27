@@ -2,14 +2,14 @@
 token: uncle stonk
 ticker: UNCLE
 network: solana
-risk_score: 29
+risk_score: 12
 status: low
 date: 2026-09-14
 ---
 
 # uncle stonk (UNCLE) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 29/100 — 🟢 Low Risk**
+> **Risk Score: 12/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/uncle-stonk-sol)
 
@@ -26,8 +26,8 @@ The uncle stonk (uncle) SPL Token Mint audit reveals a generally secure configur
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program, indicating modern Solana token standards. Key security features are well-configured: the mint authority is revoked, preventing further token… |
-| **Governance / Economics** | 2/10 | High | Economically, the token exhibits a very new market presence, with its DEX pair created just 0 days ago. Current liquidity stands at $49,663, with a 24-hour trading volume of $431,313, resulting in a… |
-| **Upgrades** | 8/10 | Low | The token's core authorities, including mint and freeze, have been permanently revoked, ensuring immutability of these critical parameters. The token does not have upgradable transfer fees or… |
+| **Governance / Economics** | 5/10 | Medium | Economically, the token exhibits a very new market presence, with its DEX pair created just 0 days ago. Current liquidity stands at $49,663, with a 24-hour trading volume of $431,313, resulting in a… |
+| **Upgrades** | 10/10 | Low | The token's core authorities, including mint and freeze, have been permanently revoked, ensuring immutability of these critical parameters. The token does not have upgradable transfer fees or… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 9109 buys / 8594 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ The DEX pair was created 0 days ago. Insufficient track record to assess team or
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

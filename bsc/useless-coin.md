@@ -2,14 +2,14 @@
 token: USELESS COIN
 ticker: USELESS
 network: bsc
-risk_score: 49
-status: medium
+risk_score: 34
+status: low
 date: 2026-09-04
 ---
 
 # USELESS COIN (USELESS) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 49/100 — 🟡 Medium Risk**
+> **Risk Score: 34/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/useless-coin-bsc)
 
@@ -25,8 +25,8 @@ The BurnMintERC20 token contract implements a standard ERC20 token with addition
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract leverages battle-tested OpenZeppelin libraries for ERC20, burning, and access control, enhancing code security (7.2). It implements robust checks to prevent tokens from being sent to or… |
-| **Governance / Economics** | 5/10 | Medium | The token's economic model benefits from an immutable `maxSupply` (7.4), preventing uncontrolled inflation beyond a set limit. However, the `DEFAULT_ADMIN_ROLE` holds significant power, including the… |
+| **Technical** | 8/10 | Low | The contract leverages battle-tested OpenZeppelin libraries for ERC20, burning, and access control, enhancing code security (7.2). It implements robust checks to prevent tokens from being sent to or… |
+| **Governance / Economics** | 6/10 | Medium | The token's economic model benefits from an immutable `maxSupply` (7.4), preventing uncontrolled inflation beyond a set limit. However, the `DEFAULT_ADMIN_ROLE` holds significant power, including the… |
 | **Upgrades** | 6/10 | Medium | The contract is not designed to be upgradeable (7.7), which eliminates risks associated with proxy patterns and upgradeability mechanisms. This simplifies the architecture and reduces the attack… |
 
 ## LP Distribution
@@ -38,32 +38,32 @@ The BurnMintERC20 token contract implements a standard ERC20 token with addition
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control of Token Supply (Mint/Burn Roles)  *(Severity: High · Status: Unresolved)*
-
-The `DEFAULT_ADMIN_ROLE` has the sole authority to grant `MINTER_ROLE` and `BURNER_ROLE`. Holders of these roles can mint new tokens (up to `i_maxSupply`) or burn existing tokens. If the `DEFAULT_ADMIN_ROLE` is compromised or misused, it could lead to arbitrary manipulation of the token supply, directly impacting the token's value and the economic stability of the protocol (7.3, 7.4, 7.5).
-
-**Recommendation:** Implement a robust, decentralized, or multi-signature governance mechanism for the `DEFAULT_ADMIN_ROLE`. Consider a timelock for critical operations like granting `MINTER_ROLE` or `BURNER_ROLE` to provide a window for community review and intervention. Ensure that the addresses holding `MINTER_ROLE` and `BURNER_ROLE` are also secured by strong access control policies.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Undefined External Dependency for `s_ccipAdmin` Role  *(Severity: Medium · Status: Unresolved)*
 
-The contract defines an `s_ccipAdmin` state variable and an interface `IGetCCIPAdmin` to expose it, with the `DEFAULT_ADMIN_ROLE` able to set this address. However, the specific functionality and security implications of this `s_ccipAdmin` role are not defined within this contract and depend entirely on external CCIP systems (7.6). Misconfiguration or vulnerabilities in these external systems could indirectly affect the protocol's security or operations.
+Not confirmed by static analysis (the model's own reading of the source). The contract defines an `s_ccipAdmin` state variable and an interface `IGetCCIPAdmin` to expose it, with the `DEFAULT_ADMIN_ROLE` able to set this address. However, the specific functionality and security implications of this `s_ccipAdmin` role are not defined within this contract and depend entirely on external CCIP systems (7.6). Misconfiguration or vulnerabilities in these external systems could indirectly affect the protocol's security or operations.
 
 **Recommendation:** Provide comprehensive documentation detailing the intended use, responsibilities, and security model of the `s_ccipAdmin` role and its interaction with external CCIP systems. Conduct a thorough security review of any external contracts or protocols that rely on this `getCCIPAdmin` function to understand the full attack surface.
 
 
+### `M-02` — Centralized Control of Token Supply (Mint/Burn Roles)  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `DEFAULT_ADMIN_ROLE` has the sole authority to grant `MINTER_ROLE` and `BURNER_ROLE`. Holders of these roles can mint new tokens (up to `i_maxSupply`) or burn existing tokens. If the `DEFAULT_ADMIN_ROLE` is compromised or misused, it could lead to arbitrary manipulation of the token supply, directly impacting the token's value and the economic stability of the protocol (7.3, 7.4, 7.5).
+
+**Recommendation:** Implement a robust, decentralized, or multi-signature governance mechanism for the `DEFAULT_ADMIN_ROLE`. Consider a timelock for critical operations like granting `MINTER_ROLE` or `BURNER_ROLE` to provide a window for community review and intervention. Ensure that the addresses holding `MINTER_ROLE` and `BURNER_ROLE` are also secured by strong access control policies.
+
+
 ### `L-01` — Initial Centralization of `DEFAULT_ADMIN_ROLE`  *(Severity: Low · Status: Unresolved)*
 
-The constructor assigns the `DEFAULT_ADMIN_ROLE` to `msg.sender` (the deployer). While common, this means that immediately after deployment, a single external owned account (EOA) holds complete administrative control over the contract (7.3, 7.8). If this EOA's private key is compromised before the role is transferred, the entire access control system could be subverted.
+Not confirmed by static analysis (the model's own reading of the source). The constructor assigns the `DEFAULT_ADMIN_ROLE` to `msg.sender` (the deployer). While common, this means that immediately after deployment, a single external owned account (EOA) holds complete administrative control over the contract (7.3, 7.8). If this EOA's private key is compromised before the role is transferred, the entire access control system could be subverted.
 
 **Recommendation:** It is a best practice to transfer the `DEFAULT_ADMIN_ROLE` to a secure, multi-signature wallet or a robust governance contract immediately after deployment. This reduces the single point of failure risk associated with a single EOA.
 
 
 ### `I-01` — Prevention of Self-Transfers/Approvals  *(Severity: Informational · Status: Resolved)*
 
-The `_transfer` and `_approve` functions explicitly revert if the recipient or spender is `address(this)`. This is a good security practice (7.2) that prevents tokens from being accidentally or maliciously sent to or approved by the contract itself, which could lead to tokens becoming unrecoverable or misused within the contract's balance.
+Not confirmed by static analysis (the model's own reading of the source). The `_transfer` and `_approve` functions explicitly revert if the recipient or spender is `address(this)`. This is a good security practice (7.2) that prevents tokens from being accidentally or maliciously sent to or approved by the contract itself, which could lead to tokens becoming unrecoverable or misused within the contract's balance.
 
 **Recommendation:** No action required. This is a positive security measure.
 

@@ -2,14 +2,14 @@
 token: Tutorial
 ticker: TUT
 network: bsc
-risk_score: 32
+risk_score: 10
 status: low
 date: 2026-08-11
 ---
 
 # Tutorial (TUT) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 32/100 — 🟢 Low Risk**
+> **Risk Score: 10/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tutorial-bsc)
 
@@ -25,8 +25,8 @@ The audit of the Token contract, an ERC20-compliant token with custom transfer r
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 9/10 | Low | The contract utilizes standard OpenZeppelin patterns for ERC20 and Ownable functionalities, demonstrating good code quality (7.2 Code Security). `unchecked` blocks are used appropriately, safeguarded… |
-| **Governance / Economics** | 4/10 | Medium | The token's economic utility is heavily dependent on the owner's actions due to its initial `MODE_TRANSFER_RESTRICTED` state (7.4 Economic, 7.8 Operations). The `setMode` function allows the owner to… |
+| **Technical** | 10/10 | Low | The contract utilizes standard OpenZeppelin patterns for ERC20 and Ownable functionalities, demonstrating good code quality (7.2 Code Security). `unchecked` blocks are used appropriately, safeguarded… |
+| **Governance / Economics** | 5/10 | Medium | The token's economic utility is heavily dependent on the owner's actions due to its initial `MODE_TRANSFER_RESTRICTED` state (7.4 Economic, 7.8 Operations). The `setMode` function allows the owner to… |
 | **Upgrades** | 10/10 | Low | The contract is implemented as a standard, non-upgradeable contract (7.7 Upgrades). There are no proxy patterns or upgrade mechanisms present, meaning its logic cannot be altered after deployment.… |
 
 ## LP Distribution
@@ -40,39 +40,39 @@ The audit of the Token contract, an ERC20-compliant token with custom transfer r
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Irreversible Transition to MODE_NORMAL  *(Severity: High · Status: Unresolved)*
-
-The `setMode` function includes a condition `if (_mode != MODE_NORMAL)` which means that once the token's transfer mode is set to `MODE_NORMAL`, it can never be reverted to `MODE_TRANSFER_RESTRICTED` or `MODE_TRANSFER_CONTROLLED`. This makes the transition to fully unrestricted transfers irreversible, limiting future flexibility for the project to re-introduce transfer controls if needed.
-
-**Recommendation:** Confirm if this irreversible transition is the intended design. If flexibility to re-impose restrictions is desired, remove the `if (_mode != MODE_NORMAL)` condition. If it is intended, ensure this critical design decision is clearly documented and communicated to all users and stakeholders.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Critical Owner Role for Token Utility  *(Severity: Medium · Status: Unresolved)*
 
-The `Token` contract initializes with `_mode = MODE_TRANSFER_RESTRICTED`, meaning no transfers are possible until the owner explicitly calls `setMode` to change it. This places a critical dependency on the owner to perform an operational step to enable the token's basic utility, creating a single point of failure if the owner key is compromised or lost.
+Not confirmed by static analysis (the model's own reading of the source). The `Token` contract initializes with `_mode = MODE_TRANSFER_RESTRICTED`, meaning no transfers are possible until the owner explicitly calls `setMode` to change it. This places a critical dependency on the owner to perform an operational step to enable the token's basic utility, creating a single point of failure if the owner key is compromised or lost.
 
 **Recommendation:** Ensure robust key management practices for the owner address, such as using a multi-signature wallet. Clearly document the operational steps required to activate token transfers and the associated risks if these steps are not performed or the owner key is compromised.
 
 
 ### `M-02` — Risk of Permanent Transfer Restriction upon Ownership Renouncement  *(Severity: Medium · Status: Unresolved)*
 
-The `Ownable` contract allows the owner to `renounceOwnership()`. If ownership is renounced while `_mode` is `MODE_TRANSFER_RESTRICTED` or `MODE_TRANSFER_CONTROLLED`, and `_mode` has not been set to `MODE_NORMAL`, the token's transferability could become permanently locked or restricted as there would be no owner to call `setMode`.
+Not confirmed by static analysis (the model's own reading of the source). The `Ownable` contract allows the owner to `renounceOwnership()`. If ownership is renounced while `_mode` is `MODE_TRANSFER_RESTRICTED` or `MODE_TRANSFER_CONTROLLED`, and `_mode` has not been set to `MODE_NORMAL`, the token's transferability could become permanently locked or restricted as there would be no owner to call `setMode`.
 
 **Recommendation:** The owner should ensure the `_mode` is set to the desired final state (e.g., `MODE_NORMAL`) *before* considering renouncing ownership. If renouncing ownership is planned, this operational sequence is critical to prevent unintended permanent restrictions.
 
 
+### `M-03` — Irreversible Transition to MODE_NORMAL  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `setMode` function includes a condition `if (_mode != MODE_NORMAL)` which means that once the token's transfer mode is set to `MODE_NORMAL`, it can never be reverted to `MODE_TRANSFER_RESTRICTED` or `MODE_TRANSFER_CONTROLLED`. This makes the transition to fully unrestricted transfers irreversible, limiting future flexibility for the project to re-introduce transfer controls if needed.
+
+**Recommendation:** Confirm if this irreversible transition is the intended design. If flexibility to re-impose restrictions is desired, remove the `if (_mode != MODE_NORMAL)` condition. If it is intended, ensure this critical design decision is clearly documented and communicated to all users and stakeholders.
+
+
 ### `L-01` — Centralized Control in MODE_TRANSFER_CONTROLLED  *(Severity: Low · Status: Unresolved)*
 
-When `_mode` is set to `MODE_TRANSFER_CONTROLLED`, only transfers where the `from` or `to` address is the contract owner are permitted. This effectively centralizes all token movement through the owner, which might not align with user expectations for a decentralized token and could be perceived as a high degree of control.
+Not confirmed by static analysis (the model's own reading of the source). When `_mode` is set to `MODE_TRANSFER_CONTROLLED`, only transfers where the `from` or `to` address is the contract owner are permitted. This effectively centralizes all token movement through the owner, which might not align with user expectations for a decentralized token and could be perceived as a high degree of control.
 
 **Recommendation:** Clearly communicate the implications of `MODE_TRANSFER_CONTROLLED` to token holders, emphasizing the owner's centralized role in facilitating transfers during this phase. Ensure transparency regarding the project's intent for this mode.
 
 
 ### `I-01` — Fixed Supply Token  *(Severity: Informational · Status: Unresolved)*
 
-The `_mint` and `_burn` functions are internal and only `_mint` is called once in the constructor. There are no public functions to mint or burn tokens after deployment, meaning the total supply is fixed at the amount specified during construction.
+Not confirmed by static analysis (the model's own reading of the source). The `_mint` and `_burn` functions are internal and only `_mint` is called once in the constructor. There are no public functions to mint or burn tokens after deployment, meaning the total supply is fixed at the amount specified during construction.
 
 **Recommendation:** Document that the token has a fixed supply and no further minting or burning is possible after deployment. This clarifies the tokenomics for potential holders and investors.
 

@@ -42,28 +42,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Potential Centralization of Supply Control (if extended)  *(Severity: Low · Status: Unresolved)*
 
-As a base ERC-20 contract, `FourERC20` does not expose minting or burning. However, if a derived contract were to implement public `mint` and `burn` functions, these would typically be controlled by a single `owner` or `minter` address. This centralization of control over the token supply could pose a risk if the controlling address is compromised or acts maliciously, allowing arbitrary minting or burning.
+Not confirmed by static analysis (the model's own reading of the source). As a base ERC-20 contract, `FourERC20` does not expose minting or burning. However, if a derived contract were to implement public `mint` and `burn` functions, these would typically be controlled by a single `owner` or `minter` address. This centralization of control over the token supply could pose a risk if the controlling address is compromised or acts maliciously, allowing arbitrary minting or burning.
 
 **Recommendation:** If a derived contract introduces minting/burning, consider implementing a multi-signature wallet for the controlling address or a time-locked mechanism for significant supply changes to reduce the risk of a single point of failure and enhance transparency.
 
 
 ### `L-02` — Standard ERC-20 `approve` Race Condition  *(Severity: Low · Status: Unresolved)*
 
-The `approve` function, while standard for ERC-20, is susceptible to a known front-running vulnerability. If a user approves an amount `X` for a spender, and then decides to change it to `Y` by sending another `approve(spender, Y)` transaction, a malicious spender could front-run the second transaction. The spender could spend `X` tokens after the first `approve` but before the second `approve` is mined, then the second `approve` would set the allowance to `Y`, allowing the spender to potentially spend `X + Y` tokens if `Y` is also a significant amount.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function, while standard for ERC-20, is susceptible to a known front-running vulnerability. If a user approves an amount `X` for a spender, and then decides to change it to `Y` by sending another `approve(spender, Y)` transaction, a malicious spender could front-run the second transaction. The spender could spend `X` tokens after the first `approve` but before the second `approve` is mined, then the second `approve` would set the allowance to `Y`, allowing the spender to potentially spend `X + Y` tokens if `Y` is also a significant amount.
 
 **Recommendation:** Users should be advised to use `increaseAllowance` and `decreaseAllowance` functions when modifying allowances, as these functions are designed to mitigate this specific race condition. If `approve` must be used, users should first set the allowance to zero and wait for that transaction to confirm before setting a new allowance.
 
 
 ### `I-01` — Incomplete Token Functionality (No Public Mint/Burn)  *(Severity: Informational · Status: Unresolved)*
 
-The `FourERC20` contract provides internal `_mint` and `_burn` functions but does not expose any public methods to call them. This means the token's `_totalSupply` will remain zero and no tokens can be created or destroyed unless a derived contract implements a public minting mechanism. This is a design choice, not a vulnerability, but it's crucial for functionality.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract provides internal `_mint` and `_burn` functions but does not expose any public methods to call them. This means the token's `_totalSupply` will remain zero and no tokens can be created or destroyed unless a derived contract implements a public minting mechanism. This is a design choice, not a vulnerability, but it's crucial for functionality.
 
 **Recommendation:** If the intention is for this contract to be a standalone, functional token with a supply, a derived contract must be deployed that exposes minting and/or burning capabilities, typically with appropriate access control. If it's intended purely as a base for other contracts, this design is acceptable.
 
 
 ### `I-02` — `_init` Function Design for Non-Proxy Context  *(Severity: Informational · Status: Unresolved)*
 
-The `_init` function is an internal function designed to set the token's name and symbol. While this is standard for OpenZeppelin's `ERC20` base, its internal nature means it must be called from a constructor of a derived contract. If this contract were ever to be used as an implementation for an upgradeable proxy, the `_init` function would need to be renamed to `initialize` and include an `initializer` modifier to prevent multiple calls.
+Not confirmed by static analysis (the model's own reading of the source). The `_init` function is an internal function designed to set the token's name and symbol. While this is standard for OpenZeppelin's `ERC20` base, its internal nature means it must be called from a constructor of a derived contract. If this contract were ever to be used as an implementation for an upgradeable proxy, the `_init` function would need to be renamed to `initialize` and include an `initializer` modifier to prevent multiple calls.
 
 **Recommendation:** Given that the contract is not a proxy (`is_proxy: false`), this is not a direct vulnerability. However, if future plans involve upgradeability, ensure proper initialization patterns (e.g., `initialize` function with `initializer` modifier) are adopted to prevent re-initialization attacks.
 

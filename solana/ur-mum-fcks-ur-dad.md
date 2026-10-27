@@ -2,14 +2,14 @@
 token: Ur Mum F*cks Ur Dad
 ticker: UMFUD
 network: solana
-risk_score: 35
-status: medium
+risk_score: 26
+status: low
 date: 2026-09-22
 ---
 
 # Ur Mum F*cks Ur Dad (UMFUD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 35/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ur-mum-fcks-ur-dad-sol)
 
@@ -25,9 +25,9 @@ This Solana SPL Token-2022 mint, 'Ur Mum F*cks Ur Dad (UMFUD)', presents a Mediu
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is implemented using the spl-token-2022 program, indicating modern SPL features. Both the Mint Authority and Freeze Authority have been revoked, preventing further token issuance or account… |
-| **Governance / Economics** | 2/10 | High | The token's DEX pair is very new, having been created 0 days ago, which limits the track record for assessing market behavior. Current liquidity stands at $11,500, with a 24-hour volume of $31,972… |
-| **Upgrades** | 6/10 | Medium | The mint authority and freeze authority are both revoked, ensuring no further tokens can be minted and no accounts can be frozen by an external party. While the transfer hook is not present and not… |
+| **Technical** | 10/10 | Low | The token is implemented using the spl-token-2022 program, indicating modern SPL features. Both the Mint Authority and Freeze Authority have been revoked, preventing further token issuance or account… |
+| **Governance / Economics** | 3/10 | High | The token's DEX pair is very new, having been created 0 days ago, which limits the track record for assessing market behavior. Current liquidity stands at $11,500, with a 24-hour volume of $31,972… |
+| **Upgrades** | 7/10 | Low | The mint authority and freeze authority are both revoked, ensuring no further tokens can be minted and no accounts can be frozen by an external party. While the transfer hook is not present and not… |
 
 ## Token-2022 Extensions
 
@@ -73,7 +73,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -82,7 +82,7 @@ Token name, symbol, or image can be changed post-launch.
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

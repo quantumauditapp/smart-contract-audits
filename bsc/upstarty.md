@@ -2,14 +2,14 @@
 token: Upstarty
 ticker: UPY
 network: bsc
-risk_score: 66
-status: high
+risk_score: 51
+status: medium
 date: 2026-08-11
 ---
 
 # Upstarty (UPY) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 66/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/upstarty-bsc)
 
@@ -25,9 +25,9 @@ The Upstarty token contract implements a standard ERC20 token with burnable and 
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract implements a standard ERC20 token with burnable and pausable features, largely following OpenZeppelin patterns. It utilizes custom error types for improved clarity and gas efficiency.… |
-| **Governance / Economics** | 1/10 | High | The `Pausable` functionality provides an emergency stop mechanism, which can be beneficial for mitigating certain attack vectors or operational issues (7.8 Operations). However, this introduces a… |
-| **Upgrades** | 6/10 | Medium | The provided code does not include any proxy or upgradeability patterns (7.7 Upgrades). It is a standard, non-upgradeable contract implementation. Therefore, there are no inherent upgrade safety… |
+| **Technical** | 8/10 | Low | The contract implements a standard ERC20 token with burnable and pausable features, largely following OpenZeppelin patterns. It utilizes custom error types for improved clarity and gas efficiency.… |
+| **Governance / Economics** | 2/10 | High | The `Pausable` functionality provides an emergency stop mechanism, which can be beneficial for mitigating certain attack vectors or operational issues (7.8 Operations). However, this introduces a… |
+| **Upgrades** | 8/10 | Low | The provided code does not include any proxy or upgradeability patterns (7.7 Upgrades). It is a standard, non-upgradeable contract implementation. Therefore, there are no inherent upgrade safety… |
 
 ## LP Distribution
 
@@ -38,32 +38,32 @@ The Upstarty token contract implements a standard ERC20 token with burnable and 
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · ⚪ 2 Informational_
-
-### `H-01` — Missing Access Control for Pausable Functions  *(Severity: High · Status: Unresolved)*
-
-The `Pausable` abstract contract defines `_pause()` and `_unpause()` as `internal virtual` functions without any inherent access control. While this design allows inheriting contracts to implement their own access control, it creates a high-risk vulnerability if the inheriting contract exposes these functions publicly (e.g., via a `pause()` or `unpause()` external function) without proper authorization checks. An attacker could then halt all token transfers, severely impacting the token's utility and user trust. This is a critical design consideration for any contract inheriting `Pausable` (7.3 Access Control).
-
-**Recommendation:** The inheriting contract (e.g., 'Upstarty') must implement robust access control for any public or external functions that call `_pause()` and `_unpause()`. It is highly recommended to use a battle-tested access control mechanism such as OpenZeppelin's `Ownable` or `AccessControl` to restrict these functions to authorized addresses only.
-
+_🟡 2 Medium · ⚪ 2 Informational_
 
 ### `M-01` — Centralization Risk of Pausable Functionality  *(Severity: Medium · Status: Unresolved)*
 
-The `Pausable` contract allows for the complete halting of all token transfers and related operations. While this feature can be valuable for emergency situations (e.g., mitigating a severe vulnerability), it introduces a significant centralization risk. The entity or address that controls the `_pause()` and `_unpause()` functions holds considerable power over the token's functionality, potentially leading to censorship, manipulation, or single point of failure (7.4 Economic, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The `Pausable` contract allows for the complete halting of all token transfers and related operations. While this feature can be valuable for emergency situations (e.g., mitigating a severe vulnerability), it introduces a significant centralization risk. The entity or address that controls the `_pause()` and `_unpause()` functions holds considerable power over the token's functionality, potentially leading to censorship, manipulation, or single point of failure (7.4 Economic, 7.5 Governance).
 
 **Recommendation:** Carefully consider the implications of centralized control over the `Pausable` functionality. If the project aims for decentralization, explore options such as multi-signature wallets for controlling the pause mechanism, or integrate it into a broader governance system where decisions are made by token holders or a decentralized autonomous organization (DAO). Clearly document the conditions under which pausing may occur and the process for unpausing.
 
 
+### `M-02` — Missing Access Control for Pausable Functions  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `Pausable` abstract contract defines `_pause()` and `_unpause()` as `internal virtual` functions without any inherent access control. While this design allows inheriting contracts to implement their own access control, it creates a high-risk vulnerability if the inheriting contract exposes these functions publicly (e.g., via a `pause()` or `unpause()` external function) without proper authorization checks. An attacker could then halt all token transfers, severely impacting the token's utility and user trust. This is a critical design consideration for any contract inheriting `Pausable` (7.3 Access Control).
+
+**Recommendation:** The inheriting contract (e.g., 'Upstarty') must implement robust access control for any public or external functions that call `_pause()` and `_unpause()`. It is highly recommended to use a battle-tested access control mechanism such as OpenZeppelin's `Ownable` or `AccessControl` to restrict these functions to authorized addresses only.
+
+
 ### `I-01` — Safe Use of Unchecked Arithmetic  *(Severity: Informational · Status: Resolved)*
 
-The contract utilizes `unchecked` blocks for arithmetic operations within the `_update` function, specifically for `_balances[from] = fromBalance - value;`, `_balances[to] += value;`, and `_totalSupply -= value;`. In Solidity 0.8.x, arithmetic operations revert on overflow/underflow by default. The use of `unchecked` here is safe and gas-efficient because preceding logic (e.g., `if (fromBalance < value)`) ensures that underflow will not occur for subtractions, and additions are generally safe within `uint256` limits for typical token values (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes `unchecked` blocks for arithmetic operations within the `_update` function, specifically for `_balances[from] = fromBalance - value;`, `_balances[to] += value;`, and `_totalSupply -= value;`. In Solidity 0.8.x, arithmetic operations revert on overflow/underflow by default. The use of `unchecked` here is safe and gas-efficient because preceding logic (e.g., `if (fromBalance < value)`) ensures that underflow will not occur for subtractions, and additions are generally safe within `uint256` limits for typical token values (7.2 Code Security).
 
 **Recommendation:** No action required. The use of `unchecked` blocks is appropriate and correctly implemented in this context, contributing to gas efficiency without compromising security.
 
 
 ### `I-02` — Abstract Contract Requires Inheritance  *(Severity: Informational · Status: Resolved)*
 
-The provided code consists of several abstract contracts (`Context`, `ERC20`, `Pausable`, `ERC20Burnable`, `ERC20Pausable`). These contracts cannot be deployed directly and are intended to be inherited by a concrete contract (e.g., 'Upstarty'). The final deployed contract will combine the functionalities defined here with any additional logic implemented in the inheriting contract (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The provided code consists of several abstract contracts (`Context`, `ERC20`, `Pausable`, `ERC20Burnable`, `ERC20Pausable`). These contracts cannot be deployed directly and are intended to be inherited by a concrete contract (e.g., 'Upstarty'). The final deployed contract will combine the functionalities defined here with any additional logic implemented in the inheriting contract (7.1 Architecture).
 
 **Recommendation:** No direct action is required for the abstract contracts themselves. However, it is crucial to ensure that the inheriting contract correctly implements all necessary functionalities, including proper constructor arguments, access control for critical functions (as noted in H-01), and any specific tokenomics or business logic.
 

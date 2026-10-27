@@ -42,28 +42,28 @@ _🟢 1 Low · ⚪ 3 Informational_
 
 ### `L-01` — Uninitialized Token Metadata  *(Severity: Low · Status: Unresolved)*
 
-The `_init` function, which is responsible for setting the token's `_name` and `_symbol`, is declared as `internal` but is not called by a constructor within the `FourERC20` contract. If `FourERC20` is deployed directly without a derived contract calling `_init` in its constructor, the token's name and symbol will remain empty strings. This impacts the token's usability and display in wallets and explorers, potentially causing confusion or misrepresentation.
+Not confirmed by static analysis (the model's own reading of the source). The `_init` function, which is responsible for setting the token's `_name` and `_symbol`, is declared as `internal` but is not called by a constructor within the `FourERC20` contract. If `FourERC20` is deployed directly without a derived contract calling `_init` in its constructor, the token's name and symbol will remain empty strings. This impacts the token's usability and display in wallets and explorers, potentially causing confusion or misrepresentation.
 
 **Recommendation:** Implement a constructor in `FourERC20` or a derived contract that calls `_init(string memory name_, string memory symbol_)` to ensure the token's metadata is properly set upon deployment. For example: ```solidity constructor(string memory name_, string memory symbol_) {     _init(name_, symbol_); } ```
 
 
 ### `I-01` — Reliance on OpenZeppelin Standard Implementation  *(Severity: Informational · Status: Resolved)*
 
-The `FourERC20` contract is largely based on the OpenZeppelin Contracts (v4.9.4) ERC-20 implementation. This foundation provides a high degree of security due to extensive audits, community review, and battle-testing of the OpenZeppelin library, significantly reducing the likelihood of common vulnerabilities like reentrancy or integer overflows.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract is largely based on the OpenZeppelin Contracts (v4.9.4) ERC-20 implementation. This foundation provides a high degree of security due to extensive audits, community review, and battle-testing of the OpenZeppelin library, significantly reducing the likelihood of common vulnerabilities like reentrancy or integer overflows.
 
 **Recommendation:** Continue to leverage well-audited and maintained libraries like OpenZeppelin. Ensure that any custom logic added to derived contracts maintains the same high security standards.
 
 
 ### `I-02` — Fixed Supply Mechanism (in FourERC20)  *(Severity: Informational · Status: Unresolved)*
 
-The `FourERC20` contract, as provided, does not expose any public functions for minting or burning tokens. The `_mint` and `_burn` functions are internal, meaning that the total supply of the token is fixed after its initial deployment (assuming an initial mint is performed in a constructor or derived contract). This design choice impacts the token's economic model and prevents dynamic supply adjustments without further contract extensions.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract, as provided, does not expose any public functions for minting or burning tokens. The `_mint` and `_burn` functions are internal, meaning that the total supply of the token is fixed after its initial deployment (assuming an initial mint is performed in a constructor or derived contract). This design choice impacts the token's economic model and prevents dynamic supply adjustments without further contract extensions.
 
 **Recommendation:** Clearly document the intended supply mechanism (fixed, capped, or elastic) for the token. If a dynamic supply is desired, a derived contract must implement and expose minting/burning functions with appropriate access control (e.g., using `Ownable` or a governance mechanism).
 
 
 ### `I-03` — Unused `_contextSuffixLength` Function  *(Severity: Informational · Status: Resolved)*
 
-The `_contextSuffixLength()` function, inherited from the `Context` contract, is present in `FourERC20` but returns 0 and is not explicitly utilized within the contract's logic. While harmless, it represents a minor piece of unused code from the inherited library.
+Not confirmed by static analysis (the model's own reading of the source). The `_contextSuffixLength()` function, inherited from the `Context` contract, is present in `FourERC20` but returns 0 and is not explicitly utilized within the contract's logic. While harmless, it represents a minor piece of unused code from the inherited library.
 
 **Recommendation:** No action is strictly required as this is part of the OpenZeppelin library's design for potential meta-transaction handling. It can be ignored or, if desired, the `Context` contract could be replaced with a more minimal version if meta-transaction support is not needed and gas optimization is critical.
 

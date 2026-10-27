@@ -2,14 +2,14 @@
 token: Velvet
 ticker: VELVET
 network: bsc
-risk_score: 54
-status: medium
+risk_score: 11
+status: low
 date: 2026-08-12
 ---
 
 # Velvet (VELVET) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 54/100 — 🟡 Medium Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/velvet-bsc)
 
@@ -25,9 +25,9 @@ The VelvetToken contract implements a BEP20 token with additional features for c
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 4/10 | Medium | The contract leverages standard OpenZeppelin libraries for its BEP20 implementation, contributing to a solid foundation (7.2 Code Security). The custom `_beforeTokenTransfer` hook is correctly… |
-| **Governance / Economics** | 5/10 | Medium | The contract grants the owner extensive centralized control, posing significant economic risks (7.4 Economic). The owner can mint up to 1 billion tokens, leading to potential inflation and dilution… |
-| **Upgrades** | 7/10 | Low | The VelvetToken contract is not designed with upgradeability features (7.7 Upgrades). It is deployed as a standard, non-proxy contract, meaning its logic cannot be modified post-deployment. This… |
+| **Technical** | 8/10 | Low | The contract leverages standard OpenZeppelin libraries for its BEP20 implementation, contributing to a solid foundation (7.2 Code Security). The custom `_beforeTokenTransfer` hook is correctly… |
+| **Governance / Economics** | 8/10 | Low | The contract grants the owner extensive centralized control, posing significant economic risks (7.4 Economic). The owner can mint up to 1 billion tokens, leading to potential inflation and dilution… |
+| **Upgrades** | 8/10 | Low | The VelvetToken contract is not designed with upgradeability features (7.7 Upgrades). It is deployed as a standard, non-proxy contract, meaning its logic cannot be modified post-deployment. This… |
 
 ## LP Distribution
 
@@ -38,34 +38,34 @@ The VelvetToken contract implements a BEP20 token with additional features for c
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 2 High · 🟡 1 Medium_
+_🟡 4 Medium_
 
-### `C-01` — Centralized Minting Capability  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Single Point of Failure (Owner Key)  *(Severity: Medium · Status: Unresolved)*
 
-The `owner` address has the ability to mint an arbitrary amount of tokens up to the predefined `_cap` (1 billion tokens) via the `mintTo` and `mint` functions. This centralized control over the token supply poses a significant economic risk, as it can lead to inflation, dilution of existing token holders, and potential market manipulation if abused. (7.4 Economic, 7.3 Access Control)
+Not confirmed by static analysis (the model's own reading of the source). The contract relies heavily on a single `owner` address for critical operations, including minting, managing the whitelist, and setting transfer timestamps. If this owner's private key is compromised, an attacker would gain full control over these sensitive functions, leading to potential financial loss, denial of service, or manipulation of the token's economy. (7.8 Operations, 7.3 Access Control)
+
+**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the `owner` address to distribute control and reduce the risk associated with a single point of failure. Alternatively, consider a timelock mechanism for sensitive operations to provide a window for intervention in case of a compromise.
+
+
+### `M-02` — Centralized Minting Capability  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `owner` address has the ability to mint an arbitrary amount of tokens up to the predefined `_cap` (1 billion tokens) via the `mintTo` and `mint` functions. This centralized control over the token supply poses a significant economic risk, as it can lead to inflation, dilution of existing token holders, and potential market manipulation if abused. (7.4 Economic, 7.3 Access Control)
 
 **Recommendation:** Implement a mechanism to restrict or remove the owner's minting capability after an initial distribution phase, or introduce a time-locked schedule for minting. If minting is necessary, consider a multi-signature wallet for its execution or a community governance vote.
 
 
-### `H-01` — Owner Can Indefinitely Delay Token Transfers  *(Severity: High · Status: Unresolved)*
+### `M-03` — Owner Can Indefinitely Delay Token Transfers  *(Severity: Medium · Status: Unresolved)*
 
-The `setTransferAllowedTimestamp` function contains logic that allows the owner to indefinitely postpone the `transferAllowedTimestamp`. Specifically, if `transferAllowedTimestamp` is in the future and `ETA` is 0, the owner can set `transferAllowedTimestamp` to any new future timestamp. This enables the owner to prevent token transfers for an arbitrary duration, impacting liquidity, user access, and potentially causing significant market uncertainty. (7.4 Economic, 7.3 Access Control)
+Not confirmed by static analysis (the model's own reading of the source). The `setTransferAllowedTimestamp` function contains logic that allows the owner to indefinitely postpone the `transferAllowedTimestamp`. Specifically, if `transferAllowedTimestamp` is in the future and `ETA` is 0, the owner can set `transferAllowedTimestamp` to any new future timestamp. This enables the owner to prevent token transfers for an arbitrary duration, impacting liquidity, user access, and potentially causing significant market uncertainty. (7.4 Economic, 7.3 Access Control)
 
 **Recommendation:** Revise the `setTransferAllowedTimestamp` logic to prevent indefinite delays. Consider a fixed maximum delay, a one-time setting, or a mechanism that requires community consensus for changes to critical timelines. Ensure that any changes to this timestamp are clearly communicated to token holders.
 
 
-### `H-02` — Whitelist Bypasses Transfer Restrictions  *(Severity: High · Status: Unresolved)*
+### `M-04` — Whitelist Bypasses Transfer Restrictions  *(Severity: Medium · Status: Unresolved)*
 
-The owner can add any address to the `whitelist` mapping using `addToWhitelist`. Whitelisted addresses are exempt from the `transferAllowedTimestamp` restriction, allowing them to transfer tokens even before the general transfer period begins. This creates a mechanism for preferential treatment, potential insider trading, or selective access, undermining the fairness and transparency of the token launch and transfer restrictions. (7.4 Economic, 7.3 Access Control)
+Not confirmed by static analysis (the model's own reading of the source). The owner can add any address to the `whitelist` mapping using `addToWhitelist`. Whitelisted addresses are exempt from the `transferAllowedTimestamp` restriction, allowing them to transfer tokens even before the general transfer period begins. This creates a mechanism for preferential treatment, potential insider trading, or selective access, undermining the fairness and transparency of the token launch and transfer restrictions. (7.4 Economic, 7.3 Access Control)
 
 **Recommendation:** Evaluate the necessity of the whitelist mechanism. If required, implement stricter controls, such as a time-bound whitelist, a public disclosure of whitelisted addresses, or a multi-signature approval process for adding/removing addresses. Clearly define the purpose and scope of the whitelist.
-
-
-### `M-01` — Single Point of Failure (Owner Key)  *(Severity: Medium · Status: Unresolved)*
-
-The contract relies heavily on a single `owner` address for critical operations, including minting, managing the whitelist, and setting transfer timestamps. If this owner's private key is compromised, an attacker would gain full control over these sensitive functions, leading to potential financial loss, denial of service, or manipulation of the token's economy. (7.8 Operations, 7.3 Access Control)
-
-**Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) for the `owner` address to distribute control and reduce the risk associated with a single point of failure. Alternatively, consider a timelock mechanism for sensitive operations to provide a window for intervention in case of a compromise.
 
 ## Token Metrics
 

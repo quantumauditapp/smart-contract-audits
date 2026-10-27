@@ -2,14 +2,14 @@
 token: Vision
 ticker: VSN
 network: ethereum
-risk_score: 95
-status: critical
+risk_score: 52
+status: medium
 date: 2026-08-31
 ---
 
 # Vision (VSN) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 95/100 — 🔴 Critical Risk**
+> **Risk Score: 52/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vision-eth)
 
@@ -25,7 +25,7 @@ The VisionToken contract is an upgradeable ERC-20 token utilizing OpenZeppelin's
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 3/10 | High | The contract leverages well-audited OpenZeppelin upgradeable libraries, enhancing code security and adherence to established patterns (7.2 Code Security). Input validations for zero amounts and… |
+| **Technical** | 7/10 | Low | The contract leverages well-audited OpenZeppelin upgradeable libraries, enhancing code security and adherence to established patterns (7.2 Code Security). Input validations for zero amounts and… |
 | **Governance / Economics** | 1/10 | High | The contract implements a robust role-based access control system using OpenZeppelin's `AccessControlUpgradeable` (7.3 Access Control), defining distinct roles for administration, pausing, minting… |
 | **Upgrades** | 1/10 | High | The contract correctly utilizes the UUPS proxy pattern for upgradeability, allowing future enhancements and bug fixes (7.7 Upgrades). The `_authorizeUpgrade` function is properly secured by the… |
 
@@ -46,39 +46,39 @@ The VisionToken contract is an upgradeable ERC-20 token utilizing OpenZeppelin's
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 2 High · 🟡 1 Medium · ⚪ 1 Informational_
-
-### `C-01` — Centralized Control of Critical Roles  *(Severity: Critical · Status: Unresolved)*
-
-The `VisionToken` contract relies on several highly privileged roles: `DEFAULT_ADMIN_ROLE` (can grant/revoke any role), `MINTER_ROLE` (unlimited token minting), `PAUSER_ROLE` (can halt all transfers), and `UPGRADER_ROLE` (can change contract logic). All these roles are initially assigned in the `initialize` function. If the addresses assigned to these roles, particularly the `roleAdmin` for `DEFAULT_ADMIN_ROLE`, are single Externally Owned Accounts (EOAs), they represent single points of failure. A compromise of any of these keys could lead to complete system control, economic manipulation, or operational shutdown (7.3 Access Control, 7.8 Operations).
-
-**Recommendation:** Implement multi-signature wallets (e.g., Gnosis Safe) for all critical roles, especially `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE`, and `UPGRADER_ROLE`. This distributes control and requires multiple approvals for sensitive actions, significantly reducing the risk of a single point of failure. For `PAUSER_ROLE`, a multi-sig is also recommended.
-
-
-### `H-01` — Unlimited Minting Capability  *(Severity: High · Status: Unresolved)*
-
-The `MINTER_ROLE` has the ability to mint an arbitrary amount of tokens to any address via the `mint` function. This unlimited minting capability poses a significant economic risk (7.4 Economic). If the `MINTER_ROLE` is compromised or misused, it could lead to hyperinflation, devaluing the token for all holders and undermining the protocol's economic stability.
-
-**Recommendation:** If unlimited minting is not strictly necessary for the protocol's design, consider implementing safeguards. This could include setting a maximum total supply, implementing a minting rate limit, or requiring a timelock for large minting operations. Ensure the `MINTER_ROLE` is controlled by a robust multi-signature wallet with strict governance procedures.
-
-
-### `H-02` — Upgradeability Risk  *(Severity: High · Status: Unresolved)*
-
-The contract utilizes the UUPS proxy pattern, allowing its implementation logic to be upgraded by the `UPGRADER_ROLE`. While upgradeability offers flexibility for bug fixes and feature enhancements, it introduces inherent risk (7.7 Upgrades). A malicious or buggy upgrade could introduce new vulnerabilities, freeze user funds, or alter tokenomics, potentially leading to a complete system compromise. The `UPGRADER_ROLE` holds significant power over the contract's future behavior.
-
-**Recommendation:** Ensure the `UPGRADER_ROLE` is controlled by a highly secure multi-signature wallet with a robust governance process. Implement a timelock for upgrade proposals to allow community review and reaction time before an upgrade is executed. Thoroughly audit and test all new implementation contracts before deployment to the production environment.
-
+_🟡 4 Medium · ⚪ 1 Informational_
 
 ### `M-01` — Pausing Mechanism Centralization  *(Severity: Medium · Status: Unresolved)*
 
-The `PAUSER_ROLE` has the ability to pause and unpause all token transfers and approvals via the `pause()` and `unpause()` functions. While this feature can be valuable for emergency situations (e.g., mitigating an exploit), it also centralizes significant operational control (7.8 Operations). A malicious or compromised `PAUSER_ROLE` could halt legitimate user activity, disrupt liquidity, and cause market instability.
+Not confirmed by static analysis (the model's own reading of the source). The `PAUSER_ROLE` has the ability to pause and unpause all token transfers and approvals via the `pause()` and `unpause()` functions. While this feature can be valuable for emergency situations (e.g., mitigating an exploit), it also centralizes significant operational control (7.8 Operations). A malicious or compromised `PAUSER_ROLE` could halt legitimate user activity, disrupt liquidity, and cause market instability.
 
 **Recommendation:** Control the `PAUSER_ROLE` with a multi-signature wallet to prevent a single point of failure. Clearly define and document the specific conditions under which pausing is permissible. Consider implementing a timelock for the `unpause()` function to prevent immediate re-enablement after a malicious pause, allowing time for intervention.
 
 
+### `M-02` — Centralized Control of Critical Roles  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `VisionToken` contract relies on several highly privileged roles: `DEFAULT_ADMIN_ROLE` (can grant/revoke any role), `MINTER_ROLE` (unlimited token minting), `PAUSER_ROLE` (can halt all transfers), and `UPGRADER_ROLE` (can change contract logic). All these roles are initially assigned in the `initialize` function. If the addresses assigned to these roles, particularly the `roleAdmin` for `DEFAULT_ADMIN_ROLE`, are single Externally Owned Accounts (EOAs), they represent single points of failure. A compromise of any of these keys could lead to complete system control, economic manipulation, or operational shutdown (7.3
+
+**Recommendation:** Implement multi-signature wallets (e.g., Gnosis Safe) for all critical roles, especially `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE`, and `UPGRADER_ROLE`. This distributes control and requires multiple approvals for sensitive actions, significantly reducing the risk of a single point of failure. For `PAUSER_ROLE`, a multi-sig is also recommended.
+
+
+### `M-03` — Unlimited Minting Capability  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `MINTER_ROLE` has the ability to mint an arbitrary amount of tokens to any address via the `mint` function. This unlimited minting capability poses a significant economic risk (7.4 Economic). If the `MINTER_ROLE` is compromised or misused, it could lead to hyperinflation, devaluing the token for all holders and undermining the protocol's economic stability.
+
+**Recommendation:** If unlimited minting is not strictly necessary for the protocol's design, consider implementing safeguards. This could include setting a maximum total supply, implementing a minting rate limit, or requiring a timelock for large minting operations. Ensure the `MINTER_ROLE` is controlled by a robust multi-signature wallet with strict governance procedures.
+
+
+### `M-04` — Upgradeability Risk  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes the UUPS proxy pattern, allowing its implementation logic to be upgraded by the `UPGRADER_ROLE`. While upgradeability offers flexibility for bug fixes and feature enhancements, it introduces inherent risk (7.7 Upgrades). A malicious or buggy upgrade could introduce new vulnerabilities, freeze user funds, or alter tokenomics, potentially leading to a complete system compromise. The `UPGRADER_ROLE` holds significant power over the contract's future behavior.
+
+**Recommendation:** Ensure the `UPGRADER_ROLE` is controlled by a highly secure multi-signature wallet with a robust governance process. Implement a timelock for upgrade proposals to allow community review and reaction time before an upgrade is executed. Thoroughly audit and test all new implementation contracts before deployment to the production environment.
+
+
 ### `I-01` — Lack of Time-locks for Critical Operations  *(Severity: Informational · Status: Unresolved)*
 
-The contract does not implement time-locks for critical operations such as contract upgrades, significant token minting, or changes to privileged roles. While the use of multi-signature wallets mitigates some risk, a time-lock would provide an additional layer of security by introducing a delay between the initiation and execution of a sensitive action (7.5 Governance, 7.8 Operations). This delay allows for community review, detection of malicious intent, and potential intervention.
+Not confirmed by static analysis (the model's own reading of the source). The contract does not implement time-locks for critical operations such as contract upgrades, significant token minting, or changes to privileged roles. While the use of multi-signature wallets mitigates some risk, a time-lock would provide an additional layer of security by introducing a delay between the initiation and execution of a sensitive action (7.5 Governance, 7.8 Operations). This delay allows for community review, detection of malicious intent, and potential intervention.
 
 **Recommendation:** Consider implementing time-locks for all highly sensitive operations, including contract upgrades, large token mints, and changes to critical roles (e.g., `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE`, `UPGRADER_ROLE`). This enhances transparency and provides a crucial window for the community or governance to react to potentially harmful actions.
 

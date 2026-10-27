@@ -2,14 +2,14 @@
 token: 奶蛙
 ticker: 奶蛙
 network: solana
-risk_score: 37
-status: medium
+risk_score: 20
+status: low
 date: 2026-08-14
 ---
 
 # 奶蛙 (奶蛙) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 37/100 — 🟡 Medium Risk**
+> **Risk Score: 20/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/token-08d386-sol)
 
@@ -25,9 +25,9 @@ This audit of the 奶蛙 SPL Token Mint identifies a Medium risk due to the very
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The 奶蛙 token is an SPL Token-2022 mint. Its Mint Authority and Freeze Authority are both revoked, ensuring that no new tokens can be minted and no existing holder accounts can be frozen. The token… |
-| **Governance / Economics** | 3/10 | High | The token exhibits a holder concentration of 25.19% among the top 10 accounts, which is not considered highly concentrated. Total DEX liquidity stands at $53,824, which is moderate. The 24-hour… |
-| **Upgrades** | 8/10 | Low | The token's Mint Authority and Freeze Authority have been revoked, preventing further changes to the token's supply or account freeze status. As an SPL Token-2022, it does not have a Transfer Hook… |
+| **Technical** | 10/10 | Low | The 奶蛙 token is an SPL Token-2022 mint. Its Mint Authority and Freeze Authority are both revoked, ensuring that no new tokens can be minted and no existing holder accounts can be frozen. The token… |
+| **Governance / Economics** | 6/10 | Medium | The token exhibits a holder concentration of 25.19% among the top 10 accounts, which is not considered highly concentrated. Total DEX liquidity stands at $53,824, which is moderate. The 24-hour… |
+| **Upgrades** | 10/10 | Low | The token's Mint Authority and Freeze Authority have been revoked, preventing further changes to the token's supply or account freeze status. As an SPL Token-2022, it does not have a Transfer Hook… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 4 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 970 buys / 980 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 4 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

@@ -2,14 +2,14 @@
 token: Uptober
 ticker: UPTOBER
 network: solana
-risk_score: 22
+risk_score: 5
 status: low
 date: 2026-09-28
 ---
 
 # Uptober (UPTOBER) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 22/100 — 🟢 Low Risk**
+> **Risk Score: 5/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/uptober-sol-a52c)
 
@@ -26,8 +26,8 @@ The Uptober token presents a moderate risk primarily due to its very recent DEX 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The Uptober token is implemented using the modern spl-token-2022 program, indicating support for advanced features. Crucially, both the mint authority and freeze authority have been revoked… |
-| **Governance / Economics** | 5/10 | Medium | The token exhibits a very new trading pair, established only 5 days ago, which limits the track record for assessing market behavior. Current DEX liquidity stands at $40,348, with a 24-hour volume of… |
-| **Upgrades** | 8/10 | Low | The Uptober token mint has a robust configuration regarding mutability and upgrades. Both the mint and freeze authorities are permanently revoked, ensuring no further changes to supply or account… |
+| **Governance / Economics** | 8/10 | Low | The token exhibits a very new trading pair, established only 5 days ago, which limits the track record for assessing market behavior. Current DEX liquidity stands at $40,348, with a 24-hour volume of… |
+| **Upgrades** | 10/10 | Low | The Uptober token mint has a robust configuration regarding mutability and upgrades. Both the mint and freeze authorities are permanently revoked, ensuring no further changes to supply or account… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 5 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 4168 buys / 2278 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 5 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

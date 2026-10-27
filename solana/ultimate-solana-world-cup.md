@@ -80,7 +80,7 @@ Based on available data, direct evidence for USWC being an outright scam is not 
 
 ### Is Ultimate Solana World Cup safe to buy?
 
-USWC is currently rated with a High Risk score of 46/100. Key safety concerns include the contract not being verified, which prevents code inspection, and the liquidity not being locked, meaning funds can be withdrawn at any time. While developer control risks are reduced by ownership renunciation, these fundamental vulnerabilities suggest a high degree of risk for potential buyers.
+USWC is currently rated with a Medium Risk score of 40/100. Key safety concerns include the contract not being verified, which prevents code inspection, and the liquidity not being locked, meaning funds can be withdrawn at any time. While developer control risks are reduced by ownership renunciation, these fundamental vulnerabilities suggest a high degree of risk for potential buyers.
 
 ### Has Ultimate Solana World Cup been audited?
 

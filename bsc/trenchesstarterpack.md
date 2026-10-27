@@ -2,14 +2,14 @@
 token: TrenchesStarterPack
 ticker: 战壕入门包
 network: bsc
-risk_score: 43
-status: medium
+risk_score: 23
+status: low
 date: 2026-08-12
 ---
 
 # TrenchesStarterPack (战壕入门包) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 43/100 — 🟡 Medium Risk**
+> **Risk Score: 23/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/trenchesstarterpack-bsc)
 
@@ -25,31 +25,31 @@ The `FourERC20` contract is a basic ERC-20 token implementation based on OpenZep
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract leverages battle-tested OpenZeppelin libraries (v4.9.4) for its ERC-20 implementation, providing a solid foundation for security and adherence to standards (7.2 Code Security). Standard… |
-| **Governance / Economics** | 3/10 | High | The economic model is severely impacted by the absence of a token minting mechanism (7.4 Economic). As designed, the token cannot have any supply, making it economically non-viable and preventing any… |
-| **Upgrades** | 7/10 | Low | The contract is not designed with upgradeability in mind (7.7 Upgrades), which eliminates risks associated with proxy patterns or upgrade logic. This simplifies the deployment and reduces the attack… |
+| **Technical** | 10/10 | Low | The contract leverages battle-tested OpenZeppelin libraries (v4.9.4) for its ERC-20 implementation, providing a solid foundation for security and adherence to standards (7.2 Code Security). Standard… |
+| **Governance / Economics** | 5/10 | Medium | The economic model is severely impacted by the absence of a token minting mechanism (7.4 Economic). As designed, the token cannot have any supply, making it economically non-viable and preventing any… |
+| **Upgrades** | 9/10 | Low | The contract is not designed with upgradeability in mind (7.7 Upgrades), which eliminates risks associated with proxy patterns or upgrade logic. This simplifies the deployment and reduces the attack… |
 
 ## Security Findings
 
-_🔴 1 Critical · ⚪ 2 Informational_
+_🟡 1 Medium · ⚪ 2 Informational_
 
-### `C-01` — Missing Token Minting Mechanism  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Missing Token Minting Mechanism  *(Severity: Medium · Status: Unresolved)*
 
-The `FourERC20` contract, as implemented, does not include any function (public or internal) to mint new tokens. The `_totalSupply` variable will therefore always remain zero, and no tokens can ever be created or distributed. The contract comments explicitly state that a supply mechanism must be added in a derived contract using `_mint`, but without such a derived contract, the token is non-functional and cannot be used for any purpose.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract, as implemented, does not include any function (public or internal) to mint new tokens. The `_totalSupply` variable will therefore always remain zero, and no tokens can ever be created or distributed. The contract comments explicitly state that a supply mechanism must be added in a derived contract using `_mint`, but without such a derived contract, the token is non-functional and cannot be used for any purpose.
 
 **Recommendation:** A derived contract must be created that inherits from `FourERC20` and implements a `_mint` function (or similar mechanism) to create and distribute tokens, updating `_totalSupply` and `_balances`. This derived contract should also call `_init` in its constructor to properly initialize the token's metadata.
 
 
 ### `I-01` — `_init` Function Not Called in Base Contract  *(Severity: Informational · Status: Unresolved)*
 
-The `_init(string memory name_, string memory symbol_)` function is internal and intended to set the token's name and symbol. However, `FourERC20` itself does not have a constructor that calls this function. This means that if `FourERC20` is deployed directly (without a derived contract calling `_init`), its `name()` and `symbol()` functions will return empty strings, leading to improper token metadata.
+Not confirmed by static analysis (the model's own reading of the source). The `_init(string memory name_, string memory symbol_)` function is internal and intended to set the token's name and symbol. However, `FourERC20` itself does not have a constructor that calls this function. This means that if `FourERC20` is deployed directly (without a derived contract calling `_init`), its `name()` and `symbol()` functions will return empty strings, leading to improper token metadata.
 
 **Recommendation:** Any contract deriving from `FourERC20` must implement a constructor that calls `_init` with the desired name and symbol to ensure proper token metadata is set upon deployment.
 
 
 ### `I-02` — Truncated `_transfer` Function in Provided Code  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code for the `_transfer` function in `FourERC20.sol` is truncated. While it is likely intended to be the standard OpenZeppelin implementation, the full code is not available for a complete review. Assuming it's the standard implementation, it should include checks for zero addresses and sufficient balances.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the `_transfer` function in `FourERC20.sol` is truncated. While it is likely intended to be the standard OpenZeppelin implementation, the full code is not available for a complete review. Assuming it's the standard implementation, it should include checks for zero addresses and sufficient balances.
 
 **Recommendation:** Ensure the full and correct OpenZeppelin `_transfer` implementation is used, including all necessary checks (e.g., `to` not zero address, `from` having sufficient balance) to prevent potential issues. Provide the complete source code for all contracts for a thorough audit.
 
@@ -75,7 +75,7 @@ The provided source code for the `_transfer` function in `FourERC20.sol` is trun
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -85,7 +85,7 @@ The provided source code for the `_transfer` function in `FourERC20.sol` is trun
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

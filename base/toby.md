@@ -2,14 +2,14 @@
 token: toby
 ticker: TOBY
 network: base
-risk_score: 30
+risk_score: 10
 status: low
 date: 2026-08-13
 ---
 
 # toby (TOBY) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 30/100 — 🟢 Low Risk**
+> **Risk Score: 10/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/toby-base)
 
@@ -25,9 +25,9 @@ The toby token contract is a custom ERC20 implementation with owner-controlled f
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The contract implements a custom ERC20 token with standard functionalities like transfer, approve, mint, and burn (7.2 Code Security). It includes a useful `TokenRecover` mechanism allowing the owner… |
-| **Governance / Economics** | 4/10 | Medium | The contract represents a simple ERC20 token with no complex economic models or governance mechanisms (7.4 Economic, 7.5 Governance). The initial supply is minted to a specified token owner during… |
-| **Upgrades** | 6/10 | Medium | The contract is not designed to be upgradeable (7.7 Upgrades). It does not implement any proxy patterns, meaning its logic is immutable once deployed. This simplifies the architecture but requires… |
+| **Technical** | 10/10 | Low | The contract implements a custom ERC20 token with standard functionalities like transfer, approve, mint, and burn (7.2 Code Security). It includes a useful `TokenRecover` mechanism allowing the owner… |
+| **Governance / Economics** | 6/10 | Medium | The contract represents a simple ERC20 token with no complex economic models or governance mechanisms (7.4 Economic, 7.5 Governance). The initial supply is minted to a specified token owner during… |
+| **Upgrades** | 7/10 | Low | The contract is not designed to be upgradeable (7.7 Upgrades). It does not implement any proxy patterns, meaning its logic is immutable once deployed. This simplifies the architecture but requires… |
 
 ## LP Distribution
 
@@ -38,32 +38,32 @@ The toby token contract is a custom ERC20 implementation with owner-controlled f
 
 ## Security Findings
 
-_🔴 1 Critical · 🟠 1 High · 🟢 1 Low · ⚪ 1 Informational_
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
-### `C-01` — `tx.origin` for Access Control  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — `tx.origin` for Access Control  *(Severity: Medium · Status: Unresolved)*
 
-The `onlyOwner` modifier in the `Ownable` contract uses `tx.origin` instead of `msg.sender` for access control. This is a critical vulnerability as it makes all owner-restricted functions susceptible to phishing attacks. If the legitimate owner interacts with a malicious contract, that contract can then call owner-restricted functions (e.g., `transferOwnership`, `renounceOwnership`, `recoverERC20`) on the `toby` token contract, as `tx.origin` would still resolve to the legitimate owner's address.
+Not confirmed by static analysis (the model's own reading of the source). The `onlyOwner` modifier in the `Ownable` contract uses `tx.origin` instead of `msg.sender` for access control. This is a critical vulnerability as it makes all owner-restricted functions susceptible to phishing attacks. If the legitimate owner interacts with a malicious contract, that contract can then call owner-restricted functions (e.g., `transferOwnership`, `renounceOwnership`, `recoverERC20`) on the `toby` token contract, as `tx.origin` would still resolve to the legitimate owner's address.
 
 **Recommendation:** Replace `tx.origin` with `msg.sender` in the `onlyOwner` modifier. The `msg.sender` variable always refers to the immediate caller of the function, providing a secure and standard way to implement access control.
 
 
-### `H-01` — Incorrect `transferFrom` Logic  *(Severity: High · Status: Unresolved)*
+### `M-02` — Incorrect `transferFrom` Logic  *(Severity: Medium · Status: Unresolved)*
 
-The `transferFrom` function executes the token transfer (`_transfer`) before checking if the allowance is sufficient and updating it. Specifically, `_transfer(sender, recipient, amount)` is called first, followed by `require(currentAllowance >= amount, "ERC20: transfer amount exceeds allowance")`. If the allowance is insufficient, the `_transfer` operation will still occur (if the sender has enough balance), but the transaction will then revert due to the subsequent `require` statement. This leads to wasted gas and non-standard ERC20 behavior, potentially causing issues for integrations expecting the allowance check to precede the transfer.
+Not confirmed by static analysis (the model's own reading of the source). The `transferFrom` function executes the token transfer (`_transfer`) before checking if the allowance is sufficient and updating it. Specifically, `_transfer(sender, recipient, amount)` is called first, followed by `require(currentAllowance >= amount, "ERC20: transfer amount exceeds allowance")`. If the allowance is insufficient, the `_transfer` operation will still occur (if the sender has enough balance), but the transaction will then revert due to the subsequent `require` statement. This leads to wasted gas and non-standard ERC20 behavior, potentially causing issues for integrations expecting the allowance check to
 
 **Recommendation:** Reorder the operations within `transferFrom`. The allowance check (`require(currentAllowance >= amount)`) should occur before `_transfer(sender, recipient, amount)`. The correct sequence is: check allowance, perform transfer, then update allowance.
 
 
 ### `L-01` — Unused State Variable `Optimization`  *(Severity: Low · Status: Unresolved)*
 
-The public state variable `Optimization` is declared and initialized with a large `uint256` value but is never read or used within any of the contract's functions. This adds unnecessary storage cost to the contract and can be misleading to developers or auditors regarding its purpose.
+Not confirmed by static analysis (the model's own reading of the source). The public state variable `Optimization` is declared and initialized with a large `uint256` value but is never read or used within any of the contract's functions. This adds unnecessary storage cost to the contract and can be misleading to developers or auditors regarding its purpose.
 
 **Recommendation:** Remove the `Optimization` variable if it serves no functional purpose. If it is intended for future use, consider adding comments to explain its role or making it internal if it's not meant for external interaction.
 
 
 ### `I-01` — Custom ERC20 Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The contract utilizes a custom implementation of the ERC20 standard rather than leveraging battle-tested and widely audited libraries such as OpenZeppelin Contracts. While the current implementation largely adheres to the standard, custom code carries a higher inherent risk of introducing subtle bugs, edge cases, or non-compliance issues that might have been addressed in more mature libraries.
+Not confirmed by static analysis (the model's own reading of the source). The contract utilizes a custom implementation of the ERC20 standard rather than leveraging battle-tested and widely audited libraries such as OpenZeppelin Contracts. While the current implementation largely adheres to the standard, custom code carries a higher inherent risk of introducing subtle bugs, edge cases, or non-compliance issues that might have been addressed in more mature libraries.
 
 **Recommendation:** Consider migrating to OpenZeppelin's ERC20 implementation for enhanced security, reliability, and maintainability. If a custom implementation is deemed necessary, ensure comprehensive unit testing, formal verification, and thorough security audits are conducted to mitigate potential risks.
 

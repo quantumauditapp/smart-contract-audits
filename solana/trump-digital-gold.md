@@ -2,14 +2,14 @@
 token: Trump Digital Gold
 ticker: GOLD
 network: solana
-risk_score: 42
-status: medium
+risk_score: 26
+status: low
 date: 2026-08-30
 ---
 
 # Trump Digital Gold (GOLD) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 42/100 — 🟡 Medium Risk**
+> **Risk Score: 26/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/trump-digital-gold-sol)
 
@@ -25,9 +25,9 @@ The Trump Digital Gold (GOLD) token mint on Solana exhibits a Medium risk profil
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The token is implemented using the standard `spl-token` program (v3). Both the mint authority and freeze authority have been revoked, meaning no new tokens can be minted and no existing accounts can… |
-| **Governance / Economics** | 3/10 | High | The token's economic profile shows a moderate liquidity of $62,757 USD with a 24-hour volume of $364,278 USD, resulting in a Volume/Liquidity ratio of 5.80. The top 10 token accounts hold 25.36% of… |
-| **Upgrades** | 8/10 | Low | The mint authority and freeze authority for the token have been revoked, preventing any further changes to the token's supply or the ability to freeze accounts. The token is an SPL Token Program v3… |
+| **Technical** | 10/10 | Low | The token is implemented using the standard `spl-token` program (v3). Both the mint authority and freeze authority have been revoked, meaning no new tokens can be minted and no existing accounts can… |
+| **Governance / Economics** | 5/10 | Medium | The token's economic profile shows a moderate liquidity of $62,757 USD with a 24-hour volume of $364,278 USD, resulting in a Volume/Liquidity ratio of 5.80. The top 10 token accounts hold 25.36% of… |
+| **Upgrades** | 9/10 | Low | The mint authority and freeze authority for the token have been revoked, preventing any further changes to the token's supply or the ability to freeze accounts. The token is an SPL Token Program v3… |
 
 ## Security Findings
 

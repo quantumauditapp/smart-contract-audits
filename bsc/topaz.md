@@ -2,14 +2,14 @@
 token: Topaz
 ticker: TOPAZ
 network: bsc
-risk_score: 70
-status: high
+risk_score: 55
+status: medium
 date: 2026-09-05
 ---
 
 # Topaz (TOPAZ) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 70/100 — 🟠 High Risk**
+> **Risk Score: 55/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/topaz-bsc)
 
@@ -25,8 +25,8 @@ The Topaz token contract is a basic ERC20 implementation leveraging OpenZeppelin
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract utilizes well-audited OpenZeppelin ERC20 and ERC20Permit implementations, contributing to a solid technical foundation (7.2 Code Security). The custom logic for `minter` role management… |
-| **Governance / Economics** | 2/10 | High | The economic model of the Topaz token is highly centralized, with the `minter` address having absolute control over the token supply (7.4 Economic). This single point of failure introduces a… |
+| **Technical** | 8/10 | Low | The contract utilizes well-audited OpenZeppelin ERC20 and ERC20Permit implementations, contributing to a solid technical foundation (7.2 Code Security). The custom logic for `minter` role management… |
+| **Governance / Economics** | 3/10 | High | The economic model of the Topaz token is highly centralized, with the `minter` address having absolute control over the token supply (7.4 Economic). This single point of failure introduces a… |
 | **Upgrades** | 4/10 | Medium | The Topaz contract is not designed to be upgradeable (7.7 Upgrades), meaning its logic cannot be modified after deployment. This eliminates upgrade-specific risks such as proxy misconfigurations or… |
 
 ## LP Distribution
@@ -38,25 +38,25 @@ The Topaz token contract is a basic ERC20 implementation leveraging OpenZeppelin
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · ⚪ 1 Informational_
-
-### `H-01` — Centralized Control of Token Supply  *(Severity: High · Status: Unresolved)*
-
-The `Topaz` token contract grants the `minter` address exclusive and unlimited authority to mint new tokens. The `minter` can also transfer this powerful role to any other address without any checks or delays. This centralization poses a significant economic risk (7.4 Economic), as a compromised `minter` key or a malicious `minter` could lead to an arbitrary increase in token supply, severely devaluing existing tokens.
-
-**Recommendation:** Implement a multi-signature wallet for the `minter` role or introduce a time-locked delay for `setMinter` and `mint` operations, especially for large amounts. Consider a cap on total supply or a mechanism for community governance over minting (7.5 Governance).
-
+_🟡 2 Medium · ⚪ 1 Informational_
 
 ### `M-01` — Unused State Variable `owner`  *(Severity: Medium · Status: Unresolved)*
 
-The `owner` state variable is declared and initialized in the constructor to `msg.sender`, but it is never used in any function within the `Topaz` contract. This makes the variable redundant and potentially misleading (7.1 Architecture), as it suggests a role that does not exist or function, which could lead to confusion or future errors if someone assumes it has a purpose.
+Not confirmed by static analysis (the model's own reading of the source). The `owner` state variable is declared and initialized in the constructor to `msg.sender`, but it is never used in any function within the `Topaz` contract. This makes the variable redundant and potentially misleading (7.1 Architecture), as it suggests a role that does not exist or function, which could lead to confusion or future errors if someone assumes it has a purpose.
 
 **Recommendation:** Remove the `owner` variable if it serves no purpose. If an `owner` role is intended, implement functions that utilize this role for specific administrative tasks (e.g., pausing, emergency actions) and ensure proper access control mechanisms are in place for its management (7.3 Access Control).
 
 
+### `M-02` — Centralized Control of Token Supply  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `Topaz` token contract grants the `minter` address exclusive and unlimited authority to mint new tokens. The `minter` can also transfer this powerful role to any other address without any checks or delays. This centralization poses a significant economic risk (7.4 Economic), as a compromised `minter` key or a malicious `minter` could lead to an arbitrary increase in token supply, severely devaluing existing tokens.
+
+**Recommendation:** Implement a multi-signature wallet for the `minter` role or introduce a time-locked delay for `setMinter` and `mint` operations, especially for large amounts. Consider a cap on total supply or a mechanism for community governance over minting (7.5 Governance).
+
+
 ### `I-01` — Lack of Role Renouncement Mechanism  *(Severity: Informational · Status: Unresolved)*
 
-The `minter` role can be transferred to a new address via `setMinter`, but there is no explicit function allowing the current `minter` to renounce or revoke their own role. While the `minter` can transfer the role to `address(0)` to effectively renounce it, an explicit `renounceMinter` function would improve clarity and reduce potential errors (7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The `minter` role can be transferred to a new address via `setMinter`, but there is no explicit function allowing the current `minter` to renounce or revoke their own role. While the `minter` can transfer the role to `address(0)` to effectively renounce it, an explicit `renounceMinter` function would improve clarity and reduce potential errors (7.3 Access Control).
 
 **Recommendation:** Consider adding a `renounceMinter()` function that allows the current `minter` to voluntarily give up their role, potentially transferring it to `address(0)` or a designated null address, improving operational clarity (7.8 Operations).
 

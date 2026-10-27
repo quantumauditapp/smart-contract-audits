@@ -2,14 +2,14 @@
 token: ViciCoin
 ticker: VCNT
 network: base
-risk_score: 47
+risk_score: 39
 status: medium
 date: 2026-07-22
 ---
 
 # ViciCoin (VCNT) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 47/100 — 🟡 Medium Risk**
+> **Risk Score: 39/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vicicoin-base)
 
@@ -25,8 +25,8 @@ This audit covers a TransparentUpgradeableProxy contract, a standard OpenZeppeli
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 7/10 | Low | The TransparentUpgradeableProxy contract itself is a robust and well-audited OpenZeppelin component (7.2 Code Security). It correctly implements the transparent proxy pattern, preventing selector… |
-| **Governance / Economics** | 3/10 | High | The contract's economic and governance security is heavily dependent on the administrative control (7.3 Access Control, 7.5 Governance). The proxy allows a single admin address to initiate upgrades… |
+| **Technical** | 8/10 | Low | The TransparentUpgradeableProxy contract itself is a robust and well-audited OpenZeppelin component (7.2 Code Security). It correctly implements the transparent proxy pattern, preventing selector… |
+| **Governance / Economics** | 5/10 | Medium | The contract's economic and governance security is heavily dependent on the administrative control (7.3 Access Control, 7.5 Governance). The proxy allows a single admin address to initiate upgrades… |
 | **Upgrades** | 2/10 | High | The contract utilizes the Transparent Proxy pattern for upgradeability (7.7 Upgrades), allowing the implementation logic to be changed. While the mechanism itself is standard, the unverified nature… |
 
 ## Proxy Upgrade Controls
@@ -47,32 +47,32 @@ This audit covers a TransparentUpgradeableProxy contract, a standard OpenZeppeli
 
 ## Security Findings
 
-_🟠 2 High · 🟡 1 Medium · 🟢 1 Low_
-
-### `H-01` — Unverified Implementation Contract  *(Severity: High · Status: Unresolved)*
-
-The implementation contract at address `0xa0f7218896821b5d87e15dd8c554e9f01fa31296` is not verified on Etherscan. This prevents any security analysis of the actual business logic that the proxy delegates to. Without verified source code, it is impossible to ascertain the contract's functionality, identify vulnerabilities, or confirm its intended behavior, posing a critical trust and security risk.
-
-**Recommendation:** Immediately verify the source code of the implementation contract on Etherscan. This is crucial for transparency, allowing users and auditors to understand and trust the underlying logic. Conduct a thorough audit of the implementation contract once its source code is available.
-
-
-### `H-02` — Centralized Upgrade Authority and Unknown Admin Setup  *(Severity: High · Status: Unresolved)*
-
-The proxy's upgradeability and administrative functions are controlled by a single admin address. The prefill data indicates that the `admin_address` and `admin_kind` are null, suggesting the admin's security setup is not clearly identified or is not a standard `ProxyAdmin` contract. If this admin key is an Externally Owned Account (EOA) and is compromised, an attacker could upgrade the contract to a malicious implementation, leading to a complete loss of funds or control over the protocol.
-
-**Recommendation:** Secure the admin key using a robust mechanism such as a multi-signature wallet (e.g., Gnosis Safe) or deploy a dedicated `ProxyAdmin` contract to manage the proxy. Ensure the admin address is publicly known and its security setup is transparent. Implement strict operational procedures for managing the admin key and executing upgrades.
-
+_🟡 3 Medium · 🟢 1 Low_
 
 ### `M-01` — Potential for Malicious or Buggy Upgrades  *(Severity: Medium · Status: Unresolved)*
 
-The upgradeability feature allows the contract's logic to be changed at any time by the admin. While this offers flexibility, it also introduces the risk that a new implementation could contain critical bugs, introduce backdoors, or deviate from expected functionality. This risk is exacerbated by the current unverified implementation, making it impossible to assess the baseline security.
+Not confirmed by static analysis (the model's own reading of the source). The upgradeability feature allows the contract's logic to be changed at any time by the admin. While this offers flexibility, it also introduces the risk that a new implementation could contain critical bugs, introduce backdoors, or deviate from expected functionality. This risk is exacerbated by the current unverified implementation, making it impossible to assess the baseline security.
 
 **Recommendation:** Establish a rigorous upgrade process that includes comprehensive testing, independent security audits, and a public review period for all new implementation versions before they are deployed. Consider implementing a timelock for upgrades to provide users with a window to react to potentially malicious changes. Ensure all new implementations are thoroughly verified on Etherscan.
 
 
+### `M-02` — Unverified Implementation Contract  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The implementation contract at address `0xa0f7218896821b5d87e15dd8c554e9f01fa31296` is not verified on Etherscan. This prevents any security analysis of the actual business logic that the proxy delegates to. Without verified source code, it is impossible to ascertain the contract's functionality, identify vulnerabilities, or confirm its intended behavior, posing a critical trust and security risk.
+
+**Recommendation:** Immediately verify the source code of the implementation contract on Etherscan. This is crucial for transparency, allowing users and auditors to understand and trust the underlying logic. Conduct a thorough audit of the implementation contract once its source code is available.
+
+
+### `M-03` — Centralized Upgrade Authority and Unknown Admin Setup  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The proxy's upgradeability and administrative functions are controlled by a single admin address. The prefill data indicates that the `admin_address` and `admin_kind` are null, suggesting the admin's security setup is not clearly identified or is not a standard `ProxyAdmin` contract. If this admin key is an Externally Owned Account (EOA) and is compromised, an attacker could upgrade the contract to a malicious implementation, leading to a complete loss of funds or control over the protocol.
+
+**Recommendation:** Secure the admin key using a robust mechanism such as a multi-signature wallet (e.g., Gnosis Safe) or deploy a dedicated `ProxyAdmin` contract to manage the proxy. Ensure the admin address is publicly known and its security setup is transparent. Implement strict operational procedures for managing the admin key and executing upgrades.
+
+
 ### `L-01` — Admin Cannot Directly Call Implementation Functions  *(Severity: Low · Status: Unresolved)*
 
-The Transparent Proxy pattern explicitly prevents the admin address from directly calling functions on the implementation contract via the proxy's fallback function. This is a security feature to prevent selector clashes with proxy admin functions. However, it can lead to unexpected errors or confusion if the admin attempts to interact with the implementation directly through the proxy, requiring them to use a non-admin account or a `ProxyAdmin` contract.
+Not confirmed by static analysis (the model's own reading of the source). The Transparent Proxy pattern explicitly prevents the admin address from directly calling functions on the implementation contract via the proxy's fallback function. This is a security feature to prevent selector clashes with proxy admin functions. However, it can lead to unexpected errors or confusion if the admin attempts to interact with the implementation directly through the proxy, requiring them to use a non-admin account or a `ProxyAdmin` contract.
 
 **Recommendation:** Ensure all administrators are fully aware of the Transparent Proxy pattern's behavior, specifically that they cannot call implementation functions directly through the proxy. If direct interaction with the implementation is required for administrative tasks, it should be done via a non-admin account or through a dedicated `ProxyAdmin` contract, which is designed to manage the proxy.
 

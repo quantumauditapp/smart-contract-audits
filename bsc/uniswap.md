@@ -2,14 +2,14 @@
 token: Uniswap
 ticker: UNI
 network: bsc
-risk_score: 68
-status: high
+risk_score: 51
+status: medium
 date: 2026-09-23
 ---
 
 # Uniswap (UNI) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 51/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/uniswap-bsc)
 
@@ -25,8 +25,8 @@ The audited contract is a BEP20 token implementation designed for upgradeability
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract demonstrates good technical practices, including the consistent use of `SafeMath` (7.2 Code Security) to prevent integer overflows/underflows. It correctly implements the `Initializable`… |
-| **Governance / Economics** | 3/10 | High | The contract features a centralized ownership model where a single `_owner` address controls critical functions (7.3 Access Control). Specifically, the `mint` function allows the owner to create an… |
+| **Technical** | 7/10 | Low | The contract demonstrates good technical practices, including the consistent use of `SafeMath` (7.2 Code Security) to prevent integer overflows/underflows. It correctly implements the `Initializable`… |
+| **Governance / Economics** | 4/10 | Medium | The contract features a centralized ownership model where a single `_owner` address controls critical functions (7.3 Access Control). Specifically, the `mint` function allows the owner to create an… |
 | **Upgrades** | 1/10 | High | The contract is designed as an implementation for an upgradeable proxy, correctly inheriting from `Initializable` and having an empty constructor (7.7 Upgrades). The state variables are declared in a… |
 
 ## Proxy Upgrade Controls
@@ -46,32 +46,32 @@ The audited contract is a BEP20 token implementation designed for upgradeability
 
 ## Security Findings
 
-_🟠 1 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Minting Capability  *(Severity: High · Status: Unresolved)*
-
-The `mint` function, protected by the `onlyOwner` modifier and an `_mintable` flag, allows the contract owner to create an arbitrary amount of new tokens. If `_mintable` is true, this capability grants the owner significant power to inflate the token supply, leading to potential devaluation for existing token holders. This introduces a high economic risk and centralizes control over the token's monetary policy.
-
-**Recommendation:** Clearly define and communicate the token's minting policy. If a fixed supply is intended, ensure the `_mintable` flag is set to `false` during initialization and consider removing or disabling the `mint` function permanently. If minting is a desired feature, implement robust governance mechanisms (e.g., a multi-signature wallet or DAO) to control the `owner` address and the minting process, distributing control and increasing transparency.
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Older Solidity Compiler Version  *(Severity: Medium · Status: Unresolved)*
 
-The contract uses `pragma solidity ^0.6.0`. While `SafeMath` is used to mitigate integer overflow/underflow, using an older compiler version means the contract does not benefit from security enhancements, optimizations, and built-in safety features (like default overflow checks for `uint256` in 0.8.x) present in newer Solidity versions. This can lead to increased technical debt and potentially missed security improvements.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses `pragma solidity ^0.6.0`. While `SafeMath` is used to mitigate integer overflow/underflow, using an older compiler version means the contract does not benefit from security enhancements, optimizations, and built-in safety features (like default overflow checks for `uint256` in 0.8.x) present in newer Solidity versions. This can lead to increased technical debt and potentially missed security improvements.
 
 **Recommendation:** Consider upgrading the contract to a more recent and actively maintained Solidity version (e.g., 0.8.x). This would allow the contract to leverage modern compiler features, potentially simplify code by removing explicit `SafeMath` calls, and benefit from ongoing security improvements in the language.
 
 
+### `M-02` — Centralized Minting Capability  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint` function, protected by the `onlyOwner` modifier and an `_mintable` flag, allows the contract owner to create an arbitrary amount of new tokens. If `_mintable` is true, this capability grants the owner significant power to inflate the token supply, leading to potential devaluation for existing token holders. This introduces a high economic risk and centralizes control over the token's monetary policy.
+
+**Recommendation:** Clearly define and communicate the token's minting policy. If a fixed supply is intended, ensure the `_mintable` flag is set to `false` during initialization and consider removing or disabling the `mint` function permanently. If minting is a desired feature, implement robust governance mechanisms (e.g., a multi-signature wallet or DAO) to control the `owner` address and the minting process, distributing control and increasing transparency.
+
+
 ### `L-01` — Standard ERC-20 `approve` Front-Running Vulnerability  *(Severity: Low · Status: Unresolved)*
 
-The `approve` function, as implemented in the ERC-20 standard, is susceptible to a known front-running attack. If a user attempts to change an allowance from a non-zero value to another non-zero value, a malicious spender could front-run the transaction, spend the original allowance, and then allow the new allowance to be set, effectively spending more than intended. While `increaseAllowance` and `decreaseAllowance` functions are provided to mitigate this, the base `approve` function remains.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function, as implemented in the ERC-20 standard, is susceptible to a known front-running attack. If a user attempts to change an allowance from a non-zero value to another non-zero value, a malicious spender could front-run the transaction, spend the original allowance, and then allow the new allowance to be set, effectively spending more than intended. While `increaseAllowance` and `decreaseAllowance` functions are provided to mitigate this, the base `approve` function remains.
 
 **Recommendation:** Advise users and integrated protocols to prefer using `increaseAllowance` and `decreaseAllowance` over direct `approve` calls when modifying existing allowances. If `approve` must be used, recommend setting the allowance to zero first, then to the desired new value, in two separate transactions.
 
 
 ### `I-01` — Truncated Internal Function `_burnFrom`  *(Severity: Informational · Status: Unresolved)*
 
-The provided source code for the internal function `_burnFrom` is truncated. While this function is internal and not directly exposed via the public interface, a complete security assessment would ideally require the full and untruncated code to ensure its logic is sound and free of vulnerabilities.
+Not confirmed by static analysis (the model's own reading of the source). The provided source code for the internal function `_burnFrom` is truncated. While this function is internal and not directly exposed via the public interface, a complete security assessment would ideally require the full and untruncated code to ensure its logic is sound and free of vulnerabilities.
 
 **Recommendation:** Ensure that all source code, including internal helper functions, is fully available and verified for comprehensive auditing and transparency.
 

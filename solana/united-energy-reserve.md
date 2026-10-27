@@ -78,7 +78,7 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 
 ### Is United Energy Reserve a scam?
 
-Data indicates low-risk attributes such as locked liquidity and a verified contract without minting capabilities. With a decentralized holder base and a risk score of 29/100, there are no immediate signs of fraudulent activity. However, investors should conduct independent due diligence, as security metrics reflect the project's current technical status and do not guarantee future performance or total immunity from risks.
+Data indicates low-risk attributes such as locked liquidity and a verified contract without minting capabilities. With a decentralized holder base and a risk score of 0/100, there are no immediate signs of fraudulent activity. However, investors should conduct independent due diligence, as security metrics reflect the project's current technical status and do not guarantee future performance or total immunity from risks.
 
 ### Is United Energy Reserve safe to buy?
 

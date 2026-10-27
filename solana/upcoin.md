@@ -2,14 +2,14 @@
 token: upcoin
 ticker: UPCOIN
 network: solana
-risk_score: 27
+risk_score: 10
 status: low
 date: 2026-09-19
 ---
 
 # upcoin (UPCOIN) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 27/100 — 🟢 Low Risk**
+> **Risk Score: 10/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/upcoin-sol)
 
@@ -26,8 +26,8 @@ This Solana SPL Token Mint for 'upcoin' presents a medium risk primarily due to 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 10/10 | Low | The upcoin token is implemented using the spl-token-2022 program, indicating modern SPL token standards. Both the Mint Authority and Freeze Authority have been revoked, preventing further token… |
-| **Governance / Economics** | 2/10 | High | The token's economic profile shows a total DEX liquidity of $24,392 with a 24-hour trading volume of $197,988. The Volume/Liquidity Ratio is 8.12, which is notable but does not trigger a wash trading… |
-| **Upgrades** | 8/10 | Low | The token's upgradeability posture is strong, as both the Mint Authority and Freeze Authority have been revoked, ensuring no further changes to supply or account freeze status. The metadata is not… |
+| **Governance / Economics** | 5/10 | Medium | The token's economic profile shows a total DEX liquidity of $24,392 with a 24-hour trading volume of $197,988. The Volume/Liquidity Ratio is 8.12, which is notable but does not trigger a wash trading… |
+| **Upgrades** | 10/10 | Low | The token's upgradeability posture is strong, as both the Mint Authority and Freeze Authority have been revoked, ensuring no further changes to supply or account freeze status. The metadata is not… |
 
 ## Security Findings
 
@@ -54,13 +54,13 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 | **Buy / Sell Tax** | 0.0% / 0.0% |
 | **24h Transactions** | 2835 buys / 3349 sells |
 
-## Security Flags (3/4 passed)
+## Security Flags (4/4 passed)
 
 | Check | Status |
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ✅ Pass |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,7 +69,7 @@ DEX pair was created 0 days ago. Insufficient track record to assess team or hol
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ✅ | Liquidity is locked — reduces the rug-pull risk. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

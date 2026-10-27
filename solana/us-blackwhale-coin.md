@@ -2,14 +2,14 @@
 token: US BLACKWHALE COIN
 ticker: USBC
 network: solana
-risk_score: 48
+risk_score: 46
 status: medium
 date: 2026-06-15
 ---
 
 # US BLACKWHALE COIN (USBC) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 48/100 — 🟡 Medium Risk**
+> **Risk Score: 46/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/us-blackwhale-coin-sol)
 
@@ -60,7 +60,7 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,14 +69,14 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is US BLACKWHALE COIN a scam?
 
-While ownership is renounced and no mint function exists, these positives are overshadowed by critical red flags. The unverified contract means the code's true nature is unknown, and unlocked liquidity allows for potential removal, both common traits in scam projects. The high-risk score of 46/100 indicates significant concerns, advising extreme caution rather than labeling it definitively.
+While ownership is renounced and no mint function exists, these positives are overshadowed by critical red flags. The unverified contract means the code's true nature is unknown, and unlocked liquidity allows for potential removal, both common traits in scam projects. The medium-risk score of 46/100 indicates significant concerns, advising extreme caution rather than labeling it definitively.
 
 ### Is US BLACKWHALE COIN safe to buy?
 

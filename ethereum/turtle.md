@@ -2,14 +2,14 @@
 token: Turtle
 ticker: TURTLE
 network: ethereum
-risk_score: 78
+risk_score: 70
 status: high
 date: 2026-08-13
 ---
 
 # Turtle (TURTLE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 78/100 — 🟠 High Risk**
+> **Risk Score: 70/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/turtle-eth)
 
@@ -25,7 +25,7 @@ The Turtle token contract, implemented as an upgradeable ERC-20, demonstrates go
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 5/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for ERC-20, upgradeability (UUPS), and access control, contributing to robust code security (7.2). The `permit` function is correctly… |
+| **Technical** | 6/10 | Medium | The contract leverages battle-tested OpenZeppelin libraries for ERC-20, upgradeability (UUPS), and access control, contributing to robust code security (7.2). The `permit` function is correctly… |
 | **Governance / Economics** | 1/10 | High | The contract presents a critical economic risk (7.4) due to the `initialAuthority`'s ability to `mint` unlimited tokens, `burn` tokens, and `adminTransfer` any user's tokens. This centralized control… |
 | **Upgrades** | 1/10 | High | The contract correctly implements the UUPS upgrade pattern (7.7), inheriting `UUPSUpgradeable` and overriding `_authorizeUpgrade`. The upgrade authorization is appropriately restricted to the… |
 
@@ -46,32 +46,32 @@ The Turtle token contract, implemented as an upgradeable ERC-20, demonstrates go
 
 ## Security Findings
 
-_🔴 1 Critical · 🟡 1 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `C-01` — Centralized Control over Token Supply and Transfers  *(Severity: Critical · Status: Unresolved)*
-
-The `mint`, `burn`, and `adminTransfer` functions are protected by the `restricted` modifier, which grants the `initialAuthority` (set during initialization via `__AccessManaged_init`) the power to mint an arbitrary amount of tokens, burn tokens from `msg.sender`, and transfer tokens from any user's balance to any other address without their consent. This represents a severe centralization risk (7.3 Access Control, 7.4 Economic), allowing for arbitrary token supply manipulation and potential asset confiscation.
-
-**Recommendation:** Eliminate or significantly restrict the `adminTransfer` function. For `mint` and `burn`, consider implementing a timelock, multi-signature, or governance-controlled mechanism. Ensure the `initialAuthority` is a robust, multi-signature wallet with a high threshold and strong operational security (7.8 Operations).
-
+_🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Dual Access Control Mechanisms  *(Severity: Medium · Status: Unresolved)*
 
-The contract inherits both `OwnableUpgradeable` and `AccessManagedUpgradeable`. While `AccessManaged` is used for critical functions like `mint`, `burn`, `adminTransfer`, and `_authorizeUpgrade`, `Ownable` is initialized but its owner has no specific privileges defined within this contract. This dual inheritance can lead to confusion regarding which role controls what, potentially causing operational errors or misconfigurations (7.1 Architecture, 7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The contract inherits both `OwnableUpgradeable` and `AccessManagedUpgradeable`. While `AccessManaged` is used for critical functions like `mint`, `burn`, `adminTransfer`, and `_authorizeUpgrade`, `Ownable` is initialized but its owner has no specific privileges defined within this contract. This dual inheritance can lead to confusion regarding which role controls what, potentially causing operational errors or misconfigurations (7.1 Architecture, 7.3 Access Control).
 
 **Recommendation:** Consolidate access control to a single, clear mechanism (e.g., solely `AccessManaged` or a custom role-based access control). If `Ownable` is not used, remove it to improve clarity and reduce contract size.
 
 
+### `M-02` — Centralized Control over Token Supply and Transfers  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `mint`, `burn`, and `adminTransfer` functions are protected by the `restricted` modifier, which grants the `initialAuthority` (set during initialization via `__AccessManaged_init`) the power to mint an arbitrary amount of tokens, burn tokens from `msg.sender`, and transfer tokens from any user's balance to any other address without their consent. This represents a severe centralization risk (7.3 Access Control, 7.4 Economic), allowing for arbitrary token supply manipulation and potential asset confiscation.
+
+**Recommendation:** Eliminate or significantly restrict the `adminTransfer` function. For `mint` and `burn`, consider implementing a timelock, multi-signature, or governance-controlled mechanism. Ensure the `initialAuthority` is a robust, multi-signature wallet with a high threshold and strong operational security (7.8 Operations).
+
+
 ### `L-01` — Initial Mint Recipient Discrepancy  *(Severity: Low · Status: Unresolved)*
 
-The `initialize` function mints `initialMint` tokens to `msg.sender`. This `msg.sender` is the address that calls the `initialize` function on the proxy, which may not necessarily be the `initialAuthority` address that is set for `AccessManaged`. While not a direct vulnerability, this could lead to an unintended distribution of initial tokens if the deployer/initializer is different from the intended primary authority or treasury (7.1 Architecture, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function mints `initialMint` tokens to `msg.sender`. This `msg.sender` is the address that calls the `initialize` function on the proxy, which may not necessarily be the `initialAuthority` address that is set for `AccessManaged`. While not a direct vulnerability, this could lead to an unintended distribution of initial tokens if the deployer/initializer is different from the intended primary authority or treasury (7.1 Architecture, 7.8 Operations).
 
 **Recommendation:** Clarify in documentation who is expected to receive the initial mint. If the intention is for the `initialAuthority` or a specific treasury to receive these tokens, modify the `_mint` call to target that address explicitly.
 
 
 ### `I-01` — Strong Reliance on OpenZeppelin Libraries  *(Severity: Informational · Status: Resolved)*
 
-The contract heavily relies on battle-tested OpenZeppelin Upgradeable contracts (ERC20Upgradeable, AccessManagedUpgradeable, UUPSUpgradeable, etc.). This significantly reduces the risk of common vulnerabilities like reentrancy, integer overflows, and standard ERC-20 compliance issues (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract heavily relies on battle-tested OpenZeppelin Upgradeable contracts (ERC20Upgradeable, AccessManagedUpgradeable, UUPSUpgradeable, etc.). This significantly reduces the risk of common vulnerabilities like reentrancy, integer overflows, and standard ERC-20 compliance issues (7.2 Code Security).
 
 **Recommendation:** Continue to monitor OpenZeppelin's security advisories and ensure dependencies are kept up-to-date, especially during upgrades.
 

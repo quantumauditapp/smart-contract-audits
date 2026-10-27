@@ -42,28 +42,28 @@ _🟢 2 Low · ⚪ 2 Informational_
 
 ### `L-01` — Incomplete Token Functionality (Base Contract)  *(Severity: Low · Status: Unresolved)*
 
-The `FourERC20` contract provides the core ERC-20 logic but lacks public functions for minting or burning tokens, and thus cannot manage its own supply. This is by design for a base contract intended to be inherited, but means it's not a fully functional, deployable token on its own without a derived contract implementing these mechanisms (7.1 Architecture).
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract provides the core ERC-20 logic but lacks public functions for minting or burning tokens, and thus cannot manage its own supply. This is by design for a base contract intended to be inherited, but means it's not a fully functional, deployable token on its own without a derived contract implementing these mechanisms (7.1 Architecture).
 
 **Recommendation:** This is an architectural design choice. If a fully functional token is desired, a derived contract must be created to implement public `_mint` and `_burn` functions, along with appropriate access control for these operations.
 
 
 ### `L-02` — Standard ERC-20 `approve` Race Condition  *(Severity: Low · Status: Unresolved)*
 
-The `approve` function, while standard in ERC-20, is susceptible to a known race condition where a malicious spender can exploit a user's attempt to change an allowance. If a user first approves X, then approves Y, a front-running attacker could execute the first approval, then transfer X tokens, then execute the second approval, resulting in the attacker having Y tokens plus the X tokens from the first approval (7.2 Code Security). While `increaseAllowance` and `decreaseAllowance` are provided as mitigations, the `approve` function itself remains vulnerable if not used carefully by external callers.
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function, while standard in ERC-20, is susceptible to a known race condition where a malicious spender can exploit a user's attempt to change an allowance. If a user first approves X, then approves Y, a front-running attacker could execute the first approval, then transfer X tokens, then execute the second approval, resulting in the attacker having Y tokens plus the X tokens from the first approval (7.2 Code Security). While `increaseAllowance` and `decreaseAllowance` are provided as mitigations, the `approve` function itself remains vulnerable if not used carefully by external callers.
 
 **Recommendation:** Educate users to prefer `increaseAllowance` and `decreaseAllowance` over `approve` when modifying existing allowances. If `approve` must be used to change an existing allowance, it is safer to first set the allowance to zero, wait for that transaction to confirm, and then set the new allowance.
 
 
 ### `I-01` — Missing Initialization Event  *(Severity: Informational · Status: Unresolved)*
 
-The `_init` function, which sets the token's name and symbol, does not emit an event. Emitting an event for critical initialization parameters is a best practice for transparency and off-chain indexing, allowing external systems to easily track the token's fundamental properties upon deployment (7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `_init` function, which sets the token's name and symbol, does not emit an event. Emitting an event for critical initialization parameters is a best practice for transparency and off-chain indexing, allowing external systems to easily track the token's fundamental properties upon deployment (7.8 Operations).
 
 **Recommendation:** Consider emitting an event, such as `Initialized(string name, string symbol)`, within the `_init` function to provide a clear, immutable record of the token's initial configuration.
 
 
 ### `I-02` — Absence of Operational Roles  *(Severity: Informational · Status: Unresolved)*
 
-The contract does not implement any specific operational roles such as `owner`, `pauser`, or `minter`. This means there are no centralized controls for emergency actions like pausing transfers or managing token supply, which might be desired for a production token (7.3 Access Control, 7.8 Operations). This is a design choice for a base contract.
+Not confirmed by static analysis (the model's own reading of the source). The contract does not implement any specific operational roles such as `owner`, `pauser`, or `minter`. This means there are no centralized controls for emergency actions like pausing transfers or managing token supply, which might be desired for a production token (7.3 Access Control, 7.8 Operations). This is a design choice for a base contract.
 
 **Recommendation:** If centralized control or emergency mechanisms are required for the deployed token, a derived contract should implement appropriate access control patterns (e.g., OpenZeppelin's `Ownable` or `AccessControl`) and integrate functionalities like `Pausable`.
 

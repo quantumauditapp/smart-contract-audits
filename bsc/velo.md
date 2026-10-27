@@ -2,14 +2,14 @@
 token: VELO
 ticker: VELO
 network: bsc
-risk_score: 57
+risk_score: 35
 status: medium
 date: 2026-07-27
 ---
 
 # VELO (VELO) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 57/100 — 🟡 Medium Risk**
+> **Risk Score: 35/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/velo-bsc)
 
@@ -38,39 +38,39 @@ The audit focused on the Token contract, a modified ERC20 implementation. The co
 
 ## Security Findings
 
-_🟠 1 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Centralized Initial Token Supply  *(Severity: High · Status: Unresolved)*
-
-The constructor of the `Token` contract mints a substantial fixed amount of 30,000,000,000,000,000,000,000,000,000 (30 billion) tokens to `msg.sender` (the deployer). This results in a highly centralized initial token distribution, giving the deployer immense control over the token's supply and potential market manipulation.
-
-**Recommendation:** Consider a more distributed initial token allocation strategy. If the deployer is intended to be a treasury or a distribution mechanism, implement clear, transparent, and potentially time-locked distribution schedules. For a public token, a fair launch or a vesting schedule for initial holders is often preferred.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Unused WhitelistAdminRole in Token Logic  *(Severity: Medium · Status: Unresolved)*
 
-The `Token` contract inherits `WhitelistAdminRole`, but its core ERC20 functionality (e.g., `_transfer`, `_mint`, `_burn`) does not utilize any whitelisting logic or modifiers from this role. This suggests the `WhitelistAdminRole` is either vestigial, intended for future unimplemented features, or its purpose is solely for external contracts to query the admin status, which is not explicitly stated.
+Not confirmed by static analysis (the model's own reading of the source). The `Token` contract inherits `WhitelistAdminRole`, but its core ERC20 functionality (e.g., `_transfer`, `_mint`, `_burn`) does not utilize any whitelisting logic or modifiers from this role. This suggests the `WhitelistAdminRole` is either vestigial, intended for future unimplemented features, or its purpose is solely for external contracts to query the admin status, which is not explicitly stated.
 
 **Recommendation:** Clarify the intended purpose of the `WhitelistAdminRole`. If it's meant to control token transfers (e.g., pausing, blacklisting, whitelisting specific addresses for transfers), integrate its logic into the `_beforeTokenTransfer` hook or similar mechanisms. If it's for external contract interaction, ensure this is well-documented.
 
 
 ### `M-02` — Single Point of Failure for WhitelistAdminRole  *(Severity: Medium · Status: Unresolved)*
 
-The `WhitelistAdminRole` is initially granted solely to the contract deployer (`msg.sender`) in the constructor. While `addWhitelistAdmin` exists, it can only be called by an existing admin. This creates a single point of failure: if the deployer's private key is compromised, an attacker could gain full control over the `WhitelistAdminRole`, potentially adding malicious admins or revoking legitimate ones.
+Not confirmed by static analysis (the model's own reading of the source). The `WhitelistAdminRole` is initially granted solely to the contract deployer (`msg.sender`) in the constructor. While `addWhitelistAdmin` exists, it can only be called by an existing admin. This creates a single point of failure: if the deployer's private key is compromised, an attacker could gain full control over the `WhitelistAdminRole`, potentially adding malicious admins or revoking legitimate ones.
 
 **Recommendation:** Implement a multi-signature wallet (e.g., Gnosis Safe) to manage the `WhitelistAdminRole` address. This would require multiple trusted parties to approve any administrative actions, significantly reducing the risk associated with a single compromised key. Consider transferring the `WhitelistAdminRole` to such a multi-sig immediately after deployment.
 
 
+### `M-03` — Centralized Initial Token Supply  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The constructor of the `Token` contract mints a substantial fixed amount of 30,000,000,000,000,000,000,000,000,000 (30 billion) tokens to `msg.sender` (the deployer). This results in a highly centralized initial token distribution, giving the deployer immense control over the token's supply and potential market manipulation.
+
+**Recommendation:** Consider a more distributed initial token allocation strategy. If the deployer is intended to be a treasury or a distribution mechanism, implement clear, transparent, and potentially time-locked distribution schedules. For a public token, a fair launch or a vesting schedule for initial holders is often preferred.
+
+
 ### `L-01` — Outdated Solidity Version  *(Severity: Low · Status: Unresolved)*
 
-The contract uses `pragma solidity ^0.5.0`. While this version is compatible with the OpenZeppelin 2.x libraries used, newer Solidity versions (e.g., 0.8.x) offer enhanced security features such as default overflow/underflow checks, custom errors for more efficient reverts, and improved gas optimizations. Using an older compiler version can sometimes lead to subtle issues or missed opportunities for better code.
+Not confirmed by static analysis (the model's own reading of the source). The contract uses `pragma solidity ^0.5.0`. While this version is compatible with the OpenZeppelin 2.x libraries used, newer Solidity versions (e.g., 0.8.x) offer enhanced security features such as default overflow/underflow checks, custom errors for more efficient reverts, and improved gas optimizations. Using an older compiler version can sometimes lead to subtle issues or missed opportunities for better code.
 
 **Recommendation:** Consider upgrading the Solidity compiler version to 0.8.x or later. This would require updating OpenZeppelin dependencies to their 4.x or 5.x versions and carefully reviewing the code for breaking changes, especially regarding SafeMath (which becomes largely unnecessary in 0.8.x+).
 
 
 ### `I-01` — Hardcoded Initial Mint Amount  *(Severity: Informational · Status: Unresolved)*
 
-The initial token mint amount in the constructor is hardcoded to 30 billion tokens. While functional, this design choice lacks flexibility for different deployment scenarios or future adjustments without redeploying the contract.
+Not confirmed by static analysis (the model's own reading of the source). The initial token mint amount in the constructor is hardcoded to 30 billion tokens. While functional, this design choice lacks flexibility for different deployment scenarios or future adjustments without redeploying the contract.
 
 **Recommendation:** Consider making the initial mint amount a constructor parameter. This would allow for greater flexibility during deployment, enabling different initial supplies based on specific project requirements or phases.
 
@@ -113,11 +113,11 @@ The initial token mint amount in the constructor is hardcoded to 30 billion toke
 
 ### Is VELO a scam?
 
-Based on automated analysis, VELO scores 65/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, VELO scores 35/100 (Medium Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is VELO safe to buy?
 
-Our scanner flagged a risk score of 65/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 35/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has VELO been audited?
 

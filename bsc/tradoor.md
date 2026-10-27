@@ -2,14 +2,14 @@
 token: TRADOOR
 ticker: TRADOOR
 network: bsc
-risk_score: 34
+risk_score: 27
 status: low
 date: 2026-07-25
 ---
 
 # TRADOOR (TRADOOR) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 34/100 — 🟢 Low Risk**
+> **Risk Score: 27/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tradoor-bsc)
 
@@ -42,28 +42,28 @@ _🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Centralization of Initial Token Supply  *(Severity: Medium · Status: Unresolved)*
 
-The `Token` contract's constructor mints the entire `supply` to `msg.sender` (the deployer). This design choice results in 100% of the initial token supply being held by a single address. This concentration of tokens creates a significant centralization risk (7.4 Economic), as the deployer could potentially manipulate the market, dump tokens, or exert undue influence over the token's ecosystem.
+Not confirmed by static analysis (the model's own reading of the source). The `Token` contract's constructor mints the entire `supply` to `msg.sender` (the deployer). This design choice results in 100% of the initial token supply being held by a single address. This concentration of tokens creates a significant centralization risk (7.4 Economic), as the deployer could potentially manipulate the market, dump tokens, or exert undue influence over the token's ecosystem.
 
 **Recommendation:** If the token is intended for a decentralized project or public distribution, consider implementing a more diversified initial distribution strategy. This could involve: 1) Minting to a multi-signature wallet for controlled distribution. 2) Allocating portions to various stakeholders (e.g., treasury, liquidity pools, community airdrops). 3) Implementing a vesting schedule for team or early investor allocations.
 
 
 ### `L-01` — Lack of Emergency Controls  *(Severity: Low · Status: Unresolved)*
 
-The `Token` contract, being a basic ERC20, does not include any emergency control mechanisms such as `pause` or `blacklist` functionality. While this simplifies the contract and reduces complexity, the absence of these controls (7.8 Operations) means that in the event of a critical vulnerability, exploit, or regulatory requirement, there is no built-in mechanism to halt transfers or restrict malicious addresses, potentially leading to irreversible damage.
+Not confirmed by static analysis (the model's own reading of the source). The `Token` contract, being a basic ERC20, does not include any emergency control mechanisms such as `pause` or `blacklist` functionality. While this simplifies the contract and reduces complexity, the absence of these controls (7.8 Operations) means that in the event of a critical vulnerability, exploit, or regulatory requirement, there is no built-in mechanism to halt transfers or restrict malicious addresses, potentially leading to irreversible damage.
 
 **Recommendation:** Assess the project's risk tolerance and potential future needs. If the ability to react to emergencies is deemed important, consider integrating OpenZeppelin's `Pausable` or `Blacklist` modules. These should be controlled by a robust access control mechanism, such as a multi-signature wallet, to prevent single points of failure.
 
 
 ### `I-01` — Reliance on OpenZeppelin Standards  *(Severity: Informational · Status: Unresolved)*
 
-The `Token` contract heavily relies on the battle-tested and widely audited OpenZeppelin Contracts library (v4.9.0) for its ERC20 implementation. This significantly reduces the risk of common vulnerabilities (7.2 Code Security) such as reentrancy, integer overflows/underflows, and incorrect ERC20 behavior, as these libraries are maintained by a reputable team and have undergone extensive scrutiny.
+Not confirmed by static analysis (the model's own reading of the source). The `Token` contract heavily relies on the battle-tested and widely audited OpenZeppelin Contracts library (v4.9.0) for its ERC20 implementation. This significantly reduces the risk of common vulnerabilities (7.2 Code Security) such as reentrancy, integer overflows/underflows, and incorrect ERC20 behavior, as these libraries are maintained by a reputable team and have undergone extensive scrutiny.
 
 **Recommendation:** Continue to monitor OpenZeppelin's security advisories and updates. Ensure that any future custom logic or modifications are thoroughly reviewed to maintain the high security standard provided by the base library.
 
 
 ### `I-02` — Immutability of Contract Logic  *(Severity: Informational · Status: Unresolved)*
 
-The `Token` contract is deployed as a standard, non-upgradeable contract. This means its logic is immutable once deployed to the blockchain (7.7 Upgrades). This design provides certainty and eliminates risks associated with upgrade mechanisms (e.g., proxy vulnerabilities, upgrade key compromise). However, it also implies that any discovered bugs or desired feature enhancements cannot be implemented without deploying an entirely new contract and migrating existing token holders.
+Not confirmed by static analysis (the model's own reading of the source). The `Token` contract is deployed as a standard, non-upgradeable contract. This means its logic is immutable once deployed to the blockchain (7.7 Upgrades). This design provides certainty and eliminates risks associated with upgrade mechanisms (e.g., proxy vulnerabilities, upgrade key compromise). However, it also implies that any discovered bugs or desired feature enhancements cannot be implemented without deploying an entirely new contract and migrating existing token holders.
 
 **Recommendation:** Acknowledge the trade-offs of immutability. For a simple token, this is often an acceptable design. If future flexibility or bug-fixing capabilities are critical, consider an upgradeable proxy pattern for future contract deployments, ensuring proper implementation and robust access control for upgrade functions.
 
@@ -106,11 +106,11 @@ The `Token` contract is deployed as a standard, non-upgradeable contract. This m
 
 ### Is TRADOOR a scam?
 
-Based on automated analysis, TRADOOR scores 67/100 (High Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
+Based on automated analysis, TRADOOR scores 27/100 (Low Risk) on our risk scale. No honeypot was detected, but always verify independently before investing.
 
 ### Is TRADOOR safe to buy?
 
-Our scanner flagged a risk score of 67/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
+Our scanner flagged a risk score of 27/100. Ownership has not been renounced, which is a risk factor. DYOR before purchasing any token.
 
 ### Has TRADOOR been audited?
 

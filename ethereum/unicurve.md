@@ -2,14 +2,14 @@
 token: UNICURVE
 ticker: UNICURVE
 network: ethereum
-risk_score: 68
-status: high
+risk_score: 41
+status: medium
 date: 2026-08-01
 ---
 
 # UNICURVE (UNICURVE) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 68/100 — 🟠 High Risk**
+> **Risk Score: 41/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/unicurve-eth)
 
@@ -25,8 +25,8 @@ The UnicurveToken contract is an ERC20 token designed for an EIP-1167 cloning pa
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The contract leverages battle-tested OpenZeppelin ERC20 for core token functionality, enhancing code security (7.2 Code Security). The logic is straightforward, primarily managing a… |
-| **Governance / Economics** | 1/10 | High | The economic model is highly centralized, with the entire token supply minted to the `curve` address upon initialization (7.4 Economic). This grants the `curve` address complete control over token… |
+| **Technical** | 8/10 | Low | The contract leverages battle-tested OpenZeppelin ERC20 for core token functionality, enhancing code security (7.2 Code Security). The logic is straightforward, primarily managing a… |
+| **Governance / Economics** | 2/10 | High | The economic model is highly centralized, with the entire token supply minted to the `curve` address upon initialization (7.4 Economic). This grants the `curve` address complete control over token… |
 | **Upgrades** | 1/10 | High | The `UnicurveToken` contract is designed as an EIP-1167 clone, meaning it is not directly upgradeable (7.7 Upgrades). This eliminates risks associated with upgrade mechanisms, such as proxy… |
 
 ## Proxy Upgrade Controls
@@ -46,46 +46,46 @@ The UnicurveToken contract is an ERC20 token designed for an EIP-1167 cloning pa
 
 ## Security Findings
 
-_🟠 2 High · 🟡 1 Medium · 🟢 1 Low · ⚪ 2 Informational_
-
-### `H-01` — Centralized Control by `curve` Address  *(Severity: High · Status: Unresolved)*
-
-The `curve` address, set during initialization, is the sole recipient of the entire token supply (1 billion tokens) and the only entity capable of calling `enableTransfers()`. This grants the `curve` address complete control over token distribution and transferability, representing a single point of failure (7.3 Access Control, 7.5 Governance).
-
-**Recommendation:** Acknowledge and clearly communicate this high degree of centralization to all users and potential investors. If future decentralization is desired, consider implementing a multi-signature wallet or a time-locked contract for the `curve` address to manage critical functions.
-
-
-### `H-02` — Potential for Rug Pull / Malicious `curve` Behavior  *(Severity: High · Status: Unresolved)*
-
-With 100% of the token supply minted to the `curve` address and its exclusive control over enabling transfers, there is a significant risk of a 'rug pull' (7.4 Economic). If the `curve` address is controlled by a malicious actor, they could unilaterally dump all tokens onto the market, causing a severe price crash.
-
-**Recommendation:** Transparency is crucial. Clearly communicate the token distribution model and the power of the `curve` address to potential investors. Implement mechanisms (e.g., liquidity locks, vesting schedules for the `curve` address's holdings) in the `curve` contract itself to build trust, if applicable to the project's design.
-
+_🟡 3 Medium · 🟢 1 Low · ⚪ 2 Informational_
 
 ### `M-01` — Permanent Transfer Lock Risk  *(Severity: Medium · Status: Unresolved)*
 
-The `enableTransfers()` function, which sets `transfersEnabled = true`, can only be called by the `curve` address. If the `curve` address is compromised, lost, or becomes inaccessible, the tokens could remain permanently untransferable (except for transfers involving the `curve` itself), leading to a denial of service for token holders (7.3 Access Control, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `enableTransfers()` function, which sets `transfersEnabled = true`, can only be called by the `curve` address. If the `curve` address is compromised, lost, or becomes inaccessible, the tokens could remain permanently untransferable (except for transfers involving the `curve` itself), leading to a denial of service for token holders (7.3 Access Control, 7.8 Operations).
 
 **Recommendation:** Ensure robust security and operational procedures for the `curve` address. Consider a mechanism to transfer `curve` ownership or a time-locked release of transfer control if the original `curve` becomes unresponsive, though this adds complexity and new risks.
 
 
+### `M-02` — Centralized Control by `curve` Address  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `curve` address, set during initialization, is the sole recipient of the entire token supply (1 billion tokens) and the only entity capable of calling `enableTransfers()`. This grants the `curve` address complete control over token distribution and transferability, representing a single point of failure (7.3 Access Control, 7.5 Governance).
+
+**Recommendation:** Acknowledge and clearly communicate this high degree of centralization to all users and potential investors. If future decentralization is desired, consider implementing a multi-signature wallet or a time-locked contract for the `curve` address to manage critical functions.
+
+
+### `M-03` — Potential for Rug Pull / Malicious `curve` Behavior  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). With 100% of the token supply minted to the `curve` address and its exclusive control over enabling transfers, there is a significant risk of a 'rug pull' (7.4 Economic). If the `curve` address is controlled by a malicious actor, they could unilaterally dump all tokens onto the market, causing a severe price crash.
+
+**Recommendation:** Transparency is crucial. Clearly communicate the token distribution model and the power of the `curve` address to potential investors. Implement mechanisms (e.g., liquidity locks, vesting schedules for the `curve` address's holdings) in the `curve` contract itself to build trust, if applicable to the project's design.
+
+
 ### `L-01` — EIP-1167 Clone Initialization Race Condition (Theoretical)  *(Severity: Low · Status: Unresolved)*
 
-The `initialize` function lacks explicit access control beyond the `AlreadyInitialized` check. In an EIP-1167 factory deployment scenario, if the factory's deployment and initialization logic is not atomic or properly secured, a malicious actor could theoretically front-run the `initialize` call on a newly deployed clone, setting an attacker-controlled `curve` address (7.2 Code Security, 7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function lacks explicit access control beyond the `AlreadyInitialized` check. In an EIP-1167 factory deployment scenario, if the factory's deployment and initialization logic is not atomic or properly secured, a malicious actor could theoretically front-run the `initialize` call on a newly deployed clone, setting an attacker-controlled `curve` address (7.2 Code Security, 7.3 Access Control).
 
 **Recommendation:** Ensure the factory contract responsible for deploying and initializing `UnicurveToken` clones implements robust access control (e.g., `onlyFactory` or `onlyOwner` for initialization calls) and/or atomic deployment-initialization patterns to prevent front-running.
 
 
 ### `I-01` — Missing Event for `enableTransfers`  *(Severity: Informational · Status: Unresolved)*
 
-The `enableTransfers()` function modifies a critical state variable (`transfersEnabled`) but does not emit an event. Emitting an event would improve transparency and allow off-chain monitoring of this crucial state change (7.2 Code Security, 7.8 Operations).
+Not confirmed by static analysis (the model's own reading of the source). The `enableTransfers()` function modifies a critical state variable (`transfersEnabled`) but does not emit an event. Emitting an event would improve transparency and allow off-chain monitoring of this crucial state change (7.2 Code Security, 7.8 Operations).
 
 **Recommendation:** Emit an event (e.g., `event TransfersEnabled(address indexed caller, uint256 timestamp);`) when `transfersEnabled` is set to `true` to provide better traceability and off-chain monitoring capabilities.
 
 
 ### `I-02` — Hardcoded `SUPPLY` Constant  *(Severity: Informational · Status: Unresolved)*
 
-The `SUPPLY` variable is declared as a `public constant`, fixing the total token supply at 1,000,000,000e18. This design choice means the token's total supply cannot be altered in the future without deploying a new contract (7.1 Architecture, 7.4 Economic).
+Not confirmed by static analysis (the model's own reading of the source). The `SUPPLY` variable is declared as a `public constant`, fixing the total token supply at 1,000,000,000e18. This design choice means the token's total supply cannot be altered in the future without deploying a new contract (7.1 Architecture, 7.4 Economic).
 
 **Recommendation:** This is a design decision for a fixed-supply token. No action is required if this immutability is intended. If flexibility in total supply was ever desired, a different token architecture (e.g., mintable/burnable) would be necessary.
 

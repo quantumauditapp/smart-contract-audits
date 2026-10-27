@@ -92,11 +92,11 @@ Not confirmed by static analysis (the model's own reading of the source). The co
 
 ### Is Uniswap a scam?
 
-Based on the data, Uniswap (UNI) does not exhibit typical scam characteristics; its contract is verified, and no mint function exists, preventing arbitrary supply inflation. However, non-renounced ownership and significant token concentration (52.3% by top 10 holders) introduce centralization risks. While these contribute to its 'High Risk' score of 68/100 and warrant caution, they do not inherently categorize Uniswap as a scam.
+Based on the data, Uniswap (UNI) does not exhibit typical scam characteristics; its contract is verified, and no mint function exists, preventing arbitrary supply inflation. However, non-renounced ownership and significant token concentration (52.3% by top 10 holders) introduce centralization risks. While these contribute to its 'Medium Risk' score of 40/100 and warrant caution, they do not inherently categorize Uniswap as a scam.
 
 ### Is Uniswap safe to buy?
 
-UNI carries a 'High Risk' score (68/100) due to several factors. Contract ownership is not renounced, and liquidity is unlocked, raising concerns about administrative control over token parameters or market stability. Additionally, 52.3% of the supply is concentrated among the top 10 holders. These factors suggest potential for centralized influence, meaning investors should exercise elevated caution and conduct thorough due diligence.
+UNI carries a 'Medium Risk' score (40/100) due to several factors. Contract ownership is not renounced, and liquidity is unlocked, raising concerns about administrative control over token parameters or market stability. Additionally, 52.3% of the supply is concentrated among the top 10 holders. These factors suggest potential for centralized influence, meaning investors should exercise elevated caution and conduct thorough due diligence.
 
 ### Has Uniswap been audited?
 

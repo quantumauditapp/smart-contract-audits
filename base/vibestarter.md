@@ -2,14 +2,14 @@
 token: Vibestarter
 ticker: VIBES
 network: base
-risk_score: 28
+risk_score: 22
 status: low
 date: 2026-08-31
 ---
 
 # Vibestarter (VIBES) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 22/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vibestarter-base)
 
@@ -42,28 +42,28 @@ _🟢 3 Low · ⚪ 1 Informational_
 
 ### `L-01` — Centralized Initial Supply Distribution  *(Severity: Low · Status: Unresolved)*
 
-The entire `totalSupply` is minted to a single `_recipient` address in the constructor. This centralizes the initial distribution of tokens, potentially creating a single point of control or failure for the token's initial liquidity and ecosystem development. If this recipient's private key is compromised, the entire supply could be at risk.
+Not confirmed by static analysis (the model's own reading of the source). The entire `totalSupply` is minted to a single `_recipient` address in the constructor. This centralizes the initial distribution of tokens, potentially creating a single point of control or failure for the token's initial liquidity and ecosystem development. If this recipient's private key is compromised, the entire supply could be at risk.
 
 **Recommendation:** For enhanced decentralization and security, consider distributing the initial supply across multiple addresses, a multi-signature wallet, or a vesting contract. This reduces the risk associated with a single point of failure.
 
 
 ### `L-02` — Lack of Emergency Pause Mechanism  *(Severity: Low · Status: Unresolved)*
 
-The contract lacks a mechanism to pause transfers or other critical functions in case of an emergency, such as a major vulnerability discovery, market manipulation, or regulatory requirement. This could leave the protocol vulnerable to rapid exploitation without a way to mitigate damage or halt operations temporarily.
+Not confirmed by static analysis (the model's own reading of the source). The contract lacks a mechanism to pause transfers or other critical functions in case of an emergency, such as a major vulnerability discovery, market manipulation, or regulatory requirement. This could leave the protocol vulnerable to rapid exploitation without a way to mitigate damage or halt operations temporarily.
 
 **Recommendation:** Evaluate the need for an emergency pause mechanism, typically controlled by a trusted entity (e.g., a multi-signature wallet). While adding centralization, it provides a crucial safety net for unforeseen circumstances. If implemented, ensure the pause mechanism has clear conditions for activation and deactivation.
 
 
 ### `L-03` — No Token Burn Functionality  *(Severity: Low · Status: Unresolved)*
 
-The contract does not include a function to burn tokens, meaning tokens cannot be permanently removed from circulation by users or administrators. While not a direct vulnerability, this limits flexibility for managing token supply, such as reducing total supply, implementing deflationary mechanisms, or allowing users to burn tokens for specific purposes.
+Not confirmed by static analysis (the model's own reading of the source). The contract does not include a function to burn tokens, meaning tokens cannot be permanently removed from circulation by users or administrators. While not a direct vulnerability, this limits flexibility for managing token supply, such as reducing total supply, implementing deflationary mechanisms, or allowing users to burn tokens for specific purposes.
 
 **Recommendation:** Consider adding a `burn` function, either for users to burn their own tokens or for an authorized entity to burn tokens from specific addresses. This can provide greater flexibility in tokenomics and supply management.
 
 
 ### `I-01` — ERC-20 `approve` Race Condition  *(Severity: Informational · Status: Unresolved)*
 
-The standard ERC-20 `approve` function is susceptible to a known front-running attack. If a user approves an amount `X` to a spender and then wishes to change it to `Y`, an attacker could front-run the transaction changing `X` to `Y` by spending the original `X` amount. This results in the spender having `X + Y` allowance instead of just `Y`.
+Not confirmed by static analysis (the model's own reading of the source). The standard ERC-20 `approve` function is susceptible to a known front-running attack. If a user approves an amount `X` to a spender and then wishes to change it to `Y`, an attacker could front-run the transaction changing `X` to `Y` by spending the original `X` amount. This results in the spender having `X + Y` allowance instead of just `Y`.
 
 **Recommendation:** While this is an inherent design flaw of the ERC-20 standard and not an implementation bug, users should be advised to first set the allowance to zero before approving a new, non-zero amount to mitigate this risk. Alternatively, consider using `increaseAllowance` and `decreaseAllowance` functions (not implemented in this contract) which are less prone to this specific race condition.
 

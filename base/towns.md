@@ -2,14 +2,14 @@
 token: Towns
 ticker: TOWNS
 network: base
-risk_score: 71
+risk_score: 66
 status: high
 date: 2026-08-12
 ---
 
 # Towns (TOWNS) — Smart Contract Security Analysis | Base
 
-> **Risk Score: 71/100 — 🟠 High Risk**
+> **Risk Score: 66/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/towns-base)
 
@@ -50,14 +50,14 @@ _🟡 1 Medium · ⚪ 1 Informational_
 
 ### `M-01` — Fixed and Significant Token Transfer Lock on Undelegation  *(Severity: Medium · Status: Unresolved)*
 
-The `Towns` contract implements a token transfer lock mechanism tied to voting delegation. When a user undelegates their voting power (by delegating to `address(0)`), their tokens become subject to a 30-day transfer lock. This `defaultCooldown` is set during initialization via `__LockBase_init(30 days)` and cannot be modified later, making the 30-day lock period a permanent and unchangeable feature. While this is an intended design, its fixed and substantial duration could lead to unexpected liquidity restrictions for users who are unaware of this cooldown period, potentially impacting user experience and token utility.
+Not confirmed by static analysis (the model's own reading of the source). The `Towns` contract implements a token transfer lock mechanism tied to voting delegation. When a user undelegates their voting power (by delegating to `address(0)`), their tokens become subject to a 30-day transfer lock. This `defaultCooldown` is set during initialization via `__LockBase_init(30 days)` and cannot be modified later, making the 30-day lock period a permanent and unchangeable feature. While this is an intended design, its fixed and substantial duration could lead to unexpected liquidity restrictions for users who are unaware of this cooldown period, potentially impacting user experience and token utility
 
 **Recommendation:** Ensure that the fixed 30-day token transfer lock upon undelegation is clearly communicated to all users through official documentation, user interfaces, and any relevant educational materials. Consider adding a warning or confirmation step in front-end applications when a user attempts to undelegate, explicitly stating the impending transfer lock duration. While the contract design makes this immutable, transparent communication is crucial to manage user expectations.
 
 
 ### `I-01` — Unused `onlyAllowed` Modifier in `LockBase`  *(Severity: Informational · Status: Unresolved)*
 
-The `_canLock()` function in the `Towns` contract, which is an override from `LockBase`, always returns `false`. This design choice renders the `onlyAllowed` modifier within the `LockBase` contract effectively unusable. While `Towns` does not directly expose any external functions that utilize this modifier, its presence in the inherited `LockBase` contract, coupled with `_canLock()` always returning `false`, indicates a potential design inconsistency or an unimplemented feature from the `ILock` interface (e.g., `enableLock`, `disableLock`, `setLockCooldown` are not implemented in `Towns` with this modifier).
+Not confirmed by static analysis (the model's own reading of the source). The `_canLock()` function in the `Towns` contract, which is an override from `LockBase`, always returns `false`. This design choice renders the `onlyAllowed` modifier within the `LockBase` contract effectively unusable. While `Towns` does not directly expose any external functions that utilize this modifier, its presence in the inherited `LockBase` contract, coupled with `_canLock()` always returning `false`, indicates a potential design inconsistency or an unimplemented feature from the `ILock` interface (e.g., `enableLock`, `disableLock`, `setLockCooldown` are not implemented in `Towns` with this modifier).
 
 **Recommendation:** Document the explicit design decision behind `_canLock()` always returning `false` and the implications for the `onlyAllowed` modifier in `LockBase`. If the `onlyAllowed` modifier and associated external functions from `ILock` were never intended to be used or exposed, consider removing them from `LockBase` or clarifying their purpose to avoid confusion for future developers or auditors. If they were intended, ensure proper implementation and exposure.
 

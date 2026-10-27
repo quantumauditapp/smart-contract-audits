@@ -2,14 +2,14 @@
 token: UFC Freedom 250
 ticker: UFC250
 network: solana
-risk_score: 44
+risk_score: 42
 status: medium
 date: 2026-06-10
 ---
 
 # UFC Freedom 250 (UFC250) — Smart Contract Security Analysis | Solana
 
-> **Risk Score: 44/100 — 🟡 Medium Risk**
+> **Risk Score: 42/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/ufc-freedom-250-sol)
 
@@ -60,7 +60,7 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|--------|
 | Contract Verified | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -69,14 +69,14 @@ This token is an SPL token mint, not a deployed program: there is no contract so
 |-------|---|---------------|
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Frequently Asked Questions
 
 ### Is UFC Freedom 250 a scam?
 
-The data indicates UFC Freedom 250 exhibits several characteristics commonly associated with high-risk or potentially fraudulent projects. Its Critical Risk score of 75/100, unverified contract, unrenounced ownership, and unlocked liquidity are significant red flags. While we cannot definitively label it a 'scam' without intent, these technical findings strongly suggest extreme caution is warranted due to the inherent vulnerabilities and potential for malicious actions.
+The data indicates UFC Freedom 250 exhibits several characteristics commonly associated with high-risk or potentially fraudulent projects. Its Medium Risk score of 42/100, unverified contract, unrenounced ownership, and unlocked liquidity are significant red flags. While we cannot definitively label it a 'scam' without intent, these technical findings strongly suggest extreme caution is warranted due to the inherent vulnerabilities and potential for malicious actions.
 
 ### Is UFC Freedom 250 safe to buy?
 

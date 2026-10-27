@@ -2,14 +2,14 @@
 token: 牛来
 ticker: 牛来
 network: bsc
-risk_score: 33
+risk_score: 16
 status: low
 date: 2026-08-30
 ---
 
 # 牛来 (牛来) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 33/100 — 🟢 Low Risk**
+> **Risk Score: 16/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/token-15a23f-bsc)
 
@@ -49,35 +49,35 @@ _🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Reentrancy Risk in External Calls within `_processTax`  *(Severity: Medium · Status: Unresolved)*
 
-The `_liquidateTax` function uses a `notLiquidating` flag as a reentrancy guard for its own execution. However, the `_processTax` function, which is called within `_liquidateTax` and is expected to make external calls to `taxProcessor` and `dividendContract`, is truncated in the provided code. Without the full implementation, it's unclear if these external calls are adequately protected against reentrancy, potentially allowing malicious re-entries into other parts of the system or leading to unexpected state changes or fund manipulation.
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function uses a `notLiquidating` flag as a reentrancy guard for its own execution. However, the `_processTax` function, which is called within `_liquidateTax` and is expected to make external calls to `taxProcessor` and `dividendContract`, is truncated in the provided code. Without the full implementation, it's unclear if these external calls are adequately protected against reentrancy, potentially allowing malicious re-entries into other parts of the system or leading to unexpected state changes or fund manipulation.
 
 **Recommendation:** Provide the complete implementation of the `_processTax` function for a thorough security review. Ensure that all external calls within `_processTax` are made with appropriate reentrancy guards (e.g., Checks-Effects-Interactions pattern, OpenZeppelin's `ReentrancyGuard`) to prevent malicious re-entries.
 
 
 ### `M-02` — Centralized Control by Owner  *(Severity: Medium · Status: Unresolved)*
 
-The `onlyOwner` modifier on `startMigration` and `finalizeMigration` grants significant power to a single address to transition the contract's operational state. These state changes directly impact tax application and token behavior, introducing a single point of failure and trust. A compromised owner key could lead to unauthorized state changes and potential economic manipulation.
+Not confirmed by static analysis (the model's own reading of the source). The `onlyOwner` modifier on `startMigration` and `finalizeMigration` grants significant power to a single address to transition the contract's operational state. These state changes directly impact tax application and token behavior, introducing a single point of failure and trust. A compromised owner key could lead to unauthorized state changes and potential economic manipulation.
 
 **Recommendation:** Consider implementing a multi-signature wallet for the owner role to distribute control and reduce the risk of a single point of failure. Alternatively, introduce a time-lock mechanism for critical state-changing functions to provide a window for community review or emergency intervention.
 
 
 ### `M-03` — Potential Storage Collisions in Upgrades  *(Severity: Medium · Status: Unresolved)*
 
-The contract is designed as an upgradeable proxy implementation. The `PackedPoolState` struct is used for multiple state variables. Future upgrades that modify the layout of this struct (e.g., changing variable types, adding/removing variables) or the order of state variables in the contract without careful consideration of storage slot management could lead to storage collisions and data corruption, potentially bricking the contract or leading to loss of funds.
+Not confirmed by static analysis (the model's own reading of the source). The contract is designed as an upgradeable proxy implementation. The `PackedPoolState` struct is used for multiple state variables. Future upgrades that modify the layout of this struct (e.g., changing variable types, adding/removing variables) or the order of state variables in the contract without careful consideration of storage slot management could lead to storage collisions and data corruption, potentially bricking the contract or leading to loss of funds.
 
 **Recommendation:** Adhere strictly to the storage layout rules for upgradeable contracts. When modifying structs or adding new state variables in future versions, ensure that new variables are appended to the end of the storage layout and that existing variable types or order are not changed. Utilize tools like `hardhat-upgrades` or `truffle-upgrades` to detect storage layout incompatibilities during development.
 
 
 ### `L-01` — Gas Cost Implications of `_liquidateTax` on Every Transfer  *(Severity: Low · Status: Unresolved)*
 
-The `_liquidateTax` function is invoked at the beginning of every `_transfer` operation. While its core logic is conditionally executed (only for transfers to `mainPool` under specific conditions), this unconditional call adds a small, constant gas overhead to all transfers. For transfers that trigger the full liquidation process, the gas cost could be significantly higher, potentially impacting user experience and network congestion.
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function is invoked at the beginning of every `_transfer` operation. While its core logic is conditionally executed (only for transfers to `mainPool` under specific conditions), this unconditional call adds a small, constant gas overhead to all transfers. For transfers that trigger the full liquidation process, the gas cost could be significantly higher, potentially impacting user experience and network congestion.
 
 **Recommendation:** Consider refactoring the `_liquidateTax` call to be more conditional, perhaps only calling it when `to == mainPool` or when a specific flag indicates a potential need for liquidation, rather than on every transfer. Alternatively, ensure that the `_processTax` function is highly optimized for gas efficiency.
 
 
 ### `I-01` — High Initial Tax Rates Possible  *(Severity: Informational · Status: Unresolved)*
 
-The `buyTaxRate` and `sellTaxRate` are `uint16` values set during initialization, allowing for rates up to 655.35% (65535/10000). While there are no setters to change these rates post-initialization, the ability to set such extremely high rates initially could render the token economically unviable or lead to user distrust if misconfigured. This is a configuration risk rather than a code vulnerability.
+Not confirmed by static analysis (the model's own reading of the source). The `buyTaxRate` and `sellTaxRate` are `uint16` values set during initialization, allowing for rates up to 655.35% (65535/10000). While there are no setters to change these rates post-initialization, the ability to set such extremely high rates initially could render the token economically unviable or lead to user distrust if misconfigured. This is a configuration risk rather than a code vulnerability.
 
 **Recommendation:** Ensure that the initial `buyTaxRate` and `sellTaxRate` are set to economically sensible values during deployment. Clearly communicate the chosen tax rates to users to manage expectations and maintain transparency.
 

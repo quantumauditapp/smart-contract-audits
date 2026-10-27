@@ -2,14 +2,14 @@
 token: TokenFi
 ticker: TOKEN
 network: bsc
-risk_score: 28
+risk_score: 11
 status: low
 date: 2026-08-20
 ---
 
 # TokenFi (TOKEN) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 28/100 — 🟢 Low Risk**
+> **Risk Score: 11/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/tokenfi-bsc)
 
@@ -42,35 +42,35 @@ _🟡 3 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Incorrect ERC-20 `transferFrom` usage in `withdraw` function  *(Severity: Medium · Status: Unresolved)*
 
-The `withdraw` function, intended for recovering ERC-20 tokens, uses `IERC20(tokenAddress).transferFrom(address(this), address(treasuryHandler), amount);`. For a contract to send tokens it holds, it should use `IERC20(tokenAddress).transfer(address(treasuryHandler), amount);`. The current implementation requires the `T1` contract itself to have approved the `treasuryHandler` to spend its own tokens, which is an incorrect and impractical setup, effectively preventing the withdrawal of ERC-20 tokens from the contract.
+Not confirmed by static analysis (the model's own reading of the source). The `withdraw` function, intended for recovering ERC-20 tokens, uses `IERC20(tokenAddress).transferFrom(address(this), address(treasuryHandler), amount);`. For a contract to send tokens it holds, it should use `IERC20(tokenAddress).transfer(address(treasuryHandler), amount);`. The current implementation requires the `T1` contract itself to have approved the `treasuryHandler` to spend its own tokens, which is an incorrect and impractical setup, effectively preventing the withdrawal of ERC-20 tokens from the contract.
 
 **Recommendation:** Change the ERC-20 withdrawal logic in the `withdraw` function from `IERC20(tokenAddress).transferFrom(address(this), address(treasuryHandler), amount);` to `IERC20(tokenAddress).transfer(address(treasuryHandler), amount);`.
 
 
 ### `M-02` — Centralized Control over Critical Parameters and Funds  *(Severity: Medium · Status: Unresolved)*
 
-The `onlyOwner` role has significant control over critical functions, including `setTaxHandler`, `setTreasuryHandler`, and `withdraw`. This allows a single entity (or a multisig, as indicated by the prefill) to change core external dependencies and withdraw any tokens (including native currency) held by the contract. While the owner is a multisig, this level of centralized control still presents a single point of failure or potential for malicious action if the multisig is compromised.
+Not confirmed by static analysis (the model's own reading of the source). The `onlyOwner` role has significant control over critical functions, including `setTaxHandler`, `setTreasuryHandler`, and `withdraw`. This allows a single entity (or a multisig, as indicated by the prefill) to change core external dependencies and withdraw any tokens (including native currency) held by the contract. While the owner is a multisig, this level of centralized control still presents a single point of failure or potential for malicious action if the multisig is compromised.
 
 **Recommendation:** Consider implementing a timelock for sensitive `onlyOwner` functions, such as `setTaxHandler`, `setTreasuryHandler`, and potentially `withdraw`. This would introduce a delay before changes take effect, allowing time for community review or intervention if a malicious action is detected. Alternatively, explore a more decentralized governance mechanism for these critical operations.
 
 
 ### `M-03` — Reliance on External Contract Security  *(Severity: Medium · Status: Unresolved)*
 
-The T1 contract heavily relies on external contracts, `ITaxHandler` and `ITreasuryHandler`, which are set by the owner. The security, correctness, and trustworthiness of these external contracts are paramount. A vulnerability or malicious design within `ITaxHandler` or `ITreasuryHandler` could directly impact the T1 token's functionality or economic model, potentially leading to unexpected behavior or loss of funds.
+Not confirmed by static analysis (the model's own reading of the source). The T1 contract heavily relies on external contracts, `ITaxHandler` and `ITreasuryHandler`, which are set by the owner. The security, correctness, and trustworthiness of these external contracts are paramount. A vulnerability or malicious design within `ITaxHandler` or `ITreasuryHandler` could directly impact the T1 token's functionality or economic model, potentially leading to unexpected behavior or loss of funds.
 
 **Recommendation:** Ensure that `ITaxHandler` and `ITreasuryHandler` contracts undergo rigorous security audits. Implement robust validation checks for new handler addresses (e.g., checking if the address is a contract, or if it implements expected interfaces). Consider a community-driven or timelocked process for updating these critical external dependencies.
 
 
 ### `L-01` — Hardcoded Token Parameters  *(Severity: Low · Status: Unresolved)*
 
-The `totalSupply()` and `decimals()` functions return hardcoded values (5e9 * 1e9 and 9, respectively). While this provides predictability and is common for many tokens, it means these parameters cannot be adjusted in the future without deploying a new contract. This limits flexibility for potential future economic model adjustments.
+Not confirmed by static analysis (the model's own reading of the source). The `totalSupply()` and `decimals()` functions return hardcoded values (5e9 * 1e9 and 9, respectively). While this provides predictability and is common for many tokens, it means these parameters cannot be adjusted in the future without deploying a new contract. This limits flexibility for potential future economic model adjustments.
 
 **Recommendation:** If future flexibility is desired, consider making `totalSupply` or `decimals` configurable during deployment or through a governance mechanism. However, for a standard fixed-supply token, this is often an acceptable design choice.
 
 
 ### `I-01` — Inconsistent Visibility for ERC-20 Metadata Functions  *(Severity: Informational · Status: Unresolved)*
 
-The `name()` function is declared as `public view`, while `symbol()` and `decimals()` are declared as `external view` or `external pure`. While this does not pose a security vulnerability, it represents a minor inconsistency in function visibility for standard ERC-20 metadata getters.
+Not confirmed by static analysis (the model's own reading of the source). The `name()` function is declared as `public view`, while `symbol()` and `decimals()` are declared as `external view` or `external pure`. While this does not pose a security vulnerability, it represents a minor inconsistency in function visibility for standard ERC-20 metadata getters.
 
 **Recommendation:** For consistency and adherence to common ERC-20 patterns, consider declaring `name()` as `external view` to match `symbol()` and `decimals()`.
 

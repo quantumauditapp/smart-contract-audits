@@ -2,14 +2,14 @@
 token: 中国人能飞火箭
 ticker: 中国人能飞
 network: bsc
-risk_score: 38
-status: medium
+risk_score: 4
+status: low
 date: 2026-09-27
 ---
 
 # 中国人能飞火箭 (中国人能飞) — Smart Contract Security Analysis | BNB Chain
 
-> **Risk Score: 38/100 — 🟡 Medium Risk**
+> **Risk Score: 4/100 — 🟢 Low Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/token-edf71e-bsc)
 
@@ -25,52 +25,52 @@ The audit of FlapTaxTokenV3, an upgradeable ERC20 token with a complex multi-sta
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The contract implements a multi-state tax system and overrides the `_transfer` function to apply custom logic, including calling `_liquidateTax`. The use of `PackedPoolState` is a gas-efficient… |
-| **Governance / Economics** | 4/10 | Medium | The economic model is centered around a dynamic tax system and a liquidation mechanism. A major concern is the initial minting of the entire `maxSupply` to the deployer (7.4 Economic), granting the… |
-| **Upgrades** | 8/10 | Low | The contract correctly utilizes OpenZeppelin's `Initializable` and `__Ownable_init` patterns for upgradeability (7.7 Upgrades). The constructor disables initializers, preventing re-initialization… |
+| **Technical** | 10/10 | Low | The contract implements a multi-state tax system and overrides the `_transfer` function to apply custom logic, including calling `_liquidateTax`. The use of `PackedPoolState` is a gas-efficient… |
+| **Governance / Economics** | 7/10 | Low | The economic model is centered around a dynamic tax system and a liquidation mechanism. A major concern is the initial minting of the entire `maxSupply` to the deployer (7.4 Economic), granting the… |
+| **Upgrades** | 9/10 | Low | The contract correctly utilizes OpenZeppelin's `Initializable` and `__Ownable_init` patterns for upgradeability (7.7 Upgrades). The constructor disables initializers, preventing re-initialization… |
 
 ## Security Findings
 
-_🟠 2 High · 🟡 2 Medium · 🟢 1 Low · ⚪ 1 Informational_
-
-### `H-01` — Truncated Critical Liquidation Logic  *(Severity: High · Status: Unresolved)*
-
-The `_liquidateTax` function, which is called on every `_transfer` and is central to the token's economic model and state transitions, is significantly truncated in the provided source code. This prevents a full security assessment of potential reentrancy vulnerabilities, external call risks, gas consumption, and the overall economic stability and fairness of the tax and liquidation mechanism (7.2 Code Security, 7.4 Economic).
-
-**Recommendation:** Provide the complete and verified source code for the `_liquidateTax` function to allow for a comprehensive security audit. Without the full implementation, critical vulnerabilities may remain undetected.
-
-
-### `H-02` — Centralized Control of Initial Token Supply  *(Severity: High · Status: Unresolved)*
-
-The `initialize` function mints the entire `maxSupply` (1 billion tokens) directly to the contract deployer (`msg.sender`), who is also the owner. This grants the owner complete control over the initial token distribution, posing a significant centralization risk and potential for market manipulation or unfair distribution (7.4 Economic, 7.5 Governance).
-
-**Recommendation:** Consider a more decentralized or transparent mechanism for initial token distribution, such as a vesting schedule, a public sale, or a multi-signature wallet for managing the initial supply. This reduces the single point of failure and increases trust.
-
+_🟡 4 Medium · 🟢 1 Low · ⚪ 1 Informational_
 
 ### `M-01` — Potential Reentrancy in `_liquidateTax` (Due to Truncation)  *(Severity: Medium · Status: Unresolved)*
 
-The `_liquidateTax` function is called on every `_transfer` and is likely to contain external calls (e.g., to `taxProcessor`, `dividendContract`, or `v2Router` for swaps) in its truncated part. If these external calls are made before critical state updates or without proper reentrancy guards (like OpenZeppelin's `nonReentrant` modifier), the contract could be vulnerable to reentrancy attacks (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function is called on every `_transfer` and is likely to contain external calls (e.g., to `taxProcessor`, `dividendContract`, or `v2Router` for swaps) in its truncated part. If these external calls are made before critical state updates or without proper reentrancy guards (like OpenZeppelin's `nonReentrant` modifier), the contract could be vulnerable to reentrancy attacks (7.2 Code Security).
 
 **Recommendation:** Upon providing the full `_liquidateTax` source code, ensure that all external calls adhere to the Checks-Effects-Interactions pattern. Implement reentrancy guards (e.g., `nonReentrant` from OpenZeppelin) on functions that make external calls and modify critical state, especially if they are called within the `_transfer` flow.
 
 
 ### `M-02` — Critical Owner Privileges  *(Severity: Medium · Status: Unresolved)*
 
-The `onlyOwner` role has significant control over critical state transitions, specifically `startMigration` and `finalizeMigration`, which directly impact the token's operational state and tax enforcement. This centralization introduces a single point of failure, where a compromised owner key could lead to unauthorized state changes or manipulation of the token's tax mechanics (7.3 Access Control, 7.5 Governance).
+Not confirmed by static analysis (the model's own reading of the source). The `onlyOwner` role has significant control over critical state transitions, specifically `startMigration` and `finalizeMigration`, which directly impact the token's operational state and tax enforcement. This centralization introduces a single point of failure, where a compromised owner key could lead to unauthorized state changes or manipulation of the token's tax mechanics (7.3 Access Control, 7.5 Governance).
 
 **Recommendation:** Implement a multi-signature wallet for the owner address to enhance security. Consider introducing a time-lock for critical owner-controlled operations to provide a window for community review or intervention. Explore mechanisms for progressive decentralization of these controls over time.
 
 
+### `M-03` — Truncated Critical Liquidation Logic  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `_liquidateTax` function, which is called on every `_transfer` and is central to the token's economic model and state transitions, is significantly truncated in the provided source code. This prevents a full security assessment of potential reentrancy vulnerabilities, external call risks, gas consumption, and the overall economic stability and fairness of the tax and liquidation mechanism (7.2 Code Security, 7.4 Economic).
+
+**Recommendation:** Provide the complete and verified source code for the `_liquidateTax` function to allow for a comprehensive security audit. Without the full implementation, critical vulnerabilities may remain undetected.
+
+
+### `M-04` — Centralized Control of Initial Token Supply  *(Severity: Medium · Status: Unresolved)*
+
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function mints the entire `maxSupply` (1 billion tokens) directly to the contract deployer (`msg.sender`), who is also the owner. This grants the owner complete control over the initial token distribution, posing a significant centralization risk and potential for market manipulation or unfair distribution (7.4 Economic, 7.5 Governance).
+
+**Recommendation:** Consider a more decentralized or transparent mechanism for initial token distribution, such as a vesting schedule, a public sale, or a multi-signature wallet for managing the initial supply. This reduces the single point of failure and increases trust.
+
+
 ### `L-01` — Complex Multi-State Tax Machine  *(Severity: Low · Status: Unresolved)*
 
-The contract implements a complex multi-state tax system (`BondingCurve`, `Migrating`, `TaxEnforcedAntiFarmer`, `TaxEnforced`, `TaxFree`) with various conditions for state transitions and tax application. While designed for specific tokenomics, this complexity increases the surface area for logical errors and makes auditing, understanding, and maintaining the contract more challenging (7.1 Architecture, 7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The contract implements a complex multi-state tax system (`BondingCurve`, `Migrating`, `TaxEnforcedAntiFarmer`, `TaxEnforced`, `TaxFree`) with various conditions for state transitions and tax application. While designed for specific tokenomics, this complexity increases the surface area for logical errors and makes auditing, understanding, and maintaining the contract more challenging (7.1 Architecture, 7.2 Code Security).
 
 **Recommendation:** Ensure comprehensive unit and integration tests cover all possible state transitions and tax calculation scenarios. Provide detailed documentation and flowcharts explaining the state machine logic and its intended behavior to minimize misinterpretations and potential errors.
 
 
 ### `I-01` — Reliance on `block.timestamp` for Expiration  *(Severity: Informational · Status: Unresolved)*
 
-The `taxExpirationTime` and `antiFarmerExpirationTime` variables rely on `block.timestamp` for their calculation and comparison. While common, `block.timestamp` can be manipulated by miners within a small range (up to 900 seconds on Ethereum, similar on BSC), which could slightly influence the precise timing of state transitions (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `taxExpirationTime` and `antiFarmerExpirationTime` variables rely on `block.timestamp` for their calculation and comparison. While common, `block.timestamp` can be manipulated by miners within a small range (up to 900 seconds on Ethereum, similar on BSC), which could slightly influence the precise timing of state transitions (7.2 Code Security).
 
 **Recommendation:** For time-sensitive operations, consider using `block.number` and average block times if precise, unmanipulable timing is critical. However, for expiration times of this nature, `block.timestamp` is generally considered acceptable, and the risk is low.
 
@@ -96,7 +96,7 @@ The `taxExpirationTime` and `antiFarmerExpirationTime` variables rely on `block.
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ✅ Pass |
 | No Mint Function | ✅ Pass |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not a Proxy | ✅ Pass |
 
 ## Security Flags Detail
@@ -106,7 +106,7 @@ The `taxExpirationTime` and `antiFarmerExpirationTime` variables rely on `block.
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ✅ | Ownership renounced — the deployer can no longer alter the contract. |
 | No Mint Function | ✅ | No mint function — total supply cannot be inflated. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not a Proxy | ✅ | Not a proxy — the implementation cannot be silently swapped. |
 
 ## Sources

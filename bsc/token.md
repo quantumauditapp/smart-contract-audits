@@ -42,21 +42,21 @@ _🟢 1 Low · ⚪ 2 Informational_
 
 ### `L-01` — Reliance on Derived Contracts for Supply Management and Initialization  *(Severity: Low · Status: Unresolved)*
 
-As `_mint` and `_burn` are internal functions, any token built upon `FourERC20` will need to implement its own supply management logic. Similarly, the `_init` function is internal, requiring a derived contract to call it for setting token metadata. This introduces a dependency on the security and correctness of the derived contract for controlling the total supply, distribution, and initial setup of tokens. While flexible, it shifts the responsibility for critical economic parameters and initial configuration to external code (7.1 Architecture, 7.3 Access Control).
+Not confirmed by static analysis (the model's own reading of the source). As `_mint` and `_burn` are internal functions, any token built upon `FourERC20` will need to implement its own supply management logic. Similarly, the `_init` function is internal, requiring a derived contract to call it for setting token metadata. This introduces a dependency on the security and correctness of the derived contract for controlling the total supply, distribution, and initial setup of tokens. While flexible, it shifts the responsibility for critical economic parameters and initial configuration to external code (7.1 Architecture, 7.3 Access Control).
 
 **Recommendation:** When developing the derived contract, ensure that minting, burning, and initialization functions are implemented with robust access control (e.g., `onlyOwner` or a multi-signature wallet) and adhere to best security practices. Thoroughly audit the derived contract's specific logic for these critical operations.
 
 
 ### `I-01` — Incomplete Token Implementation (No Mint/Burn Mechanism or Public Constructor)  *(Severity: Informational · Status: Unresolved)*
 
-The `FourERC20` contract serves as a base for an ERC-20 token but lacks a public constructor to initialize `name` and `symbol` and does not implement any minting or burning mechanisms. These functionalities (`_init`, `_mint`, `_burn`) are internal and must be implemented or called by a derived contract to create a fully functional token. This is an architectural design choice rather than a vulnerability, but it means the contract cannot be deployed as a standalone, fully functional token without further development.
+Not confirmed by static analysis (the model's own reading of the source). The `FourERC20` contract serves as a base for an ERC-20 token but lacks a public constructor to initialize `name` and `symbol` and does not implement any minting or burning mechanisms. These functionalities (`_init`, `_mint`, `_burn`) are internal and must be implemented or called by a derived contract to create a fully functional token. This is an architectural design choice rather than a vulnerability, but it means the contract cannot be deployed as a standalone, fully functional token without further development.
 
 **Recommendation:** Ensure that any derived contract inheriting from `FourERC20` implements a public constructor that calls `_init` to set the token's metadata and provides appropriate, access-controlled functions for `_mint` and `_burn` to manage the token supply. Document these dependencies clearly for future developers and auditors.
 
 
 ### `I-02` — Standard ERC-20 `approve` Race Condition  *(Severity: Informational · Status: Unresolved)*
 
-The `approve` function, while compliant with the ERC-20 standard, is susceptible to a known race condition where a malicious spender can exploit a user's attempt to change an allowance. If a user approves `X` amount, then approves `Y` amount, a front-running attacker can spend `X` before the `Y` transaction confirms, resulting in the attacker spending `X+Y`. This is a characteristic of the ERC-20 standard, not a flaw in this specific implementation (7.2 Code Security).
+Not confirmed by static analysis (the model's own reading of the source). The `approve` function, while compliant with the ERC-20 standard, is susceptible to a known race condition where a malicious spender can exploit a user's attempt to change an allowance. If a user approves `X` amount, then approves `Y` amount, a front-running attacker can spend `X` before the `Y` transaction confirms, resulting in the attacker spending `X+Y`. This is a characteristic of the ERC-20 standard, not a flaw in this specific implementation (7.2 Code Security).
 
 **Recommendation:** Advise users and integrated applications to prefer using `increaseAllowance` and `decreaseAllowance` functions over directly calling `approve` when modifying existing allowances. If `approve` must be used, the recommended safe practice is to first set the allowance to zero, wait for that transaction to confirm, and then set the new desired allowance.
 

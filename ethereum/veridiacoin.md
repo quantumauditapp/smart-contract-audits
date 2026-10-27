@@ -2,14 +2,14 @@
 token: veridiacoin
 ticker: VC
 network: ethereum
-risk_score: 62
+risk_score: 58
 status: medium
 date: 2026-09-30
 ---
 
 # veridiacoin (VC) — Smart Contract Security Analysis | Ethereum
 
-> **Risk Score: 62/100 — 🟡 Medium Risk**
+> **Risk Score: 58/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/veridiacoin-eth)
 
@@ -26,16 +26,16 @@ The RobinVistaToken contract, intended as a proxy implementation, contains a cri
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
 | **Technical** | 8/10 | Low | The contract leverages OpenZeppelin's robust ERC20 implementation, providing a solid foundation for token functionality and mitigating common integer overflow/underflow risks (7.2 Code Security).… |
-| **Governance / Economics** | 1/10 | High | The economic model is severely compromised by the unprotected `initialize` function (7.4 Economic). An attacker can front-run the legitimate deployment, minting all tokens to their address and… |
-| **Upgrades** | 2/10 | High | The contract is designed as an implementation for a proxy, which necessitates careful handling of initialization (7.7 Upgrades). The constructor's assignment of `factory = address(0xdead);` is… |
+| **Governance / Economics** | 2/10 | High | The economic model is severely compromised by the unprotected `initialize` function (7.4 Economic). An attacker can front-run the legitimate deployment, minting all tokens to their address and… |
+| **Upgrades** | 3/10 | High | The contract is designed as an implementation for a proxy, which necessitates careful handling of initialization (7.7 Upgrades). The constructor's assignment of `factory = address(0xdead);` is… |
 
 ## Security Findings
 
-_🔴 1 Critical · 🟡 1 Medium · 🟢 1 Low · ⚪ 6 Informational_
+_🟡 2 Medium · 🟢 1 Low · ⚪ 6 Informational_
 
-### `C-01` — Unprotected Initialization Allows Token Hijack  *(Severity: Critical · Status: Unresolved)*
+### `M-01` — Unprotected Initialization Allows Token Hijack  *(Severity: Medium · Status: Unresolved)*
 
-The `initialize` function, which is intended for initial setup of the token, lacks any access control. In a proxy deployment scenario, this means any external address can call `initialize` on the proxy contract. The first caller will become the `factory` address and will receive the entire `totalSupply_` of tokens, effectively hijacking the token's initial distribution and control. The constructor's assignment of `factory = address(0xdead);` does not protect the proxy's storage from this vulnerability.
+Not confirmed by static analysis (the model's own reading of the source). The `initialize` function, which is intended for initial setup of the token, lacks any access control. In a proxy deployment scenario, this means any external address can call `initialize` on the proxy contract. The first caller will become the `factory` address and will receive the entire `totalSupply_` of tokens, effectively hijacking the token's initial distribution and control. The constructor's assignment of `factory = address(0xdead);` does not protect the proxy's storage from this vulnerability.
 
 **Recommendation:** Implement a robust access control mechanism for the `initialize` function. For proxy contracts, consider using OpenZeppelin's `UUPSUpgradeable` or `Initializable` base contracts which provide an `initializer` modifier. This modifier ensures the function can only be called once and by a designated address (e.g., the deployer or a governance contract).
 
@@ -49,14 +49,14 @@ The contract lets its controller — an owner that could not be resolved — min
 
 ### `L-01` — Unused State Variables  *(Severity: Low · Status: Unresolved)*
 
-The state variables `deployer` and `metadataURI` are set during the `initialize` function call but are never subsequently read or used within the contract's logic. Storing these variables consumes unnecessary gas during deployment and each time `initialize` is called, without providing any functional benefit to the contract.
+Not confirmed by static analysis (the model's own reading of the source). The state variables `deployer` and `metadataURI` are set during the `initialize` function call but are never subsequently read or used within the contract's logic. Storing these variables consumes unnecessary gas during deployment and each time `initialize` is called, without providing any functional benefit to the contract.
 
 **Recommendation:** Remove the `deployer` and `metadataURI` state variables if they are not intended to be used by the contract's logic. If they are meant for off-chain consumption, consider emitting them as events during initialization instead of storing them on-chain to save gas.
 
 
 ### `I-01` — Inconsistent Constructor Logic for Proxy Implementation  *(Severity: Informational · Status: Unresolved)*
 
-The constructor of `RobinVistaToken` sets `factory = address(0xdead);`. For an implementation contract used with a proxy, the constructor runs only once when the implementation itself is deployed, not when the proxy is initialized. The state variables of the implementation contract are not directly used by the proxy; instead, the proxy operates on its own storage. Therefore, setting `factory` in the constructor is misleading and irrelevant for the proxy's operational state, although in this specific case, it does not directly cause a vulnerability due to the `initialize` check (which itself is flawed).
+Not confirmed by static analysis (the model's own reading of the source). The constructor of `RobinVistaToken` sets `factory = address(0xdead);`. For an implementation contract used with a proxy, the constructor runs only once when the implementation itself is deployed, not when the proxy is initialized. The state variables of the implementation contract are not directly used by the proxy; instead, the proxy operates on its own storage. Therefore, setting `factory` in the constructor is misleading and irrelevant for the proxy's operational state, although in this specific case, it does not directly cause a vulnerability due to the `initialize` check (which itself is flawed).
 
 **Recommendation:** Constructors for proxy implementation contracts should generally be empty or only set `immutable` variables. All mutable state initialization should occur within an `initialize` function, which is called via the proxy, to correctly set the proxy's storage.
 
@@ -117,7 +117,7 @@ The token's oldest DEX pool is less than a day old. Age is not part of the risk 
 | Contract Verified | ✅ Pass |
 | Ownership Renounced | ⚠️ Unknown |
 | No Mint Function | ❌ Fail |
-| Liquidity Locked | ❌ Fail |
+| Liquidity Locked | ⚠️ Unknown |
 | Not Upgradeable | ✅ Pass |
 
 ## Security Flags Detail
@@ -127,7 +127,7 @@ The token's oldest DEX pool is less than a day old. Age is not part of the risk 
 | Contract Verified | ✅ | Source code is publicly verified on-chain — logic is auditable. |
 | Ownership Renounced | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | No Mint Function | ❌ | **Mint function present** — supply can be inflated by the owner. |
-| Liquidity Locked | ❌ | Liquidity is **not locked** — this is a rug-pull vector. |
+| Liquidity Locked | ⚠️ | Could not be determined from the explorer or on-chain reads — treat as unverified rather than safe. |
 | Not Upgradeable | ✅ | Minimal proxy clone — the implementation is fixed in its bytecode and cannot be swapped. |
 
 ## Sources
