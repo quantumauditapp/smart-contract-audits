@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1431 reports** · Updated daily · [← All Networks](../README.md)
+**1438 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Pump Inu](./pump-inu.md) | PUMPINU | 🟢 16/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/pump-inu-sol) |
+| [Waddle World](./waddle-world.md) | WADDLE | 🟢 22/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/waddle-world-sol) |
+| [Hypercat](./hypercat.md) | HYPERCAT | 🟢 24/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/hypercat-sol) |
+| [Robotaxi Coin](./robotaxi-coin-sol-50a8.md) | ROBOTAXI | 🟢 0/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/robotaxi-coin-sol-50a8) |
+| [Grokbot](./grokbot.md) | GROKBOT | 🟢 16/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/grokbot-sol) |
+| [Rapport](./rapport.md) | RAPPORT | 🟢 24/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/rapport-sol) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-sol-2ba0.md) | AODF | 🟢 2/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol-2ba0) |
 | [OpenBot](./openbot.md) | OPENBOT | 🟢 22/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/openbot-sol) |
 | [Launchoors](./launchoors.md) | LAUNCHOORS | 🟢 17/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/launchoors-sol) |
 | [Robotaxi Coin](./robotaxi-coin-sol-12b9.md) | ROBOTAXI | 🟢 29/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/robotaxi-coin-sol-12b9) |

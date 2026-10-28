@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**506 reports** · Updated daily · [← All Networks](../README.md)
+**507 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Federal Oil Trust Fund](./federal-oil-trust-fund-base-2a7c.md) | FOTF | 🟡 56/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/federal-oil-trust-fund-base-2a7c) |
 | [Believe in Something](./believe-in-something.md) | SOMETHING | 🟠 71/100 High Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/believe-in-something-base) |
 | [NODF](./nodf-base-6970.md) | NODF | 🟡 58/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/nodf-base-6970) |
 | [AODF](./aodf-base-8ff0.md) | AODF | 🟡 56/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/aodf-base-8ff0) |

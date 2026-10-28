@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**562 reports** · Updated daily · [← All Networks](../README.md)
+**564 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Predict.fun](./predictfun.md) | PREDICT | 🟠 77/100 High Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/predictfun-bsc) |
+| [Batcoin](./batcoin.md) | BATCOIN | 🟢 29/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/batcoin-bsc) |
 | [4GANG](./4gang.md) | GANG | 🟡 43/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/4gang-bsc) |
 | [BNC INU](./bnc-inu.md) | BNCI | 🟡 49/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/bnc-inu-bsc) |
 | [Agora](./agora.md) | AGORA | 🟡 59/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/agora-bsc) |
