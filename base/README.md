@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**491 reports** · Updated daily · [← All Networks](../README.md)
+**498 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [National Oil Dividend Fund](./national-oil-dividend-fund-base-df70.md) | NODF | 🟠 84/100 High Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-base-df70) |
+| [NAFF](./naff.md) | NAFF | 🟡 56/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/naff-base) |
+| [AI12](./ai12.md) | AI12 | 🟡 60/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/ai12-base) |
+| [Anthropic IPO](./anthropic-ipo.md) | ANT | 🟡 48/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/anthropic-ipo-base) |
+| [USOE](./usoe-base-17e8.md) | USOE | 🟡 64/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/usoe-base-17e8) |
+| [8453 Trenchors](./8453-trenchors.md) | TRENCHORS | 🟡 64/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/8453-trenchors-base) |
+| [ZyFAI](./zyfai.md) | ZFI | 🟡 46/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/zyfai-base) |
 | [one life, its worth an attempt](./one-life-its-worth-an-attempt-base-fdb7.md) | WORTH | 🟡 62/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/one-life-its-worth-an-attempt-base-fdb7) |
 | [IOF](./iof.md) | IOF | 🟡 63/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/iof-base) |
 | [UDTF](./udtf-base-d7e9.md) | UDTF | 🟠 65/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/udtf-base-d7e9) |

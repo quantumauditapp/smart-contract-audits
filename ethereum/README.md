@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**481 reports** · Updated daily · [← All Networks](../README.md)
+**483 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [4](./4.md) | 4 | 🟢 15/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/4-eth) |
+| [zipcoin](./zipcoin-eth-f87d.md) | ZIP | 🟡 42/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/zipcoin-eth-f87d) |
 | [███](./token-73cf4d.md) | ███ | 🟡 38/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/token-73cf4d-eth) |
 | [Groklet](./groklet-eth-2818.md) | GROKLET | 🟡 45/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/groklet-eth-2818) |
 | [Groklet](./groklet-eth-ac79.md) | GROKLET | 🟡 60/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/groklet-eth-ac79) |

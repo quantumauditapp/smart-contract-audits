@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**554 reports** · Updated daily · [← All Networks](../README.md)
+**557 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Tick Trader](./tick-trader.md) | TICK | 🟡 60/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/tick-trader-bsc) |
+| [Unity USD](./unity-usd.md) | UUSD | 🟢 10/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/unity-usd-bsc) |
+| [QQ群1131838037](./qq1131838037.md) | 蝴蝶慈善 | 🟢 21/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/qq1131838037-bsc) |
 | [JANCTION](./janction.md) | JCT | 🟠 67/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/janction-bsc) |
 | [TMTN](./tmtn.md) | TMTN | 🟡 37/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/tmtn-bsc) |
 | [DIAM](./diam.md) | DIAM | 🟡 63/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/diam-bsc) |

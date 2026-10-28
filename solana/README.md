@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1405 reports** · Updated daily · [← All Networks](../README.md)
+**1423 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,24 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [privacy/acc](./privacyacc.md) | PRIVACY | 🟢 16/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/privacyacc-sol) |
+| [EnvarAI](./envarai.md) | ENVAR | 🟢 23/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/envarai-sol) |
+| [EURC](./eurc.md) | EURC | 🟢 12/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/eurc-sol) |
+| [Pandu Pandas](./pandu-pandas.md) | PANDU | 🟢 7/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/pandu-pandas-sol) |
+| [StonkFoundry](./stonkfoundry.md) | STFD | 🟢 2/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/stonkfoundry-sol) |
+| [Robotaxi Coin](./robotaxi-coin-sol-d46a.md) | ROBOTAXI | 🟢 15/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/robotaxi-coin-sol-d46a) |
+| [AOP](./aop-sol-6776.md) | AOP | 🟢 0/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/aop-sol-6776) |
+| [Robotaxi Coin](./robotaxi-coin.md) | ROBOTAXI | 🟢 24/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/robotaxi-coin-sol) |
+| [Invisible Cat](./invisible-cat-sol-5914.md) | INVISIBLE | 🟢 26/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/invisible-cat-sol-5914) |
+| [Invisible Cat](./invisible-cat.md) | INVISIBLE | 🟢 15/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/invisible-cat-sol) |
+| [Stonkz](./stonkz.md) | STONKZ | 🟢 21/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/stonkz-sol) |
+| [i love the meat](./i-love-the-meat.md) | MEAT | 🟢 24/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/i-love-the-meat-sol) |
+| [Inverse](./inverse.md) | INVERSE | 🟢 14/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/inverse-sol) |
+| [Believe in Something](./believe-in-something.md) | SOMETHING | 🟢 16/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/believe-in-something-sol) |
+| [Frongus Maximus](./frongus-maximus.md) | FRONGUS | 🟢 22/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/frongus-maximus-sol) |
+| [United States Dividend Fund🌟](./united-states-dividend-fund-sol-ff33.md) | USDF | 🟢 0/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-sol-ff33) |
+| [AODF🔥](./aodf-sol-890b.md) | AODF | 🟢 1/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/aodf-sol-890b) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-sol-c0ca.md) | AODF | 🟢 1/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol-c0ca) |
 | [BOYCOTTPUMPFUN](./boycottpumpfun-sol-2f47.md) | BPF | 🟢 15/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/boycottpumpfun-sol-2f47) |
 | [Justice for ChaCha](./justice-for-chacha.md) | CHACHA | 🟢 15/100 Low Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/justice-for-chacha-sol) |
 | [STONKUS](./stonkus.md) | STONKUS | 🟡 58/100 Medium Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/stonkus-sol) |
