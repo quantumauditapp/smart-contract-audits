@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**498 reports** · Updated daily · [← All Networks](../README.md)
+**506 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,14 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Believe in Something](./believe-in-something.md) | SOMETHING | 🟠 71/100 High Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/believe-in-something-base) |
+| [NODF](./nodf-base-6970.md) | NODF | 🟡 58/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/nodf-base-6970) |
+| [AODF](./aodf-base-8ff0.md) | AODF | 🟡 56/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/aodf-base-8ff0) |
+| [Federal Private Equity System](./federal-private-equity-system-base-8d6e.md) | FPES | 🟡 57/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/federal-private-equity-system-base-8d6e) |
+| [United States Dividend Fund](./united-states-dividend-fund-base-fd02.md) | USDF | 🟡 55/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-base-fd02) |
+| [Federal Oil Trust Fund (FOTF)](./federal-oil-trust-fund-fotf-base-09b7.md) | FOTF | 🟡 57/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/federal-oil-trust-fund-fotf-base-09b7) |
+| [Digital Oil Asset Supply](./digital-oil-asset-supply-base-3628.md) | DOAS | 🟡 56/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/digital-oil-asset-supply-base-3628) |
+| [UDTF](./udtf-base-b19f.md) | UDTF | 🟡 59/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/udtf-base-b19f) |
 | [National Oil Dividend Fund](./national-oil-dividend-fund-base-df70.md) | NODF | 🟠 84/100 High Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-base-df70) |
 | [NAFF](./naff.md) | NAFF | 🟡 56/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/naff-base) |
 | [AI12](./ai12.md) | AI12 | 🟡 60/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/ai12-base) |

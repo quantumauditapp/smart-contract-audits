@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1423 reports** · Updated daily · [← All Networks](../README.md)
+**1431 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,14 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [OpenBot](./openbot.md) | OPENBOT | 🟢 22/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/openbot-sol) |
+| [Launchoors](./launchoors.md) | LAUNCHOORS | 🟢 17/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/launchoors-sol) |
+| [Robotaxi Coin](./robotaxi-coin-sol-12b9.md) | ROBOTAXI | 🟢 29/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/robotaxi-coin-sol-12b9) |
+| [Chilling Ape](./chilling-ape.md) | CA | 🟢 14/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/chilling-ape-sol) |
+| [AODF](./aodf-sol-87a1.md) | AODF | 🟢 0/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/aodf-sol-87a1) |
+| [jeff](./jeff.md) | JEFF | 🟢 27/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/jeff-sol) |
+| [Aura Final Boss](./aura-final-boss-sol-c76b.md) | KIMCHI | 🟢 9/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/aura-final-boss-sol-c76b) |
+| [USOE](./usoe-sol-26bc.md) | USOE | 🟢 0/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/usoe-sol-26bc) |
 | [privacy/acc](./privacyacc.md) | PRIVACY | 🟢 16/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/privacyacc-sol) |
 | [EnvarAI](./envarai.md) | ENVAR | 🟢 23/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/envarai-sol) |
 | [EURC](./eurc.md) | EURC | 🟢 12/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/eurc-sol) |

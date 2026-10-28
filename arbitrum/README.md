@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**88 reports** · Updated daily · [← All Networks](../README.md)
+**89 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [GMX](./gmx.md) | GMX | 🟡 41/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/gmx-arb) |
 | [Pocket Network](./pocket-network.md) | POKT | 🟠 82/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/pocket-network-arb) |
 | [Dataline](./dataline.md) | DTL | 🟠 77/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/dataline-arb) |
 | [Unicity Labs](./unicity-labs-arb-84e4.md) | UNCLA | 🟠 75/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/unicity-labs-arb-84e4) |

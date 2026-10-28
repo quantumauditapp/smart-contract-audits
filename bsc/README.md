@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**557 reports** · Updated daily · [← All Networks](../README.md)
+**562 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [4GANG](./4gang.md) | GANG | 🟡 43/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/4gang-bsc) |
+| [BNC INU](./bnc-inu.md) | BNCI | 🟡 49/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/bnc-inu-bsc) |
+| [Agora](./agora.md) | AGORA | 🟡 59/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/agora-bsc) |
+| [Binance-Peg XRP Token](./binance-peg-xrp-token.md) | XRP | 🔴 100/100 Critical Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/binance-peg-xrp-token-bsc) |
+| [币安使命](./token-69d310.md) | 币安使命 | 🟢 27/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/token-69d310-bsc) |
 | [Tick Trader](./tick-trader.md) | TICK | 🟡 60/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/tick-trader-bsc) |
 | [Unity USD](./unity-usd.md) | UUSD | 🟢 10/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/unity-usd-bsc) |
 | [QQ群1131838037](./qq1131838037.md) | 蝴蝶慈善 | 🟢 21/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/qq1131838037-bsc) |
