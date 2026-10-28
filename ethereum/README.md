@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**485 reports** · Updated daily · [← All Networks](../README.md)
+**489 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [4](./4-eth-a15c.md) | 4 | 🟢 32/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/4-eth-a15c) |
+| [Super Intelligent Beauty](./super-intelligent-beauty.md) | SIB | 🟢 5/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/super-intelligent-beauty-eth) |
+| [TRON](./tron.md) | TRX | 🟢 22/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/tron-eth) |
+| [Grokbot](./grokbot.md) | GROKBOT | 🟢 31/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/grokbot-eth) |
 | [Grow](./grow.md) | GROW | 🟡 58/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/grow-eth) |
 | [Robotaxi Coin](./robotaxi-coin.md) | ROBOTAXI | 🟠 65/100 High Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/robotaxi-coin-eth) |
 | [4](./4.md) | 4 | 🟢 15/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/4-eth) |

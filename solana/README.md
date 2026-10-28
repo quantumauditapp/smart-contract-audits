@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1438 reports** · Updated daily · [← All Networks](../README.md)
+**1459 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,27 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [shibana](./shibana.md) | SHIBANA | 🟢 13/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/shibana-sol) |
+| [A Massive Cock](./a-massive-cock.md) | AMC | 🟢 23/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/a-massive-cock-sol) |
+| [PEPEween](./pepeween.md) | PEPEWEEN | 🟢 29/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/pepeween-sol) |
+| [CLAVCAT](./clavcat.md) | CLAVCAT | 🟢 28/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/clavcat-sol) |
+| [Ansem Integral](./ansem-integral.md) | AI | 🟢 14/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/ansem-integral-sol) |
+| [Dora Bulking](./dora-bulking.md) | DORA | 🟢 29/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/dora-bulking-sol) |
+| [ChimpX AI](./chimpx-ai.md) | $CHIMP | 🟢 15/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/chimpx-ai-sol) |
+| [STONKLANA](./stonklana.md) | STONKLANA | 🟢 9/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/stonklana-sol) |
+| [Cat Bot](./cat-bot.md) | CATBOT | 🟢 10/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/cat-bot-sol) |
+| [Frongus](./frongus-sol-98d3.md) | FRONGUS | 🟢 5/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/frongus-sol-98d3) |
+| [PENISINU](./penisinu.md) | PENISINU | 🟢 8/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/penisinu-sol) |
+| [Top Floor](./top-floor.md) | WORKR | 🟢 24/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/top-floor-sol) |
+| [omnicat](./omnicat.md) | OMNI | 🟢 24/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/omnicat-sol) |
+| [Grokbot](./grokbot-sol-4731.md) | GROKBOT | 🟢 26/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/grokbot-sol-4731) |
+| [Housecoin](./housecoin.md) | HOUSECOIN | 🟢 17/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/housecoin-sol) |
+| [Free Mika](./free-mika.md) | MIKA | 🟢 23/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/free-mika-sol) |
+| [Hermit](./hermit.md) | HERMIT | 🟢 21/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/hermit-sol) |
+| [XTO](./xto-sol-dabb.md) | XTO | 🟢 2/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/xto-sol-dabb) |
+| [Dubble](./dubble.md) | DUBBLE | 🟢 17/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/dubble-sol) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-sol-db95.md) | AODF | 🟢 0/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol-db95) |
+| [XTO](./xto-sol-ed3e.md) | X T O | 🟢 0/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/xto-sol-ed3e) |
 | [Pump Inu](./pump-inu.md) | PUMPINU | 🟢 16/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/pump-inu-sol) |
 | [Waddle World](./waddle-world.md) | WADDLE | 🟢 22/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/waddle-world-sol) |
 | [Hypercat](./hypercat.md) | HYPERCAT | 🟢 24/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/hypercat-sol) |

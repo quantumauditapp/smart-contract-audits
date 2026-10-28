@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**564 reports** · Updated daily · [← All Networks](../README.md)
+**574 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,16 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [慈善牛来](./token-6061a4.md) | 慈善牛来 | 🟢 20/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/token-6061a4-bsc) |
+| [Riki](./riki-bsc-2868.md) | リキ | 🟡 36/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/riki-bsc-2868) |
+| [CATCH](./catch.md) | CATCH | 🟢 21/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/catch-bsc) |
+| [Riki](./riki.md) | RIKI | 🟢 20/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/riki-bsc) |
+| [aidrop](./aidrop.md) | AIDROP | 🟢 14/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/aidrop-bsc) |
+| [Pyronomics](./pyronomics.md) | PYRO | 🟢 15/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/pyronomics-bsc) |
+| [国库时代](./token-203a33.md) | 国库时代 | 🟡 45/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/token-203a33-bsc) |
+| [超级雪球1104345912](./1104345912.md) | 超级雪球 | 🟢 15/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/1104345912-bsc) |
+| [Facebook](./facebook.md) | FACEBOOK | 🟠 81/100 High Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/facebook-bsc) |
+| [JAGENT](./jagent.md) | JAGENT | 🟡 42/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/jagent-bsc) |
 | [Predict.fun](./predictfun.md) | PREDICT | 🟠 77/100 High Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/predictfun-bsc) |
 | [Batcoin](./batcoin.md) | BATCOIN | 🟢 29/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/batcoin-bsc) |
 | [4GANG](./4gang.md) | GANG | 🟡 43/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/4gang-bsc) |

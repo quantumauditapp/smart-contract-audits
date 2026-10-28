@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**507 reports** · Updated daily · [← All Networks](../README.md)
+**512 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Predict](./predict.md) | PREDICT | 🟢 33/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/predict-base) |
+| [Claude](./claude.md) | CLAUDE | 🟡 53/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/claude-base) |
+| [Ixs Token](./ixs-token.md) | IXS | 🟡 45/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/ixs-token-base) |
+| [Player 8453](./player-8453.md) | PLAYER | 🟡 53/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/player-8453-base) |
+| [Grokbot The Trencher](./grokbot-the-trencher.md) | GROKBOT | 🟠 84/100 High Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/grokbot-the-trencher-base) |
 | [Federal Oil Trust Fund](./federal-oil-trust-fund-base-2a7c.md) | FOTF | 🟡 56/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/federal-oil-trust-fund-base-2a7c) |
 | [Believe in Something](./believe-in-something.md) | SOMETHING | 🟠 71/100 High Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/believe-in-something-base) |
 | [NODF](./nodf-base-6970.md) | NODF | 🟡 58/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/nodf-base-6970) |
