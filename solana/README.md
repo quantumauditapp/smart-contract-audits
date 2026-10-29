@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1459 reports** · Updated daily · [← All Networks](../README.md)
+**1485 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,32 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [0](./0.md) | 0 | 🟡 49/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/0-sol) |
+| [SUPERSTONK](./superstonk.md) | SUPER | 🟢 13/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/superstonk-sol) |
+| [Pumpkinu](./pumpkinu.md) | PUMPKINU | 🟢 17/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/pumpkinu-sol) |
+| [BOYCOTTPUMPFUN](./boycottpumpfun-sol-4248.md) | BPF | 🟡 48/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/boycottpumpfun-sol-4248) |
+| [GTA6](./gta6.md) | GTA 6 COIN | 🟢 4/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/gta6-sol) |
+| [PODCAT](./podcat.md) | PODCAT | 🟢 23/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/podcat-sol) |
+| [SLEEGO](./sleego.md) | SLEGO | 🟢 22/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/sleego-sol) |
+| [Clutch](./clutch.md) | CLUTCH | 🟢 21/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/clutch-sol) |
+| [BIO999](./bio999.md) | BIO | 🟢 24/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/bio999-sol) |
+| [FLOATER](./floater-sol-653b.md) | FLOATER | 🟢 14/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/floater-sol-653b) |
+| [Make Halloween Great Again](./make-halloween-great-again.md) | TRUMPKIN | 🟢 18/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/make-halloween-great-again-sol) |
+| [Kylian Mbappe](./kylian-mbappe.md) | KYLIAN MBAPPE | 🟢 6/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/kylian-mbappe-sol) |
+| [USOE](./usoe-sol-5486.md) | USOE | 🟢 0/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/usoe-sol-5486) |
+| [USOE](./usoe-sol-5b10.md) | USOE | 🟢 0/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/usoe-sol-5b10) |
+| [UDTF](./udtf-sol-3ae7.md) | UDTF | 🟢 1/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/udtf-sol-3ae7) |
+| [bio·ε/909Δ](./bio909.md) | BIO·Ε/909Δ | 🟡 36/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/bio909-sol) |
+| [Cyberpsychosis](./cyberpsychosis.md) | CYBER | 🟢 22/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/cyberpsychosis-sol) |
+| [Tucker's Final Mission](./tuckers-final-mission.md) | TUCKER | 🟢 20/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/tuckers-final-mission-sol) |
+| [Qubit The Quantum Dog](./qubit-the-quantum-dog.md) | QUBIT | 🟡 38/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/qubit-the-quantum-dog-sol) |
+| [FLOAT](./float.md) | FLOAT | 🟢 17/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/float-sol) |
+| [FLOATER](./floater.md) | FLOATER | 🟢 23/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/floater-sol) |
+| [Federal Oil Trust Fund 🔥](./federal-oil-trust-fund-sol-f4ab.md) | FOTF | 🟢 0/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/federal-oil-trust-fund-sol-f4ab) |
+| [AODF](./aodf-sol-c5a8.md) | AODF | 🟢 0/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/aodf-sol-c5a8) |
+| [XTO](./xto-sol-4fc9.md) | XTO | 🟢 2/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/xto-sol-4fc9) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-sol-9308.md) | AODF | 🟢 2/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol-9308) |
+| [UDTF](./udtf-sol-828e.md) | UDTF | 🟢 1/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/udtf-sol-828e) |
 | [shibana](./shibana.md) | SHIBANA | 🟢 13/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/shibana-sol) |
 | [A Massive Cock](./a-massive-cock.md) | AMC | 🟢 23/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/a-massive-cock-sol) |
 | [PEPEween](./pepeween.md) | PEPEWEEN | 🟢 29/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/pepeween-sol) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**574 reports** · Updated daily · [← All Networks](../README.md)
+**575 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [binancedog](./binancedog.md) | BDOG | 🟡 50/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/binancedog-bsc) |
 | [慈善牛来](./token-6061a4.md) | 慈善牛来 | 🟢 20/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/token-6061a4-bsc) |
 | [Riki](./riki-bsc-2868.md) | リキ | 🟡 36/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/riki-bsc-2868) |
 | [CATCH](./catch.md) | CATCH | 🟢 21/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/catch-bsc) |

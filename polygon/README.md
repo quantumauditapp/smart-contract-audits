@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Polygon tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**27 reports** · Updated daily · [← All Networks](../README.md)
+**28 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Polygon tokens, powered by [Quantum Audit]
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [GreenMetaverseToken](./greenmetaversetoken.md) | GMT | 🟡 56/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/greenmetaversetoken-poly) |
 | [ElevateFi](./elevatefi.md) | EFI | 🟠 75/100 High Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/elevatefi-poly) |
 | [Wrapped SOL](./wrapped-sol.md) | SOL | 🟢 9/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/wrapped-sol-poly) |
 | [BRZ Token](./brz-token.md) | BRZ | 🟢 11/100 Low Risk | 2026-10-26 | [↗](https://quantumaudit.app/token/brz-token-poly) |
