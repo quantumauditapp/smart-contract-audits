@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**581 reports** · Updated daily · [← All Networks](../README.md)
+**588 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Agent Arena](./agent-arena.md) | ARENA | 🟡 63/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/agent-arena-bsc) |
+| [Elon Musk](./elon-musk.md) | MUSK | 🟠 82/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/elon-musk-bsc) |
+| [LOUZI](./louzi.md) | LOUZI | 🟠 65/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/louzi-bsc) |
+| [超级火星1095497174](./1095497174.md) | 超级火星 | 🟢 28/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/1095497174-bsc) |
+| [BIBIAI](./bibiai-bsc-4da8.md) | BIBIAI | 🟡 49/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/bibiai-bsc-4da8) |
+| [亮剑人生](./token-52e57e.md) | 亮剑人生 | 🟢 10/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/token-52e57e-bsc) |
+| [第一个回购销毁模式](./gangball.md) | GANGBALL | 🟠 65/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/gangball-bsc) |
 | [4Broker](./4broker.md) | 4BROKER | 🟡 49/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/4broker-bsc) |
 | [Halloween game](./halloween-game.md) | HALLOWEEN | 🟡 41/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/halloween-game-bsc) |
 | [火龙果](./token-bcccf1.md) | 火龙果 | 🟢 8/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/token-bcccf1-bsc) |

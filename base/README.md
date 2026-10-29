@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**517 reports** · Updated daily · [← All Networks](../README.md)
+**520 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Anthropic](./anthropic-base-bec8.md) | ANTHROPIC | 🟡 51/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/anthropic-base-bec8) |
+| [UDTF](./udtf-base-ab1a.md) | UDTF | 🟡 57/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/udtf-base-ab1a) |
+| [Cambria](./cambria.md) | RSGP | 🟡 54/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/cambria-base) |
 | [Trencher Grant Program](./trencher-grant-program.md) | TGP | 🟡 64/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/trencher-grant-program-base) |
 | [Super Intelligence](./super-intelligence.md) | SI | 🟢 9/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/super-intelligence-base) |
 | [Nado](./nado.md) | NADO | 🟠 80/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/nado-base) |

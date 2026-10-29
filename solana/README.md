@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1497 reports** · Updated daily · [← All Networks](../README.md)
+**1510 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,19 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Vice Inu](./vice-inu.md) | VI | 🟢 15/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/vice-inu-sol) |
+| [Grand Theft Auto VI -Vicecity](./grand-theft-auto-vi-vicecity.md) | VICECITY | 🟡 44/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-vicecity-sol) |
+| [Hypurr](./hypurr-sol-1f3d.md) | PURR | 🟢 19/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/hypurr-sol-1f3d) |
+| [Super Irresistible](./super-irresistible.md) | SI | 🟢 14/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/super-irresistible-sol) |
+| [Huge Yams Pump Everything](./huge-yams-pump-everything.md) | HYPE | 🟢 21/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/huge-yams-pump-everything-sol) |
+| [multiple.cash](./multiplecash.md) | MULTI | 🟢 23/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/multiplecash-sol) |
+| [Dessa](./dessa-sol-5334.md) | DESSA | 🟢 1/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/dessa-sol-5334) |
+| [Forever](./forever.md) | FOREVER | 🟢 28/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/forever-sol) |
+| [spermcoin](./spermcoin.md) | SPERM | 🟡 40/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/spermcoin-sol) |
+| [Oren](./oren.md) | OREN | 🟢 22/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/oren-sol) |
+| [USDP🔥](./usdp-sol-bddd.md) | USDP | 🔴 91/100 Critical Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/usdp-sol-bddd) |
+| [AOP](./aop-sol-c89b.md) | AOP | 🟢 0/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/aop-sol-c89b) |
+| [United States Oil Exchange](./united-states-oil-exchange-sol-6c17.md) | USOE | 🟢 0/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-sol-6c17) |
 | [Bu](./bu.md) | BU | 🟢 31/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/bu-sol) |
 | [KingPad](./kingpad.md) | KING | 🟢 27/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/kingpad-sol) |
 | [Over the Counter](./over-the-counter.md) | OTC | 🟢 20/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/over-the-counter-sol) |
