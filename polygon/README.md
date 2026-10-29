@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Polygon tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**29 reports** · Updated daily · [← All Networks](../README.md)
+**34 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for Polygon tokens, powered by [Quantum Audit]
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [eUSD](./eusd.md) | EUSD | 🟠 69/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/eusd-poly) |
+| [XSGD](./xsgd.md) | XSGD | 🟠 66/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/xsgd-poly) |
+| [Instadapp (PoS)](./instadapp-pos.md) | INST | 🟡 41/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/instadapp-pos-poly) |
+| [Lido DAO Token (PoS)](./lido-dao-token-pos.md) | LDO | 🟢 34/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/lido-dao-token-pos-poly) |
+| [Vikasa Network](./vikasanetwork-poly-0b9a6267.md) | VIK | 🟠 84/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/vikasanetwork-poly-0b9a6267) |
 | [Mysterium (PoS)](./mysterium-pos.md) | MYST | 🟡 60/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/mysterium-pos-poly) |
 | [GreenMetaverseToken](./greenmetaversetoken.md) | GMT | 🟡 56/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/greenmetaversetoken-poly) |
 | [ElevateFi](./elevatefi.md) | EFI | 🟠 75/100 High Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/elevatefi-poly) |

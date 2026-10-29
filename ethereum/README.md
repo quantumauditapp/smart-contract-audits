@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**495 reports** · Updated daily · [← All Networks](../README.md)
+**498 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Bitcoin Pepe](./bitcoin-pepe.md) | BITPEPE | 🟠 84/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/bitcoin-pepe-eth) |
+| [GameStop](./gamestop.md) | GME | 🟢 33/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/gamestop-eth) |
+| [Super Pepe](./super-pepe.md) | SP | 🟢 1/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/super-pepe-eth) |
 | [Super Inu](./super-inu.md) | SI | 🟢 9/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/super-inu-eth) |
 | [GTA Pepe](./gta-pepe.md) | GTAPEPE | 🟡 47/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/gta-pepe-eth) |
 | [Artificial Intelligent Super Inu](./artificial-intelligent-super-inu.md) | AISI | 🟠 68/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/artificial-intelligent-super-inu-eth) |

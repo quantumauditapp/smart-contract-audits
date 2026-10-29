@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**588 reports** · Updated daily · [← All Networks](../README.md)
+**593 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [KOTAI](./kotai.md) | KTI | 🟡 59/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/kotai-bsc) |
+| [Funds Are UNSAFU](./funds-are-unsafu.md) | UNSAFU | 🟢 23/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/funds-are-unsafu-bsc) |
+| [Hyperliquid Strategies (Ondo Tokenized)](./hyperliquid-strategies-ondo-tokenized.md) | PURRON | 🟢 11/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/hyperliquid-strategies-ondo-tokenized-bsc) |
+| [PARTI Token](./parti-token.md) | PARTI | 🟡 56/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/parti-token-bsc) |
+| [AEON](./aeon.md) | AEON | 🟡 58/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/aeon-bsc) |
 | [Agent Arena](./agent-arena.md) | ARENA | 🟡 63/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/agent-arena-bsc) |
 | [Elon Musk](./elon-musk.md) | MUSK | 🟠 82/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/elon-musk-bsc) |
 | [LOUZI](./louzi.md) | LOUZI | 🟠 65/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/louzi-bsc) |

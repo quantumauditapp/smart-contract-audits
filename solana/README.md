@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1510 reports** · Updated daily · [← All Networks](../README.md)
+**1529 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,25 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Fix](./fix.md) | FIX | 🟢 32/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/fix-sol) |
+| [HYPE FAUCET](./hype-faucet.md) | HYPEFAUCET | 🟢 14/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/hype-faucet-sol) |
+| [Stable Inu](./stable-inu.md) | SI | 🟢 24/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/stable-inu-sol) |
+| [Sixth Sense Labs](./sixth-sense-labs.md) | SENSE | 🟢 20/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/sixth-sense-labs-sol) |
+| [Elon Coin](./elon-coin-sol-c3c5.md) | ELON | 🟢 23/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/elon-coin-sol-c3c5) |
+| [Hyper-Chan](./hyper-chan.md) | HYPERCHAN | 🟢 9/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/hyper-chan-sol) |
+| [predictdotfun](./predictdotfun.md) | PREDICT | 🟢 30/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/predictdotfun-sol) |
+| [Cambria](./cambria-sol-6902.md) | RSGP | 🟢 29/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/cambria-sol-6902) |
+| [XTO](./xto-sol-003c.md) | X T O | 🟢 20/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/xto-sol-003c) |
+| [predict.fun](./predictfun.md) | PREDICT | 🟢 27/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/predictfun-sol) |
+| [HYPER INU](./hyper-inu.md) | HI | 🟢 16/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/hyper-inu-sol) |
+| [HYPERCAT](./hypercat-sol-8475.md) | HYPERCAT | 🟢 24/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/hypercat-sol-8475) |
+| [Houseworming](./houseworming.md) | HOUSEWORM | 🟢 17/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/houseworming-sol) |
+| [Hexncoin](./hexncoin.md) | HEXN | 🟢 16/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/hexncoin-sol) |
+| [NODF](./nodf-sol-d4ce.md) | NODF | 🟢 1/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/nodf-sol-d4ce) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-sol-4a63.md) | AODF | 🟢 0/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol-4a63) |
+| [United States Oil Exchange](./united-states-oil-exchange-sol-6f68.md) | USOE | 🟢 0/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-sol-6f68) |
+| [USDP](./usdp-sol-8487.md) | USDP | 🔴 94/100 Critical Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/usdp-sol-8487) |
+| [American Overwatch Protocol](./american-overwatch-protocol-sol-a9f3.md) | AOP | 🟢 0/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-sol-a9f3) |
 | [Vice Inu](./vice-inu.md) | VI | 🟢 15/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/vice-inu-sol) |
 | [Grand Theft Auto VI -Vicecity](./grand-theft-auto-vi-vicecity.md) | VICECITY | 🟡 44/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-vicecity-sol) |
 | [Hypurr](./hypurr-sol-1f3d.md) | PURR | 🟢 19/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/hypurr-sol-1f3d) |

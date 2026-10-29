@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**520 reports** · Updated daily · [← All Networks](../README.md)
+**522 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [AWE Network](./awe-network.md) | AWE | 🟡 48/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/awe-network-base) |
+| [PARTI Token](./parti-token.md) | PARTI | 🟢 8/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/parti-token-base) |
 | [Anthropic](./anthropic-base-bec8.md) | ANTHROPIC | 🟡 51/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/anthropic-base-bec8) |
 | [UDTF](./udtf-base-ab1a.md) | UDTF | 🟡 57/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/udtf-base-ab1a) |
 | [Cambria](./cambria.md) | RSGP | 🟡 54/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/cambria-base) |
