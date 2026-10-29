@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**575 reports** · Updated daily · [← All Networks](../README.md)
+**581 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [4Broker](./4broker.md) | 4BROKER | 🟡 49/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/4broker-bsc) |
+| [Halloween game](./halloween-game.md) | HALLOWEEN | 🟡 41/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/halloween-game-bsc) |
+| [火龙果](./token-bcccf1.md) | 火龙果 | 🟢 8/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/token-bcccf1-bsc) |
+| [Gang](./gang-bsc-05fc.md) | GANG | 🟠 84/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/gang-bsc-05fc) |
+| [Binance Dog](./binance-dog.md) | 币安狗 | 🟢 25/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/binance-dog-bsc) |
+| [再给你一次重来机会1044592705](./1044592705.md) | 雪球重生 | 🟢 13/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/1044592705-bsc) |
 | [binancedog](./binancedog.md) | BDOG | 🟡 50/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/binancedog-bsc) |
 | [慈善牛来](./token-6061a4.md) | 慈善牛来 | 🟢 20/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/token-6061a4-bsc) |
 | [Riki](./riki-bsc-2868.md) | リキ | 🟡 36/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/riki-bsc-2868) |

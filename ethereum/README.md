@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**491 reports** · Updated daily · [← All Networks](../README.md)
+**495 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Super Inu](./super-inu.md) | SI | 🟢 9/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/super-inu-eth) |
+| [GTA Pepe](./gta-pepe.md) | GTAPEPE | 🟡 47/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/gta-pepe-eth) |
+| [Artificial Intelligent Super Inu](./artificial-intelligent-super-inu.md) | AISI | 🟠 68/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/artificial-intelligent-super-inu-eth) |
+| [Groklet](./groklet-eth-f491.md) | GROKLET | 🟡 40/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/groklet-eth-f491) |
 | [Wolfina](./wolfina.md) | WOLFINA | 🟢 0/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/wolfina-eth) |
 | [Optimus Pepe](./optimus-pepe.md) | OPTIPEPE | 🟢 29/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/optimus-pepe-eth) |
 | [4](./4-eth-a15c.md) | 4 | 🟢 32/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/4-eth-a15c) |

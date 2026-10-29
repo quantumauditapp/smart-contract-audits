@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**514 reports** · Updated daily · [← All Networks](../README.md)
+**517 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Trencher Grant Program](./trencher-grant-program.md) | TGP | 🟡 64/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/trencher-grant-program-base) |
+| [Super Intelligence](./super-intelligence.md) | SI | 🟢 9/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/super-intelligence-base) |
+| [Nado](./nado.md) | NADO | 🟠 80/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/nado-base) |
 | [Institutional Oil Fund (IOF)](./institutional-oil-fund-iof.md) | IOF | 🟡 56/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/institutional-oil-fund-iof-base) |
 | [National American Future Fund](./national-american-future-fund.md) | NAFF | 🟡 59/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/national-american-future-fund-base) |
 | [Predict](./predict.md) | PREDICT | 🟢 33/100 Low Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/predict-base) |

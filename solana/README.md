@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1485 reports** · Updated daily · [← All Networks](../README.md)
+**1497 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,18 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Bu](./bu.md) | BU | 🟢 31/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/bu-sol) |
+| [KingPad](./kingpad.md) | KING | 🟢 27/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/kingpad-sol) |
+| [Over the Counter](./over-the-counter.md) | OTC | 🟢 20/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/over-the-counter-sol) |
+| [Hashtag](./hashtag.md) | HASHTAG | 🟢 22/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/hashtag-sol) |
+| [Wrapped ECX](./wrapped-ecx.md) | WECX | 🟠 67/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/wrapped-ecx-sol) |
+| [Free Mika](./free-mika-sol-838d.md) | MIKA | 🟢 21/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/free-mika-sol-838d) |
+| [CatProcessingUnit](./catprocessingunit.md) | CPU | 🟢 7/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/catprocessingunit-sol) |
+| [F7931A](./f7931a.md) | BITCOIN | 🟢 24/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/f7931a-sol) |
+| [National Oil Dividend Fund](./national-oil-dividend-fund-sol-cb00.md) | NODF | 🟢 2/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-sol-cb00) |
+| [United States Oil Exchange](./united-states-oil-exchange.md) | USOE | 🟢 0/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-sol) |
+| [NODF](./nodf-sol-b166.md) | NODF | 🟢 0/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/nodf-sol-b166) |
+| [PROJECT CORTEX](./project-cortex.md) | XTX | 🟢 2/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/project-cortex-sol) |
 | [0](./0.md) | 0 | 🟡 49/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/0-sol) |
 | [SUPERSTONK](./superstonk.md) | SUPER | 🟢 13/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/superstonk-sol) |
 | [Pumpkinu](./pumpkinu.md) | PUMPKINU | 🟢 17/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/pumpkinu-sol) |
