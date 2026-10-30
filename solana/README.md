@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1584 reports** · Updated daily · [← All Networks](../README.md)
+**1601 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,23 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [allo](./allo.md) | ALLO | 🟢 17/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/allo-sol) |
+| [Saturween](./saturween.md) | SATURWEEN | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/saturween-sol) |
+| [locked inu](./locked-inu.md) | INU | 🟢 13/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/locked-inu-sol) |
+| [Official Donald Tusk](./official-donald-tusk.md) | TUSK | 🟢 21/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/official-donald-tusk-sol) |
+| [Pilly Cupsey](./pilly-cupsey.md) | PILLSEY | 🟢 17/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/pilly-cupsey-sol) |
+| [The Pumpfun Mascot](./the-pumpfun-mascot.md) | PILLY | 🟢 24/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/the-pumpfun-mascot-sol) |
+| [Never Give Up](./never-give-up.md) | MINECAT | 🟢 23/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/never-give-up-sol) |
+| [WASTED](./wasted.md) | WASTED | 🟢 16/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/wasted-sol) |
+| [Tygr](./tygr.md) | TYGR | 🟢 21/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/tygr-sol) |
+| [The Super Intelligent Beauty](./the-super-intelligent-beauty.md) | AGENC | 🟢 14/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/the-super-intelligent-beauty-sol) |
+| [Jason Duval](./jason-duval-sol-4f8d.md) | JASON | 🟢 16/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/jason-duval-sol-4f8d) |
+| [FLOAT](./float-sol-8dfd.md) | FLOAT | 🟢 9/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/float-sol-8dfd) |
+| [AODF](./aodf-sol-46eb.md) | AODF | 🟢 1/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/aodf-sol-46eb) |
+| [UODF](./uodf.md) | UODF | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/uodf-sol) |
+| [USOE](./usoe-sol-621c.md) | USOE | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/usoe-sol-621c) |
+| [AODF](./aodf-sol-1921.md) | AODF | 🟢 2/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/aodf-sol-1921) |
+| [UDTF](./udtf-sol-929a.md) | UDTF | 🟢 1/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/udtf-sol-929a) |
 | [Reef](./reef.md) | REEF | 🟢 16/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/reef-sol) |
 | [Jesus Coin](./jesus-coin.md) | JESUS | 🟢 25/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/jesus-coin-sol) |
 | [Skive](./skive.md) | SKIVE | 🟢 23/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/skive-sol) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**525 reports** · Updated daily · [← All Networks](../README.md)
+**526 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [American Oil Dividend Fund](./american-oil-dividend-fund-base-73ca.md) | AODF | 🟡 61/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-73ca) |
 | [Papertrade](./papertrade-base-2477.md) | PAPER | 🟡 52/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/papertrade-base-2477) |
 | [Dexterium](./dexterium.md) | DXTR | 🟠 72/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/dexterium-base) |
 | [ESHARE](./eshare.md) | ESHARE | 🟢 16/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/eshare-base) |

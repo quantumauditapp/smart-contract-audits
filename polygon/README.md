@@ -10,7 +10,7 @@ Automated daily security analyses for Polygon tokens, powered by [Quantum Audit]
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
-| [Vikasa Network](./vikasanetwork-poly-0b9a6267.md) | VIK | 🟠 71/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/vikasanetwork-poly-0b9a6267) |
+| [Vikasa Network](./vikasanetwork-poly-0b9a6267.md) | VIK | 🟡 60/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/vikasanetwork-poly-0b9a6267) |
 | [Aegis](./aegis.md) | ATH | 🟠 75/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/aegis-poly) |
 | [SAND](./sand.md) | SAND | 🟡 50/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/sand-poly) |
 | [eUSD](./eusd.md) | EUSD | 🟠 69/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/eusd-poly) |

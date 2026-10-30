@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**611 reports** · Updated daily · [← All Networks](../README.md)
+**616 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Nesa](./nesa.md) | NES | 🟠 81/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/nesa-bsc) |
+| [ROBO](./robo.md) | ROBO | 🟠 68/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/robo-bsc) |
+| [SAFU](./safu.md) | SAFU | 🟢 2/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/safu-bsc) |
+| [SAFU Fund](./safu-fund-bsc-4ed4.md) | SAFU | 🟡 43/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/safu-fund-bsc-4ed4) |
+| [SAFU Fund](./safu-fund.md) | SAFU | 🟢 16/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/safu-fund-bsc) |
 | [BNAGENT](./bnagent.md) | BNAGENT | 🟡 56/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/bnagent-bsc) |
 | [trollon](./trollon.md) | TROLLON | 🟡 51/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/trollon-bsc) |
 | [Halloween game](./halloween-game-bsc-4166.md) | PUMPKIN | 🟡 42/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/halloween-game-bsc-4166) |

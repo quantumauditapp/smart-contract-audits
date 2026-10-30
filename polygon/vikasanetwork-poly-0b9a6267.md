@@ -2,14 +2,14 @@
 token: Vikasa Network
 ticker: VIK
 network: polygon
-risk_score: 71
-status: high
+risk_score: 60
+status: medium
 date: 2026-10-29
 ---
 
 # Vikasa Network (VIK) — Smart Contract Security Analysis | Polygon
 
-> **Risk Score: 71/100 — 🟠 High Risk**
+> **Risk Score: 60/100 — 🟡 Medium Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vikasanetwork-poly-0b9a6267)
 
@@ -27,7 +27,7 @@ Maintain secure custody of the private key associated with the contract owner ad
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 6/10 | Medium | The architecture follows industry-standard ERC-20 patterns using well-audited OpenZeppelin libraries. 7.1 Architecture is clean and modular, while 7.2 Code Security benefits from the use of Solidity… |
+| **Technical** | 8/10 | Low | The architecture follows industry-standard ERC-20 patterns using well-audited OpenZeppelin libraries. 7.1 Architecture is clean and modular, while 7.2 Code Security benefits from the use of Solidity… |
 | **Governance / Economics** | 1/10 | High | 7.4 Economic and 7.5 Governance parameters are straightforward as the contract lacks complex staking or minting logic. The owner has no power to manipulate token balances or restrict transfers… |
 | **Upgrades** | 5/10 | Medium | The contract is not upgradeable, which eliminates 7.7 Upgrades risk. 7.8 Operations are limited to ownership transfer, which is handled via standard secure patterns. No proxy patterns are utilized… |
 
