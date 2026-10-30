@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1565 reports** · Updated daily · [← All Networks](../README.md)
+**1584 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,25 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Reef](./reef.md) | REEF | 🟢 16/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/reef-sol) |
+| [Jesus Coin](./jesus-coin.md) | JESUS | 🟢 25/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/jesus-coin-sol) |
+| [Skive](./skive.md) | SKIVE | 🟢 23/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/skive-sol) |
+| [Space Cat](./space-cat-sol-0943.md) | NEBULA | 🟡 40/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/space-cat-sol-0943) |
+| [CATPAD](./catpad.md) | CATPAD | 🟢 19/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/catpad-sol) |
+| [STANK](./stank.md) | STANK | 🟢 15/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/stank-sol) |
+| [Space Cat](./space-cat.md) | SPACECAT | 🟢 14/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/space-cat-sol) |
+| [Elon The Troller](./elon-the-troller.md) | ELONTROLL | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/elon-the-troller-sol) |
+| [Wen Lambo](./wen-lambo.md) | WENLAMBO | 🟡 42/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/wen-lambo-sol) |
+| [United States Dividend Program](./united-states-dividend-program.md) | USDP | 🔴 94/100 Critical Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/united-states-dividend-program-sol) |
+| [Crypto Final Boss](./crypto-final-boss.md) | KIM | 🟢 22/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/crypto-final-boss-sol) |
+| [predict.fun](./predictfun-sol-04d2.md) | PREDICT | 🟢 28/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/predictfun-sol-04d2) |
+| [United Dividend Trust Fund](./united-dividend-trust-fund-sol-fa18.md) | UDTF | 🟢 2/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/united-dividend-trust-fund-sol-fa18) |
+| [Console](./console.md) | CONSOLE | 🟢 9/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/console-sol) |
+| [MR BEAST](./mr-beast.md) | BEAST | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/mr-beast-sol) |
+| [USOE](./usoe-sol-ac8f.md) | USOE | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/usoe-sol-ac8f) |
+| [XTO](./xto-sol-0303.md) | XTO | 🟢 1/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/xto-sol-0303) |
+| [XTO](./xto-sol-3741.md) | X T O | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/xto-sol-3741) |
+| [United Dividend Trust Fund](./united-dividend-trust-fund-sol-b37f.md) | UDTF | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/united-dividend-trust-fund-sol-b37f) |
 | [Chief Troll Officer](./chief-troll-officer.md) | CTO | 🟢 16/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/chief-troll-officer-sol) |
 | [CRIME](./crime.md) | CRIME | 🟡 40/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/crime-sol) |
 | [PERPS](./perps.md) | PERPS | 🟢 23/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/perps-sol) |

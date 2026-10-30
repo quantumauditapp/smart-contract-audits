@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**523 reports** · Updated daily · [← All Networks](../README.md)
+**525 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Papertrade](./papertrade-base-2477.md) | PAPER | 🟡 52/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/papertrade-base-2477) |
+| [Dexterium](./dexterium.md) | DXTR | 🟠 72/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/dexterium-base) |
 | [ESHARE](./eshare.md) | ESHARE | 🟢 16/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/eshare-base) |
 | [AWE Network](./awe-network.md) | AWE | 🟡 48/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/awe-network-base) |
 | [PARTI Token](./parti-token.md) | PARTI | 🟢 8/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/parti-token-base) |

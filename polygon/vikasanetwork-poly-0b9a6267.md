@@ -2,14 +2,14 @@
 token: Vikasa Network
 ticker: VIK
 network: polygon
-risk_score: 84
+risk_score: 71
 status: high
 date: 2026-10-29
 ---
 
 # Vikasa Network (VIK) — Smart Contract Security Analysis | Polygon
 
-> **Risk Score: 84/100 — 🟠 High Risk**
+> **Risk Score: 71/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vikasanetwork-poly-0b9a6267)
 
@@ -65,21 +65,21 @@ The verified source code was reviewed and no issue rising to Informational sever
 
 ### `QA-HOLDERS` — Who holds the supply  *(Severity: Informational · Status: Acknowledged)*
 
-The ten largest holders own 100.0% of supply. What remains: 80.0% in wallets, 19.9% in other contracts. The deployer/owner wallet itself holds 19.9%. 19 holders in total.
+The ten largest holders own 100.0% of supply. Of that, 99.7% locked — not holders that can sell, so excluded from the concentration score. What remains: 0.0% in wallets, 0.2% in other contracts. 15 holders in total.
 
 **Recommendation:** Watch the largest wallets that are not exchanges, pools or locks — those are the ones that can move the price.
 
 
 ### `QA-IDENTITY` — Not listed by any independent source  *(Severity: Informational · Status: Acknowledged)*
 
-19 holders. Not listed by CoinGecko or any exchange GoPlus tracks. Nothing independent confirms who is behind this token, so every power its contract grants is scored at face value.
+15 holders. Not listed by CoinGecko or any exchange GoPlus tracks. Nothing independent confirms who is behind this token, so every power its contract grants is scored at face value.
 
 **Recommendation:** Match the contract address against the project's official channels before trading.
 
 
 ### `QA-PROFILE` — Asset class: Project token  *(Severity: Informational · Status: Acknowledged)*
 
-A token issued by a project for use, governance or fundraising. Scored on its contract and market facts. The class itself adds no points; the contract and market facts decide the score. Basis: no class-specific evidence. Tokenomics — Supply: fixed — the contract has no mint function. Control: a single wallet (EOA). Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $2K of DEX liquidity across 3 pools. Launch: 39 days of market history.
+A token issued by a project for use, governance or fundraising. Scored on its contract and market facts. The class itself adds no points; the contract and market facts decide the score. Basis: no class-specific evidence. Tokenomics — Supply: fixed — the contract has no mint function. Control: a single wallet (EOA). Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $2K of DEX liquidity across 3 pools. Launch: 40 days of market history.
 
 **Recommendation:** Check the project's own documentation for what the token is used for; this report covers what the contract allows.
 
@@ -91,7 +91,7 @@ A token issued by a project for use, governance or fundraising. Scored on its co
 | **Network** | Polygon |
 | **Price** | $0.10298989 |
 | **24h Volume** | N/A |
-| **Liquidity** | $999 |
+| **Liquidity** | $974 |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1mo |
 | **Top-10 Holders** | 100.0% of supply |

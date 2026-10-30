@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**603 reports** · Updated daily · [← All Networks](../README.md)
+**611 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,14 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [BNAGENT](./bnagent.md) | BNAGENT | 🟡 56/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/bnagent-bsc) |
+| [trollon](./trollon.md) | TROLLON | 🟡 51/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/trollon-bsc) |
+| [Halloween game](./halloween-game-bsc-4166.md) | PUMPKIN | 🟡 42/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/halloween-game-bsc-4166) |
+| [We Trust Binance](./we-trust-binance.md) | WTB | 🟢 22/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/we-trust-binance-bsc) |
+| [LYX Ecosystem](./lyx-ecosystem.md) | LYX | 🟠 84/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/lyx-ecosystem-bsc) |
+| [LITY](./lity.md) | LITY | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/lity-bsc) |
+| [TOSH](./tosh.md) | TOSH | 🟡 56/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/tosh-bsc) |
+| [Chief Troll Officer](./chief-troll-officer.md) | CTO | 🟢 27/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/chief-troll-officer-bsc) |
 | [币安加油](./token-2d8f21.md) | 币安加油 | 🟢 34/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/token-2d8f21-bsc) |
 | [Pi](./pi.md) | PI | 🟠 82/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/pi-bsc) |
 | [Funds Are Safu](./funds-are-safu.md) | SAFU | 🟢 16/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/funds-are-safu-bsc) |

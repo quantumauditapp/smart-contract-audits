@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**502 reports** · Updated daily · [← All Networks](../README.md)
+**504 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [SNOWMOON](./snowmoon-eth-7aa9.md) | SNOWMOON | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/snowmoon-eth-7aa9) |
+| [1INCH Token](./1inch-token.md) | 1INCH | 🟡 52/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/1inch-token-eth) |
 | [Hyper Pepe](./hyper-pepe.md) | HYPEPE | 🟡 45/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/hyper-pepe-eth) |
 | [FunFair](./funfair.md) | FUN | 🟡 56/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/funfair-eth) |
 | [GTA VI](./gta-vi.md) | GTA6 | 🟡 46/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/gta-vi-eth) |
