@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1529 reports** · Updated daily · [← All Networks](../README.md)
+**1551 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,28 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [SNARKS Launchpad](./snarks-launchpad.md) | SNARKS | 🟢 23/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/snarks-launchpad-sol) |
+| [Fluke](./fluke.md) | FLUKE | 🟢 22/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/fluke-sol) |
+| [Largest Robbery](./largest-robbery.md) | ROBBERY | 🟢 21/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/largest-robbery-sol) |
+| [TRON](./tron.md) | TRX | 🟢 9/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/tron-sol) |
+| [JET](./jet.md) | JET | 🟢 15/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/jet-sol) |
+| [Foxii](./foxii.md) | FOXII | 🟢 13/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/foxii-sol) |
+| [Just a Dead Guy](./just-a-dead-guy.md) | DEADGUY | 🟢 15/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/just-a-dead-guy-sol) |
+| [Hyperpad](./hyperpad.md) | HYPERPAD | 🟢 21/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/hyperpad-sol) |
+| [Cyber Security Inu](./cyber-security-inu.md) | CSI | 🟢 24/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/cyber-security-inu-sol) |
+| [ZEROday](./zeroday-sol-3e59.md) | ZERODAY | 🟢 27/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/zeroday-sol-3e59) |
+| [The Black Swan](./the-black-swan.md) | SWAN | 🟢 23/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/the-black-swan-sol) |
+| [ZEROday](./zeroday.md) | ZERODAY | 🟢 21/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/zeroday-sol) |
+| [United States Oil Exchange](./united-states-oil-exchange-sol-37c3.md) | USOE | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-sol-37c3) |
+| [Whale Tail](./whale-tail.md) | WTAIL | 🟠 71/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/whale-tail-sol) |
+| [stay calm](./stay-calm.md) | CALM | 🟢 14/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/stay-calm-sol) |
+| [United States Dividend Fund🌟](./united-states-dividend-fund-sol-cbad.md) | USDF | 🟢 1/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-sol-cbad) |
+| [UDTF](./udtf-sol-1bfa.md) | UDTF | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/udtf-sol-1bfa) |
+| [USOE](./usoe-sol-9462.md) | USOE | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/usoe-sol-9462) |
+| [XTO](./xto-sol-d90a.md) | X T O | 🟢 1/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/xto-sol-d90a) |
+| [Institutional Oil Fund](./institutional-oil-fund-sol-a3ed.md) | IOF | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/institutional-oil-fund-sol-a3ed) |
+| [United Dividend Trust Fund](./united-dividend-trust-fund-sol-78a3.md) | UDTF | 🟢 1/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/united-dividend-trust-fund-sol-78a3) |
+| [HALVE](./halve.md) | HALVE | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/halve-sol) |
 | [Fix](./fix.md) | FIX | 🟢 32/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/fix-sol) |
 | [HYPE FAUCET](./hype-faucet.md) | HYPEFAUCET | 🟢 14/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/hype-faucet-sol) |
 | [Stable Inu](./stable-inu.md) | SI | 🟢 24/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/stable-inu-sol) |

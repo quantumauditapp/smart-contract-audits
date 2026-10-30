@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Polygon tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**34 reports** · Updated daily · [← All Networks](../README.md)
+**36 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Polygon tokens, powered by [Quantum Audit]
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Aegis](./aegis.md) | ATH | 🟠 75/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/aegis-poly) |
+| [SAND](./sand.md) | SAND | 🟡 50/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/sand-poly) |
 | [eUSD](./eusd.md) | EUSD | 🟠 69/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/eusd-poly) |
 | [XSGD](./xsgd.md) | XSGD | 🟠 66/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/xsgd-poly) |
 | [Instadapp (PoS)](./instadapp-pos.md) | INST | 🟡 41/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/instadapp-pos-poly) |

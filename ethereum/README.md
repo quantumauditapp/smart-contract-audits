@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**498 reports** · Updated daily · [← All Networks](../README.md)
+**499 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [HYPER INU](./hyper-inu.md) | HI | 🟡 44/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/hyper-inu-eth) |
 | [Bitcoin Pepe](./bitcoin-pepe.md) | BITPEPE | 🟠 84/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/bitcoin-pepe-eth) |
 | [GameStop](./gamestop.md) | GME | 🟢 33/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/gamestop-eth) |
 | [Super Pepe](./super-pepe.md) | SP | 🟢 1/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/super-pepe-eth) |

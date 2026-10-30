@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**90 reports** · Updated daily · [← All Networks](../README.md)
+**91 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Wootrade Network](./wootrade-network.md) | WOO | 🟢 17/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/wootrade-network-arb) |
 | [TestMachine](./testmachine.md) | TEMCN | 🟠 73/100 High Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/testmachine-arb) |
 | [GMX](./gmx.md) | GMX | 🟡 41/100 Medium Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/gmx-arb) |
 | [Pocket Network](./pocket-network.md) | POKT | 🟠 82/100 High Risk | 2026-10-27 | [↗](https://quantumaudit.app/token/pocket-network-arb) |

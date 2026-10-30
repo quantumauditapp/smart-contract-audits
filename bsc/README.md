@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**593 reports** · Updated daily · [← All Networks](../README.md)
+**597 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [The Binance Laptop](./the-binance-laptop.md) | LAPTOP | 🟢 22/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/the-binance-laptop-bsc) |
+| [Swarm](./swarm.md) | SWARM | 🟠 76/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/swarm-bsc) |
+| [TRON](./tron.md) | TRX | 🟢 32/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/tron-bsc) |
+| [Zeroday](./zeroday.md) | ZERODAY | 🟢 23/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/zeroday-bsc) |
 | [KOTAI](./kotai.md) | KTI | 🟡 59/100 Medium Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/kotai-bsc) |
 | [Funds Are UNSAFU](./funds-are-unsafu.md) | UNSAFU | 🟢 23/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/funds-are-unsafu-bsc) |
 | [Hyperliquid Strategies (Ondo Tokenized)](./hyperliquid-strategies-ondo-tokenized.md) | PURRON | 🟢 11/100 Low Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/hyperliquid-strategies-ondo-tokenized-bsc) |
