@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**597 reports** · Updated daily · [← All Networks](../README.md)
+**603 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [币安加油](./token-2d8f21.md) | 币安加油 | 🟢 34/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/token-2d8f21-bsc) |
+| [Pi](./pi.md) | PI | 🟠 82/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/pi-bsc) |
+| [Funds Are Safu](./funds-are-safu.md) | SAFU | 🟢 16/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/funds-are-safu-bsc) |
+| [Succinct](./succinct.md) | PROVE | 🟠 67/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/succinct-bsc) |
+| [VELTRION ARC](./veltrion-arc.md) | VARC | 🟡 55/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/veltrion-arc-bsc) |
+| [Safu Inu](./safu-inu.md) | SI | 🟡 44/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/safu-inu-bsc) |
 | [The Binance Laptop](./the-binance-laptop.md) | LAPTOP | 🟢 22/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/the-binance-laptop-bsc) |
 | [Swarm](./swarm.md) | SWARM | 🟠 76/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/swarm-bsc) |
 | [TRON](./tron.md) | TRX | 🟢 32/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/tron-bsc) |

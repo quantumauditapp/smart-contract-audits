@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1551 reports** · Updated daily · [← All Networks](../README.md)
+**1565 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,20 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Chief Troll Officer](./chief-troll-officer.md) | CTO | 🟢 16/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/chief-troll-officer-sol) |
+| [CRIME](./crime.md) | CRIME | 🟡 40/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/crime-sol) |
+| [PERPS](./perps.md) | PERPS | 🟢 23/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/perps-sol) |
+| [Zeroday](./zeroday-sol-cd7d.md) | ZERODAY | 🟢 21/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/zeroday-sol-cd7d) |
+| [Ah Shit, Here We Go Again](./ah-shit-here-we-go-again.md) | AGAIN | 🟢 9/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/ah-shit-here-we-go-again-sol) |
+| [UDTF](./udtf-sol-ad29.md) | UDTF | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/udtf-sol-ad29) |
+| [ZEROday](./zeroday-sol-8bb7.md) | ZERODAY | 🟡 36/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/zeroday-sol-8bb7) |
+| [TraderTraitor](./tradertraitor.md) | TRADERTRAITOR | 🟢 21/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/tradertraitor-sol) |
+| [French Fry Security](./french-fry-security.md) | FRY | 🟡 38/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/french-fry-security-sol) |
+| [Funds Are SAFU](./funds-are-safu.md) | SAFU | 🟢 23/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/funds-are-safu-sol) |
+| [Hyper-Chan](./hyper-chan-sol-6af6.md) | HYPERCHAN | 🟢 15/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/hyper-chan-sol-6af6) |
+| [USOE](./usoe-sol-7cd2.md) | USOE | 🟢 1/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/usoe-sol-7cd2) |
+| [United States Dividend Asset](./united-states-dividend-asset.md) | USDA | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/united-states-dividend-asset-sol) |
+| [Digital Oil Asset Supply](./digital-oil-asset-supply-sol-7677.md) | DOAS | 🟢 2/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/digital-oil-asset-supply-sol-7677) |
 | [SNARKS Launchpad](./snarks-launchpad.md) | SNARKS | 🟢 23/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/snarks-launchpad-sol) |
 | [Fluke](./fluke.md) | FLUKE | 🟢 22/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/fluke-sol) |
 | [Largest Robbery](./largest-robbery.md) | ROBBERY | 🟢 21/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/largest-robbery-sol) |
