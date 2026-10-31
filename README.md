@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-3408-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-3417-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,15 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [ARNOLD SCHWARTZENIGGA](./solana/arnold-schwartzenigga.md) | ARNOLD | Solana | 🟢 22/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/arnold-schwartzenigga-sol) |
+| [FUN](./solana/fun.md) | FUN | Solana | 🟢 21/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/fun-sol) |
+| [Ram Altman](./solana/ram-altman.md) | RAM | Solana | 🟢 23/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/ram-altman-sol) |
+| [FIGHT](./bsc/fight.md) | FIGHT | BNB Chain | 🟡 61/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/fight-bsc) |
+| [CNPY](./bsc/cnpy.md) | CNPY | BNB Chain | 🟡 59/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/cnpy-bsc) |
+| [whitepaper](./solana/whitepaper.md) | WHITEPAPER | Solana | 🟢 0/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/whitepaper-sol) |
+| [FAGENT](./bsc/fagent.md) | FAGENT | BNB Chain | 🟢 13/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/fagent-bsc) |
+| [MONEKO](./solana/moneko.md) | MONEKO | Solana | 🟢 21/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/moneko-sol) |
+| [Vamp Cat](./solana/vamp-cat.md) | VAMPCAT | Solana | 🟢 23/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/vamp-cat-sol) |
 | [Senderbot](./ethereum/senderbot.md) | SENDERBOT | Ethereum | 🟠 68/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/senderbot-eth) |
 | [Drop Social](./bsc/drop-social.md) | DROPS | BNB Chain | 🟢 29/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/drop-social-bsc) |
 | [Chief Troll Officer](./ethereum/chief-troll-officer.md) | CTO | Ethereum | 🟢 13/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/chief-troll-officer-eth) |
@@ -33,21 +42,12 @@
 | [APPLECAT](./solana/applecat.md) | AAPLCAT | Solana | 🟢 20/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/applecat-sol) |
 | [Phantom Staked SOL](./solana/phantom-staked-sol.md) | PSOL | Solana | 🟢 12/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/phantom-staked-sol-sol) |
 | [Rip Cars](./solana/rip-cars.md) | CARS | Solana | 🟠 67/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/rip-cars-sol) |
-| [LUMI](./solana/lumi-sol-8238.md) | LUMI | Solana | 🟢 17/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/lumi-sol-8238) |
-| [No Nut Inu](./solana/no-nut-inu.md) | NNI | Solana | 🟢 21/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/no-nut-inu-sol) |
-| [Paranoid mode](./solana/paranoid-mode.md) | PARANOID | Solana | 🟢 1/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/paranoid-mode-sol) |
-| [NODF](./solana/nodf-sol-48d0.md) | NODF | Solana | 🟡 38/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/nodf-sol-48d0) |
-| [Apple Coin](./solana/apple-coin.md) | APPLE | Solana | 🟢 16/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/apple-coin-sol) |
-| [LUMI](./solana/lumi.md) | LUMI | Solana | 🟢 15/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/lumi-sol) |
-| [iCoin](./solana/icoin.md) | ICOIN | Solana | 🟢 17/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/icoin-sol) |
-| [Leverhedge](./solana/leverhedge.md) | LEVERHEDGE | Solana | 🟢 0/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/leverhedge-sol) |
-| [United States Oil Exchange](./solana/united-states-oil-exchange-sol-8294.md) | USOE | Solana | 🟢 1/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-sol-8294) |
 
 ---
 
 ## Browse by Network
 
-[Solana (1621)](./solana/README.md) · [BNB Chain (620)](./bsc/README.md) · [Base (529)](./base/README.md) · [Ethereum (510)](./ethereum/README.md) · [Arbitrum (92)](./arbitrum/README.md) · [Polygon (36)](./polygon/README.md)
+[Solana (1627)](./solana/README.md) · [BNB Chain (623)](./bsc/README.md) · [Base (529)](./base/README.md) · [Ethereum (510)](./ethereum/README.md) · [Arbitrum (92)](./arbitrum/README.md) · [Polygon (36)](./polygon/README.md)
 
 ---
 

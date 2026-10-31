@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**620 reports** · Updated daily · [← All Networks](../README.md)
+**623 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [FIGHT](./fight.md) | FIGHT | 🟡 61/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/fight-bsc) |
+| [CNPY](./cnpy.md) | CNPY | 🟡 59/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/cnpy-bsc) |
+| [FAGENT](./fagent.md) | FAGENT | 🟢 13/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/fagent-bsc) |
 | [Drop Social](./drop-social.md) | DROPS | 🟢 29/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/drop-social-bsc) |
 | [FLY](./fly.md) | FLY | 🟡 58/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/fly-bsc) |
 | [LUCK](./luck-bsc-ee2a.md) | LUCK | 🟢 0/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/luck-bsc-ee2a) |

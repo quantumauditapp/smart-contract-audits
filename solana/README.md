@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1621 reports** · Updated daily · [← All Networks](../README.md)
+**1627 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [ARNOLD SCHWARTZENIGGA](./arnold-schwartzenigga.md) | ARNOLD | 🟢 22/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/arnold-schwartzenigga-sol) |
+| [FUN](./fun.md) | FUN | 🟢 21/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/fun-sol) |
+| [Ram Altman](./ram-altman.md) | RAM | 🟢 23/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/ram-altman-sol) |
+| [whitepaper](./whitepaper.md) | WHITEPAPER | 🟢 0/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/whitepaper-sol) |
+| [MONEKO](./moneko.md) | MONEKO | 🟢 21/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/moneko-sol) |
+| [Vamp Cat](./vamp-cat.md) | VAMPCAT | 🟢 23/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/vamp-cat-sol) |
 | [Zcashier](./zcashier.md) | ZCASHIER | 🟢 29/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/zcashier-sol) |
 | [FĀFĀ](./fafa.md) | 发发 | 🟢 13/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/fafa-sol) |
 | [THE ONBOARDOOOR](./the-onboardooor.md) | ONBOARD | 🟢 20/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/the-onboardooor-sol) |
