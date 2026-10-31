@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-3399-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-3408-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,15 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Senderbot](./ethereum/senderbot.md) | SENDERBOT | Ethereum | 🟠 68/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/senderbot-eth) |
+| [Drop Social](./bsc/drop-social.md) | DROPS | BNB Chain | 🟢 29/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/drop-social-bsc) |
+| [Chief Troll Officer](./ethereum/chief-troll-officer.md) | CTO | Ethereum | 🟢 13/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/chief-troll-officer-eth) |
+| [GDollar](./ethereum/gdollar.md) | GDLR | Ethereum | 🟡 63/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/gdollar-eth) |
+| [Zcashier](./solana/zcashier.md) | ZCASHIER | Solana | 🟢 29/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/zcashier-sol) |
+| [FĀFĀ](./solana/fafa.md) | 发发 | Solana | 🟢 13/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/fafa-sol) |
+| [THE ONBOARDOOOR](./solana/the-onboardooor.md) | ONBOARD | Solana | 🟢 20/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/the-onboardooor-sol) |
+| [Tesla](./solana/tesla.md) | TSLA | Solana | 🟢 27/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/tesla-sol) |
+| [XTO](./solana/xto-sol-cbd1.md) | XTO | Solana | 🟢 0/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/xto-sol-cbd1) |
 | [The Stonks Exchange](./base/the-stonks-exchange-base-79af.md) | STONKEX | Base | 🟠 67/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/the-stonks-exchange-base-79af) |
 | [FLY](./bsc/fly.md) | FLY | BNB Chain | 🟡 58/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/fly-bsc) |
 | [NIKITA BOAR](./solana/nikita-boar.md) | BOAR | Solana | 🟢 19/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/nikita-boar-sol) |
@@ -33,21 +42,12 @@
 | [iCoin](./solana/icoin.md) | ICOIN | Solana | 🟢 17/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/icoin-sol) |
 | [Leverhedge](./solana/leverhedge.md) | LEVERHEDGE | Solana | 🟢 0/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/leverhedge-sol) |
 | [United States Oil Exchange](./solana/united-states-oil-exchange-sol-8294.md) | USOE | Solana | 🟢 1/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-sol-8294) |
-| [Broke Nigga Baddie](./solana/broke-nigga-baddie.md) | BNB | Solana | 🟢 16/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/broke-nigga-baddie-sol) |
-| [United States Dividend Fund](./solana/united-states-dividend-fund-sol-2796.md) | USDF | Solana | 🟢 2/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-sol-2796) |
-| [allo](./solana/allo.md) | ALLO | Solana | 🟢 17/100 | 2026-10-30 | [↗](https://quantumaudit.app/token/allo-sol) |
-| [American Oil Dividend Fund](./base/american-oil-dividend-fund-base-73ca.md) | AODF | Base | 🟡 61/100 | 2026-10-30 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-73ca) |
-| [Saturween](./solana/saturween.md) | SATURWEEN | Solana | 🟢 0/100 | 2026-10-30 | [↗](https://quantumaudit.app/token/saturween-sol) |
-| [Nesa](./bsc/nesa.md) | NES | BNB Chain | 🟠 81/100 | 2026-10-30 | [↗](https://quantumaudit.app/token/nesa-bsc) |
-| [zipcoin](./ethereum/zipcoin-eth-9ce7.md) | ZC | Ethereum | 🟢 21/100 | 2026-10-30 | [↗](https://quantumaudit.app/token/zipcoin-eth-9ce7) |
-| [locked inu](./solana/locked-inu.md) | INU | Solana | 🟢 13/100 | 2026-10-30 | [↗](https://quantumaudit.app/token/locked-inu-sol) |
-| [Official Donald Tusk](./solana/official-donald-tusk.md) | TUSK | Solana | 🟢 21/100 | 2026-10-30 | [↗](https://quantumaudit.app/token/official-donald-tusk-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (1616)](./solana/README.md) · [BNB Chain (619)](./bsc/README.md) · [Base (529)](./base/README.md) · [Ethereum (507)](./ethereum/README.md) · [Arbitrum (92)](./arbitrum/README.md) · [Polygon (36)](./polygon/README.md)
+[Solana (1621)](./solana/README.md) · [BNB Chain (620)](./bsc/README.md) · [Base (529)](./base/README.md) · [Ethereum (510)](./ethereum/README.md) · [Arbitrum (92)](./arbitrum/README.md) · [Polygon (36)](./polygon/README.md)
 
 ---
 

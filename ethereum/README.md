@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**507 reports** · Updated daily · [← All Networks](../README.md)
+**510 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Senderbot](./senderbot.md) | SENDERBOT | 🟠 68/100 High Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/senderbot-eth) |
+| [Chief Troll Officer](./chief-troll-officer.md) | CTO | 🟢 13/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/chief-troll-officer-eth) |
+| [GDollar](./gdollar.md) | GDLR | 🟡 63/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/gdollar-eth) |
 | [Fission](./fission.md) | FSSN | 🟠 68/100 High Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/fission-eth) |
 | [iCoin](./icoin.md) | ICOIN | 🟡 44/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/icoin-eth) |
 | [zipcoin](./zipcoin-eth-9ce7.md) | ZC | 🟢 21/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/zipcoin-eth-9ce7) |

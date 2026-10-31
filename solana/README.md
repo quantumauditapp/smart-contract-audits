@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1616 reports** · Updated daily · [← All Networks](../README.md)
+**1621 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Zcashier](./zcashier.md) | ZCASHIER | 🟢 29/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/zcashier-sol) |
+| [FĀFĀ](./fafa.md) | 发发 | 🟢 13/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/fafa-sol) |
+| [THE ONBOARDOOOR](./the-onboardooor.md) | ONBOARD | 🟢 20/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/the-onboardooor-sol) |
+| [Tesla](./tesla.md) | TSLA | 🟢 27/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/tesla-sol) |
+| [XTO](./xto-sol-cbd1.md) | XTO | 🟢 0/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/xto-sol-cbd1) |
 | [NIKITA BOAR](./nikita-boar.md) | BOAR | 🟢 19/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/nikita-boar-sol) |
 | [APPLECAT](./applecat.md) | AAPLCAT | 🟢 20/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/applecat-sol) |
 | [Phantom Staked SOL](./phantom-staked-sol.md) | PSOL | 🟢 12/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/phantom-staked-sol-sol) |
