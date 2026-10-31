@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**505 reports** · Updated daily · [← All Networks](../README.md)
+**507 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Fission](./fission.md) | FSSN | 🟠 68/100 High Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/fission-eth) |
+| [iCoin](./icoin.md) | ICOIN | 🟡 44/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/icoin-eth) |
 | [zipcoin](./zipcoin-eth-9ce7.md) | ZC | 🟢 21/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/zipcoin-eth-9ce7) |
 | [SNOWMOON](./snowmoon-eth-7aa9.md) | SNOWMOON | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/snowmoon-eth-7aa9) |
 | [1INCH Token](./1inch-token.md) | 1INCH | 🟡 52/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/1inch-token-eth) |

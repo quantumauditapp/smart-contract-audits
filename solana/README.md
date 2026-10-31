@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1601 reports** · Updated daily · [← All Networks](../README.md)
+**1616 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,21 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [NIKITA BOAR](./nikita-boar.md) | BOAR | 🟢 19/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/nikita-boar-sol) |
+| [APPLECAT](./applecat.md) | AAPLCAT | 🟢 20/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/applecat-sol) |
+| [Phantom Staked SOL](./phantom-staked-sol.md) | PSOL | 🟢 12/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/phantom-staked-sol-sol) |
+| [Rip Cars](./rip-cars.md) | CARS | 🟠 67/100 High Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/rip-cars-sol) |
+| [LUMI](./lumi-sol-8238.md) | LUMI | 🟢 17/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/lumi-sol-8238) |
+| [No Nut Inu](./no-nut-inu.md) | NNI | 🟢 21/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/no-nut-inu-sol) |
+| [Paranoid mode](./paranoid-mode.md) | PARANOID | 🟢 1/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/paranoid-mode-sol) |
+| [NODF](./nodf-sol-48d0.md) | NODF | 🟡 38/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/nodf-sol-48d0) |
+| [Apple Coin](./apple-coin.md) | APPLE | 🟢 16/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/apple-coin-sol) |
+| [LUMI](./lumi.md) | LUMI | 🟢 15/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/lumi-sol) |
+| [iCoin](./icoin.md) | ICOIN | 🟢 17/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/icoin-sol) |
+| [Leverhedge](./leverhedge.md) | LEVERHEDGE | 🟢 0/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/leverhedge-sol) |
+| [United States Oil Exchange](./united-states-oil-exchange-sol-8294.md) | USOE | 🟢 1/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-sol-8294) |
+| [Broke Nigga Baddie](./broke-nigga-baddie.md) | BNB | 🟢 16/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/broke-nigga-baddie-sol) |
+| [United States Dividend Fund](./united-states-dividend-fund-sol-2796.md) | USDF | 🟢 2/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-sol-2796) |
 | [allo](./allo.md) | ALLO | 🟢 17/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/allo-sol) |
 | [Saturween](./saturween.md) | SATURWEEN | 🟢 0/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/saturween-sol) |
 | [locked inu](./locked-inu.md) | INU | 🟢 13/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/locked-inu-sol) |

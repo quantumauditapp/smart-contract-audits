@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**616 reports** · Updated daily · [← All Networks](../README.md)
+**619 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [FLY](./fly.md) | FLY | 🟡 58/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/fly-bsc) |
+| [LUCK](./luck-bsc-ee2a.md) | LUCK | 🟢 0/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/luck-bsc-ee2a) |
+| [同舟计划](./token-7af10d.md) | 同舟计划 | 🟢 23/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/token-7af10d-bsc) |
 | [Nesa](./nesa.md) | NES | 🟠 81/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/nesa-bsc) |
 | [ROBO](./robo.md) | ROBO | 🟠 68/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/robo-bsc) |
 | [SAFU](./safu.md) | SAFU | 🟢 2/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/safu-bsc) |

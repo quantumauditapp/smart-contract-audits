@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**526 reports** · Updated daily · [← All Networks](../README.md)
+**529 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [The Stonks Exchange](./the-stonks-exchange-base-79af.md) | STONKEX | 🟠 67/100 High Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/the-stonks-exchange-base-79af) |
+| [GULD](./guld.md) | GULD | 🟡 60/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/guld-base) |
+| [TermMax](./termmax.md) | TRMX | 🟠 76/100 High Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/termmax-base) |
 | [American Oil Dividend Fund](./american-oil-dividend-fund-base-73ca.md) | AODF | 🟡 61/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-base-73ca) |
 | [Papertrade](./papertrade-base-2477.md) | PAPER | 🟡 52/100 Medium Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/papertrade-base-2477) |
 | [Dexterium](./dexterium.md) | DXTR | 🟠 72/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/dexterium-base) |
