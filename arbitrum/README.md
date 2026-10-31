@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**92 reports** · Updated daily · [← All Networks](../README.md)
+**93 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Mural](./mural.md) | MUR | 🟠 75/100 High Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/mural-arb) |
 | [Dory](./dory.md) | DORY | 🟢 18/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/dory-arb) |
 | [Wootrade Network](./wootrade-network.md) | WOO | 🟢 17/100 Low Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/wootrade-network-arb) |
 | [TestMachine](./testmachine.md) | TEMCN | 🟠 73/100 High Risk | 2026-10-28 | [↗](https://quantumaudit.app/token/testmachine-arb) |

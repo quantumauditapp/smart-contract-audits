@@ -2,14 +2,14 @@
 token: Vikasa Network
 ticker: VIK
 network: polygon
-risk_score: 60
-status: medium
+risk_score: 76
+status: high
 date: 2026-10-29
 ---
 
 # Vikasa Network (VIK) — Smart Contract Security Analysis | Polygon
 
-> **Risk Score: 60/100 — 🟡 Medium Risk**
+> **Risk Score: 76/100 — 🟠 High Risk**
 
 [→ Full interactive AI analysis on Quantum Audit](https://quantumaudit.app/token/vikasanetwork-poly-0b9a6267)
 
@@ -27,7 +27,7 @@ Maintain secure custody of the private key associated with the contract owner ad
 
 | Category | Rating | Risk Level | Notes |
 |----------|--------|-----------|-------|
-| **Technical** | 8/10 | Low | The architecture follows industry-standard ERC-20 patterns using well-audited OpenZeppelin libraries. 7.1 Architecture is clean and modular, while 7.2 Code Security benefits from the use of Solidity… |
+| **Technical** | 6/10 | Medium | The architecture follows industry-standard ERC-20 patterns using well-audited OpenZeppelin libraries. 7.1 Architecture is clean and modular, while 7.2 Code Security benefits from the use of Solidity… |
 | **Governance / Economics** | 1/10 | High | 7.4 Economic and 7.5 Governance parameters are straightforward as the contract lacks complex staking or minting logic. The owner has no power to manipulate token balances or restrict transfers… |
 | **Upgrades** | 5/10 | Medium | The contract is not upgradeable, which eliminates 7.7 Upgrades risk. 7.8 Operations are limited to ownership transfer, which is handled via standard secure patterns. No proxy patterns are utilized… |
 
@@ -44,14 +44,14 @@ _🟠 1 High · 🟡 1 Medium · ⚪ 4 Informational_
 
 ### `QA-LIQUIDITY` — Liquidity withdrawable by the owner/deployer  *(Severity: High · Status: Acknowledged)*
 
-0.0% of the pool's LP is burned or time-locked. 100.0% is held, unlocked, by the token's owner/deployer (0xed28…c9ee) — they can pull that liquidity at any moment. This is the rug-pull path. Some pools are concentrated-liquidity (V3/V4) positions; shares above are by position as GoPlus reports them. This assessment covers the main pool, which holds 65% of the token's DEX liquidity; the other pools were not assessed.
+0.0% of the pool's LP is burned or time-locked. 100.0% is held, unlocked, by the token's owner/deployer (0xed28…c9ee) — they can pull that liquidity at any moment. This is the rug-pull path. Some pools are concentrated-liquidity (V3/V4) positions; shares above are by position as GoPlus reports them.
 
 **Recommendation:** Check the lock's end date and beneficiary on the locker's own page before relying on it.
 
 
 ### `QA-MARKET` — The market for this token  *(Severity: Medium · Status: Acknowledged)*
 
-Liquidity $2K (GeckoTerminal, all pools). 24h trading volume $0 (GeckoTerminal, all pools). Almost nobody trades it: a sale of any size moves the price hard, if a buyer is there at all.
+Liquidity $529 (DexScreener, all pools). 24h trading volume $3 (DexScreener, all pools). Almost nobody trades it: a sale of any size moves the price hard, if a buyer is there at all.
 
 **Recommendation:** Size any position to the liquidity and daily volume shown — they set how much you can sell and at what price.
 
@@ -79,7 +79,7 @@ The ten largest holders own 100.0% of supply. Of that, 99.7% locked — not hold
 
 ### `QA-PROFILE` — Asset class: Project token  *(Severity: Informational · Status: Acknowledged)*
 
-A token issued by a project for use, governance or fundraising. Scored on its contract and market facts. The class itself adds no points; the contract and market facts decide the score. Basis: no class-specific evidence. Tokenomics — Supply: fixed — the contract has no mint function. Control: a single wallet (EOA). Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $2K of DEX liquidity across 3 pools. Launch: 40 days of market history.
+A token issued by a project for use, governance or fundraising. Scored on its contract and market facts. The class itself adds no points; the contract and market facts decide the score. Basis: no class-specific evidence. Tokenomics — Supply: fixed — the contract has no mint function. Control: a single wallet (EOA). Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $529 of DEX liquidity across 1 pools. Launch: 39 days of market history.
 
 **Recommendation:** Check the project's own documentation for what the token is used for; this report covers what the contract allows.
 
@@ -89,9 +89,9 @@ A token issued by a project for use, governance or fundraising. Scored on its co
 |--------|-------|
 | **Contract** | [`0x2921...00c1`](https://polygonscan.com/address/0x2921d67ac78ebda0020f952e51e931ed125e00c1) |
 | **Network** | Polygon |
-| **Price** | $0.10298989 |
-| **24h Volume** | N/A |
-| **Liquidity** | $974 |
+| **Price** | $0.1027 |
+| **24h Volume** | $3 |
+| **Liquidity** | $529 |
 | **Volume / Liquidity** | 0.0× |
 | **Token Age** | 1mo |
 | **Top-10 Holders** | 100.0% of supply |

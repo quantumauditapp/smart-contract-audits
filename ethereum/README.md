@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**510 reports** · Updated daily · [← All Networks](../README.md)
+**517 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Minimalism](./minimalism.md) | MINIMAL | 🟡 48/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/minimalism-eth) |
+| [SKELLY](./skelly.md) | SKELLY | 🟢 34/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/skelly-eth) |
+| [AudaCity](./audacity.md) | DACITYCOIN | 🟠 70/100 High Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/audacity-eth) |
+| [tBTC v2](./tbtc-v2.md) | TBTC | 🟢 9/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/tbtc-v2-eth) |
+| [Strategy PP Variable xStock](./strategy-pp-variable-xstock.md) | STRCX | 🟢 9/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/strategy-pp-variable-xstock-eth) |
+| [OpenReserve](./openreserve.md) | OPNRS | 🟠 68/100 High Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/openreserve-eth) |
+| [Digital Minimalism](./digital-minimalism.md) | MINIMALISM | 🟡 64/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/digital-minimalism-eth) |
 | [Senderbot](./senderbot.md) | SENDERBOT | 🟠 68/100 High Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/senderbot-eth) |
 | [Chief Troll Officer](./chief-troll-officer.md) | CTO | 🟢 13/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/chief-troll-officer-eth) |
 | [GDollar](./gdollar.md) | GDLR | 🟡 63/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/gdollar-eth) |

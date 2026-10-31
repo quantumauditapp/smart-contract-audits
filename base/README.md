@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**529 reports** · Updated daily · [← All Networks](../README.md)
+**535 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Anthropic](./anthropic-base-43ba.md) | ANTHROPIC | 🟡 53/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/anthropic-base-43ba) |
+| [IOF](./iof-base-d845.md) | IOF | 🟡 58/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/iof-base-d845) |
+| [NAFF](./naff-base-565a.md) | NAFF | 🟡 55/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/naff-base-565a) |
+| [Sogni AI](./sogni-ai.md) | SOGNI | 🟡 48/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/sogni-ai-base) |
+| [RWA Inc](./rwa-inc.md) | RWA | 🟡 50/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/rwa-inc-base) |
+| [Commonplace](./commonplace.md) | COMMONPLACE | 🟡 63/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/commonplace-base) |
 | [The Stonks Exchange](./the-stonks-exchange-base-79af.md) | STONKEX | 🟠 67/100 High Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/the-stonks-exchange-base-79af) |
 | [GULD](./guld.md) | GULD | 🟡 60/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/guld-base) |
 | [TermMax](./termmax.md) | TRMX | 🟠 76/100 High Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/termmax-base) |

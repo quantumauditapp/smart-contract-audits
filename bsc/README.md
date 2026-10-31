@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**623 reports** · Updated daily · [← All Networks](../README.md)
+**635 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,18 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Funds Are Safu](./funds-are-safu-bsc-49f7.md) | SAFU | 🟢 11/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/funds-are-safu-bsc-49f7) |
+| [Bitcoin Frogs](./bitcoin-frogs.md) | FROGS | 🟡 57/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/bitcoin-frogs-bsc) |
+| [Hope Inu](./hope-inu.md) | HOPE | 🟢 20/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/hope-inu-bsc) |
+| [盘古币](./token-9cb938.md) | 盘古币 | 🟢 31/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/token-9cb938-bsc) |
+| [Funds are SAFU](./funds-are-safu-bsc-c8a1.md) | SAFU | 🟡 44/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/funds-are-safu-bsc-c8a1) |
+| [狙姬](./token-a50bc8.md) | 狙姬 | 🟡 55/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/token-a50bc8-bsc) |
+| [VRQQ](./vrqq.md) | VRQQ | 🟠 82/100 High Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/vrqq-bsc) |
+| [Bizotoken](./bizotoken.md) | BTN | 🟢 30/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/bizotoken-bsc) |
+| [币安无忧](./token-c431c6.md) | 币安无忧 | 🟡 55/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/token-c431c6-bsc) |
+| [YUN](./yun.md) | YUN | 🟠 79/100 High Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/yun-bsc) |
+| [Hack Inu](./hack-inu.md) | HI | 🟡 50/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/hack-inu-bsc) |
+| [币安人](./token-8246d3.md) | 币安人 | 🟡 52/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/token-8246d3-bsc) |
 | [FIGHT](./fight.md) | FIGHT | 🟡 61/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/fight-bsc) |
 | [CNPY](./cnpy.md) | CNPY | 🟡 59/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/cnpy-bsc) |
 | [FAGENT](./fagent.md) | FAGENT | 🟢 13/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/fagent-bsc) |

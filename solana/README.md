@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1627 reports** · Updated daily · [← All Networks](../README.md)
+**1648 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,27 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Kim Jong Un Coin](./kim-jong-un-coin-sol-90cb.md) | KIM | 🟢 13/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/kim-jong-un-coin-sol-90cb) |
+| [Hallow Chan](./hallow-chan.md) | HALLOWCHAN | 🟢 21/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/hallow-chan-sol) |
+| [Lumi Bot](./lumi-bot.md) | LUMIBOT | 🟢 19/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/lumi-bot-sol) |
+| [while they are out partying btw](./while-they-are-out-partying-btw.md) | HUSS | 🟢 20/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/while-they-are-out-partying-btw-sol) |
+| [Project Lazarus](./project-lazarus.md) | LAZARUS | 🟢 23/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/project-lazarus-sol) |
+| [Doughbriks Coin](./doughbriks-coin.md) | DOUGHBRIKS | 🟢 24/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/doughbriks-coin-sol) |
+| [LOOOONGCAT](./loooongcat.md) | LOOOONGCAT | 🟢 22/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/loooongcat-sol) |
+| [No Nut November](./no-nut-november.md) | NNN | 🟢 17/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/no-nut-november-sol) |
+| [Ass And Pussy Lovers](./ass-and-pussy-lovers.md) | AAPL | 🟢 17/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/ass-and-pussy-lovers-sol) |
+| [Kim Jong Un Coin](./kim-jong-un-coin.md) | KIM | 🟢 14/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/kim-jong-un-coin-sol) |
+| [Apple Cat](./apple-cat.md) | AAPLCAT | 🟢 15/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/apple-cat-sol) |
+| [MCP](./mcp.md) | CREDIT | 🟢 23/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/mcp-sol) |
+| [Pikmin](./pikmin.md) | PIKMIN | 🟢 22/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/pikmin-sol) |
+| [David Dobrik Coin](./david-dobrik-coin.md) | DAVID | 🟢 21/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/david-dobrik-coin-sol) |
+| [The Black Bear](./the-black-bear.md) | ANSEM | 🟢 22/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/the-black-bear-sol) |
+| [PAWCAT](./pawcat.md) | PAWCAT | 🟢 10/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/pawcat-sol) |
+| [Super Intelligence Satellite](./super-intelligence-satellite.md) | SIS | 🟢 13/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/super-intelligence-satellite-sol) |
+| [Official Barron Trump](./official-barron-trump.md) | BARRON | 🟢 0/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/official-barron-trump-sol) |
+| [National American Future Fund](./national-american-future-fund.md) | NAFF | 🟢 0/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/national-american-future-fund-sol) |
+| [XTO](./xto-sol-94db.md) | XTO | 🟢 0/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/xto-sol-94db) |
+| [AOP](./aop-sol-07ae.md) | AOP | 🟢 2/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/aop-sol-07ae) |
 | [ARNOLD SCHWARTZENIGGA](./arnold-schwartzenigga.md) | ARNOLD | 🟢 22/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/arnold-schwartzenigga-sol) |
 | [FUN](./fun.md) | FUN | 🟢 21/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/fun-sol) |
 | [Ram Altman](./ram-altman.md) | RAM | 🟢 23/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/ram-altman-sol) |
