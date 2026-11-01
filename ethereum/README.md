@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**521 reports** · Updated daily · [← All Networks](../README.md)
+**522 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Anakin Skywalker](./anakin-skywalker-eth-1056.md) | ANAKIN | 🟠 70/100 High Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/anakin-skywalker-eth-1056) |
 | [FOCO](./foco.md) | FOCO | 🟠 66/100 High Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/foco-eth) |
 | [Anakin Skywalker](./anakin-skywalker.md) | ANAKIN | 🟠 66/100 High Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/anakin-skywalker-eth) |
 | [SNOWMOON](./snowmoon-eth-1745.md) | SNOWMOON | 🟢 0/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/snowmoon-eth-1745) |

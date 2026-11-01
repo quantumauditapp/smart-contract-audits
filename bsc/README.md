@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**648 reports** · Updated daily · [← All Networks](../README.md)
+**650 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Fear Of Missing Out](./fear-of-missing-out.md) | FOMO | 🟢 22/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/fear-of-missing-out-bsc) |
+| [Real Token](./real-token.md) | RT | 🟡 54/100 Medium Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/real-token-bsc) |
 | [4444](./4444.md) | 4444 | 🟢 13/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/4444-bsc) |
 | [Flip](./flip.md) | FLIP | 🟢 20/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/flip-bsc) |
 | [安小将](./token-52cb15.md) | 安小将 | 🟡 57/100 Medium Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/token-52cb15-bsc) |

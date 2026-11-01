@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**538 reports** · Updated daily · [← All Networks](../README.md)
+**539 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Netflix Inc](./netflix-inc.md) | NFLXC | 🟡 54/100 Medium Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/netflix-inc-base) |
 | [OFFLINE RESEARCH](./offline-research.md) | OFFR | 🟠 82/100 High Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/offline-research-base) |
 | [Dacity Coin](./dacity-coin-base-1c1f.md) | DACITY | 🟠 72/100 High Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/dacity-coin-base-1c1f) |
 | [ADIN](./adin.md) | ADIN | 🟠 79/100 High Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/adin-base) |

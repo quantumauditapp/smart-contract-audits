@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1681 reports** · Updated daily · [← All Networks](../README.md)
+**1693 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,18 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [MOVEMBER](./movember.md) | MOVEMBER | 🟢 14/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/movember-sol) |
+| [Baby Uni](./baby-uni.md) | BABYUNI | 🟢 17/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/baby-uni-sol) |
+| [Power Inu](./power-inu.md) | PI | 🟢 24/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/power-inu-sol) |
+| [she goin ](./she-goin.md) | SHEGOIN | 🟢 22/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/she-goin-sol) |
+| [United Oil Dividend Fund](./united-oil-dividend-fund-sol-1817.md) | UODF | 🟢 2/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/united-oil-dividend-fund-sol-1817) |
+| [uni](./uni-sol-076f.md) | UNI | 🟢 22/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/uni-sol-076f) |
+| [Authentic Inu](./authentic-inu.md) | AI | 🟢 20/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/authentic-inu-sol) |
+| [uni](./uni.md) | UNI | 🟢 0/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/uni-sol) |
+| [AODF](./aodf-sol-3cfe.md) | AODF | 🟢 0/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/aodf-sol-3cfe) |
+| [MR BEAST](./mr-beast-sol-0f04.md) | BEAST | 🟢 16/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/mr-beast-sol-0f04) |
+| [UDTF](./udtf-sol-d59b.md) | UDTF | 🟢 0/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/udtf-sol-d59b) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-sol-0b27.md) | AODF | 🟢 0/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol-0b27) |
 | [make money swarm](./make-money-swarm.md) | MAKEMONEY | 🟢 14/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/make-money-swarm-sol) |
 | [Dojak](./dojak.md) | DOJAK | 🟢 15/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/dojak-sol) |
 | [pairless](./pairless.md) | PAIRLESS | 🟢 22/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/pairless-sol) |
