@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1667 reports** · Updated daily · [← All Networks](../README.md)
+**1681 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,20 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [make money swarm](./make-money-swarm.md) | MAKEMONEY | 🟢 14/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/make-money-swarm-sol) |
+| [Dojak](./dojak.md) | DOJAK | 🟢 15/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/dojak-sol) |
+| [pairless](./pairless.md) | PAIRLESS | 🟢 22/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/pairless-sol) |
+| [Burger Queen](./burger-queen.md) | BLACKED | 🟢 20/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/burger-queen-sol) |
+| [TIND GEAR](./tind-gear.md) | TIND | 🟢 15/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/tind-gear-sol) |
+| [United States Dividend Program](./united-states-dividend-program-sol-2e74.md) | USDP | 🔴 90/100 Critical Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/united-states-dividend-program-sol-2e74) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-sol-4cb4.md) | AODF | 🟢 2/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol-4cb4) |
+| [stavotoken](./stavotoken-sol-fb8d.md) | STAVO | 🟢 28/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/stavotoken-sol-fb8d) |
+| [Regretamine](./regretamine.md) | REGRETAMINE | 🟢 24/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/regretamine-sol) |
+| [USOE](./usoe-sol-7f7f.md) | USOE | 🟢 2/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/usoe-sol-7f7f) |
+| [United Dividend Trust Fund](./united-dividend-trust-fund-sol-cb1a.md) | UDTF | 🟢 2/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/united-dividend-trust-fund-sol-cb1a) |
+| [United States Dividend Fund🚀](./united-states-dividend-fund-sol-3654.md) | USDF | 🟢 2/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/united-states-dividend-fund-sol-3654) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-sol-2675.md) | AODF | 🟢 1/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol-2675) |
+| [UDTF](./udtf-sol-1b1e.md) | UDTF | 🟢 0/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/udtf-sol-1b1e) |
 | [Nike Tyson](./nike-tyson.md) | NIKETYSON | 🟢 17/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/nike-tyson-sol) |
 | [paws at you](./paws-at-you-sol-d285.md) | PAWS | 🟢 23/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/paws-at-you-sol-d285) |
 | [BLOB](./blob.md) | BLOB | 🟢 9/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/blob-sol) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**643 reports** · Updated daily · [← All Networks](../README.md)
+**648 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [4444](./4444.md) | 4444 | 🟢 13/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/4444-bsc) |
+| [Flip](./flip.md) | FLIP | 🟢 20/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/flip-bsc) |
+| [安小将](./token-52cb15.md) | 安小将 | 🟡 57/100 Medium Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/token-52cb15-bsc) |
+| [SENSEI](./sensei.md) | SENSEI | 🟡 57/100 Medium Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/sensei-bsc) |
+| [Super-Agent](./super-agent.md) | SA | 🟢 23/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/super-agent-bsc) |
 | [FIST Agent](./fist-agent.md) | FAGENT | 🟡 62/100 Medium Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/fist-agent-bsc) |
 | [ZAGS](./zags.md) | ZAGS | 🟢 29/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/zags-bsc) |
 | [LaowuCoin](./laowucoin.md) | 老吴 | 🟡 40/100 Medium Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/laowucoin-bsc) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**535 reports** · Updated daily · [← All Networks](../README.md)
+**538 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [OFFLINE RESEARCH](./offline-research.md) | OFFR | 🟠 82/100 High Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/offline-research-base) |
+| [Dacity Coin](./dacity-coin-base-1c1f.md) | DACITY | 🟠 72/100 High Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/dacity-coin-base-1c1f) |
+| [ADIN](./adin.md) | ADIN | 🟠 79/100 High Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/adin-base) |
 | [Anthropic](./anthropic-base-43ba.md) | ANTHROPIC | 🟡 53/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/anthropic-base-43ba) |
 | [IOF](./iof-base-d845.md) | IOF | 🟡 58/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/iof-base-d845) |
 | [NAFF](./naff-base-565a.md) | NAFF | 🟡 55/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/naff-base-565a) |
