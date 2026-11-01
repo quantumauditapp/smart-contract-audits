@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**635 reports** · Updated daily · [← All Networks](../README.md)
+**643 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,14 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [FIST Agent](./fist-agent.md) | FAGENT | 🟡 62/100 Medium Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/fist-agent-bsc) |
+| [ZAGS](./zags.md) | ZAGS | 🟢 29/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/zags-bsc) |
+| [LaowuCoin](./laowucoin.md) | 老吴 | 🟡 40/100 Medium Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/laowucoin-bsc) |
+| [AGENT ID](./agent-id-bsc-22cc.md) | AID | 🟡 53/100 Medium Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/agent-id-bsc-22cc) |
+| [SAFU Fund](./safu-fund-bsc-7240.md) | SAFU | 🟠 83/100 High Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/safu-fund-bsc-7240) |
+| [Chief Troll Officer](./chief-troll-officer-bsc-89fb.md) | CTO | 🟢 22/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/chief-troll-officer-bsc-89fb) |
+| [CENSUS](./census.md) | CENSUS | 🟡 63/100 Medium Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/census-bsc) |
+| [破茧成蝶](./token-6bde43.md) | 茧 | 🟢 23/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/token-6bde43-bsc) |
 | [Funds Are Safu](./funds-are-safu-bsc-49f7.md) | SAFU | 🟢 11/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/funds-are-safu-bsc-49f7) |
 | [Bitcoin Frogs](./bitcoin-frogs.md) | FROGS | 🟡 57/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/bitcoin-frogs-bsc) |
 | [Hope Inu](./hope-inu.md) | HOPE | 🟢 20/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/hope-inu-bsc) |

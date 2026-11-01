@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1649 reports** · Updated daily · [← All Networks](../README.md)
+**1667 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,24 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Nike Tyson](./nike-tyson.md) | NIKETYSON | 🟢 17/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/nike-tyson-sol) |
+| [paws at you](./paws-at-you-sol-d285.md) | PAWS | 🟢 23/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/paws-at-you-sol-d285) |
+| [BLOB](./blob.md) | BLOB | 🟢 9/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/blob-sol) |
+| [BallsCoin](./ballscoin.md) | BALLS | 🟢 23/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/ballscoin-sol) |
+| [1win Token](./1win-token.md) | 1WIN | 🟡 53/100 Medium Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/1win-token-sol) |
+| [Anthropic](./anthropic-sol-6c1c.md) | ANTS | 🟢 0/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/anthropic-sol-6c1c) |
+| [stavotoken](./stavotoken.md) | STAVO | 🟢 26/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/stavotoken-sol) |
+| [Vladimir Putin Coin](./vladimir-putin-coin.md) | PUTIN | 🟡 40/100 Medium Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/vladimir-putin-coin-sol) |
+| [Собака](./token-530a1b.md) | СОБАКА | 🟢 23/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/token-530a1b-sol) |
+| [Anakin Skywalker](./anakin-skywalker.md) | ANAKIN | 🟢 17/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/anakin-skywalker-sol) |
+| [tipr](./tipr.md) | TIPR | 🟢 22/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/tipr-sol) |
+| [BLUE COIN](./blue-coin.md) | BLUE | 🟢 15/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/blue-coin-sol) |
+| [AODF](./aodf-sol-9984.md) | AODF | 🟢 0/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/aodf-sol-9984) |
+| [AODF](./aodf-sol-8c37.md) | AODF | 🟢 0/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/aodf-sol-8c37) |
+| [United States Relief Program](./united-states-relief-program.md) | USRP | 🟢 0/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/united-states-relief-program-sol) |
+| [United Oil Dividend Fund🔥](./united-oil-dividend-fund.md) | UODF | 🟢 0/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/united-oil-dividend-fund-sol) |
+| [National Oil Dividend Fund](./national-oil-dividend-fund-sol-3913.md) | NODF | 🟢 0/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-sol-3913) |
+| [USOE](./usoe-sol-c046.md) | USOE | 🟢 0/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/usoe-sol-c046) |
 | [USOE](./usoe-sol-538f.md) | USOE | 🟢 1/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/usoe-sol-538f) |
 | [Kim Jong Un Coin](./kim-jong-un-coin-sol-90cb.md) | KIM | 🟢 13/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/kim-jong-un-coin-sol-90cb) |
 | [Hallow Chan](./hallow-chan.md) | HALLOWCHAN | 🟢 21/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/hallow-chan-sol) |

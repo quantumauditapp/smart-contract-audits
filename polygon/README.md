@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Polygon tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**37 reports** · Updated daily · [← All Networks](../README.md)
+**38 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Polygon tokens, powered by [Quantum Audit]
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Dimo](./dimo.md) | DIMO | 🟠 72/100 High Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/dimo-poly) |
 | [(PoS) Wrapped BTC](./pos-wrapped-btc.md) | WBTC | 🟢 22/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/pos-wrapped-btc-poly) |
 | [Vikasa Network](./vikasanetwork-poly-0b9a6267.md) | VIK | 🟠 76/100 High Risk | 2026-10-29 | [↗](https://quantumaudit.app/token/vikasanetwork-poly-0b9a6267) |
 | [Aegis](./aegis.md) | ATH | 🟠 75/100 High Risk | 2026-10-30 | [↗](https://quantumaudit.app/token/aegis-poly) |

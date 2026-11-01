@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**517 reports** · Updated daily · [← All Networks](../README.md)
+**518 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Vladimir Putin Coin](./vladimir-putin-coin.md) | PUTIN | 🟠 69/100 High Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/vladimir-putin-coin-eth) |
 | [Minimalism](./minimalism.md) | MINIMAL | 🟡 48/100 Medium Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/minimalism-eth) |
 | [SKELLY](./skelly.md) | SKELLY | 🟢 34/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/skelly-eth) |
 | [AudaCity](./audacity.md) | DACITYCOIN | 🟠 70/100 High Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/audacity-eth) |
