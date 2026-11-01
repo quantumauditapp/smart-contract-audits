@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-3465-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-3466-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,7 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [USOE](./solana/usoe-sol-538f.md) | USOE | Solana | 🟢 1/100 | 2026-11-01 | [↗](https://quantumaudit.app/token/usoe-sol-538f) |
 | [Kim Jong Un Coin](./solana/kim-jong-un-coin-sol-90cb.md) | KIM | Solana | 🟢 13/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/kim-jong-un-coin-sol-90cb) |
 | [Minimalism](./ethereum/minimalism.md) | MINIMAL | Ethereum | 🟡 48/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/minimalism-eth) |
 | [Anthropic](./base/anthropic-base-43ba.md) | ANTHROPIC | Base | 🟡 53/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/anthropic-base-43ba) |
@@ -41,13 +42,12 @@
 | [Doughbriks Coin](./solana/doughbriks-coin.md) | DOUGHBRIKS | Solana | 🟢 24/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/doughbriks-coin-sol) |
 | [Bizotoken](./bsc/bizotoken.md) | BTN | BNB Chain | 🟢 30/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/bizotoken-bsc) |
 | [LOOOONGCAT](./solana/loooongcat.md) | LOOOONGCAT | Solana | 🟢 22/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/loooongcat-sol) |
-| [No Nut November](./solana/no-nut-november.md) | NNN | Solana | 🟢 17/100 | 2026-10-31 | [↗](https://quantumaudit.app/token/no-nut-november-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (1648)](./solana/README.md) · [BNB Chain (635)](./bsc/README.md) · [Base (535)](./base/README.md) · [Ethereum (517)](./ethereum/README.md) · [Arbitrum (93)](./arbitrum/README.md) · [Polygon (37)](./polygon/README.md)
+[Solana (1649)](./solana/README.md) · [BNB Chain (635)](./bsc/README.md) · [Base (535)](./base/README.md) · [Ethereum (517)](./ethereum/README.md) · [Arbitrum (93)](./arbitrum/README.md) · [Polygon (37)](./polygon/README.md)
 
 ---
 

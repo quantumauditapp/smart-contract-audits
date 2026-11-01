@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1648 reports** · Updated daily · [← All Networks](../README.md)
+**1649 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [USOE](./usoe-sol-538f.md) | USOE | 🟢 1/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/usoe-sol-538f) |
 | [Kim Jong Un Coin](./kim-jong-un-coin-sol-90cb.md) | KIM | 🟢 13/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/kim-jong-un-coin-sol-90cb) |
 | [Hallow Chan](./hallow-chan.md) | HALLOWCHAN | 🟢 21/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/hallow-chan-sol) |
 | [Lumi Bot](./lumi-bot.md) | LUMIBOT | 🟢 19/100 Low Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/lumi-bot-sol) |
