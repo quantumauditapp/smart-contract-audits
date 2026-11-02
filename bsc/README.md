@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**655 reports** · Updated daily · [← All Networks](../README.md)
+**660 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [BNC玩家](./bnc-bsc-7495.md) | BNC玩家 | 🟢 24/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/bnc-bsc-7495) |
+| [MOVN](./movn.md) | MOVN | 🟠 78/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/movn-bsc) |
+| [BDOG](./bdog.md) | BDOG | 🟡 57/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/bdog-bsc) |
+| [Baola](./baola.md) | 豹拉 | 🟡 41/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/baola-bsc) |
+| [VRQQ](./vrqq-bsc-d35f.md) | VRQQ | 🟠 84/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/vrqq-bsc-d35f) |
 | [BNB Faith](./bnb-faith.md) | BNBFT | 🟢 21/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/bnb-faith-bsc) |
 | [BNBHolder](./bnbholder.md) | BNBH | 🟡 57/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/bnbholder-bsc) |
 | [damn](./damn.md) | 我靠 | 🟢 21/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/damn-bsc) |

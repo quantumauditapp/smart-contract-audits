@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-3570-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-3583-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,19 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Macca The Gator](./ethereum/macca-the-gator.md) | MACCA | Ethereum | 🟡 45/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/macca-the-gator-eth) |
+| [Anakin Skywalker](./ethereum/anakin-skywalker-eth-ccca.md) | ANAKIN | Ethereum | 🟡 45/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/anakin-skywalker-eth-ccca) |
+| [BNC玩家](./bsc/bnc-bsc-7495.md) | BNC玩家 | BNB Chain | 🟢 24/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/bnc-bsc-7495) |
+| [FOCO](./solana/foco.md) | FOCO | Solana | 🟢 2/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/foco-sol) |
+| [MOVN](./bsc/movn.md) | MOVN | BNB Chain | 🟠 78/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/movn-bsc) |
+| [RIP Nathalia Filgueiras](./solana/rip-nathalia-filgueiras.md) | NATHALIA | Solana | 🟢 23/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/rip-nathalia-filgueiras-sol) |
+| [Tumulun Tugucheg](./solana/tumulun-tugucheg.md) | TUMULUN | Solana | 🟢 18/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/tumulun-tugucheg-sol) |
+| [World War III](./solana/world-war-iii.md) | WWIII | Solana | 🟢 24/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/world-war-iii-sol) |
+| [werld wur thwee](./solana/werld-wur-thwee.md) | WW3 | Solana | 🟢 21/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/werld-wur-thwee-sol) |
+| [Field Atlas](./base/field-atlas-base-5056.md) | ATLAS | Base | 🟡 63/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/field-atlas-base-5056) |
+| [BDOG](./bsc/bdog.md) | BDOG | BNB Chain | 🟡 57/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/bdog-bsc) |
+| [Baola](./bsc/baola.md) | 豹拉 | BNB Chain | 🟡 41/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/baola-bsc) |
+| [VRQQ](./bsc/vrqq-bsc-d35f.md) | VRQQ | BNB Chain | 🟠 84/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/vrqq-bsc-d35f) |
 | [Color of Crypto](./solana/color-of-crypto.md) | F7931A | Solana | 🟡 47/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/color-of-crypto-sol) |
 | [Uriel](./ethereum/uriel.md) | URIEL | Ethereum | 🟠 72/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/uriel-eth) |
 | [Commonplace](./base/commonplace-base-e61c.md) | COMMONPLACE | Base | 🟠 84/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/commonplace-base-e61c) |
@@ -29,25 +42,12 @@
 | [BNBHolder](./bsc/bnbholder.md) | BNBH | BNB Chain | 🟡 57/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/bnbholder-bsc) |
 | [damn](./bsc/damn.md) | 我靠 | BNB Chain | 🟢 21/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/damn-bsc) |
 | [POPZERO](./bsc/popzero.md) | POPZERO | BNB Chain | 🟡 63/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/popzero-bsc) |
-| [飞蝶启元](./bsc/token-bc6f62.md) | 飞蝶启元 | BNB Chain | 🟢 8/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/token-bc6f62-bsc) |
-| [CHAD](./solana/chad.md) | CHAD | Solana | 🟢 2/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/chad-sol) |
-| [1993 forum](./solana/1993-forum.md) | 1993 | Solana | 🟢 26/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/1993-forum-sol) |
-| [Peekhole](./solana/peekhole.md) | PEEKHOLE | Solana | 🟢 1/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/peekhole-sol) |
-| [Trump Wars](./solana/trump-wars.md) | TRUMPWARS | Solana | 🟢 21/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/trump-wars-sol) |
-| [VetoTrump](./solana/vetotrump.md) | VETOTRUMP | Solana | 🟢 17/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/vetotrump-sol) |
-| [Slightly crashed Learjet](./solana/slightly-crashed-learjet.md) | LEARJET | Solana | 🟢 15/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/slightly-crashed-learjet-sol) |
-| [Just Stealth It](./solana/just-stealth-it.md) | STEALTH | Solana | 🟢 15/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/just-stealth-it-sol) |
-| [Mighty White Yak](./solana/mighty-white-yak.md) | 白いヤク | Solana | 🟢 24/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/mighty-white-yak-sol) |
-| [Anakin Coin](./solana/anakin-coin.md) | ANAKIN | Solana | 🟢 17/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/anakin-coin-sol) |
-| [World Oil Fund Institution](./solana/world-oil-fund-institution.md) | WOFI | Solana | 🟢 1/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/world-oil-fund-institution-sol) |
-| [AODF](./solana/aodf-sol-1637.md) | AODF | Solana | 🟢 0/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/aodf-sol-1637) |
-| [Federal Oil Trust Fund](./solana/federal-oil-trust-fund-sol-4789.md) | FOTF | Solana | 🟢 2/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/federal-oil-trust-fund-sol-4789) |
 
 ---
 
 ## Browse by Network
 
-[Solana (1716)](./solana/README.md) · [BNB Chain (655)](./bsc/README.md) · [Base (544)](./base/README.md) · [Ethereum (524)](./ethereum/README.md) · [Arbitrum (93)](./arbitrum/README.md) · [Polygon (38)](./polygon/README.md)
+[Solana (1721)](./solana/README.md) · [BNB Chain (660)](./bsc/README.md) · [Base (545)](./base/README.md) · [Ethereum (526)](./ethereum/README.md) · [Arbitrum (93)](./arbitrum/README.md) · [Polygon (38)](./polygon/README.md)
 
 ---
 

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1716 reports** · Updated daily · [← All Networks](../README.md)
+**1721 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [FOCO](./foco.md) | FOCO | 🟢 2/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/foco-sol) |
+| [RIP Nathalia Filgueiras](./rip-nathalia-filgueiras.md) | NATHALIA | 🟢 23/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/rip-nathalia-filgueiras-sol) |
+| [Tumulun Tugucheg](./tumulun-tugucheg.md) | TUMULUN | 🟢 18/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/tumulun-tugucheg-sol) |
+| [World War III](./world-war-iii.md) | WWIII | 🟢 24/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/world-war-iii-sol) |
+| [werld wur thwee](./werld-wur-thwee.md) | WW3 | 🟢 21/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/werld-wur-thwee-sol) |
 | [Color of Crypto](./color-of-crypto.md) | F7931A | 🟡 47/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/color-of-crypto-sol) |
 | [goat.fun](./goatfun.md) | GOAT | 🟢 32/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/goatfun-sol) |
 | [UNI](./uni-sol-0f66.md) | UNI | 🟢 21/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/uni-sol-0f66) |

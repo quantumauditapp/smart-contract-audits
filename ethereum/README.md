@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**524 reports** · Updated daily · [← All Networks](../README.md)
+**526 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Macca The Gator](./macca-the-gator.md) | MACCA | 🟡 45/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/macca-the-gator-eth) |
+| [Anakin Skywalker](./anakin-skywalker-eth-ccca.md) | ANAKIN | 🟡 45/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/anakin-skywalker-eth-ccca) |
 | [Uriel](./uriel.md) | URIEL | 🟠 72/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/uriel-eth) |
 | [Zypto Token](./zypto-token.md) | ZYPTO | 🟠 72/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/zypto-token-eth) |
 | [Anakin Skywalker](./anakin-skywalker-eth-1056.md) | ANAKIN | 🟠 70/100 High Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/anakin-skywalker-eth-1056) |
