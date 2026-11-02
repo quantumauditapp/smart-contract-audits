@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**539 reports** · Updated daily · [← All Networks](../README.md)
+**544 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Commonplace](./commonplace-base-e61c.md) | COMMONPLACE | 🟠 84/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/commonplace-base-e61c) |
+| [United Oil Dividend Fund](./united-oil-dividend-fund.md) | UODF | 🟡 55/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/united-oil-dividend-fund-base) |
+| [American Overwatch Protocol](./american-overwatch-protocol-base-1151.md) | AOP | 🟡 59/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-base-1151) |
+| [NAFF](./naff-base-1b00.md) | NAFF | 🟡 58/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/naff-base-1b00) |
+| [American Dividen Oil Fund](./american-dividen-oil-fund.md) | ADOF | 🟡 59/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/american-dividen-oil-fund-base) |
 | [Netflix Inc](./netflix-inc.md) | NFLXC | 🟡 54/100 Medium Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/netflix-inc-base) |
 | [OFFLINE RESEARCH](./offline-research.md) | OFFR | 🟠 82/100 High Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/offline-research-base) |
 | [Dacity Coin](./dacity-coin-base-1c1f.md) | DACITY | 🟠 72/100 High Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/dacity-coin-base-1c1f) |

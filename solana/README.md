@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1693 reports** · Updated daily · [← All Networks](../README.md)
+**1716 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,29 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Color of Crypto](./color-of-crypto.md) | F7931A | 🟡 47/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/color-of-crypto-sol) |
+| [goat.fun](./goatfun.md) | GOAT | 🟢 32/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/goatfun-sol) |
+| [UNI](./uni-sol-0f66.md) | UNI | 🟢 21/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/uni-sol-0f66) |
+| [Baby Pump](./baby-pump.md) | BABYPUMP | 🟢 6/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/baby-pump-sol) |
+| [Anukoon Skywulkur](./anukoon-skywulkur.md) | ANUKOON | 🟢 21/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/anukoon-skywulkur-sol) |
+| [Cryptocrat](./cryptocrat.md) | CRYPTOCRAT | 🟢 23/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/cryptocrat-sol) |
+| [CHAD](./chad.md) | CHAD | 🟢 2/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/chad-sol) |
+| [1993 forum](./1993-forum.md) | 1993 | 🟢 26/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/1993-forum-sol) |
+| [Peekhole](./peekhole.md) | PEEKHOLE | 🟢 1/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/peekhole-sol) |
+| [Trump Wars](./trump-wars.md) | TRUMPWARS | 🟢 21/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/trump-wars-sol) |
+| [VetoTrump](./vetotrump.md) | VETOTRUMP | 🟢 17/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/vetotrump-sol) |
+| [Slightly crashed Learjet](./slightly-crashed-learjet.md) | LEARJET | 🟢 15/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/slightly-crashed-learjet-sol) |
+| [Just Stealth It](./just-stealth-it.md) | STEALTH | 🟢 15/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/just-stealth-it-sol) |
+| [Mighty White Yak](./mighty-white-yak.md) | 白いヤク | 🟢 24/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/mighty-white-yak-sol) |
+| [Anakin Coin](./anakin-coin.md) | ANAKIN | 🟢 17/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/anakin-coin-sol) |
+| [World Oil Fund Institution](./world-oil-fund-institution.md) | WOFI | 🟢 1/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/world-oil-fund-institution-sol) |
+| [AODF](./aodf-sol-1637.md) | AODF | 🟢 0/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/aodf-sol-1637) |
+| [Federal Oil Trust Fund](./federal-oil-trust-fund-sol-4789.md) | FOTF | 🟢 2/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/federal-oil-trust-fund-sol-4789) |
+| [National Oil Dividend Fund](./national-oil-dividend-fund-sol-b0ac.md) | NODF | 🟢 0/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-sol-b0ac) |
+| [XTO](./xto-sol-5781.md) | XTO | 🟢 0/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/xto-sol-5781) |
+| [XTO⚡️](./xto-sol-13f4.md) | XTO | 🟢 0/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/xto-sol-13f4) |
+| [National Oil Trust Fund](./national-oil-trust-fund-sol-f81e.md) | NOTF | 🟢 1/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/national-oil-trust-fund-sol-f81e) |
+| [NVIDIA](./nvidia.md) | NVIDIA | 🟢 0/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/nvidia-sol) |
 | [MOVEMBER](./movember.md) | MOVEMBER | 🟢 14/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/movember-sol) |
 | [Baby Uni](./baby-uni.md) | BABYUNI | 🟢 17/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/baby-uni-sol) |
 | [Power Inu](./power-inu.md) | PI | 🟢 24/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/power-inu-sol) |

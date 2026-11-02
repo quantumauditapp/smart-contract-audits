@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**650 reports** · Updated daily · [← All Networks](../README.md)
+**655 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [BNB Faith](./bnb-faith.md) | BNBFT | 🟢 21/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/bnb-faith-bsc) |
+| [BNBHolder](./bnbholder.md) | BNBH | 🟡 57/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/bnbholder-bsc) |
+| [damn](./damn.md) | 我靠 | 🟢 21/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/damn-bsc) |
+| [POPZERO](./popzero.md) | POPZERO | 🟡 63/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/popzero-bsc) |
+| [飞蝶启元](./token-bc6f62.md) | 飞蝶启元 | 🟢 8/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/token-bc6f62-bsc) |
 | [Fear Of Missing Out](./fear-of-missing-out.md) | FOMO | 🟢 22/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/fear-of-missing-out-bsc) |
 | [Real Token](./real-token.md) | RT | 🟡 54/100 Medium Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/real-token-bsc) |
 | [4444](./4444.md) | 4444 | 🟢 13/100 Low Risk | 2026-11-01 | [↗](https://quantumaudit.app/token/4444-bsc) |
