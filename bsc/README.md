@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**668 reports** · Updated daily · [← All Networks](../README.md)
+**674 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Genesis](./genesis.md) | GENESIS | 🟡 38/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/genesis-bsc) |
+| [Grok Agent](./grok-agent.md) | GROK | 🟠 70/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/grok-agent-bsc) |
+| [用过去的表情包回到牛市](./memes.md) | MEMES | 🟡 42/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/memes-bsc) |
+| [Binance Pepe](./binance-pepe.md) | BEPE | 🟡 51/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/binance-pepe-bsc) |
+| [Kite](./kite.md) | KITE | 🟢 9/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/kite-bsc) |
+| [GENESIS CITY](./genesis-city.md) | GENESIS | 🟢 23/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/genesis-city-bsc) |
 | [wkeyDA03](./wkeyda03.md) | WKEYDA03 | 🟡 42/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/wkeyda03-bsc) |
 | [Cheese](./cheese.md) | CHEESE | 🟠 69/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/cheese-bsc) |
 | [Token](./token-bsc-4ff1.md) | 词元 | 🟡 42/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/token-bsc-4ff1) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1738 reports** · Updated daily · [← All Networks](../README.md)
+**1759 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,27 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Kuip](./kuip.md) | KUIP | 🟢 14/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/kuip-sol) |
+| [Solana Language Model](./solana-language-model.md) | SLM | 🟢 15/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/solana-language-model-sol) |
+| [LIFTOFF](./liftoff.md) | LIFT | 🟢 16/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/liftoff-sol) |
+| [Daisuke-Doo](./daisuke-doo.md) | DAISUKE | 🟡 38/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/daisuke-doo-sol) |
+| [Hims & Hers Health - Backpack Securities](./hims-hers-health-backpack-securities.md) | HIMS | 🟠 78/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/hims-hers-health-backpack-securities-sol) |
+| [AiDiglet](./aidiglet.md) | DIGS | 🟢 17/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/aidiglet-sol) |
+| [Capycoin](./capycoin-sol-63f1.md) | CAPY | 🟠 72/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/capycoin-sol-63f1) |
+| [The Capytistas](./the-capytistas.md) | CAPYTISTAS | 🟢 21/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/the-capytistas-sol) |
+| [Capycoin](./capycoin-sol-0854.md) | CAPY | 🟢 6/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/capycoin-sol-0854) |
+| [The Black Bull](./the-black-bull-sol-18f8.md) | SLINGOOR | 🟢 17/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/the-black-bull-sol-18f8) |
+| [Capycoin](./capycoin-sol-d0b2.md) | CAPY | 🟢 23/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/capycoin-sol-d0b2) |
+| [GTA6DOG](./gta6dog-sol-c164.md) | RICO | 🟢 1/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/gta6dog-sol-c164) |
+| [Mamesuke](./mamesuke-sol-2748.md) | 豆助 | 🟢 24/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/mamesuke-sol-2748) |
+| [Google](./google.md) | GOOGLE | 🟢 15/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/google-sol) |
+| [United Dividend Trust Fund](./united-dividend-trust-fund-sol-2cfe.md) | UDTF | 🟢 1/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/united-dividend-trust-fund-sol-2cfe) |
+| [Meme Guy](./meme-guy.md) | MG | 🟢 0/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/meme-guy-sol) |
+| [American Oil Trust Fund](./american-oil-trust-fund.md) | AOTF | 🟢 0/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/american-oil-trust-fund-sol) |
+| [XTX](./xtx-sol-232a.md) | XTX | 🟢 2/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/xtx-sol-232a) |
+| [AODF](./aodf-sol-a770.md) | AODF | 🟢 0/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/aodf-sol-a770) |
+| [Anakin Skywalker](./anakin-skywalker-sol-0f63.md) | ANAKIN | 🟢 1/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/anakin-skywalker-sol-0f63) |
+| [BUY THE FEAR](./buy-the-fear.md) | FEAR | 🟢 0/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/buy-the-fear-sol) |
 | [Maxxmas](./maxxmas.md) | MAXXMAS | 🟢 24/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/maxxmas-sol) |
 | [Warcoin](./warcoin.md) | WARCOIN | 🟢 21/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/warcoin-sol) |
 | [Ahsoka Tano](./ahsoka-tano.md) | AHSOKA | 🟢 0/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/ahsoka-tano-sol) |

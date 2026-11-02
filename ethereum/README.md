@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**526 reports** · Updated daily · [← All Networks](../README.md)
+**529 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Peace Coin](./peace-coin.md) | PEACE | 🟡 48/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/peace-coin-eth) |
+| [Mamesuke](./mamesuke.md) | MAMESUKE | 🟠 78/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/mamesuke-eth) |
+| [The Black Bull](./the-black-bull.md) | SLINGOOR | 🟡 50/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/the-black-bull-eth) |
 | [Macca The Gator](./macca-the-gator.md) | MACCA | 🟡 45/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/macca-the-gator-eth) |
 | [Anakin Skywalker](./anakin-skywalker-eth-ccca.md) | ANAKIN | 🟡 45/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/anakin-skywalker-eth-ccca) |
 | [Uriel](./uriel.md) | URIEL | 🟠 72/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/uriel-eth) |
