@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1721 reports** · Updated daily · [← All Networks](../README.md)
+**1738 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,23 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Maxxmas](./maxxmas.md) | MAXXMAS | 🟢 24/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/maxxmas-sol) |
+| [Warcoin](./warcoin.md) | WARCOIN | 🟢 21/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/warcoin-sol) |
+| [Ahsoka Tano](./ahsoka-tano.md) | AHSOKA | 🟢 0/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/ahsoka-tano-sol) |
+| [MAMESUKE](./mamesuke-sol-856c.md) | MAMESUKE | 🟢 8/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/mamesuke-sol-856c) |
+| [Marutaro](./marutaro.md) | MARUTARO | 🟢 21/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/marutaro-sol) |
+| [Catori](./catori.md) | CATORI | 🟡 38/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/catori-sol) |
+| [Extended](./extended.md) | XTEN | 🟢 28/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/extended-sol) |
+| [predict.fun](./predictfun-sol-72e2.md) | PREDICT | 🟢 27/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/predictfun-sol-72e2) |
+| [Peace Coin](./peace-coin.md) | PEACE | 🟢 14/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/peace-coin-sol) |
+| [United Oil Dividend Fund](./united-oil-dividend-fund-sol-968c.md) | UODF | 🟢 1/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/united-oil-dividend-fund-sol-968c) |
+| [UDTF](./udtf-sol-2477.md) | UDTF | 🟢 1/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/udtf-sol-2477) |
+| [FOTF](./fotf-sol-ad8a.md) | FOTF | 🟢 2/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/fotf-sol-ad8a) |
+| [Chameleon Trading](./chameleon-trading.md) | CHAMELEON | 🟢 9/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/chameleon-trading-sol) |
+| [XTO](./xto-sol-d44b.md) | XTO | 🟢 0/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/xto-sol-d44b) |
+| [AODF](./aodf-sol-93a8.md) | AODF | 🟢 0/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/aodf-sol-93a8) |
+| [XTX](./xtx.md) | XTX | 🟢 0/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/xtx-sol) |
+| [USOE](./usoe-sol-ca20.md) | USOE | 🟢 1/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/usoe-sol-ca20) |
 | [FOCO](./foco.md) | FOCO | 🟢 2/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/foco-sol) |
 | [RIP Nathalia Filgueiras](./rip-nathalia-filgueiras.md) | NATHALIA | 🟢 23/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/rip-nathalia-filgueiras-sol) |
 | [Tumulun Tugucheg](./tumulun-tugucheg.md) | TUMULUN | 🟢 18/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/tumulun-tugucheg-sol) |

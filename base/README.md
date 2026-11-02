@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**545 reports** · Updated daily · [← All Networks](../README.md)
+**546 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [RIP Nathalia Filgueiras](./rip-nathalia-filgueiras.md) | NATHALIA | 🟢 24/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/rip-nathalia-filgueiras-base) |
 | [Field Atlas](./field-atlas-base-5056.md) | ATLAS | 🟡 63/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/field-atlas-base-5056) |
 | [Commonplace](./commonplace-base-e61c.md) | COMMONPLACE | 🟠 84/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/commonplace-base-e61c) |
 | [United Oil Dividend Fund](./united-oil-dividend-fund.md) | UODF | 🟡 55/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/united-oil-dividend-fund-base) |

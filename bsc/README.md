@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**660 reports** · Updated daily · [← All Networks](../README.md)
+**668 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,14 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [wkeyDA03](./wkeyda03.md) | WKEYDA03 | 🟡 42/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/wkeyda03-bsc) |
+| [Cheese](./cheese.md) | CHEESE | 🟠 69/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/cheese-bsc) |
+| [Token](./token-bsc-4ff1.md) | 词元 | 🟡 42/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/token-bsc-4ff1) |
+| [亮剑出击](./token-973514.md) | 亮剑出击 | 🟢 0/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/token-973514-bsc) |
+| [SnowBall Agent](./snowball-agent.md) | SNOWBALL | 🟠 72/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/snowball-agent-bsc) |
+| [Suica Rabbit](./suica-rabbit.md) | うさぎ | 🟢 1/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/suica-rabbit-bsc) |
+| [AIPRO](./aipro.md) | AIPRO | 🟡 52/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/aipro-bsc) |
+| [Agentic Coin](./agentic-coin.md) | AGC | 🟡 48/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/agentic-coin-bsc) |
 | [BNC玩家](./bnc-bsc-7495.md) | BNC玩家 | 🟢 24/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/bnc-bsc-7495) |
 | [MOVN](./movn.md) | MOVN | 🟠 78/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/movn-bsc) |
 | [BDOG](./bdog.md) | BDOG | 🟡 57/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/bdog-bsc) |
