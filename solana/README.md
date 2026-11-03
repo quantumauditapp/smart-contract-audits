@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1777 reports** · Updated daily · [← All Networks](../README.md)
+**1801 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,30 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Scientists Reveal the Hi](./scientists-reveal-the-hi.md) | HI | 🟢 24/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/scientists-reveal-the-hi-sol) |
+| [Donald Jew Trump](./donald-jew-trump.md) | DJT | 🟢 24/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/donald-jew-trump-sol) |
+| [What if?](./what-if.md) | WIF | 🟢 28/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/what-if-sol) |
+| [MOGMAS](./mogmas.md) | MOGMAS | 🟢 23/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/mogmas-sol) |
+| [HAMSTER](./hamster.md) | HAMSTER | 🟢 10/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/hamster-sol) |
+| [GTAFICATION](./gtafication.md) | GTAFY | 🟢 23/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/gtafication-sol) |
+| [Anon Voyage](./anon-voyage.md) | ANONVOYAGE | 🟢 14/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/anon-voyage-sol) |
+| [Extended](./extended-sol-a0a0.md) | XTEN | 🟢 25/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/extended-sol-a0a0) |
+| [predict.fun](./predictfun-sol-f6b0.md) | PREDICT | 🟢 29/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/predictfun-sol-f6b0) |
+| [Pump Fun Research Facility](./pump-fun-research-facility.md) | PUMPFUN | 🟡 36/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/pump-fun-research-facility-sol) |
+| [Ombro](./ombro.md) | OMBRO | 🟢 24/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/ombro-sol) |
+| [unpooled](./unpooled.md) | UNPOOLED | 🟢 20/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/unpooled-sol) |
+| [AODF](./aodf-sol-af68.md) | AODF | 🟢 0/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/aodf-sol-af68) |
+| [USOE](./usoe-sol-6920.md) | USOE | 🟢 1/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/usoe-sol-6920) |
+| [United States Dividend Program](./united-states-dividend-program-sol-e8fb.md) | USDP | 🔴 93/100 Critical Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/united-states-dividend-program-sol-e8fb) |
+| [National Oil Dividend Fund](./national-oil-dividend-fund-sol-559e.md) | NODF | 🟢 1/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/national-oil-dividend-fund-sol-559e) |
+| [USA Power Reserve](./usa-power-reserve.md) | USPR | 🟢 1/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/usa-power-reserve-sol) |
+| [UODF](./uodf-sol-2af5.md) | UODF | 🟢 0/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/uodf-sol-2af5) |
+| [United States Power Reserve](./united-states-power-reserve.md) | USPR | 🟢 2/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/united-states-power-reserve-sol) |
+| [AODF](./aodf-sol-20ee.md) | AODF | 🟢 0/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/aodf-sol-20ee) |
+| [XTO](./xto-sol-b379.md) | XTO | 🟢 2/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/xto-sol-b379) |
+| [AODF](./aodf-sol-e1a3.md) | AODF | 🟢 1/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/aodf-sol-e1a3) |
+| [XTO](./xto-sol-d1b7.md) | XTO | 🟢 0/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/xto-sol-d1b7) |
+| [PROJECT CORTEX](./project-cortex-sol-3486.md) | XTX | 🟢 2/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/project-cortex-sol-3486) |
 | [Nuclear War Is Bad For Kittens](./nuclear-war-is-bad-for-kittens.md) | KITTENS | 🟡 40/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/nuclear-war-is-bad-for-kittens-sol) |
 | [Mamesuke](./mamesuke-sol-f032.md) | 豆助 | 🟢 13/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/mamesuke-sol-f032) |
 | [CatoXsol](./catoxsol.md) | CATO | 🟢 27/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/catoxsol-sol) |

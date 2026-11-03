@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**676 reports** · Updated daily · [← All Networks](../README.md)
+**684 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,14 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [我画地为牢啊厉娜](./token-2e38f6.md) | 我画地为牢 | 🟢 29/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/token-2e38f6-bsc) |
+| [交流：1090470690](./1090470690.md) | 百年币安 | 🟢 24/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/1090470690-bsc) |
+| [零号病毒](./token-fd7f20.md) | 零号病毒 | 🟡 62/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/token-fd7f20-bsc) |
+| [A Completely Cashless Society](./a-completely-cashless-society.md) | CASHLESS | 🟢 31/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/a-completely-cashless-society-bsc) |
+| [moco](./moco.md) | MOCO | 🟡 38/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/moco-bsc) |
+| [MEME HORSE](./meme-horse.md) | MHORSE | 🟡 53/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/meme-horse-bsc) |
+| [KXG](./kxg.md) | KXG | 🟡 46/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/kxg-bsc) |
+| [Win-win](./win-win.md) | WIN-WIN | 🟠 84/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/win-win-bsc) |
 | [ARIA.AI](./ariaai-bsc-22f0.md) | ARIA | 🟠 82/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/ariaai-bsc-22f0) |
 | [Burn Agent](./burn-agent.md) | BURN | 🟠 79/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/burn-agent-bsc) |
 | [Genesis](./genesis.md) | GENESIS | 🟡 38/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/genesis-bsc) |

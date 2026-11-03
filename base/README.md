@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**552 reports** · Updated daily · [← All Networks](../README.md)
+**555 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Ombro](./ombro.md) | OMBRO | 🟠 84/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/ombro-base) |
+| [OFFLINE RESEARCH](./offline-research-base-7b99.md) | OFFR | 🟠 66/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/offline-research-base-7b99) |
+| [AWP](./awp.md) | AWP | 🟠 79/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/awp-base) |
 | [Emmie](./emmie.md) | EMMIE | 🟡 63/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/emmie-base) |
 | [VetoTrump](./vetotrump.md) | VETOTRUMP | 🟠 69/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/vetotrump-base) |
 | [Beagle](./beagle.md) | BGLE | 🟠 78/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/beagle-base) |
