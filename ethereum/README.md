@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**529 reports** · Updated daily · [← All Networks](../README.md)
+**531 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [HoloToken](./holotoken.md) | HOT | 🟡 49/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/holotoken-eth) |
+| [Anakin Coin](./anakin-coin.md) | ANAKIN | 🟡 48/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/anakin-coin-eth) |
 | [Peace Coin](./peace-coin.md) | PEACE | 🟡 48/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/peace-coin-eth) |
 | [Mamesuke](./mamesuke.md) | MAMESUKE | 🟠 78/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/mamesuke-eth) |
 | [The Black Bull](./the-black-bull.md) | SLINGOOR | 🟡 50/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/the-black-bull-eth) |

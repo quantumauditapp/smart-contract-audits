@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**674 reports** · Updated daily · [← All Networks](../README.md)
+**675 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Burn Agent](./burn-agent.md) | BURN | 🟠 79/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/burn-agent-bsc) |
 | [Genesis](./genesis.md) | GENESIS | 🟡 38/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/genesis-bsc) |
 | [Grok Agent](./grok-agent.md) | GROK | 🟠 70/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/grok-agent-bsc) |
 | [用过去的表情包回到牛市](./memes.md) | MEMES | 🟡 42/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/memes-bsc) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1759 reports** · Updated daily · [← All Networks](../README.md)
+**1774 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,21 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Goatcoin](./goatcoin.md) | GOAT | 🟡 36/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/goatcoin-sol) |
+| [ᑓହꚡई](./token-5b99cb.md) | ᑓହꚡई | 🟢 29/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/token-5b99cb-sol) |
+| [SMUGLY](./smugly.md) | SMUGLY | 🟢 20/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/smugly-sol) |
+| [Memecoin](./memecoin.md) | MEM | 🟢 19/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/memecoin-sol) |
+| [Panthar](./panthar.md) | PANTHAR | 🟡 40/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/panthar-sol) |
+| [horse](./horse-sol-f44a.md) | HORSE | 🟢 24/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/horse-sol-f44a) |
+| [Grand Theft America](./grand-theft-america.md) | GTA | 🟢 15/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/grand-theft-america-sol) |
+| [ascend](./ascend.md) | ASCEND | 🟢 22/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/ascend-sol) |
+| [HEDGE](./hedge.md) | HEDGE | 🟢 17/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/hedge-sol) |
+| [ᑓହꚡई](./token-46f1f8.md) | ᑓହꚡई | 🟢 22/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/token-46f1f8-sol) |
+| [Project Sphere](./project-sphere.md) | SPHERE | 🟢 17/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/project-sphere-sol) |
+| [OTCity](./otcity.md) | OTCITY | 🟢 23/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/otcity-sol) |
+| [Federal Oil Trust Fund💊](./federal-oil-trust-fund-sol-80e1.md) | FOTF | 🟢 2/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/federal-oil-trust-fund-sol-80e1) |
+| [USOE](./usoe-sol-08b2.md) | USOE | 🟢 1/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/usoe-sol-08b2) |
+| [Turkey Time](./turkey-time.md) | TURKEY | 🟢 15/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/turkey-time-sol) |
 | [Kuip](./kuip.md) | KUIP | 🟢 14/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/kuip-sol) |
 | [Solana Language Model](./solana-language-model.md) | SLM | 🟢 15/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/solana-language-model-sol) |
 | [LIFTOFF](./liftoff.md) | LIFT | 🟢 16/100 Low Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/liftoff-sol) |
