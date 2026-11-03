@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1801 reports** · Updated daily · [← All Networks](../README.md)
+**1824 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,29 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [The Smirk Dog](./the-smirk-dog.md) | RIVER | 🟢 19/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/the-smirk-dog-sol) |
+| [Megan Fox](./megan-fox.md) | MEGANFOX | 🟢 14/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/megan-fox-sol) |
+| [Sexbot](./sexbot.md) | SEXBOT | 🟢 24/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/sexbot-sol) |
+| [Rooms](./rooms.md) | CHATCOIN | 🟢 15/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/rooms-sol) |
+| [Satoshi Coin](./satoshi-coin.md) | SATOSHI | 🟢 24/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/satoshi-coin-sol) |
+| [United States Oil Exchange](./united-states-oil-exchange-sol-af75.md) | USOE | 🟢 2/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-sol-af75) |
+| [Umbra](./umbra.md) | UMBRA | 🟠 65/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/umbra-sol) |
+| [Bingus](./bingus.md) | BINGUS | 🟢 22/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/bingus-sol) |
+| [MEOWNERO](./meownero.md) | MEOWNERO | 🟡 44/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/meownero-sol) |
+| [woop](./woop.md) | WOOP | 🟢 19/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/woop-sol) |
+| [Carl Johnson](./carl-johnson.md) | CJ | 🟢 30/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/carl-johnson-sol) |
+| [Pog](./pog.md) | POG | 🟡 36/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/pog-sol) |
+| [Hund ](./hund.md) | HUND  | 🟢 15/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/hund-sol) |
+| [Super-Agent](./super-agent.md) | SA | 🟢 6/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/super-agent-sol) |
+| [A Natural Stepmom Ebony Milf](./a-natural-stepmom-ebony-milf.md) | ANSEM | 🟢 8/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/a-natural-stepmom-ebony-milf-sol) |
+| [Mag Screenland](./mag-screenland.md) | MAG | 🟢 17/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/mag-screenland-sol) |
+| [STONKS](./stonks-sol-cd7a.md) | STONKS | 🟡 47/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/stonks-sol-cd7a) |
+| [FOBET CASINO](./fobet-casino.md) | FOBET | 🟢 14/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/fobet-casino-sol) |
+| [5 STARS](./5-stars.md) | 5STAR | 🟢 15/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/5-stars-sol) |
+| [PROJECT CORTEX](./project-cortex-sol-62d8.md) | XTX | 🟢 1/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/project-cortex-sol-62d8) |
+| [United States Oil Exchange](./united-states-oil-exchange-sol-1527.md) | USOE | 🟢 0/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-sol-1527) |
+| [Strategic American Protocol](./strategic-american-protocol-sol-6090.md) | SARP | 🟢 1/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/strategic-american-protocol-sol-6090) |
+| [AODF](./aodf-sol-213c.md) | AODF | 🟢 2/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/aodf-sol-213c) |
 | [Scientists Reveal the Hi](./scientists-reveal-the-hi.md) | HI | 🟢 24/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/scientists-reveal-the-hi-sol) |
 | [Donald Jew Trump](./donald-jew-trump.md) | DJT | 🟢 24/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/donald-jew-trump-sol) |
 | [What if?](./what-if.md) | WIF | 🟢 28/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/what-if-sol) |

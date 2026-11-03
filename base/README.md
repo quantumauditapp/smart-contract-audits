@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**555 reports** · Updated daily · [← All Networks](../README.md)
+**559 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [UTDF 🔥](./utdf.md) | UTDF | 🟡 61/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/utdf-base) |
+| [Reboot](./reboot-base-eedd.md) | REBOOT | 🟠 84/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/reboot-base-eedd) |
+| [Papertrade](./papertrade-base-fed7.md) | PAPER | 🟡 54/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/papertrade-base-fed7) |
+| [Reboot](./reboot.md) | REBOOT | 🟡 52/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/reboot-base) |
 | [Ombro](./ombro.md) | OMBRO | 🟠 84/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/ombro-base) |
 | [OFFLINE RESEARCH](./offline-research-base-7b99.md) | OFFR | 🟠 66/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/offline-research-base-7b99) |
 | [AWP](./awp.md) | AWP | 🟠 79/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/awp-base) |

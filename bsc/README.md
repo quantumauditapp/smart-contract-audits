@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**684 reports** · Updated daily · [← All Networks](../README.md)
+**688 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [羊年大吉](./token-f7f670.md) | 羊年大吉 | 🟢 16/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/token-f7f670-bsc) |
+| [Bnb Burn Forge](./bnb-burn-forge.md) | BBF | 🟡 47/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/bnb-burn-forge-bsc) |
+| [共建](./token-c96fcc.md) | 共建 | 🟡 44/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/token-c96fcc-bsc) |
+| [BUILD N BUILD](./build-n-build.md) | 共建 | 🟢 22/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/build-n-build-bsc) |
 | [我画地为牢啊厉娜](./token-2e38f6.md) | 我画地为牢 | 🟢 29/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/token-2e38f6-bsc) |
 | [交流：1090470690](./1090470690.md) | 百年币安 | 🟢 24/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/1090470690-bsc) |
 | [零号病毒](./token-fd7f20.md) | 零号病毒 | 🟡 62/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/token-fd7f20-bsc) |

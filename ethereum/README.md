@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**538 reports** · Updated daily · [← All Networks](../README.md)
+**539 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [SHOGGOTH](./shoggoth.md) | SHOGGOTH | 🟠 76/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/shoggoth-eth) |
 | [MAMESUKE](./mamesuke-eth-fe85.md) | MAMESUKE | 🟡 40/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/mamesuke-eth-fe85) |
 | [GTA6DOG](./gta6dog.md) | RICO | 🟡 40/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/gta6dog-eth) |
 | [Symbiotic](./symbiotic.md) | SYMB | 🟡 64/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/symbiotic-eth) |
