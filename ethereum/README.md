@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**531 reports** · Updated daily · [← All Networks](../README.md)
+**535 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Vitalik the Shoggoth](./vitalik-the-shoggoth.md) | VITOGGOTH | 🟢 34/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/vitalik-the-shoggoth-eth) |
+| [Capycoin](./capycoin.md) | CAPY | 🟢 32/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/capycoin-eth) |
+| [MAMESUKE](./mamesuke-eth-8eca.md) | MAMESUKE | 🟡 56/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/mamesuke-eth-8eca) |
+| [ELA on Ethereum](./ela-on-ethereum.md) | ELA | 🟠 75/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/ela-on-ethereum-eth) |
 | [HoloToken](./holotoken.md) | HOT | 🟡 49/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/holotoken-eth) |
 | [Anakin Coin](./anakin-coin.md) | ANAKIN | 🟡 48/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/anakin-coin-eth) |
 | [Peace Coin](./peace-coin.md) | PEACE | 🟡 48/100 Medium Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/peace-coin-eth) |

@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-3663-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-3672-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,15 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [Vitalik the Shoggoth](./ethereum/vitalik-the-shoggoth.md) | VITOGGOTH | Ethereum | 🟢 34/100 | 2026-11-03 | [↗](https://quantumaudit.app/token/vitalik-the-shoggoth-eth) |
+| [Capycoin](./ethereum/capycoin.md) | CAPY | Ethereum | 🟢 32/100 | 2026-11-03 | [↗](https://quantumaudit.app/token/capycoin-eth) |
+| [MAMESUKE](./ethereum/mamesuke-eth-8eca.md) | MAMESUKE | Ethereum | 🟡 56/100 | 2026-11-03 | [↗](https://quantumaudit.app/token/mamesuke-eth-8eca) |
+| [Emmie](./base/emmie.md) | EMMIE | Base | 🟡 63/100 | 2026-11-03 | [↗](https://quantumaudit.app/token/emmie-base) |
+| [ELA on Ethereum](./ethereum/ela-on-ethereum.md) | ELA | Ethereum | 🟠 75/100 | 2026-11-03 | [↗](https://quantumaudit.app/token/ela-on-ethereum-eth) |
+| [ARIA.AI](./bsc/ariaai-bsc-22f0.md) | ARIA | BNB Chain | 🟠 82/100 | 2026-11-03 | [↗](https://quantumaudit.app/token/ariaai-bsc-22f0) |
+| [Nuclear War Is Bad For Kittens](./solana/nuclear-war-is-bad-for-kittens.md) | KITTENS | Solana | 🟡 40/100 | 2026-11-03 | [↗](https://quantumaudit.app/token/nuclear-war-is-bad-for-kittens-sol) |
+| [Mamesuke](./solana/mamesuke-sol-f032.md) | 豆助 | Solana | 🟢 13/100 | 2026-11-03 | [↗](https://quantumaudit.app/token/mamesuke-sol-f032) |
+| [CatoXsol](./solana/catoxsol.md) | CATO | Solana | 🟢 27/100 | 2026-11-03 | [↗](https://quantumaudit.app/token/catoxsol-sol) |
 | [HoloToken](./ethereum/holotoken.md) | HOT | Ethereum | 🟡 49/100 | 2026-11-03 | [↗](https://quantumaudit.app/token/holotoken-eth) |
 | [Goatcoin](./solana/goatcoin.md) | GOAT | Solana | 🟡 36/100 | 2026-11-03 | [↗](https://quantumaudit.app/token/goatcoin-sol) |
 | [ᑓହꚡई](./solana/token-5b99cb.md) | ᑓହꚡई | Solana | 🟢 29/100 | 2026-11-03 | [↗](https://quantumaudit.app/token/token-5b99cb-sol) |
@@ -33,21 +42,12 @@
 | [USOE](./solana/usoe-sol-08b2.md) | USOE | Solana | 🟢 1/100 | 2026-11-03 | [↗](https://quantumaudit.app/token/usoe-sol-08b2) |
 | [Turkey Time](./solana/turkey-time.md) | TURKEY | Solana | 🟢 15/100 | 2026-11-03 | [↗](https://quantumaudit.app/token/turkey-time-sol) |
 | [Kuip](./solana/kuip.md) | KUIP | Solana | 🟢 14/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/kuip-sol) |
-| [Solana Language Model](./solana/solana-language-model.md) | SLM | Solana | 🟢 15/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/solana-language-model-sol) |
-| [LIFTOFF](./solana/liftoff.md) | LIFT | Solana | 🟢 16/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/liftoff-sol) |
-| [Peace Coin](./ethereum/peace-coin.md) | PEACE | Ethereum | 🟡 48/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/peace-coin-eth) |
-| [MuseCourt](./base/musecourt.md) | MCOURT | Base | 🟠 83/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/musecourt-base) |
-| [Anthropic](./base/anthropic-base-1299.md) | ANTHROPIC | Base | 🟡 54/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/anthropic-base-1299) |
-| [Mamesuke](./ethereum/mamesuke.md) | MAMESUKE | Ethereum | 🟠 78/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/mamesuke-eth) |
-| [Advanced Micro Devices, Inc.](./base/advanced-micro-devices-inc.md) | AMDC | Base | 🟡 55/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/advanced-micro-devices-inc-base) |
-| [Genesis](./bsc/genesis.md) | GENESIS | BNB Chain | 🟡 38/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/genesis-bsc) |
-| [Daisuke-Doo](./solana/daisuke-doo.md) | DAISUKE | Solana | 🟡 38/100 | 2026-11-02 | [↗](https://quantumaudit.app/token/daisuke-doo-sol) |
 
 ---
 
 ## Browse by Network
 
-[Solana (1774)](./solana/README.md) · [BNB Chain (675)](./bsc/README.md) · [Base (551)](./base/README.md) · [Ethereum (531)](./ethereum/README.md) · [Arbitrum (94)](./arbitrum/README.md) · [Polygon (38)](./polygon/README.md)
+[Solana (1777)](./solana/README.md) · [BNB Chain (676)](./bsc/README.md) · [Base (552)](./base/README.md) · [Ethereum (535)](./ethereum/README.md) · [Arbitrum (94)](./arbitrum/README.md) · [Polygon (38)](./polygon/README.md)
 
 ---
 

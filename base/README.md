@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**551 reports** · Updated daily · [← All Networks](../README.md)
+**552 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Emmie](./emmie.md) | EMMIE | 🟡 63/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/emmie-base) |
 | [VetoTrump](./vetotrump.md) | VETOTRUMP | 🟠 69/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/vetotrump-base) |
 | [Beagle](./beagle.md) | BGLE | 🟠 78/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/beagle-base) |
 | [MuseCourt](./musecourt.md) | MCOURT | 🟠 83/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/musecourt-base) |

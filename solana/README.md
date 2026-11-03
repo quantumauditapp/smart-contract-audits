@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1774 reports** · Updated daily · [← All Networks](../README.md)
+**1777 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Nuclear War Is Bad For Kittens](./nuclear-war-is-bad-for-kittens.md) | KITTENS | 🟡 40/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/nuclear-war-is-bad-for-kittens-sol) |
+| [Mamesuke](./mamesuke-sol-f032.md) | 豆助 | 🟢 13/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/mamesuke-sol-f032) |
+| [CatoXsol](./catoxsol.md) | CATO | 🟢 27/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/catoxsol-sol) |
 | [Goatcoin](./goatcoin.md) | GOAT | 🟡 36/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/goatcoin-sol) |
 | [ᑓହꚡई](./token-5b99cb.md) | ᑓହꚡई | 🟢 29/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/token-5b99cb-sol) |
 | [SMUGLY](./smugly.md) | SMUGLY | 🟢 20/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/smugly-sol) |
