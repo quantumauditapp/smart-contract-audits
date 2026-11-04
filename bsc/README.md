@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**690 reports** · Updated daily · [← All Networks](../README.md)
+**697 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [SAFU](./safu-bsc-4426.md) | SAFU | 🟢 33/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/safu-bsc-4426) |
+| [AI人生](./ai.md) | AI人生 | 🟢 29/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/ai-bsc) |
+| [中国屌上天](./token-85ffd1.md) | 胖五 | 🟡 50/100 Medium Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/token-85ffd1-bsc) |
+| [AGENTINE](./agentine.md) | AGENTINE | 🟢 22/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/agentine-bsc) |
+| [BTC18](./btc18.md) | BTC18 | 🟢 33/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/btc18-bsc) |
+| [雪球](./token-546bcd.md) | 雪球 | 🟢 29/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/token-546bcd-bsc) |
+| [A Meme Dog](./a-meme-dog.md) | AMD | 🟠 82/100 High Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/a-meme-dog-bsc) |
 | [WIN界](./win.md) | WIN界 | 🟢 1/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/win-bsc) |
 | [FintechAI Ecosystem](./fintechai-ecosystem.md) | FNAE | 🟡 55/100 Medium Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/fintechai-ecosystem-bsc) |
 | [羊年大吉](./token-f7f670.md) | 羊年大吉 | 🟢 16/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/token-f7f670-bsc) |

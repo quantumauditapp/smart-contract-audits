@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**541 reports** · Updated daily · [← All Networks](../README.md)
+**549 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,14 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Dacity Coin](./dacity-coin-eth-2ebc.md) | DACITY | 🟢 15/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/dacity-coin-eth-2ebc) |
+| [Vitalik the Shoggoth](./vitalik-the-shoggoth-eth-583c.md) | VITOGGOTH | 🟢 16/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/vitalik-the-shoggoth-eth-583c) |
+| [Grand Theft Anakin](./grand-theft-anakin.md) | GTA | 🟡 64/100 Medium Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/grand-theft-anakin-eth) |
+| [Dacity Coin](./dacity-coin-eth-8fe8.md) | DACITY | 🟠 70/100 High Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/dacity-coin-eth-8fe8) |
+| [SHROUD](./shroud.md) | SHROUD | 🟢 30/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/shroud-eth) |
+| [SNOWMOON](./snowmoon-eth-6379.md) | SNOWMOON | 🟢 10/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/snowmoon-eth-6379) |
+| [MAMESUKE](./mamesuke-eth-8ec3.md) | MAMESUKE | 🟢 29/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/mamesuke-eth-8ec3) |
+| [A Meme Dog](./a-meme-dog.md) | AMD | 🟢 16/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/a-meme-dog-eth) |
 | [Jeeves](./jeeves.md) | JVS | 🟡 52/100 Medium Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/jeeves-eth) |
 | [Variational](./variational.md) | VAR | 🟡 40/100 Medium Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/variational-eth) |
 | [SHOGGOTH](./shoggoth.md) | SHOGGOTH | 🟠 76/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/shoggoth-eth) |

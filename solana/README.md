@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1839 reports** · Updated daily · [← All Networks](../README.md)
+**1859 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,26 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Prefire](./prefire.md) | PREFIRE | 🟢 17/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/prefire-sol) |
+| [Leonida Man](./leonida-man.md) | LEOMAN | 🟢 18/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/leonida-man-sol) |
+| [Mr. Veto](./mr-veto-sol-d4a7.md) | VETO | 🟢 6/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/mr-veto-sol-d4a7) |
+| [higher.fun](./higherfun.md) | HIGH | 🟢 23/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/higherfun-sol) |
+| [Mr Veto](./mr-veto.md) | VETO | 🟢 27/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/mr-veto-sol) |
+| [Impeach](./impeach.md) | IMPEACH | 🟢 24/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/impeach-sol) |
+| [TrendTrader Pro](./trendtrader-pro.md) | TTPRO | 🟢 23/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/trendtrader-pro-sol) |
+| [Ignotus Nemo](./ignotus-nemo.md) | NEMO | 🟢 14/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/ignotus-nemo-sol) |
+| [StarMind](./starmind.md) | STARMIND | 🟢 16/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/starmind-sol) |
+| [บุญทิ้ง](./bunthing.md) | BUNTHING | 🟢 24/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/bunthing-sol) |
+| [RAMBO](./rambo.md) | RAMBO | 🟢 10/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/rambo-sol) |
+| [ChickPot](./chickpot.md) | CHICKPOT | 🟢 15/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/chickpot-sol) |
+| [predict.fun](./predictfun-sol-afa2.md) | PREDICT | 🟢 27/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/predictfun-sol-afa2) |
+| [Extended](./extended-sol-7d59.md) | XTEN | 🟢 27/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/extended-sol-7d59) |
+| [Always Moist Downstairs](./always-moist-downstairs-sol-b19b.md) | AMD | 🟢 0/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/always-moist-downstairs-sol-b19b) |
+| [x12345678998765](./x12345678998765.md) | X | 🟢 23/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/x12345678998765-sol) |
+| [Slingtoshi Nakamoto](./slingtoshi-nakamoto.md) | SLINGTOSHI | 🟢 1/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/slingtoshi-nakamoto-sol) |
+| [POOLS](./pools.md) | POOLS | 🟢 24/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/pools-sol) |
+| [Generational Bottom](./generational-bottom.md) | BOTTOM | 🟢 24/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/generational-bottom-sol) |
+| [The DOGE Party](./the-doge-party.md) | DOGE | 🟢 23/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/the-doge-party-sol) |
 | [L0ng](./l0ng.md) | L0NG | 🟢 13/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/l0ng-sol) |
 | [Delusional Optimist](./delusional-optimist.md) | DELUSIONAL | 🟢 21/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/delusional-optimist-sol) |
 | [FUN](./fun-sol-9219.md) | FUN | 🟢 22/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/fun-sol-9219) |
