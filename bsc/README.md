@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**697 reports** · Updated daily · [← All Networks](../README.md)
+**699 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [  AI龙虾 ](./ai-bsc-ab9e.md) |   AI龙虾  | 🟡 42/100 Medium Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/ai-bsc-ab9e) |
+| [The Donkey](./the-donkey.md) | 驴来 | 🟢 32/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/the-donkey-bsc) |
 | [SAFU](./safu-bsc-4426.md) | SAFU | 🟢 33/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/safu-bsc-4426) |
 | [AI人生](./ai.md) | AI人生 | 🟢 29/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/ai-bsc) |
 | [中国屌上天](./token-85ffd1.md) | 胖五 | 🟡 50/100 Medium Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/token-85ffd1-bsc) |

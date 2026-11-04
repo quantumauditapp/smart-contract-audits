@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1859 reports** · Updated daily · [← All Networks](../README.md)
+**1887 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,34 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [tism](./tism.md) | TISM | 🟢 29/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/tism-sol) |
+| [イエロー・ジョー](./joe.md) | JOE | 🟢 20/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/joe-sol) |
+| [The Sisyphean Leopard](./the-sisyphean-leopard.md) | AREN | 🟢 22/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/the-sisyphean-leopard-sol) |
+| [Genius Token – $POCK](./genius-token-pock.md) | POCK | 🟢 15/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/genius-token-pock-sol) |
+| [UAV](./uav.md) | UAV | 🟢 22/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/uav-sol) |
+| [Anime Bitcoin](./anime-bitcoin-sol-0281.md) | ABTC | 🟢 0/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/anime-bitcoin-sol-0281) |
+| [Suicaのペンギン](./suica.md) | SUICA | 🟢 24/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/suica-sol) |
+| [GHOST RIDER](./ghost-rider.md) | GHOST | 🟢 13/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/ghost-rider-sol) |
+| [Anime Bitcoin](./anime-bitcoin.md) | ABTC | 🟢 21/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/anime-bitcoin-sol) |
+| [A Meme Donald](./a-meme-donald.md) | AMD | 🟢 24/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/a-meme-donald-sol) |
+| [A Meme Donkey](./a-meme-donkey.md) | AMD | 🟢 7/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/a-meme-donkey-sol) |
+| [MY PRONOUNS ARE HIGH/ER](./my-pronouns-are-higher.md) | HIGH/ER | 🟢 20/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/my-pronouns-are-higher-sol) |
+| [The Donkey](./the-donkey.md) | DONKEY | 🟢 24/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/the-donkey-sol) |
+| [Anti Inu](./anti-inu.md) | AI | 🟢 23/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/anti-inu-sol) |
+| [george](./george.md) | GEORGE | 🟢 22/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/george-sol) |
+| [CHILLCATS](./chillcats.md) | CHILLCATS | 🟢 20/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/chillcats-sol) |
+| [No Nut November](./no-nut-november-sol-72a7.md) | NONUT | 🟢 26/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/no-nut-november-sol-72a7) |
+| [USPR](./uspr-sol-f65b.md) | USPR | 🟢 1/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/uspr-sol-f65b) |
+| [UODF](./uodf-sol-77c4.md) | UODF | 🟢 0/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/uodf-sol-77c4) |
+| [United States Oil Exchange](./united-states-oil-exchange-sol-1853.md) | USOE | 🟢 0/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-sol-1853) |
+| [USPR](./uspr.md) | USPR | 🟢 0/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/uspr-sol) |
+| [UODF](./uodf-sol-1578.md) | UODF | 🟢 1/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/uodf-sol-1578) |
+| [MR BEAST](./mr-beast-sol-dd10.md) | MRBEAST | 🟢 13/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/mr-beast-sol-dd10) |
+| [USOE](./usoe-sol-1fec.md) | USOE | 🟢 0/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/usoe-sol-1fec) |
+| [SARP](./sarp-sol-97ff.md) | SARP | 🟢 0/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/sarp-sol-97ff) |
+| [USOE⚡️](./usoe-sol-99bf.md) | USOE | 🟢 2/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/usoe-sol-99bf) |
+| [United States Oil Exchange](./united-states-oil-exchange-sol-f82c.md) | USOE | 🟢 2/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-sol-f82c) |
+| [Grab That Ass](./grab-that-ass.md) | GTA | 🟢 0/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/grab-that-ass-sol) |
 | [Prefire](./prefire.md) | PREFIRE | 🟢 17/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/prefire-sol) |
 | [Leonida Man](./leonida-man.md) | LEOMAN | 🟢 18/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/leonida-man-sol) |
 | [Mr. Veto](./mr-veto-sol-d4a7.md) | VETO | 🟢 6/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/mr-veto-sol-d4a7) |

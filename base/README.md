@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**562 reports** · Updated daily · [← All Networks](../README.md)
+**569 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [KOR](./kor.md) | KOR | 🟢 28/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/kor-base) |
+| [Papertrade](./papertrade-base-bf4d.md) | PAPER | 🟡 52/100 Medium Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/papertrade-base-bf4d) |
+| [USOS](./usos.md) | USOS | 🟠 68/100 High Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/usos-base) |
+| [WSOS](./wsos.md) | WSOS | 🟠 67/100 High Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/wsos-base) |
+| [AORP](./aorp.md) | AORP | 🟠 69/100 High Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/aorp-base) |
+| [XTO](./xto-base-652b.md) | XTO | 🟠 67/100 High Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/xto-base-652b) |
+| [DENIM](./denim.md) | DENIM | 🟢 16/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/denim-base) |
 | [Reboot](./reboot-base-cfb5.md) | REBOOT | 🟠 68/100 High Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/reboot-base-cfb5) |
 | [Bootr](./bootr.md) | BOOTR | 🟡 54/100 Medium Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/bootr-base) |
 | [MAMESUKE](./mamesuke.md) | MAMESUKE | 🟡 54/100 Medium Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/mamesuke-base) |
