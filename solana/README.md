@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1824 reports** · Updated daily · [← All Networks](../README.md)
+**1839 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,21 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [L0ng](./l0ng.md) | L0NG | 🟢 13/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/l0ng-sol) |
+| [Delusional Optimist](./delusional-optimist.md) | DELUSIONAL | 🟢 21/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/delusional-optimist-sol) |
+| [FUN](./fun-sol-9219.md) | FUN | 🟢 22/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/fun-sol-9219) |
+| [XMRvm](./xmrvm.md) | XMRVM | 🟢 19/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/xmrvm-sol) |
+| [MIDTURDS](./midturds.md) | MIDTURDS | 🟢 14/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/midturds-sol) |
+| [Always Moist Downstairs](./always-moist-downstairs.md) | AMD | 🟢 2/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/always-moist-downstairs-sol) |
+| [Vice Inu](./vice-inu-sol-5532.md) | VI | 🟢 2/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/vice-inu-sol-5532) |
+| [GIMODELO](./gimodelo.md) | GIMODELO | 🟢 14/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/gimodelo-sol) |
+| [A Meme Dog](./a-meme-dog.md) | AMD | 🟢 13/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/a-meme-dog-sol) |
+| [just a memecoin](./just-a-memecoin-sol-3a49.md) | MEMECOIN | 🟢 18/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/just-a-memecoin-sol-3a49) |
+| [AOTF](./aotf.md) | AOTF | 🟢 2/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/aotf-sol) |
+| [American Overwatch Protocol](./american-overwatch-protocol-sol-2d71.md) | AOP | 🟢 2/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/american-overwatch-protocol-sol-2d71) |
+| [PROJECT CORTEX](./project-cortex-sol-13a7.md) | XTX | 🟢 2/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/project-cortex-sol-13a7) |
+| [USOE](./usoe-sol-f9cf.md) | USOE | 🟢 1/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/usoe-sol-f9cf) |
+| [FOTF](./fotf-sol-4f96.md) | FOTF | 🟢 0/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/fotf-sol-4f96) |
 | [The Smirk Dog](./the-smirk-dog.md) | RIVER | 🟢 19/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/the-smirk-dog-sol) |
 | [Megan Fox](./megan-fox.md) | MEGANFOX | 🟢 14/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/megan-fox-sol) |
 | [Sexbot](./sexbot.md) | SEXBOT | 🟢 24/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/sexbot-sol) |

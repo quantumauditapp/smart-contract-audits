@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**688 reports** · Updated daily · [← All Networks](../README.md)
+**690 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [WIN界](./win.md) | WIN界 | 🟢 1/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/win-bsc) |
+| [FintechAI Ecosystem](./fintechai-ecosystem.md) | FNAE | 🟡 55/100 Medium Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/fintechai-ecosystem-bsc) |
 | [羊年大吉](./token-f7f670.md) | 羊年大吉 | 🟢 16/100 Low Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/token-f7f670-bsc) |
 | [Bnb Burn Forge](./bnb-burn-forge.md) | BBF | 🟡 47/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/bnb-burn-forge-bsc) |
 | [共建](./token-c96fcc.md) | 共建 | 🟡 44/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/token-c96fcc-bsc) |

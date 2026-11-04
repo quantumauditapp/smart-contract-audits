@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**559 reports** · Updated daily · [← All Networks](../README.md)
+**560 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [MAMESUKE](./mamesuke.md) | MAMESUKE | 🟡 54/100 Medium Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/mamesuke-base) |
 | [UTDF 🔥](./utdf.md) | UTDF | 🟡 61/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/utdf-base) |
 | [Reboot](./reboot-base-eedd.md) | REBOOT | 🟠 84/100 High Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/reboot-base-eedd) |
 | [Papertrade](./papertrade-base-fed7.md) | PAPER | 🟡 54/100 Medium Risk | 2026-11-03 | [↗](https://quantumaudit.app/token/papertrade-base-fed7) |
