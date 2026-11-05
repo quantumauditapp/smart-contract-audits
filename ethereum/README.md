@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**553 reports** · Updated daily · [← All Networks](../README.md)
+**556 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [GRAIL](./grail.md) | GRAIL | 🟡 50/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/grail-eth) |
+| [AgentID](./agentid.md) | AGI | 🟠 67/100 High Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/agentid-eth) |
+| [SDollar](./sdollar.md) | SDLR | 🟡 56/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/sdollar-eth) |
 | [Anthropic](./anthropic-eth-07c8.md) | ANT | 🟢 32/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/anthropic-eth-07c8) |
 | [Grand Dacity Coin](./grand-dacity-coin.md) | GDC | 🟡 42/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/grand-dacity-coin-eth) |
 | [WASTED](./wasted.md) | WASTED | 🟢 10/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/wasted-eth) |

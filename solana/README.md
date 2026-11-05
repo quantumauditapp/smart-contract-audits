@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1912 reports** · Updated daily · [← All Networks](../README.md)
+**1926 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,20 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Bobby Fischer](./bobby-fischer.md) | FISCHER | 🟢 13/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/bobby-fischer-sol) |
+| [A Meme Democrats](./a-meme-democrats.md) | AMD | 🟢 23/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/a-meme-democrats-sol) |
+| [BUSTED](./busted.md) | BUSTED | 🟢 27/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/busted-sol) |
+| [Gatto](./gatto-sol-bade.md) | $GATTO | 🟢 14/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/gatto-sol-bade) |
+| [Look At Coins](./look-at-coins.md) | LOOK | 🟢 23/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/look-at-coins-sol) |
+| [predict.fun](./predictfun-sol-a44d.md) | PREDICT | 🟢 26/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/predictfun-sol-a44d) |
+| [Extended](./extended-sol-4e46.md) | XTEN | 🟢 29/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/extended-sol-4e46) |
+| [Cristiano Ronaldo](./cristiano-ronaldo.md) | CR | 🟢 22/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/cristiano-ronaldo-sol) |
+| [Ocarina of Time](./ocarina-of-time.md) | ZELDA | 🟢 22/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/ocarina-of-time-sol) |
+| [Elon Mosque](./elon-mosque.md) | MOSQUE | 🟢 20/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/elon-mosque-sol) |
+| [Minted Hub](./minted-hub.md) | MINTED | 🟢 16/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/minted-hub-sol) |
+| [USPR](./uspr-sol-12be.md) | USPR | 🟢 0/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/uspr-sol-12be) |
+| [USRP](./usrp.md) | USRP | 🟢 1/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/usrp-sol) |
+| [United States Power Reserve](./united-states-power-reserve-sol-e73d.md) | USPR | 🟢 2/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/united-states-power-reserve-sol-e73d) |
 | [timmy](./timmy.md) | TIMMY | 🟢 26/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/timmy-sol) |
 | [Privera](./privera.md) | PAI | 🟢 15/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/privera-sol) |
 | [The Pink Bull](./the-pink-bull.md) | TANISHA | 🟢 16/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/the-pink-bull-sol) |

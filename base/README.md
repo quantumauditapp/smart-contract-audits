@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**570 reports** · Updated daily · [← All Networks](../README.md)
+**573 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [COMPUTE](./compute.md) | AI12 | 🟡 64/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/compute-base) |
+| [APYX](./apyx.md) | APYX | 🟡 49/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/apyx-base) |
+| [Axis Token](./axis-token-base-7d4b.md) | AXIS | 🟡 51/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/axis-token-base-7d4b) |
 | [Clankdexer](./clankdexer.md) | CLANKDEXER | 🟡 61/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/clankdexer-base) |
 | [KOR](./kor.md) | KOR | 🟢 28/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/kor-base) |
 | [Papertrade](./papertrade-base-bf4d.md) | PAPER | 🟡 52/100 Medium Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/papertrade-base-bf4d) |

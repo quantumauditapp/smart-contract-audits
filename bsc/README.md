@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**704 reports** · Updated daily · [← All Networks](../README.md)
+**713 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,15 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [BURN](./burn-bsc-5a8a.md) | BURN | 🟡 48/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/burn-bsc-5a8a) |
+| [杀零狗](./token-c1a6bf.md) | 杀零狗 | 🟡 49/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/token-c1a6bf-bsc) |
+| [雪球](./token-0bbc4c.md) | 雪球 | 🟡 51/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/token-0bbc4c-bsc) |
+| [Grok Bot](./grok-bot.md) | GROK BOT | 🟠 84/100 High Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/grok-bot-bsc) |
+| [MAKEFOURGREATAGAIN](./makefourgreatagain.md) | M4GA | 🟡 36/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/makefourgreatagain-bsc) |
+| [FIST](./fist-bsc-c980.md) | FIST | 🟡 42/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/fist-bsc-c980) |
+| [币安公主](./token-0259cd.md) | 币安公主 | 🟢 15/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/token-0259cd-bsc) |
+| [CORLA](./corla.md) | CORLA | 🟡 45/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/corla-bsc) |
+| [蝴蝶金库](./token-85060d.md) | 蝴蝶金库 | 🟢 27/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/token-85060d-bsc) |
 | [九运元亨币 ](./token-a0f433.md) | 九运元亨币  | 🟢 21/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/token-a0f433-bsc) |
 | [YFI](./yfi.md) | YFI | 🟡 44/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/yfi-bsc) |
 | [BABYSTAR](./babystar.md) | BABYSTAR | 🟢 32/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/babystar-bsc) |

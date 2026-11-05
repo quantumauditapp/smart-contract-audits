@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**95 reports** · Updated daily · [← All Networks](../README.md)
+**96 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Arbitrum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Fluid](./fluid.md) | FLUID | 🟡 43/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/fluid-arb) |
 | [Luxor](./luxor.md) | LUX | 🟠 74/100 High Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/luxor-arb) |
 | [PhotonPay](./photonpay.md) | PTP | 🟠 74/100 High Risk | 2026-11-02 | [↗](https://quantumaudit.app/token/photonpay-arb) |
 | [Mural](./mural.md) | MUR | 🟠 75/100 High Risk | 2026-10-31 | [↗](https://quantumaudit.app/token/mural-arb) |
