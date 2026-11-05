@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**699 reports** · Updated daily · [← All Networks](../README.md)
+**704 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [九运元亨币 ](./token-a0f433.md) | 九运元亨币  | 🟢 21/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/token-a0f433-bsc) |
+| [YFI](./yfi.md) | YFI | 🟡 44/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/yfi-bsc) |
+| [BABYSTAR](./babystar.md) | BABYSTAR | 🟢 32/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/babystar-bsc) |
+| [TAMACOIN](./tamacoin.md) | TAMA | 🟢 31/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/tamacoin-bsc) |
+| [UMplan](./umplan.md) | UMPLAN | 🟢 22/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/umplan-bsc) |
 | [  AI龙虾 ](./ai-bsc-ab9e.md) |   AI龙虾  | 🟡 42/100 Medium Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/ai-bsc-ab9e) |
 | [The Donkey](./the-donkey.md) | 驴来 | 🟢 32/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/the-donkey-bsc) |
 | [SAFU](./safu-bsc-4426.md) | SAFU | 🟢 33/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/safu-bsc-4426) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**551 reports** · Updated daily · [← All Networks](../README.md)
+**553 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Anthropic](./anthropic-eth-07c8.md) | ANT | 🟢 32/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/anthropic-eth-07c8) |
+| [Grand Dacity Coin](./grand-dacity-coin.md) | GDC | 🟡 42/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/grand-dacity-coin-eth) |
 | [WASTED](./wasted.md) | WASTED | 🟢 10/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/wasted-eth) |
 | [ApeBall](./apeball.md) | APEBALL | 🟡 42/100 Medium Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/apeball-eth) |
 | [Dacity Coin](./dacity-coin-eth-2ebc.md) | DACITY | 🟢 15/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/dacity-coin-eth-2ebc) |

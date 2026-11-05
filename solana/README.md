@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1887 reports** · Updated daily · [← All Networks](../README.md)
+**1912 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,31 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [timmy](./timmy.md) | TIMMY | 🟢 26/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/timmy-sol) |
+| [Privera](./privera.md) | PAI | 🟢 15/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/privera-sol) |
+| [The Pink Bull](./the-pink-bull.md) | TANISHA | 🟢 16/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/the-pink-bull-sol) |
+| [PUMP2](./pump2.md) | PUMP2 | 🟡 48/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/pump2-sol) |
+| [inu](./inu-sol-a662.md) | INU | 🟢 24/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/inu-sol-a662) |
+| [origin of memes](./origin-of-memes.md) | MSPAINT | 🟢 20/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/origin-of-memes-sol) |
+| [Crypto Inu](./crypto-inu.md) | CI | 🟢 21/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/crypto-inu-sol) |
+| [A Meme Crypto](./a-meme-crypto.md) | AMC | 🟢 17/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/a-meme-crypto-sol) |
+| [Nullary](./nullary.md) | NULL | 🟢 24/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/nullary-sol) |
+| [Federal Oil Trust Fund](./federal-oil-trust-fund-sol-9997.md) | FOTF | 🟢 2/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/federal-oil-trust-fund-sol-9997) |
+| [Pirate Shop Token](./pirate-shop-token.md) | PIRATE | 🟢 8/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/pirate-shop-token-sol) |
+| [Call](./call.md) | CALL | 🟢 21/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/call-sol) |
+| [Leeroy Jenkins](./leeroy-jenkins.md) | LEEROY | 🟢 13/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/leeroy-jenkins-sol) |
+| [FOTF](./fotf-sol-8096.md) | FOTF | 🟢 20/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/fotf-sol-8096) |
+| [USOE](./usoe-sol-0aa2.md) | USOE | 🟡 38/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/usoe-sol-0aa2) |
+| [Digital Slop Coin](./digital-slop-coin.md) | SLOP | 🟢 22/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/digital-slop-coin-sol) |
+| [The Democrat Cat](./the-democrat-cat.md) | DEMOCAT | 🟢 14/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/the-democrat-cat-sol) |
+| [Gavel Drop](./gavel-drop.md) | GAVELDROP | 🟢 14/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/gavel-drop-sol) |
+| [USOE](./usoe-sol-0942.md) | U S O E | 🟢 0/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/usoe-sol-0942) |
+| [USPR🔥](./uspr-sol-cf74.md) | USPR | 🟢 0/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/uspr-sol-cf74) |
+| [National American Dividend Fund](./national-american-dividend-fund.md) | NADF | 🟢 0/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/national-american-dividend-fund-sol) |
+| [NADF](./nadf.md) | NADF | 🟢 0/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/nadf-sol) |
+| [USDP](./usdp-sol-783b.md) | USDP | 🔴 92/100 Critical Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/usdp-sol-783b) |
+| [UODF](./uodf-sol-159c.md) | UODF | 🟢 0/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/uodf-sol-159c) |
+| [USDP](./usdp-sol-974c.md) | USDP | 🔴 90/100 Critical Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/usdp-sol-974c) |
 | [tism](./tism.md) | TISM | 🟢 29/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/tism-sol) |
 | [イエロー・ジョー](./joe.md) | JOE | 🟢 20/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/joe-sol) |
 | [The Sisyphean Leopard](./the-sisyphean-leopard.md) | AREN | 🟢 22/100 Low Risk | 2026-11-04 | [↗](https://quantumaudit.app/token/the-sisyphean-leopard-sol) |
