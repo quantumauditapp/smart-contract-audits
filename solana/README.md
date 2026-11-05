@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1926 reports** · Updated daily · [← All Networks](../README.md)
+**1947 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,27 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [VETO](./veto.md) | VETO | 🟢 17/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/veto-sol) |
+| [State of Leonida](./state-of-leonida.md) | LEONIDA | 🟢 17/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/state-of-leonida-sol) |
+| [The Penguin](./the-penguin.md) | PENGUIN | 🟡 36/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/the-penguin-sol) |
+| [Giga Titty Ass](./giga-titty-ass-sol-d0df.md) | GTA | 🟢 19/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/giga-titty-ass-sol-d0df) |
+| [fuck you higher](./fuck-you-higher.md) | HIGHER | 🟢 20/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/fuck-you-higher-sol) |
+| [EURØP](./eurp.md) | EUROP | 🟠 81/100 High Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/eurp-sol) |
+| [Wealth Coin](./wealth-coin.md) | WEALTH | 🟢 22/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/wealth-coin-sol) |
+| [COGE COIN](./coge-coin.md) | COGE | 🟢 0/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/coge-coin-sol) |
+| [GOODTIME - LEONIDA](./goodtime-leonida.md) | GOODTIME | 🟢 16/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/goodtime-leonida-sol) |
+| [bul](./bul.md) | BUL | 🟢 15/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/bul-sol) |
+| [predict.fun](./predictfun-sol-ebb6.md) | PREDICT | 🟢 29/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/predictfun-sol-ebb6) |
+| [im tired boss](./im-tired-boss.md) | TIRED | 🟢 20/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/im-tired-boss-sol) |
+| [CommissionOnGovernmentEfficiency](./commissionongovernmentefficiency.md) | COGE | 🟢 13/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/commissionongovernmentefficiency-sol) |
+| [Bitaxum](./bitaxum.md) | BTX | 🟢 15/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/bitaxum-sol) |
+| [XTO](./xto-sol-e11a.md) | XTO | 🟢 0/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/xto-sol-e11a) |
+| [FOTF🔥](./fotf-sol-bf42.md) | FOTF | 🟢 1/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/fotf-sol-bf42) |
+| [UODF](./uodf-sol-f7a0.md) | UODF | 🟢 0/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/uodf-sol-f7a0) |
+| [American Oil Dividend Fund](./american-oil-dividend-fund-sol-a3b5.md) | AODF | 🟢 1/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/american-oil-dividend-fund-sol-a3b5) |
+| [UODF](./uodf-sol-2ae9.md) | UODF | 🟢 2/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/uodf-sol-2ae9) |
+| [PAD](./pad.md) | PAD | 🟢 0/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/pad-sol) |
+| [AODT](./aodt.md) | AODT | 🟢 0/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/aodt-sol) |
 | [Bobby Fischer](./bobby-fischer.md) | FISCHER | 🟢 13/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/bobby-fischer-sol) |
 | [A Meme Democrats](./a-meme-democrats.md) | AMD | 🟢 23/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/a-meme-democrats-sol) |
 | [BUSTED](./busted.md) | BUSTED | 🟢 27/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/busted-sol) |

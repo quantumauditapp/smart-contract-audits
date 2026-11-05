@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**713 reports** · Updated daily · [← All Networks](../README.md)
+**715 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [CORLA](./corla-bsc-db1a.md) | CORLA | 🟠 74/100 High Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/corla-bsc-db1a) |
+| [Apple Super Intelligence](./apple-super-intelligence.md) | 苹果SI | 🟢 19/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/apple-super-intelligence-bsc) |
 | [BURN](./burn-bsc-5a8a.md) | BURN | 🟡 48/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/burn-bsc-5a8a) |
 | [杀零狗](./token-c1a6bf.md) | 杀零狗 | 🟡 49/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/token-c1a6bf-bsc) |
 | [雪球](./token-0bbc4c.md) | 雪球 | 🟡 51/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/token-0bbc4c-bsc) |

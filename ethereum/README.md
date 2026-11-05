@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**556 reports** · Updated daily · [← All Networks](../README.md)
+**557 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [PUNKCAT](./punkcat.md) | PCAT | 🟢 22/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/punkcat-eth) |
 | [GRAIL](./grail.md) | GRAIL | 🟡 50/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/grail-eth) |
 | [AgentID](./agentid.md) | AGI | 🟠 67/100 High Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/agentid-eth) |
 | [SDollar](./sdollar.md) | SDLR | 🟡 56/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/sdollar-eth) |
