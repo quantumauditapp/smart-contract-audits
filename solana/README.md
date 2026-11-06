@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1947 reports** · Updated daily · [← All Networks](../README.md)
+**1967 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,26 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Wabi](./wabi.md) | WABI | 🟢 14/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/wabi-sol) |
+| [DEGEN](./degen.md) | DEGEN | 🟢 22/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/degen-sol) |
+| [callinu](./callinu.md) | CALLINU | 🟢 21/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/callinu-sol) |
+| [GoonStrategy ](./goonstrategy.md) | GS | 🟢 15/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/goonstrategy-sol) |
+| [Bubbles](./bubbles.md) | BUBBLES | 🟢 13/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/bubbles-sol) |
+| [LUNOX](./lunox.md) | LUNOX | 🟢 14/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/lunox-sol) |
+| [IFHC](./ifhc.md) | IFHC | 🟢 14/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/ifhc-sol) |
+| [Mission Passed](./mission-passed.md) | RETIRE | 🟢 15/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/mission-passed-sol) |
+| [A Meme Dacity](./a-meme-dacity.md) | AMD | 🟢 8/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/a-meme-dacity-sol) |
+| [Diamond](./diamond.md) | DIAMOND | 🟢 13/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/diamond-sol) |
+| [べんべん](./benben.md) | BENBEN | 🟡 40/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/benben-sol) |
+| [coin](./coin.md) | COIN | 🟢 16/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/coin-sol) |
+| [Rocco](./rocco.md) | ROCCO | 🟢 15/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/rocco-sol) |
+| [sssdfg](./sssdfg.md) | SSSDFG | 🟢 24/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/sssdfg-sol) |
+| [Bitaxum](./bitaxum-sol-ac5d.md) | BTX | 🟢 0/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/bitaxum-sol-ac5d) |
+| [FOTF](./fotf-sol-be69.md) | FOTF | 🟢 0/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/fotf-sol-be69) |
+| [NATF](./natf.md) | NATF | 🟢 0/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/natf-sol) |
+| [UDTF](./udtf-sol-36fc.md) | UDTF | 🟢 2/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/udtf-sol-36fc) |
+| [UODF](./uodf-sol-b693.md) | UODF | 🟢 0/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/uodf-sol-b693) |
+| [UODF](./uodf-sol-9ad3.md) | UODF | 🟢 2/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/uodf-sol-9ad3) |
 | [VETO](./veto.md) | VETO | 🟢 17/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/veto-sol) |
 | [State of Leonida](./state-of-leonida.md) | LEONIDA | 🟢 17/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/state-of-leonida-sol) |
 | [The Penguin](./the-penguin.md) | PENGUIN | 🟡 36/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/the-penguin-sol) |
