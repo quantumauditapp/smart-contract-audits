@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**715 reports** · Updated daily · [← All Networks](../README.md)
+**718 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [VRQQ](./vrqq-bsc-2c13.md) | VRQQ | 🟠 84/100 High Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/vrqq-bsc-2c13) |
+| [RED MORNING](./red-morning.md) | RM | 🟡 36/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/red-morning-bsc) |
+| [Anome](./anome.md) | ANOME | 🟢 18/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/anome-bsc) |
 | [CORLA](./corla-bsc-db1a.md) | CORLA | 🟠 74/100 High Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/corla-bsc-db1a) |
 | [Apple Super Intelligence](./apple-super-intelligence.md) | 苹果SI | 🟢 19/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/apple-super-intelligence-bsc) |
 | [BURN](./burn-bsc-5a8a.md) | BURN | 🟡 48/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/burn-bsc-5a8a) |

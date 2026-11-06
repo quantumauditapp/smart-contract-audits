@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1967 reports** · Updated daily · [← All Networks](../README.md)
+**1973 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [New World Order](./new-world-order.md) | NWO | 🟢 16/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/new-world-order-sol) |
+| [The Red Bull](./the-red-bull.md) | CZ | 🟢 19/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/the-red-bull-sol) |
+| [メイちゃん](./mei-sol-08c1.md) | MEI | 🟢 15/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/mei-sol-08c1) |
+| [RED COIN](./red-coin.md) | RED | 🟡 38/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/red-coin-sol) |
+| [fun](./fun-sol-784a.md) | FUN | 🟢 20/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/fun-sol-784a) |
+| [LiaLabs](./lialabs.md) | LIA | 🟢 27/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/lialabs-sol) |
 | [Wabi](./wabi.md) | WABI | 🟢 14/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/wabi-sol) |
 | [DEGEN](./degen.md) | DEGEN | 🟢 22/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/degen-sol) |
 | [callinu](./callinu.md) | CALLINU | 🟢 21/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/callinu-sol) |

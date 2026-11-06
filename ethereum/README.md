@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**560 reports** · Updated daily · [← All Networks](../README.md)
+**561 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [KieDex](./kiedex.md) | KDX | 🟡 58/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/kiedex-eth) |
 | [Grand Theft Auto VI](./grand-theft-auto-vi-eth-7aa4.md) | GTA6 | 🟢 0/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-eth-7aa4) |
 | [Rocco](./rocco.md) | ROCCO | 🟢 11/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/rocco-eth) |
 | [GTA VI](./gta-vi-eth-9c0f.md) | GTA6 | 🟡 40/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/gta-vi-eth-9c0f) |

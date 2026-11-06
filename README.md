@@ -3,7 +3,7 @@
 > Automated daily AI-powered security analyses for DeFi tokens.  
 > Powered by [Quantum Audit](https://quantumaudit.app) — the AI smart contract security platform.
 
-[![Reports](https://img.shields.io/badge/Total%20Reports-3952-blueviolet)](https://quantumaudit.app)
+[![Reports](https://img.shields.io/badge/Total%20Reports-3962-blueviolet)](https://quantumaudit.app)
 [![Updated](https://img.shields.io/badge/Updated-Daily-brightgreen)](https://quantumaudit.app)
 
 ---
@@ -12,6 +12,16 @@
 
 | Token | Ticker | Network | Risk Score | Date | Full Audit |
 |-------|--------|---------|------------|------|------------|
+| [New World Order](./solana/new-world-order.md) | NWO | Solana | 🟢 16/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/new-world-order-sol) |
+| [KieDex](./ethereum/kiedex.md) | KDX | Ethereum | 🟡 58/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/kiedex-eth) |
+| [The Red Bull](./solana/the-red-bull.md) | CZ | Solana | 🟢 19/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/the-red-bull-sol) |
+| [VRQQ](./bsc/vrqq-bsc-2c13.md) | VRQQ | BNB Chain | 🟠 84/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/vrqq-bsc-2c13) |
+| [RED MORNING](./bsc/red-morning.md) | RM | BNB Chain | 🟡 36/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/red-morning-bsc) |
+| [Anome](./bsc/anome.md) | ANOME | BNB Chain | 🟢 18/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/anome-bsc) |
+| [メイちゃん](./solana/mei-sol-08c1.md) | MEI | Solana | 🟢 15/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/mei-sol-08c1) |
+| [RED COIN](./solana/red-coin.md) | RED | Solana | 🟡 38/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/red-coin-sol) |
+| [fun](./solana/fun-sol-784a.md) | FUN | Solana | 🟢 20/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/fun-sol-784a) |
+| [LiaLabs](./solana/lialabs.md) | LIA | Solana | 🟢 27/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/lialabs-sol) |
 | [Wabi](./solana/wabi.md) | WABI | Solana | 🟢 14/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/wabi-sol) |
 | [Grand Theft Auto VI](./ethereum/grand-theft-auto-vi-eth-7aa4.md) | GTA6 | Ethereum | 🟢 0/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/grand-theft-auto-vi-eth-7aa4) |
 | [DEGEN](./solana/degen.md) | DEGEN | Solana | 🟢 22/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/degen-sol) |
@@ -32,22 +42,12 @@
 | [Bitaxum](./solana/bitaxum-sol-ac5d.md) | BTX | Solana | 🟢 0/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/bitaxum-sol-ac5d) |
 | [FOTF](./solana/fotf-sol-be69.md) | FOTF | Solana | 🟢 0/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/fotf-sol-be69) |
 | [NATF](./solana/natf.md) | NATF | Solana | 🟢 0/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/natf-sol) |
-| [UDTF](./solana/udtf-sol-36fc.md) | UDTF | Solana | 🟢 2/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/udtf-sol-36fc) |
-| [UODF](./solana/uodf-sol-b693.md) | UODF | Solana | 🟢 0/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/uodf-sol-b693) |
-| [UODF](./solana/uodf-sol-9ad3.md) | UODF | Solana | 🟢 2/100 | 2026-11-06 | [↗](https://quantumaudit.app/token/uodf-sol-9ad3) |
-| [VETO](./solana/veto.md) | VETO | Solana | 🟢 17/100 | 2026-11-05 | [↗](https://quantumaudit.app/token/veto-sol) |
-| [PUNKCAT](./ethereum/punkcat.md) | PCAT | Ethereum | 🟢 22/100 | 2026-11-05 | [↗](https://quantumaudit.app/token/punkcat-eth) |
-| [Anthropic](./base/anthropic-base-81ee.md) | ANTHROPIC | Base | 🟡 54/100 | 2026-11-05 | [↗](https://quantumaudit.app/token/anthropic-base-81ee) |
-| [Peapods](./arbitrum/peapods.md) | PEAS | Arbitrum | 🟠 73/100 | 2026-11-05 | [↗](https://quantumaudit.app/token/peapods-arb) |
-| [State of Leonida](./solana/state-of-leonida.md) | LEONIDA | Solana | 🟢 17/100 | 2026-11-05 | [↗](https://quantumaudit.app/token/state-of-leonida-sol) |
-| [The Penguin](./solana/the-penguin.md) | PENGUIN | Solana | 🟡 36/100 | 2026-11-05 | [↗](https://quantumaudit.app/token/the-penguin-sol) |
-| [Giga Titty Ass](./solana/giga-titty-ass-sol-d0df.md) | GTA | Solana | 🟢 19/100 | 2026-11-05 | [↗](https://quantumaudit.app/token/giga-titty-ass-sol-d0df) |
 
 ---
 
 ## Browse by Network
 
-[Solana (1967)](./solana/README.md) · [BNB Chain (715)](./bsc/README.md) · [Base (575)](./base/README.md) · [Ethereum (560)](./ethereum/README.md) · [Arbitrum (97)](./arbitrum/README.md) · [Polygon (38)](./polygon/README.md)
+[Solana (1973)](./solana/README.md) · [BNB Chain (718)](./bsc/README.md) · [Base (575)](./base/README.md) · [Ethereum (561)](./ethereum/README.md) · [Arbitrum (97)](./arbitrum/README.md) · [Polygon (38)](./polygon/README.md)
 
 ---
 
