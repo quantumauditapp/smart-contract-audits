@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1973 reports** · Updated daily · [← All Networks](../README.md)
+**1992 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,25 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Nigga Pig](./nigga-pig.md) | NIG | 🟢 21/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/nigga-pig-sol) |
+| [401kat](./401kat.md) | 401KAT | 🟢 24/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/401kat-sol) |
+| [Anonymous Cats](./anonymous-cats.md) | ZCATS | 🟡 49/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/anonymous-cats-sol) |
+| [Freaky Lily](./freaky-lily.md) | LILY | 🟢 23/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/freaky-lily-sol) |
+| [The Chud Hawk](./the-chud-hawk.md) | RSHA262599 | 🟢 13/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/the-chud-hawk-sol) |
+| [bracket](./bracket.md) | BRACKET | 🟡 36/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/bracket-sol) |
+| [ApplePaid](./applepaid.md) | APPLEPAID | 🟢 20/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/applepaid-sol) |
+| [Bill](./bill.md) | BILL | 🟡 36/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/bill-sol) |
+| [red morning](./red-morning.md) | RM | 🟢 24/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/red-morning-sol) |
+| [SK Hynix](./sk-hynix.md) | SKHY | 🟢 0/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/sk-hynix-sol) |
+| [NATF](./natf-sol-5a79.md) | NATF | 🟢 1/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/natf-sol-5a79) |
+| [United Kingdom Oil Reserve](./united-kingdom-oil-reserve.md) | UKOR | 🟢 0/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/united-kingdom-oil-reserve-sol) |
+| [FOTF](./fotf-sol-b534.md) | FOTF | 🟢 0/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/fotf-sol-b534) |
+| [USOE](./usoe-sol-26f3.md) | USOE | 🟢 1/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/usoe-sol-26f3) |
+| [XTO](./xto-sol-f496.md) | XTO | 🟢 0/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/xto-sol-f496) |
+| [NATF](./natf-sol-aad7.md) | NATF | 🟢 0/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/natf-sol-aad7) |
+| [USDP](./usdp-sol-2435.md) | USDP | 🔴 94/100 Critical Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/usdp-sol-2435) |
+| [USOE](./usoe-sol-edfe.md) | USOE | 🟢 0/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/usoe-sol-edfe) |
+| [XTO](./xto-sol-ee84.md) | XTO | 🟢 1/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/xto-sol-ee84) |
 | [New World Order](./new-world-order.md) | NWO | 🟢 16/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/new-world-order-sol) |
 | [The Red Bull](./the-red-bull.md) | CZ | 🟢 19/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/the-red-bull-sol) |
 | [メイちゃん](./mei-sol-08c1.md) | MEI | 🟢 15/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/mei-sol-08c1) |

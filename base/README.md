@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**575 reports** · Updated daily · [← All Networks](../README.md)
+**577 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Anthropic](./anthropic-base-0a4b.md) | ANTHROPIC | 🟡 52/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/anthropic-base-0a4b) |
+| [Kinetiq Governance Token](./kinetiq-governance-token.md) | KNTQ | 🟡 57/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/kinetiq-governance-token-base) |
 | [Anthropic](./anthropic-base-81ee.md) | ANTHROPIC | 🟡 54/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/anthropic-base-81ee) |
 | [DENIM](./denim-base-9449.md) | DENIM | 🟢 27/100 Low Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/denim-base-9449) |
 | [COMPUTE](./compute.md) | AI12 | 🟡 64/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/compute-base) |

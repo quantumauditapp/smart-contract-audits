@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**718 reports** · Updated daily · [← All Networks](../README.md)
+**724 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Relay](./relay.md) | RELAY | 🟢 17/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/relay-bsc) |
+| [八角笼](./octagon.md) | OCTAGON | 🟢 24/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/octagon-bsc) |
+| [GREEN MORNING](./green-morning-bsc-ebf3.md) | GM | 🟠 69/100 High Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/green-morning-bsc-ebf3) |
+| [Anti Super Inu](./anti-super-inu.md) | ASI | 🟡 42/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/anti-super-inu-bsc) |
+| [销毁丸](./token-c17ebc.md) | 销毁丸 | 🟡 59/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/token-c17ebc-bsc) |
+| [SHIB AGENT](./shib-agent.md) | SHIB | 🟠 78/100 High Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/shib-agent-bsc) |
 | [VRQQ](./vrqq-bsc-2c13.md) | VRQQ | 🟠 84/100 High Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/vrqq-bsc-2c13) |
 | [RED MORNING](./red-morning.md) | RM | 🟡 36/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/red-morning-bsc) |
 | [Anome](./anome.md) | ANOME | 🟢 18/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/anome-bsc) |
