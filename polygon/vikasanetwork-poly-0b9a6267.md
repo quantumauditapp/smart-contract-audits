@@ -79,7 +79,7 @@ The ten largest holders own 100.0% of supply. Of that, 99.7% locked — not hold
 
 ### `QA-PROFILE` — Asset class: Project token  *(Severity: Informational · Status: Acknowledged)*
 
-A token issued by a project for use, governance or fundraising. Scored on its contract and market facts. The class itself adds no points; the contract and market facts decide the score. Basis: no class-specific evidence. Tokenomics — Supply: fixed — the contract has no mint function. Control: a single wallet (EOA). Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $2K of DEX liquidity across 3 pools. Launch: 46 days of market history.
+A token issued by a project for use, governance or fundraising. Scored on its contract and market facts. The class itself adds no points; the contract and market facts decide the score. Basis: no class-specific evidence. Tokenomics — Supply: fixed — the contract has no mint function. Control: a single wallet (EOA). Code: not upgradeable (no proxy). Fees: no buy or sell tax. Market: $2K of DEX liquidity across 3 pools. Launch: 47 days of market history.
 
 **Recommendation:** Check the project's own documentation for what the token is used for; this report covers what the contract allows.
 

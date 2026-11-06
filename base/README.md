@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**577 reports** · Updated daily · [← All Networks](../README.md)
+**580 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,9 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [The Stonks Exchange](./the-stonks-exchange-base-3069.md) | STONKEX | 🟡 54/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/the-stonks-exchange-base-3069) |
+| [KieDex](./kiedex.md) | KDX | 🟡 64/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/kiedex-base) |
+| [Hims & Hers Health, Inc.](./hims-hers-health-inc.md) | HIMSC | 🟡 55/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/hims-hers-health-inc-base) |
 | [Anthropic](./anthropic-base-0a4b.md) | ANTHROPIC | 🟡 52/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/anthropic-base-0a4b) |
 | [Kinetiq Governance Token](./kinetiq-governance-token.md) | KNTQ | 🟡 57/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/kinetiq-governance-token-base) |
 | [Anthropic](./anthropic-base-81ee.md) | ANTHROPIC | 🟡 54/100 Medium Risk | 2026-11-05 | [↗](https://quantumaudit.app/token/anthropic-base-81ee) |

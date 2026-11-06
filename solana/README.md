@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**1992 reports** · Updated daily · [← All Networks](../README.md)
+**2001 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,15 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [ProShares UltraPro Short QQQ - Backpack Securities](./proshares-ultrapro-short-qqq-backpack-securities.md) | SQQQ | 🟠 75/100 High Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/proshares-ultrapro-short-qqq-backpack-securities-sol) |
+| [FloatFuse](./floatfuse.md) | FUSE | 🟢 8/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/floatfuse-sol) |
+| [sexcoin](./sexcoin.md) | SEXCOIN | 🟢 15/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/sexcoin-sol) |
+| [LEAPCAT](./leapcat.md) | LEAPCAT | 🟢 16/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/leapcat-sol) |
+| [Laura Sats](./laura-sats.md) | LAURA | 🟢 22/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/laura-sats-sol) |
+| [xZEC](./xzec.md) | XZEC | 🟠 68/100 High Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/xzec-sol) |
+| [Monster Beverage - Backpack Securities](./monster-beverage-backpack-securities.md) | MNST | 🟠 74/100 High Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/monster-beverage-backpack-securities-sol) |
+| [Finance Inu](./finance-inu.md) | FI | 🟢 17/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/finance-inu-sol) |
+| [XTO](./xto-sol-2c1f.md) | XTRUTH OIL | 🟢 0/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/xto-sol-2c1f) |
 | [Nigga Pig](./nigga-pig.md) | NIG | 🟢 21/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/nigga-pig-sol) |
 | [401kat](./401kat.md) | 401KAT | 🟢 24/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/401kat-sol) |
 | [Anonymous Cats](./anonymous-cats.md) | ZCATS | 🟡 49/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/anonymous-cats-sol) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**724 reports** · Updated daily · [← All Networks](../README.md)
+**729 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,11 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [PoolLuanch新币侦测](./poolluanch.md) | SLIME | 🟢 16/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/poolluanch-bsc) |
+| [NVIDIA Corporation SI](./nvidia-corporation-si.md) | NVIDIASI | 🟢 24/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/nvidia-corporation-si-bsc) |
+| [币安人生](./token-33e4f6.md) | 币安人生 | 🟡 46/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/token-33e4f6-bsc) |
+| [蝴蝶社区](./token-890149.md) | 蝴蝶社区 | 🟢 18/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/token-890149-bsc) |
+| [AIX Token](./aix-token.md) | AIX | 🟠 66/100 High Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/aix-token-bsc) |
 | [Relay](./relay.md) | RELAY | 🟢 17/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/relay-bsc) |
 | [八角笼](./octagon.md) | OCTAGON | 🟢 24/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/octagon-bsc) |
 | [GREEN MORNING](./green-morning-bsc-ebf3.md) | GM | 🟠 69/100 High Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/green-morning-bsc-ebf3) |
