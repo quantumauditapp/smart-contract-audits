@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**580 reports** · Updated daily · [← All Networks](../README.md)
+**581 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,7 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [U.S POWER RESERVE (USPR)](./us-power-reserve-uspr.md) | USPR | 🟠 67/100 High Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/us-power-reserve-uspr-base) |
 | [The Stonks Exchange](./the-stonks-exchange-base-3069.md) | STONKEX | 🟡 54/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/the-stonks-exchange-base-3069) |
 | [KieDex](./kiedex.md) | KDX | 🟡 64/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/kiedex-base) |
 | [Hims & Hers Health, Inc.](./hims-hers-health-inc.md) | HIMSC | 🟡 55/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/hims-hers-health-inc-base) |

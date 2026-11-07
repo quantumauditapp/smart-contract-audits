@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**2001 reports** · Updated daily · [← All Networks](../README.md)
+**2022 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,27 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Callset](./callset.md) | CALL | 🟢 17/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/callset-sol) |
+| [Pirate Shop Token](./pirate-shop-token-sol-42ca.md) | PIRATE | 🟢 27/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/pirate-shop-token-sol-42ca) |
+| [Scamchi](./scamchi.md) | SCAMCHI | 🟢 23/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/scamchi-sol) |
+| [Everyday is Zeroday](./everyday-is-zeroday.md) | 0DAY | 🟢 17/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/everyday-is-zeroday-sol) |
+| [Hatch](./hatch.md) | HATCH | 🟢 21/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/hatch-sol) |
+| [Bull Time Coin](./bull-time-coin.md) | BTC | 🟢 14/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/bull-time-coin-sol) |
+| [StonkMarket](./stonkmarket-sol-6a57.md) | STM | 🟢 16/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/stonkmarket-sol-6a57) |
+| [Donna Dollars](./donna-dollars.md) | DONNA | 🟢 2/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/donna-dollars-sol) |
+| [Privacy Index](./privacy-index.md) | PRIVACY | 🟠 77/100 High Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/privacy-index-sol) |
+| [scamsem](./scamsem.md) | SCAMSEM | 🟢 14/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/scamsem-sol) |
+| [Squirrelcoin](./squirrelcoin.md) | SQRL | 🟢 22/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/squirrelcoin-sol) |
+| [Diamond Cat](./diamond-cat.md) | DCAT | 🟢 15/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/diamond-cat-sol) |
+| [Be Like José](./be-like-jose.md) | JOSÉ | 🟢 20/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/be-like-jose-sol) |
+| [Diamond Hands](./diamond-hands-sol-0454.md) | HODL | 🟢 9/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/diamond-hands-sol-0454) |
+| [tapcash](./tapcash.md) | TAP | 🟢 13/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/tapcash-sol) |
+| [Trump Coin](./trump-coin-sol-5b22.md) | TRUMP | 🟢 13/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/trump-coin-sol-5b22) |
+| [United States Oil Exchange](./united-states-oil-exchange-sol-fc45.md) | USOE | 🟢 0/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/united-states-oil-exchange-sol-fc45) |
+| [Strategic American Protocol](./strategic-american-protocol-sol-ae49.md) | SARP | 🟢 0/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/strategic-american-protocol-sol-ae49) |
+| [XTO](./xto-sol-b5de.md) | XTO | 🟢 0/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/xto-sol-b5de) |
+| [American Dividend Protocol](./american-dividend-protocol-sol-fb32.md) | ADP | 🟢 0/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/american-dividend-protocol-sol-fb32) |
+| [USOE](./usoe-sol-7ec9.md) | USOE | 🟢 0/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/usoe-sol-7ec9) |
 | [ProShares UltraPro Short QQQ - Backpack Securities](./proshares-ultrapro-short-qqq-backpack-securities.md) | SQQQ | 🟠 75/100 High Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/proshares-ultrapro-short-qqq-backpack-securities-sol) |
 | [FloatFuse](./floatfuse.md) | FUSE | 🟢 8/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/floatfuse-sol) |
 | [sexcoin](./sexcoin.md) | SEXCOIN | 🟢 15/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/sexcoin-sol) |

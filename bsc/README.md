@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**729 reports** · Updated daily · [← All Networks](../README.md)
+**735 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,12 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [现金牛](./cashcow.md) | CASHCOW | 🟢 15/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/cashcow-bsc) |
+| [Red Morning](./red-morning-bsc-6816.md) | RM | 🟡 44/100 Medium Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/red-morning-bsc-6816) |
+| [bELYSIUM](./belysium.md) | BELYSIUM | 🟢 24/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/belysium-bsc) |
+| [蘑菇头](./token-bf7adf.md) | 蘑菇头 | 🟡 38/100 Medium Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/token-bf7adf-bsc) |
+| [Strategy Inc.](./strategy-inc.md) | MSTRB | 🟢 9/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/strategy-inc-bsc) |
+| [NVDABSI](./nvdabsi.md) | 英伟达SI | 🟢 33/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/nvdabsi-bsc) |
 | [PoolLuanch新币侦测](./poolluanch.md) | SLIME | 🟢 16/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/poolluanch-bsc) |
 | [NVIDIA Corporation SI](./nvidia-corporation-si.md) | NVIDIASI | 🟢 24/100 Low Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/nvidia-corporation-si-bsc) |
 | [币安人生](./token-33e4f6.md) | 币安人生 | 🟡 46/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/token-33e4f6-bsc) |
