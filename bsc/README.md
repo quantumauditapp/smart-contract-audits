@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**735 reports** · Updated daily · [← All Networks](../README.md)
+**737 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [GREEN MORNING](./green-morning-bsc-5b01.md) | GM | 🟠 81/100 High Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/green-morning-bsc-5b01) |
+| [Baby Grok](./baby-grok.md) | BABYGROK | 🟢 6/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/baby-grok-bsc) |
 | [现金牛](./cashcow.md) | CASHCOW | 🟢 15/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/cashcow-bsc) |
 | [Red Morning](./red-morning-bsc-6816.md) | RM | 🟡 44/100 Medium Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/red-morning-bsc-6816) |
 | [bELYSIUM](./belysium.md) | BELYSIUM | 🟢 24/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/belysium-bsc) |

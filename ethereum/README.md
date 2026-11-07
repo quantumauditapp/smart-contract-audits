@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**565 reports** · Updated daily · [← All Networks](../README.md)
+**569 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Space Pepe](./space-pepe.md) | SPACEPEPE | 🟢 12/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/space-pepe-eth) |
+| [E-RADIX](./e-radix.md) | EXRD | 🟡 54/100 Medium Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/e-radix-eth) |
+| [AstraAI](./astraai.md) | ASTRA | 🟠 70/100 High Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/astraai-eth) |
+| [State Of Leonida](./state-of-leonida.md) | LEONIDA | 🟢 10/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/state-of-leonida-eth) |
 | [Pepereum](./pepereum.md) | PEPER | 🟢 27/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/pepereum-eth) |
 | [ConConAI](./conconai.md) | CON | 🟡 46/100 Medium Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/conconai-eth) |
 | [GTA6CAT](./gta6cat.md) | GATO | 🟠 76/100 High Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/gta6cat-eth) |

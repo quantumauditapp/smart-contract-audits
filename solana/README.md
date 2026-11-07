@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**2022 reports** · Updated daily · [← All Networks](../README.md)
+**2031 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,15 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [funny trauma ](./funny-trauma.md) | TRAUMA  | 🟢 21/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/funny-trauma-sol) |
+| [Elon Coin](./elon-coin-sol-2066.md) | ELON | 🟢 21/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/elon-coin-sol-2066) |
+| [GTA6DOG](./gta6dog-sol-94f1.md) | GTA6K9 | 🟢 14/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/gta6dog-sol-94f1) |
+| [Machiavelli](./machiavelli.md) | MEME | 🟢 17/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/machiavelli-sol) |
+| [Slingfolio](./slingfolio.md) | SLINGFOLIO | 🟢 22/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/slingfolio-sol) |
+| [The Nvidia Spy](./the-nvidia-spy.md) | ALICE | 🟢 15/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/the-nvidia-spy-sol) |
+| [NATF](./natf-sol-6cce.md) | NATF | 🟢 2/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/natf-sol-6cce) |
+| [UDTF](./udtf-sol-02bc.md) | UDTF | 🟢 0/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/udtf-sol-02bc) |
+| [United States Dividend Program](./united-states-dividend-program-sol-8620.md) | USDP | 🔴 93/100 Critical Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/united-states-dividend-program-sol-8620) |
 | [Callset](./callset.md) | CALL | 🟢 17/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/callset-sol) |
 | [Pirate Shop Token](./pirate-shop-token-sol-42ca.md) | PIRATE | 🟢 27/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/pirate-shop-token-sol-42ca) |
 | [Scamchi](./scamchi.md) | SCAMCHI | 🟢 23/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/scamchi-sol) |
