@@ -2,7 +2,7 @@
 
 Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**737 reports** · Updated daily · [← All Networks](../README.md)
+**744 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,13 @@ Automated daily security analyses for BNB Chain tokens, powered by [Quantum Audi
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Liquid Island](./liquid-island.md) | ISLAND | 🟢 16/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/liquid-island-bsc) |
+| [XiaomiS7](./xiaomis7.md) | XIAOMIS7 | 🟢 0/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/xiaomis7-bsc) |
+| [red morning](./red-morning-bsc-7ef1.md) | RM | 🟢 19/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/red-morning-bsc-7ef1) |
+| [GREEN MORNING](./green-morning-bsc-a7f8.md) | GM | 🟠 75/100 High Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/green-morning-bsc-a7f8) |
+| [BTC](./btc.md) | 比特币 | 🟡 48/100 Medium Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/btc-bsc) |
+| [GREEN MORNING](./green-morning-bsc-32d8.md) | GM | 🟠 82/100 High Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/green-morning-bsc-32d8) |
+| [YFI](./yfi-bsc-ef55.md) | YFI | 🟡 43/100 Medium Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/yfi-bsc-ef55) |
 | [GREEN MORNING](./green-morning-bsc-5b01.md) | GM | 🟠 81/100 High Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/green-morning-bsc-5b01) |
 | [Baby Grok](./baby-grok.md) | BABYGROK | 🟢 6/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/baby-grok-bsc) |
 | [现金牛](./cashcow.md) | CASHCOW | 🟢 15/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/cashcow-bsc) |

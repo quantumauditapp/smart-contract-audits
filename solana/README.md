@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Solana tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**2031 reports** · Updated daily · [← All Networks](../README.md)
+**2059 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,34 @@ Automated daily security analyses for Solana tokens, powered by [Quantum Audit](
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [ni hao cat](./ni-hao-cat.md) | MIHAO | 🟢 7/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/ni-hao-cat-sol) |
+| [The Roaring Kitty](./the-roaring-kitty.md) | TRK | 🟢 22/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/the-roaring-kitty-sol) |
+| [Kilroy was here](./kilroy-was-here.md) | KILROY | 🟢 6/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/kilroy-was-here-sol) |
+| [NO PANIC](./no-panic.md) | NOPANIC | 🟢 19/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/no-panic-sol) |
+| [Fat Shane](./fat-shane.md) | SHANE | 🟡 40/100 Medium Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/fat-shane-sol) |
+| [ELYSION](./elysion.md) | ELYSION PAD | 🟢 22/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/elysion-sol) |
+| [Trump coin](./trump-coin-sol-8614.md) | TRUMPCOIN | 🟢 21/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/trump-coin-sol-8614) |
+| [Ilan Muhammad Ai Mask](./ilan-muhammad-ai-mask.md) | IMAM | 🟢 12/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/ilan-muhammad-ai-mask-sol) |
+| [Pokemon in the Hood](./pokemon-in-the-hood.md) | POKEHOOD | 🟢 22/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/pokemon-in-the-hood-sol) |
+| [Stonka](./stonka.md) | STONKA | 🟢 20/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/stonka-sol) |
+| [Anthropic](./anthropic-sol-7c6f.md) | ANTS | 🟢 0/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/anthropic-sol-7c6f) |
+| [UODF](./uodf-sol-7c5f.md) | UODF | 🟢 9/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/uodf-sol-7c5f) |
+| [Extended](./extended-sol-5b4a.md) | XTEN | 🟢 27/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/extended-sol-5b4a) |
+| [debtdog](./debtdog.md) | DEBTDOG | 🟢 21/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/debtdog-sol) |
+| [duge](./duge.md) | DUGE | 🟢 20/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/duge-sol) |
+| [Dacity Coin](./dacity-coin-sol-4102.md) | DACITY | 🟢 22/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/dacity-coin-sol-4102) |
+| [HOPE](./hope.md) | HOPE | 🟢 15/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/hope-sol) |
+| [USDP](./usdp-sol-96e0.md) | USDP | 🔴 94/100 Critical Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/usdp-sol-96e0) |
+| [World Oil Fund Institution](./world-oil-fund-institution-sol-b1fc.md) | WOFI | 🟢 1/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/world-oil-fund-institution-sol-b1fc) |
+| [GTA6](./gta6-sol-5336.md) | GTA 6 COIN | 🟢 1/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/gta6-sol-5336) |
+| [UDTF](./udtf-sol-124a.md) | UDTF | 🟢 0/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/udtf-sol-124a) |
+| [USPR](./uspr-sol-13c6.md) | USPR | 🟢 0/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/uspr-sol-13c6) |
+| [NADF](./nadf-sol-4b40.md) | NADF | 🟢 0/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/nadf-sol-4b40) |
+| [AODF](./aodf-sol-a436.md) | AODF | 🟢 0/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/aodf-sol-a436) |
+| [USDF🚀](./usdf-sol-7d5f.md) | USDF🚀 | 🟢 0/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/usdf-sol-7d5f) |
+| [UODF](./uodf-sol-13fb.md) | UODF | 🟢 1/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/uodf-sol-13fb) |
+| [United States Power Reserve](./united-states-power-reserve-sol-7b21.md) | USPR | 🟢 0/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/united-states-power-reserve-sol-7b21) |
+| [Trump Coin](./trump-coin-sol-6e51.md) | TRUMP | 🟢 0/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/trump-coin-sol-6e51) |
 | [funny trauma ](./funny-trauma.md) | TRAUMA  | 🟢 21/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/funny-trauma-sol) |
 | [Elon Coin](./elon-coin-sol-2066.md) | ELON | 🟢 21/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/elon-coin-sol-2066) |
 | [GTA6DOG](./gta6dog-sol-94f1.md) | GTA6K9 | 🟢 14/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/gta6dog-sol-94f1) |

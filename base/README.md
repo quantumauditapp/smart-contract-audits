@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Base tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**581 reports** · Updated daily · [← All Networks](../README.md)
+**585 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,10 @@ Automated daily security analyses for Base tokens, powered by [Quantum Audit](ht
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [BASEDOG](./basedog.md) | BASEDOG | 🟡 53/100 Medium Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/basedog-base) |
+| [Papertrade](./papertrade-base-612a.md) | PAPER | 🟡 52/100 Medium Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/papertrade-base-612a) |
+| [Bubbles](./bubbles.md) | BUBBLES | 🟠 72/100 High Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/bubbles-base) |
+| [U.S POWER RESERVE (USPR)](./us-power-reserve-uspr-base-e11a.md) | USPR | 🟠 72/100 High Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/us-power-reserve-uspr-base-e11a) |
 | [U.S POWER RESERVE (USPR)](./us-power-reserve-uspr.md) | USPR | 🟠 67/100 High Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/us-power-reserve-uspr-base) |
 | [The Stonks Exchange](./the-stonks-exchange-base-3069.md) | STONKEX | 🟡 54/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/the-stonks-exchange-base-3069) |
 | [KieDex](./kiedex.md) | KDX | 🟡 64/100 Medium Risk | 2026-11-06 | [↗](https://quantumaudit.app/token/kiedex-base) |

@@ -2,7 +2,7 @@
 
 Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit](https://quantumaudit.app) AI.
 
-**569 reports** · Updated daily · [← All Networks](../README.md)
+**571 reports** · Updated daily · [← All Networks](../README.md)
 
 ---
 
@@ -10,6 +10,8 @@ Automated daily security analyses for Ethereum tokens, powered by [Quantum Audit
 
 | Token | Ticker | Risk Score | Date | Full Audit |
 |-------|--------|------------|------|------------|
+| [Baby Pepe](./baby-pepe.md) | BABYPEPE | 🟢 12/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/baby-pepe-eth) |
+| [Puffpaw](./puffpaw.md) | VAPE | 🟡 64/100 Medium Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/puffpaw-eth) |
 | [Space Pepe](./space-pepe.md) | SPACEPEPE | 🟢 12/100 Low Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/space-pepe-eth) |
 | [E-RADIX](./e-radix.md) | EXRD | 🟡 54/100 Medium Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/e-radix-eth) |
 | [AstraAI](./astraai.md) | ASTRA | 🟠 70/100 High Risk | 2026-11-07 | [↗](https://quantumaudit.app/token/astraai-eth) |
